@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry-projections/addon/utils/projection-attributes.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.0.0</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/ProjectionAttributes", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/ProjectionAttributes.html">ProjectionAttributes</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry-projections/addon/utils/projection-attributes.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+import Projection from &#x27;./projection&#x27;;
+
+/**
+ * @module ember-flexberry-projections
+ */
+
+/**
+ * This class used to define projection attributes for model.
+ *
+ * @class ProjectionAttributes
+ * @public
+ */
+export default {
+  /**
+   * Define plain attribute in projection.
+   *
+   * @method attr
+   * @param {String} caption A user-friendly caption for attribute.
+   * @param {Object} [options] Attribute options.
+   * @return {Object} Projection attribute.
+   * @public
+   */
+  attr: function(caption, options) {
+    let attr = createAttr(&#x27;attr&#x27;, caption, options);
+    return attr;
+  },
+
+  /**
+   * Define belongsTo relationship attribute in projection.
+   *
+   * @method belongsTo
+   * @param {String} modelName The name of the model type.
+   * @param {String} caption A user-friendly caption for attribute.
+   * @param {Object} attributes Projection attributes.
+   * @param {Object} [options] Attribute options.
+   * @return {Object} Projection attribute.
+   * @public
+   */
+  belongsTo: function(modelName, caption, attributes, options) {
+    let attr = createAttr(&#x27;belongsTo&#x27;, caption, options);
+    let proj = Projection.create(modelName, attributes);
+    attr = Ember.merge(attr, proj);
+    return attr;
+  },
+
+  /**
+   * Define hasMany relationship attribute in projection.
+   *
+   * @method hasMany
+   * @param {String} modelName The name of the model type.
+   * @param {String} caption A user-friendly caption for attribute.
+   * @param {Object} attributes Projection attributes.
+   * @param {Object} [options] Attribute options.
+   * @return {Object} Projection attribute.
+   * @public
+   */
+  hasMany: function(modelName, caption, attributes, options) {
+    let attr = createAttr(&#x27;hasMany&#x27;, caption, options);
+    let proj = Projection.create(modelName, attributes);
+    attr = Ember.merge(attr, proj);
+    return attr;
+  }
+};
+
+function createAttr(kind, caption, options) {
+  return {
+    kind: kind,
+    caption: caption,
+    options: options || {}
+  };
+}
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

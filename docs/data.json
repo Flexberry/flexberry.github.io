@@ -1,0 +1,161 @@
+{
+    "project": {
+        "name": "Flexberry Documentation",
+        "description": "Flexberry Documentation",
+        "version": "0.0.0"
+    },
+    "files": {
+        "ember-flexberry-projections/addon/utils/projection-attributes.js": {
+            "name": "ember-flexberry-projections/addon/utils/projection-attributes.js",
+            "modules": {
+                "ember-flexberry-projections": 1
+            },
+            "classes": {
+                "ProjectionAttributes": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "ember-flexberry-projections": {
+            "name": "ember-flexberry-projections",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "ProjectionAttributes": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "ember-flexberry-projections/addon/utils/projection-attributes.js",
+            "line": 8
+        }
+    },
+    "classes": {
+        "ProjectionAttributes": {
+            "name": "ProjectionAttributes",
+            "shortname": "ProjectionAttributes",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-projections",
+            "namespace": "",
+            "file": "ember-flexberry-projections/addon/utils/projection-attributes.js",
+            "line": 8,
+            "description": "This class used to define projection attributes for model.",
+            "access": "public",
+            "tagname": ""
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "ember-flexberry-projections/addon/utils/projection-attributes.js",
+            "line": 15,
+            "description": "Define plain attribute in projection.",
+            "itemtype": "method",
+            "name": "attr",
+            "params": [
+                {
+                    "name": "caption",
+                    "description": "A user-friendly caption for attribute.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Attribute options.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Projection attribute.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "ProjectionAttributes",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/utils/projection-attributes.js",
+            "line": 29,
+            "description": "Define belongsTo relationship attribute in projection.",
+            "itemtype": "method",
+            "name": "belongsTo",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "caption",
+                    "description": "A user-friendly caption for attribute.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "Attribute options.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Projection attribute.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "ProjectionAttributes",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/utils/projection-attributes.js",
+            "line": 47,
+            "description": "Define hasMany relationship attribute in projection.",
+            "itemtype": "method",
+            "name": "hasMany",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "caption",
+                    "description": "A user-friendly caption for attribute.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "Attribute options.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Projection attribute.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "ProjectionAttributes",
+            "module": "ember-flexberry-projections"
+        }
+    ],
+    "warnings": []
+}

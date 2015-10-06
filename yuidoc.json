@@ -1,0 +1,24 @@
+{
+  "name": "Flexberry Documentation",
+  "options": {
+    "linkNatives": true,
+    "paths": [
+      "./ember-flexberry-projections/addon"
+    ],
+    "outdir": "./docs",
+    "themedir": "./node_modules/yuidoc-bootstrap-theme",
+    "helpers": ["./node_modules/yuidoc-bootstrap-theme/helpers/helpers.js"],
+    "external": {
+      "data": [
+        {
+          "base": "http://emberjs.com/api/",
+          "json": "http://builds.emberjs.com/tags/v1.13.7/ember-docs.json"
+        },
+        {
+          "base": "http://emberjs.com/api/",
+          "json": "http://builds.emberjs.com/tags/v1.13.8/ember-data-docs.json"
+        }
+      ]
+    }
+  }
+}

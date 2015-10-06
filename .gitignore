@@ -1,0 +1,9 @@
+# dependencies
+/node_modules
+/bower_components
+
+# ide and code editor files
+/.idea
+.tern-port
+.dir-locals.el
+

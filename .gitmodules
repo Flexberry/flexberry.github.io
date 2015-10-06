@@ -1,0 +1,3 @@
+[submodule "ember-flexberry-projections"]
+	path = ember-flexberry-projections
+	url = https://github.com/Flexberry/ember-flexberry-projections.git
