@@ -5,7 +5,7 @@
     "paths": [
       "./ember-flexberry-projections/addon"
     ],
-    "outdir": "./docs",
+    "outdir": ".",
     "themedir": "./node_modules/yuidoc-bootstrap-theme",
     "helpers": ["./node_modules/yuidoc-bootstrap-theme/helpers/helpers.js"],
     "external": {
