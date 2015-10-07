@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/utils/projection-attributes.js - Flexberry Documentation</title>
+    <title>ember-flexberry-projections/addon/mixins/projected-store.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -93,83 +93,147 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/utils/projection-attributes.js <small>File</small></h1>
+    <h1>ember-flexberry-projections/addon/mixins/projected-store.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
-import Projection from &#x27;./projection&#x27;;
+import ProjectionQuery from &#x27;../utils/projection-query&#x27;;
 
 /**
  * @module ember-flexberry-projections
  */
 
 /**
- * This class used to define projection attributes for model.
+ * {{#crossLink &quot;DS.Store&quot;}}Store{{/crossLink}} mixin to support
+ * fetching models using {{#crossLink &quot;Projection&quot;}}projection{{/crossLink}}.
  *
- * @class ProjectionAttributes
+ * @class ProjectedStore
+ * @extends Ember.Mixin
  * @public
  */
-export default {
+export default Ember.Mixin.create({
   /**
-   * Define plain attribute in projection.
+   * Finds the records for the given model type.
    *
-   * @method attr
-   * @param {String} caption A user-friendly caption for attribute.
-   * @param {Object} [options] Attribute options.
-   * @return {Object} Projection attribute.
+   * See {{#crossLink &quot;DS.Store/findAll:method&quot;}}{{/crossLink}} for details.
+   *
+   * @method findAll
    * @public
+   *
+   * @param {String} modelName The name of the model type.
+   * @param {Object} [options] Options.
+   * @param {String} options.projection Projection name.
+   * @return {DS.AdapterPopulatedRecordArray} Records promise.
    */
-  attr: function(caption, options) {
-    let attr = createAttr(&#x27;attr&#x27;, caption, options);
-    return attr;
+  findAll: function(modelName, options) {
+    if (options &amp;&amp; options.projection) {
+      return this.query(modelName, {
+        projection: options.projection
+      });
+    }
+
+    return this._super.apply(this, arguments);
   },
 
   /**
-   * Define belongsTo relationship attribute in projection.
+   * Returns a record for a given type and id combination.
    *
-   * @method belongsTo
-   * @param {String} modelName The name of the model type.
-   * @param {String} caption A user-friendly caption for attribute.
-   * @param {Object} attributes Projection attributes.
-   * @param {Object} [options] Attribute options.
-   * @return {Object} Projection attribute.
+   * See {{#crossLink &quot;DS.Store/findRecord:method&quot;}}{{/crossLink}} for details.
+   *
+   * @method findRecord
    * @public
+   *
+   * @param {String} modelName The name of the model type.
+   * @param {String|Integer} id Record ID.
+   * @param {Object} [options] Options.
+   * @param {String} options.projection Projection name.
+   * @return {Promise} Record promise.
    */
-  belongsTo: function(modelName, caption, attributes, options) {
-    let attr = createAttr(&#x27;belongsTo&#x27;, caption, options);
-    let proj = Projection.create(modelName, attributes);
-    attr = Ember.merge(attr, proj);
-    return attr;
+  findRecord: function(modelName, id, options) {
+    if (options &amp;&amp; options.projection) {
+      // TODO: case of options.reload === false.
+      return this.queryRecord(modelName, {
+        id: id,
+        projection: options.projection
+      });
+    }
+
+    return this._super.apply(this, arguments);
   },
 
   /**
-   * Define hasMany relationship attribute in projection.
+   * This method delegates a query to the adapter.
    *
-   * @method hasMany
-   * @param {String} modelName The name of the model type.
-   * @param {String} caption A user-friendly caption for attribute.
-   * @param {Object} attributes Projection attributes.
-   * @param {Object} [options] Attribute options.
-   * @return {Object} Projection attribute.
+   * See {{#crossLink &quot;DS.Store/query:method&quot;}}{{/crossLink}} for details.
+   *
+   * @method query
    * @public
+   *
+   * @param {String} modelName The name of the model type.
+   * @param {Object} query An opaque query to be used by the adapter.
+   * @param {String} [query.projection] Projection name.
+   * @return {Promise} A promise, which is resolved with a
+   *                   {{#crossLink &quot;DS.RecordArray&quot;}}RecordArray{{/crossLink}}
+   *                   once the server returns.
    */
-  hasMany: function(modelName, caption, attributes, options) {
-    let attr = createAttr(&#x27;hasMany&#x27;, caption, options);
-    let proj = Projection.create(modelName, attributes);
-    attr = Ember.merge(attr, proj);
-    return attr;
+  query: function(modelName, query) {
+    query = this._normalizeQuery(modelName, query);
+    return this._super(modelName, query).then(function(recordArray) {
+      return recordArray;
+    });
+  },
+
+  /**
+   * This method delegates a query to the adapter.
+   *
+   * See {{#crossLink &quot;DS.Store/queryRecord:method&quot;}}{{/crossLink}} for details.
+   *
+   * @method queryRecord
+   * @public
+   *
+   * @param {String} modelName The name of the model type.
+   * @param {Object} query An opaque query to be used by the adapter.
+   * @param {String} [query.projection] Projection name.
+   * @return {Promise} A promise, which is resolved with a
+   *                   {{#crossLink &quot;DS.RecordObject&quot;}}RecordObject{{/crossLink}}
+   *                   once the server returns.
+   */
+  queryRecord: function(modelName, query) {
+    query = this._normalizeQuery(modelName, query);
+    return this._super(modelName, query).then(function(record) {
+      return record;
+    });
+  },
+
+  /**
+   * Retrieves projection from query, converts it to query params and
+   * merges with query.
+   *
+   * @method _normalizeQuery
+   * @private
+   *
+   * @param {String} modelName The name of the model type.
+   * @param {Object} [query] Query parameters.
+   * @param {String} query.projection Projection name.
+   * @return {Object} Modified query with projection parameters.
+   *                  Returns original query, if projection not specified.
+   */
+  _normalizeQuery: function(modelName, query) {
+    if (query &amp;&amp; query.projection) {
+      let projName = query.projection;
+      let typeClass = this.modelFor(modelName);
+      let proj = typeClass.projections.get(projName);
+      let projQuery = ProjectionQuery.get(proj, this);
+
+      delete query.projection;
+      query = Ember.merge(query, projQuery);
+    }
+
+    return query;
   }
-};
-
-function createAttr(kind, caption, options) {
-  return {
-    kind: kind,
-    caption: caption,
-    options: options || {}
-  };
-}
+});
 
     </pre>
 </div>

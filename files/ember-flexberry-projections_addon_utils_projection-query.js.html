@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/utils/projection-attributes.js - Flexberry Documentation</title>
+    <title>ember-flexberry-projections/addon/utils/projection-query.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -93,82 +93,127 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/utils/projection-attributes.js <small>File</small></h1>
+    <h1>ember-flexberry-projections/addon/utils/projection-query.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
-import Projection from &#x27;./projection&#x27;;
-
 /**
  * @module ember-flexberry-projections
  */
 
 /**
- * This class used to define projection attributes for model.
+ * Includes methods to convert {{#crossLink &quot;Projection&quot;}}{{/crossLink}}
+ * to URL query params.
  *
- * @class ProjectionAttributes
+ * @class ProjectionQuery
  * @public
  */
 export default {
   /**
-   * Define plain attribute in projection.
+   * Converts {{#crossLink &quot;Projection&quot;}}{{/crossLink}}
+   * to URL query params for OData v4.
    *
-   * @method attr
-   * @param {String} caption A user-friendly caption for attribute.
-   * @param {Object} [options] Attribute options.
-   * @return {Object} Projection attribute.
+   * @method get
    * @public
-   */
-  attr: function(caption, options) {
-    let attr = createAttr(&#x27;attr&#x27;, caption, options);
-    return attr;
-  },
-
-  /**
-   * Define belongsTo relationship attribute in projection.
    *
-   * @method belongsTo
-   * @param {String} modelName The name of the model type.
-   * @param {String} caption A user-friendly caption for attribute.
-   * @param {Object} attributes Projection attributes.
-   * @param {Object} [options] Attribute options.
-   * @return {Object} Projection attribute.
-   * @public
+   * @param {Projection} projection Model projection to convert.
+   * @param {DS.Store} store The store service.
+   * @return {Object} Object with $select and $expand properties.
    */
-  belongsTo: function(modelName, caption, attributes, options) {
-    let attr = createAttr(&#x27;belongsTo&#x27;, caption, options);
-    let proj = Projection.create(modelName, attributes);
-    attr = Ember.merge(attr, proj);
-    return attr;
-  },
-
-  /**
-   * Define hasMany relationship attribute in projection.
-   *
-   * @method hasMany
-   * @param {String} modelName The name of the model type.
-   * @param {String} caption A user-friendly caption for attribute.
-   * @param {Object} attributes Projection attributes.
-   * @param {Object} [options] Attribute options.
-   * @return {Object} Projection attribute.
-   * @public
-   */
-  hasMany: function(modelName, caption, attributes, options) {
-    let attr = createAttr(&#x27;hasMany&#x27;, caption, options);
-    let proj = Projection.create(modelName, attributes);
-    attr = Ember.merge(attr, proj);
-    return attr;
+  get: function(projection, store) {
+    var tree = getODataQueryTree(projection, store);
+    var query = getODataQuery(tree);
+    return query;
   }
 };
 
-function createAttr(kind, caption, options) {
-  return {
-    kind: kind,
-    caption: caption,
-    options: options || {}
+function getODataQueryTree(projection, store) {
+  let serializer = store.serializerFor(projection.modelName);
+  let tree = {
+    select: [serializer.primaryKey],
+    expand: {}
   };
+
+  let attributes = projection.attributes;
+  for (let attrName in attributes) {
+    if (attributes.hasOwnProperty(attrName)) {
+      let attr = attributes[attrName];
+      let normalizedAttrName = serializer.keyForAttribute(attrName);
+      switch (attr.kind) {
+        case &#x27;attr&#x27;:
+          tree.select.push(normalizedAttrName);
+          break;
+
+        case &#x27;hasMany&#x27;:
+        case &#x27;belongsTo&#x27;:
+          tree.select.push(normalizedAttrName);
+          tree.expand[normalizedAttrName] = getODataQueryTree(attr, store);
+          break;
+
+        default:
+          throw new Error(&#x60;Unknown kind of projection attribute: ${attr.kind}&#x60;);
+      }
+    }
+  }
+
+  return tree;
+}
+
+function getODataQuery(queryTree) {
+  var query = {};
+
+  var select = getODataSelectQuery(queryTree);
+  if (select) {
+    query.$select = select;
+  }
+
+  var expand = getODataExpandQuery(queryTree);
+  if (expand) {
+    query.$expand = expand;
+  }
+
+  return query;
+}
+
+function getODataExpandQuery(queryTree) {
+  var expandProperties = Object.keys(queryTree.expand);
+  if (!expandProperties.length) {
+    return null;
+  }
+
+  var query = [];
+  expandProperties.forEach(function(propertyName) {
+    var subTree = queryTree.expand[propertyName];
+    var expr = propertyName;
+    var select = getODataSelectQuery(subTree);
+    var expand = getODataExpandQuery(subTree);
+
+    if (select || expand) {
+      expr += &#x27;(&#x27;;
+      if (select) {
+        expr += &#x27;$select=&#x27; + select;
+      }
+
+      if (expand) {
+        expr += &#x27;;&#x27; + &#x27;$expand=&#x27; + expand;
+      }
+
+      expr += &#x27;)&#x27;;
+    }
+
+    query.push(expr);
+  });
+
+  return query.join(&#x27;,&#x27;);
+}
+
+function getODataSelectQuery(queryTree) {
+  if (queryTree.select.length) {
+    return queryTree.select.join(&#x27;,&#x27;);
+  } else {
+    return null;
+  }
 }
 
     </pre>

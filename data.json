@@ -5,14 +5,57 @@
         "version": "0.0.0"
     },
     "files": {
+        "ember-flexberry-projections/addon/mixins/projected-store.js": {
+            "name": "ember-flexberry-projections/addon/mixins/projected-store.js",
+            "modules": {},
+            "classes": {
+                "ProjectedStore": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-projections/addon/models/projected-model.js": {
+            "name": "ember-flexberry-projections/addon/models/projected-model.js",
+            "modules": {},
+            "classes": {
+                "ProjectedModel": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-projections/addon/utils/projection-attributes.js": {
             "name": "ember-flexberry-projections/addon/utils/projection-attributes.js",
-            "modules": {
-                "ember-flexberry-projections": 1
-            },
+            "modules": {},
             "classes": {
                 "ProjectionAttributes": 1
             },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-projections/addon/utils/projection-query.js": {
+            "name": "ember-flexberry-projections/addon/utils/projection-query.js",
+            "modules": {},
+            "classes": {
+                "ProjectionQuery": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-projections/addon/utils/projection.js": {
+            "name": "ember-flexberry-projections/addon/utils/projection.js",
+            "modules": {},
+            "classes": {
+                "Projection": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-projections/addon/index.js": {
+            "name": "ember-flexberry-projections/addon/index.js",
+            "modules": {
+                "ember-flexberry-projections": 1
+            },
+            "classes": {},
             "fors": {},
             "namespaces": {}
         }
@@ -23,16 +66,55 @@
             "submodules": {},
             "elements": {},
             "classes": {
-                "ProjectionAttributes": 1
+                "ProjectedStore": 1,
+                "ProjectedModel": 1,
+                "ProjectionAttributes": 1,
+                "ProjectionQuery": 1,
+                "Projection": 1
             },
             "fors": {},
             "namespaces": {},
-            "tag": "module",
-            "file": "ember-flexberry-projections/addon/utils/projection-attributes.js",
-            "line": 8
+            "tag": "main",
+            "file": "ember-flexberry-projections/addon/utils/projection.js",
+            "line": 5,
+            "description": "Ember Addon that adds support of projections in models.",
+            "itemtype": "main"
         }
     },
     "classes": {
+        "ProjectedStore": {
+            "name": "ProjectedStore",
+            "shortname": "ProjectedStore",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-projections",
+            "namespace": "",
+            "file": "ember-flexberry-projections/addon/mixins/projected-store.js",
+            "line": 8,
+            "description": "{{#crossLink \"DS.Store\"}}Store{{/crossLink}} mixin to support\nfetching models using {{#crossLink \"Projection\"}}projection{{/crossLink}}.",
+            "extends": "Ember.Mixin",
+            "access": "public",
+            "tagname": ""
+        },
+        "ProjectedModel": {
+            "name": "ProjectedModel",
+            "shortname": "ProjectedModel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-projections",
+            "namespace": "",
+            "file": "ember-flexberry-projections/addon/models/projected-model.js",
+            "line": 9,
+            "description": "Model that supports {{#crossLink \"Projection\"}}projections{{/crossLink}}.",
+            "access": "public",
+            "tagname": ""
+        },
         "ProjectionAttributes": {
             "name": "ProjectionAttributes",
             "shortname": "ProjectionAttributes",
@@ -48,10 +130,269 @@
             "description": "This class used to define projection attributes for model.",
             "access": "public",
             "tagname": ""
+        },
+        "ProjectionQuery": {
+            "name": "ProjectionQuery",
+            "shortname": "ProjectionQuery",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-projections",
+            "namespace": "",
+            "file": "ember-flexberry-projections/addon/utils/projection-query.js",
+            "line": 5,
+            "description": "Includes methods to convert {{#crossLink \"Projection\"}}{{/crossLink}}\nto URL query params.",
+            "access": "public",
+            "tagname": ""
+        },
+        "Projection": {
+            "name": "Projection",
+            "shortname": "Projection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-projections",
+            "namespace": "",
+            "file": "ember-flexberry-projections/addon/utils/projection.js",
+            "line": 5,
+            "description": "This class used to define projection for model.",
+            "access": "public",
+            "tagname": ""
         }
     },
     "elements": {},
     "classitems": [
+        {
+            "file": "ember-flexberry-projections/addon/mixins/projected-store.js",
+            "line": 17,
+            "description": "Finds the records for the given model type.\n\nSee {{#crossLink \"DS.Store/findAll:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "findAll",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Records promise.",
+                "type": "DS.AdapterPopulatedRecordArray"
+            },
+            "class": "ProjectedStore",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/mixins/projected-store.js",
+            "line": 40,
+            "description": "Returns a record for a given type and id combination.\n\nSee {{#crossLink \"DS.Store/findRecord:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "findRecord",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "Record ID.",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "options",
+                    "description": "Options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Record promise.",
+                "type": "Promise"
+            },
+            "class": "ProjectedStore",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/mixins/projected-store.js",
+            "line": 66,
+            "description": "This method delegates a query to the adapter.\n\nSee {{#crossLink \"DS.Store/query:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "query",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "An opaque query to be used by the adapter.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise, which is resolved with a\n                  {{#crossLink \"DS.RecordArray\"}}RecordArray{{/crossLink}}\n                  once the server returns.",
+                "type": "Promise"
+            },
+            "class": "ProjectedStore",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/mixins/projected-store.js",
+            "line": 88,
+            "description": "This method delegates a query to the adapter.\n\nSee {{#crossLink \"DS.Store/queryRecord:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "queryRecord",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "An opaque query to be used by the adapter.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise, which is resolved with a\n                  {{#crossLink \"DS.RecordObject\"}}RecordObject{{/crossLink}}\n                  once the server returns.",
+                "type": "Promise"
+            },
+            "class": "ProjectedStore",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/mixins/projected-store.js",
+            "line": 110,
+            "description": "Retrieves projection from query, converts it to query params and\nmerges with query.",
+            "itemtype": "method",
+            "name": "_normalizeQuery",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "Query parameters.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Modified query with projection parameters.\n                 Returns original query, if projection not specified.",
+                "type": "Object"
+            },
+            "class": "ProjectedStore",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/models/projected-model.js",
+            "line": 19,
+            "description": "Defined projections for current model type.",
+            "itemtype": "property",
+            "name": "projections",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "type": "Ember.Object",
+            "default": "null",
+            "class": "ProjectedModel",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/models/projected-model.js",
+            "line": 30,
+            "description": "Defines {{#crossLink \"Projection\"}}projection{{/crossLink}} for\nspecified model type.",
+            "itemtype": "method",
+            "name": "defineProjection",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "params": [
+                {
+                    "name": "projectionName",
+                    "description": "Projection name, eg 'EmployeeE'.",
+                    "type": "String"
+                },
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Created projection.",
+                "type": "Projection"
+            },
+            "class": "ProjectedModel",
+            "module": "ember-flexberry-projections"
+        },
         {
             "file": "ember-flexberry-projections/addon/utils/projection-attributes.js",
             "line": 15,
@@ -154,6 +495,60 @@
             "access": "public",
             "tagname": "",
             "class": "ProjectionAttributes",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/utils/projection-query.js",
+            "line": 13,
+            "description": "Converts {{#crossLink \"Projection\"}}{{/crossLink}}\nto URL query params for OData v4.",
+            "itemtype": "method",
+            "name": "get",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "projection",
+                    "description": "Model projection to convert.",
+                    "type": "Projection"
+                },
+                {
+                    "name": "store",
+                    "description": "The store service.",
+                    "type": "DS.Store"
+                }
+            ],
+            "return": {
+                "description": "Object with $select and $expand properties.",
+                "type": "Object"
+            },
+            "class": "ProjectionQuery",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/utils/projection.js",
+            "line": 12,
+            "description": "Creates model projection.",
+            "itemtype": "method",
+            "name": "create",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Model projection.",
+                "type": "Object"
+            },
+            "class": "Projection",
             "module": "ember-flexberry-projections"
         }
     ],
