@@ -9,6 +9,7 @@ Flexberry Documentation generated using [YUIDoc](http://yui.github.io/yuidoc/).
 * `npm install`
 
 ## Generation docs
+* `git submodule foreach git pull`
 * `yuidoc`
 
 ## Running / Development
