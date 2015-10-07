@@ -10,12 +10,11 @@ Flexberry Documentation generated using [YUIDoc](http://yui.github.io/yuidoc/).
 
 ## Generation docs
 * `git submodule foreach git pull`
-* `yuidoc`
+* `yuidoc` (pay attention to warnings in the process output)
 
 ## Running / Development
-* `yuidoc --server` (generate + fire up server)
-  <br/>or `yuidoc && python -m SimpleHTTPServer 3000`
-* Visit your app at [http://localhost:3000](http://localhost:3000).
+* `yuidoc --server`
+* Visit [http://localhost:3000](http://localhost:3000).
 
 ## Adding a new project in Generation
 * `git submodule add <project_repo>`
