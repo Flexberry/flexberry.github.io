@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/models/projected-model.js - Flexberry Documentation</title>
+    <title>ember-flexberry-projections/addon/models/model.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/ProjectedModel", "classes/ProjectedStore", "classes/Projection", "classes/ProjectionAttributes", "classes/ProjectionQuery", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Projection", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,11 +48,9 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/ProjectedModel.html">ProjectedModel</a></li>
-	                            <li><a href="../classes/ProjectedStore.html">ProjectedStore</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
-	                            <li><a href="../classes/ProjectionAttributes.html">ProjectionAttributes</a></li>
-	                            <li><a href="../classes/ProjectionQuery.html">ProjectionQuery</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
 	                    </ul>
 	                </div>
 	    
@@ -93,23 +91,25 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/models/projected-model.js <small>File</small></h1>
+    <h1>ember-flexberry-projections/addon/models/model.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
 import DS from &#x27;ember-data&#x27;;
-import Projection from &#x27;../utils/projection&#x27;;
+import createProj from &#x27;../utils/create&#x27;;
 
 /**
  * @module ember-flexberry-projections
  */
 
 /**
- * Model that supports {{#crossLink &quot;Projection&quot;}}projections{{/crossLink}}.
+ * Model that supports projections.
  *
- * @class ProjectedModel
+ * @class Model
+ * @namespace Projection
+ * @extends DS.Model
  * @public
  */
 var Model = DS.Model.extend({
@@ -128,8 +128,7 @@ Model.reopenClass({
   projections: null,
 
   /**
-   * Defines {{#crossLink &quot;Projection&quot;}}projection{{/crossLink}} for
-   * specified model type.
+   * Defines projection for specified model type.
    *
    * @method defineProjection
    * @public
@@ -138,10 +137,10 @@ Model.reopenClass({
    * @param {String} projectionName Projection name, eg &#x27;EmployeeE&#x27;.
    * @param {String} modelName The name of the model type.
    * @param {Object} attributes Projection attributes.
-   * @return {Projection} Created projection.
+   * @return {Object} Created projection.
    */
   defineProjection: function(projectionName, modelName, attributes) {
-    let proj = Projection.create(modelName, attributes);
+    let proj = createProj(modelName, attributes);
 
     if (!this.projections) {
       this.reopenClass({

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/mixins/projected-store.js - Flexberry Documentation</title>
+    <title>ember-flexberry-projections/addon/mixins/store.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/ProjectedModel", "classes/ProjectedStore", "classes/Projection", "classes/ProjectionAttributes", "classes/ProjectionQuery", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Projection", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,11 +48,9 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/ProjectedModel.html">ProjectedModel</a></li>
-	                            <li><a href="../classes/ProjectedStore.html">ProjectedStore</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
-	                            <li><a href="../classes/ProjectionAttributes.html">ProjectionAttributes</a></li>
-	                            <li><a href="../classes/ProjectionQuery.html">ProjectionQuery</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
 	                    </ul>
 	                </div>
 	    
@@ -93,23 +91,24 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/mixins/projected-store.js <small>File</small></h1>
+    <h1>ember-flexberry-projections/addon/mixins/store.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
-import ProjectionQuery from &#x27;../utils/projection-query&#x27;;
+import getQuery from &#x27;../utils/query&#x27;;
 
 /**
  * @module ember-flexberry-projections
  */
 
 /**
- * {{#crossLink &quot;DS.Store&quot;}}Store{{/crossLink}} mixin to support
- * fetching models using {{#crossLink &quot;Projection&quot;}}projection{{/crossLink}}.
+ * Mixin for {{#crossLink &quot;DS.Store&quot;}}Store{{/crossLink}} to support
+ * fetching models using projection.
  *
- * @class ProjectedStore
+ * @class Store
+ * @namespace Projection
  * @extends Ember.Mixin
  * @public
  */
@@ -225,7 +224,7 @@ export default Ember.Mixin.create({
       let projName = query.projection;
       let typeClass = this.modelFor(modelName);
       let proj = typeClass.projections.get(projName);
-      let projQuery = ProjectionQuery.get(proj, this);
+      let projQuery = getQuery(proj, this);
 
       delete query.projection;
       query = Ember.merge(query, projQuery);

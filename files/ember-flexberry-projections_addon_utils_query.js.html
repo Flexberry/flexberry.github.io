@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/utils/projection.js - Flexberry Documentation</title>
+    <title>ember-flexberry-projections/addon/utils/query.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/ProjectedModel", "classes/ProjectedStore", "classes/Projection", "classes/ProjectionAttributes", "classes/ProjectionQuery", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Projection", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,11 +48,9 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/ProjectedModel.html">ProjectedModel</a></li>
-	                            <li><a href="../classes/ProjectedStore.html">ProjectedStore</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
-	                            <li><a href="../classes/ProjectionAttributes.html">ProjectionAttributes</a></li>
-	                            <li><a href="../classes/ProjectionQuery.html">ProjectionQuery</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
 	                    </ul>
 	                </div>
 	    
@@ -93,7 +91,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/utils/projection.js <small>File</small></h1>
+    <h1>ember-flexberry-projections/addon/utils/query.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -103,29 +101,105 @@
  */
 
 /**
- * This class used to define projection for model.
+ * Converts projection to URL query params for OData v4.
  *
- * @class Projection
- * @public
+ * @param {Object} projection Model projection to convert.
+ * @param {DS.Store} store The store service.
+ * @return {Object} Object with $select and $expand properties.
  */
-export default {
-  /**
-   * Creates model projection.
-   *
-   * @method create
-   * @public
-   *
-   * @param {String} modelName The name of the model type.
-   * @param {Object} attributes Projection attributes.
-   * @return {Object} Model projection.
-   */
-  create: function(modelName, attributes) {
-    return {
-      modelName: modelName,
-      attributes: attributes || {}
-    };
+export default function get(projection, store) {
+  var tree = getODataQueryTree(projection, store);
+  var query = getODataQuery(tree);
+  return query;
+}
+
+function getODataQueryTree(projection, store) {
+  let serializer = store.serializerFor(projection.modelName);
+  let tree = {
+    select: [serializer.primaryKey],
+    expand: {}
+  };
+
+  let attributes = projection.attributes;
+  for (let attrName in attributes) {
+    if (attributes.hasOwnProperty(attrName)) {
+      let attr = attributes[attrName];
+      let normalizedAttrName = serializer.keyForAttribute(attrName);
+      switch (attr.kind) {
+        case &#x27;attr&#x27;:
+          tree.select.push(normalizedAttrName);
+          break;
+
+        case &#x27;hasMany&#x27;:
+        case &#x27;belongsTo&#x27;:
+          tree.select.push(normalizedAttrName);
+          tree.expand[normalizedAttrName] = getODataQueryTree(attr, store);
+          break;
+
+        default:
+          throw new Error(&#x60;Unknown kind of projection attribute: ${attr.kind}&#x60;);
+      }
+    }
   }
-};
+
+  return tree;
+}
+
+function getODataQuery(queryTree) {
+  var query = {};
+
+  var select = getODataSelectQuery(queryTree);
+  if (select) {
+    query.$select = select;
+  }
+
+  var expand = getODataExpandQuery(queryTree);
+  if (expand) {
+    query.$expand = expand;
+  }
+
+  return query;
+}
+
+function getODataExpandQuery(queryTree) {
+  var expandProperties = Object.keys(queryTree.expand);
+  if (!expandProperties.length) {
+    return null;
+  }
+
+  var query = [];
+  expandProperties.forEach(function(propertyName) {
+    var subTree = queryTree.expand[propertyName];
+    var expr = propertyName;
+    var select = getODataSelectQuery(subTree);
+    var expand = getODataExpandQuery(subTree);
+
+    if (select || expand) {
+      expr += &#x27;(&#x27;;
+      if (select) {
+        expr += &#x27;$select=&#x27; + select;
+      }
+
+      if (expand) {
+        expr += &#x27;;&#x27; + &#x27;$expand=&#x27; + expand;
+      }
+
+      expr += &#x27;)&#x27;;
+    }
+
+    query.push(expr);
+  });
+
+  return query.join(&#x27;,&#x27;);
+}
+
+function getODataSelectQuery(queryTree) {
+  if (queryTree.select.length) {
+    return queryTree.select.join(&#x27;,&#x27;);
+  } else {
+    return null;
+  }
+}
 
     </pre>
 </div>

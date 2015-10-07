@@ -1,11 +1,9 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
-        "ProjectedModel",
-        "ProjectedStore",
         "Projection",
-        "ProjectionAttributes",
-        "ProjectionQuery"
+        "Projection.Model",
+        "Projection.Store"
     ],
     "modules": [
         "ember-flexberry-projections"

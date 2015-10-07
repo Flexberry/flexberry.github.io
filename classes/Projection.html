@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/ProjectedModel", "classes/ProjectedStore", "classes/Projection", "classes/ProjectionAttributes", "classes/ProjectionQuery", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Projection", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,11 +48,9 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/ProjectedModel.html">ProjectedModel</a></li>
-	                            <li><a href="../classes/ProjectedStore.html">ProjectedStore</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
-	                            <li><a href="../classes/ProjectionAttributes.html">ProjectionAttributes</a></li>
-	                            <li><a href="../classes/ProjectionQuery.html">ProjectionQuery</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
 	                    </ul>
 	                </div>
 	    
@@ -100,7 +98,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-projections_addon_utils_projection.js.html#l5"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;projection.js:5</code></a>
+            Defined in: <a href="../files/ember-flexberry-projections_addon_index.js.html#l13"><code>ember-flexberry-projections&#x2F;addon&#x2F;index.js:13</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a>
@@ -109,7 +107,7 @@
 
 
 <div class="well well-small">
-    <p>This class used to define projection for model.</p>
+    <p>This namespace contains classes and methods for working with projections.</p>
 
 </div>
 
@@ -130,7 +128,19 @@
 
                     <ul class="index-list methods">
                             <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_attr" data-tablink="attr">attr</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_belongsTo" data-tablink="belongsTo">belongsTo</a>
+
+                            </li>
+                            <li class="index-item method public">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_create" data-tablink="create">create</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_hasMany" data-tablink="hasMany">hasMany</a>
 
                             </li>
                     </ul>
@@ -143,6 +153,196 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
+                    <div id="method_attr" class="method item public">
+                        <h3 class="name"><code>attr</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>caption</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[options]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l8"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:8</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Define plain attribute in projection.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">caption</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>A user-friendly caption for attribute.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[options]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Attribute options.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Projection attribute.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_belongsTo" class="method item public">
+                        <h3 class="name"><code>belongsTo</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>modelName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>caption</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>attributes</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[options]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l24"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:24</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Define belongsTo relationship attribute in projection.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">modelName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The name of the model type.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">caption</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>A user-friendly caption for attribute.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">attributes</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Projection attributes.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[options]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Attribute options.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Projection attribute.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method_create" class="method item public">
                         <h3 class="name"><code>create</code></h3>
                     
@@ -171,7 +371,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_projection.js.html#l12"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;projection.js:12</code></a>
+                            <a href="../files/ember-flexberry-projections_addon_utils_create.js.html#l5"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;create.js:5</code></a>
                             </p>
                     
                     
@@ -218,6 +418,115 @@
                                 <div class="returns-description">
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
                                         <p>Model projection.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_hasMany" class="method item public">
+                        <h3 class="name"><code>hasMany</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>modelName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>caption</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>attributes</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[options]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l44"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:44</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Define hasMany relationship attribute in projection.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">modelName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The name of the model type.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">caption</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>A user-friendly caption for attribute.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">attributes</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Projection attributes.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[options]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Attribute options.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Projection attribute.</p>
                     
                                 </div>
                             </div>
