@@ -3,7 +3,8 @@
   "options": {
     "linkNatives": true,
     "paths": [
-      "./ember-flexberry-projections/addon"
+      "./ember-flexberry-projections/addon",
+      "./ember-flexberry/addon"
     ],
     "outdir": ".",
     "themedir": "./node_modules/yuidoc-bootstrap-theme",
