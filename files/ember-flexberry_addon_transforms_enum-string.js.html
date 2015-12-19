@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/models/model.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/transforms/enum-string.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -93,69 +93,121 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/models/model.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/transforms/enum-string.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
 import DS from &#x27;ember-data&#x27;;
-import createProj from &#x27;../utils/create&#x27;;
 
 /**
- * @module ember-flexberry-projections
- */
-
-/**
- * Model that supports projections.
+ * Base transform class that implements an enumeration type.
+ * During serialization and deserialization it checks if value is not outside of accessible values and returns same string.
  *
- * @class Model
- * @namespace Projection
- * @extends DS.Model
+ * @class EnumTransform
+ * @extends DS.Transform
  * @public
  */
-var Model = DS.Model.extend({
-});
-
-Model.reopenClass({
+export default DS.Transform.extend({
+  // TODO: captions support (add support of type OrderedSet?)
   /**
-   * Defined projections for current model type.
+   * Available choises of enumeration.
+   * It is required field in a derived class.
    *
-   * @property projections
+   * @property values
    * @public
-   * @static
-   * @type Ember.Object
-   * @default null
+   * @type Array|Ember.Array|Object
+   * @example
+   *     [&#x27;Easy&#x27;, &#x27;Difficult&#x27;, &#x27;Hard&#x27;]
+   *     { Easy: 1, Difficult: 2, Hard: 3 }
    */
-  projections: null,
+  values: null,
 
   /**
-   * Defines projection for specified model type.
+   * Returns deserialized enumeration field.
    *
-   * @method defineProjection
+   * @method deserialize
    * @public
-   * @static
    *
-   * @param {String} projectionName Projection name, eg &#x27;EmployeeE&#x27;.
-   * @param {String} modelName The name of the model type.
-   * @param {Object} attributes Projection attributes.
-   * @return {Object} Created projection.
+   * @param {String} serialized Serialized enumeration field (name).
+   * @return {String} Deserialized enumeration field (name).
+   *                  Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;serialized&#x60; has one of these values.
    */
-  defineProjection: function(projectionName, modelName, attributes) {
-    let proj = createProj(modelName, attributes);
-
-    if (!this.projections) {
-      this.reopenClass({
-        projections: Ember.Object.create()
-      });
+  deserialize: function(serialized) {
+    let serializedValue = serialized;
+    if (serializedValue === null || serializedValue === undefined) {
+      return serializedValue;
     }
 
-    this.projections.set(projectionName, proj);
-    return proj;
+    if (typeof serializedValue !== &#x27;string&#x27;) {
+      throw new Error(&#x60;Wrong type of serialized enumeration field: ${typeof serializedValue}&#x60;);
+    }
+
+    let values = this.values;
+    if (Ember.isArray(values)) {
+      let index = values.indexOf(serializedValue);
+      if (index === -1) {
+        throw new Error(&#x60;Unable to find serialized enumeration field: ${serializedValue}&#x60;);
+      }
+
+      return serializedValue;
+    }
+
+    if (typeof values === &#x27;object&#x27;) {
+      let index = values[serializedValue];
+      if (index === null || index === undefined) {
+        throw new Error(&#x60;Unable to find serialized enumeration field: ${serializedValue}&#x60;);
+      }
+
+      return serializedValue;
+    }
+
+    throw new Error(&#x60;Wrong type of values: ${typeof values}&#x60;);
+  },
+
+  /**
+   * Returns serialized enumeration field.
+   *
+   * @method serialize
+   * @public
+   *
+   * @param {String} deserialized Deserialized enumeration field (name).
+   * @return {String} Serialized enumeration field (name).
+   *                  Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;deserialized&#x60; has one of these values.
+   */
+  serialize: function(deserialized) {
+    let name = deserialized;
+    if (name === null || name === undefined) {
+      return name;
+    }
+
+    if (typeof name !== &#x27;string&#x27;) {
+      throw new Error(&#x60;Wrong type of deserialized enumeration field: ${typeof name}&#x60;);
+    }
+
+    let values = this.values;
+    if (Ember.isArray(values)) {
+      let index = values.indexOf(name);
+      if (index === -1) {
+        throw new Error(&#x60;Unable to find deserialized enumeration field: ${name}&#x60;);
+      }
+
+      return deserialized;
+    }
+
+    if (typeof values === &#x27;object&#x27;) {
+      let index = values[name];
+      if (index === null || index === undefined) {
+        throw new Error(&#x60;Unable to find deserialized enumeration field: ${name}&#x60;);
+      }
+
+      return deserialized;
+    }
+
+    throw new Error(&#x60;Wrong type of values: ${typeof values}&#x60;);
   }
 });
-
-export default Model;
 
     </pre>
 </div>

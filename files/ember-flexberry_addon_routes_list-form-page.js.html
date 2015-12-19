@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/models/model.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/routes/list-form-page.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -93,69 +93,87 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/models/model.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/routes/list-form-page.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
-import DS from &#x27;ember-data&#x27;;
-import createProj from &#x27;../utils/create&#x27;;
+import SortableRouteMixin from &#x27;../mixins/sortable-route&#x27;;
+import PaginatedRouteMixin from &#x27;../mixins/paginated-route&#x27;;
+import ProjectedModelRoute from &#x27;../routes/projected-model-form&#x27;;
+import Settings from &#x27;../models/settings&#x27;;
 
-/**
- * @module ember-flexberry-projections
- */
+export default ProjectedModelRoute.extend(PaginatedRouteMixin, SortableRouteMixin, {
+  actions: {
+    /**
+     * Table row click handler.
+     *
+     * @param {Ember.Object} record Record related to clicked table row.
+     */
+    rowClick: function(record) {
+      this.transitionTo(record.constructor.modelName, record.get(&#x27;id&#x27;));
+    },
 
-/**
- * Model that supports projections.
- *
- * @class Model
- * @namespace Projection
- * @extends DS.Model
- * @public
- */
-var Model = DS.Model.extend({
-});
+    refreshList: function() {
+      this.refresh();
+    }
+  },
 
-Model.reopenClass({
-  /**
-   * Defined projections for current model type.
-   *
-   * @property projections
-   * @public
-   * @static
-   * @type Ember.Object
-   * @default null
-   */
-  projections: null,
+  model: function(params, transition) {
+    var page = parseInt(params.page, 10);
 
-  /**
-   * Defines projection for specified model type.
-   *
-   * @method defineProjection
-   * @public
-   * @static
-   *
-   * @param {String} projectionName Projection name, eg &#x27;EmployeeE&#x27;.
-   * @param {String} modelName The name of the model type.
-   * @param {Object} attributes Projection attributes.
-   * @return {Object} Created projection.
-   */
-  defineProjection: function(projectionName, modelName, attributes) {
-    let proj = createProj(modelName, attributes);
+    let settings = Settings.create();
+    let perPage = settings.get(&#x27;perPage&#x27;);
 
-    if (!this.projections) {
-      this.reopenClass({
-        projections: Ember.Object.create()
+    Ember.assert(&#x27;page must be greater than zero.&#x27;, page &gt; 0);
+    Ember.assert(&#x27;per_page must be greater than zero.&#x27;, perPage &gt; 0);
+
+    var store = this.store;
+    var modelName = this.get(&#x27;modelName&#x27;);
+    var adapter = store.adapterFor(modelName);
+
+    let pageQuery = adapter.getPaginationQuery(page, perPage);
+    var sorting = this.deserializeSortingParam(params.sort);
+    let sortQuery = adapter.getSortingQuery(sorting, store.serializerFor(modelName));
+
+    let query = {};
+    Ember.merge(query, pageQuery);
+    Ember.merge(query, sortQuery);
+    Ember.merge(query, { projection: this.get(&#x27;modelProjection&#x27;) });
+
+    // find by query is always fetching.
+    // TODO: support getting from cache with &quot;store.all-&gt;filterByProjection&quot;.
+    return store.query(modelName, query)
+      .then((records) =&gt; {
+        this.includeSorting(records, sorting);
+        return this.includePagination(records, page, perPage);
       });
+  },
+
+  // A hook you can use to setup the controller for the current route.
+  setupController: function(controller, model) {
+    // Call _super for default behavior.
+    this._super(controller, model);
+
+    // Implement your custom setup after.
+
+    var currentPage = this._getCurrent();
+    var lastPage = this._getLast();
+    if (currentPage &gt; lastPage) {
+      // After changing records number per page there is possibility that current page is greater then last one.
+      // In this case we have to change current page to last.
+      this.transitionToPageRoute(lastPage);
+      return;
     }
 
-    this.projections.set(projectionName, proj);
-    return proj;
+    // Define &#x27;modelProjection&#x27; for controller instance.
+    // TODO: remove that when list-form-page controller will be moved to this route.
+    let modelClass = this.store.modelFor(this.get(&#x27;modelName&#x27;));
+    let proj = modelClass.projections.get(this.get(&#x27;modelProjection&#x27;));
+    controller.set(&#x27;modelProjection&#x27;, proj);
   }
 });
-
-export default Model;
 
     </pre>
 </div>

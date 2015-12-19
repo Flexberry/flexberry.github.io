@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Projection - Flexberry Documentation</title>
+    <title>EnumTransform - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -93,14 +93,17 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>Projection <small>Class</small></h1>
+    <h1>EnumTransform <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
 
+        <div class="extends">
+            Extends <a href="http://emberjs.com/api/data/classes/DS.Transform.html" class="crosslink external" target="_blank">DS.Transform</a>
+        </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-projections_addon_index.js.html#l14"><code>ember-flexberry-projections&#x2F;addon&#x2F;index.js:14</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l4"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:4</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a>
@@ -109,7 +112,8 @@
 
 
 <div class="well well-small">
-    <p>This namespace contains classes and methods for working with projections.</p>
+    <p>Base transform class that implements an enumeration type.
+During serialization and deserialization it checks if value is not outside of accessible values and returns same string.</p>
 
 </div>
 
@@ -119,6 +123,7 @@
         <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
             <li><a data-toggle="tab" href="#methods">Methods</a></li>
+            <li><a data-toggle="tab" href="#properties">Properties</a></li>
     </ul>
 
     <div class="tab-content">
@@ -128,26 +133,40 @@
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods">
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_attr" data-tablink="attr">attr</a>
+                    <ul class="index-list methods extends">
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_deserialize" data-tablink="deserialize">deserialize</a>
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_belongsTo" data-tablink="belongsTo">belongsTo</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_deserialize" data-tablink="deserialize">deserialize</a>
+
+                            </li>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_serialize" data-tablink="serialize">serialize</a>
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_create" data-tablink="create">create</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_hasMany" data-tablink="hasMany">hasMany</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_serialize" data-tablink="serialize">serialize</a>
 
                             </li>
                     </ul>
                 </div>
 
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                            <li class="index-item property public">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_values" data-tablink="values">values</a>
+
+                            </li>
+                            <li class="index-item property public">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_values" data-tablink="values">values</a>
+
+                            </li>
+                    </ul>
+                </div>
 
 
         </div>
@@ -155,22 +174,19 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method_attr" class="method item public">
-                        <h3 class="name"><code>attr</code></h3>
+                    <div id="method_deserialize" class="method item public">
+                        <h3 class="name"><code>deserialize</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>caption</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[options]</code>
+                                            <code>serialized</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                             </span>
                     
                     
@@ -181,9 +197,12 @@
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l8"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:8</code></a>
+                                <p>Inherited from
+                                <a href="http://emberjs.com/api/data/classes/DS.Transform.html#method_deserialize">
+                                    DS.Transform
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l27"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:27</code></a>
                             </p>
                     
                     
@@ -191,7 +210,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Define plain attribute in projection.</p>
+                            <p>Returns deserialized enumeration field.</p>
                     
                         </div>
                     
@@ -200,24 +219,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">caption</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <code class="param-name">serialized</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>A user-friendly caption for attribute.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[options]</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Attribute options.</p>
+                                            <p>Serialized enumeration field (index).</p>
                     
                                         </div>
                     
@@ -229,35 +236,28 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Projection attribute.</p>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>Deserialized enumeration field (name).
+                    Returns <code>null</code> or <code>undefined</code> if <code>serialized</code> has
+                    one of these values.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_belongsTo" class="method item public">
-                        <h3 class="name"><code>belongsTo</code></h3>
+                    <div id="method_deserialize" class="method item public">
+                        <h3 class="name"><code>deserialize</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>modelName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>caption</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>attributes</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[options]</code>
+                                            <code>serialized</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                             </span>
                     
                     
@@ -270,7 +270,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l24"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:24</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l27"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:27</code></a>
                             </p>
                     
                     
@@ -278,7 +278,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Define belongsTo relationship attribute in projection.</p>
+                            <p>Returns deserialized enumeration field.</p>
                     
                         </div>
                     
@@ -287,46 +287,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">modelName</code>
+                                            <code class="param-name">serialized</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of the model type.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">caption</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>A user-friendly caption for attribute.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">attributes</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Projection attributes.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[options]</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Attribute options.</p>
+                                            <p>Serialized enumeration field (name).</p>
                     
                                         </div>
                     
@@ -338,29 +304,27 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Projection attribute.</p>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>Deserialized enumeration field (name).
+                    Returns <code>null</code> or <code>undefined</code> if <code>serialized</code> has one of these values.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_create" class="method item public">
-                        <h3 class="name"><code>create</code></h3>
+                    <div id="method_serialize" class="method item public">
+                        <h3 class="name"><code>serialize</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>modelName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>attributes</code>
+                                            <code>deserialized</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                             </span>
                     
                     
@@ -371,9 +335,12 @@
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_create.js.html#l5"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;create.js:5</code></a>
+                                <p>Inherited from
+                                <a href="http://emberjs.com/api/data/classes/DS.Transform.html#method_serialize">
+                                    DS.Transform
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l72"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:72</code></a>
                             </p>
                     
                     
@@ -381,7 +348,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Creates model projection.</p>
+                            <p>Returns serialized enumeration field.</p>
                     
                         </div>
                     
@@ -390,23 +357,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">modelName</code>
+                                            <code class="param-name">deserialized</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of the model type.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">attributes</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Projection attributes.</p>
+                                            <p>Deserialized enumeration field (name).</p>
                     
                                         </div>
                     
@@ -418,35 +374,28 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Model projection.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>:
+                                        <p>Serialized enumeration field (index).
+                    Returns <code>null</code> or <code>undefined</code> if <code>deserialized</code> has
+                    one of these values.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_hasMany" class="method item public">
-                        <h3 class="name"><code>hasMany</code></h3>
+                    <div id="method_serialize" class="method item public">
+                        <h3 class="name"><code>serialize</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>modelName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>caption</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>attributes</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[options]</code>
+                                            <code>deserialized</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                             </span>
                     
                     
@@ -459,7 +408,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l44"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:44</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l69"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:69</code></a>
                             </p>
                     
                     
@@ -467,7 +416,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Define hasMany relationship attribute in projection.</p>
+                            <p>Returns serialized enumeration field.</p>
                     
                         </div>
                     
@@ -476,46 +425,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">modelName</code>
+                                            <code class="param-name">deserialized</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of the model type.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">caption</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>A user-friendly caption for attribute.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">attributes</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Projection attributes.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[options]</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Attribute options.</p>
+                                            <p>Deserialized enumeration field (name).</p>
                     
                                         </div>
                     
@@ -527,8 +442,9 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Projection attribute.</p>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>Serialized enumeration field (name).
+                    Returns <code>null</code> or <code>undefined</code> if <code>deserialized</code> has one of these values.</p>
                     
                                 </div>
                             </div>
@@ -536,6 +452,82 @@
                     </div>
             </div>
 
+            <div id="properties" class="tab-pane">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_values" class="property item public">
+                        <h3 class="name"><code>values</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> | <a href="http://emberjs.com/api/classes/Ember.Array.html" class="crosslink external" target="_blank">Ember.Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l14"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:14</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Available choises of enumeration.
+                    It is required field in a derived class.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code>['Easy', 'Difficult', 'Hard']
+                    { Easy: 1, Difficult: 2, Hard: 3 }</code></pre>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="property_values" class="property item public">
+                        <h3 class="name"><code>values</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> | <a href="http://emberjs.com/api/classes/Ember.Array.html" class="crosslink external" target="_blank">Ember.Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l14"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:14</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Available choises of enumeration.
+                    It is required field in a derived class.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code>['Easy', 'Difficult', 'Hard']
+                    { Easy: 1, Difficult: 2, Hard: 3 }</code></pre>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+            </div>
 
 
     </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/models/model.js - Flexberry Documentation</title>
+    <title>ember-flexberry-projections/addon/mixins/adapter.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -93,69 +93,49 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/models/model.js <small>File</small></h1>
+    <h1>ember-flexberry-projections/addon/mixins/adapter.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
-import DS from &#x27;ember-data&#x27;;
-import createProj from &#x27;../utils/create&#x27;;
 
 /**
  * @module ember-flexberry-projections
  */
 
 /**
- * Model that supports projections.
+ * Mixin for {{#crossLink &quot;DS.Adapter&quot;}}Adapter{{/crossLink}} to support
+ * fetching models using projection.
  *
- * @class Model
+ * @class Adapter
  * @namespace Projection
- * @extends DS.Model
+ * @extends Ember.Mixin
  * @public
  */
-var Model = DS.Model.extend({
-});
-
-Model.reopenClass({
+export default Ember.Mixin.create({
   /**
-   * Defined projections for current model type.
+   * Builds a URL for a given type and query.
+   * Optionally, it supports an ID in the query parameters for fetching
+   * a definite record.
    *
-   * @property projections
+   * See {{#crossLink &quot;DS.BuildURLMixin/urlForQueryRecord:method&quot;}}{{/crossLink}}
+   * for details.
+   *
+   * @method urlForQueryRecord
    * @public
-   * @static
-   * @type Ember.Object
-   * @default null
-   */
-  projections: null,
-
-  /**
-   * Defines projection for specified model type.
    *
-   * @method defineProjection
-   * @public
-   * @static
-   *
-   * @param {String} projectionName Projection name, eg &#x27;EmployeeE&#x27;.
-   * @param {String} modelName The name of the model type.
-   * @param {Object} attributes Projection attributes.
-   * @return {Object} Created projection.
+   * @param {Object} query Query parameters.
+   * @param {String} [query.id] ID of a record.
+   * @param {String} modelName Record type.
+   * @return {String} url URL for query a record.
    */
-  defineProjection: function(projectionName, modelName, attributes) {
-    let proj = createProj(modelName, attributes);
-
-    if (!this.projections) {
-      this.reopenClass({
-        projections: Ember.Object.create()
-      });
-    }
-
-    this.projections.set(projectionName, proj);
-    return proj;
+  urlForQueryRecord: function(query, modelName) {
+    let id = query.id;
+    delete query.id;
+    return this._buildURL(modelName, id);
   }
 });
-
-export default Model;
 
     </pre>
 </div>

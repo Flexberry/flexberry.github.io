@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Projection", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,7 +48,9 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
 	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
 	                    </ul>
@@ -104,6 +106,7 @@
  */
 
 import Store from &#x27;./mixins/store&#x27;;
+import Adapter from &#x27;./mixins/adapter&#x27;;
 import Model from &#x27;./models/model&#x27;;
 import create from &#x27;./utils/create&#x27;;
 import {attr, belongsTo, hasMany} from &#x27;./utils/attributes&#x27;;
@@ -117,6 +120,7 @@ import {attr, belongsTo, hasMany} from &#x27;./utils/attributes&#x27;;
  */
 let Projection = {
   Store: Store,
+  Adapter: Adapter,
   Model: Model,
   create: create,
   attr: attr,
