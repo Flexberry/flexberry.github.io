@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/components/object-list-view.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/components/object-list-view.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @module ember-flexberry
+ */
+
+import Ember from &#x27;ember&#x27;;
+import BaseComponent from &#x27;./flexberry-base-component&#x27;;
+
+/**
+ * @class FlexberryObjectListView
+ * @extends FlexberryBaseComponent
+ */
+export default BaseComponent.extend({
+  tagName: &#x27;table&#x27;,
+  classNames: [
+    &#x27;object-list-view&#x27;,
+
+    // Semantic UI style.
+    &#x27;table&#x27;,
+
+    // DataTables styles: https://datatables.net/manual/styling/classes.
+    &#x27;dataTable&#x27;,
+    &#x27;cell-border&#x27;,
+    &#x27;compact&#x27;,
+    &#x27;hover&#x27;,
+    &#x27;stripe&#x27;
+  ],
+
+  modelProjection: null,
+  content: null,
+  sorting: null,
+  selectedRecord: null,
+  selectedRecords: null,
+  customColumnAttributes: null,
+
+  headerCellComponent: &#x27;object-list-view-header-cell&#x27;,
+  cellComponent: &#x27;object-list-view-cell&#x27;,
+
+  action: &#x27;rowClick&#x27;,
+  addColumnToSorting: &#x27;addColumnToSorting&#x27;,
+  sortByColumn: &#x27;sortByColumn&#x27;,
+  rowClickable: true,
+  headerClickable: true,
+  showCheckBoxInRow: false,
+  showDeleteButtonInRow: false,
+  store: null,
+  dataTable: null,
+
+  /**
+   * Service that triggers groupedit events.
+   *
+   * @property groupEditEventsService
+   * @type GroupEditEvents
+   */
+  groupEditEventsService: Ember.inject.service(&#x27;groupedit-events&#x27;),
+
+  contentWithKeys: null,
+
+  init() {
+    this._super(...arguments);
+    this.set(&#x27;store&#x27;, this.get(&#x27;targetObject.store&#x27;));
+    this.set(&#x27;selectedRecords&#x27;, Ember.A());
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
+    this.set(&#x27;contentWithKeys&#x27;, Ember.A());
+    var _this = this;
+    if (this.content) {
+      this.get(&#x27;content&#x27;).forEach(function(item, index, enumerable) {
+        _this._addModel(item);
+      });
+    }
+  },
+
+  actions: {
+    rowClick: function(key, record) {
+      if (this.rowClickable) {
+        this.set(&#x27;selectedRecord&#x27;, record);
+        this._setActiveRecord(key);
+        this.sendAction(&#x27;action&#x27;, record);
+      }
+    },
+    headerCellClick: function(column, event) {
+      if (this.headerClickable) {
+        var action = event.ctrlKey ? &#x27;addColumnToSorting&#x27; : &#x27;sortByColumn&#x27;;
+        this.sendAction(action, column);
+      }
+    },
+    deleteRow: function(key, record) {
+      if (confirm(&#x27;Do you really want to delete this record?&#x27;)) {
+        var rowToDelete = this._getRowByKey(key);
+        this._removeModelWithKey(key);
+        this.dataTable.api().row(rowToDelete).remove().draw(false);
+        record.deleteRecord();
+        var componentName = this.get(&#x27;componentName&#x27;);
+        this.get(&#x27;groupEditEventsService&#x27;).rowDeletedTrigger(componentName, record);
+      }
+    },
+    selectRow: function(key, record) {
+      var selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+      var selectedRow = this._getRowByKey(key);
+      var checkBoxChecked = selectedRow.find(&#x27;input[type=checkbox]&#x27;).prop(&#x27;checked&#x27;);
+      if (checkBoxChecked) {
+        if (!selectedRow.hasClass(&#x27;selected&#x27;)) {
+          selectedRow.addClass(&#x27;selected&#x27;);
+        }
+
+        if (selectedRecords.indexOf(record) === -1) {
+          selectedRecords.pushObject(record);
+        }
+      }
+      else {
+        if (selectedRow.hasClass(&#x27;selected&#x27;)) {
+          selectedRow.removeClass(&#x27;selected&#x27;);
+        }
+
+        selectedRecords.removeObject(record);
+      }
+
+      var componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;groupEditEventsService&#x27;).rowSelectedTrigger(componentName, record, selectedRecords.length);
+    }
+  },
+
+  didInsertElement: function() {
+    var table = this.$().dataTable({
+      info: false,
+      ordering: false,
+      paging: false,
+      searching: false
+    });
+    this.set(&#x27;dataTable&#x27;, table);
+    if (this.rowClickable) {
+      var key = this._getModelKey(this.selectedRecord);
+      if (key) {
+        this._setActiveRecord(key);
+      }
+    }
+  },
+
+  columns: Ember.computed(&#x27;modelProjection&#x27;, function() {
+    var projection = this.get(&#x27;modelProjection&#x27;);
+    if (!projection) {
+      throw new Error(&#x27;No projection was defined.&#x27;);
+    }
+
+    let cols = this._generateColumns(projection.attributes);
+    return cols;
+  }),
+
+  willDestroy() {
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
+    this._super(...arguments);
+  },
+
+  _generateColumns: function(attributes, columnsBuf, relationshipPath) {
+    columnsBuf = columnsBuf || [];
+    relationshipPath = relationshipPath || &#x27;&#x27;;
+
+    for (let attrName in attributes) {
+      let currentRelationshipPath = relationshipPath;
+      if (!attributes.hasOwnProperty(attrName)) {
+        continue;
+      }
+
+      let attr = attributes[attrName];
+      switch (attr.kind) {
+        case &#x27;hasMany&#x27;:
+          break;
+
+        case &#x27;belongsTo&#x27;:
+          if (!attr.options.hidden) {
+            let bindingPath = currentRelationshipPath + attrName;
+            if (attr.options.displayMemberPath) {
+              bindingPath += &#x27;.&#x27; + attr.options.displayMemberPath;
+            } else {
+              bindingPath += &#x27;.id&#x27;;
+            }
+
+            let column = this._createColumn(attr, bindingPath);
+            columnsBuf.push(column);
+          }
+
+          currentRelationshipPath += attrName + &#x27;.&#x27;;
+          this._generateColumns(attr.attributes, columnsBuf, currentRelationshipPath);
+          break;
+
+        case &#x27;attr&#x27;:
+          if (attr.options.hidden) {
+            break;
+          }
+
+          let bindingPath = currentRelationshipPath + attrName;
+          let column = this._createColumn(attr, bindingPath);
+          columnsBuf.push(column);
+          break;
+
+        default:
+          throw new Error(&#x60;Unknown kind of projection attribute: ${attr.kind}&#x60;);
+      }
+    }
+
+    return columnsBuf;
+  },
+
+  _createColumn: function(attr, bindingPath) {
+    let cellComponent = this.get(&#x27;cellComponent&#x27;);
+    if (typeof cellComponent === &#x27;function&#x27;) {
+      cellComponent = cellComponent(attr, bindingPath);
+    }
+
+    let column = {
+      header: attr.caption,
+      propName: bindingPath, // TODO: rename column.propName
+      cellComponent: cellComponent
+    };
+
+    let customColumnAttributesFunc = this.get(&#x27;customColumnAttributes&#x27;);
+    if (customColumnAttributesFunc) {
+      let customColAttr = customColumnAttributesFunc(attr, bindingPath);
+      if (customColAttr &amp;&amp; (typeof customColAttr === &#x27;object&#x27;)) {
+        Ember.$.extend(true, column, customColAttr);
+      }
+    }
+
+    let sortDef;
+    let sorting = this.get(&#x27;sorting&#x27;);
+    if (sorting &amp;&amp; (sortDef = sorting[bindingPath])) {
+      column.sorted = true;
+      column.sortAscending = sortDef.sortAscending;
+      column.sortNumber = sortDef.sortNumber;
+    }
+
+    return column;
+  },
+
+  _getRowByKey: function(key) {
+    var _this = this;
+    var row = null;
+    this.$(&#x27;tbody tr&#x27;).each(function() {
+      var currentKey = _this.$(this).find(&#x27;td:eq(0) div:eq(0)&#x27;).text();
+      if (currentKey === key) {
+        row = _this.$(this);
+        return false;
+      }
+    });
+    return row;
+  },
+
+  _getModelKey: function(record) {
+    var modelWithKeyItem = this.get(&#x27;contentWithKeys&#x27;).findBy(&#x27;data&#x27;, record);
+    return modelWithKeyItem ? modelWithKeyItem.key : null;
+  },
+
+  _removeModelWithKey(key) {
+    var itemToRemove = this.get(&#x27;contentWithKeys&#x27;).findBy(&#x27;key&#x27;, key);
+    if (itemToRemove) {
+      this.get(&#x27;contentWithKeys&#x27;).removeObject(itemToRemove);
+    }
+  },
+
+  _addModel: function(record) {
+    var modelWithKey = Ember.Object.create({});
+    var key = Ember.guidFor(record);
+    modelWithKey.set(&#x27;key&#x27;, key);
+    modelWithKey.set(&#x27;data&#x27;, record);
+    this.get(&#x27;contentWithKeys&#x27;).pushObject(modelWithKey);
+  },
+
+  _addRow: function(componentName) {
+    if (componentName === this.get(&#x27;componentName&#x27;)) {
+      if (this.get(&#x27;contentWithKeys&#x27;).length === 0) {
+        this.$(&#x27;tbody tr:eq(0)&#x27;).remove();
+      }
+
+      var modelName = this.get(&#x27;modelProjection&#x27;).modelName;
+      var modelToAdd = this.store.createRecord(modelName, {});
+      this.get(&#x27;content&#x27;).addObject(modelToAdd);
+      this._addModel(modelToAdd);
+      this.get(&#x27;groupEditEventsService&#x27;).rowAddedTrigger(componentName, modelToAdd);
+    }
+  },
+
+  _deleteRows: function(componentName) {
+    if (componentName === this.get(&#x27;componentName&#x27;)) {
+      if (confirm(&#x27;Do you really want to delete selected records?&#x27;)) {
+        var _this = this;
+        var selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+        var count = selectedRecords.length;
+        this.dataTable.api().rows(&#x27;.selected&#x27;).remove().draw(false);
+        selectedRecords.forEach(function(item, index, enumerable) {
+          var key = _this._getModelKey(item);
+          _this._removeModelWithKey(key);
+          item.deleteRecord();
+          _this.get(&#x27;groupEditEventsService&#x27;).rowDeletedTrigger(componentName, item);
+        });
+        selectedRecords.clear();
+        this.get(&#x27;groupEditEventsService&#x27;).rowsDeletedTrigger(componentName, count);
+      }
+    }
+  },
+
+  _setActiveRecord: function(key) {
+    this.dataTable.$(&#x27;tr.selected&#x27;).removeClass(&#x27;selected&#x27;);
+    var selectedRow = this._getRowByKey(key);
+    selectedRow.addClass(&#x27;selected&#x27;);
+  },
+
+  _detailChanged: Ember.observer(&#x27;content.@each.hasDirtyAttributes&#x27;, function() {
+    var componentName = this.get(&#x27;componentName&#x27;);
+    this.get(&#x27;groupEditEventsService&#x27;).rowsChangedTrigger(componentName);
+  })
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

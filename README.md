@@ -10,12 +10,14 @@ Flexberry Documentation generated using [YUIDoc](http://yui.github.io/yuidoc/).
 
 ## Generation docs
 * `git submodule foreach git pull`
+* `cd <branch_name>` (master or develop)
 * `yuidoc` (pay attention to warnings in the process output)
 
 ## Running / Development
+* `cd <branch_name>` (master or develop)
 * `yuidoc --server`
 * Visit [http://localhost:3000](http://localhost:3000).
 
 ## Adding a new project in Generation
-* `git submodule add <project_repo>`
-* Add path to generate docs in `options.paths` array in `yuidoc.json`.
+* `git submodule add -b <branch_name> <project_repo_url> <branch_name>/<project_repo_name>`
+* Add path to generate docs in `options.paths` array in `<branch_name>/yuidoc.json`.

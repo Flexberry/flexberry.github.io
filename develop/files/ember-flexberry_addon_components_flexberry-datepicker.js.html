@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/components/flexberry-datepicker.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/components/flexberry-datepicker.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/* global moment:true */
+/**
+ * @module ember-flexberry
+ */
+
+import Ember from &#x27;ember&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+
+/**
+ * DateTime picker component for Semantic UI (Semantic UI hasn&#x27;t its own DateTime picker component yet).
+ *
+ * @class FlexberryDatetimePicker
+ * @extends FlexberryBaseComponent
+ */
+export default FlexberryBaseComponent.extend({
+  // String with input css classes.
+  classes: undefined,
+
+  classNames: [&#x27;ui&#x27;, &#x27;icon&#x27;, &#x27;input&#x27;],
+
+  // Flag to make control required.
+  required: false,
+
+  // Flag to show time in control and time picker inside date picker.
+  hasTimePicker: false,
+
+  // Type of input element for render.
+  type: &#x27;text&#x27;,
+
+  // Input value.
+  value: undefined,
+
+  // Invalid date for set to model value when needed.
+  invalidDate: new Date(&#x27;invalid&#x27;),
+
+  // Default display format.
+  dateTimeFormat: &#x27;DD.MM.YYYY&#x27;,
+
+  // The earliest date a user may select.
+  minDate: undefined,
+
+  // The latest date a user may select.
+  maxDate: undefined,
+
+  // Init component when DOM is ready.
+  didInsertElement: function() {
+    this.minDate = this.minDate === undefined ? moment(&#x27;01.01.1900&#x27;, this.dateTimeFormat) : moment(this.minDate, this.dateTimeFormat);
+    this.maxDate = this.maxDate === undefined ? moment(&#x27;31.12.9999&#x27;, this.dateTimeFormat) : moment(this.maxDate, this.dateTimeFormat);
+
+    var hasTimePicker = this.get(&#x27;hasTimePicker&#x27;);
+    if (hasTimePicker) {
+      this.dateTimeFormat = &#x27;DD.MM.YYYY HH:mm:ss&#x27;;
+    }
+
+    var val = this.get(&#x27;value&#x27;);
+    var startDate = moment(new Date());
+    if (val !== undefined &amp;&amp; moment(val).isValid()) {
+      startDate = moment(val);
+      this.$(&#x27;input&#x27;).val(startDate.format(this.dateTimeFormat));
+    }
+
+    var readonly = this.get(&#x27;readonly&#x27;);
+    var _this = this;
+    if (!readonly) {
+      this.$(&#x27;input&#x27;).daterangepicker(
+      {
+        startDate: startDate,
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker: hasTimePicker,
+        timePickerIncrement: 1,
+        timePicker12Hour: false,
+        timePickerSeconds: true,
+        minDate: this.minDate,
+        maxDate: this.maxDate,
+        format: this.dateTimeFormat
+      },
+      function(start, end, label) {
+        _this.setValue(end);
+      });
+      this.$(&#x27;i&#x27;).click(function() {
+        _this.$(&#x27;input&#x27;).trigger(&#x27;click&#x27;);
+      });
+      this.$(&#x27;input&#x27;).on(&#x27;apply.daterangepicker&#x27;, function(ev, picker) {
+        var currentValue = _this.get(&#x27;value&#x27;);
+        var pickerDateString = moment(picker.endDate.toDate()).format(_this.dateTimeFormat);
+        if (!currentValue || !moment(moment(currentValue).format(_this.dateTimeFormat), _this.dateTimeFormat).isSame(moment(pickerDateString, _this.dateTimeFormat))) {
+          _this.setValue(picker.endDate);
+        }
+      });
+      this.$(&#x27;input&#x27;).on(&#x27;cancel.daterangepicker&#x27;, function(ev, picker) {
+        var currentInputValueString = _this.$(&#x27;input&#x27;).val();
+        var pickerDateString = picker.endDate.format(_this.dateTimeFormat);
+        if (!moment(moment(currentInputValueString, _this.dateTimeFormat).format(_this.dateTimeFormat), _this.dateTimeFormat).isSame(moment(pickerDateString, _this.dateTimeFormat))) {
+          var oldPickerDateString = picker.endDate._i;
+          if (typeof (oldPickerDateString) === &#x27;string&#x27; &amp;&amp; currentInputValueString !== oldPickerDateString) {
+            _this.$(&#x27;input&#x27;).val(oldPickerDateString);
+          }
+
+          var currentValue = _this.get(&#x27;value&#x27;);
+          if (!moment(moment(currentValue).format(_this.dateTimeFormat), _this.dateTimeFormat).isSame(moment(pickerDateString, _this.dateTimeFormat))) {
+            _this.setValue(picker.endDate);
+          }
+        }
+      });
+      this.$(&#x27;input&#x27;).on(&#x27;show.daterangepicker&#x27;, function(ev, picker) {
+        if (!picker.endDate.isValid()) {
+          _this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).startDate = moment.invalid();
+        }
+
+        _this.setCalendarEnabledState();
+      });
+      this.$(&#x27;input&#x27;).keyup(function() {
+        var valueFromInput = _this.$(this).val();
+        _this.setValue(moment(valueFromInput, _this.dateTimeFormat));
+      });
+    }
+  },
+
+  setValue: function(dateFromPicker) {
+    var valueFromInput = this.$(&#x27;input&#x27;).val();
+    if (valueFromInput === &#x27;&#x27; &amp;&amp; !dateFromPicker.isValid()) {
+      this.setEmptyValue();
+    }
+    else {
+      var dateToSet = this.getDateToSet(dateFromPicker);
+      var currentValue = this.get(&#x27;value&#x27;);
+      if (currentValue === null || !moment(moment(dateToSet).format(this.dateTimeFormat), this.dateTimeFormat).isSame(moment(moment(currentValue).format(this.dateTimeFormat), this.dateTimeFormat))) {
+        this.set(&#x27;value&#x27;, dateToSet);
+        this.setProperOffsetToCalendar();
+      }
+    }
+
+    this.setCalendarEnabledState();
+  },
+
+  setEmptyValue: function() {
+    var currentValue = this.get(&#x27;value&#x27;);
+    if (currentValue !== null) {
+      this.set(&#x27;value&#x27;, null);
+      this.setProperOffsetToCalendar();
+    }
+  },
+
+  getDateToSet: function(dateFromPicker) {
+    if (!dateFromPicker.isValid()) {
+      return this.invalidDate;
+    }
+
+    if (dateFromPicker.isBefore(this.minDate) || dateFromPicker.isAfter(this.maxDate)) {
+      return this.invalidDate;
+    }
+
+    return dateFromPicker.toDate();
+  },
+
+  setCalendarEnabledState: function() {
+    var dateToSet = this.getDateToSet(this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).endDate);
+    if ((!dateToSet || dateToSet === this.invalidDate) &amp;&amp; this.hasTimePicker) {
+      this.$().parents(&#x27;body&#x27;).find(&#x27;button.applyBtn&#x27;).attr(&#x27;disabled&#x27;, &#x27;disabled&#x27;);
+      this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).startDate = moment.invalid();
+    }
+    else {
+      this.$().parents(&#x27;body&#x27;).find(&#x27;button.applyBtn&#x27;).removeAttr(&#x27;disabled&#x27;);
+    }
+  },
+
+  setProperOffsetToCalendar: function() {
+    //Waiting for end of validation and displaying errors if model is not valid
+    var _this = this;
+    setTimeout(function() { _this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).move(); }, 500);
+  },
+
+  // Set proper start date when value changed outside of component.
+  valueChanged: Ember.observer(&#x27;value&#x27;, function() {
+    var val = this.get(&#x27;value&#x27;);
+    var currValueDateTime = moment(this.getDateToSet(moment(val)));
+    if (val &amp;&amp; moment.isDate(val) &amp;&amp; currValueDateTime.isValid()) {
+      var currInputDateTime = moment(moment(this.$(&#x27;input&#x27;).val(), this.dateTimeFormat).toDate());
+
+      // Change current date and time when changes were made outside of input element.
+      if (!currValueDateTime.isSame(currInputDateTime)) {
+        if (this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;) !== undefined) {
+          this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).startDate = currValueDateTime;
+          this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).setEndDate(currValueDateTime);
+        }
+        else {
+          this.$(&#x27;input&#x27;).val(currValueDateTime.format(this.dateTimeFormat));
+        }
+      }
+    }
+    else if (val === null) {
+      var valueFromInput = this.$(&#x27;input&#x27;).val();
+      if (valueFromInput !== &#x27;&#x27;) {
+        this.$(&#x27;input&#x27;).val(&#x27;&#x27;);
+      }
+    }
+    else if (!currValueDateTime.isValid()) {
+      if (val !== this.invalidDate) {
+        this.set(&#x27;value&#x27;, this.invalidDate);
+        this.$(&#x27;input&#x27;).val(currValueDateTime.format(this.dateTimeFormat));
+      }
+    }
+    else if (!moment.isDate(val)) {
+      this.set(&#x27;value&#x27;, currValueDateTime.toDate());
+    }
+  })
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

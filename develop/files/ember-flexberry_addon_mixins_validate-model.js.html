@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/mixins/validate-model.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/mixins/validate-model.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+import EmberValidations from &#x27;ember-validations&#x27;;
+import ValidationData from &#x27;../objects/validation-data&#x27;;
+import DS from &#x27;ember-data&#x27;;
+
+export default Ember.Mixin.create(EmberValidations, Ember.Evented, {
+  /**
+   * Model validation rules.
+   */
+  validations: {},
+
+  /**
+   * Save model method.
+   */
+  save: function() {
+    var _this = this;
+    var saveArguments = arguments;
+
+    if (!_this.get(&#x27;isDeleted&#x27;)) {
+      var validationData = ValidationData.create({
+        anyErrors: _this.get(&#x27;isInvalid&#x27;)
+      });
+      validationData.fillErrorsFromProjectedModel(_this);
+
+      if (validationData.anyErrors) {
+        return new Ember.RSVP.Promise(function(resolve, reject) {
+          reject(validationData);
+        });
+      }
+    }
+
+    // Arguments for model &#x27;preSave&#x27;.
+    var presaveEventArgs = {
+      promises: []
+    };
+
+    // Trigger &#x27;preSave&#x27; event, and  give its handlers possibility to add async operations promises.
+    _this.trigger(&#x27;preSave&#x27;, presaveEventArgs);
+
+    // Promises array could be totally changed in event handlers, we should prevent possible errors.
+    presaveEventArgs.promises = Ember.isArray(presaveEventArgs.promises) ? presaveEventArgs.promises : [];
+    presaveEventArgs.promises = presaveEventArgs.promises.filter(function(item, index, array) {
+      return item instanceof Ember.RSVP.Promise;
+    });
+
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      // Wait for all &#x27;preSave&#x27; promises to be resolved.
+      Ember.RSVP.all(presaveEventArgs.promises).then(function(values) {
+        // If all of &#x27;preSave&#x27; promises has been successfully resolved, then call base class &#x27;save&#x27; method.
+        // The problem is that call to current save method is already finished,
+        // and traditional _this._super will point to something else, but not to DS.Model.save method,
+        // so there is no other way, except to call it through the base class prototype.
+        var savePromise = DS.Model.prototype.save.apply(_this, saveArguments);
+        if (savePromise &amp;&amp; savePromise.then) {
+          savePromise.then(function(value) {
+            // Model has been successfully saved.
+            resolve(value);
+          }, function(reason) {
+            // Model save has been failed.
+            reject(reason);
+          });
+        } else {
+          reject(&#x27;Model save method did not return promise.&#x27;);
+        }
+      }, function(reason) {
+        // If any of &#x27;preSave&#x27; promises has been rejected, don&#x27;t save model &amp; reject.
+        reject(reason);
+      });
+    });
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

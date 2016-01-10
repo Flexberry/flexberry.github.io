@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/controllers/lookup-dialog.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/controllers/lookup-dialog.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import ListFormPageController from &#x27;../controllers/list-form-page&#x27;;
+
+export default ListFormPageController.extend({
+  _currentRow: undefined,
+
+  /**
+   * Current opened modal window.
+   *
+   * @property _openedModalDialog
+   * @type JQuery
+   * @default undefined
+   */
+  _openedModalDialog: undefined,
+
+  title: undefined,
+  modalWindowHeight: undefined,
+  modalWindowWidth: undefined,
+
+  actions: {
+
+    // Save the currentRow on rowClicked.
+    rowClick: function(record) {
+      this.set(&#x27;_currentRow&#x27;, record);
+    },
+
+    saveLookupDialog: function() {
+      var saveTo = this.get(&#x27;saveTo&#x27;);
+      if (!saveTo) {
+        throw new Error(&#x27;Don\&#x27;t know where to save - no saveTo data defined.&#x27;);
+      }
+
+      saveTo.model.set(saveTo.propName, this.get(&#x27;_currentRow&#x27;));
+
+      // Manually set isDirty flag, because its not working now
+      // when change relation props.
+      // No check for &#x27;old&#x27; and &#x27;new&#x27; lookup data equality, because ember
+      // will do it automatically after bug fix.
+      saveTo.model.send(&#x27;becomeDirty&#x27;);
+    },
+
+    /**
+     * Handles create modal window action.
+	 * It saves created window to have opportunity to close it later.
+     *
+     * @method createdModalDialog
+	 * @param {JQuery} modalDialog Created modal window.
+     */
+    createdModalDialog: function(modalDialog) {
+      this.set(&#x27;_openedModalDialog&#x27;, modalDialog);
+    },
+
+    /**
+     * Handles correcponding route&#x27;s willTransition action.
+     * It closes modal window if it is opened (if Ember uses hash location type, modal window won&#x27;t be closed automatically).
+     *
+     * @method routeWillTransition
+     */
+    routeWillTransition: function() {
+      let openedDialog = this.get(&#x27;_openedModalDialog&#x27;);
+      if (openedDialog) {
+        openedDialog.modal(&#x27;hide&#x27;);
+        this.set(&#x27;_openedModalDialog&#x27;, undefined);
+      }
+    }
+  },
+
+  clear: function() {
+    this.set(&#x27;_currentRow&#x27;, undefined);
+    this.set(&#x27;_openedModalDialog&#x27;, undefined);
+    this.set(&#x27;saveTo&#x27;, undefined);
+    this.set(&#x27;modelProjection&#x27;, undefined);
+    return this;
+  },
+
+  setCurrentRow: function() {
+    var saveTo = this.get(&#x27;saveTo&#x27;);
+    var currentRowVal = saveTo.model.get(saveTo.propName);
+    this.set(&#x27;_currentRow&#x27;, currentRowVal);
+    return this;
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

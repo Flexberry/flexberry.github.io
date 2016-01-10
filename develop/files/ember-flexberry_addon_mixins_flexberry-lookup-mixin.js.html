@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/mixins/flexberry-lookup-mixin.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/mixins/flexberry-lookup-mixin.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @module ember-flexberry
+ */
+
+import Ember from &#x27;ember&#x27;;
+
+export default Ember.Mixin.create({
+
+  // Lookup settings.
+  lookupSettings: {
+    controllerName: undefined,
+    template: undefined,
+    contentTemplate: undefined,
+    loaderTemplate: undefined,
+    modalWindowWidth: undefined,
+    modalWindowHeight:undefined
+  },
+
+  /**
+   * Controller to show lookup modal window.
+   *
+   * @property lookupController
+   * @type Ember.InjectedProperty
+   * @default undefined
+   */
+  lookupController: undefined,
+
+  actions: {
+    /**
+     * Handles action from lookup choose action.
+     *
+     * @method showLookupDialog
+     * @param {Object} chooseData Lookup parameters (projection name, relation name, etc).
+     */
+    showLookupDialog: function(chooseData) {
+      let options = Ember.$.extend(true, {
+        projection: undefined,
+        relationName: undefined,
+        title: undefined,
+        limitFunction: undefined,
+        modelToLookup: undefined
+      }, chooseData);
+      let projectionName = options.projection;
+      let relationName = options.relationName;
+      let title = options.title;
+      let limitFunction = options.limitFunction;
+      let modelToLookup = options.modelToLookup;
+
+      if (!projectionName) {
+        throw new Error(&#x27;ProjectionName is undefined.&#x27;);
+      }
+
+      let model = modelToLookup ? modelToLookup : this.get(&#x27;model&#x27;);
+
+      // Get ember static function to get relation by name.
+      var relationshipsByName = Ember.get(model.constructor, &#x27;relationshipsByName&#x27;);
+
+      // Get relation property from model.
+      var relation = relationshipsByName.get(relationName);
+      if (!relation) {
+        throw new Error(&#x60;No relation with &#x27;${relationName}&#x27; name defined in &#x27;${model.constructor.modelName}&#x27; model.&#x60;);
+      }
+
+      // Get property type name.
+      var relatedToType = relation.type;
+
+      // Get property type constructor by type name.
+      var relatedTypeConstructor = this.store.modelFor(relatedToType);
+
+      // Get a projection from related type model.
+      var projection = Ember.get(relatedTypeConstructor, &#x27;projections&#x27;)[projectionName];
+      if (!projection) {
+        throw new Error(&#x60;No projection with &#x27;${projectionName}&#x27; name defined in &#x27;${relatedToType}&#x27; model. &#x60;);
+      }
+
+      // Lookup
+      var lookupSettings = this.get(&#x27;lookupSettings&#x27;);
+      if (!lookupSettings) {
+        throw new Error(&#x27;Lookup settings are undefined.&#x27;);
+      }
+
+      if (!lookupSettings.template) {
+        throw new Error(&#x27;Lookup template is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.controllerName) {
+        throw new Error(&#x27;Lookup controller name is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.contentTemplate) {
+        throw new Error(&#x27;Lookup content template is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.loaderTemplate) {
+        throw new Error(&#x27;Lookup loader template is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.modalWindowWidth) {
+        throw new Error(&#x27;Lookup modal window width is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.modalWindowHeight) {
+        throw new Error(&#x27;Lookup modal window height is undefined.&#x27;);
+      }
+
+      this.send(&#x27;showModalDialog&#x27;, lookupSettings.template);
+      var loadingParams = {
+        view: lookupSettings.template,
+        outlet: &#x27;modal-content&#x27;
+      };
+      this.send(&#x27;showModalDialog&#x27;, lookupSettings.loaderTemplate, null, loadingParams);
+
+      let query = {};
+      if (limitFunction &amp;&amp; typeof (limitFunction) === &#x27;string&#x27; &amp;&amp; limitFunction.length &gt; 0) {
+        Ember.merge(query, { $filter: limitFunction });
+      }
+
+      Ember.merge(query, { projection: projectionName });
+      this.store.query(relatedToType, query).then(data =&gt; {
+        this.send(&#x27;removeModalDialog&#x27;, loadingParams);
+        var controller = this.controllerFor(lookupSettings.controllerName)
+          .clear()
+          .set(&#x27;modelProjection&#x27;, projection)
+          .set(&#x27;title&#x27;, title)
+          .set(&#x27;modalWindowHeight&#x27;, lookupSettings.modalWindowHeight)
+          .set(&#x27;modalWindowWidth&#x27;, lookupSettings.modalWindowWidth)
+          .set(&#x27;saveTo&#x27;, {
+            model: model,
+            propName: relationName
+          })
+          .setCurrentRow();
+
+        this.send(&#x27;showModalDialog&#x27;, lookupSettings.contentTemplate, {
+          controller: controller,
+          model: data
+        }, loadingParams);
+      });
+    },
+
+    /**
+     * Handles correcponding route&#x27;s willTransition action.
+     * It sends message about transition to showing lookup modal window controller.
+     *
+     * @method routeWillTransition
+     */
+    routeWillTransition: function() {
+      this.get(&#x27;lookupController&#x27;).send(&#x27;routeWillTransition&#x27;);
+    },
+
+    /**
+     * Handles action from lookup remove action.
+     *
+     * @method removeLookupValue
+     * @param {Object} removeData Lookup parameters (projection name, etc).
+     */
+    removeLookupValue: function(removeData) {
+      let options = Ember.$.extend(true, {
+        relationName: undefined,
+        modelToLookup: undefined
+      }, removeData);
+      let relationName = options.relationName;
+      let modelToLookup = options.modelToLookup;
+
+      let model = modelToLookup ? modelToLookup : this.get(&#x27;model&#x27;);
+      model.set(relationName, undefined);
+
+      // manually set isDirty flag, because its not working now when change relation props
+      // no check for &#x27;old&#x27; and &#x27;new&#x27; lookup data equality, because ember will do it automatically after bug fix
+      model.send(&#x27;becomeDirty&#x27;);
+    }
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

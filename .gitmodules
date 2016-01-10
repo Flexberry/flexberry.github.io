@@ -1,6 +1,16 @@
-[submodule "ember-flexberry-projections"]
-	path = ember-flexberry-projections
-	url = https://github.com/Flexberry/ember-flexberry-projections.git
-[submodule "ember-flexberry"]
-	path = ember-flexberry
+[submodule "master/ember-flexberry"]
+	path = master/ember-flexberry
 	url = https://github.com/Flexberry/ember-flexberry.git
+	branch = master
+[submodule "develop/ember-flexberry"]
+	path = develop/ember-flexberry
+	url = https://github.com/Flexberry/ember-flexberry.git
+	branch = develop
+[submodule "master/ember-flexberry-projections"]
+	path = master/ember-flexberry-projections
+	url = https://github.com/Flexberry/ember-flexberry-projections.git
+	branch = master
+[submodule "develop/ember-flexberry-projections"]
+	path = develop/ember-flexberry-projections
+	url = https://github.com/Flexberry/ember-flexberry-projections.git
+	branch = master

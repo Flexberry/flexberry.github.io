@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/services/groupedit-events.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/services/groupedit-events.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @module ember-flexberry
+ */
+
+import Ember from &#x27;ember&#x27;;
+
+/**
+ * Service for triggering groupedit events.
+ *
+ * @class GroupEditEvents
+ * @extends Ember.Service
+ * @public
+ */
+export default Ember.Service.extend(Ember.Evented, {
+  /**
+   * Trigger for &quot;add new row&quot; event in groupedit.
+   * Event name: groupEditAddRow.
+   *
+   * @method addRowTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   */
+  addRowTrigger(componentName) {
+    this.trigger(&#x27;groupEditAddRow&#x27;, componentName);
+  },
+
+  /**
+   * Trigger for &quot;delete current row&quot; event in groupedit.
+   * Event name: groupEditDeleteRow.
+   *
+   * @method deleteRowTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   */
+  deleteRowTrigger(componentName) {
+    this.trigger(&#x27;groupEditDeleteRow&#x27;, componentName);
+  },
+
+  /**
+   * Trigger for &quot;delete selected rows&quot; event in groupedit.
+   * Event name: groupEditDeleteRows.
+   *
+   * @method deleteRowsTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   */
+  deleteRowsTrigger(componentName) {
+    this.trigger(&#x27;groupEditDeleteRows&#x27;, componentName);
+  },
+
+  /**
+   * Trigger for &quot;new row has been added&quot; event in groupedit.
+   * Event name: groupEditRowAdded.
+   *
+   * @method rowAddedTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {Model} record The model corresponding to added row in groupedit.
+   */
+  rowAddedTrigger(componentName, record) {
+    this.trigger(&#x27;groupEditRowAdded&#x27;, componentName, record);
+  },
+
+  /**
+   * Trigger for &quot;row has been deleted&quot; event in groupedit.
+   * Event name: groupEditRowDeleted.
+   *
+   * @method rowDeletedTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {Model} record The model corresponding to deleted row in groupedit.
+   */
+  rowDeletedTrigger(componentName, record) {
+    this.trigger(&#x27;groupEditRowDeleted&#x27;, componentName, record);
+  },
+
+  /**
+   * Trigger for &quot;selected rows has been deleted&quot; event in groupedit.
+   * Event name: groupEditRowDeleted.
+   *
+   * @method rowDeletedTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {Integer} count Count of deleted rows in groupedit.
+   */
+  rowsDeletedTrigger(componentName, count) {
+    this.trigger(&#x27;groupEditRowsDeleted&#x27;, componentName, count);
+  },
+
+  /**
+   * Trigger for &quot;row has been selected&quot; event in groupedit.
+   * Event name: groupEditRowSelected.
+   *
+   * @method rowSelectedTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {Model} record The model corresponding to selected row in groupedit.
+   * @param {Integer} count Count of selected rows in groupedit.
+   */
+  rowSelectedTrigger(componentName, record, count) {
+    this.trigger(&#x27;groupEditRowSelected&#x27;, componentName, record, count);
+  },
+
+  /**
+   * Trigger for &quot;model(s) corresponding to some row(s) was changed&quot; event in groupedit.
+   * Event name: groupEditRowsChanged.
+   *
+   * @method rowsChangedTrigger
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   */
+  rowsChangedTrigger(componentName) {
+    this.trigger(&#x27;groupEditRowsChanged&#x27;, componentName);
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

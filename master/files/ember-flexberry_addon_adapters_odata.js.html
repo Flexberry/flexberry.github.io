@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/adapters/odata.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>master</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/adapters/odata.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+import DS from &#x27;ember-data&#x27;;
+import SnapshotTransform from &#x27;../utils/snapshot-transform&#x27;;
+
+export default DS.RESTAdapter.extend({
+  idType: &#x27;number&#x27;,
+
+  getPaginationQuery: function(page, perPage) {
+    let query = { $top: perPage, $skip: (page - 1) * perPage, $count: true };
+    return query;
+  },
+
+  getSortingQuery: function(sortingInfo, serializer) {
+    let query = {};
+
+    if (sortingInfo &amp;&amp; sortingInfo.length) {
+      query.$orderby = sortingInfo.map(function(element) {
+        return serializer.keyForAttribute(element.propName) + &#x27; &#x27; + element.direction;
+      }).join(&#x27;, &#x27;);
+    }
+
+    return query;
+  },
+
+  pathForType: function(type) {
+    var camelized = Ember.String.camelize(type);
+    var capitalized = Ember.String.capitalize(camelized);
+    return Ember.String.pluralize(capitalized);
+  },
+
+  _buildURL: function(modelName, id) {
+    var url = [];
+    var host = Ember.get(this, &#x27;host&#x27;);
+    var prefix = this.urlPrefix();
+    var path;
+
+    if (modelName) {
+      path = this.pathForType(modelName);
+      if (path) {
+        url.push(path);
+      }
+    }
+
+    if (prefix) {
+      url.unshift(prefix);
+    }
+
+    url = url.join(&#x27;/&#x27;);
+    if (!host &amp;&amp; url &amp;&amp; url.charAt(0) !== &#x27;/&#x27;) {
+      url = &#x27;/&#x27; + url;
+    }
+
+    if (id != null) {
+      // Append id as &#x60;(id)&#x60; (OData specification) instead of &#x60;/id&#x60;.
+      url = this._appendIdToURL(id, url);
+    }
+
+    return url;
+  },
+
+  createRecord: function(store, type, snapshot) {
+    return this._sendRecord(store, type, snapshot, &#x27;createRecord&#x27;);
+  },
+
+  updateRecord: function(store, type, snapshot) {
+    return this._sendRecord(store, type, snapshot, &#x27;updateRecord&#x27;);
+  },
+
+  deleteRecord: function(store, type, snapshot) {
+    return this._sendRecord(store, type, snapshot, &#x27;deleteRecord&#x27;);
+  },
+
+  /**
+   * Makes HTTP request for creating, updating or deleting the record.
+   */
+  _sendRecord: function(store, type, snapshot, requestType) {
+    // TODO: maybe move it into serializer (serialize or serializeIntoHash)?
+    let skipUnchangedAttrs = true;
+    SnapshotTransform.transformForSerialize(snapshot, skipUnchangedAttrs);
+
+    // NOTE: for newly created records id is not defined.
+    let url = this.buildURL(type.modelName, snapshot.id, snapshot, requestType);
+
+    let httpMethod;
+    switch (requestType) {
+      case &#x27;createRecord&#x27;:
+        httpMethod = &#x27;POST&#x27;;
+        break;
+
+      case &#x27;updateRecord&#x27;:
+        httpMethod = skipUnchangedAttrs ? &#x27;PATCH&#x27; : &#x27;PUT&#x27;;
+        break;
+
+      case &#x27;deleteRecord&#x27;:
+        httpMethod = &#x27;DELETE&#x27;;
+        break;
+
+      default:
+        throw new Error(&#x60;Unknown requestType: ${requestType}&#x60;);
+    }
+
+    let data;
+
+    // Don&#x27;t need to send any data for deleting.
+    if (requestType !== &#x27;deleteRecord&#x27;) {
+      let serializer = store.serializerFor(type.modelName);
+      data = {};
+      serializer.serializeIntoHash(data, type, snapshot);
+    }
+
+    return this.ajax(url, httpMethod, { data: data }).then(function(response) {
+      return response;
+    });
+  },
+
+  /**
+   * Appends id to URL according to the OData specification.
+   * @private
+   */
+  _appendIdToURL: function(id, url) {
+    let encId = encodeURIComponent(id);
+    let idType = Ember.get(this, &#x27;idType&#x27;);
+    if (idType !== &#x27;number&#x27;) {
+      encId = &#x60;&#x27;${encId}&#x27;&#x60;;
+    }
+
+    url += &#x27;(&#x27; + encId + &#x27;)&#x27;;
+    return url;
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/components/groupedit-toolbar.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/components/groupedit-toolbar.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @module ember-flexberry
+ */
+
+import Ember from &#x27;ember&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+
+/**
+ * Toolbar compoent for flexberry-groupedit component.
+ *
+ * @class GroupEditToolbar
+ * @extends FlexberryBaseComponent
+ */
+export default FlexberryBaseComponent.extend({
+  /**
+   * Default class for component wrapper.
+   *
+   * @property classNames
+   * @type Array
+   * @readOnly
+   */
+  classNames: [&#x27;groupedit-toolbar&#x27;, &#x27;ui&#x27;, &#x27;middle&#x27;, &#x27;aligned&#x27;, &#x27;grid&#x27;],
+
+  /**
+   * Service that triggers groupedit events.
+   *
+   * @property groupEditEventsService
+   * @type Service
+   */
+  groupEditEventsService: Ember.inject.service(&#x27;groupedit-events&#x27;),
+
+  /**
+   * Boolean property to show or hide add button in toolbar.
+   * Add new record button will not display if set to false.
+   *
+   * @property createNewButton
+   * @type Boolean
+   * @default true
+   */
+  createNewButton: true,
+
+  /**
+   * Boolean property to show or hide delete button in toolbar.
+   * Delete record button will not display if set to false.
+   *
+   * @property deleteButton
+   * @type Boolean
+   * @default true
+   */
+  deleteButton: true,
+
+  /**
+   * The method called when component is instantiated.
+   *
+   * @method init
+   * @throws {Error} An error occurred during the initialization of component.
+   */
+  init() {
+    this._super(...arguments);
+    var componentName = this.get(&#x27;componentName&#x27;);
+    if (!componentName) {
+      throw new Error(&#x27;Name of flexberry-groupedit component was not defined.&#x27;);
+    }
+
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowSelected&#x27;, this, this._rowSelected);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowsDeleted&#x27;, this, this._rowsDeleted);
+  },
+
+  /**
+   * Implementation of component&#x27;s teardown.
+   *
+   * @method willDestroy
+   */
+  willDestroy() {
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowSelected&#x27;, this, this._rowSelected);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowsDeleted&#x27;, this, this._rowsDeleted);
+    this._super(...arguments);
+  },
+
+  /**
+   * The collection of functions that will be invoked when
+   * click on toolbar buttons.
+   *
+   * @property actions
+   * @type Object
+   * @readOnly
+   */
+  actions: {
+    // Add record click button handler
+    addRow: function() {
+      var componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;groupEditEventsService&#x27;).addRowTrigger(componentName);
+    },
+
+    // Delete records click button handler
+    deleteRows: function() {
+      var componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;groupEditEventsService&#x27;).deleteRowsTrigger(componentName);
+    }
+  },
+
+  /**
+   * Boolean flag to indicate enabled state of delete rows button.
+   *
+   * @property isDeleteRowsEnabled
+   * @type Boolean
+   */
+  isDeleteRowsEnabled: undefined,
+
+  /**
+   * Event handler for &quot;row has been selected&quot; event in groupedit.
+   *
+   * @method _rowSelected
+   * @private
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {Model} record The model corresponding to selected row in groupedit.
+   * @param {Integer} count Count of selected rows in groupedit.
+   */
+  _rowSelected: function(componentName, record, count) {
+    if (componentName === this.get(&#x27;componentName&#x27;)) {
+      this.set(&#x27;isDeleteRowsEnabled&#x27;, count &gt; 0);
+    }
+  },
+
+  /**
+   * Event handler for &quot;selected rows has been deleted&quot; event in groupedit.
+   *
+   * @method __rowsDeleted
+   * @private
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {Integer} count Count of deleted rows in groupedit.
+   */
+  _rowsDeleted: function(componentName, count) {
+    if (componentName === this.get(&#x27;componentName&#x27;)) {
+      this.set(&#x27;isDeleteRowsEnabled&#x27;, false);
+    }
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

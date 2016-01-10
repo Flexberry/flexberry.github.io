@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/controllers/edit-form.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/controllers/edit-form.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+import ErrorableControllerMixin from &#x27;../mixins/errorable-controller&#x27;;
+import FlexberryLookupMixin from &#x27;../mixins/flexberry-lookup-mixin&#x27;;
+
+/**
+ * Edit form base controller.
+ */
+export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, ErrorableControllerMixin, {
+  /**
+   * Lookup settings.
+   */
+  lookupSettings: {
+    controllerName: &#x27;lookup-dialog&#x27;,
+    template: &#x27;lookup-dialog&#x27;,
+    contentTemplate: &#x27;lookup-dialog-content&#x27;,
+    loaderTemplate: &#x27;loading&#x27;,
+    modalWindowWidth: 750,
+    modalWindowHeight: 600
+  },
+
+  /**
+   * Controller to show lookup modal window.
+   *
+   * @property lookupController
+   * @type Ember.InjectedProperty
+   * @default undefined
+   */
+  lookupController: Ember.inject.controller(&#x27;lookup-dialog&#x27;),
+
+  /**
+   * Query parameters.
+   */
+  queryParams: {
+    readOnlyQueryMode: &#x27;readonly&#x27;
+  },
+
+  /**
+   * Query parameter for readonly mode.
+   */
+  readOnlyQueryMode: null,
+
+  /**
+   * Flag: indicates whether the current form is opened only for reading.
+   */
+  readonly: Ember.computed(&#x27;readOnlyQueryMode&#x27;, function() {
+    var formMode = this.get(&#x27;readOnlyQueryMode&#x27;);
+    return formMode &amp;&amp; String(formMode).toLowerCase() === &#x27;true&#x27;;
+  }),
+
+  /**
+   * Message to show if user tries to do something with readonly form.
+   */
+  readonlyMessage: &#x27;Form was opened only for reading.&#x27;,
+
+  /**
+   * Model change handler.
+   */
+  modelChange: Ember.observer(&#x27;model&#x27;, function() {
+    // Unsubscribe from previous model &#x27;preSave&#x27; event.
+    var onModelPreSave = this.get(&#x27;_onModelPreSave&#x27;);
+    if (!(Ember.isNone(onModelPreSave) || Ember.isNone(this._previousModel) || Ember.isNone(this._previousModel.off))) {
+      this._previousModel.off(&#x27;preSave&#x27;, onModelPreSave);
+    }
+
+    // Remember new model as previous.
+    var model = this.get(&#x27;model&#x27;);
+    if (model !== this._previousModel) {
+      this._previousModel = model;
+    }
+
+    if (!(Ember.isNone(model) || Ember.isNone(model.on))) {
+      // Trigger &#x27;modelPreSave&#x27; event on controller, to allow components to handle model&#x27;s &#x27;preSave&#x27; event.
+      onModelPreSave = function(e) {
+        e.model = model;
+        this.trigger(&#x27;modelPreSave&#x27;, e);
+      }.bind(this);
+
+      model.on(&#x27;preSave&#x27;, onModelPreSave);
+      this.set(&#x27;_onModelPreSave&#x27;, onModelPreSave);
+    }
+  }),
+
+  /**
+   * Actions handlers.
+   */
+  actions: {
+    save: function() {
+      this.send(&#x27;dismissErrorMessages&#x27;);
+
+      if (this.get(&#x27;readonly&#x27;)) {
+        this._onSaveActionFulfilled(this.get(&#x27;readonlyMessage&#x27;));
+        return;
+      }
+
+      this.get(&#x27;model&#x27;).save().then(this._onSaveActionFulfilled.bind(this),
+      this._onSaveActionRejected.bind(this));
+    },
+
+    delete: function() {
+      if (this.get(&#x27;readonly&#x27;)) {
+        this.send(&#x27;dismissErrorMessages&#x27;);
+        this._onSaveActionFulfilled(this.get(&#x27;readonlyMessage&#x27;));
+        return;
+      }
+
+      if (confirm(&#x27;Are you sure you want to delete that record?&#x27;)) {
+        this.send(&#x27;dismissErrorMessages&#x27;);
+
+        this.get(&#x27;model&#x27;).destroyRecord().then(
+          this._onDeleteActionFulfilled.bind(this),
+          this._onDeleteActionRejected.bind(this));
+      }
+    },
+
+    close: function() {
+      this.transitionToParentRoute();
+    }
+  },
+
+  /**
+   * Method to transit to parent&#x27;s route (previous route).
+   */
+  transitionToParentRoute: function() {
+    // TODO: нужно учитывать пэйджинг.
+    // Без сервера не обойтись, наверное. Нужно определять, на какую страницу редиректить.
+    // Либо редиректить на что-то типа /{parentRoute}/page/whichContains/{object id}, а контроллер/роут там далее разрулит, куда дальше послать редирект.
+    let routeName = this.get(&#x27;parentRoute&#x27;) || Ember.String.pluralize(this.get(&#x27;model.constructor.modelName&#x27;));
+    this.transitionToRoute(routeName);
+  },
+
+  /**
+   * Method to get type of object list view cell.
+   */
+  getCellComponent: function(attr, bindingPath) {
+    // TODO: return different components by attr type.
+    return &#x27;object-list-view-input-cell&#x27;;
+  },
+
+  /**
+   * On save model success handler.
+   */
+  _processSavedDetails: function() {
+    var _this = this;
+    var modelsToDelete = Ember.A();
+    var deletePromises = Ember.A();
+    var attributes = this.get(&#x27;modelProjection&#x27;).attributes;
+    for (var attrName in attributes) {
+      if (!attributes.hasOwnProperty(attrName)) {
+        continue;
+      }
+
+      var attr = attributes[attrName];
+      if (attr.kind === &#x27;hasMany&#x27;) {
+        var detailModels = this.get(&#x27;model&#x27;).get(attrName).toArray();
+
+        // var changedModels = detailModels.filterBy(&#x27;hasDirtyAttributes&#x27;, true);
+        for (var i = 0; i &lt; detailModels.length; i++) {
+          if (detailModels[i].get(&#x27;hasDirtyAttributes&#x27;)) {
+            if (detailModels[i].get(&#x27;isNew&#x27;)) {
+              modelsToDelete.pushObject(detailModels[i]);
+            }
+            else if (!detailModels[i].get(&#x27;isDeleted&#x27;)) {
+              detailModels[i].send(&#x27;becameClean&#x27;);
+            }
+            else if (detailModels[i].get(&#x27;isDeleted&#x27;)) {
+              deletePromises.pushObject(detailModels[i].save());
+            }
+          }
+        }
+      }
+    }
+
+    modelsToDelete.forEach(function(item) {
+      item.deleteRecord();
+    });
+    modelsToDelete.clear();
+
+    var modelName = this.get(&#x27;model&#x27;).constructor.modelName;
+    var id = this.get(&#x27;model&#x27;).id;
+    var modelProjName = this.get(&#x27;modelProjectionName&#x27;);
+    Ember.RSVP.all(deletePromises).then(function(values) {
+      return _this.store.findRecord(modelName, id, {
+        reload: true,
+        projection: modelProjName
+      });
+    },
+    function(reason) {
+      _this._onSaveActionRejected.call(_this, reason);
+    });
+    return this.store.findRecord(modelName, id, {
+      reload: true,
+      projection: modelProjName
+    });
+  },
+
+  _onSaveActionFulfilled: function(message) {
+    if (!this.get(&#x27;readonly&#x27;)) {
+      this._processSavedDetails().then(function() {
+        alert(&#x27;Saved.&#x27;);
+      });
+    }
+    else {
+      alert(message);
+    }
+  },
+
+  /**
+   * On save model fail handler.
+   */
+  _onSaveActionRejected: function(errorData) {
+    this.rejectError(errorData, &#x27;Save failed.&#x27;);
+  },
+
+  /**
+   * On delete model success handler.
+   */
+  _onDeleteActionFulfilled: function() {
+    this.transitionToParentRoute();
+  },
+
+  /**
+   * On delete model fail handler.
+   */
+  _onDeleteActionRejected: function(errorData) {
+    this.rejectError(errorData, &#x27;Delete failed.&#x27;);
+  },
+
+  /**
+   * On model &#x27;preSave&#x27; event handler.
+   */
+  _onModelPreSave: null
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

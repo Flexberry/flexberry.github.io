@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/components/flexberry-file.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/EnumTransform.html">EnumTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/components/flexberry-file.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @module ember-flexberry
+ */
+
+import Ember from &#x27;ember&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+
+/**
+ * Flexberry file component.
+ *
+ * @class FlexberryFile
+ * @extends FlexberryBaseComponent
+ */
+export default FlexberryBaseComponent.extend({
+  /**
+   * Class names for component wrapping &lt;div&gt;.
+   */
+  classNames: [&#x27;file-component&#x27;, &#x27;ui&#x27;, &#x27;fluid&#x27;, &#x27;action&#x27;, &#x27;input&#x27;],
+
+  /**
+   * Copy of value created at initialization moment or after successful upload.
+   */
+  initialValue: null,
+
+  /**
+   * Deserialized copy of value created at initialization moment or after successful upload.
+   */
+  jsonInitialValue: Ember.computed(&#x27;initialValue&#x27;, function() {
+    var initialValue = this.get(&#x27;initialValue&#x27;);
+    return Ember.typeOf(initialValue) === &#x27;string&#x27; &amp;&amp; !Ember.isBlank(initialValue) ? JSON.parse(initialValue) : null;
+  }),
+
+  /**
+   * Value of file component (contains serialized file metadata such as fileName, fileSize, etc.).
+   * It is binded to related model property, so every change to value will automatically change model property.
+   */
+  value: null,
+
+  /**
+   * Deserialized value of file component.
+   */
+  jsonValue: Ember.computed(&#x27;value&#x27;, function() {
+    var value = this.get(&#x27;value&#x27;);
+    return Ember.typeOf(value) === &#x27;string&#x27; &amp;&amp; !Ember.isBlank(value) ? JSON.parse(value) : null;
+  }),
+
+  /**
+   * Change value handler.
+   */
+  valueChange: Ember.observer(&#x27;value&#x27;, function() {
+    this.sendAction(&#x27;fileChange&#x27;, {
+      uploadData: this.get(&#x27;uploadData&#x27;),
+      value: this.get(&#x27;value&#x27;)
+    });
+  }),
+
+  /**
+   * Data from jQuery fileupload plugin (contains selected file).
+   */
+  uploadData: null,
+
+  /**
+   * Current file selected for upload.
+   */
+  selectedFile: Ember.computed(&#x27;uploadData&#x27;, function() {
+    var uploadData = this.get(&#x27;uploadData&#x27;);
+    return uploadData &amp;&amp; uploadData.files &amp;&amp; uploadData.files.length &gt; 0 ? uploadData.files[0] : null;
+  }),
+
+  /**
+   * Handles uploadData change.
+   */
+  uploadDataChange: Ember.observer(&#x27;uploadData&#x27;, function() {
+    var file = this.get(&#x27;selectedFile&#x27;);
+
+    if (!Ember.isNone(file)) {
+      var jsonValue = {
+        fileName: file.name,
+        fileSize: file.size
+      };
+
+      this.set(&#x27;value&#x27;, JSON.stringify(jsonValue));
+    }
+  }),
+
+  /**
+   * Flag: indicates whether file upload is in progress now.
+   */
+  uploadIsInProgress: false,
+
+  /**
+   * Flag: indicates whether file download is in progress now.
+   */
+  downloadIsInProgress: false,
+
+  /**
+   * Flag: indicates whether file component is readonly.
+   * If so, then add, delete, and upload operations will be disabled, only download operation will be accessible.
+   */
+  readonly: false,
+
+  /**
+   * Flag: indicates whether related model property is required.
+   */
+  required: false,
+
+  /**
+   * Flag: indicates whether add button is visible now.
+   */
+  addButtonIsVisible: Ember.computed(&#x27;readonly&#x27;, function() {
+    return !this.get(&#x27;readonly&#x27;);
+  }),
+
+  /**
+   * Flag: indicates whether add button is enabled now.
+   */
+  addButtonIsEnabled: Ember.computed(&#x27;uploadIsInProgress&#x27;, &#x27;downloadIsInProgress&#x27;, function() {
+    var uploadIsInProgress = this.get(&#x27;uploadIsInProgress&#x27;);
+    var downloadIsInProgress = this.get(&#x27;downloadIsInProgress&#x27;);
+    return !(uploadIsInProgress || downloadIsInProgress);
+  }),
+
+  /**
+   * Add button title (will be shown on mouse hover).
+   */
+  addButtonTitle: null,
+
+  /**
+   * Flag: indicates whether remove button is visible now.
+   */
+  removeButtonIsVisible: Ember.computed(&#x27;readonly&#x27;, function() {
+    return !this.get(&#x27;readonly&#x27;);
+  }),
+
+  /**
+   * Flag: indicates whether remove button is enabled now.
+   */
+  removeButtonIsEnabled: Ember.computed(&#x27;uploadIsInProgress&#x27;, &#x27;downloadIsInProgress&#x27;, &#x27;value&#x27;, function() {
+    var uploadIsInProgress = this.get(&#x27;uploadIsInProgress&#x27;);
+    var downloadIsInProgress = this.get(&#x27;downloadIsInProgress&#x27;);
+    var jsonValue = this.get(&#x27;jsonValue&#x27;);
+
+    return !(uploadIsInProgress || downloadIsInProgress || Ember.isNone(jsonValue));
+  }),
+
+  /**
+   * Remove button title (will be shown on mouse hover).
+   */
+  removeButtonTitle: null,
+
+  // Flag: indicates whether to upload file on controllers &#x27;modelPreSave&#x27; event.
+  uploadOnModelPreSave: null,
+
+  /**
+   * Flag: indicates whether to show upload button or not.
+   */
+  showUploadButton: null,
+
+  /**
+   * Flag: indicates whether upload button is visible now.
+   */
+  uploadButtonIsVisible: Ember.computed(&#x27;readonly&#x27;, &#x27;showUploadButton&#x27;, function() {
+    return !this.get(&#x27;readonly&#x27;) &amp;&amp; this.get(&#x27;showUploadButton&#x27;);
+  }),
+
+  /**
+   * Flag: indicates whether upload button is enabled now.
+   */
+  uploadButtonIsEnabled: Ember.computed(&#x27;uploadIsInProgress&#x27;, &#x27;downloadIsInProgress&#x27;, &#x27;uploadData&#x27;, function() {
+    var uploadIsInProgress = this.get(&#x27;uploadIsInProgress&#x27;);
+    var downloadIsInProgress = this.get(&#x27;downloadIsInProgress&#x27;);
+    var selectedFile = this.get(&#x27;selectedFile&#x27;);
+
+    return !(uploadIsInProgress || downloadIsInProgress || Ember.isNone(selectedFile));
+  }),
+
+  /**
+   * Upload button title (will be shown on mouse hover).
+   */
+  uploadButtonTitle: null,
+
+  /**
+   * Flag: indicates whether download button is visible now.
+   */
+  downloadButtonIsVisible: Ember.computed(&#x27;initialValue&#x27;, function() {
+    // Download button is always visible (but disabled if download is not available).
+    return true;
+  }),
+
+  /**
+   * Flag: indicates whether download button is enabled now.
+   */
+  downloadButtonIsEnabled: Ember.computed(&#x27;uploadIsInProgress&#x27;, &#x27;downloadIsInProgress&#x27;, &#x27;initialValue&#x27;, function() {
+    var uploadIsInProgress = this.get(&#x27;uploadIsInProgress&#x27;);
+    var downloadIsInProgress = this.get(&#x27;downloadIsInProgress&#x27;);
+    var jsonInitialValue = this.get(&#x27;jsonInitialValue&#x27;);
+
+    return !(uploadIsInProgress || downloadIsInProgress || Ember.isNone(jsonInitialValue));
+  }),
+
+  /**
+   * Download button title (will be shown on mouse hover).
+   */
+  downloadButtonTitle: null,
+
+  /**
+   * Maximum file size in bytes for uploading files.
+   * It should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\environment.
+   * If null or undefined, then APP.components.file.maxUploadFileSize from application config\environment will be used.
+   */
+  maxUploadFileSize: null,
+
+  /**
+   * Text to be displayed instead of file name, if file has not been selected.
+   */
+  placeholder: null,
+
+  /**
+   * File upload URL.
+   * If null or undefined, then APP.components.file.uploadUrl from application config\environment will be used.
+   */
+  uploadUrl: null,
+
+  /**
+   * File download URL.
+   * If null or undefined, then APP.components.file.downloadUrl from application config\environment will be used.
+   */
+  downloadUrl: null,
+
+  /**
+   * Flag: indicates whether to show modal dialog on upload errors or not.
+   */
+  showModalDialogOnUploadError: null,
+
+  /**
+   * Flag: indicates whether to show modal dialog on download errors or not.
+   */
+  showModalDialogOnDownloadError: null,
+
+  /**
+   * Title to be displayed in error modal dialog.
+   * It will be displayed only if some error occur.
+   */
+  errorModalDialogTitle: &#x27;File component error&#x27;,
+
+  /**
+   * Content to be displayed in error modal dialog.
+   * It will be displayed only if some error occur.
+   */
+  errorModalDialogContent: &#x27;File component error occurred&#x27;,
+
+  /**
+   * Selected jQuery object, containing HTML of error modal dialog.
+   */
+  errorModalDialog: null,
+
+  /**
+   * File name.
+   * It is binded to component file name input, so every change to fileName will automatically change file name input value.
+   */
+  fileName: Ember.computed(&#x27;value&#x27;, function() {
+    var jsonValue = this.get(&#x27;jsonValue&#x27;);
+    if (Ember.isNone(jsonValue)) {
+      return null;
+    }
+
+    return jsonValue.fileName;
+  }),
+
+  /**
+   * Initializes file-control component.
+   */
+  init: function() {
+    this._super.apply(this, arguments);
+
+    // Remember initial value.
+    var value = this.get(&#x27;value&#x27;);
+    this.set(&#x27;initialValue&#x27;, Ember.copy(value, true));
+
+    // Import application config\environment.
+    var applicationConfig = this.container.lookupFactory(&#x27;config:environment&#x27;) || {};
+    var fileComponentConfig = Ember.get(applicationConfig, &#x27;APP.components.flexberryFile&#x27;) || {};
+
+    // Properties initialization helper method.
+    var initProperty = function(options) {
+      var componentPropertyValue = this.get(options.propertyName);
+      if (!Ember.isNone(componentPropertyValue)) {
+        return;
+      }
+
+      // Property is undefined. Set configuration-defined value or default.
+      var configurationPropertyValue = Ember.get(fileComponentConfig, options.propertyName);
+      var defaultPropertyValue = options.defaultPropertyValue;
+
+      if (!Ember.isNone(configurationPropertyValue)) {
+        this.set(options.propertyName, configurationPropertyValue);
+      } else {
+        this.set(options.propertyName, defaultPropertyValue);
+      }
+    }.bind(this);
+
+    initProperty({
+      propertyName: &#x27;uploadUrl&#x27;,
+      defaultPropertyValue: null
+    });
+    initProperty({
+      propertyName: &#x27;downloadUrl&#x27;,
+      defaultPropertyValue: null
+    });
+    initProperty({
+      propertyName: &#x27;maxUploadFileSize&#x27;,
+      defaultPropertyValue: null
+    });
+    initProperty({
+      propertyName: &#x27;placeholder&#x27;,
+      defaultPropertyValue: &#x27;(no file)&#x27;
+    });
+    initProperty({
+      propertyName: &#x27;uploadOnModelPreSave&#x27;,
+      defaultPropertyValue: true
+    });
+    initProperty({
+      propertyName: &#x27;showUploadButton&#x27;,
+      defaultPropertyValue: false
+    });
+    initProperty({
+      propertyName: &#x27;showModalDialogOnUploadError&#x27;,
+      defaultPropertyValue: false
+    });
+    initProperty({
+      propertyName: &#x27;showModalDialogOnDownloadError&#x27;,
+      defaultPropertyValue: true
+    });
+    initProperty({
+      propertyName: &#x27;addButtonTitle&#x27;,
+      defaultPropertyValue: &#x27;Add file&#x27;
+    });
+    initProperty({
+      propertyName: &#x27;removeButtonTitle&#x27;,
+      defaultPropertyValue: &#x27;Remove file&#x27;
+    });
+    initProperty({
+      propertyName: &#x27;uploadButtonTitle&#x27;,
+      defaultPropertyValue: &#x27;Upload file&#x27;
+    });
+    initProperty({
+      propertyName: &#x27;downloadButtonTitle&#x27;,
+      defaultPropertyValue: &#x27;Download file&#x27;
+    });
+  },
+
+  /**
+   * Initializes file-control component.
+   */
+  didInsertElement: function() {
+    var _this = this;
+
+    var fileInputId = _this.get(&#x27;elementId&#x27;) + &#x27;FlexberryFile&#x27;;
+    var fileInput = _this.$(&#x27;.flexberry-file-file-input&#x27;);
+    fileInput.attr(&#x27;id&#x27;, fileInputId);
+
+    var addFileButton = _this.$(&#x27;.flexberry-file-add-button&#x27;);
+    addFileButton.attr(&#x27;for&#x27;, fileInputId);
+
+    var removeFileButton = _this.$(&#x27;.flexberry-file-remove-button&#x27;);
+    removeFileButton.on(&#x27;click&#x27;, function() {
+      _this.removeFile.call(_this, null);
+    });
+
+    var uploadFileButton = _this.$(&#x27;.flexberry-file-upload-button&#x27;);
+    uploadFileButton.on(&#x27;click&#x27;, function() {
+      _this.uploadFile.call(_this, null);
+    });
+
+    var downloadFileButton = _this.$(&#x27;.flexberry-file-download-button&#x27;);
+    downloadFileButton.on(&#x27;click&#x27;, function() {
+      _this.downloadFile.call(_this, null);
+    });
+
+    // Initialize SemanticUI modal dialog, and remember it in a component property,
+    // because after call to errorModalDialog.modal its html will disappear from DOM.
+    var errorModalDialog = _this.$(&#x27;.flexberry-file-error-modal-dialog&#x27;);
+    errorModalDialog.modal(&#x27;setting&#x27;, &#x27;closable&#x27;, false);
+    this.set(&#x27;errorModalDialog&#x27;, errorModalDialog);
+
+    // jQuery fileupload &#x27;add&#x27; callback.
+    var onFileAdd = function(e, uploadData) {
+      var selectedFile = uploadData &amp;&amp; uploadData.files &amp;&amp; uploadData.files.length &gt; 0 ? uploadData.files[0] : null;
+      var maxUploadFileSize = _this.get(&#x27;maxUploadFileSize&#x27;);
+
+      // Prevent files greater then maxUploadFileSize.
+      if (!Ember.isNone(maxUploadFileSize) &amp;&amp; selectedFile.size &gt; maxUploadFileSize) {
+        var errorTitle = &#x27;Add file error&#x27;;
+        var errorContent = &#x27;File size must not be greater then &#x27; + maxUploadFileSize + &#x27; bytes. &#x27; +
+          &#x27; Selected file \&#x27;&#x27; + selectedFile.name + &#x27;\&#x27; has size of &#x27; + selectedFile.size + &#x27; bytes.&#x27;;
+        _this.showErrorModalDialog.call(_this, errorTitle, errorContent);
+
+        return;
+      }
+
+      _this.set(&#x27;uploadData&#x27;, uploadData);
+    };
+
+    // Initialize jQuery fileupload plugin (https://github.com/blueimp/jQuery-File-Upload/wiki/API).
+    fileInput.fileupload({
+      // Disable autoUpload.
+      autoUpload: false,
+
+      // Type of data that is expected back from the server.
+      dataType: &#x27;json&#x27;,
+
+      // Maximum number of files to be selected and uploaded.
+      maxNumberOfFiles: 1,
+
+      // Enable single file uploads.
+      singleFileUploads: true,
+
+      // Disable drag&amp;drop file adding.
+      dropZone: null,
+
+      // A string containing the URL to which the upload request should be sent.
+      url: _this.get(&#x27;uploadUrl&#x27;),
+
+      // File add handler.
+      add: onFileAdd
+    });
+
+    // Try to get current controller (to subscribe then on controller&#x27;s &#x27;modelPreSave&#x27; event).
+    // Component&#x27;s &#x27;targetObject&#x27; is parent component or a controller (in the end of components hierarchy).
+    var currentController = _this.get(&#x27;targetObject&#x27;);
+    while (!(Ember.isNone(currentController) || currentController instanceof Ember.Controller)) {
+      currentController = currentController.get(&#x27;targetObject&#x27;);
+    }
+
+    _this.set(&#x27;currentController&#x27;, currentController);
+
+    // Subscribe on controller&#x27;s &#x27;modelPreSave&#x27;event.
+    _this.subscribeOnModelPreSaveEvent();
+  },
+
+  /**
+   * Destroys file-control component.
+   */
+  willDestroyElement: function() {
+    // Unsubscribe from controller&#x27;s &#x27;modelPreSave&#x27;event.
+    this.unsubscribeFromModelPresaveEvent();
+
+    var fileInput = this.$(&#x27;.flexberry-file-file-input&#x27;);
+    fileInput.fileupload(&#x27;destroy&#x27;);
+  },
+
+  /**
+   * Method to remove selected file.
+   */
+  removeFile: function() {
+    this.set(&#x27;uploadData&#x27;, null);
+    this.set(&#x27;value&#x27;, null);
+  },
+
+  /**
+   * Method to upload selected file.
+   */
+  uploadFile: function() {
+    var file = this.get(&#x27;selectedFile&#x27;);
+    if (Ember.isNone(file)) {
+      return null;
+    }
+
+    var _this = this;
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      _this.set(&#x27;uploadIsInProgress&#x27;, true);
+
+      var uploadData = _this.get(&#x27;uploadData&#x27;);
+
+      // Additional data.
+      var initialValue = _this.get(&#x27;initialValue&#x27;);
+      if (!Ember.isNone(initialValue)) {
+        uploadData.formData = {
+          // Metadata about previously uploaded file.
+          previousFileDescription: _this.get(&#x27;initialValue&#x27;)
+        };
+      }
+
+      uploadData.submit().done(function(result, textStatus, jqXhr) {
+        var value = jqXhr.responseText;
+
+        _this.set(&#x27;value&#x27;, value);
+        _this.set(&#x27;initialValue&#x27;, Ember.copy(value, true));
+        _this.set(&#x27;uploadData&#x27;, null);
+
+        _this.sendAction(&#x27;uploadSuccess&#x27;, {
+          uploadData: uploadData,
+          response: jqXhr,
+          value: value
+        });
+        resolve(_this.get(&#x27;jsonValue&#x27;));
+      }).fail(function(jqXhr, textStatus, errorThrown) {
+        var fileName = &#x27; \&#x27;&#x27; + file.name + &#x27;\&#x27;&#x27;;
+        var errorText = errorThrown ? &#x27; (&#x27; + errorThrown + &#x27;)&#x27; : &#x27;&#x27;;
+        var errorTitle = &#x27;File upload error&#x27;;
+        var errorContent = &#x27;Upload&#x27; + fileName + &#x27; failed&#x27; + errorText + &#x27;.&#x27;;
+
+        var showModalDialogOnUploadError = _this.get(&#x27;showModalDialogOnUploadError&#x27;);
+        if (showModalDialogOnUploadError) {
+          _this.showErrorModalDialog.call(_this, errorTitle, errorContent);
+        }
+
+        _this.sendAction(&#x27;uploadFail&#x27;, {
+          uploadData: uploadData,
+          response: jqXhr,
+          value: _this.get(&#x27;value&#x27;)
+        });
+        reject(new Error(errorContent));
+      }).always(function() {
+        _this.set(&#x27;uploadIsInProgress&#x27;, false);
+      });
+    });
+  },
+
+  /**
+   * Method to download uploaded file.
+   */
+  downloadFile: function() {
+    var jsonInitialValue = this.get(&#x27;jsonInitialValue&#x27;);
+    if (Ember.isNone(jsonInitialValue)) {
+      return null;
+    }
+
+    var _this = this;
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      _this.set(&#x27;downloadIsInProgress&#x27;, true);
+
+      // Use jQuery fileDownload plugin (https://github.com/johnculviner/jquery.fileDownload).
+      // Warning! It uses iframe to send file download request, so there is no way to set request authorization header.
+      Ember.$.fileDownload(_this.get(&#x27;downloadUrl&#x27;) + &#x27;?&#x27; + Ember.$.param(jsonInitialValue), {
+        successCallback: function(url) {
+          _this.sendAction(&#x27;downloadSuccess&#x27;, {
+            downloadData: jsonInitialValue,
+            response: &#x27;success&#x27;,
+            value: _this.get(&#x27;value&#x27;)
+          });
+          resolve(jsonInitialValue);
+          _this.set(&#x27;downloadIsInProgress&#x27;, false);
+        },
+        failCallback: function(errorText, url) {
+          var fileName = &#x27; \&#x27;&#x27; + jsonInitialValue.fileName + &#x27;\&#x27;&#x27;;
+          var errorTitle = &#x27;File download error&#x27;;
+          var errorContent = &#x27;Download&#x27; + fileName + &#x27; failed. &#x27; + errorText;
+
+          var showModalDialogOnDownloadError = _this.get(&#x27;showModalDialogOnDownloadError&#x27;);
+          if (showModalDialogOnDownloadError) {
+            _this.showErrorModalDialog.call(_this, errorTitle, errorContent);
+          }
+
+          _this.sendAction(&#x27;downloadFail&#x27;, {
+            downloadData: jsonInitialValue,
+            response: errorText,
+            value: _this.get(&#x27;value&#x27;)
+          });
+          reject(new Error(errorText));
+          _this.set(&#x27;downloadIsInProgress&#x27;, false);
+        }
+      });
+    });
+  },
+
+  /**
+   * Method to show error modal dialog.
+   * @param {String} errorTitle Error title (window header).
+   * @param {String} errorContent Error content (error description).
+   */
+  showErrorModalDialog: function(errorTitle, errorContent) {
+    var errorModalDialog = this.get(&#x27;errorModalDialog&#x27;);
+    if (errorModalDialog &amp;&amp; errorModalDialog.modal) {
+      this.set(&#x27;errorModalDialogTitle&#x27;, errorTitle);
+      this.set(&#x27;errorModalDialogContent&#x27;, errorContent);
+      errorModalDialog.modal(&#x27;show&#x27;);
+    }
+  },
+
+  /**
+   * Current controller.
+   */
+  currentController: null,
+
+  /**
+   * Controllers &#x27;modelPreSave&#x27; event handler.
+   */
+  onModelPresave: null,
+
+  /**
+   * Method to subscribe on controller&#x27;s &#x27;modelPreSave&#x27; event.
+   */
+  subscribeOnModelPreSaveEvent: function() {
+    var uploadOnModelPreSave = this.get(&#x27;uploadOnModelPreSave&#x27;);
+    var currentController = this.get(&#x27;currentController&#x27;);
+    if (!uploadOnModelPreSave || Ember.isNone(currentController) || Ember.isNone(currentController.on)) {
+      return;
+    }
+
+    // If upload &#x27;modelPreSave&#x27; is allowed, call uploadFile method on controllers &#x27;modelPreSave&#x27; event,
+    // and return upload RSVP.Promise to controller.
+    var onModelPreSave = function(e) {
+      var uploadFilePromise = this.uploadFile();
+
+      if (!Ember.isNone(uploadFilePromise) &amp;&amp; !Ember.isNone(e) &amp;&amp; Ember.isArray(e.promises)) {
+        e.promises.push(uploadFilePromise);
+      }
+    }.bind(this);
+
+    currentController.on(&#x27;modelPreSave&#x27;, onModelPreSave);
+    this.set(&#x27;onModelPresave&#x27;, onModelPreSave);
+  },
+
+  /**
+   * Method to unsubscribe from controller&#x27;s &#x27;modelPreSave&#x27; event.
+   */
+  unsubscribeFromModelPresaveEvent: function() {
+    var currentController = this.get(&#x27;currentController&#x27;);
+    var onModelPresave = this.get(&#x27;onModelPresave&#x27;);
+    if (Ember.isNone(currentController) || Ember.isNone(currentController.off) || Ember.isNone(onModelPresave)) {
+      return;
+    }
+
+    currentController.off(&#x27;modelPreSave&#x27;, onModelPresave);
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
