@@ -125,11 +125,29 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/components/flexberry-field.js": {
+            "name": "ember-flexberry/addon/components/flexberry-field.js",
+            "modules": {},
+            "classes": {
+                "FlexberryField": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/components/flexberry-file.js": {
             "name": "ember-flexberry/addon/components/flexberry-file.js",
             "modules": {},
             "classes": {
                 "FlexberryFile": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry/addon/components/flexberry-groupedit.js": {
+            "name": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "modules": {},
+            "classes": {
+                "FlexberryGroupedit": 1
             },
             "fors": {},
             "namespaces": {}
@@ -258,6 +276,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/mixins/sortable-controller.js": {
+            "name": "ember-flexberry/addon/mixins/sortable-controller.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/mixins/sortable-route.js": {
             "name": "ember-flexberry/addon/mixins/sortable-route.js",
             "modules": {},
@@ -279,8 +304,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry/addon/routes/list-form-page.js": {
-            "name": "ember-flexberry/addon/routes/list-form-page.js",
+        "ember-flexberry/addon/routes/list-form.js": {
+            "name": "ember-flexberry/addon/routes/list-form.js",
             "modules": {},
             "classes": {},
             "fors": {},
@@ -351,7 +376,9 @@
                 "FlexberrCheckbox": 1,
                 "FlexberryDatetimePicker": 1,
                 "FlexberryDropDown": 1,
+                "FlexberryField": 1,
                 "FlexberryFile": 1,
+                "FlexberryGroupedit": 1,
                 "FlexberryLookup": 1,
                 "FlexberryTextarea": 1,
                 "FlexberryTextbox": 1,
@@ -496,6 +523,21 @@
             "line": 7,
             "extends": "FlexberryBaseComponent"
         },
+        "FlexberryField": {
+            "name": "FlexberryField",
+            "shortname": "FlexberryField",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/components/flexberry-field.js",
+            "line": 7,
+            "description": "Field component for Semantic UI.",
+            "extends": "FlexberryBaseComponent"
+        },
         "FlexberryFile": {
             "name": "FlexberryFile",
             "shortname": "FlexberryFile",
@@ -509,6 +551,21 @@
             "file": "ember-flexberry/addon/components/flexberry-file.js",
             "line": 8,
             "description": "Flexberry file component.",
+            "extends": "FlexberryBaseComponent"
+        },
+        "FlexberryGroupedit": {
+            "name": "FlexberryGroupedit",
+            "shortname": "FlexberryGroupedit",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 7,
+            "description": "Component for create, edit and delete detail objects.",
             "extends": "FlexberryBaseComponent"
         },
         "FlexberryLookup": {
@@ -1063,14 +1120,83 @@
         },
         {
             "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 73,
+            "line": 25,
+            "description": "Creates query with given projection name (if not null) and limit function (if not empty).",
+            "itemtype": "method",
+            "name": "getLimitFunctionQuery",
+            "params": [
+                {
+                    "name": "limitFunction",
+                    "description": "Filter to add to query (if empty noting will be added as filter).",
+                    "type": "String"
+                },
+                {
+                    "name": "projectionName",
+                    "description": "Projection name to add to query (if empty noting will be added as projection name).",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Created query.",
+                "type": "Object"
+            },
+            "class": "FlexberryBaseComponent",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry/addon/adapters/odata.js",
+            "line": 46,
+            "description": "Forms url to get all entities of certain type.",
+            "itemtype": "method",
+            "name": "getUrlForTypeQuery",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Type of entities.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Formed url.",
+                "type": "Object"
+            },
+            "throws": {
+                "description": "Throws error if type parameter is undefined.",
+                "type": "Error"
+            },
+            "class": "FlexberryBaseComponent",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry/addon/adapters/odata.js",
+            "line": 63,
+            "description": "Forms query options to get entities by specified lookup options.",
+            "itemtype": "method",
+            "name": "getQueryOptionsForAutocompleteLookup",
+            "params": [
+                {
+                    "name": "lookupParameters",
+                    "description": "Specified lookup autocomplete options.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Formed query options.",
+                "type": "Object"
+            },
+            "class": "FlexberryBaseComponent",
+            "module": "ember-flexberry-projections"
+        },
+        {
+            "file": "ember-flexberry/addon/adapters/odata.js",
+            "line": 151,
             "description": "Makes HTTP request for creating, updating or deleting the record.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry-projections"
         },
         {
             "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 116,
+            "line": 194,
             "description": "Appends id to URL according to the OData specification.",
             "access": "private",
             "tagname": "",
@@ -1143,6 +1269,50 @@
             "tagname": "",
             "type": "String",
             "class": "FlexberrCheckbox",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-field.js",
+            "line": 14,
+            "description": "Default classes for component wrapper.",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "Array",
+            "readonly": "",
+            "class": "FlexberryField",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-field.js",
+            "line": 23,
+            "description": "Flag to make control required.",
+            "itemtype": "property",
+            "name": "required",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryField",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-field.js",
+            "line": 32,
+            "description": "Label value.",
+            "itemtype": "property",
+            "name": "label",
+            "type": "String",
+            "default": "''",
+            "class": "FlexberryField",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-field.js",
+            "line": 41,
+            "description": "Input value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryField",
             "module": "ember-flexberry"
         },
         {
@@ -1487,6 +1657,50 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 14,
+            "description": "Projection for detail object's model.",
+            "itemtype": "property",
+            "name": "modelProjection",
+            "type": "Object",
+            "default": "null",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 23,
+            "description": "Array of models for detail objects.",
+            "itemtype": "property",
+            "name": "content",
+            "type": "ManyArray",
+            "default": "null",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 32,
+            "description": "Function to get names of components to use for display\nattributes of detail object's model.",
+            "itemtype": "property",
+            "name": "cellComponent",
+            "type": "Function",
+            "default": "null",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 42,
+            "description": "Setting to true enables row ordering by clicking on column headers.",
+            "itemtype": "property",
+            "name": "orderable",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
             "line": 16,
             "description": "Default classes for component wrapper.",
@@ -1500,6 +1714,103 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
             "line": 35,
+            "description": "Flag to show that lookup is at autocomplete mode.",
+            "itemtype": "property",
+            "name": "autocomplete",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 44,
+            "description": "Observes changes to value. Set it to autocompleteValue.",
+            "itemtype": "method",
+            "name": "valueChanged",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 53,
+            "description": "Value for autocomplete control.\nIf model's value changes, autocompleteValue is changed too. autocompleteValue may be changed independely, but it won't be applied to model automatically.",
+            "itemtype": "property",
+            "name": "autocompleteValue",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 63,
+            "description": "Method to get url to request autocomplete items.",
+            "itemtype": "property",
+            "name": "autocompleteUrl",
+            "type": "Action",
+            "default": "undefined",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 72,
+            "description": "Method to get query options to request autocomplete items.",
+            "itemtype": "property",
+            "name": "autocompleteQueryOptions",
+            "type": "Action",
+            "default": "undefined",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 81,
+            "description": "Action's name to update model's relation value.",
+            "itemtype": "property",
+            "name": "autocompleteUpdate",
+            "type": "String",
+            "default": "'updateLookupValue'",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 90,
+            "description": "Min characters count necessary to call autocomplete.",
+            "itemtype": "property",
+            "name": "autocompleteMinCharacters",
+            "type": "Number",
+            "default": "1",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 99,
+            "description": "Maximum number of results to show on autocomplete.",
+            "itemtype": "property",
+            "name": "autocompleteMaxResults",
+            "type": "Number",
+            "default": "10",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 108,
+            "description": "Server-side property name of autocomplete property.",
+            "itemtype": "property",
+            "name": "autocompleteProperty",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 117,
             "description": "Function to limit accessible values.",
             "itemtype": "property",
             "name": "limitFunction",
@@ -1510,7 +1821,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 44,
+            "line": 126,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -1520,7 +1831,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 60,
+            "line": 142,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -1796,7 +2107,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 48,
+            "line": 43,
             "description": "Service that triggers groupedit events.",
             "itemtype": "property",
             "name": "groupEditEventsService",
@@ -1894,28 +2205,28 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 207,
+            "line": 205,
             "description": "On save model fail handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 214,
+            "line": 212,
             "description": "On delete model success handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 221,
+            "line": 219,
             "description": "On delete model fail handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 228,
+            "line": 226,
             "description": "On model 'preSave' event handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
@@ -1933,7 +2244,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 41,
+            "line": 38,
             "description": "Handles create modal window action.\nIt saves created window to have opportunity to close it later.",
             "itemtype": "method",
             "name": "createdModalDialog",
@@ -1949,7 +2260,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 52,
+            "line": 49,
             "description": "Handles correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -2009,26 +2320,93 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/sortable-route.js",
-            "line": 4,
-            "description": "Десериализовать строку с параметрами сортировки. Ожидается строка следующего вида: '+Имя1-Имя2{...}',\nгде '+' и '-' - направления сортировки, 'ИмяX' - имя свойства для сортировки.",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "line": 171,
+            "description": "Update relation value at model.",
+            "itemtype": "method",
+            "name": "updateLookupValue",
             "params": [
                 {
-                    "name": "paramString",
-                    "description": "Сериализованные параметры сортировки.",
+                    "name": "updateData",
+                    "description": "Lookup parameters to update data at model (projection name, etc).",
+                    "type": "Object"
+                }
+            ],
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "line": 199,
+            "description": "Forms url to get all availible entities of certain relation.",
+            "itemtype": "method",
+            "name": "getLookupAutocompleteUrl",
+            "params": [
+                {
+                    "name": "relationName",
+                    "description": "Elements for this relation will be searched.",
                     "type": "String"
                 }
             ],
             "return": {
-                "description": "Массив объектов вида { propName: 'ИмяN', direction: 'asc/desc' }, задающий свойства и\nнаправления для сортировки.",
-                "type": "Array"
+                "description": "Formed url.",
+                "type": "Object"
             },
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/sortable-route.js",
-            "line": 40,
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "line": 212,
+            "description": "Forms query parameters by lookup autocomplete parameters.",
+            "itemtype": "method",
+            "name": "getAutocompleteLookupQueryOptions",
+            "params": [
+                {
+                    "name": "lookupParameters",
+                    "description": "Lookup autocomplete parameters (current limit function, etc).",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Formed query parameters.",
+                "type": "Object"
+            },
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "line": 231,
+            "description": "Gets related object type by relation name from specified model.",
+            "itemtype": "method",
+            "name": "_getRelationType",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "Specified model to get relation from.",
+                    "type": "String"
+                },
+                {
+                    "name": "relationName",
+                    "description": "Relation name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Related object type.",
+                "type": "String"
+            },
+            "throws": {
+                "description": "Throws error if relation was not found at model.",
+                "type": "Error"
+            },
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/sortable-controller.js",
+            "line": 30,
             "description": "Производит операцию, обратную методу deserializeSortingParam.",
             "params": [
                 {
@@ -2040,6 +2418,24 @@
             "return": {
                 "description": "Результирующая строка.",
                 "type": "String"
+            },
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/sortable-route.js",
+            "line": 8,
+            "description": "Десериализовать строку с параметрами сортировки. Ожидается строка следующего вида: '+Имя1-Имя2{...}',\nгде '+' и '-' - направления сортировки, 'ИмяX' - имя свойства для сортировки.",
+            "params": [
+                {
+                    "name": "paramString",
+                    "description": "Сериализованные параметры сортировки.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Массив объектов вида { propName: 'ИмяN', direction: 'asc/desc' }, задающий свойства и\nнаправления для сортировки.",
+                "type": "Array"
             },
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
@@ -2070,7 +2466,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 63,
+            "line": 70,
             "description": "Handles willTransition action (this action is fired at the beginning of any attempted transition).\nIt sends message about transition to corresponding controller.",
             "itemtype": "method",
             "name": "willTransition",
@@ -2079,7 +2475,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 75,
+            "line": 82,
             "description": "Event handler for \"row has been selected\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowAdded",
@@ -2102,7 +2498,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 89,
+            "line": 96,
             "description": "Event handler for \"row has been deleted\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowDeleted",
@@ -2117,7 +2513,7 @@
                 {
                     "name": "record",
                     "description": "The model corresponding to deleted row in groupedit.",
-                    "type": "Model"
+                    "type": "DS.Model"
                 }
             ],
             "class": "GroupEditEvents",
@@ -2125,7 +2521,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 103,
+            "line": 117,
             "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowChanged",
@@ -2142,8 +2538,8 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/routes/list-form-page.js",
-            "line": 9,
+            "file": "ember-flexberry/addon/routes/list-form.js",
+            "line": 8,
             "description": "Table row click handler.",
             "params": [
                 {
@@ -2609,11 +3005,11 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/mixins/sortable-route.js:4"
+            "line": " ember-flexberry/addon/mixins/sortable-controller.js:30"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/mixins/sortable-route.js:40"
+            "line": " ember-flexberry/addon/mixins/sortable-route.js:8"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -2641,11 +3037,11 @@
         },
         {
             "message": "Missing item type\nMakes HTTP request for creating, updating or deleting the record.",
-            "line": " ember-flexberry/addon/adapters/odata.js:73"
+            "line": " ember-flexberry/addon/adapters/odata.js:151"
         },
         {
             "message": "Missing item type\nAppends id to URL according to the OData specification.",
-            "line": " ember-flexberry/addon/adapters/odata.js:116"
+            "line": " ember-flexberry/addon/adapters/odata.js:194"
         },
         {
             "message": "Missing item type\nClass names for component wrapping <div>.",
@@ -2881,27 +3277,27 @@
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:207"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:205"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:214"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:212"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:221"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:219"
         },
         {
             "message": "Missing item type\nOn model 'preSave' event handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:228"
-        },
-        {
-            "message": "Missing item type\nДесериализовать строку с параметрами сортировки. Ожидается строка следующего вида: '+Имя1-Имя2{...}',\nгде '+' и '-' - направления сортировки, 'ИмяX' - имя свойства для сортировки.",
-            "line": " ember-flexberry/addon/mixins/sortable-route.js:4"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:226"
         },
         {
             "message": "Missing item type\nПроизводит операцию, обратную методу deserializeSortingParam.",
-            "line": " ember-flexberry/addon/mixins/sortable-route.js:40"
+            "line": " ember-flexberry/addon/mixins/sortable-controller.js:30"
+        },
+        {
+            "message": "Missing item type\nДесериализовать строку с параметрами сортировки. Ожидается строка следующего вида: '+Имя1-Имя2{...}',\nгде '+' и '-' - направления сортировки, 'ИмяX' - имя свойства для сортировки.",
+            "line": " ember-flexberry/addon/mixins/sortable-route.js:8"
         },
         {
             "message": "Missing item type\nModel validation rules.",
@@ -2913,7 +3309,7 @@
         },
         {
             "message": "Missing item type\nTable row click handler.",
-            "line": " ember-flexberry/addon/routes/list-form-page.js:9"
+            "line": " ember-flexberry/addon/routes/list-form.js:8"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",

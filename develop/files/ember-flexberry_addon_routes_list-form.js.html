@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/services/groupedit-events.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/routes/list-form.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -108,124 +108,69 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/services/groupedit-events.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/routes/list-form.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-/**
- * @module ember-flexberry
- */
-
 import Ember from &#x27;ember&#x27;;
+import SortableRouteMixin from &#x27;../mixins/sortable-route&#x27;;
+import PaginatedRouteMixin from &#x27;../mixins/paginated-route&#x27;;
+import ProjectedModelRoute from &#x27;../routes/projected-model-form&#x27;;
 
-/**
- * Service for triggering groupedit events.
- *
- * @class GroupEditEvents
- * @extends Ember.Service
- * @public
- */
-export default Ember.Service.extend(Ember.Evented, {
-  /**
-   * Trigger for &quot;add new row&quot; event in groupedit.
-   * Event name: groupEditAddRow.
-   *
-   * @method addRowTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   */
-  addRowTrigger(componentName) {
-    this.trigger(&#x27;groupEditAddRow&#x27;, componentName);
+export default ProjectedModelRoute.extend(PaginatedRouteMixin, SortableRouteMixin, {
+  actions: {
+    /**
+     * Table row click handler.
+     *
+     * @param {Ember.Object} record Record related to clicked table row.
+     */
+    rowClick: function(record) {
+      this.transitionTo(record.constructor.modelName, record.get(&#x27;id&#x27;));
+    },
+
+    refreshList: function() {
+      this.refresh();
+    }
   },
 
-  /**
-   * Trigger for &quot;delete current row&quot; event in groupedit.
-   * Event name: groupEditDeleteRow.
-   *
-   * @method deleteRowTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   */
-  deleteRowTrigger(componentName) {
-    this.trigger(&#x27;groupEditDeleteRow&#x27;, componentName);
+  model: function(params, transition) {
+    let page = parseInt(params.page, 10);
+    let perPage = parseInt(params.perPage, 10);
+
+    Ember.assert(&#x27;page must be greater than zero.&#x27;, page &gt; 0);
+    Ember.assert(&#x27;perPage must be greater than zero.&#x27;, perPage &gt; 0);
+
+    let store = this.store;
+    let modelName = this.get(&#x27;modelName&#x27;);
+    let adapter = store.adapterFor(modelName);
+
+    let pageQuery = adapter.getPaginationQuery(page, perPage);
+    let sorting = this.deserializeSortingParam(params.sort);
+    let sortQuery = adapter.getSortingQuery(sorting, store.serializerFor(modelName));
+
+    let query = {};
+    Ember.merge(query, pageQuery);
+    Ember.merge(query, sortQuery);
+    Ember.merge(query, { projection: this.get(&#x27;modelProjection&#x27;) });
+
+    // find by query is always fetching.
+    // TODO: support getting from cache with &quot;store.all-&gt;filterByProjection&quot;.
+    return store.query(modelName, query)
+      .then((records) =&gt; {
+        // TODO: move to setupController mixins?
+        return this.includeSorting(records, sorting);
+      });
   },
 
-  /**
-   * Trigger for &quot;delete selected rows&quot; event in groupedit.
-   * Event name: groupEditDeleteRows.
-   *
-   * @method deleteRowsTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   */
-  deleteRowsTrigger(componentName) {
-    this.trigger(&#x27;groupEditDeleteRows&#x27;, componentName);
-  },
+  setupController: function(controller, model) {
+    this._super(...arguments);
 
-  /**
-   * Trigger for &quot;new row has been added&quot; event in groupedit.
-   * Event name: groupEditRowAdded.
-   *
-   * @method rowAddedTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   * @param {Model} record The model corresponding to added row in groupedit.
-   */
-  rowAddedTrigger(componentName, record) {
-    this.trigger(&#x27;groupEditRowAdded&#x27;, componentName, record);
-  },
-
-  /**
-   * Trigger for &quot;row has been deleted&quot; event in groupedit.
-   * Event name: groupEditRowDeleted.
-   *
-   * @method rowDeletedTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   * @param {Model} record The model corresponding to deleted row in groupedit.
-   */
-  rowDeletedTrigger(componentName, record) {
-    this.trigger(&#x27;groupEditRowDeleted&#x27;, componentName, record);
-  },
-
-  /**
-   * Trigger for &quot;selected rows has been deleted&quot; event in groupedit.
-   * Event name: groupEditRowDeleted.
-   *
-   * @method rowDeletedTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   * @param {Integer} count Count of deleted rows in groupedit.
-   */
-  rowsDeletedTrigger(componentName, count) {
-    this.trigger(&#x27;groupEditRowsDeleted&#x27;, componentName, count);
-  },
-
-  /**
-   * Trigger for &quot;row has been selected&quot; event in groupedit.
-   * Event name: groupEditRowSelected.
-   *
-   * @method rowSelectedTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   * @param {Model} record The model corresponding to selected row in groupedit.
-   * @param {Integer} count Count of selected rows in groupedit.
-   */
-  rowSelectedTrigger(componentName, record, count) {
-    this.trigger(&#x27;groupEditRowSelected&#x27;, componentName, record, count);
-  },
-
-  /**
-   * Trigger for &quot;model(s) corresponding to some row(s) was changed&quot; event in groupedit.
-   * Event name: groupEditRowsChanged.
-   *
-   * @method rowsChangedTrigger
-   *
-   * @param {String} componentName The name of flexberry-groupedit component.
-   */
-  rowsChangedTrigger(componentName) {
-    this.trigger(&#x27;groupEditRowsChanged&#x27;, componentName);
+    // Define &#x27;modelProjection&#x27; for controller instance.
+    // TODO: remove that when list-form controller will be moved to this route.
+    let modelClass = this.store.modelFor(this.get(&#x27;modelName&#x27;));
+    let proj = modelClass.projections.get(this.get(&#x27;modelProjection&#x27;));
+    controller.set(&#x27;modelProjection&#x27;, proj);
   }
 });
 

@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -234,8 +236,7 @@ export default FlexberryBaseComponent.extend({
     var valueFromInput = this.$(&#x27;input&#x27;).val();
     if (valueFromInput === &#x27;&#x27; &amp;&amp; !dateFromPicker.isValid()) {
       this.setEmptyValue();
-    }
-    else {
+    } else {
       var dateToSet = this.getDateToSet(dateFromPicker);
       var currentValue = this.get(&#x27;value&#x27;);
       if (currentValue === null || !moment(moment(dateToSet).format(this.dateTimeFormat), this.dateTimeFormat).isSame(moment(moment(currentValue).format(this.dateTimeFormat), this.dateTimeFormat))) {
@@ -272,8 +273,7 @@ export default FlexberryBaseComponent.extend({
     if ((!dateToSet || dateToSet === this.invalidDate) &amp;&amp; this.hasTimePicker) {
       this.$().parents(&#x27;body&#x27;).find(&#x27;button.applyBtn&#x27;).attr(&#x27;disabled&#x27;, &#x27;disabled&#x27;);
       this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).startDate = moment.invalid();
-    }
-    else {
+    } else {
       this.$().parents(&#x27;body&#x27;).find(&#x27;button.applyBtn&#x27;).removeAttr(&#x27;disabled&#x27;);
     }
   },
@@ -296,25 +296,21 @@ export default FlexberryBaseComponent.extend({
         if (this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;) !== undefined) {
           this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).startDate = currValueDateTime;
           this.$(&#x27;input&#x27;).data(&#x27;daterangepicker&#x27;).setEndDate(currValueDateTime);
-        }
-        else {
+        } else {
           this.$(&#x27;input&#x27;).val(currValueDateTime.format(this.dateTimeFormat));
         }
       }
-    }
-    else if (val === null) {
+    } else if (val === null) {
       var valueFromInput = this.$(&#x27;input&#x27;).val();
       if (valueFromInput !== &#x27;&#x27;) {
         this.$(&#x27;input&#x27;).val(&#x27;&#x27;);
       }
-    }
-    else if (!currValueDateTime.isValid()) {
+    } else if (!currValueDateTime.isValid()) {
       if (val !== this.invalidDate) {
         this.set(&#x27;value&#x27;, this.invalidDate);
         this.$(&#x27;input&#x27;).val(currValueDateTime.format(this.dateTimeFormat));
       }
-    }
-    else if (!moment.isDate(val)) {
+    } else if (!moment.isDate(val)) {
       this.set(&#x27;value&#x27;, currValueDateTime.toDate());
     }
   })

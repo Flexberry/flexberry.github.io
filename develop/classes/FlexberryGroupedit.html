@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>EnumTransform - Flexberry Documentation</title>
+    <title>FlexberryGroupedit - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -108,17 +108,17 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>EnumTransform <small>Class</small></h1>
+    <h1>FlexberryGroupedit <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
 
         <div class="extends">
-            Extends <a href="http://emberjs.com/api/data/classes/DS.Transform.html" class="crosslink external" target="_blank">DS.Transform</a>
+            Extends <a href="../classes/FlexberryBaseComponent.html" class="crosslink">FlexberryBaseComponent</a>
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l4"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:4</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:7</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -127,8 +127,7 @@
 
 
 <div class="well well-small">
-    <p>Base transform class that implements an enumeration type.
-During serialization and deserialization it checks if value is not outside of accessible values and returns same string.</p>
+    <p>Component for create, edit and delete detail objects.</p>
 
 </div>
 
@@ -149,20 +148,16 @@ During serialization and deserialization it checks if value is not outside of ac
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
-                            <li class="index-item method public inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_deserialize" data-tablink="deserialize">deserialize</a>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getLimitFunctionQuery" data-tablink="getLimitFunctionQuery">getLimitFunctionQuery</a>
 
                             </li>
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_deserialize" data-tablink="deserialize">deserialize</a>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getQueryOptionsForAutocompleteLookup" data-tablink="getQueryOptionsForAutocompleteLookup">getQueryOptionsForAutocompleteLookup</a>
 
                             </li>
-                            <li class="index-item method public inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_serialize" data-tablink="serialize">serialize</a>
-
-                            </li>
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_serialize" data-tablink="serialize">serialize</a>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getUrlForTypeQuery" data-tablink="getUrlForTypeQuery">getUrlForTypeQuery</a>
 
                             </li>
                     </ul>
@@ -172,12 +167,28 @@ During serialization and deserialization it checks if value is not outside of ac
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
-                            <li class="index-item property public">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_values" data-tablink="values">values</a>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_cellComponent" data-tablink="cellComponent">cellComponent</a>
 
                             </li>
-                            <li class="index-item property public">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_values" data-tablink="values">values</a>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_componentName" data-tablink="componentName">componentName</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_content" data-tablink="content">content</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_modelProjection" data-tablink="modelProjection">modelProjection</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_orderable" data-tablink="orderable">orderable</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_readonly" data-tablink="readonly">readonly</a>
 
                             </li>
                     </ul>
@@ -189,35 +200,34 @@ During serialization and deserialization it checks if value is not outside of ac
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method_deserialize" class="method item public">
-                        <h3 class="name"><code>deserialize</code></h3>
+                    <div id="method_getLimitFunctionQuery" class="method item inherited">
+                        <h3 class="name"><code>getLimitFunctionQuery</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>serialized</code>
+                                            <code>limitFunction</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>projectionName</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                             </span>
                     
                     
-                            <span class="flag public">public</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                <p>Inherited from
-                                <a href="http://emberjs.com/api/data/classes/DS.Transform.html#method_deserialize">
-                                    DS.Transform
-                                </a>
-                                but overwritten in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l27"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:27</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getLimitFunctionQuery">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l25"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:25</code></a>
                             </p>
                     
                     
@@ -225,7 +235,7 @@ During serialization and deserialization it checks if value is not outside of ac
                         </div>
                     
                         <div class="description">
-                            <p>Returns deserialized enumeration field.</p>
+                            <p>Creates query with given projection name (if not null) and limit function (if not empty).</p>
                     
                         </div>
                     
@@ -234,12 +244,23 @@ During serialization and deserialization it checks if value is not outside of ac
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">serialized</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                                            <code class="param-name">limitFunction</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Serialized enumeration field (index).</p>
+                                            <p>Filter to add to query (if empty noting will be added as filter).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">projectionName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Projection name to add to query (if empty noting will be added as projection name).</p>
                     
                                         </div>
                     
@@ -251,41 +272,38 @@ During serialization and deserialization it checks if value is not outside of ac
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>Deserialized enumeration field (name).
-                    Returns <code>null</code> or <code>undefined</code> if <code>serialized</code> has
-                    one of these values.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Created query.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_deserialize" class="method item public">
-                        <h3 class="name"><code>deserialize</code></h3>
+                    <div id="method_getQueryOptionsForAutocompleteLookup" class="method item inherited">
+                        <h3 class="name"><code>getQueryOptionsForAutocompleteLookup</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>serialized</code>
+                                            <code>lookupParameters</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                             </span>
                     
                     
-                            <span class="flag public">public</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l27"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:27</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getQueryOptionsForAutocompleteLookup">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l63"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:63</code></a>
                             </p>
                     
                     
@@ -293,7 +311,7 @@ During serialization and deserialization it checks if value is not outside of ac
                         </div>
                     
                         <div class="description">
-                            <p>Returns deserialized enumeration field.</p>
+                            <p>Forms query options to get entities by specified lookup options.</p>
                     
                         </div>
                     
@@ -302,12 +320,12 @@ During serialization and deserialization it checks if value is not outside of ac
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">serialized</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <code class="param-name">lookupParameters</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Serialized enumeration field (name).</p>
+                                            <p>Specified lookup autocomplete options.</p>
                     
                                         </div>
                     
@@ -319,43 +337,38 @@ During serialization and deserialization it checks if value is not outside of ac
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>Deserialized enumeration field (name).
-                    Returns <code>null</code> or <code>undefined</code> if <code>serialized</code> has one of these values.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Formed query options.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_serialize" class="method item public">
-                        <h3 class="name"><code>serialize</code></h3>
+                    <div id="method_getUrlForTypeQuery" class="method item inherited">
+                        <h3 class="name"><code>getUrlForTypeQuery</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>deserialized</code>
+                                            <code>type</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                             </span>
                     
                     
-                            <span class="flag public">public</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                <p>Inherited from
-                                <a href="http://emberjs.com/api/data/classes/DS.Transform.html#method_serialize">
-                                    DS.Transform
-                                </a>
-                                but overwritten in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l72"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:72</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getUrlForTypeQuery">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l46"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:46</code></a>
                             </p>
                     
                     
@@ -363,7 +376,7 @@ During serialization and deserialization it checks if value is not outside of ac
                         </div>
                     
                         <div class="description">
-                            <p>Returns serialized enumeration field.</p>
+                            <p>Forms url to get all entities of certain type.</p>
                     
                         </div>
                     
@@ -372,12 +385,12 @@ During serialization and deserialization it checks if value is not outside of ac
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">deserialized</code>
+                                            <code class="param-name">type</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Deserialized enumeration field (name).</p>
+                                            <p>Type of entities.</p>
                     
                                         </div>
                     
@@ -389,77 +402,8 @@ During serialization and deserialization it checks if value is not outside of ac
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>:
-                                        <p>Serialized enumeration field (index).
-                    Returns <code>null</code> or <code>undefined</code> if <code>deserialized</code> has
-                    one of these values.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-                    <div id="method_serialize" class="method item public">
-                        <h3 class="name"><code>serialize</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>deserialized</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                            </span>
-                    
-                    
-                            <span class="flag public">public</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l69"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:69</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Returns serialized enumeration field.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">deserialized</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Deserialized enumeration field (name).</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>Serialized enumeration field (name).
-                    Returns <code>null</code> or <code>undefined</code> if <code>deserialized</code> has one of these values.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Formed url.</p>
                     
                                 </div>
                             </div>
@@ -470,76 +414,162 @@ During serialization and deserialization it checks if value is not outside of ac
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_values" class="property item public">
-                        <h3 class="name"><code>values</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> | <a href="http://emberjs.com/api/classes/Ember.Array.html" class="crosslink external" target="_blank">Ember.Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    <div id="property_cellComponent" class="property item">
+                        <h3 class="name"><code>cellComponent</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
                     
                     
-                            <span class="flag public">public</span>
                     
                     
                     
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l14"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:14</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:32</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Available choises of enumeration.
-                    It is required field in a derived class.</p>
+                            <p>Function to get names of components to use for display
+                    attributes of detail object's model.</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> null</p>
                     
-                            <div class="example">
-                                <h4>Example:</h4>
-                    
-                                <div class="example-content">
-                                    <pre class="code prettyprint"><code>['Easy', 'Difficult', 'Hard']
-                    { Easy: 1, Difficult: 2, Hard: 3 }</code></pre>
-                    
-                                </div>
-                            </div>
                     
                     </div>
-                    <div id="property_values" class="property item public">
-                        <h3 class="name"><code>values</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> | <a href="http://emberjs.com/api/classes/Ember.Array.html" class="crosslink external" target="_blank">Ember.Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    <div id="property_componentName" class="property item inherited">
+                        <h3 class="name"><code>componentName</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
-                            <span class="flag public">public</span>
                     
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-string.js.html#l14"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-string.js:14</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_componentName">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:22</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Available choises of enumeration.
-                    It is required field in a derived class.</p>
+                            <p>Unique name of the component.
+                    TODO: use guidFor from 'ember-metal/utils'</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> undefined</p>
                     
-                            <div class="example">
-                                <h4>Example:</h4>
                     
-                                <div class="example-content">
-                                    <pre class="code prettyprint"><code>['Easy', 'Difficult', 'Hard']
-                    { Easy: 1, Difficult: 2, Hard: 3 }</code></pre>
+                    </div>
+                    <div id="property_content" class="property item">
+                        <h3 class="name"><code>content</code></h3>
+                        <span class="type">ManyArray</span>
                     
-                                </div>
-                            </div>
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l23"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:23</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of models for detail objects.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_modelProjection" class="property item">
+                        <h3 class="name"><code>modelProjection</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l14"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:14</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Projection for detail object's model.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_orderable" class="property item">
+                        <h3 class="name"><code>orderable</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l42"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:42</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Setting to true enables row ordering by clicking on column headers.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_readonly" class="property item inherited">
+                        <h3 class="name"><code>readonly</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_readonly">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l13"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:13</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to make control readonly.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
                     
                     </div>
             </div>

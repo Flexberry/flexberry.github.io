@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -130,6 +132,84 @@ export default DS.RESTAdapter.extend({
       query.$orderby = sortingInfo.map(function(element) {
         return serializer.keyForAttribute(element.propName) + &#x27; &#x27; + element.direction;
       }).join(&#x27;, &#x27;);
+    }
+
+    return query;
+  },
+
+  /**
+   * Creates query with given projection name (if not null) and limit function (if not empty).
+   *
+   * @method getLimitFunctionQuery
+   * @param {String} limitFunction Filter to add to query (if empty noting will be added as filter).
+   * @param {String} projectionName Projection name to add to query (if empty noting will be added as projection name).
+   * @return {Object} Created query.
+   */
+  getLimitFunctionQuery: function(limitFunction, projectionName) {
+    let query = {};
+    if (limitFunction &amp;&amp; typeof (limitFunction) === &#x27;string&#x27; &amp;&amp; limitFunction.length &gt; 0) {
+      Ember.merge(query, { $filter: limitFunction });
+    }
+
+    if (projectionName &amp;&amp; typeof (projectionName) === &#x27;string&#x27; &amp;&amp; projectionName.length &gt; 0) {
+      Ember.merge(query, { projection: projectionName });
+    }
+
+    return query;
+  },
+
+  /**
+   * Forms url to get all entities of certain type.
+   *
+   * @method getUrlForTypeQuery
+   * @param {String} type Type of entities.
+   * @return {Object} Formed url.
+   * @throws {Error} Throws error if type parameter is undefined.
+   */
+  getUrlForTypeQuery: function(type) {
+    if (!type) {
+      throw new Error(&#x27;Type is undefined.&#x27;);
+    }
+
+    let url = this.urlForFindAll(type);
+    return url;
+  },
+
+  /**
+   * Forms query options to get entities by specified lookup options.
+   *
+   * @method getQueryOptionsForAutocompleteLookup
+   * @param {Object} lookupParameters Specified lookup autocomplete options.
+   * @return {Object} Formed query options.
+   */
+  getQueryOptionsForAutocompleteLookup: function(lookupParameters) {
+    let options = Ember.$.extend(true, {
+      lookupLimitFunction: undefined,
+      top: undefined,
+      limitField: undefined,
+      limitValue: undefined
+    }, lookupParameters);
+
+    let query = {};
+    let lookupLimitFunction = options.lookupLimitFunction;
+    let top = options.top;
+    let limitField = options.limitField;
+    let limitValue = options.limitValue;
+
+    // TODO: add projection?
+    if (limitField &amp;&amp; limitValue) {
+      let limitFunction = &#x27;contains(&#x27; + limitField + &#x27;, \&#x27;&#x27; + limitValue + &#x27;\&#x27;)&#x27;;
+      if (lookupLimitFunction) {
+        limitFunction = limitFunction + &#x27; and &#x27; + lookupLimitFunction;
+      }
+
+      Ember.merge(query, { $filter: limitFunction });
+    } else if (lookupLimitFunction) {
+      Ember.merge(query, { $filter: lookupLimitFunction });
+    }
+
+    if (top) {
+      Ember.merge(query, { $top: top });
     }
 
     return query;

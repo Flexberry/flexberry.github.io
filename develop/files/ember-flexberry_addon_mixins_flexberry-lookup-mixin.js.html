@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -117,8 +119,8 @@
 
 import Ember from &#x27;ember&#x27;;
 
+// TODO: rename file, add &#x27;controller&#x27; word into filename.
 export default Ember.Mixin.create({
-
   // Lookup settings.
   lookupSettings: {
     controllerName: undefined,
@@ -192,6 +194,7 @@ export default Ember.Mixin.create({
         throw new Error(&#x27;Lookup settings are undefined.&#x27;);
       }
 
+      // TODO: maybe default params or Ember.assert\warn?
       if (!lookupSettings.template) {
         throw new Error(&#x27;Lookup template is undefined.&#x27;);
       }
@@ -223,25 +226,24 @@ export default Ember.Mixin.create({
       };
       this.send(&#x27;showModalDialog&#x27;, lookupSettings.loaderTemplate, null, loadingParams);
 
-      let query = {};
-      if (limitFunction &amp;&amp; typeof (limitFunction) === &#x27;string&#x27; &amp;&amp; limitFunction.length &gt; 0) {
-        Ember.merge(query, { $filter: limitFunction });
-      }
-
-      Ember.merge(query, { projection: projectionName });
+      let query = this.store.adapterFor(relatedToType).getLimitFunctionQuery(limitFunction, projectionName);
       this.store.query(relatedToType, query).then(data =&gt; {
         this.send(&#x27;removeModalDialog&#x27;, loadingParams);
-        var controller = this.controllerFor(lookupSettings.controllerName)
-          .clear()
-          .set(&#x27;modelProjection&#x27;, projection)
-          .set(&#x27;title&#x27;, title)
-          .set(&#x27;modalWindowHeight&#x27;, lookupSettings.modalWindowHeight)
-          .set(&#x27;modalWindowWidth&#x27;, lookupSettings.modalWindowWidth)
-          .set(&#x27;saveTo&#x27;, {
+
+        let controller = this.get(&#x27;lookupController&#x27;);
+        controller.clear();
+        controller.setProperties({
+          modelProjection: projection,
+          title: title,
+          modalWindowHeight: lookupSettings.modalWindowHeight,
+          modalWindowWidth: lookupSettings.modalWindowWidth,
+          saveTo: {
             model: model,
             propName: relationName
-          })
-          .setCurrentRow();
+          }
+        });
+
+        controller.setCurrentRow();
 
         this.send(&#x27;showModalDialog&#x27;, lookupSettings.contentTemplate, {
           controller: controller,
@@ -277,10 +279,91 @@ export default Ember.Mixin.create({
       let model = modelToLookup ? modelToLookup : this.get(&#x27;model&#x27;);
       model.set(relationName, undefined);
 
-      // manually set isDirty flag, because its not working now when change relation props
-      // no check for &#x27;old&#x27; and &#x27;new&#x27; lookup data equality, because ember will do it automatically after bug fix
-      model.send(&#x27;becomeDirty&#x27;);
+      // Manually make record dirty, because ember-data does not do it when relationship changes.
+      model.makeDirty();
+    },
+
+    /**
+     * Update relation value at model.
+     *
+     * @method updateLookupValue
+     * @param {Object} updateData Lookup parameters to update data at model (projection name, etc).
+     */
+    updateLookupValue: function(updateData) {
+      let options = Ember.$.extend(true, {
+        relationName: undefined,
+        newRelationValue: undefined,
+        modelToLookup: undefined
+      }, updateData);
+      let relationName = options.relationName;
+      let newRelationValue = options.newRelationValue;
+      let modelToLookup = options.modelToLookup;
+      let model = modelToLookup ? modelToLookup : this.get(&#x27;model&#x27;);
+      let relationType = this._getRelationType(model, relationName);
+      var payload = {};
+      payload[relationType + &#x27;s&#x27;] = [newRelationValue];
+      this.store.pushPayload(relationType, payload);
+      let realRelationValue = this.store.peekRecord(relationType, newRelationValue[this.store.serializerFor(relationType).get(&#x27;primaryKey&#x27;)]);
+
+      model.set(relationName, realRelationValue);
+
+      // Manually make record dirty, because ember-data does not do it when relationship changes.
+      model.makeDirty();
+    },
+
+    /**
+     * Forms url to get all availible entities of certain relation.
+     *
+     * @method getLookupAutocompleteUrl
+     * @param {String} relationName Elements for this relation will be searched.
+     * @return {Object} Formed url.
+     */
+    getLookupAutocompleteUrl: function(relationName) {
+      var relatedToType = this._getRelationType(this.get(&#x27;model&#x27;), relationName);
+      let url = this.store.adapterFor(relatedToType).getUrlForTypeQuery(relatedToType);
+      return url;
+    },
+
+    /**
+     * Forms query parameters by lookup autocomplete parameters.
+     *
+     * @method getAutocompleteLookupQueryOptions
+     * @param {Object} lookupParameters Lookup autocomplete parameters (current limit function, etc).
+     * @return {Object} Formed query parameters.
+     */
+    getAutocompleteLookupQueryOptions: function(lookupParameters) {
+      let options = Ember.$.extend(true, {
+        relationName: undefined
+      }, lookupParameters);
+
+      let relationName = options.relationName;
+      let relationType = this._getRelationType(this.get(&#x27;model&#x27;), relationName);
+      let queryOptions = this.store.adapterFor(relationType).getQueryOptionsForAutocompleteLookup(lookupParameters);
+      return queryOptions;
     }
+  },
+
+  /**
+   * Gets related object type by relation name from specified model.
+   *
+   * @method _getRelationType
+   * @param {String} model Specified model to get relation from.
+   * @param {String} relationName Relation name.
+   * @return {String} Related object type.
+   * @throws {Error} Throws error if relation was not found at model.
+   */
+  _getRelationType: function(model, relationName) {
+    // Get ember static function to get relation by name.
+    var relationshipsByName = Ember.get(model.constructor, &#x27;relationshipsByName&#x27;);
+
+    // Get relation property from model.
+    var relation = relationshipsByName.get(relationName);
+    if (!relation) {
+      throw new Error(&#x60;No relation with &#x27;${relationName}&#x27; name defined in &#x27;${model.constructor.modelName}&#x27; model.&#x60;);
+    }
+
+    let relationType = relation.type;
+    return relationType;
   }
 });
 

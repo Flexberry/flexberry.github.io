@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -111,7 +113,7 @@
 
 <div class="file">
     <pre class="prettyprint linenums">
-import ListFormPageController from &#x27;../controllers/list-form-page&#x27;;
+import ListFormPageController from &#x27;../controllers/list-form&#x27;;
 
 export default ListFormPageController.extend({
   _currentRow: undefined,
@@ -144,19 +146,16 @@ export default ListFormPageController.extend({
 
       saveTo.model.set(saveTo.propName, this.get(&#x27;_currentRow&#x27;));
 
-      // Manually set isDirty flag, because its not working now
-      // when change relation props.
-      // No check for &#x27;old&#x27; and &#x27;new&#x27; lookup data equality, because ember
-      // will do it automatically after bug fix.
-      saveTo.model.send(&#x27;becomeDirty&#x27;);
+      // Manually make record dirty, because ember-data does not do it when relationship changes.
+      saveTo.model.makeDirty();
     },
 
     /**
      * Handles create modal window action.
-	 * It saves created window to have opportunity to close it later.
+     * It saves created window to have opportunity to close it later.
      *
      * @method createdModalDialog
-	 * @param {JQuery} modalDialog Created modal window.
+     * @param {JQuery} modalDialog Created modal window.
      */
     createdModalDialog: function(modalDialog) {
       this.set(&#x27;_openedModalDialog&#x27;, modalDialog);

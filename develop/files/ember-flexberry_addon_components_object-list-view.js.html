@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -116,26 +118,21 @@
  */
 
 import Ember from &#x27;ember&#x27;;
-import BaseComponent from &#x27;./flexberry-base-component&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 /**
  * @class FlexberryObjectListView
  * @extends FlexberryBaseComponent
  */
-export default BaseComponent.extend({
+export default FlexberryBaseComponent.extend({
   tagName: &#x27;table&#x27;,
   classNames: [
     &#x27;object-list-view&#x27;,
 
-    // Semantic UI style.
-    &#x27;table&#x27;,
-
-    // DataTables styles: https://datatables.net/manual/styling/classes.
-    &#x27;dataTable&#x27;,
-    &#x27;cell-border&#x27;,
-    &#x27;compact&#x27;,
-    &#x27;hover&#x27;,
-    &#x27;stripe&#x27;
+    // Semantic UI styles.
+    &#x27;ui&#x27;,
+    &#x27;celled&#x27;,
+    &#x27;table&#x27;
   ],
 
   modelProjection: null,
@@ -156,7 +153,7 @@ export default BaseComponent.extend({
   showCheckBoxInRow: false,
   showDeleteButtonInRow: false,
   store: null,
-  dataTable: null,
+  noDataMessage: null,
 
   /**
    * Service that triggers groupedit events.
@@ -175,8 +172,16 @@ export default BaseComponent.extend({
     this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditAddRow&#x27;, this, this._addRow);
     this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
     this.set(&#x27;contentWithKeys&#x27;, Ember.A());
+    if (!this.get(&#x27;noDataMessage&#x27;)) {
+      this.set(&#x27;noDataMessage&#x27;, &#x27;There is no data&#x27;);
+    }
+
+    if (this.get(&#x27;showCheckBoxInRow&#x27;)) {
+      this.get(&#x27;classNames&#x27;).push(&#x27;selectable&#x27;);
+    }
+
     var _this = this;
-    if (this.content) {
+    if (this.get(&#x27;content&#x27;)) {
       this.get(&#x27;content&#x27;).forEach(function(item, index, enumerable) {
         _this._addModel(item);
       });
@@ -199,12 +204,7 @@ export default BaseComponent.extend({
     },
     deleteRow: function(key, record) {
       if (confirm(&#x27;Do you really want to delete this record?&#x27;)) {
-        var rowToDelete = this._getRowByKey(key);
-        this._removeModelWithKey(key);
-        this.dataTable.api().row(rowToDelete).remove().draw(false);
-        record.deleteRecord();
-        var componentName = this.get(&#x27;componentName&#x27;);
-        this.get(&#x27;groupEditEventsService&#x27;).rowDeletedTrigger(componentName, record);
+        this._deleteRecord(record);
       }
     },
     selectRow: function(key, record) {
@@ -212,17 +212,16 @@ export default BaseComponent.extend({
       var selectedRow = this._getRowByKey(key);
       var checkBoxChecked = selectedRow.find(&#x27;input[type=checkbox]&#x27;).prop(&#x27;checked&#x27;);
       if (checkBoxChecked) {
-        if (!selectedRow.hasClass(&#x27;selected&#x27;)) {
-          selectedRow.addClass(&#x27;selected&#x27;);
+        if (!selectedRow.hasClass(&#x27;active&#x27;)) {
+          selectedRow.addClass(&#x27;active&#x27;);
         }
 
         if (selectedRecords.indexOf(record) === -1) {
           selectedRecords.pushObject(record);
         }
-      }
-      else {
-        if (selectedRow.hasClass(&#x27;selected&#x27;)) {
-          selectedRow.removeClass(&#x27;selected&#x27;);
+      } else {
+        if (selectedRow.hasClass(&#x27;active&#x27;)) {
+          selectedRow.removeClass(&#x27;active&#x27;);
         }
 
         selectedRecords.removeObject(record);
@@ -234,13 +233,11 @@ export default BaseComponent.extend({
   },
 
   didInsertElement: function() {
-    var table = this.$().dataTable({
-      info: false,
-      ordering: false,
-      paging: false,
-      searching: false
-    });
-    this.set(&#x27;dataTable&#x27;, table);
+    if (!(this.get(&#x27;showCheckBoxInRow&#x27;) || this.get(&#x27;showDeleteButtonInRow&#x27;))) {
+      this.$(&#x27;thead tr th:eq(1)&#x27;).css(&#x27;border-left&#x27;, &#x27;none&#x27;);
+      this.$(&#x27;tbody tr&#x27;).find(&#x27;td:eq(1)&#x27;).css(&#x27;border-left&#x27;, &#x27;none&#x27;);
+    }
+
     if (this.rowClickable) {
       var key = this._getModelKey(this.selectedRecord);
       if (key) {
@@ -381,10 +378,6 @@ export default BaseComponent.extend({
 
   _addRow: function(componentName) {
     if (componentName === this.get(&#x27;componentName&#x27;)) {
-      if (this.get(&#x27;contentWithKeys&#x27;).length === 0) {
-        this.$(&#x27;tbody tr:eq(0)&#x27;).remove();
-      }
-
       var modelName = this.get(&#x27;modelProjection&#x27;).modelName;
       var modelToAdd = this.store.createRecord(modelName, {});
       this.get(&#x27;content&#x27;).addObject(modelToAdd);
@@ -399,24 +392,35 @@ export default BaseComponent.extend({
         var _this = this;
         var selectedRecords = this.get(&#x27;selectedRecords&#x27;);
         var count = selectedRecords.length;
-        this.dataTable.api().rows(&#x27;.selected&#x27;).remove().draw(false);
         selectedRecords.forEach(function(item, index, enumerable) {
-          var key = _this._getModelKey(item);
-          _this._removeModelWithKey(key);
-          item.deleteRecord();
-          _this.get(&#x27;groupEditEventsService&#x27;).rowDeletedTrigger(componentName, item);
-        });
+          Ember.run.once(this, function() {
+            _this._deleteRecord(item);
+          });
+        }, this);
         selectedRecords.clear();
         this.get(&#x27;groupEditEventsService&#x27;).rowsDeletedTrigger(componentName, count);
       }
     }
   },
 
-  _setActiveRecord: function(key) {
-    this.dataTable.$(&#x27;tr.selected&#x27;).removeClass(&#x27;selected&#x27;);
-    var selectedRow = this._getRowByKey(key);
-    selectedRow.addClass(&#x27;selected&#x27;);
+  _deleteRecord: function(record) {
+    var key = this._getModelKey(record);
+    this._removeModelWithKey(key);
+    record.deleteRecord();
+    var componentName = this.get(&#x27;componentName&#x27;);
+    this.get(&#x27;groupEditEventsService&#x27;).rowDeletedTrigger(componentName, record);
   },
+
+  _setActiveRecord: function(key) {
+    var selectedRow = this._getRowByKey(key);
+    this.$(&#x27;tbody tr.active&#x27;).removeClass(&#x27;active&#x27;);
+    selectedRow.addClass(&#x27;active&#x27;);
+  },
+
+  _colCount: Ember.computed(&#x27;columns.length&#x27;, &#x27;showCheckBoxInRow&#x27;, &#x27;showDeleteButtonInRow&#x27;, function() {
+    var numOfAdditionalColumns = (this.showCheckBoxInRow || this.showDeleteButtonInRow) ? 1 : 0;
+    return this.get(&#x27;columns&#x27;).length + numOfAdditionalColumns;
+  }),
 
   _detailChanged: Ember.observer(&#x27;content.@each.hasDirtyAttributes&#x27;, function() {
     var componentName = this.get(&#x27;componentName&#x27;);

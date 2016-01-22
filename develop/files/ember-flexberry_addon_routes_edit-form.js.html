@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -122,12 +124,18 @@ export default ProjectedModelFormRoute.extend({
    * @type Service
    */
   groupEditEventsService: Ember.inject.service(&#x27;groupedit-events&#x27;),
+  deletedRecords: null,
 
   activate() {
     this._super(...arguments);
     this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowAdded&#x27;, this, this._rowAdded);
     this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowDeleted&#x27;, this, this._rowDeleted);
     this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowsChanged&#x27;, this, this._rowChanged);
+    if (!this.get(&#x27;deletedRecords&#x27;)) {
+      this.set(&#x27;deletedRecords&#x27;, Ember.A());
+    } else {
+      this.get(&#x27;deletedRecords&#x27;).clear();
+    }
   },
 
   deactivate() {
@@ -155,8 +163,9 @@ export default ProjectedModelFormRoute.extend({
 
     controller.send(&#x27;dismissErrorMessages&#x27;);
     var model = controller.get(&#x27;model&#x27;);
-    if (model &amp;&amp; model.get(&#x27;isDirty&#x27;)) {
-      model.rollback();
+    this._rollbackDetails(model);
+    if (model &amp;&amp; model.get(&#x27;hasDirtyAttributes&#x27;)) {
+      model.rollbackAttributes();
     }
   },
 
@@ -195,8 +204,8 @@ export default ProjectedModelFormRoute.extend({
    * @param {Model} record The model corresponding to added row in groupedit.
    */
   _rowAdded: function(componentName, record) {
-    // Manually set isDirty flag, because its not working now when change relation props.
-    this.controller.get(&#x27;model&#x27;).send(&#x27;becomeDirty&#x27;);
+    // Manually make record dirty, because ember-data does not do it when relationship changes.
+    this.controller.get(&#x27;model&#x27;).makeDirty();
   },
 
   /**
@@ -206,11 +215,18 @@ export default ProjectedModelFormRoute.extend({
    * @private
    *
    * @param {String} componentName The name of flexberry-groupedit component.
-   * @param {Model} record The model corresponding to deleted row in groupedit.
+   * @param {DS.Model} record The model corresponding to deleted row in groupedit.
    */
   _rowDeleted: function(componentName, record) {
-    // Manually set isDirty flag, because its not working now when change relation props.
-    this.controller.get(&#x27;model&#x27;).send(&#x27;becomeDirty&#x27;);
+    if (record.get(&#x27;id&#x27;)) {
+      this.get(&#x27;deletedRecords&#x27;).pushObject({
+        model: record.constructor.modelName,
+        id: record.get(&#x27;id&#x27;)
+      });
+    }
+
+    // Manually make record dirty, because ember-data does not do it when relationship changes.
+    this.controller.get(&#x27;model&#x27;).makeDirty();
   },
 
   /**
@@ -222,8 +238,38 @@ export default ProjectedModelFormRoute.extend({
    * @param {String} componentName The name of flexberry-groupedit component.
    */
   _rowChanged: function(componentName) {
-    // Manually set isDirty flag, because its not working now when change relation props.
-    this.controller.get(&#x27;model&#x27;).send(&#x27;becomeDirty&#x27;);
+    // Manually make record dirty, because ember-data does not do it when relationship changes.
+    this.controller.get(&#x27;model&#x27;).makeDirty();
+  },
+
+  _rollbackDetails: function(model) {
+    var modelClass = model.constructor;
+    var modelProjName = this.get(&#x27;modelProjection&#x27;);
+    var projection = modelClass.projections.get(modelProjName);
+    var attributes = projection.attributes;
+    for (var attrName in attributes) {
+      if (!attributes.hasOwnProperty(attrName)) {
+        continue;
+      }
+
+      var attr = attributes[attrName];
+      if (attr.kind === &#x27;hasMany&#x27;) {
+        var detailModels = model.get(attrName);
+        for (var i = 0; i &lt; detailModels.get(&#x27;length&#x27;); i++) {
+          if (detailModels.objectAt(i).get(&#x27;hasDirtyAttributes&#x27;)) {
+            detailModels.objectAt(i).rollbackAttributes();
+          }
+        }
+      }
+    }
+
+    var _this = this;
+    this.get(&#x27;deletedRecords&#x27;).forEach(function(deletedRecord) {
+      _this.store.findRecord(deletedRecord.model, deletedRecord.id, { reload: false }).then(function(record) {
+        record.rollbackAttributes();
+      });
+    });
+    this.get(&#x27;deletedRecords&#x27;).clear();
   }
 });
 

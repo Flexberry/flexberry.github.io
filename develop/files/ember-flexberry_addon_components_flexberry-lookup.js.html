@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -146,6 +148,88 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
   cssClass: undefined,
 
   /**
+   * Flag to show that lookup is at autocomplete mode.
+   *
+   * @property autocomplete
+   * @type Boolean
+   * @default false
+   */
+  autocomplete: false,
+
+  /**
+   * Observes changes to value. Set it to autocompleteValue.
+   *
+   * @method valueChanged
+   */
+  valueChanged: Ember.observer(&#x27;value&#x27;, function() {
+    this.set(&#x27;autocompleteValue&#x27;, this.get(&#x27;value&#x27;));
+  }),
+
+  /**
+   * Value for autocomplete control.
+   * If model&#x27;s value changes, autocompleteValue is changed too. autocompleteValue may be changed independely, but it won&#x27;t be applied to model automatically.
+   *
+   * @property autocompleteValue
+   * @type String
+   * @default undefined
+   */
+  autocompleteValue: undefined,
+
+  /**
+   * Method to get url to request autocomplete items.
+   *
+   * @property autocompleteUrl
+   * @type Action
+   * @default undefined
+   */
+  autocompleteUrl: undefined,
+
+  /**
+   * Method to get query options to request autocomplete items.
+   *
+   * @property autocompleteQueryOptions
+   * @type Action
+   * @default undefined
+   */
+  autocompleteQueryOptions: undefined,
+
+  /**
+   * Action&#x27;s name to update model&#x27;s relation value.
+   *
+   * @property autocompleteUpdate
+   * @type String
+   * @default &#x27;updateLookupValue&#x27;
+   */
+  autocompleteUpdateAction: &#x27;updateLookupValue&#x27;,
+
+  /**
+   * Min characters count necessary to call autocomplete.
+   *
+   * @property autocompleteMinCharacters
+   * @type Number
+   * @default 1
+   */
+  autocompleteMinCharacters: 1,
+
+  /**
+   * Maximum number of results to show on autocomplete.
+   *
+   * @property autocompleteMaxResults
+   * @type Number
+   * @default 10
+   */
+  autocompleteMaxResults: 10,
+
+  /**
+   * Server-side property name of autocomplete property.
+   *
+   * @property autocompleteProperty
+   * @type String
+   * @default undefined
+   */
+  autocompleteProperty: undefined,
+
+  /**
    * Function to limit accessible values.
    *
    * @property limitFunction
@@ -184,7 +268,6 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
   }),
 
   readonly:  false,
-  buttonToggleReadonlyVisible: false,
 
   init() {
     this._super();
@@ -203,15 +286,89 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
     }
   },
 
+  // Init component when DOM is ready.
+  didInsertElement: function() {
+    this._super();
+
+    if (this.get(&#x27;readonly&#x27;) || !this.get(&#x27;autocomplete&#x27;)) {
+      return;
+    }
+
+    var autocompleteProperty = this.get(&#x27;autocompleteProperty&#x27;);
+    if (!autocompleteProperty) {
+      throw new Error(&#x27;autocompleteProperty is undefined.&#x27;);
+    }
+
+    var autocompleteMinCharacters = this.get(&#x27;autocompleteMinCharacters&#x27;);
+    if (!autocompleteMinCharacters || typeof (autocompleteMinCharacters) !== &#x27;number&#x27; || autocompleteMinCharacters &lt;= 0) {
+      throw new Error(&#x27;autocompleteMinCharacters has wrong value.&#x27;);
+    }
+
+    var autocompleteMaxResults = this.get(&#x27;autocompleteMaxResults&#x27;);
+    if (!autocompleteMaxResults || typeof (autocompleteMaxResults) !== &#x27;number&#x27; || autocompleteMaxResults &lt;= 0) {
+      throw new Error(&#x27;autocompleteMaxResults has wrong value.&#x27;);
+    }
+
+    var relationName = this.get(&#x27;relationName&#x27;);
+    if (!relationName) {
+      throw new Error(&#x27;relationName is not defined.&#x27;);
+    }
+
+    let autocompleteUrl = this.get(&#x27;autocompleteUrl&#x27;)(relationName);
+    let limitFunction = this.get(&#x27;limitFunction&#x27;);
+
+    this.set(&#x27;autocompleteValue&#x27;, this.get(&#x27;value&#x27;));
+    let _this = this;
+    this.$(&#x27;.ui.search&#x27;).search({
+      apiSettings: {
+        url: autocompleteUrl,
+        beforeSend: function(settings) {
+          let urlOptions = _this.get(&#x27;autocompleteQueryOptions&#x27;)(
+            {
+              relationName: relationName,
+              lookupLimitFunction: limitFunction,
+              top: autocompleteMaxResults,
+              limitField: autocompleteProperty,
+              limitValue: settings.urlData.query
+            });
+          Ember.merge(settings.data, urlOptions);
+          return settings;
+        }
+      },
+      fields: {
+        results: &#x27;value&#x27;,
+        title: autocompleteProperty
+      },
+      minCharacters: autocompleteMinCharacters,
+      searchFields: [autocompleteProperty],
+      cache: false,
+      maxResults: autocompleteMaxResults,
+      searchFullText: false,
+      onSelect: function(result, response) {
+        _this.sendAction(
+          &#x27;autocompleteUpdateAction&#x27;,
+          {
+            relationName: relationName,
+            modelToLookup: undefined,
+            newRelationValue: result
+          });
+      }
+    });
+
+    // TODO: find proper way to restore selected value.
+    this.$(&#x27;.prompt&#x27;).blur(function() {
+      if (!_this.$(&#x27;.ui.search&#x27;).hasClass(&#x27;focus&#x27;)) {
+        _this.set(&#x27;autocompleteValue&#x27;, _this.get(&#x27;value&#x27;));
+      }
+    });
+  },
+
   actions: {
-    toggleReadonly() {
-      this.toggleProperty(&#x27;readonly&#x27;);
+    choose: function(chooseData) {
+      this.sendAction(&#x27;choose&#x27;, chooseData);
     },
-    choose: function(relationName, projection, title) {
-      this.sendAction(&#x27;choose&#x27;, relationName, projection, title, undefined);
-    },
-    remove: function(relationName) {
-      this.sendAction(&#x27;remove&#x27;, relationName, undefined);
+    remove: function(removeData) {
+      this.sendAction(&#x27;remove&#x27;, removeData);
     }
   }
 });

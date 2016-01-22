@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryFile", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EnumTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -53,7 +53,9 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
@@ -114,6 +116,10 @@
 import Ember from &#x27;ember&#x27;;
 
 export default Ember.Mixin.create({
+  queryParams: {
+    sort: { refreshModel: true }
+  },
+
   /**
    * Десериализовать строку с параметрами сортировки. Ожидается строка следующего вида: &#x27;+Имя1-Имя2{...}&#x27;,
    * где &#x27;+&#x27; и &#x27;-&#x27; - направления сортировки, &#x27;ИмяX&#x27; - имя свойства для сортировки.
@@ -150,34 +156,9 @@ export default Ember.Mixin.create({
     return nextIndices;
   },
 
-  /**
-   * Производит операцию, обратную методу deserializeSortingParam.
-   *
-   * @param {Object} sorting Объект с параметрами сортировки, который нужно преобразовать в строку.
-   * @returns {String} Результирующая строка.
-   */
-  serializeSortingParam: function(sorting) {
-    return sorting.map(function(element) {
-      return (element.direction === &#x27;asc&#x27; ? &#x27;+&#x27; : &#x27;-&#x27;) + element.propName;
-    }).join(&#x27;&#x27;);
-  },
-
   includeSorting: function(model, sorting) {
     model.set(&#x27;sorting&#x27;, sorting);
     return model;
-  },
-
-  actions: {
-    applySorting: function(sorting) {
-      var sortingParam = this.serializeSortingParam(sorting);
-      this.transitionTo({
-        queryParams: {
-          sort: sortingParam || undefined
-        }
-      });
-
-      this.refresh();
-    }
   }
 });
 
