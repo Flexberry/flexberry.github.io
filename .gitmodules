@@ -13,4 +13,4 @@
 [submodule "develop/ember-flexberry-projections"]
 	path = develop/ember-flexberry-projections
 	url = https://github.com/Flexberry/ember-flexberry-projections.git
-	branch = master
+	branch = develop
