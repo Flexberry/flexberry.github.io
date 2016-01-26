@@ -269,6 +269,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/mixins/flexberry-groupedit-route.js": {
+            "name": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js": {
             "name": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
             "modules": {},
@@ -2268,6 +2275,80 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "line": 4,
+            "description": "Service that triggers groupedit events.",
+            "itemtype": "property",
+            "name": "groupEditEventsService",
+            "type": "Service",
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "line": 35,
+            "description": "Event handler for \"row has been selected\" event in groupedit.",
+            "itemtype": "method",
+            "name": "_rowAdded",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "The name of flexberry-groupedit component.",
+                    "type": "String"
+                },
+                {
+                    "name": "record",
+                    "description": "The model corresponding to added row in groupedit.",
+                    "type": "Model"
+                }
+            ],
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "line": 49,
+            "description": "Event handler for \"row has been deleted\" event in groupedit.",
+            "itemtype": "method",
+            "name": "_rowDeleted",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "The name of flexberry-groupedit component.",
+                    "type": "String"
+                },
+                {
+                    "name": "record",
+                    "description": "The model corresponding to deleted row in groupedit.",
+                    "type": "DS.Model"
+                }
+            ],
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "line": 70,
+            "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in groupedit.",
+            "itemtype": "method",
+            "name": "_rowChanged",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "The name of flexberry-groupedit component.",
+                    "type": "String"
+                }
+            ],
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
             "line": 19,
             "description": "Controller to show lookup modal window.",
@@ -2456,84 +2537,10 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 5,
-            "description": "Service that triggers groupedit events.",
-            "itemtype": "property",
-            "name": "groupEditEventsService",
-            "type": "Service",
-            "class": "GroupEditEvents",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 70,
+            "line": 42,
             "description": "Handles willTransition action (this action is fired at the beginning of any attempted transition).\nIt sends message about transition to corresponding controller.",
             "itemtype": "method",
             "name": "willTransition",
-            "class": "GroupEditEvents",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 82,
-            "description": "Event handler for \"row has been selected\" event in groupedit.",
-            "itemtype": "method",
-            "name": "_rowAdded",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
-                    "type": "String"
-                },
-                {
-                    "name": "record",
-                    "description": "The model corresponding to added row in groupedit.",
-                    "type": "Model"
-                }
-            ],
-            "class": "GroupEditEvents",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 96,
-            "description": "Event handler for \"row has been deleted\" event in groupedit.",
-            "itemtype": "method",
-            "name": "_rowDeleted",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
-                    "type": "String"
-                },
-                {
-                    "name": "record",
-                    "description": "The model corresponding to deleted row in groupedit.",
-                    "type": "DS.Model"
-                }
-            ],
-            "class": "GroupEditEvents",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 117,
-            "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in groupedit.",
-            "itemtype": "method",
-            "name": "_rowChanged",
-            "access": "private",
-            "tagname": "",
-            "params": [
-                {
-                    "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
-                    "type": "String"
-                }
-            ],
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },

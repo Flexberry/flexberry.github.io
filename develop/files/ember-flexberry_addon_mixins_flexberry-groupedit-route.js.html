@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/routes/edit-form.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/mixins/flexberry-groupedit-route.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -108,92 +108,91 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/routes/edit-form.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/mixins/flexberry-groupedit-route.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-import ProjectedModelFormRoute from &#x27;./projected-model-form&#x27;;
-import FlexberryGroupeditRouteMixin from &#x27;../mixins/flexberry-groupedit-route&#x27;;
+import Ember from &#x27;ember&#x27;;
 
-export default ProjectedModelFormRoute.extend(FlexberryGroupeditRouteMixin, {
-  model: function(params, transition) {
-    this._super.apply(this, arguments);
+export default Ember.Mixin.create({
+  /**
+   * Service that triggers groupedit events.
+   *
+   * @property groupEditEventsService
+   * @type Service
+   */
+  groupEditEventsService: Ember.inject.service(&#x27;groupedit-events&#x27;),
+  deletedRecords: null,
 
-    let modelName = this.get(&#x27;modelName&#x27;);
-    let modelProjName = this.get(&#x27;modelProjection&#x27;);
+  activate() {
+    this._super(...arguments);
 
-    // :id param defined in router.js
-    return this.store.findRecord(modelName, params.id, {
-      reload: true,
-      projection: modelProjName
-    });
-  },
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowAdded&#x27;, this, this._rowAdded);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowDeleted&#x27;, this, this._rowDeleted);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowsChanged&#x27;, this, this._rowChanged);
 
-  resetController: function(controller, isExisting, transition) {
-    this._super.apply(this, arguments);
-
-    controller.send(&#x27;dismissErrorMessages&#x27;);
-    var model = controller.get(&#x27;model&#x27;);
-    this._rollbackDetails(model);
-    if (model &amp;&amp; model.get(&#x27;hasDirtyAttributes&#x27;)) {
-      model.rollbackAttributes();
+    if (!this.get(&#x27;deletedRecords&#x27;)) {
+      this.set(&#x27;deletedRecords&#x27;, Ember.A());
+    } else {
+      this.get(&#x27;deletedRecords&#x27;).clear();
     }
   },
 
-  setupController: function(controller, model) {
-    // Call _super for default behavior.
-    this._super(controller, model);
+  deactivate() {
+    this._super(...arguments);
 
-    // Define &#x27;modelProjection&#x27; for controller instance.
-    let modelClass = model.constructor;
-    let modelProjName = this.get(&#x27;modelProjection&#x27;);
-    let proj = modelClass.projections.get(modelProjName);
-    controller.set(&#x27;modelProjection&#x27;, proj);
-    controller.set(&#x27;modelProjectionName&#x27;, modelProjName);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowAdded&#x27;, this, this._rowAdded);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowDeleted&#x27;, this, this._rowDeleted);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowsChanged&#x27;, this, this._rowChanged);
   },
 
-  actions: {
-    /**
-     * Handles willTransition action (this action is fired at the beginning of any attempted transition).
-     * It sends message about transition to corresponding controller.
-     *
-     * @method willTransition
-     */
-    willTransition: function(transition) {
-      this._super(transition);
-      this.controller.send(&#x27;routeWillTransition&#x27;);
-    }
+  /**
+   * Event handler for &quot;row has been selected&quot; event in groupedit.
+   *
+   * @method _rowAdded
+   * @private
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {Model} record The model corresponding to added row in groupedit.
+   */
+  _rowAdded: function(componentName, record) {
+    // Manually make record dirty, because ember-data does not do it when relationship changes.
+    this.controller.get(&#x27;model&#x27;).makeDirty();
   },
 
-  _rollbackDetails: function(model) {
-    var modelClass = model.constructor;
-    var modelProjName = this.get(&#x27;modelProjection&#x27;);
-    var projection = modelClass.projections.get(modelProjName);
-    var attributes = projection.attributes;
-    for (var attrName in attributes) {
-      if (!attributes.hasOwnProperty(attrName)) {
-        continue;
-      }
-
-      var attr = attributes[attrName];
-      if (attr.kind === &#x27;hasMany&#x27;) {
-        var detailModels = model.get(attrName);
-        for (var i = 0; i &lt; detailModels.get(&#x27;length&#x27;); i++) {
-          if (detailModels.objectAt(i).get(&#x27;hasDirtyAttributes&#x27;)) {
-            detailModels.objectAt(i).rollbackAttributes();
-          }
-        }
-      }
-    }
-
-    var _this = this;
-    this.get(&#x27;deletedRecords&#x27;).forEach(function(deletedRecord) {
-      _this.store.findRecord(deletedRecord.model, deletedRecord.id, { reload: false }).then(function(record) {
-        record.rollbackAttributes();
+  /**
+   * Event handler for &quot;row has been deleted&quot; event in groupedit.
+   *
+   * @method _rowDeleted
+   * @private
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   * @param {DS.Model} record The model corresponding to deleted row in groupedit.
+   */
+  _rowDeleted: function(componentName, record) {
+    if (record.get(&#x27;id&#x27;)) {
+      this.get(&#x27;deletedRecords&#x27;).pushObject({
+        model: record.constructor.modelName,
+        id: record.get(&#x27;id&#x27;)
       });
-    });
-    this.get(&#x27;deletedRecords&#x27;).clear();
+    }
+
+    // Manually make record dirty, because ember-data does not do it when relationship changes.
+    this.controller.get(&#x27;model&#x27;).makeDirty();
+  },
+
+  /**
+   * Event handler for &quot;model(s) corresponding to some row(s) was changed&quot; event in groupedit.
+   *
+   * @method _rowChanged
+   * @private
+   *
+   * @param {String} componentName The name of flexberry-groupedit component.
+   */
+  _rowChanged: function(componentName) {
+    // Manually make record dirty, because ember-data does not do it when relationship changes.
+    this.controller.get(&#x27;model&#x27;).makeDirty();
   }
 });
 
