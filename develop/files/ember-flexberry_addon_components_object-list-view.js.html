@@ -378,7 +378,7 @@ export default FlexberryBaseComponent.extend({
   _addRow: function(componentName) {
     if (componentName === this.get(&#x27;componentName&#x27;)) {
       var modelName = this.get(&#x27;modelProjection&#x27;).modelName;
-      var modelToAdd = this.store.createRecord(modelName, {});
+      var modelToAdd = this.get(&#x27;store&#x27;).createRecord(modelName, {});
       this.get(&#x27;content&#x27;).addObject(modelToAdd);
       this._addModel(modelToAdd);
       this.get(&#x27;groupEditEventsService&#x27;).rowAddedTrigger(componentName, modelToAdd);
