@@ -2191,49 +2191,49 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 120,
+            "line": 123,
             "description": "Method to transit to parent's route (previous route).",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 131,
+            "line": 134,
             "description": "Method to get type of object list view cell.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 139,
+            "line": 142,
             "description": "On save model success handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 205,
+            "line": 208,
             "description": "On save model fail handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 212,
+            "line": 215,
             "description": "On delete model success handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 219,
+            "line": 222,
             "description": "On delete model fail handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 226,
+            "line": 229,
             "description": "On model 'preSave' event handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
@@ -3272,31 +3272,31 @@
         },
         {
             "message": "Missing item type\nMethod to transit to parent's route (previous route).",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:120"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:123"
         },
         {
             "message": "Missing item type\nMethod to get type of object list view cell.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:131"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:134"
         },
         {
             "message": "Missing item type\nOn save model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:139"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:142"
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:205"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:208"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:212"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:215"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:219"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:222"
         },
         {
             "message": "Missing item type\nOn model 'preSave' event handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:226"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:229"
         },
         {
             "message": "Missing item type\nПроизводит операцию, обратную методу deserializeSortingParam.",
