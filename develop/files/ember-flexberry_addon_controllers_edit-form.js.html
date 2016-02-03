@@ -122,6 +122,18 @@ import FlexberryLookupMixin from &#x27;../mixins/flexberry-lookup-mixin&#x27;;
  */
 export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, ErrorableControllerMixin, {
   /**
+   * Query parameters.
+   */
+  queryParams: {
+    readOnlyQueryMode: &#x27;readonly&#x27;
+  },
+
+  /**
+   * Query parameter for readonly mode.
+   */
+  readOnlyQueryMode: null,
+
+  /**
    * Lookup settings.
    */
   lookupSettings: {
@@ -143,29 +155,12 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
   lookupController: Ember.inject.controller(&#x27;lookup-dialog&#x27;),
 
   /**
-   * Query parameters.
-   */
-  queryParams: {
-    readOnlyQueryMode: &#x27;readonly&#x27;
-  },
-
-  /**
-   * Query parameter for readonly mode.
-   */
-  readOnlyQueryMode: null,
-
-  /**
    * Flag: indicates whether the current form is opened only for reading.
    */
   readonly: Ember.computed(&#x27;readOnlyQueryMode&#x27;, function() {
     var formMode = this.get(&#x27;readOnlyQueryMode&#x27;);
     return formMode &amp;&amp; String(formMode).toLowerCase() === &#x27;true&#x27;;
   }),
-
-  /**
-   * Message to show if user tries to do something with readonly form.
-   */
-  readonlyMessage: &#x27;Form was opened only for reading.&#x27;,
 
   /**
    * Model change handler.
@@ -202,24 +197,16 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
     save: function() {
       this.send(&#x27;dismissErrorMessages&#x27;);
 
-      if (this.get(&#x27;readonly&#x27;)) {
-        this._onSaveActionFulfilled(this.get(&#x27;readonlyMessage&#x27;));
-        return;
-      }
-
-      this.get(&#x27;model&#x27;).save().then(
-        this._onSaveActionFulfilled.bind(this),
-        this._onSaveActionRejected.bind(this)
-      );
+      this.get(&#x27;model&#x27;).save().then(() =&gt; {
+        return this._processSavedDetails();
+      }).then(() =&gt; {
+        this._onSaveActionFulfilled();
+      }).catch((errorData) =&gt; {
+        this._onSaveActionRejected(errorData);
+      });
     },
 
     delete: function() {
-      if (this.get(&#x27;readonly&#x27;)) {
-        this.send(&#x27;dismissErrorMessages&#x27;);
-        this._onSaveActionFulfilled(this.get(&#x27;readonlyMessage&#x27;));
-        return;
-      }
-
       if (confirm(&#x27;Are you sure you want to delete that record?&#x27;)) {
         this.send(&#x27;dismissErrorMessages&#x27;);
 
@@ -258,7 +245,6 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
    * On save model success handler.
    */
   _processSavedDetails: function() {
-    var _this = this;
     var modelsToDelete = Ember.A();
     var deletePromises = Ember.A();
     var attributes = this.get(&#x27;modelProjection&#x27;).attributes;
@@ -292,32 +278,16 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
     var modelName = this.get(&#x27;model&#x27;).constructor.modelName;
     var id = this.get(&#x27;model&#x27;).id;
     var modelProjName = this.get(&#x27;modelProjectionName&#x27;);
-    Ember.RSVP.all(deletePromises).then(function(values) {
-      return _this.store.findRecord(modelName, id, {
+    return Ember.RSVP.all(deletePromises).then((values) =&gt; {
+      return this.store.findRecord(modelName, id, {
         reload: true,
         projection: modelProjName
       });
-    }, function(reason) {
-      _this._onSaveActionRejected.call(_this, reason);
-    });
-
-    return this.store.findRecord(modelName, id, {
-      reload: true,
-      projection: modelProjName
     });
   },
 
-  _onSaveActionFulfilled: function(message) {
-    var _this = this;
-    if (!this.get(&#x27;readonly&#x27;)) {
-      this._processSavedDetails().then(function() {
-        alert(&#x27;Saved.&#x27;);
-      }, function(reason) {
-        _this._onSaveActionRejected.call(_this, reason);
-      });
-    } else {
-      alert(message);
-    }
+  _onSaveActionFulfilled: function() {
+    alert(&#x27;Saved.&#x27;);
   },
 
   /**
