@@ -1217,13 +1217,25 @@
             "itemtype": "property",
             "name": "readonly",
             "type": "Boolean",
-            "default": "undefined",
+            "default": "false",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 22,
+            "line": 23,
+            "description": "Readonly HTML attribute following to the `readonly` query param. According to the W3C standard, returns 'readonly' if `readonly` is `true` and `undefined` otherwise.",
+            "itemtype": "property",
+            "name": "readonlyAttr",
+            "type": "String|undefined",
+            "default": "undefined",
+            "readonly": "",
+            "class": "FlexberryBaseComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-base-component.js",
+            "line": 35,
             "description": "Unique name of the component.\nTODO: use guidFor from 'ember-metal/utils'",
             "itemtype": "property",
             "name": "componentName",
@@ -2172,19 +2184,35 @@
             "file": "ember-flexberry/addon/controllers/edit-form.js",
             "line": 14,
             "description": "Indicates whether the current form is opened only for reading.",
+            "itemtype": "property",
+            "name": "readonly",
+            "type": "Boolean",
+            "default": "false",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 19,
+            "line": 24,
+            "description": "Readonly attribute for HTML components following to the `readonly` query param. According to the W3C standard, returns 'readonly' if `readonly` is `true` and `undefined` otherwise.",
+            "itemtype": "property",
+            "name": "readonlyAttr",
+            "type": "String|undefined",
+            "default": "undefined",
+            "readonly": "",
+            "class": "GroupEditEvents",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/edit-form.js",
+            "line": 36,
             "description": "Lookup settings.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 31,
+            "line": 48,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
@@ -2195,63 +2223,63 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 40,
+            "line": 57,
             "description": "Model change handler.\nTODO: refactor",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 69,
+            "line": 86,
             "description": "Actions handlers.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 109,
+            "line": 126,
             "description": "Method to transit to parent's route (previous route).",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 120,
+            "line": 137,
             "description": "Method to get type of object list view cell.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 128,
+            "line": 145,
             "description": "On save model success handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 177,
+            "line": 194,
             "description": "On save model fail handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 184,
+            "line": 201,
             "description": "On delete model success handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 191,
+            "line": 208,
             "description": "On delete model fail handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 198,
+            "line": 215,
             "description": "On model 'preSave' event handler.",
             "class": "GroupEditEvents",
             "module": "ember-flexberry"
@@ -3265,48 +3293,44 @@
             "line": " ember-flexberry/addon/controllers/edit-form.js:9"
         },
         {
-            "message": "Missing item type\nIndicates whether the current form is opened only for reading.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:14"
-        },
-        {
             "message": "Missing item type\nLookup settings.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:19"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:36"
         },
         {
             "message": "Missing item type\nModel change handler.\nTODO: refactor",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:40"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:57"
         },
         {
             "message": "Missing item type\nActions handlers.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:69"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:86"
         },
         {
             "message": "Missing item type\nMethod to transit to parent's route (previous route).",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:109"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:126"
         },
         {
             "message": "Missing item type\nMethod to get type of object list view cell.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:120"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:137"
         },
         {
             "message": "Missing item type\nOn save model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:128"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:145"
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:177"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:194"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:184"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:201"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:191"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:208"
         },
         {
             "message": "Missing item type\nOn model 'preSave' event handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:198"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:215"
         },
         {
             "message": "Missing item type\nПроизводит операцию, обратную методу deserializeSortingParam.",
