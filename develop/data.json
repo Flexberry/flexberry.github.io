@@ -1708,6 +1708,38 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 55,
+            "description": "Handles action from object-list-view when no handler for this component is defined.",
+            "itemtype": "method",
+            "name": "sortByColumn",
+            "params": [
+                {
+                    "name": "column",
+                    "description": "Column to sort by.",
+                    "type": "Object"
+                }
+            ],
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 65,
+            "description": "Handles action from object-list-view when no handler for this component is defined.",
+            "itemtype": "method",
+            "name": "addColumnToSorting",
+            "params": [
+                {
+                    "name": "column",
+                    "description": "Column to add sorting by.",
+                    "type": "Object"
+                }
+            ],
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
             "line": 16,
             "description": "Default classes for component wrapper.",
