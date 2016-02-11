@@ -28,8 +28,7 @@ YUI.add("yuidoc-meta", function(Y) {
     "allModules": [
         {
             "displayName": "ember-flexberry",
-            "name": "ember-flexberry",
-            "description": "TODO: delete unused component"
+            "name": "ember-flexberry"
         },
         {
             "displayName": "ember-flexberry-projections",

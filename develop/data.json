@@ -80,18 +80,11 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry/addon/components/dynamic-input.js": {
-            "name": "ember-flexberry/addon/components/dynamic-input.js",
+        "ember-flexberry/addon/components/flexberry-base-component.js": {
+            "name": "ember-flexberry/addon/components/flexberry-base-component.js",
             "modules": {
                 "ember-flexberry": 1
             },
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "ember-flexberry/addon/components/flexberry-base-component.js": {
-            "name": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "modules": {},
             "classes": {
                 "FlexberryBaseComponent": 1
             },
@@ -399,8 +392,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "ember-flexberry/addon/transforms/enum-string.js",
-            "line": 4,
-            "description": "TODO: delete unused component"
+            "line": 4
         }
     },
     "classes": {
