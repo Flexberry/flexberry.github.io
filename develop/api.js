@@ -1,6 +1,8 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "EditFormController",
+        "EditFormRoute",
         "EnumTransform",
         "FlexberrCheckbox",
         "FlexberryBaseComponent",
@@ -16,6 +18,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "FlexberryToggler",
         "GroupEditEvents",
         "GroupEditToolbar",
+        "ListFormController",
+        "ListFormRoute",
         "Projection",
         "Projection.Adapter",
         "Projection.Model",

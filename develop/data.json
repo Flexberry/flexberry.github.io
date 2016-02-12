@@ -251,7 +251,18 @@
         "ember-flexberry/addon/controllers/edit-form.js": {
             "name": "ember-flexberry/addon/controllers/edit-form.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "EditFormController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry/addon/controllers/list-form.js": {
+            "name": "ember-flexberry/addon/controllers/list-form.js",
+            "modules": {},
+            "classes": {
+                "ListFormController": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -300,14 +311,18 @@
         "ember-flexberry/addon/routes/edit-form.js": {
             "name": "ember-flexberry/addon/routes/edit-form.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "EditFormRoute": 1
+            },
             "fors": {},
             "namespaces": {}
         },
         "ember-flexberry/addon/routes/list-form.js": {
             "name": "ember-flexberry/addon/routes/list-form.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "ListFormRoute": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -385,6 +400,10 @@
                 "FlexberryToggler": 1,
                 "GroupEditToolbar": 1,
                 "FlexberryObjectListView": 1,
+                "EditFormController": 1,
+                "ListFormController": 1,
+                "EditFormRoute": 1,
+                "ListFormRoute": 1,
                 "GroupEditEvents": 1,
                 "EnumTransform": 1
             },
@@ -655,6 +674,82 @@
             "file": "ember-flexberry/addon/components/object-list-view.js",
             "line": 8,
             "extends": "FlexberryBaseComponent"
+        },
+        "EditFormController": {
+            "name": "EditFormController",
+            "shortname": "EditFormController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/controllers/edit-form.js",
+            "line": 9,
+            "description": "Base controller for the Edit Forms.\n\n  This class re-exports to the application as `/controllers/edit-form`.\n  So, you can inherit from `./edit-form`, even if file `app/controllers/edit-form.js`\n  is not presented in the application.\n\n  Example:\n  ```js\n  // app/controllers/employee.js\n  import EditFormController from './edit-form';\n  export default EditFormController.extend({\n  });\n  ```\n\n  If you want to add some common logic on all Edit Forms, you can define\n  (actually override) `app/controllers/edit-form.js` as follows:\n   ```js\n   // app/controllers/edit-form.js\n   import EditFormController from 'ember-flexberry/controllers/edit-form';\n   export default EditFormController.extend({\n   });\n   ```",
+            "extends": "Ember.Controller",
+            "uses": [
+                "Ember.Evented",
+                "FlexberryLookupMixin",
+                "ErrorableControllerMixin"
+            ]
+        },
+        "ListFormController": {
+            "name": "ListFormController",
+            "shortname": "ListFormController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/controllers/list-form.js",
+            "line": 9,
+            "description": "Base controller for the List Forms.\n\n This class re-exports to the application as `/controllers/list-form`.\n So, you can inherit from `./list-form`, even if file `app/controllers/list-form.js`\n is not presented in the application.\n\n Example:\n ```js\n // app/controllers/employees.js\n import ListFormController from './list-form';\n export default ListFormController.extend({\n });\n ```\n\n If you want to add some common logic on all List Forms, you can define\n (actually override) `app/controllers/list-form.js` as follows:\n ```js\n // app/controllers/list-form.js\n import ListFormController from 'ember-flexberry/controllers/list-form';\n export default ListFormController.extend({\n });\n ```",
+            "extends": "Ember.Controller",
+            "uses": [
+                "PaginatedControllerMixin",
+                "SortableControllerMixin"
+            ]
+        },
+        "EditFormRoute": {
+            "name": "EditFormRoute",
+            "shortname": "EditFormRoute",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/routes/edit-form.js",
+            "line": 8,
+            "description": "Base route for the Edit Forms.\n\nThis class re-exports to the application as `/routes/edit-form`.\nSo, you can inherit from `./edit-form`, even if file `app/routes/edit-form.js`\nis not presented in the application.\n\nExample:\n```js\n// app/routes/employee.js\nimport EditFormRoute from './edit-form';\nexport default EditFormRoute.extend({\n});\n```\n\nIf you want to add some common logic on all Edit Forms, you can define\n(actually override) `app/routes/edit-form.js` as follows:\n```js\n// app/routes/edit-form.js\nimport EditFormRoute from 'ember-flexberry/routes/edit-form';\nexport default EditFormRoute.extend({\n});\n```",
+            "extends": "ProjectedModelFormRoute",
+            "uses": [
+                "FlexberryGroupeditRouteMixin"
+            ]
+        },
+        "ListFormRoute": {
+            "name": "ListFormRoute",
+            "shortname": "ListFormRoute",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/routes/list-form.js",
+            "line": 10,
+            "description": "Base route for the List Forms.\n\nThis class re-exports to the application as `/routes/list-form`.\nSo, you can inherit from `./list-form`, even if file `app/routes/list-form.js`\nis not presented in the application.\n\nExample:\n```js\n// app/routes/employees.js\nimport ListFormRoute from './list-form';\nexport default ListFormRoute.extend({\n});\n```\n\nIf you want to add some common logic on all List Forms, you can define\n(actually override) `app/routes/list-form.js` as follows:\n```js\n// app/routes/list-form.js\nimport ListFormRoute from 'ember-flexberry/routes/list-form';\nexport default ListFormRoute.extend({\n});\n```",
+            "extends": "ProjectedModelFormRoute",
+            "uses": [
+                "PaginatedRouteMixin",
+                "SortableRouteMixin"
+            ]
         },
         "GroupEditEvents": {
             "name": "GroupEditEvents",
@@ -2160,120 +2255,113 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 5,
-            "description": "Edit form base controller.",
-            "class": "GroupEditEvents",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 9,
+            "line": 40,
             "description": "Query parameters.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 14,
+            "line": 45,
             "description": "Indicates whether the current form is opened only for reading.",
             "itemtype": "property",
             "name": "readonly",
             "type": "Boolean",
             "default": "false",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 24,
+            "line": 55,
             "description": "Readonly attribute for HTML components following to the `readonly` query param. According to the W3C standard, returns 'readonly' if `readonly` is `true` and `undefined` otherwise.",
             "itemtype": "property",
             "name": "readonlyAttr",
             "type": "String|undefined",
             "default": "undefined",
             "readonly": "",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 36,
+            "line": 67,
             "description": "Lookup settings.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 48,
+            "line": 79,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
             "type": "Ember.InjectedProperty",
             "default": "undefined",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 57,
+            "line": 88,
             "description": "Model change handler.\nTODO: refactor",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 86,
+            "line": 117,
             "description": "Actions handlers.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 126,
+            "line": 157,
             "description": "Method to transit to parent's route (previous route).",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 137,
+            "line": 168,
             "description": "Method to get type of object list view cell.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 145,
+            "line": 176,
             "description": "On save model success handler.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 194,
+            "line": 225,
             "description": "On save model fail handler.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 201,
+            "line": 232,
             "description": "On delete model success handler.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 208,
+            "line": 239,
             "description": "On delete model fail handler.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 215,
+            "line": 246,
             "description": "On model 'preSave' event handler.",
-            "class": "GroupEditEvents",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -2284,7 +2372,7 @@
             "name": "_openedModalDialog",
             "type": "JQuery",
             "default": "undefined",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2300,7 +2388,7 @@
                     "type": "JQuery"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2309,7 +2397,7 @@
             "description": "Handles correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "routeWillTransition",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2319,7 +2407,7 @@
             "itemtype": "property",
             "name": "groupEditEventsService",
             "type": "Service",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2342,7 +2430,7 @@
                     "type": "Model"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2365,7 +2453,7 @@
                     "type": "DS.Model"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2383,7 +2471,7 @@
                     "type": "String"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2394,7 +2482,7 @@
             "name": "lookupController",
             "type": "Ember.InjectedProperty",
             "default": "undefined",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2410,7 +2498,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2419,7 +2507,7 @@
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2435,7 +2523,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2451,7 +2539,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2471,7 +2559,7 @@
                 "description": "Formed url.",
                 "type": "Object"
             },
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2491,7 +2579,7 @@
                 "description": "Formed query parameters.",
                 "type": "Object"
             },
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2520,7 +2608,7 @@
                 "description": "Throws error if relation was not found at model.",
                 "type": "Error"
             },
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2538,7 +2626,7 @@
                 "description": "Результирующая строка.",
                 "type": "String"
             },
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -2556,35 +2644,35 @@
                 "description": "Массив объектов вида { propName: 'ИмяN', direction: 'asc/desc' }, задающий свойства и\nнаправления для сортировки.",
                 "type": "Array"
             },
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/validate-model.js",
             "line": 7,
             "description": "Model validation rules.",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/validate-model.js",
             "line": 12,
             "description": "Save model method.",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 42,
+            "line": 74,
             "description": "Handles willTransition action (this action is fired at the beginning of any attempted transition).\nIt sends message about transition to corresponding controller.",
             "itemtype": "method",
             "name": "willTransition",
-            "class": "GroupEditEvents",
+            "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 8,
+            "line": 41,
             "description": "Table row click handler.",
             "params": [
                 {
@@ -2593,7 +2681,7 @@
                     "type": "Ember.Object"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ListFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -3277,52 +3365,48 @@
             "line": " ember-flexberry/addon/components/flexberry-file.js:615"
         },
         {
-            "message": "Missing item type\nEdit form base controller.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:5"
-        },
-        {
             "message": "Missing item type\nQuery parameters.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:9"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:40"
         },
         {
             "message": "Missing item type\nLookup settings.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:36"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:67"
         },
         {
             "message": "Missing item type\nModel change handler.\nTODO: refactor",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:57"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:88"
         },
         {
             "message": "Missing item type\nActions handlers.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:86"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:117"
         },
         {
             "message": "Missing item type\nMethod to transit to parent's route (previous route).",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:126"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:157"
         },
         {
             "message": "Missing item type\nMethod to get type of object list view cell.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:137"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:168"
         },
         {
             "message": "Missing item type\nOn save model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:145"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:176"
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:194"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:225"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:201"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:232"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:208"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:239"
         },
         {
             "message": "Missing item type\nOn model 'preSave' event handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:215"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:246"
         },
         {
             "message": "Missing item type\nПроизводит операцию, обратную методу deserializeSortingParam.",
@@ -3342,7 +3426,7 @@
         },
         {
             "message": "Missing item type\nTable row click handler.",
-            "line": " ember-flexberry/addon/routes/list-form.js:8"
+            "line": " ember-flexberry/addon/routes/list-form.js:41"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",

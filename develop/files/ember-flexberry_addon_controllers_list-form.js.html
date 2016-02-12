@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/modal-dialog.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/controllers/list-form.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -112,7 +112,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/modal-dialog.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/controllers/list-form.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -122,58 +122,39 @@
  */
 
 import Ember from &#x27;ember&#x27;;
+import PaginatedControllerMixin from &#x27;../mixins/paginated-controller&#x27;;
+import SortableControllerMixin from &#x27;../mixins/sortable-controller&#x27;;
 
-export default Ember.Component.extend({
-  modalWindowHeight: undefined,
-  modalWindowWidth: undefined,
-  modalWindowContentHeight: 400,
-  modalWindowHeightComputed: Ember.computed(&#x27;modalWindowHeight&#x27;, function() {
-    var height = this.get(&#x27;modalWindowHeight&#x27;);
-    if (height &amp;&amp; typeof height === &#x27;number&#x27;) {
-      return height;
-    }
+/**
+ * Base controller for the List Forms.
 
-    return 600;
-  }),
-  modalWindowWidthComputed: Ember.computed(&#x27;modalWindowWidth&#x27;, function() {
-    var width = this.get(&#x27;modalWindowWidth&#x27;);
-    if (width &amp;&amp; typeof width === &#x27;number&#x27;) {
-      return width;
-    }
+  This class re-exports to the application as &#x60;/controllers/list-form&#x60;.
+  So, you can inherit from &#x60;./list-form&#x60;, even if file &#x60;app/controllers/list-form.js&#x60;
+  is not presented in the application.
 
-    return 750;
-  }),
-  modalWindowContentHeightComputed: Ember.computed(&#x27;modalWindowContentHeight&#x27;, function() {
-    var height = this.get(&#x27;modalWindowContentHeight&#x27;);
-    if (height &amp;&amp; typeof height === &#x27;number&#x27;) {
-      return height;
-    }
+  Example:
+  &#x60;&#x60;&#x60;js
+  // app/controllers/employees.js
+  import ListFormController from &#x27;./list-form&#x27;;
+  export default ListFormController.extend({
+  });
+  &#x60;&#x60;&#x60;
 
-    return 400;
-  }),
-  didInsertElement: function() {
-      var _this = this;
-      this.$(&#x27;.ui.modal&#x27;).modal(&#x27;setting&#x27;, {
-        onApprove: function() {
-          _this.sendAction(&#x27;ok&#x27;);
-        },
-        onDeny: function() {
-          _this.sendAction(&#x27;close&#x27;);
-        },
-        onHidden: function() {
-          _this.sendAction(&#x27;close&#x27;);
-          this.remove();
-        },
-        onVisible: function() {
-          var wholeHeight = Ember.$(this).outerHeight();
-          var headHeight = Ember.$(&#x27;.header&#x27;, this).outerHeight();
-          var actionsHeight = Ember.$(&#x27;.actions&#x27;, this).outerHeight();
-          var result = wholeHeight - headHeight - actionsHeight;
-          _this.set(&#x27;modalWindowContentHeight&#x27;, result);
-          _this.sendAction(&#x27;created&#x27;, Ember.$(this));
-        }
-      }).modal(&#x27;show&#x27;);
-    }
+  If you want to add some common logic on all List Forms, you can define
+  (actually override) &#x60;app/controllers/list-form.js&#x60; as follows:
+  &#x60;&#x60;&#x60;js
+  // app/controllers/list-form.js
+  import ListFormController from &#x27;ember-flexberry/controllers/list-form&#x27;;
+  export default ListFormController.extend({
+  });
+  &#x60;&#x60;&#x60;
+
+ * @class ListFormController
+ * @extends Ember.Controller
+ * @uses PaginatedControllerMixin
+ * @uses SortableControllerMixin
+ */
+export default Ember.Controller.extend(PaginatedControllerMixin, SortableControllerMixin, {
 });
 
     </pre>

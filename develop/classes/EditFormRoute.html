@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GroupEditToolbar - Flexberry Documentation</title>
+    <title>EditFormRoute - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -112,17 +112,23 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>GroupEditToolbar <small>Class</small></h1>
+    <h1>EditFormRoute <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
+        <div class="uses">
+            Uses
+            <ul class="inline commas">
+                    <li><a href="FlexberryGroupeditRouteMixin.html">FlexberryGroupeditRouteMixin</a></li>
+            </ul>
+        </div>
 
         <div class="extends">
-            Extends <a href="../classes/FlexberryBaseComponent.html" class="crosslink">FlexberryBaseComponent</a>
+            Extends ProjectedModelFormRoute
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l8"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:8</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l8"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:8</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -131,7 +137,23 @@
 
 
 <div class="well well-small">
-    <p>Toolbar compoent for flexberry-groupedit component.</p>
+    <p>Base route for the Edit Forms.</p>
+<p>This class re-exports to the application as <code>/routes/edit-form</code>.
+So, you can inherit from <code>./edit-form</code>, even if file <code>app/routes/edit-form.js</code>
+is not presented in the application.</p>
+<p>Example:</p>
+<pre class="code prettyprint"><code class="language-js">// app/routes/employee.js
+import EditFormRoute from './edit-form';
+export default EditFormRoute.extend({
+});
+</code></pre>
+<p>If you want to add some common logic on all Edit Forms, you can define
+(actually override) <code>app/routes/edit-form.js</code> as follows:</p>
+<pre class="code prettyprint"><code class="language-js">// app/routes/edit-form.js
+import EditFormRoute from 'ember-flexberry/routes/edit-form';
+export default EditFormRoute.extend({
+});
+</code></pre>
 
 </div>
 
@@ -152,32 +174,56 @@
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method___rowsDeleted" data-tablink="__rowsDeleted">__rowsDeleted</a>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__getRelationType" data-tablink="_getRelationType">_getRelationType</a>
 
                             </li>
                             <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__rowSelected" data-tablink="_rowSelected">_rowSelected</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method__rowAdded" data-tablink="_rowAdded">_rowAdded</a>
 
                             </li>
-                            <li class="index-item method inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getLimitFunctionQuery" data-tablink="getLimitFunctionQuery">getLimitFunctionQuery</a>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__rowChanged" data-tablink="_rowChanged">_rowChanged</a>
 
                             </li>
-                            <li class="index-item method inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getQueryOptionsForAutocompleteLookup" data-tablink="getQueryOptionsForAutocompleteLookup">getQueryOptionsForAutocompleteLookup</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getUrlForTypeQuery" data-tablink="getUrlForTypeQuery">getUrlForTypeQuery</a>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__rowDeleted" data-tablink="_rowDeleted">_rowDeleted</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_init" data-tablink="init">init</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_createdModalDialog" data-tablink="createdModalDialog">createdModalDialog</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_willDestroy" data-tablink="willDestroy">willDestroy</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getAutocompleteLookupQueryOptions" data-tablink="getAutocompleteLookupQueryOptions">getAutocompleteLookupQueryOptions</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getLookupAutocompleteUrl" data-tablink="getLookupAutocompleteUrl">getLookupAutocompleteUrl</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_removeLookupValue" data-tablink="removeLookupValue">removeLookupValue</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_routeWillTransition" data-tablink="routeWillTransition">routeWillTransition</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_routeWillTransition" data-tablink="routeWillTransition">routeWillTransition</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_showLookupDialog" data-tablink="showLookupDialog">showLookupDialog</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_updateLookupValue" data-tablink="updateLookupValue">updateLookupValue</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_willTransition" data-tablink="willTransition">willTransition</a>
 
                             </li>
                     </ul>
@@ -188,23 +234,7 @@
 
                     <ul class="index-list properties extends">
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_actions" data-tablink="actions">actions</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_classNames" data-tablink="classNames">classNames</a>
-
-                            </li>
-                            <li class="index-item property inherited">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_componentName" data-tablink="componentName">componentName</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_createNewButton" data-tablink="createNewButton">createNewButton</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_deleteButton" data-tablink="deleteButton">deleteButton</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property__openedModalDialog" data-tablink="_openedModalDialog">_openedModalDialog</a>
 
                             </li>
                             <li class="index-item property">
@@ -212,15 +242,7 @@
 
                             </li>
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_isDeleteRowsEnabled" data-tablink="isDeleteRowsEnabled">isDeleteRowsEnabled</a>
-
-                            </li>
-                            <li class="index-item property inherited">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_readonly" data-tablink="readonly">readonly</a>
-
-                            </li>
-                            <li class="index-item property inherited">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_readonlyAttr" data-tablink="readonlyAttr">readonlyAttr</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property_lookupController" data-tablink="lookupController">lookupController</a>
 
                             </li>
                     </ul>
@@ -232,23 +254,25 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method___rowsDeleted" class="method item private">
-                        <h3 class="name"><code>__rowsDeleted</code></h3>
+                    <div id="method__getRelationType" class="method item">
+                        <h3 class="name"><code>_getRelationType</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>componentName</code>
+                                            <code>model</code>
                                     </li>
                                     <li class="arg">
-                                            <code>count</code>
+                                            <code>relationName</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
                     
                     
-                            <span class="flag private">private</span>
                     
                     
                     
@@ -257,7 +281,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l126"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:126</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l231"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:231</code></a>
                             </p>
                     
                     
@@ -265,7 +289,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Event handler for "selected rows has been deleted" event in groupedit.</p>
+                            <p>Gets related object type by relation name from specified model.</p>
                     
                         </div>
                     
@@ -274,23 +298,23 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">componentName</code>
+                                            <code class="param-name">model</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
+                                            <p>Specified model to get relation from.</p>
                     
                                         </div>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
+                                            <code class="param-name">relationName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Count of deleted rows in groupedit.</p>
+                                            <p>Relation name.</p>
                     
                                         </div>
                     
@@ -298,10 +322,19 @@
                                 </ul>
                             </div>
                     
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>Related object type.</p>
+                    
+                                </div>
+                            </div>
                     
                     </div>
-                    <div id="method__rowSelected" class="method item private">
-                        <h3 class="name"><code>_rowSelected</code></h3>
+                    <div id="method__rowAdded" class="method item private">
+                        <h3 class="name"><code>_rowAdded</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
@@ -311,9 +344,6 @@
                                     <li class="arg">
                                             <code>record</code>
                                     </li>
-                                    <li class="arg">
-                                            <code>count</code>
-                                    </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
@@ -328,7 +358,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l110"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:110</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l35"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:35</code></a>
                             </p>
                     
                     
@@ -361,18 +391,7 @@
                     
                     
                                         <div class="param-description">
-                                            <p>The model corresponding to selected row in groupedit.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Count of selected rows in groupedit.</p>
+                                            <p>The model corresponding to added row in groupedit.</p>
                     
                                         </div>
                     
@@ -382,34 +401,29 @@
                     
                     
                     </div>
-                    <div id="method_getLimitFunctionQuery" class="method item inherited">
-                        <h3 class="name"><code>getLimitFunctionQuery</code></h3>
+                    <div id="method__rowChanged" class="method item private">
+                        <h3 class="name"><code>_rowChanged</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>limitFunction</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>projectionName</code>
+                                            <code>componentName</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                            </span>
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/FlexberryBaseComponent.html#method_getLimitFunctionQuery">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l25"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:25</code></a>
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l70"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:70</code></a>
                             </p>
                     
                     
@@ -417,7 +431,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Creates query with given projection name (if not null) and limit function (if not empty).</p>
+                            <p>Event handler for "model(s) corresponding to some row(s) was changed" event in groupedit.</p>
                     
                         </div>
                     
@@ -426,23 +440,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">limitFunction</code>
+                                            <code class="param-name">componentName</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Filter to add to query (if empty noting will be added as filter).</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">projectionName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Projection name to add to query (if empty noting will be added as projection name).</p>
+                                            <p>The name of flexberry-groupedit component.</p>
                     
                                         </div>
                     
@@ -450,19 +453,132 @@
                                 </ul>
                             </div>
                     
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Created query.</p>
-                    
-                                </div>
-                            </div>
                     
                     </div>
-                    <div id="method_getQueryOptionsForAutocompleteLookup" class="method item inherited">
-                        <h3 class="name"><code>getQueryOptionsForAutocompleteLookup</code></h3>
+                    <div id="method__rowDeleted" class="method item private">
+                        <h3 class="name"><code>_rowDeleted</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>componentName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>record</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l49"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:49</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Event handler for "row has been deleted" event in groupedit.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">componentName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The name of flexberry-groupedit component.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">record</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The model corresponding to deleted row in groupedit.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_createdModalDialog" class="method item">
+                        <h3 class="name"><code>createdModalDialog</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>modalDialog</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_lookup-dialog.js.html#l38"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;lookup-dialog.js:38</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles create modal window action.
+                    It saves created window to have opportunity to close it later.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">modalDialog</code>
+                                            <span class="type">JQuery</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Created modal window.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_getAutocompleteLookupQueryOptions" class="method item">
+                        <h3 class="name"><code>getAutocompleteLookupQueryOptions</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
@@ -483,9 +599,9 @@
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/FlexberryBaseComponent.html#method_getQueryOptionsForAutocompleteLookup">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l63"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:63</code></a>
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l212"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:212</code></a>
                             </p>
                     
                     
@@ -493,7 +609,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Forms query options to get entities by specified lookup options.</p>
+                            <p>Forms query parameters by lookup autocomplete parameters.</p>
                     
                         </div>
                     
@@ -507,7 +623,7 @@
                     
                     
                                         <div class="param-description">
-                                            <p>Specified lookup autocomplete options.</p>
+                                            <p>Lookup autocomplete parameters (current limit function, etc).</p>
                     
                                         </div>
                     
@@ -520,19 +636,19 @@
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Formed query options.</p>
+                                        <p>Formed query parameters.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_getUrlForTypeQuery" class="method item inherited">
-                        <h3 class="name"><code>getUrlForTypeQuery</code></h3>
+                    <div id="method_getLookupAutocompleteUrl" class="method item">
+                        <h3 class="name"><code>getLookupAutocompleteUrl</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>type</code>
+                                            <code>relationName</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
@@ -548,9 +664,9 @@
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/FlexberryBaseComponent.html#method_getUrlForTypeQuery">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l46"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:46</code></a>
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l199"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:199</code></a>
                             </p>
                     
                     
@@ -558,7 +674,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Forms url to get all entities of certain type.</p>
+                            <p>Forms url to get all availible entities of certain relation.</p>
                     
                         </div>
                     
@@ -567,12 +683,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">type</code>
+                                            <code class="param-name">relationName</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Type of entities.</p>
+                                            <p>Elements for this relation will be searched.</p>
                     
                                         </div>
                     
@@ -591,8 +707,61 @@
                             </div>
                     
                     </div>
-                    <div id="method_init" class="method item">
-                        <h3 class="name"><code>init</code></h3>
+                    <div id="method_removeLookupValue" class="method item">
+                        <h3 class="name"><code>removeLookupValue</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>removeData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l150"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:150</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles action from lookup remove action.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">removeData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Lookup parameters (projection name, etc).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_routeWillTransition" class="method item">
+                        <h3 class="name"><code>routeWillTransition</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -606,7 +775,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l52"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:52</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_lookup-dialog.js.html#l49"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;lookup-dialog.js:49</code></a>
                             </p>
                     
                     
@@ -614,15 +783,16 @@
                         </div>
                     
                         <div class="description">
-                            <p>The method called when component is instantiated.</p>
+                            <p>Handles correcponding route's willTransition action.
+                    It closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).</p>
                     
                         </div>
                     
                     
                     
                     </div>
-                    <div id="method_willDestroy" class="method item">
-                        <h3 class="name"><code>willDestroy</code></h3>
+                    <div id="method_routeWillTransition" class="method item">
+                        <h3 class="name"><code>routeWillTransition</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -636,7 +806,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l69"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:69</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l140"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:140</code></a>
                             </p>
                     
                     
@@ -644,7 +814,145 @@
                         </div>
                     
                         <div class="description">
-                            <p>Implementation of component's teardown.</p>
+                            <p>Handles correcponding route's willTransition action.
+                    It sends message about transition to showing lookup modal window controller.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_showLookupDialog" class="method item">
+                        <h3 class="name"><code>showLookupDialog</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>chooseData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l29"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:29</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles action from lookup choose action.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">chooseData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Lookup parameters (projection name, relation name, etc).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_updateLookupValue" class="method item">
+                        <h3 class="name"><code>updateLookupValue</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>updateData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l171"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:171</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Update relation value at model.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">updateData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Lookup parameters to update data at model (projection name, etc).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_willTransition" class="method item">
+                        <h3 class="name"><code>willTransition</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l74"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:74</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles willTransition action (this action is fired at the beginning of any attempted transition).
+                    It sends message about transition to corresponding controller.</p>
                     
                         </div>
                     
@@ -656,9 +964,9 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_actions" class="property item">
-                        <h3 class="name"><code>actions</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    <div id="property__openedModalDialog" class="property item">
+                        <h3 class="name"><code>_openedModalDialog</code></h3>
+                        <span class="type">JQuery</span>
                     
                     
                     
@@ -667,124 +975,18 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l80"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:80</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_lookup-dialog.js.html#l6"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;lookup-dialog.js:6</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>The collection of functions that will be invoked when
-                    click on toolbar buttons.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_classNames" class="property item">
-                        <h3 class="name"><code>classNames</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:15</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Default class for component wrapper.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_componentName" class="property item inherited">
-                        <h3 class="name"><code>componentName</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/FlexberryBaseComponent.html#property_componentName">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l35"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:35</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Unique name of the component.
-                    TODO: use guidFor from 'ember-metal/utils'</p>
+                            <p>Current opened modal window.</p>
                     
                         </div>
                     
                             <p><strong>Default:</strong> undefined</p>
-                    
-                    
-                    </div>
-                    <div id="property_createNewButton" class="property item">
-                        <h3 class="name"><code>createNewButton</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:32</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Boolean property to show or hide add button in toolbar.
-                    Add new record button will not display if set to false.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> true</p>
-                    
-                    
-                    </div>
-                    <div id="property_deleteButton" class="property item">
-                        <h3 class="name"><code>deleteButton</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l42"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:42</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Boolean property to show or hide delete button in toolbar.
-                    Delete record button will not display if set to false.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> true</p>
                     
                     
                     </div>
@@ -799,7 +1001,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l24"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:24</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l4"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:4</code></a>
                             </p>
                     
                     
@@ -813,9 +1015,9 @@
                     
                     
                     </div>
-                    <div id="property_isDeleteRowsEnabled" class="property item">
-                        <h3 class="name"><code>isDeleteRowsEnabled</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property_lookupController" class="property item">
+                        <h3 class="name"><code>lookupController</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Ember.InjectedProperty.html" class="crosslink external" target="_blank">Ember.InjectedProperty</a></span>
                     
                     
                     
@@ -824,65 +1026,14 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l102"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:102</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l19"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:19</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Boolean flag to indicate enabled state of delete rows button.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_readonly" class="property item inherited">
-                        <h3 class="name"><code>readonly</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/FlexberryBaseComponent.html#property_readonly">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l13"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:13</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Flag to make control readonly.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> false</p>
-                    
-                    
-                    </div>
-                    <div id="property_readonlyAttr" class="property item inherited">
-                        <h3 class="name"><code>readonlyAttr</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a> | Undefined</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/FlexberryBaseComponent.html#property_readonlyAttr">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l23"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:23</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Readonly HTML attribute following to the <code>readonly</code> query param. According to the W3C standard, returns 'readonly' if <code>readonly</code> is <code>true</code> and <code>undefined</code> otherwise.</p>
+                            <p>Controller to show lookup modal window.</p>
                     
                         </div>
                     
