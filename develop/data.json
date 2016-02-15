@@ -342,10 +342,21 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/transforms/enum-base.js": {
+            "name": "ember-flexberry/addon/transforms/enum-base.js",
+            "modules": {},
+            "classes": {
+                "EnumBaseTransform": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/transforms/enum-number.js": {
             "name": "ember-flexberry/addon/transforms/enum-number.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "EnumNumberTransform": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -353,7 +364,7 @@
             "name": "ember-flexberry/addon/transforms/enum-string.js",
             "modules": {},
             "classes": {
-                "EnumTransform": 1
+                "EnumStringTransform": 1
             },
             "fors": {},
             "namespaces": {}
@@ -405,7 +416,9 @@
                 "EditFormRoute": 1,
                 "ListFormRoute": 1,
                 "GroupEditEvents": 1,
-                "EnumTransform": 1
+                "EnumBaseTransform": 1,
+                "EnumNumberTransform": 1,
+                "EnumStringTransform": 1
             },
             "fors": {},
             "namespaces": {},
@@ -768,9 +781,47 @@
             "access": "public",
             "tagname": ""
         },
-        "EnumTransform": {
-            "name": "EnumTransform",
-            "shortname": "EnumTransform",
+        "EnumBaseTransform": {
+            "name": "isEnum",
+            "shortname": "EnumBaseTransform",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 164,
+            "description": "Flag: indicates whether class represents enumeration.\nIt is useful in cases when we need to determine that the model attribute type is an enumeration.",
+            "extends": "DS.Transform",
+            "access": "public",
+            "tagname": "",
+            "itemtype": "property",
+            "type": "Boolean",
+            "default": "true",
+            "static": 1
+        },
+        "EnumNumberTransform": {
+            "name": "EnumNumberTransform",
+            "shortname": "EnumNumberTransform",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/transforms/enum-number.js",
+            "line": 4,
+            "description": "Base transform class that implements an enumeration type for numbers.\nDuring serialization and deserialization it checks if value is not outside of accessible values and converts to number or back.",
+            "extends": "EnumBaseTransform",
+            "access": "public",
+            "tagname": ""
+        },
+        "EnumStringTransform": {
+            "name": "EnumStringTransform",
+            "shortname": "EnumStringTransform",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -780,8 +831,8 @@
             "namespace": "",
             "file": "ember-flexberry/addon/transforms/enum-string.js",
             "line": 4,
-            "description": "Base transform class that implements an enumeration type.\nDuring serialization and deserialization it checks if value is not outside of accessible values and returns same string.",
-            "extends": "DS.Transform",
+            "description": "Base transform class that implements an enumeration type for strings.\nDuring serialization and deserialization it checks if value is not outside of accessible values and converts to string or back.",
+            "extends": "EnumBaseTransform",
             "access": "public",
             "tagname": ""
         }
@@ -3017,7 +3068,7 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/transforms/enum-number.js",
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
             "line": 14,
             "description": "Available choises of enumeration.\nIt is required field in a derived class.",
             "itemtype": "property",
@@ -3028,13 +3079,168 @@
             "example": [
                 "\n    ['Easy', 'Difficult', 'Hard']\n    { Easy: 1, Difficult: 2, Hard: 3 }"
             ],
-            "class": "EnumTransform",
+            "class": "EnumBaseTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 27,
+            "description": "String that represents expected type of serialized enumeration values.",
+            "itemtype": "property",
+            "name": "expectedSerializedType",
+            "type": "String",
+            "default": "null",
+            "access": "public",
+            "tagname": "",
+            "class": "EnumBaseTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 36,
+            "description": "String that represents expected type of deserialized enumeration values.",
+            "itemtype": "property",
+            "name": "expectedDeserializedType",
+            "type": "String",
+            "default": "null",
+            "access": "public",
+            "tagname": "",
+            "class": "EnumBaseTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 45,
+            "description": "Executes all basic validations and returns deserialized enumeration field.",
+            "itemtype": "method",
+            "name": "deserialize",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "serialized",
+                    "description": "Serialized enumeration field.",
+                    "type": "String|Number"
+                }
+            ],
+            "return": {
+                "description": "Deserialized enumeration field.\nReturns `null` or `undefined` if `serialized` has one of these values.",
+                "type": "String"
+            },
+            "class": "EnumBaseTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 81,
+            "description": "Executes all basic validations and returns serialized enumeration field.",
+            "itemtype": "method",
+            "name": "serialize",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "deserialized",
+                    "description": "Deserialized enumeration field.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Serialized enumeration field.\nReturns `null` or `undefined` if `deserialized` has one of these values.",
+                "type": "String|Number"
+            },
+            "class": "EnumBaseTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 117,
+            "description": "Returns deserialized enumeration field.",
+            "itemtype": "method",
+            "name": "deserialize",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "serialized",
+                    "description": "Serialized enumeration field.",
+                    "type": "String|Number"
+                }
+            ],
+            "return": {
+                "description": "Deserialized enumeration field.\nReturns `null` or `undefined` if `values` does not contain serialized value.",
+                "type": "String"
+            },
+            "class": "EnumBaseTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 130,
+            "description": "Returns serialized enumeration field.",
+            "itemtype": "method",
+            "name": "getSerializedValue",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "deserialized",
+                    "description": "Deserialized enumeration field.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Serialized enumeration field.\nReturns `null` or `undefined` if `values` does not contain deserialized value.",
+                "type": "String|Number"
+            },
+            "class": "EnumBaseTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-base.js",
+            "line": 143,
+            "description": "Returns enumeration values as genuine array.",
+            "itemtype": "method",
+            "name": "getAvailableValuesArray",
+            "access": "public",
+            "tagname": "",
+            "return": {
+                "description": "Enumeration values as genuine array.",
+                "type": "Array"
+            },
+            "class": "EnumBaseTransform",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/transforms/enum-number.js",
-            "line": 27,
-            "description": "Returns deserialized enumeration field.",
+            "line": 13,
+            "description": "String that represents expected type of serialized enumeration values.",
+            "itemtype": "property",
+            "name": "expectedSerializedType",
+            "type": "String",
+            "default": "'number'",
+            "access": "public",
+            "tagname": "",
+            "class": "EnumNumberTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-number.js",
+            "line": 22,
+            "description": "String that represents expected type of deserialized enumeration values.",
+            "itemtype": "property",
+            "name": "expectedDeserializedType",
+            "type": "String",
+            "default": "'string'",
+            "access": "public",
+            "tagname": "",
+            "class": "EnumNumberTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-number.js",
+            "line": 31,
+            "description": "Returns deserialized enumeration field (name).",
             "itemtype": "method",
             "name": "deserialize",
             "access": "public",
@@ -3047,18 +3253,18 @@
                 }
             ],
             "return": {
-                "description": "Deserialized enumeration field (name).\n                 Returns `null` or `undefined` if `serialized` has\n                 one of these values.",
+                "description": "Deserialized enumeration field (name).\nReturns `null` or `undefined` if `values` does not contain serialized value.",
                 "type": "String"
             },
-            "class": "EnumTransform",
+            "class": "EnumNumberTransform",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/transforms/enum-number.js",
-            "line": 72,
-            "description": "Returns serialized enumeration field.",
+            "line": 58,
+            "description": "Returns serialized enumeration field (index).",
             "itemtype": "method",
-            "name": "serialize",
+            "name": "getSerializedValue",
             "access": "public",
             "tagname": "",
             "params": [
@@ -3069,31 +3275,42 @@
                 }
             ],
             "return": {
-                "description": "Serialized enumeration field (index).\n                 Returns `null` or `undefined` if `deserialized` has\n                 one of these values.",
-                "type": "Number"
+                "description": "Serialized enumeration field (index).\nReturns `null` or `undefined` if `values` does not contain deserialized value.",
+                "type": "String|Number"
             },
-            "class": "EnumTransform",
+            "class": "EnumNumberTransform",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/transforms/enum-string.js",
-            "line": 14,
-            "description": "Available choises of enumeration.\nIt is required field in a derived class.",
+            "line": 13,
+            "description": "String that represents expected type of serialized enumeration values.",
             "itemtype": "property",
-            "name": "values",
+            "name": "expectedSerializedType",
+            "type": "String",
+            "default": "'string'",
             "access": "public",
             "tagname": "",
-            "type": "Array|Ember.Array|Object",
-            "example": [
-                "\n    ['Easy', 'Difficult', 'Hard']\n    { Easy: 1, Difficult: 2, Hard: 3 }"
-            ],
-            "class": "EnumTransform",
+            "class": "EnumStringTransform",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/transforms/enum-string.js",
-            "line": 27,
-            "description": "Returns deserialized enumeration field.",
+            "line": 22,
+            "description": "String that represents expected type of deserialized enumeration values.",
+            "itemtype": "property",
+            "name": "expectedDeserializedType",
+            "type": "String",
+            "default": "'string'",
+            "access": "public",
+            "tagname": "",
+            "class": "EnumStringTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/transforms/enum-string.js",
+            "line": 31,
+            "description": "Returns deserialized enumeration field (name).",
             "itemtype": "method",
             "name": "deserialize",
             "access": "public",
@@ -3101,23 +3318,23 @@
             "params": [
                 {
                     "name": "serialized",
-                    "description": "Serialized enumeration field (name).",
+                    "description": "Serialized enumeration field (index).",
                     "type": "String"
                 }
             ],
             "return": {
-                "description": "Deserialized enumeration field (name).\n                 Returns `null` or `undefined` if `serialized` has one of these values.",
+                "description": "Deserialized enumeration field (name).\nReturns `null` or `undefined` if `values` does not contain serialized value.",
                 "type": "String"
             },
-            "class": "EnumTransform",
+            "class": "EnumStringTransform",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/transforms/enum-string.js",
-            "line": 69,
-            "description": "Returns serialized enumeration field.",
+            "line": 53,
+            "description": "Returns serialized enumeration field (index).",
             "itemtype": "method",
-            "name": "serialize",
+            "name": "getSerializedValue",
             "access": "public",
             "tagname": "",
             "params": [
@@ -3128,10 +3345,10 @@
                 }
             ],
             "return": {
-                "description": "Serialized enumeration field (name).\n                 Returns `null` or `undefined` if `deserialized` has one of these values.",
-                "type": "String"
+                "description": "Serialized enumeration field (index).\nReturns `null` or `undefined` if `values` does not contain deserialized value.",
+                "type": "String|Number"
             },
-            "class": "EnumTransform",
+            "class": "EnumStringTransform",
             "module": "ember-flexberry"
         }
     ],

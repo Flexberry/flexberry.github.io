@@ -3,7 +3,8 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "EditFormController",
         "EditFormRoute",
-        "EnumTransform",
+        "EnumNumberTransform",
+        "EnumStringTransform",
         "FlexberrCheckbox",
         "FlexberryBaseComponent",
         "FlexberryDatetimePicker",
@@ -23,7 +24,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "Projection",
         "Projection.Adapter",
         "Projection.Model",
-        "Projection.Store"
+        "Projection.Store",
+        "isEnum"
     ],
     "modules": [
         "ember-flexberry",

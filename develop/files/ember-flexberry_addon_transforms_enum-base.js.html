@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/flexberry-toggler.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/transforms/enum-base.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -114,107 +114,188 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/flexberry-toggler.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/transforms/enum-base.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-/**
- * @module ember-flexberry
- */
-
 import Ember from &#x27;ember&#x27;;
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+import DS from &#x27;ember-data&#x27;;
 
 /**
- * Component for expand / collapse content.
+ * Base transform class that implements an enumeration type.
+ * During serialization and deserialization it checks if value is not outside of accessible values and converts to expected type or back.
  *
- * @class FlexberryToggler
- * @extends FlexberryBaseComponent
+ * @class EnumBaseTransform
+ * @extends DS.Transform
+ * @public
  */
-var FlexberryToggler =  FlexberryBaseComponent.extend({
+var EnumBase = DS.Transform.extend({
+  // TODO: captions support (add support of type OrderedSet?)
   /**
-   * Default class for component wrapper.
+   * Available choises of enumeration.
+   * It is required field in a derived class.
    *
-   * @property classNames
-   * @type Array
-   * @readOnly
+   * @property values
+   * @public
+   * @type Array|Ember.Array|Object
+   * @example
+   *     [&#x27;Easy&#x27;, &#x27;Difficult&#x27;, &#x27;Hard&#x27;]
+   *     { Easy: 1, Difficult: 2, Hard: 3 }
    */
-  classNames: [&#x27;flexberry-toggler&#x27;, &#x27;ui&#x27;, &#x27;accordion&#x27;, &#x27;fluid&#x27;],
+  values: null,
 
   /**
-   * Common caption in the component header.
-   * Used when appropriate sate-related caption ({{#crossLink &quot;expandedCaption:property&quot;}}{{/crossLink}}
-   * or {{#crossLink &quot;collapsedCaption:property&quot;}}{{/crossLink}}) is not specified.
-   *
-   * @property caption
-   * @type String
-   * @default &#x27;&#x27;
-   */
-  caption: &#x27;&#x27;,
-
-  /**
-   * Caption in the component header for expanded state.
-   * If it is not specified, {{#crossLink &quot;caption:property&quot;}}{{/crossLink}} will be used.
-   *
-   * @property expandedCaption
+   * String that represents expected type of serialized enumeration values.
+   * @property expectedSerializedType
    * @type String
    * @default null
+   * @public
    */
-  expandedCaption: null,
+  expectedSerializedType: null,
 
   /**
-   * Caption in the component header for collapsed state.
-   * If it is not specified, {{#crossLink &quot;caption:property&quot;}}{{/crossLink}} will be used.
-   *
-   * @property collapsedCaption
+   * String that represents expected type of deserialized enumeration values.
+   * @property expectedDeserializedType
    * @type String
    * @default null
+   * @public
    */
-  collapsedCaption: null,
+  expectedDeserializedType: null,
 
   /**
-   * Current visibility state.
+   * Executes all basic validations and returns deserialized enumeration field.
    *
-   * @property expanded
-   * @type Boolean
-   * @default true
+   * @method deserialize
+   * @public
+   *
+   * @param {String|Number} serialized Serialized enumeration field.
+   * @return {String} Deserialized enumeration field.
+   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;serialized&#x60; has one of these values.
    */
-  expanded: true,
+  deserialize: function(serialized) {
+    if (serialized === null || serialized === undefined) {
+      return serialized;
+    }
+
+    let deserialized;
+    let actualSerializedType = Ember.typeOf(serialized);
+    let expectedSerializedType = this.get(&#x27;expectedSerializedType&#x27;);
+    if (actualSerializedType !== expectedSerializedType) {
+      throw new Error(&#x60;Wrong type of serialized enumeration field: actual type is ${actualSerializedType}, but ${expectedSerializedType} was expected.&#x60;);
+    }
+
+    let values = this.values;
+    let actualValuesType = Ember.typeOf(values);
+    if (!(Ember.isArray(values) || actualValuesType === &#x27;object&#x27;)) {
+      throw new Error(&#x60;Wrong type of enumeration values field: actial type is ${actualValuesType}, but array or object were expected.&#x60;);
+    }
+
+    deserialized = this.getDeserializedValue(serialized);
+    if (deserialized === null || deserialized === undefined) {
+      throw new Error(&#x60;Unable to find serialized enumeration field: ${serialized}.&#x60;);
+    }
+
+    return deserialized;
+  },
 
   /**
-   * Current caption.
+   * Executes all basic validations and returns serialized enumeration field.
    *
-   * @property captionComputed
-   * @type String
+   * @method serialize
+   * @public
+   *
+   * @param {String} deserialized Deserialized enumeration field.
+   * @return {String|Number} Serialized enumeration field.
+   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;deserialized&#x60; has one of these values.
    */
-  captionComputed: Ember.computed(&#x27;caption&#x27;, &#x27;expandedCaption&#x27;, &#x27;collapsedCaption&#x27;, &#x27;expanded&#x27;, function() {
-    var defaultCaption = this.get(&#x27;caption&#x27;);
-    var caption = this.get(&#x27;expanded&#x27;) ? (this.get(&#x27;expandedCaption&#x27;) || defaultCaption) : (this.get(&#x27;collapsedCaption&#x27;) || defaultCaption);
+  serialize: function(deserialized) {
+    if (deserialized === null || deserialized === undefined) {
+      return deserialized;
+    }
 
-    return caption;
-  }),
+    let serialized;
+    let actualDeserializedType = Ember.typeOf(deserialized);
+    let expectedDeserializedType = this.get(&#x27;expectedDeserializedType&#x27;);
+    if (actualDeserializedType !== expectedDeserializedType) {
+      throw new Error(&#x60;Wrong type of deserialized enumeration field: actual type is ${actualDeserializedType}, but ${expectedDeserializedType} was expected.&#x60;);
+    }
+
+    let values = this.values;
+    let actualValuesType = Ember.typeOf(values);
+    if (!(Ember.isArray(values) || actualValuesType === &#x27;object&#x27;)) {
+      throw new Error(&#x60;Wrong type of enumeration values field: actial type is ${actualValuesType}, but array or object were expected.&#x60;);
+    }
+
+    serialized = this.getSerializedValue(deserialized);
+    if (serialized === null || serialized === undefined) {
+      throw new Error(&#x60;Unable to find deserialized enumeration field: ${deserialized}.&#x60;);
+    }
+
+    return serialized;
+  },
 
   /**
-   * Handles the event, when component has been insterted.
-   * Attaches event handlers for expanding / collapsing content.
+   * Returns deserialized enumeration field.
    *
-   * @method didInsertElement
+   * @method deserialize
+   * @public
+   *
+   * @param {String|Number} serialized Serialized enumeration field.
+   * @return {String} Deserialized enumeration field.
+   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;values&#x60; does not contain serialized value.
    */
-  didInsertElement() {
-    var _this = this;
-    this.$().accordion({
-      onOpening: function() {
-        _this.set(&#x27;expanded&#x27;, _this.$(this).hasClass(&#x27;active&#x27;));
-      },
-      onClosing: function() {
-        _this.set(&#x27;expanded&#x27;, _this.$(this).hasClass(&#x27;active&#x27;));
-      }
-    });
-  }
+  getDeserializedValue: function(serialized) {
+  },
+
+  /**
+   * Returns serialized enumeration field.
+   *
+   * @method getSerializedValue
+   * @public
+   *
+   * @param {String} deserialized Deserialized enumeration field.
+   * @return {String|Number} Serialized enumeration field.
+   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;values&#x60; does not contain deserialized value.
+   */
+  getSerializedValue: function(deserialized) {
+  },
+
+  /**
+   * Returns enumeration values as genuine array.
+   *
+   * @method getAvailableValuesArray
+   * @public
+   *
+   * @return {Array} Enumeration values as genuine array.
+   */
+  getAvailableValuesArray: function() {
+    let availableValues = [];
+    let values = this.values;
+    if (Ember.isArray(values)) {
+      availableValues = Ember.typeOf(values.isArray) === &#x27;function&#x27; ? values.toArray() : values;
+    } else {
+      availableValues = Object.getOwnPropertyNames(values);
+    }
+  },
 });
 
-export default FlexberryToggler;
+// Define static members.
+EnumBase.reopenClass({
+  /**
+   * Flag: indicates whether class represents enumeration.
+   * It is useful in cases when we need to determine that the model attribute type is an enumeration.
+   * @property isEnum
+   * @type Boolean
+   * @default true
+   * @public
+   * @static
+   * @class EnumBaseTransform
+   */
+  isEnum: true
+});
+
+export default EnumBase;
 
     </pre>
 </div>
