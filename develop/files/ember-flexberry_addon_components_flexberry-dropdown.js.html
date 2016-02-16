@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -52,6 +52,7 @@
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
 	                            <li><a href="../classes/EnumStringTransform.html">EnumStringTransform</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
 	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
@@ -60,6 +61,7 @@
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -69,6 +71,7 @@
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -122,7 +125,7 @@
 /**
  * @module ember-flexberry
  */
-
+import Ember from &#x27;ember&#x27;;
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 /**
@@ -130,30 +133,105 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
  * @extends FlexberryBaseComponent
  */
 export default FlexberryBaseComponent.extend({
-  items: null,
-  selectedItem: null,
-  selectedIndex: -1,
-  id: null,
-  cssClass: null,
+  /**
+   * Overload wrapper tag name for disabling wrapper.
+   *
+   * @property tagName
+   * @type String
+   * @default &#x27;&#x27;
+   * @readOnly
+   */
+  tagName: &#x27;&#x27;,
 
-  actions: {
-    dropDown_onSelectedItemChanged: function() {
-      const htmlSelect = this.$(&#x27;select&#x27;)[0];
-      const selectedIndex = htmlSelect.selectedIndex;
-      this.set(&#x27;selectedIndex&#x27;, selectedIndex);
+  /**
+   * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
+   *
+   * @property appConfigSettingsPath
+   * @type String
+   * @default &#x27;APP.components.flexberryBaseComponent&#x27;
+   */
+  appConfigSettingsPath: &#x27;APP.components.flexberryDropdown&#x27;,
 
-      const items = this.get(&#x27;items&#x27;);
-      const selectedItem = items[selectedIndex];
-      this.set(&#x27;selectedItem&#x27;, selectedItem);
+  /**
+   * Dropdown type from semantic ui (&#x27;fluid&#x27;, &#x27;compact&#x27;, ...).
+   *
+   * @property type
+   * @type String
+   * @default &#x27;fluid&#x27;
+   */
+  type: &#x27;fluid&#x27;,
 
-      this.sendAction(&#x27;action&#x27;, selectedItem);
+  /**
+   * Default text (wil be displayed if there is no selected item).
+   *
+   * @property defaultText
+   * @type String
+   * @default &#x27;&#x27;
+   */
+  defaultText: undefined,
+
+  /**
+   * Selected item.
+   *
+   * @property value
+   * @type String
+   * @default null
+   */
+  value: null,
+
+  /**
+   * Available items.
+   *
+   * @property items
+   * @type Array
+   * @default []
+   */
+  items: [],
+
+  /**
+   * Currently displaying text.
+   *
+   * @property text
+   * @type String
+   */
+  currentText: Ember.computed(&#x27;value&#x27;, &#x27;defaultText&#x27;, function() {
+    var value = this.get(&#x27;value&#x27;);
+    if (Ember.typeOf(value) === &#x27;string&#x27;) {
+      return value;
     }
-  },
 
-  didInsertElement: function() {
-    const htmlSelect = this.$(&#x27;select&#x27;);
-    const selectedItem = this.get(&#x27;selectedItem&#x27;);
-    htmlSelect.val(selectedItem);
+    var defaultText = this.get(&#x27;defaultText&#x27;);
+    if (Ember.typeOf(defaultText) === &#x27;string&#x27;) {
+      return defaultText;
+    }
+
+    return &#x27;&#x27;;
+  }),
+
+  /**
+   * Handles changes in available items and in selected item.
+   */
+  itemsOrValueDidChange: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;items.[]&#x27;, &#x27;value&#x27;, function() {
+    var items = this.get(&#x27;items&#x27;);
+    var value = this.get(&#x27;value&#x27;);
+
+    if (!Ember.isArray(items)) {
+      throw new Error(&#x60;Wrong type of flexberry-dropdown \&#x60;items\&#x60; propery: actual type is ${Ember.typeOf(items)}, but array is expected.&#x60;);
+    }
+
+    if (!Ember.isNone(value) &amp;&amp; items.indexOf(value) &lt; 0) {
+      throw new Error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; propery: \&#x60;items\&#x60; array does not contain \&#x60;${value}\&#x60; value.&#x60;);
+    }
+  })),
+
+  /**
+   * Initializes component.
+   */
+  init: function() {
+    this._super(...arguments);
+
+    // Initialize properties which defaults could be defined in application configuration.
+    this.initProperty({ propertyName: &#x27;defaultText&#x27;, defaultValue: &#x27;&#x27; });
   }
 });
 

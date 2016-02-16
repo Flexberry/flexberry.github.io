@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -52,6 +52,7 @@
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
 	                            <li><a href="../classes/EnumStringTransform.html">EnumStringTransform</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
 	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
@@ -60,6 +61,7 @@
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -69,6 +71,7 @@
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -123,7 +126,7 @@
  * @module ember-flexberry
  */
 
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+import FlexberryTextbox from &#x27;./flexberry-textbox&#x27;;
 
 /**
  * Field component for Semantic UI.
@@ -131,7 +134,7 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
  * @class FlexberryField
  * @extends FlexberryBaseComponent
  */
-var FlexberryField = FlexberryBaseComponent.extend({
+var FlexberryField = FlexberryTextbox.extend({
   /**
    * Default classes for component wrapper.
    *
@@ -142,13 +145,13 @@ var FlexberryField = FlexberryBaseComponent.extend({
   classNames: [&#x27;flexberry-field&#x27;, &#x27;field&#x27;],
 
   /**
-   * Flag to make control required.
+   * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
    *
-   * @property required
-   * @type Boolean
-   * @default false
+   * @property appConfigSettingsPath
+   * @type String
+   * @default &#x27;APP.components.flexberryField&#x27;
    */
-  required: false,
+  appConfigSettingsPath: &#x27;APP.components.flexberryField&#x27;,
 
   /**
    * Label value.
@@ -157,16 +160,17 @@ var FlexberryField = FlexberryBaseComponent.extend({
    * @type String
    * @default &#x27;&#x27;
    */
-  label: &#x27;&#x27;,
+  label: undefined,
 
   /**
-   * Input value.
-   *
-   * @property value
-   * @type String
-   * @default undefined
+   * Initializes component.
    */
-  value: undefined
+  init: function() {
+    this._super(...arguments);
+
+    // Initialize properties which defaults could be defined in application configuration.
+    this.initProperty({ propertyName: &#x27;label&#x27;, defaultValue: &#x27;&#x27; });
+  }
 });
 
 export default FlexberryField;

@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -52,6 +52,7 @@
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
 	                            <li><a href="../classes/EnumStringTransform.html">EnumStringTransform</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
 	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
@@ -60,6 +61,7 @@
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -69,6 +71,7 @@
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -141,6 +144,15 @@ export default FlexberryBaseComponent.extend({
     &#x27;table&#x27;
   ],
 
+  /**
+   * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
+   *
+   * @property appConfigSettingsPath
+   * @type String
+   * @default &#x27;APP.components.flexberryBaseComponent&#x27;
+   */
+  appConfigSettingsPath: &#x27;APP.components.objectListView&#x27;,
+
   modelProjection: null,
   content: null,
   sorting: null,
@@ -149,7 +161,10 @@ export default FlexberryBaseComponent.extend({
   customColumnAttributes: null,
 
   headerCellComponent: &#x27;object-list-view-header-cell&#x27;,
-  cellComponent: &#x27;object-list-view-cell&#x27;,
+  cellComponent: {
+    componentName: &#x27;object-list-view-cell&#x27;,
+    componentProperties: null
+  },
 
   action: &#x27;rowClick&#x27;,
   addColumnToSorting: &#x27;addColumnToSorting&#x27;,
@@ -170,28 +185,6 @@ export default FlexberryBaseComponent.extend({
   groupEditEventsService: Ember.inject.service(&#x27;groupedit-events&#x27;),
 
   contentWithKeys: null,
-
-  init() {
-    this._super(...arguments);
-    this.set(&#x27;selectedRecords&#x27;, Ember.A());
-    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditAddRow&#x27;, this, this._addRow);
-    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
-    this.set(&#x27;contentWithKeys&#x27;, Ember.A());
-    if (!this.get(&#x27;noDataMessage&#x27;)) {
-      this.set(&#x27;noDataMessage&#x27;, &#x27;There is no data&#x27;);
-    }
-
-    if (this.get(&#x27;showCheckBoxInRow&#x27;)) {
-      this.get(&#x27;classNames&#x27;).push(&#x27;selectable&#x27;);
-    }
-
-    var _this = this;
-    if (this.get(&#x27;content&#x27;)) {
-      this.get(&#x27;content&#x27;).forEach(function(item, index, enumerable) {
-        _this._addModel(item);
-      });
-    }
-  },
 
   actions: {
     rowClick: function(key, record) {
@@ -237,7 +230,39 @@ export default FlexberryBaseComponent.extend({
     }
   },
 
+  init: function() {
+    this._super(...arguments);
+
+    this.set(&#x27;selectedRecords&#x27;, Ember.A());
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
+    this.set(&#x27;contentWithKeys&#x27;, Ember.A());
+    if (!this.get(&#x27;noDataMessage&#x27;)) {
+      this.set(&#x27;noDataMessage&#x27;, &#x27;There is no data&#x27;);
+    }
+
+    if (this.get(&#x27;showCheckBoxInRow&#x27;)) {
+      this.get(&#x27;classNames&#x27;).push(&#x27;selectable&#x27;);
+    }
+
+    var _this = this;
+    if (this.get(&#x27;content&#x27;)) {
+      this.get(&#x27;content&#x27;).forEach(function(item, index, enumerable) {
+        _this._addModel(item);
+      });
+    }
+  },
+
+  willDestroy: function() {
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
+
+    this._super(...arguments);
+  },
+
   didInsertElement: function() {
+    this._super(...arguments);
+
     if (!(this.get(&#x27;showCheckBoxInRow&#x27;) || this.get(&#x27;showDeleteButtonInRow&#x27;))) {
       this.$(&#x27;thead tr th:eq(1)&#x27;).css(&#x27;border-left&#x27;, &#x27;none&#x27;);
       this.$(&#x27;tbody tr&#x27;).find(&#x27;td:eq(1)&#x27;).css(&#x27;border-left&#x27;, &#x27;none&#x27;);
@@ -251,6 +276,10 @@ export default FlexberryBaseComponent.extend({
     }
   },
 
+  willDestroyElement: function() {
+    this._super(...arguments);
+  },
+
   columns: Ember.computed(&#x27;modelProjection&#x27;, function() {
     var projection = this.get(&#x27;modelProjection&#x27;);
     if (!projection) {
@@ -260,12 +289,6 @@ export default FlexberryBaseComponent.extend({
     let cols = this._generateColumns(projection.attributes);
     return cols;
   }),
-
-  willDestroy() {
-    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditAddRow&#x27;, this, this._addRow);
-    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
-    this._super(...arguments);
-  },
 
   _generateColumns: function(attributes, columnsBuf, relationshipPath) {
     columnsBuf = columnsBuf || [];
@@ -318,9 +341,17 @@ export default FlexberryBaseComponent.extend({
   },
 
   _createColumn: function(attr, bindingPath) {
+    // We get the &#x27;getCellComponent&#x27; function directly from the controller,
+    // and do not pass this function as a component attrubute,
+    // to avoid &#x27;Ember.Object.create no longer supports defining methods that call _super&#x27; error,
+    // if controller&#x27;s &#x27;getCellComponent&#x27; method call its super method from the base controller.
+    let currentController = this.get(&#x27;currentController&#x27;);
+    let getCellComponent = Ember.get(currentController || {}, &#x27;getCellComponent&#x27;);
     let cellComponent = this.get(&#x27;cellComponent&#x27;);
-    if (typeof cellComponent === &#x27;function&#x27;) {
-      cellComponent = cellComponent(attr, bindingPath);
+
+    if (Ember.typeOf(getCellComponent) === &#x27;function&#x27;) {
+      let recordModel =  (this.get(&#x27;content&#x27;) || {}).type || null;
+      cellComponent = getCellComponent.call(currentController, attr, bindingPath, recordModel);
     }
 
     let column = {
@@ -352,7 +383,7 @@ export default FlexberryBaseComponent.extend({
     var _this = this;
     var row = null;
     this.$(&#x27;tbody tr&#x27;).each(function() {
-      var currentKey = _this.$(this).find(&#x27;td:eq(0) div:eq(0)&#x27;).text();
+      var currentKey = _this.$(this).find(&#x27;td:eq(0) div:eq(0)&#x27;).text().trim();
       if (currentKey === key) {
         row = _this.$(this);
         return false;

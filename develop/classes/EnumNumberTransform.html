@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -52,6 +52,7 @@
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
 	                            <li><a href="../classes/EnumStringTransform.html">EnumStringTransform</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
 	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
@@ -60,6 +61,7 @@
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -69,6 +71,7 @@
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -124,7 +127,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l4"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:4</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l8"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:8</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -227,7 +230,7 @@ During serialization and deserialization it checks if value is not outside of ac
                                     DS.Transform
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l31"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:31</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l35"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:35</code></a>
                             </p>
                     
                     
@@ -288,7 +291,7 @@ During serialization and deserialization it checks if value is not outside of ac
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EnumBaseTransform.html#method_getAvailableValuesArray">EnumBaseTransform</a>:
-                            <a href="../files/ember-flexberry_addon_transforms_enum-base.js.html#l143"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-base.js:143</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-base.js.html#l147"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-base.js:147</code></a>
                             </p>
                     
                     
@@ -305,7 +308,7 @@ During serialization and deserialization it checks if value is not outside of ac
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>:
-                                        Enumeration values as genuine array.
+                                        Enumeration available values as genuine array.
                                 </div>
                             </div>
                     
@@ -338,7 +341,7 @@ During serialization and deserialization it checks if value is not outside of ac
                                     EnumBaseTransform
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l58"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:58</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l62"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:62</code></a>
                             </p>
                     
                     
@@ -408,7 +411,7 @@ During serialization and deserialization it checks if value is not outside of ac
                                     DS.Transform
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-base.js.html#l81"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-base.js:81</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-base.js.html#l85"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-base.js:85</code></a>
                             </p>
                     
                     
@@ -467,7 +470,7 @@ During serialization and deserialization it checks if value is not outside of ac
                                     EnumBaseTransform
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:22</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l26"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:26</code></a>
                             </p>
                     
                     
@@ -497,7 +500,7 @@ During serialization and deserialization it checks if value is not outside of ac
                                     EnumBaseTransform
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l13"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:13</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-number.js.html#l17"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-number.js:17</code></a>
                             </p>
                     
                     
@@ -524,7 +527,7 @@ During serialization and deserialization it checks if value is not outside of ac
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EnumBaseTransform.html#property_values">EnumBaseTransform</a>:
-                            <a href="../files/ember-flexberry_addon_transforms_enum-base.js.html#l14"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-base.js:14</code></a>
+                            <a href="../files/ember-flexberry_addon_transforms_enum-base.js.html#l18"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;enum-base.js:18</code></a>
                             </p>
                     
                     

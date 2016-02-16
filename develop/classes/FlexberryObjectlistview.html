@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GroupEditToolbar - Flexberry Documentation</title>
+    <title>FlexberryObjectlistview - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -117,7 +117,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>GroupEditToolbar <small>Class</small></h1>
+    <h1>FlexberryObjectlistview <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
@@ -127,7 +127,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l8"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:8</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:7</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -136,7 +136,7 @@
 
 
 <div class="well well-small">
-    <p>Toolbar compoent for flexberry-groupedit component.</p>
+    <p>Component to view list of object.</p>
 
 </div>
 
@@ -157,12 +157,8 @@
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method___rowsDeleted" data-tablink="__rowsDeleted">__rowsDeleted</a>
-
-                            </li>
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__rowSelected" data-tablink="_rowSelected">_rowSelected</a>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_addColumnToSorting" data-tablink="addColumnToSorting">addColumnToSorting</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -182,11 +178,23 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_init" data-tablink="init">init</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_gotoPage" data-tablink="gotoPage">gotoPage</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_willDestroy" data-tablink="willDestroy">willDestroy</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_nextPage" data-tablink="nextPage">nextPage</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_previousPage" data-tablink="previousPage">previousPage</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_rowClick" data-tablink="rowClick">rowClick</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_sortByColumn" data-tablink="sortByColumn">sortByColumn</a>
 
                             </li>
                     </ul>
@@ -197,7 +205,7 @@
 
                     <ul class="index-list properties extends">
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_actions" data-tablink="actions">actions</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property_action" data-tablink="action">action</a>
 
                             </li>
                             <li class="index-item property inherited">
@@ -212,12 +220,12 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_appConfigSettingsPath" data-tablink="appConfigSettingsPath">appConfigSettingsPath</a>
 
                             </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_classNames" data-tablink="classNames">classNames</a>
-
-                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_componentName" data-tablink="componentName">componentName</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_content" data-tablink="content">content</a>
 
                             </li>
                             <li class="index-item property">
@@ -228,28 +236,72 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_currentController" data-tablink="currentController">currentController</a>
 
                             </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_deleteButton" data-tablink="deleteButton">deleteButton</a>
-
-                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_dynamicProperties" data-tablink="dynamicProperties">dynamicProperties</a>
 
                             </li>
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_groupEditEventsService" data-tablink="groupEditEventsService">groupEditEventsService</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property_hasNextPage" data-tablink="hasNextPage">hasNextPage</a>
 
                             </li>
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_isDeleteRowsEnabled" data-tablink="isDeleteRowsEnabled">isDeleteRowsEnabled</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property_hasPreviousPage" data-tablink="hasPreviousPage">hasPreviousPage</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_modelController" data-tablink="modelController">modelController</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_modelName" data-tablink="modelName">modelName</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_modelProjection" data-tablink="modelProjection">modelProjection</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_orderable" data-tablink="orderable">orderable</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_pages" data-tablink="pages">pages</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_perPageValue" data-tablink="perPageValue">perPageValue</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_perPageValues" data-tablink="perPageValues">perPageValues</a>
 
                             </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_readonly" data-tablink="readonly">readonly</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_refreshButton" data-tablink="refreshButton">refreshButton</a>
+
+                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_required" data-tablink="required">required</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_rowClickable" data-tablink="rowClickable">rowClickable</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showCheckBoxInRow" data-tablink="showCheckBoxInRow">showCheckBoxInRow</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showDeleteButtonInRow" data-tablink="showDeleteButtonInRow">showDeleteButtonInRow</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_sorting" data-tablink="sorting">sorting</a>
 
                             </li>
                     </ul>
@@ -261,23 +313,19 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method___rowsDeleted" class="method item private">
-                        <h3 class="name"><code>__rowsDeleted</code></h3>
+                    <div id="method_addColumnToSorting" class="method item">
+                        <h3 class="name"><code>addColumnToSorting</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>count</code>
+                                            <code>column</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                     
                     
-                            <span class="flag private">private</span>
                     
                     
                     
@@ -286,7 +334,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l126"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:126</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l178"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:178</code></a>
                             </p>
                     
                     
@@ -294,7 +342,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Event handler for "selected rows has been deleted" event in groupedit.</p>
+                            <p>Handles action from object-list-view when no handler for this component is defined.</p>
                     
                         </div>
                     
@@ -303,105 +351,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <code class="param-name">column</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Count of deleted rows in groupedit.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method__rowSelected" class="method item private">
-                        <h3 class="name"><code>_rowSelected</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>record</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>count</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l110"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:110</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Event handler for "row has been selected" event in groupedit.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type">Model</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The model corresponding to selected row in groupedit.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Count of selected rows in groupedit.</p>
+                                            <p>Column to add sorting by.</p>
                     
                                         </div>
                     
@@ -690,8 +645,61 @@
                             </div>
                     
                     </div>
-                    <div id="method_init" class="method item">
-                        <h3 class="name"><code>init</code></h3>
+                    <div id="method_gotoPage" class="method item">
+                        <h3 class="name"><code>gotoPage</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>pageNumber</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l216"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:216</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles action from object-list-view when no handler for this component is defined.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">pageNumber</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Number of page to go to</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_nextPage" class="method item">
+                        <h3 class="name"><code>nextPage</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -705,7 +713,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l52"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:52</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l207"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:207</code></a>
                             </p>
                     
                     
@@ -713,15 +721,15 @@
                         </div>
                     
                         <div class="description">
-                            <p>The method called when component is instantiated.</p>
+                            <p>Handles action from object-list-view when no handler for this component is defined.</p>
                     
                         </div>
                     
                     
                     
                     </div>
-                    <div id="method_willDestroy" class="method item">
-                        <h3 class="name"><code>willDestroy</code></h3>
+                    <div id="method_previousPage" class="method item">
+                        <h3 class="name"><code>previousPage</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -735,7 +743,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l69"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:69</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l198"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:198</code></a>
                             </p>
                     
                     
@@ -743,10 +751,116 @@
                         </div>
                     
                         <div class="description">
-                            <p>Implementation of component's teardown.</p>
+                            <p>Handles action from object-list-view when no handler for this component is defined.</p>
                     
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="method_rowClick" class="method item">
+                        <h3 class="name"><code>rowClick</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>record</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l188"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:188</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles action from row click (action is handled at route so it can't be closure action now).</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">record</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Clicked record.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_sortByColumn" class="method item">
+                        <h3 class="name"><code>sortByColumn</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>column</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l168"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:168</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles action from object-list-view when no handler for this component is defined.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">column</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Column to sort by.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                     
                     </div>
@@ -755,9 +869,9 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_actions" class="property item">
-                        <h3 class="name"><code>actions</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    <div id="property_action" class="property item">
+                        <h3 class="name"><code>action</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                     
@@ -766,18 +880,18 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l80"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:80</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l14"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:14</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>The collection of functions that will be invoked when
-                    click on toolbar buttons.</p>
+                            <p>Primary action for row click.</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> &#x27;rowClick&#x27;</p>
                     
                     
                     </div>
@@ -858,31 +972,6 @@
                     
                     
                     </div>
-                    <div id="property_classNames" class="property item">
-                        <h3 class="name"><code>classNames</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:15</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Default class for component wrapper.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
                     <div id="property_componentName" class="property item inherited">
                         <h3 class="name"><code>componentName</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -910,6 +999,32 @@
                     
                     
                     </div>
+                    <div id="property_content" class="property item">
+                        <h3 class="name"><code>content</code></h3>
+                        <span class="type">ManyArray</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l68"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:68</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of models for detail objects.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
                     <div id="property_createNewButton" class="property item">
                         <h3 class="name"><code>createNewButton</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -921,19 +1036,18 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:32</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:32</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Boolean property to show or hide add button in toolbar.
-                    Add new record button will not display if set to false.</p>
+                            <p>Flag to use creation button at toolbal.</p>
                     
                         </div>
                     
-                            <p><strong>Default:</strong> true</p>
+                            <p><strong>Default:</strong> false</p>
                     
                     
                     </div>
@@ -959,33 +1073,6 @@
                     
                         </div>
                     
-                    
-                    
-                    </div>
-                    <div id="property_deleteButton" class="property item">
-                        <h3 class="name"><code>deleteButton</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l42"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:42</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Boolean property to show or hide delete button in toolbar.
-                    Delete record button will not display if set to false.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> true</p>
                     
                     
                     </div>
@@ -1018,9 +1105,9 @@
                     
                     
                     </div>
-                    <div id="property_groupEditEventsService" class="property item">
-                        <h3 class="name"><code>groupEditEventsService</code></h3>
-                        <span class="type">Service</span>
+                    <div id="property_hasNextPage" class="property item">
+                        <h3 class="name"><code>hasNextPage</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
                     
                     
                     
@@ -1029,22 +1116,127 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l24"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:24</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l122"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:122</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Service that triggers groupedit events.</p>
+                            <p>Function to determine if current page has next page.</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> false</p>
                     
                     
                     </div>
-                    <div id="property_isDeleteRowsEnabled" class="property item">
-                        <h3 class="name"><code>isDeleteRowsEnabled</code></h3>
+                    <div id="property_hasPreviousPage" class="property item">
+                        <h3 class="name"><code>hasPreviousPage</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l113"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:113</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Function to determine if current page has previous page.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_modelController" class="property item">
+                        <h3 class="name"><code>modelController</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l50"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:50</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current contoller.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_modelName" class="property item">
+                        <h3 class="name"><code>modelName</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l23"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:23</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Model's name. Used by toolbar.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_modelProjection" class="property item">
+                        <h3 class="name"><code>modelProjection</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l59"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:59</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Projection for detail object's model.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_orderable" class="property item">
+                        <h3 class="name"><code>orderable</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
                     
                     
@@ -1054,17 +1246,96 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_groupedit-toolbar.js.html#l102"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;groupedit-toolbar.js:102</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l131"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:131</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Boolean flag to indicate enabled state of delete rows button.</p>
+                            <p>Setting to true enables row ordering by clicking on column headers.</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_pages" class="property item">
+                        <h3 class="name"><code>pages</code></h3>
+                        <span class="type">ManyArray</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l86"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:86</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of pages to show.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_perPageValue" class="property item">
+                        <h3 class="name"><code>perPageValue</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l95"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:95</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current number of records to show per page.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_perPageValues" class="property item">
+                        <h3 class="name"><code>perPageValues</code></h3>
+                        <span class="type">ManyArray</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l104"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:104</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of numbers of records to show on one page.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>
@@ -1087,6 +1358,32 @@
                     
                         <div class="description">
                             <p>Flag: indicates whether component is readonly.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_refreshButton" class="property item">
+                        <h3 class="name"><code>refreshButton</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l41"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:41</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to use refresh button at toolbal.</p>
                     
                         </div>
                     
@@ -1117,6 +1414,110 @@
                         </div>
                     
                             <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_rowClickable" class="property item">
+                        <h3 class="name"><code>rowClickable</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l140"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:140</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to allow row click.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_showCheckBoxInRow" class="property item">
+                        <h3 class="name"><code>showCheckBoxInRow</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l149"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:149</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to show checkboxes in row.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_showDeleteButtonInRow" class="property item">
+                        <h3 class="name"><code>showDeleteButtonInRow</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l158"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:158</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to show delete button in row.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_sorting" class="property item">
+                        <h3 class="name"><code>sorting</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l77"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:77</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current sort order.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>

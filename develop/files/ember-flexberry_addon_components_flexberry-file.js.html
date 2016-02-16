@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -52,6 +52,7 @@
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
 	                            <li><a href="../classes/EnumStringTransform.html">EnumStringTransform</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
 	                            <li><a href="../classes/FlexberrCheckbox.html">FlexberrCheckbox</a></li>
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
@@ -60,6 +61,7 @@
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -69,6 +71,7 @@
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -136,7 +139,16 @@ export default FlexberryBaseComponent.extend({
   /**
    * Class names for component wrapping &lt;div&gt;.
    */
-  classNames: [&#x27;file-component&#x27;, &#x27;ui&#x27;, &#x27;fluid&#x27;, &#x27;action&#x27;, &#x27;input&#x27;],
+  classNames: [&#x27;flexberry-file&#x27;, &#x27;ui&#x27;, &#x27;fluid&#x27;, &#x27;action&#x27;, &#x27;input&#x27;],
+
+  /**
+   * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
+   *
+   * @property appConfigSettingsPath
+   * @type String
+   * @default &#x27;APP.components.flexberryBaseComponent&#x27;
+   */
+  appConfigSettingsPath: &#x27;APP.components.flexberryFile&#x27;,
 
   /**
    * Copy of value created at initialization moment or after successful upload.
@@ -215,17 +227,6 @@ export default FlexberryBaseComponent.extend({
   downloadIsInProgress: false,
 
   /**
-   * Flag: indicates whether file component is readonly.
-   * If so, then add, delete, and upload operations will be disabled, only download operation will be accessible.
-   */
-  readonly: false,
-
-  /**
-   * Flag: indicates whether related model property is required.
-   */
-  required: false,
-
-  /**
    * Flag: indicates whether add button is visible now.
    */
   addButtonIsVisible: Ember.computed(&#x27;readonly&#x27;, function() {
@@ -244,7 +245,7 @@ export default FlexberryBaseComponent.extend({
   /**
    * Add button title (will be shown on mouse hover).
    */
-  addButtonTitle: null,
+  addButtonTitle: undefined,
 
   /**
    * Flag: indicates whether remove button is visible now.
@@ -267,15 +268,17 @@ export default FlexberryBaseComponent.extend({
   /**
    * Remove button title (will be shown on mouse hover).
    */
-  removeButtonTitle: null,
+  removeButtonTitle: undefined,
 
-  // Flag: indicates whether to upload file on controllers &#x27;modelPreSave&#x27; event.
-  uploadOnModelPreSave: null,
+  /**
+   * Flag: indicates whether to upload file on &#x27;currentController&#x27; &#x27;modelPreSave&#x27; event.
+   */
+  uploadOnModelPreSave: undefined,
 
   /**
    * Flag: indicates whether to show upload button or not.
    */
-  showUploadButton: null,
+  showUploadButton: undefined,
 
   /**
    * Flag: indicates whether upload button is visible now.
@@ -298,7 +301,7 @@ export default FlexberryBaseComponent.extend({
   /**
    * Upload button title (will be shown on mouse hover).
    */
-  uploadButtonTitle: null,
+  uploadButtonTitle: undefined,
 
   /**
    * Flag: indicates whether download button is visible now.
@@ -322,41 +325,41 @@ export default FlexberryBaseComponent.extend({
   /**
    * Download button title (will be shown on mouse hover).
    */
-  downloadButtonTitle: null,
+  downloadButtonTitle: undefined,
 
   /**
    * Maximum file size in bytes for uploading files.
    * It should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\environment.
    * If null or undefined, then APP.components.file.maxUploadFileSize from application config\environment will be used.
    */
-  maxUploadFileSize: null,
+  maxUploadFileSize: undefined,
 
   /**
    * Text to be displayed instead of file name, if file has not been selected.
    */
-  placeholder: null,
+  placeholder: undefined,
 
   /**
    * File upload URL.
    * If null or undefined, then APP.components.file.uploadUrl from application config\environment will be used.
    */
-  uploadUrl: null,
+  uploadUrl: undefined,
 
   /**
    * File download URL.
    * If null or undefined, then APP.components.file.downloadUrl from application config\environment will be used.
    */
-  downloadUrl: null,
+  downloadUrl: undefined,
 
   /**
    * Flag: indicates whether to show modal dialog on upload errors or not.
    */
-  showModalDialogOnUploadError: null,
+  showModalDialogOnUploadError: undefined,
 
   /**
    * Flag: indicates whether to show modal dialog on download errors or not.
    */
-  showModalDialogOnDownloadError: null,
+  showModalDialogOnDownloadError: undefined,
 
   /**
    * Title to be displayed in error modal dialog.
@@ -392,88 +395,33 @@ export default FlexberryBaseComponent.extend({
    * Initializes file-control component.
    */
   init: function() {
-    this._super.apply(this, arguments);
+    this._super(...arguments);
 
     // Remember initial value.
     var value = this.get(&#x27;value&#x27;);
     this.set(&#x27;initialValue&#x27;, Ember.copy(value, true));
 
-    // Import application config\environment.
-    var applicationConfig = this.container.lookupFactory(&#x27;config:environment&#x27;) || {};
-    var fileComponentConfig = Ember.get(applicationConfig, &#x27;APP.components.flexberryFile&#x27;) || {};
-
-    // Properties initialization helper method.
-    var initProperty = function(options) {
-      var componentPropertyValue = this.get(options.propertyName);
-      if (!Ember.isNone(componentPropertyValue)) {
-        return;
-      }
-
-      // Property is undefined. Set configuration-defined value or default.
-      var configurationPropertyValue = Ember.get(fileComponentConfig, options.propertyName);
-      var defaultPropertyValue = options.defaultPropertyValue;
-
-      if (!Ember.isNone(configurationPropertyValue)) {
-        this.set(options.propertyName, configurationPropertyValue);
-      } else {
-        this.set(options.propertyName, defaultPropertyValue);
-      }
-    }.bind(this);
-
-    initProperty({
-      propertyName: &#x27;uploadUrl&#x27;,
-      defaultPropertyValue: null
-    });
-    initProperty({
-      propertyName: &#x27;downloadUrl&#x27;,
-      defaultPropertyValue: null
-    });
-    initProperty({
-      propertyName: &#x27;maxUploadFileSize&#x27;,
-      defaultPropertyValue: null
-    });
-    initProperty({
-      propertyName: &#x27;placeholder&#x27;,
-      defaultPropertyValue: &#x27;(no file)&#x27;
-    });
-    initProperty({
-      propertyName: &#x27;uploadOnModelPreSave&#x27;,
-      defaultPropertyValue: true
-    });
-    initProperty({
-      propertyName: &#x27;showUploadButton&#x27;,
-      defaultPropertyValue: false
-    });
-    initProperty({
-      propertyName: &#x27;showModalDialogOnUploadError&#x27;,
-      defaultPropertyValue: false
-    });
-    initProperty({
-      propertyName: &#x27;showModalDialogOnDownloadError&#x27;,
-      defaultPropertyValue: true
-    });
-    initProperty({
-      propertyName: &#x27;addButtonTitle&#x27;,
-      defaultPropertyValue: &#x27;Add file&#x27;
-    });
-    initProperty({
-      propertyName: &#x27;removeButtonTitle&#x27;,
-      defaultPropertyValue: &#x27;Remove file&#x27;
-    });
-    initProperty({
-      propertyName: &#x27;uploadButtonTitle&#x27;,
-      defaultPropertyValue: &#x27;Upload file&#x27;
-    });
-    initProperty({
-      propertyName: &#x27;downloadButtonTitle&#x27;,
-      defaultPropertyValue: &#x27;Download file&#x27;
-    });
+    // Initialize properties which defaults could be defined in application configuration.
+    this.initProperty({ propertyName: &#x27;uploadUrl&#x27;, defaultValue: null });
+    this.initProperty({ propertyName: &#x27;downloadUrl&#x27;, defaultValue: null });
+    this.initProperty({ propertyName: &#x27;maxUploadFileSize&#x27;, defaultValue: null });
+    this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: &#x27;(no file)&#x27; });
+    this.initProperty({ propertyName: &#x27;uploadOnModelPreSave&#x27;, defaultValue: true });
+    this.initProperty({ propertyName: &#x27;showUploadButton&#x27;, defaultValue: false });
+    this.initProperty({ propertyName: &#x27;showModalDialogOnUploadError&#x27;, defaultValue: false });
+    this.initProperty({ propertyName: &#x27;showModalDialogOnDownloadError&#x27;, defaultValue: true });
+    this.initProperty({ propertyName: &#x27;addButtonTitle&#x27;, defaultValue: &#x27;Add file&#x27; });
+    this.initProperty({ propertyName: &#x27;removeButtonTitle&#x27;, defaultValue: &#x27;Remove file&#x27; });
+    this.initProperty({ propertyName: &#x27;uploadButtonTitle&#x27;, defaultValue: &#x27;Upload file&#x27; });
+    this.initProperty({ propertyName: &#x27;downloadButtonTitle&#x27;, defaultValue: &#x27;Download file&#x27; });
   },
 
   /**
    * Initializes file-control component.
    */
   didInsertElement: function() {
+    this._super(...arguments);
+
     var _this = this;
 
     var fileInputId = _this.get(&#x27;elementId&#x27;) + &#x27;FlexberryFile&#x27;;
@@ -546,15 +494,6 @@ export default FlexberryBaseComponent.extend({
       add: onFileAdd
     });
 
-    // Try to get current controller (to subscribe then on controller&#x27;s &#x27;modelPreSave&#x27; event).
-    // Component&#x27;s &#x27;targetObject&#x27; is parent component or a controller (in the end of components hierarchy).
-    var currentController = _this.get(&#x27;targetObject&#x27;);
-    while (!(Ember.isNone(currentController) || currentController instanceof Ember.Controller)) {
-      currentController = currentController.get(&#x27;targetObject&#x27;);
-    }
-
-    _this.set(&#x27;currentController&#x27;, currentController);
-
     // Subscribe on controller&#x27;s &#x27;modelPreSave&#x27;event.
     _this.subscribeOnModelPreSaveEvent();
   },
@@ -563,6 +502,8 @@ export default FlexberryBaseComponent.extend({
    * Destroys file-control component.
    */
   willDestroyElement: function() {
+    this._super(...arguments);
+
     // Unsubscribe from controller&#x27;s &#x27;modelPreSave&#x27;event.
     this.unsubscribeFromModelPresaveEvent();
 
@@ -700,11 +641,6 @@ export default FlexberryBaseComponent.extend({
   },
 
   /**
-   * Current controller.
-   */
-  currentController: null,
-
-  /**
    * Controllers &#x27;modelPreSave&#x27; event handler.
    */
   onModelPresave: null,
@@ -715,7 +651,7 @@ export default FlexberryBaseComponent.extend({
   subscribeOnModelPreSaveEvent: function() {
     var uploadOnModelPreSave = this.get(&#x27;uploadOnModelPreSave&#x27;);
     var currentController = this.get(&#x27;currentController&#x27;);
-    if (!uploadOnModelPreSave || Ember.isNone(currentController) || Ember.isNone(currentController.on)) {
+    if (!Ember.isNone(uploadOnModelPreSave) || Ember.isNone(currentController) || Ember.isNone(currentController.on)) {
       return;
     }
 
