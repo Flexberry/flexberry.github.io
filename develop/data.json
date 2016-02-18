@@ -284,6 +284,20 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/mixins/limited-controller.js": {
+            "name": "ember-flexberry/addon/mixins/limited-controller.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry/addon/mixins/limited-route.js": {
+            "name": "ember-flexberry/addon/mixins/limited-route.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/mixins/sortable-controller.js": {
             "name": "ember-flexberry/addon/mixins/sortable-controller.js",
             "modules": {},
@@ -757,12 +771,13 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/controllers/list-form.js",
-            "line": 9,
+            "line": 10,
             "description": "Base controller for the List Forms.\n\n This class re-exports to the application as `/controllers/list-form`.\n So, you can inherit from `./list-form`, even if file `app/controllers/list-form.js`\n is not presented in the application.\n\n Example:\n ```js\n // app/controllers/employees.js\n import ListFormController from './list-form';\n export default ListFormController.extend({\n });\n ```\n\n If you want to add some common logic on all List Forms, you can define\n (actually override) `app/controllers/list-form.js` as follows:\n ```js\n // app/controllers/list-form.js\n import ListFormController from 'ember-flexberry/controllers/list-form';\n export default ListFormController.extend({\n });\n ```",
             "extends": "Ember.Controller",
             "uses": [
                 "PaginatedControllerMixin",
-                "SortableControllerMixin"
+                "SortableControllerMixin",
+                "LimitedControllerMixin"
             ]
         },
         "EditFormRoute": {
@@ -794,12 +809,13 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 10,
+            "line": 11,
             "description": "Base route for the List Forms.\n\nThis class re-exports to the application as `/routes/list-form`.\nSo, you can inherit from `./list-form`, even if file `app/routes/list-form.js`\nis not presented in the application.\n\nExample:\n```js\n// app/routes/employees.js\nimport ListFormRoute from './list-form';\nexport default ListFormRoute.extend({\n});\n```\n\nIf you want to add some common logic on all List Forms, you can define\n(actually override) `app/routes/list-form.js` as follows:\n```js\n// app/routes/list-form.js\nimport ListFormRoute from 'ember-flexberry/routes/list-form';\nexport default ListFormRoute.extend({\n});\n```",
             "extends": "ProjectedModelFormRoute",
             "uses": [
                 "PaginatedRouteMixin",
-                "SortableRouteMixin"
+                "SortableRouteMixin",
+                "LimitedRouteMixin"
             ]
         },
         "GroupEditEvents": {
@@ -1731,6 +1747,28 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-field.js",
             "line": 32,
+            "description": "Input value.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryField",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-field.js",
+            "line": 41,
+            "description": "Text to be displayed instead of file name, if file has not been selected.",
+            "itemtype": "property",
+            "name": "placeholder",
+            "type": "string",
+            "default": "undefined",
+            "class": "FlexberryField",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-field.js",
+            "line": 50,
             "description": "Label value.",
             "itemtype": "property",
             "name": "label",
@@ -1741,7 +1779,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-field.js",
-            "line": 41,
+            "line": 59,
             "description": "Initializes component.",
             "class": "FlexberryField",
             "module": "ember-flexberry"
@@ -2346,17 +2384,6 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 50,
-            "description": "Current contoller.",
-            "itemtype": "property",
-            "name": "modelController",
-            "type": "Object",
-            "default": "null",
-            "class": "FlexberryObjectlistview",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 59,
             "description": "Projection for detail object's model.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -2367,7 +2394,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 68,
+            "line": 59,
             "description": "Array of models for detail objects.",
             "itemtype": "property",
             "name": "content",
@@ -2378,7 +2405,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 77,
+            "line": 68,
             "description": "Current sort order.",
             "itemtype": "property",
             "name": "sorting",
@@ -2389,7 +2416,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 86,
+            "line": 77,
             "description": "Array of pages to show.",
             "itemtype": "property",
             "name": "pages",
@@ -2400,7 +2427,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 95,
+            "line": 86,
             "description": "Current number of records to show per page.",
             "itemtype": "property",
             "name": "perPageValue",
@@ -2411,7 +2438,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 104,
+            "line": 95,
             "description": "Array of numbers of records to show on one page.",
             "itemtype": "property",
             "name": "perPageValues",
@@ -2422,29 +2449,29 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 113,
+            "line": 104,
             "description": "Function to determine if current page has previous page.",
             "itemtype": "property",
             "name": "hasPreviousPage",
             "type": "Function",
-            "default": "false",
+            "default": "null",
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 113,
+            "description": "Function to determine if current page has next page.",
+            "itemtype": "property",
+            "name": "hasNextPage",
+            "type": "Function",
+            "default": "null",
             "class": "FlexberryObjectlistview",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 122,
-            "description": "Function to determine if current page has next page.",
-            "itemtype": "property",
-            "name": "hasNextPage",
-            "type": "Function",
-            "default": "false",
-            "class": "FlexberryObjectlistview",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 131,
             "description": "Setting to true enables row ordering by clicking on column headers.",
             "itemtype": "property",
             "name": "orderable",
@@ -2455,18 +2482,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 140,
+            "line": 131,
             "description": "Flag to allow row click.",
             "itemtype": "property",
             "name": "rowClickable",
             "type": "Boolean",
-            "default": "false",
+            "default": "true",
             "class": "FlexberryObjectlistview",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 149,
+            "line": 140,
             "description": "Flag to show checkboxes in row.",
             "itemtype": "property",
             "name": "showCheckBoxInRow",
@@ -2477,7 +2504,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 158,
+            "line": 149,
             "description": "Flag to show delete button in row.",
             "itemtype": "property",
             "name": "showDeleteButtonInRow",
@@ -2488,7 +2515,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 168,
+            "line": 159,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "sortByColumn",
@@ -2504,7 +2531,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 178,
+            "line": 169,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "addColumnToSorting",
@@ -2520,7 +2547,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 188,
+            "line": 179,
             "description": "Handles action from row click (action is handled at route so it can't be closure action now).",
             "itemtype": "method",
             "name": "rowClick",
@@ -2536,7 +2563,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 198,
+            "line": 189,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "previousPage",
@@ -2545,7 +2572,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 207,
+            "line": 198,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "nextPage",
@@ -2554,7 +2581,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 216,
+            "line": 207,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "gotoPage",
@@ -3307,6 +3334,41 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/mixins/limited-controller.js",
+            "line": 7,
+            "description": "Update current limit function.",
+            "itemtype": "method",
+            "name": "updateLimitFunction",
+            "params": [
+                {
+                    "name": "limitFunction",
+                    "description": "New limit function.",
+                    "type": "String"
+                }
+            ],
+            "class": "EditFormRoute",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/limited-route.js",
+            "line": 10,
+            "description": "Update limit function query parameter and reloads route if needed.",
+            "params": [
+                {
+                    "name": "limitFunction",
+                    "description": "New limit function to set.",
+                    "type": "String"
+                },
+                {
+                    "name": "params",
+                    "description": "Route parameters (it is used when limit function changes in beforeModel hook).",
+                    "type": "Object"
+                }
+            ],
+            "class": "EditFormRoute",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/mixins/sortable-controller.js",
             "line": 30,
             "description": "Производит операцию, обратную методу deserializeSortingParam.",
@@ -3367,7 +3429,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 41,
+            "line": 43,
             "description": "Table row click handler.",
             "params": [
                 {
@@ -4071,7 +4133,7 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry/addon/components/flexberry-field.js:41"
+            "line": " ember-flexberry/addon/components/flexberry-field.js:59"
         },
         {
             "message": "Missing item type\nClass names for component wrapping <div>.",
@@ -4302,6 +4364,10 @@
             "line": " ember-flexberry/addon/controllers/edit-form.js:294"
         },
         {
+            "message": "Missing item type\nUpdate limit function query parameter and reloads route if needed.",
+            "line": " ember-flexberry/addon/mixins/limited-route.js:10"
+        },
+        {
             "message": "Missing item type\nПроизводит операцию, обратную методу deserializeSortingParam.",
             "line": " ember-flexberry/addon/mixins/sortable-controller.js:30"
         },
@@ -4319,7 +4385,7 @@
         },
         {
             "message": "Missing item type\nTable row click handler.",
-            "line": " ember-flexberry/addon/routes/list-form.js:41"
+            "line": " ember-flexberry/addon/routes/list-form.js:43"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",

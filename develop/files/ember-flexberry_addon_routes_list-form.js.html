@@ -129,6 +129,7 @@
 import Ember from &#x27;ember&#x27;;
 import SortableRouteMixin from &#x27;../mixins/sortable-route&#x27;;
 import PaginatedRouteMixin from &#x27;../mixins/paginated-route&#x27;;
+import LimitedRouteMixin from &#x27;../mixins/limited-route&#x27;;
 import ProjectedModelFormRoute from &#x27;../routes/projected-model-form&#x27;;
 
 /**
@@ -159,8 +160,9 @@ import ProjectedModelFormRoute from &#x27;../routes/projected-model-form&#x27;;
  * @extends ProjectedModelFormRoute
  * @uses PaginatedRouteMixin
  * @uses SortableRouteMixin
+ * @uses LimitedRouteMixin
  */
-export default ProjectedModelFormRoute.extend(PaginatedRouteMixin, SortableRouteMixin, {
+export default ProjectedModelFormRoute.extend(PaginatedRouteMixin, SortableRouteMixin, LimitedRouteMixin, {
   actions: {
     /**
      * Table row click handler.
@@ -190,10 +192,12 @@ export default ProjectedModelFormRoute.extend(PaginatedRouteMixin, SortableRoute
     let pageQuery = adapter.getPaginationQuery(page, perPage);
     let sorting = this.deserializeSortingParam(params.sort);
     let sortQuery = adapter.getSortingQuery(sorting, store.serializerFor(modelName));
+    let limitFunctionQuery = adapter.getLimitFunctionQuery(params.lf);
 
     let query = {};
     Ember.merge(query, pageQuery);
     Ember.merge(query, sortQuery);
+    Ember.merge(query, limitFunctionQuery);
     Ember.merge(query, { projection: this.get(&#x27;modelProjection&#x27;) });
 
     // find by query is always fetching.

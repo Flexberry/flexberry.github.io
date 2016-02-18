@@ -126,7 +126,7 @@
  * @module ember-flexberry
  */
 
-import FlexberryTextbox from &#x27;./flexberry-textbox&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 /**
  * Field component for Semantic UI.
@@ -134,7 +134,7 @@ import FlexberryTextbox from &#x27;./flexberry-textbox&#x27;;
  * @class FlexberryField
  * @extends FlexberryBaseComponent
  */
-var FlexberryField = FlexberryTextbox.extend({
+var FlexberryField = FlexberryBaseComponent.extend({
   /**
    * Default classes for component wrapper.
    *
@@ -154,6 +154,24 @@ var FlexberryField = FlexberryTextbox.extend({
   appConfigSettingsPath: &#x27;APP.components.flexberryField&#x27;,
 
   /**
+   * Input value.
+   *
+   * @property value
+   * @type String
+   * @default undefined
+   */
+  value: undefined,
+
+  /**
+   * Text to be displayed instead of file name, if file has not been selected.
+   *
+   * @property placeholder
+   * @type string
+   * @default undefined
+   */
+  placeholder: undefined,
+
+  /**
    * Label value.
    *
    * @property label
@@ -169,7 +187,7 @@ var FlexberryField = FlexberryTextbox.extend({
     this._super(...arguments);
 
     // Initialize properties which defaults could be defined in application configuration.
-    this.initProperty({ propertyName: &#x27;label&#x27;, defaultValue: &#x27;&#x27; });
+    this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: null });
   }
 });
 

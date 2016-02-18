@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/flexberry-objectlistview.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/mixins/limited-route.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -117,225 +117,34 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/flexberry-objectlistview.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/mixins/limited-route.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-/**
- * @module ember-flexberry
- */
+import Ember from &#x27;ember&#x27;;
 
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+export default Ember.Mixin.create({
+  queryParams: {
+    lf: { refreshModel: true }
+  },
 
-/**
- * Component to view list of object.
- *
- * @class FlexberryObjectlistview
- * @extends FlexberryBaseComponent
- */
-export default FlexberryBaseComponent.extend({
-  /**
-   * Primary action for row click.
-   *
-   * @property action
-   * @type String
-   * @default &#x27;rowClick&#x27;
-   */
-  action: &#x27;rowClick&#x27;,
+  lf: null,
 
   /**
-   * Model&#x27;s name. Used by toolbar.
+   * Update limit function query parameter and reloads route if needed.
    *
-   * @property modelName
-   * @type String
-   * @default null
+   * @param {String} limitFunction New limit function to set.
+   * @param {Object} params Route parameters (it is used when limit function changes in beforeModel hook).
    */
-  modelName: null,
-
-  /**
-   * Flag to use creation button at toolbal.
-   *
-   * @property createNewButton
-   * @type Boolean
-   * @default false
-   */
-  createNewButton: false,
-
-  /**
-   * Flag to use refresh button at toolbal.
-   *
-   * @property refreshButton
-   * @type Boolean
-   * @default false
-   */
-  refreshButton: false,
-
-  /**
-   * Projection for detail object&#x27;s model.
-   *
-   * @property modelProjection
-   * @type Object
-   * @default null
-   */
-  modelProjection: null,
-
-  /**
-   * Array of models for detail objects.
-   *
-   * @property content
-   * @type ManyArray
-   * @default null
-   */
-  content: null,
-
-  /**
-   * Current sort order.
-   *
-   * @property sorting
-   * @type Object
-   * @default null
-   */
-  sorting: null,
-
-  /**
-   * Array of pages to show.
-   *
-   * @property pages
-   * @type ManyArray
-   * @default null
-   */
-  pages: null,
-
-  /**
-   * Current number of records to show per page.
-   *
-   * @property perPageValue
-   * @type number
-   * @default null
-   */
-  perPageValue: null,
-
-  /**
-   * Array of numbers of records to show on one page.
-   *
-   * @property perPageValues
-   * @type ManyArray
-   * @default null
-   */
-  perPageValues: null,
-
-  /**
-   * Function to determine if current page has previous page.
-   *
-   * @property hasPreviousPage
-   * @type Function
-   * @default null
-   */
-  hasPreviousPage: null,
-
-  /**
-   * Function to determine if current page has next page.
-   *
-   * @property hasNextPage
-   * @type Function
-   * @default null
-   */
-  hasNextPage: null,
-
-  /**
-   * Setting to true enables row ordering by clicking on column headers.
-   *
-   * @property orderable
-   * @type Boolean
-   * @default false
-   */
-  orderable: false,
-
-  /**
-   * Flag to allow row click.
-   *
-   * @property rowClickable
-   * @type Boolean
-   * @default true
-   */
-  rowClickable: true,
-
-  /**
-   * Flag to show checkboxes in row.
-   *
-   * @property showCheckBoxInRow
-   * @type Boolean
-   * @default false
-   */
-  _showCheckBoxInRow: false,
-
-  /**
-   * Flag to show delete button in row.
-   *
-   * @property showDeleteButtonInRow
-   * @type Boolean
-   * @default false
-   */
-  _showDeleteButtonInRow: false,
-
-  actions: {
-    /**
-     * Handles action from object-list-view when no handler for this component is defined.
-     *
-     * @method sortByColumn
-     * @param {Object} column Column to sort by.
-     */
-    sortByColumn: function(column) {
-      throw new Error(&#x27;No handler for sortByColumn action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... sortByColumn=(action &quot;sortByColumn&quot;)}}.&#x27;);
-    },
-
-    /**
-     * Handles action from object-list-view when no handler for this component is defined.
-     *
-     * @method addColumnToSorting
-     * @param {Object} column Column to add sorting by.
-     */
-    addColumnToSorting: function(column) {
-      throw new Error(&#x27;No handler for addColumnToSorting action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... addColumnToSorting=(action &quot;addColumnToSorting&quot;)}}.&#x27;);
-    },
-
-    /**
-     * Handles action from row click (action is handled at route so it can&#x27;t be closure action now).
-     *
-     * @method rowClick
-     * @param {Object} record Clicked record.
-     */
-    rowClick: function(record) {
-      this.sendAction(&#x27;action&#x27;, record);
-    },
-
-    /**
-     * Handles action from object-list-view when no handler for this component is defined.
-     *
-     * @method previousPage
-     */
-    previousPage: function() {
-      throw new Error(&#x27;No handler for previousPage action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... previousPage=(action &quot;previousPage&quot;)}}.&#x27;);
-    },
-
-    /**
-     * Handles action from object-list-view when no handler for this component is defined.
-     *
-     * @method nextPage
-     */
-    nextPage: function() {
-      throw new Error(&#x27;No handler for nextPage action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... nextPage=(action &quot;nextPage&quot;)}}.&#x27;);
-    },
-
-    /**
-     * Handles action from object-list-view when no handler for this component is defined.
-     *
-     * @method gotoPage
-     * @param {number} pageNumber Number of page to go to
-     */
-    gotoPage: function(pageNumber) {
-      throw new Error(&#x27;No handler for gotoPage action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... gotoPage=(action &quot;gotoPage&quot;)}}.&#x27;);
+  updateLimitFunction: function(limitFunction, params) {
+    if (!params) {
+      this.transitionTo({ queryParams: limitFunction });
+    } else {
+      if (params &amp;&amp; params.lf !== limitFunction) {
+        params.lf = limitFunction;
+        this.transitionTo({ queryParams: params });
+      }
     }
   }
 });
