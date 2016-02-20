@@ -287,7 +287,8 @@ export default FlexberryBaseComponent.extend({
      * @param {Object} column Column to sort by.
      */
     sortByColumn: function(column) {
-      throw new Error(&#x27;No handler for sortByColumn action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... sortByColumn=(action &quot;sortByColumn&quot;)}}.&#x27;);
+      throw new Error(&#x27;No handler for sortByColumn action set for flexberry-objectlistview. &#x27; +
+                      &#x27;Set handler like {{flexberry-objectlistview ... sortByColumn=(action &quot;sortByColumn&quot;)}}.&#x27;);
     },
 
     /**
@@ -297,7 +298,8 @@ export default FlexberryBaseComponent.extend({
      * @param {Object} column Column to add sorting by.
      */
     addColumnToSorting: function(column) {
-      throw new Error(&#x27;No handler for addColumnToSorting action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... addColumnToSorting=(action &quot;addColumnToSorting&quot;)}}.&#x27;);
+      throw new Error(&#x27;No handler for addColumnToSorting action set for flexberry-objectlistview. &#x27; +
+                      &#x27;Set handler like {{flexberry-objectlistview ... addColumnToSorting=(action &quot;addColumnToSorting&quot;)}}.&#x27;);
     },
 
     /**
@@ -316,7 +318,8 @@ export default FlexberryBaseComponent.extend({
      * @method previousPage
      */
     previousPage: function() {
-      throw new Error(&#x27;No handler for previousPage action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... previousPage=(action &quot;previousPage&quot;)}}.&#x27;);
+      throw new Error(&#x27;No handler for previousPage action set for flexberry-objectlistview. &#x27; +
+                      &#x27;Set handler like {{flexberry-objectlistview ... previousPage=(action &quot;previousPage&quot;)}}.&#x27;);
     },
 
     /**
@@ -325,7 +328,8 @@ export default FlexberryBaseComponent.extend({
      * @method nextPage
      */
     nextPage: function() {
-      throw new Error(&#x27;No handler for nextPage action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... nextPage=(action &quot;nextPage&quot;)}}.&#x27;);
+      throw new Error(&#x27;No handler for nextPage action set for flexberry-objectlistview. &#x27; +
+                      &#x27;Set handler like {{flexberry-objectlistview ... nextPage=(action &quot;nextPage&quot;)}}.&#x27;);
     },
 
     /**
@@ -335,7 +339,8 @@ export default FlexberryBaseComponent.extend({
      * @param {number} pageNumber Number of page to go to
      */
     gotoPage: function(pageNumber) {
-      throw new Error(&#x27;No handler for gotoPage action set for flexberry-objectlistview. Set handler like {{flexberry-objectlistview ... gotoPage=(action &quot;gotoPage&quot;)}}.&#x27;);
+      throw new Error(&#x27;No handler for gotoPage action set for flexberry-objectlistview. &#x27; +
+                      &#x27;Set handler like {{flexberry-objectlistview ... gotoPage=(action &quot;gotoPage&quot;)}}.&#x27;);
     }
   }
 });
