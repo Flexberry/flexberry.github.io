@@ -1467,6 +1467,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
             "line": 55,
+            "description": "Store record to which current component's value is related.",
+            "itemtype": "property",
+            "name": "relatedRecord",
+            "type": "Object",
+            "default": "null",
+            "class": "FlexberryBaseComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-base-component.js",
+            "line": 64,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -1477,7 +1488,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 64,
+            "line": 73,
             "description": "Application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfig",
@@ -1487,7 +1498,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 72,
+            "line": 81,
             "description": "Component settings object from application configuration (part of JSON from ./config/environment.js).\nPart of appConfig related to appConfigSettingsPath.",
             "itemtype": "property",
             "name": "appConfigSettings",
@@ -1497,7 +1508,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 81,
+            "line": 90,
             "description": "Current controller.",
             "itemtype": "property",
             "name": "currentController",
@@ -1507,35 +1518,35 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 88,
+            "line": 97,
             "description": "Initializes component properties.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 127,
+            "line": 136,
             "description": "Initializes DOM-related component properties.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 134,
+            "line": 143,
             "description": "Cleanup component.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 141,
+            "line": 150,
             "description": "Cleanup DOM-related component stuff.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 148,
+            "line": 157,
             "description": "Initializes component's property with recpect to following priority:\n1 - template-defined parameters,\n2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),\n3 - component-defined defaults.\nNote! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.\n\n```javascript\n// Possible ./config/environment.js.\nmodule.exports = function(environment) {\n  APP: {\n    components: {\n      myComponent: {\n        myComponentProperty: 'myComponentProperty config-defined default value'\n      }\n    }\n  }\n  }\n});\n\nvar myComponent = FlexberryBaseComponent.extend({\n  appConfigSettingsPath: 'APP.components.myComponent',\n\n  myComponentProperty: undefined,\n\n  init: function() {\n    this._super.apply(this, arguments);\n    this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });\n  }\n});\n```",
             "params": [
                 {
@@ -1561,7 +1572,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 212,
+            "line": 221,
             "description": "Returns that 'targetObject' (from 'targetObject's hierarchy) which satisfies a given condition.\n\n```javascript\nvar controller = this.getTargetObjectByCondition(function(targetObject) {\n  return targetObject instanceof Ember.Controller;\n});\n```",
             "itemtype": "method",
             "name": "getTargetObjectByCondition.",
@@ -4101,23 +4112,23 @@
         },
         {
             "message": "Missing item type\nInitializes component properties.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:88"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:97"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component properties.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:127"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:136"
         },
         {
             "message": "Missing item type\nCleanup component.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:134"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:143"
         },
         {
             "message": "Missing item type\nCleanup DOM-related component stuff.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:141"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:150"
         },
         {
             "message": "Missing item type\nInitializes component's property with recpect to following priority:\n1 - template-defined parameters,\n2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),\n3 - component-defined defaults.\nNote! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.\n\n```javascript\n// Possible ./config/environment.js.\nmodule.exports = function(environment) {\n  APP: {\n    components: {\n      myComponent: {\n        myComponentProperty: 'myComponentProperty config-defined default value'\n      }\n    }\n  }\n  }\n});\n\nvar myComponent = FlexberryBaseComponent.extend({\n  appConfigSettingsPath: 'APP.components.myComponent',\n\n  myComponentProperty: undefined,\n\n  init: function() {\n    this._super.apply(this, arguments);\n    this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });\n  }\n});\n```",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:148"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:157"
         },
         {
             "message": "Missing item type\nInitializes file-control component.",

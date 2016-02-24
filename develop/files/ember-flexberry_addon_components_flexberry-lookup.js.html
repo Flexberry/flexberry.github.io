@@ -259,7 +259,7 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
       relationName: this.get(&#x27;relationName&#x27;),
       title: this.get(&#x27;title&#x27;),
       limitFunction: this.get(&#x27;limitFunction&#x27;),
-      modelToLookup: undefined
+      modelToLookup: this.get(&#x27;relatedRecord&#x27;)
     };
   }),
 
@@ -272,7 +272,7 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
   removeData: Ember.computed(&#x27;relationName&#x27;, function() {
     return {
       relationName: this.get(&#x27;relationName&#x27;),
-      modelToLookup: undefined
+      modelToLookup: this.get(&#x27;relatedRecord&#x27;)
     };
   }),
 
@@ -325,6 +325,7 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
 
     let autocompleteUrl = this.get(&#x27;autocompleteUrl&#x27;)(relationName);
     let limitFunction = this.get(&#x27;limitFunction&#x27;);
+    let modelToLookup = this.get(&#x27;relatedRecord&#x27;);
 
     this.set(&#x27;autocompleteValue&#x27;, this.get(&#x27;value&#x27;));
     let _this = this;
@@ -358,7 +359,7 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
           &#x27;autocompleteUpdateAction&#x27;,
           {
             relationName: relationName,
-            modelToLookup: undefined,
+            modelToLookup: modelToLookup,
             newRelationValue: result
           });
       }
