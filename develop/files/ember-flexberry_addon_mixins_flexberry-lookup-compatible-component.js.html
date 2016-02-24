@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/routes/list-form.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/mixins/flexberry-lookup-compatible-component.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -118,7 +118,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/routes/list-form.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/mixins/flexberry-lookup-compatible-component.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -128,96 +128,22 @@
  */
 
 import Ember from &#x27;ember&#x27;;
-import SortableRouteMixin from &#x27;../mixins/sortable-route&#x27;;
-import PaginatedRouteMixin from &#x27;../mixins/paginated-route&#x27;;
-import LimitedRouteMixin from &#x27;../mixins/limited-route&#x27;;
-import ProjectedModelFormRoute from &#x27;../routes/projected-model-form&#x27;;
 
 /**
- * Base route for the List Forms.
-
- This class re-exports to the application as &#x60;/routes/list-form&#x60;.
- So, you can inherit from &#x60;./list-form&#x60;, even if file &#x60;app/routes/list-form.js&#x60;
- is not presented in the application.
-
- Example:
- &#x60;&#x60;&#x60;js
- // app/routes/employees.js
- import ListFormRoute from &#x27;./list-form&#x27;;
- export default ListFormRoute.extend({
- });
- &#x60;&#x60;&#x60;
-
- If you want to add some common logic on all List Forms, you can define
- (actually override) &#x60;app/routes/list-form.js&#x60; as follows:
- &#x60;&#x60;&#x60;js
- // app/routes/list-form.js
- import ListFormRoute from &#x27;ember-flexberry/routes/list-form&#x27;;
- export default ListFormRoute.extend({
- });
- &#x60;&#x60;&#x60;
-
- * @class ListFormRoute
- * @extends ProjectedModelFormRoute
- * @uses PaginatedRouteMixin
- * @uses SortableRouteMixin
- * @uses LimitedRouteMixin
+ * Mixin for components which need to be flexberry-lookup compatible.
+ *
+ * @class FlexberryLookupCompatibleComponentMixin
+ * @extends Ember.Mixin
  */
-export default ProjectedModelFormRoute.extend(PaginatedRouteMixin, SortableRouteMixin, LimitedRouteMixin, {
+export default Ember.Mixin.create({
   actions: {
-    /**
-     * Table row click handler.
-     *
-     * @param {Ember.Object} record Record related to clicked table row.
-     */
-    rowClick: function(record) {
-      this.transitionTo(record.constructor.modelName, record.get(&#x27;id&#x27;));
+    showLookupDialog: function() {
+      this.get(&#x27;currentController&#x27;).send(&#x27;showLookupDialog&#x27;, ...arguments);
     },
 
-    refreshList: function() {
-      this.refresh();
+    removeLookupValue: function() {
+      this.get(&#x27;currentController&#x27;).send(&#x27;removeLookupValue&#x27;, ...arguments);
     }
-  },
-
-  model: function(params, transition) {
-    let page = parseInt(params.page, 10);
-    let perPage = parseInt(params.perPage, 10);
-
-    Ember.assert(&#x27;page must be greater than zero.&#x27;, page &gt; 0);
-    Ember.assert(&#x27;perPage must be greater than zero.&#x27;, perPage &gt; 0);
-
-    let store = this.store;
-    let modelName = this.get(&#x27;modelName&#x27;);
-    let adapter = store.adapterFor(modelName);
-
-    let pageQuery = adapter.getPaginationQuery(page, perPage);
-    let sorting = this.deserializeSortingParam(params.sort);
-    let sortQuery = adapter.getSortingQuery(sorting, store.serializerFor(modelName));
-    let limitFunctionQuery = adapter.getLimitFunctionQuery(params.lf);
-
-    let query = {};
-    Ember.merge(query, pageQuery);
-    Ember.merge(query, sortQuery);
-    Ember.merge(query, limitFunctionQuery);
-    Ember.merge(query, { projection: this.get(&#x27;modelProjection&#x27;) });
-
-    // find by query is always fetching.
-    // TODO: support getting from cache with &quot;store.all-&gt;filterByProjection&quot;.
-    return store.query(modelName, query)
-      .then((records) =&gt; {
-        // TODO: move to setupController mixins?
-        return this.includeSorting(records, sorting);
-      });
-  },
-
-  setupController: function(controller, model) {
-    this._super(...arguments);
-
-    // Define &#x27;modelProjection&#x27; for controller instance.
-    // TODO: remove that when list-form controller will be moved to this route.
-    let modelClass = this.store.modelFor(this.get(&#x27;modelName&#x27;));
-    let proj = modelClass.projections.get(this.get(&#x27;modelProjection&#x27;));
-    controller.set(&#x27;modelProjection&#x27;, proj);
   }
 });
 

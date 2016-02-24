@@ -14,6 +14,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "FlexberryFile",
         "FlexberryGroupedit",
         "FlexberryLookup",
+        "FlexberryLookupCompatibleComponentMixin",
         "FlexberryObjectListView",
         "FlexberryObjectlistview",
         "FlexberryTextarea",

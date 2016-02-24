@@ -277,6 +277,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/mixins/flexberry-lookup-compatible-component.js": {
+            "name": "ember-flexberry/addon/mixins/flexberry-lookup-compatible-component.js",
+            "modules": {},
+            "classes": {
+                "FlexberryLookupCompatibleComponentMixin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js": {
             "name": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
             "modules": {},
@@ -435,6 +444,7 @@
                 "FlexberryObjectListView": 1,
                 "EditFormController": 1,
                 "ListFormController": 1,
+                "FlexberryLookupCompatibleComponentMixin": 1,
                 "EditFormRoute": 1,
                 "ListFormRoute": 1,
                 "GroupEditEvents": 1,
@@ -737,7 +747,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 8,
+            "line": 9,
             "extends": "FlexberryBaseComponent"
         },
         "EditFormController": {
@@ -779,6 +789,21 @@
                 "SortableControllerMixin",
                 "LimitedControllerMixin"
             ]
+        },
+        "FlexberryLookupCompatibleComponentMixin": {
+            "name": "FlexberryLookupCompatibleComponentMixin",
+            "shortname": "FlexberryLookupCompatibleComponentMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup-compatible-component.js",
+            "line": 7,
+            "description": "Mixin for components which need to be flexberry-lookup compatible.",
+            "extends": "Ember.Mixin"
         },
         "EditFormRoute": {
             "name": "EditFormRoute",
@@ -2944,7 +2969,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 23,
+            "line": 24,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -2955,7 +2980,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 55,
+            "line": 56,
             "description": "Service that triggers groupedit events.",
             "itemtype": "property",
             "name": "groupEditEventsService",
@@ -3105,7 +3130,7 @@
             "name": "_openedModalDialog",
             "type": "JQuery",
             "default": "undefined",
-            "class": "EditFormRoute",
+            "class": "FlexberryLookupCompatibleComponentMixin",
             "module": "ember-flexberry"
         },
         {
@@ -3121,7 +3146,7 @@
                     "type": "JQuery"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "FlexberryLookupCompatibleComponentMixin",
             "module": "ember-flexberry"
         },
         {
@@ -3130,7 +3155,7 @@
             "description": "Handles correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "routeWillTransition",
-            "class": "EditFormRoute",
+            "class": "FlexberryLookupCompatibleComponentMixin",
             "module": "ember-flexberry"
         },
         {
@@ -3140,7 +3165,7 @@
             "itemtype": "property",
             "name": "groupEditEventsService",
             "type": "Service",
-            "class": "EditFormRoute",
+            "class": "FlexberryLookupCompatibleComponentMixin",
             "module": "ember-flexberry"
         },
         {
@@ -3163,7 +3188,7 @@
                     "type": "Model"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "FlexberryLookupCompatibleComponentMixin",
             "module": "ember-flexberry"
         },
         {
@@ -3186,7 +3211,7 @@
                     "type": "DS.Model"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "FlexberryLookupCompatibleComponentMixin",
             "module": "ember-flexberry"
         },
         {
@@ -3204,7 +3229,7 @@
                     "type": "String"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "FlexberryLookupCompatibleComponentMixin",
             "module": "ember-flexberry"
         },
         {

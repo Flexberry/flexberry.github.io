@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>EditFormRoute - Flexberry Documentation</title>
+    <title>FlexberryLookupCompatibleComponentMixin - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -118,23 +118,17 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>EditFormRoute <small>Class</small></h1>
+    <h1>FlexberryLookupCompatibleComponentMixin <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
-        <div class="uses">
-            Uses
-            <ul class="inline commas">
-                    <li><a href="FlexberryGroupeditRouteMixin.html">FlexberryGroupeditRouteMixin</a></li>
-            </ul>
-        </div>
 
         <div class="extends">
-            Extends ProjectedModelFormRoute
+            Extends <a href="http://emberjs.com/api/classes/Ember.Mixin.html" class="crosslink external" target="_blank">Ember.Mixin</a>
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l8"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:8</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-compatible-component.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-compatible-component.js:7</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -143,23 +137,7 @@
 
 
 <div class="well well-small">
-    <p>Base route for the Edit Forms.</p>
-<p>This class re-exports to the application as <code>/routes/edit-form</code>.
-So, you can inherit from <code>./edit-form</code>, even if file <code>app/routes/edit-form.js</code>
-is not presented in the application.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-js">// app/routes/employee.js
-import EditFormRoute from './edit-form';
-export default EditFormRoute.extend({
-});
-</code></pre>
-<p>If you want to add some common logic on all Edit Forms, you can define
-(actually override) <code>app/routes/edit-form.js</code> as follows:</p>
-<pre class="code prettyprint"><code class="language-js">// app/routes/edit-form.js
-import EditFormRoute from 'ember-flexberry/routes/edit-form';
-export default EditFormRoute.extend({
-});
-</code></pre>
+    <p>Mixin for components which need to be flexberry-lookup compatible.</p>
 
 </div>
 
@@ -180,40 +158,36 @@ export default EditFormRoute.extend({
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__getRelationType" data-tablink="_getRelationType">_getRelationType</a>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__rowAdded" data-tablink="_rowAdded">_rowAdded</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__rowChanged" data-tablink="_rowChanged">_rowChanged</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__rowDeleted" data-tablink="_rowDeleted">_rowDeleted</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_apply" data-tablink="apply">apply</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getAutocompleteLookupQueryOptions" data-tablink="getAutocompleteLookupQueryOptions">getAutocompleteLookupQueryOptions</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_createdModalDialog" data-tablink="createdModalDialog">createdModalDialog</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getLookupAutocompleteUrl" data-tablink="getLookupAutocompleteUrl">getLookupAutocompleteUrl</a>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_detect" data-tablink="detect">detect</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_removeLookupValue" data-tablink="removeLookupValue">removeLookupValue</a>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_reopen" data-tablink="reopen">reopen</a>
 
                             </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_routeWillTransition" data-tablink="routeWillTransition">routeWillTransition</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_showLookupDialog" data-tablink="showLookupDialog">showLookupDialog</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_updateLimitFunction" data-tablink="updateLimitFunction">updateLimitFunction</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_updateLookupValue" data-tablink="updateLookupValue">updateLookupValue</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_willTransition" data-tablink="willTransition">willTransition</a>
 
                             </li>
                     </ul>
@@ -224,7 +198,11 @@ export default EditFormRoute.extend({
 
                     <ul class="index-list properties extends">
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_lookupController" data-tablink="lookupController">lookupController</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property__openedModalDialog" data-tablink="_openedModalDialog">_openedModalDialog</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_groupEditEventsService" data-tablink="groupEditEventsService">groupEditEventsService</a>
 
                             </li>
                     </ul>
@@ -236,25 +214,23 @@ export default EditFormRoute.extend({
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method__getRelationType" class="method item">
-                        <h3 class="name"><code>_getRelationType</code></h3>
+                    <div id="method__rowAdded" class="method item private">
+                        <h3 class="name"><code>_rowAdded</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>model</code>
+                                            <code>componentName</code>
                                     </li>
                                     <li class="arg">
-                                            <code>relationName</code>
+                                            <code>record</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
-                            <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                            </span>
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
@@ -263,7 +239,7 @@ export default EditFormRoute.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l231"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:231</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l35"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:35</code></a>
                             </p>
                     
                     
@@ -271,7 +247,7 @@ export default EditFormRoute.extend({
                         </div>
                     
                         <div class="description">
-                            <p>Gets related object type by relation name from specified model.</p>
+                            <p>Event handler for "row has been selected" event in groupedit.</p>
                     
                         </div>
                     
@@ -280,23 +256,23 @@ export default EditFormRoute.extend({
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">model</code>
+                                            <code class="param-name">componentName</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Specified model to get relation from.</p>
+                                            <p>The name of flexberry-groupedit component.</p>
                     
                                         </div>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">relationName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <code class="param-name">record</code>
+                                            <span class="type">Model</span>
                     
                     
                                         <div class="param-description">
-                                            <p>Relation name.</p>
+                                            <p>The model corresponding to added row in groupedit.</p>
                     
                                         </div>
                     
@@ -304,33 +280,22 @@ export default EditFormRoute.extend({
                                 </ul>
                             </div>
                     
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>Related object type.</p>
-                    
-                                </div>
-                            </div>
                     
                     </div>
-                    <div id="method_getAutocompleteLookupQueryOptions" class="method item">
-                        <h3 class="name"><code>getAutocompleteLookupQueryOptions</code></h3>
+                    <div id="method__rowChanged" class="method item private">
+                        <h3 class="name"><code>_rowChanged</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>lookupParameters</code>
+                                            <code>componentName</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                            </span>
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
@@ -339,7 +304,7 @@ export default EditFormRoute.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l212"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:212</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l70"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:70</code></a>
                             </p>
                     
                     
@@ -347,7 +312,7 @@ export default EditFormRoute.extend({
                         </div>
                     
                         <div class="description">
-                            <p>Forms query parameters by lookup autocomplete parameters.</p>
+                            <p>Event handler for "model(s) corresponding to some row(s) was changed" event in groupedit.</p>
                     
                         </div>
                     
@@ -356,13 +321,136 @@ export default EditFormRoute.extend({
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">lookupParameters</code>
+                                            <code class="param-name">componentName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The name of flexberry-groupedit component.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method__rowDeleted" class="method item private">
+                        <h3 class="name"><code>_rowDeleted</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>componentName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>record</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l49"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:49</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Event handler for "row has been deleted" event in groupedit.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">componentName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The name of flexberry-groupedit component.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">record</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The model corresponding to deleted row in groupedit.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_apply" class="method item private inherited">
+                        <h3 class="name"><code>apply</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>obj</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_apply">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l574"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:574</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">obj</code>
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Lookup autocomplete parameters (current limit function, etc).</p>
-                    
+                                             
                                         </div>
                     
                                     </li>
@@ -373,38 +461,91 @@ export default EditFormRoute.extend({
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Formed query parameters.</p>
-                    
+                                        applied object
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_getLookupAutocompleteUrl" class="method item">
-                        <h3 class="name"><code>getLookupAutocompleteUrl</code></h3>
+                    <div id="method_createdModalDialog" class="method item">
+                        <h3 class="name"><code>createdModalDialog</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>relationName</code>
+                                            <code>modalDialog</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_lookup-dialog.js.html#l38"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;lookup-dialog.js:38</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles create modal window action.
+                    It saves created window to have opportunity to close it later.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">modalDialog</code>
+                                            <span class="type">JQuery</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Created modal window.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_detect" class="method item private inherited">
+                        <h3 class="name"><code>detect</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>obj</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
                             </span>
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l199"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:199</code></a>
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_detect">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l607"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:607</code></a>
                             </p>
                     
                     
@@ -412,8 +553,7 @@ export default EditFormRoute.extend({
                         </div>
                     
                         <div class="description">
-                            <p>Forms url to get all availible entities of certain relation.</p>
-                    
+                            
                         </div>
                     
                             <div class="params">
@@ -421,13 +561,12 @@ export default EditFormRoute.extend({
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">relationName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <code class="param-name">obj</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Elements for this relation will be searched.</p>
-                    
+                                             
                                         </div>
                     
                                     </li>
@@ -438,35 +577,34 @@ export default EditFormRoute.extend({
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Formed url.</p>
-                    
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_removeLookupValue" class="method item">
-                        <h3 class="name"><code>removeLookupValue</code></h3>
+                    <div id="method_reopen" class="method item private inherited">
+                        <h3 class="name"><code>reopen</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>removeData</code>
+                                            <code>arguments</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l150"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:150</code></a>
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_reopen">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l536"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:536</code></a>
                             </p>
                     
                     
@@ -474,8 +612,7 @@ export default EditFormRoute.extend({
                         </div>
                     
                         <div class="description">
-                            <p>Handles action from lookup remove action.</p>
-                    
+                            
                         </div>
                     
                             <div class="params">
@@ -483,13 +620,13 @@ export default EditFormRoute.extend({
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">removeData</code>
+                                            <code class="param-name">arguments</code>
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
+                                            <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
                     
                                         <div class="param-description">
-                                            <p>Lookup parameters (projection name, etc).</p>
-                    
+                                             
                                         </div>
                     
                                     </li>
@@ -513,7 +650,7 @@ export default EditFormRoute.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l140"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:140</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_lookup-dialog.js.html#l49"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;lookup-dialog.js:49</code></a>
                             </p>
                     
                     
@@ -522,197 +659,7 @@ export default EditFormRoute.extend({
                     
                         <div class="description">
                             <p>Handles correcponding route's willTransition action.
-                    It sends message about transition to showing lookup modal window controller.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_showLookupDialog" class="method item">
-                        <h3 class="name"><code>showLookupDialog</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>chooseData</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l29"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:29</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handles action from lookup choose action.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">chooseData</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Lookup parameters (projection name, relation name, etc).</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_updateLimitFunction" class="method item">
-                        <h3 class="name"><code>updateLimitFunction</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>limitFunction</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_limited-controller.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-controller.js:7</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Update current limit function.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">limitFunction</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>New limit function.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_updateLookupValue" class="method item">
-                        <h3 class="name"><code>updateLookupValue</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>updateData</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l171"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:171</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Update relation value at model.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">updateData</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Lookup parameters to update data at model (projection name, etc).</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_willTransition" class="method item">
-                        <h3 class="name"><code>willTransition</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l74"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:74</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handles willTransition action (this action is fired at the beginning of any attempted transition).
-                    It sends message about transition to corresponding controller.</p>
+                    It closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).</p>
                     
                         </div>
                     
@@ -724,9 +671,9 @@ export default EditFormRoute.extend({
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property_lookupController" class="property item">
-                        <h3 class="name"><code>lookupController</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/Ember.InjectedProperty.html" class="crosslink external" target="_blank">Ember.InjectedProperty</a></span>
+                    <div id="property__openedModalDialog" class="property item">
+                        <h3 class="name"><code>_openedModalDialog</code></h3>
+                        <span class="type">JQuery</span>
                     
                     
                     
@@ -735,18 +682,43 @@ export default EditFormRoute.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup-mixin.js.html#l19"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup-mixin.js:19</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_lookup-dialog.js.html#l6"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;lookup-dialog.js:6</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Controller to show lookup modal window.</p>
+                            <p>Current opened modal window.</p>
                     
                         </div>
                     
                             <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_groupEditEventsService" class="property item">
+                        <h3 class="name"><code>groupEditEventsService</code></h3>
+                        <span class="type">Service</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-groupedit-route.js.html#l4"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-groupedit-route.js:4</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Service that triggers groupedit events.</p>
+                    
+                        </div>
+                    
                     
                     
                     </div>
