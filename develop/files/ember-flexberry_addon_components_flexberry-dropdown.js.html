@@ -134,6 +134,21 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
  * @extends FlexberryBaseComponent
  */
 export default FlexberryBaseComponent.extend({
+  actions: {
+    valueChange: function(component, id, newValue) {
+      var oldValue = this.get(&#x27;value&#x27;) || null;
+      newValue = newValue || null;
+
+      if (newValue === oldValue) {
+        return;
+      }
+
+      // Semantic ui-dropdown component has only one way binding,
+      // so we have to set selected value manually.
+      this.set(&#x27;value&#x27;, newValue);
+    }
+  },
+
   /**
    * Overload wrapper tag name for disabling wrapper.
    *
@@ -163,11 +178,11 @@ export default FlexberryBaseComponent.extend({
   type: &#x27;fluid&#x27;,
 
   /**
-   * Default text (wil be displayed if there is no selected item).
+   * Default text (will be displayed if there is no selected item).
    *
    * @property defaultText
    * @type String
-   * @default &#x27;&#x27;
+   * @default null
    */
   defaultText: undefined,
 
@@ -190,38 +205,66 @@ export default FlexberryBaseComponent.extend({
   items: [],
 
   /**
-   * Currently displaying text.
+   * DOM-element representing semantic ui-dropdown component.
    *
-   * @property text
-   * @type String
+   * @property dropdownDomElement
+   * @type Object
+   * @default null
    */
-  currentText: Ember.computed(&#x27;value&#x27;, &#x27;defaultText&#x27;, function() {
-    var value = this.get(&#x27;value&#x27;);
-    if (Ember.typeOf(value) === &#x27;string&#x27;) {
-      return value;
-    }
+  dropdownDomElement: null,
 
-    var defaultText = this.get(&#x27;defaultText&#x27;);
-    if (Ember.typeOf(defaultText) === &#x27;string&#x27;) {
-      return defaultText;
-    }
-
-    return &#x27;&#x27;;
+  /**
+   * Flag: indicates whether to show default dropdown text or not.
+   *
+   * @property showDefaultText
+   * @type Boolean
+   * @default false
+   * @readonly
+   */
+  showDefaultText: Ember.computed(&#x27;defaultText&#x27;, &#x27;value&#x27;, function() {
+    return Ember.isNone(this.get(&#x27;value&#x27;)) &amp;&amp; !Ember.isNone(this.get(&#x27;defaultText&#x27;));
   }),
 
   /**
-   * Handles changes in available items and in selected item.
+   * Selected text (if some item is selected).
+   *
+   * @property text
+   * @type String
+   * @default &#x27;&#x27;
+   * @readonly
+   */
+  text: Ember.computed(&#x27;value&#x27;, function() {
+    var value = this.get(&#x27;value&#x27;);
+    return !Ember.isNone(value) ? value : &#x27;&#x27;;
+  }),
+
+  /**
+   * Handles changes in available items &amp; selected item (including changes on component initialization).
    */
   itemsOrValueDidChange: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;items.[]&#x27;, &#x27;value&#x27;, function() {
     var items = this.get(&#x27;items&#x27;);
-    var value = this.get(&#x27;value&#x27;);
-
     if (!Ember.isArray(items)) {
       throw new Error(&#x60;Wrong type of flexberry-dropdown \&#x60;items\&#x60; propery: actual type is ${Ember.typeOf(items)}, but array is expected.&#x60;);
     }
 
+    var value = this.get(&#x27;value&#x27;) || null;
     if (!Ember.isNone(value) &amp;&amp; items.indexOf(value) &lt; 0) {
       throw new Error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; propery: \&#x60;items\&#x60; array does not contain \&#x60;${value}\&#x60; value.&#x60;);
+    }
+
+    var dropdownDomElement = this.get(&#x27;dropdownDomElement&#x27;);
+    if (Ember.isNone(dropdownDomElement)) {
+      return;
+    }
+
+    // If binded value has been changed somewhere out of this component, semanic ui-dropdown logic
+    // will not be called automatically, so we need to call some methods manually,
+    // to be sure that sates of semanic ui-dropdown plugin &amp; related DOM-elements
+    // are fully corresponds to currently selected item.
+    if (Ember.isNone(value)) {
+      dropdownDomElement.dropdown(&#x27;clear&#x27;);
+    } else {
+      dropdownDomElement.dropdown(&#x27;set selected&#x27;, value);
     }
   })),
 
@@ -232,7 +275,25 @@ export default FlexberryBaseComponent.extend({
     this._super(...arguments);
 
     // Initialize properties which defaults could be defined in application configuration.
-    this.initProperty({ propertyName: &#x27;defaultText&#x27;, defaultValue: &#x27;&#x27; });
+    this.initProperty({ propertyName: &#x27;defaultText&#x27;, defaultValue: null });
+  },
+
+  /**
+   * Initializes DOM-related component properties.
+   */
+  didInsertElement: function() {
+    this._super(...arguments);
+
+    // We need to select and remember DOM-element representing ui-dropdown component,
+    // but we can&#x27;t just call to this.$(&#x27;.flexberry-dropdown&#x27;), because ember will throw an error
+    // &quot;You cannot access this.$() on a component with tagName: &#x27;&#x27;.&quot;.
+    // So we have to search our element in &#x27;childViews&#x27; collection.
+    var dropdownView = this.get(&#x27;childViews&#x27;).find(function(view) {
+      return !Ember.isEmpty(view.get(&#x27;tagName&#x27;)) &amp;&amp; view.$().hasClass(&#x27;flexberry-dropdown&#x27;);
+    });
+
+    var dropdownDomElement = !Ember.isNone(dropdownView) ? dropdownView.$() : null;
+    this.set(&#x27;dropdownDomElement&#x27;, dropdownDomElement);
   }
 });
 

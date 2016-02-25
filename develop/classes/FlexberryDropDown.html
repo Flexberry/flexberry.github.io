@@ -204,6 +204,10 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_defaultText" data-tablink="defaultText">defaultText</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_dropdownDomElement" data-tablink="dropdownDomElement">dropdownDomElement</a>
+
+                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_dynamicProperties" data-tablink="dynamicProperties">dynamicProperties</a>
 
@@ -222,6 +226,10 @@
                             </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_required" data-tablink="required">required</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showDefaultText" data-tablink="showDefaultText">showDefaultText</a>
 
                             </li>
                             <li class="index-item property">
@@ -598,7 +606,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:22</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l37"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:37</code></a>
                             </p>
                     
                     
@@ -676,18 +684,44 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l40"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:40</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l55"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:55</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Default text (wil be displayed if there is no selected item).</p>
+                            <p>Default text (will be displayed if there is no selected item).</p>
                     
                         </div>
                     
-                            <p><strong>Default:</strong> &#x27;&#x27;</p>
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_dropdownDomElement" class="property item">
+                        <h3 class="name"><code>dropdownDomElement</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l82"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:82</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>DOM-element representing semantic ui-dropdown component.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>
@@ -731,7 +765,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l58"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:58</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l73"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:73</code></a>
                             </p>
                     
                     
@@ -824,6 +858,32 @@
                     
                     
                     </div>
+                    <div id="property_showDefaultText" class="property item">
+                        <h3 class="name"><code>showDefaultText</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l91"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:91</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show default dropdown text or not.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
                     <div id="property_tagName" class="property item">
                         <h3 class="name"><code>tagName</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -835,7 +895,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l12"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:12</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l27"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:27</code></a>
                             </p>
                     
                     
@@ -861,17 +921,18 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l67"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:67</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l103"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:103</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Currently displaying text.</p>
+                            <p>Selected text (if some item is selected).</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> &#x27;&#x27;</p>
                     
                     
                     </div>
@@ -886,7 +947,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l31"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:31</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l46"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:46</code></a>
                             </p>
                     
                     
@@ -912,7 +973,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l49"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:49</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-dropdown.js.html#l64"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-dropdown.js:64</code></a>
                             </p>
                     
                     
