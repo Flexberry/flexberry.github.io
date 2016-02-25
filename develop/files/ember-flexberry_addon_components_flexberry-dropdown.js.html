@@ -146,6 +146,7 @@ export default FlexberryBaseComponent.extend({
       // Semantic ui-dropdown component has only one way binding,
       // so we have to set selected value manually.
       this.set(&#x27;value&#x27;, newValue);
+      this.sendAction(&#x27;valueChange&#x27;, newValue);
     }
   },
 
