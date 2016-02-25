@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GroupEditEvents - Flexberry Documentation</title>
+    <title>FlexberryValidationSummary - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -120,17 +120,17 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>GroupEditEvents <small>Class</small></h1>
+    <h1>FlexberryValidationSummary <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
 
         <div class="extends">
-            Extends <a href="http://emberjs.com/api/classes/Ember.Service.html" class="crosslink external" target="_blank">Ember.Service</a>
+            Extends <a href="http://emberjs.com/api/classes/Ember.Component.html" class="crosslink external" target="_blank">Ember.Component</a>
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:7</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-validationsummary.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationsummary.js:7</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -139,7 +139,7 @@
 
 
 <div class="well well-small">
-    <p>Service for triggering groupedit events.</p>
+    <p>ValidationSummary component for Semantic UI.</p>
 
 </div>
 
@@ -161,6 +161,18 @@
 
                     <ul class="index-list methods extends">
                             <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__classStringForProperty" data-tablink="_classStringForProperty">_classStringForProperty</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__contextDidChange" data-tablink="_contextDidChange">_contextDidChange</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__isVisibleDidChange" data-tablink="_isVisibleDidChange">_isVisibleDidChange</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__lazyInjections" data-tablink="_lazyInjections">_lazyInjections</a>
 
                             </li>
@@ -176,10 +188,6 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_addObserver" data-tablink="addObserver">addObserver</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_addRowTrigger" data-tablink="addRowTrigger">addRowTrigger</a>
-
-                            </li>
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_beginPropertyChanges" data-tablink="beginPropertyChanges">beginPropertyChanges</a>
 
@@ -190,14 +198,6 @@
                             </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_decrementProperty" data-tablink="decrementProperty">decrementProperty</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_deleteRowsTrigger" data-tablink="deleteRowsTrigger">deleteRowsTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_deleteRowTrigger" data-tablink="deleteRowTrigger">deleteRowTrigger</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -220,6 +220,10 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_getWithDefault" data-tablink="getWithDefault">getWithDefault</a>
 
                             </li>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_has" data-tablink="has">has</a>
+
+                            </li>
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_hasObserverFor" data-tablink="hasObserverFor">hasObserverFor</a>
 
@@ -232,8 +236,30 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_init" data-tablink="init">init</a>
 
                             </li>
+                            <li class="index-item method private deprecated inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_nearestChildOf" data-tablink="nearestChildOf">nearestChildOf</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
+                            <li class="index-item method private deprecated inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_nearestInstanceOf" data-tablink="nearestInstanceOf">nearestInstanceOf</a>
+
+                                    <span class="flag deprecated">deprecated</span>
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_notifyPropertyChange" data-tablink="notifyPropertyChange">notifyPropertyChange</a>
+
+                            </li>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_off" data-tablink="off">off</a>
+
+                            </li>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_on" data-tablink="on">on</a>
+
+                            </li>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_one" data-tablink="one">one</a>
 
                             </li>
                             <li class="index-item method private inherited">
@@ -244,8 +270,16 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_propertyWillChange" data-tablink="propertyWillChange">propertyWillChange</a>
 
                             </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_removeAllChildren" data-tablink="removeAllChildren">removeAllChildren</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_removeObserver" data-tablink="removeObserver">removeObserver</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_renderBlock" data-tablink="renderBlock">renderBlock</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -256,24 +290,12 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_reopenClass" data-tablink="reopenClass">reopenClass</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowAddedTrigger" data-tablink="rowAddedTrigger">rowAddedTrigger</a>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_send" data-tablink="send">send</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowDeletedTrigger" data-tablink="rowDeletedTrigger">rowDeletedTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowDeletedTrigger" data-tablink="rowDeletedTrigger">rowDeletedTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowsChangedTrigger" data-tablink="rowsChangedTrigger">rowsChangedTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowSelectedTrigger" data-tablink="rowSelectedTrigger">rowSelectedTrigger</a>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_sendAction" data-tablink="sendAction">sendAction</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -292,6 +314,10 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_toString" data-tablink="toString">toString</a>
 
                             </li>
+                            <li class="index-item method private inherited inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_trigger" data-tablink="trigger">trigger</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_willDestroy" data-tablink="willDestroy">willDestroy</a>
 
@@ -304,7 +330,43 @@
 
                     <ul class="index-list properties extends">
                             <li class="index-item property public inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_actions" data-tablink="actions">actions</a>
+
+                            </li>
+                            <li class="index-item property public inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_ariaRole" data-tablink="ariaRole">ariaRole</a>
+
+                            </li>
+                            <li class="index-item property public inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_classNameBindings" data-tablink="classNameBindings">classNameBindings</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_classNames" data-tablink="classNames">classNames</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_Color" data-tablink="Color">Color</a>
+
+                            </li>
+                            <li class="index-item property public inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_concatenatedProperties" data-tablink="concatenatedProperties">concatenatedProperties</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_Errors" data-tablink="Errors">Errors</a>
+
+                            </li>
+                            <li class="index-item property public inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_hasBlock" data-tablink="hasBlock">hasBlock</a>
+
+                            </li>
+                            <li class="index-item property public inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_hasBlockParams" data-tablink="hasBlockParams">hasBlockParams</a>
+
+                            </li>
+                            <li class="index-item property public inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_instrumentDisplay" data-tablink="instrumentDisplay">instrumentDisplay</a>
 
                             </li>
                             <li class="index-item property public inherited">
@@ -316,7 +378,27 @@
 
                             </li>
                             <li class="index-item property public inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_isVisible" data-tablink="isVisible">isVisible</a>
+
+                            </li>
+                            <li class="index-item property public inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_mergedProperties" data-tablink="mergedProperties">mergedProperties</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_Messages" data-tablink="Messages">Messages</a>
+
+                            </li>
+                            <li class="index-item property private inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_parentView" data-tablink="parentView">parentView</a>
+
+                            </li>
+                            <li class="index-item property private inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_targetObject" data-tablink="targetObject">targetObject</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_ValidationProperties" data-tablink="ValidationProperties">ValidationProperties</a>
 
                             </li>
                     </ul>
@@ -328,6 +410,124 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
+                    <div id="method__classStringForProperty" class="method item private inherited">
+                        <h3 class="name"><code>_classStringForProperty</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>property</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.View.html#method__classStringForProperty">Ember.View</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_views_view.js.html#l666"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;view.js:666</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Given a property name, returns a dasherized version of that
+                    property name if the property evaluates to a non-falsy value.
+                    
+                    For example, if the view has property <code>isUrgent</code> that evaluates to true,
+                    passing <code>isUrgent</code> to this method will return <code>&quot;is-urgent&quot;</code>.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">property</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method__contextDidChange" class="method item private inherited">
+                        <h3 class="name"><code>_contextDidChange</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.LegacyViewSupport.html#method__contextDidChange">Ember.LegacyViewSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_legacy_view_support.js.html#l101"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:101</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            If a value that affects template rendering changes, the view should be
+                    re-rendered to reflect the new value.
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__isVisibleDidChange" class="method item private inherited">
+                        <h3 class="name"><code>_isVisibleDidChange</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.VisibilitySupport.html#method__isVisibleDidChange">Ember.VisibilitySupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_visibility_support.js.html#l33"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;visibility_support.js:33</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            When the view's <code>isVisible</code> property changes, toggle the visibility
+                    element of the actual DOM element.
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method__lazyInjections" class="method item private inherited">
                         <h3 class="name"><code>_lazyInjections</code></h3>
                     
@@ -548,60 +748,6 @@
                     
                     
                     </div>
-                    <div id="method_addRowTrigger" class="method item">
-                        <h3 class="name"><code>addRowTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:15</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "add new row" event in groupedit.
-                    Event name: groupEditAddRow.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
                     <div id="method_beginPropertyChanges" class="method item private inherited">
                         <h3 class="name"><code>beginPropertyChanges</code></h3>
                     
@@ -795,114 +941,6 @@
                                         The new property value
                                 </div>
                             </div>
-                    
-                    </div>
-                    <div id="method_deleteRowsTrigger" class="method item">
-                        <h3 class="name"><code>deleteRowsTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l39"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:39</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "delete selected rows" event in groupedit.
-                    Event name: groupEditDeleteRows.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_deleteRowTrigger" class="method item">
-                        <h3 class="name"><code>deleteRowTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l27"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:27</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "delete current row" event in groupedit.
-                    Event name: groupEditDeleteRow.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
                     
                     </div>
                     <div id="method_destroy" class="method item public inherited">
@@ -1250,6 +1288,69 @@
                             </div>
                     
                     </div>
+                    <div id="method_has" class="method item public inherited">
+                        <h3 class="name"><code>has</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>name</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Evented.html#method_has">Ember.Evented</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-runtime_lib_mixins_evented.js.html#l142"><code>packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:142</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Checks to see if object has any subscriptions for named event.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">name</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The name of the event
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+                                        does the object have a subscription for event
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method_hasObserverFor" class="method item private inherited">
                         <h3 class="name"><code>hasObserverFor</code></h3>
                     
@@ -1449,6 +1550,134 @@
                     
                     
                     </div>
+                    <div id="method_nearestChildOf" class="method item private deprecated inherited">
+                        <h3 class="name"><code>nearestChildOf</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>klass</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                            <span class="flag deprecated">deprecated</span>
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.LegacyViewSupport.html#method_nearestChildOf">Ember.LegacyViewSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_legacy_view_support.js.html#l51"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:51</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Return the nearest ancestor whose parent is an instance of
+                    <code>klass</code>.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">klass</code>
+                                            <span class="type">Class</span>
+                    
+                    
+                                        <div class="param-description">
+                                            Subclass of Ember.View (or Ember.View itself)
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        Ember.View
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_nearestInstanceOf" class="method item private deprecated inherited">
+                        <h3 class="name"><code>nearestInstanceOf</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>klass</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                            <span class="flag deprecated">deprecated</span>
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.LegacyViewSupport.html#method_nearestInstanceOf">Ember.LegacyViewSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_legacy_view_support.js.html#l76"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:76</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Return the nearest ancestor that is an instance of the provided
+                    class.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">klass</code>
+                                            <span class="type">Class</span>
+                    
+                    
+                                        <div class="param-description">
+                                            Subclass of Ember.View (or Ember.View itself)
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        Ember.View
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method_notifyPropertyChange" class="method item public inherited">
                         <h3 class="name"><code>notifyPropertyChange</code></h3>
                     
@@ -1508,6 +1737,289 @@
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="http://emberjs.com/api/classes/Ember.Observable.html" class="crosslink external" target="_blank">Ember.Observable</a></span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_off" class="method item public inherited">
+                        <h3 class="name"><code>off</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>name</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>target</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>method</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Evented.html#method_off">Ember.Evented</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-runtime_lib_mixins_evented.js.html#l127"><code>packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:127</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Cancels subscription for given name, target, and method.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">name</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The name of the event
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">target</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The target of the subscription
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">method</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The function of the subscription
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        this
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_on" class="method item public inherited">
+                        <h3 class="name"><code>on</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>name</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[target]</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>method</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Evented.html#method_on">Ember.Evented</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-runtime_lib_mixins_evented.js.html#l52"><code>packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:52</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Subscribes to a named event with given function.
+                    
+                    <code>&#x60;</code>javascript
+                    person.on('didLoad', function() {
+                      // fired once the person has loaded
+                    });
+                    <code>&#x60;</code>
+                    
+                    An optional target can be passed in as the 2nd argument that will
+                    be set as the "this" for the callback. This is a good way to give your
+                    function access to the object triggering the event. When the target
+                    parameter is used the callback becomes the third argument.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">name</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The name of the event
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[target]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            The "this" binding for the callback
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">method</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The callback to execute
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        this
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_one" class="method item public inherited">
+                        <h3 class="name"><code>one</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>name</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[target]</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>method</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Evented.html#method_one">Ember.Evented</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-runtime_lib_mixins_evented.js.html#l78"><code>packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;evented.js:78</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Subscribes a function to a named event and then cancels the subscription
+                    after the first time the event is triggered. It is good to use <code>&#x60;one</code>` when
+                    you only care about the first time an event has taken place.
+                    
+                    This function takes an optional 2nd argument that will become the "this"
+                    value for the callback. If this argument is passed then the 3rd argument
+                    becomes the function.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">name</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The name of the event
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[target]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            The "this" binding for the callback
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">method</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            The callback to execute
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        this
                                 </div>
                             </div>
                     
@@ -1658,6 +2170,47 @@
                             </div>
                     
                     </div>
+                    <div id="method_removeAllChildren" class="method item private inherited">
+                        <h3 class="name"><code>removeAllChildren</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/Ember.View.html" class="crosslink external" target="_blank">Ember.View</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.LegacyViewSupport.html#method_removeAllChildren">Ember.LegacyViewSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_legacy_view_support.js.html#l32"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;legacy_view_support.js:32</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Removes all children from the <code>parentView</code>.
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Ember.View.html" class="crosslink external" target="_blank">Ember.View</a></span>:
+                                        receiver
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method_removeObserver" class="method item public inherited">
                         <h3 class="name"><code>removeObserver</code></h3>
                     
@@ -1730,6 +2283,64 @@
                     
                                         <div class="param-description">
                                             The method to invoke.
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_renderBlock" class="method item private inherited">
+                        <h3 class="name"><code>renderBlock</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>buffer</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.TemplateRenderingSupport.html#method_renderBlock">Ember.TemplateRenderingSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_template_rendering_support.js.html#l16"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;template_rendering_support.js:16</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Called on your view when it should push strings of HTML into a
+                    <code>Ember.RenderBuffer</code>. Most users will want to override the <code>template</code>
+                    or <code>templateName</code> properties instead of this method.
+                    
+                    By default, <code>Ember.View</code> will look for a function in the <code>template</code>
+                    property and invoke it with the value of <code>context</code>. The value of
+                    <code>context</code> will be the view's controller unless you override it.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">buffer</code>
+                                            <span class="type">Ember.RenderBuffer</span>
+                    
+                    
+                                        <div class="param-description">
+                                            The render buffer
                                         </div>
                     
                                     </li>
@@ -1872,31 +2483,32 @@
                     
                     
                     </div>
-                    <div id="method_rowAddedTrigger" class="method item">
-                        <h3 class="name"><code>rowAddedTrigger</code></h3>
+                    <div id="method_send" class="method item public inherited">
+                        <h3 class="name"><code>send</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>componentName</code>
+                                            <code>actionName</code>
                                     </li>
                                     <li class="arg">
-                                            <code>record</code>
+                                            <code>context</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                     
                     
+                            <span class="flag public">public</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l51"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:51</code></a>
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.ActionHandler.html#method_send">Ember.ActionHandler</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-runtime_lib_mixins_action_handler.js.html#l145"><code>packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;action_handler.js:145</code></a>
                             </p>
                     
                     
@@ -1904,9 +2516,29 @@
                         </div>
                     
                         <div class="description">
-                            <p>Trigger for "new row has been added" event in groupedit.
-                    Event name: groupEditRowAdded.</p>
+                            Triggers a named action on the <code>ActionHandler</code>. Any parameters
+                    supplied after the <code>actionName</code> string will be passed as arguments
+                    to the action target function.
                     
+                    If the <code>ActionHandler</code> has its <code>target</code> property set, actions may
+                    bubble to the <code>target</code>. Bubbling happens when an <code>actionName</code> can
+                    not be found in the <code>ActionHandler</code>'s <code>actions</code> hash or if the
+                    action target function returns <code>true</code>.
+                    
+                    Example
+                    
+                    <code>&#x60;</code>js
+                    App.WelcomeRoute = Ember.Route.extend({
+                      actions: {
+                        playTheme: function() {
+                           this.send('playMusic', 'theme.mp3');
+                        },
+                        playMusic: function(track) {
+                          // ...
+                        }
+                      }
+                    });
+                    <code>&#x60;</code>
                         </div>
                     
                             <div class="params">
@@ -1914,24 +2546,22 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">componentName</code>
+                                            <code class="param-name">actionName</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
+                                            The action to trigger
                                         </div>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type">Model</span>
+                                            <code class="param-name">context</code>
+                                            <span class="type"></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The model corresponding to added row in groupedit.</p>
-                    
+                                            a context to send with the action
                                         </div>
                     
                                     </li>
@@ -1940,31 +2570,32 @@
                     
                     
                     </div>
-                    <div id="method_rowDeletedTrigger" class="method item">
-                        <h3 class="name"><code>rowDeletedTrigger</code></h3>
+                    <div id="method_sendAction" class="method item public inherited">
+                        <h3 class="name"><code>sendAction</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>componentName</code>
+                                            <code class="optional">[action]</code>
                                     </li>
                                     <li class="arg">
-                                            <code>count</code>
+                                            <code class="optional">[params]</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                     
                     
+                            <span class="flag public">public</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l77"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:77</code></a>
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Component.html#method_sendAction">Ember.Component</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_components_component.js.html#l201"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;components&#x2F;component.js:201</code></a>
                             </p>
                     
                     
@@ -1972,9 +2603,79 @@
                         </div>
                     
                         <div class="description">
-                            <p>Trigger for "selected rows has been deleted" event in groupedit.
-                    Event name: groupEditRowDeleted.</p>
+                            Calls a action passed to a component.
                     
+                    For example a component for playing or pausing music may translate click events
+                    into action notifications of "play" or "stop" depending on some internal state
+                    of the component:
+                    
+                    <code>&#x60;</code>javascript
+                    // app/components/play-button.js
+                    export default Ember.Component.extend({
+                      click() {
+                        if (this.get('isPlaying')) {
+                          this.sendAction('play');
+                        } else {
+                          this.sendAction('stop');
+                        }
+                      }
+                    });
+                    <code>&#x60;</code>
+                    
+                    The actions "play" and "stop" must be passed to this <code>play-button</code> component:
+                    
+                    <code>&#x60;</code>handlebars
+                    {{! app/templates/application.hbs }}
+                    {{play-button play=(action "musicStarted") stop=(action "musicStopped")}}
+                    <code>&#x60;</code>
+                    
+                    When the component receives a browser <code>click</code> event it translate this
+                    interaction into application-specific semantics ("play" or "stop") and
+                    calls the specified action.
+                    
+                    <code>&#x60;</code>javascript
+                    // app/controller/application.js
+                    export default Ember.Controller.extend({
+                      actions: {
+                        musicStarted() {
+                          // called when the play button is clicked
+                          // and the music started playing
+                        },
+                        musicStopped() {
+                          // called when the play button is clicked
+                          // and the music stopped playing
+                        }
+                      }
+                    });
+                    <code>&#x60;</code>
+                    
+                    If no action is passed to <code>sendAction</code> a default name of "action"
+                    is assumed.
+                    
+                    <code>&#x60;</code>javascript
+                    // app/components/next-button.js
+                    export default Ember.Component.extend({
+                      click() {
+                        this.sendAction();
+                      }
+                    });
+                    <code>&#x60;</code>
+                    
+                    <code>&#x60;</code>handlebars
+                    {{! app/templates/application.hbs }}
+                    {{next-button action=(action "playNextSongInAlbum")}}
+                    <code>&#x60;</code>
+                    
+                    <code>&#x60;</code>javascript
+                    // app/controllers/application.js
+                    App.ApplicationController = Ember.Controller.extend({
+                      actions: {
+                        playNextSongInAlbum() {
+                          ...
+                        }
+                      }
+                    });
+                    <code>&#x60;</code>
                         </div>
                     
                             <div class="params">
@@ -1982,228 +2683,24 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">componentName</code>
+                                            <code class="param-name optional">[action]</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
+                                            the action to call
                                         </div>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
+                                            <code class="param-name optional">[params]</code>
+                                            <span class="type"></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
                     
                     
                                         <div class="param-description">
-                                            <p>Count of deleted rows in groupedit.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_rowDeletedTrigger" class="method item">
-                        <h3 class="name"><code>rowDeletedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>record</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l64"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:64</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "row has been deleted" event in groupedit.
-                    Event name: groupEditRowDeleted.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type">Model</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The model corresponding to deleted row in groupedit.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_rowsChangedTrigger" class="method item">
-                        <h3 class="name"><code>rowsChangedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l104"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:104</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "model(s) corresponding to some row(s) was changed" event in groupedit.
-                    Event name: groupEditRowsChanged.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_rowSelectedTrigger" class="method item">
-                        <h3 class="name"><code>rowSelectedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>record</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>count</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_groupedit-events.js.html#l90"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;groupedit-events.js:90</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "row has been selected" event in groupedit.
-                    Event name: groupEditRowSelected.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of flexberry-groupedit component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type">Model</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The model corresponding to selected row in groupedit.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Count of selected rows in groupedit.</p>
-                    
+                                            arguments for the action
                                         </div>
                     
                                     </li>
@@ -2527,6 +3024,62 @@
                             </div>
                     
                     </div>
+                    <div id="method_trigger" class="method item private inherited">
+                        <h3 class="name"><code>trigger</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>name</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="http://emberjs.com/api/classes/Ember.Evented.html#method_trigger">
+                                    Ember.Evented
+                                </a>
+                                but overwritten in
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_views_core_view.js.html#l83"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:83</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Override the default event firing from <code>Ember.Evented</code> to
+                    also call methods with the given name.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">name</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="method_willDestroy" class="method item public inherited">
                         <h3 class="name"><code>willDestroy</code></h3>
                     
@@ -2562,6 +3115,290 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property_actions" class="property item public inherited">
+                        <h3 class="name"><code>actions</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.ActionHandler.html#property_actions">Ember.ActionHandler</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-runtime_lib_mixins_action_handler.js.html#l24"><code>packages&#x2F;ember-runtime&#x2F;lib&#x2F;mixins&#x2F;action_handler.js:24</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            The collection of functions, keyed by name, available on this
+                    <code>ActionHandler</code> as action targets.
+                    
+                    These functions will be invoked when a matching <code>{{action}}</code> is triggered
+                    from within a template and the application's current route is this route.
+                    
+                    Actions can also be invoked from other parts of your application
+                    via <code>ActionHandler#send</code>.
+                    
+                    The <code>actions</code> hash will inherit action handlers from
+                    the <code>actions</code> hash defined on extended parent classes
+                    or mixins rather than just replace the entire hash, e.g.:
+                    
+                    <code>&#x60;</code>js
+                    App.CanDisplayBanner = Ember.Mixin.create({
+                      actions: {
+                        displayBanner: function(msg) {
+                          // ...
+                        }
+                      }
+                    });
+                    
+                    App.WelcomeRoute = Ember.Route.extend(App.CanDisplayBanner, {
+                      actions: {
+                        playMusic: function() {
+                          // ...
+                        }
+                      }
+                    });
+                    
+                    // <code>WelcomeRoute</code>, when active, will be able to respond
+                    // to both actions, since the actions hash is merged rather
+                    // then replaced when extending mixins / parent classes.
+                    this.send('displayBanner');
+                    this.send('playMusic');
+                    <code>&#x60;</code>
+                    
+                    Within a Controller, Route, View or Component's action handler,
+                    the value of the <code>this</code> context is the Controller, Route, View or
+                    Component object:
+                    
+                    <code>&#x60;</code>js
+                    App.SongRoute = Ember.Route.extend({
+                      actions: {
+                        myAction: function() {
+                          this.controllerFor("song");
+                          this.transitionTo("other.route");
+                          ...
+                        }
+                      }
+                    });
+                    <code>&#x60;</code>
+                    
+                    It is also possible to call <code>this._super.apply(this, arguments)</code> from within an
+                    action handler if it overrides a handler defined on a parent
+                    class or mixin:
+                    
+                    Take for example the following routes:
+                    
+                    <code>&#x60;</code>js
+                    App.DebugRoute = Ember.Mixin.create({
+                      actions: {
+                        debugRouteInformation: function() {
+                          console.debug("trololo");
+                        }
+                      }
+                    });
+                    
+                    App.AnnoyingDebugRoute = Ember.Route.extend(App.DebugRoute, {
+                      actions: {
+                        debugRouteInformation: function() {
+                          // also call the debugRouteInformation of mixed in App.DebugRoute
+                          this._super.apply(this, arguments);
+                    
+                          // show additional annoyance
+                          window.alert(...);
+                        }
+                      }
+                    });
+                    <code>&#x60;</code>
+                    
+                    ## Bubbling
+                    
+                    By default, an action will stop bubbling once a handler defined
+                    on the <code>actions</code> hash handles it. To continue bubbling the action,
+                    you must return <code>true</code> from the handler:
+                    
+                    <code>&#x60;</code>js
+                    App.Router.map(function() {
+                      this.route("album", function() {
+                        this.route("song");
+                      });
+                    });
+                    
+                    App.AlbumRoute = Ember.Route.extend({
+                      actions: {
+                        startPlaying: function() {
+                        }
+                      }
+                    });
+                    
+                    App.AlbumSongRoute = Ember.Route.extend({
+                      actions: {
+                        startPlaying: function() {
+                          // ...
+                    
+                          if (actionShouldAlsoBeTriggeredOnParentRoute) {
+                            return true;
+                          }
+                        }
+                      }
+                    });
+                    <code>&#x60;</code>
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_ariaRole" class="property item public inherited">
+                        <h3 class="name"><code>ariaRole</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.AriaRoleSupport.html#property_ariaRole">Ember.AriaRoleSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_aria_role_support.js.html#l16"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;aria_role_support.js:16</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            The WAI-ARIA role of the control represented by this view. For example, a
+                    button may have a role of type 'button', or a pane may have a role of
+                    type 'alertdialog'. This property is used by assistive software to help
+                    visually challenged users navigate rich web applications.
+                    
+                    The full list of valid WAI-ARIA roles is available at:
+                    [http://www.w3.org/TR/wai-aria/roles#roles_categorization](http://www.w3.org/TR/wai-aria/roles#roles_categorization)
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_classNameBindings" class="property item public inherited">
+                        <h3 class="name"><code>classNameBindings</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.ClassNamesSupport.html#property_classNameBindings">Ember.ClassNamesSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_class_names_support.js.html#l41"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;class_names_support.js:41</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            A list of properties of the view to apply as class names. If the property
+                    is a string value, the value of that string will be applied as a class
+                    name.
+                    
+                    <code>&#x60;</code>javascript
+                    // Applies the 'high' class to the view element
+                    Ember.View.extend({
+                      classNameBindings: ['priority'],
+                      priority: 'high'
+                    });
+                    <code>&#x60;</code>
+                    
+                    If the value of the property is a Boolean, the name of that property is
+                    added as a dasherized class name.
+                    
+                    <code>&#x60;</code>javascript
+                    // Applies the 'is-urgent' class to the view element
+                    Ember.View.extend({
+                      classNameBindings: ['isUrgent'],
+                      isUrgent: true
+                    });
+                    <code>&#x60;</code>
+                    
+                    If you would prefer to use a custom value instead of the dasherized
+                    property name, you can pass a binding like this:
+                    
+                    <code>&#x60;</code>javascript
+                    // Applies the 'urgent' class to the view element
+                    Ember.View.extend({
+                      classNameBindings: ['isUrgent:urgent'],
+                      isUrgent: true
+                    });
+                    <code>&#x60;</code>
+                    
+                    This list of properties is inherited from the view's superclasses as well.
+                        </div>
+                    
+                            <p><strong>Default:</strong> []</p>
+                    
+                    
+                    </div>
+                    <div id="property_classNames" class="property item">
+                        <h3 class="name"><code>classNames</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="http://emberjs.com/api/classes/Ember.ClassNamesSupport.html#property_classNames">
+                                    Ember.ClassNamesSupport
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationsummary.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationsummary.js:15</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Class names for component wrapping <div>.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_Color" class="property item">
+                        <h3 class="name"><code>Color</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationsummary.js.html#l23"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationsummary.js:23</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Semantic color class name for message text.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;red&#x27;</p>
+                    
+                    
+                    </div>
                     <div id="property_concatenatedProperties" class="property item public inherited">
                         <h3 class="name"><code>concatenatedProperties</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
@@ -2647,6 +3484,206 @@
                     
                     
                     </div>
+                    <div id="property_Errors" class="property item">
+                        <h3 class="name"><code>Errors</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Ember.Object.html" class="crosslink external" target="_blank">Ember.Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationsummary.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationsummary.js:32</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Errors object for display messages</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_hasBlock" class="property item public inherited">
+                        <h3 class="name"><code>hasBlock</code></h3>
+                        <span class="type">Unknown</span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Component.html#property_hasBlock">Ember.Component</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_components_component.js.html#l327"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;components&#x2F;component.js:327</code></a>
+                            </p>
+                    
+                    
+                                <p>Available since 1.13.0</p>
+                        </div>
+                    
+                        <div class="description">
+                            Returns true when the component was invoked with a block template.
+                    
+                    Example (<code>hasBlock</code> will be <code>false</code>):
+                    
+                    <code>&#x60;</code>hbs
+                    {{! templates/application.hbs }}
+                    
+                    {{foo-bar}}
+                    
+                    {{! templates/components/foo-bar.hbs }}
+                    {{#if hasBlock}}
+                      This will not be printed, because no block was provided
+                    {{/if}}
+                    <code>&#x60;</code>
+                    
+                    Example (<code>hasBlock</code> will be <code>true</code>):
+                    
+                    <code>&#x60;</code>hbs
+                    {{! templates/application.hbs }}
+                    
+                    {{#foo-bar}}
+                      Hi!
+                    {{/foo-bar}}
+                    
+                    {{! templates/components/foo-bar.hbs }}
+                    {{#if hasBlock}}
+                      This will be printed because a block was provided
+                      {{yield}}
+                    {{/if}}
+                    <code>&#x60;</code>
+                    
+                    This helper accepts an argument with the name of the block we want to check the presence of.
+                    This is useful for checking for the presence of the optional inverse block in components.
+                    
+                    <code>&#x60;</code>hbs
+                    {{! templates/application.hbs }}
+                    
+                    {{#foo-bar}}
+                      Hi!
+                    {{else}}
+                      What's up?
+                    {{/foo-bar}}
+                    
+                    {{! templates/components/foo-bar.hbs }}
+                    {{yield}}
+                    {{#if (hasBlock "inverse")}}
+                      {{yield to="inverse"}}
+                    {{else}}
+                      How are you?
+                    {{/if}}
+                    <code>&#x60;</code>
+                        </div>
+                    
+                    
+                    
+                            <h4>Sub-properties:</h4>
+                    
+                            <ul class="params-list">
+                                <li class="param">
+                                        <code class="param-name optional">[blockName=&quot;default&quot;]</code>
+                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                        <span class="flag optional" title="This property is optional.">optional</span>
+                    
+                                    <div class="param-description">
+                                        The name of the block to check presence of.
+                                    </div>
+                    
+                                </li>
+                            </ul>
+                    </div>
+                    <div id="property_hasBlockParams" class="property item public inherited">
+                        <h3 class="name"><code>hasBlockParams</code></h3>
+                        <span class="type">Unknown</span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Component.html#property_hasBlockParams">Ember.Component</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_components_component.js.html#l387"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;components&#x2F;component.js:387</code></a>
+                            </p>
+                    
+                    
+                                <p>Available since 1.13.0</p>
+                        </div>
+                    
+                        <div class="description">
+                            Returns true when the component was invoked with a block parameter
+                    supplied.
+                    
+                    Example (<code>hasBlockParams</code> will be <code>false</code>):
+                    
+                    <code>&#x60;</code>hbs
+                    {{! templates/application.hbs }}
+                    
+                    {{#foo-bar}}
+                      No block parameter.
+                    {{/foo-bar}}
+                    
+                    {{! templates/components/foo-bar.hbs }}
+                    {{#if hasBlockParams}}
+                      This will not be printed, because no block was provided
+                      {{yield this}}
+                    {{/if}}
+                    <code>&#x60;</code>
+                    
+                    Example (<code>hasBlockParams</code> will be <code>true</code>):
+                    
+                    <code>&#x60;</code>hbs
+                    {{! templates/application.hbs }}
+                    
+                    {{#foo-bar as |foo|}}
+                      Hi!
+                    {{/foo-bar}}
+                    
+                    {{! templates/components/foo-bar.hbs }}
+                    {{#if hasBlockParams}}
+                      This will be printed because a block was provided
+                      {{yield this}}
+                    {{/if}}
+                    <code>&#x60;</code>
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_instrumentDisplay" class="property item public inherited">
+                        <h3 class="name"><code>instrumentDisplay</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.InstrumentationSupport.html#property_instrumentDisplay">Ember.InstrumentationSupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_instrumentation_support.js.html#l15"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;instrumentation_support.js:15</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Used to identify this view during debugging
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_isDestroyed" class="property item public inherited">
                         <h3 class="name"><code>isDestroyed</code></h3>
                         <span class="type">Unknown</span>
@@ -2702,6 +3739,32 @@
                         </div>
                     
                             <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_isVisible" class="property item public inherited">
+                        <h3 class="name"><code>isVisible</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.VisibilitySupport.html#property_isVisible">Ember.VisibilitySupport</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_mixins_visibility_support.js.html#l20"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;mixins&#x2F;visibility_support.js:20</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            If <code>false</code>, the view will appear hidden in DOM.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>
@@ -2787,6 +3850,113 @@
                         </div>
                     
                             <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_Messages" class="property item">
+                        <h3 class="name"><code>Messages</code></h3>
+                        <span class="type">Ember.A</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationsummary.js.html#l50"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationsummary.js:50</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current errors messages</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_parentView" class="property item private inherited">
+                        <h3 class="name"><code>parentView</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Ember.View.html" class="crosslink external" target="_blank">Ember.View</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.CoreView.html#property_parentView">Ember.CoreView</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_views_core_view.js.html#l62"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;views&#x2F;core_view.js:62</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            If the view is currently inserted into the DOM of a parent view, this
+                    property will point to the parent of the view.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_targetObject" class="property item private inherited">
+                        <h3 class="name"><code>targetObject</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Ember.Controller.html" class="crosslink external" target="_blank">Ember.Controller</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Component.html#property_targetObject">Ember.Component</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-views_lib_components_component.js.html#l185"><code>packages&#x2F;ember-views&#x2F;lib&#x2F;components&#x2F;component.js:185</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            If the component is currently inserted into the DOM of a parent view, this
+                    property will point to the controller of the parent view.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_ValidationProperties" class="property item private">
+                        <h3 class="name"><code>ValidationProperties</code></h3>
+                        <span class="type">Unknown</span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationsummary.js.html#l41"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationsummary.js:41</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Errors own properties with validation errors messages</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
                     
                     
                     </div>

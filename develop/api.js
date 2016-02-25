@@ -20,6 +20,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "FlexberryTextarea",
         "FlexberryTextbox",
         "FlexberryToggler",
+        "FlexberryValidationMessage",
+        "FlexberryValidationSummary",
         "GroupEditEvents",
         "GroupEditToolbar",
         "ListFormController",

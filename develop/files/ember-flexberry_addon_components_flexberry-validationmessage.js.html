@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/flexberry-textbox.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/components/flexberry-validationmessage.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -120,7 +120,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/flexberry-textbox.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/components/flexberry-validationmessage.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -129,63 +129,94 @@
  * @module ember-flexberry
  */
 
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+import Ember from &#x27;ember&#x27;;
 
 /**
- * Textbox component for Semantic UI.
+ * Component for showing error message from model validators.
  *
- * @class FlexberryTextbox
- * @extends FlexberryBaseComponent
+ * @class FlexberryValidationMessage
  */
-var FlexberryTextbox = FlexberryBaseComponent.extend({
+
+export default Ember.Component.extend({
+
   /**
-   * Default classes for component wrapper.
+   * Class names for component wrapping &lt;div&gt;.
    *
    * @property classNames
    * @type Array
    * @readOnly
    */
-  classNames: [&#x27;flexberry-textbox&#x27;, &#x27;ui&#x27;, &#x27;input&#x27;, &#x27;fluid&#x27;],
+  classNames: [&#x27;ui&#x27;, &#x27;basic&#x27;, &#x27;label&#x27;],
 
   /**
-   * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
+   * Error messages array or error text for shown.
+   * Typically uses Ember.Model.errors for specific attribute, plain test also supported.
    *
-   * @property appConfigSettingsPath
-   * @type String
-   * @default &#x27;APP.components.flexberryTextbox&#x27;
-   */
-  appConfigSettingsPath: &#x27;APP.components.flexberryTextbox&#x27;,
-
-  /**
-   * Input value.
+   * @example
+   *   {{flexberry-validationmessage error=model.errors.email}}
    *
-   * @property value
-   * @type String
+   * @property Error
+   * @type Array, String
    * @default undefined
    */
-  value: undefined,
+  error: undefined,
 
   /**
-   * Text to be displayed instead of file name, if file has not been selected.
+   * Semantic color class name for label text.
    *
-   * @property placeholder
-   * @type string
-   * @default undefined
+   * @property Color
+   * @type String
+   * @default &#x27;red&#x27;
    */
-  placeholder: undefined,
+  color: &#x27;red&#x27;,
 
   /**
-   * Initializes component.
+   * Label pointing direction
+   * possible variants: &#x27;&#x27;, pointing, pointing above, pointing below, left pointing, right pointing
+   *
+   * @property Pointing
+   * @type String
+   * @default &#x27;pointing&#x27;
    */
-  init: function() {
+  pointing: &#x27;pointing&#x27;,
+
+  /**
+   * If error property isn&#x27;t exists, the component will appear hidden in DOM.
+   *
+   * @property isVisible
+   * @type Boolean
+   */
+  isVisible: Ember.computed(&#x27;error&#x27;, function () {
+    let error = this.get(&#x27;error&#x27;);
+    return !!(Array.isArray(error) ? error.length : error);
+  }),
+
+  init: function () {
     this._super(...arguments);
 
-    // Initialize properties which defaults could be defined in application configuration.
-    this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: null });
+    this.get(&#x27;classNames&#x27;).push(this.get(&#x27;color&#x27;));
+
+    let pointing = this.get(&#x27;pointing&#x27;);
+    if (pointing) {
+      let possiblePointings = [
+        &#x27;&#x27;,
+        &#x27;pointing&#x27;,
+        &#x27;pointing above&#x27;,
+        &#x27;pointing below&#x27;,
+        &#x27;left pointing&#x27;,
+        &#x27;right pointing&#x27;];
+      if (possiblePointings.indexOf(pointing) === -1) {
+        let messagePointings = possiblePointings.map(function (item) {
+          return &#x60;&#x27;${item}&#x27;&#x60;;
+        });
+        throw new Error(
+          &#x60;Wrong value of flexberry-validationmessage pointing property, actual is &#x27;${pointing}&#x27;, possible values are: ${messagePointings}&#x60;);
+      }
+
+      this.get(&#x27;classNames&#x27;).push(pointing);
+    }
   }
 });
-
-export default FlexberryTextbox;
 
     </pre>
 </div>

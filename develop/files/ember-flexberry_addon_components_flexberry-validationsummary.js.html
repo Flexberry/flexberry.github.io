@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/flexberry-textbox.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/components/flexberry-validationsummary.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -120,7 +120,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/flexberry-textbox.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/components/flexberry-validationsummary.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -129,63 +129,100 @@
  * @module ember-flexberry
  */
 
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+import Ember from &#x27;ember&#x27;;
 
 /**
- * Textbox component for Semantic UI.
+ * ValidationSummary component for Semantic UI.
  *
- * @class FlexberryTextbox
- * @extends FlexberryBaseComponent
+ * @class FlexberryValidationSummary
+ * @extends Ember.Component
  */
-var FlexberryTextbox = FlexberryBaseComponent.extend({
+export default Ember.Component.extend({
+
   /**
-   * Default classes for component wrapper.
+   * Class names for component wrapping &lt;div&gt;.
    *
    * @property classNames
    * @type Array
-   * @readOnly
    */
-  classNames: [&#x27;flexberry-textbox&#x27;, &#x27;ui&#x27;, &#x27;input&#x27;, &#x27;fluid&#x27;],
+  classNames: [&#x27;ui&#x27;, &#x27;message&#x27;],
 
   /**
-   * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
+   * Semantic color class name for message text.
    *
-   * @property appConfigSettingsPath
+   * @property Color
    * @type String
-   * @default &#x27;APP.components.flexberryTextbox&#x27;
+   * @default &#x27;red&#x27;
    */
-  appConfigSettingsPath: &#x27;APP.components.flexberryTextbox&#x27;,
+  color: &#x27;red&#x27;,
 
   /**
-   * Input value.
-   *
-   * @property value
-   * @type String
+   * Errors object for display messages
+
+   * @property Errors
+   * @type Ember.Object
    * @default undefined
    */
-  value: undefined,
+  errors: undefined,
 
   /**
-   * Text to be displayed instead of file name, if file has not been selected.
-   *
-   * @property placeholder
-   * @type string
+   * Errors own properties with validation errors messages
+
+   * @private
+   * @property ValidationProperties
    * @default undefined
-   */
-  placeholder: undefined,
+   * */
+  validationProperties: undefined,
 
   /**
-   * Initializes component.
-   */
-  init: function() {
+   * Current errors messages
+
+   * @property Messages
+   * @type Ember.A
+   * @default undefined
+   * */
+  messages: undefined,
+
+  /**
+   * Push validation errors to messages array
+   * and change component visibility if no errors occurred
+
+   *
+   *
+   * */
+  changeMessages: function () {
+    let messages = new Ember.A();
+
+    this.get(&#x27;validationProperties&#x27;).forEach(property =&gt;
+      messages.addObjects(this.get(&#x27;errors.&#x27; + property))
+    );
+
+    this.set(&#x27;isVisible&#x27;, !!messages.length);
+    this.set(&#x27;messages&#x27;, messages);
+  },
+
+  init: function () {
     this._super(...arguments);
 
-    // Initialize properties which defaults could be defined in application configuration.
-    this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: null });
+    let errors = this.get(&#x27;errors&#x27;);
+
+    if (!errors) {
+      throw new Error(&#x27;Errors property for flexberry-validationsummary component must be set&#x27;);
+    }
+
+    this.set(&#x27;validationProperties&#x27;, new Ember.A());
+
+    for (let propertyName in errors) {
+      if (errors.hasOwnProperty(propertyName)) {
+        this.get(&#x27;validationProperties&#x27;).push(propertyName);
+        errors.addObserver(propertyName + &#x27;.[]&#x27;, this, &#x27;changeMessages&#x27;);
+      }
+    }
+
+    this.get(&#x27;classNames&#x27;).push(this.get(&#x27;color&#x27;));
+    this.changeMessages();
   }
 });
-
-export default FlexberryTextbox;
 
     </pre>
 </div>
