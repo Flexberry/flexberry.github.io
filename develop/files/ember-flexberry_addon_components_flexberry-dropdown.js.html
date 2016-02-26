@@ -203,9 +203,9 @@ export default FlexberryBaseComponent.extend({
    *
    * @property items
    * @type Array
-   * @default []
+   * @default null
    */
-  items: [],
+  items: null,
 
   /**
    * DOM-element representing semantic ui-dropdown component.
@@ -252,7 +252,7 @@ export default FlexberryBaseComponent.extend({
 
     var value = this.get(&#x27;value&#x27;) || null;
     if (!Ember.isNone(value) &amp;&amp; items.indexOf(value) &lt; 0) {
-      throw new Error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; propery: \&#x60;items\&#x60; array does not contain \&#x60;${value}\&#x60; value.&#x60;);
+      throw new Error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; propery: \&#x60;${value}\&#x60;. Allowed values are: [\&#x60;${items.join(&#x60;\&#x60;, \&#x60;&#x60;)}\&#x60;].&#x60;);
     }
 
     var dropdownDomElement = this.get(&#x27;dropdownDomElement&#x27;);
