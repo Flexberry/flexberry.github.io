@@ -2479,7 +2479,7 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 32,
-            "description": "Flag to use creation button at toolbal.",
+            "description": "Flag to use creation button at toolbar.",
             "itemtype": "property",
             "name": "createNewButton",
             "type": "Boolean",
@@ -2490,7 +2490,7 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 41,
-            "description": "Flag to use refresh button at toolbal.",
+            "description": "Flag to use refresh button at toolbar.",
             "itemtype": "property",
             "name": "refreshButton",
             "type": "Boolean",
@@ -2709,6 +2709,28 @@
                     "type": "Number"
                 }
             ],
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 222,
+            "description": "A stub for call of custom user buttons. Used when no handler is defined.",
+            "itemtype": "method",
+            "name": "customButtons",
+            "return": {
+                "description": "Returns only 'undefined' (because is's a stub).",
+                "type": "Array"
+            },
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 232,
+            "description": "Handler to get user button's actions and send action to corresponding controllers's handler.",
+            "itemtype": "method",
+            "name": "customButtonAction",
             "class": "FlexberryObjectlistview",
             "module": "ember-flexberry"
         },
@@ -3186,6 +3208,39 @@
             "name": "groupEditEventsService",
             "type": "GroupEditEvents",
             "class": "FlexberryObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 13,
+            "description": "Name of action to send out, action triggered by click on user button.",
+            "itemtype": "property",
+            "name": "customButtonAction",
+            "type": "String",
+            "default": "'customButtonAction'",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 22,
+            "description": "Handler to get custom buttons from controller.\nIt has to be closure event and return array of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].",
+            "itemtype": "property",
+            "name": "customButtonsClosureEvent",
+            "type": "Function",
+            "default": "undefined",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 32,
+            "description": "Array of custom buttons.",
+            "itemtype": "property",
+            "name": "customButtonsArray",
+            "type": "Array",
+            "default": "undefined",
+            "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {

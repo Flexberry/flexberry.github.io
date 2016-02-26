@@ -339,6 +339,18 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#properties" data-anchor="#property_concatenatedProperties" data-tablink="concatenatedProperties">concatenatedProperties</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_customButtonAction" data-tablink="customButtonAction">customButtonAction</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_customButtonsArray" data-tablink="customButtonsArray">customButtonsArray</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_customButtonsClosureEvent" data-tablink="customButtonsClosureEvent">customButtonsClosureEvent</a>
+
+                            </li>
                             <li class="index-item property public inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_isDestroyed" data-tablink="isDestroyed">isDestroyed</a>
 
@@ -3026,6 +3038,85 @@ export default EditFormController.extend({
                         </div>
                     
                             <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_customButtonAction" class="property item">
+                        <h3 class="name"><code>customButtonAction</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l13"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:13</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Name of action to send out, action triggered by click on user button.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;customButtonAction&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_customButtonsArray" class="property item">
+                        <h3 class="name"><code>customButtonsArray</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:32</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of custom buttons.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_customButtonsClosureEvent" class="property item">
+                        <h3 class="name"><code>customButtonsClosureEvent</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:22</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handler to get custom buttons from controller.
+                    It has to be closure event and return array of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
                     
                     
                     </div>

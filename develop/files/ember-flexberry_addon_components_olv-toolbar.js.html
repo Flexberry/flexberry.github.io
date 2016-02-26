@@ -137,6 +137,43 @@ export default Ember.Component.extend({
   createNewButton: false,
   refreshButton: false,
 
+  /**
+   * Name of action to send out, action triggered by click on user button.
+   *
+   * @property customButtonAction
+   * @type String
+   * @default &#x27;customButtonAction&#x27;
+   */
+  customButtonAction: &#x27;customButtonAction&#x27;,
+
+  /**
+   * Handler to get custom buttons from controller.
+   * It has to be closure event and return array of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].
+   *
+   * @property customButtonsClosureEvent
+   * @type Function
+   * @default undefined
+   */
+  customButtonsClosureEvent: undefined,
+
+  /**
+   * Array of custom buttons.
+   *
+   * @property customButtonsArray
+   * @type Array
+   * @default undefined
+   */
+  customButtonsArray: undefined,
+
+  init: function() {
+    this._super(...arguments);
+    let customButton = this.get(&#x27;customButtonsClosureEvent&#x27;);
+    if (customButton &amp;&amp; typeof (customButton) === &#x27;function&#x27;) {
+      let customButtonsResult = customButton();
+      this.set(&#x27;customButtonsArray&#x27;, customButtonsResult);
+    }
+  },
+
   actions: {
     refresh: function() {
       this.get(&#x27;modelController&#x27;).send(&#x27;refreshList&#x27;);
@@ -145,6 +182,9 @@ export default Ember.Component.extend({
       let modelController = this.get(&#x27;modelController&#x27;);
       let modelName = this.get(&#x27;modelName&#x27;);
       modelController.transitionToRoute(modelName + &#x27;.new&#x27;);
+    },
+    customButtonAction: function(actionName) {
+      this.sendAction(&#x27;customButtonAction&#x27;, actionName);
     }
   }
 });
