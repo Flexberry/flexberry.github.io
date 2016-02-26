@@ -3344,35 +3344,35 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 224,
+            "line": 237,
             "description": "On save model success handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 273,
+            "line": 286,
             "description": "On save model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 280,
+            "line": 293,
             "description": "On delete model success handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 287,
+            "line": 300,
             "description": "On delete model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 294,
+            "line": 307,
             "description": "On model 'preSave' event handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
@@ -4644,23 +4644,23 @@
         },
         {
             "message": "Missing item type\nOn save model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:224"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:237"
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:273"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:286"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:280"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:293"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:287"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:300"
         },
         {
             "message": "Missing item type\nOn model 'preSave' event handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:294"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:307"
         },
         {
             "message": "Missing item type\nUpdate limit function query parameter and reloads route if needed.",
