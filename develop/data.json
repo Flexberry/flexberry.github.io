@@ -194,7 +194,7 @@
             "name": "ember-flexberry/addon/components/flexberry-validationmessage.js",
             "modules": {},
             "classes": {
-                "FlexberryValidationMessage": 1
+                "FlexberryValidationmessage": 1
             },
             "fors": {},
             "namespaces": {}
@@ -203,7 +203,7 @@
             "name": "ember-flexberry/addon/components/flexberry-validationsummary.js",
             "modules": {},
             "classes": {
-                "FlexberryValidationSummary": 1
+                "FlexberryValidationsummary": 1
             },
             "fors": {},
             "namespaces": {}
@@ -457,8 +457,8 @@
                 "FlexberryTextarea": 1,
                 "FlexberryTextbox": 1,
                 "FlexberryToggler": 1,
-                "FlexberryValidationMessage": 1,
-                "FlexberryValidationSummary": 1,
+                "FlexberryValidationmessage": 1,
+                "FlexberryValidationsummary": 1,
                 "GroupEditToolbar": 1,
                 "ObjectListViewCell": 1,
                 "FlexberryObjectListView": 1,
@@ -727,9 +727,9 @@
             "description": "Component for expand / collapse content.",
             "extends": "FlexberryBaseComponent"
         },
-        "FlexberryValidationMessage": {
-            "name": "FlexberryValidationMessage",
-            "shortname": "FlexberryValidationMessage",
+        "FlexberryValidationmessage": {
+            "name": "FlexberryValidationmessage",
+            "shortname": "FlexberryValidationmessage",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -741,9 +741,9 @@
             "line": 7,
             "description": "Component for showing error message from model validators."
         },
-        "FlexberryValidationSummary": {
-            "name": "FlexberryValidationSummary",
-            "shortname": "FlexberryValidationSummary",
+        "FlexberryValidationsummary": {
+            "name": "FlexberryValidationsummary",
+            "shortname": "FlexberryValidationsummary",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -2923,121 +2923,121 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationmessage.js",
-            "line": 15,
+            "line": 13,
             "description": "Class names for component wrapping <div>.",
             "itemtype": "property",
             "name": "classNames",
             "type": "Array",
             "readonly": "",
-            "class": "FlexberryValidationMessage",
+            "class": "FlexberryValidationmessage",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationmessage.js",
-            "line": 24,
+            "line": 22,
             "description": "Error messages array or error text for shown.\nTypically uses Ember.Model.errors for specific attribute, plain test also supported.",
             "example": [
                 "\n  {{flexberry-validationmessage error=model.errors.email}}"
             ],
             "itemtype": "property",
-            "name": "Error",
-            "type": "Array, String",
+            "name": "error",
+            "type": "Array|String",
             "default": "undefined",
-            "class": "FlexberryValidationMessage",
+            "class": "FlexberryValidationmessage",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationmessage.js",
-            "line": 37,
+            "line": 35,
             "description": "Semantic color class name for label text.",
             "itemtype": "property",
-            "name": "Color",
+            "name": "color",
             "type": "String",
             "default": "'red'",
-            "class": "FlexberryValidationMessage",
+            "class": "FlexberryValidationmessage",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationmessage.js",
-            "line": 46,
-            "description": "Label pointing direction\npossible variants: '', pointing, pointing above, pointing below, left pointing, right pointing",
+            "line": 44,
+            "description": "Label pointing direction.\nPossible variants: '', pointing, pointing above, pointing below, left pointing, right pointing.",
             "itemtype": "property",
-            "name": "Pointing",
+            "name": "pointing",
             "type": "String",
-            "default": "'pointing'",
-            "class": "FlexberryValidationMessage",
+            "default": "''",
+            "class": "FlexberryValidationmessage",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationmessage.js",
-            "line": 56,
+            "line": 54,
             "description": "If error property isn't exists, the component will appear hidden in DOM.",
             "itemtype": "property",
             "name": "isVisible",
             "type": "Boolean",
-            "class": "FlexberryValidationMessage",
+            "class": "FlexberryValidationmessage",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 15,
+            "line": 14,
             "description": "Class names for component wrapping <div>.",
             "itemtype": "property",
             "name": "classNames",
             "type": "Array",
-            "class": "FlexberryValidationSummary",
+            "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 23,
+            "line": 22,
             "description": "Semantic color class name for message text.",
             "itemtype": "property",
-            "name": "Color",
+            "name": "color",
             "type": "String",
             "default": "'red'",
-            "class": "FlexberryValidationSummary",
+            "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 32,
-            "description": "Errors object for display messages",
+            "line": 31,
+            "description": "Errors object for display messages.",
             "itemtype": "property",
-            "name": "Errors",
+            "name": "errors",
             "type": "Ember.Object",
             "default": "undefined",
-            "class": "FlexberryValidationSummary",
+            "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 41,
-            "description": "Errors own properties with validation errors messages",
+            "line": 40,
+            "description": "Errors own properties with validation errors messages.",
             "access": "private",
             "tagname": "",
             "itemtype": "property",
-            "name": "ValidationProperties",
+            "name": "validationProperties",
             "default": "undefined",
-            "class": "FlexberryValidationSummary",
+            "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 50,
+            "line": 49,
             "description": "Current errors messages",
             "itemtype": "property",
-            "name": "Messages",
+            "name": "messages",
             "type": "Ember.A",
             "default": "undefined",
-            "class": "FlexberryValidationSummary",
+            "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 59,
-            "description": "Push validation errors to messages array\nand change component visibility if no errors occurred",
-            "class": "FlexberryValidationSummary",
+            "line": 58,
+            "description": "Push validation errors to messages array\nand change component visibility if no errors occurred.",
+            "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
@@ -4766,8 +4766,8 @@
             "line": " ember-flexberry/addon/components/flexberry-textbox.js:50"
         },
         {
-            "message": "Missing item type\nPush validation errors to messages array\nand change component visibility if no errors occurred",
-            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:59"
+            "message": "Missing item type\nPush validation errors to messages array\nand change component visibility if no errors occurred.",
+            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:58"
         },
         {
             "message": "Missing item type\nQuery parameters.",

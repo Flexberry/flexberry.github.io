@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ListFormRoute - Flexberry Documentation</title>
+    <title>FlexberryValidationmessage - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -120,25 +120,14 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ListFormRoute <small>Class</small></h1>
+    <h1>FlexberryValidationmessage <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
-        <div class="uses">
-            Uses
-            <ul class="inline commas">
-                    <li><a href="PaginatedRouteMixin.html">PaginatedRouteMixin</a></li>
-                    <li><a href="SortableRouteMixin.html">SortableRouteMixin</a></li>
-                    <li><a href="LimitedRouteMixin.html">LimitedRouteMixin</a></li>
-            </ul>
-        </div>
 
-        <div class="extends">
-            Extends ProjectedModelFormRoute
-        </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l11"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:11</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-validationmessage.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationmessage.js:7</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -147,23 +136,7 @@
 
 
 <div class="well well-small">
-    <p>Base route for the List Forms.</p>
-<p>This class re-exports to the application as <code>/routes/list-form</code>.
-So, you can inherit from <code>./list-form</code>, even if file <code>app/routes/list-form.js</code>
-is not presented in the application.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-js">// app/routes/employees.js
-import ListFormRoute from './list-form';
-export default ListFormRoute.extend({
-});
-</code></pre>
-<p>If you want to add some common logic on all List Forms, you can define
-(actually override) <code>app/routes/list-form.js</code> as follows:</p>
-<pre class="code prettyprint"><code class="language-js">// app/routes/list-form.js
-import ListFormRoute from 'ember-flexberry/routes/list-form';
-export default ListFormRoute.extend({
-});
-</code></pre>
+    <p>Component for showing error message from model validators.</p>
 
 </div>
 
@@ -172,6 +145,7 @@ export default ListFormRoute.extend({
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
+            <li><a data-toggle="tab" href="#properties">Properties</a></li>
     </ul>
 
     <div class="tab-content">
@@ -179,11 +153,179 @@ export default ListFormRoute.extend({
             <h2 class="off-left">Item Index</h2>
 
 
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_classNames" data-tablink="classNames">classNames</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_color" data-tablink="color">color</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_error" data-tablink="error">error</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_isVisible" data-tablink="isVisible">isVisible</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_pointing" data-tablink="pointing">pointing</a>
+
+                            </li>
+                    </ul>
+                </div>
 
 
         </div>
 
 
+            <div id="properties" class="tab-pane">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_classNames" class="property item">
+                        <h3 class="name"><code>classNames</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationmessage.js.html#l13"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationmessage.js:13</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Class names for component wrapping <div>.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_color" class="property item">
+                        <h3 class="name"><code>color</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationmessage.js.html#l35"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationmessage.js:35</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Semantic color class name for label text.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;red&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_error" class="property item">
+                        <h3 class="name"><code>error</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a> | <a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationmessage.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationmessage.js:22</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Error messages array or error text for shown.
+                    Typically uses Ember.Model.errors for specific attribute, plain test also supported.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <p></p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="property_isVisible" class="property item">
+                        <h3 class="name"><code>isVisible</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationmessage.js.html#l54"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationmessage.js:54</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>If error property isn't exists, the component will appear hidden in DOM.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_pointing" class="property item">
+                        <h3 class="name"><code>pointing</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-validationmessage.js.html#l44"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-validationmessage.js:44</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Label pointing direction.
+                    Possible variants: '', pointing, pointing above, pointing below, left pointing, right pointing.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;&#x27;</p>
+                    
+                    
+                    </div>
+            </div>
 
 
     </div>

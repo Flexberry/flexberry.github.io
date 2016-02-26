@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -67,8 +67,8 @@
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
 	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
-	                            <li><a href="../classes/FlexberryValidationMessage.html">FlexberryValidationMessage</a></li>
-	                            <li><a href="../classes/FlexberryValidationSummary.html">FlexberryValidationSummary</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
 	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
@@ -134,11 +134,10 @@ import Ember from &#x27;ember&#x27;;
 /**
  * ValidationSummary component for Semantic UI.
  *
- * @class FlexberryValidationSummary
+ * @class FlexberryValidationsummary
  * @extends Ember.Component
  */
 export default Ember.Component.extend({
-
   /**
    * Class names for component wrapping &lt;div&gt;.
    *
@@ -150,46 +149,43 @@ export default Ember.Component.extend({
   /**
    * Semantic color class name for message text.
    *
-   * @property Color
+   * @property color
    * @type String
    * @default &#x27;red&#x27;
    */
   color: &#x27;red&#x27;,
 
   /**
-   * Errors object for display messages
-
-   * @property Errors
+   * Errors object for display messages.
+   *
+   * @property errors
    * @type Ember.Object
    * @default undefined
    */
   errors: undefined,
 
   /**
-   * Errors own properties with validation errors messages
-
+   * Errors own properties with validation errors messages.
+   *
    * @private
-   * @property ValidationProperties
+   * @property validationProperties
    * @default undefined
-   * */
+   */
   validationProperties: undefined,
 
   /**
    * Current errors messages
 
-   * @property Messages
+   * @property messages
    * @type Ember.A
    * @default undefined
-   * */
+   */
   messages: undefined,
 
   /**
    * Push validation errors to messages array
-   * and change component visibility if no errors occurred
-
-   *
-   *
-   * */
+   * and change component visibility if no errors occurred.
+   */
   changeMessages: function () {
     let messages = new Ember.A();
 
@@ -221,6 +217,12 @@ export default Ember.Component.extend({
 
     this.get(&#x27;classNames&#x27;).push(this.get(&#x27;color&#x27;));
     this.changeMessages();
+  },
+
+  willDestroy: function () {
+    let errors = this.get(&#x27;errors&#x27;);
+    this.get(&#x27;validationProperties&#x27;).forEach(propertyName =&gt; errors.removeObserver(propertyName + &#x27;.[]&#x27;, this, &#x27;changeMessages&#x27;));
+    this._super(...arguments);
   }
 });
 
