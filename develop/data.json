@@ -371,11 +371,11 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry/addon/services/groupedit-events.js": {
-            "name": "ember-flexberry/addon/services/groupedit-events.js",
+        "ember-flexberry/addon/services/objectlistview-events.js": {
+            "name": "ember-flexberry/addon/services/objectlistview-events.js",
             "modules": {},
             "classes": {
-                "GroupEditEvents": 1
+                "ObjectlistviewEvents": 1
             },
             "fors": {},
             "namespaces": {}
@@ -467,7 +467,7 @@
                 "FlexberryLookupCompatibleComponentMixin": 1,
                 "EditFormRoute": 1,
                 "ListFormRoute": 1,
-                "GroupEditEvents": 1,
+                "ObjectlistviewEvents": 1,
                 "EnumBaseTransform": 1,
                 "EnumNumberTransform": 1,
                 "EnumStringTransform": 1,
@@ -892,9 +892,9 @@
                 "LimitedRouteMixin"
             ]
         },
-        "GroupEditEvents": {
-            "name": "GroupEditEvents",
-            "shortname": "GroupEditEvents",
+        "ObjectlistviewEvents": {
+            "name": "ObjectlistviewEvents",
+            "shortname": "ObjectlistviewEvents",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -902,9 +902,9 @@
             "extension_for": [],
             "module": "ember-flexberry",
             "namespace": "",
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
             "line": 7,
-            "description": "Service for triggering groupedit events.",
+            "description": "Service for triggering objectlistview events.",
             "extends": "Ember.Service",
             "access": "public",
             "tagname": ""
@@ -2501,6 +2501,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 50,
+            "description": "Flag to use delete button at toolbar.",
+            "itemtype": "property",
+            "name": "deleteButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 59,
             "description": "Projection for detail object's model.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -2511,7 +2522,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 59,
+            "line": 68,
             "description": "Array of models for detail objects.",
             "itemtype": "property",
             "name": "content",
@@ -2522,7 +2533,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 68,
+            "line": 77,
             "description": "Current sort order.",
             "itemtype": "property",
             "name": "sorting",
@@ -2533,7 +2544,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 77,
+            "line": 86,
             "description": "Array of pages to show.",
             "itemtype": "property",
             "name": "pages",
@@ -2544,7 +2555,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 86,
+            "line": 95,
             "description": "Current number of records to show per page.",
             "itemtype": "property",
             "name": "perPageValue",
@@ -2555,7 +2566,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 95,
+            "line": 104,
             "description": "Array of numbers of records to show on one page.",
             "itemtype": "property",
             "name": "perPageValues",
@@ -2566,7 +2577,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 104,
+            "line": 113,
             "description": "Function to determine if current page has previous page.",
             "itemtype": "property",
             "name": "hasPreviousPage",
@@ -2577,7 +2588,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 113,
+            "line": 122,
             "description": "Function to determine if current page has next page.",
             "itemtype": "property",
             "name": "hasNextPage",
@@ -2588,7 +2599,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 122,
+            "line": 131,
             "description": "Setting to true enables row ordering by clicking on column headers.",
             "itemtype": "property",
             "name": "orderable",
@@ -2599,7 +2610,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 131,
+            "line": 140,
             "description": "Flag to allow row click.",
             "itemtype": "property",
             "name": "rowClickable",
@@ -2610,7 +2621,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 140,
+            "line": 149,
             "description": "Flag to show checkboxes in row.",
             "itemtype": "property",
             "name": "showCheckBoxInRow",
@@ -2621,7 +2632,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 149,
+            "line": 158,
             "description": "Flag to show delete button in row.",
             "itemtype": "property",
             "name": "showDeleteButtonInRow",
@@ -2632,7 +2643,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 159,
+            "line": 168,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "sortByColumn",
@@ -2648,7 +2659,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 170,
+            "line": 179,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "addColumnToSorting",
@@ -2664,7 +2675,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 181,
+            "line": 190,
             "description": "Handles action from row click (action is handled at route so it can't be closure action now).",
             "itemtype": "method",
             "name": "rowClick",
@@ -2680,7 +2691,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 191,
+            "line": 200,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "previousPage",
@@ -2689,7 +2700,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 201,
+            "line": 210,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "nextPage",
@@ -2698,7 +2709,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 211,
+            "line": 220,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "gotoPage",
@@ -2714,7 +2725,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 222,
+            "line": 231,
             "description": "A stub for call of custom user buttons. Used when no handler is defined.",
             "itemtype": "method",
             "name": "customButtons",
@@ -2727,7 +2738,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 232,
+            "line": 241,
             "description": "Handler to get user button's actions and send action to corresponding controllers's handler.",
             "itemtype": "method",
             "name": "customButtonAction",
@@ -3203,16 +3214,80 @@
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
             "line": 56,
-            "description": "Service that triggers groupedit events.",
+            "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
-            "name": "groupEditEventsService",
-            "type": "GroupEditEvents",
+            "name": "objectlistviewEventsService",
+            "type": "Service",
+            "class": "FlexberryObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view.js",
+            "line": 302,
+            "description": "Handler for \"delete selected rows\" event in objectlistview.",
+            "itemtype": "method",
+            "name": "_deleteRows",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "The name of objectlistview component.",
+                    "type": "String"
+                },
+                {
+                    "name": "immediately",
+                    "description": "Flag to delete record immediately.",
+                    "type": "Boolean"
+                }
+            ],
             "class": "FlexberryObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 13,
+            "line": 11,
+            "description": "Service that triggers objectlistview events.",
+            "itemtype": "property",
+            "name": "objectlistviewEventsService",
+            "type": "ObjectlistviewEvents",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 19,
+            "description": "Flag to use creation button at toolbar.",
+            "itemtype": "property",
+            "name": "createNewButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 28,
+            "description": "Flag to use refresh button at toolbar.",
+            "itemtype": "property",
+            "name": "refreshButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 37,
+            "description": "Flag to use delete button at toolbar.",
+            "itemtype": "property",
+            "name": "deleteButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 46,
             "description": "Name of action to send out, action triggered by click on user button.",
             "itemtype": "property",
             "name": "customButtonAction",
@@ -3223,7 +3298,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 22,
+            "line": 55,
             "description": "Handler to get custom buttons from controller.\nIt has to be closure event and return array of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].",
             "itemtype": "property",
             "name": "customButtonsClosureEvent",
@@ -3234,12 +3309,69 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 32,
+            "line": 65,
             "description": "Array of custom buttons.",
             "itemtype": "property",
             "name": "customButtonsArray",
             "type": "Array",
             "default": "undefined",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 92,
+            "description": "Implementation of component's teardown.",
+            "itemtype": "method",
+            "name": "willDestroy",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 113,
+            "description": "Delete selected rows.",
+            "itemtype": "method",
+            "name": "delete",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 127,
+            "description": "Flag shows enable-state of delete button.\nIf there are selected rows button is enabled. Otherwise - not.",
+            "itemtype": "property",
+            "name": "isDeleteButtonEnabled",
+            "type": "Boolean",
+            "default": "false",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 137,
+            "description": "Event handler for \"row has been selected\" event in objectlistview.",
+            "itemtype": "method",
+            "name": "_rowSelected",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "The name of objectlistview component.",
+                    "type": "String"
+                },
+                {
+                    "name": "record",
+                    "description": "The model corresponding to selected row in objectlistview.",
+                    "type": "Model"
+                },
+                {
+                    "name": "count",
+                    "description": "Count of selected rows in objectlistview.",
+                    "type": "Integer"
+                }
+            ],
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
@@ -3736,14 +3868,14 @@
             "file": "ember-flexberry/addon/serializers/odata.js",
             "line": 5,
             "description": "Flag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/serializers/odata.js",
             "line": 10,
             "description": "Prefix for response metadata properties names.",
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
@@ -3772,7 +3904,7 @@
                 "description": "Valid {@link http://jsonapi.org/format/#document-top-level|JSON API document}.",
                 "type": "Object"
             },
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
@@ -3797,7 +3929,7 @@
                 "description": "Valid {http://jsonapi.org/format/#document-top-level|@link JSON API document}.",
                 "type": "Object"
             },
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
@@ -3822,7 +3954,7 @@
                 "description": "Metadata extracted from received object (any format is allowed).",
                 "type": "Object"
             },
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
@@ -3839,7 +3971,7 @@
                 "description": "Key for a given attribute.",
                 "type": "String"
             },
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
@@ -3860,7 +3992,7 @@
                 "description": "Key for a given relationship.",
                 "type": "String"
             },
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
@@ -3885,7 +4017,7 @@
                     "description": "Serialization options."
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
@@ -3908,160 +4040,175 @@
             ],
             "access": "private",
             "tagname": "",
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
             "line": 15,
-            "description": "Trigger for \"add new row\" event in groupedit.\nEvent name: groupEditAddRow.",
+            "description": "Trigger for \"add new row\" event in objectlistview.\nEvent name: olvAddRow.",
             "itemtype": "method",
             "name": "addRowTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
             "line": 27,
-            "description": "Trigger for \"delete current row\" event in groupedit.\nEvent name: groupEditDeleteRow.",
+            "description": "Trigger for \"delete current row\" event in objectlistview.\nEvent name: olvDeleteRow.",
             "itemtype": "method",
             "name": "deleteRowTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
             "line": 39,
-            "description": "Trigger for \"delete selected rows\" event in groupedit.\nEvent name: groupEditDeleteRows.",
+            "description": "Trigger for \"delete selected rows\" event in objectlistview.\nEvent name: olvDeleteRows.",
             "itemtype": "method",
             "name": "deleteRowsTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
+                },
+                {
+                    "name": "immediately",
+                    "description": "Flag to delete record immediately.",
+                    "type": "Boolean"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
-            "line": 51,
-            "description": "Trigger for \"new row has been added\" event in groupedit.\nEvent name: groupEditRowAdded.",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
+            "line": 52,
+            "description": "Trigger for \"new row has been added\" event in objectlistview.\nEvent name: olvRowAdded.",
             "itemtype": "method",
             "name": "rowAddedTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
                 },
                 {
                     "name": "record",
-                    "description": "The model corresponding to added row in groupedit.",
+                    "description": "The model corresponding to added row in objectlistview.",
                     "type": "Model"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
-            "line": 64,
-            "description": "Trigger for \"row has been deleted\" event in groupedit.\nEvent name: groupEditRowDeleted.",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
+            "line": 65,
+            "description": "Trigger for \"row has been deleted\" event in objectlistview.\nEvent name: olvRowDeleted.",
             "itemtype": "method",
             "name": "rowDeletedTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
                 },
                 {
                     "name": "record",
-                    "description": "The model corresponding to deleted row in groupedit.",
+                    "description": "The model corresponding to deleted row in objectlistview.",
                     "type": "Model"
+                },
+                {
+                    "name": "immediately",
+                    "description": "Flag to show if record was deleted immediately.",
+                    "type": "Boolean"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
-            "line": 77,
-            "description": "Trigger for \"selected rows has been deleted\" event in groupedit.\nEvent name: groupEditRowDeleted.",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
+            "line": 79,
+            "description": "Trigger for \"selected rows has been deleted\" event in objectlistview.\nEvent name: groupEditRowDeleted.",
             "itemtype": "method",
             "name": "rowDeletedTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
                 },
                 {
                     "name": "count",
-                    "description": "Count of deleted rows in groupedit.",
+                    "description": "Count of deleted rows in objectlistview.",
                     "type": "Integer"
+                },
+                {
+                    "name": "immediately",
+                    "description": "Flag to show if records were deleted immediately.",
+                    "type": "Boolean"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
-            "line": 90,
-            "description": "Trigger for \"row has been selected\" event in groupedit.\nEvent name: groupEditRowSelected.",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
+            "line": 93,
+            "description": "Trigger for \"row has been selected\" event in objectlistview.\nEvent name: olvRowSelected.",
             "itemtype": "method",
             "name": "rowSelectedTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
                 },
                 {
                     "name": "record",
-                    "description": "The model corresponding to selected row in groupedit.",
+                    "description": "The model corresponding to selected row in objectlistview.",
                     "type": "Model"
                 },
                 {
                     "name": "count",
-                    "description": "Count of selected rows in groupedit.",
+                    "description": "Count of selected rows in objectlistview.",
                     "type": "Integer"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/services/groupedit-events.js",
-            "line": 104,
-            "description": "Trigger for \"model(s) corresponding to some row(s) was changed\" event in groupedit.\nEvent name: groupEditRowsChanged.",
+            "file": "ember-flexberry/addon/services/objectlistview-events.js",
+            "line": 107,
+            "description": "Trigger for \"model(s) corresponding to some row(s) was changed\" event in objectlistview.\nEvent name: olvRowsChanged.",
             "itemtype": "method",
             "name": "rowsChangedTrigger",
             "params": [
                 {
                     "name": "componentName",
-                    "description": "The name of flexberry-groupedit component.",
+                    "description": "The name of objectlistview component.",
                     "type": "String"
                 }
             ],
-            "class": "GroupEditEvents",
+            "class": "ObjectlistviewEvents",
             "module": "ember-flexberry"
         },
         {

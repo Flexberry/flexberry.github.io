@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -69,12 +69,12 @@
 	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
 	                            <li><a href="../classes/FlexberryValidationMessage.html">FlexberryValidationMessage</a></li>
 	                            <li><a href="../classes/FlexberryValidationSummary.html">FlexberryValidationSummary</a></li>
-	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
 	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
 	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -175,6 +175,15 @@ export default FlexberryBaseComponent.extend({
   refreshButton: false,
 
   /**
+   * Flag to use delete button at toolbar.
+   *
+   * @property deleteButton
+   * @type Boolean
+   * @default false
+   */
+  deleteButton: false,
+
+  /**
    * Projection for detail object&#x27;s model.
    *
    * @property modelProjection
@@ -271,7 +280,7 @@ export default FlexberryBaseComponent.extend({
    * @type Boolean
    * @default false
    */
-  _showCheckBoxInRow: false,
+  showCheckBoxInRow: false,
 
   /**
    * Flag to show delete button in row.

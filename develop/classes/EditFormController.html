@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -69,12 +69,12 @@
 	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
 	                            <li><a href="../classes/FlexberryValidationMessage.html">FlexberryValidationMessage</a></li>
 	                            <li><a href="../classes/FlexberryValidationSummary.html">FlexberryValidationSummary</a></li>
-	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
 	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
 	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -196,6 +196,10 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method__qpChanged" data-tablink="_qpChanged">_qpChanged</a>
 
                             </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__rowSelected" data-tablink="_rowSelected">_rowSelected</a>
+
+                            </li>
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__scheduledDestroy" data-tablink="_scheduledDestroy">_scheduledDestroy</a>
 
@@ -214,6 +218,10 @@ export default EditFormController.extend({
                             </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_decrementProperty" data-tablink="decrementProperty">decrementProperty</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_delete" data-tablink="delete">delete</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -320,7 +328,7 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_trigger" data-tablink="trigger">trigger</a>
 
                             </li>
-                            <li class="index-item method public inherited">
+                            <li class="index-item method inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_willDestroy" data-tablink="willDestroy">willDestroy</a>
 
                             </li>
@@ -340,6 +348,10 @@ export default EditFormController.extend({
 
                             </li>
                             <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_createNewButton" data-tablink="createNewButton">createNewButton</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_customButtonAction" data-tablink="customButtonAction">customButtonAction</a>
 
                             </li>
@@ -349,6 +361,14 @@ export default EditFormController.extend({
                             </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_customButtonsClosureEvent" data-tablink="customButtonsClosureEvent">customButtonsClosureEvent</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_deleteButton" data-tablink="deleteButton">deleteButton</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_isDeleteButtonEnabled" data-tablink="isDeleteButtonEnabled">isDeleteButtonEnabled</a>
 
                             </li>
                             <li class="index-item property public inherited">
@@ -371,6 +391,10 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#properties" data-anchor="#property_model" data-tablink="model">model</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_objectlistviewEventsService" data-tablink="objectlistviewEventsService">objectlistviewEventsService</a>
+
+                            </li>
                             <li class="index-item property public inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_queryParams" data-tablink="queryParams">queryParams</a>
 
@@ -381,6 +405,10 @@ export default EditFormController.extend({
                             </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_readonlyAttr" data-tablink="readonlyAttr">readonlyAttr</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_refreshButton" data-tablink="refreshButton">refreshButton</a>
 
                             </li>
                             <li class="index-item property public inherited">
@@ -495,6 +523,88 @@ export default EditFormController.extend({
                             
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="method__rowSelected" class="method item private">
+                        <h3 class="name"><code>_rowSelected</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>componentName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>record</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>count</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l137"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:137</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Event handler for "row has been selected" event in objectlistview.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">componentName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The name of objectlistview component.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">record</code>
+                                            <span class="type">Model</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The model corresponding to selected row in objectlistview.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">count</code>
+                                            <span class="type">Integer</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Count of selected rows in objectlistview.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                     
                     </div>
@@ -839,6 +949,36 @@ export default EditFormController.extend({
                                         The new property value
                                 </div>
                             </div>
+                    
+                    </div>
+                    <div id="method_delete" class="method item">
+                        <h3 class="name"><code>delete</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l113"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:113</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Delete selected rows.</p>
+                    
+                        </div>
+                    
+                    
                     
                     </div>
                     <div id="method_destroy" class="method item public inherited">
@@ -2896,23 +3036,25 @@ export default EditFormController.extend({
                     
                     
                     </div>
-                    <div id="method_willDestroy" class="method item public inherited">
+                    <div id="method_willDestroy" class="method item">
                         <h3 class="name"><code>willDestroy</code></h3>
                     
                             <span class="paren">()</span>
                     
                     
                     
-                            <span class="flag public">public</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="http://emberjs.com/api/classes/Ember.CoreObject.html#method_willDestroy">Ember.CoreObject</a>:
-                            <a href="http://emberjs.com/api/files/packages_ember-runtime_lib_system_core_object.js.html#l457"><code>packages&#x2F;ember-runtime&#x2F;lib&#x2F;system&#x2F;core_object.js:457</code></a>
+                                <p>Inherited from
+                                <a href="http://emberjs.com/api/classes/Ember.CoreObject.html#method_willDestroy">
+                                    Ember.CoreObject
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l92"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:92</code></a>
                             </p>
                     
                     
@@ -2920,7 +3062,8 @@ export default EditFormController.extend({
                         </div>
                     
                         <div class="description">
-                            Override to implement teardown.
+                            <p>Implementation of component's teardown.</p>
+                    
                         </div>
                     
                     
@@ -3041,6 +3184,32 @@ export default EditFormController.extend({
                     
                     
                     </div>
+                    <div id="property_createNewButton" class="property item">
+                        <h3 class="name"><code>createNewButton</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l19"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:19</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to use creation button at toolbar.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
                     <div id="property_customButtonAction" class="property item">
                         <h3 class="name"><code>customButtonAction</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -3052,7 +3221,7 @@ export default EditFormController.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l13"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:13</code></a>
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l46"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:46</code></a>
                             </p>
                     
                     
@@ -3078,7 +3247,7 @@ export default EditFormController.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:32</code></a>
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l65"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:65</code></a>
                             </p>
                     
                     
@@ -3104,7 +3273,7 @@ export default EditFormController.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:22</code></a>
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l55"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:55</code></a>
                             </p>
                     
                     
@@ -3117,6 +3286,59 @@ export default EditFormController.extend({
                         </div>
                     
                             <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_deleteButton" class="property item">
+                        <h3 class="name"><code>deleteButton</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l37"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:37</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to use delete button at toolbar.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_isDeleteButtonEnabled" class="property item">
+                        <h3 class="name"><code>isDeleteButtonEnabled</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l127"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:127</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag shows enable-state of delete button.
+                    If there are selected rows button is enabled. Otherwise - not.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
                     
                     
                     </div>
@@ -3315,6 +3537,31 @@ export default EditFormController.extend({
                     
                     
                     </div>
+                    <div id="property_objectlistviewEventsService" class="property item">
+                        <h3 class="name"><code>objectlistviewEventsService</code></h3>
+                        <span class="type"><a href="../classes/ObjectlistviewEvents.html" class="crosslink">ObjectlistviewEvents</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l11"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:11</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Service that triggers objectlistview events.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_queryParams" class="property item public inherited">
                         <h3 class="name"><code>queryParams</code></h3>
                         <span class="type">Unknown</span>
@@ -3392,6 +3639,32 @@ export default EditFormController.extend({
                         </div>
                     
                             <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_refreshButton" class="property item">
+                        <h3 class="name"><code>refreshButton</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l28"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:28</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag to use refresh button at toolbar.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
                     
                     
                     </div>

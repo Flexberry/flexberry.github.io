@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -69,12 +69,12 @@
 	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
 	                            <li><a href="../classes/FlexberryValidationMessage.html">FlexberryValidationMessage</a></li>
 	                            <li><a href="../classes/FlexberryValidationSummary.html">FlexberryValidationSummary</a></li>
-	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
 	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
 	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -134,8 +134,41 @@ import Ember from &#x27;ember&#x27;;
 export default Ember.Component.extend({
   modelName: null,
   modelController:null,
+
+  /**
+   * Service that triggers objectlistview events.
+   *
+   * @property objectlistviewEventsService
+   * @type ObjectlistviewEvents
+   */
+  objectlistviewEventsService: Ember.inject.service(&#x27;objectlistview-events&#x27;),
+
+  /**
+   * Flag to use creation button at toolbar.
+   *
+   * @property createNewButton
+   * @type Boolean
+   * @default false
+   */
   createNewButton: false,
+
+  /**
+   * Flag to use refresh button at toolbar.
+   *
+   * @property refreshButton
+   * @type Boolean
+   * @default false
+   */
   refreshButton: false,
+
+  /**
+   * Flag to use delete button at toolbar.
+   *
+   * @property deleteButton
+   * @type Boolean
+   * @default false
+   */
+  deleteButton: false,
 
   /**
    * Name of action to send out, action triggered by click on user button.
@@ -167,11 +200,31 @@ export default Ember.Component.extend({
 
   init: function() {
     this._super(...arguments);
+
+    var componentName = this.get(&#x27;componentName&#x27;);
+    if (this.get(&#x27;deleteButton&#x27;) === true &amp;&amp; !componentName) {
+      throw new Error(&#x27;Name of flexberry-objectlictview component was not defined.&#x27;);
+    }
+
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvRowSelected&#x27;, this, this._rowSelected);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvRowsDeleted&#x27;, this, this._rowsDeleted);
+
     let customButton = this.get(&#x27;customButtonsClosureEvent&#x27;);
     if (customButton &amp;&amp; typeof (customButton) === &#x27;function&#x27;) {
       let customButtonsResult = customButton();
       this.set(&#x27;customButtonsArray&#x27;, customButtonsResult);
     }
+  },
+
+  /**
+   * Implementation of component&#x27;s teardown.
+   *
+   * @method willDestroy
+   */
+  willDestroy() {
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvRowSelected&#x27;, this, this._rowSelected);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvRowsDeleted&#x27;, this, this._rowsDeleted);
+    this._super(...arguments);
   },
 
   actions: {
@@ -183,8 +236,44 @@ export default Ember.Component.extend({
       let modelName = this.get(&#x27;modelName&#x27;);
       modelController.transitionToRoute(modelName + &#x27;.new&#x27;);
     },
+
+    /**
+     * Delete selected rows.
+     *
+     * @method delete
+     */
+    delete: function() {
+      var componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
+    },
     customButtonAction: function(actionName) {
       this.sendAction(&#x27;customButtonAction&#x27;, actionName);
+    }
+  },
+
+  /**
+   * Flag shows enable-state of delete button.
+   * If there are selected rows button is enabled. Otherwise - not.
+   *
+   * @property isDeleteButtonEnabled
+   * @type Boolean
+   * @default false
+   */
+  isDeleteButtonEnabled: false,
+
+  /**
+   * Event handler for &quot;row has been selected&quot; event in objectlistview.
+   *
+   * @method _rowSelected
+   * @private
+   *
+   * @param {String} componentName The name of objectlistview component.
+   * @param {Model} record The model corresponding to selected row in objectlistview.
+   * @param {Integer} count Count of selected rows in objectlistview.
+   */
+  _rowSelected: function(componentName, record, count) {
+    if (componentName === this.get(&#x27;componentName&#x27;)) {
+      this.set(&#x27;isDeleteButtonEnabled&#x27;, count &gt; 0);
     }
   }
 });

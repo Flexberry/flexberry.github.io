@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -69,12 +69,12 @@
 	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
 	                            <li><a href="../classes/FlexberryValidationMessage.html">FlexberryValidationMessage</a></li>
 	                            <li><a href="../classes/FlexberryValidationSummary.html">FlexberryValidationSummary</a></li>
-	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
 	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
 	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -181,12 +181,12 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   noDataMessage: null,
 
   /**
-   * Service that triggers groupedit events.
+   * Service that triggers objectlistview events.
    *
-   * @property groupEditEventsService
-   * @type GroupEditEvents
+   * @property objectlistviewEventsService
+   * @type Service
    */
-  groupEditEventsService: Ember.inject.service(&#x27;groupedit-events&#x27;),
+  objectlistviewEventsService: Ember.inject.service(&#x27;objectlistview-events&#x27;),
 
   contentWithKeys: null,
 
@@ -230,7 +230,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       }
 
       var componentName = this.get(&#x27;componentName&#x27;);
-      this.get(&#x27;groupEditEventsService&#x27;).rowSelectedTrigger(componentName, record, selectedRecords.length);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, record, selectedRecords.length);
     }
   },
 
@@ -238,8 +238,8 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     this._super(...arguments);
 
     this.set(&#x27;selectedRecords&#x27;, Ember.A());
-    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditAddRow&#x27;, this, this._addRow);
-    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvDeleteRows&#x27;, this, this._deleteRows);
     this.set(&#x27;contentWithKeys&#x27;, Ember.A());
     if (!this.get(&#x27;noDataMessage&#x27;)) {
       this.set(&#x27;noDataMessage&#x27;, &#x27;There is no data&#x27;);
@@ -258,8 +258,8 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   },
 
   willDestroy: function() {
-    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditAddRow&#x27;, this, this._addRow);
-    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditDeleteRows&#x27;, this, this._deleteRows);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvDeleteRows&#x27;, this, this._deleteRows);
 
     this._super(...arguments);
   },
@@ -422,11 +422,19 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       var modelToAdd = this.get(&#x27;store&#x27;).createRecord(modelName, {});
       this.get(&#x27;content&#x27;).addObject(modelToAdd);
       this._addModel(modelToAdd);
-      this.get(&#x27;groupEditEventsService&#x27;).rowAddedTrigger(componentName, modelToAdd);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowAddedTrigger(componentName, modelToAdd);
     }
   },
 
-  _deleteRows: function(componentName) {
+  /**
+   * Handler for &quot;delete selected rows&quot; event in objectlistview.
+   *
+   * @method _deleteRows
+   *
+   * @param {String} componentName The name of objectlistview component.
+   * @param {Boolean} immediately Flag to delete record immediately.
+   */
+  _deleteRows: function(componentName, immediately) {
     if (componentName === this.get(&#x27;componentName&#x27;)) {
       if (confirm(&#x27;Do you really want to delete selected records?&#x27;)) {
         var _this = this;
@@ -434,21 +442,26 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
         var count = selectedRecords.length;
         selectedRecords.forEach(function(item, index, enumerable) {
           Ember.run.once(this, function() {
-            _this._deleteRecord(item);
+            _this._deleteRecord(item, immediately);
           });
         }, this);
+
         selectedRecords.clear();
-        this.get(&#x27;groupEditEventsService&#x27;).rowsDeletedTrigger(componentName, count);
+        this.get(&#x27;objectlistviewEventsService&#x27;).rowsDeletedTrigger(componentName, count);
       }
     }
   },
 
-  _deleteRecord: function(record) {
+  _deleteRecord: function(record, immediately) {
     var key = this._getModelKey(record);
     this._removeModelWithKey(key);
     record.deleteRecord();
+    if (immediately === true) {
+      record.save();
+    }
+
     var componentName = this.get(&#x27;componentName&#x27;);
-    this.get(&#x27;groupEditEventsService&#x27;).rowDeletedTrigger(componentName, record);
+    this.get(&#x27;objectlistviewEventsService&#x27;).rowDeletedTrigger(componentName, record, immediately);
   },
 
   _setActiveRecord: function(key) {
@@ -464,7 +477,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
 
   _detailChanged: Ember.observer(&#x27;content.@each.hasDirtyAttributes&#x27;, function() {
     var componentName = this.get(&#x27;componentName&#x27;);
-    this.get(&#x27;groupEditEventsService&#x27;).rowsChangedTrigger(componentName);
+    this.get(&#x27;objectlistviewEventsService&#x27;).rowsChangedTrigger(componentName);
   })
 });
 

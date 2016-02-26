@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditEvents", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationMessage", "classes/FlexberryValidationSummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -69,12 +69,12 @@
 	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
 	                            <li><a href="../classes/FlexberryValidationMessage.html">FlexberryValidationMessage</a></li>
 	                            <li><a href="../classes/FlexberryValidationSummary.html">FlexberryValidationSummary</a></li>
-	                            <li><a href="../classes/GroupEditEvents.html">GroupEditEvents</a></li>
 	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
 	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
 	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
 	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
@@ -134,15 +134,15 @@ export default Ember.Mixin.create({
    * @property groupEditEventsService
    * @type Service
    */
-  groupEditEventsService: Ember.inject.service(&#x27;groupedit-events&#x27;),
+  groupEditEventsService: Ember.inject.service(&#x27;objectlistview-events&#x27;),
   deletedRecords: null,
 
   activate() {
     this._super(...arguments);
 
-    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowAdded&#x27;, this, this._rowAdded);
-    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowDeleted&#x27;, this, this._rowDeleted);
-    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;groupEditRowsChanged&#x27;, this, this._rowChanged);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;olvRowAdded&#x27;, this, this._rowAdded);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;olvRowDeleted&#x27;, this, this._rowDeleted);
+    this.get(&#x27;groupEditEventsService&#x27;).on(&#x27;olvRowsChanged&#x27;, this, this._rowChanged);
 
     if (!this.get(&#x27;deletedRecords&#x27;)) {
       this.set(&#x27;deletedRecords&#x27;, Ember.A());
@@ -154,9 +154,9 @@ export default Ember.Mixin.create({
   deactivate() {
     this._super(...arguments);
 
-    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowAdded&#x27;, this, this._rowAdded);
-    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowDeleted&#x27;, this, this._rowDeleted);
-    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;groupEditRowsChanged&#x27;, this, this._rowChanged);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;olvRowAdded&#x27;, this, this._rowAdded);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;olvRowDeleted&#x27;, this, this._rowDeleted);
+    this.get(&#x27;groupEditEventsService&#x27;).off(&#x27;olvRowsChanged&#x27;, this, this._rowChanged);
   },
 
   /**
