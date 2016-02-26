@@ -1779,7 +1779,7 @@
             "itemtype": "property",
             "name": "items",
             "type": "Array",
-            "default": "null",
+            "default": "[]",
             "class": "FlexberryDropDown",
             "module": "ember-flexberry"
         },
