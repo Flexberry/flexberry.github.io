@@ -178,23 +178,22 @@ export default ProjectedModelFormRoute.extend(FlexberryGroupeditRouteMixin, {
     this._super.apply(this, arguments);
 
     controller.send(&#x27;dismissErrorMessages&#x27;);
-    var model = controller.get(&#x27;model&#x27;);
-    this._rollbackDetails(model);
+
+    controller.rollbackHasManyRelationships();
+    let model = controller.get(&#x27;model&#x27;);
     if (model &amp;&amp; model.get(&#x27;hasDirtyAttributes&#x27;)) {
       model.rollbackAttributes();
     }
   },
 
   setupController: function(controller, model) {
-    // Call _super for default behavior.
-    this._super(controller, model);
+    this._super(...arguments);
 
     // Define &#x27;modelProjection&#x27; for controller instance.
     let modelClass = model.constructor;
     let modelProjName = this.get(&#x27;modelProjection&#x27;);
     let proj = modelClass.projections.get(modelProjName);
     controller.set(&#x27;modelProjection&#x27;, proj);
-    controller.set(&#x27;modelProjectionName&#x27;, modelProjName);
   },
 
   actions: {
@@ -208,36 +207,6 @@ export default ProjectedModelFormRoute.extend(FlexberryGroupeditRouteMixin, {
       this._super(transition);
       this.controller.send(&#x27;routeWillTransition&#x27;);
     }
-  },
-
-  _rollbackDetails: function(model) {
-    var modelClass = model.constructor;
-    var modelProjName = this.get(&#x27;modelProjection&#x27;);
-    var projection = modelClass.projections.get(modelProjName);
-    var attributes = projection.attributes;
-    for (var attrName in attributes) {
-      if (!attributes.hasOwnProperty(attrName)) {
-        continue;
-      }
-
-      var attr = attributes[attrName];
-      if (attr.kind === &#x27;hasMany&#x27;) {
-        var detailModels = model.get(attrName);
-        for (var i = 0; i &lt; detailModels.get(&#x27;length&#x27;); i++) {
-          if (detailModels.objectAt(i).get(&#x27;hasDirtyAttributes&#x27;)) {
-            detailModels.objectAt(i).rollbackAttributes();
-          }
-        }
-      }
-    }
-
-    var _this = this;
-    this.get(&#x27;deletedRecords&#x27;).forEach(function(deletedRecord) {
-      _this.store.findRecord(deletedRecord.model, deletedRecord.id, { reload: false }).then(function(record) {
-        record.rollbackAttributes();
-      });
-    });
-    this.get(&#x27;deletedRecords&#x27;).clear();
   }
 });
 

@@ -228,6 +228,10 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_destroy" data-tablink="destroy">destroy</a>
 
                             </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_destroyHasManyRelationships" data-tablink="destroyHasManyRelationships">destroyHasManyRelationships</a>
+
+                            </li>
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_endPropertyChanges" data-tablink="endPropertyChanges">endPropertyChanges</a>
 
@@ -304,6 +308,14 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_replaceRoute" data-tablink="replaceRoute">replaceRoute</a>
 
                             </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_rollbackHasManyRelationships" data-tablink="rollbackHasManyRelationships">rollbackHasManyRelationships</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_saveHasManyRelationships" data-tablink="saveHasManyRelationships">saveHasManyRelationships</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_set" data-tablink="set">set</a>
 
@@ -365,6 +377,10 @@ export default EditFormController.extend({
                             </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_deleteButton" data-tablink="deleteButton">deleteButton</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_destroyHasManyRelationshipsOnModelDestroy" data-tablink="destroyHasManyRelationshipsOnModelDestroy">destroyHasManyRelationshipsOnModelDestroy</a>
 
                             </li>
                             <li class="index-item property">
@@ -1029,6 +1045,49 @@ export default EditFormController.extend({
                             </div>
                     
                     </div>
+                    <div id="method_destroyHasManyRelationships" class="method item">
+                        <h3 class="name"><code>destroyHasManyRelationships</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l264"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:264</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Destroy (delete and save) all hasMany relationships in the <code>model</code>.
+                    This method invokes by <code>delete</code> method.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>:
+                                        <p>Current <code>model</code>.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method_endPropertyChanges" class="method item private inherited">
                         <h3 class="name"><code>endPropertyChanges</code></h3>
                     
@@ -1200,7 +1259,7 @@ export default EditFormController.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l170"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:170</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l156"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:156</code></a>
                             </p>
                     
                     
@@ -2501,6 +2560,80 @@ export default EditFormController.extend({
                     
                     
                     </div>
+                    <div id="method_rollbackHasManyRelationships" class="method item">
+                        <h3 class="name"><code>rollbackHasManyRelationships</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l246"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:246</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Rollback dirty hasMany relationships in the <code>model</code>.
+                    This method invokes by <code>resetController</code> in the <code>edit-form</code> route.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_saveHasManyRelationships" class="method item">
+                        <h3 class="name"><code>saveHasManyRelationships</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l223"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:223</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Save dirty hasMany relationships in the <code>model</code>.
+                    This method invokes by <code>save</code> method.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>:
+                                        <p>Current <code>model</code>.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method_set" class="method item public inherited">
                         <h3 class="name"><code>set</code></h3>
                     
@@ -3315,6 +3448,32 @@ export default EditFormController.extend({
                     
                     
                     </div>
+                    <div id="property_destroyHasManyRelationshipsOnModelDestroy" class="property item">
+                        <h3 class="name"><code>destroyHasManyRelationshipsOnModelDestroy</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l81"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:81</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>If <code>true</code>, all details will be deleted along with the main model.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
                     <div id="property_isDeleteButtonEnabled" class="property item">
                         <h3 class="name"><code>isDeleteButtonEnabled</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -3411,7 +3570,7 @@ export default EditFormController.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l81"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:81</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l90"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:90</code></a>
                             </p>
                     
                     

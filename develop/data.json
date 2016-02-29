@@ -633,7 +633,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 8,
+            "line": 9,
             "description": "Flexberry file component.",
             "extends": "FlexberryBaseComponent"
         },
@@ -663,7 +663,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 8,
+            "line": 9,
             "description": "Lookup component for Semantic UI.",
             "extends": "FlexberryBaseComponent"
         },
@@ -1411,7 +1411,7 @@
         },
         {
             "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 25,
+            "line": 29,
             "description": "Creates query with given projection name (if not null) and limit function (if not empty).",
             "itemtype": "method",
             "name": "getLimitFunctionQuery",
@@ -1436,7 +1436,7 @@
         },
         {
             "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 46,
+            "line": 50,
             "description": "Forms url to get all entities of certain type.",
             "itemtype": "method",
             "name": "getUrlForTypeQuery",
@@ -1460,7 +1460,7 @@
         },
         {
             "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 63,
+            "line": 67,
             "description": "Forms query options to get entities by specified lookup options.",
             "itemtype": "method",
             "name": "getQueryOptionsForAutocompleteLookup",
@@ -1480,14 +1480,14 @@
         },
         {
             "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 151,
+            "line": 155,
             "description": "Makes HTTP request for creating, updating or deleting the record.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry-projections"
         },
         {
             "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 194,
+            "line": 198,
             "description": "Appends id to URL according to the OData specification.",
             "access": "private",
             "tagname": "",
@@ -1541,10 +1541,10 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
             "line": 55,
-            "description": "Store record to which current component's value is related.",
+            "description": "Model to which current component's value is related.",
             "itemtype": "property",
-            "name": "relatedRecord",
-            "type": "Object",
+            "name": "relatedModel",
+            "type": "DS.Model",
             "default": "null",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
@@ -1599,28 +1599,28 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 136,
+            "line": 143,
             "description": "Initializes DOM-related component properties.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 143,
+            "line": 150,
             "description": "Cleanup component.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 150,
+            "line": 157,
             "description": "Cleanup DOM-related component stuff.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 157,
+            "line": 164,
             "description": "Initializes component's property with recpect to following priority:\n1 - template-defined parameters,\n2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),\n3 - component-defined defaults.\nNote! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.\n\n```javascript\n// Possible ./config/environment.js.\nmodule.exports = function(environment) {\n  APP: {\n    components: {\n      myComponent: {\n        myComponentProperty: 'myComponentProperty config-defined default value'\n      }\n    }\n  }\n  }\n});\n\nvar myComponent = FlexberryBaseComponent.extend({\n  appConfigSettingsPath: 'APP.components.myComponent',\n\n  myComponentProperty: undefined,\n\n  init: function() {\n    this._super.apply(this, arguments);\n    this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });\n  }\n});\n```",
             "params": [
                 {
@@ -1646,7 +1646,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 221,
+            "line": 228,
             "description": "Returns that 'targetObject' (from 'targetObject's hierarchy) which satisfies a given condition.\n\n```javascript\nvar controller = this.getTargetObjectByCondition(function(targetObject) {\n  return targetObject instanceof Ember.Controller;\n});\n```",
             "itemtype": "method",
             "name": "getTargetObjectByCondition.",
@@ -1903,14 +1903,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 15,
+            "line": 16,
             "description": "Class names for component wrapping <div>.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 20,
+            "line": 21,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -1921,287 +1921,287 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 29,
+            "line": 30,
             "description": "Copy of value created at initialization moment or after successful upload.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 34,
+            "line": 35,
             "description": "Deserialized copy of value created at initialization moment or after successful upload.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 42,
+            "line": 43,
             "description": "Value of file component (contains serialized file metadata such as fileName, fileSize, etc.).\nIt is binded to related model property, so every change to value will automatically change model property.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 48,
+            "line": 49,
             "description": "Deserialized value of file component.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 56,
+            "line": 57,
             "description": "Change value handler.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 66,
+            "line": 67,
             "description": "Data from jQuery fileupload plugin (contains selected file).",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 71,
+            "line": 72,
             "description": "Current file selected for upload.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 79,
+            "line": 80,
             "description": "Handles uploadData change.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 95,
+            "line": 96,
             "description": "Flag: indicates whether file upload is in progress now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 100,
+            "line": 101,
             "description": "Flag: indicates whether file download is in progress now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 105,
+            "line": 106,
             "description": "Flag: indicates whether add button is visible now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 112,
+            "line": 113,
             "description": "Flag: indicates whether add button is enabled now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 121,
+            "line": 122,
             "description": "Add button title (will be shown on mouse hover).",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 126,
+            "line": 127,
             "description": "Flag: indicates whether remove button is visible now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 133,
+            "line": 134,
             "description": "Flag: indicates whether remove button is enabled now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 144,
+            "line": 145,
             "description": "Remove button title (will be shown on mouse hover).",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 149,
-            "description": "Flag: indicates whether to upload file on 'currentController' 'modelPreSave' event.",
+            "line": 150,
+            "description": "Flag: indicates whether to upload file on 'relatedModel' 'preSave' event.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 154,
+            "line": 155,
             "description": "Flag: indicates whether to show upload button or not.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 159,
+            "line": 160,
             "description": "Flag: indicates whether upload button is visible now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 166,
+            "line": 167,
             "description": "Flag: indicates whether upload button is enabled now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 177,
+            "line": 178,
             "description": "Upload button title (will be shown on mouse hover).",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 182,
+            "line": 183,
             "description": "Flag: indicates whether download button is visible now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 190,
+            "line": 191,
             "description": "Flag: indicates whether download button is enabled now.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 201,
+            "line": 202,
             "description": "Download button title (will be shown on mouse hover).",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 206,
+            "line": 207,
             "description": "Maximum file size in bytes for uploading files.\nIt should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\\environment.\nIf null or undefined, then APP.components.file.maxUploadFileSize from application config\\environment will be used.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 213,
+            "line": 214,
             "description": "Text to be displayed instead of file name, if file has not been selected.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 218,
+            "line": 219,
             "description": "File upload URL.\nIf null or undefined, then APP.components.file.uploadUrl from application config\\environment will be used.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 224,
+            "line": 225,
             "description": "File download URL.\nIf null or undefined, then APP.components.file.downloadUrl from application config\\environment will be used.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 230,
+            "line": 231,
             "description": "Flag: indicates whether to show modal dialog on upload errors or not.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 235,
+            "line": 236,
             "description": "Flag: indicates whether to show modal dialog on download errors or not.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 240,
+            "line": 241,
             "description": "Title to be displayed in error modal dialog.\nIt will be displayed only if some error occur.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 246,
+            "line": 247,
             "description": "Content to be displayed in error modal dialog.\nIt will be displayed only if some error occur.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 252,
+            "line": 253,
             "description": "Selected jQuery object, containing HTML of error modal dialog.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 257,
+            "line": 258,
             "description": "File name.\nIt is binded to component file name input, so every change to fileName will automatically change file name input value.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 270,
+            "line": 271,
             "description": "Initializes file-control component.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 295,
+            "line": 297,
             "description": "Initializes file-control component.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 377,
+            "line": 384,
             "description": "Destroys file-control component.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 390,
+            "line": 397,
             "description": "Method to remove selected file.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 398,
+            "line": 405,
             "description": "Method to upload selected file.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 458,
+            "line": 467,
             "description": "Method to download uploaded file.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 505,
+            "line": 516,
             "description": "Method to show error modal dialog.",
             "params": [
                 {
@@ -2220,22 +2220,22 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 519,
-            "description": "Controllers 'modelPreSave' event handler.",
+            "line": 530,
+            "description": "Related model's 'preSave' event handler.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 524,
-            "description": "Method to subscribe on controller's 'modelPreSave' event.",
+            "line": 535,
+            "description": "Method to subscribe on 'relatedModel' 'preSave' event.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 548,
-            "description": "Method to unsubscribe from controller's 'modelPreSave' event.",
+            "line": 560,
+            "description": "Method to unsubscribe from 'relatedModel' 'preSave' event.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
@@ -2317,7 +2317,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 16,
+            "line": 17,
             "description": "Default classes for component wrapper.",
             "itemtype": "property",
             "name": "classNames",
@@ -2328,7 +2328,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 35,
+            "line": 38,
             "description": "Flag to show that lookup is at autocomplete mode.",
             "itemtype": "property",
             "name": "autocomplete",
@@ -2339,7 +2339,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 44,
+            "line": 47,
             "description": "Observes changes to value. Set it to autocompleteValue.",
             "itemtype": "method",
             "name": "valueChanged",
@@ -2348,8 +2348,8 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 53,
-            "description": "Value for autocomplete control.\nIf model's value changes, autocompleteValue is changed too. autocompleteValue may be changed independely, but it won't be applied to model automatically.",
+            "line": 56,
+            "description": "Value for autocomplete control.\nIf model's value changes, autocompleteValue is changed too.\nThis property may be changed independently, but it won't be applied to model automatically.",
             "itemtype": "property",
             "name": "autocompleteValue",
             "type": "String",
@@ -2359,7 +2359,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 63,
+            "line": 67,
             "description": "Method to get url to request autocomplete items.",
             "itemtype": "property",
             "name": "autocompleteUrl",
@@ -2370,7 +2370,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 72,
+            "line": 76,
             "description": "Method to get query options to request autocomplete items.",
             "itemtype": "property",
             "name": "autocompleteQueryOptions",
@@ -2381,7 +2381,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 81,
+            "line": 85,
             "description": "Action's name to update model's relation value.",
             "itemtype": "property",
             "name": "autocompleteUpdate",
@@ -2392,7 +2392,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 90,
+            "line": 94,
             "description": "Min characters count necessary to call autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMinCharacters",
@@ -2403,7 +2403,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 99,
+            "line": 103,
             "description": "Maximum number of results to show on autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMaxResults",
@@ -2414,7 +2414,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 108,
+            "line": 112,
             "description": "Server-side property name of autocomplete property.",
             "itemtype": "property",
             "name": "autocompleteProperty",
@@ -2425,7 +2425,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 117,
+            "line": 121,
             "description": "Function to limit accessible values.",
             "itemtype": "property",
             "name": "limitFunction",
@@ -2436,7 +2436,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 126,
+            "line": 130,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -2446,7 +2446,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 142,
+            "line": 146,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -3415,6 +3415,17 @@
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
             "line": 81,
+            "description": "If `true`, all details will be deleted along with the main model.",
+            "itemtype": "property",
+            "name": "destroyHasManyRelationshipsOnModelDestroy",
+            "type": "Boolean",
+            "default": "false",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/edit-form.js",
+            "line": 90,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
@@ -3425,28 +3436,21 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 90,
-            "description": "Model change handler.\nTODO: refactor",
-            "class": "EditFormController",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 119,
+            "line": 99,
             "description": "Actions handlers.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 159,
+            "line": 145,
             "description": "Method to transit to parent's route (previous route).",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 170,
+            "line": 156,
             "description": "Method to get type and attributes of component,\nwhich will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent.",
@@ -3476,36 +3480,57 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 237,
-            "description": "On save model success handler.",
+            "line": 223,
+            "description": "Save dirty hasMany relationships in the `model`.\nThis method invokes by `save` method.",
+            "itemtype": "method",
+            "name": "saveHasManyRelationships",
+            "return": {
+                "description": "Current `model`.",
+                "type": "DS.Model"
+            },
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 286,
+            "line": 246,
+            "description": "Rollback dirty hasMany relationships in the `model`.\nThis method invokes by `resetController` in the `edit-form` route.",
+            "itemtype": "method",
+            "name": "rollbackHasManyRelationships",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/edit-form.js",
+            "line": 264,
+            "description": "Destroy (delete and save) all hasMany relationships in the `model`.\nThis method invokes by `delete` method.",
+            "itemtype": "method",
+            "name": "destroyHasManyRelationships",
+            "return": {
+                "description": "Current `model`.",
+                "type": "DS.Model"
+            },
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/edit-form.js",
+            "line": 291,
             "description": "On save model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 293,
+            "line": 298,
             "description": "On delete model success handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 300,
+            "line": 305,
             "description": "On delete model fail handler.",
-            "class": "EditFormController",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 307,
-            "description": "On model 'preSave' event handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
@@ -3557,7 +3582,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 35,
+            "line": 28,
             "description": "Event handler for \"row has been selected\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowAdded",
@@ -3580,7 +3605,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 49,
+            "line": 42,
             "description": "Event handler for \"row has been deleted\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowDeleted",
@@ -3603,7 +3628,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 70,
+            "line": 56,
             "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowChanged",
@@ -3843,7 +3868,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 74,
+            "line": 73,
             "description": "Handles willTransition action (this action is fired at the beginning of any attempted transition).\nIt sends message about transition to corresponding controller.",
             "itemtype": "method",
             "name": "willTransition",
@@ -4531,11 +4556,11 @@
         },
         {
             "message": "Missing item type\nMakes HTTP request for creating, updating or deleting the record.",
-            "line": " ember-flexberry/addon/adapters/odata.js:151"
+            "line": " ember-flexberry/addon/adapters/odata.js:155"
         },
         {
             "message": "Missing item type\nAppends id to URL according to the OData specification.",
-            "line": " ember-flexberry/addon/adapters/odata.js:194"
+            "line": " ember-flexberry/addon/adapters/odata.js:198"
         },
         {
             "message": "Missing item type\nInitializes component properties.",
@@ -4543,19 +4568,19 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component properties.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:136"
-        },
-        {
-            "message": "Missing item type\nCleanup component.",
             "line": " ember-flexberry/addon/components/flexberry-base-component.js:143"
         },
         {
-            "message": "Missing item type\nCleanup DOM-related component stuff.",
+            "message": "Missing item type\nCleanup component.",
             "line": " ember-flexberry/addon/components/flexberry-base-component.js:150"
         },
         {
-            "message": "Missing item type\nInitializes component's property with recpect to following priority:\n1 - template-defined parameters,\n2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),\n3 - component-defined defaults.\nNote! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.\n\n```javascript\n// Possible ./config/environment.js.\nmodule.exports = function(environment) {\n  APP: {\n    components: {\n      myComponent: {\n        myComponentProperty: 'myComponentProperty config-defined default value'\n      }\n    }\n  }\n  }\n});\n\nvar myComponent = FlexberryBaseComponent.extend({\n  appConfigSettingsPath: 'APP.components.myComponent',\n\n  myComponentProperty: undefined,\n\n  init: function() {\n    this._super.apply(this, arguments);\n    this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });\n  }\n});\n```",
+            "message": "Missing item type\nCleanup DOM-related component stuff.",
             "line": " ember-flexberry/addon/components/flexberry-base-component.js:157"
+        },
+        {
+            "message": "Missing item type\nInitializes component's property with recpect to following priority:\n1 - template-defined parameters,\n2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),\n3 - component-defined defaults.\nNote! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.\n\n```javascript\n// Possible ./config/environment.js.\nmodule.exports = function(environment) {\n  APP: {\n    components: {\n      myComponent: {\n        myComponentProperty: 'myComponentProperty config-defined default value'\n      }\n    }\n  }\n  }\n});\n\nvar myComponent = FlexberryBaseComponent.extend({\n  appConfigSettingsPath: 'APP.components.myComponent',\n\n  myComponentProperty: undefined,\n\n  init: function() {\n    this._super.apply(this, arguments);\n    this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });\n  }\n});\n```",
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:164"
         },
         {
             "message": "Missing item type\nInitializes file-control component.",
@@ -4579,183 +4604,183 @@
         },
         {
             "message": "Missing item type\nClass names for component wrapping <div>.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:15"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:16"
         },
         {
             "message": "Missing item type\nCopy of value created at initialization moment or after successful upload.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:29"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:30"
         },
         {
             "message": "Missing item type\nDeserialized copy of value created at initialization moment or after successful upload.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:34"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:35"
         },
         {
             "message": "Missing item type\nValue of file component (contains serialized file metadata such as fileName, fileSize, etc.).\nIt is binded to related model property, so every change to value will automatically change model property.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:42"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:43"
         },
         {
             "message": "Missing item type\nDeserialized value of file component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:48"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:49"
         },
         {
             "message": "Missing item type\nChange value handler.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:56"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:57"
         },
         {
             "message": "Missing item type\nData from jQuery fileupload plugin (contains selected file).",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:66"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:67"
         },
         {
             "message": "Missing item type\nCurrent file selected for upload.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:71"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:72"
         },
         {
             "message": "Missing item type\nHandles uploadData change.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:79"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:80"
         },
         {
             "message": "Missing item type\nFlag: indicates whether file upload is in progress now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:95"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:96"
         },
         {
             "message": "Missing item type\nFlag: indicates whether file download is in progress now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:100"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:101"
         },
         {
             "message": "Missing item type\nFlag: indicates whether add button is visible now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:105"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:106"
         },
         {
             "message": "Missing item type\nFlag: indicates whether add button is enabled now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:112"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:113"
         },
         {
             "message": "Missing item type\nAdd button title (will be shown on mouse hover).",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:121"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:122"
         },
         {
             "message": "Missing item type\nFlag: indicates whether remove button is visible now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:126"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:127"
         },
         {
             "message": "Missing item type\nFlag: indicates whether remove button is enabled now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:133"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:134"
         },
         {
             "message": "Missing item type\nRemove button title (will be shown on mouse hover).",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:144"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:145"
         },
         {
-            "message": "Missing item type\nFlag: indicates whether to upload file on 'currentController' 'modelPreSave' event.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:149"
+            "message": "Missing item type\nFlag: indicates whether to upload file on 'relatedModel' 'preSave' event.",
+            "line": " ember-flexberry/addon/components/flexberry-file.js:150"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to show upload button or not.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:154"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:155"
         },
         {
             "message": "Missing item type\nFlag: indicates whether upload button is visible now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:159"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:160"
         },
         {
             "message": "Missing item type\nFlag: indicates whether upload button is enabled now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:166"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:167"
         },
         {
             "message": "Missing item type\nUpload button title (will be shown on mouse hover).",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:177"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:178"
         },
         {
             "message": "Missing item type\nFlag: indicates whether download button is visible now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:182"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:183"
         },
         {
             "message": "Missing item type\nFlag: indicates whether download button is enabled now.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:190"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:191"
         },
         {
             "message": "Missing item type\nDownload button title (will be shown on mouse hover).",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:201"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:202"
         },
         {
             "message": "Missing item type\nMaximum file size in bytes for uploading files.\nIt should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\\environment.\nIf null or undefined, then APP.components.file.maxUploadFileSize from application config\\environment will be used.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:206"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:207"
         },
         {
             "message": "Missing item type\nText to be displayed instead of file name, if file has not been selected.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:213"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:214"
         },
         {
             "message": "Missing item type\nFile upload URL.\nIf null or undefined, then APP.components.file.uploadUrl from application config\\environment will be used.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:218"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:219"
         },
         {
             "message": "Missing item type\nFile download URL.\nIf null or undefined, then APP.components.file.downloadUrl from application config\\environment will be used.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:224"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:225"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to show modal dialog on upload errors or not.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:230"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:231"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to show modal dialog on download errors or not.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:235"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:236"
         },
         {
             "message": "Missing item type\nTitle to be displayed in error modal dialog.\nIt will be displayed only if some error occur.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:240"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:241"
         },
         {
             "message": "Missing item type\nContent to be displayed in error modal dialog.\nIt will be displayed only if some error occur.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:246"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:247"
         },
         {
             "message": "Missing item type\nSelected jQuery object, containing HTML of error modal dialog.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:252"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:253"
         },
         {
             "message": "Missing item type\nFile name.\nIt is binded to component file name input, so every change to fileName will automatically change file name input value.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:257"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:258"
         },
         {
             "message": "Missing item type\nInitializes file-control component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:270"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:271"
         },
         {
             "message": "Missing item type\nInitializes file-control component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:295"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:297"
         },
         {
             "message": "Missing item type\nDestroys file-control component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:377"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:384"
         },
         {
             "message": "Missing item type\nMethod to remove selected file.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:390"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:397"
         },
         {
             "message": "Missing item type\nMethod to upload selected file.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:398"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:405"
         },
         {
             "message": "Missing item type\nMethod to download uploaded file.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:458"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:467"
         },
         {
             "message": "Missing item type\nMethod to show error modal dialog.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:505"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:516"
         },
         {
-            "message": "Missing item type\nControllers 'modelPreSave' event handler.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:519"
+            "message": "Missing item type\nRelated model's 'preSave' event handler.",
+            "line": " ember-flexberry/addon/components/flexberry-file.js:530"
         },
         {
-            "message": "Missing item type\nMethod to subscribe on controller's 'modelPreSave' event.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:524"
+            "message": "Missing item type\nMethod to subscribe on 'relatedModel' 'preSave' event.",
+            "line": " ember-flexberry/addon/components/flexberry-file.js:535"
         },
         {
-            "message": "Missing item type\nMethod to unsubscribe from controller's 'modelPreSave' event.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:548"
+            "message": "Missing item type\nMethod to unsubscribe from 'relatedModel' 'preSave' event.",
+            "line": " ember-flexberry/addon/components/flexberry-file.js:560"
         },
         {
             "message": "Missing item type\nInitializes component.",
@@ -4778,36 +4803,24 @@
             "line": " ember-flexberry/addon/controllers/edit-form.js:69"
         },
         {
-            "message": "Missing item type\nModel change handler.\nTODO: refactor",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:90"
-        },
-        {
             "message": "Missing item type\nActions handlers.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:119"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:99"
         },
         {
             "message": "Missing item type\nMethod to transit to parent's route (previous route).",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:159"
-        },
-        {
-            "message": "Missing item type\nOn save model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:237"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:145"
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:286"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:291"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:293"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:298"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:300"
-        },
-        {
-            "message": "Missing item type\nOn model 'preSave' event handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:307"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:305"
         },
         {
             "message": "Missing item type\nUpdate limit function query parameter and reloads route if needed.",

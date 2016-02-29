@@ -130,6 +130,10 @@ import DS from &#x27;ember-data&#x27;;
 import SnapshotTransform from &#x27;../utils/snapshot-transform&#x27;;
 
 export default DS.RESTAdapter.extend({
+  headers: {
+    Prefer: &#x27;return=representation&#x27;
+  },
+
   idType: &#x27;number&#x27;,
 
   getPaginationQuery: function(page, perPage) {

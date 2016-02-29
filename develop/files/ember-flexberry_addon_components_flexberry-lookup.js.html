@@ -131,6 +131,7 @@
 
 import Ember from &#x27;ember&#x27;;
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 
 /**
  * Lookup component for Semantic UI.
@@ -149,8 +150,10 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
    */
   classNames: [&#x27;flexberry-lookup&#x27;, &#x27;ui&#x27;, &#x27;fluid&#x27;, &#x27;action&#x27;, &#x27;input&#x27;],
 
-  placeholder: &#x27;(no value)&#x27;,
-  chooseText: &#x27;Choose&#x27;,
+  placeholder: t(&#x27;flexberry-lookup.placeholder&#x27;),
+  chooseText: t(&#x27;flexberry-lookup.choose-button-text&#x27;),
+
+  // ToDo: Use &#x27;flexberry-lookup.remove-button-text&#x27; from locale.
   removeText: &#x27;&lt;i class=&quot;remove icon&quot;&gt;&lt;/i&gt;&#x27;,
 
   projection: undefined,
@@ -179,7 +182,8 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
 
   /**
    * Value for autocomplete control.
-   * If model&#x27;s value changes, autocompleteValue is changed too. autocompleteValue may be changed independely, but it won&#x27;t be applied to model automatically.
+   * If model&#x27;s value changes, autocompleteValue is changed too.
+   * This property may be changed independently, but it won&#x27;t be applied to model automatically.
    *
    * @property autocompleteValue
    * @type String
@@ -262,7 +266,7 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
       relationName: this.get(&#x27;relationName&#x27;),
       title: this.get(&#x27;title&#x27;),
       limitFunction: this.get(&#x27;limitFunction&#x27;),
-      modelToLookup: this.get(&#x27;relatedRecord&#x27;)
+      modelToLookup: this.get(&#x27;relatedModel&#x27;)
     };
   }),
 
@@ -275,7 +279,7 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
   removeData: Ember.computed(&#x27;relationName&#x27;, function() {
     return {
       relationName: this.get(&#x27;relationName&#x27;),
-      modelToLookup: this.get(&#x27;relatedRecord&#x27;)
+      modelToLookup: this.get(&#x27;relatedModel&#x27;)
     };
   }),
 
@@ -328,7 +332,7 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
 
     let autocompleteUrl = this.get(&#x27;autocompleteUrl&#x27;)(relationName);
     let limitFunction = this.get(&#x27;limitFunction&#x27;);
-    let modelToLookup = this.get(&#x27;relatedRecord&#x27;);
+    let modelToLookup = this.get(&#x27;relatedModel&#x27;);
 
     this.set(&#x27;autocompleteValue&#x27;, this.get(&#x27;value&#x27;));
     let _this = this;
