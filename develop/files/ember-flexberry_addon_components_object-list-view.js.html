@@ -245,8 +245,12 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       this.set(&#x27;noDataMessage&#x27;, this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.no-data-text&#x27;));
     }
 
-    if (this.get(&#x27;showCheckBoxInRow&#x27;)) {
+    if (this.get(&#x27;rowClickable&#x27;)) {
       this.get(&#x27;classNames&#x27;).push(&#x27;selectable&#x27;);
+    }
+
+    if (this.get(&#x27;readonly&#x27;)) {
+      this.get(&#x27;classNames&#x27;).push(&#x27;readonly&#x27;);
     }
 
     var _this = this;

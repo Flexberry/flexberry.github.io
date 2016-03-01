@@ -3223,7 +3223,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 302,
+            "line": 306,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -3244,7 +3244,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 11,
+            "line": 12,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEventsService",
@@ -3254,7 +3254,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 19,
+            "line": 20,
             "description": "Flag to use creation button at toolbar.",
             "itemtype": "property",
             "name": "createNewButton",
@@ -3265,7 +3265,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 28,
+            "line": 29,
+            "description": "The flag to specify whether the create button is enabled.",
+            "itemtype": "property",
+            "name": "createNewButton",
+            "type": "Boolean",
+            "default": "true",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 38,
             "description": "Flag to use refresh button at toolbar.",
             "itemtype": "property",
             "name": "refreshButton",
@@ -3276,7 +3287,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 37,
+            "line": 47,
             "description": "Flag to use delete button at toolbar.",
             "itemtype": "property",
             "name": "deleteButton",
@@ -3287,7 +3298,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 46,
+            "line": 56,
+            "description": "The flag to specify whether the delete button is enabled.",
+            "itemtype": "property",
+            "name": "deleteButton",
+            "type": "Boolean",
+            "default": "true",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 65,
             "description": "Name of action to send out, action triggered by click on user button.",
             "itemtype": "property",
             "name": "customButtonAction",
@@ -3298,7 +3320,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 55,
+            "line": 74,
             "description": "Handler to get custom buttons from controller.\nIt has to be closure event and return array of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].",
             "itemtype": "property",
             "name": "customButtonsClosureEvent",
@@ -3309,7 +3331,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 65,
+            "line": 84,
             "description": "Array of custom buttons.",
             "itemtype": "property",
             "name": "customButtonsArray",
@@ -3320,7 +3342,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 92,
+            "line": 111,
             "description": "Implementation of component's teardown.",
             "itemtype": "method",
             "name": "willDestroy",
@@ -3329,7 +3351,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 113,
+            "line": 132,
             "description": "Delete selected rows.",
             "itemtype": "method",
             "name": "delete",
@@ -3338,7 +3360,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 127,
+            "line": 146,
             "description": "Flag shows enable-state of delete button.\nIf there are selected rows button is enabled. Otherwise - not.",
             "itemtype": "property",
             "name": "isDeleteButtonEnabled",
@@ -3349,7 +3371,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 137,
+            "line": 156,
             "description": "Event handler for \"row has been selected\" event in objectlistview.",
             "itemtype": "method",
             "name": "_rowSelected",
