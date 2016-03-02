@@ -1718,7 +1718,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 28,
+            "line": 43,
             "description": "Overload wrapper tag name for disabling wrapper.",
             "itemtype": "property",
             "name": "tagName",
@@ -1730,7 +1730,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 38,
+            "line": 53,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -1741,7 +1741,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 47,
+            "line": 62,
             "description": "Dropdown type from semantic ui ('fluid', 'compact', ...).",
             "itemtype": "property",
             "name": "type",
@@ -1752,7 +1752,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 56,
+            "line": 71,
             "description": "Default text (will be displayed if there is no selected item).",
             "itemtype": "property",
             "name": "defaultText",
@@ -1763,7 +1763,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 65,
+            "line": 80,
             "description": "Selected item.",
             "itemtype": "property",
             "name": "value",
@@ -1774,7 +1774,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 74,
+            "line": 89,
             "description": "Available items.",
             "itemtype": "property",
             "name": "items",
@@ -1785,7 +1785,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 83,
+            "line": 98,
             "description": "DOM-element representing semantic ui-dropdown component.",
             "itemtype": "property",
             "name": "dropdownDomElement",
@@ -1796,7 +1796,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 92,
+            "line": 107,
+            "description": "Flag: indicates whether 'willDestroyElement' hook has been already called.",
+            "itemtype": "property",
+            "name": "destroyHasBeenCalled",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryDropDown",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
+            "line": 116,
             "description": "Flag: indicates whether to show default dropdown text or not.",
             "itemtype": "property",
             "name": "showDefaultText",
@@ -1808,7 +1819,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 104,
+            "line": 128,
             "description": "Selected text (if some item is selected).",
             "itemtype": "property",
             "name": "text",
@@ -1820,22 +1831,29 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 117,
+            "line": 141,
             "description": "Handles changes in available items & selected item (including changes on component initialization).",
             "class": "FlexberryDropDown",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 147,
+            "line": 176,
             "description": "Initializes component.",
             "class": "FlexberryDropDown",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
-            "line": 157,
+            "line": 186,
             "description": "Initializes DOM-related component properties.",
+            "class": "FlexberryDropDown",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-dropdown.js",
+            "line": 204,
+            "description": "Cleanup DOM-related component stuff.",
             "class": "FlexberryDropDown",
             "module": "ember-flexberry"
         },
@@ -4610,15 +4628,19 @@
         },
         {
             "message": "Missing item type\nHandles changes in available items & selected item (including changes on component initialization).",
-            "line": " ember-flexberry/addon/components/flexberry-dropdown.js:117"
+            "line": " ember-flexberry/addon/components/flexberry-dropdown.js:141"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry/addon/components/flexberry-dropdown.js:147"
+            "line": " ember-flexberry/addon/components/flexberry-dropdown.js:176"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component properties.",
-            "line": " ember-flexberry/addon/components/flexberry-dropdown.js:157"
+            "line": " ember-flexberry/addon/components/flexberry-dropdown.js:186"
+        },
+        {
+            "message": "Missing item type\nCleanup DOM-related component stuff.",
+            "line": " ember-flexberry/addon/components/flexberry-dropdown.js:204"
         },
         {
             "message": "Missing item type\nInitializes component.",
