@@ -346,6 +346,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/routes/application.js": {
+            "name": "ember-flexberry/addon/routes/application.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/routes/edit-form.js": {
             "name": "ember-flexberry/addon/routes/edit-form.js",
             "modules": {},
@@ -3903,6 +3910,21 @@
             "file": "ember-flexberry/addon/mixins/validate-model.js",
             "line": 12,
             "description": "Save model method.",
+            "class": "EditFormRoute",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/routes/application.js",
+            "line": 6,
+            "description": "Returns a locale name for the application.",
+            "itemtype": "method",
+            "name": "_getLocale",
+            "access": "protected",
+            "tagname": "",
+            "return": {
+                "description": "Locale name",
+                "type": "String"
+            },
             "class": "EditFormRoute",
             "module": "ember-flexberry"
         },
