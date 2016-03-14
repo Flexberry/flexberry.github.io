@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -64,6 +64,7 @@
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
 	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
 	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
@@ -147,6 +148,18 @@ export default Ember.Component.extend({
    * @default false
    */
   readonly: false,
+
+  /**
+   * Readonly HTML attribute following to the &#x60;readonly&#x60; query param. According to the W3C standard, returns &#x27;readonly&#x27; if &#x60;readonly&#x60; is &#x60;true&#x60; and &#x60;undefined&#x60; otherwise.
+   *
+   * @property readonlyAttr
+   * @type String|undefined
+   * @default undefined
+   * @readOnly
+   */
+  readonlyAttr: Ember.computed(&#x27;readonly&#x27;, function() {
+    return this.get(&#x27;readonly&#x27;) ? &#x27;readonly&#x27; : undefined;
+  }),
 
   /**
    * Flag: indicates whether component is required.

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-projections/addon/mixins/adapter.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/components/flexberry-simpledatetime.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -121,47 +121,174 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-projections/addon/mixins/adapter.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/components/flexberry-simpledatetime.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
+/**
+ * @module ember-flexberry
+ */
+
 import Ember from &#x27;ember&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 /**
- * @module ember-flexberry-projections
- */
+ * Wrapper for input[type=&#x27;date/datetime/datetime-local&#x27;] component.
 
-/**
- * Mixin for {{#crossLink &quot;DS.Adapter&quot;}}Adapter{{/crossLink}} to support
- * fetching models using projection.
- *
- * @class Adapter
- * @namespace Projection
- * @extends Ember.Mixin
- * @public
+   Please keep in mind that these input types are not supported
+   in all browsers: http://caniuse.com/#feat=input-datetime.
+
+   Example:
+   &#x60;&#x60;&#x60;js
+   {{flexberry-simpledatetime type=&#x27;datetime-local&#x27; value=model.orderDate min=model.orderDateMin readonly=readonly}}
+   &#x60;&#x60;&#x60;
+
+ * @class FlexberrySimpledatetime
+ * @extends FlexberryBaseComponent
  */
-export default Ember.Mixin.create({
+export default FlexberryBaseComponent.extend({
+  classNames: [&#x27;flexberry-simpledatetime&#x27;],
+
   /**
-   * Builds a URL for a given type and query.
-   * Optionally, it supports an ID in the query parameters for fetching
-   * a definite record.
+   * Value of this component.
    *
-   * See {{#crossLink &quot;DS.BuildURLMixin/urlForQueryRecord:method&quot;}}{{/crossLink}}
-   * for details.
-   *
-   * @method urlForQueryRecord
-   * @public
-   *
-   * @param {Object} query Query parameters.
-   * @param {String} [query.id] ID of a record.
-   * @param {String} modelName Record type.
-   * @return {String} url URL for query a record.
+   * @property value
+   * @type Date
    */
-  urlForQueryRecord: function(query, modelName) {
-    let id = query.id;
-    delete query.id;
-    return this._buildURL(modelName, id);
+  value: undefined,
+
+  /**
+   * Minimum value of this component.
+   *
+   * @property min
+   * @type Date
+   */
+  min: undefined,
+
+  /**
+   * Maximum value of this component.
+   *
+   * @property max
+   * @type Date
+   */
+  max: undefined,
+
+  /**
+   * Converted date in &#x60;value&#x60; to appropriate input datatype.
+   * For example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.value.
+   *
+   * @property valueStr
+   * @type String
+   * @private
+   */
+  valueStr: Ember.computed(&#x27;value&#x27;, {
+    get() {
+      let date = this.get(&#x27;value&#x27;);
+      let str = this.convertDateToString(date);
+      return str;
+    },
+    set(key, value, oldvalue) {
+      let date = this.convertStringToDate(value);
+      this.set(&#x27;value&#x27;, date);
+      return value;
+    }
+  }),
+
+  /**
+   * Converted date in &#x60;min&#x60; to appropriate input datatype.
+   * For example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.min.
+   *
+   * @property minStr
+   * @type String
+   * @private
+   */
+  minStr: Ember.computed(&#x27;min&#x27;, {
+    get() {
+      let date = this.get(&#x27;min&#x27;);
+      let str = this.convertDateToString(date);
+      return str;
+    },
+    set(key, value, oldvalue) {
+      let date = this.convertStringToDate(value);
+      this.set(&#x27;min&#x27;, date);
+      return value;
+    }
+  }),
+
+  /**
+   * Converted date in &#x60;max&#x60; to appropriate input datatype.
+   * For example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.max.
+   *
+   * @property maxStr
+   * @type String
+   * @private
+   */
+  maxStr: Ember.computed(&#x27;max&#x27;, {
+    get() {
+      let date = this.get(&#x27;max&#x27;);
+      let str = this.convertDateToString(date);
+      return str;
+    },
+    set(key, value, oldvalue) {
+      let date = this.convertStringToDate(value);
+      this.set(&#x27;max&#x27;, date);
+      return value;
+    }
+  }),
+
+  /**
+   * Converts Date object to appropriate string value for input.
+   * @method convertDateToString
+   * @private
+   */
+  convertDateToString: function(value) {
+    if (value == null) {
+      return value;
+    }
+
+    if (typeof value !== &#x27;object&#x27;) {
+      throw new Error(&#x27;Value must be a Date object.&#x27;);
+    }
+
+    let type = this.get(&#x27;type&#x27;);
+    let str;
+    switch (type) {
+      case &#x27;datetime-local&#x27;:
+        str = value.toISOString().replace(&#x27;Z&#x27;, &#x27;&#x27;);
+        break;
+      case &#x27;datetime&#x27;:
+        str = value.toISOString();
+        break;
+      case &#x27;date&#x27;:
+        str = value.toISOString().split(&#x27;T&#x27;)[0];
+        break;
+      default:
+        throw new Error(&#x60;type=&#x27;${type}&#x27; is not supported.&#x60;);
+    }
+
+    return str;
+  },
+
+  /**
+   * Converts string value of input to Date object.
+   * @method convertStringToDate
+   * @private
+   */
+  convertStringToDate: function(value) {
+    if (value == null) {
+      return value;
+    }
+
+    if (value === &#x27;&#x27;) {
+      return null;
+    }
+
+    if (typeof value !== &#x27;string&#x27;) {
+      throw new Error(&#x27;Value must be a string.&#x27;);
+    }
+
+    return new Date(value);
   }
 });
 

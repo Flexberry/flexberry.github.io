@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ObjectListViewCell - Flexberry Documentation</title>
+    <title>FlexberrySimpledatetime - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -121,7 +121,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ObjectListViewCell <small>Class</small></h1>
+    <h1>FlexberrySimpledatetime <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
@@ -131,7 +131,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_components_object-list-view-cell.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view-cell.js:7</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l8"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:8</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -140,7 +140,13 @@
 
 
 <div class="well well-small">
-    
+    <p>Wrapper for input[type='date/datetime/datetime-local'] component.</p>
+<p>Please keep in mind that these input types are not supported
+in all browsers: <a href="http://caniuse.com/#feat=input-datetime">http://caniuse.com/#feat=input-datetime</a>.</p>
+<p>Example:</p>
+<pre class="code prettyprint"><code class="language-js">
+</code></pre>
+
 </div>
 
 
@@ -160,6 +166,14 @@
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_convertDateToString" data-tablink="convertDateToString">convertDateToString</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_convertStringToDate" data-tablink="convertStringToDate">convertStringToDate</a>
+
+                            </li>
                             <li class="index-item method inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_getLimitFunctionQuery" data-tablink="getLimitFunctionQuery">getLimitFunctionQuery</a>
 
@@ -207,6 +221,22 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_dynamicProperties" data-tablink="dynamicProperties">dynamicProperties</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_max" data-tablink="max">max</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_maxStr" data-tablink="maxStr">maxStr</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_min" data-tablink="min">min</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_minStr" data-tablink="minStr">minStr</a>
+
+                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_readonly" data-tablink="readonly">readonly</a>
 
@@ -224,11 +254,11 @@
 
                             </li>
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_tagName" data-tablink="tagName">tagName</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property_value" data-tablink="value">value</a>
 
                             </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_value" data-tablink="value">value</a>
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_valueStr" data-tablink="valueStr">valueStr</a>
 
                             </li>
                     </ul>
@@ -240,6 +270,68 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
+                    <div id="method_convertDateToString" class="method item private">
+                        <h3 class="name"><code>convertDateToString</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l112"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:112</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Converts Date object to appropriate string value for input.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_convertStringToDate" class="method item private">
+                        <h3 class="name"><code>convertStringToDate</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l145"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:145</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Converts string value of input to Date object.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method_getLimitFunctionQuery" class="method item inherited">
                         <h3 class="name"><code>getLimitFunctionQuery</code></h3>
                     
@@ -682,6 +774,110 @@
                     
                     
                     </div>
+                    <div id="property_max" class="property item">
+                        <h3 class="name"><code>max</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="crosslink external" target="_blank">Date</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l41"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:41</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Maximum value of this component.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_maxStr" class="property item private">
+                        <h3 class="name"><code>maxStr</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l91"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:91</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Converted date in <code>max</code> to appropriate input datatype.
+                    For example, see <a href="https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.max">https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.max</a>.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_min" class="property item">
+                        <h3 class="name"><code>min</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="crosslink external" target="_blank">Date</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l33"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:33</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Minimum value of this component.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_minStr" class="property item private">
+                        <h3 class="name"><code>minStr</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l70"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:70</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Converted date in <code>min</code> to appropriate input datatype.
+                    For example, see <a href="https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.min">https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.min</a>.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_readonly" class="property item inherited">
                         <h3 class="name"><code>readonly</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -786,9 +982,9 @@
                     
                     
                     </div>
-                    <div id="property_tagName" class="property item">
-                        <h3 class="name"><code>tagName</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    <div id="property_value" class="property item">
+                        <h3 class="name"><code>value</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="crosslink external" target="_blank">Date</a></span>
                     
                     
                     
@@ -797,44 +993,44 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_object-list-view-cell.js.html#l12"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view-cell.js:12</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l25"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:25</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Overload wrapper tag name for disabling wrapper.</p>
+                            <p>Value of this component.</p>
                     
                         </div>
                     
-                            <p><strong>Default:</strong> &#x27;&#x27;</p>
                     
                     
                     </div>
-                    <div id="property_value" class="property item">
-                        <h3 class="name"><code>value</code></h3>
+                    <div id="property_valueStr" class="property item private">
+                        <h3 class="name"><code>valueStr</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_object-list-view-cell.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view-cell.js:22</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-simpledatetime.js.html#l49"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-simpledatetime.js:49</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Displaying value.</p>
+                            <p>Converted date in <code>value</code> to appropriate input datatype.
+                    For example, see <a href="https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.value">https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.value</a>.</p>
                     
                         </div>
                     
-                            <p><strong>Default:</strong> undefined</p>
                     
                     
                     </div>

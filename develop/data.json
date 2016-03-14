@@ -163,6 +163,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/components/flexberry-simpledatetime.js": {
+            "name": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "modules": {},
+            "classes": {
+                "FlexberrySimpledatetime": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/components/flexberry-textarea.js": {
             "name": "ember-flexberry/addon/components/flexberry-textarea.js",
             "modules": {},
@@ -461,6 +470,7 @@
                 "FlexberryGroupedit": 1,
                 "FlexberryLookup": 1,
                 "FlexberryObjectlistview": 1,
+                "FlexberrySimpledatetime": 1,
                 "FlexberryTextarea": 1,
                 "FlexberryTextbox": 1,
                 "FlexberryToggler": 1,
@@ -687,6 +697,21 @@
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 7,
             "description": "Component to view list of object.",
+            "extends": "FlexberryBaseComponent"
+        },
+        "FlexberrySimpledatetime": {
+            "name": "FlexberrySimpledatetime",
+            "shortname": "FlexberrySimpledatetime",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 8,
+            "description": "Wrapper for input[type='date/datetime/datetime-local'] component.\n\n  Please keep in mind that these input types are not supported\n  in all browsers: http://caniuse.com/#feat=input-datetime.\n\n  Example:\n  ```js\n  {{flexberry-simpledatetime type='datetime-local' value=model.orderDate min=model.orderDateMin readonly=readonly}}\n  ```",
             "extends": "FlexberryBaseComponent"
         },
         "FlexberryTextarea": {
@@ -1515,6 +1540,18 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
             "line": 24,
+            "description": "Readonly HTML attribute following to the `readonly` query param. According to the W3C standard, returns 'readonly' if `readonly` is `true` and `undefined` otherwise.",
+            "itemtype": "property",
+            "name": "readonlyAttr",
+            "type": "String|undefined",
+            "default": "undefined",
+            "readonly": "",
+            "class": "FlexberryBaseComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-base-component.js",
+            "line": 36,
             "description": "Flag: indicates whether component is required.",
             "itemtype": "property",
             "name": "required",
@@ -1525,7 +1562,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 33,
+            "line": 45,
             "description": "Unique name of the component.\nTODO: use guidFor from 'ember-metal/utils'",
             "itemtype": "property",
             "name": "componentName",
@@ -1536,7 +1573,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 43,
+            "line": 55,
             "description": "Component dynamic properties ({ componentPropertyName: value }).\nUsed when component renderes dynamicly with ember {{component}} helper:\n{{component 'my-component' value=value dynamicProperties=myConponentProperties}}.\nIn the end of component initializetion its properties values will be replaced with values from this object.",
             "itemtype": "property",
             "name": "dynamicProperties",
@@ -1547,7 +1584,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 55,
+            "line": 67,
             "description": "Model to which current component's value is related.",
             "itemtype": "property",
             "name": "relatedModel",
@@ -1558,7 +1595,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 64,
+            "line": 76,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -1569,7 +1606,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 73,
+            "line": 85,
             "description": "Application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfig",
@@ -1579,7 +1616,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 81,
+            "line": 93,
             "description": "Component settings object from application configuration (part of JSON from ./config/environment.js).\nPart of appConfig related to appConfigSettingsPath.",
             "itemtype": "property",
             "name": "appConfigSettings",
@@ -1589,7 +1626,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 90,
+            "line": 102,
             "description": "Current controller.",
             "itemtype": "property",
             "name": "currentController",
@@ -1599,35 +1636,35 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 97,
+            "line": 109,
             "description": "Initializes component properties.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 143,
+            "line": 155,
             "description": "Initializes DOM-related component properties.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 150,
+            "line": 162,
             "description": "Cleanup component.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 157,
+            "line": 169,
             "description": "Cleanup DOM-related component stuff.",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 164,
+            "line": 176,
             "description": "Initializes component's property with recpect to following priority:\n1 - template-defined parameters,\n2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),\n3 - component-defined defaults.\nNote! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.\n\n```javascript\n// Possible ./config/environment.js.\nmodule.exports = function(environment) {\n  APP: {\n    components: {\n      myComponent: {\n        myComponentProperty: 'myComponentProperty config-defined default value'\n      }\n    }\n  }\n  }\n});\n\nvar myComponent = FlexberryBaseComponent.extend({\n  appConfigSettingsPath: 'APP.components.myComponent',\n\n  myComponentProperty: undefined,\n\n  init: function() {\n    this._super.apply(this, arguments);\n    this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });\n  }\n});\n```",
             "params": [
                 {
@@ -1653,7 +1690,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-base-component.js",
-            "line": 228,
+            "line": 240,
             "description": "Returns that 'targetObject' (from 'targetObject's hierarchy) which satisfies a given condition.\n\n```javascript\nvar controller = this.getTargetObjectByCondition(function(targetObject) {\n  return targetObject instanceof Ember.Controller;\n});\n```",
             "itemtype": "method",
             "name": "getTargetObjectByCondition.",
@@ -2768,6 +2805,94 @@
             "itemtype": "method",
             "name": "customButtonAction",
             "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 25,
+            "description": "Value of this component.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "Date",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 33,
+            "description": "Minimum value of this component.",
+            "itemtype": "property",
+            "name": "min",
+            "type": "Date",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 41,
+            "description": "Maximum value of this component.",
+            "itemtype": "property",
+            "name": "max",
+            "type": "Date",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 49,
+            "description": "Converted date in `value` to appropriate input datatype.\nFor example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.value.",
+            "itemtype": "property",
+            "name": "valueStr",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 70,
+            "description": "Converted date in `min` to appropriate input datatype.\nFor example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.min.",
+            "itemtype": "property",
+            "name": "minStr",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 91,
+            "description": "Converted date in `max` to appropriate input datatype.\nFor example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.max.",
+            "itemtype": "property",
+            "name": "maxStr",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 112,
+            "description": "Converts Date object to appropriate string value for input.",
+            "itemtype": "method",
+            "name": "convertDateToString",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 145,
+            "description": "Converts string value of input to Date object.",
+            "itemtype": "method",
+            "name": "convertStringToDate",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
@@ -4626,23 +4751,23 @@
         },
         {
             "message": "Missing item type\nInitializes component properties.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:97"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:109"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component properties.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:143"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:155"
         },
         {
             "message": "Missing item type\nCleanup component.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:150"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:162"
         },
         {
             "message": "Missing item type\nCleanup DOM-related component stuff.",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:157"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:169"
         },
         {
             "message": "Missing item type\nInitializes component's property with recpect to following priority:\n1 - template-defined parameters,\n2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in 'appConfigSettingsPath' property),\n3 - component-defined defaults.\nNote! It is important to be declared as undefined for those component properties, which will be initialized through 'initProperty' call.\n\n```javascript\n// Possible ./config/environment.js.\nmodule.exports = function(environment) {\n  APP: {\n    components: {\n      myComponent: {\n        myComponentProperty: 'myComponentProperty config-defined default value'\n      }\n    }\n  }\n  }\n});\n\nvar myComponent = FlexberryBaseComponent.extend({\n  appConfigSettingsPath: 'APP.components.myComponent',\n\n  myComponentProperty: undefined,\n\n  init: function() {\n    this._super.apply(this, arguments);\n    this.initProperty({ propertyName: 'myComponentProperty', defaultValue: 'myComponentProperty default value' });\n  }\n});\n```",
-            "line": " ember-flexberry/addon/components/flexberry-base-component.js:164"
+            "line": " ember-flexberry/addon/components/flexberry-base-component.js:176"
         },
         {
             "message": "Missing item type\nInitializes file-control component.",
