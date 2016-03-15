@@ -3447,7 +3447,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 308,
+            "line": 65,
+            "description": "Flag shows if deleted records should be immediately saved to server after delete.",
+            "itemtype": "property",
+            "name": "immediateDelete",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view.js",
+            "line": 317,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -3468,7 +3479,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 346,
+            "line": 355,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",

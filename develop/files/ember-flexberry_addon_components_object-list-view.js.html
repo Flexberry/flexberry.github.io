@@ -190,6 +190,15 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
    */
   objectlistviewEventsService: Ember.inject.service(&#x27;objectlistview-events&#x27;),
 
+  /**
+   * Flag shows if deleted records should be immediately saved to server after delete.
+   *
+   * @property immediateDelete
+   * @type Boolean
+   * @default false
+   */
+  immediateDelete: false,
+
   contentWithKeys: null,
 
   actions: {
@@ -208,7 +217,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     },
     deleteRow: function(key, record) {
       if (confirm(&#x27;Do you really want to delete this record?&#x27;)) {
-        this._deleteRecord(record);
+        this._deleteRecord(record, this.get(&#x27;immediateDelete&#x27;));
       }
     },
     selectRow: function(key, record) {
