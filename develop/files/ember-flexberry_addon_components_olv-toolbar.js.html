@@ -182,6 +182,24 @@ export default FlexberryBaseComponent.extend({
   deleteButton: false,
 
   /**
+   * Flag to use filter button at toolbar.
+   *
+   * @property filterButton
+   * @type Boolean
+   * @default false
+   */
+  filterButton: false,
+
+  /**
+   * Used to specify default &#x27;filter by any match&#x27; field text.
+   *
+   * @property filterText
+   * @type String
+   * @default null
+   */
+  filterText: null,
+
+  /**
    * The flag to specify whether the delete button is enabled.
    *
    * @property deleteButton
@@ -266,6 +284,17 @@ export default FlexberryBaseComponent.extend({
       var componentName = this.get(&#x27;componentName&#x27;);
       this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
     },
+
+    /**
+     * Filters the content by &quot;Filter by any match&quot; field value.
+     *
+     * @method filterByAnyMatch
+     */
+    filterByAnyMatch: function() {
+      var componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;objectlistviewEventsService&#x27;).filterByAnyMatchTrigger(componentName, this.get(&#x27;filterByAnyMatchText&#x27;));
+    },
+
     customButtonAction: function(actionName) {
       this.sendAction(&#x27;customButtonAction&#x27;, actionName);
     }
@@ -280,6 +309,15 @@ export default FlexberryBaseComponent.extend({
    * @default false
    */
   isDeleteButtonEnabled: false,
+
+  /**
+   * Stores the text from &quot;Filter by any match&quot; input field.
+   *
+   * @property filterByAnyMatchText
+   * @type String
+   * @default null
+   */
+  filterByAnyMatchText: Ember.computed.oneWay(&#x27;filterText&#x27;),
 
   /**
    * Event handler for &quot;row has been selected&quot; event in objectlistview.

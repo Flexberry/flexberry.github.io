@@ -178,6 +178,18 @@ export default Ember.Service.extend(Ember.Evented, {
   },
 
   /**
+   * Trigger for &quot;filter by any match&quot; event in objectlistview.
+   *
+   * @method filterByAnyMatchTrigger
+   *
+   * @param {String} componentName The name of objectlistview component.
+   * @param {String} pattern The pattern to match attributes values.
+   */
+  filterByAnyMatchTrigger(componentName, pattern) {
+    this.trigger(&#x27;filterByAnyMatch&#x27;, componentName, pattern);
+  },
+
+  /**
    * Trigger for &quot;new row has been added&quot; event in objectlistview.
    * Event name: olvRowAdded.
    *

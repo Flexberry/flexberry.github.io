@@ -129,8 +129,11 @@
 import Ember from &#x27;ember&#x27;;
 
 export default Ember.Mixin.create({
-  queryParams: [&#x27;lf&#x27;],
-  lf: undefined,
+  queryParams: [&#x27;lf&#x27;, &#x27;filter&#x27;],
+
+  lf: null,
+
+  filter: null,
 
   /**
    * Update current limit function.
@@ -142,6 +145,20 @@ export default Ember.Mixin.create({
     if (this.get(&#x27;lf&#x27;) !== limitFunction) {
       // Changing lf value reloads route automatically.
       this.set(&#x27;lf&#x27;, limitFunction);
+    }
+  },
+
+  actions: {
+    /**
+     * Changes current pattern for objects filtering.
+     *
+     * @method filterByAnyMatch
+     * @param {String} pattern A substring that is searched in objects while filtering.
+     */
+    filterByAnyMatch: function(pattern) {
+      if (this.get(&#x27;filter&#x27;) !== pattern) {
+        this.set(&#x27;filter&#x27;, pattern);
+      }
     }
   }
 });
