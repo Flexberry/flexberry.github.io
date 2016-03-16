@@ -4438,6 +4438,32 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/serializers/odata.js",
+            "line": 124,
+            "description": "`serializeBelongsTo` can be used to customize how `DS.belongsTo` properties are serialized.\nIf there is set option `odata-id` at serializer and `DS.belongsTo` property is not null,\nthen property will be serialized like:\n'''\nRelationName@odata.bind': RelationType(RelatedObjectId)\n'''",
+            "itemtype": "method",
+            "name": "serializeBelongsTo",
+            "params": [
+                {
+                    "name": "snapshot",
+                    "description": "",
+                    "type": "DS.Snapshot"
+                },
+                {
+                    "name": "json",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "relationship",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "ObjectlistviewEvents",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/services/objectlistview-events.js",
             "line": 15,
             "description": "Trigger for \"add new row\" event in objectlistview.\nEvent name: olvAddRow.",
