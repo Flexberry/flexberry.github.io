@@ -141,6 +141,7 @@
 import Ember from &#x27;ember&#x27;;
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lookup-compatible-component&#x27;;
+import ErrorableMixin from &#x27;../mixins/errorable-controller&#x27;;
 
 /**
  * Object list view component.
@@ -148,7 +149,7 @@ import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lo
  * @class ObjectListView
  * @extends FlexberryBaseComponent
  */
-export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentMixin, {
+export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentMixin, ErrorableMixin, {
   actions: {
     rowClick: function(key, record) {
       if (this.rowClickable) {
@@ -255,17 +256,12 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   /**
    * Override wrapping element&#x27;s tag.
    */
-  tagName: &#x27;table&#x27;,
+  tagName: &#x27;div&#x27;,
 
   /**
    * Component&#x27;s CSS classes.
    */
-  classNames: [&#x27;object-list-view&#x27;, &#x27;ui&#x27;, &#x27;celled&#x27;, &#x27;table&#x27;],
-
-  /**
-   * Component&#x27;s CSS classes bindings.
-   */
-  classNameBindings: [&#x27;rowClickable:selectable&#x27;, &#x27;readonly:readonly&#x27;],
+  classNames: [&#x27;object-list-view-container&#x27;],
 
   /**
    * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
@@ -904,6 +900,8 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   _deleteRows: function(componentName, immediately) {
     if (componentName === this.get(&#x27;componentName&#x27;)) {
       if (confirm(&#x27;Do you really want to delete selected records?&#x27;)) {
+        this.send(&#x27;dismissErrorMessages&#x27;);
+
         var _this = this;
         var selectedRecords = this.get(&#x27;selectedRecords&#x27;);
         var count = selectedRecords.length;
@@ -924,7 +922,10 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     this._removeModelWithKey(key);
     record.deleteRecord();
     if (immediately === true) {
-      record.save();
+      record.save().catch((reason) =&gt; {
+        this.rejectError(reason, &#x60;Unable to delete a record: ${record.toString()}.&#x60;);
+        record.rollbackAttributes();
+      });
     }
 
     var componentName = this.get(&#x27;componentName&#x27;);
