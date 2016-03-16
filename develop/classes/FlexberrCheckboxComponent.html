@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FlexberrCheckboxComponent - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
+	                            <li><a href="../classes/EnumStringTransform.html">EnumStringTransform</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckboxComponent.html">FlexberrCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryMenuComponent.html">FlexberryMenuComponent</a></li>
+	                            <li><a href="../classes/FlexberryMenuitemComponent.html">FlexberryMenuitemComponent</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ObjectListView.html">ObjectListView</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCell.html">ObjectListViewSingleColumnCell</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.Adapter.html">Projection.Adapter</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.Store.html">Projection.Store</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>FlexberrCheckboxComponent <small>Class</small></h1>
+</div>
+
+<div class="well well-small">
+
+        <div class="extends">
+            Extends <a href="../classes/FlexberryBaseComponent.html" class="crosslink">FlexberryBaseComponent</a>
+        </div>
+
+        <div class="foundat">
+            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-checkbox.js.html#l8"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-checkbox.js:8</code></a>
+        </div>
+
+            Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
+
+</div>
+
+
+<div class="well well-small">
+    <p>Checkbox component for Semantic UI.</p>
+
+</div>
+
+
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
+            <li><a data-toggle="tab" href="#properties">Properties</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_combineFilterWithFilterByAnyMatch" data-tablink="combineFilterWithFilterByAnyMatch">combineFilterWithFilterByAnyMatch</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getLimitFunctionQuery" data-tablink="getLimitFunctionQuery">getLimitFunctionQuery</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getQueryOptionsForAutocompleteLookup" data-tablink="getQueryOptionsForAutocompleteLookup">getQueryOptionsForAutocompleteLookup</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getTargetObjectByCondition." data-tablink="getTargetObjectByCondition.">getTargetObjectByCondition.</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getUrlForTypeQuery" data-tablink="getUrlForTypeQuery">getUrlForTypeQuery</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_appConfig" data-tablink="appConfig">appConfig</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_appConfigSettings" data-tablink="appConfigSettings">appConfigSettings</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_appConfigSettingsPath" data-tablink="appConfigSettingsPath">appConfigSettingsPath</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_checkboxInput" data-tablink="checkboxInput">checkboxInput</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_componentName" data-tablink="componentName">componentName</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_createNewButton" data-tablink="createNewButton">createNewButton</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_currentController" data-tablink="currentController">currentController</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_deleteButton" data-tablink="deleteButton">deleteButton</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_dynamicProperties" data-tablink="dynamicProperties">dynamicProperties</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_headerClickable" data-tablink="headerClickable">headerClickable</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_label" data-tablink="label">label</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_readonly" data-tablink="readonly">readonly</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_readonlyAttr" data-tablink="readonlyAttr">readonlyAttr</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_refreshButton" data-tablink="refreshButton">refreshButton</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_relatedModel" data-tablink="relatedModel">relatedModel</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_required" data-tablink="required">required</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_rowClickable" data-tablink="rowClickable">rowClickable</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showAsteriskInRow" data-tablink="showAsteriskInRow">showAsteriskInRow</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showCheckBoxInRow" data-tablink="showCheckBoxInRow">showCheckBoxInRow</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showDeleteButtonInRow" data-tablink="showDeleteButtonInRow">showDeleteButtonInRow</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showDeleteMenuItemInRow" data-tablink="showDeleteMenuItemInRow">showDeleteMenuItemInRow</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_showEditMenuItemInRow" data-tablink="showEditMenuItemInRow">showEditMenuItemInRow</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_tagName" data-tablink="tagName">tagName</a>
+
+                            </li>
+                            <li class="index-item property inherited inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_useSingleColumn" data-tablink="useSingleColumn">useSingleColumn</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_value" data-tablink="value">value</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method_combineFilterWithFilterByAnyMatch" class="method item inherited">
+                        <h3 class="name"><code>combineFilterWithFilterByAnyMatch</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>store</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>currentFilter</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>matchPattern</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>modelName</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>modelFields</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_combineFilterWithFilterByAnyMatch">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l107"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:107</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Combines the provided filter string with filter expression to match those objects
+                    which have attributes containing the provided pattern;</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">store</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The store to retrieve a serializer for model.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">currentFilter</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Current filter string to be combined with created expression.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">matchPattern</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The substring to match objects' attributes.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">modelName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The name of the filtered model.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">modelFields</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The array of strings containing names of model attributes to use in matching.</p>
+                    <p>ToDo: It's the temporary solution made to move backend-specific logic to adapter. It's needed
+                    to use any abstract query language and create filters in Ember objects with it, then convert
+                    these filters to backend-specific filter expressions by an utitility method in each adapter.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_getLimitFunctionQuery" class="method item inherited">
+                        <h3 class="name"><code>getLimitFunctionQuery</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>limitFunction</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>projectionName</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getLimitFunctionQuery">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l29"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:29</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Creates query with given projection name (if not null) and limit function (if not empty).</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">limitFunction</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Filter to add to query (if empty noting will be added as filter).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">projectionName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Projection name to add to query (if empty noting will be added as projection name).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Created query.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_getQueryOptionsForAutocompleteLookup" class="method item inherited">
+                        <h3 class="name"><code>getQueryOptionsForAutocompleteLookup</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>lookupParameters</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getQueryOptionsForAutocompleteLookup">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l67"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:67</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Forms query options to get entities by specified lookup options.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">lookupParameters</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Specified lookup autocomplete options.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Formed query options.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_getTargetObjectByCondition." class="method item inherited">
+                        <h3 class="name"><code>getTargetObjectByCondition.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>condition</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Null | <a href="http://emberjs.com/api/classes/Ember.Component.html" class="crosslink external" target="_blank">Ember.Component</a> | <a href="http://emberjs.com/api/classes/Ember.Controller.html" class="crosslink external" target="_blank">Ember.Controller</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getTargetObjectByCondition.">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l240"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:240</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns that 'targetObject' (from 'targetObject's hierarchy) which satisfies a given condition.</p>
+                    <pre class="code prettyprint"><code class="language-javascript">var controller = this.getTargetObjectByCondition(function(targetObject) {
+                      return targetObject instanceof Ember.Controller;
+                    });
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">condition</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Callback-function, which will be called for each 'targetObject' in 'targetObject's hierarchy,
+                    until callback return true for one of them.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Null | <a href="http://emberjs.com/api/classes/Ember.Component.html" class="crosslink external" target="_blank">Ember.Component</a> | <a href="http://emberjs.com/api/classes/Ember.Controller.html" class="crosslink external" target="_blank">Ember.Controller</a></span>:
+                                        <p>Target object which satisfies a given condition or null.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_getUrlForTypeQuery" class="method item inherited">
+                        <h3 class="name"><code>getUrlForTypeQuery</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>type</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getUrlForTypeQuery">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l50"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:50</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Forms url to get all entities of certain type.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">type</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Type of entities.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Formed url.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+            </div>
+
+            <div id="properties" class="tab-pane">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_appConfig" class="property item inherited">
+                        <h3 class="name"><code>appConfig</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_appConfig">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l85"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:85</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Application configuration (JSON from ./config/environment.js).</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_appConfigSettings" class="property item inherited">
+                        <h3 class="name"><code>appConfigSettings</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_appConfigSettings">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l93"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:93</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Component settings object from application configuration (part of JSON from ./config/environment.js).
+                    Part of appConfig related to appConfigSettingsPath.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_appConfigSettingsPath" class="property item">
+                        <h3 class="name"><code>appConfigSettingsPath</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_appConfigSettingsPath">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-checkbox.js.html#l25"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-checkbox.js:25</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Path to component's settings in application configuration (JSON from ./config/environment.js).</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;APP.components.flexberryCheckbox&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_checkboxInput" class="property item">
+                        <h3 class="name"><code>checkboxInput</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-checkbox.js.html#l52"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-checkbox.js:52</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>DOM-element representing checkbox input.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_componentName" class="property item inherited">
+                        <h3 class="name"><code>componentName</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_componentName">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l45"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:45</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Unique name of the component.
+                    TODO: use guidFor from 'ember-metal/utils'</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_createNewButton" class="property item inherited">
+                        <h3 class="name"><code>createNewButton</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_createNewButton">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-objectlistview.js.html#l83"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-objectlistview.js:83</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show creation button at toolbar.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_currentController" class="property item inherited">
+                        <h3 class="name"><code>currentController</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/Ember.Controller.html" class="crosslink external" target="_blank">Ember.Controller</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_currentController">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l102"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:102</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current controller.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_deleteButton" class="property item inherited">
+                        <h3 class="name"><code>deleteButton</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_deleteButton">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-objectlistview.js.html#l101"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-objectlistview.js:101</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show delete button at toolbar.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_dynamicProperties" class="property item inherited">
+                        <h3 class="name"><code>dynamicProperties</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_dynamicProperties">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l55"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:55</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Component dynamic properties ({ componentPropertyName: value }).
+                    Used when component renders dynamically with ember {{component}} helper:
+                    {{component 'my-component' value=value dynamicProperties=myConponentProperties}}.
+                    In the end of component initialization its properties values will be replaced with values from this object.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_headerClickable" class="property item inherited">
+                        <h3 class="name"><code>headerClickable</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_headerClickable">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l74"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:74</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether ordering by clicking on column headers is allowed.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_label" class="property item">
+                        <h3 class="name"><code>label</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-checkbox.js.html#l43"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-checkbox.js:43</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Label for the checkbox.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_readonly" class="property item inherited">
+                        <h3 class="name"><code>readonly</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_readonly">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:15</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether component is readonly.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_readonlyAttr" class="property item inherited">
+                        <h3 class="name"><code>readonlyAttr</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a> | Undefined</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_readonlyAttr">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l24"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:24</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Readonly HTML attribute following to the <code>readonly</code> query param. According to the W3C standard, returns 'readonly' if <code>readonly</code> is <code>true</code> and <code>undefined</code> otherwise.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_refreshButton" class="property item inherited">
+                        <h3 class="name"><code>refreshButton</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_refreshButton">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-objectlistview.js.html#l92"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-objectlistview.js:92</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show refresh button at toolbar.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_relatedModel" class="property item inherited">
+                        <h3 class="name"><code>relatedModel</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_relatedModel">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l67"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:67</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Model to which current component's value is related.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_required" class="property item inherited">
+                        <h3 class="name"><code>required</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#property_required">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l36"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:36</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether component is required.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_rowClickable" class="property item inherited">
+                        <h3 class="name"><code>rowClickable</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_rowClickable">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l65"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:65</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether table rows are clickable.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> true</p>
+                    
+                    
+                    </div>
+                    <div id="property_showAsteriskInRow" class="property item inherited">
+                        <h3 class="name"><code>showAsteriskInRow</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_showAsteriskInRow">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l20"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:20</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show asterisk icon in first column of every changed row.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_showCheckBoxInRow" class="property item inherited">
+                        <h3 class="name"><code>showCheckBoxInRow</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_showCheckBoxInRow">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l29"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:29</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show checkbox in first column of every row.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_showDeleteButtonInRow" class="property item inherited">
+                        <h3 class="name"><code>showDeleteButtonInRow</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_showDeleteButtonInRow">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l38"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:38</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show delete button in first column of every row.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_showDeleteMenuItemInRow" class="property item inherited">
+                        <h3 class="name"><code>showDeleteMenuItemInRow</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_showDeleteMenuItemInRow">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l56"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:56</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show dropdown menu with delete menu item, in last column of every row.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_showEditMenuItemInRow" class="property item inherited">
+                        <h3 class="name"><code>showEditMenuItemInRow</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_showEditMenuItemInRow">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l47"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:47</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to show dropdown menu with edit menu item, in last column of every row.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_tagName" class="property item">
+                        <h3 class="name"><code>tagName</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-checkbox.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-checkbox.js:15</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Overload wrapper tag name for disabling wrapper.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_useSingleColumn" class="property item inherited">
+                        <h3 class="name"><code>useSingleColumn</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_useSingleColumn">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_mobile_flexberry-groupedit.js.html#l11"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;mobile&#x2F;flexberry-groupedit.js:11</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to use single column to display all model properties or not.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_value" class="property item">
+                        <h3 class="name"><code>value</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-checkbox.js.html#l34"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-checkbox.js:34</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current checked value.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
