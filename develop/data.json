@@ -5499,7 +5499,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 165,
+            "line": 176,
             "description": "Method to transit to parent's route (previous route).\nIf `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
             "itemtype": "method",
             "name": "transitionToParentRoute.",
@@ -5508,7 +5508,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 180,
+            "line": 191,
             "description": "Method to get type and attributes of component,\nwhich will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent.",
@@ -5538,7 +5538,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 247,
+            "line": 258,
             "description": "Save dirty hasMany relationships in the `model`.\nThis method invokes by `save` method.",
             "itemtype": "method",
             "name": "saveHasManyRelationships",
@@ -5551,7 +5551,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 270,
+            "line": 281,
             "description": "Rollback dirty hasMany relationships in the `model`.\nThis method invokes by `resetController` in the `edit-form` route.",
             "itemtype": "method",
             "name": "rollbackHasManyRelationships",
@@ -5569,7 +5569,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 291,
+            "line": 302,
             "description": "Destroy (delete and save) all hasMany relationships in the `model`.\nThis method invokes by `delete` method.",
             "itemtype": "method",
             "name": "destroyHasManyRelationships",
@@ -5582,21 +5582,21 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 318,
+            "line": 329,
             "description": "On save model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 325,
+            "line": 336,
             "description": "On delete model success handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 332,
+            "line": 343,
             "description": "On delete model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
@@ -7411,15 +7411,15 @@
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:318"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:329"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:325"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:336"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:332"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:343"
         },
         {
             "message": "Missing item type\nTable row click handler.\nIt sets `modelNoRollBack` to `true` at current controller, redirects to detail's route, save necessary data to service.",
