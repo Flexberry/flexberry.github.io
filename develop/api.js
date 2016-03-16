@@ -1,6 +1,8 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
+        "DetailEditFormController",
+        "DetailInterationService",
         "EditFormController",
         "EditFormRoute",
         "EnumNumberTransform",

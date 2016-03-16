@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectListView", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,6 +48,8 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
 	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
@@ -62,8 +64,8 @@
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
-	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -171,6 +173,15 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     componentProperties: null
   },
 
+  /**
+   * Flag shows if detail should be edited on separate route.
+   *
+   * @property editOnSeparateRoute
+   * @type Object
+   * @default false
+   */
+  editOnSeparateRoute: false,
+
   action: &#x27;rowClick&#x27;,
   addColumnToSorting: &#x27;addColumnToSorting&#x27;,
   sortByColumn: &#x27;sortByColumn&#x27;,
@@ -204,8 +215,12 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   actions: {
     rowClick: function(key, record) {
       if (this.rowClickable) {
-        this.set(&#x27;selectedRecord&#x27;, record);
-        this._setActiveRecord(key);
+        if (this.get(&#x27;editOnSeparateRoute&#x27;) !== true) {
+          // It is necessary only when we will not go to other route on click.
+          this.set(&#x27;selectedRecord&#x27;, record);
+          this._setActiveRecord(key);
+        }
+
         this.sendAction(&#x27;action&#x27;, record);
       }
     },
@@ -369,7 +384,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     let getCellComponent = Ember.get(currentController || {}, &#x27;getCellComponent&#x27;);
     let cellComponent = this.get(&#x27;cellComponent&#x27;);
 
-    if (Ember.typeOf(getCellComponent) === &#x27;function&#x27;) {
+    if (this.get(&#x27;editOnSeparateRoute&#x27;) !== true &amp;&amp; Ember.typeOf(getCellComponent) === &#x27;function&#x27;) {
       let recordModel =  (this.get(&#x27;content&#x27;) || {}).type || null;
       cellComponent = getCellComponent.call(currentController, attr, bindingPath, recordModel);
     }
@@ -424,21 +439,48 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     }
   },
 
+  /**
+   * Adds detail model to current model, generates unique key for detail model.
+   * If record is deleted then &#x60;undefined&#x60; is returned and record isn&#x27;t added to list.
+   *
+   * @method _addModel
+   * @private
+   *
+   * @param {DS.Model} record Detail model to add to current model.
+   * @return {String} Unique key for added record or &#x60;undefined&#x60; if record is deleted.
+   */
   _addModel: function(record) {
+    if (record.get(&#x27;isDeleted&#x27;)) {
+      return undefined;
+    }
+
     var modelWithKey = Ember.Object.create({});
     var key = Ember.guidFor(record);
     modelWithKey.set(&#x27;key&#x27;, key);
     modelWithKey.set(&#x27;data&#x27;, record);
     this.get(&#x27;contentWithKeys&#x27;).pushObject(modelWithKey);
+    return key;
   },
 
+  /**
+   * Adds row to component and calls click on row action if detail is edited on separate route.
+   * This method is triggered on toolbar&#x27;s add batton click.
+   *
+   * @method _addRow
+   * @private
+   *
+   * @param {String} componentName The name of triggered component.
+   */
   _addRow: function(componentName) {
     if (componentName === this.get(&#x27;componentName&#x27;)) {
       var modelName = this.get(&#x27;modelProjection&#x27;).modelName;
       var modelToAdd = this.get(&#x27;store&#x27;).createRecord(modelName, {});
       this.get(&#x27;content&#x27;).addObject(modelToAdd);
-      this._addModel(modelToAdd);
+      var key = this._addModel(modelToAdd);
       this.get(&#x27;objectlistviewEventsService&#x27;).rowAddedTrigger(componentName, modelToAdd);
+      if (this.get(&#x27;editOnSeparateRoute&#x27;) === true) {
+        this.send(this.get(&#x27;action&#x27;), key, modelToAdd);
+      }
     }
   },
 

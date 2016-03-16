@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectListView", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,6 +48,8 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
 	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
@@ -62,8 +64,8 @@
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
-	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -173,6 +175,15 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
   queryParams: [&#x27;readonly&#x27;],
 
   /**
+   * Flag to enable return to agregator&#x27;s path if possible.
+   *
+   * @property returnToAgregatorRoute
+   * @type Boolean
+   * @default false
+   */
+  returnToAgregatorRoute: false,
+
+  /**
    * Indicates whether the current form is opened only for reading.
    *
    * @property readonly
@@ -225,6 +236,16 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
   lookupController: Ember.inject.controller(&#x27;lookup-dialog&#x27;),
 
   /**
+   * Flag to cancel rollback of model on controller resetting.
+   * Flag is set for interaction of agregator&#x27;s and detail&#x27;s routes.
+   *
+   * @property modelNoRollBack
+   * @type Boolean
+   * @default false
+   */
+  modelNoRollBack: false,
+
+  /**
    * Actions handlers.
    */
   actions: {
@@ -239,6 +260,7 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
     },
 
     delete: function() {
+      // TODO: with agregator.
       if (confirm(&#x27;Are you sure you want to delete that record?&#x27;)) {
         this.send(&#x27;dismissErrorMessages&#x27;);
 
@@ -272,6 +294,10 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
 
   /**
    * Method to transit to parent&#x27;s route (previous route).
+   * If &#x60;parentRoute&#x60; is set, transition to defined path.
+   * Otherwise transition to corresponding list.
+   *
+   * @method transitionToParentRoute.
    */
   transitionToParentRoute: function() {
     // TODO: нужно учитывать пэйджинг.
@@ -376,9 +402,12 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
    * This method invokes by &#x60;resetController&#x60; in the &#x60;edit-form&#x60; route.
    *
    * @method rollbackHasManyRelationships
+   * @public
+   *
+   * @param {DS.Model} processedModel Model to rollback its relations (controller&#x27;s model will be used if undefined).
    */
-  rollbackHasManyRelationships: function() {
-    let model = this.get(&#x27;model&#x27;);
+  rollbackHasManyRelationships: function(processedModel) {
+    let model = processedModel ? processedModel : this.get(&#x27;model&#x27;);
     let promises = Ember.A();
     model.eachRelationship((name, desc) =&gt; {
       if (desc.kind === &#x27;hasMany&#x27;) {

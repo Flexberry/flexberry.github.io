@@ -272,6 +272,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/controllers/detail-edit-form.js": {
+            "name": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "modules": {},
+            "classes": {
+                "DetailEditFormController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/controllers/edit-form.js": {
             "name": "ember-flexberry/addon/controllers/edit-form.js",
             "modules": {},
@@ -387,6 +396,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/services/detail-interaction.js": {
+            "name": "ember-flexberry/addon/services/detail-interaction.js",
+            "modules": {},
+            "classes": {
+                "DetailInterationService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/services/objectlistview-events.js": {
             "name": "ember-flexberry/addon/services/objectlistview-events.js",
             "modules": {},
@@ -479,11 +497,13 @@
                 "GroupEditToolbar": 1,
                 "ObjectListViewCell": 1,
                 "FlexberryObjectListView": 1,
+                "DetailEditFormController": 1,
                 "EditFormController": 1,
                 "ListFormController": 1,
                 "FlexberryLookupCompatibleComponentMixin": 1,
                 "EditFormRoute": 1,
                 "ListFormRoute": 1,
+                "DetailInterationService": 1,
                 "ObjectlistviewEvents": 1,
                 "EnumBaseTransform": 1,
                 "EnumNumberTransform": 1,
@@ -831,6 +851,21 @@
             "line": 9,
             "extends": "FlexberryBaseComponent"
         },
+        "DetailEditFormController": {
+            "name": "DetailEditFormController",
+            "shortname": "DetailEditFormController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 8,
+            "description": "Controller for the Detail's Edit Forms.\n  It lets to interact between agregator's and details's forms.\n\n  This class re-exports to the application as `/controllers/detail-edit-form`.\n  So, you can inherit from `./detail-edit-form`, even if file `app/controllers/detail-edit-form.js`\n  is not presented in the application.\n\n  Example:\n  ```js\n  // app/controllers/order.js\n  import DetailEditFormController from './detail-edit-form';\n  export default DetailEditFormController.extend({\n  });\n  ```",
+            "extends": "EditFormController"
+        },
         "EditFormController": {
             "name": "EditFormController",
             "shortname": "EditFormController",
@@ -923,6 +958,23 @@
                 "SortableRouteMixin",
                 "LimitedRouteMixin"
             ]
+        },
+        "DetailInterationService": {
+            "name": "DetailInterationService",
+            "shortname": "DetailInterationService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 7,
+            "description": "Service for interaction between agregator's and detail's forms.",
+            "extends": "Ember.Service",
+            "access": "public",
+            "tagname": ""
         },
         "ObjectlistviewEvents": {
             "name": "ObjectlistviewEvents",
@@ -2351,6 +2403,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
             "line": 23,
+            "description": "Flag shows if detail should be edited on separate route.",
+            "itemtype": "property",
+            "name": "editOnSeparateRoute",
+            "type": "Object",
+            "default": "false",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 32,
             "description": "Array of models for detail objects.",
             "itemtype": "property",
             "name": "content",
@@ -2361,7 +2424,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 32,
+            "line": 41,
             "description": "Function to get names of components to use for display\nattributes of detail object's model.",
             "itemtype": "property",
             "name": "cellComponent",
@@ -2372,7 +2435,29 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 42,
+            "line": 51,
+            "description": "Flag to allow row click.",
+            "itemtype": "property",
+            "name": "rowClickable",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 60,
+            "description": "Name of action to handle row click.\nAction will be send out of the component.",
+            "itemtype": "property",
+            "name": "rowClick",
+            "type": "String",
+            "default": "'rowClick'",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 70,
             "description": "Setting to true enables row ordering by clicking on column headers.",
             "itemtype": "property",
             "name": "orderable",
@@ -2383,7 +2468,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 55,
+            "line": 82,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "sortByColumn",
@@ -2399,7 +2484,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 66,
+            "line": 93,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "addColumnToSorting",
@@ -2407,6 +2492,22 @@
                 {
                     "name": "column",
                     "description": "Column to add sorting by.",
+                    "type": "Object"
+                }
+            ],
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 104,
+            "description": "Handles click on row of objectlistview.\nSends action out of component.",
+            "itemtype": "method",
+            "name": "rowClick",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "Clicked record.",
                     "type": "Object"
                 }
             ],
@@ -3437,7 +3538,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 57,
+            "line": 46,
+            "description": "Flag shows if detail should be edited on separate route.",
+            "itemtype": "property",
+            "name": "editOnSeparateRoute",
+            "type": "Object",
+            "default": "false",
+            "class": "FlexberryObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view.js",
+            "line": 66,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEventsService",
@@ -3447,7 +3559,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 65,
+            "line": 74,
             "description": "Flag shows if deleted records should be immediately saved to server after delete.",
             "itemtype": "property",
             "name": "immediateDelete",
@@ -3458,7 +3570,47 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 317,
+            "line": 312,
+            "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
+            "itemtype": "method",
+            "name": "_addModel",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "Detail model to add to current model.",
+                    "type": "DS.Model"
+                }
+            ],
+            "return": {
+                "description": "Unique key for added record or `undefined` if record is deleted.",
+                "type": "String"
+            },
+            "class": "FlexberryObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view.js",
+            "line": 335,
+            "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
+            "itemtype": "method",
+            "name": "_addRow",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "The name of triggered component.",
+                    "type": "String"
+                }
+            ],
+            "class": "FlexberryObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view.js",
+            "line": 357,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -3479,7 +3631,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 355,
+            "line": 395,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -3502,7 +3654,7 @@
             "itemtype": "property",
             "name": "objectlistviewEventsService",
             "type": "ObjectlistviewEvents",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3513,7 +3665,7 @@
             "name": "createNewButton",
             "type": "Boolean",
             "default": "false",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3524,7 +3676,7 @@
             "name": "createNewButton",
             "type": "Boolean",
             "default": "true",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3535,7 +3687,7 @@
             "name": "refreshButton",
             "type": "Boolean",
             "default": "false",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3546,7 +3698,7 @@
             "name": "deleteButton",
             "type": "Boolean",
             "default": "false",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3557,7 +3709,7 @@
             "name": "filterButton",
             "type": "Boolean",
             "default": "false",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3568,7 +3720,7 @@
             "name": "filterText",
             "type": "String",
             "default": "null",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3579,7 +3731,7 @@
             "name": "deleteButton",
             "type": "Boolean",
             "default": "true",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3590,7 +3742,7 @@
             "name": "customButtonAction",
             "type": "String",
             "default": "'customButtonAction'",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3601,7 +3753,7 @@
             "name": "customButtonsClosureEvent",
             "type": "Function",
             "default": "undefined",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3612,7 +3764,7 @@
             "name": "customButtonsArray",
             "type": "Array",
             "default": "undefined",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3621,7 +3773,7 @@
             "description": "Implementation of component's teardown.",
             "itemtype": "method",
             "name": "willDestroy",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3630,7 +3782,7 @@
             "description": "Delete selected rows.",
             "itemtype": "method",
             "name": "delete",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3639,7 +3791,7 @@
             "description": "Filters the content by \"Filter by any match\" field value.",
             "itemtype": "method",
             "name": "filterByAnyMatch",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3650,7 +3802,7 @@
             "name": "isDeleteButtonEnabled",
             "type": "Boolean",
             "default": "false",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3661,7 +3813,7 @@
             "name": "filterByAnyMatchText",
             "type": "String",
             "default": "null",
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3689,7 +3841,104 @@
                     "type": "Integer"
                 }
             ],
-            "class": "EditFormController",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 28,
+            "description": "Flag to enable return to agregator's path if possible.\nIt overrides base default value.",
+            "itemtype": "property",
+            "name": "returnToAgregatorRoute",
+            "type": "Boolean",
+            "default": "true",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 38,
+            "description": "Service that lets interact between agregator's and detail's form.",
+            "itemtype": "property",
+            "name": "flexberryDetailInteractionService",
+            "type": "Service",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 46,
+            "description": "Pathes to return to after leaving current route.",
+            "itemtype": "property",
+            "name": "modelCurrentAgregatorPathes",
+            "type": "String",
+            "default": "undefined",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 55,
+            "description": "Current detail's agregators.",
+            "itemtype": "property",
+            "name": "modelCurrentAgregators",
+            "type": "Object",
+            "default": "undefined",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 64,
+            "description": "A logic value showing if current route has parent one.",
+            "itemtype": "property",
+            "name": "hasParentRoute",
+            "type": "Boolean",
+            "default": "undefined",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 75,
+            "description": "Actions handlers.",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 79,
+            "description": "Handler for button 'save' click.\nIf return path is determined, no rollback happens and user is redirected to agregator's form.\nOtherwise base logic is executed.",
+            "itemtype": "method",
+            "name": "save",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 95,
+            "description": "Handler for button 'delete' click.\nIf return path is determined and current model is saved, record marks as deleted and user is redirected to agregator's form.\nOtherwise base logic is executed.",
+            "itemtype": "method",
+            "name": "delete",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 113,
+            "description": "Handler for button 'close' click.\nIf return path is determined, an error is thrown because this action should not be triggered.\nOtherwise base logic is executed.",
+            "itemtype": "method",
+            "name": "delete",
+            "class": "DetailEditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
+            "line": 133,
+            "description": "Method to transit to parent's route (previous route).\nIf `modelAgregatorRoute` is set, transition to defined path and set flag 'modelNoRollBack' to `true` on controller to prevent rollback of model.\nThen if `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
+            "itemtype": "method",
+            "name": "transitionToParentRoute.",
+            "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
@@ -3702,6 +3951,17 @@
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
             "line": 47,
+            "description": "Flag to enable return to agregator's path if possible.",
+            "itemtype": "property",
+            "name": "returnToAgregatorRoute",
+            "type": "Boolean",
+            "default": "false",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/edit-form.js",
+            "line": 56,
             "description": "Indicates whether the current form is opened only for reading.",
             "itemtype": "property",
             "name": "readonly",
@@ -3712,7 +3972,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 57,
+            "line": 66,
             "description": "Readonly attribute for HTML components following to the `readonly` query param. According to the W3C standard, returns 'readonly' if `readonly` is `true` and `undefined` otherwise.",
             "itemtype": "property",
             "name": "readonlyAttr",
@@ -3724,14 +3984,14 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 69,
+            "line": 78,
             "description": "Lookup settings.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 81,
+            "line": 90,
             "description": "If `true`, all details will be deleted along with the main model.",
             "itemtype": "property",
             "name": "destroyHasManyRelationshipsOnModelDestroy",
@@ -3742,7 +4002,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 90,
+            "line": 99,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
@@ -3753,21 +4013,34 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 99,
+            "line": 108,
+            "description": "Flag to cancel rollback of model on controller resetting.\nFlag is set for interaction of agregator's and detail's routes.",
+            "itemtype": "property",
+            "name": "modelNoRollBack",
+            "type": "Boolean",
+            "default": "false",
+            "class": "EditFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/edit-form.js",
+            "line": 118,
             "description": "Actions handlers.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 145,
-            "description": "Method to transit to parent's route (previous route).",
+            "line": 165,
+            "description": "Method to transit to parent's route (previous route).\nIf `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
+            "itemtype": "method",
+            "name": "transitionToParentRoute.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 156,
+            "line": 180,
             "description": "Method to get type and attributes of component,\nwhich will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent.",
@@ -3797,7 +4070,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 223,
+            "line": 247,
             "description": "Save dirty hasMany relationships in the `model`.\nThis method invokes by `save` method.",
             "itemtype": "method",
             "name": "saveHasManyRelationships",
@@ -3810,16 +4083,25 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 246,
+            "line": 270,
             "description": "Rollback dirty hasMany relationships in the `model`.\nThis method invokes by `resetController` in the `edit-form` route.",
             "itemtype": "method",
             "name": "rollbackHasManyRelationships",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "processedModel",
+                    "description": "Model to rollback its relations (controller's model will be used if undefined).",
+                    "type": "DS.Model"
+                }
+            ],
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 264,
+            "line": 291,
             "description": "Destroy (delete and save) all hasMany relationships in the `model`.\nThis method invokes by `delete` method.",
             "itemtype": "method",
             "name": "destroyHasManyRelationships",
@@ -3832,21 +4114,21 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 291,
+            "line": 318,
             "description": "On save model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 298,
+            "line": 325,
             "description": "On delete model success handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 305,
+            "line": 332,
             "description": "On delete model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
@@ -3899,7 +4181,51 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 28,
+            "line": 12,
+            "description": "Service that lets interact between agregator's and detail's form.",
+            "itemtype": "property",
+            "name": "flexberryDetailInteractionService",
+            "type": "Service",
+            "class": "FlexberryLookupCompatibleComponentMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "line": 36,
+            "description": "It forms path for new model's route.",
+            "itemtype": "method",
+            "name": "newRoutePath",
+            "params": [
+                {
+                    "name": "ordinalPath",
+                    "description": "The path to model's route.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The path to new model's route.",
+                "type": "String"
+            },
+            "class": "FlexberryLookupCompatibleComponentMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "line": 49,
+            "description": "Table row click handler.\nIt sets `modelNoRollBack` to `true` at current controller, redirects to detail's route, save necessary data to service.",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "Record related to clicked table row.",
+                    "type": "Ember.Object"
+                }
+            ],
+            "class": "FlexberryLookupCompatibleComponentMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
+            "line": 76,
             "description": "Event handler for \"row has been selected\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowAdded",
@@ -3922,7 +4248,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 42,
+            "line": 90,
             "description": "Event handler for \"row has been deleted\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowDeleted",
@@ -3945,7 +4271,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 56,
+            "line": 104,
             "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowChanged",
@@ -4237,7 +4563,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 73,
+            "line": 133,
             "description": "Handles willTransition action (this action is fired at the beginning of any attempted transition).\nIt sends message about transition to corresponding controller.",
             "itemtype": "method",
             "name": "willTransition",
@@ -4262,14 +4588,14 @@
             "file": "ember-flexberry/addon/serializers/odata.js",
             "line": 5,
             "description": "Flag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/serializers/odata.js",
             "line": 10,
             "description": "Prefix for response metadata properties names.",
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4298,7 +4624,7 @@
                 "description": "Valid {@link http://jsonapi.org/format/#document-top-level|JSON API document}.",
                 "type": "Object"
             },
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4323,7 +4649,7 @@
                 "description": "Valid {http://jsonapi.org/format/#document-top-level|@link JSON API document}.",
                 "type": "Object"
             },
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4348,7 +4674,7 @@
                 "description": "Metadata extracted from received object (any format is allowed).",
                 "type": "Object"
             },
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4365,7 +4691,7 @@
                 "description": "Key for a given attribute.",
                 "type": "String"
             },
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4386,7 +4712,7 @@
                 "description": "Key for a given relationship.",
                 "type": "String"
             },
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4411,7 +4737,7 @@
                     "description": "Serialization options."
                 }
             ],
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4434,7 +4760,7 @@
             ],
             "access": "private",
             "tagname": "",
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -4460,7 +4786,134 @@
                     "type": "Object"
                 }
             ],
-            "class": "ObjectlistviewEvents",
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 15,
+            "description": "Returns a logic value showing if givven value is array and has values.",
+            "itemtype": "method",
+            "name": "hasValues",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "currentArray",
+                    "description": "Value to check if it is array and has values.",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "Logic value showing if givven value is array and has values..",
+                "type": "Boolean"
+            },
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 28,
+            "description": "Pushes givven value to givven array and saves this array to givven property.",
+            "itemtype": "method",
+            "name": "pushValue",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "propertyName",
+                    "description": "Name of property to save result array to.",
+                    "type": "String"
+                },
+                {
+                    "name": "currentArray",
+                    "description": "Array to add value to. If it is not array, new array will be created.",
+                    "type": "Array"
+                },
+                {
+                    "name": "value",
+                    "description": "A value to add to array.",
+                    "type": "Object"
+                }
+            ],
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 49,
+            "description": "Returns the last value of array (or `undefined` if array contains no values).\nArray is kept at givven property.",
+            "itemtype": "method",
+            "name": "getLastValue",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "propertyName",
+                    "description": "The name of property where array is kept.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The last value of array (or `undefined` if array contains no values).",
+                "type": "Object"
+            },
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 68,
+            "description": "Selected detail.\nIts selection triggered transition to detail's route.\nThis parameter is initialized on agregator's form after click on not saved details.\nThis parameter is used only on detail's new form in order to open already created not saved detail object.",
+            "itemtype": "property",
+            "name": "modelSelectedDetail",
+            "type": "Object",
+            "default": "undefined",
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 80,
+            "description": "Current detail's agregators (stack of previous agregators in order to support detail of N-level).\nThis parameter is initialized on agregator's form after click on detail.\nThis parameter is used only on detail's form in order to return to proper agregator.",
+            "itemtype": "property",
+            "name": "modelCurrentAgregators",
+            "type": "Object",
+            "default": "undefined",
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 91,
+            "description": "Pathes to detail's agregators (stack of previous pathes in order to support detail of N-level).\nThis parameter is initialized on agregator's form after click on detail.\nThis parameter is used only on detail's form in order to get return url.",
+            "itemtype": "property",
+            "name": "modelCurrentAgregatorPathes",
+            "type": "Object",
+            "default": "undefined",
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 102,
+            "description": "Current not saved model.\nThis parameter is initialized on detail's form after triggerring return to agregator's form.\nThis parameter is used only on agregator's form in order to get already created not saved agregator object and not to create new instance.",
+            "itemtype": "property",
+            "name": "modelCurrentNotSaved",
+            "type": "Object",
+            "default": "undefined",
+            "class": "DetailInterationService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/detail-interaction.js",
+            "line": 113,
+            "description": "Last updated detail.\nThis parameter is initialized on detail's form after triggerring return to agregator's form.\nThis parameter is used only on agregator's form in order to undestand updated detail state.",
+            "itemtype": "property",
+            "name": "modelLastUpdatedDetail",
+            "type": "Object",
+            "default": "undefined",
+            "class": "DetailInterationService",
             "module": "ember-flexberry"
         },
         {
@@ -5215,32 +5668,36 @@
             "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:58"
         },
         {
+            "message": "Missing item type\nActions handlers.",
+            "line": " ember-flexberry/addon/controllers/detail-edit-form.js:75"
+        },
+        {
             "message": "Missing item type\nQuery parameters.",
             "line": " ember-flexberry/addon/controllers/edit-form.js:42"
         },
         {
             "message": "Missing item type\nLookup settings.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:69"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:78"
         },
         {
             "message": "Missing item type\nActions handlers.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:99"
-        },
-        {
-            "message": "Missing item type\nMethod to transit to parent's route (previous route).",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:145"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:118"
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:291"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:318"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:298"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:325"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:305"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:332"
+        },
+        {
+            "message": "Missing item type\nTable row click handler.\nIt sets `modelNoRollBack` to `true` at current controller, redirects to detail's route, save necessary data to service.",
+            "line": " ember-flexberry/addon/mixins/flexberry-groupedit-route.js:49"
         },
         {
             "message": "Missing item type\nUpdate limit function query parameter and reloads route if needed.",

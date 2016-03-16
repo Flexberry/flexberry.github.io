@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/transforms/enum-number.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/controllers/detail-edit-form.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -123,7 +123,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/transforms/enum-number.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/controllers/detail-edit-form.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -133,83 +133,162 @@
  */
 
 import Ember from &#x27;ember&#x27;;
-import EnumBaseTransform from &#x27;../transforms/enum-base&#x27;;
+import EditFormController from &#x27;./edit-form&#x27;;
 
 /**
- * Base transform class that implements an enumeration type for numbers.
- * During serialization and deserialization it checks if value is not outside of accessible values and converts to number or back.
- *
- * @class EnumNumberTransform
- * @extends EnumBaseTransform
- * @public
+ * Controller for the Detail&#x27;s Edit Forms.
+   It lets to interact between agregator&#x27;s and details&#x27;s forms.
+
+   This class re-exports to the application as &#x60;/controllers/detail-edit-form&#x60;.
+   So, you can inherit from &#x60;./detail-edit-form&#x60;, even if file &#x60;app/controllers/detail-edit-form.js&#x60;
+   is not presented in the application.
+
+   Example:
+   &#x60;&#x60;&#x60;js
+   // app/controllers/order.js
+   import DetailEditFormController from &#x27;./detail-edit-form&#x27;;
+   export default DetailEditFormController.extend({
+   });
+   &#x60;&#x60;&#x60;
+
+ * @class DetailEditFormController
+ * @extends EditFormController
  */
-export default EnumBaseTransform.extend({
+export default EditFormController.extend({
   /**
-   * String that represents expected type of serialized enumeration values.
-   * @property expectedSerializedType
-   * @type String
-   * @default &#x27;number&#x27;
-   * @public
+   * Flag to enable return to agregator&#x27;s path if possible.
+   * It overrides base default value.
+   *
+   * @property returnToAgregatorRoute
+   * @type Boolean
+   * @default true
    */
-  expectedSerializedType: &#x27;number&#x27;,
+  returnToAgregatorRoute: true,
 
   /**
-   * String that represents expected type of deserialized enumeration values.
-   * @property expectedDeserializedType
-   * @type String
-   * @default &#x27;string&#x27;
-   * @public
+   * Service that lets interact between agregator&#x27;s and detail&#x27;s form.
+   *
+   * @property flexberryDetailInteractionService
+   * @type Service
    */
-  expectedDeserializedType: &#x27;string&#x27;,
+  flexberryDetailInteractionService: Ember.inject.service(&#x27;detail-interaction&#x27;),
 
   /**
-   * Returns deserialized enumeration field (name).
+   * Pathes to return to after leaving current route.
    *
-   * @method deserialize
-   * @public
-   *
-   * @param {Number} serialized Serialized enumeration field (index).
-   * @return {String} Deserialized enumeration field (name).
-   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;values&#x60; does not contain serialized value.
+   * @property modelCurrentAgregatorPathes
+   * @type String
+   * @default undefined
    */
-  getDeserializedValue: function(serialized) {
-    let deserialized;
-    let values = this.get(&#x27;values&#x27;);
-    if (Ember.isArray(values)) {
-      deserialized = Ember.get(values, serialized.toString());
-    } else {
-      for (let key in values) {
-        if (values.hasOwnProperty(key) &amp;&amp; values[key] === serialized) {
-          deserialized = key;
-          break;
+  modelCurrentAgregatorPathes: undefined,
+
+  /**
+   * Current detail&#x27;s agregators.
+   *
+   * @property modelCurrentAgregators
+   * @type Object
+   * @default undefined
+   */
+  modelCurrentAgregators: undefined,
+
+  /**
+   * A logic value showing if current route has parent one.
+   *
+   * @property hasParentRoute
+   * @type Boolean
+   * @default undefined
+   */
+  hasParentRoute: Ember.computed(&#x27;modelCurrentAgregatorPathes&#x27;, function() {
+    return this.get(&#x27;flexberryDetailInteractionService&#x27;).hasValues(this.get(&#x27;modelCurrentAgregatorPathes&#x27;));
+  }),
+
+  /**
+   * Actions handlers.
+   */
+  actions: {
+    /**
+     * Handler for button &#x27;save&#x27; click.
+	 * If return path is determined, no rollback happens and user is redirected to agregator&#x27;s form.
+	 * Otherwise base logic is executed.
+     *
+     * @method save
+     */
+    save: function() {
+      if (this.get(&#x27;hasParentRoute&#x27;)) {
+        // If parent&#x27;s route is defined, save on parent&#x27;s route.
+        this.transitionToParentRoute();
+      } else {
+        this._super.apply(this, arguments);
+      }
+    },
+
+    /**
+     * Handler for button &#x27;delete&#x27; click.
+	 * If return path is determined and current model is saved, record marks as deleted and user is redirected to agregator&#x27;s form.
+	 * Otherwise base logic is executed.
+     *
+     * @method delete
+     */
+    delete: function() {
+      if (this.get(&#x27;model&#x27;).get(&#x27;id&#x27;) &amp;&amp; this.get(&#x27;hasParentRoute&#x27;)) {
+        if (confirm(&#x27;Are you sure you want to delete that record?&#x27;)) {
+          this.get(&#x27;model&#x27;).deleteRecord();
+          this.transitionToParentRoute();
         }
+      } else {
+        this._super.apply(this, arguments);
+      }
+    },
+
+    /**
+     * Handler for button &#x27;close&#x27; click.
+	 * If return path is determined, an error is thrown because this action should not be triggered.
+	 * Otherwise base logic is executed.
+     *
+     * @method delete
+     */
+    close: function() {
+      if (this.get(&#x27;hasParentRoute&#x27;)) {
+        throw new Error(&#x27;Execution of close action on linked with agregator detail\&#x27;s form should be forbidden.&#x27; +
+          &#x27;Use at template something like: &#x27; +
+          &#x27;{{#unless (and (not hasParentRoute) model.isNew)}} &#x27; +
+          &#x27;&lt;button type=\&#x27;submit\&#x27; class=\&#x27;ui negative button\&#x27; {{action \&#x27;delete\&#x27;}}&gt;Delete&lt;/button&gt;&#x27; +
+          &#x27;{{/unless}}&#x27;);
+      } else {
+        this._super.apply(this, arguments);
       }
     }
-
-    return deserialized;
   },
 
   /**
-   * Returns serialized enumeration field (index).
+   * Method to transit to parent&#x27;s route (previous route).
+   * If &#x60;modelAgregatorRoute&#x60; is set, transition to defined path and set flag &#x27;modelNoRollBack&#x27; to &#x60;true&#x60; on controller to prevent rollback of model.
+   * Then if &#x60;parentRoute&#x60; is set, transition to defined path.
+   * Otherwise transition to corresponding list.
    *
-   * @method getSerializedValue
-   * @public
-   *
-   * @param {String} deserialized Deserialized enumeration field (name).
-   * @return {String|Number} Serialized enumeration field (index).
-   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;values&#x60; does not contain deserialized value.
+   * @method transitionToParentRoute.
    */
-  getSerializedValue: function(deserialized) {
-    let serialized;
-    let values = this.get(&#x27;values&#x27;);
-    if (Ember.isArray(values)) {
-      let index = values.indexOf(deserialized);
-      serialized = index &gt;= 0 ? index : undefined;
-    } else if (values.hasOwnProperty(deserialized)) {
-      serialized = values[deserialized];
-    }
+  transitionToParentRoute: function() {
+    if (this.get(&#x27;hasParentRoute&#x27;)) {
+      this.set(&#x27;modelNoRollBack&#x27;, true);
 
-    return serialized;
+      let modelAgregatorRoutes = this.get(&#x27;modelCurrentAgregatorPathes&#x27;);
+      let modelAgregatorRoute = modelAgregatorRoutes.pop();
+      let modelCurrentAgregators = this.get(&#x27;modelCurrentAgregators&#x27;);
+      let modelCurrentAgregator = modelCurrentAgregators.pop();
+
+      let flexberryDetailInteractionService = this.get(&#x27;flexberryDetailInteractionService&#x27;);
+      flexberryDetailInteractionService.set(&#x27;modelCurrentAgregatorPathes&#x27;, modelAgregatorRoutes);
+      flexberryDetailInteractionService.set(&#x27;modelCurrentAgregators&#x27;, modelCurrentAgregators);
+      flexberryDetailInteractionService.set(&#x27;modelLastUpdatedDetail&#x27;, this.get(&#x27;model&#x27;));
+      if (modelCurrentAgregator) {
+        flexberryDetailInteractionService.set(&#x27;modelCurrentNotSaved&#x27;, modelCurrentAgregator);
+      }
+
+      this.transitionToRoute(modelAgregatorRoute);
+    } else {
+      this._super.apply(this, arguments);
+    }
   }
 });
 

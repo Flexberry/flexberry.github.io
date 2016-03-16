@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/transforms/enum-number.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/services/detail-interaction.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -123,7 +123,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/transforms/enum-number.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/services/detail-interaction.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -133,84 +133,123 @@
  */
 
 import Ember from &#x27;ember&#x27;;
-import EnumBaseTransform from &#x27;../transforms/enum-base&#x27;;
 
 /**
- * Base transform class that implements an enumeration type for numbers.
- * During serialization and deserialization it checks if value is not outside of accessible values and converts to number or back.
+ * Service for interaction between agregator&#x27;s and detail&#x27;s forms.
  *
- * @class EnumNumberTransform
- * @extends EnumBaseTransform
+ * @class DetailInterationService
+ * @extends Ember.Service
  * @public
  */
-export default EnumBaseTransform.extend({
+export default Ember.Service.extend({
   /**
-   * String that represents expected type of serialized enumeration values.
-   * @property expectedSerializedType
-   * @type String
-   * @default &#x27;number&#x27;
-   * @public
-   */
-  expectedSerializedType: &#x27;number&#x27;,
-
-  /**
-   * String that represents expected type of deserialized enumeration values.
-   * @property expectedDeserializedType
-   * @type String
-   * @default &#x27;string&#x27;
-   * @public
-   */
-  expectedDeserializedType: &#x27;string&#x27;,
-
-  /**
-   * Returns deserialized enumeration field (name).
+   * Returns a logic value showing if givven value is array and has values.
    *
-   * @method deserialize
+   * @method hasValues
    * @public
    *
-   * @param {Number} serialized Serialized enumeration field (index).
-   * @return {String} Deserialized enumeration field (name).
-   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;values&#x60; does not contain serialized value.
+   * @param {Array} currentArray Value to check if it is array and has values.
+   * @return {Boolean} Logic value showing if givven value is array and has values..
    */
-  getDeserializedValue: function(serialized) {
-    let deserialized;
-    let values = this.get(&#x27;values&#x27;);
-    if (Ember.isArray(values)) {
-      deserialized = Ember.get(values, serialized.toString());
-    } else {
-      for (let key in values) {
-        if (values.hasOwnProperty(key) &amp;&amp; values[key] === serialized) {
-          deserialized = key;
-          break;
-        }
-      }
-    }
-
-    return deserialized;
+  hasValues: function (currentArray) {
+    return currentArray &amp;&amp; Ember.isArray(currentArray) &amp;&amp; currentArray.length &gt; 0;
   },
 
   /**
-   * Returns serialized enumeration field (index).
+   * Pushes givven value to givven array and saves this array to givven property.
    *
-   * @method getSerializedValue
+   * @method pushValue
    * @public
    *
-   * @param {String} deserialized Deserialized enumeration field (name).
-   * @return {String|Number} Serialized enumeration field (index).
-   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;values&#x60; does not contain deserialized value.
+   * @param {String} propertyName Name of property to save result array to.
+   * @param {Array} currentArray Array to add value to. If it is not array, new array will be created.
+   * @param {Object} value A value to add to array.
    */
-  getSerializedValue: function(deserialized) {
-    let serialized;
-    let values = this.get(&#x27;values&#x27;);
-    if (Ember.isArray(values)) {
-      let index = values.indexOf(deserialized);
-      serialized = index &gt;= 0 ? index : undefined;
-    } else if (values.hasOwnProperty(deserialized)) {
-      serialized = values[deserialized];
+  pushValue: function (propertyName, currentArray, value) {
+    let currentPropertyValue;
+    if (this.hasValues(currentArray)) {
+      currentPropertyValue.push(value);
+    } else {
+      currentPropertyValue = [value];
     }
 
-    return serialized;
-  }
+    this.set(propertyName, currentPropertyValue);
+  },
+
+  /**
+   * Returns the last value of array (or &#x60;undefined&#x60; if array contains no values).
+   * Array is kept at givven property.
+   *
+   * @method getLastValue
+   * @public
+   *
+   * @param {String} propertyName The name of property where array is kept.
+   * @return {Object} The last value of array (or &#x60;undefined&#x60; if array contains no values).
+   */
+  getLastValue: function(propertyName) {
+    let currentPropertyValue = this.get(propertyName);
+    if (!this.hasValues(currentPropertyValue)) {
+      return undefined;
+    }
+
+    return currentPropertyValue.objectAt(currentPropertyValue.length - 1);
+  },
+
+  /**
+   * Selected detail.
+   * Its selection triggered transition to detail&#x27;s route.
+   * This parameter is initialized on agregator&#x27;s form after click on not saved details.
+   * This parameter is used only on detail&#x27;s new form in order to open already created not saved detail object.
+   *
+   * @property modelSelectedDetail
+   * @type Object
+   * @default undefined
+   */
+  modelSelectedDetail: undefined,
+
+  /**
+   * Current detail&#x27;s agregators (stack of previous agregators in order to support detail of N-level).
+   * This parameter is initialized on agregator&#x27;s form after click on detail.
+   * This parameter is used only on detail&#x27;s form in order to return to proper agregator.
+   *
+   * @property modelCurrentAgregators
+   * @type Object
+   * @default undefined
+   */
+  modelCurrentAgregators: undefined,
+
+  /**
+   * Pathes to detail&#x27;s agregators (stack of previous pathes in order to support detail of N-level).
+   * This parameter is initialized on agregator&#x27;s form after click on detail.
+   * This parameter is used only on detail&#x27;s form in order to get return url.
+   *
+   * @property modelCurrentAgregatorPathes
+   * @type Object
+   * @default undefined
+   */
+  modelCurrentAgregatorPathes: undefined,
+
+  /**
+   * Current not saved model.
+   * This parameter is initialized on detail&#x27;s form after triggerring return to agregator&#x27;s form.
+   * This parameter is used only on agregator&#x27;s form in order to get already created not saved agregator object and not to create new instance.
+   *
+   * @property modelCurrentNotSaved
+   * @type Object
+   * @default undefined
+   */
+  modelCurrentNotSaved: undefined,
+
+  /**
+   * Last updated detail.
+   * This parameter is initialized on detail&#x27;s form after triggerring return to agregator&#x27;s form.
+   * This parameter is used only on agregator&#x27;s form in order to undestand updated detail state.
+   *
+   * @property modelLastUpdatedDetail
+   * @type Object
+   * @default undefined
+   */
+  modelLastUpdatedDetail: undefined
 });
 
     </pre>

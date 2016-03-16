@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectlistview", "classes/FlexberryObjectListView", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckbox", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryObjectListView", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,6 +48,8 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
 	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/EnumNumberTransform.html">EnumNumberTransform</a></li>
@@ -62,8 +64,8 @@
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
-	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberryObjectListView.html">FlexberryObjectListView</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
 	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
 	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
 	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
@@ -168,23 +170,53 @@ export default ProjectedModelFormRoute.extend(FlexberryGroupeditRouteMixin, {
     let modelName = this.get(&#x27;modelName&#x27;);
     let modelProjName = this.get(&#x27;modelProjection&#x27;);
 
+    // Get data from service in order to decide if it is necessary to reload data or not.
+    // If already visited detail&#x27;s route is observed or it is come back to agregators&#x27;s route,
+    // it is not necessary (otherwise data merge with loaded data can occur occasionally).
+    let flexberryDetailInteractionService = this.get(&#x27;flexberryDetailInteractionService&#x27;);
+    let modelCurrentNotSaved = flexberryDetailInteractionService.get(&#x27;modelCurrentNotSaved&#x27;);
+    let modelSelectedDetail = flexberryDetailInteractionService.get(&#x27;modelSelectedDetail&#x27;);
+    let needReload = !(modelCurrentNotSaved || (modelSelectedDetail &amp;&amp; modelSelectedDetail.get(&#x27;hasDirtyAttributes&#x27;)));
+
+    // TODO: now &#x27;findRecord&#x27; at ember-flexberry-projection not support &#x27;reload: false&#x27; flag.
+    let findRecordParameters = needReload ? { reload: needReload, projection: modelProjName } : undefined;
+
     // :id param defined in router.js
-    return this.store.findRecord(modelName, params.id, {
-      reload: true,
-      projection: modelProjName
-    });
+    return this.store.findRecord(modelName, params.id, findRecordParameters);
   },
 
   resetController: function(controller, isExisting, transition) {
     this._super.apply(this, arguments);
+    let keptAgregators = controller.get(&#x27;modelCurrentAgregators&#x27;);
 
     controller.send(&#x27;dismissErrorMessages&#x27;);
+    controller.set(&#x27;modelCurrentAgregatorPathes&#x27;, undefined);
+    controller.set(&#x27;modelCurrentAgregators&#x27;, undefined);
 
-    controller.rollbackHasManyRelationships();
-    let model = controller.get(&#x27;model&#x27;);
-    if (model &amp;&amp; model.get(&#x27;hasDirtyAttributes&#x27;)) {
-      model.rollbackAttributes();
+    // If flag &#x27;modelNoRollBack&#x27; is set, leave current model as is and remove flag.
+    if (controller.get(&#x27;modelNoRollBack&#x27;) === true) {
+      controller.set(&#x27;modelNoRollBack&#x27;, false);
+      return;
     }
+
+    // If flag &#x27;modelNoRollBack&#x27; is not set, we have to roll back this model and its agregators.
+    let modelsToRollBack;
+    let model = controller.get(&#x27;model&#x27;);
+    if (this.get(&#x27;flexberryDetailInteractionService&#x27;).hasValues(keptAgregators)) {
+      keptAgregators.push(model);
+      keptAgregators.reverse();
+      modelsToRollBack = keptAgregators;
+    } else {
+      modelsToRollBack = [model];
+    }
+
+    // Roll back all found agregators and its has-many relations.
+    modelsToRollBack.forEach(function(processedModel) {
+      controller.rollbackHasManyRelationships(processedModel);
+      if (processedModel) {
+        processedModel.rollbackAttributes();
+      }
+    });
   },
 
   setupController: function(controller, model) {
@@ -195,6 +227,36 @@ export default ProjectedModelFormRoute.extend(FlexberryGroupeditRouteMixin, {
     let modelProjName = this.get(&#x27;modelProjection&#x27;);
     let proj = modelClass.projections.get(modelProjName);
     controller.set(&#x27;modelProjection&#x27;, proj);
+
+    let flexberryDetailInteractionService = this.get(&#x27;flexberryDetailInteractionService&#x27;);
+    let modelCurrentAgregatorPath = flexberryDetailInteractionService.get(&#x27;modelCurrentAgregatorPathes&#x27;);
+    let modelCurrentAgregator = flexberryDetailInteractionService.get(&#x27;modelCurrentAgregators&#x27;);
+    let modelLastUpdatedDetail = flexberryDetailInteractionService.get(&#x27;modelLastUpdatedDetail&#x27;);
+
+    flexberryDetailInteractionService.set(&#x27;modelSelectedDetail&#x27;, undefined);
+    flexberryDetailInteractionService.set(&#x27;modelCurrentAgregators&#x27;, undefined);
+    flexberryDetailInteractionService.set(&#x27;modelCurrentAgregatorPathes&#x27;, undefined);
+
+    flexberryDetailInteractionService.set(&#x27;modelCurrentNotSaved&#x27;, undefined);
+    flexberryDetailInteractionService.set(&#x27;modelLastUpdatedDetail&#x27;, undefined);
+
+    if (modelLastUpdatedDetail &amp;&amp;
+          ((modelLastUpdatedDetail.get(&#x27;isDeleted&#x27;) &amp;&amp; modelLastUpdatedDetail.get(&#x27;id&#x27;)) ||
+              modelLastUpdatedDetail.get(&#x27;hasDirtyAttributes&#x27;))) {
+      // If detail changed, agregator has to be marked as changed.
+      model.makeDirty();
+    }
+
+    let returnToAgregatorRoute = controller.get(&#x27;returnToAgregatorRoute&#x27;);
+    if (!returnToAgregatorRoute) {
+      // There is no need to set parameters to return to agregator.
+      return;
+    }
+
+    if (flexberryDetailInteractionService.hasValues(modelCurrentAgregatorPath)) {
+      controller.set(&#x27;modelCurrentAgregatorPathes&#x27;, modelCurrentAgregatorPath);
+      controller.set(&#x27;modelCurrentAgregators&#x27;, modelCurrentAgregator);
+    }
   },
 
   actions: {
