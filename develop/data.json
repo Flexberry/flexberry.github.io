@@ -5093,6 +5093,33 @@
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
             "line": 799,
+            "description": "Delete all hasMany relationships in the `record`.",
+            "itemtype": "method",
+            "name": "_deleteHasManyRelationships",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "A record with relationships to delete.",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "immediately",
+                    "description": "If `true`, relationships have been destroyed (delete and save).",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "A promise that will be resolved when relationships have been deleted.",
+                "type": "Promise"
+            },
+            "class": "ObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view.js",
+            "line": 822,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
