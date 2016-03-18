@@ -4448,7 +4448,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/groupedit-toolbar.js",
-            "line": 102,
+            "line": 110,
             "description": "Boolean flag to indicate enabled state of delete rows button.",
             "itemtype": "property",
             "name": "isDeleteRowsEnabled",
@@ -4458,7 +4458,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/groupedit-toolbar.js",
-            "line": 110,
+            "line": 118,
             "description": "Event handler for \"row has been selected\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowSelected",
@@ -4486,7 +4486,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/groupedit-toolbar.js",
-            "line": 126,
+            "line": 134,
             "description": "Event handler for \"selected rows has been deleted\" event in groupedit.",
             "itemtype": "method",
             "name": "__rowsDeleted",
@@ -4668,7 +4668,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 90,
+            "line": 102,
             "description": "Table row click action name.",
             "itemtype": "property",
             "name": "action",
@@ -4680,7 +4680,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 100,
+            "line": 112,
             "description": "Table add column to sorting action name.",
             "itemtype": "property",
             "name": "addColumnToSorting",
@@ -4692,7 +4692,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 110,
+            "line": 122,
             "description": "Table sort by column action name.",
             "itemtype": "property",
             "name": "sortByColumn",
@@ -4704,21 +4704,21 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 120,
+            "line": 132,
             "description": "Override wrapping element's tag.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 125,
+            "line": 137,
             "description": "Component's CSS classes.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 130,
+            "line": 142,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -4729,7 +4729,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 139,
+            "line": 151,
             "description": "Default cell component that will be used to display values in columns headers.",
             "itemtype": "property",
             "name": "headerCellComponent",
@@ -4755,7 +4755,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 151,
+            "line": 163,
             "description": "Default cell component that will be used to display values in columns cells.",
             "itemtype": "property",
             "name": "cellComponent",
@@ -4781,7 +4781,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 163,
+            "line": 175,
             "description": "Default cell component that will be used to display values in single column.",
             "itemtype": "property",
             "name": "singleColumnCellComponent",
@@ -4807,7 +4807,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 175,
+            "line": 187,
             "description": "Flag: indicates whether to use single column to display all model properties or not.",
             "itemtype": "property",
             "name": "useSingleColumn",
@@ -4818,7 +4818,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 184,
+            "line": 196,
             "description": "Header title of single column.",
             "itemtype": "property",
             "name": "singleColumnHeaderTitle",
@@ -4828,7 +4828,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 192,
+            "line": 204,
             "description": "Flag: indicates whether to show asterisk icon in first column of every changed row.",
             "itemtype": "property",
             "name": "showAsteriskInRow",
@@ -4839,7 +4839,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 201,
+            "line": 213,
             "description": "Flag: indicates whether to show checkbox in first column of every row.",
             "itemtype": "property",
             "name": "showCheckBoxInRow",
@@ -4850,7 +4850,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 210,
+            "line": 222,
             "description": "Flag: indicates whether to show delete button in first column of every row.",
             "itemtype": "property",
             "name": "showDeleteButtonInRow",
@@ -4861,7 +4861,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 219,
+            "line": 231,
             "description": "Flag: indicates whether to show helper column or not.",
             "itemtype": "property",
             "name": "showHelperColumn",
@@ -4872,7 +4872,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 230,
+            "line": 242,
             "description": "Flag: indicates whether to show dropdown menu with edit menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showEditMenuItemInRow",
@@ -4883,7 +4883,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 239,
+            "line": 251,
             "description": "Flag: indicates whether to show dropdown menu with delete menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showDeleteMenuItemInRow",
@@ -4894,7 +4894,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 248,
+            "line": 260,
             "description": "Additional menu items for dropdown menu in last column of every row.",
             "itemtype": "property",
             "name": "menuInRowAdditionalItems",
@@ -4905,7 +4905,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 257,
+            "line": 269,
             "description": "Flag: indicates whether additional menu items for dropdown menu in last column of every row are defined.",
             "itemtype": "property",
             "name": "menuInRowHasAdditionalItems",
@@ -4916,7 +4916,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 269,
+            "line": 281,
             "description": "Flag: indicates whether to show menu column or not.",
             "itemtype": "property",
             "name": "showMenuColumn",
@@ -4927,7 +4927,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 285,
+            "line": 297,
             "description": "Menu items for dropdown menu in last column of every row.",
             "itemtype": "property",
             "name": "menuInRowItems",
@@ -4938,7 +4938,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 326,
+            "line": 338,
             "description": "Model projection which should be used to display given content.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -4949,7 +4949,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 335,
+            "line": 347,
             "description": "Table columns related to current model projection.",
             "itemtype": "property",
             "name": "columns",
@@ -4960,7 +4960,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 352,
+            "line": 364,
             "description": "Total columns count (including additional columns).",
             "itemtype": "property",
             "name": "columnsCount",
@@ -4971,7 +4971,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 379,
+            "line": 391,
             "description": "Flag: indicates whether some column contains editable component instead of default cellComponent.",
             "itemtype": "property",
             "name": "hasEditableValues",
@@ -4982,7 +4982,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 397,
+            "line": 409,
             "description": "Content to be displayed (models collection).",
             "itemtype": "property",
             "name": "content",
@@ -4993,7 +4993,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 406,
+            "line": 418,
             "description": "Array of models from content collection with some synthetic keys related to them.",
             "itemtype": "property",
             "name": "contentWithKeys",
@@ -5004,7 +5004,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 415,
+            "line": 427,
             "description": "Flag indicates whether content is defined.",
             "itemtype": "property",
             "name": "hasContent",
@@ -5015,7 +5015,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 426,
+            "line": 438,
             "description": "Message to be displayed in table body, if content is not defined or empty.",
             "itemtype": "property",
             "name": "noDataMessage",
@@ -5025,7 +5025,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 434,
+            "line": 446,
             "description": "Flag: indicates whether table rows are clickable.",
             "itemtype": "property",
             "name": "rowClickable",
@@ -5036,7 +5036,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 443,
+            "line": 455,
             "description": "Flag: indicates whether table headers are clickable.",
             "itemtype": "property",
             "name": "headerClickable",
@@ -5047,7 +5047,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 452,
+            "line": 464,
             "description": "Dictionary with sorting data related to columns.",
             "itemtype": "property",
             "name": "sorting",
@@ -5057,7 +5057,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 460,
+            "line": 472,
             "description": "Last selected record.",
             "itemtype": "property",
             "name": "selectedRecord",
@@ -5067,7 +5067,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 468,
+            "line": 480,
             "description": "All selected records.",
             "itemtype": "property",
             "name": "selectedRecords",
@@ -5077,7 +5077,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 476,
+            "line": 488,
             "description": "Custom attributes which will be added to each generated column.",
             "itemtype": "property",
             "name": "customColumnAttributes",
@@ -5087,7 +5087,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 484,
+            "line": 496,
             "description": "Filter setting.",
             "itemtype": "property",
             "name": "filterByAnyMatch",
@@ -5098,7 +5098,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 493,
+            "line": 505,
             "description": "Flag: indicates whether DELETE request should be immediately sended to server (on each deleted record) or not.",
             "itemtype": "property",
             "name": "immediateDelete",
@@ -5109,7 +5109,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 502,
+            "line": 514,
             "description": "Flag: indicates whether records should be edited on separate route.",
             "itemtype": "property",
             "name": "editOnSeparateRoute",
@@ -5120,7 +5120,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 511,
+            "line": 523,
             "description": "Ember data store.",
             "itemtype": "property",
             "name": "store",
@@ -5130,7 +5130,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 519,
+            "line": 531,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEventsService",
@@ -5140,35 +5140,35 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 527,
+            "line": 539,
             "description": "Initializes component.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 557,
+            "line": 569,
             "description": "Destroys component.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 567,
+            "line": 579,
             "description": "Initializes component's DOM-related logic.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 586,
+            "line": 598,
             "description": "Destroys component's DOM-related logic.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 707,
+            "line": 719,
             "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
             "itemtype": "method",
             "name": "_addModel",
@@ -5190,7 +5190,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 732,
+            "line": 744,
             "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
             "itemtype": "method",
             "name": "_addRow",
@@ -5208,7 +5208,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 756,
+            "line": 768,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -5229,7 +5229,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 799,
+            "line": 811,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -5256,7 +5256,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 822,
+            "line": 834,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -6616,7 +6616,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/detail-interaction.js",
-            "line": 49,
+            "line": 50,
             "description": "Returns the last value of array (or `undefined` if array contains no values).\nArray is kept at givven property.",
             "itemtype": "method",
             "name": "getLastValue",
@@ -6638,7 +6638,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/detail-interaction.js",
-            "line": 68,
+            "line": 69,
             "description": "Selected detail.\nIts selection triggered transition to detail's route.\nThis parameter is initialized on agregator's form after click on not saved details.\nThis parameter is used only on detail's new form in order to open already created not saved detail object.",
             "itemtype": "property",
             "name": "modelSelectedDetail",
@@ -6649,7 +6649,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/detail-interaction.js",
-            "line": 80,
+            "line": 81,
             "description": "Current detail's agregators (stack of previous agregators in order to support detail of N-level).\nThis parameter is initialized on agregator's form after click on detail.\nThis parameter is used only on detail's form in order to return to proper agregator.",
             "itemtype": "property",
             "name": "modelCurrentAgregators",
@@ -6660,7 +6660,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/detail-interaction.js",
-            "line": 91,
+            "line": 92,
             "description": "Pathes to detail's agregators (stack of previous pathes in order to support detail of N-level).\nThis parameter is initialized on agregator's form after click on detail.\nThis parameter is used only on detail's form in order to get return url.",
             "itemtype": "property",
             "name": "modelCurrentAgregatorPathes",
@@ -6671,7 +6671,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/detail-interaction.js",
-            "line": 102,
+            "line": 103,
             "description": "Current not saved model.\nThis parameter is initialized on detail's form after triggerring return to agregator's form.\nThis parameter is used only on agregator's form in order to get already created not saved agregator object and not to create new instance.",
             "itemtype": "property",
             "name": "modelCurrentNotSaved",
@@ -6682,7 +6682,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/detail-interaction.js",
-            "line": 113,
+            "line": 114,
             "description": "Last updated detail.\nThis parameter is initialized on detail's form after triggerring return to agregator's form.\nThis parameter is used only on agregator's form in order to undestand updated detail state.",
             "itemtype": "property",
             "name": "modelLastUpdatedDetail",
@@ -7689,27 +7689,27 @@
         },
         {
             "message": "Missing item type\nOverride wrapping element's tag.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:120"
+            "line": " ember-flexberry/addon/components/object-list-view.js:132"
         },
         {
             "message": "Missing item type\nComponent's CSS classes.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:125"
+            "line": " ember-flexberry/addon/components/object-list-view.js:137"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:527"
+            "line": " ember-flexberry/addon/components/object-list-view.js:539"
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:557"
+            "line": " ember-flexberry/addon/components/object-list-view.js:569"
         },
         {
             "message": "Missing item type\nInitializes component's DOM-related logic.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:567"
+            "line": " ember-flexberry/addon/components/object-list-view.js:579"
         },
         {
             "message": "Missing item type\nDestroys component's DOM-related logic.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:586"
+            "line": " ember-flexberry/addon/components/object-list-view.js:598"
         },
         {
             "message": "Missing item type\nActions handlers.",
