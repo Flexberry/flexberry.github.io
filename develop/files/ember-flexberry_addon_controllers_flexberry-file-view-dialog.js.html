@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/ui-message.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/controllers/flexberry-file-view-dialog.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -130,105 +130,86 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/ui-message.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/controllers/flexberry-file-view-dialog.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-/**
- * @module ember-flexberry
- */
-
 import Ember from &#x27;ember&#x27;;
 
-export default Ember.Component.extend({
-  module: &#x27;message&#x27;,
-  classNameBindings: [&#x27;cssClass&#x27;],
-  visible: true,
-  floating: false,
-  compact: false,
-  attached: false,
-  closeable: false,
-  type: null,
-  color: null,
-  size: null,
-  icon: null,
-  title: null,
-  message: null,
-  cssClass: Ember.computed(&#x27;size&#x27;, &#x27;type&#x27;, &#x27;color&#x27;, &#x27;floating&#x27;, &#x27;compact&#x27;, &#x27;attached&#x27;, &#x27;visible&#x27;, &#x27;icon&#x27;, function() {
-    var isNonEmptyString = function(str) {
-      return Ember.typeOf(str) === &#x27;string&#x27; &amp;&amp; str.trim().length &gt; 0;
-    };
+export default Ember.Controller.extend({
+  // TODO: remove dublicate code.
 
-    var result = &#x27;ui &#x27;;
+  /**
+   * Current opened modal window.
+   *
+   * @property _openedModalDialog
+   * @type JQuery
+   * @default undefined
+   */
+  _openedModalDialog: undefined,
 
-    // Message size (&#x27;small&#x27;, &#x27;large&#x27;, &#x27;huge&#x27;, &#x27;massive&#x27;, or some custom size class).
-    var sizeClass = this.get(&#x27;size&#x27;);
-    var hasSize = isNonEmptyString(sizeClass);
-    result += hasSize ? sizeClass + &#x27; &#x27; : &#x27;&#x27;;
+  /**
+   * Title of modal window.
+   *
+   * @property title
+   * @type String
+   * @default undefined
+   */
+  title: undefined,
 
-    // Message type (&#x27;info&#x27;, &#x27;positive&#x27;, &#x27;success&#x27;, &#x27;negative&#x27;, &#x27;error&#x27;, or some custom type class).
-    var typeClass = this.get(&#x27;type&#x27;);
-    var hasType = isNonEmptyString(typeClass);
-    result += hasType ? typeClass + &#x27; &#x27; : &#x27;&#x27;;
+  /**
+   * Height of modal window.
+   *
+   * @property modalWindowHeight
+   * @type Number
+   * @default undefined
+   */
+  modalWindowHeight: undefined,
 
-    // Message color (&#x27;red&#x27;, &#x27;orange&#x27;, &#x27;yellow&#x27;, &#x27;olive&#x27;, &#x27;green&#x27;, &#x27;teal&#x27;, &#x27;blue&#x27;, &#x27;violet&#x27;, &#x27;purple&#x27;,
-    // &#x27;pink&#x27;, &#x27;brown&#x27;, &#x27;black&#x27;, or some custom color class).
-    var colorClass = this.get(&#x27;color&#x27;);
-    var hasColor = isNonEmptyString(colorClass);
-    result += hasColor ? colorClass + &#x27; &#x27; : &#x27;&#x27;;
+  /**
+   * Width of modal window.
+   *
+   * @property modalWindowWidth
+   * @type Number
+   * @default undefined
+   */
+  modalWindowWidth: undefined,
 
-    // Message block variations.
-    // Note! Variations &#x27;ui floating message&#x27;, &#x27;ui compact message&#x27;, &#x27;ui attached message&#x27; doesn&#x27;t work
-    // with &#x27;icon&#x27;, &#x27;visible&#x27; and &#x27;hidden&#x27; subclasses.
-    // For example &#x27;ui compact icon message&#x27; will be with icon, but not compact.
-    var isFloating = this.get(&#x27;floating&#x27;);
-    result += isFloating ? &#x27;floating &#x27; : &#x27;&#x27;;
+  /**
+   * Content of image to view at modal window.
+   *
+   * @property imageSrc
+   * @type String
+   * @default &#x60;&#x60;
+   */
+  imageSrc: &#x27;&#x27;,
 
-    var isCompact = this.get(&#x27;compact&#x27;);
-    result += isCompact ? &#x27;compact &#x27; : &#x27;&#x27;;
+  actions: {
+    /**
+     * Handles create modal window action.
+     * It saves created window to have opportunity to close it later.
+     *
+     * @method createdModalDialog
+     * @param {JQuery} modalDialog Created modal window.
+     */
+    createdModalDialog: function(modalDialog) {
+      this.set(&#x27;_openedModalDialog&#x27;, modalDialog);
+    },
 
-    var isAttached = this.get(&#x27;attached&#x27;);
-    result += isAttached ? &#x27;attached &#x27; : &#x27;&#x27;;
-
-    // Message block visibility.
-    // Note! It is better to use empty string &#x27;&#x27; instead of &#x27;visible&#x27; subclass.
-    var isVisible = this.get(&#x27;visible&#x27;);
-    result += isVisible ? &#x27;&#x27; : &#x27;hidden &#x27;;
-
-    // Message icon.
-    var iconClass = this.get(&#x27;icon&#x27;);
-    var hasIcon = isNonEmptyString(iconClass);
-    result += hasIcon ? &#x27;icon &#x27; : &#x27;&#x27;;
-
-    result += &#x27;message&#x27;;
-
-    return result;
-  }),
-
-  didInsertElement: function() {
-    var isCloseable = this.get(&#x27;closeable&#x27;);
-    if (isCloseable) {
-      // Inside &#x27;click&#x27;-callback &#x27;this&#x27; would refer to a jQuery-object.
-      var _this = this;
-      _this.$(&#x27;.close&#x27;).on(&#x27;click&#x27;, function() {
-        _this.hide();
-      });
+    /**
+     * Handles correcponding route&#x27;s willTransition action.
+     * It closes modal window if it is opened (if Ember uses hash location type, modal window won&#x27;t be closed automatically).
+     *
+     * @method routeWillTransition
+     */
+    routeWillTransition: function() {
+      let openedDialog = this.get(&#x27;_openedModalDialog&#x27;);
+      if (openedDialog) {
+        openedDialog.modal(&#x27;hide&#x27;);
+        this.set(&#x27;_openedModalDialog&#x27;, undefined);
+      }
     }
-  },
-
-  show: function() {
-    this.set(&#x27;visible&#x27;, true);
-
-    // Send component &#x27;onShow&#x27;-action with component itself as an argument.
-    this.sendAction(&#x27;onShow&#x27;, this);
-  },
-
-  hide: function() {
-    this.set(&#x27;visible&#x27;, false);
-
-    // Send component &#x27;onHide&#x27;-action with component itself as an argument.
-    this.sendAction(&#x27;onHide&#x27;, this);
   }
 });
 

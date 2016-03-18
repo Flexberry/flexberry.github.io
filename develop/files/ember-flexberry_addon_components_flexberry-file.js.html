@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Controller", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,6 +48,7 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Controller.html">Controller</a></li>
 	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
 	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
 	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
@@ -206,6 +207,15 @@ export default FlexberryBaseComponent.extend({
   uploadData: null,
 
   /**
+   * Flag: indicates whether to show preview element for images or not.
+   *
+   * @property showPreview
+   * @type Boolean
+   * @default false
+   */
+  showPreview: false,
+
+  /**
    * Current file selected for upload.
    */
   selectedFile: Ember.computed(&#x27;uploadData&#x27;, function() {
@@ -226,8 +236,53 @@ export default FlexberryBaseComponent.extend({
       };
 
       this.set(&#x27;value&#x27;, JSON.stringify(jsonValue));
+      if (this.get(&#x27;showPreview&#x27;)) {
+        let _this = this;
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          let selectedFileSrc = e.target.result;
+          _this._updateSelectedFileSrc(_this, selectedFileSrc);
+        };
+
+        reader.readAsDataURL(file);
+      }
+    } else {
+      this._updateSelectedFileSrc(this, &#x27;&#x27;);
     }
   }),
+
+  /**
+   * Name of action. This action will be send outside after click on selected image preview.
+   *
+   * @property viewImageAction
+   * @type String
+   * @default &#x60;flexberryFileViewImageAction&#x60;
+   */
+  viewImageAction: &#x27;flexberryFileViewImageAction&#x27;,
+
+  /**
+   * Selected file content. It can be used as source for image tag in order to view preview.
+   *
+   * @property _selectedFileSrc
+   * @private
+   * @type String
+   * @default &#x60;&#x60;
+   */
+  _selectedFileSrc: &#x27;&#x27;,
+
+  /**
+   * It sets selected file content as source for image tag in order to view preview.
+   *
+   * @method _updateSelectedFileSrc
+   * @private
+   *
+   * @param {DS.Component} currentContext Current context to execute operations.
+   * @param {String} selectedFileSrc Selected file content to set as source for image tag in order to view preview.
+   */
+  _updateSelectedFileSrc: function(currentContext, selectedFileSrc) {
+    currentContext.$(&#x27;.flexberry-file-image-preview&#x27;).attr(&#x27;src&#x27;, selectedFileSrc);
+    currentContext.set(&#x27;_selectedFileSrc&#x27;, selectedFileSrc);
+  },
 
   /**
    * Flag: indicates whether file upload is in progress now.
@@ -704,6 +759,26 @@ export default FlexberryBaseComponent.extend({
     }
 
     relatedModel.off(&#x27;preSave&#x27;, onModelPresave);
+  },
+
+  actions: {
+    /**
+     * It handles click on selected image preview and sends action with data outside component
+     * in order to view selected image at modal window.
+     *
+     * @method viewLoadedImage
+     * @public
+     */
+    viewLoadedImage: function() {
+      let file = this.get(&#x27;selectedFile&#x27;);
+      let selectedFileSrc = this.get(&#x27;_selectedFileSrc&#x27;);
+      if (!Ember.isNone(file) &amp;&amp; !Ember.isNone(selectedFileSrc)) {
+        this.sendAction(&#x27;viewImageAction&#x27;, {
+          fileSrc: selectedFileSrc,
+          fileName: file.name
+        });
+      }
+    }
   }
 });
 
