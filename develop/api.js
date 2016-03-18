@@ -31,6 +31,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "GroupEditToolbar",
         "ListFormController",
         "ListFormRoute",
+        "ModalDialog",
         "ObjectListView",
         "ObjectListViewCell",
         "ObjectListViewHeaderCell",

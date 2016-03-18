@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Controller", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Controller", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -79,6 +79,7 @@
 	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
 	                            <li><a href="../classes/ObjectListView.html">ObjectListView</a></li>
 	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
 	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
@@ -141,6 +142,12 @@
 
 import Ember from &#x27;ember&#x27;;
 
+/**
+ * ModalDialog component for SemanticUI
+ *
+ * @class ModalDialog
+ * @extends Ember.Component
+ */
 export default Ember.Component.extend({
   /**
    * Flag indicates whether to show apply button or not.
@@ -169,10 +176,36 @@ export default Ember.Component.extend({
    */
   viewImageContent: false,
 
+  /**
+   * Flag: indicates buttons toolbar visibility
+   * true if at least one of buttons is visible
+   *
+   * @property toolbarVisible
+   * @type Boolean
+   * @default true
+   * @readonly
+   */
+  toolbarVisible: Ember.computed(&#x27;useOkButton&#x27;, &#x27;useCloseButton&#x27;, function () {
+    return this.get(&#x27;useOkButton&#x27;) || this.get(&#x27;useCloseButton&#x27;);
+  }),
+
+  /**
+   * Semantic-UI Modal settings,
+   * more info at http://semantic-ui.com/modules/modal.html#settings
+   *
+   * @property settings,
+   * @type Object
+   * @default {}
+   */
+  settings: {},
+
   modalWindowHeight: undefined,
+
   modalWindowWidth: undefined,
+
   modalWindowContentHeight: 400,
-  modalWindowHeightComputed: Ember.computed(&#x27;modalWindowHeight&#x27;, function() {
+
+  modalWindowHeightComputed: Ember.computed(&#x27;modalWindowHeight&#x27;, function () {
     var height = this.get(&#x27;modalWindowHeight&#x27;);
     if (height &amp;&amp; typeof height === &#x27;number&#x27;) {
       return height;
@@ -180,7 +213,8 @@ export default Ember.Component.extend({
 
     return 600;
   }),
-  modalWindowWidthComputed: Ember.computed(&#x27;modalWindowWidth&#x27;, function() {
+
+  modalWindowWidthComputed: Ember.computed(&#x27;modalWindowWidth&#x27;, function () {
     var width = this.get(&#x27;modalWindowWidth&#x27;);
     if (width &amp;&amp; typeof width === &#x27;number&#x27;) {
       return width;
@@ -188,7 +222,8 @@ export default Ember.Component.extend({
 
     return 750;
   }),
-  modalWindowContentHeightComputed: Ember.computed(&#x27;modalWindowContentHeight&#x27;, function() {
+
+  modalWindowContentHeightComputed: Ember.computed(&#x27;modalWindowContentHeight&#x27;, function () {
     var height = this.get(&#x27;modalWindowContentHeight&#x27;);
     if (height &amp;&amp; typeof height === &#x27;number&#x27;) {
       return height;
@@ -196,20 +231,21 @@ export default Ember.Component.extend({
 
     return 400;
   }),
-  didInsertElement: function() {
-      var _this = this;
-      this.$(&#x27;.ui.modal&#x27;).modal(&#x27;setting&#x27;, {
-        onApprove: function() {
+
+  didInsertElement: function () {
+    let _this = this;
+    let modalSettings = Ember.$.extend({
+        onApprove: function () {
           _this.sendAction(&#x27;ok&#x27;);
         },
-        onDeny: function() {
+        onDeny: function () {
           _this.sendAction(&#x27;close&#x27;);
         },
-        onHidden: function() {
+        onHidden: function () {
           _this.sendAction(&#x27;close&#x27;);
           this.remove();
         },
-        onVisible: function() {
+        onVisible: function () {
           var wholeHeight = Ember.$(this).outerHeight();
           var headHeight = Ember.$(&#x27;.header&#x27;, this).outerHeight();
           var actionsHeight = Ember.$(&#x27;.actions&#x27;, this).outerHeight();
@@ -217,8 +253,11 @@ export default Ember.Component.extend({
           _this.set(&#x27;modalWindowContentHeight&#x27;, result);
           _this.sendAction(&#x27;created&#x27;, Ember.$(this));
         }
-      }).modal(&#x27;show&#x27;);
-    }
+      },
+      _this.get(&#x27;settings&#x27;));
+
+    this.$(&#x27;.ui.modal&#x27;).modal(modalSettings).modal(&#x27;show&#x27;);
+  }
 });
 
     </pre>

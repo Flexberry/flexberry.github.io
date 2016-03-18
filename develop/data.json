@@ -261,7 +261,9 @@
         "ember-flexberry/addon/components/modal-dialog.js": {
             "name": "ember-flexberry/addon/components/modal-dialog.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "ModalDialog": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -602,6 +604,7 @@
                 "FlexberryValidationmessage": 1,
                 "FlexberryValidationsummary": 1,
                 "GroupEditToolbar": 1,
+                "ModalDialog": 1,
                 "ObjectListViewCell": 1,
                 "ObjectListViewHeaderCell": 1,
                 "ObjectListViewSingleColumnCell": 1,
@@ -964,6 +967,21 @@
             "line": 8,
             "description": "Toolbar compoent for flexberry-groupedit component.",
             "extends": "FlexberryBaseComponent"
+        },
+        "ModalDialog": {
+            "name": "ModalDialog",
+            "shortname": "ModalDialog",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/components/modal-dialog.js",
+            "line": 7,
+            "description": "ModalDialog component for SemanticUI",
+            "extends": "Ember.Component"
         },
         "ObjectListViewCell": {
             "name": "ObjectListViewCell",
@@ -4509,35 +4527,58 @@
         },
         {
             "file": "ember-flexberry/addon/components/modal-dialog.js",
-            "line": 8,
+            "line": 14,
             "description": "Flag indicates whether to show apply button or not.",
             "itemtype": "property",
             "name": "useOkButton",
             "type": "Boolean",
             "default": "true",
-            "class": "ObjectListViewCell",
+            "class": "ModalDialog",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/modal-dialog.js",
-            "line": 17,
+            "line": 23,
             "description": "Flag indicates whether to show close button or not.",
             "itemtype": "property",
             "name": "useCloseButton",
             "type": "Boolean",
             "default": "true",
-            "class": "ObjectListViewCell",
+            "class": "ModalDialog",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/modal-dialog.js",
-            "line": 26,
+            "line": 32,
             "description": "Flag indicates whether an image content is viewed at modal dialog or not.",
             "itemtype": "property",
             "name": "viewImageContent",
             "type": "Boolean",
             "default": "false",
-            "class": "ObjectListViewCell",
+            "class": "ModalDialog",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/modal-dialog.js",
+            "line": 41,
+            "description": "Flag: indicates buttons toolbar visibility\ntrue if at least one of buttons is visible",
+            "itemtype": "property",
+            "name": "toolbarVisible",
+            "type": "Boolean",
+            "default": "true",
+            "readonly": "",
+            "class": "ModalDialog",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/modal-dialog.js",
+            "line": 54,
+            "description": "Semantic-UI Modal settings,\nmore info at http://semantic-ui.com/modules/modal.html#settings",
+            "itemtype": "property",
+            "name": "settings,",
+            "type": "Object",
+            "default": "{}",
+            "class": "ModalDialog",
             "module": "ember-flexberry"
         },
         {
@@ -5840,7 +5881,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 6,
+            "line": 4,
             "description": "Current opened modal window.",
             "itemtype": "property",
             "name": "_openedModalDialog",
@@ -5851,7 +5892,23 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 38,
+            "line": 18,
+            "description": "Handles olv row clicked.\nSave selected row to object master property and close modal window",
+            "itemtype": "method",
+            "name": "rowClick",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "Row record",
+                    "type": "Ember.Object"
+                }
+            ],
+            "class": "Controller",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 30,
             "description": "Handles create modal window action.\nIt saves created window to have opportunity to close it later.",
             "itemtype": "method",
             "name": "createdModalDialog",
@@ -5867,10 +5924,35 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 49,
+            "line": 41,
             "description": "Handles correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "routeWillTransition",
+            "class": "Controller",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 52,
+            "description": "Set master to corresponding property of editing object",
+            "itemtype": "method",
+            "name": "selectMaster",
+            "params": [
+                {
+                    "name": "master",
+                    "description": "Selected master for editing property",
+                    "type": "Ember.Object"
+                }
+            ],
+            "class": "Controller",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 70,
+            "description": "Close current modal window if it exists",
+            "itemtype": "method",
+            "name": "closeModalDialog",
             "class": "Controller",
             "module": "ember-flexberry"
         },
@@ -6106,7 +6188,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 140,
+            "line": 138,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -6115,7 +6197,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 150,
+            "line": 148,
             "description": "Handles action from lookup remove action.",
             "itemtype": "method",
             "name": "removeLookupValue",
@@ -6131,7 +6213,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 171,
+            "line": 169,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "updateLookupValue",
@@ -6147,7 +6229,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 199,
+            "line": 197,
             "description": "Forms url to get all availible entities of certain relation.",
             "itemtype": "method",
             "name": "getLookupAutocompleteUrl",
@@ -6167,7 +6249,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 212,
+            "line": 210,
             "description": "Forms query parameters by lookup autocomplete parameters.",
             "itemtype": "method",
             "name": "getAutocompleteLookupQueryOptions",
@@ -6187,7 +6269,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 231,
+            "line": 229,
             "description": "Gets related object type by relation name from specified model.",
             "itemtype": "method",
             "name": "_getRelationType",
