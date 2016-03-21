@@ -980,7 +980,7 @@
             "namespace": "",
             "file": "ember-flexberry/addon/components/modal-dialog.js",
             "line": 7,
-            "description": "ModalDialog component for SemanticUI",
+            "description": "ModalDialog component for SemanticUI.",
             "extends": "Ember.Component"
         },
         "ObjectListViewCell": {
@@ -4561,7 +4561,7 @@
         {
             "file": "ember-flexberry/addon/components/modal-dialog.js",
             "line": 41,
-            "description": "Flag: indicates buttons toolbar visibility\ntrue if at least one of buttons is visible",
+            "description": "Flag: indicates buttons toolbar visibility,\ntrue if at least one of buttons is visible.",
             "itemtype": "property",
             "name": "toolbarVisible",
             "type": "Boolean",
@@ -4575,7 +4575,7 @@
             "line": 54,
             "description": "Semantic-UI Modal settings,\nmore info at http://semantic-ui.com/modules/modal.html#settings",
             "itemtype": "property",
-            "name": "settings,",
+            "name": "settings",
             "type": "Object",
             "default": "{}",
             "class": "ModalDialog",
@@ -5934,7 +5934,7 @@
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
             "line": 52,
-            "description": "Set master to corresponding property of editing object",
+            "description": "Set master to corresponding property of editing object.",
             "itemtype": "method",
             "name": "selectMaster",
             "params": [
@@ -5950,7 +5950,7 @@
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
             "line": 70,
-            "description": "Close current modal window if it exists",
+            "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "closeModalDialog",
             "class": "Controller",

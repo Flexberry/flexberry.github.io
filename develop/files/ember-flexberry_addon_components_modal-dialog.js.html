@@ -143,7 +143,7 @@
 import Ember from &#x27;ember&#x27;;
 
 /**
- * ModalDialog component for SemanticUI
+ * ModalDialog component for SemanticUI.
  *
  * @class ModalDialog
  * @extends Ember.Component
@@ -177,8 +177,8 @@ export default Ember.Component.extend({
   viewImageContent: false,
 
   /**
-   * Flag: indicates buttons toolbar visibility
-   * true if at least one of buttons is visible
+   * Flag: indicates buttons toolbar visibility,
+   * true if at least one of buttons is visible.
    *
    * @property toolbarVisible
    * @type Boolean
@@ -193,7 +193,7 @@ export default Ember.Component.extend({
    * Semantic-UI Modal settings,
    * more info at http://semantic-ui.com/modules/modal.html#settings
    *
-   * @property settings,
+   * @property settings
    * @type Object
    * @default {}
    */
@@ -246,12 +246,14 @@ export default Ember.Component.extend({
           this.remove();
         },
         onVisible: function () {
-          var wholeHeight = Ember.$(this).outerHeight();
-          var headHeight = Ember.$(&#x27;.header&#x27;, this).outerHeight();
-          var actionsHeight = Ember.$(&#x27;.actions&#x27;, this).outerHeight();
-          var result = wholeHeight - headHeight - actionsHeight;
-          _this.set(&#x27;modalWindowContentHeight&#x27;, result);
-          _this.sendAction(&#x27;created&#x27;, Ember.$(this));
+          Ember.run(() =&gt; {
+            var wholeHeight = Ember.$(this).outerHeight();
+            var headHeight = Ember.$(&#x27;.header&#x27;, this).outerHeight();
+            var actionsHeight = Ember.$(&#x27;.actions&#x27;, this).outerHeight();
+            var result = wholeHeight - headHeight - actionsHeight;
+            _this.set(&#x27;modalWindowContentHeight&#x27;, result);
+            _this.sendAction(&#x27;created&#x27;, Ember.$(this));
+          });
         }
       },
       _this.get(&#x27;settings&#x27;));
