@@ -215,9 +215,50 @@ export default FlexberryBaseComponent.extend({
 
     /**
      * A stub for call of custom user buttons. Used when no handler is defined.
-     *
+       When not stab is used (closure action is defined), structured info about custom buttons is returned.
+       Closure action has to return an array of structures:
+
+       &#x60;&#x60;&#x60;
+       {
+      	buttonName: &#x27;...&#x27;, // Button displayed name.
+      	buttonAction: &#x27;...&#x27;, // Action that is called from controller on this button click (it has to be registered at component).
+      	buttonClasses: &#x27;...&#x27; // Css classes for button.
+       }
+       &#x60;&#x60;&#x60;
+
+      Example of how to add user buttons:
+       1) it has to be defined special method (it will be used as closure action) at corresponding controller (name is not fixed).
+       &#x60;&#x60;&#x60;
+       actions: {
+        getCustomButtons: function() {
+          return [{
+          	buttonName: &#x27;UserButton&#x27;,
+          	buttonAction: &#x27;userButtonActionTest&#x27;,
+          	buttonClasses: &#x27;my-test-user-button test-click-button&#x27;
+          }];
+        }
+       }
+       &#x60;&#x60;&#x60;
+
+       2) it has to be defined set as &#x27;buttonAction&#x27; methods.
+       &#x60;&#x60;&#x60;
+       actions: {
+        userButtonActionTest: function() {
+          this.set(&#x27;header&#x27;, this.get(&#x27;header&#x27;) + &#x27; clicked&#x27;);
+        }
+       }
+       &#x60;&#x60;&#x60;
+
+       3) defined methods have to be registered at conponent.
+       &#x60;&#x60;&#x60;
+       {{flexberry-objectlistview
+        ...
+        customButtons = (action &quot;getCustomButtons&quot;)
+        userButtonActionTest = &#x27;userButtonActionTest&#x27;
+       }}
+       &#x60;&#x60;&#x60;
      * @method customButtons
-     * @return {Array} Returns only &#x27;undefined&#x27; (because is&#x27;s a stub).
+     * @return Returns only &#x60;undefined&#x60; (because it&#x27;s a stub).
      */
     customButtons: function() {
       return undefined;

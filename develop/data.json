@@ -3619,19 +3619,18 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 78,
-            "description": "A stub for call of custom user buttons. Used when no handler is defined.",
+            "description": "A stub for call of custom user buttons. Used when no handler is defined.\n      When not stab is used (closure action is defined), structured info about custom buttons is returned.\n      Closure action has to return an array of structures:\n\n      ```\n      {\n     \tbuttonName: '...', // Button displayed name.\n     \tbuttonAction: '...', // Action that is called from controller on this button click (it has to be registered at component).\n     \tbuttonClasses: '...' // Css classes for button.\n      }\n      ```\n\n     Example of how to add user buttons:\n      1) it has to be defined special method (it will be used as closure action) at corresponding controller (name is not fixed).\n      ```\n      actions: {\n       getCustomButtons: function() {\n         return [{\n         \tbuttonName: 'UserButton',\n         \tbuttonAction: 'userButtonActionTest',\n         \tbuttonClasses: 'my-test-user-button test-click-button'\n         }];\n       }\n      }\n      ```\n\n      2) it has to be defined set as 'buttonAction' methods.\n      ```\n      actions: {\n       userButtonActionTest: function() {\n         this.set('header', this.get('header') + ' clicked');\n       }\n      }\n      ```\n\n      3) defined methods have to be registered at conponent.\n      ```\n      {{flexberry-objectlistview\n       ...\n       customButtons = (action \"getCustomButtons\")\n       userButtonActionTest = 'userButtonActionTest'\n      }}\n      ```",
             "itemtype": "method",
             "name": "customButtons",
             "return": {
-                "description": "Returns only 'undefined' (because is's a stub).",
-                "type": "Array"
+                "description": "Returns only `undefined` (because it's a stub)."
             },
             "class": "FlexberryObjectlistview",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 88,
+            "line": 129,
             "description": "Handler to get user button's actions and send action to corresponding controllers's handler.",
             "itemtype": "method",
             "name": "customButtonAction",
@@ -3640,7 +3639,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 101,
+            "line": 142,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "filterByAnyMatch",
@@ -3656,7 +3655,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 113,
+            "line": 154,
             "description": "Primary action for row click.",
             "itemtype": "property",
             "name": "action",
@@ -3667,7 +3666,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 122,
+            "line": 163,
             "description": "Default cell component that will be used to display values in columns headers.",
             "itemtype": "property",
             "name": "headerCellComponent",
@@ -3693,7 +3692,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 134,
+            "line": 175,
             "description": "Default cell component that will be used to display values in columns cells.",
             "itemtype": "property",
             "name": "cellComponent",
@@ -3719,7 +3718,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 146,
+            "line": 187,
             "description": "Default cell component that will be used to display values in single column.",
             "itemtype": "property",
             "name": "singleColumnCellComponent",
@@ -3745,7 +3744,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 158,
+            "line": 199,
             "description": "Flag: indicates whether to use single column to display all model properties or not.",
             "itemtype": "property",
             "name": "useSingleColumn",
@@ -3756,7 +3755,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 167,
+            "line": 208,
             "description": "Header title of single column.",
             "itemtype": "property",
             "name": "singleColumnHeaderTitle",
@@ -3766,7 +3765,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 175,
+            "line": 216,
             "description": "Flag: indicates whether to show asterisk icon in first column of every changed row.",
             "itemtype": "property",
             "name": "showAsteriskInRow",
@@ -3777,7 +3776,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 184,
+            "line": 225,
             "description": "Flag: indicates whether to show checkbox in first column of every row.",
             "itemtype": "property",
             "name": "showCheckBoxInRow",
@@ -3788,7 +3787,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 193,
+            "line": 234,
             "description": "Flag: indicates whether to show delete button in first column of every row.",
             "itemtype": "property",
             "name": "showDeleteButtonInRow",
@@ -3799,7 +3798,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 202,
+            "line": 243,
             "description": "Flag: indicates whether to show dropdown menu with edit menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showEditMenuItemInRow",
@@ -3810,7 +3809,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 211,
+            "line": 252,
             "description": "Flag: indicates whether to show dropdown menu with delete menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showDeleteMenuItemInRow",
@@ -3821,7 +3820,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 220,
+            "line": 261,
             "description": "Additional menu items for dropdown menu in last column of every row.",
             "itemtype": "property",
             "name": "menuInRowAdditionalItems",
@@ -3832,7 +3831,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 229,
+            "line": 270,
             "description": "Flag: indicates whether table rows are clickable.",
             "itemtype": "property",
             "name": "rowClickable",
@@ -3843,7 +3842,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 238,
+            "line": 279,
             "description": "Flag: indicates whether ordering by clicking on column headers is allowed.",
             "itemtype": "property",
             "name": "headerClickable",
@@ -3854,7 +3853,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 247,
+            "line": 288,
             "description": "Dictionary with sorting data related to columns.",
             "itemtype": "property",
             "name": "sorting",
@@ -3864,7 +3863,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 255,
+            "line": 296,
             "description": "Model projection which should be used to display given content.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -3875,7 +3874,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 264,
+            "line": 305,
             "description": "Content to be displayed (models collection).",
             "itemtype": "property",
             "name": "content",
@@ -3886,7 +3885,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 273,
+            "line": 314,
             "description": "Model's name. Used by toolbar.",
             "itemtype": "property",
             "name": "modelName",
@@ -3897,7 +3896,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 282,
+            "line": 323,
             "description": "Flag: indicates whether to show creation button at toolbar.",
             "itemtype": "property",
             "name": "createNewButton",
@@ -3908,7 +3907,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 291,
+            "line": 332,
             "description": "Flag: indicates whether to show refresh button at toolbar.",
             "itemtype": "property",
             "name": "refreshButton",
@@ -3919,7 +3918,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 300,
+            "line": 341,
             "description": "Flag: indicates whether to show delete button at toolbar.",
             "itemtype": "property",
             "name": "deleteButton",
@@ -3930,7 +3929,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 309,
+            "line": 350,
             "description": "Flag: indicates whether to show filter button at toolbar.",
             "itemtype": "property",
             "name": "filterButton",
@@ -3941,7 +3940,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 318,
+            "line": 359,
             "description": "Used to specify 'filter by any match' field value.",
             "itemtype": "property",
             "name": "filterText",
@@ -3952,7 +3951,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 327,
+            "line": 368,
             "description": "Array of pages to show.",
             "itemtype": "property",
             "name": "pages",
@@ -3963,7 +3962,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 336,
+            "line": 377,
             "description": "Current number of records to show per page.",
             "itemtype": "property",
             "name": "perPageValue",
@@ -3974,7 +3973,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 345,
+            "line": 386,
             "description": "Array of numbers of records to show on one page.",
             "itemtype": "property",
             "name": "perPageValues",
@@ -3985,7 +3984,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 354,
+            "line": 395,
             "description": "Function to determine if current page has previous page.",
             "itemtype": "property",
             "name": "hasPreviousPage",
@@ -3996,7 +3995,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 363,
+            "line": 404,
             "description": "Function to determine if current page has next page.",
             "itemtype": "property",
             "name": "hasNextPage",
