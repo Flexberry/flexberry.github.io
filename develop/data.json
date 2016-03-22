@@ -6622,7 +6622,7 @@
         {
             "file": "ember-flexberry/addon/serializers/odata.js",
             "line": 124,
-            "description": "`serializeBelongsTo` can be used to customize how `DS.belongsTo` properties are serialized.\nIf there is set option `odata-id` at serializer and `DS.belongsTo` property is not null,\nthen property will be serialized like:\n'''\nRelationName@odata.bind': RelationType(RelatedObjectId)\n'''",
+            "description": "`serializeBelongsTo` can be used to customize how `DS.belongsTo` properties are serialized.\nIf there is set option `odata-id` at serializer and `DS.belongsTo` property is not null,\nthen property will be serialized like:\n```\nRelationName@odata.bind': RelationType(RelatedObjectId)\n```",
             "itemtype": "method",
             "name": "serializeBelongsTo",
             "params": [
