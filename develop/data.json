@@ -3251,7 +3251,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 38,
+            "line": 41,
             "description": "Flag to show that lookup is at autocomplete mode.",
             "itemtype": "property",
             "name": "autocomplete",
@@ -3262,7 +3262,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 47,
+            "line": 50,
             "description": "Observes changes to value. Set it to autocompleteValue.",
             "itemtype": "method",
             "name": "valueChanged",
@@ -3271,7 +3271,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 56,
+            "line": 59,
             "description": "Value for autocomplete control.\nIf model's value changes, autocompleteValue is changed too.\nThis property may be changed independently, but it won't be applied to model automatically.",
             "itemtype": "property",
             "name": "autocompleteValue",
@@ -3282,7 +3282,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 67,
+            "line": 70,
             "description": "Method to get url to request autocomplete items.",
             "itemtype": "property",
             "name": "autocompleteUrl",
@@ -3293,7 +3293,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 76,
+            "line": 79,
             "description": "Method to get query options to request autocomplete items.",
             "itemtype": "property",
             "name": "autocompleteQueryOptions",
@@ -3304,7 +3304,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 85,
+            "line": 88,
             "description": "Action's name to update model's relation value.",
             "itemtype": "property",
             "name": "autocompleteUpdate",
@@ -3315,7 +3315,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 94,
+            "line": 97,
             "description": "Min characters count necessary to call autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMinCharacters",
@@ -3326,7 +3326,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 103,
+            "line": 106,
             "description": "Maximum number of results to show on autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMaxResults",
@@ -3337,7 +3337,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 112,
+            "line": 115,
             "description": "Server-side property name of autocomplete property.",
             "itemtype": "property",
             "name": "autocompleteProperty",
@@ -3348,7 +3348,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 121,
+            "line": 124,
             "description": "Function to limit accessible values.",
             "itemtype": "property",
             "name": "limitFunction",
@@ -3359,7 +3359,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 130,
+            "line": 133,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -3369,7 +3369,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 146,
+            "line": 149,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -3897,6 +3897,13 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 323,
+            "description": "Css class for buttons.",
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 328,
             "description": "Flag: indicates whether to show creation button at toolbar.",
             "itemtype": "property",
             "name": "createNewButton",
@@ -3907,7 +3914,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 332,
+            "line": 337,
             "description": "Flag: indicates whether to show refresh button at toolbar.",
             "itemtype": "property",
             "name": "refreshButton",
@@ -3918,7 +3925,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 341,
+            "line": 346,
             "description": "Flag: indicates whether to show delete button at toolbar.",
             "itemtype": "property",
             "name": "deleteButton",
@@ -3929,7 +3936,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 350,
+            "line": 355,
             "description": "Flag: indicates whether to show filter button at toolbar.",
             "itemtype": "property",
             "name": "filterButton",
@@ -3940,7 +3947,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 359,
+            "line": 364,
             "description": "Used to specify 'filter by any match' field value.",
             "itemtype": "property",
             "name": "filterText",
@@ -3951,7 +3958,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 368,
+            "line": 373,
             "description": "Array of pages to show.",
             "itemtype": "property",
             "name": "pages",
@@ -3962,7 +3969,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 377,
+            "line": 382,
             "description": "Current number of records to show per page.",
             "itemtype": "property",
             "name": "perPageValue",
@@ -3973,7 +3980,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 386,
+            "line": 391,
             "description": "Array of numbers of records to show on one page.",
             "itemtype": "property",
             "name": "perPageValues",
@@ -3984,7 +3991,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 395,
+            "line": 400,
             "description": "Function to determine if current page has previous page.",
             "itemtype": "property",
             "name": "hasPreviousPage",
@@ -3995,7 +4002,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 404,
+            "line": 409,
             "description": "Function to determine if current page has next page.",
             "itemtype": "property",
             "name": "hasNextPage",
@@ -7739,6 +7746,10 @@
         {
             "message": "Missing item type\nCleans up DOM-related component's logic.",
             "line": " ember-flexberry/addon/components/flexberry-menuitem.js:98"
+        },
+        {
+            "message": "Missing item type\nCss class for buttons.",
+            "line": " ember-flexberry/addon/components/flexberry-objectlistview.js:323"
         },
         {
             "message": "Missing item type\nInitializes component.",
