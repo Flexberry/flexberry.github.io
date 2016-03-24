@@ -1,7 +1,6 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
-        "Controller",
         "DetailEditFormController",
         "DetailInterationService",
         "DeviceService",
@@ -16,6 +15,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "FlexberryDropDown",
         "FlexberryField",
         "FlexberryFile",
+        "FlexberryFileController",
         "FlexberryGroupedit",
         "FlexberryLookup",
         "FlexberryLookupCompatibleComponentMixin",

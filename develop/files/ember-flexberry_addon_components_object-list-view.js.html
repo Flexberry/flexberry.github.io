@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Controller", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,7 +48,6 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
-	                            <li><a href="../classes/Controller.html">Controller</a></li>
 	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
 	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
 	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
@@ -63,6 +62,7 @@
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
 	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryFileController.html">FlexberryFileController</a></li>
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
@@ -178,13 +178,14 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       this.sendAction(action, column);
     },
 
-    deleteRow: function(key, record) {
-      if (this.get(&#x27;readonly&#x27;)) {
+    // TODO: rename recordWithKey. rename record in the template, where it is actually recordWithKey.
+    deleteRow: function(recordWithKey) {
+      if (this.get(&#x27;readonly&#x27;) || !recordWithKey.config.canBeDeleted) {
         return;
       }
 
       if (confirm(&#x27;Do you really want to delete this record?&#x27;)) {
-        this._deleteRecord(record, this.get(&#x27;immediateDelete&#x27;));
+        this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
       }
     },
 
@@ -641,6 +642,52 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   filterByAnyMatch: &#x27;filterByAnyMatch&#x27;,
 
   /**
+   * Hook for configurate rows.
+   *
+    Example:
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/employees.hbs --&gt;
+    {{flexberry-objectlistview
+      ...
+      configurateRow=(action &#x27;configurateRow&#x27;)
+      ...
+    }}
+    &#x60;&#x60;&#x60;
+
+    &#x60;&#x60;&#x60;js
+    // app/controllers/employees.js
+    import ListFormController from &#x27;./list-form&#x27;;
+
+    export default ListFormController.extend({
+      actions: {
+        configurateRow: function(rowConfig, record) {
+          rowConfig.canBeDeleted = false;
+        }
+      }
+    });
+    &#x60;&#x60;&#x60;
+   * @method configurateRow
+   * @param {Object} config Settings for row.
+                            See {{#crossLink &quot;ObjectListView/defaultRowConfig:property&quot;}}{{/crossLink}}
+                            property for details.
+   * @param {DS.Model} record The record in row.
+   */
+  configurateRow: undefined,
+
+  /**
+   * Default settings for rows.
+   *
+   * @property defaultRowConfig
+   * @type Object
+   * @param {Boolean} [canBeDeleted=true] The row can be deleted.
+   * @param {Boolean} [canBeSelected=true] The row can be selected via checkbox.
+   */
+  defaultRowConfig: {
+    canBeDeleted: true,
+    canBeSelected: true
+  },
+
+  /**
    * Flag: indicates whether DELETE request should be immediately sended to server (on each deleted record) or not.
    *
    * @property immediateDelete
@@ -874,6 +921,16 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
 
     modelWithKey.set(&#x27;key&#x27;, key);
     modelWithKey.set(&#x27;data&#x27;, record);
+
+    let rowConfig = Ember.copy(this.get(&#x27;defaultRowConfig&#x27;));
+    modelWithKey.set(&#x27;config&#x27;, rowConfig);
+
+    let configurateRow = this.get(&#x27;configurateRow&#x27;);
+    if (configurateRow) {
+      Ember.assert(&#x27;configurateRow must be a function&#x27;, typeof configurateRow === &#x27;function&#x27;);
+      configurateRow(rowConfig, record);
+    }
+
     this.get(&#x27;contentWithKeys&#x27;).pushObject(modelWithKey);
 
     return key;
