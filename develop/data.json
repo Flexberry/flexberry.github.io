@@ -807,7 +807,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 7,
+            "line": 8,
             "description": "Component for create, edit and delete detail objects.",
             "extends": "FlexberryBaseComponent"
         },
@@ -3087,7 +3087,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 15,
+            "line": 16,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "sortByColumn",
@@ -3103,7 +3103,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 26,
+            "line": 27,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "addColumnToSorting",
@@ -3119,7 +3119,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 37,
+            "line": 38,
             "description": "Handles click on row of objectlistview.\nSends action out of component.",
             "itemtype": "method",
             "name": "rowClick",
@@ -3135,7 +3135,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 49,
+            "line": 56,
+            "description": "Route for edit form by click row",
+            "itemtype": "property",
+            "name": "editFormRoute",
+            "type": "String",
+            "default": "'this.modelName'",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 65,
             "description": "Name of action to handle row click.\nAction will be send out of the component.",
             "itemtype": "property",
             "name": "rowClick",
@@ -3146,7 +3157,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 59,
+            "line": 75,
             "description": "Default cell component that will be used to display values in columns headers.",
             "itemtype": "property",
             "name": "headerCellComponent",
@@ -3172,7 +3183,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 71,
+            "line": 87,
             "description": "Default cell component that will be used to display values in columns cells.",
             "itemtype": "property",
             "name": "cellComponent",
@@ -3198,7 +3209,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 83,
+            "line": 99,
             "description": "Default cell component that will be used to display values in single column.",
             "itemtype": "property",
             "name": "singleColumnCellComponent",
@@ -3224,7 +3235,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 95,
+            "line": 111,
             "description": "Flag: indicates whether to use single column to display all model properties or not.",
             "itemtype": "property",
             "name": "useSingleColumn",
@@ -3235,7 +3246,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 104,
+            "line": 120,
             "description": "Header title of single column.",
             "itemtype": "property",
             "name": "singleColumnHeaderTitle",
@@ -3245,7 +3256,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 112,
+            "line": 128,
             "description": "Flag: indicates whether to show asterisk icon in first column of every changed row.",
             "itemtype": "property",
             "name": "showAsteriskInRow",
@@ -3256,7 +3267,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 121,
+            "line": 137,
             "description": "Flag: indicates whether to show checkbox in first column of every row.",
             "itemtype": "property",
             "name": "showCheckBoxInRow",
@@ -3267,7 +3278,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 130,
+            "line": 146,
             "description": "Flag: indicates whether to show delete button in first column of every row.",
             "itemtype": "property",
             "name": "showDeleteButtonInRow",
@@ -3278,7 +3289,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 139,
+            "line": 155,
             "description": "Flag: indicates whether to show dropdown menu with edit menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showEditMenuItemInRow",
@@ -3289,7 +3300,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 148,
+            "line": 164,
             "description": "Flag: indicates whether to show dropdown menu with delete menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showDeleteMenuItemInRow",
@@ -3300,7 +3311,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 157,
+            "line": 173,
             "description": "Additional menu items for dropdown menu in last column of every row.",
             "itemtype": "property",
             "name": "menuInRowAdditionalItems",
@@ -3311,7 +3322,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 166,
+            "line": 182,
             "description": "Flag: indicates whether table rows are clickable.",
             "itemtype": "property",
             "name": "rowClickable",
@@ -3322,7 +3333,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 175,
+            "line": 191,
             "description": "Flag: indicates whether ordering by clicking on column headers is allowed.",
             "itemtype": "property",
             "name": "headerClickable",
@@ -3333,7 +3344,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 184,
+            "line": 200,
             "description": "Dictionary with sorting data related to columns.",
             "itemtype": "property",
             "name": "sorting",
@@ -3343,7 +3354,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 192,
+            "line": 208,
             "description": "Model projection which should be used to display given content.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -3354,7 +3365,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 201,
+            "line": 217,
             "description": "Content to be displayed (models collection).",
             "itemtype": "property",
             "name": "content",
@@ -3365,7 +3376,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 210,
+            "line": 226,
             "description": "Flag: indicates whether DELETE request should be immediately sended to server (on each deleted record) or not.",
             "itemtype": "property",
             "name": "immediateDelete",
@@ -3376,7 +3387,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 219,
+            "line": 235,
             "description": "Flag: indicates whether records should be edited on separate route.",
             "itemtype": "property",
             "name": "editOnSeparateRoute",
@@ -6344,7 +6355,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 76,
+            "line": 75,
             "description": "Event handler for \"row has been selected\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowAdded",
@@ -6367,7 +6378,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 90,
+            "line": 89,
             "description": "Event handler for \"row has been deleted\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowDeleted",
@@ -6390,7 +6401,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 104,
+            "line": 103,
             "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in groupedit.",
             "itemtype": "method",
             "name": "_rowChanged",
