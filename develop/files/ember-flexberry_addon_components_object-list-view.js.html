@@ -988,7 +988,60 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     }
   },
 
+  /**
+   * Hook that executes before deleting the record.
+   *
+   *  Example:
+   *  &#x60;&#x60;&#x60;handlebars
+   *  &lt;!-- app/templates/employees.hbs --&gt;
+   *  {{flexberry-objectlistview
+   *    ...
+   *    beforeDeleteRecord=(action &#x27;beforeDeleteRecord&#x27;)
+   *    ...
+   *  }}
+   *  &#x60;&#x60;&#x60;
+   *
+   *  &#x60;&#x60;&#x60;js
+   *  // app/controllers/employees.js
+   *  import ListFormController from &#x27;./list-form&#x27;;
+   *
+   *  export default ListFormController.extend({
+   *    actions: {
+   *      beforeDeleteRecord: function(record, data) {
+   *        if (record.get(&#x27;myProperty&#x27;)) {
+   *          data.cancel = true;
+   *        }
+   *      }
+   *    }
+   *  });
+   *  &#x60;&#x60;&#x60;
+   *
+   * @method beforeDeleteRecord
+   *
+   * @param {DS.Model} record Deleting record.
+   * @param {Object} data Metadata.
+   * @param {Boolean} [data.cancel=false] Flag for canceling deletion.
+   * @param {Boolean} [data.immediately] See {{#crossLink &quot;ObjectListView/immediateDelete:property&quot;}}{{/crossLink}}
+   *                                     property for details.
+   */
+  beforeDeleteRecord: null,
+
   _deleteRecord: function(record, immediately) {
+    let beforeDeleteRecord = this.get(&#x27;beforeDeleteRecord&#x27;);
+    if (beforeDeleteRecord) {
+      Ember.assert(&#x27;beforeDeleteRecord must be a function&#x27;, typeof beforeDeleteRecord === &#x27;function&#x27;);
+
+      let data = {
+        immediately: immediately,
+        cancel: false
+      };
+      beforeDeleteRecord(record, data);
+
+      if (data.cancel) {
+        return;
+      }
+    }
+
     var key = this._getModelKey(record);
     this._removeModelWithKey(key);
 

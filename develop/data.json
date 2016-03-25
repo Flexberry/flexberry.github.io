@@ -5481,7 +5481,43 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 868,
+            "line": 853,
+            "description": "Hook that executes before deleting the record.\n\n Example:\n ```handlebars\n <!-- app/templates/employees.hbs -->\n {{flexberry-objectlistview\n   ...\n   beforeDeleteRecord=(action 'beforeDeleteRecord')\n   ...\n }}\n ```\n\n ```js\n // app/controllers/employees.js\n import ListFormController from './list-form';\n\n export default ListFormController.extend({\n   actions: {\n     beforeDeleteRecord: function(record, data) {\n       if (record.get('myProperty')) {\n         data.cancel = true;\n       }\n     }\n   }\n });\n ```",
+            "itemtype": "method",
+            "name": "beforeDeleteRecord",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "Deleting record.",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "data",
+                    "description": "Metadata.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "cancel",
+                            "description": "Flag for canceling deletion.",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "immediately",
+                            "description": "See {{#crossLink \"ObjectListView/immediateDelete:property\"}}{{/crossLink}}\n                                    property for details.",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "class": "ObjectListView",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view.js",
+            "line": 921,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -5508,7 +5544,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 891,
+            "line": 944,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",

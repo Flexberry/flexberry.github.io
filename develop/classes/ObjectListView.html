@@ -195,6 +195,10 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method__filterByAnyMatch" data-tablink="_filterByAnyMatch">_filterByAnyMatch</a>
 
                             </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_beforeDeleteRecord" data-tablink="beforeDeleteRecord">beforeDeleteRecord</a>
+
+                            </li>
                             <li class="index-item method inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_combineFilterWithFilterByAnyMatch" data-tablink="combineFilterWithFilterByAnyMatch">combineFilterWithFilterByAnyMatch</a>
 
@@ -644,7 +648,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_object-list-view.js.html#l868"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view.js:868</code></a>
+                            <a href="../files/ember-flexberry_addon_components_object-list-view.js.html#l921"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view.js:921</code></a>
                             </p>
                     
                     
@@ -785,7 +789,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_object-list-view.js.html#l891"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view.js:891</code></a>
+                            <a href="../files/ember-flexberry_addon_components_object-list-view.js.html#l944"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view.js:944</code></a>
                             </p>
                     
                     
@@ -811,6 +815,119 @@
                     
                                         </div>
                     
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_beforeDeleteRecord" class="method item">
+                        <h3 class="name"><code>beforeDeleteRecord</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>record</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>data</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_object-list-view.js.html#l853"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;object-list-view.js:853</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Hook that executes before deleting the record.</p>
+                    <p>Example:</p>
+                    <pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/employees.hbs --&gt;
+                    {{flexberry-objectlistview
+                      ...
+                      beforeDeleteRecord=(action 'beforeDeleteRecord')
+                      ...
+                    }}
+                    </code></pre>
+                    <pre class="code prettyprint"><code class="language-js">// app/controllers/employees.js
+                    import ListFormController from './list-form';
+                    
+                    export default ListFormController.extend({
+                      actions: {
+                        beforeDeleteRecord: function(record, data) {
+                          if (record.get('myProperty')) {
+                            data.cancel = true;
+                          }
+                        }
+                      }
+                    });
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">record</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Deleting record.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">data</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Metadata.</p>
+                    
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name optional">[cancel=false]</code>
+                                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Flag for canceling deletion.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[immediately]</code>
+                                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>See <a href="../classes/ObjectListView.html#property_immediateDelete" class="crosslink">immediateDelete</a>
+                    property for details.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
                                     </li>
                                 </ul>
                             </div>
