@@ -240,10 +240,12 @@ export default ProjectedModelFormRoute.extend(FlexberryGroupeditRouteMixin, {
     let modelCurrentAgregatorPath = flexberryDetailInteractionService.get(&#x27;modelCurrentAgregatorPathes&#x27;);
     let modelCurrentAgregator = flexberryDetailInteractionService.get(&#x27;modelCurrentAgregators&#x27;);
     let modelLastUpdatedDetail = flexberryDetailInteractionService.get(&#x27;modelLastUpdatedDetail&#x27;);
+    let saveBeforeRouteLeave = flexberryDetailInteractionService.get(&#x27;saveBeforeRouteLeave&#x27;);
 
     flexberryDetailInteractionService.set(&#x27;modelSelectedDetail&#x27;, undefined);
     flexberryDetailInteractionService.set(&#x27;modelCurrentAgregators&#x27;, undefined);
     flexberryDetailInteractionService.set(&#x27;modelCurrentAgregatorPathes&#x27;, undefined);
+    flexberryDetailInteractionService.set(&#x27;saveBeforeRouteLeave&#x27;, undefined);
 
     flexberryDetailInteractionService.set(&#x27;modelCurrentNotSaved&#x27;, undefined);
     flexberryDetailInteractionService.set(&#x27;modelLastUpdatedDetail&#x27;, undefined);
@@ -264,6 +266,7 @@ export default ProjectedModelFormRoute.extend(FlexberryGroupeditRouteMixin, {
     if (flexberryDetailInteractionService.hasValues(modelCurrentAgregatorPath)) {
       controller.set(&#x27;modelCurrentAgregatorPathes&#x27;, modelCurrentAgregatorPath);
       controller.set(&#x27;modelCurrentAgregators&#x27;, modelCurrentAgregator);
+      controller.set(&#x27;saveBeforeRouteLeave&#x27;, saveBeforeRouteLeave);
     }
   },
 
