@@ -144,8 +144,16 @@ import Ember from &#x27;ember&#x27;;
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 export default FlexberryBaseComponent.extend({
-  modelName: null,
   modelController: null,
+
+  /**
+   * Route for edit form by click row
+   *
+   * @property editFormRoute
+   * @type String
+   * @default undefined
+   */
+  editFormRoute: undefined,
 
   /**
    * Service that triggers objectlistview events.
@@ -280,9 +288,9 @@ export default FlexberryBaseComponent.extend({
       this.get(&#x27;modelController&#x27;).send(&#x27;refreshList&#x27;);
     },
     createNew: function() {
+      let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
       let modelController = this.get(&#x27;modelController&#x27;);
-      let modelName = this.get(&#x27;modelName&#x27;);
-      modelController.transitionToRoute(modelName + &#x27;.new&#x27;);
+      modelController.transitionToRoute(editFormRoute + &#x27;.new&#x27;);
     },
 
     /**
