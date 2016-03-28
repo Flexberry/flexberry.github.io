@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,6 +48,7 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
 	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
 	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
 	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
@@ -213,12 +214,12 @@ export default DetailEditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_cacheFor" data-tablink="cacheFor">cacheFor</a>
 
                             </li>
-                            <li class="index-item method public inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_decrementProperty" data-tablink="decrementProperty">decrementProperty</a>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_close" data-tablink="close">close</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_delete" data-tablink="delete">delete</a>
+                            <li class="index-item method public inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_decrementProperty" data-tablink="decrementProperty">decrementProperty</a>
 
                             </li>
                             <li class="index-item method">
@@ -955,6 +956,38 @@ export default DetailEditFormController.extend({
                             </div>
                     
                     </div>
+                    <div id="method_close" class="method item">
+                        <h3 class="name"><code>close</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_detail-edit-form.js.html#l130"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;detail-edit-form.js:130</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handler for button 'close' click.
+                    If return path is determined, an error is thrown because this action should not be triggered.
+                    Otherwise base logic is executed.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method_decrementProperty" class="method item public inherited">
                         <h3 class="name"><code>decrementProperty</code></h3>
                     
@@ -1092,38 +1125,6 @@ export default DetailEditFormController.extend({
                     
                         <div class="description">
                             <p>Delete selected rows.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_delete" class="method item">
-                        <h3 class="name"><code>delete</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_controllers_detail-edit-form.js.html#l130"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;detail-edit-form.js:130</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handler for button 'close' click.
-                    If return path is determined, an error is thrown because this action should not be triggered.
-                    Otherwise base logic is executed.</p>
                     
                         </div>
                     
@@ -3181,7 +3182,7 @@ export default DetailEditFormController.extend({
                                     EditFormController
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_controllers_detail-edit-form.js.html#l146"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;detail-edit-form.js:146</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_detail-edit-form.js.html#l164"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;detail-edit-form.js:164</code></a>
                             </p>
                     
                     
@@ -4310,7 +4311,7 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormController.html#property_readonly">EditFormController</a>:
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l59"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:59</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l58"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:58</code></a>
                             </p>
                     
                     
@@ -4335,14 +4336,15 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormController.html#property_readonlyAttr">EditFormController</a>:
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l69"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:69</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l68"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:68</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            Readonly attribute for HTML components following to the <code>readonly</code> query param. According to the W3C standard, returns 'readonly' if <code>readonly</code> is <code>true</code> and <code>undefined</code> otherwise.
+                            Readonly attribute for HTML components following to the <code>readonly</code> query param.
+                    According to the W3C standard, returns 'readonly' if <code>readonly</code> is <code>true</code> and <code>undefined</code> otherwise.
                         </div>
                     
                             <p><strong>Default:</strong> undefined</p>

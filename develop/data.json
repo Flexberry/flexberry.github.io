@@ -460,10 +460,12 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry/addon/mixins/validate-model.js": {
-            "name": "ember-flexberry/addon/mixins/validate-model.js",
+        "ember-flexberry/addon/models/base.js": {
+            "name": "ember-flexberry/addon/models/base.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "BaseModel": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -621,6 +623,7 @@
                 "ListFormController": 1,
                 "FlexberryFileController": 1,
                 "FlexberryLookupCompatibleComponentMixin": 1,
+                "BaseModel": 1,
                 "EditFormRoute": 1,
                 "ListFormRoute": 1,
                 "DetailInterationService": 1,
@@ -1135,6 +1138,39 @@
             "line": 7,
             "description": "Mixin for components which need to be flexberry-lookup compatible.",
             "extends": "Ember.Mixin"
+        },
+        "BaseModel": {
+            "name": "BaseModel",
+            "shortname": "BaseModel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/models/base.js",
+            "line": 9,
+            "description": "Base model for 'ember-flexberry' models.",
+            "extends": "Ember.Controller",
+            "uses": [
+                "Proj.Model",
+                "EmberValidationsMixin",
+                "Ember.EventedMixin"
+            ],
+            "itemtype": "event",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "Event object.",
+                    "type": "Object"
+                },
+                {
+                    "name": "promises",
+                    "description": "Array to which custom 'preSave' promises could be pushed.",
+                    "type": "Promise[]"
+                }
+            ]
         },
         "EditFormRoute": {
             "name": "EditFormRoute",
@@ -2978,42 +3014,42 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 370,
+            "line": 374,
             "description": "Initializes file-control component.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 457,
+            "line": 458,
             "description": "Destroys file-control component.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 470,
+            "line": 471,
             "description": "Method to remove selected file.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 479,
+            "line": 480,
             "description": "Method to upload selected file.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 541,
+            "line": 542,
             "description": "Method to download uploaded file.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 580,
+            "line": 581,
             "description": "Method to show error modal dialog.",
             "params": [
                 {
@@ -3032,28 +3068,28 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 594,
+            "line": 595,
             "description": "Related model's 'preSave' event handler.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 599,
-            "description": "Method to subscribe on 'relatedModel' 'preSave' event.",
+            "line": 609,
+            "description": "Method to subscribe on related model's 'preSave' event.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 624,
-            "description": "Method to unsubscribe from 'relatedModel' 'preSave' event.",
+            "line": 627,
+            "description": "Method to unsubscribe from related model's 'preSave' event.",
             "class": "FlexberryFile",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 637,
+            "line": 640,
             "description": "This method shows error when there was an error during file download.",
             "itemtype": "method",
             "name": "_showModalDialogOnDownloadErrorFunction",
@@ -3076,7 +3112,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 659,
+            "line": 662,
             "description": "It handles click on selected image preview and sends action with data outside component\nin order to view selected image at modal window.",
             "itemtype": "method",
             "name": "viewLoadedImage",
@@ -5901,13 +5937,13 @@
             "line": 130,
             "description": "Handler for button 'close' click.\nIf return path is determined, an error is thrown because this action should not be triggered.\nOtherwise base logic is executed.",
             "itemtype": "method",
-            "name": "delete",
+            "name": "close",
             "class": "DetailEditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
-            "line": 146,
+            "line": 164,
             "description": "Method to transit to parent's route (previous route).\nIf `modelAgregatorRoute` is set, transition to defined path and set flag 'modelNoRollBack' to `true` on controller to prevent rollback of model.\nThen if `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
             "itemtype": "method",
             "name": "transitionToParentRoute.",
@@ -5923,14 +5959,14 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 45,
+            "line": 44,
             "description": "Query parameters.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 50,
+            "line": 49,
             "description": "Flag to enable return to agregator's path if possible.",
             "itemtype": "property",
             "name": "returnToAgregatorRoute",
@@ -5941,7 +5977,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 59,
+            "line": 58,
             "description": "Indicates whether the current form is opened only for reading.",
             "itemtype": "property",
             "name": "readonly",
@@ -5952,8 +5988,8 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 69,
-            "description": "Readonly attribute for HTML components following to the `readonly` query param. According to the W3C standard, returns 'readonly' if `readonly` is `true` and `undefined` otherwise.",
+            "line": 68,
+            "description": "Readonly attribute for HTML components following to the `readonly` query param.\nAccording to the W3C standard, returns 'readonly' if `readonly` is `true` and `undefined` otherwise.",
             "itemtype": "property",
             "name": "readonlyAttr",
             "type": "String|undefined",
@@ -6518,7 +6554,7 @@
             "name": "lookupController",
             "type": "Ember.InjectedProperty",
             "default": "undefined",
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6534,7 +6570,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6543,7 +6579,7 @@
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6559,7 +6595,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6575,7 +6611,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6595,7 +6631,7 @@
                 "description": "Formed url.",
                 "type": "Object"
             },
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6615,7 +6651,7 @@
                 "description": "Formed query parameters.",
                 "type": "Object"
             },
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6644,7 +6680,7 @@
                 "description": "Throws error if relation was not found at model.",
                 "type": "Error"
             },
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6660,7 +6696,7 @@
                     "type": "String"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6676,7 +6712,7 @@
                     "type": "String"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6695,7 +6731,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6716,7 +6752,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6734,7 +6770,7 @@
                 "description": "Результирующая строка.",
                 "type": "String"
             },
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -6752,21 +6788,122 @@
                 "description": "Массив объектов вида { propName: 'ИмяN', direction: 'asc/desc' }, задающий свойства и\nнаправления для сортировки.",
                 "type": "Array"
             },
-            "class": "EditFormRoute",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/validate-model.js",
-            "line": 7,
+            "file": "ember-flexberry/addon/models/base.js",
+            "line": 23,
             "description": "Model validation rules.",
-            "class": "EditFormRoute",
+            "itemtype": "property",
+            "name": "validations",
+            "type": "Object",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/validate-model.js",
-            "line": 12,
-            "description": "Save model method.",
-            "class": "EditFormRoute",
+            "file": "ember-flexberry/addon/models/base.js",
+            "line": 32,
+            "description": "Checks that model satisfies validation rules defined in 'validations' property.",
+            "itemtype": "method",
+            "name": "validate",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "validateDeleted",
+                            "description": "Flag: indicates whether to validate model, if it is deleted, or not.",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": " true"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise that will be resolved if model satisfies validation rules defined in 'validations' property.",
+                "type": "Promise"
+            },
+            "class": "BaseModel",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/models/base.js",
+            "line": 53,
+            "description": "Triggers model's 'preSave' event & allows to execute some additional async logic before model will be saved.",
+            "itemtype": "method",
+            "name": "beforeSave",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "softSave",
+                            "description": "Flag: indicates whether following 'save' will be soft\n(without sending a request to server) or not.",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": " false"
+                        },
+                        {
+                            "name": "promises",
+                            "description": "Array to which 'preSave' event handlers could add some asynchronous operations promises.",
+                            "type": "Promise[]",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise that will be resolved after all 'preSave' event handlers promises will be resolved.",
+                "type": "Promise"
+            },
+            "class": "BaseModel",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/models/base.js",
+            "line": 85,
+            "description": "Validates model, triggers 'preSave' event, and finally saves model.",
+            "itemtype": "method",
+            "name": "save",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "softSave",
+                            "description": "Flag: indicates whether following 'save' will be soft\n(without sending a request to server) or not.",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": " false"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise that will be resolved after model will be successfully saved.",
+                "type": "Promise"
+            },
+            "class": "BaseModel",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/models/base.js",
+            "line": 124,
+            "description": "Turns model into 'updated.uncommitted' state.",
+            "itemtype": "method",
+            "name": "makeDirty",
+            "class": "BaseModel",
             "module": "ember-flexberry"
         },
         {
@@ -8041,39 +8178,39 @@
         },
         {
             "message": "Missing item type\nInitializes file-control component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:370"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:374"
         },
         {
             "message": "Missing item type\nDestroys file-control component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:457"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:458"
         },
         {
             "message": "Missing item type\nMethod to remove selected file.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:470"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:471"
         },
         {
             "message": "Missing item type\nMethod to upload selected file.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:479"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:480"
         },
         {
             "message": "Missing item type\nMethod to download uploaded file.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:541"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:542"
         },
         {
             "message": "Missing item type\nMethod to show error modal dialog.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:580"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:581"
         },
         {
             "message": "Missing item type\nRelated model's 'preSave' event handler.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:594"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:595"
         },
         {
-            "message": "Missing item type\nMethod to subscribe on 'relatedModel' 'preSave' event.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:599"
+            "message": "Missing item type\nMethod to subscribe on related model's 'preSave' event.",
+            "line": " ember-flexberry/addon/components/flexberry-file.js:609"
         },
         {
-            "message": "Missing item type\nMethod to unsubscribe from 'relatedModel' 'preSave' event.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:624"
+            "message": "Missing item type\nMethod to unsubscribe from related model's 'preSave' event.",
+            "line": " ember-flexberry/addon/components/flexberry-file.js:627"
         },
         {
             "message": "Missing item type\nClass names for component wrapping element.",
@@ -8173,7 +8310,7 @@
         },
         {
             "message": "Missing item type\nQuery parameters.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:45"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:44"
         },
         {
             "message": "Missing item type\nLookup settings.",
@@ -8210,14 +8347,6 @@
         {
             "message": "Missing item type\nДесериализовать строку с параметрами сортировки. Ожидается строка следующего вида: '+Имя1-Имя2{...}',\nгде '+' и '-' - направления сортировки, 'ИмяX' - имя свойства для сортировки.",
             "line": " ember-flexberry/addon/mixins/sortable-route.js:8"
-        },
-        {
-            "message": "Missing item type\nModel validation rules.",
-            "line": " ember-flexberry/addon/mixins/validate-model.js:7"
-        },
-        {
-            "message": "Missing item type\nSave model method.",
-            "line": " ember-flexberry/addon/mixins/validate-model.js:12"
         },
         {
             "message": "Missing item type\nTable row click handler.",

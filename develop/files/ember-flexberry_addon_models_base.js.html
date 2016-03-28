@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>FileTransform - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/models/base.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -132,214 +132,148 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>FileTransform <small>Class</small></h1>
+    <h1>ember-flexberry/addon/models/base.js <small>File</small></h1>
 </div>
 
-<div class="well well-small">
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @module ember-flexberry
+ */
 
-        <div class="extends">
-            Extends <a href="http://emberjs.com/api/data/classes/DS.StringTransform.html" class="crosslink external" target="_blank">DS.StringTransform</a>
-        </div>
+import Ember from &#x27;ember&#x27;;
+import Proj from &#x27;ember-flexberry-projections&#x27;;
+import EmberValidations from &#x27;ember-validations&#x27;;
 
-        <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_transforms_file.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;transforms&#x2F;file.js:7</code></a>
-        </div>
+/**
+ * Base model for &#x27;ember-flexberry&#x27; models.
+ *
+ * @class BaseModel
+ * @extends Ember.Controller
+ * @uses Proj.Model
+ * @uses EmberValidationsMixin
+ * @uses Ember.EventedMixin
+ *
+ * @event preSave
+ * @param {Object} event Event object.
+ * @param {Promise[]} promises Array to which custom &#x27;preSave&#x27; promises could be pushed.
+ */
+export default Proj.Model.extend(EmberValidations, Ember.Evented, {
+  /**
+   * Model validation rules.
+   *
+   * @property validations
+   * @type Object
+   */
+  validations: {
+  },
 
-            Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
+  /**
+   * Checks that model satisfies validation rules defined in &#x27;validations&#x27; property.
+   *
+   * @method validate
+   * @param {Object} [options] Method options.
+   * @param {Boolean} [options.validateDeleted = true] Flag: indicates whether to validate model, if it is deleted, or not.
+   * @return {Promise} A promise that will be resolved if model satisfies validation rules defined in &#x27;validations&#x27; property.
+   */
+  validate: function(options) {
+    options = Ember.merge({ validateDeleted: true }, options || {});
+    if (options.validateDeleted === false &amp;&amp; this.get(&#x27;isDeleted&#x27;)) {
+      // Return resolved promise, because validation is unnecessary for deleted model.
+      return new Ember.RSVP.Promise((resolve, reject) =&gt; {
+        resolve();
+      });
+    }
 
-</div>
+    // Return normal validation promise without any additional logic.
+    return this._super(...arguments);
+  },
 
+  /**
+   * Triggers model&#x27;s &#x27;preSave&#x27; event &amp; allows to execute some additional async logic before model will be saved.
+   *
+   * @method beforeSave
+   * @param {Object} [options] Method options.
+   * @param {Boolean} [options.softSave = false] Flag: indicates whether following &#x27;save&#x27; will be soft
+   * (without sending a request to server) or not.
+   * @param {Promise[]} [options.promises] Array to which &#x27;preSave&#x27; event handlers could add some asynchronous operations promises.
+   * @return {Promise} A promise that will be resolved after all &#x27;preSave&#x27; event handlers promises will be resolved.
+   */
+  beforeSave: function(options) {
+    options = Ember.merge({ softSave: false, promises: [] }, options || {});
 
-<div class="well well-small">
-    <p>This transformation is necessary in order to detach file attributes from another string attributes on model level.
-It extends string transformation from ember data (<a href="https://github.com/emberjs/data/blob/v2.3.0/addon/-private/transforms/string.js">https://github.com/emberjs/data/blob/v2.3.0/addon/-private/transforms/string.js</a>),
-without any changes.</p>
+    return new Ember.RSVP.Promise((resolve, reject) =&gt; {
+      // Trigger &#x27;preSave&#x27; event, and  give its handlers possibility to run some &#x27;preSave&#x27; asynchronous logic,
+      // by adding it&#x27;s promises to options.promises array.
+      this.trigger(&#x27;preSave&#x27;, options);
 
-</div>
+      // Promises array could be totally changed in &#x27;preSave&#x27; event handlers, we should prevent possible errors.
+      options.promises = Ember.isArray(options.promises) ? options.promises : [];
+      options.promises = options.promises.filter(function(item, index, array) {
+        return item instanceof Ember.RSVP.Promise;
+      });
 
+      Ember.RSVP.all(options.promises).then((values) =&gt; {
+        resolve(values);
+      }).catch((reason) =&gt; {
+        reject(reason);
+      });
+    });
+  },
 
-<div>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+  /**
+   * Validates model, triggers &#x27;preSave&#x27; event, and finally saves model.
+   *
+   * @method save
+   * @param {Object} [options] Method options.
+   * @param {Boolean} [options.softSave = false] Flag: indicates whether following &#x27;save&#x27; will be soft
+   * (without sending a request to server) or not.
+   * @return {Promise} A promise that will be resolved after model will be successfully saved.
+   */
+  save: function(options) {
+    options = Ember.merge({ softSave: false }, options || {});
 
-            <li><a data-toggle="tab" href="#methods">Methods</a></li>
-    </ul>
+    return new Ember.RSVP.Promise((resolve, reject) =&gt; {
+      this.validate({
+        validateDeleted: false
+      }).then(() =&gt; {
+        return this.beforeSave(options);
+      }).then(() =&gt; {
+        // Call to base class &#x27;save&#x27; method with right context.
+        // The problem is that call to current save method will be already finished,
+        // and traditional _this._super will point to something else, but not to Proj.Model &#x27;save&#x27; method,
+        // so there is no other way, except to call it through the base class prototype.
+        if (!options.softSave) {
+          return Proj.Model.prototype.save.call(this, options);
+        }
+      }).then((value) =&gt; {
+        // Model validation was successful (model is valid or deleted),
+        // all &#x27;preSave&#x27; event promises has been successfully resolved,
+        // finally model has been successfully saved,
+        // so we can resolve &#x27;save&#x27; promise.
+        resolve(value);
+      }).catch((reason) =&gt; {
+        // Any of &#x27;validate&#x27;, &#x27;beforeSave&#x27; or &#x27;save&#x27; promises has been rejected,
+        // so we should reject &#x27;save&#x27; promise.
+        reject(reason);
+      });
+    });
+  },
 
-    <div class="tab-content">
-        <div id="index" class="tab-pane active">
-            <h2 class="off-left">Item Index</h2>
+  /**
+   * Turns model into &#x27;updated.uncommitted&#x27; state.
+   *
+   * @method makeDirty
+   */
+  makeDirty: function() {
+    // Transition into the &#x60;updated.uncommitted&#x60; state
+    // if the model in the &#x60;saved&#x60; state (no local changes).
+    // Alternative: this.get(&#x27;currentState&#x27;).becomeDirty();
+    this.send(&#x27;becomeDirty&#x27;);
+  }
+});
 
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods extends">
-                            <li class="index-item method inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_deserialize" data-tablink="deserialize">deserialize</a>
-
-                            </li>
-                            <li class="index-item method inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_serialize" data-tablink="serialize">serialize</a>
-
-                            </li>
-                    </ul>
-                </div>
-
-
-
-        </div>
-
-            <div id="methods" class="tab-pane">
-                <h2 class="off-left">Methods</h2>
-
-                    <div id="method_deserialize" class="method item inherited">
-                        <h3 class="name"><code>deserialize</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>serialized</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="http://emberjs.com/api/data/classes/DS.Transform.html#method_deserialize">DS.Transform</a>:
-                            <a href="http://emberjs.com/api/data/files/_home_travis_build_emberjs_data_addon_transform.js.html#l59"><code>&#x2F;home&#x2F;travis&#x2F;build&#x2F;emberjs&#x2F;data&#x2F;addon&#x2F;transform.js:59</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            When given a serialize value from a JSON object this method must
-                    return the deserialized value for the record attribute.
-                    
-                    Example
-                    
-                    <code>&#x60;</code>javascript
-                    deserialize: function(serialized) {
-                      return empty(serialized) ? null : Number(serialized);
-                    }
-                    <code>&#x60;</code>
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">serialized</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The serialized value</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                        <p>The deserialized value</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-                    <div id="method_serialize" class="method item inherited">
-                        <h3 class="name"><code>serialize</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>deserialized</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="http://emberjs.com/api/data/classes/DS.Transform.html#method_serialize">DS.Transform</a>:
-                            <a href="http://emberjs.com/api/data/files/_home_travis_build_emberjs_data_addon_transform.js.html#l41"><code>&#x2F;home&#x2F;travis&#x2F;build&#x2F;emberjs&#x2F;data&#x2F;addon&#x2F;transform.js:41</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            When given a deserialized value from a record attribute this
-                    method must return the serialized value.
-                    
-                    Example
-                    
-                    <code>&#x60;</code>javascript
-                    serialize: function(deserialized) {
-                      return Ember.isEmpty(deserialized) ? null : Number(deserialized);
-                    }
-                    <code>&#x60;</code>
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">deserialized</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The deserialized value</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                        <p>The serialized value</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-            </div>
-
-
-
-    </div>
+    </pre>
 </div>
                     </div>
                 </div>

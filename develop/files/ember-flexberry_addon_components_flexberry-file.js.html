@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/EnumNumberTransform", "classes/EnumStringTransform", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -48,6 +48,7 @@
 	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
 	                <div class="tab-pane active" id="classes">
 	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
 	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
 	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
 	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
@@ -471,10 +472,10 @@ export default FlexberryBaseComponent.extend({
 
     // Remember initial value.
     var value = this.get(&#x27;value&#x27;);
-    var i18n = this.get(&#x27;i18n&#x27;);
     this.set(&#x27;initialValue&#x27;, Ember.copy(value, true));
 
     // Initialize properties which defaults could be defined in application configuration.
+    var i18n = this.get(&#x27;i18n&#x27;);
     this.initProperty({ propertyName: &#x27;uploadUrl&#x27;, defaultValue: null });
     this.initProperty({ propertyName: &#x27;downloadUrl&#x27;, defaultValue: null });
     this.initProperty({ propertyName: &#x27;maxUploadFileSize&#x27;, defaultValue: null });
@@ -487,6 +488,10 @@ export default FlexberryBaseComponent.extend({
     this.initProperty({ propertyName: &#x27;removeButtonTitle&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.remove-btn-text&#x27;) });
     this.initProperty({ propertyName: &#x27;uploadButtonTitle&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.upload-btn-text&#x27;) });
     this.initProperty({ propertyName: &#x27;downloadButtonTitle&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.download-btn-text&#x27;) });
+
+    // Bind related model&#x27;s &#x27;preSave&#x27; event handler&#x27;s context &amp; subscribe on related model&#x27;s &#x27;preSave&#x27;event.
+    this.set(&#x27;_onRelatedModelPreSave&#x27;, this.get(&#x27;_onRelatedModelPreSave&#x27;).bind(this));
+    this._subscribeOnRelatedModelPreSaveEvent();
 
     if (value &amp;&amp; this.get(&#x27;showPreview&#x27;)) {
       // Download file preview.
@@ -587,9 +592,6 @@ export default FlexberryBaseComponent.extend({
       // File add handler.
       add: onFileAdd
     });
-
-    // Subscribe on &#x27;relatedModel&#x27; &#x27;preSave&#x27;event.
-    _this.subscribeOnModelPreSaveEvent();
   },
 
   /**
@@ -598,11 +600,11 @@ export default FlexberryBaseComponent.extend({
   willDestroyElement: function() {
     this._super(...arguments);
 
-    // Unsubscribe from &#x27;relatedModel&#x27; &#x27;preSave&#x27;event.
-    this.unsubscribeFromModelPresaveEvent();
-
     var fileInput = this.$(&#x27;.flexberry-file-file-input&#x27;);
     fileInput.fileupload(&#x27;destroy&#x27;);
+
+    // Unsubscribe from related model&#x27;s &#x27;preSave&#x27;event.
+    this._unsubscribeFromRelatedModelPresaveEvent();
   },
 
   /**
@@ -732,44 +734,46 @@ export default FlexberryBaseComponent.extend({
   /**
    * Related model&#x27;s &#x27;preSave&#x27; event handler.
    */
-  onModelPresave: null,
+  _onRelatedModelPreSave: function(e) {
+    // Remove uploaded file from server, if related model is deleted, otherwise upload selected file to server.
+    var fileOperationPromise = this.get(&#x27;relatedModel.isDeleted&#x27;) ? null : this.uploadFile();
 
-  /**
-   * Method to subscribe on &#x27;relatedModel&#x27; &#x27;preSave&#x27; event.
-   */
-  subscribeOnModelPreSaveEvent: function() {
-    var uploadOnModelPreSave = this.get(&#x27;uploadOnModelPreSave&#x27;);
-    var relatedModel = this.get(&#x27;relatedModel&#x27;);
-    if (!uploadOnModelPreSave || Ember.isNone(relatedModel) || Ember.isNone(relatedModel.on)) {
-      return;
+    // Push file operation promise to events object&#x27;s &#x27;promises&#x27; array
+    // (to keep model waiting until operation will be finished).
+    if (!Ember.isNone(fileOperationPromise) &amp;&amp; !Ember.isNone(e) &amp;&amp; Ember.isArray(e.promises)) {
+      e.promises.push(fileOperationPromise);
     }
-
-    // If upload on &#x27;relatedModel&#x27; &#x27;preSave&#x27; event is allowed,
-    // component should call &#x27;uploadFile&#x27; method when event will be triggered,
-    // and it should push upload RSVP.Promise to events object&#x27;s &#x27;promises&#x27; array.
-    var onModelPreSave = function(e) {
-      var uploadFilePromise = this.uploadFile();
-
-      if (!Ember.isNone(uploadFilePromise) &amp;&amp; !Ember.isNone(e) &amp;&amp; Ember.isArray(e.promises)) {
-        e.promises.push(uploadFilePromise);
-      }
-    }.bind(this);
-
-    relatedModel.on(&#x27;preSave&#x27;, onModelPreSave);
-    this.set(&#x27;onModelPresave&#x27;, onModelPreSave);
   },
 
   /**
-   * Method to unsubscribe from &#x27;relatedModel&#x27; &#x27;preSave&#x27; event.
+   * Method to subscribe on related model&#x27;s &#x27;preSave&#x27; event.
    */
-  unsubscribeFromModelPresaveEvent: function() {
-    var relatedModel = this.get(&#x27;relatedModel&#x27;);
-    var onModelPresave = this.get(&#x27;onModelPresave&#x27;);
-    if (Ember.isNone(relatedModel) || Ember.isNone(relatedModel.off) || Ember.isNone(relatedModel)) {
+  _subscribeOnRelatedModelPreSaveEvent: function() {
+    var uploadOnModelPreSave = this.get(&#x27;uploadOnModelPreSave&#x27;);
+    if (!uploadOnModelPreSave) {
       return;
     }
 
-    relatedModel.off(&#x27;preSave&#x27;, onModelPresave);
+    var relatedModelOnPropertyType = Ember.typeOf(this.get(&#x27;relatedModel.on&#x27;));
+    if (relatedModelOnPropertyType !== &#x27;function&#x27;) {
+      Ember.Logger.error(&#x60;Wrong type of \&#x60;relatedModel.on\&#x60; propery: actual type is ${relatedModelOnPropertyType}, but function is expected.&#x60;);
+    }
+
+    var relatedModel = this.get(&#x27;relatedModel&#x27;);
+    relatedModel.on(&#x27;preSave&#x27;, this.get(&#x27;_onRelatedModelPreSave&#x27;));
+  },
+
+  /**
+   * Method to unsubscribe from related model&#x27;s &#x27;preSave&#x27; event.
+   */
+  _unsubscribeFromRelatedModelPresaveEvent: function() {
+    var relatedModelOffPropertyType = Ember.typeOf(this.get(&#x27;relatedModel.off&#x27;));
+    if (relatedModelOffPropertyType !== &#x27;function&#x27;) {
+      Ember.Logger.error(&#x60;Wrong type of \&#x60;relatedModel.off\&#x60; propery: actual type is ${relatedModelOffPropertyType}, but function is expected.&#x60;);
+    }
+
+    var relatedModel = this.get(&#x27;relatedModel&#x27;);
+    relatedModel.off(&#x27;preSave&#x27;, this.get(&#x27;_onRelatedModelPreSave&#x27;));
   },
 
   /**
