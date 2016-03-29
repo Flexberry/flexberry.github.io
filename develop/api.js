@@ -7,8 +7,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "DeviceService",
         "EditFormController",
         "EditFormRoute",
-        "EnumNumberTransform",
-        "EnumStringTransform",
         "FileTransform",
         "FlexberrCheckboxComponent",
         "FlexberryBaseComponent",

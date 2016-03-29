@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/instance-initializers/moment.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/utils/enum-functions.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -130,7 +130,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/instance-initializers/moment.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/utils/enum-functions.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -141,35 +141,54 @@
 
 import Ember from &#x27;ember&#x27;;
 
-export function initialize(applicationInstance) {
-  var i18n = applicationInstance.lookup(&#x27;service:i18n&#x27;);
-  var moment = applicationInstance.lookup(&#x27;service:moment&#x27;);
+/**
+ * Returns friezed object without prototype with own properties of parameter
+ *
+ * @function createEnum
+ * @param {Object|Array} dictionary
+ * @returns {Object}
+ */
+export function createEnum(dictionary) {
+  let local = {};
+  if (Ember.isArray(dictionary)) {
+    dictionary.forEach(element =&gt; local[element] = element);
+  } else {
+    local = dictionary;
+  }
 
-  var changeMomentLocale = function() {
-    var locale = i18n.get(&#x27;locale&#x27;);
-
-    moment.changeLocale(locale);
-    window.moment.locale(locale);
-  };
-
-  var changeMomentDefaultFormat = function() {
-    window.moment.defaultFormat = moment.get(&#x27;defaultFormat&#x27;);
-  };
-
-  // Initialize moment locale and change it every time i18n locale changes.
-  changeMomentLocale();
-  Ember.addObserver(i18n, &#x27;locale&#x27;, changeMomentLocale);
-
-  // Initialize moment default format and change it every time default format changes.
-  changeMomentDefaultFormat();
-  Ember.addObserver(moment, &#x27;defaultFormat&#x27;, changeMomentDefaultFormat);
+  return Object.freeze(Ember.merge(Object.create(null), local));
 }
 
-export default {
-  after: &#x27;i18n&#x27;,
-  name: &#x27;moment&#x27;,
-  initialize
-};
+/**
+ * Returns friezed inversed object without prototype
+ *
+ * @param {Object} dictionary
+ * @returns {Object}
+ */
+export function inverseEnum(dictionary) {
+  let inverse = {};
+  for (var key in dictionary) {
+    inverse[dictionary[key]] = key;
+  }
+
+  return createEnum(inverse);
+}
+
+/**
+ * Returns array of all property values
+ *
+ * @param dictionary
+ * @returns {Array}
+ */
+export function enumCaptions(dictionary) {
+  let captions = [];
+  for (var key in dictionary) {
+    captions.push(dictionary[key]);
+  }
+
+  return captions;
+}
+
 
     </pre>
 </div>

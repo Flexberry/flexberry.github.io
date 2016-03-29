@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/instance-initializers/moment.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/transforms/flexberry-enum.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -130,7 +130,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/instance-initializers/moment.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/transforms/flexberry-enum.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -140,36 +140,149 @@
  */
 
 import Ember from &#x27;ember&#x27;;
+import DS from &#x27;ember-data&#x27;;
+import { inverseEnum, enumCaptions } from &#x27;../utils/enum-functions&#x27;;
 
-export function initialize(applicationInstance) {
-  var i18n = applicationInstance.lookup(&#x27;service:i18n&#x27;);
-  var moment = applicationInstance.lookup(&#x27;service:moment&#x27;);
+/**
+ * Base transform class that implements an enumeration type.
+ * During serialization\deserialization it converts values to captions and vise versa.
+ *
+ * @class FlexberryEnumTransform
+ * @public
+ */
 
-  var changeMomentLocale = function() {
-    var locale = i18n.get(&#x27;locale&#x27;);
+let FlexberryEnum = DS.Transform.extend({
 
-    moment.changeLocale(locale);
-    window.moment.locale(locale);
-  };
+  /**
+   * Object that contains enum values and corresponding captions.
+   * Must be overridden in inherited classes.
+   *
+   * Should be defined in app/enums/.
+   *
+   * &#x60;&#x60;&#x60;js
+   * // app/enums/order-status.js
+   * import { createEnum } from &#x27;ember-flexberry/utils/enum-functions&#x27;;
+   *
+   * export default createEnum({
+   *   Paid: &#x27;Paid&#x27;,
+   *   InProcess: &#x27;In process&#x27;,
+   *   Sent: &#x27;Sent&#x27;,
+   *   Arrived: &#x27;Arrived&#x27;,
+   *   NotArrived: &#x27;Not arrived&#x27;,
+   *   Unknown: &#x27;Unknown&#x27;
+   * });
+   *
+   * // app/transforms/order-status
+   * import FlexberryEnum from &#x27;ember-flexberry/transforms/flexberry-enum&#x27;;
+   * import OrderStatus from &#x27;../enums/order-status&#x27;;
+   *
+   * export default FlexberryEnum.extend({
+   *   enum: OrderStatus
+   * });
+   * &#x60;&#x60;&#x60;
+   *
+   * @property enum
+   * @type {Object}
+   * @default undefined
+   * @public
+   */
+  enum: undefined,
 
-  var changeMomentDefaultFormat = function() {
-    window.moment.defaultFormat = moment.get(&#x27;defaultFormat&#x27;);
-  };
+  /**
+   * Object with inversed enum, value from enum property will be is property here.
+   *
+   * @property inverse
+   * @type {Object}
+   * @default undefined
+   * @public
+   * @readonly
+   */
+  inverse: undefined,
 
-  // Initialize moment locale and change it every time i18n locale changes.
-  changeMomentLocale();
-  Ember.addObserver(i18n, &#x27;locale&#x27;, changeMomentLocale);
+  /**
+   * Array that contains all values of enum properties.
+   *
+   * @property captions
+   * @type {Array}
+   * @default undefined
+   * @public
+   * @readonly
+   */
+  captions: undefined,
 
-  // Initialize moment default format and change it every time default format changes.
-  changeMomentDefaultFormat();
-  Ember.addObserver(moment, &#x27;defaultFormat&#x27;, changeMomentDefaultFormat);
-}
+  /**
+   * Returns deserialized enumeration field.
+   *
+   * @method deserialize
+   * @public
+   *
+   * @param {String|Number} serialized Serialized enumeration field.
+   * @return {String} Deserialized enumeration field.
+   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;serialized&#x60; has one of these values.
+   */
+  deserialize(serialized) {
+    if (serialized === null || serialized === undefined) {
+      return serialized;
+    }
 
-export default {
-  after: &#x27;i18n&#x27;,
-  name: &#x27;moment&#x27;,
-  initialize
-};
+    let deserialize = this.get(&#x27;enum&#x27;)[serialized];
+
+    if (Ember.isNone(deserialize)) {
+      throw new Error(&#x60;Unable to find serialized enumeration field: &#x27;${serialized}&#x27;.&#x60;);
+    }
+
+    return deserialize;
+  },
+
+  /**
+   * Returns serialized enumeration field.
+   *
+   * @method serialize
+   * @public
+   *
+   * @param {String} deserialized Deserialized enumeration field.
+   * @return {String|Number} Serialized enumeration field.
+   * Returns &#x60;null&#x60; or &#x60;undefined&#x60; if &#x60;deserialized&#x60; has one of these values.
+   */
+  serialize(deserialized) {
+    if (deserialized === null || deserialized === undefined) {
+      return deserialized;
+    }
+
+    let serialized = this.get(&#x27;inverse&#x27;)[deserialized];
+    if (Ember.isNone(serialized)) {
+      throw new Error(&#x60;Unable to find deserialized enumeration field: &#x27;${deserialized}.&#x27;&#x60;);
+    }
+
+    return serialized;
+  },
+
+  init() {
+    let enumDictionary = this.get(&#x27;enum&#x27;);
+    if (Ember.isNone(enumDictionary)) {
+      throw new Error(&#x27;Enum property is undefined&#x27;);
+    }
+
+    this.set(&#x27;inverse&#x27;, inverseEnum(enumDictionary));
+    this.set(&#x27;captions&#x27;, enumCaptions(enumDictionary));
+  }
+});
+
+FlexberryEnum.reopenClass({
+  /**
+   * Flag: indicates whether class represents enumeration.
+   * It is useful in cases when we need to determine that the model attribute type is an enumeration.
+   * @property isEnum
+   * @type Boolean
+   * @default true
+   * @public
+   * @static
+   * @class FlexberryEnumTransform
+   */
+  isEnum: true
+});
+
+export default FlexberryEnum;
 
     </pre>
 </div>
