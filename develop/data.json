@@ -880,7 +880,7 @@
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
             "line": 8,
-            "description": "Wrapper for input[type='date/datetime/datetime-local'] component.\n\n  Please keep in mind that these input types are not supported\n  in all browsers: http://caniuse.com/#feat=input-datetime.\n\n  Example:\n  ```js\n  {{flexberry-simpledatetime type='datetime-local' value=model.orderDate min=model.orderDateMin readonly=readonly}}\n  ```",
+            "description": "Wrapper for input[type='date/datetime/datetime-local'] component.\n\n  Please keep in mind that these input types are not supported\n  in all browsers: http://caniuse.com/#feat=input-datetime.\n\n  Example:\n  ```handlebars\n  {{flexberry-simpledatetime type='datetime-local' value=model.orderDate min=model.orderDateMin readonly=readonly}}\n  ```",
             "extends": "FlexberryBaseComponent"
         },
         "FlexberryTextarea": {
