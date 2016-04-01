@@ -2119,7 +2119,7 @@
             "itemtype": "property",
             "name": "showEditMenuItemInRow",
             "type": "Boolean",
-            "default": "false",
+            "default": "true",
             "class": "FlexberryBaseComponent",
             "module": "ember-flexberry"
         },
@@ -3283,7 +3283,7 @@
             "itemtype": "property",
             "name": "showDeleteButtonInRow",
             "type": "Boolean",
-            "default": "true",
+            "default": "false",
             "class": "FlexberryGroupedit",
             "module": "ember-flexberry"
         },
@@ -3420,7 +3420,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 41,
+            "line": 32,
+            "description": "Css class for buttons.",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 44,
             "description": "Flag to show that lookup is at autocomplete mode.",
             "itemtype": "property",
             "name": "autocomplete",
@@ -3431,7 +3438,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 50,
+            "line": 53,
             "description": "Observes changes to value. Set it to autocompleteValue.",
             "itemtype": "method",
             "name": "valueChanged",
@@ -3440,7 +3447,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 59,
+            "line": 62,
             "description": "Value for autocomplete control.\nIf model's value changes, autocompleteValue is changed too.\nThis property may be changed independently, but it won't be applied to model automatically.",
             "itemtype": "property",
             "name": "autocompleteValue",
@@ -3451,7 +3458,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 70,
+            "line": 73,
             "description": "Method to get url to request autocomplete items.",
             "itemtype": "property",
             "name": "autocompleteUrl",
@@ -3462,7 +3469,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 79,
+            "line": 82,
             "description": "Method to get query options to request autocomplete items.",
             "itemtype": "property",
             "name": "autocompleteQueryOptions",
@@ -3473,7 +3480,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 88,
+            "line": 91,
             "description": "Action's name to update model's relation value.",
             "itemtype": "property",
             "name": "autocompleteUpdate",
@@ -3484,7 +3491,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 97,
+            "line": 100,
             "description": "Min characters count necessary to call autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMinCharacters",
@@ -3495,7 +3502,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 106,
+            "line": 109,
             "description": "Maximum number of results to show on autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMaxResults",
@@ -3506,7 +3513,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 115,
+            "line": 118,
             "description": "Server-side property name of autocomplete property.",
             "itemtype": "property",
             "name": "autocompleteProperty",
@@ -3517,7 +3524,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 124,
+            "line": 127,
             "description": "Function to limit accessible values.",
             "itemtype": "property",
             "name": "limitFunction",
@@ -3528,7 +3535,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 133,
+            "line": 136,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -3538,7 +3545,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 149,
+            "line": 155,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -4747,6 +4754,17 @@
         {
             "file": "ember-flexberry/addon/components/modal-dialog.js",
             "line": 41,
+            "description": "Size of Semantic-UI modal.\nPossible variants: small, large, fullscreen.",
+            "itemtype": "property",
+            "name": "sizeClass",
+            "type": "String",
+            "default": "small",
+            "class": "ModalDialog",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/modal-dialog.js",
+            "line": 51,
             "description": "Flag: indicates buttons toolbar visibility,\n`true` if at least one of buttons is visible.",
             "itemtype": "property",
             "name": "toolbarVisible",
@@ -4758,7 +4776,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/modal-dialog.js",
-            "line": 54,
+            "line": 64,
             "description": "Semantic-UI Modal settings,\nmore info at http://semantic-ui.com/modules/modal.html#settings",
             "itemtype": "property",
             "name": "settings",
@@ -5966,7 +5984,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 93,
+            "line": 91,
             "description": "If `true`, all details will be deleted along with the main model.",
             "itemtype": "property",
             "name": "destroyHasManyRelationshipsOnModelDestroy",
@@ -5977,7 +5995,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 102,
+            "line": 100,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
@@ -5988,7 +6006,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 111,
+            "line": 109,
             "description": "Flag to cancel rollback of model on controller resetting.\nFlag is set for interaction of agregator's and detail's routes.",
             "itemtype": "property",
             "name": "modelNoRollBack",
@@ -5999,14 +6017,14 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 121,
+            "line": 119,
             "description": "Actions handlers.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 180,
+            "line": 178,
             "description": "Method to transit to parent's route (previous route).\nIf `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
             "itemtype": "method",
             "name": "transitionToParentRoute.",
@@ -6015,7 +6033,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 195,
+            "line": 193,
             "description": "Method to get type and attributes of component,\nwhich will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent.",
@@ -6045,7 +6063,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 262,
+            "line": 260,
             "description": "Save dirty hasMany relationships in the `model` recursively.\nThis method invokes by `save` method.",
             "itemtype": "method",
             "name": "saveHasManyRelationships",
@@ -6065,7 +6083,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 289,
+            "line": 287,
             "description": "Rollback dirty hasMany relationships in the `model` recursively.\nThis method invokes by `resetController` in the `edit-form` route.",
             "itemtype": "method",
             "name": "rollbackHasManyRelationships",
@@ -6081,7 +6099,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 307,
+            "line": 305,
             "description": "Destroy (delete and save) all hasMany relationships in the `model` recursively.\nThis method invokes by `delete` method.",
             "itemtype": "method",
             "name": "destroyHasManyRelationships",
@@ -6101,21 +6119,21 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 336,
+            "line": 334,
             "description": "On save model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 343,
+            "line": 341,
             "description": "On delete model success handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 350,
+            "line": 348,
             "description": "On delete model fail handler.",
             "class": "EditFormController",
             "module": "ember-flexberry"
@@ -6145,28 +6163,17 @@
         {
             "file": "ember-flexberry/addon/controllers/flexberry-file-view-dialog.js",
             "line": 24,
-            "description": "Height of modal window.",
+            "description": "Size of Semantic-UI modal.\nPossible variants: small, large, fullscreen.",
             "itemtype": "property",
-            "name": "modalWindowHeight",
-            "type": "Number",
-            "default": "undefined",
+            "name": "sizeClass",
+            "type": "String",
+            "default": "small",
             "class": "ListFormController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/controllers/flexberry-file-view-dialog.js",
-            "line": 33,
-            "description": "Width of modal window.",
-            "itemtype": "property",
-            "name": "modalWindowWidth",
-            "type": "Number",
-            "default": "undefined",
-            "class": "ListFormController",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/controllers/flexberry-file-view-dialog.js",
-            "line": 42,
+            "line": 34,
             "description": "Content of image to view at modal window.",
             "itemtype": "property",
             "name": "imageSrc",
@@ -6177,7 +6184,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/flexberry-file-view-dialog.js",
-            "line": 52,
+            "line": 44,
             "description": "Handles create modal window action.\nIt saves created window to have opportunity to close it later.",
             "itemtype": "method",
             "name": "createdModalDialog",
@@ -6193,7 +6200,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/flexberry-file-view-dialog.js",
-            "line": 63,
+            "line": 55,
             "description": "Handles correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -6213,7 +6220,18 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 18,
+            "line": 15,
+            "description": "Size of Semantic-UI modal.\nPossible variants: small, large, fullscreen.",
+            "itemtype": "property",
+            "name": "sizeClass",
+            "type": "String",
+            "default": "small",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 26,
             "description": "Handles olv row clicked.\nSave selected row to object master property and close modal window",
             "itemtype": "method",
             "name": "rowClick",
@@ -6229,7 +6247,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 30,
+            "line": 38,
             "description": "Handles create modal window action.\nIt saves created window to have opportunity to close it later.",
             "itemtype": "method",
             "name": "createdModalDialog",
@@ -6245,7 +6263,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 41,
+            "line": 49,
             "description": "Handles correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -6254,7 +6272,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 52,
+            "line": 60,
             "description": "Set master to corresponding property of editing object.",
             "itemtype": "method",
             "name": "selectMaster",
@@ -6270,7 +6288,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 70,
+            "line": 78,
             "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "closeModalDialog",
@@ -6308,29 +6326,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-file-controller.js",
-            "line": 34,
-            "description": "Width of modal window.",
-            "itemtype": "property",
-            "name": "flexberryFileModalWindowWidth",
-            "type": "Number",
-            "default": "750",
-            "class": "FlexberryFileController",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/mixins/flexberry-file-controller.js",
-            "line": 43,
-            "description": "Height of modal window.",
-            "itemtype": "property",
-            "name": "flexberryFileModalWindowHeight",
-            "type": "Number",
-            "default": "600",
-            "class": "FlexberryFileController",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/mixins/flexberry-file-controller.js",
-            "line": 53,
+            "line": 35,
             "description": "This method creates modal window to view image preview.",
             "itemtype": "method",
             "name": "flexberryFileViewImageAction",
@@ -6362,7 +6358,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-file-controller.js",
-            "line": 92,
+            "line": 71,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -6526,7 +6522,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 19,
+            "line": 17,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
@@ -6537,7 +6533,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 29,
+            "line": 27,
             "description": "Handles action from lookup choose action.",
             "itemtype": "method",
             "name": "showLookupDialog",
@@ -6553,7 +6549,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 138,
+            "line": 129,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -6562,7 +6558,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 148,
+            "line": 139,
             "description": "Handles action from lookup remove action.",
             "itemtype": "method",
             "name": "removeLookupValue",
@@ -6578,7 +6574,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 169,
+            "line": 160,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "updateLookupValue",
@@ -6594,7 +6590,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 197,
+            "line": 188,
             "description": "Forms url to get all availible entities of certain relation.",
             "itemtype": "method",
             "name": "getLookupAutocompleteUrl",
@@ -6614,7 +6610,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 210,
+            "line": 201,
             "description": "Forms query parameters by lookup autocomplete parameters.",
             "itemtype": "method",
             "name": "getAutocompleteLookupQueryOptions",
@@ -6634,7 +6630,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 229,
+            "line": 220,
             "description": "Gets related object type by relation name from specified model.",
             "itemtype": "method",
             "name": "_getRelationType",
@@ -8063,6 +8059,10 @@
             "line": " ember-flexberry/addon/components/flexberry-file.js:627"
         },
         {
+            "message": "Missing item type\nCss class for buttons.",
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:32"
+        },
+        {
             "message": "Missing item type\nClass names for component wrapping element.",
             "line": " ember-flexberry/addon/components/flexberry-menu.js:15"
         },
@@ -8168,19 +8168,19 @@
         },
         {
             "message": "Missing item type\nActions handlers.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:121"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:119"
         },
         {
             "message": "Missing item type\nOn save model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:336"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:334"
         },
         {
             "message": "Missing item type\nOn delete model success handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:343"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:341"
         },
         {
             "message": "Missing item type\nOn delete model fail handler.",
-            "line": " ember-flexberry/addon/controllers/edit-form.js:350"
+            "line": " ember-flexberry/addon/controllers/edit-form.js:348"
         },
         {
             "message": "Missing item type\nHelper for get array captions of registered enum",

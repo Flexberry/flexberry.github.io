@@ -176,6 +176,16 @@ export default Ember.Component.extend({
   viewImageContent: false,
 
   /**
+   * Size of Semantic-UI modal.
+   * Possible variants: small, large, fullscreen.
+   *
+   * @property sizeClass
+   * @type String
+   * @default small
+   */
+  sizeClass: &#x27;small&#x27;,
+
+  /**
    * Flag: indicates buttons toolbar visibility,
    * &#x60;true&#x60; if at least one of buttons is visible.
    *
@@ -198,42 +208,13 @@ export default Ember.Component.extend({
    */
   settings: {},
 
-  modalWindowHeight: undefined,
-
-  modalWindowWidth: undefined,
-
-  modalWindowContentHeight: 400,
-
-  modalWindowHeightComputed: Ember.computed(&#x27;modalWindowHeight&#x27;, function () {
-    var height = this.get(&#x27;modalWindowHeight&#x27;);
-    if (height &amp;&amp; typeof height === &#x27;number&#x27;) {
-      return height;
-    }
-
-    return 600;
-  }),
-
-  modalWindowWidthComputed: Ember.computed(&#x27;modalWindowWidth&#x27;, function () {
-    var width = this.get(&#x27;modalWindowWidth&#x27;);
-    if (width &amp;&amp; typeof width === &#x27;number&#x27;) {
-      return width;
-    }
-
-    return 750;
-  }),
-
-  modalWindowContentHeightComputed: Ember.computed(&#x27;modalWindowContentHeight&#x27;, function () {
-    var height = this.get(&#x27;modalWindowContentHeight&#x27;);
-    if (height &amp;&amp; typeof height === &#x27;number&#x27;) {
-      return height;
-    }
-
-    return 400;
-  }),
-
   didInsertElement: function () {
     let _this = this;
     let modalSettings = Ember.$.extend({
+        observeChanges: true,
+        detachable: false,
+        allowMultiple: true,
+
         onApprove: function () {
           _this.sendAction(&#x27;ok&#x27;);
         },
@@ -246,11 +227,6 @@ export default Ember.Component.extend({
         },
         onVisible: function () {
           Ember.run(() =&gt; {
-            var wholeHeight = Ember.$(this).outerHeight();
-            var headHeight = Ember.$(&#x27;.header&#x27;, this).outerHeight();
-            var actionsHeight = Ember.$(&#x27;.actions&#x27;, this).outerHeight();
-            var result = wholeHeight - headHeight - actionsHeight;
-            _this.set(&#x27;modalWindowContentHeight&#x27;, result);
             _this.sendAction(&#x27;created&#x27;, Ember.$(this));
           });
         }

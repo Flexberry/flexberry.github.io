@@ -166,6 +166,9 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
   // ToDo: Use &#x27;flexberry-lookup.remove-button-text&#x27; from locale.
   removeText: &#x27;&lt;i class=&quot;remove icon&quot;&gt;&lt;/i&gt;&#x27;,
 
+  /**
+   * Css class for buttons.
+   */
   classChoose: undefined,
   classRemove: undefined,
 
@@ -279,7 +282,10 @@ var FlexberryLookup = FlexberryBaseComponent.extend({
       relationName: this.get(&#x27;relationName&#x27;),
       title: this.get(&#x27;title&#x27;),
       limitFunction: this.get(&#x27;limitFunction&#x27;),
-      modelToLookup: this.get(&#x27;relatedModel&#x27;)
+      modelToLookup: this.get(&#x27;relatedModel&#x27;),
+
+      //TODO: move to modal settings.
+      sizeClass: this.get(&#x27;sizeClass&#x27;)
     };
   }),
 
