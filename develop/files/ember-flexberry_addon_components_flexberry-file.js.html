@@ -237,7 +237,8 @@ export default FlexberryBaseComponent.extend({
     if (!Ember.isNone(file)) {
       var jsonValue = {
         fileName: file.name,
-        fileSize: file.size
+        fileSize: file.size,
+        fileMimeType: file.type
       };
 
       this.set(&#x27;value&#x27;, JSON.stringify(jsonValue));
@@ -417,12 +418,6 @@ export default FlexberryBaseComponent.extend({
   uploadUrl: undefined,
 
   /**
-   * File download URL.
-   * If null or undefined, then APP.components.file.downloadUrl from application config\environment will be used.
-   */
-  downloadUrl: undefined,
-
-  /**
    * Flag: indicates whether to show modal dialog on upload errors or not.
    */
   showModalDialogOnUploadError: undefined,
@@ -475,7 +470,6 @@ export default FlexberryBaseComponent.extend({
     // Initialize properties which defaults could be defined in application configuration.
     var i18n = this.get(&#x27;i18n&#x27;);
     this.initProperty({ propertyName: &#x27;uploadUrl&#x27;, defaultValue: null });
-    this.initProperty({ propertyName: &#x27;downloadUrl&#x27;, defaultValue: null });
     this.initProperty({ propertyName: &#x27;maxUploadFileSize&#x27;, defaultValue: null });
     this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.placeholder&#x27;) });
     this.initProperty({ propertyName: &#x27;uploadOnModelPreSave&#x27;, defaultValue: true });
@@ -491,19 +485,17 @@ export default FlexberryBaseComponent.extend({
     this.set(&#x27;_onRelatedModelPreSave&#x27;, this.get(&#x27;_onRelatedModelPreSave&#x27;).bind(this));
     this._subscribeOnRelatedModelPreSaveEvent();
 
-    if (value &amp;&amp; this.get(&#x27;showPreview&#x27;)) {
+    var previewUrl = this.get(&#x27;jsonInitialValue.previewUrl&#x27;);
+    if (!Ember.isBlank(previewUrl) &amp;&amp; this.get(&#x27;showPreview&#x27;)) {
       // Download file preview.
       this.set(&#x27;downloadIsInProgress&#x27;, true);
-      var jsonInitialValue = this.get(&#x27;jsonInitialValue&#x27;);
-      let _this = this;
-      Ember.$.ajax(this.get(&#x27;downloadUrl&#x27;) + &#x27;?getPreview=true&amp;&#x27; + Ember.$.param(jsonInitialValue))
-      .done(function(data, textStatus, jqXHR) {
-        _this._updateSelectedFileSrc(_this, data);
-        _this.set(&#x27;downloadIsInProgress&#x27;, false);
-      })
-      .fail(function(jqXHR, textStatus, errorThrown) {
-        _this._showModalDialogOnDownloadErrorFunction(_this, errorThrown);
-        _this.set(&#x27;downloadIsInProgress&#x27;, false);
+
+      Ember.$.ajax(previewUrl).done((data, textStatus, jqXHR) =&gt; {
+        this._updateSelectedFileSrc(this, data);
+      }).fail((jqXHR, textStatus, errorThrown) =&gt; {
+        this._showModalDialogOnDownloadErrorFunction(this, errorThrown);
+      }).always(() =&gt; {
+        this.set(&#x27;downloadIsInProgress&#x27;, false);
       });
     }
   },
@@ -517,7 +509,7 @@ export default FlexberryBaseComponent.extend({
     var _this = this;
     var i18n = _this.get(&#x27;i18n&#x27;);
 
-    var fileInputId = _this.get(&#x27;elementId&#x27;) + &#x27;FlexberryFile&#x27;;
+    var fileInputId = &#x27;flexberry-file-&#x27; + _this.get(&#x27;elementId&#x27;);
     var fileInput = _this.$(&#x27;.flexberry-file-file-input&#x27;);
     fileInput.attr(&#x27;id&#x27;, fileInputId);
 
@@ -681,35 +673,35 @@ export default FlexberryBaseComponent.extend({
    */
   downloadFile: function() {
     var jsonInitialValue = this.get(&#x27;jsonInitialValue&#x27;);
-    if (Ember.isNone(jsonInitialValue)) {
+    var fileUrl = this.get(&#x27;jsonInitialValue.fileUrl&#x27;);
+    if (Ember.isBlank(fileUrl)) {
       return null;
     }
 
-    var _this = this;
-    return new Ember.RSVP.Promise(function(resolve, reject) {
-      _this.set(&#x27;downloadIsInProgress&#x27;, true);
+    return new Ember.RSVP.Promise((resolve, reject) =&gt; {
+      this.set(&#x27;downloadIsInProgress&#x27;, true);
 
       // Use jQuery fileDownload plugin (https://github.com/johnculviner/jquery.fileDownload).
       // Warning! It uses iframe to send file download request, so there is no way to set request authorization header.
-      Ember.$.fileDownload(_this.get(&#x27;downloadUrl&#x27;) + &#x27;?getPreview=false&amp;&#x27; + Ember.$.param(jsonInitialValue), {
-        successCallback: function(url) {
-          _this.sendAction(&#x27;downloadSuccess&#x27;, {
+      Ember.$.fileDownload(fileUrl, {
+        successCallback: (url) =&gt; {
+          this.sendAction(&#x27;downloadSuccess&#x27;, {
             downloadData: jsonInitialValue,
             response: &#x27;success&#x27;,
-            value: _this.get(&#x27;value&#x27;)
+            value: this.get(&#x27;value&#x27;)
           });
           resolve(jsonInitialValue);
-          _this.set(&#x27;downloadIsInProgress&#x27;, false);
+          this.set(&#x27;downloadIsInProgress&#x27;, false);
         },
-        failCallback: function(errorText, url) {
-          _this._showModalDialogOnDownloadErrorFunction(_this, errorText);
-          _this.sendAction(&#x27;downloadFail&#x27;, {
+        failCallback: (errorText, url) =&gt; {
+          this._showModalDialogOnDownloadErrorFunction(this, errorText);
+          this.sendAction(&#x27;downloadFail&#x27;, {
             downloadData: jsonInitialValue,
             response: errorText,
-            value: _this.get(&#x27;value&#x27;)
+            value: this.get(&#x27;value&#x27;)
           });
           reject(new Error(errorText));
-          _this.set(&#x27;downloadIsInProgress&#x27;, false);
+          this.set(&#x27;downloadIsInProgress&#x27;, false);
         }
       });
     });
@@ -804,8 +796,8 @@ export default FlexberryBaseComponent.extend({
      * @public
      */
     viewLoadedImage: function() {
-      let fileName = this.get(&#x27;fileName&#x27;);
-      let selectedFileSrc = this.get(&#x27;_selectedFileSrc&#x27;);
+      var fileName = this.get(&#x27;fileName&#x27;);
+      var selectedFileSrc = this.get(&#x27;_selectedFileSrc&#x27;);
       if (!Ember.isNone(fileName) &amp;&amp; !Ember.isNone(selectedFileSrc)) {
         this.sendAction(&#x27;viewImageAction&#x27;, {
           fileSrc: selectedFileSrc,
