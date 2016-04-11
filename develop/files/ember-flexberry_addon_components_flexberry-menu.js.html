@@ -170,7 +170,42 @@ export default FlexberryBaseComponent.extend({
    * @type Array[]
    * @default null
    */
-  items: [],
+  items: null,
+
+  /**
+   * Hook which will be called to configure menu items.
+   *
+    Example:
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/menu.hbs --&gt;
+    {{flexberry-menu
+      ...
+      configurateItems=(action &#x27;configurateItems&#x27;)
+      ...
+    }}
+    &#x60;&#x60;&#x60;
+
+    &#x60;&#x60;&#x60;js
+    // app/controllers/menu.js
+
+    export default Ember.Controller.extend({
+      actions: {
+        configurateItems: function(menuItems) {
+          menuItems.push({
+            icon: &#x27;edit icon&#x27;,
+            title: &#x27;Edit&#x27;
+          }, {
+            icon: &#x27;trash icon&#x27;,
+            title: &#x27;Delete&#x27;
+          });
+        }
+      }
+    });
+    &#x60;&#x60;&#x60;
+   * @method configurateItems
+   * @param {Array} items Menu items array.
+   */
+  configurateItems: undefined,
 
   /**
    * Flag: indicates whether to call &#x27;items.[].onClick&#x27; callbacks or not.
@@ -186,6 +221,30 @@ export default FlexberryBaseComponent.extend({
    */
   init: function() {
     this._super(...arguments);
+
+    // Component properties will be defined in class prototype,
+    // so complex properties like object or arrays, will be shared between all class instances,
+    // that&#x27;s why such properties should be initialized manually in &#x27;init&#x27; method.
+    var items = this.get(&#x27;items&#x27;);
+    if (Ember.isNone(items)) {
+      items = [];
+    }
+
+    // Call to &#x27;configurateItems&#x27; hook.
+    var configurateItems = this.get(&#x27;configurateItems&#x27;);
+    var configurateItemsType = Ember.typeOf(configurateItems);
+
+    if (configurateItemsType === &#x27;function&#x27;) {
+      configurateItems(items);
+    } else {
+      Ember.Logger.error(
+        &#x27;Wrong type of flexberry-menu \&#x27;configurateItems\&#x27; propery: &#x27; +
+        &#x27;actual type is \&#x27;&#x27; +
+        configurateItemsType +
+        &#x27;\&#x27;, but \&#x27;function\&#x27; is expected.&#x27;);
+    }
+
+    this.set(&#x27;items&#x27;, items);
   },
 
   /**

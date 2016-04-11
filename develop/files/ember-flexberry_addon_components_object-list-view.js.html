@@ -152,7 +152,7 @@ import ErrorableMixin from &#x27;../mixins/errorable-controller&#x27;;
  */
 export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentMixin, ErrorableMixin, {
   actions: {
-    rowClick: function(key, record) {
+    rowClick: function(recordWithKey, e) {
       if (this.get(&#x27;readonly&#x27;)) {
         return;
       }
@@ -161,11 +161,11 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
         let editOnSeparateRoute = this.get(&#x27;editOnSeparateRoute&#x27;);
         if (!editOnSeparateRoute) {
           // It is necessary only when we will not go to other route on click.
-          this.set(&#x27;selectedRecord&#x27;, record);
-          this._setActiveRecord(key);
+          this.set(&#x27;selectedRecord&#x27;, recordWithKey.data);
+          this._setActiveRecord(recordWithKey.key);
         }
 
-        this.sendAction(&#x27;action&#x27;, record, {
+        this.sendAction(&#x27;action&#x27;, recordWithKey.data, {
           saveBeforeRouteLeave: this.get(&#x27;saveBeforeRouteLeave&#x27;),
           editOnSeparateRoute: editOnSeparateRoute,
           modelName: this.get(&#x27;modelProjection&#x27;).modelName,
@@ -174,7 +174,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       }
     },
 
-    headerCellClick: function(column, event) {
+    headerCellClick: function(column, e) {
       if (!this.headerClickable || column.sortable === false) {
         return;
       }
@@ -184,7 +184,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     },
 
     // TODO: rename recordWithKey. rename record in the template, where it is actually recordWithKey.
-    deleteRow: function(recordWithKey) {
+    deleteRow: function(recordWithKey, e) {
       if (this.get(&#x27;readonly&#x27;) || !recordWithKey.config.canBeDeleted) {
         return;
       }
@@ -194,49 +194,78 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       }
     },
 
-    selectRow: function(key, record, e) {
+    selectRow: function(recordWithKey, e) {
       var selectedRecords = this.get(&#x27;selectedRecords&#x27;);
-      var selectedRow = this._getRowByKey(key);
+      var selectedRow = this._getRowByKey(recordWithKey.key);
 
       if (e.checked) {
         if (!selectedRow.hasClass(&#x27;active&#x27;)) {
           selectedRow.addClass(&#x27;active&#x27;);
         }
 
-        if (selectedRecords.indexOf(record) === -1) {
-          selectedRecords.pushObject(record);
+        if (selectedRecords.indexOf(recordWithKey.data) === -1) {
+          selectedRecords.pushObject(recordWithKey.data);
         }
       } else {
         if (selectedRow.hasClass(&#x27;active&#x27;)) {
           selectedRow.removeClass(&#x27;active&#x27;);
         }
 
-        selectedRecords.removeObject(record);
+        selectedRecords.removeObject(recordWithKey.data);
       }
 
       var componentName = this.get(&#x27;componentName&#x27;);
-      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, record, selectedRecords.length);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, recordWithKey.data, selectedRecords.length);
     },
 
-    menuInRowItemClick: function(key, record, e) {
+    menuInRowConfigurateItems: function(recordWithKey, menuItems) {
+      var menuInRowSubItems = [];
+      if (this.get(&#x27;showEditMenuItemInRow&#x27;) &amp;&amp; recordWithKey.config.canBeSelected) {
+        menuInRowSubItems.push({
+          icon: &#x27;edit icon&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.menu-in-row.edit-menu-item-title&#x27;) || &#x27;Edit record&#x27;,
+          isEditItem: true
+        });
+      }
+
+      if (this.get(&#x27;showDeleteMenuItemInRow&#x27;) &amp;&amp; recordWithKey.config.canBeDeleted) {
+        menuInRowSubItems.push({
+          icon: &#x27;trash icon&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.menu-in-row.delete-menu-item-title&#x27;) || &#x27;Delete record&#x27;,
+          isDeleteItem: true
+        });
+      }
+
+      if (this.get(&#x27;menuInRowHasAdditionalItems&#x27;)) {
+        menuInRowSubItems.push(...this.get(&#x27;menuInRowAdditionalItems&#x27;));
+      }
+
+      menuItems.push({
+        icon: &#x27;list layout icon&#x27;,
+        itemsAlignment: &#x27;left&#x27;,
+        items: menuInRowSubItems
+      });
+    },
+
+    menuInRowItemClick: function(recordWithKey, e) {
       if (this.get(&#x27;readonly&#x27;)) {
         return;
       }
 
       if (e.item.isDeleteItem) {
-        this.send(&#x27;deleteRow&#x27;, key, record);
+        this.send(&#x27;deleteRow&#x27;, recordWithKey);
         return;
       }
 
       if (e.item.isEditItem) {
-        this.send(&#x27;rowClick&#x27;, key, record);
+        this.send(&#x27;rowClick&#x27;, recordWithKey);
         return;
       }
 
       // Call onClick handler if it is specified in the given menu item.
       if (e.item &amp;&amp; Ember.typeOf(e.item.onClick) === &#x27;function&#x27;) {
-        e.modelKey = key;
-        e.model = record;
+        e.modelKey = recordWithKey.key;
+        e.model = recordWithKey.data;
 
         e.item.onClick.call(e.currentTarget, e);
       }
@@ -470,47 +499,6 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     &#x27;menuInRowHasAdditionalItems&#x27;,
     function() {
       return this.get(&#x27;showEditMenuItemInRow&#x27;) || this.get(&#x27;showDeleteMenuItemInRow&#x27;) || this.get(&#x27;menuInRowHasAdditionalItems&#x27;);
-    }
-  ),
-
-  /**
-   * Menu items for dropdown menu in last column of every row.
-   *
-   * @property menuInRowItems
-   * @type Object[]
-   * @readonly
-   */
-  menuInRowItems: Ember.computed(
-    &#x27;showEditMenuItemInRow&#x27;,
-    &#x27;showDeleteMenuItemInRow&#x27;,
-    &#x27;menuInRowHasAdditionalItems&#x27;,
-    function() {
-      var menuInRowSubItems = [];
-      if (this.get(&#x27;showEditMenuItemInRow&#x27;)) {
-        menuInRowSubItems.push({
-          icon: &#x27;edit icon&#x27;,
-          title: this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.menu-in-row.edit-menu-item-title&#x27;) || &#x27;Edit record&#x27;,
-          isEditItem: true
-        });
-      }
-
-      if (this.get(&#x27;showDeleteMenuItemInRow&#x27;)) {
-        menuInRowSubItems.push({
-          icon: &#x27;trash icon&#x27;,
-          title: this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.menu-in-row.delete-menu-item-title&#x27;) || &#x27;Delete record&#x27;,
-          isDeleteItem: true
-        });
-      }
-
-      if (this.get(&#x27;menuInRowHasAdditionalItems&#x27;)) {
-        menuInRowSubItems.push(...this.get(&#x27;menuInRowAdditionalItems&#x27;));
-      }
-
-      return [{
-        icon: &#x27;list layout icon&#x27;,
-        itemsAlignment: &#x27;left&#x27;,
-        items: menuInRowSubItems
-      }];
     }
   ),
 
