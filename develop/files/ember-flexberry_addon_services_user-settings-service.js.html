@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/flexberry-groupedit.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/services/user-settings-service.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -130,7 +130,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/flexberry-groupedit.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/services/user-settings-service.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -140,262 +140,196 @@
  */
 
 import Ember from &#x27;ember&#x27;;
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 /**
- * Component for create, edit and delete detail objects.
+ * Service to work with user settings on server.
  *
- * @class FlexberryGroupedit
- * @extends FlexberryBaseComponent
+ * @class DetailInterationService
+ * @extends Ember.Service
+ * @public
  */
-export default FlexberryBaseComponent.extend({
-  actions: {
-    /**
-     * Handles action from object-list-view when no handler for this component is defined.
-     *
-     * @method sortByColumn
-     * @param {Object} column Column to sort by.
-     */
-    sortByColumn: function(column) {
-      throw new Error(&#x27;No handler for sortByColumn action set for flexberry-groupedit. &#x27; +
-                      &#x27;Set handler like {{flexberry-groupedit ... sortByColumn=(action &quot;sortByColumn&quot;)}}.&#x27;);
-    },
+export default Ember.Service.extend({
+  /**
+   * Current store to request records.
+   *
+   * @property store
+   * @public
+   * @type DS.Store
+   */
+  store: Ember.inject.service(&#x27;store&#x27;),
 
-    /**
-     * Handles action from object-list-view when no handler for this component is defined.
-     *
-     * @method addColumnToSorting
-     * @param {Object} column Column to add sorting by.
-     */
-    addColumnToSorting: function(column) {
-      throw new Error(&#x27;No handler for addColumnToSorting action set for flexberry-groupedit. &#x27; +
-                      &#x27;Set handler like {{flexberry-groupedit ... addColumnToSorting=(action &quot;addColumnToSorting&quot;)}}.&#x27;);
-    },
+  /**
+   * Flag: indicates wether to use user settings service (if &#x60;true&#x60;) or not (if &#x60;false&#x60;).
+   *
+   * @property isUserSettingsServiceEnabled
+   * @public
+   * @type Boolean
+   * @default false
+   */
+  isUserSettingsServiceEnabled: false,
 
-    /**
-     * Handles click on row of objectlistview.
-     * Sends action out of component.
-     *
-     * @method rowClick
-     * @param {Object} record Clicked record.
-     * @param {Object} options Different parameters to handle action.
-     */
-    rowClick: function(record, options) {
-      if (this.get(&#x27;editOnSeparateRoute&#x27;)) {
-        let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
-        Ember.assert(&#x27;Edit form route must be defined for flexberry-groupedit&#x27;, editFormRoute);
-        options = Ember.merge(options, { editFormRoute: editFormRoute });
+  /**
+   * It saves user settings.
+   *
+   * @method saveUserSetting
+   * @public
+   *
+   * @param {Object} [options] Options.
+   * @param {String} options.moduleName Name of module for what setting is saved.
+   * @param {String} options.userSetting User setting data to save.
+   * @param {String} options.settingName Setting name to save as.
+   */
+  saveUserSetting: function(options) {
+    if (!this.get(&#x27;isUserSettingsServiceEnabled&#x27;)) {
+      return;
+    }
+
+    let methodOptions = Ember.merge({
+      moduleName: undefined,
+      userSetting: undefined,
+      settingName: undefined
+    }, options);
+
+    let moduleName = methodOptions.moduleName;
+    let userSetting = methodOptions.userSetting;
+    let settingName = methodOptions.settingName;
+
+    Ember.assert(&#x27;Module name is not defined for user setting saving.&#x27;, moduleName);
+    Ember.assert(&#x27;User setting data are not defined for user setting saving.&#x27;, userSetting);
+    Ember.assert(&#x27;Setting name is not defined for user setting saving.&#x27;, settingName);
+
+    let store = this.get(&#x27;store&#x27;);
+    let _this = this;
+    this._getExistingRecord(moduleName, settingName).then(
+      function(foundRecord) {
+        if (!foundRecord) {
+          let currentUserName = _this.getCurrentUser();
+          foundRecord = store.createRecord(&#x27;new-platform-flexberry-flexberry-user-setting&#x27;);
+          foundRecord.set(&#x27;moduleName&#x27;, moduleName);
+          foundRecord.set(&#x27;settName&#x27;, settingName);
+          foundRecord.set(&#x27;userName&#x27;, currentUserName);
+        }
+
+        foundRecord.set(&#x27;txtVal&#x27;, JSON.stringify(userSetting));
+        foundRecord.save();
+      }
+    );
+  },
+
+  /**
+   * It gets user setting from server by setting&#x27;s and module&#x27;s names.
+   *
+   * @method getUserSetting
+   *
+   * @param {Object} [options] Parameters for user setting getting.
+   * @param {String} options.moduleName Name of module to search by.
+   * @param {String} options.settingName Setting name to search by.
+   * @return {Promise} A promise. It returns found result or &#x60;undefined&#x60; if there is no such setting.
+   */
+  getUserSetting: function(options) {
+    if (!this.get(&#x27;isUserSettingsServiceEnabled&#x27;)) {
+      return new Ember.RSVP.Promise(function(resolve) {
+        resolve(undefined);
+      });
+    }
+
+    let methodOptions = Ember.merge({
+      moduleName: undefined,
+      settingName: undefined
+    }, options);
+
+    let moduleName = methodOptions.moduleName;
+    let settingName = methodOptions.settingName;
+
+    Ember.assert(&#x27;Module name is not defined for user setting getting.&#x27;, moduleName);
+    Ember.assert(&#x27;Setting name is not defined for user setting getting.&#x27;, settingName);
+
+    return this._getExistingRecord(moduleName, settingName).then(
+      function(foundRecord) {
+        if (foundRecord) {
+          let userSettingValue = foundRecord.get(&#x27;txtVal&#x27;);
+          if (userSettingValue) {
+            return JSON.parse(userSettingValue);
+          }
+        }
+
+        return undefined;
+      }
+    );
+  },
+
+  /**
+   * It looks for already created user settings records.
+   *
+   * @method _getExistingRecord
+   * @private
+   *
+   * @param {Object} moduleName Module name of looked for record.
+   * @param {String} settingName Setting name of looked for record.
+   * @return {Promise} A promise. It returns found record or &#x60;undefined&#x60; if there is no such setting.
+   */
+  _getExistingRecord: function(moduleName, settingName) {
+    // TODO: add search by username.
+    let store = this.get(&#x27;store&#x27;);
+    let modelName = &#x27;new-platform-flexberry-flexberry-user-setting&#x27;;
+    let currentUserName = this.getCurrentUser();
+    let adapter = store.adapterFor(modelName);
+    let filterString = adapter.getLimitFunction({
+      operation: &#x27;and&#x27;,
+      arguments: [
+        {
+          operation: &#x27;=&#x27;,
+          arguments: [&#x27;moduleName&#x27;, moduleName]
+        },
+        {
+          operation: &#x27;and&#x27;,
+          arguments: [{
+            operation: &#x27;=&#x27;,
+            arguments: [&#x27;settName&#x27;, settingName]
+          },
+          {
+            operation: &#x27;=&#x27;,
+            arguments: [&#x27;userName&#x27;, currentUserName]
+          }]
+        }
+      ]
+    });
+    let limitFunctionQuery = adapter.getLimitFunctionQuery(filterString, &#x27;FlexberryUserSettingE&#x27;);
+
+    let query = {};
+    Ember.merge(query, limitFunctionQuery);
+    Ember.merge(query, { $top: 2 });
+
+    return store.query(modelName, query).then(function(result) {
+      if (result) {
+        let foundRecords = result.get(&#x27;content&#x27;);
+        if (Ember.isArray(foundRecords) &amp;&amp; foundRecords.length &gt; 0) {
+          if (foundRecords.length === 1) {
+            return foundRecords[0].record;
+          }
+
+          throw new Error(
+            &#x60;More than one record for module &#x27;${moduleName}&#x27; and setting &#x27;${settingName}&#x27; was found.&#x60;);
+        }
       }
 
-      this.sendAction(&#x27;rowClick&#x27;, record, options);
-    }
+      return undefined;
+    });
   },
 
   /**
-   * Flag: indicates wether allow to resize columns (if &#x60;true&#x60;) or not (if &#x60;false&#x60;).
+   * It returns the name of current user.
+   * It has to be overriden if some authentication is used.
    *
-   * @property allowColumnResize
-   * @type Boolean
-   * @default true
-   */
-  allowColumnResize: true,
-
-  /**
-   * Route for edit form by click row
+   * @method getCurrentUser
+   * @public
    *
-   * @property editFormRoute
-   * @type String
-   * @default &#x27;this.modelName&#x27;
+   * @return {String} Current user name.
    */
-  editFormRoute: undefined,
-
-  /**
-   * Name of action to handle row click.
-   * Action will be send out of the component.
-   *
-   * @property rowClick
-   * @type String
-   * @default &#x27;rowClick&#x27;
-   */
-  rowClick: &#x27;rowClick&#x27;,
-
-  /**
-   * Default cell component that will be used to display values in columns headers.
-   *
-   * @property {Object} headerCellComponent
-   * @property {String} [headerCellComponent.componentName=&#x27;object-list-view-header-cell&#x27;]
-   * @property {String} [headerCellComponent.componentProperties=null]
-   */
-  headerCellComponent: {
-    componentName: &#x27;object-list-view-header-cell&#x27;,
-    componentProperties: null
-  },
-
-  /**
-   * Default cell component that will be used to display values in columns cells.
-   *
-   * @property {Object} cellComponent
-   * @property {String} [cellComponent.componentName=&#x27;object-list-view-cell&#x27;]
-   * @property {String} [cellComponent.componentProperties=null]
-   */
-  cellComponent: {
-    componentName: &#x27;object-list-view-cell&#x27;,
-    componentProperties: null
-  },
-
-  /**
-   * Default cell component that will be used to display values in single column.
-   *
-   * @property {Object} singleColumnCellComponent
-   * @property {String} [singleColumnCellComponent.componentName=&#x27;object-list-view-single-column-cell&#x27;]
-   * @property {String} [singleColumnCellComponent.componentProperties=null]
-   */
-  singleColumnCellComponent: {
-    componentName: &#x27;object-list-view-single-column-cell&#x27;,
-    componentProperties: null
-  },
-
-  /**
-   * Flag: indicates whether to use single column to display all model properties or not.
-   *
-   * @property useSingleColumn
-   * @type Boolean
-   * @default false
-   */
-  useSingleColumn: false,
-
-  /**
-   * Header title of single column.
-   *
-   * @property singleColumnHeaderTitle
-   * @type String
-   */
-  singleColumnHeaderTitle: undefined,
-
-  /**
-   * Flag: indicates whether to show asterisk icon in first column of every changed row.
-   *
-   * @property showAsteriskInRow
-   * @type Boolean
-   * @default true
-   */
-  showAsteriskInRow: true,
-
-  /**
-   * Flag: indicates whether to show checkbox in first column of every row.
-   *
-   * @property showCheckBoxInRow
-   * @type Boolean
-   * @default true
-   */
-  showCheckBoxInRow: true,
-
-  /**
-   * Flag: indicates whether to show delete button in first column of every row.
-   *
-   * @property showDeleteButtonInRow
-   * @type Boolean
-   * @default false
-   */
-  showDeleteButtonInRow: false,
-
-  /**
-   * Flag: indicates whether to show dropdown menu with edit menu item, in last column of every row.
-   *
-   * @property showEditMenuItemInRow
-   * @type Boolean
-   * @default false
-   */
-  showEditMenuItemInRow: false,
-
-  /**
-   * Flag: indicates whether to show dropdown menu with delete menu item, in last column of every row.
-   *
-   * @property showDeleteMenuItemInRow
-   * @type Boolean
-   * @default false
-   */
-  showDeleteMenuItemInRow: false,
-
-  /**
-   * Additional menu items for dropdown menu in last column of every row.
-   *
-   * @property menuInRowAdditionalItems
-   * @type boolean
-   * @default null
-   */
-  menuInRowAdditionalItems: null,
-
-  /**
-   * Flag: indicates whether table rows are clickable.
-   *
-   * @property rowClickable
-   * @type Boolean
-   * @default true
-   */
-  rowClickable: false,
-
-  /**
-   * Flag: indicates whether ordering by clicking on column headers is allowed.
-   *
-   * @property headerClickable
-   * @type Boolean
-   * @default false
-   */
-  orderable: false,
-
-  /**
-   * Dictionary with sorting data related to columns.
-   *
-   * @property sorting
-   * @type Object
-   */
-  sorting: null,
-
-  /**
-   * Model projection which should be used to display given content.
-   *
-   * @property modelProjection
-   * @type Object
-   * @default null
-   */
-  modelProjection: null,
-
-  /**
-   * Content to be displayed (models collection).
-   *
-   * @property content
-   * @type ManyArray
-   * @default null
-   */
-  content: null,
-
-  /**
-   * Flag: indicates whether DELETE request should be immediately sended to server (on each deleted record) or not.
-   *
-   * @property immediateDelete
-   * @type Boolean
-   * @default false
-   */
-  immediateDelete: false,
-
-  /**
-   * Flag: indicates whether records should be edited on separate route.
-   *
-   * @property editOnSeparateRoute
-   * @type Boolean
-   * @default false
-   */
-  editOnSeparateRoute: false,
-
-  /**
-   * Flag: indicates whether to save current model before going to the detail&#x27;s route.
-   *
-   * @property saveBeforeRouteLeave
-   * @type Boolean
-   * @default false
-   */
-  saveBeforeRouteLeave: false
+  getCurrentUser: function() {
+    // TODO: add mechanism to return current user.
+    return &#x27;&#x27;;
+  }
 });
 
     </pre>

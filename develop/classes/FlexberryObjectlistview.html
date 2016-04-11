@@ -199,6 +199,10 @@
 
                             </li>
                             <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getLimitFunction" data-tablink="getLimitFunction">getLimitFunction</a>
+
+                            </li>
+                            <li class="index-item method inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_getLimitFunctionQuery" data-tablink="getLimitFunctionQuery">getLimitFunctionQuery</a>
 
                             </li>
@@ -251,6 +255,10 @@
                     <ul class="index-list properties extends">
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_action" data-tablink="action">action</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_allowColumnResize" data-tablink="allowColumnResize">allowColumnResize</a>
 
                             </li>
                             <li class="index-item property inherited">
@@ -543,7 +551,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/FlexberryBaseComponent.html#method_combineFilterWithFilterByAnyMatch">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l107"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:107</code></a>
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l132"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:132</code></a>
                             </p>
                     
                     
@@ -821,6 +829,72 @@
                     
                     
                     </div>
+                    <div id="method_getLimitFunction" class="method item inherited">
+                        <h3 class="name"><code>getLimitFunction</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>limitData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryBaseComponent.html#method_getLimitFunction">FlexberryBaseComponent</a>:
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l50"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:50</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Creates limit function by given structure.
+                    If operation is not supported, an exception is thrown.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">limitData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Structure to build limit function.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>Created limit function.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method_getLimitFunctionQuery" class="method item inherited">
                         <h3 class="name"><code>getLimitFunctionQuery</code></h3>
                     
@@ -924,7 +998,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/FlexberryBaseComponent.html#method_getQueryOptionsForAutocompleteLookup">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l67"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:67</code></a>
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l92"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:92</code></a>
                             </p>
                     
                     
@@ -1059,7 +1133,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/FlexberryBaseComponent.html#method_getUrlForTypeQuery">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l50"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:50</code></a>
+                            <a href="../files/ember-flexberry_addon_adapters_odata.js.html#l75"><code>ember-flexberry&#x2F;addon&#x2F;adapters&#x2F;odata.js:75</code></a>
                             </p>
                     
                     
@@ -1433,7 +1507,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l173"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:173</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l182"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:182</code></a>
                             </p>
                     
                     
@@ -1445,6 +1519,35 @@
                         </div>
                     
                             <p><strong>Default:</strong> &#x27;rowClick&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_allowColumnResize" class="property item">
+                        <h3 class="name"><code>allowColumnResize</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/FlexberryBaseComponent.html#property_allowColumnResize">
+                                    FlexberryBaseComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l164"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:164</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates wether allow to resize columns (if <code>true</code>) or not (if <code>false</code>).</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> true</p>
                     
                     
                     </div>
@@ -1536,7 +1639,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l194"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:194</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l203"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:203</code></a>
                             </p>
                     
                     
@@ -1612,7 +1715,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l324"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:324</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l333"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:333</code></a>
                             </p>
                     
                     
@@ -1641,7 +1744,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l347"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:347</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l356"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:356</code></a>
                             </p>
                     
                     
@@ -1695,7 +1798,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l365"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:365</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l374"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:374</code></a>
                             </p>
                     
                     
@@ -1750,7 +1853,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l164"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:164</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l173"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:173</code></a>
                             </p>
                     
                     
@@ -1776,7 +1879,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l374"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:374</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l383"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:383</code></a>
                             </p>
                     
                     
@@ -1802,7 +1905,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l383"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:383</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l392"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:392</code></a>
                             </p>
                     
                     
@@ -1828,7 +1931,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l428"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:428</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l437"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:437</code></a>
                             </p>
                     
                     
@@ -1854,7 +1957,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l419"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:419</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l428"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:428</code></a>
                             </p>
                     
                     
@@ -1906,7 +2009,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l182"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:182</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l191"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:191</code></a>
                             </p>
                     
                     
@@ -1958,7 +2061,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l298"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:298</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l307"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:307</code></a>
                             </p>
                     
                     
@@ -2009,7 +2112,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l280"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:280</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l289"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:289</code></a>
                             </p>
                     
                     
@@ -2035,7 +2138,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l333"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:333</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l342"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:342</code></a>
                             </p>
                     
                     
@@ -2061,7 +2164,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l315"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:315</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l324"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:324</code></a>
                             </p>
                     
                     
@@ -2087,7 +2190,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l392"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:392</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l401"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:401</code></a>
                             </p>
                     
                     
@@ -2113,7 +2216,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l401"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:401</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l410"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:410</code></a>
                             </p>
                     
                     
@@ -2139,7 +2242,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l410"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:410</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l419"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:419</code></a>
                             </p>
                     
                     
@@ -2220,7 +2323,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l356"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:356</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l365"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:365</code></a>
                             </p>
                     
                     
@@ -2301,7 +2404,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l289"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:289</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l298"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:298</code></a>
                             </p>
                     
                     
@@ -2330,7 +2433,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l235"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:235</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l244"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:244</code></a>
                             </p>
                     
                     
@@ -2359,7 +2462,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l244"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:244</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l253"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:253</code></a>
                             </p>
                     
                     
@@ -2388,7 +2491,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l253"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:253</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l262"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:262</code></a>
                             </p>
                     
                     
@@ -2417,7 +2520,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l271"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:271</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l280"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:280</code></a>
                             </p>
                     
                     
@@ -2446,7 +2549,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l262"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:262</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l271"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:271</code></a>
                             </p>
                     
                     
@@ -2498,7 +2601,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l206"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:206</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l215"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:215</code></a>
                             </p>
                     
                     
@@ -2547,7 +2650,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l227"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:227</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l236"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:236</code></a>
                             </p>
                     
                     
@@ -2572,7 +2675,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l307"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:307</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l316"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:316</code></a>
                             </p>
                     
                     
@@ -2600,7 +2703,7 @@
                                     FlexberryBaseComponent
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l218"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:218</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l227"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:227</code></a>
                             </p>
                     
                     

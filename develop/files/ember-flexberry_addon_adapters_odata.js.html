@@ -185,6 +185,31 @@ export default DS.RESTAdapter.extend({
   },
 
   /**
+   * Creates limit function by given structure.
+   * If operation is not supported, an exception is thrown.
+   *
+   * @method getLimitFunction
+   * @param {Object} limitData Structure to build limit function.
+   * @return {String} Created limit function.
+   */
+  getLimitFunction: function(limitData) {
+    let limit = Ember.merge({
+      operation: undefined,
+      arguments: undefined
+    }, limitData);
+
+    let operation = limit.operation;
+    let limitArguments = limit.arguments;
+    if (operation === &#x27;=&#x27; &amp;&amp; limitArguments.length === 2) {
+      return &#x27;\&#x27;&#x27; + Ember.String.capitalize(limitArguments[0]) + &#x27;\&#x27; eq \&#x27;&#x27; + limitArguments[1] + &#x27;\&#x27;&#x27;;
+    } else if (operation === &#x27;and&#x27; &amp;&amp; limitArguments.length === 2) {
+      return this.getLimitFunction(limitArguments[0]) + &#x27; and &#x27; + this.getLimitFunction(limitArguments[1]);
+    }
+
+    throw new Error(&#x27;Not supported filter.&#x27;);
+  },
+
+  /**
    * Forms url to get all entities of certain type.
    *
    * @method getUrlForTypeQuery

@@ -254,6 +254,15 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   action: &#x27;rowClick&#x27;,
 
   /**
+   * Flag: indicates wether allow to resize columns (if &#x60;true&#x60;) or not (if &#x60;false&#x60;).
+   *
+   * @property allowColumnResize
+   * @type Boolean
+   * @default true
+   */
+  allowColumnResize: true,
+
+  /**
    * Table add column to sorting action name.
    *
    * @property addColumnToSorting
@@ -414,6 +423,27 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
    * @default null
    */
   menuInRowAdditionalItems: null,
+
+  /**
+   * Name of user setting name for column widths.
+   *
+   * @property _columnWidthsUserSettingName
+   * @private
+   *
+   * @type String
+   * @default &#x60;OlvColumnWidths&#x60;
+   */
+  _columnWidthsUserSettingName: &#x27;OlvColumnWidths&#x27;,
+
+  /**
+   * Service to work with user settings on server.
+   *
+   * @property _userSettingsService
+   * @private
+   *
+   * @type Service
+   */
+  _userSettingsService: Ember.inject.service(&#x27;user-settings-service&#x27;),
 
   /**
    * Flag: indicates whether additional menu items for dropdown menu in last column of every row are defined.
@@ -792,7 +822,196 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
         this._setActiveRecord(key);
       }
     }
+
+    let moduleName = this.get(&#x27;_moduleName&#x27;);
+    let userSetting = {
+      moduleName: moduleName,
+      settingName: this.get(&#x27;_columnWidthsUserSettingName&#x27;)
+    };
+
+    let getSettingPromise = this.get(&#x27;_userSettingsService&#x27;).getUserSetting(userSetting);
+    let _this = this;
+    getSettingPromise.then(function(data) {
+      _this._setColumnWidths(data);
+    });
   },
+
+  /**
+   * This hook is called during both render and re-render after the template has rendered and the DOM updated.
+   * Plugins (such as plugin for column resize) are initialized here.
+   *
+   * @method didRender
+   */
+  didRender: function() {
+    this._super(...arguments);
+    if (this.get(&#x27;allowColumnResize&#x27;)) {
+      if (this.get(&#x27;useSingleColumn&#x27;)) {
+        throw new Error(
+          &#x27;Flags of object-list-view \&#x27;allowColumnResize\&#x27; and \&#x27;useSingleColumn\&#x27; &#x27; +
+          &#x27;can\&#x27;t be enabled at the same time.&#x27;);
+      }
+
+      let currentTable = this.$(&#x27;table.object-list-view&#x27;);
+
+      // The first column has semantic class &quot;collapsing&quot;
+      // so the column has 1px width and plugin has problems.
+      // A real width is reset in order to keep computed by semantic width.
+      Ember.$.each(this.$(&#x27;th&#x27;, currentTable), function (key, item) {
+        let curWidth = Ember.$(item).width();
+        Ember.$(item).width(curWidth);
+      });
+
+      currentTable.addClass(&#x27;fixed&#x27;);
+
+      this._reinitResizablePlugin();
+    }
+  },
+
+  /**
+   * It reinits plugin for column resize.
+   * Reinit is important for proper position of resize elements.
+   *
+   * @method _reinitResizablePlugin
+   * @private
+   */
+  _reinitResizablePlugin: function() {
+    let currentTable = this.$(&#x27;table.object-list-view&#x27;);
+
+    // Disable plugin and then init it again.
+    currentTable.colResizable({ disable: true });
+
+    let _this = this;
+    currentTable.colResizable({
+      onResize: function(e) {
+        // Save column width as user setting on resize.
+        _this._afterColumnResize(e);
+      }
+    });
+  },
+
+  /**
+   * It handles the end of getting user setting with column widths.
+   *
+   * @method _setColumnWidths
+   * @private
+   *
+   * @param {Array} userSetting User setting to apply to control.
+   */
+  _setColumnWidths: function(userSetting) {
+    if (!Ember.isArray(userSetting)) {
+      return;
+    }
+
+    let hashedUserSetting = {};
+    userSetting.forEach(function(item) {
+      let userColumnInfo = Ember.merge({
+        propertyName: undefined,
+        width: undefined
+      }, item);
+
+      let propertyName = userColumnInfo.propertyName;
+      let width = userColumnInfo.width;
+
+      Ember.assert(&#x27;Property name is not defined at saved user setting.&#x27;, propertyName);
+      Ember.assert(&#x27;Column width is not defined at saved user setting.&#x27;, width);
+
+      hashedUserSetting[propertyName] = width;
+    });
+
+    let _this = this;
+    let columns = this.$(&#x27;table.object-list-view&#x27;).find(&#x27;th&#x27;);
+    Ember.$.each(columns, function (key, item) {
+      let currentItem = _this.$(item);
+      let currentPropertyName = _this._getColumnPropertyName(currentItem);
+      Ember.assert(&#x27;Column property name is not defined&#x27;, currentPropertyName);
+
+      let savedColumnWidth = hashedUserSetting[currentPropertyName];
+      if (savedColumnWidth) {
+        currentItem.width(savedColumnWidth);
+      }
+    });
+
+    this._reinitResizablePlugin();
+  },
+
+  /**
+   * It handles the end of column resize.
+   * New column widths are send to user settings service for saving.
+   *
+   * @method _afterColumnResize
+   * @private
+   *
+   * @param {Object} eventParams Parameters of the end of column resizing.
+   */
+  _afterColumnResize: function(eventParams) {
+    // Send info to service with user settings.
+    let _this = this;
+    let userWidthSettings = [];
+    let columns = this.$(eventParams.currentTarget).find(&#x27;th&#x27;);
+    Ember.$.each(columns, function (key, item) {
+      let currentItem = _this.$(item);
+      let currentPropertyName = _this._getColumnPropertyName(currentItem);
+      Ember.assert(&#x27;Column property name is not defined&#x27;, currentPropertyName);
+
+      // There can be fractional values potentially.
+      let currentColumnWidth = currentItem.width();
+      currentColumnWidth = Math.round(currentColumnWidth);
+
+      userWidthSettings.push({
+        propertyName: currentPropertyName,
+        width: currentColumnWidth
+      });
+    });
+
+    let moduleName = this.get(&#x27;_moduleName&#x27;);
+    let userSetting = {
+      moduleName: moduleName,
+      userSetting: userWidthSettings,
+      settingName: this.get(&#x27;_columnWidthsUserSettingName&#x27;)
+    };
+
+    this.get(&#x27;_userSettingsService&#x27;).saveUserSetting(userSetting);
+  },
+
+  /**
+   * This method returns property name for column.
+   * Property name is got from atribute &#x60;data-olv-header-property-name&#x60; of column header.
+   * If property name won&#x27;t be found, exeption will be thrown.
+   *
+   * @method _getColumnPropertyName
+   * @private
+   *
+   * @param {Object} currentItem Current column header to get property name from.
+   * @return {String} Corresponding property name for column.
+   */
+  _getColumnPropertyName: function(currentItem) {
+    let currentPropertyName = currentItem.attr(&#x27;data-olv-header-property-name&#x27;);
+    if (!currentPropertyName) {
+      currentPropertyName =
+        currentItem.find(&#x27;*[data-olv-header-property-name]&#x27;).attr(&#x27;data-olv-header-property-name&#x27;);
+    }
+
+    Ember.assert(
+      &#x27;There is no tag with attribute \&#x27;data-olv-header-property-name\&#x27; at column header.&#x27;, currentPropertyName);
+    return currentPropertyName;
+  },
+
+  /**
+   * Computed property forms unique name for component from model name and current route.
+   * This unique name can be used as module name for user settings service.
+   *
+   * @property _moduleName
+   * @private
+   * @type String
+   */
+  _moduleName: Ember.computed(&#x27;modelProjection&#x27;, function() {
+    let modelName = this.get(&#x27;modelProjection&#x27;).modelName;
+    let currentController = this.get(&#x27;currentController&#x27;);
+    let currentRoute = currentController ? this.get(&#x27;currentController&#x27;).get(&#x27;target&#x27;).currentRouteName : &#x27;application&#x27;;
+    Ember.assert(&#x27;Error while module name determing.&#x27;, modelName &amp;&amp; currentRoute);
+
+    return modelName + &#x27;__&#x27; + currentRoute;
+  }),
 
   /**
    * Destroys component&#x27;s DOM-related logic.
