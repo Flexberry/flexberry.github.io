@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryAuthService", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryEmberSimpleAuthService", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Projection", "classes/Projection.Adapter", "classes/Projection.Model", "classes/Projection.Store", "classes/Resolver", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
         </form>
     </div>
 </div>
@@ -56,9 +56,11 @@
 	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
 	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
 	                            <li><a href="../classes/FlexberrCheckboxComponent.html">FlexberrCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryAuthService.html">FlexberryAuthService</a></li>
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEmberSimpleAuthService.html">FlexberryEmberSimpleAuthService</a></li>
 	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
 	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
 	                            <li><a href="../classes/FlexberryFileController.html">FlexberryFileController</a></li>
@@ -159,6 +161,15 @@ export default Ember.Mixin.create({
    * @default undefined
    */
   lookupController: undefined,
+
+  /**
+   * Service for auth matters.
+   * FlexberryAuthService is injected here by default.
+   *
+   * @property currentAuthService
+   * @type Service
+   */
+  currentAuthService: Ember.inject.service(&#x27;flexberry-auth-service&#x27;),
 
   actions: {
     /**
@@ -351,6 +362,20 @@ export default Ember.Mixin.create({
       let relationType = this._getRelationType(this.get(&#x27;model&#x27;), relationName);
       let queryOptions = this.store.adapterFor(relationType).getQueryOptionsForAutocompleteLookup(lookupParameters);
       return queryOptions;
+    },
+
+    /**
+     * It updates autocomplete lookup xhr before send in order to add necessary auth information.
+     *
+     * @method updateAutocompleteLookupXhr
+     * @param {Object} [options] Lookup autocomplete parameters.
+     * @param {Object} options.xhr Autocomplete lookup xhr to send.
+     * @param {Object} options.element Current autocomplete lookup.
+     * @return {Object} Updated method parameters.
+     */
+    updateAutocompleteLookupXhr: function(options) {
+      this.get(&#x27;currentAuthService&#x27;).authCustomRequest(options);
+      return options;
     }
   },
 

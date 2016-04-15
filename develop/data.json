@@ -531,6 +531,24 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/services/flexberry-auth-service.js": {
+            "name": "ember-flexberry/addon/services/flexberry-auth-service.js",
+            "modules": {},
+            "classes": {
+                "FlexberryAuthService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js": {
+            "name": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
+            "modules": {},
+            "classes": {
+                "FlexberryEmberSimpleAuthService": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/services/objectlistview-events.js": {
             "name": "ember-flexberry/addon/services/objectlistview-events.js",
             "modules": {},
@@ -645,6 +663,8 @@
                 "ListFormRoute": 1,
                 "DetailInterationService": 1,
                 "DeviceService": 1,
+                "FlexberryAuthService": 1,
+                "FlexberryEmberSimpleAuthService": 1,
                 "ObjectlistviewEvents": 1,
                 "FileTransform": 1,
                 "FlexberryEnumTransform": 1,
@@ -1255,6 +1275,40 @@
             "file": "ember-flexberry/addon/services/device.js",
             "line": 7,
             "description": "Service for devices detection.\nUses devicejs with noConflict (see https://github.com/matthewhudson/device.js).",
+            "extends": "Ember.Service",
+            "access": "public",
+            "tagname": ""
+        },
+        "FlexberryAuthService": {
+            "name": "FlexberryAuthService",
+            "shortname": "FlexberryAuthService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
+            "line": 7,
+            "description": "Service to work with authentication and authorization.\nIt is a wrapper for real used service which is set on applied part.\n\nExample:\n```js\n// app/initializers/auth-initializer.js\nimport Ember from 'ember';\nimport FlexberryAuthService from 'ember-flexberry/services/flexberry-auth-service';\n\nexport function initialize(application) {\n  FlexberryAuthService.reopen({\n    currentAuthService: Ember.inject.service('flexberry-ember-simple-auth-service')\n  });\n}\n\nexport default {\n  name: 'auth-initializer',\n  initialize\n};\n```",
+            "extends": "Ember.Service",
+            "access": "public",
+            "tagname": ""
+        },
+        "FlexberryEmberSimpleAuthService": {
+            "name": "FlexberryEmberSimpleAuthService",
+            "shortname": "FlexberryEmberSimpleAuthService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
+            "line": 7,
+            "description": "Service to work with authentication and authorization throught plugin `ember-simple-auth`.",
             "extends": "Ember.Service",
             "access": "public",
             "tagname": ""
@@ -2105,7 +2159,7 @@
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-groupedit.js",
             "line": 83,
-            "description": "Flag: indicates wether allow to resize columns (if `true`) or not (if `false`).",
+            "description": "Flag: indicates whether allow to resize columns (if `true`) or not (if `false`).",
             "itemtype": "property",
             "name": "allowColumnResize",
             "type": "Boolean",
@@ -2244,7 +2298,7 @@
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-objectlistview.js",
             "line": 110,
-            "description": "Flag: indicates wether allow to resize columns (if `true`) or not (if `false`).",
+            "description": "Flag: indicates whether allow to resize columns (if `true`) or not (if `false`).",
             "itemtype": "property",
             "name": "allowColumnResize",
             "type": "Boolean",
@@ -3192,7 +3246,7 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
             "line": 57,
-            "description": "Flag: indicates wether allow to resize columns (if `true`) or not (if `false`).",
+            "description": "Flag: indicates whether allow to resize columns (if `true`) or not (if `false`).",
             "itemtype": "property",
             "name": "allowColumnResize",
             "type": "Boolean",
@@ -3592,6 +3646,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
             "line": 130,
+            "description": "Action's name to update xhr before autocomplete request.\nIt is used to add necessary auth headers to request.",
+            "itemtype": "property",
+            "name": "autocompleteUpdateXhrAction",
+            "type": "String",
+            "default": "'updateAutocompleteLookupXhr'",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 140,
             "description": "Min characters count necessary to call autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMinCharacters",
@@ -3602,7 +3667,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 139,
+            "line": 149,
             "description": "Maximum number of results to show on autocomplete.",
             "itemtype": "property",
             "name": "autocompleteMaxResults",
@@ -3613,7 +3678,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 148,
+            "line": 158,
             "description": "Server-side property name of autocomplete property.",
             "itemtype": "property",
             "name": "autocompleteProperty",
@@ -3624,7 +3689,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 157,
+            "line": 167,
             "description": "Function to limit accessible values.",
             "itemtype": "property",
             "name": "limitFunction",
@@ -3635,7 +3700,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 166,
+            "line": 176,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -3645,7 +3710,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 185,
+            "line": 195,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -3948,7 +4013,7 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 164,
-            "description": "Flag: indicates wether allow to resize columns (if `true`) or not (if `false`).",
+            "description": "Flag: indicates whether allow to resize columns (if `true`) or not (if `false`).",
             "itemtype": "property",
             "name": "allowColumnResize",
             "type": "Boolean",
@@ -5053,7 +5118,7 @@
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
             "line": 148,
-            "description": "Flag: indicates wether allow to resize columns (if `true`) or not (if `false`).",
+            "description": "Flag: indicates whether allow to resize columns (if `true`) or not (if `false`).",
             "itemtype": "property",
             "name": "allowColumnResize",
             "type": "Boolean",
@@ -6778,7 +6843,17 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 27,
+            "line": 26,
+            "description": "Service for auth matters.\nFlexberryAuthService is injected here by default.",
+            "itemtype": "property",
+            "name": "currentAuthService",
+            "type": "Service",
+            "class": "BaseModel",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "line": 36,
             "description": "Handles action from lookup choose action.",
             "itemtype": "method",
             "name": "showLookupDialog",
@@ -6794,7 +6869,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 129,
+            "line": 138,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -6803,7 +6878,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 139,
+            "line": 148,
             "description": "Handles action from lookup remove action.",
             "itemtype": "method",
             "name": "removeLookupValue",
@@ -6819,7 +6894,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 160,
+            "line": 169,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "updateLookupValue",
@@ -6835,7 +6910,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 188,
+            "line": 197,
             "description": "Forms url to get all availible entities of certain relation.",
             "itemtype": "method",
             "name": "getLookupAutocompleteUrl",
@@ -6855,7 +6930,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 201,
+            "line": 210,
             "description": "Forms query parameters by lookup autocomplete parameters.",
             "itemtype": "method",
             "name": "getAutocompleteLookupQueryOptions",
@@ -6875,7 +6950,40 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 220,
+            "line": 228,
+            "description": "It updates autocomplete lookup xhr before send in order to add necessary auth information.",
+            "itemtype": "method",
+            "name": "updateAutocompleteLookupXhr",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Lookup autocomplete parameters.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "xhr",
+                            "description": "Autocomplete lookup xhr to send.",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "element",
+                            "description": "Current autocomplete lookup.",
+                            "type": "Object"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Updated method parameters.",
+                "type": "Object"
+            },
+            "class": "BaseModel",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "line": 243,
             "description": "Gets related object type by relation name from specified model.",
             "itemtype": "method",
             "name": "_getRelationType",
@@ -7637,6 +7745,116 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
+            "line": 34,
+            "description": "Flag: indicates whether to use flexberry auth service (if `true`) or not (if `false`).\nThis flag is readed from config setting `APP.flexberryAuthService` and can be changed programatically later.",
+            "itemtype": "property",
+            "name": "isFlexberryAuthServiceEnabled",
+            "access": "public",
+            "tagname": "",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryAuthService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
+            "line": 45,
+            "description": "Service to call auth methods.\nIf this service is not defined, stub is executed.",
+            "itemtype": "property",
+            "name": "currentAuthService",
+            "type": "Service",
+            "default": "undefined",
+            "class": "FlexberryAuthService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
+            "line": 55,
+            "description": "It updates custom xhr before send in order to add necessary auth information.",
+            "itemtype": "method",
+            "name": "authCustomRequest",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Request parameters.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "xhr",
+                            "description": "Xhr to send.",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "element",
+                            "description": "Current element which is going to request.",
+                            "type": "Object"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Updated method parameters.",
+                "type": "Object"
+            },
+            "class": "FlexberryAuthService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
+            "line": 15,
+            "description": "Store to get adapter where auth elements are placed.",
+            "itemtype": "property",
+            "name": "_store",
+            "type": "Service",
+            "class": "FlexberryEmberSimpleAuthService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
+            "line": 23,
+            "description": "Adapter where auth elements are placed.",
+            "itemtype": "property",
+            "name": "_store",
+            "type": "DS.Adapter",
+            "class": "FlexberryEmberSimpleAuthService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
+            "line": 33,
+            "description": "It updates custom xhr before send in order to add necessary auth information.",
+            "itemtype": "method",
+            "name": "authCustomRequest",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Request parameters.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "xhr",
+                            "description": "Xhr to send.",
+                            "type": "Object"
+                        },
+                        {
+                            "name": "element",
+                            "description": "Current element which is going to request.",
+                            "type": "Object"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Updated method parameters.",
+                "type": "Object"
+            },
+            "class": "FlexberryEmberSimpleAuthService",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/services/objectlistview-events.js",
             "line": 15,
             "description": "Trigger for \"add new row\" event in objectlistview.\nEvent name: olvAddRow.",
@@ -7840,7 +8058,7 @@
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
             "line": 24,
-            "description": "Flag: indicates wether to use user settings service (if `true`) or not (if `false`).",
+            "description": "Flag: indicates whether to use user settings service (if `true`) or not (if `false`).\nThis flag is readed from config setting `APP.useUserSettingsService` and can be changed programatically later.",
             "itemtype": "property",
             "name": "isUserSettingsServiceEnabled",
             "access": "public",
@@ -7852,7 +8070,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 34,
+            "line": 35,
             "description": "It saves user settings.",
             "itemtype": "method",
             "name": "saveUserSetting",
@@ -7888,7 +8106,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 82,
+            "line": 83,
             "description": "It gets user setting from server by setting's and module's names.",
             "itemtype": "method",
             "name": "getUserSetting",
@@ -7921,7 +8139,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 124,
+            "line": 125,
             "description": "It looks for already created user settings records.",
             "itemtype": "method",
             "name": "_getExistingRecord",
@@ -7948,7 +8166,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 183,
+            "line": 184,
             "description": "It returns the name of current user.\nIt has to be overriden if some authentication is used.",
             "itemtype": "method",
             "name": "getCurrentUser",

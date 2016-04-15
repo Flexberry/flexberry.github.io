@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ObjectlistviewEvents - Flexberry Documentation</title>
+    <title>FlexberryAuthService - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -132,7 +132,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ObjectlistviewEvents <small>Class</small></h1>
+    <h1>FlexberryAuthService <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
@@ -142,7 +142,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:7</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_services_flexberry-auth-service.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;flexberry-auth-service.js:7</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -151,7 +151,24 @@
 
 
 <div class="well well-small">
-    <p>Service for triggering objectlistview events.</p>
+    <p>Service to work with authentication and authorization.
+It is a wrapper for real used service which is set on applied part.</p>
+<p>Example:</p>
+<pre class="code prettyprint"><code class="language-js">// app/initializers/auth-initializer.js
+import Ember from 'ember';
+import FlexberryAuthService from 'ember-flexberry/services/flexberry-auth-service';
+
+export function initialize(application) {
+  FlexberryAuthService.reopen({
+    currentAuthService: Ember.inject.service('flexberry-ember-simple-auth-service')
+  });
+}
+
+export default {
+  name: 'auth-initializer',
+  initialize
+};
+</code></pre>
 
 </div>
 
@@ -189,7 +206,7 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_addRowTrigger" data-tablink="addRowTrigger">addRowTrigger</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_authCustomRequest" data-tablink="authCustomRequest">authCustomRequest</a>
 
                             </li>
                             <li class="index-item method private inherited">
@@ -204,24 +221,12 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_decrementProperty" data-tablink="decrementProperty">decrementProperty</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_deleteRowsTrigger" data-tablink="deleteRowsTrigger">deleteRowsTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_deleteRowTrigger" data-tablink="deleteRowTrigger">deleteRowTrigger</a>
-
-                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_destroy" data-tablink="destroy">destroy</a>
 
                             </li>
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_endPropertyChanges" data-tablink="endPropertyChanges">endPropertyChanges</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_filterByAnyMatchTrigger" data-tablink="filterByAnyMatchTrigger">filterByAnyMatchTrigger</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -272,26 +277,6 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_reopenClass" data-tablink="reopenClass">reopenClass</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowAddedTrigger" data-tablink="rowAddedTrigger">rowAddedTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowDeletedTrigger" data-tablink="rowDeletedTrigger">rowDeletedTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowDeletedTrigger" data-tablink="rowDeletedTrigger">rowDeletedTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowsChangedTrigger" data-tablink="rowsChangedTrigger">rowsChangedTrigger</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowSelectedTrigger" data-tablink="rowSelectedTrigger">rowSelectedTrigger</a>
-
-                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_set" data-tablink="set">set</a>
 
@@ -323,12 +308,20 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_concatenatedProperties" data-tablink="concatenatedProperties">concatenatedProperties</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_currentAuthService" data-tablink="currentAuthService">currentAuthService</a>
+
+                            </li>
                             <li class="index-item property public inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_isDestroyed" data-tablink="isDestroyed">isDestroyed</a>
 
                             </li>
                             <li class="index-item property public inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_isDestroying" data-tablink="isDestroying">isDestroying</a>
+
+                            </li>
+                            <li class="index-item property public">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_isFlexberryAuthServiceEnabled" data-tablink="isFlexberryAuthServiceEnabled">isFlexberryAuthServiceEnabled</a>
 
                             </li>
                             <li class="index-item property public inherited">
@@ -564,17 +557,20 @@
                     
                     
                     </div>
-                    <div id="method_addRowTrigger" class="method item">
-                        <h3 class="name"><code>addRowTrigger</code></h3>
+                    <div id="method_authCustomRequest" class="method item">
+                        <h3 class="name"><code>authCustomRequest</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>componentName</code>
+                                            <code class="optional">[options]</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
                     
                     
                     
@@ -585,7 +581,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:15</code></a>
+                            <a href="../files/ember-flexberry_addon_services_flexberry-auth-service.js.html#l55"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;flexberry-auth-service.js:55</code></a>
                             </p>
                     
                     
@@ -593,8 +589,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Trigger for "add new row" event in objectlistview.
-                    Event name: olvAddRow.</p>
+                            <p>It updates custom xhr before send in order to add necessary auth information.</p>
                     
                         </div>
                     
@@ -603,19 +598,51 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <code class="param-name optional">[options]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
+                                            <p>Request parameters.</p>
                     
                                         </div>
                     
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">xhr</code>
+                                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Xhr to send.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name">element</code>
+                                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current element which is going to request.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
                                     </li>
                                 </ul>
                             </div>
                     
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Updated method parameters.</p>
+                    
+                                </div>
+                            </div>
                     
                     </div>
                     <div id="method_beginPropertyChanges" class="method item private inherited">
@@ -813,128 +840,6 @@
                             </div>
                     
                     </div>
-                    <div id="method_deleteRowsTrigger" class="method item">
-                        <h3 class="name"><code>deleteRowsTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>immediately</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l39"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:39</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "delete selected rows" event in objectlistview.
-                    Event name: olvDeleteRows.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">immediately</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Flag to delete record immediately.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_deleteRowTrigger" class="method item">
-                        <h3 class="name"><code>deleteRowTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l27"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:27</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "delete current row" event in objectlistview.
-                    Event name: olvDeleteRow.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
                     <div id="method_destroy" class="method item public inherited">
                         <h3 class="name"><code>destroy</code></h3>
                     
@@ -1028,73 +933,6 @@
                                             <span class="type"><a href="http://emberjs.com/api/classes/Ember.Observable.html" class="crosslink external" target="_blank">Ember.Observable</a></span>:
                                 </div>
                             </div>
-                    
-                    </div>
-                    <div id="method_filterByAnyMatchTrigger" class="method item">
-                        <h3 class="name"><code>filterByAnyMatchTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>pattern</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l52"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:52</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "filter by any match" event in objectlistview.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">pattern</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The pattern to match attributes values.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
                     
                     </div>
                     <div id="method_get" class="method item public inherited">
@@ -1969,374 +1807,6 @@
                     
                     
                     </div>
-                    <div id="method_rowAddedTrigger" class="method item">
-                        <h3 class="name"><code>rowAddedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>record</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l64"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:64</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "new row has been added" event in objectlistview.
-                    Event name: olvRowAdded.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type">Model</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The model corresponding to added row in objectlistview.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_rowDeletedTrigger" class="method item">
-                        <h3 class="name"><code>rowDeletedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>count</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>immediately</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l91"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:91</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "selected rows has been deleted" event in objectlistview.
-                    Event name: groupEditRowDeleted.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Count of deleted rows in objectlistview.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">immediately</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Flag to show if records were deleted immediately.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_rowDeletedTrigger" class="method item">
-                        <h3 class="name"><code>rowDeletedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>record</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>immediately</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l77"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:77</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "row has been deleted" event in objectlistview.
-                    Event name: olvRowDeleted.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type">Model</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The model corresponding to deleted row in objectlistview.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">immediately</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Flag to show if record was deleted immediately.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_rowsChangedTrigger" class="method item">
-                        <h3 class="name"><code>rowsChangedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l119"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:119</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "model(s) corresponding to some row(s) was changed" event in objectlistview.
-                    Event name: olvRowsChanged.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method_rowSelectedTrigger" class="method item">
-                        <h3 class="name"><code>rowSelectedTrigger</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>componentName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>record</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>count</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_services_objectlistview-events.js.html#l105"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;objectlistview-events.js:105</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Trigger for "row has been selected" event in objectlistview.
-                    Event name: olvRowSelected.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">componentName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of objectlistview component.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type">Model</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The model corresponding to selected row in objectlistview.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Count of selected rows in objectlistview.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
                     <div id="method_set" class="method item public inherited">
                         <h3 class="name"><code>set</code></h3>
                     
@@ -2772,6 +2242,33 @@
                     
                     
                     </div>
+                    <div id="property_currentAuthService" class="property item">
+                        <h3 class="name"><code>currentAuthService</code></h3>
+                        <span class="type">Service</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_services_flexberry-auth-service.js.html#l45"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;flexberry-auth-service.js:45</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Service to call auth methods.
+                    If this service is not defined, stub is executed.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
                     <div id="property_isDestroyed" class="property item public inherited">
                         <h3 class="name"><code>isDestroyed</code></h3>
                         <span class="type">Unknown</span>
@@ -2824,6 +2321,34 @@
                     
                     The object stays intact until the end of the run loop at which point
                     the <code>isDestroyed</code> flag is set.
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_isFlexberryAuthServiceEnabled" class="property item public">
+                        <h3 class="name"><code>isFlexberryAuthServiceEnabled</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_services_flexberry-auth-service.js.html#l34"><code>ember-flexberry&#x2F;addon&#x2F;services&#x2F;flexberry-auth-service.js:34</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to use flexberry auth service (if <code>true</code>) or not (if <code>false</code>).
+                    This flag is readed from config setting <code>APP.flexberryAuthService</code> and can be changed programatically later.</p>
+                    
                         </div>
                     
                             <p><strong>Default:</strong> false</p>
