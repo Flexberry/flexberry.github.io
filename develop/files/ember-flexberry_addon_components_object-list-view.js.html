@@ -167,7 +167,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
           this._setActiveRecord(recordWithKey.key);
         }
 
-        this.sendAction(&#x27;action&#x27;, recordWithKey.data, {
+        this.sendAction(&#x27;action&#x27;, recordWithKey ? recordWithKey.data : undefined, {
           saveBeforeRouteLeave: this.get(&#x27;saveBeforeRouteLeave&#x27;),
           editOnSeparateRoute: editOnSeparateRoute,
           modelName: this.get(&#x27;modelProjection&#x27;).modelName,
@@ -217,7 +217,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       }
 
       var componentName = this.get(&#x27;componentName&#x27;);
-      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, recordWithKey.data, selectedRecords.length);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, recordWithKey.data, selectedRecords.length, e.checked);
     },
 
     menuInRowConfigurateItems: function(recordWithKey, menuItems) {

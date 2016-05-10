@@ -180,7 +180,7 @@ Model.reopenClass({
    * @param {Object} attributes Projection attributes.
    * @return {Object} Created projection.
    */
-  defineProjection: function(projectionName, modelName, attributes) {
+  defineProjection: function (projectionName, modelName, attributes) {
     let proj = createProj(modelName, attributes);
 
     if (!this.projections) {

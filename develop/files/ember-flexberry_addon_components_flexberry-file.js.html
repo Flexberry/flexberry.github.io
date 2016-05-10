@@ -158,9 +158,13 @@ export default FlexberryBaseComponent.extend({
   classNames: [&#x27;flexberry-file&#x27;, &#x27;ui&#x27;, &#x27;fluid&#x27;, &#x27;action&#x27;, &#x27;input&#x27;],
 
   /**
-   * Css class for buttons.
+   * Classes for buttons.
+   *
+   * @property buttonClass
+   * @type String
+   * @default undefined
    */
-  classButton: undefined,
+  buttonClass: undefined,
 
   /**
    * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
@@ -262,7 +266,7 @@ export default FlexberryBaseComponent.extend({
    *
    * @property viewImageAction
    * @type String
-   * @default &#x60;flexberryFileViewImageAction&#x60;
+   * @default &#x27;flexberryFileViewImageAction&#x27;
    */
   viewImageAction: &#x27;flexberryFileViewImageAction&#x27;,
 
@@ -272,7 +276,7 @@ export default FlexberryBaseComponent.extend({
    * @property _selectedFileSrc
    * @private
    * @type String
-   * @default &#x60;&#x60;
+   * @default &#x27;&#x27;
    */
   _selectedFileSrc: &#x27;&#x27;,
 

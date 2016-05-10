@@ -151,12 +151,6 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
  * @extends FlexberryBaseComponent
  */
 export default FlexberryBaseComponent.extend({
-  init: function() {
-    this._super(...arguments);
-    if (!this.get(&#x27;editFormRoute&#x27;)) {
-      this.set(&#x27;editFormRoute&#x27;, this.get(&#x27;modelName&#x27;));
-    }
-  },
 
   actions: {
     /**
@@ -314,7 +308,6 @@ export default FlexberryBaseComponent.extend({
    *
    * @property editFormRoute
    * @type String
-   * @default &#x27;this.modelName&#x27;
    */
   editFormRoute: undefined,
 
@@ -488,9 +481,13 @@ export default FlexberryBaseComponent.extend({
   modelName: null,
 
   /**
-   * Css class for buttons.
+   * Classes for buttons.
+   *
+   * @property buttonClass
+   * @type String
+   * @default undefined
    */
-  classButton: undefined,
+  buttonClass: undefined,
 
   /**
    * Flag: indicates whether to show creation button at toolbar.

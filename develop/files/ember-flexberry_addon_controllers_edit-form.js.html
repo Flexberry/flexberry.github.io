@@ -325,8 +325,9 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
     // TODO: нужно учитывать пэйджинг.
     // Без сервера не обойтись, наверное. Нужно определять, на какую страницу редиректить.
     // Либо редиректить на что-то типа /{parentRoute}/page/whichContains/{object id}, а контроллер/роут там далее разрулит, куда дальше послать редирект.
-    let routeName = this.get(&#x27;parentRoute&#x27;) || Ember.String.pluralize(this.get(&#x27;model.constructor.modelName&#x27;));
-    this.transitionToRoute(routeName);
+    let parentRoute = this.get(&#x27;parentRoute&#x27;);
+    Ember.assert(&#x27;Parent route must be defined.&#x27;, parentRoute);
+    this.transitionToRoute(parentRoute);
   },
 
   /**

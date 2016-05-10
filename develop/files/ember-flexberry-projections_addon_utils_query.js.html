@@ -209,7 +209,7 @@ function getODataExpandQuery(queryTree) {
   }
 
   var query = [];
-  expandProperties.forEach(function(propertyName) {
+  expandProperties.forEach(function (propertyName) {
     var subTree = queryTree.expand[propertyName];
     var expr = propertyName;
     var select = getODataSelectQuery(subTree);
