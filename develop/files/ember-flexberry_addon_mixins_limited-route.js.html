@@ -186,14 +186,26 @@ export default Ember.Mixin.create({
     var filter = params.filter;
 
     if (typeof filter === &#x27;string&#x27; &amp;&amp; filter.length &gt; 0) {
-      var adapter = this.store.adapterFor(modelProjection.modelName);
-      finalString = adapter.combineFilterWithFilterByAnyMatch(
-        this.store, finalString, filter, modelProjection.modelName, attrToFilterNames);
+      finalString = combineFilterWithFilterByAnyMatch(this.store, finalString, filter, modelProjection.modelName, attrToFilterNames);
     }
 
     return finalString;
   }
 });
+
+function combineFilterWithFilterByAnyMatch(store, currentFilter, matchPattern, modelName, modelFields) {
+  var containsExpressions = modelFields.map(function(fieldName) {
+    var backendFieldName = store.serializerFor(modelName).keyForAttribute(fieldName);
+    return &#x27;contains(&#x27; + backendFieldName + &#x27;, \&#x27;&#x27; + matchPattern + &#x27;\&#x27;)&#x27;;
+  });
+
+  var newExpression = containsExpressions.join(&#x27; and &#x27;);
+  if (typeof currentFilter === &#x27;string&#x27; &amp;&amp; currentFilter.length &gt; 0) {
+    newExpression = &#x27;(&#x27; + currentFilter + &#x27;) and (&#x27; + newExpression + &#x27;)&#x27;;
+  }
+
+  return newExpression;
+}
 
     </pre>
 </div>

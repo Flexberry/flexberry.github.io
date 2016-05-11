@@ -73,13 +73,6 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry/addon/adapters/odata.js": {
-            "name": "ember-flexberry/addon/adapters/odata.js",
-            "modules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
         "ember-flexberry/addon/components/mobile/flexberry-file.js": {
             "name": "ember-flexberry/addon/components/mobile/flexberry-file.js",
             "modules": {
@@ -1236,8 +1229,8 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 11,
-            "description": "Base route for the List Forms.\n\nThis class re-exports to the application as `/routes/list-form`.\nSo, you can inherit from `./list-form`, even if file `app/routes/list-form.js`\nis not presented in the application.\n\nExample:\n```js\n// app/routes/employees.js\nimport ListFormRoute from './list-form';\nexport default ListFormRoute.extend({\n});\n```\n\nIf you want to add some common logic on all List Forms, you can define\n(actually override) `app/routes/list-form.js` as follows:\n```js\n// app/routes/list-form.js\nimport ListFormRoute from 'ember-flexberry/routes/list-form';\nexport default ListFormRoute.extend({\n});\n```",
+            "line": 12,
+            "description": "Base route for the List Forms.\n\nThis class re-exports to the application as `/routes/list-form`.\nSo, you can inherit from `./list-form`, even if file `app/routes/list-form.js`\nis not presented in the application.\n\nExample:\n```js\n// app/routes/employees.js\nimport ListFormRoute from './list-form';\nexport default ListFormRoute.extend({\n});\n```\nIf you want to add some common logic on all List Forms, you can define\n(actually override) `app/routes/list-form.js` as follows:\n```js\n// app/routes/list-form.js\nimport ListFormRoute from 'ember-flexberry/routes/list-form';\nexport default ListFormRoute.extend({\n});\n```",
             "extends": "ProjectedModelFormRoute",
             "uses": [
                 "PaginatedRouteMixin",
@@ -1256,7 +1249,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 7,
+            "line": 10,
             "description": "Service to work with user settings on server.",
             "extends": "Ember.Service",
             "access": "public",
@@ -1808,147 +1801,6 @@
                 "type": "Object"
             },
             "class": "Projection",
-            "module": "ember-flexberry-projections"
-        },
-        {
-            "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 29,
-            "description": "Creates query with given projection name (if not null) and limit function (if not empty).",
-            "itemtype": "method",
-            "name": "getLimitFunctionQuery",
-            "params": [
-                {
-                    "name": "limitFunction",
-                    "description": "Filter to add to query (if empty noting will be added as filter).",
-                    "type": "String"
-                },
-                {
-                    "name": "projectionName",
-                    "description": "Projection name to add to query (if empty noting will be added as projection name).",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "Created query.",
-                "type": "Object"
-            },
-            "class": "FlexberryBaseComponent",
-            "module": "ember-flexberry-projections"
-        },
-        {
-            "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 50,
-            "description": "Creates limit function by given structure.\nIf operation is not supported, an exception is thrown.",
-            "itemtype": "method",
-            "name": "getLimitFunction",
-            "params": [
-                {
-                    "name": "limitData",
-                    "description": "Structure to build limit function.",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Created limit function.",
-                "type": "String"
-            },
-            "class": "FlexberryBaseComponent",
-            "module": "ember-flexberry-projections"
-        },
-        {
-            "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 75,
-            "description": "Forms url to get all entities of certain type.",
-            "itemtype": "method",
-            "name": "getUrlForTypeQuery",
-            "params": [
-                {
-                    "name": "type",
-                    "description": "Type of entities.",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "Formed url.",
-                "type": "Object"
-            },
-            "throws": {
-                "description": "Throws error if type parameter is undefined.",
-                "type": "Error"
-            },
-            "class": "FlexberryBaseComponent",
-            "module": "ember-flexberry-projections"
-        },
-        {
-            "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 92,
-            "description": "Forms query options to get entities by specified lookup options.",
-            "itemtype": "method",
-            "name": "getQueryOptionsForAutocompleteLookup",
-            "params": [
-                {
-                    "name": "lookupParameters",
-                    "description": "Specified lookup autocomplete options.",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Formed query options.",
-                "type": "Object"
-            },
-            "class": "FlexberryBaseComponent",
-            "module": "ember-flexberry-projections"
-        },
-        {
-            "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 132,
-            "description": "Combines the provided filter string with filter expression to match those objects\nwhich have attributes containing the provided pattern;",
-            "itemtype": "method",
-            "name": "combineFilterWithFilterByAnyMatch",
-            "params": [
-                {
-                    "name": "store",
-                    "description": "The store to retrieve a serializer for model.",
-                    "type": "Object"
-                },
-                {
-                    "name": "currentFilter",
-                    "description": "Current filter string to be combined with created expression.",
-                    "type": "String"
-                },
-                {
-                    "name": "matchPattern",
-                    "description": "The substring to match objects' attributes.",
-                    "type": "String"
-                },
-                {
-                    "name": "modelName",
-                    "description": "The name of the filtered model.",
-                    "type": "String"
-                },
-                {
-                    "name": "modelFields",
-                    "description": "The array of strings containing names of model attributes to use in matching.\n\nToDo: It's the temporary solution made to move backend-specific logic to adapter. It's needed\nto use any abstract query language and create filters in Ember objects with it, then convert\nthese filters to backend-specific filter expressions by an utitility method in each adapter.",
-                    "type": "Array"
-                }
-            ],
-            "class": "FlexberryBaseComponent",
-            "module": "ember-flexberry-projections"
-        },
-        {
-            "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 209,
-            "description": "Makes HTTP request for creating, updating or deleting the record.",
-            "class": "FlexberryBaseComponent",
-            "module": "ember-flexberry-projections"
-        },
-        {
-            "file": "ember-flexberry/addon/adapters/odata.js",
-            "line": 252,
-            "description": "Appends id to URL according to the OData specification.",
-            "access": "private",
-            "tagname": "",
-            "class": "FlexberryBaseComponent",
             "module": "ember-flexberry-projections"
         },
         {
@@ -6843,7 +6695,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 17,
+            "line": 20,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
@@ -6854,7 +6706,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 26,
+            "line": 29,
             "description": "Service for auth matters.\nFlexberryAuthService is injected here by default.",
             "itemtype": "property",
             "name": "currentAuthService",
@@ -6864,7 +6716,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 36,
+            "line": 39,
             "description": "Handles action from lookup choose action.",
             "itemtype": "method",
             "name": "showLookupDialog",
@@ -6880,7 +6732,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 138,
+            "line": 153,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -6889,7 +6741,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 148,
+            "line": 163,
             "description": "Handles action from lookup remove action.",
             "itemtype": "method",
             "name": "removeLookupValue",
@@ -6905,7 +6757,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 169,
+            "line": 184,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "updateLookupValue",
@@ -6921,7 +6773,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 197,
+            "line": 212,
             "description": "Forms url to get all availible entities of certain relation.",
             "itemtype": "method",
             "name": "getLookupAutocompleteUrl",
@@ -6941,8 +6793,8 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 210,
-            "description": "Forms query parameters by lookup autocomplete parameters.",
+            "line": 224,
+            "description": "Forms query by lookup autocomplete parameters.",
             "itemtype": "method",
             "name": "getAutocompleteLookupQueryOptions",
             "params": [
@@ -6953,7 +6805,7 @@
                 }
             ],
             "return": {
-                "description": "Formed query parameters.",
+                "description": "Formed query.",
                 "type": "Object"
             },
             "class": "BaseModel",
@@ -6961,7 +6813,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 228,
+            "line": 248,
             "description": "It updates autocomplete lookup xhr before send in order to add necessary auth information.",
             "itemtype": "method",
             "name": "updateAutocompleteLookupXhr",
@@ -6994,7 +6846,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
-            "line": 243,
+            "line": 263,
             "description": "Gets related object type by relation name from specified model.",
             "itemtype": "method",
             "name": "_getRelationType",
@@ -8061,7 +7913,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 15,
+            "line": 18,
             "description": "Current store to request records.",
             "itemtype": "property",
             "name": "store",
@@ -8073,7 +7925,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 24,
+            "line": 27,
             "description": "Flag: indicates whether to use user settings service (if `true`) or not (if `false`).\nThis flag is readed from config setting `APP.useUserSettingsService` and can be changed programatically later.",
             "itemtype": "property",
             "name": "isUserSettingsServiceEnabled",
@@ -8086,7 +7938,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 35,
+            "line": 38,
             "description": "It saves user settings.",
             "itemtype": "method",
             "name": "saveUserSetting",
@@ -8122,7 +7974,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 83,
+            "line": 86,
             "description": "It gets user setting from server by setting's and module's names.",
             "itemtype": "method",
             "name": "getUserSetting",
@@ -8155,7 +8007,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 125,
+            "line": 128,
             "description": "It looks for already created user settings records.",
             "itemtype": "method",
             "name": "_getExistingRecord",
@@ -8182,7 +8034,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings-service.js",
-            "line": 184,
+            "line": 170,
             "description": "It returns the name of current user.\nIt has to be overriden if some authentication is used.",
             "itemtype": "method",
             "name": "getCurrentUser",
@@ -8420,14 +8272,6 @@
         {
             "message": "Missing item type\nConverts projection to URL query params for OData v4.",
             "line": " ember-flexberry-projections/addon/utils/query.js:5"
-        },
-        {
-            "message": "Missing item type\nMakes HTTP request for creating, updating or deleting the record.",
-            "line": " ember-flexberry/addon/adapters/odata.js:209"
-        },
-        {
-            "message": "Missing item type\nAppends id to URL according to the OData specification.",
-            "line": " ember-flexberry/addon/adapters/odata.js:252"
         },
         {
             "message": "Missing item type\nMobile version of flexberry-file (with mobile-specific defaults).",

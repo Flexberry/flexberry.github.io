@@ -143,6 +143,9 @@
 
 import Ember from &#x27;ember&#x27;;
 
+import QueryBuilder from &#x27;ember-flexberry-projections/query/builder&#x27;;
+import { SimplePredicate } from &#x27;ember-flexberry-projections/query/predicate&#x27;;
+
 /**
  * Service to work with user settings on server.
  *
@@ -273,37 +276,20 @@ export default Ember.Service.extend({
    */
   _getExistingRecord: function(moduleName, settingName) {
     // TODO: add search by username.
+    let currentUserName = this.getCurrentUser();
+    let p = new SimplePredicate(&#x27;moduleName&#x27;, &#x27;eq&#x27;, moduleName)
+      .and(&#x27;settName&#x27;, &#x27;eq&#x27;, settingName)
+      .and(&#x27;userName&#x27;, &#x27;eq&#x27;, currentUserName);
+
     let store = this.get(&#x27;store&#x27;);
     let modelName = &#x27;new-platform-flexberry-flexberry-user-setting&#x27;;
-    let currentUserName = this.getCurrentUser();
-    let adapter = store.adapterFor(modelName);
-    let filterString = adapter.getLimitFunction({
-      operation: &#x27;and&#x27;,
-      arguments: [
-        {
-          operation: &#x27;=&#x27;,
-          arguments: [&#x27;moduleName&#x27;, moduleName]
-        },
-        {
-          operation: &#x27;and&#x27;,
-          arguments: [{
-            operation: &#x27;=&#x27;,
-            arguments: [&#x27;settName&#x27;, settingName]
-          },
-          {
-            operation: &#x27;=&#x27;,
-            arguments: [&#x27;userName&#x27;, currentUserName]
-          }]
-        }
-      ]
-    });
-    let limitFunctionQuery = adapter.getLimitFunctionQuery(filterString, &#x27;FlexberryUserSettingE&#x27;);
+    let builder = new QueryBuilder(store)
+      .from(modelName)
+      .selectByProjection(&#x27;FlexberryUserSettingE&#x27;)
+      .top(2)
+      .where(p);
 
-    let query = {};
-    Ember.merge(query, limitFunctionQuery);
-    Ember.merge(query, { $top: 2 });
-
-    return store.query(modelName, query).then(function(result) {
+    return store.query(modelName, builder.build()).then(function(result) {
       if (result) {
         let foundRecords = result.get(&#x27;content&#x27;);
         if (Ember.isArray(foundRecords) &amp;&amp; foundRecords.length &gt; 0) {
