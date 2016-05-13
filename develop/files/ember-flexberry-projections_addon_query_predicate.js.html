@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry-projections/addon/query/predicate.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryAuthService", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryEmberSimpleAuthService", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-projections"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/DS.ODataAdapter.html">DS.ODataAdapter</a></li>
+	                            <li><a href="../classes/DS.Projection.html">DS.Projection</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckboxComponent.html">FlexberrCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryAuthService.html">FlexberryAuthService</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEmberSimpleAuthService.html">FlexberryEmberSimpleAuthService</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryFileController.html">FlexberryFileController</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryMenuComponent.html">FlexberryMenuComponent</a></li>
+	                            <li><a href="../classes/FlexberryMenuitemComponent.html">FlexberryMenuitemComponent</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
+	                            <li><a href="../classes/ObjectListView.html">ObjectListView</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCell.html">ObjectListViewSingleColumnCell</a></li>
+	                            <li><a href="../classes/Query.BaseAdapter.html">Query.BaseAdapter</a></li>
+	                            <li><a href="../classes/Query.BaseBuilder.html">Query.BaseBuilder</a></li>
+	                            <li><a href="../classes/Query.BasePredicate.html">Query.BasePredicate</a></li>
+	                            <li><a href="../classes/Query.Builder.html">Query.Builder</a></li>
+	                            <li><a href="../classes/Query.ComplexPredicate.html">Query.ComplexPredicate</a></li>
+	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
+	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
+	                            <li><a href="../classes/Query.JSAdapter.html">Query.JSAdapter</a></li>
+	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
+	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
+	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
+	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
+	                            <li><a href="../classes/Serializer.OData.html">Serializer.OData</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry-projections/addon/query/predicate.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import FilterOperator from &#x27;./filter-operator&#x27;;
+import Condition from &#x27;./condition&#x27;;
+
+/**
+ * The base class of logical predicate.
+ *
+ * @module ember-flexberry-projections
+ * @namespace Query
+ * @class BasePredicate
+ */
+export class BasePredicate {
+  constructor() {
+  }
+}
+
+/**
+ * The class of simple predicate for filtering attribute by value and filter operator.
+ *
+ * @namespace Query
+ * @class SimplePredicate
+ * @extends BasePredicate
+ *
+ * @param attributeName {String} The name of the attribute for filtering.
+ * @param operator {Query.FilterOperator|String} The filter operator.
+ * @param value {String|Number} The value for filtering.
+ * @constructor
+ */
+export class SimplePredicate extends BasePredicate {
+  constructor(attributeName, operator, value) {
+    super();
+
+    this._attributeName = attributeName;
+    this._operator = FilterOperator.tryCreate(operator);
+    this._value = value;
+  }
+
+  /**
+   * The name of the attribute for filtering.
+   *
+   * @property attributeName
+   * @type String
+   * @public
+   */
+  get attributeName() {
+    return this._attributeName;
+  }
+
+  /**
+   * The filter operator.
+   *
+   * @property operator
+   * @type Query.FilterOperator
+   * @public
+   */
+  get operator() {
+    return this._operator;
+  }
+
+  /**
+   * The value for filtering.
+   *
+   * @property value
+   * @type String|Number
+   * @public
+   */
+  get value() {
+    return this._value;
+  }
+
+  /**
+   * Converts this instance to string.
+   *
+   * @method toString
+   * @return {String} Text representation of the predicate.
+   * @public
+   */
+  toString() {
+    return &#x60;(${this._attributeName} ${this._operator} ${this._value})&#x60;;
+  }
+}
+
+/**
+ * The class of complex predicate which include multiple predicates unioned with logical condition.
+ *
+ * @namespace Query
+ * @class ComplexPredicate
+ * @extends BasePredicate
+ *
+ * @param condition {Query.Condition} Logical condition for predicates.
+ * @param ...predicates {Query.BasePredicate} List of predicates for combining.
+ * @constructor
+ */
+export class ComplexPredicate extends BasePredicate {
+  constructor(condition, ...predicates) {
+    super();
+
+    if (predicates === null || !(predicates instanceof Array)) {
+      throw new Error(&#x60;Wrong predicates&#x60;);
+    }
+
+    if (predicates.length &lt; 2) {
+      throw new Error(&#x60;Complex predicate requires at least two nested predicates&#x60;);
+    }
+
+    predicates.forEach(i =&gt; {
+      if (!i || !(i instanceof BasePredicate)) {
+        throw new Error(&#x60;Wrong predicate ${i}&#x60;);
+      }
+    });
+
+    this._condition = Condition.tryCreate(condition);
+    this._predicates = predicates;
+  }
+
+  get condition() {
+    return this._condition;
+  }
+
+  get predicates() {
+    return this._predicates;
+  }
+
+  and(...predicates) {
+    // Just add the predicate if conditions match.
+    if (this._condition === Condition.And) {
+      this.predicates.forEach(p =&gt; predicates.unshift(p));
+      return new ComplexPredicate(Condition.And, ...predicates);
+    }
+
+    return super.and(...predicates);
+  }
+
+  or(...predicates) {
+    // Just add the predicate if conditions match.
+    if (this._condition === Condition.Or) {
+      this.predicates.forEach(p =&gt; predicates.unshift(p));
+      return new ComplexPredicate(Condition.Or, ...predicates);
+    }
+
+    return super.or(...predicates);
+  }
+
+  /**
+   * Converts this instance to string.
+   *
+   * @method toString
+   * @return {String} Text representation of the predicate.
+   * @public
+   */
+  toString() {
+    return &#x60;(${this._predicates.map(i =&gt; i.toString()).join(&#x60; ${this.condition} &#x60;)})&#x60;;
+  }
+}
+
+/**
+ * The predicate class for string attributes.
+ *
+ * @namespace Query
+ * @class StringPredicate
+ * @extends BasePredicate
+ *
+ * @param {String} attributeName The name of attribute for predicate.
+ * @constructor
+ */
+export class StringPredicate extends BasePredicate {
+  constructor(attributeName) {
+    super();
+
+    this._attributeName = attributeName;
+    this._containsValue = null;
+  }
+
+  /**
+   * The name of attribute for predicate.
+   *
+   * @property attributeName
+   * @type {String}
+   * @public
+   */
+  get attributeName() {
+    return this._attributeName;
+  }
+
+  /**
+   * The value that has to be contained in the attribute.
+   *
+   * @property containsValue
+   * @type {String}
+   * @public
+   */
+  get containsValue() {
+    return this._containsValue;
+  }
+
+  /**
+   * Sets the value that the attribute has to contain.
+   *
+   * @method contains
+   * @param {String} value The value that the attribute has to contain.
+   * @return {Query.StringPredicate} Returns this instance.
+   * @chainable
+   */
+  contains(value) {
+    this._containsValue = value;
+    return this;
+  }
+}
+
+/**
+ * Combines specified predicates using &#x60;and&#x60; logic condition.
+ *
+ * @for BasePredicate
+ * @method and
+ * @param {Query.BasePredicate} ...predicates List of predicates for combining.
+ * @return {Query.ComplexPredicate} Combined complex predicate with &#x60;and&#x60; logic.
+ * @public
+ */
+BasePredicate.prototype.and = function (...predicates) {
+  predicates.unshift(this);
+  return new ComplexPredicate(Condition.And, ...predicates);
+};
+
+/**
+ * Combines specified predicates using &#x60;or&#x60; logic condition.
+ *
+ * @for BasePredicate
+ * @method or
+ * @param {Query.BasePredicate} ...predicates List of predicates for combining.
+ * @return {Query.ComplexPredicate} Combined complex predicate with &#x60;or&#x60; logic.
+ * @public
+ */
+BasePredicate.prototype.or = function (...predicates) {
+  predicates.unshift(this);
+  return new ComplexPredicate(Condition.Or, ...predicates);
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
