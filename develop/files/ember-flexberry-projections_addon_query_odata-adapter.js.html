@@ -297,7 +297,7 @@ function buildODataOrderBy(query) {
  */
 function convertPredicateToODataFilterClause(predicate, store, modelName) {
   if (predicate instanceof SimplePredicate) {
-    let type;
+    let type = &#x27;?&#x27;;
     store.modelFor(modelName).eachAttribute(function(name, meta) {
       if (name === predicate.attributeName) {
         type = meta.type;
@@ -305,12 +305,11 @@ function convertPredicateToODataFilterClause(predicate, store, modelName) {
     });
 
     let value = type === &#x27;string&#x27; ? &#x60;&#x27;${predicate.value}&#x27;&#x60; : predicate.value;
-
     return &#x60;${predicate.attributeName} ${predicate.operator} ${value}&#x60;;
   }
 
   if (predicate instanceof StringPredicate) {
-    return &#x60;contains(&#x27;${predicate.attributeName}&#x27;,&#x27;${predicate.containsValue}&#x27;)&#x60;;
+    return &#x60;contains(${predicate.attributeName},&#x27;${predicate.containsValue}&#x27;)&#x60;;
   }
 
   if (predicate instanceof ComplexPredicate) {
