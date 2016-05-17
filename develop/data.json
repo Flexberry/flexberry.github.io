@@ -7064,7 +7064,7 @@
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
             "line": 541,
-            "description": "Hook for configurate rows.\n\n   Example:\n   ```handlebars\n   <!-- app/templates/employees.hbs -->\n   {{flexberry-objectlistview\n     ...\n     configurateRow=(action 'configurateRow')\n     ...\n   }}\n   ```\n\n   ```js\n   // app/controllers/employees.js\n   import ListFormController from './list-form';\n\n   export default ListFormController.extend({\n     actions: {\n       configurateRow: function(rowConfig, record) {\n         rowConfig.canBeDeleted = false;\n       }\n     }\n   });\n   ```",
+            "description": "Hook for configurate rows.\n\n   Example:\n   ```handlebars\n   <!-- app/templates/employees.hbs -->\n   {{flexberry-objectlistview\n     ...\n     configurateRow=(action 'configurateRow')\n     ...\n   }}\n   ```\n\n   ```js\n   // app/controllers/employees.js\n   import ListFormController from './list-form';\n\n   export default ListFormController.extend({\n     actions: {\n       configurateRow: function(rowConfig, record) {\n         rowConfig.canBeDeleted = false;\n         if (record.get('isMyFavoriteRecord')) {\n           rowConfig.customClass += 'my-fav-record';\n         }\n       }\n     }\n   });\n   ```",
             "itemtype": "method",
             "name": "configurateRow",
             "params": [
@@ -7084,7 +7084,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 574,
+            "line": 577,
             "description": "Default settings for rows.",
             "itemtype": "property",
             "name": "defaultRowConfig",
@@ -7105,12 +7105,19 @@
                     "type": "Boolean",
                     "optional": true,
                     "optdefault": "true"
+                },
+                {
+                    "name": "customClass",
+                    "description": "Custom css classes for the row.",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "''"
                 }
             ]
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 587,
+            "line": 592,
             "description": "Flag: indicates whether DELETE request should be immediately sended to server (on each deleted record) or not.",
             "itemtype": "property",
             "name": "immediateDelete",
@@ -7121,7 +7128,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 596,
+            "line": 601,
             "description": "Flag: indicates whether records should be edited on separate route.",
             "itemtype": "property",
             "name": "editOnSeparateRoute",
@@ -7132,7 +7139,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 605,
+            "line": 610,
             "description": "Flag: indicates whether to save current model before going to the detail's route.",
             "itemtype": "property",
             "name": "saveBeforeRouteLeave",
@@ -7143,7 +7150,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 614,
+            "line": 619,
             "description": "Ember data store.",
             "itemtype": "property",
             "name": "store",
@@ -7153,7 +7160,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 622,
+            "line": 627,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEventsService",
@@ -7163,7 +7170,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 630,
+            "line": 635,
             "description": "Hook that can be used to confirm delete row.\n\nExample:\n```handlebars\n<!-- app/templates/your-template.hbs -->\n{{flexberry-objectlistview\n  ...\n  confirmDeleteRow=(action 'confirmDeleteRow')\n  ...\n}}\n```\n\n```js\n// app/controllers/your-controller.js\n...\nactions: {\n  ...\n  confirmDeleteRow(row) {\n    return confirm('You sure?');\n  }\n  ...\n}\n...\n```",
             "itemtype": "method",
             "name": "confirmDeleteRow.",
@@ -7183,7 +7190,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 662,
+            "line": 667,
             "description": "Hook that can be used to confirm delete rows.\n\nExample:\n```handlebars\n<!-- app/templates/your-template.hbs -->\n{{flexberry-objectlistview\n  ...\n  confirmDeleteRows=(action 'confirmDeleteRows')\n  ...\n}}\n```\n\n```js\n// app/controllers/your-controller.js\n...\nactions: {\n  ...\n  confirmDeleteRows(selectedRows) {\n    if (selectedRows.length < 5) {\n      return confirm('You sure?');\n    } else {\n      return true;\n    }\n  }\n  ...\n}\n...\n```",
             "itemtype": "method",
             "name": "confirmDeleteRows.",
@@ -7203,28 +7210,28 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 698,
+            "line": 703,
             "description": "Initializes component.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 723,
+            "line": 728,
             "description": "Destroys component.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 733,
+            "line": 738,
             "description": "Initializes component's DOM-related logic.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 764,
+            "line": 769,
             "description": "This hook is called during both render and re-render after the template has rendered and the DOM updated.\nPlugins (such as plugin for column resize) are initialized here.",
             "itemtype": "method",
             "name": "didRender",
@@ -7233,7 +7240,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 795,
+            "line": 800,
             "description": "It reinits plugin for column resize.\nReinit is important for proper position of resize elements.",
             "itemtype": "method",
             "name": "_reinitResizablePlugin",
@@ -7244,7 +7251,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 817,
+            "line": 822,
             "description": "It handles the end of getting user setting with column widths.",
             "itemtype": "method",
             "name": "_setColumnWidths",
@@ -7262,7 +7269,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 862,
+            "line": 867,
             "description": "It handles the end of column resize.\nNew column widths are send to user settings service for saving.",
             "itemtype": "method",
             "name": "_afterColumnResize",
@@ -7280,7 +7287,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 901,
+            "line": 906,
             "description": "This method returns property name for column.\nProperty name is got from atribute `data-olv-header-property-name` of column header.\nIf property name won't be found, exeption will be thrown.",
             "itemtype": "method",
             "name": "_getColumnPropertyName",
@@ -7302,7 +7309,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 924,
+            "line": 929,
             "description": "Computed property forms unique name for component from model name and current route.\nThis unique name can be used as module name for user settings service.",
             "itemtype": "property",
             "name": "_moduleName",
@@ -7314,14 +7321,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 941,
+            "line": 946,
             "description": "Destroys component's DOM-related logic.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1062,
+            "line": 1067,
             "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
             "itemtype": "method",
             "name": "_addModel",
@@ -7343,7 +7350,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1097,
+            "line": 1102,
             "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
             "itemtype": "method",
             "name": "_addRow",
@@ -7361,7 +7368,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1122,
+            "line": 1127,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -7382,7 +7389,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1155,
+            "line": 1160,
             "description": "Hook that executes before deleting the record.\n\n Example:\n ```handlebars\n <!-- app/templates/employees.hbs -->\n {{flexberry-objectlistview\n   ...\n   beforeDeleteRecord=(action 'beforeDeleteRecord')\n   ...\n }}\n ```\n\n ```js\n // app/controllers/employees.js\n import ListFormController from './list-form';\n\n export default ListFormController.extend({\n   actions: {\n     beforeDeleteRecord: function(record, data) {\n       if (record.get('myProperty')) {\n         data.cancel = true;\n       }\n     }\n   }\n });\n ```",
             "itemtype": "method",
             "name": "beforeDeleteRecord",
@@ -7418,7 +7425,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1223,
+            "line": 1228,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -7445,7 +7452,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1246,
+            "line": 1251,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -10257,19 +10264,19 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:698"
+            "line": " ember-flexberry/addon/components/object-list-view.js:703"
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:723"
+            "line": " ember-flexberry/addon/components/object-list-view.js:728"
         },
         {
             "message": "Missing item type\nInitializes component's DOM-related logic.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:733"
+            "line": " ember-flexberry/addon/components/object-list-view.js:738"
         },
         {
             "message": "Missing item type\nDestroys component's DOM-related logic.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:941"
+            "line": " ember-flexberry/addon/components/object-list-view.js:946"
         },
         {
             "message": "Missing item type\nActions handlers.",
