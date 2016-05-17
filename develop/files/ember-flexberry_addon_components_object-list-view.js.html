@@ -203,9 +203,15 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
         return;
       }
 
-      if (confirm(&#x27;Do you really want to delete this record?&#x27;)) {
-        this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+      let confirmDeleteRow = this.get(&#x27;confirmDeleteRow&#x27;);
+      if (confirmDeleteRow) {
+        Ember.assert(&#x27;Error: confirmDeleteRow must be a function.&#x27;, typeof confirmDeleteRow === &#x27;function&#x27;);
+        if (!confirmDeleteRow(recordWithKey.data)) {
+          return;
+        }
       }
+
+      this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
     },
 
     selectRow: function(recordWithKey, e) {
@@ -773,6 +779,74 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   objectlistviewEventsService: Ember.inject.service(&#x27;objectlistview-events&#x27;),
 
   /**
+   * Hook that can be used to confirm delete row.
+   *
+   * Example:
+   * &#x60;&#x60;&#x60;handlebars
+   * &lt;!-- app/templates/your-template.hbs --&gt;
+   * {{flexberry-objectlistview
+   *   ...
+   *   confirmDeleteRow=(action &#x27;confirmDeleteRow&#x27;)
+   *   ...
+   * }}
+   * &#x60;&#x60;&#x60;
+   *
+   * &#x60;&#x60;&#x60;js
+   * // app/controllers/your-controller.js
+   * ...
+   * actions: {
+   *   ...
+   *   confirmDeleteRow(row) {
+   *     return confirm(&#x27;You sure?&#x27;);
+   *   }
+   *   ...
+   * }
+   * ...
+   * &#x60;&#x60;&#x60;
+   *
+   * @method confirmDeleteRow.
+   * @param {Object} row Row.
+   * @return {Boolean} If &#x60;true&#x60; then delete row else cancel delete.
+   */
+  confirmDeleteRow: null,
+
+  /**
+   * Hook that can be used to confirm delete rows.
+   *
+   * Example:
+   * &#x60;&#x60;&#x60;handlebars
+   * &lt;!-- app/templates/your-template.hbs --&gt;
+   * {{flexberry-objectlistview
+   *   ...
+   *   confirmDeleteRows=(action &#x27;confirmDeleteRows&#x27;)
+   *   ...
+   * }}
+   * &#x60;&#x60;&#x60;
+   *
+   * &#x60;&#x60;&#x60;js
+   * // app/controllers/your-controller.js
+   * ...
+   * actions: {
+   *   ...
+   *   confirmDeleteRows(selectedRows) {
+   *     if (selectedRows.length &lt; 5) {
+   *       return confirm(&#x27;You sure?&#x27;);
+   *     } else {
+   *       return true;
+   *     }
+   *   }
+   *   ...
+   * }
+   * ...
+   * &#x60;&#x60;&#x60;
+   *
+   * @method confirmDeleteRows.
+   * @param {Array} selectedRows Selected rows.
+   * @return {Boolean} If &#x60;true&#x60; then delete selected rows else cancel delete.
+   */
+  confirmDeleteRows: null,
+
+  /**
    * Initializes component.
    */
   init: function() {
@@ -1206,21 +1280,26 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
    */
   _deleteRows: function(componentName, immediately) {
     if (componentName === this.get(&#x27;componentName&#x27;)) {
-      if (confirm(&#x27;Do you really want to delete selected records?&#x27;)) {
-        this.send(&#x27;dismissErrorMessages&#x27;);
-
-        var _this = this;
-        var selectedRecords = this.get(&#x27;selectedRecords&#x27;);
-        var count = selectedRecords.length;
-        selectedRecords.forEach(function(item, index, enumerable) {
-          Ember.run.once(this, function() {
-            _this._deleteRecord(item, immediately);
-          });
-        }, this);
-
-        selectedRecords.clear();
-        this.get(&#x27;objectlistviewEventsService&#x27;).rowsDeletedTrigger(componentName, count);
+      var selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+      let confirmDeleteRows = this.get(&#x27;confirmDeleteRows&#x27;);
+      if (confirmDeleteRows) {
+        Ember.assert(&#x27;Error: confirmDeleteRows must be a function.&#x27;, typeof confirmDeleteRows === &#x27;function&#x27;);
+        if (!confirmDeleteRows(selectedRecords)) {
+          return;
+        }
       }
+
+      var _this = this;
+      var count = selectedRecords.length;
+      this.send(&#x27;dismissErrorMessages&#x27;);
+      selectedRecords.forEach(function(item, index, enumerable) {
+        Ember.run.once(this, function() {
+          _this._deleteRecord(item, immediately);
+        });
+      }, this);
+
+      selectedRecords.clear();
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowsDeletedTrigger(componentName, count);
     }
   },
 

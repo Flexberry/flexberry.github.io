@@ -271,59 +271,192 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
    * Actions handlers.
    */
   actions: {
-    save: function() {
-      this.send(&#x27;dismissErrorMessages&#x27;);
-
-      this.save().then(() =&gt; {
-        this._onSaveActionFulfilled();
-      }).catch((errorData) =&gt; {
-        this._onSaveActionRejected(errorData);
-      });
+    /**
+     * Default action for button &#x27;Save&#x27;.
+     * You can override this action to add custom logic.
+     *
+     * Example:
+     * &#x60;&#x60;&#x60;js
+     * // app/controllers/your-controller.js
+     * ...
+     * actions: {
+     *   ...
+     *   save() {
+     *     if (confirm(&#x27;You sure?&#x27;)) {
+     *       this.save();
+     *     }
+     *   }
+     *   ...
+     * }
+     * ...
+     * onSaveActionFulfilled() {
+     *   alert(&#x27;Save successful!&#x27;);
+     * }
+     * ...
+     * onSaveActionRejected() {
+     *   alert(&#x27;Save failed!&#x27;);
+     * }
+     * ...
+     * &#x60;&#x60;&#x60;
+     *
+     * @method save.
+     */
+    save() {
+      this.save();
     },
 
-    saveAndClose: function() {
-      this.send(&#x27;dismissErrorMessages&#x27;);
-
-      this.save().then(() =&gt; {
-        this._onSaveActionFulfilled();
-        this.send(&#x27;close&#x27;);
-      }).catch((errorData) =&gt; {
-        this._onSaveActionRejected(errorData);
-      });
+    /**
+     * Default action for button &#x27;Save and close&#x27;.
+     * You can override this action to add custom logic.
+     *
+     * Example:
+     * &#x60;&#x60;&#x60;js
+     * // app/controllers/your-controller.js
+     * ...
+     * actions: {
+     *   ...
+     *   saveAndClose() {
+     *     if (confirm(&#x27;You sure?&#x27;)) {
+     *       this.save(true);
+     *     }
+     *   }
+     *   ...
+     * }
+     * ...
+     * onSaveActionFulfilled() {
+     *   alert(&#x27;Save successful!&#x27;);
+     * }
+     * ...
+     * onSaveActionRejected() {
+     *   alert(&#x27;Save failed!&#x27;);
+     * }
+     * ...
+     * &#x60;&#x60;&#x60;
+     *
+     * @method saveAndClose.
+     */
+    saveAndClose() {
+      this.save(true);
     },
 
-    delete: function() {
-      // TODO: with agregator.
-      if (confirm(&#x27;Are you sure you want to delete that record?&#x27;)) {
-        this.send(&#x27;dismissErrorMessages&#x27;);
-
-        this.delete().then(
-          this._onDeleteActionFulfilled.bind(this),
-          this._onDeleteActionRejected.bind(this)
-        );
-      }
+    /**
+     * Default action for button &#x27;Delete&#x27;.
+     * You can override this action to add custom logic.
+     *
+     * Example:
+     * &#x60;&#x60;&#x60;js
+     * // app/controllers/your-controller.js
+     * ...
+     * actions: {
+     *   ...
+     *   delete() {
+     *     if (confirm(&#x27;You sure?&#x27;)) {
+     *       this.delete();
+     *     }
+     *   }
+     *   ...
+     * }
+     * ...
+     * onDeleteActionFulfilled() {
+     *   alert(&#x27;Successful delete!&#x27;);
+     *   this.close();
+     * }
+     * ...
+     * onDeleteActionRejected() {
+     *   alert(&#x27;Failed delete!&#x27;);
+     * }
+     * ...
+     * &#x60;&#x60;&#x60;
+     *
+     * @method delete.
+     */
+    delete() {
+      this.delete();
     },
 
-    close: function() {
-      this.transitionToParentRoute();
+    /**
+     * Default action for button &#x27;Close&#x27;.
+     * You can override this action to add custom logic.
+     *
+     * Example:
+     * &#x60;&#x60;&#x60;js
+     * // app/controllers/your-controller.js
+     * ...
+     * actions: {
+     *   ...
+     *   close() {
+     *     if (confirm(&#x27;You sure?&#x27;)) {
+     *       this.close();
+     *     }
+     *   }
+     *   ...
+     * }
+     * ...
+     * &#x60;&#x60;&#x60;
+     *
+     * @method close.
+     */
+    close() {
+      this.close();
     }
   },
 
-  save: function() {
-    return this.get(&#x27;model&#x27;).save().then((model) =&gt; {
-      return this.saveHasManyRelationships(model);
+  /**
+   * Save object.
+   *
+   * @param {boolean} close If &#x60;true&#x60;, then save and close.
+   * @method save.
+   */
+  save(close) {
+    this.send(&#x27;dismissErrorMessages&#x27;);
+    this.get(&#x27;model&#x27;).save().then((model) =&gt; {
+      this.saveHasManyRelationships(model).then(() =&gt; {
+        this.onSaveActionFulfilled();
+        if (close) {
+          this.close();
+        }
+      }).catch((errorData) =&gt; {
+        this.onSaveActionRejected(errorData);
+      });
+    }).catch((errorData) =&gt; {
+      this.onSaveActionRejected(errorData);
     });
   },
 
-  delete: function() {
+  /**
+   * Delete object, if successful transition to parent route.
+   *
+   * @method delete.
+   */
+  delete() {
+    this.send(&#x27;dismissErrorMessages&#x27;);
     var model = this.get(&#x27;model&#x27;);
     if (this.get(&#x27;destroyHasManyRelationshipsOnModelDestroy&#x27;)) {
-      return this.destroyHasManyRelationships(model).then(() =&gt; {
-        return model.destroyRecord();
+      this.destroyHasManyRelationships(model).then(() =&gt; {
+        model.destroyRecord().then(() =&gt; {
+          this.onDeleteActionFulfilled();
+        }).catch((errorData) =&gt; {
+          this.onDeleteActionRejected(errorData);
+        });
+      }).catch((errorData) =&gt; {
+        this.onDeleteActionRejected(errorData);
       });
     } else {
-      return model.destroyRecord();
+      model.destroyRecord().then(() =&gt; {
+        this.onDeleteActionFulfilled();
+      }).catch((errorData) =&gt; {
+        this.onDeleteActionRejected(errorData);
+      });
     }
+  },
+
+  /**
+   * Сlose edit form and transition to parent route.
+   *
+   * @method close.
+   */
+  close() {
+    this.transitionToParentRoute();
   },
 
   /**
@@ -479,30 +612,71 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
     return Ember.RSVP.all(promises);
   },
 
-  _onSaveActionFulfilled: function() {
-    alert(this.get(&#x27;i18n&#x27;).t(&#x27;edit-form.saved-message&#x27;));
+  /**
+   * This method is called after successful save.
+   * You can override this method to add actions after save.
+   *
+   * &#x60;&#x60;&#x60;js
+   * onSaveActionFulfilled() {
+   *   alert(&#x27;Save successful!&#x27;);
+   * }
+   * &#x60;&#x60;&#x60;
+   *
+   * @method onSaveActionFulfilled.
+   */
+  onSaveActionFulfilled() {
   },
 
   /**
-   * On save model fail handler.
+   * This method is called if save ended with error.
+   * You can override this method to add actions after unsuccessful save.
+   *
+   * &#x60;&#x60;&#x60;js
+   * onSaveActionRejected() {
+   *   alert(&#x27;Save failed!&#x27;);
+   * }
+   * &#x60;&#x60;&#x60;
+   *
+   * @method onSaveActionRejected.
+   * @param {Object} errorData Info of error.
    */
-  _onSaveActionRejected: function(errorData) {
+  onSaveActionRejected(errorData) {
     this.rejectError(errorData, this.get(&#x27;i18n&#x27;).t(&#x27;edit-form.save-failed-message&#x27;));
   },
 
   /**
-   * On delete model success handler.
+   * This method is called after delete object.
+   * You can override this method to add actions after deleted.
+   *
+   * &#x60;&#x60;&#x60;js
+   * onDeleteActionFulfilled() {
+   *   alert(&#x27;Successful delete!&#x27;);
+   *   this.close();
+   * }
+   * &#x60;&#x60;&#x60;
+   *
+   * @method onDeleteActionFulfilled.
    */
-  _onDeleteActionFulfilled: function() {
-    this.transitionToParentRoute();
+  onDeleteActionFulfilled() {
+    this.close();
   },
 
   /**
-   * On delete model fail handler.
+   * This method is called if delete ended with error.
+   * You can override this method to add actions after unsuccessful deleted.
+   *
+   * &#x60;&#x60;&#x60;js
+   * onDeleteActionRejected() {
+   *   alert(&#x27;Failed delete!&#x27;);
+   * }
+   * &#x60;&#x60;&#x60;
+   *
+   * @method onDeleteActionRejected.
+   * @param {Object} errorData Info of error.
    */
-  _onDeleteActionRejected: function(errorData) {
+  onDeleteActionRejected(errorData) {
     this.rejectError(errorData, this.get(&#x27;i18n&#x27;).t(&#x27;edit-form.delete-failed-message&#x27;));
-  }
+  },
 });
 
     </pre>

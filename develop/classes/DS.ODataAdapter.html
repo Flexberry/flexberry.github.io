@@ -182,23 +182,23 @@ Uses Flexberry Query as a language for requesting server.</p>
 
                     <ul class="index-list methods">
                             <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__appendIdToURL" data-tablink="_appendIdToURL">_appendIdToURL</a>
-
-                            </li>
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__buildURL" data-tablink="_buildURL">_buildURL</a>
-
-                            </li>
-                            <li class="index-item method private">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__sendRecord" data-tablink="_sendRecord">_sendRecord</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_pathForType" data-tablink="pathForType">pathForType</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_findAll" data-tablink="findAll">findAll</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_findRecord" data-tablink="findRecord">findRecord</a>
 
                             </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_query" data-tablink="query">query</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_queryRecord" data-tablink="queryRecord">queryRecord</a>
 
                             </li>
                     </ul>
@@ -211,149 +211,6 @@ Uses Flexberry Query as a language for requesting server.</p>
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method__appendIdToURL" class="method item private">
-                        <h3 class="name"><code>_appendIdToURL</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>id</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>url</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l159"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:159</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Appends id to URL according to the OData specification.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">id</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                             
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">url</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                             
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
-                    <div id="method__buildURL" class="method item private">
-                        <h3 class="name"><code>_buildURL</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>modelName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>id</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                            </span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l61"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:61</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Overloaded method from <code>build-url-mixin</code> (Ember Data), taht builds URL to OData feed.
-                    Appends id as <code>(id)</code> (OData specification) instead of <code>/id</code>.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">modelName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                             
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">id</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                             
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                </div>
-                            </div>
-                    
-                    </div>
                     <div id="method__sendRecord" class="method item private">
                         <h3 class="name"><code>_sendRecord</code></h3>
                     
@@ -370,7 +227,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l113"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:113</code></a>
+                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l118"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:118</code></a>
                             </p>
                     
                     
@@ -385,19 +242,28 @@ Uses Flexberry Query as a language for requesting server.</p>
                     
                     
                     </div>
-                    <div id="method_pathForType" class="method item">
-                        <h3 class="name"><code>pathForType</code></h3>
+                    <div id="method_findAll" class="method item">
+                        <h3 class="name"><code>findAll</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>modelName</code>
+                                            <code>store</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>type</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>sinceToken</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>snapshotRecordArray</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
                             </span>
                     
                     
@@ -409,7 +275,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l47"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:47</code></a>
+                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l86"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:86</code></a>
                             </p>
                     
                     
@@ -417,8 +283,8 @@ Uses Flexberry Query as a language for requesting server.</p>
                         </div>
                     
                         <div class="description">
-                            <p>Overloaded method from <code>build-url-mixin</code> (Ember Data), that determines the pathname for a given type.
-                    Additionally capitalizes the type name (requirement of Flexberry OData Server).</p>
+                            <p>Overloaded method from <code>RESTAdapter</code> (Ember Data).
+                    Called by the sore in order to fetch all records from the server.</p>
                     
                         </div>
                     
@@ -427,8 +293,38 @@ Uses Flexberry Query as a language for requesting server.</p>
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">modelName</code>
+                                            <code class="param-name">store</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Store.html" class="crosslink external" target="_blank">DS.Store</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">type</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">sinceToken</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">snapshotRecordArray</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.SnapshotRecordArray.html" class="crosslink external" target="_blank">DS.SnapshotRecordArray</a></span>
                     
                     
                                         <div class="param-description">
@@ -443,8 +339,112 @@ Uses Flexberry Query as a language for requesting server.</p>
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>The path for a given type.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                        <p>promise</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_findRecord" class="method item">
+                        <h3 class="name"><code>findRecord</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>store</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>type</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>id</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>snapshot</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l66"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:66</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Overloaded method from <code>RESTAdapter</code> (Ember Data).
+                    Called by the sore in order to fetch single record by ID from the server.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">store</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Store.html" class="crosslink external" target="_blank">DS.Store</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">type</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">id</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">snapshot</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Snapshot.html" class="crosslink external" target="_blank">DS.Snapshot</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                        <p>promise</p>
                     
                                 </div>
                             </div>
@@ -536,6 +536,97 @@ Uses Flexberry Query as a language for requesting server.</p>
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_queryRecord" class="method item">
+                        <h3 class="name"><code>queryRecord</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>store</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>type</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>query</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-projections_addon_adapters_odata.js.html#l50"><code>ember-flexberry-projections&#x2F;addon&#x2F;adapters&#x2F;odata.js:50</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Overloaded method from <code>RESTAdapter</code> (Ember Data).
+                    Called by the sore in order to fetch single record from the server.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">store</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Store.html" class="crosslink external" target="_blank">DS.Store</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">type</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">query</code>
+                                            <span class="type">Query</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                        <p>promise</p>
+                    
                                 </div>
                             </div>
                     

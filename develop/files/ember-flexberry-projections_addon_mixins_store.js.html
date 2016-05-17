@@ -151,6 +151,8 @@
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
 
+import QueryBuilder from &#x27;../query/builder&#x27;;
+
 /**
  * Mixin for {{#crossLink &quot;DS.Store&quot;}}Store{{/crossLink}} to support
  * fetching models using projection.
@@ -175,17 +177,17 @@ export default Ember.Mixin.create({
    * @return {DS.AdapterPopulatedRecordArray} Records promise.
    */
   findAll(modelName, options) {
-    Ember.Logger.debug(&#x60;Store::findAll ${modelName}&#x60;);
+    Ember.Logger.debug(&#x60;Flexberry Store::findAll ${modelName}&#x60;);
+
+    let builder = new QueryBuilder(this, modelName);
 
     if (options &amp;&amp; options.projection) {
-      Ember.Logger.debug(&#x60;Store::findAll using projection &#x27;${options.projection}&#x27;&#x60;);
+      Ember.Logger.debug(&#x60;Flexberry Store::findAll using projection &#x27;${options.projection}&#x27;&#x60;);
 
-      return this.query(modelName, {
-        projection: options.projection
-      });
+      builder.selectByProjection(options.projection);
     }
 
-    return this._super.apply(this, arguments);
+    return this.query(modelName, builder.build());
   },
 
   /**
@@ -203,17 +205,41 @@ export default Ember.Mixin.create({
    * @return {Promise} Record promise.
    */
   findRecord(modelName, id, options) {
-    Ember.Logger.debug(&#x60;Store::findRecord ${modelName}(${id})&#x60;);
+    Ember.Logger.debug(&#x60;Flexberry Store::findRecord ${modelName}(${id})&#x60;);
+
+    let builder = new QueryBuilder(this, modelName).byId(id);
 
     if (options &amp;&amp; options.projection) {
-      Ember.Logger.debug(&#x60;Store::Find record using projection &#x27;${options.projection}&#x27;&#x60;);
+      Ember.Logger.debug(&#x60;Flexberry Store::findRecord using projection &#x27;${options.projection}&#x27;&#x60;);
 
-      // TODO: case of options.reload === false.
-      return this.queryRecord(modelName, {
-        id: id,
-        projection: options.projection
-      });
+      builder.selectByProjection(options.projection);
     }
+
+    return this.queryRecord(modelName, builder.build());
+  },
+
+  /**
+   *
+   * @method query
+   * @param {String} modelName
+   * @param {any} query an opaque query to be used by the adapter
+   * @return {Promise} promise
+   */
+  query(modelName, query) {
+    Ember.Logger.debug(&#x60;Flexberry Store::query ${modelName}&#x60;, query);
+
+    return this._super.apply(this, arguments);
+  },
+
+  /**
+   *
+   * @method queryRecord
+   * @param {String} modelName
+   * @param {any} query an opaque query to be used by the adapter
+   * @return {Promise} promise
+   */
+  queryRecord(modelName, query) {
+    Ember.Logger.debug(&#x60;Flexberry Store::queryRecord ${modelName}&#x60;, query);
 
     return this._super.apply(this, arguments);
   }

@@ -183,71 +183,76 @@ export default DS.RESTAdapter.extend({
    * @return {Promise}
    */
   query(store, type, query) {
-    var url = this.buildURL(type.modelName, null, null, &#x27;query&#x27;, query);
-    var data = new ODataQueryAdapter(&#x27;unused&#x27;, store).getOData(query);
+    let host = Ember.get(this, &#x27;host&#x27;);
+    let builder = new ODataQueryAdapter(host, store);
+    let url = builder.getODataBaseUrl(query);
+    let data = builder.getODataQuery(query);
 
     if (this.sortQueryParams) {
       data = this.sortQueryParams(data);
     }
 
-    Ember.Logger.debug(&#x27;OData::query&#x27;, data);
+    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::query &#x27;${type}&#x27;&#x60;, data);
 
+    // TODO: think about moving request execution into query adapter
     return this.ajax(url, &#x27;GET&#x27;, { data: data });
   },
 
   /**
-   * Overloaded method from &#x60;build-url-mixin&#x60; (Ember Data), that determines the pathname for a given type.
-   * Additionally capitalizes the type name (requirement of Flexberry OData Server).
+   * Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
+   * Called by the sore in order to fetch single record from the server.
    *
-   * @method pathForType
-   * @param {String} modelName
-   * @return {String} The path for a given type.
+   * @method queryRecord
+   * @param {DS.Store} store
+   * @param {DS.Model} type
+   * @param {Query} query
+   * @return {Promise} promise
    */
-  pathForType(modelName) {
-    var camelized = Ember.String.camelize(modelName);
-    var capitalized = Ember.String.capitalize(camelized);
-    return Ember.String.pluralize(capitalized);
+  queryRecord(store, type, query) {
+    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::queryRecord &#x27;${type}&#x27;&#x60;, query);
+
+    return this.query(store, type, query);
   },
 
   /**
-   * Overloaded method from &#x60;build-url-mixin&#x60; (Ember Data), taht builds URL to OData feed.
-   * Appends id as &#x60;(id)&#x60; (OData specification) instead of &#x60;/id&#x60;.
+   * Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
+   * Called by the sore in order to fetch single record by ID from the server.
    *
-   * @method _buildURL
-   * @param {String} modelName
+   * @method findRecord
+   * @param {DS.Store} store
+   * @param {DS.Model} type
    * @param {String} id
-   * @return {String}
-   * @private
-   */
-  _buildURL(modelName, id) {
-    var url = [];
-    var host = Ember.get(this, &#x27;host&#x27;);
-    var prefix = this.urlPrefix();
-    var path;
+   * @param {DS.Snapshot} snapshot
+   * @return {Promise} promise
+  */
+  /* jshint unused:vars */
+  findRecord(store, type, id, snapshot) {
+    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::findRecord &#x27;${type}(${id})&#x27;&#x60;);
 
-    if (modelName) {
-      path = this.pathForType(modelName);
-      if (path) {
-        url.push(path);
-      }
-    }
-
-    if (prefix) {
-      url.unshift(prefix);
-    }
-
-    url = url.join(&#x27;/&#x27;);
-    if (!host &amp;&amp; url &amp;&amp; url.charAt(0) !== &#x27;/&#x27;) {
-      url = &#x27;/&#x27; + url;
-    }
-
-    if (id != null) {
-      // Append id as &#x60;(id)&#x60; (OData specification) instead of &#x60;/id&#x60;.
-      url = this._appendIdToURL(id, url);
-    }
-
-    return url;
+    // TODO: query support for direct calls
+    return this._super.apply(this, arguments);
   },
+  /* jshint unused:true */
+
+  /**
+   * Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
+   * Called by the sore in order to fetch all records from the server.
+   *
+   * @method findAll
+   * @param {DS.Store} store
+   * @param {DS.Model} type
+   * @param {String} sinceToken
+   * @param {DS.SnapshotRecordArray} snapshotRecordArray
+   * @return {Promise} promise
+   */
+  /* jshint unused:vars */
+  findAll(store, type, sinceToken, snapshotRecordArray) {
+    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::findAll &#x27;${type}&#x27;&#x60;);
+
+    // TODO: query support for direct calls
+    return this._super.apply(this, arguments);
+  },
+  /* jshint unused:true */
 
   createRecord(store, type, snapshot) {
     return this._sendRecord(store, type, snapshot, &#x27;createRecord&#x27;);
@@ -305,25 +310,6 @@ export default DS.RESTAdapter.extend({
     return this.ajax(url, httpMethod, { data: data }).then(function(response) {
       return response;
     });
-  },
-
-  /**
-   * Appends id to URL according to the OData specification.
-   *
-   * @method _appendIdToURL
-   * @param {String} id
-   * @param {String} url
-   * @private
-   */
-  _appendIdToURL(id, url) {
-    let encId = encodeURIComponent(id);
-    let idType = Ember.get(this, &#x27;idType&#x27;);
-    if (idType !== &#x27;number&#x27;) {
-      encId = &#x60;&#x27;${encId}&#x27;&#x60;;
-    }
-
-    url += &#x27;(&#x27; + encId + &#x27;)&#x27;;
-    return url;
   }
 });
 

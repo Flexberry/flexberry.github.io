@@ -230,6 +230,10 @@ export default DetailEditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_close" data-tablink="close">close</a>
 
                             </li>
+                            <li class="index-item method inherited inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_close." data-tablink="close.">close.</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_decrementProperty" data-tablink="decrementProperty">decrementProperty</a>
 
@@ -240,6 +244,10 @@ export default DetailEditFormController.extend({
                             </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_delete" data-tablink="delete">delete</a>
+
+                            </li>
+                            <li class="index-item method inherited inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_delete." data-tablink="delete.">delete.</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -302,8 +310,24 @@ export default DetailEditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_on" data-tablink="on">on</a>
 
                             </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionFulfilled." data-tablink="onDeleteActionFulfilled.">onDeleteActionFulfilled.</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionRejected." data-tablink="onDeleteActionRejected.">onDeleteActionRejected.</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_one" data-tablink="one">one</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onSaveActionFulfilled." data-tablink="onSaveActionFulfilled.">onSaveActionFulfilled.</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onSaveActionRejected." data-tablink="onSaveActionRejected.">onSaveActionRejected.</a>
 
                             </li>
                             <li class="index-item method private inherited">
@@ -336,6 +360,14 @@ export default DetailEditFormController.extend({
                             </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_save" data-tablink="save">save</a>
+
+                            </li>
+                            <li class="index-item method inherited inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_save." data-tablink="save.">save.</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_saveAndClose." data-tablink="saveAndClose.">saveAndClose.</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -1000,6 +1032,55 @@ export default DetailEditFormController.extend({
                     
                     
                     </div>
+                    <div id="method_close." class="method item inherited">
+                        <h3 class="name"><code>close.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/EditFormController.html#method_close.">
+                                    EditFormController
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l226"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:226</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Default action for button 'Close'.
+                    You can override this action to add custom logic.
+                    
+                    Example:
+                    <code>&#x60;</code>js
+                    // app/controllers/your-controller.js
+                    ...
+                    actions: {
+                      ...
+                      close() {
+                        if (confirm('You sure?')) {
+                          this.close();
+                        }
+                      }
+                      ...
+                    }
+                    ...
+                    <code>&#x60;</code>
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method_decrementProperty" class="method item public inherited">
                         <h3 class="name"><code>decrementProperty</code></h3>
                     
@@ -1096,7 +1177,7 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_controllers_detail-edit-form.js.html#l112"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;detail-edit-form.js:112</code></a>
+                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l158"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:158</code></a>
                             </p>
                     
                     
@@ -1104,9 +1185,7 @@ export default DetailEditFormController.extend({
                         </div>
                     
                         <div class="description">
-                            <p>Handler for button 'delete' click.
-                    If return path is determined and current model is saved, record marks as deleted and user is redirected to agregator's form.
-                    Otherwise base logic is executed.</p>
+                            <p>Delete selected rows.</p>
                     
                         </div>
                     
@@ -1128,7 +1207,7 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_olv-toolbar.js.html#l158"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;olv-toolbar.js:158</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_detail-edit-form.js.html#l112"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;detail-edit-form.js:112</code></a>
                             </p>
                     
                     
@@ -1136,8 +1215,68 @@ export default DetailEditFormController.extend({
                         </div>
                     
                         <div class="description">
-                            <p>Delete selected rows.</p>
+                            <p>Handler for button 'delete' click.
+                    If return path is determined and current model is saved, record marks as deleted and user is redirected to agregator's form.
+                    Otherwise base logic is executed.</p>
                     
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_delete." class="method item inherited">
+                        <h3 class="name"><code>delete.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/EditFormController.html#method_delete.">
+                                    EditFormController
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l191"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:191</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Default action for button 'Delete'.
+                    You can override this action to add custom logic.
+                    
+                    Example:
+                    <code>&#x60;</code>js
+                    // app/controllers/your-controller.js
+                    ...
+                    actions: {
+                      ...
+                      delete() {
+                        if (confirm('You sure?')) {
+                          this.delete();
+                        }
+                      }
+                      ...
+                    }
+                    ...
+                    onDeleteActionFulfilled() {
+                      alert('Successful delete!');
+                      this.close();
+                    }
+                    ...
+                    onDeleteActionRejected() {
+                      alert('Failed delete!');
+                    }
+                    ...
+                    <code>&#x60;</code>
                         </div>
                     
                     
@@ -1215,7 +1354,7 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormController.html#method_destroyHasManyRelationships">EditFormController</a>:
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l306"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:306</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l439"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:439</code></a>
                             </p>
                     
                     
@@ -1455,7 +1594,7 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormController.html#method_getCellComponent.">EditFormController</a>:
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l194"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:194</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l327"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:327</code></a>
                             </p>
                     
                     
@@ -2184,6 +2323,101 @@ export default DetailEditFormController.extend({
                             </div>
                     
                     </div>
+                    <div id="method_onDeleteActionFulfilled." class="method item inherited">
+                        <h3 class="name"><code>onDeleteActionFulfilled.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/EditFormController.html#method_onDeleteActionFulfilled.">EditFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l496"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:496</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            This method is called after delete object.
+                    You can override this method to add actions after deleted.
+                    
+                    <code>&#x60;</code>js
+                    onDeleteActionFulfilled() {
+                      alert('Successful delete!');
+                      this.close();
+                    }
+                    <code>&#x60;</code>
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_onDeleteActionRejected." class="method item inherited">
+                        <h3 class="name"><code>onDeleteActionRejected.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>errorData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/EditFormController.html#method_onDeleteActionRejected.">EditFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l513"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:513</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            This method is called if delete ended with error.
+                    You can override this method to add actions after unsuccessful deleted.
+                    
+                    <code>&#x60;</code>js
+                    onDeleteActionRejected() {
+                      alert('Failed delete!');
+                    }
+                    <code>&#x60;</code>
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">errorData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Info of error.
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="method_one" class="method item public inherited">
                         <h3 class="name"><code>one</code></h3>
                     
@@ -2277,6 +2511,100 @@ export default DetailEditFormController.extend({
                                         this
                                 </div>
                             </div>
+                    
+                    </div>
+                    <div id="method_onSaveActionFulfilled." class="method item inherited">
+                        <h3 class="name"><code>onSaveActionFulfilled.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/EditFormController.html#method_onSaveActionFulfilled.">EditFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l464"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:464</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            This method is called after successful save.
+                    You can override this method to add actions after save.
+                    
+                    <code>&#x60;</code>js
+                    onSaveActionFulfilled() {
+                      alert('Save successful!');
+                    }
+                    <code>&#x60;</code>
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_onSaveActionRejected." class="method item inherited">
+                        <h3 class="name"><code>onSaveActionRejected.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>errorData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/EditFormController.html#method_onSaveActionRejected.">EditFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l479"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:479</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            This method is called if save ended with error.
+                    You can override this method to add actions after unsuccessful save.
+                    
+                    <code>&#x60;</code>js
+                    onSaveActionRejected() {
+                      alert('Save failed!');
+                    }
+                    <code>&#x60;</code>
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">errorData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Info of error.
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
                     
                     </div>
                     <div id="method_propertyDidChange" class="method item private inherited">
@@ -2772,7 +3100,7 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormController.html#method_rollbackHasManyRelationships">EditFormController</a>:
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l288"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:288</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l421"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:421</code></a>
                             </p>
                     
                     
@@ -2835,6 +3163,117 @@ export default DetailEditFormController.extend({
                     
                     
                     </div>
+                    <div id="method_save." class="method item inherited">
+                        <h3 class="name"><code>save.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                <p>Inherited from
+                                <a href="../classes/EditFormController.html#method_save.">
+                                    EditFormController
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l123"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:123</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Default action for button 'Save'.
+                    You can override this action to add custom logic.
+                    
+                    Example:
+                    <code>&#x60;</code>js
+                    // app/controllers/your-controller.js
+                    ...
+                    actions: {
+                      ...
+                      save() {
+                        if (confirm('You sure?')) {
+                          this.save();
+                        }
+                      }
+                      ...
+                    }
+                    ...
+                    onSaveActionFulfilled() {
+                      alert('Save successful!');
+                    }
+                    ...
+                    onSaveActionRejected() {
+                      alert('Save failed!');
+                    }
+                    ...
+                    <code>&#x60;</code>
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_saveAndClose." class="method item inherited">
+                        <h3 class="name"><code>saveAndClose.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/EditFormController.html#method_saveAndClose.">EditFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l157"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:157</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Default action for button 'Save and close'.
+                    You can override this action to add custom logic.
+                    
+                    Example:
+                    <code>&#x60;</code>js
+                    // app/controllers/your-controller.js
+                    ...
+                    actions: {
+                      ...
+                      saveAndClose() {
+                        if (confirm('You sure?')) {
+                          this.save(true);
+                        }
+                      }
+                      ...
+                    }
+                    ...
+                    onSaveActionFulfilled() {
+                      alert('Save successful!');
+                    }
+                    ...
+                    onSaveActionRejected() {
+                      alert('Save failed!');
+                    }
+                    ...
+                    <code>&#x60;</code>
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method_saveHasManyRelationships" class="method item inherited">
                         <h3 class="name"><code>saveHasManyRelationships</code></h3>
                     
@@ -2859,7 +3298,7 @@ export default DetailEditFormController.extend({
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormController.html#method_saveHasManyRelationships">EditFormController</a>:
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l261"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:261</code></a>
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l394"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:394</code></a>
                             </p>
                     
                     

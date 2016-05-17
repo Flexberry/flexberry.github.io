@@ -151,7 +151,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l13"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:13</code></a>
+            Defined in: <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l15"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:15</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry-projections.html">ember-flexberry-projections</a>
@@ -189,7 +189,7 @@
             <div class="meta">
                         <p>
                         Defined in
-                <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l13"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:13</code></a>
+                <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l15"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:15</code></a>
                 </p>
         
         
@@ -251,11 +251,19 @@
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getOData" data-tablink="getOData">getOData</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getODataFullUrl" data-tablink="getODataFullUrl">getODataFullUrl</a>
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getODataUrl" data-tablink="getODataUrl">getODataUrl</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getODataFullUrl" data-tablink="getODataFullUrl">getODataFullUrl</a>
+
+                            </li>
+                            <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_getODataQuery" data-tablink="getODataQuery">getODataQuery</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_pathForType" data-tablink="pathForType">pathForType</a>
 
                             </li>
                     </ul>
@@ -295,7 +303,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l139"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:139</code></a>
+                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l168"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:168</code></a>
                             </p>
                     
                     
@@ -346,8 +354,8 @@
                             </div>
                     
                     </div>
-                    <div id="method_getOData" class="method item public">
-                        <h3 class="name"><code>getOData</code></h3>
+                    <div id="method_getODataFullUrl" class="method item public">
+                        <h3 class="name"><code>getODataFullUrl</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
@@ -371,7 +379,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l60"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:60</code></a>
+                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l50"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:50</code></a>
                             </p>
                     
                     
@@ -379,7 +387,8 @@
                         </div>
                     
                         <div class="description">
-                            
+                            <p>Returns base part of URL for querying OData feed (without query part).</p>
+                    
                         </div>
                     
                             <div class="params">
@@ -409,8 +418,8 @@
                             </div>
                     
                     </div>
-                    <div id="method_getODataUrl" class="method item public">
-                        <h3 class="name"><code>getODataUrl</code></h3>
+                    <div id="method_getODataFullUrl" class="method item public">
+                        <h3 class="name"><code>getODataFullUrl</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
@@ -434,7 +443,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l34"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:34</code></a>
+                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l89"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:89</code></a>
                             </p>
                     
                     
@@ -442,7 +451,8 @@
                         </div>
                     
                         <div class="description">
-                            
+                            <p>Returns full URL for querying OData feed (base part and query part).</p>
+                    
                         </div>
                     
                             <div class="params">
@@ -468,6 +478,135 @@
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_getODataQuery" class="method item public">
+                        <h3 class="name"><code>getODataQuery</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>query</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l65"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:65</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns query data for querying OData feed (for query part).</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">query</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The query for building OData URL.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_pathForType" class="method item">
+                        <h3 class="name"><code>pathForType</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>modelName</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-projections_addon_query_odata-adapter.js.html#l36"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;odata-adapter.js:36</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Determines the pathname for a given type.
+                    Additionally capitalizes the type name (requirement of Flexberry OData Server).</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">modelName</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>The path for a given type.</p>
+                    
                                 </div>
                             </div>
                     

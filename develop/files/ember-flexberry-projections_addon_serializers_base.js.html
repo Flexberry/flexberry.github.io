@@ -246,6 +246,7 @@ export default DS.RESTSerializer.extend({
   keyForRelationship(key, relationship) {
     return Ember.String.capitalize(key) + &#x27;@odata.bind&#x27;;
   },
+  /* jshint unused:true */
 
   /**
    * Serialization method to serialize record into hash.
