@@ -199,7 +199,7 @@
         "ember-flexberry-projections/addon/index.js": {
             "name": "ember-flexberry-projections/addon/index.js",
             "modules": {
-                "ember-flexberry-projections": 1
+                "ember-flexberry-data": 1
             },
             "classes": {
                 "DS.Projection": 1
@@ -725,8 +725,8 @@
         }
     },
     "modules": {
-        "ember-flexberry-projections": {
-            "name": "ember-flexberry-projections",
+        "ember-flexberry-data": {
+            "name": "ember-flexberry-data",
             "submodules": {},
             "elements": {},
             "classes": {
@@ -832,7 +832,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS",
             "file": "ember-flexberry-projections/addon/adapters/odata.js",
             "line": 7,
@@ -846,7 +846,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS",
             "file": "ember-flexberry-projections/addon/mixins/adapter.js",
             "line": 3,
@@ -860,7 +860,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS",
             "file": "ember-flexberry-projections/addon/mixins/store.js",
             "line": 5,
@@ -874,7 +874,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS",
             "file": "ember-flexberry-projections/addon/models/model.js",
             "line": 5,
@@ -888,7 +888,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/base-adapter.js",
             "line": 1,
@@ -902,7 +902,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/base-builder.js",
             "line": 1,
@@ -916,7 +916,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/builder.js",
             "line": 17,
@@ -942,7 +942,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/condition.js",
             "line": 1,
@@ -956,7 +956,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/filter-operator.js",
             "line": 1,
@@ -970,7 +970,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/js-adapter.js",
             "line": 6,
@@ -984,7 +984,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
             "line": 15,
@@ -1010,7 +1010,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/order-by-clause.js",
             "line": 9,
@@ -1031,7 +1031,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         "Query.SimplePredicate": {
@@ -1042,7 +1042,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/predicate.js",
             "line": 16,
@@ -1075,7 +1075,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/predicate.js",
             "line": 82,
@@ -1104,7 +1104,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/predicate.js",
             "line": 155,
@@ -1127,7 +1127,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer",
             "file": "ember-flexberry-projections/addon/serializers/base.js",
             "line": 4,
@@ -1141,7 +1141,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer",
             "file": "ember-flexberry-projections/addon/serializers/odata.js",
             "line": 6,
@@ -1155,7 +1155,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS",
             "file": "ember-flexberry-projections/addon/index.js",
             "line": 14,
@@ -1832,7 +1832,7 @@
                 "type": "Promise"
             },
             "class": "DS.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -1863,7 +1863,7 @@
                 "type": "Promise"
             },
             "class": "DS.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -1899,7 +1899,7 @@
                 "type": "Promise"
             },
             "class": "DS.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -1935,7 +1935,7 @@
                 "type": "Promise"
             },
             "class": "DS.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -1947,7 +1947,7 @@
             "access": "private",
             "tagname": "",
             "class": "DS.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -1983,7 +1983,7 @@
                 "type": "String"
             },
             "class": "DS.Adapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -2019,7 +2019,7 @@
                 "type": "DS.AdapterPopulatedRecordArray"
             },
             "class": "DS.Store",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -2060,7 +2060,7 @@
                 "type": "Promise"
             },
             "class": "DS.Store",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -2085,7 +2085,7 @@
                 "type": "Promise"
             },
             "class": "DS.Store",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -2110,7 +2110,7 @@
                 "type": "Promise"
             },
             "class": "DS.Store",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -2125,7 +2125,7 @@
             "tagname": "",
             "static": 1,
             "class": "DS.Model",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -2159,7 +2159,7 @@
             "tagname": "",
             "static": 1,
             "class": "DS.Model",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "DS"
         },
         {
@@ -2175,7 +2175,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.BaseBuilder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2199,7 +2199,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2223,7 +2223,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2246,7 +2246,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2269,7 +2269,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2292,7 +2292,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2315,7 +2315,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2331,7 +2331,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2355,7 +2355,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2379,7 +2379,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2403,7 +2403,7 @@
             "tagname": "",
             "chainable": 1,
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2419,7 +2419,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2439,7 +2439,7 @@
                 "type": "BasePredicate"
             },
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2465,7 +2465,7 @@
                 "type": "Object"
             },
             "class": "Query.Builder",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2478,7 +2478,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.Condition",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2491,7 +2491,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.Condition",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2513,7 +2513,7 @@
             },
             "static": 1,
             "class": "Query.Condition",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2526,7 +2526,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.FilterOperator",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2539,7 +2539,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.FilterOperator",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2552,7 +2552,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.FilterOperator",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2565,7 +2565,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.FilterOperator",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2578,7 +2578,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.FilterOperator",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2591,7 +2591,7 @@
             "static": 1,
             "final": 1,
             "class": "Query.FilterOperator",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2613,7 +2613,7 @@
             },
             "static": 1,
             "class": "Query.FilterOperator",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2633,7 +2633,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2651,7 +2651,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2669,7 +2669,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2687,7 +2687,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2705,7 +2705,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2724,7 +2724,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2743,7 +2743,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2762,7 +2762,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2781,7 +2781,7 @@
                 "type": "Function"
             },
             "class": "Query.JSAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2802,7 +2802,7 @@
                 "type": "String"
             },
             "class": "Query.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2825,7 +2825,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2848,7 +2848,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2871,7 +2871,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2896,7 +2896,7 @@
                 "type": "String"
             },
             "class": "Query.ODataAdapter",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2908,7 +2908,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.OrderByClause",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2928,7 +2928,7 @@
                 "type": "Object"
             },
             "class": "Query.OrderByClause",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2941,7 +2941,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.SimplePredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2954,7 +2954,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.SimplePredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2967,7 +2967,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.SimplePredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2983,7 +2983,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.SimplePredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -2999,7 +2999,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.ComplexPredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -3012,7 +3012,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.StringPredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -3025,7 +3025,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.StringPredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -3047,7 +3047,7 @@
             },
             "chainable": 1,
             "class": "Query.StringPredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -3071,7 +3071,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.BasePredicate",
-            "module": "ember-flexberry-projections"
+            "module": "ember-flexberry-data"
         },
         {
             "file": "ember-flexberry-projections/addon/query/predicate.js",
@@ -3094,7 +3094,7 @@
             "access": "public",
             "tagname": "",
             "class": "Query.BasePredicate",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Query"
         },
         {
@@ -3102,7 +3102,7 @@
             "line": 12,
             "description": "Flag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3110,7 +3110,7 @@
             "line": 17,
             "description": "Prefix for response metadata properties names.",
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3140,7 +3140,7 @@
                 "type": "Object"
             },
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3166,7 +3166,7 @@
                 "type": "Object"
             },
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3192,7 +3192,7 @@
                 "type": "Object"
             },
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3210,7 +3210,7 @@
                 "type": "String"
             },
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3232,7 +3232,7 @@
                 "type": "String"
             },
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3258,7 +3258,7 @@
                 }
             ],
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3282,7 +3282,7 @@
             "access": "private",
             "tagname": "",
             "class": "Serializer.Base",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3309,7 +3309,7 @@
                 }
             ],
             "class": "Serializer.OData",
-            "module": "ember-flexberry-projections",
+            "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
@@ -3338,7 +3338,7 @@
                 "type": "Object"
             },
             "class": "DS.Projection",
-            "module": "ember-flexberry-projections"
+            "module": "ember-flexberry-data"
         },
         {
             "file": "ember-flexberry-projections/addon/utils/attributes.js",
@@ -3376,7 +3376,7 @@
                 "type": "Object"
             },
             "class": "DS.Projection",
-            "module": "ember-flexberry-projections"
+            "module": "ember-flexberry-data"
         },
         {
             "file": "ember-flexberry-projections/addon/utils/attributes.js",
@@ -3414,7 +3414,7 @@
                 "type": "Object"
             },
             "class": "DS.Projection",
-            "module": "ember-flexberry-projections"
+            "module": "ember-flexberry-data"
         },
         {
             "file": "ember-flexberry-projections/addon/utils/create.js",
@@ -3441,7 +3441,7 @@
                 "type": "Object"
             },
             "class": "DS.Projection",
-            "module": "ember-flexberry-projections"
+            "module": "ember-flexberry-data"
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",

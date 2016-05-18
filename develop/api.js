@@ -59,7 +59,7 @@ YUI.add("yuidoc-meta", function(Y) {
     ],
     "modules": [
         "ember-flexberry",
-        "ember-flexberry-projections"
+        "ember-flexberry-data"
     ],
     "allModules": [
         {
@@ -67,8 +67,8 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "ember-flexberry"
         },
         {
-            "displayName": "ember-flexberry-projections",
-            "name": "ember-flexberry-projections",
+            "displayName": "ember-flexberry-data",
+            "name": "ember-flexberry-data",
             "description": "Ember Addon that adds support of projections in models."
         }
     ],

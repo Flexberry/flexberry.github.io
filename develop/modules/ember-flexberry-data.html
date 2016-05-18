@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/resolver.js - Flexberry Documentation</title>
+    <title>ember-flexberry-data - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -144,85 +144,130 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/resolver.js <small>File</small></h1>
+    <h1>ember-flexberry-data <small>Module</small></h1>
 </div>
 
-<div class="file">
-    <pre class="prettyprint linenums">
-/**
- * @module ember-flexberry
- */
+<div class="clearfix well well-small">
 
-import Ember from &#x27;ember&#x27;;
-import EmberResolver from &#x27;ember-resolver&#x27;;
 
-/**
- * Base ember-flexberry application dependencies resolver.
- * @class Resolver
- * @extends EmberResolver
- */
-export default EmberResolver.extend({
+        <div class="foundat">
+            Defined in: <a href="../files/ember-flexberry-projections_addon_index.js.html#l14"><code>ember-flexberry-projections&#x2F;addon&#x2F;index.js:14</code></a>
+        </div>
 
-  /**
-   * Initializes resolver.
-   */
-  init: function() {
-    this._super(...arguments);
-  },
+</div>
 
-  /**
-   * Checks if template or classs with given full name is known and could be resolved.
-   */
-  isKnown: function(fullName) {
-    var type = fullName.split(&#x27;:&#x27;)[0];
-    var knownForType = this.knownForType(type) || {};
-    return knownForType[fullName] === true;
-  },
 
-  /**
-   * This method is called via the container&#x27;s resolver method.
-   * It parses the provided full name and then looks up and returns the appropriate template or class.
-   * First of all it tries to find appropriate template or class in device-related subfolder, if it is possible,
-   * otherwise it looks up in default folder related to template or class type.
-   *
-   * @method resolve
-   * @param {String} fullName The lookup string.
-   * @return {Object} The resolved factory.
-   * @public
-   */
-  resolve: function(fullName) {
-    var device = this.get(&#x27;device&#x27;);
+<div class="moduledesc well well-small">
+    <p>Ember Addon that adds support of projections in models.</p>
 
-    if (Ember.isNone(device)) {
-      return this._super(fullName);
-    }
+</div>
 
-    var [resolvingType, resolvingPath] = fullName.split(&#x27;:&#x27;);
-    var resolvingPathParts = resolvingPath.split(&#x27;/&#x27;);
 
-    var pathPrefixes = device.pathPrefixes(true);
-    for (var i = 0, len = pathPrefixes.length; i &lt; len; i++) {
-      var pathPrefix = pathPrefixes[i];
+<div class="yui3-g">
+    <div class="yui3-u-1-2">
+            <p>This module provides the following classes:</p>
 
-      // Change resolvingPath from &#x27;path/name&#x27; to &#x27;pathPrefix/path/name.
-      // For example &#x27;components/my-component&#x27; -&gt; &#x27;tablet-portrait/components/my-component&#x27;.
-      var newPathParts = Ember.copy(resolvingPathParts);
-      newPathParts.unshift(pathPrefix);
-      var newPath = newPathParts.join(&#x27;/&#x27;);
+            <ul class="module-classes">
+                <li class="module-class">
+                    <a href="../classes/DS.Adapter.html">
+                        DS.Adapter
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/DS.Model.html">
+                        DS.Model
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/DS.ODataAdapter.html">
+                        DS.ODataAdapter
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/DS.Projection.html">
+                        DS.Projection
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/DS.Store.html">
+                        DS.Store
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.BaseAdapter.html">
+                        Query.BaseAdapter
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.BaseBuilder.html">
+                        Query.BaseBuilder
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.BasePredicate.html">
+                        Query.BasePredicate
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.Builder.html">
+                        Query.Builder
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.ComplexPredicate.html">
+                        Query.ComplexPredicate
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.Condition.html">
+                        Query.Condition
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.FilterOperator.html">
+                        Query.FilterOperator
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.JSAdapter.html">
+                        Query.JSAdapter
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.ODataAdapter.html">
+                        Query.ODataAdapter
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.OrderByClause.html">
+                        Query.OrderByClause
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.SimplePredicate.html">
+                        Query.SimplePredicate
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Query.StringPredicate.html">
+                        Query.StringPredicate
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Serializer.Base.html">
+                        Serializer.Base
+                    </a>
+                </li>
+                <li class="module-class">
+                    <a href="../classes/Serializer.OData.html">
+                        Serializer.OData
+                    </a>
+                </li>
+            </ul>
+    </div>
 
-      // Change resolvingPath in the given fullName (if resolving resource exists in the new device-related path).
-      var newFullName = resolvingType + &#x27;:&#x27; + newPath;
-      if (this.isKnown(newFullName)) {
-        fullName = newFullName;
-        break;
-      }
-    }
-
-    return this._super(fullName);
-  }
-});
-
-    </pre>
+    <div class="yui3-u-1-2">
+    </div>
 </div>
                     </div>
                 </div>
