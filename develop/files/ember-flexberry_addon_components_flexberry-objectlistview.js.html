@@ -190,10 +190,10 @@ export default FlexberryBaseComponent.extend({
     /**
      * Handles action from row click (action is handled at route so it can&#x27;t be closure action now).
      *
-     * @method rowClick
+     * @method objectListViewRowClick
      * @param {Object} record Clicked record.
      */
-    rowClick: function(record) {
+    objectListViewRowClick: function(record) {
       let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
       Ember.assert(&#x27;Edit form route must be defined for flexberry-objectlistview&#x27;, editFormRoute);
       this.sendAction(&#x27;action&#x27;, record, editFormRoute);
@@ -270,8 +270,8 @@ export default FlexberryBaseComponent.extend({
        &#x60;&#x60;&#x60;
        {{flexberry-objectlistview
         ...
-        customButtons = (action &quot;getCustomButtons&quot;)
-        userButtonActionTest = &#x27;userButtonActionTest&#x27;
+        customButtons=(action &quot;getCustomButtons&quot;)
+        userButtonActionTest=&#x27;userButtonActionTest&#x27;
        }}
        &#x60;&#x60;&#x60;
      * @method customButtons
@@ -328,9 +328,9 @@ export default FlexberryBaseComponent.extend({
    *
    * @property action
    * @type String
-   * @default &#x27;rowClick&#x27;
+   * @default &#x27;objectListViewRowClick&#x27;
    */
-  action: &#x27;rowClick&#x27;,
+  action: &#x27;objectListViewRowClick&#x27;,
 
   /**
    * Default cell component that will be used to display values in columns headers.

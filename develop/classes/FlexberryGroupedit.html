@@ -200,16 +200,16 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_getTargetObjectByCondition." data-tablink="getTargetObjectByCondition.">getTargetObjectByCondition.</a>
 
                             </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_groupEditRowClick" data-tablink="groupEditRowClick">groupEditRowClick</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_init" data-tablink="init">init</a>
 
                             </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_menuForFileItemClick" data-tablink="menuForFileItemClick">menuForFileItemClick</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowClick" data-tablink="rowClick">rowClick</a>
 
                             </li>
                             <li class="index-item method">
@@ -223,6 +223,10 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_action" data-tablink="action">action</a>
+
+                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_allowColumnResize" data-tablink="allowColumnResize">allowColumnResize</a>
 
@@ -321,10 +325,6 @@
                             </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_required" data-tablink="required">required</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_rowClick" data-tablink="rowClick">rowClick</a>
 
                             </li>
                             <li class="index-item property inherited">
@@ -571,6 +571,74 @@
                             </div>
                     
                     </div>
+                    <div id="method_groupEditRowClick" class="method item">
+                        <h3 class="name"><code>groupEditRowClick</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>record</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>options</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l38"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:38</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles click on row of groupedit.
+                    Sends action out of component.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">record</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Clicked record.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">options</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Different parameters to handle action.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="method_init" class="method item public inherited">
                         <h3 class="name"><code>init</code></h3>
                     
@@ -669,74 +737,6 @@
                     
                     
                     </div>
-                    <div id="method_rowClick" class="method item">
-                        <h3 class="name"><code>rowClick</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>record</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>options</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l38"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:38</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handles click on row of objectlistview.
-                    Sends action out of component.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">record</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Clicked record.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">options</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Different parameters to handle action.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                    
-                    </div>
                     <div id="method_sortByColumn" class="method item">
                         <h3 class="name"><code>sortByColumn</code></h3>
                     
@@ -795,6 +795,33 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property_action" class="property item">
+                        <h3 class="name"><code>action</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l75"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:75</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Name of action to handle row click.
+                    Action will be send out of the component.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;groupEditRowClick&#x27;</p>
+                    
+                    
+                    </div>
                     <div id="property_allowColumnResize" class="property item">
                         <h3 class="name"><code>allowColumnResize</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -1495,33 +1522,6 @@
                         </div>
                     
                             <p><strong>Default:</strong> false</p>
-                    
-                    
-                    </div>
-                    <div id="property_rowClick" class="property item">
-                        <h3 class="name"><code>rowClick</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-groupedit.js.html#l75"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-groupedit.js:75</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Name of action to handle row click.
-                    Action will be send out of the component.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> &#x27;rowClick&#x27;</p>
                     
                     
                     </div>

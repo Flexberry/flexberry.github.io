@@ -187,21 +187,21 @@ export default FlexberryBaseComponent.extend({
     },
 
     /**
-     * Handles click on row of objectlistview.
+     * Handles click on row of groupedit.
      * Sends action out of component.
      *
-     * @method rowClick
+     * @method groupEditRowClick
      * @param {Object} record Clicked record.
      * @param {Object} options Different parameters to handle action.
      */
-    rowClick: function(record, options) {
+    groupEditRowClick: function(record, options) {
       if (this.get(&#x27;editOnSeparateRoute&#x27;)) {
         let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
         Ember.assert(&#x27;Edit form route must be defined for flexberry-groupedit&#x27;, editFormRoute);
         options = Ember.merge(options, { editFormRoute: editFormRoute });
       }
 
-      this.sendAction(&#x27;rowClick&#x27;, record, options);
+      this.sendAction(&#x27;action&#x27;, record, options);
     }
   },
 
@@ -227,11 +227,11 @@ export default FlexberryBaseComponent.extend({
    * Name of action to handle row click.
    * Action will be send out of the component.
    *
-   * @property rowClick
+   * @property action
    * @type String
-   * @default &#x27;rowClick&#x27;
+   * @default &#x27;groupEditRowClick&#x27;
    */
-  rowClick: &#x27;rowClick&#x27;,
+  action: &#x27;groupEditRowClick&#x27;,
 
   /**
    * Default cell component that will be used to display values in columns headers.

@@ -229,11 +229,11 @@
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_previousPage" data-tablink="previousPage">previousPage</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_objectListViewRowClick" data-tablink="objectListViewRowClick">objectListViewRowClick</a>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_rowClick" data-tablink="rowClick">rowClick</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_previousPage" data-tablink="previousPage">previousPage</a>
 
                             </li>
                             <li class="index-item method">
@@ -610,8 +610,8 @@
                       <code>&#x60;</code>
                       {{flexberry-objectlistview
                        ...
-                       customButtons = (action "getCustomButtons")
-                       userButtonActionTest = 'userButtonActionTest'
+                       customButtons=(action "getCustomButtons")
+                       userButtonActionTest='userButtonActionTest'
                       }}
                       <code>&#x60;</code></code></pre>
                     
@@ -965,38 +965,8 @@
                     
                     
                     </div>
-                    <div id="method_previousPage" class="method item">
-                        <h3 class="name"><code>previousPage</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l51"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:51</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handles action from object-list-view when no handler for this component is defined.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_rowClick" class="method item">
-                        <h3 class="name"><code>rowClick</code></h3>
+                    <div id="method_objectListViewRowClick" class="method item">
+                        <h3 class="name"><code>objectListViewRowClick</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
@@ -1045,6 +1015,36 @@
                                     </li>
                                 </ul>
                             </div>
+                    
+                    
+                    </div>
+                    <div id="method_previousPage" class="method item">
+                        <h3 class="name"><code>previousPage</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-objectlistview.js.html#l51"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-objectlistview.js:51</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles action from object-list-view when no handler for this component is defined.</p>
+                    
+                        </div>
+                    
                     
                     
                     </div>
@@ -1128,7 +1128,7 @@
                     
                         </div>
                     
-                            <p><strong>Default:</strong> &#x27;rowClick&#x27;</p>
+                            <p><strong>Default:</strong> &#x27;objectListViewRowClick&#x27;</p>
                     
                     
                     </div>

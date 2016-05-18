@@ -157,6 +157,7 @@ import Ember from &#x27;ember&#x27;;
 import SortableRouteMixin from &#x27;../mixins/sortable-route&#x27;;
 import PaginatedRouteMixin from &#x27;../mixins/paginated-route&#x27;;
 import LimitedRouteMixin from &#x27;../mixins/limited-route&#x27;;
+import FlexberryObjectlistviewRouteMixin from &#x27;../mixins/flexberry-objectlistview-route&#x27;;
 import ProjectedModelFormRoute from &#x27;../routes/projected-model-form&#x27;;
 import QueryBuilder from &#x27;ember-flexberry-data/query/builder&#x27;;
 
@@ -188,23 +189,13 @@ import QueryBuilder from &#x27;ember-flexberry-data/query/builder&#x27;;
  * @uses PaginatedRouteMixin
  * @uses SortableRouteMixin
  * @uses LimitedRouteMixin
+ * @uses FlexberryObjectlistviewRouteMixin
  */
-export default ProjectedModelFormRoute.extend(PaginatedRouteMixin, SortableRouteMixin, LimitedRouteMixin, {
-  actions: {
-    /**
-     * Table row click handler.
-     *
-     * @param {Ember.Object} record Record related to clicked table row.
-     */
-    rowClick: function(record, editFormRoute) {
-      this.transitionTo(editFormRoute, record.get(&#x27;id&#x27;));
-    },
-
-    refreshList: function() {
-      this.refresh();
-    }
-  },
-
+export default ProjectedModelFormRoute.extend(
+  PaginatedRouteMixin,
+  SortableRouteMixin,
+  LimitedRouteMixin,
+  FlexberryObjectlistviewRouteMixin, {
   model: function(params, transition) {
     let page = parseInt(params.page, 10);
     let perPage = parseInt(params.perPage, 10);

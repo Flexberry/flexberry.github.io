@@ -575,6 +575,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js": {
+            "name": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/mixins/limited-controller.js": {
             "name": "ember-flexberry/addon/mixins/limited-controller.js",
             "modules": {},
@@ -1654,13 +1661,14 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 12,
+            "line": 13,
             "description": "Base route for the List Forms.\n\nThis class re-exports to the application as `/routes/list-form`.\nSo, you can inherit from `./list-form`, even if file `app/routes/list-form.js`\nis not presented in the application.\n\nExample:\n```js\n// app/routes/employees.js\nimport ListFormRoute from './list-form';\nexport default ListFormRoute.extend({\n});\n```\nIf you want to add some common logic on all List Forms, you can define\n(actually override) `app/routes/list-form.js` as follows:\n```js\n// app/routes/list-form.js\nimport ListFormRoute from 'ember-flexberry/routes/list-form';\nexport default ListFormRoute.extend({\n});\n```",
             "extends": "ProjectedModelFormRoute",
             "uses": [
                 "PaginatedRouteMixin",
                 "SortableRouteMixin",
-                "LimitedRouteMixin"
+                "LimitedRouteMixin",
+                "FlexberryObjectlistviewRouteMixin"
             ]
         },
         "DetailInterationService": {
@@ -4721,9 +4729,9 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
             "line": 38,
-            "description": "Handles click on row of objectlistview.\nSends action out of component.",
+            "description": "Handles click on row of groupedit.\nSends action out of component.",
             "itemtype": "method",
-            "name": "rowClick",
+            "name": "groupEditRowClick",
             "params": [
                 {
                     "name": "record",
@@ -4766,9 +4774,9 @@
             "line": 75,
             "description": "Name of action to handle row click.\nAction will be send out of the component.",
             "itemtype": "property",
-            "name": "rowClick",
+            "name": "action",
             "type": "String",
-            "default": "'rowClick'",
+            "default": "'groupEditRowClick'",
             "class": "FlexberryGroupedit",
             "module": "ember-flexberry"
         },
@@ -5428,7 +5436,7 @@
             "line": 39,
             "description": "Handles action from row click (action is handled at route so it can't be closure action now).",
             "itemtype": "method",
-            "name": "rowClick",
+            "name": "objectListViewRowClick",
             "params": [
                 {
                     "name": "record",
@@ -5476,7 +5484,7 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
             "line": 82,
-            "description": "A stub for call of custom user buttons. Used when no handler is defined.\n      When not stab is used (closure action is defined), structured info about custom buttons is returned.\n      Closure action has to return an array of structures:\n\n      ```\n      {\n     \tbuttonName: '...', // Button displayed name.\n     \tbuttonAction: '...', // Action that is called from controller on this button click (it has to be registered at component).\n     \tbuttonClasses: '...' // Css classes for button.\n      }\n      ```\n\n     Example of how to add user buttons:\n      1) it has to be defined special method (it will be used as closure action) at corresponding controller (name is not fixed).\n      ```\n      actions: {\n       getCustomButtons: function() {\n         return [{\n         \tbuttonName: 'UserButton',\n         \tbuttonAction: 'userButtonActionTest',\n         \tbuttonClasses: 'my-test-user-button test-click-button'\n         }];\n       }\n      }\n      ```\n\n      2) it has to be defined set as 'buttonAction' methods.\n      ```\n      actions: {\n       userButtonActionTest: function() {\n         this.set('header', this.get('header') + ' clicked');\n       }\n      }\n      ```\n\n      3) defined methods have to be registered at conponent.\n      ```\n      {{flexberry-objectlistview\n       ...\n       customButtons = (action \"getCustomButtons\")\n       userButtonActionTest = 'userButtonActionTest'\n      }}\n      ```",
+            "description": "A stub for call of custom user buttons. Used when no handler is defined.\n      When not stab is used (closure action is defined), structured info about custom buttons is returned.\n      Closure action has to return an array of structures:\n\n      ```\n      {\n     \tbuttonName: '...', // Button displayed name.\n     \tbuttonAction: '...', // Action that is called from controller on this button click (it has to be registered at component).\n     \tbuttonClasses: '...' // Css classes for button.\n      }\n      ```\n\n     Example of how to add user buttons:\n      1) it has to be defined special method (it will be used as closure action) at corresponding controller (name is not fixed).\n      ```\n      actions: {\n       getCustomButtons: function() {\n         return [{\n         \tbuttonName: 'UserButton',\n         \tbuttonAction: 'userButtonActionTest',\n         \tbuttonClasses: 'my-test-user-button test-click-button'\n         }];\n       }\n      }\n      ```\n\n      2) it has to be defined set as 'buttonAction' methods.\n      ```\n      actions: {\n       userButtonActionTest: function() {\n         this.set('header', this.get('header') + ' clicked');\n       }\n      }\n      ```\n\n      3) defined methods have to be registered at conponent.\n      ```\n      {{flexberry-objectlistview\n       ...\n       customButtons=(action \"getCustomButtons\")\n       userButtonActionTest='userButtonActionTest'\n      }}\n      ```",
             "itemtype": "method",
             "name": "customButtons",
             "return": {
@@ -5538,7 +5546,7 @@
             "itemtype": "property",
             "name": "action",
             "type": "String",
-            "default": "'rowClick'",
+            "default": "'objectListViewRowClick'",
             "class": "FlexberryObjectlistview",
             "module": "ember-flexberry"
         },
@@ -8660,6 +8668,20 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
+            "line": 9,
+            "description": "Table row click handler.",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "Record related to clicked table row.",
+                    "type": "Ember.Object"
+                }
+            ],
+            "class": "BaseModel",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/mixins/limited-controller.js",
             "line": 10,
             "description": "Update current limit function.",
@@ -8889,20 +8911,6 @@
             "itemtype": "method",
             "name": "willTransition",
             "class": "EditFormRoute",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 43,
-            "description": "Table row click handler.",
-            "params": [
-                {
-                    "name": "record",
-                    "description": "Record related to clicked table row.",
-                    "type": "Ember.Object"
-                }
-            ],
-            "class": "ListFormRoute",
             "module": "ember-flexberry"
         },
         {
@@ -10307,6 +10315,10 @@
             "line": " ember-flexberry/addon/mixins/flexberry-groupedit-route.js:49"
         },
         {
+            "message": "Missing item type\nTable row click handler.",
+            "line": " ember-flexberry/addon/mixins/flexberry-objectlistview-route.js:9"
+        },
+        {
             "message": "Missing item type\nUpdate limit function query parameter and reloads route if needed.",
             "line": " ember-flexberry/addon/mixins/limited-route.js:13"
         },
@@ -10317,10 +10329,6 @@
         {
             "message": "Missing item type\nДесериализовать строку с параметрами сортировки. Ожидается строка следующего вида: '+Имя1-Имя2{...}',\nгде '+' и '-' - направления сортировки, 'ИмяX' - имя свойства для сортировки.",
             "line": " ember-flexberry/addon/mixins/sortable-route.js:8"
-        },
-        {
-            "message": "Missing item type\nTable row click handler.",
-            "line": " ember-flexberry/addon/routes/list-form.js:43"
         },
         {
             "message": "Missing item type\nInitializes service.",
