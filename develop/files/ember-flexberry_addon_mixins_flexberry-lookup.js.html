@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/flexberry-lookup.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/mixins/flexberry-lookup.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -144,7 +144,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/flexberry-lookup.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/mixins/flexberry-lookup.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -154,445 +154,199 @@
  */
 
 import Ember from &#x27;ember&#x27;;
-import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 
 import QueryBuilder from &#x27;ember-flexberry-data/query/builder&#x27;;
-import { StringPredicate } from &#x27;ember-flexberry-data/query/predicate&#x27;;
 
-import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
-
-/**
- * Lookup component for Semantic UI.
- *
- * @class FlexberryLookup
- * @extends FlexberryBaseComponent
- */
-export default FlexberryBaseComponent.extend({
-  /**
-   * Default classes for component wrapper.
-   *
-   * @property classNames
-   * @type Array
-   * @readOnly
-   */
-  classNames: [&#x27;flexberry-lookup&#x27;],
+// TODO: rename file, add &#x27;controller&#x27; word into filename.
+export default Ember.Mixin.create({
+  // Lookup settings.
+  lookupSettings: {
+    controllerName: undefined,
+    template: undefined,
+    contentTemplate: undefined,
+    loaderTemplate: undefined
+  },
 
   /**
-   * Classes by properties of the component.
+   * Controller to show lookup modal window.
    *
-   * @property classNameBindings
-   * @type Array
-   * @readOnly
-   */
-  classNameBindings: [&#x27;autocompleteClass&#x27;],
-
-  placeholder: t(&#x27;flexberry-lookup.placeholder&#x27;),
-  chooseText: t(&#x27;flexberry-lookup.choose-button-text&#x27;),
-
-  // ToDo: Use &#x27;flexberry-lookup.remove-button-text&#x27; from locale.
-  removeText: &#x27;&lt;i class=&quot;remove icon&quot;&gt;&lt;/i&gt;&#x27;,
-
-  /**
-   * Classes for choose button.
-   *
-   * @property chooseButtonClass
-   * @type String
+   * @property lookupController
+   * @type Ember.InjectedProperty
    * @default undefined
    */
-  chooseButtonClass: undefined,
+  lookupController: undefined,
 
   /**
-   * Classes for remove button.
+   * Service for auth matters.
+   * FlexberryAuthService is injected here by default.
    *
-   * @property removeButtonClass
-   * @type String
-   * @default undefined
+   * @property currentAuthService
+   * @type Service
    */
-  removeButtonClass: undefined,
-
-  projection: undefined,
-
-  relationName: undefined,
-  title: undefined,
-
-  /**
-   * Flag to show that lookup is in autocomplete mode.
-   *
-   * @property autocomplete
-   * @type Boolean
-   * @default false
-   * @public
-   */
-  autocomplete: false,
-
-  /**
-   * Flag to show that lookup is in dropdown mode.
-   *
-   * @property dropdown
-   * @type Boolean
-   * @default false
-   * @public
-   */
-  dropdown: false,
-
-  /**
-   * Classes by property of autocomplete.
-   *
-   * @property autocompleteClass
-   * @type String
-   * @readOnly
-   */
-  autocompleteClass: Ember.computed(&#x27;autocomplete&#x27;, function() {
-    if (this.get(&#x27;autocomplete&#x27;)) {
-      return &#x27;ui search&#x27;;
-    }
-  }),
-
-  /**
-   * Action&#x27;s name to update model&#x27;s relation value.
-   *
-   * @property updateLookupAction
-   * @type String
-   * @default &#x27;updateLookupValue&#x27;
-   * @public
-   */
-  updateLookupAction: &#x27;updateLookupValue&#x27;,
-
-  /**
-   * Min characters count necessary to call autocomplete.
-   *
-   * @property minCharacters
-   * @type Number
-   * @default 1
-   * @public
-   */
-  minCharacters: 1,
-
-  /**
-   * Maximum number of results to display on autocomplete or dropdown.
-   *
-   * @property maxResults
-   * @type Number
-   * @default 10
-   * @public
-   */
-  maxResults: 10,
-
-  /**
-   * Multimple select.
-   *
-   * @property multiselect
-   * @type Boolean
-   * @default false
-   * @public
-   */
-  multiselect: false,
-
-  /**
-   * Object with lookup properties to send on choose action.
-   *
-   * @property chooseData
-   * @type Object
-   */
-  chooseData: Ember.computed(&#x27;projection&#x27;, &#x27;relationName&#x27;, &#x27;title&#x27;, function() {
-    return {
-      projection: this.get(&#x27;projection&#x27;),
-      relationName: this.get(&#x27;relationName&#x27;),
-      title: this.get(&#x27;title&#x27;),
-      modelToLookup: this.get(&#x27;relatedModel&#x27;),
-
-      //TODO: move to modal settings.
-      sizeClass: this.get(&#x27;sizeClass&#x27;)
-    };
-  }),
-
-  /**
-   * Object with lookup properties to send on remove action.
-   *
-   * @property removeData
-   * @type Object
-   */
-  removeData: Ember.computed(&#x27;relationName&#x27;, function() {
-    return {
-      relationName: this.get(&#x27;relationName&#x27;),
-      modelToLookup: this.get(&#x27;relatedModel&#x27;)
-    };
-  }),
-
-  /**
-   * Current store.
-   * Used for loading data for autocomplete and for dropdown.
-   *
-   * @property store
-   * @type DS.Store
-   * @protected
-   * @readOnly
-   */
-  store: Ember.inject.service(&#x27;store&#x27;),
-
-  /**
-   * Name of the attribute of the model to diplay for the user.
-   *
-   * @property displayAttributeName
-   * @type String
-   * @default null
-   * @protected
-   */
-  displayAttributeName: null,
-
-  /**
-   * Currently selected instance of the model.
-   *
-   * @property value
-   * @type Object
-   * @protected
-   */
-  value: undefined,
-
-  /**
-   * Additional observer of value changings.
-   * Updates displayValue.
-   */
-  _valueObserver: Ember.observer(&#x27;value&#x27;, function() {
-    this.set(&#x27;displayValue&#x27;, this.buildDisplayValue());
-  }),
-
-  /**
-   * Text that displayed for the user as representation of currently selected value.
-   * This property is binded to the view and can be changed by user (it won&#x27;t be
-   * applied to model automatically).
-   *
-   * @property displayValue
-   * @type String
-   * @protected
-   */
-  displayValue: Ember.computed(&#x27;value&#x27;, function() {
-    return this.buildDisplayValue();
-  }),
-
-  init() {
-    this._super();
-  },
-
-  // Init component when DOM is ready.
-  didInsertElement: function() {
-    this._super();
-
-    if (this.get(&#x27;readonly&#x27;)) {
-      return;
-    }
-
-    if (this.get(&#x27;autocomplete&#x27;)) {
-      this._onAutocomplete();
-    } else if (this.get(&#x27;dropdown&#x27;)) {
-      this._onDropdown();
-    }
-  },
-
-  /**
-   * Init component with autocomplete mode.
-   *
-   * @method _onAutocomplete
-   * @private
-   */
-  _onAutocomplete: function() {
-    let _this = this;
-    let store = this.get(&#x27;store&#x27;);
-    let relatedModel = this.get(&#x27;relatedModel&#x27;);
-    let modelName = relatedModel.constructor.modelName;
-
-    let displayAttributeName = _this.get(&#x27;displayAttributeName&#x27;);
-    if (!displayAttributeName) {
-      throw new Error(&#x27;Required property &quot;displayAttributeName&quot; is not defined.&#x27;);
-    }
-
-    let minCharacters = this.get(&#x27;minCharacters&#x27;);
-    if (!minCharacters || typeof (minCharacters) !== &#x27;number&#x27; || minCharacters &lt;= 0) {
-      throw new Error(&#x27;minCharacters has wrong value.&#x27;);
-    }
-
-    let maxResults = this.get(&#x27;maxResults&#x27;);
-    if (!maxResults || typeof (maxResults) !== &#x27;number&#x27; || maxResults &lt;= 0) {
-      throw new Error(&#x27;maxResults has wrong value.&#x27;);
-    }
-
-    let relationName = this.get(&#x27;relationName&#x27;);
-    if (!relationName) {
-      throw new Error(&#x27;relationName is not defined.&#x27;);
-    }
-
-    var state;
-    this.$().search({
-      minCharacters: minCharacters,
-      maxResults: maxResults,
-      cache: false,
-      apiSettings: {
-        /**
-         * Mocks call to the data source,
-         * Uses query language and store for loading data explicitly.
-         *
-         * @param {Object} settings
-         * @param {Function} callback
-         */
-        responseAsync(settings, callback) {
-          let builder = new QueryBuilder(store, modelName);
-
-          if (settings.urlData.query) {
-            builder.where(new StringPredicate(displayAttributeName).contains(settings.urlData.query));
-          }
-
-          store.query(modelName, builder.build()).then((records) =&gt; {
-            callback({
-              success: true,
-              results: records.map(i =&gt; {
-                return {
-                  title: i.get(displayAttributeName),
-                  instance: i
-                };
-              })
-            });
-          }, () =&gt; {
-            callback({ success: false });
-          });
-        }
-      },
-
-      /**
-       * Handles opening of the autocomplete list.
-       * Sets current state (taht autocomplete list is opened) for future purposes.
-       */
-      onResultsOpen() {
-        state = &#x27;opened&#x27;;
-        Ember.Logger.debug(&#x60;Flexberry Lookup::autocomplete state = ${state}&#x60;);
-      },
-
-      /**
-       * Handles selection of item from the autocomplete list.
-       * Saves selected model and notifies the controller.
-       *
-       * @param {Object} result Item from array of objects, built in &#x60;responseAsync&#x60;.
-       */
-      onSelect(result) {
-        state = &#x27;selected&#x27;;
-        Ember.Logger.debug(&#x60;Flexberry Lookup::autocomplete state = ${state}; result = ${result}&#x60;);
-
-        _this.set(&#x27;value&#x27;, result.instance);
-        _this.sendAction(
-          &#x27;updateLookupAction&#x27;,
-          {
-            relationName: relationName,
-            modelToLookup: relatedModel,
-            newRelationValue: result.instance
-          });
-      },
-
-      /**
-       * Handles closing of the autocomplete list.
-       * Restores display text if nothing has been selected.
-       */
-      onResultsClose() {
-        // Set displayValue directly because value hasn&#x27;been changes
-        // and Ember won&#x27;t change computed property.
-        if (state !== &#x27;selected&#x27;) {
-          _this.set(&#x27;displayValue&#x27;, _this.buildDisplayValue());
-        }
-
-        state = &#x27;closed&#x27;;
-        Ember.Logger.debug(&#x60;Flexberry Lookup::autocomplete state = ${state}&#x60;);
-      }
-    });
-  },
-
-  /**
-   * Init component with dropdown mode.
-   *
-   * @method _onDropdown
-   * @private
-   */
-  _onDropdown: function() {
-    let _this = this;
-    let store = this.get(&#x27;store&#x27;);
-    let modelName = this.get(&#x27;relatedModel&#x27;).constructor.modelName;
-    let minCharacters = this.get(&#x27;minCharacters&#x27;);
-    let multiselect = this.get(&#x27;multiselect&#x27;);
-    let displayAttributeName = _this.get(&#x27;displayAttributeName&#x27;);
-    let relationName = this.get(&#x27;relationName&#x27;);
-    let relatedModel = this.get(&#x27;relatedModel&#x27;);
-
-    this.$(&#x27;.flexberry-dropdown&#x27;).dropdown({
-      minCharacters: minCharacters,
-      allowAdditions: multiselect,
-      cache: false,
-      apiSettings: {
-        responseAsync(settings, callback) {
-          console.log(&#x27;load&#x27;);
-          let builder = new QueryBuilder(store, modelName);
-
-          if (settings.urlData.query) {
-            builder.where(new StringPredicate(displayAttributeName).contains(settings.urlData.query));
-          }
-
-          store.query(modelName, builder.build()).then((records) =&gt; {
-            callback({
-              success: true,
-              results: records.map(i =&gt; {
-                return {
-                  name: i.get(displayAttributeName),
-                  value: i
-                };
-              })
-            });
-          }, () =&gt; {
-            callback({ success: false });
-          });
-        }
-      },
-      onChange(value) {
-        _this.sendAction(
-          &#x27;updateLookupAction&#x27;,
-          {
-            relationName: relationName,
-            modelToLookup: relatedModel,
-            newRelationValue: value
-          });
-      }
-    }).dropdown(&#x27;set text&#x27;, _this.get(&#x27;displayValue&#x27;));
-  },
+  currentAuthService: Ember.inject.service(&#x27;flexberry-auth-service&#x27;),
 
   actions: {
-    choose: function(chooseData) {
-      if (this.get(&#x27;readonly&#x27;)) {
-        return;
+    /**
+     * Handles action from lookup choose action.
+     *
+     * @method showLookupDialog
+     * @param {Object} chooseData Lookup parameters (projection name, relation name, etc).
+     */
+    showLookupDialog: function(chooseData) {
+      let options = Ember.$.extend(true, {
+        projection: undefined,
+        relationName: undefined,
+        title: undefined,
+        predicate: undefined,
+        modelToLookup: undefined,
+        sizeClass: undefined
+      }, chooseData);
+
+      let projectionName = options.projection;
+      let relationName = options.relationName;
+      let title = options.title;
+      let modelToLookup = options.modelToLookup;
+      let sizeClass = options.sizeClass;
+
+      if (!projectionName) {
+        throw new Error(&#x27;ProjectionName is undefined.&#x27;);
       }
 
-      this.sendAction(&#x27;choose&#x27;, chooseData);
+      let model = modelToLookup ? modelToLookup : this.get(&#x27;model&#x27;);
+
+      // Get ember static function to get relation by name.
+      let relationshipsByName = Ember.get(model.constructor, &#x27;relationshipsByName&#x27;);
+
+      // Get relation property from model.
+      let relation = relationshipsByName.get(relationName);
+      if (!relation) {
+        throw new Error(&#x60;No relation with &#x27;${relationName}&#x27; name defined in &#x27;${model.constructor.modelName}&#x27; model.&#x60;);
+      }
+
+      // Get property type name.
+      let relatedToType = relation.type;
+
+      // Get property type constructor by type name.
+      let relatedTypeConstructor = this.store.modelFor(relatedToType);
+
+      // Get a projection from related type model.
+      let projection = Ember.get(relatedTypeConstructor, &#x27;projections&#x27;)[projectionName];
+      if (!projection) {
+        throw new Error(&#x60;No projection with &#x27;${projectionName}&#x27; name defined in &#x27;${relatedToType}&#x27; model. &#x60;);
+      }
+
+      // Lookup
+      let lookupSettings = this.get(&#x27;lookupSettings&#x27;);
+      if (!lookupSettings) {
+        throw new Error(&#x27;Lookup settings are undefined.&#x27;);
+      }
+
+      // TODO: maybe default params or Ember.assert\warn?
+      if (!lookupSettings.template) {
+        throw new Error(&#x27;Lookup template is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.controllerName) {
+        throw new Error(&#x27;Lookup controller name is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.contentTemplate) {
+        throw new Error(&#x27;Lookup content template is undefined.&#x27;);
+      }
+
+      if (!lookupSettings.loaderTemplate) {
+        throw new Error(&#x27;Lookup loader template is undefined.&#x27;);
+      }
+
+      this.send(&#x27;showModalDialog&#x27;, lookupSettings.template);
+      let loadingParams = {
+        view: lookupSettings.template,
+        outlet: &#x27;modal-content&#x27;
+      };
+      this.send(&#x27;showModalDialog&#x27;, lookupSettings.loaderTemplate, null, loadingParams);
+
+      let builder = new QueryBuilder(this.store)
+        .from(relatedToType)
+        .selectByProjection(projectionName);
+
+      if (options.predicate) {
+        builder.where(options.predicate);
+      }
+
+      this.store.query(relatedToType, builder.build()).then(data =&gt; {
+        this.send(&#x27;removeModalDialog&#x27;, loadingParams);
+
+        let controller = this.get(&#x27;lookupController&#x27;);
+        controller.clear();
+        controller.setProperties({
+          modelProjection: projection,
+          title: title,
+          sizeClass: sizeClass,
+          saveTo: {
+            model: model,
+            propName: relationName
+          }
+        });
+
+        this.send(&#x27;showModalDialog&#x27;, lookupSettings.contentTemplate, {
+          controller: controller,
+          model: data
+        }, loadingParams);
+      });
     },
-    remove: function(removeData) {
-      if (this.get(&#x27;readonly&#x27;)) {
-        return;
-      }
 
-      this.sendAction(&#x27;remove&#x27;, removeData);
+    /**
+     * Handles correcponding route&#x27;s willTransition action.
+     * It sends message about transition to showing lookup modal window controller.
+     *
+     * @method routeWillTransition
+     */
+    routeWillTransition: function() {
+      this.get(&#x27;lookupController&#x27;).send(&#x27;routeWillTransition&#x27;);
+    },
+
+    /**
+     * Handles action from lookup remove action.
+     *
+     * @method removeLookupValue
+     * @param {Object} removeData Lookup parameters (projection name, etc).
+     */
+    removeLookupValue: function(removeData) {
+      let options = Ember.$.extend(true, {
+        relationName: undefined,
+        modelToLookup: undefined
+      }, removeData);
+      let relationName = options.relationName;
+      let modelToLookup = options.modelToLookup;
+
+      let model = modelToLookup ? modelToLookup : this.get(&#x27;model&#x27;);
+      model.set(relationName, undefined);
+
+      // Manually make record dirty, because ember-data does not do it when relationship changes.
+      model.makeDirty();
+    },
+
+    /**
+     * Update relation value at model.
+     *
+     * @method updateLookupValue
+     * @param {Object} updateData Lookup parameters to update data at model (projection name, etc).
+     */
+    updateLookupValue: function(updateData) {
+      let options = Ember.$.extend(true, {
+        relationName: undefined,
+        newRelationValue: undefined,
+        modelToLookup: undefined
+      }, updateData);
+      let modelToLookup = options.modelToLookup;
+      let model = modelToLookup ? modelToLookup : this.get(&#x27;model&#x27;);
+
+      Ember.Logger.debug(&#x60;Flexberry Lookup Mixin::updateLookupValue ${options.relationName}&#x60;);
+      model.set(options.relationName, options.newRelationValue);
+
+      // Manually make record dirty, because ember-data does not do it when relationship changes.
+      model.makeDirty();
     }
-  },
-
-  /**
-   * Builds display text by selected model.
-   *
-   * @method buildDisplayValue
-   * @returns {String}
-   * @protected
-   */
-  buildDisplayValue() {
-    let selectedModel = this.get(&#x27;value&#x27;);
-    if (!selectedModel) {
-      this.set(&#x27;placeholder&#x27;, t(&#x27;flexberry-lookup.placeholder&#x27;));
-      return &#x27;&#x27;;
-    } else {
-      this.set(&#x27;placeholder&#x27;, &#x27;&#x27;);
-    }
-
-    return selectedModel.get(this.get(&#x27;displayAttributeName&#x27;));
   }
 });
 

@@ -568,8 +568,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js": {
-            "name": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+        "ember-flexberry/addon/mixins/flexberry-lookup.js": {
+            "name": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "modules": {},
             "classes": {},
             "fors": {},
@@ -8599,7 +8599,7 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "line": 19,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
@@ -8610,7 +8610,7 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "line": 28,
             "description": "Service for auth matters.\nFlexberryAuthService is injected here by default.",
             "itemtype": "property",
@@ -8620,7 +8620,7 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "line": 38,
             "description": "Handles action from lookup choose action.",
             "itemtype": "method",
@@ -8636,7 +8636,7 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "line": 147,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
@@ -8645,7 +8645,7 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "line": 157,
             "description": "Handles action from lookup remove action.",
             "itemtype": "method",
@@ -8661,7 +8661,7 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/flexberry-lookup-mixin.js",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "line": 178,
             "description": "Update relation value at model.",
             "itemtype": "method",
