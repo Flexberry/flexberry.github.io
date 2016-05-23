@@ -14,6 +14,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="../themes/adminLTE/assets/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../themes/adminLTE/assets/dist/css/skins/skin-blue-light.css">
+    <link rel="stylesheet" href="../themes/adminLTE/assets/plugins/prism/prism.css">
     <link rel="stylesheet" href="../themes/adminLTE/assets/documentation/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -311,7 +312,7 @@ AdminLTE/
   <h3>Defining AdminLTEOptions</h3>
   <p>Alternatively, you can define a global options variable named <code>AdminLTEOptions</code> and initialize it before loading app.js.</p>
   <p>Example</p>
-  <pre class="prettyprint"><code class="html">&LT;script>
+  <pre><code class="language-html">&LT;script>
   var AdminLTEOptions = {
     //Enable sidebar expand on hover effect for sidebar mini
     //This option is forced to true if both the fixed layout and sidebar mini
@@ -326,7 +327,7 @@ AdminLTE/
 &LT;script src="dist/js/app.js" type="text/javascript">&LT;/script></code></pre>
 
   <h3>Available AdminLTE Options</h3>
-  <pre class="prettyprint"><code class="javascript">{
+  <pre><code class="language-javascript">{
   //Add slimscroll to navbar menus
   //This requires you to load the slimscroll plugin
   //in every page before app.js
@@ -590,7 +591,7 @@ AdminLTE/
       </header>
     </div>
   </div>
-  <pre class="prettyprint">&LT;header class="main-header">
+  <pre><code class="lang-html">&LT;header class="main-header">
   &LT;a href="../../index2.html" class="logo">
     &LT;!-- LOGO -->
     AdminLTE
@@ -724,7 +725,7 @@ AdminLTE/
       &LT;/ul>
     &LT;/div>
   &LT;/nav>
-&LT;/header></pre>
+  &LT;/header></code></pre>
   <h4>Top Nav Layout. Main Header Example.</h4>
   <div class="callout callout-info lead">
     <h4>Reminder!</h4>
@@ -785,7 +786,7 @@ AdminLTE/
       </header>
     </div>
   </div>
-  <pre class="prettyprint">
+  <pre><code class="lang-html">
 &LT;header class="main-header">
   &LT;nav class="navbar navbar-static-top">
     &LT;div class="container-fluid">
@@ -835,7 +836,7 @@ AdminLTE/
     &LT;/div>&LT;!-- /.navbar-collapse -->
     &LT;/div>&LT;!-- /.container-fluid -->
   &LT;/nav>
-&LT;/header></pre>
+  &LT;/header></code></pre>
 
   <!-- ===================================================================== -->
 
@@ -844,7 +845,7 @@ AdminLTE/
     The sidebar used in this page to the left provides an example of what your sidebar should like.
     Construction of a sidebar:
   </p>
-  <pre class="prettyprint">
+  <pre><code class="language-html">
 &LT;div class="main-sidebar">
   &LT;!-- Inner sidebar -->
   &LT;div class="sidebar">
@@ -886,7 +887,9 @@ AdminLTE/
     &LT;/ul>&LT;!-- /.sidebar-menu -->
 
   &LT;/div>&LT;!-- /.sidebar -->
-&LT;/div>&LT;!-- /.main-sidebar --></pre>
+&LT;/div>&LT;!-- /.main-sidebar -->
+</code>
+</pre>
 
   <h3 id="component-control-sidebar">Control Sidebar</h3>
   <p class="lead">Control sidebar is the right side bar. It can be used for many purposes and is extremely easy
@@ -896,7 +899,7 @@ AdminLTE/
   <p class="lead">The following code should be placed within the <code>.wrapper</code> div. I prefer
   to place it right after the footer.</p>
   <p class="lead">Dark Sidebar Markup</p>
-<pre class="prettyprint"><code class="lang-html">&LT;!-- The Right Sidebar -->
+<pre><code class="lang-html">&LT;!-- The Right Sidebar -->
 &LT;aside class="control-sidebar control-sidebar-dark">
   &LT;!-- Content of the sidebar goes here -->
 &LT;/aside>
@@ -905,7 +908,7 @@ AdminLTE/
 &LT;div class="control-sidebar-bg">&LT;/div></code></pre>
 
   <p class="lead">Light Sidebar Markup</p>
-<pre class="prettyprint"><code class="lang-html">&LT;!-- The Right Sidebar -->
+<pre><code class="lang-html">&LT;!-- The Right Sidebar -->
 &LT;aside class="control-sidebar control-sidebar-light">
   &LT;!-- Content of the sidebar goes here -->
 &LT;/aside>
@@ -921,7 +924,7 @@ AdminLTE/
   <button class="btn btn-primary" data-toggle="control-sidebar">Toggle Right Sidebar</button><br><br>
 
   <p class="lead">Sidebar Toggle Markup</p>
-  <pre class="prettyprint"><code class="lang-html">&LT;button class="btn btn-default" data-toggle="control-sidebar">Toggle Right Sidebar&LT;/button></code></pre>
+  <pre><code class="lang-html">&LT;button class="btn btn-default" data-toggle="control-sidebar">Toggle Right Sidebar&LT;/button></code></pre>
   <!-- ===================================================================== -->
 
   <h3 id="component-info-box">Info Box</h3>
@@ -967,7 +970,7 @@ AdminLTE/
     </div><!-- /.col -->
   </div><!-- /.row -->
   <p class="lead">Markup</p>
-  <pre class="prettyprint"><code class="lang-html">&LT;div class="info-box">
+  <pre><code class="lang-html">&LT;div class="info-box">
   &LT;!-- Apply any bg-* class to to the icon to color it -->
   &LT;span class="info-box-icon bg-red">&LT;i class="fa fa-star-o">&LT;/i>&LT;/span>
   &LT;div class="info-box-content">
@@ -1040,7 +1043,7 @@ AdminLTE/
     </div><!-- /.col -->
   </div><!-- /.row -->
   <p class="lead">Markup</p>
-  <pre class="prettyprint"><code class="lang-html">&LT;!-- Apply any bg-* class to to the info-box to color it -->
+  <pre><code class="lang-html">&LT;!-- Apply any bg-* class to to the info-box to color it -->
 &LT;div class="info-box bg-red">
   &LT;span class="info-box-icon">&LT;i class="fa fa-comments-o">&LT;/i>&LT;/span>
   &LT;div class="info-box-content">
@@ -1080,7 +1083,7 @@ AdminLTE/
       The footer of the box
     </div><!-- box-footer -->
   </div><!-- /.box -->
-  <pre class="prettyprint">&LT;div class="box">
+  <pre><code class="lang-html">&LT;div class="box">
   &LT;div class="box-header with-border">
     &LT;h3 class="box-title">Default Box Example&LT;/h3>
     &LT;div class="box-tools pull-right">
@@ -1095,7 +1098,8 @@ AdminLTE/
   &LT;div class="box-footer">
     The footer of the box
   &LT;/div>&LT;!-- box-footer -->
-&LT;/div>&LT;!-- /.box --></pre>
+&LT;/div>&LT;!-- /.box -->
+  </code></pre>
   <h4>Box Variants</h4>
   <p class="lead">You can change the style of the box by adding any of the contextual classes.</p>
   <div class="row">
@@ -1161,12 +1165,13 @@ AdminLTE/
       </div><!-- /.box -->
     </div>
   </div><!-- /.row -->
-  <pre class="prettyprint">&LT;div class="box box-default">...&LT;/div>
+  <pre><code class="lang-html">&LT;div class="box box-default">...&LT;/div>
 &LT;div class="box box-primary">...&LT;/div>
 &LT;div class="box box-info">...&LT;/div>
 &LT;div class="box box-warning">...&LT;/div>
 &LT;div class="box box-success">...&LT;/div>
-&LT;div class="box box-danger">...&LT;/div></pre>
+&LT;div class="box box-danger">...&LT;/div>
+  </code></pre>
 
   <h4>Solid Box</h4>
   <p class="lead">Solid Boxes are alternative ways to display boxes.
@@ -1235,23 +1240,26 @@ AdminLTE/
       </div><!-- /.box -->
     </div>
   </div><!-- /.row -->
-  <pre class="prettyprint">
+  <pre><code class="lang-html">
 &LT;div class="box box-solid box-default">...&LT;/div>
 &LT;div class="box box-solid box-primary">...&LT;/div>
 &LT;div class="box box-solid box-info">...&LT;/div>
 &LT;div class="box box-solid box-warning">...&LT;/div>
 &LT;div class="box box-solid box-success">...&LT;/div>
-&LT;div class="box box-solid box-danger">...&LT;/div></pre>
+&LT;div class="box box-solid box-danger">...&LT;/div>
+  </code></pre>
   <h4>Box Tools</h4>
   <p class="lead">Boxes can contain tools to deploy a specific event or provide simple info. The following examples makes use
     of multiple AdminLTE components within the header of the box.</p>
   <p>AdminLTE data-widget attribute provides boxes with the ability to collapse or be removed. The buttons
     are placed in the box-tools which is placed in the box-header.</p>
-  <pre class="prettyprint">
+  <pre><code class="lang-html">
 &LT;!-- This will cause the box to be removed when clicked -->
 &LT;button class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">&LT;i class="fa fa-times">&LT;/i>&LT;/button>
 &LT;!-- This will cause the box to collapse when clicked -->
-&LT;button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">&LT;i class="fa fa-minus">&LT;/i>&LT;/button></pre>
+&LT;button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">&LT;i class="fa fa-minus">&LT;/i>&LT;/button>
+  </code>
+</pre>
   <div class="row">
     <div class="col-md-4">
       <div class="box box-default">
@@ -1265,7 +1273,7 @@ AdminLTE/
           The body of the box
         </div><!-- /.box-body -->
       </div><!-- /.box -->
-      <pre class="prettyprint">
+      <pre><code class="lang-html">
 &LT;div class="box box-default">
   &LT;div class="box-header with-border">
     &LT;h3 class="box-title">Collapsable&LT;/h3>
@@ -1276,7 +1284,7 @@ AdminLTE/
   &LT;div class="box-body">
     The body of the box
   &LT;/div>&LT;!-- /.box-body -->
-&LT;/div>&LT;!-- /.box --></pre>
+  &LT;/div>&LT;!-- /.box --></code></pre>
     </div>
     <div class="col-md-4">
       <div class="box box-default">
@@ -1290,7 +1298,7 @@ AdminLTE/
           The body of the box
         </div><!-- /.box-body -->
       </div><!-- /.box -->
-      <pre class="prettyprint">
+      <pre><code class="lang-html">
 &LT;div class="box box-default">
   &LT;div class="box-header with-border">
     &LT;h3 class="box-title">Removable&LT;/h3>
@@ -1301,7 +1309,7 @@ AdminLTE/
   &LT;div class="box-body">
     The body of the box
   &LT;/div>&LT;!-- /.box-body -->
-&LT;/div>&LT;!-- /.box --></pre>
+  &LT;/div>&LT;!-- /.box --></code></pre>
     </div>
     <div class="col-md-4">
       <div class="box box-default collapsed-box">
@@ -1315,7 +1323,7 @@ AdminLTE/
           The body of the box
         </div><!-- /.box-body -->
       </div><!-- /.box -->
-      <pre class="prettyprint">
+      <pre><code class="lang-html">
 &LT;div class="box box-default collapsed-box">
   &LT;div class="box-header with-border">
     &LT;h3 class="box-title">Expandable&LT;/h3>
@@ -1326,7 +1334,7 @@ AdminLTE/
   &LT;div class="box-body">
     The body of the box
   &LT;/div>&LT;!-- /.box-body -->
-&LT;/div>&LT;!-- /.box --></pre>
+  &LT;/div>&LT;!-- /.box --></code></pre>
     </div>
   </div><!-- /.row -->
   <p>We can also add labels, badges, pagination, tooltips, inputs and many more in the box tools. A few examples:</p>
@@ -1343,7 +1351,7 @@ AdminLTE/
           The body of the box
         </div><!-- /.box-body -->
       </div><!-- /.box -->
-      <pre class="prettyprint">
+      <pre><code class="lang-html">
 &LT;div class="box box-default">
   &LT;div class="box-header with-border">
     &LT;h3 class="box-title">Labels&LT;/h3>
@@ -1354,7 +1362,7 @@ AdminLTE/
   &LT;div class="box-body">
     The body of the box
   &LT;/div>&LT;!-- /.box-body -->
-&LT;/div>&LT;!-- /.box --></pre>
+  &LT;/div>&LT;!-- /.box --></code></pre>
     </div>
     <div class="col-md-4">
       <div class="box box-default">
@@ -1371,7 +1379,7 @@ AdminLTE/
           The body of the box
         </div><!-- /.box-body -->
       </div><!-- /.box -->
-      <pre class="prettyprint">
+      <pre><code class="lang-html">
 &LT;div class="box box-default">
   &LT;div class="box-header with-border">
     &LT;h3 class="box-title">Input&LT;/h3>
@@ -1385,7 +1393,7 @@ AdminLTE/
   &LT;div class="box-body">
     The body of the box
   &LT;/div>&LT;!-- /.box-body -->
-&LT;/div>&LT;!-- /.box --></pre>
+  &LT;/div>&LT;!-- /.box --></code></pre>
     </div>
     <div class="col-md-4">
       <div class="box box-default">
@@ -1400,7 +1408,7 @@ AdminLTE/
           The body of the box
         </div><!-- /.box-body -->
       </div><!-- /.box -->
-      <pre class="prettyprint">
+      <pre><code class="lang-html">
 &LT;div class="box box-default">
   &LT;div class="box-header with-border">
     &LT;h3 class="box-title">Tooltips on buttons&LT;/h3>
@@ -1412,14 +1420,14 @@ AdminLTE/
   &LT;div class="box-body">
     The body of the box
   &LT;/div>&LT;!-- /.box-body -->
-&LT;/div>&LT;!-- /.box --></pre>
+  &LT;/div>&LT;!-- /.box --></code></pre>
     </div><!-- /.col -->
   </div><!-- /.row -->
   <p>
     If you inserted a box into the document after <code>app.js</code> was loaded, you have to activate
     the collapse/remove buttons explicitly by calling <code>.activateBox()</code>:
   </p>
-  <pre class="prettyprint"><code class="html">&LT;script>
+  <pre><code class="lang-html">&LT;script>
     $("#box-widget").activateBox();
 &LT;/script></code></pre>
 
@@ -1460,7 +1468,7 @@ AdminLTE/
   <p class="lead">
     To simulate a loading state, simply place this code before the <code>.box</code> closing tag.
   </p>
-  <pre class="prettyprint"><code class="html">&LT;div class="overlay">
+  <pre><code class="lang-html">&LT;div class="overlay">
   &LT;i class="fa fa-refresh fa-spin">&LT;/i>
 &LT;/div>
 </code></pre>
@@ -1754,7 +1762,7 @@ AdminLTE/
     </div><!-- /.col -->
   </div><!-- /.row -->
   <p class="lead">Direct Chat Markup</p>
-  <pre class="prettyprint"><code class="html">
+  <pre><code class="lang-html">
 &LT;!-- Construct the box with style you want. Here we are using box-danger -->
 &LT;!-- Then add the class direct-chat and choose the direct-chat-* contexual class -->
 &LT;!-- The contextual class should match the box, so we are using direct-chat-danger -->
@@ -2157,7 +2165,8 @@ AdminLTE/
     <script src="../themes/adminLTE/assets/dist/js/app.min.js"></script>
     <!-- SlimScroll 1.3.0 -->
     <script src="../themes/adminLTE/assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<!--     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script> -->
     <script src="../themes/adminLTE/assets/documentation/docs.js"></script>
+    <script src="../themes/adminLTE/assets/plugins/prism/prism.js"></script>
   </body>
 </html>
