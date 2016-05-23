@@ -254,6 +254,65 @@ export default DS.RESTAdapter.extend({
   },
   /* jshint unused:true */
 
+  /**
+   * Overloaded method from &#x60;build-url-mixin&#x60; (Ember Data), taht builds URL to OData feed.
+   * Appends id as &#x60;(id)&#x60; (OData specification) instead of &#x60;/id&#x60;.
+   *
+   * @method _buildURL
+   * @param {String} modelName
+   * @param {String} id
+   * @return {String}
+   * @private
+   */
+  _buildURL(modelName, id) {
+    var url = [];
+    var host = Ember.get(this, &#x27;host&#x27;);
+    var prefix = this.urlPrefix();
+    var path;
+
+    if (modelName) {
+      path = this.pathForType(modelName);
+      if (path) {
+        url.push(path);
+      }
+    }
+
+    if (prefix) {
+      url.unshift(prefix);
+    }
+
+    url = url.join(&#x27;/&#x27;);
+    if (!host &amp;&amp; url &amp;&amp; url.charAt(0) !== &#x27;/&#x27;) {
+      url = &#x27;/&#x27; + url;
+    }
+
+    if (id != null) {
+      // Append id as &#x60;(id)&#x60; (OData specification) instead of &#x60;/id&#x60;.
+      url = this._appendIdToURL(id, url);
+    }
+
+    return url;
+  },
+
+  /**
+   * Appends id to URL according to the OData specification.
+   *
+   * @method _appendIdToURL
+   * @param {String} id
+   * @param {String} url
+   * @private
+   */
+  _appendIdToURL(id, url) {
+    let encId = encodeURIComponent(id);
+    let idType = Ember.get(this, &#x27;idType&#x27;);
+    if (idType !== &#x27;number&#x27;) {
+      encId = &#x60;&#x27;${encId}&#x27;&#x60;;
+    }
+
+    url += &#x27;(&#x27; + encId + &#x27;)&#x27;;
+    return url;
+  },
+
   createRecord(store, type, snapshot) {
     return this._sendRecord(store, type, snapshot, &#x27;createRecord&#x27;);
   },
