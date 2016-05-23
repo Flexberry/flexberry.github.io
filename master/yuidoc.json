@@ -8,8 +8,8 @@
       "./ember-flexberry/addon"
     ],
     "outdir": ".",
-    "themedir": "../yuidoc-flexberry-theme",
-    "helpers": ["../yuidoc-flexberry-theme/helpers/helpers.js"],
+    "themedir": "../themes",
+    "helpers": ["../themes/default/helpers/helpers.js"],
     "external": {
       "data": [
         {
