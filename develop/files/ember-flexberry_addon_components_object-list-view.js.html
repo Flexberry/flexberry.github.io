@@ -337,9 +337,68 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
   tagName: &#x27;div&#x27;,
 
   /**
-   * Component&#x27;s CSS classes.
+   * Component&#x27;s CSS classes for wrapper.
    */
   classNames: [&#x27;object-list-view-container&#x27;],
+
+  /**
+   * Flag: indicates whether table are striped.
+   *
+   * @property tableStriped
+   * @type Boolean
+   * @default true
+   */
+  tableStriped: true,
+
+  /**
+   * Flag: indicates whether table rows are clickable.
+   *
+   * @property rowClickable
+   * @type Boolean
+   * @default true
+   */
+  rowClickable: true,
+
+  /**
+   * Custom classes for table.
+   *
+   Example:
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/employees.hbs --&gt;
+    {{flexberry-objectlistview
+      ...
+      customTableClass=&#x27;inverted blue&#x27;
+      ...
+    }}
+    &#x60;&#x60;&#x60;
+   * @property customTableClass
+   * @type String
+   * @default &#x27;&#x27;
+   */
+  customTableClass: &#x27;&#x27;,
+
+  /**
+   * Classes for table.
+   *
+   * @property tableClass
+   * @type String
+   * @readOnly
+   */
+  tableClass: Ember.computed(&#x27;tableStriped&#x27;, &#x27;rowClickable&#x27;, &#x27;customTableClass&#x27;, function() {
+    let tableStriped = this.get(&#x27;tableStriped&#x27;);
+    let rowClickable = this.get(&#x27;rowClickable&#x27;);
+    let classes = this.get(&#x27;customTableClass&#x27;);
+
+    if (tableStriped) {
+      classes += &#x27; striped&#x27;;
+    }
+
+    if (rowClickable) {
+      classes += &#x27; selectable&#x27;;
+    }
+
+    return classes;
+  }),
 
   /**
    * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
@@ -629,15 +688,6 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
    * @type String
    */
   noDataMessage: undefined,
-
-  /**
-   * Flag: indicates whether table rows are clickable.
-   *
-   * @property rowClickable
-   * @type Boolean
-   * @default true
-   */
-  rowClickable: true,
 
   /**
    * Flag: indicates whether table headers are clickable.
