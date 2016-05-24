@@ -1949,6 +1949,27 @@
         {
             "file": "ember-flexberry-projections/addon/adapters/odata.js",
             "line": 106,
+            "description": "Overloaded method from `build-url-mixin` (Ember Data), that determines the pathname for a given type.\nAdditionally capitalizes the type name (requirement of Flexberry OData Server).",
+            "itemtype": "method",
+            "name": "pathForType",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The path for a given type.",
+                "type": "String"
+            },
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/adapters/odata.js",
+            "line": 120,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), taht builds URL to OData feed.\nAppends id as `(id)` (OData specification) instead of `/id`.",
             "itemtype": "method",
             "name": "_buildURL",
@@ -1976,7 +1997,7 @@
         },
         {
             "file": "ember-flexberry-projections/addon/adapters/odata.js",
-            "line": 146,
+            "line": 160,
             "description": "Appends id to URL according to the OData specification.",
             "itemtype": "method",
             "name": "_appendIdToURL",
@@ -2000,7 +2021,7 @@
         },
         {
             "file": "ember-flexberry-projections/addon/adapters/odata.js",
-            "line": 177,
+            "line": 191,
             "description": "Makes HTTP request for creating, updating or deleting the record.",
             "itemtype": "method",
             "name": "_sendRecord",
