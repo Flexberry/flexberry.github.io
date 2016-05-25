@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{htmlTitle}}</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="{{yuiGridsUrl}}">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="{{projectAssets}}/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{projectAssets}}/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="{{projectAssets}}/dist/css/skins/skin-blue-light.css">
+    <link rel="shortcut icon" type="image/png" href="{{projectAssets}}/favicon.png">
+</head>
+<body class="skin-blue-light fixed yui3-skin-sam">
+{{!-- <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        {{#if projectLogo}}
+	    <img alt="{{projectName}}" src="{{projectLogo}}" style="max-height: 65%;" title="{{projectName}}">
+        {{else}}
+	    <img alt="{{projectName}}" src="{{projectAssets}}/css/logo.png" style="max-height: 65%;" title="{{projectName}}">
+        {{/if}}
+            {{projectName}}
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>{{projectVersion}}</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='[{{#search classes allModules}}{{/search}}]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    {{>sidebar}}
+        </div>
+        <div class="span9">
+            {{>options}}
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+{{>layout_content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+<div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>F</b>doc</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Flexberry Documentation</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <!-- Navbar Right Menu -->
+          {{!-- <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Almsaeed Studio</a></li>
+              <li><a href="#">Premium Templates</a></li>
+            </ul>
+          </div> --}}
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      {{!-- <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <div class="sidebar" id="scrollspy">
+
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="nav sidebar-menu">
+            <li class="header">TABLE OF CONTENTS</li>
+            <li class="active"><a href="#introduction"><i class="fa fa-circle-o"></i> Introduction</a></li>
+            <li><a href="#download"><i class="fa fa-circle-o"></i> Download</a></li>
+            <li><a href="#dependencies"><i class="fa fa-circle-o"></i> Dependencies</a></li>
+            <li><a href="#advice"><i class="fa fa-circle-o"></i> Advice</a></li>
+            <li><a href="#layout"><i class="fa fa-circle-o"></i> Layout</a></li>
+            <li><a href="#adminlte-options"><i class="fa fa-circle-o"></i> Javascript Options</a></li>
+            <li class="treeview" id="scrollspy-components">
+              <a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Components</a>
+              <ul class="nav treeview-menu">
+                <li><a href="#component-main-header">Main Header</a></li>
+                <li><a href="#component-sidebar">Sidebar</a></li>
+                <li><a href="#component-control-sidebar">Control Sidebar</a></li>
+                <li><a href="#component-info-box">Info Box</a></li>
+                <li><a href="#component-box">Boxes</a></li>
+                <li><a href="#component-direct-chat">Direct Chat</a></li>
+              </ul>
+            </li>
+            <li><a href="#plugins"><i class="fa fa-circle-o"></i> Plugins</a></li>
+            <li><a href="#browsers"><i class="fa fa-circle-o"></i> Browser Support</a></li>
+            <li><a href="#upgrade"><i class="fa fa-circle-o"></i> Upgrade Guide</a></li>
+            <li><a href="#implementations"><i class="fa fa-circle-o"></i> Implementations</a></li>
+            <li><a href="#faq"><i class="fa fa-circle-o"></i> FAQ</a></li>
+            <li><a href="#license"><i class="fa fa-circle-o"></i> License</a></li>
+          </ul>
+        </div>
+        <!-- /.sidebar -->
+      </aside> --}}
+      {{>sidebar}}
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <h1>
+            AdminLTE Documentation
+            <small>Current version 2.3.0</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Documentation</li>
+          </ol>
+        </div>
+
+        <!-- Main content -->
+        <div class="content body">
+
+
+
+        </div><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+<script src="{{projectAssets}}/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="{{projectAssets}}/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="{{projectAssets}}/vendor/prettify/prettify-min.js"></script>
+<script src="{{projectAssets}}/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
