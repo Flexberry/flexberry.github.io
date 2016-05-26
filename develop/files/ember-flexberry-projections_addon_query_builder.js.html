@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry-projections/addon/query/builder.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryAuthService", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryEmberSimpleAuthService", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/DS.ODataAdapter.html">DS.ODataAdapter</a></li>
+	                            <li><a href="../classes/DS.Projection.html">DS.Projection</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckboxComponent.html">FlexberrCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryAuthService.html">FlexberryAuthService</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEmberSimpleAuthService.html">FlexberryEmberSimpleAuthService</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryFileController.html">FlexberryFileController</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryMenuComponent.html">FlexberryMenuComponent</a></li>
+	                            <li><a href="../classes/FlexberryMenuitemComponent.html">FlexberryMenuitemComponent</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
+	                            <li><a href="../classes/ObjectListView.html">ObjectListView</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCell.html">ObjectListViewSingleColumnCell</a></li>
+	                            <li><a href="../classes/Query.BaseAdapter.html">Query.BaseAdapter</a></li>
+	                            <li><a href="../classes/Query.BaseBuilder.html">Query.BaseBuilder</a></li>
+	                            <li><a href="../classes/Query.BasePredicate.html">Query.BasePredicate</a></li>
+	                            <li><a href="../classes/Query.Builder.html">Query.Builder</a></li>
+	                            <li><a href="../classes/Query.ComplexPredicate.html">Query.ComplexPredicate</a></li>
+	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
+	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
+	                            <li><a href="../classes/Query.JSAdapter.html">Query.JSAdapter</a></li>
+	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
+	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
+	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
+	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
+	                            <li><a href="../classes/Serializer.OData.html">Serializer.OData</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry-projections/addon/query/builder.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import DS from &#x27;ember-data&#x27;;
+
+import BaseBuilder from &#x27;./base-builder&#x27;;
+import { BasePredicate, SimplePredicate } from &#x27;./predicate&#x27;;
+import OrderByClause from &#x27;./order-by-clause&#x27;;
+
+/**
+ * Class of builder for query.
+ * Uses method chaining.
+ *
+ * @module ember-flexberry-data
+ * @namespace Query
+ * @class Builder
+ * @extends BaseBuilder
+ */
+export default class Builder extends BaseBuilder {
+  /**
+   * @param store {Store} Store for building query.
+   * @param modelName {String} The name of the requested entity.
+   * @class Builder
+   * @constructor
+   */
+  constructor(store, modelName) {
+    super();
+
+    if (!store || !(store instanceof DS.Store)) {
+      throw new Error(&#x27;Store is not specified&#x27;);
+    }
+
+    this._store = store;
+    this._modelName = modelName;
+
+    this._id = null;
+    this._projectionName = null;
+    this._predicate = null;
+    this._orderByClause = null;
+    this._isCount = false;
+    this._expand = {};
+    this._select = [];
+  }
+
+  /**
+   * Sets the id of the requested entity.
+   *
+   * @method byId
+   * @param id {String|Number} The id of the requested entity.
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  byId(id) {
+    this._id = id;
+    return this;
+  }
+
+  /**
+   * Sets the name of the requested entity.
+   *
+   * @method from
+   * @param modelName {String} The name of the requested entity.
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  from(modelName) {
+    this._modelName = modelName;
+    return this;
+  }
+
+  /**
+   *
+   * @method where
+   * @param ...args
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  where(...args) {
+    this._predicate = createPredicate(...args);
+    return this;
+  }
+
+  /**
+   *
+   * @method orderBy
+   * @param property {String}
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  orderBy(property) {
+    this._orderByClause = new OrderByClause(property);
+    return this;
+  }
+
+  /**
+   *
+   * @method top
+   * @param top {Number}
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  top(top) {
+    this._top = +top;
+    return this;
+  }
+
+  /**
+   *
+   * @method skip
+   * @param skip {Number}
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  skip(skip) {
+    this._skip = +skip;
+    return this;
+  }
+
+  /**
+   *
+   * @method count
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  count() {
+    this._isCount = true;
+    return this;
+  }
+
+  /**
+   * Adds properties for expanding.
+   * Automatically checks duplications.
+   *
+   * @method expand
+   * @param properties {String}
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  expand(properties) {
+    properties.split(&#x27;,&#x27;).forEach(i =&gt; this._expand[i.trim()] = true);
+    return this;
+  }
+
+  /**
+   * Adds attributes for selection.
+   * Automatically checks duplications.
+   *
+   * @method select
+   * @param attributes {String}
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  select(attributes) {
+    attributes.split(&#x27;,&#x27;).forEach(i =&gt; this._select[i.trim()] = true);
+    return this;
+  }
+
+  /**
+   * Adds attributes for selection from specified projection.
+   * Merges attributes with added using &#x60;select&#x60;.
+   *
+   * @method selectByProjection
+   * @param projectionName {String} The name of the projection.
+   * @return {Query.Builder} Returns this instance.
+   * @public
+   * @chainable
+   */
+  selectByProjection(projectionName) {
+    this._projectionName = projectionName;
+    return this;
+  }
+
+  /**
+   * Builds query instance using all provided data.
+   *
+   * @method build
+   * @return {Object} Query instance.
+   * @public
+   */
+  build() {
+    if (!this._modelName) {
+      throw new Error(&#x27;Model name is not specified&#x27;);
+    }
+
+    if (this._projectionName) {
+      let typeClass = this._store.modelFor(this._modelName);
+      let proj = typeClass.projections.get(this._projectionName);
+      let query = getQuery(proj, this._store);
+
+      this.select(query.$select);
+      if (query.$expand) {
+        query.$expand.forEach(i =&gt; this._expand[i.trim()] = true);
+      }
+    }
+
+    // TODO: Use special class.
+    return {
+      id: this._id,
+      modelName: this._modelName,
+      predicate: this._predicate,
+      order: this._orderByClause,
+      top: this._top,
+      skip: this._skip,
+      count: this._isCount,
+      expand: Object.keys(this._expand),
+      select: Object.keys(this._select)
+    };
+  }
+}
+
+/**
+ * Creates predicate by various parameters.
+ *
+ * @method createPredicate
+ * @param args Arguments for the predicate.
+ * @return {BasePredicate}
+ */
+function createPredicate(...args) {
+  if (args.length === 1) {
+    if (args[0] &amp;&amp; args[0] instanceof BasePredicate) {
+      return args[0];
+    } else {
+      throw new Error(&#x60;Specified argument is not a predicate&#x60;);
+    }
+  }
+
+  if (args.length === 3) {
+    return new SimplePredicate(args[0], args[1], args[2]);
+  }
+
+  throw new Error(&#x60;Couldn not create predicate from arguments&#x60;);
+}
+
+/**
+ * Converts projection to URL query params for OData v4.
+ *
+ * @method getQuery
+ * @param {Object} projection Model projection to convert.
+ * @param {DS.Store} store The store service.
+ * @return {Object} Object with $select and $expand properties.
+ */
+function getQuery(projection, store) {
+  var tree = getODataQueryTree(projection, store);
+  return getODataQuery(tree);
+}
+
+function getODataQueryTree(projection, store) {
+  let serializer = store.serializerFor(projection.modelName);
+  let tree = {
+    select: [serializer.primaryKey],
+    expand: {}
+  };
+
+  let attributes = projection.attributes;
+  for (let attrName in attributes) {
+    if (attributes.hasOwnProperty(attrName)) {
+      let attr = attributes[attrName];
+      let normalizedAttrName = serializer.keyForAttribute(attrName);
+      switch (attr.kind) {
+        case &#x27;attr&#x27;:
+          tree.select.push(normalizedAttrName);
+          break;
+
+        case &#x27;hasMany&#x27;:
+        case &#x27;belongsTo&#x27;:
+          tree.select.push(normalizedAttrName);
+          tree.expand[normalizedAttrName] = getODataQueryTree(attr, store);
+          break;
+
+        default:
+          throw new Error(&#x60;Unknown kind of projection attribute: ${attr.kind}&#x60;);
+      }
+    }
+  }
+
+  return tree;
+}
+
+function getODataQuery(queryTree) {
+  var query = {};
+
+  var select = getODataSelectQuery(queryTree);
+  if (select) {
+    query.$select = select;
+  }
+
+  var expand = getODataExpandQuery(queryTree);
+  if (expand) {
+    query.$expand = expand;
+  }
+
+  return query;
+}
+
+function getODataExpandQuery(queryTree) {
+  var expandProperties = Object.keys(queryTree.expand);
+  if (!expandProperties.length) {
+    return null;
+  }
+
+  var query = [];
+  expandProperties.forEach(function (propertyName) {
+    var subTree = queryTree.expand[propertyName];
+    var expr = propertyName;
+    var select = getODataSelectQuery(subTree);
+    var expand = getODataExpandQuery(subTree);
+
+    if (select || expand) {
+      expr += &#x27;(&#x27;;
+      if (select) {
+        expr += &#x27;$select=&#x27; + select;
+      }
+
+      if (expand) {
+        expr += &#x27;;&#x27; + &#x27;$expand=&#x27; + expand;
+      }
+
+      expr += &#x27;)&#x27;;
+    }
+
+    query.push(expr);
+  });
+
+  return query;
+}
+
+function getODataSelectQuery(queryTree) {
+  if (queryTree.select.length) {
+    return queryTree.select.join(&#x27;,&#x27;);
+  } else {
+    return null;
+  }
+}
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

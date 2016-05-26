@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry-projections/addon/query/js-adapter.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryAuthService", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryEmberSimpleAuthService", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/DS.ODataAdapter.html">DS.ODataAdapter</a></li>
+	                            <li><a href="../classes/DS.Projection.html">DS.Projection</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberrCheckboxComponent.html">FlexberrCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryAuthService.html">FlexberryAuthService</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatetimePicker.html">FlexberryDatetimePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEmberSimpleAuthService.html">FlexberryEmberSimpleAuthService</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFile.html">FlexberryFile</a></li>
+	                            <li><a href="../classes/FlexberryFileController.html">FlexberryFileController</a></li>
+	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryMenuComponent.html">FlexberryMenuComponent</a></li>
+	                            <li><a href="../classes/FlexberryMenuitemComponent.html">FlexberryMenuitemComponent</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GroupEditToolbar.html">GroupEditToolbar</a></li>
+	                            <li><a href="../classes/isEnum.html">isEnum</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
+	                            <li><a href="../classes/ObjectListView.html">ObjectListView</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCell.html">ObjectListViewSingleColumnCell</a></li>
+	                            <li><a href="../classes/Query.BaseAdapter.html">Query.BaseAdapter</a></li>
+	                            <li><a href="../classes/Query.BaseBuilder.html">Query.BaseBuilder</a></li>
+	                            <li><a href="../classes/Query.BasePredicate.html">Query.BasePredicate</a></li>
+	                            <li><a href="../classes/Query.Builder.html">Query.Builder</a></li>
+	                            <li><a href="../classes/Query.ComplexPredicate.html">Query.ComplexPredicate</a></li>
+	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
+	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
+	                            <li><a href="../classes/Query.JSAdapter.html">Query.JSAdapter</a></li>
+	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
+	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
+	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
+	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
+	                            <li><a href="../classes/Serializer.OData.html">Serializer.OData</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry-projections/addon/query/js-adapter.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import BaseAdapter from &#x27;./base-adapter&#x27;;
+import { SimplePredicate, ComplexPredicate, StringPredicate } from &#x27;./predicate&#x27;;
+import FilterOperator from &#x27;./filter-operator&#x27;;
+import Condition from &#x27;./condition&#x27;;
+
+/**
+ * Class of query language adapter that translates query object into JS function which
+ * filters native JS array of objects by specified logic.
+ *
+ * &#x60;&#x60;&#x60;js
+ * const data = [
+ *   { Name: &#x27;A&#x27;, Surname: &#x27;X&#x27;, Age: 10 },
+ *   { Name: &#x27;B&#x27;, Surname: &#x27;Y&#x27;, Age: 11 },
+ *   { Name: &#x27;B&#x27;, Surname: &#x27;Z&#x27;, Age: 12 }
+ * ];
+ *
+ * let adapter = new JSAdapter();
+ * let builder = new QueryBuilder(store, &#x27;AnyUnknownModel&#x27;).where(&#x27;Name&#x27;, FilterOperator.Eq, &#x27;B&#x27;);
+ * let filter = adapter.buildFunc(builder.build());
+ *
+ * let result = filter(data); // Y and Z
+ * &#x60;&#x60;&#x60;
+ *
+ * All filters uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
+ *
+ * @module ember-flexberry-data
+ * @namespace Query
+ * @class JSAdapter
+ * @extends Query.BaseAdapter
+ */
+export default class JSAdapter extends BaseAdapter {
+  /**
+   * Builds JS function for filtering JS array of objects by specified logic from query.
+   *
+   * @method buildFunc
+   * @param query Query language instance.
+   * @returns {Function} Function for filtering JS array of objects.
+   */
+  buildFunc(query) {
+    let filter = query.predicate ? buildFilter(query.predicate) : (data) =&gt; data;
+    let order = buildOrder(query);
+    let projection = buildProjection(query);
+    let topSkip = buildTopSkip(query);
+    return function (data) {
+      return projection(topSkip(order(filter(data))));
+    };
+  }
+}
+
+/**
+ * Builds function for windowing array of objects using data from the query.
+ *
+ * @param query Query instance.
+ * @returns {Function}
+ */
+function buildTopSkip(query) {
+  if (!query.top &amp;&amp; !query.skip) {
+    return data =&gt; data;
+  }
+
+  return data =&gt; {
+    let r = [];
+    for (let i = 0; i &lt; data.length; i++) {
+      if (i &lt; query.skip) {
+        continue;
+      }
+
+      r.push(data[i]);
+
+      if (r.length &gt;= query.top) {
+        break;
+      }
+    }
+
+    return r;
+  };
+}
+
+/**
+ * Builds function for ordering array of objects using data from the query.
+ *
+ * @param query Query instance.
+ * @returns {Function}
+ */
+function buildOrder(query) {
+  if (!query.order) {
+    return data =&gt; data;
+  }
+
+  let desc = (a, b, p) =&gt; {
+    if (a[p] &gt; b[p]) {
+      return -1;
+    } else if (a[p] &lt; b[p]) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  let asc = (a, b, p) =&gt; {
+    if (a[p] &lt; b[p]) {
+      return -1;
+    } else if (a[p] &gt; b[p]) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  return function (data) {
+    return data.sort((a, b) =&gt; {
+      for (let i = 0; i &lt; query.order.length; i++) {
+        let p = query.order.attribute(i);
+        let r = p.direction === &#x27;desc&#x27; ? desc(a, b, p.name) : asc(a, b, p.name); // TODO: desc / asc constants
+        if (r === 0) {
+          continue;
+        }
+
+        return r;
+      }
+
+      return 0;
+    });
+  };
+}
+
+/**
+ * Builds function for selecting subset of properties from array of objects using data from the query.
+ *
+ * @param query Query instance.
+ * @returns {Function}
+ */
+function buildProjection(query) {
+  if (!query.select || query.select.length === 0) {
+    return data =&gt; data;
+  }
+
+  return function (data) {
+    return data.map(item =&gt; {
+      let r = {};
+      for (let i = 0; i &lt; query.select.length; i++) {
+        r[query.select[i]] = item[query.select[i]];
+      }
+
+      return r;
+    });
+  };
+}
+
+/**
+ * Builds function for filtering array of objects using predicate.
+ *
+ * @param predicate Predicate for array of objects.
+ * @returns {Function}
+ */
+function buildFilter(predicate) {
+  if (predicate instanceof SimplePredicate || predicate instanceof StringPredicate) {
+    return getSimpleFilterFunction(predicate);
+  }
+
+  if (predicate instanceof ComplexPredicate) {
+    let filterFunctions = predicate.predicates.map(getAttributeFilterFunction);
+    switch (predicate.condition) {
+      case Condition.And:
+        return getComplexFilterFunctionAnd(filterFunctions);
+
+      case Condition.Or:
+        return getComplexFilterFunctionOr(filterFunctions);
+
+      default:
+        throw new Error(&#x60;Unsupported condition &#x27;${predicate.condition}&#x27;.&#x60;);
+    }
+  }
+
+  throw new Error(&#x60;Unsupported predicate &#x27;${predicate}&#x27;&#x60;);
+}
+
+/**
+ * Returns function for filtering array of objects using simple or string predicate.
+ * Result function filters array of objects and returns those, for which
+ * an attribute filter function returned &#x60;true&#x60;.
+ *
+ * @param {Query.SimplePredicate|Query.ComplexPredicate} predicate Predicate for array of objects.
+ * @returns {Function}
+ */
+function getSimpleFilterFunction(predicate) {
+  let attributeFilter = getAttributeFilterFunction(predicate);
+  return function (data) {
+    let result = [];
+    data.forEach(i =&gt; {
+      if (attributeFilter(i)) {
+        result.push(i);
+      }
+    });
+    return result;
+  };
+}
+
+/**
+ * Returns function for filtering single attribute of an object using predicate.
+ *
+ * @param {Query.SimplePredicate|Query.ComplexPredicate} predicate Predicate for an attribute.
+ * @returns {Function} Function for filtering single attribute.
+ */
+function getAttributeFilterFunction(predicate) {
+  if (predicate instanceof SimplePredicate) {
+    switch (predicate.operator) {
+      case FilterOperator.Eq:
+        return function (i) { return i[predicate.attributeName] === predicate.value; };
+
+      case FilterOperator.Neq:
+        return function (i) { return i[predicate.attributeName] !== predicate.value; };
+
+      case FilterOperator.Le:
+        return function (i) { return i[predicate.attributeName] &lt; predicate.value; };
+
+      case FilterOperator.Leq:
+        return function (i) { return i[predicate.attributeName] &lt;= predicate.value; };
+
+      case FilterOperator.Ge:
+        return function (i) { return i[predicate.attributeName] &gt; predicate.value; };
+
+      case FilterOperator.Geq:
+        return function (i) { return i[predicate.attributeName] &gt;= predicate.value; };
+
+      default:
+        throw new Error(&#x60;Unsupported filter operator &#x27;${predicate.operator}&#x27;.&#x60;);
+    }
+  }
+
+  if (predicate instanceof StringPredicate) {
+    return function (i) { return i[predicate.attributeName].indexOf(predicate.containsValue) &gt; -1; };
+  }
+}
+
+/**
+ * Returns complex filter function for &#x60;and&#x60; condition.
+ * Result function filters array of objects and returns those, for which
+ * all attribute filter functions returned &#x60;true&#x60;.
+ * Result function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
+ *
+ * @param {Function[]} filterFunctions Array of attribute filter functions.
+ * @returns {Function} Complex filter function for &#x60;or&#x60; condition.
+ */
+function getComplexFilterFunctionAnd(filterFunctions) {
+  return function (data) {
+    let result = [];
+    for (let itemIndex = 0; itemIndex &lt; data.length; itemIndex++) {
+      let check = true;
+      for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
+        check &amp;= filterFunctions[funcIndex](data[itemIndex]);
+        if (!check) {
+          break;
+        }
+      }
+
+      if (check) {
+        result.push(data[itemIndex]);
+      }
+    }
+
+    return result;
+  };
+}
+
+/**
+ * Returns complex filter function for &#x60;or&#x60; condition.
+ * Result function filters array of objects and returns those, for which
+ * at least one attribute filter function returned &#x60;true&#x60;.
+ * Result function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
+ *
+ * @param {Function[]} filterFunctions Array of attribute filter functions.
+ * @returns {Function} Complex filter function for &#x60;or&#x60; condition.
+ */
+function getComplexFilterFunctionOr(filterFunctions) {
+  return function (data) {
+    let result = [];
+    for (let itemIndex = 0; itemIndex &lt; data.length; itemIndex++) {
+      let check = false;
+      for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
+        check |= filterFunctions[funcIndex](data[itemIndex]);
+        if (check) {
+          break;
+        }
+      }
+
+      if (check) {
+        result.push(data[itemIndex]);
+      }
+    }
+
+    return result;
+  };
+}
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

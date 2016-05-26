@@ -2,6 +2,8 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "BaseModel",
+        "DS.ODataAdapter",
+        "DS.Projection",
         "DetailEditFormController",
         "DetailInterationService",
         "DeviceService",
@@ -38,16 +40,26 @@ YUI.add("yuidoc-meta", function(Y) {
         "ObjectListViewHeaderCell",
         "ObjectListViewSingleColumnCell",
         "ObjectlistviewEvents",
-        "Projection",
-        "Projection.Adapter",
-        "Projection.Model",
-        "Projection.Store",
+        "Query.BaseAdapter",
+        "Query.BaseBuilder",
+        "Query.BasePredicate",
+        "Query.Builder",
+        "Query.ComplexPredicate",
+        "Query.Condition",
+        "Query.FilterOperator",
+        "Query.JSAdapter",
+        "Query.ODataAdapter",
+        "Query.OrderByClause",
+        "Query.SimplePredicate",
+        "Query.StringPredicate",
         "Resolver",
+        "Serializer.Base",
+        "Serializer.OData",
         "isEnum"
     ],
     "modules": [
         "ember-flexberry",
-        "ember-flexberry-projections"
+        "ember-flexberry-data"
     ],
     "allModules": [
         {
@@ -55,8 +67,8 @@ YUI.add("yuidoc-meta", function(Y) {
             "name": "ember-flexberry"
         },
         {
-            "displayName": "ember-flexberry-projections",
-            "name": "ember-flexberry-projections",
+            "displayName": "ember-flexberry-data",
+            "name": "ember-flexberry-data",
             "description": "Ember Addon that adds support of projections in models."
         }
     ],
