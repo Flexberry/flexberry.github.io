@@ -1,4 +1,4 @@
-<div>
+{{!-- <div>
     <h3>APIs</h3>
     <div id="sidebar">
         <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
@@ -28,4 +28,28 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+<aside class="main-sidebar">
+  <div class="sidebar" id="scrollspy">
+    <ul class="nav sidebar-menu">
+      <li class="header">APIs</li>
+      <li class="active"><a href="#introduction"><i class="fa fa-circle-o"></i> Introduction</a></li>
+      <li class="treeview" id="classes">
+        <a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Classes</a>
+        <ul class="nav treeview-menu">
+          {{#publicClasses classes}}
+              <li><a href="{{../projectRoot}}classes/{{name}}.html">{{displayName}}</a></li>
+          {{/publicClasses}}
+        </ul>
+      </li>
+      <li class="treeview" id="modules">
+        <a href="javascript:void(0)"><i class="fa fa-circle-o"></i> Modules</a>
+        <ul class="nav treeview-menu">
+          {{#allModules}}
+              <li><a href="{{../projectRoot}}modules/{{name}}.html">{{displayName}}</a></li>
+          {{/allModules}}
+        </ul>
+      </li>
+    </ul>
+  </div>
+</aside>

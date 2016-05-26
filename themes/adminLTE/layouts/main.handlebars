@@ -60,29 +60,28 @@
 </div> --}}
 <div class="wrapper">
 
-      <header class="main-header">
-        <!-- Logo -->
-        <a href="#" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>F</b>doc</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Flexberry Documentation</b></span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top" role="navigation">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
-          <!-- Navbar Right Menu -->
-          {{!-- <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <li><a href="#">Almsaeed Studio</a></li>
-              <li><a href="#">Premium Templates</a></li>
-            </ul>
-          </div> --}}
-        </nav>
-      </header>
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>F</b>doc</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Flexberry Documentation</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+          <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='[{{#search classes allModules}}{{/search}}]'>
+        </form>
+      </div>
+    </nav>
+  </header>
       <!-- Left side column. contains the logo and sidebar -->
       {{!-- <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -120,27 +119,25 @@
       </aside> --}}
       {{>sidebar}}
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-          <h1>
-            AdminLTE Documentation
-            <small>Current version 2.3.0</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Documentation</li>
-          </ol>
-        </div>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <h1>
+        AdminLTE Documentation
+        <small>Current version 2.3.0</small>
+      </h1>
+{{!--       <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Documentation</li>
+      </ol> --}}
+    </div>
 
-        <!-- Main content -->
-        <div class="content body">
-
-
-
-        </div><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+    <!-- Main content -->
+    <div class="content body">
+      {{>layout_content}}
+    </div><!-- /.content -->
+  </div><!-- /.content-wrapper -->
 <script src="{{projectAssets}}/vendor/jquery/jquery-1.8.2.min.js"></script>
 <script src="{{projectAssets}}/vendor/bootstrap/js/bootstrap.js"></script>
 <script src="{{projectAssets}}/vendor/prettify/prettify-min.js"></script>
