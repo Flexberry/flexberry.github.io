@@ -47,6 +47,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Query.ComplexPredicate",
         "Query.Condition",
         "Query.FilterOperator",
+        "Query.IndexedDbAdapter",
         "Query.JSAdapter",
         "Query.ODataAdapter",
         "Query.OrderByClause",

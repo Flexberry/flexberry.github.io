@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Query.BaseBuilder - Flexberry Documentation</title>
+    <title>ember-flexberry-projections/addon/query/indexeddb-adapter.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -145,104 +145,179 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>Query.BaseBuilder <small>Class</small></h1>
+    <h1>ember-flexberry-projections/addon/query/indexeddb-adapter.js <small>File</small></h1>
 </div>
 
-<div class="well well-small">
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+import Dexie from &#x27;npm:dexie&#x27;;
 
+import FilterOperator from &#x27;./filter-operator&#x27;;
+import { SimplePredicate, ComplexPredicate, StringPredicate } from &#x27;./predicate&#x27;;
+import BaseAdapter from &#x27;./base-adapter&#x27;;
+import Condition from &#x27;./condition&#x27;;
+import { getAttributeFilterFunction, buildProjection, buildOrder, buildTopSkip } from &#x27;./js-adapter&#x27;;
 
-        <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-projections_addon_query_base-builder.js.html#l1"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;base-builder.js:1</code></a>
-        </div>
+/**
+ * Class of query language adapter that allows to load data from IndexedDB.
+ *
+ * @module ember-flexberry-data
+ * @namespace Query
+ * @class IndexedDbAdapter
+ * @extends Query.BaseAdapter
+ */
+export default class extends BaseAdapter {
+  constructor(databaseName) {
+    super();
 
-            Module: <a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a>
+    if (!databaseName) {
+      throw new Error(&#x27;Database name is not specified&#x27;);
+    }
 
-</div>
+    this._databaseName = databaseName;
+  }
 
+  /**
+   * Loads data from IndexedDB.
+   *
+   * @method query
+   * @param {Query} Query language instance to the adapter.
+   * @returns {Ember.RSVP.Promise} Promise with loaded data.
+   * @public
+   */
+  query(query) {
+    let db = new Dexie(this._databaseName);
+    return new Ember.RSVP.Promise((resolve, reject) =&gt; {
+      db.open().then(() =&gt; {
+        try {
+          let table = db.table(query.modelName);
+          let projection = buildProjection(query);
+          let order = buildOrder(query);
+          let topskip = buildTopSkip(query);
 
-<div class="well well-small">
-    <p>Base class of query builder.</p>
+          updateWhereClause(table, query).toArray().then((data) =&gt; {
+            resolve(projection(order(topskip(data))));
+          }).catch((e) =&gt; reject(e)).finally(() =&gt; db.close());
+        } catch (e) {
+          reject(e);
+        } finally {
+          db.close();
+        }
+      }).catch((e) =&gt; reject(e));
+    });
+  }
+}
 
-</div>
+/**
+ * Builds Dexie &#x60;WhereClause&#x60; for filtering data.
+ * Filtering only with Dexie can applied only for simple cases (for &#x60;SimplePredicate&#x60;).
+ * For complex cases all logic implemened programmatically.
+ *
+ * @param {Dexie.Table} table Table instance for loading objects.
+ * @param {Query} query Query language instance for loading data.
+ * @returns {Dexie.Collection|Dexie.Table} Tbale or collection that can be used with &#x60;toArray&#x60; method.
+ */
+function updateWhereClause(table, query) {
+  if (!query.predicate) {
+    return table;
+  }
 
+  let predicate = query.predicate;
+  if (predicate instanceof SimplePredicate) {
+    switch (predicate.operator) {
+      case FilterOperator.Eq:
+        return table.where(predicate.attributeName).equals(predicate.value);
 
-<div>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+      case FilterOperator.Neq:
+        return table.where(predicate.attributeName).notEqual(predicate.value);
 
-            <li><a data-toggle="tab" href="#methods">Methods</a></li>
-    </ul>
+      case FilterOperator.Le:
+        return table.where(predicate.attributeName).below(predicate.value);
 
-    <div class="tab-content">
-        <div id="index" class="tab-pane active">
-            <h2 class="off-left">Item Index</h2>
+      case FilterOperator.Leq:
+        return table.where(predicate.attributeName).belowOrEqual(predicate.value);
 
-                <div class="index-section methods">
-                    <h3>Methods</h3>
+      case FilterOperator.Ge:
+        return table.where(predicate.attributeName).above(predicate.value);
 
-                    <ul class="index-list methods">
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_build" data-tablink="build">build</a>
+      case FilterOperator.Geq:
+        return table.where(predicate.attributeName).aboveOrEqual(predicate.value);
 
-                            </li>
-                    </ul>
-                </div>
+      default:
+        throw new Error(&#x27;Unknown operator&#x27;);
+    }
+  }
 
+  if (predicate instanceof StringPredicate) {
+    return table.filter(getAttributeFilterFunction(predicate));
+  }
 
+  if (predicate instanceof ComplexPredicate) {
+    let filterFunctions = predicate.predicates.map(getAttributeFilterFunction);
+    let collection = table.toCollection();
+    switch (predicate.condition) {
+      case Condition.And:
+        return collection.filter(getComplexFilterFunctionAnd(filterFunctions));
 
-        </div>
+      case Condition.Or:
+        return collection.filter(getComplexFilterFunctionOr(filterFunctions));
 
-            <div id="methods" class="tab-pane">
-                <h2 class="off-left">Methods</h2>
+      default:
+        throw new Error(&#x60;Unsupported condition &#x27;${predicate.condition}&#x27;.&#x60;);
+    }
 
-                    <div id="method_build" class="method item public">
-                        <h3 class="name"><code>build</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                            </span>
-                    
-                    
-                            <span class="flag public">public</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-projections_addon_query_base-builder.js.html#l9"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;base-builder.js:9</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Builds query.</p>
-                    
-                        </div>
-                    
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Query instance.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-            </div>
+    return table.filter(getAttributeFilterFunction(predicate));
+  }
 
+  throw new Error(&#x60;Unsupported predicate &#x27;${predicate}&#x27;&#x60;);
+}
 
+/**
+ * Returns complex filter function for &#x60;and&#x60; condition.
+ * Result function returns &#x60;true&#x60; if all attribute filter functions returned &#x60;true&#x60;.
+ * Result function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
+ *
+ * @param {Function[]} filterFunctions Array of attribute filter functions.
+ * @returns {Function} Complex filter function for &#x60;or&#x60; condition.
+ */
+function getComplexFilterFunctionAnd(filterFunctions) {
+  return function (item) {
+    let check = true;
+    for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
+      check &amp;= filterFunctions[funcIndex](item);
+      if (!check) {
+        break;
+      }
+    }
 
-    </div>
+    return check;
+  };
+}
+
+/**
+ * Returns complex filter function for &#x60;or&#x60; condition.
+ * Result function returns &#x60;true&#x60; if at least one attribute filter function returned &#x60;true&#x60;.
+ * Result function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
+ *
+ * @param {Function[]} filterFunctions Array of attribute filter functions.
+ * @returns {Function} Complex filter function for &#x60;or&#x60; condition.
+ */
+function getComplexFilterFunctionOr(filterFunctions) {
+  return function (item) {
+    let check = false;
+    for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
+      check |= filterFunctions[funcIndex](item);
+      if (check) {
+        break;
+      }
+    }
+
+    return check;
+  };
+}
+
+    </pre>
 </div>
                     </div>
                 </div>

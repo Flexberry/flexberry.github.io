@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryAuthService", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryEmberSimpleAuthService", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryAuthService", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryEmberSimpleAuthService", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
         </form>
     </div>
 </div>
@@ -95,6 +95,7 @@
 	                            <li><a href="../classes/Query.ComplexPredicate.html">Query.ComplexPredicate</a></li>
 	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
 	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
+	                            <li><a href="../classes/Query.IndexedDbAdapter.html">Query.IndexedDbAdapter</a></li>
 	                            <li><a href="../classes/Query.JSAdapter.html">Query.JSAdapter</a></li>
 	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
 	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
@@ -204,7 +205,7 @@ export default class JSAdapter extends BaseAdapter {
  * @param query Query instance.
  * @returns {Function}
  */
-function buildTopSkip(query) {
+export function buildTopSkip(query) {
   if (!query.top &amp;&amp; !query.skip) {
     return data =&gt; data;
   }
@@ -233,7 +234,7 @@ function buildTopSkip(query) {
  * @param query Query instance.
  * @returns {Function}
  */
-function buildOrder(query) {
+export function buildOrder(query) {
   if (!query.order) {
     return data =&gt; data;
   }
@@ -281,7 +282,7 @@ function buildOrder(query) {
  * @param query Query instance.
  * @returns {Function}
  */
-function buildProjection(query) {
+export function buildProjection(query) {
   if (!query.select || query.select.length === 0) {
     return data =&gt; data;
   }
@@ -304,7 +305,7 @@ function buildProjection(query) {
  * @param predicate Predicate for array of objects.
  * @returns {Function}
  */
-function buildFilter(predicate) {
+export function buildFilter(predicate) {
   if (predicate instanceof SimplePredicate || predicate instanceof StringPredicate) {
     return getSimpleFilterFunction(predicate);
   }
@@ -353,7 +354,7 @@ function getSimpleFilterFunction(predicate) {
  * @param {Query.SimplePredicate|Query.ComplexPredicate} predicate Predicate for an attribute.
  * @returns {Function} Function for filtering single attribute.
  */
-function getAttributeFilterFunction(predicate) {
+export function getAttributeFilterFunction(predicate) {
   if (predicate instanceof SimplePredicate) {
     switch (predicate.operator) {
       case FilterOperator.Eq:
@@ -382,6 +383,8 @@ function getAttributeFilterFunction(predicate) {
   if (predicate instanceof StringPredicate) {
     return function (i) { return i[predicate.attributeName].indexOf(predicate.containsValue) &gt; -1; };
   }
+
+  throw new Error(&#x60;Unsupported predicate &#x27;${predicate}&#x27;.&#x60;);
 }
 
 /**

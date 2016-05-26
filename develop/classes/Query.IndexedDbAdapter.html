@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Query.BaseBuilder - Flexberry Documentation</title>
+    <title>Query.IndexedDbAdapter - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -145,14 +145,14 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>Query.BaseBuilder <small>Class</small></h1>
+    <h1>Query.IndexedDbAdapter <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-projections_addon_query_base-builder.js.html#l1"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;base-builder.js:1</code></a>
+            Defined in: <a href="../files/ember-flexberry-projections_addon_query_indexeddb-adapter.js.html#l10"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;indexeddb-adapter.js:10</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a>
@@ -161,7 +161,7 @@
 
 
 <div class="well well-small">
-    <p>Base class of query builder.</p>
+    <p>Class of query language adapter that allows to load data from IndexedDB.</p>
 
 </div>
 
@@ -182,7 +182,7 @@
 
                     <ul class="index-list methods">
                             <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_build" data-tablink="build">build</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_query" data-tablink="query">query</a>
 
                             </li>
                     </ul>
@@ -195,13 +195,19 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method_build" class="method item public">
-                        <h3 class="name"><code>build</code></h3>
+                    <div id="method_query" class="method item public">
+                        <h3 class="name"><code>query</code></h3>
                     
-                            <span class="paren">()</span>
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>Query</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type">Ember.RSVP.Promise</span>
                             </span>
                     
                     
@@ -214,7 +220,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_query_base-builder.js.html#l9"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;base-builder.js:9</code></a>
+                            <a href="../files/ember-flexberry-projections_addon_query_indexeddb-adapter.js.html#l29"><code>ember-flexberry-projections&#x2F;addon&#x2F;query&#x2F;indexeddb-adapter.js:29</code></a>
                             </p>
                     
                     
@@ -222,17 +228,34 @@
                         </div>
                     
                         <div class="description">
-                            <p>Builds query.</p>
+                            <p>Loads data from IndexedDB.</p>
                     
                         </div>
                     
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">Query</code>
+                                            <span class="type">Query</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>language instance to the adapter.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                             <div class="returns">
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Query instance.</p>
+                                            <span class="type">Ember.RSVP.Promise</span>:
+                                        <p>Promise with loaded data.</p>
                     
                                 </div>
                             </div>
