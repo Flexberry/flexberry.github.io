@@ -8568,11 +8568,11 @@
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
             "line": 15,
-            "description": "Size of Semantic-UI modal.\nPossible variants: small, large, fullscreen.",
+            "description": "Size of Semantic-UI modal.\nPossible variants: 'small', 'large', 'fullscreen'.",
             "itemtype": "property",
             "name": "sizeClass",
             "type": "String",
-            "default": "small",
+            "default": "'small'",
             "class": "FlexberryFileController",
             "module": "ember-flexberry"
         },
