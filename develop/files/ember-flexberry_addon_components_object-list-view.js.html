@@ -1313,7 +1313,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     if (componentName === this.get(&#x27;componentName&#x27;)) {
       if (this.get(&#x27;editOnSeparateRoute&#x27;)) {
         // Depending on settings current model has to be saved before adding detail.
-        this.send(this.get(&#x27;action&#x27;), undefined, undefined);
+        this.send(&#x27;rowClick&#x27;, undefined, undefined);
       } else {
         var modelName = this.get(&#x27;modelProjection&#x27;).modelName;
         var modelToAdd = this.get(&#x27;store&#x27;).createRecord(modelName, {});
