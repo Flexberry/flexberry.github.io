@@ -671,24 +671,6 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry/addon/services/flexberry-auth-service.js": {
-            "name": "ember-flexberry/addon/services/flexberry-auth-service.js",
-            "modules": {},
-            "classes": {
-                "FlexberryAuthService": 1
-            },
-            "fors": {},
-            "namespaces": {}
-        },
-        "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js": {
-            "name": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
-            "modules": {},
-            "classes": {
-                "FlexberryEmberSimpleAuthService": 1
-            },
-            "fors": {},
-            "namespaces": {}
-        },
         "ember-flexberry/addon/services/objectlistview-events.js": {
             "name": "ember-flexberry/addon/services/objectlistview-events.js",
             "modules": {},
@@ -828,8 +810,6 @@
                 "ListFormRoute": 1,
                 "DetailInterationService": 1,
                 "DeviceService": 1,
-                "FlexberryAuthService": 1,
-                "FlexberryEmberSimpleAuthService": 1,
                 "ObjectlistviewEvents": 1,
                 "FileTransform": 1,
                 "FlexberryEnumTransform": 1,
@@ -1727,40 +1707,6 @@
             "file": "ember-flexberry/addon/services/device.js",
             "line": 7,
             "description": "Service for devices detection.\nUses devicejs with noConflict (see https://github.com/matthewhudson/device.js).",
-            "extends": "Ember.Service",
-            "access": "public",
-            "tagname": ""
-        },
-        "FlexberryAuthService": {
-            "name": "FlexberryAuthService",
-            "shortname": "FlexberryAuthService",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "ember-flexberry",
-            "namespace": "",
-            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
-            "line": 7,
-            "description": "Service to work with authentication and authorization.\nIt is a wrapper for real used service which is set on applied part.\n\nExample:\n```js\n// app/initializers/auth-initializer.js\nimport Ember from 'ember';\nimport FlexberryAuthService from 'ember-flexberry/services/flexberry-auth-service';\n\nexport function initialize(application) {\n  FlexberryAuthService.reopen({\n    currentAuthService: Ember.inject.service('flexberry-ember-simple-auth-service')\n  });\n}\n\nexport default {\n  name: 'auth-initializer',\n  initialize\n};\n```",
-            "extends": "Ember.Service",
-            "access": "public",
-            "tagname": ""
-        },
-        "FlexberryEmberSimpleAuthService": {
-            "name": "FlexberryEmberSimpleAuthService",
-            "shortname": "FlexberryEmberSimpleAuthService",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "ember-flexberry",
-            "namespace": "",
-            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
-            "line": 7,
-            "description": "Service to work with authentication and authorization throught plugin `ember-simple-auth`.",
             "extends": "Ember.Service",
             "access": "public",
             "tagname": ""
@@ -8883,17 +8829,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 28,
-            "description": "Service for auth matters.\nFlexberryAuthService is injected here by default.",
-            "itemtype": "property",
-            "name": "currentAuthService",
-            "type": "Service",
-            "class": "BaseModel",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 38,
+            "line": 29,
             "description": "Handles action from lookup choose action.",
             "itemtype": "method",
             "name": "showLookupDialog",
@@ -8909,7 +8845,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 146,
+            "line": 137,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -8918,7 +8854,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 156,
+            "line": 147,
             "description": "Handles action from lookup remove action.",
             "itemtype": "method",
             "name": "removeLookupValue",
@@ -8934,7 +8870,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 177,
+            "line": 168,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "updateLookupValue",
@@ -9475,116 +9411,6 @@
             "itemtype": "method",
             "name": "_onOrientationChange",
             "class": "DeviceService",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
-            "line": 34,
-            "description": "Flag: indicates whether to use flexberry auth service (if `true`) or not (if `false`).\nThis flag is readed from config setting `APP.flexberryAuthService` and can be changed programatically later.",
-            "itemtype": "property",
-            "name": "isFlexberryAuthServiceEnabled",
-            "access": "public",
-            "tagname": "",
-            "type": "Boolean",
-            "default": "false",
-            "class": "FlexberryAuthService",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
-            "line": 45,
-            "description": "Service to call auth methods.\nIf this service is not defined, stub is executed.",
-            "itemtype": "property",
-            "name": "currentAuthService",
-            "type": "Service",
-            "default": "undefined",
-            "class": "FlexberryAuthService",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/services/flexberry-auth-service.js",
-            "line": 55,
-            "description": "It updates custom xhr before send in order to add necessary auth information.",
-            "itemtype": "method",
-            "name": "authCustomRequest",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "Request parameters.",
-                    "type": "Object",
-                    "optional": true,
-                    "props": [
-                        {
-                            "name": "xhr",
-                            "description": "Xhr to send.",
-                            "type": "Object"
-                        },
-                        {
-                            "name": "element",
-                            "description": "Current element which is going to request.",
-                            "type": "Object"
-                        }
-                    ]
-                }
-            ],
-            "return": {
-                "description": "Updated method parameters.",
-                "type": "Object"
-            },
-            "class": "FlexberryAuthService",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
-            "line": 15,
-            "description": "Store to get adapter where auth elements are placed.",
-            "itemtype": "property",
-            "name": "_store",
-            "type": "Service",
-            "class": "FlexberryEmberSimpleAuthService",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
-            "line": 23,
-            "description": "Adapter where auth elements are placed.",
-            "itemtype": "property",
-            "name": "_store",
-            "type": "DS.Adapter",
-            "class": "FlexberryEmberSimpleAuthService",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/services/flexberry-ember-simple-auth-service.js",
-            "line": 33,
-            "description": "It updates custom xhr before send in order to add necessary auth information.",
-            "itemtype": "method",
-            "name": "authCustomRequest",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "Request parameters.",
-                    "type": "Object",
-                    "optional": true,
-                    "props": [
-                        {
-                            "name": "xhr",
-                            "description": "Xhr to send.",
-                            "type": "Object"
-                        },
-                        {
-                            "name": "element",
-                            "description": "Current element which is going to request.",
-                            "type": "Object"
-                        }
-                    ]
-                }
-            ],
-            "return": {
-                "description": "Updated method parameters.",
-                "type": "Object"
-            },
-            "class": "FlexberryEmberSimpleAuthService",
             "module": "ember-flexberry"
         },
         {
