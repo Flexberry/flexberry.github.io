@@ -5498,7 +5498,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 355,
+            "line": 359,
             "description": "Init component with dropdown mode.",
             "itemtype": "method",
             "name": "_onDropdown",
@@ -5509,7 +5509,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 428,
+            "line": 432,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "buildDisplayValue",
@@ -10028,7 +10028,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:428"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:432"
         },
         {
             "message": "replacing incorrect tag: returns with return",
