@@ -5122,6 +5122,39 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
             "line": 219,
+            "description": "Classes for buttons.",
+            "itemtype": "property",
+            "name": "buttonClass",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 228,
+            "description": "Flag: indicates whether to show creation button at toolbar.",
+            "itemtype": "property",
+            "name": "createNewButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 237,
+            "description": "Flag: indicates whether to show delete button at toolbar.",
+            "itemtype": "property",
+            "name": "deleteButton",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryGroupedit",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
+            "line": 246,
             "description": "Flag: indicates whether ordering by clicking on column headers is allowed.",
             "itemtype": "property",
             "name": "headerClickable",
@@ -5132,7 +5165,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 228,
+            "line": 255,
             "description": "Dictionary with sorting data related to columns.",
             "itemtype": "property",
             "name": "sorting",
@@ -5142,7 +5175,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 236,
+            "line": 263,
             "description": "Model projection which should be used to display given content.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -5153,7 +5186,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 245,
+            "line": 272,
             "description": "Content to be displayed (models collection).",
             "itemtype": "property",
             "name": "content",
@@ -5164,7 +5197,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 254,
+            "line": 281,
             "description": "Flag: indicates whether DELETE request should be immediately sended to server (on each deleted record) or not.",
             "itemtype": "property",
             "name": "immediateDelete",
@@ -5175,7 +5208,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 263,
+            "line": 290,
             "description": "Flag: indicates whether records should be edited on separate route.",
             "itemtype": "property",
             "name": "editOnSeparateRoute",
@@ -5186,7 +5219,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-groupedit.js",
-            "line": 272,
+            "line": 299,
             "description": "Flag: indicates whether to save current model before going to the detail's route.",
             "itemtype": "property",
             "name": "saveBeforeRouteLeave",
