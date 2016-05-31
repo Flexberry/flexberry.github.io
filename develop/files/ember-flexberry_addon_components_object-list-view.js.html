@@ -1169,13 +1169,16 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
         case &#x27;belongsTo&#x27;:
           if (!attr.options.hidden) {
             let bindingPath = currentRelationshipPath + attrName;
-            if (attr.options.displayMemberPath) {
-              bindingPath += &#x27;.&#x27; + attr.options.displayMemberPath;
-            } else {
-              bindingPath += &#x27;.id&#x27;;
+            let column = this._createColumn(attr, bindingPath);
+
+            if (column.cellComponent.componentName === &#x27;object-list-view-cell&#x27;) {
+              if (attr.options.displayMemberPath) {
+                column.propName += &#x27;.&#x27; + attr.options.displayMemberPath;
+              } else {
+                column.propName += &#x27;.id&#x27;;
+              }
             }
 
-            let column = this._createColumn(attr, bindingPath);
             columnsBuf.push(column);
           }
 

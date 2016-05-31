@@ -7687,7 +7687,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1118,
+            "line": 1121,
             "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
             "itemtype": "method",
             "name": "_addModel",
@@ -7709,7 +7709,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1153,
+            "line": 1156,
             "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
             "itemtype": "method",
             "name": "_addRow",
@@ -7727,7 +7727,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1178,
+            "line": 1181,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -7748,7 +7748,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1211,
+            "line": 1214,
             "description": "Hook that executes before deleting the record.\n\n Example:\n ```handlebars\n <!-- app/templates/employees.hbs -->\n {{flexberry-objectlistview\n   ...\n   beforeDeleteRecord=(action 'beforeDeleteRecord')\n   ...\n }}\n ```\n\n ```js\n // app/controllers/employees.js\n import ListFormController from './list-form';\n\n export default ListFormController.extend({\n   actions: {\n     beforeDeleteRecord: function(record, data) {\n       if (record.get('myProperty')) {\n         data.cancel = true;\n       }\n     }\n   }\n });\n ```",
             "itemtype": "method",
             "name": "beforeDeleteRecord",
@@ -7784,7 +7784,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1279,
+            "line": 1282,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -7811,7 +7811,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1302,
+            "line": 1305,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -8312,7 +8312,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 302,
+            "line": 303,
             "description": "Сlose edit form and transition to parent route.",
             "itemtype": "method",
             "name": "close.",
@@ -8321,7 +8321,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 311,
+            "line": 312,
             "description": "Method to transit to parent's route (previous route).\nIf `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
             "itemtype": "method",
             "name": "transitionToParentRoute.",
@@ -8330,7 +8330,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 327,
+            "line": 328,
             "description": "Method to get type and attributes of component,\nwhich will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent.",
@@ -8360,7 +8360,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 394,
+            "line": 395,
             "description": "Save dirty hasMany relationships in the `model` recursively.\nThis method invokes by `save` method.",
             "itemtype": "method",
             "name": "saveHasManyRelationships",
@@ -8380,7 +8380,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 421,
+            "line": 422,
             "description": "Rollback dirty hasMany relationships in the `model` recursively.\nThis method invokes by `resetController` in the `edit-form` route.",
             "itemtype": "method",
             "name": "rollbackHasManyRelationships",
@@ -8396,7 +8396,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 439,
+            "line": 440,
             "description": "Destroy (delete and save) all hasMany relationships in the `model` recursively.\nThis method invokes by `delete` method.",
             "itemtype": "method",
             "name": "destroyHasManyRelationships",
@@ -8416,7 +8416,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 464,
+            "line": 465,
             "description": "This method is called after successful save.\nYou can override this method to add actions after save.\n\n```js\nonSaveActionFulfilled() {\n  alert('Save successful!');\n}\n```",
             "itemtype": "method",
             "name": "onSaveActionFulfilled.",
@@ -8425,7 +8425,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 479,
+            "line": 480,
             "description": "This method is called if save ended with error.\nYou can override this method to add actions after unsuccessful save.\n\n```js\nonSaveActionRejected() {\n  alert('Save failed!');\n}\n```",
             "itemtype": "method",
             "name": "onSaveActionRejected.",
@@ -8441,7 +8441,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 496,
+            "line": 497,
             "description": "This method is called after delete object.\nYou can override this method to add actions after deleted.\n\n```js\nonDeleteActionFulfilled() {\n  alert('Successful delete!');\n  this.close();\n}\n```",
             "itemtype": "method",
             "name": "onDeleteActionFulfilled.",
@@ -8450,7 +8450,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 513,
+            "line": 514,
             "description": "This method is called if delete ended with error.\nYou can override this method to add actions after unsuccessful deleted.\n\n```js\nonDeleteActionRejected() {\n  alert('Failed delete!');\n}\n```",
             "itemtype": "method",
             "name": "onDeleteActionRejected.",

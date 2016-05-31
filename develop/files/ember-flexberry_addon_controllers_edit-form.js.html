@@ -408,8 +408,8 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
    */
   save(close) {
     this.send(&#x27;dismissErrorMessages&#x27;);
-    this.get(&#x27;model&#x27;).save().then((model) =&gt; {
-      this.saveHasManyRelationships(model).then(() =&gt; {
+    return this.get(&#x27;model&#x27;).save().then((model) =&gt; {
+      return this.saveHasManyRelationships(model).then(() =&gt; {
         this.onSaveActionFulfilled();
         if (close) {
           this.close();
@@ -430,9 +430,10 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
   delete() {
     this.send(&#x27;dismissErrorMessages&#x27;);
     var model = this.get(&#x27;model&#x27;);
+
     if (this.get(&#x27;destroyHasManyRelationshipsOnModelDestroy&#x27;)) {
-      this.destroyHasManyRelationships(model).then(() =&gt; {
-        model.destroyRecord().then(() =&gt; {
+      return this.destroyHasManyRelationships(model).then(() =&gt; {
+        return model.destroyRecord().then(() =&gt; {
           this.onDeleteActionFulfilled();
         }).catch((errorData) =&gt; {
           this.onDeleteActionRejected(errorData);
@@ -441,7 +442,7 @@ export default Ember.Controller.extend(Ember.Evented, FlexberryLookupMixin, Erro
         this.onDeleteActionRejected(errorData);
       });
     } else {
-      model.destroyRecord().then(() =&gt; {
+      return model.destroyRecord().then(() =&gt; {
         this.onDeleteActionFulfilled();
       }).catch((errorData) =&gt; {
         this.onDeleteActionRejected(errorData);
