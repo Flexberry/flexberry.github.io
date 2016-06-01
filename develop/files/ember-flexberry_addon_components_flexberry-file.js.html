@@ -332,11 +332,6 @@ export default FlexberryBaseComponent.extend({
   }),
 
   /**
-   * Add button title (will be shown on mouse hover).
-   */
-  addButtonTitle: undefined,
-
-  /**
    * Flag: indicates whether remove button is visible now.
    */
   removeButtonIsVisible: Ember.computed(&#x27;readonly&#x27;, function() {
@@ -353,11 +348,6 @@ export default FlexberryBaseComponent.extend({
 
     return !(uploadIsInProgress || downloadIsInProgress || Ember.isNone(jsonValue));
   }),
-
-  /**
-   * Remove button title (will be shown on mouse hover).
-   */
-  removeButtonTitle: undefined,
 
   /**
    * Flag: indicates whether to upload file on &#x27;relatedModel&#x27; &#x27;preSave&#x27; event.
@@ -388,11 +378,6 @@ export default FlexberryBaseComponent.extend({
   }),
 
   /**
-   * Upload button title (will be shown on mouse hover).
-   */
-  uploadButtonTitle: undefined,
-
-  /**
    * Flag: indicates whether download button is visible now.
    */
   downloadButtonIsVisible: Ember.computed(&#x27;initialValue&#x27;, function() {
@@ -412,11 +397,6 @@ export default FlexberryBaseComponent.extend({
   }),
 
   /**
-   * Download button title (will be shown on mouse hover).
-   */
-  downloadButtonTitle: undefined,
-
-  /**
    * Maximum file size in bytes for uploading files.
    * It should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\environment.
    * If null or undefined, then APP.components.file.maxUploadFileSize from application config\environment will be used.
@@ -425,8 +405,12 @@ export default FlexberryBaseComponent.extend({
 
   /**
    * Text to be displayed instead of file name, if file has not been selected.
+   *
+   * @property placeholder
+   * @type String
+   * @default t(&#x27;flexberry-file.placeholder&#x27;)
    */
-  placeholder: undefined,
+  placeholder: t(&#x27;flexberry-file.placeholder&#x27;),
 
   /**
    * File upload URL.
@@ -485,18 +469,12 @@ export default FlexberryBaseComponent.extend({
     this.set(&#x27;initialValue&#x27;, Ember.copy(value, true));
 
     // Initialize properties which defaults could be defined in application configuration.
-    var i18n = this.get(&#x27;i18n&#x27;);
     this.initProperty({ propertyName: &#x27;uploadUrl&#x27;, defaultValue: null });
     this.initProperty({ propertyName: &#x27;maxUploadFileSize&#x27;, defaultValue: null });
-    this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.placeholder&#x27;) });
     this.initProperty({ propertyName: &#x27;uploadOnModelPreSave&#x27;, defaultValue: true });
     this.initProperty({ propertyName: &#x27;showUploadButton&#x27;, defaultValue: false });
     this.initProperty({ propertyName: &#x27;showModalDialogOnUploadError&#x27;, defaultValue: false });
     this.initProperty({ propertyName: &#x27;showModalDialogOnDownloadError&#x27;, defaultValue: true });
-    this.initProperty({ propertyName: &#x27;addButtonTitle&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.add-btn-text&#x27;) });
-    this.initProperty({ propertyName: &#x27;removeButtonTitle&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.remove-btn-text&#x27;) });
-    this.initProperty({ propertyName: &#x27;uploadButtonTitle&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.upload-btn-text&#x27;) });
-    this.initProperty({ propertyName: &#x27;downloadButtonTitle&#x27;, defaultValue: i18n.t(&#x27;flexberry-file.download-btn-text&#x27;) });
 
     // Bind related model&#x27;s &#x27;preSave&#x27; event handler&#x27;s context &amp; subscribe on related model&#x27;s &#x27;preSave&#x27;event.
     this.set(&#x27;_onRelatedModelPreSave&#x27;, this.get(&#x27;_onRelatedModelPreSave&#x27;).bind(this));
