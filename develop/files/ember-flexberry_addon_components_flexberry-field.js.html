@@ -168,7 +168,7 @@ var FlexberryField = FlexberryBaseComponent.extend({
    * @type Array
    * @readOnly
    */
-  classNames: [&#x27;flexberry-field&#x27;, &#x27;field&#x27;],
+  classNames: [&#x27;flexberry-field&#x27;, &#x27;ui&#x27;, &#x27;field&#x27;],
 
   /**
    * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
@@ -213,7 +213,7 @@ var FlexberryField = FlexberryBaseComponent.extend({
     this._super(...arguments);
 
     // Initialize properties which defaults could be defined in application configuration.
-    this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: null });
+    this.initProperty({ propertyName: &#x27;placeholder&#x27;, defaultValue: undefined });
   }
 });
 

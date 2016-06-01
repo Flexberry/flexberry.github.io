@@ -162,7 +162,9 @@
 
 
 <div class="well well-small">
-    <p>Component for expand / collapse content.</p>
+    <p>Component for expand / collapse content.
+Sample usage:</p>
+<pre class="code prettyprint"><code class="language-handlebars"></code></pre>
 
 </div>
 
@@ -185,10 +187,6 @@
                     <ul class="index-list methods extends">
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__collapseMenu" data-tablink="_collapseMenu">_collapseMenu</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_didInsertElement" data-tablink="didInsertElement">didInsertElement</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -214,6 +212,14 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property__caption" data-tablink="_caption">_caption</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property__expanded" data-tablink="_expanded">_expanded</a>
+
+                            </li>
                             <li class="index-item property inherited inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_allowColumnResize" data-tablink="allowColumnResize">allowColumnResize</a>
 
@@ -232,10 +238,6 @@
                             </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_caption" data-tablink="caption">caption</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_captionComputed" data-tablink="captionComputed">captionComputed</a>
 
                             </li>
                             <li class="index-item property">
@@ -264,10 +266,6 @@
                             </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_dynamicProperties" data-tablink="dynamicProperties">dynamicProperties</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_expanded" data-tablink="expanded">expanded</a>
 
                             </li>
                             <li class="index-item property">
@@ -372,37 +370,6 @@
                     
                         <div class="description">
                             <p>This method collapses and clears menu after item selection.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_didInsertElement" class="method item">
-                        <h3 class="name"><code>didInsertElement</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l77"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:77</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Handles the event, when component has been insterted.
-                    Attaches event handlers for expanding / collapsing content.</p>
                     
                         </div>
                     
@@ -615,6 +582,58 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property__caption" class="property item">
+                        <h3 class="name"><code>_caption</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l60"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:60</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current caption.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property__expanded" class="property item private">
+                        <h3 class="name"><code>_expanded</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l23"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:23</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current visibility state.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
                     <div id="property_allowColumnResize" class="property item inherited">
                         <h3 class="name"><code>allowColumnResize</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -732,7 +751,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l24"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:24</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l32"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:32</code></a>
                             </p>
                     
                     
@@ -740,37 +759,12 @@
                     
                         <div class="description">
                             <p>Common caption in the component header.
-                    Used when appropriate sate-related caption (ExpandedCaption:property
-                    or CollapsedCaption:property) is not specified.</p>
+                    Used when appropriate sate-related caption (<a href="../classes/FlexberryToggler.html#property_expandedCaption" class="crosslink">expandedCaption</a>
+                    or <a href="../classes/FlexberryToggler.html#property_collapsedCaption" class="crosslink">collapsedCaption</a>) is not specified.</p>
                     
                         </div>
                     
                             <p><strong>Default:</strong> &#x27;&#x27;</p>
-                    
-                    
-                    </div>
-                    <div id="property_captionComputed" class="property item">
-                        <h3 class="name"><code>captionComputed</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l64"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:64</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Current caption.</p>
-                    
-                        </div>
-                    
                     
                     
                     </div>
@@ -785,14 +779,15 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:15</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l73"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:73</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Default class for component wrapper.</p>
+                            <p>Array CSS class names.
+                    <a href="http://emberjs.com/api/classes/Ember.Component.html#property_classNames">More info.</a></p>
                     
                         </div>
                     
@@ -810,7 +805,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l45"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:45</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l51"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:51</code></a>
                             </p>
                     
                     
@@ -818,7 +813,7 @@
                     
                         <div class="description">
                             <p>Caption in the component header for collapsed state.
-                    If it is not specified, Caption:property will be used.</p>
+                    If it is not specified, <a href="../classes/FlexberryToggler.html#property_caption" class="crosslink">caption</a> will be used.</p>
                     
                         </div>
                     
@@ -959,32 +954,6 @@
                     
                     
                     </div>
-                    <div id="property_expanded" class="property item">
-                        <h3 class="name"><code>expanded</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l55"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:55</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Current visibility state.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> true</p>
-                    
-                    
-                    </div>
                     <div id="property_expandedCaption" class="property item">
                         <h3 class="name"><code>expandedCaption</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -996,7 +965,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l35"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:35</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-toggler.js.html#l42"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-toggler.js:42</code></a>
                             </p>
                     
                     
@@ -1004,7 +973,7 @@
                     
                         <div class="description">
                             <p>Caption in the component header for expanded state.
-                    If it is not specified, Caption:property will be used.</p>
+                    If it is not specified, <a href="../classes/FlexberryToggler.html#property_caption" class="crosslink">caption</a> will be used.</p>
                     
                         </div>
                     

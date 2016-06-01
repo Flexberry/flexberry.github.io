@@ -1397,7 +1397,7 @@
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
             "line": 8,
-            "description": "Component for expand / collapse content.",
+            "description": "Component for expand / collapse content.\nSample usage:\n```handlebars\n{{#flexberry-toggler\n  expandedCaption='Expanded caption'\n  collapsedCaption='Collapsed caption'\n}}\n  Your content.\n{{/flexberry-toggler}}\n```",
             "extends": "FlexberryBaseComponent"
         },
         "FlexberryValidationmessage": {
@@ -6297,6 +6297,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-textarea.js",
             "line": 23,
+            "description": "Array CSS class names bindings.\n[More info.](http://emberjs.com/api/classes/Ember.Component.html#property_classNameBindings)",
+            "itemtype": "property",
+            "name": "classNameBindings",
+            "type": "Array",
+            "readonly": "",
+            "class": "FlexberryTextarea",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-textarea.js",
+            "line": 32,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -6307,7 +6318,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-textarea.js",
-            "line": 32,
+            "line": 41,
             "description": "Input value.",
             "itemtype": "property",
             "name": "value",
@@ -6318,7 +6329,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-textarea.js",
-            "line": 41,
+            "line": 50,
             "description": "Text to be displayed instead of file name, if file has not been selected.",
             "itemtype": "property",
             "name": "placeholder",
@@ -6329,7 +6340,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-textarea.js",
-            "line": 50,
+            "line": 59,
             "description": "Initializes component.",
             "class": "FlexberryTextarea",
             "module": "ember-flexberry"
@@ -6348,6 +6359,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-textbox.js",
             "line": 23,
+            "description": "Array CSS class names bindings.\n[More info.](http://emberjs.com/api/classes/Ember.Component.html#property_classNameBindings)",
+            "itemtype": "property",
+            "name": "classNameBindings",
+            "type": "Array",
+            "readonly": "",
+            "class": "FlexberryTextbox",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-textbox.js",
+            "line": 32,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -6358,7 +6380,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-textbox.js",
-            "line": 32,
+            "line": 41,
             "description": "Input value.",
             "itemtype": "property",
             "name": "value",
@@ -6369,7 +6391,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-textbox.js",
-            "line": 41,
+            "line": 50,
             "description": "Text to be displayed instead of file name, if file has not been selected.",
             "itemtype": "property",
             "name": "placeholder",
@@ -6380,26 +6402,28 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-textbox.js",
-            "line": 50,
+            "line": 59,
             "description": "Initializes component.",
             "class": "FlexberryTextbox",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 15,
-            "description": "Default class for component wrapper.",
+            "line": 23,
+            "description": "Current visibility state.",
             "itemtype": "property",
-            "name": "classNames",
-            "type": "Array",
-            "readonly": "",
+            "name": "_expanded",
+            "type": "Boolean",
+            "default": "false",
+            "access": "private",
+            "tagname": "",
             "class": "FlexberryToggler",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 24,
-            "description": "Common caption in the component header.\nUsed when appropriate sate-related caption ({{#crossLink \"expandedCaption:property\"}}{{/crossLink}}\nor {{#crossLink \"collapsedCaption:property\"}}{{/crossLink}}) is not specified.",
+            "line": 32,
+            "description": "Common caption in the component header.\nUsed when appropriate sate-related caption ({{#crossLink \"FlexberryToggler/expandedCaption:property\"}}{{/crossLink}}\nor {{#crossLink \"FlexberryToggler/collapsedCaption:property\"}}{{/crossLink}}) is not specified.",
             "itemtype": "property",
             "name": "caption",
             "type": "String",
@@ -6409,8 +6433,8 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 35,
-            "description": "Caption in the component header for expanded state.\nIf it is not specified, {{#crossLink \"caption:property\"}}{{/crossLink}} will be used.",
+            "line": 42,
+            "description": "Caption in the component header for expanded state.\nIf it is not specified, {{#crossLink \"FlexberryToggler/caption:property\"}}{{/crossLink}} will be used.",
             "itemtype": "property",
             "name": "expandedCaption",
             "type": "String",
@@ -6420,8 +6444,8 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 45,
-            "description": "Caption in the component header for collapsed state.\nIf it is not specified, {{#crossLink \"caption:property\"}}{{/crossLink}} will be used.",
+            "line": 51,
+            "description": "Caption in the component header for collapsed state.\nIf it is not specified, {{#crossLink \"FlexberryToggler/caption:property\"}}{{/crossLink}} will be used.",
             "itemtype": "property",
             "name": "collapsedCaption",
             "type": "String",
@@ -6431,31 +6455,30 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 55,
-            "description": "Current visibility state.",
-            "itemtype": "property",
-            "name": "expanded",
-            "type": "Boolean",
-            "default": "true",
-            "class": "FlexberryToggler",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 64,
+            "line": 60,
             "description": "Current caption.",
             "itemtype": "property",
-            "name": "captionComputed",
+            "name": "_caption",
             "type": "String",
+            "readonly": "",
             "class": "FlexberryToggler",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 77,
+            "line": 73,
+            "description": "Array CSS class names.\n[More info.](http://emberjs.com/api/classes/Ember.Component.html#property_classNames)",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "Array",
+            "readonly": "",
+            "class": "FlexberryToggler",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-toggler.js",
+            "line": 82,
             "description": "Handles the event, when component has been insterted.\nAttaches event handlers for expanding / collapsing content.",
-            "itemtype": "method",
-            "name": "didInsertElement",
             "class": "FlexberryToggler",
             "module": "ember-flexberry"
         },
@@ -10384,11 +10407,15 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry/addon/components/flexberry-textarea.js:50"
+            "line": " ember-flexberry/addon/components/flexberry-textarea.js:59"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry/addon/components/flexberry-textbox.js:50"
+            "line": " ember-flexberry/addon/components/flexberry-textbox.js:59"
+        },
+        {
+            "message": "Missing item type\nHandles the event, when component has been insterted.\nAttaches event handlers for expanding / collapsing content.",
+            "line": " ember-flexberry/addon/components/flexberry-toggler.js:82"
         },
         {
             "message": "Missing item type\nPush validation errors to messages array\nand change component visibility if no errors occurred.",
