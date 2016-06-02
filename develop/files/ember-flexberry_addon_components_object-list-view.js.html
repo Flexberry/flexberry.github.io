@@ -156,6 +156,7 @@ import Ember from &#x27;ember&#x27;;
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lookup-compatible-component&#x27;;
 import ErrorableMixin from &#x27;../mixins/errorable-controller&#x27;;
+import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 
 /**
  * Object list view component.
@@ -242,7 +243,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       if (this.get(&#x27;showEditMenuItemInRow&#x27;) &amp;&amp; recordWithKey.config.canBeSelected) {
         menuInRowSubItems.push({
           icon: &#x27;edit icon&#x27;,
-          title: this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.menu-in-row.edit-menu-item-title&#x27;) || &#x27;Edit record&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view.menu-in-row.edit-menu-item-title&#x27;) || &#x27;Edit record&#x27;,
           isEditItem: true
         });
       }
@@ -250,7 +251,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
       if (this.get(&#x27;showDeleteMenuItemInRow&#x27;) &amp;&amp; recordWithKey.config.canBeDeleted) {
         menuInRowSubItems.push({
           icon: &#x27;trash icon&#x27;,
-          title: this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.menu-in-row.delete-menu-item-title&#x27;) || &#x27;Delete record&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view.menu-in-row.delete-menu-item-title&#x27;) || &#x27;Delete record&#x27;,
           isDeleteItem: true
         });
       }
@@ -685,8 +686,9 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
    *
    * @property noDataMessage
    * @type String
+   * @default &#x27;t(&#x27;components.object-list-view.no-data-text&#x27;)&#x27;
    */
-  noDataMessage: undefined,
+  noDataMessage: t(&#x27;components.object-list-view.no-data-text&#x27;),
 
   /**
    * Flag: indicates whether table headers are clickable.
@@ -912,11 +914,6 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvAddRow&#x27;, this, this._addRow);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvDeleteRows&#x27;, this, this._deleteRows);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;filterByAnyMatch&#x27;, this, this._filterByAnyMatch);
-
-    this.initProperty({
-      propertyName: &#x27;noDataMessage&#x27;,
-      defaultValue: this.get(&#x27;i18n&#x27;).t(&#x27;object-list-view.no-data-text&#x27;) || &#x27;No data&#x27;
-    });
 
     if (this.get(&#x27;content&#x27;)) {
       this.get(&#x27;content&#x27;).forEach((item, index, enumerable) =&gt; {

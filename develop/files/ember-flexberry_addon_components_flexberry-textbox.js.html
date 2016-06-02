@@ -153,6 +153,7 @@
  */
 
 import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 
 /**
  * Textbox component for Semantic UI.
@@ -198,13 +199,13 @@ var FlexberryTextbox = FlexberryBaseComponent.extend({
   value: undefined,
 
   /**
-   * Text to be displayed instead of file name, if file has not been selected.
+   * The placeholder attribute.
    *
    * @property placeholder
-   * @type string
-   * @default undefined
+   * @type Sring
+   * @default &#x27;t(&#x27;components.flexberry-textbox.placeholder&#x27;)&#x27;
    */
-  placeholder: undefined,
+  placeholder: t(&#x27;components.flexberry-textbox.placeholder&#x27;),
 
   /**
    * Initializes component.

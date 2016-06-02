@@ -185,8 +185,8 @@ export default FlexberryBaseComponent.extend({
    */
   classNameBindings: [&#x27;autocompleteClass&#x27;],
 
-  placeholder: t(&#x27;flexberry-lookup.placeholder&#x27;),
-  chooseText: t(&#x27;flexberry-lookup.choose-button-text&#x27;),
+  placeholder: t(&#x27;components.flexberry-lookup.placeholder&#x27;),
+  chooseText: t(&#x27;components.flexberry-lookup.choose-button-text&#x27;),
 
   // ToDo: Use &#x27;flexberry-lookup.remove-button-text&#x27; from locale.
   removeText: &#x27;&lt;i class=&quot;remove icon&quot;&gt;&lt;/i&gt;&#x27;,
@@ -589,7 +589,7 @@ export default FlexberryBaseComponent.extend({
   buildDisplayValue() {
     let selectedModel = this.get(&#x27;value&#x27;);
     if (!selectedModel) {
-      this.set(&#x27;placeholder&#x27;, t(&#x27;flexberry-lookup.placeholder&#x27;));
+      this.set(&#x27;placeholder&#x27;, t(&#x27;components.flexberry-lookup.placeholder&#x27;));
       return &#x27;&#x27;;
     } else {
       this.set(&#x27;placeholder&#x27;, &#x27;&#x27;);

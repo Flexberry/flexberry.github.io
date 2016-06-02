@@ -244,21 +244,21 @@ export default FlexberryFile.extend({
       if (this.get(&#x27;showPreview&#x27;)) {
         menuSubItems.push({
           icon: &#x27;zoom icon&#x27;,
-          title: this.get(&#x27;i18n&#x27;).t(&#x27;flexberry-file.menu-for-file.zoom-image-item-title&#x27;) || &#x27;Zoom image&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;components.flexberry-file.menu-for-file.zoom-image-item-title&#x27;) || &#x27;Zoom image&#x27;,
           isZoomItem: true
         });
 
         if (this.get(&#x27;addButtonIsVisible&#x27;)) {
           menuSubItems.push({
             icon: &#x27;file outline icon&#x27;,
-            title: this.get(&#x27;i18n&#x27;).t(&#x27;flexberry-file.menu-for-file.replace-file-item-title&#x27;) || &#x27;Replace file&#x27;,
+            title: this.get(&#x27;i18n&#x27;).t(&#x27;components.flexberry-file.menu-for-file.replace-file-item-title&#x27;) || &#x27;Replace file&#x27;,
             isReplaceItem: true
           });
         }
 
         menuSubItems.push({
           icon: &#x27;trash icon&#x27;,
-          title: this.get(&#x27;i18n&#x27;).t(&#x27;flexberry-file.menu-for-file.delete-file-item-title&#x27;) || &#x27;Delete file&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;components.flexberry-file.menu-for-file.delete-file-item-title&#x27;) || &#x27;Delete file&#x27;,
           isDeleteItem: true
         });
       }
