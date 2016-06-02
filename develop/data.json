@@ -1000,7 +1000,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
-            "line": 15,
+            "line": 16,
             "params": [
                 {
                     "name": "baseUrl",
@@ -2924,7 +2924,7 @@
         },
         {
             "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
-            "line": 36,
+            "line": 37,
             "description": "Determines the pathname for a given type.\nAdditionally capitalizes the type name (requirement of Flexberry OData Server).",
             "itemtype": "method",
             "name": "pathForType",
@@ -2945,7 +2945,7 @@
         },
         {
             "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
-            "line": 50,
+            "line": 51,
             "description": "Returns base part of URL for querying OData feed (without query part).",
             "itemtype": "method",
             "name": "getODataFullUrl",
@@ -2968,7 +2968,7 @@
         },
         {
             "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
-            "line": 65,
+            "line": 66,
             "description": "Returns query data for querying OData feed (for query part).",
             "itemtype": "method",
             "name": "getODataQuery",
@@ -2991,7 +2991,7 @@
         },
         {
             "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
-            "line": 89,
+            "line": 90,
             "description": "Returns full URL for querying OData feed (base part and query part).",
             "itemtype": "method",
             "name": "getODataFullUrl",
@@ -3014,7 +3014,7 @@
         },
         {
             "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
-            "line": 168,
+            "line": 169,
             "description": "Converts specified predicate into OData filter part.",
             "itemtype": "method",
             "name": "convertPredicateToODataFilterClause",
@@ -3031,6 +3031,25 @@
             ],
             "return": {
                 "description": "OData filter part.",
+                "type": "String"
+            },
+            "class": "Query.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-projections/addon/query/odata-adapter.js",
+            "line": 210,
+            "description": "Converts filter operator to OData representation.",
+            "params": [
+                {
+                    "name": "operator",
+                    "description": "Operator to convert.",
+                    "type": "Query.FilterOperator"
+                }
+            ],
+            "return": {
+                "description": "Converted operator.",
                 "type": "String"
             },
             "class": "Query.ODataAdapter",
@@ -10026,6 +10045,10 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-projections/addon/query/odata-adapter.js:210"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
             "line": " ember-flexberry-projections/addon/serializers/base.js:22"
         },
         {
@@ -10115,6 +10138,10 @@
         {
             "message": "Missing item type\nReturns complex filter function for `or` condition.\nResult function filters array of objects and returns those, for which\nat least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
             "line": " ember-flexberry-projections/addon/query/js-adapter.js:268"
+        },
+        {
+            "message": "Missing item type\nConverts filter operator to OData representation.",
+            "line": " ember-flexberry-projections/addon/query/odata-adapter.js:210"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",

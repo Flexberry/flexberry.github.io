@@ -152,6 +152,7 @@ import Ember from &#x27;ember&#x27;;
 
 import BaseAdapter from &#x27;./base-adapter&#x27;;
 import { SimplePredicate, ComplexPredicate, StringPredicate } from &#x27;./predicate&#x27;;
+import FilterOperator from &#x27;./filter-operator&#x27;;
 
 /**
  * Class of query adapter that translates query object into OData URL.
@@ -325,21 +326,26 @@ function buildODataOrderBy(query) {
  */
 function convertPredicateToODataFilterClause(predicate, store, modelName) {
   if (predicate instanceof SimplePredicate) {
-    let type = &#x27;?&#x27;;
+    let type;
     store.modelFor(modelName).eachAttribute(function(name, meta) {
       if (name === predicate.attributeName) {
         type = meta.type;
       }
     });
 
+    if (!type) {
+      throw new Error(&#x60;Unknown type for &#x27;${predicate.attributeName}&#x27; attribute.&#x60;);
+    }
+
+    let attribute = store.serializerFor(modelName).keyForAttribute(predicate.attributeName);
     let value = type === &#x27;string&#x27; ? &#x60;&#x27;${predicate.value}&#x27;&#x60; : predicate.value;
-    return &#x60;${predicate.attributeName} ${predicate.operator} ${value}&#x60;;
+    let operator = getODataFilterOperator(predicate.operator);
+    return &#x60;${attribute} ${operator} ${value}&#x60;;
   }
 
   if (predicate instanceof StringPredicate) {
-    let serializer = store.serializerFor(modelName);
-    let normalizedAttrName = serializer.keyForAttribute(predicate.attributeName);
-    return &#x60;contains(${normalizedAttrName},&#x27;${predicate.containsValue}&#x27;)&#x60;;
+    let attribute = store.serializerFor(modelName).keyForAttribute(predicate.attributeName);
+    return &#x60;contains(${attribute},&#x27;${predicate.containsValue}&#x27;)&#x60;;
   }
 
   if (predicate instanceof ComplexPredicate) {
@@ -349,6 +355,37 @@ function convertPredicateToODataFilterClause(predicate, store, modelName) {
   }
 
   throw new Error(&#x60;Unknown predicate &#x27;${predicate}&#x27;&#x60;);
+}
+
+/**
+ * Converts filter operator to OData representation.
+ *
+ * @param {Query.FilterOperator} operator Operator to convert.
+ * @returns {String} Converted operator.
+ */
+function getODataFilterOperator(operator) {
+  switch (operator) {
+    case FilterOperator.Eq:
+      return &#x27;eq&#x27;;
+
+    case FilterOperator.Neq:
+      return &#x27;ne&#x27;;
+
+    case FilterOperator.Le:
+      return &#x27;lt&#x27;;
+
+    case FilterOperator.Leq:
+      return &#x27;le&#x27;;
+
+    case FilterOperator.Ge:
+      return &#x27;gt&#x27;;
+
+    case FilterOperator.Geq:
+      return &#x27;ge&#x27;;
+
+    default:
+      throw new Error(&#x60;Unsupported filter operator &#x27;${operator}&#x27;.&#x60;);
+  }
 }
 
     </pre>
