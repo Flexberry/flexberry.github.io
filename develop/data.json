@@ -5573,14 +5573,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 364,
+            "line": 365,
             "description": "Handles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 373,
+            "line": 374,
             "description": "Handles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
             "params": [
                 {
@@ -5594,14 +5594,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 393,
+            "line": 394,
             "description": "Handles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 414,
+            "line": 415,
             "description": "Init component with dropdown mode.",
             "itemtype": "method",
             "name": "_onDropdown",
@@ -5612,7 +5612,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 495,
+            "line": 497,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "buildDisplayValue",
@@ -5627,7 +5627,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 514,
+            "line": 516,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -6428,7 +6428,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 70,
+            "line": 71,
             "description": "Converted date in `min` to appropriate input datatype.\nFor example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.min.",
             "itemtype": "property",
             "name": "minStr",
@@ -6440,7 +6440,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 91,
+            "line": 93,
             "description": "Converted date in `max` to appropriate input datatype.\nFor example, see https://www.w3.org/TR/html-markup/input.datetime-local.html#input.datetime-local.attrs.max.",
             "itemtype": "property",
             "name": "maxStr",
@@ -6452,7 +6452,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 112,
+            "line": 115,
             "description": "Converts Date object to appropriate string value for input.",
             "itemtype": "method",
             "name": "convertDateToString",
@@ -6463,7 +6463,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 145,
+            "line": 148,
             "description": "Converts string value of input to Date object.",
             "itemtype": "method",
             "name": "convertStringToDate",
@@ -7972,7 +7972,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1280,
+            "line": 1278,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -7999,7 +7999,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1303,
+            "line": 1301,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -8335,7 +8335,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
-            "line": 164,
+            "line": 162,
             "description": "Method to transit to parent's route (previous route).\nIf `modelAgregatorRoute` is set, transition to defined path and set flag 'modelNoRollBack' to `true` on controller to prevent rollback of model.\nThen if `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
             "itemtype": "method",
             "name": "transitionToParentRoute.",
@@ -8491,7 +8491,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 275,
+            "line": 273,
             "description": "Delete object, if successful transition to parent route.",
             "itemtype": "method",
             "name": "delete.",
@@ -8500,7 +8500,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 303,
+            "line": 299,
             "description": "Сlose edit form and transition to parent route.",
             "itemtype": "method",
             "name": "close.",
@@ -8509,7 +8509,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 312,
+            "line": 308,
             "description": "Method to transit to parent's route (previous route).\nIf `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
             "itemtype": "method",
             "name": "transitionToParentRoute.",
@@ -8518,7 +8518,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 328,
+            "line": 324,
             "description": "Method to get type and attributes of component,\nwhich will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent.",
@@ -8548,7 +8548,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 395,
+            "line": 391,
             "description": "Save dirty hasMany relationships in the `model` recursively.\nThis method invokes by `save` method.",
             "itemtype": "method",
             "name": "saveHasManyRelationships",
@@ -8568,7 +8568,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 422,
+            "line": 414,
             "description": "Rollback dirty hasMany relationships in the `model` recursively.\nThis method invokes by `resetController` in the `edit-form` route.",
             "itemtype": "method",
             "name": "rollbackHasManyRelationships",
@@ -8584,7 +8584,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 440,
+            "line": 432,
             "description": "Destroy (delete and save) all hasMany relationships in the `model` recursively.\nThis method invokes by `delete` method.",
             "itemtype": "method",
             "name": "destroyHasManyRelationships",
@@ -8604,7 +8604,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 465,
+            "line": 455,
             "description": "This method is called after successful save.\nYou can override this method to add actions after save.\n\n```js\nonSaveActionFulfilled() {\n  alert('Save successful!');\n}\n```",
             "itemtype": "method",
             "name": "onSaveActionFulfilled.",
@@ -8613,7 +8613,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 480,
+            "line": 470,
             "description": "This method is called if save ended with error.\nYou can override this method to add actions after unsuccessful save.\n\n```js\nonSaveActionRejected() {\n  alert('Save failed!');\n}\n```",
             "itemtype": "method",
             "name": "onSaveActionRejected.",
@@ -8629,7 +8629,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 497,
+            "line": 487,
             "description": "This method is called after delete object.\nYou can override this method to add actions after deleted.\n\n```js\nonDeleteActionFulfilled() {\n  alert('Successful delete!');\n  this.close();\n}\n```",
             "itemtype": "method",
             "name": "onDeleteActionFulfilled.",
@@ -8638,7 +8638,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 514,
+            "line": 504,
             "description": "This method is called if delete ended with error.\nYou can override this method to add actions after unsuccessful deleted.\n\n```js\nonDeleteActionRejected() {\n  alert('Failed delete!');\n}\n```",
             "itemtype": "method",
             "name": "onDeleteActionRejected.",
@@ -9684,7 +9684,7 @@
         },
         {
             "file": "ember-flexberry/addon/models/base.js",
-            "line": 124,
+            "line": 122,
             "description": "Turns model into 'updated.uncommitted' state.",
             "itemtype": "method",
             "name": "makeDirty",
@@ -10598,7 +10598,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:495"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:497"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -10926,15 +10926,15 @@
         },
         {
             "message": "Missing item type\nHandles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:364"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:365"
         },
         {
             "message": "Missing item type\nHandles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:373"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:374"
         },
         {
             "message": "Missing item type\nHandles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:393"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:394"
         },
         {
             "message": "Missing item type\nClass names for component wrapping element.",

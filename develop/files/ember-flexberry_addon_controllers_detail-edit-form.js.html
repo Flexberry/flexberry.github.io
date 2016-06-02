@@ -303,9 +303,7 @@ export default EditFormController.extend({
       // because after transition, all components correspondent to current detail route (including file components)
       // gonna be destroyed, and files won&#x27;t be uploaded at all.
       var model = this.get(&#x27;model&#x27;);
-      model.validate().then(() =&gt; {
-        return model.beforeSave({ softSave: true });
-      }).then(() =&gt; {
+      model.validate().then(() =&gt; model.beforeSave({ softSave: true })).then(() =&gt; {
         this.transitionToParentRoute(false);
       }, (reason) =&gt; {
         this.rejectError(reason);

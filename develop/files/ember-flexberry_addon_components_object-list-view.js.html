@@ -1418,9 +1418,7 @@ export default FlexberryBaseComponent.extend(FlexberryLookupCompatibleComponentM
     var key = this._getModelKey(record);
     this._removeModelWithKey(key);
 
-    this._deleteHasManyRelationships(record, immediately).then(() =&gt; {
-      return immediately ? record.destroyRecord() : record.deleteRecord();
-    }).catch((reason) =&gt; {
+    this._deleteHasManyRelationships(record, immediately).then(() =&gt; immediately ? record.destroyRecord() : record.deleteRecord()).catch((reason) =&gt; {
       this.rejectError(reason, &#x60;Unable to delete a record: ${record.toString()}.&#x60;);
       record.rollbackAttributes();
     });
