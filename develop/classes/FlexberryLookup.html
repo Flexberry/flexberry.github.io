@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryLookupMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
         </form>
     </div>
 </div>
@@ -67,6 +67,7 @@
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
 	                            <li><a href="../classes/FlexberryMenuComponent.html">FlexberryMenuComponent</a></li>
 	                            <li><a href="../classes/FlexberryMenuitemComponent.html">FlexberryMenuitemComponent</a></li>
 	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
@@ -99,6 +100,7 @@
 	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
 	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
 	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
 	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
 	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
 	                            <li><a href="../classes/Serializer.OData.html">Serializer.OData</a></li>
@@ -153,7 +155,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l13"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:13</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l15"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:15</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -185,6 +187,10 @@
                     <ul class="index-list methods extends">
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__collapseMenu" data-tablink="_collapseMenu">_collapseMenu</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__conjuctPredicates" data-tablink="_conjuctPredicates">_conjuctPredicates</a>
 
                             </li>
                             <li class="index-item method private">
@@ -222,6 +228,10 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property__lookupWindowCustomPropertiesData" data-tablink="_lookupWindowCustomPropertiesData">_lookupWindowCustomPropertiesData</a>
+
+                            </li>
                             <li class="index-item property inherited inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_allowColumnResize" data-tablink="allowColumnResize">allowColumnResize</a>
 
@@ -300,6 +310,10 @@
                             </li>
                             <li class="index-item property inherited inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_headerClickable" data-tablink="headerClickable">headerClickable</a>
+
+                            </li>
+                            <li class="index-item property public">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_lookupLimitPredicate" data-tablink="lookupLimitPredicate">lookupLimitPredicate</a>
 
                             </li>
                             <li class="index-item property public">
@@ -430,6 +444,85 @@
                     
                     
                     </div>
+                    <div id="method__conjuctPredicates" class="method item">
+                        <h3 class="name"><code>_conjuctPredicates</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>limitPredicate</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>autocompletePredicate</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">BasePredicate</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l514"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:514</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Concatenates predicates.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">limitPredicate</code>
+                                            <span class="type">BasePredicate</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The first predicate to concatenate.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">autocompletePredicate</code>
+                                            <span class="type">BasePredicate</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The second predicate to concatenate.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate</span>:
+                                        <p>Concatenation of two predicates.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method__onAutocomplete" class="method item private">
                         <h3 class="name"><code>_onAutocomplete</code></h3>
                     
@@ -446,7 +539,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l241"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:241</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l291"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:291</code></a>
                             </p>
                     
                     
@@ -477,7 +570,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l359"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:359</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l414"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:414</code></a>
                             </p>
                     
                     
@@ -511,7 +604,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l432"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:432</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l495"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:495</code></a>
                             </p>
                     
                     
@@ -739,6 +832,35 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property__lookupWindowCustomPropertiesData" class="property item private">
+                        <h3 class="name"><code>_lookupWindowCustomPropertiesData</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l153"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:153</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This computed property forms a set of properties to send to lookup window.</p>
+                    <pre class="code prettyprint"><code>Closure action <code>lookupWindowCustomProperties</code> is called here if defined,
+                    otherwise <code>undefined</code> is returned.</code></pre>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
                     <div id="property_allowColumnResize" class="property item inherited">
                         <h3 class="name"><code>allowColumnResize</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -857,7 +979,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l67"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:67</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l69"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:69</code></a>
                             </p>
                     
                     
@@ -883,7 +1005,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l87"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:87</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l89"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:89</code></a>
                             </p>
                     
                     
@@ -908,7 +1030,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l44"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:44</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l46"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:46</code></a>
                             </p>
                     
                     
@@ -934,7 +1056,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l140"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:140</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l182"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:182</code></a>
                             </p>
                     
                     
@@ -959,7 +1081,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l29"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:29</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l31"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:31</code></a>
                             </p>
                     
                     
@@ -984,7 +1106,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l20"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:20</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l22"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:22</code></a>
                             </p>
                     
                     
@@ -1114,7 +1236,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l182"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:182</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l232"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:232</code></a>
                             </p>
                     
                     
@@ -1141,7 +1263,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l209"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:209</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l259"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:259</code></a>
                             </p>
                     
                     
@@ -1169,7 +1291,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l77"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:77</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l79"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:79</code></a>
                             </p>
                     
                     
@@ -1268,6 +1390,34 @@
                     
                     
                     </div>
+                    <div id="property_lookupLimitPredicate" class="property item public">
+                        <h3 class="name"><code>lookupLimitPredicate</code></h3>
+                        <span class="type">BasePredicate</span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l142"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:142</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Limit function on lookup.
+                    It should not be just a string, it has to be predicate function (otherwise an exception will be thrown).</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
                     <div id="property_maxResults" class="property item public">
                         <h3 class="name"><code>maxResults</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
@@ -1280,7 +1430,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l120"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:120</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l122"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:122</code></a>
                             </p>
                     
                     
@@ -1332,7 +1482,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l110"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:110</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l112"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:112</code></a>
                             </p>
                     
                     
@@ -1359,14 +1509,14 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l130"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:130</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l132"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:132</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Multimple select.</p>
+                            <p>Multiple select.</p>
                     
                         </div>
                     
@@ -1489,7 +1639,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l53"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:53</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l55"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:55</code></a>
                             </p>
                     
                     
@@ -1515,7 +1665,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l158"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:158</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l208"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:208</code></a>
                             </p>
                     
                     
@@ -1767,7 +1917,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l171"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:171</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l221"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:221</code></a>
                             </p>
                     
                     
@@ -1794,7 +1944,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l100"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:100</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l102"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:102</code></a>
                             </p>
                     
                     
@@ -1850,7 +2000,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l192"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:192</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-lookup.js.html#l242"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-lookup.js:242</code></a>
                             </p>
                     
                     

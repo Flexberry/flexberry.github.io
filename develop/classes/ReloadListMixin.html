@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>DS.Projection - Flexberry Documentation</title>
+    <title>ReloadListMixin - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -145,23 +145,26 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>DS.Projection <small>Class</small></h1>
+    <h1>ReloadListMixin <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
 
-
-        <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-projections_addon_index.js.html#l14"><code>ember-flexberry-projections&#x2F;addon&#x2F;index.js:14</code></a>
+        <div class="extends">
+            Extends <a href="http://emberjs.com/api/classes/Ember.Mixin.html" class="crosslink external" target="_blank">Ember.Mixin</a>
         </div>
 
-            Module: <a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a>
+        <div class="foundat">
+            Defined in: <a href="../files/ember-flexberry_addon_mixins_reload-list-mixin.js.html#l11"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;reload-list-mixin.js:11</code></a>
+        </div>
+
+            Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
 
 </div>
 
 
 <div class="well well-small">
-    <p>This namespace contains classes and methods for working with projections.</p>
+    <p>Mixin for DS.Controller to support data reload.</p>
 
 </div>
 
@@ -180,21 +183,33 @@
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods">
+                    <ul class="index-list methods extends">
                             <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_attr" data-tablink="attr">attr</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method__getFilterPredicate" data-tablink="_getFilterPredicate">_getFilterPredicate</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_apply" data-tablink="apply">apply</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_detect" data-tablink="detect">detect</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_filterByAnyMatch" data-tablink="filterByAnyMatch">filterByAnyMatch</a>
 
                             </li>
                             <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_belongsTo" data-tablink="belongsTo">belongsTo</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_reloadList" data-tablink="reloadList">reloadList</a>
 
                             </li>
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_create" data-tablink="create">create</a>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_reopen" data-tablink="reopen">reopen</a>
 
                             </li>
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_hasMany" data-tablink="hasMany">hasMany</a>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_updateLimitFunction" data-tablink="updateLimitFunction">updateLimitFunction</a>
 
                             </li>
                     </ul>
@@ -207,22 +222,22 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method_attr" class="method item public">
-                        <h3 class="name"><code>attr</code></h3>
+                    <div id="method__getFilterPredicate" class="method item public">
+                        <h3 class="name"><code>_getFilterPredicate</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>caption</code>
+                                            <code>modelProjection</code>
                                     </li>
                                     <li class="arg">
-                                            <code class="optional">[options]</code>
+                                            <code>params</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type">BasePredicate</span>
                             </span>
                     
                     
@@ -235,7 +250,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l8"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:8</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_reload-list-mixin.js.html#l110"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;reload-list-mixin.js:110</code></a>
                             </p>
                     
                     
@@ -243,7 +258,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Define plain attribute in projection.</p>
+                            <p>It forms the filter predicate for data loading.</p>
                     
                         </div>
                     
@@ -252,24 +267,23 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">caption</code>
+                                            <code class="param-name">modelProjection</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>A user-friendly caption for attribute.</p>
+                                            <p>A projection used for data retrieving.</p>
                     
                                         </div>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name optional">[options]</code>
+                                            <code class="param-name">params</code>
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
                     
                     
                                         <div class="param-description">
-                                            <p>Attribute options.</p>
+                                            <p>Current parameters to form predicate.</p>
                     
                                         </div>
                     
@@ -281,35 +295,203 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Projection attribute.</p>
+                                            <span class="type">BasePredicate</span>:
+                                        <p>Filter predicate for data loading.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_belongsTo" class="method item public">
-                        <h3 class="name"><code>belongsTo</code></h3>
+                    <div id="method_apply" class="method item private inherited">
+                        <h3 class="name"><code>apply</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>modelName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>caption</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>attributes</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[options]</code>
+                                            <code>obj</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_apply">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l574"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:574</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">obj</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        applied object
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_detect" class="method item private inherited">
+                        <h3 class="name"><code>detect</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>obj</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_detect">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l607"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:607</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">obj</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_filterByAnyMatch" class="method item">
+                        <h3 class="name"><code>filterByAnyMatch</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>pattern</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_limited-controller.js.html#l24"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-controller.js:24</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Changes current pattern for objects filtering.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">pattern</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>A substring that is searched in objects while filtering.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_reloadList" class="method item public">
+                        <h3 class="name"><code>reloadList</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>options</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
                             </span>
                     
                     
@@ -322,7 +504,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l23"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:23</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_reload-list-mixin.js.html#l19"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;reload-list-mixin.js:19</code></a>
                             </p>
                     
                     
@@ -330,7 +512,9 @@
                         </div>
                     
                         <div class="description">
-                            <p>Define belongsTo relationship attribute in projection.</p>
+                            <p>It reloads data by parameters.</p>
+                    <pre class="code prettyprint"><code>This method is called to get data for flexberry-objectlistview
+                    (both on list-form and lookup modal window).</code></pre>
                     
                         </div>
                     
@@ -339,49 +523,94 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">modelName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of the model type.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">caption</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>A user-friendly caption for attribute.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">attributes</code>
+                                            <code class="param-name">options</code>
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Projection attributes.</p>
+                                            <p>Method options.</p>
                     
                                         </div>
                     
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[options]</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name optional">[modelName]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
+                                                    <div class="param-description">
+                                                        <p>Type of records to load.</p>
                     
-                                        <div class="param-description">
-                                            <p>Attribute options.</p>
+                                                    </div>
                     
-                                        </div>
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[projectionName]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
                     
+                                                    <div class="param-description">
+                                                        <p>Projection name to load data by.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[perPage]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Page size.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[page]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current page.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[sorting]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current sorting.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[filter]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current filter.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[predicate]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Predicate to limit records.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
                                     </li>
                                 </ul>
                             </div>
@@ -390,42 +619,36 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Projection attribute.</p>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                        <p>A promise, which is resolved with a set of loaded records once the server returns.</p>
                     
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method_create" class="method item public">
-                        <h3 class="name"><code>create</code></h3>
+                    <div id="method_reopen" class="method item private inherited">
+                        <h3 class="name"><code>reopen</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>modelName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>attributes</code>
+                                            <code>arguments</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                            </span>
                     
                     
-                            <span class="flag public">public</span>
+                            <span class="flag private">private</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_create.js.html#l5"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;create.js:5</code></a>
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_reopen">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l536"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:536</code></a>
                             </p>
                     
                     
@@ -433,8 +656,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Creates model projection.</p>
-                    
+                            
                         </div>
                     
                             <div class="params">
@@ -442,67 +664,34 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">modelName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>The name of the model type.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">attributes</code>
+                                            <code class="param-name">arguments</code>
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
+                                            <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
                     
                                         <div class="param-description">
-                                            <p>Projection attributes.</p>
-                    
+                                             
                                         </div>
                     
                                     </li>
                                 </ul>
                             </div>
                     
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Model projection.</p>
-                    
-                                </div>
-                            </div>
                     
                     </div>
-                    <div id="method_hasMany" class="method item public">
-                        <h3 class="name"><code>hasMany</code></h3>
+                    <div id="method_updateLimitFunction" class="method item">
+                        <h3 class="name"><code>updateLimitFunction</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>modelName</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>caption</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>attributes</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code class="optional">[options]</code>
+                                            <code>limitFunction</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                            </span>
                     
                     
-                            <span class="flag public">public</span>
                     
                     
                     
@@ -511,7 +700,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-projections_addon_utils_attributes.js.html#l43"><code>ember-flexberry-projections&#x2F;addon&#x2F;utils&#x2F;attributes.js:43</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_limited-controller.js.html#l10"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-controller.js:10</code></a>
                             </p>
                     
                     
@@ -519,7 +708,7 @@
                         </div>
                     
                         <div class="description">
-                            <p>Define hasMany relationship attribute in projection.</p>
+                            <p>Update current limit function.</p>
                     
                         </div>
                     
@@ -528,46 +717,12 @@
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">modelName</code>
+                                            <code class="param-name">limitFunction</code>
                                             <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>The name of the model type.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">caption</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>A user-friendly caption for attribute.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">attributes</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Projection attributes.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name optional">[options]</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                                            <span class="flag optional" title="This parameter is optional.">optional</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Attribute options.</p>
+                                            <p>New limit function.</p>
                     
                                         </div>
                     
@@ -575,15 +730,6 @@
                                 </ul>
                             </div>
                     
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
-                                        <p>Projection attribute.</p>
-                    
-                                </div>
-                            </div>
                     
                     </div>
             </div>

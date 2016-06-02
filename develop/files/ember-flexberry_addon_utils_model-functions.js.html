@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/components/flexberry-base-component.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/utils/model-functions.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -145,7 +145,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/components/flexberry-base-component.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/utils/model-functions.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -156,268 +156,28 @@
 
 import Ember from &#x27;ember&#x27;;
 
-const { getOwner } = Ember;
-
 /**
- * Base component for Flexberry Ember UI Components.
+ * Gets related object type by relation name from specified model.
  *
- * @class FlexberryBaseComponent
+ * @method _getRelationType
+ * @param {String} model Specified model to get relation from.
+ * @param {String} relationName Relation name.
+ * @return {String} Related object type.
+ * @throws {Error} Throws error if relation was not found at model.
  */
-export default Ember.Component.extend({
-  /**
-   * Flag: indicates whether component is readonly.
-   *
-   * @property readonly
-   * @type Boolean
-   * @default false
-   */
-  readonly: false,
+export function getRelationType(model, relationName) {
+  // Get ember static function to get relation by name.
+  var relationshipsByName = Ember.get(model.constructor, &#x27;relationshipsByName&#x27;);
 
-  /**
-   * Readonly HTML attribute following to the &#x60;readonly&#x60; query param. According to the W3C standard, returns &#x27;readonly&#x27; if &#x60;readonly&#x60; is &#x60;true&#x60; and &#x60;undefined&#x60; otherwise.
-   *
-   * @property readonlyAttr
-   * @type String|undefined
-   * @default undefined
-   * @readOnly
-   */
-  readonlyAttr: Ember.computed(&#x27;readonly&#x27;, function() {
-    return this.get(&#x27;readonly&#x27;) ? &#x27;readonly&#x27; : undefined;
-  }),
-
-  /**
-   * Flag: indicates whether component is required.
-   *
-   * @property required
-   * @type Boolean
-   * @default false
-   */
-  required: false,
-
-  /**
-   * Unique name of the component.
-   * TODO: use guidFor from &#x27;ember-metal/utils&#x27;
-   *
-   * @property componentName
-   * @type String
-   * @default undefined
-   */
-  componentName: undefined,
-
-  /**
-   * Component dynamic properties ({ componentPropertyName: value }).
-   * Used when component renders dynamically with ember {{component}} helper:
-   * {{component &#x27;my-component&#x27; value=value dynamicProperties=myConponentProperties}}.
-   * In the end of component initialization its properties values will be replaced with values from this object.
-   *
-   * @property dynamicProperties
-   * @type Object
-   * @default null
-   */
-  dynamicProperties: null,
-
-  /**
-   * Model to which current component&#x27;s value is related.
-   *
-   * @property relatedModel
-   * @type DS.Model
-   * @default null
-   */
-  relatedModel: null,
-
-  /**
-   * Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
-   *
-   * @property appConfigSettingsPath
-   * @type String
-   * @default &#x27;APP.components.flexberryBaseComponent&#x27;
-   */
-  appConfigSettingsPath: &#x27;APP.components.flexberryBaseComponent&#x27;,
-
-  /**
-   * Application configuration (JSON from ./config/environment.js).
-   *
-   * @property appConfig
-   * @type Object
-   */
-  appConfig: null,
-
-  /**
-   * Component settings object from application configuration (part of JSON from ./config/environment.js).
-   * Part of appConfig related to appConfigSettingsPath.
-   *
-   * @property appConfigSettings
-   * @type Object
-   */
-  appConfigSettings: null,
-
-  /**
-   * Current controller.
-   * @property currentController
-   * @type Ember.Controller
-   */
-  currentController: null,
-
-  /**
-   * Initializes component properties.
-   */
-  init: function() {
-    this._super(...arguments);
-
-    // Get and remember current controller.
-    var currentController = this.getTargetObjectByCondition(function(targetObject) {
-      return targetObject instanceof Ember.Controller;
-    });
-    this.set(&#x27;currentController&#x27;, currentController);
-
-    // Set related model.
-    var relatedModel = this.get(&#x27;relatedModel&#x27;);
-    if (Ember.isNone(relatedModel) &amp;&amp; !Ember.isNone(currentController)) {
-      relatedModel = currentController.get(&#x27;model&#x27;);
-      this.set(&#x27;relatedModel&#x27;, relatedModel);
-    }
-
-    // Import application config\environment.
-    var appConfig = getOwner(this)._lookupFactory(&#x27;config:environment&#x27;);
-    if (!Ember.isNone(appConfig)) {
-      this.set(&#x27;appConfig&#x27;, appConfig);
-    }
-
-    var appConfigSettingsPath = this.get(&#x27;appConfigSettingsPath&#x27;);
-    if (Ember.typeOf(appConfigSettingsPath) === &#x27;string&#x27;) {
-      var appConfigSettings = Ember.get(appConfig, appConfigSettingsPath);
-      if (!Ember.isNone(appConfigSettings)) {
-        this.set(&#x27;appConfigSettings&#x27;, appConfigSettings);
-      }
-    }
-
-    var dynamicProperties = this.get(&#x27;dynamicProperties&#x27;);
-    if (Ember.typeOf(dynamicProperties) !== &#x27;object&#x27;) {
-      return;
-    }
-
-    // Initialize properties for dynamicly-rendered component.
-    for (var propertyName in dynamicProperties) {
-      if (dynamicProperties.hasOwnProperty(propertyName)) {
-        this.set(propertyName, dynamicProperties[propertyName]);
-      }
-    }
-  },
-
-  /**
-   * Initializes DOM-related component properties.
-   */
-  didInsertElement: function() {
-    this._super(...arguments);
-  },
-
-  /**
-   * Cleanup component.
-   */
-  willDestroy: function() {
-    this._super(...arguments);
-  },
-
-  /**
-   * Cleanup DOM-related component stuff.
-   */
-  willDestroyElement: function() {
-    this._super(...arguments);
-  },
-
-  /**
-   * Initializes component&#x27;s property with recpect to following priority:
-   * 1 - template-defined parameters,
-   * 2 - applicaion configuration-defined parameters (JSON from ./config/environment by path defined in &#x27;appConfigSettingsPath&#x27; property),
-   * 3 - component-defined defaults.
-   * Note! It is important to be declared as undefined for those component properties, which will be initialized through &#x27;initProperty&#x27; call.
-   *
-   * &#x60;&#x60;&#x60;javascript
-   * // Possible ./config/environment.js.
-   * module.exports = function(environment) {
-   *   APP: {
-   *     components: {
-   *       myComponent: {
-   *         myComponentProperty: &#x27;myComponentProperty config-defined default value&#x27;
-   *       }
-   *     }
-   *   }
-   }
-   * });
-   *
-   * var myComponent = FlexberryBaseComponent.extend({
-   *   appConfigSettingsPath: &#x27;APP.components.myComponent&#x27;,
-   *
-   *   myComponentProperty: undefined,
-   *
-   *   init: function() {
-   *     this._super.apply(this, arguments);
-   *     this.initProperty({ propertyName: &#x27;myComponentProperty&#x27;, defaultValue: &#x27;myComponentProperty default value&#x27; });
-   *   }
-   * });
-   * &#x60;&#x60;&#x60;
-   *
-   * @param {Object} options Method options.
-   * @param {String} options.propertyName Component&#x27;s property name.
-   * @param {*} options.defaultValue Component&#x27;s property default value (from component defined default&#x27;s).
-   */
-  initProperty: function(options) {
-    options = options || {};
-    if (Ember.typeOf(options.propertyName) !== &#x27;string&#x27;) {
-      return;
-    }
-
-    // If property value is already defined in template,
-    // then we should break property initialization.
-    var componentDefinedPropertyValue = this.get(options.propertyName);
-    if (Ember.typeOf(componentDefinedPropertyValue) !== &#x27;undefined&#x27;) {
-      return;
-    }
-
-    // Property value is not defined in template,
-    // then we should set configuration-defined value or default.
-    var configDefinedPropertyValue;
-    var appConfigSettings = this.get(&#x27;appConfigSettings&#x27;);
-    if (!Ember.isNone(appConfigSettings)) {
-      configDefinedPropertyValue = Ember.get(appConfigSettings, options.propertyName);
-    }
-
-    if (Ember.typeOf(configDefinedPropertyValue) !== &#x27;undefined&#x27;) {
-      this.set(options.propertyName, configDefinedPropertyValue);
-    } else {
-      this.set(options.propertyName, options.defaultValue);
-    }
-  },
-
-  /**
-   * Returns that &#x27;targetObject&#x27; (from &#x27;targetObject&#x27;s hierarchy) which satisfies a given condition.
-   *
-   * &#x60;&#x60;&#x60;javascript
-   * var controller = this.getTargetObjectByCondition(function(targetObject) {
-   *   return targetObject instanceof Ember.Controller;
-   * });
-   * &#x60;&#x60;&#x60;
-   *
-   * @method getTargetObjectByCondition.
-   * @param {Function} condition Callback-function, which will be called for each &#x27;targetObject&#x27; in &#x27;targetObject&#x27;s hierarchy,
-   * until callback return true for one of them.
-   * @return {null|Ember.Component|Ember.Controller} Target object which satisfies a given condition or null.
-   */
-  getTargetObjectByCondition: function(condition) {
-    if (Ember.typeOf(condition) !== &#x27;function&#x27;) {
-      return null;
-    }
-
-    // Component&#x27;s &#x27;targetObject&#x27; is parent component or a controller (in the end of components hierarchy).
-    // Search until &#x27;targetObject&#x27; is none or condition is true.
-    var targetObject = this.get(&#x27;targetObject&#x27;);
-    while (!(Ember.isNone(targetObject) || condition(targetObject))) {
-      targetObject = targetObject.get(&#x27;targetObject&#x27;);
-    }
-
-    return targetObject;
+  // Get relation property from model.
+  var relation = relationshipsByName.get(relationName);
+  if (!relation) {
+    throw new Error(&#x60;No relation with &#x27;${relationName}&#x27; name defined in &#x27;${model.constructor.modelName}&#x27; model.&#x60;);
   }
-});
+
+  let relationType = relation.type;
+  return relationType;
+}
 
     </pre>
 </div>

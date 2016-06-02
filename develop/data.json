@@ -582,7 +582,9 @@
         "ember-flexberry/addon/mixins/flexberry-lookup.js": {
             "name": "ember-flexberry/addon/mixins/flexberry-lookup.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "FlexberryLookupMixin": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -604,6 +606,15 @@
             "name": "ember-flexberry/addon/mixins/limited-route.js",
             "modules": {},
             "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry/addon/mixins/reload-list-mixin.js": {
+            "name": "ember-flexberry/addon/mixins/reload-list-mixin.js",
+            "modules": {},
+            "classes": {
+                "ReloadListMixin": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -714,6 +725,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/utils/model-functions.js": {
+            "name": "ember-flexberry/addon/utils/model-functions.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/resolver.js": {
             "name": "ember-flexberry/addon/resolver.js",
             "modules": {},
@@ -805,6 +823,8 @@
                 "ListFormController": 1,
                 "FlexberryFileController": 1,
                 "FlexberryLookupCompatibleComponentMixin": 1,
+                "FlexberryLookupMixin": 1,
+                "ReloadListMixin": 1,
                 "BaseModel": 1,
                 "EditFormRoute": 1,
                 "ListFormRoute": 1,
@@ -1291,7 +1311,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 13,
+            "line": 15,
             "description": "Lookup component for Semantic UI.",
             "extends": "FlexberryBaseComponent"
         },
@@ -1605,6 +1625,48 @@
             "description": "Mixin for components which need to be flexberry-lookup compatible.",
             "extends": "Ember.Mixin"
         },
+        "FlexberryLookupMixin": {
+            "name": "FlexberryLookupMixin",
+            "shortname": "FlexberryLookupMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "EditFormController"
+            ],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 11,
+            "description": "Mixin for {{#crossLink \"DS.Controller\"}}Controller{{/crossLink}} to support work with modal windows at lookups.",
+            "extends": "Ember.Mixin",
+            "uses": [
+                "ReloadListMixin"
+            ],
+            "access": "public",
+            "tagname": ""
+        },
+        "ReloadListMixin": {
+            "name": "ReloadListMixin",
+            "shortname": "ReloadListMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "FlexberryLookupMixin",
+                "ListFormRoute"
+            ],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
+            "line": 11,
+            "description": "Mixin for {{#crossLink \"DS.Controller\"}}Controller{{/crossLink}} to support data reload.",
+            "extends": "Ember.Mixin",
+            "access": "public",
+            "tagname": ""
+        },
         "BaseModel": {
             "name": "BaseModel",
             "shortname": "BaseModel",
@@ -1667,13 +1729,14 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 13,
+            "line": 12,
             "description": "Base route for the List Forms.\n\nThis class re-exports to the application as `/routes/list-form`.\nSo, you can inherit from `./list-form`, even if file `app/routes/list-form.js`\nis not presented in the application.\n\nExample:\n```js\n// app/routes/employees.js\nimport ListFormRoute from './list-form';\nexport default ListFormRoute.extend({\n});\n```\nIf you want to add some common logic on all List Forms, you can define\n(actually override) `app/routes/list-form.js` as follows:\n```js\n// app/routes/list-form.js\nimport ListFormRoute from 'ember-flexberry/routes/list-form';\nexport default ListFormRoute.extend({\n});\n```",
             "extends": "ProjectedModelFormRoute",
             "uses": [
                 "PaginatedRouteMixin",
                 "SortableRouteMixin",
                 "LimitedRouteMixin",
+                "ReloadListMixin",
                 "FlexberryObjectlistviewRouteMixin"
             ]
         },
@@ -5244,7 +5307,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 20,
+            "line": 22,
             "description": "Default classes for component wrapper.",
             "itemtype": "property",
             "name": "classNames",
@@ -5255,7 +5318,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 29,
+            "line": 31,
             "description": "Classes by properties of the component.",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -5266,7 +5329,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 44,
+            "line": 46,
             "description": "Classes for choose button.",
             "itemtype": "property",
             "name": "chooseButtonClass",
@@ -5277,7 +5340,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 53,
+            "line": 55,
             "description": "Classes for remove button.",
             "itemtype": "property",
             "name": "removeButtonClass",
@@ -5288,7 +5351,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 67,
+            "line": 69,
             "description": "Flag to show that lookup is in autocomplete mode.",
             "itemtype": "property",
             "name": "autocomplete",
@@ -5301,7 +5364,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 77,
+            "line": 79,
             "description": "Flag to show that lookup is in dropdown mode.",
             "itemtype": "property",
             "name": "dropdown",
@@ -5314,7 +5377,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 87,
+            "line": 89,
             "description": "Classes by property of autocomplete.",
             "itemtype": "property",
             "name": "autocompleteClass",
@@ -5325,7 +5388,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 100,
+            "line": 102,
             "description": "Action's name to update model's relation value.",
             "itemtype": "property",
             "name": "updateLookupAction",
@@ -5338,7 +5401,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 110,
+            "line": 112,
             "description": "Min characters count necessary to call autocomplete.",
             "itemtype": "property",
             "name": "minCharacters",
@@ -5351,7 +5414,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 120,
+            "line": 122,
             "description": "Maximum number of results to display on autocomplete or dropdown.",
             "itemtype": "property",
             "name": "maxResults",
@@ -5364,8 +5427,8 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 130,
-            "description": "Multimple select.",
+            "line": 132,
+            "description": "Multiple select.",
             "itemtype": "property",
             "name": "multiselect",
             "type": "Boolean",
@@ -5377,7 +5440,33 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 140,
+            "line": 142,
+            "description": "Limit function on lookup.\nIt should not be just a string, it has to be predicate function (otherwise an exception will be thrown).",
+            "itemtype": "property",
+            "name": "lookupLimitPredicate",
+            "type": "BasePredicate",
+            "default": "undefined",
+            "access": "public",
+            "tagname": "",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 153,
+            "description": "This computed property forms a set of properties to send to lookup window.\n\n    Closure action `lookupWindowCustomProperties` is called here if defined,\n    otherwise `undefined` is returned.",
+            "itemtype": "property",
+            "name": "_lookupWindowCustomPropertiesData",
+            "access": "private",
+            "tagname": "",
+            "type": "Object",
+            "default": "undefined",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 182,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -5387,7 +5476,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 158,
+            "line": 208,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -5397,7 +5486,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 171,
+            "line": 221,
             "description": "Current store.\nUsed for loading data for autocomplete and for dropdown.",
             "itemtype": "property",
             "name": "store",
@@ -5410,7 +5499,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 182,
+            "line": 232,
             "description": "Name of the attribute of the model to diplay for the user.",
             "itemtype": "property",
             "name": "displayAttributeName",
@@ -5423,7 +5512,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 192,
+            "line": 242,
             "description": "Currently selected instance of the model.",
             "itemtype": "property",
             "name": "value",
@@ -5435,14 +5524,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 201,
+            "line": 251,
             "description": "Additional observer of value changings.\nUpdates displayValue.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 209,
+            "line": 259,
             "description": "Text that displayed for the user as representation of currently selected value.\nThis property is binded to the view and can be changed by user (it won't be\napplied to model automatically).",
             "itemtype": "property",
             "name": "displayValue",
@@ -5454,7 +5543,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 241,
+            "line": 291,
             "description": "Init component with autocomplete mode.",
             "itemtype": "method",
             "name": "_onAutocomplete",
@@ -5465,7 +5554,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 279,
+            "line": 330,
             "description": "Mocks call to the data source,\nUses query language and store for loading data explicitly.",
             "params": [
                 {
@@ -5484,14 +5573,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 309,
+            "line": 364,
             "description": "Handles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 318,
+            "line": 373,
             "description": "Handles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
             "params": [
                 {
@@ -5505,14 +5594,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 338,
+            "line": 393,
             "description": "Handles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 359,
+            "line": 414,
             "description": "Init component with dropdown mode.",
             "itemtype": "method",
             "name": "_onDropdown",
@@ -5523,7 +5612,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 432,
+            "line": 495,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "buildDisplayValue",
@@ -5533,6 +5622,35 @@
             },
             "access": "protected",
             "tagname": "",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 514,
+            "description": "Concatenates predicates.",
+            "itemtype": "method",
+            "name": "_conjuctPredicates",
+            "params": [
+                {
+                    "name": "limitPredicate",
+                    "description": "The first predicate to concatenate.",
+                    "type": "BasePredicate"
+                },
+                {
+                    "name": "autocompletePredicate",
+                    "description": "The second predicate to concatenate.",
+                    "type": "BasePredicate"
+                }
+            ],
+            "return": {
+                "description": "Concatenation of two predicates.",
+                "type": "BasePredicate"
+            },
+            "throws": {
+                "description": "Throws error if any of parameter predicates has wrong type.",
+                "type": "Error"
+            },
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
@@ -5711,7 +5829,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 17,
+            "line": 26,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "sortByColumn",
@@ -5727,7 +5845,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 28,
+            "line": 37,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "addColumnToSorting",
@@ -5743,7 +5861,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 39,
+            "line": 48,
             "description": "Handles action from row click (action is handled at route so it can't be closure action now).",
             "itemtype": "method",
             "name": "objectListViewRowClick",
@@ -5759,7 +5877,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 51,
+            "line": 64,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "previousPage",
@@ -5768,7 +5886,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 61,
+            "line": 74,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "nextPage",
@@ -5777,7 +5895,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 71,
+            "line": 84,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "gotoPage",
@@ -5793,7 +5911,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 82,
+            "line": 95,
             "description": "A stub for call of custom user buttons. Used when no handler is defined.\n      When not stab is used (closure action is defined), structured info about custom buttons is returned.\n      Closure action has to return an array of structures:\n\n      ```\n      {\n     \tbuttonName: '...', // Button displayed name.\n     \tbuttonAction: '...', // Action that is called from controller on this button click (it has to be registered at component).\n     \tbuttonClasses: '...' // Css classes for button.\n      }\n      ```\n\n     Example of how to add user buttons:\n      1) it has to be defined special method (it will be used as closure action) at corresponding controller (name is not fixed).\n      ```\n      actions: {\n       getCustomButtons: function() {\n         return [{\n         \tbuttonName: 'UserButton',\n         \tbuttonAction: 'userButtonActionTest',\n         \tbuttonClasses: 'my-test-user-button test-click-button'\n         }];\n       }\n      }\n      ```\n\n      2) it has to be defined set as 'buttonAction' methods.\n      ```\n      actions: {\n       userButtonActionTest: function() {\n         this.set('header', this.get('header') + ' clicked');\n       }\n      }\n      ```\n\n      3) defined methods have to be registered at conponent.\n      ```\n      {{flexberry-objectlistview\n       ...\n       customButtons=(action \"getCustomButtons\")\n       userButtonActionTest='userButtonActionTest'\n      }}\n      ```",
             "itemtype": "method",
             "name": "customButtons",
@@ -5805,7 +5923,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 133,
+            "line": 146,
             "description": "Handler to get user button's actions and send action to corresponding controllers's handler.",
             "itemtype": "method",
             "name": "customButtonAction",
@@ -5814,7 +5932,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 146,
+            "line": 159,
             "description": "Handles action from object-list-view when no handler for this component is defined.",
             "itemtype": "method",
             "name": "filterByAnyMatch",
@@ -5830,7 +5948,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 158,
+            "line": 171,
             "description": "Flag: indicates whether allow to resize columns (if `true`) or not (if `false`).",
             "itemtype": "property",
             "name": "allowColumnResize",
@@ -5841,7 +5959,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 167,
+            "line": 180,
             "description": "Route for edit form by click row",
             "itemtype": "property",
             "name": "editFormRoute",
@@ -5851,7 +5969,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 175,
+            "line": 188,
             "description": "Primary action for row click.",
             "itemtype": "property",
             "name": "action",
@@ -5862,7 +5980,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 184,
+            "line": 197,
+            "description": "It indicates current component mode.\n    Available values:\n    `listform` - simple list form and after row selection it has to be opened corresponding edit form;\n    `lookupform` - component is placed on lookup form and after row selection current lookup form has to be closed.",
+            "itemtype": "property",
+            "name": "componentMode",
+            "type": "String",
+            "default": "`listform`",
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 209,
             "description": "Default cell component that will be used to display values in columns headers.",
             "itemtype": "property",
             "name": "headerCellComponent",
@@ -5888,7 +6017,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 196,
+            "line": 221,
             "description": "Default cell component that will be used to display values in columns cells.",
             "itemtype": "property",
             "name": "cellComponent",
@@ -5914,7 +6043,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 208,
+            "line": 233,
             "description": "Default cell component that will be used to display values in single column.",
             "itemtype": "property",
             "name": "singleColumnCellComponent",
@@ -5940,7 +6069,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 220,
+            "line": 245,
             "description": "Flag: indicates whether to use single column to display all model properties or not.",
             "itemtype": "property",
             "name": "useSingleColumn",
@@ -5951,7 +6080,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 229,
+            "line": 254,
             "description": "Header title of single column.",
             "itemtype": "property",
             "name": "singleColumnHeaderTitle",
@@ -5961,7 +6090,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 237,
+            "line": 262,
             "description": "Flag: indicates whether to show asterisk icon in first column of every changed row.",
             "itemtype": "property",
             "name": "showAsteriskInRow",
@@ -5972,7 +6101,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 246,
+            "line": 271,
             "description": "Flag: indicates whether to show checkbox in first column of every row.",
             "itemtype": "property",
             "name": "showCheckBoxInRow",
@@ -5983,7 +6112,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 255,
+            "line": 280,
             "description": "Flag: indicates whether to show delete button in first column of every row.",
             "itemtype": "property",
             "name": "showDeleteButtonInRow",
@@ -5994,7 +6123,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 264,
+            "line": 289,
             "description": "Flag: indicates whether to show dropdown menu with edit menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showEditMenuItemInRow",
@@ -6005,7 +6134,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 273,
+            "line": 298,
             "description": "Flag: indicates whether to show dropdown menu with delete menu item, in last column of every row.",
             "itemtype": "property",
             "name": "showDeleteMenuItemInRow",
@@ -6016,7 +6145,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 282,
+            "line": 307,
             "description": "Additional menu items for dropdown menu in last column of every row.",
             "itemtype": "property",
             "name": "menuInRowAdditionalItems",
@@ -6027,7 +6156,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 291,
+            "line": 316,
             "description": "Flag: indicates whether table are striped.",
             "itemtype": "property",
             "name": "tableStriped",
@@ -6038,7 +6167,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 300,
+            "line": 325,
             "description": "Flag: indicates whether table rows are clickable.",
             "itemtype": "property",
             "name": "rowClickable",
@@ -6049,7 +6178,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 309,
+            "line": 334,
             "description": "Custom classes for table.",
             "itemtype": "property",
             "name": "customTableClass",
@@ -6060,7 +6189,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 318,
+            "line": 343,
             "description": "Flag: indicates whether ordering by clicking on column headers is allowed.",
             "itemtype": "property",
             "name": "headerClickable",
@@ -6071,7 +6200,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 327,
+            "line": 352,
             "description": "Dictionary with sorting data related to columns.",
             "itemtype": "property",
             "name": "sorting",
@@ -6081,7 +6210,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 335,
+            "line": 360,
             "description": "Model projection which should be used to display given content.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -6092,7 +6221,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 344,
+            "line": 369,
             "description": "Content to be displayed (models collection).",
             "itemtype": "property",
             "name": "content",
@@ -6103,7 +6232,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 353,
+            "line": 378,
             "description": "Model's name. Used by toolbar.",
             "itemtype": "property",
             "name": "modelName",
@@ -6114,7 +6243,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 362,
+            "line": 387,
             "description": "Classes for buttons.",
             "itemtype": "property",
             "name": "buttonClass",
@@ -6125,7 +6254,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 371,
+            "line": 396,
             "description": "Flag: indicates whether to show creation button at toolbar.",
             "itemtype": "property",
             "name": "createNewButton",
@@ -6136,7 +6265,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 380,
+            "line": 405,
             "description": "Flag: indicates whether to show refresh button at toolbar.",
             "itemtype": "property",
             "name": "refreshButton",
@@ -6147,7 +6276,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 389,
+            "line": 414,
             "description": "Flag: indicates whether to show delete button at toolbar.",
             "itemtype": "property",
             "name": "deleteButton",
@@ -6158,7 +6287,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 398,
+            "line": 423,
             "description": "Flag: indicates whether to show filter button at toolbar.",
             "itemtype": "property",
             "name": "filterButton",
@@ -6169,7 +6298,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 407,
+            "line": 432,
             "description": "Used to specify 'filter by any match' field value.",
             "itemtype": "property",
             "name": "filterText",
@@ -6180,7 +6309,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 416,
+            "line": 441,
             "description": "Array of pages to show.",
             "itemtype": "property",
             "name": "pages",
@@ -6191,7 +6320,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 425,
+            "line": 450,
             "description": "Current number of records to show per page.",
             "itemtype": "property",
             "name": "perPageValue",
@@ -6202,7 +6331,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 434,
+            "line": 459,
             "description": "Array of numbers of records to show on one page.",
             "itemtype": "property",
             "name": "perPageValues",
@@ -6213,7 +6342,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 443,
+            "line": 468,
             "description": "Function to determine if current page has previous page.",
             "itemtype": "property",
             "name": "hasPreviousPage",
@@ -6224,12 +6353,34 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
-            "line": 452,
+            "line": 477,
             "description": "Function to determine if current page has next page.",
             "itemtype": "property",
             "name": "hasNextPage",
             "type": "Function",
             "default": "null",
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 486,
+            "description": "Current selected record of list.",
+            "itemtype": "property",
+            "name": "selectedRecord",
+            "type": "DS.Model",
+            "default": "undefined",
+            "class": "FlexberryObjectlistview",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-objectlistview.js",
+            "line": 495,
+            "description": "Set of properties to set for commponent (when it is used on lookup window).",
+            "itemtype": "property",
+            "name": "customProperties",
+            "type": "Object",
+            "default": "undefined",
             "class": "FlexberryObjectlistview",
             "module": "ember-flexberry"
         },
@@ -7620,14 +7771,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 785,
+            "line": 786,
             "description": "Initializes component's DOM-related logic.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 816,
+            "line": 817,
             "description": "This hook is called during both render and re-render after the template has rendered and the DOM updated.\nPlugins (such as plugin for column resize) are initialized here.",
             "itemtype": "method",
             "name": "didRender",
@@ -7636,7 +7787,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 847,
+            "line": 848,
             "description": "It reinits plugin for column resize.\nReinit is important for proper position of resize elements.",
             "itemtype": "method",
             "name": "_reinitResizablePlugin",
@@ -7647,7 +7798,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 870,
+            "line": 871,
             "description": "It handles the end of getting user setting with column widths.",
             "itemtype": "method",
             "name": "_setColumnWidths",
@@ -7665,7 +7816,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 915,
+            "line": 916,
             "description": "It handles the end of column resize.\nNew column widths are send to user settings service for saving.",
             "itemtype": "method",
             "name": "_afterColumnResize",
@@ -7683,7 +7834,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 954,
+            "line": 955,
             "description": "This method returns property name for column.\nProperty name is got from atribute `data-olv-header-property-name` of column header.\nIf property name won't be found, exeption will be thrown.",
             "itemtype": "method",
             "name": "_getColumnPropertyName",
@@ -7705,7 +7856,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 977,
+            "line": 978,
             "description": "Computed property forms unique name for component from model name and current route.\nThis unique name can be used as module name for user settings service.",
             "itemtype": "property",
             "name": "_moduleName",
@@ -7717,14 +7868,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 994,
+            "line": 995,
             "description": "Destroys component's DOM-related logic.",
             "class": "ObjectListView",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1118,
+            "line": 1119,
             "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
             "itemtype": "method",
             "name": "_addModel",
@@ -7746,7 +7897,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1153,
+            "line": 1154,
             "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
             "itemtype": "method",
             "name": "_addRow",
@@ -7764,7 +7915,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1178,
+            "line": 1179,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -7785,7 +7936,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1211,
+            "line": 1212,
             "description": "Hook that executes before deleting the record.\n\n Example:\n ```handlebars\n <!-- app/templates/employees.hbs -->\n {{flexberry-objectlistview\n   ...\n   beforeDeleteRecord=(action 'beforeDeleteRecord')\n   ...\n }}\n ```\n\n ```js\n // app/controllers/employees.js\n import ListFormController from './list-form';\n\n export default ListFormController.extend({\n   actions: {\n     beforeDeleteRecord: function(record, data) {\n       if (record.get('myProperty')) {\n         data.cancel = true;\n       }\n     }\n   }\n });\n ```",
             "itemtype": "method",
             "name": "beforeDeleteRecord",
@@ -7821,7 +7972,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1279,
+            "line": 1280,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -7848,7 +7999,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1302,
+            "line": 1303,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -8572,7 +8723,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 4,
+            "line": 7,
             "description": "Current opened modal window.",
             "itemtype": "property",
             "name": "_openedModalDialog",
@@ -8583,7 +8734,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 15,
+            "line": 18,
             "description": "Size of Semantic-UI modal.\nPossible variants: 'small', 'large', 'fullscreen'.",
             "itemtype": "property",
             "name": "sizeClass",
@@ -8594,7 +8745,104 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 26,
+            "line": 28,
+            "description": "Current lookup selected record.\nIt is used to highlight selected record.",
+            "itemtype": "property",
+            "name": "currentLookupRow",
+            "type": "DS.Model",
+            "default": "undefined",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 38,
+            "description": "Set of properties to set for list commponent.",
+            "itemtype": "property",
+            "name": "customPropertiesData",
+            "type": "Object",
+            "default": "undefined",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 47,
+            "description": "Type of current loaded data.",
+            "itemtype": "property",
+            "name": "modelType",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 56,
+            "description": "Name of projection data were loaded by.",
+            "itemtype": "property",
+            "name": "projectionName",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 65,
+            "description": "Predicate to limit loaded data by.",
+            "itemtype": "property",
+            "name": "predicate",
+            "type": "BasePredicate",
+            "default": "undefined",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 74,
+            "description": "Handler to call when parameters of loaded data changed (filter, currentPage, etc.).",
+            "itemtype": "property",
+            "name": "reloadDataHandler",
+            "type": "Function",
+            "default": "undefined",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 83,
+            "description": "Context for handler of data reloading call.",
+            "itemtype": "property",
+            "name": "reloadContext",
+            "type": "Object",
+            "default": "undefined",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 92,
+            "description": "Flag indicates whether to observe query parameters or they are not still initiated..",
+            "itemtype": "property",
+            "name": "reloadObserverIsActive",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 101,
+            "description": "It observes query parameters changing.\n    If query parameter (filter, current page, etc.) is changed then displayed data are reloaded.",
+            "itemtype": "method",
+            "name": "queryParametersChanged",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 139,
             "description": "Handles olv row clicked.\nSave selected row to object master property and close modal window",
             "itemtype": "method",
             "name": "rowClick",
@@ -8610,7 +8858,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 38,
+            "line": 151,
             "description": "Handles create modal window action.\nIt saves created window to have opportunity to close it later.",
             "itemtype": "method",
             "name": "createdModalDialog",
@@ -8626,7 +8874,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 49,
+            "line": 162,
             "description": "Handles correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "routeWillTransition",
@@ -8635,7 +8883,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 60,
+            "line": 173,
             "description": "Set master to corresponding property of editing object.",
             "itemtype": "method",
             "name": "selectMaster",
@@ -8651,10 +8899,28 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 78,
+            "line": 191,
             "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "closeModalDialog",
+            "class": "FlexberryFileController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 204,
+            "description": "It clears current controller.\nIt has to be done before each use.",
+            "itemtype": "method",
+            "name": "clear",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "initialClear",
+                    "description": "Flag indicates whether it is clear on first load or just on reload.",
+                    "type": "Boolean"
+                }
+            ],
             "class": "FlexberryFileController",
             "module": "ember-flexberry"
         },
@@ -8888,19 +9154,84 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 19,
+            "line": 20,
+            "description": "Lookup settings for modal window.\nIt has to be overriden on controller where this mixin is used.",
+            "itemtype": "property",
+            "name": "lookupSettings",
+            "type": "Object",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 28,
+            "description": "Name of controller that handles modal window.\nController with the same name has to be injected to property `lookupController`.",
+            "itemtype": "property",
+            "name": "controllerName",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 38,
+            "description": "Name of template for modal window itself (not content of modal window).",
+            "itemtype": "property",
+            "name": "template",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 47,
+            "description": "Name of template for content of modal window.",
+            "itemtype": "property",
+            "name": "contentTemplate",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 56,
+            "description": "Name of template for content of loading modal window.",
+            "itemtype": "property",
+            "name": "loaderTemplate",
+            "type": "String",
+            "default": "undefined",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 66,
             "description": "Controller to show lookup modal window.",
             "itemtype": "property",
             "name": "lookupController",
             "type": "Ember.InjectedProperty",
             "default": "undefined",
-            "class": "BaseModel",
+            "class": "FlexberryLookupMixin",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 29,
-            "description": "Handles action from lookup choose action.",
+            "line": 75,
+            "description": "Default number of records per page on lookup window list.",
+            "itemtype": "property",
+            "name": "lookupModalWindowPerPage",
+            "type": "Number",
+            "default": "5",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 85,
+            "description": "Handles action from lookup choose action.\n      It opens modal window where availible values are shown.\n\n      In order to customize content of all lookup modal window there is such a way:\n      1) create template with necessary content and set unique name for it (for example 'customlookupform.hbs');\n      2) override lookup setting `lookupSettings.contentTemplate` on controller level (for example 'customlookupform');\n      3) if there has to be specific logic or properties on controller for template,\n         current lookup controller can be overriden (it is 'lookup-dialog' for edit forms),\n         new name can be set on lookup setting `lookupSettings.controllerName`\n         and new controller can be injected as `lookupController`\n         (if the controller was extended and not reopened).",
             "itemtype": "method",
             "name": "showLookupDialog",
             "params": [
@@ -8910,21 +9241,21 @@
                     "type": "Object"
                 }
             ],
-            "class": "BaseModel",
+            "class": "FlexberryLookupMixin",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 137,
+            "line": 168,
             "description": "Handles correcponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "routeWillTransition",
-            "class": "BaseModel",
+            "class": "FlexberryLookupMixin",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 147,
+            "line": 178,
             "description": "Handles action from lookup remove action.",
             "itemtype": "method",
             "name": "removeLookupValue",
@@ -8935,12 +9266,12 @@
                     "type": "Object"
                 }
             ],
-            "class": "BaseModel",
+            "class": "FlexberryLookupMixin",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
-            "line": 168,
+            "line": 199,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "updateLookupValue",
@@ -8951,7 +9282,104 @@
                     "type": "Object"
                 }
             ],
-            "class": "BaseModel",
+            "class": "FlexberryLookupMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-lookup.js",
+            "line": 222,
+            "description": "This method refreshes displayed data on lookup modal window.\n\n    It reloads current lookup modal window in order to show loading image.\n    Then proper request to load data is formed (it considers current page, filter, etc).\n    After the data loading data are displayed on lookup modal window.\n\n    This method is called during the first data loading\n    and after each change of request parameters (current page, filter, etc) on lookup modal window controller\n    (it is implemented by sending handler on this method to lookup modal window controller).",
+            "itemtype": "method",
+            "name": "_reloadModalData",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "currentContext",
+                    "description": "Current execution context of this method.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Parameters to load proper data and to tune modal lookup window outlook.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "relatedToType",
+                            "description": "Type of records to load.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "projectionName",
+                            "description": "Projection name to load data by.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "perPage",
+                            "description": "Number of records to display on page.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "page",
+                            "description": "Current page to display on lookup window.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "sorting",
+                            "description": "Current sorting.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "filter",
+                            "description": "Current filter.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "predicate",
+                            "description": "Current limit predicate.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "title",
+                            "description": "Title of modal lookup window.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "sizeClass",
+                            "description": "Size of modal lookup window.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "saveTo",
+                            "description": "Options to save selected lookup value.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "currentLookupRow",
+                            "description": "Current lookup value.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "customPropertiesData",
+                            "description": "Custom properties of modal lookup window.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "class": "FlexberryLookupMixin",
             "module": "ember-flexberry"
         },
         {
@@ -8965,7 +9393,7 @@
                     "type": "Ember.Object"
                 }
             ],
-            "class": "BaseModel",
+            "class": "ReloadListMixin",
             "module": "ember-flexberry"
         },
         {
@@ -8981,7 +9409,7 @@
                     "type": "String"
                 }
             ],
-            "class": "BaseModel",
+            "class": "ReloadListMixin",
             "module": "ember-flexberry"
         },
         {
@@ -8997,7 +9425,7 @@
                     "type": "String"
                 }
             ],
-            "class": "BaseModel",
+            "class": "ReloadListMixin",
             "module": "ember-flexberry"
         },
         {
@@ -9016,15 +9444,83 @@
                     "type": "Object"
                 }
             ],
-            "class": "BaseModel",
+            "class": "ReloadListMixin",
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/mixins/limited-route.js",
-            "line": 30,
-            "description": "Returns the filter string for data loading.",
+            "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
+            "line": 19,
+            "description": "It reloads data by parameters.\n\n    This method is called to get data for flexberry-objectlistview\n    (both on list-form and lookup modal window).",
             "itemtype": "method",
-            "name": "getFilterString",
+            "name": "reloadList",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "modelName",
+                            "description": "Type of records to load.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "projectionName",
+                            "description": "Projection name to load data by.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "perPage",
+                            "description": "Page size.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "page",
+                            "description": "Current page.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "sorting",
+                            "description": "Current sorting.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "filter",
+                            "description": "Current filter.",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "predicate",
+                            "description": "Predicate to limit records.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise, which is resolved with a set of loaded records once the server returns.",
+                "type": "Promise"
+            },
+            "class": "ReloadListMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
+            "line": 110,
+            "description": "It forms the filter predicate for data loading.",
+            "itemtype": "method",
+            "name": "_getFilterPredicate",
+            "access": "public",
+            "tagname": "",
             "params": [
                 {
                     "name": "modelProjection",
@@ -9033,11 +9529,15 @@
                 },
                 {
                     "name": "params",
-                    "description": "The route URL parameters.",
+                    "description": "Current parameters to form predicate.",
                     "type": "Object"
                 }
             ],
-            "class": "BaseModel",
+            "return": {
+                "description": "Filter predicate for data loading.",
+                "type": "BasePredicate"
+            },
+            "class": "ReloadListMixin",
             "module": "ember-flexberry"
         },
         {
@@ -9954,6 +10454,35 @@
             "module": "ember-flexberry"
         },
         {
+            "file": "ember-flexberry/addon/utils/model-functions.js",
+            "line": 7,
+            "description": "Gets related object type by relation name from specified model.",
+            "itemtype": "method",
+            "name": "_getRelationType",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "Specified model to get relation from.",
+                    "type": "String"
+                },
+                {
+                    "name": "relationName",
+                    "description": "Relation name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Related object type.",
+                "type": "String"
+            },
+            "throws": {
+                "description": "Throws error if relation was not found at model.",
+                "type": "Error"
+            },
+            "class": "Resolver",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/resolver.js",
             "line": 15,
             "description": "Initializes resolver.",
@@ -10069,7 +10598,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:432"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:495"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -10389,23 +10918,23 @@
         },
         {
             "message": "Missing item type\nAdditional observer of value changings.\nUpdates displayValue.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:201"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:251"
         },
         {
             "message": "Missing item type\nMocks call to the data source,\nUses query language and store for loading data explicitly.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:279"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:330"
         },
         {
             "message": "Missing item type\nHandles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:309"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:364"
         },
         {
             "message": "Missing item type\nHandles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:318"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:373"
         },
         {
             "message": "Missing item type\nHandles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:338"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:393"
         },
         {
             "message": "Missing item type\nClass names for component wrapping element.",
@@ -10493,11 +11022,11 @@
         },
         {
             "message": "Missing item type\nInitializes component's DOM-related logic.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:785"
+            "line": " ember-flexberry/addon/components/object-list-view.js:786"
         },
         {
             "message": "Missing item type\nDestroys component's DOM-related logic.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:994"
+            "line": " ember-flexberry/addon/components/object-list-view.js:995"
         },
         {
             "message": "Missing item type\nActions handlers.",

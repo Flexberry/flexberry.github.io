@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryLookupMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
         </form>
     </div>
 </div>
@@ -67,6 +67,7 @@
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
 	                            <li><a href="../classes/FlexberryMenuComponent.html">FlexberryMenuComponent</a></li>
 	                            <li><a href="../classes/FlexberryMenuitemComponent.html">FlexberryMenuitemComponent</a></li>
 	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
@@ -99,6 +100,7 @@
 	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
 	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
 	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
 	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
 	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
 	                            <li><a href="../classes/Serializer.OData.html">Serializer.OData</a></li>
@@ -162,6 +164,15 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
  * @extends FlexberryBaseComponent
  */
 export default FlexberryBaseComponent.extend({
+  init: function() {
+    this._super(...arguments);
+
+    let customProperties = this.get(&#x27;customProperties&#x27;);
+    if (this.get(&#x27;componentMode&#x27;) === &#x27;lookupform&#x27; &amp;&amp; customProperties &amp;&amp; typeof customProperties === &#x27;object&#x27;) {
+      // For lookup mode we allow to set properties.
+      this.setProperties(customProperties);
+    }
+  },
 
   actions: {
     /**
@@ -193,9 +204,13 @@ export default FlexberryBaseComponent.extend({
      * @param {Object} record Clicked record.
      */
     objectListViewRowClick: function(record) {
-      let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
-      Ember.assert(&#x27;Edit form route must be defined for flexberry-objectlistview&#x27;, editFormRoute);
-      this.sendAction(&#x27;action&#x27;, record, editFormRoute);
+      if (this.get(&#x27;componentMode&#x27;) === &#x27;lookupform&#x27;) {
+        this.sendAction(&#x27;action&#x27;, record);
+      } else {
+        let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
+        Ember.assert(&#x27;Edit form route must be defined for flexberry-objectlistview&#x27;, editFormRoute);
+        this.sendAction(&#x27;action&#x27;, record, editFormRoute);
+      }
     },
 
     /**
@@ -330,6 +345,18 @@ export default FlexberryBaseComponent.extend({
    * @default &#x27;objectListViewRowClick&#x27;
    */
   action: &#x27;objectListViewRowClick&#x27;,
+
+  /**
+   * It indicates current component mode.
+     Available values:
+     &#x60;listform&#x60; - simple list form and after row selection it has to be opened corresponding edit form;
+     &#x60;lookupform&#x60; - component is placed on lookup form and after row selection current lookup form has to be closed.
+   *
+   * @property componentMode
+   * @type String
+   * @default &#x60;listform&#x60;
+   */
+  componentMode: &#x27;listform&#x27;,
 
   /**
    * Default cell component that will be used to display values in columns headers.
@@ -606,7 +633,25 @@ export default FlexberryBaseComponent.extend({
    * @type Function
    * @default null
    */
-  hasNextPage: null
+  hasNextPage: null,
+
+  /**
+   * Current selected record of list.
+   *
+   * @property selectedRecord
+   * @type DS.Model
+   * @default undefined
+   */
+  selectedRecord: undefined,
+
+  /**
+   * Set of properties to set for commponent (when it is used on lookup window).
+   *
+   * @property customProperties
+   * @type Object
+   * @default undefined
+   */
+  customProperties: undefined
 });
 
     </pre>

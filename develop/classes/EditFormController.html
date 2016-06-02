@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/BaseModel", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DS.ODataAdapter", "classes/DS.Projection", "classes/EditFormController", "classes/EditFormRoute", "classes/FileTransform", "classes/FlexberrCheckboxComponent", "classes/FlexberryBaseComponent", "classes/FlexberryDatetimePicker", "classes/FlexberryDropDown", "classes/FlexberryField", "classes/FlexberryFile", "classes/FlexberryFileController", "classes/FlexberryGroupedit", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponentMixin", "classes/FlexberryLookupMixin", "classes/FlexberryMenuComponent", "classes/FlexberryMenuitemComponent", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbar", "classes/isEnum", "classes/ListFormController", "classes/ListFormRoute", "classes/ModalDialog", "classes/ObjectListView", "classes/ObjectListViewCell", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCell", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JSAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/Serializer.Base", "classes/Serializer.OData", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
         </form>
     </div>
 </div>
@@ -67,6 +67,7 @@
 	                            <li><a href="../classes/FlexberryGroupedit.html">FlexberryGroupedit</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponentMixin.html">FlexberryLookupCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
 	                            <li><a href="../classes/FlexberryMenuComponent.html">FlexberryMenuComponent</a></li>
 	                            <li><a href="../classes/FlexberryMenuitemComponent.html">FlexberryMenuitemComponent</a></li>
 	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
@@ -99,6 +100,7 @@
 	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
 	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
 	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
 	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
 	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
 	                            <li><a href="../classes/Serializer.OData.html">Serializer.OData</a></li>
@@ -221,6 +223,10 @@ export default EditFormController.extend({
 
                             </li>
                             <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__reloadModalData" data-tablink="_reloadModalData">_reloadModalData</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__scheduledDestroy" data-tablink="_scheduledDestroy">_scheduledDestroy</a>
 
                             </li>
@@ -340,6 +346,10 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_propertyWillChange" data-tablink="propertyWillChange">propertyWillChange</a>
 
                             </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_removeLookupValue" data-tablink="removeLookupValue">removeLookupValue</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_removeObserver" data-tablink="removeObserver">removeObserver</a>
 
@@ -358,6 +368,10 @@ export default EditFormController.extend({
                             </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_rollbackHasManyRelationships" data-tablink="rollbackHasManyRelationships">rollbackHasManyRelationships</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_routeWillTransition" data-tablink="routeWillTransition">routeWillTransition</a>
 
                             </li>
                             <li class="index-item method">
@@ -384,6 +398,10 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#methods" data-anchor="#method_setProperties" data-tablink="setProperties">setProperties</a>
 
                             </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_showLookupDialog" data-tablink="showLookupDialog">showLookupDialog</a>
+
+                            </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_toggleProperty" data-tablink="toggleProperty">toggleProperty</a>
 
@@ -402,6 +420,10 @@ export default EditFormController.extend({
                             </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_trigger" data-tablink="trigger">trigger</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_updateLookupValue" data-tablink="updateLookupValue">updateLookupValue</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -423,6 +445,14 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#properties" data-anchor="#property_concatenatedProperties" data-tablink="concatenatedProperties">concatenatedProperties</a>
 
                             </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_contentTemplate" data-tablink="contentTemplate">contentTemplate</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_controllerName" data-tablink="controllerName">controllerName</a>
+
+                            </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_destroyHasManyRelationshipsOnModelDestroy" data-tablink="destroyHasManyRelationshipsOnModelDestroy">destroyHasManyRelationshipsOnModelDestroy</a>
 
@@ -435,8 +465,20 @@ export default EditFormController.extend({
                                 <a href="#" data-tabid="#properties" data-anchor="#property_isDestroying" data-tablink="isDestroying">isDestroying</a>
 
                             </li>
-                            <li class="index-item property">
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_loaderTemplate" data-tablink="loaderTemplate">loaderTemplate</a>
+
+                            </li>
+                            <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_lookupController" data-tablink="lookupController">lookupController</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_lookupModalWindowPerPage" data-tablink="lookupModalWindowPerPage">lookupModalWindowPerPage</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_lookupSettings" data-tablink="lookupSettings">lookupSettings</a>
 
                             </li>
                             <li class="index-item property public inherited">
@@ -469,6 +511,10 @@ export default EditFormController.extend({
                             </li>
                             <li class="index-item property public inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_target" data-tablink="target">target</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_template" data-tablink="template">template</a>
 
                             </li>
                     </ul>
@@ -579,6 +625,213 @@ export default EditFormController.extend({
                             
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="method__reloadModalData" class="method item private inherited">
+                        <h3 class="name"><code>_reloadModalData</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>currentContext</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>options</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#method__reloadModalData">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l222"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:222</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            This method refreshes displayed data on lookup modal window.
+                    
+                        It reloads current lookup modal window in order to show loading image.
+                        Then proper request to load data is formed (it considers current page, filter, etc).
+                        After the data loading data are displayed on lookup modal window.
+                    
+                        This method is called during the first data loading
+                        and after each change of request parameters (current page, filter, etc) on lookup modal window controller
+                        (it is implemented by sending handler on this method to lookup modal window controller).
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">currentContext</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Current execution context of this method.
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">options</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Parameters to load proper data and to tune modal lookup window outlook.
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name optional">[relatedToType]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Type of records to load.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[projectionName]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Projection name to load data by.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[perPage]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Number of records to display on page.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[page]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current page to display on lookup window.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[sorting]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current sorting.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[filter]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current filter.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[predicate]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current limit predicate.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[title]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Title of modal lookup window.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[sizeClass]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Size of modal lookup window.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[saveTo]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Options to save selected lookup value.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[currentLookupRow]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current lookup value.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[customPropertiesData]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Custom properties of modal lookup window.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
                     
                     
                     </div>
@@ -2531,6 +2784,57 @@ export default EditFormController.extend({
                             </div>
                     
                     </div>
+                    <div id="method_removeLookupValue" class="method item inherited">
+                        <h3 class="name"><code>removeLookupValue</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>removeData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#method_removeLookupValue">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l178"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:178</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Handles action from lookup remove action.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">removeData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Lookup parameters (projection name, etc).
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="method_removeObserver" class="method item public inherited">
                         <h3 class="name"><code>removeObserver</code></h3>
                     
@@ -2911,16 +3215,10 @@ export default EditFormController.extend({
                     
                     
                     </div>
-                    <div id="method_save." class="method item">
-                        <h3 class="name"><code>save.</code></h3>
+                    <div id="method_routeWillTransition" class="method item inherited">
+                        <h3 class="name"><code>routeWillTransition</code></h3>
                     
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>close</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
+                            <span class="paren">()</span>
                     
                     
                     
@@ -2930,9 +3228,9 @@ export default EditFormController.extend({
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l253"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:253</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#method_routeWillTransition">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l168"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:168</code></a>
                             </p>
                     
                     
@@ -2940,27 +3238,10 @@ export default EditFormController.extend({
                         </div>
                     
                         <div class="description">
-                            <p>Save object.</p>
-                    
+                            Handles correcponding route's willTransition action.
+                    It sends message about transition to showing lookup modal window controller.
                         </div>
                     
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">close</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>If <code>true</code>, then save and close.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
                     
                     
                     </div>
@@ -3014,6 +3295,59 @@ export default EditFormController.extend({
                     
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="method_save." class="method item">
+                        <h3 class="name"><code>save.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>close</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l253"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:253</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Save object.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">close</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>If <code>true</code>, then save and close.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                     
                     </div>
@@ -3310,6 +3644,67 @@ export default EditFormController.extend({
                                         The passed in hash
                                 </div>
                             </div>
+                    
+                    </div>
+                    <div id="method_showLookupDialog" class="method item inherited">
+                        <h3 class="name"><code>showLookupDialog</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>chooseData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#method_showLookupDialog">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l85"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:85</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Handles action from lookup choose action.
+                          It opens modal window where availible values are shown.
+                    
+                          In order to customize content of all lookup modal window there is such a way:
+                          1) create template with necessary content and set unique name for it (for example 'customlookupform.hbs');
+                          2) override lookup setting <code>lookupSettings.contentTemplate</code> on controller level (for example 'customlookupform');
+                          3) if there has to be specific logic or properties on controller for template,
+                             current lookup controller can be overriden (it is 'lookup-dialog' for edit forms),
+                             new name can be set on lookup setting <code>lookupSettings.controllerName</code>
+                             and new controller can be injected as <code>lookupController</code>
+                             (if the controller was extended and not reopened).
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">chooseData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Lookup parameters (projection name, relation name, etc).
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
                     
                     </div>
                     <div id="method_toggleProperty" class="method item public inherited">
@@ -3703,6 +4098,57 @@ export default EditFormController.extend({
                     
                     
                     </div>
+                    <div id="method_updateLookupValue" class="method item inherited">
+                        <h3 class="name"><code>updateLookupValue</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>updateData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#method_updateLookupValue">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l199"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:199</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Update relation value at model.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">updateData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Lookup parameters to update data at model (projection name, etc).
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="method_willDestroy" class="method item public inherited">
                         <h3 class="name"><code>willDestroy</code></h3>
                     
@@ -3848,6 +4294,57 @@ export default EditFormController.extend({
                     
                     
                     </div>
+                    <div id="property_contentTemplate" class="property item inherited">
+                        <h3 class="name"><code>contentTemplate</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#property_contentTemplate">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l47"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:47</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Name of template for content of modal window.
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_controllerName" class="property item inherited">
+                        <h3 class="name"><code>controllerName</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#property_controllerName">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l28"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:28</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Name of controller that handles modal window.
+                    Controller with the same name has to be injected to property <code>lookupController</code>.
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
                     <div id="property_destroyHasManyRelationshipsOnModelDestroy" class="property item">
                         <h3 class="name"><code>destroyHasManyRelationshipsOnModelDestroy</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -3932,6 +4429,31 @@ export default EditFormController.extend({
                     
                     
                     </div>
+                    <div id="property_loaderTemplate" class="property item inherited">
+                        <h3 class="name"><code>loaderTemplate</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#property_loaderTemplate">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l56"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:56</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Name of template for content of loading modal window.
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
                     <div id="property_lookupController" class="property item">
                         <h3 class="name"><code>lookupController</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/Ember.InjectedProperty.html" class="crosslink external" target="_blank">Ember.InjectedProperty</a></span>
@@ -3941,8 +4463,11 @@ export default EditFormController.extend({
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
+                                <p>Inherited from
+                                <a href="../classes/FlexberryLookupMixin.html#property_lookupController">
+                                    FlexberryLookupMixin
+                                </a>
+                                but overwritten in
                             <a href="../files/ember-flexberry_addon_controllers_edit-form.js.html#l100"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;edit-form.js:100</code></a>
                             </p>
                     
@@ -3955,6 +4480,56 @@ export default EditFormController.extend({
                         </div>
                     
                             <p><strong>Default:</strong> undefined</p>
+                    
+                    
+                    </div>
+                    <div id="property_lookupModalWindowPerPage" class="property item inherited">
+                        <h3 class="name"><code>lookupModalWindowPerPage</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#property_lookupModalWindowPerPage">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l75"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:75</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Default number of records per page on lookup window list.
+                        </div>
+                    
+                            <p><strong>Default:</strong> 5</p>
+                    
+                    
+                    </div>
+                    <div id="property_lookupSettings" class="property item inherited">
+                        <h3 class="name"><code>lookupSettings</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#property_lookupSettings">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l20"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:20</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Lookup settings for modal window.
+                    It has to be overriden on controller where this mixin is used.
+                        </div>
+                    
                     
                     
                     </div>
@@ -4238,6 +4813,31 @@ export default EditFormController.extend({
                         </div>
                     
                             <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_template" class="property item inherited">
+                        <h3 class="name"><code>template</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/FlexberryLookupMixin.html#property_template">FlexberryLookupMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-lookup.js.html#l38"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-lookup.js:38</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Name of template for modal window itself (not content of modal window).
+                        </div>
+                    
+                            <p><strong>Default:</strong> undefined</p>
                     
                     
                     </div>
