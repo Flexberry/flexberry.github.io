@@ -10,7 +10,7 @@ title: Flexberry PLATFORM Documentation
 email: mail@flexberry.net
 description: > # this means to ignore newlines until "baseurl:"
   Technical documentation for Flexberry PLATFORM Projects. 
-baseurl: "/Documentation" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://flexberry.github.io" # the base hostname & protocol for your site
 twitter_username: flexberry
 github_username:  Flexberry
