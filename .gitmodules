@@ -7,7 +7,7 @@
 	url = https://github.com/Flexberry/ember-flexberry.git
 	branch = develop
 [submodule "master/ember-flexberry-projections"]
-	path = master/ember-flexberry-projections
+	path = master/ember-flexberry-data
 	url = https://github.com/Flexberry/ember-flexberry-projections.git
 	branch = master
 [submodule "develop/ember-flexberry-projections"]
