@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/components/colsconfig-dialog-content.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/BaseModel", "classes/ColsconfigDialogContentComponent", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryBaseComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDropDown", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbarComponent", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCellComponent", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/ReloadListMixin", "classes/Resolver", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/UIMessage", "classes/UserSettingsService", "classes/ValidationDataObject", "modules/ember-flexberry"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/ApplicationInitializer.html">ApplicationInitializer</a></li>
+	                            <li><a href="../classes/ApplicationInstanceInitializer.html">ApplicationInstanceInitializer</a></li>
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
+	                            <li><a href="../classes/ColsconfigDialogContentComponent.html">ColsconfigDialogContentComponent</a></li>
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormNewRoute.html">EditFormNewRoute</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/EnumCaptionHelper.html">EnumCaptionHelper</a></li>
+	                            <li><a href="../classes/ErrorableControllerMixin.html">ErrorableControllerMixin</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryCheckboxComponent.html">FlexberryCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatePicker.html">FlexberryDatePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEnumTransform.html">FlexberryEnumTransform</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFileCompatibleComponentMixin.html">FlexberryFileCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileComponent.html">FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/FlexberryFileControllerMixin.html">FlexberryFileControllerMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileViewDialogController.html">FlexberryFileViewDialogController</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditComponent.html">FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditRouteMixin.html">FlexberryGroupeditRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponent.html">FlexberryLookupCompatibleComponent</a></li>
+	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
+	                            <li><a href="../classes/FlexberryMenu.html">FlexberryMenu</a></li>
+	                            <li><a href="../classes/FlexberryMenuitem.html">FlexberryMenuitem</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GroupEditToolbarComponent.html">GroupEditToolbarComponent</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogEController.html">IISCaseberryLoggingObjectsApplicationLogEController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogERoute.html">IISCaseberryLoggingObjectsApplicationLogERoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLController.html">IISCaseberryLoggingObjectsApplicationLogLController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLRoute.html">IISCaseberryLoggingObjectsApplicationLogLRoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogModel.html">IISCaseberryLoggingObjectsApplicationLogModel</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogSerializer.html">IISCaseberryLoggingObjectsApplicationLogSerializer</a></li>
+	                            <li><a href="../classes/LimitedController.html">LimitedController</a></li>
+	                            <li><a href="../classes/LimitedRouteMixin.html">LimitedRouteMixin</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/LogService.html">LogService</a></li>
+	                            <li><a href="../classes/LookupDialogController.html">LookupDialogController</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryFileComponent.html">Mobile.FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryGroupeditComponent.html">Mobile.FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryObjectlistview.html">Mobile.FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/Mobile.ObjectListViewComponent.html">Mobile.ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/ModalApplicationRoute.html">ModalApplicationRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingModel.html">NewPlatformFlexberryFlexberryUserSettingModel</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingSerializer.html">NewPlatformFlexberryFlexberryUserSettingSerializer</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectListViewComponent.html">ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCellComponent.html">ObjectListViewSingleColumnCellComponent</a></li>
+	                            <li><a href="../classes/OlvToolbar.html">OlvToolbar</a></li>
+	                            <li><a href="../classes/PaginatedController.html">PaginatedController</a></li>
+	                            <li><a href="../classes/ProjectedModelForm.html">ProjectedModelForm</a></li>
+	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                            <li><a href="../classes/SortableColumn.html">SortableColumn</a></li>
+	                            <li><a href="../classes/SortableControllerMixin.html">SortableControllerMixin</a></li>
+	                            <li><a href="../classes/SortableRoute.html">SortableRoute</a></li>
+	                            <li><a href="../classes/UIMessage.html">UIMessage</a></li>
+	                            <li><a href="../classes/UserSettingsService.html">UserSettingsService</a></li>
+	                            <li><a href="../classes/ValidationDataObject.html">ValidationDataObject</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/components/colsconfig-dialog-content.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+const { getOwner } = Ember;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+
+/**
+ * Columns configuration dialog Content component.
+ *
+ * @class ColsconfigDialogContentComponent
+ * @extends FlexberryBaseComponent
+ */
+export default FlexberryBaseComponent.extend({
+  _idPrefix: &#x27;ColDesc&#x27;,
+  colsConfigMenu: Ember.inject.service(),
+  _router: undefined,
+
+  /**
+   * model with
+   *
+   * @property modelForDOM
+   * @type Object[]
+   * @default &#x27;APP.components.flexberryCheckbox&#x27;
+   */
+  modelForDOM: [],
+  settingsList: [],
+  settingName: &#x27;&#x27;,
+  colsConfig: [],
+  changed: false,
+
+  init: function() {
+    this._super(...arguments);
+    this.modelForDOM = [];
+    if (!this.model || !(&#x27;colDescs&#x27; in this.model)) {
+      return;
+    }
+
+    this.settingsList = this.model.listUserSettings;
+    this.settingName = this.model.settingName;
+    let colDescs = this.model.colDescs;
+    for (let i = 0; i &lt; colDescs.length; i++) {
+      let colDesc = colDescs[i];
+      let sortOrder = colDesc.sortOrder;
+      if (sortOrder &gt; 0) {
+        colDesc.sortOrderAsc = &#x27;selected&#x27;;
+      } else {
+        if (sortOrder &lt; 0) {
+          colDesc.sortOrderDesc = &#x27;selected&#x27;;
+        } else {
+          colDesc.sortOrderdNot = &#x27;selected&#x27;;
+        }
+      }
+
+      colDesc.trId = this._idPrefix + &#x27;TR_&#x27; + i;
+      colDesc.hideId = this._idPrefix + &#x27;Hide_&#x27; + i;
+      colDesc.sortOrderId = this._idPrefix + &#x27;SortOrder_&#x27; + i;
+      colDesc.sortPriorityId = this._idPrefix + &#x27;SortPriority_&#x27; + i;
+      colDesc.rowUpId = this._idPrefix + &#x27;RowUp_&#x27; + i;
+      colDesc.rowDownId = this._idPrefix + &#x27;RowDown_&#x27; + i;
+      this.modelForDOM[i] = colDesc;
+    }
+  },
+
+  didRender: function() {
+    let firstButtonUp = Ember.$(&#x27;#ColDescRowUp_0&#x27;);
+    firstButtonUp.addClass(&#x27;disabled&#x27;); // Disable first button up
+    let lastButtondown = Ember.$(&#x27;#ColDescRowDown_&#x27; + (this.modelForDOM.length - 1));
+    lastButtondown.addClass(&#x27;disabled&#x27;); // Disable last button down
+  },
+
+  actions: {
+    /**
+     * Invert column visibility (On/Off)
+     *
+     * @method actions.invertVisibility
+     * @param {Int} n  column number (id suffix)
+     */
+    invertVisibility: function(n) {
+      let element = this._getEventElement(&#x27;Hide&#x27;, n); // clicked DOM-element
+      let newHideState = !Ember.get(this.model.colDescs[n], &#x27;hide&#x27;); // Invert Hide/Unhide state from model.colDescs
+      Ember.set(this.model.colDescs[n], &#x27;hide&#x27;, newHideState); // Set new state in model.colDescs
+      if (newHideState) { // Hide element
+        element.className = element.className.replace(&#x27;unhide&#x27;, &#x27;hide&#x27;);  // Change picture
+        Ember.$(element).parent().siblings(&#x27;TD&#x27;).addClass(&#x27;disabled&#x27;); // Disable row
+      } else {
+        element.className = element.className.replace(&#x27;hide&#x27;, &#x27;unhide&#x27;);  // Change picture
+        Ember.$(element).parent().siblings(&#x27;TD&#x27;).removeClass(&#x27;disabled&#x27;);  // Enaable row
+      }
+
+      this._changed();
+    },
+
+    /**
+     * Set sort order for column: descending ascending, none) and eneble/disable sort priority
+     *
+     * @method actions.setSortOrder
+     * @param {Int} n  column number (id suffix)
+     */
+    setSortOrder: function(n) {
+      let select = this._getEventElement(&#x27;SortOrder&#x27;, n); // changed select DOM-element
+      let tr = select.parentNode.parentNode;  // TR DOM-element
+      let tbody = tr.parentNode;  // TBODY DOM-element
+      let value = select.options.item(select.selectedIndex).value;  // Chosen sort order
+      let input = Ember.$(tr).find(&#x27;input&#x27;).get(0); //sortPriority field in this row
+      let $inputs = Ember.$(&#x27;input.sortPriority:enabled&#x27;, tbody); // enabled sortPriority fields
+      let SortPriority = 1;
+      let index = this._getIndexFromId(input.id);
+      if (value === &#x27;0&#x27;) {  // Disable sorting?
+        input.value = &#x27;&#x27;;
+        input.disabled = true;  // Disable sortPriority field in this row
+        input.style.display = &#x27;none&#x27;; // Hide sortPriority field in this row
+        Ember.set(this.model.colDescs[index], &#x27;sortPriority&#x27;, undefined);
+        Ember.set(this.model.colDescs[n], &#x27;sortOrder&#x27;, undefined);
+      } else {
+        if (input.disabled) { // SortPriority disabled
+          input.disabled = false;  // Enable SortPriority field in this row
+          input.style.display = &#x27;&#x27;; // Show SortPriority field in this row
+          if (input.value &lt;= 0) { //Sort priority not set
+            SortPriority = $inputs.length + 1;  //Set current maximim
+            input.value = SortPriority;
+            input.prevValue = SortPriority; //remember previous value
+          }
+        } else {  // SortPriority enabled
+          SortPriority = input.value;
+        }
+
+        Ember.set(this.model.colDescs[index], &#x27;sortPriority&#x27;, SortPriority); // Remember values in model.colDescs
+        Ember.set(this.model.colDescs[n], &#x27;sortOrder&#x27;, parseInt(value));
+      }
+
+      this._changed();
+    },
+
+    /**
+     * Set sort priority for column
+     *
+     * @method actions.setSortPriority
+     * @param {Int} n  column number (id suffix)
+     */
+    setSortPriority: function(n) {
+      let eventInput = this._getEventElement(&#x27;SortPriority&#x27;, n);  // changed input DOM-element
+      let newValue = parseInt(eventInput.value);  //New value
+      let prevValue = eventInput.getAttribute(&#x27;prevValue&#x27;); // Previous value
+      let tr = eventInput.parentNode.parentNode;  // TR DOM-element
+      let tbody = tr.parentNode;  // TBODY DOM-element
+      let input;
+      let inputValue;
+      let $inputs = Ember.$(&#x27;input.sortPriority:enabled&#x27;, tbody); // enabled sortPriority fields
+      if (isNaN(newValue) || newValue &lt;= 0) { //new Value incorrectly setAttribute
+        newValue = $inputs.length;  // Set last value
+      }
+
+      let index = this._getIndexFromId(eventInput.id);  // get index of initial order  (if  columns order is changed n!=index )
+      Ember.set(this.model.colDescs[index], &#x27;sortPriority&#x27;, newValue); // set new sortPriority value
+      if (prevValue === newValue) { //value not changed
+        return;
+      }
+
+      eventInput.value = newValue;  // value changed - set new
+      eventInput.setAttribute(&#x27;prevValue&#x27;, newValue); //Remember value as prevoius
+
+      //Reorder sortPriority values for values in interval prevValue &lt;-&gt; newValue
+      let from; // From sortPriority value
+      let to; // To sortPriority value
+      let delta;  // shift value
+      if (prevValue &lt; newValue) { // prevoious value is lower
+        from = prevValue;
+        to = newValue + 1;
+        delta =  -1;  // Decrement values in interval
+      } else {
+        from = newValue - 1;
+        to = prevValue;
+        delta = 1;  // Increment values in interval
+      }
+
+      for (let i = 0; i &lt; $inputs.length; i++) {  //for each inputs
+        input = $inputs.get(i);
+        inputValue = parseInt(input.value);
+        if (input !== eventInput &amp;&amp; inputValue &gt; from &amp;&amp; inputValue &lt; to) { // Value in interval
+          inputValue += delta;
+          input.value = inputValue; // Decrement/Increment value
+          input.prevValue = inputValue; // Remeber previous value
+          index = this._getIndexFromId(input.id); // get index of initial order
+          Ember.set(this.model.colDescs[index], &#x27;sortPriority&#x27;, inputValue); // Set computed value
+        }
+      }
+
+      this._changed();
+    },
+
+    /**
+     * Increase column in list (exchange previous column)
+     *
+     * @method actions.rowUp
+     * @param {Int} n  column number (id suffix)
+     */
+    rowUp: function(n) {
+      let eventButton = this._getEventElement(&#x27;RowUp&#x27;, n);
+      let newTr;
+      let tr = eventButton.parentNode.parentNode;  // TR DOM-element
+      let select = Ember.$(tr).find(&#x27;SELECT&#x27;).get(0);
+      let selectedIndex = select.selectedIndex; // selected index of sort order
+      let tbody = tr.parentNode;  // TBODY DOM-element
+      let prevTr = Ember.$(tr).prev(&#x27;TR&#x27;).get(0); // Previous TR DOM-element
+      if (prevTr) { // Previous TR exist
+        newTr = tbody.removeChild(tr);
+        newTr = tbody.insertBefore(newTr, prevTr);
+        select = Ember.$(newTr).find(&#x27;SELECT&#x27;).get(0);
+        select.selectedIndex = selectedIndex; // Reset selected index of sort order
+        Ember.$(newTr).find(&#x27;BUTTON&#x27;).eq(1).removeClass(&#x27;disabled&#x27;);
+        Ember.$(prevTr).find(&#x27;BUTTON&#x27;).eq(0).removeClass(&#x27;disabled&#x27;);
+        if (Ember.$(newTr).prev(&#x27;TR&#x27;).length === 0) {  //First row
+          Ember.$(newTr).find(&#x27;BUTTON&#x27;).eq(0).addClass(&#x27;disabled&#x27;);
+        }
+
+        if (Ember.$(prevTr).next(&#x27;TR&#x27;).length === 0) {  //Last row
+          Ember.$(prevTr).find(&#x27;BUTTON&#x27;).eq(1).addClass(&#x27;disabled&#x27;);
+        }
+      }
+
+      this._changed();
+    },
+
+    /**
+     * Decrease column in list (exchange  next column)
+     *
+     * @method actions.rowDown
+     * @param {Int} n  column number (id suffix)
+     */
+    rowDown: function(n) {
+      let eventButton = this._getEventElement(&#x27;RowDown&#x27;, n);
+      var newTr;
+      let tr = eventButton.parentNode.parentNode;  // TR DOM-element
+      let select = Ember.$(tr).find(&#x27;SELECT&#x27;).get(0);
+      let selectedIndex = select.selectedIndex; // selected index of sort order
+      var tbody = tr.parentNode;   // TBODY DOM-element
+      var nextTr = Ember.$(tr).next(&#x27;TR&#x27;).get(0); // Next TR DOM-element
+      if (nextTr) { // Next TR exist
+        newTr = tbody.removeChild(tr);  // Exchange TR&#x27;s
+        if (Ember.$(nextTr).next(&#x27;TR&#x27;).length === 0) {  //Last row
+          newTr = tbody.appendChild(newTr);
+          Ember.$(newTr).find(&#x27;BUTTON&#x27;).eq(1).addClass(&#x27;disabled&#x27;);
+        } else {  // last row
+          newTr = tbody.insertBefore(newTr, nextTr.nextSibling);
+        }
+
+        if (Ember.$(nextTr).prev(&#x27;TR&#x27;).length === 0) {  //First row
+          Ember.$(nextTr).find(&#x27;BUTTON&#x27;).eq(0).addClass(&#x27;disabled&#x27;);
+        }
+
+        select = Ember.$(newTr).find(&#x27;SELECT&#x27;).get(0);
+        select.selectedIndex = selectedIndex; // Reset selected index of sort order
+        Ember.$(newTr).find(&#x27;BUTTON&#x27;).eq(0).removeClass(&#x27;disabled&#x27;);
+        Ember.$(nextTr).find(&#x27;BUTTON&#x27;).eq(1).removeClass(&#x27;disabled&#x27;);
+      }
+
+      this._changed();
+    },
+
+    /**
+     * Apply settings specified in the interface as DEFAULT values
+     *
+     * @method actions.apply
+     */
+    apply: function() {
+      let colsConfig = this._getSettings();
+      let settingName =  Ember.$(&#x27;#columnConfigurtionSettingName&#x27;)[0].value.trim();
+      if (settingName.length &gt; 0 &amp;&amp; !confirm(&#x27;Применить данные установки без сохранения в настройке &#x27; + settingName)) {
+        return;
+      }
+
+      //Save colsConfig in userSettings as DEFAULT
+      let savePromise = this._getSavePromise(&#x27;DEFAULT&#x27;, colsConfig);
+      savePromise.then(
+        record =&gt; {
+          if (this._router.location.location.hash.indexOf(&#x27;sort=&#x27;) &gt;= 0) { // sort parameter exist in URL (ugly - TODO find sort in query parameters)
+            this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { sort: null } }); // Show page without sort parameters
+          } else {
+            this._router.router.refresh();  //Reload current page and records (model) list
+          }
+        }
+      );
+      this.sendAction(&#x27;close&#x27;, colsConfig); // close modal window
+    },
+    /**
+     * Save named settings specified in the interface as named values
+     *
+     * @method actions.apply
+     */
+    saveColsSetting: function() {
+      let settingName =  Ember.$(&#x27;#columnConfigurtionSettingName&#x27;)[0].value.trim();
+      Ember.set(this, &#x27;settingName&#x27;, settingName);
+      if (this.settingName.length &lt;= 0) {
+        alert(&#x27;Введите название настройки&#x27;);
+        return;
+      }
+
+      this.colsConfig = this._getSettings();
+      let savePromise = this._getSavePromise(this.settingName, this.colsConfig);
+      savePromise.then(
+        record =&gt; {
+          Ember.set(this.model.listUserSettings, this.settingName, this.colsConfig);
+          this.get(&#x27;colsConfigMenu&#x27;).addNamedSettingTrigger(this.settingName);
+          alert(&#x27;Настройка &#x27; + this.settingName + &#x27; сохранена&#x27;);
+          Ember.$(&#x27;#columnConfigurtionButtonUse&#x27;)[0].className += &#x27; disabled&#x27;;
+          Ember.$(&#x27;#columnConfigurtionButtonSave&#x27;)[0].className += &#x27; disabled&#x27;;
+        },
+        error =&gt; {
+          alert(&#x27;При сохранении настройки возникли ошибки: &#x27; + JSON.stringify(error));
+        }
+      );
+    }
+  },
+
+  _getSavePromise: function(settingName, colsConfig) {
+    this._router = getOwner(this).lookup(&#x27;router:main&#x27;);
+    let moduleName  = this._router.currentRouteName;
+
+    return this.get(&#x27;userSettingsService&#x27;).saveUserSetting({
+      moduleName: moduleName,
+      settingName: settingName,
+      userSetting: colsConfig
+    });
+  },
+
+  _getSettings: function() {
+    let trs = Ember.$(&#x27;#colsConfigtableRows&#x27;).children(&#x27;TR&#x27;);
+    let colsConfig = [];
+    let colsOrder = [];
+    let sortSettings = [];
+
+    //Set sortSettings and colsOrder array
+    for (let i = 0; i &lt; trs.length; i++) {  // Iterate TR list
+      let tr = trs[i];
+      let index = this._getIndexFromId(tr.id);  // get index of initial (model) order
+      let colDesc = this.model.colDescs[index];  // Model for this tr
+      colsOrder[i] = { propName: colDesc.propName, hide: colDesc.hide };  //Set colsOrder element
+      if (colDesc.sortPriority !== undefined) { // Sort priority defined
+        sortSettings[sortSettings.length] = { propName: colDesc.propName, sortOrder: colDesc.sortOrder, sortPriority: colDesc.sortPriority }; //Add sortSetting element
+      }
+    }
+
+    let sortedSettings = sortSettings.sort((a, b) =&gt; a.sortPriority - b.sortPriority);  // Sort sortSettings
+    let sorting = [];
+    for (let i = 0; i &lt; sortedSettings.length; i++) { // produce sorting array
+      let sortedSetting = sortedSettings[i];
+      sorting[sorting.length] =  { propName: sortedSetting.propName, direction:  sortedSetting.sortOrder &gt; 0 ? &#x27;asc&#x27; : &#x27;desc&#x27; };
+    }
+
+    colsConfig = { colsOrder: colsOrder, sorting: sorting };  // Set colsConfig Object
+    return colsConfig;
+  },
+
+  _getIndexFromId: function(id) {
+    let ret = id.substr(id.lastIndexOf(&#x27;_&#x27;) + 1);
+    return parseInt(ret);
+  },
+
+  _getEventElement: function (prefix, n) {
+    let id = &#x27;#&#x27; + this._idPrefix + prefix + &#x27;_&#x27; + n;
+    let ret = Ember.$.find(id)[0];
+    return ret;
+  },
+
+  _changed: function() {
+    this.changed = true;
+    Ember.$(&#x27;#columnConfigurtionButtonUse&#x27;)[0].className = Ember.$(&#x27;#columnConfigurtionButtonUse&#x27;)[0].className.replace(&#x27;disabled&#x27;, &#x27;&#x27;);
+    Ember.$(&#x27;#columnConfigurtionButtonSave&#x27;)[0].className = Ember.$(&#x27;#columnConfigurtionButtonSave&#x27;)[0].className.replace(&#x27;disabled&#x27;, &#x27;&#x27;);
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
