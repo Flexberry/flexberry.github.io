@@ -6,3 +6,8 @@
 /.idea
 .tern-port
 .dir-locals.el
+
+# jekyll private files
+_site
+.sass-cache
+.jekyll-metadata
