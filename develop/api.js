@@ -5,6 +5,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "ApplicationInstanceInitializer",
         "BaseModel",
         "ColsconfigDialogContentComponent",
+        "DS.ODataAdapter",
+        "DS.Projection",
         "DetailEditFormController",
         "DetailInterationService",
         "DeviceService",
@@ -67,22 +69,45 @@ YUI.add("yuidoc-meta", function(Y) {
         "OlvToolbar",
         "PaginatedController",
         "ProjectedModelForm",
+        "Query.BaseAdapter",
+        "Query.BaseBuilder",
+        "Query.BasePredicate",
+        "Query.Builder",
+        "Query.ComplexPredicate",
+        "Query.Condition",
+        "Query.DetailPredicate",
+        "Query.FilterOperator",
+        "Query.IndexedDbAdapter",
+        "Query.JSAdapter",
+        "Query.ODataAdapter",
+        "Query.OrderByClause",
+        "Query.SimplePredicate",
+        "Query.StringPredicate",
         "ReloadListMixin",
         "Resolver",
+        "Serializer.Base",
+        "Serializer.OData",
         "SortableColumn",
         "SortableControllerMixin",
         "SortableRoute",
         "UIMessage",
         "UserSettingsService",
+        "Utils.Information",
         "ValidationDataObject"
     ],
     "modules": [
-        "ember-flexberry"
+        "ember-flexberry",
+        "ember-flexberry-data"
     ],
     "allModules": [
         {
             "displayName": "ember-flexberry",
             "name": "ember-flexberry"
+        },
+        {
+            "displayName": "ember-flexberry-data",
+            "name": "ember-flexberry-data",
+            "description": "Ember Addon that adds support of projections in models."
         }
     ],
     "elements": []

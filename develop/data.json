@@ -4,6 +4,234 @@
         "version": "develop"
     },
     "files": {
+        "ember-flexberry-data/addon/adapters/odata.js": {
+            "name": "ember-flexberry-data/addon/adapters/odata.js",
+            "modules": {},
+            "classes": {
+                "DS.ODataAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DS": 1
+            }
+        },
+        "ember-flexberry-data/addon/mixins/adapter.js": {
+            "name": "ember-flexberry-data/addon/mixins/adapter.js",
+            "modules": {},
+            "classes": {
+                "DS.Adapter": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DS": 1
+            }
+        },
+        "ember-flexberry-data/addon/mixins/store.js": {
+            "name": "ember-flexberry-data/addon/mixins/store.js",
+            "modules": {},
+            "classes": {
+                "DS.Store": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DS": 1
+            }
+        },
+        "ember-flexberry-data/addon/models/model.js": {
+            "name": "ember-flexberry-data/addon/models/model.js",
+            "modules": {},
+            "classes": {
+                "DS.Model": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DS": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/base-adapter.js": {
+            "name": "ember-flexberry-data/addon/query/base-adapter.js",
+            "modules": {},
+            "classes": {
+                "Query.BaseAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/base-builder.js": {
+            "name": "ember-flexberry-data/addon/query/base-builder.js",
+            "modules": {},
+            "classes": {
+                "Query.BaseBuilder": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/builder.js": {
+            "name": "ember-flexberry-data/addon/query/builder.js",
+            "modules": {},
+            "classes": {
+                "Query.Builder": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/condition.js": {
+            "name": "ember-flexberry-data/addon/query/condition.js",
+            "modules": {},
+            "classes": {
+                "Query.Condition": 1
+            },
+            "fors": {
+                "Query.Condition": 1
+            },
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/filter-operator.js": {
+            "name": "ember-flexberry-data/addon/query/filter-operator.js",
+            "modules": {},
+            "classes": {
+                "Query.FilterOperator": 1
+            },
+            "fors": {
+                "Query.FilterOperator": 1
+            },
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/indexeddb-adapter.js": {
+            "name": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
+            "modules": {},
+            "classes": {
+                "Query.IndexedDbAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/js-adapter.js": {
+            "name": "ember-flexberry-data/addon/query/js-adapter.js",
+            "modules": {},
+            "classes": {
+                "Query.JSAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/odata-adapter.js": {
+            "name": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "modules": {},
+            "classes": {
+                "Query.ODataAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/order-by-clause.js": {
+            "name": "ember-flexberry-data/addon/query/order-by-clause.js",
+            "modules": {},
+            "classes": {
+                "Query.OrderByClause": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/query/predicate.js": {
+            "name": "ember-flexberry-data/addon/query/predicate.js",
+            "modules": {},
+            "classes": {
+                "Query.SimplePredicate": 1,
+                "Query.ComplexPredicate": 1,
+                "Query.StringPredicate": 1,
+                "Query.DetailPredicate": 1
+            },
+            "fors": {
+                "BasePredicate": 1,
+                "Query.BasePredicate": 1
+            },
+            "namespaces": {
+                "Query": 1
+            }
+        },
+        "ember-flexberry-data/addon/serializers/base.js": {
+            "name": "ember-flexberry-data/addon/serializers/base.js",
+            "modules": {},
+            "classes": {
+                "Serializer.Base": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Serializer": 1
+            }
+        },
+        "ember-flexberry-data/addon/serializers/odata.js": {
+            "name": "ember-flexberry-data/addon/serializers/odata.js",
+            "modules": {},
+            "classes": {
+                "Serializer.OData": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Serializer": 1
+            }
+        },
+        "ember-flexberry-data/addon/utils/attributes.js": {
+            "name": "ember-flexberry-data/addon/utils/attributes.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "DS.Projection": 1
+            },
+            "namespaces": {}
+        },
+        "ember-flexberry-data/addon/utils/create.js": {
+            "name": "ember-flexberry-data/addon/utils/create.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "DS.Projection": 1
+            },
+            "namespaces": {}
+        },
+        "ember-flexberry-data/addon/utils/information.js": {
+            "name": "ember-flexberry-data/addon/utils/information.js",
+            "modules": {},
+            "classes": {
+                "Utils.Information": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Utils": 1
+            }
+        },
+        "ember-flexberry-data/addon/index.js": {
+            "name": "ember-flexberry-data/addon/index.js",
+            "modules": {
+                "ember-flexberry-data": 1
+            },
+            "classes": {
+                "DS.Projection": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "DS": 1
+            }
+        },
         "ember-flexberry/addon/components/mobile/flexberry-file.js": {
             "name": "ember-flexberry/addon/components/mobile/flexberry-file.js",
             "modules": {
@@ -802,6 +1030,64 @@
         }
     },
     "modules": {
+        "ember-flexberry-data": {
+            "name": "ember-flexberry-data",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "DS.ODataAdapter": 1,
+                "DS.Adapter": 1,
+                "DS.Store": 1,
+                "DS.Model": 1,
+                "Query.BaseAdapter": 1,
+                "Query.BaseBuilder": 1,
+                "Query.Builder": 1,
+                "Query.Condition": 1,
+                "Query.FilterOperator": 1,
+                "Query.IndexedDbAdapter": 1,
+                "Query.JSAdapter": 1,
+                "Query.ODataAdapter": 1,
+                "Query.OrderByClause": 1,
+                "Query.BasePredicate": 1,
+                "Query.SimplePredicate": 1,
+                "Query.ComplexPredicate": 1,
+                "Query.StringPredicate": 1,
+                "Query.DetailPredicate": 1,
+                "Serializer.Base": 1,
+                "Serializer.OData": 1,
+                "DS.Projection": 1,
+                "Utils.Information": 1
+            },
+            "fors": {
+                "Query.Condition": 1,
+                "Query.FilterOperator": 1,
+                "BasePredicate": 1,
+                "Query.BasePredicate": 1,
+                "DS.Projection": 1
+            },
+            "namespaces": {
+                "DS": 1,
+                "Query": 1,
+                "Serializer": 1,
+                "Utils": 1
+            },
+            "tag": "main",
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 4,
+            "description": "Ember Addon that adds support of projections in models.",
+            "extends": "DS.RESTAdapter",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "Store for loading metadata.",
+                    "type": "DS.Store"
+                }
+            ],
+            "is_constructor": 1,
+            "itemtype": "main"
+        },
         "ember-flexberry": {
             "name": "ember-flexberry",
             "submodules": {},
@@ -894,6 +1180,397 @@
         }
     },
     "classes": {
+        "DS.ODataAdapter": {
+            "name": "DS.ODataAdapter",
+            "shortname": "DS.ODataAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "DS",
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 7,
+            "description": "The OData adapter class.\nUses Flexberry Query as a language for requesting server."
+        },
+        "DS.Adapter": {
+            "name": "DS.Adapter",
+            "shortname": "DS.Adapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "DS",
+            "file": "ember-flexberry-data/addon/mixins/adapter.js",
+            "line": 3,
+            "description": "Mixin for {{#crossLink \"DS.Adapter\"}}Adapter{{/crossLink}} to support\nfetching models using projection."
+        },
+        "DS.Store": {
+            "name": "DS.Store",
+            "shortname": "DS.Store",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "DS",
+            "file": "ember-flexberry-data/addon/mixins/store.js",
+            "line": 5,
+            "description": "Mixin for {{#crossLink \"DS.Store\"}}Store{{/crossLink}} to support\nfetching models using projection."
+        },
+        "DS.Model": {
+            "name": "DS.Model",
+            "shortname": "DS.Model",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "DS",
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 5,
+            "description": "Model that supports projections."
+        },
+        "Query.BaseAdapter": {
+            "name": "Query.BaseAdapter",
+            "shortname": "Query.BaseAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/base-adapter.js",
+            "line": 1,
+            "description": "Base class of query adapter that translates query object into storage-related query."
+        },
+        "Query.BaseBuilder": {
+            "name": "Query.BaseBuilder",
+            "shortname": "Query.BaseBuilder",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/base-builder.js",
+            "line": 1,
+            "description": "Base class of query builder."
+        },
+        "Query.Builder": {
+            "name": "Query.Builder",
+            "shortname": "Builder",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 17,
+            "params": [
+                {
+                    "name": "store",
+                    "description": "Store for building query.",
+                    "type": "Store"
+                },
+                {
+                    "name": "modelName",
+                    "description": "The name of the requested entity.",
+                    "type": "String"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Query.Condition": {
+            "name": "Query.Condition",
+            "shortname": "Query.Condition",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/condition.js",
+            "line": 1,
+            "description": "Enumeration of logical conditions for {{#crossLink \"Query.ComplexPredicate\"}}{{/crossLink}}."
+        },
+        "Query.FilterOperator": {
+            "name": "Query.FilterOperator",
+            "shortname": "Query.FilterOperator",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 1,
+            "description": "Enumeration of operators for filtering data for {{#crossLink \"Query.SimplePredicate\"}}{{/crossLink}}."
+        },
+        "Query.IndexedDbAdapter": {
+            "name": "Query.IndexedDbAdapter",
+            "shortname": "Query.IndexedDbAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
+            "line": 10,
+            "description": "Class of query language adapter that allows to load data from IndexedDB."
+        },
+        "Query.JSAdapter": {
+            "name": "Query.JSAdapter",
+            "shortname": "Query.JSAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 7,
+            "description": "Class of query language adapter that translates query object into JS function which\nfilters native JS array of objects by specified logic.\n\n```js\nconst data = [\n  { Name: 'A', Surname: 'X', Age: 10 },\n  { Name: 'B', Surname: 'Y', Age: 11 },\n  { Name: 'B', Surname: 'Z', Age: 12 }\n];\n\nlet adapter = new JSAdapter();\nlet builder = new QueryBuilder(store, 'AnyUnknownModel').where('Name', FilterOperator.Eq, 'B');\nlet filter = adapter.buildFunc(builder.build());\n\nlet result = filter(data); // Y and Z\n```\n\nAll filters uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation))."
+        },
+        "Query.ODataAdapter": {
+            "name": "Query.ODataAdapter",
+            "shortname": "ODataAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 18,
+            "params": [
+                {
+                    "name": "baseUrl",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "EdmberData.Store"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Query.OrderByClause": {
+            "name": "Query.OrderByClause",
+            "shortname": "Query.OrderByClause",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/order-by-clause.js",
+            "line": 9,
+            "description": "Class of order-by part of the query.",
+            "params": [
+                {
+                    "name": "clause",
+                    "description": ""
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Query.BasePredicate": {
+            "name": "Query.BasePredicate",
+            "shortname": "BasePredicate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        "Query.SimplePredicate": {
+            "name": "Query.SimplePredicate",
+            "shortname": "Query.SimplePredicate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 16,
+            "description": "The class of simple predicate for filtering attribute by value and filter operator.",
+            "extends": "BasePredicate",
+            "params": [
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute for filtering.",
+                    "type": "String"
+                },
+                {
+                    "name": "operator",
+                    "description": "The filter operator.",
+                    "type": "Query.FilterOperator|String"
+                },
+                {
+                    "name": "value",
+                    "description": "The value for filtering.",
+                    "type": "String|Number"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Query.ComplexPredicate": {
+            "name": "Query.ComplexPredicate",
+            "shortname": "Query.ComplexPredicate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 82,
+            "description": "The class of complex predicate which include multiple predicates unioned with logical condition.",
+            "extends": "BasePredicate",
+            "params": [
+                {
+                    "name": "condition",
+                    "description": "Logical condition for predicates.",
+                    "type": "Query.Condition"
+                },
+                {
+                    "name": "predicates",
+                    "description": "List of predicates for combining.",
+                    "type": "Query.BasePredicate",
+                    "multiple": true
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Query.StringPredicate": {
+            "name": "Query.StringPredicate",
+            "shortname": "Query.StringPredicate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 151,
+            "description": "The predicate class for string attributes.",
+            "extends": "BasePredicate",
+            "params": [
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute for predicate.",
+                    "type": "String"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Query.DetailPredicate": {
+            "name": "Query.DetailPredicate",
+            "shortname": "Query.DetailPredicate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 209,
+            "description": "The predicate class for details.",
+            "extends": "BasePredicate",
+            "params": [
+                {
+                    "name": "detailPath",
+                    "description": "The path to the detail for predicate.",
+                    "type": "String"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Serializer.Base": {
+            "name": "Serializer.Base",
+            "shortname": "Serializer.Base",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer",
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 4,
+            "description": "Base serializer class."
+        },
+        "Serializer.OData": {
+            "name": "Serializer.OData",
+            "shortname": "Serializer.OData",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer",
+            "file": "ember-flexberry-data/addon/serializers/odata.js",
+            "line": 6,
+            "description": "Serializer class for OData."
+        },
+        "DS.Projection": {
+            "name": "DS.Projection",
+            "shortname": "DS.Projection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "DS",
+            "file": "ember-flexberry-data/addon/index.js",
+            "line": 14,
+            "description": "This namespace contains classes and methods for working with projections.",
+            "static": 1,
+            "access": "public",
+            "tagname": ""
+        },
+        "Utils.Information": {
+            "name": "Utils.Information",
+            "shortname": "Utils.Information",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Utils",
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 4,
+            "description": "Class for loading metadata about models."
+        },
         "Mobile.FlexberryFileComponent": {
             "name": "Mobile.FlexberryFileComponent",
             "shortname": "Mobile.FlexberryFileComponent",
@@ -2103,6 +2780,2137 @@
     },
     "elements": {},
     "classitems": [
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 24,
+            "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch data from the server.",
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "DS.Store"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "query",
+                    "description": "Flexberry Query object.",
+                    "type": "Query"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 50,
+            "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch single record from the server.",
+            "itemtype": "method",
+            "name": "queryRecord",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "DS.Store"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "query",
+                    "description": "",
+                    "type": "Query"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 66,
+            "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch single record by ID from the server.",
+            "itemtype": "method",
+            "name": "findRecord",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "DS.Store"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "snapshot",
+                    "description": "",
+                    "type": "DS.Snapshot"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 86,
+            "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch all records from the server.",
+            "itemtype": "method",
+            "name": "findAll",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "DS.Store"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "sinceToken",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "snapshotRecordArray",
+                    "description": "",
+                    "type": "DS.SnapshotRecordArray"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 106,
+            "description": "Overloaded method from `build-url-mixin` (Ember Data), that determines the pathname for a given type.\nAdditionally capitalizes the type name (requirement of Flexberry OData Server).",
+            "itemtype": "method",
+            "name": "pathForType",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The path for a given type.",
+                "type": "String"
+            },
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 120,
+            "description": "Overloaded method from `build-url-mixin` (Ember Data), taht builds URL to OData feed.\nAppends id as `(id)` (OData specification) instead of `/id`.",
+            "itemtype": "method",
+            "name": "_buildURL",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 160,
+            "description": "Appends id to URL according to the OData specification.",
+            "itemtype": "method",
+            "name": "_appendIdToURL",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 191,
+            "description": "Makes HTTP request for creating, updating or deleting the record.",
+            "itemtype": "method",
+            "name": "_sendRecord",
+            "access": "private",
+            "tagname": "",
+            "class": "DS.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/adapter.js",
+            "line": 13,
+            "description": "Builds a URL for a given type and query.\nOptionally, it supports an ID in the query parameters for fetching\na definite record.\n\nSee {{#crossLink \"DS.BuildURLMixin/urlForQueryRecord:method\"}}{{/crossLink}}\nfor details.",
+            "itemtype": "method",
+            "name": "urlForQueryRecord",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "Query parameters.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "id",
+                            "description": "ID of a record.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "modelName",
+                    "description": "Record type.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "url URL for query a record.",
+                "type": "String"
+            },
+            "class": "DS.Adapter",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/store.js",
+            "line": 15,
+            "description": "Finds all records for the given model type.\n\nSee {{#crossLink \"DS.Store/findAll:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "findAll",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Records promise.",
+                "type": "DS.AdapterPopulatedRecordArray"
+            },
+            "class": "DS.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/store.js",
+            "line": 42,
+            "description": "Returns a record for a given type and id combination.\n\nSee {{#crossLink \"DS.Store/findRecord:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "findRecord",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "Record ID.",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "options",
+                    "description": "Options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Record promise.",
+                "type": "Promise"
+            },
+            "class": "DS.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/store.js",
+            "line": 70,
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "an opaque query to be used by the adapter",
+                    "type": "Any"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "DS.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/store.js",
+            "line": 83,
+            "itemtype": "method",
+            "name": "queryRecord",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "an opaque query to be used by the adapter",
+                    "type": "Any"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "DS.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 18,
+            "description": "Defined projections for current model type.",
+            "itemtype": "property",
+            "name": "projections",
+            "type": "Ember.Object",
+            "default": "null",
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "DS.Model",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 29,
+            "description": "Defines projection for specified model type.",
+            "itemtype": "method",
+            "name": "defineProjection",
+            "params": [
+                {
+                    "name": "projectionName",
+                    "description": "Projection name, eg 'EmployeeE'.",
+                    "type": "String"
+                },
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Created projection.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "DS.Model",
+            "module": "ember-flexberry-data",
+            "namespace": "DS"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/base-builder.js",
+            "line": 9,
+            "description": "Builds query.",
+            "itemtype": "method",
+            "name": "build",
+            "return": {
+                "description": "Query instance.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.BaseBuilder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 42,
+            "description": "Sets the id of the requested entity.",
+            "itemtype": "method",
+            "name": "byId",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The id of the requested entity.",
+                    "type": "String|Number"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 56,
+            "description": "Sets the name of the requested entity.",
+            "itemtype": "method",
+            "name": "from",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the requested entity.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 70,
+            "itemtype": "method",
+            "name": "where",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "",
+                    "multiple": true
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 83,
+            "itemtype": "method",
+            "name": "orderBy",
+            "params": [
+                {
+                    "name": "property",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 100,
+            "itemtype": "method",
+            "name": "top",
+            "params": [
+                {
+                    "name": "top",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 113,
+            "itemtype": "method",
+            "name": "skip",
+            "params": [
+                {
+                    "name": "skip",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 126,
+            "itemtype": "method",
+            "name": "count",
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 138,
+            "description": "Adds properties for expanding.\nAutomatically checks duplications.",
+            "itemtype": "method",
+            "name": "expand",
+            "params": [
+                {
+                    "name": "properties",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 153,
+            "description": "Adds attributes for selection.\nAutomatically checks duplications.",
+            "itemtype": "method",
+            "name": "select",
+            "params": [
+                {
+                    "name": "attributes",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 168,
+            "description": "Adds attributes for selection from specified projection.\nMerges attributes with added using `select`.",
+            "itemtype": "method",
+            "name": "selectByProjection",
+            "params": [
+                {
+                    "name": "projectionName",
+                    "description": "The name of the projection.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 183,
+            "description": "Builds query instance using all provided data.",
+            "itemtype": "method",
+            "name": "build",
+            "return": {
+                "description": "Query instance.",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 222,
+            "description": "Converts projection to URL query params for OData v4.",
+            "itemtype": "method",
+            "name": "getQuery",
+            "params": [
+                {
+                    "name": "projection",
+                    "description": "Model projection to convert.",
+                    "type": "Object"
+                },
+                {
+                    "name": "store",
+                    "description": "The store service.",
+                    "type": "DS.Store"
+                }
+            ],
+            "return": {
+                "description": "Object with $select and $expand properties.",
+                "type": "Object"
+            },
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/condition.js",
+            "line": 10,
+            "description": "OR logical condition.",
+            "itemtype": "property",
+            "name": "Or",
+            "type": "Query.Condition",
+            "static": 1,
+            "final": 1,
+            "class": "Query.Condition",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/condition.js",
+            "line": 21,
+            "description": "AND logical condition.",
+            "itemtype": "property",
+            "name": "And",
+            "type": "Query.Condition",
+            "static": 1,
+            "final": 1,
+            "class": "Query.Condition",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/condition.js",
+            "line": 32,
+            "description": "Tries to build condition from specified value.",
+            "itemtype": "method",
+            "name": "tryCreate",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Value with condition.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Condition from the value.",
+                "type": "Query.Condition"
+            },
+            "static": 1,
+            "class": "Query.Condition",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 10,
+            "description": "Operator for equality.",
+            "itemtype": "property",
+            "name": "Eq",
+            "type": "Query.FilterOperator",
+            "static": 1,
+            "final": 1,
+            "class": "Query.FilterOperator",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 21,
+            "description": "Operator for inequality.",
+            "itemtype": "property",
+            "name": "Neq",
+            "type": "Query.FilterOperator",
+            "static": 1,
+            "final": 1,
+            "class": "Query.FilterOperator",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 32,
+            "description": "Operator for _greater_.",
+            "itemtype": "property",
+            "name": "Ge",
+            "type": "Query.FilterOperator",
+            "static": 1,
+            "final": 1,
+            "class": "Query.FilterOperator",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 43,
+            "description": "Operator for _greater or equal_.",
+            "itemtype": "property",
+            "name": "Ge",
+            "type": "Query.FilterOperator",
+            "static": 1,
+            "final": 1,
+            "class": "Query.FilterOperator",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 54,
+            "description": "Operator for _less_.",
+            "itemtype": "property",
+            "name": "Le",
+            "type": "Query.FilterOperator",
+            "static": 1,
+            "final": 1,
+            "class": "Query.FilterOperator",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 65,
+            "description": "Operator for _less or equal_.",
+            "itemtype": "property",
+            "name": "Le",
+            "type": "Query.FilterOperator",
+            "static": 1,
+            "final": 1,
+            "class": "Query.FilterOperator",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/filter-operator.js",
+            "line": 76,
+            "description": "Tries to build filter operator from specified value.",
+            "itemtype": "method",
+            "name": "tryCreate",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "Value with filter operator.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Filter operator from the value.",
+                "type": "Query.FilterOperator"
+            },
+            "static": 1,
+            "class": "Query.FilterOperator",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
+            "line": 29,
+            "description": "Loads data from IndexedDB.",
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "Query",
+                    "description": "language instance to the adapter.",
+                    "type": "Query"
+                }
+            ],
+            "return": {
+                "description": "Promise with loaded data.",
+                "type": "Ember.RSVP.Promise"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.IndexedDbAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
+            "line": 60,
+            "description": "Builds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
+            "params": [
+                {
+                    "name": "table",
+                    "description": "Table instance for loading objects.",
+                    "type": "Dexie.Table"
+                },
+                {
+                    "name": "query",
+                    "description": "Query language instance for loading data.",
+                    "type": "Query"
+                }
+            ],
+            "return": {
+                "description": "Tbale or collection that can be used with `toArray` method.",
+                "type": "Dexie.Collection|Dexie.Table"
+            },
+            "class": "Query.IndexedDbAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
+            "line": 130,
+            "description": "Returns complex filter function for `and` condition.\nResult function returns `true` if all attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "params": [
+                {
+                    "name": "filterFunctions",
+                    "description": "Array of attribute filter functions.",
+                    "type": "Function[]"
+                }
+            ],
+            "return": {
+                "description": "Complex filter function for `or` condition.",
+                "type": "Function"
+            },
+            "class": "Query.IndexedDbAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
+            "line": 152,
+            "description": "Returns complex filter function for `or` condition.\nResult function returns `true` if at least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "params": [
+                {
+                    "name": "filterFunctions",
+                    "description": "Array of attribute filter functions.",
+                    "type": "Function[]"
+                }
+            ],
+            "return": {
+                "description": "Complex filter function for `or` condition.",
+                "type": "Function"
+            },
+            "class": "Query.IndexedDbAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 33,
+            "description": "Builds JS function for filtering JS array of objects by specified logic from query.",
+            "itemtype": "method",
+            "name": "buildFunc",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "Query language instance."
+                }
+            ],
+            "return": {
+                "description": "Function for filtering JS array of objects.",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 51,
+            "description": "Builds function for windowing array of objects using data from the query.",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "Query instance."
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 80,
+            "description": "Builds function for ordering array of objects using data from the query.",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "Query instance."
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 132,
+            "description": "Builds function for selecting subset of properties from array of objects using data from the query.",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "Query instance."
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 155,
+            "description": "Builds function for filtering array of objects using predicate.",
+            "params": [
+                {
+                    "name": "predicate",
+                    "description": "Predicate for filtering array of objects."
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 188,
+            "description": "Returns function for checkign single object using predicate.",
+            "params": [
+                {
+                    "name": "predicate",
+                    "description": "Predicate for an attribute.",
+                    "type": "Query.BasePredicate"
+                }
+            ],
+            "return": {
+                "description": "Function for checkign single object.",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 288,
+            "description": "Loads value from object by specified attribute path.",
+            "params": [
+                {
+                    "name": "item",
+                    "description": "Object for load value.",
+                    "type": "Object"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Value of attribute or `undefined`.",
+                "type": "*|undefined"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 309,
+            "description": "Returns complex filter function for `and` condition.\nResult function filters array of objects and returns those, for which\nall attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "params": [
+                {
+                    "name": "filterFunctions",
+                    "description": "Array of attribute filter functions.",
+                    "type": "Function[]"
+                }
+            ],
+            "return": {
+                "description": "Complex filter function for `or` condition.",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/js-adapter.js",
+            "line": 339,
+            "description": "Returns complex filter function for `or` condition.\nResult function filters array of objects and returns those, for which\nat least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "params": [
+                {
+                    "name": "filterFunctions",
+                    "description": "Array of attribute filter functions.",
+                    "type": "Function[]"
+                }
+            ],
+            "return": {
+                "description": "Complex filter function for `or` condition.",
+                "type": "Function"
+            },
+            "class": "Query.JSAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 40,
+            "description": "Determines the pathname for a given type.\nAdditionally capitalizes the type name (requirement of Flexberry OData Server).",
+            "itemtype": "method",
+            "name": "pathForType",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The path for a given type.",
+                "type": "String"
+            },
+            "class": "Query.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 54,
+            "description": "Returns base part of URL for querying OData feed (without query part).",
+            "itemtype": "method",
+            "name": "getODataFullUrl",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "The query for building OData URL.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 69,
+            "description": "Returns query data for querying OData feed (for query part).",
+            "itemtype": "method",
+            "name": "getODataQuery",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "The query for building OData URL.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 102,
+            "description": "Returns full URL for querying OData feed (base part and query part).",
+            "itemtype": "method",
+            "name": "getODataFullUrl",
+            "params": [
+                {
+                    "name": "query",
+                    "description": "The query for building OData URL.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 171,
+            "description": "Converts specified predicate into OData filter part.",
+            "params": [
+                {
+                    "name": "predicate",
+                    "description": "Predicate to convert.",
+                    "type": "BasePredicate"
+                },
+                {
+                    "name": "prefix",
+                    "description": "Prefix for detail attributes.",
+                    "type": "String"
+                },
+                {
+                    "name": "level",
+                    "description": "Nesting level for recursion with comples predicates.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "OData filter part.",
+                "type": "String"
+            },
+            "class": "Query.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 220,
+            "description": "Converts filter operator to OData representation.",
+            "params": [
+                {
+                    "name": "operator",
+                    "description": "Operator to convert.",
+                    "type": "Query.FilterOperator"
+                }
+            ],
+            "return": {
+                "description": "Converted operator.",
+                "type": "String"
+            },
+            "class": "Query.ODataAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/order-by-clause.js",
+            "line": 31,
+            "description": "Count elements for sorting.",
+            "itemtype": "attribute",
+            "name": "length",
+            "type": "{Number}",
+            "access": "public",
+            "tagname": "",
+            "class": "Query.OrderByClause",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/order-by-clause.js",
+            "line": 42,
+            "description": "Returns object with parameters for sorting.",
+            "itemtype": "method",
+            "name": "attribute",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "Index element in array.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Object with parameters for sorting.",
+                "type": "Object"
+            },
+            "class": "Query.OrderByClause",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 37,
+            "description": "The path to the attribute for filtering.",
+            "itemtype": "property",
+            "name": "attributePath",
+            "type": "String",
+            "access": "public",
+            "tagname": "",
+            "class": "Query.SimplePredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 48,
+            "description": "The filter operator.",
+            "itemtype": "property",
+            "name": "operator",
+            "type": "Query.FilterOperator",
+            "access": "public",
+            "tagname": "",
+            "class": "Query.SimplePredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 59,
+            "description": "The value for filtering.",
+            "itemtype": "property",
+            "name": "value",
+            "type": "String|Number",
+            "access": "public",
+            "tagname": "",
+            "class": "Query.SimplePredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 70,
+            "description": "Converts this instance to string.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "Text representation of the predicate.",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.SimplePredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 139,
+            "description": "Converts this instance to string.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "Text representation of the predicate.",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.ComplexPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 173,
+            "description": "The path to the attribute for predicate.",
+            "itemtype": "property",
+            "name": "attributePath",
+            "type": "{String}",
+            "access": "public",
+            "tagname": "",
+            "class": "Query.StringPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 184,
+            "description": "The value that has to be contained in the attribute.",
+            "itemtype": "property",
+            "name": "containsValue",
+            "type": "{String}",
+            "access": "public",
+            "tagname": "",
+            "class": "Query.StringPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 195,
+            "description": "Sets the value that the attribute has to contain.",
+            "itemtype": "method",
+            "name": "contains",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The value that the attribute has to contain.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.StringPredicate"
+            },
+            "chainable": 1,
+            "class": "Query.StringPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 233,
+            "description": "The path to the detail for predicate.",
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Query.DetailPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 242,
+            "description": "The predicate for details.",
+            "return": {
+                "description": "",
+                "type": "Query.BasePredicate|null"
+            },
+            "class": "Query.DetailPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 251,
+            "description": "Is need to use predicate for all details.",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Query.DetailPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 260,
+            "description": "Is need to use predicate for any detail.",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Query.DetailPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 269,
+            "description": "Adds predicate for all details.",
+            "itemtype": "method",
+            "name": "all",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "Predicate for all details.",
+                    "multiple": true
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.DetailPredicate"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.DetailPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 285,
+            "description": "Adds predicate for any detail.",
+            "itemtype": "method",
+            "name": "any",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "Predicate for any detail.",
+                    "multiple": true
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.DetailPredicate"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.DetailPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 301,
+            "description": "Converts this instance to string.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "Text representation of the predicate.",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.DetailPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 320,
+            "description": "Combines specified predicates using `and` logic condition.",
+            "itemtype": "method",
+            "name": "and",
+            "params": [
+                {
+                    "name": "predicates",
+                    "description": "List of predicates for combining.",
+                    "type": "Query.BasePredicate",
+                    "multiple": true
+                }
+            ],
+            "return": {
+                "description": "Combined complex predicate with `and` logic.",
+                "type": "Query.ComplexPredicate"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.BasePredicate",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 334,
+            "description": "Combines specified predicates using `or` logic condition.",
+            "itemtype": "method",
+            "name": "or",
+            "params": [
+                {
+                    "name": "predicates",
+                    "description": "List of predicates for combining.",
+                    "type": "Query.BasePredicate",
+                    "multiple": true
+                }
+            ],
+            "return": {
+                "description": "Combined complex predicate with `or` logic.",
+                "type": "Query.ComplexPredicate"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.BasePredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 348,
+            "description": "Throws error if specified arguemnt is not a predicate.",
+            "params": [
+                {
+                    "name": "predicate",
+                    "description": "Object for validate.",
+                    "type": "Object"
+                }
+            ],
+            "class": "Query.BasePredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 359,
+            "description": "Creates predicate by various parameters.",
+            "itemtype": "method",
+            "name": "createPredicate",
+            "params": [
+                {
+                    "name": "args",
+                    "description": "Arguments for the predicate."
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "BasePredicate"
+            },
+            "class": "Query.BasePredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 12,
+            "description": "Flag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 17,
+            "description": "Prefix for response metadata properties names.",
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 22,
+            "description": "Normalization method for single objects.",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "Storage."
+                },
+                {
+                    "name": "typeClass",
+                    "description": "Type of received object."
+                },
+                {
+                    "name": "payload",
+                    "description": "Received object itself."
+                },
+                {
+                    "name": "id",
+                    "description": "Identifier of received object."
+                }
+            ],
+            "return": {
+                "description": "Valid {@link http://jsonapi.org/format/#document-top-level|JSON API document}.",
+                "type": "Object"
+            },
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 42,
+            "description": "Normalization method for arrays of objects.",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "Storage."
+                },
+                {
+                    "name": "typeClass",
+                    "description": "Type of received object."
+                },
+                {
+                    "name": "payload",
+                    "description": "Received objects array."
+                }
+            ],
+            "return": {
+                "description": "Valid {http://jsonapi.org/format/#document-top-level|@link JSON API document}.",
+                "type": "Object"
+            },
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 58,
+            "description": "Extracts metadata from received object.",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "Storage."
+                },
+                {
+                    "name": "type",
+                    "description": "Type of received object."
+                },
+                {
+                    "name": "payload",
+                    "description": "Received object itself."
+                }
+            ],
+            "return": {
+                "description": "Metadata extracted from received object (any format is allowed).",
+                "type": "Object"
+            },
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 77,
+            "description": "Returns key for a given attribute.",
+            "params": [
+                {
+                    "name": "attr",
+                    "description": "Attribute."
+                }
+            ],
+            "return": {
+                "description": "Key for a given attribute.",
+                "type": "String"
+            },
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 87,
+            "description": "Returns key for a given relationship.",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "Existing relationship key."
+                },
+                {
+                    "name": "relationship",
+                    "description": "Relationship."
+                }
+            ],
+            "return": {
+                "description": "Key for a given relationship.",
+                "type": "String"
+            },
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 100,
+            "description": "Return model name for relationship.",
+            "itemtype": "method",
+            "name": "modelNameFromRelationshipType",
+            "params": [
+                {
+                    "name": "relationshipType",
+                    "description": "Type of relationship (`relationship.type`).",
+                    "type": "String"
+                }
+            ],
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 110,
+            "description": "Serialization method to serialize record into hash.",
+            "params": [
+                {
+                    "name": "hash",
+                    "description": "Target hash."
+                },
+                {
+                    "name": "type",
+                    "description": "Record type."
+                },
+                {
+                    "name": "record",
+                    "description": "Record itself."
+                },
+                {
+                    "name": "options",
+                    "description": "Serialization options."
+                }
+            ],
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 127,
+            "description": "You can use this method to customize how polymorphic objects are serialized.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_serializePolymorphicType).",
+            "itemtype": "method",
+            "name": "serializePolymorphicType",
+            "params": [
+                {
+                    "name": "snapshot",
+                    "description": "",
+                    "type": "DS.Snapshot"
+                },
+                {
+                    "name": "json",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "relationship",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 144,
+            "description": "You can use this method to customize how a polymorphic relationship should be extracted.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_extractPolymorphicRelationship).",
+            "itemtype": "method",
+            "name": "extractPolymorphicRelationship",
+            "params": [
+                {
+                    "name": "relationshipType",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "relationshipHash",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 160,
+            "description": "Moves metadata from one object to another.",
+            "params": [
+                {
+                    "name": "dest",
+                    "description": "Destination object."
+                },
+                {
+                    "name": "src",
+                    "description": "Source object."
+                },
+                {
+                    "name": "withPrefix",
+                    "description": "Flag: indicates whether to include metadata prefixes into properties names or not."
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/odata.js",
+            "line": 14,
+            "description": "`serializeBelongsTo` can be used to customize how `DS.belongsTo` properties are serialized.\nIf there is set option `odata-id` at serializer and `DS.belongsTo` property is not null,\nthen property will be serialized like:\n```\nRelationName@odata.bind': RelationType(RelatedObjectId)\n```",
+            "itemtype": "method",
+            "name": "serializeBelongsTo",
+            "params": [
+                {
+                    "name": "snapshot",
+                    "description": "",
+                    "type": "DS.Snapshot"
+                },
+                {
+                    "name": "json",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "relationship",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "Serializer.OData",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/attributes.js",
+            "line": 8,
+            "description": "Define plain attribute in projection.",
+            "itemtype": "method",
+            "name": "attr",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "caption",
+                    "description": "A user-friendly caption for attribute.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Attribute options.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Projection attribute.",
+                "type": "Object"
+            },
+            "class": "DS.Projection",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/attributes.js",
+            "line": 23,
+            "description": "Define belongsTo relationship attribute in projection.",
+            "itemtype": "method",
+            "name": "belongsTo",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "caption",
+                    "description": "A user-friendly caption for attribute.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "Attribute options.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Projection attribute.",
+                "type": "Object"
+            },
+            "class": "DS.Projection",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/attributes.js",
+            "line": 43,
+            "description": "Define hasMany relationship attribute in projection.",
+            "itemtype": "method",
+            "name": "hasMany",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "caption",
+                    "description": "A user-friendly caption for attribute.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                },
+                {
+                    "name": "options",
+                    "description": "Attribute options.",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Projection attribute.",
+                "type": "Object"
+            },
+            "class": "DS.Projection",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/create.js",
+            "line": 5,
+            "description": "Creates model projection.",
+            "itemtype": "method",
+            "name": "create",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributes",
+                    "description": "Projection attributes.",
+                    "type": "Object"
+                },
+                {
+                    "name": "projectionName",
+                    "description": "The name of the projection type.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Model projection.",
+                "type": "Object"
+            },
+            "class": "DS.Projection",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 23,
+            "description": "Checks if the specified attribute path is exist.",
+            "itemtype": "method",
+            "name": "isExist",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the specified attribute path is exist.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 42,
+            "description": "Checks if the specified attribute path is a master field.",
+            "itemtype": "method",
+            "name": "isMaster",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the specified attribute path is master field.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 56,
+            "description": "Returns the type of the specified attribute path.",
+            "itemtype": "method",
+            "name": "getType",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The type of the specified attribute path.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 156,
+            "description": "Parses the specified attribute paths and returns list of separate attributes.",
+            "itemtype": "method",
+            "name": "parseAttributePath",
+            "params": [
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "List of separate attributes.",
+                "type": "Array"
+            },
+            "access": "public",
+            "tagname": "",
+            "static": 1,
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
             "line": 15,
@@ -12209,6 +15017,122 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:29"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:60"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:130"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:152"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:33"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:51"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:80"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:132"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:155"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:188"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:288"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:309"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:339"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:220"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/predicate.js:233"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/predicate.js:242"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/predicate.js:251"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/predicate.js:260"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/predicate.js:269"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/predicate.js:285"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/serializers/base.js:22"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/serializers/base.js:42"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/serializers/base.js:58"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/serializers/base.js:77"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/serializers/base.js:87"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:23"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:42"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:56"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:156"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
             "line": " ember-flexberry/addon/components/flexberry-file.js:685"
         },
         {
@@ -12246,6 +15170,114 @@
         {
             "message": "replacing incorrect tag: function with method",
             "line": " ember-flexberry/addon/utils/enum-functions.js:41"
+        },
+        {
+            "message": "Missing item type\nBuilds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:60"
+        },
+        {
+            "message": "Missing item type\nReturns complex filter function for `and` condition.\nResult function returns `true` if all attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:130"
+        },
+        {
+            "message": "Missing item type\nReturns complex filter function for `or` condition.\nResult function returns `true` if at least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:152"
+        },
+        {
+            "message": "Missing item type\nBuilds function for windowing array of objects using data from the query.",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:51"
+        },
+        {
+            "message": "Missing item type\nBuilds function for ordering array of objects using data from the query.",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:80"
+        },
+        {
+            "message": "Missing item type\nBuilds function for selecting subset of properties from array of objects using data from the query.",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:132"
+        },
+        {
+            "message": "Missing item type\nBuilds function for filtering array of objects using predicate.",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:155"
+        },
+        {
+            "message": "Missing item type\nReturns function for checkign single object using predicate.",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:188"
+        },
+        {
+            "message": "Missing item type\nLoads value from object by specified attribute path.",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:288"
+        },
+        {
+            "message": "Missing item type\nReturns complex filter function for `and` condition.\nResult function filters array of objects and returns those, for which\nall attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:309"
+        },
+        {
+            "message": "Missing item type\nReturns complex filter function for `or` condition.\nResult function filters array of objects and returns those, for which\nat least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:339"
+        },
+        {
+            "message": "Missing item type\nConverts specified predicate into OData filter part.",
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:171"
+        },
+        {
+            "message": "Missing item type\nConverts filter operator to OData representation.",
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:220"
+        },
+        {
+            "message": "Missing item type\nThe path to the detail for predicate.",
+            "line": " ember-flexberry-data/addon/query/predicate.js:233"
+        },
+        {
+            "message": "Missing item type\nThe predicate for details.",
+            "line": " ember-flexberry-data/addon/query/predicate.js:242"
+        },
+        {
+            "message": "Missing item type\nIs need to use predicate for all details.",
+            "line": " ember-flexberry-data/addon/query/predicate.js:251"
+        },
+        {
+            "message": "Missing item type\nIs need to use predicate for any detail.",
+            "line": " ember-flexberry-data/addon/query/predicate.js:260"
+        },
+        {
+            "message": "Missing item type\nThrows error if specified arguemnt is not a predicate.",
+            "line": " ember-flexberry-data/addon/query/predicate.js:348"
+        },
+        {
+            "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:12"
+        },
+        {
+            "message": "Missing item type\nPrefix for response metadata properties names.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:17"
+        },
+        {
+            "message": "Missing item type\nNormalization method for single objects.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:22"
+        },
+        {
+            "message": "Missing item type\nNormalization method for arrays of objects.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:42"
+        },
+        {
+            "message": "Missing item type\nExtracts metadata from received object.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:58"
+        },
+        {
+            "message": "Missing item type\nReturns key for a given attribute.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:77"
+        },
+        {
+            "message": "Missing item type\nReturns key for a given relationship.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:87"
+        },
+        {
+            "message": "Missing item type\nSerialization method to serialize record into hash.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:110"
+        },
+        {
+            "message": "Missing item type\nMoves metadata from one object to another.",
+            "line": " ember-flexberry-data/addon/serializers/base.js:160"
         },
         {
             "message": "Missing item type\nHandles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
