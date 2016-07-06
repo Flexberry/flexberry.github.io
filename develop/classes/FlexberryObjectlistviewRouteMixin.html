@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>PaginatedController - Flexberry Documentation</title>
+    <title>FlexberryObjectlistviewRouteMixin - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -183,20 +183,17 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>PaginatedController <small>Class</small></h1>
+    <h1>FlexberryObjectlistviewRouteMixin <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
-        <div class="uses">
-            Uses
-            <ul class="inline commas">
-                    <li><a href="&lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;.html">&lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;</a></li>
-            </ul>
+
+        <div class="extends">
+            Extends <a href="http://emberjs.com/api/classes/Ember.Mixin.html" class="crosslink external" target="_blank">Ember.Mixin</a>
         </div>
 
-
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:7</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_mixins_flexberry-objectlistview-route.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-objectlistview-route.js:7</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -205,36 +202,8 @@
 
 
 <div class="well well-small">
-    <p>Mixin for controller, that pagination support.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">// app/controllers/employees.js
-import Ember from 'ember';
-import PaginatedController from 'ember-flexberry/mixins/paginated-controller'
-export default Ember.Controller.extend(PaginatedController, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-javascript">// app/routes/employees.js
-import Ember from 'ember';
-import PaginatedRoute from 'ember-flexberry/mixins/paginated-route'
-export default Ember.Route.extend(PaginatedRoute, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/employees.hbs --&gt;
-...
-{{flexberry-objectlistview
-  ...
-  pages=pages
-  perPageValue=perPageValue
-  perPageValues=perPageValues
-  hasPreviousPage=hasPreviousPage
-  hasNextPage=hasNextPage
-  previousPage=(action 'previousPage')
-  gotoPage=(action 'gotoPage')
-  nextPage=(action 'nextPage')
-  ...
-}}
-...
-</code></pre>
+    <p>Mixin for DS.Route
+to support work with FlexberryObjectlistviewComponent.</p>
 
 </div>
 
@@ -244,7 +213,6 @@ export default Ember.Route.extend(PaginatedRoute, {
         <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
             <li><a data-toggle="tab" href="#methods">Methods</a></li>
-            <li><a data-toggle="tab" href="#properties">Properties</a></li>
     </ul>
 
     <div class="tab-content">
@@ -254,84 +222,34 @@ export default Ember.Route.extend(PaginatedRoute, {
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods">
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__addPageNumberIntoArray" data-tablink="_addPageNumberIntoArray">_addPageNumberIntoArray</a>
+                    <ul class="index-list methods extends">
+                            <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.objectListViewRowClick" data-tablink="actions.objectListViewRowClick">actions.objectListViewRowClick</a>
 
                             </li>
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__checkPageNumber" data-tablink="_checkPageNumber">_checkPageNumber</a>
+                            <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.refreshList" data-tablink="actions.refreshList">actions.refreshList</a>
 
                             </li>
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__getLastPage" data-tablink="_getLastPage">_getLastPage</a>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_apply" data-tablink="apply">apply</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.firstPage" data-tablink="actions.firstPage">actions.firstPage</a>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_detect" data-tablink="detect">detect</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.gotoPage" data-tablink="actions.gotoPage">actions.gotoPage</a>
+                            <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_objectListViewLimitPredicate" data-tablink="objectListViewLimitPredicate">objectListViewLimitPredicate</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.lastPage" data-tablink="actions.lastPage">actions.lastPage</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.nextPage" data-tablink="actions.nextPage">actions.nextPage</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.previousPage" data-tablink="actions.previousPage">actions.previousPage</a>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_reopen" data-tablink="reopen">reopen</a>
 
                             </li>
                     </ul>
                 </div>
 
-                <div class="index-section properties">
-                    <h3>Properties</h3>
-
-                    <ul class="index-list properties">
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_hasNextPage" data-tablink="hasNextPage">hasNextPage</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_hasPreviousPage" data-tablink="hasPreviousPage">hasPreviousPage</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_page" data-tablink="page">page</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_pages" data-tablink="pages">pages</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_perPage" data-tablink="perPage">perPage</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_perPageValue" data-tablink="perPageValue">perPageValue</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_perPageValues" data-tablink="perPageValues">perPageValues</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_queryParams" data-tablink="queryParams">queryParams</a>
-
-                            </li>
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_recordsTotalCount" data-tablink="recordsTotalCount">recordsTotalCount</a>
-
-                            </li>
-                    </ul>
-                </div>
 
 
         </div>
@@ -339,26 +257,20 @@ export default Ember.Route.extend(PaginatedRoute, {
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method__addPageNumberIntoArray" class="method item private">
-                        <h3 class="name"><code>_addPageNumberIntoArray</code></h3>
+                    <div id="method_actions.objectListViewRowClick" class="method item public">
+                        <h3 class="name"><code>actions.objectListViewRowClick</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>arr</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>pageNumber</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>isEllipsis</code>
+                                            <code>record</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                     
                     
-                            <span class="flag private">private</span>
+                            <span class="flag public">public</span>
                     
                     
                     
@@ -367,7 +279,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l289"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:289</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-objectlistview-route.js.html#l17"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-objectlistview-route.js:17</code></a>
                             </p>
                     
                     
@@ -375,7 +287,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                         </div>
                     
                         <div class="description">
-                            <p>Add page number into array.</p>
+                            <p>Table row click handler.</p>
                     
                         </div>
                     
@@ -384,34 +296,12 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">arr</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                                            <code class="param-name">record</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/Ember.Object.html" class="crosslink external" target="_blank">Ember.Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Array pages.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">pageNumber</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Number of page.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">isEllipsis</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>If <code>true</code> this page not showing in list.</p>
+                                            <p>Record related to clicked table row</p>
                     
                                         </div>
                     
@@ -421,13 +311,106 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                     
                     </div>
-                    <div id="method__checkPageNumber" class="method item private">
-                        <h3 class="name"><code>_checkPageNumber</code></h3>
+                    <div id="method_actions.refreshList" class="method item public">
+                        <h3 class="name"><code>actions.refreshList</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-objectlistview-route.js.html#l29"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-objectlistview-route.js:29</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This action is called when user click on refresh button.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_apply" class="method item private inherited">
+                        <h3 class="name"><code>apply</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>pageNum</code>
+                                            <code>obj</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_apply">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l574"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:574</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">obj</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        applied object
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_detect" class="method item private inherited">
+                        <h3 class="name"><code>detect</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>obj</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
@@ -444,9 +427,9 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l320"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:320</code></a>
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_detect">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l607"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:607</code></a>
                             </p>
                     
                     
@@ -454,8 +437,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                         </div>
                     
                         <div class="description">
-                            <p>Check there is a page with this number.</p>
-                    
+                            
                         </div>
                     
                             <div class="params">
@@ -463,13 +445,12 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">pageNum</code>
-                                            <span class="type">Integer</span>
+                                            <code class="param-name">obj</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
-                                            <p>Number of page.</p>
-                    
+                                             
                                         </div>
                     
                                     </li>
@@ -481,29 +462,162 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
-                                        <p>If page exists, return <code>pageNum</code>, else, return <code>lastPage</code>.</p>
-                    
                                 </div>
                             </div>
                     
                     </div>
-                    <div id="method__getLastPage" class="method item private">
-                        <h3 class="name"><code>_getLastPage</code></h3>
+                    <div id="method_objectListViewLimitPredicate" class="method item public">
+                        <h3 class="name"><code>objectListViewLimitPredicate</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>perPage</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>count</code>
+                                            <code>options</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type">Integer</span>
+                                <span class="type">BasePredicate</span>
                             </span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_flexberry-objectlistview-route.js.html#l40"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;flexberry-objectlistview-route.js:40</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>It forms the limit predicate for loaded data.</p>
+                    <p>By default it returns <code>undefined</code>.
+                    In order to set specific limit predicate, this method have to be overriden on applied-specific route.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">options</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Method options</p>
+                    
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name optional">[modelName]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Type of records to load</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[projectionName]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Projection name to load data by</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name optional">[params]</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Current route query parameters</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate</span>:
+                                        <p>The predicate to limit loaded data</p>
+                    
+                                </div>
+                            </div>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-js">// app/routes/limit-function-example.js
+                    import Ember from 'ember';
+                    import ListFormRoute from 'ember-flexberry/routes/list-form';
+                    import { StringPredicate } from 'ember-flexberry-data/query/predicate';
+                    
+                    export default ListFormRoute.extend({
+                      modelProjection: 'FolvWithLimitFunctionExampleView',
+                    
+                      modelName: 'ember-flexberry-dummy-suggestion',
+                    
+                      objectListViewLimitPredicate: function(options) {
+                        let methodOptions = Ember.merge({
+                          modelName: undefined,
+                          projectionName: undefined,
+                          params: undefined
+                        }, options);
+                    
+                        if (methodOptions.modelName === this.get('modelName') &amp;&amp;
+                            methodOptions.projectionName === this.get('modelProjection')) {
+                          let currentPerPageValue = methodOptions.params ? methodOptions.params.perPage : undefined;
+                          let limitFunction = (currentPerPageValue &amp;&amp; currentPerPageValue % 2 === 0) ?
+                                              new StringPredicate('address').contains('S') :
+                                              new StringPredicate('address').contains('п');
+                          return limitFunction;
+                        }
+                    
+                        return undefined;
+                      }
+                    });
+                    
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div id="method_reopen" class="method item private inherited">
+                        <h3 class="name"><code>reopen</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>arguments</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
                     
                     
                             <span class="flag private">private</span>
@@ -513,9 +627,9 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                     
                         <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l307"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:307</code></a>
+                                    <p>Inherited from
+                                    <a href="http://emberjs.com/api/classes/Ember.Mixin.html#method_reopen">Ember.Mixin</a>:
+                            <a href="http://emberjs.com/api/files/packages_ember-metal_lib_mixin.js.html#l536"><code>packages&#x2F;ember-metal&#x2F;lib&#x2F;mixin.js:536</code></a>
                             </p>
                     
                     
@@ -523,8 +637,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                         </div>
                     
                         <div class="description">
-                            <p>Get number last page.</p>
-                    
+                            
                         </div>
                     
                             <div class="params">
@@ -532,116 +645,13 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">perPage</code>
-                                            <span class="type">Integer</span>
+                                            <code class="param-name">arguments</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
-                    
-                                        <div class="param-description">
-                                            <p>Count records on page.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
-                    
+                                            <span class="flag multiple" title="This argument may occur one or more times.">multiple</span>
                     
                                         <div class="param-description">
-                                            <p>Total count records.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Integer</span>:
-                                        <p>Number last page.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-                    <div id="method_actions.firstPage" class="method item">
-                        <h3 class="name"><code>actions.firstPage</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l279"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:279</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Transition to first page.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_actions.gotoPage" class="method item">
-                        <h3 class="name"><code>actions.gotoPage</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>pageNum</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l236"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:236</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Transition to page with number.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">pageNum</code>
-                                            <span class="type">Integer</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Number of page.</p>
-                    
+                                             
                                         </div>
                     
                                     </li>
@@ -650,337 +660,8 @@ export default Ember.Route.extend(PaginatedRoute, {
                     
                     
                     </div>
-                    <div id="method_actions.lastPage" class="method item">
-                        <h3 class="name"><code>actions.lastPage</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l269"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:269</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Transition to last page.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_actions.nextPage" class="method item">
-                        <h3 class="name"><code>actions.nextPage</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l247"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:247</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Transition to next page.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_actions.previousPage" class="method item">
-                        <h3 class="name"><code>actions.previousPage</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l258"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:258</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Transition to previous page.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
             </div>
 
-            <div id="properties" class="tab-pane">
-                <h2 class="off-left">Properties</h2>
-
-                    <div id="property_hasNextPage" class="property item">
-                        <h3 class="name"><code>hasNextPage</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l129"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:129</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>If <code>true</code> next page exists.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_hasPreviousPage" class="property item">
-                        <h3 class="name"><code>hasPreviousPage</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l142"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:142</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>If <code>true</code> previous page exists.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_page" class="property item">
-                        <h3 class="name"><code>page</code></h3>
-                        <span class="type">Integer</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l49"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:49</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Start page.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> 1</p>
-                    
-                    
-                    </div>
-                    <div id="property_pages" class="property item">
-                        <h3 class="name"><code>pages</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l153"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:153</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Array of objects corresponding to list of pages.</p>
-                    <p>Each page is presented as object with following properties:</p>
-                    <ul>
-                    <li><strong>number</strong> - Number of page.</li>
-                    <li><strong>isCurrent</strong> - Page is current.</li>
-                    <li><strong>isEllipsis</strong> - If <code>true</code> this page not showing in list.</li>
-                    </ul>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_perPage" class="property item">
-                        <h3 class="name"><code>perPage</code></h3>
-                        <span class="type">Integer</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l58"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:58</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Count records on page.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> 5</p>
-                    
-                    
-                    </div>
-                    <div id="property_perPageValue" class="property item">
-                        <h3 class="name"><code>perPageValue</code></h3>
-                        <span class="type">Integer</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l76"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:76</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Get or set <code>perPage</code> value.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="property_perPageValues" class="property item">
-                        <h3 class="name"><code>perPageValues</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l67"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:67</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>User selectable options values for <code>perPage</code>.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> [5, 10, 20, 50]</p>
-                    
-                    
-                    </div>
-                    <div id="property_queryParams" class="property item">
-                        <h3 class="name"><code>queryParams</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l226"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:226</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Defines which query parameters the controller accepts. <a href="http://emberjs.com/api/classes/Ember.Controller.html#property_queryParams">More info.</a>.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> [&#x27;page&#x27;, &#x27;perPage&#x27;]</p>
-                    
-                    
-                    </div>
-                    <div id="property_recordsTotalCount" class="property item">
-                        <h3 class="name"><code>recordsTotalCount</code></h3>
-                        <span class="type">Integer</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_paginated-controller.js.html#l118"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;paginated-controller.js:118</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Total count records.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-            </div>
 
 
     </div>

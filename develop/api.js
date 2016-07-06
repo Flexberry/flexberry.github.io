@@ -34,6 +34,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "FlexberryMenu",
         "FlexberryMenuitem",
         "FlexberryObjectlistview",
+        "FlexberryObjectlistviewRouteMixin",
         "FlexberrySimpledatetime",
         "FlexberryTextarea",
         "FlexberryTextbox",

@@ -735,7 +735,9 @@
         "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js": {
             "name": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "FlexberryObjectlistviewRouteMixin": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -1139,6 +1141,7 @@
                 "FlexberryGroupeditRouteMixin": 1,
                 "FlexberryLookupCompatibleComponent": 1,
                 "FlexberryLookupMixin": 1,
+                "FlexberryObjectlistviewRouteMixin": 1,
                 "LimitedController": 1,
                 "LimitedRouteMixin": 1,
                 "ModalApplicationRoute": 1,
@@ -2297,6 +2300,25 @@
                 "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>",
                 "ReloadListMixin"
             ]
+        },
+        "FlexberryObjectlistviewRouteMixin": {
+            "name": "FlexberryObjectlistviewRouteMixin",
+            "shortname": "FlexberryObjectlistviewRouteMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "ListFormRoute"
+            ],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
+            "line": 7,
+            "description": "Mixin for {{#crossLink \"DS.Route\"}}Route{{/crossLink}}\nto support work with {{#crossLink \"FlexberryObjectlistviewComponent\"}}{{/crossLink}}.",
+            "extends": "Ember.Mixin",
+            "access": "public",
+            "tagname": ""
         },
         "LimitedController": {
             "name": "LimitedController",
@@ -4990,7 +5012,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 102,
+            "line": 106,
             "description": "Components class names bindings.",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -5001,7 +5023,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 111,
+            "line": 115,
             "description": "Flag: indicates whether to show preview element for images or not.",
             "itemtype": "property",
             "name": "showPreview",
@@ -5012,14 +5034,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 120,
+            "line": 124,
             "description": "Handles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
             "class": "Mobile.FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 137,
+            "line": 141,
             "description": "Collapses and clears menu after item selection.",
             "itemtype": "method",
             "name": "_collapseMenu",
@@ -5428,7 +5450,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 189,
+            "line": 188,
             "description": "Increase column in list (exchange previous column)",
             "itemtype": "method",
             "name": "actions.rowUp",
@@ -5444,7 +5466,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 222,
+            "line": 221,
             "description": "Decrease column in list (exchange  next column)",
             "itemtype": "method",
             "name": "actions.rowDown",
@@ -5460,7 +5482,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 258,
+            "line": 257,
             "description": "Apply settings specified in the interface as DEFAULT values",
             "itemtype": "method",
             "name": "actions.apply",
@@ -5469,7 +5491,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 283,
+            "line": 282,
             "description": "Save named settings specified in the interface as named values",
             "itemtype": "method",
             "name": "actions.apply",
@@ -12685,7 +12707,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
-            "line": 9,
+            "line": 17,
             "description": "Table row click handler.",
             "itemtype": "method",
             "name": "actions.objectListViewRowClick",
@@ -12698,23 +12720,23 @@
                     "type": "Ember.Object"
                 }
             ],
-            "class": "LimitedController",
+            "class": "FlexberryObjectlistviewRouteMixin",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
-            "line": 21,
+            "line": 29,
             "description": "This action is called when user click on refresh button.",
             "itemtype": "method",
             "name": "actions.refreshList",
             "access": "public",
             "tagname": "",
-            "class": "LimitedController",
+            "class": "FlexberryObjectlistviewRouteMixin",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
-            "line": 32,
+            "line": 40,
             "description": "It forms the limit predicate for loaded data.\n\nBy default it returns `undefined`.\nIn order to set specific limit predicate, this method have to be overriden on applied-specific route.",
             "example": [
                 "\n  ``` js\n  // app/routes/limit-function-example.js\n  import Ember from 'ember';\n  import ListFormRoute from 'ember-flexberry/routes/list-form';\n  import { StringPredicate } from 'ember-flexberry-data/query/predicate';\n\n  export default ListFormRoute.extend({\n    modelProjection: 'FolvWithLimitFunctionExampleView',\n\n    modelName: 'ember-flexberry-dummy-suggestion',\n\n    objectListViewLimitPredicate: function(options) {\n      let methodOptions = Ember.merge({\n        modelName: undefined,\n        projectionName: undefined,\n        params: undefined\n      }, options);\n\n      if (methodOptions.modelName === this.get('modelName') &&\n          methodOptions.projectionName === this.get('modelProjection')) {\n        let currentPerPageValue = methodOptions.params ? methodOptions.params.perPage : undefined;\n        let limitFunction = (currentPerPageValue && currentPerPageValue % 2 === 0) ?\n                            new StringPredicate('address').contains('S') :\n                            new StringPredicate('address').contains('п');\n        return limitFunction;\n      }\n\n      return undefined;\n    }\n  });\n\n  ```"
@@ -12754,7 +12776,7 @@
                 "description": "The predicate to limit loaded data",
                 "type": "BasePredicate"
             },
-            "class": "LimitedController",
+            "class": "FlexberryObjectlistviewRouteMixin",
             "module": "ember-flexberry"
         },
         {
@@ -15306,7 +15328,7 @@
         },
         {
             "message": "Missing item type\nHandles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
-            "line": " ember-flexberry/addon/components/mobile/flexberry-file.js:120"
+            "line": " ember-flexberry/addon/components/mobile/flexberry-file.js:124"
         },
         {
             "message": "Missing item type\nInitializes component properties.",
