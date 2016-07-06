@@ -1523,7 +1523,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Serializer",
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 4,
+            "line": 5,
             "description": "Base serializer class."
         },
         "Serializer.OData": {
@@ -4388,7 +4388,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 12,
+            "line": 13,
             "description": "Flag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
@@ -4396,7 +4396,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 17,
+            "line": 18,
             "description": "Prefix for response metadata properties names.",
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
@@ -4404,7 +4404,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 22,
+            "line": 23,
             "description": "Normalization method for single objects.",
             "params": [
                 {
@@ -4434,7 +4434,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 42,
+            "line": 43,
             "description": "Normalization method for arrays of objects.",
             "params": [
                 {
@@ -4460,7 +4460,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 58,
+            "line": 59,
             "description": "Extracts metadata from received object.",
             "params": [
                 {
@@ -4486,7 +4486,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 77,
+            "line": 78,
             "description": "Returns key for a given attribute.",
             "params": [
                 {
@@ -4504,7 +4504,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 87,
+            "line": 88,
             "description": "Returns key for a given relationship.",
             "params": [
                 {
@@ -4526,7 +4526,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 100,
+            "line": 101,
             "description": "Return model name for relationship.",
             "itemtype": "method",
             "name": "modelNameFromRelationshipType",
@@ -4543,7 +4543,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 110,
+            "line": 111,
             "description": "Serialization method to serialize record into hash.",
             "params": [
                 {
@@ -4569,7 +4569,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 127,
+            "line": 128,
             "description": "You can use this method to customize how polymorphic objects are serialized.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_serializePolymorphicType).",
             "itemtype": "method",
             "name": "serializePolymorphicType",
@@ -4596,7 +4596,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 144,
+            "line": 145,
             "description": "You can use this method to customize how a polymorphic relationship should be extracted.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_extractPolymorphicRelationship).",
             "itemtype": "method",
             "name": "extractPolymorphicRelationship",
@@ -4612,13 +4612,38 @@
                     "type": "Object"
                 }
             ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 160,
+            "line": 165,
+            "description": "This method is used to convert each JSON root key in the payload into a modelName that it can use to look up the appropriate model for that part of the payload.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_modelNameFromPayloadKey).",
+            "itemtype": "method",
+            "name": "modelNameFromPayloadKey",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 177,
             "description": "Moves metadata from one object to another.",
             "params": [
                 {
@@ -4889,7 +4914,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 156,
+            "line": 161,
             "description": "Parses the specified attribute paths and returns list of separate attributes.",
             "itemtype": "method",
             "name": "parseAttributePath",
@@ -15097,23 +15122,23 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:22"
+            "line": " ember-flexberry-data/addon/serializers/base.js:23"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:42"
+            "line": " ember-flexberry-data/addon/serializers/base.js:43"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:58"
+            "line": " ember-flexberry-data/addon/serializers/base.js:59"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:77"
+            "line": " ember-flexberry-data/addon/serializers/base.js:78"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:87"
+            "line": " ember-flexberry-data/addon/serializers/base.js:88"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -15129,7 +15154,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/utils/information.js:156"
+            "line": " ember-flexberry-data/addon/utils/information.js:161"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -15245,39 +15270,39 @@
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:12"
+            "line": " ember-flexberry-data/addon/serializers/base.js:13"
         },
         {
             "message": "Missing item type\nPrefix for response metadata properties names.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:17"
+            "line": " ember-flexberry-data/addon/serializers/base.js:18"
         },
         {
             "message": "Missing item type\nNormalization method for single objects.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:22"
+            "line": " ember-flexberry-data/addon/serializers/base.js:23"
         },
         {
             "message": "Missing item type\nNormalization method for arrays of objects.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:42"
+            "line": " ember-flexberry-data/addon/serializers/base.js:43"
         },
         {
             "message": "Missing item type\nExtracts metadata from received object.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:58"
+            "line": " ember-flexberry-data/addon/serializers/base.js:59"
         },
         {
             "message": "Missing item type\nReturns key for a given attribute.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:77"
+            "line": " ember-flexberry-data/addon/serializers/base.js:78"
         },
         {
             "message": "Missing item type\nReturns key for a given relationship.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:87"
+            "line": " ember-flexberry-data/addon/serializers/base.js:88"
         },
         {
             "message": "Missing item type\nSerialization method to serialize record into hash.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:110"
+            "line": " ember-flexberry-data/addon/serializers/base.js:111"
         },
         {
             "message": "Missing item type\nMoves metadata from one object to another.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:160"
+            "line": " ember-flexberry-data/addon/serializers/base.js:177"
         },
         {
             "message": "Missing item type\nHandles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
