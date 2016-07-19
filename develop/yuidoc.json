@@ -4,7 +4,7 @@
   "options": {
     "linkNatives": true,
     "paths": [
-      "./ember-flexberry-projections/addon",
+      "./ember-flexberry-data/addon",
       "./ember-flexberry/addon"
     ],
     "outdir": ".",
@@ -14,11 +14,11 @@
       "data": [
         {
           "base": "http://emberjs.com/api/",
-          "json": "http://builds.emberjs.com/tags/v2.3.0/ember-docs.json"
+          "json": "http://builds.emberjs.com/tags/v2.4.6/ember-docs.json"
         },
         {
           "base": "http://emberjs.com/api/data/",
-          "json": "http://builds.emberjs.com/tags/v2.3.0/ember-data-docs.json"
+          "json": "http://builds.emberjs.com/tags/v2.4.3/ember-data-docs.json"
         }
       ]
     }
