@@ -8,44 +8,77 @@
             "name": "ember-flexberry-data/addon/adapters/odata.js",
             "modules": {},
             "classes": {
-                "DS.ODataAdapter": 1
+                "Adapter.Odata": 1
             },
             "fors": {},
             "namespaces": {
-                "DS": 1
+                "Adapter": 1
+            }
+        },
+        "ember-flexberry-data/addon/adapters/offline.js": {
+            "name": "ember-flexberry-data/addon/adapters/offline.js",
+            "modules": {},
+            "classes": {
+                "Adapter.Offline": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Adapter": 1
             }
         },
         "ember-flexberry-data/addon/mixins/adapter.js": {
             "name": "ember-flexberry-data/addon/mixins/adapter.js",
             "modules": {},
             "classes": {
-                "DS.Adapter": 1
+                "Projection.AdapterMixin": 1
             },
             "fors": {},
             "namespaces": {
-                "DS": 1
+                "Projection": 1
+            }
+        },
+        "ember-flexberry-data/addon/mixins/offline-model.js": {
+            "name": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "modules": {},
+            "classes": {
+                "Offline.ModelMixin": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Offline": 1
             }
         },
         "ember-flexberry-data/addon/mixins/store.js": {
             "name": "ember-flexberry-data/addon/mixins/store.js",
             "modules": {},
             "classes": {
-                "DS.Store": 1
+                "Projection.StoreMixin": 1
             },
             "fors": {},
             "namespaces": {
-                "DS": 1
+                "Projection": 1
             }
         },
         "ember-flexberry-data/addon/models/model.js": {
             "name": "ember-flexberry-data/addon/models/model.js",
             "modules": {},
             "classes": {
-                "DS.Model": 1
+                "Projection.Model": 1
             },
             "fors": {},
             "namespaces": {
-                "DS": 1
+                "Projection": 1
+            }
+        },
+        "ember-flexberry-data/addon/models/offline-model.js": {
+            "name": "ember-flexberry-data/addon/models/offline-model.js",
+            "modules": {},
+            "classes": {
+                "Offline.Model": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Offline": 1
             }
         },
         "ember-flexberry-data/addon/query/base-adapter.js": {
@@ -122,7 +155,7 @@
             "name": "ember-flexberry-data/addon/query/js-adapter.js",
             "modules": {},
             "classes": {
-                "Query.JSAdapter": 1
+                "Query.JsAdapter": 1
             },
             "fors": {},
             "namespaces": {
@@ -133,6 +166,7 @@
             "name": "ember-flexberry-data/addon/query/odata-adapter.js",
             "modules": {},
             "classes": {
+                "Query.OdataAdapter": 1,
                 "Query.ODataAdapter": 1
             },
             "fors": {},
@@ -183,11 +217,55 @@
             "name": "ember-flexberry-data/addon/serializers/odata.js",
             "modules": {},
             "classes": {
-                "Serializer.OData": 1
+                "Serializer.Odata": 1
             },
             "fors": {},
             "namespaces": {
                 "Serializer": 1
+            }
+        },
+        "ember-flexberry-data/addon/serializers/offline.js": {
+            "name": "ember-flexberry-data/addon/serializers/offline.js",
+            "modules": {},
+            "classes": {
+                "Serializer.Offline": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Serializer": 1
+            }
+        },
+        "ember-flexberry-data/addon/services/offline-globals.js": {
+            "name": "ember-flexberry-data/addon/services/offline-globals.js",
+            "modules": {},
+            "classes": {
+                "Offline.GlobalsService": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Offline": 1
+            }
+        },
+        "ember-flexberry-data/addon/stores/base-store.js": {
+            "name": "ember-flexberry-data/addon/stores/base-store.js",
+            "modules": {},
+            "classes": {
+                "Offline.Store": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Offline": 1
+            }
+        },
+        "ember-flexberry-data/addon/stores/local-store.js": {
+            "name": "ember-flexberry-data/addon/stores/local-store.js",
+            "modules": {},
+            "classes": {
+                "Offline.LocalStore": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Offline": 1
             }
         },
         "ember-flexberry-data/addon/utils/attributes.js": {
@@ -195,7 +273,7 @@
             "modules": {},
             "classes": {},
             "fors": {
-                "DS.Projection": 1
+                "Projection": 1
             },
             "namespaces": {}
         },
@@ -204,8 +282,15 @@
             "modules": {},
             "classes": {},
             "fors": {
-                "DS.Projection": 1
+                "Projection": 1
             },
+            "namespaces": {}
+        },
+        "ember-flexberry-data/addon/utils/generate-unique-id.js": {
+            "name": "ember-flexberry-data/addon/utils/generate-unique-id.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
             "namespaces": {}
         },
         "ember-flexberry-data/addon/utils/information.js": {
@@ -225,11 +310,25 @@
                 "ember-flexberry-data": 1
             },
             "classes": {
-                "DS.Projection": 1
+                "Projection": 1,
+                "Offline": 1,
+                "Adapter": 1,
+                "Serializer": 1,
+                "Query": 1,
+                "Utils": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-data/addon/syncer.js": {
+            "name": "ember-flexberry-data/addon/syncer.js",
+            "modules": {},
+            "classes": {
+                "Offline.Syncer": 1
             },
             "fors": {},
             "namespaces": {
-                "DS": 1
+                "Offline": 1
             }
         },
         "ember-flexberry/addon/components/mobile/flexberry-file.js": {
@@ -1039,17 +1138,21 @@
             "submodules": {},
             "elements": {},
             "classes": {
-                "DS.ODataAdapter": 1,
-                "DS.Adapter": 1,
-                "DS.Store": 1,
-                "DS.Model": 1,
+                "Adapter.Odata": 1,
+                "Adapter.Offline": 1,
+                "Projection.AdapterMixin": 1,
+                "Offline.ModelMixin": 1,
+                "Projection.StoreMixin": 1,
+                "Projection.Model": 1,
+                "Offline.Model": 1,
                 "Query.BaseAdapter": 1,
                 "Query.BaseBuilder": 1,
                 "Query.Builder": 1,
                 "Query.Condition": 1,
                 "Query.FilterOperator": 1,
                 "Query.IndexedDbAdapter": 1,
-                "Query.JSAdapter": 1,
+                "Query.JsAdapter": 1,
+                "Query.OdataAdapter": 1,
                 "Query.ODataAdapter": 1,
                 "Query.OrderByClause": 1,
                 "Query.BasePredicate": 1,
@@ -1058,26 +1161,38 @@
                 "Query.StringPredicate": 1,
                 "Query.DetailPredicate": 1,
                 "Serializer.Base": 1,
-                "Serializer.OData": 1,
-                "DS.Projection": 1,
-                "Utils.Information": 1
+                "Serializer.Odata": 1,
+                "Serializer.Offline": 1,
+                "Offline.GlobalsService": 1,
+                "Offline.Store": 1,
+                "Offline.LocalStore": 1,
+                "Projection": 1,
+                "Utils.Information": 1,
+                "Offline": 1,
+                "Adapter": 1,
+                "Serializer": 1,
+                "Query": 1,
+                "Utils": 1,
+                "Offline.Syncer": 1
             },
             "fors": {
                 "Query.Condition": 1,
                 "Query.FilterOperator": 1,
                 "BasePredicate": 1,
                 "Query.BasePredicate": 1,
-                "DS.Projection": 1
+                "Projection": 1
             },
             "namespaces": {
-                "DS": 1,
+                "Adapter": 1,
+                "Projection": 1,
+                "Offline": 1,
                 "Query": 1,
                 "Serializer": 1,
                 "Utils": 1
             },
             "tag": "main",
-            "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 4,
+            "file": "ember-flexberry-data/addon/syncer.js",
+            "line": 7,
             "description": "Ember Addon that adds support of projections in models.",
             "extends": "DS.RESTAdapter",
             "access": "public",
@@ -1186,61 +1301,115 @@
         }
     },
     "classes": {
-        "DS.ODataAdapter": {
-            "name": "DS.ODataAdapter",
-            "shortname": "DS.ODataAdapter",
+        "Adapter.Odata": {
+            "name": "Adapter.Odata",
+            "shortname": "Adapter.Odata",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
             "module": "ember-flexberry-data",
-            "namespace": "DS",
+            "namespace": "Adapter",
             "file": "ember-flexberry-data/addon/adapters/odata.js",
             "line": 7,
             "description": "The OData adapter class.\nUses Flexberry Query as a language for requesting server."
         },
-        "DS.Adapter": {
-            "name": "DS.Adapter",
-            "shortname": "DS.Adapter",
+        "Adapter.Offline": {
+            "name": "Adapter.Offline",
+            "shortname": "Adapter.Offline",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
             "module": "ember-flexberry-data",
-            "namespace": "DS",
+            "namespace": "Adapter",
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 8,
+            "description": "Default adapter for {{#crossLink \"Offline.LocalStore\"}}{{/crossLink}}.",
+            "extends": "<a href=\"https://github.com/Flexberry/ember-localforage-adapter/blob/master/addon/adapters/localforage.js\">LocalforageAdapter</a>"
+        },
+        "Projection.AdapterMixin": {
+            "name": "Projection.AdapterMixin",
+            "shortname": "Projection.AdapterMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Projection",
             "file": "ember-flexberry-data/addon/mixins/adapter.js",
             "line": 3,
             "description": "Mixin for {{#crossLink \"DS.Adapter\"}}Adapter{{/crossLink}} to support\nfetching models using projection."
         },
-        "DS.Store": {
-            "name": "DS.Store",
-            "shortname": "DS.Store",
+        "Offline.ModelMixin": {
+            "name": "Offline.ModelMixin",
+            "shortname": "Offline.ModelMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "Offline.Model"
+            ],
+            "module": "ember-flexberry-data",
+            "namespace": "Offline",
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 8,
+            "description": "Mixin for Ember models.\nAdds metadata properties that can be used to resolve synchronization conflicts.\nCreation and changing date and time of record will be filled with current date and time on model saving.\nIt's recommended to use this mixin when model class extends subclass of [DS.Model](http://emberjs.com/api/data/classes/DS.Model.html) or\nincludes other mixins, i.e. it's not inherited directly from [DS.Model](http://emberjs.com/api/data/classes/DS.Model.html).\nAlso it can be used explicitly when it is not necessary to use projections for particular model in application.\nIf model class inherited directly from [DS.Model](http://emberjs.com/api/data/classes/DS.Model.html) and it's planned to use projections,\nthen it's recommended to extend model class from {{#crossLink \"Offline.Model\"}}{{/crossLink}}.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>",
+            "access": "public",
+            "tagname": ""
+        },
+        "Projection.StoreMixin": {
+            "name": "Projection.StoreMixin",
+            "shortname": "Projection.StoreMixin",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
             "module": "ember-flexberry-data",
-            "namespace": "DS",
+            "namespace": "Projection",
             "file": "ember-flexberry-data/addon/mixins/store.js",
             "line": 5,
             "description": "Mixin for {{#crossLink \"DS.Store\"}}Store{{/crossLink}} to support\nfetching models using projection."
         },
-        "DS.Model": {
-            "name": "DS.Model",
-            "shortname": "DS.Model",
+        "Projection.Model": {
+            "name": "Projection.Model",
+            "shortname": "Projection.Model",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
             "module": "ember-flexberry-data",
-            "namespace": "DS",
+            "namespace": "Projection",
             "file": "ember-flexberry-data/addon/models/model.js",
             "line": 5,
             "description": "Model that supports projections."
+        },
+        "Offline.Model": {
+            "name": "Offline.Model",
+            "shortname": "Offline.Model",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Offline",
+            "file": "ember-flexberry-data/addon/models/offline-model.js",
+            "line": 10,
+            "description": "Model with projections and additional metadata for offline support.\nAll metadata properties will be added to all projections (also for relationships).",
+            "extends": "<a href=\"http://flexberry.github.io/Documentation/develop/classes/Projection.Model.html\">DS.Projection.Model</a>",
+            "uses": [
+                "Offline.ModelMixin"
+            ],
+            "access": "public",
+            "tagname": ""
         },
         "Query.BaseAdapter": {
             "name": "Query.BaseAdapter",
@@ -1338,9 +1507,9 @@
             "line": 10,
             "description": "Class of query language adapter that allows to load data from IndexedDB."
         },
-        "Query.JSAdapter": {
-            "name": "Query.JSAdapter",
-            "shortname": "Query.JSAdapter",
+        "Query.JsAdapter": {
+            "name": "Query.JsAdapter",
+            "shortname": "Query.JsAdapter",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -1351,6 +1520,20 @@
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
             "line": 7,
             "description": "Class of query language adapter that translates query object into JS function which\nfilters native JS array of objects by specified logic.\n\n```js\nconst data = [\n  { Name: 'A', Surname: 'X', Age: 10 },\n  { Name: 'B', Surname: 'Y', Age: 11 },\n  { Name: 'B', Surname: 'Z', Age: 12 }\n];\n\nlet adapter = new JSAdapter();\nlet builder = new QueryBuilder(store, 'AnyUnknownModel').where('Name', FilterOperator.Eq, 'B');\nlet filter = adapter.buildFunc(builder.build());\n\nlet result = filter(data); // Y and Z\n```\n\nAll filters uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation))."
+        },
+        "Query.OdataAdapter": {
+            "name": "Query.OdataAdapter",
+            "shortname": "Query.OdataAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
+            "line": 9,
+            "description": "Class of query adapter that translates query object into OData URL."
         },
         "Query.ODataAdapter": {
             "name": "Query.ODataAdapter",
@@ -1529,12 +1712,12 @@
             "module": "ember-flexberry-data",
             "namespace": "Serializer",
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 4,
+            "line": 5,
             "description": "Base serializer class."
         },
-        "Serializer.OData": {
-            "name": "Serializer.OData",
-            "shortname": "Serializer.OData",
+        "Serializer.Odata": {
+            "name": "Serializer.Odata",
+            "shortname": "Serializer.Odata",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -1546,18 +1729,82 @@
             "line": 6,
             "description": "Serializer class for OData."
         },
-        "DS.Projection": {
-            "name": "DS.Projection",
-            "shortname": "DS.Projection",
+        "Serializer.Offline": {
+            "name": "Serializer.Offline",
+            "shortname": "Serializer.Offline",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
             "module": "ember-flexberry-data",
-            "namespace": "DS",
+            "namespace": "Serializer",
+            "file": "ember-flexberry-data/addon/serializers/offline.js",
+            "line": 9,
+            "description": "Base serializer for {{#crossLink \"Offline.LocalStore\"}}{{/crossLink}}.",
+            "extends": "<a href=\"https://github.com/Flexberry/ember-localforage-adapter/blob/master/addon/serializers/localforage.js\">LocalforageSerializer</a>"
+        },
+        "Offline.GlobalsService": {
+            "name": "Offline.GlobalsService",
+            "shortname": "Offline.GlobalsService",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Offline",
+            "file": "ember-flexberry-data/addon/services/offline-globals.js",
+            "line": 7,
+            "description": "Service for operate with global online and offline properties and events.",
+            "extends": "Ember.Service",
+            "access": "public",
+            "tagname": ""
+        },
+        "Offline.Store": {
+            "name": "Offline.Store",
+            "shortname": "Offline.Store",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Offline",
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 7,
+            "description": "Base class for application store.\nservice:store should point to instance of that class.",
+            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>"
+        },
+        "Offline.LocalStore": {
+            "name": "Offline.LocalStore",
+            "shortname": "Offline.LocalStore",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Offline",
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 9,
+            "description": "Store that used in offline mode by default.",
+            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>",
+            "access": "private",
+            "tagname": ""
+        },
+        "Projection": {
+            "name": "Projection",
+            "shortname": "Projection",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 14,
+            "line": 58,
             "description": "This namespace contains classes and methods for working with projections.",
             "static": 1,
             "access": "public",
@@ -1576,6 +1823,106 @@
             "file": "ember-flexberry-data/addon/utils/information.js",
             "line": 4,
             "description": "Class for loading metadata about models."
+        },
+        "Offline": {
+            "name": "Offline",
+            "shortname": "Offline",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "",
+            "file": "ember-flexberry-data/addon/index.js",
+            "line": 43,
+            "description": "This namespace contains classes to support work in offline mode.",
+            "static": 1,
+            "access": "public",
+            "tagname": ""
+        },
+        "Adapter": {
+            "name": "Adapter",
+            "shortname": "Adapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "",
+            "file": "ember-flexberry-data/addon/index.js",
+            "line": 74,
+            "description": "This namespace contains base adapter classes for different kind of backends.",
+            "static": 1,
+            "access": "public",
+            "tagname": ""
+        },
+        "Serializer": {
+            "name": "Serializer",
+            "shortname": "Serializer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "",
+            "file": "ember-flexberry-data/addon/index.js",
+            "line": 85,
+            "description": "This namespace contains base serializer classes for different kind of backends.",
+            "static": 1,
+            "access": "public",
+            "tagname": ""
+        },
+        "Query": {
+            "name": "Query",
+            "shortname": "Query",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "",
+            "file": "ember-flexberry-data/addon/index.js",
+            "line": 97,
+            "description": "This namespace contains implementation of Flexberry Query including adapters\nfor converting query object to requests for different kind of backends.",
+            "static": 1,
+            "access": "public",
+            "tagname": ""
+        },
+        "Utils": {
+            "name": "Utils",
+            "shortname": "Utils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "",
+            "file": "ember-flexberry-data/addon/index.js",
+            "line": 117,
+            "description": "This namespace contains helper claseses.",
+            "static": 1,
+            "access": "public",
+            "tagname": ""
+        },
+        "Offline.Syncer": {
+            "name": "Offline.Syncer",
+            "shortname": "Offline.Syncer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Offline",
+            "file": "ember-flexberry-data/addon/syncer.js",
+            "line": 7,
+            "description": "We save offline jobs to localforage and run them one at a time when online\n\nJob schema:\n```\n{\n  id:        { String },\n  operation: { 'createRecord'|'updateRecord'|'deleteRecord' },\n  typeName:  { String },\n  record:    { Object },\n  createdAt: { Date },\n}\n```\n\nWe save remoteIdRecords to localforage. They are used to lookup remoteIds\nfrom localIds.\n\nRecordId schema:\n```\n{\n  typeName: { String },\n  localId:  { String },\n  remoteId: { String }\n}\n```",
+            "extends": "Ember.Object"
         },
         "Mobile.FlexberryFileComponent": {
             "name": "Mobile.FlexberryFileComponent",
@@ -2865,9 +3212,9 @@
                 "description": "",
                 "type": "Promise"
             },
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
@@ -2896,9 +3243,9 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
@@ -2932,9 +3279,9 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
@@ -2968,9 +3315,9 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
@@ -2989,9 +3336,9 @@
                 "description": "The path for a given type.",
                 "type": "String"
             },
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
@@ -3017,9 +3364,9 @@
             },
             "access": "private",
             "tagname": "",
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
@@ -3041,9 +3388,9 @@
             ],
             "access": "private",
             "tagname": "",
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
@@ -3053,9 +3400,19 @@
             "name": "_sendRecord",
             "access": "private",
             "tagname": "",
-            "class": "DS.ODataAdapter",
+            "class": "Adapter.Odata",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 29,
+            "description": "Clear adapter's cache and IndexedDB's store.",
+            "itemtype": "method",
+            "name": "clear",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/mixins/adapter.js",
@@ -3089,9 +3446,88 @@
                 "description": "url URL for query a record.",
                 "type": "String"
             },
-            "class": "DS.Adapter",
+            "class": "Projection.AdapterMixin",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 24,
+            "description": "Creation date and time of model.",
+            "itemtype": "property",
+            "name": "createTime",
+            "type": "Date",
+            "class": "Offline.ModelMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 31,
+            "description": "Name of user who created model.",
+            "itemtype": "property",
+            "name": "creator",
+            "type": "String",
+            "class": "Offline.ModelMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 38,
+            "description": "Date and time of last changes in model.",
+            "itemtype": "property",
+            "name": "editTime",
+            "type": "Date",
+            "class": "Offline.ModelMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 45,
+            "description": "Name of user who changed model last time.",
+            "itemtype": "property",
+            "name": "editor",
+            "type": "String",
+            "class": "Offline.ModelMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 52,
+            "description": "Date and time of last sync down of model.",
+            "itemtype": "property",
+            "name": "editTime",
+            "type": "Date",
+            "class": "Offline.ModelMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 59,
+            "description": "Flag to indicate that model synchronized in readonly mode.\nReadonly mode allows to prevent any modifications of model on client side or server side.",
+            "itemtype": "property",
+            "name": "readOnly",
+            "type": "Boolean",
+            "readonly": "",
+            "class": "Offline.ModelMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/offline-model.js",
+            "line": 69,
+            "description": "Global instance of Syncer that contains methods to sync model up and down.",
+            "itemtype": "property",
+            "name": "syncer",
+            "type": "Syncer",
+            "readonly": "",
+            "class": "Offline.ModelMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/mixins/store.js",
@@ -3125,9 +3561,9 @@
                 "description": "Records promise.",
                 "type": "DS.AdapterPopulatedRecordArray"
             },
-            "class": "DS.Store",
+            "class": "Projection.StoreMixin",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Projection"
         },
         {
             "file": "ember-flexberry-data/addon/mixins/store.js",
@@ -3166,9 +3602,9 @@
                 "description": "Record promise.",
                 "type": "Promise"
             },
-            "class": "DS.Store",
+            "class": "Projection.StoreMixin",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Projection"
         },
         {
             "file": "ember-flexberry-data/addon/mixins/store.js",
@@ -3191,9 +3627,9 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "DS.Store",
+            "class": "Projection.StoreMixin",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Projection"
         },
         {
             "file": "ember-flexberry-data/addon/mixins/store.js",
@@ -3216,9 +3652,9 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "DS.Store",
+            "class": "Projection.StoreMixin",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Projection"
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
@@ -3231,9 +3667,9 @@
             "access": "public",
             "tagname": "",
             "static": 1,
-            "class": "DS.Model",
+            "class": "Projection.Model",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Projection"
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
@@ -3265,9 +3701,9 @@
             "access": "public",
             "tagname": "",
             "static": 1,
-            "class": "DS.Model",
+            "class": "Projection.Model",
             "module": "ember-flexberry-data",
-            "namespace": "DS"
+            "namespace": "Projection"
         },
         {
             "file": "ember-flexberry-data/addon/query/base-builder.js",
@@ -3804,7 +4240,7 @@
                 "description": "Function for filtering JS array of objects.",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3822,7 +4258,7 @@
                 "description": "",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3840,7 +4276,7 @@
                 "description": "",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3858,7 +4294,7 @@
                 "description": "",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3876,7 +4312,7 @@
                 "description": "",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3895,7 +4331,7 @@
                 "description": "Function for checkign single object.",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3919,7 +4355,7 @@
                 "description": "Value of attribute or `undefined`.",
                 "type": "*|undefined"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3938,7 +4374,7 @@
                 "description": "Complex filter function for `or` condition.",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -3957,7 +4393,7 @@
                 "description": "Complex filter function for `or` condition.",
                 "type": "Function"
             },
-            "class": "Query.JSAdapter",
+            "class": "Query.JsAdapter",
             "module": "ember-flexberry-data",
             "namespace": "Query"
         },
@@ -4007,7 +4443,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 69,
+            "line": 68,
             "description": "Returns query data for querying OData feed (for query part).",
             "itemtype": "method",
             "name": "getODataQuery",
@@ -4030,7 +4466,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 102,
+            "line": 101,
             "description": "Returns full URL for querying OData feed (base part and query part).",
             "itemtype": "method",
             "name": "getODataFullUrl",
@@ -4053,7 +4489,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 171,
+            "line": 183,
             "description": "Converts specified predicate into OData filter part.",
             "params": [
                 {
@@ -4082,7 +4518,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 220,
+            "line": 232,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -4446,7 +4882,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 12,
+            "line": 13,
             "description": "Flag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
@@ -4454,7 +4890,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 17,
+            "line": 18,
             "description": "Prefix for response metadata properties names.",
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
@@ -4462,7 +4898,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 22,
+            "line": 23,
             "description": "Normalization method for single objects.",
             "params": [
                 {
@@ -4492,7 +4928,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 42,
+            "line": 43,
             "description": "Normalization method for arrays of objects.",
             "params": [
                 {
@@ -4518,7 +4954,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 58,
+            "line": 59,
             "description": "Extracts metadata from received object.",
             "params": [
                 {
@@ -4544,7 +4980,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 77,
+            "line": 78,
             "description": "Returns key for a given attribute.",
             "params": [
                 {
@@ -4562,7 +4998,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 87,
+            "line": 88,
             "description": "Returns key for a given relationship.",
             "params": [
                 {
@@ -4584,7 +5020,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 100,
+            "line": 101,
             "description": "Return model name for relationship.",
             "itemtype": "method",
             "name": "modelNameFromRelationshipType",
@@ -4601,7 +5037,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 110,
+            "line": 111,
             "description": "Serialization method to serialize record into hash.",
             "params": [
                 {
@@ -4627,7 +5063,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 127,
+            "line": 128,
             "description": "You can use this method to customize how polymorphic objects are serialized.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_serializePolymorphicType).",
             "itemtype": "method",
             "name": "serializePolymorphicType",
@@ -4654,7 +5090,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 144,
+            "line": 145,
             "description": "You can use this method to customize how a polymorphic relationship should be extracted.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_extractPolymorphicRelationship).",
             "itemtype": "method",
             "name": "extractPolymorphicRelationship",
@@ -4670,13 +5106,38 @@
                     "type": "Object"
                 }
             ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 160,
+            "line": 165,
+            "description": "This method is used to convert each JSON root key in the payload into a modelName that it can use to look up the appropriate model for that part of the payload.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_modelNameFromPayloadKey).",
+            "itemtype": "method",
+            "name": "modelNameFromPayloadKey",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "String"
+            },
+            "class": "Serializer.Base",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/base.js",
+            "line": 177,
             "description": "Moves metadata from one object to another.",
             "params": [
                 {
@@ -4721,9 +5182,874 @@
                     "type": "Object"
                 }
             ],
-            "class": "Serializer.OData",
+            "class": "Serializer.Odata",
             "module": "ember-flexberry-data",
             "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/services/offline-globals.js",
+            "line": 16,
+            "description": "Availability of the backend.",
+            "itemtype": "property",
+            "name": "isOnline",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Offline.GlobalsService",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/services/offline-globals.js",
+            "line": 25,
+            "description": "Possibility of using offline storage.\nGets from application config.",
+            "itemtype": "property",
+            "name": "isOfflineEnabled",
+            "type": "Boolean",
+            "default": "true",
+            "readonly": "",
+            "class": "Offline.GlobalsService",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/services/offline-globals.js",
+            "line": 35,
+            "description": "If true then perform switch to offline mode when got online connection errors.\nGets from application config.",
+            "itemtype": "property",
+            "name": "isModeSwitchOnErrorsEnabled",
+            "type": "Boolean",
+            "default": "false",
+            "readonly": "",
+            "class": "Offline.GlobalsService",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/services/offline-globals.js",
+            "line": 45,
+            "description": "If true then all work with records will sync down when online.\nThis let user to continue work without online connection.\nGets from application config.",
+            "itemtype": "property",
+            "name": "isSyncDownWhenOnlineEnabled",
+            "type": "Boolean",
+            "default": "true",
+            "readonly": "",
+            "class": "Offline.GlobalsService",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/services/offline-globals.js",
+            "line": 56,
+            "description": "Trigger for \"online is available\" or \"online is unavailable\" event.\nEvent name: online/offline.",
+            "itemtype": "method",
+            "name": "setOnlineAvailable",
+            "params": [
+                {
+                    "name": "isOnline",
+                    "description": "Availability of online to set.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "Offline.GlobalsService",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/services/offline-globals.js",
+            "line": 70,
+            "description": "Get online status.\nAlways returns 'true' by default.\nNeeds for overload when using on mobile devices.",
+            "itemtype": "method",
+            "name": "checkOnlineAvailable",
+            "return": {
+                "description": "Returns online status on current device.",
+                "type": "Boolean"
+            },
+            "class": "Offline.GlobalsService",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 16,
+            "description": "Store that use for making requests in online mode.\nIt can be specified in application that use offline mode support.\nIf it is not specified then instance of <a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>\nis set as value of this property during initialization of {{#crossLink \"BaseStore\"}}{{/crossLink}} class.",
+            "itemtype": "property",
+            "name": "onlineStore",
+            "type": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>",
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 27,
+            "description": "Store that use for making requests in offline mode.\nBy default it is set to global instane of {{#crossLink \"LocalStore\"}}{{/crossLink}} class.",
+            "itemtype": "property",
+            "name": "offlineStore",
+            "type": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>",
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 37,
+            "description": "Global instance of {{#crossLink \"Syncer\"}}{{/crossLink}} class that contains methods to sync model.",
+            "itemtype": "property",
+            "name": "syncer",
+            "type": "Syncer",
+            "readonly": "",
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 68,
+            "description": "This method returns a fresh collection from the server, regardless of if there is already records\nin the store or not.",
+            "itemtype": "method",
+            "name": "findAll",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "useOnlineStore",
+                            "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 84,
+            "description": "This method returns a record for a given type and id combination.\nNOTE: this will trigger syncUp twice, this is OK. And since this is\n a public method, we probably want to preserve this.",
+            "itemtype": "method",
+            "name": "findRecord",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "useOnlineStore",
+                            "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 102,
+            "description": "This method is called by the record's `reload` method.\nThis method calls the adapter's `find` method, which returns a promise. When\n**that** promise resolves, `reloadRecord` will resolve the promise returned\nby the record's `reload`.",
+            "itemtype": "method",
+            "name": "reloadRecord",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "internalModel",
+                    "description": "",
+                    "type": "DS.Model"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 117,
+            "description": "Query for records that meet certain criteria. Resolves with [DS.RecordArray](http://emberjs.com/api/data/classes/DS.RecordArray.html).\n\tFor more information see [query method](http://emberjs.com/api/data/classes/DS.Store.html#method_query) of [DS.Store](http://emberjs.com/api/data/classes/DS.Store.html).",
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "useOnlineStore",
+                            "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 137,
+            "description": "Query for record that meet certain criteria. Resolves with single record.",
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "useOnlineStore",
+                            "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                            "type": "Boolean",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 158,
+            "description": "Create a new record in the current store. The properties passed to this method are set on the newly created record.",
+            "itemtype": "method",
+            "name": "createRecord",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "inputProperties",
+                    "description": "A hash of properties to set on the newly created record.",
+                    "type": "Object"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 170,
+            "description": "For symmetry, a record can be deleted via the store.",
+            "itemtype": "method",
+            "name": "deleteRecord",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 180,
+            "description": "Get the reference for the specified record.",
+            "itemtype": "method",
+            "name": "getReference",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "RecordReference"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 192,
+            "description": "Returns true if a record for a given type and ID is already loaded.",
+            "itemtype": "method",
+            "name": "hasRecordForId",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String|DS.Model"
+                },
+                {
+                    "name": "inputId",
+                    "description": "",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 204,
+            "description": "Converts a json payload into the normalized form that {{#crossLink \"BaseStore/push:method\"}}{{/crossLink}} expects.",
+            "itemtype": "method",
+            "name": "normalize",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type for this payload",
+                    "type": "String"
+                },
+                {
+                    "name": "payload",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "The normalized payload",
+                "type": "Object"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 216,
+            "description": "This method returns a filtered array that contains all of the known records for a given type in the store.",
+            "itemtype": "method",
+            "name": "peekAll",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "DS.RecordArray"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 227,
+            "description": "Get a record by a given type and ID without triggering a fetch.",
+            "itemtype": "method",
+            "name": "peekRecord",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Record",
+                "type": "DS.Model|null"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 239,
+            "description": "Push some data for a given type into the store.",
+            "itemtype": "method",
+            "name": "push",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "The record(s) that was created or updated.",
+                "type": "DS.Model|Array"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 250,
+            "description": "Push some raw data into the store.",
+            "itemtype": "method",
+            "name": "pushPayload",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "inputPayload",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 261,
+            "description": "This method returns if a certain record is already loaded in the store.",
+            "itemtype": "method",
+            "name": "recordIsLoaded",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 273,
+            "description": "This method unloads all records in the store.",
+            "itemtype": "method",
+            "name": "unloadAll",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 283,
+            "description": "For symmetry, a record can be unloaded via the store. Only non-dirty records can be unloaded.",
+            "itemtype": "method",
+            "name": "unloadRecord",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 293,
+            "description": "Returns an instance of the adapter for a given type.",
+            "itemtype": "method",
+            "name": "adapterFor",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Adapter",
+                "type": "DS.Adapter or subclass"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/base-store.js",
+            "line": 312,
+            "description": "Returns an instance of the serializer for a given type.",
+            "itemtype": "method",
+            "name": "serializerFor",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "useOnlineStore",
+                    "description": "Allow to explicitly specify online or offline store using independently of global online status",
+                    "type": "Boolean",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Serializer",
+                "type": "DS.Serializer or subclass"
+            },
+            "class": "Offline.Store",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 29,
+            "description": "Returns an instance of the serializer for a given type.\nOffline serializers should have name with postfix '-offline'.",
+            "itemtype": "method",
+            "name": "serializerFor",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 50,
+            "description": "Returns an instance of the adapter for a given type.\nOffline adapters should have name with postfix '-offline'.",
+            "itemtype": "method",
+            "name": "adapterFor",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 71,
+            "description": "Finds the records for the given model type.\n\nSee {{#crossLink \"DS.Store/findAll:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "findAll",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "options",
+                    "description": "Options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Records promise.",
+                "type": "DS.AdapterPopulatedRecordArray"
+            },
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 94,
+            "description": "Returns a record for a given type and id combination.\n\nSee {{#crossLink \"DS.Store/findRecord:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "findRecord",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "Record ID.",
+                    "type": "String|Integer"
+                },
+                {
+                    "name": "options",
+                    "description": "Options.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Record promise.",
+                "type": "Promise"
+            },
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 120,
+            "description": "This method delegates a query to the adapter.\n\nSee {{#crossLink \"DS.Store/query:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "query",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "An opaque query to be used by the adapter.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise, which is resolved with a\n                  {{#crossLink \"DS.RecordArray\"}}RecordArray{{/crossLink}}\n                  once the server returns.",
+                "type": "Promise"
+            },
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 139,
+            "description": "This method delegates a query to the adapter.\n\nSee {{#crossLink \"DS.Store/queryRecord:method\"}}{{/crossLink}} for details.",
+            "itemtype": "method",
+            "name": "queryRecord",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "An opaque query to be used by the adapter.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise, which is resolved with a\n                  {{#crossLink \"DS.RecordObject\"}}RecordObject{{/crossLink}}\n                  once the server returns.",
+                "type": "Promise"
+            },
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/utils/attributes.js",
@@ -4750,7 +6076,7 @@
                 "description": "Projection attribute.",
                 "type": "Object"
             },
-            "class": "DS.Projection",
+            "class": "Projection",
             "module": "ember-flexberry-data"
         },
         {
@@ -4788,7 +6114,7 @@
                 "description": "Projection attribute.",
                 "type": "Object"
             },
-            "class": "DS.Projection",
+            "class": "Projection",
             "module": "ember-flexberry-data"
         },
         {
@@ -4826,7 +6152,7 @@
                 "description": "Projection attribute.",
                 "type": "Object"
             },
-            "class": "DS.Projection",
+            "class": "Projection",
             "module": "ember-flexberry-data"
         },
         {
@@ -4858,7 +6184,17 @@
                 "description": "Model projection.",
                 "type": "Object"
             },
-            "class": "DS.Projection",
+            "class": "Projection",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/generate-unique-id.js",
+            "line": 1,
+            "return": {
+                "description": "a combination of timestamp and 5 random digits",
+                "type": "String"
+            },
+            "class": "Utils.Information",
             "module": "ember-flexberry-data"
         },
         {
@@ -4947,7 +6283,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 156,
+            "line": 161,
             "description": "Parses the specified attribute paths and returns list of separate attributes.",
             "itemtype": "method",
             "name": "parseAttributePath",
@@ -4968,6 +6304,107 @@
             "class": "Utils.Information",
             "module": "ember-flexberry-data",
             "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/syncer.js",
+            "line": 44,
+            "description": "Store that use for making requests in offline mode.\nBy default it is set to global instane of {{#crossLink \"LocalStore\"}}{{/crossLink}} class.",
+            "itemtype": "property",
+            "name": "offlineStore",
+            "type": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>",
+            "class": "Offline.Syncer",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/syncer.js",
+            "line": 53,
+            "description": "Initialize db.\n\nInitialize jobs, remoteIdRecords.",
+            "itemtype": "method",
+            "name": "init",
+            "access": "private",
+            "tagname": "",
+            "class": "Offline.Syncer",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/syncer.js",
+            "line": 78,
+            "description": "TODO:\nSave all records in the store into localforage.",
+            "itemtype": "method",
+            "name": "syncDown",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "descriptor",
+                    "description": "typeName, record, records.",
+                    "type": "String|DS.Model|Array"
+                },
+                {
+                    "name": "reload",
+                    "description": "If set to true then syncer perform remote reload for data, otherwise data will get from the store.",
+                    "type": "Boolean",
+                    "optional": true
+                },
+                {
+                    "name": "projectionName",
+                    "description": "Name of projection for remote reload of data. If not set then all properties of record, except navigation properties, will be read.",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promie"
+            },
+            "class": "Offline.Syncer",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/syncer.js",
+            "line": 109,
+            "description": "Reset syncer and localforage records.\nRemove all jobs and remoteIdRecords.\nRemove all records in localforage.",
+            "itemtype": "method",
+            "name": "",
+            "access": "public",
+            "tagname": "",
+            "class": "Offline.Syncer",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/syncer.js",
+            "line": 125,
+            "description": "Saves data to local store.",
+            "itemtype": "method",
+            "name": "_syncDownRecord",
+            "params": [
+                {
+                    "name": "record",
+                    "description": "Record to save in local store.",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "reload",
+                    "description": "If set to true then syncer perform remote reload for data, otherwise data will get from the store.",
+                    "type": "Boolean",
+                    "optional": true
+                },
+                {
+                    "name": "projectionName",
+                    "description": "Name of projection for remote reload of data. If not set then all properties of record, except navigation properties, will be read.",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "Offline.Syncer",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
@@ -15494,7 +16931,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:220"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:232"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -15522,23 +16959,23 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:22"
+            "line": " ember-flexberry-data/addon/serializers/base.js:23"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:42"
+            "line": " ember-flexberry-data/addon/serializers/base.js:43"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:58"
+            "line": " ember-flexberry-data/addon/serializers/base.js:59"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:77"
+            "line": " ember-flexberry-data/addon/serializers/base.js:78"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:87"
+            "line": " ember-flexberry-data/addon/serializers/base.js:88"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -15554,7 +16991,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/utils/information.js:156"
+            "line": " ember-flexberry-data/addon/utils/information.js:161"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -15642,11 +17079,11 @@
         },
         {
             "message": "Missing item type\nConverts specified predicate into OData filter part.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:171"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:183"
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:220"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:232"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",
@@ -15670,39 +17107,43 @@
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:12"
+            "line": " ember-flexberry-data/addon/serializers/base.js:13"
         },
         {
             "message": "Missing item type\nPrefix for response metadata properties names.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:17"
+            "line": " ember-flexberry-data/addon/serializers/base.js:18"
         },
         {
             "message": "Missing item type\nNormalization method for single objects.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:22"
+            "line": " ember-flexberry-data/addon/serializers/base.js:23"
         },
         {
             "message": "Missing item type\nNormalization method for arrays of objects.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:42"
+            "line": " ember-flexberry-data/addon/serializers/base.js:43"
         },
         {
             "message": "Missing item type\nExtracts metadata from received object.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:58"
+            "line": " ember-flexberry-data/addon/serializers/base.js:59"
         },
         {
             "message": "Missing item type\nReturns key for a given attribute.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:77"
+            "line": " ember-flexberry-data/addon/serializers/base.js:78"
         },
         {
             "message": "Missing item type\nReturns key for a given relationship.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:87"
+            "line": " ember-flexberry-data/addon/serializers/base.js:88"
         },
         {
             "message": "Missing item type\nSerialization method to serialize record into hash.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:110"
+            "line": " ember-flexberry-data/addon/serializers/base.js:111"
         },
         {
             "message": "Missing item type\nMoves metadata from one object to another.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:160"
+            "line": " ember-flexberry-data/addon/serializers/base.js:177"
+        },
+        {
+            "message": "Missing item type",
+            "line": " ember-flexberry-data/addon/utils/generate-unique-id.js:1"
         },
         {
             "message": "Missing item type\nHandles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
