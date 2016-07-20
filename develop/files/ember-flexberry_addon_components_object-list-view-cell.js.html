@@ -240,6 +240,9 @@ export default FlexberryBaseComponent.extend({
         let momentValue = this.get(&#x27;moment&#x27;).moment(value);
         let dateFormat = this.get(&#x27;dateFormat&#x27;);
         return dateFormat ? momentValue.format(dateFormat) : momentValue.format();
+      case &#x27;boolean&#x27;:
+        return value ? this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view-cell.boolean-true-caption&#x27;)
+          : this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view-cell.boolean-false-caption&#x27;);
       default:
         return value;
     }

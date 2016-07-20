@@ -199,15 +199,15 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
   Wrapper for input[type=&#x27;date/datetime/datetime-local&#x27;] component.
   **Please keep in mind that these input types are not supported in all browsers, [see supported browsers](http://caniuse.com/#feat=input-datetime).**
 
-  Sample usage:
-  &#x60;&#x60;&#x60;handlebars
-  {{flexberry-simpledatetime
-    type=&#x27;datetime-local&#x27;
-    value=model.orderDate
-    min=model.orderDateMin
-    max=model.orderDateMax
-  }}
-  &#x60;&#x60;&#x60;
+  @example
+    &#x60;&#x60;&#x60;handlebars
+    {{flexberry-simpledatetime
+      type=&#x27;datetime-local&#x27;
+      value=model.orderDate
+      min=model.orderDateMin
+      max=model.orderDateMax
+    }}
+    &#x60;&#x60;&#x60;
 
   @class FlexberrySimpledatetime
   @extends FlexberryBaseComponent

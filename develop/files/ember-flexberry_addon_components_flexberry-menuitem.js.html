@@ -290,7 +290,8 @@ export default FlexberryBaseComponent.extend({
       this.$().data(&#x27;flexberry-menuitem.item&#x27;, item);
     } else {
       let parentView = this.get(&#x27;parentView&#x27;);
-      parentView.$().data(&#x27;flexberry-menu&#x27;, item);
+      parentView.$().data(&#x27;flexberry-menu&#x27;, item)
+                    .dropdown();
     }
   },
 

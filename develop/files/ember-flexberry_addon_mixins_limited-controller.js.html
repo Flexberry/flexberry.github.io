@@ -197,37 +197,42 @@ import Ember from &#x27;ember&#x27;;
 /**
   Mixin for controller, that restrictions on the list form.
 
-  Example:
-  &#x60;&#x60;&#x60;javascript
-  // app/controllers/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import LimitedController from &#x27;ember-flexberry/mixins/limited-controller&#x27;
-  export default Ember.Controller.extend(LimitedController, {
-    ...
-  });
-  &#x60;&#x60;&#x60;
+  @example
+    &#x60;&#x60;&#x60;javascript
+    // app/controllers/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import LimitedController from &#x27;ember-flexberry/mixins/limited-controller&#x27;
+    export default Ember.Controller.extend(LimitedController, {
+      ...
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;javascript
-  // app/routes/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import LimitedRoute from &#x27;ember-flexberry/mixins/limited-route&#x27;
-  export default Ember.Route.extend(LimitedRoute, {
-    ...
-  });
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;javascript
+    // app/routes/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import LimitedRoute from &#x27;ember-flexberry/mixins/limited-route&#x27;
+    export default Ember.Route.extend(LimitedRoute, {
+      ...
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/employees.hbs --&gt;
-  ...
-  {{flexberry-objectlistview
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/employees.hbs --&gt;
     ...
-    filterButton=true
-    filterText=filter
-    filterByAnyMatch=(action &#x27;filterByAnyMatch&#x27;)
+    {{flexberry-objectlistview
+      ...
+      enableFilters=enableFilters
+      filters=filters
+      applyFilters=(action &quot;applyFilters&quot;)
+      resetFilters=(action &quot;resetFilters&quot;)
+      ...
+      filterButton=true
+      filterText=filter
+      filterByAnyMatch=(action &#x27;filterByAnyMatch&#x27;)
+      ...
+    }}
     ...
-  }}
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;
 
   @class LimitedController
   @uses &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;
@@ -243,6 +248,15 @@ export default Ember.Mixin.create({
   queryParams: [&#x27;filter&#x27;],
 
   /**
+    Filters filled in OLV component.
+
+    @property filters
+    @type Object
+    @default null
+  */
+  filters: null,
+
+  /**
     String with search query.
 
     @property filter
@@ -253,14 +267,33 @@ export default Ember.Mixin.create({
 
   actions: {
     /**
+      Save filters and refresh list.
+
+      @method actions.applyFilters
+      @param {Object} filters
+    */
+    applyFilters(filters) {
+      this.set(&#x27;filters&#x27;, filters);
+      this.send(&#x27;refreshList&#x27;);
+    },
+
+    /**
+      Reset filters and refresh list.
+
+      @method actions.resetFilters
+    */
+    resetFilters() {
+      this.set(&#x27;filters&#x27;, null);
+      this.send(&#x27;refreshList&#x27;);
+    },
+
+    /**
       Changes current pattern for objects filtering.
 
       @method filterByAnyMatch
       @param {String} pattern A substring that is searched in objects while filtering.
-      @deprecated Use Query Language.
     */
     filterByAnyMatch(pattern) {
-      Ember.Logger.error(&#x27;Method &#x60;filterByAnyMatch&#x60; is deprecated, use Query Language.&#x27;);
       if (this.get(&#x27;filter&#x27;) !== pattern) {
         this.setProperties({
           filter: pattern,

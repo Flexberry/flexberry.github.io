@@ -242,6 +242,16 @@ export default Ember.Service.extend(Ember.Evented, {
   },
 
   /**
+    Trigger for &quot;refresh list&quot; event in OLV component.
+
+    @method refreshListTrigger
+    @param {String} componentName The name of OLV component.
+  */
+  refreshListTrigger(componentName) {
+    this.trigger(&#x27;refreshList&#x27;, componentName);
+  },
+
+  /**
     Trigger for &quot;filter by any match&quot; event in objectlistview.
 
     @method filterByAnyMatchTrigger

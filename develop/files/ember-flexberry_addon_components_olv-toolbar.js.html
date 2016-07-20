@@ -202,6 +202,13 @@ const { getOwner } = Ember;
   @extends FlexberryBaseComponent
 */
 export default FlexberryBaseComponent.extend({
+  /**
+    Flag to show colsConfigButton button at toolbar or not.
+  */
+  _colsConfigButton: Ember.computed(&#x27;colsConfigButton&#x27;, function() {
+    return this.get(&#x27;userSettingsService&#x27;).isUserSettingsServiceEnabled;
+  }),
+
   modelController: null,
 
   /**
@@ -261,7 +268,8 @@ export default FlexberryBaseComponent.extend({
 
     @property colsConfigButton
     @type Boolean
-    @default false
+    @default true
+    @readOnly
   */
   colsConfigButton: true,
 
@@ -422,7 +430,7 @@ export default FlexberryBaseComponent.extend({
       @public
     */
     refresh() {
-      this.get(&#x27;modelController&#x27;).send(&#x27;refreshList&#x27;);
+      this.get(&#x27;objectlistviewEventsService&#x27;).refreshListTrigger(this.get(&#x27;componentName&#x27;));
     },
 
     /**

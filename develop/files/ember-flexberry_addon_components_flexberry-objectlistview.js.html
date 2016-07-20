@@ -203,6 +203,15 @@ import { translationMacro as t } from &#x27;ember-i18n&#x27;;
   @extends FlexberryBaseComponent
 */
 export default FlexberryBaseComponent.extend({
+  /**
+    Flag used to display filters.
+
+    @property _showFilters
+    @type Boolean
+    @default false
+    @private
+  */
+  _showFilters: Ember.computed.oneWay(&#x27;filters&#x27;),
 
   /**
     Text to be displayed in table body, if content is not defined or empty.
@@ -446,6 +455,15 @@ export default FlexberryBaseComponent.extend({
   colsConfigButton: true,
 
   /**
+    Flag to use filters in OLV component.
+
+    @property enableFilters
+    @type Boolean
+    @default false
+  */
+  enableFilters: false,
+
+  /**
     Flag indicates whether to show filter button at toolbar.
 
     @property filterButton
@@ -683,6 +701,36 @@ export default FlexberryBaseComponent.extend({
       }
 
       this.sendAction(actionName);
+    },
+
+    /**
+      Show/hide filters.
+
+      @method actions.toggleStateFilters
+    */
+    toggleStateFilters() {
+      this.toggleProperty(&#x27;_showFilters&#x27;);
+    },
+
+    /**
+      Dummy action handlers, overloaded in {{#crossLink &quot;LimitedController&quot;}}{{/crossLink}}.
+
+      @method actions.applyFilters
+      @param {Array} filters Filters.
+    */
+    applyFilters(filters) {
+      throw new Error(&#x27;No handler for applyFilters action set for flexberry-objectlistview. &#x27; +
+                      &#x27;Set handler like {{flexberry-objectlistview ... applyFilters=(action &quot;applyFilters&quot;)}}.&#x27;);
+    },
+
+    /**
+      Dummy action handlers, overloaded in {{#crossLink &quot;LimitedController&quot;}}{{/crossLink}}.
+
+      @method actions.resetFilters
+    */
+    resetFilters() {
+      throw new Error(&#x27;No handler for resetFilters action set for flexberry-objectlistview. &#x27; +
+                      &#x27;Set handler like {{flexberry-objectlistview ... resetFilters=(action &quot;resetFilters&quot;)}}.&#x27;);
     },
 
     /**

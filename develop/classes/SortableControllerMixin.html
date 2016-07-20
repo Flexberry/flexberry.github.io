@@ -205,32 +205,8 @@
 
 
 <div class="well well-small">
-    <p>Mixin for {{#crossLink "DS.Controller"}}Controller{{/crossLink}} to support
-sorting on {{#crossLink "ObjectListView"}}{{/crossLink}}.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">// app/controllers/employees.js
-import Ember from 'ember';
-import SortableController from 'ember-flexberry/mixins/sortable-controller'
-export default Ember.Controller.extend(SortableController, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-javascript">// app/routes/employees.js
-import Ember from 'ember';
-import SortableRoute from 'ember-flexberry/mixins/sortable-route'
-export default Ember.Route.extend(SortableRoute, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/employees.hbs --&gt;
-...
-{{flexberry-objectlistview
-  ...
-  orderable=true
-  sortByColumn=(action 'sortByColumn')
-  addColumnToSorting=(action 'addColumnToSorting')
-  ...
-}}
-...
-</code></pre>
+    <p>Mixin for DS.Controller to support
+sorting on ObjectListView.</p>
 
 </div>
 

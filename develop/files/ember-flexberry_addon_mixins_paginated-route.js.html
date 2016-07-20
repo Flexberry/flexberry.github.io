@@ -197,40 +197,40 @@ import Ember from &#x27;ember&#x27;;
 /*
   Mixin for route, that pagination support.
 
-  Example:
-  &#x60;&#x60;&#x60;javascript
-  // app/controllers/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import PaginatedController from &#x27;ember-flexberry/mixins/paginated-controller&#x27;
-  export default Ember.Controller.extend(PaginatedController, {
-  });
-  &#x60;&#x60;&#x60;
+  @example
+    &#x60;&#x60;&#x60;javascript
+    // app/controllers/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import PaginatedController from &#x27;ember-flexberry/mixins/paginated-controller&#x27;
+    export default Ember.Controller.extend(PaginatedController, {
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;javascript
-  // app/routes/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import PaginatedRoute from &#x27;ember-flexberry/mixins/paginated-route&#x27;
-  export default Ember.Route.extend(PaginatedRoute, {
-  });
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;javascript
+    // app/routes/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import PaginatedRoute from &#x27;ember-flexberry/mixins/paginated-route&#x27;
+    export default Ember.Route.extend(PaginatedRoute, {
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/employees.hbs --&gt;
-  ...
-  {{flexberry-objectlistview
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/employees.hbs --&gt;
     ...
-    pages=pages
-    perPageValue=perPageValue
-    perPageValues=perPageValues
-    hasPreviousPage=hasPreviousPage
-    hasNextPage=hasNextPage
-    previousPage=(action &#x27;previousPage&#x27;)
-    gotoPage=(action &#x27;gotoPage&#x27;)
-    nextPage=(action &#x27;nextPage&#x27;)
+    {{flexberry-objectlistview
+      ...
+      pages=pages
+      perPageValue=perPageValue
+      perPageValues=perPageValues
+      hasPreviousPage=hasPreviousPage
+      hasNextPage=hasNextPage
+      previousPage=(action &#x27;previousPage&#x27;)
+      gotoPage=(action &#x27;gotoPage&#x27;)
+      nextPage=(action &#x27;nextPage&#x27;)
+      ...
+    }}
     ...
-  }}
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;
 
   @class PaginatedRoute
   @uses &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;

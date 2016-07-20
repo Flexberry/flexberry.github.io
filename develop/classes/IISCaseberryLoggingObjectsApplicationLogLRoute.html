@@ -223,7 +223,15 @@
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
-                            <li class="index-item method public inherited">
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__attributesForFilter" data-tablink="_attributesForFilter">_attributesForFilter</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__filtersPredicate" data-tablink="_filtersPredicate">_filtersPredicate</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__getFilterPredicate" data-tablink="_getFilterPredicate">_getFilterPredicate</a>
 
                             </li>
@@ -241,6 +249,14 @@
                             </li>
                             <li class="index-item method public inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_objectListViewLimitPredicate" data-tablink="objectListViewLimitPredicate">objectListViewLimitPredicate</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_predicateForAttribute" data-tablink="predicateForAttribute">predicateForAttribute</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_predicateForFilter" data-tablink="predicateForFilter">predicateForFilter</a>
 
                             </li>
                             <li class="index-item method public inherited">
@@ -283,7 +299,128 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method__getFilterPredicate" class="method item public inherited">
+                    <div id="method__attributesForFilter" class="method item private inherited">
+                        <h3 class="name"><code>_attributesForFilter</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>projection</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>store</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/ListFormRoute.html#method__attributesForFilter">ListFormRoute</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_reload-list-mixin.js.html#l199"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;reload-list-mixin.js:199</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Generates array attributes for filter.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">projection</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">store</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Store.html" class="crosslink external" target="_blank">DS.Store</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>:
+                                        <p>Array objects format: <code>{ name, type }</code>, where <code>name</code> - attribute name, <code>type</code> - attribute type.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method__filtersPredicate" class="method item private inherited">
+                        <h3 class="name"><code>_filtersPredicate</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">BasePredicate | Undefined</span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/LimitedRouteMixin.html#method__filtersPredicate">LimitedRouteMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l105"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:105</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Return predicate for <code>QueryBuilder</code> or <code>undefined</code>.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate | Undefined</span>:
+                                        <p>Predicate for <code>QueryBuilder</code> or <code>undefined</code>.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method__getFilterPredicate" class="method item private inherited">
                         <h3 class="name"><code>_getFilterPredicate</code></h3>
                     
                             <div class="args">
@@ -298,11 +435,11 @@
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type">BasePredicate</span>
+                                <span class="type">BasePredicate | Null</span>
                             </span>
                     
                     
-                            <span class="flag public">public</span>
+                            <span class="flag private">private</span>
                     
                     
                     
@@ -310,8 +447,8 @@
                     
                         <div class="meta">
                                     <p>Inherited from
-                                    <a href="../classes/ReloadListMixin.html#method__getFilterPredicate">ReloadListMixin</a>:
-                            <a href="../files/ember-flexberry_addon_mixins_reload-list-mixin.js.html#l105"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;reload-list-mixin.js:105</code></a>
+                                    <a href="../classes/ListFormRoute.html#method__getFilterPredicate">ListFormRoute</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_reload-list-mixin.js.html#l173"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;reload-list-mixin.js:173</code></a>
                             </p>
                     
                     
@@ -329,7 +466,7 @@
                                 <ul class="params-list">
                                     <li class="param">
                                             <code class="param-name">modelProjection</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
                                         <div class="param-description">
@@ -356,7 +493,7 @@
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type">BasePredicate</span>:
+                                            <span class="type">BasePredicate | Null</span>:
                                         <p>Filter predicate for data loading.</p>
                     
                                 </div>
@@ -480,8 +617,9 @@
                         </div>
                     
                         <div class="description">
-                            A hook you can implement to convert the URL into the model for this route.
-                    [More info](http://emberjs.com/api/classes/Ember.Route.html#method_model).
+                            <p>A hook you can implement to convert the URL into the model for this route.
+                    <a href="http://emberjs.com/api/classes/Ember.Route.html#method_model">More info</a>.</p>
+                    
                         </div>
                     
                             <div class="params">
@@ -649,6 +787,205 @@
                       }
                     });
                     
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div id="method_predicateForAttribute" class="method item inherited">
+                        <h3 class="name"><code>predicateForAttribute</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>attribute</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>filter</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">BasePredicate | Null</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/ListFormRoute.html#method_predicateForAttribute">ListFormRoute</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_reload-list-mixin.js.html#l115"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;reload-list-mixin.js:115</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Create predicate for attribute. Can you overload this function for extended logic.</p>
+                    <p>Default supported attribute types:</p>
+                    <ul>
+                    <li><code>string</code></li>
+                    <li><code>number</code></li>
+                    </ul>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">attribute</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Object format: <code>{ name, type }</code>, where <code>name</code> - attribute name, <code>type</code> - attribute type.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">filter</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Pattern for search.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate | Null</span>:
+                                        <p>Object class of <code>BasePredicate</code> or <code>null</code>, if not need filter.</p>
+                    
+                                </div>
+                            </div>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">// app/routes/example.js
+                    ...
+                    // Add support for logical attribute
+                    predicateForAttribute(attribute, filter) {
+                      switch (attribute.type) {
+                        case 'boolean':
+                          let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];
+                          let no = ['False', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];
+                    
+                          if (yes.indexOf(filter) &gt; 0) {
+                            return new SimplePredicate(attribute.name, 'eq', 'true');
+                          }
+                    
+                          if (no.indexOf(filter) &gt; 0) {
+                            return new SimplePredicate(attribute.name, 'eq', 'false');
+                          }
+                    
+                          return null;
+                    
+                        default:
+                          return this._super(...arguments);
+                      }
+                    },
+                    ...
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div id="method_predicateForFilter" class="method item inherited">
+                        <h3 class="name"><code>predicateForFilter</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>filter</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">BasePredicate | Null</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/LimitedRouteMixin.html#method_predicateForFilter">LimitedRouteMixin</a>:
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l72"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:72</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Return predicate to filter through.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">filter</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Object (<code>{ name, condition, pattern }</code>) with parameters for filter.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate | Null</span>:
+                                        <p>Predicate to filter through.</p>
+                    
+                                </div>
+                            </div>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">// app/routes/example.js
+                    ...
+                    predicateForFilter(filter) {
+                      if (filter.type === 'string' &amp;&amp; filter.condition === 'like') {
+                        return new StringPredicate(filter.name).contains(filter.pattern);
+                      }
+                    
+                      return this._super(...arguments);
+                    },
+                    ...
                     </code></pre>
                     
                                 </div>
@@ -825,7 +1162,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/ListFormRoute.html#method_setupController">ListFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l112"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:112</code></a>
+                            <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l114"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:114</code></a>
                             </p>
                     
                     
@@ -833,8 +1170,9 @@
                         </div>
                     
                         <div class="description">
-                            A hook you can use to setup the controller for the current route.
-                    [More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).
+                            <p>A hook you can use to setup the controller for the current route.
+                    <a href="http://emberjs.com/api/classes/Ember.Route.html#method_setupController">More info</a>.</p>
+                    
                         </div>
                     
                             <div class="params">
@@ -882,7 +1220,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/LimitedRouteMixin.html#property_filter">LimitedRouteMixin</a>:
-                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l56"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:56</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l63"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:63</code></a>
                             </p>
                     
                     
@@ -963,7 +1301,7 @@
                                     ReloadListMixin
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l46"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:46</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l53"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:53</code></a>
                             </p>
                     
                     

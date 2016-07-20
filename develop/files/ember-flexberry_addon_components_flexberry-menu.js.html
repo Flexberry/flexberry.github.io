@@ -201,46 +201,46 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
   Questions:
   - Need {{yield}} in flexberry-menu.hbs?
 
-  Sample usage:
-  &#x60;&#x60;&#x60;javascript
-  // app/controllers/menu.js
-  ...
-  items: [{
-    icon: &#x27;search icon&#x27;,
-    title: &#x27;Search&#x27;,
-  },{
-    icon: &#x27;settings icon&#x27;,
-    iconAlignment: &#x27;right&#x27;,
-    title: &#x27;Settings&#x27;,
-  },{
-    icon: &#x27;list icon&#x27;,
-    title: &#x27;Submenu&#x27;,
-    items: [{
-      icon: &#x27;trash icon&#x27;,
-      title: &#x27;Delete&#x27;,
-    }],
-  }],
-  ...
-  actions: {
+  @example
+    &#x60;&#x60;&#x60;javascript
+    // app/controllers/menu.js
     ...
-    onItemClick(e) {
-      let clickedMenuItem = Ember.$(e.currentTarget);
+    items: [{
+      icon: &#x27;search icon&#x27;,
+      title: &#x27;Search&#x27;,
+    },{
+      icon: &#x27;settings icon&#x27;,
+      iconAlignment: &#x27;right&#x27;,
+      title: &#x27;Settings&#x27;,
+    },{
+      icon: &#x27;list icon&#x27;,
+      title: &#x27;Submenu&#x27;,
+      items: [{
+        icon: &#x27;trash icon&#x27;,
+        title: &#x27;Delete&#x27;,
+      }],
+    }],
+    ...
+    actions: {
+      ...
+      onItemClick(e) {
+        let clickedMenuItem = Ember.$(e.currentTarget);
+        ...
+      },
       ...
     },
     ...
-  },
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/menu.hbs --&gt;
-  ...
-  {{flexberry-menu
-    items=items
-    onItemClick=(action &#x27;onItemClick&#x27;)
-  }}
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/menu.hbs --&gt;
+    ...
+    {{flexberry-menu
+      items=items
+      onItemClick=(action &#x27;onItemClick&#x27;)
+    }}
+    ...
+    &#x60;&#x60;&#x60;
 
   @class FlexberryMenu
   @extends FlexberryBaseComponent
@@ -329,7 +329,6 @@ export default FlexberryBaseComponent.extend({
 
     // Attach menu click event handler.
     this.$().on(&#x27;click&#x27;, onClickHandler);
-
     this.$().dropdown();
   },
 
@@ -347,33 +346,33 @@ export default FlexberryBaseComponent.extend({
   /**
     Hook which will be called to configure menu items.
 
-    Example:
-    &#x60;&#x60;&#x60;handlebars
-    &lt;!-- app/templates/menu.hbs --&gt;
-    {{flexberry-menu
-      ...
-      configurateItems=(action &#x27;configurateItems&#x27;)
-      ...
-    }}
-    &#x60;&#x60;&#x60;
+    @example
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/menu.hbs --&gt;
+      {{flexberry-menu
+        ...
+        configurateItems=(action &#x27;configurateItems&#x27;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
 
-    &#x60;&#x60;&#x60;javascript
-    // app/controllers/menu.js
-    export default Ember.Controller.extend({
-    ...
-      actions: {
-        ...
-        configurateItems(items) {
-          items.push({
-            icon: &#x27;edit icon&#x27;,
-            title: &#x27;Edit&#x27;,
-          });
-        },
-        ...
-      }
-    ...
-    });
-    &#x60;&#x60;&#x60;
+      &#x60;&#x60;&#x60;javascript
+      // app/controllers/menu.js
+      export default Ember.Controller.extend({
+      ...
+        actions: {
+          ...
+          configurateItems(items) {
+            items.push({
+              icon: &#x27;edit icon&#x27;,
+              title: &#x27;Edit&#x27;,
+            });
+          },
+          ...
+        }
+      ...
+      });
+      &#x60;&#x60;&#x60;
 
     @method configurateItems
     @param {Array} items Menu items array.

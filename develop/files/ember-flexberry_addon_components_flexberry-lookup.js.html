@@ -204,32 +204,32 @@ import { BasePredicate, StringPredicate, ComplexPredicate } from &#x27;ember-fle
 /**
   Lookup component for Semantic UI.
 
-  Example:
-  &#x60;&#x60;&#x60;javascript
-  // app/controllers/post.js
-  import EditFormController from &#x27;./edit-form&#x27;;
-  export default EditFormController.extend({
-    ...
-  });
-  &#x60;&#x60;&#x60;
+  @example
+    &#x60;&#x60;&#x60;javascript
+    // app/controllers/post.js
+    import EditFormController from &#x27;./edit-form&#x27;;
+    export default EditFormController.extend({
+      ...
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/post.hbs --&gt;
-  ...
-  {{flexberry-lookup
-    choose=&quot;showLookupDialog&quot;
-    remove=&quot;removeLookupValue&quot;
-    value=model.author
-    projection=&quot;UserL&quot;
-    relationName=&quot;author&quot;
-    displayAttributeName=&quot;name&quot;
-    title=&quot;Author&quot;
-    placeholder=&quot;Not select&quot;
-    chooseText=&quot;Select&quot;
-    removeText=&quot;Clear&quot;
-  }}
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/post.hbs --&gt;
+    ...
+    {{flexberry-lookup
+      choose=&quot;showLookupDialog&quot;
+      remove=&quot;removeLookupValue&quot;
+      value=model.author
+      projection=&quot;UserL&quot;
+      relationName=&quot;author&quot;
+      displayAttributeName=&quot;name&quot;
+      title=&quot;Author&quot;
+      placeholder=&quot;Not select&quot;
+      chooseText=&quot;Select&quot;
+      removeText=&quot;Clear&quot;
+    }}
+    ...
+    &#x60;&#x60;&#x60;
 
   @class FlexberryLookup
   @extends FlexberryBaseComponent
@@ -453,7 +453,7 @@ export default FlexberryBaseComponent.extend({
     @property chooseData
     @type Object
     @readOnly
-   */
+  */
   chooseData: Ember.computed(
     &#x27;projection&#x27;,
     &#x27;relationName&#x27;,
@@ -499,11 +499,11 @@ export default FlexberryBaseComponent.extend({
 
   /**
     Name of the attribute of the model to display for the user.
+    Is required for autocomplete and dropdown modes.
 
     @property displayAttributeName
     @type String
     @default null
-    @required
   */
   displayAttributeName: null,
 
@@ -595,7 +595,6 @@ export default FlexberryBaseComponent.extend({
   */
   didDestroyElement() {
     this._super();
-
     this.removeObserver(&#x27;i18n.locale&#x27;, this, this._languageReinit);
   },
 
@@ -660,7 +659,8 @@ export default FlexberryBaseComponent.extend({
 
     let displayAttributeName = this.get(&#x27;displayAttributeName&#x27;);
     if (!displayAttributeName) {
-      throw new Error(&#x27;Required property &quot;displayAttributeName&quot; is not defined.&#x27;);
+      Ember.Logger.error(&#x27;\&#x60;displayAttributeName\&#x60; is required property for autocomplete mode in \&#x60;flexberry-lookup\&#x60;.&#x27;);
+      return;
     }
 
     let minCharacters = this.get(&#x27;minCharacters&#x27;);
@@ -673,7 +673,7 @@ export default FlexberryBaseComponent.extend({
       throw new Error(&#x27;maxResults has wrong value.&#x27;);
     }
 
-    var state;
+    let state;
     this.$().search({
       minCharacters: minCharacters,
       maxResults: maxResults,
@@ -783,7 +783,12 @@ export default FlexberryBaseComponent.extend({
     let relationModelName = getRelationType(relatedModel, relationName);
     let minCharacters = this.get(&#x27;minCharacters&#x27;);
     let multiselect = this.get(&#x27;multiselect&#x27;);
-    let displayAttributeName = _this.get(&#x27;displayAttributeName&#x27;);
+
+    let displayAttributeName = this.get(&#x27;displayAttributeName&#x27;);
+    if (!displayAttributeName) {
+      Ember.Logger.error(&#x27; \&#x60;displayAttributeName\&#x60; is required property for dropdown mode in \&#x60;flexberry-lookup\&#x60;.&#x27;);
+      return;
+    }
 
     let i18n = _this.get(&#x27;i18n&#x27;);
     this.$(&#x27;.flexberry-dropdown&#x27;).dropdown({
@@ -856,6 +861,7 @@ export default FlexberryBaseComponent.extend({
   */
   _buildDisplayValue() {
     let selectedModel = this.get(&#x27;value&#x27;);
+    let displayAttributeName = this.get(&#x27;displayAttributeName&#x27;);
     if (!selectedModel) {
       this.set(&#x27;placeholder&#x27;, t(&#x27;components.flexberry-lookup.placeholder&#x27;));
       return &#x27;&#x27;;
@@ -863,7 +869,12 @@ export default FlexberryBaseComponent.extend({
       this.set(&#x27;placeholder&#x27;, &#x27;&#x27;);
     }
 
-    return selectedModel.get(this.get(&#x27;displayAttributeName&#x27;));
+    if (!displayAttributeName) {
+      Ember.Logger.warn(&#x27;\&#x60;displayAttributeName\&#x60; is not defined.&#x27;);
+      return &#x27;&#x27;;
+    }
+
+    return selectedModel.get(displayAttributeName);
   },
 
   /**

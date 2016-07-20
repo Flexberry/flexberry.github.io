@@ -197,53 +197,53 @@ import Ember from &#x27;ember&#x27;;
 /**
   Mixin contains actions for open and close modal window.
 
-  Sample usage:
-  &#x60;&#x60;&#x60;javascript
-  // app/routes/application.js
-  import Ember from &#x27;ember&#x27;;
-  import ModalApplicationRouteMixin from &#x27;ember-flexberry/mixins/modal-application-route&#x27;;
+  @example
+    &#x60;&#x60;&#x60;javascript
+    // app/routes/application.js
+    import Ember from &#x27;ember&#x27;;
+    import ModalApplicationRouteMixin from &#x27;ember-flexberry/mixins/modal-application-route&#x27;;
 
-  export default Ember.Route.extend(ModalApplicationRouteMixin, {
-  ...
-  });
-  &#x60;&#x60;&#x60;
-
-  &#x60;&#x60;&#x60;javascript
-  // app/components/your-component.js
-  ...
-  actions: {
+    export default Ember.Route.extend(ModalApplicationRouteMixin, {
     ...
-    showMessage() {
-      this.sendAction(&#x27;showMessage&#x27;, &#x27;message&#x27;);
-    },
-    hideMessage() {
-      this.sendAction(&#x27;hideMessage&#x27;);
-    },
+    });
+    &#x60;&#x60;&#x60;
+
+    &#x60;&#x60;&#x60;javascript
+    // app/components/your-component.js
     ...
-  }
-  ...
-  &#x60;&#x60;&#x60;
+    actions: {
+      ...
+      showMessage() {
+        this.sendAction(&#x27;showMessage&#x27;, &#x27;message&#x27;);
+      },
+      hideMessage() {
+        this.sendAction(&#x27;hideMessage&#x27;);
+      },
+      ...
+    }
+    ...
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/components/your-component.hbs --&gt;
-  ...
-  &lt;button {{action &#x27;showMessage&#x27;}}&gt;Show message&lt;/button&gt;|&lt;button {{action &#x27;hideMessage&#x27;}}&gt;Hide message&lt;/button&gt;
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/components/your-component.hbs --&gt;
+    ...
+    &lt;button {{action &#x27;showMessage&#x27;}}&gt;Show message&lt;/button&gt;|&lt;button {{action &#x27;hideMessage&#x27;}}&gt;Hide message&lt;/button&gt;
+    ...
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/application.hbs --&gt;
-  ...
-  {{your-component showMessage=&#x27;showModalDialog&#x27; hideMessage=&#x27;removeModalDialog&#x27;}}
-  ...
-  {{outlet &#x27;modal&#x27;}}
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/application.hbs --&gt;
+    ...
+    {{your-component showMessage=&#x27;showModalDialog&#x27; hideMessage=&#x27;removeModalDialog&#x27;}}
+    ...
+    {{outlet &#x27;modal&#x27;}}
+    ...
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/message.hbs --&gt;
-  &lt;h1&gt;Your message here.&lt;/h1&gt;
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/message.hbs --&gt;
+    &lt;h1&gt;Your message here.&lt;/h1&gt;
+    &#x60;&#x60;&#x60;
 
   @class ModalApplicationRoute
  */
@@ -263,7 +263,7 @@ export default Ember.Mixin.create({
      */
     showModalDialog(modalDialogName, data, modalParams) {
       modalParams = this._getModalParams(modalParams);
-      var params = Ember.$.extend({
+      let params = Ember.$.extend({
         into: modalParams.view,
         outlet: modalParams.outlet
       }, data);

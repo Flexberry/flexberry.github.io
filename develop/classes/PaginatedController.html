@@ -206,35 +206,6 @@
 
 <div class="well well-small">
     <p>Mixin for controller, that pagination support.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">// app/controllers/employees.js
-import Ember from 'ember';
-import PaginatedController from 'ember-flexberry/mixins/paginated-controller'
-export default Ember.Controller.extend(PaginatedController, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-javascript">// app/routes/employees.js
-import Ember from 'ember';
-import PaginatedRoute from 'ember-flexberry/mixins/paginated-route'
-export default Ember.Route.extend(PaginatedRoute, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/employees.hbs --&gt;
-...
-{{flexberry-objectlistview
-  ...
-  pages=pages
-  perPageValue=perPageValue
-  perPageValues=perPageValues
-  hasPreviousPage=hasPreviousPage
-  hasNextPage=hasNextPage
-  previousPage=(action 'previousPage')
-  gotoPage=(action 'gotoPage')
-  nextPage=(action 'nextPage')
-  ...
-}}
-...
-</code></pre>
 
 </div>
 
@@ -396,7 +367,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                                     </li>
                                     <li class="param">
                                             <code class="param-name">pageNumber</code>
-                                            <span class="type">Integer</span>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                                         <div class="param-description">
@@ -464,7 +435,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                                 <ul class="params-list">
                                     <li class="param">
                                             <code class="param-name">pageNum</code>
-                                            <span class="type">Integer</span>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                                         <div class="param-description">
@@ -502,7 +473,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type">Integer</span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                             </span>
                     
                     
@@ -533,7 +504,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                                 <ul class="params-list">
                                     <li class="param">
                                             <code class="param-name">perPage</code>
-                                            <span class="type">Integer</span>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                                         <div class="param-description">
@@ -544,7 +515,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                                     </li>
                                     <li class="param">
                                             <code class="param-name">count</code>
-                                            <span class="type">Integer</span>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                                         <div class="param-description">
@@ -560,7 +531,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type">Integer</span>:
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>:
                                         <p>Number last page.</p>
                     
                                 </div>
@@ -636,7 +607,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                                 <ul class="params-list">
                                     <li class="param">
                                             <code class="param-name">pageNum</code>
-                                            <span class="type">Integer</span>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                                         <div class="param-description">
@@ -797,7 +768,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                     </div>
                     <div id="property_page" class="property item">
                         <h3 class="name"><code>page</code></h3>
-                        <span class="type">Integer</span>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                     
@@ -854,7 +825,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                     </div>
                     <div id="property_perPage" class="property item">
                         <h3 class="name"><code>perPage</code></h3>
-                        <span class="type">Integer</span>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                     
@@ -880,7 +851,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                     </div>
                     <div id="property_perPageValue" class="property item">
                         <h3 class="name"><code>perPageValue</code></h3>
-                        <span class="type">Integer</span>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                     
@@ -957,7 +928,7 @@ export default Ember.Route.extend(PaginatedRoute, {
                     </div>
                     <div id="property_recordsTotalCount" class="property item">
                         <h3 class="name"><code>recordsTotalCount</code></h3>
-                        <span class="type">Integer</span>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                     
                     
                     

@@ -197,6 +197,7 @@ import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lo
 import FlexberryFileCompatibleComponentMixin from &#x27;../mixins/flexberry-file-compatible-component&#x27;;
 import ErrorableControllerMixin from &#x27;../mixins/errorable-controller&#x27;;
 import { translationMacro as t } from &#x27;ember-i18n&#x27;;
+import { getValueFromLocales } from &#x27;../utils/model-functions&#x27;;
 
 /**
   Object list view component.
@@ -276,6 +277,15 @@ export default FlexberryBaseComponent.extend(
       return value;
     },
   }),
+
+  /**
+    Main model projection. Accepts object projections.
+    Needs for support locales of captions.
+
+    @property mainModelProjection
+    @type Object
+  */
+  mainModelProjection: undefined,
 
   /**
     Default classes for component wrapper.
@@ -542,9 +552,10 @@ export default FlexberryBaseComponent.extend(
     @type Object[]
     @readOnly
   */
-  columns: Ember.computed(&#x27;modelProjection&#x27;, function() {
+  columns: Ember.computed(&#x27;modelProjection&#x27;, &#x27;enableFilters&#x27;, function() {
     let ret;
     let projection = this.get(&#x27;modelProjection&#x27;);
+
     if (!projection) {
       Ember.Logger.error(&#x27;Property \&#x27;modelProjection\&#x27; is undefined.&#x27;);
       return [];
@@ -557,7 +568,7 @@ export default FlexberryBaseComponent.extend(
       return cols;
     }
 
-    var userSettings = this.currentController ? this.currentController.userSettings : undefined;
+    let userSettings = this.currentController ? this.currentController.userSettings : undefined;
     if (userSettings &amp;&amp; userSettings.colsOrder !== undefined) {
       let namedCols = {};
       for (let i = 0; i &lt; cols.length; i++) {
@@ -872,15 +883,15 @@ export default FlexberryBaseComponent.extend(
 
       @method actions.headerCellClick
       @public
-      @param {} column
-      @param {jQuery.Event} e jQuery.Event by click on colomn
+      @param {Object} column
+      @param {jQuery.Event} e jQuery.Event by click on column.
     */
     headerCellClick(column, e) {
       if (!this.headerClickable || column.sortable === false) {
         return;
       }
 
-      let action = event.ctrlKey ? &#x27;addColumnToSorting&#x27; : &#x27;sortByColumn&#x27;;
+      let action = e.ctrlKey ? &#x27;addColumnToSorting&#x27; : &#x27;sortByColumn&#x27;;
       this.sendAction(action, column);
     },
 
@@ -1029,6 +1040,7 @@ export default FlexberryBaseComponent.extend(
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvAddRow&#x27;, this, this._addRow);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvDeleteRows&#x27;, this, this._deleteRows);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;filterByAnyMatch&#x27;, this, this._filterByAnyMatch);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;refreshList&#x27;, this, this._refreshList);
 
     let content = this.get(&#x27;content&#x27;);
     if (content) {
@@ -1125,6 +1137,7 @@ export default FlexberryBaseComponent.extend(
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvAddRow&#x27;, this, this._addRow);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvDeleteRows&#x27;, this, this._deleteRows);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;filterByAnyMatch&#x27;, this, this._filterByAnyMatch);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;refreshList&#x27;, this, this._refreshList);
 
     this._super(...arguments);
   },
@@ -1289,7 +1302,7 @@ export default FlexberryBaseComponent.extend(
         case &#x27;belongsTo&#x27;:
           if (!attr.options.hidden) {
             let bindingPath = currentRelationshipPath + attrName;
-            let column = this._createColumn(attr, bindingPath);
+            let column = this._createColumn(attr, attrName, bindingPath);
 
             if (column.cellComponent.componentName === &#x27;object-list-view-cell&#x27;) {
               if (attr.options.displayMemberPath) {
@@ -1312,7 +1325,7 @@ export default FlexberryBaseComponent.extend(
           }
 
           let bindingPath = currentRelationshipPath + attrName;
-          let column = this._createColumn(attr, bindingPath);
+          let column = this._createColumn(attr, attrName, bindingPath);
           columnsBuf.push(column);
           break;
 
@@ -1325,12 +1338,40 @@ export default FlexberryBaseComponent.extend(
   },
 
   /**
+    Create the key from locales.
+  */
+  _createKey(bindingPath) {
+    let projection = this.get(&#x27;modelProjection&#x27;);
+    let modelName = projection.modelName;
+    let key;
+
+    let mainModelProjection = this.get(&#x27;mainModelProjection&#x27;);
+    if (mainModelProjection) {
+      let modelClass = this.get(&#x27;store&#x27;).modelFor(modelName);
+      let nameRelationship;
+      let mainModelName;
+
+      modelClass.eachRelationship(function(name, descriptor) {
+        if (descriptor.kind === &#x27;belongsTo&#x27; &amp;&amp; descriptor.options.inverse) {
+          nameRelationship = descriptor.options.inverse;
+          mainModelName = descriptor.type;
+        }
+      });
+      key = &#x27;models.&#x27; + mainModelName + &#x27;.projections.&#x27; + mainModelProjection.projectionName + &#x27;.&#x27; + nameRelationship + &#x27;.&#x27; + bindingPath + &#x27;.caption&#x27;;
+    } else {
+      key = &#x27;models.&#x27; + modelName + &#x27;.projections.&#x27; + projection.projectionName + &#x27;.&#x27; + bindingPath + &#x27;.caption&#x27;;
+    }
+
+    return key;
+  },
+
+  /**
     Create the column.
 
     @method _createColumn
     @private
   */
-  _createColumn(attr, bindingPath) {
+  _createColumn(attr, attrName, bindingPath) {
     // We get the &#x27;getCellComponent&#x27; function directly from the controller,
     // and do not pass this function as a component attrubute,
     // to avoid &#x27;Ember.Object.create no longer supports defining methods that call _super&#x27; error,
@@ -1344,11 +1385,18 @@ export default FlexberryBaseComponent.extend(
       cellComponent = getCellComponent.call(currentController, attr, bindingPath, recordModel);
     }
 
+    let key = this._createKey(bindingPath);
+    let valueFromLocales = getValueFromLocales(this.get(&#x27;i18n&#x27;), key);
+
     let column = {
-      header: attr.caption,
+      header: valueFromLocales || attr.caption || Ember.String.capitalize(attrName),
       propName: bindingPath, // TODO: rename column.propName
       cellComponent: cellComponent,
     };
+
+    if (valueFromLocales) {
+      column.keyLocale = key;
+    }
 
     let customColumnAttributesFunc = this.get(&#x27;customColumnAttributes&#x27;);
     if (customColumnAttributesFunc) {
@@ -1356,6 +1404,10 @@ export default FlexberryBaseComponent.extend(
       if (customColAttr &amp;&amp; (typeof customColAttr === &#x27;object&#x27;)) {
         Ember.$.extend(true, column, customColAttr);
       }
+    }
+
+    if (this.get(&#x27;enableFilters&#x27;)) {
+      this._addFilterForColumn(column, attr, bindingPath);
     }
 
     let sortDef;
@@ -1367,6 +1419,175 @@ export default FlexberryBaseComponent.extend(
     }
 
     return column;
+  },
+
+  /**
+    Add filter parameters for column.
+
+    @method _createFilterForColumn
+    @param {Object} column
+    @param {Object} attr
+    @param {String} bindingPath
+  */
+  _addFilterForColumn(column, attr, bindingPath) {
+    let modelName;
+    let attributeName;
+    let relation = attr.kind !== &#x27;attr&#x27;;
+    if (relation) {
+      modelName = attr.modelName;
+      attributeName = attr.options.displayMemberPath;
+    } else {
+      attributeName = bindingPath;
+      modelName = this.get(&#x27;modelName&#x27;);
+    }
+
+    let model = this.get(&#x27;store&#x27;).modelFor(modelName);
+    let attribute = Ember.get(model, &#x27;attributes&#x27;).get(attributeName);
+
+    let component = this._getFilterComponent(attribute.type, relation);
+    let componentForFilter = this.get(&#x27;componentForFilter&#x27;);
+    if (componentForFilter) {
+      Ember.assert(&#x60;Need function in &#x27;componentForFilter&#x27;.&#x60;, typeof componentForFilter === &#x27;function&#x27;);
+      Ember.$.extend(true, component, componentForFilter(attribute.type, relation));
+    }
+
+    let conditions;
+    let conditionsByType = this.get(&#x27;conditionsByType&#x27;);
+    if (conditionsByType) {
+      Ember.assert(&#x60;Need function in &#x27;componentForFilter&#x27;.&#x60;, typeof conditionsByType === &#x27;function&#x27;);
+      conditions = conditionsByType(attribute.type);
+    } else {
+      conditions = this._conditionsByType(attribute.type);
+    }
+
+    let name = relation ? &#x60;${bindingPath}.${attribute.name}&#x60; : bindingPath;
+    let type = attribute.type;
+    let pattern;
+    let condition;
+
+    let filters = this.get(&#x27;filters&#x27;);
+    if (filters &amp;&amp; filters.hasOwnProperty(name)) {
+      pattern = filters[name].pattern;
+      condition = filters[name].condition;
+    }
+
+    column.filter = { name, type, pattern, condition, conditions, component };
+  },
+
+  /**
+    Return available conditions for filter.
+
+    @method _conditionsByType
+    @param {String} type
+    @return {Array} Available conditions for filter.
+  */
+  _conditionsByType(type) {
+    switch (type) {
+      case &#x27;file&#x27;:
+        return null;
+
+      case &#x27;date&#x27;:
+      case &#x27;number&#x27;:
+        return [&#x27;eq&#x27;, &#x27;neq&#x27;, &#x27;le&#x27;, &#x27;ge&#x27;];
+
+      case &#x27;string&#x27;:
+      case &#x27;boolean&#x27;:
+        return [&#x27;eq&#x27;, &#x27;neq&#x27;];
+
+      default:
+        return [&#x27;eq&#x27;, &#x27;neq&#x27;];
+    }
+  },
+
+  /**
+    Return object with parameters for component.
+
+    @method _getFilterComponent
+    @param {String} type
+    @param {Boolean} relation
+    @return {Object} Object with parameters for component.
+  */
+  _getFilterComponent(type, relation) {
+    let component = {
+      name: undefined,
+      properties: undefined,
+    };
+
+    switch (type) {
+      case &#x27;file&#x27;:
+        break;
+
+      case &#x27;string&#x27;:
+        component.name = &#x27;flexberry-textbox&#x27;;
+        component.properties = {
+          class: &#x27;compact fluid&#x27;,
+        };
+        break;
+
+      case &#x27;number&#x27;:
+        component.name = &#x27;flexberry-textbox&#x27;;
+        component.properties = {
+          class: &#x27;compact fluid&#x27;,
+        };
+        break;
+
+      case &#x27;boolean&#x27;:
+        component.name = &#x27;flexberry-dropdown&#x27;;
+        component.properties = {
+          items: [&#x27;true&#x27;, &#x27;false&#x27;],
+          class: &#x27;compact fluid&#x27;,
+        };
+        break;
+
+      case &#x27;date&#x27;:
+        component.name = &#x27;flexberry-textbox&#x27;;
+        break;
+
+      default:
+        let transformInstance = Ember.getOwner(this).lookup(&#x27;transform:&#x27; + type);
+        let transformClass = !Ember.isNone(transformInstance) ? transformInstance.constructor : null;
+        if (transformClass &amp;&amp; transformClass.isEnum) {
+          component.name = &#x27;flexberry-dropdown&#x27;;
+          component.properties = {
+            items: transformInstance.get(&#x27;captions&#x27;),
+            class: &#x27;compact fluid&#x27;,
+          };
+        }
+
+        break;
+    }
+
+    return component;
+  },
+
+  /**
+    Refresh list with the entered filter.
+
+    @method _refreshList
+    @param {String} componentName
+    @private
+  */
+  _refreshList(componentName) {
+    if (this.get(&#x27;componentName&#x27;) === componentName) {
+      if (this.get(&#x27;enableFilters&#x27;)) {
+        let filters = {};
+        let hasFilters = false;
+        this.get(&#x27;columns&#x27;).forEach((column) =&gt; {
+          if (column.filter.pattern &amp;&amp; column.filter.condition) {
+            hasFilters = true;
+            filters[column.filter.name] = column.filter;
+          }
+        });
+
+        if (hasFilters) {
+          this.sendAction(&#x27;applyFilters&#x27;, filters);
+        } else {
+          this.get(&#x27;currentController&#x27;).send(&#x27;refreshList&#x27;);
+        }
+      } else {
+        this.get(&#x27;currentController&#x27;).send(&#x27;refreshList&#x27;);
+      }
+    }
   },
 
   /**

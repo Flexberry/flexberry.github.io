@@ -200,44 +200,6 @@
 
 <div class="well well-small">
     <p>Mixin contains actions for open and close modal window.</p>
-<p>Sample usage:</p>
-<pre class="code prettyprint"><code class="language-javascript">// app/routes/application.js
-import Ember from 'ember';
-import ModalApplicationRouteMixin from 'ember-flexberry/mixins/modal-application-route';
-
-export default Ember.Route.extend(ModalApplicationRouteMixin, {
-...
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-javascript">// app/components/your-component.js
-...
-actions: {
-  ...
-  showMessage() {
-    this.sendAction('showMessage', 'message');
-  },
-  hideMessage() {
-    this.sendAction('hideMessage');
-  },
-  ...
-}
-...
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/components/your-component.hbs --&gt;
-...
-&lt;button {{action 'showMessage'}}&gt;Show message&lt;/button&gt;|&lt;button {{action 'hideMessage'}}&gt;Hide message&lt;/button&gt;
-...
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/application.hbs --&gt;
-...
-{{your-component showMessage='showModalDialog' hideMessage='removeModalDialog'}}
-...
-{{outlet 'modal'}}
-...
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/message.hbs --&gt;
-&lt;h1&gt;Your message here.&lt;/h1&gt;
-</code></pre>
 
 </div>
 

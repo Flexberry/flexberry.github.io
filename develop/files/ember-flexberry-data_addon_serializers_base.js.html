@@ -190,7 +190,6 @@
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
 import DS from &#x27;ember-data&#x27;;
-import { singularize } from &#x27;ember-inflector&#x27;;
 
 /**
  * Base serializer class.
@@ -339,29 +338,13 @@ export default DS.RESTSerializer.extend({
     @method extractPolymorphicRelationship
     @param {String} relationshipType
     @param {Object} relationshipHash
-    @return {Object}
    */
   extractPolymorphicRelationship(relationshipType, relationshipHash) {
-    let odataType = this.get(&#x27;metaPropertiesPrefix&#x27;) + &#x27;type&#x27;;
-    if (relationshipHash.hasOwnProperty(odataType)) {
-      relationshipHash.type = this.modelNameFromPayloadKey(relationshipHash[odataType]);
-    } else {
+    if (!relationshipHash.hasOwnProperty(&#x27;type&#x27;)) {
       relationshipHash.type = relationshipType;
     }
 
     return relationshipHash;
-  },
-
-  /**
-    This method is used to convert each JSON root key in the payload into a modelName that it can use to look up the appropriate model for that part of the payload.
-    [More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_modelNameFromPayloadKey).
-
-    @method modelNameFromPayloadKey
-    @param {String} key
-    @return {String}
-  */
-  modelNameFromPayloadKey(key) {
-    return singularize(Ember.String.dasherize(key.replace(/[#\.]/g, &#x27;&#x27;)));
   },
 
   /**

@@ -205,45 +205,8 @@
     <p>Menu component for Semantic UI.</p>
 <p>Questions:</p>
 <ul>
-<li>Need {{yield}} in flexberry-menu.hbs?</li>
+<li>Need  in flexberry-menu.hbs?</li>
 </ul>
-<p>Sample usage:</p>
-<pre class="code prettyprint"><code class="language-javascript">// app/controllers/menu.js
-...
-items: [{
-  icon: 'search icon',
-  title: 'Search',
-},{
-  icon: 'settings icon',
-  iconAlignment: 'right',
-  title: 'Settings',
-},{
-  icon: 'list icon',
-  title: 'Submenu',
-  items: [{
-    icon: 'trash icon',
-    title: 'Delete',
-  }],
-}],
-...
-actions: {
-  ...
-  onItemClick(e) {
-    let clickedMenuItem = Ember.$(e.currentTarget);
-    ...
-  },
-  ...
-},
-...
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/menu.hbs --&gt;
-...
-{{flexberry-menu
-  items=items
-  onItemClick=(action 'onItemClick')
-}}
-...
-</code></pre>
 
 </div>
 
@@ -370,7 +333,7 @@ actions: {
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-menu.js.html#l193"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-menu.js:193</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-menu.js.html#l192"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-menu.js:192</code></a>
                             </p>
                     
                     
@@ -424,7 +387,7 @@ actions: {
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_flexberry-menu.js.html#l157"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-menu.js:157</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-menu.js.html#l156"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-menu.js:156</code></a>
                             </p>
                     
                     
@@ -433,8 +396,33 @@ actions: {
                     
                         <div class="description">
                             <p>Hook which will be called to configure menu items.</p>
-                    <p>Example:</p>
-                    <pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/menu.hbs --&gt;
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">items</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Menu items array.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/menu.hbs --&gt;
                     {{flexberry-menu
                       ...
                       configurateItems=(action 'configurateItems')
@@ -458,27 +446,8 @@ actions: {
                     });
                     </code></pre>
                     
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">items</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Menu items array.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
+                                </div>
                             </div>
-                    
-                    
                     </div>
                     <div id="method_getTargetObjectByCondition." class="method item inherited">
                         <h3 class="name"><code>getTargetObjectByCondition.</code></h3>
@@ -504,7 +473,7 @@ actions: {
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/FlexberryBaseComponent.html#method_getTargetObjectByCondition.">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l230"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:230</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l234"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:234</code></a>
                             </p>
                     
                     
@@ -570,7 +539,7 @@ actions: {
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/FlexberryBaseComponent.html#method_initProperty">FlexberryBaseComponent</a>:
-                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l158"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:158</code></a>
+                            <a href="../files/ember-flexberry_addon_components_flexberry-base-component.js.html#l162"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;flexberry-base-component.js:162</code></a>
                             </p>
                     
                     

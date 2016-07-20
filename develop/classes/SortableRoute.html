@@ -206,30 +206,6 @@
 
 <div class="well well-small">
     <p>Mixin for route, that sorting on the list form.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">// app/controllers/employees.js
-import Ember from 'ember';
-import SortableController from 'ember-flexberry/mixins/sortable-controller'
-export default Ember.Controller.extend(SortableController, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-javascript">// app/routes/employees.js
-import Ember from 'ember';
-import SortableRoute from 'ember-flexberry/mixins/sortable-route'
-export default Ember.Route.extend(SortableRoute, {
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/employees.hbs --&gt;
-...
-{{flexberry-objectlistview
-  ...
-  orderable=true
-  sortByColumn=(action 'sortByColumn')
-  addColumnToSorting=(action 'addColumnToSorting')
-  ...
-}}
-...
-</code></pre>
 
 </div>
 
@@ -294,7 +270,7 @@ export default Ember.Route.extend(SortableRoute, {
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type">Integer</span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
                             </span>
                     
                     
@@ -340,7 +316,7 @@ export default Ember.Route.extend(SortableRoute, {
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type">Integer</span>:
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>:
                                 </div>
                             </div>
                     

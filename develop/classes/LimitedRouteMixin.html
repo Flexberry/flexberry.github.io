@@ -196,7 +196,7 @@
 
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l7"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:7</code></a>
+            Defined in: <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l9"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:9</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
@@ -206,32 +206,6 @@
 
 <div class="well well-small">
     <p>Mixin for route, that restrictions on the list form.</p>
-<p>Example:</p>
-<pre class="code prettyprint"><code class="language-javascript">// app/controllers/employees.js
-import Ember from 'ember';
-import LimitedController from 'ember-flexberry/mixins/limited-controller'
-export default Ember.Controller.extend(LimitedController, {
-  ...
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-javascript">// app/routes/employees.js
-import Ember from 'ember';
-import LimitedRoute from 'ember-flexberry/mixins/limited-route'
-export default Ember.Route.extend(LimitedRoute, {
-  ...
-});
-</code></pre>
-<pre class="code prettyprint"><code class="language-handlebars">&lt;!-- app/templates/employees.hbs --&gt;
-...
-{{flexberry-objectlistview
-  ...
-  filterButton=true
-  filterText=filter
-  filterByAnyMatch=(action 'filterByAnyMatch')
-  ...
-}}
-...
-</code></pre>
 
 </div>
 
@@ -240,6 +214,7 @@ export default Ember.Route.extend(LimitedRoute, {
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
             <li><a data-toggle="tab" href="#properties">Properties</a></li>
     </ul>
 
@@ -247,6 +222,20 @@ export default Ember.Route.extend(LimitedRoute, {
         <div id="index" class="tab-pane active">
             <h2 class="off-left">Item Index</h2>
 
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__filtersPredicate" data-tablink="_filtersPredicate">_filtersPredicate</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_predicateForFilter" data-tablink="predicateForFilter">predicateForFilter</a>
+
+                            </li>
+                    </ul>
+                </div>
 
                 <div class="index-section properties">
                     <h3>Properties</h3>
@@ -266,6 +255,136 @@ export default Ember.Route.extend(LimitedRoute, {
 
         </div>
 
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method__filtersPredicate" class="method item private">
+                        <h3 class="name"><code>_filtersPredicate</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">BasePredicate | Undefined</span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l105"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:105</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Return predicate for <code>QueryBuilder</code> or <code>undefined</code>.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate | Undefined</span>:
+                                        <p>Predicate for <code>QueryBuilder</code> or <code>undefined</code>.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_predicateForFilter" class="method item">
+                        <h3 class="name"><code>predicateForFilter</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>filter</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">BasePredicate | Null</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l72"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:72</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Return predicate to filter through.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">filter</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Object (<code>{ name, condition, pattern }</code>) with parameters for filter.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">BasePredicate | Null</span>:
+                                        <p>Predicate to filter through.</p>
+                    
+                                </div>
+                            </div>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">// app/routes/example.js
+                    ...
+                    predicateForFilter(filter) {
+                      if (filter.type === 'string' &amp;&amp; filter.condition === 'like') {
+                        return new StringPredicate(filter.name).contains(filter.pattern);
+                      }
+                    
+                      return this._super(...arguments);
+                    },
+                    ...
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+            </div>
 
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
@@ -281,7 +400,7 @@ export default Ember.Route.extend(LimitedRoute, {
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l56"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:56</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l63"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:63</code></a>
                             </p>
                     
                     
@@ -307,7 +426,7 @@ export default Ember.Route.extend(LimitedRoute, {
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l46"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:46</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_limited-route.js.html#l53"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;limited-route.js:53</code></a>
                             </p>
                     
                     

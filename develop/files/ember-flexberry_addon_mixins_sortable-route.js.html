@@ -197,35 +197,35 @@ import Ember from &#x27;ember&#x27;;
 /**
   Mixin for route, that sorting on the list form.
 
-  Example:
-  &#x60;&#x60;&#x60;javascript
-  // app/controllers/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import SortableController from &#x27;ember-flexberry/mixins/sortable-controller&#x27;
-  export default Ember.Controller.extend(SortableController, {
-  });
-  &#x60;&#x60;&#x60;
+  @example
+    &#x60;&#x60;&#x60;javascript
+    // app/controllers/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import SortableController from &#x27;ember-flexberry/mixins/sortable-controller&#x27;
+    export default Ember.Controller.extend(SortableController, {
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;javascript
-  // app/routes/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import SortableRoute from &#x27;ember-flexberry/mixins/sortable-route&#x27;
-  export default Ember.Route.extend(SortableRoute, {
-  });
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;javascript
+    // app/routes/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import SortableRoute from &#x27;ember-flexberry/mixins/sortable-route&#x27;
+    export default Ember.Route.extend(SortableRoute, {
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/employees.hbs --&gt;
-  ...
-  {{flexberry-objectlistview
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/employees.hbs --&gt;
     ...
-    orderable=true
-    sortByColumn=(action &#x27;sortByColumn&#x27;)
-    addColumnToSorting=(action &#x27;addColumnToSorting&#x27;)
+    {{flexberry-objectlistview
+      ...
+      orderable=true
+      sortByColumn=(action &#x27;sortByColumn&#x27;)
+      addColumnToSorting=(action &#x27;addColumnToSorting&#x27;)
+      ...
+    }}
     ...
-  }}
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;
 
   @class SortableRoute
   @uses &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;
@@ -287,7 +287,7 @@ export default Ember.Mixin.create({
 
     @method _getNextIndeces
     @param {String} paramString
-    @return {Integer}
+    @return {Number}
     @private
    */
   _getNextIndeces(paramString) {

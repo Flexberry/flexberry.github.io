@@ -193,41 +193,48 @@
 */
 
 import Ember from &#x27;ember&#x27;;
+import Condition from &#x27;ember-flexberry-data/query/condition&#x27;;
+import { SimplePredicate, ComplexPredicate } from &#x27;ember-flexberry-data/query/predicate&#x27;;
 
 /**
   Mixin for route, that restrictions on the list form.
 
-  Example:
-  &#x60;&#x60;&#x60;javascript
-  // app/controllers/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import LimitedController from &#x27;ember-flexberry/mixins/limited-controller&#x27;
-  export default Ember.Controller.extend(LimitedController, {
-    ...
-  });
-  &#x60;&#x60;&#x60;
+  @example
+    &#x60;&#x60;&#x60;javascript
+    // app/controllers/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import LimitedController from &#x27;ember-flexberry/mixins/limited-controller&#x27;
+    export default Ember.Controller.extend(LimitedController, {
+      ...
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;javascript
-  // app/routes/employees.js
-  import Ember from &#x27;ember&#x27;;
-  import LimitedRoute from &#x27;ember-flexberry/mixins/limited-route&#x27;
-  export default Ember.Route.extend(LimitedRoute, {
-    ...
-  });
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;javascript
+    // app/routes/employees.js
+    import Ember from &#x27;ember&#x27;;
+    import LimitedRoute from &#x27;ember-flexberry/mixins/limited-route&#x27;
+    export default Ember.Route.extend(LimitedRoute, {
+      ...
+    });
+    &#x60;&#x60;&#x60;
 
-  &#x60;&#x60;&#x60;handlebars
-  &lt;!-- app/templates/employees.hbs --&gt;
-  ...
-  {{flexberry-objectlistview
+    &#x60;&#x60;&#x60;handlebars
+    &lt;!-- app/templates/employees.hbs --&gt;
     ...
-    filterButton=true
-    filterText=filter
-    filterByAnyMatch=(action &#x27;filterByAnyMatch&#x27;)
+    {{flexberry-objectlistview
+      ...
+      enableFilters=enableFilters
+      filters=filters
+      applyFilters=(action &quot;applyFilters&quot;)
+      resetFilters=(action &quot;resetFilters&quot;)
+      ...
+      filterButton=true
+      filterText=filter
+      filterByAnyMatch=(action &#x27;filterByAnyMatch&#x27;)
+      ...
+    }}
     ...
-  }}
-  ...
-  &#x60;&#x60;&#x60;
+    &#x60;&#x60;&#x60;
 
   @class LimitedRouteMixin
   @uses &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;
@@ -251,6 +258,65 @@ export default Ember.Mixin.create({
     @default null
   */
   filter: null,
+
+  /**
+    Return predicate to filter through.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/routes/example.js
+      ...
+      predicateForFilter(filter) {
+        if (filter.type === &#x27;string&#x27; &amp;&amp; filter.condition === &#x27;like&#x27;) {
+          return new StringPredicate(filter.name).contains(filter.pattern);
+        }
+
+        return this._super(...arguments);
+      },
+      ...
+      &#x60;&#x60;&#x60;
+
+    @method predicateForFilter
+    @param {Object} filter Object (&#x60;{ name, condition, pattern }&#x60;) with parameters for filter.
+    @return {BasePredicate|null} Predicate to filter through.
+  */
+  predicateForFilter(filter) {
+    switch (filter.type) {
+      case &#x27;string&#x27;:
+      case &#x27;number&#x27;:
+      case &#x27;boolean&#x27;:
+        return new SimplePredicate(filter.name, filter.condition, filter.pattern);
+
+      default:
+        return null;
+    }
+  },
+
+  /**
+    Return predicate for &#x60;QueryBuilder&#x60; or &#x60;undefined&#x60;.
+
+    @method _filtersPredicate
+    @return {BasePredicate|undefined} Predicate for &#x60;QueryBuilder&#x60; or &#x60;undefined&#x60;.
+    @private
+  */
+  _filtersPredicate() {
+    let filters = this.controllerFor(this.routeName).get(&#x27;filters&#x27;);
+    if (filters) {
+      let predicates = [];
+      for (let filter in filters) {
+        if (filters.hasOwnProperty(filter)) {
+          let predicate = this.predicateForFilter(filters[filter]);
+          if (predicate) {
+            predicates.push(predicate);
+          }
+        }
+      }
+
+      return predicates.length ? predicates.length &gt; 1 ? new ComplexPredicate(Condition.And, ...predicates) : predicates[0] : undefined;
+    }
+
+    return undefined;
+  }
 });
 
     </pre>
