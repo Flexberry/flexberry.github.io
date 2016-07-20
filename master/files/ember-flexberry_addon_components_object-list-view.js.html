@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry/addon/components/object-list-view.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>master</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.Odata", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/BaseModel", "classes/ColsconfigDialogContentComponent", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryBaseComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDropDown", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbarComponent", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JsAdapter", "classes/Query.OdataAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.Odata", "classes/Serializer.Offline", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/ValidationDataObject", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Adapter.html">Adapter</a></li>
+	                            <li><a href="../classes/Adapter.Odata.html">Adapter.Odata</a></li>
+	                            <li><a href="../classes/Adapter.Offline.html">Adapter.Offline</a></li>
+	                            <li><a href="../classes/ApplicationInitializer.html">ApplicationInitializer</a></li>
+	                            <li><a href="../classes/ApplicationInstanceInitializer.html">ApplicationInstanceInitializer</a></li>
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
+	                            <li><a href="../classes/ColsconfigDialogContentComponent.html">ColsconfigDialogContentComponent</a></li>
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormNewRoute.html">EditFormNewRoute</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/EnumCaptionHelper.html">EnumCaptionHelper</a></li>
+	                            <li><a href="../classes/ErrorableControllerMixin.html">ErrorableControllerMixin</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryCheckboxComponent.html">FlexberryCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatePicker.html">FlexberryDatePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEnumTransform.html">FlexberryEnumTransform</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFileCompatibleComponentMixin.html">FlexberryFileCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileComponent.html">FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/FlexberryFileControllerMixin.html">FlexberryFileControllerMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileViewDialogController.html">FlexberryFileViewDialogController</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditComponent.html">FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditRouteMixin.html">FlexberryGroupeditRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponent.html">FlexberryLookupCompatibleComponent</a></li>
+	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
+	                            <li><a href="../classes/FlexberryMenu.html">FlexberryMenu</a></li>
+	                            <li><a href="../classes/FlexberryMenuitem.html">FlexberryMenuitem</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistviewRouteMixin.html">FlexberryObjectlistviewRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GroupEditToolbarComponent.html">GroupEditToolbarComponent</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogEController.html">IISCaseberryLoggingObjectsApplicationLogEController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogERoute.html">IISCaseberryLoggingObjectsApplicationLogERoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLController.html">IISCaseberryLoggingObjectsApplicationLogLController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLRoute.html">IISCaseberryLoggingObjectsApplicationLogLRoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogModel.html">IISCaseberryLoggingObjectsApplicationLogModel</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogSerializer.html">IISCaseberryLoggingObjectsApplicationLogSerializer</a></li>
+	                            <li><a href="../classes/LimitedController.html">LimitedController</a></li>
+	                            <li><a href="../classes/LimitedRouteMixin.html">LimitedRouteMixin</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/LogService.html">LogService</a></li>
+	                            <li><a href="../classes/LookupDialogController.html">LookupDialogController</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryFileComponent.html">Mobile.FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryGroupeditComponent.html">Mobile.FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryObjectlistview.html">Mobile.FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/Mobile.ObjectListViewComponent.html">Mobile.ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/ModalApplicationRoute.html">ModalApplicationRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingModel.html">NewPlatformFlexberryFlexberryUserSettingModel</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingSerializer.html">NewPlatformFlexberryFlexberryUserSettingSerializer</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectListViewComponent.html">ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCellComponent.html">ObjectListViewSingleColumnCellComponent</a></li>
+	                            <li><a href="../classes/Offline.html">Offline</a></li>
+	                            <li><a href="../classes/Offline.GlobalsService.html">Offline.GlobalsService</a></li>
+	                            <li><a href="../classes/Offline.Model.html">Offline.Model</a></li>
+	                            <li><a href="../classes/Offline.ModelMixin.html">Offline.ModelMixin</a></li>
+	                            <li><a href="../classes/Offline.Store.html">Offline.Store</a></li>
+	                            <li><a href="../classes/Offline.Syncer.html">Offline.Syncer</a></li>
+	                            <li><a href="../classes/OlvToolbar.html">OlvToolbar</a></li>
+	                            <li><a href="../classes/PaginatedController.html">PaginatedController</a></li>
+	                            <li><a href="../classes/ProjectedModelForm.html">ProjectedModelForm</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.AdapterMixin.html">Projection.AdapterMixin</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.StoreMixin.html">Projection.StoreMixin</a></li>
+	                            <li><a href="../classes/Query.html">Query</a></li>
+	                            <li><a href="../classes/Query.BaseAdapter.html">Query.BaseAdapter</a></li>
+	                            <li><a href="../classes/Query.BaseBuilder.html">Query.BaseBuilder</a></li>
+	                            <li><a href="../classes/Query.BasePredicate.html">Query.BasePredicate</a></li>
+	                            <li><a href="../classes/Query.Builder.html">Query.Builder</a></li>
+	                            <li><a href="../classes/Query.ComplexPredicate.html">Query.ComplexPredicate</a></li>
+	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
+	                            <li><a href="../classes/Query.DetailPredicate.html">Query.DetailPredicate</a></li>
+	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
+	                            <li><a href="../classes/Query.IndexedDbAdapter.html">Query.IndexedDbAdapter</a></li>
+	                            <li><a href="../classes/Query.JsAdapter.html">Query.JsAdapter</a></li>
+	                            <li><a href="../classes/Query.OdataAdapter.html">Query.OdataAdapter</a></li>
+	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
+	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
+	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
+	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                            <li><a href="../classes/Serializer.html">Serializer</a></li>
+	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
+	                            <li><a href="../classes/Serializer.Odata.html">Serializer.Odata</a></li>
+	                            <li><a href="../classes/Serializer.Offline.html">Serializer.Offline</a></li>
+	                            <li><a href="../classes/SortableColumn.html">SortableColumn</a></li>
+	                            <li><a href="../classes/SortableControllerMixin.html">SortableControllerMixin</a></li>
+	                            <li><a href="../classes/SortableRoute.html">SortableRoute</a></li>
+	                            <li><a href="../classes/UIMessage.html">UIMessage</a></li>
+	                            <li><a href="../classes/UserSettingsService.html">UserSettingsService</a></li>
+	                            <li><a href="../classes/Utils.html">Utils</a></li>
+	                            <li><a href="../classes/Utils.Information.html">Utils.Information</a></li>
+	                            <li><a href="../classes/ValidationDataObject.html">ValidationDataObject</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry/addon/components/object-list-view.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+  @module ember-flexberry
+*/
+import Ember from &#x27;ember&#x27;;
+import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
+import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lookup-compatible-component&#x27;;
+import FlexberryFileCompatibleComponentMixin from &#x27;../mixins/flexberry-file-compatible-component&#x27;;
+import ErrorableControllerMixin from &#x27;../mixins/errorable-controller&#x27;;
+import { translationMacro as t } from &#x27;ember-i18n&#x27;;
+
+/**
+  Object list view component.
+
+  @class ObjectListViewComponent
+  @extends FlexberryBaseComponent
+  @uses FlexberryLookupCompatibleComponentMixin
+  @uses FlexberryLookupCompatibleComponentMixin
+  @uses ErrorableControllerMixin
+*/
+export default FlexberryBaseComponent.extend(
+  FlexberryLookupCompatibleComponentMixin,
+  FlexberryFileCompatibleComponentMixin,
+  ErrorableControllerMixin, {
+  /**
+    Projection set by property {{#crossLink &quot;ObjectListViewComponent/modelProjection:property&quot;}}{{/crossLink}}.
+
+    @property _modelProjection
+    @type Object
+    @default null
+    @private
+  */
+  _modelProjection: null,
+
+  /**
+    Computed property forms unique name for component from model name and current route.
+    This unique name can be used as module name for user settings service.
+
+    @property _moduleName
+    @private
+    @type String
+  */
+  _moduleName: Ember.computed(&#x27;modelProjection&#x27;, function() {
+    let modelName = this.get(&#x27;modelProjection&#x27;).modelName;
+    let currentController = this.get(&#x27;currentController&#x27;);
+    let currentRoute = currentController ? this.get(&#x27;currentController&#x27;).get(&#x27;target&#x27;).currentRouteName : &#x27;application&#x27;;
+    Ember.assert(&#x27;Error while module name determing.&#x27;, modelName &amp;&amp; currentRoute);
+    return modelName + &#x27;__&#x27; + currentRoute;
+  }),
+
+  /**
+    Name of user setting name for column widths.
+
+    @property _columnWidthsUserSettingName
+    @private
+    @type String
+    @default &#x27;OlvColumnWidths&#x27;
+  */
+  _columnWidthsUserSettingName: &#x27;OlvColumnWidths&#x27;,
+
+  /**
+    Model projection which should be used to display given content.
+    Accepts object or name projections.
+
+    @property modelProjection
+    @type Object|String
+    @default null
+  */
+  modelProjection: Ember.computed(&#x27;_modelProjection&#x27;, {
+    get(key) {
+      return this.get(&#x27;_modelProjection&#x27;);
+    },
+    set(key, value) {
+      if (typeof value === &#x27;string&#x27;) {
+        let modelName = this.get(&#x27;modelName&#x27;);
+        Ember.assert(&#x27;For define projection by name, model name is required.&#x27;, modelName);
+        let modelConstructor = this.get(&#x27;store&#x27;).modelFor(modelName);
+        Ember.assert(&#x60;Model with name &#x27;${modelName}&#x27; is not found.&#x60;, modelConstructor);
+        let projections = Ember.get(modelConstructor, &#x27;projections&#x27;);
+        Ember.assert(&#x60;Projection with name &#x27;${value}&#x27; for model with name &#x27;${modelName}&#x27; is not found.&#x60;, projections[value]);
+        value = projections[value];
+      } else if (typeof value !== &#x27;object&#x27;) {
+        throw new Error(&#x60;Property &#x27;modelProjection&#x27; should be a string or object.&#x60;);
+      }
+
+      this.set(&#x27;_modelProjection&#x27;, value);
+      return value;
+    },
+  }),
+
+  /**
+    Default classes for component wrapper.
+  */
+  classNames: [&#x27;object-list-view-container&#x27;],
+
+  /**
+    Table row click action name.
+
+    @property action
+    @type String
+    @default &#x27;&#x27;
+    @readOnly
+  */
+  action: &#x27;&#x27;,
+
+  /**
+    Flag indicates whether allow to resize columns (if &#x60;true&#x60;) or not (if &#x60;false&#x60;).
+
+    @property allowColumnResize
+    @type Boolean
+    @default true
+  */
+  allowColumnResize: true,
+
+  /**
+    Table add column to sorting action name.
+
+    @property addColumnToSorting
+    @type String
+    @default &#x27;addColumnToSorting&#x27;
+    @readOnly
+  */
+  addColumnToSorting: &#x27;addColumnToSorting&#x27;,
+
+  /**
+    Table sort by column action name.
+
+    @property sortByColumn
+    @type String
+    @default &#x27;sortByColumn&#x27;
+    @readOnly
+  */
+  sortByColumn: &#x27;sortByColumn&#x27;,
+
+  /**
+    Flag indicates whether to look for changes of model (and displaying corresponding changes on control) or not.
+
+    If flag is enabled component compares current detail array with used on component,
+    removes deleted and marked as deleted on model level records, adds created on model level records.
+
+    @property searchForContentChange
+    @type Boolean
+    @default false
+  */
+  searchForContentChange: false,
+
+  /**
+    Flag indicates whether table are striped.
+
+    @property tableStriped
+    @type Boolean
+    @default true
+  */
+  tableStriped: true,
+
+  /**
+    Flag indicates whether table rows are clickable.
+
+    @property rowClickable
+    @type Boolean
+    @default true
+  */
+  rowClickable: true,
+
+  /**
+    Custom classes for table.
+
+    @example
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/employees.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        customTableClass=&quot;inverted blue&quot;
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+    @property customTableClass
+    @type String
+    @default &#x27;&#x27;
+  */
+  customTableClass: &#x27;&#x27;,
+
+  /**
+    Classes for table.
+
+    @property tableClass
+    @type String
+    @readOnly
+  */
+  tableClass: Ember.computed(&#x27;tableStriped&#x27;, &#x27;rowClickable&#x27;, &#x27;customTableClass&#x27;, function() {
+    let tableStriped = this.get(&#x27;tableStriped&#x27;);
+    let rowClickable = this.get(&#x27;rowClickable&#x27;);
+    let classes = this.get(&#x27;customTableClass&#x27;);
+
+    if (tableStriped) {
+      classes += &#x27; striped&#x27;;
+    }
+
+    if (rowClickable) {
+      classes += &#x27; selectable&#x27;;
+    }
+
+    return classes;
+  }),
+
+  /**
+    Path to component&#x27;s settings in application configuration (JSON from ./config/environment.js).
+
+    @property appConfigSettingsPath
+    @type String
+    @default &#x27;APP.components.objectListView&#x27;
+  */
+  appConfigSettingsPath: &#x27;APP.components.objectListView&#x27;,
+
+  /**
+    Default cell component that will be used to display values in columns headers.
+
+    @property {Object} headerCellComponent
+    @property {String} [headerCellComponent.componentName=&#x27;object-list-view-header-cell&#x27;]
+    @property {String} [headerCellComponent.componentProperties=null]
+  */
+  headerCellComponent: {
+    componentName: &#x27;object-list-view-header-cell&#x27;,
+    componentProperties: null,
+  },
+
+  /**
+    Default cell component that will be used to display values in columns cells.
+
+    @property {Object} cellComponent
+    @property {String} [cellComponent.componentName=&#x27;object-list-view-cell&#x27;]
+    @property {String} [cellComponent.componentProperties=null]
+  */
+  cellComponent: {
+    componentName: &#x27;object-list-view-cell&#x27;,
+    componentProperties: null,
+  },
+
+  /**
+    Flag: indicates whether to show asterisk icon in first column of every changed row.
+
+    @property showAsteriskInRow
+    @type Boolean
+    @default false
+  */
+  showAsteriskInRow: false,
+
+  /**
+    Flag indicates whether to show checkbox in first column of every row.
+
+    @property showCheckBoxInRow
+    @type Boolean
+    @default false
+  */
+  showCheckBoxInRow: false,
+
+  /**
+    Flag indicates whether to show delete button in first column of every row.
+
+    @property showDeleteButtonInRow
+    @type Boolean
+    @default false
+  */
+  showDeleteButtonInRow: false,
+
+  /**
+    Flag indicates whether to not use userSetting from backend
+    @property notUseUserSettings
+    @type Boolean
+    @default false
+  */
+  notUseUserSettings:false,
+
+  /**
+    Flag indicates whether to show helper column or not.
+
+    @property showHelperColumn
+    @type Boolean
+    @readOnly
+  */
+  showHelperColumn: Ember.computed(
+    &#x27;showAsteriskInRow&#x27;,
+    &#x27;showCheckBoxInRow&#x27;,
+    &#x27;showDeleteButtonInRow&#x27;,
+    &#x27;modelProjection&#x27;,
+    function() {
+    if (this.get(&#x27;modelProjection&#x27;)) {
+      return this.get(&#x27;showAsteriskInRow&#x27;) || this.get(&#x27;showCheckBoxInRow&#x27;) || this.get(&#x27;showDeleteButtonInRow&#x27;);
+    } else {
+      return false;
+    }
+  }),
+
+  /**
+    Flag indicates whether to show dropdown menu with edit menu item, in last column of every row.
+
+    @property showEditMenuItemInRow
+    @type Boolean
+    @default false
+  */
+  showEditMenuItemInRow: false,
+
+  /**
+    Flag indicates whether to show dropdown menu with delete menu item, in last column of every row.
+
+    @property showDeleteMenuItemInRow
+    @type Boolean
+    @default false
+  */
+  showDeleteMenuItemInRow: false,
+
+  /**
+    Additional menu items for dropdown menu in last column of every row.
+
+    @property menuInRowAdditionalItems
+    @type Boolean
+    @default null
+  */
+  menuInRowAdditionalItems: null,
+
+  /**
+    Flag indicates whether additional menu items for dropdown menu in last column of every row are defined.
+
+    @property menuInRowHasAdditionalItems
+    @type Boolean
+    @readOnly
+  */
+  menuInRowHasAdditionalItems: Ember.computed(&#x27;menuInRowAdditionalItems.[]&#x27;, function() {
+    let menuInRowAdditionalItems = this.get(&#x27;menuInRowAdditionalItems&#x27;);
+    return Ember.isArray(menuInRowAdditionalItems) &amp;&amp; menuInRowAdditionalItems.length &gt; 0;
+  }),
+
+  /**
+    Flag indicates whether to show menu column or not.
+
+    @property showMenuColumn
+    @type Boolean
+    @readOnly
+  */
+  showMenuColumn: Ember.computed(
+    &#x27;showEditMenuItemInRow&#x27;,
+    &#x27;showDeleteMenuItemInRow&#x27;,
+    &#x27;menuInRowHasAdditionalItems&#x27;,
+    function() {
+      return this.get(&#x27;showEditMenuItemInRow&#x27;) || this.get(&#x27;showDeleteMenuItemInRow&#x27;) || this.get(&#x27;menuInRowHasAdditionalItems&#x27;);
+    }
+  ),
+
+  /**
+    Table columns related to current model projection.
+
+    @property columns
+    @type Object[]
+    @readOnly
+  */
+  columns: Ember.computed(&#x27;modelProjection&#x27;, function() {
+    let ret;
+    let projection = this.get(&#x27;modelProjection&#x27;);
+    if (!projection) {
+      Ember.Logger.error(&#x27;Property \&#x27;modelProjection\&#x27; is undefined.&#x27;);
+      return [];
+    }
+
+    let cols = this._generateColumns(projection.attributes);
+    if (this.notUseUserSettings === true) {
+      // flexberry-groupedit and lookup-dialog-content set this flag to true and don&#x27;t use userSettings.
+      // In future release backend can save userSettings for each olv.
+      return cols;
+    }
+
+    var userSettings = this.currentController ? this.currentController.userSettings : undefined;
+    if (userSettings &amp;&amp; userSettings.colsOrder !== undefined) {
+      let namedCols = {};
+      for (let i = 0; i &lt; cols.length; i++) {
+        let col = cols[i];
+        delete col.sorted;
+        delete col.sortNumber;
+        delete col.sortAscending;
+        let propName = col.propName;
+        namedCols[propName] = col;
+      }
+
+      if (userSettings.sorting === undefined) {
+        userSettings.sorting = [];
+      }
+
+      for (let i = 0; i &lt; userSettings.sorting.length; i++) {
+        let sorting = userSettings.sorting[i];
+        let propName = sorting.propName;
+        namedCols[propName].sorted = true;
+        namedCols[propName].sortAscending = sorting.direction === &#x27;asc&#x27; ? true : false;
+        namedCols[propName].sortNumber = i + 1;
+      }
+
+      ret = [];
+      for (let i = 0; i &lt; userSettings.colsOrder.length; i++) {
+        let userSetting = userSettings.colsOrder[i];
+        if (!userSetting.hide) {
+          let propName = userSetting.propName;
+          let col = namedCols[propName];
+          ret[ret.length] = col;
+        }
+      }
+    } else {
+      if (this.currentController) {
+        if (userSettings === undefined) {
+          Ember.set(this.currentController, &#x27;userSettings&#x27;, {});
+        }
+
+        Ember.set(this.currentController.userSettings, &#x27;colsOrder&#x27;, cols);
+      }
+
+      ret = cols;
+    }
+
+    return ret;
+  }),
+
+  /**
+    Total columns count (including additional columns).
+
+    @property colspan
+    @type Number
+    @readOnly
+  */
+  colspan: Ember.computed(&#x27;columns.length&#x27;, &#x27;showHelperColumn&#x27;, &#x27;showMenuColumn&#x27;, function() {
+    let columnsCount = 0;
+    if (this.get(&#x27;showHelperColumn&#x27;)) {
+      columnsCount += 1;
+    }
+
+    if (this.get(&#x27;showMenuColumn&#x27;)) {
+      columnsCount += 1;
+    }
+
+    let columns = this.get(&#x27;columns&#x27;);
+    columnsCount += Ember.isArray(columns) ? columns.length : 0;
+
+    return columnsCount;
+  }),
+
+  /**
+    Flag indicates whether some column contains editable component instead of default cellComponent.
+    Don&#x27;t work if change &#x60;componentName&#x60; inside &#x60;cellComponent&#x60;.
+
+    @property hasEditableValues
+    @type Boolean
+    @readOnly
+  */
+  hasEditableValues: Ember.computed(&#x27;columns.[]&#x27;, &#x27;columns.@each.cellComponent&#x27;, function() {
+    let columns = this.get(&#x27;columns&#x27;);
+    if (!Ember.isArray(columns)) {
+      return true;
+    }
+
+    let defaultCellCompoinentName = this.get(&#x27;cellComponent.componentName&#x27;);
+    return columns.filter(function(column) {
+      return column.cellComponent.componentName !== defaultCellCompoinentName;
+    }).length &gt; 0;
+  }),
+
+  /**
+    Content to be displayed (models collection).
+
+    @property content
+    @type DS.ManyArray
+    @default null
+  */
+  content: null,
+
+  /**
+    Array of models from content collection with some synthetic keys related to them.
+
+    @property contentWithKeys
+    @type Object[]
+    @default null
+  */
+  contentWithKeys: null,
+
+  /**
+    Flag indicates whether content is defined.
+
+    @property hasContent
+    @type Boolean
+    @readOnly
+  */
+  hasContent: Ember.computed(&#x27;contentWithKeys.length&#x27;, function() {
+    return this.get(&#x27;contentWithKeys.length&#x27;) &gt; 0;
+  }),
+
+  /**
+    Text to be displayed in table body, if content is not defined or empty.
+
+    @property placeholder
+    @type String
+    @default &#x27;t(&#x27;components.object-list-view.placeholder&#x27;)&#x27;
+   */
+  placeholder: t(&#x27;components.object-list-view.placeholder&#x27;),
+
+  /**
+    Flag indicates whether table headers are clickable.
+
+    @property headerClickable
+    @type Boolean
+    @default false
+  */
+  headerClickable: false,
+
+  /**
+    Dictionary with sorting data related to columns.
+
+    @property sorting
+    @type Object
+    @default null
+  */
+  sorting: null,
+
+  /**
+    Last selected record.
+
+    @property selectedRecord
+    @type DS.Model
+    @default null
+  */
+  selectedRecord: null,
+
+  /**
+    All selected records.
+
+    @property selectedRecords
+    @type DS.Model[]
+    @default null
+  */
+  selectedRecords: null,
+
+  /**
+    Custom attributes which will be added to each generated column.
+
+    @property customColumnAttributes
+    @type Object
+    @default null
+  */
+  customColumnAttributes: null,
+
+  /**
+    Filter setting.
+
+    @property filterByAnyMatch
+    @type String
+    @default &#x27;filterByAnyMatch&#x27;
+  */
+  filterByAnyMatch: &#x27;filterByAnyMatch&#x27;,
+
+  /**
+    Hook for configurate rows.
+
+    @example
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/employees.hbs --&gt;
+      {{flexberry-objectlistview
+        ...
+        configurateRow=(action &#x27;configurateRow&#x27;)
+        ...
+      }}
+      &#x60;&#x60;&#x60;
+
+      &#x60;&#x60;&#x60;js
+      // app/controllers/employees.js
+      import ListFormController from &#x27;./list-form&#x27;;
+
+      export default ListFormController.extend({
+        actions: {
+          configurateRow(rowConfig, record) {
+            rowConfig.canBeDeleted = false;
+            if (record.get(&#x27;isMyFavoriteRecord&#x27;)) {
+              rowConfig.customClass += &#x27;my-fav-record&#x27;;
+            }
+          }
+        }
+      });
+      &#x60;&#x60;&#x60;
+    @method configurateRow
+
+    @param {Object} config Settings for row.
+                            See {{#crossLink &quot;ObjectListView/defaultRowConfig:property&quot;}}{{/crossLink}}
+                            property for details
+    @param {DS.Model} record The record in row
+  */
+  configurateRow: undefined,
+
+  /**
+    Default settings for rows.
+
+    @property defaultRowConfig
+    @type Object
+
+    @param {Boolean} [canBeDeleted=true] The row can be deleted
+    @param {Boolean} [canBeSelected=true] The row can be selected via checkbox
+    @param {String} [customClass=&#x27;&#x27;] Custom css classes for the row
+  */
+  defaultRowConfig: {
+    canBeDeleted: true,
+    canBeSelected: true,
+    customClass: &#x27;&#x27;,
+  },
+
+  /**
+    Flag indicates whether DELETE request should be immediately sended to server (on each deleted record) or not.
+
+    @property immediateDelete
+    @type Boolean
+    @default false
+  */
+  immediateDelete: false,
+
+  /**
+    Flag indicates whether records should be edited on separate route.
+
+    @property editOnSeparateRoute
+    @type Object
+    @default false
+  */
+  editOnSeparateRoute: false,
+
+  /**
+    Flag indicates whether to save current model before going to the detail&#x27;s route.
+
+    @property saveBeforeRouteLeave
+    @type Boolean
+    @default false
+  */
+  saveBeforeRouteLeave: false,
+
+  /**
+    Ember data store.
+
+    @property store
+    @type Service
+  */
+  store: Ember.inject.service(&#x27;store&#x27;),
+
+  /**
+    Service that triggers objectlistview events.
+
+    @property objectlistviewEventsService
+    @type Service
+  */
+  objectlistviewEventsService: Ember.inject.service(&#x27;objectlistview-events&#x27;),
+
+  actions: {
+    /**
+      This action is called when user click on row.
+
+      @method actions.rowClick
+      @public
+      @param {DS.Model} recordWithKey A record with key
+      @param {jQuery.Event} e jQuery.Event by click on row
+    */
+    rowClick(recordWithKey, e) {
+      if (this.get(&#x27;readonly&#x27;)) {
+        return;
+      }
+
+      if (this.rowClickable) {
+        let editOnSeparateRoute = this.get(&#x27;editOnSeparateRoute&#x27;);
+        if (!editOnSeparateRoute) {
+          // It is necessary only when we will not go to other route on click.
+          this.set(&#x27;selectedRecord&#x27;, recordWithKey.data);
+          this._setActiveRecord(recordWithKey.key);
+        }
+
+        this.sendAction(&#x27;action&#x27;, recordWithKey ? recordWithKey.data : undefined, {
+          saveBeforeRouteLeave: this.get(&#x27;saveBeforeRouteLeave&#x27;),
+          editOnSeparateRoute: editOnSeparateRoute,
+          modelName: this.get(&#x27;modelProjection&#x27;).modelName,
+          detailArray: this.get(&#x27;content&#x27;),
+        });
+      }
+    },
+
+    /**
+      This action is called when user click on header.
+
+      @method actions.headerCellClick
+      @public
+      @param {} column
+      @param {jQuery.Event} e jQuery.Event by click on colomn
+    */
+    headerCellClick(column, e) {
+      if (!this.headerClickable || column.sortable === false) {
+        return;
+      }
+
+      let action = event.ctrlKey ? &#x27;addColumnToSorting&#x27; : &#x27;sortByColumn&#x27;;
+      this.sendAction(action, column);
+    },
+
+    /**
+      This action is called when user click on menu in row.
+
+      @method actions.deleteRow
+      @public
+      @param {DS.Model} recordWithKey A record with key
+      @param {jQuery.Event} e jQuery.Event by click on row
+    */
+    deleteRow(recordWithKey, e) {
+
+      // TODO: rename recordWithKey. rename record in the template, where it is actually recordWithKey.
+      if (this.get(&#x27;readonly&#x27;) || !recordWithKey.config.canBeDeleted) {
+        return;
+      }
+
+      let confirmDeleteRow = this.get(&#x27;confirmDeleteRow&#x27;);
+      if (confirmDeleteRow) {
+        Ember.assert(&#x27;Error: confirmDeleteRow must be a function.&#x27;, typeof confirmDeleteRow === &#x27;function&#x27;);
+        if (!confirmDeleteRow()) {
+          return;
+        }
+      }
+
+      this._deleteRecord(recordWithKey.data, this.get(&#x27;immediateDelete&#x27;));
+    },
+
+    /**
+      This action is called when user select the row.
+
+      @method actions.selectRow
+      @public
+      @param {DS.Model} recordWithKey A record with key
+      @param {jQuery.Event} e jQuery.Event by click on row
+    */
+    selectRow(recordWithKey, e) {
+      let selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+      let selectedRow = this._getRowByKey(recordWithKey.key);
+
+      if (e.checked) {
+        if (!selectedRow.hasClass(&#x27;active&#x27;)) {
+          selectedRow.addClass(&#x27;active&#x27;);
+        }
+
+        if (selectedRecords.indexOf(recordWithKey.data) === -1) {
+          selectedRecords.pushObject(recordWithKey.data);
+        }
+      } else {
+        if (selectedRow.hasClass(&#x27;active&#x27;)) {
+          selectedRow.removeClass(&#x27;active&#x27;);
+        }
+
+        selectedRecords.removeObject(recordWithKey.data);
+      }
+
+      let componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, recordWithKey.data, selectedRecords.length, e.checked);
+    },
+
+    /**
+      Configurate items menu in row.
+
+      @method actions.menuInRowConfigurateItems
+      @public
+      @param {DS.Model} recordWithKey A record with key
+      @param {Object} menuItems Menu items in row
+    */
+    menuInRowConfigurateItems(recordWithKey, menuItems) {
+      let menuInRowSubItems = [];
+      if (this.get(&#x27;showEditMenuItemInRow&#x27;) &amp;&amp; recordWithKey.config.canBeSelected) {
+        menuInRowSubItems.push({
+          icon: &#x27;edit icon&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view.menu-in-row.edit-menu-item-title&#x27;) || &#x27;Edit record&#x27;,
+          isEditItem: true,
+        });
+      }
+
+      if (this.get(&#x27;showDeleteMenuItemInRow&#x27;) &amp;&amp; recordWithKey.config.canBeDeleted) {
+        menuInRowSubItems.push({
+          icon: &#x27;trash icon&#x27;,
+          title: this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view.menu-in-row.delete-menu-item-title&#x27;) || &#x27;Delete record&#x27;,
+          isDeleteItem: true,
+        });
+      }
+
+      if (this.get(&#x27;menuInRowHasAdditionalItems&#x27;)) {
+        menuInRowSubItems.push(...this.get(&#x27;menuInRowAdditionalItems&#x27;));
+      }
+
+      menuItems.push({
+        icon: &#x27;list layout icon&#x27;,
+        itemsAlignment: &#x27;left&#x27;,
+        items: menuInRowSubItems,
+      });
+    },
+
+    /**
+      This action is called when user click on item menu.
+
+      @method actions.menuInRowItemClick
+      @public
+      @param {DS.Model} recordWithKey A record with key
+      @param {jQuery.Event} e jQuery.Event by click on item menu
+    */
+    menuInRowItemClick(recordWithKey, e) {
+      if (this.get(&#x27;readonly&#x27;)) {
+        return;
+      }
+
+      if (!e.item) {
+        return;
+      }
+
+      if (e.item.isDeleteItem) {
+        this.send(&#x27;deleteRow&#x27;, recordWithKey);
+        return;
+      }
+
+      if (e.item.isEditItem) {
+        this.send(&#x27;rowClick&#x27;, recordWithKey);
+        return;
+      }
+
+      // Call onClick handler if it is specified in the given menu item.
+      if (e.item &amp;&amp; Ember.typeOf(e.item.onClick) === &#x27;function&#x27;) {
+        e.modelKey = recordWithKey.key;
+        e.model = recordWithKey.data;
+
+        e.item.onClick.call(e.currentTarget, e);
+      }
+    }
+  },
+
+  /**
+    An overridable method called when objects are instantiated.
+    For more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).
+   */
+  init() {
+    this._super(...arguments);
+
+    this.set(&#x27;selectedRecords&#x27;, Ember.A());
+    this.set(&#x27;contentWithKeys&#x27;, Ember.A());
+
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvDeleteRows&#x27;, this, this._deleteRows);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;filterByAnyMatch&#x27;, this, this._filterByAnyMatch);
+
+    let content = this.get(&#x27;content&#x27;);
+    if (content) {
+      if (content.get(&#x27;isFulfilled&#x27;) === false) {
+        content.then((items) =&gt; {
+          items.forEach((item) =&gt; {
+            this._addModel(item);
+          });
+        });
+      } else {
+        content.forEach((item) =&gt; {
+          this._addModel(item);
+        });
+      }
+    }
+
+    let searchForContentChange = this.get(&#x27;searchForContentChange&#x27;);
+    if (searchForContentChange) {
+      this.addObserver(&#x27;content.[]&#x27;, this, this._contentDidChange);
+    }
+  },
+
+  /**
+    Called when the element of the view has been inserted into the DOM or after the view was re-rendered.
+    For more information see [didInsertElement](http://emberjs.com/api/classes/Ember.Component.html#event_didInsertElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).
+  */
+  didInsertElement() {
+    this._super(...arguments);
+
+    if (!(this.get(&#x27;showCheckBoxInRow&#x27;) || this.get(&#x27;showDeleteButtonInRow&#x27;))) {
+      this.$(&#x27;thead tr th:eq(1)&#x27;).css(&#x27;border-left&#x27;, &#x27;none&#x27;);
+      this.$(&#x27;tbody tr&#x27;).find(&#x27;td:eq(1)&#x27;).css(&#x27;border-left&#x27;, &#x27;none&#x27;);
+    }
+
+    if (this.rowClickable) {
+      let key = this._getModelKey(this.selectedRecord);
+      if (key) {
+        this._setActiveRecord(key);
+      }
+    }
+
+    let moduleName = this.get(&#x27;_moduleName&#x27;);
+    let userSetting = {
+      moduleName: moduleName,
+      settingName: this.get(&#x27;_columnWidthsUserSettingName&#x27;)
+    };
+
+    this.get(&#x27;userSettingsService&#x27;).getUserSetting(userSetting).then(data =&gt; {
+      this._setColumnWidths(data);
+    });
+
+    // TODO: resolve this problem.
+    this.$(&#x27;.flexberry-dropdown:last&#x27;).dropdown({
+      direction: &#x27;upward&#x27;
+    });
+
+    // The last flexberry-menu need will be up.
+    this.$(&#x27;.flexberry-menu:last&#x27;).addClass(&#x27;bottom&#x27;);
+  },
+
+  /**
+    Called after a component has been rendered, both on initial render and in subsequent rerenders.
+    For more information see [didRender](http://emberjs.com/api/classes/Ember.Component.html#method_didRender) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).
+  */
+  didRender() {
+    this._super(...arguments);
+
+    let $currentTable = this.$(&#x27;table.object-list-view&#x27;);
+
+    if (this.get(&#x27;allowColumnResize&#x27;)) {
+      // The first column has semantic class &quot;collapsing&quot;
+      // so the column has 1px width and plugin has problems.
+      // A real width is reset in order to keep computed by semantic width.
+      Ember.$.each(this.$(&#x27;th&#x27;, $currentTable), (key, item) =&gt; {
+        let curWidth = Ember.$(item).width();
+        Ember.$(item).width(curWidth);
+      });
+
+      $currentTable.addClass(&#x27;fixed&#x27;);
+
+      this._reinitResizablePlugin();
+    } else {
+      $currentTable.colResizable({ disable: true });
+    }
+  },
+
+  /**
+    Override to implement teardown.
+    For more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).
+  */
+  willDestroy() {
+    this.removeObserver(&#x27;content.[]&#x27;, this, this._contentDidChange);
+
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvAddRow&#x27;, this, this._addRow);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvDeleteRows&#x27;, this, this._deleteRows);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;filterByAnyMatch&#x27;, this, this._filterByAnyMatch);
+
+    this._super(...arguments);
+  },
+
+  /**
+    Called when the element of the view is going to be destroyed.
+    For more information see [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).
+  */
+  willDestroyElement() {
+    this._super(...arguments);
+  },
+
+  /**
+    It reinits plugin for column resize.
+    Reinit is important for proper position of resize elements.
+
+    @method _reinitResizablePlugin
+    @private
+  */
+  _reinitResizablePlugin() {
+    let $currentTable = this.$(&#x27;table.object-list-view&#x27;);
+
+    // Disable plugin and then init it again.
+    $currentTable.colResizable({ disable: true });
+
+    $currentTable.colResizable({
+      minWidth: 90,
+      resizeMode:&#x27;flex&#x27;,
+      onResize: (e)=&gt; {
+        // Save column width as user setting on resize.
+        this._afterColumnResize(e);
+      }
+    });
+  },
+
+  /**
+    It handles the end of getting user setting with column widths.
+
+    @method _setColumnWidths
+    @private
+
+    @param {Array} userSetting User setting to apply to control
+  */
+  _setColumnWidths(userSetting) {
+    if (!Ember.isArray(userSetting)) {
+      return;
+    }
+
+    let hashedUserSetting = {};
+    userSetting.forEach(item =&gt; {
+      let userColumnInfo = Ember.merge({
+        propertyName: undefined,
+        width: undefined
+      }, item);
+
+      let propertyName = userColumnInfo.propertyName;
+      let width = userColumnInfo.width;
+
+      Ember.assert(&#x27;Property name is not defined at saved user setting.&#x27;, propertyName);
+      Ember.assert(&#x27;Column width is not defined at saved user setting.&#x27;, width);
+
+      hashedUserSetting[propertyName] = width;
+    });
+
+    let $columns = this.$(&#x27;table.object-list-view&#x27;).find(&#x27;th&#x27;);
+    Ember.$.each($columns, (key, item) =&gt; {
+      let currentItem = this.$(item);
+      let currentPropertyName = this._getColumnPropertyName(currentItem);
+      Ember.assert(&#x27;Column property name is not defined&#x27;, currentPropertyName);
+
+      let savedColumnWidth = hashedUserSetting[currentPropertyName];
+      if (savedColumnWidth) {
+        currentItem.width(savedColumnWidth);
+      }
+    });
+
+    this._reinitResizablePlugin();
+  },
+
+  /**
+    It handles the end of column resize.
+    New column widths are send to user settings service for saving.
+
+    @method _afterColumnResize
+    @private
+
+    @param {Object} eventParams Parameters of the end of column resizing
+  */
+  _afterColumnResize(eventParams) {
+    // Send info to service with user settings.
+    let userWidthSettings = [];
+    let $columns = this.$(eventParams.currentTarget).find(&#x27;th&#x27;);
+    Ember.$.each($columns, (key, item) =&gt; {
+      let currentItem = this.$(item);
+      let currentPropertyName = this._getColumnPropertyName(currentItem);
+      Ember.assert(&#x27;Column property name is not defined&#x27;, currentPropertyName);
+
+      // There can be fractional values potentially.
+      let currentColumnWidth = currentItem.width();
+      currentColumnWidth = Math.round(currentColumnWidth);
+
+      userWidthSettings.push({
+        propertyName: currentPropertyName,
+        width: currentColumnWidth,
+      });
+    });
+
+    let moduleName = this.get(&#x27;_moduleName&#x27;);
+    let userSetting = {
+      moduleName,
+      userSetting: userWidthSettings,
+      settingName: this.get(&#x27;_columnWidthsUserSettingName&#x27;),
+    };
+
+    this.get(&#x27;userSettingsService&#x27;).saveUserSetting(userSetting);
+  },
+
+  /**
+    This method returns property name for column.
+    Property name is got from atribute &#x60;data-olv-header-property-name&#x60; of column header.
+    If property name won&#x27;t be found, exeption will be thrown.
+
+    @method _getColumnPropertyName
+    @private
+
+    @param {Object} currentItem Current column header to get property name from
+    @return {String} Corresponding property name for column
+  */
+  _getColumnPropertyName(currentItem) {
+    let currentPropertyName = currentItem.attr(&#x27;data-olv-header-property-name&#x27;);
+    if (!currentPropertyName) {
+      currentPropertyName =
+        currentItem.find(&#x27;*[data-olv-header-property-name]&#x27;).attr(&#x27;data-olv-header-property-name&#x27;);
+    }
+
+    Ember.assert(
+      &#x27;There is no tag with attribute \&#x27;data-olv-header-property-name\&#x27; at column header.&#x27;, currentPropertyName);
+    return currentPropertyName;
+  },
+
+  /**
+    Generate the columns.
+
+    @method _generateColumns
+    @private
+  */
+  _generateColumns(attributes, columnsBuf, relationshipPath) {
+    columnsBuf = columnsBuf || [];
+    relationshipPath = relationshipPath || &#x27;&#x27;;
+
+    for (let attrName in attributes) {
+      let currentRelationshipPath = relationshipPath;
+      if (!attributes.hasOwnProperty(attrName)) {
+        continue;
+      }
+
+      let attr = attributes[attrName];
+      switch (attr.kind) {
+        case &#x27;hasMany&#x27;:
+          break;
+
+        case &#x27;belongsTo&#x27;:
+          if (!attr.options.hidden) {
+            let bindingPath = currentRelationshipPath + attrName;
+            let column = this._createColumn(attr, bindingPath);
+
+            if (column.cellComponent.componentName === &#x27;object-list-view-cell&#x27;) {
+              if (attr.options.displayMemberPath) {
+                column.propName += &#x27;.&#x27; + attr.options.displayMemberPath;
+              } else {
+                column.propName += &#x27;.id&#x27;;
+              }
+            }
+
+            columnsBuf.push(column);
+          }
+
+          currentRelationshipPath += attrName + &#x27;.&#x27;;
+          this._generateColumns(attr.attributes, columnsBuf, currentRelationshipPath);
+          break;
+
+        case &#x27;attr&#x27;:
+          if (attr.options.hidden) {
+            break;
+          }
+
+          let bindingPath = currentRelationshipPath + attrName;
+          let column = this._createColumn(attr, bindingPath);
+          columnsBuf.push(column);
+          break;
+
+        default:
+          Ember.Logger.error(&#x60;Unknown kind of projection attribute: ${attr.kind}&#x60;);
+      }
+    }
+
+    return columnsBuf;
+  },
+
+  /**
+    Create the column.
+
+    @method _createColumn
+    @private
+  */
+  _createColumn(attr, bindingPath) {
+    // We get the &#x27;getCellComponent&#x27; function directly from the controller,
+    // and do not pass this function as a component attrubute,
+    // to avoid &#x27;Ember.Object.create no longer supports defining methods that call _super&#x27; error,
+    // if controller&#x27;s &#x27;getCellComponent&#x27; method call its super method from the base controller.
+    let currentController = this.get(&#x27;currentController&#x27;);
+    let getCellComponent = Ember.get(currentController || {}, &#x27;getCellComponent&#x27;);
+    let cellComponent = this.get(&#x27;cellComponent&#x27;);
+
+    if (!this.get(&#x27;editOnSeparateRoute&#x27;) &amp;&amp; Ember.typeOf(getCellComponent) === &#x27;function&#x27;) {
+      let recordModel =  (this.get(&#x27;content&#x27;) || {}).type || null;
+      cellComponent = getCellComponent.call(currentController, attr, bindingPath, recordModel);
+    }
+
+    let column = {
+      header: attr.caption,
+      propName: bindingPath, // TODO: rename column.propName
+      cellComponent: cellComponent,
+    };
+
+    let customColumnAttributesFunc = this.get(&#x27;customColumnAttributes&#x27;);
+    if (customColumnAttributesFunc) {
+      let customColAttr = customColumnAttributesFunc(attr, bindingPath);
+      if (customColAttr &amp;&amp; (typeof customColAttr === &#x27;object&#x27;)) {
+        Ember.$.extend(true, column, customColAttr);
+      }
+    }
+
+    let sortDef;
+    let sorting = this.get(&#x27;sorting&#x27;);
+    if (sorting &amp;&amp; (sortDef = sorting[bindingPath])) {
+      column.sorted = true;
+      column.sortAscending = sortDef.sortAscending;
+      column.sortNumber = sortDef.sortNumber;
+    }
+
+    return column;
+  },
+
+  /**
+    Get the row by key.
+
+    @method _getRowByKey
+    @private
+  */
+  _getRowByKey(key) {
+    let row = null;
+    this.$(&#x27;tbody tr&#x27;).each(function() {
+      let currentKey = Ember.$(this).find(&#x27;td:eq(0) div:eq(0)&#x27;).text().trim();
+      if (currentKey === key) {
+        row = Ember.$(this);
+        return;
+      }
+    });
+    return row;
+  },
+
+  /**
+    Get the key of model.
+
+    @method _getModelKey
+    @private
+  */
+  _getModelKey(record) {
+    let modelWithKeyItem = this.get(&#x27;contentWithKeys&#x27;).findBy(&#x27;data&#x27;, record);
+    return modelWithKeyItem ? modelWithKeyItem.key : null;
+  },
+
+  /**
+    Remove the model with key.
+
+    @method _removeModelWithKey
+    @private
+  */
+  _removeModelWithKey(key) {
+    let itemToRemove = this.get(&#x27;contentWithKeys&#x27;).findBy(&#x27;key&#x27;, key);
+    if (itemToRemove) {
+      this.get(&#x27;contentWithKeys&#x27;).removeObject(itemToRemove);
+    }
+  },
+
+  /**
+    Adds detail model to current model, generates unique key for detail model.
+    If record is deleted then &#x60;undefined&#x60; is returned and record isn&#x27;t added to list.
+
+    @method _addModel
+    @private
+
+    @param {DS.Model} record Detail model to add to current model
+    @return {String} Unique key for added record or &#x60;undefined&#x60; if record is deleted
+  */
+  _addModel(record) {
+    if (record.get(&#x27;isDeleted&#x27;)) {
+      return undefined;
+    }
+
+    let modelWithKey = Ember.Object.create({});
+    let key = Ember.guidFor(record);
+
+    modelWithKey.set(&#x27;key&#x27;, key);
+    modelWithKey.set(&#x27;data&#x27;, record);
+
+    let rowConfig = Ember.copy(this.get(&#x27;defaultRowConfig&#x27;));
+    modelWithKey.set(&#x27;config&#x27;, rowConfig);
+
+    let configurateRow = this.get(&#x27;configurateRow&#x27;);
+    if (configurateRow) {
+      Ember.assert(&#x27;configurateRow must be a function&#x27;, typeof configurateRow === &#x27;function&#x27;);
+      configurateRow(rowConfig, record);
+    }
+
+    this.get(&#x27;contentWithKeys&#x27;).pushObject(modelWithKey);
+
+    return key;
+  },
+
+  /**
+    Adds row to component and calls click on row action if detail is edited on separate route.
+    This method is triggered on toolbar&#x27;s add batton click.
+
+    @method _addRow
+    @private
+
+    @param {String} componentName The name of triggered component
+  */
+  _addRow(componentName) {
+    if (componentName === this.get(&#x27;componentName&#x27;)) {
+      if (this.get(&#x27;editOnSeparateRoute&#x27;)) {
+        // Depending on settings current model has to be saved before adding detail.
+        this.send(&#x27;rowClick&#x27;, undefined, undefined);
+      } else {
+        let modelName = this.get(&#x27;modelProjection&#x27;).modelName;
+        let modelToAdd = this.get(&#x27;store&#x27;).createRecord(modelName, {});
+
+        this._addModel(modelToAdd);
+        this.get(&#x27;content&#x27;).addObject(modelToAdd);
+        this.get(&#x27;objectlistviewEventsService&#x27;).rowAddedTrigger(componentName, modelToAdd);
+      }
+    }
+  },
+
+  /**
+    Handler for &quot;delete selected rows&quot; event in objectlistview.
+
+    @method _deleteRows
+
+    @param {String} componentName The name of objectlistview component
+    @param {Boolean} immediately Flag to delete record immediately
+  */
+  _deleteRows(componentName, immediately) {
+    if (componentName === this.get(&#x27;componentName&#x27;)) {
+      this.send(&#x27;dismissErrorMessages&#x27;);
+      let selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+      let count = selectedRecords.length;
+      selectedRecords.forEach((item, index, enumerable) =&gt; {
+        Ember.run.once(this, function() {
+          this._deleteRecord(item, immediately);
+        });
+      }, this);
+
+      selectedRecords.clear();
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowsDeletedTrigger(componentName, count);
+    }
+  },
+
+  /**
+    Delete the record.
+
+    @method _deleteRecord
+    @private
+
+    @param {DS.Model} record A record to delete
+    @param {Boolean} immediately If &#x60;true&#x60;, relationships have been destroyed (delete and save)
+  */
+  _deleteRecord(record, immediately) {
+    let beforeDeleteRecord = this.get(&#x27;beforeDeleteRecord&#x27;);
+    if (beforeDeleteRecord) {
+      Ember.assert(&#x27;beforeDeleteRecord must be a function&#x27;, typeof beforeDeleteRecord === &#x27;function&#x27;);
+
+      let data = {
+        immediately: immediately,
+        cancel: false
+      };
+      beforeDeleteRecord(record, data);
+
+      if (data.cancel) {
+        return;
+      }
+    }
+
+    let key = this._getModelKey(record);
+    this._removeModelWithKey(key);
+
+    this._deleteHasManyRelationships(record, immediately).then(() =&gt; immediately ? record.destroyRecord() : record.deleteRecord()).catch((reason) =&gt; {
+      this.rejectError(reason, &#x60;Unable to delete a record: ${record.toString()}.&#x60;);
+      record.rollbackAttributes();
+    });
+
+    let componentName = this.get(&#x27;componentName&#x27;);
+    this.get(&#x27;objectlistviewEventsService&#x27;).rowDeletedTrigger(componentName, record, immediately);
+  },
+
+  /**
+    Delete all hasMany relationships in the &#x60;record&#x60;.
+
+    @method _deleteHasManyRelationships
+    @private
+
+    @param {DS.Model} record A record with relationships to delete
+    @param {Boolean} immediately If &#x60;true&#x60;, relationships have been destroyed (delete and save)
+    @return {Promise} A promise that will be resolved when relationships have been deleted
+  */
+  _deleteHasManyRelationships(record, immediately) {
+    let promises = Ember.A();
+    record.eachRelationship((name, desc) =&gt; {
+      if (desc.kind === &#x27;hasMany&#x27;) {
+        record.get(name).forEach((relRecord) =&gt; {
+          promises.pushObject(immediately ? relRecord.destroyRecord() : relRecord.deleteRecord());
+        });
+      }
+    });
+
+    return Ember.RSVP.all(promises);
+  },
+
+  /**
+    The handler for &quot;filter by any match&quot; event triggered in objectlistview events service.
+
+    @method _filterByAnyMatch
+    @private
+
+    @param {String} pattern The pattern to filter objects
+  */
+  _filterByAnyMatch(componentName, pattern) {
+    this.sendAction(&#x27;filterByAnyMatch&#x27;, pattern);
+  },
+
+  /**
+    Set the active record.
+
+    @method _setActiveRecord
+    @private
+
+    @param {String} key The key of record
+  */
+  _setActiveRecord(key) {
+    let selectedRow = this._getRowByKey(key);
+    this.$(&#x27;tbody tr.active&#x27;).removeClass(&#x27;active&#x27;);
+    selectedRow.addClass(&#x27;active&#x27;);
+  },
+
+  // TODO: why this observer here in olv, if it is needed only for groupedit? And why there is still no group-edit component?
+  _rowsChanged: Ember.observer(&#x27;content.@each.dirtyType&#x27;, function() {
+    let content = this.get(&#x27;content&#x27;);
+    if (content &amp;&amp; content.isAny(&#x27;dirtyType&#x27;, &#x27;updated&#x27;)) {
+      let componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowsChangedTrigger(componentName);
+    }
+  }),
+
+  /**
+    It observes changes of flag {{#crossLink &quot;ObjectListViewComponent/searchForContentChange:property&quot;}}searchForContentChange{{/crossLink}}.
+
+    If flag {{#crossLink &quot;ObjectListViewComponent/searchForContentChange:property&quot;}}{{/crossLink}} changes its value
+    observer on component content is set otherwise it is removed.
+
+    @method _searchForContentChange
+    @private
+  */
+  _searchForContentChange: Ember.observer(&#x27;searchForContentChange&#x27;, function() {
+    let searchForContentChange = this.get(&#x27;searchForContentChange&#x27;);
+    if (searchForContentChange) {
+      this.addObserver(&#x27;content.[]&#x27;, this, this._contentDidChange);
+    } else {
+      this.removeObserver(&#x27;content.[]&#x27;, this, this._contentDidChange);
+    }
+  }),
+
+  /**
+    It observes changes of model&#x27;s data that are displayed on component
+    if flag {{#crossLink &quot;ObjectListViewComponent/searchForContentChange:property&quot;}}{{/crossLink}} is enabled.
+
+    Property changing displayes automatically.
+    Component compares current detail array with used on component,
+    removes deleted and marked as deleted on model level records, adds created on model level records.
+
+    @method _contentDidChange
+    @private
+  */
+  _contentDidChange() {
+    // Property changing displays automatically.
+    let content = this.get(&#x27;content&#x27;);
+    let contentWithKeys = this.get(&#x27;contentWithKeys&#x27;);
+    let componentName = this.get(&#x27;componentName&#x27;);
+    let immediateDelete = this.get(&#x27;immediateDelete&#x27;);
+    let selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+
+    // Search for added and deleted records.
+    let addedItems = [];
+    let deletedItems = [];
+    content.forEach((item) =&gt; {
+      let foundRecord = this._getModelKey(item);
+      let isDeleted = item.get(&#x27;isDeleted&#x27;);
+      if (!foundRecord &amp;&amp; !isDeleted) {
+        addedItems.push(item);
+      } else if (foundRecord &amp;&amp; isDeleted) {
+        deletedItems.push(item);
+      }
+    });
+
+    contentWithKeys.forEach((item) =&gt; {
+      let record = item.get(&#x27;data&#x27;);
+      if (!content.contains(record)) {
+        deletedItems.push(record);
+      }
+    });
+
+    // Apply changes to component.
+    addedItems.forEach((addedItem) =&gt; {
+      this._addModel(addedItem);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowAddedTrigger(componentName, addedItem);
+    });
+
+    deletedItems.forEach((deletedItem) =&gt; {
+      let key = this._getModelKey(deletedItem);
+      this._removeModelWithKey(key);
+      selectedRecords.removeObject(deletedItem);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowDeletedTrigger(componentName, deletedItem, immediateDelete);
+    });
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ember-flexberry-data/addon/stores/base-store.js - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>master</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.Odata", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/BaseModel", "classes/ColsconfigDialogContentComponent", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryBaseComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDropDown", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbarComponent", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JsAdapter", "classes/Query.OdataAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.Odata", "classes/Serializer.Offline", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/ValidationDataObject", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Adapter.html">Adapter</a></li>
+	                            <li><a href="../classes/Adapter.Odata.html">Adapter.Odata</a></li>
+	                            <li><a href="../classes/Adapter.Offline.html">Adapter.Offline</a></li>
+	                            <li><a href="../classes/ApplicationInitializer.html">ApplicationInitializer</a></li>
+	                            <li><a href="../classes/ApplicationInstanceInitializer.html">ApplicationInstanceInitializer</a></li>
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
+	                            <li><a href="../classes/ColsconfigDialogContentComponent.html">ColsconfigDialogContentComponent</a></li>
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormNewRoute.html">EditFormNewRoute</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/EnumCaptionHelper.html">EnumCaptionHelper</a></li>
+	                            <li><a href="../classes/ErrorableControllerMixin.html">ErrorableControllerMixin</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryCheckboxComponent.html">FlexberryCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatePicker.html">FlexberryDatePicker</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEnumTransform.html">FlexberryEnumTransform</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFileCompatibleComponentMixin.html">FlexberryFileCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileComponent.html">FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/FlexberryFileControllerMixin.html">FlexberryFileControllerMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileViewDialogController.html">FlexberryFileViewDialogController</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditComponent.html">FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditRouteMixin.html">FlexberryGroupeditRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponent.html">FlexberryLookupCompatibleComponent</a></li>
+	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
+	                            <li><a href="../classes/FlexberryMenu.html">FlexberryMenu</a></li>
+	                            <li><a href="../classes/FlexberryMenuitem.html">FlexberryMenuitem</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistviewRouteMixin.html">FlexberryObjectlistviewRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GroupEditToolbarComponent.html">GroupEditToolbarComponent</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogEController.html">IISCaseberryLoggingObjectsApplicationLogEController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogERoute.html">IISCaseberryLoggingObjectsApplicationLogERoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLController.html">IISCaseberryLoggingObjectsApplicationLogLController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLRoute.html">IISCaseberryLoggingObjectsApplicationLogLRoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogModel.html">IISCaseberryLoggingObjectsApplicationLogModel</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogSerializer.html">IISCaseberryLoggingObjectsApplicationLogSerializer</a></li>
+	                            <li><a href="../classes/LimitedController.html">LimitedController</a></li>
+	                            <li><a href="../classes/LimitedRouteMixin.html">LimitedRouteMixin</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/LogService.html">LogService</a></li>
+	                            <li><a href="../classes/LookupDialogController.html">LookupDialogController</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryFileComponent.html">Mobile.FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryGroupeditComponent.html">Mobile.FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryObjectlistview.html">Mobile.FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/Mobile.ObjectListViewComponent.html">Mobile.ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/ModalApplicationRoute.html">ModalApplicationRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingModel.html">NewPlatformFlexberryFlexberryUserSettingModel</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingSerializer.html">NewPlatformFlexberryFlexberryUserSettingSerializer</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectListViewComponent.html">ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCellComponent.html">ObjectListViewSingleColumnCellComponent</a></li>
+	                            <li><a href="../classes/Offline.html">Offline</a></li>
+	                            <li><a href="../classes/Offline.GlobalsService.html">Offline.GlobalsService</a></li>
+	                            <li><a href="../classes/Offline.Model.html">Offline.Model</a></li>
+	                            <li><a href="../classes/Offline.ModelMixin.html">Offline.ModelMixin</a></li>
+	                            <li><a href="../classes/Offline.Store.html">Offline.Store</a></li>
+	                            <li><a href="../classes/Offline.Syncer.html">Offline.Syncer</a></li>
+	                            <li><a href="../classes/OlvToolbar.html">OlvToolbar</a></li>
+	                            <li><a href="../classes/PaginatedController.html">PaginatedController</a></li>
+	                            <li><a href="../classes/ProjectedModelForm.html">ProjectedModelForm</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.AdapterMixin.html">Projection.AdapterMixin</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.StoreMixin.html">Projection.StoreMixin</a></li>
+	                            <li><a href="../classes/Query.html">Query</a></li>
+	                            <li><a href="../classes/Query.BaseAdapter.html">Query.BaseAdapter</a></li>
+	                            <li><a href="../classes/Query.BaseBuilder.html">Query.BaseBuilder</a></li>
+	                            <li><a href="../classes/Query.BasePredicate.html">Query.BasePredicate</a></li>
+	                            <li><a href="../classes/Query.Builder.html">Query.Builder</a></li>
+	                            <li><a href="../classes/Query.ComplexPredicate.html">Query.ComplexPredicate</a></li>
+	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
+	                            <li><a href="../classes/Query.DetailPredicate.html">Query.DetailPredicate</a></li>
+	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
+	                            <li><a href="../classes/Query.IndexedDbAdapter.html">Query.IndexedDbAdapter</a></li>
+	                            <li><a href="../classes/Query.JsAdapter.html">Query.JsAdapter</a></li>
+	                            <li><a href="../classes/Query.OdataAdapter.html">Query.OdataAdapter</a></li>
+	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
+	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
+	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
+	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                            <li><a href="../classes/Serializer.html">Serializer</a></li>
+	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
+	                            <li><a href="../classes/Serializer.Odata.html">Serializer.Odata</a></li>
+	                            <li><a href="../classes/Serializer.Offline.html">Serializer.Offline</a></li>
+	                            <li><a href="../classes/SortableColumn.html">SortableColumn</a></li>
+	                            <li><a href="../classes/SortableControllerMixin.html">SortableControllerMixin</a></li>
+	                            <li><a href="../classes/SortableRoute.html">SortableRoute</a></li>
+	                            <li><a href="../classes/UIMessage.html">UIMessage</a></li>
+	                            <li><a href="../classes/UserSettingsService.html">UserSettingsService</a></li>
+	                            <li><a href="../classes/Utils.html">Utils</a></li>
+	                            <li><a href="../classes/Utils.Information.html">Utils.Information</a></li>
+	                            <li><a href="../classes/ValidationDataObject.html">ValidationDataObject</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>ember-flexberry-data/addon/stores/base-store.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
+import DS from &#x27;ember-data&#x27;;
+import decorateAdapter from &#x27;./base-store/decorate-adapter&#x27;;
+import decorateSerializer from &#x27;./base-store/decorate-serializer&#x27;;
+import decorateAPICall from &#x27;./base-store/decorate-api-call&#x27;;
+
+/**
+  Base class for application store.
+  service:store should point to instance of that class.
+
+  @class Store
+  @namespace Offline
+  @extends &lt;a href=&quot;http://emberjs.com/api/data/classes/DS.Store.html&quot;&gt;DS.Store&lt;/a&gt;
+*/
+export default DS.Store.extend({
+  /**
+    Store that use for making requests in online mode.
+    It can be specified in application that use offline mode support.
+    If it is not specified then instance of &lt;a href=&quot;http://emberjs.com/api/data/classes/DS.Store.html&quot;&gt;DS.Store&lt;/a&gt;
+    is set as value of this property during initialization of {{#crossLink &quot;BaseStore&quot;}}{{/crossLink}} class.
+
+    @property onlineStore
+    @type &lt;a href=&quot;http://emberjs.com/api/data/classes/DS.Store.html&quot;&gt;DS.Store&lt;/a&gt;
+  */
+  onlineStore: null,
+
+  /**
+    Store that use for making requests in offline mode.
+    By default it is set to global instane of {{#crossLink &quot;LocalStore&quot;}}{{/crossLink}} class.
+
+    @property offlineStore
+    @type &lt;a href=&quot;http://emberjs.com/api/data/classes/DS.Store.html&quot;&gt;DS.Store&lt;/a&gt;
+  */
+  offlineStore: null,
+  offlineGlobals: Ember.inject.service(&#x27;offline-globals&#x27;),
+
+  /**
+    Global instance of {{#crossLink &quot;Syncer&quot;}}{{/crossLink}} class that contains methods to sync model.
+
+    @property syncer
+    @type Syncer
+    @readOnly
+  */
+  syncer: null,
+
+  /*
+    Store initialization.
+  */
+  init() {
+    this._super(...arguments);
+    let owner = Ember.getOwner(this);
+
+    // Set online store if it is not specified in application explicitly.
+    if (Ember.isNone(this.get(&#x27;onlineStore&#x27;))) {
+      let onlineStore = DS.Store.create(owner.ownerInjection());
+      this.set(&#x27;onlineStore&#x27;, onlineStore);
+    }
+
+    // Set Syncer.
+    let syncer = owner.lookup(&#x27;syncer:main&#x27;);
+    this.set(&#x27;syncer&#x27;, syncer);
+
+    // Set offline store.
+    let offlineStore = owner.lookup(&#x27;store:local&#x27;);
+    this.set(&#x27;offlineStore&#x27;, offlineStore);
+  },
+
+  /**
+    This method returns a fresh collection from the server, regardless of if there is already records
+    in the store or not.
+    @method findAll
+    @param {String} modelName
+    @param {Object} options
+    @param {Boolean} [options.useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Promise} promise
+  */
+  findAll(modelName, options) {
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    let useOnlineStore = !Ember.isEmpty(options) &amp;&amp; !Ember.isEmpty(options.useOnlineStore) ? options.useOnlineStore : null;
+    let useOnlineStoreCondition = (useOnlineStore === true) || (useOnlineStore === null &amp;&amp; this._isOnline());
+    return useOnlineStoreCondition ? this._decorateMethodAndCall(&#x27;all&#x27;, &#x27;findAll&#x27;, arguments, 1) : offlineStore.findAll.apply(offlineStore, arguments);
+  },
+
+  /**
+   * This method returns a record for a given type and id combination.
+   * NOTE: this will trigger syncUp twice, this is OK. And since this is
+   *  a public method, we probably want to preserve this.
+    @method findRecord
+    @param {String} modelName
+    @param {String|Integer} id
+    @param {Object} options
+    @param {Boolean} [options.useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Promise} promise
+   */
+  findRecord(modelName, id, options) {
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    let useOnlineStore = !Ember.isEmpty(options) &amp;&amp; !Ember.isEmpty(options.useOnlineStore) ? options.useOnlineStore : null;
+    let useOnlineStoreCondition = (useOnlineStore === true) || (useOnlineStore === null &amp;&amp; this._isOnline());
+    return useOnlineStoreCondition ? this._decorateMethodAndCall(&#x27;single&#x27;, &#x27;findRecord&#x27;, arguments, 2) : offlineStore.findRecord.apply(offlineStore, arguments);
+  },
+
+  /**
+    This method is called by the record&#x27;s &#x60;reload&#x60; method.
+    This method calls the adapter&#x27;s &#x60;find&#x60; method, which returns a promise. When
+    **that** promise resolves, &#x60;reloadRecord&#x60; will resolve the promise returned
+    by the record&#x27;s &#x60;reload&#x60;.
+    @method reloadRecord
+    @private
+    @param {DS.Model} internalModel
+    @return {Promise} promise
+  */
+  reloadRecord() {
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    return this._isOnline() ? this._decorateMethodAndCall(&#x27;single&#x27;, &#x27;reloadRecord&#x27;, arguments, -1) : offlineStore.reloadRecord.apply(offlineStore, arguments);
+  },
+
+  /**
+    Query for records that meet certain criteria. Resolves with [DS.RecordArray](http://emberjs.com/api/data/classes/DS.RecordArray.html).
+	For more information see [query method](http://emberjs.com/api/data/classes/DS.Store.html#method_query) of [DS.Store](http://emberjs.com/api/data/classes/DS.Store.html).
+    @method query
+    @param {String} modelName
+    @param {Object} query
+    @param {Boolean} [query.useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Promise} promise
+  */
+  query(modelName, query) {
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    let useOnlineStore = !Ember.isEmpty(query) &amp;&amp; !Ember.isEmpty(query.useOnlineStore) ? query.useOnlineStore : null;
+    if (!Ember.isEmpty(query) &amp;&amp; !Ember.isEmpty(query.useOnlineStore)) {
+      delete query.useOnlineStore;
+    }
+
+    let useOnlineStoreCondition = (useOnlineStore === true) || (useOnlineStore === null &amp;&amp; this._isOnline());
+    return useOnlineStoreCondition ? this._decorateMethodAndCall(&#x27;multiple&#x27;, &#x27;query&#x27;, arguments, -1) : offlineStore.query.apply(offlineStore, arguments);
+  },
+
+  /**
+    Query for record that meet certain criteria. Resolves with single record.
+    @method query
+    @param {String} modelName
+    @param {Object} query
+    @param {Boolean} [query.useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Promise} promise
+  */
+  queryRecord(modelName, query) {
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    let useOnlineStore = !Ember.isEmpty(query) &amp;&amp; !Ember.isEmpty(query.useOnlineStore) ? query.useOnlineStore : null;
+    if (!Ember.isEmpty(query) &amp;&amp; !Ember.isEmpty(query.useOnlineStore)) {
+      delete query.useOnlineStore;
+    }
+
+    let useOnlineStoreCondition = (useOnlineStore === true) || (useOnlineStore === null &amp;&amp; this._isOnline());
+    return useOnlineStoreCondition ?
+           this._decorateMethodAndCall(&#x27;single&#x27;, &#x27;queryRecord&#x27;, arguments, -1) :
+           offlineStore.queryRecord.apply(offlineStore, arguments);
+  },
+
+  /**
+    Create a new record in the current store. The properties passed to this method are set on the newly created record.
+    @method createRecord
+    @param {String} modelName
+    @param {Object} inputProperties A hash of properties to set on the newly created record.
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Promise} promise
+  */
+  createRecord() {
+    return this._callSuperMethod(&#x27;createRecord&#x27;, 2, arguments);
+  },
+
+  /**
+    For symmetry, a record can be deleted via the store.
+    @method deleteRecord
+    @param {DS.Model} record
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+  */
+  deleteRecord() {
+    return this._callSuperMethod(&#x27;deleteRecord&#x27;, 1, arguments);
+  },
+
+  /**
+    Get the reference for the specified record.
+    @method getReference
+    @param {String} type
+    @param {String|Integer} id
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {RecordReference} promise
+  */
+  getReference() {
+    return this._callSuperMethod(&#x27;getReference&#x27;, 2, arguments);
+  },
+
+  /**
+    Returns true if a record for a given type and ID is already loaded.
+    @method hasRecordForId
+    @param {String|DS.Model} modelName
+    @param {String|Integer} inputId
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Boolean}
+  */
+  hasRecordForId() {
+    return this._callSuperMethod(&#x27;hasRecordForId&#x27;, 2, arguments);
+  },
+
+  /**
+    Converts a json payload into the normalized form that {{#crossLink &quot;BaseStore/push:method&quot;}}{{/crossLink}} expects.
+    @method normalize
+    @param {String} modelName The name of the model type for this payload
+    @param {Object} payload
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Object} The normalized payload
+  */
+  normalize() {
+    return this._callSuperMethod(&#x27;normalize&#x27;, 2, arguments);
+  },
+
+  /**
+    This method returns a filtered array that contains all of the known records for a given type in the store.
+    @method peekAll
+    @param {String} modelName
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {DS.RecordArray}
+  */
+  peekAll() {
+    return this._callSuperMethod(&#x27;peekAll&#x27;, 1, arguments);
+  },
+
+  /**
+    Get a record by a given type and ID without triggering a fetch.
+    @method peekRecord
+    @param {String} modelName
+    @param {String|Integer} id
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {DS.Model|null} Record
+  */
+  peekRecord() {
+    return this._callSuperMethod(&#x27;peekRecord&#x27;, 2, arguments);
+  },
+
+  /**
+    Push some data for a given type into the store.
+    @method push
+    @param {Object} data
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {DS.Model|Array} The record(s) that was created or updated.
+  */
+  push() {
+    return this._callSuperMethod(&#x27;push&#x27;, 1, arguments);
+  },
+
+  /**
+    Push some raw data into the store.
+    @method pushPayload
+    @param {String} modelName
+    @param {Object} inputPayload
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+  */
+  pushPayload() {
+    return this._callSuperMethod(&#x27;pushPayload&#x27;, 2, arguments);
+  },
+
+  /**
+    This method returns if a certain record is already loaded in the store.
+    @method recordIsLoaded
+    @param {String} modelName
+    @param {String|Integer} id
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {Boolean}
+  */
+  recordIsLoaded() {
+    return this._callSuperMethod(&#x27;recordIsLoaded&#x27;, 2, arguments);
+  },
+
+  /**
+    This method unloads all records in the store.
+    @method unloadAll
+    @param {String} modelName
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+  */
+  unloadAll() {
+    return this._callSuperMethod(&#x27;unloadAll&#x27;, 1, arguments);
+  },
+
+  /**
+    For symmetry, a record can be unloaded via the store. Only non-dirty records can be unloaded.
+    @method unloadRecord
+    @param {DS.Model} record
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+  */
+  unloadRecord() {
+    return this._callSuperMethod(&#x27;unloadRecord&#x27;, 1, arguments);
+  },
+
+  /**
+    Returns an instance of the adapter for a given type.
+    @method adapterFor
+    @param {String} modelName
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {DS.Adapter or subclass} Adapter
+  */
+  adapterFor(modelName, useOnlineStore) {
+    let onlineStore = this.get(&#x27;onlineStore&#x27;);
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    let adapter = onlineStore.adapterFor(modelName);
+    if (this.get(&#x27;offlineGlobals&#x27;).get(&#x27;isOfflineEnabled&#x27;)) {
+      let useOnlineStoreCondition = useOnlineStore || (Ember.isNone(useOnlineStore) &amp;&amp; this._isOnline());
+      return useOnlineStoreCondition ? decorateAdapter.call(this, adapter, modelName) : offlineStore.adapterFor(modelName);
+    } else {
+      return adapter;
+    }
+  },
+
+  /**
+    Returns an instance of the serializer for a given type.
+    @method serializerFor
+    @param {String} modelName
+    @param {Boolean} [useOnlineStore] Allow to explicitly specify online or offline store using independently of global online status
+    @return {DS.Serializer or subclass} Serializer
+  */
+  serializerFor(modelName, useOnlineStore) {
+    let onlineStore = this.get(&#x27;onlineStore&#x27;);
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    let serializer = onlineStore.serializerFor(modelName);
+    if (this.get(&#x27;offlineGlobals&#x27;).get(&#x27;isOfflineEnabled&#x27;)) {
+      let useOnlineStoreCondition = useOnlineStore || (Ember.isNone(useOnlineStore) &amp;&amp; this._isOnline());
+      return useOnlineStoreCondition ? decorateSerializer.call(this, serializer, modelName) : offlineStore.serializerFor(modelName);
+    } else {
+      return serializer;
+    }
+  },
+
+  /*
+    Decorate specified method of online store for add extra syncing features.
+  */
+  _decorateMethodAndCall(finderType, originMethodName, originMethodArguments, optionsIndex) {
+    let onlineStore = this.get(&#x27;onlineStore&#x27;);
+    let originMethod = onlineStore[originMethodName];
+    let decoratedMethod = decorateAPICall(finderType, originMethod);
+    if (optionsIndex &gt; -1) {
+      let options = originMethodArguments[optionsIndex];
+      options = this.get(&#x27;offlineGlobals&#x27;).get(&#x27;isOfflineEnabled&#x27;) ? options : Ember.$.extend(true, { bypass: true }, options);
+      originMethodArguments[optionsIndex] = options;
+    }
+
+    return decoratedMethod.apply(onlineStore, originMethodArguments);
+  },
+
+  /*
+    Detect global online status.
+  */
+  _isOnline() {
+    return this.get(&#x27;offlineGlobals.isOnline&#x27;);
+  },
+
+  /*
+    Pass control flow to online or offline store depend on global online status
+    and explicitly specified store to use.
+  */
+  _callSuperMethod(methodName, useOnlineStoreParamNum, ...args) {
+    let onlineStore = this.get(&#x27;onlineStore&#x27;);
+    let offlineStore = this.get(&#x27;offlineStore&#x27;);
+    let useOnlineStore = (args[0].length - 1) &gt;= useOnlineStoreParamNum ? args[0][useOnlineStoreParamNum] : null;
+    let useOnlineStoreCondition = useOnlineStore || (Ember.isNone(useOnlineStore) &amp;&amp; this._isOnline());
+    return useOnlineStoreCondition ? onlineStore[methodName].apply(onlineStore, args[0]) : offlineStore[methodName].apply(offlineStore, args[0]);
+  }
+});
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
