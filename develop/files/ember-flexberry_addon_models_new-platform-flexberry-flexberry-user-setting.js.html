@@ -223,16 +223,20 @@ import Proj from &#x27;ember-flexberry-data&#x27;;
   @extends BaseModel
 */
 let Model = BaseModel.extend({
+  appName: DS.attr(&#x27;string&#x27;),
   userName: DS.attr(&#x27;string&#x27;),
   moduleName: DS.attr(&#x27;string&#x27;),
   settName: DS.attr(&#x27;string&#x27;),
+  settLastAccessTime: DS.attr(&#x27;date&#x27;),
   txtVal: DS.attr(&#x27;string&#x27;)
 });
 
 Model.defineProjection(&#x27;FlexberryUserSettingE&#x27;, &#x27;new-platform-flexberry-flexberry-user-setting&#x27;, {
+  appName: Proj.attr(&#x27;Application page name&#x27;),
   userName: Proj.attr(&#x27;User name&#x27;),
-  moduleName: Proj.attr(&#x27;Module name&#x27;),
+  moduleName: Proj.attr(&#x27;Component name&#x27;),
   settName: Proj.attr(&#x27;Setting name&#x27;),
+  settLastAccessTime: Proj.attr(&#x27;Modification time&#x27;),
   txtVal: Proj.attr(&#x27;Text value&#x27;)
 });
 

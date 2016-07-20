@@ -294,6 +294,10 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_developerUserSettings" data-tablink="developerUserSettings">developerUserSettings</a>
+
+                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_filter" data-tablink="filter">filter</a>
 
@@ -308,6 +312,10 @@
                             </li>
                             <li class="index-item property inherited inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_queryParams" data-tablink="queryParams">queryParams</a>
+
+                            </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_sorting" data-tablink="sorting">sorting</a>
 
                             </li>
                     </ul>
@@ -629,7 +637,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/ListFormRoute.html#method_model">ListFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l54"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:54</code></a>
+                            <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l60"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:60</code></a>
                             </p>
                     
                     
@@ -1182,7 +1190,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/ListFormRoute.html#method_setupController">ListFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l116"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:116</code></a>
+                            <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l133"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:133</code></a>
                             </p>
                     
                     
@@ -1229,6 +1237,45 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property_developerUserSettings" class="property item">
+                        <h3 class="name"><code>developerUserSettings</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_routes_i-i-s-caseberry-logging-objects-application-log-l.js.html#l23"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;i-i-s-caseberry-logging-objects-application-log-l.js:23</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>developerUserSettings.
+                    {
+                    <componentName>: {
+                    <settingName>: {
+                    colsOrder: [ { propName :<colName>, hide: true|false }, ... ],
+                    sorting: [{ propName: <colName>, direction: 'asc'|'desc' }, ... ],
+                    colsWidths: [ <colName>:<colWidth>, ... ],
+                    },
+                    ...
+                    },
+                    ...
+                    }
+                    For default userSetting use empty name ('').
+                    <componentName> may contain any of properties: colsOrder, sorting, colsWidth or being empty.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> {}</p>
+                    
+                    
+                    </div>
                     <div id="property_filter" class="property item inherited">
                         <h3 class="name"><code>filter</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -1266,7 +1313,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_routes_i-i-s-caseberry-logging-objects-application-log-l.js.html#l23"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;i-i-s-caseberry-logging-objects-application-log-l.js:23</code></a>
+                            <a href="../files/ember-flexberry_addon_routes_i-i-s-caseberry-logging-objects-application-log-l.js.html#l236"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;i-i-s-caseberry-logging-objects-application-log-l.js:236</code></a>
                             </p>
                     
                     
@@ -1332,6 +1379,32 @@
                     
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="property_sorting" class="property item inherited">
+                        <h3 class="name"><code>sorting</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/ListFormRoute.html#property_sorting">ListFormRoute</a>:
+                            <a href="../files/ember-flexberry_addon_routes_list-form.js.html#l51"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;list-form.js:51</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Current sorting.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> []</p>
                     
                     
                     </div>

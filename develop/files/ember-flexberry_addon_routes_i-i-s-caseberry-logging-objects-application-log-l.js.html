@@ -231,6 +231,219 @@ export default ListFormRoute.extend({
   modelProjection: &#x27;ApplicationLogL&#x27;,
 
   /**
+  developerUserSettings.
+  {
+  &lt;componentName&gt;: {
+    &lt;settingName&gt;: {
+        colsOrder: [ { propName :&lt;colName&gt;, hide: true|false }, ... ],
+        sorting: [{ propName: &lt;colName&gt;, direction: &#x27;asc&#x27;|&#x27;desc&#x27; }, ... ],
+        colsWidths: [ &lt;colName&gt;:&lt;colWidth&gt;, ... ],
+      },
+      ...
+    },
+    ...
+  }
+  For default userSetting use empty name (&#x27;&#x27;).
+  &lt;componentName&gt; may contain any of properties: colsOrder, sorting, colsWidth or being empty.
+
+  @property developerUserSettings
+  @type Object
+  @default {}
+  */
+  developerUserSettings: { IISLoggingObjectListView: &#x60;
+    {
+      &quot;DEFAULT&quot;: {
+        &quot;colsOrder&quot;: [
+        {
+          &quot;propName&quot;: &quot;timestamp&quot;,
+          &quot;hide&quot;: false
+        },
+        {
+          &quot;propName&quot;: &quot;category&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;machineName&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;appDomainName&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;processId&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;message&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;processName&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;formattedMessage&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;eventId&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;priority&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;severity&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;title&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;threadName&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;win32ThreadId&quot;,
+          &quot;hide&quot;: true
+        }
+        ],
+        &quot;sorting&quot;: [
+        {
+          &quot;propName&quot;: &quot;timestamp&quot;,
+          &quot;direction&quot;: &quot;desc&quot;,
+          &quot;sortPriority&quot;: 1
+        }
+        ]
+      },
+      &quot;Message&quot;: {
+        &quot;colsOrder&quot;: [
+        {
+          &quot;propName&quot;: &quot;timestamp&quot;,
+          &quot;hide&quot;: false
+        },
+        {
+          &quot;propName&quot;: &quot;category&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;machineName&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;appDomainName&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;processId&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;message&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;processName&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;formattedMessage&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;eventId&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;priority&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;severity&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;title&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;threadName&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;win32ThreadId&quot;,
+          &quot;hide&quot;: true
+        }
+        ],
+        &quot;sorting&quot;: [
+        {
+          &quot;propName&quot;: &quot;timestamp&quot;,
+          &quot;direction&quot;: &quot;desc&quot;,
+          &quot;sortPriority&quot;: 1
+        }
+        ]
+      },
+      &quot;FormattedMessage&quot;: {
+        &quot;colsOrder&quot;: [
+        {
+          &quot;propName&quot;: &quot;timestamp&quot;,
+          &quot;hide&quot;: false
+        },
+        {
+          &quot;propName&quot;: &quot;category&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;machineName&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;appDomainName&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;processId&quot;
+        },
+        {
+          &quot;propName&quot;: &quot;formattedMessage&quot;,
+          &quot;hide&quot;: false
+        },
+        {
+          &quot;propName&quot;: &quot;message&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;processName&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;eventId&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;priority&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;severity&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;title&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;threadName&quot;,
+          &quot;hide&quot;: true
+        },
+        {
+          &quot;propName&quot;: &quot;win32ThreadId&quot;,
+          &quot;hide&quot;: true
+        }
+        ],
+        &quot;sorting&quot;: [
+        {
+          &quot;propName&quot;: &quot;timestamp&quot;,
+          &quot;direction&quot;: &quot;desc&quot;,
+          &quot;sortPriority&quot;: 1
+        }
+        ]
+      }
+    }
+    &#x60;
+  },
+
+  /**
     Model name.
 
     @property modelName

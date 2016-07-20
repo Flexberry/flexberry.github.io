@@ -213,7 +213,6 @@
 */
 
 import Ember from &#x27;ember&#x27;;
-const { getOwner } = Ember;
 
 /**
   Mixin for {{#crossLink &quot;DS.Controller&quot;}}Controller{{/crossLink}} to support
@@ -336,25 +335,7 @@ export default Ember.Mixin.create({
       }
 
       let sortQueryParam = this._serializeSortingParam(newSorting);
-      if (&#x27;userSettings&#x27; in this) { // NON modal window
-        this.userSettings.sorting = newSorting;
-        let router = getOwner(this).lookup(&#x27;router:main&#x27;);
-        let moduleName =  router.currentRouteName;
-        let savePromise = this.get(&#x27;_userSettingsService&#x27;).
-          saveUserSetting({
-            moduleName: moduleName,
-            settingName: &#x27;DEFAULT&#x27;,
-            userSetting: { sorting: newSorting }
-          }
-        );
-        savePromise.then(
-          record =&gt; {
-            this.set(&#x27;sort&#x27;, sortQueryParam);
-          }
-        );
-      } else {
-        this.set(&#x27;sort&#x27;, sortQueryParam);
-      }
+      this.set(&#x27;sort&#x27;, sortQueryParam);
     },
 
     /**
@@ -387,25 +368,7 @@ export default Ember.Mixin.create({
       }
 
       let sortQueryParam = this._serializeSortingParam(newSorting);
-      if (&#x27;userSettings&#x27; in this) { // NON model window
-        this.userSettings.sorting = newSorting;
-        let router = getOwner(this).lookup(&#x27;router:main&#x27;);
-        let moduleName =  router.currentRouteName;
-        let savePromise = this.get(&#x27;_userSettingsService&#x27;).
-          saveUserSetting({
-            moduleName: moduleName,
-            settingName: &#x27;DEFAULT&#x27;,
-            userSetting: { sorting: newSorting }
-          }
-        );
-        savePromise.then(
-          record =&gt; {
-            this.set(&#x27;sort&#x27;, sortQueryParam);
-          }
-        );
-      } else {
-        this.set(&#x27;sort&#x27;, sortQueryParam);
-      }
+      this.set(&#x27;sort&#x27;, sortQueryParam);
     }
   },
 

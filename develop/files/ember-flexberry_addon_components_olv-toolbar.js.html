@@ -223,12 +223,11 @@ const { getOwner } = Ember;
 */
 export default FlexberryBaseComponent.extend({
   /**
-    Flag to show colsConfigButton button at toolbar or not.
-  */
-  _colsConfigButton: Ember.computed(&#x27;colsConfigButton&#x27;, function() {
-    return this.get(&#x27;userSettingsService&#x27;).isUserSettingsServiceEnabled;
-  }),
+    Controller for model.
 
+    @property modelController
+    @type Object
+  */
   modelController: null,
 
   /**
@@ -310,6 +309,14 @@ export default FlexberryBaseComponent.extend({
     @default null
   */
   filterText: null,
+  /**
+    Used to link to objectListView with same componentName.
+
+    @property componentName
+    @type String
+    @default &#x27;&#x27;
+  */
+  componentName: &#x27;&#x27;,
 
   /**
     The flag to specify whether the delete button is enabled.
@@ -347,9 +354,9 @@ export default FlexberryBaseComponent.extend({
   customButtons: undefined,
 
   /**
-    @property listUserSettings
+    @property listNamedUserSettings
   */
-  listUserSettings: undefined,
+  listNamedUserSettings: undefined,
 
   /**
     @property createSettitingTitle
@@ -387,15 +394,17 @@ export default FlexberryBaseComponent.extend({
   setDefaultSettitingTitle: t(&#x27;components.olv-toolbar.set-default-setting-title&#x27;),
 
   /**
+    @property setDefaultSettitingTitle
+    @type String
+    @default t(&#x27;components.olv-toolbar.set-default-setting-title&#x27;)
+  */
+  showDefaultSettitingTitle: t(&#x27;components.olv-toolbar.show-default-setting-title&#x27;),
+
+  /**
     @property colsConfigMenu
     @type Service
   */
   colsConfigMenu: Ember.inject.service(),
-
-  /**
-    @property listUserSettings
-  */
-  listNamedSettings: null,
 
   /**
     @property colsSettingsItems
@@ -404,18 +413,20 @@ export default FlexberryBaseComponent.extend({
   colsSettingsItems:  Ember.computed(
     &#x27;createSettitingTitle&#x27;,
     &#x27;setDefaultSettitingTitle&#x27;,
+    &#x27;showDefaultSettitingTitle&#x27;,
     &#x27;useSettitingTitle&#x27;,
     &#x27;editSettitingTitle&#x27;,
     &#x27;removeSettitingTitle&#x27;,
-    &#x27;listNamedSettings&#x27;,
+    &#x27;listNamedUserSettings&#x27;,
     function() {
       let params = {
         createSettitingTitle: this.get(&#x27;createSettitingTitle&#x27;),
         setDefaultSettitingTitle: this.get(&#x27;setDefaultSettitingTitle&#x27;),
+        showDefaultSettitingTitle: this.get(&#x27;showDefaultSettitingTitle&#x27;),
         useSettitingTitle: this.get(&#x27;useSettitingTitle&#x27;),
         editSettitingTitle: this.get(&#x27;editSettitingTitle&#x27;),
         removeSettitingTitle: this.get(&#x27;removeSettitingTitle&#x27;),
-        listNamedSettings: this.get(&#x27;listNamedSettings&#x27;),
+        listNamedUserSettings: this.get(&#x27;listNamedUserSettings&#x27;),
       };
 
       return this.get(&#x27;userSettingsService&#x27;).isUserSettingsServiceEnabled ?
@@ -441,6 +452,70 @@ export default FlexberryBaseComponent.extend({
     @type String
   */
   filterByAnyMatchText: Ember.computed.oneWay(&#x27;filterText&#x27;),
+
+  /**
+    Caption to be displayed in info modal dialog.
+    It will be displayed only if some info occurs.
+
+    @property _infoModalDialogCaption
+    @type String
+    @default &#x27;&#x27;
+    @private
+  */
+  _infoModalDialogCaption: &#x27;&#x27;,
+
+  /**
+    Content to be displayed in info modal dialog.
+    It will be displayed only if some info occurs.
+
+    @property _infoModalDialogContent
+    @type String
+    @default &#x27;&#x27;
+    @private
+  */
+  _infoModalDialogContent: &#x27;&#x27;,
+
+  /**
+    Selected jQuery object, containing HTML of error modal dialog.
+
+    @property _errorModalDialog
+    @type &lt;a href=&quot;http://api.jquery.com/Types/#jQuery&quot;&gt;JQueryObject&lt;/a&gt;
+    @default null
+    @private
+  */
+  _infoModalDialog: null,
+
+  didInsertElement() {
+    this._super(...arguments);
+
+    // Initialize SemanticUI modal dialog, and remember it in a component property,
+    // because after call to infoModalDialog.modal its html will disappear from DOM.
+    let infoModalDialog = this.$(&#x27;.olv-toolbar-info-modal-dialog&#x27;);
+    infoModalDialog.modal(&#x27;setting&#x27;, &#x27;closable&#x27;, true);
+    this.set(&#x27;_infoModalDialog&#x27;, infoModalDialog);
+  },
+
+  /**
+   Shows info modal dialog.
+
+   @method showInfoModalDialog
+   @param {String} infoCaption Info caption (window header caption).
+   @param {String} infoContent Info content (window body content).
+   @returns {String} Info content.
+   */
+  showInfoModalDialog(infoCaption, infoContent) {
+    let infoModalDialog = this.get(&#x27;_infoModalDialog&#x27;);
+    if (infoModalDialog &amp;&amp; infoModalDialog.modal) {
+      this.set(&#x27;_infoModalDialogCaption&#x27;, infoCaption);
+      this.set(&#x27;_infoModalDialogContent&#x27;, infoContent);
+      infoModalDialog.modal(&#x27;show&#x27;);
+    }
+
+    let oLVToolbarInfoCopyButton = Ember.$(&#x27;#OLVToolbarInfoCopyButton&#x27;);
+    oLVToolbarInfoCopyButton.get(0).innerHTML = this.get(&#x27;i18n&#x27;).t(&#x27;components.olv-toolbar.copy&#x27;);
+    oLVToolbarInfoCopyButton.removeClass(&#x27;disabled&#x27;);
+    return infoContent;
+  },
 
   actions: {
     /**
@@ -523,7 +598,8 @@ export default FlexberryBaseComponent.extend({
       @public
     */
     showConfigDialog(settingName) {
-      this.get(&#x27;modelController&#x27;).send(&#x27;showConfigDialog&#x27;, settingName);
+      Ember.assert(&#x27;showConfigDialog:: componentName is not defined in flexberry-objectlistview component&#x27;, this.componentName);
+      this.get(&#x27;modelController&#x27;).send(&#x27;showConfigDialog&#x27;, this.componentName, settingName);
     },
 
     /**
@@ -543,7 +619,7 @@ export default FlexberryBaseComponent.extend({
       this._router = getOwner(this).lookup(&#x27;router:main&#x27;);
       let className = iTags.get(0).className;
       let namedSetting = namedSettingSpans.get(0).innerText;
-      let moduleName  =   this._router.currentRouteName;
+      let componentName  =  this.componentName;
       let userSettingsService = this.get(&#x27;userSettingsService&#x27;);
 
       switch (className) {
@@ -553,36 +629,34 @@ export default FlexberryBaseComponent.extend({
         case &#x27;checkmark box icon&#x27;:
 
           //TODO move this code and  _getSavePromise@addon/components/colsconfig-dialog-content.js to addon/components/colsconfig-dialog-content.js
-          let colsConfig = this.listUserSettings[namedSetting];
-          userSettingsService.saveUserSetting({
-            moduleName: moduleName,
-            settingName: &#x27;DEFAULT&#x27;,
-            userSetting: colsConfig
-          }).then(record =&gt; {
-            if (this._router.location.location.href.indexOf(&#x27;sort=&#x27;) &gt;= 0) { // sort parameter exist in URL (ugly - TODO find sort in query parameters)
-              this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { sort: null } }); // Show page without sort parameters
-            } else {
-              this._router.router.refresh();  //Reload current page and records (model) list
-            }
-          });
+          let colsConfig = this.listNamedUserSettings[namedSetting];
+          userSettingsService.saveUserSetting(this.componentName, undefined, colsConfig).
+            then(record =&gt; {
+              if (this._router.location.location.href.indexOf(&#x27;sort=&#x27;) &gt;= 0) { // sort parameter exist in URL (ugly - TODO find sort in query parameters)
+                this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { sort: null } }); // Show page without sort parameters
+              } else {
+                this._router.router.refresh();  //Reload current page and records (model) list
+              }
+            });
           break;
         case &#x27;setting icon&#x27;:
           this.send(&#x27;showConfigDialog&#x27;, namedSetting);
           break;
         case &#x27;remove icon&#x27;:
-          userSettingsService.deleteUserSetting({
-            moduleName: moduleName,
-            settingName: namedSetting
-          }).then(result =&gt; {
+          userSettingsService.deleteUserSetting(componentName, namedSetting)
+          .then(result =&gt; {
             this.get(&#x27;colsConfigMenu&#x27;).deleteNamedSettingTrigger(namedSetting);
             alert(&#x27;Настройка &#x27; + namedSetting + &#x27; удалена&#x27;);
           });
           break;
         case &#x27;remove circle icon&#x27;:
-          userSettingsService.deleteUserSetting({
-            moduleName: moduleName,
-            settingName: &#x27;DEFAULT&#x27;
-          }).then(record =&gt; {
+          if (!userSettingsService.haveDefaultUserSetting(componentName)) {
+            alert(&#x27;No default usersettings&#x27;);
+            break;
+          }
+
+          userSettingsService.deleteUserSetting(componentName)
+          .then(record =&gt; {
             if (this._router.location.location.href.indexOf(&#x27;sort=&#x27;) &gt;= 0) { // sort parameter exist in URL (ugly - TODO find sort in query parameters)
               this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { sort: null } }); // Show page without sort parameters
             } else {
@@ -590,7 +664,20 @@ export default FlexberryBaseComponent.extend({
             }
           });
           break;
+        case &#x27;unhide icon&#x27;:
+          let currentUserSetting = userSettingsService.getListCurrentUserSetting(this.componentName);
+          let caption = this.get(&#x27;i18n&#x27;).t(&#x27;components.olv-toolbar.show-setting-caption&#x27;) + this._router.currentPath + &#x27;.js&#x27;;
+          this.showInfoModalDialog(caption, JSON.stringify(currentUserSetting, undefined, &#x27;  &#x27;));
+          break;
       }
+    },
+
+    copyJSONContent(event) {
+      Ember.$(&#x27;#OLVToolbarInfoContent&#x27;).select();
+      let copied = document.execCommand(&#x27;copy&#x27;);
+      let oLVToolbarInfoCopyButton = Ember.$(&#x27;#OLVToolbarInfoCopyButton&#x27;);
+      oLVToolbarInfoCopyButton.get(0).innerHTML = this.get(&#x27;i18n&#x27;).t(copied ? &#x27;components.olv-toolbar.copied&#x27; : &#x27;components.olv-toolbar.ctrlc&#x27;);
+      oLVToolbarInfoCopyButton.addClass(&#x27;disabled&#x27;);
     }
   },
 
@@ -615,18 +702,7 @@ export default FlexberryBaseComponent.extend({
 
   didReceiveAttrs() {
     this._super(...arguments);
-    let listUserSettings = this.modelController.model.listUserSettings;
-    if (listUserSettings &amp;&amp; &#x27;DEFAULT&#x27; in listUserSettings) {
-      delete listUserSettings.DEFAULT;
-    }
-
-    this.listUserSettings = listUserSettings;
-    Ember.set(this, &#x27;listNamedSettings&#x27;, {});
-    if (listUserSettings) {
-      for (let nameSetting in listUserSettings) {
-        Ember.set(this.listNamedSettings, nameSetting, true);
-      }
-    }
+    Ember.set(this, &#x27;listNamedUserSettings&#x27;, this.get(&#x27;userSettingsService&#x27;).getListCurrentNamedUserSetting(this.componentName));
   },
 
   /**
@@ -658,16 +734,12 @@ export default FlexberryBaseComponent.extend({
   },
 
   _addNamedSetting(namedSetting) {
-    let listNamedSettings = JSON.parse(JSON.stringify(this.listNamedSettings));
-    listNamedSettings[namedSetting] = true;
-    Ember.set(this, &#x27;listNamedSettings&#x27;, listNamedSettings);
+    Ember.set(this, &#x27;listNamedUserSettings&#x27;, this.get(&#x27;userSettingsService&#x27;).getListCurrentNamedUserSetting(this.componentName));
   },
 
   _deleteNamedSetting(namedSetting) {
-    let listNamedSettings = JSON.parse(JSON.stringify(this.listNamedSettings));
-    delete listNamedSettings[namedSetting];
-    Ember.set(this, &#x27;listNamedSettings&#x27;, listNamedSettings);
-  },
+    Ember.set(this, &#x27;listNamedUserSettings&#x27;, this.get(&#x27;userSettingsService&#x27;).getListCurrentNamedUserSetting(this.componentName));
+  }
 });
 
     </pre>

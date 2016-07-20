@@ -220,7 +220,7 @@ const messageCategory = {
   log: { name: &#x27;LOG&#x27;, priority: 3 },
   info: { name: &#x27;INFO&#x27;, priority: 4 },
   debug: { name: &#x27;DEBUG&#x27;, priority: 5 },
-  deprecation: { name: &#x27;DEPRECATION&#x27;, priority: 6 }
+  deprecate: { name: &#x27;DEPRECATION&#x27;, priority: 6 }
 };
 
 const joinArguments = function() {
@@ -450,27 +450,8 @@ export default Ember.Service.extend({
         lineNumber: null,
         columnNumber: null,
         stack: null
-      }, {
-        name: error.name,
-        message: error.message,
-        fileName: error.fileName,
-        lineNumber: error.lineNumber,
-        columnNumber: error.columnNumber,
-        stack: error.stack
-      }));
-
-      _this._storeToApplicationLog(messageCategory.error, message, formattedMessage);
-
-      if (rethrowError === false) {
-
-        // Break execution if rethrowError === false.
-        return;
-      } else {
-
-        // Rethrow an error, because Ember.onerror handler has no bubbling
-        // and stored error won&#x27;t appear in browser&#x27;s console without rethrowing.
-        originalEmberLoggerError(...arguments);
-      }
+      }, error));
+      return _this._storeToApplicationLog(messageCategory.error, message, formattedMessage);
     };
 
     // Assign Ember.onerror &amp; Ember.RSVP.on(&#x27;error&#x27;, ...) handlers (see http://emberjs.com/api/#event_onerror).
@@ -482,7 +463,7 @@ export default Ember.Service.extend({
     Ember.Logger.error = function() {
       originalEmberLoggerError(...arguments);
 
-      onError(joinArguments(...arguments), false);
+      return onError(joinArguments(...arguments), false);
     };
 
     // Extend Ember.Logger.warn logic.
@@ -492,9 +473,9 @@ export default Ember.Service.extend({
 
       let message = joinArguments(...arguments);
       if (message.indexOf(&#x27;DEPRECATION&#x27;) === 0) {
-        _this._storeToApplicationLog(messageCategory.deprecation, message, &#x27;&#x27;);
+        return _this._storeToApplicationLog(messageCategory.deprecate, message, &#x27;&#x27;);
       } else {
-        _this._storeToApplicationLog(messageCategory.warn, message, &#x27;&#x27;);
+        return _this._storeToApplicationLog(messageCategory.warn, message, &#x27;&#x27;);
       }
     };
 
@@ -503,7 +484,7 @@ export default Ember.Service.extend({
     Ember.Logger.log = function() {
       originalEmberLoggerLog(...arguments);
 
-      _this._storeToApplicationLog(messageCategory.log, joinArguments(...arguments), &#x27;&#x27;);
+      return _this._storeToApplicationLog(messageCategory.log, joinArguments(...arguments), &#x27;&#x27;);
     };
 
     // Extend Ember.Logger.info logic.
@@ -511,7 +492,7 @@ export default Ember.Service.extend({
     Ember.Logger.info = function() {
       originalEmberLoggerInfo(...arguments);
 
-      _this._storeToApplicationLog(messageCategory.info, joinArguments(...arguments), &#x27;&#x27;);
+      return _this._storeToApplicationLog(messageCategory.info, joinArguments(...arguments), &#x27;&#x27;);
     };
 
     // Extend Ember.Logger.debug logic.
@@ -519,7 +500,7 @@ export default Ember.Service.extend({
     Ember.Logger.debug = function() {
       originalEmberLoggerDebug(...arguments);
 
-      _this._storeToApplicationLog(messageCategory.debug, joinArguments(...arguments), &#x27;&#x27;);
+      return _this._storeToApplicationLog(messageCategory.debug, joinArguments(...arguments), &#x27;&#x27;);
     };
   },
 
@@ -539,7 +520,7 @@ export default Ember.Service.extend({
       category.name === messageCategory.log.name &amp;&amp; !this.get(&#x27;storeLogMessages&#x27;) ||
       category.name === messageCategory.info.name &amp;&amp; !this.get(&#x27;storeInfoMessages&#x27;) ||
       category.name === messageCategory.debug.name &amp;&amp; !this.get(&#x27;storeDebugMessages&#x27;) ||
-      category.name === messageCategory.deprecation.name &amp;&amp; !this.get(&#x27;storeDeprecationMessages&#x27;)) {
+      category.name === messageCategory.deprecate.name &amp;&amp; !this.get(&#x27;storeDeprecationMessages&#x27;)) {
       return;
     }
 

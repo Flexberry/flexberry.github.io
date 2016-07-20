@@ -243,32 +243,6 @@ export default FlexberryBaseComponent.extend(
   _modelProjection: null,
 
   /**
-    Computed property forms unique name for component from model name and current route.
-    This unique name can be used as module name for user settings service.
-
-    @property _moduleName
-    @private
-    @type String
-  */
-  _moduleName: Ember.computed(&#x27;modelProjection&#x27;, function() {
-    let modelName = this.get(&#x27;modelProjection&#x27;).modelName;
-    let currentController = this.get(&#x27;currentController&#x27;);
-    let currentRoute = currentController ? this.get(&#x27;currentController&#x27;).get(&#x27;target&#x27;).currentRouteName : &#x27;application&#x27;;
-    Ember.assert(&#x27;Error while module name determing.&#x27;, modelName &amp;&amp; currentRoute);
-    return modelName + &#x27;__&#x27; + currentRoute;
-  }),
-
-  /**
-    Name of user setting name for column widths.
-
-    @property _columnWidthsUserSettingName
-    @private
-    @type String
-    @default &#x27;OlvColumnWidths&#x27;
-  */
-  _columnWidthsUserSettingName: &#x27;OlvColumnWidths&#x27;,
-
-  /**
     Model projection which should be used to display given content.
     Accepts object or name projections.
 
@@ -588,7 +562,7 @@ export default FlexberryBaseComponent.extend(
       return cols;
     }
 
-    let userSettings = this.currentController ? this.currentController.userSettings : undefined;
+    let userSettings = this.get(&#x27;userSettingsService&#x27;).getCurrentUserSetting(this.componentName);
     if (userSettings &amp;&amp; userSettings.colsOrder !== undefined) {
       let namedCols = {};
       for (let i = 0; i &lt; cols.length; i++) {
@@ -623,7 +597,7 @@ export default FlexberryBaseComponent.extend(
       }
     } else {
       if (this.currentController) {
-        if (userSettings === undefined) {
+        if (this.currentController.userSettings === undefined) {
           Ember.set(this.currentController, &#x27;userSettings&#x27;, {});
         }
 
@@ -867,6 +841,15 @@ export default FlexberryBaseComponent.extend(
   */
   objectlistviewEventsService: Ember.inject.service(&#x27;objectlistview-events&#x27;),
 
+  /**
+    Used to identify objectListView on the page.
+
+    @property componentName
+    @type String
+    @default &#x27;&#x27;
+  */
+  componentName: &#x27;&#x27;,
+
   actions: {
     /**
       This action is called when user click on row.
@@ -1054,6 +1037,8 @@ export default FlexberryBaseComponent.extend(
   init() {
     this._super(...arguments);
 
+    Ember.assert(&#x27;ObjectListView must have componentName attribute.&#x27;, this.get(&#x27;componentName&#x27;));
+
     if (!this.get(&#x27;disableHierarchicalMode&#x27;)) {
       let modelName = this.get(&#x27;modelName&#x27;);
       if (modelName) {
@@ -1115,15 +1100,10 @@ export default FlexberryBaseComponent.extend(
       }
     }
 
-    let moduleName = this.get(&#x27;_moduleName&#x27;);
-    let userSetting = {
-      moduleName: moduleName,
-      settingName: this.get(&#x27;_columnWidthsUserSettingName&#x27;)
-    };
-
-    this.get(&#x27;userSettingsService&#x27;).getUserSetting(userSetting).then(data =&gt; {
-      this._setColumnWidths(data);
-    });
+    let columnWidth = this.get(&#x27;userSettingsService&#x27;).getCurrentColumnWidths(this.componentName);
+    if (columnWidth !== undefined) {
+      this._setColumnWidths(columnWidth);
+    }
 
     // TODO: resolve this problem.
     this.$(&#x27;.flexberry-dropdown:last&#x27;).dropdown({
@@ -1142,7 +1122,6 @@ export default FlexberryBaseComponent.extend(
     this._super(...arguments);
 
     let $currentTable = this.$(&#x27;table.object-list-view&#x27;);
-
     if (this.get(&#x27;allowColumnResize&#x27;)) {
       // The first column has semantic class &quot;collapsing&quot;
       // so the column has 1px width and plugin has problems.
@@ -1222,17 +1201,17 @@ export default FlexberryBaseComponent.extend(
     let hashedUserSetting = {};
     userSetting.forEach(item =&gt; {
       let userColumnInfo = Ember.merge({
-        propertyName: undefined,
+        propName: undefined,
         width: undefined
       }, item);
 
-      let propertyName = userColumnInfo.propertyName;
+      let propName = userColumnInfo.propName;
       let width = userColumnInfo.width;
 
-      Ember.assert(&#x27;Property name is not defined at saved user setting.&#x27;, propertyName);
+      Ember.assert(&#x27;Property name is not defined at saved user setting.&#x27;, propName);
       Ember.assert(&#x27;Column width is not defined at saved user setting.&#x27;, width);
 
-      hashedUserSetting[propertyName] = width;
+      hashedUserSetting[propName] = width;
     });
 
     let $columns = this.$(&#x27;table.object-list-view&#x27;).find(&#x27;th&#x27;);
@@ -1273,19 +1252,11 @@ export default FlexberryBaseComponent.extend(
       currentColumnWidth = Math.round(currentColumnWidth);
 
       userWidthSettings.push({
-        propertyName: currentPropertyName,
+        propName: currentPropertyName,
         width: currentColumnWidth,
       });
     });
-
-    let moduleName = this.get(&#x27;_moduleName&#x27;);
-    let userSetting = {
-      moduleName,
-      userSetting: userWidthSettings,
-      settingName: this.get(&#x27;_columnWidthsUserSettingName&#x27;),
-    };
-
-    this.get(&#x27;userSettingsService&#x27;).saveUserSetting(userSetting);
+    this.get(&#x27;userSettingsService&#x27;).setCurrentColumnWidths(this.componentName, undefined, userWidthSettings);
   },
 
   /**

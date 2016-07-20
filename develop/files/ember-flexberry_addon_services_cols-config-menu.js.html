@@ -221,6 +221,14 @@ import Ember from &#x27;ember&#x27;;
  * @public
  */
 export default Ember.Service.extend(Ember.Evented, {
+    /**
+    Current application environment.
+
+      @property environment
+      @type String
+    */
+    environment: undefined,
+
     menus: [
       { name: &#x27;use&#x27;, icon: &#x27;checkmark box&#x27; },
       { name: &#x27;edit&#x27;, icon: &#x27;setting&#x27; },
@@ -266,9 +274,18 @@ export default Ember.Service.extend(Ember.Evented, {
         title: params.setDefaultSettitingTitle
       };
       rootItem.items[rootItem.items.length] = setDefaultItem;
+      if (this.environment &amp;&amp; this.environment === &#x27;development&#x27;) {
+        let showDefaultItem = {
+          icon: &#x27;unhide icon&#x27;,
+          iconAlignment: &#x27;left&#x27;,
+          title: params.showDefaultSettitingTitle
+        };
+        rootItem.items[rootItem.items.length] = showDefaultItem;
+      }
+
       this.colsSettingsItems = [rootItem];
-      this.listNamedSettings = params.listNamedSettings;
-      for (let namedSetting in this.listNamedSettings) {
+      this.listNamedUserSettings = params.listNamedUserSettings;
+      for (let namedSetting in this.listNamedUserSettings) {
         this._addNamedSetting(namedSetting);
       }
 
