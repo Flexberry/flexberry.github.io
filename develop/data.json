@@ -6564,7 +6564,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 106,
+            "line": 102,
             "description": "Components class names bindings.",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -6575,7 +6575,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 115,
+            "line": 111,
             "description": "Flag: indicates whether to show preview element for images or not.",
             "itemtype": "property",
             "name": "showPreview",
@@ -6586,19 +6586,8 @@
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 124,
+            "line": 120,
             "description": "Handles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
-            "class": "Mobile.FlexberryFileComponent",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
-            "line": 141,
-            "description": "Collapses and clears menu after item selection.",
-            "itemtype": "method",
-            "name": "_collapseMenu",
-            "access": "private",
-            "tagname": "",
             "class": "Mobile.FlexberryFileComponent",
             "module": "ember-flexberry"
         },
@@ -9437,6 +9426,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
             "line": 68,
+            "description": "Flag: indicates whether to collapse menu when clicking menuitem or not.",
+            "itemtype": "property",
+            "name": "collapseMenuOnItemClick",
+            "type": "Boolean",
+            "default": "true",
+            "class": "FlexberryMenu",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-menu.js",
+            "line": 77,
             "description": "Menu items.",
             "itemtype": "property",
             "name": "items",
@@ -9447,7 +9447,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
-            "line": 77,
+            "line": 86,
             "description": "Array CSS class names.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNames).",
             "itemtype": "property",
             "name": "classNames",
@@ -9458,7 +9458,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
-            "line": 87,
+            "line": 96,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -9469,28 +9469,28 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
-            "line": 96,
+            "line": 105,
             "description": "Initializes component.",
             "class": "FlexberryMenu",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
-            "line": 130,
+            "line": 139,
             "description": "Initializes DOM-related component's logic.",
             "class": "FlexberryMenu",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
-            "line": 145,
+            "line": 155,
             "description": "Cleans up DOM-related component's logic.",
             "class": "FlexberryMenu",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
-            "line": 156,
+            "line": 166,
             "description": "Hook which will be called to configure menu items.",
             "example": [
                 "\n  ```handlebars\n  <!-- app/templates/menu.hbs -->\n  {{flexberry-menu\n    ...\n    configurateItems=(action 'configurateItems')\n    ...\n  }}\n  ```\n\n  ```javascript\n  // app/controllers/menu.js\n  export default Ember.Controller.extend({\n  ...\n    actions: {\n      ...\n      configurateItems(items) {\n        items.push({\n          icon: 'edit icon',\n          title: 'Edit',\n        });\n      },\n      ...\n    }\n  ...\n  });\n  ```"
@@ -9509,7 +9509,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-menu.js",
-            "line": 192,
+            "line": 202,
             "description": "Menu click handler.\nUsed to delegate menu items clicks handling.",
             "itemtype": "method",
             "name": "_onClickHandler",
@@ -9520,6 +9520,35 @@
                     "type": "JQuery.Event"
                 }
             ],
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryMenu",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-menu.js",
+            "line": 233,
+            "description": "Menu's collapseMenuOnItemClick observer.",
+            "class": "FlexberryMenu",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-menu.js",
+            "line": 242,
+            "description": "Method for getting action name for menu based on collapseMenuOnItemClick property.",
+            "itemtype": "method",
+            "name": "_getActionForMenu",
+            "params": [
+                {
+                    "name": "collapseMenuOnItemClick",
+                    "description": "Flag whether to collapse menu on click or not.",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "Action name.",
+                "type": "String"
+            },
             "access": "private",
             "tagname": "",
             "class": "FlexberryMenu",
@@ -17707,7 +17736,7 @@
         },
         {
             "message": "Missing item type\nHandles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
-            "line": " ember-flexberry/addon/components/mobile/flexberry-file.js:124"
+            "line": " ember-flexberry/addon/components/mobile/flexberry-file.js:120"
         },
         {
             "message": "Missing item type\nInitializes component properties.",
@@ -17783,15 +17812,19 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry/addon/components/flexberry-menu.js:96"
+            "line": " ember-flexberry/addon/components/flexberry-menu.js:105"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
-            "line": " ember-flexberry/addon/components/flexberry-menu.js:130"
+            "line": " ember-flexberry/addon/components/flexberry-menu.js:139"
         },
         {
             "message": "Missing item type\nCleans up DOM-related component's logic.",
-            "line": " ember-flexberry/addon/components/flexberry-menu.js:145"
+            "line": " ember-flexberry/addon/components/flexberry-menu.js:155"
+        },
+        {
+            "message": "Missing item type\nMenu's collapseMenuOnItemClick observer.",
+            "line": " ember-flexberry/addon/components/flexberry-menu.js:233"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
