@@ -422,9 +422,11 @@ export default class ODataAdapter extends BaseAdapter {
         throw new Error(&#x60;OData supports only &#x27;any&#x27; or &#x27;or&#x27; operations for details&#x60;);
       }
 
-      let detailPredicate = this._convertPredicateToODataFilterClause(predicate.predicate, modelName, prefix + &#x27;f&#x27;, level);
+      let meta = this._info.getMeta(modelName, predicate.detailPath);
+      let detailPredicate = this._convertPredicateToODataFilterClause(predicate.predicate, meta.type, prefix + &#x27;f&#x27;, level);
+      let detailPath = this._getODataAttributeName(modelName, predicate.detailPath);
 
-      return &#x60;${predicate.detailPath}/${func}(${detailPredicate})&#x60;;
+      return &#x60;${detailPath}/${func}(${detailPredicate})&#x60;;
     }
 
     if (predicate instanceof ComplexPredicate) {

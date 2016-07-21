@@ -4622,7 +4622,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 232,
+            "line": 234,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -6348,7 +6348,7 @@
                 }
             ],
             "return": {
-                "description": "True if the specified attribute path is master field.",
+                "description": "True if the specified attribute path is a master field.",
                 "type": "Boolean"
             },
             "access": "public",
@@ -6360,6 +6360,34 @@
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
             "line": 56,
+            "description": "Checks if the specified attribute path is a detail field.",
+            "itemtype": "method",
+            "name": "isDetail",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the specified attribute path is a detail field.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 70,
             "description": "Returns the type of the specified attribute path.",
             "itemtype": "method",
             "name": "getType",
@@ -6387,7 +6415,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 161,
+            "line": 149,
             "description": "Parses the specified attribute paths and returns list of separate attributes.",
             "itemtype": "method",
             "name": "parseAttributePath",
@@ -18051,7 +18079,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:232"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:234"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -18111,7 +18139,11 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/utils/information.js:161"
+            "line": " ember-flexberry-data/addon/utils/information.js:70"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:149"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -18211,7 +18243,7 @@
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:232"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:234"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",
