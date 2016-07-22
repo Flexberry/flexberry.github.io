@@ -3984,30 +3984,6 @@
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
             "line": 138,
-            "description": "Adds properties for expanding.\nAutomatically checks duplications.",
-            "itemtype": "method",
-            "name": "expand",
-            "params": [
-                {
-                    "name": "properties",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "Returns this instance.",
-                "type": "Query.Builder"
-            },
-            "access": "public",
-            "tagname": "",
-            "chainable": 1,
-            "class": "Query.Builder",
-            "module": "ember-flexberry-data",
-            "namespace": "Query"
-        },
-        {
-            "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 153,
             "description": "Adds attributes for selection.\nAutomatically checks duplications.",
             "itemtype": "method",
             "name": "select",
@@ -4031,7 +4007,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 168,
+            "line": 153,
             "description": "Adds attributes for selection from specified projection.\nMerges attributes with added using `select`.",
             "itemtype": "method",
             "name": "selectByProjection",
@@ -4055,7 +4031,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 183,
+            "line": 168,
             "description": "Builds query instance using all provided data.",
             "itemtype": "method",
             "name": "build",
@@ -4065,32 +4041,6 @@
             },
             "access": "public",
             "tagname": "",
-            "class": "Query.Builder",
-            "module": "ember-flexberry-data",
-            "namespace": "Query"
-        },
-        {
-            "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 222,
-            "description": "Converts projection to URL query params for OData v4.",
-            "itemtype": "method",
-            "name": "getQuery",
-            "params": [
-                {
-                    "name": "projection",
-                    "description": "Model projection to convert.",
-                    "type": "Object"
-                },
-                {
-                    "name": "store",
-                    "description": "The store service.",
-                    "type": "DS.Store"
-                }
-            ],
-            "return": {
-                "description": "Object with $select and $expand properties.",
-                "type": "Object"
-            },
             "class": "Query.Builder",
             "module": "ember-flexberry-data",
             "namespace": "Query"
@@ -4593,7 +4543,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 183,
+            "line": 217,
             "description": "Converts specified predicate into OData filter part.",
             "params": [
                 {
@@ -4622,7 +4572,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 234,
+            "line": 268,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -18079,7 +18029,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:234"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:268"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -18239,11 +18189,11 @@
         },
         {
             "message": "Missing item type\nConverts specified predicate into OData filter part.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:183"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:217"
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:234"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:268"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",
