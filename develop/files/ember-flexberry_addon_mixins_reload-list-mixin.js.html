@@ -214,9 +214,16 @@
 
 import Ember from &#x27;ember&#x27;;
 
-import QueryBuilder from &#x27;ember-flexberry-data/query/builder&#x27;;
-import Condition from &#x27;ember-flexberry-data/query/condition&#x27;;
-import { BasePredicate, SimplePredicate, StringPredicate, ComplexPredicate } from &#x27;ember-flexberry-data/query/predicate&#x27;;
+import { Query } from &#x27;ember-flexberry-data&#x27;;
+
+const {
+  Builder,
+  Condition,
+  BasePredicate,
+  SimplePredicate,
+  StringPredicate,
+  ComplexPredicate
+} = Query;
 
 /**
  * Mixin for {{#crossLink &quot;DS.Controller&quot;}}Controller{{/crossLink}} to support data reload.
@@ -293,7 +300,7 @@ export default Ember.Mixin.create({
     Ember.assert(&#x27;page must be greater than zero.&#x27;, pageNumber &gt; 0);
     Ember.assert(&#x27;perPage must be greater than zero.&#x27;, perPageNumber &gt; 0);
 
-    let builder = new QueryBuilder(store)
+    let builder = new Builder(store)
       .from(modelName)
       .selectByProjection(projectionName)
       .count();

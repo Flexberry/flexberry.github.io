@@ -595,7 +595,9 @@ to support work with FlexberryObjectlistviewComponent.</p>
                                     <pre class="code prettyprint"><code class="language-js">// app/routes/limit-function-example.js
                     import Ember from 'ember';
                     import ListFormRoute from 'ember-flexberry/routes/list-form';
-                    import { StringPredicate } from 'ember-flexberry-data/query/predicate';
+                    import { Query } from 'ember-flexberry-data';
+                    
+                    const { StringPredicate } = Query;
                     
                     export default ListFormRoute.extend({
                       modelProjection: 'FolvWithLimitFunctionExampleView',

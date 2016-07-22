@@ -258,7 +258,9 @@ export default Ember.Mixin.create({
       // app/routes/limit-function-example.js
       import Ember from &#x27;ember&#x27;;
       import ListFormRoute from &#x27;ember-flexberry/routes/list-form&#x27;;
-      import { StringPredicate } from &#x27;ember-flexberry-data/query/predicate&#x27;;
+      import { Query } from &#x27;ember-flexberry-data&#x27;;
+
+      const { StringPredicate } = Query;
 
       export default ListFormRoute.extend({
         modelProjection: &#x27;FolvWithLimitFunctionExampleView&#x27;,

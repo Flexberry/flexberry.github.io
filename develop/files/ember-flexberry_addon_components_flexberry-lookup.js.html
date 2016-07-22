@@ -217,9 +217,15 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 
 import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 import { getRelationType } from &#x27;../utils/model-functions&#x27;;
-import QueryBuilder from &#x27;ember-flexberry-data/query/builder&#x27;;
-import Condition from &#x27;ember-flexberry-data/query/condition&#x27;;
-import { BasePredicate, StringPredicate, ComplexPredicate } from &#x27;ember-flexberry-data/query/predicate&#x27;;
+import { Query } from &#x27;ember-flexberry-data&#x27;;
+
+const {
+  Builder,
+  Condition,
+  BasePredicate,
+  StringPredicate,
+  ComplexPredicate
+} = Query;
 
 /**
   Lookup component for Semantic UI.
@@ -707,7 +713,7 @@ export default FlexberryBaseComponent.extend({
          * @param {Function} callback
          */
         responseAsync(settings, callback) {
-          let builder = new QueryBuilder(store, relationModelName);
+          let builder = new Builder(store, relationModelName);
 
           let autocompletePredicate = settings.urlData.query ?
                                       new StringPredicate(displayAttributeName).contains(settings.urlData.query) :
@@ -821,7 +827,7 @@ export default FlexberryBaseComponent.extend({
       apiSettings: {
         responseAsync(settings, callback) {
           console.log(&#x27;load&#x27;);
-          let builder = new QueryBuilder(store, relationModelName);
+          let builder = new Builder(store, relationModelName);
           let autocompletePredicate = settings.urlData.query ?
                                       new StringPredicate(displayAttributeName).contains(settings.urlData.query) :
                                       undefined;

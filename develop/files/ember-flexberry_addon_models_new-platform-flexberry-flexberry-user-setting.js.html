@@ -214,7 +214,7 @@
 
 import DS from &#x27;ember-data&#x27;;
 import BaseModel from &#x27;./base&#x27;;
-import Proj from &#x27;ember-flexberry-data&#x27;;
+import { Projection } from &#x27;ember-flexberry-data&#x27;;
 
 /**
   Model to work with user settings.
@@ -232,12 +232,12 @@ let Model = BaseModel.extend({
 });
 
 Model.defineProjection(&#x27;FlexberryUserSettingE&#x27;, &#x27;new-platform-flexberry-flexberry-user-setting&#x27;, {
-  appName: Proj.attr(&#x27;Application page name&#x27;),
-  userName: Proj.attr(&#x27;User name&#x27;),
-  moduleName: Proj.attr(&#x27;Component name&#x27;),
-  settName: Proj.attr(&#x27;Setting name&#x27;),
-  settLastAccessTime: Proj.attr(&#x27;Modification time&#x27;),
-  txtVal: Proj.attr(&#x27;Text value&#x27;)
+  appName: Projection.attr(&#x27;Application page name&#x27;),
+  userName: Projection.attr(&#x27;User name&#x27;),
+  moduleName: Projection.attr(&#x27;Component name&#x27;),
+  settName: Projection.attr(&#x27;Setting name&#x27;),
+  settLastAccessTime: Projection.attr(&#x27;Modification time&#x27;),
+  txtVal: Projection.attr(&#x27;Text value&#x27;)
 });
 
 export default Model;

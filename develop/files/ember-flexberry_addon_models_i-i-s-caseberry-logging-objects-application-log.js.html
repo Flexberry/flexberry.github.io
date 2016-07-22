@@ -214,7 +214,7 @@
 
 import DS from &#x27;ember-data&#x27;;
 import BaseModel from &#x27;ember-flexberry/models/base&#x27;;
-import Proj from &#x27;ember-flexberry-data&#x27;;
+import { Projection } from &#x27;ember-flexberry-data&#x27;;
 
 /**
   Model of application log, message (used by {{#crossLink &quot;LogService&quot;}}log service{{/crossLink}}).
@@ -242,37 +242,37 @@ let Model = BaseModel.extend({
 });
 
 Model.defineProjection(&#x27;ApplicationLogE&#x27;, &#x27;i-i-s-caseberry-logging-objects-application-log&#x27;, {
-  category: Proj.attr(&#x27;Category&#x27;),
-  eventId: Proj.attr(&#x27;Event id&#x27;),
-  priority: Proj.attr(&#x27;Priority&#x27;),
-  severity: Proj.attr(&#x27;Severity&#x27;),
-  title: Proj.attr(&#x27;Title&#x27;),
-  timestamp: Proj.attr(&#x27;Timestamp&#x27;),
-  machineName: Proj.attr(&#x27;Machine name&#x27;),
-  appDomainName: Proj.attr(&#x27;App domain name&#x27;),
-  processId: Proj.attr(&#x27;Process id&#x27;),
-  processName: Proj.attr(&#x27;Process name&#x27;),
-  threadName: Proj.attr(&#x27;Thread name&#x27;),
-  win32ThreadId: Proj.attr(&#x27;Win32 thread id&#x27;),
-  message: Proj.attr(&#x27;Message&#x27;),
-  formattedMessage: Proj.attr(&#x27;Formatted message&#x27;)
+  category: Projection.attr(&#x27;Category&#x27;),
+  eventId: Projection.attr(&#x27;Event id&#x27;),
+  priority: Projection.attr(&#x27;Priority&#x27;),
+  severity: Projection.attr(&#x27;Severity&#x27;),
+  title: Projection.attr(&#x27;Title&#x27;),
+  timestamp: Projection.attr(&#x27;Timestamp&#x27;),
+  machineName: Projection.attr(&#x27;Machine name&#x27;),
+  appDomainName: Projection.attr(&#x27;App domain name&#x27;),
+  processId: Projection.attr(&#x27;Process id&#x27;),
+  processName: Projection.attr(&#x27;Process name&#x27;),
+  threadName: Projection.attr(&#x27;Thread name&#x27;),
+  win32ThreadId: Projection.attr(&#x27;Win32 thread id&#x27;),
+  message: Projection.attr(&#x27;Message&#x27;),
+  formattedMessage: Projection.attr(&#x27;Formatted message&#x27;)
 });
 
 Model.defineProjection(&#x27;ApplicationLogL&#x27;, &#x27;i-i-s-caseberry-logging-objects-application-log&#x27;, {
-  category: Proj.attr(&#x27;Category&#x27;),
-  eventId: Proj.attr(&#x27;Event id&#x27;),
-  priority: Proj.attr(&#x27;Priority&#x27;),
-  severity: Proj.attr(&#x27;Severity&#x27;),
-  title: Proj.attr(&#x27;Title&#x27;),
-  timestamp: Proj.attr(&#x27;Timestamp&#x27;),
-  machineName: Proj.attr(&#x27;Machine name&#x27;),
-  appDomainName: Proj.attr(&#x27;App domain name&#x27;),
-  processId: Proj.attr(&#x27;Process id&#x27;),
-  processName: Proj.attr(&#x27;Process name&#x27;),
-  threadName: Proj.attr(&#x27;Thread name&#x27;),
-  win32ThreadId: Proj.attr(&#x27;Win32 thread id&#x27;),
-  message: Proj.attr(&#x27;Message&#x27;),
-  formattedMessage: Proj.attr(&#x27;Formatted message&#x27;)
+  category: Projection.attr(&#x27;Category&#x27;),
+  eventId: Projection.attr(&#x27;Event id&#x27;),
+  priority: Projection.attr(&#x27;Priority&#x27;),
+  severity: Projection.attr(&#x27;Severity&#x27;),
+  title: Projection.attr(&#x27;Title&#x27;),
+  timestamp: Projection.attr(&#x27;Timestamp&#x27;),
+  machineName: Projection.attr(&#x27;Machine name&#x27;),
+  appDomainName: Projection.attr(&#x27;App domain name&#x27;),
+  processId: Projection.attr(&#x27;Process id&#x27;),
+  processName: Projection.attr(&#x27;Process name&#x27;),
+  threadName: Projection.attr(&#x27;Thread name&#x27;),
+  win32ThreadId: Projection.attr(&#x27;Win32 thread id&#x27;),
+  message: Projection.attr(&#x27;Message&#x27;),
+  formattedMessage: Projection.attr(&#x27;Formatted message&#x27;)
 });
 
 export default Model;
