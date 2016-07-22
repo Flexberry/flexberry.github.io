@@ -4572,7 +4572,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 268,
+            "line": 269,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -18029,7 +18029,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:268"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:269"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -18193,7 +18193,7 @@
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:268"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:269"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",
