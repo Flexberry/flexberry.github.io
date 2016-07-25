@@ -266,7 +266,7 @@ export default DS.RESTAdapter.extend({
   queryRecord(store, type, query) {
     Ember.Logger.debug(&#x60;Flexberry ODataAdapter::queryRecord &#x27;${type}&#x27;&#x60;, query);
 
-    return this.query(store, type, query);
+    return this.query(store, type, query).then(result =&gt; result.get(&#x27;firstObject&#x27;));
   },
 
   /**

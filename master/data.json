@@ -1801,7 +1801,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 58,
+            "line": 63,
             "description": "This namespace contains classes and methods for working with projections.",
             "static": 1,
             "access": "public",
@@ -1832,7 +1832,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 43,
+            "line": 48,
             "description": "This namespace contains classes to support work in offline mode.",
             "static": 1,
             "access": "public",
@@ -1849,7 +1849,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 74,
+            "line": 79,
             "description": "This namespace contains base adapter classes for different kind of backends.",
             "static": 1,
             "access": "public",
@@ -1866,7 +1866,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 85,
+            "line": 90,
             "description": "This namespace contains base serializer classes for different kind of backends.",
             "static": 1,
             "access": "public",
@@ -1883,7 +1883,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 97,
+            "line": 102,
             "description": "This namespace contains implementation of Flexberry Query including adapters\nfor converting query object to requests for different kind of backends.",
             "static": 1,
             "access": "public",
@@ -1900,7 +1900,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 117,
+            "line": 127,
             "description": "This namespace contains helper claseses.",
             "static": 1,
             "access": "public",
@@ -3844,30 +3844,6 @@
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
             "line": 138,
-            "description": "Adds properties for expanding.\nAutomatically checks duplications.",
-            "itemtype": "method",
-            "name": "expand",
-            "params": [
-                {
-                    "name": "properties",
-                    "description": "",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "Returns this instance.",
-                "type": "Query.Builder"
-            },
-            "access": "public",
-            "tagname": "",
-            "chainable": 1,
-            "class": "Query.Builder",
-            "module": "ember-flexberry-data",
-            "namespace": "Query"
-        },
-        {
-            "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 153,
             "description": "Adds attributes for selection.\nAutomatically checks duplications.",
             "itemtype": "method",
             "name": "select",
@@ -3891,7 +3867,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 168,
+            "line": 153,
             "description": "Adds attributes for selection from specified projection.\nMerges attributes with added using `select`.",
             "itemtype": "method",
             "name": "selectByProjection",
@@ -3915,7 +3891,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 183,
+            "line": 168,
             "description": "Builds query instance using all provided data.",
             "itemtype": "method",
             "name": "build",
@@ -3925,32 +3901,6 @@
             },
             "access": "public",
             "tagname": "",
-            "class": "Query.Builder",
-            "module": "ember-flexberry-data",
-            "namespace": "Query"
-        },
-        {
-            "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 222,
-            "description": "Converts projection to URL query params for OData v4.",
-            "itemtype": "method",
-            "name": "getQuery",
-            "params": [
-                {
-                    "name": "projection",
-                    "description": "Model projection to convert.",
-                    "type": "Object"
-                },
-                {
-                    "name": "store",
-                    "description": "The store service.",
-                    "type": "DS.Store"
-                }
-            ],
-            "return": {
-                "description": "Object with $select and $expand properties.",
-                "type": "Object"
-            },
             "class": "Query.Builder",
             "module": "ember-flexberry-data",
             "namespace": "Query"
@@ -4453,7 +4403,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 183,
+            "line": 217,
             "description": "Converts specified predicate into OData filter part.",
             "params": [
                 {
@@ -4482,7 +4432,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 232,
+            "line": 269,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -6208,7 +6158,7 @@
                 }
             ],
             "return": {
-                "description": "True if the specified attribute path is master field.",
+                "description": "True if the specified attribute path is a master field.",
                 "type": "Boolean"
             },
             "access": "public",
@@ -6220,6 +6170,34 @@
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
             "line": 56,
+            "description": "Checks if the specified attribute path is a detail field.",
+            "itemtype": "method",
+            "name": "isDetail",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the specified attribute path is a detail field.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 70,
             "description": "Returns the type of the specified attribute path.",
             "itemtype": "method",
             "name": "getType",
@@ -6247,7 +6225,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 161,
+            "line": 149,
             "description": "Parses the specified attribute paths and returns list of separate attributes.",
             "itemtype": "method",
             "name": "parseAttributePath",
@@ -16528,7 +16506,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:232"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:269"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -16588,7 +16566,11 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/utils/information.js:161"
+            "line": " ember-flexberry-data/addon/utils/information.js:70"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:149"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -16676,11 +16658,11 @@
         },
         {
             "message": "Missing item type\nConverts specified predicate into OData filter part.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:183"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:217"
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:232"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:269"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",

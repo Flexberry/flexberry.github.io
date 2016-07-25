@@ -251,12 +251,26 @@ class Information {
    @method isMaster
    @param {String} modelName The name of the model.
    @param {String} attributePath The path to the attribute.
-   @returns {Boolean} True if the specified attribute path is master field.
+   @returns {Boolean} True if the specified attribute path is a master field.
    @public
    */
   isMaster(modelName, attributePath) {
     let meta = this.getMeta(modelName, attributePath);
     return meta.isMaster;
+  }
+
+  /**
+   Checks if the specified attribute path is a detail field.
+
+   @method isDetail
+   @param {String} modelName The name of the model.
+   @param {String} attributePath The path to the attribute.
+   @returns {Boolean} True if the specified attribute path is a detail field.
+   @public
+   */
+  isDetail(modelName, attributePath) {
+    let meta = this.getMeta(modelName, attributePath);
+    return meta.isDetail;
   }
 
   /**
@@ -271,46 +285,6 @@ class Information {
   getType(modelName, attributePath) {
     let meta = this.getMeta(modelName, attributePath);
     return meta.type;
-  }
-
-  _forEachAttribute(modelName, attributePath, callback) {
-    let model = this._loadModel(modelName);
-    let fields = Information.parseAttributePath(attributePath);
-
-    for (let i = 0; i &lt; fields.length; i++) {
-      if (fields.length - 1 === i) {
-        let attributes = Ember.get(model, &#x27;attributes&#x27;);
-        let attribute = attributes.get(fields[i]);
-        if (attribute) {
-          callback(i, fields.length, fields[i], model, &#x27;attribute&#x27;);
-        }
-
-        let relationships = Ember.get(model, &#x27;relationshipsByName&#x27;);
-        let relationship = relationships.get(fields[i]);
-        if (relationship) {
-          callback(i, fields.length, fields[i], model, &#x27;relationship&#x27;);
-        }
-
-        throw new Error(&#x60;Field &#x27;${attributePath}&#x27; not found at model &#x27;${modelName}&#x27;.&#x60;);
-      } else {
-        let relationships = Ember.get(model, &#x27;relationshipsByName&#x27;);
-        let relationship = relationships.get(fields[i]);
-        if (relationship) {
-          callback(i, fields.length, fields[i], model, &#x27;relationship&#x27;);
-
-          model = this._store.modelFor(relationship.type);
-          if (!model) {
-            throw new Error(&#x60;Undefined model &#x27;${modelName}&#x27;.&#x60;);
-          }
-
-          continue;
-        } else {
-          throw new Error(&#x60;Field &#x27;${attributePath}&#x27; not found at model &#x27;${modelName}&#x27;.&#x60;);
-        }
-      }
-    }
-
-    return fields.join(&#x27;.&#x27;);
   }
 
   _loadModel(modelName) {
@@ -332,17 +306,31 @@ class Information {
         let attributes = Ember.get(model, &#x27;attributes&#x27;);
         let attribute = attributes.get(fields[i]);
         if (attribute) {
-          return { isMaster: false, isKey: false, type: attribute.type };
+          return { isMaster: false, isDetail: false, isKey: false, type: attribute.type };
         }
 
         let relationships = Ember.get(model, &#x27;relationshipsByName&#x27;);
         let relationship = relationships.get(fields[i]);
         if (relationship) {
-          return { isMaster: true, isKey: true, type: relationship.type, keyType: &#x27;guid&#x27; }; // TODO: other key types
+          let isMaster = relationship.kind === &#x27;belongsTo&#x27;;
+          let isDetail = relationship.kind === &#x27;hasMany&#x27;;
+          return {
+            isMaster: isMaster,
+            isDetail: isDetail,
+            isKey: isMaster,
+            type: relationship.type,
+            keyType: &#x27;guid&#x27; // TODO: other key types
+          };
         }
 
         if (fields[i] === &#x27;id&#x27;) {
-          return { isMaster: false, isKey: true, type: &#x27;string&#x27;, keyType: &#x27;guid&#x27; }; // TODO: other key types
+          return {
+            isMaster: false,
+            isDetail: false,
+            isKey: true,
+            type: &#x27;string&#x27;,
+            keyType: &#x27;guid&#x27; // TODO: other key types
+          };
         }
 
         throw new Error(&#x60;Field &#x27;${attributePath}&#x27; not found at model &#x27;${modelName}&#x27;.&#x60;);
