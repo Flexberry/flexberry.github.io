@@ -223,6 +223,32 @@ import QueryBuilder from &#x27;../query/builder&#x27;;
  */
 export default Ember.Mixin.create({
   /**
+   *
+   * @method query
+   * @param {String} modelName
+   * @param {any} query an opaque query to be used by the adapter
+   * @return {Promise} promise
+   */
+  query(modelName, query) {
+    Ember.Logger.debug(&#x60;Flexberry Store::query ${modelName}&#x60;, query);
+
+    return this._super.apply(this, arguments);
+  },
+
+  /**
+   *
+   * @method queryRecord
+   * @param {String} modelName
+   * @param {any} query an opaque query to be used by the adapter
+   * @return {Promise} promise
+   */
+  queryRecord(modelName, query) {
+    Ember.Logger.debug(&#x60;Flexberry Store::queryRecord ${modelName}&#x60;, query);
+
+    return this.query(modelName, query).then(result =&gt; new Ember.RSVP.Promise((resolve) =&gt; resolve(result.get(&#x27;firstObject&#x27;))));
+  },
+
+  /**
    * Finds all records for the given model type.
    *
    * See {{#crossLink &quot;DS.Store/findAll:method&quot;}}{{/crossLink}} for details.
@@ -274,33 +300,7 @@ export default Ember.Mixin.create({
       builder.selectByProjection(options.projection);
     }
 
-    return this.queryRecord(modelName, builder.build());
-  },
-
-  /**
-   *
-   * @method query
-   * @param {String} modelName
-   * @param {any} query an opaque query to be used by the adapter
-   * @return {Promise} promise
-   */
-  query(modelName, query) {
-    Ember.Logger.debug(&#x60;Flexberry Store::query ${modelName}&#x60;, query);
-
-    return this._super.apply(this, arguments);
-  },
-
-  /**
-   *
-   * @method queryRecord
-   * @param {String} modelName
-   * @param {any} query an opaque query to be used by the adapter
-   * @return {Promise} promise
-   */
-  queryRecord(modelName, query) {
-    Ember.Logger.debug(&#x60;Flexberry Store::queryRecord ${modelName}&#x60;, query);
-
-    return this._super.apply(this, arguments);
+    return this.query(modelName, builder.build()).then(result =&gt; new Ember.RSVP.Promise((resolve) =&gt; resolve(result.get(&#x27;firstObject&#x27;))));
   }
 });
 

@@ -267,11 +267,14 @@ export default DS.RESTAdapter.extend({
    * @param {Query} query
    * @return {Promise} promise
    */
+  /* jshint unused:vars */
   queryRecord(store, type, query) {
     Ember.Logger.debug(&#x60;Flexberry ODataAdapter::queryRecord &#x27;${type}&#x27;&#x60;, query);
 
-    return this.query(store, type, query).then(result =&gt; new Ember.RSVP.Promise((resolve) =&gt; resolve(result.get(&#x27;firstObject&#x27;))));
+    // TODO: query support for direct calls
+    return this._super.apply(this, arguments);
   },
+  /* jshint unused:true */
 
   /**
    * Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).

@@ -3353,7 +3353,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 66,
+            "line": 69,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch single record by ID from the server.",
             "itemtype": "method",
             "name": "findRecord",
@@ -3389,7 +3389,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 86,
+            "line": 89,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch all records from the server.",
             "itemtype": "method",
             "name": "findAll",
@@ -3425,7 +3425,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 106,
+            "line": 109,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), that determines the pathname for a given type.\nAdditionally capitalizes the type name (requirement of Flexberry OData Server).",
             "itemtype": "method",
             "name": "pathForType",
@@ -3446,7 +3446,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 120,
+            "line": 123,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), taht builds URL to OData feed.\nAppends id as `(id)` (OData specification) instead of `/id`.",
             "itemtype": "method",
             "name": "_buildURL",
@@ -3474,7 +3474,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 160,
+            "line": 163,
             "description": "Appends id to URL according to the OData specification.",
             "itemtype": "method",
             "name": "_appendIdToURL",
@@ -3498,7 +3498,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 191,
+            "line": 194,
             "description": "Makes HTTP request for creating, updating or deleting the record.",
             "itemtype": "method",
             "name": "_sendRecord",
@@ -3636,6 +3636,56 @@
         {
             "file": "ember-flexberry-data/addon/mixins/store.js",
             "line": 15,
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "an opaque query to be used by the adapter",
+                    "type": "Any"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Projection.StoreMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/store.js",
+            "line": 28,
+            "itemtype": "method",
+            "name": "queryRecord",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "an opaque query to be used by the adapter",
+                    "type": "Any"
+                }
+            ],
+            "return": {
+                "description": "promise",
+                "type": "Promise"
+            },
+            "class": "Projection.StoreMixin",
+            "module": "ember-flexberry-data",
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/mixins/store.js",
+            "line": 41,
             "description": "Finds all records for the given model type.\n\nSee {{#crossLink \"DS.Store/findAll:method\"}}{{/crossLink}} for details.",
             "itemtype": "method",
             "name": "findAll",
@@ -3671,7 +3721,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/mixins/store.js",
-            "line": 42,
+            "line": 68,
             "description": "Returns a record for a given type and id combination.\n\nSee {{#crossLink \"DS.Store/findRecord:method\"}}{{/crossLink}} for details.",
             "itemtype": "method",
             "name": "findRecord",
@@ -3704,56 +3754,6 @@
             ],
             "return": {
                 "description": "Record promise.",
-                "type": "Promise"
-            },
-            "class": "Projection.StoreMixin",
-            "module": "ember-flexberry-data",
-            "namespace": "Projection"
-        },
-        {
-            "file": "ember-flexberry-data/addon/mixins/store.js",
-            "line": 70,
-            "itemtype": "method",
-            "name": "query",
-            "params": [
-                {
-                    "name": "modelName",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "query",
-                    "description": "an opaque query to be used by the adapter",
-                    "type": "Any"
-                }
-            ],
-            "return": {
-                "description": "promise",
-                "type": "Promise"
-            },
-            "class": "Projection.StoreMixin",
-            "module": "ember-flexberry-data",
-            "namespace": "Projection"
-        },
-        {
-            "file": "ember-flexberry-data/addon/mixins/store.js",
-            "line": 83,
-            "itemtype": "method",
-            "name": "queryRecord",
-            "params": [
-                {
-                    "name": "modelName",
-                    "description": "",
-                    "type": "String"
-                },
-                {
-                    "name": "query",
-                    "description": "an opaque query to be used by the adapter",
-                    "type": "Any"
-                }
-            ],
-            "return": {
-                "description": "promise",
                 "type": "Promise"
             },
             "class": "Projection.StoreMixin",
