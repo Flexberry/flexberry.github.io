@@ -18,4 +18,4 @@ github_username:  Flexberry
 # Build settings
 markdown: kramdown
 
-exclude: ['LICENSE', 'README.md']
+exclude: ['LICENSE', 'README.md', 'Gemfile', 'Gemfile.lock']
