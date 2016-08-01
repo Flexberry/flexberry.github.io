@@ -2,7 +2,7 @@
 layout: default
 title: Документация
 lang: ru
-permalink: /ru/wiki/index.html
+permalink: /ru/kb/index.html
 ---
 
 # Документация

@@ -2,7 +2,7 @@
 layout: default
 title: Documentation
 lang: en
-permalink: /en/wiki/index.html
+permalink: /en/kb/index.html
 ---
 
 # Documentation
