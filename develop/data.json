@@ -166,7 +166,6 @@
             "name": "ember-flexberry-data/addon/query/odata-adapter.js",
             "modules": {},
             "classes": {
-                "Query.OdataAdapter": 1,
                 "Query.ODataAdapter": 1
             },
             "fors": {},
@@ -1188,7 +1187,6 @@
                 "Query.FilterOperator": 1,
                 "Query.IndexedDbAdapter": 1,
                 "Query.JsAdapter": 1,
-                "Query.OdataAdapter": 1,
                 "Query.ODataAdapter": 1,
                 "Query.OrderByClause": 1,
                 "Query.BasePredicate": 1,
@@ -1560,20 +1558,6 @@
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
             "line": 7,
             "description": "Class of query language adapter that translates query object into JS function which\nfilters native JS array of objects by specified logic.\n\n```js\nconst data = [\n  { Name: 'A', Surname: 'X', Age: 10 },\n  { Name: 'B', Surname: 'Y', Age: 11 },\n  { Name: 'B', Surname: 'Z', Age: 12 }\n];\n\nlet adapter = new JSAdapter();\nlet builder = new QueryBuilder(store, 'AnyUnknownModel').where('Name', FilterOperator.Eq, 'B');\nlet filter = adapter.buildFunc(builder.build());\n\nlet result = filter(data); // Y and Z\n```\n\nAll filters uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation))."
-        },
-        "Query.OdataAdapter": {
-            "name": "Query.OdataAdapter",
-            "shortname": "Query.OdataAdapter",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "ember-flexberry-data",
-            "namespace": "Query",
-            "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 9,
-            "description": "Class of query adapter that translates query object into OData URL."
         },
         "Query.ODataAdapter": {
             "name": "Query.ODataAdapter",

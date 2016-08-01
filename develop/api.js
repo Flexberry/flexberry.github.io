@@ -98,7 +98,6 @@ YUI.add("yuidoc-meta", function(Y) {
         "Query.IndexedDbAdapter",
         "Query.JsAdapter",
         "Query.ODataAdapter",
-        "Query.OdataAdapter",
         "Query.OrderByClause",
         "Query.SimplePredicate",
         "Query.StringPredicate",
