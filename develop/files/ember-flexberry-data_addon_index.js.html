@@ -248,7 +248,12 @@ import IndexedDbAdapter from &#x27;./query/indexeddb-adapter&#x27;;
 import JsAdapter from &#x27;./query/js-adapter&#x27;;
 import QueryOdataAdapter from &#x27;./query/odata-adapter&#x27;;
 import OrderByClause from &#x27;./query/order-by-clause&#x27;;
-import BasePredicate from &#x27;./query/predicate&#x27;;
+import { BasePredicate } from &#x27;./query/predicate&#x27;;
+import { SimplePredicate } from &#x27;./query/predicate&#x27;;
+import { ComplexPredicate }from &#x27;./query/predicate&#x27;;
+import { StringPredicate }from &#x27;./query/predicate&#x27;;
+import { DetailPredicate } from &#x27;./query/predicate&#x27;;
+import { createPredicate } from &#x27;./query/predicate&#x27;;
 
 /**
   This namespace contains classes to support work in offline mode.
@@ -323,6 +328,11 @@ Query.JsAdapter = JsAdapter;
 Query.OdataAdapter = QueryOdataAdapter;
 Query.OrderByClause = OrderByClause;
 Query.BasePredicate = BasePredicate;
+Query.SimplePredicate = SimplePredicate;
+Query.ComplexPredicate = ComplexPredicate;
+Query.StringPredicate = StringPredicate;
+Query.DetailPredicate = DetailPredicate;
+Query.createPredicate = createPredicate;
 
 /**
   This namespace contains helper claseses.
