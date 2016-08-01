@@ -2,7 +2,7 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "Adapter",
-        "Adapter.Odata",
+        "Adapter.OData",
         "Adapter.Offline",
         "ApplicationInitializer",
         "ApplicationInstanceInitializer",
@@ -105,7 +105,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Resolver",
         "Serializer",
         "Serializer.Base",
-        "Serializer.Odata",
+        "Serializer.OData",
         "Serializer.Offline",
         "SortableColumn",
         "SortableControllerMixin",

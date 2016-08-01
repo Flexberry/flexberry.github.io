@@ -8,7 +8,7 @@
             "name": "ember-flexberry-data/addon/adapters/odata.js",
             "modules": {},
             "classes": {
-                "Adapter.Odata": 1
+                "Adapter.OData": 1
             },
             "fors": {},
             "namespaces": {
@@ -216,7 +216,7 @@
             "name": "ember-flexberry-data/addon/serializers/odata.js",
             "modules": {},
             "classes": {
-                "Serializer.Odata": 1
+                "Serializer.OData": 1
             },
             "fors": {},
             "namespaces": {
@@ -1173,7 +1173,7 @@
             "submodules": {},
             "elements": {},
             "classes": {
-                "Adapter.Odata": 1,
+                "Adapter.OData": 1,
                 "Adapter.Offline": 1,
                 "Projection.AdapterMixin": 1,
                 "Offline.ModelMixin": 1,
@@ -1195,7 +1195,7 @@
                 "Query.StringPredicate": 1,
                 "Query.DetailPredicate": 1,
                 "Serializer.Base": 1,
-                "Serializer.Odata": 1,
+                "Serializer.OData": 1,
                 "Serializer.Offline": 1,
                 "Offline.GlobalsService": 1,
                 "Offline.Store": 1,
@@ -1339,9 +1339,9 @@
         }
     },
     "classes": {
-        "Adapter.Odata": {
-            "name": "Adapter.Odata",
-            "shortname": "Adapter.Odata",
+        "Adapter.OData": {
+            "name": "Adapter.OData",
+            "shortname": "Adapter.OData",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -1739,9 +1739,9 @@
             "line": 5,
             "description": "Base serializer class."
         },
-        "Serializer.Odata": {
-            "name": "Serializer.Odata",
-            "shortname": "Serializer.Odata",
+        "Serializer.OData": {
+            "name": "Serializer.OData",
+            "shortname": "Serializer.OData",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -3300,7 +3300,7 @@
                 "description": "",
                 "type": "Promise"
             },
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -3331,7 +3331,7 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -3367,7 +3367,7 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -3403,7 +3403,7 @@
                 "description": "promise",
                 "type": "Promise"
             },
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -3424,7 +3424,7 @@
                 "description": "The path for a given type.",
                 "type": "String"
             },
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -3452,7 +3452,7 @@
             },
             "access": "private",
             "tagname": "",
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -3476,7 +3476,7 @@
             ],
             "access": "private",
             "tagname": "",
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -3488,7 +3488,7 @@
             "name": "_sendRecord",
             "access": "private",
             "tagname": "",
-            "class": "Adapter.Odata",
+            "class": "Adapter.OData",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
@@ -5220,7 +5220,7 @@
                     "type": "Object"
                 }
             ],
-            "class": "Serializer.Odata",
+            "class": "Serializer.OData",
             "module": "ember-flexberry-data",
             "namespace": "Serializer"
         },
