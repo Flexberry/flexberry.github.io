@@ -26,6 +26,15 @@
                 "Adapter": 1
             }
         },
+        "ember-flexberry-data/addon/initializers/flexberry-enum.js": {
+            "name": "ember-flexberry-data/addon/initializers/flexberry-enum.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "ApplicationInitializer": 1
+            },
+            "namespaces": {}
+        },
         "ember-flexberry-data/addon/mixins/adapter.js": {
             "name": "ember-flexberry-data/addon/mixins/adapter.js",
             "modules": {},
@@ -1276,6 +1285,7 @@
             "submodules": {},
             "elements": {},
             "classes": {
+                "ApplicationInitializer": 1,
                 "FileTransform": 1,
                 "FlexberryEnumTransform": 1,
                 "Mobile.FlexberryFileComponent": 1,
@@ -1318,7 +1328,6 @@
                 "ListFormController": 1,
                 "LookupDialogController": 1,
                 "EnumCaptionHelper": 1,
-                "ApplicationInitializer": 1,
                 "ApplicationInstanceInitializer": 1,
                 "ErrorableControllerMixin": 1,
                 "FlexberryFileCompatibleComponentMixin": 1,
@@ -1357,8 +1366,8 @@
                 "Resolver": 1
             },
             "fors": {
-                "FlexberryEnumTransform": 1,
                 "ApplicationInitializer": 1,
+                "FlexberryEnumTransform": 1,
                 "ApplicationInstanceInitializer": 1,
                 "ListFormRoute": 1
             },
@@ -1397,6 +1406,17 @@
             "line": 8,
             "description": "Default adapter for {{#crossLink \"Offline.LocalStore\"}}{{/crossLink}}.",
             "extends": "<a href=\"https://github.com/Flexberry/ember-localforage-adapter/blob/master/addon/adapters/localforage.js\">LocalforageAdapter</a>"
+        },
+        "ApplicationInitializer": {
+            "name": "ApplicationInitializer",
+            "shortname": "ApplicationInitializer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": ""
         },
         "Projection.AdapterMixin": {
             "name": "Projection.AdapterMixin",
@@ -2651,17 +2671,6 @@
             "access": "public",
             "tagname": ""
         },
-        "ApplicationInitializer": {
-            "name": "ApplicationInitializer",
-            "shortname": "ApplicationInitializer",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "ember-flexberry",
-            "namespace": ""
-        },
         "ApplicationInstanceInitializer": {
             "name": "ApplicationInstanceInitializer",
             "shortname": "ApplicationInstanceInitializer",
@@ -3531,6 +3540,22 @@
             "class": "Adapter.Offline",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/initializers/flexberry-enum.js",
+            "line": 5,
+            "description": "Registers some options for 'enum' type (to force application not to instantiate enums).",
+            "itemtype": "method",
+            "name": "flexberryEnum.initialize",
+            "params": [
+                {
+                    "name": "application",
+                    "description": "Ember application.",
+                    "type": "<a href=\"http://emberjs.com/api/classes/Ember.Application.html\">Ember.Application</a>"
+                }
+            ],
+            "class": "ApplicationInitializer",
+            "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry-data/addon/mixins/adapter.js",
