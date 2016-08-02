@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Offline - Flexberry Documentation</title>
+    <title>ember-flexberry-data/addon/utils/enum-functions.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -202,225 +202,69 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>Offline <small>Class</small></h1>
+    <h1>ember-flexberry-data/addon/utils/enum-functions.js <small>File</small></h1>
 </div>
 
-<div class="well well-small">
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+  @module ember-flexberry
+*/
+
+import Ember from &#x27;ember&#x27;;
+
+/**
+  Returns friezed object without prototype with own properties of parameter.
+
+  @function createEnum
+  @param {Object|Array} dictionary
+  @return {Object}
+*/
+export function createEnum(dictionary) {
+  let local = {};
+  if (Ember.isArray(dictionary)) {
+    dictionary.forEach(element =&gt; local[element] = element);
+  } else {
+    local = dictionary;
+  }
+
+  return Object.freeze(Ember.merge(Object.create(null), local));
+}
+
+/**
+  Returns friezed inversed object without prototype.
+
+  @function inverseEnum
+  @param {Object} dictionary
+  @return {Object}
+*/
+export function inverseEnum(dictionary) {
+  let inverse = {};
+  for (let key in dictionary) {
+    inverse[dictionary[key]] = key;
+  }
+
+  return createEnum(inverse);
+}
+
+/**
+  Returns array of all property values.
+
+  @function enumCaptions
+  @param {Object} dictionary
+  @return {Array}
+*/
+export function enumCaptions(dictionary) {
+  let captions = [];
+  for (let key in dictionary) {
+    captions.push(dictionary[key]);
+  }
+
+  return captions;
+}
 
 
-        <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-data_addon_index.js.html#l48"><code>ember-flexberry-data&#x2F;addon&#x2F;index.js:48</code></a>
-        </div>
-
-            Module: <a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a>
-
-</div>
-
-
-<div class="well well-small">
-    <p>This namespace contains classes to support work in offline mode.</p>
-
-</div>
-
-
-<div>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
-
-            <li><a data-toggle="tab" href="#methods">Methods</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div id="index" class="tab-pane active">
-            <h2 class="off-left">Item Index</h2>
-
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__getRelationType" data-tablink="_getRelationType">_getRelationType</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_getValueFromLocales" data-tablink="getValueFromLocales">getValueFromLocales</a>
-
-                            </li>
-                    </ul>
-                </div>
-
-
-
-        </div>
-
-            <div id="methods" class="tab-pane">
-                <h2 class="off-left">Methods</h2>
-
-                    <div id="method__getRelationType" class="method item">
-                        <h3 class="name"><code>_getRelationType</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>model</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>relationName</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                        <p>Provided by the <a href="../modules/ember-flexberry.html">ember-flexberry</a> module.</p>
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-data_addon_utils_model-functions.js.html#l7"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;model-functions.js:7</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Gets related object type by relation name from specified model.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">model</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Specified model to get relation from.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">relationName</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Relation name.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>Related object type.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-                    <div id="method_getValueFromLocales" class="method item">
-                        <h3 class="name"><code>getValueFromLocales</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>i18n</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>key</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                        <p>Provided by the <a href="../modules/ember-flexberry.html">ember-flexberry</a> module.</p>
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-data_addon_utils_model-functions.js.html#l30"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;model-functions.js:30</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Gets the value from locales.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">i18n</code>
-                                            <span class="type">Service</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>i18n service.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">key</code>
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Key for property in locales.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>Value from locales. Returns <code>null</code> if key will not be found.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-            </div>
-
-
-
-    </div>
+    </pre>
 </div>
                     </div>
                 </div>

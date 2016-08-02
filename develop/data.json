@@ -267,6 +267,22 @@
                 "Offline": 1
             }
         },
+        "ember-flexberry-data/addon/transforms/file.js": {
+            "name": "ember-flexberry-data/addon/transforms/file.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-data/addon/transforms/flexberry-enum.js": {
+            "name": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "FlexberryEnumTransform": 1
+            },
+            "namespaces": {}
+        },
         "ember-flexberry-data/addon/utils/attributes.js": {
             "name": "ember-flexberry-data/addon/utils/attributes.js",
             "modules": {},
@@ -283,6 +299,13 @@
             "fors": {
                 "Projection": 1
             },
+            "namespaces": {}
+        },
+        "ember-flexberry-data/addon/utils/enum-functions.js": {
+            "name": "ember-flexberry-data/addon/utils/enum-functions.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
             "namespaces": {}
         },
         "ember-flexberry-data/addon/utils/generate-unique-id.js": {
@@ -302,6 +325,13 @@
             "namespaces": {
                 "Utils": 1
             }
+        },
+        "ember-flexberry-data/addon/utils/model-functions.js": {
+            "name": "ember-flexberry-data/addon/utils/model-functions.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
         },
         "ember-flexberry-data/addon/index.js": {
             "name": "ember-flexberry-data/addon/index.js",
@@ -1246,6 +1276,8 @@
             "submodules": {},
             "elements": {},
             "classes": {
+                "FileTransform": 1,
+                "FlexberryEnumTransform": 1,
                 "Mobile.FlexberryFileComponent": 1,
                 "Mobile.FlexberryGroupeditComponent": 1,
                 "Mobile.FlexberryObjectlistview": 1,
@@ -1322,15 +1354,13 @@
                 "LogService": 1,
                 "ObjectlistviewEvents": 1,
                 "UserSettingsService": 1,
-                "FileTransform": 1,
-                "FlexberryEnumTransform": 1,
                 "Resolver": 1
             },
             "fors": {
+                "FlexberryEnumTransform": 1,
                 "ApplicationInitializer": 1,
                 "ApplicationInstanceInitializer": 1,
-                "ListFormRoute": 1,
-                "FlexberryEnumTransform": 1
+                "ListFormRoute": 1
             },
             "namespaces": {},
             "tag": "module",
@@ -1816,6 +1846,39 @@
             "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>",
             "access": "private",
             "tagname": ""
+        },
+        "FileTransform": {
+            "name": "FileTransform",
+            "shortname": "FileTransform",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/transforms/file.js",
+            "line": 7,
+            "description": "Transformation for model's attributes defined as <a href=\"http://emberjs.com/api/data/#method_attr\">DS.attr</a>\nwith type 'file'.\nTransformation is necessary in order to detach file attributes from another string attributes on model level.\nIt extends <a href=\"http://emberjs.com/api/data/classes/DS.StringTransform.html\">string transformation</a> from ember data,\nwithout any changes.",
+            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.StringTransform.html\">DS.StringTransform</a>",
+            "example": [
+                "\n```\nimport DS from 'ember-data';\nexport default DS.Model.extend({\n  name: DS.attr('string');\n  attachment: DS.attr('file')\n});\n```"
+            ]
+        },
+        "FlexberryEnumTransform": {
+            "name": "FlexberryEnumTransform",
+            "shortname": "FlexberryEnumTransform",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/transforms/flexberry-enum.js",
+            "line": 9,
+            "description": "Base transform class that implements an enumeration type.\nDuring serialization\\deserialization it converts values to captions and vise versa.",
+            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Transform.html\">DS.Transform</a>"
         },
         "Projection": {
             "name": "Projection",
@@ -3221,39 +3284,6 @@
             "line": 11,
             "description": "Service to store/read user settings to/from application storage.",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Service.html\">Ember.Service</a>"
-        },
-        "FileTransform": {
-            "name": "FileTransform",
-            "shortname": "FileTransform",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "ember-flexberry",
-            "namespace": "",
-            "file": "ember-flexberry/addon/transforms/file.js",
-            "line": 7,
-            "description": "Transformation for model's attributes defined as <a href=\"http://emberjs.com/api/data/#method_attr\">DS.attr</a>\nwith type 'file'.\nTransformation is necessary in order to detach file attributes from another string attributes on model level.\nIt extends <a href=\"http://emberjs.com/api/data/classes/DS.StringTransform.html\">string transformation</a> from ember data,\nwithout any changes.",
-            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.StringTransform.html\">DS.StringTransform</a>",
-            "example": [
-                "\n```\nimport DS from 'ember-data';\nexport default DS.Model.extend({\n  name: DS.attr('string');\n  attachment: DS.attr('file')\n});\n```"
-            ]
-        },
-        "FlexberryEnumTransform": {
-            "name": "FlexberryEnumTransform",
-            "shortname": "FlexberryEnumTransform",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "ember-flexberry",
-            "namespace": "",
-            "file": "ember-flexberry/addon/transforms/flexberry-enum.js",
-            "line": 9,
-            "description": "Base transform class that implements an enumeration type.\nDuring serialization\\deserialization it converts values to captions and vise versa.",
-            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Transform.html\">DS.Transform</a>"
         },
         "Resolver": {
             "name": "Resolver",
@@ -6090,6 +6120,114 @@
             "namespace": "Offline"
         },
         {
+            "file": "ember-flexberry-data/addon/transforms/file.js",
+            "line": 26,
+            "description": "Deserializes serialized attribute value.",
+            "class": "FileTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/file.js",
+            "line": 34,
+            "description": "Serializes deserialized attribute value.",
+            "class": "FileTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 18,
+            "description": "Object that contains enum values and corresponding captions.\nMust be overridden in inherited classes.\n\nShould be defined in app/enums/.",
+            "example": [
+                "\n  ```js\n  // app/enums/order-status.js\n  import { createEnum } from 'ember-flexberry/utils/enum-functions';\n\n  export default createEnum({\n    Paid: 'Paid',\n    InProcess: 'In process',\n    Sent: 'Sent',\n    Arrived: 'Arrived',\n    NotArrived: 'Not arrived',\n    Unknown: 'Unknown'\n  });\n\n  // app/transforms/order-status\n  import FlexberryEnum from 'ember-flexberry/transforms/flexberry-enum';\n  import OrderStatus from '../enums/order-status';\n\n  export default FlexberryEnum.extend({\n    enum: OrderStatus\n  });\n  ```"
+            ],
+            "itemtype": "property",
+            "name": "enum",
+            "type": "Object",
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 52,
+            "description": "Object with inversed enum, value from enum property will be is property here.",
+            "itemtype": "property",
+            "name": "inverse",
+            "type": "Object",
+            "readonly": "",
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 61,
+            "description": "Array that contains all values of enum properties.",
+            "itemtype": "property",
+            "name": "captions",
+            "type": "Array",
+            "readonly": "",
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 70,
+            "description": "An overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 84,
+            "description": "Returns deserialized enumeration field.\nReturns `null` or `undefined` if `serialized` has one of these values.",
+            "itemtype": "method",
+            "name": "deserialize",
+            "params": [
+                {
+                    "name": "serialized",
+                    "description": "Serialized enumeration field",
+                    "type": "String|Number"
+                }
+            ],
+            "return": {
+                "description": "Deserialized enumeration field",
+                "type": "String"
+            },
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 106,
+            "description": "Returns serialized enumeration field.\nReturns `null` or `undefined` if `deserialized` has one of these values.",
+            "itemtype": "method",
+            "name": "serialize",
+            "params": [
+                {
+                    "name": "deserialized",
+                    "description": "Deserialized enumeration field",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Serialized enumeration field",
+                "type": "String|Number"
+            },
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 129,
+            "description": "Flag: indicates whether class represents enumeration.\nIt is useful in cases when we need to determine that the model attribute type is an enumeration.",
+            "static": 1,
+            "itemtype": "property",
+            "name": "isEnum",
+            "type": "Boolean",
+            "default": "true",
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry-data/addon/utils/attributes.js",
             "line": 8,
             "description": "Define plain attribute in projection.",
@@ -6226,6 +6364,66 @@
             "module": "ember-flexberry-data"
         },
         {
+            "file": "ember-flexberry-data/addon/utils/enum-functions.js",
+            "line": 7,
+            "description": "Returns friezed object without prototype with own properties of parameter.",
+            "itemtype": "method",
+            "name": "createEnum",
+            "params": [
+                {
+                    "name": "dictionary",
+                    "description": "",
+                    "type": "Object|Array"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Utils.Information",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/enum-functions.js",
+            "line": 25,
+            "description": "Returns friezed inversed object without prototype.",
+            "itemtype": "method",
+            "name": "inverseEnum",
+            "params": [
+                {
+                    "name": "dictionary",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Utils.Information",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/enum-functions.js",
+            "line": 41,
+            "description": "Returns array of all property values.",
+            "itemtype": "method",
+            "name": "enumCaptions",
+            "params": [
+                {
+                    "name": "dictionary",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Array"
+            },
+            "class": "Utils.Information",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry-data/addon/utils/generate-unique-id.js",
             "line": 1,
             "return": {
@@ -6233,7 +6431,7 @@
                 "type": "String"
             },
             "class": "Utils.Information",
-            "module": "ember-flexberry-data"
+            "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
@@ -6370,6 +6568,60 @@
             "class": "Utils.Information",
             "module": "ember-flexberry-data",
             "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/model-functions.js",
+            "line": 7,
+            "description": "Gets related object type by relation name from specified model.",
+            "itemtype": "method",
+            "name": "_getRelationType",
+            "params": [
+                {
+                    "name": "model",
+                    "description": "Specified model to get relation from.",
+                    "type": "String"
+                },
+                {
+                    "name": "relationName",
+                    "description": "Relation name.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Related object type.",
+                "type": "String"
+            },
+            "throws": {
+                "description": "Throws error if relation was not found at model.",
+                "type": "Error"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/model-functions.js",
+            "line": 30,
+            "description": "Gets the value from locales.",
+            "itemtype": "method",
+            "name": "getValueFromLocales",
+            "params": [
+                {
+                    "name": "i18n",
+                    "description": "i18n service.",
+                    "type": "Service"
+                },
+                {
+                    "name": "key",
+                    "description": "Key for property in locales.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Value from locales. Returns `null` if key will not be found.",
+                "type": "String"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry-data/addon/syncer.js",
@@ -18063,6 +18315,18 @@
             "line": " ember-flexberry-data/addon/serializers/base.js:88"
         },
         {
+            "message": "replacing incorrect tag: function with method",
+            "line": " ember-flexberry-data/addon/utils/enum-functions.js:7"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " ember-flexberry-data/addon/utils/enum-functions.js:25"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " ember-flexberry-data/addon/utils/enum-functions.js:41"
+        },
+        {
             "message": "replacing incorrect tag: returns with return",
             "line": " ember-flexberry-data/addon/utils/information.js:23"
         },
@@ -18237,6 +18501,18 @@
         {
             "message": "Missing item type\nMoves metadata from one object to another.",
             "line": " ember-flexberry-data/addon/serializers/base.js:177"
+        },
+        {
+            "message": "Missing item type\nDeserializes serialized attribute value.",
+            "line": " ember-flexberry-data/addon/transforms/file.js:26"
+        },
+        {
+            "message": "Missing item type\nSerializes deserialized attribute value.",
+            "line": " ember-flexberry-data/addon/transforms/file.js:34"
+        },
+        {
+            "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
+            "line": " ember-flexberry-data/addon/transforms/flexberry-enum.js:70"
         },
         {
             "message": "Missing item type",
