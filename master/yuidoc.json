@@ -5,6 +5,7 @@
     "linkNatives": true,
     "paths": [
       "./ember-flexberry-data/addon",
+      "./ember-flexberry-gis/addon",
       "./ember-flexberry/addon"
     ],
     "outdir": ".",
