@@ -5,7 +5,8 @@
     "linkNatives": true,
     "paths": [
       "./ember-flexberry-data/addon",
-      "./ember-flexberry/addon"
+      "./ember-flexberry-gis/addon",
+      "./ember-flexberry/addon"      
     ],
     "outdir": ".",
     "themedir": "../yuidoc-flexberry-theme",
