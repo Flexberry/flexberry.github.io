@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-data/addon/stores/local-store.js - Flexberry Documentation</title>
+    <title>LeafletPropertiesMixin - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -247,170 +247,175 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-data/addon/stores/local-store.js <small>File</small></h1>
+    <h1>LeafletPropertiesMixin <small>Class</small></h1>
 </div>
 
-<div class="file">
-    <pre class="prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
-import DS from &#x27;ember-data&#x27;;
-import OfflineAdapter from &#x27;../adapters/offline&#x27;;
+<div class="well well-small">
+        <div class="uses">
+            Uses
+            <ul class="inline commas">
+                    <li><a href="&lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;.html">&lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;</a></li>
+            </ul>
+        </div>
 
-/**
-  @module ember-flexberry-data
-*/
 
-/**
-  Store that used in offline mode by default.
-  @class LocalStore
-  @namespace Offline
-  @extends &lt;a href=&quot;http://emberjs.com/api/data/classes/DS.Store.html&quot;&gt;DS.Store&lt;/a&gt;
-  @private
-*/
-export default DS.Store.extend({
-  init: function() {
-    let owner = Ember.getOwner(this);
-    let adapter = OfflineAdapter.create(owner.ownerInjection(), {
-      caching: &#x27;none&#x27;,
-      namespace: &#x27;ember-flexberry-offline:store&#x27;,
-    });
+        <div class="foundat">
+            Defined in: <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-properties.js.html#l7"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-properties.js:7</code></a>
+        </div>
 
-    this.set(&#x27;adapter&#x27;, adapter);
+            Module: <a href="../modules/ember-flexberry-gis.html">ember-flexberry-gis</a>
 
-    this._super(...arguments);
-  },
+</div>
 
-  /**
-   * Returns an instance of the serializer for a given type.
-   * Offline serializers should have name with postfix &#x27;-offline&#x27;.
-   *
-   * @method serializerFor
-   * @param {String} modelName The name of the model type.
-   * @public
-   */
-  serializerFor: function(modelName) {
-    let owner = Ember.getOwner(this);
-    let serializer = owner.lookup(&#x60;serializer:${modelName}-offline&#x60;);
-    if (!serializer) {
-      serializer = owner.lookup(&#x60;serializer:application-offline&#x60;);
-      if (!serializer) {
-        serializer = this.adapterFor(modelName).defaultSerializer;
-      }
-    }
 
-    return serializer;
-  },
+<div class="well well-small">
+    <p>Mixin for use observable properties with corresponding leaflet objects</p>
+<p>Each element of leafletProperties property contains following parts divided by ":":
+-this object property name
+-leaflet object method for react on property (may be ommited, then be used "set"+PropertyName method)
+-this object other properties thats needs to pass to leaflet object method</p>
 
-  /**
-   * Returns an instance of the adapter for a given type.
-   * Offline adapters should have name with postfix &#x27;-offline&#x27;.
-   *
-   * @method adapterFor
-   * @param {String} modelName The name of the model type.
-   * @public
-   */
-  adapterFor: function(modelName) {
-    let owner = Ember.getOwner(this);
-    let adapter = owner.lookup(&#x60;adapter:${modelName}-offline&#x60;);
-    if (!adapter) {
-      adapter = owner.lookup(&#x60;adapter:application-offline&#x60;);
-      if (!adapter) {
-        adapter = this.get(&#x27;adapter&#x27;);
-      }
-    }
+</div>
 
-    return adapter;
-  },
 
-  /**
-   * Finds the records for the given model type.
-   *
-   * See {{#crossLink &quot;DS.Store/findAll:method&quot;}}{{/crossLink}} for details.
-   *
-   * @method findAll
-   * @public
-   *
-   * @param {String} modelName The name of the model type.
-   * @param {Object} [options] Options.
-   * @param {String} options.projection Projection name.
-   * @return {DS.AdapterPopulatedRecordArray} Records promise.
-   */
-  findAll: function(modelName, options) {
-    if (options &amp;&amp; options.projection) {
-      return this.query(modelName, {
-        projection: options.projection
-      });
-    }
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
-    return this._super(...arguments);
-  },
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
+            <li><a data-toggle="tab" href="#properties">Properties</a></li>
+    </ul>
 
-  /**
-   * Returns a record for a given type and id combination.
-   *
-   * See {{#crossLink &quot;DS.Store/findRecord:method&quot;}}{{/crossLink}} for details.
-   *
-   * @method findRecord
-   * @public
-   *
-   * @param {String} modelName The name of the model type.
-   * @param {String|Integer} id Record ID.
-   * @param {Object} [options] Options.
-   * @param {String} options.projection Projection name.
-   * @return {Promise} Record promise.
-   */
-  findRecord: function(modelName, id, options) {
-    if (options &amp;&amp; options.projection) {
-      // TODO: case of options.reload === false.
-      return this.queryRecord(modelName, {
-        id: id,
-        projection: options.projection
-      });
-    }
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
 
-    return this._super(...arguments);
-  },
+                <div class="index-section methods">
+                    <h3>Methods</h3>
 
-  /**
-   * This method delegates a query to the adapter.
-   *
-   * See {{#crossLink &quot;DS.Store/query:method&quot;}}{{/crossLink}} for details.
-   *
-   * @method query
-   * @public
-   *
-   * @param {String} modelName The name of the model type.
-   * @param {Object} query An opaque query to be used by the adapter.
-   * @param {String} [query.projection] Projection name.
-   * @return {Promise} A promise, which is resolved with a
-   *                   {{#crossLink &quot;DS.RecordArray&quot;}}RecordArray{{/crossLink}}
-   *                   once the server returns.
-   */
-  query: function(modelName, query) {
-    return this._super(modelName, query);
-  },
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__addObservers" data-tablink="_addObservers">_addObservers</a>
 
-  /**
-   * This method delegates a query to the adapter.
-   *
-   * See {{#crossLink &quot;DS.Store/queryRecord:method&quot;}}{{/crossLink}} for details.
-   *
-   * @method queryRecord
-   * @public
-   *
-   * @param {String} modelName The name of the model type.
-   * @param {Object} query An opaque query to be used by the adapter.
-   * @param {String} [query.projection] Projection name.
-   * @return {Promise} A promise, which is resolved with a
-   *                   {{#crossLink &quot;DS.RecordObject&quot;}}RecordObject{{/crossLink}}
-   *                   once the server returns.
-   */
-  queryRecord: function(modelName, query) {
-    return this._super(modelName, query);
-  }
-});
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__removeObservers" data-tablink="_removeObservers">_removeObservers</a>
 
-    </pre>
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_leafletProperties" data-tablink="leafletProperties">leafletProperties</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method__addObservers" class="method item">
+                        <h3 class="name"><code>_addObservers</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-properties.js.html#l39"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-properties.js:39</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Method for add observers for all specified properties</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__removeObservers" class="method item">
+                        <h3 class="name"><code>_removeObservers</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-properties.js.html#l64"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-properties.js:64</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Method for remove created observers</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+            <div id="properties" class="tab-pane">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_leafletProperties" class="property item">
+                        <h3 class="name"><code>leafletProperties</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-properties.js.html#l31"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-properties.js:31</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of properties, thats should be observe by leaflet object specified method.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+
+    </div>
 </div>
                     </div>
                 </div>

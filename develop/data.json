@@ -680,7 +680,9 @@
         "ember-flexberry-gis/addon/mixins/leaflet-options.js": {
             "name": "ember-flexberry-gis/addon/mixins/leaflet-options.js",
             "modules": {},
-            "classes": {},
+            "classes": {
+                "LeafletOptionsMixin": 1
+            },
             "fors": {},
             "namespaces": {}
         },
@@ -688,7 +690,7 @@
             "name": "ember-flexberry-gis/addon/mixins/leaflet-properties.js",
             "modules": {},
             "classes": {
-                "LeafletOptionsMixin": 1
+                "LeafletPropertiesMixin": 1
             },
             "fors": {},
             "namespaces": {}
@@ -1820,6 +1822,7 @@
                 "FlexberryTreenodeActionsHandlerMixin": 1,
                 "LeafletEventsMixin": 1,
                 "LeafletOptionsMixin": 1,
+                "LeafletPropertiesMixin": 1,
                 "NewPlatformFlexberryGISMapLayerSettingRouteMixin": 1,
                 "NewPlatformFlexberryGISMapLayerTileModel": 1,
                 "NewPlatformFlexberryGISMapLayerWmsModel": 1,
@@ -2555,7 +2558,10 @@
             "file": "ember-flexberry-gis/addon/components/base-control.js",
             "line": 9,
             "description": "BaseControl component for leaflet map controls",
-            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>",
+            "uses": [
+                "LeafletOptionsMixin"
+            ]
         },
         "BaseLayerComponent": {
             "name": "BaseLayerComponent",
@@ -2570,7 +2576,12 @@
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
             "line": 12,
             "description": "BaseLayer component for other flexberry-gis layers.",
-            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>",
+            "uses": [
+                "DynamicPropertiesMixin",
+                "LeafletOptionsMixin",
+                "LeafletPropertiesMixin"
+            ]
         },
         "DynamicComponentsPlaceholderComponent": {
             "name": "DynamicComponentsPlaceholderComponent",
@@ -2681,7 +2692,12 @@
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
             "line": 12,
             "description": "FlexberryMap component for render leaflet map in ember applications.",
-            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>",
+            "uses": [
+                "LeafletOptionsMixin",
+                "LeafletPropertiesMixin",
+                "LeafletEventsMixin"
+            ]
         },
         "FlexberryMaplayerComponent": {
             "name": "FlexberryMaplayerComponent",
@@ -2936,6 +2952,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [
+                "BaseLayerComponent",
                 "FlexberryDdauCheckboxComponent",
                 "FlexberryButtonComponent",
                 "FlexberryIconComponent",
@@ -3043,7 +3060,9 @@
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
-            "extension_for": [],
+            "extension_for": [
+                "FlexberryMapComponent"
+            ],
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/mixins/leaflet-events.js",
@@ -3060,7 +3079,34 @@
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
-            "extension_for": [],
+            "extension_for": [
+                "BaseControlComponent",
+                "BaseLayerComponent",
+                "FlexberryMapComponent"
+            ],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/mixins/leaflet-options.js",
+            "line": 10,
+            "description": "Mixin for use in leaflet initialize objects with options.",
+            "example": [
+                "\n  ```js\n  import LeafletOptionsMixin from 'ember-flexberry-gis/mixins/leaflet-options';\n\n  export default Ember.Component.extend(LeafletOptionsMixin, {\n    leafletOptions: [\"zoomControl\", \"center\", \"zoom\"],\n\n    zoomControl: false,\n\n    center: L.latLng(0, 0),\n\n    zoom: 5,\n\n    initMap() {\n      L.Map(this.element, this.get('options'));\n    }\n  })\n  ```"
+            ],
+            "uses": [
+                "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
+            ]
+        },
+        "LeafletPropertiesMixin": {
+            "name": "LeafletPropertiesMixin",
+            "shortname": "LeafletPropertiesMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "BaseLayerComponent",
+                "FlexberryMapComponent"
+            ],
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/mixins/leaflet-properties.js",
@@ -7974,14 +8020,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-control.js",
-            "line": 15,
-            "description": "Overload wrapper tag name for disabling wrapper.",
-            "class": "BaseControlComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/base-control.js",
-            "line": 20,
+            "line": 16,
             "description": "Leaflet map for this control",
             "itemtype": "property",
             "name": "map",
@@ -7992,7 +8031,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-control.js",
-            "line": 28,
+            "line": 24,
+            "description": "Overload wrapper tag name for disabling wrapper.",
+            "class": "BaseControlComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/base-control.js",
+            "line": 34,
             "description": "Creates control instance, should be overridden in child classes",
             "itemtype": "method",
             "name": "createControl",
@@ -8005,52 +8051,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-control.js",
-            "line": 36,
+            "line": 42,
             "description": "Adds created control to map if it's present or change",
             "class": "BaseControlComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 22,
-            "description": "Overload wrapper tag name for disabling wrapper.",
-            "class": "BaseLayerComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 27,
-            "description": "Leaflet container for this layer.",
-            "itemtype": "property",
-            "name": "leafletContainer",
-            "type": "L.Map|L.LayerGroup",
-            "default": "null",
-            "class": "BaseLayerComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 35,
-            "description": "This layer index, used for layer ordering in Map.",
-            "itemtype": "property",
-            "name": "index",
-            "type": "Int",
-            "default": "null",
-            "class": "BaseLayerComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 43,
-            "description": "Call leaflet layer setZIndex if it presents.",
-            "itemtype": "method",
-            "name": "setZIndex",
-            "class": "BaseLayerComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 54,
+            "line": 25,
             "description": "Leaflet layer object init by settings from model.",
             "itemtype": "property",
             "name": "_layer",
@@ -8063,7 +8071,45 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 63,
+            "line": 34,
+            "description": "Overload wrapper tag name for disabling wrapper.",
+            "class": "BaseLayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/base-layer.js",
+            "line": 39,
+            "description": "Leaflet container for this layer.",
+            "itemtype": "property",
+            "name": "leafletContainer",
+            "type": "L.Map|L.LayerGroup",
+            "default": "null",
+            "class": "BaseLayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/base-layer.js",
+            "line": 47,
+            "description": "This layer index, used for layer ordering in Map.",
+            "itemtype": "property",
+            "name": "index",
+            "type": "Int",
+            "default": "null",
+            "class": "BaseLayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/base-layer.js",
+            "line": 55,
+            "description": "Call leaflet layer setZIndex if it presents.",
+            "itemtype": "method",
+            "name": "setZIndex",
+            "class": "BaseLayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/base-layer.js",
+            "line": 66,
             "description": "Flag, indicates visible or not current layer on map.",
             "itemtype": "property",
             "name": "visibility",
@@ -8074,7 +8120,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 71,
+            "line": 86,
             "description": "Switch layer visible on map based on visibility property.",
             "itemtype": "method",
             "name": "toggleVisible",
@@ -8083,7 +8129,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 86,
+            "line": 101,
             "description": "Create leaflet layer, should be overridden in child classes.",
             "itemtype": "method",
             "name": "createLayer",
@@ -8576,18 +8622,20 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 24,
-            "description": "DOM element containig leaflet map.",
+            "line": 25,
+            "description": "Leaflet map object.",
             "itemtype": "property",
-            "name": "mapElement",
-            "type": "Element",
+            "name": "_layer",
+            "type": "L.Map",
             "default": "null",
+            "access": "private",
+            "tagname": "",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 38,
+            "line": 66,
             "description": "Latitude of map center",
             "itemtype": "property",
             "name": "lat",
@@ -8598,7 +8646,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 46,
+            "line": 74,
             "description": "Longitude of map center",
             "itemtype": "property",
             "name": "lng",
@@ -8609,42 +8657,33 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 54,
+            "line": 82,
             "description": "Center of current map.",
             "itemtype": "property",
             "name": "center",
             "type": "L.LatLng",
+            "default": "[0, 0]",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 63,
+            "line": 92,
             "description": "Current map zoom.",
             "itemtype": "property",
             "name": "zoom",
             "type": "Int",
+            "default": "null",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 70,
+            "line": 100,
             "description": "Array of map layers",
             "itemtype": "property",
             "name": "layers",
             "type": "Array of NewPlatformFlexberryGISMapLayer",
-            "class": "FlexberryMapComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 77,
-            "description": "Leaflet map object.",
-            "itemtype": "property",
-            "name": "_layer",
-            "type": "L.Map",
-            "default": "null",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
@@ -10469,7 +10508,7 @@
             "name": "leafletProperties",
             "type": "Array",
             "defaul": "null",
-            "class": "LeafletOptionsMixin",
+            "class": "LeafletPropertiesMixin",
             "module": "ember-flexberry-gis"
         },
         {
@@ -10478,7 +10517,7 @@
             "description": "Method for add observers for all specified properties",
             "itemtype": "method",
             "name": "_addObservers",
-            "class": "LeafletOptionsMixin",
+            "class": "LeafletPropertiesMixin",
             "module": "ember-flexberry-gis"
         },
         {
@@ -10487,7 +10526,7 @@
             "description": "Method for remove created observers",
             "itemtype": "method",
             "name": "_removeObservers",
-            "class": "LeafletOptionsMixin",
+            "class": "LeafletPropertiesMixin",
             "module": "ember-flexberry-gis"
         },
         {
@@ -22550,15 +22589,15 @@
         },
         {
             "message": "Missing item type\nOverload wrapper tag name for disabling wrapper.",
-            "line": " ember-flexberry-gis/addon/components/base-control.js:15"
+            "line": " ember-flexberry-gis/addon/components/base-control.js:24"
         },
         {
             "message": "Missing item type\nAdds created control to map if it's present or change",
-            "line": " ember-flexberry-gis/addon/components/base-control.js:36"
+            "line": " ember-flexberry-gis/addon/components/base-control.js:42"
         },
         {
             "message": "Missing item type\nOverload wrapper tag name for disabling wrapper.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:22"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:34"
         },
         {
             "message": "Missing item type\nReference to component's template.",

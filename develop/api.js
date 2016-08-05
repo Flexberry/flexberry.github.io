@@ -81,6 +81,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "IISCaseberryLoggingObjectsApplicationLogSerializer",
         "LeafletEventsMixin",
         "LeafletOptionsMixin",
+        "LeafletPropertiesMixin",
         "LimitedController",
         "LimitedRouteMixin",
         "ListFormController",
