@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GetWithDynamicActionsHelper - Flexberry Documentation</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+	    <img alt="Flexberry Documentation" src="../assets/css/logo.png" style="max-height: 65%;" title="Flexberry Documentation">
+            Flexberry Documentation
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>develop</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.OData", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/ArrayHelper", "classes/BaseControlComponent", "classes/BaseLayerComponent", "classes/BaseModel", "classes/ColsconfigDialogContentComponent", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DomActionsMixin", "classes/DynamicActionObject", "classes/DynamicActionsMixin", "classes/DynamicComponentObject", "classes/DynamicComponentsMixin", "classes/DynamicComponentsPlaceholderComponent", "classes/DynamicPropertiesMixin", "classes/DynamicProxyActionObject", "classes/DynamicProxyActionsMixin", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryBaseComponent", "classes/FlexberryButtonComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDdauCheckboxActionsHandlerMixin", "classes/FlexberryDdauCheckboxComponent", "classes/FlexberryDropDown", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryIconComponent", "classes/FlexberryLayersComponent", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMapComponent", "classes/FlexberryMaplayerActionsHandlerMixin", "classes/FlexberryMaplayerComponent", "classes/FlexberryMaplayersComponent", "classes/FlexberryMapLoadLayersMixin", "classes/FlexberryMapRoute", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewHierarchicalControllerMixin", "classes/FlexberryObjectlistviewHierarchicalRouteMixin", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryTreeComponent", "classes/FlexberryTreenodeActionsHandlerMixin", "classes/FlexberryTreenodeComponent", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GetWithDynamicActionsHelper", "classes/GroupEditToolbarComponent", "classes/GroupLayerComponent", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LeafletEventsMixin", "classes/LeafletOptionsMixin", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/Mobile.ObjectListViewRowComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/NewPlatformFlexberryGISMapLayerEditController", "classes/NewPlatformFlexberryGISMapLayerEditNewController", "classes/NewPlatformFlexberryGISMapLayerEditNewRoute", "classes/NewPlatformFlexberryGISMapLayerEditRoute", "classes/NewPlatformFlexberryGISMapLayerSettingComponent", "classes/NewPlatformFlexberryGISMapLayerSettingController", "classes/NewPlatformFlexberryGISMapLayerSettingRouteMixin", "classes/NewPlatformFlexberryGISMapLayerTileModel", "classes/NewPlatformFlexberryGISMapLayerWmsModel", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewRowComponent", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JsAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/ScaleControlComponent", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.OData", "classes/Serializer.Offline", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/TileLayerComponent", "classes/TreeNodeObject", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/ValidationDataObject", "classes/WMSLayerComponent", "modules/ember-flexberry", "modules/ember-flexberry-data", "modules/ember-flexberry-gis"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+	    <div>
+	        <h3>APIs</h3>
+	        <div id="sidebar">
+	            <ul id="main-nav" class="nav nav-tabs" style="margin-bottom:0;">
+	                <li class="active"><a href="#classes" data-toggle="tab">Classes</a></li>
+	                <li><a href="#modules" data-toggle="tab">Modules</a></li>
+	            </ul>
+	    
+	            <div id="api-tabview-filter">
+	                <input type="search" placeholder="Type to filter APIs">
+	            </div>
+	    
+	            <div class="tab-content" style="border: 1px solid #DDD; border-top:0;">
+	                <div class="tab-pane active" id="classes">
+	                    <ul id="api-classes" class="nav nav-list">
+	                            <li><a href="../classes/Adapter.html">Adapter</a></li>
+	                            <li><a href="../classes/Adapter.OData.html">Adapter.OData</a></li>
+	                            <li><a href="../classes/Adapter.Offline.html">Adapter.Offline</a></li>
+	                            <li><a href="../classes/ApplicationInitializer.html">ApplicationInitializer</a></li>
+	                            <li><a href="../classes/ApplicationInstanceInitializer.html">ApplicationInstanceInitializer</a></li>
+	                            <li><a href="../classes/ArrayHelper.html">ArrayHelper</a></li>
+	                            <li><a href="../classes/BaseControlComponent.html">BaseControlComponent</a></li>
+	                            <li><a href="../classes/BaseLayerComponent.html">BaseLayerComponent</a></li>
+	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
+	                            <li><a href="../classes/ColsconfigDialogContentComponent.html">ColsconfigDialogContentComponent</a></li>
+	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
+	                            <li><a href="../classes/DetailInterationService.html">DetailInterationService</a></li>
+	                            <li><a href="../classes/DeviceService.html">DeviceService</a></li>
+	                            <li><a href="../classes/DomActionsMixin.html">DomActionsMixin</a></li>
+	                            <li><a href="../classes/DynamicActionObject.html">DynamicActionObject</a></li>
+	                            <li><a href="../classes/DynamicActionsMixin.html">DynamicActionsMixin</a></li>
+	                            <li><a href="../classes/DynamicComponentObject.html">DynamicComponentObject</a></li>
+	                            <li><a href="../classes/DynamicComponentsMixin.html">DynamicComponentsMixin</a></li>
+	                            <li><a href="../classes/DynamicComponentsPlaceholderComponent.html">DynamicComponentsPlaceholderComponent</a></li>
+	                            <li><a href="../classes/DynamicPropertiesMixin.html">DynamicPropertiesMixin</a></li>
+	                            <li><a href="../classes/DynamicProxyActionObject.html">DynamicProxyActionObject</a></li>
+	                            <li><a href="../classes/DynamicProxyActionsMixin.html">DynamicProxyActionsMixin</a></li>
+	                            <li><a href="../classes/EditFormController.html">EditFormController</a></li>
+	                            <li><a href="../classes/EditFormNewRoute.html">EditFormNewRoute</a></li>
+	                            <li><a href="../classes/EditFormRoute.html">EditFormRoute</a></li>
+	                            <li><a href="../classes/EnumCaptionHelper.html">EnumCaptionHelper</a></li>
+	                            <li><a href="../classes/ErrorableControllerMixin.html">ErrorableControllerMixin</a></li>
+	                            <li><a href="../classes/FileTransform.html">FileTransform</a></li>
+	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
+	                            <li><a href="../classes/FlexberryButtonComponent.html">FlexberryButtonComponent</a></li>
+	                            <li><a href="../classes/FlexberryCheckboxComponent.html">FlexberryCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryDatePicker.html">FlexberryDatePicker</a></li>
+	                            <li><a href="../classes/FlexberryDdauCheckboxActionsHandlerMixin.html">FlexberryDdauCheckboxActionsHandlerMixin</a></li>
+	                            <li><a href="../classes/FlexberryDdauCheckboxComponent.html">FlexberryDdauCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
+	                            <li><a href="../classes/FlexberryEnumTransform.html">FlexberryEnumTransform</a></li>
+	                            <li><a href="../classes/FlexberryField.html">FlexberryField</a></li>
+	                            <li><a href="../classes/FlexberryFileCompatibleComponentMixin.html">FlexberryFileCompatibleComponentMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileComponent.html">FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/FlexberryFileControllerMixin.html">FlexberryFileControllerMixin</a></li>
+	                            <li><a href="../classes/FlexberryFileViewDialogController.html">FlexberryFileViewDialogController</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditComponent.html">FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/FlexberryGroupeditRouteMixin.html">FlexberryGroupeditRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberryIconComponent.html">FlexberryIconComponent</a></li>
+	                            <li><a href="../classes/FlexberryLayersComponent.html">FlexberryLayersComponent</a></li>
+	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
+	                            <li><a href="../classes/FlexberryLookupCompatibleComponent.html">FlexberryLookupCompatibleComponent</a></li>
+	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
+	                            <li><a href="../classes/FlexberryMapComponent.html">FlexberryMapComponent</a></li>
+	                            <li><a href="../classes/FlexberryMaplayerActionsHandlerMixin.html">FlexberryMaplayerActionsHandlerMixin</a></li>
+	                            <li><a href="../classes/FlexberryMaplayerComponent.html">FlexberryMaplayerComponent</a></li>
+	                            <li><a href="../classes/FlexberryMaplayersComponent.html">FlexberryMaplayersComponent</a></li>
+	                            <li><a href="../classes/FlexberryMapLoadLayersMixin.html">FlexberryMapLoadLayersMixin</a></li>
+	                            <li><a href="../classes/FlexberryMapRoute.html">FlexberryMapRoute</a></li>
+	                            <li><a href="../classes/FlexberryMenu.html">FlexberryMenu</a></li>
+	                            <li><a href="../classes/FlexberryMenuitem.html">FlexberryMenuitem</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistview.html">FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistviewHierarchicalControllerMixin.html">FlexberryObjectlistviewHierarchicalControllerMixin</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistviewHierarchicalRouteMixin.html">FlexberryObjectlistviewHierarchicalRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberryObjectlistviewRouteMixin.html">FlexberryObjectlistviewRouteMixin</a></li>
+	                            <li><a href="../classes/FlexberrySimpledatetime.html">FlexberrySimpledatetime</a></li>
+	                            <li><a href="../classes/FlexberryTextarea.html">FlexberryTextarea</a></li>
+	                            <li><a href="../classes/FlexberryTextbox.html">FlexberryTextbox</a></li>
+	                            <li><a href="../classes/FlexberryToggler.html">FlexberryToggler</a></li>
+	                            <li><a href="../classes/FlexberryTreeComponent.html">FlexberryTreeComponent</a></li>
+	                            <li><a href="../classes/FlexberryTreenodeActionsHandlerMixin.html">FlexberryTreenodeActionsHandlerMixin</a></li>
+	                            <li><a href="../classes/FlexberryTreenodeComponent.html">FlexberryTreenodeComponent</a></li>
+	                            <li><a href="../classes/FlexberryValidationmessage.html">FlexberryValidationmessage</a></li>
+	                            <li><a href="../classes/FlexberryValidationsummary.html">FlexberryValidationsummary</a></li>
+	                            <li><a href="../classes/GetWithDynamicActionsHelper.html">GetWithDynamicActionsHelper</a></li>
+	                            <li><a href="../classes/GroupEditToolbarComponent.html">GroupEditToolbarComponent</a></li>
+	                            <li><a href="../classes/GroupLayerComponent.html">GroupLayerComponent</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogEController.html">IISCaseberryLoggingObjectsApplicationLogEController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogERoute.html">IISCaseberryLoggingObjectsApplicationLogERoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLController.html">IISCaseberryLoggingObjectsApplicationLogLController</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLRoute.html">IISCaseberryLoggingObjectsApplicationLogLRoute</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogModel.html">IISCaseberryLoggingObjectsApplicationLogModel</a></li>
+	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogSerializer.html">IISCaseberryLoggingObjectsApplicationLogSerializer</a></li>
+	                            <li><a href="../classes/LeafletEventsMixin.html">LeafletEventsMixin</a></li>
+	                            <li><a href="../classes/LeafletOptionsMixin.html">LeafletOptionsMixin</a></li>
+	                            <li><a href="../classes/LimitedController.html">LimitedController</a></li>
+	                            <li><a href="../classes/LimitedRouteMixin.html">LimitedRouteMixin</a></li>
+	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
+	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/LogService.html">LogService</a></li>
+	                            <li><a href="../classes/LookupDialogController.html">LookupDialogController</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryFileComponent.html">Mobile.FlexberryFileComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryGroupeditComponent.html">Mobile.FlexberryGroupeditComponent</a></li>
+	                            <li><a href="../classes/Mobile.FlexberryObjectlistview.html">Mobile.FlexberryObjectlistview</a></li>
+	                            <li><a href="../classes/Mobile.ObjectListViewComponent.html">Mobile.ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/Mobile.ObjectListViewRowComponent.html">Mobile.ObjectListViewRowComponent</a></li>
+	                            <li><a href="../classes/ModalApplicationRoute.html">ModalApplicationRoute</a></li>
+	                            <li><a href="../classes/ModalDialog.html">ModalDialog</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingModel.html">NewPlatformFlexberryFlexberryUserSettingModel</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingSerializer.html">NewPlatformFlexberryFlexberryUserSettingSerializer</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerEditController.html">NewPlatformFlexberryGISMapLayerEditController</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerEditNewController.html">NewPlatformFlexberryGISMapLayerEditNewController</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerEditNewRoute.html">NewPlatformFlexberryGISMapLayerEditNewRoute</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerEditRoute.html">NewPlatformFlexberryGISMapLayerEditRoute</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerSettingComponent.html">NewPlatformFlexberryGISMapLayerSettingComponent</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerSettingController.html">NewPlatformFlexberryGISMapLayerSettingController</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerSettingRouteMixin.html">NewPlatformFlexberryGISMapLayerSettingRouteMixin</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerTileModel.html">NewPlatformFlexberryGISMapLayerTileModel</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerWmsModel.html">NewPlatformFlexberryGISMapLayerWmsModel</a></li>
+	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
+	                            <li><a href="../classes/ObjectListViewComponent.html">ObjectListViewComponent</a></li>
+	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
+	                            <li><a href="../classes/ObjectListViewHeaderCell.html">ObjectListViewHeaderCell</a></li>
+	                            <li><a href="../classes/ObjectListViewRowComponent.html">ObjectListViewRowComponent</a></li>
+	                            <li><a href="../classes/ObjectListViewSingleColumnCellComponent.html">ObjectListViewSingleColumnCellComponent</a></li>
+	                            <li><a href="../classes/Offline.html">Offline</a></li>
+	                            <li><a href="../classes/Offline.GlobalsService.html">Offline.GlobalsService</a></li>
+	                            <li><a href="../classes/Offline.Model.html">Offline.Model</a></li>
+	                            <li><a href="../classes/Offline.ModelMixin.html">Offline.ModelMixin</a></li>
+	                            <li><a href="../classes/Offline.Store.html">Offline.Store</a></li>
+	                            <li><a href="../classes/Offline.Syncer.html">Offline.Syncer</a></li>
+	                            <li><a href="../classes/OlvToolbar.html">OlvToolbar</a></li>
+	                            <li><a href="../classes/PaginatedController.html">PaginatedController</a></li>
+	                            <li><a href="../classes/ProjectedModelForm.html">ProjectedModelForm</a></li>
+	                            <li><a href="../classes/Projection.html">Projection</a></li>
+	                            <li><a href="../classes/Projection.AdapterMixin.html">Projection.AdapterMixin</a></li>
+	                            <li><a href="../classes/Projection.Model.html">Projection.Model</a></li>
+	                            <li><a href="../classes/Projection.StoreMixin.html">Projection.StoreMixin</a></li>
+	                            <li><a href="../classes/Query.html">Query</a></li>
+	                            <li><a href="../classes/Query.BaseAdapter.html">Query.BaseAdapter</a></li>
+	                            <li><a href="../classes/Query.BaseBuilder.html">Query.BaseBuilder</a></li>
+	                            <li><a href="../classes/Query.BasePredicate.html">Query.BasePredicate</a></li>
+	                            <li><a href="../classes/Query.Builder.html">Query.Builder</a></li>
+	                            <li><a href="../classes/Query.ComplexPredicate.html">Query.ComplexPredicate</a></li>
+	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
+	                            <li><a href="../classes/Query.DetailPredicate.html">Query.DetailPredicate</a></li>
+	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
+	                            <li><a href="../classes/Query.IndexedDbAdapter.html">Query.IndexedDbAdapter</a></li>
+	                            <li><a href="../classes/Query.JsAdapter.html">Query.JsAdapter</a></li>
+	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
+	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
+	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
+	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
+	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
+	                            <li><a href="../classes/ScaleControlComponent.html">ScaleControlComponent</a></li>
+	                            <li><a href="../classes/Serializer.html">Serializer</a></li>
+	                            <li><a href="../classes/Serializer.Base.html">Serializer.Base</a></li>
+	                            <li><a href="../classes/Serializer.OData.html">Serializer.OData</a></li>
+	                            <li><a href="../classes/Serializer.Offline.html">Serializer.Offline</a></li>
+	                            <li><a href="../classes/SortableColumn.html">SortableColumn</a></li>
+	                            <li><a href="../classes/SortableControllerMixin.html">SortableControllerMixin</a></li>
+	                            <li><a href="../classes/SortableRoute.html">SortableRoute</a></li>
+	                            <li><a href="../classes/TileLayerComponent.html">TileLayerComponent</a></li>
+	                            <li><a href="../classes/TreeNodeObject.html">TreeNodeObject</a></li>
+	                            <li><a href="../classes/UIMessage.html">UIMessage</a></li>
+	                            <li><a href="../classes/UserSettingsService.html">UserSettingsService</a></li>
+	                            <li><a href="../classes/Utils.html">Utils</a></li>
+	                            <li><a href="../classes/Utils.Information.html">Utils.Information</a></li>
+	                            <li><a href="../classes/ValidationDataObject.html">ValidationDataObject</a></li>
+	                            <li><a href="../classes/WMSLayerComponent.html">WMSLayerComponent</a></li>
+	                    </ul>
+	                </div>
+	    
+	                <div class="tab-pane" id="modules">
+	                    <ul id="api-modules" class="nav nav-list">
+	                            <li><a href="../modules/ember-flexberry.html">ember-flexberry</a></li>
+	                            <li><a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a></li>
+	                            <li><a href="../modules/ember-flexberry-gis.html">ember-flexberry-gis</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        </div>
+        <div class="span9">
+                <form id="options-form" class="form-inline pull-right">
+                    Show:
+                    <label for="api-show-inherited" class="checkbox">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected" class="checkbox">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private" class="checkbox">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated" class="checkbox">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </form>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>GetWithDynamicActionsHelper <small>Class</small></h1>
+</div>
+
+<div class="well well-small">
+
+        <div class="extends">
+            Extends <a href="http://emberjs.com/api/classes/Ember.Helper.html">Ember.Helper</a>
+
+Usage:
+templates/my-form.hbs
+<code>&#x60;</code>handlebars
+{flexberry-tree
+  nodes=(get-with-dynamic-actions this "treeNodes"
+    hierarchyPropertyName="nodes"
+    dynamicActions=(array
+      (hash
+        on="headerClick"
+        actionName="onTreenodeHeaderClick"
+        actionArguments=(array "{% propertyPath %")
+      )
+      (hash
+        on="checkboxChange"
+        actionName="onTreenodeCheckboxChange"
+        actionArguments=(array "{% propertyPath %}.checkboxValue")
+      )
+    )
+  )
+}}
+<code>&#x60;</code>
+
+controllers/my-form.js
+<code>&#x60;</code>javascript
+import Ember from 'ember';
+import TreeNodeObject from 'ember-flexberry-gis/objects/flexberry-treenode';
+
+export default Ember.Controller.extend({
+  treeNodes: Ember.A(
+    FlexberryTreenodeObject.create({
+      caption: 'Node 1 (with child nodes)',
+      hasCheckbox: true,
+      checkboxValue: false,
+      iconClass: 'map icon',
+      nodes: Ember.A([
+        caption: 'Node 1.1 (leaf node)',
+        hasCheckbox: true,
+        checkboxValue: false,
+        iconClass: 'apple icon',
+        nodes: null
+      )
+    }),
+    FlexberryTreenodeObject.create({
+      caption: 'Node 2 (leaf node)',
+      hasCheckbox: true,
+      checkboxValue: false,
+      iconClass: 'compass icon',
+      nodes: null
+    })
+  ]),
+
+  actions: {
+    onTreenodeHeaderClick(...args) {
+      let treeNodePath = args[0];
+      let treeNodeHeaderClickActionEventObject = args[args.length - 1];
+
+      console.log('Clicked tree node\'s properties:', this.get(treeNodePath));
+      console.log('Clicked tree node\'s \'headerClick\' action event object:', treeNodeHeaderClickActionEventObject);
+    },
+
+    onTreenodeCheckboxChange(...args) {
+      let treeNodeCheckboxValuePath = args[0];
+      let treeNodeCheckboxChangeActionEventObject = args[args.length - 1];
+
+      // Change tree node's 'checkboxValue' property. 
+      this.set(treeNodeCheckboxValuePath, treeNodeCheckboxChangeActionEventObject.newValue);
+    }
+  }
+});
+<code>&#x60;</code>
+        </div>
+
+        <div class="foundat">
+            Defined in: <a href="../files/ember-flexberry-gis_addon_helpers_get-with-dynamic-actions.js.html#l146"><code>ember-flexberry-gis&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:146</code></a>
+        </div>
+
+            Module: <a href="../modules/ember-flexberry-gis.html">ember-flexberry-gis</a>
+
+</div>
+
+
+<div class="well well-small">
+    <p>Get with dynamic actions helper.
+Retrieves property with the specified name from the specified object
+(exactly as <a href="http://emberjs.com/api/classes/Ember.Templates.helpers.html#method_get">standard get helper</a> does),
+and additionally binds dynamic actions for retrieved property's nested object/objects
+(even if retrieved property has hierarchical structure).</p>
+<p>Helper must be used with those component's,
+which consumes their inner structure as <a href="http://www.json.org/">JSON-object</a>
+or <a href="http://emberjs.com/api/classes/Ember.Object.html">Ember-object</a>
+and there is no way to attach action handlers for their nested component's explicitly in hbs-markup.</p>
+
+</div>
+
+
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_compute" data-tablink="compute">compute</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method_compute" class="method item">
+                        <h3 class="name"><code>compute</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>args</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>[hash] Object containing
+                    [helper&#x27;s named arguments]</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[hash.hierarchyPropertyName]</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[hash.dynamicActions]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object[]</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_helpers_get-with-dynamic-actions.js.html#l233"><code>ember-flexberry-gis&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:233</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Overridden <a href="http://emberjs.com/api/classes/Ember.Helper.html#method_compute">Ember.Helper compute method</a>.
+                    Executes helper's logic, returns helper's value.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">args</code>
+                                            <span class="type">Any</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p><a href="https://guides.emberjs.com/v2.4.0/templates/writing-helpers/#toc_helper-arguments">Helper arguments</a>.</p>
+                    
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">0</code>
+                                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Property owner, object containing property which must be retrieved &amp; returned from helper
+                    (after dynamic action binding).
+                    Will be also used as action handlers context (if context wasn't specified explicitly in dynamic action bindings).</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                                <li class="param">
+                                                        <code class="param-name">1</code>
+                                                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Name of those property which must be retrieved from owner &amp; returned from helper
+                    (after dynamic actions binding).
+                    Owner's property (behind this name) must be an object or array of objects.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">[hash] Object containing
+                    [helper&#x27;s named arguments]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>(<a href="https://guides.emberjs.com/v2.4.0/templates/writing-helpers/#toc_named-arguments">https://guides.emberjs.com/v2.4.0/templates/writing-helpers/#toc_named-arguments</a>).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[hash.hierarchyPropertyName]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Name of nested property (inside retrieved one), through which
+                    child object/objects (objects hierarchy) will be available.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[hash.dynamicActions]</code>
+                                            <span class="type"><a href="../classes/DynamicActionObject.html" class="crosslink">DynamicActionObject[]</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Dynamic actions, which will be binded
+                    to object/objects retrieved from the owner (and to all nested child objects).</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object[]</a></span>:
+                                        <p>Retrieved object/objects with binded dynamic actions (including nested child objects).</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+            </div>
+
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
