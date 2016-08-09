@@ -264,6 +264,18 @@ import { translationMacro as t } from &#x27;ember-i18n&#x27;;
   @extends FlexberryBaseComponent
 */
 export default FlexberryBaseComponent.extend({
+  _items: Ember.computed(&#x27;items&#x27;, function() {
+    let items = this.get(&#x27;items&#x27;);
+    let obj = null;
+
+    if (Ember.isArray(items)) {
+      obj = {};
+      items.forEach(item =&gt; obj[item] = item.toString());
+    }
+
+    return obj || items;
+  }),
+
   /**
     Flag indicates whether to make checks on selected value or not.
 
@@ -301,7 +313,7 @@ export default FlexberryBaseComponent.extend({
     @property placeholder
     @type String
     @default t(&#x27;components.flexberry-dropdown.placeholder&#x27;)
-   */
+  */
   placeholder: t(&#x27;components.flexberry-dropdown.placeholder&#x27;),
 
   /**
@@ -317,10 +329,10 @@ export default FlexberryBaseComponent.extend({
     Available items.
 
     @property items
-    @type Array
-    @default []
+    @type Array|Object
+    @default {}
   */
-  items: [],
+  items: {},
 
   /**
     DOM-element representing semantic ui-dropdown component.
@@ -368,27 +380,29 @@ export default FlexberryBaseComponent.extend({
   /**
     Handles changes in available items &amp; selected item (including changes on component initialization).
   */
-  itemsOrValueDidChange: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;items.[]&#x27;, &#x27;value&#x27;, function() {
+  itemsOrValueDidChange: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;_items.[]&#x27;, &#x27;value&#x27;, function() {
     let destroyHasBeenCalled = this.get(&#x27;destroyHasBeenCalled&#x27;);
     if (destroyHasBeenCalled) {
       return;
     }
 
-    let items = this.get(&#x27;items&#x27;);
+    let items = this.get(&#x27;_items&#x27;);
     let needChecksOnValue = this.get(&#x27;needChecksOnValue&#x27;);
-    if (needChecksOnValue &amp;&amp; !Ember.isArray(items)) {
-      Ember.Logger.error(&#x60;Wrong type of flexberry-dropdown \&#x60;items\&#x60; propery: actual type is ${Ember.typeOf(items)}, but array is expected.&#x60;);
-    }
 
     // Convert &#x27;value&#x27; and &#x27;items&#x27; to strings because flexberry-dropdown interpret selected value as string commonly.
     let value = this.get(&#x27;value&#x27;) || null;
     let stringValue = value ? value.toString() : null;
-    let itemsString = items.map(function(item) {
-      return item ? item.toString() : null;
-    });
 
-    if (needChecksOnValue &amp;&amp; !Ember.isNone(stringValue) &amp;&amp; itemsString.indexOf(stringValue) &lt; 0) {
-      Ember.Logger.error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; propery: \&#x60;${value}\&#x60;. Allowed values are: [\&#x60;${items.join(&#x60;\&#x60;, \&#x60;&#x60;)}\&#x60;].&#x60;);
+    let valueIsExist = false;
+    for (let key in items) {
+      if (items[key] === stringValue) {
+        valueIsExist = true;
+        break;
+      }
+    }
+
+    if (needChecksOnValue &amp;&amp; !Ember.isNone(stringValue) &amp;&amp; !valueIsExist) {
+      Ember.Logger.error(&#x60;Wrong value of flexberry-dropdown \&#x60;value\&#x60; property: \&#x60;${value}\&#x60;. Allowed values are: [\&#x60;${items.join(&#x60;\&#x60;, \&#x60;&#x60;)}\&#x60;].&#x60;);
     }
 
     let dropdownDomElement = this.get(&#x27;dropdownDomElement&#x27;);
