@@ -7683,7 +7683,7 @@
         {
             "file": "ember-flexberry-data/addon/utils/enum-functions.js",
             "line": 41,
-            "description": "Returns array of all property values.",
+            "description": "Returns object without null values.",
             "itemtype": "method",
             "name": "enumCaptions",
             "params": [
@@ -7695,7 +7695,7 @@
             ],
             "return": {
                 "description": "",
-                "type": "Array"
+                "type": "Object"
             },
             "class": "Utils.Information",
             "module": "ember-flexberry"
