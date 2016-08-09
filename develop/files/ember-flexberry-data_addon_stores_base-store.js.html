@@ -555,7 +555,7 @@ export default DS.Store.extend({
     let onlineStore = this.get(&#x27;onlineStore&#x27;);
     let offlineStore = this.get(&#x27;offlineStore&#x27;);
     let adapter = onlineStore.adapterFor(modelName);
-    if (this.get(&#x27;offlineGlobals&#x27;).get(&#x27;isOfflineEnabled&#x27;)) {
+    if (this.get(&#x27;offlineGlobals.isOfflineEnabled&#x27;)) {
       let useOnlineStoreCondition = useOnlineStore || (Ember.isNone(useOnlineStore) &amp;&amp; this._isOnline());
       return useOnlineStoreCondition ? decorateAdapter.call(this, adapter, modelName) : offlineStore.adapterFor(modelName);
     } else {
@@ -574,7 +574,7 @@ export default DS.Store.extend({
     let onlineStore = this.get(&#x27;onlineStore&#x27;);
     let offlineStore = this.get(&#x27;offlineStore&#x27;);
     let serializer = onlineStore.serializerFor(modelName);
-    if (this.get(&#x27;offlineGlobals&#x27;).get(&#x27;isOfflineEnabled&#x27;)) {
+    if (this.get(&#x27;offlineGlobals.isOfflineEnabled&#x27;)) {
       let useOnlineStoreCondition = useOnlineStore || (Ember.isNone(useOnlineStore) &amp;&amp; this._isOnline());
       return useOnlineStoreCondition ? decorateSerializer.call(this, serializer, modelName) : offlineStore.serializerFor(modelName);
     } else {
@@ -591,7 +591,7 @@ export default DS.Store.extend({
     let decoratedMethod = decorateAPICall(finderType, originMethod);
     if (optionsIndex &gt; -1) {
       let options = originMethodArguments[optionsIndex];
-      options = this.get(&#x27;offlineGlobals&#x27;).get(&#x27;isOfflineEnabled&#x27;) ? options : Ember.$.extend(true, { bypass: true }, options);
+      options = this.get(&#x27;offlineGlobals.isOfflineEnabled&#x27;) ? options : Ember.$.extend(true, { bypass: true }, options);
       originMethodArguments[optionsIndex] = options;
     }
 
@@ -614,7 +614,10 @@ export default DS.Store.extend({
     let offlineStore = this.get(&#x27;offlineStore&#x27;);
     let useOnlineStore = (args[0].length - 1) &gt;= useOnlineStoreParamNum ? args[0][useOnlineStoreParamNum] : null;
     let useOnlineStoreCondition = useOnlineStore || (Ember.isNone(useOnlineStore) &amp;&amp; this._isOnline());
-    return useOnlineStoreCondition ? onlineStore[methodName].apply(onlineStore, args[0]) : offlineStore[methodName].apply(offlineStore, args[0]);
+    let offlineEnabled = this.get(&#x27;offlineGlobals.isOfflineEnabled&#x27;);
+    return !offlineEnabled || (offlineEnabled &amp;&amp; useOnlineStoreCondition) ?
+      onlineStore[methodName].apply(onlineStore, args[0]) :
+      offlineStore[methodName].apply(offlineStore, args[0]);
   }
 });
 
