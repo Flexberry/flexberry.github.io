@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-data/addon/services/offline-globals.js - Flexberry Documentation</title>
+    <title>Offline.DecimalTransform - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -248,123 +248,51 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-data/addon/services/offline-globals.js <small>File</small></h1>
+    <h1>Offline.DecimalTransform <small>Class</small></h1>
 </div>
 
-<div class="file">
-    <pre class="prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
+<div class="well well-small">
 
-/**
-  @module ember-flexberry-data
-*/
+        <div class="extends">
+            Extends <a href="http://emberjs.com/api/data/classes/DS.NumberTransform.html">DS.NumberTransform</a>
+        </div>
 
-/**
-  Service for operate with global online and offline properties and events.
+        <div class="foundat">
+            Defined in: <a href="../files/ember-flexberry-data_addon_transforms_decimal.js.html#l3"><code>ember-flexberry-data&#x2F;addon&#x2F;transforms&#x2F;decimal.js:3</code></a>
+        </div>
 
-  @class GlobalsService
-  @namespace Offline
-  @extends Ember.Service
-  @public
-*/
-export default Ember.Service.extend(Ember.Evented, {
-  /**
-    Availability of the backend.
-    @property isOnline
-    @type Boolean
-    @default false
-    @readOnly
-  */
-  isOnline: false,
+            Module: <a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a>
 
-  /**
-    Possibility of using offline storage.
-    Gets from application config.
-    @property isOfflineEnabled
-    @type Boolean
-    @default true
-    @readOnly
-  */
-  isOfflineEnabled: true,
+</div>
 
-  /**
-    If true then perform switch to offline mode when got online connection errors.
-    Gets from application config.
-    @property isModeSwitchOnErrorsEnabled
-    @type Boolean
-    @default false
-    @readOnly
-  */
-  isModeSwitchOnErrorsEnabled: false,
 
-  /**
-    If true then all work with records will sync down when online.
-    This let user to continue work without online connection.
-    Gets from application config.
-    @property isSyncDownWhenOnlineEnabled
-    @type Boolean
-    @default true
-    @readOnly
-  */
-  isSyncDownWhenOnlineEnabled: true,
+<div class="well well-small">
+    <p>Transformation for model's attributes defined as <a href="http://emberjs.com/api/data/#method_attr">DS.attr</a>
+with type 'decimal'.
+It extends <a href="http://emberjs.com/api/data/classes/DS.NumberTransform.html">number transformation</a> from ember data.</p>
 
-  /**
-    Trigger for &quot;online is available&quot; or &quot;online is unavailable&quot; event.
-    Event name: online/offline.
+</div>
 
-    @method setOnlineAvailable
 
-    @param {Boolean} isOnline Availability of online to set.
-  */
-  setOnlineAvailable(isOnline) {
-    this.set(&#x27;isOnline&#x27;, isOnline);
-    let eventName = isOnline ? &#x27;online&#x27; : &#x27;offline&#x27;;
-    this.trigger(eventName);
-  },
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
-  /**
-    Get online status.
-    Always returns &#x27;true&#x27; by default.
-    Needs for overload when using on mobile devices.
+    </ul>
 
-    @method checkOnlineAvailable
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
 
-    @return {Boolean} Returns online status on current device.
-  */
-  checkOnlineAvailable() {
-    return true;
-  },
 
-  /*
-    Service initialization.
-  */
-  init() {
-    this._super(...arguments);
-    let app = Ember.getOwner(this).application;
 
-    if (app.offline) {
-      //Reading offline settings from application seetings in &#x60;environment.js&#x60;.
-      this._setOption(&#x27;isOfflineEnabled&#x27;, app.offline.offlineEnabled);
-      this._setOption(&#x27;isModeSwitchOnErrorsEnabled&#x27;, app.offline.modeSwitchOnErrorsEnabled);
-      this._setOption(&#x27;isSyncDownWhenOnlineEnabled&#x27;, app.offline.syncDownWhenOnlineEnabled);
-    }
 
-    //Detect availability of online connection at start of application.
-    let isOnlineAvailable = this.checkOnlineAvailable();
-    this.setOnlineAvailable(isOnlineAvailable);
-  },
+        </div>
 
-  /*
-    Helper method for setting class properties with offline options.
-  */
-  _setOption: function(optionName, optionValue) {
-    if (!Ember.isNone(optionValue)) {
-      this.set(optionName, optionValue);
-    }
-  }
-});
 
-    </pre>
+
+
+    </div>
 </div>
                     </div>
                 </div>

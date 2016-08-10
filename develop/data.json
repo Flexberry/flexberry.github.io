@@ -276,6 +276,15 @@
                 "Offline": 1
             }
         },
+        "ember-flexberry-data/addon/transforms/decimal.js": {
+            "name": "ember-flexberry-data/addon/transforms/decimal.js",
+            "modules": {},
+            "classes": {
+                "Offline.DecimalTransform": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-data/addon/transforms/file.js": {
             "name": "ember-flexberry-data/addon/transforms/file.js",
             "modules": {},
@@ -1647,6 +1656,7 @@
                 "Offline.GlobalsService": 1,
                 "Offline.Store": 1,
                 "Offline.LocalStore": 1,
+                "Offline.DecimalTransform": 1,
                 "Projection": 1,
                 "Utils.Information": 1,
                 "Offline": 1,
@@ -2335,6 +2345,24 @@
             "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>",
             "access": "private",
             "tagname": ""
+        },
+        "Offline.DecimalTransform": {
+            "name": "Offline.DecimalTransform",
+            "shortname": "DecimalTransform",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Offline",
+            "file": "ember-flexberry-data/addon/transforms/decimal.js",
+            "line": 3,
+            "description": "Transformation for model's attributes defined as <a href=\"http://emberjs.com/api/data/#method_attr\">DS.attr</a>\nwith type 'decimal'.\nIt extends <a href=\"http://emberjs.com/api/data/classes/DS.NumberTransform.html\">number transformation</a> from ember data.",
+            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.NumberTransform.html\">DS.NumberTransform</a>",
+            "example": [
+                "\n```\nimport DS from 'ember-data';\nexport default DS.Model.extend({\n  name: DS.attr('string');\n  decimalNumber: DS.attr('decimal')\n});\n```"
+            ]
         },
         "FileTransform": {
             "name": "FileTransform",
@@ -7393,6 +7421,22 @@
                 "type": "Promise"
             },
             "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/decimal.js",
+            "line": 19,
+            "description": "Deserializes serialized attribute value.",
+            "class": "Offline.DecimalTransform",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/decimal.js",
+            "line": 26,
+            "description": "Serializes deserialized attribute value.",
+            "class": "Offline.DecimalTransform",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
@@ -22566,6 +22610,14 @@
         {
             "message": "Missing item type\nMoves metadata from one object to another.",
             "line": " ember-flexberry-data/addon/serializers/base.js:177"
+        },
+        {
+            "message": "Missing item type\nDeserializes serialized attribute value.",
+            "line": " ember-flexberry-data/addon/transforms/decimal.js:19"
+        },
+        {
+            "message": "Missing item type\nSerializes deserialized attribute value.",
+            "line": " ember-flexberry-data/addon/transforms/decimal.js:26"
         },
         {
             "message": "Missing item type\nDeserializes serialized attribute value.",

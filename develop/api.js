@@ -113,6 +113,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "ObjectListViewSingleColumnCellComponent",
         "ObjectlistviewEvents",
         "Offline",
+        "Offline.DecimalTransform",
         "Offline.GlobalsService",
         "Offline.LocalStore",
         "Offline.Model",
