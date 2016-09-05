@@ -7,6 +7,9 @@
 {% elsif page.sidebar == "product2_sidebar" %}
 {% assign sidebar = site.data.sidebars.product2_sidebar.entries %}
 
+{% elsif page.sidebar == "ember-flexberry_sidebar" %}
+{% assign sidebar = site.data.sidebars.ember-flexberry_sidebar.entries %}
+
 {% elsif page.sidebar == "mydoc_sidebar" %}
 {% assign sidebar = site.data.sidebars.mydoc_sidebar.entries %}
 
@@ -30,4 +33,8 @@ sidebar configuration for print files
 
 {% if site.product == "product2" %}
 {% assign sidebar_pdf = site.data.sidebars.product2_sidebar.entries %}
+{% endif %}
+
+{% if site.product == "ember-flexberry" %}
+{% assign sidebar_pdf = site.data.sidebars.ember-flexberry_sidebar.entries %}
 {% endif %}
