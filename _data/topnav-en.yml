@@ -64,8 +64,10 @@ topnav_dropdowns:
           external_url: https://github.com/flexberry/Leaflet-WFST
         - title: Leaflet.Editable.Measures
           external_url: https://github.com/Flexberry/Leaflet.Editable.Measures
-    - title: Language
-      folderitems:
+
+topnav_langs:
+- title: Language
+  items:
         - title: English
           url: /en
         - title: Русский
