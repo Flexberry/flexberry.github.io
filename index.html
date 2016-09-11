@@ -1,38 +1,19 @@
 ---
 title: Flexberry PLATFORM Documentation
+layout: default
 ---
-
+<!-- Navigate to localized page for preferenced language. -->
 <div class="container main-page">
   <div class="row">
-  <div class="offset2 span8">
-    <h1>Flexberry PLATFORM Documentation</h1>
-
-    <div class="get-started-flexberry well">
-      <h3>Get Started</h3>
-
-      <div class="cmd-ember-flexberry">
-        $ ember install ember-flexberry
-      </div>
-    </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span6">
-    <div class="apis-ember-flexberry pull-center">
-  <h3>APIs:</h3>
-    <a class="btn btn-default btn-large" href="master/index.html">Master</a>
-    <a class="btn btn-default btn-large" href="develop/index.html">Develop</a>
-    </div>
-    </div>
-    <div class="span6">
-    <div class="wiki-ember-flexberry pull-center">
-  <h3>Forum:</h3>
-    <a class="btn btn-link btn-large" target="_blank" href="http://forum.flexberry.net/">forum.flexberry.net</a>
-    </div>
-    </div>
-  </div>
-  <div class="row">
-      <a href="ru">Русский</a>
-      <a href="en">English</a>
+      <a href="ru" class="btn btn-default" role="button">Русский</a>
+      <a href="en" class="btn btn-default" role="button">English</a>
   </div>
 </div>
+<script type="text/javascript">
+  var browserLanguage = window.navigator.userLanguage || window.navigator.language;
+  var language = "en";
+  if (browserLanguage.indexOf("ru") > -1) {
+    language = "ru"
+  }
+  window.location.replace("{{ site.baseurl }}/" + language);
+</script>
