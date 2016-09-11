@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Документация по платформе Flexberry
 lang: ru
 permalink: /ru/index.html
