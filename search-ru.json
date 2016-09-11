@@ -1,0 +1,33 @@
+---
+title: search
+layout: none
+search: exclude
+permalink: ru/search.json
+---
+
+[
+{% for page in site.pages | where:"lang","ru" %}
+{% unless page.search == "exclude" %}
+{
+"title": "{{ page.title | escape }}",
+"tags": "{{ page.tags }}",
+"keywords": "{{page.keywords}}",
+"url": "{{ page.url }}",
+"summary": "{{page.summary | strip }}"
+},
+{% endunless %}
+{% endfor %}
+
+{% for post in site.posts | where:"lang","ru" %}
+
+{
+"title": "{{ post.title | escape }}",
+"tags": "{{ post.tags }}",
+"keywords": "{{post.keywords}}",
+"url": "{{ post.url }}",
+"summary": "{{post.summary | strip }}"
+}
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+
+]

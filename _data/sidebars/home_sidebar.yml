@@ -8,23 +8,35 @@ entries:
   - title: Products
     output: web
     folderitems:
+    - title: Flexberry PLATFORM
+      url: /fp_landing_page.html
+      output: web
+    - title: Flexberry Designer
+      url: /fd_landing_page.html
+      output: web
     - title: ember-flexberry
-      url: /news.html
+      url: /ef_landing_page.html
       output: web
     - title: ember-flexberry-data
-      url: /mydoc_introduction.html
+      url: /efd_landing_page.html
+      output: web
+    - title: Flexberry ORM
+      url: /fo_landing_page.html
+      output: web
+    - title: Flexberry ODataService
+      url: /fod_landing_page.html
       output: web
     - title: ember-flexberry-security
-      url: /p1_landing_page.html
+      url: /efs_landing_page.html
       output: web
     - title: ember-flexberry-gis
-      url: /p2_landing_page.html
+      url: /efg_landing_page.html
       output: web
     - title: Leaflet-WFST
-      url: /ef_landing_page.html
+      url: /lw_landing_page.html
       output: web
     - title: Leaflet.Editable.Measures
-      url: /ef_landing_page.html
+      url: /lem_landing_page.html
       output: web
   - title: Guides
     output: web
