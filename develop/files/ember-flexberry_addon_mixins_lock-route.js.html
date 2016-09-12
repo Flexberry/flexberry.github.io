@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry/addon/mixins/olv-toolbar-mixin.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/mixins/lock-route.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.OData", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/ArrayHelper", "classes/Audit", "classes/BaseControlComponent", "classes/BaseLayerComponent", "classes/BaseModel", "classes/ColsconfigDialogContentComponent", "classes/DecimalTransform", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DomActionsMixin", "classes/DynamicActionObject", "classes/DynamicActionsMixin", "classes/DynamicPropertiesMixin", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryAddLayerDialogComponent", "classes/FlexberryBaseComponent", "classes/FlexberryButtonComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDdauCheckboxActionsHandlerMixin", "classes/FlexberryDdauCheckboxComponent", "classes/FlexberryDialogComponent", "classes/FlexberryDropDown", "classes/FlexberryEditLayerDialogComponent", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryGroupLayerSettingsComponent", "classes/FlexberryIconComponent", "classes/FlexberryLayersComponent", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMapComponent", "classes/FlexberryMaplayerActionsHandlerMixin", "classes/FlexberryMaplayerComponent", "classes/FlexberryMaplayersComponent", "classes/FlexberryMapLoadLayersMixin", "classes/FlexberryMapRoute", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewHierarchicalControllerMixin", "classes/FlexberryObjectlistviewHierarchicalRouteMixin", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberryRemoveLayerDialogComponent", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryTileLayerSettingsComponent", "classes/FlexberryToggler", "classes/FlexberryTreeComponent", "classes/FlexberryTreenodeActionsHandlerMixin", "classes/FlexberryTreenodeComponent", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/FlexberryWmsLayerSettingsComponent", "classes/GetWithDynamicActionsHelper", "classes/GroupEditToolbarComponent", "classes/GroupLayer", "classes/GroupLayerComponent", "classes/GuidTransform", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LeafletEventsMixin", "classes/LeafletOptionsMixin", "classes/LeafletPropertiesMixin", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/Mobile.ObjectListViewRowComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/NewPlatformFlexberryGISMapLayerTileModel", "classes/NewPlatformFlexberryGISMapLayerWmsModel", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewRowComponent", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JsAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/RequiredActionsMixin", "classes/Resolver", "classes/ScaleControlComponent", "classes/Security", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.OData", "classes/Serializer.Offline", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/TileLayer", "classes/TileLayerComponent", "classes/TreeNodeObject", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/Utils.Layers", "classes/ValidationDataObject", "classes/WmsLayer", "classes/WMSLayerComponent", "modules/ember-flexberry", "modules/ember-flexberry-data", "modules/ember-flexberry-gis"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.OData", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/ArrayHelper", "classes/Audit", "classes/BaseControlComponent", "classes/BaseLayerComponent", "classes/ColsconfigDialogContentComponent", "classes/DecimalTransform", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DomActionsMixin", "classes/DynamicActionObject", "classes/DynamicActionsMixin", "classes/DynamicPropertiesMixin", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryAddLayerDialogComponent", "classes/FlexberryBaseComponent", "classes/FlexberryButtonComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDdauCheckboxActionsHandlerMixin", "classes/FlexberryDdauCheckboxComponent", "classes/FlexberryDialogComponent", "classes/FlexberryDropDown", "classes/FlexberryEditLayerDialogComponent", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryGroupLayerSettingsComponent", "classes/FlexberryIconComponent", "classes/FlexberryLayersComponent", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMapComponent", "classes/FlexberryMaplayerActionsHandlerMixin", "classes/FlexberryMaplayerComponent", "classes/FlexberryMaplayersComponent", "classes/FlexberryMapLoadLayersMixin", "classes/FlexberryMapRoute", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewHierarchicalControllerMixin", "classes/FlexberryObjectlistviewHierarchicalRouteMixin", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberryRemoveLayerDialogComponent", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryTileLayerSettingsComponent", "classes/FlexberryToggler", "classes/FlexberryTreeComponent", "classes/FlexberryTreenodeActionsHandlerMixin", "classes/FlexberryTreenodeComponent", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/FlexberryWmsLayerSettingsComponent", "classes/GetWithDynamicActionsHelper", "classes/GroupEditToolbarComponent", "classes/GroupLayer", "classes/GroupLayerComponent", "classes/GuidTransform", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LeafletEventsMixin", "classes/LeafletOptionsMixin", "classes/LeafletPropertiesMixin", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LockRouteMixin", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/Mobile.ObjectListViewRowComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/NewPlatformFlexberryGISMapLayerTileModel", "classes/NewPlatformFlexberryGISMapLayerWmsModel", "classes/NewPlatformFlexberryServicesLockEditController", "classes/NewPlatformFlexberryServicesLockEditRoute", "classes/NewPlatformFlexberryServicesLockListController", "classes/NewPlatformFlexberryServicesLockListRoute", "classes/NewPlatformFlexberryServicesLockModel", "classes/NewPlatformFlexberryServicesLockSerializer", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewRowComponent", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JsAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.QueryObject", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/RequiredActionsMixin", "classes/Resolver", "classes/ScaleControlComponent", "classes/Security", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.OData", "classes/Serializer.Offline", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/TileLayer", "classes/TileLayerComponent", "classes/TreeNodeObject", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/Utils.Layers", "classes/ValidationDataObject", "classes/WmsLayer", "classes/WMSLayerComponent", "modules/ember-flexberry", "modules/ember-flexberry-data", "modules/ember-flexberry-gis"]'>
         </form>
     </div>
 </div>
@@ -57,7 +57,6 @@
 	                            <li><a href="../classes/Audit.html">Audit</a></li>
 	                            <li><a href="../classes/BaseControlComponent.html">BaseControlComponent</a></li>
 	                            <li><a href="../classes/BaseLayerComponent.html">BaseLayerComponent</a></li>
-	                            <li><a href="../classes/BaseModel.html">BaseModel</a></li>
 	                            <li><a href="../classes/ColsconfigDialogContentComponent.html">ColsconfigDialogContentComponent</a></li>
 	                            <li><a href="../classes/DecimalTransform.html">DecimalTransform</a></li>
 	                            <li><a href="../classes/DetailEditFormController.html">DetailEditFormController</a></li>
@@ -139,6 +138,7 @@
 	                            <li><a href="../classes/LimitedRouteMixin.html">LimitedRouteMixin</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
 	                            <li><a href="../classes/ListFormRoute.html">ListFormRoute</a></li>
+	                            <li><a href="../classes/LockRouteMixin.html">LockRouteMixin</a></li>
 	                            <li><a href="../classes/LogService.html">LogService</a></li>
 	                            <li><a href="../classes/LookupDialogController.html">LookupDialogController</a></li>
 	                            <li><a href="../classes/Mobile.FlexberryFileComponent.html">Mobile.FlexberryFileComponent</a></li>
@@ -152,6 +152,12 @@
 	                            <li><a href="../classes/NewPlatformFlexberryFlexberryUserSettingSerializer.html">NewPlatformFlexberryFlexberryUserSettingSerializer</a></li>
 	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerTileModel.html">NewPlatformFlexberryGISMapLayerTileModel</a></li>
 	                            <li><a href="../classes/NewPlatformFlexberryGISMapLayerWmsModel.html">NewPlatformFlexberryGISMapLayerWmsModel</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryServicesLockEditController.html">NewPlatformFlexberryServicesLockEditController</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryServicesLockEditRoute.html">NewPlatformFlexberryServicesLockEditRoute</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryServicesLockListController.html">NewPlatformFlexberryServicesLockListController</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryServicesLockListRoute.html">NewPlatformFlexberryServicesLockListRoute</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryServicesLockModel.html">NewPlatformFlexberryServicesLockModel</a></li>
+	                            <li><a href="../classes/NewPlatformFlexberryServicesLockSerializer.html">NewPlatformFlexberryServicesLockSerializer</a></li>
 	                            <li><a href="../classes/ObjectListViewCell.html">ObjectListViewCell</a></li>
 	                            <li><a href="../classes/ObjectListViewComponent.html">ObjectListViewComponent</a></li>
 	                            <li><a href="../classes/ObjectlistviewEvents.html">ObjectlistviewEvents</a></li>
@@ -184,6 +190,7 @@
 	                            <li><a href="../classes/Query.JsAdapter.html">Query.JsAdapter</a></li>
 	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
 	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
+	                            <li><a href="../classes/Query.QueryObject.html">Query.QueryObject</a></li>
 	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
 	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
 	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
@@ -251,248 +258,244 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry/addon/mixins/olv-toolbar-mixin.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/mixins/lock-route.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
-import { getValueFromLocales } from &#x27;ember-flexberry-data/utils/model-functions&#x27;;
+/**
+  @module ember-flexberry
+*/
 
-// TODO: rename file, add &#x27;controller&#x27; word into filename.
+import Ember from &#x27;ember&#x27;;
+import { Query } from &#x27;ember-flexberry-data&#x27;;
+
+/**
+  Mixin for {{#crossLink &quot;EditFormRoute&quot;}}{{/crossLink}}, which provides support locking.
+
+  @class LockRouteMixin
+  @uses &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;
+*/
 export default Ember.Mixin.create({
-  _userSettingsService: Ember.inject.service(&#x27;user-settings&#x27;),
+  /**
+    @property _currentLock
+    @type DS.Model
+    @default null
+    @private
+  */
+  _currentLock: null,
+
+  /**
+    @property _readonly
+    @type Boolean
+    @default false
+    @private
+  */
+  _readonly: false,
+
+  /**
+    This property uses for setting user name.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/routes/user-edit.js
+      import EditFormRoute from &#x27;ember-flexberry/routes/edit-form&#x27;;
+      export default EditFormRoute.extend({
+        ...
+        userName: Ember.computed(function() {
+          let userService = Ember.getOwner(this).lookup(&#x27;service:user&#x27;);
+          return userService.getCurrentUserName();
+        }),
+        ...
+      });
+      &#x60;&#x60;&#x60;
+
+    @property userName
+    @type String
+    @default &#x27;admin&#x27;
+    @for EditFormRoute
+  */
+  userName: &#x27;admin&#x27;,
+
+  /**
+    This object contains answers which will corresponding functions resolved.
+
+    @property defaultBehaviorLock
+    @type Object
+    @default { openReadOnly: true, unlockObject: true }
+    @for EditFormRoute
+  */
+  defaultBehaviorLock: {
+    openReadOnly: true,
+    unlockObject: true,
+  },
 
   actions: {
-    showConfigDialog: function(componentName, settingName) {
-      let colsOrder = this.get(&#x27;_userSettingsService&#x27;).getCurrentColsOrder(componentName, settingName);
-      let sorting = this.get(&#x27;_userSettingsService&#x27;).getCurrentSorting(componentName, settingName);
-      let columnWidths = this.get(&#x27;userSettingsService&#x27;).getCurrentColumnWidths(componentName, settingName);
-      let propName;
-      let colDesc;  //Column description
-      let colDescs = [];  //Columns description
-      let projectionAttributes = this.modelProjection.attributes;
-      let colList = this._generateColumns(projectionAttributes);
-      let namedColList = {};
-      for (let i = 0; i &lt; colList.length; i++) {
-        colDesc = colList[i];
-        propName = colDesc.propName;
-        namedColList[propName] = colDesc;
+    /**
+      The willTransition action is fired at the beginning of any attempted transition with a Transition object as the sole argument.
+      [More info](http://emberjs.com/api/classes/Ember.Route.html#event_willTransition).
+
+      @method actions.willTransition
+      @param {Transition} transition
+    */
+    willTransition(transition) {
+      this.set(&#x27;_readonly&#x27;, false);
+      this.controller.set(&#x27;readonly&#x27;, false);
+      let lock = this.get(&#x27;_currentLock&#x27;);
+      if (lock) {
+        transition.abort();
+        this.unlockObject().then((answer) =&gt; {
+          (answer ? lock.destroyRecord() : new Ember.RSVP.resolve()).then(() =&gt; {
+            this.set(&#x27;_currentLock&#x27;, null);
+            transition.retry();
+          });
+        });
       }
-
-      if (colsOrder === undefined) {
-        colsOrder = colList;
-      }
-
-      let namedSorting = {};
-      let sortPriority = 0;
-      if (sorting === undefined) {
-        sorting = [];
-      }
-
-      for (let i = 0; i &lt; sorting.length; i++) {
-        colDesc = sorting[i];
-        colDesc.sortPriority = ++sortPriority;
-        propName = colDesc.propName;
-        namedSorting[propName] = colDesc;
-      }
-
-      if (columnWidths === undefined) {
-        columnWidths = [];
-      }
-
-      let namedColWidth = {};
-      for (let i = 0; i &lt; columnWidths.length; i++) {
-        colDesc = columnWidths[i];
-        propName = colDesc.propName;
-        namedColWidth[propName] = colDesc.width;
-      }
-
-      for (let i = 0; i &lt; colsOrder.length; i++) {
-        let colOrder = colsOrder[i];
-        propName = colOrder.propName;
-        let name = namedColList[propName].header;
-        delete namedColList[propName];
-        colDesc = { name: name, propName: propName, hide: colOrder.hide };
-        if (propName in namedSorting) {
-          let sortColumn = namedSorting[propName];
-          colDesc.sortOrder = sortColumn.direction === &#x27;asc&#x27; ? 1 : -1;
-          colDesc.sortPriority = sortColumn.sortPriority;
-        } else {
-          colDesc.sortOrder = 0;
-        }
-
-        if (propName in namedColWidth) {
-          colDesc.columnWidth = namedColWidth[propName];
-        }
-
-        colDescs[i] = colDesc;
-      }
-
-      for (propName in namedColList) {
-        colDescs[colDescs.length] = { propName: propName, name: namedColList[propName].header, hide: false, sortOrder: 0 };
-      }
-
-      let controller = this.get(&#x27;colsconfigController&#x27;);
-
-      let loadingParams = {
-        view: &#x27;application&#x27;,
-        outlet: &#x27;modal&#x27;
-      };
-      this.send(&#x27;showModalDialog&#x27;, &#x27;colsconfig-dialog&#x27;);
-
-      loadingParams = {
-        view: &#x27;colsconfig-dialog&#x27;,
-        outlet: &#x27;modal-content&#x27;
-      };
-      this.send(&#x27;showModalDialog&#x27;, &#x27;colsconfig-dialog-content&#x27;,
-                { controller: controller, model: { colDescs: colDescs, componentName: componentName, settingName: settingName } },
-                loadingParams);
-    }
-
+    },
   },
 
   /**
-    Generate the columns.
+    This hook is the first of the route entry validation hooks called when an attempt is made to transition into a route or one of its children.
+    [More info](http://emberjs.com/api/classes/Ember.Route.html#method_beforeModel).
 
-    @method _generateColumns
-    @private
+    @method beforeModel
+    @param {Transition} transition
+    @return {Promise}
   */
-  _generateColumns(attributes, columnsBuf, relationshipPath) {
-    columnsBuf = columnsBuf || [];
-    relationshipPath = relationshipPath || &#x27;&#x27;;
-
-    for (let attrName in attributes) {
-      let currentRelationshipPath = relationshipPath;
-      if (!attributes.hasOwnProperty(attrName)) {
-        continue;
-      }
-
-      let attr = attributes[attrName];
-      switch (attr.kind) {
-        case &#x27;hasMany&#x27;:
-          break;
-
-        case &#x27;belongsTo&#x27;:
-          if (!attr.options.hidden) {
-            let bindingPath = currentRelationshipPath + attrName;
-            let column = this._createColumn(attr, attrName, bindingPath);
-
-            if (column.cellComponent.componentName === &#x27;object-list-view-cell&#x27;) {
-              if (attr.options.displayMemberPath) {
-                column.propName += &#x27;.&#x27; + attr.options.displayMemberPath;
-              } else {
-                column.propName += &#x27;.id&#x27;;
-              }
-            }
-
-            columnsBuf.push(column);
+  beforeModel(transition) {
+    let params = this.paramsFor(this.routeName);
+    return new Ember.RSVP.Promise((resolve, reject) =&gt; {
+      if (params.id &amp;&amp; !params.readonly) {
+        let builder = new Query.Builder(this.store)
+          .from(&#x27;new-platform-flexberry-services-lock&#x27;)
+          .selectByProjection(&#x27;LockL&#x27;)
+          .byId(&#x60;&#x27;${params.id}&#x27;&#x60;);
+        this.store.queryRecord(&#x27;new-platform-flexberry-services-lock&#x27;, builder.build()).then((lock) =&gt; {
+          if (!lock) {
+            this.store.createRecord(&#x27;new-platform-flexberry-services-lock&#x27;, {
+              lockKey: params.id,
+              userName: this.get(&#x27;userName&#x27;),
+              lockDate: new Date(),
+            }).save().then((lock) =&gt; {
+              this.set(&#x27;_currentLock&#x27;, lock);
+              resolve();
+            }).catch((reason) =&gt; {
+              this.openReadOnly().then((answer) =&gt; {
+                this._openReadOnly(answer, resolve, reject);
+              });
+            });
+          } else if (lock.get(&#x27;userName&#x27;) === this.get(&#x27;userName&#x27;)) {
+            this.set(&#x27;_currentLock&#x27;, lock);
+            resolve();
+          } else {
+            this.openReadOnly(lock.get(&#x27;userName&#x27;)).then((answer) =&gt; {
+              this._openReadOnly(answer, resolve, reject);
+            });
           }
-
-          currentRelationshipPath += attrName + &#x27;.&#x27;;
-          this._generateColumns(attr.attributes, columnsBuf, currentRelationshipPath);
-          break;
-
-        case &#x27;attr&#x27;:
-          if (attr.options.hidden) {
-            break;
-          }
-
-          let bindingPath = currentRelationshipPath + attrName;
-          let column = this._createColumn(attr, attrName, bindingPath);
-          columnsBuf.push(column);
-          break;
-
-        default:
-          Ember.Logger.error(&#x60;Unknown kind of projection attribute: ${attr.kind}&#x60;);
+        });
+      } else {
+        resolve();
       }
-    }
-
-    return columnsBuf;
+    });
   },
 
   /**
-    Create the key from locales.
+    A hook you can use to setup the controller for the current route.
+    [More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).
+
+    @method setupController
+    @param {Controller} controller
+    @param {Object} model
   */
-  _createKey(bindingPath) {
-    let projection = this.get(&#x27;modelProjection&#x27;);
-    let modelName = projection.modelName;
-    let key;
+  setupController(controller, model) {
+    this._super(...arguments);
+    if (this.get(&#x27;_readonly&#x27;)) {
+      controller.set(&#x27;readonly&#x27;, true);
+    }
+  },
 
-    let mainModelProjection = this.get(&#x27;mainModelProjection&#x27;);
-    if (mainModelProjection) {
-      let modelClass = this.get(&#x27;store&#x27;).modelFor(modelName);
-      let nameRelationship;
-      let mainModelName;
+  /**
+    This function will be called to solve open form read only or transition to parent route.
+    You can override function for custom behavior.
 
-      modelClass.eachRelationship(function(name, descriptor) {
-        if (descriptor.kind === &#x27;belongsTo&#x27; &amp;&amp; descriptor.options.inverse) {
-          nameRelationship = descriptor.options.inverse;
-          mainModelName = descriptor.type;
-        }
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/routes/user-edit.js
+
+      import EditFormRoute from &#x27;ember-flexberry/routes/edit-form&#x27;;
+
+      export default EditFormRoute.extend({
+        ...
+        openReadOnly(lockUserName) {
+          return new Ember.RSVP.Promise((resolve) =&gt; {
+            let answer = confirm(&#x60;This object lock user with name: &#x27;${lockUserName}&#x27;. Open read only?&#x60;);
+            resolve(answer);
+          });
+        },
+        ...
       });
-      key = &#x27;models.&#x27; + mainModelName + &#x27;.projections.&#x27; + mainModelProjection.projectionName + &#x27;.&#x27; + nameRelationship + &#x27;.&#x27; + bindingPath + &#x27;.caption&#x27;;
-    } else {
-      key = &#x27;models.&#x27; + modelName + &#x27;.projections.&#x27; + projection.projectionName + &#x27;.&#x27; + bindingPath + &#x27;.caption&#x27;;
-    }
+      &#x60;&#x60;&#x60;
 
-    return key;
+    @method openReadOnly
+    @param {String} lockUserName
+    @return {Promise}
+    @for EditFormRoute
+  */
+  openReadOnly(lockUserName) {
+    return new Ember.RSVP.Promise((resolve) =&gt; {
+      resolve(this.get(&#x27;defaultBehaviorLock.openReadOnly&#x27;));
+    });
   },
 
   /**
-    Create the column.
+    This function will be called to solve unlock the object before form close.
+    You can override function for custom behavior.
 
-    @method _createColumn
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/routes/user-edit.js
+
+      import EditFormRoute from &#x27;ember-flexberry/routes/edit-form&#x27;;
+
+      export default EditFormRoute.extend({
+        ...
+        unlockObject() {
+          return new Ember.RSVP.Promise((resolve) =&gt; {
+            let answer = confirm(&#x60;Unlock this object?&#x60;);
+            resolve(answer);
+          });
+        },
+        ...
+      });
+      &#x60;&#x60;&#x60;
+
+    @method unlockObject
+    @return {Promise}
+    @for EditFormRoute
+  */
+  unlockObject() {
+    return new Ember.RSVP.Promise((resolve) =&gt; {
+      resolve(this.get(&#x27;defaultBehaviorLock.unlockObject&#x27;));
+    });
+  },
+
+  /**
+    Depending on answer, open form read only or transition to parent route.
+
+    @method _openReadOnly
+    @param {Boolean} answer
+    @param {function} resolve
+    @param {function} reject
     @private
   */
-  _createColumn(attr, attrName, bindingPath) {
-    // We get the &#x27;getCellComponent&#x27; function directly from the controller,
-    // and do not pass this function as a component attrubute,
-    // to avoid &#x27;Ember.Object.create no longer supports defining methods that call _super&#x27; error,
-    // if controller&#x27;s &#x27;getCellComponent&#x27; method call its super method from the base controller.
-    let currentController = this.get(&#x27;currentController&#x27;);
-    let getCellComponent = Ember.get(currentController || {}, &#x27;getCellComponent&#x27;);
-    let cellComponent = this.get(&#x27;cellComponent&#x27;);
-
-    if (!this.get(&#x27;editOnSeparateRoute&#x27;) &amp;&amp; Ember.typeOf(getCellComponent) === &#x27;function&#x27;) {
-      let recordModel =  (this.get(&#x27;content&#x27;) || {}).type || null;
-      cellComponent = getCellComponent.call(currentController, attr, bindingPath, recordModel);
+  _openReadOnly(answer, resolve, reject) {
+    if (answer) {
+      this.set(&#x27;_readonly&#x27;, true);
+      resolve();
+    } else {
+      this.controllerFor(this.routeName).transitionToParentRoute();
+      reject();
     }
-
-    let key = this._createKey(bindingPath);
-    let valueFromLocales = getValueFromLocales(this.get(&#x27;i18n&#x27;), key);
-
-    let column = {
-      header: valueFromLocales || attr.caption || Ember.String.capitalize(attrName),
-      propName: bindingPath, // TODO: rename column.propName
-      cellComponent: cellComponent,
-    };
-
-    if (valueFromLocales) {
-      column.keyLocale = key;
-    }
-
-    let customColumnAttributesFunc = this.get(&#x27;customColumnAttributes&#x27;);
-    if (customColumnAttributesFunc) {
-      let customColAttr = customColumnAttributesFunc(attr, bindingPath);
-      if (customColAttr &amp;&amp; (typeof customColAttr === &#x27;object&#x27;)) {
-        Ember.$.extend(true, column, customColAttr);
-      }
-    }
-
-    if (this.get(&#x27;enableFilters&#x27;)) {
-      this._addFilterForColumn(column, attr, bindingPath);
-    }
-
-    let sortDef;
-    let sorting = this.get(&#x27;sorting&#x27;);
-    if (sorting &amp;&amp; (sortDef = sorting[bindingPath])) {
-      column.sorted = true;
-      column.sortAscending = sortDef.sortAscending;
-      column.sortNumber = sortDef.sortNumber;
-    }
-
-    return column;
   },
 });
 

@@ -4,6 +4,7 @@ topnav:
 - title: Topnav
   items:
     - title: News
+      title_ru: Новости
       url: /news
 
 #Topnav dropdowns
@@ -11,11 +12,21 @@ topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
     - title: Products
+      title_ru: Продукты
       folderitems:
+        - title: Flexberry PLATFORM
+          title_ru: Платформа Flexberry
+          url: /fp_landing_page.html
+        - title: Flexberry Designer
+          url: /fd_landing_page.html
         - title: ember-flexberry
           url: /ef_landing_page.html
         - title: ember-flexberry-data
           url: /ef_landing_page.html
+        - title: Flexberry ORM
+          url: /fo_landing_page.html
+        - title: Flexberry ODataService
+          url: /fod_landing_page.html
         - title: ember-flexberry-security
           url: /ef_landing_page.html
         - title: ember-flexberry-gis
@@ -47,9 +58,9 @@ topnav_dropdowns:
     - title: API
       folderitems:
         - title: Release
-          url: /master
+          full_url: /master
         - title: Beta
-          url: /develop
+          full_url: /develop
     - title: GitHub Repos
       folderitems:
         - title: ember-flexberry
@@ -67,6 +78,7 @@ topnav_dropdowns:
 
 topnav_langs:
 - title: Language
+  title_ru: Язык
   items:
         - title: English
           url: /en
