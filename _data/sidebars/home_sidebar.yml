@@ -6,9 +6,11 @@ entries:
   folders:
 
   - title: Products
+    title_ru: Продукты
     output: web
     folderitems:
     - title: Flexberry PLATFORM
+      title_ru: Платформа Flexberry
       url: /fp_landing_page.html
       output: web
     - title: Flexberry Designer
@@ -39,23 +41,30 @@ entries:
       url: /lem_landing_page.html
       output: web
   - title: Guides
+    title_ru: Руководство
     output: web
     folderitems:
     - title: Create web app
+      title_ru: Создание веб-приложений
       url: /news.html
       output: web    
     - title: Create mobile app
+      title_ru: Создание мобильных приложений
       url: /news.html
       output: web    
     - title: Create gis app
+      title_ru: Создание ГИС приложений
       url: /news.html
       output: web    
     - title: App security and audit
+      title_ru: Полномочия и аудит
       url: /news.html
       output: web    
     - title: Frontend fundamentals
+      title_ru: Основы frontend-разработки
       url: /news.html
       output: web    
     - title: Backend fundamentals
+      title_ru: Основы backend-разработки
       url: /news.html
       output: web    
