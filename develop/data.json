@@ -935,11 +935,20 @@
             },
             "namespaces": {}
         },
-        "ember-flexberry/addon/components/mobile/flexberry-file.js": {
-            "name": "ember-flexberry/addon/components/mobile/flexberry-file.js",
+        "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js": {
+            "name": "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js",
             "modules": {
                 "ember-flexberry": 1
             },
+            "classes": {
+                "NewPlatformFlexberryServicesLockAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry/addon/components/mobile/flexberry-file.js": {
+            "name": "ember-flexberry/addon/components/mobile/flexberry-file.js",
+            "modules": {},
             "classes": {
                 "Mobile.FlexberryFileComponent": 1
             },
@@ -1891,6 +1900,7 @@
             "elements": {},
             "classes": {
                 "ApplicationInstanceInitializer": 1,
+                "NewPlatformFlexberryServicesLockAdapter": 1,
                 "Mobile.FlexberryFileComponent": 1,
                 "Mobile.FlexberryGroupeditComponent": 1,
                 "Mobile.FlexberryObjectlistview": 1,
@@ -3656,6 +3666,21 @@
             "extension_for": [],
             "module": "ember-flexberry-gis",
             "namespace": ""
+        },
+        "NewPlatformFlexberryServicesLockAdapter": {
+            "name": "NewPlatformFlexberryServicesLockAdapter",
+            "shortname": "NewPlatformFlexberryServicesLockAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js",
+            "line": 7,
+            "description": "Adapter for {{#crossLink \"NewPlatformFlexberryServicesLockModel\"}}{{/crossLink}}.",
+            "extends": "OData"
         },
         "Mobile.FlexberryFileComponent": {
             "name": "Mobile.FlexberryFileComponent",
@@ -13815,6 +13840,17 @@
             },
             "class": "Utils.Layers",
             "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js",
+            "line": 14,
+            "description": "In this model, primary key type `String`.",
+            "itemtype": "property",
+            "name": "idType",
+            "type": "String",
+            "default": "'string'",
+            "class": "NewPlatformFlexberryServicesLockAdapter",
+            "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
