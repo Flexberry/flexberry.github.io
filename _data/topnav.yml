@@ -3,19 +3,30 @@
 topnav:
 - title: Topnav
   items:
-    - title: Новости
+    - title: News
+      title_ru: Новости
       url: /news
 
 #Topnav dropdowns
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: Продукты
+    - title: Products
+      title_ru: Продукты
       folderitems:
+        - title: Flexberry PLATFORM
+          title_ru: Платформа Flexberry
+          url: /fp_landing_page.html
+        - title: Flexberry Designer
+          url: /fd_landing_page.html
         - title: ember-flexberry
           url: /ef_landing_page.html
         - title: ember-flexberry-data
           url: /ef_landing_page.html
+        - title: Flexberry ORM
+          url: /fo_landing_page.html
+        - title: Flexberry ODataService
+          url: /fod_landing_page.html
         - title: ember-flexberry-security
           url: /ef_landing_page.html
         - title: ember-flexberry-gis
@@ -30,7 +41,7 @@ topnav_dropdowns:
           url: /p1_landing_page.html
         - title: Product 2
           url: /p2_landing_page.html
-    - title: Руководство
+    - title: Guides
       folderitems:
         - title: Create web app
           url: /mydoc_introduction.html
@@ -66,7 +77,8 @@ topnav_dropdowns:
           external_url: https://github.com/Flexberry/Leaflet.Editable.Measures
 
 topnav_langs:
-- title: Язык
+- title: Language
+  title_ru: Язык
   items:
         - title: English
           url: /en
