@@ -47,9 +47,9 @@ topnav_dropdowns:
     - title: API
       folderitems:
         - title: Release
-          url: /master
+          full_url: /master
         - title: Beta
-          url: /develop
+          full_url: /develop
     - title: GitHub Repos
       folderitems:
         - title: ember-flexberry
