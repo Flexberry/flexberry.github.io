@@ -105,6 +105,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "NewPlatformFlexberryFlexberryUserSettingSerializer",
         "NewPlatformFlexberryGISMapLayerTileModel",
         "NewPlatformFlexberryGISMapLayerWmsModel",
+        "NewPlatformFlexberryServicesLockAdapter",
         "NewPlatformFlexberryServicesLockEditController",
         "NewPlatformFlexberryServicesLockEditRoute",
         "NewPlatformFlexberryServicesLockListController",

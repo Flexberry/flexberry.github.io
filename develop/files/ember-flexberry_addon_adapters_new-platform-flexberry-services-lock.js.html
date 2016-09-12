@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-gis/addon/layers/wms.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -259,28 +259,33 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-gis/addon/layers/wms.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 /**
-  @module ember-flexberry-gis
+  @module ember-flexberry
 */
 
-import Ember from &#x27;ember&#x27;;
-import TileLayer from &#x27;./tile&#x27;;
-
-let WmsLayer = {};
-Ember.$.extend(true, WmsLayer, TileLayer);
+import { Adapter } from &#x27;ember-flexberry-data&#x27;;
 
 /**
-  Class describing WMS layer metadata.
+  Adapter for {{#crossLink &quot;NewPlatformFlexberryServicesLockModel&quot;}}{{/crossLink}}.
 
-  @class WmsLayer
-  @extends TileLayer
+  @class NewPlatformFlexberryServicesLockAdapter
+  @extends OData
 */
-export default WmsLayer;
+export default Adapter.Odata.extend({
+  /**
+    In this model, primary key type &#x60;String&#x60;.
+
+    @property idType
+    @type String
+    @default &#x27;string&#x27;
+  */
+  idType: &#x27;string&#x27;,
+});
 
     </pre>
 </div>
