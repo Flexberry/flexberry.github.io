@@ -5,6 +5,18 @@ entries:
   levels: one
   folders:
 
+  - title: Home
+    title_ru: Домашняя страница
+    output: web
+    folderitems:
+    - title: Index
+      title_ru: Главная
+      url: /index.html
+      output: web    
+    - title: Contributing
+      title_ru: Разработка платформы
+      url: /contributing.html
+      output: web    
   - title: Products
     title_ru: Продукты
     output: web
