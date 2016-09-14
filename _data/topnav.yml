@@ -22,19 +22,19 @@ topnav_dropdowns:
         - title: ember-flexberry
           url: /ef_landing_page.html
         - title: ember-flexberry-data
-          url: /ef_landing_page.html
+          url: /efd_landing_page.html
         - title: Flexberry ORM
           url: /fo_landing_page.html
         - title: Flexberry ODataService
           url: /fod_landing_page.html
         - title: ember-flexberry-security
-          url: /ef_landing_page.html
+          url: /efs_landing_page.html
         - title: ember-flexberry-gis
-          url: /ef_landing_page.html
+          url: /efg_landing_page.html
         - title: Leaflet-WFST
-          url: /ef_landing_page.html
+          url: /lw_landing_page.html
         - title: Leaflet.Editable.Measures
-          url: /ef_landing_page.html
+          url: /lem_landing_page.html
         - title: Jekyll Documentation Theme
           url: /mydoc_introduction.html
         - title: Product 1
@@ -42,18 +42,25 @@ topnav_dropdowns:
         - title: Product 2
           url: /p2_landing_page.html
     - title: Guides
+      title_ru: Руководства
       folderitems:
         - title: Create web app
+          title_ru: Создание веб-приложений
           url: /mydoc_introduction.html
         - title: Create mobile app
+          title_ru: Создание мобильных приложений
           url: /mydoc_introduction.html
         - title: Create gis app
+          title_ru: Создание ГИС приложений
           url: /mydoc_introduction.html
         - title: App security and audit
+          title_ru: Полномочия и аудит
           url: /mydoc_introduction.html
         - title: Frontend fundamentals
+          title_ru: Основы frontend-разработки
           url: /mydoc_introduction.html
         - title: Backend fundamentals
+          title_ru: Основы backend-разработки
           url: /mydoc_introduction.html
     - title: API
       folderitems:
