@@ -363,9 +363,11 @@ export default EditFormController.extend({
 
       let modelAgregatorRoutes = this.get(&#x27;modelCurrentAgregatorPathes&#x27;);
       let modelCurrentAgregators = this.get(&#x27;modelCurrentAgregators&#x27;);
+      let saveBeforeRouteLeave = this.get(&#x27;saveBeforeRouteLeave&#x27;);
       let flexberryDetailInteractionService = this.get(&#x27;_flexberryDetailInteractionService&#x27;);
       flexberryDetailInteractionService.set(&#x27;modelCurrentAgregatorPathes&#x27;, modelAgregatorRoutes);
       flexberryDetailInteractionService.set(&#x27;modelCurrentAgregators&#x27;, modelCurrentAgregators);
+      flexberryDetailInteractionService.set(&#x27;saveBeforeRouteLeave&#x27;, saveBeforeRouteLeave);
       this._super.apply(this, arguments);
     },
 

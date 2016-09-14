@@ -442,6 +442,26 @@ export default FlexberryBaseComponent.extend({
   dropdown: false,
 
   /**
+    Flag to show that lookup has search or autocomplete in dropdown mode.
+
+    @property dropdownIsSearch
+    @type Boolean
+    @default false
+  */
+  dropdownIsSearch: false,
+
+  /**
+    Specify direction for sorting by &#x60;displayAttributeName&#x60;.
+    For &#x60;autocomplete&#x60; or &#x60;dropdown&#x60; mode only.
+    Possible values: &#x60;asc&#x60; or &#x60;desc&#x60;.
+
+    @property sorting
+    @type String
+    @default &#x27;asc&#x27;
+  */
+  sorting: &#x27;asc&#x27;,
+
+  /**
     Classes by property of autocomplete.
 
     @property autocompleteClass
@@ -769,7 +789,9 @@ export default FlexberryBaseComponent.extend({
          * @param {Function} callback
          */
         responseAsync(settings, callback) {
-          let builder = new Builder(store, relationModelName);
+          let builder = new Builder(store, relationModelName)
+            .select(displayAttributeName)
+            .orderBy(&#x60;${displayAttributeName} ${_this.get(&#x27;sorting&#x27;)}&#x60;);
 
           let autocompletePredicate = settings.urlData.query ?
                                       new StringPredicate(displayAttributeName).contains(settings.urlData.query) :
@@ -865,6 +887,7 @@ export default FlexberryBaseComponent.extend({
     let relationModelName = getRelationType(relatedModel, relationName);
     let minCharacters = this.get(&#x27;minCharacters&#x27;);
     let multiselect = this.get(&#x27;multiselect&#x27;);
+    let dropdownIsSearch = this.get(&#x27;dropdownIsSearch&#x27;);
 
     let displayAttributeName = this.get(&#x27;displayAttributeName&#x27;);
     if (!displayAttributeName) {
@@ -874,7 +897,7 @@ export default FlexberryBaseComponent.extend({
 
     let i18n = _this.get(&#x27;i18n&#x27;);
     this.$(&#x27;.flexberry-dropdown&#x27;).dropdown({
-      minCharacters: minCharacters,
+      minCharacters: dropdownIsSearch ? minCharacters : 0,
       allowAdditions: multiselect,
       cache: false,
       message: {
@@ -883,7 +906,10 @@ export default FlexberryBaseComponent.extend({
       apiSettings: {
         responseAsync(settings, callback) {
           console.log(&#x27;load&#x27;);
-          let builder = new Builder(store, relationModelName);
+          let builder = new Builder(store, relationModelName)
+            .select(displayAttributeName)
+            .orderBy(&#x60;${displayAttributeName} ${_this.get(&#x27;sorting&#x27;)}&#x60;);
+
           let autocompletePredicate = settings.urlData.query ?
                                       new StringPredicate(displayAttributeName).contains(settings.urlData.query) :
                                       undefined;
@@ -895,17 +921,21 @@ export default FlexberryBaseComponent.extend({
           store.query(relationModelName, builder.build()).then((records) =&gt; {
             // We have to cache data because dropdown component sets text as value and we lose object value.
             let resultArray = [];
-            callback({
-              success: true,
-              results: records.map(i =&gt; {
-                let attributeName = i.get(displayAttributeName);
-                resultArray[i.id] = i;
-                return {
-                  name: attributeName,
-                  value: i.id
-                };
-              })
+            let results = records.map((i) =&gt; {
+              let attributeName = i.get(displayAttributeName);
+              resultArray[i.id] = i;
+              return {
+                name: attributeName,
+                value: i.id
+              };
             });
+
+            if (!_this.get(&#x27;required&#x27;)) {
+              results.unshift({ name: _this.get(&#x27;placeholder&#x27;), value: null });
+              resultArray[&#x27;null&#x27;] = null;
+            }
+
+            callback({ success: true, results: results });
             _this.set(&#x27;_cachedDropdownValues&#x27;, resultArray);
           }, () =&gt; {
             callback({ success: false });
@@ -916,7 +946,7 @@ export default FlexberryBaseComponent.extend({
         let newValue = value;
         if (value) {
           let cachedValues = _this.get(&#x27;_cachedDropdownValues&#x27;);
-          if (!cachedValues || !cachedValues[value]) {
+          if (!cachedValues || cachedValues[value] !== null &amp;&amp; !cachedValues[value]) {
             Ember.Logger.error(&#x27;Can\&#x27;t find selected dropdown value among cached values.&#x27;);
           } else {
             newValue = cachedValues[value];
