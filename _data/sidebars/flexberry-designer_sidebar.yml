@@ -3,28 +3,15 @@
 
 entries:
 - title: Sidebar
-  product: ember-flexberry
-  version: 0.6.0
+  product: Flexberry Designer
   folders:
-
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage
-      output: pdf
-      type: frontmatter
 
   - title: Getting Started
     output: web, pdf
     folderitems:
-    - title: Home
-      url: /ef_landing_page.html
+    - title: About
+      title_ru: О приложении
+      url: /fd_landing_page.html
       output: web
 
     - title: Sample 1

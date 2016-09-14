@@ -11,31 +11,31 @@
             {% for folderitem in folder.folderitems %}
             {% if folderitem.output contains "web" %}
             {% if folderitem.external_url %}
-            <li><a href="{{folderitem.external_url}}" target="_blank">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
-            {% elsif page.url == folderitem.url %}
-            <li class="active"><a href="{{folderitem.url | remove: "/"}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
+              <li><a href="{{folderitem.external_url}}" target="_blank">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
+            {% elsif page.url contains folderitem.url %}
+              <li class="active"><a href="{{folderitem.url | remove: "/"}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
             {% else %}
-            <li><a href="{{folderitem.url | remove: "/"}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
+              <li><a href="{{folderitem.url | remove: "/"}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
             {% endif %}
             {% for subfolders in folderitem.subfolders %}
-            {% if subfolders.output contains "web" %}
-            <li class="subfolders">
-                <a href="#">{{ subfolders.title }}</a>
-                <ul>
-                    {% for subfolderitem in subfolders.subfolderitems %}
-                    {% if subfolderitem.output contains "web" %}
-                    {% if subfolderitem.external_url %}
-                    <li><a href="{{subfolderitem.external_url}}" target="_blank">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
-                    {% elsif page.url == subfolderitem.url %}
-                    <li class="active"><a href="{{subfolderitem.url | remove: "/"}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
-                    {% else %}
-                    <li><a href="{{subfolderitem.url | remove: "/"}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-            </li>
-            {% endif %}
+              {% if subfolders.output contains "web" %}
+              <li class="subfolders">
+                  <a href="#">{{ subfolders.title }}</a>
+                  <ul>
+                      {% for subfolderitem in subfolders.subfolderitems %}
+                        {% if subfolderitem.output contains "web" %}
+                          {% if subfolderitem.external_url %}
+                            <li><a href="{{subfolderitem.external_url}}" target="_blank">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
+                            {% elsif page.url contains subfolderitem.url %}
+                            <li class="active"><a href="{{subfolderitem.url | remove: "/"}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
+                            {% else %}
+                            <li><a href="{{subfolderitem.url | remove: "/"}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+                  </ul>
+              </li>
+              {% endif %}
             {% endfor %}
             {% endif %}
             {% endfor %}

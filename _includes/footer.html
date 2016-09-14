@@ -1,15 +1,18 @@
 <footer>
-            <div class="row">
-                <div class="col-lg-10 footer">
-&copy;{{ site.time | date: "%Y"  }} {{site.company_name}}. All rights reserved. <br />
-{% if page.last_updated %}
-<span>Page last updated:</span> 
-{{page.last_updated}}<br/>
-{% endif %} 
-Site last generated: {{ site.time | date: "%b %-d, %Y"  }} <br />
-                </div>
-                <div class="col-lg-2 footer">
-<img src="{{ "/images/company_logo.png"  | prepend: site.baseurl}}" alt="Flexberry PLATFORM"/>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-lg-1 footer">
+      {% if site.github_username %} {% include icon-github.html username=site.github_username %} {% endif %}
+    </div>
+    <div class="col-lg-1 footer">
+      {% if site.twitter_username %} {% include icon-twitter.html username=site.twitter_username %} {% endif %}
+    </div>
+    <div class="col-lg-8 footer">
+      &copy;{{ site.time | date: "%Y" }} {{site.company_name}}. All rights reserved. <br /> {% if page.last_updated %}
+      <span>Page last updated:</span> {{page.last_updated}}
+      <br/> {% endif %} Site last generated: {{ site.time | date: "%b %-d, %Y" }} <br />
+    </div>
+    <div class="col-lg-2 footer">
+      <img src="{{ " /images/company_logo.png "  | prepend: site.baseurl}}" alt="Flexberry PLATFORM" />
+    </div>
+  </div>
 </footer>

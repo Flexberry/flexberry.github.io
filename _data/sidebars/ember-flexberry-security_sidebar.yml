@@ -3,28 +3,16 @@
 
 entries:
 - title: Sidebar
-  product: ember-flexberry
-  version: 0.6.0
+  product: ember-flexberry-security
+  version: 0.1.0
   folders:
-
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage
-      output: pdf
-      type: frontmatter
 
   - title: Getting Started
     output: web, pdf
     folderitems:
-    - title: Home
-      url: /ef_landing_page.html
+    - title: About
+      title_ru: О модуле
+      url: /efs_landing_page.html
       output: web
 
     - title: Sample 1
