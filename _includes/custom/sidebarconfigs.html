@@ -10,8 +10,32 @@
 {% elsif page.sidebar == "ember-flexberry_sidebar" %}
 {% assign sidebar = site.data.sidebars.ember-flexberry_sidebar.entries %}
 
+{% elsif page.sidebar == "ember-flexberry-data_sidebar" %}
+{% assign sidebar = site.data.sidebars.ember-flexberry-data_sidebar.entries %}
+
+{% elsif page.sidebar == "ember-flexberry-gis_sidebar" %}
+{% assign sidebar = site.data.sidebars.ember-flexberry-gis_sidebar.entries %}
+
+{% elsif page.sidebar == "ember-flexberry-security_sidebar" %}
+{% assign sidebar = site.data.sidebars.ember-flexberry-security_sidebar.entries %}
+
+{% elsif page.sidebar == "flexberry-designer_sidebar" %}
+{% assign sidebar = site.data.sidebars.flexberry-designer_sidebar.entries %}
+
+{% elsif page.sidebar == "flexberry-odataservice_sidebar" %}
+{% assign sidebar = site.data.sidebars.flexberry-odataservice_sidebar.entries %}
+
+{% elsif page.sidebar == "flexberry-orm_sidebar" %}
+{% assign sidebar = site.data.sidebars.flexberry-orm_sidebar.entries %}
+
 {% elsif page.sidebar == "flexberry-platform_sidebar" %}
 {% assign sidebar = site.data.sidebars.flexberry-platform_sidebar.entries %}
+
+{% elsif page.sidebar == "leaflet-wfst_sidebar" %}
+{% assign sidebar = site.data.sidebars.leaflet-wfst_sidebar.entries %}
+
+{% elsif page.sidebar == "leaflet-editable-measures_sidebar" %}
+{% assign sidebar = site.data.sidebars.leaflet-editable-measures_sidebar.entries %}
 
 {% elsif page.sidebar == "mydoc_sidebar" %}
 {% assign sidebar = site.data.sidebars.mydoc_sidebar.entries %}
@@ -41,3 +65,16 @@ sidebar configuration for print files
 {% if site.product == "ember-flexberry" %}
 {% assign sidebar_pdf = site.data.sidebars.ember-flexberry_sidebar.entries %}
 {% endif %}
+
+{% if site.product == "ember-flexberry-data" %}
+{% assign sidebar_pdf = site.data.sidebars.ember-flexberry-data_sidebar.entries %}
+{% endif %}
+
+{% if site.product == "ember-flexberry-gis" %}
+{% assign sidebar_pdf = site.data.sidebars.ember-flexberry-gis_sidebar.entries %}
+{% endif %}
+
+{% if site.product == "ember-flexberry-security" %}
+{% assign sidebar_pdf = site.data.sidebars.ember-flexberry-security_sidebar.entries %}
+{% endif %}
+
