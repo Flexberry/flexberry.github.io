@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-data/addon/query/js-adapter.js - Flexberry Documentation</title>
+    <title>ember-flexberry-data/addon/query/query-object.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -214,377 +214,46 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-data/addon/query/js-adapter.js <small>File</small></h1>
+    <h1>ember-flexberry-data/addon/query/query-object.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-import BaseAdapter from &#x27;./base-adapter&#x27;;
-import { SimplePredicate, ComplexPredicate, StringPredicate, DetailPredicate } from &#x27;./predicate&#x27;;
-import FilterOperator from &#x27;./filter-operator&#x27;;
-import Condition from &#x27;./condition&#x27;;
-import Information from &#x27;../utils/information&#x27;;
-
 /**
- * Class of query language adapter that translates query object into JS function which
- * filters native JS array of objects by specified logic.
- *
- * &#x60;&#x60;&#x60;js
- * const data = [
- *   { Name: &#x27;A&#x27;, Surname: &#x27;X&#x27;, Age: 10 },
- *   { Name: &#x27;B&#x27;, Surname: &#x27;Y&#x27;, Age: 11 },
- *   { Name: &#x27;B&#x27;, Surname: &#x27;Z&#x27;, Age: 12 }
- * ];
- *
- * let adapter = new JSAdapter();
- * let builder = new QueryBuilder(store, &#x27;AnyUnknownModel&#x27;).where(&#x27;Name&#x27;, FilterOperator.Eq, &#x27;B&#x27;);
- * let filter = adapter.buildFunc(builder.build());
- *
- * let result = filter(data); // Y and Z
- * &#x60;&#x60;&#x60;
- *
- * All filters uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
+ * Object that passes as query parameter to [DS.Store](http://emberjs.com/api/data/classes/DS.Store.html) methods for reading data.
  *
  * @module ember-flexberry-data
  * @namespace Query
- * @class JsAdapter
- * @extends Query.BaseAdapter
+ * @class QueryObject
  */
-export default class JSAdapter extends BaseAdapter {
+export default class QueryObject {
+
   /**
-   * Builds JS function for filtering JS array of objects by specified logic from query.
-   *
-   * @method buildFunc
-   * @param query Query language instance.
-   * @returns {Function} Function for filtering JS array of objects.
+   * @param modelName {String} The model name of the requested entities.
+   * @param id {String|Number} The id of the requested entity.
+   * @param projectionName {String} The name of used projection for reading the requested entities.
+   * @param predicate {BasePredicate} The predicate that contains filtering conditions for requested entities.
+   * @param order {OrderByClause} Ordering conditions for requested entities.
+   * @param top {Number} The number of items in the queried collection to be included in the result.
+   * @param skip {Number} The number of items in the queried collection that are to be skipped and not included in the result.
+   * @param count {Boolean} Flag indicates to request a count of the matching entities included with the entities in the response.
+   * @param expand {Object} Specifies the related entities to be included in line with retrieved entities.
+   * @param select {Object} A specific set of properties for each requested entity.
+   * @class QueryObject
+   * @constructor
    */
-  buildFunc(query) {
-    let filter = query.predicate ? buildFilter(query.predicate) : (data) =&gt; data;
-    let order = buildOrder(query);
-    let projection = buildProjection(query);
-    let topSkip = buildTopSkip(query);
-    return function (data) {
-      return projection(topSkip(order(filter(data))));
-    };
+  constructor(modelName, id, projectionName, predicate, order, top, skip, count, expand, select) {
+    this.id = id;
+    this.modelName = modelName;
+    this.projectionName = projectionName;
+    this.predicate = predicate;
+    this.order = order;
+    this.top = top;
+    this.skip = skip;
+    this.count = count;
+    this.expand = expand;
+    this.select = select;
   }
-}
-
-/**
- * Builds function for windowing array of objects using data from the query.
- *
- * @param query Query instance.
- * @returns {Function}
- */
-export function buildTopSkip(query) {
-  if (!query.top &amp;&amp; !query.skip) {
-    return data =&gt; data;
-  }
-
-  return data =&gt; {
-    let r = [];
-    for (let i = 0; i &lt; data.length; i++) {
-      if (i &lt; query.skip) {
-        continue;
-      }
-
-      r.push(data[i]);
-
-      if (r.length &gt;= query.top) {
-        break;
-      }
-    }
-
-    return r;
-  };
-}
-
-/**
- * Builds function for ordering array of objects using data from the query.
- *
- * @param query Query instance.
- * @returns {Function}
- */
-export function buildOrder(query) {
-  if (!query.order) {
-    return data =&gt; data;
-  }
-
-  let desc = (a, b, p) =&gt; {
-    let av = getValue(a, p);
-    let bv = getValue(b, p);
-    if (av &gt; bv) {
-      return -1;
-    } else if (av &lt; bv) {
-      return 1;
-    } else {
-      return 0;
-    }
-  };
-
-  let asc = (a, b, p) =&gt; {
-    let av = getValue(a, p);
-    let bv = getValue(b, p);
-    if (av &lt; bv) {
-      return -1;
-    } else if (av &gt; bv) {
-      return 1;
-    } else {
-      return 0;
-    }
-  };
-
-  return function (data) {
-    return data.sort((a, b) =&gt; {
-      for (let i = 0; i &lt; query.order.length; i++) {
-        let p = query.order.attribute(i);
-        let r = p.direction === &#x27;desc&#x27; ? desc(a, b, p.name) : asc(a, b, p.name); // TODO: desc / asc constants
-        if (r === 0) {
-          continue;
-        }
-
-        return r;
-      }
-
-      return 0;
-    });
-  };
-}
-
-/**
- * Builds function for selecting subset of properties from array of objects using data from the query.
- *
- * @param query Query instance.
- * @returns {Function}
- */
-export function buildProjection(query) {
-  if (!query.select || query.select.length === 0) {
-    return data =&gt; data;
-  }
-
-  return function (data) {
-    return data.map(item =&gt; {
-      let r = {};
-      for (let i = 0; i &lt; query.select.length; i++) {
-        r[query.select[i]] = item[query.select[i]];
-      }
-
-      return r;
-    });
-  };
-}
-
-/**
- * Builds function for filtering array of objects using predicate.
- *
- * @param predicate Predicate for filtering array of objects.
- * @returns {Function}
- */
-function buildFilter(predicate) {
-  let b1 = predicate instanceof SimplePredicate;
-  let b2 = predicate instanceof StringPredicate;
-  let b3 = predicate instanceof DetailPredicate;
-
-  if (b1 || b2 || b3) {
-    let filterFunction = getAttributeFilterFunction(predicate);
-    return getFilterFunctionAnd([filterFunction]);
-  }
-
-  if (predicate instanceof ComplexPredicate) {
-    let filterFunctions = predicate.predicates.map(getAttributeFilterFunction);
-    switch (predicate.condition) {
-      case Condition.And:
-        return getFilterFunctionAnd(filterFunctions);
-
-      case Condition.Or:
-        return getFilterFunctionOr(filterFunctions);
-
-      default:
-        throw new Error(&#x60;Unsupported condition &#x27;${predicate.condition}&#x27;.&#x60;);
-    }
-  }
-
-  throw new Error(&#x60;Unsupported predicate &#x27;${predicate}&#x27;&#x60;);
-}
-
-/**
- * Returns function for checkign single object using predicate.
- *
- * @param {Query.BasePredicate} predicate Predicate for an attribute.
- * @returns {Function} Function for checkign single object.
- */
-export function getAttributeFilterFunction(predicate) {
-  if (predicate instanceof SimplePredicate) {
-    switch (predicate.operator) {
-      case FilterOperator.Eq:
-        return (i) =&gt; getValue(i, predicate.attributePath) === predicate.value;
-
-      case FilterOperator.Neq:
-        return (i) =&gt; getValue(i, predicate.attributePath) !== predicate.value;
-
-      case FilterOperator.Le:
-        return (i) =&gt; getValue(i, predicate.attributePath) &lt; predicate.value;
-
-      case FilterOperator.Leq:
-        return (i) =&gt; getValue(i, predicate.attributePath) &lt;= predicate.value;
-
-      case FilterOperator.Ge:
-        return (i) =&gt; getValue(i, predicate.attributePath) &gt; predicate.value;
-
-      case FilterOperator.Geq:
-        return (i) =&gt; getValue(i, predicate.attributePath) &gt;= predicate.value;
-
-      default:
-        throw new Error(&#x60;Unsupported filter operator &#x27;${predicate.operator}&#x27;.&#x60;);
-    }
-  }
-
-  if (predicate instanceof StringPredicate) {
-    return (i) =&gt; getValue(i, predicate.attributePath).indexOf(predicate.containsValue) &gt; -1;
-  }
-
-  if (predicate instanceof DetailPredicate) {
-    let detailFilter = buildFilter(predicate.predicate);
-    if (predicate.isAll) {
-      return function (i) {
-        let detail = getValue(i, predicate.detailPath);
-        if (!detail) {
-          return false;
-        }
-
-        let result = detailFilter(detail);
-        return result.length === detail.length;
-      };
-    } else if (predicate.isAny) {
-      return function (i) {
-        let detail = getValue(i, predicate.detailPath);
-        if (!detail) {
-          return false;
-        }
-
-        let result = detailFilter(detail);
-        return result.length &gt; 0;
-      };
-    } else {
-      throw new Error(&#x60;Unsupported detail operation.&#x60;);
-    }
-  }
-
-  if (predicate instanceof ComplexPredicate) {
-    let filterFunctions = predicate.predicates.map(getAttributeFilterFunction);
-    switch (predicate.condition) {
-      case Condition.And:
-        return function (i) {
-          let check = true;
-          for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
-            check &amp;= filterFunctions[funcIndex](i);
-            if (!check) {
-              break;
-            }
-          }
-
-          return check;
-        };
-
-      case Condition.Or:
-        return function (i) {
-          let check = false;
-          for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
-            check |= filterFunctions[funcIndex](i);
-            if (check) {
-              break;
-            }
-          }
-
-          return check;
-        };
-
-      default:
-        throw new Error(&#x60;Unsupported condition &#x27;${predicate.condition}&#x27;.&#x60;);
-    }
-  }
-
-  throw new Error(&#x60;Unsupported predicate &#x27;${predicate}&#x27;.&#x60;);
-}
-
-/**
- Loads value from object by specified attribute path.
-
- @param {Object} item Object for load value.
- @param {String} attributePath The path to the attribute.
- @returns {*|undefined} Value of attribute or &#x60;undefined&#x60;.
- */
-function getValue(item, attributePath) {
-  let attributes = Information.parseAttributePath(attributePath);
-  let search = item;
-  for (let i = 0; i &lt; attributes.length; i++) {
-    search = search[attributes[i]];
-    if (!search) {
-      // Don&#x27;t return constant null / undefined - we need to distinguish them.
-      return search;
-    }
-  }
-
-  return search;
-}
-
-/**
- * Returns complex filter function for &#x60;and&#x60; condition.
- * Result function filters array of objects and returns those, for which
- * all attribute filter functions returned &#x60;true&#x60;.
- * Result function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
- *
- * @param {Function[]} filterFunctions Array of attribute filter functions.
- * @returns {Function} Complex filter function for &#x60;or&#x60; condition.
- */
-function getFilterFunctionAnd(filterFunctions) {
-  return function (data) {
-    let result = [];
-    for (let itemIndex = 0; itemIndex &lt; data.length; itemIndex++) {
-      let check = true;
-      for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
-        check &amp;= filterFunctions[funcIndex](data[itemIndex]);
-        if (!check) {
-          break;
-        }
-      }
-
-      if (check) {
-        result.push(data[itemIndex]);
-      }
-    }
-
-    return result;
-  };
-}
-
-/**
- * Returns complex filter function for &#x60;or&#x60; condition.
- * Result function filters array of objects and returns those, for which
- * at least one attribute filter function returned &#x60;true&#x60;.
- * Result function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
- *
- * @param {Function[]} filterFunctions Array of attribute filter functions.
- * @returns {Function} Complex filter function for &#x60;or&#x60; condition.
- */
-function getFilterFunctionOr(filterFunctions) {
-  return function (data) {
-    let result = [];
-    for (let itemIndex = 0; itemIndex &lt; data.length; itemIndex++) {
-      let check = false;
-      for (let funcIndex = 0; funcIndex &lt; filterFunctions.length; funcIndex++) {
-        check |= filterFunctions[funcIndex](data[itemIndex]);
-        if (check) {
-          break;
-        }
-      }
-
-      if (check) {
-        result.push(data[itemIndex]);
-      }
-    }
-
-    return result;
-  };
 }
 
     </pre>

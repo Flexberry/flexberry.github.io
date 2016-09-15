@@ -259,6 +259,17 @@
                 "Query": 1
             }
         },
+        "ember-flexberry-data/addon/query/query-object.js": {
+            "name": "ember-flexberry-data/addon/query/query-object.js",
+            "modules": {},
+            "classes": {
+                "Query.QueryObject": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Query": 1
+            }
+        },
         "ember-flexberry-data/addon/serializers/base.js": {
             "name": "ember-flexberry-data/addon/serializers/base.js",
             "modules": {},
@@ -1343,6 +1354,7 @@
                 "Query.ComplexPredicate": 1,
                 "Query.StringPredicate": 1,
                 "Query.DetailPredicate": 1,
+                "Query.QueryObject": 1,
                 "Serializer.Base": 1,
                 "Serializer.OData": 1,
                 "Serializer.Offline": 1,
@@ -1383,20 +1395,29 @@
             },
             "tag": "main",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 151,
+            "line": 153,
             "description": "Ember Addon that adds support of projections in models.",
             "extends": "DS.RESTAdapter",
             "access": "public",
             "tagname": "",
+            "uses": [
+                "EmberValidationsMixin",
+                "Ember.EventedMixin"
+            ],
+            "itemtype": "main",
             "params": [
                 {
-                    "name": "store",
-                    "description": "Store for loading metadata.",
-                    "type": "DS.Store"
+                    "name": "event",
+                    "description": "Event object",
+                    "type": "Object"
+                },
+                {
+                    "name": "promises",
+                    "description": "Array to which custom 'preSave' promises could be pushed",
+                    "type": "Promise[]"
                 }
             ],
-            "is_constructor": 1,
-            "itemtype": "main"
+            "is_constructor": 1
         },
         "ember-flexberry": {
             "name": "ember-flexberry",
@@ -1525,9 +1546,9 @@
             "module": "ember-flexberry-data",
             "namespace": "Adapter",
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 8,
+            "line": 18,
             "description": "Default adapter for {{#crossLink \"Offline.LocalStore\"}}{{/crossLink}}.",
-            "extends": "<a href=\"https://github.com/Flexberry/ember-localforage-adapter/blob/master/addon/adapters/localforage.js\">LocalforageAdapter</a>"
+            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Adapter.html\">DS.Adapter</a>"
         },
         "ApplicationInitializer": {
             "name": "ApplicationInitializer",
@@ -1598,8 +1619,8 @@
             "module": "ember-flexberry-data",
             "namespace": "Projection",
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 5,
-            "description": "Model that supports projections."
+            "line": 6,
+            "description": "Base model that supports projections and validations."
         },
         "Offline.Model": {
             "name": "Offline.Model",
@@ -1660,7 +1681,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 17,
+            "line": 19,
             "params": [
                 {
                     "name": "store",
@@ -1714,7 +1735,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 10,
+            "line": 11,
             "description": "Class of query language adapter that allows to load data from IndexedDB."
         },
         "Query.JsAdapter": {
@@ -1897,6 +1918,72 @@
             ],
             "is_constructor": 1
         },
+        "Query.QueryObject": {
+            "name": "Query.QueryObject",
+            "shortname": "QueryObject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/query-object.js",
+            "line": 10,
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The model name of the requested entities.",
+                    "type": "String"
+                },
+                {
+                    "name": "id",
+                    "description": "The id of the requested entity.",
+                    "type": "String|Number"
+                },
+                {
+                    "name": "projectionName",
+                    "description": "The name of used projection for reading the requested entities.",
+                    "type": "String"
+                },
+                {
+                    "name": "predicate",
+                    "description": "The predicate that contains filtering conditions for requested entities.",
+                    "type": "BasePredicate"
+                },
+                {
+                    "name": "order",
+                    "description": "Ordering conditions for requested entities.",
+                    "type": "OrderByClause"
+                },
+                {
+                    "name": "top",
+                    "description": "The number of items in the queried collection to be included in the result.",
+                    "type": "Number"
+                },
+                {
+                    "name": "skip",
+                    "description": "The number of items in the queried collection that are to be skipped and not included in the result.",
+                    "type": "Number"
+                },
+                {
+                    "name": "count",
+                    "description": "Flag indicates to request a count of the matching entities included with the entities in the response.",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "expand",
+                    "description": "Specifies the related entities to be included in line with retrieved entities.",
+                    "type": "Object"
+                },
+                {
+                    "name": "select",
+                    "description": "A specific set of properties for each requested entity.",
+                    "type": "Object"
+                }
+            ],
+            "is_constructor": 1
+        },
         "Serializer.Base": {
             "name": "Serializer.Base",
             "shortname": "Serializer.Base",
@@ -1938,7 +2025,7 @@
             "file": "ember-flexberry-data/addon/serializers/offline.js",
             "line": 9,
             "description": "Base serializer for {{#crossLink \"Offline.LocalStore\"}}{{/crossLink}}.",
-            "extends": "<a href=\"https://github.com/Flexberry/ember-localforage-adapter/blob/master/addon/serializers/localforage.js\">LocalforageSerializer</a>"
+            "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.JSONSerializer.html\">JSONSerializer</a>"
         },
         "Offline.GlobalsService": {
             "name": "Offline.GlobalsService",
@@ -1998,7 +2085,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Offline",
             "file": "ember-flexberry-data/addon/stores/local-store.js",
-            "line": 9,
+            "line": 10,
             "description": "Store that used in offline mode by default.",
             "extends": "<a href=\"http://emberjs.com/api/data/classes/DS.Store.html\">DS.Store</a>",
             "access": "private",
@@ -2084,7 +2171,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 67,
+            "line": 68,
             "description": "This namespace contains classes and methods for working with projections.",
             "static": 1,
             "access": "public",
@@ -2115,7 +2202,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 52,
+            "line": 53,
             "description": "This namespace contains classes to support work in offline mode.",
             "static": 1,
             "access": "public",
@@ -2132,7 +2219,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 83,
+            "line": 84,
             "description": "This namespace contains base adapter classes for different kind of backends.",
             "static": 1,
             "access": "public",
@@ -2149,7 +2236,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 94,
+            "line": 95,
             "description": "This namespace contains base serializer classes for different kind of backends.",
             "static": 1,
             "access": "public",
@@ -2166,7 +2253,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 106,
+            "line": 107,
             "description": "This namespace contains implementation of Flexberry Query including adapters\nfor converting query object to requests for different kind of backends.",
             "static": 1,
             "access": "public",
@@ -2183,7 +2270,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 131,
+            "line": 133,
             "description": "This namespace contains helper claseses.",
             "static": 1,
             "access": "public",
@@ -2200,7 +2287,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 141,
+            "line": 143,
             "description": "This namespace contains security claseses.",
             "static": 1,
             "access": "public",
@@ -2217,7 +2304,7 @@
             "module": "ember-flexberry-data",
             "namespace": "",
             "file": "ember-flexberry-data/addon/index.js",
-            "line": 151,
+            "line": 153,
             "description": "This namespace contains audit claseses.",
             "static": 1,
             "access": "public",
@@ -3818,10 +3905,227 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 29,
+            "line": 33,
+            "description": "Database name for IndexedDB.",
+            "itemtype": "property",
+            "name": "databaseName",
+            "type": "String",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 62,
             "description": "Clear adapter's cache and IndexedDB's store.",
             "itemtype": "method",
             "name": "clear",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 73,
+            "description": "This is the main entry point into finding records.",
+            "itemtype": "method",
+            "name": "findRecord",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "DS.Store"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "Object|String|Integer|null"
+                }
+            ],
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 114,
+            "description": "Supports query language objects or queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }\n\n(in this case every property added to the query is an \"AND\" query, not \"OR\")",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 169,
+            "description": "Gets [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given model type.\nCreates [Dexie's schema](https://github.com/dfahlander/Dexie.js/wiki/Version.stores()) that contains only 'id' property for specified model type.",
+            "itemtype": "method",
+            "name": "_getTableForOperationsByModelType",
+            "params": [
+                {
+                    "name": "type",
+                    "description": "Model type.",
+                    "type": "subclass of DS.Model"
+                }
+            ],
+            "return": {
+                "description": "Instance of [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given model type.",
+                "type": "WritableTable"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 186,
+            "description": "Gets [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given snapshot.\nCreates [Dexie's schema](https://github.com/dfahlander/Dexie.js/wiki/Version.stores()) that contains model properties taken from snapshot.",
+            "itemtype": "method",
+            "name": "_getTableForOperationsByModelSnapshot",
+            "params": [
+                {
+                    "name": "snapshot",
+                    "description": "Snapshot of model.",
+                    "type": "DS.Snapshot"
+                }
+            ],
+            "return": {
+                "description": "Instance of [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given snapshot.",
+                "type": "WritableTable"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 227,
+            "description": "Makes {{#crossLink \"Query.QueryObject\"}}{{/crossLink}} out of queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }.",
+            "itemtype": "method",
+            "name": "_makeQueryObject",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "Store used for making query"
+                },
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "query",
+                    "description": "Query parameters.",
+                    "type": "Object"
+                },
+                {
+                    "name": "projection",
+                    "description": "Projection for query.",
+                    "type": "Object|String",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Query object for IndexedDB adapter.",
+                "type": "QueryObject"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 278,
+            "description": "Retrieves projection from query and returns it.\nRetrieved projection removes from the query.",
+            "itemtype": "method",
+            "name": "_extractProjectionFromQuery",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model type.",
+                    "type": "String"
+                },
+                {
+                    "name": "typeClass",
+                    "description": "Model type.",
+                    "type": "subclass of DS.Model"
+                },
+                {
+                    "name": "query",
+                    "description": "Query parameters.",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "projection",
+                            "description": "Projection name.",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Extracted projection from query or null\n                 if projection is not set in query.",
+                "type": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 313,
+            "description": "Completes loading record for given projection.",
+            "itemtype": "method",
+            "name": "_completeLoadingRecord",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "Store to use for complete loading record.",
+                    "type": "subclass of DS.Store"
+                },
+                {
+                    "name": "type",
+                    "description": "Model type.",
+                    "type": "subclass of DS.Model"
+                },
+                {
+                    "name": "record",
+                    "description": "Main record loaded by adapter.",
+                    "type": "Object"
+                },
+                {
+                    "name": "projection",
+                    "description": "Projection for complete loading of record.",
+                    "type": "Object",
+                    "optional": true
+                },
+                {
+                    "name": "originType",
+                    "description": "Type of model that referencing to main record's model type.",
+                    "type": "subclass of DS.Model",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Completely loaded record with all properties\n                 include relationships corresponds to given projection",
+                "type": "Object"
+            },
+            "access": "private",
+            "tagname": "",
             "class": "Adapter.Offline",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
@@ -4177,7 +4481,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 15,
+            "line": 23,
             "description": "Stored canonical `belongsTo` relationships.",
             "itemtype": "property",
             "name": "_canonicalBelongsTo",
@@ -4190,7 +4494,128 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 24,
+            "line": 32,
+            "description": "Model validation rules.",
+            "itemtype": "property",
+            "name": "validations",
+            "type": "Object",
+            "default": "{}",
+            "class": "Projection.Model",
+            "module": "ember-flexberry-data",
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 41,
+            "description": "Checks that model satisfies validation rules defined in 'validations' property.",
+            "itemtype": "method",
+            "name": "validate",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "validateDeleted",
+                            "description": "Flag: indicates whether to validate model, if it is deleted, or not",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": " true"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise that will be resolved if model satisfies validation rules defined in 'validations' property",
+                "type": "Promise"
+            },
+            "class": "Projection.Model",
+            "module": "ember-flexberry-data",
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 62,
+            "description": "Triggers model's 'preSave' event & allows to execute some additional async logic before model will be saved.",
+            "itemtype": "method",
+            "name": "beforeSave",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "softSave",
+                            "description": "Flag: indicates whether following 'save' will be soft\n(without sending a request to server) or not",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": " false"
+                        },
+                        {
+                            "name": "promises",
+                            "description": "Array to which 'preSave' event handlers could add some asynchronous operations promises",
+                            "type": "Promise[]",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise that will be resolved after all 'preSave' event handlers promises will be resolved",
+                "type": "Promise"
+            },
+            "class": "Projection.Model",
+            "module": "ember-flexberry-data",
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 95,
+            "description": "Validates model, triggers 'preSave' event, and finally saves model.",
+            "itemtype": "method",
+            "name": "save",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options",
+                    "type": "Object",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "softSave",
+                            "description": "Flag: indicates whether following 'save' will be soft\n(without sending a request to server) or not",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": " false"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "A promise that will be resolved after model will be successfully saved",
+                "type": "Promise"
+            },
+            "class": "Projection.Model",
+            "module": "ember-flexberry-data",
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 133,
+            "description": "Turns model into 'updated.uncommitted' state.\n\nTransition into the `updated.uncommitted` state\nif the model in the `saved` state (no local changes).\nAlternative: this.get('currentState').becomeDirty();",
+            "itemtype": "method",
+            "name": "makeDirty",
+            "class": "Projection.Model",
+            "module": "ember-flexberry-data",
+            "namespace": "Projection"
+        },
+        {
+            "file": "ember-flexberry-data/addon/models/model.js",
+            "line": 146,
             "description": "Return object with changes.\n\nObject will have structure:\n* key - is name relationships that has changed\n  * array - include two array, array with index `0` this old values, array with index `1` this new values.",
             "example": [
                 "\n  ```javascript\n  {\n    key: [\n      [oldValues],\n      [newValues],\n    ],\n  }\n  ```"
@@ -4207,7 +4632,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 61,
+            "line": 183,
             "description": "Rollback changes for `hasMany` relationships.",
             "itemtype": "method",
             "name": "rollbackHasMany",
@@ -4225,7 +4650,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 86,
+            "line": 208,
             "description": "Return object with changes.\n\nObject will have structure:\n* key - is name relationships that has changed\n  * array - include two items, old value, with index `0`, and new value, with index `1`.",
             "example": [
                 "\n  ```javascript\n  {\n    key: [oldValue, newValue],\n  }\n  ```"
@@ -4242,7 +4667,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 118,
+            "line": 240,
             "description": "Rollback changes for `belongsTo` relationships.",
             "itemtype": "method",
             "name": "rollbackBelongsTo",
@@ -4260,7 +4685,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 141,
+            "line": 263,
             "description": "Rollback changes for all relationships.",
             "itemtype": "method",
             "name": "rollbackRelationships",
@@ -4270,7 +4695,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 151,
+            "line": 273,
             "description": "Rollback all changes.",
             "itemtype": "method",
             "name": "rollbackAll",
@@ -4280,7 +4705,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 161,
+            "line": 283,
             "description": "Fired when the record is loaded from the server.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didLoad).",
             "itemtype": "method",
             "name": "didLoad",
@@ -4290,7 +4715,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 172,
+            "line": 294,
             "description": "Fired when the record is updated.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didUpdate).",
             "itemtype": "method",
             "name": "didUpdate",
@@ -4300,7 +4725,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 183,
+            "line": 305,
             "description": "Set each `belongsTo` relationship, observer, that save canonical state.",
             "itemtype": "method",
             "name": "_saveCanonicalBelongsTo",
@@ -4312,7 +4737,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 209,
+            "line": 331,
             "description": "Save canonical state for `belongsTo` relationships.",
             "itemtype": "method",
             "name": "_saveBelongsToObserver",
@@ -4336,7 +4761,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 225,
+            "line": 347,
             "description": "Defined projections for current model type.",
             "itemtype": "property",
             "name": "projections",
@@ -4351,7 +4776,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 236,
+            "line": 358,
             "description": "Defines projection for specified model type.",
             "itemtype": "method",
             "name": "defineProjection",
@@ -4401,7 +4826,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 42,
+            "line": 44,
             "description": "Sets the id of the requested entity.",
             "itemtype": "method",
             "name": "byId",
@@ -4425,7 +4850,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 56,
+            "line": 58,
             "description": "Sets the name of the requested entity.",
             "itemtype": "method",
             "name": "from",
@@ -4449,7 +4874,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 70,
+            "line": 72,
             "itemtype": "method",
             "name": "where",
             "params": [
@@ -4472,7 +4897,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 83,
+            "line": 85,
             "itemtype": "method",
             "name": "orderBy",
             "params": [
@@ -4495,7 +4920,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 100,
+            "line": 102,
             "itemtype": "method",
             "name": "top",
             "params": [
@@ -4518,7 +4943,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 113,
+            "line": 115,
             "itemtype": "method",
             "name": "skip",
             "params": [
@@ -4541,7 +4966,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 126,
+            "line": 128,
             "itemtype": "method",
             "name": "count",
             "return": {
@@ -4557,7 +4982,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 138,
+            "line": 140,
             "description": "Adds attributes for selection.\nAutomatically checks duplications.",
             "itemtype": "method",
             "name": "select",
@@ -4581,7 +5006,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 153,
+            "line": 155,
             "description": "Adds attributes for selection from specified projection.\nMerges attributes with added using `select`.",
             "itemtype": "method",
             "name": "selectByProjection",
@@ -4605,7 +5030,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 168,
+            "line": 170,
             "description": "Builds query instance using all provided data.",
             "itemtype": "method",
             "name": "build",
@@ -4769,11 +5194,16 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 29,
+            "line": 30,
             "description": "Loads data from IndexedDB.",
             "itemtype": "method",
             "name": "query",
             "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "DS.Store"
+                },
                 {
                     "name": "Query",
                     "description": "language instance to the adapter.",
@@ -4792,7 +5222,31 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 60,
+            "line": 67,
+            "description": "Builds IndexedDB database schema by given query object.",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "DS.Store"
+                },
+                {
+                    "name": "query",
+                    "description": "Query language instance for loading data.",
+                    "type": "Query"
+                }
+            ],
+            "return": {
+                "description": "IndexedDB database schema.",
+                "type": "Object"
+            },
+            "class": "Query.IndexedDbAdapter",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
+            "line": 195,
             "description": "Builds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
             "params": [
                 {
@@ -4807,7 +5261,7 @@
                 }
             ],
             "return": {
-                "description": "Tbale or collection that can be used with `toArray` method.",
+                "description": "Table or collection that can be used with `toArray` method.",
                 "type": "Dexie.Collection|Dexie.Table"
             },
             "class": "Query.IndexedDbAdapter",
@@ -4816,7 +5270,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 130,
+            "line": 275,
             "description": "Returns complex filter function for `and` condition.\nResult function returns `true` if all attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
             "params": [
                 {
@@ -4835,7 +5289,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 152,
+            "line": 297,
             "description": "Returns complex filter function for `or` condition.\nResult function returns `true` if at least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
             "params": [
                 {
@@ -6688,7 +7142,18 @@
         },
         {
             "file": "ember-flexberry-data/addon/stores/local-store.js",
-            "line": 29,
+            "line": 18,
+            "description": "Database name for IndexedDB.",
+            "itemtype": "property",
+            "name": "databaseName",
+            "type": "String",
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 38,
             "description": "Returns an instance of the serializer for a given type.\nOffline serializers should have name with postfix '-offline'.",
             "itemtype": "method",
             "name": "serializerFor",
@@ -6707,7 +7172,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/stores/local-store.js",
-            "line": 50,
+            "line": 59,
             "description": "Returns an instance of the adapter for a given type.\nOffline adapters should have name with postfix '-offline'.",
             "itemtype": "method",
             "name": "adapterFor",
@@ -6726,7 +7191,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/stores/local-store.js",
-            "line": 71,
+            "line": 80,
             "description": "Finds the records for the given model type.\n\nSee {{#crossLink \"DS.Store/findAll:method\"}}{{/crossLink}} for details.",
             "itemtype": "method",
             "name": "findAll",
@@ -6762,7 +7227,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/stores/local-store.js",
-            "line": 94,
+            "line": 107,
             "description": "Returns a record for a given type and id combination.\n\nSee {{#crossLink \"DS.Store/findRecord:method\"}}{{/crossLink}} for details.",
             "itemtype": "method",
             "name": "findRecord",
@@ -6803,7 +7268,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/stores/local-store.js",
-            "line": 120,
+            "line": 135,
             "description": "This method delegates a query to the adapter.\n\nSee {{#crossLink \"DS.Store/query:method\"}}{{/crossLink}} for details.",
             "itemtype": "method",
             "name": "query",
@@ -6839,7 +7304,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/stores/local-store.js",
-            "line": 139,
+            "line": 154,
             "description": "This method delegates a query to the adapter.\n\nSee {{#crossLink \"DS.Store/queryRecord:method\"}}{{/crossLink}} for details.",
             "itemtype": "method",
             "name": "queryRecord",
@@ -6869,6 +7334,14 @@
                 "description": "A promise, which is resolved with a\n                  {{#crossLink \"DS.RecordObject\"}}RecordObject{{/crossLink}}\n                  once the server returns.",
                 "type": "Promise"
             },
+            "class": "Offline.LocalStore",
+            "module": "ember-flexberry-data",
+            "namespace": "Offline"
+        },
+        {
+            "file": "ember-flexberry-data/addon/stores/local-store.js",
+            "line": 173,
+            "description": "Changes `databaseName` adapter's property if `databaseName` property was changed.",
             "class": "Offline.LocalStore",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
@@ -6992,6 +7465,17 @@
             "name": "isEnum",
             "type": "Boolean",
             "default": "true",
+            "class": "FlexberryEnumTransform",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/transforms/flexberry-enum.js",
+            "line": 141,
+            "description": "Source type name from the backend.",
+            "itemtype": "property",
+            "name": "sourceType",
+            "type": "String",
+            "default": "null",
             "class": "FlexberryEnumTransform",
             "module": "ember-flexberry-data"
         },
@@ -7207,9 +7691,9 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/generate-unique-id.js",
-            "line": 1,
+            "line": 3,
             "return": {
-                "description": "a combination of timestamp and 5 random digits",
+                "description": "RFC4122 version 4 UUID",
                 "type": "String"
             },
             "class": "Utils.Information",
@@ -7246,6 +7730,90 @@
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
             "line": 44,
+            "description": "Checks if the specified attribute path is an attribute.",
+            "itemtype": "method",
+            "name": "isAttribute",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the specified attribute path is an attribute.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 58,
+            "description": "Checks if the specified attribute path is a key (i.e. it is an id or belongsTo relationship).",
+            "itemtype": "method",
+            "name": "isKey",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the specified attribute path is a key.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 72,
+            "description": "Checks if the specified attribute path is a relationship.",
+            "itemtype": "method",
+            "name": "isRelationship",
+            "params": [
+                {
+                    "name": "modelName",
+                    "description": "The name of the model.",
+                    "type": "String"
+                },
+                {
+                    "name": "attributePath",
+                    "description": "The path to the attribute.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True if the specified attribute path is a relationship.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data",
+            "namespace": "Utils"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/information.js",
+            "line": 86,
             "description": "Checks if the specified attribute path is a master field.",
             "itemtype": "method",
             "name": "isMaster",
@@ -7273,7 +7841,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 58,
+            "line": 100,
             "description": "Checks if the specified attribute path is a detail field.",
             "itemtype": "method",
             "name": "isDetail",
@@ -7301,7 +7869,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 72,
+            "line": 114,
             "description": "Returns the type of the specified attribute path.",
             "itemtype": "method",
             "name": "getType",
@@ -7319,7 +7887,7 @@
             ],
             "return": {
                 "description": "The type of the specified attribute path.",
-                "type": "Boolean"
+                "type": "String"
             },
             "access": "public",
             "tagname": "",
@@ -7329,7 +7897,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/utils/information.js",
-            "line": 159,
+            "line": 202,
             "description": "Parses the specified attribute paths and returns list of separate attributes.",
             "itemtype": "method",
             "name": "parseAttributePath",
@@ -19056,19 +19624,23 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:29"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:30"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:60"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:67"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:130"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:195"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:152"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:275"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:297"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -19184,7 +19756,19 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/utils/information.js:159"
+            "line": " ember-flexberry-data/addon/utils/information.js:86"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:100"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:114"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/utils/information.js:202"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -19223,6 +19807,10 @@
             "line": " ember-flexberry/addon/services/user-settings.js:718"
         },
         {
+            "message": "Missing item type\nSupports query language objects or queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }\n\n(in this case every property added to the query is an \"AND\" query, not \"OR\")",
+            "line": " ember-flexberry-data/addon/adapters/offline.js:114"
+        },
+        {
             "message": "Missing item type\nField name where object identifier is kept.",
             "line": " ember-flexberry-data/addon/mixins/regenerated/serializers/i-c-s-soft-s-t-o-r-m-n-e-t-business-audit-objects-audit-entity.js:10"
         },
@@ -19247,16 +19835,20 @@
             "line": " ember-flexberry-data/addon/mixins/regenerated/serializers/i-c-s-soft-s-t-o-r-m-n-e-t-security-session.js:7"
         },
         {
+            "message": "Missing item type\nBuilds IndexedDB database schema by given query object.",
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:67"
+        },
+        {
             "message": "Missing item type\nBuilds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:60"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:195"
         },
         {
             "message": "Missing item type\nReturns complex filter function for `and` condition.\nResult function returns `true` if all attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:130"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:275"
         },
         {
             "message": "Missing item type\nReturns complex filter function for `or` condition.\nResult function returns `true` if at least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:152"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:297"
         },
         {
             "message": "Missing item type\nBuilds function for windowing array of objects using data from the query.",
@@ -19435,6 +20027,10 @@
             "line": " ember-flexberry-data/addon/services/user.js:8"
         },
         {
+            "message": "Missing item type\nChanges `databaseName` adapter's property if `databaseName` property was changed.",
+            "line": " ember-flexberry-data/addon/stores/local-store.js:173"
+        },
+        {
             "message": "Missing item type\nDeserializes serialized attribute value.",
             "line": " ember-flexberry-data/addon/transforms/decimal.js:24"
         },
@@ -19464,7 +20060,7 @@
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/utils/generate-unique-id.js:1"
+            "line": " ember-flexberry-data/addon/utils/generate-unique-id.js:3"
         },
         {
             "message": "Missing item type\nHandles end of rerender.\nDropdown part of menu is initialized here in order to get dropdown behavior,\nwhen menu disappeares after item selecting.",
