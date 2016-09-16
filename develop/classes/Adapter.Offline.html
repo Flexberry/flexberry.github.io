@@ -303,12 +303,12 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method__completeLoadingRecord" data-tablink="_completeLoadingRecord">_completeLoadingRecord</a>
 
                             </li>
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__extractProjectionFromQuery" data-tablink="_extractProjectionFromQuery">_extractProjectionFromQuery</a>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__createSchema" data-tablink="_createSchema">_createSchema</a>
 
                             </li>
                             <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__getTableForOperationsByModelSnapshot" data-tablink="_getTableForOperationsByModelSnapshot">_getTableForOperationsByModelSnapshot</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method__extractProjectionFromQuery" data-tablink="_extractProjectionFromQuery">_extractProjectionFromQuery</a>
 
                             </li>
                             <li class="index-item method private">
@@ -334,6 +334,10 @@
                     <h3>Properties</h3>
 
                     <ul class="index-list properties extends">
+                            <li class="index-item property private">
+                                <a href="#" data-tabid="#properties" data-anchor="#property__schemas" data-tablink="_schemas">_schemas</a>
+
+                            </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_databaseName" data-tablink="databaseName">databaseName</a>
 
@@ -384,7 +388,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l313"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:313</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l324"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:324</code></a>
                             </p>
                     
                     
@@ -472,6 +476,70 @@
                             </div>
                     
                     </div>
+                    <div id="method__createSchema" class="method item">
+                        <h3 class="name"><code>_createSchema</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>type</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l206"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:206</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Return schema for Dexie.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">type</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
+                                        <p>Return schema for Dexie.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
                     <div id="method__extractProjectionFromQuery" class="method item private">
                         <h3 class="name"><code>_extractProjectionFromQuery</code></h3>
                     
@@ -503,7 +571,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l278"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:278</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l289"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:289</code></a>
                             </p>
                     
                     
@@ -582,73 +650,6 @@
                             </div>
                     
                     </div>
-                    <div id="method__getTableForOperationsByModelSnapshot" class="method item private">
-                        <h3 class="name"><code>_getTableForOperationsByModelSnapshot</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>snapshot</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">WritableTable</span>
-                            </span>
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l186"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:186</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Gets <a href="https://github.com/dfahlander/Dexie.js/wiki/WriteableTable">WritableTable</a> class for given snapshot.
-                    Creates <a href="https://github.com/dfahlander/Dexie.js/wiki/Version.stores()">Dexie's schema</a> that contains model properties taken from snapshot.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">snapshot</code>
-                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Snapshot.html" class="crosslink external" target="_blank">DS.Snapshot</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Snapshot of model.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">WritableTable</span>:
-                                        <p>Instance of <a href="https://github.com/dfahlander/Dexie.js/wiki/WriteableTable">WritableTable</a> class for given snapshot.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
                     <div id="method__getTableForOperationsByModelType" class="method item private">
                         <h3 class="name"><code>_getTableForOperationsByModelType</code></h3>
                     
@@ -674,7 +675,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l169"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:169</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l178"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:178</code></a>
                             </p>
                     
                     
@@ -750,7 +751,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l227"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:227</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l238"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:238</code></a>
                             </p>
                     
                     
@@ -844,7 +845,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l62"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:62</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l71"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:71</code></a>
                             </p>
                     
                     
@@ -886,7 +887,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l73"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:73</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l82"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:82</code></a>
                             </p>
                     
                     
@@ -942,6 +943,32 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property__schemas" class="property item private">
+                        <h3 class="name"><code>_schemas</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l26"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:26</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Accumulates schemas of models used in Dexie.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_databaseName" class="property item">
                         <h3 class="name"><code>databaseName</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -953,7 +980,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l33"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:33</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_offline.js.html#l42"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;offline.js:42</code></a>
                             </p>
                     
                     

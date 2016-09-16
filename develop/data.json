@@ -5251,7 +5251,20 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 33,
+            "line": 26,
+            "description": "Accumulates schemas of models used in Dexie.",
+            "itemtype": "property",
+            "name": "_schemas",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 42,
             "description": "Database name for IndexedDB.",
             "itemtype": "property",
             "name": "databaseName",
@@ -5262,7 +5275,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 62,
+            "line": 71,
             "description": "Clear adapter's cache and IndexedDB's store.",
             "itemtype": "method",
             "name": "clear",
@@ -5272,7 +5285,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 73,
+            "line": 82,
             "description": "This is the main entry point into finding records.",
             "itemtype": "method",
             "name": "findRecord",
@@ -5299,7 +5312,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 114,
+            "line": 123,
             "description": "Supports query language objects or queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }\n\n(in this case every property added to the query is an \"AND\" query, not \"OR\")",
             "class": "Adapter.Offline",
             "module": "ember-flexberry-data",
@@ -5307,7 +5320,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 169,
+            "line": 178,
             "description": "Gets [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given model type.\nCreates [Dexie's schema](https://github.com/dfahlander/Dexie.js/wiki/Version.stores()) that contains only 'id' property for specified model type.",
             "itemtype": "method",
             "name": "_getTableForOperationsByModelType",
@@ -5330,30 +5343,28 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 186,
-            "description": "Gets [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given snapshot.\nCreates [Dexie's schema](https://github.com/dfahlander/Dexie.js/wiki/Version.stores()) that contains model properties taken from snapshot.",
+            "line": 206,
+            "description": "Return schema for Dexie.",
             "itemtype": "method",
-            "name": "_getTableForOperationsByModelSnapshot",
+            "name": "_createSchema",
             "params": [
                 {
-                    "name": "snapshot",
-                    "description": "Snapshot of model.",
-                    "type": "DS.Snapshot"
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
                 }
             ],
             "return": {
-                "description": "Instance of [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given snapshot.",
-                "type": "WritableTable"
+                "description": "Return schema for Dexie.",
+                "type": "Object"
             },
-            "access": "private",
-            "tagname": "",
             "class": "Adapter.Offline",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 227,
+            "line": 238,
             "description": "Makes {{#crossLink \"Query.QueryObject\"}}{{/crossLink}} out of queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }.",
             "itemtype": "method",
             "name": "_makeQueryObject",
@@ -5391,7 +5402,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 278,
+            "line": 289,
             "description": "Retrieves projection from query and returns it.\nRetrieved projection removes from the query.",
             "itemtype": "method",
             "name": "_extractProjectionFromQuery",
@@ -5433,7 +5444,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 313,
+            "line": 324,
             "description": "Completes loading record for given projection.",
             "itemtype": "method",
             "name": "_completeLoadingRecord",
@@ -25716,7 +25727,7 @@
         },
         {
             "message": "Missing item type\nSupports query language objects or queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }\n\n(in this case every property added to the query is an \"AND\" query, not \"OR\")",
-            "line": " ember-flexberry-data/addon/adapters/offline.js:114"
+            "line": " ember-flexberry-data/addon/adapters/offline.js:123"
         },
         {
             "message": "Missing item type\nField name where object identifier is kept.",
