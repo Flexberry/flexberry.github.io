@@ -5,6 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Technical documentation for Flexberry PLATFORM Projects. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://flexberry.github.io" # the base hostname & protocol for your site
+repository: "https://github.com/Flexberry/flexberry.github.io.git"
 twitter_username: flexberry
 github_username:  Flexberry
 
