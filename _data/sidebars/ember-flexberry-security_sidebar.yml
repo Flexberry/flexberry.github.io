@@ -8,6 +8,7 @@ entries:
   folders:
 
   - title: Getting Started
+    title_ru: Начало
     output: web, pdf
     folderitems:
     - title: About
@@ -15,34 +16,42 @@ entries:
       url: /efs_landing_page.html
       output: web
 
-    - title: Sample 1
-      url: /p1_sample1.html
-      output: web, pdf
-
-    - title: Sample 2
-      url: /p1_sample2.html
-      output: web, pdf
-
-    - title: Sample 3
-      url: /p1_sample3.html
-      output: web, pdf
-
-  - title: Another heading
+  - title: Security
+    title_ru: Полномочия
     output: web, pdf
 
     folderitems:
-    - title: Sample 4
-      url: /p1_sample4.html
+    - title: Security submodule
+      title_ru: Подсистема полномочий
+      url: /efs_security.html
       output: web, pdf
 
-    - title: Sample 5
-      url: /p1_sample5.html
+    - title: Security forms
+      title_ru: Формы настройки полномочий
+      url: /efs_security_forms.html
       output: web, pdf
 
-    - title: Sample 6
-      url: /p1_sample6.html
+    - title: Security schema
+      title_ru: Модель данных полномочий
+      url: /efs_security_schema.html
       output: web, pdf
 
-    - title: Sample 7
-      url: /p1_sample7.html
+  - title: Audit
+    title_ru: Аудит
+    output: web, pdf
+
+    folderitems:
+    - title: Audit submodile
+      title_ru: Подсистема аудита
+      url: /efs_audit.html
+      output: web, pdf
+
+    - title: Audit forms
+      title_ru: Формы аудита
+      url: /efs_audit_forms.html
+      output: web, pdf
+
+    - title: Audit for object
+      title_ru: Просмотр данных аудита по объекту
+      url: /efs_audit_for_object.html
       output: web, pdf
