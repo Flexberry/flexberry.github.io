@@ -1,0 +1,289 @@
+/* Ввести имя вашей базы данных для сервисной шины */
+USE [ServiceBus]
+GO
+
+CREATE TABLE [ТипСообщения] (
+
+	 [primaryKey] UNIQUEIDENTIFIER NOT NULL,
+
+	 [Наименование] VARCHAR(64) NULL,
+
+	 [Комментарий] TEXT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [Шина] (
+
+	 [primaryKey] UNIQUEIDENTIFIER NOT NULL,
+
+	 [InteropАдрес] VARCHAR(255) NULL,
+
+	 [Наименование] VARCHAR(64) NULL,
+
+	 [Адрес] VARCHAR(255) NULL,
+
+	 [DnsIdentity] VARCHAR(255) NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [Тэг] (
+
+	 [primaryKey] UNIQUEIDENTIFIER NOT NULL,
+
+	 [Имя] VARCHAR(255) NULL,
+
+	 [Значение] VARCHAR(255) NULL,
+
+	 [Сообщение_m0] UNIQUEIDENTIFIER NOT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [Сообщение] (
+
+	 [primaryKey] UNIQUEIDENTIFIER NOT NULL,
+
+	 [Тело] TEXT NULL,
+
+	 [ВремяФормирования] DATETIME NULL,
+
+	 [Отправитель] VARCHAR(255) NULL,
+
+	 [ВложениеДляБазы] TEXT NULL,
+	 
+	 [Отправляется] BIT NULL,
+	 
+	 [FailsCount] INT NULL,
+
+	 [Приоритет] INT NULL,
+
+	 [ИмяГруппы] VARCHAR(255) NULL,
+
+	 [Получатель_m0] UNIQUEIDENTIFIER NULL,
+
+	 [Получатель_m1] UNIQUEIDENTIFIER NULL,
+
+	 [ТипСообщения_m0] UNIQUEIDENTIFIER NOT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [Клиент] (
+
+	 [primaryKey] UNIQUEIDENTIFIER NOT NULL,
+
+	 [Наименование] VARCHAR(64) NULL,
+
+	 [Адрес] VARCHAR(255) NULL,
+
+	 [DnsIdentity] VARCHAR(255) NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [Подписка] (
+
+	 [primaryKey] UNIQUEIDENTIFIER NOT NULL,
+
+	 [ДатаПрекращения] BIGINT NULL,
+
+	 [IsCallBack] BIT NULL,
+
+	 [НеудПопытки] INT NULL,
+
+	 [ПередаватьПо] VARCHAR(4) NULL,
+
+	 [ТипСообщения_m0] UNIQUEIDENTIFIER NOT NULL,
+
+	 [Клиент_m0] UNIQUEIDENTIFIER NULL,
+
+	 [Клиент_m1] UNIQUEIDENTIFIER NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [LogMsg] (
+
+	 [primaryKey] UNIQUEIDENTIFIER NOT NULL,
+
+	 [MsgId] UNIQUEIDENTIFIER NOT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [STORMNETLOCKDATA] (
+
+	 [LockKey] VARCHAR(300) NOT NULL,
+
+	 [UserName] VARCHAR(300) NOT NULL,
+
+	 [LockDate] DATETIME NULL,
+
+	 PRIMARY KEY ([LockKey]))
+
+
+CREATE TABLE [STORMSETTINGS] (
+
+	 [primaryKey] uniqueidentifier NOT NULL,
+
+	 [Module] varchar(1000) NULL,
+
+	 [Name] varchar(255) NULL,
+
+	 [Value] text NULL,
+
+	 [User] varchar(255) NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [STORMAdvLimit] (
+
+	 [primaryKey] uniqueidentifier NOT NULL,
+
+	 [User] varchar(255) NULL,
+
+	 [Published] bit NULL,
+
+	 [Module] varchar(255) NULL,
+
+	 [Name] varchar(255) NULL,
+
+	 [Value] text NULL,
+
+	 [HotKeyData] int NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [STORMFILTERSETTING] (
+
+	 [primaryKey] uniqueidentifier NOT NULL,
+
+	 [Name] varchar(255) NOT NULL,
+
+	 [DataObjectView] varchar(255) NOT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [STORMWEBSEARCH] (
+
+	 [primaryKey] uniqueidentifier NOT NULL,
+
+	 [Name] varchar(255) NOT NULL,
+
+	 [Order] INT NOT NULL,
+
+	 [PresentView] varchar(255) NOT NULL,
+
+	 [DetailedView] varchar(255) NOT NULL,
+
+	 [FilterSetting_m0] uniqueidentifier NOT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [STORMFILTERDETAIL] (
+
+	 [primaryKey] uniqueidentifier NOT NULL,
+
+	 [Caption] varchar(255) NOT NULL,
+
+	 [DataObjectView] varchar(255) NOT NULL,
+
+	 [ConnectMasterProp] varchar(255) NOT NULL,
+
+	 [OwnerConnectProp] varchar(255) NULL,
+
+	 [FilterSetting_m0] uniqueidentifier NOT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+CREATE TABLE [STORMFILTERLOOKUP] (
+
+	 [primaryKey] uniqueidentifier NOT NULL,
+
+	 [DataObjectType] varchar(255) NOT NULL,
+
+	 [Container] varchar(255) NULL,
+
+	 [ContainerTag] varchar(255) NULL,
+
+	 [FieldsToView] varchar(255) NULL,
+
+	 [FilterSetting_m0] uniqueidentifier NOT NULL,
+
+	 PRIMARY KEY ([primaryKey]))
+
+
+
+
+ ALTER TABLE [Тэг] ADD CONSTRAINT [Тэг_FСообщение_0] FOREIGN KEY ([Сообщение_m0]) REFERENCES [Сообщение]
+CREATE INDEX Тэг_IСообщение_m0 on Тэг ([Сообщение_m0])
+
+ ALTER TABLE [Сообщение] ADD CONSTRAINT [Сообщение_FКлиент_0] FOREIGN KEY ([Получатель_m0]) REFERENCES [Клиент]
+CREATE INDEX Сообщение_IПолучатель_m0 on Сообщение ([Получатель_m0])
+
+ ALTER TABLE [Сообщение] ADD CONSTRAINT [Сообщение_FШина_0] FOREIGN KEY ([Получатель_m1]) REFERENCES [Шина]
+CREATE INDEX Сообщение_IПолучатель_m1 on Сообщение ([Получатель_m1])
+
+ ALTER TABLE [Сообщение] ADD CONSTRAINT [Сообщение_FТипСообщения_0] FOREIGN KEY ([ТипСообщения_m0]) REFERENCES [ТипСообщения]
+CREATE INDEX Сообщение_IТипСообщения_m0 on Сообщение ([ТипСообщения_m0])
+
+ ALTER TABLE [Подписка] ADD CONSTRAINT [Подписка_FТипСообщения_0] FOREIGN KEY ([ТипСообщения_m0]) REFERENCES [ТипСообщения]
+CREATE INDEX Подписка_IТипСообщения_m0 on Подписка ([ТипСообщения_m0])
+
+ ALTER TABLE [Подписка] ADD CONSTRAINT [Подписка_FКлиент_0] FOREIGN KEY ([Клиент_m0]) REFERENCES [Клиент]
+CREATE INDEX Подписка_IКлиент_m0 on Подписка ([Клиент_m0])
+
+ ALTER TABLE [Подписка] ADD CONSTRAINT [Подписка_FШина_0] FOREIGN KEY ([Клиент_m1]) REFERENCES [Шина]
+CREATE INDEX Подписка_IКлиент_m1 on Подписка ([Клиент_m1])
+
+ ALTER TABLE [LogMsg] ADD CONSTRAINT [LogMsg_FСообщение_0] FOREIGN KEY ([MsgId]) REFERENCES [Сообщение]
+CREATE INDEX LogMsg_IMsgId on LogMsg ([MsgId])
+
+ALTER TABLE [STORMWEBSEARCH] ADD CONSTRAINT [STORMWEBSEARCH_FSTORMFILTERSETTING_0] FOREIGN KEY ([FilterSetting_m0]) REFERENCES [STORMFILTERSETTING]
+
+ALTER TABLE [STORMFILTERDETAIL] ADD CONSTRAINT [STORMFILTERDETAIL_FSTORMFILTERSETTING_0] FOREIGN KEY ([FilterSetting_m0]) REFERENCES [STORMFILTERSETTING]
+
+ALTER TABLE [STORMFILTERLOOKUP] ADD CONSTRAINT [STORMFILTERLOOKUP_FSTORMFILTERSETTING_0] FOREIGN KEY ([FilterSetting_m0]) REFERENCES [STORMFILTERSETTING]
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ApplicationLog](
+	[primaryKey] [uniqueidentifier] NOT NULL,
+	[Category] [varchar](64) NULL,
+	[EventId] [int] NULL,
+	[Priority] [int] NULL,
+	[Severity] [varchar](32) NULL,
+	[Title] [varchar](256) NULL,
+	[Timestamp] [datetime] NULL,
+	[MachineName] [varchar](32) NULL,
+	[AppDomainName] [varchar](512) NULL,
+	[ProcessId] [varchar](256) NULL,
+	[ProcessName] [varchar](512) NULL,
+	[ThreadName] [varchar](512) NULL,
+	[Win32ThreadId] [varchar](128) NULL,
+	[Message] [varchar](max) NULL,
+	[FormattedMessage] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[primaryKey] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
