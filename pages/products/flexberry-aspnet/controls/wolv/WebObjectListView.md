@@ -7,7 +7,6 @@ permalink: ru/web-object-list-view.html
 folder: product--folder
 lang: ru
 ---
-
 {% capture my-include %}{% include fa_control_info.md %}{% endcapture %}
 {{ my-include | markdownify }}
 
@@ -21,13 +20,13 @@ lang: ru
 Внешний вид WOLV при использовании различных тем можно посмотреть в [статье про Темы](choose-theme.html). 
 
 ### Stylization
-Основная статья про [Стилизацию](w-o-l-v-stylization.html)
+Основная статья про [cтилизацию](w-o-l-v-stylization.html).
 
 ### CSS-классы
 Основная статья о [CSS-классах WOLV](w-o-l-v-c-s-s.html).
 
 ### Пейджинг
-Основная статья про [Пейджинг WOLV](w-o-l-v-paging.html).
+Основная статья про [пейджинг WOLV](w-o-l-v-paging.html).
 
 ### Фиксация шапки списка
 Чтобы зафиксировать шапку списка, чтобы она не "убегала" при прокрутке до самого низа страницы, достаточно добавить на страницу клиентский скрипт:
@@ -66,10 +65,10 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 ## Пользовательские настройки WOLV
 
 ### Фильтры
-Основная статья про [Фильтры WOLV](w-o-l-v-filters.html).
+Основная статья про [фильтры WOLV](w-o-l-v-filters.html).
 
 ### Поиск
-Основная статья про [Поиск в WOLV](w-o-l-v-search.html).
+Основная статья про [поиск в WOLV](w-o-l-v-search.html).
 
 ### Редактор ограничений
 [Основная статья про расширенный редактор ограничений WOLV](advanced-limit-editor.html).
@@ -82,10 +81,10 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 * Для ускорения работы контрола можно добавить [кэширование сохраненных ограничений](wolv-adv-limit-caching.html).
 
 ### Настройка отображения столбцов
-Основная статья про [Настройку отображения столбцов WOLV](w-o-l-v-columns.html).
+Основная статья про [настройку отображения столбцов WOLV](w-o-l-v-columns.html).
 
 ### Настройка сортировки
-Основная статья про [Настройку сортировки WOLV](list-sort.html).
+Основная статья про [настройку сортировки WOLV](list-sort.html).
 
 ### Возможность изменения ширины столбцов
 Пользователь может самостоятельно изменить ширину каждого столбца списка, если установлено свойство `Operations.AllowColumnResizing = true`. Настроенные размеры
@@ -104,14 +103,14 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 Основная статья об [операциях WOLV](w-o-l-v-operations.html).
 
 ### События
-Основная статья про [События WOLV](w-o-l-v-events.html).
+Основная статья про [события WOLV](w-o-l-v-events.html).
 
 ### Печать
 Существуют настройки WOLV, позволяющие напечатать список или часть списка. Описание настройки печати представлено в статье
-[Печать списка](print-in--w-o-l-v.html).
+[печать списка](print-in--w-o-l-v.html).
 
 ### Отображение иерархических данных
-Основная статья про [Иерархический WOLV](w-o-l-v-hierarhy.html).
+Основная статья про [иерархический WOLV](w-o-l-v-hierarhy.html).
 
 ### Отображение на одной странице списковой формы и формы редактирования
 Основная статья про [EditorInFrame](editor-in-frame.html).
