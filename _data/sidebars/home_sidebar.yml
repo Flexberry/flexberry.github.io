@@ -28,6 +28,9 @@ entries:
     - title: Flexberry Designer
       url: /fd_landing_page.html
       output: web
+    - title: Flexberry ASP.NET
+      url: /fa_landing_page.html
+      output: web
     - title: ember-flexberry
       url: /ef_landing_page.html
       output: web

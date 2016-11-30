@@ -1,0 +1,42 @@
+entries:
+- title: Sidebar
+  product: Flexberry ASP.NET
+  version: 2.1.0
+  folders:
+  - title: Getting Started
+    title_ru: Начало работы
+    output: web, pdf
+    folderitems:
+    - title: About
+      title_ru: О продукте
+      url: /fa_landing_page.html
+      output: web
+    - title: Sample 1
+      url: /p1_sample1.html
+      output: web, pdf
+  - title: Subsystems
+    title_ru: Подсистемы
+    output: web, pdf
+    folderitems:
+    - title: Security
+      title_ru: Полномочия
+      url: /p1_sample4.html
+      output: web, pdf
+    - title: Audit
+      title_ru: Аудит
+      url: /p1_sample4.html
+      output: web, pdf
+    - title: Locks
+      title_ru: Блокировки
+      url: /p1_sample4.html
+      output: web, pdf
+  - title: Controls
+    title_ru: Контролы
+    output: web, pdf
+    folderitems:
+    - title: AjaxGroupEdit
+      url: /p1_sample4.html
+      output: web, pdf
+    - title: WebObjectListView
+      url: /web-object-list-view.html
+      output: web, pdf
