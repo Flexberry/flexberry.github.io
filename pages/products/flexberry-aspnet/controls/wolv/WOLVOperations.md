@@ -1,6 +1,6 @@
 ---
 title: Операции WebObjectListView
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/w-o-l-v-operations.html
