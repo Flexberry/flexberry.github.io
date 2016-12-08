@@ -1,0 +1,104 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Введение
+    title_ru: Введение
+    output: web
+    folderitems:
+    - title: Index
+      title_ru: Главная
+      url: /index.html
+      output: web    
+  - title: Products
+    title_ru: Проектирование
+    output: web
+    folderitems:
+    - title: Flexberry PLATFORM
+      title_ru: Введение в проектирование
+      url: /fp_landing_page.html
+      output: web
+    - title: UML
+      url: /fd_landing_page.html
+      output: web
+  - title: Frontend
+    title_ru: Клиентская разработка
+    output: web
+    folderitems:
+    - title: Create web app
+      title_ru: Введение в клиентскую разработку
+      url: /news.html
+      output: web    
+    - title: JavaScript
+      title_ru: Создание мобильных приложений
+      url: /news.html
+      output: web    
+  - title: Backend
+    title_ru: Серверная разработка
+    output: web
+    folderitems:
+    - title: Flexberry PLATFORM
+      title_ru: Введение в серверную разработку
+      url: /fp_landing_page.html
+      output: web
+    - title: Flexberry Designer
+      url: /fd_landing_page.html
+      output: web
+  - title: Mobile development
+    title_ru: Мобильная разработка
+    output: web
+    folderitems:
+    - title: Flexberry PLATFORM
+      title_ru: Введение в мобильную разработку
+      url: /fp_landing_page.html
+      output: web
+    - title: Flexberry Designer
+      url: /fd_landing_page.html
+      output: web
+  - title: GIS Development
+    title_ru: Разработка ГИС
+    output: web
+    folderitems:
+    - title: Flexberry PLATFORM
+      title_ru: Введение в ГИС-разработку
+      url: /fp_landing_page.html
+      output: web
+    - title: Flexberry Designer
+      url: /fd_landing_page.html
+      output: web
+  - title: Testing, debugging, performance
+    title_ru: Продукты
+    output: web
+    folderitems:
+    - title: Flexberry PLATFORM
+      title_ru: Введение в тестирование и отладку
+      url: /fp_landing_page.html
+      output: web
+    - title: Flexberry Designer
+      url: /fd_landing_page.html
+      output: web
+  - title: Team development
+    title_ru: Командная разработка
+    output: web
+    folderitems:
+    - title: Flexberry PLATFORM
+      title_ru: Введение в командную разработку
+      url: /fp_landing_page.html
+      output: web
+    - title: Flexberry Designer
+      url: /fd_landing_page.html
+      output: web
+  - title: Deployment, DevOps
+    title_ru: Развёртывание и установка решений
+    output: web
+    folderitems:
+    - title: Flexberry PLATFORM
+      title_ru: Введение в процесс развёртывания
+      url: /fp_landing_page.html
+      output: web
+    - title: Flexberry Designer
+      url: /fd_landing_page.html
+      output: web

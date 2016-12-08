@@ -59,6 +59,10 @@ entries:
     title_ru: Руководство
     output: web
     folderitems:
+    - title: Base tech
+      title_ru: Базовые технологии
+      url: /gbt_landing-page.html
+      output: web    
     - title: Create web app
       title_ru: Создание веб-приложений
       url: /news.html
