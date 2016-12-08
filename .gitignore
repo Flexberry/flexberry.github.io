@@ -6,6 +6,8 @@
 /.idea
 .tern-port
 .dir-locals.el
+.gemrc
+Gemfile.lock
 
 # jekyll private files
 _site
