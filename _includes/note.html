@@ -1,1 +1,2 @@
-<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> {{include.content}}</div>
+{% assign str = include.content | prepend:'<i class="fa fa-info-circle"></i> ' | markdownify %}
+<div markdown="span" class="alert alert-info" role="alert">{{ str }}</div>

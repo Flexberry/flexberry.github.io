@@ -1,0 +1,186 @@
+/* Admonitions follow DocBook: caution, important, note, tip and warning
+   plus system and error */
+
+.tip, 
+.information,
+.note, 
+.important, 
+.caution, 
+.warning, 
+.system,
+.error,  
+.question {
+    width: 100%;
+}
+
+.tip td.image-col, 
+.information td.image-col,
+.note td.image-col, 
+.important td.image-col, 
+.caution td.image-col, 
+.warning td.image-col, 
+.system td.image-col,
+.error td.image-col,  
+.question td.image-col {
+    background-color: transparent;
+    width: 23px;
+    height: 23px;
+/*	border: 1px solid black;*/
+}
+
+.tip td.head-col, 
+.information td.head-col,
+.note td.head-col, 
+.important td.head-col, 
+.caution td.head-col, 
+.warning td.head-col, 
+.system td.head-col,
+.error td.head-col,  
+.question td.head-col {
+	font-weight: bold;
+	color: Black;
+}
+
+.tip td.content, 
+.information td.content,
+.note td.content, 
+.important td.content, 
+.caution td.content, 
+.warning td.content, 
+.system td.content,
+.error td.content,  
+.question td.content {
+    background-color: transparent;
+	font-weight: normal;
+	color: Black;
+}
+
+
+/*
+blue: 438CCD
+green: 99CA00
+grey: D7D9DA
+lblue: B8DDF8
+red: ED573D
+yel:F8CA00
+*/
+/***************************************/
+.tip {
+	border: 1px dotted #B8DDF8;
+}
+
+.tip td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/information_lightblue.png') 1px 1px no-repeat;
+}
+
+.tip td.head-col{
+	background-color: #B8DDF8;
+}
+/***************************************/
+.information {
+	border: 1px dotted #B8DDF8;
+}
+
+.information td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/information_lightblue.png') 1px 1px no-repeat;
+}
+
+.information td.head-col{
+	background-color: #B8DDF8;
+}
+/***************************************/
+.note {
+	border: 1px dashed black;
+}
+
+.note td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/right_grey.png') 1px 1px no-repeat;
+}
+
+.note td.head-col{
+	background-color: #D7D9DA;
+}
+/***************************************/
+.important {
+	border: 1px solid #B8DDF8;
+}
+
+.important td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/exclamation_lightblue.png') 1px 1px no-repeat;
+}
+
+.important td.head-col{
+	background-color: #B8DDF8;
+}
+/***************************************/
+.caution {
+	border: 1px solid black;/* #F8CA00;*/
+}
+
+.caution td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/exclamation_yellow.png') 1px 1px no-repeat;
+}
+
+.caution td.head-col{
+	background-color: #F8CA00;
+}
+/***************************************/
+.warning {
+	border: 1px dashed red;
+}
+
+.warning td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/exclamation_red.png') 1px 1px no-repeat;
+}
+
+.warning td.head-col{
+	background-color: #ED573D;
+}
+/***************************************/
+.system {
+	border: 2px dashed black;
+	font-weight: bold;
+}
+
+.system td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/exclamation_grey.png') 1px 1px no-repeat;
+}
+
+.system td.head-col{
+	background-color: #D7D9DA;
+}
+/***************************************/
+.error {
+	border: 2px dashed red;
+}
+
+.error td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/error_red.png') 1px 1px no-repeat;
+}
+
+.error td.head-col {
+	background-color: #ED573D;
+}
+
+.error td.content {
+	color: #800000;
+	font-weight: bold;
+}
+/***************************************/
+.question {
+	border: 1px dashed #99CA00;
+}
+
+.question td.image-col {
+	background: url('GetFile.aspx?File=/Keeper.Garrett.Formatters/MessageFormatter/Images-24x24/question_green.png') 1px 1px no-repeat;
+}
+
+.question td.head-col{
+	background-color: #99CA00;
+}
+/***************************************/
+.advice {
+	padding: 0.2em;
+	border: 1px solid #aaa;
+	background-color: #f7f7f7;
+}

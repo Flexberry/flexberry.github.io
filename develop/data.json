@@ -935,11 +935,20 @@
             },
             "namespaces": {}
         },
-        "ember-flexberry/addon/components/mobile/flexberry-file.js": {
-            "name": "ember-flexberry/addon/components/mobile/flexberry-file.js",
+        "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js": {
+            "name": "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js",
             "modules": {
                 "ember-flexberry": 1
             },
+            "classes": {
+                "NewPlatformFlexberryServicesLockAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry/addon/components/mobile/flexberry-file.js": {
+            "name": "ember-flexberry/addon/components/mobile/flexberry-file.js",
+            "modules": {},
             "classes": {
                 "Mobile.FlexberryFileComponent": 1
             },
@@ -1891,6 +1900,7 @@
             "elements": {},
             "classes": {
                 "ApplicationInstanceInitializer": 1,
+                "NewPlatformFlexberryServicesLockAdapter": 1,
                 "Mobile.FlexberryFileComponent": 1,
                 "Mobile.FlexberryGroupeditComponent": 1,
                 "Mobile.FlexberryObjectlistview": 1,
@@ -3657,6 +3667,21 @@
             "module": "ember-flexberry-gis",
             "namespace": ""
         },
+        "NewPlatformFlexberryServicesLockAdapter": {
+            "name": "NewPlatformFlexberryServicesLockAdapter",
+            "shortname": "NewPlatformFlexberryServicesLockAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js",
+            "line": 7,
+            "description": "Adapter for {{#crossLink \"NewPlatformFlexberryServicesLockModel\"}}{{/crossLink}}.",
+            "extends": "OData"
+        },
         "Mobile.FlexberryFileComponent": {
             "name": "Mobile.FlexberryFileComponent",
             "shortname": "Mobile.FlexberryFileComponent",
@@ -5226,7 +5251,20 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 33,
+            "line": 26,
+            "description": "Accumulates schemas of models used in Dexie.",
+            "itemtype": "property",
+            "name": "_schemas",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "Adapter.Offline",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/offline.js",
+            "line": 42,
             "description": "Database name for IndexedDB.",
             "itemtype": "property",
             "name": "databaseName",
@@ -5237,7 +5275,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 62,
+            "line": 71,
             "description": "Clear adapter's cache and IndexedDB's store.",
             "itemtype": "method",
             "name": "clear",
@@ -5247,7 +5285,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 73,
+            "line": 82,
             "description": "This is the main entry point into finding records.",
             "itemtype": "method",
             "name": "findRecord",
@@ -5274,7 +5312,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 114,
+            "line": 123,
             "description": "Supports query language objects or queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }\n\n(in this case every property added to the query is an \"AND\" query, not \"OR\")",
             "class": "Adapter.Offline",
             "module": "ember-flexberry-data",
@@ -5282,7 +5320,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 169,
+            "line": 178,
             "description": "Gets [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given model type.\nCreates [Dexie's schema](https://github.com/dfahlander/Dexie.js/wiki/Version.stores()) that contains only 'id' property for specified model type.",
             "itemtype": "method",
             "name": "_getTableForOperationsByModelType",
@@ -5305,30 +5343,28 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 186,
-            "description": "Gets [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given snapshot.\nCreates [Dexie's schema](https://github.com/dfahlander/Dexie.js/wiki/Version.stores()) that contains model properties taken from snapshot.",
+            "line": 206,
+            "description": "Return schema for Dexie.",
             "itemtype": "method",
-            "name": "_getTableForOperationsByModelSnapshot",
+            "name": "_createSchema",
             "params": [
                 {
-                    "name": "snapshot",
-                    "description": "Snapshot of model.",
-                    "type": "DS.Snapshot"
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
                 }
             ],
             "return": {
-                "description": "Instance of [WritableTable](https://github.com/dfahlander/Dexie.js/wiki/WriteableTable) class for given snapshot.",
-                "type": "WritableTable"
+                "description": "Return schema for Dexie.",
+                "type": "Object"
             },
-            "access": "private",
-            "tagname": "",
             "class": "Adapter.Offline",
             "module": "ember-flexberry-data",
             "namespace": "Adapter"
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 227,
+            "line": 238,
             "description": "Makes {{#crossLink \"Query.QueryObject\"}}{{/crossLink}} out of queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }.",
             "itemtype": "method",
             "name": "_makeQueryObject",
@@ -5366,7 +5402,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 278,
+            "line": 289,
             "description": "Retrieves projection from query and returns it.\nRetrieved projection removes from the query.",
             "itemtype": "method",
             "name": "_extractProjectionFromQuery",
@@ -5408,7 +5444,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 313,
+            "line": 324,
             "description": "Completes loading record for given projection.",
             "itemtype": "method",
             "name": "_completeLoadingRecord",
@@ -13817,6 +13853,17 @@
             "module": "ember-flexberry-gis"
         },
         {
+            "file": "ember-flexberry/addon/adapters/new-platform-flexberry-services-lock.js",
+            "line": 14,
+            "description": "In this model, primary key type `String`.",
+            "itemtype": "property",
+            "name": "idType",
+            "type": "String",
+            "default": "'string'",
+            "class": "NewPlatformFlexberryServicesLockAdapter",
+            "module": "ember-flexberry"
+        },
+        {
             "file": "ember-flexberry/addon/components/mobile/flexberry-file.js",
             "line": 15,
             "description": "Flag: whether component is mobile or not.\nUsed in base class for class names bindings.",
@@ -16445,6 +16492,28 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
             "line": 178,
+            "description": "Flag to show that lookup has search or autocomplete in dropdown mode.",
+            "itemtype": "property",
+            "name": "dropdownIsSearch",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 187,
+            "description": "Specify direction for sorting by `displayAttributeName`.\nFor `autocomplete` or `dropdown` mode only.\nPossible values: `asc` or `desc`.",
+            "itemtype": "property",
+            "name": "sorting",
+            "type": "String",
+            "default": "'asc'",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 198,
             "description": "Classes by property of autocomplete.",
             "itemtype": "property",
             "name": "autocompleteClass",
@@ -16455,7 +16524,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 191,
+            "line": 211,
             "description": "Action's name to update model's relation value.",
             "itemtype": "property",
             "name": "updateLookupAction",
@@ -16466,7 +16535,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 200,
+            "line": 220,
             "description": "Min characters count necessary to call autocomplete.",
             "itemtype": "property",
             "name": "minCharacters",
@@ -16477,7 +16546,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 209,
+            "line": 229,
             "description": "Maximum number of results to display on autocomplete or dropdown.",
             "itemtype": "property",
             "name": "maxResults",
@@ -16488,7 +16557,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 218,
+            "line": 238,
             "description": "Flag enable to multiple select.\n\nNote! Not working!",
             "itemtype": "property",
             "name": "multiselect",
@@ -16499,7 +16568,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 229,
+            "line": 249,
             "description": "Limit function on lookup.\nIt should not be just a string, it has to be predicate function (otherwise an exception will be thrown).",
             "itemtype": "property",
             "name": "lookupLimitPredicate",
@@ -16510,7 +16579,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 239,
+            "line": 259,
             "description": "This computed property forms a set of properties to send to lookup window.\nClosure action `lookupWindowCustomProperties` is called here if defined,\notherwise `undefined` is returned.",
             "itemtype": "property",
             "name": "_lookupWindowCustomPropertiesData",
@@ -16522,7 +16591,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 266,
+            "line": 286,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -16533,7 +16602,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 293,
+            "line": 313,
             "description": "Object with lookup properties to send on remove action.",
             "itemtype": "property",
             "name": "removeData",
@@ -16544,7 +16613,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 307,
+            "line": 327,
             "description": "Current store. Used for loading data for autocomplete and for dropdown.",
             "itemtype": "property",
             "name": "store",
@@ -16555,7 +16624,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 316,
+            "line": 336,
             "description": "Name of the attribute of the model to display for the user.\nIs required for autocomplete and dropdown modes.",
             "itemtype": "property",
             "name": "displayAttributeName",
@@ -16566,7 +16635,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 326,
+            "line": 346,
             "description": "Current selected instance of the model.",
             "itemtype": "property",
             "name": "value",
@@ -16576,7 +16645,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 334,
+            "line": 354,
             "description": "Additional observer of value change, updates `displayValue`.",
             "itemtype": "method",
             "name": "_valueObserver",
@@ -16587,7 +16656,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 344,
+            "line": 364,
             "description": "Text that displayed for the user as representation of currently selected value.\nThis property is binded to the view and can be changed by user (it won't be applied to model automatically).",
             "itemtype": "property",
             "name": "displayValue",
@@ -16598,7 +16667,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 356,
+            "line": 376,
             "description": "Standard CSS class names to apply to the view's outer element.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNames).",
             "itemtype": "property",
             "name": "classNames",
@@ -16609,7 +16678,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 366,
+            "line": 386,
             "description": "A list of properties of the view to apply as class names.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNameBindings).",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -16620,7 +16689,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 377,
+            "line": 397,
             "description": "Open window for select value.",
             "itemtype": "method",
             "name": "actions.choose",
@@ -16636,7 +16705,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 391,
+            "line": 411,
             "description": "Clear current value.",
             "itemtype": "method",
             "name": "actions.remove",
@@ -16652,7 +16721,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 406,
+            "line": 426,
             "description": "It seems to me a mistake here, it should be [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).\n# WRANING!",
             "itemtype": "method",
             "name": "didDestroyElement",
@@ -16661,7 +16730,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 417,
+            "line": 437,
             "description": "Called when the element of the view has been inserted into the DOM or after the view was re-rendered.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_didInsertElement).",
             "itemtype": "method",
             "name": "didInsertElement",
@@ -16670,7 +16739,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 428,
+            "line": 448,
             "description": "Called after a component has been rendered, both on initial render and in subsequent rerenders.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_didRender).",
             "itemtype": "method",
             "name": "didRender",
@@ -16679,7 +16748,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 458,
+            "line": 478,
             "description": "Initialize component with autocomplete mode.",
             "itemtype": "method",
             "name": "_onAutocomplete",
@@ -16690,7 +16759,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 498,
+            "line": 518,
             "description": "Mocks call to the data source,\nUses query language and store for loading data explicitly.",
             "params": [
                 {
@@ -16709,14 +16778,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 533,
+            "line": 555,
             "description": "Handles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 542,
+            "line": 564,
             "description": "Handles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
             "params": [
                 {
@@ -16730,14 +16799,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 562,
+            "line": 584,
             "description": "Handles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 583,
+            "line": 605,
             "description": "Initialize component with dropdown mode.",
             "itemtype": "method",
             "name": "_onDropdown",
@@ -16748,7 +16817,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 671,
+            "line": 701,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "_buildDisplayValue",
@@ -16763,7 +16832,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 696,
+            "line": 726,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -16792,7 +16861,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 724,
+            "line": 754,
             "description": "Handles changing current locale.\nIt reinits autocomplete or dropdown mode (depending on flag) in order to localize messages.",
             "itemtype": "method",
             "name": "_languageReinit",
@@ -19312,7 +19381,7 @@
             "line": 538,
             "description": "Hook for configurate rows.",
             "example": [
-                "\n  ```handlebars\n  <!-- app/templates/employees.hbs -->\n  {{flexberry-objectlistview\n    ...\n    configurateRow=(action 'configurateRow')\n    ...\n  }}\n  ```\n\n  ```js\n  // app/controllers/employees.js\n  import ListFormController from './list-form';\n\n  export default ListFormController.extend({\n    actions: {\n      configurateRow(rowConfig, record) {\n        rowConfig.canBeDeleted = false;\n        if (record.get('isMyFavoriteRecord')) {\n          Ember.set(rowConfig, 'customClass', 'my-fav-record);\n        }\n      }\n    }\n  });\n  ```"
+                "\n  ```handlebars\n  <!-- app/templates/employees.hbs -->\n  {{flexberry-objectlistview\n    ...\n    configurateRow=(action \"configurateRow\")\n    ...\n  }}\n  ```\n\n  ```js\n  // app/controllers/employees.js\n  import ListFormController from './list-form';\n\n  export default ListFormController.extend({\n    actions: {\n      configurateRow(rowConfig, record) {\n        Ember.set(rowConfig, 'canBeDeleted', false);\n        if (record.get('isMyFavoriteRecord')) {\n          Ember.set(rowConfig, 'customClass', 'my-fav-record');\n        }\n      }\n    }\n  });\n  ```"
             ],
             "itemtype": "method",
             "name": "configurateRow",
@@ -20813,7 +20882,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
-            "line": 106,
+            "line": 108,
             "description": "Handler for button 'Save and close' click.\nIf return path is determined, no rollback happens and user is redirected to agregator's form.\nOtherwise base logic is executed.",
             "itemtype": "method",
             "name": "actions.saveAndClose",
@@ -20822,7 +20891,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
-            "line": 121,
+            "line": 123,
             "description": "Handler for button 'Delete' click.\nIf return path is determined and current model is saved, record marks as deleted and user is redirected to agregator's form.\nOtherwise base logic is executed.",
             "itemtype": "method",
             "name": "actions.delete",
@@ -20831,7 +20900,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
-            "line": 139,
+            "line": 141,
             "description": "Handler for button 'Close' click.\nIf return path is determined, an error is thrown because this action should not be triggered.\nOtherwise base logic is executed.",
             "itemtype": "method",
             "name": "actions.close",
@@ -20840,7 +20909,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/detail-edit-form.js",
-            "line": 171,
+            "line": 173,
             "description": "Method to transit to parent's route (previous route).\nIf `modelAgregatorRoute` is set, transition to defined path and set flag 'modelNoRollBack' to `true` on controller to prevent rollback of model.\nThen if `parentRoute` is set, transition to defined path.\nOtherwise transition to corresponding list.",
             "itemtype": "method",
             "name": "transitionToParentRoute",
@@ -25634,7 +25703,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:671"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:701"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -25658,7 +25727,7 @@
         },
         {
             "message": "Missing item type\nSupports query language objects or queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }\n\n(in this case every property added to the query is an \"AND\" query, not \"OR\")",
-            "line": " ember-flexberry-data/addon/adapters/offline.js:114"
+            "line": " ember-flexberry-data/addon/adapters/offline.js:123"
         },
         {
             "message": "Missing item type\nField name where object identifier is kept.",
@@ -26182,19 +26251,19 @@
         },
         {
             "message": "Missing item type\nMocks call to the data source,\nUses query language and store for loading data explicitly.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:498"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:518"
         },
         {
             "message": "Missing item type\nHandles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:533"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:555"
         },
         {
             "message": "Missing item type\nHandles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:542"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:564"
         },
         {
             "message": "Missing item type\nHandles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:562"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:584"
         },
         {
             "message": "Missing item type\nInitializes component.",

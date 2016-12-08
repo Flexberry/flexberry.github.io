@@ -50,13 +50,15 @@ feedback_email: mail@flexberry.net
 # used as a contact email for the Feedback link in the top navigation bar
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 kramdown:
  input: GFM
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
-# filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
+
+redcarpet:
+  extensions: ['tables']
 
 collections:
   tooltips:
@@ -105,4 +107,5 @@ sidebars:
 - product1_sidebar
 - product2_sidebar
 - ember-flexberry_sidebar
+- flexberry-aspnet_sidebar
 - other
