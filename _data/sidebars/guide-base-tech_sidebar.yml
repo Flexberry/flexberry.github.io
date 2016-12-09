@@ -98,7 +98,7 @@ entries:
       url: /gbt_android.html
       output: web
     - title: iOS
-      url: /gbt_iOS.html
+      url: /gbt_ios.html
       output: web
     - title: Apache Cordova
       url: /gbt_cordova.html
