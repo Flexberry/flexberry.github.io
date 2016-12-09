@@ -5,91 +5,127 @@ entries:
   levels: one
   folders:
 
-  - title: Введение
+  - title: Get started
     title_ru: Введение
     output: web
     folderitems:
-    - title: Index
-      title_ru: Главная
-      url: /index.html
+    - title: Base technologies
+      title_ru: Базовые технологии
+      url: /gbt_landing-page.html
       output: web    
-  - title: Products
+  - title: System design
     title_ru: Проектирование
     output: web
     folderitems:
-    - title: Flexberry PLATFORM
+    - title: System design
       title_ru: Введение в проектирование
-      url: /fp_landing_page.html
+      url: /gbt_information-system-design.html
+      output: web
+    - title: ООП
+      url: /gbt_ood.html
       output: web
     - title: UML
-      url: /fd_landing_page.html
+      url: /gbt_uml.html
+      output: web
+    - title: Паттерны проектирования
+      url: /gbt_design-patterns.html
       output: web
   - title: Frontend
     title_ru: Клиентская разработка
     output: web
     folderitems:
-    - title: Create web app
+    - title: Frontend fundamentals
       title_ru: Введение в клиентскую разработку
-      url: /news.html
+      url: /gbt_frontend.html
+      output: web    
+    - title: HTML
+      url: /gbt_html.html
+      output: web    
+    - title: CSS
+      url: /gbt_css.html
       output: web    
     - title: JavaScript
-      title_ru: Создание мобильных приложений
-      url: /news.html
+      url: /gbt_javascript.html
+      output: web    
+    - title: JQuery
+      url: /gbt_jquery.html
+      output: web    
+    - title: EmberJS
+      url: /gbt_emberjs.html
       output: web    
   - title: Backend
     title_ru: Серверная разработка
     output: web
     folderitems:
-    - title: Flexberry PLATFORM
+    - title: Backend fundamentals
       title_ru: Введение в серверную разработку
-      url: /fp_landing_page.html
+      url: /gbt_backend.html
       output: web
-    - title: Flexberry Designer
-      url: /fd_landing_page.html
+    - title: DBMS
+      title_ru: СУБД
+      url: /gbt_dbms.html
+      output: web
+    - title: SQL
+      url: /gbt_sql.html
+      output: web
+    - title: Microsoft SQL Server
+      url: /gbt_mssql.html
+      output: web
+    - title: PostgreSQL
+      url: /gbt_postgresql.html
+      output: web
+    - title: Microsoft .NET Framework
+      url: /gbt_dotnet.html
+      output: web
+    - title: C#
+      url: /gbt_csharp.html
+      output: web
+    - title: Mono
+      url: /gbt_mono.html
+      output: web
+    - title: ORM
+      url: /gbt_orm.html
       output: web
   - title: Mobile development
     title_ru: Мобильная разработка
     output: web
     folderitems:
-    - title: Flexberry PLATFORM
+    - title: Mobile development
       title_ru: Введение в мобильную разработку
-      url: /fp_landing_page.html
+      url: /gbt_mobile.html
       output: web
-    - title: Flexberry Designer
-      url: /fd_landing_page.html
+    - title: Android
+      url: /gbt_android.html
+      output: web
+    - title: iOS
+      url: /gbt_iOS.html
+      output: web
+    - title: Apache Cordova
+      url: /gbt_cordova.html
       output: web
   - title: GIS Development
     title_ru: Разработка ГИС
     output: web
     folderitems:
-    - title: Flexberry PLATFORM
+    - title: GIS development
       title_ru: Введение в ГИС-разработку
-      url: /fp_landing_page.html
-      output: web
-    - title: Flexberry Designer
-      url: /fd_landing_page.html
+      url: /gbt_gis.html
       output: web
   - title: Testing, debugging, performance
-    title_ru: Продукты
+    title_ru: Тестирование и отладка
     output: web
     folderitems:
-    - title: Flexberry PLATFORM
+    - title: Testing fundamentals
       title_ru: Введение в тестирование и отладку
-      url: /fp_landing_page.html
-      output: web
-    - title: Flexberry Designer
-      url: /fd_landing_page.html
+      url: /gbt_testing.html
       output: web
   - title: Team development
     title_ru: Командная разработка
     output: web
     folderitems:
-    - title: Flexberry PLATFORM
+    - title: Team development
       title_ru: Введение в командную разработку
-      url: /fp_landing_page.html
-      output: web
-    - title: Flexberry Designer
-      url: /fd_landing_page.html
+      url: /gbt_team-management.html
       output: web
   - title: Deployment, DevOps
     title_ru: Развёртывание и установка решений
@@ -97,8 +133,5 @@ entries:
     folderitems:
     - title: Flexberry PLATFORM
       title_ru: Введение в процесс развёртывания
-      url: /fp_landing_page.html
-      output: web
-    - title: Flexberry Designer
-      url: /fd_landing_page.html
+      url: /gbt_deployment.html
       output: web
