@@ -9,40 +9,42 @@ lang: ru
 ---
 
 # Базовые технологии
+
 ## Состав курса
-* Проектирование ИС: методология, инструментарий
-** UML
-** ООП
-** Паттерны проектирования
+
+* [Проектирование ИС](gbt_information-system-design.html)
+  * UML
+  * ООП
+  * Паттерны проектирования
 * Клиентская разработка: JS, Ember, протоколы обмена данными: http, rest, odata; html, css, sass, less
-** JS
-** jQuery
-** EmberJS
+  * JS
+  * jQuery
+  * EmberJS
 * Серверная разработка
-** БД
-*** Теория баз данных
-*** SQL
-*** PostgreSQL
-*** Microsoft SQL Server
-** .NET
-*** C#
-*** LINQ
-*** WCF
-** ORM
+  * БД
+    * Теория баз данных
+    * SQL
+    * PostgreSQL
+    * Microsoft SQL Server
+  * .NET
+    * C#
+    * LINQ
+    * WCF
+  * ORM
 * Разработка мобильных приложений
-** Android
-** iOS
-** Cordova
+  * Android
+  * iOS
+  * Cordova
 * Разработка ГИС-систем
-** Leaflet
-** GeoServer
-** Яндекс.Карты, Google maps, 2GIS, OSM
+  * Leaflet
+  * GeoServer
+  * Яндекс.Карты, Google maps, 2GIS, OSM
 * Тестирование, отладка, вопросы производительности приложений
 * Организация работы команды разработчиков
-** TFS, git, планирование работ, MSF, Agile, Scrum, Kanban, Project и пр.
+  * TFS, git, планирование работ, MSF, Agile, Scrum, Kanban, Project и пр.
 * Deployment, DevOps
-** Разворачивание решений на Windows
-** Разворачивание решений на Linux
+  * Разворачивание решений на Windows
+  * Разворачивание решений на Linux
 
 ## Формат курса
 * Лекции (материалы, ссылки, презентация, видео)

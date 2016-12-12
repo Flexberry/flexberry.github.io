@@ -8,5 +8,8 @@ folder: base-tech
 lang: ru
 ---
 
-Базовые технологии.
-SQL
+# SQL
+
+## Упражнения и лабораторные
+
+* [Упражнения по SQL](http://sql-ex.ru/)
