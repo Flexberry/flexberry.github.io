@@ -51,3 +51,20 @@ lang: ru
 * Лабораторные работы (сторонние сервисы)
 * Примеры
 * Инсрументарий
+
+## Ресурсы с материалами, курсами, лекциями
+
+* [Курсы ИНТУИТ](http://www.intuit.ru/studies/courses?page=1)
+* [Microsoft Virtual Academy](https://mva.microsoft.com)
+* [SkillsWiki](http://skillswiki.net/)
+* [GeekBrains](https://geekbrains.ru/)
+* [Библиотека программиста](https://vk.com/proglib)
+* [Class Central](https://www.class-central.com/)
+* [Open Source Society University](https://github.com/open-source-society/computer-science)
+* [List of Computer Science courses with video lectures](https://github.com/Developer-Y/cs-video-courses)
+* [The Odin Project](http://www.theodinproject.com/)
+* [CodenameCRUD](http://codenamecrud.ru/)
+* [freeCodeCamp](https://www.freecodecamp.com/)
+* [Viking Code School](https://www.vikingcodeschool.com/)
+* [Code4Startup](https://code4startup.com/)
+* [Час кода](https://code.org/)
