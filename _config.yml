@@ -50,7 +50,7 @@ feedback_email: mail@flexberry.net
 # used as a contact email for the Feedback link in the top navigation bar
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 kramdown:
  input: GFM
  auto_ids: true
