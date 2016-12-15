@@ -12,3 +12,6 @@ lang: ru
 PostgreSQL
 
 ## Ресурсы с материалами, курсами, лекциями
+* [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL ( pgAdmin )](https://www.youtube.com/watch?v=ghTksCsFBcI)
+* []()
+* []()
