@@ -71,3 +71,8 @@ lang: ru
 * [Viking Code School](https://www.vikingcodeschool.com/)
 * [Code4Startup](https://code4startup.com/)
 * [Час кода](https://code.org/)
+
+## Вы можете
+
+* [Начать изучение курса](gbt_information-system-design.html)
+* [Перейти на страницу с описанием всех курсов](/)
