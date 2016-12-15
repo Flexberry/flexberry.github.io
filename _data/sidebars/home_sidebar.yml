@@ -78,12 +78,4 @@ entries:
     - title: App security and audit
       title_ru: Полномочия и аудит
       url: /news.html
-      output: web    
-    - title: Frontend fundamentals
-      title_ru: Основы frontend-разработки
-      url: /news.html
-      output: web    
-    - title: Backend fundamentals
-      title_ru: Основы backend-разработки
-      url: /news.html
-      output: web    
+      output: web
