@@ -37,6 +37,7 @@ PostgreSQL
 
 
 ### Руководства
+* [PostgreSQL для начинающих](https://postgrespro.ru/media/2016/07/14/PostgreSQL%20for%20Beginners%20v2i.pdf)
 * [PostgreSQL Tutorial](http://www.tutorialspoint.com/postgresql/)
 * []()
 * []()
