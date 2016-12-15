@@ -32,9 +32,10 @@ PostgreSQL
   * [Мониторинг работы](https://www.youtube.com/watch?v=Uhq_LSiHVIw&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC&index=15)
   * [Сопровождение PostgreSQL](https://www.youtube.com/watch?v=A--R5Q3bNNM&index=16&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
   * [Логическое резервирование](https://www.youtube.com/watch?v=LXC15K4pV0o&index=17&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
-  * [Физическое резервирование](https://www.youtube.com/watch?v=xWtuIwfdSH0&index=18&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
+  * [Физическое резервирование](https://www.youtube.com/watch?v=xWtuIwfdSH0&index=18&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)  
+* [DBA 2. «Администрирование PostgreSQL 9.5. Расширенный курс»](https://www.youtube.com/playlist?list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
+   * [ Архитектура PostgreSQL](https://www.youtube.com/watch?v=iODeKnTD1kA&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
    
-
 
 ### Руководства
 * [PostgreSQL для начинающих](https://postgrespro.ru/media/2016/07/14/PostgreSQL%20for%20Beginners%20v2i.pdf)
