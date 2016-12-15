@@ -8,51 +8,54 @@ folder: base-tech
 lang: ru
 ---
 
-# Базовые технологии
+## Описание
+Данный курс состоит из качественной подборки материалов по базовым технологиям, которые используюся в платформе Flexberry. Для успешного изучения платформы Flexberry предварительно рекомендуется ознакомится с данным курсом.
 
 ## Состав курса
 
 * [Проектирование ИС](gbt_information-system-design.html)
-  * UML
-  * ООП
-  * Паттерны проектирования
-* Клиентская разработка: JS, Ember, протоколы обмена данными: http, rest, odata; html, css, sass, less
-  * JS
-  * jQuery
-  * EmberJS
-* Серверная разработка
-  * БД
-    * Теория баз данных
-    * SQL
-    * PostgreSQL
-    * Microsoft SQL Server
-  * .NET
-    * C#
-    * LINQ
-    * WCF
-  * ORM
-* Разработка мобильных приложений
-  * Android
-  * iOS
-  * Cordova
-* Разработка ГИС-систем
-  * Leaflet
-  * GeoServer
-  * Яндекс.Карты, Google maps, 2GIS, OSM
-* Тестирование, отладка, вопросы производительности приложений
-* Организация работы команды разработчиков
-  * TFS, git, планирование работ, MSF, Agile, Scrum, Kanban, Project и пр.
-* Deployment, DevOps
-  * Разворачивание решений на Windows
-  * Разворачивание решений на Linux
+  * [Объектно-ориентированное программирование](gbt_uml.html)
+  * [Unified Modeling Language](gbt_ood.html)
+  * [Паттерны проектирования](gbt_design-patterns.html)
+* [Клиентская разработка](gbt_frontend.html)
+  * [HTML](gbt_html.html)
+  * [CSS](gbt_css.html)
+  * [JavaScript](gbt_javascript.html)
+  * [jQuery](gbt_jquery.html)
+  * [EmberJS](gbt_emberjs.html)
+* [Серверная разработка](gbt_backend.html)
+  * [Базы данных](gbt_dbms.html)
+    * [SQL](gbt_sql.html)
+    * [Microsoft SQL Server](gbt_mssql.html)
+    * [PostgreSQL](gbt_postgresql.html)
+  * [Microsoft .NET Framework](gbt_dotnet.html)
+    * [C#](gbt_csharp.html)
+  * [Mono](gbt_mono.html)
+  * [ORM](gbt_orm.html)
+* [Мобильная разработка](gbt_mobile.html)
+  * [Android](gbt_android.html)
+  * [iOS](gbt_ios.html)
+  * [Apache Cordova](gbt_cordova.html)
+* [Разработка ГИС-систем](gbt_gis.html)
+* [Тестирование, отладка, вопросы производительности приложений](gbt_testing.html)
+* [Командная разработка](gbt_team-management.html)
+* [Deployment, DevOps](gbt_deployment.html)
 
 ## Формат курса
-* Лекции (материалы, ссылки, презентация, видео)
-* Лабораторные работы (сторонние сервисы)
+
+Каждая тема содержит:
+
+* Ссылки на материалы для изучения: 
+  * Лекции, курсы, презентации, видео
+  * Рекомендованные книги
+* Программное обеспечение
+* Лабораторные работы и практические задания
 * Примеры
-* Инсрументарий
+* Возможности по сертификации
 
 ## Ресурсы с материалами, курсами, лекциями
+
+Ниже представлен перечень ресурсов, на которых вы можете найти курсы по различным направлениям. Некоторые ресурсы содержат курсы на русском языке, но большая часть - англоязычные. Также курсы могут быть как бесплатными, так и по подписке.
 
 * [Курсы ИНТУИТ](http://www.intuit.ru/studies/courses?page=1)
 * [Microsoft Virtual Academy](https://mva.microsoft.com)
