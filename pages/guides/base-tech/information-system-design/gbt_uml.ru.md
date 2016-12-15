@@ -8,11 +8,11 @@ folder: base-tech
 lang: ru
 ---
 
-# Краткое описание
+## Краткое описание
 
 UML (англ. Unified Modeling Language — унифицированный язык моделирования) — язык графического описания для объектного моделирования в области разработки программного обеспечения, моделирования бизнес-процессов, системного проектирования и отображения организационных структур.
 
-#  Основные ресурсы
+##  Основные ресурсы
 
 * [UML — Википедия](https://ru.wikipedia.org/wiki/UML)
 * [Стандарт UML - uml.org](http://uml.org)
@@ -20,27 +20,25 @@ UML (англ. Unified Modeling Language — унифицированный яз
 * [Курс "Введение в UML" - ИНТУИТ](http://www.intuit.ru/studies/courses/1007/229/info)
 * [Курс "Нотация и семантика языка UML" - ИНТУИТ](http://www.intuit.ru/studies/courses/32/32/info)
 
-# Презентация
+## Презентация
 
 <iframe src='https://onedrive.live.com/embed?cid=043A2F24ADFAA4FD&resid=43A2F24ADFAA4FD%21110&authkey=&em=2&wdAr=1.3333333333333332' width='610px' height='481px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
 
-# Программное обеспечение
+## Программное обеспечение
 
 * [Flexberry Designer](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryDesigner)
 * [Перечень UML-инструментов - Википедия](https://en.wikipedia.org/wiki/List_of_Unified_Modeling_Language_tools)
 
-# Книги
+## Книги
 
 * [Самоучитель UML](http://www.ozon.ru/context/detail/id/28266865/)
 * [UML Основы - Мартин Фаулер](http://www.ozon.ru/context/detail/id/2260613/)
 * [Применение UML и шаблонов проектирования - Крэг Ларман](http://www.ozon.ru/context/detail/id/3105480/)
 
-# Практические задания
+## Практические задания
 
 * [Методические пособия](http://www.twirpx.com/files/informatics/toom/ft.guideline/)
 * [Обсуждение практических заданий на форуме Сообщества Аналитиков - uml2.ru](http://www.uml2.ru/forum/index.php?board=3.0)
-
-## Варианты задач
 
 ### Вариант №1
 Имеется несколько складов. Для каждого склада известен владелец и название. На каждом складе хранятся товары.
