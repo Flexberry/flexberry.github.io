@@ -14,8 +14,8 @@ lang: ru
 ## Состав курса
 
 * [Проектирование ИС](gbt_information-system-design.html)
-  * [Объектно-ориентированное программирование](gbt_uml.html)
-  * [Unified Modeling Language](gbt_ood.html)
+  * [Объектно-ориентированное программирование](gbt_ood.html)
+  * [Unified Modeling Language](gbt_uml.html)
   * [Паттерны проектирования](gbt_design-patterns.html)
 * [Клиентская разработка](gbt_frontend.html)
   * [HTML](gbt_html.html)
@@ -75,4 +75,4 @@ lang: ru
 ## Вы можете
 
 * [Начать изучение курса](gbt_information-system-design.html)
-* [Перейти на страницу с описанием всех курсов](/)
+* [Перейти на страницу с описанием всех курсов](/ru/)
