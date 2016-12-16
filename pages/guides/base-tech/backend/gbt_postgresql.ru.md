@@ -14,7 +14,7 @@ lang: ru
 
 ### Видеокурсы
 
-* [DBA1. Администрирование PostgreSQL 9.4 - Тверь 16-18 декабря 2015](https://www.youtube.com/playlist?list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
+* DBA1. Администрирование PostgreSQL 9.4 - Тверь 16-18 декабря 2015 [Слайды](http://files.postgrespro.ru/departments/edu/www/dba1_student_guide.zip)
   * [О курсе](https://www.youtube.com/watch?v=h_GdEaF1Ymc&index=1&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC&t=8s)
   * [Введение в PostgreSQL](https://www.youtube.com/watch?v=e2K_-uoqvaM&index=2&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
   * [Архитектура PostgreSQL](https://www.youtube.com/watch?v=uha_uTmXslY&index=3&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
