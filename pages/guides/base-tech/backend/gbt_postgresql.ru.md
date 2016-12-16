@@ -15,7 +15,7 @@ PostgreSQL
 
 ### Видеокурсы
 
-* [DBA1. Администрирование PostgreSQL 9.4 | Тверь 16-18 декабря 2015](https://www.youtube.com/playlist?list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
+* [DBA1. Администрирование PostgreSQL 9.4 - Тверь 16-18 декабря 2015](https://www.youtube.com/playlist?list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
   * [О курсе](https://www.youtube.com/watch?v=h_GdEaF1Ymc&index=1&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC&t=8s)
   * [Введение в PostgreSQL](https://www.youtube.com/watch?v=e2K_-uoqvaM&index=2&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
   * [Архитектура PostgreSQL](https://www.youtube.com/watch?v=uha_uTmXslY&index=3&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC)
@@ -59,7 +59,7 @@ PostgreSQL
    * [Обновление сервера](https://www.youtube.com/watch?v=owh41kBr4-o&index=22&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
    * [Управление расширениями](https://www.youtube.com/watch?v=cRLLUr808Yk&index=23&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
    * [Внешние данные](https://www.youtube.com/watch?v=M-51f8YrRpQ&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=24)
-* [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL ( pgAdmin )](https://www.youtube.com/watch?v=ghTksCsFBcI)   
+* [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL (pgAdmin)](https://www.youtube.com/watch?v=ghTksCsFBcI)   
 
 ### Руководства
 
