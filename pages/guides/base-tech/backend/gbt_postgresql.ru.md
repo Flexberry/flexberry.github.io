@@ -80,13 +80,13 @@ PostgreSQL — СУБД с открытым исходным кодом, осн�
    * [Обновление сервера](https://www.youtube.com/watch?v=owh41kBr4-o&index=22&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
    * [Управление расширениями](https://www.youtube.com/watch?v=cRLLUr808Yk&index=23&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
    * [Внешние данные](https://www.youtube.com/watch?v=M-51f8YrRpQ&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=24)
-* [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL (pgAdmin)](https://www.youtube.com/watch?v=ghTksCsFBcI)
 * [Базы данных: PostgreSQL - Владимир Бородин ](https://www.youtube.com/watch?v=ejLzS6rVpkk&t=2324s)
+* [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL (pgAdmin)](https://www.youtube.com/watch?v=ghTksCsFBcI)
 
 ### Рекомендованные книги
 
-* [Документация по PostgreSQL 9.6.1 от компании PostgresPRO](http://files.postgrespro.ru/departments/edu/www/dba1_student_guide.zip)
 * [PostgreSQL для начинающих](https://postgrespro.ru/media/2016/07/14/PostgreSQL%20for%20Beginners%20v2i.pdf)
+* [Документация по PostgreSQL 9.6.1 от компании PostgresPRO](http://files.postgrespro.ru/departments/edu/www/dba1_student_guide.zip)
 * [PostgreSQL Tutorial](http://www.tutorialspoint.com/postgresql/)
 
 ## Программное обеспечение
