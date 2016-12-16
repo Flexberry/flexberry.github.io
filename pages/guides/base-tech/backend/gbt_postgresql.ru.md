@@ -8,10 +8,9 @@ folder: base-tech
 lang: ru
 ---
 
-Базовые технологии.
-PostgreSQL
+## Краткое описание
 
-## Ресурсы с материалами, курсами, лекциями
+## Лекции, курсы, презентации, видео
 
 ### Видеокурсы
 
@@ -61,7 +60,7 @@ PostgreSQL
    * [Внешние данные](https://www.youtube.com/watch?v=M-51f8YrRpQ&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=24)
 * [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL (pgAdmin)](https://www.youtube.com/watch?v=ghTksCsFBcI)   
 
-### Руководства
+### Рекомендованные книги
 
 * [PostgreSQL для начинающих](https://postgrespro.ru/media/2016/07/14/PostgreSQL%20for%20Beginners%20v2i.pdf)
 * [PostgreSQL Tutorial](http://www.tutorialspoint.com/postgresql/)
@@ -70,3 +69,16 @@ PostgreSQL
 * []()
 * []()
 * []()
+
+## Программное обеспечение
+
+
+## Лабораторные работы и практические задания
+
+## Возможности по сертификации
+
+## Перейти
+
+* [Microsoft .NET Framework](gbt_dotnet.html)
+* [Главная страница курса](gbt_landing-page.html)
+
