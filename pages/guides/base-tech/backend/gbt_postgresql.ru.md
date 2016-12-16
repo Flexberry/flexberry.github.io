@@ -62,9 +62,9 @@ lang: ru
 
 ### Рекомендованные книги
 
+* [Документация по PostgreSQL 9.6.1 от компании PostgresPRO](http://files.postgrespro.ru/departments/edu/www/dba1_student_guide.zip)
 * [PostgreSQL для начинающих](https://postgrespro.ru/media/2016/07/14/PostgreSQL%20for%20Beginners%20v2i.pdf)
 * [PostgreSQL Tutorial](http://www.tutorialspoint.com/postgresql/)
-* []()
 * []()
 * []()
 * []()
