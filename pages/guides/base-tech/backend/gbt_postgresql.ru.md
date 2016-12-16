@@ -77,6 +77,9 @@ lang: ru
 
 ## Возможности по сертификации
 
+* [Администрирование PostgreSQL 9.4. Базовый курс](http://academy.ru/catalog/postgresql/DBA1.html)
+* [Администрирование PostgreSQL 9.5. Расширенный курс](http://academy.ru/catalog/postgresql/DBA2.html)
+
 ## Перейти
 
 * [Microsoft .NET Framework](gbt_dotnet.html)
