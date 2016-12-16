@@ -56,5 +56,5 @@ lang: ru
 
 ## Перейти
 
-* [Объектно-ориентированное программирование](gbt_ood.html)
+* [UML](gbt_uml.html)
 * [Главная страница курса](gbt_landing-page.html)
