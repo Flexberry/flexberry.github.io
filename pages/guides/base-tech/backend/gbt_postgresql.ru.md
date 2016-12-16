@@ -80,7 +80,8 @@ PostgreSQL — СУБД с открытым исходным кодом, осн�
    * [Обновление сервера](https://www.youtube.com/watch?v=owh41kBr4-o&index=22&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
    * [Управление расширениями](https://www.youtube.com/watch?v=cRLLUr808Yk&index=23&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH)
    * [Внешние данные](https://www.youtube.com/watch?v=M-51f8YrRpQ&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=24)
-* [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL (pgAdmin)](https://www.youtube.com/watch?v=ghTksCsFBcI)   
+* [Beginners PostgreSQL database Tutorial 1 - Installing and Setting up PostgreSQL (pgAdmin)](https://www.youtube.com/watch?v=ghTksCsFBcI)
+* [Базы данных: PostgreSQL - Владимир Бородин ](https://www.youtube.com/watch?v=ejLzS6rVpkk&t=2324s)
 
 ### Рекомендованные книги
 
