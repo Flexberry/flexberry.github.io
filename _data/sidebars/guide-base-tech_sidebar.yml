@@ -135,3 +135,7 @@ entries:
       title_ru: Введение в процесс развёртывания
       url: /gbt_deployment.html
       output: web
+    - title: Deployment on Windows
+      title_ru: Развёртывание решений в Windows
+      url: /gbt_deployment_windows.html
+      output: web
