@@ -7,3 +7,5 @@ permalink: ru/gbt_deployment_docker.html
 folder: base-tech/deployment
 lang: ru
 ---
+## Перейти
+* [Главная страница курса](gbt_landing-page.html)
