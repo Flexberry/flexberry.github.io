@@ -1,5 +1,5 @@
 ---
-title: Разворачивание решений в Windows
+title: Разворачивание решений в Linux
 keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
