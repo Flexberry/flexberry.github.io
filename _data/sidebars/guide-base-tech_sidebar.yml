@@ -139,3 +139,11 @@ entries:
       title_ru: Развёртывание решений в Windows
       url: /gbt_deployment_windows.html
       output: web
+    - title: Deployment on Linux
+      title_ru: Развёртывание решений в Linux
+      url: /gbt_deployment_linux.html
+      output: web
+    - title: Deployment on Docker
+      title_ru: Развёртывание решений в контейнерах Docker
+      url: /gbt_deployment_docker.html
+      output: web
