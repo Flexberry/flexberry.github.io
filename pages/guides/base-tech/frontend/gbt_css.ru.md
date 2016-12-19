@@ -68,7 +68,7 @@ lang: ru
 * [Все про Sass и Compass - uWebDesign](https://www.youtube.com/playlist?list=PLZfRjCZl2NuQr8v2_DV8ZX6a03gntn7yU)
 
 ### Дополнительно
-* [Школа разработки интерфейсов. Моска - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_msk-2013/)
+* [Школа разработки интерфейсов. Москва - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_msk-2013/)
 * [Школа разработки интерфейсов. Екатеринбург - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_ekb-2013/)
 * [Школа разработки интерфейсов. Симферополь - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_simf-2013/)
 

@@ -59,7 +59,7 @@ lang: ru
 * [Видеокурс по HTML5 и CSS3 - ITVDN](https://www.youtube.com/playlist?list=PLvItDmb0sZw9cJossgyJepu6N9hybEjKU)
 
 ### Дополнительно
-* [Школа разработки интерфейсов. Моска - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_msk-2013/)
+* [Школа разработки интерфейсов. Москва - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_msk-2013/)
 * [Школа разработки интерфейсов. Екатеринбург - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_ekb-2013/)
 * [Школа разработки интерфейсов. Симферополь - Академия Яндекса](https://academy.yandex.ru/events/frontend/shri_simf-2013/)
 
