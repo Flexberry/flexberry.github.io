@@ -59,5 +59,5 @@ lang: ru
 * [-]()
 
 ## Перейти
-
+* [Разворачивание решений в Windows](gbt_deployment_windows.html)
 * [Главная страница курса](gbt_landing-page.html)
