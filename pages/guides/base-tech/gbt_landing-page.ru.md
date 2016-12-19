@@ -39,7 +39,7 @@ lang: ru
 * [Разработка ГИС-систем](gbt_gis.html)
 * [Тестирование, отладка, вопросы производительности приложений](gbt_testing.html)
 * [Командная разработка](gbt_team-management.html)
-* [Deployment, DevOps](gbt_deployment.html)
+* [Разворачивание и установка решений](gbt_deployment.html)
 
 ## Формат курса
 
