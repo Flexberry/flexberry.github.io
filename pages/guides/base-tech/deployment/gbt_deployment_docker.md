@@ -1,5 +1,5 @@
 ---
-title: Разворачивание решений в Windows
+title: Разворачивание решений в контейнерах Docker
 keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
