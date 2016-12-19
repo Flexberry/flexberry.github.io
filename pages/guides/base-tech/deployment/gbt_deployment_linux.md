@@ -14,7 +14,7 @@ lang: ru
 
 * Сертифицированные
   * [Альт Линукс СПТ 6.0](http://www.altlinux.ru/products/altlinux-spt-fstec/) 
-  * [[Альт Линукс СПТ 7.0](http://ftp.altlinux.ru/pub/distributions/ALTLinux/c7/)
+  * [Альт Линукс СПТ 7.0](https://www.basealt.ru/products/alt-spt/)
   * [Astra Linux Special Edition релиз "Смоленск"](http://astralinux.com/smolensk.html)
 * Несертифицированные
   * [Альт Линукс 7-й платформы](http://www.altlinux.ru/products/7th-platform/centaurus/)
@@ -28,6 +28,8 @@ lang: ru
 ## Ссылки на материалы для изучения
 
 ### Лекции, курсы, презентации, видео
+* [Обучающие курсы и семинары для IT-специалистов](https://www.basealt.ru/courses/training/)
+* [Обзор ALT Linux 7](https://www.youtube.com/watch?v=uQrwD-OR-V4)
 
 
 ### Рекомендованные книги
@@ -37,6 +39,8 @@ lang: ru
 ## Лабораторные работы и практические задания
 
 ## Возможности по сертификации
+* [Сертификация специалистов ALTLinux](http://www.altlinux.ru/partners/certified-specialist/)
+* [Сертифицированный Центр компетенции по обучению Astra Linux](http://www.astralinux.com/uchebnyi/centr-obucheniya.html)
 
 
 
