@@ -50,7 +50,11 @@ entries:
     - title: JQuery
       url: /gbt_jquery.html
       output: web    
-    - title: EmberJS
+    - title: Layout
+      title_ru: Верстка
+      url: /gbt_layout.html
+      output: web    
+    - title: Ember.js
       url: /gbt_emberjs.html
       output: web    
   - title: Backend

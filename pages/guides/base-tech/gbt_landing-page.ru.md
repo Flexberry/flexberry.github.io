@@ -22,6 +22,7 @@ lang: ru
   * [CSS](gbt_css.html)
   * [JavaScript](gbt_javascript.html)
   * [jQuery](gbt_jquery.html)
+  * [Верстка](gbt_layout.html)
   * [EmberJS](gbt_emberjs.html)
 * [Серверная разработка](gbt_backend.html)
   * [Базы данных](gbt_dbms.html)

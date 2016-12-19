@@ -1,10 +1,10 @@
 ---
-title: JQuery
+title: Клиентская разработка
 keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
-permalink: ru/gbt_jquery.html
-folder: base-tech
+permalink: ru/gbt_layout.html
+folder: base-tech/frontend
 lang: ru
 ---
 
@@ -56,5 +56,5 @@ lang: ru
 
 ## Перейти
 
-* [Верстка](gbt_layout.html)
+* [Ember.js](gbt_emberjs.html)
 * [Главная страница курса](gbt_landing-page.html)
