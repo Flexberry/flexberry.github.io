@@ -1,4 +1,3 @@
-
 ---
 title: Разворачивание решений в Windows
 keywords: Programming
