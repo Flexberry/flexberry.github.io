@@ -30,9 +30,14 @@ lang: ru
 ### Лекции, курсы, презентации, видео
 * [Обучающие курсы и семинары для IT-специалистов](https://www.basealt.ru/courses/training/)
 * [Обзор ALT Linux 7](https://www.youtube.com/watch?v=uQrwD-OR-V4)
-
+* [Linux - Установка Ubuntu рядом с Windows. (BIOS+MBR) ](https://www.youtube.com/watch?annotation_id=annotation_3417824783&feature=iv&src_vid=nGfkdBR2VVo&v=OmMkAGuZxCE)
 
 ### Рекомендованные книги
+
+* [ALT Linux снаружи. ALT Linux изнутри](http://www.altlinux.ru/products/books/inside-outside/)
+* [Linux: Полное руководство / Д.Н. Колисниченко, Питер В. Аллен (PDF)](http://www.softlabirint.ru/book/18371-linux-polnoe-rukovodstvo-dn-kolisnichenko-piter-v-allen-pdf.html)
+* [Даниэл Дж. Баррет - Linux основные команды карманный справочник](http://www.proklondike.com/books/linux/barret-linux-osnovnye-komandy.html)
+* [Лучшие книги о Linux](https://losst.ru/luchshie-knigi-o-linux)
 
 ## Программное обеспечение
 
