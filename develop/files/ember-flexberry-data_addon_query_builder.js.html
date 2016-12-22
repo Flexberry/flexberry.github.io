@@ -394,6 +394,7 @@ export default class Builder extends BaseBuilder {
     }
 
     this._store = store;
+    this._localStore = Ember.getOwner(store).lookup(&#x27;store:local&#x27;);
     this._modelName = modelName;
 
     this._id = null;
@@ -545,6 +546,7 @@ export default class Builder extends BaseBuilder {
 
     let tree;
     let model = this._store.modelFor(this._modelName);
+    let isOfflineMode = this._store.offlineModels &amp;&amp; this._store.offlineModels[this._modelName];
 
     if (this._projectionName) {
       let projection = model.projections.get(this._projectionName);
@@ -552,9 +554,9 @@ export default class Builder extends BaseBuilder {
         throw new Error(&#x60;Projection ${this._projectionName} for model ${this._modelName} is not specified&#x60;);
       }
 
-      tree = this._getQueryTreeByProjection(projection, model, this._modelName);
+      tree = this._getQueryTreeByProjection(projection, model, this._modelName, undefined, isOfflineMode);
     } else {
-      tree = this._getQueryBySelect(this._select, model, this._modelName);
+      tree = this._getQueryBySelect(this._select, model, this._modelName, isOfflineMode);
     }
 
     // Merge, don&#x27;t replace.
@@ -566,7 +568,7 @@ export default class Builder extends BaseBuilder {
     let primaryKeyName = tree.primaryKeyName;
 
     let extendProperties = this._getExtendedProjection(model);
-    let extendTree = this._getQueryBySelect(extendProperties, model, this._modelName);
+    let extendTree = this._getQueryBySelect(extendProperties, model, this._modelName, isOfflineMode);
 
     return new QueryObject(
       this._modelName,
@@ -584,8 +586,9 @@ export default class Builder extends BaseBuilder {
     );
   }
 
-  _getQueryBySelect(select, model, modelName) {
-    let primaryKeyNameFromSerializer = this._store.serializerFor(modelName).get(&#x27;primaryKey&#x27;);
+  _getQueryBySelect(select, model, modelName, isOfflineMode) {
+    let primaryKeyNameFromSerializer = isOfflineMode ? this._localStore.serializerFor(modelName).get(&#x27;primaryKey&#x27;) :
+      this._store.serializerFor(modelName).get(&#x27;primaryKey&#x27;);
     let primaryKeyName = primaryKeyNameFromSerializer ? primaryKeyNameFromSerializer : &#x27;id&#x27;;
     let result = {
       select: [&#x27;id&#x27;],
@@ -597,13 +600,13 @@ export default class Builder extends BaseBuilder {
     let selectPropertieslength = selectProperties.length;
 
     for (let i = 0; i &lt; selectPropertieslength; i++) {
-      this._buildQueryForProperty(result, selectProperties[i], model, modelName);
+      this._buildQueryForProperty(result, selectProperties[i], model, modelName, isOfflineMode);
     }
 
     return result;
   }
 
-  _buildQueryForProperty(data, property, model, modelName) {
+  _buildQueryForProperty(data, property, model, modelName, isOfflineMode) {
     let pathItems = Information.parseAttributePath(property);
     let relationshipsByName = Ember.get(model, &#x27;relationshipsByName&#x27;);
 
@@ -635,7 +638,8 @@ export default class Builder extends BaseBuilder {
           type: relationship.kind
         };
 
-        let primaryKeyNameFromSerializer = this._store.serializerFor(ralatedModelName).get(&#x27;primaryKey&#x27;);
+        let primaryKeyNameFromSerializer = isOfflineMode ? this._localStore.serializerFor(modelName).get(&#x27;primaryKey&#x27;) :
+          this._store.serializerFor(modelName).get(&#x27;primaryKey&#x27;);
         let primaryKeyName = primaryKeyNameFromSerializer ? primaryKeyNameFromSerializer : &#x27;id&#x27;;
         data.expand[key] = {
           select: [&#x27;id&#x27;],
@@ -646,12 +650,13 @@ export default class Builder extends BaseBuilder {
         };
       }
 
-      this._buildQueryForProperty(data.expand[key], pathItems.join(&#x27;.&#x27;), relatedModel, ralatedModelName);
+      this._buildQueryForProperty(data.expand[key], pathItems.join(&#x27;.&#x27;), relatedModel, ralatedModelName, isOfflineMode);
     }
   }
 
-  _getQueryTreeByProjection(projection, model, modelName, relationshipProps) {
-    let primaryKeyNameFromSerializer = this._store.serializerFor(modelName).get(&#x27;primaryKey&#x27;);
+  _getQueryTreeByProjection(projection, model, modelName, relationshipProps, isOfflineMode) {
+    let primaryKeyNameFromSerializer = isOfflineMode ? this._localStore.serializerFor(modelName).get(&#x27;primaryKey&#x27;) :
+      this._store.serializerFor(modelName).get(&#x27;primaryKey&#x27;);
     let primaryKeyName = primaryKeyNameFromSerializer ? primaryKeyNameFromSerializer : &#x27;id&#x27;;
     let tree = {
       select: [&#x27;id&#x27;],
@@ -684,7 +689,7 @@ export default class Builder extends BaseBuilder {
               type: attr.kind
             };
             tree.select.push(attrName);
-            tree.expand[attrName] = this._getQueryTreeByProjection(attr, relatedModel, ralatedModelName, relationshipProps);
+            tree.expand[attrName] = this._getQueryTreeByProjection(attr, relatedModel, ralatedModelName, relationshipProps, isOfflineMode);
             break;
 
           default:

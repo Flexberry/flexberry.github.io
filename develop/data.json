@@ -9367,7 +9367,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 46,
+            "line": 47,
             "description": "Sets the id of the requested entity.",
             "itemtype": "method",
             "name": "byId",
@@ -9391,7 +9391,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 60,
+            "line": 61,
             "description": "Sets the name of the requested entity.",
             "itemtype": "method",
             "name": "from",
@@ -9415,7 +9415,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 74,
+            "line": 75,
             "itemtype": "method",
             "name": "where",
             "params": [
@@ -9438,7 +9438,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 87,
+            "line": 88,
             "itemtype": "method",
             "name": "orderBy",
             "params": [
@@ -9461,7 +9461,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 104,
+            "line": 105,
             "itemtype": "method",
             "name": "top",
             "params": [
@@ -9484,7 +9484,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 117,
+            "line": 118,
             "itemtype": "method",
             "name": "skip",
             "params": [
@@ -9507,7 +9507,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 130,
+            "line": 131,
             "itemtype": "method",
             "name": "count",
             "return": {
@@ -9523,7 +9523,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 142,
+            "line": 143,
             "description": "Adds attributes for selection.\nAutomatically checks duplications.",
             "itemtype": "method",
             "name": "select",
@@ -9547,7 +9547,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 157,
+            "line": 158,
             "description": "Adds attributes for selection from specified projection.\nMerges attributes with added using `select`.",
             "itemtype": "method",
             "name": "selectByProjection",
@@ -9571,7 +9571,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 172,
+            "line": 173,
             "description": "Builds query instance using all provided data.",
             "itemtype": "method",
             "name": "build",
