@@ -77,24 +77,31 @@ CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](htt
 ### Описание установки в дистрибутивах семейства ALTLinux
 
 В пользователе в правами root наберите команду:
+
 ```sh
 # apt-get update
 # apt-get install apache2
 ```
+
 Ответьте Y на запрос об установке зависимых пакетов.
 После установки пакета apache2 и зависимых пакетов наберите для автоматического старта сервра Apache :
 * для серверных дистрибутивов с системным менеджером SysV:
+
 ```sh
 # chkconfig --add httpd2
 # chkconfig --level 2345 httpd2 on
 # service apache2 start
 ```
+
 * для серверных и десктопных дистрибутивов с системным менеджером Systemd:
+
 ```sh
 # systemctl enable apache2
 # systemctl start apache2
 ```
+
 По умолчанию сервер apache при ображение на порт 80 по адресу http://localhost/ отображает контент, расположенный в каталоге /var/www/html/. Если Вы планируете поддерживать несколько виртуальных хостов, то Вы можете их сконфигурировать в файле /etc/httpd2/conf/sites-available/vhosts.conf. 
+
 Сервер apache2 поддерживает виртуалтзацию хостов по 
 * [портам](https://httpd.apache.org/docs/2.4/vhosts/examples.html#port)
 * [доменам](https://httpd.apache.org/docs/2.4/vhosts/examples.html#purename)
@@ -104,6 +111,7 @@ CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](htt
 Код виртуальных хостов, как правило, размещается в подкаталогах каталога /var/www/vhosts/.
 
 После описание виртуальных хостов необходимо активировать их и перегрузить сервер:
+
 ```sh
 # a2ensite vhosts
 # service apache2 restart
