@@ -31,16 +31,16 @@ lang: ru
   
 ## Установка и настройки ОС Linux
 
-Для установки и настройки Linux Вам необходимо выбрать дистрибутив, скачать его образ, записать его на физический носитель (flesh-карту или CD/DVD) и воспользовавшись интсрукцией установить его на физический раздел диска или в виртуальную машину HyperV, VirtualBox, VMWare, ... В таблице приведен список дистрибутивов, ссылки на страницы загрузки образа, инструкции по установке и текст лицензии.
+Для установки и настройки Linux Вам необходимо выбрать дистрибутив, скачать его образ, записать его на физический носитель (flesh-карту или CD/DVD) и воспользовавшись интсрукцией установить его на физический раздел диска или в виртуальную машину HyperV, VirtualBox, VMWare, ... В таблице приведен список дистрибутивов, ссылки на страницы загрузки образа, инструкции по записи образа на носитель, установке дистрибутива и текст лицензии.
 
-Дистрибутив | Скачать | Инструкция | Лицензия
-------------|---------|------------|---------
-ALTLinux P7 | [Скачать](http://www.altlinux.ru/products/7th-platform/kdesktop/) | [Инструкция](https://docs.altlinux.org/ru-RU/kdesktop/7.0.5/html-single/kdesktop/index.html) | [Лицензия](http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license)
-BaseALT P8 | [Скачать]() | [Инструкция]() | [Лицензия]() 
-ROSA Fresh | [Скачать]() | [Инструкция]() | [Лицензия]() 
-Astra Linux Common Edition | [Скачать]() | [Инструкция]() | [Лицензия]() 
-Ubuntu | [Скачать]() | [Инструкция]() | [Лицензия]() 
-CentOS | [Скачать]() | [Инструкция]() | [Лицензия]() 
+Дистрибутив | Скачать | Запись | Установка | Лицензия
+------------|---------|--------|-----------|---------
+ALTLinux P7 | [Скачать](http://www.altlinux.ru/products/7th-platform/kdesktop/)| [Запись]() | [Установка](https://docs.altlinux.org/ru-RU/kdesktop/7.0.5/html-single/kdesktop/index.html) | [Лицензия](http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license)
+BaseALT P8 | [Скачать](https://www.basealt.ru/products/alt-workstation/) | [Запись]() | [Установка](http://basealt.ru/static/Basealt_Desktop_Установка.pdf) | [Лицензия](https://www.basealt.ru/products/alt-workstation/license/) 
+ROSA Fresh | [Скачать](http://mirror.yandex.ru/rosa/rosa2014.1/iso/ROSA.Fresh.R8/) | [Запись]() | [Установка]() | [Лицензия]() 
+Astra Linux Common Edition | [Скачать]() | [Запись]() | [Установка]() | [Лицензия]() 
+Ubuntu | [Скачать]() | [Запись]() | [Установка]() | [Лицензия]() 
+CentOS | [Скачать]() | [Запись]() | [Установка]() | [Лицензия]() 
 
 
 Для записи носителя Вы можете руководствоваться [инструкцией от дистрибутива ALTLinux](https://www.altlinux.org/Write). 
