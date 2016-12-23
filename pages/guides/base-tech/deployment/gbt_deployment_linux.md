@@ -83,7 +83,13 @@ CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](htt
 
 ### Ссылки на материалы для изучения
 
+* Дистрибутив Ubuntu [Apache HTTP Server](http://help.ubuntu.ru/wiki/apache2)
+* Дистрибутив РОСА: [Установка Apache, PHP, MySQL ](http://wiki.rosalab.ru/ru/index.php/Установка_Apache,_PHP,_MySQL)
+* Дистрибутив CentOS [Установка и настройка Apache, PHP, MySQL на CentOS](https://unixhost.pro/clientarea/knowledgebase/12/Ustanovka-i-nastrojka-Apache-PHP-MySQL-na-CentOS.html)
+
 #### Лекции, курсы, презентации, видео
+
+
 
 #### Рекомендованные книги
 
