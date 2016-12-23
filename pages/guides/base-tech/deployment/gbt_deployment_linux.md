@@ -20,8 +20,8 @@ lang: ru
 * Несертифицированные
   * [Альт Линукс 7-й платформы](http://www.altlinux.ru/products/7th-platform/centaurus/)
   * [Альт Линукс 8-й платформы](https://www.basealt.ru/products/alt-server/)
-  * [Astra Linux Common Edition](http://www.astra-linux.com/products/module-positions.html)
   * [ROSA Fresh](https://www.rosalinux.ru/rosa-fresh/)
+  * [Astra Linux Common Edition](http://www.astra-linux.com/products/module-positions.html)
   * [Ubuntu](http://ubuntu.ru/)
   * [CentOS](https://www.centos.org/)
   * ...
@@ -35,7 +35,12 @@ lang: ru
 
 Дистрибутив | Скачать | Инструкция | Лицензия
 ------------|---------|------------|---------
-ALTLinux P7 | [Скачать](http://www.altlinux.ru/products/7th-platform/kdesktop/) | | [Лицензия](http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license)
+ALTLinux P7 | [Скачать](http://www.altlinux.ru/products/7th-platform/kdesktop/) | [Инструкция](https://docs.altlinux.org/ru-RU/kdesktop/7.0.5/html-single/kdesktop/index.html) | [Лицензия](http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license)
+BaseALT P8 | [Скачать]() | [Инструкция]() | [Лицензия]() 
+ROSA Fresh | [Скачать]() | [Инструкция]() | [Лицензия]() 
+Astra Linux Common Edition | [Скачать]() | [Инструкция]() | [Лицензия]() 
+Ubuntu | [Скачать]() | [Инструкция]() | [Лицензия]() 
+CentOS | [Скачать]() | [Инструкция]() | [Лицензия]() 
 
 
 Для записи носителя Вы можете руководствоваться [инструкцией от дистрибутива ALTLinux](https://www.altlinux.org/Write). 
