@@ -34,7 +34,8 @@ lang: ru
 Для установки и настройки Linux Вам необходимо выбрать дистрибутив, скачать его образ, записать его на физический носитель (flesh-карту или CD/DVD) и воспользовавшись интсрукцией установить его на физический раздел диска или в виртуальную машину HyperV, VirtualBox, VMWare, ... В таблице приведен список дистрибутивов, ссылки на страницы загрузки образа, инструкции по установке и текст лицензии.
 
 Дистрибутив | Скачать | Инструкция | Лицензия
-ALTLinux P7 | http://www.altlinux.ru/products/7th-platform/kdesktop/ | | http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license
+------------|---------|------------|---------
+ALTLinux P7 | [Скачать](http://www.altlinux.ru/products/7th-platform/kdesktop/) | | [Лицензия](http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license)
 
 
 Для записи носителя Вы можете руководствоваться [инструкцией от дистрибутива ALTLinux](https://www.altlinux.org/Write). 
