@@ -103,6 +103,7 @@ CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](htt
 По умолчанию сервер apache при ображение на порт 80 по адресу http://localhost/ отображает контент, расположенный в каталоге /var/www/html/. Если Вы планируете поддерживать несколько виртуальных хостов, то Вы можете их сконфигурировать в файле /etc/httpd2/conf/sites-available/vhosts.conf. 
 
 Сервер apache2 поддерживает виртуалтзацию хостов по 
+
 * [портам](https://httpd.apache.org/docs/2.4/vhosts/examples.html#port)
 * [доменам](https://httpd.apache.org/docs/2.4/vhosts/examples.html#purename)
 * [IP-адресам](https://httpd.apache.org/docs/2.4/vhosts/examples.html#twoips)
