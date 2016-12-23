@@ -77,7 +77,28 @@ CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](htt
 
 ## Установка и настройка WEB-сервера apache2
 
-### Описание
+### Описание установки в дистрибутивах семейства ALTLinux
+
+В пользователе в правами root наберите команду:
+```sh
+# apt-get update
+# apt-get install apache2
+```
+Ответьте Y на запрос об установке зависимых пакетов.
+После установки пакета apache2 и зависимых пакетов наберите для автоматического старта сервра Apache :
+* для серверных дистрибутивов с системным менеджером SysV:
+```sh
+# chkconfig --add httpd2
+# chkconfig --level 2345 httpd2 on
+# service apache2 start
+```
+* для серверных и десктопных дистрибутивов с системным менеджером Systems:
+```sh
+# systemctl enable apache2
+# systemctl start apache2
+```
+
+
 
 ### Проверка работосособности
 
