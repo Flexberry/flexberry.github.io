@@ -35,15 +35,14 @@ lang: ru
 
 Дистрибутив | Скачать | Запись | Установка | Лицензия
 ------------|---------|--------|-----------|---------
-ALTLinux P7 | [Скачать](http://www.altlinux.ru/products/7th-platform/kdesktop/)| [Запись]() | [Установка](https://docs.altlinux.org/ru-RU/kdesktop/7.0.5/html-single/kdesktop/index.html) | [Лицензия](http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license)
-BaseALT P8 | [Скачать](https://www.basealt.ru/products/alt-workstation/) | [Запись]() | [Установка](http://basealt.ru/static/Basealt_Desktop_Установка.pdf) | [Лицензия](https://www.basealt.ru/products/alt-workstation/license/) 
-ROSA Fresh | [Скачать](http://mirror.yandex.ru/rosa/rosa2014.1/iso/ROSA.Fresh.R8/) | [Запись]() | [Установка]() | [Лицензия]() 
-Astra Linux Common Edition | [Скачать]() | [Запись]() | [Установка]() | [Лицензия]() 
-Ubuntu | [Скачать]() | [Запись]() | [Установка]() | [Лицензия]() 
-CentOS | [Скачать]() | [Запись]() | [Установка]() | [Лицензия]() 
+ALTLinux P7 | [Скачать](http://www.altlinux.ru/products/7th-platform/kdesktop/)| [Запись](https://www.altlinux.org/Write) | [Установка](https://docs.altlinux.org/ru-RU/kdesktop/7.0.5/html-single/kdesktop/index.html) | [Лицензия](http://www.altlinux.ru/products/7th-platform/kdesktop/kdesktop-license)
+BaseALT P8 | [Скачать](https://www.basealt.ru/products/alt-workstation/) | [Запись](https://www.altlinux.org/Write) | [Установка](http://basealt.ru/static/Basealt_Desktop_Установка.pdf) | [Лицензия](https://www.basealt.ru/products/alt-workstation/license/) 
+ROSA Fresh | [Скачать](http://mirror.yandex.ru/rosa/rosa2014.1/iso/ROSA.Fresh.R8/) | [Запись](http://wiki.rosalab.ru/ru/index.php/Установка_ROSA_Desktop) | [Установка](http://smotrisoft.ru/ustanovka-rosa-desktop-fresh/) | [Лицензия GPL](https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v2) 
+Astra Linux Common Edition | [Скачать](http://astralinux.com/download-ce.html) | [Запись]("http://astralinux.com//images/doc/AstraLinuxCE_install.pdf) | [Установка](http://astralinux.com/doc.html) | [Лицензия](http://astralinux.com/litsenzionnoe-soglashenie.html) 
+Ubuntu | [Скачать](http://ubuntu.ru/get) | [Запись](http://help.ubuntu.ru/wiki/руководство_по_ubuntu_desktop_14_04/получение_ubuntu) | [Установка](http://help.ubuntu.ru/wiki/руководство_по_ubuntu_desktop_14_04/введение) | [Лицензия GPL]((https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v2) 
+CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](http://serveradmin.ru/ustanovka-centos-7/) | [Установка](http://serveradmin.ru/ustanovka-centos-7/) | [Лицензия GPL и другие](https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v2) 
 
-
-Для записи носителя Вы можете руководствоваться [инструкцией от дистрибутива ALTLinux](https://www.altlinux.org/Write). 
+Обратите внимание, что для дистрибутивов с лицензией [GNU GPL]((https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v2) (ROSA Frash, Ubuntu, CentOS)  при их применении в гос. учреждениях и на предприятиях Российской Федерации необходима лицензия на поддержку дистрибутива и их применение может быть огранично, так как они не входят в  [Единый реестр российских программ и баз данных](https://reestr.minsvyaz.ru/reestr/?sort_by=date&sort=asc&class[]=54112&name=&owner_status=&owner_name=&set_filter=Y).
 
 
 ### Краткое описание
