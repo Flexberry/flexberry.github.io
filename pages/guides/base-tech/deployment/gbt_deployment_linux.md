@@ -43,7 +43,11 @@ Astra Linux Common Edition | [Скачать](http://astralinux.com/download-ce.
 Ubuntu | [Скачать](http://ubuntu.ru/get) | [Запись](http://help.ubuntu.ru/wiki/руководство_по_ubuntu_desktop_14_04/получение_ubuntu) | [Установка](http://help.ubuntu.ru/wiki/руководство_по_ubuntu_desktop_14_04/введение) | [Лицензия GPL](https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v2) 
 CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](http://serveradmin.ru/ustanovka-centos-7/) | [Установка](http://serveradmin.ru/ustanovka-centos-7/) | [Лицензия GPL и другие](https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v2) 
 
+Применение всех перечисленных дистрибутивов 
+
 Обратите внимание, что для дистрибутивов с лицензией [GNU GPL](https://ru.wikipedia.org/wiki/GNU_General_Public_License#GPL_v2) (ROSA Frash, Ubuntu, CentOS, ...)  при их применении в гос. учреждениях и на предприятиях Российской Федерации необходима лицензия на поддержку дистрибутива и их применение может быть огранично, так как они не входят в  [Единый реестр российских программ и баз данных](https://reestr.minsvyaz.ru/reestr/?sort_by=date&sort=asc&class[]=54112&name=&owner_status=&owner_name=&set_filter=Y).
+
+
 
 
 
