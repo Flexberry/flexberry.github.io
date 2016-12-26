@@ -219,8 +219,8 @@ b867bce38065: Pulling fs layer
 
 Проверьте его статус:
 
-```
- docker ps -a -f name=apache2Mono
+```sh
+# docker ps -a -f name=apache2Mono
 CONTAINER ID        IMAGE                                      COMMAND                  CREATED             STATUS              PORTS                          NAMES
 38c7e2a7a8aa        kafnevod/altlinux.p8-apache2-mono4.6.2.7   "/usr/sbin/httpd2 -D "   2 minutes ago       Up 2 minutes        80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
 ```
