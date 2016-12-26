@@ -123,7 +123,7 @@ docker exec -it apache2 bash
 
 Файл описания виртуальных сайтов apache2-сервера контейнера находится в файле /conf/vhosts.conf образа.
 Для запуска собственного виртуального сайта (например demo) Вы должны 
-* поместить деревов сайта в отдельный каталог (например /var/www/vhosts/demo/) HOST-системы;
+* поместить дерево сайта в отдельный каталог (например /var/www/vhosts/demo/) HOST-системы;
 Пусть это будет простая тестовая страница /var/www/vhosts/demo/index.html:
 
 ```
@@ -224,7 +224,55 @@ CONTAINER ID        IMAGE                                      COMMAND          
 
 ### Запуск собственного виртуального Mono/.NET сайта в рамках контейнера Apache-Mono
 
-Запуск собственного виртуального Mono/.NET сайта аналогичен запуску [виртуального сайта Apache2-сервера](#Запуск-собственного-виртуального-сайта-в-рамках-контейнера-apache).
+Запуск собственного виртуального Mono/.NET сайта аналогичен запуску [виртуального сайта Apache2-сервера](#Запуск-собственного-виртуального-сайта-в-рамках-контейнера-apache):
+* Поместите деревов сайта в отдельный каталог (например /var/www/vhosts/myMonoApp/) HOST-системы.
+* Скопируйте файл конфигурации виртуального хоста Mono-приложения из работающего контейнера:
+
+```
+docker cp apache2Mono:/conf/vhosts.conf /etc/docker/apache2/conf/vhosts.conf
+
+```
+
+* Допишите конфигурацию Вашего виртуального хоста в скопированный файл конфигурации /etc/docker/apache2/conf/vhosts.conf воспользовавшись шаблоном:
+
+```
+Listen 881
+NameVirtualHost *:881
+
+<VirtualHost *:881>
+  ServerName myMonoApp.local
+  MonoServerPath test.local "/usr/bin/mod-mono-server4"
+  MonoDebug myMonoApp.local true
+  MonoSetEnv myMonoApp.local MONO_IOMAP=all
+  MonoApplications myMonoApp.local "/:/var/www/vhosts/myMonoApp"
+  AddDefaultCharset utf-8
+  <Location "/">
+    Allow from all
+    Order allow,deny
+    MonoSetServerAlias myMonoApp
+    SetHandler mono
+    #SetOutputFilter DEFLATE
+  </Location>
+  ErrorLog /var/log/httpd2/myMonoApp_error_log
+  LogLevel debug
+  CustomLog /var/log/httpd2/myMonoApp_access_log common
+</VirtualHost>
+```
+
+Замените, если необходимо, порт 881 на номер порта по которому будет доступен Ваш сайт, указав в дальнейшем этот порт во флаге -p при запуске контейнера. Домен myMonoApp.local на Ваш домен приложения, имя myMonoApp на имя Вашего mono-приложения.
+
+Перезапустите контейнер :
+
+```sh
+# docker rm -f apache2Mono
+# docker run -d \
+  -p 880:880 \
+  -p 881:881 \
+  --name=apache2MonoVirt \
+  -v /etc/docker/apache2/conf/:/conf/ \
+  -v /var/www/vhosts/:/var/www/vhosts/ \
+  kafnevod/altlinux.p8-apache2-mono4.6.2.7
+```
 
 
 
