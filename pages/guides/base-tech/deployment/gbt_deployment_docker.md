@@ -130,18 +130,58 @@ docker exec -it apache2 bash
 <html>
   <head>
   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-  <title>Тестовая страница для проверки работоспособности виртуального хоста в контейнере kafnevod/altlinux.p8-apache2</title>
+  <title>Тестовая demo-страница для проверки работоспособности виртуального хоста в контейнере kafnevod/altlinux.p8-apache2</title>
   </head>
   <body>
-    <b><i>Виртуальный хост контейнера kafnevod/altlinux.p8-apache2 работает!</i></b>
+    <b><i>Виртуальный хост demo.local контейнера kafnevod/altlinux.p8-apache2 работает!</i></b>
   </body>
 </html>
 ```
 
 * опишите конфигурацию этого виртуального хоста в файле конфигурации vhosts.conf отдельного каталога. Например /etc/docker/apache2/conf/vhosts.conf:
+
 ```
+NameVirtualHost *:80
+<VirtualHost *:80>
+        DocumentRoot "/var/www/vhosts/demo/"
+        ServerName demo.local
+        ErrorLog "/var/log/httpd2/demo_log"
+        CustomLog "/var/log/httpd2/demo_log" common
+</VirtualHost>
 ```
 
+* Удалите работающий контейнерБ если он у Вас запущен:
+
+```sh
+# docker rm -f apache2
+```
+
+* Запустите новый контейнер командой:
+
+```sh
+docker run -d \
+  -p 80:80 \
+  --name=apache2Virt \
+  -v /etc/docker/apache2/conf/:/conf/ \
+  -v /var/www/vhosts/:/var/www/vhosts/ \
+  kafnevod/altlinux.p8-apache2
+```
+
+Параметры -v монтируют каталог конфигурации /conf/ и каталог виртуальных сайтов /var/www/vhosts/ контейнера на каталоги /etc/docker/apache2/conf/, /var/www/vhosts/ HOST-системы.
+
+* опишите виртуальный домен в файле /etc/hosts:
+
+```
+127.0.0.1 demo.local ... localhost
+```
+
+>Если Вы запускаете контейнер на удаленном сервере, то вместо адреса 127.0.0.1 в файле /etc/hosts хоста где Вы запускаете браузер вы должны добавить строчку:
+
+```
+ip-адрес_сервера demo.local
+```
+
+>Если Вы запускаете виртуальный сайт для внешнего доступа, то вместо правки файла /etc/hosts зарегистритуйте домен (например demo.ics.perm.ru) у провайдера домена и укажите его в описании конфигурации файла /etc/docker/apache2/conf/vhosts.conf.
 
 
 ### Установка и запуск контейнера Mono/.NET-приложений kafnevod/altlinux.p8-apache2-mono4.6.2.7 
