@@ -108,6 +108,7 @@ docker exec -it apache2 bash
 ```sh
 # tail -f /var/log/httpd2/*log
 ```
+
 ### Проверка работы контейнера Apache: kafnevod/altlinux.p8-apache2 
 
 Для проверки работы контейнера наберите в строке браузера URL: http://localhost/.
