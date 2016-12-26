@@ -30,7 +30,7 @@ Docker решает эту проблему путем создания обра
 
 Кроме этого Вы можете расширив полученный образ создать собственный образ приложения добавив в него свои файлы конфигурации и дополнительные пакеты.
 
-Например, если Вам необходимо запустить Ваше MPI-программу, Вы можете скачать образ MPI-компилятора от CentOS:
+Например, если Вам необходимо запустить Вашу MPI-программу, Вы можете скачать образ MPI-компилятора от CentOS:
 
 ```sh
 # docker pull nersc/centos-mpi
@@ -69,6 +69,7 @@ docker pull kafnevod/altlinux.p8-apache2
 ```
 
 Команда отобразить строку типа:
+
 ```
 CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                NAMES
 688acc21b881        kafnevod/altlinux.p8-apache2   "/usr/sbin/httpd2 -D "   5 seconds ago       Up 4 seconds        0.0.0.0:80->80/tcp   apache2
