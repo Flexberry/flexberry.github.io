@@ -72,8 +72,8 @@ Docker решает эту проблему путем создания обра
 Команда отобразит строку типа:
 
 ```
-CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                NAMES
-688acc21b881        kafnevod/altlinux.p8-apache2   "/usr/sbin/httpd2 -D "   5 seconds ago       Up 4 seconds        0.0.0.0:80->80/tcp   apache2
+CONTAINER_ID IMAGE                          COMMAND CREATED     STATUS              PORTS                NAMES
+688acc21b881 kafnevod/altlinux.p8-apache2   httpd2  5 seconds   Up 4 seconds        0.0.0.0:80->80/tcp   apache2
 ```
 
 Столбец IMAGE содержит имя образа контейнера.
@@ -221,8 +221,8 @@ b867bce38065: Pulling fs layer
 
 ```sh
 # docker ps -a -f name=apache2Mono
-CONTAINER ID        IMAGE                                      COMMAND                  CREATED             STATUS              PORTS                          NAMES
-38c7e2a7a8aa        kafnevod/altlinux.p8-apache2-mono4.6.2.7   "/usr/sbin/httpd2 -D "   2 minutes ago       Up 2 minutes        80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
+CONTAINER_ID IMAGE                                    COMMAND CREATED     STATUS      PORTS                          NAMES
+38c7e2a7a8aa kafnevod/altlinux.p8-apache2-mono4.6.2.7 httpd2 2minutes ago Up 2minutes 80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
 ```
 
 Наберите в браузере URL виртуального сайта с тестовым Mono-приложением http://localhost:880/. В браузере отобразиться результат работы тестового mono-приложения - клавиша **Click me!**.
