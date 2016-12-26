@@ -101,7 +101,7 @@ httpd2---2*[httpd2---26*[{httpd2}]]
 
 Вы также можете запустить bash-интепретатор
 ```sh
-docker exec -it apache2 bash
+# docker exec -it apache2 bash
 ```
 
 и в интерактивном режиме поработать в рамках контейнера.
@@ -168,7 +168,7 @@ NameVirtualHost *:80
 * Запустите новый контейнер командой:
 
 ```sh
-docker run -d \
+# docker run -d \
   -p 80:80 \
   --name=apache2Virt \
   -v /etc/docker/apache2/conf/:/conf/ \
@@ -245,7 +245,7 @@ CONTAINER_ID IMAGE                                    COMMAND CREATED     STATUS
 * Скопируйте файл конфигурации виртуального хоста Mono-приложения из работающего контейнера:
 
 ```
-docker cp apache2Mono:/conf/vhosts.conf /etc/docker/apache2/conf/vhosts.conf
+# docker cp apache2Mono:/conf/vhosts.conf /etc/docker/apache2/conf/vhosts.conf
 
 ```
 
