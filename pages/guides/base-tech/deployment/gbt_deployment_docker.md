@@ -135,9 +135,12 @@ docker exec -it apache2 bash
   <body>
     <b><i>Виртуальный хост контейнера kafnevod/altlinux.p8-apache2 работает!</i></b>
   </body>
-</html>```
+</html>
+```
 
-* 
+* опишите конфигурацию этого виртуального хоста в файле конфигурации vhosts.conf отдельного каталога. Например /etc/docker/apache2/conf/vhosts.conf:
+```
+```
 
 
 
