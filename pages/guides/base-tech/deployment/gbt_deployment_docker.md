@@ -203,6 +203,7 @@ ip-адрес_сервера demo.local
 #### Установка образа и запуск контейнера 
 
 Для запуска mono-приложений загрузите образ kafnevod/altlinux.p8-apache2-mono4.6.2.7:
+
 ```sh
 # docker pull kafnevod/altlinux.p8-apache2-mono4.6.2.7
 ```
