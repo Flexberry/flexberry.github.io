@@ -307,10 +307,10 @@ NameVirtualHost *:881
 
 ## Программное обеспечение
 
-## Лабораторные работы и практические задания
-
 * [Engine user guide](https://docs.docker.com/engine/installation/)
 * [Install Docker from binaries](https://docs.docker.com/engine/installation/binaries/)
+
+## Лабораторные работы и практические задания
 
 
 ## Перейти
