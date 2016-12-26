@@ -106,10 +106,40 @@ docker exec -it apache2 bash
 ```sh
 # tail -f /var/log/httpd2/*log
 ```
+### Проверка работы контейнера Apache: kafnevod/altlinux.p8-apache2 
 
+Для проверки работы контейнера набкрите в строке браузера URL: http://localhost/.
+В окне браузера отобразится текст: **It works!**
 
+Если Вы в контейнере запустили вышеуказанную коменду просмотра логов **tail**, она выведет строки типа:
+
+```
+==> /var/log/httpd2/access_log <==
+172.18.0.1 - - [26/Dec/2016:10:25:17 +0000] "GET / HTTP/1.1" 200 45
+```
 
 ### Запуск собственного виртуальног сайта в рамках контейнера Apache
+
+Файл описания виртуальных сайтов apache2-сервера контейнера находится в файле /conf/vhosts.conf образа.
+Для запуска собственного виртуального сайта (например demo) Вы должны 
+* поместить деревов сайта в отдельный каталог (например /var/www/vhosts/demo/) HOST-системы;
+Пусть это будет простая тестовая страница /var/www/vhosts/demo/index.html:
+
+```
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+  <title>Тестовая страница для проверки работоспособности виртуального хоста в контейнере kafnevod/altlinux.p8-apache2</title>
+  </head>
+  <body>
+    <b><i>Виртуальный хост контейнера kafnevod/altlinux.p8-apache2 работает!</i></b>
+  </body>
+</html>```
+
+* 
+
+
 
 ### Установка и запуск контейнера Mono/.NET-приложений kafnevod/altlinux.p8-apache2-mono4.6.2.7 
 
