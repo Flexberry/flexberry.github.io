@@ -191,8 +191,36 @@ ip-адрес_сервера demo.local
 ### Установка и запуск контейнера Mono/.NET-приложений kafnevod/altlinux.p8-apache2-mono4.6.2.7
 
 Для запуска mono-приложений загрузите образ kafnevod/altlinux.p8-apache2-mono4.6.2.7:
+```sh
+# docker pull kafnevod/altlinux.p8-apache2-mono4.6.2.7
 ```
+
+Обратите внимание - так как образ kafnevod/altlinux.p8-apache2-mono4.6.2.7 является расширением образа kafnevod/altlinux.p8-apache2, то те слои файловой системы, которые уже присутствуют в родительском образе в дочернем образе не скачиваются.
+
 ```
+6ed0c8c1348d: Already exists 
+3083620832f3: Already exists 
+03daa402b3d6: Already exists 
+b867bce38065: Pulling fs layer                                                                                                                          
+```
+
+При запуске контейнера дочернего образа он использует слои файловой системы родительского образа.
+Образ содержит тестовый виртуальный сайт, доступный по TCP-порту 880.
+Для проверки тестового сайта запустите контейнер загруженного образа:
+
+```sh
+# docker run -d -p 880:880 --name=apache2Mono kafnevod/altlinux.p8-apache2-mono4.6.2.7
+```
+
+Проверьте его статус:
+```
+ docker ps -a -f name=apache2Mono
+CONTAINER ID        IMAGE                                      COMMAND                  CREATED             STATUS              PORTS                          NAMES
+38c7e2a7a8aa        kafnevod/altlinux.p8-apache2-mono4.6.2.7   "/usr/sbin/httpd2 -D "   2 minutes ago       Up 2 minutes        80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
+
+```
+
+Наберите в браузере URL виртуального сайта с тестовым Mono-приложением http://localhost:880/. В браузере отобразиться результат работы тестового mono-приложения - клавиша **Click me**.
 
 
 
