@@ -150,7 +150,7 @@ NameVirtualHost *:80
 </VirtualHost>
 ```
 
-* Удалите работающий контейнерБ если он у Вас запущен:
+* Удалите работающий контейнер, если он у Вас запущен:
 
 ```sh
 # docker rm -f apache2
@@ -187,7 +187,11 @@ ip-адрес_сервера demo.local
 В окне браузера отобразится текст: **_Виртуальный хост demo.local контейнера kafnevod/altlinux.p8-apache2 работает!_**
 
 
-### Установка и запуск контейнера Mono/.NET-приложений kafnevod/altlinux.p8-apache2-mono4.6.2.7 
+### Установка и запуск контейнера Mono/.NET-приложений kafnevod/altlinux.p8-apache2-mono4.6.2.7
+
+Для запуска mono-приложений загрузите образ kafnevod/altlinux.p8-apache2-mono4.6.2.7:
+```
+```
 
 
 
