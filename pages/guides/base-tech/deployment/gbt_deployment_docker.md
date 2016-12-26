@@ -128,7 +128,7 @@ docker exec -it apache2 bash
 
 Файл описания виртуальных сайтов apache2-сервера контейнера находится в файле /conf/vhosts.conf образа.
 Для запуска собственного виртуального сайта (например demo) Вы должны 
-* поместить дерево сайта в отдельный каталог (например /var/www/vhosts/demo/) HOST-системы;
+* Поместить дерево сайта в отдельный каталог (например /var/www/vhosts/demo/) HOST-системы.
 Пусть это будет простая тестовая страница /var/www/vhosts/demo/index.html:
 
 ```
@@ -144,7 +144,7 @@ docker exec -it apache2 bash
 </html>
 ```
 
-* опишите конфигурацию этого виртуального хоста в файле конфигурации vhosts.conf отдельного каталога. Например /etc/docker/apache2/conf/vhosts.conf:
+* Опишите конфигурацию этого виртуального хоста в файле конфигурации vhosts.conf отдельного каталога. Например /etc/docker/apache2/conf/vhosts.conf:
 
 ```
 NameVirtualHost *:80
@@ -175,7 +175,7 @@ docker run -d \
 
 Параметры -v монтируют каталог конфигурации /conf/ и каталог виртуальных сайтов /var/www/vhosts/ контейнера на каталоги /etc/docker/apache2/conf/, /var/www/vhosts/ HOST-системы.
 
-* опишите виртуальный домен в файле /etc/hosts:
+* Опишите виртуальный домен в файле /etc/hosts:
 
 ```
 127.0.0.1 demo.local ... localhost
