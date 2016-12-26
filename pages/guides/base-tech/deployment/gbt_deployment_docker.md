@@ -309,7 +309,9 @@ NameVirtualHost *:881
 
 ## Лабораторные работы и практические задания
 
-## Возможности по сертификации
+* [Engine user guide](https://docs.docker.com/engine/installation/)
+* [Install Docker from binaries](https://docs.docker.com/engine/installation/binaries/)
+
 
 ## Перейти
 * [Главная страница курса](gbt_landing-page.html)
