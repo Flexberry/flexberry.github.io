@@ -286,8 +286,17 @@ NameVirtualHost *:881
 
 ## Ссылки на материалы для изучения
 
-
 ### Лекции, курсы, презентации, видео
+
+* [Docker Video Tutorials](https://www.docker.com/products/resources/video-tutorials)
+* [Docker YouTube Channel](https://www.youtube.com/user/dockerrun)
+* [5 must-watch Docker videos](https://opensource.com/business/15/5/must-watch-docker-videos)
+* [Видео докладов с Docker митапа](https://habrahabr.ru/company/badoo/blog/304702/)
+* [Docker в банке. Видео с лекции Александра Тарасова из Альфа-Банка](https://habrahabr.ru/company/jugru/blog/264669/)
+* [Get started with Docker](https://docs.docker.com/engine/getstarted/)
+* [The Docker commands](https://docs.docker.com/engine/reference/commandline/)
+* [Docker run reference](https://docs.docker.com/engine/reference/run/)
+
 
 ### Рекомендованные книги
 
