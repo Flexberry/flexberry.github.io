@@ -293,12 +293,17 @@ NameVirtualHost *:881
 * [5 must-watch Docker videos](https://opensource.com/business/15/5/must-watch-docker-videos)
 * [Видео докладов с Docker митапа](https://habrahabr.ru/company/badoo/blog/304702/)
 * [Docker в банке. Видео с лекции Александра Тарасова из Альфа-Банка](https://habrahabr.ru/company/jugru/blog/264669/)
+* [ 350+ полезных ресурсов, книг и инструментов для работы с Docker](https://habrahabr.ru/company/1cloud/blog/275015/)
 * [Get started with Docker](https://docs.docker.com/engine/getstarted/)
 * [The Docker commands](https://docs.docker.com/engine/reference/commandline/)
 * [Docker run reference](https://docs.docker.com/engine/reference/run/)
 
 
 ### Рекомендованные книги
+
+* [The Docker Book. "James Turnbull" November 26, 2016](https://www.dockerbook.com/TheDockerBook_sample.pdf)
+
+
 
 ## Программное обеспечение
 
