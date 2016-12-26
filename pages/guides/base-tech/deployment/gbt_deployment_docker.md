@@ -47,7 +47,7 @@ Docker решает эту проблему путем создания обра
 * рой (swarm) контейнеров, поддерживающих определенный сервис;
 * и т.п.
 
-### Образ Apache2: kafnevod/altlinux.p8-apache2 
+### Образ WEB-сервера Apache2: kafnevod/altlinux.p8-apache2 
 
 #### Установка образа и запуск контейнера
 
@@ -198,7 +198,7 @@ ip-адрес_сервера demo.local
 В окне браузера отобразится текст: **_Виртуальный хост demo.local контейнера kafnevod/altlinux.p8-apache2 работает!_**
 
 
-### Образ Mono/.NET-приложений kafnevod/altlinux.p8-apache2 
+### Образ сервера Mono/.NET-приложений kafnevod/altlinux.p8-apache2 
 
 #### Установка образа и запуск контейнера 
 
