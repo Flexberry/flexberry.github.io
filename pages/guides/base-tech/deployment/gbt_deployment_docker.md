@@ -39,16 +39,16 @@ Docker решает эту проблему путем создания обра
 
 Создать собственный подобраз, воспользовавшись инструкцией, приведенной на странице [образа](https://hub.docker.com/r/nersc/centos-mpi/) и запускать Ваше MPI-приложение с различными параметрами, на различных Linux-дистрибутивах.
 
-Подробнее о создании собственных docker-образов на основе существующих Вы можете изучить на странице [Build your own images](https://docs.docker.com/engine/tutorials/dockerimages/).
+Технологию создания собственных docker-образов на основе существующих Вы можете изучить на странице [Build your own images](https://docs.docker.com/engine/tutorials/dockerimages/).
 
 Описанные далее образы созданы на основе базовых docker-образа дистрибутива [ALTLinux/BaseALT P8](https://hub.docker.com/r/fotengauer/altlinux-p8/). Кроме этого созданы аналогичные образы на основе дистрибутива [ALTLinux C7](https://hub.docker.com/r/fotengauer/altlinux-p7/):
 
 * [kafnevod/altlinux.p7-apache2](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2/) - образ Apache2 сервера 
 * [kafnevod/altlinux.p7-apache2-mono4.6.2.7](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2-mono4.6.2.7/) - образ Apache2/Mono4  сервера.
 
-Это образы используют сертифицированный библиотеки дистрибутива ALTLinux C7 и при необходимости могут быть использованы вместо описываемых в данном докумене образов [kafnevod/altlinux.p7-apache2-mono4.6.2.7](kafnevod/altlinux.p8-apache2-mono4.6.2.7), [kafnevod/altlinux.p8-apache2-mono4.6.2.7](https://hub.docker.com/r/kafnevod/altlinux.p8-apache2-mono4.6.2.7/) собранных на дистрибутива ALTLinux/BaseALT P8.
+Эти образы используют сертифицированный библиотеки дистрибутива ALTLinux C7 и при необходимости могут быть использованы вместо описываемых в данном докумене образов [kafnevod/altlinux.p8-apache2](https://hub.docker.com/r/kafnevod/altlinux.p8-apache2/), [kafnevod/altlinux.p8-apache2-mono4.6.2.7](https://hub.docker.com/r/kafnevod/altlinux.p8-apache2-mono4.6.2.7/) собранных на дистрибутива ALTLinux/BaseALT P8.
 
-Кроме этого при запуске контейнера Вы можете передавать в него различные параметры, привязывать TCP-порты приложения контейнера к различных портам HOST-системы, монтировать каталоги HOST-системы в подкаталоги контейнера. 
+При запуске контейнера Вы можете передавать в него различные параметры, привязывать TCP-порты приложения контейнера к различных портам HOST-системы, монтировать каталоги HOST-системы в подкаталоги контейнера. 
 
 Все эти механизмы позволяют запускать в рамках одной ОС:
 
