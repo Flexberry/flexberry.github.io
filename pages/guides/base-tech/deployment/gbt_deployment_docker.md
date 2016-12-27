@@ -100,6 +100,7 @@ httpd2---2*[httpd2---26*[{httpd2}]]
 ```
 
 Вы также можете запустить bash-интепретатор
+
 ```sh
 # docker exec -it apache2 bash
 ```
