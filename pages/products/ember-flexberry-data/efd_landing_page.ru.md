@@ -9,7 +9,7 @@ lang: ru
 ---
 ember-flexberry-data
 
-Projections
-Query language
-Offline
-OData & JSON API
+* Models & Projections
+* Query language
+* Offline
+* OData & JSON API

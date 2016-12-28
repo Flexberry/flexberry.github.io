@@ -4,10 +4,11 @@
 entries:
 - title: Sidebar
   product: ember-flexberry-data
-  version: 0.6.0
+  version: 0.8.0
   folders:
 
   - title: Getting Started
+    title_ru: Начало работы
     output: web, pdf
     folderitems:
     - title: About
@@ -15,34 +16,62 @@ entries:
       url: /efd_landing_page.html
       output: web
 
-    - title: Sample 1
-      url: /p1_sample1.html
-      output: web, pdf
-
-    - title: Sample 2
-      url: /p1_sample2.html
-      output: web, pdf
-
-    - title: Sample 3
-      url: /p1_sample3.html
-      output: web, pdf
-
-  - title: Another heading
+  - title: Models and projections
+    title_ru: Модели и проекции
     output: web, pdf
-
     folderitems:
-    - title: Sample 4
-      url: /p1_sample4.html
+    - title: Model
+      title_ru: Модель
+      url: /efd_model.html
       output: web, pdf
 
-    - title: Sample 5
-      url: /p1_sample5.html
+    - title: Model projection
+      title_ru: Проекции в моделях
+      url: /efd_model-projection.html
       output: web, pdf
 
-    - title: Sample 6
-      url: /p1_sample6.html
+    - title: Serializer
+      title_ru: Сериализаторы
+      url: /efd_serializer.html
       output: web, pdf
 
-    - title: Sample 7
-      url: /p1_sample7.html
+    - title: Enums
+      title_ru: Перечисления
+      url: /efd_enum.html
+      output: web, pdf
+
+    - title: Model validation
+      title_ru: Валидация модели
+      url: /efd_model-validation.html
+      output: web, pdf
+
+    - title: Date and time validation
+      title_ru: Валидация даты и времени
+      url: /efd_date-time-validator.html
+      output: web, pdf
+
+  - title: Query language
+    title_ru: Язык запросов
+    output: web, pdf
+    folderitems:
+    - title: Query language features
+      title_ru: Возможности языка запросов
+      url: /efd_query-language.html
+      output: web, pdf
+
+  - title: Offline
+    title_ru: Офлайн
+    output: web, pdf
+    folderitems:
+    - title: Offline support
+      title_ru: Поддержка офлайна
+      url: /efd_offline.html
+      output: web, pdf
+
+  - title: OData & JSON API
+    output: web, pdf
+    folderitems:
+    - title: OData support
+      title_ru: Поддержка OData
+      url: /efd_odata.html
       output: web, pdf
