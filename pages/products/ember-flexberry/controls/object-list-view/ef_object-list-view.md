@@ -1,0 +1,212 @@
+---
+title: Flexberry Objectlistview
+sidebar: ember-flexberry_sidebar
+keywords: Flexberry Ember
+toc: true
+permalink: ru/ef_object-list-view.html
+folder: product--folder
+lang: ru
+summary: Представлено описание контрола для просмотра списка объектов Flexberry Objectlistview.
+---
+
+## Описание
+
+Основное предназначение контрола Flexberry Objectlistview - просмотр списка доступных объектов с возможностью их последующего открытия и редактирования (в контрол встроен пейджинг, позволяющий просматривать данные порционно).
+
+Для добавления контрола на страницу, можно воспользоваться [шаблоном](ef_template.html) (ниже представлен шаблон для добавления на [списковую форму](ef_forms.html)):
+
+
+```handlebars
+{{flexberry-objectlistview
+	componentName = "ordersObjectListView"
+	modelController = this
+	modelName = "order"
+	modelProjection = modelProjection
+	content = model
+
+	createNewButton = true
+	refreshButton = true
+	showDeleteButtonInRow = true
+    colsConfigButton = true
+
+	sorting = computedSorting
+	orderable = true
+	sortByColumn = (action "sortByColumn")
+	addColumnToSorting = (action "addColumnToSorting")
+	action = "rowClick"
+
+	pages = pages
+	perPageValue = perPageValue
+	perPageValues = perPageValues
+	hasPreviousPage = hasPreviousPage
+	hasNextPage = hasNextPage
+	previousPage = (action "previousPage")
+	gotoPage = (action "gotoPage")
+	nextPage = (action "nextPage")
+}}
+```
+
+(((<msg type=note>Синтаксис вида "addColumnToSorting=(action "addColumnToSorting")" определяет, что используется ember closure action. Если требуемое действие не определено, то при вызове соответствующей функциональности в консоли браузера появится ошибка.</msg>
+)))
+
+`componentName` - имя компонента. Должно быть уникальное в пределах однойстраницы.
+
+`modelController` - текущий контроллер страницы.
+
+`modelName` - имя текущей модели (список каких объектов отображается).
+
+`modelProjection '''` - текущее используемое представление.
+
+`content '''` - отображаемые в контроле данные.
+
+`createNewButton '''` - флаг, определяющий, отображать ли кнопку создания на [панели управления](flexberry-asp-net-ember-objectlistview-toolbar.html).
+
+`'''refreshButton '''` - флаг, определяющий, отображать ли кнопку обновления на [панели управления](flexberry-asp-net-ember-objectlistview-toolbar.html).
+
+`'''deleteButton '''` - флаг, определяющий, отображать ли кнопку удаления на [панели управления](flexberry-asp-net-ember-objectlistview-toolbar.html).
+
+`'''showCheckBoxInRow'''` - флаг, определяющий, отображать ли чекбоксы для выделения записей в каждой строчке.
+
+`'''showDeleteButtonInRow'''` - флаг, определяющий, отображать ли кнопку удаления строки в каждой строчке.
+
+`'''showDeleteMenuItemInRow'''` - флаг, определяющий, отображать ли пункт контекстного, меню мобильного шаблона f-olv, "Удалить запись".
+
+`'''showEditMenuItemInRow'''` - флаг, определяющий, отображать ли пункт контекстного, меню мобильного шаблона f-olv, "Редактировать запись".
+
+`'''rowClickable '''` - флаг, определяющий, следует ли обрабатывать нажатие на строчку.
+
+`'''action '''` - действие, выполняемое при нажатии на строчку.
+
+`'''orderable'''` - флаг, определяющий, возможно ли производить сортировку по столбцам в компоненте.
+
+`'''sorting'''` - метод определения текущей сортировки.
+
+`'''sortByColumn'''` - действие (action) контроллера, которое должно быть выполнено для сортировки по столбцу.
+
+`'''addColumnToSorting'''` - действие (action) контроллера, которое должно быть выполнено для добавления сортировки по столбцу.
+
+`'''pages'''` - метод определения доступных страниц для отображения в пейджинге.
+
+`'''perPageValue'''` - метод определения текущей настройки, где указано, по сколько записей отображается на странице.
+
+`'''perPageValues'''` - массив, определяющий, по сколько записей на странице можно отображать.
+
+`'''hasPreviousPage'''` - флаг, определяющий, есть ли у текущей страницы предшествующая.
+
+`'''hasNextPage'''` - флаг, определяющий, есть ли у текущей страницы последующая.
+
+`'''previousPage'''` - метод для перехода на предыдущую страницу.
+
+`'''gotoPage'''` - метод для перехода на заданную страницу.
+
+`'''nextPage'''` - метод для перехода на следующую страницу.
+
+`'''editFormRoute'''` - задаёт имя роута формы редактирования, в котором будет открываться модель.
+
+`'''singleColumnHeaderTitle '''` - заголовок для мобильного представления компонента, вместо названий колонок. Если не задан или равен "", то шапка таблицы в компоненте скрывается.
+
+`'''colsConfigButton'''` - флаг (true/false) включающий/выключающий отображение кнопок пользовательских настроек. 
+
+
+Значения по умолчанию:
+
+```
+action: 'rowClick',
+createNewButton: false,
+refreshButton: false,
+orderable: false,
+rowClickable: true,
+showCheckBoxInRow: false,
+showDeleteButtonInRow: false,
+showDeleteMenuItemInRow: false,
+showEditMenuItemInRow: true
+colsConfigButton - true
+```
+
+## Настройка панели управления Flexberry Objectlistview
+
+В состав контрола Flexberry Objectlistview входит [тулбар, который можно настраивать](ef_olv-toolbar.html) и добавлять пользовательские кнопки.
+
+## Иерархия на Flexberry Objectlistview
+
+Если список является иерархическим (у объекта есть ссылка на самого себя), то иерархия для списка установлена по умолчанию.
+
+![](/images/pages/ABratchikova/Иерархия folv.png)
+
+Если иерархию для списка необходимо отключить, то в шаблоне следует прописать '''"disableHierarchicalMode = true"'''.
+
+Если в модели есть две или больше ссылки на себя (по которым может быть иерархия), то нужно указать имя той '''по которой должна быть иерархия''': '''"hierarchyByAttribute = propertyName"'''.
+
+## Наложение ограничений на Flexberry Objectlistview
+
+Особенности наложения ограничений на Flexberry Objectlistview связаны с тем, что данные для контрола вычитываются в роуте. Соответственно, чтобы не допустить вычитывания данных без наложенного ограничения, ограничение должно быть определено, когда выполняется хук `model` в роуте формы.
+
+Таким образом, чтобы наложить ограничение, необходимо переопределить метод `objectListViewLimitPredicate` в роуте прикладной списковой формы, чтобы он возвращал предикат для ограничения.
+
+Например, есть форма `limit-function-example`. Требуется, если на странице отображается чётное количество записей, то отображать только записи, у которых в поле "address" есть буква "S", иначе те, у которых в поле "address" есть буква "п".
+
+Переопределяем метод `objectListViewLimitPredicate` в роуте соответствующей прикладной списковой формы.
+
+```javascript
+import Ember from 'ember';
+import ListFormRoute from 'ember-flexberry/routes/list-form';
+import { StringPredicate } from 'ember-flexberry-data/query/predicate';
+
+export default ListFormRoute.extend({
+  /**
+   * Name of model projection to be used as record's properties limitation.
+   *
+   * @property modelProjection
+   * @type String
+   * @default 'FolvWithLimitFunctionExampleView'
+   */
+  modelProjection: 'FolvWithLimitFunctionExampleView',
+
+  /**
+   * Name of model to be used as list's records types.
+   *
+   * @property modelName
+   * @type String
+   * @default 'ember-flexberry-dummy-suggestion'
+   */
+  modelName: 'ember-flexberry-dummy-suggestion',
+
+  /**
+   * It overrides base method and forms the limit predicate for loaded data.
+     If there is displayed even number or records per page, records where 'address' attribute contains letter 'S' are filtered.
+     If there is displayed odd number or records per page, records where 'address' attribute contains letter 'п' are filtered.
+
+   * @method objectListViewLimitPredicate
+   * @public
+   *
+   * @param {Object} options Method options.
+   * @param {String} [options.modelName] Type of records to load.
+   * @param {String} [options.projectionName] Projection name to load data by.
+   * @param {String} [options.params] Current route query parameters.
+   * @return {BasePredicate} The predicate to limit loaded data.
+   */
+  objectListViewLimitPredicate: function(options) {
+    let methodOptions = Ember.merge({
+      modelName: undefined,
+      projectionName: undefined,
+      params: undefined
+    }, options);
+
+    if (methodOptions.modelName === this.get('modelName') &&
+        methodOptions.projectionName === this.get('modelProjection')) {
+      let currentPerPageValue = methodOptions.params ? methodOptions.params.perPage : undefined;
+      let limitFunction = (currentPerPageValue && currentPerPageValue % 2 === 0) ?
+                          new StringPredicate('address').contains('S') :
+                          new StringPredicate('address').contains('п');
+      return limitFunction;
+    }
+
+    return undefined;
+  }
+});
+```
+
+## Другие возможности
+
+* [Изменение размера столбцов во Flexberry Objectlistview](ef_olv-resize.html)
+

@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: ember-flexberry
-  version: 0.6.0
+  version: 0.8.0
   folders:
 
   - title:
@@ -21,40 +21,158 @@ entries:
       type: frontmatter
 
   - title: Getting Started
+    title_ru: Начало работы
     output: web, pdf
     folderitems:
-    - title: Home
+    - title: About
+      title_ru: О модуле
       url: /ef_landing_page.html
       output: web
 
-    - title: Sample 1
-      url: /p1_sample1.html
-      output: web, pdf
-
-    - title: Sample 2
-      url: /p1_sample2.html
-      output: web, pdf
-
-    - title: Sample 3
-      url: /p1_sample3.html
-      output: web, pdf
-
-  - title: Another heading
+  - title: Forms
+    title_ru: Формы
     output: web, pdf
 
     folderitems:
-    - title: Sample 4
-      url: /p1_sample4.html
+    - title: About forms
+      title_ru: О формах в приложении
+      url: /ef_forms.html
       output: web, pdf
 
-    - title: Sample 5
-      url: /p1_sample5.html
+    - title: Router
+      url: /ef_router.html
       output: web, pdf
 
-    - title: Sample 6
-      url: /p1_sample6.html
+    - title: Route
+      url: /ef_route.html
       output: web, pdf
 
-    - title: Sample 7
-      url: /p1_sample7.html
+    - title: Controller
+      url: /ef_controller.html
+      output: web, pdf
+
+    - title: Template
+      title_ru: Шаблон формы
+      url: /ef_template.html
+      output: web, pdf
+
+    - title: Edit form
+      title_ru: Форма редактирования
+      url: /ef_edit-form.html
+      output: web, pdf
+
+    - title: Default value
+      title_ru: Значения по умолчанию
+      url: /ef_default-value.html
+      output: web, pdf
+
+    - title: Read only form
+      title_ru: Режим "только чтение"
+      url: /ef_read-only-form.html
+      output: web, pdf
+
+    - title: Form in frame
+      title_ru: Форма без доп. элементов
+      url: /ef_show-ember-form-in-frame.html
+      output: web, pdf
+
+  - title: Controls
+    title_ru: Элементы управления
+    output: web, pdf
+
+    folderitems:
+    - title: Common description
+      title_ru: Общее описание
+      url: /ef_controls.html
+      output: web, pdf
+
+    - title: object-list-view
+      url: /ef_object-list-view.html
+      output: web, pdf
+
+    - title: object-list-view columns resize
+      title_ru: Размер столбцов в OLV
+      url: /ef_olv-resize.html
+      output: web, pdf
+
+    - title: object-list-view toolbar
+      title_ru: Тулбар в OLV
+      url: /ef_olv-toolbar.html
+      output: web, pdf
+
+    - title: Lookup
+      url: /ef_lookup.html
+      output: web, pdf
+
+    - title: Lookup autocomplete
+      title_ru: Автодополнение в лукапе
+      url: /ef_lookup-autocomplete.html
+      output: web, pdf
+
+    - title: Modal window settings
+      title_ru: Настройки формы лукапа
+      url: /ef_modal-window-settings.html
+      output: web, pdf
+
+    - title: Groupedit
+      url: /ef_groupedit.html
+      output: web, pdf
+
+    - title: Groupedit detail in route
+      title_ru: Groupedit с редактированием в роуте
+      url: /ef_groupedit-detail-in-route.html
+      output: web, pdf
+
+    - title: File
+      url: /ef_file.html
+      output: web, pdf
+
+  - title: Services
+    title_ru: Сервисы
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О модуле
+      url: /ef_service.html
+      output: web, pdf
+
+    - title: Log service
+      title_ru: Сервис логирования
+      url: /ef_log-service.html
+      output: web, pdf
+
+    - title: User settings service
+      title_ru: Сервис пользовательских настроек
+      url: /ef_model-user-settings-service.html
+      output: web, pdf
+
+  - title: Application customization
+    title_ru: Настройка приложения
+    output: web, pdf
+
+    folderitems:
+    - title: Internationalization
+      title_ru: Интернационализация приложения
+      url: /ef_i18n.html
+      output: web, pdf
+
+  - title: Mobile view
+    title_ru: Мобильное представление
+    output: web, pdf
+
+    folderitems:
+    - title: Apache Cordova usage
+      title_ru: Использование Apache Cordova
+      url: /ef_cordova.html
+      output: web, pdf
+
+  - title: Generation
+    title_ru: Генерация
+    output: web, pdf
+
+    folderitems:
+    - title: Application generation
+      title_ru: Генератор приложения
+      url: /ef_generator.html
       output: web, pdf
