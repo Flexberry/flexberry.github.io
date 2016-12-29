@@ -208,6 +208,54 @@ xxx - номер процесса httpd2.
 
 ### Проверка работосособности
 
+Запуск собственного виртуального Mono/.NET сайта аналогичен запуску виртуального сайта Apache2-сервера:
+
+* Поместите деревов сайта в отдельный каталог (например /var/www/vhosts/myMonoApp/) HOST-системы.
+* Допишите конфигурацию Вашего виртуального хоста в файл конфигурации /etc/docker/apache2/conf/vhosts.conf воспользовавшись шаблоном:
+
+```
+Listen 881
+NameVirtualHost *:881
+
+<VirtualHost *:881>
+  ServerName myMonoApp.local
+  MonoServerPath test.local "/usr/bin/mod-mono-server4"
+  MonoDebug myMonoApp.local true
+  MonoSetEnv myMonoApp.local MONO_IOMAP=all
+  MonoApplications myMonoApp.local "/:/var/www/vhosts/myMonoApp"
+  AddDefaultCharset utf-8
+  <Location "/">
+    Allow from all
+    Order allow,deny
+    MonoSetServerAlias myMonoApp
+    SetHandler mono
+    #SetOutputFilter DEFLATE
+  </Location>
+  ErrorLog /var/log/httpd2/myMonoApp_error_log
+  LogLevel debug
+  CustomLog /var/log/httpd2/myMonoApp_access_log common
+</VirtualHost>
+```
+
+* Замените, если необходимо, порт 881 на номер порта по которому будет доступен Ваш сайт, указав в дальнейшем этот порт во флаге -p при запуске контейнера. Домен myMonoApp.local на Ваш домен приложения, имя myMonoApp на имя Вашего mono-приложения.
+
+* Перезапустите apache2-сервер:
+
+    * для серверных дистрибутивов с системным менеджером SysV:
+
+```sh
+# service apache2 restart
+```
+
+    * для серверных и десктопных дистрибутивов с системным менеджером Systemd:
+    
+```sh
+# systemctl restart apache2
+```
+
+* Обратитесь в браузере к корневой странице виртуального сайта по URL: http://localhost:881/.
+
+
 ### Ссылки на материалы для изучения
 
 #### Лекции, курсы, презентации, видео
