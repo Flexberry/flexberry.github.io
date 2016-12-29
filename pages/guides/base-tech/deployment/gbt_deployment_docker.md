@@ -210,7 +210,7 @@ ip-адрес_сервера demo.local
 В окне браузера отобразится текст: **_Виртуальный хост demo.local контейнера kafnevod/altlinux.p8-apache2 работает!_**
 
 
-### Образ сервера Mono/.NET-приложений kafnevod/altlinux.p8-apache2 
+### Образ сервера Mono/.NET-приложений kafnevod/altlinux.p8-apache2-mono4.6.2.7 
 
 #### Установка образа и запуск контейнера 
 
