@@ -244,13 +244,13 @@ NameVirtualHost *:881
 
     * для серверных дистрибутивов с системным менеджером SysV:
 
-    ```sh
+    ```
 # service apache2 restart
     ```
 
     * для серверных и десктопных дистрибутивов с системным менеджером Systemd:
 
-    ```sh
+    ```
 # systemctl restart apache2
     ```
 
