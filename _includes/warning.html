@@ -1,2 +1,1 @@
-{% assign str = include.content | prepend:'<i class="fa fa-exclamation-circle"></i> ' | markdownify %}
-<div markdown="span" class="alert alert-danger" role="alert">{{ str }}</div>
+<div markdown="span" class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>Warning:</b> {{include.content}}</div>

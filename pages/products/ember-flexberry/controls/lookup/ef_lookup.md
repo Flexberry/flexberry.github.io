@@ -129,31 +129,31 @@ export default ApplicationSerializer.extend({
 |}
 
 ## Блочная форма компонента
-(((
-<msg type=note>В данный момент доступна только для мобильного шаблона.</msg>
-)))
+
+{% include important.html content="В данный момент доступна только для мобильного шаблона." %}
+
 Возможно использовать компонент в блочной форме:
 
-```
-`#flexberry-lookup ...`
-  `model.employee1.firstName`<br>
-  `model.employee1.lastName`
-`/flexberry-lookup`
+```hbs
+{{#flexberry-lookup ...}}
+  {{model.employee1.firstName}}<br>
+  {{model.employee1.lastName}}
+{{/flexberry-lookup}}
 ```
 в этом случае прикладной программист может переопределить как будет выглядеть отображение мастера на форме
 
 ## Настройка модального окна
+
 Как настраивать поднимаемые по лукапу модальные окна, описано [здесь](ef_modal-window-settings.html).
 
 ## Задание ограничений
 
-(((
-<msg type=important> Информация устарела, свойство limitFunction удалено.</msg>
-)))
+{% include important.html content="Информация устарела, свойство limitFunction удалено." %}
+
 Задание ограничений на значения, отображаемые в списке для выбора, осуществляются посредством задания фильтра ($filter) в формате OData ([OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094)). Данный фильтр задаётся в виде строки в свойство `limitFunction` при задании шаблона.
 
-```
-`flexberry-lookup limitFunction=SomeFilterFunction ...`
+```hbs
+{{flexberry-lookup limitFunction=SomeFilterFunction ...}}
 ```
 
 Рассмотрим задание ограничения на примере. Пусть у сущности `Employee` есть мастеровая ссылка `Employee1` типа `Employee`. Требуется по лукапу отобразить только те записи, у которых `FirstName` больше или равен `FirstName` текущей выбранной записи.
@@ -197,14 +197,13 @@ export default EditFormController.extend({
 
 Далее соответствующее свойство необходимо указать в шаблоне формы:
 
-```
-`flexberry-lookup limitFunction=lookupLimitFunction ...`
+```hbs
+{{flexberry-lookup limitFunction=lookupLimitFunction ...}}
 ```
 
-(((
-<msg type=important>Поскольку фильтр задаётся непосредственно для OData, `FirstName` пишется с большой буквы и соответствует имени свойства в модели OData (в ember-модели пишется `firstName` с маленькой буквы).
-В соответствии со [стандартом OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094) фильтр с обращением к полю мастера будет записываться как `'''limitFunction='ТипДокумента/Наименование eq \'ОРД - распоряжение\'''''` (через символ "/").</msg>
-)))
+{% include important.html content="Поскольку фильтр задаётся непосредственно для OData, `FirstName` пишется с большой буквы и соответствует имени свойства в модели OData (в ember-модели пишется `firstName` с маленькой буквы).<br/>
+В соответствии со [стандартом OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094) фильтр с обращением к полю мастера будет записываться как `limitFunction='ТипДокумента/Наименование eq \'ОРД - распоряжение\''` (через символ `\/`)." %}
 
 ## Лукап в режиме автодополнения
+
 Лукап можно переводить в [режим автодополнения](ef_lookup-autocomplete.html).

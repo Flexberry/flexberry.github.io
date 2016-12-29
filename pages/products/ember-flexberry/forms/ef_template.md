@@ -6,7 +6,7 @@ toc: true
 permalink: ru/ef_template.html
 folder: product--folder
 lang: ru
-summary: Представлена основная информация о структуре handelbars-шаблонов в ember-flexberry-приложениях.
+summary: Представлена основная информация о структуре handlebars-шаблонов в ember-flexberry-приложениях.
 ---
 
 ## Описание

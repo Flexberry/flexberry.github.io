@@ -36,48 +36,47 @@ export default Ember.Controller.extend({
 
 Например, ниже для отображения оставлена только сама форма, все остальные элементы скрываются.
 
-```handelbars
-`#unless shouldShowInFrame`
+```hbs
+{{#unless shouldShowInFrame}}
 	<div class="ui grid page menu">
 	  <a class="brand item" href="#">Flexberry prototype written in Ember.js</a>
 	  <div class="right menu">
-		`#if session.isAuthenticated`
+		{{#if session.isAuthenticated}}
 		  <div class="item">
 			<i class="user icon"></i>
-			`session.secure.userName`
+			{{session.secure.userName}}
 		  </div>
-		  <a ` action 'invalidateSession' ` class="item">Sign out</a>
-		`else`
+			<a {{ action 'invalidateSession' }} class="item">Sign out</a>
+		{{else}}
 		  <div class="item">
-			`#link-to 'login' class="ui primary button"`Sign in`/link-to`
+			{{#link-to 'login' class="ui primary button"}}Sign in{{/link-to}}
 		  </div>
-		`/if`
+		{{/if}}
 	  </div>
 	</div>
-`/unless`
+{{/unless}}
 <div class="ui grid page">
-	`#unless shouldShowInFrame`
+	{{#unless shouldShowInFrame}}
 	  <div class="four wide column">
-		`render "sitemap" sitemap`
+		{{render "sitemap" sitemap}}
 	  </div>
-	`/unless`
+	{{/unless}}
   <div class="twelve wide column">
-    `outlet`
-    `outlet 'modal'`
+    {{outlet}}
+		{{outlet 'modal'}}
   </div>
 </div>
 ```
 
 3. При вызове формы добавить параметр «inframe=true».
 
+{% include note.html content="
+Важно:
 
-(((
-<msg type=note>* Реализация не чувствительна к регистру значения «true».
-* Реализация чувствительна к регистру параметра «inframe».
-* При передаче в качестве значения «inframe» значения, отличного от «true», данная логика отрабатывать не будет.</msg>
-)))
-
-
+* Реализация не чувствительна к регистру значения `true`.
+* Реализация чувствительна к регистру параметра `inframe`.
+* При передаче в качестве значения `inframe` значения, отличного от `true`, данная логика отрабатывать не будет." 
+%}
 
 ![](/images/pages/img/page/ShowEmberFormInFrame/EmptyEmberForm.png)
 
