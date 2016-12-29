@@ -41,7 +41,7 @@ Docker решает эту проблему путем создания обра
 
 Технологию создания собственных docker-образов на основе существующих Вы можете изучить на странице [Build your own images](https://docs.docker.com/engine/tutorials/dockerimages/).
 
-Описанные далее образы созданы на основе базовых docker-образа дистрибутива [ALTLinux/BaseALT P8](https://hub.docker.com/r/fotengauer/altlinux-p8/). Кроме этого созданы аналогичные образы на основе дистрибутива [ALTLinux C7](https://hub.docker.com/r/fotengauer/altlinux-p7/):
+Описанные далее образы созданы на основе базового docker-образа дистрибутива [ALTLinux/BaseALT P8](https://hub.docker.com/r/fotengauer/altlinux-p8/). Кроме этого созданы аналогичные образы на основе дистрибутива [ALTLinux C7](https://hub.docker.com/r/fotengauer/altlinux-p7/):
 
 * [kafnevod/altlinux.p7-apache2](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2/) - образ Apache2 сервера 
 * [kafnevod/altlinux.p7-apache2-mono4.6.2.7](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2-mono4.6.2.7/) - образ Apache2/Mono4  сервера.
