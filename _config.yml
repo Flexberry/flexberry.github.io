@@ -24,7 +24,7 @@ company_name: Flexberry
 github_editme_path: /Flexberry/flexberry.github.io/edit
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-disqus_shortname: flexberry
+disqus_shortname: flexberry-doc
 # if you're using disqus for comments, add the shortname here. if not, leave this value blank.
 
 host: 127.0.0.1
@@ -107,6 +107,9 @@ sidebars:
 - product1_sidebar
 - product2_sidebar
 - ember-flexberry_sidebar
+- ember-flexberry-data_sidebar
+- ember-flexberry-security_sidebar
+- ember-flexberry-gis_sidebar
 - flexberry-aspnet_sidebar
 - guide-base-tech_sidebar
 - other
