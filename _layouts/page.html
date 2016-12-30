@@ -38,14 +38,19 @@ layout: default
     {% include toc.html %}
     {% endunless %}
 
-    {% unless jekyll.environment == "production" %}
-
     {% if site.github_editme_path %}
 
-    <a target="_blank" href="https://github.com/{{site.github_editme_path}}/_pages/{{page.folder}}/{{page.url | remove: "/" | append: ".md"}}" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
-    {% endif %}
+    {% assign page_url = page.url | split: '/' | last | split: "." | first | append: "." | append: page.lang | append: ".md" %}
 
-    {% endunless %}
+    <a target="_blank" 
+    href="https://github.com/{{site.github_editme_path}}{% unless page.url contains "index.html" %}pages/{% endunless %}{{page.folder}}{{page_url}}"
+    class="btn btn-default githubEditButton" 
+    role="button">
+    <i class="fa fa-github fa-lg"></i> 
+    {% if page.lang == "ru" %} Редактировать{% else %} Edit me{% endif %}
+    </a>
+
+    {% endif %}
 
   {{content}}
 

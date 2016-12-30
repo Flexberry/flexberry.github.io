@@ -4,7 +4,7 @@ keywords: mydoc
 sidebar: ember-flexberry_sidebar
 toc: false
 permalink: ru/ef_landing_page.html
-folder: ember-flexberry
+folder: products/ember-flexberry/
 lang: ru
 ---
 
