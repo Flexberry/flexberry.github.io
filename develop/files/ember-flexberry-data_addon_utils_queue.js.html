@@ -392,8 +392,10 @@ export default Ember.Object.extend({
     const queueKey = this._queue.length;
 
     this._queue[queueKey] = new Ember.RSVP.Promise((resolve, reject) =&gt; this._queue[queueKey - 1].then(() =&gt; callback(resolve, reject)).catch((reason) =&gt; {
-      Ember.Logger.error(reason);
       if (this.get(&#x27;continueOnError&#x27;)) {
+        Ember.warn(&#x60;Promise in queue was rejected with reason: &quot;${reason}&quot;&#x60;,
+          false,
+          { id: &#x27;ember-flexberry-data-debug.queue.promise-was-rejected&#x27; });
         resolve();
       } else {
         reject(reason);

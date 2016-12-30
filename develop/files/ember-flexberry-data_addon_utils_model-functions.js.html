@@ -403,7 +403,9 @@ export function getValueFromLocales(i18n, key) {
   if (i18n.exists(key)) {
     return i18n.t(key);
   } else {
-    Ember.Logger.warn(&#x60;The ${key} is not found in locales.&#x60;);
+    Ember.warn(&#x60;The ${key} is not found in locales.&#x60;,
+      false,
+      { id: &#x27;ember-flexberry-data-debug.locales.key-is-not-found&#x27; });
     return null;
   }
 }

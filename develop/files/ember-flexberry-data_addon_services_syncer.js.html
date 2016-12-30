@@ -523,7 +523,7 @@ export default Ember.Service.extend({
           dexieService.set(&#x27;queueSyncDownWorksCount&#x27;, dexieService.get(&#x27;queueSyncDownWorksCount&#x27;) - 1);
           return record;
         }).catch((reason) =&gt; {
-          Ember.Logger.error(reason);
+          return Ember.RSVP.reject(reason);
         });
       } else {
         return createLocalRecord.call(_this, store, localAdapter, localStore, modelType, record, projection, params);
@@ -622,7 +622,7 @@ export default Ember.Service.extend({
     @return {Promise} Promise that resolves updated job.
   */
   resolveServerError(job, error) {
-    Ember.Logger.debug(&#x60;Error sync up:&#x27;${job.get(&#x27;operationType&#x27;)}&#x27; - &#x27;${job.get(&#x27;objectType.name&#x27;)}:${job.get(&#x27;objectPrimaryKey&#x27;)}&#x27;.&#x60;, error);
+    Ember.debug(&#x60;Error sync up:&#x27;${job.get(&#x27;operationType&#x27;)}&#x27; - &#x27;${job.get(&#x27;objectType.name&#x27;)}:${job.get(&#x27;objectPrimaryKey&#x27;)}&#x27;.&#x60;, error);
     job.set(&#x27;executionResult&#x27;, &#x27;Ошибка&#x27;);
     return job.save();
   },

@@ -382,7 +382,7 @@ export default Ember.Mixin.create({
    * @return {Promise} promise
    */
   query(modelName, query) {
-    Ember.Logger.debug(&#x60;Flexberry Store::query ${modelName}&#x60;, query);
+    Ember.debug(&#x60;Flexberry Store::query ${modelName}&#x60;, query);
 
     let promise = this._super(...arguments);
     return new Ember.RSVP.Promise((resolve, reject) =&gt; {
@@ -406,7 +406,7 @@ export default Ember.Mixin.create({
    * @return {Promise} promise
    */
   queryRecord(modelName, query) {
-    Ember.Logger.debug(&#x60;Flexberry Store::queryRecord ${modelName}&#x60;, query);
+    Ember.debug(&#x60;Flexberry Store::queryRecord ${modelName}&#x60;, query);
 
     return this.query(modelName, query).then(result =&gt; new Ember.RSVP.Promise((resolve) =&gt; resolve(result.get(&#x27;firstObject&#x27;))));
   },
@@ -425,12 +425,12 @@ export default Ember.Mixin.create({
    * @return {DS.AdapterPopulatedRecordArray} Records promise.
    */
   findAll(modelName, options) {
-    Ember.Logger.debug(&#x60;Flexberry Store::findAll ${modelName}&#x60;);
+    Ember.debug(&#x60;Flexberry Store::findAll ${modelName}&#x60;);
 
     let builder = new QueryBuilder(this, modelName);
 
     if (options &amp;&amp; options.projection) {
-      Ember.Logger.debug(&#x60;Flexberry Store::findAll using projection &#x27;${options.projection}&#x27;&#x60;);
+      Ember.debug(&#x60;Flexberry Store::findAll using projection &#x27;${options.projection}&#x27;&#x60;);
 
       builder.selectByProjection(options.projection);
       return this.query(modelName, builder.build());
@@ -458,12 +458,12 @@ export default Ember.Mixin.create({
    * @return {Promise} Record promise.
    */
   findRecord(modelName, id, options) {
-    Ember.Logger.debug(&#x60;Flexberry Store::findRecord ${modelName}(${id})&#x60;);
+    Ember.debug(&#x60;Flexberry Store::findRecord ${modelName}(${id})&#x60;);
 
     let builder = new QueryBuilder(this, modelName).byId(id);
 
     if (options &amp;&amp; options.projection) {
-      Ember.Logger.debug(&#x60;Flexberry Store::findRecord using projection &#x27;${options.projection}&#x27;&#x60;);
+      Ember.debug(&#x60;Flexberry Store::findRecord using projection &#x27;${options.projection}&#x27;&#x60;);
 
       builder.selectByProjection(options.projection);
       return this.query(modelName, builder.build()).then(result =&gt; new Ember.RSVP.Promise((resolve) =&gt; resolve(result.get(&#x27;firstObject&#x27;))));

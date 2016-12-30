@@ -412,7 +412,7 @@ export default DS.RESTAdapter.extend({
       data = this.sortQueryParams(data);
     }
 
-    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::query &#x27;${type}&#x27;&#x60;, data);
+    Ember.debug(&#x60;Flexberry ODataAdapter::query &#x27;${type}&#x27;&#x60;, data);
 
     // TODO: think about moving request execution into query adapter
     return this.ajax(url, &#x27;GET&#x27;, { data: data, timeout: timeout });
@@ -430,7 +430,7 @@ export default DS.RESTAdapter.extend({
    */
   /* jshint unused:vars */
   queryRecord(store, type, query) {
-    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::queryRecord &#x27;${type}&#x27;&#x60;, query);
+    Ember.debug(&#x60;Flexberry ODataAdapter::queryRecord &#x27;${type}&#x27;&#x60;, query);
 
     // TODO: query support for direct calls
     return this._super.apply(this, arguments);
@@ -450,7 +450,7 @@ export default DS.RESTAdapter.extend({
   */
   /* jshint unused:vars */
   findRecord(store, type, id, snapshot) {
-    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::findRecord &#x27;${type}(${id})&#x27;&#x60;);
+    Ember.debug(&#x60;Flexberry ODataAdapter::findRecord &#x27;${type}(${id})&#x27;&#x60;);
 
     // TODO: query support for direct calls
     return this._super.apply(this, arguments);
@@ -470,7 +470,7 @@ export default DS.RESTAdapter.extend({
    */
   /* jshint unused:vars */
   findAll(store, type, sinceToken, snapshotRecordArray) {
-    Ember.Logger.debug(&#x60;Flexberry ODataAdapter::findAll &#x27;${type}&#x27;&#x60;);
+    Ember.debug(&#x60;Flexberry ODataAdapter::findAll &#x27;${type}&#x27;&#x60;);
 
     // TODO: query support for direct calls
     return this._super.apply(this, arguments);

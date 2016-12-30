@@ -463,11 +463,11 @@ export default DS.Store.extend({
    * @return {DS.AdapterPopulatedRecordArray} Records promise.
    */
   findAll: function(modelName, options) {
-    Ember.Logger.debug(&#x60;Flexberry Local Store::findAll ${modelName}&#x60;);
+    Ember.debug(&#x60;Flexberry Local Store::findAll ${modelName}&#x60;);
 
     let builder = new QueryBuilder(this, modelName);
     if (options &amp;&amp; options.projection) {
-      Ember.Logger.debug(&#x60;Flexberry Local Store::findAll using projection &#x27;${options.projection}&#x27;&#x60;);
+      Ember.debug(&#x60;Flexberry Local Store::findAll using projection &#x27;${options.projection}&#x27;&#x60;);
 
       builder.selectByProjection(options.projection);
       return this.query(modelName, builder.build());
@@ -496,11 +496,11 @@ export default DS.Store.extend({
    */
   findRecord: function(modelName, id, options) {
     // TODO: case of options.reload === false.
-    Ember.Logger.debug(&#x60;Flexberry Local Store::findRecord ${modelName}(${id})&#x60;);
+    Ember.debug(&#x60;Flexberry Local Store::findRecord ${modelName}(${id})&#x60;);
 
     let builder = new QueryBuilder(this, modelName).byId(id);
     if (options &amp;&amp; options.projection) {
-      Ember.Logger.debug(&#x60;Flexberry Local Store::findRecord using projection &#x27;${options.projection}&#x27;&#x60;);
+      Ember.debug(&#x60;Flexberry Local Store::findRecord using projection &#x27;${options.projection}&#x27;&#x60;);
 
       builder.selectByProjection(options.projection);
       return this.queryRecord(modelName, builder.build());
@@ -529,7 +529,7 @@ export default DS.Store.extend({
    *                   once the server returns.
    */
   query: function(modelName, query) {
-    Ember.Logger.debug(&#x60;Flexberry Local Store::query ${modelName}&#x60;, query);
+    Ember.debug(&#x60;Flexberry Local Store::query ${modelName}&#x60;, query);
 
     let promise = this._super(...arguments);
     return new Ember.RSVP.Promise((resolve, reject) =&gt; {
@@ -561,7 +561,7 @@ export default DS.Store.extend({
    *                   once the server returns.
    */
   queryRecord: function(modelName, query) {
-    Ember.Logger.debug(&#x60;Flexberry Local Store::queryRecord ${modelName}&#x60;, query);
+    Ember.debug(&#x60;Flexberry Local Store::queryRecord ${modelName}&#x60;, query);
 
     let promise = this._super(...arguments);
     return new Ember.RSVP.Promise((resolve, reject) =&gt; {
