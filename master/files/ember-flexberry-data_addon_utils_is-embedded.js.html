@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Query.IndexedDbAdapter - Flexberry Documentation</title>
+    <title>ember-flexberry-data/addon/utils/is-embedded.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.OData", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/Audit", "classes/ColsconfigDialogContentComponent", "classes/DecimalTransform", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryBaseComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDropDown", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewHierarchicalControllerMixin", "classes/FlexberryObjectlistviewHierarchicalRouteMixin", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbarComponent", "classes/GuidTransform", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LockRouteMixin", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/Mobile.ObjectListViewRowComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/NewPlatformFlexberryServicesLockAdapter", "classes/NewPlatformFlexberryServicesLockEditController", "classes/NewPlatformFlexberryServicesLockEditRoute", "classes/NewPlatformFlexberryServicesLockListController", "classes/NewPlatformFlexberryServicesLockListRoute", "classes/NewPlatformFlexberryServicesLockModel", "classes/NewPlatformFlexberryServicesLockSerializer", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewRowComponent", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDbAdapter", "classes/Query.JsAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.QueryObject", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/Security", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.OData", "classes/Serializer.Offline", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/ValidationDataObject", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.OData", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstanceInitializer", "classes/Audit", "classes/ColsconfigDialogContentComponent", "classes/DecimalTransform", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EnumCaptionHelper", "classes/ErrorableControllerMixin", "classes/FileTransform", "classes/FlexberryBaseComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryDatePicker", "classes/FlexberryDropDown", "classes/FlexberryEnumTransform", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewHierarchicalControllerMixin", "classes/FlexberryObjectlistviewHierarchicalRouteMixin", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberrySimpledatetime", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/GroupEditToolbarComponent", "classes/GuidTransform", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/LockRouteMixin", "classes/LogService", "classes/LookupDialogController", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/Mobile.ObjectListViewRowComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/NewPlatformFlexberryServicesLockAdapter", "classes/NewPlatformFlexberryServicesLockEditController", "classes/NewPlatformFlexberryServicesLockEditRoute", "classes/NewPlatformFlexberryServicesLockListController", "classes/NewPlatformFlexberryServicesLockListRoute", "classes/NewPlatformFlexberryServicesLockModel", "classes/NewPlatformFlexberryServicesLockSerializer", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewHeaderCell", "classes/ObjectListViewRowComponent", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.DexieService", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDBAdapter", "classes/Query.JsAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.QueryObject", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReloadListMixin", "classes/Resolver", "classes/Security", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.OData", "classes/Serializer.Offline", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/ValidationDataObject", "modules/ember-flexberry", "modules/ember-flexberry-data"]'>
         </form>
     </div>
 </div>
@@ -130,6 +130,7 @@
 	                            <li><a href="../classes/ObjectListViewRowComponent.html">ObjectListViewRowComponent</a></li>
 	                            <li><a href="../classes/ObjectListViewSingleColumnCellComponent.html">ObjectListViewSingleColumnCellComponent</a></li>
 	                            <li><a href="../classes/Offline.html">Offline</a></li>
+	                            <li><a href="../classes/Offline.DexieService.html">Offline.DexieService</a></li>
 	                            <li><a href="../classes/Offline.GlobalsService.html">Offline.GlobalsService</a></li>
 	                            <li><a href="../classes/Offline.Model.html">Offline.Model</a></li>
 	                            <li><a href="../classes/Offline.ModelMixin.html">Offline.ModelMixin</a></li>
@@ -151,7 +152,7 @@
 	                            <li><a href="../classes/Query.Condition.html">Query.Condition</a></li>
 	                            <li><a href="../classes/Query.DetailPredicate.html">Query.DetailPredicate</a></li>
 	                            <li><a href="../classes/Query.FilterOperator.html">Query.FilterOperator</a></li>
-	                            <li><a href="../classes/Query.IndexedDbAdapter.html">Query.IndexedDbAdapter</a></li>
+	                            <li><a href="../classes/Query.IndexedDBAdapter.html">Query.IndexedDBAdapter</a></li>
 	                            <li><a href="../classes/Query.JsAdapter.html">Query.JsAdapter</a></li>
 	                            <li><a href="../classes/Query.ODataAdapter.html">Query.ODataAdapter</a></li>
 	                            <li><a href="../classes/Query.OrderByClause.html">Query.OrderByClause</a></li>
@@ -214,140 +215,26 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>Query.IndexedDbAdapter <small>Class</small></h1>
+    <h1>ember-flexberry-data/addon/utils/is-embedded.js <small>File</small></h1>
 </div>
 
-<div class="well well-small">
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+  @method isEmbedded
+  @param {DS.Store} store
+  @param {DS.Model} modelType
+  @param {String} relationshipName
+  @return {Boolean}
+*/
+export default function isEmbedded(store, modelType, relationshipName) {
+  let serializerAttrs = store.serializerFor(modelType.modelName).get(&#x27;attrs&#x27;);
+  return serializerAttrs &amp;&amp; serializerAttrs[relationshipName] &amp;&amp;
+    ((serializerAttrs[relationshipName].embedded &amp;&amp; serializerAttrs[relationshipName].embedded === &#x27;always&#x27;) ||
+    (serializerAttrs[relationshipName].deserialize &amp;&amp; serializerAttrs[relationshipName].deserialize === &#x27;records&#x27;));
+}
 
-
-        <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-data_addon_query_indexeddb-adapter.js.html#l11"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;indexeddb-adapter.js:11</code></a>
-        </div>
-
-            Module: <a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a>
-
-</div>
-
-
-<div class="well well-small">
-    <p>Class of query language adapter that allows to load data from IndexedDB.</p>
-
-</div>
-
-
-<div>
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
-
-            <li><a data-toggle="tab" href="#methods">Methods</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div id="index" class="tab-pane active">
-            <h2 class="off-left">Item Index</h2>
-
-                <div class="index-section methods">
-                    <h3>Methods</h3>
-
-                    <ul class="index-list methods">
-                            <li class="index-item method public">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_query" data-tablink="query">query</a>
-
-                            </li>
-                    </ul>
-                </div>
-
-
-
-        </div>
-
-            <div id="methods" class="tab-pane">
-                <h2 class="off-left">Methods</h2>
-
-                    <div id="method_query" class="method item public">
-                        <h3 class="name"><code>query</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>store</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>Query</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type">Ember.RSVP.Promise</span>
-                            </span>
-                    
-                    
-                            <span class="flag public">public</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-data_addon_query_indexeddb-adapter.js.html#l30"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;indexeddb-adapter.js:30</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Loads data from IndexedDB.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">store</code>
-                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Store.html" class="crosslink external" target="_blank">DS.Store</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                             
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">Query</code>
-                                            <span class="type"><a href="../classes/Query.html" class="crosslink">Query</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>language instance to the adapter.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type">Ember.RSVP.Promise</span>:
-                                        <p>Promise with loaded data.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-            </div>
-
-
-
-    </div>
+    </pre>
 </div>
                     </div>
                 </div>
