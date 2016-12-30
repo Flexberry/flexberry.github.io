@@ -21,7 +21,7 @@ site_title: Flexberry PLATFORM Documentation
 company_name: Flexberry
 # this appears in the footer
 
-github_editme_path: /Flexberry/flexberry.github.io/edit
+github_editme_path: Flexberry/flexberry.github.io/blob/master
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 disqus: true
