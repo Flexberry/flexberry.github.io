@@ -4,7 +4,7 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_ood.html
-folder: base-tech
+folder: guides/base-tech/information-system-design/
 lang: ru
 ---
 

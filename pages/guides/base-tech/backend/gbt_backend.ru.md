@@ -4,7 +4,7 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_backend.html
-folder: base-tech/backend
+folder: guides/base-tech/backend/
 lang: ru
 ---
 

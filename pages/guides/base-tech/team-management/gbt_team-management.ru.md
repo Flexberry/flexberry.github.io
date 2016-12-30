@@ -4,7 +4,7 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_team-management.html
-folder: base-tech
+folder: guides/base-tech/team-management/
 lang: ru
 ---
 

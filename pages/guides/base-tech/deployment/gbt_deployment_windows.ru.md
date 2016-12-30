@@ -1,10 +1,10 @@
 ---
-title: Паттерны проектирования
+title: Разворачивание решений в Windows
 keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
-permalink: ru/gbt_design-patterns.html
-folder: guides/base-tech/information-system-design/
+permalink: ru/gbt_deployment_windows.html
+folder: guides/base-tech/deployment/
 lang: ru
 ---
 
@@ -55,6 +55,5 @@ lang: ru
 * [-]()
 
 ## Перейти
-
-* [Клиентская разработка](gbt_frontend.html)
+* [Разворачивание решений в Linux](gbt_deployment_linux.html)
 * [Главная страница курса](gbt_landing-page.html)
