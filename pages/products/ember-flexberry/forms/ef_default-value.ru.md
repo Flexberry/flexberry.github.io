@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_default-value.html
-folder: product--folder
+folder: products/ember-flexberry/forms/
 lang: ru
 summary: Описаны варианты задания значений по умолчанию в ember-flexberry-приложении.
 ---

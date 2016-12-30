@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_olv-resize.html
-folder: product--folder
+folder: products/ember-flexberry/controls/objectlistview/
 lang: ru
 summary: Представлено описание контрола для просмотра списка объектов Flexberry Objectlistview.
 ---

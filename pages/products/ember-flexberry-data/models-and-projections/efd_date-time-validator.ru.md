@@ -4,7 +4,7 @@ sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_date-time-validator.html
-folder: product--folder
+folder: products/ember-flexberry-data/models-and-projections/
 lang: ru
 summary: Описание возможностей и способа использования валидатора datetime.
 ---

@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_object-list-view.html
-folder: product--folder
+folder: products/ember-flexberry/controls/objectlistview/
 lang: ru
 summary: Представлено описание контрола для просмотра списка объектов Flexberry Objectlistview.
 ---
@@ -17,7 +17,7 @@ summary: Представлено описание контрола для пр�
 
 
 ```hbs
-{{flexberry-objectlistview
+{% raw %}{{flexberry-objectlistview
 	componentName = "ordersObjectListView"
 	modelController = this
 	modelName = "order"
@@ -43,7 +43,7 @@ summary: Представлено описание контрола для пр�
 	previousPage = (action "previousPage")
 	gotoPage = (action "gotoPage")
 	nextPage = (action "nextPage")
-}}
+}}{% endraw %}
 ```
 
 {% include note.html content="Синтаксис вида `addColumnToSorting=(action \"addColumnToSorting\")` определяет, что используется ember closure action. Если требуемое действие не определено, то при вызове соответствующей функциональности в консоли браузера появится ошибка." %}
@@ -109,7 +109,7 @@ summary: Представлено описание контрола для пр�
 
 Значения по умолчанию:
 
-```hbs
+```js
 action: 'rowClick',
 createNewButton: false,
 refreshButton: false,

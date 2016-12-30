@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_groupedit.html
-folder: product--folder
+folder: products/ember-flexberry/controls/groupedit/
 lang: ru
 summary: Представлено описание контрола для редактирования детейлов Flexberry Groupedit.
 ---
@@ -16,14 +16,14 @@ summary: Представлено описание контрола для ре�
 Для добавления контрола на страницу, можно воспользоваться шаблоном:
 
 ```hbs
-{{flexberry-groupedit
+{% raw %}{{flexberry-groupedit
 	componentName="ordersGroupEdit"
 	class="attached"
 	modelProjection=modelProjection.attributes.orders
 	content=model.orders
 	readonly=readonly
 	orderable=false
-}}
+}}{% endraw %}
 ```
 
 Свойства `'''componentName'''` и `'''readonly'''` - это свойства из [базового контрола](ef_controls.html).
@@ -63,12 +63,12 @@ summary: Представлено описание контрола для ре�
 Если для флага `'''orderable'''` выставить значение "true", то требуется дополнительно задать настройки:
 
 ```hbs
-{{flexberry-groupedit
+{% raw %}{{flexberry-groupedit
 	...
 	orderable=true
 	sortByColumn=(action "sortByColumn")
 	addColumnToSorting=(action "addColumnToSorting")
-}}
+}}{% endraw %}
 ```
 
 `sortByColumn` - действие (action) контроллера, которое должно быть выполнено для сортировки по столбцу.

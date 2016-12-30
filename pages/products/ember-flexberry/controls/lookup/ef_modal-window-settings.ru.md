@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_modal-window-settings.html
-folder: product--folder
+folder: products/ember-flexberry/controls/lookup/
 lang: ru
 summary: Представлены основные возможности настройки по настройке поднимаемой по лукапу формы.
 ---
@@ -13,7 +13,7 @@ summary: Представлены основные возможности нас
 
 Настройки модального окна [лукапа](ef_lookup.html) определены в `components/lookup-field/lookup-field-mixin.js`.
 
-```
+```js
 lookupSettings: {
 	controllerName: undefined,
 	template: undefined,
@@ -26,7 +26,7 @@ lookupSettings: {
 
 В контроллере формы редактирования `controllers/edit-form.js` данные настройки заданы:
 
-```
+```js
 lookupSettings: {
     controllerName: 'lookup-dialog',
     template: 'lookup-dialog',
@@ -49,15 +49,15 @@ lookupSettings: {
 
 Заголовок окна, открываемого по [лукапу](ef_lookup.html), устанавливается в свойстве `title` компонента `lookup-field` в шаблоне соответствующей формы редактирования. Например, в шаблоне формы редактирования `employee.hbs` встраивание лукапа может выглядеть следующим образом:
 
-```
-{{lookup-field/lookup-field
+```hbs
+{% raw %}{{lookup-field/lookup-field
   choose='showLookupDialog'
   remove='removeLookupValue'
   value=model.employee1.firstName
   relationName='employee1'
   projection='EmployeeL'
   title='Employees'
-}}
+}}{% endraw %}
 ```
 
 В результате заголовок из свойства `title` компонента `lookup-field` будет отображаться в модальном окне, открываемом по лукапу:

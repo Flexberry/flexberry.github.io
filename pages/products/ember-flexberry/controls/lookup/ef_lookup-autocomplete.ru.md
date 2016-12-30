@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_lookup-autocomplete.html
-folder: product--folder
+folder: products/ember-flexberry/controls/lookup/
 lang: ru
 summary: Описаны основные особенности использования лукапа в режиме автодополнения.
 ---

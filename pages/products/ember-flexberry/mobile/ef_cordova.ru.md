@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: 
 toc: true
 permalink: ru/ef_cordova.html
-folder: product--folder
+folder: products/ember-flexberry/mobile/
 lang: ru
 summary: Описание способа запуска Flexberry Ember-приложения в качестве мобильного приложения Apache Cordova.
 ---

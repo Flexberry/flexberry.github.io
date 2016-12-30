@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_olv-toolbar.html
-folder: product--folder
+folder: products/ember-flexberry/controls/objectlistview/
 lang: ru
 summary: Представлено, каким образом настраивается панель управления (тулбар) контрола Flexberry Objectlistview.
 ---
@@ -17,8 +17,8 @@ summary: Представлено, каким образом настраива�
 
 ## Кнопка создания новой записи
 
-```
-`flexberry-objectlistview createNewButton = true ...`
+```hbs
+{% raw %}{{flexberry-objectlistview createNewButton = true}}{% endraw %}
 ```
 
 `createNewButton` - флаг, определяющий, отображать ли кнопку создания на панели управления.
@@ -27,7 +27,7 @@ summary: Представлено, каким образом настраива�
 ## Кнопка обновления
 
 ```
-`flexberry-objectlistview refreshButton = true ...`
+{% raw %}{{flexberry-objectlistview refreshButton = true}}{% endraw %}
 ```
 
 `refreshButton` - флаг, определяющий, отображать ли кнопку обновления на панели управления.
@@ -35,13 +35,13 @@ summary: Представлено, каким образом настраива�
 
 ## Кнопка удаления выделенных записей
 
-```
-{{flexberry-objectlistview
+```hbs
+{% raw %}{{flexberry-objectlistview
 	componentName = "..."
 	deleteButton = true
 	showCheckBoxInRow = true
 	...
-}}
+}}{% endraw %}
 ```
 
 Для того, чтобы начала функционировать кнопка удаления выделенных записей, требуется определить следующие свойства [Flexberry Objectlistview](ef_objectlistview.html):
@@ -60,11 +60,11 @@ summary: Представлено, каким образом настраива�
 При значении атрибута colsConfigButton=true на панели управления (тулбар) отображаются кнопки управления пользовательскими наcтройками.
 
 ```hbs
-{{flexberry-objectlistview
+{% raw %}{{flexberry-objectlistview
 	componentName = "..."
 	colsConfigButton=true
 	...
-}}
+}}{% endraw %}
 ```
 
 Подробно о функционале пользовательских настроек можно почитать на странице [Сервис настроек пользователя](ef_model-user-settings-service.html).
@@ -96,7 +96,7 @@ summary: Представлено, каким образом настраива�
 3. В [шаблоне](ef_template.html) соответствующей формы у компонента `flexberry-objectlistview` определить свойства:
 
 ```hbs
-{{flexberry-objectlistview
+{% raw %}{{flexberry-objectlistview
   // ...
 	customButtons=customButtons
 	
@@ -104,7 +104,7 @@ summary: Представлено, каким образом настраива�
 	userButtonAction2='userButtonAction2'
 	// ...
 	userButtonActionN='userButtonActionN'
-}}
+}}{% endraw %}
 ```
 
 `customButtons` - определение свойства, откуда можно взять массив.

@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_groupedit-detail-in-route.html
-folder: product--folder
+folder: products/ember-flexberry/controls/groupedit/
 lang: ru
 summary: Описаны настройки, которые необходимо произвести, чтобы править детейлы на отдельных [роутах](ef_route.html) во [Flexberry Groupedit](ef_groupedit.html).
 ---

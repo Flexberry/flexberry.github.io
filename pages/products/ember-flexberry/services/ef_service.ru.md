@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_service.html
-folder: product--folder
+folder: products/ember-flexberry/services/
 lang: ru
 ---
 

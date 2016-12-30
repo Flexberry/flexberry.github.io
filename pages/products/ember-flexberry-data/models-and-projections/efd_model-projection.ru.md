@@ -4,7 +4,7 @@ sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_model-projection.html
-folder: product--folder
+folder: products/ember-flexberry-data/models-and-projections/
 lang: ru
 summary: Представлено детализированное описание того, как задаются представления в ember-flexberry-приложении.
 ---

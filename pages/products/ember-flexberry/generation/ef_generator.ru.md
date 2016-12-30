@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: CASE Plugins, Flexberry Designer, Flexberry Ember
 toc: true
 permalink: ru/ef_generator.html
-folder: product--folder
+folder: products/ember-flexberry/generator/
 lang: ru
 summary: Генерация Ember-приложения из меню Flexberry Designer.
 ---

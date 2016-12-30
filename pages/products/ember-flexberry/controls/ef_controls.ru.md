@@ -39,14 +39,14 @@ summary:
 
 `ObjectListView` - контрол для отображения списка объектов (может использоваться как на списковой форме для отображения списка объектов, так и на форме редактирования для отображения детейлов).
 
-```handlebars
-{{object-list-view
+```hbs
+{% raw %}{{object-list-view
 	class = "ui attached"
 	modelProjection = modelProjection.attributes.orders
 	content = model.orders
 	cellComponent = getCellComponent
 	readonly = readonly
-}}
+}}{% endraw %}
 ```
 
 ## Контролы, которые пока не наследуются от базового

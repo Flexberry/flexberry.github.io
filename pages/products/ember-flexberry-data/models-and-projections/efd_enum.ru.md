@@ -4,7 +4,7 @@ sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_enum.html
-folder: product--folder
+folder: products/ember-flexberry-data/models-and-projections/
 lang: ru
 summary: Описаны основные особенности работы с перечислимыми типами в ember-flexberry-data.
 ---

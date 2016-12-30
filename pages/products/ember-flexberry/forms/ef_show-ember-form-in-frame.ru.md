@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_show-ember-form-in-frame.html
-folder: product--folder
+folder: products/ember-flexberry/forms/
 lang: ru
 summary: Данная возможность позволяет отображать внутри фрейма исключительно ember-форму без меню и других дополнительных элементов.
 ---
@@ -37,7 +37,7 @@ export default Ember.Controller.extend({
 Например, ниже для отображения оставлена только сама форма, все остальные элементы скрываются.
 
 ```hbs
-{{#unless shouldShowInFrame}}
+{% raw %}{{#unless shouldShowInFrame}}
 	<div class="ui grid page menu">
 	  <a class="brand item" href="#">Flexberry prototype written in Ember.js</a>
 	  <div class="right menu">
@@ -65,7 +65,7 @@ export default Ember.Controller.extend({
     {{outlet}}
 		{{outlet 'modal'}}
   </div>
-</div>
+</div>{% endraw %}
 ```
 
 3. При вызове формы добавить параметр «inframe=true».

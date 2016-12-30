@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_template.html
-folder: product--folder
+folder: products/ember-flexberry/forms/
 lang: ru
 summary: Представлена основная информация о структуре handlebars-шаблонов в ember-flexberry-приложениях.
 ---
@@ -19,19 +19,19 @@ summary: Представлена основная информация о ст�
 
 Типичный шаблон (template) для Ember-приложения `application.js`:
 
-```html
-<div class="ui grid page menu">
+```hbs
+{% raw %}<div class="ui grid page menu">
   <a class="brand item" href="#">Flexberry prototype written in Ember.js</a>
 </div>
 <div class="ui grid page">
   <div class="four wide column">
-    `render "sitemap" sitemap`
+    {{render "sitemap" sitemap}}
   </div>
   <div class="twelve wide column">
-    `outlet`
-    `outlet 'modal'`
+    {{outlet}}
+    {{outlet 'modal'}}
   </div>
-</div>
+</div>{% endraw %}
 ```
 
 В контроллере приложения должна быть определена структура *sitemap* для отображении в меню сайта (как это сделано [здесь](ef_controller.html)).

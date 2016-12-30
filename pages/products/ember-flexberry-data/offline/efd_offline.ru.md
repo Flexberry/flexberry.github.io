@@ -4,7 +4,7 @@ sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_offline.html
-folder: product--folder
+folder: products/ember-flexberry-data/offline/
 lang: ru
 summary: 
 ---

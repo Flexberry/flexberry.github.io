@@ -4,7 +4,7 @@ sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_odata.html
-folder: product--folder
+folder: products/ember-flexberry-data/odata-and-jsonapi/
 lang: ru
 summary: 
 ---

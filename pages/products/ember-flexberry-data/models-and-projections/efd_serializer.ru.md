@@ -4,7 +4,7 @@ sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_serializer.html
-folder: product--folder
+folder: products/ember-flexberry-data/models-and-projections/
 lang: ru
 summary: Сериализаторы определяют, каким образом происходит десериализация и сериализация данных для сервера в ember-flexberry-приложении.
 ---

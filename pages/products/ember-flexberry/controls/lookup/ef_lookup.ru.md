@@ -4,7 +4,7 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_lookup.html
-folder: product--folder
+folder: products/ember-flexberry/controls/lookup/
 lang: ru
 summary: Представлены основные особенности лукапов
 ---
@@ -135,10 +135,10 @@ export default ApplicationSerializer.extend({
 Возможно использовать компонент в блочной форме:
 
 ```hbs
-{{#flexberry-lookup ...}}
+{% raw %}{{#flexberry-lookup ...}}
   {{model.employee1.firstName}}<br>
   {{model.employee1.lastName}}
-{{/flexberry-lookup}}
+{{/flexberry-lookup}}{% endraw %}
 ```
 в этом случае прикладной программист может переопределить как будет выглядеть отображение мастера на форме
 
@@ -153,7 +153,7 @@ export default ApplicationSerializer.extend({
 Задание ограничений на значения, отображаемые в списке для выбора, осуществляются посредством задания фильтра ($filter) в формате OData ([OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094)). Данный фильтр задаётся в виде строки в свойство `limitFunction` при задании шаблона.
 
 ```hbs
-{{flexberry-lookup limitFunction=SomeFilterFunction ...}}
+{% raw %}{{flexberry-lookup limitFunction=SomeFilterFunction ...}}{% endraw %}
 ```
 
 Рассмотрим задание ограничения на примере. Пусть у сущности `Employee` есть мастеровая ссылка `Employee1` типа `Employee`. Требуется по лукапу отобразить только те записи, у которых `FirstName` больше или равен `FirstName` текущей выбранной записи.
@@ -198,7 +198,7 @@ export default EditFormController.extend({
 Далее соответствующее свойство необходимо указать в шаблоне формы:
 
 ```hbs
-{{flexberry-lookup limitFunction=lookupLimitFunction ...}}
+{% raw %}{{flexberry-lookup limitFunction=lookupLimitFunction ...}}{% endraw %}
 ```
 
 {% include important.html content="Поскольку фильтр задаётся непосредственно для OData, `FirstName` пишется с большой буквы и соответствует имени свойства в модели OData (в ember-модели пишется `firstName` с маленькой буквы).<br/>
