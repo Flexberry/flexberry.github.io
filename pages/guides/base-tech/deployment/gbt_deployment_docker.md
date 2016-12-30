@@ -44,9 +44,9 @@ Docker решает эту проблему путем создания обра
 Описанные далее образы созданы на основе базового docker-образа дистрибутива [ALTLinux/BaseALT P8](https://hub.docker.com/r/fotengauer/altlinux-p8/). Кроме этого созданы аналогичные образы на основе дистрибутива [ALTLinux C7](https://hub.docker.com/r/fotengauer/altlinux-p7/):
 
 * [kafnevod/altlinux.p7-apache2](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2/) - образ Apache2 сервера 
-* [kafnevod/altlinux.p7-apache2-mono4.6.2.7](https://hub.docker.com/r/kafnevod/altlinux.p7-apache2-mono4.6.2.7/) - образ Apache2/Mono4  сервера.
+* [flexberry/altlinux.p7-apache2-mono4.6.2.7](https://hub.docker.com/r/flexberry/altlinux.p7-apache2-mono4.6.2.7/) - образ Apache2/Mono4  сервера.
 
-Эти образы используют сертифицированный библиотеки дистрибутива ALTLinux C7 и при необходимости могут быть использованы вместо описываемых в данном докумене образов [kafnevod/altlinux.p8-apache2](https://hub.docker.com/r/kafnevod/altlinux.p8-apache2/), [kafnevod/altlinux.p8-apache2-mono4.6.2.7](https://hub.docker.com/r/kafnevod/altlinux.p8-apache2-mono4.6.2.7/) собранных на дистрибутива ALTLinux/BaseALT P8.
+Эти образы используют сертифицированный библиотеки дистрибутива ALTLinux C7 и при необходимости могут быть использованы вместо описываемых в данном докумене образов [kafnevod/altlinux.p8-apache2](https://hub.docker.com/r/kafnevod/altlinux.p8-apache2/), [flexberry/altlinux.p8-apache2-mono4.6.2.7](https://hub.docker.com/r/flexberry/altlinux.p8-apache2-mono4.6.2.7/) собранных на дистрибутива ALTLinux/BaseALT P8.
 
 При запуске контейнера Вы можете передавать в него различные параметры, привязывать TCP-порты приложения контейнера к различных портам HOST-системы, монтировать каталоги HOST-системы в подкаталоги контейнера. 
 
@@ -210,17 +210,17 @@ ip-адрес_сервера demo.local
 В окне браузера отобразится текст: **_Виртуальный хост demo.local контейнера kafnevod/altlinux.p8-apache2 работает!_**
 
 
-### Образ сервера Mono/.NET-приложений kafnevod/altlinux.p8-apache2-mono4.6.2.7 
+### Образ сервера Mono/.NET-приложений flexberry/altlinux.p8-apache2-mono4.6.2.7 
 
 #### Установка образа и запуск контейнера 
 
-Для запуска mono-приложений загрузите образ kafnevod/altlinux.p8-apache2-mono4.6.2.7:
+Для запуска mono-приложений загрузите образ flexberry/altlinux.p8-apache2-mono4.6.2.7:
 
 ```sh
-# docker pull kafnevod/altlinux.p8-apache2-mono4.6.2.7
+# docker pull flexberry/altlinux.p8-apache2-mono4.6.2.7
 ```
 
-Обратите внимание - так как образ kafnevod/altlinux.p8-apache2-mono4.6.2.7 является расширением образа kafnevod/altlinux.p8-apache2, то те слои файловой системы, которые уже присутствуют в родительском образе в дочернем образе не скачиваются.
+Обратите внимание - так как образ flexberry/altlinux.p8-apache2-mono4.6.2.7 является расширением образа kafnevod/altlinux.p8-apache2, то те слои файловой системы, которые уже присутствуют в родительском образе в дочернем образе не скачиваются.
 
 ```
 6ed0c8c1348d: Already exists 
@@ -234,7 +234,7 @@ b867bce38065: Pulling fs layer
 Для проверки тестового сайта запустите контейнер загруженного образа:
 
 ```sh
-# docker run -d -p 880:880 --name=apache2Mono kafnevod/altlinux.p8-apache2-mono4.6.2.7
+# docker run -d -p 880:880 --name=apache2Mono flexberry/altlinux.p8-apache2-mono4.6.2.7
 ```
 
 #### Проверка работы контейнера
@@ -244,7 +244,7 @@ b867bce38065: Pulling fs layer
 ```sh
 # docker ps -a -f name=apache2Mono
 CONTAINER_ID IMAGE                                    COMMAND CREATED     STATUS      PORTS                          NAMES
-38c7e2a7a8aa kafnevod/altlinux.p8-apache2-mono4.6.2.7 httpd2 2minutes ago Up 2minutes 80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
+38c7e2a7a8aa flexberry/altlinux.p8-apache2-mono4.6.2.7 httpd2 2minutes ago Up 2minutes 80/tcp, 0.0.0.0:880->880/tcp   apache2Mono
 ```
 
 Наберите в браузере URL виртуального сайта с тестовым Mono-приложением http://localhost:880/. В браузере отобразиться результат работы тестового mono-приложения - клавиша **Click me!**.
@@ -299,7 +299,7 @@ NameVirtualHost *:881
   --name=apache2MonoVirt \
   -v /etc/docker/apache2/conf/:/conf/ \
   -v /var/www/vhosts/:/var/www/vhosts/ \
-  kafnevod/altlinux.p8-apache2-mono4.6.2.7
+  flexberry/altlinux.p8-apache2-mono4.6.2.7
 ```
 
 #### Проверка работы виртуального сайта в контейнере Mono/.NET-приложений
