@@ -16789,14 +16789,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js",
-            "line": 38,
+            "line": 39,
             "description": "Reference to component's template.",
             "class": "WFSSearchSettingsComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js",
-            "line": 43,
+            "line": 44,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nis empty to disable component's wrapping <div>.",
             "itemtype": "property",
             "name": "tagName",
@@ -16807,7 +16807,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js",
-            "line": 53,
+            "line": 54,
             "description": "Editing layer deserialized search settings.",
             "itemtype": "property",
             "name": "settings",
@@ -16818,7 +16818,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js",
-            "line": 62,
+            "line": 63,
             "description": "Map layer within which search must be executed.",
             "itemtype": "property",
             "name": "layer",
@@ -16829,7 +16829,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js",
-            "line": 71,
+            "line": 72,
             "description": "Map layers hierarchy.",
             "itemtype": "property",
             "name": "layers",
@@ -16840,7 +16840,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js",
-            "line": 80,
+            "line": 81,
             "description": "Leaflet map.",
             "itemtype": "property",
             "name": "leafletMap",
@@ -16851,7 +16851,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js",
-            "line": 89,
+            "line": 90,
             "description": "Object with properties for which user can do search",
             "itemtype": "property",
             "name": "searchProperties",
@@ -44045,7 +44045,7 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js:38"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js:39"
         },
         {
             "message": "Missing item type\nReference to component's template.",

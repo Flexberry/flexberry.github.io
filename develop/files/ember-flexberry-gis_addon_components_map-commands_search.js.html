@@ -406,418 +406,417 @@ const flexberryClassNames = {
   @extends &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Component.html&quot;&gt;Ember.Component&lt;/a&gt;
 */
 let SearchMapCommandComponent = Ember.Component.extend({
+  /**
+    Additional properties for &#x27;search&#x27; map-commands.
+
+    @property _searchCommandProperties
+    @type Object
+    @default null
+  */
+  _searchCommandProperties: null,
+
+  /**
+    Flag: indicates whether search dialog has been already requested by user or not.
+
+    @property _searchDialogHasBeenRequested
+    @type boolean
+    @default false
+    @private
+  */
+  _searchDialogHasBeenRequested: false,
+
+  /**
+    Flag: indicates whether search dialog is visible or not.
+
+    @property _searchDialogIsVisible
+    @type boolean
+    @default false
+    @private
+  */
+  _searchDialogIsVisible: false,
+
+  /**
+    Event object from latest map-command&#x27;s &#x27;execute&#x27; action.
+
+    @property _searchAttributesExecuteActionEventObject
+    @type Object
+    @default null
+    @private
+  */
+  _searchAttributesExecuteActionEventObject: null,
+
+  /**
+    Event object for &#x27;search-show&#x27; map-command&#x27;s &#x27;execute&#x27; action.
+
+    @property _searchShowExecuteActionEventObject
+    @type Object
+    @default null
+    @private
+  */
+  _searchShowExecuteActionEventObject: null,
+
+  /**
+    Flag: indicates whether search is in progress.
+
+    @property _searchIsInProgress
+    @type Boolean
+    @default false
+    @private
+  */
+  _searchIsInProgress: false,
+
+  /**
+    Flag: indicates whether to show search error message or not.
+
+    @property _showSearchErrorMessage
+    @type Boolean
+    @readOnly
+  */
+  _showSearchErrorMessage: false,
+
+  /**
+    Search error message.
+
+    @property _searchErrorMessage
+    @type String
+    @default null
+    @private
+  */
+  _searchErrorMessage: null,
+
+  /**
+    Search results.
+    Features array containing founded (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].
+
+    @property _foundedFeatures
+    @type Object[]
+    @default null
+    @private
+  */
+  _foundedFeatures: null,
+
+  /**
+    Reference to component&#x27;s template.
+  */
+  layout,
+
+  /**
+    Reference to component&#x27;s CSS-classes names.
+    Must be also a component&#x27;s instance property to be available from component&#x27;s .hbs template.
+  */
+  flexberryClassNames,
+
+  /**
+    Overridden [&#x27;tagName&#x27;](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)
+    to disable a component&#x27;s wrapping element.
+
+    @property tagName
+    @type String
+    @default &#x27;&#x27;
+  */
+  tagName: &#x27;&#x27;,
+
+  /**
+    Map command&#x27;s additional CSS-class.
+
+    @property class
+    @type String
+    @default null
+  */
+  class: null,
+
+  /**
+    Map command&#x27;s caption.
+
+    @property caption
+    @type String
+    @default t(&#x27;components.map-commands.search.caption&#x27;)
+  */
+  caption: t(&#x27;components.map-commands.search.caption&#x27;),
+
+  /**
+    Map command&#x27;s tooltip text.
+    Will be added as wrapper&#x27;s element &#x27;title&#x27; attribute.
+
+    @property tooltip
+    @default t(&#x27;components.map-commands.search.tooltip&#x27;)
+  */
+  tooltip: t(&#x27;components.map-commands.search.tooltip&#x27;),
+
+  /**
+    Map command&#x27;s icon CSS-class names.
+
+    @property iconClass
+    @type String
+    @default &#x27;search icon&#x27;
+  */
+  iconClass: &#x27;search icon&#x27;,
+
+  /**
+    Map command&#x27;s &#x27;search-attributes&#x27; mode&#x27;s additional CSS-class.
+
+    @property searchAttributesClass
+    @type String
+    @default null
+  */
+  searchAttributesClass: null,
+
+  /**
+    Map command&#x27;s &#x27;search-attributes&#x27; mode&#x27;s caption.
+
+    @property searchAttributesCaption
+    @type String
+    @default t(&#x27;components.map-commands.search.search-attributes.caption&#x27;)
+  */
+  searchAttributesCaption: t(&#x27;components.map-commands.search.search-attributes.caption&#x27;),
+
+  /**
+    Map command&#x27;s &#x27;search-attributes&#x27; mode&#x27;s icon CSS-class.
+
+    @property searchAttributesIconClass
+    @type String
+    @default &#x27;search icon&#x27;
+  */
+  searchAttributesIconClass: &#x27;search icon&#x27;,
+
+  /**
+    Map command&#x27;s &#x27;search-clear&#x27; mode&#x27;s additional CSS-class.
+
+    @property searchClearClass
+    @type String
+    @default null
+  */
+  searchClearClass: null,
+
+  /**
+    Map command&#x27;s &#x27;search-clear&#x27; mode&#x27;s caption.
+
+    @property searchClearCaption
+    @type String
+    @default t(&#x27;components.map-commands.search.search-clear.caption&#x27;)
+  */
+  searchClearCaption: t(&#x27;components.map-commands.search.search-clear.caption&#x27;),
+
+  /**
+    Map command&#x27;s &#x27;search-clear&#x27; mode&#x27;s icon CSS-class.
+
+    @property searchClearIconClass
+    @type String
+    @default &#x27;trash icon&#x27;
+  */
+  searchClearIconClass: &#x27;trash icon&#x27;,
+
+  actions: {
     /**
-      Additional properties for &#x27;search&#x27; map-commands.
+      Handles {{#crossLink &quot;BaseMapCommandComponent/sendingActions.execute:method&quot;}}base map-command&#x27;s &#x27;execute&#x27; action{{/crossLink}}.
 
-      @property _searchCommandProperties
-      @type Object
-      @default null
+      @method actions.onSearchAttributesMapCommandExecute
+      @param {Object} e Base map-command&#x27;s &#x27;execute&#x27; action event-object.
     */
-    _searchCommandProperties: null,
-
-    /**
-      Flag: indicates whether search dialog has been already requested by user or not.
-
-      @property _searchDialogHasBeenRequested
-      @type boolean
-      @default false
-      @private
-    */
-    _searchDialogHasBeenRequested: false,
-
-    /**
-      Flag: indicates whether search dialog is visible or not.
-
-      @property _searchDialogIsVisible
-      @type boolean
-      @default false
-      @private
-    */
-    _searchDialogIsVisible: false,
-
-    /**
-      Event object from latest map-command&#x27;s &#x27;execute&#x27; action.
-
-      @property _searchAttributesExecuteActionEventObject
-      @type Object
-      @default null
-      @private
-    */
-    _searchAttributesExecuteActionEventObject: null,
-
-    /**
-      Event object for &#x27;search-show&#x27; map-command&#x27;s &#x27;execute&#x27; action.
-
-      @property _searchShowExecuteActionEventObject
-      @type Object
-      @default null
-      @private
-    */
-    _searchShowExecuteActionEventObject: null,
-
-    /**
-      Flag: indicates whether search is in progress.
-
-      @property _searchIsInProgress
-      @type Boolean
-      @default false
-      @private
-    */
-    _searchIsInProgress: false,
-
-    /**
-      Flag: indicates whether to show search error message or not.
-
-      @property _showSearchErrorMessage
-      @type Boolean
-      @readOnly
-    */
-    _showSearchErrorMessage: false,
-
-    /**
-      Search error message.
-
-      @property _searchErrorMessage
-      @type String
-      @default null
-      @private
-    */
-    _searchErrorMessage: null,
-
-    /**
-      Search results.
-      Features array containing founded (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].
-
-      @property _foundedFeatures
-      @type Object[]
-      @default null
-      @private
-    */
-    _foundedFeatures: null,
-
-    /**
-      Reference to component&#x27;s template.
-    */
-    layout,
-
-    /**
-      Reference to component&#x27;s CSS-classes names.
-      Must be also a component&#x27;s instance property to be available from component&#x27;s .hbs template.
-    */
-    flexberryClassNames,
-
-    /**
-      Overridden [&#x27;tagName&#x27;](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)
-      to disable a component&#x27;s wrapping element.
-
-      @property tagName
-      @type String
-      @default &#x27;&#x27;
-    */
-    tagName: &#x27;&#x27;,
-
-    /**
-      Map command&#x27;s additional CSS-class.
-
-      @property class
-      @type String
-      @default null
-    */
-    class: null,
-
-    /**
-      Map command&#x27;s caption.
-
-      @property caption
-      @type String
-      @default t(&#x27;components.map-commands.search.caption&#x27;)
-    */
-    caption: t(&#x27;components.map-commands.search.caption&#x27;),
-
-    /**
-      Map command&#x27;s tooltip text.
-      Will be added as wrapper&#x27;s element &#x27;title&#x27; attribute.
-
-      @property tooltip
-      @default t(&#x27;components.map-commands.search.tooltip&#x27;)
-    */
-    tooltip: t(&#x27;components.map-commands.search.tooltip&#x27;),
-
-    /**
-      Map command&#x27;s icon CSS-class names.
-
-      @property iconClass
-      @type String
-      @default &#x27;search icon&#x27;
-    */
-    iconClass: &#x27;search icon&#x27;,
-
-    /**
-      Map command&#x27;s &#x27;search-attributes&#x27; mode&#x27;s additional CSS-class.
-
-      @property searchAttributesClass
-      @type String
-      @default null
-    */
-    searchAttributesClass: null,
-
-    /**
-      Map command&#x27;s &#x27;search-attributes&#x27; mode&#x27;s caption.
-
-      @property searchAttributesCaption
-      @type String
-      @default t(&#x27;components.map-commands.search.search-attributes.caption&#x27;)
-    */
-    searchAttributesCaption: t(&#x27;components.map-commands.search.search-attributes.caption&#x27;),
-
-    /**
-      Map command&#x27;s &#x27;search-attributes&#x27; mode&#x27;s icon CSS-class.
-
-      @property searchAttributesIconClass
-      @type String
-      @default &#x27;search icon&#x27;
-    */
-    searchAttributesIconClass: &#x27;search icon&#x27;,
-
-    /**
-      Map command&#x27;s &#x27;search-clear&#x27; mode&#x27;s additional CSS-class.
-
-      @property searchClearClass
-      @type String
-      @default null
-    */
-    searchClearClass: null,
-
-    /**
-      Map command&#x27;s &#x27;search-clear&#x27; mode&#x27;s caption.
-
-      @property searchClearCaption
-      @type String
-      @default t(&#x27;components.map-commands.search.search-clear.caption&#x27;)
-    */
-    searchClearCaption: t(&#x27;components.map-commands.search.search-clear.caption&#x27;),
-
-    /**
-      Map command&#x27;s &#x27;search-clear&#x27; mode&#x27;s icon CSS-class.
-
-      @property searchClearIconClass
-      @type String
-      @default &#x27;trash icon&#x27;
-    */
-    searchClearIconClass: &#x27;trash icon&#x27;,
-
-    actions: {
-      /**
-        Handles {{#crossLink &quot;BaseMapCommandComponent/sendingActions.execute:method&quot;}}base map-command&#x27;s &#x27;execute&#x27; action{{/crossLink}}.
-
-        @method actions.onSearchAttributesMapCommandExecute
-        @param {Object} e Base map-command&#x27;s &#x27;execute&#x27; action event-object.
-      */
-      onSearchAttributesMapCommandExecute(e) {
-        // Delay execution, but send action to initialize map-command.
-        Ember.set(e, &#x27;execute&#x27;, false);
-        this.sendAction(&#x27;execute&#x27;, e);
-
-        // Remember event-object to execute command later (when dialog will be approved).
-        this.set(&#x27;_searchAttributesExecuteActionEventObject&#x27;, e);
-
-        // Show dialog.
-        this._showSearchDialog();
-      },
-
-      /**
-        Handles {{#crossLink &quot;BaseMapCommandComponent/sendingActions.execute:method&quot;}}&#x27;search-clear&#x27; map-command&#x27;s &#x27;execute&#x27; action{{/crossLink}}.
-
-        @method actions.onSearchAttributesMapCommandExecute
-        @param {Object} e Base map-command&#x27;s &#x27;execute&#x27; action event-object.
-      */
-      onSearchClearMapCommandExecute(e) {
-        this.sendAction(&#x27;execute&#x27;, e);
-      },
-
-      /**
-        Handles export dialog&#x27;s &#x27;approve&#x27; action.
-        Invokes own {{#crossLink &quot;ExportMapCommandComponent/sendingActions.execute:method&quot;}}&#x27;execute&#x27; action{{/crossLink}}.
-
-        @method actions.onExportDialogApprove
-        @param {Object} e Action&#x27;s event object.
-      */
-      onSearchDialogApprove(e) {
-        if (this.get(&#x27;_searchIsInProgress&#x27;)) {
-          // Prevent new search until already executing search will be completed.
-          e.closeDialog = false;
-          return;
-        }
-
-        let executeActionEventObject = this.get(&#x27;_searchAttributesExecuteActionEventObject&#x27;);
-        let mapCommand = Ember.get(executeActionEventObject, &#x27;mapCommand&#x27;);
-
-        // Prevent export dialog from hiding until export will be completed.
-        e.closeDialog = false;
-
-        // Listen to map-command&#x27;s &#x27;execute&#x27; event &amp; handle it.
-        mapCommand.one(&#x27;execute&#x27;, (e) =&gt; {
-          // Hide possibly shown error message.
-          this.set(&#x27;_showSearchErrorMessage&#x27;, false);
-
-          // Show delay indicator.
-          this.set(&#x27;_searchIsInProgress&#x27;, true);
-
-          e.executionResult.then((features) =&gt; {
-            this.set(&#x27;_foundedFeatures&#x27;, features);
-
-            // Search successfully completed.
-            // Hide delay indicator.
-            this.set(&#x27;_searchIsInProgress&#x27;, false);
-          }).catch((reason) =&gt; {
-            this.set(&#x27;_foundedFeatures&#x27;, null);
-
-            // Search failed, so don&#x27;t hide dialog.
-            // Hide delay indicator.
-            this.set(&#x27;_searchIsInProgress&#x27;, false);
-
-            // Show error message.
-            this.set(&#x27;_showSearchErrorMessage&#x27;, true);
-            this.set(&#x27;_searchErrorMessage&#x27;, (reason || &#x27;Search error&#x27;).toString());
-          });
-        });
-
-        // Clean up results of previous search.
-        this.set(&#x27;_foundedFeatures&#x27;, null);
-
-        // Map toolbar will catch action, call to map-command&#x27;s &#x27;execute&#x27; method, then &#x27;execute&#x27; event will be triggered.
-        Ember.set(executeActionEventObject, &#x27;execute&#x27;, true);
-        this.sendAction(&#x27;execute&#x27;, e, executeActionEventObject);
-      },
-
-      /**
-        Handles export dialog&#x27;s &#x27;deny&#x27; action.
-
-        @method actions.onSearchDialogDeny
-        @param {Object} e Action&#x27;s event object.
-      */
-      onSearchDialogDeny(e) {
-        // Prevent export dialog from hiding until already executing search will be completed.
-        e.closeDialog = !this.get(&#x27;_searchIsInProgress&#x27;);
-      },
-
-      /**
-        Handles search dialog&#x27;s &#x27;hide&#x27; action.
-
-        @method actions.onSearchDialogHide
-        @param {Object} e Action&#x27;s event object.
-      */
-      onSearchDialogHide(e) {
-        // Dialog is hidden.
-        // Hide error message.
-        this.set(&#x27;_showSearchErrorMessage&#x27;, false);
-      },
-
-      /**
-        Handles search dialog&#x27;s &#x27;showFoundedFeatures&#x27; action.
-
-        @method actions.onSearchDialogShowFoundedFeatures
-        @param {Object} e Action&#x27;s event object.
-        @param {Object[]} e.features Founded features to show.
-      */
-      onSearchDialogShowFoundedFeatures(e) {
-        let executeActionEventObject = this.get(&#x27;_searchShowExecuteActionEventObject&#x27;);
-
-        // Initialize &amp; remember &#x27;execute&#x27; action&#x27;s event-object for &#x27;search-show&#x27; map-command,
-        // if it isn&#x27;t initialized yet.
-        if (Ember.isNone(executeActionEventObject)) {
-          executeActionEventObject = {
-            mapCommand: null,
-            target: null,
-            originalEvent: null
-          };
-
-          let mapCommand = Ember.getOwner(this).lookup(&#x27;map-command:search-show&#x27;);
-          Ember.assert(
-            &#x60;Can&#x27;t lookup \&#x60;map-command:search-show\&#x60; such map-command doesn\&#x60;t exist&#x60;,
-            !Ember.isNone(mapCommand));
-
-          let mapCommandProperties = this.get(&#x27;_searchCommandProperties&#x27;);
-          if (!Ember.isNone(mapCommandProperties)) {
-            Ember.A(Object.keys(mapCommandProperties)).forEach((propertyName) =&gt; {
-              Ember.set(mapCommand, propertyName,  Ember.get(mapCommandProperties, propertyName));
-            });
-          }
-
-          Ember.set(executeActionEventObject, &#x27;mapCommand&#x27;, mapCommand);
-          this.set(&#x27;_searchShowExecuteActionEventObject&#x27;, executeActionEventObject);
-        }
-
-        Ember.$.extend(executeActionEventObject, e);
-        this.sendAction(&#x27;execute&#x27;, executeActionEventObject);
-      }
-    },
-
-    /**
-      Shows search dialog.
-
-      @method _showSearchDialog
-      @private
-    */
-    _showSearchDialog() {
-      // Include dialog to markup.
-      this.set(&#x27;_searchDialogHasBeenRequested&#x27;, true);
+    onSearchAttributesMapCommandExecute(e) {
+      // Delay execution, but send action to initialize map-command.
+      Ember.set(e, &#x27;execute&#x27;, false);
+      this.sendAction(&#x27;execute&#x27;, e);
+
+      // Remember event-object to execute command later (when dialog will be approved).
+      this.set(&#x27;_searchAttributesExecuteActionEventObject&#x27;, e);
 
       // Show dialog.
-      this.set(&#x27;_searchDialogIsVisible&#x27;, true);
+      this._showSearchDialog();
     },
 
     /**
-      Hides search dialog.
+      Handles {{#crossLink &quot;BaseMapCommandComponent/sendingActions.execute:method&quot;}}&#x27;search-clear&#x27; map-command&#x27;s &#x27;execute&#x27; action{{/crossLink}}.
 
-      @method _hideSearchDialog
-      @private
+      @method actions.onSearchAttributesMapCommandExecute
+      @param {Object} e Base map-command&#x27;s &#x27;execute&#x27; action event-object.
     */
-    _hideSearchDialog() {
-      // Hide dialog.
-      this.set(&#x27;_searchDialogIsVisible&#x27;, false);
+    onSearchClearMapCommandExecute(e) {
+      this.sendAction(&#x27;execute&#x27;, e);
     },
 
     /**
-      Initializes component.
-    */
-    init() {
-      this._super(...arguments);
+      Handles export dialog&#x27;s &#x27;approve&#x27; action.
+      Invokes own {{#crossLink &quot;ExportMapCommandComponent/sendingActions.execute:method&quot;}}&#x27;execute&#x27; action{{/crossLink}}.
 
-      this.set(&#x27;_searchCommandProperties&#x27;, {
-        featuresLayer: new L.FeatureGroup()
+      @method actions.onExportDialogApprove
+      @param {Object} e Action&#x27;s event object.
+    */
+    onSearchDialogApprove(e) {
+      if (this.get(&#x27;_searchIsInProgress&#x27;)) {
+        // Prevent new search until already executing search will be completed.
+        e.closeDialog = false;
+        return;
+      }
+
+      let executeActionEventObject = this.get(&#x27;_searchAttributesExecuteActionEventObject&#x27;);
+      let mapCommand = Ember.get(executeActionEventObject, &#x27;mapCommand&#x27;);
+
+      // Prevent export dialog from hiding until export will be completed.
+      e.closeDialog = false;
+
+      // Listen to map-command&#x27;s &#x27;execute&#x27; event &amp; handle it.
+      mapCommand.one(&#x27;execute&#x27;, (e) =&gt; {
+        // Hide possibly shown error message.
+        this.set(&#x27;_showSearchErrorMessage&#x27;, false);
+
+        // Show delay indicator.
+        this.set(&#x27;_searchIsInProgress&#x27;, true);
+
+        e.executionResult.then((features) =&gt; {
+          this.set(&#x27;_foundedFeatures&#x27;, features);
+
+          // Search successfully completed.
+          // Hide delay indicator.
+          this.set(&#x27;_searchIsInProgress&#x27;, false);
+        }).catch((reason) =&gt; {
+          this.set(&#x27;_foundedFeatures&#x27;, null);
+
+          // Search failed, so don&#x27;t hide dialog.
+          // Hide delay indicator.
+          this.set(&#x27;_searchIsInProgress&#x27;, false);
+
+          // Show error message.
+          this.set(&#x27;_showSearchErrorMessage&#x27;, true);
+          this.set(&#x27;_searchErrorMessage&#x27;, (reason || &#x27;Search error&#x27;).toString());
+        });
       });
+
+      // Clean up results of previous search.
+      this.set(&#x27;_foundedFeatures&#x27;, null);
+
+      // Map toolbar will catch action, call to map-command&#x27;s &#x27;execute&#x27; method, then &#x27;execute&#x27; event will be triggered.
+      Ember.set(executeActionEventObject, &#x27;execute&#x27;, true);
+      this.sendAction(&#x27;execute&#x27;, e, executeActionEventObject);
     },
 
     /**
-      Destroys DOM-related component&#x27;s properties &amp; logic.
-    */
-    willDestroyElement() {
-      this._super(...arguments);
+      Handles export dialog&#x27;s &#x27;deny&#x27; action.
 
-      this._hideSearchDialog();
+      @method actions.onSearchDialogDeny
+      @param {Object} e Action&#x27;s event object.
+    */
+    onSearchDialogDeny(e) {
+      // Prevent export dialog from hiding until already executing search will be completed.
+      e.closeDialog = !this.get(&#x27;_searchIsInProgress&#x27;);
     },
 
     /**
-      Destroys component.
-    */
-    willDestroy() {
-      this._super(...arguments);
+      Handles search dialog&#x27;s &#x27;hide&#x27; action.
 
-      this.get(&#x27;_searchCommandProperties&#x27;, null);
-      this.set(&#x27;_searchAttributesExecuteActionEventObject&#x27;, null);
-      this.set(&#x27;_searchShowExecuteActionEventObject&#x27;, null);
+      @method actions.onSearchDialogHide
+      @param {Object} e Action&#x27;s event object.
+    */
+    onSearchDialogHide(e) {
+      // Dialog is hidden.
+      // Hide error message.
+      this.set(&#x27;_showSearchErrorMessage&#x27;, false);
+    },
+
+    /**
+      Handles search dialog&#x27;s &#x27;showFoundedFeatures&#x27; action.
+
+      @method actions.onSearchDialogShowFoundedFeatures
+      @param {Object} e Action&#x27;s event object.
+      @param {Object[]} e.features Founded features to show.
+    */
+    onSearchDialogShowFoundedFeatures(e) {
+      let executeActionEventObject = this.get(&#x27;_searchShowExecuteActionEventObject&#x27;);
+
+      // Initialize &amp; remember &#x27;execute&#x27; action&#x27;s event-object for &#x27;search-show&#x27; map-command,
+      // if it isn&#x27;t initialized yet.
+      if (Ember.isNone(executeActionEventObject)) {
+        executeActionEventObject = {
+          mapCommand: null,
+          target: null,
+          originalEvent: null
+        };
+
+        let mapCommand = Ember.getOwner(this).lookup(&#x27;map-command:search-show&#x27;);
+        Ember.assert(
+          &#x60;Can&#x27;t lookup \&#x60;map-command:search-show\&#x60; such map-command doesn\&#x60;t exist&#x60;,
+          !Ember.isNone(mapCommand));
+
+        let mapCommandProperties = this.get(&#x27;_searchCommandProperties&#x27;);
+        if (!Ember.isNone(mapCommandProperties)) {
+          Ember.A(Object.keys(mapCommandProperties)).forEach((propertyName) =&gt; {
+            Ember.set(mapCommand, propertyName, Ember.get(mapCommandProperties, propertyName));
+          });
+        }
+
+        Ember.set(executeActionEventObject, &#x27;mapCommand&#x27;, mapCommand);
+        this.set(&#x27;_searchShowExecuteActionEventObject&#x27;, executeActionEventObject);
+      }
+
+      Ember.$.extend(executeActionEventObject, e);
+      this.sendAction(&#x27;execute&#x27;, executeActionEventObject);
     }
+  },
 
-    /**
-      Component&#x27;s action invoking when map-command must be executed.
+  /**
+    Shows search dialog.
 
-      @method sendingActions.execute
-      @param {Object} e Action&#x27;s event object from
-      {{#crossLink &quot;BaseMapCommandComponent/sendingActions.execute:method&quot;}}base map-command&#x27;s &#x27;execute&#x27; action{{/crossLink}}.
-    */
+    @method _showSearchDialog
+    @private
+  */
+  _showSearchDialog() {
+    // Include dialog to markup.
+    this.set(&#x27;_searchDialogHasBeenRequested&#x27;, true);
+
+    // Show dialog.
+    this.set(&#x27;_searchDialogIsVisible&#x27;, true);
+  },
+
+  /**
+    Hides search dialog.
+
+    @method _hideSearchDialog
+    @private
+  */
+  _hideSearchDialog() {
+    // Hide dialog.
+    this.set(&#x27;_searchDialogIsVisible&#x27;, false);
+  },
+
+  /**
+    Initializes component.
+  */
+  init() {
+    this._super(...arguments);
+
+    this.set(&#x27;_searchCommandProperties&#x27;, {
+      featuresLayer: new L.FeatureGroup()
+    });
+  },
+
+  /**
+    Destroys DOM-related component&#x27;s properties &amp; logic.
+  */
+  willDestroyElement() {
+    this._super(...arguments);
+
+    this._hideSearchDialog();
+  },
+
+  /**
+    Destroys component.
+  */
+  willDestroy() {
+    this._super(...arguments);
+
+    this.get(&#x27;_searchCommandProperties&#x27;, null);
+    this.set(&#x27;_searchAttributesExecuteActionEventObject&#x27;, null);
+    this.set(&#x27;_searchShowExecuteActionEventObject&#x27;, null);
   }
-);
+
+  /**
+    Component&#x27;s action invoking when map-command must be executed.
+
+    @method sendingActions.execute
+    @param {Object} e Action&#x27;s event object from
+    {{#crossLink &quot;BaseMapCommandComponent/sendingActions.execute:method&quot;}}base map-command&#x27;s &#x27;execute&#x27; action{{/crossLink}}.
+  */
+});
 
 // Add component&#x27;s CSS-class names as component&#x27;s class static constants
 // to make them available outside of the component instance.

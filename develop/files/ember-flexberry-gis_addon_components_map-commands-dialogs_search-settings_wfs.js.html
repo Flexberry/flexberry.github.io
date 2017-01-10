@@ -377,11 +377,12 @@ export default Ember.Component.extend({
   _searchPropertiesArray: Ember.computed(&#x27;searchProperties&#x27;, function () {
     let props = [];
     let searchProperties = this.get(&#x27;searchProperties&#x27;);
-    for(var property in searchProperties) {
-      if(searchProperties.hasOwnProperty(property)) {
+    for (var property in searchProperties) {
+      if (searchProperties.hasOwnProperty(property)) {
         props.push(searchProperties[property]);
       }
     }
+
     return props;
   }),
 
@@ -455,8 +456,6 @@ export default Ember.Component.extend({
     @default null
    */
   searchProperties: null
-
-
 });
 
     </pre>
