@@ -373,6 +373,18 @@ import layout from &#x27;../../../templates/components/map-commands-dialogs/sear
   @extends &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Component.html&quot;&gt;Ember.Component&lt;/a&gt;
 */
 export default Ember.Component.extend({
+
+  _searchPropertiesArray: Ember.computed(&#x27;searchProperties&#x27;, function () {
+    let props = [];
+    let searchProperties = this.get(&#x27;searchProperties&#x27;);
+    for(var property in searchProperties) {
+      if(searchProperties.hasOwnProperty(property)) {
+        props.push(searchProperties[property]);
+      }
+    }
+    return props;
+  }),
+
   actions: {
     onChange(selectedText) {
       let searchProperties = this.get(&#x27;searchProperties&#x27;);
@@ -435,7 +447,16 @@ export default Ember.Component.extend({
   */
   leafletMap: null,
 
+  /**
+    Object with properties for which user can do search
+
+    @property searchProperties
+    @type Object
+    @default null
+   */
   searchProperties: null
+
+
 });
 
     </pre>
