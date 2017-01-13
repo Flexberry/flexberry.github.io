@@ -4,7 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/w-o-l-v-paging.html
-folder: product--folder
+folder: flexberry-aspnet
 lang: ru
 ---
 Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
@@ -66,5 +66,12 @@ CSS-классы и настройки.
 Сохранение установленных пользователем значений `Pager`'ов производится по ключу, составленному из пути к форме, `UniqueID` `WOLV`'а и имени представления.
 Таким образом, на одной и той же форме при смене представления настройка тоже будет меняться.
 
+## Отключение пейджинга
+
+У WebObkectListView предусмотрена возможность отключения пейджинга через настройку `AllowPaging`.
+По умолчнию она имеет значение `true`, если выставить `false`, то пейджинг быдет отключен, все доступные записи будут отображаться на единственной странице, на месте пейджеров будет отображаться только информация о том, что показаны 1 - N из N записей.
+```xml
+<ac:WebObjectListView ID="WebObjectListView1" runat="server" Visible="true" AllowPaging="False" />
+```
 
 
