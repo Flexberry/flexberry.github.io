@@ -28,5 +28,5 @@ permalink: en/search.json
 {% unless forloop.last %},{% endunless %}
 {% endif %}
 {% endfor %}
-
+{ }
 ]
