@@ -6,8 +6,7 @@ permalink: en/search.json
 ---
 
 [
-{% for page in site.pages | where:"lang","en" %}
-{% unless page.search == "exclude" %}
+{% for page in site.pages %}{% if page.lang == "en" %}{% unless page.search == "exclude" %}
 {
 "title": "{{ page.title | escape }}",
 "tags": "{{ page.tags }}",
@@ -15,11 +14,10 @@ permalink: en/search.json
 "url": "{{ page.url }}",
 "summary": "{{page.summary | strip }}"
 },
-{% endunless %}
-{% endfor %}
+{% endunless %}{% endif %}{% endfor %}
 
-{% for post in site.posts | where:"lang","en" %}
-
+{% for post in site.posts %}
+{% if post.lang == "en" %}
 {
 "title": "{{ post.title | escape }}",
 "tags": "{{ post.tags }}",
@@ -28,6 +26,7 @@ permalink: en/search.json
 "summary": "{{post.summary | strip }}"
 }
 {% unless forloop.last %},{% endunless %}
+{% endif %}
 {% endfor %}
 
 ]

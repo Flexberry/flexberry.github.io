@@ -6,8 +6,7 @@ permalink: ru/search.json
 ---
 
 [
-{% for page in site.pages | where:"lang","ru" %}
-{% unless page.search == "exclude" %}
+{% for page in site.pages %}{% if page.lang == "ru" %}{% unless page.search == "exclude" %}
 {
 "title": "{{ page.title | escape }}",
 "tags": "{{ page.tags }}",
@@ -15,11 +14,10 @@ permalink: ru/search.json
 "url": "{{ page.url }}",
 "summary": "{{page.summary | strip }}"
 },
-{% endunless %}
-{% endfor %}
+{% endunless %}{% endif %}{% endfor %}
 
-{% for post in site.posts | where:"lang","ru" %}
-
+{% for post in site.posts %}
+{% if post.lang == "ru" %}
 {
 "title": "{{ post.title | escape }}",
 "tags": "{{ post.tags }}",
@@ -28,6 +26,7 @@ permalink: ru/search.json
 "summary": "{{post.summary | strip }}"
 }
 {% unless forloop.last %},{% endunless %}
+{% endif %}
 {% endfor %}
 
 ]
