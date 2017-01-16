@@ -16,8 +16,18 @@ lang: ru
 
 ##  Ссылки на материалы для изучения
 
-* [-]()
-* [-]()
+* Модульное тестирование
+  * [Урок 1](https://www.youtube.com/watch?v=W15yH3Z03A4)
+  * [Урок 2](https://www.youtube.com/watch?v=PcEr2Y3CNVg)
+  * [Стабы и моки](http://sergeyteplyakov.blogspot.ru/2011/12/blog-post.html)
+* [xUnit.net](http://xunit.github.io/docs/getting-started-desktop.html)
+  * [Введение в написание тестов и знакомство с xUnit](https://geektimes.ru/post/272994/)
+  * [Shared Context between Tests](http://xunit.github.io/docs/shared-context.html)
+  * [Running Tests in Parallel](http://xunit.github.io/docs/running-tests-in-parallel.html)
+  * [Configuring xUnit.net with XML](http://xunit.github.io/docs/configuring-with-xml)
+* [Moq](https://github.com/moq/moq4/wiki/Quickstart)
+  * [Примеры использования Moq](https://habrahabr.ru/post/150859/)
+* QUnit
 
 ### Презентация
 
