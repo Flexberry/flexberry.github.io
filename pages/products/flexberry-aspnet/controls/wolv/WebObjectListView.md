@@ -173,12 +173,12 @@ public virtual System.Nullable<System.Double> ВыраженностьОгран
 
 * Формат даты, отображаемой в ячейке может быть настроен с помощью атрибута DisplayFormatAttribute:
     
-    ```cs
-    [DisplayFormat(DataFormatString = "yyyy.MM")]
-    public virtual System.DateTime OnlyDate
-    ```
+```cs
+[DisplayFormat(DataFormatString = "yyyy.MM")]
+public virtual System.DateTime OnlyDate
+```
 
-    Чтобы это работало, дата должна отображаться в ячейке WOLV с помощью стандартного компонента (т.е. если компонент не переопределен в WebControlProvider.xml).
+Чтобы это работало, дата должна отображаться в ячейке WOLV с помощью стандартного компонента (т.е. если компонент не переопределен в WebControlProvider.xml).
 
 * Если в `WebControlProvider.xml` задан пользовательский компонент для отображения дат (например, `FormattedDateTimeControl`), то формат должен быть настроен
   непосредственно в компоненте (с помощью `WebControlProvider.TuneControlDelegateMethod`).
@@ -187,11 +187,11 @@ public virtual System.Nullable<System.Double> ВыраженностьОгран
 * Если в `WebControlProvider.xml` задан пользовательский компонент для отображения дат, но при этом хочется, чтобы для конкретного свойства работал атрибут
   `DisplayFormatAttribute`, то в `WebControlProvider.xml` необходимо сбросить пользовательский компонент для этого свойства: 
 
-    ```xml
-    <customproperty class="DatePickerTest" property="OnlyDate">
-        <control typename="" property="" codefile="" />
-    </customproperty>
-    ```
+```xml
+<customproperty class="DatePickerTest" property="OnlyDate">
+    <control typename="" property="" codefile="" />
+</customproperty>
+```
 
 ### Загрузка данных и EmptyControl
 
@@ -221,7 +221,7 @@ public virtual System.Nullable<System.Double> ВыраженностьОгран
 
 Например, для `WOLV` удобно указывать высоту и ширину в `WOLVSettAplyer`:
 
-```
+```cs
 wolv.ThickBoxSettings.Height = 480;
 wolv.ThickBoxSettings.Width = 640;
 ```
@@ -232,10 +232,10 @@ wolv.ThickBoxSettings.Width = 640;
    декодирются, занимая очень много места в URL страницы. `WOLV` никак не связан с WebBinder, поэтому ID можно задавать как вам удобно.
 2. Всегда оборачивайте настройку `WOLV` через [WolvSettApplyer](wolv-sett-applyer.html):
     
-    ```cs
-    var wsa = new WOLVSettApplyer();
-    wsa.SettingsApply(WebObjectListView1);
-    ```
+```cs
+var wsa = new WOLVSettApplyer();
+wsa.SettingsApply(WebObjectListView1);
+```
 
 ## Сервис данных WOLV
 
