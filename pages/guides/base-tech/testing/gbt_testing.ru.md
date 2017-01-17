@@ -1,6 +1,6 @@
 ---
 title: Тестирование и отладка
-keywords: Programming
+keywords: Programming, xUnit, Moq, Stub, QUnit, Unit test, BDD, TDD, Test, Testing, Debug
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_testing.html
