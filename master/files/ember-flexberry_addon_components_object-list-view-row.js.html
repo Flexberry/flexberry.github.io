@@ -248,14 +248,14 @@ export default FlexberryBaseComponent.extend({
   _expanded: false,
 
   /**
-    Store the string for building hierarchical indent.
+    Stores the number of pixels to isolate one level of hierarchy.
 
     @property _hierarchicalIndent
-    @type String
-    @default &#x27;&amp;nbsp;&#x27;
+    @type Number
+    @default 10
     @private
   */
-  _hierarchicalIndent: &#x27;&amp;nbsp;&#x27;,
+  _hierarchicalIndent: 10,
 
   /**
     Level nesting by default.
@@ -311,6 +311,15 @@ export default FlexberryBaseComponent.extend({
     @default false
   */
   doRenderData: false,
+
+  /**
+    Default left padding in cells.
+
+    @property defaultLeftPadding
+    @type Number
+    @default 10
+  */
+  defaultLeftPadding: 10,
 
   /**
     Current record.
@@ -382,18 +391,16 @@ export default FlexberryBaseComponent.extend({
   */
   hierarchicalIndent: Ember.computed({
     get() {
-      let indent = &#x27;&#x27;;
-      let hierarchicalIndent = this.get(&#x27;_hierarchicalIndent&#x27;);
-      let currentLevel = this.get(&#x27;_currentLevel&#x27;);
-      for (let i = 0; i &lt; currentLevel; i++) {
-        indent += hierarchicalIndent;
+      let result = (this.get(&#x27;_currentLevel&#x27;)) * this.get(&#x27;_hierarchicalIndent&#x27;) + this.get(&#x27;defaultLeftPadding&#x27;);
+      if (this.get(&#x27;_currentLevel&#x27;) === 0) {
+        result = this.get(&#x27;defaultLeftPadding&#x27;);
       }
 
-      return Ember.String.htmlSafe(indent);
+      return result;
     },
     set(key, value) {
       if (value !== undefined) {
-        this.set(&#x27;_hierarchicalIndent&#x27;, Ember.String.htmlSafe(value).toString());
+        this.set(&#x27;_hierarchicalIndent&#x27;, +value);
       }
 
       return this.get(&#x27;hierarchicalIndent&#x27;);
@@ -408,6 +415,15 @@ export default FlexberryBaseComponent.extend({
     @default &#x27;&#x27;
   */
   tagName: &#x27;&#x27;,
+
+  /**
+    Flag indicates that record&#x27;s hierarchy for this row is loaded.
+
+    @property recordsLoaded
+    @type Boolean
+    @default false
+  */
+  recordsLoaded: false,
 
   actions: {
     /**
@@ -441,18 +457,20 @@ export default FlexberryBaseComponent.extend({
   },
 
   /**
-    Setup a view, but do not finish waking it up. [More info](http://emberjs.com/api/classes/Ember.Component.html#method_init).
+    Called after a component has been rendered, both on initial render and in subsequent rerenders.
+    [More info](http://emberjs.com/api/classes/Ember.Component.html#event_didRender).
 
-    @method init
+    @method didRender
   */
-  init() {
-    this._super(...arguments);
-
-    let id = this.get(&#x27;record.data.id&#x27;);
-    if (id &amp;&amp; this.get(&#x27;inHierarchicalMode&#x27;)) {
-      this.sendAction(&#x27;loadRecords&#x27;, id, this, &#x27;records&#x27;);
+  didRender() {
+    if (!this.get(&#x27;recordsLoaded&#x27;)) {
+      let id = this.get(&#x27;record.data.id&#x27;);
+      if (id &amp;&amp; this.get(&#x27;inHierarchicalMode&#x27;)) {
+        this.set(&#x27;recordsLoaded&#x27;, true);
+        this.sendAction(&#x27;loadRecords&#x27;, id, this, &#x27;records&#x27;);
+      }
     }
-  }
+  },
 });
 
     </pre>
