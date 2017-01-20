@@ -1,10 +1,10 @@
 ---
 title: Статические свойства для доступа к представлениям класса
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public, View (представление)
 toc: true
-permalink: ru/static--view--accessors.html
-folder: product--folder
+permalink: ru/fo_static--view--accessors.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

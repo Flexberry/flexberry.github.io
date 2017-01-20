@@ -1,10 +1,10 @@
 ---
 title: Получение презентационного значения для объекта данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/data-object-get-presentation-value.html
-folder: product--folder
+permalink: ru/fo_data-object-get-presentation-value.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

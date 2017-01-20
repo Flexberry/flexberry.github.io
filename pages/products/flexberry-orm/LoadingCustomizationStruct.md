@@ -1,10 +1,10 @@
 ---
 title: Настройка параметров чтения (LoadingCustomizationStruct)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/loading-customization-struct.html
-folder: product--folder
+permalink: ru/fo_loading-customization-struct.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

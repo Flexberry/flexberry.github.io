@@ -1,10 +1,10 @@
 ---
 title: Пример: использование стереотипа "typedef"
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/using_stereotypes_example.html
-folder: product--folder
+permalink: ru/fo_using_stereotypes_example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

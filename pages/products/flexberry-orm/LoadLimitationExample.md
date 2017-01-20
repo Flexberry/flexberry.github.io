@@ -1,10 +1,10 @@
 ---
 title: Пример: наложение ограничений на загрузку объектов
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/load-limitation-example.html
-folder: product--folder
+permalink: ru/fo_load-limitation-example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

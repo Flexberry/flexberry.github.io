@@ -1,10 +1,10 @@
 ---
 title: ViewPropertyAppender
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, View (представление), Ограничения
 toc: true
-permalink: ru/view-property-appender.html
-folder: product--folder
+permalink: ru/fo_view-property-appender.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

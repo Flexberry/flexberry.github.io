@@ -1,10 +1,10 @@
 ---
 title: Задание значения поля создаваемого объекта
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/define-field-of-created-object.html
-folder: product--folder
+permalink: ru/fo_define-field-of-created-object.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

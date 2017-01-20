@@ -1,10 +1,10 @@
 ---
 title: Функция импликации (funcImplication)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/implication-in-external-lang-def.html
-folder: product--folder
+permalink: ru/fo_implication-in-external-lang-def.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

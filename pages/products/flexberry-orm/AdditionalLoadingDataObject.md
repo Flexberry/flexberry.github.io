@@ -1,10 +1,10 @@
 ---
 title: Дочитка объекта данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public, Черновик статьи
 toc: true
-permalink: ru/additional-loading-data-object.html
-folder: product--folder
+permalink: ru/fo_additional-loading-data-object.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

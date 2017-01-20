@@ -1,10 +1,10 @@
 ---
 title: Наследование 
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ключевые понятия
 toc: true
-permalink: ru/inheritance.html
-folder: product--folder
+permalink: ru/fo_inheritance.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

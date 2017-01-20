@@ -1,10 +1,10 @@
 ---
 title: Поддерживаемая во Flexberry ORM типизация
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/flexberry-orm-types.html
-folder: product--folder
+permalink: ru/fo_flexberry-orm-types.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

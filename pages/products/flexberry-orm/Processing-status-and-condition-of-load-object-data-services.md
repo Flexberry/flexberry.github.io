@@ -1,10 +1,10 @@
 ---
 title: Обработка статуса и состояния загрузки объекта сервисами данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/processing-status-and-condition-of-load-object-data-services.html
-folder: product--folder
+permalink: ru/fo_processing-status-and-condition-of-load-object-data-services.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

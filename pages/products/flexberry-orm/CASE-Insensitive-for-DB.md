@@ -1,10 +1,10 @@
 ---
 title: CASE Insensitive для БД
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, For code validate, Public, БД
 toc: true
-permalink: ru/c-a-s-e--insensitive-for--d-b.html
-folder: product--folder
+permalink: ru/fo_c-a-s-e--insensitive-for--d-b.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

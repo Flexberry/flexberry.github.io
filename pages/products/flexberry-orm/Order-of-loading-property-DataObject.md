@@ -1,10 +1,10 @@
 ---
 title: Порядок загрузки (означивания) свойств объекта данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/order-of-loading-property--data-object.html
-folder: product--folder
+permalink: ru/fo_order-of-loading-property--data-object.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

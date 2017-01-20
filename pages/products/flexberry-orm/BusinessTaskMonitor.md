@@ -1,10 +1,10 @@
 ---
 title: Монитор задач
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/business-task-monitor.html
-folder: product--folder
+permalink: ru/fo_business-task-monitor.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

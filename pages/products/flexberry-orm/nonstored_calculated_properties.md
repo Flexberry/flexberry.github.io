@@ -1,10 +1,10 @@
 ---
 title: Пример: нехранимые и вычислимые свойства
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/nonstored_calculated_properties.html
-folder: product--folder
+permalink: ru/fo_nonstored_calculated_properties.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

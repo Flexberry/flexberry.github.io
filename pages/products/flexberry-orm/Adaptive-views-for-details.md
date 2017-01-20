@@ -1,10 +1,10 @@
 ---
 title: Адаптивные представления для детейлов
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, View (представление)
 toc: true
-permalink: ru/adaptive-views-for-details.html
-folder: product--folder
+permalink: ru/fo_adaptive-views-for-details.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

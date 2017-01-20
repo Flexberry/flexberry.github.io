@@ -1,10 +1,10 @@
 ---
 title: Пример: создание объектов данных и сохранение их в БД
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/instantiate-and-persist-objects-example.html
-folder: product--folder
+permalink: ru/fo_instantiate-and-persist-objects-example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

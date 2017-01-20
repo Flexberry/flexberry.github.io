@@ -1,10 +1,10 @@
 ---
 title: Преобразование функции ограничения в linq-ограничение
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ASP-NET, Flexberry ORM, Ограничения
 toc: true
-permalink: ru/lcs-to-linq.html
-folder: product--folder
+permalink: ru/fo_lcs-to-linq.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

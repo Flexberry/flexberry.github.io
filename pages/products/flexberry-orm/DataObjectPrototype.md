@@ -1,10 +1,10 @@
 ---
 title: Создание объекта данных на основе другого (прототипизация)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/data-object-prototype.html
-folder: product--folder
+permalink: ru/fo_data-object-prototype.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Методы для прототипизации DataObject

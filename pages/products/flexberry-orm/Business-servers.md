@@ -1,10 +1,10 @@
 ---
 title: Бизнес-серверы (классы со стереотипом businessserver) 
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/business-servers.html
-folder: product--folder
+permalink: ru/fo_business-servers.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

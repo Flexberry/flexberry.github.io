@@ -1,10 +1,10 @@
 ---
 title: Функциональность при работе с массивами детейловых объектов (DetailArray)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/functionality-work-with-detail-array.html
-folder: product--folder
+permalink: ru/fo_functionality-work-with-detail-array.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

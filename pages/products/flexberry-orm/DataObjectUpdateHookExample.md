@@ -1,10 +1,10 @@
 ---
 title: Пример: выполнение действий при сохранении объекта
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/data-object-update-hook-example.html
-folder: product--folder
+permalink: ru/fo_data-object-update-hook-example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

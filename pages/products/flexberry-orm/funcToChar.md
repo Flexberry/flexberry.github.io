@@ -1,10 +1,10 @@
 ---
 title: funcToChar
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DateTime (работа с датами), Flexberry ORM, Public
 toc: true
-permalink: ru/func-to-char.html
-folder: product--folder
+permalink: ru/fo_func-to-char.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

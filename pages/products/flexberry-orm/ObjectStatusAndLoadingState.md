@@ -1,10 +1,10 @@
 ---
 title: Статус и состояние загрузки объекта данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/object-status-and-loading-state.html
-folder: product--folder
+permalink: ru/fo_object-status-and-loading-state.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

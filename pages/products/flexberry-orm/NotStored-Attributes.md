@@ -1,10 +1,10 @@
 ---
 title: Нехранимые (вычислимые) свойства объекта данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/not-stored--attributes.html
-folder: product--folder
+permalink: ru/fo_not-stored--attributes.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

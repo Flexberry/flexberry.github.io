@@ -1,10 +1,10 @@
 ---
 title: SQL-запросы в Flexberry
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, БД
 toc: true
-permalink: ru/Flexberry-s-q-l-query.html
-folder: product--folder
+permalink: ru/fo_Flexberry-s-q-l-query.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Доступ к базе

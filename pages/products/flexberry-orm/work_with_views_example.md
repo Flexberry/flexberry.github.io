@@ -1,10 +1,10 @@
 ---
 title: Пример: работа с представлениями
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/work_with_views_example.html
-folder: product--folder
+permalink: ru/fo_work_with_views_example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

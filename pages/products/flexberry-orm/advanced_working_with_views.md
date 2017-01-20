@@ -1,10 +1,10 @@
 ---
 title: Пример: продвинутая работа с представлениями
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/advanced_working_with_views.html
-folder: product--folder
+permalink: ru/fo_advanced_working_with_views.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: IReferencesNullDelete
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/i-references-null-delete.html
-folder: product--folder
+permalink: ru/fo_i-references-null-delete.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

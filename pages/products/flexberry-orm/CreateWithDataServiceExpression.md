@@ -1,10 +1,10 @@
 ---
 title: Пример создания вычислимого поля с помощью DataServiceExpression
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, View (представление)
 toc: true
-permalink: ru/create-with-data-service-expression.html
-folder: product--folder
+permalink: ru/fo_create-with-data-service-expression.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

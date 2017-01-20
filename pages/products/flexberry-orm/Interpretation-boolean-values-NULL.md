@@ -1,10 +1,10 @@
 ---
 title: Интерпретация булевского значения NULL
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Flexberry Reports, Public, БД, Ограничения
 toc: true
-permalink: ru/interpretation-boolean-values--n-u-l-l.html
-folder: product--folder
+permalink: ru/fo_interpretation-boolean-values--n-u-l-l.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Бизнес-сервер: обновление нескольких объектов одной транзакцией
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/b-s-transact.html
-folder: product--folder
+permalink: ru/fo_b-s-transact.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

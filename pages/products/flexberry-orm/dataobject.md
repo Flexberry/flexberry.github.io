@@ -1,10 +1,10 @@
 ---
 title: DataObject
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public, Ключевые понятия, Черновик статьи
 toc: true
-permalink: ru/dataobject.html
-folder: product--folder
+permalink: ru/fo_dataobject.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

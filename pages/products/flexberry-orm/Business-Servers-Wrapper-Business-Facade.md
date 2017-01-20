@@ -1,10 +1,10 @@
 ---
 title: Бизнес-серверы, обёртки, бизнес-фасад
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/business--servers--wrapper--business--facade.html
-folder: product--folder
+permalink: ru/fo_business--servers--wrapper--business--facade.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Бизнес-серверы, обёртки, бизнес-фасад

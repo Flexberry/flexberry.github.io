@@ -1,10 +1,10 @@
 ---
 title: Как перехватить формирование SQL-запроса к БД
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, БД
 toc: true
-permalink: ru/intercept-formation--s-q-l-query.html
-folder: product--folder
+permalink: ru/fo_intercept-formation--s-q-l-query.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

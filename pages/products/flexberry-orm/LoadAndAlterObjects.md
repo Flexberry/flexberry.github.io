@@ -1,10 +1,10 @@
 ---
 title: Пример: загрузка и изменение объекта
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/load-and-alter-objects.html
-folder: product--folder
+permalink: ru/fo_load-and-alter-objects.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

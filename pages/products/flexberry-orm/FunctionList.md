@@ -1,10 +1,10 @@
 ---
 title: SQLWhereLanguageDef
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/function-list.html
-folder: product--folder
+permalink: ru/fo_function-list.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

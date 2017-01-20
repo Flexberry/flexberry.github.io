@@ -1,10 +1,10 @@
 ---
 title: Типы данных (классы со стереотипом type) и их свойства
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/data-types-properties.html
-folder: product--folder
+permalink: ru/fo_data-types-properties.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

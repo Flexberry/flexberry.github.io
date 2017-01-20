@@ -1,10 +1,10 @@
 ---
 title: FuncIsNull
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/func-is-null.html
-folder: product--folder
+permalink: ru/fo_func-is-null.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 ### FuncIsNull

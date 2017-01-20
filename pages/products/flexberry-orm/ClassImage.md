@@ -1,10 +1,10 @@
 ---
 title: Ассоциирование картинок с классами данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/class-image.html
-folder: product--folder
+permalink: ru/fo_class-image.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

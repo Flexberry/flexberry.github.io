@@ -1,10 +1,10 @@
 ---
 title: ExternalLangDef - ограничения на детейл (funcExist, funcExistExact, funcExistAll, funcExistAllExact)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/exist--exist-exact--exist-all--exist-all-exact.html
-folder: product--folder
+permalink: ru/fo_exist--exist-exact--exist-all--exist-all-exact.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

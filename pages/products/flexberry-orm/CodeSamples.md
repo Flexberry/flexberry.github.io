@@ -1,10 +1,10 @@
 ---
 title: Примеры кода
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/code-samples.html
-folder: product--folder
+permalink: ru/fo_code-samples.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

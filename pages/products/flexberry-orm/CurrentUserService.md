@@ -1,10 +1,10 @@
 ---
 title: Сервис текущего пользователя
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry, Public
 toc: true
-permalink: ru/current-user-service.html
-folder: product--folder
+permalink: ru/fo_current-user-service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

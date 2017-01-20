@@ -1,10 +1,10 @@
 ---
 title: Сервис записи SQL-скриптов изменения данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/changes-to-sql-b-t-monitor.html
-folder: product--folder
+permalink: ru/fo_changes-to-sql-b-t-monitor.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

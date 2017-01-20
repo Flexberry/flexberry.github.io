@@ -1,10 +1,10 @@
 ---
 title: Ограничение на детейлы с использованием свойств агрегатора
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/limit-details-by-agregators-prop.html
-folder: product--folder
+permalink: ru/fo_limit-details-by-agregators-prop.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

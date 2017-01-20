@@ -1,10 +1,10 @@
 ---
 title: Обновление связанных объектов
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/update-related-objects.html
-folder: product--folder
+permalink: ru/fo_update-related-objects.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

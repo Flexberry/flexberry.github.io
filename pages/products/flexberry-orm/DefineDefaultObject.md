@@ -1,10 +1,10 @@
 ---
 title: Установка текущего объекта при запуске приложения
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/define-default-object.html
-folder: product--folder
+permalink: ru/fo_define-default-object.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 Была поставлена следующая задача: "Добавить выбор магазина в начало работы с программой, чтобы не вводить его каждый раз при составлении заказа". Возможно следующее решение данной задачи:

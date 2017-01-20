@@ -1,10 +1,10 @@
 ---
 title: Information: получение метаданных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/information-class-as-metadata-supervisor.html
-folder: product--folder
+permalink: ru/fo_information-class-as-metadata-supervisor.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

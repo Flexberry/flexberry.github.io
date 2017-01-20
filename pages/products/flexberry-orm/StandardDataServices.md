@@ -1,10 +1,10 @@
 ---
 title: Стандартные сервисы данных Flexberry ORM
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/standard-data-services.html
-folder: product--folder
+permalink: ru/fo_standard-data-services.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

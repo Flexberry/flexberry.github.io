@@ -1,10 +1,10 @@
 ---
 title: IIS.Flexberry.Logging
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry LogService
 toc: true
-permalink: ru/flexberry-log-service-objects.html
-folder: product--folder
+permalink: ru/fo_flexberry-log-service-objects.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Как проверить, удовлетворяет ли некоторый объект представлению
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, View (представление)
 toc: true
-permalink: ru/test-object-for-viewing.html
-folder: product--folder
+permalink: ru/fo_test-object-for-viewing.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

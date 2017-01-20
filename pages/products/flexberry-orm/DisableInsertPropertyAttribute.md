@@ -1,10 +1,10 @@
 ---
 title: DisableInsertPropertyAttribute
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/disable-insert-property-attribute.html
-folder: product--folder
+permalink: ru/fo_disable-insert-property-attribute.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 Атрибут `DisableInsertPropertyAttribute` позволяет исключить свойство класса из Insert-запросов. Рекомендуется к применению, если есть Default-значение в БД, которое надо применять при создании объекта, либо если БД сама при вставке правильно инициализирует это значение (различные id).

@@ -1,10 +1,10 @@
 ---
 title: Особенности задания значения по умолчанию
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/features-of-dafault-value-assignment.html
-folder: product--folder
+permalink: ru/fo_features-of-dafault-value-assignment.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

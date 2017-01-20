@@ -1,10 +1,10 @@
 ---
 title: Поддержка нескольких хранилищ данных в одном приложении
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/multibase.html
-folder: product--folder
+permalink: ru/fo_multibase.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

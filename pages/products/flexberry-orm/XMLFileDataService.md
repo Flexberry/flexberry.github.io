@@ -1,10 +1,10 @@
 ---
 title: XMLFileDataService
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/x-m-l-file-data-service.html
-folder: product--folder
+permalink: ru/fo_x-m-l-file-data-service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

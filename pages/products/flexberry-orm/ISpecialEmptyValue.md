@@ -1,10 +1,10 @@
 ---
 title: Интерфейс ISpecialEmptyValue
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Windows UI (формы)
 toc: true
-permalink: ru/i-special-empty-value.html
-folder: product--folder
+permalink: ru/fo_i-special-empty-value.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

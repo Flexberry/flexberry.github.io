@@ -1,10 +1,10 @@
 ---
 title: FuncG, FuncGE, FuncL, FuncLE
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/compare-functions.html
-folder: product--folder
+permalink: ru/fo_compare-functions.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Применение нехранимых классов
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/using-of-not-stored-classes.html
-folder: product--folder
+permalink: ru/fo_using-of-not-stored-classes.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Применение нехранимых классов

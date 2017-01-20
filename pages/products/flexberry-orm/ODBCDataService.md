@@ -1,10 +1,10 @@
 ---
 title: ODBCDataService
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/o-d-b-c-data-service.html
-folder: product--folder
+permalink: ru/fo_o-d-b-c-data-service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

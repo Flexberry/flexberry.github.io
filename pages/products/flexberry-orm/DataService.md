@@ -1,10 +1,10 @@
 ---
 title: Сервис данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Черновик статьи
 toc: true
-permalink: ru/data-service.html
-folder: product--folder
+permalink: ru/fo_data-service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Конструирование объектов данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/construction--data-objects.html
-folder: product--folder
+permalink: ru/fo_construction--data-objects.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

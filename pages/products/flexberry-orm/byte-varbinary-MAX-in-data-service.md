@@ -1,10 +1,10 @@
 ---
 title: Поддержка полей byte[] & varbinary(MAX) в сервисе данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/byte-varbinary--m-a-x-in-data-service.html
-folder: product--folder
+permalink: ru/fo_byte-varbinary--m-a-x-in-data-service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

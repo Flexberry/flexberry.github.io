@@ -1,10 +1,10 @@
 ---
 title: Библиотеки Flexberry ORM
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/flexberry-o-r-m-libraries.html
-folder: product--folder
+permalink: ru/fo_flexberry-o-r-m-libraries.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

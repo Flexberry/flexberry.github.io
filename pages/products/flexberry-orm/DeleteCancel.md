@@ -1,10 +1,10 @@
 ---
 title: Отмена удаления используемого значения из справочника.
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Бизнес-серверы, Ограничения
 toc: true
-permalink: ru/delete-cancel.html
-folder: product--folder
+permalink: ru/fo_delete-cancel.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

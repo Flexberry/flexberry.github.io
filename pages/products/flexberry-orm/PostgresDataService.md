@@ -1,10 +1,10 @@
 ---
 title: PostgresDataService
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: CASE Plugins, Flexberry ORM, Public
 toc: true
-permalink: ru/postgres-data-service.html
-folder: product--folder
+permalink: ru/fo_postgres-data-service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Минимальный необходимый клиентский набор для работы Oracle Data Service
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, БД
 toc: true
-permalink: ru/minimum-required-client-set-for--oracle--data--service.html
-folder: product--folder
+permalink: ru/fo_minimum-required-client-set-for--oracle--data--service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

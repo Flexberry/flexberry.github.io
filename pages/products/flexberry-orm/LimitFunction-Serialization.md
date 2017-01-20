@@ -1,10 +1,10 @@
 ---
 title: Сериализация LimitFunction
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/limit-function--serialization.html
-folder: product--folder
+permalink: ru/fo_limit-function--serialization.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

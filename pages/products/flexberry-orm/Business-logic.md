@@ -1,10 +1,10 @@
 ---
 title: Бизнес-логика
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/business-logic.html
-folder: product--folder
+permalink: ru/fo_business-logic.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

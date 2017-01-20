@@ -1,10 +1,10 @@
 ---
 title: ExternalLangDef-ограничение на детейлы (ExistDetals)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/exist-detals.html
-folder: product--folder
+permalink: ru/fo_exist-detals.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Описание ExistDetails

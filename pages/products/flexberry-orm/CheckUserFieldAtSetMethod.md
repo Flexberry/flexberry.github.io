@@ -1,10 +1,10 @@
 ---
 title: Проверка поля объекта в методе set
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/check-user-field-at-set-method.html
-folder: product--folder
+permalink: ru/fo_check-user-field-at-set-method.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 Проверка данных на форме может осуществляться за счёт генерации исключения при неправильном вводе в методе `set` соответствующего поля объекта.

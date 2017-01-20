@@ -1,10 +1,10 @@
 ---
 title: Чтение объектов с наложенным ограничением
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/Чтение-объектов-с-наложенным-ограничением.html
-folder: product--folder
+permalink: ru/fo_Чтение-объектов-с-наложенным-ограничением.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

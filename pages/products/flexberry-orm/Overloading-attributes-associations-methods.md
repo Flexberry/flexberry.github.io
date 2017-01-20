@@ -1,10 +1,10 @@
 ---
 title: Перегрузка атрибутов, ассоциаций, методов 
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Ключевые понятия
 toc: true
-permalink: ru/overloading-attributes-associations-methods.html
-folder: product--folder
+permalink: ru/fo_overloading-attributes-associations-methods.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

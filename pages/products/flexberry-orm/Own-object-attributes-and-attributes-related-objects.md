@@ -1,10 +1,10 @@
 ---
 title: Доступ к собственным атрибутам объекта и атрибутам связанных объектов
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/own-object-attributes-and-attributes-related-objects.html
-folder: product--folder
+permalink: ru/fo_own-object-attributes-and-attributes-related-objects.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

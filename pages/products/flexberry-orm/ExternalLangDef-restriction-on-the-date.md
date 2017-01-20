@@ -1,10 +1,10 @@
 ---
 title: ExternalLangDef - ограничение на дату/время
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/external-lang-def-restriction-on-the-date.html
-folder: product--folder
+permalink: ru/fo_external-lang-def-restriction-on-the-date.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

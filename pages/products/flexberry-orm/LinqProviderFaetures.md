@@ -1,10 +1,10 @@
 ---
 title: Возможности LinqProvider
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/linq-provider-faetures.html
-folder: product--folder
+permalink: ru/fo_linq-provider-faetures.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

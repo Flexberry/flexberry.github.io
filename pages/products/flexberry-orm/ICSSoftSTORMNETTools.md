@@ -1,10 +1,10 @@
 ---
 title: ICSSoft.STORMNET.Tools.XmlTools
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
-folder: product--folder
+permalink: ru/fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

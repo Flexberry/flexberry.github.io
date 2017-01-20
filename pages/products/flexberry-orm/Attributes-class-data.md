@@ -1,10 +1,10 @@
 ---
 title: Атрибуты классов данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/attributes-class-data.html
-folder: product--folder
+permalink: ru/fo_attributes-class-data.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

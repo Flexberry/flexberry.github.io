@@ -1,10 +1,10 @@
 ---
 title: Пример использования бизнес-сервера
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/b-s-example.html
-folder: product--folder
+permalink: ru/fo_b-s-example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

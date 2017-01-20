@@ -1,10 +1,10 @@
 ---
 title: Описание переменных при построении функций ограничения
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/variable-def.html
-folder: product--folder
+permalink: ru/fo_variable-def.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

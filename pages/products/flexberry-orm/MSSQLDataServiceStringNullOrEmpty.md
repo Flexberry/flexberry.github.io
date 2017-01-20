@@ -1,10 +1,10 @@
 ---
 title: MSSQLDataService String NULL or Empty
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/m-s-s-q-l-data-service-string-null-or-empty.html
-folder: product--folder
+permalink: ru/fo_m-s-s-q-l-data-service-string-null-or-empty.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

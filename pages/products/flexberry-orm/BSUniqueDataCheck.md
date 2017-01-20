@@ -1,10 +1,10 @@
 ---
 title: Проверка уникальности введенных данных в бизнес-сервере
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/b-s-unique-data-check.html
-folder: product--folder
+permalink: ru/fo_b-s-unique-data-check.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Контекстно-зависимый кэш объектов данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Черновик статьи
 toc: true
-permalink: ru/context--sensitive--cache--data--objects.html
-folder: product--folder
+permalink: ru/fo_context--sensitive--cache--data--objects.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Детейловые ассоциации и их свойства 
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/detail-associations-and-their-properties.html
-folder: product--folder
+permalink: ru/fo_detail-associations-and-their-properties.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Пример использования собственных типов
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/using_custom_types_example.html
-folder: product--folder
+permalink: ru/fo_using_custom_types_example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

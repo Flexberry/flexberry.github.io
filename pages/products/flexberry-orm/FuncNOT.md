@@ -1,10 +1,10 @@
 ---
 title: FuncNOT
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/func-n-o-t.html
-folder: product--folder
+permalink: ru/fo_func-n-o-t.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

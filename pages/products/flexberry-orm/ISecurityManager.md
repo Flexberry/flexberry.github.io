@@ -1,10 +1,10 @@
 ---
 title: Flexberry Security API: ISecurityManager
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Flexberry Security
 toc: true
-permalink: ru/i-security-manager.html
-folder: product--folder
+permalink: ru/fo_i-security-manager.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Flexberry Security API

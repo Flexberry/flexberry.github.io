@@ -1,10 +1,10 @@
 ---
 title: Сервис блокировок
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Черновик статьи
 toc: true
-permalink: ru/lock-service.html
-folder: product--folder
+permalink: ru/fo_lock-service.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

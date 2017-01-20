@@ -1,10 +1,10 @@
 ---
 title: Проверка валидности изменений данных объекта в бизнес-сервере
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public, БД, Бизнес-серверы
 toc: true
-permalink: ru/b-s-change-data-check.html
-folder: product--folder
+permalink: ru/fo_b-s-change-data-check.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

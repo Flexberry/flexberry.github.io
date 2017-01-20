@@ -1,10 +1,10 @@
 ---
 title: Атрибут класса типа объекта данных
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry Designer, Public
 toc: true
-permalink: ru/dataobject-as-attribute-type.html
-folder: product--folder
+permalink: ru/fo_dataobject-as-attribute-type.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Как открыть объект только на чтение
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Windows UI (формы)
 toc: true
-permalink: ru/read-only-object.html
-folder: product--folder
+permalink: ru/fo_read-only-object.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Как открыть объект только на чтение 

@@ -1,10 +1,10 @@
 ---
 title: Модуль расширения Flexberry Designer для генерации кода по uml-моделям
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: CASE Plugins, Flexberry ORM, Public
 toc: true
-permalink: ru/flexberry-orm-case-plugin.html
-folder: product--folder
+permalink: ru/fo_flexberry-orm-case-plugin.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

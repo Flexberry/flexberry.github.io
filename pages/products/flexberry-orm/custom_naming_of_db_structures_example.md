@@ -1,10 +1,10 @@
 ---
 title: Пример: пользовательские наименования для структур в БД
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/custom_naming_of_db_structures_example.html
-folder: product--folder
+permalink: ru/fo_custom_naming_of_db_structures_example.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

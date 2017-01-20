@@ -1,10 +1,10 @@
 ---
 title: Flexberry UnityFactory
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry, Public
 toc: true
-permalink: ru/unity-factory.html
-folder: product--folder
+permalink: ru/fo_unity-factory.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

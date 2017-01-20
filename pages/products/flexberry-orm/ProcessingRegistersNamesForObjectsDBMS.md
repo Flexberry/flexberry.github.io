@@ -1,10 +1,10 @@
 ---
 title: Обработка регистров в именах объектов для СУБД
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, БД
 toc: true
-permalink: ru/processing-registers-names-for-objects-d-b-m-s.html
-folder: product--folder
+permalink: ru/fo_processing-registers-names-for-objects-d-b-m-s.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Обработка регистров в именах объектов для СУБД

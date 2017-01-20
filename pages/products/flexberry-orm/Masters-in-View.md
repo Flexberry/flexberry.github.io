@@ -1,10 +1,10 @@
 ---
 title: Мастера в представлении (View)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, View (представление)
 toc: true
-permalink: ru/masters-in--view.html
-folder: product--folder
+permalink: ru/fo_masters-in--view.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html
-folder: product--folder
+permalink: ru/fo_otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Бизнес-сервер (BusinessServer)

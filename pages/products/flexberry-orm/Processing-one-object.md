@@ -1,10 +1,10 @@
 ---
 title: Обработка одного объекта
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/processing-one-object.html
-folder: product--folder
+permalink: ru/fo_processing-one-object.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Как сменить тип хранилища
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
-permalink: ru/switching_storages_and_storage_types.html
-folder: product--folder
+permalink: ru/fo_switching_storages_and_storage_types.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 

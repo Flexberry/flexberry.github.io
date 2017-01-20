@@ -1,10 +1,10 @@
 ---
 title: Nullable-типы
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/nullable-types.html
-folder: product--folder
+permalink: ru/fo_nullable-types.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 # Nullable-типы

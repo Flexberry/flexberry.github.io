@@ -1,10 +1,10 @@
 ---
 title: Первичные ключи объектов
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/primary-keys-objects.html
-folder: product--folder
+permalink: ru/fo_primary-keys-objects.html
+folder: products/flexberry-orm/
 lang: ru
 ---
 
