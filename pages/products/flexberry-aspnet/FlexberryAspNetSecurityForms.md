@@ -1,0 +1,86 @@
+---
+title: Web-формы подсистемы полномочий
+sidebar: product--sidebar
+keywords: Flexberry ASP-NET, Flexberry Security
+toc: true
+permalink: ru/flexberry-asp-net-security-forms.html
+folder: product--folder
+lang: ru
+---
+
+<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
+<br>
+<table border="0" width="100%" bgcolor="#6495ED">
+<tbody><tr><td bgcolor="#FFFFFF">
+* '''Продукт''': [Flexberry ASP.Net](flexberry-a-s-p-n-e-t.html)
+* '''Компонент''': [Web-контролы и web-компоненты](web-controls.html)
+* '''Предназначение''': Представлен перечень основных веб-форм [подсистемы полномочий](flexberry-security.html) и некоторые особенности работы с ними.
+</td>
+</tr></tbody></table></a>
+</div>
+
+# Web-формы подсистемы полномочий
+Среди технологических форм присутствуют формы для работы с объектами [подсистемы полномочий](flexberry-security.html).
+
+Среди веб-форм на настоящий момент доступны формы для просмотра и редактирования:
+* пользователей
+* ролей
+* групп
+* классов
+* операций
+
+## Особенности формы для работы с операциями
+Для операций различают Доступ в целом и Доступ с конкретным видом доступа.
+
+Первый столбик галочек определяет доступ к операции в целом. Если у пользователя указан конкретный вид доступа, то у пользователя есть доступ в целом (если добавить какой-то вид доступа на операцию и сохранить форму, то автоматически появится галочка в первом столбце).
+
+![](/images/pages/img/page/FlexberryAspNetSecurityForms/OperationForm.png)
+
+# Путь до формы
+Настройка доступа к данным формам производится через [DynamicPageRoute](routing.html).
+
+Например, чтобы сделать формы доступными по следующим адресам (ниже представлен фрагмент карты сайта):
+```xml
+<siteMapNode title="Пользователи" url="~/flexberry/SecurityUsersList" />
+<siteMapNode title="Роли" url="~/flexberry/SecurityRolesList" />
+<siteMapNode title="Классы" url="~/flexberry/SecurityClassesList" />
+<siteMapNode title="Группы" url="~/flexberry/SecurityGroupsList" />
+<siteMapNode title="Операции" url="~/flexberry/SecurityOperationsList" />
+```
+можно в RouteConfig прописать следующее:
+```cs
+namespace ICSSoft.STORMNET.Web
+{
+    /// <summary>
+    /// Класс конфигурации маршрутов приложения.
+    /// </summary>
+    public static class RouteConfig
+    {
+        /// <summary>
+        /// Метод для регистрации маршрутов в коллекции.
+        /// При изменении адреса страниц не забудьте произвести соответствующие изменения в SiteMap.
+        /// </summary>
+        /// <param name="routes">Коллекция маршрутов, в которую необходимо добавить новые элементы.</param>
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+			// ...
+			
+            routes.AddDynamicPageRoute("flexberry/SecurityClassEdit/{PK}", DynamicPageIdentifier.SecurityClassEdit);
+            routes.AddDynamicPageRoute("flexberry/SecurityClassEdit", DynamicPageIdentifier.SecurityClassNew);
+            routes.AddDynamicPageRoute("flexberry/SecurityClassesList", DynamicPageIdentifier.SecurityClassesList);
+            routes.AddDynamicPageRoute("flexberry/SecurityRoleEdit/{PK}", DynamicPageIdentifier.SecurityRoleEdit);
+            routes.AddDynamicPageRoute("flexberry/SecurityRoleEdit", DynamicPageIdentifier.SecurityRoleNew);
+            routes.AddDynamicPageRoute("flexberry/SecurityRolesList", DynamicPageIdentifier.SecurityRolesList);
+            routes.AddDynamicPageRoute("flexberry/SecurityUserEdit/{PK}", DynamicPageIdentifier.SecurityUserEdit);
+            routes.AddDynamicPageRoute("flexberry/SecurityUserEdit", DynamicPageIdentifier.SecurityUserNew);
+            routes.AddDynamicPageRoute("flexberry/SecurityUsersList", DynamicPageIdentifier.SecurityUsersList);
+            routes.AddDynamicPageRoute("flexberry/SecurityGroupEdit/{PK}", DynamicPageIdentifier.SecurityGroupEdit);
+            routes.AddDynamicPageRoute("flexberry/SecurityGroupEdit", DynamicPageIdentifier.SecurityGroupNew);
+            routes.AddDynamicPageRoute("flexberry/SecurityGroupsList", DynamicPageIdentifier.SecurityGroupsList);
+            routes.AddDynamicPageRoute("flexberry/SecurityOperationEdit/{PK}", DynamicPageIdentifier.SecurityOperationEdit);
+            routes.AddDynamicPageRoute("flexberry/SecurityOperationEdit", DynamicPageIdentifier.SecurityOperationNew);
+            routes.AddDynamicPageRoute("flexberry/SecurityOperationsList", DynamicPageIdentifier.SecurityOperationsList);
+        }
+    }
+}
+```
