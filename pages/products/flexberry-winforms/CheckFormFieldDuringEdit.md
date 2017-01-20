@@ -3,8 +3,8 @@ title: Проверка данных на форме во время редак�
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/check-form-field-during-edit.html
-folder: product--folder
+permalink: ru/fw_check-form-field-during-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 Проверка данных на форме во время редактирования может осуществляться за счёт:

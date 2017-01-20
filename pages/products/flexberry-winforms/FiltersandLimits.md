@@ -3,8 +3,8 @@ title: Фильтры и ограничения
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Ограничения
 toc: true
-permalink: ru/filtersand-limits.html
-folder: product--folder
+permalink: ru/fw_filtersand-limits.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

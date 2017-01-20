@@ -3,8 +3,8 @@ title: Поведение ExtendedTextBox.GetCurrentObject
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/actions--extended-text-box--get-current-object.html
-folder: product--folder
+permalink: ru/fw_actions--extended-text-box--get-current-object.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

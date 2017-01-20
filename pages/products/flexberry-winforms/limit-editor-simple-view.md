@@ -3,8 +3,8 @@ title: Упрощенный вид редактора ограничений
 sidebar: product--sidebar
 keywords: Windows UI (формы), Ограничения
 toc: true
-permalink: ru/limit-editor-simple-view.html
-folder: product--folder
+permalink: ru/fw_limit-editor-simple-view.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

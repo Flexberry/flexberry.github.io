@@ -3,8 +3,8 @@ title: Наложение ограничений по столбцам в спи
 sidebar: product--sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html
-folder: product--folder
+permalink: ru/fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

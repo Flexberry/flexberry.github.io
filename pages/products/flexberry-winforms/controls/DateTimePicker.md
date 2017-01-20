@@ -3,8 +3,8 @@ title: DateTimePicker
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/date-time-picker.html
-folder: product--folder
+permalink: ru/fw_date-time-picker.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

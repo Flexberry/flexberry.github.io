@@ -3,8 +3,8 @@ title: Реализация информационных систем
 sidebar: product--sidebar
 keywords: 
 toc: true
-permalink: ru/development.html
-folder: product--folder
+permalink: ru/fw_development.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

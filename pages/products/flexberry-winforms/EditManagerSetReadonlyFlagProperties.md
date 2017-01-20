@@ -3,8 +3,8 @@ title: Метод EditManager.SetReadonlyFlagProperties
 sidebar: product--sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/edit-manager-set-readonly-flag-properties.html
-folder: product--folder
+permalink: ru/fw_edit-manager-set-readonly-flag-properties.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 # Метод EditManager.SetReadonlyFlagProperties

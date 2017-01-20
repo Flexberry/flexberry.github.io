@@ -3,8 +3,8 @@ title: Положение формы на экране
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/base-win-position.html
-folder: product--folder
+permalink: ru/fw_base-win-position.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

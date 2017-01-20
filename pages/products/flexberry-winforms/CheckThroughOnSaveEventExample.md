@@ -3,8 +3,8 @@ title: Пример проверки данных на форме через OnS
 sidebar: product--sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/check-through-on-save-event-example.html
-folder: product--folder
+permalink: ru/fw_check-through-on-save-event-example.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

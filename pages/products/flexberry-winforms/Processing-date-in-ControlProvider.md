@@ -3,8 +3,8 @@ title: Обработка даты в ControlProvider
 sidebar: product--sidebar
 keywords: DateTime (работа с датами)
 toc: true
-permalink: ru/processing-date-in--control-provider.html
-folder: product--folder
+permalink: ru/fw_processing-date-in--control-provider.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

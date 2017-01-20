@@ -3,8 +3,8 @@ title: Настройка форм для приложения
 sidebar: product--sidebar
 keywords: Windows UI (формы), Конкретная реализация, ПНИПУ, Разработка
 toc: true
-permalink: ru/form-tuner.html
-folder: product--folder
+permalink: ru/fw_form-tuner.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

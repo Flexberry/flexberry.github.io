@@ -3,8 +3,8 @@ title: Добавить собственную форму на рабочий с
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/add-form-to-win-desktop.html
-folder: product--folder
+permalink: ru/fw_add-form-to-win-desktop.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 Чтобы добавить собственную форму на рабочий стол windows-приложения, необходимо:

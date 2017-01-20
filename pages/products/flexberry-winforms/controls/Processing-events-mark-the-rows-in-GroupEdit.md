@@ -3,8 +3,8 @@ title: Обработка события отметки строк в GroupEdit
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/processing-events-mark-the-rows-in--group-edit.html
-folder: product--folder
+permalink: ru/fw_processing-events-mark-the-rows-in--group-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

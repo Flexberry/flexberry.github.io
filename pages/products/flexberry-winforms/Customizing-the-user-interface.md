@@ -3,8 +3,8 @@ title: Настройка пользовательского интерфейс�
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/customizing-the-user-interface.html
-folder: product--folder
+permalink: ru/fw_customizing-the-user-interface.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

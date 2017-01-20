@@ -3,8 +3,8 @@ title: ComboLookup
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/combo-lookup.html
-folder: product--folder
+permalink: ru/fw_combo-lookup.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Как без использования генераторов кода 
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/make-a-list-of-data-objects-without-generators.html
-folder: product--folder
+permalink: ru/fw_make-a-list-of-data-objects-without-generators.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

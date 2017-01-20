@@ -3,8 +3,8 @@ title: Переключение редактируемого объекта бе
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/switch-editing-object.html
-folder: product--folder
+permalink: ru/fw_switch-editing-object.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

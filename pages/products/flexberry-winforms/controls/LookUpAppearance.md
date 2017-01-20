@@ -3,8 +3,8 @@ title: Изменение внешнего вида контрола LookUp
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/look-up-appearance.html
-folder: product--folder
+permalink: ru/fw_look-up-appearance.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

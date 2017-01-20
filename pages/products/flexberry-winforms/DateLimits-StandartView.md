@@ -3,8 +3,8 @@ title: Функции для работы с датами в "стандартн
 sidebar: product--sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/date-limits--standart-view.html
-folder: product--folder
+permalink: ru/fw_date-limits--standart-view.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

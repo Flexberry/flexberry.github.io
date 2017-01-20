@@ -3,8 +3,8 @@ title: Удаление настроек пользователя в ObjectListV
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/delete-columns-settings-object-list-view.html
-folder: product--folder
+permalink: ru/fw_delete-columns-settings-object-list-view.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

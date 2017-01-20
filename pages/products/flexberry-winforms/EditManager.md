@@ -3,8 +3,8 @@ title: EditManager
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/edit-manager.html
-folder: product--folder
+permalink: ru/fw_edit-manager.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

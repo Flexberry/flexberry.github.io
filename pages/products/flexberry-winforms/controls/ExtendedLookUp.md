@@ -3,8 +3,8 @@ title: ExtendedLookUp
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/extended-look-up.html
-folder: product--folder
+permalink: ru/fw_extended-look-up.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 # ExtendedLookUp

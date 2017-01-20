@@ -3,8 +3,8 @@ title: Запрет изменения в BeforeChangeProperty
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/restrict-changes-in--before-change-property.html
-folder: product--folder
+permalink: ru/fw_restrict-changes-in--before-change-property.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

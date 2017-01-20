@@ -3,8 +3,8 @@ title: Отслеживание окончания загрузки данных
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/end-load-data-in--object-list-view.html
-folder: product--folder
+permalink: ru/fw_end-load-data-in--object-list-view.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

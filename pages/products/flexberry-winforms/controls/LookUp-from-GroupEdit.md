@@ -3,8 +3,8 @@ title: Поднятие из GroupEdit'a на лукап объекта, не и
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/look-up-from--group-edit.html
-folder: product--folder
+permalink: ru/fw_look-up-from--group-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

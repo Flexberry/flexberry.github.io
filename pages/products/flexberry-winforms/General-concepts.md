@@ -3,8 +3,8 @@ title: Общие концепции
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/general-concepts.html
-folder: product--folder
+permalink: ru/fw_general-concepts.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

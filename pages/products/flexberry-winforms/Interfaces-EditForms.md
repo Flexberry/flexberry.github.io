@@ -3,8 +3,8 @@ title: Интерфейсы форм редактирования
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/interfaces--edit-forms.html
-folder: product--folder
+permalink: ru/fw_interfaces--edit-forms.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Отправка сообщения об ошибке по электро
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/send-to-email-bug-report-provider.html
-folder: product--folder
+permalink: ru/fw_send-to-email-bug-report-provider.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

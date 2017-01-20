@@ -3,8 +3,8 @@ title: Алиасы системных / пользовательских тип
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Ограничения
 toc: true
-permalink: ru/aliases-system-and-user-types.html
-folder: product--folder
+permalink: ru/fw_aliases-system-and-user-types.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Настройка видимости колонок ObjectListView
 sidebar: product--sidebar
 keywords: Windows UI (Контролы), Windows UI (формы), Ограничения
 toc: true
-permalink: ru/object-list-view-column-visibility-customization.html
-folder: product--folder
+permalink: ru/fw_object-list-view-column-visibility-customization.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 Пусть необходимо, например, в зависимости от полномочий пользователя устанавливать видимость некоторой колонки в [ObjectListView](object-list-view.html)(как настроить невидимые по умолчанию колонки описано в статье "[Настройка невидимых по умолчанию колонок (использование атрибута DefaultVisible)](прикладные-системы_Настроика-невидимых-по-умолчанию-колонок-использование-атрибута--default-visible.html)"; как настроить скрытые свойства в представлении написано в статье "[Скрытые-своиства-в-представлении|Скрытые свойства в представлении]").

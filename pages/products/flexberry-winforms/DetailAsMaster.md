@@ -3,8 +3,8 @@ title: Детейл в качестве мастера
 sidebar: product--sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/detail-as-master.html
-folder: product--folder
+permalink: ru/fw_detail-as-master.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

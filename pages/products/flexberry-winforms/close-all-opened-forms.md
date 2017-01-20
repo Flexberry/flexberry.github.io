@@ -3,8 +3,8 @@ title: Закрытие всех открытых форм Flexberry
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/close-all-opened-forms.html
-folder: product--folder
+permalink: ru/fw_close-all-opened-forms.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

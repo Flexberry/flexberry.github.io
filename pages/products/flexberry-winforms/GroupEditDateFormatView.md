@@ -3,8 +3,8 @@ title: Формат даты GroupEdit в режиме отображения
 sidebar: product--sidebar
 keywords: DateTime (работа с датами), Windows UI (Контролы)
 toc: true
-permalink: ru/Формат-даты--group-edit-в-режиме-отображения.html
-folder: product--folder
+permalink: ru/fw_Формат-даты--group-edit-в-режиме-отображения.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Перехват событий ObjectListView (создание, уда�
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/interception-events--object-list-view.html
-folder: product--folder
+permalink: ru/fw_interception-events--object-list-view.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

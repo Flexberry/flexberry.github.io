@@ -3,8 +3,8 @@ title: Запуск независимых форм без рабочего ст
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/running-independent-forms-without-desktop.html
-folder: product--folder
+permalink: ru/fw_running-independent-forms-without-desktop.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

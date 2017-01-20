@@ -3,8 +3,8 @@ title: Принудительный вызов формы редактирова
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/prinuditelnyi-vyzov-formy-redaktirovaniya.html
-folder: product--folder
+permalink: ru/fw_prinuditelnyi-vyzov-formy-redaktirovaniya.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

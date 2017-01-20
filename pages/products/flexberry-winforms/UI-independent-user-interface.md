@@ -3,8 +3,8 @@ title: UI-независимый пользовательский интерфе
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/u-i-independent-user-interface.html
-folder: product--folder
+permalink: ru/fw_u-i-independent-user-interface.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

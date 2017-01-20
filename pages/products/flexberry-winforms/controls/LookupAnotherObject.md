@@ -3,8 +3,8 @@ title: Добавление на форму редактирования Lookup 
 sidebar: product--sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/lookup-another-object.html
-folder: product--folder
+permalink: ru/fw_lookup-another-object.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

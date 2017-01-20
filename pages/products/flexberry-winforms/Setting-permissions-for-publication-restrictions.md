@@ -3,8 +3,8 @@ title: Настройка прав доступа на публикацию ог
 sidebar: product--sidebar
 keywords: Flexberry Security, Flexberry Winforms, Ограничения
 toc: true
-permalink: ru/setting-permissions-for-publication-restrictions.html
-folder: product--folder
+permalink: ru/fw_setting-permissions-for-publication-restrictions.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Кнопка «Свернуть/развернуть папки» на р
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/desktop-operations.html
-folder: product--folder
+permalink: ru/fw_desktop-operations.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

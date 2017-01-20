@@ -3,8 +3,8 @@ title: Межформенное взаимодействие при редакт
 sidebar: product--sidebar
 keywords: Windows UI (формы), Учебники
 toc: true
-permalink: ru/interaction-between-forms-when-editing-objects.html
-folder: product--folder
+permalink: ru/fw_interaction-between-forms-when-editing-objects.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

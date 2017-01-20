@@ -3,8 +3,8 @@ title: События добавления и удаления в GroupEditBase
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/addition-and-removal-events-in--group-edit.html
-folder: product--folder
+permalink: ru/fw_addition-and-removal-events-in--group-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

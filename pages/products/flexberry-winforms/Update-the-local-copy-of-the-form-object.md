@@ -3,8 +3,8 @@ title: Обновление локальной копии объекта фор�
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/update-the-local-copy-of-the-form-object.html
-folder: product--folder
+permalink: ru/fw_update-the-local-copy-of-the-form-object.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

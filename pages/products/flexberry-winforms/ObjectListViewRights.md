@@ -3,8 +3,8 @@ title: Доступность операций на OLV в зависимост�
 sidebar: product--sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/object-list-view-rights.html
-folder: product--folder
+permalink: ru/fw_object-list-view-rights.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

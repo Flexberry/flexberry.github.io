@@ -3,8 +3,8 @@ title: Сортировка списков
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/list-sort.html
-folder: product--folder
+permalink: ru/fw_list-sort.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

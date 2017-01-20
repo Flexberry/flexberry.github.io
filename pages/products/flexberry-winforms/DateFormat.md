@@ -3,8 +3,8 @@ title: Формат отображения даты по умолчанию
 sidebar: product--sidebar
 keywords: DateTime (работа с датами)
 toc: true
-permalink: ru/Формат-отображения-даты-по-умолчанию.html
-folder: product--folder
+permalink: ru/fw_Формат-отображения-даты-по-умолчанию.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

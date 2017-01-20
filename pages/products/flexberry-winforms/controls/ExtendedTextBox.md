@@ -3,8 +3,8 @@ title: ExtendedTextBox
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/extended-text-box.html
-folder: product--folder
+permalink: ru/fw_extended-text-box.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

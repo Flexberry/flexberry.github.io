@@ -3,8 +3,8 @@ title: ControlForBindStruct
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/control-for-bind-struct.html
-folder: product--folder
+permalink: ru/fw_control-for-bind-struct.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

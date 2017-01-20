@@ -3,8 +3,8 @@ title: Передача параметров от ContRunner до формы р�
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/parameters-from-cont-runner-to-edit-form.html
-folder: product--folder
+permalink: ru/fw_parameters-from-cont-runner-to-edit-form.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

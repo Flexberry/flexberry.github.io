@@ -3,7 +3,7 @@ title: Задание горячих клавиш для ограничений
 sidebar: product--sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/limit-hot-key.html
-folder: product--folder
+permalink: ru/fw_limit-hot-key.html
+folder: products/flexberry-winforms/
 lang: ru
 ---

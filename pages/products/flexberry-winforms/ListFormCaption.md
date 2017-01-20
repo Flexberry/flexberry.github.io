@@ -3,8 +3,8 @@ title: Установка заголовка списковой формы
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/list-form-caption.html
-folder: product--folder
+permalink: ru/fw_list-form-caption.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

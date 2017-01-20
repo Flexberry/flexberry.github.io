@@ -3,8 +3,8 @@ title: Базовая системно-технологическая архит
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Ключевые понятия
 toc: true
-permalink: ru/flexberry-winforms-architecture.html
-folder: product--folder
+permalink: ru/fw_flexberry-winforms-architecture.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

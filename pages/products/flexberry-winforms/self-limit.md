@@ -3,8 +3,8 @@ title: Ограничение на себя
 sidebar: product--sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/self-limit.html
-folder: product--folder
+permalink: ru/fw_self-limit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Несколько классов приложений в одной ст
 sidebar: product--sidebar
 keywords: Ключевые понятия
 toc: true
-permalink: ru/several-classes-of-applications-in-a-single-stage.html
-folder: product--folder
+permalink: ru/fw_several-classes-of-applications-in-a-single-stage.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

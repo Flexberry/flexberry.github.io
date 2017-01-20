@@ -3,8 +3,8 @@ title: Стандартный вид редактора ограничений. 
 sidebar: product--sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/standart-view-limits-editor.html
-folder: product--folder
+permalink: ru/fw_standart-view-limits-editor.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

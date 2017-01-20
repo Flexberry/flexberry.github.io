@@ -3,8 +3,8 @@ title: Функции для работы с датой при задании о
 sidebar: product--sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/date-time-funtions-in-limits.html
-folder: product--folder
+permalink: ru/fw_date-time-funtions-in-limits.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

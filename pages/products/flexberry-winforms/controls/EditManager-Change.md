@@ -3,8 +3,8 @@ title: Метод EditManager.Change()
 sidebar: product--sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/edit-manager--change.html
-folder: product--folder
+permalink: ru/fw_edit-manager--change.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

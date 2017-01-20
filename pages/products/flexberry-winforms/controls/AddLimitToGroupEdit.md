@@ -3,8 +3,8 @@ title: Наложение ограничений на GroupEdit
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/add-limit-to-group-edit.html
-folder: product--folder
+permalink: ru/fw_add-limit-to-group-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 # Делегат скрытия строк в GroupEdit

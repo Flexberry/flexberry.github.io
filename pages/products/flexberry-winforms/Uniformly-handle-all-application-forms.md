@@ -3,8 +3,8 @@ title: Как единообразно обработать все формы п
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/uniformly-handle-all-application-forms.html
-folder: product--folder
+permalink: ru/fw_uniformly-handle-all-application-forms.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

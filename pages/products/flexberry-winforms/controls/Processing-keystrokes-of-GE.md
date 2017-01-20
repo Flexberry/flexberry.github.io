@@ -3,8 +3,8 @@ title: Обработка нажатий клавиш контролами в GE
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/processing-keystrokes-of--g-e.html
-folder: product--folder
+permalink: ru/fw_processing-keystrokes-of--g-e.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

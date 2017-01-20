@@ -3,8 +3,8 @@ title: Переход по Enter на форме
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/custom-form-tuner.html
-folder: product--folder
+permalink: ru/fw_custom-form-tuner.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

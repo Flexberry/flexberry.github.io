@@ -3,8 +3,8 @@ title: Запуск произвольной зависимой формы с р
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/running-any-dependent-forms-from-the-desktop.html
-folder: product--folder
+permalink: ru/fw_running-any-dependent-forms-from-the-desktop.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

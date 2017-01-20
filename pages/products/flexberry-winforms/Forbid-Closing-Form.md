@@ -3,8 +3,8 @@ title: Как запретить закрытие фомы Flexberry Winforms
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/forbid--closing--form.html
-folder: product--folder
+permalink: ru/fw_forbid--closing--form.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

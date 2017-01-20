@@ -3,8 +3,8 @@ title: WinForms UI FAQ
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/win-forms-u-i--f-a-q.html
-folder: product--folder
+permalink: ru/fw_win-forms-u-i--f-a-q.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Подстановка значений параметров в огра�
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Ограничения
 toc: true
-permalink: ru/limit-function-insert-parameters-values.html
-folder: product--folder
+permalink: ru/fw_limit-function-insert-parameters-values.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

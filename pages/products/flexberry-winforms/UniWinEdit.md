@@ -3,8 +3,8 @@ title: Универсальная форма редактирования
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/Универсальная-форма-редактирования.html
-folder: product--folder
+permalink: ru/fw_Универсальная-форма-редактирования.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

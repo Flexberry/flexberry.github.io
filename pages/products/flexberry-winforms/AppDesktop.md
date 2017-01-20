@@ -3,8 +3,8 @@ title: Приложение и рабочий стол
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/app-desktop.html
-folder: product--folder
+permalink: ru/fw_app-desktop.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 # Приложение

@@ -3,8 +3,8 @@ title: Подсистема настроек
 sidebar: product--sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/setting-manager.html
-folder: product--folder
+permalink: ru/fw_setting-manager.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

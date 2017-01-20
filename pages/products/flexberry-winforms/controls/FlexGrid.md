@@ -3,8 +3,8 @@ title: FlexGrid
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/flex-grid.html
-folder: product--folder
+permalink: ru/fw_flex-grid.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

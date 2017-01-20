@@ -3,8 +3,8 @@ title: Расширенный вид редактора ограничений
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Windows UI (Контролы)
 toc: true
-permalink: ru/limit-editor-advanced-view.html
-folder: product--folder
+permalink: ru/fw_limit-editor-advanced-view.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

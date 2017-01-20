@@ -3,8 +3,8 @@ title: Если не работает LookUp
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/look-up-does-not-work.html
-folder: product--folder
+permalink: ru/fw_look-up-does-not-work.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

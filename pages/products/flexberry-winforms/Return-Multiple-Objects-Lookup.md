@@ -3,8 +3,8 @@ title: Возврат нескольких объектов по лукапу
 sidebar: product--sidebar
 keywords: Windows UI (формы), Ограничения
 toc: true
-permalink: ru/return--multiple--objects--lookup.html
-folder: product--folder
+permalink: ru/fw_return--multiple--objects--lookup.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Помещение списка объектов в ObjectListView
 sidebar: product--sidebar
 keywords: DataObject (объекты данных), Windows UI (Контролы)
 toc: true
-permalink: ru/put-list-objects-in--object-list-view.html
-folder: product--folder
+permalink: ru/fw_put-list-objects-in--object-list-view.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

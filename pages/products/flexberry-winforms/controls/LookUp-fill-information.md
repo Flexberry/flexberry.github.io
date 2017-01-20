@@ -3,8 +3,8 @@ title: "Размазывание" по Control'ам информации с Look
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/look-up-fill-information.html
-folder: product--folder
+permalink: ru/fw_look-up-fill-information.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

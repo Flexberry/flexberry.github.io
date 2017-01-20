@@ -3,8 +3,8 @@ title: FileControl (Winforms)
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Windows UI (Контролы)
 toc: true
-permalink: ru/file-control.html
-folder: product--folder
+permalink: ru/fw_file-control.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

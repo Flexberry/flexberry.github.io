@@ -3,8 +3,8 @@ title: ErrorBox
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/error-box.html
-folder: product--folder
+permalink: ru/fw_error-box.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

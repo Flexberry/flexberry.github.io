@@ -3,8 +3,8 @@ title: Проверка данных на форме во время сохра�
 sidebar: product--sidebar
 keywords: DataObject (объекты данных)
 toc: true
-permalink: ru/check-form-field-during-save.html
-folder: product--folder
+permalink: ru/fw_check-form-field-during-save.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

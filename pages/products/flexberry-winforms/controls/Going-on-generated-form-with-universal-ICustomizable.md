@@ -3,8 +3,8 @@ title: Переход на генерируемую форму с универс
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/going-on-generated-form-with-universal--i-customizable.html
-folder: product--folder
+permalink: ru/fw_going-on-generated-form-with-universal--i-customizable.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

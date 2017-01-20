@@ -3,8 +3,8 @@ title: Ограничение тип лукапа «combo» в GroupEdit
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/restriction-type--lookup-combo-in--group-edit.html
-folder: product--folder
+permalink: ru/fw_restriction-type--lookup-combo-in--group-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Фокус ввода и «Ctrl+S»
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/focus-and-ctrl-s.html
-folder: product--folder
+permalink: ru/fw_focus-and-ctrl-s.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

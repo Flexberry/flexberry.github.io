@@ -3,8 +3,8 @@ title: GroupEdit: режим редактирования с блокировк�
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/lock-rows-in-group-edit.html
-folder: product--folder
+permalink: ru/fw_lock-rows-in-group-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

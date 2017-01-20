@@ -3,8 +3,8 @@ title: Определение доступных для редактирован
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/different-applications-and-fields.html
-folder: product--folder
+permalink: ru/fw_different-applications-and-fields.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: GroupEdit
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/group-edit.html
-folder: product--folder
+permalink: ru/fw_group-edit.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

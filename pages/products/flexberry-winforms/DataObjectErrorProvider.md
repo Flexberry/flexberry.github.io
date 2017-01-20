@@ -3,8 +3,8 @@ title: DataObjectErrorProvider
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/data-object-error-provider.html
-folder: product--folder
+permalink: ru/fw_data-object-error-provider.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

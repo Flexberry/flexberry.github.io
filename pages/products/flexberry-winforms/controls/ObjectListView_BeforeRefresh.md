@@ -3,8 +3,8 @@ title: Событие ObjectListView.BeforeRefresh
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/object-list-view_Before-refresh.html
-folder: product--folder
+permalink: ru/fw_object-list-view_Before-refresh.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

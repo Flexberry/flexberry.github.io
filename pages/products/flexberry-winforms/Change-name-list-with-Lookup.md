@@ -3,8 +3,8 @@ title: Изменение названия списка при лукапе
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/change-name-list-with--lookup.html
-folder: product--folder
+permalink: ru/fw_change-name-list-with--lookup.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Обновление объекта в OLV
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/updating-object-in--o-l-v.html
-folder: product--folder
+permalink: ru/fw_updating-object-in--o-l-v.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

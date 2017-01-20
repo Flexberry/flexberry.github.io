@@ -3,8 +3,8 @@ title: Ограничение с параметрами (для пользова
 sidebar: product--sidebar
 keywords: Windows UI (формы), Ограничения
 toc: true
-permalink: ru/limit-editor-params.html
-folder: product--folder
+permalink: ru/fw_limit-editor-params.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

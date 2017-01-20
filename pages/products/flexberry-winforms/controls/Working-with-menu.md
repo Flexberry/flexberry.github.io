@@ -3,8 +3,8 @@ title: И опять работа с меню
 sidebar: product--sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/working-with-menu.html
-folder: product--folder
+permalink: ru/fw_working-with-menu.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

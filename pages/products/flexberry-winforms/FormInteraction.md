@@ -3,8 +3,8 @@ title: Межформенное взаимодействие в Windows-прил
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/form-interaction.html
-folder: product--folder
+permalink: ru/fw_form-interaction.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

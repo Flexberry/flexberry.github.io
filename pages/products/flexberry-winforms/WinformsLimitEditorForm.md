@@ -3,8 +3,8 @@ title: Форма «Редактор ограничений» (WIN)
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Ограничения
 toc: true
-permalink: ru/winforms-limit-editor-form.html
-folder: product--folder
+permalink: ru/fw_winforms-limit-editor-form.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

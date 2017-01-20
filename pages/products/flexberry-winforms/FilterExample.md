@@ -3,8 +3,8 @@ title: Пример использования AdvLimit и создания Filt
 sidebar: product--sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/filter-example.html
-folder: product--folder
+permalink: ru/fw_filter-example.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

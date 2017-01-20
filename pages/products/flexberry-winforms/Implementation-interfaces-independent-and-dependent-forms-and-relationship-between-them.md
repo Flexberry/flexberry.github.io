@@ -3,8 +3,8 @@ title: Реализация интерфейсов независимыми и �
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
-folder: product--folder
+permalink: ru/fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

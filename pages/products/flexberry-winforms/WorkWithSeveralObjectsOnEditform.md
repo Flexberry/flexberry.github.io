@@ -3,8 +3,8 @@ title: Работа на форме редактирования с полями
 sidebar: product--sidebar
 keywords: View (представление)
 toc: true
-permalink: ru/work-with-several-objects-on-editform.html
-folder: product--folder
+permalink: ru/fw_work-with-several-objects-on-editform.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 Иногда встаёт задача организовать работу с полями объектов разных классов на одной форме редактирования. Например, необходима форма для быстрого ввода, где часть полей принадлежит одному классу, часть - другому и т.д. В таком случае необходимо отслеживать сохранение этого "сложного представления".

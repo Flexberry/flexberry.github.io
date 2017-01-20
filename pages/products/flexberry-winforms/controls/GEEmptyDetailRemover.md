@@ -3,8 +3,8 @@ title: GEEmptyDetailRemover
 sidebar: product--sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/g-e-empty-detail-remover.html
-folder: product--folder
+permalink: ru/fw_g-e-empty-detail-remover.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

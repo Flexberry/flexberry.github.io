@@ -3,8 +3,8 @@ title: Свойство MaxLength элемента управления ExtLookU
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/ext-look-up-text-control-max-length.html
-folder: product--folder
+permalink: ru/fw_ext-look-up-text-control-max-length.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

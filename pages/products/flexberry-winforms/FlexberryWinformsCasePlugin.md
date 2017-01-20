@@ -3,8 +3,8 @@ title: Flexberry Winforms. Модуль расширения Flexberry Designer 
 sidebar: product--sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
-permalink: ru/flexberry-winforms-case-plugin.html
-folder: product--folder
+permalink: ru/fw_flexberry-winforms-case-plugin.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

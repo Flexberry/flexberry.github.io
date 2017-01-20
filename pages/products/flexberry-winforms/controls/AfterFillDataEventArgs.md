@@ -3,8 +3,8 @@ title: Получение информации об удачности загр�
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/after-fill-data-event-args.html
-folder: product--folder
+permalink: ru/fw_after-fill-data-event-args.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

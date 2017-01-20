@@ -3,8 +3,8 @@ title: Сохранение ограничений на форме задани�
 sidebar: product--sidebar
 keywords: Flexberry Winforms, Windows UI (формы), Ограничения, Черновик статьи
 toc: true
-permalink: ru/adv-limit-function-serialization.html
-folder: product--folder
+permalink: ru/fw_adv-limit-function-serialization.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 

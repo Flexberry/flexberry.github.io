@@ -3,8 +3,8 @@ title: «Тараканы» и перечислимый тип
 sidebar: product--sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/empty-enum-value-validation.html
-folder: product--folder
+permalink: ru/fw_empty-enum-value-validation.html
+folder: products/flexberry-winforms/
 lang: ru
 ---
 
