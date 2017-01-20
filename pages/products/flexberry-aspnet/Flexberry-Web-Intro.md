@@ -1,10 +1,10 @@
 ---
 title: Введение в Flexberry Web
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/flexberry--web--intro.html
-folder: product--folder
+permalink: ru/fa_flexberry--web--intro.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

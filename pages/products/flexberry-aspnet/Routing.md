@@ -1,10 +1,10 @@
 ---
 title: Маршрутизация в Web-приложениях
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/routing.html
-folder: product--folder
+permalink: ru/fa_routing.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

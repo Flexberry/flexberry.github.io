@@ -1,10 +1,10 @@
 ---
 title: Параметры в расширенном редакторе ограничений в web
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
-permalink: ru/advanced-limit-editor-parameters.html
-folder: product--folder
+permalink: ru/fa_advanced-limit-editor-parameters.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

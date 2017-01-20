@@ -1,10 +1,10 @@
 ---
 title: Технологические формы Flexberry ASP.Net
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/tech-forms-web.html
-folder: product--folder
+permalink: ru/fa_tech-forms-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

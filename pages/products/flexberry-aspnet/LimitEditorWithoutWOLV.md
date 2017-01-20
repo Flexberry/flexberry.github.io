@@ -1,10 +1,10 @@
 ---
 title: Запуск редактора ограничений без WOLV
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/limit-editor-without-w-o-l-v.html
-folder: product--folder
+permalink: ru/fa_limit-editor-without-w-o-l-v.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

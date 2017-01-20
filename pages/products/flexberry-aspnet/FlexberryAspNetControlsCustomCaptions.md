@@ -1,10 +1,10 @@
 ---
 title: Кастомизация подписей к элементам контролов
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/flexberry-asp-net-controls-custom-captions.html
-folder: product--folder
+permalink: ru/fa_flexberry-asp-net-controls-custom-captions.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

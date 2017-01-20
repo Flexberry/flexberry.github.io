@@ -1,10 +1,10 @@
 ---
 title: Пример открытия web-формы редактирования с передачей объекта с частично заполненными полями
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: DataObject (объекты данных), Flexberry ASP-NET
 toc: true
-permalink: ru/open-edit-form-web-example.html
-folder: product--folder
+permalink: ru/fa_open-edit-form-web-example.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: PseudoDetailInExtendedView
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/pseudo-detail-in-extended-view.html
-folder: product--folder
+permalink: ru/fa_pseudo-detail-in-extended-view.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 # PseudoDetailInExtendedView

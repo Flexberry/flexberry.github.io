@@ -1,19 +1,19 @@
 ---
 title: Аудит для Web-приложений
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit
 toc: true
-permalink: ru/audit-web.html
-folder: product--folder
+permalink: ru/fa_audit-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-(((Данная статья относится к новому аудиту)))
+## Аудит
 
-# Аудит
 Система аудита позволяет отслеживать действия пользователей и состояние объектов системы.
 
 Отслеживается:
+
 * Отслеживание совершаемых пользователем действий над объектами: создание, [ChangeObjectAudit|изменение], удаление.
 
 ''__Примечание__: в дальнейшем (на [третьем этапе](devprocess_audit-stages.html)) планируется введение аудита операции чтения.''

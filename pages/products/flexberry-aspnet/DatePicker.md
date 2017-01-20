@@ -1,10 +1,10 @@
 ---
 title: DatePicker
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API, Web UI (Контролы)
 toc: true
-permalink: ru/date-picker.html
-folder: product--folder
+permalink: ru/fa_date-picker.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

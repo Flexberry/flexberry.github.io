@@ -1,10 +1,10 @@
 ---
 title: Создание своей LookUp-страницы в Web-приложении.
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/look-up-form.html
-folder: product--folder
+permalink: ru/fa_look-up-form.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

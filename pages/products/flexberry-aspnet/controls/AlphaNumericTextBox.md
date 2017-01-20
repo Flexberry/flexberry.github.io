@@ -1,10 +1,10 @@
 ---
 title: AlphaNumericTextBox
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/alpha-numeric-text-box.html
-folder: product--folder
+permalink: ru/fa_alpha-numeric-text-box.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: BaseListWebControl
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/base-list-web-control.html
-folder: product--folder
+permalink: ru/fa_base-list-web-control.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

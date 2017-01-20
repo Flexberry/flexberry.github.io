@@ -1,10 +1,10 @@
 ---
 title: ShowHideDiv
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/show-hide-div.html
-folder: product--folder
+permalink: ru/fa_show-hide-div.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

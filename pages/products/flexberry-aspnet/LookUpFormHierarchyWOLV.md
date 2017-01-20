@@ -1,10 +1,10 @@
 ---
 title: Открытие лукап-формы с поддержкой иерархии 
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/look-up-form-hierarchy-w-o-l-v.html
-folder: product--folder
+permalink: ru/fa_look-up-form-hierarchy-w-o-l-v.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 В данной статье будут описаны два способа, с помощью которых можно вывести данные на лукап-форму в иерархическом виде.

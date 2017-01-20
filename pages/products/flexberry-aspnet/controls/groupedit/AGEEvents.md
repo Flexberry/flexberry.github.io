@@ -1,10 +1,10 @@
 ---
 title: События AjaxGroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: CASE Plugins, Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/a-g-e-events.html
-folder: product--folder
+permalink: ru/fa_a-g-e-events.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

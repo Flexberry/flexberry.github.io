@@ -1,10 +1,10 @@
 ---
 title: Мониторы задач Flexberry Web
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Архив
 toc: true
-permalink: ru/monitor-tasks--Flexberry--web.html
-folder: product--folder
+permalink: ru/fa_monitor-tasks--Flexberry--web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

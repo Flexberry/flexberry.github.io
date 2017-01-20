@@ -1,10 +1,10 @@
 ---
 title: RightManager-module. Добавление пользователей в БД системы полномочий при windows-аутентификации
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
-permalink: ru/authentication-adapter.html
-folder: product--folder
+permalink: ru/fa_authentication-adapter.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 # AuthenticationAdapter

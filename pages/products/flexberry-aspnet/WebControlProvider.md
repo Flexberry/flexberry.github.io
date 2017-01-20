@@ -3,8 +3,8 @@ title: WebControlProvider
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/web-control-provider.html
-folder: product--folder
+permalink: ru/fa_web-control-provider.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 `WebControlProvider` - это провайдер, который позволяет настраивать контролы для отображения свойств объекта на списковых контролах (например,

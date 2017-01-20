@@ -1,10 +1,10 @@
 ---
 title: Flexberry ASP.NET. Модуль расширения Flexberry Designer для генерации web-приложений по uml-моделям
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/flexberry-asp-net-case-plugin.html
-folder: product--folder
+permalink: ru/fa_flexberry-asp-net-case-plugin.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Web-формы аудита
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit, Windows UI (формы)
 toc: true
-permalink: ru/audit-web-forms.html
-folder: product--folder
+permalink: ru/fa_audit-web-forms.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

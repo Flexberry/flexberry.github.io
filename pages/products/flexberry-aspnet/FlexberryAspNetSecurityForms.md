@@ -1,10 +1,10 @@
 ---
 title: Web-формы подсистемы полномочий
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
-permalink: ru/flexberry-asp-net-security-forms.html
-folder: product--folder
+permalink: ru/fa_flexberry-asp-net-security-forms.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

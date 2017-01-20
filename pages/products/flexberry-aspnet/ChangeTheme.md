@@ -1,10 +1,10 @@
 ---
 title: Доработка тем оформления на прикладных проектах
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/change-theme.html
-folder: product--folder
+permalink: ru/fa_change-theme.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

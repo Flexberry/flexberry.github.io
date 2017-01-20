@@ -3,8 +3,8 @@ title: Кэширование расширенных ограничений в W
 sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
-permalink: ru/wolv-adv-limit-caching.html
-folder: product--folder
+permalink: ru/fa_wolv-adv-limit-caching.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 ## Введение

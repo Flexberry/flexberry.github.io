@@ -1,10 +1,10 @@
 ---
 title: Прототипизация в Web
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/web-data-object-prototyping.html
-folder: product--folder
+permalink: ru/fa_web-data-object-prototyping.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: UserSettingsService
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry UserSettingsService
 toc: true
-permalink: ru/user-settings-service.html
-folder: product--folder
+permalink: ru/fa_user-settings-service.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

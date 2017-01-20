@@ -1,10 +1,10 @@
 ---
 title: Настройка контрола фильтрации в WebObjectListView
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
-permalink: ru/tune-control-delegate-method.html
-folder: product--folder
+permalink: ru/fa_tune-control-delegate-method.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

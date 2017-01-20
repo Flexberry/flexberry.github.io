@@ -1,10 +1,10 @@
 ---
 title: IMasterPageService
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
-permalink: ru/i-master-page-service.html
-folder: product--folder
+permalink: ru/fa_i-master-page-service.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

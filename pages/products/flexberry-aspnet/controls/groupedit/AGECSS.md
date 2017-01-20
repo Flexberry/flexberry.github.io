@@ -1,10 +1,10 @@
 ---
 title: CSS-классы AjaxGroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/a-g-e-c-s-s.html
-folder: product--folder
+permalink: ru/fa_a-g-e-c-s-s.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

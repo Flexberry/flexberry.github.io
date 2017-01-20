@@ -1,10 +1,10 @@
 ---
 title: MasterEditorAjaxDropDown
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
-permalink: ru/master-editor-ajax-drop-down.html
-folder: product--folder
+permalink: ru/fa_master-editor-ajax-drop-down.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

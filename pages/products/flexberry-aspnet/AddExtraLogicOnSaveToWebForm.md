@@ -1,10 +1,10 @@
 ---
 title: Добавление дополнительной логики при сохранении объекта на Web-форме редактирования
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
-permalink: ru/add-extra-logic-on-save-to-web-form.html
-folder: product--folder
+permalink: ru/fa_add-extra-logic-on-save-to-web-form.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 # Обработка события сохранения объекта на клиенте

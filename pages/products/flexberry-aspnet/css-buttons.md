@@ -1,10 +1,10 @@
 ---
 title: Кнопки на CSS
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/css-buttons.html
-folder: product--folder
+permalink: ru/fa_css-buttons.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

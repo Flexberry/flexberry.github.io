@@ -1,10 +1,10 @@
 ---
 title: LookUp'ы
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: JavaScript API, Windows UI (Контролы)
 toc: true
-permalink: ru/look-up--overview.html
-folder: product--folder
+permalink: ru/fa_look-up--overview.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Как сделать чтобы footer всегда был внизу страницы
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/footer-stick-to-bottom-of-page.html
-folder: product--folder
+permalink: ru/fa_footer-stick-to-bottom-of-page.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Темы оформления и разметка Flexberry ASP.NET
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/flexberry-asp-net-themes.html
-folder: product--folder
+permalink: ru/fa_flexberry-asp-net-themes.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

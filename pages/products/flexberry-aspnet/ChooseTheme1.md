@@ -3,8 +3,8 @@ title: Выбор темы Web-приложения
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/choose-theme.html
-folder: product--folder
+permalink: ru/fa_choose-theme.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 ## Темы

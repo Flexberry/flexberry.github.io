@@ -3,8 +3,8 @@ title: ViewColumnProvider
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/view-column-provider.html
-folder: product--folder
+permalink: ru/fa_view-column-provider.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 `ViewColumnProvider` - это провайдер, который позволяет настраивать отображение колонок на контролах ([WebObjectListView](web-object-list-view.html),

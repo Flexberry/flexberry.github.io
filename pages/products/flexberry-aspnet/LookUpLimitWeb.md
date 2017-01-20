@@ -1,10 +1,10 @@
 ---
 title: Наложение ограничения на LookUp в Веб
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
-permalink: ru/look-up-limit-web.html
-folder: product--folder
+permalink: ru/fa_look-up-limit-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

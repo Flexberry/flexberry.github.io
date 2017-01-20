@@ -1,10 +1,10 @@
 ---
 title: Список поддерживаемых браузеров
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/browsers.html
-folder: product--folder
+permalink: ru/fa_browsers.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

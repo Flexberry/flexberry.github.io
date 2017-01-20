@@ -1,10 +1,10 @@
 ---
 title: AjaxGroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API, Web UI (Контролы)
 toc: true
-permalink: ru/ajax-group-edit.html
-folder: product--folder
+permalink: ru/fa_ajax-group-edit.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

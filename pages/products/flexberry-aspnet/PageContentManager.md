@@ -1,10 +1,10 @@
 ---
 title: PageContentManager
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/page-content-manager.html
-folder: product--folder
+permalink: ru/fa_page-content-manager.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

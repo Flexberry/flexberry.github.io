@@ -1,10 +1,10 @@
 ---
 title: Режим "Только чтение" в Web-приложениях
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: DataObject (объекты данных), Flexberry ASP-NET
 toc: true
-permalink: ru/read-only-web.html
-folder: product--folder
+permalink: ru/fa_read-only-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

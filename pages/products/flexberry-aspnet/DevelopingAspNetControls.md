@@ -1,10 +1,10 @@
 ---
 title: Разработка ASP.NET контролов
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/developing-asp-net-controls.html
-folder: product--folder
+permalink: ru/fa_developing-asp-net-controls.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

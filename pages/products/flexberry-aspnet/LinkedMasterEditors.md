@@ -1,10 +1,10 @@
 ---
 title: Связывание контролов редактирования мастеров
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/linked-master-editors.html
-folder: product--folder
+permalink: ru/fa_linked-master-editors.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

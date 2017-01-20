@@ -1,10 +1,10 @@
 ---
 title: Возможные места утечки памяти в web-приложениях
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/memory-leaks.html
-folder: product--folder
+permalink: ru/fa_memory-leaks.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

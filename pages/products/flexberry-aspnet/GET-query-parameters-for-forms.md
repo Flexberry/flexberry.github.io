@@ -1,10 +1,10 @@
 ---
 title: Параметры GET-запроса для форм
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/g-e-t-query-parameters-for-forms.html
-folder: product--folder
+permalink: ru/fa_g-e-t-query-parameters-for-forms.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 # Параметры GET-запроса для форм

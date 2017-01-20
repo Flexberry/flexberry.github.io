@@ -1,10 +1,10 @@
 ---
 title: Как задать порядок отображения свойств в расширенном редакторе ограничений в web
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/set-prop-order-at-web-adv-limit-editor.html
-folder: product--folder
+permalink: ru/fa_set-prop-order-at-web-adv-limit-editor.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

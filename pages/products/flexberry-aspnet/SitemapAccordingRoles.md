@@ -1,10 +1,10 @@
 ---
 title: Настройка карты сайта по ролям
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/sitemap-according-roles.html
-folder: product--folder
+permalink: ru/fa_sitemap-according-roles.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

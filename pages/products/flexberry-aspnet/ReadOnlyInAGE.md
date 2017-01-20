@@ -1,10 +1,10 @@
 ---
 title: Включение режима Read-only для отдельных столбцов AGE
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/read-only-in-a-g-e.html
-folder: product--folder
+permalink: ru/fa_read-only-in-a-g-e.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

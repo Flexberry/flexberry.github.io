@@ -3,8 +3,8 @@ title: Поведение флажков выбора элементов WOLV
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/w-o-l-v-check-boxes.html
-folder: product--folder
+permalink: ru/fa_w-o-l-v-check-boxes.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).

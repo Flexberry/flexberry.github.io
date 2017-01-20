@@ -1,10 +1,10 @@
 ---
 title:  Примеры открытия окна редактирования в AjaxGroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/example-open-windows-in-a-g-e.html
-folder: product--folder
+permalink: ru/fa_example-open-windows-in-a-g-e.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

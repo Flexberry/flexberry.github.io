@@ -1,10 +1,10 @@
 ---
 title: Как создать полномочия на классы
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
-permalink: ru/authority-to-classes.html
-folder: product--folder
+permalink: ru/fa_authority-to-classes.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 # Общая информация

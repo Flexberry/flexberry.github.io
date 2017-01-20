@@ -1,10 +1,10 @@
 ---
 title: Связывание AjaxAutocomplete и AjaxLookup
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/link--ajax-autocomplete-and--ajax-lookup.html
-folder: product--folder
+permalink: ru/fa_link--ajax-autocomplete-and--ajax-lookup.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

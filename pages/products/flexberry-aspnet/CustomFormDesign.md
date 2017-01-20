@@ -1,10 +1,10 @@
 ---
 title: Кастомизация оформления форм
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/custom-form-design.html
-folder: product--folder
+permalink: ru/fa_custom-form-design.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

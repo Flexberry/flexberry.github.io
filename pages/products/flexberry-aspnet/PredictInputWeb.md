@@ -1,10 +1,10 @@
 ---
 title: Предиктивный ввод в Web-приложениях
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/predict-input-web.html
-folder: product--folder
+permalink: ru/fa_predict-input-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

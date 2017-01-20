@@ -1,10 +1,10 @@
 ---
 title: Сортировка списков WOLV
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/list-sort-w-o-l-v.html
-folder: product--folder
+permalink: ru/fa_list-sort-w-o-l-v.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

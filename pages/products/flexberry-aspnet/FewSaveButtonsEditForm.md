@@ -1,10 +1,10 @@
 ---
 title: Несколько кнопок сохранения на web-форме редактирования
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/few-save-buttons-edit-form.html
-folder: product--folder
+permalink: ru/fa_few-save-buttons-edit-form.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

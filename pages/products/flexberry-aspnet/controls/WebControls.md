@@ -1,10 +1,10 @@
 ---
 title: Web-контролы и web-компоненты
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/web-controls.html
-folder: product--folder
+permalink: ru/fa_web-controls.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

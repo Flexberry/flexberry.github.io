@@ -1,10 +1,10 @@
 ---
 title: Межформенное взаимодействие — передача объекта между страницами
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/object-transfer-web.html
-folder: product--folder
+permalink: ru/fa_object-transfer-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

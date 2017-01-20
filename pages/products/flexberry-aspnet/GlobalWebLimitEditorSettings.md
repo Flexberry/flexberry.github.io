@@ -1,10 +1,10 @@
 ---
 title: Глобальные настройки редактора ограничений
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/global-web-limit-editor-settings.html
-folder: product--folder
+permalink: ru/fa_global-web-limit-editor-settings.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

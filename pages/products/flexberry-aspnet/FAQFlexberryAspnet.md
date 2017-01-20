@@ -1,10 +1,10 @@
 ---
 title: FAQ Flexberry Web
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Учебники
 toc: true
-permalink: ru/f-a-q--Flexberry--web.html
-folder: product--folder
+permalink: ru/fa_f-a-q--Flexberry--web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Правила разработки ASP.NET web-контролов
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/asp-net-control-mastering-rules.html
-folder: product--folder
+permalink: ru/fa_asp-net-control-mastering-rules.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

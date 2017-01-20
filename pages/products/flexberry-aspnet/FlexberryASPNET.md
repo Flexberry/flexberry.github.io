@@ -1,10 +1,10 @@
 ---
 title: Flexberry ASP.NET
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/flexberry-a-s-p-n-e-t.html
-folder: product--folder
+permalink: ru/fa_flexberry-a-s-p-n-e-t.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

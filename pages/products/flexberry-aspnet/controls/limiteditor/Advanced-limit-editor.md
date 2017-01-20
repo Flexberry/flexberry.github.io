@@ -3,8 +3,8 @@ title: Расширенный редактор ограничений в WEB
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы), Ограничения
 toc: true
-permalink: ru/advanced-limit-editor.html
-folder: product--folder
+permalink: ru/fa_advanced-limit-editor.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 ## Задание параметров

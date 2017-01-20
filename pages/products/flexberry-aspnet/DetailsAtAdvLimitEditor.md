@@ -1,10 +1,10 @@
 ---
 title: Работа с детейлами в расширенном редакторе ограничений в web
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/details-at-adv-limit-editor.html
-folder: product--folder
+permalink: ru/fa_details-at-adv-limit-editor.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

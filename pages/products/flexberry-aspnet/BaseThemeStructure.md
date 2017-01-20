@@ -1,10 +1,10 @@
 ---
 title: Базовая тема web-шаблона и ее связь с другими темами
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/base-theme-structure.html
-folder: product--folder
+permalink: ru/fa_base-theme-structure.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Сортировка списков
 sidebar: flexberry-aspnet_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/list-sort.html
-folder: product--folder
+permalink: ru/fa_list-sort.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 Списки позволяют сортировать содержащиеся в них объекты по определенным столбцам. Пользователь может сам настроить необходимую ему сортировку.

@@ -1,10 +1,10 @@
 ---
 title: Ограничения с параметрами в WOLV (для программиста)
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
-permalink: ru/limit-with-parameters-for-developer.html
-folder: product--folder
+permalink: ru/fa_limit-with-parameters-for-developer.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

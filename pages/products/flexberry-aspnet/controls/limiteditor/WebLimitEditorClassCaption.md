@@ -1,10 +1,10 @@
 ---
 title: Задание заголовка класса в Расширенном редакторе ограничений
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/web-limit-editor-class-caption.html
-folder: product--folder
+permalink: ru/fa_web-limit-editor-class-caption.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

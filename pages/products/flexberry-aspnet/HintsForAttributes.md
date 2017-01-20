@@ -1,10 +1,10 @@
 ---
 title: Подсказки к полям данных
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Designer
 toc: true
-permalink: ru/hints-for-attributes.html
-folder: product--folder
+permalink: ru/fa_hints-for-attributes.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 # Подсказки к полям данных

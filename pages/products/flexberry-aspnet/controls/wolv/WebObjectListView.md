@@ -3,8 +3,8 @@ title: WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/web-object-list-view.html
-folder: product--folder
+permalink: ru/fa_web-object-list-view.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 {% capture my-include %}{% include fa_control_info.md %}{% endcapture %}

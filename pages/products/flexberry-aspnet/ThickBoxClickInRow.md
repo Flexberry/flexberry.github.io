@@ -1,10 +1,10 @@
 ---
 title: ThickBoxClickInRow
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Архив
 toc: true
-permalink: ru/thick-box-click-in-row.html
-folder: product--folder
+permalink: ru/fa_thick-box-click-in-row.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

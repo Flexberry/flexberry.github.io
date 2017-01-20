@@ -1,10 +1,10 @@
 ---
 title: Веб-разработка
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Учебники
 toc: true
-permalink: ru/web-development.html
-folder: product--folder
+permalink: ru/fa_web-development.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

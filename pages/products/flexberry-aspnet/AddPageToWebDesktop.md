@@ -1,10 +1,10 @@
 ---
 title: Добавить собственную форму на рабочий стол Web-приложения 
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/add-page-to-web-desktop.html
-folder: product--folder
+permalink: ru/fa_add-page-to-web-desktop.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 Чтобы добавить собственную форму на рабочий стол Web-приложения необходимо:

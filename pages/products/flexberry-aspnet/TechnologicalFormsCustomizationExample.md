@@ -1,10 +1,10 @@
 ---
 title: Примеры настройки технологических форм
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/technological-forms-customization-example.html
-folder: product--folder
+permalink: ru/fa_technological-forms-customization-example.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

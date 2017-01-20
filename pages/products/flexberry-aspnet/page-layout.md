@@ -1,10 +1,10 @@
 ---
 title: Верстка страниц
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/page-layout.html
-folder: product--folder
+permalink: ru/fa_page-layout.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

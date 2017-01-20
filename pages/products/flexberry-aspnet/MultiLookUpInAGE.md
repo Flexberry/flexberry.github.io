@@ -1,10 +1,10 @@
 ---
 title: Использование множественного выбора в LookUp в AjaxGroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/multi-look-up-in-a-g-e.html
-folder: product--folder
+permalink: ru/fa_multi-look-up-in-a-g-e.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

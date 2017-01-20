@@ -1,10 +1,10 @@
 ---
 title: Правила создания контролов
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/control-authoring-rules.html
-folder: product--folder
+permalink: ru/fa_control-authoring-rules.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

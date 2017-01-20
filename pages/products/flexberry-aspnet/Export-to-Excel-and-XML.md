@@ -1,10 +1,10 @@
 ---
 title: Экспорт в Excel и XML
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/export-to--excel-and--x-m-l.html
-folder: product--folder
+permalink: ru/fa_export-to--excel-and--x-m-l.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

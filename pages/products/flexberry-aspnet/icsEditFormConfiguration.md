@@ -1,10 +1,10 @@
 ---
 title: Конфигурирование Web-формы редактирования
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/ics-edit-form-configuration.html
-folder: product--folder
+permalink: ru/fa_ics-edit-form-configuration.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

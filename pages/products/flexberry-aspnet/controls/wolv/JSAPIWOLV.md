@@ -3,8 +3,8 @@ title: JavaScript jQuery API для WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
-permalink: ru/j-s-a-p-i-w-o-l-v.html
-folder: product--folder
+permalink: ru/fa_j-s-a-p-i-w-o-l-v.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).

@@ -1,10 +1,10 @@
 ---
 title: Операции AjaxGroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/a-g-e-operations.html
-folder: product--folder
+permalink: ru/fa_a-g-e-operations.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

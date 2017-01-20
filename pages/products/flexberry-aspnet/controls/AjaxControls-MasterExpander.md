@@ -1,10 +1,10 @@
 ---
 title: MasterExpander
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/ajax-controls--master-expander.html
-folder: product--folder
+permalink: ru/fa_ajax-controls--master-expander.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

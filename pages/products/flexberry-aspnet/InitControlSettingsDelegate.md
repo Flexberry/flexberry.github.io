@@ -1,10 +1,10 @@
 ---
 title: Глобальная настройка веб-контролов
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/init-control-settings-delegate.html
-folder: product--folder
+permalink: ru/fa_init-control-settings-delegate.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

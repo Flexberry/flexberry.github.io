@@ -3,8 +3,8 @@ title: Поиск в WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/w-o-l-v-search.html
-folder: product--folder
+permalink: ru/fa_w-o-l-v-search.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).

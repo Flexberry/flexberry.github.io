@@ -1,10 +1,10 @@
 ---
 title: Сортировка в списковой форме, поднятой по лукапу
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Web UI (Контролы)
 toc: true
-permalink: ru/look-up-form-and-sort.html
-folder: product--folder
+permalink: ru/fa_look-up-form-and-sort.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

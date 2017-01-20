@@ -1,10 +1,10 @@
 ---
 title: ExceptionPanel
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/exception-panel.html
-folder: product--folder
+permalink: ru/fa_exception-panel.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

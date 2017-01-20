@@ -1,10 +1,10 @@
 ---
 title: ServiceSecurityProvider
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/service-security-provider.html
-folder: product--folder
+permalink: ru/fa_service-security-provider.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

@@ -3,8 +3,8 @@ title: Печать списка
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/print-in--w-o-l-v.html
-folder: product--folder
+permalink: ru/fa_print-in--w-o-l-v.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).

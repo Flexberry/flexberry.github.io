@@ -1,10 +1,10 @@
 ---
 title: BaseWebControl
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/base-web-control.html
-folder: product--folder
+permalink: ru/fa_base-web-control.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

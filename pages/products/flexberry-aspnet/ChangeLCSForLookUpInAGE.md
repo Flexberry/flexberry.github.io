@@ -1,10 +1,10 @@
 ---
 title: Связывание LookUp'ов в AGE с внешним LookUp'ом
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: FAQ, Flexberry ASP-NET, How to (page)
 toc: true
-permalink: ru/change-l-c-s-for-look-up-in-a-g-e.html
-folder: product--folder
+permalink: ru/fa_change-l-c-s-for-look-up-in-a-g-e.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

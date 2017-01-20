@@ -1,10 +1,10 @@
 ---
 title: Сценарии веб-разработки
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/scenario-web.html
-folder: product--folder
+permalink: ru/fa_scenario-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

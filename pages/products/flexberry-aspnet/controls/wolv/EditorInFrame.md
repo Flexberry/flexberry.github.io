@@ -3,8 +3,8 @@ title: Отображение на одной странице списково�
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/editor-in-frame.html
-folder: product--folder
+permalink: ru/fa_editor-in-frame.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).

@@ -1,10 +1,10 @@
 ---
 title: Подстановка значений параметров в ограничивающую функцию (в Web)
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
-permalink: ru/limit-function-insert-parameters-values-web.html
-folder: product--folder
+permalink: ru/fa_limit-function-insert-parameters-values-web.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

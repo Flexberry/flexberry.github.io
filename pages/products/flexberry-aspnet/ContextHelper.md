@@ -1,10 +1,10 @@
 ---
 title: ContextHelper
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/context-helper.html
-folder: product--folder
+permalink: ru/fa_context-helper.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

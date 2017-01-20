@@ -1,10 +1,10 @@
 ---
 title: Плагин для изменения размера колонок таблицы (wolv, age)
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/jquerycolresize.html
-folder: product--folder
+permalink: ru/fa_jquerycolresize.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

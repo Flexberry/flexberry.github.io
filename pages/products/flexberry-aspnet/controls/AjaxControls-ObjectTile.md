@@ -1,10 +1,10 @@
 ---
 title: AjaxControls.ObjectTile
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/ajax-controls--object-tile.html
-folder: product--folder
+permalink: ru/fa_ajax-controls--object-tile.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

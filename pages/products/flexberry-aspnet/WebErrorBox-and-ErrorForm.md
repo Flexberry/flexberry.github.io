@@ -1,10 +1,10 @@
 ---
 title: WebErrorBox и ErrorForm
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/web-error-box-and--error-form.html
-folder: product--folder
+permalink: ru/fa_web-error-box-and--error-form.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

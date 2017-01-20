@@ -1,10 +1,10 @@
 ---
 title: Web-форма редактирования
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
-permalink: ru/web-edit-form.html
-folder: product--folder
+permalink: ru/fa_web-edit-form.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 # [JS API](java-script-a-p-i.html)

@@ -1,10 +1,10 @@
 ---
 title: Ограничение для LookUp в AGE
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/limited-look-up-in-a-g-e.html
-folder: product--folder
+permalink: ru/fa_limited-look-up-in-a-g-e.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

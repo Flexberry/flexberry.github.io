@@ -1,10 +1,10 @@
 ---
 title: Структура тем web-шаблона для контролов
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/themes-structure-for-controls.html
-folder: product--folder
+permalink: ru/fa_themes-structure-for-controls.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

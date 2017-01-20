@@ -1,10 +1,10 @@
 ---
 title: Открытие формы редактирования с передачей объекта с частично заполненными полями
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Windows UI (формы)
 toc: true
-permalink: ru/open-edit-form-with-custom-object.html
-folder: product--folder
+permalink: ru/fa_open-edit-form-with-custom-object.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

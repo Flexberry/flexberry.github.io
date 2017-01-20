@@ -1,10 +1,10 @@
 ---
 title: Подключение скриптов и стилей на основе FilterPageContentConnector
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/filter-page-content-connector.html
-folder: product--folder
+permalink: ru/fa_filter-page-content-connector.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

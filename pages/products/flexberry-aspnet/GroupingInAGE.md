@@ -1,10 +1,10 @@
 ---
 title: Настройка группировки в AjaxGroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/grouping-in-a-g-e.html
-folder: product--folder
+permalink: ru/fa_grouping-in-a-g-e.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

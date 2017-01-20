@@ -1,10 +1,10 @@
 ---
 title: Пример подключения аудита к существующему Web-приложению с использованием перегенерации проекта.
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit, Flexberry Designer
 toc: true
-permalink: ru/audit-web-example.html
-folder: product--folder
+permalink: ru/fa_audit-web-example.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 

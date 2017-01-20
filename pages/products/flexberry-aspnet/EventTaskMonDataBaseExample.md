@@ -1,10 +1,10 @@
 ---
 title: Подключение монитора запросов к базе данных
-sidebar: product--sidebar
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, БД
 toc: true
-permalink: ru/event-task-mon-data-base-example.html
-folder: product--folder
+permalink: ru/fa_event-task-mon-data-base-example.html
+folder: products/flexberry-aspnet/
 lang: ru
 ---
 
