@@ -1,10 +1,10 @@
 ---
 title: Как создать модуль расширения Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: CASE Plugins, Flexberry Designer, How to (page), Public
 toc: true
-permalink: ru/flexberry-designer-plugins-development.html
-folder: product--folder
+permalink: ru/fd_flexberry-designer-plugins-development.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

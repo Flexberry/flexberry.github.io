@@ -1,10 +1,10 @@
 ---
 title: Менеджер классов
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/class--manager.html
-folder: product--folder
+permalink: ru/fd_class--manager.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

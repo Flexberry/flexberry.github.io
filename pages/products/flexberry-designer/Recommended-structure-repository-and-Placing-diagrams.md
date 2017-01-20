@@ -1,10 +1,10 @@
 ---
 title: Рекомендуемая структура репозитория и размещение диаграмм в ней
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/recommended-structure-repository-and--placing-diagrams.html
-folder: product--folder
+permalink: ru/fd_recommended-structure-repository-and--placing-diagrams.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

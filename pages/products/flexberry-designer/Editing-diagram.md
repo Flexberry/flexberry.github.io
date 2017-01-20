@@ -1,10 +1,10 @@
 ---
 title: Редактирование диаграммы
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/editing-diagram.html
-folder: product--folder
+permalink: ru/fd_editing-diagram.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

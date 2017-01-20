@@ -1,10 +1,10 @@
 ---
 title: Классы со стереотипом ExternalInterface
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/external-interface.html
-folder: product--folder
+permalink: ru/fd_external-interface.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 # Классы со стереотипом ExternalInterface

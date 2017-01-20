@@ -1,10 +1,10 @@
 ---
 title: Диаграмма классов (Class diagram)
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, Черновик статьи
 toc: true
-permalink: ru/class-diagram.html
-folder: product--folder
+permalink: ru/fd_class-diagram.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

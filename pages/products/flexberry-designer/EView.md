@@ -1,10 +1,10 @@
 ---
 title: E-представление
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: View (представление)
 toc: true
-permalink: ru/e-view.html
-folder: product--folder
+permalink: ru/fd_e-view.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

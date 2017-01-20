@@ -1,10 +1,10 @@
 ---
 title: Связь моделей с системно-технологической архитектурой приложений, разрабатываемых на Flexberry Platform
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Ключевые понятия
 toc: true
-permalink: ru/communication-models-with-system-technology-architecture-applications.html
-folder: product--folder
+permalink: ru/fd_communication-models-with-system-technology-architecture-applications.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

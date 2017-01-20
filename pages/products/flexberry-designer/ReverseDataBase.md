@@ -1,10 +1,10 @@
 ---
 title: Создание диаграммы классов по базе данных
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM
 toc: true
-permalink: ru/reverse-data-base.html
-folder: product--folder
+permalink: ru/fd_reverse-data-base.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Скрытые свойства в представлении
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: View (представление)
 toc: true
-permalink: ru/hidden--properties--in--view.html
-folder: product--folder
+permalink: ru/fd_hidden--properties--in--view.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

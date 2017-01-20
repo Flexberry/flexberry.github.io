@@ -1,10 +1,10 @@
 ---
 title: Дополнительные стереотипы классов
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/additional-stereotypes.html
-folder: product--folder
+permalink: ru/fd_additional-stereotypes.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

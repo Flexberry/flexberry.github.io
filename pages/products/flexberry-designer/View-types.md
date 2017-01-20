@@ -1,10 +1,10 @@
 ---
 title: Основные виды представлений
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: View (представление)
 toc: true
-permalink: ru/view-types.html
-folder: product--folder
+permalink: ru/fd_view-types.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

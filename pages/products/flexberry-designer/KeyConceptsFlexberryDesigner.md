@@ -1,10 +1,10 @@
 ---
 title: Ключевые понятия объектной структуры для прикладных систем, разрабатывающихся в Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public, Ключевые понятия
 toc: true
-permalink: ru/key-concepts-flexberry-designer.html
-folder: product--folder
+permalink: ru/fd_key-concepts-flexberry-designer.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

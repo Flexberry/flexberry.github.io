@@ -1,10 +1,10 @@
 ---
 title: Синонимы типов (классы со стереотипом typedef) 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/classes-with-stereotype--typedef.html
-folder: product--folder
+permalink: ru/fd_classes-with-stereotype--typedef.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

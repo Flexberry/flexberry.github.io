@@ -1,10 +1,10 @@
 ---
 title: Диаграмма вариантов использования (UseCase diagram)
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, Черновик статьи
 toc: true
-permalink: ru/use-case-diagram.html
-folder: product--folder
+permalink: ru/fd_use-case-diagram.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

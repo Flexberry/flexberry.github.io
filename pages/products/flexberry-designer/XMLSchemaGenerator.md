@@ -1,10 +1,10 @@
 ---
 title: XMLSchemaGenerator
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: CASE Plugins, Flexberry Designer, Public
 toc: true
-permalink: ru/x-m-l-schema-generator.html
-folder: product--folder
+permalink: ru/fd_x-m-l-schema-generator.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

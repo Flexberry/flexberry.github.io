@@ -1,10 +1,10 @@
 ---
 title: Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/flexberry-designer.html
-folder: product--folder
+permalink: ru/fd_flexberry-designer.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

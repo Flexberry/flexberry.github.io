@@ -1,10 +1,10 @@
 ---
 title: T-представление
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: View (представление)
 toc: true
-permalink: ru/t-view.html
-folder: product--folder
+permalink: ru/fd_t-view.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

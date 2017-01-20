@@ -1,10 +1,10 @@
 ---
 title: Приложения (классы со стереотипом application) 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/application.html
-folder: product--folder
+permalink: ru/fd_application.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

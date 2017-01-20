@@ -1,10 +1,10 @@
 ---
 title: Независимая установка Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/flexberry-designer-standalone-install.html
-folder: product--folder
+permalink: ru/fd_flexberry-designer-standalone-install.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

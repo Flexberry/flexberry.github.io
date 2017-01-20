@@ -1,10 +1,10 @@
 ---
 title: Диаграмма активностей (Activity diagram)
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, Черновик статьи
 toc: true
-permalink: ru/activity-diagram.html
-folder: product--folder
+permalink: ru/fd_activity-diagram.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Ярлыки для диаграмм в Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/flexberry-designer-diagram-links.html
-folder: product--folder
+permalink: ru/fd_flexberry-designer-diagram-links.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

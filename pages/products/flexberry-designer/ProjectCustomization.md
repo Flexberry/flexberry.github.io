@@ -1,10 +1,10 @@
 ---
 title: Настройка модели для генерации
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Audit, Flexberry Designer, Public
 toc: true
-permalink: ru/project-customization.html
-folder: product--folder
+permalink: ru/fd_project-customization.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

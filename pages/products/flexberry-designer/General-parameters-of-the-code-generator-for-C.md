@@ -1,10 +1,10 @@
 ---
 title: Общие параметры генератора кода для C#
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/general-parameters-of-the-code-generator-for--c.html
-folder: product--folder
+permalink: ru/fd_general-parameters-of-the-code-generator-for--c.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

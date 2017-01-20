@@ -1,10 +1,10 @@
 ---
 title: Использование быстрой прототипизации
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/using--quick--prototyping.html
-folder: product--folder
+permalink: ru/fd_using--quick--prototyping.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

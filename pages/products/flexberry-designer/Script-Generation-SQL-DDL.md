@@ -1,10 +1,10 @@
 ---
 title: Генерация скриптов SQL DDL 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/script--generation--s-q-l--d-d-l.html
-folder: product--folder
+permalink: ru/fd_script--generation--s-q-l--d-d-l.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

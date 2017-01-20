@@ -1,10 +1,10 @@
 ---
 title: Запуск Flexberry Designer с открытием указанной стадии
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/flexberry-designer-running-with-the-opening-of-stage.html
-folder: product--folder
+permalink: ru/fd_flexberry-designer-running-with-the-opening-of-stage.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

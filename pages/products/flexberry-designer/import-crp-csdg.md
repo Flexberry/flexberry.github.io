@@ -1,10 +1,10 @@
 ---
 title: Импорт стадий и диаграмм
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/import-crp-csdg.html
-folder: product--folder
+permalink: ru/fd_import-crp-csdg.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

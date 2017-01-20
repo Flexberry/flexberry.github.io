@@ -1,10 +1,10 @@
 ---
 title: Карта типов
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/types-map.html
-folder: product--folder
+permalink: ru/fd_types-map.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 # Карта типов

@@ -1,10 +1,10 @@
 ---
 title: Установка лицензионных файлов Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/installation-licensing-files.html
-folder: product--folder
+permalink: ru/fd_installation-licensing-files.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

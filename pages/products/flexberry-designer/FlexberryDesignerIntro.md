@@ -1,10 +1,10 @@
 ---
 title: Введение в Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Учебники
 toc: true
-permalink: ru/Flexberry--intro.html
-folder: product--folder
+permalink: ru/fd_Flexberry--intro.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

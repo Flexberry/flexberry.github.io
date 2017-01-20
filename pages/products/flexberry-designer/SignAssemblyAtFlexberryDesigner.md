@@ -1,10 +1,10 @@
 ---
 title: Подписывание сборок в Flexberry
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/sign-assembly-at-Flexberry.html
-folder: product--folder
+permalink: ru/fd_sign-assembly-at-Flexberry.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 # Подписывание сборок

@@ -1,10 +1,10 @@
 ---
 title: Описание процесса перегенерации кода
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public, Ключевые понятия
 toc: true
-permalink: ru/code-generation.html
-folder: product--folder
+permalink: ru/fd_code-generation.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

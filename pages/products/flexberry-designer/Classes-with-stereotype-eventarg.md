@@ -1,10 +1,10 @@
 ---
 title: События и параметры событий (классы со стереотипом eventarg)
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/classes-with-stereotype-eventarg.html
-folder: product--folder
+permalink: ru/fd_classes-with-stereotype-eventarg.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

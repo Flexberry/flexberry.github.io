@@ -1,10 +1,10 @@
 ---
 title: Плагин перемещения или копирования для Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/move-case-plugin.html
-folder: product--folder
+permalink: ru/fd_move-case-plugin.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 # Перемещение репозитарных объектов Flexberry Designer

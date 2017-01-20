@@ -1,10 +1,10 @@
 ---
 title: Внешние классы (классы со стереотипом external) 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/external-classes.html
-folder: product--folder
+permalink: ru/fd_external-classes.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

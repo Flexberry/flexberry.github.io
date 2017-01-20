@@ -1,10 +1,10 @@
 ---
 title: Произвольный контрол в качестве лукапа
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/generate-lookup--i-lookup.html
-folder: product--folder
+permalink: ru/fd_generate-lookup--i-lookup.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

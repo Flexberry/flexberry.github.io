@@ -1,10 +1,10 @@
 ---
 title: Генерация форм для external-классов
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Web UI (Контролы)
 toc: true
-permalink: ru/generate-forms-for-external-classes.html
-folder: product--folder
+permalink: ru/fd_generate-forms-for-external-classes.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

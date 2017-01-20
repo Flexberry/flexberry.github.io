@@ -1,10 +1,10 @@
 ---
 title: Проектирование информационных систем
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: 
 toc: true
-permalink: ru/design.html
-folder: product--folder
+permalink: ru/fd_design.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

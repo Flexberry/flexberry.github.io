@@ -1,10 +1,10 @@
 ---
 title: Внесение изменений в модель приложения
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Security, View (представление), БД, Бизнес-серверы, Ограничения
 toc: true
-permalink: ru/change-model.html
-folder: product--folder
+permalink: ru/fd_change-model.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 # Внесение изменений в модель

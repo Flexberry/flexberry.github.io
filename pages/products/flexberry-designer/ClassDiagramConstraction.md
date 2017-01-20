@@ -1,10 +1,10 @@
 ---
 title: Особенности построения диаграммы классов
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/class-diagram-constraction.html
-folder: product--folder
+permalink: ru/fd_class-diagram-constraction.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 В данной статье приведены некоторые особенности, на которые необходимо обращать внимание при построении [диаграммы классов](class-diagram.html).

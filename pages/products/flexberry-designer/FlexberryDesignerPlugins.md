@@ -1,10 +1,10 @@
 ---
 title: Проектирование и программирование с использованием Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Учебники
 toc: true
-permalink: ru/Flexberry-plugins-modules.html
-folder: product--folder
+permalink: ru/fd_Flexberry-plugins-modules.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

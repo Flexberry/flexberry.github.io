@@ -1,10 +1,10 @@
 ---
 title: Форма редактирования представлений
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, View (представление)
 toc: true
-permalink: ru/view-edit-form.html
-folder: product--folder
+permalink: ru/fd_view-edit-form.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

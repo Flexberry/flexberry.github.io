@@ -1,10 +1,10 @@
 ---
 title: Настройка имени главной формы Flexberry Tool
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Platform Internals, Public
 toc: true
-permalink: ru/flexberry-designer-form-name.html
-folder: product--folder
+permalink: ru/fd_flexberry-designer-form-name.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 # Настройка имени главной формы Flexberry Tool

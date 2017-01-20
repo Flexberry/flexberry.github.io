@@ -1,10 +1,10 @@
 ---
 title: DocGen plugin
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: CASE Plugins
 toc: true
-permalink: ru/doc-gen.html
-folder: product--folder
+permalink: ru/fd_doc-gen.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

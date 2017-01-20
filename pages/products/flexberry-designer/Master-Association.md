@@ -1,10 +1,10 @@
 ---
 title: Мастеровые ассоциации и их свойства 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/master--association.html
-folder: product--folder
+permalink: ru/fd_master--association.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

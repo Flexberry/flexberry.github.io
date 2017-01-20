@@ -1,10 +1,10 @@
 ---
 title: Интерфейсы (классы со стереотипом interface) 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/interfaces.html
-folder: product--folder
+permalink: ru/fd_interfaces.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

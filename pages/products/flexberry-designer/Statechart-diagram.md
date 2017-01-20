@@ -1,10 +1,10 @@
 ---
 title: Диаграмма состояний (Statechart diagram) 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, Черновик статьи
 toc: true
-permalink: ru/statechart-diagram.html
-folder: product--folder
+permalink: ru/fd_statechart-diagram.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

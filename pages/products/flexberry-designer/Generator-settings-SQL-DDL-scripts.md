@@ -1,10 +1,10 @@
 ---
 title: Настройки генератора скриптов SQL DDL 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/generator-settings--s-q-l--d-d-l-scripts.html
-folder: product--folder
+permalink: ru/fd_generator-settings--s-q-l--d-d-l-scripts.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

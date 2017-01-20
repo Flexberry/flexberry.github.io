@@ -1,10 +1,10 @@
 ---
 title: Доступ к дополнительно редактируемым свойствам элементов диаграмм 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/extra--editable--properties--diagram--elements.html
-folder: product--folder
+permalink: ru/fd_extra--editable--properties--diagram--elements.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Настройка аудита в Flexberry Tool
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Audit, Flexberry Designer, How to (page), View (представление)
 toc: true
-permalink: ru/audit-Flexberry-setup.html
-folder: product--folder
+permalink: ru/fd_audit-Flexberry-setup.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

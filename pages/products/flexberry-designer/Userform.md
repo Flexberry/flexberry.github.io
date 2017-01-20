@@ -1,10 +1,10 @@
 ---
 title: Пользовательские формы (классы со стереотипом userform) 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/userform.html
-folder: product--folder
+permalink: ru/fd_userform.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

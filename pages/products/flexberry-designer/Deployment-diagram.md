@@ -1,10 +1,10 @@
 ---
 title: Диаграмма развёртывания (Deployment diagram) 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, Черновик статьи
 toc: true
-permalink: ru/deployment-diagram.html
-folder: product--folder
+permalink: ru/fd_deployment-diagram.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

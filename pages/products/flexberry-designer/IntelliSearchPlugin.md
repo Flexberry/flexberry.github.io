@@ -1,10 +1,10 @@
 ---
 title: IntelliSearch Plugin для Flexberry
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: CASE Plugins
 toc: true
-permalink: ru/intelli-search-plugin.html
-folder: product--folder
+permalink: ru/fd_intelli-search-plugin.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

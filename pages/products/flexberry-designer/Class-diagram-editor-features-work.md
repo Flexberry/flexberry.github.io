@@ -1,10 +1,10 @@
 ---
 title: Особенности работы с редактором диаграммы классов
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/class-diagram-editor-features-work.html
-folder: product--folder
+permalink: ru/fd_class-diagram-editor-features-work.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

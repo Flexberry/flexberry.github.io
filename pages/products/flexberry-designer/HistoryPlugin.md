@@ -1,10 +1,10 @@
 ---
 title: Модуль расширения History для Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: CASE Plugins
 toc: true
-permalink: ru/history-plugin.html
-folder: product--folder
+permalink: ru/fd_history-plugin.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 # Описание

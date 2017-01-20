@@ -1,10 +1,10 @@
 ---
 title: Настройка Flexberry Designer для Nullable-типов
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, How to (page), Public
 toc: true
-permalink: ru/flexberry-designer-and-nullable.html
-folder: product--folder
+permalink: ru/fd_flexberry-designer-and-nullable.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

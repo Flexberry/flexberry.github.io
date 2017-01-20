@@ -1,10 +1,10 @@
 ---
 title: Приведение в соответствие БД Microsoft SQL Server 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/matching--d-b--microsoft--s-q-l--server.html
-folder: product--folder
+permalink: ru/fd_matching--d-b--microsoft--s-q-l--server.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

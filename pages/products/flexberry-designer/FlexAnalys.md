@@ -1,10 +1,10 @@
 ---
 title: Создание приложения при помощи Flexberry. Этап анализа.
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: 
 toc: true
-permalink: ru/flex-analys.html
-folder: product--folder
+permalink: ru/fd_flex-analys.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Запуск Flexberry Tool под SQL Server Express LocalDB
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, How to (page), Public, БД
 toc: true
-permalink: ru/Flexberry-tool-and-s-q-l-express-local-d-b.html
-folder: product--folder
+permalink: ru/fd_Flexberry-tool-and-s-q-l-express-local-d-b.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

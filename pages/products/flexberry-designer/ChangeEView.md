@@ -1,10 +1,10 @@
 ---
 title: Изменение представления формы редактирования
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: View (представление)
 toc: true
-permalink: ru/change-e-view.html
-folder: product--folder
+permalink: ru/fd_change-e-view.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Создание нового репозитория во Flexberry Designer
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Private
 toc: true
-permalink: ru/create-new-repository.html
-folder: product--folder
+permalink: ru/fd_create-new-repository.html
+folder: products/flexberry-designer/
 lang: ru
 ---
 
