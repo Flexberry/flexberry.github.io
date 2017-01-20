@@ -1,0 +1,57 @@
+---
+title: Функции для работы с датой при задании ограничений
+sidebar: product--sidebar
+keywords: Ограничения
+toc: true
+permalink: ru/date-time-funtions-in-limits.html
+folder: product--folder
+lang: ru
+---
+
+{| align="center"
+! Название функции !! Тип возвращаемого значения !! Типы аргументов !! Примечание
+|- align="center"
+| СЕГОДНЯ || :Дата/Время || без параметров || Возвращает текущую дату вместе со временем
+|- align="center"
+| ТолькоДата || :Дата/Время || :Дата/Время 
+|- align="center"
+| ТолькоВремя || :Дата/Время || :Дата/Время 
+|- align="center"
+| День недели || :Число || :Дата/Время  || 1 = Понедельник, 2 = Вторник и т.д.
+|- align="center"
+| ГОД || :Число || :Дата/Время  
+|- align="center"
+| МЕСЯЦ || :Число || :Дата/Время
+|- align="center"
+| ДЕНЬ || :Число || :Дата/Время 
+|- align="center"
+| ЧАС || :Число || :Дата/Время  
+|- align="center"
+| Минута || :Число || :Дата/Время 
+|- align="center"
+| РАЗНОСТЬ ДАТ || :Число || :ЧастьДаты, :Дата/Время, :Дата/Время || Например, 
+ РАЗНОСТЬ ДАТ(ГОД(), ДатаРождения, ДатаСмерти)
+|}
+
+''Примечание'': Чтобы получить, например, текущий день или текущее время нужно выполнить суперпозицию, соответственно, ТолькоДата(СЕГОДНЯ()) или ТолькоВремя(СЕГОДНЯ()).
+
+# Пример: вывести тех, у кого сегодня день рождения
+```
+var langDef = new ExternalLangDef();
+Function function = langDef.GetFunction(langDef.funcEQ,
+                                        langDef.GetFunction(langDef.funcOnlyDate,
+                                                            new VariableDef(langDef.DateTimeType, "ДатаРождения")),
+                                        langDef.GetFunction(langDef.funcOnlyDate,
+                                                            langDef.GetFunction("TODAY")));
+```
+
+# Пример: вывести тех, кто умер в 01:00:00
+```
+
+var langDef = new ExternalLangDef();
+Function function = langDef.GetFunction(langDef.funcEQ,
+                                        langDef.GetFunction(langDef.funcOnlyTime,
+                                                            new VariableDef(langDef.DateTimeType, "ДатаСмерти")),
+                                        langDef.GetFunction(langDef.funcOnlyTime,
+                                                            DateTime.Parse("01:00:00")));
+```

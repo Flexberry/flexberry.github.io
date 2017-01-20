@@ -1,0 +1,11 @@
+---
+title: Событие ObjectListView.BeforeRefresh
+sidebar: product--sidebar
+keywords: Windows UI (Контролы)
+toc: true
+permalink: ru/object-list-view_Before-refresh.html
+folder: product--folder
+lang: ru
+---
+
+Событие ObjectListView.BeforeRefresh происходит перед обновлением данных в списке. Обновление данных может выть инициировано нажатием пользователем кнопки «Обновить» или вызовом метода Refresh.
