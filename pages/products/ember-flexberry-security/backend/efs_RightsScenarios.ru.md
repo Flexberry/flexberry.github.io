@@ -1,10 +1,10 @@
 ---
 title: Разграничение прав пользователей приложения
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security, Ключевые понятия
 toc: true
-permalink: ru/rights-scenarios.html
-folder: product--folder
+permalink: ru/efs_rights-scenarios.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 # Сценарии разграничения прав пользователей приложений

@@ -1,10 +1,10 @@
 ---
 title: Пример подключения аудита к существующему Win-приложению без использования перегенерации проекта. 
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
-permalink: ru/audit-win-example-manual.html
-folder: product--folder
+permalink: ru/efs_audit-win-example-manual.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

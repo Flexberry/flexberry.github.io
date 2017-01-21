@@ -1,10 +1,10 @@
 ---
 title: Механизм определения настроек подключения к БД при работе аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, БД
 toc: true
-permalink: ru/data-service-for-audit.html
-folder: product--folder
+permalink: ru/efs_data-service-for-audit.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

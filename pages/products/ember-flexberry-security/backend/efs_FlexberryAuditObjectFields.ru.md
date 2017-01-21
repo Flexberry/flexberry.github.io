@@ -1,10 +1,10 @@
 ---
 title: Поля аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
-permalink: ru/flexberry-audit-object-fields.html
-folder: product--folder
+permalink: ru/efs_flexberry-audit-object-fields.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

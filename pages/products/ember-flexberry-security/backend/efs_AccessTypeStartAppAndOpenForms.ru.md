@@ -1,10 +1,10 @@
 ---
 title: Подсистема полномочий:  разрешение на запуск приложения и открытие форм
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true
-permalink: ru/access-type-start-app-and-open-forms.html
-folder: product--folder
+permalink: ru/efs_access-type-start-app-and-open-forms.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

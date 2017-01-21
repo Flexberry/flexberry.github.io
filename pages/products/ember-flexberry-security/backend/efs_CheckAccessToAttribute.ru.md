@@ -1,10 +1,10 @@
 ---
 title: Ограничение прав на атрибуты
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true
-permalink: ru/check-access-to-attribute.html
-folder: product--folder
+permalink: ru/efs_check-access-to-attribute.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

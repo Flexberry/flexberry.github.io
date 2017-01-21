@@ -1,10 +1,10 @@
 ---
 title: Генерация скрипта назначения полномочий
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true
-permalink: ru/permition-script-generation.html
-folder: product--folder
+permalink: ru/efs_permition-script-generation.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 (((

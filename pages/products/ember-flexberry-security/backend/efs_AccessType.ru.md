@@ -1,10 +1,10 @@
 ---
 title: AccessType (тип проверки полномочий для класса)
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Designer, Flexberry Security
 toc: true
-permalink: ru/access-type.html
-folder: product--folder
+permalink: ru/efs_access-type.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

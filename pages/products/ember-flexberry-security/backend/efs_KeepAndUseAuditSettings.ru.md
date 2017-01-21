@@ -1,10 +1,10 @@
 ---
 title: Хранение и использование настроек аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
-permalink: ru/keep-and-use-audit-settings.html
-folder: product--folder
+permalink: ru/efs_keep-and-use-audit-settings.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

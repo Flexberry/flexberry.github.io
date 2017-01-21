@@ -1,10 +1,10 @@
 ---
 title: Консоль управления полномочиями (Security Console)
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true
-permalink: ru/security-console.html
-folder: product--folder
+permalink: ru/efs_security-console.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

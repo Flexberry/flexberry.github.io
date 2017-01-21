@@ -1,10 +1,10 @@
 ---
 title: Инициализация аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
-permalink: ru/audit-setter.html
-folder: product--folder
+permalink: ru/efs_audit-setter.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

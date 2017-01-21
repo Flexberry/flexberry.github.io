@@ -1,10 +1,10 @@
 ---
 title: Пример использования API подсистемы аудита. Создание и подтверждение собственных записей аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
-permalink: ru/audit-web-api-example.html
-folder: product--folder
+permalink: ru/efs_audit-web-api-example.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

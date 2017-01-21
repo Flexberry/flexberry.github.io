@@ -1,10 +1,10 @@
 ---
 title: Проверка сложности пароля в консоли безопасности
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true
-permalink: ru/checking-password-complexity-in-security-console.html
-folder: product--folder
+permalink: ru/efs_checking-password-complexity-in-security-console.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 # Проверка сложности пароля в консоли безопасности

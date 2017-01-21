@@ -1,10 +1,10 @@
 ---
 title: Сохранение в аудит вычислимых полей
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, View (представление)
 toc: true
-permalink: ru/not-stored-properties-and-audit.html
-folder: product--folder
+permalink: ru/efs_not-stored-properties-and-audit.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

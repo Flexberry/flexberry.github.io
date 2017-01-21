@@ -1,10 +1,10 @@
 ---
 title: Win-формы для аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, Windows UI (формы)
 toc: true
-permalink: ru/audit-win-forms.html
-folder: product--folder
+permalink: ru/efs_audit-win-forms.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

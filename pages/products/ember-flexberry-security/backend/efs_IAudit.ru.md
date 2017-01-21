@@ -1,10 +1,10 @@
 ---
 title: IAudit
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, БД
 toc: true
-permalink: ru/i-audit.html
-folder: product--folder
+permalink: ru/efs_i-audit.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

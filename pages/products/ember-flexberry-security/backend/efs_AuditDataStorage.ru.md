@@ -1,10 +1,10 @@
 ---
 title: Хранение данных аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, БД
 toc: true
-permalink: ru/audit-data-storage.html
-folder: product--folder
+permalink: ru/efs_audit-data-storage.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

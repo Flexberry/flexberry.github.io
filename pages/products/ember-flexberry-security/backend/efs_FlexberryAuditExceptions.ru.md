@@ -1,10 +1,10 @@
 ---
 title: Обработка ошибок во Flexberry Audit
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
-permalink: ru/flexberry-audit-exceptions.html
-folder: product--folder
+permalink: ru/efs_flexberry-audit-exceptions.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

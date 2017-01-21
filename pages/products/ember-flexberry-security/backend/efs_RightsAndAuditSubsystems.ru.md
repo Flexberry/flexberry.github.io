@@ -1,10 +1,10 @@
 ---
 title: Подсистема полномочий и подсистема аудита
-sidebar: product--sidebar
+sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, Flexberry Security
 toc: true
-permalink: ru/rights-and-audit-subsystems.html
-folder: product--folder
+permalink: ru/efs_rights-and-audit-subsystems.html
+folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 
