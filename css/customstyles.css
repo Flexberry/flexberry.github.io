@@ -65,10 +65,6 @@ body {
 .gi-4x{font-size: 4em;}
 .gi-5x{font-size: 5em;}
 
-
-
-
-
 .breadcrumb > .active {color: #777 !important;}
 
 /* make room for the nav bar */
@@ -80,7 +76,7 @@ h5[id],
 h6[id],
 dt[id]{
 padding-top: 60px;
-margin-top: -40px
+margin-top: -60px
 }
 
 body h1 {margin-top:40px;}
@@ -307,11 +303,12 @@ li.dropdownActive a {
 }
 
 .post-content .rssfeedLink {
-    color: #248EC2;
+    color: #453a96;
 }
 
 footer {
     font-size: smaller;
+    margin: 20px 0;
 }
 
 /* FAQ page */
@@ -397,6 +394,7 @@ background-color: #347DBE;
 
 ul#mysidebar {
     border-radius:0px;
+    margin-bottom: 10px;
 }
 
 .nav ul li ul li a {
@@ -404,7 +402,7 @@ ul#mysidebar {
 }
 
 .nav li.thirdlevel > a {
-    color: #248EC2;
+    color: #453a96;
     font-weight:bold;
     padding-left:20px;
     background-color: whitesmoke !important;
@@ -522,7 +520,7 @@ section table tr.danger, table tr.preference, table tr.preference > td.sorting_1
 }
 
 table.profile thead tr th {
-    background-color: #248ec2;
+    background-color: #453a96;
 }
 
 table.request thead tr th {
@@ -585,7 +583,7 @@ i.border {
 }
 
 a[data-toggle] {
-    color: #248EC2;
+    color: #453a96;
 }
 
 .summary {
@@ -615,7 +613,7 @@ h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    background-color: #248ec2;
+    background-color: #453a96;
     color: white;
 }
 
@@ -729,7 +727,7 @@ ol.series li {
 
 /* not sure if using this ...*/
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
-    border-color: #248ec2 !important;
+    border-color: #453a96 !important;
 }
 
 #mysidebar .nav ul {
@@ -880,7 +878,6 @@ span.soft {
 @media (min-width: 1000px) {
 
     ul#mysidebar {
-        width: 225px;
     }
 }
 
@@ -1009,7 +1006,7 @@ span.label.label-primary {
     }
 
 a code {
-    color: #248EC2;
+    color: #453a96;
 }
 
 code + a > code {
@@ -1174,4 +1171,43 @@ h4.panel-title {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.affix {
+  position: inherit;
+}
+a:hover,
+a:focus {
+  color: #7c7cda;
+}
+.media, .media .media {
+  margin-top: 0px;
+}
+
+/* Social icons */
+.footer .container a[href^="http://"]:after, a[href^="https://"]:after {
+    display: none;
+}
+.footer .container a[href^="https://"]:after, a[href^="http://"]:after {
+    display: none;
+}
+.footer a{
+}
+.list-social i {
+  color: #888;
+  font-size: 40px;
+  text-align: left;
+}
+.list-social i:hover {
+  color: #aaa;
+}
+footer .list-social {
+  text-align: left;
+  margin-bottom: 10px;
+}
+footer .fa {
+  padding-right: 10px;
+}
+footer .copyright {
+  text-align: right;
+  margin: 10px 0;
 }

@@ -2,47 +2,32 @@
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
-    {% for entry in sidebar %}
-    {% for folder in entry.folders %}
-    {% if folder.output contains "web" %}
+    {% for entry in sidebar %} {% for folder in entry.folders %} {% if folder.output contains "web" %}
     <li>
         <a href="#">{% if page.lang == "ru" and folder.title_ru %} {{ folder.title_ru }} {% else %} {{ folder.title }} {% endif %} </a>
         <ul>
-            {% for folderitem in folder.folderitems %}
-            {% if folderitem.output contains "web" %}
-            {% if folderitem.external_url %}
-              <li><a href="{{folderitem.external_url}}" target="_blank">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
+            {% for folderitem in folder.folderitems %} {% if folderitem.output contains "web" %} {% if folderitem.external_url %}
+            <li><a href="{{folderitem.external_url}}" target="_blank">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
             {% elsif page.url contains folderitem.url %}
-              <li class="active"><a href="{{folderitem.url | remove: "/"}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
+            <li class="active"><a href="{{folderitem.url | remove: " / "}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
             {% else %}
-              <li><a href="{{folderitem.url | remove: "/"}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
-            {% endif %}
-            {% for subfolders in folderitem.subfolders %}
-              {% if subfolders.output contains "web" %}
-              <li class="subfolders">
-                  <a href="#">{{ subfolders.title }}</a>
-                  <ul>
-                      {% for subfolderitem in subfolders.subfolderitems %}
-                        {% if subfolderitem.output contains "web" %}
-                          {% if subfolderitem.external_url %}
-                            <li><a href="{{subfolderitem.external_url}}" target="_blank">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
-                            {% elsif page.url contains subfolderitem.url %}
-                            <li class="active"><a href="{{subfolderitem.url | remove: "/"}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
-                            {% else %}
-                            <li><a href="{{subfolderitem.url | remove: "/"}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
-                          {% endif %}
-                        {% endif %}
-                      {% endfor %}
-                  </ul>
-              </li>
-              {% endif %}
-            {% endfor %}
-            {% endif %}
-            {% endfor %}
+            <li><a href="{{folderitem.url | remove: " / "}}">{% if page.lang == "ru" and folderitem.title_ru %} {{ folderitem.title_ru }} {% else %} {{folderitem.title}} {% endif %} </a></li>
+            {% endif %} {% for subfolders in folderitem.subfolders %} {% if subfolders.output contains "web" %}
+            <li class="subfolders">
+                <a href="#">{{ subfolders.title }}</a>
+                <ul>
+                    {% for subfolderitem in subfolders.subfolderitems %} {% if subfolderitem.output contains "web" %} {% if subfolderitem.external_url %}
+                    <li><a href="{{subfolderitem.external_url}}" target="_blank">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
+                    {% elsif page.url contains subfolderitem.url %}
+                    <li class="active"><a href="{{subfolderitem.url | remove: " / "}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
+                    {% else %}
+                    <li><a href="{{subfolderitem.url | remove: " / "}}">{% if page.lang == "ru" and subfolderitem.title_ru %} {{ subfolderitem.title_ru }} {% else %} {{subfolderitem.title}} {% endif %} </a></li>
+                    {% endif %} {% endif %} {% endfor %}
+                </ul>
+            </li>
+            {% endif %} {% endfor %} {% endif %} {% endfor %}
         </ul>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
+        {% endif %} {% endfor %} {% endfor %}
         <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
                <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
@@ -50,7 +35,8 @@
            -->
     </li>
 </ul>
-</div>
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
-<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>
+    $("li.active").parents('li').toggleClass("active");
+</script>
