@@ -9745,7 +9745,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 562,
+            "line": 563,
             "description": "Builds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
             "params": [
                 {
@@ -9774,7 +9774,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 645,
+            "line": 646,
             "description": "Checks query on contains restrictions by relationships.",
             "itemtype": "method",
             "name": "containsRelationships",
@@ -43241,7 +43241,7 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:562"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:563"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -43677,7 +43677,7 @@
         },
         {
             "message": "Missing item type\nBuilds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:562"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:563"
         },
         {
             "message": "Missing item type\nBuilds function for windowing array of objects using data from the query.",
