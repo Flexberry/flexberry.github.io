@@ -1843,7 +1843,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 33,
+            "line": 34,
             "params": [
                 {
                     "name": "moment",
@@ -1864,7 +1864,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 7,
+            "line": 8,
             "description": "Class of query language adapter that translates query object into JS function which\nfilters native JS array of objects by specified logic.\n\n```js\nconst data = [\n  { Name: 'A', Surname: 'X', Age: 10 },\n  { Name: 'B', Surname: 'Y', Age: 11 },\n  { Name: 'B', Surname: 'Z', Age: 12 }\n];\n\nlet adapter = new JSAdapter(moment);\nlet builder = new QueryBuilder(store, 'AnyUnknownModel').where('Name', FilterOperator.Eq, 'B');\nlet filter = adapter.buildFunc(builder.build());\n\nlet result = filter(data); // Y and Z\n```\n\nAll filters uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation))."
         },
         "Query.ODataAdapter": {
@@ -5900,7 +5900,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 562,
+            "line": 563,
             "description": "Builds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
             "params": [
                 {
@@ -5929,7 +5929,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/indexeddb-adapter.js",
-            "line": 645,
+            "line": 646,
             "description": "Checks query on contains restrictions by relationships.",
             "itemtype": "method",
             "name": "containsRelationships",
@@ -5950,7 +5950,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 48,
+            "line": 49,
             "description": "Builds JS function for filtering JS array of objects by specified logic from query.",
             "itemtype": "method",
             "name": "buildFunc",
@@ -5970,7 +5970,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 65,
+            "line": 66,
             "description": "Builds function for windowing array of objects using data from the query.",
             "params": [
                 {
@@ -5989,7 +5989,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 94,
+            "line": 95,
             "description": "Builds function for ordering array of objects using data from the query.",
             "params": [
                 {
@@ -6008,7 +6008,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 146,
+            "line": 147,
             "description": "Builds function for selecting subset of properties from array of objects using data from the query.",
             "params": [
                 {
@@ -6027,7 +6027,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 235,
+            "line": 236,
             "description": "Builds function for filtering array of objects using predicate.",
             "params": [
                 {
@@ -6052,7 +6052,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 269,
+            "line": 270,
             "description": "Returns function for checkign single object using predicate.",
             "params": [
                 {
@@ -6085,7 +6085,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 447,
+            "line": 448,
             "description": "Loads value from object by specified attribute path.",
             "params": [
                 {
@@ -6109,7 +6109,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 473,
+            "line": 474,
             "description": "Returns complex filter function for `and` condition.\nResult function filters array of objects and returns those, for which\nall attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
             "params": [
                 {
@@ -6128,7 +6128,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/js-adapter.js",
-            "line": 503,
+            "line": 504,
             "description": "Returns complex filter function for `or` condition.\nResult function filters array of objects and returns those, for which\nat least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
             "params": [
                 {
@@ -24190,39 +24190,39 @@
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:562"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:563"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:48"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:49"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:65"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:66"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:94"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:95"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:146"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:147"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:269"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:270"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:447"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:448"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:473"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:474"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:503"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:504"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -24394,39 +24394,39 @@
         },
         {
             "message": "Missing item type\nBuilds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
-            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:562"
+            "line": " ember-flexberry-data/addon/query/indexeddb-adapter.js:563"
         },
         {
             "message": "Missing item type\nBuilds function for windowing array of objects using data from the query.",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:65"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:66"
         },
         {
             "message": "Missing item type\nBuilds function for ordering array of objects using data from the query.",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:94"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:95"
         },
         {
             "message": "Missing item type\nBuilds function for selecting subset of properties from array of objects using data from the query.",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:146"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:147"
         },
         {
             "message": "Missing item type\nBuilds function for filtering array of objects using predicate.",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:235"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:236"
         },
         {
             "message": "Missing item type\nReturns function for checkign single object using predicate.",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:269"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:270"
         },
         {
             "message": "Missing item type\nLoads value from object by specified attribute path.",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:447"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:448"
         },
         {
             "message": "Missing item type\nReturns complex filter function for `and` condition.\nResult function filters array of objects and returns those, for which\nall attribute filter functions returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:473"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:474"
         },
         {
             "message": "Missing item type\nReturns complex filter function for `or` condition.\nResult function filters array of objects and returns those, for which\nat least one attribute filter function returned `true`.\nResult function uses short circuit logic ([wiki](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).",
-            "line": " ember-flexberry-data/addon/query/js-adapter.js:503"
+            "line": " ember-flexberry-data/addon/query/js-adapter.js:504"
         },
         {
             "message": "Missing item type\nConverts specified predicate into OData filter part.",

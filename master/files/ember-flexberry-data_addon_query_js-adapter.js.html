@@ -223,6 +223,7 @@
 
 <div class="file">
     <pre class="prettyprint linenums">
+import Ember from &#x27;ember&#x27;;
 import BaseAdapter from &#x27;./base-adapter&#x27;;
 import { SimplePredicate, ComplexPredicate, StringPredicate, DetailPredicate } from &#x27;./predicate&#x27;;
 import FilterOperator from &#x27;./filter-operator&#x27;;
@@ -437,7 +438,7 @@ export default class JSAdapter extends BaseAdapter {
               }
             } else {
               r[expandKey] = [];
-              let detailsCount = item[expandKey].length;
+              let detailsCount = Ember.isNone(item[expandKey]) ? 0 : item[expandKey].length;
               for (let j = 0; j &lt; detailsCount; j++) {
                 let itemValue = item[expandKey][j];
                 if (itemValue) {
