@@ -43,6 +43,7 @@ lang: ru
 
 * [C# 6.0. Справочник. Полное описание языка](http://www.ozon.ru/context/detail/id/135794222/)
 * [C# 6.0. Карманный справочник](http://www.ozon.ru/context/detail/id/34820810/)
+* [CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#](http://www.ozon.ru/context/detail/id/21236101/)
 
 ## Программное обеспечение
 
