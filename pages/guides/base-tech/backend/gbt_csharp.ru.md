@@ -30,6 +30,13 @@ lang: ru
 * [Руководство по языку программирования С# 5.0 часть 2](https://professorweb.ru/my/csharp/charp_theory/level1/index1.php)
 * [Руководство по языку программирования С# 6.0](http://metanit.com/sharp/tutorial/)
 
+### Видеокурсы
+
+* [Основы программирования на языке С#](https://mva.microsoft.com/ru/training-courses/--8590?l=lSmM2020_304984382)
+* [Базовый курс C#](https://www.youtube.com/watch?v=zCg1PnBoTJo&list=PLtjuvkyFrt5WjvySK8HinYjyTObam4ROY)
+* [Язык программирования C# (часть 1)](https://mva.microsoft.com/ru/training-courses/-c-1-8669?l=MAuqZiG1_4404984382)
+* [Язык программирования C# (часть 2)](https://mva.microsoft.com/ru/training-courses/-c-2-8877?l=ATbUZg02_6104984382)
+
 ### Презентация
 
 ### Рекомендованные книги
