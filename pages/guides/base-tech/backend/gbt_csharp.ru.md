@@ -21,11 +21,13 @@ lang: ru
 * [C#](https://msdn.microsoft.com/ru-ru/library/kx37x362.aspx)
 * [C# Tutorials](https://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx)
 * [Руководство по программированию на C#](https://msdn.microsoft.com/ru-ru/library/67ef8sbd.aspx)
+* [Standard ECMA-334. C# Language Specification](http://www.ecma-international.org/publications/standards/Ecma-334.htm)
 
 ### Самоучители
 
-* [-]()
-* [-]()
+* [Руководство по языку программирования С# 6.0](http://metanit.com/sharp/tutorial/)
+* [Руководство по языку программирования С# 5.0 часть 1](https://professorweb.ru/my/csharp/charp_theory/level1/index.php)
+* [Руководство по языку программирования С# 5.0 часть 2](https://professorweb.ru/my/csharp/charp_theory/level1/index1.php)
 
 ### Презентация
 
