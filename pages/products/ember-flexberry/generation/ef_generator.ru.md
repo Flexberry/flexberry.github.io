@@ -21,7 +21,7 @@ summary: Генерация Ember-приложения из меню Flexberry D
   <!-- ... -->
   <appSettings>
   <!-- ... -->
-    <add key="EmberPluginAddonName" value="ember-flexberry@0.6.2"/>
+    <add key="EmberPluginAddonName" value="ember-flexberry@0.8.2"/>
   <!-- ... -->
   </appSettings>
   <!-- ... -->

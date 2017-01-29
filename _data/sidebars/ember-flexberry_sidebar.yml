@@ -176,3 +176,8 @@ entries:
       title_ru: Генератор приложения
       url: /ef_generator.html
       output: web, pdf
+
+    - title: Blueprints generation
+      title_ru: Blueprints кодогенерация
+      url: /ef_blueprints.html
+      output: web, pdf
