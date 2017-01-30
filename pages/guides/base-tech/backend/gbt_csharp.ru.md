@@ -28,6 +28,7 @@ lang: ru
 
 * [Руководство по языку программирования С# 5.0 часть 1](https://professorweb.ru/my/csharp/charp_theory/level1/index.php)
 * [Руководство по языку программирования С# 5.0 часть 2](https://professorweb.ru/my/csharp/charp_theory/level1/index1.php)
+* [Новый и более совершенный C# 6.0](https://msdn.microsoft.com/ru-ru/magazine/dn802602.aspx)
 * [Руководство по языку программирования С# 6.0](http://metanit.com/sharp/tutorial/)
 
 ### Видеокурсы
@@ -47,8 +48,10 @@ lang: ru
 
 ## Программное обеспечение
 
-* [-]()
-* [-]()
+* [Microsoft Visual Studio](https://www.visualstudio.com/)
+* [MonoDevelop (Cross platform IDE for C#, F# and more)](http://www.monodevelop.com/)
+* [LINQPad (The .NET Programmer’s Playground)](https://www.linqpad.net/)
+* [dotPeek (Free .NET Decompiler and Assembly Browser)](https://www.jetbrains.com/decompiler/)
 
 ## Лабораторные работы и практические задания
 
@@ -74,8 +77,9 @@ lang: ru
 
 ## Возможности по сертификации
 
-* [-]()
-* [-]()
+* [Экзамен 70-483 (Programming in C#)](https://www.microsoft.com/ru-ru/learning/exam-70-483.aspx)
+* [Разработчик C#](https://geekbrains.ru/professions/microsoft_developer)
+* []()
 
 ## Перейти
 
