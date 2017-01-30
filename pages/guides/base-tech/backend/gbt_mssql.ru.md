@@ -33,12 +33,10 @@ lang: ru
 
 
 ### Презентация
-### 
 
 <div class="thumb-wrap">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/Ds8GCdhbu5g" frameborder="0" allowfullscreen></iframe>
 </div>
-### 
 
 ### Рекомендованные книги
 
@@ -74,8 +72,9 @@ lang: ru
 
 ## Возможности по сертификации
 
-* [-]()
-* [-]()
+* [Сертификации Microsoft SQL Server](https://www.microsoft.com/ru-ru/learning/sql-certification.aspx)
+* [Экзамен 70-461 (Querying Microsoft SQL Server 2012/2014)](https://www.microsoft.com/ru-ru/learning/exam-70-461.aspx)
+* [Экзамен 70-464 (Developing Microsoft SQL Server Databases)](https://www.microsoft.com/ru-ru/learning/exam-70-464.aspx)
 
 ## Перейти
 
