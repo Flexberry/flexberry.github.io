@@ -18,7 +18,7 @@ lang: ru
 
 ### Базовый курс
 
-* [C#](https://msdn.microsoft.com/ru-ru/library/kx37x362.aspx)
+* [Целевая страница технической документации по C#](https://msdn.microsoft.com/ru-ru/library/kx37x362.aspx)
 * [C# Tutorials](https://msdn.microsoft.com/en-us/library/aa288436(v=vs.71).aspx)
 * [Руководство по программированию на C#](https://msdn.microsoft.com/ru-ru/library/67ef8sbd.aspx)
 * [Интерактивный учебник по Visual C#](https://msdn.microsoft.com/ru-ru/library/bb383962(v=vs.90).aspx)
