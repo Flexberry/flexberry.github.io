@@ -37,6 +37,7 @@ lang: ru
 * [Базовый курс C#](https://www.youtube.com/watch?v=zCg1PnBoTJo&list=PLtjuvkyFrt5WjvySK8HinYjyTObam4ROY)
 * [Язык программирования C# (часть 1)](https://mva.microsoft.com/ru/training-courses/-c-1-8669?l=MAuqZiG1_4404984382)
 * [Язык программирования C# (часть 2)](https://mva.microsoft.com/ru/training-courses/-c-2-8877?l=ATbUZg02_6104984382)
+* [Programming in C# Jump Start](https://mva.microsoft.com/en-US/training-courses/programming-in-c-jump-start-14254?l=MqbQvzSfB_1500115888)
 
 ### Презентация
 
@@ -79,7 +80,8 @@ lang: ru
 
 * [Экзамен 70-483 (Programming in C#)](https://www.microsoft.com/ru-ru/learning/exam-70-483.aspx)
 * [Разработчик C#](https://geekbrains.ru/professions/microsoft_developer)
-* []()
+* [Microsoft Visual Studio certifications](https://www.microsoft.com/en-us/learning/visual-studio-certification.aspx)
+* [Основы программирования на C#](http://www.intuit.ru/studies/courses/2247/18/info)
 
 ## Перейти
 
