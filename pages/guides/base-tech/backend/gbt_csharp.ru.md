@@ -38,6 +38,7 @@ lang: ru
 * [Язык программирования C# (часть 1)](https://mva.microsoft.com/ru/training-courses/-c-1-8669?l=MAuqZiG1_4404984382)
 * [Язык программирования C# (часть 2)](https://mva.microsoft.com/ru/training-courses/-c-2-8877?l=ATbUZg02_6104984382)
 * [Programming in C# Jump Start](https://mva.microsoft.com/en-US/training-courses/programming-in-c-jump-start-14254?l=MqbQvzSfB_1500115888)
+* [Видеоуроки по языку программирования C#](https://www.youtube.com/playlist?list=PLWCoo5SF-qAMDIAqikhB2hvIytrMiR5TC)
 
 ### Презентация
 
@@ -73,8 +74,7 @@ lang: ru
 
 ## Примеры
 
-* [-]()
-* [-]()
+* [Видеокурс примеров C#](https://www.youtube.com/playlist?list=PLWCoo5SF-qAN-mySVH6p7X0YPvMr8U1OU)
 
 ## Возможности по сертификации
 
