@@ -81,7 +81,6 @@ lang: ru
 * [Экзамен 70-483 (Programming in C#)](https://www.microsoft.com/ru-ru/learning/exam-70-483.aspx)
 * [Разработчик C#](https://geekbrains.ru/professions/microsoft_developer)
 * [Microsoft Visual Studio certifications](https://www.microsoft.com/en-us/learning/visual-studio-certification.aspx)
-* [Основы программирования на C#](http://www.intuit.ru/studies/courses/2247/18/info)
 
 ## Перейти
 
