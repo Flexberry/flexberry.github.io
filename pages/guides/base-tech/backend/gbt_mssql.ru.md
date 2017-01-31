@@ -22,6 +22,8 @@ lang: ru
 * [Справочник по Transact-SQL (компонент Database Engine)](https://msdn.microsoft.com/ru-ru/library/bb510741.aspx)
 * [Справочник разработчика для SQL Server 2014](https://msdn.microsoft.com/ru-ru/library/dd206988(v=sql.120).aspx)
 * [Оптимизация производительности запросов SQL Server](https://technet.microsoft.com/ru-ru/library/2007.11.sqlquery.aspx)
+* [Мастер импорта и экспорта SQL Server](https://msdn.microsoft.com/ru-ru/library/ms141209(v=sql.120).aspx)
+* [Запуск мастера импорта и экспорта SQL Server](https://msdn.microsoft.com/ru-ru/library/ms140052(v=sql.120).aspx)
 
 ### Самоучители
 
