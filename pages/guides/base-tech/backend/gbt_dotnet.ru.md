@@ -56,5 +56,5 @@ lang: ru
 
 ## Перейти
 
-* [Язык программирования С#](gbt_csharp.html)
+* [ASP.NET](gbt_aspnet.html)
 * [Главная страница курса](gbt_landing-page.html)
