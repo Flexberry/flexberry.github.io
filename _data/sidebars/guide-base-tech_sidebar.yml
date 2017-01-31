@@ -81,6 +81,9 @@ entries:
     - title: Microsoft .NET Framework
       url: /gbt_dotnet.html
       output: web
+    - title: ASP.NET
+      url: /gbt_aspnet.html
+      output: web
     - title: C#
       url: /gbt_csharp.html
       output: web
