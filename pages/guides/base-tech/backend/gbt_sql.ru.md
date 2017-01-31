@@ -15,15 +15,23 @@ lang: ru
 
 ##  Ссылки на материалы для изучения
 
-* [-]()
-* [-]()
+### Базовый курс
+
+
+### Самоучители
+
+* [SQL Tutorial](http://www.w3schools.com/sql/default.asp)
+
+### Видеокурсы
+
 
 ### Презентация
 
 ### Рекомендованные книги
 
-* [-]()
-* [-]()
+* [Изучаем SQL (Алан Бьюли)](http://www.ozon.ru/context/detail/id/3291513/)
+* [SQL для простых смертных](http://www.ozon.ru/context/detail/id/24939188/)
+* [SQL. Полное руководство](http://www.ozon.ru/context/detail/id/31124973/)
 
 ## Программное обеспечение
 
@@ -49,7 +57,7 @@ lang: ru
 
 ## Примеры
 
-* [-]()
+* [SQL Задачи и решения](http://www.sql-tutorial.ru/ru/content.html)
 * [-]()
 
 ## Возможности по сертификации
