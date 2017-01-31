@@ -37,9 +37,14 @@ lang: ru
 * [Видеокурс по MS SQL Server 2012](https://www.youtube.com/watch?v=N_z4dsJ3sbM&list=PLshd8LOTR60Fu5locACXWHQXU0M2Q509r)
 * [Подход доктора Хауса к оптимизации SQL-запросов. Часть 1](https://www.lektorium.tv/lecture/14561)
 * [Подход доктора Хауса к оптимизации SQL-запросов. Часть 2](https://www.lektorium.tv/lecture/14562)
+* [Резервное копирование и восстановление в MS SQL Server](https://www.youtube.com/watch?v=hflRnP-1Ik0)
+* [Резервное копирование и восстановление системных баз данных в SQL Server 2014](https://www.youtube.com/watch?v=Mm_71iKzf44)
 
 
 ### Презентация
+
+
+
 
 <div class="thumb-wrap">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/Ds8GCdhbu5g" frameborder="0" allowfullscreen></iframe>
