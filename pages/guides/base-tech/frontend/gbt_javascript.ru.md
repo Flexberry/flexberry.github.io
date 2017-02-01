@@ -126,6 +126,7 @@ lang: ru
 
 ### Практические задания
 * [Learn JavaScript - Codecademy](https://www.codecademy.com/learn/learn-javascript)
+* [JavaScript Challenge - Codewars](https://www.codewars.com/?language=javascript)
 
 ### Задания для самостоятельного выполнения
 
