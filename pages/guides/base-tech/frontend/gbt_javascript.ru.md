@@ -22,7 +22,7 @@ lang: ru
 
 **JSON** (от англ. JavaScript Object Notation — «объектная нотация JavaScript») - это текстовый формат обмена данными, основанный на JavaScript. JSON является синтаксисом для сериализации объектов, массивов, чисел, строк логических значений и значения null. Он основывается на синтаксисе JavaScript, однако всё же отличается от него: не каждый код на JavaScript является JSON, и не каждый JSON является кодом на JavaScript. 
 
-**Менеджер пакетов** - набор программного обеспечения, позволяющего управлять процессом установки, удаления, настройки и обновления различных компонентов программного обеспечения. Менеджеры пакетов избавляют от необходимости ручной установки/обновления дополнительных библиотек, их конфигурирования и управления зависимостями между ними. В мире JavaScript-разработки используются менеджеры пакетов [npm](https://www.npmjs.com/), [bower](https://bower.io/) и [yarn](https://yarnpkg.com/lang/en/).
+**Менеджер пакетов** - набор программного обеспечения, позволяющего управлять процессом установки, удаления, настройки и обновления различных компонентов программного обеспечения. Менеджеры пакетов избавляют от необходимости ручной установки/обновления дополнительных библиотек, их конфигурирования и управления зависимостями между ними. В мире JavaScript-разработки чаще всего используются менеджеры пакетов [npm](https://www.npmjs.com/), [bower](https://bower.io/) и [yarn](https://yarnpkg.com/lang/en/).
 
 **Статические анализаторы кода** - программы для анализа исходного кода на соответствие определенным правилам без реального выпоолнения исследуемых программ. Применяются для нахождения синтаксических и стилистических ошибок кода в процессе написания и тестирования приложений. Для JavaScript-разработки применяются [JSHint](http://jshint.com/), [JSLint](http://www.jslint.com/), [ESLint](http://eslint.org/), [JSCS](http://jscs.info/), [XO](https://github.com/sindresorhus/xo) и другие.
 
@@ -113,6 +113,10 @@ lang: ru
 
 * [Базовое программное обеспечение - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D1%8F)
 * [Visual Studio Code](https://code.visualstudio.com/)
+* [WebStorm](http://www.jetbrains.com/webstorm/)
+* [Sublime Text](http://www.sublimetext.com/)
+* [Atom](https://atom.io/)
+* [Notepad++](https://notepad-plus-plus.org/)
 * [Google Chrome DevTools - Mozilla Developer Network](https://developer.chrome.com/devtools)
 * [Инструменты разработчика Firefox - Mozilla Developer Network](https://developer.mozilla.org/ru/docs/Tools)
 * [Расширение Firebug для Firefox - Mozilla Developer Network](https://addons.mozilla.org/ru/firefox/addon/firebug/)
