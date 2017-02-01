@@ -276,3 +276,38 @@ ember g flexberry-application app --metadata-dir=vendor/Flexberry
   ]
 }
 ```
+
+## Разработка Blueprints-генераторов
+
+При разработке Blueprint-генераторов используется TypeScript. В качестве редактора кода для TypeScript рекомендуется использовать [Visual Studio Code с настроенным Task-ом компиляции TypeScript в JavaScript](https://code.visualstudio.com/Docs/languages/typescript). Для отладки требуется настроить конфигурацию в файле `launch.json`. Пример настройки конфигурации для отладки:
+
+```JSON
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Запустить",
+      "type": "node",
+      "request": "launch",
+      "program": "C:/Users/WindowsUserName/AppData/Roaming/npm/node_modules/ember-cli/bin/ember",
+      "stopOnEntry": false,
+      "args": [
+        "g",
+        "flexberry-app-prototype",
+        "--odata-feed-url=http://server:8080/odata"
+      ],
+      "cwd": "D:/CodeGen/Samples/foo-bar-sample/",
+      "preLaunchTask": null,
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "sourceMaps": true,
+      "console": "externalTerminal"
+    }
+  ]
+}
+```
