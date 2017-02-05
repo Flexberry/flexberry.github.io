@@ -112,7 +112,8 @@ lang: ru
 ## Возможности по сертификации
 
 * [Экзамен 70-486. Developing ASP.NET MVC Web Applications](https://www.microsoft.com/ru-ru/learning/exam-70-486.aspx)
-* [-]()
+* [Разработчик C#](https://geekbrains.ru/professions/microsoft_developer)
+* [MCSD: Web Applications](https://www.microsoft.com/ru-ru/learning/mcsd-web-apps-certification.aspx)
 
 ## Перейти
 
