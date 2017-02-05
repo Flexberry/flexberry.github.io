@@ -38,6 +38,14 @@ lang: ru
 
 * [The ASP.NET Site](https://www.asp.net/)
 * [ASP.NET и Visual Studio для веб-разработки](https://msdn.microsoft.com/ru-ru/library/dd566231.aspx)
+* [Пошаговые руководства по приложению Web Forms](https://msdn.microsoft.com/ru-ru/library/c67263se(v=vs.90).aspx)
+* [Learn ASP.NET](https://www.asp.net/learn)
+* [Getting Started with ASP.NET 4.5 Web Forms and Visual Studio 2013](https://code.msdn.microsoft.com/Getting-Started-with-221c01f5/view/SourceCode#)
+* [Практическое руководство. Создание приложения ASP.NET Web Forms](https://msdn.microsoft.com/ru-ru/library/hh987037(v=vs.110).aspx)
+* [Общие сведения о синтаксисе веб-страниц ASP.NET](https://msdn.microsoft.com/ru-ru/library/k33801s3(v=vs.100).aspx)
+* [Справочник по ASP.NET MVC 4](https://msdn.microsoft.com/ru-ru/library/gg416515(v=vs.108).aspx)
+* [Веб-платформы ASP.NET для Visual Studio 2013](https://msdn.microsoft.com/ru-ru/library/dn467680(v=vs.108).aspx)
+* [Документация по веб-API ASP.NET](https://msdn.microsoft.com/ru-ru/library/dn448365(v=vs.118).aspx)
 
 ### Самоучители
 
@@ -52,7 +60,13 @@ lang: ru
 
 ### Видеокурсы
 
+* [Видео курс ASP.NET Базовый курс](https://www.youtube.com/watch?v=VU-NObnc2jA&list=PLvItDmb0sZw8qA87QMQbx5RpPO_dfCGOy)
+* [ASP.NET Advanced](https://www.youtube.com/watch?v=qiujcPFFinA&list=PLvItDmb0sZw_TRwlGr0BVFtS-sP3YaDMU)
 * [Введение в ASP.NET MVC](https://mva.microsoft.com/ru/training-courses/-aspnet-mvc-8322?l=eTXjmit7_304984382)
+* [Разработка приложений на основе ASP Net Web Forms](https://www.youtube.com/watch?v=VSsXD1JVRYQ&index=20&list=PLMv23B5LnJ9NJ_s4iuIaNen-DbvdR1dMq)
+* [Создание простой страницы Asp.Net WebForms](https://www.youtube.com/watch?v=Ww6CVU4oS3k&index=1&list=PLIZicc8_ARKsGxB446wkS6vC-4OynaYIy)
+* [ASP.NET Web Forms](https://channel9.msdn.com/Events/dotnetConf/2014/Web-Forms)
+
 
 ### Презентация
 
@@ -68,8 +82,9 @@ lang: ru
 
 ## Программное обеспечение
 
-* [-]()
-* [-]()
+* [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
+* [Visual Studio Code](https://code.visualstudio.com/download)
+* [MonoDevelop (Cross platform IDE for C#, F# and more)](http://www.monodevelop.com/)
 
 ## Лабораторные работы и практические задания
 
@@ -96,7 +111,7 @@ lang: ru
 
 ## Возможности по сертификации
 
-* [-]()
+* [Экзамен 70-486. Developing ASP.NET MVC Web Applications](https://www.microsoft.com/ru-ru/learning/exam-70-486.aspx)
 * [-]()
 
 ## Перейти
