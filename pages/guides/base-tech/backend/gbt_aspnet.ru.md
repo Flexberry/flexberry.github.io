@@ -43,10 +43,10 @@ lang: ru
 * [Getting Started with ASP.NET 4.5 Web Forms and Visual Studio 2013](https://code.msdn.microsoft.com/Getting-Started-with-221c01f5/view/SourceCode#)
 * [Практическое руководство. Создание приложения ASP.NET Web Forms](https://msdn.microsoft.com/ru-ru/library/hh987037(v=vs.110).aspx)
 * [Общие сведения о синтаксисе веб-страниц ASP.NET](https://msdn.microsoft.com/ru-ru/library/k33801s3(v=vs.100).aspx)
-* [Справочник по ASP.NET MVC 4](https://msdn.microsoft.com/ru-ru/library/gg416515(v=vs.108).aspx)
 * [Веб-платформы ASP.NET для Visual Studio 2013](https://msdn.microsoft.com/ru-ru/library/dn467680(v=vs.108).aspx)
 * [Документация по веб-API ASP.NET](https://msdn.microsoft.com/ru-ru/library/dn448365(v=vs.118).aspx)
-
+* [Справочник по ASP.NET MVC 4](https://msdn.microsoft.com/ru-ru/library/gg416515(v=vs.108).aspx)
+    
 ### Самоучители
 
 * [Основы ASP.NET](https://professorweb.ru/my/ASP_NET/base/level1/base_aspnet_index.php)
@@ -64,10 +64,10 @@ lang: ru
 
 * [Видео курс ASP.NET Базовый курс](https://www.youtube.com/watch?v=VU-NObnc2jA&list=PLvItDmb0sZw8qA87QMQbx5RpPO_dfCGOy)
 * [ASP.NET Advanced](https://www.youtube.com/watch?v=qiujcPFFinA&list=PLvItDmb0sZw_TRwlGr0BVFtS-sP3YaDMU)
-* [Введение в ASP.NET MVC](https://mva.microsoft.com/ru/training-courses/-aspnet-mvc-8322?l=eTXjmit7_304984382)
 * [Разработка приложений на основе ASP Net Web Forms](https://www.youtube.com/watch?v=VSsXD1JVRYQ&index=20&list=PLMv23B5LnJ9NJ_s4iuIaNen-DbvdR1dMq)
 * [Создание простой страницы Asp.Net WebForms](https://www.youtube.com/watch?v=Ww6CVU4oS3k&index=1&list=PLIZicc8_ARKsGxB446wkS6vC-4OynaYIy)
 * [ASP.NET Web Forms](https://channel9.msdn.com/Events/dotnetConf/2014/Web-Forms)
+* [Введение в ASP.NET MVC](https://mva.microsoft.com/ru/training-courses/-aspnet-mvc-8322?l=eTXjmit7_304984382)
 
 ### Презентация
 
@@ -76,10 +76,10 @@ lang: ru
 * [Программирование с использованием Microsoft ASP.NET 3.5](http://www.ozon.ru/context/detail/id/4148051/)
 * [ASP.NET. Сборник рецептов](http://www.ozon.ru/context/detail/id/28277279/)
 * [Microsoft ASP .NET. Обеспечение безопасности](http://www.ozon.ru/context/detail/id/136359541/)
-* [ASP.NET MVC 5 с примерами на C# 5.0 для профессионалов](http://www.ozon.ru/context/detail/id/29482313/)
 * [ASP.NET 4.5 с примерами на C# 5.0 для профессионалов](http://www.ozon.ru/context/detail/id/26199321/)
-* [ASP.NET MVC 4. Разработка реальных веб-приложений с помощью ASP.NET MVC](http://www.ozon.ru/context/detail/id/20343905/)
 * [Самоучитель ASP.NET](http://www.ozon.ru/context/detail/id/28266738/)
+* [ASP.NET MVC 4. Разработка реальных веб-приложений с помощью ASP.NET MVC](http://www.ozon.ru/context/detail/id/20343905/)
+* [ASP.NET MVC 5 с примерами на C# 5.0 для профессионалов](http://www.ozon.ru/context/detail/id/29482313/)
 
 ## Программное обеспечение
 
