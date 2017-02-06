@@ -9,8 +9,8 @@ entries:
     title_ru: Введение
     output: web
     folderitems:
-    - title: Base technologies
-      title_ru: Базовые технологии
+    - title: Practical tasks
+      title_ru: Практические задания
       url: /gt_landing-page.html
       output: web    
   - title: Full stack tasks
