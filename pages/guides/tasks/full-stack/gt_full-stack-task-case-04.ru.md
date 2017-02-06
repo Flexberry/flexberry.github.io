@@ -79,6 +79,7 @@ lang: ru
 ## Практическое задание №4 - Проектирование ИС
 
 Для реализации потребуется:
+
 *	Flexberry Designer
 
 ### Задание
@@ -129,6 +130,7 @@ lang: ru
 ## Практическое задание №7 - Разработка UI-логики приложения
 
 Для реализации потребуется:
+
 *	Microsoft Visual Studio 2015
 *	Microsoft SQL Server
 *	Редактор кода для клиентской разработки: Visual Studio Code, Atom, Sublime Text и т.п.
@@ -144,6 +146,7 @@ lang: ru
 ## Практическое задание №8 - Функциональные подсистемы Flexberry
 
 Для реализации потребуется:
+
 *	Flexberry Designer
 *	Microsoft Visual Studio 2015
 *	Microsoft SQL Server
