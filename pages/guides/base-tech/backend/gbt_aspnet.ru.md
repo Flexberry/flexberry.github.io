@@ -67,7 +67,6 @@ lang: ru
 * [Создание простой страницы Asp.Net WebForms](https://www.youtube.com/watch?v=Ww6CVU4oS3k&index=1&list=PLIZicc8_ARKsGxB446wkS6vC-4OynaYIy)
 * [ASP.NET Web Forms](https://channel9.msdn.com/Events/dotnetConf/2014/Web-Forms)
 
-
 ### Презентация
 
 ### Рекомендованные книги
