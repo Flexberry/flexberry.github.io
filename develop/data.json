@@ -9041,7 +9041,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 203,
+            "line": 210,
             "description": "Turns model into 'updated.uncommitted' state.\n\nTransition into the `updated.uncommitted` state\nif the model in the `saved` state (no local changes).\nAlternative: this.get('currentState').becomeDirty();",
             "itemtype": "method",
             "name": "makeDirty",
@@ -9051,7 +9051,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 216,
+            "line": 223,
             "description": "Return object with changes.\n\nObject will have structure:\n* key - is name relationships that has changed\n  * array - include two array, array with index `0` this old values, array with index `1` this new values.",
             "example": [
                 "\n  ```javascript\n  {\n    key: [\n      [oldValues],\n      [newValues],\n    ],\n  }\n  ```"
@@ -9068,7 +9068,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 252,
+            "line": 259,
             "description": "Rollback changes for `hasMany` relationships.",
             "itemtype": "method",
             "name": "rollbackHasMany",
@@ -9086,7 +9086,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 276,
+            "line": 283,
             "description": "Return object with changes.\n\nObject will have structure:\n* key - is name relationships that has changed\n  * array - include two items, old value, with index `0`, and new value, with index `1`.",
             "example": [
                 "\n  ```javascript\n  {\n    key: [oldValue, newValue],\n  }\n  ```"
@@ -9103,7 +9103,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 307,
+            "line": 314,
             "description": "Rollback changes for `belongsTo` relationships.",
             "itemtype": "method",
             "name": "rollbackBelongsTo",
@@ -9121,7 +9121,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 335,
+            "line": 342,
             "description": "Rollback changes for all relationships.",
             "itemtype": "method",
             "name": "rollbackRelationships",
@@ -9131,7 +9131,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 345,
+            "line": 352,
             "description": "Rollback all changes.",
             "itemtype": "method",
             "name": "rollbackAll",
@@ -9141,7 +9141,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 355,
+            "line": 362,
             "description": "Initializes model.",
             "class": "Projection.Model",
             "module": "ember-flexberry-data",
@@ -9149,7 +9149,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 373,
+            "line": 380,
             "description": "Fired when the record is loaded from the server.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didLoad).",
             "itemtype": "method",
             "name": "didLoad",
@@ -9159,7 +9159,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 384,
+            "line": 391,
             "description": "Fired when the record is updated.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didUpdate).",
             "itemtype": "method",
             "name": "didUpdate",
@@ -9169,7 +9169,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 395,
+            "line": 402,
             "description": "Fired when the record is created.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didCreate).",
             "itemtype": "method",
             "name": "didCreate",
@@ -9179,7 +9179,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 406,
+            "line": 413,
             "description": "Destroys model.",
             "class": "Projection.Model",
             "module": "ember-flexberry-data",
@@ -9187,7 +9187,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 424,
+            "line": 431,
             "description": "Observes & handles changes in each hasMany relationship.",
             "itemtype": "method",
             "name": "_onChangeHasManyRelationship",
@@ -9211,7 +9211,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 436,
+            "line": 443,
             "description": "Aggregates validation error messages for hasMany relationships.",
             "itemtype": "method",
             "name": "_aggregateHasManyRelationshipValidationErrors",
@@ -9235,7 +9235,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 507,
+            "line": 514,
             "description": "Set each `belongsTo` relationship, observer, that save canonical state.",
             "itemtype": "method",
             "name": "_saveCanonicalBelongsTo",
@@ -9247,7 +9247,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 533,
+            "line": 540,
             "description": "Save canonical state for `belongsTo` relationships.",
             "itemtype": "method",
             "name": "_saveBelongsToObserver",
@@ -9271,7 +9271,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 549,
+            "line": 556,
             "description": "Defined projections for current model type.",
             "itemtype": "property",
             "name": "projections",
@@ -9286,7 +9286,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 560,
+            "line": 567,
             "description": "Defines projection for specified model type.",
             "itemtype": "method",
             "name": "defineProjection",
@@ -9320,7 +9320,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 584,
+            "line": 591,
             "description": "Parent model type name.",
             "itemtype": "property",
             "name": "_parentModelName",
@@ -32940,6 +32940,16 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
             "line": 200,
+            "description": "If true, then onClick calling flatpickr.open().",
+            "itemtype": "property",
+            "name": "canClick",
+            "type": "Bool",
+            "class": "FlexberrySimpledatetime",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
+            "line": 208,
             "description": "Called when the element of the view is going to be destroyed. Override this function to do any teardown that requires an element, like removing event listeners.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).",
             "itemtype": "method",
             "name": "willDestroyElement",
@@ -32948,7 +32958,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 211,
+            "line": 219,
             "description": "Component click handler.",
             "itemtype": "method",
             "name": "click",
@@ -32959,7 +32969,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 223,
+            "line": 232,
             "description": "Create Flatpickr instance, and save it into `_flatpickr` property.",
             "itemtype": "method",
             "name": "_flatpickrCreate",
@@ -32970,14 +32980,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 257,
+            "line": 269,
             "description": "Sets readonly attr for flatpickr.",
             "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 264,
+            "line": 276,
             "description": "Destroy Flatpickr instance.",
             "itemtype": "method",
             "name": "_flatpickrDestroy",
@@ -32988,7 +32998,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 278,
+            "line": 290,
             "description": "Convert Date object to appropriate string value for input.",
             "itemtype": "method",
             "name": "_convertDateToString",
@@ -33010,7 +33020,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 309,
+            "line": 321,
             "description": "Converts string value of input to Date object.",
             "itemtype": "method",
             "name": "_convertStringToDate",
@@ -43669,11 +43679,11 @@
         },
         {
             "message": "Missing item type\nInitializes model.",
-            "line": " ember-flexberry-data/addon/models/model.js:355"
+            "line": " ember-flexberry-data/addon/models/model.js:362"
         },
         {
             "message": "Missing item type\nDestroys model.",
-            "line": " ember-flexberry-data/addon/models/model.js:406"
+            "line": " ember-flexberry-data/addon/models/model.js:413"
         },
         {
             "message": "Missing item type\nBuilds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
@@ -44609,7 +44619,7 @@
         },
         {
             "message": "Missing item type\nSets readonly attr for flatpickr.",
-            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:257"
+            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:269"
         },
         {
             "message": "Missing item type\nSimple object list view  component.",
