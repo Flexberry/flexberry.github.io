@@ -37,6 +37,7 @@ lang: ru
 * [Работа с базами данных в .NET Framework](https://professorweb.ru/my/ADO_NET/base/level1/info_db.php)
 * [Основы Silverlight 5](https://professorweb.ru/my/Silverlight/base/level1/s_index.php)
 * [WPF - Windows Presentation Foundation](https://professorweb.ru/my/WPF/base_WPF/level1/info_WPF.php)
+* [Раздел по WPF и Silverlight 5](http://metanit.com/sharp/wpf.php)
 
 ### Видеокурсы
 
@@ -44,7 +45,7 @@ lang: ru
 
 ### Рекомендованные книги
 
-* [-]()
+* [CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#](http://www.ozon.ru/context/detail/id/21236101/)
 * [-]()
 
 ## Программное обеспечение
