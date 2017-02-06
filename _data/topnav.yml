@@ -41,7 +41,7 @@ topnav_dropdowns:
       title_ru: Руководства
       folderitems:
         - title: Base tech
-          title_ru: Знакомство с базовыми технологиями
+          title_ru: Базовые технологии
           url: /gbt_landing-page.html
         - title: Create web app
           title_ru: Создание веб-приложений
@@ -55,6 +55,9 @@ topnav_dropdowns:
         - title: App security and audit
           title_ru: Полномочия и аудит
           url: /mydoc_introduction.html
+        - title: Tasks
+          title_ru: Практические задания
+          url: /gt_landing-page.html
     - title: API
       folderitems:
         - title: Release

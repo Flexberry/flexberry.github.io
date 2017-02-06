@@ -1,0 +1,68 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Get started
+    title_ru: Введение
+    output: web
+    folderitems:
+    - title: Base technologies
+      title_ru: Базовые технологии
+      url: /gt_landing-page.html
+      output: web    
+  - title: Full stack tasks
+    title_ru: Задания на проектирование и разработку
+    output: web
+    folderitems:
+    - title: Case 01
+      title_ru: Вариант 01
+      url: /gt_full-stack-task-case-01.html
+      output: web
+    - title: Case 02
+      title_ru: Вариант 02
+      url: /gt_full-stack-task-case-02.html
+      output: web
+    - title: Case 03
+      title_ru: Вариант 03
+      url: /gt_full-stack-task-case-03.html
+      output: web
+    - title: Case 04
+      title_ru: Вариант 04
+      url: /gt_full-stack-task-case-04.html
+      output: web
+    - title: Case 05
+      title_ru: Вариант 05
+      url: /gt_full-stack-task-case-05.html
+      output: web
+    - title: Case 06
+      title_ru: Вариант 06
+      url: /gt_full-stack-task-case-06.html
+      output: web
+    - title: Case 07
+      title_ru: Вариант 07
+      url: /gt_full-stack-task-case-07.html
+      output: web
+    - title: Case 08
+      title_ru: Вариант 08
+      url: /gt_full-stack-task-case-08.html
+      output: web
+    - title: Case 09
+      title_ru: Вариант 09
+      url: /gt_full-stack-task-case-09.html
+      output: web
+    - title: Case 10
+      title_ru: Вариант 10
+      url: /gt_full-stack-task-case-10.html
+      output: web
+    - title: Case 11
+      title_ru: Вариант 11
+      url: /gt_full-stack-task-case-11.html
+      output: web
+    - title: Case 12
+      title_ru: Вариант 12
+      url: /gt_full-stack-task-case-12.html
+      output: web
+

@@ -56,7 +56,7 @@ entries:
       url: /lem_landing_page.html
       output: web
   - title: Guides
-    title_ru: Руководство
+    title_ru: Руководства
     output: web
     folderitems:
     - title: Base tech
@@ -79,3 +79,7 @@ entries:
       title_ru: Полномочия и аудит
       url: /news.html
       output: web
+    - title: Tasks
+      title_ru: Практические задания
+      url: /gt_landing-page.html
+      output: web      
