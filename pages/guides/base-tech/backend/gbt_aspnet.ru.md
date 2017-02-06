@@ -54,12 +54,11 @@ lang: ru
 * [Безопасность в ASP.NET](https://professorweb.ru/my/ASP_NET/security/level1/)
 * [ASP.NET Web Forms 4.5](https://professorweb.ru/my/ASP_NET/webforms_4_5/level1/)
 
-#### ASP.NET MVC
-
-* [Руководство по ASP.NET MVC 5](http://metanit.com/sharp/mvc5/)
-* [Изучаем ASP.NET MVC 5](https://professorweb.ru/my/ASP_NET/mvc/level1/)
-* [Руководство по ASP.NET Core](http://metanit.com/sharp/aspnet5/)
-* [Руководство по ASP.NET Web API 2](http://metanit.com/sharp/aspnet_webapi/)
+* ASP.NET MVC
+    * [Руководство по ASP.NET MVC 5](http://metanit.com/sharp/mvc5/)
+    * [Изучаем ASP.NET MVC 5](https://professorweb.ru/my/ASP_NET/mvc/level1/)
+    * [Руководство по ASP.NET Core](http://metanit.com/sharp/aspnet5/)
+    * [Руководство по ASP.NET Web API 2](http://metanit.com/sharp/aspnet_webapi/)
 
 ### Видеокурсы
 
