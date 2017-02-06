@@ -359,6 +359,16 @@ ErrorableControllerMixin, {
   allowColumnResize: true,
 
   /**
+    Flag indicates whether columns resizable plugin already was initialized.
+
+    @property _colResizableInit
+    @type Boolean
+    @default false
+    @private
+  */
+  _colResizableInit: false,
+
+  /**
     Table add column to sorting action name.
 
     @property addColumnToSorting
@@ -821,14 +831,14 @@ ErrorableControllerMixin, {
   */
   configurateSelectedRows: undefined,
 
-  selectedRowsChanged: Ember.observer(&#x27;selectedRecords.@each&#x27;, function() {
+  selectedRowsChanged: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;selectedRecords.@each&#x27;, function() {
     let selectedRecords = this.get(&#x27;selectedRecords&#x27;);
     let configurateSelectedRows = this.get(&#x27;configurateSelectedRows&#x27;);
     if (configurateSelectedRows) {
       Ember.assert(&#x27;configurateSelectedRows must be a function&#x27;, typeof configurateSelectedRows === &#x27;function&#x27;);
       configurateSelectedRows(selectedRecords);
     }
-  }),
+  })),
 
   /**
     Default settings for rows.
@@ -1256,6 +1266,18 @@ ErrorableControllerMixin, {
       if (key) {
         this._setActiveRecord(key);
       }
+    }
+
+    if (!this._colResizableInit) {
+      let $currentTable = this.$(&#x27;table.object-list-view&#x27;);
+      if (this.get(&#x27;allowColumnResize&#x27;)) {
+        $currentTable.addClass(&#x27;fixed&#x27;);
+        this._reinitResizablePlugin();
+      } else {
+        $currentTable.colResizable({ disable: true });
+      }
+
+      this.set(&#x27;_colResizableInit&#x27;, true);
     }
 
     this.$(&#x27;.object-list-view-menu &gt; .ui.dropdown&#x27;).dropdown();

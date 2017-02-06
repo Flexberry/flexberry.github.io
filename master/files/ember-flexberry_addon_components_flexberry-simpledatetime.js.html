@@ -423,6 +423,14 @@ export default FlexberryBaseComponent.extend({
   classNames: [&#x27;flexberry-simpledatetime&#x27;],
 
   /**
+    If true, then onClick calling flatpickr.open().
+
+    @property canClick
+    @type Bool
+  */
+  canClick: true,
+
+  /**
     Called when the element of the view is going to be destroyed. Override this function to do any teardown that requires an element, like removing event listeners.
     [More info](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).
 
@@ -440,7 +448,8 @@ export default FlexberryBaseComponent.extend({
     @private
   */
   click() {
-    if (!this.get(&#x27;currentTypeSupported&#x27;) &amp;&amp; !this.get(&#x27;readonly&#x27;)) {
+    if (this.get(&#x27;canClick&#x27;) &amp;&amp; !this.get(&#x27;currentTypeSupported&#x27;) &amp;&amp; !this.get(&#x27;readonly&#x27;)) {
+      this.set(&#x27;canClick&#x27;, false);
       this.get(&#x27;_flatpickr&#x27;).open();
     }
   },
@@ -463,6 +472,9 @@ export default FlexberryBaseComponent.extend({
         if (dates.length) {
           this.set(&#x27;_valueAsDate&#x27;, dates[dates.length - 1]);
         }
+      },
+      onClose: () =&gt; {
+        this.set(&#x27;canClick&#x27;, true);
       },
     };
 
