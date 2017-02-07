@@ -1,5 +1,5 @@
 ---
-title: Вариант 10 - «Школьное образование»
+title: Вариант 10 - «Досудебное обжалование»
 keywords: Tasks
 sidebar: guide-tasks_sidebar
 toc: true

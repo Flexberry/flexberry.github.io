@@ -21,6 +21,6 @@ lang: ru
 * [Вариант 07 - «Управление проектами - Задачи»](gt_full-stack-task-case-07.html)
 * [Вариант 08 - «Управление проектами - Календарь»](gt_full-stack-task-case-08.html)
 * [Вариант 09 - «Дошкольное образование»](gt_full-stack-task-case-09.html)
-* [Вариант 10 - «Школьное образование»](gt_full-stack-task-case-10.html)
+* [Вариант 10 - «Досудебное обжалование»](gt_full-stack-task-case-10.html)
 * [Вариант 11 - «Среднее профессиональное образование»](gt_full-stack-task-case-11.html)
 * [Вариант 12 - «Настольный теннис»](gt_full-stack-task-case-12.html)
