@@ -35,18 +35,23 @@ lang: ru
 * [LINQ - язык интегрированных запросов](https://professorweb.ru/my/LINQ/base/level1/info_linq.php)
 * [Платформа ADO.NET и Entity Framework](http://metanit.com/sharp/ado.php)
 * [Работа с базами данных в .NET Framework](https://professorweb.ru/my/ADO_NET/base/level1/info_db.php)
-* [Основы Silverlight 5](https://professorweb.ru/my/Silverlight/base/level1/s_index.php)
-* [WPF - Windows Presentation Foundation](https://professorweb.ru/my/WPF/base_WPF/level1/info_WPF.php)
-* [Раздел по WPF и Silverlight 5](http://metanit.com/sharp/wpf.php)
 
 ### Видеокурсы
+
+* [Особенности LINQ](https://www.youtube.com/watch?v=gQu-Swk1_hI)
+* [Видеокурс WCF Essential](https://www.youtube.com/playlist?list=PLvItDmb0sZw86Ph0CL6H2BfgXu47-rOvk)
+* [Сборка мусора в .NET](https://www.youtube.com/watch?v=29sxHG3nFx8)
+* [Практические приёмы оптимизации .NET-приложений](https://www.youtube.com/watch?v=fqYaXrwEkl4)
+* [Сложности тестирования производительности .NET приложений](https://www.youtube.com/watch?v=PDGKOqyfaTg)
+* [Низкоуровневые оптимизации в .NET](https://www.youtube.com/watch?v=0h3kfHDfkk4&t=4s)
 
 ### Презентация
 
 ### Рекомендованные книги
 
 * [CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#](http://www.ozon.ru/context/detail/id/21236101/)
-* [-]()
+* [LINQ. Карманный справочник](http://www.ozon.ru/context/detail/id/32602672/)
+* [Технология LINQ на примерах](http://www.ozon.ru/context/detail/id/32851534/)
 
 ## Программное обеспечение
 
