@@ -105,6 +105,7 @@ lang: ru
 * [Сборка с Gulp - Каллум Макрей](https://webref.ru/dev/building-with-gulp)
 * [Автоматизация работы с Gulp - Ахмед Салифу Амиду](https://webref.ru/dev/automate-with-gulp)
 * [Bower, Gulp и Yeoman - Дэви Шафик](https://webref.ru/dev/bower-gulp-yeoman)
+* [JavaScript и jQuery. Исчерпывающее руководство - Дэвид Сойер Макфарланд](http://www.ozon.ru/context/detail/id/33835343/)
 * [Веб-приложения на JavaScript - Алекс Маккоу](http://www.ozon.ru/context/detail/id/28317424/)
 * [JavaScript. Оптимизация производительности - Николас Закас](http://www.ozon.ru/context/detail/id/18421547/)
 * [Секреты JavaScript ниндзя - Джон Резиг, Беэр Бибо](http://www.ozon.ru/context/detail/id/22421421/)
