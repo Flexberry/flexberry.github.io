@@ -28,8 +28,6 @@ lang: ru
 * [Основы языка SQL (оператор SELECT)](https://www.youtube.com/playlist?list=PLN8vGBeK3TUrCfB6EdES5oQtXXTXFPnzT)
 * [Видеокурс по SQL Essential](https://www.youtube.com/playlist?list=PLvItDmb0sZw_NDm3pDMQ4_9bV_zKzBmNv)
 
-
-
 ### Презентация
 
 ### Рекомендованные книги
@@ -69,8 +67,7 @@ lang: ru
 
 ## Возможности по сертификации
 
-* [-]()
-* [-]()
+* [Видео-курс: основы баз данных](https://geekbrains.ru/courses/86)
 
 ## Перейти
 
