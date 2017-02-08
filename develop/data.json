@@ -11331,7 +11331,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 223,
+            "line": 225,
             "description": "This method is called when a sync process if at attempt create, update or delete record, server error return.\nDefault behavior: Marked `job` as 'Ошибка', execute further when called `syncUp` method.",
             "example": [
                 "\n  ```javascript\n  // app/services/syncer.js\n  import { Offline } from 'ember-flexberry-data';\n\n  export default Offline.Syncer.extend({\n    ...\n    resolveServerError(job, error) {\n      let _this = this;\n      return new Ember.RSVP.Promise((resolve, reject) => {\n        // Here `error.status` as example, as if user not authorized on server.\n        if (error.status === 401) {\n          // As if `auth` function authorize user.\n          auth().then(() => {\n            _this.syncUp(Ember.A([job])).then(() => {\n              job.set('executionResult', 'Выполнено');\n              resolve(job.save());\n            }, reject);\n          }, reject);\n        } else {\n          job.set('executionResult', 'Ошибка');\n          resolve(job.save());\n        }\n      });\n    },\n    ...\n  });\n\n  ```"
@@ -11360,7 +11360,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 268,
+            "line": 270,
             "description": "This method is called when a sync process not found record on server for delete or update.\nDefault behavior: Marked `job` as 'Не выполнено', not delete and not execute further when called `syncUp` method.",
             "example": [
                 "\n  ```javascript\n  // app/services/syncer.js\n  import { Offline } from 'ember-flexberry-data';\n\n  export default Offline.Syncer.extend({\n    ...\n    resolveNotFoundRecord(job) {\n      if (job.get('operationType') === 'UPDATE') {\n        // It will be executed when next called `syncUp` method.\n        job.set('executionResult', 'Ошибка');\n      } else if (job.get('operationType') === 'DELETE') {\n        // It will be immediately delete and not never executed.\n        job.set('executionResult', 'Выполнено');\n      }\n\n      return job.save();\n    },\n    ...\n  });\n\n  ```"
@@ -11384,133 +11384,133 @@
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 304,
+            "line": 306,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 314,
+            "line": 316,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 342,
+            "line": 344,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 358,
+            "line": 360,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 372,
+            "line": 374,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 397,
+            "line": 399,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 422,
+            "line": 424,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 444,
+            "line": 446,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 453,
+            "line": 455,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 459,
+            "line": 461,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 486,
+            "line": 488,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 503,
+            "line": 505,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 515,
+            "line": 517,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 537,
+            "line": 539,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 554,
+            "line": 556,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 565,
+            "line": 567,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 608,
+            "line": 610,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 647,
+            "line": 649,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
         },
         {
             "file": "ember-flexberry-data/addon/services/syncer.js",
-            "line": 667,
+            "line": 669,
             "class": "Offline.Syncer",
             "module": "ember-flexberry-data",
             "namespace": "Offline"
@@ -39190,7 +39190,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 133,
+            "line": 134,
             "description": "This hook is executed when the router enters the route. It is not executed when the model for the route changes.\n\nIt is used to subscribe on {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}} events.",
             "itemtype": "method",
             "name": "activate",
@@ -39199,7 +39199,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 148,
+            "line": 149,
             "description": "This hook is executed when the router completely exits this route. It is not executed when the model for the route changes.\n\nIt is used to unsubscribe from {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}} events.",
             "itemtype": "method",
             "name": "deactivate",
@@ -39208,7 +39208,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 163,
+            "line": 164,
             "description": "It forms path for new model's route.",
             "itemtype": "method",
             "name": "newRoutePath",
@@ -39228,7 +39228,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 174,
+            "line": 175,
             "description": "Event handler for \"row has been selected\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowAdded",
@@ -39251,7 +39251,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 188,
+            "line": 189,
             "description": "Event handler for \"row has been deleted\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowDeleted",
@@ -39274,7 +39274,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 202,
+            "line": 203,
             "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowChanged",
@@ -43791,79 +43791,79 @@
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:304"
+            "line": " ember-flexberry-data/addon/services/syncer.js:306"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:314"
+            "line": " ember-flexberry-data/addon/services/syncer.js:316"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:342"
+            "line": " ember-flexberry-data/addon/services/syncer.js:344"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:358"
+            "line": " ember-flexberry-data/addon/services/syncer.js:360"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:372"
+            "line": " ember-flexberry-data/addon/services/syncer.js:374"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:397"
+            "line": " ember-flexberry-data/addon/services/syncer.js:399"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:422"
+            "line": " ember-flexberry-data/addon/services/syncer.js:424"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:444"
+            "line": " ember-flexberry-data/addon/services/syncer.js:446"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:453"
+            "line": " ember-flexberry-data/addon/services/syncer.js:455"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:459"
+            "line": " ember-flexberry-data/addon/services/syncer.js:461"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:486"
+            "line": " ember-flexberry-data/addon/services/syncer.js:488"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:503"
+            "line": " ember-flexberry-data/addon/services/syncer.js:505"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:515"
+            "line": " ember-flexberry-data/addon/services/syncer.js:517"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:537"
+            "line": " ember-flexberry-data/addon/services/syncer.js:539"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:554"
+            "line": " ember-flexberry-data/addon/services/syncer.js:556"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:565"
+            "line": " ember-flexberry-data/addon/services/syncer.js:567"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:608"
+            "line": " ember-flexberry-data/addon/services/syncer.js:610"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:647"
+            "line": " ember-flexberry-data/addon/services/syncer.js:649"
         },
         {
             "message": "Missing item type",
-            "line": " ember-flexberry-data/addon/services/syncer.js:667"
+            "line": " ember-flexberry-data/addon/services/syncer.js:669"
         },
         {
             "message": "Missing item type",
