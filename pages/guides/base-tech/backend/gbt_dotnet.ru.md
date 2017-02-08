@@ -55,8 +55,10 @@ lang: ru
 
 ## Программное обеспечение
 
-* [-]()
-* [-]()
+* [Microsoft Visual Studio](https://www.visualstudio.com/)
+* [MonoDevelop (Cross platform IDE for C#, F# and more)](http://www.monodevelop.com/)
+* [LINQPad (The .NET Programmer’s Playground)](https://www.linqpad.net/)
+* [dotPeek (Free .NET Decompiler and Assembly Browser)](https://www.jetbrains.com/decompiler/)
 
 ## Лабораторные работы и практические задания
 
