@@ -23,6 +23,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "DetailEditFormController",
         "DetailInterationService",
         "DeviceService",
+        "DivControlComponent",
         "DomActionsMixin",
         "DragMapTool",
         "DragMapToolComponent",
