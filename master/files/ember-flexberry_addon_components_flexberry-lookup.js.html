@@ -1109,7 +1109,7 @@ export default FlexberryBaseComponent.extend({
             newRelationValue: newValue
           });
       }
-    }).dropdown(&#x27;set text&#x27;, _this.get(&#x27;displayValue&#x27;));
+    });
   },
 
   /**
@@ -1123,10 +1123,7 @@ export default FlexberryBaseComponent.extend({
     let selectedModel = this.get(&#x27;value&#x27;);
     let displayAttributeName = this.get(&#x27;displayAttributeName&#x27;);
     if (!selectedModel) {
-      this.set(&#x27;placeholder&#x27;, t(&#x27;components.flexberry-lookup.placeholder&#x27;));
       return &#x27;&#x27;;
-    } else {
-      this.set(&#x27;placeholder&#x27;, &#x27;&#x27;);
     }
 
     if (!displayAttributeName) {

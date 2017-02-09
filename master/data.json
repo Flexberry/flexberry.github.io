@@ -5196,7 +5196,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 210,
+            "line": 203,
             "description": "Turns model into 'updated.uncommitted' state.\n\nTransition into the `updated.uncommitted` state\nif the model in the `saved` state (no local changes).\nAlternative: this.get('currentState').becomeDirty();",
             "itemtype": "method",
             "name": "makeDirty",
@@ -5206,7 +5206,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 223,
+            "line": 216,
             "description": "Return object with changes.\n\nObject will have structure:\n* key - is name relationships that has changed\n  * array - include two array, array with index `0` this old values, array with index `1` this new values.",
             "example": [
                 "\n  ```javascript\n  {\n    key: [\n      [oldValues],\n      [newValues],\n    ],\n  }\n  ```"
@@ -5223,7 +5223,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 259,
+            "line": 252,
             "description": "Rollback changes for `hasMany` relationships.",
             "itemtype": "method",
             "name": "rollbackHasMany",
@@ -5241,7 +5241,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 283,
+            "line": 276,
             "description": "Return object with changes.\n\nObject will have structure:\n* key - is name relationships that has changed\n  * array - include two items, old value, with index `0`, and new value, with index `1`.",
             "example": [
                 "\n  ```javascript\n  {\n    key: [oldValue, newValue],\n  }\n  ```"
@@ -5258,7 +5258,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 314,
+            "line": 307,
             "description": "Rollback changes for `belongsTo` relationships.",
             "itemtype": "method",
             "name": "rollbackBelongsTo",
@@ -5276,7 +5276,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 342,
+            "line": 335,
             "description": "Rollback changes for all relationships.",
             "itemtype": "method",
             "name": "rollbackRelationships",
@@ -5286,7 +5286,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 352,
+            "line": 345,
             "description": "Rollback all changes.",
             "itemtype": "method",
             "name": "rollbackAll",
@@ -5296,7 +5296,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 362,
+            "line": 355,
             "description": "Initializes model.",
             "class": "Projection.Model",
             "module": "ember-flexberry-data",
@@ -5304,7 +5304,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 380,
+            "line": 373,
             "description": "Fired when the record is loaded from the server.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didLoad).",
             "itemtype": "method",
             "name": "didLoad",
@@ -5314,7 +5314,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 391,
+            "line": 384,
             "description": "Fired when the record is updated.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didUpdate).",
             "itemtype": "method",
             "name": "didUpdate",
@@ -5324,7 +5324,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 402,
+            "line": 395,
             "description": "Fired when the record is created.\n[More info](http://emberjs.com/api/data/classes/DS.Model.html#event_didCreate).",
             "itemtype": "method",
             "name": "didCreate",
@@ -5334,7 +5334,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 413,
+            "line": 406,
             "description": "Destroys model.",
             "class": "Projection.Model",
             "module": "ember-flexberry-data",
@@ -5342,7 +5342,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 431,
+            "line": 424,
             "description": "Observes & handles changes in each hasMany relationship.",
             "itemtype": "method",
             "name": "_onChangeHasManyRelationship",
@@ -5366,7 +5366,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 443,
+            "line": 436,
             "description": "Aggregates validation error messages for hasMany relationships.",
             "itemtype": "method",
             "name": "_aggregateHasManyRelationshipValidationErrors",
@@ -5390,7 +5390,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 514,
+            "line": 507,
             "description": "Set each `belongsTo` relationship, observer, that save canonical state.",
             "itemtype": "method",
             "name": "_saveCanonicalBelongsTo",
@@ -5402,7 +5402,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 540,
+            "line": 533,
             "description": "Save canonical state for `belongsTo` relationships.",
             "itemtype": "method",
             "name": "_saveBelongsToObserver",
@@ -5426,7 +5426,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 556,
+            "line": 549,
             "description": "Defined projections for current model type.",
             "itemtype": "property",
             "name": "projections",
@@ -5441,7 +5441,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 567,
+            "line": 560,
             "description": "Defines projection for specified model type.",
             "itemtype": "method",
             "name": "defineProjection",
@@ -5475,7 +5475,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 591,
+            "line": 584,
             "description": "Parent model type name.",
             "itemtype": "property",
             "name": "_parentModelName",
@@ -12450,7 +12450,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 915,
+            "line": 912,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -12479,7 +12479,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 943,
+            "line": 940,
             "description": "Handles changing current locale.\nIt reinits autocomplete or dropdown mode (depending on flag) in order to localize messages.",
             "itemtype": "method",
             "name": "_languageReinit",
@@ -24409,11 +24409,11 @@
         },
         {
             "message": "Missing item type\nInitializes model.",
-            "line": " ember-flexberry-data/addon/models/model.js:362"
+            "line": " ember-flexberry-data/addon/models/model.js:355"
         },
         {
             "message": "Missing item type\nDestroys model.",
-            "line": " ember-flexberry-data/addon/models/model.js:413"
+            "line": " ember-flexberry-data/addon/models/model.js:406"
         },
         {
             "message": "Missing item type\nBuilds Dexie `WhereClause` for filtering data.\nFiltering only with Dexie can applied only for simple cases (for `SimplePredicate`).\nFor complex cases all logic implemened programmatically.",
