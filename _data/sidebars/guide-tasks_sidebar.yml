@@ -65,4 +65,12 @@ entries:
       title_ru: Вариант 12
       url: /gt_full-stack-task-case-12.html
       output: web
+    - title: Case 13
+      title_ru: Вариант 13
+      url: /gt_full-stack-task-case-13.html
+      output: web
+    - title: Case 14
+      title_ru: Вариант 14
+      url: /gt_full-stack-task-case-14.html
+      output: web
 

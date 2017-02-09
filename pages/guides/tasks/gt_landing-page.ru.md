@@ -24,3 +24,5 @@ lang: ru
 * [Вариант 10 - «Досудебное обжалование»](gt_full-stack-task-case-10.html)
 * [Вариант 11 - «Среднее профессиональное образование»](gt_full-stack-task-case-11.html)
 * [Вариант 12 - «Настольный теннис»](gt_full-stack-task-case-12.html)
+* [Вариант 13 - «Агрегатор контактов»](gt_full-stack-task-case-13.html)
+* [Вариант 14 - «Находка»](gt_full-stack-task-case-14.html)
