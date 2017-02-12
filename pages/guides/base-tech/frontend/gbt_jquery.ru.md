@@ -30,6 +30,7 @@ lang: ru
 
 ### Самоучители и учебники
 * [JavaScript и jQuery - HTML5BOOK.ru](https://html5book.ru/javascript-jquery/)
+* [Библиотека jQuery - professorweb.ru](https://professorweb.ru/my/javascript/jquery/level1/jquery_index.php)
 
 ### Интерактивные курсы
 
