@@ -127,6 +127,10 @@ entries:
       url: /ef_file.html
       output: web, pdf
 
+    - title: UI Message
+      url: /ef_ui-message.html
+      output: web, pdf
+
   - title: Services
     title_ru: Сервисы
     output: web, pdf

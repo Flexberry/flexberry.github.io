@@ -52,3 +52,4 @@ summary:
 ## Контролы, которые пока не наследуются от базового
 
 * [Lookup](ef_lookup.html)
+* [UI Message](ef_ui-message.html)
