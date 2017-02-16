@@ -37444,19 +37444,6 @@
             "line": 213,
             "description": "Message title.",
             "itemtype": "property",
-            "name": "title",
-            "type": "String",
-            "default": "null",
-            "deprecated": true,
-            "deprecationMessage": "Use `caption`.",
-            "class": "UIMessage",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/components/ui-message.js",
-            "line": 223,
-            "description": "Message title.",
-            "itemtype": "property",
             "name": "caption",
             "type": "String",
             "default": "null",
@@ -37465,7 +37452,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/ui-message.js",
-            "line": 232,
+            "line": 222,
             "description": "Message body.",
             "itemtype": "property",
             "name": "message",
@@ -37476,7 +37463,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/ui-message.js",
-            "line": 241,
+            "line": 231,
             "description": "A list of properties of the view to apply as class names.",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -37487,28 +37474,17 @@
         },
         {
             "file": "ember-flexberry/addon/components/ui-message.js",
-            "line": 250,
+            "line": 240,
             "description": "Initializes DOM-related component's logic.",
             "class": "UIMessage",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/ui-message.js",
-            "line": 264,
-            "description": "Send 'onShow' action with component itself as an argument.",
+            "line": 252,
+            "description": "Observes 'visible' property.\nSends actions 'onShow' & 'onHide'.",
             "itemtype": "method",
-            "name": "_show",
-            "access": "private",
-            "tagname": "",
-            "class": "UIMessage",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/components/ui-message.js",
-            "line": 276,
-            "description": "Send 'onHide' action with component itself as an argument.",
-            "itemtype": "method",
-            "name": "_hide",
+            "name": "_didVisibilityChange",
             "access": "private",
             "tagname": "",
             "class": "UIMessage",
@@ -44820,7 +44796,7 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
-            "line": " ember-flexberry/addon/components/ui-message.js:250"
+            "line": " ember-flexberry/addon/components/ui-message.js:240"
         },
         {
             "message": "Missing item type\nInjects a {{#crossLink \"PerfService\"}}perf service{{/crossLink}} into current application\ncomponents, controllers, models, routes, and views.",
