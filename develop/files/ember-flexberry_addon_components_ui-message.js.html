@@ -575,16 +575,6 @@ export default Ember.Component.extend({
   /**
     Message title.
 
-    @property title
-    @type String
-    @default null
-    @deprecated Use &#x60;caption&#x60;.
-  */
-  title: null,
-
-  /**
-    Message title.
-
     @property caption
     @type String
     @default null
@@ -615,37 +605,26 @@ export default Ember.Component.extend({
   didInsertElement() {
     let isCloseable = this.get(&#x27;closeable&#x27;);
     if (isCloseable) {
-      // Inside &#x27;click&#x27;-callback &#x27;this&#x27; would refer to a jQuery-object.
-      let _this = this;
-      _this.$(&#x27;.close&#x27;).on(&#x27;click&#x27;, function() {
-        _this._hide();
+      this.$(&#x27;.close&#x27;).on(&#x27;click&#x27;, () =&gt; {
+        this.set(&#x27;visible&#x27;, false);
       });
     }
   },
 
   /**
-    Send &#x27;onShow&#x27; action with component itself as an argument.
+    Observes &#x27;visible&#x27; property.
+    Sends actions &#x27;onShow&#x27; &amp; &#x27;onHide&#x27;.
 
-    @method _show
+    @method _didVisibilityChange
     @private
   */
-  show() {
-    this.set(&#x27;visible&#x27;, true);
-
-    this.sendAction(&#x27;onShow&#x27;, this);
-  },
-
-  /**
-    Send &#x27;onHide&#x27; action with component itself as an argument.
-
-    @method _hide
-    @private
-  */
-  _hide() {
-    this.set(&#x27;visible&#x27;, false);
-
-    this.sendAction(&#x27;onHide&#x27;, this);
-  },
+  _didVisibilityChange: Ember.observer(&#x27;visible&#x27;, function() {
+    if (this.get(&#x27;visible&#x27;)) {
+      this.sendAction(&#x27;onShow&#x27;);
+    } else {
+      this.sendAction(&#x27;onHide&#x27;);
+    }
+  })
 });
 
     </pre>

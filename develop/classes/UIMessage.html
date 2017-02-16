@@ -404,11 +404,7 @@
 
                     <ul class="index-list methods extends">
                             <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__hide" data-tablink="_hide">_hide</a>
-
-                            </li>
-                            <li class="index-item method private">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__show" data-tablink="_show">_show</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method__didVisibilityChange" data-tablink="_didVisibilityChange">_didVisibilityChange</a>
 
                             </li>
                     </ul>
@@ -462,11 +458,6 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_size" data-tablink="size">size</a>
 
                             </li>
-                            <li class="index-item property deprecated">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_title" data-tablink="title">title</a>
-
-                                    <span class="flag deprecated">deprecated</span>
-                            </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_type" data-tablink="type">type</a>
 
@@ -484,8 +475,8 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method__hide" class="method item private">
-                        <h3 class="name"><code>_hide</code></h3>
+                    <div id="method__didVisibilityChange" class="method item private">
+                        <h3 class="name"><code>_didVisibilityChange</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -500,7 +491,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l276"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:276</code></a>
+                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l252"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:252</code></a>
                             </p>
                     
                     
@@ -508,38 +499,8 @@
                         </div>
                     
                         <div class="description">
-                            <p>Send 'onHide' action with component itself as an argument.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method__show" class="method item private">
-                        <h3 class="name"><code>_show</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                            <span class="flag private">private</span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l264"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:264</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Send 'onShow' action with component itself as an argument.</p>
+                            <p>Observes 'visible' property.
+                    Sends actions 'onShow' &amp; 'onHide'.</p>
                     
                         </div>
                     
@@ -615,7 +576,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l223"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:223</code></a>
+                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l213"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:213</code></a>
                             </p>
                     
                     
@@ -641,7 +602,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l241"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:241</code></a>
+                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l231"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:231</code></a>
                             </p>
                     
                     
@@ -816,7 +777,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l232"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:232</code></a>
+                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l222"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:222</code></a>
                             </p>
                     
                     
@@ -858,34 +819,6 @@
                     <li>massive</li>
                     </ul>
                     <p>More info at <a href="http://semantic-ui.com/collections/message.html#size">Semantic UI Doc</a>.</p>
-                    
-                        </div>
-                    
-                            <p><strong>Default:</strong> null</p>
-                    
-                    
-                    </div>
-                    <div id="property_title" class="property item deprecated">
-                        <h3 class="name"><code>title</code></h3>
-                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
-                    
-                            <span class="flag deprecated" title="Use &#x60;caption&#x60;.">deprecated</span>
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry_addon_components_ui-message.js.html#l213"><code>ember-flexberry&#x2F;addon&#x2F;components&#x2F;ui-message.js:213</code></a>
-                            </p>
-                    
-                                <p>Deprecated: Use &#x60;caption&#x60;.</p>
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Message title.</p>
                     
                         </div>
                     
