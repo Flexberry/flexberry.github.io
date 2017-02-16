@@ -117,12 +117,19 @@ summary: Представлено, каким образом настраива�
 
 1. В [шаблоне](ef_template.html) страницы зададим заголовок в виде переменной "header".
 
-```
-&lt;h3 class="ui header"&gt;Страница с пользовательскими кнопками&lt;/h3&gt;
-&lt;div class="row"&gt;
-`flexberry-objectlistview ... `
-&lt;/div&gt;
-&lt;div class="row"&gt;`messageForUser`&lt;/div&gt;
+```hbs
+{% raw %}<h3 class="ui header">Страница с пользовательскими кнопками</h3>
+<div class="row">
+  {{flexberry-objectlistview
+    // ...
+    customButtons=customButtons
+    userButtonAction1='userButtonAction1'
+    userButtonAction2='userButtonAction2'
+    // ...
+    userButtonActionN='userButtonActionN'
+  }}
+</div>
+<div class="row">{{messageForUser}}</div>{% endraw %}
 ```
 
 2. В соответствующем прикладном [контроллере](ef_controller.html) определим необходимые переменные, зададим вычислимое локализируемое свойство "customButtons", которое вернёт массив описаний пользовательских кнопок (в данном случае - одной кнопки), зададим действие "userButtonActionTest", которое будет обрабатывать нажатие на кнопку.
@@ -184,14 +191,14 @@ export default ListFormController.extend({
 
 3. В [шаблоне](ef_template.html) укажем свойство для получения пользовательских кнопок, а также зарегистрируем наше пользовательское действие.
 
-```
-&lt;h3&gt;`header`&lt;/h3&gt;
+```hbs
+{% raw %}<h3>{{header}}</h3>
 
-&lt;div class="row"&gt;
+<div class="row">
   {{flexberry-objectlistview
     ...
 	customButtons=customButtons
 	userButtonActionTest='userButtonActionTest'
   }}
-&lt;/div&gt;
+</div>{% endraw %}
 ```
