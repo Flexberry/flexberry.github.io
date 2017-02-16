@@ -73,12 +73,12 @@ export default ApplicationSerializer.extend({
 
 На страницу редактирования класса `Подготовка` можно вставить конструкцию
 
-```html
-<div class="field">
+```hbs
+{% raw %}<div class="field">
   <label>Редактор</label>
-  `#if model.errors.редактор `
-    <span style="color:red">`model.errors.редактор `</span>
-  `/if`
+  {{#if model.errors.редактор }}
+    <span style="color:red">{{model.errors.редактор }}</span>
+  {{/if}}
   {{flexberry-lookup
     choose='showLookupDialog'
     remove='removeLookupValue'
@@ -86,47 +86,30 @@ export default ApplicationSerializer.extend({
     relationName='редактор'
     projection='ПользовательE'
   }}
-</div>
+</div>{% endraw %}
 ```
 
-Список настроек лукапа:
-{|
-! Свойство !! Описание !! Дефолтное значение
-|- class="tablerow"
-| choose || Определяет имя action'а, которое будет происходит по клику на кнопку 'choose' || 
-|- class="tablerow"
-| remove || Определяет имя action'а, которое будет происходит по клику на кнопку 'remove' || 
-|- class="tablerow"
-| chooseText || Определяет текст/html внутри кнопки 'choose' || 
-|- class="tablerow"
-| removeText || Определяет текст/html внутри кнопки 'remove' || 
-|- class="tablerow"
-| chooseButtonClass || Определяет css-class на кнопку 'choose' || 
-|- class="tablerow"
-| removeButtonClass || Определяет css-class на кнопку 'remove' || 
-|- class="tablerow"
-| placeholder || Определяет placeholder || t('flexberry-lookup.placeholder')
-|- class="tablerow"
-| value || Определяет выбранный экземпляр модели (мастеровой объект) || 
-|- class="tablerow"
-| relationName || Определяет имя отношения  || 
-|- class="tablerow"
-| projection || Определяет, по какому представлению будут отображаться мастера в списке || 
-|- class="tablerow"
-| sizeClass || Определяет css-class размера окна, возможные варианты: small, large, fullscreen || small
-|- class="tablerow"
-| title || Заголовок модального окна || 
-|- class="tablerow"
-| autocomplete || Режим автокомплита, в режиме "Только для чтения" не работает || false
-|- class="tablerow"
-| dropdown || Режим выпадающего списка, в режиме "Только для чтения" не работает || false
-|- class="tablerow"
-| displayAttributeName || Имя атрибута модели (свойства мастера), которое отображается для пользователя || 
-|- class="tablerow"
-| minCharacters || Минимальное количество символов для автокомпилита, в режиме автокомплита и в режиме выпадающего списка || 1
-|- class="tablerow"
-| maxResults || Максимальное количество отображаемых записей в режиме автокомплита и в режиме в режиме выпадающего списка, не обязательное свойство || 10
-|}
+### Список настроек лукапа:
+
+Свойство | Описание | Дефолтное значение
+:---------------------|:------------------------------------------------------------|:----------------
+`hoose` | Определяет имя action'а, которое будет происходит по клику на кнопку 'choose'.|
+`remove` | Определяет имя action'а, которое будет происходит по клику на кнопку 'remove'.|
+`chooseText` | Определяет текст/html внутри кнопки 'choose'.|
+`removeText` | Определяет текст/html внутри кнопки 'remove'.|
+`chooseButtonClass` | Определяет css-class на кнопку 'choose'.|
+`removeButtonClass` | Определяет css-class на кнопку 'remove'.|
+`placeholder` | Определяет placeholder | t('flexberry-lookup.placeholder')
+`value` | Определяет выбранный экземпляр модели (мастеровой объект) |
+`relationName` | Определяет имя отношения  |
+`projection` | Определяет, по какому представлению будут отображаться мастера в списке |
+`sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small
+`title` | Заголовок модального окна |
+`autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
+`dropdown` | Режим выпадающего списка, в режиме "Только для чтения" не работает | false
+`displayAttributeName` | Имя атрибута модели (свойства мастера), которое отображается для пользователя | 
+`minCharacters` | Минимальное количество символов для автокомпилита, в режиме автокомплита и в режиме выпадающего списка | 1
+`maxResults` | Максимальное количество отображаемых записей в режиме автокомплита и в режиме в режиме выпадающего списка, не обязательное свойство | 10
 
 ## Блочная форма компонента
 
@@ -153,7 +136,11 @@ export default ApplicationSerializer.extend({
 Задание ограничений на значения, отображаемые в списке для выбора, осуществляются посредством задания фильтра ($filter) в формате OData ([OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094)). Данный фильтр задаётся в виде строки в свойство `limitFunction` при задании шаблона.
 
 ```hbs
-{% raw %}{{flexberry-lookup limitFunction=SomeFilterFunction ...}}{% endraw %}
+{% raw %}
+{{flexberry-lookup
+  limitFunction=SomeFilterFunction
+  // ...
+}}{% endraw %}
 ```
 
 Рассмотрим задание ограничения на примере. Пусть у сущности `Employee` есть мастеровая ссылка `Employee1` типа `Employee`. Требуется по лукапу отобразить только те записи, у которых `FirstName` больше или равен `FirstName` текущей выбранной записи.
@@ -198,7 +185,11 @@ export default EditFormController.extend({
 Далее соответствующее свойство необходимо указать в шаблоне формы:
 
 ```hbs
-{% raw %}{{flexberry-lookup limitFunction=lookupLimitFunction ...}}{% endraw %}
+{% raw %}
+{{flexberry-lookup
+  limitFunction=lookupLimitFunction
+  // ...
+}}{% endraw %}
 ```
 
 {% include important.html content="Поскольку фильтр задаётся непосредственно для OData, `FirstName` пишется с большой буквы и соответствует имени свойства в модели OData (в ember-модели пишется `firstName` с маленькой буквы).<br/>
