@@ -9,12 +9,12 @@ lang: ru
 ---
 
 ## Редактор UML-диаграмм
-В данной статье описаны особенности и возможности по созданию и редактированию элементов на диаграмме.{br}
-Вопрос работы с диаграммами как с репозиторными объектами разобран в [Working-with-diagrams-in-the-repository-browser|этой статье].
+В данной статье описаны особенности и возможности по созданию и редактированию элементов на диаграмме.  
+Вопрос работы с диаграммами как с репозиторными объектами разобран в [этой статье](fd_working-with-diagrams-in-the-repository-browser.html).
 
 ## Типы редактируемых UML-диаграмм
-1. [Activity-diagram|Диаграмма активностей (Activity diagram)]
-2. [Class-diagram|Диаграмма классов (Class diagram)]
+1. [Диаграмма активностей (Activity diagram)](fd_activity-diagram.html)
+2. [Диаграмма классов (Class diagram)](fd_class-diagram.html)
 3. [Collaboration-diagram|Диаграмма сотрудничества (Collaboration diagram)]
 4. [Deployment-diagram|Диаграмма развёртывания (Deployment diagram)]
 5. [Sequence-diagram|Диаграмма последовательности (Sequence diagram)]

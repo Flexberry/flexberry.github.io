@@ -39,8 +39,8 @@ entries:
       url: /fd_activity-diagram.html
       output: web, pdf
 
-    - title: Editing diagram
-      title_ru: Редактор UML-диаграмм
+    - title: Class diagram
+      title_ru: Диаграмма классов (Class diagram)
       url: /fd_editing-diagram.html
       output: web, pdf
 
