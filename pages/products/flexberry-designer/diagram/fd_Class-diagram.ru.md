@@ -1,14 +1,14 @@
 ---
 title: Диаграмма классов (Class diagram)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public, Черновик статьи
+keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_class-diagram.html
 folder: products/flexberry-designer/diagram
 lang: ru
 ---
 
-Диаграмма классов - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
+**Диаграмма классов** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
 
 Диаграмма классов является ключевым элементом [редактора UML-диаграмм](fd_editing-diagram.html), поскольку зачастую приложения генерируются именно с диаграммы классов.
 Диаграмма классов - это набор статических, декларативных элементов модели. Диаграммы классов могут применяться и при прямом проектировании, то есть в процессе разработки новой системы, и при обратном проектировании - описании существующих и используемых систем. Информация с диаграммы классов напрямую отображается в исходный код приложения. Таким образом, диаграмма классов - конечный результат проектирования и отправная точка процесса разработки.
@@ -40,7 +40,7 @@ lang: ru
 ![](/images/pages/products/flexberry-designer/diagram/nested.jpg) | Ассоциация вложенного класса (Nested class association)
 ![](/images/pages/products/flexberry-designer/diagram/class.jpg) | Класс (Class)
 ![](/images/pages/products/flexberry-designer/diagram/templateclass.jpg) | Класс-шаблон (Template class)
-![](/images/pages/products/flexberry-designer/diagram/instance.jpg) || Экземпляр класса (instance);
+![](/images/pages/products/flexberry-designer/diagram/instance.jpg) | Экземпляр класса (instance)
 ![](/images/pages/products/flexberry-designer/diagram/activeobject.jpg) | Активный объект (Active object)
 ![](/images/pages/products/flexberry-designer/diagram/multiobject.jpg)  | Мультиобъект (Multiobject)
 ![](/images/pages/products/flexberry-designer/diagram/object.jpg) | Объект (Property object)

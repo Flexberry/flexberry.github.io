@@ -43,3 +43,8 @@ entries:
       title_ru: Диаграмма классов (Class diagram)
       url: /fd_class-diagram.html
       output: web, pdf
+
+      - title: Collaboration diagram
+      title_ru: Диаграмма сотрудничества (Collaboration diagram) 
+      url: /fd_collaboration-diagram.html
+      output: web, pdf
