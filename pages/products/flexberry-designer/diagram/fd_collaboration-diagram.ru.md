@@ -8,7 +8,10 @@ folder: products/flexberry-designer/diagram
 lang: ru
 ---
 
-**Диаграмма сотрудничества** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
+**Диаграмма сотрудничества** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).  
+
+![](/images/pages/products/flexberry-designer/diagram/collaboration-diagram.png)
+
 Кооперация (collaboration) - это статическая конструкция для моделирования набора сущностей, взаимодействующих друг с другом. Кооперация определяет набор взаимодействующих ролей, используемых вместе, чтобы показать некую функциональность. 
 
 На диаграмме сотрудничества можно отобразить следующие элементы нотации UML, доступные в панели элементов: 
