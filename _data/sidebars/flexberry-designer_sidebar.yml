@@ -34,6 +34,22 @@ entries:
       url: /fd_editing-diagram.html
       output: web, pdf
 
-    - title: Sample 7
-      url: /p1_sample7.html
+    - title: Activity diagram
+      title_ru: Диаграмма активностей (Activity diagram)
+      url: /fd_activity-diagram.html
+      output: web, pdf
+
+    - title: Editing diagram
+      title_ru: Редактор UML-диаграмм
+      url: /fd_editing-diagram.html
+      output: web, pdf
+
+    - title: Editing diagram
+      title_ru: Редактор UML-диаграмм
+      url: /fd_editing-diagram.html
+      output: web, pdf
+
+    - title: Editing diagram
+      title_ru: Редактор UML-диаграмм
+      url: /fd_editing-diagram.html
       output: web, pdf
