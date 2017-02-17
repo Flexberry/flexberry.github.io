@@ -101,6 +101,7 @@ lang: ru
 * [Получить информацию об устройстве графического вывода - mydevice.io](http://mydevice.io/)
 * [SimpLESS - Компилятор LESS](https://wearekiss.com/simpless/)
 * [Koala - Компилятор LESS, SASS, Compass и CoffeScript](http://koala-app.com/)
+* [Less.js - Компилятор LESS на Node.js](https://github.com/less/less.js)
 
 ## Тесты, лабораторные работы и практические задания
 
