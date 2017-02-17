@@ -24,12 +24,14 @@ entries:
       url: /fd_repository-browser.html
       output: web, pdf
 
-    - title: Sample 5
-      url: /p1_sample5.html
+    - title: Working with diagrams in the repository browser
+      title_ru:  Работа с диаграммами в браузере репозитария
+      url: fd_working-with-diagrams-in-the-repository-browser.html
       output: web, pdf
 
-    - title: Sample 6
-      url: /p1_sample6.html
+    - title: Editing diagram
+      title_ru: Редактор UML-диаграмм
+      url: /fd_editing-diagram.html
       output: web, pdf
 
     - title: Sample 7

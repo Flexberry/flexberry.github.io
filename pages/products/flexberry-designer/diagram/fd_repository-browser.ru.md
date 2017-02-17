@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_repository-browser.html
-folder: products/flexberry-designer/
+folder: products/flexberry-designer/diagram/
 lang: ru
 ---
 
@@ -36,6 +36,7 @@ lang: ru
 * Для удаления объекта необходимо выбрать его мышкой в правой половине окна браузера и нажать кнопку ![](/images/pages/products/flexberry-designer/diagram/delbtn.jpg).
 
 ### Горячие клавиши
+
 Нажатие этих клавиш, при выделенной строке уровня вызовет следующее действие:
 
 * **Enter** - переход на уровень ниже;
