@@ -48,3 +48,8 @@ entries:
       title_ru: Диаграмма сотрудничества (Collaboration diagram) 
       url: /fd_collaboration-diagram.html
       output: web, pdf
+
+      - title: Deployment diagram
+      title_ru: Диаграмма развёртывания (Deployment diagram) 
+      url: /fd_deployment-diagram.html
+      output: web, pdf
