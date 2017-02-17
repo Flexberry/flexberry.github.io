@@ -8,8 +8,6 @@ folder: products/flexberry-designer/diagram
 lang: ru
 ---
 
-## Диаграмма классов (Class diagram)
-
 Диаграмма классов - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
 
 Диаграмма классов является ключевым элементом [редактора UML-диаграмм](fd_editing-diagram.html), поскольку зачастую приложения генерируются именно с диаграммы классов.
