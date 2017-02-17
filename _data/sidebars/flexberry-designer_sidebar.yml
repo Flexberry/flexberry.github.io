@@ -41,5 +41,5 @@ entries:
 
     - title: Class diagram
       title_ru: Диаграмма классов (Class diagram)
-      url: /fd_editing-diagram.html
+      url: /fd_class-diagram.html
       output: web, pdf

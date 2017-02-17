@@ -8,8 +8,6 @@ folder: products/flexberry-designer/diagram/
 lang: ru
 ---
 
-## Работа с диаграммами в браузере репозитария
-
 Основная работа с [диаграммами](fd_editing-diagram.html) происходит через меню [FlexberryDesignerRepositoryBrowser браузера репозитария] (вопрос редактирования содержимого диаграмм разобран в [этой статье](fd_editing-diagram.html)).
 
 ![](/images/pages/products/flexberry-designer/diagram/diagram-opportunities.png)
