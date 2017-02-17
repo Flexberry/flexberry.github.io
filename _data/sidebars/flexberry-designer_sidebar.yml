@@ -14,24 +14,14 @@ entries:
       url: /fd_landing_page.html
       output: web
 
-    - title: Sample 1
-      url: /p1_sample1.html
-      output: web, pdf
-
-    - title: Sample 2
-      url: /p1_sample2.html
-      output: web, pdf
-
-    - title: Sample 3
-      url: /p1_sample3.html
-      output: web, pdf
-
-  - title: Another heading
+  - title: Diagram
+    title_ru: Диаграммы
     output: web, pdf
 
     folderitems:
-    - title: Sample 4
-      url: /p1_sample4.html
+    - title: Repository browser
+      title_ru: Браузер репозиториев
+      url: /fd_repository-browser.html
       output: web, pdf
 
     - title: Sample 5
