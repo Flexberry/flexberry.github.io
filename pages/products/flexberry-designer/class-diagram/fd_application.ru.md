@@ -17,9 +17,9 @@ lang: ru
 ## Результат генерации класса Application
 
 * Сборка с именем XXXXX(Desktop Customizers), с кодом класса, унаследованного от `ICSSoft.STORMNET.UI.DesktopCustomizer` и перегруженными методами: 
-    * `GetDesktopCaption` (возвращает заголовок окна [рабочего стола](app-desktop.html))
-    * `GetRunners` (возвращает структуру [рабочего стола](app-desktop.html))
-* Запускаемое приложение, имеющее наименование аналогичное имени UML-класса, с формой, унаследованной от формы стандартного [рабочего стола](app-desktop.html) `ICSSoft.STORMNET.Windows.Forms.Desktop`. 
+    * `GetDesktopCaption` (возвращает заголовок окна [рабочего стола](fw_app-desktop.html))
+    * `GetRunners` (возвращает структуру [рабочего стола](fw_app-desktop.html))
+* Запускаемое приложение, имеющее наименование аналогичное имени UML-класса, с формой, унаследованной от формы стандартного [рабочего стола](fw_app-desktop.html) `ICSSoft.STORMNET.Windows.Forms.Desktop`. 
 
 ## Свойства приложения
 

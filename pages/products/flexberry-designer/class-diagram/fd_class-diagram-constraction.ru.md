@@ -33,7 +33,7 @@ lang: ru
 Существуют рекомендации по рисованию диаграммы классов:
 * Направление связи
     * [Мастеровыми ассоциации](fd_master-association.html) рисуются "вбок".
-    * [Детейловые композиции](Detail-associations-and-their-properties.html) рисуются "вниз".
+    * [Детейловые композиции](fo_detail-associations-and-their-properties.html) рисуются "вниз".
     * [Наследование](fd_inheritance.html) рисуется "вверх".
 * Именование связи
     * Имя [мастера](fd_key-concepts-flexberry-designe.html) обычно совпадает с именем класса.

@@ -99,6 +99,16 @@ entries:
       url: fd_application.html
       output: web, pdf
 
+    - title: Change E-view
+      title_ru: Изменение представления формы редактирования
+      url: fd_change-e-view.html
+      output: web, pdf
+
+    - title: Class methods and method parameters.html
+      title_ru: Методы классов и параметры методов
+      url: fd_class-methods-and-method-parameters.html
+      output: web, pdf
+
   - title: Audit
       title_ru: Аудит в Flexberry Designer
       output: web, pdf
