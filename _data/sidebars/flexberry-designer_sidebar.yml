@@ -50,11 +50,6 @@ entries:
       url: /fd_class-diagram.html
       output: web, pdf
 
-    - title: Class diagram constraction
-      title_ru: Особенности построения диаграммы классов  
-      url: /fd_class-diagram-constraction.html
-      output: web, pdf
-
     - title: Collaboration diagram
       title_ru: Диаграмма сотрудничества (Collaboration diagram) 
       url: /fd_collaboration-diagram.html
@@ -80,4 +75,36 @@ entries:
       url: /fd_use-case-diagram.html
       output: web, pdf
 
+  - title: Сommon principles of class diagram
+    title_ru: Общие принципы построения диаграммы классов
+    output: web, pdf
 
+    - title: Class diagram constraction
+      title_ru: Особенности построения диаграммы классов  
+      url: /fd_class-diagram-constraction.html
+      output: web, pdf
+
+    - title: Class diagram editor features work
+      title_ru: Особенности работы с редактором диаграммы классов  
+      url: /fd_class-diagram-editor-features-work.html
+      output: web, pdf
+
+    - title: Additional stereotypes
+      title_ru: Дополнительные стереотипы классов  
+      url: fd_additional-stereotypes.html
+      output: web, pdf
+
+    - title: Application
+      title_ru: Приложения (классы со стереотипом application)   
+      url: fd_application.html
+      output: web, pdf
+
+  - title: Audit
+      title_ru: Аудит в Flexberry Designer
+      output: web, pdf
+
+      folderitems:
+      - title: Audit setup
+        title_ru: Настройка аудита в Flexberry Designer
+        url: fd_audit-setup.html
+        output: web, pdf
