@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_collaboration-diagram.html
-folder: products/flexberry-designer/diagram
+folder: products/flexberry-designer/diagram/
 lang: ru
 ---
 

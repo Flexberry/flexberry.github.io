@@ -1,16 +1,16 @@
 ---
-title: Работа с диаграммами в браузере репозитария
+title: Работа с диаграммами в браузере репозитория
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_working-with-diagrams-in-the-repository-browser.html
-folder: products/flexberry-designer/diagram/
+folder: products/flexberry-designer/diagrams-editor/
 lang: ru
 ---
 
-Основная работа с [диаграммами](fd_editing-diagram.html) происходит через меню [FlexberryDesignerRepositoryBrowser браузера репозитария] (вопрос редактирования содержимого диаграмм разобран в [этой статье](fd_editing-diagram.html)).
+Основная работа с [диаграммами](fd_editing-diagram.html) происходит через меню [браузера репозитория](fd_repository-browser.html) (вопрос редактирования содержимого диаграмм разобран в [статье "Редактор UML-диаграмм"](fd_editing-diagram.html)).
 
-![](/images/pages/products/flexberry-designer/diagram/diagram-opportunities.png)
+![](/images/pages/products/flexberry-designer/diagrams-editor/diagram-opportunities.png)
 
 ## Создание диаграммы
 
@@ -18,7 +18,7 @@ lang: ru
 * Выбрать выпадающеее подменю у кнопки создания объектов,
 * Из подменю выбрать тип создаваемой диаграммы:
 
-![](/images/pages/products/flexberry-designer/diagram/diagram-creation.jpg)
+![](/images/pages/products/flexberry-designer/diagrams-editor/diagram-creation.jpg)
 
 * В появившемся окне ввести наименование создаваемой диаграммы.
 
@@ -39,15 +39,15 @@ lang: ru
 1. Выделить необходимую диаграмму.
 2. Нажать на панели инструментов на  кнопку "Открыть диаграмму только на чтение".
 
-![](/images/pages/products/flexberry-designer/diagram/diagram-readonly.png)
+![](/images/pages/products/flexberry-designer/diagrams-editor/diagram-readonly.png)
 
 ## Удаление диаграммы
 
 Для того чтобы удалить диаграмму, необходимо:
 1. Выбрать диаграмму.
-2. Нажать на панели инструментов кнопку ![](/images/pages/products/flexberry-designer/diagram/delbtn.jpg).
+2. Нажать на панели инструментов кнопку ![](/images/pages/products/flexberry-designer/diagrams-editor/delbtn.jpg).
 
 ## Переименование диаграммы (редактирование свойств)
 
 1. Выберать диаграмму.
-2. Нажмите на панели инструментов кнопку ![](/images/pages/products/flexberry-designer/diagram/propertiesbtn.jpg).
+2. Нажмите на панели инструментов кнопку ![](/images/pages/products/flexberry-designer/diagrams-editor/propertiesbtn.jpg).

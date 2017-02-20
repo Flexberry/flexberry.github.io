@@ -7,15 +7,16 @@ entries:
   folders:
 
   - title: Getting Started
+    title_ru: Начало работы
     output: web, pdf
     folderitems:
-    - title: About
-      title_ru: О приложении
-      url: /fd_landing_page.html
+    - title: Flexberry Designer
+      title_ru: Flexberry Designer
+      url: /fd_flexberry-designer.html
       output: web
 
-  - title: Diagram
-    title_ru: Диаграммы
+  - title: Сommon information about diagrams editor
+    title_ru: Общие сведения о редакторе UML-диаграмм
     output: web, pdf
 
     folderitems:
@@ -25,7 +26,7 @@ entries:
       output: web, pdf
 
     - title: Working with diagrams in the repository browser
-      title_ru: Работа с диаграммами в браузере репозитария
+      title_ru: Работа с диаграммами в браузере репозитория
       url: fd_working-with-diagrams-in-the-repository-browser.html
       output: web, pdf
 
@@ -34,6 +35,11 @@ entries:
       url: /fd_editing-diagram.html
       output: web, pdf
 
+  - title: Diagram
+    title_ru: Виды диаграмм и принципы их построения
+    output: web, pdf
+
+    folderitems:
     - title: Activity diagram
       title_ru: Диаграмма активностей (Activity diagram)
       url: /fd_activity-diagram.html
@@ -42,6 +48,11 @@ entries:
     - title: Class diagram
       title_ru: Диаграмма классов (Class diagram)
       url: /fd_class-diagram.html
+      output: web, pdf
+
+    - title: Class diagram constraction
+      title_ru: Особенности построения диаграммы классов  
+      url: /fd_class-diagram-constraction.html
       output: web, pdf
 
     - title: Collaboration diagram
@@ -53,3 +64,20 @@ entries:
       title_ru: Диаграмма развёртывания (Deployment diagram) 
       url: /fd_deployment-diagram.html
       output: web, pdf
+
+    - title: Sequence diagram
+      title_ru: Диаграмма последовательности (Sequence diagram) 
+      url: /fd_sequence-diagram.html
+      output: web, pdf
+
+    - title: Statechart diagram
+      title_ru: Диаграмма состояний (Statechart diagram)  
+      url: /fd_statechart-diagram.html
+      output: web, pdf
+
+    - title: UseCase diagram
+      title_ru: Диаграмма вариантов использования (UseCase diagram)  
+      url: /fd_use-case-diagram.html
+      output: web, pdf
+
+
