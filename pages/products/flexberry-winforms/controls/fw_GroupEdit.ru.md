@@ -105,7 +105,7 @@ ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
 ![](/images/pages/img/page/GroupEdit/РазъясненияПоGE.png)
 
 ## EditManager
-Обычно `GroupEdit` располагается на [форме редактирования](Формы-редактирования-классы-со-стереотипом-editform.html), имеющей свой `[EditManager](edit-manager.html)`. Однако, у `GroupEdit'а` есть __свой `EditManager`__, отвечающий за связывание и события.
+Обычно `GroupEdit` располагается на [форме редактирования](fd_classes-with-stereotype-editform.html), имеющей свой `[EditManager](edit-manager.html)`. Однако, у `GroupEdit'а` есть __свой `EditManager`__, отвечающий за связывание и события.
 
 К примеру, если необходимо отловить событие возврата значения при выборе мастера, то необходимо подписаться на событие `AfterChangeProperty` EditManager'a, относящегося к GroupEdit'у, а не к странице редактирования:
 

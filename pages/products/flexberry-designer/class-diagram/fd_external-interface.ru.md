@@ -7,20 +7,20 @@ permalink: ru/fd_external-interface.html
 folder: products/flexberry-designer/
 lang: ru
 ---
-# Классы со стереотипом ExternalInterface
-Классы со [стереотипом](key-concepts-flexberry-designer.html) ExternalInterface - это всего лишь указание на то, что нужно будет сгенерировать [наследование](inheritance.html) от интерфейса для того класса, который будет наследоваться от этого интерфейса.
+Классы со [стереотипом](fd_key-concepts-flexberry-designer.html) ExternalInterface - это всего лишь указание на то, что нужно будет сгенерировать [наследование](fd_inheritance.html) от интерфейса для того класса, который будет наследоваться от этого интерфейса.
 
-# Пример использования класса со стереотипом ExternalInterface
+## Пример использования класса со стереотипом ExternalInterface
 Пусть в проекте `CatInterface` объявлен интерфейс IКошка
 
-![Изображение](/images/img/page/ExternalInterface/InterfaceICat.png)
+![](/images/pages/products/flexberry-designer/class-diagram/interface-i-cat.png)
 
 А в другом проекте `TestExtInterface` структура вида
 
-![Изображение](/images/img/page/ExternalInterface/ExtInterfaceICat.png)
+![](/images/pages/products/flexberry-designer/class-diagram/ext-interface-i-cat.png)
 
 Если в проекте, содержащем ExternalInterface, сгенерировать объекты, то в классе `СиамскаяКошка` будет строка вида
-```cs
+
+```csharp
 public class СиамскаяКошка : ICSSoft.STORMNET.DataObject, IКошка
 ```
 Однако проект компилироваться не будет, поскольку не указано, где находится интерфейс `IКошка`. Чтобы это исправить, необходимо: 
@@ -28,7 +28,8 @@ public class СиамскаяКошка : ICSSoft.STORMNET.DataObject, IКошк
 1. Добавить ссылку в проекте на сборку `CatInterface(Objects).dll`. 
 
 2. В код класса объектов добавить директиву:
-```cs
+
+```csharp
 namespace IIS.TestExtInterface
 {
 	//...
@@ -44,6 +45,6 @@ namespace IIS.TestExtInterface
 	}
 }
 ```
+
 3. Реализовать методы интерфейса `IКошка`.
 
-----

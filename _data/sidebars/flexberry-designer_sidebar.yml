@@ -109,6 +109,36 @@ entries:
       url: fd_class-methods-and-method-parameters.html
       output: web, pdf
 
+    - title: Сlasses with stereotype eventarg
+      title_ru: События и параметры событий (классы со стереотипом eventarg)
+      url: fd_class-methods-and-method-parameters.html
+      output: web, pdf
+
+    - title: Сlasses with stereotype typedef
+      title_ru: Синонимы типов (классы со стереотипом typedef)
+      url: fd_classes-with-stereotype-typedef.html
+      output: web, pdf
+
+    - title: Сlasses with stereotype editform
+      title_ru: Формы редактирования (классы со стереотипом editform)
+      url: fd_classes-with-stereotype-editform.html
+      output: web, pdf
+
+    - title: External classes
+      title_ru: Внешние классы (классы со стереотипом external)
+      url: fd_external-classes.html
+      output: web, pdf
+
+    - title: External interface
+      title_ru: Классы со стереотипом ExternalInterface
+      url: fd_external-interface.html
+      output: web, pdf
+
+    - title: E-view
+      title_ru: E-представление
+      url: fd_e-view.html
+      output: web, pdf
+
   - title: Audit
       title_ru: Аудит в Flexberry Designer
       output: web, pdf
