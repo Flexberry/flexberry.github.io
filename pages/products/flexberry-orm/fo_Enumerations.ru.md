@@ -12,7 +12,7 @@ lang: ru
 
 * '''Продукт''': [Flexberry Designer](flexberry-designer.html)
 * '''Компонент''': [Редактор UML-диаграмм](editing-diagram.html)
-* '''Предназначение''': Классы со [стереотипом](key-concepts-flexberry-designer.html) Enumeration на [диаграмме классов](class-diagram.html) представляют собой перечислимый тип.
+* '''Предназначение''': Классы со [стереотипом](key-concepts-flexberry-designer.html) Enumeration на [диаграмме классов](fd_class-diagram.html) представляют собой перечислимый тип.
 </td>
 </tr></tbody></table></a>
 </div>

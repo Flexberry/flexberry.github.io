@@ -19,7 +19,7 @@ lang: ru
 # Создание и сохранение объекта с большим количеством детейлов
 
 Данный тест осуществляет генерацию большого графа объектов с [детейловыми связями](detail-associations-and-their-properties.html) и его сохранение в БД.
-Используемая [диаграмма классов](class-diagram.html) имеет вид:
+Используемая [диаграмма классов](fd_class-diagram.html) имеет вид:
 ![Sample Picture Caption](/images/img/page/CreateMultipleDetailsExample/Details.png)
 
 При этом все классы [наследуются](inheritance.html) от нехранимого абстрактного класса `D`.

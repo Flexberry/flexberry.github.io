@@ -53,4 +53,4 @@ lang: ru
 * [Стандартный монитор задач WinformBusinessTaskMonitor](winform-business-task-monitor.html)
 
 # Описание продукта
-Посредством `[Flexberry Designer](flexberry-designer.html)` возможно создание [диаграммы классов](class-diagram.html). С этой [диаграммы](class-diagram.html) можно сформировать необходимую структуру базы данных (БД), объектную модель и готовое win-приложение.
+Посредством `[Flexberry Designer](flexberry-designer.html)` возможно создание [диаграммы классов](fd_class-diagram.html). С этой [диаграммы](fd_class-diagram.html) можно сформировать необходимую структуру базы данных (БД), объектную модель и готовое win-приложение.

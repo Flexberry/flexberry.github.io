@@ -13,7 +13,7 @@ lang: ru
 * [Работа с диаграммами в браузере репозитария](working-with-diagrams-in-the-repository-browser.html)
 * [Редактирование диаграммы](editing-diagram.html)
 * [Диаграмма активностей (Activity diagram)](activity-diagram.html)
-* [Диаграмма классов (Class diagram)](class-diagram.html)
+* [Диаграмма классов (Class diagram)](fd_class-diagram.html)
 * [Диаграмма сотрудничества (Collaboration diagram) ](collaboration-diagram.html)
 * [Диаграмма развёртывания (Deployment diagram) ](deployment-diagram.html)
 * [Диаграмма последовательности (Sequence diagram) ](sequence-diagram.html)

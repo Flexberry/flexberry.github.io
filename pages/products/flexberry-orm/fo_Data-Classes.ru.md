@@ -12,7 +12,7 @@ lang: ru
 
 * '''Продукт''': [Flexberry Designer](flexberry-designer.html)
 * '''Компонент''': [Редактор UML-диаграмм](editing-diagram.html)
-* '''Предназначение''': Классы со [стереотипом](key-concepts-flexberry-designer.html) implementation (или без указания стереотипа) на [диаграмме классов](class-diagram.html) представляют собой классы данных.
+* '''Предназначение''': Классы со [стереотипом](key-concepts-flexberry-designer.html) implementation (или без указания стереотипа) на [диаграмме классов](fd_class-diagram.html) представляют собой классы данных.
 </td>
 </tr></tbody></table></a>
 </div>

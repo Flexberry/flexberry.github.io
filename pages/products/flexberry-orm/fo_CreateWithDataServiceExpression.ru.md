@@ -22,7 +22,7 @@ lang: ru
 Как создавать вычислимые свойства объектов данных описано [здесь](not-stored--attributes.html). Рассмотрим подробнее процесс создания вычислимого свойства с помощью DataServiceExpression на примере следующей задачи: "Есть система учёта покупателей, где хранится информация об их покупках. У покупок может быть два статуса: "Передано в банк" и "Оплачено". Необходимо определить у покупателя вычислимое поле "Сумма оплаченных покупок".".
 
 ## Работа во Flexberry Designer
-Создаём во Flexberry Designer [диаграмму классов](class-diagram.html).
+Создаём во Flexberry Designer [диаграмму классов](fd_class-diagram.html).
 
 ![Изображение](/images/img/page/CreateWithDataServiceExpression/ClassDiagram_CustomerPurchase.jpg)
 

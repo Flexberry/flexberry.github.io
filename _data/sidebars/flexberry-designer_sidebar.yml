@@ -9,10 +9,26 @@ entries:
   - title: Getting Started
     title_ru: Начало работы
     output: web, pdf
+    
     folderitems:
     - title: Flexberry Designer
       title_ru: Flexberry Designer
       url: /fd_flexberry-designer.html
+      output: web
+
+    - title: Case plugins
+      title_ru: Модули расширения функциональности Flexberry Designer
+      url: /fd_case-plugins.html
+      output: web
+
+    - title: Communication models with system technology architecture applications
+      title_ru: Связь моделей с системно-технологической архитектурой приложений
+      url: /fd_communication-models-with-system-technology-architecture-applications.html
+      output: web
+
+    - title: Create new repository
+      title_ru: Создание нового репозитория
+      url: fd_create-new-repository.html
       output: web
 
   - title: Сommon information about diagrams editor

@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # Удаление мастеров
-Пусть дана следующая [диаграмма](class-diagram.html):
+Пусть дана следующая [диаграмма](fd_class-diagram.html):
 
 ![](/images/pages/img/Filters/KreditDiagramm.png)
 

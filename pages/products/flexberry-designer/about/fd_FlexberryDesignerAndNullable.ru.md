@@ -20,7 +20,7 @@ lang: ru
 # Настройка Flexberry Designer для .Net Nullable-типов
 Рассмотрим порядок настройки [Flexberry Designer](flexberry-designer.html) для поддержки [Nullable-типов](nullable-types.html) на следующем примере.
 
-'''Нужно использовать на [диаграмме классов](class-diagram.html) тип "`bool?`"'''
+'''Нужно использовать на [диаграмме классов](fd_class-diagram.html) тип "`bool?`"'''
 
 1. создать класс NullBool [со стереотипом typedef](classes-with-stereotype--typedef.html);
 

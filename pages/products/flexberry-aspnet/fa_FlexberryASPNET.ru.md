@@ -19,7 +19,7 @@ lang: ru
 * [Темы оформления](flexberry-asp-net-themes.html)
 
 # Описание продукта
-Посредством `[Flexberry Designer](flexberry-designer.html)` возможно создание [диаграммы классов](class-diagram.html). С этой [диаграммы](class-diagram.html) можно сформировать необходимую структуру базы данных (БД), объектную модель и готовое web-приложение.
+Посредством `[Flexberry Designer](flexberry-designer.html)` возможно создание [диаграммы классов](fd_class-diagram.html). С этой [диаграммы](fd_class-diagram.html) можно сформировать необходимую структуру базы данных (БД), объектную модель и готовое web-приложение.
 
 # Ограничения Flexberry ASP.Net
 * [Список поддерживаемых браузеров](browsers.html)
