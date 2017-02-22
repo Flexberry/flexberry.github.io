@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-data/addon/adapters/odata.js - Flexberry Documentation</title>
+    <title>ember-flexberry-data/addon/utils/first-load-offline-objects.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -355,274 +355,76 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-data/addon/adapters/odata.js <small>File</small></h1>
+    <h1>ember-flexberry-data/addon/utils/first-load-offline-objects.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
-import DS from &#x27;ember-data&#x27;;
+/**
+  @module ember-flexberry-data
+*/
 
-import SnapshotTransform from &#x27;../utils/snapshot-transform&#x27;;
-import ODataQueryAdapter from &#x27;../query/odata-adapter&#x27;;
+import Ember from &#x27;ember&#x27;;
 
 /**
- * The OData adapter class.
- * Uses Flexberry Query as a language for requesting server.
- *
- * @module ember-flexberry-data
- * @namespace Adapter
- * @class OData
- * @extends DS.RESTAdapter
- * @public
- */
-export default DS.RESTAdapter.extend({
-  headers: {
-    Prefer: &#x27;return=representation&#x27;
-  },
+  Load and save offline objects provided by odata function or returns objects count.
+  Tables with objects to load must be empty.
 
-  idType: &#x27;number&#x27;,
-
-  /**
-    Timeout for AJAX-requests.
-
-    @property timeout
-    @type Number
-    @default 0
-  */
-  timeout: 0,
-
-  /**
-    Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
-    Called by the sore in order to fetch data from the server.
-
-    @method query
-    @param {DS.Store} store
-    @param {DS.Model} type
-    @param {Query} query Flexberry Query object.
-    @return {Promise}
-  */
-  query(store, type, query) {
-    let url = this._buildURL(query.modelName);
-    let builder = new ODataQueryAdapter(url, store);
-    let data = builder.getODataQuery(query);
-    let timeout = this.get(&#x27;timeout&#x27;);
-
-    if (this.sortQueryParams) {
-      data = this.sortQueryParams(data);
-    }
-
-    Ember.debug(&#x60;Flexberry ODataAdapter::query &#x27;${type}&#x27;&#x60;, data);
-
-    // TODO: think about moving request execution into query adapter
-    return this.ajax(url, &#x27;GET&#x27;, { data: data, timeout: timeout });
-  },
-
-  /**
-   * Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
-   * Called by the sore in order to fetch single record from the server.
-   *
-   * @method queryRecord
-   * @param {DS.Store} store
-   * @param {DS.Model} type
-   * @param {Query} query
-   * @return {Promise} promise
-   */
-  /* jshint unused:vars */
-  queryRecord(store, type, query) {
-    Ember.debug(&#x60;Flexberry ODataAdapter::queryRecord &#x27;${type}&#x27;&#x60;, query);
-
-    // TODO: query support for direct calls
-    return this._super.apply(this, arguments);
-  },
-  /* jshint unused:true */
-
-  /**
-   * Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
-   * Called by the sore in order to fetch single record by ID from the server.
-   *
-   * @method findRecord
-   * @param {DS.Store} store
-   * @param {DS.Model} type
-   * @param {String} id
-   * @param {DS.Snapshot} snapshot
-   * @return {Promise} promise
-  */
-  /* jshint unused:vars */
-  findRecord(store, type, id, snapshot) {
-    Ember.debug(&#x60;Flexberry ODataAdapter::findRecord &#x27;${type}(${id})&#x27;&#x60;);
-
-    // TODO: query support for direct calls
-    return this._super.apply(this, arguments);
-  },
-  /* jshint unused:true */
-
-  /**
-   * Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
-   * Called by the sore in order to fetch all records from the server.
-   *
-   * @method findAll
-   * @param {DS.Store} store
-   * @param {DS.Model} type
-   * @param {String} sinceToken
-   * @param {DS.SnapshotRecordArray} snapshotRecordArray
-   * @return {Promise} promise
-   */
-  /* jshint unused:vars */
-  findAll(store, type, sinceToken, snapshotRecordArray) {
-    Ember.debug(&#x60;Flexberry ODataAdapter::findAll &#x27;${type}&#x27;&#x60;);
-
-    // TODO: query support for direct calls
-    return this._super.apply(this, arguments);
-  },
-  /* jshint unused:true */
-
-  /**
-   * Overloaded method from &#x60;build-url-mixin&#x60; (Ember Data), that determines the pathname for a given type.
-   * Additionally capitalizes the type name (requirement of Flexberry OData Server).
-   *
-   * @method pathForType
-   * @param {String} modelName
-   * @return {String} The path for a given type.
-   */
-  pathForType(modelName) {
-    var camelized = Ember.String.camelize(modelName);
-    var capitalized = Ember.String.capitalize(camelized);
-    return Ember.String.pluralize(capitalized);
-  },
-
-  /**
-   * Returns URL for exported excel file.
-   *
-   * @method buildExportExcelURL
-   * @param {Object} store
-   * @param {Object} query
-   * @return {String} The URL for excel file.
-   */
-  buildExportExcelURL(store, query) {
-    let url = this._buildURL(query.modelName);
-    let builder = new ODataQueryAdapter(url, store);
-    url = builder.getODataFullUrl(query) + &#x27;&amp;exportExcel=true&#x27;;
-    return url;
-  },
-
-  /**
-   * Overloaded method from &#x60;build-url-mixin&#x60; (Ember Data), taht builds URL to OData feed.
-   * Appends id as &#x60;(id)&#x60; (OData specification) instead of &#x60;/id&#x60;.
-   *
-   * @method _buildURL
-   * @param {String} modelName
-   * @param {String} id
-   * @return {String}
-   * @private
-   */
-  _buildURL(modelName, id) {
-    var url = [];
-    var host = Ember.get(this, &#x27;host&#x27;);
-    var prefix = this.urlPrefix();
-    var path;
-
-    if (modelName) {
-      path = this.pathForType(modelName);
-      if (path) {
-        url.push(path);
+  @function firstLoadOfflineObjects
+  @param {Object} dexieDB Dexie DB (example: dexieService.dexie(&#x27;DB name&#x27;, store)).
+  @param {String} odataPath Odata Url (example: &#x27;http://localhost:35904/odata&#x27;).
+  @param {String} functionName Odata function name.
+  @param {String} modelName Model name for objects.
+  @param {Bool} count Flag indicates that function returns objects or objects count.
+  @param {Integer} top Amount of objects to load.
+  @param {Integer} skip Amount of objects to skip from result.
+  @param {String} idPath Path to string id in JSON (&#x27;guid&#x27; by default).
+  @return {Promise}
+*/
+export function firstLoadOfflineObjects(dexieDB, odataPath, functionName, modelName, count = false, top = 0, skip = 0, idPath = &#x27;guid&#x27;) {
+  return new Ember.RSVP.Promise(function(resolve, reject) {
+    Ember.$.ajax({
+      method: &#x27;GET&#x27;,
+      url: &#x60;${odataPath}/${functionName}(objToLoad=&#x27;${modelName}&#x27;,top=${top},skip=${skip},count=${count})&#x60;,
+    }).done(function(msg) {
+      let objs = JSON.parse(msg.value);
+      if (!isNaN(+objs)) {
+        return resolve(+objs);
       }
-    }
 
-    if (prefix) {
-      url.unshift(prefix);
-    }
+      let objArray = [];
+      if (objs[modelName] instanceof Array) {
+        Array.prototype.push.apply(objArray, objs[modelName]);
+      } else {
+        objArray.push(objs);
+      }
 
-    url = url.join(&#x27;/&#x27;);
-    if (!host &amp;&amp; url &amp;&amp; url.charAt(0) !== &#x27;/&#x27;) {
-      url = &#x27;/&#x27; + url;
-    }
+      objArray.map(record =&gt; {
+        if (idPath) {
+          record.id =  record.id[idPath];
+        }
 
-    if (id != null) {
-      // Append id as &#x60;(id)&#x60; (OData specification) instead of &#x60;/id&#x60;.
-      url = this._appendIdToURL(id, url);
-    }
+        for (let key in record) {
+          if (record[key] &amp;&amp; record[key].id) {
+            record[key] = idPath ? record[key].id[idPath] : record[key].id;
+          }
 
-    return url;
-  },
+          if (record[key] instanceof Array) {
+            for (let i = 0; i &lt; record[key].length; i++) {
+              if (record[key][i].id) {
+                record[key][i] = idPath ? record[key][i].id[idPath] : record[key][i].id;
+              }
+            }
+          }
+        }
+      });
 
-  /**
-   * Appends id to URL according to the OData specification.
-   *
-   * @method _appendIdToURL
-   * @param {String} id
-   * @param {String} url
-   * @private
-   */
-  _appendIdToURL(id, url) {
-    let encId = encodeURIComponent(id);
-    let idType = Ember.get(this, &#x27;idType&#x27;);
-    if (idType !== &#x27;number&#x27;) {
-      encId = &#x60;&#x27;${encId}&#x27;&#x60;;
-    }
-
-    url += &#x27;(&#x27; + encId + &#x27;)&#x27;;
-    return url;
-  },
-
-  createRecord(store, type, snapshot) {
-    return this._sendRecord(store, type, snapshot, &#x27;createRecord&#x27;);
-  },
-
-  updateRecord(store, type, snapshot) {
-    return this._sendRecord(store, type, snapshot, &#x27;updateRecord&#x27;);
-  },
-
-  deleteRecord(store, type, snapshot) {
-    return this._sendRecord(store, type, snapshot, &#x27;deleteRecord&#x27;);
-  },
-
-  /**
-   * Makes HTTP request for creating, updating or deleting the record.
-   *
-   * @method _sendRecord
-   * @private
-   */
-  _sendRecord(store, type, snapshot, requestType) {
-    // TODO: maybe move it into serializer (serialize or serializeIntoHash)?
-    let skipUnchangedAttrs = true;
-    SnapshotTransform.transformForSerialize(snapshot, skipUnchangedAttrs);
-
-    // NOTE: for newly created records id is not defined.
-    let url = this.buildURL(type.modelName, snapshot.id, snapshot, requestType);
-
-    let httpMethod;
-    switch (requestType) {
-      case &#x27;createRecord&#x27;:
-        httpMethod = &#x27;POST&#x27;;
-        break;
-
-      case &#x27;updateRecord&#x27;:
-        httpMethod = skipUnchangedAttrs ? &#x27;PATCH&#x27; : &#x27;PUT&#x27;;
-        break;
-
-      case &#x27;deleteRecord&#x27;:
-        httpMethod = &#x27;DELETE&#x27;;
-        break;
-
-      default:
-        throw new Error(&#x60;Unknown requestType: ${requestType}&#x60;);
-    }
-
-    let data;
-
-    // Don&#x27;t need to send any data for deleting.
-    if (requestType !== &#x27;deleteRecord&#x27;) {
-      let serializer = store.serializerFor(type.modelName);
-      data = {};
-      serializer.serializeIntoHash(data, type, snapshot);
-    }
-
-    return this.ajax(url, httpMethod, { data: data }).then(function(response) {
-      return response;
+      dexieDB.table(modelName).bulkPut(objArray).then(() =&gt; resolve(), () =&gt; reject());
+    }).fail(function() {
+      return reject(modelName);
     });
-  }
-});
+  });
+}
 
     </pre>
 </div>
