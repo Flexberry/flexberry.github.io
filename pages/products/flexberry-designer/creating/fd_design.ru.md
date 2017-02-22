@@ -4,12 +4,9 @@ sidebar: flexberry-designer_sidebar
 keywords: 
 toc: true
 permalink: ru/fd_design.html
-folder: products/flexberry-designer/about/
+folder: products/flexberry-designer/crating/
 lang: ru
 ---
-
-## Проектирование информационной системы
-
 
 [`Проектирование`](fd_definition-of-design.html) (от латинского `projectus`, что означает "брошенный вперед") - это процесс составления описания, необходимого для создания в заданных условиях еще `не существующего` объекта по первичному описанию этого объекта путем его детализации, дополнения, расчетов и оптимизации.
 

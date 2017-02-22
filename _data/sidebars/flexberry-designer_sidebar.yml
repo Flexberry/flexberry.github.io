@@ -16,6 +16,11 @@ entries:
       url: /fd_flexberry-designer.html
       output: web
 
+    - title: Design
+      title_ru: Проектирование информационных систем
+      url: /fd_design.html
+      output: web
+
     - title: Case plugins
       title_ru: Модули расширения функциональности Flexberry Designer
       url: /fd_case-plugins.html
@@ -29,6 +34,16 @@ entries:
     - title: Create new repository
       title_ru: Создание нового репозитория
       url: fd_create-new-repository.html
+      output: web
+
+  - title: Creating application
+    title_ru: Создание приложений
+    output: web, pdf
+    
+    folderitems:
+    - title: Design
+      title_ru: Проектирование информационных систем
+      url: /fd_design.html
       output: web
 
   - title: Сommon information about diagrams editor
@@ -132,7 +147,7 @@ entries:
 
     - title: Сlasses with stereotype typedef
       title_ru: Синонимы типов (классы со стереотипом typedef)
-      url: fd_classes-with-stereotype-typedef.html
+      url: fd_typedef.html
       output: web, pdf
 
     - title: Сlasses with stereotype editform

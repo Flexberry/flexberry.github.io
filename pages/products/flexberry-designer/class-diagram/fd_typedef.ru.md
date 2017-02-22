@@ -3,7 +3,7 @@ title: Синонимы типов (классы со стереотипом typ
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/fd_classes-with-stereotype-typedef.html
+permalink: ru/fd_typedef.html
 folder: products/flexberry-designer/
 lang: ru
 ---

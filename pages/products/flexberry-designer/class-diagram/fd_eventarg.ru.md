@@ -3,7 +3,7 @@ title: События и параметры событий (классы со с
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/fd_classes-with-stereotype-eventarg.html
+permalink: ru/fd_eventarg.html
 folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---

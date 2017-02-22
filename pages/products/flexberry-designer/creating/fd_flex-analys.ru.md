@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: 
 toc: true
 permalink: ru/fd_flex-analys.html
-folder: products/flexberry-designer/
+folder: products/flexberry-designer/about/
 lang: ru
 ---
 
