@@ -427,6 +427,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry-data/addon/utils/first-load-offline-objects.js": {
+            "name": "ember-flexberry-data/addon/utils/first-load-offline-objects.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-data/addon/utils/generate-unique-id.js": {
             "name": "ember-flexberry-data/addon/utils/generate-unique-id.js",
             "modules": {},
@@ -12786,6 +12793,61 @@
             "return": {
                 "description": "",
                 "type": "Object"
+            },
+            "class": "Utils.Information",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/first-load-offline-objects.js",
+            "line": 7,
+            "description": "Load and save offline objects provided by odata function or returns objects count.\nTables with objects to load must be empty.",
+            "itemtype": "method",
+            "name": "firstLoadOfflineObjects",
+            "params": [
+                {
+                    "name": "dexieDB",
+                    "description": "Dexie DB (example: dexieService.dexie('DB name', store)).",
+                    "type": "Object"
+                },
+                {
+                    "name": "odataPath",
+                    "description": "Odata Url (example: 'http://localhost:35904/odata').",
+                    "type": "String"
+                },
+                {
+                    "name": "functionName",
+                    "description": "Odata function name.",
+                    "type": "String"
+                },
+                {
+                    "name": "modelName",
+                    "description": "Model name for objects.",
+                    "type": "String"
+                },
+                {
+                    "name": "count",
+                    "description": "Flag indicates that function returns objects or objects count.",
+                    "type": "Bool"
+                },
+                {
+                    "name": "top",
+                    "description": "Amount of objects to load.",
+                    "type": "Integer"
+                },
+                {
+                    "name": "skip",
+                    "description": "Amount of objects to skip from result.",
+                    "type": "Integer"
+                },
+                {
+                    "name": "idPath",
+                    "description": "Path to string id in JSON ('guid' by default).",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
             },
             "class": "Utils.Information",
             "module": "ember-flexberry-data"
@@ -43411,6 +43473,10 @@
         {
             "message": "replacing incorrect tag: function with method",
             "line": " ember-flexberry-data/addon/utils/enum-functions.js:41"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " ember-flexberry-data/addon/utils/first-load-offline-objects.js:7"
         },
         {
             "message": "replacing incorrect tag: returns with return",
