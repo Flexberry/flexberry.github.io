@@ -7930,6 +7930,32 @@
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
             "line": 132,
+            "description": "Returns URL for exported excel file.",
+            "itemtype": "method",
+            "name": "buildExportExcelURL",
+            "params": [
+                {
+                    "name": "store",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "query",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The URL for excel file.",
+                "type": "String"
+            },
+            "class": "Adapter.OData",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 147,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), taht builds URL to OData feed.\nAppends id as `(id)` (OData specification) instead of `/id`.",
             "itemtype": "method",
             "name": "_buildURL",
@@ -7957,7 +7983,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 172,
+            "line": 187,
             "description": "Appends id to URL according to the OData specification.",
             "itemtype": "method",
             "name": "_appendIdToURL",
@@ -7981,7 +8007,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 203,
+            "line": 218,
             "description": "Makes HTTP request for creating, updating or deleting the record.",
             "itemtype": "method",
             "name": "_sendRecord",
