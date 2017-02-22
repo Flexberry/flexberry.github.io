@@ -34994,13 +34994,23 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
             "line": 97,
+            "description": "Flag indicates whenever toogler contains resaizable OLV.",
+            "itemtype": "property",
+            "name": "hasResizableOLV",
+            "type": "Boolean",
+            "class": "FlexberryToggler",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-toggler.js",
+            "line": 105,
             "description": "Handles the event, when component has been insterted.\nAttaches event handlers for expanding / collapsing content.",
             "class": "FlexberryToggler",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-toggler.js",
-            "line": 121,
+            "line": 133,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberryToggler",
             "module": "ember-flexberry"
@@ -44800,11 +44810,11 @@
         },
         {
             "message": "Missing item type\nHandles the event, when component has been insterted.\nAttaches event handlers for expanding / collapsing content.",
-            "line": " ember-flexberry/addon/components/flexberry-toggler.js:97"
+            "line": " ember-flexberry/addon/components/flexberry-toggler.js:105"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry/addon/components/flexberry-toggler.js:121"
+            "line": " ember-flexberry/addon/components/flexberry-toggler.js:133"
         },
         {
             "message": "Missing item type\nDefault classes for component wrapper.",
