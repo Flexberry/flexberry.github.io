@@ -3,7 +3,7 @@ title: Формы редактирования (классы со стереот
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/fd_classes-with-stereotype-editform.html
+permalink: ru/fd_editform.html
 folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---

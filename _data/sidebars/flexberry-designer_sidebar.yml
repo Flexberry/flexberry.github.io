@@ -137,7 +137,7 @@ entries:
 
     - title: Сlasses with stereotype editform
       title_ru: Формы редактирования (классы со стереотипом editform)
-      url: fd_classes-with-stereotype-editform.html
+      url: fd_editform.html
       output: web, pdf
 
     - title: External classes
