@@ -17,10 +17,13 @@ lang: ru
 
 ### Базовый курс
 
+* [The SQL-92 standard (англ.)](http://www.contrib.andrew.cmu.edu/~shadow/sql/sql1992.txt)
+* [Стандарты языка реляционных баз данных SQL: краткий обзор](http://citforum.ru/database/articles/art_2.shtml)
 
 ### Самоучители
 
 * [SQL Tutorial](http://www.w3schools.com/sql/default.asp)
+* [Язык запросов SQL](https://sql-language.ru/)
 
 ### Видеокурсы
 
@@ -41,8 +44,8 @@ lang: ru
 
 ## Программное обеспечение
 
-* [-]()
-* [-]()
+* [Microsoft® SQL Server® 2014 Express](https://www.microsoft.com/ru-ru/download/details.aspx?id=42299)
+* [Oracle Database Express Edition 11g Release 2](http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html)
 
 ## Лабораторные работы и практические задания
 
