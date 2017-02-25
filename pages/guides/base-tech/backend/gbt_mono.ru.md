@@ -10,12 +10,20 @@ lang: ru
 
 ## Краткое описание
 
+**Mono** — проект по созданию полноценного воплощения системы .NET Framework на базе свободного программного обеспечения. Основной разработчик проекта Mono — корпорация Xamarin, ранее Novell. Проект возглавляет Мигель де Икаса, известный разработчик, основатель проекта GNOME. Реализации Mono существуют для следующих операционных систем: Windows, Linux, BSD (FreeBSD, OpenBSD, NetBSD), Solaris, Mac OS X, Apple iOS, Wii. Поддерживаются платформы: s390, SPARC, PowerPC, x86/x86-64, IA-64, ARM, Alpha, MIPS, HP PA.
+
 ##  Ссылки на материалы для изучения
 
-* [-]()
-* [-]()
+* [Documentation](http://www.mono-project.com/docs/)
+* [Microsoft .NET Framework](https://flexberry.github.io/ru/gbt_dotnet.html)
+* [ASP.NET](https://flexberry.github.io/ru/gbt_aspnet.html)
+* [Язык программирования С#](https://flexberry.github.io/ru/gbt_csharp.html)
+
+* [Изучение языка C# для начинающих (Mono)](https://www.youtube.com/watch?v=3FWqP80fNJM&list=PL0lO_mIqDDFU66Cwwctcv1C6VNVpaqHfo)
 
 ### Презентация
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5oLgQc_gnJg?list=PLaKXsWB2aJ1utjsUDJDmZBUW2KylhYsx0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ### Рекомендованные книги
 
@@ -24,8 +32,8 @@ lang: ru
 
 ## Программное обеспечение
 
-* [-]()
-* [-]()
+* [Mono](http://www.mono-project.com/download/#download-win)
+* [Xamarin Studio](https://www.xamarin.com/studio)
 
 ## Лабораторные работы и практические задания
 
