@@ -32,13 +32,9 @@ lang: ru
 * [Основы .NET Framework](https://professorweb.ru/my/csharp/base_net/level1/net_index.php)
 * [Сборки .NET Framework](https://professorweb.ru/my/csharp/assembly/level1/assembly_index.php)
 * [Оптимизация приложений на .NET Framework](https://professorweb.ru/my/csharp/optimization/level1/)
-* [LINQ - язык интегрированных запросов](https://professorweb.ru/my/LINQ/base/level1/info_linq.php)
-* [Платформа ADO.NET и Entity Framework](http://metanit.com/sharp/ado.php)
-* [Работа с базами данных в .NET Framework](https://professorweb.ru/my/ADO_NET/base/level1/info_db.php)
 
 ### Видеокурсы
 
-* [Особенности LINQ](https://www.youtube.com/watch?v=gQu-Swk1_hI)
 * [Видеокурс WCF Essential](https://www.youtube.com/playlist?list=PLvItDmb0sZw86Ph0CL6H2BfgXu47-rOvk)
 * [Сборка мусора в .NET](https://www.youtube.com/watch?v=29sxHG3nFx8)
 * [Практические приёмы оптимизации .NET-приложений](https://www.youtube.com/watch?v=fqYaXrwEkl4)
@@ -50,8 +46,6 @@ lang: ru
 ### Рекомендованные книги
 
 * [CLR via C#. Программирование на платформе Microsoft.NET Framework 4.5 на языке C#](http://www.ozon.ru/context/detail/id/21236101/)
-* [LINQ. Карманный справочник](http://www.ozon.ru/context/detail/id/32602672/)
-* [Технология LINQ на примерах](http://www.ozon.ru/context/detail/id/32851534/)
 
 ## Программное обеспечение
 

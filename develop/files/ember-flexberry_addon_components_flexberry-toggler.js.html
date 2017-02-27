@@ -457,6 +457,14 @@ export default Ember.Component.extend({
   iconClass: undefined,
 
   /**
+    Flag indicates whenever toogler contains resaizable OLV.
+
+    @property hasResizableOLV
+    @type Boolean
+  */
+  hasResizableOLV: false,
+
+  /**
     Handles the event, when component has been insterted.
     Attaches event handlers for expanding / collapsing content.
   */
@@ -469,6 +477,10 @@ export default Ember.Component.extend({
         // Change of &#x27;expanded&#x27; state may cause asynchronous animation, so we need Ember.run here.
         Ember.run(() =&gt; {
           this.set(&#x27;expanded&#x27;, true);
+          if (this.get(&#x27;hasResizableOLV&#x27;)) {
+            this.$(&#x27;table.object-list-view&#x27;).colResizable({ disable: true });
+            this.$(&#x27;table.object-list-view&#x27;).colResizable();
+          }
         });
       },
       onClose: () =&gt; {
