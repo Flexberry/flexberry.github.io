@@ -1,7 +1,7 @@
 ---
-title: Модули расширения функциональности Flexberry Designer
+title: Модули расширения функциональности
 sidebar: flexberry-designer_sidebar
-keywords: CASE Plugins, Flexberry Designer, Public
+keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_case-plugins.html
 folder: products/flexberry-designer/about/

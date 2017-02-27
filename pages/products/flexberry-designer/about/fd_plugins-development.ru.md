@@ -1,22 +1,22 @@
 ---
-title: Как создать модуль расширения Flexberry Designer
+title: Создание модуля расширения Flexberry Designer
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_flexberry-designer-plugins-development.html
-folder: products/flexberry-designer/
+permalink: ru/fd_plugins-development.html
+folder: products/flexberry-designer/about/
 lang: ru
 ---
 
 ## Пример создания простейшего модуля расширения для Flexberry Designer
 
-'''Необходимо подключить библиотеки:'''
+**Необходимо подключить библиотеки:**
 
 * ICSSoft.STORMNET.DataObject 
 * Repository 
 * STORM.NET Case Tool plugin
 
-```cs
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -104,7 +104,7 @@ namespace STORMCASE.Plugin
 
 ## Отладка модуля расширения
 
-Для того, чтобы отлаживать модуль расширения, можно в конфигурационном файле Flexberry Designer добавить следующую настройку:
+Для того чтобы отлаживать модуль расширения, можно в конфигурационном файле Flexberry Designer добавить следующую настройку:
 
 ```xml
 <add key="GenerationDebug" value="true"/>

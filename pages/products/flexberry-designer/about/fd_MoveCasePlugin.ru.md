@@ -24,4 +24,4 @@ lang: ru
 
 
 # Подключение плагина
-Плагин располагается в сборке `NewPlatform.Flexberry.Designer.MoveCasePlugin.dll`. Подключение можно выполнить как описано [тут](case-plugins.html).
+Плагин располагается в сборке `NewPlatform.Flexberry.Designer.MoveCasePlugin.dll`. Подключение можно выполнить как описано [тут](fd_case-plugins.html).
