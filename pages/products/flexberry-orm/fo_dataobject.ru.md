@@ -8,24 +8,13 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Программная библиотека''': ICSSoft.STORMNET.DataObject.dll
-* '''Предназначение''': Компоненты для работы с объектной моделью.
-</td>
-</tr></tbody></table></a>
-</div>
-
 # Описание
 В Flexberry ORM '''объектами данных''' называются экземпляры классов наследников абстрактного класса `ICSSoft.STORMNET.DataObject`. Для объектов данных генераторами Flexberry создаётся код класса на .Net CLR-совместимом языке (C#, VB и т.п.).
 
 [anchor|#DataObjectInModel]
 
 # Объекты данных в модели
-[Классы объектов данных](data-object-generated-structure.html) описываются на [диаграмме классов](class-diagram-constraction.html) в [Flexberry Designer](flexberry-designer.html) и имеют стереотип [implementation](data--classes.html). При описании объекта данных задаются [атрибуты](attributes-class-data.html), связи и метаданные. Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](not-stored--attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](features-of-dafault-value-assignment.html). Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](inheritance.html), [мастеровые](master--association.html) и [детейловые](detail-associations-and-their-properties.html) связи.
+[Классы объектов данных](data-object-generated-structure.html) описываются на [диаграмме классов](class-diagram-constraction.html) в [Flexberry Designer](fd_flexberry-designer.html) и имеют стереотип [implementation](data--classes.html). При описании объекта данных задаются [атрибуты](attributes-class-data.html), связи и метаданные. Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](not-stored--attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](features-of-dafault-value-assignment.html). Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](inheritance.html), [мастеровые](master-association.html) и [детейловые](detail-associations-and-their-properties.html) связи.
 
 К объектам данным может быть привязана дополнительная информация (метаинформация), например, [представления](view-definition.html) или [изображение](class-image.html). 
 

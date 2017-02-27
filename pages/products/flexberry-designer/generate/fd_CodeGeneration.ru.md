@@ -8,18 +8,10 @@ folder: products/flexberry-designer/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
-
-* '''Продукт''': [Flexberry Designer](flexberry-designer.html)
-* '''Компонент''': [Редактор UML-диаграмм](editing-diagram.html)
-* '''Предназначение''': Описан общий подход к перегенерации кода во [Flexberry Designer](flexberry-designer.html).
-</td>
-</tr></tbody></table></a>
-</div>
 # Model-Driven Development
-При разработке приложений с помощью [Flexberry Designer](flexberry-designer.html) используется [Model-Driven Architecture](https://ru.wikipedia.org/wiki/Model_Driven_Architecture) - то есть разработка производится путем создания и доработки модели приложения.
+При разработке приложений с помощью [Flexberry Designer](fd_flexberry-designer.html) используется [Model-Driven Architecture](https://ru.wikipedia.org/wiki/Model_Driven_Architecture) - то есть разработка производится путем создания и доработки модели приложения.
 
-К сожалению, ограничиться лишь созданием модели невозможно, так как необходимо реализовывать уникальную для каждого проекта логику. Однако, [Flexberry Designer](flexberry-designer.html) позволяет взять на себя рутину создания приложений и значительно ускорить процесс разработки.
+К сожалению, ограничиться лишь созданием модели невозможно, так как необходимо реализовывать уникальную для каждого проекта логику. Однако, [Flexberry Designer](fd_flexberry-designer.html) позволяет взять на себя рутину создания приложений и значительно ускорить процесс разработки.
 
 ## Модель
 В качестве средства визуализации модели используется [UML](http://ru.wikipedia.org/wiki/UML). Однако, модель не ограничивается [созданием диаграмм](editing-diagram.html): существует множество метаданных, влияющих на генерацию исполняемого кода приложения.

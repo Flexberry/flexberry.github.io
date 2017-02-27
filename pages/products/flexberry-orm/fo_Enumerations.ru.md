@@ -8,14 +8,6 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
-
-* '''Продукт''': [Flexberry Designer](flexberry-designer.html)
-* '''Компонент''': [Редактор UML-диаграмм](editing-diagram.html)
-* '''Предназначение''': Классы со [стереотипом](key-concepts-flexberry-designer.html) Enumeration на [диаграмме классов](fd_class-diagram.html) представляют собой перечислимый тип.
-</td>
-</tr></tbody></table></a>
-</div>
 # Перечислимые типы данных (классы со стереотипом enumeration)
 `Enumeration` - [стереотип](key-concepts-flexberry-designer.html) UML-класса, обозначающий перечислимый тип.
 

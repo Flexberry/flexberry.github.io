@@ -8,14 +8,7 @@ folder: products/flexberry-designer/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
-
-* '''Продукт''': [Flexberry Designer](flexberry-designer.html)
-* '''Предназначение''': Существует [несколько способов установить и настроить](flexberry-designer-install.html) [Flexberry Designer](flexberry-designer.html). Один из них - установка приложения из архива.
-</td>
-</tr></tbody></table></a>
-</div>
-Существует [несколько способов установить и настроить](flexberry-designer-install.html) [Flexberry Designer](flexberry-designer.html). Один из них - установка приложения из архива.
+Существует [несколько способов установить и настроить](flexberry-designer-install.html) [Flexberry Designer](fd_flexberry-designer.html). Один из них - установка приложения из архива.
 
 1. Для запуска Flexberry Designer необходимо '''наличие [поддерживаемой СУБД](data-service.html)''' (установленной на Вашем компьютере, или где-то в сети) и [установленной лицензии](installation-licensing-files.html).
 

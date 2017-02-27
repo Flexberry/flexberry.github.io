@@ -7,8 +7,9 @@ permalink: ru/fd_history-plugin.html
 folder: products/flexberry-designer/
 lang: ru
 ---
+
 # Описание
-Модуль расширения [Flexberry Designer](flexberry-designer.html): History разработан для хранения истории изменения Стадий с возможностью восстановления состояния стадии на момент сохранения.
+Модуль расширения [Flexberry Designer](fd_flexberry-designer.html): History разработан для хранения истории изменения Стадий с возможностью восстановления состояния стадии на момент сохранения.
 
 # Возможности плагина
 Плагин History позволяет выполнять следующий набор операций с записями об изменениях стадии:

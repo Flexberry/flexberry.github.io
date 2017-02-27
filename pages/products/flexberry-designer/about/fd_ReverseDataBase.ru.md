@@ -8,20 +8,6 @@ folder: products/flexberry-designer/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-
-* '''Продукт''': [Flexberry Designer](flexberry-designer.html)
-* '''Компонент''': [OrmCasePlugin](flexberry-orm-case-plugin.html)
-* '''Предназначение''': Создание диаграммы классов по базе данных.
-</td>
-</tr></tbody></table></a>
-</div>
-
-
-
 # Функционал
 Данная функция позволяет создавать диаграммы классов по базе данных.
 

@@ -3,25 +3,14 @@ title: Установка Flexberry Designer
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_flexberry-designer-install.html
+permalink: ru/fd_install.html
 folder: products/flexberry-designer/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Designer](flexberry-designer.html)
-* '''Предназначение''': Существует [несколько способов установить и настроить](flexberry-designer-standalone-install.html) [Flexberry Designer](flexberry-designer.html). Один из них - установка приложения с сайта [Flexberry.ru](http://flexberry.ru/Try).
-</td>
-</tr></tbody></table></a>
-</div>
+Существует [несколько способов установить и настроить](fd_standalone-install.html) [Flexberry Designer](fd_flexberry-designer.html). Один из них - установка приложения с сайта [Flexberry.ru](http://flexberry.ru/Try).
 
-# Установка Flexberry Designer
-Существует [несколько способов установить и настроить](flexberry-designer-standalone-install.html) [Flexberry Designer](flexberry-designer.html). Один из них - установка приложения с сайта [Flexberry.ru](http://flexberry.ru/Try).
-
-Для установки [Flexberry Designer](flexberry-designer.html) необходимо на сайте [Flexberry.ru](http://flexberry.ru/Try) нажать кнопку "Установить" в разделе  ["Попробовать"](http://flexberry.ru/Try).
+Для установки [Flexberry Designer](fd_flexberry-designer.html) необходимо на сайте [Flexberry.ru](http://flexberry.ru/Try) нажать кнопку "Установить" в разделе  ["Попробовать"](http://flexberry.ru/Try).
 
 Для работы приложения на компьютере должно быть установлено следующее ПО (перед установкой это будет проверено и, если чего-то будет не хватать, установлено):
 * SQL Server 2012 Express LocalDB
@@ -77,7 +66,7 @@ lang: ru
 В этом случае рекомендуется запустить приложение повторно через созданный на рабочем столе ярлык.
 
 ## Установка лицензий
-При данном способе получения продукта [Flexberry Designer](flexberry-designer.html) [установка лицензий](installation-licensing-files.html) будет происходить следующим образом:
+При данном способе получения продукта [Flexberry Designer](fd_flexberry-designer.html) [установка лицензий](installation-licensing-files.html) будет происходить следующим образом:
 * При установке приложения у пользователя будут запрошены логин и пароль от сайта [Flexberry.ru](http://flexberry.ru/Try), откуда лицензия будет выкачана и автоматически установлена.
 * По окончании срока лицензии при запуске приложения пользователю вновь будет предложено ввести учётные данные от сайта [Flexberry.ru](http://flexberry.ru/Try) для скачивания [приобретённой лицензии](http://flexberry.ru/Buy).
 

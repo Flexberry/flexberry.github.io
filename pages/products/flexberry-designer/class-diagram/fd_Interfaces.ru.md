@@ -8,16 +8,8 @@ folder: products/flexberry-designer/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
-
-* '''Продукт''': [Flexberry Designer](flexberry-designer.html)
-* '''Компонент''': [Редактор UML-диаграмм](editing-diagram.html)
-* '''Предназначение''': Классы со [стереотипом](key-concepts-flexberry-designer.html) interface на [диаграмме классов](fd_class-diagram.html) представляют собой интерфейсы.
-</td>
-</tr></tbody></table></a>
-</div>
 # Интерфейсы (классы со стереотипом interface)
-[Flexberry Designer](flexberry-designer.html) позволяет пользователю описывать интерфейсы, для последующей генерации в исходный код на `CLR`-совместимом языке, в частности, `C#`.
+[Flexberry Designer](fd_flexberry-designer.html) позволяет пользователю описывать интерфейсы, для последующей генерации в исходный код на `CLR`-совместимом языке, в частности, `C#`.
 
 Для описания интерфейса, необходимо создать на диаграмме UML-класс со стереотипом `interface`.
 

@@ -8,16 +8,6 @@ folder: products/flexberry-designer/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Designer](flexberry-designer.html)
-* '''Предназначение''': Проектирование информационных систем.
-</td>
-</tr></tbody></table></a>
-</div>
-
 # Ключевые понятия
 Структура данных определяет структуру приложения. В основу систем кладётся структура данных, выражаемая диаграммой классов UML.
 
