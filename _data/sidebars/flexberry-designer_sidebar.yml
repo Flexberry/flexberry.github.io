@@ -1,6 +1,5 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
-
 entries:
 - title: Sidebar
   product: Flexberry Designer
@@ -110,7 +109,7 @@ entries:
     title_ru: Общие принципы построения диаграммы классов
     output: web, pdf
 
- folderitems:
+    folderitems:
     - title: Class diagram constraction
       title_ru: Особенности построения диаграммы классов  
       url: /fd_class-diagram-constraction.html
@@ -172,11 +171,11 @@ entries:
       output: web, pdf
 
   - title: Audit
-      title_ru: Аудит в Flexberry Designer
-      output: web, pdf
+    title_ru: Аудит в Flexberry Designer
+    output: web, pdf
 
-      folderitems:
-      - title: Audit setup
-        title_ru: Настройка аудита в Flexberry Designer
-        url: fd_audit-setup.html
-        output: web, pdf
+    folderitems:
+    - title: Audit setup
+      title_ru: Настройка аудита в Flexberry Designer
+      url: fd_audit-setup.html
+      output: web, pdf
