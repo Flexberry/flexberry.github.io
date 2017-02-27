@@ -1,5 +1,5 @@
 ---
-title: Создание приложения при помощи Flexberry. Содержание.
+title: Содержание
 sidebar: product--sidebar
 keywords: Flexberry
 toc: true

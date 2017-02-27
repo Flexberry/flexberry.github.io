@@ -1,5 +1,5 @@
 ---
-title: Создание приложения при помощи Flexberry. Этап доработки приложения. 
+title: Этап доработки приложения 
 sidebar: product--sidebar
 keywords: Flexberry, Ключевые понятия
 toc: true

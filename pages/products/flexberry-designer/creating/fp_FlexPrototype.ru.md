@@ -1,5 +1,5 @@
 ---
-title: Создание приложения при помощи Flexberry. Этап создания прототипа. 
+title: Этап создания прототипа 
 sidebar: product--sidebar
 keywords: Flexberry, Ключевые понятия
 toc: true

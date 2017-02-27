@@ -1,5 +1,5 @@
 ---
-title: Создание приложения при помощи Flexberry. Описание методологии MDD.
+title: Описание методологии MDD
 sidebar: product--sidebar
 keywords: Flexberry, Ключевые понятия
 toc: true

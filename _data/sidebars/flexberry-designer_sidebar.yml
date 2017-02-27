@@ -110,6 +110,7 @@ entries:
     title_ru: Общие принципы построения диаграммы классов
     output: web, pdf
 
+ folderitems:
     - title: Class diagram constraction
       title_ru: Особенности построения диаграммы классов  
       url: /fd_class-diagram-constraction.html

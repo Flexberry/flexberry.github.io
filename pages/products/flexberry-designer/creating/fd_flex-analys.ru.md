@@ -1,5 +1,5 @@
 ---
-title: Создание приложения при помощи Flexberry. Этап анализа.
+title: Этап анализа
 sidebar: flexberry-designer_sidebar
 keywords: 
 toc: true

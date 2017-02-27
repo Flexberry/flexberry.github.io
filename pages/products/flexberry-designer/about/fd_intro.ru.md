@@ -19,5 +19,5 @@ lang: ru
 * [Диаграмма последовательности (Sequence diagram) ](sequence-diagram.html)
 * [Диаграмма состояний (Statechart diagram) ](statechart-diagram.html)
 * [Диаграмма вариантов использования (UseCase diagram)](use-case-diagram.html)
-* [Установка лицензионных файлов](installation-licensing-files.html)
+* [Установка лицензионных файлов](fd_installation-licensing-files.html)
 * [Подключение к Flexberry дополнительных модулей](case-plugins.html)
