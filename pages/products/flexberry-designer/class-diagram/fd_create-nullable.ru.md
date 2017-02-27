@@ -1,7 +1,7 @@
 ---
 title: Настройка Flexberry Designer для Nullable-типов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, How to (page), Public
+keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_create-nullable.html
 folder: products/flexberry-designer/class-diagram/

@@ -1,7 +1,7 @@
 ---
 title: Содержание
-sidebar: product--sidebar
-keywords: Flexberry
+sidebar: flexberry-designer_sidebar
+keywords: Flexberry Designer
 toc: true
 permalink: ru/flexberry.html
 folder: product--folder

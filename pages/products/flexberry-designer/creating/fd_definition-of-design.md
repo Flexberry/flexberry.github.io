@@ -1,7 +1,7 @@
 ﻿---
 title: Определение проектирования
 sidebar: flexberry-designer_sidebar
-keywords: 
+keywords: Flexberry Designer
 toc: true
 permalink: ru/ffd_definition-of-design.html
 folder: products/flexberry-designer/crating/

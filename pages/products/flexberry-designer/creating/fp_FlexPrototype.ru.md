@@ -1,6 +1,6 @@
 ---
 title: Этап создания прототипа 
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry, Ключевые понятия
 toc: true
 permalink: ru/flex-prototype.html

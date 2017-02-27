@@ -1,7 +1,7 @@
 ---
 title: Основные виды представлений
 sidebar: flexberry-designer_sidebar
-keywords: View (представление)
+keywords: View
 toc: true
 permalink: ru/fd_view-types.html
 folder: products/flexberry-designer/

@@ -1,7 +1,7 @@
 ---
 title: Этап анализа
 sidebar: flexberry-designer_sidebar
-keywords: 
+keywords: Flexberry Designer
 toc: true
 permalink: ru/fd_flex-analys.html
 folder: products/flexberry-designer/about/

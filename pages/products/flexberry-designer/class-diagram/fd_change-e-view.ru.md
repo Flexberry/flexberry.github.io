@@ -1,7 +1,7 @@
 ---
 title: Изменение представления формы редактирования
 sidebar: flexberry-designer_sidebar
-keywords: View (представление)
+keywords: View
 toc: true
 permalink: ru/fd_change-e-view.html
 folder: products/flexberry-designer/class-diagram/

@@ -1,7 +1,7 @@
 ---
 title: Форма редактирования представлений
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public, View (представление)
+keywords: Flexberry Designer, Public, View
 toc: true
 permalink: ru/fd_view-edit-form.html
 folder: products/flexberry-designer/

@@ -1,7 +1,7 @@
 ---
 title: Скрытые свойства в представлении
 sidebar: flexberry-designer_sidebar
-keywords: View (представление)
+keywords: View
 toc: true
 permalink: ru/fd_hidden-properties-in-view.html
 folder: products/flexberry-designer/

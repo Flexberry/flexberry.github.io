@@ -1,7 +1,7 @@
 ---
 title: T-представление
 sidebar: flexberry-designer_sidebar
-keywords: View (представление)
+keywords: View
 toc: true
 permalink: ru/fd_t-view.html
 folder: products/flexberry-designer/

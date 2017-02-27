@@ -1,7 +1,7 @@
 ---
 title: E-представление
 sidebar: flexberry-designer_sidebar
-keywords: View (представление)
+keywords: View
 toc: true
 permalink: ru/fd_e-view.html
 folder: products/flexberry-designer/class_diagram/

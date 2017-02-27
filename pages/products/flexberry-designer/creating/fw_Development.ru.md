@@ -1,7 +1,7 @@
 ---
 title: Реализация информационных систем
-sidebar: product--sidebar
-keywords: 
+sidebar: flexberry-designer_sidebar
+keywords: Flexberry Designer
 toc: true
 permalink: ru/fw_development.html
 folder: products/flexberry-winforms/

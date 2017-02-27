@@ -1,7 +1,7 @@
 ---
 title: Проектирование информационных систем
 sidebar: flexberry-designer_sidebar
-keywords: 
+keywords: Flexberry Designer
 toc: true
 permalink: ru/fd_design.html
 folder: products/flexberry-designer/crating/

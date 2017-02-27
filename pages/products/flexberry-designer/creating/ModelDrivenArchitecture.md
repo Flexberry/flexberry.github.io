@@ -1,6 +1,6 @@
 ---
 title: Описание методологии MDD
-sidebar: product--sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry, Ключевые понятия
 toc: true
 permalink: ru/model-driven-architecture.html

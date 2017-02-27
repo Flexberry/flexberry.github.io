@@ -1,7 +1,7 @@
 ---
 title: Внесение изменений в модель приложения
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Security, View (представление), БД, Бизнес-серверы, Ограничения
+keywords: Flexberry Security, View, БД, Бизнес серверы, Ограничения
 toc: true
 permalink: ru/fd_change-model.html
 folder: products/flexberry-designer/

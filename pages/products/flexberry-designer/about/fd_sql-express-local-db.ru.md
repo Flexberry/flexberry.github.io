@@ -1,7 +1,7 @@
 ---
 title: Запуск Flexberry Desinger под SQL Server Express LocalDB
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, How to (page), Public, БД
+keywords: Flexberry Designer, Public, БД
 toc: true
 permalink: ru/fd_sql-express-local-db.html
 folder: products/flexberry-designer/about/
