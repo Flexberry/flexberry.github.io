@@ -26,6 +26,7 @@ lang: ru
 
 * [Шаблон проектирования - Википедия](https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F)
 * [Паттерны проектирования](https://refactoring.guru/ru/design-patterns)
+* [Обзор паттернов проектирования](http://citforum.ru/SE/project/pattern/index.shtml)
 * [Справочник «Паттерны проектирования»](http://design-pattern.ru/)
 
 ### Самоучители
@@ -43,7 +44,7 @@ lang: ru
 ### Презентация
 
 <div class="thumb-wrap">
-<iframe src="http://ppt-online.org/embed/34856" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="http://ppt-online.org/embed/34856" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen="" webkitAllowFullScreen="" mozAllowFullscreen=""></iframe>
 </div>
 
 ### Рекомендованные книги
