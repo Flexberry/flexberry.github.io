@@ -91,15 +91,7 @@ entries:
       url: /fd_standalone-install.html
       output: web
 
-  - title: Creating application
-    title_ru: Создание приложений
-    output: web, pdf
-    
-    folderitems:
-    - title: Design
-      title_ru: Проектирование информационных систем
-      url: /fd_design.html
-      output: web
+  
 
   - title: Сommon information about diagrams editor
     title_ru: Общие сведения о редакторе UML-диаграмм
@@ -113,7 +105,7 @@ entries:
 
     - title: Working with diagrams in the repository browser
       title_ru: Работа с диаграммами в браузере репозитория
-      url: fd_working-with-diagrams-in-the-repository-browser.html
+      url: fd_working-repository-browser.html
       output: web, pdf
 
     - title: Editing diagram
@@ -225,6 +217,16 @@ entries:
       title_ru: E-представление
       url: fd_e-view.html
       output: web, pdf
+
+  - title: Creating application
+    title_ru: Создание приложений
+    output: web, pdf
+    
+    folderitems:
+    - title: Design
+      title_ru: Проектирование информационных систем
+      url: /fd_design.html
+      output: web
 
   - title: Audit
     title_ru: Аудит в Flexberry Designer

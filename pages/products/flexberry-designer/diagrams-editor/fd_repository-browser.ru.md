@@ -49,4 +49,4 @@ lang: ru
 
 * [Ярлыки для диаграмм в Flexberry Designer](fd_diagram-links.html)
 * [Импорт стадий и диаграмм](fd_import-crp-csdg.html)
-* [Работа с диаграммами в браузере репозитория](fd_working-with-diagrams-in-the-repository-browser.html)
+* [Работа с диаграммами в браузере репозитория](fd_working-repository-browser.html)
