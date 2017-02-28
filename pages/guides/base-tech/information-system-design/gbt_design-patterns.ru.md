@@ -44,7 +44,7 @@ lang: ru
 ### Презентация
 
 <div class="thumb-wrap">
-<iframe src="http://ppt-online.org/embed/34856" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen="" webkitAllowFullScreen="" mozAllowFullscreen=""></iframe>
+<iframe src="http://ppt-online.org/embed/34856" width="683" height="562" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://ppt-online.org/34856" target="_blank">Введение в паттерны проектирования. (Занятие 13)</a> </strong></div>
 </div>
 
 ### Рекомендованные книги
@@ -52,28 +52,6 @@ lang: ru
 * [Приемы объектно-ориентированного проектирования. Паттерны проектирования](http://www.ozon.ru/context/detail/id/2457392/)
 * [Паттерны проектирования](http://www.ozon.ru/context/detail/id/31079082/)
 * [Паттерны проектирования на платформе .NET](http://www.ozon.ru/context/detail/id/33497715/)
-
-## Программное обеспечение
-
-* [-]()
-* [-]()
-
-## Лабораторные работы и практические задания
-
-* [-]()
-* [-]()
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
 
 ## Примеры
 
