@@ -4,8 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
 permalink: ru/fo_data-object-get-presentation-value.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
 При необходимости получения строкового представления `DataObject` можно воспользоваться методом `DataObject.GetPresentationValue()`. Данный метод вернет значение атрибутов "Название", "Наименование", "Name" при их наличии, либо первый строковый атрибут. При отсутствии строковых атрибутов вернется значение метода `DataObject.ToString()`.

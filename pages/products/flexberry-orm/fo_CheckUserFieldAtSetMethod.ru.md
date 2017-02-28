@@ -4,8 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
 permalink: ru/fo_check-user-field-at-set-method.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 Проверка данных на форме может осуществляться за счёт генерации исключения при неправильном вводе в методе `set` соответствующего поля объекта.
 
@@ -31,6 +29,7 @@ public class Кредит : ICSSoft.STORMNET.DataObject
 	}
 }
 ```
+
 Другие методы проверки данных на форме описаны [здесь](edit-form-validation.html). 
 
 Сравнение этого метода с некоторыми другими можно найти [здесь](check-form-field-during-edit.html).

@@ -4,44 +4,44 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_func-is-null.html
-folder: products/flexberry-orm/
-lang: ru
 ---
-### FuncIsNull
+#### FuncIsNull
 
 FuncIsNull = is null
 
 Функция, аналогичная проверке на null в SQL
 
-### Пример
+#### Пример
 Рассмотрим пример
 
 ![](/images/pages/img/Filters/FilterExDiagram.PNG)
 
-### Задача
+#### Задача
 
 Вычитать все `Кредиты`, у которых `ДатаВыдачи` равняется `null`
 
-### SQL
+#### SQL
 
 SQL-выражение выглядело бы следующим образом:
 
-```
+```sql
  SELECT * FROM Кредит WHERE ДатаВыдачи is null 
 ```
 
-### [FunctionalLanguage](function-list.html)
+#### [FunctionalLanguage](function-list.html)
 
-```cs    Клиент клиент = new Клиент();
+```cs    
+	Клиент клиент = new Клиент();
 	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 	Function lf = langdef.GetFunction(langdef.funcIsNull, new VariableDef(langdef.DateTimeType, "ДатаВыдачи"));
 ```
 
 
-### Параметры GetFunction
+#### Параметры GetFunction
 Для FuncIsNull необходим один параметр - описание переменной (Variable Definition), которую надо проверить на `null`
 
-### Пример
+#### Пример
+
 ```
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 
@@ -53,7 +53,7 @@ var credits = DataServiceProvider.DataService.LoadObjects(lcs);```
 
 
 
-# См. также
+## См. также
 [Перечень функций](function-list.html)
 
 ----

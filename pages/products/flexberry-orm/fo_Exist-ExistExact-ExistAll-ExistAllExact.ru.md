@@ -4,23 +4,23 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_exist--exist-exact--exist-all--exist-all-exact.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
 <div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](limitation.html)
-* '''Программная библиотека''': ExternalLangDef.dll.
-* '''Предназначение''': Представлены основные функции [ExternalLangDef](external-lang-def.html) для построения [ограничений](limit-function.html) над детейлами.
+
+* **Продукт**: [Flexberry ORM](flexberry-o-r-m.html)
+* **Компонент**: [Компоненты для фильтрации и ограничения выборки получаемых данных](limitation.html)
+* **Программная библиотека**: ExternalLangDef.dll.
+* **Предназначение**: Представлены основные функции [ExternalLangDef](external-lang-def.html) для построения [ограничений](limit-function.html) над детейлами.
+
 </td>
 </tr></tbody></table></a>
 </div>
 
-# Описание и ключевые различия функций: funcExist, funcExistExact, funcExistAll, funcExistAllExact
+## Описание и ключевые различия функций: funcExist, funcExistExact, funcExistAll, funcExistAllExact
 При помощи этих функций [ExternalLangDef](external-lang-def.html) возможно накладывать [ограничения](limit-function.html) только на детейлы ([пример](limit-details-by-agregators-prop.html))
 
 
@@ -36,12 +36,13 @@ lang: ru
 | funcExistAllExact || Существуют все только такие {}, что {} И {} И {} ... || Вернет True, если все объекты удовлетворяют условию, в противном случае - False. В качестве условия могут выступать множество функций, которые автоматически соединятся конъюнкцией. Внимание! Допустимых видов функций только две: "=" ([FuncEQ](func-e-q.html)) и "СРЕДИ ЗНАЧЕНИЙ()" ([FuncIN](func-e-q.html)).
 |}
 
-# Пример
+## Пример
 ![](/images/pages/img/Code Examples/Безымянный.jpg)
 
 В следующем коде подразумевается, что в представлении `"СерверПодразделенияE"` обязательно присутствуют свойства `"Подразделение"` (так как оно есть в условии) и `"Сервер"` (свойство, по которому идет соединение).
 
 Требуется вычитать те сервера, которые принадлежат определённому Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, также будут вычитаны).
+
 ```
 ExternalLangDef ldef = ExternalLangDef.LanguageDef;
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Репликации.Сервер), "СерверE");
@@ -62,6 +63,7 @@ ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.Data
 ```
 
 Требуется вычитать только те сервера, которые принадлежат только одному конкретному Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, не будут вычитаны).
+
 ```
 ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "СерверE");
