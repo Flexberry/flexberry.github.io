@@ -4,14 +4,15 @@ sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_advanced_working_with_views.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
-**Вы можете создать [представление](view-definition.html) динамически.**
+'''Вы можете создать [представление](view-definition.html) динамически.'''
 
 Если вам нужно создать [представление](view-definition.html) "в коде", "на лету", тогда используйте один из следующих вариантов:
 
 1. Создать [представление](view-definition.html), используя конструктор по умолчанию, затем заполнить необходимые свойства
-
 ```cs
 // Создать пустое представление.
 ICSSoft.STORMNET.View dynaview = new ICSSoft.STORMNET.View();
@@ -28,9 +29,7 @@ dynaview.AddMasterInView("Publisher");
 
 // Также вы можете использовать метод dynaview.AddDetailInView для связывания этого представления с детейловыми представлениями.
 ```
-
 2. Создать динамическое [представление](view-definition.html) с помощью ViewAttribute
-
 ```
 
 ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(
@@ -38,7 +37,7 @@ ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(
     typeof(CDDA));
 ```
 
-**[Операции с представлениями](view--operations.html). Каждое представление выступает как набор свойств.**
+'''[Операции с представлениями](view--operations.html). Каждое представление выступает как набор свойств.'''
 ```
 
 ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(

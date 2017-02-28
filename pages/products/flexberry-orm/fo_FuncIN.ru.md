@@ -4,34 +4,35 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_func-i-n.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
-#### FuncIN
+### FuncIN
 
 FuncIN = In
 
 Функция, аналогичная проверке на вхождение в SQL.
 
-#### Пример
+### Пример
 Рассмотрим пример
 
 ![](/images/pages/img/Filters/FilterExDiagram.PNG)
 
-#### Задача
+### Задача
 
 Вычитать все `Кредиты`, выданные особым клиентам, список ключей которых нам известен.
 
-#### SQL
+### SQL
 
 SQL-выражение выглядело бы следующим образом:
 
 ```
 SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')
 ```
-
 Где {IDList} - список [первичных ключей](primary-keys-objects.html) искомых `Клиентов`
 
-#### [FunctionalLanguage](function-list.html)
+### [FunctionalLanguage](function-list.html)
 
 ```cs        List<Клиент> клиенты = new List<Клиент>();
         SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
@@ -45,10 +46,10 @@ SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')
 ```
 
 
-#### Параметры GetFunction
+### Параметры GetFunction
 Из примера видно, что функция GetFunction принимает один параметр: массив, состоящий из определения переменной (Variable Def) и объектов, среди которых будет производиться поиск.
 
-#### Пример
+### Пример
 Более сложный пример использования FuncIN вкупе с другими функциями-ограничителями
 
 ```cs lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Награждение), "НаграждениеВСпискеНаграждений2L");
@@ -84,8 +85,9 @@ ldef.GetFunction(ldef.funcNOT,
 		new VariableDef(ldef.StringType, "Гражданин.Комментарий"))),
 ldef.GetFunction(ldef.funcEQ,
 	new VariableDef(ldef.StringType, "СписокНаграждений.Награда.Наименование"),
-	nagr.СписокНаграждений.Награда.Наименование));
-```
+	nagr.СписокНаграждений.Награда.Наименование));```
 
-## См. также
+
+
+# См. также
 [Перечень функций](function-list.html)

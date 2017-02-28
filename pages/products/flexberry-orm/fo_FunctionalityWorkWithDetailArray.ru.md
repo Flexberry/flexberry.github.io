@@ -4,35 +4,36 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_functionality-work-with-detail-array.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 <div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
 
-* **Продукт**: [Flexberry ORM](flexberry-o-r-m.html)
-* **Компонент**: [Объект данных](dataobject.html)
-* **Программная библиотека**: ICSSoft.STORMNET.DataObject.dll
-* **Предназначение**: Описана базовая функциональность при работе с массивами детейловых объектов (DetailArray).
-
+* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
+* '''Компонент''': [Объект данных](dataobject.html)
+* '''Программная библиотека''': ICSSoft.STORMNET.DataObject.dll
+* '''Предназначение''': Описана базовая функциональность при работе с массивами детейловых объектов (DetailArray).
 </td>
 </tr></tbody></table></a>
 </div>
 
-## Базовая функциональность по работе с массивами детейловых объектов
+# Базовая функциональность по работе с массивами детейловых объектов
 DetailArray поддерживает базовую функциональность по работе с массивами [детейловых](detail-associations-and-their-properties.html) объектов:
 
 * Поддержка ссылки на [шапку (агрегатор)](fd_key-concepts.html).
 * Поддержка коллекции: 
-* * добавление (AddObject, AddRange), 
-* * вставка (Insert), 
-* * удаление (Remove, RemoveByIndex, RemoveByKey),
-* * очистка (Clear), 
-* * установка/взятие значения (GetByKey, SetByKey),
-* * перемещение (Move),
-* * количество объектов (Count),
-* * перебор объектов в конструкции foreach.
+** добавление (AddObject, AddRange), 
+** вставка (Insert), 
+** удаление (Remove, RemoveByIndex, RemoveByKey),
+** очистка (Clear), 
+** установка/взятие значения (GetByKey, SetByKey),
+** перемещение (Move),
+** количество объектов (Count),
+** перебор объектов в конструкции foreach.
 * Поддержка упорядочения (порядка, в котором лежат [объекты данных](dataobject.html)).
 
-### Агрегирующие функции
+## Агрегирующие функции
 Чтобы среди объектов, находящихся в массиве [детейлов](detail-associations-and-their-properties.html), посчитать какую-либо агрегирующую функцию (сумма, макс., мин., среднее значение, что-либо произвольное), необходимо в классе, унаследованном от `DetailArray`, определить функцию без параметров, которая возвращает некоторое значение. Далее, к этой функции необходимо приписать атрибут `AggregationFunction`. Параметрами являются: имя свойства, для которого эта агрегирующая функция, и строка формата (`String.Format`), в соответствии с которой значение будет выводиться пользователю. 
 
 (((
@@ -43,7 +44,7 @@ DetailArray поддерживает базовую функциональнос
 </msg>
 )))
 
-### Упорядочивание
+## Упорядочивание
 Объекты в массиве детейлов могут быть упорядочены (именно упорядочены, а не отсортированы), т.е. располагаться в каком-либо, строго определённом порядке.
 
 Для того, чтобы ввести упорядочение, необходимо в [детейловый класс](detail-associations-and-their-properties.html) данных ввести целочисленное (`System.Int32`) свойство с приписанным атрибутом `Order`. 

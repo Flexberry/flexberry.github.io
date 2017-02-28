@@ -4,10 +4,11 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_data-object-prototype.html
+folder: products/flexberry-orm/
+lang: ru
 ---
-## Методы для прототипизации DataObject
+# Методы для прототипизации DataObject
 Для прототипизации `[DataObject](dataobject.html)` существует метод `Prototyping`.
-
 ```cs
 /// <summary>
 /// Прототипизировать
@@ -15,12 +16,10 @@ permalink: ru/fo_data-object-prototype.html
 /// <param name="withDetails">с детейлами или без</param>
 public virtual void Prototyping(bool withDetails)
 ```
-
 Также существует перегрузка данного метода без параметров (в этом случае будет просто произведён вызов метода `Prototyping(true)`).
 
-## Прототипизация DataObject
+# Прототипизация DataObject
 При прототипизации происходят следующие действия:
-
 * сбрасывается значение [первичного ключа объекта](primary-keys-objects.html) (генерируется новое);
 * [статус объекта](object-status-and-loading-state.html) изменяется на `ObjectStatus.Created`;
 * [состояние загрузки объекта](object-status-and-loading-state.html) устанавливается в `LoadingState.NotLoaded`;
@@ -28,8 +27,7 @@ public virtual void Prototyping(bool withDetails)
 
 Если переданный параметр `withDetails` имеет значение `true`, то прототипизация будет выполнена и для всех детейлов.
 
-## Примечания по протитопизации
-
+# Примечания по протитопизации
 * Получить [первичный ключ объекта](primary-keys-objects.html), который он имел до прототипизации, можно через свойство `<nowiki>__PrototypeKey</nowiki>`.
 * Очистка свойства `<nowiki>__PrototypeKey</nowiki>` происходит при вызове метода `ClearPrototyping` (если вызов был произведён без параметров или значение параметра было `true`, то соответствующее свойство будет очищено и у детейлов).
 * Вызов метода `ClearPrototyping(true)` также происходит при сохранении объекта через [SQLDataService](s-q-l-data-service.html).

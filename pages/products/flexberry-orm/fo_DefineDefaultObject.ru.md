@@ -4,24 +4,25 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
 permalink: ru/fo_define-default-object.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 Была поставлена следующая задача: "Добавить выбор магазина в начало работы с программой, чтобы не вводить его каждый раз при составлении заказа". Возможно следующее решение данной задачи:
-## Для выбора текущего объекта в начале работы с программой можно использовать [генерируемую Flexberry форму для нехранимого класса](using-of-not-stored-classes.html).
-## Для хранения текущего объекта можно использовать [статическое поле](http://msdn.microsoft.com/library/98f28cdx.aspx) общедоступного класса.
-## Для установки текущего объекта можно использовать решение, предложенное [здесь](define-field-of-created-object.html). 
+# Для выбора текущего объекта в начале работы с программой можно использовать [генерируемую Flexberry форму для нехранимого класса](using-of-not-stored-classes.html).
+# Для хранения текущего объекта можно использовать [статическое поле](http://msdn.microsoft.com/library/98f28cdx.aspx) общедоступного класса.
+# Для установки текущего объекта можно использовать решение, предложенное [здесь](define-field-of-created-object.html). 
 
 Для демонстрации варианта решения данной проблемы ниже представлено решение следующей задачи: "Есть список магазинов. При запуске приложения появляется форма, где необходимо выбрать текущий магазин. При создании записи о покупке текущий магазин автоматически подставляется.".
 
-## Работа в Flexberry Tool
+# Работа в Flexberry Tool
 В Flexberry была создана диаграмма классов. Для определения текущего магазина [был создан нехранимый класс](using-of-not-stored-classes.html)  `ВыборМагазинаПоУмолчанию` и сгенерирован программный код.
 
 
 ![](/images/pages/img/page/DefineDefaultObject/ClassDiagram_Shops.jpg)
 
 
-## Работа с программным кодом
+# Работа с программным кодом
 В общедоступном для разрабатываемых приложений классе определяем [статическое поле](http://msdn.microsoft.com/library/98f28cdx.aspx).
-
 ```cs
 public class Магазин : ICSSoft.STORMNET.DataObject
 {
@@ -29,7 +30,6 @@ public class Магазин : ICSSoft.STORMNET.DataObject
 	//...
 }
 ```
-
 Проводим дизайн сгенерированной формы редактирования `<nowiki>WinformC__ТекущийМагазинE</nowiki>` [нехранимого класса](using-of-not-stored-classes.html), для подавления сообщения о сохранении данных на форме [переопределяем метод `OnClosing`, где запрещаем вызов базового метода](using-of-not-stored-classes.html).
 
 
@@ -37,7 +37,6 @@ public class Магазин : ICSSoft.STORMNET.DataObject
 
 
 Определяем работу формы `<nowiki>WinformC__ТекущийМагазинE</nowiki>` при нажатии на кнопки.
-
 ```cs
 private void buttonAuthorize_Click(object sender, EventArgs e) //нажатие на кнопку "Авторизовать"
 {
@@ -58,9 +57,7 @@ private void buttonExit_Click(object sender, EventArgs e) //нажатие на 
 	this.Close();
 }
 ```
-
 [Запускаем форму модально](using-of-not-stored-classes.html) до запуска рабочего стола приложения. Пример из класса `МенеджерМагазиновDesktop`:
-
 ```cs
 public static bool Run_SetCurrentShopForm()
 {
@@ -110,5 +107,4 @@ static void Main()
 	//...
 }
 ```
-
 ----
