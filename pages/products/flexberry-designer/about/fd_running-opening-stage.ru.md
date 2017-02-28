@@ -1,5 +1,5 @@
 ---
-title: Запуск Flexberry Designer с открытием указанной стадии
+title: Запуск с открытием указанной стадии
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true

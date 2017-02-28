@@ -1,5 +1,5 @@
 ---
-title: Создание модуля расширения Flexberry Designer
+title: Создание модуля расширения
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true

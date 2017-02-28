@@ -3,7 +3,7 @@ title: Модули расширения функциональности
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_case-plugins.html
+permalink: ru/fd_flexberry-plugins.html
 folder: products/flexberry-designer/about/
 lang: ru
 ---

@@ -15,24 +15,80 @@ entries:
       url: /fd_flexberry-designer.html
       output: web
 
-    - title: Design
-      title_ru: Проектирование информационных систем
-      url: /fd_design.html
+
+    - title: Flexberry plugins
+      title_ru: Модули расширения функциональности
+      url: /fd_flexberry-plugins.html
       output: web
 
-    - title: Case plugins
-      title_ru: Модули расширения функциональности Flexberry Designer
-      url: /fd_case-plugins.html
-      output: web
-
-    - title: Communication models with system technology architecture applications
+    - title: Communication models with application's architecture
       title_ru: Связь моделей с системно-технологической архитектурой приложений
-      url: /fd_communication-models-with-system-technology-architecture-applications.html
+      url: /fd_communication-models-applications.html
       output: web
 
     - title: Create new repository
       title_ru: Создание нового репозитория
       url: fd_create-new-repository.html
+      output: web
+
+    - title: Diagram links
+      title_ru: Ярлыки для диаграмм
+      url: /fd_diagram-links.html
+      output: web
+
+    - title: History plugin
+      title_ru: Модуль расширения History
+      url: /fd_history-plugin.html
+      output: web
+
+    - title: Install Flexberry Designer
+      title_ru: Установка Flexberry Designer
+      url: /fd_install.html
+      output: web
+
+    - title: Intelli search plugin
+      title_ru: Плагин для поиска
+      url: /fd_intelli-search-plugin.html
+      output: web
+
+    - title: Key concepts
+      title_ru: Ключевые понятия объектной структуры
+      url: /fd_key-concepts.html
+      output: web
+
+    - title: Move case plugin
+      title_ru: Плагин перемещения или копирования
+      url: /fd_move-case-plugin.html
+      output: web
+
+    - title: Plugins development
+      title_ru: Создание модуля расширения
+      url: /fd_plugins-development.html
+      output: web
+
+    - title: Recommended structure repository
+      title_ru: Рекомендуемая структура репозитория
+      url: /fd_recommended-structure-repository.html
+      output: web
+
+    - title: Running opening stage
+      title_ru: Запуск с открытием указанной стадии
+      url: /fd_running-opening-stage.html
+      output: web
+
+    - title: Sign assembly
+      title_ru: Подписывание сборок в Flexberry
+      url: /fd_sign-assembly.html
+      output: web
+
+    - title: Running by SQLExpress LocalDB
+      title_ru: Запуск под SQL Server Express LocalDB
+      url: /fd_sql-express-local-db.html
+      output: web
+
+    - title: Standalone install
+      title_ru: Независимая установка
+      url: /fd_standalone-install.html
       output: web
 
   - title: Creating application

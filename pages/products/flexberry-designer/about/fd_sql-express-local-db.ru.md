@@ -1,5 +1,5 @@
 ---
-title: Запуск Flexberry Desinger под SQL Server Express LocalDB
+title: Запуск под SQL Server Express LocalDB
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, БД
 toc: true

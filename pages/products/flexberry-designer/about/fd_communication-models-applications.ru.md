@@ -3,7 +3,7 @@ title: Связь моделей с системно-технологическ�
 sidebar: flexberry-designer_sidebar
 keywords: Ключевые понятия
 toc: true
-permalink: ru/fd_communication-models-with-system-technology-architecture-applications.html
+permalink: ru/fd_communication-models-applications.html
 folder: products/flexberry-designer/about/
 lang: ru
 ---

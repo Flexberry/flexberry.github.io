@@ -1,5 +1,5 @@
 ---
-title: Независимая установка Flexberry Designer
+title: Независимая установка
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
@@ -23,7 +23,7 @@ lang: ru
 
 4. После запуска Flexberry необходимо создать Репозиторий для работы, выбрав пункт меню `Репозиторий` – `Создать новый`:
 
-![](/images/pages/products/flexberry-designer/about/create-new-repository.png)
+![](/images/pages/products/flexberry-designer/about/fd_create-new-repository.png)
 
 5. Далее необходимо настроить новый Репозиторий, выбрав пункт меню `Репозиторий` – `Редактировать свойства`, в открывшемся окне можно изменить наименование репозитория, а также необходимо подключить плагины:
 

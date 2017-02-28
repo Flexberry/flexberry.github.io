@@ -1,5 +1,5 @@
 ---
-title: Ярлыки для диаграмм в Flexberry Designer
+title: Ярлыки для диаграмм
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
