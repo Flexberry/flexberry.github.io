@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # Перечислимые типы данных (классы со стереотипом enumeration)
-`Enumeration` - [стереотип](fd_key-concepts.html) UML-класса, обозначающий перечислимый тип.
+`Enumeration` - [стереотип](key-concepts-flexberry-designer.html) UML-класса, обозначающий перечислимый тип.
 
 Атрибуты UML-класса являются значениями перечислимого типа.
 

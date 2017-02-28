@@ -10,7 +10,7 @@ lang: ru
 
 Класс `Application` предназначен для описания структуры и свойств клиентского приложения, непосредственно запускаемого пользователем.
 
-Для того чтобы описать приложение, необходимо создать UML-класс со [стереотипом](fd_key-concepts.html) `application`.
+Для того чтобы описать приложение, необходимо создать UML-класс со [стереотипом](fd_key-concepts-flexberry-designer.html) `application`.
 
 ![](/images/pages/products/flexberry-designer/class-diagram/application.png)
 

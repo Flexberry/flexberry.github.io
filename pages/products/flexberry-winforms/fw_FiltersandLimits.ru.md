@@ -45,13 +45,13 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 )))
 
 
-[FilterSettings](filter-settings.html) определяют настройки для [детейлов](fd_key-concepts.html) и лукапов (например, без таких настроек при задании ограничений невозможно использовать [детейлы](fd_key-concepts.html)). 
+[FilterSettings](filter-settings.html) определяют настройки для [детейлов](key-concepts-flexberry-designer.html) и лукапов (например, без таких настроек при задании ограничений невозможно использовать [детейлы](key-concepts-flexberry-designer.html)). 
 
 
 После задания FilterSettings в БД приложения, на которую была настроена [AdmConsole](), заполнятся следующие таблицы:
 * STORMFILTERSETTING (содержит названия настроек фильтров и названия объектов, к которым будут применены данные настройки);
 * STORMFILTERLOOKUP (содержит настройки для лукапов); 
-* STORMFILTERDETAIL (содержит настройки для [детейлов](fd_key-concepts.html));
+* STORMFILTERDETAIL (содержит настройки для [детейлов](key-concepts-flexberry-designer.html));
 
 (((
 <msg type=note>[AdmConsole]() адекватно [создаёт настройки автоматически](filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](set-runtime-dotnet-version.html) для [AdmConsole]().</msg>

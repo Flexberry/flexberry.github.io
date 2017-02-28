@@ -84,8 +84,8 @@ if ((DataObject as Кредит).Ставки.Count > 0)
 }
 ```
 #### Удаление элементов из детейлов
-Для удаления [детейла](fd_key-concepts.html) необходимо установить ему статус [Deleted](processing-status-and-condition-of-load-object-data-services.html) (при этом [детейл](fd_key-concepts.html) только метится на удаление, а физически удаляется при обновлении).
-Ниже представлен пример удаления всех элементов из [детейлов](fd_key-concepts.html):
+Для удаления [детейла](key-concepts-flexberry-designer.html) необходимо установить ему статус [Deleted](processing-status-and-condition-of-load-object-data-services.html) (при этом [детейл](key-concepts-flexberry-designer.html) только метится на удаление, а физически удаляется при обновлении).
+Ниже представлен пример удаления всех элементов из [детейлов](key-concepts-flexberry-designer.html):
 ```cs
 foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObject).СтрокиПланаВыплат)
 {

@@ -9,12 +9,12 @@ lang: ru
 ---
 
 # Классы данных (классы со стереотипом implementation или без указания стереотипа)
-[Стереотип](fd_key-concepts.html) `implementation` может указываться, а может не указываться, суть одна: UML-класс, соответствующий некоторой предметной сущности.
+[Стереотип](key-concepts-flexberry-designer.html) `implementation` может указываться, а может не указываться, суть одна: UML-класс, соответствующий некоторой предметной сущности.
 
 ![](/images/pages/img/Flexberry plugins/implementation.jpg)
 
 (((
-<msg type=important>Классы данных, связанные [иерархией наследования](inheritance.html), [ассоциациями](master--association.html) и [агрегациями](detail-associations-and-their-properties.html) друг с другом, образуют так называемую "[объектную структуру прикладной системы](fd_key-concepts.html)", т.е. структуру предметных сущностей и их отношения.</msg>
+<msg type=important>Классы данных, связанные [иерархией наследования](inheritance.html), [ассоциациями](master--association.html) и [агрегациями](detail-associations-and-their-properties.html) друг с другом, образуют так называемую "[объектную структуру прикладной системы](key-concepts-flexberry-designer.html)", т.е. структуру предметных сущностей и их отношения.</msg>
 )))
 
 ## Что генерируется с класса данных
