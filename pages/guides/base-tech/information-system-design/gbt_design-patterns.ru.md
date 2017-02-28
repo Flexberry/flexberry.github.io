@@ -44,7 +44,7 @@ lang: ru
 ### Презентация
 
 <div class="thumb-wrap">
-<iframe src="http://ppt-online.org/embed/34856" width="683" height="562" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://ppt-online.org/34856" target="_blank">Введение в паттерны проектирования. (Занятие 13)</a> </strong></div>
+<iframe src="http://ppt-online.org/embed/34856" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://ppt-online.org/34856" target="_blank">Введение в паттерны проектирования. (Занятие 13)</a> </strong></div>
 </div>
 
 ### Рекомендованные книги
