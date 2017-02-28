@@ -4,11 +4,9 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, For code validate, Public, БД
 toc: true
 permalink: ru/fo_c-a-s-e--insensitive-for--d-b.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
-## CASE Insensitive для БД
+### CASE Insensitive для БД
 
 В конфигурационном файле нужно указать параметр
 

@@ -4,18 +4,18 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_data-objects-and-database-structures.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
 <div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Сервис данных](data-service.html)
-* '''Программная библиотека''': ICSSoft.STORMNET.DataObject.dll, ICSSoft.STORMNET.Business.dll
-* '''Предназначение''': Описаны основные принципы отображения объектной модели на реляционную структуру.
+
+* **Продукт**: [Flexberry ORM](flexberry-o-r-m.html)
+* **Компонент**: [Сервис данных](data-service.html)
+* **Программная библиотека**: ICSSoft.STORMNET.DataObject.dll, ICSSoft.STORMNET.Business.dll
+* **Предназначение**: Описаны основные принципы отображения объектной модели на реляционную структуру.
+
 </td>
 </tr></tbody></table></a>
 </div>
@@ -23,8 +23,7 @@ lang: ru
 Большинство [сервисов данных](data-service.html) обеспечивают работу с реляционным хранилищем.
 Объектные данные [Flexberry ORM](flexberry-o-r-m.html) хранит следующим образом:
 
-
-•	Каждый класс — отдельная таблица. 
+•   Каждый класс — отдельная таблица. 
 
 •	Каждый атрибут — отдельное поле в таблице.
 

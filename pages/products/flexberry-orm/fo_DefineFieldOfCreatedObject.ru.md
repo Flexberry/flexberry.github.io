@@ -4,13 +4,12 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
 permalink: ru/fo_define-field-of-created-object.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
 (((Данная статья ещё редактируется)))
 
 Если есть некий текущий объект, который должен быть указан по умолчанию при создании другого объекта, то можно переопределить метод `[Edit](form-interaction.html)`, где проверить, что [статус загрузки данных определён как `ObjectStatus.Created`](object-status-and-loading-state.html), после чего установить текущий объект в интересующее поле и [отразить изменения на форме с помощью `EditManager`](edit-manager-change.html). 
+
 ```cs
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
 {

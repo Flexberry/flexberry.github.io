@@ -4,11 +4,9 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry, Public
 toc: true
 permalink: ru/fo_current-user-service.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
-# CurrentUserService
+## CurrentUserService
 ICSSoft.Services.CurrentUserService позволяет получать текущего пользователя приложения. А также менять как отдельные свойства пользователя, так и сам способ работы с ним.
 
 Получить текущего пользователя приложения можно используя `ICSSoft.Services.CurrentUserService.CurrentUser`. Атрибут имеет интерфейс `ICSSoft.Services.CurrentUserService+IUser`:
@@ -38,7 +36,6 @@ ICSSoft.Services.CurrentUserService позволяет получать теку
 Если необходимо изменить способ работы с текущим пользователем (например, хранить логин пользователя в кэше веб приложения), нужно реализовать интерфейс `ICSSoft.Services.CurrentUserService+IUser` и сопоставить ему получившийся обработчик. Для сопоставления можно использовать метод `ICSSoft.Services.CurrentUserService.ResolveUser<T>()` и настройки в конфигурационном файле (используется [Flexberry UnityFactory](unity-factory.html)):
 
 ```
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -66,11 +63,11 @@ ICSSoft.Services.CurrentUserService позволяет получать теку
 </configuration>
 ```
 
-# Переопределение сервиса текущего пользователя
-'''Вынести пример сюда'''
+## Переопределение сервиса текущего пользователя
+**Вынести пример сюда**
 --Пример переопределения сервиса текущего пользователя находится [здесь](right-manager-for-strokes-example.html).--
 
-# Возможные ошибки
+## Возможные ошибки
 Если `CurrentUserService` выдает ошибку и сообщает, что не может найти сборку `Microsoft.Practices.Unity`.
 
 Это связано с тем, что этой сборки действительно нет в папке с бинарниками проекта, так как она не копируется туда при сборке проекта. Однако, зачастую бывает, что она есть в глобальной папке со сборками операционной системы.
