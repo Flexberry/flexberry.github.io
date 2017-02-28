@@ -33,7 +33,7 @@ public class SimpleDataObject:DataObject
 		public virtual int IntAttr {get{return fIntAttr;} set{fIntAttr=value;}}
 	}
 ```
-[Мастеровая ассоциация](master--association.html) представлена в классе данных членом соответствующего типа – мастерового класса данных, и аналогичным свойством, объявленным как virtual.
+[Мастеровая ассоциация](master-association.html) представлена в классе данных членом соответствующего типа – мастерового класса данных, и аналогичным свойством, объявленным как virtual.
 Пример:
 ```
 
@@ -42,7 +42,7 @@ public virtual MasterDataObject Master {get{return fMaster;} set{fMaster=value;}
 ```
 Если [класс является агрегируемым](detail-associations-and-their-properties.html), то:
 
-1. Генерируется свойство, указывающее [агрегатор(шапку)](key-concepts-flexberry-designer.html). Это свойство помечается атрибутом `ICSSoft.STORMNET.DataObject.AgregatorAttribute.`
+1. Генерируется свойство, указывающее [агрегатор(шапку)](fd_key-concepts.html). Это свойство помечается атрибутом `ICSSoft.STORMNET.DataObject.AgregatorAttribute.`
 Пример класса данных детейла:
 ```
 

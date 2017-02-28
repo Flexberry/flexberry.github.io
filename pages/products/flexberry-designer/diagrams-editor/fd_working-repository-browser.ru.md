@@ -3,7 +3,7 @@ title: Работа с диаграммами в браузере репозит
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_working-with-diagrams-in-the-repository-browser.html
+permalink: ru/fd_working-repository-browser.html
 folder: products/flexberry-designer/diagrams-editor/
 lang: ru
 ---

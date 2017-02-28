@@ -21,7 +21,7 @@ lang: ru
 # Базовая функциональность по работе с массивами детейловых объектов
 DetailArray поддерживает базовую функциональность по работе с массивами [детейловых](detail-associations-and-their-properties.html) объектов:
 
-* Поддержка ссылки на [шапку (агрегатор)](key-concepts-flexberry-designer.html).
+* Поддержка ссылки на [шапку (агрегатор)](fd_key-concepts.html).
 * Поддержка коллекции: 
 ** добавление (AddObject, AddRange), 
 ** вставка (Insert), 

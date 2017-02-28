@@ -25,7 +25,7 @@ lang: ru
 
 
 # Как подключить GEEditorExt
-Разберём пример подключения `GEEditorExt` на примере, где "Покупатель" - это [класс мастера](key-concepts-flexberry-designer.html), "Покупка" - [класс детейла](key-concepts-flexberry-designer.html).
+Разберём пример подключения `GEEditorExt` на примере, где "Покупатель" - это [класс мастера](fd_key-concepts.html), "Покупка" - [класс детейла](fd_key-concepts.html).
 
 
 ![](/images/pages/img/page/GEEditorExt/ClassDiagram_CustomerPurchase2.jpg)

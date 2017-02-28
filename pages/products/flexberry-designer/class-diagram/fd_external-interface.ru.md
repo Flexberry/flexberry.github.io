@@ -7,7 +7,7 @@ permalink: ru/fd_external-interface.html
 folder: products/flexberry-designer/
 lang: ru
 ---
-Классы со [стереотипом](fd_key-concepts-flexberry-designer.html) ExternalInterface - это всего лишь указание на то, что нужно будет сгенерировать [наследование](fd_inheritance.html) от интерфейса для того класса, который будет наследоваться от этого интерфейса.
+Классы со [стереотипом](fd_key-concepts.html) ExternalInterface - это всего лишь указание на то, что нужно будет сгенерировать [наследование](fd_inheritance.html) от интерфейса для того класса, который будет наследоваться от этого интерфейса.
 
 ## Пример использования класса со стереотипом ExternalInterface
 Пусть в проекте `CatInterface` объявлен интерфейс IКошка

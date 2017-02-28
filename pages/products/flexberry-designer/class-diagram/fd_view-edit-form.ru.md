@@ -49,8 +49,8 @@ lang: ru
 
 Передвигаясь курсором по списку можно настроить свойства, расположенные в правой части формы. 
 * "Заголовок", "Путь", "Видимость"- аналогичны тем же свойствам для атрибутов. 
-* "Представление" - включаемое [представление](view-definition.html) [детейлового класса](detail-associations-and-their-properties.html) (помните о том, что в [представление](view-definition.html) [шапки](key-concepts-flexberry-designer.html) включается [представление](view-definition.html) [детейла](detail-associations-and-their-properties.html) а не он сам).
-* "Загружать вместе с шапкой" - при загрузке сервисом данных объекта [шапки](key-concepts-flexberry-designer.html) в данном представлении, будут ли прочитаны [детейлы](detail-associations-and-their-properties.html) в этом представлении.
+* "Представление" - включаемое [представление](view-definition.html) [детейлового класса](detail-associations-and-their-properties.html) (помните о том, что в [представление](view-definition.html) [шапки](fd_key-concepts.html) включается [представление](view-definition.html) [детейла](detail-associations-and-their-properties.html) а не он сам).
+* "Загружать вместе с шапкой" - при загрузке сервисом данных объекта [шапки](fd_key-concepts.html) в данном представлении, будут ли прочитаны [детейлы](detail-associations-and-their-properties.html) в этом представлении.
 
 
 # Горячие клавиши
