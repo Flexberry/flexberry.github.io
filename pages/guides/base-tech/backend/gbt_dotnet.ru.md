@@ -60,8 +60,8 @@ lang: ru
 
 ## Возможности по сертификации
 
-* [-]()
-* [-]()
+* [Курсы и сертификации Microsoft](http://www.specialist.ru/vendor/microsoft)
+* [Сертификация Microsoft](https://habrahabr.ru/post/249331/)
 
 ## Перейти
 
