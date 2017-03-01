@@ -4,10 +4,10 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_add-page-to-web-desktop.html
-folder: products/flexberry-aspnet/
-lang: ru
+
 ---
-Чтобы добавить собственную форму на рабочий стол Web-приложения необходимо:
+## Чтобы добавить собственную форму на рабочий стол Web-приложения необходимо:
+
 1. Открыть файл карты сайта ASP.NET (`web.sitemap` по умолчанию).
 2. Добавить необходимые элементы дерева меню.
 
@@ -58,6 +58,18 @@ lang: ru
 ```
 
 В итоге получится примерно следующее:
-![](/images/pages/img/Учебник программиста Casseberry/WebDesktopPlus.png)
+
+![](/flexberry.github.io/flexberry.github.io/images/pages/products/flexberry-aspnet/aspnet/WebDesktopPlus.png)
 
 Подробнее о карте сайта можно посмотреть в [MSDN](http://msdn.microsoft.com/ru-ru/library/yy2ykkab%28v=vs.100%29.aspx).
+
+## Откуда ссылаются на эту страницу
+
+* [Приложение и рабочий стол](https://flexberry.github.io/ru/fw_app-desktop.html)
+* [Пример подключения аудита к существующему Web-приложению с использованием перегенерации проекта.](https://flexberry.github.io/ru/fa_audit-web-example.html)
+* [Решения по верстке страниц и CSS](https://flexberry.github.io/ru/fa_page-layout.html)
+
+## Куда ссылается эта страница
+
+* [Flexberry ASP.NET](https://flexberry.github.io/ru/fa_flexberry-a-s-p-n-e-t.html)
+* [Решения по верстке страниц и CSS](https://flexberry.github.io/ru/fa_page-layout.html)
