@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: View
 toc: true
 permalink: ru/fd_e-view.html
-folder: products/flexberry-designer/class_diagram/
+folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 
@@ -23,7 +23,7 @@ lang: ru
 
 **Например**: группа - `Статья УК`, атрибуты – `Наименование`, `Номер`, `Часть`, `Пункт`.
 
-![](/images/pages/products/flexberry-designer/class-diagram/class-diagram/EView1.JPG)
+![](/images/pages/products/flexberry-designer/class-diagram/e-view1.jpg)
 
 
 Если к мастеру относится только один атрибут, например «Наименование», то создавать для него отдельную группу (groupBox) не рекомендуется.
@@ -32,29 +32,29 @@ lang: ru
 
 **Пример 1**: `Время передачи`, `Время выезда`, `Время начала работ`, `Время окончания работ`.
 
-![](/images/pages/products/flexberry-designer/class-diagram/EView2.JPG)
+![](/images/pages/products/flexberry-designer/class-diagram/e-view2.jpg)
 
 
 **Пример 2**: атрибуты `КогдаПроизошлоПроисш`, `КогдаПроизошлоПроисшПо` можно объединить в группу `Время происшествия` и использовать внутри группы заголовки “С” и “По”.
 
-![](/images/pages/products/flexberry-designer/class-diagram/EView3.JPG)
+![](/images/pages/products/flexberry-designer/class-diagram/e-view3.jpg)
 
 
 *	Все числовые характеристики, описывающие объект. Например: группа – `Силы и средства`, поля - `Кол-во личного состава`, `”Кол-во автомоб. техники`, `Кол-во инженерной техники`, `Кол-во спец. техники`.
 
-![](/images/pages/products/flexberry-designer/class-diagram/EView4.JPG)
+![](/images/pages/products/flexberry-designer/class-diagram/e-view4.jpg)
 
 
 На закладки чаще всего выносятся детейлы, каждому из которых соответствует отдельная закладка. Например: закладка `Реагирование`
 
-![](/images/pages/products/flexberry-designer/class-diagram/EView5.JPG)
+![](/images/pages/products/flexberry-designer/class-diagram/e-view5.jpg)
 
 
 Либо же в закладку выносится набор логически связанных атрибутов, для экономии места на форме и уменьшения размера формы. Например: закладка `Место`
 
-![](/images/pages/products/flexberry-designer/class-diagram/EView6.JPG)
+![](/images/pages/products/flexberry-designer/class-diagram/e-view6.jpg)
 
 
 Возможен также совмещение подходов в одном: на закладку `Текущая ситуация` можно вынести GroupEdit `Ситуации`, а также некоторые характеристики, такие как `Кол-во пострадавших`, `Кол-во потерпевших`, `Ранг пожара`, `Площадь` и т.п.
 
-![](/images/pages/products/flexberry-designer/class-diagram/EView7.JPG)
+![](/images/pages/products/flexberry-designer/class-diagram/e-view7.jpg)
