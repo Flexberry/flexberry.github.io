@@ -71,6 +71,10 @@ lang: ru
 
 ### Презентация
 
+<div class="thumb-wrap">
+    <iframe width="854" height="480" src="https://www.youtube.com/embed/-XzDcHh5Y5s?list=PLlhqsC7hBaSezv_J4znt-NbFq4MCzcYzk" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ### Рекомендованные книги
 
 * [Программирование с использованием Microsoft ASP.NET 3.5](http://www.ozon.ru/context/detail/id/4148051/)
@@ -86,23 +90,6 @@ lang: ru
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [MonoDevelop (Cross platform IDE for C#, F# and more)](http://www.monodevelop.com/)
-
-## Лабораторные работы и практические задания
-
-* [-]()
-* [-]()
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
 
 ## Примеры
 

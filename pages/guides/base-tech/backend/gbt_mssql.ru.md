@@ -56,28 +56,6 @@ lang: ru
 * [Microsoft® SQL Server® 2014 Express](https://www.microsoft.com/ru-ru/download/details.aspx?id=42299)
 * [dbForge Studio for SQL Server](https://www.devart.com/ru/dbforge/sql/studio/)
 
-## Лабораторные работы и практические задания
-
-* [-]()
-* [-]()
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
-
-## Примеры
-
-* [-]()
-* [-]()
-
 ## Возможности по сертификации
 
 * [Сертификации Microsoft SQL Server](https://www.microsoft.com/ru-ru/learning/sql-certification.aspx)
