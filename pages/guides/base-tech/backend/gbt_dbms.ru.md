@@ -50,7 +50,9 @@ lang: ru
 
 ### Презентация
 
-* [Назначение систем управления базами данных](http://www.myshared.ru/slide/802113/)
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/H0XaCvxaawilxL" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/esperu/ss-10347032" title="Базы данных и СУБД" target="_blank">Базы данных и СУБД</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/esperu">Stanislav Katsko</a></strong> </div>
+</div>
 
 ### Рекомендованные книги
 

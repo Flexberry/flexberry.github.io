@@ -43,7 +43,9 @@ lang: ru
 
 ### Презентация
 
-* [Особенности платформы.NET для разработки корпоративных приложений](http://www.myshared.ru/slide/633903/)
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/JyyTWd0yktR9qU" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/KewpaN/4-microsoft-net" title="4 особенности платформы microsoft .net для разработки корпоративных систем" target="_blank">4 особенности платформы microsoft .net для разработки корпоративных систем</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/KewpaN">KewpaN</a></strong> </div>
+</div>
 
 ### Рекомендованные книги
 

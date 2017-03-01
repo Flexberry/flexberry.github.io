@@ -33,6 +33,10 @@ lang: ru
 
 ### Презентация
 
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/sNbdyrcZScFyDD" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/lavrov/sql-4659581" title="Управление данными (sql)" target="_blank">Управление данными (sql)</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/lavrov">Ural Federal University named after First President of Russia B.N. Yeltsin</a></strong> </div>
+</div>
+
 ### Рекомендованные книги
 
 * [Введение в системы баз данных](http://www.ozon.ru/context/detail/id/136880774/)
