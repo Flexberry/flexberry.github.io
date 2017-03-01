@@ -42,7 +42,7 @@ lang: ru
 
 
 ### Презентация
-<div class="thumb-wrap" style="padding-top: 2px">
+<div class="thumb-wrap" style="margin-top: 3px; margin-bottom: 3px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/Ds8GCdhbu5g" frameborder="0" allowfullscreen></iframe>
 </div>
 
