@@ -40,7 +40,6 @@ lang: ru
 * [Резервное копирование и восстановление в MS SQL Server](https://www.youtube.com/watch?v=hflRnP-1Ik0)
 * [Резервное копирование и восстановление системных баз данных в SQL Server 2014](https://www.youtube.com/watch?v=Mm_71iKzf44)
 
-
 ### Презентация
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
