@@ -42,6 +42,10 @@ lang: ru
 
 ### Презентация
 
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
+    <iframe src="//www.slideshare.net/slideshow/embed_code/key/9xvZLeXn93oW9" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shwars/c-5178455" title="Язык программирования C#" target="_blank">Язык программирования C#</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/shwars">Dmitri Soshnikov</a></strong> </div>
+</div>
+
 ### Рекомендованные книги
 
 * [C# 6.0. Справочник. Полное описание языка](http://www.ozon.ru/context/detail/id/135794222/)

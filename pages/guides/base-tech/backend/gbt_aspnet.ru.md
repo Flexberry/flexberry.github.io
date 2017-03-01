@@ -71,7 +71,7 @@ lang: ru
 
 ### Презентация
 
-<div class="thumb-wrap">
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/-XzDcHh5Y5s?list=PLlhqsC7hBaSezv_J4znt-NbFq4MCzcYzk" frameborder="0" allowfullscreen></iframe>
 </div>
 
