@@ -23,7 +23,7 @@ lang: ru
 
 ### Презентация
 
-<div class="thumb-wrap">
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/5oLgQc_gnJg?list=PLaKXsWB2aJ1utjsUDJDmZBUW2KylhYsx0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>
 

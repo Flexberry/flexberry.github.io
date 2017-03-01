@@ -42,7 +42,7 @@ lang: ru
 
 ### Презентация
 
-<div class="thumb-wrap">
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/GNCGbWAz4yG1yX" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ptsukanov/orm-net-nhibernate-linq-to-sql-entity-framework" title="ORM технологии в .NET (Nhibernate, Linq To SQL, Entity Framework)" target="_blank">ORM технологии в .NET (Nhibernate, Linq To SQL, Entity Framework)</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/ptsukanov">Pavel Tsukanov</a></strong> </div>
 </div>
 
