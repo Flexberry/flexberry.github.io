@@ -43,9 +43,7 @@ lang: ru
 
 ### Презентация
 
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <a href="http://www.myshared.ru/slide/633903/" title="Учебный курс Технологии и средства разработки корпоративных систем Лекция 4 Особенности платформы.NET для разработки корпоративных приложений Лекции читает." target="_blank">Особенности платформы.NET для разработки корпоративных приложений</a><iframe src="http://player.myshared.ru/6/633903/" width="800" height="649" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0" allowfullscreen></iframe>
-</div>
+* [Особенности платформы.NET для разработки корпоративных приложений](http://www.myshared.ru/slide/633903/)
 
 ### Рекомендованные книги
 
