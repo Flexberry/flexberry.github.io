@@ -55,23 +55,6 @@ lang: ru
 * [LINQPad (The .NET Programmer’s Playground)](https://www.linqpad.net/)
 * [dotPeek (Free .NET Decompiler and Assembly Browser)](https://www.jetbrains.com/decompiler/)
 
-## Лабораторные работы и практические задания
-
-* [-]()
-* [-]()
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
-
 ## Примеры
 
 * [Видеокурс примеров C#](https://www.youtube.com/playlist?list=PLWCoo5SF-qAN-mySVH6p7X0YPvMr8U1OU)

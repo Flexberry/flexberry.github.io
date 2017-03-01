@@ -40,7 +40,6 @@ lang: ru
 * [Основы баз данных](http://www.site-do.ru/db/db1.php)
 * [Академия Microsoft: Базы данных](http://www.intuit.ru/studies/courses/508/364/info)
 
-
 ### Видеокурсы
 
 * [Базы данных](https://www.youtube.com/playlist?list=PLrCZzMib1e9obOz5K695ugYuiOOCBciEi)
@@ -64,28 +63,6 @@ lang: ru
 * [PostgreSQL](https://www.postgresql.org/download/)
 * [Microsoft Access](https://products.office.com/ru-ru/access)
 * [Oracle Database Software](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
-
-## Лабораторные работы и практические задания
-
-* [-]()
-* [-]()
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
-
-## Примеры
-
-* [-]()
-* [-]()
 
 ## Возможности по сертификации
 
