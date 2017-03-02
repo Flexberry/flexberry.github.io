@@ -6,16 +6,18 @@ toc: true
 permalink: ru/fo_aggregating-function.html
 ---
 
-<<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
+<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* `Продукт`: [FlexberryORM|Flexberry ORM)
-* `Компонент`: [DataObject|Объект данных)
-* `Программная библиотека`: ICSSoft.STORMNET.Tools.dll, ICSSoft.STORMNET.DataObject.dll
-* `Предназначение`: [DataObject|Объект данных)  можно сериализовать и десериализовать с помощью разных подходов.
+
+* **Продукт**: [FlexberryORM|Flexberry ORM)
+* **Компонент**: [DataObject|Объект данных)
+* **Программная библиотека**: ICSSoft.STORMNET.Tools.dll, ICSSoft.STORMNET.DataObject.dll
+* **Предназначение**: [DataObject|Объект данных)  можно сериализовать и десериализовать с помощью разных подходов.
+
 </td>
-</tr></tbody></table></a>
+</tr></tbody></table>
 </div>
 
 Для того, чтобы сериализовать [DataObject|объект данных) необходимо подключить сборку `[ICSSoftSTORMNETTools|ICSSoft.STORMNET.Tools)`. Для преобразования в XML предназначен класс `[ICSSoftSTORMNETTools#ToolXML|ToolXML)` данной сборки, который поддерживает два варианта сериализации, описанные далее. 
@@ -23,6 +25,7 @@ permalink: ru/fo_aggregating-function.html
 ## Сериализация объектов данных специальным способом
 
 Специальные методы `[ICSSoftSTORMNETTools#ToolXML|ToolXML)` для `[DataObject)`:
+
 *  `DataObject2XMLDocument` - конвертация объекта данных к `XmlDocument`,
 *  `XMLDocument2DataObject` - обратное преобразование. 
 
@@ -59,6 +62,7 @@ Console.Read();
 `[ICSSoftSTORMNETTools#ToolXML|ToolXML)` поддерживает метод для SOAP-сериализации. Этот вариант менее привлекателен, поскольку выходная строка содержит много лишней информации и [DataObject|объект данных) должен быть помечен атрибутом `&#0091;Serializable&#0093;`
 
 `Пример сериализации и десериализации [DataObject|объекта данных).`
+
 ```
 DataObjectWithKeyGuid dataObjectWithKeyGuid = new DataObjectWithKeyGuid();
 KeyGuid g = Guid.NewGuid();
