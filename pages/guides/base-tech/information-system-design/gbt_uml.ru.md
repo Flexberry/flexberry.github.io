@@ -22,7 +22,9 @@ UML (англ. Unified Modeling Language — унифицированный яз
 
 ### Презентация
 
-<iframe src='https://onedrive.live.com/embed?cid=043A2F24ADFAA4FD&resid=43A2F24ADFAA4FD%21110&authkey=&em=2&wdAr=1.3333333333333332' width='610px' height='481px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
+    <iframe src='https://onedrive.live.com/embed?cid=043A2F24ADFAA4FD&resid=43A2F24ADFAA4FD%21110&authkey=&em=2&wdAr=1.3333333333333332' width='610px' height='481px' frameborder='0'>This is an embedded <a target='_blank' href='https://office.com'>Microsoft Office</a> presentation, powered by <a target='_blank' href='https://office.com/webapps'>Office Online</a>.</iframe>
+</div>
 
 ### Рекомендованные книги
 
