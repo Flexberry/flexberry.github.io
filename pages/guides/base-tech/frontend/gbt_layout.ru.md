@@ -1,5 +1,5 @@
 ---
-title: Клиентская разработка
+title: Верстка
 keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
