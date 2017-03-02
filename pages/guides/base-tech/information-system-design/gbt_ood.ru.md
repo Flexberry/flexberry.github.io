@@ -40,7 +40,7 @@ lang: ru
 
 ### Презентация
 
-<div class="thumb-wrap">
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
   <iframe width="854" height="480" id="iframe_container" src="https://prezi.com/embed/q2b_ru9d1clq/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE1UM0xkVmhmSVd4VW5RZEFTOFFyVWYvNmQzYjhTU1A1NjNYZFZOS2UwMD0&amp;landing_sign=X2R8nh1mXAaWDkz5gqp5YDsBlP7G-l4PwabqXSQU8sg" frameborder="0" allowfullscreen="" webkitAllowFullScreen="" mozAllowFullscreen=""></iframe>
 </div>
 
