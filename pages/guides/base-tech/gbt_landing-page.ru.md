@@ -17,7 +17,7 @@ lang: ru
 
 Если Вам требуются получить начальные знания по веб-программированию, рекомендуем посмотреть данное видео:
 
-<div class="thumb-wrap">
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
     <iframe width="854" height="480" src="https://www.youtube.com/embed/FKmRoNDQsMw" frameborder="0" allowfullscreen></iframe>
 </div>
 
