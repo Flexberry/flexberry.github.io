@@ -4,37 +4,35 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public, Бизнес-серверы
 toc: true
 permalink: ru/fo_b-s-example.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
-# Бизнес-сервер
+## Бизнес-сервер
 
-Что такое бизнес-сервер и зачем он нужен можно прочитать '''[Бизнес-серверы-обертки-бизнес-фасад|здесь]'''
+Что такое бизнес-сервер и зачем он нужен можно прочитать **[здесь](fo_business--servers--wrapper--business--facade.html)**
 
-# Пример
+## Пример
 В качестве примера мы рассмотрим введение ограничений на создание новых объектов
 
-### Диаграмма
+#### Диаграмма
 
-![](/images/pages/img/Filters/FilterExDiagram.PNG)
+![](/images/pages/products/flexberry-orm/FilterExDiagram.PNG)
 
-### Задача
+#### Задача
 
 При попытке создания нового кредита необходимо проверить, существуют ли непогашенные кредиты для этого Клиента.
 
-### Добавление бизнес-сервера
+#### Добавление бизнес-сервера
 
-Прежде всего необходимо [Бизнес-серверы-классы-со-стереотипом-businessserver|создать класс со стереотипом `businessserver` на диаграмме классов]. Назовем его `КредитБС`.
+Прежде всего необходимо [создать класс со стереотипом `businessserver` на диаграмме классов](fo_business-servers.html). Назовем его `КредитБС`.
 ''__Примечание__: чтобы класс не занимал много места, его можно свернуть, выбрав контекстное меню `Свернуть`''
 
-![](/images/pages/img/page/BSExample/BSExample.PNG)
+![](/images/pages/products/flexberry-orm/BSExample.PNG)
 
 Сохраним диаграмму, чтобы бизнес-сервер попал в список доступных классов.
 
 Зайдем в свойства класса `Кредит` и в поле `BSClass` выберем из выпадающего списка созданный бизнес-сервер
 
-![](/images/pages/img/page/BSExample/BSExample1.PNG)
+![](/images/pages/products/flexberry-orm/BSExample1.PNG)
 
 Сохраним и закроем окно.
 
@@ -42,7 +40,7 @@ lang: ru
 
 Теперь в меню стадии `CSharp` -> `Генерировать` появилась возможность генерации бизнес-серверов и бизнес-фасадов.
 
-![](/images/pages/img/page/BSExample/BSExample2.PNG)
+![](/images/pages/products/flexberry-orm/BSExample2.PNG)
 
 Сгенерируем их.
 
@@ -51,7 +49,11 @@ lang: ru
 Добавим в проект Visual Studio сгенерированные проекты бизнес-серверов и фасадов.
 
 Обратим внимание, что в классе `Кредит` появилась ссылка в виде атрибута класса на новый бизнес-сервер:
-```cs [BusinessServer("IIS.Кредиты.КредитБС, Кредиты(BusinessServers)", ICSSoft.STORMNET.Business.DataServiceObjectEvents.OnAllEvents)] ```
+
+```cs 
+[BusinessServer("IIS.Кредиты.КредитБС, Кредиты(BusinessServers)", ICSSoft.STORMNET.Business.DataServiceObjectEvents.OnAllEvents)] 
+```
+
 Откроем файл бизнес-сервера `КредитБС.cs`
 
 Обратим внимание на [метод `OnUpdateКредит`, принимающий в качестве параметра объект типа `Кредит` и возвращающий объект типа `DataObject[]`](otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html)
@@ -76,21 +78,22 @@ lang: ru
 
             return new ICSSoft.STORMNET.DataObject[0];
             // *** End programmer edit section *** (OnUpdateКредит)
-        }```
+        }
+```
 
 Запустим проект и попробуем ввести отрицательное число в поле `Сумма кредита`, получим
 
-![](/images/pages/img/page/BSExample/BSExample3.PNG)
+![](/images/pages/products/flexberry-orm/BSExample3.PNG)
 
 Аналогично можно поставить проверки на `СрокКредита` и на `ДатуВыдачи`.
 
 Однако, вернемся к нашей задаче. Нам необходимо проверить, нет ли у данного клиента незакрытых кредитов.
 
-# Учтем, что данная проверка имеет место только при создании `Кредита`
-# Найдем все кредиты `Клиента`, для которого создается `Кредит`
+## Учтем, что данная проверка имеет место только при создании `Кредита`
+## Найдем все кредиты `Клиента`, для которого создается `Кредит`
  ''__Примечание__: подробнее о вычитке данных из SQL базы данных описано в [другой статье](Flexberry-s-q-l-query.html)''
-# Проверим сколько из них не закрыты
-# Выдадим сообщение об ошибке если обнаружим незакрытый Кредит
+## Проверим сколько из них не закрыты
+## Выдадим сообщение об ошибке если обнаружим незакрытый Кредит
 
 ```cs
 // Учтем, что данная проверка имеет место только при создании кредита
@@ -108,11 +111,12 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Created)
              throw new Exception("У данного клиента есть незакрытые кредиты.");
          }
      }
-}```
+}
+```
 
-__Примечание__: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](func-e-q.html).
+**Примечание**: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](func-e-q.html).
 
-__Примечание__: Обратите внимание на первую проверку '''`[UpdatedObject.GetStatus() == ObjectStatus.Created](object-status-and-loading-state.html)`''', она позволяет нам отсечь случаи обновления или удаления объекта. 
+**Примечание**: Обратите внимание на первую проверку '''`[UpdatedObject.GetStatus() == ObjectStatus.Created](object-status-and-loading-state.html)`''', она позволяет нам отсечь случаи обновления или удаления объекта. 
 
 
 ### Итоги
