@@ -3,7 +3,7 @@ title: Расположение сборок после генерации ко�
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_location-assembly-after-code-generation.html
+permalink: ru/fo_location-assembly-after-code-generation.html
 folder: products/flexberry-designer/
 lang: ru
 ---

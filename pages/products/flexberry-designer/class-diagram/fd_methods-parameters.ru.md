@@ -3,12 +3,10 @@ title: Методы классов и параметры методов
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/fd_class-methods-and-method-parameters.html
+permalink: ru/fd_methods-parameters.html
 folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
-
-## Описание метода и что и как с него генерируется
 
 Метод описывается в классе в нотации UML в виде: 
 

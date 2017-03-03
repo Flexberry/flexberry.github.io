@@ -3,7 +3,7 @@ title: Отработка пользовательских операций в �
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/fo_otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html
+permalink: ru/fo_testing-user-operations-dataservice.html
 folder: products/flexberry-orm/
 lang: ru
 ---

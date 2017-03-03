@@ -8,8 +8,6 @@ folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 
-## Особенности построения диаграммы классов
-
 * Элементы, используемые при построении диаграммы классов, описаны на странице [Диаграмма классов (Class diagram)](fd_class-diagram.html).
 * Особенности работы с редактором диаграммы классов приведены в [соответствующей статье](fd_class-diagram-editor-features-work.html).
 

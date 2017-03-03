@@ -3,8 +3,8 @@ title: Скрытые свойства в представлении
 sidebar: flexberry-designer_sidebar
 keywords: View
 toc: true
-permalink: ru/fd_hidden-properties-in-view.html
-folder: products/flexberry-designer/
+permalink: ru/fd_hidden-properties-view.html
+folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 
@@ -14,7 +14,7 @@ lang: ru
 
 __Пример__:
 
-```
+```csharp
 [View("Простое2", new string[]{"Name as Имя",  "AnOtherAttrib"}, Hidden=new string[]{"AnOtherAttrib"})]
 ```
 

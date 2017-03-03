@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Web UI Контролы
 toc: true
 permalink: ru/fd_generate-forms-external-classes.html
-folder: products/flexberry-designer/class-diagram/
+folder: products/flexberry-designer/generate/
 lang: ru
 ---
 
@@ -23,4 +23,3 @@ lang: ru
 * Сборку с объектами, на которые ссылается external-класс, положить в папку, где лежат собственные скомпилированные сборки с объектами.
 * [Сгенерировать web-приложение](fa_flexberry-asp-net-generator.html).
 * В сгенерированном приложении проставить ссылку на сборку с внешними классами. Добавить ссылки на соответствующих формах. 
-
