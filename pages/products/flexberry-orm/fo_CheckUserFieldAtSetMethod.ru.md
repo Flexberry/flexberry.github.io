@@ -30,5 +30,6 @@ public class Кредит : ICSSoft.STORMNET.DataObject
 }
 ```
 
-Другие методы проверки данных на форме описаны [здесь](edit-form-validation.html). 
+Другие методы проверки данных на форме описаны [здесь](edit-form-validation.html).
+ 
 Сравнение этого метода с некоторыми другими можно найти [здесь](check-form-field-during-edit.html).

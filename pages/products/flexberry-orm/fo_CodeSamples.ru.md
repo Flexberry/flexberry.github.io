@@ -4,14 +4,10 @@ sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_code-samples.html
-folder: products/flexberry-orm/
-lang: ru
 ---
-
-# Примеры кода
 Примеры кода можно увидеть в [репозитории платформы Flexberry на GitHub](https://github.com/Flexberry).
 
-## Примеры по Flexberry ORM
+### Примеры по Flexberry ORM
 * [Пример: большое количество детейлов](create-multiple-details-example.html)
 * [Пример: выполнение действий при сохранении объекта](data-object-update-hook-example.html)
 * [Пример: загрузка графа объектов](load-multiple-details-example.html)
