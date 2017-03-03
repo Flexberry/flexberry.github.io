@@ -115,19 +115,6 @@ lang: ru
 * [Практикум по HTML и CSS - htmlbook.ru](http://htmlbook.ru/practical)
 * [CSS Exercises - W3Schools](http://www.w3schools.com/css/exercise.asp)
 
-### Задания для самостоятельного выполнения
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-#### Вариант №1
-
-#### Вариант №2
-
-#### Вариант №3
-
-#### Вариант №4
-
-#### Вариант №5
-
 ## Примеры
 
 * [CSS Examples - W3Schools](http://www.w3schools.com/css/css_examples.asp)
