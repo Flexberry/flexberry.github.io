@@ -28,11 +28,12 @@ lang: ru
 
 ### Самоучители
 
-* [Объектно-ориентированное программирование](https://metanit.com/sharp/tutorial/3.1.php)
 * [Основы объектно-ориентированного программирования](https://professorweb.ru/my/csharp/charp_theory/level3/3_1.php)
+* [Объектно-ориентированное программирование](https://metanit.com/sharp/tutorial/3.1.php)
 
 ### Видеокурсы
 
+* [Запись семинара на тему "Что такое ООП и с чем его едят?"](https://www.youtube.com/watch?v=ydPHlM43kKM)
 * [Основы объектно-ориентированного програмирования](https://www.youtube.com/watch?v=QZTn7LQk1eg&list=PL6LDsbZOeyrx462VmH18qS0a9Dw9LwpSu)
 * [Практическое применение ООП](https://www.youtube.com/watch?v=BmJH3I3McOs)
 * [Вебинар на тему "ООП. Простыми словами о сложных вещах"](https://www.youtube.com/watch?v=atjD9GQcFhs)
