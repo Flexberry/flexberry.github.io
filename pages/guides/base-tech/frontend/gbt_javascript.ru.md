@@ -133,25 +133,6 @@ lang: ru
 * [Learn JavaScript - Codecademy](https://www.codecademy.com/learn/learn-javascript)
 * [JavaScript Challenge - Codewars](https://www.codewars.com/?language=javascript)
 
-### Задания для самостоятельного выполнения
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
-
-## Примеры
-
-* [-]()
-* [-]()
-
 ## Возможности по сертификации
 
 * [W3Schools JavaScript Certificate](http://www.w3schools.com/cert/cert_javascript.asp)
