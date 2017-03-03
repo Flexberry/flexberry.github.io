@@ -18,7 +18,7 @@ lang: ru
 /[AccessModifier)Name([ParamName:TypeEventArgs)
 ```
 
-{% include note.html content="Параметр должен быть один и его тип был UML-классом со [KeyConceptsFlexberryDesigner|стереотипом) eventarg, если это не так, в процессе генерации произойдёт ошибка." %}
+{% include note.html content="Параметр должен быть один и его тип был UML-классом со [стереотипом](fd_key-concepts.html) eventarg, если это не так, в процессе генерации произойдёт ошибка." %}
 
 Пример описания аргументов события и самого события:
 
