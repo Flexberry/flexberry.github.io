@@ -6,12 +6,11 @@ toc: true
 permalink: ru/fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
 ---
 
-## ICSSoft.STORMNET.Tools.XmlTools
 `ICSSoft.STORMNET.Tools.XmlTools` - класс для работы с XML.
 
 В классе реализованы следующие методы:
 
-### GetXDocumentByXElement
+## GetXDocumentByXElement
  __Назначение__: Конвертация `System.Xml.Linq.XElement` в `System.Xml.XmlDocument`.
 
  __Параметры__:
@@ -30,7 +29,7 @@ permalink: ru/fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
 public static XmlDocument GetXDocumentByXElement(XElement xElement, string versionXmlDoc, string encodingXmlDoc) 
 ```
 
-### LoadXml
+## LoadXml
 
 __Назначение__: Прочитать Xml-файл. Может автоматически определить кодировку на основании кодировки, использующейся внутри Xml.
 
@@ -45,3 +44,5 @@ __Сигнатура__:
 ```cpp
 public static XmlDocument LoadXml(string filePath, Encoding encoding = null) 
 ```
+
+
