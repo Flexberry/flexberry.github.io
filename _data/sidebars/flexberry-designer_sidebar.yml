@@ -15,7 +15,6 @@ entries:
       url: /fd_flexberry-designer.html
       output: web
 
-
     - title: Flexberry plugins
       title_ru: Модули расширения функциональности
       url: /fd_flexberry-plugins.html
@@ -90,8 +89,6 @@ entries:
       title_ru: Независимая установка
       url: /fd_standalone-install.html
       output: web
-
-  
 
   - title: Сommon information about diagrams editor
     title_ru: Общие сведения о редакторе UML-диаграмм
@@ -170,92 +167,92 @@ entries:
 
     - title: Additional stereotypes
       title_ru: Дополнительные стереотипы классов  
-      url: fd_additional-stereotypes.html
+      url: /fd_additional-stereotypes.html
       output: web, pdf
 
     - title: Class methods and method parameters
       title_ru: Методы классов и параметры методов
-      url: fd_methods-parameters.html
+      url: /fd_methods-parameters.html
       output: web, pdf
 
     - title: Create nullable
       title_ru: Настройка Flexberry Designer для Nullable-типов
-      url: fd_create-nullable.html
+      url: /fd_create-nullable.html
       output: web, pdf
 
     - title: Data classes
       title_ru: Классы данных и их свойства 
-      url: fd_data-classes.html
+      url: /fd_data-classes.html
       output: web, pdf
 
     - title: Application
       title_ru: Приложения (классы со стереотипом application)   
-      url: fd_application.html
+      url: /fd_application.html
       output: web, pdf
 
     - title: Data types properties
       title_ru: Типы данных (классы со стереотипом type) и их свойства
-      url: fd_data-types-properties.html
+      url: /fd_data-types-properties.html
       output: web, pdf
 
     - title: Сlasses with stereotype enumeration
       title_ru: Перечислимые типы данных (классы со стереотипом enumeration)
-      url: fd_enumerations.html
+      url: /fd_enumerations.html
       output: web, pdf
 
     - title: Hidden properties view
       title_ru: Скрытые свойства в представлении
-      url: fd_hidden-properties-view.html
+      url: /fd_hidden-properties-view.html
       output: web, pdf
 
     - title: Interface
       title_ru: Интерфейсы (классы со стереотипом interface) 
-      url: fd_interfaces.html
+      url: /fd_interfaces.html
       output: web, pdf
 
     - title: Master association
       title_ru: Мастеровые ассоциации и их свойства  
-      url: fd_master-association.html
+      url: /fd_master-association.html
       output: web, pdf
 
     - title: Types map
       title_ru: Карта типов 
-      url: fd_types-map.html
+      url: /fd_types-map.html
       output: web, pdf
 
     - title: Сlasses with stereotype userform
       title_ru: Пользовательские формы (классы со стереотипом userform) 
-      url: fd_userform.html
+      url: /fd_userform.html
       output: web, pdf
 
     - title: Сlasses with stereotype eventarg
       title_ru: События и параметры событий (классы со стереотипом eventarg)
-      url: fd_eventarg.html
+      url: /fd_eventarg.html
       output: web, pdf
 
     - title: Сlasses with stereotype typedef
       title_ru: Синонимы типов (классы со стереотипом typedef)
-      url: fd_typedef.html
+      url: /fd_typedef.html
       output: web, pdf
 
     - title: Сlasses with stereotype editform
       title_ru: Формы редактирования (классы со стереотипом editform)
-      url: fd_editform.html
+      url: /fd_editform.html
       output: web, pdf
 
     - title: Business servers 
       title_ru: Бизнес-серверы (классы со стереотипом businessserver)
-      url: fd_business-servers.html
+      url: /fd_business-servers.html
       output: web, pdf
 
     - title: External classes
       title_ru: Внешние классы (классы со стереотипом external)
-      url: fd_external-classes.html
+      url: /fd_external-classes.html
       output: web, pdf
 
     - title: External interface
       title_ru: Классы со стереотипом ExternalInterface
-      url: fd_external-interface.html
+      url: /fd_external-interface.html
       output: web, pdf
 
   - title: Creating application
