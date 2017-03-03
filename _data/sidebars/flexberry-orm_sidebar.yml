@@ -15,9 +15,9 @@ entries:
       url: /fo_landing_page.html
       output: web
 
-    - title: Sample 1
-      url: /p1_sample1.html
-      output: web, pdf
+    - title: ICSSoft.STORMNET.Tools.XmlTools
+      url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
+      output: web
 
     - title: Sample 2
       url: /p1_sample2.html
