@@ -19,12 +19,11 @@ permalink: ru/fa_add-extra-logic-on-save-to-web-form.html
 | `onCheckFailed` | Инициируется в случае неуспешного выполнения проверки редактируемых данных в технологическом коде или в случае перевода в состояние "отменено" хотя бы одного из Deferred-объектов, созданных в обработчике события `onCheckStarts`.|
 | `onCheckProgress` | Инициируется в случае получения уведомлений о прогрессе от одного из Deferred-объектов, созданных в обработчике события `onCheckStarts`.|
 
-### Методы$.icsEditForm.attachEventHandler и $.icsEditForm.attachOnceEventHandler
+### Методы $.icsEditForm.attachEventHandler и $.icsEditForm.attachOnceEventHandler
 
 Методы $.icsEditForm.attachEventHandler и $.icsEditForm.attachOnceEventHandler предназначены для регистрации обработчиков событий формы редактирования. Разница между ними в том, что $.icsEditForm.attachEventHandler регистрирует обработчик, который будет выполняться всегда, при возникновении соответствующего события, а $.icsEditForm.attachOnceEventHandler регистрирует обработчик, который будет выполнен однократно.
 
 Оба метода принимают два параметра:
-
 
 | Параметр | Описание |
 |---|---|
@@ -145,8 +144,8 @@ $(function() {
 
 ## Откуда ссылаются на эту страницу
 
-[Web-форма редактирования](https://flexberry.github.io/ru/fa_web-edit-form.html)
+[Web-форма редактирования](fa_web-edit-form.html)
 
 ## Куда ссылается эта страница
 
-[AjaxGroupEdit (AGE)](https://flexberry.github.io/ru/fa_ajax-group-edit.html)    
+[AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)    

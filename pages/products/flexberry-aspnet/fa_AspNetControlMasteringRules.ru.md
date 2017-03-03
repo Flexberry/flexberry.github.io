@@ -7,16 +7,9 @@ permalink: ru/fa_asp-net-control-mastering-rules.html
 
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* `Платформа`: [FlexberryASPNET|FlexberryASP.NET).
-* `Компонент`: [WebControls|Web-контролы и web-компоненты).
-* `Предназначение`: Описаны правила разработки ASP.NET web-контролов.
-</td>
-</tr></tbody></table></a>
-</div>
+* **Платформа**: [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html).
+* **Компонент**: [Web-контролы и web-компоненты](fa_web-controls.html).
+* **Предназначение**: Описаны правила разработки ASP.NET web-контролов.
 
 ## Введение
 
@@ -55,9 +48,9 @@ _inputField.Attributes["id") = "SomeID";     // Клиентский идент�
 
 ## Откуда ссылаются на эту страницу
 
-* [Web-контролы и web-компоненты](https://flexberry.github.io/ru/fa_web-controls.html)
+* [Web-контролы и web-компоненты](fa_web-controls.html)
 
 ## Куда ссылается эта страница
 
-* [Flexberry ASP.NET](https://flexberry.github.io/ru/fa_flexberry-a-s-p-n-e-t.html)
-* [Web-контролы и web-компоненты](https://flexberry.github.io/ru/fa_web-controls.html)
+* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* [Web-контролы и web-компоненты](fa_web-controls.html)
