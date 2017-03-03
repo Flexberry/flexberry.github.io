@@ -1,5 +1,5 @@
 ---
-title: GroupEdit: режим редактирования с блокировками
+title: Режим редактирования с блокировками в GroupEdit
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true

@@ -1,5 +1,5 @@
 ---
-title: Пример: загрузка графа объектов
+title: Пример загрузки графа объектов
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
@@ -7,16 +7,6 @@ permalink: ru/fo_load-multiple-details-example.html
 folder: products/flexberry-orm/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
-
-Полный список примеров кода [Flexberry ORM](flexberry-o-r-m.html) находится в статье ["Примеры кода"](code-samples.html).
-
-</td>
-</tr></tbody></table></a>
-</div>
-
-
 
 # Загрузка объекта с большим количеством детейлов
 

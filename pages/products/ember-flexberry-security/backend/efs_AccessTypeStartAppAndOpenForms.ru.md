@@ -1,5 +1,5 @@
 ---
-title: Подсистема полномочий:  разрешение на запуск приложения и открытие форм
+title: "Подсистема полномочий:  разрешение на запуск приложения и открытие форм"
 sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true

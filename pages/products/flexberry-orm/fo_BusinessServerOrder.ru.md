@@ -1,5 +1,5 @@
 ---
-title: Бизнес-серверы: порядок вызовов
+title: Порядок вызовов бизнес-серверов
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true

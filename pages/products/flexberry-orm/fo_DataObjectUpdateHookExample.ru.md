@@ -1,5 +1,5 @@
 ---
-title: Пример: выполнение действий при сохранении объекта
+title: Пример выполнения действий при сохранении объекта
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true

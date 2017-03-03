@@ -1,5 +1,5 @@
 ---
-title: Пример: пользовательские наименования для структур в БД
+title: Пример пользовательских наименований для структур в БД
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true

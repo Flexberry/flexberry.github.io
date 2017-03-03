@@ -1,5 +1,5 @@
 ---
-title: Пример: создание объектов данных и сохранение их в БД
+title: Пример создания объектов данных и сохранение их в БД
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true

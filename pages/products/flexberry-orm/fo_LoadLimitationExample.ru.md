@@ -1,5 +1,5 @@
 ---
-title: Пример: наложение ограничений на загрузку объектов
+title: Пример наложения ограничений на загрузку объектов
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
