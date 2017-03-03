@@ -110,7 +110,7 @@ lang: ru
 `PBSetStart` -| Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set.
 
 ## Свойства методов аргументов события
-Свойства и генерация методов, см. в [статье Методы классов и параметры методов](fd_class-methods-and-method-parameters.html).
+Свойства и генерация методов, см. в [статье Методы классов и параметры методов](fd_methods-parameters.html).
 
 ![](/images/pages/products/flexberry-designer/class-diagram/eventprops.jpg)
 
