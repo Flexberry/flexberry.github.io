@@ -60,13 +60,13 @@ module.exports = function(environment) {
 ## Конфигурация cервиса настроек пользователя для компоненты flexberry-objectlistview
 Для использования сервиса настроек пользователя компонент flexberry-objectlistview должен содержать следующие атрибуты:
 
-```
-{{flexberry-objectlistview
+```hbs
+{% raw %}{{flexberry-objectlistview
   ...
   componentName="..."
   colsConfigButton=true
   ...
-}}
+}}{% endraw %}
 ```
 
 * `componentName` - обязательный атрибут служащий для привязки пользовательских настроек. Он должен быть уникальным в пределах одной отображаемой страницы.
@@ -144,19 +144,19 @@ developerUserSettings: { «componentName»: { } }
 
 * colsOrder - порядок и видимость столбцов. Формат:
 
-```
+``` js
 [{ propName: «columnName», hide: false}, { propName: «columnName», hide: true}, ...]
 ```
 
 * sorting - направление и порядок сортировки. Формат:
 
-```
+``` js
 [{ propName: «columnName», direction: "asc",  propName: «columnName», direction: "desc", ...]
 ```
 
 * columnWidths - ширина столбцов. С помощью свойства `fixed` можно запретить изменение ширины отдельных столбцов. Если нужно запретить изменять размер столбца инструментов или столбца меню, то в качестве «columnName» нужно указывать `OlvRowToolbar` или `OlvRowMenu` соответственно. Форматы:
 
-```
+``` js
 [{ propName: «columnName», width: ... }, { propName: «columnName», width: ... }, ...]
 
 [{ propName: «columnName», fixed: true }, { propName: «columnName», fixed: false }, ...]
@@ -164,9 +164,7 @@ developerUserSettings: { «componentName»: { } }
 [{ propName: «columnName», width: ..., fixed: true }, { propName: «columnName», width: ..., fixed: false }, ...]
 ```
 
-
 «componentName» может включать любой набор указанных свойств.
-
 
 Для упрощения инициализации свойств `developerUserSettings` разработчик может получить текущее описание настроек выбрав пункт "Показать установки" в выпадающем меню (см. выше).
 Возможно два формата описания свойства «componentName»:
@@ -174,13 +172,13 @@ developerUserSettings: { «componentName»: { } }
 
 * Как объект:
 
-```
+``` js
 «componentName»: { colsOrder: [ ... ],  sorting: [ ... ] ,  columnWidths: ... }
 ```
 
 * Как строка:
 
-```
+``` js
 «componentName»: `{  colsOrder: [ ... ],  sorting: [ ... ],  columnWidths: [ ... ]}`
 ```
 
@@ -205,17 +203,18 @@ developerUserSettings: { «componentName»: { } }
 
 Текущий режим настроек формируется на основе следующих уровней:
 
-
 * режим настройки заданный разработчиком;
 * режим настройки установленный пользователем в интерфейсе;
 * режим сортировки, заданный в параметраз URL страницы.
+
 Параметры каждого последующего уровня перекрывают параметры предыдущего.
 
 
 ## Настройка ODataService
+
 Если серверная часть представляет собой приложение с подключённым [Flexberry ORM ODataService](flexberry-o-r-m-o-data-service.html), то для корректной работы сервиса необходимо, чтобы, помимо прикладных сборок с объектами, дополнительно передавались имена двух технологических сборок: "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService".
 
 
-```cs
-config.MapODataServiceDataObjectRoute(new[] { "SomeApp(Objects)", ..., "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService" });
+``` cs
+config.MapODataServiceDataObjectRoute(new[] { "SomeApp.Objects", ..., "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService" });
 ```
