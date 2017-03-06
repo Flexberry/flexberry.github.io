@@ -84,7 +84,7 @@ public struct Деньги
 }
 ```
 
-Также доступен пример [^https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/Dollar.cs).
+Также доступен пример https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/Dollar.cs .
 
 
 
