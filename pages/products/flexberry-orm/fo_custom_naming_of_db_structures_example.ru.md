@@ -6,7 +6,7 @@ toc: true
 permalink: ru/fo_custom_naming_of_db_structures_example.html
 ---
 
-Существует 2 пути для [определения наименования](data-objects-and-database-structures.html): во Flexberry и в C* коде с помощью атрибутов.
+Существует 2 пути для [определения наименования](data-objects-and-database-structures.html): во Flexberry и в C# коде с помощью атрибутов.
 Если вы выберете первый путь, то Flexberry сгенерирует соответствующие имена автоматически.
 
 Вы можете [соотнести объекты данных и атрибуты к любому наименованию БД-структуры](data-objects-and-database-structures.html):
