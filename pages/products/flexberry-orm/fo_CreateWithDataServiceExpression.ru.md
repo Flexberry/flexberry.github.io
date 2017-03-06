@@ -4,8 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, View (представление)
 toc: true
 permalink: ru/fo_create-with-data-service-expression.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
 ## Создание вычислимого поля с помощью DataServiceExpression
@@ -15,7 +13,7 @@ lang: ru
 ## Работа во Flexberry Designer
 Создаём во Flexberry Designer [диаграмму классов](fd_class-diagram.html).
 
-![Изображение](/images/img/page/CreateWithDataServiceExpression/ClassDiagram_CustomerPurchase.jpg)
+![Изображение](/images/pages/products/flexberry-orm/create-with-data-service-expression/ClassDiagram_CustomerPurchase.jpg)
 
 Интересующее нас поле "СуммаОплаченныхПокупок" класса "Покупатель" [делаем нехранимым](attributes-class-data.html), после чего в [атрибут DataService Expression](attributes-class-data.html) данного поля добавляем строку:
 
@@ -108,5 +106,4 @@ public virtual decimal ДоступнаяСумма
 ```
 
 (((
-<msg type=warning>В приведённом примере опущено, что если значение детейлов изменится, то кэшированное значение необходимо пересчитать (например, с помощью [SQL-запроса](Flexberry-s-q-l-query.html)).</msg>
-)))
+{% include warning.html content="В приведённом примере опущено, что если значение детейлов изменится, то кэшированное значение необходимо пересчитать (например, с помощью [SQL-запроса](Flexberry-s-q-l-query.html" %}
