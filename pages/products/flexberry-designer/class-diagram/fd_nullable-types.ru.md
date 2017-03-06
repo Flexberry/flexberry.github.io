@@ -1,10 +1,10 @@
 ---
 title: Nullable-типы
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+sidebar: flexberry-designer_sidebar
+keywords: Flexberry Desinger, Public
 toc: true
 permalink: ru/fd_nullable-types.html
-folder: products/flexberry-orm/
+folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 
