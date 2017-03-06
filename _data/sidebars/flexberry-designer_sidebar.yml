@@ -175,6 +175,11 @@ entries:
       url: /fd_methods-parameters.html
       output: web, pdf
 
+    - title: Nullable types
+      title_ru: Nullable-типы
+      url: /fd_nullable-types.html
+      output: web, pdf
+
     - title: Create nullable
       title_ru: Настройка Flexberry Designer для Nullable-типов
       url: /fd_create-nullable.html
@@ -183,6 +188,11 @@ entries:
     - title: Data classes
       title_ru: Классы данных и их свойства 
       url: /fd_data-classes.html
+      output: web, pdf
+
+    - title: Hidden properties view
+      title_ru: Скрытые свойства в представлении
+      url: /fd_hidden-properties-view.html
       output: web, pdf
 
     - title: Application
@@ -198,11 +208,6 @@ entries:
     - title: Сlasses with stereotype enumeration
       title_ru: Перечислимые типы данных (классы со стереотипом enumeration)
       url: /fd_enumerations.html
-      output: web, pdf
-
-    - title: Hidden properties view
-      title_ru: Скрытые свойства в представлении
-      url: /fd_hidden-properties-view.html
       output: web, pdf
 
     - title: Interface
