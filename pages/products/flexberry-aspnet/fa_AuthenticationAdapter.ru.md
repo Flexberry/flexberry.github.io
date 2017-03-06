@@ -6,6 +6,7 @@ toc: true
 permalink: ru/fa_authentication-adapter.html
 
 ---
+
 ## AuthenticationAdapter
 
 `AuthenticationAdapter` - класс, позволяющий осуществлять добавление пользователей в БД системы полномочий при windows-аутентификации.
@@ -14,7 +15,8 @@ permalink: ru/fa_authentication-adapter.html
 ## Методы класса AuthenticationAdapter
 Класс `AuthenticationAdapter` предоставляет следующие статические методы: 
 
-1.  
+1.
+
 ```cs
 /// <summary>
 /// Получение объекта, соответствующего текущему пользователю в БД полномочий
@@ -23,7 +25,8 @@ permalink: ru/fa_authentication-adapter.html
 /// <returns>Объект или null, если ничего не было найдено</returns>
 public static Agent GetDbUser()
 ```
-2.  
+2. 
+
 ```cs
 /// <summary>
 /// Получение объекта, соответствующего текущему пользователю в БД полномочий
@@ -32,7 +35,34 @@ public static Agent GetDbUser()
 /// <returns>Объект или null, если ничего не было найдено</returns>
 public static Agent GetDbUser(string username)
 ```
-3. 
+
+3.
+
+```cs 
+/// <summary>
+/// Получение объекта, соответствующего текущему пользователю в БД полномочий.
+/// </summary>
+/// <param name="username">Полное имя пользователя.</param>
+/// <param name="dataService">Сервис данных (<c>null</c>, если нужно использовать стандартный).</param>
+/// <exception cref="InvalidOperationException">Выбрасывается в том случае, если в системе полномочий произошла ошибка.</exception>
+/// <returns>Объект или <c>null</c>, если ничего не было найдено.</returns>
+public static Agent GetDbUser(string username, IDataService dataService)
+```
+
+4.
+
+```cs
+/// <summary>
+/// Проверка существования в системе полномочий пользователя с указанным логином.
+/// </summary>
+/// <param name="login">Логин пользователя.</param>
+/// <exception cref="InvalidOperationException">Выбрасывается в том случае, если в системе полномочий произошла ошибка.</exception>
+/// <returns>Возвращает <c>true</c> если пользователь существует.</returns>
+public static bool IsUserExist(string login)
+```
+
+5.
+
 ```cs
 /// <summary>
 /// Создание пользователя в БД подсистемы полномочий
@@ -42,7 +72,23 @@ public static Agent GetDbUser(string username)
 /// <returns>Созданный пользователь</returns>
 public static Agent CreateDbUser(string username, string friendlyUserName)
 ```
-4.
+
+6.
+
+```cs
+/// <summary>
+/// Создание пользователя в БД подсистемы полномочий.
+/// </summary>
+/// <param name="username">Логин пользователя, возможно с доменом.</param>
+/// <param name="friendlyUserName">Имя пользователя.</param>
+/// <param name="addDefaultRoles">Следует ли добавлять роли по умолчанию для создаваемого пользователя.</param>
+/// <param name="dataService">Сервис данных (<c>null</c>, если нужно использовать стандартный).</param>
+/// <returns>Созданный пользователь.</returns>
+public static Agent CreateDbUser(string username, string friendlyUserName, bool addDefaultRoles, IDataService dataService)
+```
+
+7.
+
 ```cs
 /// <summary>
 /// Создание пользователя в БД подсистемы полномочий
