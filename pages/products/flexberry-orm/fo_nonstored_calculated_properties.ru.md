@@ -1,5 +1,5 @@
 ---
-title: Пример: нехранимые и вычислимые свойства
+title: Пример нехранимых и вычислимых свойств
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true

@@ -1,5 +1,5 @@
 ---
-title: Пример: использование стереотипа "typedef"
+title: Пример использования стереотипа typedef
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
@@ -7,13 +7,6 @@ permalink: ru/fo_using_stereotypes_example.html
 folder: products/flexberry-orm/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Предназначение''': ознакомление с функциональными возможностями [Flexberry ORM](flexberry-orm-case-plugin.html) и демонстрация правильного использования стереотипа "typedef".
-</td>
-</tr></tbody></table></a>
-</div>
 
 # Использование стереотипа "typedef" в моделировании
 

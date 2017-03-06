@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
 permalink: ru/fd_typedef.html
-folder: products/flexberry-designer/
+folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

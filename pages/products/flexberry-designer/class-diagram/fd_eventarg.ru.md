@@ -8,78 +8,77 @@ folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 
-`Flexberry` позволяет пользователю описывать события и их аргументы, для возможной последующей генерации в исходный код на CLR-совместимом языке, в частности, `C#`.
+## Описание события
 
-События описываются внутри UML-классов, в секции методов, в следующем виде:
+[Flexberry Designer](fd_flexberry-designer.html) позволяет пользователю описывать события и их аргументы, для возможной последующей генерации в исходный код на CLR-совместимом языке (в частности, `C#`).
 
-```csharp
- /[AccessModifier]Name([ParamName:TypeEventArgs)
+События описываются [внутри UML-классов, в секции методов](fd_class-diagram-constraction.html), в следующем виде:
+
+``` csharp
+/[AccessModifier)Name([ParamName:TypeEventArgs)
 ```
-**Обратите внимание**, что параметр должен быть один и его тип был UML-классом со стереотипом eventarg, если это не так, в процессе генерации произойдёт ошибка.
+
+{% include note.html content="Параметр должен быть один и его тип был UML-классом со [стереотипом](fd_key-concepts.html) eventarg, если это не так, в процессе генерации произойдёт ошибка." %}
 
 Пример описания аргументов события и самого события:
 
 ![](/images/pages/products/flexberry-designer/class-diagram/eventeventargs.png)
 
-## Генерация класса аргументов события
+### Генерация класса аргументов события
 
-Класс наследующийся от `System.EventArgs.` Также генерируется определение делегата.
-
-Пример  диаграммы:
+Класс, наследующийся от `System.EventArgs.` Также генерируется определение делегата.
 
 ```csharp
-// *** Start programmer edit section *** (Аргументы CustomAttributes)
-// *** End programmer edit section *** (Аргументы CustomAttributes)
-public class Аргументы : System.EventArgs
-{        
-    private string fарг1;
-    // *** Start programmer edit section *** (Аргументы CustomMembers)
-    
-    // *** End programmer edit section *** (Аргументы CustomMembers)
-    // *** Start programmer edit section *** (Аргументы.арг1 CustomAttributes)
-    // *** End programmer edit section *** (Аргументы.арг1 CustomAttributes)
-    public virtual string арг1
-    {
-        get
+   // *** Start programmer edit section *** (Аргументы CustomAttributes)
+    // *** End programmer edit section *** (Аргументы CustomAttributes)
+    public class Аргументы : System.EventArgs
+    {        
+        private string fарг1;
+        // *** Start programmer edit section *** (Аргументы CustomMembers)
+        
+        // *** End programmer edit section *** (Аргументы CustomMembers)
+        // *** Start programmer edit section *** (Аргументы.арг1 CustomAttributes)
+        // *** End programmer edit section *** (Аргументы.арг1 CustomAttributes)
+        public virtual string арг1
         {
-            // *** Start programmer edit section *** (Аргументы.арг1 Get start)
-            // *** End programmer edit section *** (Аргументы.арг1 Get start)
-            string result = this.fарг1;
-            // *** Start programmer edit section *** (Аргументы.арг1 Get end)
-            // *** End programmer edit section *** (Аргументы.арг1 Get end)
-            return result;
-        }
-        set
-        {
-            // *** Start programmer edit section *** (Аргументы.арг1 Set start)
-            // *** End programmer edit section *** (Аргументы.арг1 Set start)
-            this.fарг1 = value;
-            // *** Start programmer edit section *** (Аргументы.арг1 Set end)
-            // *** End programmer edit section *** (Аргументы.арг1 Set end)
+            get
+            {
+                // *** Start programmer edit section *** (Аргументы.арг1 Get start)
+                // *** End programmer edit section *** (Аргументы.арг1 Get start)
+                string result = this.fарг1;
+                // *** Start programmer edit section *** (Аргументы.арг1 Get end)
+                // *** End programmer edit section *** (Аргументы.арг1 Get end)
+                return result;
+            }
+            set
+            {
+                // *** Start programmer edit section *** (Аргументы.арг1 Set start)
+                // *** End programmer edit section *** (Аргументы.арг1 Set start)
+                this.fарг1 = value;
+                // *** Start programmer edit section *** (Аргументы.арг1 Set end)
+                // *** End programmer edit section *** (Аргументы.арг1 Set end)
+            }
         }
     }
-}
-public delegate void АргументыHandler(object sender, ICSSoft.Product.Аргументы e);
+    public delegate void АргументыHandler(object sender, ICSSoft.Product.Аргументы e);
 ```
 
-## Генерация класса с событием
+## Что генерируется в классе, где определено событие
 
-В исходный код класса генерируется событие, объявленное типом делегата, а также метод, связанный с этим событием.
-
-Пример диаграммы:
+В исходный код класса генерируется событие, объявленное типом делегата, а также метод, взводящий это событие.
 
 ```csharp
  public event ICSSoft.Product.АргументыHandler Событие;
         
-    // *** Start programmer edit section *** (OnСобытие CustomAttributes)
-    // *** End programmer edit section *** (OnСобытие CustomAttributes)
-    private void OnСобытие(ICSSoft.Product.Аргументы ea)
-    {
-        if ((this.Событие != null))
+        // *** Start programmer edit section *** (OnСобытие CustomAttributes)
+        // *** End programmer edit section *** (OnСобытие CustomAttributes)
+        private void OnСобытие(ICSSoft.Product.Аргументы ea)
         {
-            this.Событие(this, ea);
+            if ((this.Событие != null))
+            {
+                this.Событие(this, ea);
+            }
         }
-    }
 ```
 
 ## Основные свойства аргументов события
@@ -90,8 +89,8 @@ public delegate void АргументыHandler(object sender, ICSSoft.Product.А
 :--------------------|:--------------------|:---------------------------------------------------------
 `Name` | Имя UML-класса | Имя `.Net`-класса
 `Description` | Некоторое описание класса | `DocComment` перед определением класса
-`GenerateCatcher` | | Если установлено, генерируется класс-перехватчик события для использования событийно-ориентированным интерпретатором сценариев (EBSI). Если Вы не планируете использовать EBSI, не устанавливайте эту галочку.
-`Packet, NamespacePostfix` | Позволяют настроить сборку и пространство имен, в которое должен генерироваться тип | см. [Расположение сборок после генерации кода](fd_location-assembly-after-code-generation.html).
+`GenerateCatcher` | | Если установлено, генерируется класс-перехватчик события для использования событийно-ориентированным интерпретатором сценариев (EBSI). Если не планируется EBSI, галочку устанавливать не нужно.
+`Packet, NamespacePostfix` | Позволяют настроить сборку и пространство имен, в которое должен генерироваться тип | см. [Расположение сборок после генерации кода](fo_location-assembly-after-code-generation.html).
 `PBMembers` | Позволяет указать, необходима ли скобка программиста внутри класса для "ручного" внесения членов класса | Если галочка указана - генерируется скобка программиста для "ручного" внесения членов класса.
 
 ## Свойства атрибутов аргументов события
@@ -111,7 +110,7 @@ public delegate void АргументыHandler(object sender, ICSSoft.Product.А
 `PBSetStart` -| Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set.
 
 ## Свойства методов аргументов события
-Свойства и генерация методов, см. в [статье Методы классов и параметры методов](fd_class-methods-and-method-parameters.html).
+Свойства и генерация методов, см. в [статье Методы классов и параметры методов](fd_methods-parameters.html).
 
 ![](/images/pages/products/flexberry-designer/class-diagram/eventprops.jpg)
 

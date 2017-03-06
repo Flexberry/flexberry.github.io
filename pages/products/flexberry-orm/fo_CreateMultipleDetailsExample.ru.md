@@ -1,26 +1,17 @@
 ---
-title: Пример: большое количество детейлов
+title: Пример с большим количеством детейлов
 sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_create-multiple-details-example.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
-
-Полный список примеров кода [Flexberry ORM](flexberry-o-r-m.html) находится в статье ["Примеры кода"](code-samples.html).
-
-</td>
-</tr></tbody></table></a>
-</div>
-
-# Создание и сохранение объекта с большим количеством детейлов
+## Создание и сохранение объекта с большим количеством детейлов
 
 Данный тест осуществляет генерацию большого графа объектов с [детейловыми связями](detail-associations-and-their-properties.html) и его сохранение в БД.
 Используемая [диаграмма классов](fd_class-diagram.html) имеет вид:
-![Sample Picture Caption](/images/img/page/CreateMultipleDetailsExample/Details.png)
+
+![Sample Picture Caption](/images/pages/products/flexberry-orm/create-multiple-details-example/Details.png)
 
 При этом все классы [наследуются](inheritance.html) от нехранимого абстрактного класса `D`.
 Для каждого массива детейлов каждого объекта генерируется по 10 детейлов, затем все это сохраняется в БД путем передачи [сервису данных](data-service.html) корневого объекта графа.
@@ -46,7 +37,9 @@ DataServiceProvider.DataService.UpdateObject(aggregator);
 stopwatch.Stop();
 Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMilliseconds);
 ```
+
 Метод `GetDetails`:
+
 ```cs
 internal void GenDetails(D dobj, int qtyInEach)
 {

@@ -40,6 +40,7 @@ lang: ru
   * [Microsoft SQL Server](gbt_mssql.html)
   * [PostgreSQL](gbt_postgresql.html)
   * [Microsoft .NET Framework](gbt_dotnet.html)
+  * [ASP.NET](gbt_aspnet.html)
   * [Язык программирования C#](gbt_csharp.html)
   * [Mono](gbt_mono.html)
   * [ORM](gbt_orm.html)

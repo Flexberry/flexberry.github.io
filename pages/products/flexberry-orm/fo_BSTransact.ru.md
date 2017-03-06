@@ -1,5 +1,5 @@
 ---
-title: Бизнес-сервер: обновление нескольких объектов одной транзакцией
+title: "Бизнес-сервер: обновление нескольких объектов одной транзакцией"
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true

@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_sign-assembly.html
-folder: products/flexberry-designer/abaut/
+folder: products/flexberry-designer/about/
 lang: ru
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Размазывание" по Control'ам информации с LookUp'а
+title: Размазывание по Control-ам информации с LookUp-а
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true

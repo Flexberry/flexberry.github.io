@@ -4,60 +4,58 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public, Ключевые понятия, Черновик статьи
 toc: true
 permalink: ru/fo_dataobject.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
-# Описание
-В Flexberry ORM '''объектами данных''' называются экземпляры классов наследников абстрактного класса `ICSSoft.STORMNET.DataObject`. Для объектов данных генераторами Flexberry создаётся код класса на .Net CLR-совместимом языке (C#, VB и т.п.).
+## Описание
+В Flexberry ORM **объектами данных** называются экземпляры классов наследников абстрактного класса `ICSSoft.STORMNET.DataObject`. Для объектов данных генераторами Flexberry создаётся код класса на .Net CLR-совместимом языке (C#, VB и т.п.).
 
-[anchor|#DataObjectInModel]
+## Объекты данных в модели
+[Классы объектов данных](fo_data-object-generated-structure.html) описываются на [диаграмме классов](fd_class-diagram-constraction.html) в [Flexberry Designer](fd_flexberry-designer.html) и имеют стереотип [implementation](fd_data-classes.html). При описании объекта данных задаются [атрибуты](fo_attributes-class-data.html), связи и метаданные. Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](fo_dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](fo_not-stored--attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](fo_features-of-dafault-value-assignment.html). Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](fo_inheritance.html), [мастеровые](fd_master-association.html) и [детейловые](fo_detail-associations-and-their-properties.html) связи.
 
-# Объекты данных в модели
-[Классы объектов данных](data-object-generated-structure.html) описываются на [диаграмме классов](class-diagram-constraction.html) в [Flexberry Designer](fd_flexberry-designer.html) и имеют стереотип [implementation](data--classes.html). При описании объекта данных задаются [атрибуты](attributes-class-data.html), связи и метаданные. Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](not-stored--attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](features-of-dafault-value-assignment.html). Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](inheritance.html), [мастеровые](master-association.html) и [детейловые](detail-associations-and-their-properties.html) связи.
+К объектам данным может быть привязана дополнительная информация (метаинформация), например, [представления](fd_view-definition.html) или [изображение](fo_class-image.html). 
 
-К объектам данным может быть привязана дополнительная информация (метаинформация), например, [представления](view-definition.html) или [изображение](class-image.html). 
+Стереотип [implementation](fd_data-classes.html) является значением по умолчанию, т.е. при разработке диаграммы его можно не указывать, оставляя пустое значение.
 
-(((<msg type=important>Стереотип [implementation](data--classes.html) является значением по умолчанию, т.е. при разработке диаграммы его можно не указывать, оставляя пустое значение</msg>)))
+## Объекты данных вo время выполнения
+Жизненный цикл объекта данных традиционно состоит из трех этапов:
 
-[anchor|#DataObjectInRunTime]
-
-# Объекты данных вo время выполнения
-Жизненный цикл объекта данных традиционно состоит из трех этапов.
-# Создание.
-# Обработка.
-# Сохранение.
+* Создание.
+* Обработка.
+* Сохранение.
 
 ## Создание объекта данных
 Объект данных может быть создан следующими способами:
+
 * Создание экземпляра класса стандартными средствами языка 
-* Загрузка из хранилища методами LoadObject/LoadObjects [сервиса данных](data-service.html).
-* [Прототипирование (Создание объекта данных на основе существующего)](data-object-prototype.html)
-* [Копирование](copying-data-objects.html).
-* [Десериализация ранее сохраненного объекта](aggregating-function.html).
+* Загрузка из хранилища методами LoadObject/LoadObjects [сервиса данных](fo_data-service.html).
+* [Прототипирование (Создание объекта данных на основе существующего)](fo_data-object-prototype.html)
+* [Копирование](fo_copying-data-objects.html).
+* [Десериализация ранее сохраненного объекта](fo_aggregating-function.html).
 
 
 
 ## Обработка объекта данных
-Одним из основных атрибутов объекта является [ключ объекта](primary-keys-objects.html), для доступа к которому используется свойство `<nowiki>__PrimaryKey</nowiki>`. В большинстве случаев для ключа используется глобальный уникальный идентификатор (GUID), хотя при необходимости могут быть использованы другие типы.
+
+Одним из основных атрибутов объекта является [ключ объекта](fo_primary-keys-objects.html), для доступа к которому используется свойство `<nowiki>__PrimaryKey</nowiki>`. В большинстве случаев для ключа используется глобальный уникальный идентификатор (GUID), хотя при необходимости могут быть использованы другие типы.
 
 Наиболее часто встречаются следующие задачи обработки объектов данных: 
-* [Изменение значений атрибутов](own-object-attributes-and-attributes-related-objects.html).
-* [Получение информации о статусе объекта](processing-status-and-condition-of-load-object-data-services.html).
-* [Получение информации о загруженных свойствах](get-loaded-properties-and--check-loaded-property.html).
-* [Получение метаданных объекта](information-class-as-metadata-supervisor.html).
-* [Блокировка объекта для монопольного редактирования](lock-service.html).
-* [Проверка совместимости объекта и представления](test-object-for-viewing.html).
-* [Получение презентационного значения для объекта данных](data-object-get-presentation-value.html)
-* [Дочитка объекта данных](additional-loading-data-object.html)
+* [Изменение значений атрибутов](fo_own-object-attributes-and-attributes-related-objects.html).
+* [Получение информации о статусе объекта](fo_processing-status-and-condition-of-load-object-data-services.html).
+* [Получение информации о загруженных свойствах](fo_get-loaded-properties-and--check-loaded-property.html).
+* [Получение метаданных объекта](fo_information-class-as-metadata-supervisor.html).
+* [Блокировка объекта для монопольного редактирования](fo_lock-service.html).
+* [Проверка совместимости объекта и представления](fo_test-object-for-viewing.html).
+* [Получение презентационного значения для объекта данных](fo_data-object-get-presentation-value.html)
+* [Дочитка объекта данных](fo_additional-loading-data-object.html)
 
 
 ## Сохранение объекта данных в хранилище
-Для сохранения объекта данных используются методы [сервиса данных](data-service.html) UpdateObject/UpdateObjects.
+Для сохранения объекта данных используются методы [сервиса данных](fo_data-service.html) UpdateObject/UpdateObjects.
 
 ## Основные свойство и методы ICSSoft.STORMNET.DataObject
 
 ### Работа с копией данных
+
 {| border="1"
 ! Метод
 ! Описание метода
@@ -163,11 +161,13 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cs virtual void ICSSoft.STORMNET.DataObject.CopyTo(DataObject toObject,  
+```cs 
+  virtual void ICSSoft.STORMNET.DataObject.CopyTo(DataObject toObject,  
   bool  CreateDataObjectsCopy,  
   bool  PrimaryKeyCopy,  
   bool  UseParentCaching  
  )```
+
 |-
 | `GetStatus`
 | __Назначение__: Получение значения статуса объекта
@@ -181,9 +181,11 @@ __Сигнатура__:
 ```cs
 ObjectStatus ICSSoft.STORMNET.DataObject.GetStatus()
 ```
+
 ```cs
 ObjectStatus ICSSoft.STORMNET.DataObject.GetStatus(bool recountIfAutoaltered)
 ```
+
 |-
 | `LockObject`
 | __Назначение__: Заблокировать объект
@@ -197,6 +199,7 @@ __Сигнатура__:
 ```cs
 void ICSSoft.STORMNET.DataObject.LockObject(object key)
 ```
+
 |-
 | `Prototyping`
 | __Назначение__: Прототипизировать
@@ -210,6 +213,7 @@ __Сигнатура__:
 ```cs virtual void ICSSoft.STORMNET.DataObject.Prototyping()
 virtual void ICSSoft.STORMNET.DataObject.Prototyping(bool withDetails)
 ```
+
 |-
 | `SetExistObjectPrimaryKey`
 | __Назначение__: Установить первичный ключ в объект данных. Выполняется операция Clear() для объекта, присваивается первичный ключ, SetLoadingState(LoadingState.LightLoaded); SetLoadedProperties("__PrimaryKey");
@@ -223,6 +227,7 @@ __Сигнатура__:
 ```cs
 void ICSSoft.STORMNET.DataObject.SetExistObjectPrimaryKey (object primaryKey)
 ```
+
 |-
 | `SetLoadingState`
 | __Назначение__: Установка состояния загрузки.
@@ -236,6 +241,7 @@ __Сигнатура__:
 ```cs
 void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 ```
+
 |-
 | `SetLoadedProperties`
 | __Назначение__: Установка состояния загрузки.
@@ -249,6 +255,7 @@ __Сигнатура__:
 ```cs
 void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 ```
+
 |-
 | `SetStatus`
 | __Назначение__: Установка статуса
@@ -262,6 +269,7 @@ __Сигнатура__:
 ```cs
 virtual void ICSSoft.STORMNET.DataObject.SetStatus (ObjectStatus newState)
 ```
+
 |-
 | `UnLockObject`
 | __Назначение__: Разблокировать объект
@@ -275,5 +283,6 @@ __Сигнатура__:
 ```cs
 void ICSSoft.STORMNET.DataObject.UnLockObject (object key)
 ```
+
 |}
 

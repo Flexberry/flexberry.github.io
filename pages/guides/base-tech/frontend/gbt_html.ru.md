@@ -103,19 +103,6 @@ lang: ru
 * [Практикум по HTML и CSS - htmlbook.ru](http://htmlbook.ru/practical)
 * [HTML Exercises - W3Schools](http://www.w3schools.com/html/exercise.asp)
 
-### Задания для самостоятельного выполнения
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-#### Вариант №1
-
-#### Вариант №2
-
-#### Вариант №3
-
-#### Вариант №4
-
-#### Вариант №5
-
 ## Примеры
 
 * [HTML Examples - W3Schools](http://www.w3schools.com/html/html_examples.asp)
