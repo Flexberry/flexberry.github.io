@@ -4,13 +4,13 @@ sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_instantiate-and-persist-objects-example.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
-# Пример создания и сохранения объектов данных
-В данном примере создается граф объектов данных и затем производится их сохранение в БД с помощью [сервиса данных](data-service.html).
-```cs
+## Пример создания и сохранения объектов данных
+
+В данном примере создается граф объектов данных и затем производится их сохранение в БД с помощью [сервиса данных](fo_data-service.html).
+
+```cpp
 Console.WriteLine("1. How to instantiate dataobjects and persist into DB.");
 
 // Объекты данных создаются как и экземпляры других классов .Net - с помощью вызова конструктора.
@@ -100,4 +100,4 @@ catch (Exception exc)
 }
 ```
 
-Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](code-samples.html).
+Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](fo_code-samples.html).
