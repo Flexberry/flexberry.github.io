@@ -1,5 +1,5 @@
 ---
-title: Создание и подключение монитора задач [Монитор задач](fo_business-task-monitor.html)
+title: Создание и подключение монитора задач
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
