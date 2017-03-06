@@ -11,7 +11,7 @@ permalink: ru/fo_creation-function-when-using--language-def.html
 
 {% include important.html content="Будьте внимательны: пользовательские функции должны начинаться с символов `user_`!. "%}
 
-###Пример
+### Пример
 Разработаем собственный язык задания ограничений ExportLanguage, работа с которым будет производиться следующим образом:
 
 ```cs
