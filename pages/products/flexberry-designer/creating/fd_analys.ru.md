@@ -3,7 +3,7 @@ title: Этап анализа
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/fd_flex-analys.html
+permalink: ru/fd_analys.html
 folder: products/flexberry-designer/creating/
 lang: ru
 ---
@@ -55,4 +55,4 @@ lang: ru
 
 
 ## Следующий этап
-После создания модели приложения можно приступать к созданию [минимального рабочего приложения](fd_flex-prototype.html).
+После создания модели приложения можно приступать к созданию [минимального рабочего приложения](fd_prototype-creation.html).

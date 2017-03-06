@@ -3,7 +3,7 @@ title: Определение проектирования
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/ffd_definition-of-design.html
+permalink: ru/fd_definition-design.html
 folder: products/flexberry-designer/creating/
 lang: ru
 ---

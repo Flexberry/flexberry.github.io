@@ -218,7 +218,7 @@ entries:
     - title: Master association
       title_ru: Мастеровые ассоциации и их свойства  
       url: /fd_master-association.html
-      output: web, pdf
+      output: web, pdf   
 
     - title: Types map
       title_ru: Карта типов 
@@ -265,11 +265,46 @@ entries:
     output: web, pdf
     
     folderitems:
+    - title: Creating application
+      title_ru: Создание приложения 
+      url: /fd_flexberry.html
+      output: web, pdf
+
     - title: Design
       title_ru: Проектирование информационных систем
       url: /fd_design.html
-      output: web
+      output: web, pdf
 
+    - title: Description of MDD methodology
+      title_ru: Описание методологии MDD
+      url: /fd_model-driven-architecture.html
+      output: web, pdf
+
+    - title: Definition of design
+      title_ru: Определение проектирования
+      url: /fd_definition-design.html
+      output: web, pdf
+
+    - title: Analysis stage
+      title_ru: Этап анализа
+      url: /fd_analys.html
+      output: web, pdf
+
+    - title: Stage of prototype creation
+      title_ru: Этап создания прототипа 
+      url: /fd_prototype-creation.html
+      output: web, pdf
+
+    - title: Development
+      title_ru: Реализация информационных систем
+      url: /fd_development.html
+      output: web, pdf
+
+    - title: Stage of application development
+      title_ru: Этап доработки приложения
+      url: /fd_application-development.html
+      output: web, pdf
+    
   - title: Audit
     title_ru: Аудит в Flexberry Designer
     output: web, pdf
