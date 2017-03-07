@@ -4,18 +4,17 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_exist-detals.html
-folder: products/flexberry-orm/
-lang: ru
 ---
-# Описание ExistDetails
+## Описание ExistDetails
 Существуют такие {} и такие {}, что {}. Вернет True, если найдется хотя бы один объект из первого набора и хотя бы один объект из второго набора, удовлетворяющий условию, в противном случае - False. Условие - только одна функция (=, >, <, >=, <=).
 
-# Ограничение на детейл
+## Ограничение на детейл
 
-![](/images/pages/img/Code Examples/Безымянный.jpg)
+![](/images/pages/products/flexberry-orm/exist-detals/exist-detals-example-1.png)
 
 В следующем коде подразумевается, что в представлении `"СерверПодразделенияE"` обязательно присутствуют свойства `"Подразделение"` (так как оно есть в условии) и `"Сервер"` (свойство, по которому идет соединение).
-```
+
+```cs
 ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(
     typeof (Репликации.Сервер), "СерверE");
@@ -36,10 +35,11 @@ lcsСервер.ReturnTop = 1;
 ICSSoft.STORMNET.DataObject[] dobjsСервер =
     ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер);
 ```
+
 Требуется вычитать только те сервера, которые принадлежат только одному конкретному Подразделению
 (Т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, не будут вычитаны).
 
-```
+```cs
 ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
 LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "СерверE");
 lcsСервер.LoadingTypes = new[] {typeof (Сервер)};
@@ -60,15 +60,14 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
 ```
 
 
-# Сравнения свойств двух различных детейлов (не выше первого уровня) имеющих общий агрегатор
+## Сравнения свойств двух различных детейлов (не выше первого уровня) имеющих общий агрегатор
 
-![](/images/pages/img/page/ExistDetals/ExistDetailsExample.png)
+![](/images/pages/products/flexberry-orm/exist-detals/exist-detals-example-2.png)
 
 Например, необходимо получить все компьютеры у которых хотя бы одна "железка" будет куплена раньше, чем любое программное обеспечение для него.
 Порядок свойств в функции сравнения накладываемой на детейлы имеет значение (в данном случае имена свойств совпали).
 
-```
-
+```cs
  View view = Information.GetView("ComputerL", typeof(Computer));
  View view2 = Information.GetView("HardwareD", typeof(Hardware));
  View view3 = Information.GetView("SoftwareD", typeof(Software));
@@ -86,7 +85,8 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
  var dos = DataServiceProvider.DataService.LoadObjects(lcs);
 ```
 
-# Смотрите также
-* [Exist, ExistExact, ExistAll, ExistAllExact](exist--exist-exact--exist-all--exist-all-exact.html)
+## Смотрите также
+
+* [Exist, ExistExact, ExistAll, ExistAllExact](fo_exist--exist-exact--exist-all--exist-all-exact.html)
 * [Фильтрация-по-детейлам-мастера-ConnectMasterProp-OwnerConnectProp.ashx|Фильтрация по детейлам мастера]
-* [SQLWhereLanguageDef](function-list.html)
+* [SQLWhereLanguageDef](fo_function-list.html)

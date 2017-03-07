@@ -19,7 +19,7 @@ permalink: ru/fo_dynamic-properties.html
 Динамические свойства __не сохраняются__ в базу.
 
 
-% include important.html content="Собственный экземпляр `DynamicProperties` содержится в __каждом__ объекте класса, наследуемого от [DataObject](fo_dataobject.html)." %}
+{% include important.html content="Собственный экземпляр `DynamicProperties` содержится в __каждом__ объекте класса, наследуемого от [DataObject](fo_dataobject.html)." %}
 
 ## Использование динамических свойств
 
