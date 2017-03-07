@@ -56,7 +56,7 @@ private void buttonExit_Click(object sender, EventArgs e) //нажатие на 
 }
 ```
 
-[Запускаем форму модально](o_using-of-not-stored-classes.html) до запуска рабочего стола приложения. Пример из класса `МенеджерМагазиновDesktop`:
+[Запускаем форму модально](fo_using-of-not-stored-classes.html) до запуска рабочего стола приложения. Пример из класса `МенеджерМагазиновDesktop`:
 
 ```cs
 public static bool Run_SetCurrentShopForm()
