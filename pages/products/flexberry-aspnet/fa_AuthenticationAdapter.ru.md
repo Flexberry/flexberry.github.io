@@ -100,8 +100,8 @@ public static Agent CreateDbUser(string username, string friendlyUserName, bool 
 public static Agent CreateDbUser(string username)
 ```
 
-{% include warning.html content="
-Данный метод стоит использовать, если есть уверенность, что в условиях, где развёрнуто приложение, настройки Active Directory позволят  корректно выполнить нижеприведённый код (если такой уверенности нет, лучше использовать перегрузку метода с двумя параметрами)
+{% include warning.html content="Данный метод стоит использовать, если есть уверенность, что в условиях, где развёрнуто приложение, настройки Active Directory позволят  корректно выполнить нижеприведённый код (если такой уверенности нет, лучше использовать перегрузку метода с двумя параметрами)"
+
 ```cs
 using (var context = new PrincipalContext(ContextType.Domain))
 {
@@ -114,7 +114,8 @@ using (var context = new PrincipalContext(ContextType.Domain))
 	}
 }
 ```
-"%}
+
+%}
 
 ## Особенности использования AuthenticationAdapter
 
