@@ -9,8 +9,6 @@ permalink: ru/fo_dataobject-as-attribute-type.html
 * **Компонент:** [Редактор UML-диаграмм](fd_editing-diagram.html)
 * **Предназначение:** Описаны особенности использования [объекта данных](fo_dataobject.html) в виде атрибута класса.
 
-## Атрибут класса типа объекта данных
-
 Если на [диаграмме классов](fd_class-diagram.html) нужен [атрибут](fo_attributes-class-data.html) с типом, унаследованным от [DataObject](fo_dataobject.html), нужно:
 
 * сгенерировать и откомпилировать этот тип.
@@ -18,7 +16,7 @@ permalink: ru/fo_dataobject-as-attribute-type.html
 
 Только после этого производится генерация такого класса.
 
-![](/images/pages/products/flexberry-orm/data-object-as-attribute-type/data-object-as-attribute-type.gif)
+![](/images/pages/products/flexberry-orm/data-object-as-attribute-type/data-object-as-attribute-type.GIF)
 
 Использование атрибута класса типа объекта данных не рекомендуется использовать в общем случае, если есть возможность использовать [мастера](fd_master-association.html) или [детейлы](fo_detail-associations-and-their-properties.html).
 
