@@ -11,10 +11,10 @@ permalink: ru/fo_d-r-data-service.html
 * **Предназначение**: Сервис данных для MS SQL Server, реализующий "грязное чтение" данных `(WITH (NOLOCK))`.
 
 ## DRDataService
-`DRDataService` - [сервис данных](fo_data-service.html), наследник [SQLDataService](fo_s-q-l-data-service.html), обладает тем же функционалом, что и обычный `[MSSQLDataService]`(fo_m-s-s-q-l-data-service.html), но при чтении данных используется "[грязное чтение (dirty read)](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx)".
+`DRDataService` - [сервис данных](fo_data-service.html), наследник [SQLDataService](fo_s-q-l-data-service.html), обладает тем же функционалом, что и обычный [MSSQLDataService](fo_m-s-s-q-l-data-service.html), но при чтении данных используется "[грязное чтение (dirty read)](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx)".
 
 ## Получение экземпляра DRDataService
-Экземпляр DRDataService можно получить через `[UnityFactory]`(fo_unity-factory.html), выполнив следующий код:
+Экземпляр DRDataService можно получить через [UnityFactory](fo_unity-factory.html), выполнив следующий код:
 
 ```cs
  IUnityContainer container = UnityFactory.CreateContainer();
