@@ -4,20 +4,10 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Черновик статьи
 toc: true
 permalink: ru/fo_data-service.html
-folder: products/flexberry-orm/
-lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
 * '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
 * '''Программная библиотека:''' ICSSoft.STORMNET.Business.dll
 * '''Предназначение:''' Компонент доступа к источнику данных.
-</td>
-</tr></tbody></table></a>
-</div>
 
 '''Сервис данных''' - компонент Flexberry ORM, обеспечивающий запись и чтение объектов данных в хранилище. В объектной модели Flexberry ORM сервис данных представлен классом, реализующим интерфейс `ICSSoft.STORMNET.Business.IDataService`.
 Поддерживается несколько [ стандартных сервисов данных](standard-data-services.html), и при необходимости пользователями могут быть [разработаны](implement-a-custom--data-service.html) новые, удовлетворяющие специфическим требованиям (например, наследуя классы `ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService` или `ICSSoft.STORMNET.Business.[SQLDataService](s-q-l-data-service.html)`).
