@@ -6,15 +6,15 @@ toc: true
 permalink: ru/fo_d-r-data-service.html
 ---
 * **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент**: [Сервис данных]ru/fo_data-service.html)
+* **Компонент**: [Сервис данных](fo_data-service.html)
 * **Программная библиотека**: ICSSoft.STORMNET.Business.DRDataService
 * **Предназначение**: Сервис данных для MS SQL Server, реализующий "грязное чтение" данных `(WITH (NOLOCK))`.
 
 ## DRDataService
-`DRDataService` - [сервис данных](ru/fo_data-service.html), наследник [SQLDataService](fo_s-q-l-data-service.html), обладает тем же функционалом, что и обычный `[MSSQLDataService](fo_m-s-s-q-l-data-service.html)`, но при чтении данных используется "[грязное чтение (dirty read)](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx)".
+`DRDataService` - [сервис данных](fo_data-service.html), наследник [SQLDataService](fo_s-q-l-data-service.html), обладает тем же функционалом, что и обычный `[MSSQLDataService]`(fo_m-s-s-q-l-data-service.html), но при чтении данных используется "[грязное чтение (dirty read)](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx)".
 
 ## Получение экземпляра DRDataService
-Экземпляр DRDataService можно получить через `[UnityFactory](fo_unity-factory.html)`, выполнив следующий код:
+Экземпляр DRDataService можно получить через `[UnityFactory]`(fo_unity-factory.html), выполнив следующий код:
 
 ```cs
  IUnityContainer container = UnityFactory.CreateContainer();
@@ -43,4 +43,4 @@ permalink: ru/fo_d-r-data-service.html
 </configuration>
 ```
 
-Строка соединения в данном примере настраивается так, как указано в статье про `[DataServiceProvider](fo_data-service-provider-data-service.html)`
+Строка соединения в данном примере настраивается так, как указано в статье про `[DataServiceProvider]`(fo_data-service-provider-data-service.html)
