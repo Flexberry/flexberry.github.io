@@ -8,7 +8,7 @@ permalink: ru/fa_audit-web-example.html
 ---
 
 {% include note.html content="Если перегенерировать проект нет желания\возможности
-смотрите статью *[Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта]*(audit-web-example-manual.html)" %}
+смотрите статью *[Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта](efs_audit-web-example-manual.html)*" %}
 
 ## Подключение аудита
 Рассмотрим подключение аудита к существующей системе на примере.
@@ -42,7 +42,7 @@ permalink: ru/fa_audit-web-example.html
 
 Откроем форму настройки стадии и перейдем на вкладку Настройка аудита
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-settings-stady.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-settings-stady.png)
 
 * Выберем синхронный режим записи (на [первом этапе](devprocess_audit-stages.html) реализован только синхронный режим записи)
 
@@ -58,7 +58,7 @@ permalink: ru/fa_audit-web-example.html
 
 Откроем свойства класса Кредит и установим настройку Вести аудит операции изменения.
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-settings-class.jpg)
+![](/images/pages/products/flexberry-aspnet/audit/audit-settings-class.png)
 
 Сохраним настройки и закроем форму.
 
