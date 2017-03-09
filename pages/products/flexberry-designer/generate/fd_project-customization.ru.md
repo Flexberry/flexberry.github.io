@@ -4,15 +4,15 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Audit, Flexberry Designer, Public
 toc: true
 permalink: ru/fd_project-customization.html
-folder: products/flexberry-designer/
+folder: products/flexberry-designer/generate/
 lang: ru
 ---
 
-# Настройка модели для генерации
-Форма настроек свойств модели позволяет описать основные и дополнительные свойства модели. Данная форма вызывается через меню [плагина](flexberry-orm-case-plugin.html).
+Форма настроек свойств модели позволяет описать основные и дополнительные свойства модели. Данная форма вызывается через меню [плагина](fo_flexberry-orm-case-plugin.html).
 
 ## Основные свойства
-![](/images/pages/img/page/ProjectCustomization/StageProperties.png) 
+
+![](/images/pages/products/flexberry-designer/generate/stage-properties.png) 
 
 Здесь:
 * `Название стадии` - имя стадии (название стадии, в которой происходит работа с моделью, во [Flexberry Designer](fd_flexberry-designer.html)); 
@@ -25,17 +25,18 @@ lang: ru
 * `Карта типов` - [карта типов](fd_types-map.html).
 
 ## Настройки аудита
+
 На данной вкладке представлены настройки аудита для модели. Для функционирования аудита __требуются дополнительные пакеты__.
 
 ## Дополнительно
-![](/images/pages/img/page/ProjectCustomization/StagePropertiesExt.png)
+![](/images/pages/products/flexberry-designer/generate/stage-properties-ext.png)
 
 * `Namespace` - пространство имён (может учитываться при определении [пространства имён генерируемого проекта](fo_location-assembly-after-code-generation.html)). 
-* `DefaultBaseClass`{ - базовый класс (предок), от которого наследуются .Net-классы, соответствующие [UML-классу со стереотипом `implementation`](data--classes.html); 
-* `DefaultDetailArrayClass` - базовый класс (предок), от которого наследуются .Net-классы, соответствующие массивам детейловых объектов (для классов-детейлов  [со стереотипом `implementation`](data--classes.html)). 
+* `DefaultBaseClass`{ - базовый класс (предок), от которого наследуются .Net-классы, соответствующие [UML-классу со стереотипом `implementation`](fd_data-classes.html); 
+* `DefaultDetailArrayClass` - базовый класс (предок), от которого наследуются .Net-классы, соответствующие массивам детейловых объектов (для классов-детейлов  [со стереотипом `implementation`](fd_data-classes.html)). 
 * `DefaultEditScriptName` - имя сценария (EBSI-интерпретируемого) для формы редактирования, который используется используется формой редактирования в случае, если у неё не прописано (пустое) свойство `ScriptName`. Если не указано, используется предопределённый сценарий, зашитый в [Flexberry Designer](fd_flexberry-designer.html). 
 * `DefaultListScriptName` - имя сценария (EBSI-интерпретируемого) для формы списка, который используется используется формой редактирования в случае, если у неё не прописано (пустое) свойство ScriptName. Если не указано, используется предопределённый сценарий, зашитый в [Flexberry Designer](fd_flexberry-designer.html). 
 * `ScriptPacket` - имя пакета, в который генерируется провайдер сценариев, содержащий все сценарии, которые определены внутри данной стадии через EBSD-диаграммы. 
 * `ScriptNamespacePostfix` - пространство имён для пакета со сценариями. 
-* `Подписывать сборки` - настройка для осуществления [подписей генерируемых сборок](sign-assembly-at-Flexberry.html). 
+* `Подписывать сборки` - настройка для осуществления [подписей генерируемых сборок](fd_sign-assembly.html). 
 

@@ -1,10 +1,10 @@
 ---
 title: Мастера в представлении (View)
-sidebar: flexberry-orm_sidebar
+sidebar: flexberry-designer_sidebar
 keywords: Flexberry Desinger, Public, View
 toc: true
 permalink: ru/fd_masters-view.html
-folder: products/flexberry-designer/creating/
+folder: products/flexberry-designer/views/
 lang: ru
 ---
 

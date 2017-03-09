@@ -80,7 +80,7 @@ lang: ru
 
 Создание базы, привязка к которой была выполнена на предыдущем шаге, а также приведение её в соответствие с моделью проектируемого приложения. Сборка приложения и создание проекта Visual Studio. Развертывание приложения.
 
-* Создание базы ([подробнее о создании базы](fd_matching-db-microsoft-sql-server.html), а также для [Web](fa_flexberry-asp-net-generator.html))
+* Создание базы ([подробнее о создании базы](fd_matching-db.html), а также для [Web](fa_flexberry-asp-net-generator.html))
 * Сборка приложения ([Win](Generate-code-and-other-function-module-CSharp), [Web](fa_flexberry-asp-net-generator.html)).
 * Развертывание приложения
 
