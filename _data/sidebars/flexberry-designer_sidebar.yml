@@ -12,7 +12,7 @@ entries:
     folderitems:
     - title: Flexberry Designer
       title_ru: Flexberry Designer
-      url: /fd_flexberry-designer.html
+      url: /fd_landing_page.html
       output: web
 
     - title: Flexberry plugins
@@ -413,14 +413,4 @@ entries:
     - title: T-view
       title_ru: T-представление
       url: /fd_t-view.html
-      output: web, pdf
-    
-  - title: Audit
-    title_ru: Аудит в Flexberry Designer
-    output: web, pdf
-
-    folderitems:
-    - title: Audit setup
-      title_ru: Настройка аудита в Flexberry Designer
-      url: /fd_audit-setup.html
       output: web, pdf
