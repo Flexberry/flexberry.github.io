@@ -1,10 +1,10 @@
 ---
-title: Ember JS
+title: Разработка ember-компонентов
 keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
-permalink: ru/gbt_emberjs.html
-folder: guides/base-tech/frontend/
+permalink: ru/gbt_devcomp.html
+folder: guides/base-tech/frontend/emberjs
 lang: ru
 ---
 
@@ -23,8 +23,6 @@ lang: ru
 ##  Ссылки на материалы для изучения
 
 ### Базовый курс
-
-* [Разработка ember-компонентов](gbt_devcomp.html)
 
 * [Ember.js](http://emberjs.com/)
 * [Ember-CLI](https://ember-cli.com/)
@@ -66,5 +64,4 @@ lang: ru
 
 ## Перейти
 
-* [Серверная разработка](gbt_backend.html)
-* [Главная страница курса](gbt_landing-page.html)
+* [Вернуться назад](gbt_emberjs.html)
