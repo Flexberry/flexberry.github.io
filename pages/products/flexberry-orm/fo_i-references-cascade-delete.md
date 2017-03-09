@@ -22,7 +22,7 @@ folder: products/flexberry-orm/
 
 Пусть у нас есть диаграмма вида:
 
-![](/images/pages/products/flexberry-orm/IReferencesCascadeDelete.png)
+![](/images/pages/products/flexberry-orm/i-references-cascade-delete.png)
 
 На диаграмму добавлен `IReferencesCascadeDelete` со стереотипом [externalinterface](fo_external-interface.html) , от которого наследуется класс `Territory2` и `Country2`. При удалении экземпляров этого класса будут удаляться также все объекты, которые ссылаются на них.
 При указанном расположении классов с учётом [Наследование|наследования]:

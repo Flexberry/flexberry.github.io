@@ -70,7 +70,7 @@ lang: ru
 Сборки, входящие в пакет:
 * ICSSoft.Services.UnityFactory.dll
 
-## [Flexberry ORM](flexberry-o-r-m.html)
+## [Flexberry ORM](fo_flexberry-orm.html)
 Пакет содержит компоненты для объектно-реляционного отображения.
 
 Сборки, входящие в пакет описаны [тут](flexberry-o-r-m-libraries.html).

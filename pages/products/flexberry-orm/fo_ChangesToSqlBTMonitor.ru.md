@@ -11,7 +11,7 @@ permalink: ru/fo_changes-to-sql-b-t-monitor.html
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
 
-* **Продукт:** [Flexberry ORM](flexberry-o-r-m.html)
+* **Продукт:** [Flexberry ORM](fo_flexberry-orm.html)
 * **Компонент:** [Монитор задач](business-task-monitor.html)
 * **Предназначение:** краткое описание назначения контрола.
 * **Программная библиотека:** ChangesToSqlBTMonitor.dll

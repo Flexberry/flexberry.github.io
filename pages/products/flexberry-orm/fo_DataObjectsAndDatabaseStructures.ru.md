@@ -12,16 +12,16 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Сервис данных](data-service.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+* '''Компонент''': [Сервис данных](fo_data-service.html)
 * '''Программная библиотека''': ICSSoft.STORMNET.DataObject.dll, ICSSoft.STORMNET.Business.dll
 * '''Предназначение''': Описаны основные принципы отображения объектной модели на реляционную структуру.
 </td>
 </tr></tbody></table></a>
 </div>
 
-Большинство [сервисов данных](data-service.html) обеспечивают работу с реляционным хранилищем.
-Объектные данные [Flexberry ORM](flexberry-o-r-m.html) хранит следующим образом:
+Большинство [сервисов данных](fo_data-service.html) обеспечивают работу с реляционным хранилищем.
+Объектные данные [Flexberry ORM](fo_flexberry-orm.html) хранит следующим образом:
 
 
 •	Каждый класс — отдельная таблица. 
@@ -30,7 +30,7 @@ lang: ru
 
 •	[Мастеровые связи](master--association.html) — внешние ключи таблицы внутреннего класса.
 
-•	[Детейловые связи](detail-associations-and-their-properties.html) — внешний ключ детейловой таблицы на агрегатор (шапку).
+•	[Детейловые связи](fo_detail-associations-and-their-properties.html) — внешний ключ детейловой таблицы на агрегатор (шапку).
 
 •	[Наследуемый](inheritance.html) класс — отдельная от предка таблица.
 

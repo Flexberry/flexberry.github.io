@@ -8,7 +8,7 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
-Все классы данных наследуются от базового `[DataObject](dataobject.html)`, обеспечивающего основные манипуляции: [статусы](object-status-and-loading-state.html), хранение данных, хранение [копии данных](data-object-copy.html) для вычисления изменённых [атрибутов](attributes-class-data.html), означивание и хранение [первичного ключа](primary-keys-objects.html).
+Все классы данных наследуются от базового `[DataObject](fo_dataobject.html)`, обеспечивающего основные манипуляции: [статусы](object-status-and-loading-state.html), хранение данных, хранение [копии данных](data-object-copy.html) для вычисления изменённых [атрибутов](fo_attributes-class-data.html), означивание и хранение [первичного ключа](fo_primary-keys-objects.html).
 Пример:
 ```
 public class SimpleDataObject:DataObject 
@@ -40,7 +40,7 @@ public class SimpleDataObject:DataObject
 private MasterDataObject fMaster;
 public virtual MasterDataObject Master {get{return fMaster;} set{fMaster=value;}}
 ```
-Если [класс является агрегируемым](detail-associations-and-their-properties.html), то:
+Если [класс является агрегируемым](fo_detail-associations-and-their-properties.html), то:
 
 1. Генерируется свойство, указывающее [агрегатор(шапку)](fd_key-concepts.html). Это свойство помечается атрибутом `ICSSoft.STORMNET.DataObject.AgregatorAttribute.`
 Пример класса данных детейла:

@@ -12,8 +12,8 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Сервис данных](data-service.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+* '''Компонент''': [Сервис данных](fo_data-service.html)
 * '''Программная библиотека''': ICSSoft.STORMNET.Business.DRDataService
 * '''Предназначение''': Сервис данных для MS SQL Server, реализующий "грязное чтение" данных `(WITH (NOLOCK))`.
 </td>
@@ -21,7 +21,7 @@ lang: ru
 </div>
 
 # DRDataService
-`DRDataService` - [сервис данных](data-service.html), наследник [SQLDataService](s-q-l-data-service.html), обладает тем же функционалом, что и обычный `[MSSQLDataService](m-s-s-q-l-data-service.html)`, но при чтении данных используется "[грязное чтение (dirty read)](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx)".
+`DRDataService` - [сервис данных](fo_data-service.html), наследник [SQLDataService](fo_sql-data-service.html), обладает тем же функционалом, что и обычный `[MSSQLDataService](m-s-s-q-l-data-service.html)`, но при чтении данных используется "[грязное чтение (dirty read)](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx)".
 
 # Получение экземпляра DRDataService
 Экземпляр DRDataService можно получить через `[UnityFactory](unity-factory.html)`, выполнив следующий код:

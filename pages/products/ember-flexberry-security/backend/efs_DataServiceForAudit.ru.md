@@ -13,7 +13,7 @@ lang: ru
 # Механизм определения строки подключения при работе аудита
 '''Механизм работает в версиях сборок после 27.01.2015.'''
 
-При ведении аудита важным является определить, как и в какую БД будут записываться данные аудита. Для этого определяется имя строки подключения к аудиту и тип [сервиса данных](data-service.html).
+При ведении аудита важным является определить, как и в какую БД будут записываться данные аудита. Для этого определяется имя строки подключения к аудиту и тип [сервиса данных](fo_data-service.html).
 
 ## Определение имени строки подключения
 Определение имени строки подключения происходит по следующему алгоритму:
@@ -46,18 +46,18 @@ public class FirstClass : ICSSoft.STORMNET.DataObject, IDataObjectWithAuditField
 
 2.2. Если `[IsDatabaseLocal](keep-and-use-audit-settings.html) = true`, то происходит поиск по структурам `[AuditDSSetting](keep-and-use-audit-settings.html)`.
 
-''Считается, что если `[IsDatabaseLocal](keep-and-use-audit-settings.html) = true`, то запись аудита будет производиться в "текущую" БД посредством "текущего" [сервиса данных](data-service.html) (понятие "текущий" условно, поскольку в метод определения имени строки подключения тип "текущего" [сервиса данных](data-service.html) может попасть различными способами).
+''Считается, что если `[IsDatabaseLocal](keep-and-use-audit-settings.html) = true`, то запись аудита будет производиться в "текущую" БД посредством "текущего" [сервиса данных](fo_data-service.html) (понятие "текущий" условно, поскольку в метод определения имени строки подключения тип "текущего" [сервиса данных](fo_data-service.html) может попасть различными способами).
 ''
-*Если "текущий" [сервис данных](data-service.html) некорректен, то '''в качестве имени строки соединения используется значение `[ConnStringName](keep-and-use-audit-settings.html)` из первой `[AuditDSSetting](keep-and-use-audit-settings.html)` из массива `[AuditDSSettings](keep-and-use-audit-settings.html)`''' ([имя строки соединения по умолчанию определено как &lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;](audit-setter.html)).
+*Если "текущий" [сервис данных](fo_data-service.html) некорректен, то '''в качестве имени строки соединения используется значение `[ConnStringName](keep-and-use-audit-settings.html)` из первой `[AuditDSSetting](keep-and-use-audit-settings.html)` из массива `[AuditDSSettings](keep-and-use-audit-settings.html)`''' ([имя строки соединения по умолчанию определено как &lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;](audit-setter.html)).
 
-*Иначе среди массива `[AuditDSSettings](keep-and-use-audit-settings.html)` ищется `[AuditDSSetting](keep-and-use-audit-settings.html)`, где `[ConnString](keep-and-use-audit-settings.html)` равно строке соединения "текущего" [сервиса данных](data-service.html), а `[DataServiceType](keep-and-use-audit-settings.html)` - типу "текущего" [сервиса данных](data-service.html), и '''значение первой найденной `[ConnStringName](keep-and-use-audit-settings.html)` будет искомым именем строки соединения для аудита'''.
+*Иначе среди массива `[AuditDSSettings](keep-and-use-audit-settings.html)` ищется `[AuditDSSetting](keep-and-use-audit-settings.html)`, где `[ConnString](keep-and-use-audit-settings.html)` равно строке соединения "текущего" [сервиса данных](fo_data-service.html), а `[DataServiceType](keep-and-use-audit-settings.html)` - типу "текущего" [сервиса данных](fo_data-service.html), и '''значение первой найденной `[ConnStringName](keep-and-use-audit-settings.html)` будет искомым именем строки соединения для аудита'''.
 
 Реализация интерфейса `[IAudit](i-audit.html)` `[ICSSoft.STORMNET.Business.Audit.Audit](i-audit.html)` обрабатывает полученное имя строки соединения следующим образом:
 # Производится поиск строки соединения по имени среди доступных в файле конфигурации.
 # Если строка соединения не была найдена, то используется строка соединения из [DataServiceProvider.DataService](data-service-provider-data-service.html).
 
 ## Определение типа сервиса данных
-Тип [сервиса данных](data-service.html), посредством которого будет записываться аудит, не определяется на этапе подготовки данных для записи в аудит. Тип определяется уже в реализации интерфейса `[IAudit](i-audit.html)`.
+Тип [сервиса данных](fo_data-service.html), посредством которого будет записываться аудит, не определяется на этапе подготовки данных для записи в аудит. Тип определяется уже в реализации интерфейса `[IAudit](i-audit.html)`.
 
 Реализация интерфейса `[IAudit](i-audit.html)` `[ICSSoft.STORMNET.Business.Audit.Audit](i-audit.html)` определяет тип сервиса данных следующим образом (см. также [следующую статью](audit-win-service.html)):
 # Тип сервиса данных всегда ищется в конфиг-файле по ключу <Имя строки соединения>_DSType.

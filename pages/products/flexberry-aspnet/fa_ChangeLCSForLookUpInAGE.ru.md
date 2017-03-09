@@ -23,7 +23,7 @@ lang: ru
 
 # Связывание LookUp'ов в AGE с внешним LookUp'ом
 Цель: 
-[Функция ограничения](limit-function.html) [LookUp'ов](master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
+[Функция ограничения](fo_limit-function.html) [LookUp'ов](master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
 
 
 Модель:

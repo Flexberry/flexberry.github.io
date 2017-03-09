@@ -10,19 +10,19 @@ lang: ru
 
 <div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
 
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
 * '''Компонент''': [Бизнес-сервер](business-logic.html)
 * '''Программная библиотека''': ICSSoft.STORMNET.Business.dll
-* '''Предназначение''': Описаны основные правила, которым определяется порядок вызова [бизнес-серверов](business--servers--wrapper--business--facade.html).
+* '''Предназначение''': Описаны основные правила, которым определяется порядок вызова [бизнес-серверов](fo_business-servers-wrapper-business-facade.html).
 </td>
 </tr></tbody></table></a>
 </div>
 
 # Порядок вызова бизнес-серверов
-Следует учесть, что в [бизнес-сервере](business--servers--wrapper--business--facade.html) может быть вызвано обновление объекта не через возвращаемый массив, а отдельным вызовом [сервиса данных](data-service.html). В этом случае, надо учесть то, что [бизнес-серверы](business--servers--wrapper--business--facade.html) будут вызываться для этого объекта отдельно.
+Следует учесть, что в [бизнес-сервере](fo_business-servers-wrapper-business-facade.html) может быть вызвано обновление объекта не через возвращаемый массив, а отдельным вызовом [сервиса данных](fo_data-service.html). В этом случае, надо учесть то, что [бизнес-серверы](fo_business-servers-wrapper-business-facade.html) будут вызываться для этого объекта отдельно.
 
 ## Агрегатор, детейлы
-Если имеется следующая ситуация c [детейлами](detail-associations-and-their-properties.html):
+Если имеется следующая ситуация c [детейлами](fo_detail-associations-and-their-properties.html):
 
 ![](/images/pages/img/page/Business-Servers-Wrapper-Business-Facade/AgregatorDetailAtBS.png)
 
@@ -65,7 +65,7 @@ public class Class1:Class2, Interface1, Interface2
 # бизнес-сервер, привязанный к Class1
 
 (((
-<msg type=note>Если некоторый интерфейс встретится несколько раз, то [бизнес-сервер](business--servers--wrapper--business--facade.html) для него будет выполнен только один раз в соответствии с уровнем самого дальнего предка.</msg>
+<msg type=note>Если некоторый интерфейс встретится несколько раз, то [бизнес-сервер](fo_business-servers-wrapper-business-facade.html) для него будет выполнен только один раз в соответствии с уровнем самого дальнего предка.</msg>
 )))
 
 ## Правила обновления объекта данных

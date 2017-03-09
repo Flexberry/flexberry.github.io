@@ -51,7 +51,7 @@ lang: ru
 Посмотрите [здесь](features-of-dafault-value-assignment.html).
 
 #### Определение вычислимых полей
-Как создавать вычислимые поля описано [в этой статье](not-stored--attributes.html) (ещё [в данной статье](create-with-data-service-expression.html) разобран подробный пример, как использовать [атрибут DataService Expression](attributes-class-data.html) для создания вычислимого поля).
+Как создавать вычислимые поля описано [в этой статье](fo_not-stored-attributes.html) (ещё [в данной статье](fo_create-with-data-service-expression.html) разобран подробный пример, как использовать [атрибут DataService Expression](fo_attributes-class-data.html) для создания вычислимого поля).
 
 Если требуется просто среди объектов, находящихся в массиве детейлов, посчитать какую-либо агрегирующую функцию, то можно воспользоваться [Функциональность-при-работе-с-массивами-детеиловых-объектов-DetailArray|этим] решением.
 
@@ -106,12 +106,12 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 Посмотрите [здесь](processing-one-object.html).
 
 #### Получение подключения
-Работа с базой данных осуществляется через [сервис данных](data-service.html).
+Работа с базой данных осуществляется через [сервис данных](fo_data-service.html).
 Пример получения подключения [здесь](Flexberry-s-q-l-query.html).
 
 
 (((
-<msg type=note>Заметим, что для [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-серверов] определён свой [сервис данных](data-service.html), поэтому обращение идёт как `this.DataService`; для остальных элементов определён статический класс. Подробнее о конструировании/получении [сервиса данных](data-service.html),  смотрите [здесь](construction--data-service.html).</msg>
+<msg type=note>Заметим, что для [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-серверов] определён свой [сервис данных](fo_data-service.html), поэтому обращение идёт как `this.DataService`; для остальных элементов определён статический класс. Подробнее о конструировании/получении [сервиса данных](fo_data-service.html),  смотрите [здесь](construction--data-service.html).</msg>
 )))
 
 

@@ -9,7 +9,7 @@ permalink: ru/fo_code-samples.html
 
 ### Примеры по Flexberry ORM
 * [Пример: большое количество детейлов](create-multiple-details-example.html)
-* [Пример: выполнение действий при сохранении объекта](data-object-update-hook-example.html)
+* [Пример: выполнение действий при сохранении объекта](fo_data-object-update-hook-example.html)
 * [Пример: загрузка графа объектов](load-multiple-details-example.html)
 * [Пример: загрузка и изменение объекта](load-and-alter-objects.html)
 * [Пример: использование собственных типов](using_custom_types_example.html)

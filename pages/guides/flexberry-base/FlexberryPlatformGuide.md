@@ -20,12 +20,12 @@ lang: ru
 #* [Статус и состояние загрузки объекта данных](object-status-and-loading-state.html)
 #* [Блокирование объекта данных](blocking-object-data.html)
 #* [Преобразование типа свойства объекта данных к типу хранилища](convert-type-property-object-data-to-type-storage.html)
-#* [Нехранимые (вычислимые) свойства объекта данных](not-stored--attributes.html)
+#* [Нехранимые (вычислимые) свойства объекта данных](fo_not-stored-attributes.html)
 #* [Контекстно-зависимый кэш объектов данных](context--sensitive--cache--data--objects.html)
-#* [Первичные ключи объектов](primary-keys-objects.html)
-#* [Хранение объектных данных в реляционной базе данных](data-objects-and-database-structures.html)
+#* [Первичные ключи объектов](fo_primary-keys-objects.html)
+#* [Хранение объектных данных в реляционной базе данных](fo_data-objects-and-database-structures.html)
 #* [Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий](interception-events--object-list-view.html)
-#* [Получение метаданных через Information](information-class-as-metadata-supervisor.html)
+#* [Получение метаданных через Information](fo_information-class-as-metadata-supervisor.html)
 #* [Update-related-objects|Обновление связанных объектов]
 #* [Функциональность-при-работе-с-массивами-детеиловых-объектов-DetailArray|Функциональность при работе с массивами детейловых объектов (DetailArray)]
 #* [Межформенное взаимодействие при редактировании объектов](interaction-between-forms-when-editing-objects.html)
@@ -44,7 +44,7 @@ lang: ru
 #* [SQLDataService-Additional-Capabilities|Дополнительные возможности, предоставляемые SQLDataService]
 #* [Обертки и специализированный бизнес-фасад для сервисов данных](wraps-and-specialized-business-facade-for-data-services.html)
 # Представление
-#* [Определение представления](view-definition.html)
+#* [Определение представления](fo_view-def.html)
 #* [Скрытые свойства в представлении](hidden--properties--in--view.html)
 #* [Операции с представлениями](view--operations.html)
 #* [Адаптивные представления для детейлов](adaptive-views-for-details.html)
@@ -61,7 +61,7 @@ lang: ru
 #* [Чтение принадлежащих различным классам объектов в одном представлении](reading-several-types-objects.html)
 #* [Чтение объектов с наложенным ограничением](Чтение-объектов-с-наложенным-ограничением.html)
 #* [Порционное чтение](reading-portion.html)
-#* [Настройка параметров чтения ](loading-customization-struct.html)
+#* [Настройка параметров чтения ](fo_loading-customization-struct.html)
 # Интерфейсы
 #* [Интерфейсы форм редактирования](interfaces--edit-forms.html)
 #* [Реализация интерфейсов независимыми и зависимыми формами и отношения между ними](implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html)
@@ -71,7 +71,7 @@ lang: ru
 #* [Установка и конфигурирование заглушки COM+](Установка-и-конфигурирование-заглушки--c-o-m.html)
 #* [Установка и конфигурирование заглушки IISHosted](Установка-и-конфигурирование-заглушки--i-i-s-hosted.html)
 #* [Конфигурирование бизнес-фасадов из настроек приложения ](configuring-business-facades-of-application-settings.html)
-#* [Бизнес-серверы, обёртки, бизнес-фасад](business--servers--wrapper--business--facade.html)
+#* [Бизнес-серверы, обёртки, бизнес-фасад](fo_business-servers-wrapper-business-facade.html)
 #* [Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов](control-provider-winforms.html)
 #* [Настройка отладочных пакетов и выбор активного отладочного пакета](visual-studio-design-packages.html)
 #* [Подсистема настроек](setting-manager.html)

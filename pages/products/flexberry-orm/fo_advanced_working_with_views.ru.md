@@ -6,11 +6,11 @@ toc: true
 permalink: ru/fo_advanced_working_with_views.html
 ---
 
-**Вы можете создать [представление](view-definition.html) динамически.**
+**Вы можете создать [представление](fo_view-def.html) динамически.**
 
-Если вам нужно создать [представление](view-definition.html) "в коде", "на лету", тогда используйте один из следующих вариантов:
+Если вам нужно создать [представление](fo_view-def.html) "в коде", "на лету", тогда используйте один из следующих вариантов:
 
-1. Создать [представление](view-definition.html), используя конструктор по умолчанию, затем заполнить необходимые свойства
+1. Создать [представление](fo_view-def.html), используя конструктор по умолчанию, затем заполнить необходимые свойства
 
 ```cs
 // Создать пустое представление.
@@ -29,7 +29,7 @@ dynaview.AddMasterInView("Publisher");
 // Также вы можете использовать метод dynaview.AddDetailInView для связывания этого представления с детейловыми представлениями.
 ```
 
-2. Создать динамическое [представление](view-definition.html) с помощью ViewAttribute
+2. Создать динамическое [представление](fo_view-def.html) с помощью ViewAttribute
 
 ```
 
@@ -65,4 +65,4 @@ ICSSoft.STORMNET.View subtractsectresult = (view1 - view2);
 ICSSoft.STORMNET.View xconcatresult = (view1 ^ view2); 
 ```
 
-Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](code-samples.html).
+Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](fo_code-samples.html).

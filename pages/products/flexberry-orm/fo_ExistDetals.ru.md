@@ -87,6 +87,6 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
 ```
 
 # Смотрите также
-* [Exist, ExistExact, ExistAll, ExistAllExact](exist--exist-exact--exist-all--exist-all-exact.html)
+* [Exist, ExistExact, ExistAll, ExistAllExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
 * [Фильтрация-по-детейлам-мастера-ConnectMasterProp-OwnerConnectProp.ashx|Фильтрация по детейлам мастера]
-* [SQLWhereLanguageDef](function-list.html)
+* [SQLWhereLanguageDef](fo_function-list.html)

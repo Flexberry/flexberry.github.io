@@ -12,7 +12,7 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
 * '''Программная библиотека:''' ICSSoft.STORMNET.Business.dll
 * '''Предназначение:''' Компонент доступа к источнику данных.
 </td>
@@ -20,7 +20,7 @@ lang: ru
 </div>
 
 '''Сервис данных''' - компонент Flexberry ORM, обеспечивающий запись и чтение объектов данных в хранилище. В объектной модели Flexberry ORM сервис данных представлен классом, реализующим интерфейс `ICSSoft.STORMNET.Business.IDataService`.
-Поддерживается несколько [ стандартных сервисов данных](standard-data-services.html), и при необходимости пользователями могут быть [разработаны](implement-a-custom--data-service.html) новые, удовлетворяющие специфическим требованиям (например, наследуя классы `ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService` или `ICSSoft.STORMNET.Business.[SQLDataService](s-q-l-data-service.html)`).
+Поддерживается несколько [ стандартных сервисов данных](standard-data-services.html), и при необходимости пользователями могут быть [разработаны](implement-a-custom--data-service.html) новые, удовлетворяющие специфическим требованиям (например, наследуя классы `ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService` или `ICSSoft.STORMNET.Business.[SQLDataService](fo_sql-data-service.html)`).
 
 (((<msg type=important>При обращении к сервису данных в программном коде рекомендуется производить через интерфейс `ICSSoft.STORMNET.Business.IDataService`, т.к. это гарантирует  независимость кода от типа хранилища данных.</msg>)))
 
@@ -57,20 +57,20 @@ lang: ru
 ! Параметры
 ! Описание
 |- 
-|  rowspan="2" | Загрузка объектов данных по [представлению](view-definition.html)(массиву [представлений](view-definition.html))
+|  rowspan="2" | Загрузка объектов данных по [представлению](fo_view-def.html)(массиву [представлений](fo_view-def.html))
 | '''LoadObjects'''
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View dataObjectView); ```
-|   rowspan="2" | `dataObjectView(s)` - [представление](view-definition.html) (массив [представлений](view-definition.html))
+|   rowspan="2" | `dataObjectView(s)` - [представление](fo_view-def.html) (массив [представлений](fo_view-def.html))
 
-| Загружаются все объекты данных, доступные в хранилище. При этом выполняется загрузка только тех свойств, которые указаны в [представлении](view-definition.html).
+| Загружаются все объекты данных, доступные в хранилище. При этом выполняется загрузка только тех свойств, которые указаны в [представлении](fo_view-def.html).
 |-
 | '''LoadObjects'''
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View[] dataObjectViews); ```
 | Происходит последовательный вызов метода с параметром - представление для каждого элемента массива. Практическая применимость данной перегрузки неочевидна.
 |-
-|  rowspan="2" | [anchor|#LoadObjectsLCS]Загрузка объектов данных по настроечной структуре для выборки `[LoadingCustomizationStruct](loading-customization-struct.html)` (массиву структур)
+|  rowspan="2" | [anchor|#LoadObjectsLCS]Загрузка объектов данных по настроечной структуре для выборки `[LoadingCustomizationStruct](fo_loading-customization-struct.html)` (массиву структур)
 | '''LoadObjects'''
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct); ```
@@ -79,8 +79,8 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizati
 '''LoadObjects'''
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct, DataObjectCache DataObjectCache); ```
-| rowspan="2" | `customizationStruct(s)` - [настроечная структура для выборки](loading-customization-struct.html) (массив структур)
-| Данная перегрузка метода позволяет тонко настроить выборку загружаемых объектов за счёт использования структуры `[LoadingCustomizationStruct](loading-customization-struct.html)`: 
+| rowspan="2" | `customizationStruct(s)` - [настроечная структура для выборки](fo_loading-customization-struct.html) (массив структур)
+| Данная перегрузка метода позволяет тонко настроить выборку загружаемых объектов за счёт использования структуры `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`: 
 
 * указать представление (вертикальное ограничение выборки: загрузка только определенных свойств), 
 
@@ -89,7 +89,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizati
 * параметры сортировки возвращаемых результатов (`ORDER BY`),
  
 * ограничения на вычитываемые объекты данных (`WHERE`) 
-и т.д.. Подробнее см. описание `[LoadingCustomizationStruct](loading-customization-struct.html)`.
+и т.д.. Подробнее см. описание `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`.
  
  [Пример использования](load-limitation-example.html). 
 
@@ -98,7 +98,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizati
 | '''LoadObjects'''
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct[] customizationStructs); ```
-| Происходит последовательный вызов метода с параметром - `[LoadingCustomizationStruct](loading-customization-struct.html)` для каждого элемента массива. Практическая применимость данной перегрузки неочевидна.
+| Происходит последовательный вызов метода с параметром - `[LoadingCustomizationStruct](fo_loading-customization-struct.html)` для каждого элемента массива. Практическая применимость данной перегрузки неочевидна.
 |-
 | rowspan="2" | Загрузка объектов с использованием состояния вычитки (для реализации [порционного чтения](reading-portion.html))
 | [anchor|#LoadObjectsRefState] '''LoadObjects'''
@@ -109,8 +109,8 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizati
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct, ref object State, DataObjectCache DataObjectCache);```
 | rowspan="2" | `State` - Состояние вычитки(для последующей дочитки)
-`customizationStruct` - [настроечная структура для выборки](loading-customization-struct.html) 
-__Примечание__: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры `[LoadingCustomizationStruct](loading-customization-struct.html)`.
+`customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html) 
+__Примечание__: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`.
 | Получение первой порции при [порционном чтении](reading-portion.html). Кроме порции объектов данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах (см. [#LoadObjectsByState|следующие] перегрузки). 
 |-
 | [anchor|#LoadObjectsByState] '''LoadObjects'''
@@ -155,7 +155,7 @@ void LoadObjects(ICSSoft.STORMNET.DataObject[] dataobjects, ICSSoft.STORMNET.Vie
 
 Для загрузки одного объекта данных служат перегрузки метода `LoadObject`. 
 
-Вычитка свойств из хранилища осуществляется по заданному в объекте данных [первичныму ключу](primary-keys-objects.html).
+Вычитка свойств из хранилища осуществляется по заданному в объекте данных [первичныму ключу](fo_primary-keys-objects.html).
 
 Примеры использования:
 * [Обработка одного объекта](processing-one-object.html),
@@ -167,7 +167,7 @@ void LoadObjects(ICSSoft.STORMNET.DataObject[] dataobjects, ICSSoft.STORMNET.Vie
 ! Параметры
 ! Описание
 |-
-|  Загрузка объекта данных по [первичному ключу](primary-keys-objects.html)
+|  Загрузка объекта данных по [первичному ключу](fo_primary-keys-objects.html)
 | '''LoadObject'''
 ```cs
 void LoadObject(ICSSoft.STORMNET.DataObject dobject) ```
@@ -179,7 +179,7 @@ void LoadObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectC
 | `dobject` - Объект данных, который требуется загрузить
 | Будут загружены только собственные свойства объекта. При отсутствии в хранилище данных объекта с заданным первичным ключом будет выдано исключение `CantFindDataObjectException`. Не следует использовать данную перегрузку метода для дочитки объекта данных, для этого применимы перегрузки методы с дополнительными параметрами (см. ниже).
 |- 
-| Загрузка объекта данных по [представлению](view-definition.html)
+| Загрузка объекта данных по [представлению](fo_view-def.html)
 | '''LoadObject'''
 ```cs
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject) ```
@@ -195,9 +195,9 @@ void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, 
 '''LoadObject'''
 ```cs
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) ```
-| `dataObjectView(dataObjectViewName)` - [представление](view-definition.html) (имя представления)
+| `dataObjectView(dataObjectViewName)` - [представление](fo_view-def.html) (имя представления)
 
-| Выполняется загрузка только тех свойств, которые указаны в [представлении](view-definition.html).
+| Выполняется загрузка только тех свойств, которые указаны в [представлении](fo_view-def.html).
 |-
 | Загрузка объекта данных с указанием дополнительных параметров
 | '''LoadObject'''
@@ -237,7 +237,7 @@ void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObjec
 * [Обработка одного объекта](processing-one-object.html),
 * [Пример: загрузка и изменение объекта](load-and-alter-objects.html).
 
-Если перед выполнением сохранения требуется выполнение определенных действий, они могут быть реализованы в бизнес-сервере [указанным способом](data-object-update-hook-example.html).
+Если перед выполнением сохранения требуется выполнение определенных действий, они могут быть реализованы в бизнес-сервере [указанным способом](fo_data-object-update-hook-example.html).
 
 Следует иметь в виду, что сохранение объекта может вызвать [сохранение связанных с ним объектов](update-related-objects.html).
 
@@ -291,7 +291,7 @@ scharp void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCach
 Запросы для всех обновляемых объектов выполняются в единой транзакции.
 
 
-Обновляемые объекты данных могут быть как однотипными, так и разнотипными. В метод они передаются параметром — одномерным массивом типа `[DataObject](dataobject.html)`&#0091;&#0093;. 
+Обновляемые объекты данных могут быть как однотипными, так и разнотипными. В метод они передаются параметром — одномерным массивом типа `[DataObject](fo_dataobject.html)`&#0091;&#0093;. 
 В общем случае сервис данных умеет сам выстраивать порядок запросов на обновление объектов данных. Но возможны ситуации, когда для связанных объектов важен порядок следования объектов в массиве, подробная информация о порядке сохранения объектов приведена в [статье](processing-of-multiple-objects.html).
 
 Следует иметь в виду, что для каждого элемента массива его сохранение может вызвать [сохранение связанных с ним объектов](update-related-objects.html).
@@ -343,7 +343,7 @@ void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache Da
 ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizationStruct customizationStruct) ```
 | `separator` -  разделитель в строках 
   
-`customizationStruct` -  настроичная структура для выборки `[LoadingCustomizationStruct](loading-customization-struct.html)`
+`customizationStruct` -  настроичная структура для выборки `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`
 
 
  __Примечание__: порядок следования свойств объекта данных в результирующей строке с разделителями задаётся парметром `ColumnsOrder` структуры `customizationStruct`.
@@ -354,8 +354,8 @@ ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizati
 ```cs
 ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizationStruct customizationStruct, ref object State) ```
 | rowspan="3" | `State` - Состояние вычитки(для последующей дочитки)
-`customizationStruct` - [настроечная структура для выборки](loading-customization-struct.html) 
-__Примечание__: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры `[LoadingCustomizationStruct](loading-customization-struct.html)`.
+`customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html) 
+__Примечание__: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`.
 | Получение первой порции при [порционном чтении](reading-portion.html). Кроме порции данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах.
 |-
 | '''LoadStringedObjectView'''
@@ -384,7 +384,7 @@ void CompleteLoadStringedObjectView(ref object state) ```
 | '''GetObjectsCount'''
 ```cs
 int GetObjectsCount(LoadingCustomizationStruct customizationStruct)```
-|   `customizationStruct` - настроечная структура для выборки `[LoadingCustomizationStruct](loading-customization-struct.html)`  
+|   `customizationStruct` - настроечная структура для выборки `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`  
 |}
 
 # Использование SQL при работе с сервисом данных

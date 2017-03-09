@@ -10,7 +10,7 @@ lang: ru
 
 <div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;"> <br> <table border="0" width="100%" bgcolor="#6495ED"> <tbody><tr><td bgcolor="#FFFFFF"> 
 
-Полный список примеров кода [Flexberry ORM](flexberry-o-r-m.html) находится в статье ["Примеры кода"](code-samples.html).
+Полный список примеров кода [Flexberry ORM](fo_flexberry-orm.html) находится в статье ["Примеры кода"](fo_code-samples.html).
 
 </td>
 </tr></tbody></table></a>
@@ -19,7 +19,7 @@ lang: ru
 # Пример выполнения действий при сохранении объекта
 
 Часто в приложениях возникает необходимость выполнения каких-либо дополнительных действий при добавлении, изменении или удалении объектов данных, например, создание записи в логе приложения.
-Во [Flexberry ORM](flexberry-o-r-m.html) эта возможность реализуется с помощью классов, называемых [бизнес-серверами](business--servers--wrapper--business--facade.html). Такие классы должны содержать методы, названные определенным образом, для выполнения действий на нужном пользователю этапе.
+Во [Flexberry ORM](fo_flexberry-orm.html) эта возможность реализуется с помощью классов, называемых [бизнес-серверами](fo_business-servers-wrapper-business-facade.html). Такие классы должны содержать методы, названные определенным образом, для выполнения действий на нужном пользователю этапе.
 
 ```cs
 Console.WriteLine("4. How to do something at persistence moment.");

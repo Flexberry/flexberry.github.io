@@ -28,8 +28,8 @@ permalink: ru/fo_attributes-class-data.html
 ! Генерация в SQL DDL
 ! Генерация в .Net-язык
 |-
-| "/" - если указано, [атрибут является нехранимым](not-stored--attributes.html) 
-| Если [атрибут не является хранимым](not-stored--attributes.html) определение поля в CREATE TABLE не генерируется 
+| "/" - если указано, [атрибут является нехранимым](fo_not-stored-attributes.html) 
+| Если [атрибут не является хранимым](fo_not-stored-attributes.html) определение поля в CREATE TABLE не генерируется 
 | Перед определением свойства указывается .Net-атрибут NotStoredAttribute (Namespace: ICSSoft.STORMNET, Assembly:ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) 
 |-
 | "AccessModifier" - модификатор сгенерированного в .Net-язык свойства
@@ -104,7 +104,7 @@ permalink: ru/fo_attributes-class-data.html
 |  Никак
 |  Перед определением свойства генерируется указание атрибута DataServiceExpressionAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
 
- Как работает этот атрибут, см. документ [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [Нехранимые (вычислимые) свойства объекта данных](not-stored--attributes.html).
+ Как работает этот атрибут, см. документ [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [Нехранимые (вычислимые) свойства объекта данных](fo_not-stored-attributes.html).
 |-
 |  Storage - некоторое логическое имя, под которым хранятся свойства 
 |  Если указано, то такое и будет имя поля
@@ -116,7 +116,7 @@ permalink: ru/fo_attributes-class-data.html
 |  Никак
 |  Перед определением свойства генерируется указание атрибута OrderAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
 
-Как работает этот атрибут, см. документ [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [Функциональность при работе с массивами детейловых объектов (DetailArray)](functionality-work-with-detail-array.html).
+Как работает этот атрибут, см. документ [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [Функциональность при работе с массивами детейловых объектов (DetailArray)](fo_functionality-work-with-detail-array.html).
 |-
 |  Trim - для атрибутов строкового типа, применять ли удаление лишних пробелов в значениях
 |  Никак

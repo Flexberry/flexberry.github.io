@@ -30,10 +30,10 @@ SQL-выражение выглядело бы следующим образом
 ```
 SELECT * FROM Кредит WHERE Клиент <> '{ID}'
 ```
-Где {ID} - [первичный ключ](primary-keys-objects.html) `Клиента`
+Где {ID} - [первичный ключ](fo_primary-keys-objects.html) `Клиента`
 
 
-### [FunctionalLanguage](function-list.html)
+### [FunctionalLanguage](fo_function-list.html)
 
 ```cs    Клиент клиент = new Клиент();
 	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
@@ -63,7 +63,7 @@ var credits = DataServiceProvider.DataService.LoadObjects(lcs);```
 
 
 # См. также
-[Перечень функций](function-list.html)
+[Перечень функций](fo_function-list.html)
 
 [FuncEQ](func-e-q.html)
 

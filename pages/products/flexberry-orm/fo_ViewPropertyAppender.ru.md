@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # ViewPropertyAppender
-Класс `AdvLimit.ExternalLangDef.ViewPropertyAppender` (находится в сборке `ExternalLangDef`) предназначен для того, чтобы расширять [представление](view-definition.html) свойствами, которые находятся в ограничении. 
+Класс `AdvLimit.ExternalLangDef.ViewPropertyAppender` (находится в сборке `ExternalLangDef`) предназначен для того, чтобы расширять [представление](fo_view-def.html) свойствами, которые находятся в ограничении. 
 
 Данный класс используется в [WebObjectListView](web-object-list-view.html) при работе с ограничениями (необходимо, чтобы свойство [AutoAddUsedInLimitationProperties](set-prop-order-at-web-adv-limit-editor.html) имело значение true).
 

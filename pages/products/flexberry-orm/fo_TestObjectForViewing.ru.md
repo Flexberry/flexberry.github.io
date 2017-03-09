@@ -9,4 +9,4 @@ lang: ru
 ---
 
 # TestObjectForViewing
-Для проверки того, удовлетворяет ли некоторый [объект](dataobject.html) представлению, необходимо вызвать у `[View](view-definition.html)` метод `TestObjectForViewing`.
+Для проверки того, удовлетворяет ли некоторый [объект](fo_dataobject.html) представлению, необходимо вызвать у `[View](fo_view-def.html)` метод `TestObjectForViewing`.

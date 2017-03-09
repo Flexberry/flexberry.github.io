@@ -12,16 +12,16 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](limitation.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
 * '''Программная библиотека''': ExternalLangDef.dll.
-* '''Предназначение''': Представлены основные функции [ExternalLangDef](external-lang-def.html) для построения [ограничений](limit-function.html) над детейлами.
+* '''Предназначение''': Представлены основные функции [ExternalLangDef](fo_external-lang-def.html) для построения [ограничений](fo_limit-function.html) над детейлами.
 </td>
 </tr></tbody></table></a>
 </div>
 
 # Описание и ключевые различия функций: funcExist, funcExistExact, funcExistAll, funcExistAllExact
-При помощи этих функций [ExternalLangDef](external-lang-def.html) возможно накладывать [ограничения](limit-function.html) только на детейлы ([пример](limit-details-by-agregators-prop.html))
+При помощи этих функций [ExternalLangDef](fo_external-lang-def.html) возможно накладывать [ограничения](fo_limit-function.html) только на детейлы ([пример](limit-details-by-agregators-prop.html))
 
 
 {| cellpadding="4"

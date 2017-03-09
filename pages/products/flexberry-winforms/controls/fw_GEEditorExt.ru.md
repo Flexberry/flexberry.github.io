@@ -143,4 +143,4 @@ return;
 )))
 ----
 # См. также
-[Information.cs](information-class-as-metadata-supervisor.html)
+[Information.cs](fo_information-class-as-metadata-supervisor.html)

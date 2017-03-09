@@ -12,18 +12,18 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](limitation.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
 * '''Программная библиотека''': ICSSoft.STORMNET.FunctionalLanguage.dll.
-* '''Предназначение''': Общее описание работы построителя [функций ограничения](limit-function.html) SQLWhereLanguageDef.
+* '''Предназначение''': Общее описание работы построителя [функций ограничения](fo_limit-function.html) SQLWhereLanguageDef.
 </td>
 </tr></tbody></table></a>
 </div>
 
 # SQLWhereLanguageDef
-`SQLWhereLanguageDef` - класс-построитель [функций для наложения ограничений](limit-function.html) на вычитываемые объекты.
+`SQLWhereLanguageDef` - класс-построитель [функций для наложения ограничений](fo_limit-function.html) на вычитываемые объекты.
 
-Существует расширение базового функционального языка SQLWhereLanguageDef, [ExternalLangDef](external-lang-def.html).
+Существует расширение базового функционального языка SQLWhereLanguageDef, [ExternalLangDef](fo_external-lang-def.html).
 
 Подключение:
 ```cs
@@ -38,7 +38,7 @@ using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 Метод возвращает объект типа `ICSSoft.STORMNET.FunctionalLanguage.Function`
 
 ## GetFunction и PrimaryKey
-При построении ограничений на [первичные ключи вычитываемых объектов (собственные ключи)](primary-keys-objects.html), стоит учитывать, что `SQLWhereLanguageDef` не обрабатывает константу "`PrimaryKey`". Вместо константы "`PrimaryKey`" надо использовать StormMainObjectKey (определена соответствующая константа).
+При построении ограничений на [первичные ключи вычитываемых объектов (собственные ключи)](fo_primary-keys-objects.html), стоит учитывать, что `SQLWhereLanguageDef` не обрабатывает константу "`PrimaryKey`". Вместо константы "`PrimaryKey`" надо использовать StormMainObjectKey (определена соответствующая константа).
 
 '''__Неверно__''':
 ```cs
@@ -52,7 +52,7 @@ var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, SQLWhereLanguageDef.StormMainObjectKey), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
 ```
 
-(((<msg type=note>Стоит отметить, что ограничение на [первичный ключ](primary-keys-objects.html) __мастера__ накладывается следующим образом:
+(((<msg type=note>Стоит отметить, что ограничение на [первичный ключ](fo_primary-keys-objects.html) __мастера__ накладывается следующим образом:
 ```
 var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, Information.ExtractPropertyPath<СамОбъект>(x => x.СсылкаНаМастера)), "84F456C1-312F-30C0-A238-11E3FE68E852");

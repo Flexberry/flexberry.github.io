@@ -53,7 +53,7 @@ lang: ru
 
 ## STORMAdvLimit
 
-Объектное представление сохраняемого в базе ограничения. Не содержит логики по десериализации. Сам класс знает только сериализованное Value. Десериализуется в своё нехранимое свойство AdvLimit при помощи AdvLimitComponent. Используется только для чтения-записи в БД (наследник от [DataObject](dataobject.html)).
+Объектное представление сохраняемого в базе ограничения. Не содержит логики по десериализации. Сам класс знает только сериализованное Value. Десериализуется в своё нехранимое свойство AdvLimit при помощи AdvLimitComponent. Используется только для чтения-записи в БД (наследник от [DataObject](fo_dataobject.html)).
 
 ## DataObjectTypeCreator
 
@@ -73,4 +73,4 @@ lang: ru
 [Мастера в списке выбора типа параметров в редакторе AdvLimit](masters-in-list-selection-type-parameters-in--adv-limit.html),<BR>
 [Функция импликации при задании ограничений](implication-in-limits.html),<BR>
 [Функции для работы с датой при задании ограничений](date-time-funtions-in-limits.html) (пример использования [здесь](date-limits--standart-view.html))<BR>
-[Сохранение ограничений на форме задания ограничения](adv-limit-function-serialization.html)
+[Сохранение ограничений на форме задания ограничения](fo_adv-limit-function-serialization.html)

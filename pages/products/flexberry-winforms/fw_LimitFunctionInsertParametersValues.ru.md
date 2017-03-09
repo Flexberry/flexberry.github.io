@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # Вопрос
-Имеется [limitFunction](limit-function.html) (класс `ICSSoft.STORMNET.FunctionalLanguage.Function`) с параметром @Дата. Как вместо этого параметра подставить текущую дату?
+Имеется [limitFunction](fo_limit-function.html) (класс `ICSSoft.STORMNET.FunctionalLanguage.Function`) с параметром @Дата. Как вместо этого параметра подставить текущую дату?
 
 # Ответ
 Пусть задана функция `limitFunction` с параметром @Дата:
@@ -20,7 +20,7 @@ lang: ru
    new ParameterDef("Дата", externalLangDef.DateTimeType, false, ""),
    new DateTime(2000, 01, 01));
 ```
-Подробнее о [ExternalLangDef](external-lang-def.html).
+Подробнее о [ExternalLangDef](fo_external-lang-def.html).
 
 ## Для Web
 Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
