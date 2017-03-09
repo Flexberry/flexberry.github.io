@@ -8,7 +8,7 @@ folder: products/flexberry-designer/about/
 lang: ru
 ---
 
-Есть возможность сделать несколько ярлыков на [Flexberry Designer](fd_flexberry-designer.html), каждый из которых открывал бы разные стадии.
+Есть возможность сделать несколько ярлыков на [Flexberry Designer](fd_landing_page.html), каждый из которых открывал бы разные стадии.
 
 Для этого нужно настроить ярлык следующим образом: аргументом для запуска нужно передать параметр `path:Путь до стадии`
 
@@ -20,4 +20,4 @@ Flexberry.exe path:Репозитарий\Проект\Конфигурация\
 
 ![](/images/pages/products/flexberry-designer/about/path.JPG)
 
-{% include note.html content="В качестве пути может быть указан репозитарий, проект, конфигурация, стадия или система. Путь можно скопировать из выпадающего строки пути во [Flexberry Designer](fd_flexberry-designer.html)." %}
+{% include note.html content="В качестве пути может быть указан репозитарий, проект, конфигурация, стадия или система. Путь можно скопировать из выпадающего строки пути во [Flexberry Designer](fd_landing_page.html)." %}

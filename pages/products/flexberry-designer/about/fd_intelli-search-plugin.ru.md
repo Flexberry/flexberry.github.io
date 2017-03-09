@@ -8,7 +8,7 @@ folder: products/flexberry-designer/about/
 lang: ru
 ---
 
-Модуль расширения [FlexberryDesigner](fd_flexberry-designer.html): `IntelliSearch` разработан для поиска фрагментов диаграмм по выбранным проектам репозитория.
+Модуль расширения [FlexberryDesigner](fd_landing_page.html): `IntelliSearch` разработан для поиска фрагментов диаграмм по выбранным проектам репозитория.
 
 ## Подключение
 

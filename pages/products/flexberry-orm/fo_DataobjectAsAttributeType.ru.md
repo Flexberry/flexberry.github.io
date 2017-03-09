@@ -5,7 +5,7 @@ keywords: DataObject (объекты данных), Flexberry Designer, Public
 toc: true
 permalink: ru/fo_dataobject-as-attribute-type.html
 ---
-* **Продукт:** [Flexberry Designer](fd_flexberry-designer.html)
+* **Продукт:** [Flexberry Designer](fd_landing_page.html)
 * **Компонент:** [Редактор UML-диаграмм](fd_editing-diagram.html)
 * **Предназначение:** Описаны особенности использования [объекта данных](fo_dataobject.html) в виде атрибута класса.
 
