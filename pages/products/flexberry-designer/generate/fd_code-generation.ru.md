@@ -10,9 +10,9 @@ lang: ru
 
 ## Model-Driven Development
 
-При разработке приложений с помощью [Flexberry Designer](fd_flexberry-designer.html) используется [Model-Driven Architecture](https://ru.wikipedia.org/wiki/Model_Driven_Architecture) - то есть разработка производится путем создания и доработки модели приложения.
+При разработке приложений с помощью [Flexberry Designer](fd_landing_page.html) используется [Model-Driven Architecture](https://ru.wikipedia.org/wiki/Model_Driven_Architecture) - то есть разработка производится путем создания и доработки модели приложения.
 
-К сожалению, ограничиться лишь созданием модели невозможно, так как необходимо реализовывать уникальную для каждого проекта логику. Однако, [Flexberry Designer](fd_flexberry-designer.html) позволяет взять на себя рутину создания приложений и значительно ускорить процесс разработки.
+К сожалению, ограничиться лишь созданием модели невозможно, так как необходимо реализовывать уникальную для каждого проекта логику. Однако, [Flexberry Designer](fd_landing_page.html) позволяет взять на себя рутину создания приложений и значительно ускорить процесс разработки.
 
 ### Модель
 

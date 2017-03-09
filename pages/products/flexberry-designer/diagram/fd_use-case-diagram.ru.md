@@ -8,7 +8,7 @@ folder: products/flexberry-designer/diagram/
 lang: ru
 ---
 
-Диаграмма вариантов использования - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
+Диаграмма вариантов использования - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_landing_page.html).
 
 ![](/images/pages/products/flexberry-designer/diagram/use-case-diagram.png)
 

@@ -8,7 +8,7 @@ folder: products/flexberry-designer/diagram/
 lang: ru
 ---
 
-**Диаграмма активностей (видов деятельности)** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
+**Диаграмма активностей (видов деятельности)** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_landing_page.html).
 Она, как и [диаграмма состояний](fd_statechart-diagram.html), **отражает динамические аспекты поведения системы**. По существу, эта диаграмма представляет собой блок-схему, которая наглядно показывает, как поток управления переходит от одной деятельности к другой.  
 
 ![](/images/pages/products/flexberry-designer/diagram/activity-diagram.png)
