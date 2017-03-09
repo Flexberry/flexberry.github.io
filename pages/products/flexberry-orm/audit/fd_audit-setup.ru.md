@@ -1,15 +1,15 @@
 ---
 title: Настройка аудита в Flexberry Designer
-sidebar: flexberry-designer_sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Audit, Flexberry Designer
 toc: true
 permalink: ru/fd_audit-setup.html
-folder: products/flexberry-designer/audit/
+folder: products/flexberry-orm/audit/
 lang: ru
 ---
 
 ## Аудит
-Настройка [аудита](fa_audit-web.html) через [Flexberry Designer](fd_flexberry-designer.html) осуществляется в несколько этапов.
+Настройка [аудита](fa_audit-web.html) через [Flexberry Designer](fd_flexberry-orm.html) осуществляется в несколько этапов.
 
 ### Настройка базы аудита
 База аудита может храниться как в отдельной базе, так и в базе приложения.
@@ -22,7 +22,7 @@ lang: ru
 
 Настройки аудита для стадии осуществляются на форме настроек Стадии на вкладке `Настройка аудита`
 
-![](/images/pages/products/flexberry-designer/audit/audit-settings-stady.png)
+![](/images/pages/products/flexberry-orm/audit/audit-settings-stady.png)
 
 * `Вести аудит приложения` - необходимость вести аудит для всего приложения.
 * `Режим записи аудита по умолчанию` - режим записи данных аудита в базу данных по умолчанию (синхронный или асинхронный). Будет устанавливаться для классов при генерации настроек аудита. Если в классе указана другая настройка, то для конкретно этого класса будет использоваться указанная в нем => приоритет настроек стадии меньше приоритета настроек класса.
@@ -41,9 +41,9 @@ lang: ru
 
 Настройки аудита для классов осуществляются на форме настроек Класса на вкладке `Настройка аудита`
 
-![](/images/pages/products/flexberry-designer/audit/audit-settings-class.png)
+![](/images/pages/products/flexberry-orm/audit/audit-settings-class.png)
 
-###Настройки аудита
+### Настройки аудита
 
 Название настройки | Описание
 :-----------------------------|:---------------------------------------------------
@@ -71,7 +71,7 @@ lang: ru
 
 Настройки аудита для класса-приложения (со стереотипом [Application](fd_application.html)) осуществляются на форме настроек rласса на вкладке `Настройка аудита`
 
-![](/images/pages/products/flexberry-designer/audit/audit-app-settings.png)
+![](/images/pages/products/flexberry-orm/audit/audit-app-settings.png)
 
 * `Имя строки соединения с БД аудита` - **имя** строки соединения, которая будет передаваться в Win-сервис аудита, для указания на базу данных аудита.  
 * `Адрес сервиса аудита` - адрес, по которому располагается Win-сервис аудита.  
@@ -88,7 +88,7 @@ lang: ru
 
 Схема генерации настроек аудита из Flexberry Designer в *web-приложение*
 
-![](/images/pages/products/flexberry-designer/audit/audit-setting-generate.png)
+![](/images/pages/products/flexberry-orm/audit/audit-setting-generate.png)
 
 Настройки классов со стереотипом `implementation` будут генерироваться в код объектов генератором объектов.  
 Настройки стадии и класса со стереотипом `application` будут генерироваться в config-файл web-приложения ASP-генератором.
