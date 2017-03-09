@@ -24,6 +24,8 @@ lang: ru
 
 ### Базовый курс
 
+* [Разработка ember-компонентов](gbt_devcomp.html)
+
 * [Ember.js](http://emberjs.com/)
 * [Ember-CLI](https://ember-cli.com/)
 * [Guides and Tutorials Ember.js](https://guides.emberjs.com/v2.11.0/)
