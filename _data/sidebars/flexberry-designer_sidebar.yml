@@ -360,7 +360,7 @@ entries:
       url: /fd_specify-column-controls.html
       output: web, pdf
 
- - title: Views
+  - title: Views
     title_ru: Основы работы с представлениями
     output: web, pdf
 
