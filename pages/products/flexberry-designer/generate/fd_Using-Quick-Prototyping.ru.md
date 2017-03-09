@@ -73,4 +73,4 @@ __Примечание__: если во время генерации проис
 
 Нажать "ОК", приложение запустится:
 
-![](/images/pages/products/flexberry-designer/generate/phonebookapp.jpg)
+![](/images/pages/products/flexberry-designer/generate/phonebookapp.png)

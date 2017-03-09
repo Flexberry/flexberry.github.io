@@ -260,6 +260,11 @@ entries:
       url: /fd_external-interface.html
       output: web, pdf
 
+    - title: Class manager
+      title_ru: Менеджер классов
+      url: /fd_class-manager.html
+      output: web, pdf
+
   - title: Creating application
     title_ru: Создание приложений
     output: web, pdf
