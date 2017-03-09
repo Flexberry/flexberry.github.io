@@ -1,5 +1,5 @@
 ---
-title: Information: получение метаданных
+title: Information получение метаданных
 sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
