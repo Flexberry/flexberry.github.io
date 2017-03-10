@@ -22,22 +22,42 @@ lang: ru
 
 ##  Ссылки на материалы для изучения
 
-### Базовый курс
+### Базовый сведения
 
-* [Разработка ember-компонентов](gbt_devcomp.html)
+* [Базовая структура приложения](https://guides.emberjs.com/v2.11.0/getting-started/core-concepts/)
+* Состав приложения
+    * [Routing](https://guides.emberjs.com/v2.11.0/routing/)
+    * [Controllers](https://guides.emberjs.com/v2.11.0/controllers/)
+    * [Templates](https://guides.emberjs.com/v2.11.0/templates/handlebars-basics/)
+    * [Components](https://guides.emberjs.com/v2.11.0/components/defining-a-component/)
+* [Testing](https://guides.emberjs.com/v2.11.0/testing/)
+    * [Acceptance Tests](https://guides.emberjs.com/v2.11.0/testing/acceptance/#)
+    * [Unit Testing Basics](https://guides.emberjs.com/v2.11.0/testing/unit-testing-basics/)
+    * [Testing Controllers](https://guides.emberjs.com/v2.11.0/testing/testing-controllers/)
+    * [Testing Routes](https://guides.emberjs.com/v2.11.0/testing/testing-routes/)
+    * [Testing Models](https://guides.emberjs.com/v2.11.0/testing/testing-models/)
+    * [Testing Components](https://guides.emberjs.com/v2.11.0/testing/testing-components/)
 
-* [Ember.js](http://emberjs.com/)
-* [Ember-CLI](https://ember-cli.com/)
-* [Guides and Tutorials Ember.js](https://guides.emberjs.com/v2.11.0/)
-* [User guide Ember-CLI](https://ember-cli.com/user-guide/)
+### Детальный обзор
 
-### Самоучители
-
-
-
-### Видеокурсы
-
-
+* [Управление зависимостями приложения](https://guides.emberjs.com/v2.11.0/addons-and-dependencies/managing-dependencies/)
+    * Установка ember-addon-ов
+    * Установка npm-пакетов
+    * Установка bower-пакетов
+    * Vendor
+    * Каталог assets
+    * Ember-cli-build
+* [Конфигурирование Ember.js](https://guides.emberjs.com/v2.11.0/configuring-ember/configuring-your-app/)
+    * Базовая структура конфига и значение настроек в нем
+    * Настройки зависящие от окружения (development/production)
+    * Как импортировать его в свои классы  и вычитывать оттуда настройки
+    * Как добраться до этих настроек без импорта (через Ember.getOwner и свойства экзепляра приложения)
+* [Routing](gbt_embrout.html)
+* [Controllers](gbt_embcontr.html)
+* [Templates](gbt_embtemp.html)
+* [Разработка Ember-компонентов](gbt_devcomp.html)
+* [Разработка Ember-сервисов](gbt_devservic.html)
+* [Ember Data](gbt_emddata.html)
 
 ### Презентация
 
@@ -45,10 +65,7 @@ lang: ru
     <iframe src="//www.slideshare.net/slideshow/embed_code/key/5snk9pZdXKzcES?startSlide=23" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 </div>
 
-### Рекомендованные книги
-
-* [-]()
-* [-]()
+## 
 
 ## Программное обеспечение
 
@@ -58,11 +75,6 @@ lang: ru
 
 * [Приложение для сайта с арендой недвижимости (eng)](https://guides.emberjs.com/v2.11.0/tutorial/ember-cli/)
 * [Приложение для сайта с арендой недвижимости (rus)](http://emjs.ru/v2/tutorial/ember-cli/)
-
-## Возможности по сертификации
-
-* [-]()
-* [-]()
 
 ## Перейти
 
