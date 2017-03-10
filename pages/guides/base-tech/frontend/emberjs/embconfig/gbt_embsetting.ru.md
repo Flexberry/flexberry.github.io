@@ -4,7 +4,7 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_embsetting.html
-folder: guides/base-tech/frontend/emberjs/embconfig
+folder: guides/base-tech/frontend/emberjs/embconfig/
 lang: ru
 ---
 

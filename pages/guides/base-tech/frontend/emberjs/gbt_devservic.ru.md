@@ -4,7 +4,7 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_devservic.html
-folder: guides/base-tech/frontend/emberjs
+folder: guides/base-tech/frontend/emberjs/
 lang: ru
 ---
 
