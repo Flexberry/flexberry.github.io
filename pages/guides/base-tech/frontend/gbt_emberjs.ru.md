@@ -33,28 +33,28 @@ lang: ru
 * [Официальная документация по Ember-CLI](https://ember-cli.com/user-guide/)
 * [Базовая структура приложения](http://emjs.ru/v2/getting-started/core-concepts/)
 * Состав приложения
-    * [Routing](https://emjs.ru/v2/routing/)
-    * [Controllers](https://emjs.ru/v2/controllers/)
-    * [Templates](https://guides.emberjs.com/v2.11.0/templates/handlebars-basics/)
-    * [Components](https://guides.emberjs.com/v2.11.0/components/defining-a-component/)
-* [Testing](https://guides.emberjs.com/v2.11.0/testing/)
-    * [Acceptance Tests](https://guides.emberjs.com/v2.11.0/testing/acceptance/#)
-    * [Unit Testing Basics](https://guides.emberjs.com/v2.11.0/testing/unit-testing-basics/)
-    * [Testing Controllers](https://guides.emberjs.com/v2.11.0/testing/testing-controllers/)
-    * [Testing Routes](https://guides.emberjs.com/v2.11.0/testing/testing-routes/)
-    * [Testing Models](https://guides.emberjs.com/v2.11.0/testing/testing-models/)
-    * [Testing Components](https://guides.emberjs.com/v2.11.0/testing/testing-components/)
+    * [Routing](http://emjs.ru/v2/routing/)
+    * [Controllers](http://emjs.ru/v2/controllers/)
+    * [Templates](http://emjs.ru/v2/templates/handlebars-basics/)
+    * [Components](http://emjs.ru/v2/components/defining-a-component/)
+* [Testing](http://emjs.ru/v2/testing/)
+    * [Acceptance Tests](http://emjs.ru/v2/testing/acceptance/#)
+    * [Unit Testing Basics](http://emjs.ru/v2/testing/unit-testing-basics/)
+    * [Testing Controllers](http://emjs.ru/v2/testing/testing-controllers/)
+    * [Testing Routes](http://emjs.ru/v2/testing/testing-routes/)
+    * [Testing Models](http://emjs.ru/v2/testing/testing-models/)
+    * [Testing Components](http://emjs.ru/v2/testing/testing-components/)
 
 ### Детальный обзор
 
-* [Управление зависимостями приложения](https://guides.emberjs.com/v2.11.0/addons-and-dependencies/managing-dependencies/)
+* [Управление зависимостями приложения](https://emjs.ru/v2/addons-and-dependencies/managing-dependencies/)
     * Установка ember-addon-ов
     * Установка npm-пакетов
     * Установка bower-пакетов
     * Vendor
     * Каталог assets
     * Ember-cli-build
-* [Конфигурирование Ember.js](https://guides.emberjs.com/v2.11.0/configuring-ember/configuring-your-app/)
+* [Конфигурирование Ember.js](https://emjs.ru/v2/configuring-ember/configuring-your-app/)
     * Базовая структура конфига и значение настроек в нем
     * Настройки зависящие от окружения (development/production)
     * Как импортировать его в свои классы  и вычитывать оттуда настройки
