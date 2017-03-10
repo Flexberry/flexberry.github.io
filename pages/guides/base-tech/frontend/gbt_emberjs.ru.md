@@ -33,35 +33,35 @@ lang: ru
 * [Официальная документация по Ember-CLI](https://ember-cli.com/user-guide/)
 * [Базовая структура приложения](http://emjs.ru/v2/getting-started/core-concepts/)
 * Состав приложения
-    * [Routing](http://emjs.ru/v2/routing/)
-    * [Controllers](http://emjs.ru/v2/controllers/)
-    * [Templates](http://emjs.ru/v2/templates/handlebars-basics/)
-    * [Components](http://emjs.ru/v2/components/defining-a-component/)
-* [Testing](http://emjs.ru/v2/testing/)
-    * [Acceptance Tests](http://emjs.ru/v2/testing/acceptance/#)
-    * [Unit Testing Basics](http://emjs.ru/v2/testing/unit-testing-basics/)
-    * [Testing Controllers](http://emjs.ru/v2/testing/testing-controllers/)
-    * [Testing Routes](http://emjs.ru/v2/testing/testing-routes/)
-    * [Testing Models](http://emjs.ru/v2/testing/testing-models/)
-    * [Testing Components](http://emjs.ru/v2/testing/testing-components/)
+    * [Маршрутизация](http://emjs.ru/v2/routing/)
+    * [Контроллеры](http://emjs.ru/v2/controllers/)
+    * [Шаблоны](http://emjs.ru/v2/templates/handlebars-basics/)
+    * [Компоненты](http://emjs.ru/v2/components/defining-a-component/)
+* [Тестирование](http://emjs.ru/v2/testing/)
+    * [Приемочные тесты](http://emjs.ru/v2/testing/acceptance/#)
+    * [Основы модульного тестирования](http://emjs.ru/v2/testing/unit-testing-basics/)
+    * [Тестирование контроллеров](http://emjs.ru/v2/testing/testing-controllers/)
+    * [Тестирование маршрутов](http://emjs.ru/v2/testing/testing-routes/)
+    * [Тестирование моделей](http://emjs.ru/v2/testing/testing-models/)
+    * [Тестирование компонентов](http://emjs.ru/v2/testing/testing-components/)
 
 ### Детальный обзор
 
-* [Управление зависимостями приложения](https://emjs.ru/v2/addons-and-dependencies/managing-dependencies/)
-    * Установка ember-addon-ов
-    * Установка npm-пакетов
-    * Установка bower-пакетов
-    * Vendor
-    * Каталог assets
-    * Ember-cli-build
-* [Конфигурирование Ember.js](https://emjs.ru/v2/configuring-ember/configuring-your-app/)
-    * Базовая структура конфига и значение настроек в нем
-    * Настройки зависящие от окружения (development/production)
-    * Как импортировать его в свои классы  и вычитывать оттуда настройки
-    * Как добраться до этих настроек без импорта (через Ember.getOwner и свойства экзепляра приложения)
-* [Routing](gbt_embrout.html)
-* [Controllers](gbt_embcontr.html)
-* [Templates](gbt_embtemp.html)
+* [Управление зависимостями приложения](http://emjs.ru/v2/addons-and-dependencies/managing-dependencies/)
+    * [Установка ember-addon-ов](gbt_embaddon.html)
+    * [Установка npm-пакетов](gbt_embnpm.html)
+    * [Установка bower-пакетов](gbt_embbower.html)
+    * [Vendor](gbt_embvendor.html)
+    * [Каталог assets](gbt_embassets.html)
+    * [Ember-cli-build](gbt_embclibuild.html)
+* [Конфигурирование Ember.js](http://emjs.ru/v2/configuring-ember/configuring-your-app/)
+    * [Базовая структура конфигурационного файл](gbt_embbaseconf.html)
+    * [Настройки зависящие от окружения](gbt_embsetting.html)
+    * [Как импортировать его в свои классы  и вычитывать оттуда настройки](gbt_embiosetting.html)
+    * [Ember.getOwner и свойства экзепляра приложения](gbt_embgetowner.html)
+* [Маршрутизация](gbt_embrout.html)
+* [Контроллеры](gbt_embcontr.html)
+* [Шаблоны](gbt_embtemp.html)
 * [Разработка Ember-компонентов](gbt_devcomp.html)
 * [Разработка Ember-сервисов](gbt_devservic.html)
 * [Ember Data](gbt_emddata.html)
