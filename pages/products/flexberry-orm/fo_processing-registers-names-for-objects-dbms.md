@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, БД
 toc: true
 permalink: ru/fo_processing-registers-names-for-objects-dbms.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 # Обработка регистров в именах объектов для СУБД
 Работая с [SQLDataService](fo_sql-data-service.html) нужно обратить внимание на следующие особенности обработки регистров:

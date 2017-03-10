@@ -4,20 +4,19 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Черновик статьи
 toc: true
 permalink: ru/fo_data-service.html
-folder: products/flexberry-orm/
-lang: ru
 ---
+<<<<<<< HEAD
 
 <div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
 * '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+=======
+* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
+>>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
 * '''Программная библиотека:''' ICSSoft.STORMNET.Business.dll
 * '''Предназначение:''' Компонент доступа к источнику данных.
-</td>
-</tr></tbody></table></a>
-</div>
 
 '''Сервис данных''' - компонент Flexberry ORM, обеспечивающий запись и чтение объектов данных в хранилище. В объектной модели Flexberry ORM сервис данных представлен классом, реализующим интерфейс `ICSSoft.STORMNET.Business.IDataService`.
 Поддерживается несколько [ стандартных сервисов данных](standard-data-services.html), и при необходимости пользователями могут быть [разработаны](implement-a-custom--data-service.html) новые, удовлетворяющие специфическим требованиям (например, наследуя классы `ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService` или `ICSSoft.STORMNET.Business.[SQLDataService](fo_sql-data-service.html)`).
@@ -30,7 +29,7 @@ lang: ru
 * Сервис данных [особым образом работает с логическим типом](interpretation-boolean-values--n-u-l-l.html).
 
 # Основные возможности сервиса данных
-Перед обращением в программном коде к сервису данных на него необходимо получить [ссылку](data-service-provider-data-service.html). При одновременном использовании нескольких хранилищ необходимо учесть некоторые [особенности](multibase.html).
+Перед обращением в программном коде к сервису данных на него необходимо получить [ссылку](data-service-provider-data-service.html). При одновременном использовании нескольких хранилищ необходимо учесть некоторые [особенности](fo_multibase.html).
 
 
 Интерфейс `ICSSoft.STORMNET.Business.IDataService` содержит следующие основные группы методов:
@@ -39,7 +38,7 @@ lang: ru
 #* `[#DSUpdateObjects|UpdateObjects]` - обновление нескольких объектов.
 #	Методы с именами типа `LoadXXXXXXXX`, предназначенные для чтения одного, либо нескольких объектов данных.
 #* `[#DSLoadObject|LoadObject]` - загрузка объекта (в зависимости от параметров с помощью данного метода можно осуществлять [дочитку объекта](additional-loading-data-object.html)).
-#* `[#DSLoadObjects|LoadObjects]` - загрузка объектов (в т.ч. перегрузки метода позволяют реализовать [порционное стение](reading-portion.html), [чтение принадлежащих различным классам объектов в одном представлении](reading-several-types-objects.html)).
+#* `[#DSLoadObjects|LoadObjects]` - загрузка объектов (в т.ч. перегрузки метода позволяют реализовать [порционное стение](fo_reading-portion.html), [чтение принадлежащих различным классам объектов в одном представлении](reading-several-types-objects.html)).
 #       Загрузка без создания объектов `[#DSLoadStringedObjectView|LoadStringedObjectView]`.
 #       Метод получения количества объектов, удовлетворяющих условию `[#DSGetObjectsCount|GetObjectsCount]`.
 
@@ -100,7 +99,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizati
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct[] customizationStructs); ```
 | Происходит последовательный вызов метода с параметром - `[LoadingCustomizationStruct](fo_loading-customization-struct.html)` для каждого элемента массива. Практическая применимость данной перегрузки неочевидна.
 |-
-| rowspan="2" | Загрузка объектов с использованием состояния вычитки (для реализации [порционного чтения](reading-portion.html))
+| rowspan="2" | Загрузка объектов с использованием состояния вычитки (для реализации [порционного чтения](fo_reading-portion.html))
 | [anchor|#LoadObjectsRefState] '''LoadObjects'''
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct,ref object State); ``` 
@@ -111,7 +110,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizati
 | rowspan="2" | `State` - Состояние вычитки(для последующей дочитки)
 `customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html) 
 __Примечание__: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`.
-| Получение первой порции при [порционном чтении](reading-portion.html). Кроме порции объектов данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах (см. [#LoadObjectsByState|следующие] перегрузки). 
+| Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции объектов данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах (см. [#LoadObjectsByState|следующие] перегрузки). 
 |-
 | [anchor|#LoadObjectsByState] '''LoadObjects'''
 ```cs
@@ -121,7 +120,7 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State); ```
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State, DataObjectCache DataObjectCache); ``` 
 
-| Получение очередных порций при [порционном чтении](reading-portion.html). Должен предшествовать вызов в [#LoadObjectsRefState|указанной выше] перегрузке. 
+| Получение очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов в [#LoadObjectsRefState|указанной выше] перегрузке. 
 <!--|-
 | Загрузка объектов с делегатами для изменения
 | '''LoadObjects'''
@@ -349,19 +348,19 @@ ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizati
  __Примечание__: порядок следования свойств объекта данных в результирующей строке с разделителями задаётся парметром `ColumnsOrder` структуры `customizationStruct`.
 | __Возвращаемый результат__: массив структур `ObjectStringDataView`
 |-
-| rowspan="3" | Загрузка без создания объектов с использованием состояния вычитки (для реализации [порционного чтения](reading-portion.html))
+| rowspan="3" | Загрузка без создания объектов с использованием состояния вычитки (для реализации [порционного чтения](fo_reading-portion.html))
 | '''LoadStringedObjectView'''
 ```cs
 ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizationStruct customizationStruct, ref object State) ```
 | rowspan="3" | `State` - Состояние вычитки(для последующей дочитки)
 `customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html) 
 __Примечание__: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`.
-| Получение первой порции при [порционном чтении](reading-portion.html). Кроме порции данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах.
+| Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах.
 |-
 | '''LoadStringedObjectView'''
 ```cs
 ObjectStringDataView[] LoadStringedObjectView(ref object state) ```
-| Получение очередных порций при [порционном чтении](reading-portion.html). Должен предшествовать вызов в предыдущей перегрузке.
+| Получение очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов в предыдущей перегрузке.
 |-
 | '''CompleteLoadStringedObjectView'''
 ```cs

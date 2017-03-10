@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_nonstored-calculated-properties.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 В этом примере показывается, как использовать вычислимые свойства.

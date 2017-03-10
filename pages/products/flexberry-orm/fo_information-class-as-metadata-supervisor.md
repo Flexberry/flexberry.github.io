@@ -1,9 +1,11 @@
 ---
-title: Information: получение метаданных
+title: Information получение метаданных
 sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_information-class-as-metadata-supervisor.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Любые метаданные могут быть получены через класс `Information` с набором статических методов.
@@ -11,7 +13,6 @@ permalink: ru/fo_information-class-as-metadata-supervisor.html
 Ниже приведены наиболее часто используемые методы класса `Information`, сгруппированные по назначению.
 
 ## Работа со свойствами объекта (определение значения, загруженности и пр., задание значения)
-
 
 ### GetPropValueByName
 
@@ -23,7 +24,7 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public object GetPropValueByName(DataObject obj, string propName) 
 ```
 
@@ -38,7 +39,7 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public void SetPropValueByName(DataObject obj, string propName, string PropValue) 
 ```
 
@@ -48,7 +49,7 @@ static public void SetPropValueByName(DataObject obj, string propName, string Pr
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public void SetPropValueByName(DataObject obj, string propName, object PropValue) 
 ```
 
@@ -62,11 +63,12 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public bool TrimmedStringStorage(System.Type tp, string propname) 
 ```
 
 ### IsStoredProperty
+
 __Назначение__: Хранимое ли свойство
 
 __Параметры__:
@@ -75,7 +77,7 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public bool IsStoredProperty(Type type, string propName) 
 ```
 
@@ -90,7 +92,7 @@ __Возвращаемый результат__: true, если установл
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public bool GetPropertyNotNull(System.Type type, string property) 
 ```
 
@@ -105,7 +107,7 @@ __Возвращаемый результат__: Значение установ
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public int GetPropertyStrLen(System.Type type, string property) 
 ```
 
@@ -118,7 +120,7 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public Type GetPropertyType(System.Type declarationType, string propname) 
 ```
 
@@ -133,7 +135,7 @@ __Возвращаемый результат__: true - свойство ест�
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public bool CheckPropertyExist(System.Type type, string propName) 
 ```
 
@@ -144,7 +146,7 @@ __Назначение__: Получить представление по ег�
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public View GetView(string ViewName, System.Type type) 
 ```
 ### GetCompatibleView
@@ -156,7 +158,7 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public View GetCompatibleView(string ViewName, System.Type[] types) 
 ```
 ### AllViews
@@ -169,7 +171,7 @@ __Возвращаемое значение__: Массив строк, соде
  
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string[] AllViews(System.Type type) 
 ```
 ### AllViews
@@ -177,7 +179,7 @@ __Назначение__: Получить список имён общих пр
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string[] AllViews(params System.Type[] types) 
 ```
 ### CheckViewForClasses
@@ -185,7 +187,7 @@ __Назначение__: Проверить, доступно ли указан
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public bool CheckViewForClasses(string ViewName, params System.Type[] types) 
 ```
 ### GetAllTypesFromView
@@ -198,7 +200,7 @@ __Возвращаемое значение__: Список типов без д
     
 __Сигнатура__:
 
-```cpp
+```csharp
 public static List<Type> GetAllTypesFromView(View view) 
 ```
 ### GetAllTypesFromView
@@ -211,7 +213,7 @@ __Возвращаемое значение__: Список типов без д
  
 __Сигнатура__:
 
-```cpp
+```csharp
 public static List<Type> GetAllTypesFromView(ExtendedView view) 
 ```
 
@@ -229,7 +231,7 @@ __Возвращаемое значение__: одномерный строко
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string[] GetAlteredPropertyNames(DataObject obj1, DataObject obj2, bool WithDetailsComparing) 
 ```
 ### GetAlteredProperyNames
@@ -247,7 +249,7 @@ __Возвращаемое значение__: одномерный строко
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string[] GetAlteredPropertyNamesWithNotStored(DataObject obj1, DataObject obj2, bool WithDetailsComparing) 
 ```
 
@@ -256,7 +258,7 @@ __Назначение__: Сравнить два объекта данных и
 
 __Сигнатура__:
 
-```cpp
+```csharp
  static public bool ContainsAlteredProps(DataObject obj1, DataObject obj2, bool WithDetailsComparing) 
 ```
 ### CheckNotNullAttributes
@@ -269,7 +271,7 @@ __Возвращаемое значение__: возвращает null, есл
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string[] CheckNotNullAttributes(DataObject dataObject) 
 ```
 ### GetAllPropertyNames
@@ -282,7 +284,7 @@ __Возвращаемое значение__: одномерный строко
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string[] GetAllPropertyNames(System.Type type) 
 ```
 
@@ -296,7 +298,7 @@ __Параметры__:
  
 __Сигнатура__:
 
-```cpp
+```csharp
 static public System.Type GetKeyGeneratorType(System.Type typeofdataobject) 
 ```
 
@@ -307,7 +309,7 @@ __Назначение__: Имя хранилища для типа
 
 __Сигнатура__:
 
-``` cpp
+``` csharp
  static public string GetTypeStorageName(System.Type type) 
 ```
 ### GetClassStorageName
@@ -320,7 +322,7 @@ __Возвращаемое значение__: имя хранения в стр
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string GetClassStorageName(System.Type type) 
 ```
 ### GetPrimaryKeyStorageName
@@ -331,7 +333,7 @@ __Параметры__:
     
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string GetPrimaryKeyStorageName(System.Type type) 
 ```
 ### GetPropertyStorageName
@@ -339,7 +341,7 @@ __Назначение__: Получить имя хранения .Net-свой
 
 __Сигнатура__:
 
-```cpp
+```csharp
 static public string GetPropertyStorageName(System.Type type, string property, int index) 
 ```
 
@@ -357,7 +359,7 @@ __Параметры__:
    
 __Сигнатура__:
 
-```cpp
+```csharp
 public static bool CheckAccessToAttribute(Type type, string propertyName, out object deniedAccessValue) 
 ```
 
@@ -368,7 +370,7 @@ __Назначение__: Вернуть картинку для объекта
 
 __Сигнатура__:
 
-```cpp
+```csharp
 public static System.Drawing.Image GetImageForInstance(DataObject dobject) 
 ```
 ### GetClassImage
@@ -381,7 +383,7 @@ __Возвращаемое значение__: Картинка
 
 __Сигнатура__:
 
-```cpp
+```csharp
 public static System.Drawing.Image GetClassImage(System.Type dataObjectType) 
 ```
 ### GetClassImageProperty
@@ -389,6 +391,6 @@ __Назначение__: Вернуть свойство-картинку, ус
   
 __Сигнатура__:
 
-```cpp
+```csharp
 public static string GetClassImageProperty(System.Type dataobjectType) 
 ```

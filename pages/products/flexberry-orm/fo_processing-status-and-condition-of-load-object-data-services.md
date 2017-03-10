@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_processing-status-and-condition-of-load-object-data-services.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 При обновлении в хранилище объекта данных, любой сервис данных учитывает статусы следующим образом:

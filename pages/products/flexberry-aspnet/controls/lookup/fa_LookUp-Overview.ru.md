@@ -40,7 +40,7 @@ lang: ru
 * `LookUpFormTop` - верхняя граница открываемой формы. По умолчанию `100`.
 * `LookUpFormURL` - URL списковой формы, которая будет использоваться для выбора значения.
 * `LookUpFormWidth` - ширина открываемой формы. По умолчанию `750`.
-* `[#mastertypename|MasterTypeName]` - тип [мастерового](master--association.html) объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
+* `[#mastertypename|MasterTypeName]` - тип [мастерового](fo_master-association.html) объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
 * `[#masterviewname|MasterViewName]` - представление мастерового объекта.
 * `[#objecttypename|ObjectTypeName]` - тип редактируемого объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
 * `[#objectviewname|ObjectViewName]` - [представление](fo_view-def.html) редактируемого объекта.
@@ -99,7 +99,7 @@ ctrlM1.MasterTypeName = typeof(M1).AssemblyQualifiedName;
 
 (((<msg type=Important>Для означивания `MasterTypeName` всегда используйте `typeof(Тип).AssemblyQualifiedName`.
 
-Подробнее можно посмотреть '''[здесь](type-usage-problem.html)'''.</msg>)))
+Подробнее можно посмотреть '''[здесь](fo_type-usage-problem.html)'''.</msg>)))
 
 [anchor|#objecttypename]
 ## ObjectTypeName

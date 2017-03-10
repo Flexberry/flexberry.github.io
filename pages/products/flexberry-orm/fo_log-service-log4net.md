@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry, Public
 toc: true
 permalink: ru/fo_log-service-log4net.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## Что это такое

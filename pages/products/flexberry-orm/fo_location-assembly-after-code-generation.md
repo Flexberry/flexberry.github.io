@@ -4,6 +4,8 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fo_location-assembly-after-code-generation.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## Понятие пакета
@@ -34,7 +36,7 @@ permalink: ru/fo_location-assembly-after-code-generation.html
 * `Catchers` - для [классов со стереотипом `eventarg`](classes-with-stereotype-eventarg.html), у которых установлена галочка `GenerateCatcher` в эту сборку генерируются классы-перехватчики событий; 
 * `DesktopCustomizers` - сборка классов - настройщиков [рабочих столов приложений](app-desktop.html); 
 * `Forms` - классы со стереотипами: [`editform, listform, printform, userform` (для генерации требуются дополнительные генераторы)](additional-stereotypes.html); 
-* `Objects` - классы со стереотипами: `[implementation](data--classes.html), type, [enumeration](enumerations.html), [eventarg](classes-with-stereotype-eventarg.html)`. 
+* `Objects` - классы со стереотипами: `[implementation](fo_data-classes.html), type, [enumeration](enumerations.html), [eventarg](classes-with-stereotype-eventarg.html)`. 
 * `Scripts` - сценарии, определённые диаграммным методом `EBSD`. 
 
 Если нет в стадии классов, попадающих в соответствующую категорию, то исходные коды не генерируются и каталог не создаётся.

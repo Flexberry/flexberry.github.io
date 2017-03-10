@@ -18,7 +18,7 @@ lang: ru
 # Выделить System, в меню [FlexberryOrmCasePlugin.ashx#SQL_22|ORM -> SQL -> Microsoft SQL] выбрать пункт Построить диаграммы по БД.(((![](/images/pages/img/page/ReverseDataBase/ReengineeringPlugin.png))))
 # Дождаться выполнения операции.
 
-(((<msg type=note>При создании диаграмм по базе данных все [детейловые](fo_detail-associations-and-their-properties.html) связи будут интерпретироваться как [Ассоциации](master--association.html) 1 - * (это связано с тем, что на уровне БД нет разницы между мастеровыми и детейловыми связями).</msg>)))
+(((<msg type=note>При создании диаграмм по базе данных все [детейловые](fo_detail-associations-and-their-properties.html) связи будут интерпретироваться как [Ассоциации](fo_master-association.html) 1 - * (это связано с тем, что на уровне БД нет разницы между мастеровыми и детейловыми связями).</msg>)))
 
 (((<msg type=note>При создании диаграммы стандартным образом обрабатываются типы параметров, которые были указанны по умолчанию [в карте типов SQL](fd_types-map.html).
 

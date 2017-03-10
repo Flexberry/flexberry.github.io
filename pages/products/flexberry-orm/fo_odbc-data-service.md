@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_odbc-data-service.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ODBCDataService - это [сервис данных](fo_data-service.html) для доступа к реляционным источникам данных, независим от реляционной СУБД, является реализацией [абстрактного класса SQLDataService](fo_sql-data-service.html).

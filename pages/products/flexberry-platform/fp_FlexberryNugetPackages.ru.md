@@ -54,8 +54,8 @@ lang: ru
 Сборки, входящие в пакет:
 * IIS.Flexberry.Logging(Forms).dll
 
-## [Flexberry CurrentUserService](current-user-service.html)
-Пакет содержит компоненты [сервиса текущего пользователя](current-user-service.html).
+## [Flexberry CurrentUserService](fo_current-user-service.html)
+Пакет содержит компоненты [сервиса текущего пользователя](fo_current-user-service.html).
 
 Сборки, входящие в пакет:
 * ICSSoft.Services.CurrentUserService.dll
@@ -64,8 +64,8 @@ lang: ru
 Сборки, входящие в пакет:
 * UserSettingsService.dll
 
-## [Flexberry UnityFactory](unity-factory.html)
-Пакет содержит компоненты [UnityFactory](unity-factory.html).
+## [Flexberry UnityFactory](fo_unity-factory.html)
+Пакет содержит компоненты [UnityFactory](fo_unity-factory.html).
 
 Сборки, входящие в пакет:
 * ICSSoft.Services.UnityFactory.dll

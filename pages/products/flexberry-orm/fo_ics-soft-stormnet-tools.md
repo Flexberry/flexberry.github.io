@@ -3,7 +3,9 @@ title: ICSSoft.STORMNET.Tools.XmlTools
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
+permalink: ru/fo_ics-soft-stormnet-tools.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 `ICSSoft.STORMNET.Tools.XmlTools` - класс для работы с XML.
@@ -11,6 +13,7 @@ permalink: ru/fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
 В классе реализованы следующие методы:
 
 ## GetXDocumentByXElement
+
  __Назначение__: Конвертация `System.Xml.Linq.XElement` в `System.Xml.XmlDocument`.
 
  __Параметры__:
@@ -25,7 +28,7 @@ permalink: ru/fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
 
  __Сигнатура__:
 
-```cpp
+```csharp
 public static XmlDocument GetXDocumentByXElement(XElement xElement, string versionXmlDoc, string encodingXmlDoc) 
 ```
 
@@ -41,7 +44,7 @@ __Параметры__:
 
 __Сигнатура__:
 
-```cpp
+```csharp
 public static XmlDocument LoadXml(string filePath, Encoding encoding = null) 
 ```
 

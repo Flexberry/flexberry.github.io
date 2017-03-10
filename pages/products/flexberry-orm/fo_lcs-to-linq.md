@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ASP-NET, Flexberry ORM, Ограничения
 toc: true
 permalink: ru/fo_lcs-to-linq.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Существуют методы, позволяющие производить конвертацию из [функции ограничения](fo_limit-function.html) в выражение для [LINQProvider](fo_linq-provider.html) и [наоборот](fo_limitation.html).

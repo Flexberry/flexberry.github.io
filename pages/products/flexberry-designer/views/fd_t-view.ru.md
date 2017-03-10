@@ -4,7 +4,7 @@ sidebar: flexberry-designer_sidebar
 keywords: View
 toc: true
 permalink: ru/fd_t-view.html
-folder: products/flexberry-designer/class-diagram/
+folder: products/flexberry-designer/views/
 lang: ru
 ---
 

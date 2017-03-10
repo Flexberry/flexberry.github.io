@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_mssql-data-service.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## MSSQLDataService

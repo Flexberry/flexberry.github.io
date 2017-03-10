@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Ключевые понятия
 toc: true
 permalink: ru/fo_overloading-attributes-associations-methods.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Атрибуты, методы, ассоциации могут быть перегружены, в соответствии с правилами .Net.

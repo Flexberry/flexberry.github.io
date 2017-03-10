@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_multibase.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## Подмена строки сервиса данных

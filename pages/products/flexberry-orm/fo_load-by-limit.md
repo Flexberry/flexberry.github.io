@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fo_load-by-limit.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Для того, чтобы наложить ограничение, требуется в свойство `LimitFunction` структуры `LoadingCustomizationStruct` установить ограничивающую функцию (`ICSSoft.STORMNET.FunctionalLanguage.Function`) любого языка ограничений.

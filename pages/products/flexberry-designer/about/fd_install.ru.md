@@ -8,8 +8,8 @@ folder: products/flexberry-designer/about/
 lang: ru
 ---
 
-Существует [несколько способов установить и настроить](fd_standalone-install.html) [Flexberry Designer](fd_flexberry-designer.html). Один из них - установка приложения с сайта [Flexberry.ru](http://flexberry.ru/Try).  
-Для установки [Flexberry Designer](fd_flexberry-designer.html) необходимо на сайте [Flexberry.ru](http://flexberry.ru/Try) нажать кнопку "Установить" в разделе  ["Попробовать"](http://flexberry.ru/Try).
+Существует [несколько способов установить и настроить](fd_standalone-install.html) [Flexberry Designer](fd_landing_page.html). Один из них - установка приложения с сайта [Flexberry.ru](http://flexberry.ru/Try).  
+Для установки [Flexberry Designer](fd_landing_page.html) необходимо на сайте [Flexberry.ru](http://flexberry.ru/Try) нажать кнопку "Установить" в разделе  ["Попробовать"](http://flexberry.ru/Try).
 
 Для работы приложения на компьютере должно быть установлено следующее ПО (перед установкой это будет проверено и, если чего-то будет не хватать, установлено):
 * SQL Server 2012 Express LocalDB (и выше)
@@ -66,7 +66,7 @@ lang: ru
 
 ## Установка лицензий
 
-При данном способе получения продукта [Flexberry Designer](fd_flexberry-designer.html) [установка лицензий](fd_installation-licensing-files.html) будет происходить следующим образом:
+При данном способе получения продукта [Flexberry Designer](fd_landing_page.html) [установка лицензий](fd_installation-licensing-files.html) будет происходить следующим образом:
 * При установке приложения у пользователя будут запрошены логин и пароль от сайта [Flexberry.ru](http://flexberry.ru/Try), откуда лицензия будет выкачана и автоматически установлена.
 * По окончании срока лицензии при запуске приложения пользователю вновь будет предложено ввести учётные данные от сайта [Flexberry.ru](http://flexberry.ru/Try) для скачивания [приобретённой лицензии](http://flexberry.ru/Buy).
 

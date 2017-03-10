@@ -8,7 +8,7 @@ folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 
-Следующие стереотипы **не поддерживаются** в базовой поставке [Flexberry Designer](fd_flexberry-designer.html) и требуют дополнительных генераторов:
+Следующие стереотипы **не поддерживаются** в базовой поставке [Flexberry Designer](fd_landing_page.html) и требуют дополнительных генераторов:
 * Классы со [стереотипами](fd_key-concepts.html) "*form" (`listform`, `editform`, `userform`) на [диаграмме классов](fd_class-diagram.html) представляют собой формы:
     * `listform` - форма со списком объектов определённого класса.
     * `editform` - форма создания и редактирования объектов.

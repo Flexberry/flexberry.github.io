@@ -8,7 +8,7 @@ folder: products/flexberry-designer/about/
 lang: ru
 ---
 
-Существует [несколько способов установить и настроить](fd_install.html) [Flexberry Designer](fd_flexberry-designer.html). Один из них - установка приложения из архива.
+Существует [несколько способов установить и настроить](fd_install.html) [Flexberry Designer](fd_landing_page.html). Один из них - установка приложения из архива.
 
 1. Для запуска Flexberry Designer необходимо **наличие [поддерживаемой СУБД](fo_data-service.html)** (установленной на Вашем компьютере, или где-то в сети) и [установленной лицензии](fd_installation-licensing-files.html).
 2. Необходимо проверить наличие **доступа** к серверу, который Вы будете использовать, на Вашем компьютере.

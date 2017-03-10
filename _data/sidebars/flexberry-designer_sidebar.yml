@@ -12,7 +12,7 @@ entries:
     folderitems:
     - title: Flexberry Designer
       title_ru: Flexberry Designer
-      url: /fd_flexberry-designer.html
+      url: /fd_landing_page.html
       output: web
 
     - title: Flexberry plugins
@@ -218,7 +218,7 @@ entries:
     - title: Master association
       title_ru: Мастеровые ассоциации и их свойства  
       url: /fd_master-association.html
-      output: web, pdf
+      output: web, pdf   
 
     - title: Types map
       title_ru: Карта типов 
@@ -260,22 +260,157 @@ entries:
       url: /fd_external-interface.html
       output: web, pdf
 
+    - title: Class manager
+      title_ru: Менеджер классов
+      url: /fd_class-manager.html
+      output: web, pdf
+
   - title: Creating application
     title_ru: Создание приложений
     output: web, pdf
     
     folderitems:
+    - title: Creating application
+      title_ru: Создание приложения 
+      url: /fd_flexberry.html
+      output: web, pdf
+
     - title: Design
       title_ru: Проектирование информационных систем
       url: /fd_design.html
-      output: web
+      output: web, pdf
 
-  - title: Audit
-    title_ru: Аудит в Flexberry Designer
+    - title: Description of MDD methodology
+      title_ru: Описание методологии MDD
+      url: /fd_model-driven-architecture.html
+      output: web, pdf
+
+    - title: Definition of design
+      title_ru: Определение проектирования
+      url: /fd_definition-design.html
+      output: web, pdf
+
+    - title: Analysis stage
+      title_ru: Этап анализа
+      url: /fd_analys.html
+      output: web, pdf
+
+    - title: Stage of prototype creation
+      title_ru: Этап создания прототипа 
+      url: /fd_prototype-creation.html
+      output: web, pdf
+
+    - title: Development
+      title_ru: Реализация информационных систем
+      url: /fd_development.html
+      output: web, pdf
+
+    - title: Stage of application development
+      title_ru: Этап доработки приложения
+      url: /fd_application-development.html
+      output: web, pdf
+
+  - title: Views
+    title_ru: Основы работы с представлениями
     output: web, pdf
 
     folderitems:
-    - title: Audit setup
-      title_ru: Настройка аудита в Flexberry Designer
-      url: fd_audit-setup.html
+    - title: View definition
+      title_ru: Представления (View)
+      url: /fd_view-definition.html
+      output: web, pdf
+    
+    - title: View types
+      title_ru: Основные виды представлений
+      url: /fd_view-types.html
+      output: web, pdf
+
+    - title: Form for editing views
+      title_ru: Форма редактирования представлений
+      url: /fd_view-edit-form.html
+      output: web, pdf
+
+    - title: Change e-view
+      title_ru: Изменение представления формы редактирования
+      url: /fd_change-e-view.html
+      output: web, pdf
+    
+    - title: E-view
+      title_ru: E-представление
+      url: /fd_e-view.html
+      output: web, pdf
+
+    - title: L-view
+      title_ru: L-представление
+      url: /fd_l-view.html
+      output: web, pdf
+
+    - title: D-view
+      title_ru: D-представление
+      url: /fd_d-view.html
+      output: web, pdf
+
+    - title: Masters in view
+      title_ru: Мастера в представлении (View)
+      url: /fd_masters-view.html
+      output: web, pdf
+
+    - title: T-view
+      title_ru: T-представление
+      url: /fd_t-view.html
+      output: web, pdf
+
+  - title: Application generation
+    title_ru: Основы генерации приложений
+    output: web, pdf
+    
+    folderitems:
+    - title: Project customization
+      title_ru: Настройка модели для генерации
+      url: /fd_project-customization.html
+      output: web, pdf
+
+    - title: Generation path
+      title_ru: Путь генерации
+      url: /fd_generation-path.html
+      output: web, pdf
+
+    - title: Database settings
+      title_ru: Настройки базы данных
+      url: /fd_configure-ms-sql-generator.html
+      output: web, pdf
+
+    - title: Matching the database
+      title_ru: Приведение в соответствие БД
+      url: /fd_matching-db.html
+      output: web, pdf
+
+    - title: Using quick prototyping
+      title_ru: Использование быстрой прототипизации
+      url: /fd_using-quick-prototyping.html
+      output: web, pdf
+
+    - title: Change model
+      title_ru: Внесение изменений в модель приложения
+      url: /fd_change-model.html
+      output: web, pdf
+
+    - title: Сode generation
+      title_ru: Описание процесса перегенерации кода
+      url: /fd_code-generation.html
+      output: web, pdf
+
+    - title: DocGen plugin
+      title_ru: Плагин генерации документации по диаграммам
+      url: /fd_doc-gen.html
+      output: web, pdf
+
+    - title: Generate forms for external-classes
+      title_ru: Генерация форм для external-классов
+      url: /fd_generate-forms-external-classes.html
+      output: web, pdf
+    
+    - title: Setting columns to place controls at the view level
+      title_ru: Задание колонок для размещения контролов на уровне представлений
+      url: /fd_specify-column-controls.html
       output: web, pdf

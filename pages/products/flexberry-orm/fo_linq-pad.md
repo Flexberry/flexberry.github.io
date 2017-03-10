@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Private, БД, Ограничения
 toc: true
 permalink: ru/fo_linq-pad.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 [LINQPad](http://linqpad.net) позволяет писать запросы на LINQ и проверять результаты выполнения на реальных данных без особых хлопот. В качестве бонуса LINQPad позволяет быстро увидеть SQL-запрос, который уходит в базу при использовании LINQ в реальных условиях.

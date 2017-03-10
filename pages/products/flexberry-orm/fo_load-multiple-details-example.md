@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_load-multiple-details-example.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## Загрузка объекта с большим количеством детейлов

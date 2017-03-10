@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_implication-in-external-lang-def.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## Функция импликации (funcImplication)

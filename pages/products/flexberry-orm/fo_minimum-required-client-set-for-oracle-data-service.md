@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, БД
 toc: true
 permalink: ru/fo_minimum-required-client-set-for-oracle-data-service.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ![](/images/pages/products/flexberry-orm/technotes/ora-cli-1.png)

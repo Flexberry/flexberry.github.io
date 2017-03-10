@@ -4,13 +4,13 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry Designer, Flexberry ORM, Public
 toc: true
 permalink: ru/fo_detail-associations-and-their-properties.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 
 Согласно "Аксиом Flexberry Platform" детейловыми являются композиции, подобные:
+
 ![](/images/pages/img/Flexberry plugins/detail.gif)
-'''Важное замечание''': Принято, чтобы конец ассоциации имел множественность *, а начало (где ромбик) - 1. [Класс-шапка](fd_key-concepts.html) всегда должен находиться со стороны начала композиции, а детейловый класс - со стороны конца.
+
+**Важное замечание:** Принято, чтобы конец ассоциации имел множественность *, а начало (где ромбик) - 1. [Класс-шапка](fd_key-concepts.html) всегда должен находиться со стороны начала композиции, а детейловый класс - со стороны конца.
 {| border="1"
 ! Что генерируется
 ! Генерация в SQL DDL

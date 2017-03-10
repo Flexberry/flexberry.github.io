@@ -13,7 +13,7 @@ permalink: ru/fo_create-multiple-details-example.html
 
 ![Sample Picture Caption](/images/pages/products/flexberry-orm/create-multiple-details-example/Details.png)
 
-При этом все классы [наследуются](inheritance.html) от нехранимого абстрактного класса `D`.
+При этом все классы [наследуются](fo_inheritance.html) от нехранимого абстрактного класса `D`.
 Для каждого массива детейлов каждого объекта генерируется по 10 детейлов, затем все это сохраняется в БД путем передачи [сервису данных](fo_data-service.html) корневого объекта графа.
 
 ```cs

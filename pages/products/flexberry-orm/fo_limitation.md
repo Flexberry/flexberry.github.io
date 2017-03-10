@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_limitation.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Для фильтрации и ограничения выборки данных существует несколько классов, реализующих данную логику. 

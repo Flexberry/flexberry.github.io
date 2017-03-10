@@ -31,7 +31,7 @@ lang: ru
 # КлассДетейл
 
 ## Наследование
-Если имеется следующая ситуация с [наследованием](inheritance.html):
+Если имеется следующая ситуация с [наследованием](fo_inheritance.html):
 
 ![](/images/pages/img/page/Business-Servers-Wrapper-Business-Facade/BSHierarchy.JPG)
 

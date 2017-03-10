@@ -60,7 +60,7 @@ lang: ru
 # Чтение объектов
 #* [Чтение принадлежащих различным классам объектов в одном представлении](reading-several-types-objects.html)
 #* [Чтение объектов с наложенным ограничением](Чтение-объектов-с-наложенным-ограничением.html)
-#* [Порционное чтение](reading-portion.html)
+#* [Порционное чтение](fo_reading-portion.html)
 #* [Настройка параметров чтения ](fo_loading-customization-struct.html)
 # Интерфейсы
 #* [Интерфейсы форм редактирования](interfaces--edit-forms.html)
@@ -77,7 +77,7 @@ lang: ru
 #* [Подсистема настроек](setting-manager.html)
 # Прочие возможности
 #* [DataObjectsAndDatabaseStructures#AttributeDefinitionStorage|Определение атрибутов хранения]
-#* [Проблема используемых типов](type-usage-problem.html)
+#* [Проблема используемых типов](fo_type-usage-problem.html)
 #* [Отображение TypeUsage в структуру данных](type-usage-in-data-structure.html)
 #* [ObjectListView, основная функциональность в RunTime](object-list-view-basic-functionality-in--run-time.html)
 #* [LookUp'ы](look-up--overview.html)

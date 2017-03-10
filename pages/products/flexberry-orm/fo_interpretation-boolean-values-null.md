@@ -3,7 +3,9 @@ title: Интерпретация булевского значения NULL
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Flexberry Reports, Public, БД, Ограничения
 toc: true
-permalink: ru/fo_interpretation-boolean-values--n-u-l-l.html
+permalink: ru/fo_interpretation-boolean-values-null.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 [Атрибут класса](fo_attributes-class-data.html), объявленный с типом bool, в БД имеет тип bit и может иметь 3 значения:

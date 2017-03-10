@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: CASE Plugins, Flexberry ORM, Public
 toc: true
 permalink: ru/fo_programmer-brackets.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 namespace IIS.Product_20008

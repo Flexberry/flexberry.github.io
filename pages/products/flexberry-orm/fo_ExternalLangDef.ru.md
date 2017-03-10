@@ -31,7 +31,7 @@ lang: ru
 * [funcExistExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
 * [funcExistAllExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
 * [funcExist](fo_exist-exist-exact-exist-all-exist-all-exact.html)
-* [funcExistDetails](exist-detals.html)
+* [funcExistDetails](fo_exist-detals.html)
 * [funcExistAll](fo_exist-exist-exact-exist-all-exist-all-exact.html)
 
 ## Функции ограничения на значения детейлов

@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_loading-customization-struct.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Существует класс, `LoadingCustomizationStruct`, создав экземпляр которого, можно полностью настроить параметры [Конструирование-получение-сервиса-данных|сервиса данных] для операций чтения объектов данных.

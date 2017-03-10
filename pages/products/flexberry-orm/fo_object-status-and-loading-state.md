@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_object-status-and-loading-state.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Статусы объектов данных могут быть:

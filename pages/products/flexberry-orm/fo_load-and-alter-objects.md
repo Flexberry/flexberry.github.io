@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_load-and-alter-objects.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## Пример загрузки объекта данных по представлению, его изменения и сохранения

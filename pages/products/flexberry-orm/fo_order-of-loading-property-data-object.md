@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_order-of-loading-property-data-object.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Бывает необходимо явно задать порядок загрузки свойств объекта данных. Например, в случае, когда это важно для правильного счёта [вычислимых атрибутов](fo_not-stored-attributes.html).

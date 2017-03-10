@@ -8,7 +8,7 @@ folder: products/flexberry-designer/diagram/
 lang: ru
 ---
 
-**Диаграмма состояний** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_flexberry-designer.html).
+**Диаграмма состояний** - один из доступных [видов диаграмм](fd_editing-diagram.html), поддерживаемых [Flexberry Designer](fd_landing_page.html).
 
 ![](/images/pages/products/flexberry-designer/diagram/statechart-diagram.png)
 

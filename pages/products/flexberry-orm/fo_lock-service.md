@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Черновик статьи
 toc: true
 permalink: ru/fo_lock-service.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Сервис блокировок (`ICSSoft.STORMNET.Business.LockService`) предназначен для удобной реализации механизма блокировок. Например, требуется защитить некоторый объект данных от изменения другими пользователями в то время, как он редактируется каким-либо пользователем.

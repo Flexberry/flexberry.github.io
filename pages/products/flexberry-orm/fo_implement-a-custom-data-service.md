@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_implement-a-custom-data-service.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 В общем случае, [сервис данных](fo_data-service.html) должен реализовывать интерфейс ICSSoft.STORMNET.Business.IDataService.
@@ -21,7 +23,7 @@ permalink: ru/fo_implement-a-custom-data-service.html
 
 ## Реализация сервиса данных для реляционного хранилища
 
-Если требуется реализовать [сервис данных](fo_data-service.html) для реляционного хранилища, рекомендуется унаследоваться от [готовых сервисов данных Flexberry Platform](fo_standard-data-services.html), в частности, от общего предка реляционных [сервис данных](fo_data-service.html) [SQLDataService](fo_sql-data-service.html), либо [ODBCDataService](fo_odbc-data-service.html). Затем, согласно особенностей хранилища, которое Вы решили использовать, необходимо соответствующим образом перегрузить методы.
+Если требуется реализовать [сервис данных](fo_data-service.html) для реляционного хранилища, рекомендуется унаследоваться от [готовых сервисов данных Flexberry Platform](standard-data-services.html), в частности, от общего предка реляционных [сервис данных](fo_data-service.html) [SQLDataService](fo_sql-data-service.html), либо [ODBCDataService](fo_odbc-data-service.html). Затем, согласно особенностей хранилища, которое Вы решили использовать, необходимо соответствующим образом перегрузить методы.
 
 Ниже приводится пример [сервиса данных](fo_data-service.html), выполняющего работу с Microsoft SQL Server напрямую, через SQLClient:
 
@@ -41,6 +43,5 @@ public class MSSQLDataService:ICSSoft.STORMNET.Business.SQLDataService
         return result;
     } 
 }
-
 
 В этом примере переопределены всего два метода: один теперь выполняет подсоединение к источнику напрямую, другой учитывает специфику указания в запросы функции ISNULL.

@@ -21,7 +21,7 @@ lang: ru
 </div>
 
 # Описание и ключевые различия функций: funcExist, funcExistExact, funcExistAll, funcExistAllExact
-При помощи этих функций [ExternalLangDef](fo_external-lang-def.html) возможно накладывать [ограничения](fo_limit-function.html) только на детейлы ([пример](limit-details-by-agregators-prop.html))
+При помощи этих функций [ExternalLangDef](fo_external-lang-def.html) возможно накладывать [ограничения](fo_limit-function.html) только на детейлы ([пример](fo_limit-details-by-agregators-prop.html))
 
 
 {| cellpadding="4"

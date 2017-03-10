@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_limit-function.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Функции ограничения позволяют осуществлять фильтрацию и ограничения выборки данных и представляют собой специальный расширяемый язык ограничений, разработанный для [Flexberry ORM](fo_flexberry-orm.html).

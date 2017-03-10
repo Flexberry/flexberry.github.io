@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_oracle-data-service.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 OracleDataService- это [сервис данных](fo_data-service.html) для работы с Oracle Server напрямую, минуя ODBC; является реализацией [абстрактного класса SQLDataService](fo_sql-data-service.html).
