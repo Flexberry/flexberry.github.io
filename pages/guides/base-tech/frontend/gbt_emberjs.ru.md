@@ -22,12 +22,19 @@ lang: ru
 
 ##  Ссылки на материалы для изучения
 
+### Примеры
+
+* [Приложение для сайта с арендой недвижимости (eng)](https://guides.emberjs.com/v2.11.0/tutorial/ember-cli/)
+* [Приложение для сайта с арендой недвижимости (rus)](http://emjs.ru/v2/tutorial/ember-cli/)
+
 ### Базовый сведения
 
-* [Базовая структура приложения](https://guides.emberjs.com/v2.11.0/getting-started/core-concepts/)
+* [Официальная документация по Ember.js](https://guides.emberjs.com/v2.11.0/)
+* [Официальная документация по Ember-CLI](https://ember-cli.com/user-guide/)
+* [Базовая структура приложения](http://emjs.ru/v2/getting-started/core-concepts/)
 * Состав приложения
-    * [Routing](https://guides.emberjs.com/v2.11.0/routing/)
-    * [Controllers](https://guides.emberjs.com/v2.11.0/controllers/)
+    * [Routing](https://emjs.ru/v2/routing/)
+    * [Controllers](https://emjs.ru/v2/controllers/)
     * [Templates](https://guides.emberjs.com/v2.11.0/templates/handlebars-basics/)
     * [Components](https://guides.emberjs.com/v2.11.0/components/defining-a-component/)
 * [Testing](https://guides.emberjs.com/v2.11.0/testing/)
@@ -70,11 +77,6 @@ lang: ru
 ## Программное обеспечение
 
 * [Ember-CLI](https://guides.emberjs.com/v2.11.0/getting-started/)
-
-## Примеры
-
-* [Приложение для сайта с арендой недвижимости (eng)](https://guides.emberjs.com/v2.11.0/tutorial/ember-cli/)
-* [Приложение для сайта с арендой недвижимости (rus)](http://emjs.ru/v2/tutorial/ember-cli/)
 
 ## Перейти
 
