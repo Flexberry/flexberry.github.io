@@ -310,6 +310,56 @@ entries:
       url: /fd_application-development.html
       output: web, pdf
 
+  - title: Views
+    title_ru: Основы работы с представлениями
+    output: web, pdf
+
+    folderitems:
+    - title: View definition
+      title_ru: Представления (View)
+      url: /fd_view-definition.html
+      output: web, pdf
+    
+    - title: View types
+      title_ru: Основные виды представлений
+      url: /fd_view-types.html
+      output: web, pdf
+
+    - title: Form for editing views
+      title_ru: Форма редактирования представлений
+      url: /fd_view-edit-form.html
+      output: web, pdf
+
+    - title: Change e-view
+      title_ru: Изменение представления формы редактирования
+      url: /fd_change-e-view.html
+      output: web, pdf
+    
+    - title: E-view
+      title_ru: E-представление
+      url: /fd_e-view.html
+      output: web, pdf
+
+    - title: L-view
+      title_ru: L-представление
+      url: /fd_l-view.html
+      output: web, pdf
+
+    - title: D-view
+      title_ru: D-представление
+      url: /fd_d-view.html
+      output: web, pdf
+
+    - title: Masters in view
+      title_ru: Мастера в представлении (View)
+      url: /fd_masters-view.html
+      output: web, pdf
+
+    - title: T-view
+      title_ru: T-представление
+      url: /fd_t-view.html
+      output: web, pdf
+
   - title: Application generation
     title_ru: Основы генерации приложений
     output: web, pdf
@@ -363,54 +413,4 @@ entries:
     - title: Setting columns to place controls at the view level
       title_ru: Задание колонок для размещения контролов на уровне представлений
       url: /fd_specify-column-controls.html
-      output: web, pdf
-
-  - title: Views
-    title_ru: Основы работы с представлениями
-    output: web, pdf
-
-    folderitems:
-    - title: View definition
-      title_ru: Представления (View)
-      url: /fd_view-definition.html
-      output: web, pdf
-    
-    - title: View types
-      title_ru: Основные виды представлений
-      url: /fd_view-types.html
-      output: web, pdf
-
-    - title: Form for editing views
-      title_ru: Форма редактирования представлений
-      url: /fd_view-edit-form.html
-      output: web, pdf
-
-    - title: Change e-view
-      title_ru: Изменение представления формы редактирования
-      url: /fd_change-e-view.html
-      output: web, pdf
-    
-    - title: E-view
-      title_ru: E-представление
-      url: /fd_e-view.html
-      output: web, pdf
-
-    - title: L-view
-      title_ru: L-представление
-      url: /fd_l-view.html
-      output: web, pdf
-
-    - title: D-view
-      title_ru: D-представление
-      url: /fd_d-view.html
-      output: web, pdf
-
-    - title: Masters in view
-      title_ru: Мастера в представлении (View)
-      url: /fd_masters-view.html
-      output: web, pdf
-
-    - title: T-view
-      title_ru: T-представление
-      url: /fd_t-view.html
       output: web, pdf
