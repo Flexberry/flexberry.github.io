@@ -27,4 +27,4 @@ lang: ru
         }
 ```
 
-Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](code-samples.html).
+Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](fo_code-samples.html).

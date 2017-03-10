@@ -23,7 +23,7 @@ FuncNot = Not
 
 и т.д.
 
-### [FunctionalLanguage](function-list.html)
+### [FunctionalLanguage](fo_function-list.html)
 
 ```cs    Клиент клиент = new Клиент();
 	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
@@ -38,6 +38,6 @@ FuncNot = Not
 Для FuncNOT необходим один параметр - отрицаемая функция.
 
 # См. также
-[Перечень функций](function-list.html)
+[Перечень функций](fo_function-list.html)
 
 

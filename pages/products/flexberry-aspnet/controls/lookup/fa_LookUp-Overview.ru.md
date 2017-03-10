@@ -40,12 +40,12 @@ lang: ru
 * `LookUpFormTop` - верхняя граница открываемой формы. По умолчанию `100`.
 * `LookUpFormURL` - URL списковой формы, которая будет использоваться для выбора значения.
 * `LookUpFormWidth` - ширина открываемой формы. По умолчанию `750`.
-* `[#mastertypename|MasterTypeName]` - тип [мастерового](master--association.html) объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
+* `[#mastertypename|MasterTypeName]` - тип [мастерового](fo_master-association.html) объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
 * `[#masterviewname|MasterViewName]` - представление мастерового объекта.
 * `[#objecttypename|ObjectTypeName]` - тип редактируемого объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
-* `[#objectviewname|ObjectViewName]` - [представление](view-definition.html) редактируемого объекта.
+* `[#objectviewname|ObjectViewName]` - [представление](fo_view-def.html) редактируемого объекта.
 * `[#propertytoshow|PropertyToShow]` - свойство мастера, которое будет отображаться в лукапе при выбранном объекте.
-* `SelectedMasterPK` - [PrimaryKey](primary-keys-objects.html) выбранного объекта.
+* `SelectedMasterPK` - [PrimaryKey](fo_primary-keys-objects.html) выбранного объекта.
 * `ShowInThickBox` - показывать форму лукапа в thickbox или нет.
 * `ShowObjectUrl` - URL, по которому будет подниматься форма просмотра для выбранного объекта.
 ApplicationUrl + ListFormURL. Если не указана, то используется стандартная форма.
@@ -99,7 +99,7 @@ ctrlM1.MasterTypeName = typeof(M1).AssemblyQualifiedName;
 
 (((<msg type=Important>Для означивания `MasterTypeName` всегда используйте `typeof(Тип).AssemblyQualifiedName`.
 
-Подробнее можно посмотреть '''[здесь](type-usage-problem.html)'''.</msg>)))
+Подробнее можно посмотреть '''[здесь](fo_type-usage-problem.html)'''.</msg>)))
 
 [anchor|#objecttypename]
 ## ObjectTypeName

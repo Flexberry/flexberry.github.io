@@ -65,5 +65,5 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 [AdvLimit](limitation-edit-form.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](filter-settings.html) и [здесь](filter-example.html)).
 
 # LimitFunction
-Через [свойство LimitFunction структуры LoadingCustomizationStruct](loading-customization-struct.html) можно программно задавать ограничения (пример см. [здесь](filter-settings-for-use-in-lists.html) и [Ограничение-на-детеилы-из-кода|здесь]).
+Через [свойство LimitFunction структуры LoadingCustomizationStruct](fo_loading-customization-struct.html) можно программно задавать ограничения (пример см. [здесь](filter-settings-for-use-in-lists.html) и [Ограничение-на-детеилы-из-кода|здесь]).
 ----* [Генератор настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html)

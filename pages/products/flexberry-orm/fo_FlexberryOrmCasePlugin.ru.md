@@ -12,7 +12,7 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
 * '''Предназначение''': Создание и коррекция модели приложения, БД приложения и генерация "базового" кода.
 </td>
 </tr></tbody></table></a>

@@ -12,27 +12,27 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](limitation.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
 * '''Программная библиотека''': ExternalLangDef.dll.
-* '''Предназначение''': Общее описание работы построителя [функций ограничения](limit-function.html) ExternalLangDef, являющегося расширением [SQLWhereLanguageDef](function-list.html).
+* '''Предназначение''': Общее описание работы построителя [функций ограничения](fo_limit-function.html) ExternalLangDef, являющегося расширением [SQLWhereLanguageDef](fo_function-list.html).
 </td>
 </tr></tbody></table></a>
 </div>
 # ExternalLangDef
-`ExternalLangDef` является расширением базового функционального языка `[SQLWhereLanguageDef](function-list.html)`.
+`ExternalLangDef` является расширением базового функционального языка `[SQLWhereLanguageDef](fo_function-list.html)`.
 
-Принципиальным отличием `ExternalLangDef` от `[SQLWhereLanguageDef](function-list.html)` является возможность наложения ограничения на детейлы.
+Принципиальным отличием `ExternalLangDef` от `[SQLWhereLanguageDef](fo_function-list.html)` является возможность наложения ограничения на детейлы.
 
 # Основные возможности ExternalLangDef
-Класс `ExternalLangDef` является  наследником `[SQLWhereLanguageDef](function-list.html)`, и задание функции ограничения также осуществляется вызовом метода `GetFucntion(string, params object&#0091;&#0093;)`. Однако описание переменной-детейла, передаваемое в данный метод параметром, вместо базового класса `[Описание переменных при построении функций ограничения](variable-def.html)` выполняется с помощью его наследника `[DetailVariableDef](variable-def.html)`.
+Класс `ExternalLangDef` является  наследником `[SQLWhereLanguageDef](fo_function-list.html)`, и задание функции ограничения также осуществляется вызовом метода `GetFucntion(string, params object&#0091;&#0093;)`. Однако описание переменной-детейла, передаваемое в данный метод параметром, вместо базового класса `[Описание переменных при построении функций ограничения](variable-def.html)` выполняется с помощью его наследника `[DetailVariableDef](variable-def.html)`.
 
 ## Функции ограничения на существование детейлов
-* [funcExistExact](exist--exist-exact--exist-all--exist-all-exact.html)
-* [funcExistAllExact](exist--exist-exact--exist-all--exist-all-exact.html)
-* [funcExist](exist--exist-exact--exist-all--exist-all-exact.html)
-* [funcExistDetails](exist-detals.html)
-* [funcExistAll](exist--exist-exact--exist-all--exist-all-exact.html)
+* [funcExistExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
+* [funcExistAllExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
+* [funcExist](fo_exist-exist-exact-exist-all-exist-all-exact.html)
+* [funcExistDetails](fo_exist-detals.html)
+* [funcExistAll](fo_exist-exist-exact-exist-all-exist-all-exact.html)
 
 ## Функции ограничения на значения детейлов
 * funcMaxWithLimit: максимальное значение в детейле с ограничением.

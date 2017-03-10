@@ -30,9 +30,9 @@ SQL-выражение выглядело бы следующим образом
 ```
 SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')
 ```
-Где {IDList} - список [первичных ключей](primary-keys-objects.html) искомых `Клиентов`
+Где {IDList} - список [первичных ключей](fo_primary-keys-objects.html) искомых `Клиентов`
 
-### [FunctionalLanguage](function-list.html)
+### [FunctionalLanguage](fo_function-list.html)
 
 ```cs        List<Клиент> клиенты = new List<Клиент>();
         SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
@@ -90,4 +90,4 @@ ldef.GetFunction(ldef.funcEQ,
 
 
 # См. также
-[Перечень функций](function-list.html)
+[Перечень функций](fo_function-list.html)

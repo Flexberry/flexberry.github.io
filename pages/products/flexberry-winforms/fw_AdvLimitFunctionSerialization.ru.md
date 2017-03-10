@@ -22,7 +22,7 @@ lang: ru
 
 
 # Средства сериализации-десериализации в `ICSSoft.STORMNET.Windows.Forms.Utils` 
-В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки `[ICSSoft.STORMNET.Tools](i-c-s-soft-s-t-o-r-m-n-e-t-tools.html)`, и выполняют обращение к ней. 
+В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](fo_limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки `[ICSSoft.STORMNET.Tools](fo_ics-soft-stormnet-tools.html)`, и выполняют обращение к ней. 
 
 Методы сериализации класса `ICSSoft.STORMNET.Windows.Forms.Utils`:
 
@@ -156,7 +156,7 @@ public static object ObjectFromBinaryString(string s)
 ```
 
 # Возможная проблема десериализации
-В коде выше используется конструкция `advlimit.FromSimpleValue`, которая на основании объекта особого вида строит непосредственно [ограничение](limit-function.html). В структуре передаваемого объекта особого вида, среди прочих, есть [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) типа, из-за чего могут возникнуть проблемы при десериализации: например, если ограничение было создано с неподписанной сборкой, а требуется открыть уже с версией, что была подписана (соответственно, [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) типа изменилось и его нельзя получить через `Type.GetType(...)`), и др. Для этого случая добавлен делегат, который позволяет определить собственный дополнительный метод для получения типа по его имени.
+В коде выше используется конструкция `advlimit.FromSimpleValue`, которая на основании объекта особого вида строит непосредственно [ограничение](fo_limit-function.html). В структуре передаваемого объекта особого вида, среди прочих, есть [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) типа, из-за чего могут возникнуть проблемы при десериализации: например, если ограничение было создано с неподписанной сборкой, а требуется открыть уже с версией, что была подписана (соответственно, [`AssemblyQualifiedName`](http://msdn.microsoft.com/ru-ru/library/system.type.assemblyqualifiedname.aspx) типа изменилось и его нельзя получить через `Type.GetType(...)`), и др. Для этого случая добавлен делегат, который позволяет определить собственный дополнительный метод для получения типа по его имени.
 
 ```cs
 namespace ICSSoft.STORMNET.Windows.Forms

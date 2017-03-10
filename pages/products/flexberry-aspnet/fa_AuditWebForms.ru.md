@@ -86,7 +86,7 @@ AuditService.Current.ShowPrimaryKey = true;
 
 Список полей аудита отсортирован по времени операции (сверху новые).
 
-Чтобы отключить отображение записей, содержащих [первичные ключи](primary-keys-objects.html) [мастеров](master--association.html) и [детейлов](detail-associations-and-their-properties.html), можно выполнить следующую настройку:
+Чтобы отключить отображение записей, содержащих [первичные ключи](primary-keys-objects.html) [мастеров](fo_master-association.html) и [детейлов](detail-associations-and-their-properties.html), можно выполнить следующую настройку:
 ```cs
 AuditService.Current.ShowPrimaryKey = false;
 ```

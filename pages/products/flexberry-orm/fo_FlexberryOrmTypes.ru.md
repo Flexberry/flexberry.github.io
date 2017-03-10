@@ -12,18 +12,18 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Предназначение''': Описаны основные поддерживаемые во [Flexberry ORM](flexberry-o-r-m.html) типы.
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+* '''Предназначение''': Описаны основные поддерживаемые во [Flexberry ORM](fo_flexberry-orm.html) типы.
 </td>
 </tr></tbody></table></a>
 </div>
 # Поддерживаемая во Flexberry ORM типизация
-[Flexberry ORM](flexberry-o-r-m.html) позволяет осуществлять работу со следующими типами:
+[Flexberry ORM](fo_flexberry-orm.html) позволяет осуществлять работу со следующими типами:
 * .Net основные типы (такие как int, string, float и др.)
 * .Net [Nullable-типы](nullable-types.html).
 * [Пользовательские типы](convert-type-property-object-data-to-type-storage.html).
 * [Nullable-типы NullableDateTime, NullableInt, NullableDecimal](nullable-types.html) (располагаются в сборке ICSSoft.STORMNET.UserDataTypes):
-* Дополнительные типы [Flexberry ORM](flexberry-o-r-m.html) (эти типы сериализуются в формате XML посредством Implicit-преобразований и хранятся в базе данных (или любом другом хранилище) в сериализованном виде; поиск по атрибутам указанных типов можно производить только по подстроке и это является основным отличием от полноценной структуры данных; располагаются в сборке ICSSoft.STORMNET.UserDataTypes).
+* Дополнительные типы [Flexberry ORM](fo_flexberry-orm.html) (эти типы сериализуются в формате XML посредством Implicit-преобразований и хранятся в базе данных (или любом другом хранилище) в сериализованном виде; поиск по атрибутам указанных типов можно производить только по подстроке и это является основным отличием от полноценной структуры данных; располагаются в сборке ICSSoft.STORMNET.UserDataTypes).
 ** Contact - контакт пользователя (клиента или любой другой личности).
 ** Event - календарное событие.
 ** GeoData - геоданные (`Feature`).

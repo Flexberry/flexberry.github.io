@@ -42,7 +42,7 @@ lang: ru
 #* "WriteSessions" = `false`.
 #* "DefaultWriteMode" = `tWriteMode.Synchronous`.
 # Создаётся экземпляр класса `[AuditAppSetting](keep-and-use-audit-settings.html)`, куда записываются полученные настройки.
-# Создаётся экземпляр класса `[AuditDSSetting](keep-and-use-audit-settings.html)`, куда передаётся полученный методом `AuditSetter.InitAuditService` [сервис данных](s-q-l-data-service.html) и для него формируется имя вида "&lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;".
+# Создаётся экземпляр класса `[AuditDSSetting](keep-and-use-audit-settings.html)`, куда передаётся полученный методом `AuditSetter.InitAuditService` [сервис данных](fo_sql-data-service.html) и для него формируется имя вида "&lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;".
 
 После этого происходит инициализация [AuditService](flexberry-audit-components.html).
 ```cs

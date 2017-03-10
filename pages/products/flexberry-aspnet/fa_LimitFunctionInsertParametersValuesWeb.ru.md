@@ -13,7 +13,7 @@ lang: ru
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
 * '''Продукт''': [Flexberry ASP.NET](flexberry-a-s-p-n-e-t.html)
-* '''Компонент''': [Функции ограничения (Limit Function)](limit-function.html)
+* '''Компонент''': [Функции ограничения (Limit Function)](fo_limit-function.html)
 * '''Программная библиотека''': ICSSoft.STORMNET.Web.Tools.dll
 * '''Предназначение''': Описание подстановки параметров в ограничивающую функцию.
 </td>

@@ -19,6 +19,6 @@ lang: ru
 
 По умолчанию в схему базы данных попадут стандартные таблицы: '''STORMAdvLimit''', '''STORMFILTERDETAIL''', '''STORMFILTERLOOKUP''', '''STORMFILTERSETTING''', '''STORMNETLOCKDATA''', '''STORMSETTINGS'''. Изменять их описание в XSD-файле не рекомендуется.
 
-Сгенерированная схема содержит теги с настройками для работы с XML базой данных через '''System.Data.DataSet'''. Его поддержка осуществлена в [XMLFileDataService](x-m-l-file-data-service.html).
+Сгенерированная схема содержит теги с настройками для работы с XML базой данных через '''System.Data.DataSet'''. Его поддержка осуществлена в [XMLFileDataService](fo_xml-file-data-service.html).
  
 

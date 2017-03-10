@@ -6,7 +6,11 @@ toc: true
 permalink: ru/fo_data-object-generated-structure.html
 ---
 
+<<<<<<< HEAD
+Все классы данных наследуются от базового `[DataObject](fo_dataobject.html)`, обеспечивающего основные манипуляции: [статусы](object-status-and-loading-state.html), хранение данных, хранение [копии данных](data-object-copy.html) для вычисления изменённых [атрибутов](fo_attributes-class-data.html), означивание и хранение [первичного ключа](fo_primary-keys-objects.html).
+=======
 Все классы данных наследуются от базового `[DataObject](fo_dataobject.html)`, обеспечивающего основные манипуляции: [статусы](fo_object-status-and-loading-state.html), хранение данных, хранение [копии данных](fo_data-object-copy.html) для вычисления изменённых [атрибутов](fo_attributes-class-data.html), означивание и хранение [первичного ключа](fo_primary-keys-objects.html).
+>>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
 Пример:
 
 ```cs
@@ -40,6 +44,10 @@ public class SimpleDataObject:DataObject
 private MasterDataObject fMaster;
 public virtual MasterDataObject Master {get{return fMaster;} set{fMaster=value;}}
 ```
+<<<<<<< HEAD
+Если [класс является агрегируемым](fo_detail-associations-and-their-properties.html), то:
+=======
+>>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
 
 Если [класс является агрегируемым](fo_detail-associations-and-their-properties.html), то:
 

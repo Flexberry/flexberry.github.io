@@ -12,10 +12,10 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ORM](flexberry-o-r-m.html)
-* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](limitation.html)
+* '''Продукт''': [Flexberry ORM](fo_flexberry-orm.html)
+* '''Компонент''': [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
 * '''Программная библиотека''': ExternalLangDef.dll.
-* '''Предназначение''': Общее описание доступных в [ExternalLangDef](external-lang-def.html) методов задания [ограничений](limit-function.html) на дату и время.
+* '''Предназначение''': Общее описание доступных в [ExternalLangDef](fo_external-lang-def.html) методов задания [ограничений](fo_limit-function.html) на дату и время.
 </td>
 </tr></tbody></table></a>
 </div>
@@ -23,7 +23,7 @@ lang: ru
 # Ограничения на части даты
 Ограничения на части даты используются, когда необходимо получить данные по части даты.
 
-Функции для получения частей даты доступны в [ExternalLangDef](external-lang-def.html).
+Функции для получения частей даты доступны в [ExternalLangDef](fo_external-lang-def.html).
 В примерах ниже будем использовать следующий код:
 ```cs
 var langdef = ExternalLangDef.LanguageDef;
@@ -38,7 +38,7 @@ SQL-выражение выглядит следующим образом:
 SELECT * FROM [dbo].[Заказ] WHERE YEAR([ДатаВыдачи]) = 2014
 ```
 
-Через [ExternalLangDef](external-lang-def.html)
+Через [ExternalLangDef](fo_external-lang-def.html)
 ```
 
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ, 
@@ -55,7 +55,7 @@ SQL-выражение выглядит следующим образом:
 SELECT * FROM [dbo].[Заказ] WHERE Month([ДатаВыдачи]) = 05
 ```
 
-Через [ExternalLangDef](external-lang-def.html)
+Через [ExternalLangDef](fo_external-lang-def.html)
 ```
 
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
@@ -72,7 +72,7 @@ SQL-выражение выглядит следующим образом:
 SELECT * FROM [dbo].[Заказ] WHERE Day([ДатаВыдачи]) = 13
 ```
 
-Через [ExternalLangDef](external-lang-def.html)
+Через [ExternalLangDef](fo_external-lang-def.html)
 ```
 
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
@@ -89,7 +89,7 @@ SQL-выражение выглядит следующим образом:
 SELECT * FROM [dbo].[Заказ] WHERE DatePart(hh, [ДатаВыдачи]) = 10
 ```
 
-Через [ExternalLangDef](external-lang-def.html)
+Через [ExternalLangDef](fo_external-lang-def.html)
 ```
 
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,
@@ -106,7 +106,7 @@ SQL-выражение выглядит следующим образом:
 SELECT * FROM [dbo].[Заказ] WHERE DatePart(MINUTE, [ДатаВыдачи]) = 20
 ```
 
-Через [ExternalLangDef](external-lang-def.html)
+Через [ExternalLangDef](fo_external-lang-def.html)
 ```
 
 order.LimitFunction = langdef.GetFunction(langdef.funcEQ,

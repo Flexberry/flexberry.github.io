@@ -14,7 +14,11 @@ permalink: ru/fa_change-l-c-s-for-look-up-in-a-g-e.html
 ## Связывание LookUp'ов в AGE с внешним LookUp'ом
 
 Цель: 
+<<<<<<< HEAD:pages/products/flexberry-aspnet/fa_ChangeLCSForLookUpInAGE.ru.md
+[Функция ограничения](fo_limit-function.html) [LookUp'ов](master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
+=======
 [Функция ограничения](fo_limit-function.html) [LookUp'ов](fa_master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](fa_ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
+>>>>>>> d39794c485bf490f825f86803b545b9c10b0808f:pages/products/flexberry-aspnet/fa_change-lcs-for-lookup-in-age.ru.md
 
 
 Модель:

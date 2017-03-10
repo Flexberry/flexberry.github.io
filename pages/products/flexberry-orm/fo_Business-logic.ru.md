@@ -19,7 +19,7 @@ permalink: ru/fo_business-logic.html
 ## Сценарии доработки
 
 * [Добавление проверки при обновлении данных через бизнес-сервер](b-s-example.html).
-* Обновление нескольких объектов [одной транзакцией](b-s-transact.html).
+* Обновление нескольких объектов [одной транзакцией](fo_bs-transact.html).
 * Проверка [уникальности введенных данных](b-s-unique-data-check.html).
 * Проверка [валидности изменений данных объекта](b-s-change-data-check.html).
 * [Дочитка данных](additional-loading-data-object.html)
@@ -30,7 +30,7 @@ permalink: ru/fo_business-logic.html
 ## См. также
 [Бизнес-сервер](business-servers.html)
 
-[Бизнес-серверы, обертки, бизнес-фасад](business--servers--wrapper--business--facade.html)
+[Бизнес-серверы, обертки, бизнес-фасад](fo_business-servers-wrapper-business-facade.html)
 
 [пример использования бизнес-сервера для проверки данных](b-s-example.html)
 
