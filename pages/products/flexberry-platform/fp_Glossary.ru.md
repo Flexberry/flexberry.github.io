@@ -3,7 +3,7 @@ title: Глоссарий
 sidebar: product--sidebar
 keywords: Private, Wiki
 toc: true
-permalink: ru/glossary.html
+permalink: ru/fp_glossary.html
 folder: product--folder
 lang: ru
 ---
