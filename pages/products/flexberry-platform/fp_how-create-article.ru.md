@@ -4,7 +4,7 @@ sidebar: flexberry-platform_sidebar
 keywords: Private, Wiki
 toc: true
 permalink: ru/fp_how-create-article.html
-folder: products/flexberry-platform/
+folder: product1
 lang: ru
 ---
 
