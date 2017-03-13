@@ -4,7 +4,7 @@ sidebar: flexberry-platform_sidebar
 keywords: Flexberry Platform
 toc: true
 permalink: ru/fp_how-create-article.html
-folder: product1
+folder: products/flexberry-platform/
 lang: ru
 ---
 
