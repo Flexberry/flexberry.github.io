@@ -1,7 +1,7 @@
 ﻿---
 title: Правила оформления статей
 sidebar: flexberry-platform_sidebar
-keywords: Private, Wiki
+keywords: Flexberry Platform
 toc: true
 permalink: ru/fp_how-create-article.html
 folder: products/flexberry-platform/
