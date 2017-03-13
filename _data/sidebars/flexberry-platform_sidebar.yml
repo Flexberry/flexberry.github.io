@@ -14,8 +14,9 @@ entries:
       url: /fp_landing_page.html
       output: web
 
-    - title: Sample 1
-      url: /p1_sample1.html
+    - title: Article`s creating
+      title_ru: Правила оформления статей 
+      url: /fp_how-create-article.html
       output: web, pdf
 
     - title: Sample 2
