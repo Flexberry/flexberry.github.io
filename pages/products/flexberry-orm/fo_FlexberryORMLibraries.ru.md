@@ -12,7 +12,7 @@ permalink: ru/fo_flexberry-o-r-m-libraries.html
 Список библиотек, содержащих Runtime-компоненты [Flexberry ORM](fo_flexberry-o-r-m.html):
 *** ChangesToSqlBTMonitor.dll** - библиотека, содержащая классы для работы [сервиса записи SQL-скриптов изменения данных](fo_changes-to-sql-b-t-monitor.html).
 * **ExternalLangDef.dll** - библиотека, содержащая [расширение языка ограничений](fo_external-lang-def.html) для [задания ограничений](fo_limit-function.html) на зависимые объекты.
-* ICSSoft.STORMNET.BF.dll
+* **ICSSoft.STORMNET.BF.dll**
 * **ICSSoft.STORMNET.Business.dll** - библиотека, содержащая базовые классы для организации [отображения структуры реляционных таблиц БД на объектную модель](fo_data-service.html).
 * **ICSSoft.STORMNET.Business.DRDataService.dll** - библиотека, содержащая классы для работы [DRDataService](fo_dr-data-service.html).
 * **ICSSoft.STORMNET.Business.LINQProvider.dll** - библиотека, содержащая классы для поддержки LINQ в [Flexberry ORM](fo_flexberry-orm.html).
@@ -27,7 +27,7 @@ permalink: ru/fo_flexberry-o-r-m-libraries.html
 *  **ICSSoft.STORMNET.FunctionalLanguage.dll** - библиотека, содержащая основные классы для функционирования [компоненты работы с фильтрами и ограничениями](fo_limitation.html).
 * **ICSSoft.STORMNET.Tools.dll** - библиотека, содержащая общие вспомогательные методы.
 * **ICSSoft.STORMNET.UserDataTypes.dll** - библиотека, содержащая дополнительно определённые типы данных.
-* NewPlatform.Flexberry.Data.ODataService.dll
+* **NewPlatform.Flexberry.Data.ODataService.dll**
 
 {% include note.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
 
