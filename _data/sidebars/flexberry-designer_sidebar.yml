@@ -102,7 +102,7 @@ entries:
 
     - title: Working with diagrams in the repository browser
       title_ru: Работа с диаграммами в браузере репозитория
-      url: fd_working-repository-browser.html
+      url: /fd_working-repository-browser.html
       output: web, pdf
 
     - title: Editing diagram

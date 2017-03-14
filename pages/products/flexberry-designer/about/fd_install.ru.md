@@ -12,6 +12,7 @@ lang: ru
 Для установки [Flexberry Designer](fd_landing_page.html) необходимо на сайте [Flexberry.ru](http://flexberry.ru/Try) нажать кнопку "Установить" в разделе  ["Попробовать"](http://flexberry.ru/Try).
 
 Для работы приложения на компьютере должно быть установлено следующее ПО (перед установкой это будет проверено и, если чего-то будет не хватать, установлено):
+
 * SQL Server 2012 Express LocalDB (и выше)
 * Windows Installer 4.5
 * Microsoft .NET Framework 4 (x86 and x64)
@@ -21,43 +22,43 @@ lang: ru
 
 При установке система может запрашивать разрешения на установку, во всех случаях необходимо их дать.
 
-1. Зарегистрироваться на сайте [Flexberry.ru](http://flexberry.ru/Try), если это не было сделано ранее.
+1.Зарегистрироваться на сайте [Flexberry.ru](http://flexberry.ru/Try), если это не было сделано ранее.
 
-2. Пройти по ссылке [http://tool.flexberry.ru/Install.aspx](http://tool.flexberry.ru/Install.aspx).
+2.Пройти по ссылке [http://tool.flexberry.ru/Install.aspx](http://tool.flexberry.ru/Install.aspx).
 
 Может потребоваться залогиниться на сайт, если это не было сделано ранее.
 
 ![](/images/pages/products/flexberry-designer/about/login-flexberry.png)
 
-3. Нажать на кнопку установки Flexberry Designer.
+3.Нажать на кнопку установки Flexberry Designer.
 
-4. При скачивании приложения в Google Chrome браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.
+4.При скачивании приложения в Google Chrome браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.
 
 ![](/images/pages/products/flexberry-designer/about/save-chrome.png)
 
-5. Запустить скачанный установщик.
+5.Запустить скачанный установщик.
 
-6. Если при установке возникнет окно, изображённое ниже, то необходимо в этом окошке нажать "Подробнее" и дать приложению необходимые привилегии.
+6.Если при установке возникнет окно, изображённое ниже, то необходимо в этом окошке нажать "Подробнее" и дать приложению необходимые привилегии.
 
 ![](/images/pages/products/flexberry-designer/about/let-setup0.png)
 
 ![](/images/pages/products/flexberry-designer/about/let-setup.png)
 
-7. Разрешить установку приложения.
+7.Разрешить установку приложения.
 
 ![](/images/pages/products/flexberry-designer/about/let-setup2.png)
 
-8. Если всё необходимое ПО стоит, то система достаточно быстро пройдёт установку (либо потребует установить необходимое).
+8.Если всё необходимое ПО стоит, то система достаточно быстро пройдёт установку (либо потребует установить необходимое).
 
 ![](/images/pages/products/flexberry-designer/about/install-designer.png)
 
 ![](/images/pages/products/flexberry-designer/about/let-setup3.png)
 
-9. Ввести логин/пароль от сайта [Flexberry.ru](http://flexberry.ru/Try) для получения лицензий.
+9.Ввести логин/пароль от сайта [Flexberry.ru](http://flexberry.ru/Try) для получения лицензий.
 
 ![](/images/pages/products/flexberry-designer/about/login-flexberry2.png)
 
-10. Определить путь, куда приложение будет генерировать.
+10.Определить путь, куда приложение будет генерировать.
 
 ![](/images/pages/products/flexberry-designer/about/set-generation-path.png)
 
@@ -67,8 +68,9 @@ lang: ru
 ## Установка лицензий
 
 При данном способе получения продукта [Flexberry Designer](fd_landing_page.html) [установка лицензий](fd_installation-licensing-files.html) будет происходить следующим образом:
-* При установке приложения у пользователя будут запрошены логин и пароль от сайта [Flexberry.ru](http://flexberry.ru/Try), откуда лицензия будет выкачана и автоматически установлена.
-* По окончании срока лицензии при запуске приложения пользователю вновь будет предложено ввести учётные данные от сайта [Flexberry.ru](http://flexberry.ru/Try) для скачивания [приобретённой лицензии](http://flexberry.ru/Buy).
+
+*   При установке приложения у пользователя будут запрошены логин и пароль от сайта [Flexberry.ru](http://flexberry.ru/Try), откуда лицензия будет выкачана и автоматически установлена.
+*   По окончании срока лицензии при запуске приложения пользователю вновь будет предложено ввести учётные данные от сайта [Flexberry.ru](http://flexberry.ru/Try) для скачивания [приобретённой лицензии](http://flexberry.ru/Buy).
 
 ## Возможные проблемы при установке Flexberry Designer
 

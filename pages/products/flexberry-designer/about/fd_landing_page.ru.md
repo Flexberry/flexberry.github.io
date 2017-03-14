@@ -15,6 +15,7 @@ lang: ru
 Flexberry Designer является [продуктом платформы Flexberry](fp_platform-structure.html).
 
 ## Состав
+
 ### Репозиторий UML-моделей
 
 Репозиторий моделей позволяет удобно хранить диаграммы в структурированном виде. Для работы с репозиторием применяется  [браузер репозиториев Flexberry Designer](fd_repository-browser.html).
@@ -40,12 +41,14 @@ Flexberry Designer является [продуктом платформы Flexb
 ## Установка и настройка Flexberry Designer
 
 Существует несколько вариантов установки Flexberry Designer на различных реляционных СУБД:
-* [из дистрибутива](fd_standalone-install.html).
-* [с сайта продукта](fd_install.html).
+
+*   [из дистрибутива](fd_standalone-install.html).
+*   [с сайта продукта](fd_install.html).
 
 Для работы Flexberry Designer должна быть [установлена корректная лицензия](fd_installation-licensing-files.html) на все используемые продукты.
 
 Дополнительно Flexberry Designer предоставляет следующие полезные возможности:
-* [Импорт стадии и диаграммы при открытии файлов crp и csdg](fd_import-crp-csdg.html)
-* [Запуск Flexberry Designer с открытием указанной стадии](fd_running-with-the-opening-of-stage.html)
-* [Настройка имени главной формы Flexberry Designer](fd_form-name.html)
+
+*   [Импорт стадии и диаграммы при открытии файлов crp и csdg](fd_import-crp-csdg.html)
+*   [Запуск Flexberry Designer с открытием указанной стадии](fd_running-with-the-opening-of-stage.html)
+*   [Настройка имени главной формы Flexberry Designer](fd_form-name.html)
