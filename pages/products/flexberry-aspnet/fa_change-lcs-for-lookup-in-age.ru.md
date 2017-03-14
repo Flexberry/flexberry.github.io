@@ -8,18 +8,14 @@ permalink: ru/fa_change-l-c-s-for-look-up-in-a-g-e.html
 ---
 
 * **Платформа**: [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* **Компонент**: [Настройки для LookUp в AGE](settings-for-look-up-in-a-g-e.html)
-* **Предназначение**: Настройка ограничения для LookUp в [AjaxGroupEdit](ajax-group-edit.html) 
+* **Компонент**: [Настройки для LookUp в AGE](fa_settings-for-look-up-in-a-g-e.html)
+* **Предназначение**: Настройка ограничения для LookUp в [AjaxGroupEdit](fa_ajax-group-edit.html) 
 
 ## Связывание LookUp'ов в AGE с внешним LookUp'ом
 
 Цель: 
-<<<<<<< HEAD:pages/products/flexberry-aspnet/fa_ChangeLCSForLookUpInAGE.ru.md
-[Функция ограничения](fo_limit-function.html) [LookUp'ов](master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
-=======
-[Функция ограничения](fo_limit-function.html) [LookUp'ов](fa_master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](fa_ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
->>>>>>> d39794c485bf490f825f86803b545b9c10b0808f:pages/products/flexberry-aspnet/fa_change-lcs-for-lookup-in-age.ru.md
 
+[Функция ограничения](fo_limit-function.html) [LookUp'ов](fa_master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](fa_ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
 
 Модель:
 
@@ -107,12 +103,12 @@ public static string CreateLf(string territoryKey, string lfKey)
 
 ## Откуда ссылаются на эту страницу
 
-* [AjaxGroupEdit (AGE)](ajax-group-edit.html)
+* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
 * [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
 
 ## Куда ссылается эта страница
 
-* [AjaxGroupEdit (AGE)](ajax-group-edit.html)
+* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
 * [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
 * [Функции ограничения (Limit Function)](fo_limit-function.html)
 * [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
