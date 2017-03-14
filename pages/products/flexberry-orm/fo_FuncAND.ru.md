@@ -25,7 +25,7 @@ SELECT * FROM Кредит WHERE Клиент = '{ID}' AND СуммаКреди�
 Где {ID} - [Primary-keys-objects|первичный ключ) искомого `Клиента`
 ```
 
-Через [FunctionList|SQLWhereLanguageDef):
+Через [SQLWhereLanguageDef](fo_function-list.html):
 
 ```cs
 Клиент клиент = new Клиент();
