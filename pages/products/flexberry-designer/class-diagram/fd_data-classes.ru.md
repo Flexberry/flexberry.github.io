@@ -30,7 +30,7 @@ lang: ru
 
 Окно редактирования свойств класса данных выглядит следующим образом:
 
-1. Закладка редактирования свойств UML-класса:
+1.Закладка редактирования свойств UML-класса:
 
 ![](/images/pages/products/flexberry-designer/class-diagram/implprop1.png)
 
@@ -46,25 +46,25 @@ lang: ru
 `Stored` - указывает, хранимый ли класс, т.е. сохраняются ли экземпляры класса в источнике данных | Если класс не хранимый, - генерация скрипта для этого класса не происходит |
 `Description` - некоторое описание класса | | `DocComment` перед определением класса
 `Caption` - некоторое пользовательское имя, заголовок (отображается в пользовательском интерфейсе вместо имени класса) | | Указывается атрибут `CaptionAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))` непосредственно перед объявлением класса.  По умолчанию, пользовательское имя совпадает с именем класса. __Замечание__: Если требуется, чтобы у различных экземпляров класса данных был различный заголовок, используется атрибут `InstanceCaptionProperty`, указывающий имя свойства, возвращающего заголовок. Данный атрибут можно указать только программным путём, в Flexberry Designer он не вынесен.
-`PrimaryKeyStorage` - имя хранения для поля - [первичного ключа](fo_primary-keys-objects.html) | Генерируется как имя поля [первичного ключа](fo_primary-keys-objects.html) в таблице. Если не указано, имя поля первичного ключа - `primaryKey`. | Если указано, генерируется атрибут `[PrimaryKeyStorageAttribute](fo_data-objects-and-database-structures.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))`, куда указывается имя хранения. У общего предка классов данных - `[ICSSoft.STORMNET.DataObject](fo_dataobject.html)`, этот атрибут указан как `PrimaryKeyStorage("primaryKey")`.
-`Storage` - имя хранения для экземпляров этого класса данных | Генерируется как имя таблицы. Если не указано, имя таблицы совпадает с именем класса. | Если указан, генерируется атрибут `[ClassStorageAttribute](fo_data-objects-and-database-structures.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))`, в который пишется имя хранения.
-`AutoAltered` - автоматическое вычисление статуса с проверкой изменённых свойств | | Если указан, генерируется атрибут `[AutoAlteredAttribute](fo_object-status-and-loading-state.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))`.
-`LoadingOrderXML` - позволяет указать порядок загрузки свойств экземпляров этого класса сервисами данных | | Если указан, генерируется атрибут `[LoadingOrderAttribute](fo_order-of-loading-property-data-object.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))`.
+`PrimaryKeyStorage` - имя хранения для поля - [первичного ключа](fo_primary-keys-objects.html) | Генерируется как имя поля [первичного ключа](fo_primary-keys-objects.html) в таблице. Если не указано, имя поля первичного ключа - `primaryKey`. | Если указано, генерируется атрибут [PrimaryKeyStorageAttribute](fo_data-objects-and-database-structures.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)), куда указывается имя хранения. У общего предка классов данных - [ICSSoft.STORMNET.DataObject](fo_dataobject.html), этот атрибут указан как `PrimaryKeyStorage("primaryKey")`.
+`Storage` - имя хранения для экземпляров этого класса данных | Генерируется как имя таблицы. Если не указано, имя таблицы совпадает с именем класса. | Если указан, генерируется атрибут [ClassStorageAttribute](fo_data-objects-and-database-structures.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)), в который пишется имя хранения.
+`AutoAltered` - автоматическое вычисление статуса с проверкой изменённых свойств | | Если указан, генерируется атрибут [AutoAlteredAttribute](fo_object-status-and-loading-state.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
+`LoadingOrderXML` - позволяет указать порядок загрузки свойств экземпляров этого класса сервисами данных | | Если указан, генерируется атрибут [LoadingOrderAttribute](fo_order-of-loading-property-data-object.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
 `Trim` - применяется ли удаление пробелов (функция Trim()) для строковых данных при работе [сервиса данных](fo_data-service.html) ( см. [дополнительную информацию](fo_trimmed-string-storage.html)) | |   
 `Packet, NamespacePostfix` - позволяют настроить сборку и пространство имен | | см. [Расположение сборок после генерации кода](fo_location-assembly-after-code-generation.html).
 `PBCustomAttributes` - позволяет указать, необходима ли скобка программиста непосредственно перед описанием класса для "ручного" внесения атрибутов | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения `.Net` атрибутов перед классом.
 `PBMembers` - позволяет указать, необходима ли скобка программиста внутри класса для "ручного" внесения членов класса | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения членов класса.
-`BSClass` - [бизнес-сервер](fd_business-servers.html), обрабатывающий этот класс данных | | Если указан, генерируется атрибут `[BusinessServerAttribute](fo_testing-user-operations-dataservice.html) (Namespace: ICSSoft.STORMNET.Business, Assembly: ICSSoft.STORMNET.Business (in ICSSoft.STORMNET.Business.dll))`
+`BSClass` - [бизнес-сервер](fd_business-servers.html), обрабатывающий этот класс данных | | Если указан, генерируется атрибут [BusinessServerAttribute](fo_testing-user-operations-dataservice.html) (Namespace: ICSSoft.STORMNET.Business, Assembly: ICSSoft.STORMNET.Business (in ICSSoft.STORMNET.Business.dll))
 `PublishToEBSD` | | Если галочка указана - перед классом генерируется указание атрибута `PublishToEBSDAttribute`, который указывает доступность данного класса для использования в редакторе диаграмм сценариев.
 
-2. Закладка редактирования [представлений](fd_view-definition.html) класса
+2.Закладка редактирования [представлений](fd_view-definition.html) класса
 
 ![](/images/pages/products/flexberry-designer/class-diagram/implprop2.png)
 
 Что генерируется | Генерация в .Net-язык
 :------------------------|:-------------------------------
-`Name` - имя представления |  Имя представления в атрибуте `[ViewAttribute](fd_view-definition.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))`
+`Name` - имя представления |  Имя представления в атрибуте [ViewAttribute](fd_view-definition.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
 `Description` - некоторое описание для пояснительных целей | Комментарий к [статическому свойству для доступу к представлению](fo_static-view-accessors.html).
-`Properties` - определение представления | Список атрибутов класса в .Net-атрибуте `[ViewAttribute](fd_view-definition.html)`, указание ассоциированных представлений детейлов атрибутами `[AssociatedDetailViewAttribute](fd_view-definition.html)`, указание дополнительных настроек мастеров в представлении атрибутами `[MasterViewDefineAttribute](fd_view-definition.html)`.
+`Properties` - определение представления | Список атрибутов класса в .Net-атрибуте [ViewAttribute](fd_view-definition.html), указание ассоциированных представлений детейлов атрибутами [AssociatedDetailViewAttribute](fd_view-definition.html), указание дополнительных настроек мастеров в представлении атрибутами [MasterViewDefineAttribute](fd_view-definition.html).
 
 Для удобного редактирования представления используется [специальная форма-редактор](fd_view-edit-form.html).

@@ -105,6 +105,7 @@ public enum AccessModifier
 ### Работа с заголовками
 
 Программист может конвертировать значения от `Caption` к перечислимому типу и обратно, вызовом методов статического класса  `ICSSoft.STORMNET.EnumCaption`:
+
 * `EnumCaption.GetCaptionFor(object value)`
 * `EnumCaption.GetValueFor(string caption, Type enumType)`
 * `EnumCaption.TryGetValueFor<TEnum>(string caption, out TEnum enumValue)`
