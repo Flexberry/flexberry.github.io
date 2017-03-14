@@ -29,7 +29,7 @@ permalink: ru/fo_flexberry-o-r-m-libraries.html
 * **ICSSoft.STORMNET.UserDataTypes.dll** - библиотека, содержащая дополнительно определённые типы данных.
 * NewPlatform.Flexberry.Data.ODataService.dll
 
-{% include information.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
+{% include note.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
 
 
 
