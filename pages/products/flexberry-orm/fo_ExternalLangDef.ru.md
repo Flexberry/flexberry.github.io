@@ -12,11 +12,11 @@ permalink: ru/fo_external-lang-def.html
 
 `ExternalLangDef` является расширением базового функционального языка [SQLWhereLanguageDef](fo_function-list.html).
 
-Принципиальным отличием `ExternalLangDef` от ['SQLWhereLanguageDef'](fo_function-list.html) является возможность наложения ограничения на детейлы.
+Принципиальным отличием `ExternalLangDef` от [SQLWhereLanguageDef](fo_function-list.html) является возможность наложения ограничения на детейлы.
 
 ## Основные возможности ExternalLangDef
 
-Класс `ExternalLangDef` является  наследником [SQLWhereLanguageDef](fo_function-list.html), и задание функции ограничения также осуществляется вызовом метода GetFucntion(string, params object;). Однако описание переменной-детейла, передаваемое в данный метод параметром, вместо базового класса [Описание переменных при построении функций ограничения](variable-def.html) выполняется с помощью его наследника [DetailVariableDef](variable-def.html).
+Класс `ExternalLangDef` является  наследником [SQLWhereLanguageDef](fo_function-list.html), и задание функции ограничения также осуществляется вызовом метода GetFucntion(string, params object;). Однако описание переменной-детейла, передаваемое в данный метод параметром, вместо базового класса [Описание переменных при построении функций ограничения](fo_variable-def.html) выполняется с помощью его наследника [DetailVariableDef](fo_variable-def.html).
 
 ### Функции ограничения на существование детейлов
 
