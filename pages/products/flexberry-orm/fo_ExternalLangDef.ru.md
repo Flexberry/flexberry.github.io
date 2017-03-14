@@ -5,26 +5,26 @@ keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_external-lang-def.html
 ---
-* **Продукт**: [Flexberry ORM](fo_flexberry-orm.html)
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Компонент**: [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
 * **Программная библиотека**: ExternalLangDef.dll.
 * **Предназначение**: Общее описание работы построителя [функций ограничения](fo_limit-function.html) ExternalLangDef, являющегося расширением [SQLWhereLanguageDef](fo_function-list.html).
 
-`ExternalLangDef` является расширением базового функционального языка `[SQLWhereLanguageDef](fo_function-list.html)`.
+`ExternalLangDef` является расширением базового функционального языка [SQLWhereLanguageDef](fo_function-list.html).
 
-Принципиальным отличием `ExternalLangDef` от `[SQLWhereLanguageDef](fo_function-list.html)` является возможность наложения ограничения на детейлы.
+Принципиальным отличием `ExternalLangDef` от ['SQLWhereLanguageDef'](fo_function-list.html) является возможность наложения ограничения на детейлы.
 
 ## Основные возможности ExternalLangDef
 
-Класс `ExternalLangDef` является  наследником `[SQLWhereLanguageDef](fo_function-list.html)`, и задание функции ограничения также осуществляется вызовом метода `GetFucntion(string, params object&#0091;&#0093;)`. Однако описание переменной-детейла, передаваемое в данный метод параметром, вместо базового класса `[Описание переменных при построении функций ограничения](variable-def.html)` выполняется с помощью его наследника `[DetailVariableDef](variable-def.html)`.
+Класс `ExternalLangDef` является  наследником [SQLWhereLanguageDef](fo_function-list.html), и задание функции ограничения также осуществляется вызовом метода GetFucntion(string, params object;). Однако описание переменной-детейла, передаваемое в данный метод параметром, вместо базового класса [Описание переменных при построении функций ограничения](variable-def.html) выполняется с помощью его наследника [DetailVariableDef](variable-def.html).
 
 ### Функции ограничения на существование детейлов
 
-* [funcExistExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
-* [funcExistAllExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
-* [funcExist](fo_exist-exist-exact-exist-all-exist-all-exact.html)
+* [funcExistExact](fo_exist--exist-exact--exist-all--exist-all-exact.html)
+* [funcExistAllExact](fo_exist--exist-exact--exist-all--exist-all-exact.html)
+* [funcExist](fo_exist--exist-exact--exist-all--exist-all-exact.html)
 * [funcExistDetails](fo_exist-detals.html)
-* [funcExistAll](fo_exist-exist-exact-exist-all-exist-all-exact.html)
+* [funcExistAll](fo_exist--exist-exact--exist-all--exist-all-exact.html)
 
 ### Функции ограничения на значения детейлов
 
@@ -36,31 +36,31 @@ permalink: ru/fo_external-lang-def.html
 
 ### Функции ограничения на дату
 
-* [funcYearPart](external-lang-def-restriction-on-the-date.html) - ограничение на год.
-* [funcMonthPart](external-lang-def-restriction-on-the-date.html) - ограничение на месяц.
-* [funcDayPart](external-lang-def-restriction-on-the-date.html) - ограничение на день.
-* [funcHHPart](external-lang-def-restriction-on-the-date.html) - ограничение на час.
-* [funcMIPart](external-lang-def-restriction-on-the-date.html) - ограничение на минуту.
-* [funcDATEDIFF](external-lang-def-restriction-on-the-date.html) - ограничение на разницу дат.
-* [funcOnlyDate](external-lang-def-restriction-on-the-date.html) - ограничение на дату.
-* [funcDayOfWeek](external-lang-def-restriction-on-the-date.html) - ограничение на день недели.
-* [funcDayOfWeekZeroBased](external-lang-def-restriction-on-the-date.html) - ограничение на день недели.
-* [funcOnlyTime](external-lang-def-restriction-on-the-date.html) - ограничение на время.
-* [funcDateAdd](external-lang-def-restriction-on-the-date.html) - полный аналог SQL функции dateadd.
-* [funcDaysInMonth](external-lang-def-restriction-on-the-date.html) - ограничение на количество дней в месяце.
+* [funcYearPart](fo_external-lang-def-restriction-on-the-date.html) - ограничение на год.
+* [funcMonthPart](fo_external-lang-def-restriction-on-the-date.html) - ограничение на месяц.
+* [funcDayPart](fo_external-lang-def-restriction-on-the-date.html) - ограничение на день.
+* [funcHHPart](fo_external-lang-def-restriction-on-the-date.html) - ограничение на час.
+* [funcMIPart](fo_external-lang-def-restriction-on-the-date.html) - ограничение на минуту.
+* [funcDATEDIFF](fo_external-lang-def-restriction-on-the-date.html) - ограничение на разницу дат.
+* [funcOnlyDate](fo_external-lang-def-restriction-on-the-date.html) - ограничение на дату.
+* [funcDayOfWeek](fo_external-lang-def-restriction-on-the-date.html) - ограничение на день недели.
+* [funcDayOfWeekZeroBased](fo_external-lang-def-restriction-on-the-date.html) - ограничение на день недели.
+* [funcOnlyTime](fo_external-lang-def-restriction-on-the-date.html) - ограничение на время.
+* [funcDateAdd](fo_external-lang-def-restriction-on-the-date.html) - полный аналог SQL функции dateadd.
+* [funcDaysInMonth](fo_external-lang-def-restriction-on-the-date.html) - ограничение на количество дней в месяце.
 
 ##### Параметры
 
-* [paramTODAY](external-lang-def-restriction-on-the-date.html) - параметр для получения сегодняшней даты.
-* [paramYearDIFF](external-lang-def-restriction-on-the-date.html) - параметр для получения значения года от даты.
-* [paramMonthDIFF](external-lang-def-restriction-on-the-date.html) - параметр для получения значения месяца от даты.
-* [paramWeekDIFF](external-lang-def-restriction-on-the-date.html) - параметр для получения значения недели от даты.
-* [paramQuarterDIFF](external-lang-def-restriction-on-the-date.html) - параметр для получения значения четверти от даты.
-* [paramDayDIFF](external-lang-def-restriction-on-the-date.html) - параметр для получения значения дня от даты.
+* [paramTODAY](fo_external-lang-def-restriction-on-the-date.html) - параметр для получения сегодняшней даты.
+* [paramYearDIFF](fo_external-lang-def-restriction-on-the-date.html) - параметр для получения значения года от даты.
+* [paramMonthDIFF](fo_external-lang-def-restriction-on-the-date.html) - параметр для получения значения месяца от даты.
+* [paramWeekDIFF](fo_external-lang-def-restriction-on-the-date.html) - параметр для получения значения недели от даты.
+* [paramQuarterDIFF](fo_external-lang-def-restriction-on-the-date.html) - параметр для получения значения четверти от даты.
+* [paramDayDIFF](fo_external-lang-def-restriction-on-the-date.html) - параметр для получения значения дня от даты.
 
 
 ### Разное
-* [funcToChar](func-to-char.html) - функция преобразования выражения в строку.
+* [funcToChar](fo_func-to-char.html) - функция преобразования выражения в строку.
 * funcCurrentUser
-* [funcImplication](implication-in-external-lang-def.html) - функция импликации.
+* [funcImplication](fo_implication-in-external-lang-def.html) - функция импликации.
 * `ExternalLangDef.ExistViewName` - строковая константа, которая используется для обозначения имени представления, когда строятся ограничения на детейлы.
