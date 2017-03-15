@@ -16,7 +16,7 @@ lang: ru
 
 Примеры настройки карты типов доступны в следующих статьях:
 * [Поддержка бинарных массивов](fo_byte-varbinary-max-in-data-service.html)
-* [Настройка Flexberry Designer для Nullable-типов](fd_create-nullable.html|)
+* [Настройка Flexberry Designer для Nullable-типов](fd_create-nullable.html)
 
 ### Разрешение типа при генерации
 

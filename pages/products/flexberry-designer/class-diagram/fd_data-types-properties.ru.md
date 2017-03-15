@@ -34,38 +34,51 @@ UML-класс | | .Net-класс
 
 1.Закладка редактирования свойств UML-класса:
 
-![](/images/pages/products/flexberry-designer/class-diagram/typepropp1.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/typepropp1.png)
 
 Свойство | Описание | Генерация в .Net-язык
 :------------|:---------------------|:------------------------------------
+`Stored` | |
 `Name` | Имя UML-класса, оно же имя типа | Имя .Net-класса
 `Description` | Рекоторое развёрнутое описание, при необходимости, для пояснительных целей | Как `DocComment` к классу в код на .Net-языке
-`StoreInstancesInTypeXML` | Позволяет указать, в какой тип данных различные сервисы данных данных должны трасформировать этот тип | Генерируется перед классом в один или несколько `.Net`-атрибутов `StoreInstancesInTypeAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))`, подробнее см. в [статье Преобразование типа свойства объекта данных к типу хранилища](fo_convert-type-property-object-data-to-type-storage.html)
-`Packet, NamespacePostfix` | Позволяют настроить сборку и пространство имен, в которое должен генерироваться тип | см. [Расположение сборок после генерации кода](fo_location-assembly-after-code-generation.html).
-`PBMembers` | Позволяет указать, необходима ли [скобка программиста](fo_programmer-brackets.html) внутри класса для "ручного" внесения членов класса | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения членов класса.
+`PrimaryKeyStorage` | |
+`Storage` | | 
+`AutoAltered` | | 
+`LoadingOrder` | | 
+`Trim` | | 
+`Packet, NamespacePostfix` | Позволяют настроить сборку и пространство имен, в которое должен генерироваться тип | см. [Расположение сборок после генерации кода](fo_location-assembly-after-code-generation.html)
 `PBCustomAttributes` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения атрибутов перед классом.
+`PBMembers` | Позволяет указать, необходима ли [скобка программиста](fo_programmer-brackets.html) внутри класса для "ручного" внесения членов класса | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения членов класса
+`PBClass` | | 
 `PublishToEBSD` | | Если галочка указана - перед классом генерируется указание атрибута `PublishToEBSDAttribute`, который указывает доступность данного класса для использования в редакторе диаграмм сценариев
 
 2.Закладка редактирования свойств атрибутов UML-класса:
 
-![](/images/pages/products/flexberry-designer/class-diagram/typepropp2.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/typepropp2.png)
 
 Свойство | Описание | Генерация в .Net-язык
 :----------------|:---------------------|:------------------------------------------
 `AccessModifier` | модификатор доступа к соответствующему свойству `.Net`-класса | Модификаторы:+ - public - - private # - protected
+`Stored` | |
 `Name` | то же самое имя атрибута, что на диаграмме | Имя свойства в `.Net`-классе, а также некоторое производное имя приватного члена (в зависимости от формата приватного члена, который указывается в настройках генератора).
 `Description`| описание для пояснительных целей | Как `DocComment` к свойству
 `Type` | тип данных свойства | Как тип свойства и тип приватного члена
 `DefaultValue` | значение по умолчанию | Как инициализатор приватного члена
+`NotNull` | | 
+`DataServiceExpression` | | 
+`Storage` | | 
+`Hint` | | 
+`Order` | | 
 `PBCustomAttributes` | | Если галочка указана - перед определением свойства генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения .Net-атрибутов.
 `PBGetStart` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре get свойства непосредственно после начала кода аксессора.
 `PBGetEnd` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре get свойства непосредственно перед концом кода аксессора.
 `PBSetStart` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре set свойства непосредственно после начала кода аксессора.
 `PBSetEnd` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре set свойства непосредственно перед концом кода аксессора.
+`Autoincrement` | | 
 
 3.Закладка редактирования свойств методов UML-класса:
 
-![](/images/pages/products/flexberry-designer/class-diagram/typepropp3.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/typepropp3.png)
 
 В верхней части - методы, в нижней - параметры выбранного в верхней части метода.
 
