@@ -68,7 +68,7 @@ lang: ru
 	* Заголовок на форме;
 	* Видимость на форме;
 	* Имена агрегирующих функций, доступных пользователю из данного представления;
-	* Должно ли представление быть [Adaptive-views-for-details|адаптивным (UseAdaptiveViewsLoading)).
+	* Должно ли представление быть [адаптивным (UseAdaptiveViewsLoading)](fo_adaptive-views-for-details.html).
 
 * `MasterViewDefineAttribute` — дополнительно настраивает мастера в представлении [шапки](fd_key-concepts.html), можно указать:
 	* Тип выбора (lookup type) мастерового объекта;
@@ -89,7 +89,7 @@ lang: ru
 
 В качестве имён свойств можно указывать "звездочку", что будет означать, что необходимо использовать все свойства. Например, если просто указать "звездочку", то в представление автоматически попадают все собственные свойства, если указать `Master.*`, то это будет означать, что в представление попадают все свойства указанного мастера. Программист может отключить автоматическое попадание какого-либо свойства в представление указанием перед свойством атрибута `DisableAutoViewing`.
 
-[Пример](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/CDDA.cs|) статически определённых представлений:
+[Пример](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/CDDA.cs) статически определённых представлений:
 
 ```
 [View("Generator", new string[) { "Company on \‘|Common\-Copyright\’", "Product on \’|Common\-Copyright\’", "Copyright on \’|Common\-Copyright\’ ", "Version" } ) )

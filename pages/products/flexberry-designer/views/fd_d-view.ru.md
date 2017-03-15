@@ -1,4 +1,4 @@
-﻿---
+---
 title: D-представление
 sidebar: flexberry-designer_sidebar
 keywords: View
