@@ -10,7 +10,7 @@ permalink: ru/fo_func-to-char.html
 * **Программная библиотека**: ExternalLangDef.dll.
 * **Предназначение**: Представлена funcToChar, функция [ExternalLangDef](fo_external-lang-def.html) для задания преобразования выражения в строку.
 
-`funcToChar` - функция из [ExternalLangDef](fo_external-lang-def.html), служащая для того, чтобы задать преобразование выражения в строку. Это бывает необходимо для корректного сравнения значений выражений со строковыми константами. На данный момент реализована только для [MSSQLDataService(fo_mssql-data-service.html) и [OracleDataService](fo_oracle-data-service.html).
+`funcToChar` - функция из [ExternalLangDef](fo_external-lang-def.html), служащая для того, чтобы задать преобразование выражения в строку. Это бывает необходимо для корректного сравнения значений выражений со строковыми константами. На данный момент реализована только для [MSSQLDataService](fo_mssql-data-service.html) и [OracleDataService](fo_oracle-data-service.html).
 
 ## Использование
 
@@ -25,7 +25,7 @@ permalink: ru/fo_func-to-char.html
     * `MonthWithCentury` (DD Mon YYYY)
     * `Time` (hh:mi:ss - время)
 
-Кроме этого, можно использовать, другие форматы, задавая их числом. Полный список находится [здесь](http://msdn.microsoft.com/ru-ru/library/ms187928.aspx) (это возможно только для [MSSQLDataService(fo_mssql-data-service.html).
+Кроме этого, можно использовать, другие форматы, задавая их числом. Полный список находится [здесь](http://msdn.microsoft.com/ru-ru/library/ms187928.aspx) (это возможно только для [MSSQLDataService](fo_mssql-data-service.html).
 
 ### Пример использования
 
