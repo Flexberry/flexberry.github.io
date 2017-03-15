@@ -1,9 +1,9 @@
-﻿---
-title: Настройки базы данных
+---
+title: Приведение в соответствие БД
 sidebar: flexberry-designer_sidebar
-keywords: Flexbery Desinger
+keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_configure-ms-sql-generator.html
+permalink: ru/fd_matching-db.html
 folder: products/flexberry-designer/generate/
 lang: ru
 ---
@@ -23,11 +23,3 @@ lang: ru
 * `БД полномочий в БД приложения` - если галочка установлена, то в БД при генерации появятся таблицы полномочий. 
 
 ![](/images/pages/products/flexberry-designer/generate/sql-properties.png)
-
-
-
-
-
-
-
-
