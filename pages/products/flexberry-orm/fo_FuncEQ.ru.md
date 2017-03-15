@@ -8,7 +8,7 @@ permalink: ru/fo_func-e-q.html
 * **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Компонент**: [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
 * **Программная библиотека**: ICSSoft.STORMNET.FunctionalLanguage.dll.
-* **Предназначение**: Общее описание работы функции FuncEQ в [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+* **Предназначение**: Общее описание работы функции FuncEQ в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
 FuncEQ - функция, аналогичная сравнению на равенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 

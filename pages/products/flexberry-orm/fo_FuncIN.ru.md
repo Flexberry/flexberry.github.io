@@ -4,37 +4,40 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_func-i-n.html
-folder: products/flexberry-orm/
-lang: ru
 ---
-
-### FuncIN
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
+* **Программная библиотека**: ICSSoft.STORMNET.FunctionalLanguage.dll.
+* **Предназначение**: Общее описание работы функции FuncIN в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
 FuncIN = In
 
 Функция, аналогичная проверке на вхождение в SQL.
 
-### Пример
+## Пример
+
 Рассмотрим пример
 
-![](/images/pages/img/Filters/FilterExDiagram.PNG)
+![](/images/pages/products/flexberry-orm/FilterExDiagram.PNG)
 
-### Задача
+## Задача
 
 Вычитать все `Кредиты`, выданные особым клиентам, список ключей которых нам известен.
 
-### SQL
+## SQL
 
 SQL-выражение выглядело бы следующим образом:
 
-```
+```sql
 SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')
 ```
+
 Где {IDList} - список [первичных ключей](fo_primary-keys-objects.html) искомых `Клиентов`
 
-### [FunctionalLanguage](fo_function-list.html)
+## [FunctionalLanguage](fo_function-list.html)
 
-```cs        List<Клиент> клиенты = new List<Клиент>();
+```cs       
+		List<Клиент> клиенты = new List<Клиент>();
         SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
         List<object> clientKeys = new List<object>();
         clientKeys.Add(new VariableDef(langdef.GuidType, "Клиент"));
@@ -46,13 +49,16 @@ SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')
 ```
 
 
-### Параметры GetFunction
+## Параметры GetFunction
+
 Из примера видно, что функция GetFunction принимает один параметр: массив, состоящий из определения переменной (Variable Def) и объектов, среди которых будет производиться поиск.
 
-### Пример
+## Пример
+
 Более сложный пример использования FuncIN вкупе с другими функциями-ограничителями
 
-```cs lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Награждение), "НаграждениеВСпискеНаграждений2L");
+```cs 
+lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Награждение), "НаграждениеВСпискеНаграждений2L");
 SQLWhereLanguageDef ldef = SQLWhereLanguageDef.LanguageDef;
 
 // Создадим список объектов, по которым будем ограничивать FuncIN
@@ -85,9 +91,11 @@ ldef.GetFunction(ldef.funcNOT,
 		new VariableDef(ldef.StringType, "Гражданин.Комментарий"))),
 ldef.GetFunction(ldef.funcEQ,
 	new VariableDef(ldef.StringType, "СписокНаграждений.Награда.Наименование"),
-	nagr.СписокНаграждений.Награда.Наименование));```
+	nagr.СписокНаграждений.Награда.Наименование));
+```
 
 
 
-# См. также
+## См. также
+
 [Перечень функций](fo_function-list.html)
