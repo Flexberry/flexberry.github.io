@@ -1,9 +1,9 @@
 ---
-title: Приведение в соответствие БД
+title: Настройки базы данных
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_matching-db.html
+permalink: ru/fd_configure-ms-sql-generator.html
 folder: products/flexberry-designer/generate/
 lang: ru
 ---
