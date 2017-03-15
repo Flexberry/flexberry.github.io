@@ -3,7 +3,7 @@ title: Приведение в соответствие БД
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fd_matching-db.html
+permalink: ru/fd_project-customization..html
 folder: products/flexberry-designer/generate/
 lang: ru
 ---
