@@ -24,7 +24,7 @@ FuncEQ - функция, аналогичная сравнению на раве
 
 Рассмотрим пример. Требуется вычитать все **Кредиты** определенного **Клиента**.
 
-![](/images/pages/products/flexberry-orm/func-e-q/filterexdiagram.png)
+![](/images/pages/products/flexberry-orm/func-e-q/FilterExDiagram.PNG)
 
 SQL-выражение выглядело бы следующим образом:
 

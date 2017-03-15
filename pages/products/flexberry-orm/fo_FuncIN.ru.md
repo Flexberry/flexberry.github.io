@@ -18,7 +18,7 @@ FuncIN = In
 
 Рассмотрим пример
 
-![](/images/pages/products/flexberry-orm/FilterExDiagram.PNG)
+![](/images/pages/products/flexberry-orm/func-in/FilterExDiagram.PNG)
 
 ## Задача
 
