@@ -161,6 +161,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "MeasureMapTool",
         "MeasureMapToolComponent",
         "MeasureRadiusMapTool",
+        "MiniMapComponent",
         "Mobile.FlexberryFileComponent",
         "Mobile.FlexberryGroupeditComponent",
         "Mobile.FlexberryObjectlistview",
