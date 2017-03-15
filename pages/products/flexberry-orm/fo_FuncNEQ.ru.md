@@ -75,6 +75,6 @@ var credits = DataServiceProvider.DataService.LoadObjects(lcs);
 
 [Перечень функций](fo_function-list.html)
 
-[FuncEQ](func-e-q.html)
+[FuncEQ](fo_func-e-q.html)
 
 
