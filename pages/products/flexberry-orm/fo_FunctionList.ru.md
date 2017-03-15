@@ -139,23 +139,23 @@ lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), "Петров");
 var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
 ```
->Убедитесь, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса.
+{% include important.html content="Убедитесь, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса.' %}
 
 ## Список функций
 
-* [FuncNOT](func-n-o-t.html)
-* [FuncIsNull](func-is-null.html)
-* [FuncEQ](func-e-q.html)
-* [FuncNEQ](func-n-e-q.html)
-* [FuncG](compare-functions.html)
-* [FuncGEQ](compare-functions.html)
-* [FuncL](compare-functions.html)
-* [FuncLEQ](compare-functions.html)
-* [FuncIN](func-i-n.html)
-* [FuncAND](func-a-n-d.html)
-* [FuncOR](func-o-r.html)
-* [FuncLike](func-like.html)
-* [FuncBETWEEN](func-between.html)
-* [funcSQL](func-s-q-l.html)
+* [FuncNOT](fo_func-n-o-t.html)
+* [FuncIsNull](fo_func-is-null.html)
+* [FuncEQ](fo_func-e-q.html)
+* [FuncNEQ](fo_func-n-e-q.html)
+* [FuncG](fo_compare-functions.html)
+* [FuncGEQ](fo_compare-functions.html)
+* [FuncL](fo_compare-functions.html)
+* [FuncLEQ](fo_compare-functions.html)
+* [FuncIN](fo_func-i-n.html)
+* [FuncAND](fo_func-a-n-d.html)
+* [FuncOR](fo_func-o-r.html)
+* [FuncLike](fo_func-like.html)
+* [FuncBETWEEN](fo_func-between.html)
+* [funcSQL](fo_func-s-q-l.html)
 
 
