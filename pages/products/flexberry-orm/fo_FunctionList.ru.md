@@ -4,8 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_function-list.html
-folder: products/flexberry-orm/
-lang: ru
 ---
 * **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Компонент**: [Компоненты для фильтрации и ограничения выборки получаемых данных](fo_limitation.html)
@@ -56,7 +54,7 @@ var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, Information.ExtractPropertyPath<СамОбъект>(x => x.СсылкаНаМастера)), "84F456C1-312F-30C0-A238-11E3FE68E852");
 ```
 
-где "СсылкаНаМастера" - ссылка на мастера." %}
+где `СсылкаНаМастера` - ссылка на мастера." %}
 
 ## Наложение ограничений на перечислимый тип
 
@@ -143,7 +141,7 @@ lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
 ```
 
-{% include important.html content="Убедитесь, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса." % }
+{% include important.html content="Убедитесь, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса." %}
 
 
 ## Список функций
