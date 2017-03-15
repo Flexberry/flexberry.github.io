@@ -46,5 +46,116 @@ ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, "PrimaryKey"), "64F45BC3-
 var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, SQLWhereLanguageDef.StormMainObjectKey), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
 ```
+>Стоит отметить, что ограничение на [первичный ключ](fo_primary-keys-objects.html) **мастера** накладывается следующим образом:
+
+```cs
+var ld = SQLWhereLanguageDef.LanguageDef;
+ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, Information.ExtractPropertyPath<СамОбъект>(x => x.СсылкаНаМастера)), "84F456C1-312F-30C0-A238-11E3FE68E852");
+```
+
+где `СсылкаНаМастера` - ссылка на мастера.
+
+## Наложение ограничений на перечислимый тип
+
+[Перечислимые типы](enumerations.html) хранятся в базе как строки. Соответственно, при конструировании описания переменной (VariableDef) необходимо использовать StringType. В качестве аргумента для сравнения рекомендуется использовать Caption объекта перечисления, получить Caption можно при помощи класса `EnumCaption`, который является частью `ICSSoft.STORMNET`
+
+Рассмотрим на примере:
+
+![](/images/pages/products/flexberry-orm/function-list/Pol.PNG)
+
+Чтобы наложить ограничение на пол клиента, необходимо составить следующую функцию:
+
+```cs
+using ICSSoft.STORMNET;
+...
+var ld = SQLWhereLanguageDef.LanguageDef;
+var onlyMenFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.StringType, Information.ExtractPropertyPath<Клиент>(x => x.Пол)), EnumCaption.GetCaptionFor(tПол.Мужской));
+```
+
+## Наложение ограничений на компоненты даты
+
+Чтобы наложить ограничение на часть даты (на год, месяц или день), можно воспользоваться функциями `DayPart`, `MonthPart` и `YearPart` для задания ограничений на компоненты даты.
+
+### Пример
+
+```cs
+//ICSSoft.STORMNET.Windows.Forms.ExternalLangDef (ExternalLangDef.dll)
+//ICSSoft.STORMNET.Windows.Forms.ExternalLangDeflangdef = ExternalLangDef.LanguageDef;
+
+var langdef = ExternalLangDef.LanguageDef;
+var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
+
+lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
+                                         langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")),
+                                         "2013");
+
+var only2013year = DataServiceProvider.DataService.LoadObjects(lcs);
+
+lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
+                                         langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")),
+                                         "12");
+
+var onlyDecember = DataServiceProvider.DataService.LoadObjects(lcs);
+
+lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
+                langdef.GetFunction(langdef.funcEQ, 
+                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2012"),
+                langdef.GetFunction(langdef.funcEQ, 
+                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12"));
+
+var onlyDecember2012 = DataServiceProvider.DataService.LoadObjects(lcs);
+```
+
+## Примеры использования
+
+Далее будут приведены несколько примеров наложения ограничений:
+
+### Наложение ограничений на строковую переменную
+
+```cs
+var langdef = ExternalLangDef.LanguageDef;
+var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Личность), Личность.Views.ЛичностьE);
+lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
+	            new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), "Петров");
+var клиентыФамилияПетров = DataServiceProvider.DataService.LoadObjects(lcs);
+```
+
+### Наложение ограничений на мастеровой объект (по ключу)
+
+```cs
+var langdef = ExternalLangDef.LanguageDef;
+var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
+lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
+	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность)), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
+var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
+```
+
+### Наложение ограничений на мастеровой объект (по полю мастера)
+
+```cs
+var langdef = ExternalLangDef.LanguageDef;
+var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
+lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
+	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), "Петров");
+var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
+```
+>Убедитесь, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса.
+
+## Список функций
+
+* [FuncNOT](func-n-o-t.html)
+* [FuncIsNull](func-is-null.html)
+* [FuncEQ](func-e-q.html)
+* [FuncNEQ](func-n-e-q.html)
+* [FuncG](compare-functions.html)
+* [FuncGEQ](compare-functions.html)
+* [FuncL](compare-functions.html)
+* [FuncLEQ](compare-functions.html)
+* [FuncIN](func-i-n.html)
+* [FuncAND](func-a-n-d.html)
+* [FuncOR](func-o-r.html)
+* [FuncLike](func-like.html)
+* [FuncBETWEEN](func-between.html)
+* [funcSQL](func-s-q-l.html)
 
 
