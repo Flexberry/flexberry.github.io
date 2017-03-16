@@ -874,6 +874,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry-gis/addon/components/feature-result-item.js": {
+            "name": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "modules": {},
+            "classes": {
+                "FeatureResultItemComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-gis/addon/components/flexberry-button.js": {
             "name": "ember-flexberry-gis/addon/components/flexberry-button.js",
             "modules": {},
@@ -1035,6 +1044,15 @@
             "fors": {
                 "FlexberryTreenodeComponent": 1
             },
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/components/layer-result-list.js": {
+            "name": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "modules": {},
+            "classes": {
+                "LayerResultListComponent": 1
+            },
+            "fors": {},
             "namespaces": {}
         },
         "ember-flexberry-gis/addon/components/minimap-control.js": {
@@ -3129,6 +3147,7 @@
                 "BaseControlComponent": 1,
                 "BaseLayerComponent": 1,
                 "DivControlComponent": 1,
+                "FeatureResultItemComponent": 1,
                 "FlexberryDdauCheckboxComponent": 1,
                 "FlexberryButtonComponent": 1,
                 "FlexberryIconComponent": 1,
@@ -3145,6 +3164,7 @@
                 "FlexberrySearchComponent": 1,
                 "FlexberryTreeComponent": 1,
                 "FlexberryTreenodeComponent": 1,
+                "LayerResultListComponent": 1,
                 "MiniMapComponent": 1,
                 "ScaleControlComponent": 1,
                 "EditMapController": 1,
@@ -4698,6 +4718,21 @@
             "description": "Container contol component for leaflet map, render yield block in `position` anchor of map",
             "extends": "BaseControlComponent"
         },
+        "FeatureResultItemComponent": {
+            "name": "FeatureResultItemComponent",
+            "shortname": "FeatureResultItemComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 8,
+            "description": "Component for display GeoJSON feature object details",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
+        },
         "FlexberryDdauCheckboxComponent": {
             "name": "FlexberryDdauCheckboxComponent",
             "shortname": "FlexberryDdauCheckboxComponent",
@@ -4943,9 +4978,12 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 30,
+            "line": 31,
             "description": "Flexberry search component with [Semantic UI search](http://semantic-ui.com/modules/search.html) style.\n\nUsage:\ntemplates/my-form.hbs\n```handlebars\n{{flexberry-search\n  class=\"fluid\"\n  apiUrl='http//api.github.com/search/repositories?q={query}'\n  apiOnResponse=(action \"onFlexberrySearchApiOnResponse\")\n}}\n```",
-            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>",
+            "uses": [
+                "DynamicPropertiesMixin"
+            ]
         },
         "FlexberryTreeComponent": {
             "name": "FlexberryTreeComponent",
@@ -4990,6 +5028,21 @@
                 "DynamicActionsMixin",
                 "DynamicPropertiesMixin"
             ]
+        },
+        "LayerResultListComponent": {
+            "name": "LayerResultListComponent",
+            "shortname": "LayerResultListComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 8,
+            "description": "Component for display array of search\\identify results",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
         },
         "MiniMapComponent": {
             "name": "MiniMapComponent",
@@ -5995,6 +6048,7 @@
                 "FlexberryDialogComponent",
                 "FlexberryMaplayerComponent",
                 "FlexberryMaplayersComponent",
+                "FlexberrySearchComponent",
                 "FlexberryTreeComponent",
                 "FlexberryTreenodeComponent"
             ],
@@ -13981,7 +14035,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers/wfs-layer.js",
-            "line": 164,
+            "line": 178,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
@@ -16698,7 +16752,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 332,
+            "line": 334,
             "description": "Handles export dialog's 'deny' action.",
             "itemtype": "method",
             "name": "actions.onSearchDialogDeny",
@@ -16714,7 +16768,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 343,
+            "line": 345,
             "description": "Handles search dialog's 'hide' action.",
             "itemtype": "method",
             "name": "actions.onSearchDialogHide",
@@ -16730,7 +16784,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 355,
+            "line": 357,
             "description": "Handles search dialog's 'showFoundedFeatures' action.",
             "itemtype": "method",
             "name": "actions.onSearchDialogShowFoundedFeatures",
@@ -16753,7 +16807,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 395,
+            "line": 397,
             "description": "Shows search dialog.",
             "itemtype": "method",
             "name": "_showSearchDialog",
@@ -16764,7 +16818,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 409,
+            "line": 411,
             "description": "Hides search dialog.",
             "itemtype": "method",
             "name": "_hideSearchDialog",
@@ -16775,28 +16829,28 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 420,
+            "line": 422,
             "description": "Initializes component.",
             "class": "SearchMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 431,
+            "line": 433,
             "description": "Destroys DOM-related component's properties & logic.",
             "class": "SearchMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 440,
+            "line": 442,
             "description": "Destroys component.",
             "class": "SearchMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/search.js",
-            "line": 451,
+            "line": 453,
             "description": "Component's action invoking when map-command must be executed.",
             "itemtype": "method",
             "name": "sendingActions.execute",
@@ -18255,7 +18309,7 @@
             "line": 324,
             "description": "Search results.\nFeatures array containing founded (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].",
             "itemtype": "property",
-            "name": "_foundedFeatures",
+            "name": "foundedFeatures",
             "type": "Object[]",
             "default": "null",
             "access": "private",
@@ -18475,14 +18529,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 646,
+            "line": 638,
             "description": "Initializes component.",
             "class": "FlexberrySearchMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 655,
+            "line": 647,
             "description": "Component's action invoking when dialog starts to show.",
             "itemtype": "method",
             "name": "sendingActions.beforeShow",
@@ -18491,7 +18545,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 661,
+            "line": 653,
             "description": "Component's action invoking when dialog starts to hide.",
             "itemtype": "method",
             "name": "sendingActions.beforeHide",
@@ -18500,7 +18554,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 667,
+            "line": 659,
             "description": "Component's action invoking when dialog is shown.",
             "itemtype": "method",
             "name": "sendingActions.show",
@@ -18509,7 +18563,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 673,
+            "line": 665,
             "description": "Component's action invoking when dialog is hidden.",
             "itemtype": "method",
             "name": "sendingActions.hide",
@@ -18518,7 +18572,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 679,
+            "line": 671,
             "description": "Component's action invoking when dialog is approved.",
             "itemtype": "method",
             "name": "sendingActions.approve",
@@ -18527,7 +18581,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 685,
+            "line": 677,
             "description": "Component's action invoking when dialog is denied.",
             "itemtype": "method",
             "name": "sendingActions.deny",
@@ -18536,7 +18590,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 691,
+            "line": 683,
             "description": "Component's action invoking when dialog wants to show founded features on map.",
             "itemtype": "method",
             "name": "sendingActions.showFoundedFeatures",
@@ -20299,7 +20353,7 @@
             "line": 25,
             "description": "Leaflet layer object init by settings from model.",
             "itemtype": "property",
-            "name": "_layer",
+            "name": "_leafletObject",
             "type": "L.Layer",
             "default": "null",
             "access": "private",
@@ -20341,7 +20395,7 @@
             "line": 58,
             "description": "Layer metadata.",
             "itemtype": "property",
-            "name": "layer",
+            "name": "layerModel",
             "type": "Object",
             "default": "null",
             "class": "BaseLayerComponent",
@@ -20449,7 +20503,7 @@
                     ]
                 },
                 {
-                    "name": "layer",
+                    "name": "layerModel",
                     "description": "Object describing layer that must be searched.",
                     "type": "Object[]"
                 },
@@ -20476,7 +20530,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 158,
+            "line": 161,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
@@ -20507,28 +20561,28 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 180,
+            "line": 183,
             "description": "Initializes component.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 188,
+            "line": 191,
             "description": "Initializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 205,
+            "line": 208,
             "description": "Deinitializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 224,
+            "line": 228,
             "description": "Handles changes in {{#crossLink \"BaseLayerComponent/visibility:property\"}}'visibility' property{{/crossLink}}.\nSwitches layer's visibility.",
             "itemtype": "method",
             "name": "visibilityDidChange",
@@ -20537,7 +20591,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 240,
+            "line": 244,
             "description": "Creates leaflet layer related to layer type.",
             "itemtype": "method",
             "name": "createLayer",
@@ -20546,7 +20600,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 249,
+            "line": 253,
             "description": "Identifies layer's objects inside specified bounding box.",
             "itemtype": "method",
             "name": "identify",
@@ -20584,7 +20638,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 268,
+            "line": 272,
             "description": "Handles 'flexberry-map:search' event of leaflet map.",
             "itemtype": "method",
             "name": "search",
@@ -20629,7 +20683,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 284,
+            "line": 288,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
@@ -20660,7 +20714,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 298,
+            "line": 302,
             "description": "Injects (leafelt GeoJSON layers)[http://leafletjs.com/reference-1.0.0.html#geojson] according to current CRS\ninto specified (GeoJSON)[http://geojson.org/geojson-spec] feature, features, or featureCollection",
             "itemtype": "method",
             "name": "injectLeafletLayersIntoGeoJSON",
@@ -20714,6 +20768,171 @@
             "type": "Boolean",
             "default": "true",
             "class": "DivControlComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 15,
+            "description": "Flag: indicates where display detailed feature info",
+            "itemtype": "property",
+            "name": "_infoExpanded",
+            "type": "boolean",
+            "default": "false",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 23,
+            "description": "Property for represent feature",
+            "itemtype": "property",
+            "name": "_displayProperty",
+            "type": "string",
+            "readonly": "",
+            "access": "private",
+            "tagname": "",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 34,
+            "description": "Feature properties excluded from being displayed in info table",
+            "itemtype": "property",
+            "name": "_excludedProperties",
+            "type": "String[]",
+            "readonly": "",
+            "access": "private",
+            "tagname": "",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 45,
+            "description": "Features localized properties to being displayed in info table.",
+            "itemtype": "property",
+            "name": "_localizedProperties",
+            "type": "Object",
+            "readonly": "",
+            "access": "private",
+            "tagname": "",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 61,
+            "description": "Settings for display feature info",
+            "itemtype": "property",
+            "name": "displaySettings",
+            "type": "object",
+            "default": "null",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 69,
+            "description": "feature for display",
+            "itemtype": "property",
+            "name": "feature",
+            "type": "GeoJSON feature object",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 76,
+            "description": "Current selected feature",
+            "itemtype": "property",
+            "name": "feature",
+            "type": "GeoJSON feature object",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 85,
+            "description": "Invokes {{#crossLink \"FeatureResultItemComponent/sendingActions.selectFeature:method\"}}'selectFeature' action{{/crossLink}}.",
+            "itemtype": "method",
+            "name": "actions.selectFeature",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 93,
+            "description": "Invokes {{#crossLink \"FeatureResultItemComponent/sendingActions.panTo:method\"}}'panTo' action{{/crossLink}}.",
+            "itemtype": "method",
+            "name": "actions.panTo",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 101,
+            "description": "Invokes {{#crossLink \"FeatureResultItemComponent/sendingActions.zoomTo:method\"}}'zoomTo' action{{/crossLink}}.",
+            "itemtype": "method",
+            "name": "actions.zoomTo",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 109,
+            "description": "Show\\hide detailed feature info",
+            "itemtype": "method",
+            "name": "actions.showInfo",
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 118,
+            "description": "Component's action invoking for select feature",
+            "itemtype": "method",
+            "name": "sendingActions.selectFeature",
+            "params": [
+                {
+                    "name": "feature",
+                    "description": "Feature for select",
+                    "type": "GeoJSON object"
+                }
+            ],
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 124,
+            "description": "Component's action invoking for feature zooming",
+            "itemtype": "method",
+            "name": "sendingActions.zoomTo",
+            "params": [
+                {
+                    "name": "feature",
+                    "description": "Feature for select",
+                    "type": "GeoJSON object"
+                }
+            ],
+            "class": "FeatureResultItemComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/feature-result-item.js",
+            "line": 130,
+            "description": "Component's action invoking for feature pan",
+            "itemtype": "method",
+            "name": "sendingActions.panTo",
+            "params": [
+                {
+                    "name": "feature",
+                    "description": "Feature for select",
+                    "type": "GeoJSON object"
+                }
+            ],
+            "class": "FeatureResultItemComponent",
             "module": "ember-flexberry-gis"
         },
         {
@@ -22278,7 +22497,7 @@
             "line": 46,
             "description": "Leaflet map.",
             "itemtype": "property",
-            "name": "_layer",
+            "name": "_leafletObject",
             "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#map\">L.Map</a>",
             "default": "null",
             "access": "private",
@@ -22460,14 +22679,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 318,
+            "line": 320,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 335,
+            "line": 337,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) initialized.",
             "itemtype": "method",
             "name": "sendingActions.leafletInit",
@@ -22490,7 +22709,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 343,
+            "line": 345,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) destroyed.",
             "itemtype": "method",
             "name": "sendingActions.leafletDestroy",
@@ -23656,7 +23875,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 8,
+            "line": 9,
             "description": "Component's CSS-classes names.\nJSON-object containing string constants with CSS-classes names related to component's .hbs markup elements.",
             "itemtype": "property",
             "name": "flexberryClassNames",
@@ -23690,7 +23909,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 47,
+            "line": 49,
             "description": "Flag: indicates whether search type is 'category' or not.",
             "itemtype": "property",
             "name": "_isCategory",
@@ -23703,21 +23922,30 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 60,
+            "line": 64,
+            "description": "Action called when user press enter in search input\nInvokes {{#crossLink \"FlexberrySearchComponent/sendingActions.enter:method\"}}'enter' action{{/crossLink}}.",
+            "itemtype": "method",
+            "name": "actions.enter",
+            "class": "FlexberrySearchComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
+            "line": 74,
             "description": "Reference to component's template.",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 65,
+            "line": 79,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 71,
+            "line": 85,
             "description": "Names of observable component's properties.\nChanges in these properties must trigger Semantic UI module's reinitialization.",
             "itemtype": "property",
             "name": "observableProperties",
@@ -23728,7 +23956,17 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 81,
+            "line": 95,
+            "description": "Names of component's properties used for init semantic search module",
+            "itemtype": "property",
+            "name": "semanticProperties",
+            "type": "String[]",
+            "class": "FlexberrySearchComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
+            "line": 109,
             "description": "Component's wrapping <div> CSS-classes names.\n\nAny other CSS-classes can be added through component's 'class' property.\n```handlebars\n{{flexberry-icon\n  class=\"map icon\"\n}}\n```",
             "itemtype": "property",
             "name": "classNames",
@@ -23739,7 +23977,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 97,
+            "line": 125,
             "description": "Components class names bindings.",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -23750,7 +23988,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 106,
+            "line": 134,
             "description": "Search type.",
             "itemtype": "property",
             "name": "type",
@@ -23761,7 +23999,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 115,
+            "line": 143,
             "description": "Minimum characters count to query for results.",
             "itemtype": "property",
             "name": "minCharacters",
@@ -23772,7 +24010,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 124,
+            "line": 152,
             "description": "Search API settings.\nSee [Semantic UI examples](http://semantic-ui.com/modules/search.html#using-api-settings).",
             "itemtype": "property",
             "name": "apiSettings",
@@ -23783,7 +24021,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 134,
+            "line": 162,
             "description": "Hash describing rules how to map response into display content.",
             "itemtype": "property",
             "name": "fields",
@@ -23794,7 +24032,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 143,
+            "line": 171,
             "description": "Value typed into input.",
             "itemtype": "property",
             "name": "value",
@@ -23805,7 +24043,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 152,
+            "line": 182,
             "description": "Initializes Semantic UI search module.",
             "itemtype": "method",
             "name": "_initializeSearchModule",
@@ -23816,7 +24054,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 172,
+            "line": 210,
             "description": "Destroys Semantic UI search module.",
             "itemtype": "method",
             "name": "_initializeSearchModule",
@@ -23827,7 +24065,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 187,
+            "line": 225,
             "description": "Handles changes in properties related to Semantic UI search module.",
             "itemtype": "method",
             "name": "_searchPropertiesDidChange",
@@ -23838,15 +24076,24 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 198,
+            "line": 236,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 216,
+            "line": 254,
             "description": "Destroys DOM-related component's properties.",
+            "class": "FlexberrySearchComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
+            "line": 272,
+            "description": "Component's action invoking when user press enter in search box",
+            "itemtype": "method",
+            "name": "sendingActions.enter",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
@@ -24315,6 +24562,108 @@
                 }
             ],
             "class": "FlexberryTreenodeComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 16,
+            "description": "Flag: indicates when one or more results contains more than 0 features",
+            "itemtype": "property",
+            "name": "_hasData",
+            "type": "boolean",
+            "default": "false",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 24,
+            "description": "Flag: inciates when one or more results.features promises rejected",
+            "itemtype": "property",
+            "name": "_hasError",
+            "type": "boolean",
+            "default": "false",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 32,
+            "description": "Current selected feature",
+            "itemtype": "property",
+            "name": "_selectedFeature",
+            "type": "GeoJSON feature",
+            "default": "null",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 44,
+            "description": "FeatureGroup for place layer from selectedFeature",
+            "itemtype": "property",
+            "name": "serviceLayer",
+            "type": "L.FeatureGroup",
+            "default": "null",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 52,
+            "description": "Leaflet map object for zoom and pan",
+            "itemtype": "property",
+            "name": "leafletMap",
+            "type": "L.Map",
+            "default": "null",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 60,
+            "description": "Array of results for display, each result contains object with following properties\nlayerModel - MapLayer model\nfeatures - promise for array of GeoJSON features",
+            "itemtype": "property",
+            "name": "results",
+            "type": "Ember.A()",
+            "default": "null",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 71,
+            "description": "Set selected feature and add its layer to serviceLayer on map",
+            "itemtype": "method",
+            "name": "actions.selectFeature",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 91,
+            "description": "Select passed feature and zoom map to its layer bounds",
+            "itemtype": "method",
+            "name": "actions.zoomTo",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 110,
+            "description": "Select passed feature and pan map to its layer centroid",
+            "itemtype": "method",
+            "name": "actions.panTo",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 129,
+            "description": "Observer for passed results",
+            "itemtype": "method",
+            "name": "_resultObserver",
+            "class": "LayerResultListComponent",
             "module": "ember-flexberry-gis"
         },
         {
@@ -26418,21 +26767,6 @@
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
             "line": 33,
-            "description": "Checks whether given layer can be identified.",
-            "itemtype": "method",
-            "name": "_layerCanBeIdentified",
-            "return": {
-                "description": "Flag: indicates whether given layer can be identified.",
-                "type": "Boolean"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 52,
             "description": "Returns flat array of layers satisfying to current identification mode.",
             "itemtype": "method",
             "name": "_getLayersToIdentify",
@@ -26461,7 +26795,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 65,
+            "line": 46,
             "description": "Starts identification by array of satisfying layers inside given bounding box.",
             "itemtype": "method",
             "name": "_startIdentification",
@@ -26501,7 +26835,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 136,
+            "line": 117,
             "description": "Finishes identification.",
             "itemtype": "method",
             "name": "_finishIdentification",
@@ -26555,7 +26889,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 564,
+            "line": 545,
             "description": "Handles identification popup layer element creation.",
             "itemtype": "method",
             "name": "_popupLayerElementCreated",
@@ -26595,7 +26929,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 578,
+            "line": 559,
             "description": "Handles identification popup feature element creation.",
             "itemtype": "method",
             "name": "_popupLayerTreeItemElementCreated",
@@ -26635,7 +26969,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 592,
+            "line": 573,
             "description": "Handles map's 'editable:drawing:end' event.",
             "itemtype": "method",
             "name": "_rectangleDrawingDidEnd",
@@ -26660,7 +26994,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 637,
+            "line": 618,
             "description": "Enables tool.",
             "itemtype": "method",
             "name": "_enable",
@@ -26671,7 +27005,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 647,
+            "line": 628,
             "description": "Disables tool.",
             "itemtype": "method",
             "name": "_disable",
@@ -27399,7 +27733,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-map-actions-handler.js",
-            "line": 61,
+            "line": 65,
             "description": "Handles {{#crossLink \"FlexberryMapComponent/sendingActions.leafletDestroy:method\"}}flexberry-map component's 'leafletDestroy' action{{/crossLink}}.\nIt cleans up previously stored leaflet map.",
             "itemtype": "method",
             "name": "actions.onMapLeafletDestroy",
@@ -27418,7 +27752,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-map-actions-handler.js",
-            "line": 101,
+            "line": 105,
             "description": "Handles {{#crossLink \"FlexberryMapComponent/sendingActions.moveend:method\"}}flexberry-map component's 'moveend' action{{/crossLink}}.\nIt mutates values of lat, lng properties with given names to values of new map center.",
             "itemtype": "method",
             "name": "actions.onMapMoveend",
@@ -27454,7 +27788,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-map-actions-handler.js",
-            "line": 155,
+            "line": 159,
             "description": "Handles {{#crossLink \"FlexberryMapComponent/sendingActions.zoomend:method\"}}flexberry-map component's 'zoomend' action{{/crossLink}}.\nIt mutates value of zoom property with given name to value of new map zoom.",
             "itemtype": "method",
             "name": "actions.onMapZoomend",
@@ -28114,6 +28448,31 @@
             "line": 43,
             "description": "Initializes required actions logic.",
             "class": "RequiredActionsMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
+            "line": 37,
+            "description": "Checks whether layer can be identified.",
+            "itemtype": "property",
+            "name": "canBeIdentified",
+            "type": "{Boolean} Flag: indicates whether layer can be identified.",
+            "readonly": "",
+            "class": "NewPlatformFlexberryGISMapLayer",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
+            "line": 56,
+            "description": "Checks whether layer can be searched.",
+            "itemtype": "property",
+            "name": "canBeSearched",
+            "return": {
+                "description": "Flag: indicates whether 'search' operation is available for this layer.",
+                "type": "Boolean"
+            },
+            "readonly": "",
+            "class": "NewPlatformFlexberryGISMapLayer",
             "module": "ember-flexberry-gis"
         },
         {
@@ -43795,10 +44154,6 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/map-tools/identify.js:52"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
             "line": " ember-flexberry-gis/addon/mixins/dynamic-actions.js:120"
         },
         {
@@ -44267,15 +44622,15 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/search.js:420"
+            "line": " ember-flexberry-gis/addon/components/map-commands/search.js:422"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties & logic.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/search.js:431"
+            "line": " ember-flexberry-gis/addon/components/map-commands/search.js:433"
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/search.js:440"
+            "line": " ember-flexberry-gis/addon/components/map-commands/search.js:442"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -44335,7 +44690,7 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/search.js:646"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/search.js:638"
         },
         {
             "message": "Missing item type\nFlag: indicates whether related map-tool is enabled or not.",
@@ -44439,15 +44794,15 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:180"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:183"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:188"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:191"
         },
         {
             "message": "Missing item type\nDeinitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:205"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:208"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -44559,7 +44914,7 @@
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:318"
+            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:320"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -44591,19 +44946,19 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:60"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:74"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:65"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:79"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:198"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:236"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:216"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:254"
         },
         {
             "message": "Missing item type\nReference to component's template.",
