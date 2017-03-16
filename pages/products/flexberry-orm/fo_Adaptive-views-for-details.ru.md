@@ -14,7 +14,7 @@ permalink: ru/fo_adaptive-views-for-details.html
 
 Допустим, что имеется следующая ситуация:
 
-![](/images/pages/products/flexberry-orm/Adaptive-views-for-details.jpg)
+![](/images/pages/products/flexberry-orm/adaptive-views-for-details/Adaptive-views-for-details.jpg)
 
 Класс A имеет детейлы D, связанные агрегацией DA. Для A определено [представление](fd_view-definition.html), в которое связано [представление](fd_view-definition.html) детейла D.
 

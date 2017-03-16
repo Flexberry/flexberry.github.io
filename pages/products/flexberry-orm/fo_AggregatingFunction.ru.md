@@ -5,38 +5,28 @@ keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
 permalink: ru/fo_aggregating-function.html
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-
-* **Продукт**: [FlexberryORM|Flexberry ORM)
-* **Компонент**: [DataObject|Объект данных)
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Объект данных](fo_dataobject.html)
 * **Программная библиотека**: ICSSoft.STORMNET.Tools.dll, ICSSoft.STORMNET.DataObject.dll
-* **Предназначение**: [DataObject|Объект данных)  можно сериализовать и десериализовать с помощью разных подходов.
+* **Предназначение**: [Объект данных](fo_dataobject.html)  можно сериализовать и десериализовать с помощью разных подходов.
 
-</td>
-</tr></tbody></table>
-</div>
-
-Для того, чтобы сериализовать [DataObject|объект данных) необходимо подключить сборку `[ICSSoftSTORMNETTools|ICSSoft.STORMNET.Tools)`. Для преобразования в XML предназначен класс `[ICSSoftSTORMNETTools#ToolXML|ToolXML)` данной сборки, который поддерживает два варианта сериализации, описанные далее. 
+Для того, чтобы сериализовать [объект данных](fo_dataobject.html) необходимо подключить сборку [ICSSoft.STORMNET.Tools](fo_ics-soft-stormnet-tools.html). Для преобразования в XML предназначен класс [ToolXML](fo_ics-soft-stormnet-tools.html) данной сборки, который поддерживает два варианта сериализации, описанные далее. 
 
 ## Сериализация объектов данных специальным способом
 
-Специальные методы `[ICSSoftSTORMNETTools#ToolXML|ToolXML)` для `[DataObject)`:
+Специальные методы [ToolXML](fo_ics-soft-stormnet-tools.html) для [DataObject](fo_dataobject.html):
 
 *  `DataObject2XMLDocument` - конвертация объекта данных к `XmlDocument`,
 *  `XMLDocument2DataObject` - обратное преобразование. 
 
-Есть возможность при сериализации [DataObject|объекта данных) сериализовать также и [Master-Association|мастера), а не только его тип и [Primary-keys-objects|первичный ключ), путём передачи соответствующих флагов при вызове метода.
-Методы `DataObject2XMLDocument` и `XMLDocument2DataObject` описаны в [ICSSoftSTORMNETTools|статье).
+Есть возможность при сериализации [объекта данных](fo_dataobject.html) сериализовать также и [мастера](fd_master-association.html), а не только его тип и [первичный ключ](fo_primary-keys-objects.html), путём передачи соответствующих флагов при вызове метода.
+Методы `DataObject2XMLDocument` и `XMLDocument2DataObject` описаны в [статье](fo_ics-soft-stormnet-tools.html).
 
 {% include note.html content="Все использующиеся типы данных должны возвращать значение по `ToString()`, а также иметь статический метод `Parse`, конструирующий новый экземпляр." %}
 
 {% include note.html content="В метод `ToolXML.XMLDocument2DataObject()` обязательно нужно передавать сконструированный объект данных, иначе произойдёт `ArgumentNullException`." %}
 
-`Пример сериализации и десериализации [DataObject|объекта данных).`
+`Пример сериализации и десериализации` [объекта данных](fo_dataobject.html).
 
 ``` csharp
 DataObject sdo = new SimpleDataObject();
@@ -59,9 +49,9 @@ Console.Read();
 
 ## Сериализация на основе SOAP
 
-`[ICSSoftSTORMNETTools#ToolXML|ToolXML)` поддерживает метод для SOAP-сериализации. Этот вариант менее привлекателен, поскольку выходная строка содержит много лишней информации и [DataObject|объект данных) должен быть помечен атрибутом `&#0091;Serializable&#0093;`
+[ToolXML](fo_ics-soft-stormnet-tools.html) поддерживает метод для SOAP-сериализации. Этот вариант менее привлекателен, поскольку выходная строка содержит много лишней информации и [объект данных](fo_dataobject.html) должен быть помечен атрибутом `Serializable`
 
-`Пример сериализации и десериализации [DataObject|объекта данных).`
+`Пример сериализации и десериализации` [объекта данных](fo_dataobject.html).
 
 ```
 DataObjectWithKeyGuid dataObjectWithKeyGuid = new DataObjectWithKeyGuid();

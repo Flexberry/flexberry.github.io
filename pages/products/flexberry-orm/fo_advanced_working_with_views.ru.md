@@ -6,11 +6,11 @@ toc: true
 permalink: ru/fo_advanced_working_with_views.html
 ---
 
-**Вы можете создать [представление](fo_view-def.html) динамически.**
+**Вы можете создать [представление](fd_view-definition.html) динамически.**
 
-Если вам нужно создать [представление](fo_view-def.html) "в коде", "на лету", тогда используйте один из следующих вариантов:
+Если вам нужно создать [представление](fd_view-definition.html) "в коде", "на лету", тогда используйте один из следующих вариантов:
 
-1. Создать [представление](fo_view-def.html), используя конструктор по умолчанию, затем заполнить необходимые свойства
+1. Создать [представление](fd_view-definition.html), используя конструктор по умолчанию, затем заполнить необходимые свойства
 
 ```cs
 // Создать пустое представление.
@@ -29,18 +29,17 @@ dynaview.AddMasterInView("Publisher");
 // Также вы можете использовать метод dynaview.AddDetailInView для связывания этого представления с детейловыми представлениями.
 ```
 
-2. Создать динамическое [представление](fo_view-def.html) с помощью ViewAttribute
+2. Создать динамическое [представление](fd_view-definition.html) с помощью ViewAttribute
 
-```
-
+```cs
 ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(
     new ViewAttribute("DynaView", new string[] { "Name", "Publisher.Name" }), 
     typeof(CDDA));
 ```
 
-**[Операции с представлениями](view--operations.html). Каждое представление выступает как набор свойств.**
-```
+**[Операции с представлениями](fo_view-operations.html). Каждое представление выступает как набор свойств.**
 
+```cs
 ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(
     new ViewAttribute("DynaView1", new string[] { "Name", "Publisher.Name" }), 
     typeof(CDDA));

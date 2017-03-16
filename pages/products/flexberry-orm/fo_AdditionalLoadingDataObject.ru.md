@@ -5,7 +5,7 @@ keywords: DataObject (объекты данных), Flexberry ORM, Public, Че�
 toc: true
 permalink: ru/fo_additional-loading-data-object.html
 ---
-* **Продукт**: [Flexberry ORM](fo_flexberry-orm.html)
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Компонент**: [Сервис данных](fo_data-service.html)
 * **Программная библиотека**: ICSSoft.STORMNET.DataObject.dll,ICSSoft.STORMNET.Business.dll
 * **Предназначение**: Догрузка ранее вычитанного объекта данных.
