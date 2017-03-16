@@ -5,26 +5,18 @@ keywords: Flexberry ORM, Public, View (представление)
 toc: true
 permalink: ru/fo_adaptive-views-for-details.html
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-
-* **Продукт**: [Flexberry ORM](fo_flexberry-orm.html)
-* **Компонент**: [Представления (View)](fo_view-def.html)
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Представления (View)](fd_view-definition.html)
 * **Программная библиотека**: ICSSoft.STORMNET.Business.dll
 * **Предназначение**: Для вычитки [объектов-наследников](fo_inheritance.html) по более широкому набору свойств, нежели у [предков](fo_inheritance.html), могут использоваться адаптивные представления.
 
-</td>
-</tr></tbody></table>
-</div>
 ## Адаптивные представления
+
 Допустим, что имеется следующая ситуация:
 
 ![](/images/pages/products/flexberry-orm/Adaptive-views-for-details.jpg)
 
-Класс A имеет детейлы D, связанные агрегацией DA. Для A определено [представление](fo_view-def.html), в которое связано [представление](fo_view-def.html) детейла D.
+Класс A имеет детейлы D, связанные агрегацией DA. Для A определено [представление](fd_view-definition.html), в которое связано [представление](fd_view-definition.html) детейла D.
 
 Теперь, представим, что выполняется чтение объекта данных типа A по представлению `AView`.  Соответственно, поскольку объекты классов D1, D2 [унаследованы](fo_inheritance.html) от D, они также будут читаться по представлению `DView` (представления наследуются). Однако, что же делать, если они имеют более полный атрибутный состав, который ''обязательно'' нуждается в прочитке?
 
