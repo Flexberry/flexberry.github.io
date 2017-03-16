@@ -33,6 +33,7 @@ lang: ru
 
 ### Видеокурсы
 
+* [Курс "Объектно-ориентированное программирование"](https://www.youtube.com/playlist?list=PLmRNNqEA7JoPhVQCUisflWWhjdoKucDuf)
 * [Запись семинара на тему "Что такое ООП и с чем его едят?"](https://www.youtube.com/watch?v=ydPHlM43kKM)
 * [Основы объектно-ориентированного програмирования](https://www.youtube.com/watch?v=QZTn7LQk1eg&list=PL6LDsbZOeyrx462VmH18qS0a9Dw9LwpSu)
 * [Практическое применение ООП](https://www.youtube.com/watch?v=BmJH3I3McOs)
