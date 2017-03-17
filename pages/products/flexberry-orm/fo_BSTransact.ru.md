@@ -24,7 +24,7 @@ permalink: ru/fo_b-s-transact.html
 
 ## Пример
 
-![](/images/pages/products/flexberry-orm/bsexample.jpg)
+![](/images/pages/products/flexberry-orm/bsexample.png)
 
 Предположим, у нас есть два класса, ссылающиеся друг на друга обязательной связью. Стоит задача при создании объекта класса A автоматически создавать объект класса В и проставлять ссылки друг на друга.
 
