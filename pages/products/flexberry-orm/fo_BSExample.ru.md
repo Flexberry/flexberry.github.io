@@ -23,7 +23,7 @@ permalink: ru/fo_b-s-example.html
 
 #### Добавление бизнес-сервера
 
-Прежде всего необходимо [создать класс со стереотипом `businessserver` на диаграмме классов](fo_business-servers.html). Назовем его `КредитБС`.
+Прежде всего необходимо [создать класс со стереотипом `businessserver` на диаграмме классов](fd_business-servers.html). Назовем его `КредитБС`.
 ''__Примечание__: чтобы класс не занимал много места, его можно свернуть, выбрав контекстное меню `Свернуть`''
 
 ![](/images/pages/products/flexberry-orm/BSExample.PNG)
@@ -56,7 +56,7 @@ permalink: ru/fo_b-s-example.html
 
 Откроем файл бизнес-сервера `КредитБС.cs`
 
-Обратим внимание на [метод `OnUpdateКредит`, принимающий в качестве параметра объект типа `Кредит` и возвращающий объект типа `DataObject[]`](otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html)
+Обратим внимание на [метод `OnUpdateКредит`, принимающий в качестве параметра объект типа `Кредит` и возвращающий объект типа `DataObject[]`](fo_b-s-example.html)
 
 ```cs
         public virtual ICSSoft.STORMNET.DataObject[] OnUpdateКредит(IIS.Кредиты.Кредит UpdatedObject)
@@ -91,7 +91,7 @@ permalink: ru/fo_b-s-example.html
 
 ## Учтем, что данная проверка имеет место только при создании `Кредита`
 ## Найдем все кредиты `Клиента`, для которого создается `Кредит`
- ''__Примечание__: подробнее о вычитке данных из SQL базы данных описано в [другой статье](Flexberry-s-q-l-query.html)''
+>__Примечание__: подробнее о вычитке данных из SQL базы данных описано в [другой статье](fo_sql-query.html)
 ## Проверим сколько из них не закрыты
 ## Выдадим сообщение об ошибке если обнаружим незакрытый Кредит
 
@@ -114,9 +114,9 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Created)
 }
 ```
 
-**Примечание**: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](func-e-q.html).
+**Примечание**: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](fo_func-e-q.html).
 
-**Примечание**: Обратите внимание на первую проверку '''`[UpdatedObject.GetStatus() == ObjectStatus.Created](object-status-and-loading-state.html)`''', она позволяет нам отсечь случаи обновления или удаления объекта. 
+**Примечание**: Обратите внимание на первую проверку **[UpdatedObject.GetStatus() == ObjectStatus.Created](object-status-and-loading-state.html)**, она позволяет нам отсечь случаи обновления или удаления объекта. 
 
 
 ### Итоги

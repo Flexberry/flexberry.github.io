@@ -48,7 +48,7 @@ var oldValue = DataServiceProvider.DataService.LoadObjects(lcs)[0] as Креди
 ```
 
 
-Обратите внимание на проверку [статуса](object-status-and-loading-state.html) 
+Обратите внимание на проверку [статуса](fo_object-status-and-loading-state.html) 
 
 ```
 UpdatedObject.GetStatus() == ObjectStatus.Altered
