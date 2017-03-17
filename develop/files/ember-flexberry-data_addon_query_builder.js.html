@@ -404,6 +404,7 @@ export default class Builder extends BaseBuilder {
     this._projectionName = null;
     this._predicate = null;
     this._orderByClause = null;
+    this._idFromProjection = false;
     this._isCount = false;
     this._expand = {};
     this._select = {};
@@ -526,14 +527,16 @@ export default class Builder extends BaseBuilder {
    *
    * @method selectByProjection
    * @param projectionName {String} The name of the projection.
+   * @param idFromProjection {Boolean}
    * @return {Query.Builder} Returns this instance.
    * @public
    * @chainable
    */
-  selectByProjection(projectionName) {
-    this._projectionName = projectionName;
-    return this;
-  }
+   selectByProjection(projectionName, idFromProjection) {
+     this._idFromProjection = idFromProjection;
+     this._projectionName = projectionName;
+     return this;
+   }
 
   /**
    * Builds query instance using all provided data.
@@ -662,7 +665,7 @@ export default class Builder extends BaseBuilder {
       this._store.serializerFor(modelName).get(&#x27;primaryKey&#x27;);
     let primaryKeyName = primaryKeyNameFromSerializer ? primaryKeyNameFromSerializer : &#x27;id&#x27;;
     let tree = {
-      select: [&#x27;id&#x27;],
+      select: this._idFromProjection ? [] : [&#x27;id&#x27;],
       expand: {},
       modelName: modelName,
       primaryKeyName: primaryKeyName,

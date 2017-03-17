@@ -521,6 +521,10 @@ FlexberryGroupeditRouteMixin, {
     controller.set(&#x27;modelProjection&#x27;, proj);
     controller.set(&#x27;routeName&#x27;, this.get(&#x27;routeName&#x27;));
     controller.set(&#x27;developerUserSettings&#x27;, this.get(&#x27;developerUserSettings&#x27;));
+    if (Ember.isNone(controller.get(&#x27;defaultDeveloperUserSettings&#x27;))) {
+      controller.set(&#x27;defaultDeveloperUserSettings&#x27;, Ember.$.extend(true, {}, this.get(&#x27;developerUserSettings&#x27;)));
+    }
+
     let flexberryDetailInteractionService = this.get(&#x27;flexberryDetailInteractionService&#x27;);
     let modelCurrentAgregatorPath = flexberryDetailInteractionService.get(&#x27;modelCurrentAgregatorPathes&#x27;);
     let modelCurrentAgregator = flexberryDetailInteractionService.get(&#x27;modelCurrentAgregators&#x27;);

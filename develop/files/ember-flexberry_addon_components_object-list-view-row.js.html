@@ -547,6 +547,17 @@ export default FlexberryBaseComponent.extend({
     },
   }),
 
+  hierarchicalIndentStyle: Ember.computed(&#x27;_hierarchicalIndent&#x27;, &#x27;defaultLeftPadding&#x27;, function() {
+    let defaultLeftPadding = this.get(&#x27;defaultLeftPadding&#x27;);
+    let hierarchicalIndent = this.get(&#x27;hierarchicalIndent&#x27;);
+    return Ember.String.htmlSafe(&#x60;padding-left:${hierarchicalIndent}px !important; padding-right:${defaultLeftPadding}px !important;&#x60;);
+  }),
+
+  defaultPaddingStyle: Ember.computed(&#x27;defaultLeftPadding&#x27;, function() {
+    let defaultLeftPadding = this.get(&#x27;defaultLeftPadding&#x27;);
+    return Ember.String.htmlSafe(&#x60;padding-left:${defaultLeftPadding}px !important; padding-right:${defaultLeftPadding}px !important;&#x60;);
+  }),
+
   /**
     Tag name for the view&#x27;s outer element. [More info](http://emberjs.com/api/classes/Ember.Component.html#property_tagName).
 

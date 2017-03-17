@@ -643,6 +643,10 @@ FlexberryObjectlistviewHierarchicalRouteMixin, {
     let proj = modelClass.projections.get(this.get(&#x27;modelProjection&#x27;));
     controller.set(&#x27;userSettings&#x27;, this.userSettings);
     controller.set(&#x27;modelProjection&#x27;, proj);
+    controller.set(&#x27;developerUserSettings&#x27;, this.get(&#x27;developerUserSettings&#x27;));
+    if (Ember.isNone(controller.get(&#x27;defaultDeveloperUserSettings&#x27;))) {
+      controller.set(&#x27;defaultDeveloperUserSettings&#x27;, Ember.$.extend(true, {}, this.get(&#x27;developerUserSettings&#x27;)));
+    }
   }
 });
 

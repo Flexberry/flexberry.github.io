@@ -932,6 +932,7 @@ export default Ember.Service.extend({
   /**
   */
   _changesForRecord(store, job) {
+    let _this = this;
     return new RSVP.Promise((resolve, reject) =&gt; {
       let changes = {};
       let promises = [];
@@ -949,7 +950,7 @@ export default Ember.Service.extend({
           let value = auditField.get(&#x27;newValue&#x27;);
           switch (attributes.get(field).type) {
             case &#x27;boolean&#x27;:
-              changes[field] = value === null ? null : !!value;
+              changes[field] = value === null ? null : _this._getBooleanValue(value);
               break;
 
             case &#x27;number&#x27;:
@@ -1055,6 +1056,14 @@ export default Ember.Service.extend({
     }
 
     return Ember.RSVP.resolve();
+  },
+
+  _getBooleanValue(value) {
+    if (typeof value === &#x27;string&#x27;) {
+      return value.toLowerCase() === &#x27;true&#x27;;
+    }
+
+    return !!value;
   }
 });
 

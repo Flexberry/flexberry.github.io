@@ -656,12 +656,23 @@ export default Ember.Service.extend({
    *   @method getListCurrentUserSetting
    *   @return {String}
    */
-  getListCurrentUserSetting(componentName) {
-    let ret = [];
+  getListCurrentUserSetting(componentName, isExportExcel) {
+    let ret = {};
     if (this.currentAppPage in  this.currentUserSettings &amp;&amp;
       componentName in this.currentUserSettings[this.currentAppPage]
     ) {
-      ret = this.currentUserSettings[this.currentAppPage][componentName];
+      let sets = this.currentUserSettings[this.currentAppPage][componentName];
+
+      for (let settingName in sets) {
+        let settingNameSplit = settingName.split(&#x27;/&#x27;);
+        if (isExportExcel &amp;&amp; settingNameSplit[0] === &#x27;ExportExcel&#x27;) {
+          ret[settingName] = sets[settingName];
+        }
+
+        if (!isExportExcel &amp;&amp; settingNameSplit[0] !== &#x27;ExportExcel&#x27;) {
+          ret[settingName] = sets[settingName];
+        }
+      }
     }
 
     return ret;
@@ -673,9 +684,9 @@ export default Ember.Service.extend({
     @method getListCurrentNamedUserSetting
     @return {String}
   */
-  getListCurrentNamedUserSetting(componentName) {
+  getListCurrentNamedUserSetting(componentName, isExportExcel) {
     let ret = {};
-    let listCurrentUserSetting = this.getListCurrentUserSetting(componentName);
+    let listCurrentUserSetting = this.getListCurrentUserSetting(componentName, isExportExcel);
     for (let settingName in listCurrentUserSetting) {
       if (settingName === defaultSettingName) {
         continue;
@@ -785,6 +796,32 @@ export default Ember.Service.extend({
   },
 
   /**
+   Returns current detSeparateCols.
+
+   @method getDetSeparateCols
+   @param {String} componentName Name of component.
+   @param {String} settingName Name of setting.
+   @return {Boolean}
+   */
+  getDetSeparateCols(componentName, settingName) {
+    let currentUserSetting = this.getCurrentUserSetting(componentName, settingName);
+    return currentUserSetting &amp;&amp; &#x27;detSeparateCols&#x27; in currentUserSetting ? currentUserSetting.detSeparateCols : false;
+  },
+
+  /**
+   Returns current detSeparateRows.
+
+   @method getDetSeparateRows
+   @param {String} componentName Name of component.
+   @param {String} settingName Name of setting.
+   @return {Boolean}
+   */
+  getDetSeparateRows(componentName, settingName) {
+    let currentUserSetting = this.getCurrentUserSetting(componentName, settingName);
+    return currentUserSetting &amp;&amp; &#x27;detSeparateRows&#x27; in currentUserSetting ? currentUserSetting.detSeparateRows : false;
+  },
+
+  /**
    Set current columnWidths.
 
    @method setCurrentColumnWidths
@@ -851,9 +888,13 @@ export default Ember.Service.extend({
    @param {String} settingName Setting name to search by.
    @return {&lt;a href=&quot;http://emberjs.com/api/classes/RSVP.Promise.html&quot;&gt;Promise&lt;/a&gt;[]} Promises array
    */
-  deleteUserSetting(componentName, settingName) {
+  deleteUserSetting(componentName, settingName, isExportExcel) {
     if (settingName === undefined) {
       settingName = defaultSettingName;
+    }
+
+    if (isExportExcel) {
+      settingName = &#x27;ExportExcel/&#x27; + settingName;
     }
 
     Ember.assert(&#x27;deleteUserSetting:: componentName name is not defined for user setting getting.&#x27;, componentName);
@@ -888,9 +929,13 @@ export default Ember.Service.extend({
    @param {String} userSetting User setting data to save.
    @return {&lt;a href=&quot;http://emberjs.com/api/classes/RSVP.Promise.html&quot;&gt;Promise&lt;/a&gt;} Save operation promise.
    */
-  saveUserSetting(componentName, settingName, userSetting) {
+  saveUserSetting(componentName, settingName, userSetting, isExportExcel) {
     if (settingName === undefined) {
       settingName = defaultSettingName;
+    }
+
+    if (isExportExcel) {
+      settingName = &#x27;ExportExcel/&#x27; + settingName;
     }
 
     Ember.assert(&#x27;saveUserSetting:: componentName is not defined for user setting saving.&#x27;, componentName);

@@ -509,6 +509,11 @@ export default FlexberryBaseComponent.extend(
   */
   defaultLeftPadding: 10,
 
+  defaultPaddingStyle: Ember.computed(&#x27;defaultLeftPadding&#x27;, function() {
+    let defaultLeftPadding = this.get(&#x27;defaultLeftPadding&#x27;);
+    return Ember.String.htmlSafe(&#x60;padding-left:${defaultLeftPadding}px !important; padding-right:${defaultLeftPadding}px !important;&#x60;);
+  }),
+
   /**
     Flag indicates whether to look for changes of model (and displaying corresponding changes on control) or not.
 
@@ -1508,13 +1513,38 @@ export default FlexberryBaseComponent.extend(
   */
   _reinitResizablePlugin() {
     let $currentTable = this.$(&#x27;table.object-list-view&#x27;);
+    let cols = this.get(&#x27;columns&#x27;);
+    let helper = this.get(&#x27;showHelperColumn&#x27;);
+    let menu = this.get(&#x27;showMenuColumn&#x27;);
+    let disabledColumns = [];
+    let fixedColumns = this.get(&#x27;currentController.defaultDeveloperUserSettings&#x27;);
+    fixedColumns = fixedColumns ? fixedColumns[this.get(&#x27;componentName&#x27;)] : undefined;
+    fixedColumns = fixedColumns ? fixedColumns.DEFAULT : undefined;
+    fixedColumns = fixedColumns ? fixedColumns.columnWidths || [] : [];
+    fixedColumns = fixedColumns.filter(({ fixed }) =&gt; fixed).map(obj =&gt; { return obj.propName; });
+
+    if (helper &amp;&amp; fixedColumns.indexOf(&#x27;OlvRowToolbar&#x27;) &gt; -1) {
+      disabledColumns.push(0);
+    }
+
+    if (menu &amp;&amp; fixedColumns.indexOf(&#x27;OlvRowMenu&#x27;) &gt; -1) {
+      disabledColumns.push(helper ? cols.length : cols.length - 1);
+    }
+
+    for (let i = 0; i &lt; cols.length; i++) {
+      let col = cols[i];
+      if (fixedColumns.indexOf(col.propName) &gt; -1) {
+        disabledColumns.push(i);
+        disabledColumns.push(helper ? i + 1 : i - 1);
+      }
+    }
 
     // Disable plugin and then init it again.
     $currentTable.colResizable({ disable: true });
 
     $currentTable.colResizable({
       minWidth: 50,
-      resizeMode: &#x27;flex&#x27;,
+      disabledColumns: disabledColumns,
       onResize: (e)=&gt; {
         // Save column width as user setting on resize.
         this._afterColumnResize(e);
@@ -1546,9 +1576,10 @@ export default FlexberryBaseComponent.extend(
       let width = userColumnInfo.width;
 
       Ember.assert(&#x27;Property name is not defined at saved user setting.&#x27;, propName);
-      Ember.assert(&#x27;Column width is not defined at saved user setting.&#x27;, width !== undefined);
 
-      hashedUserSetting[propName] = width;
+      if (width !== undefined) {
+        hashedUserSetting[propName] = width;
+      }
     });
 
     let $columns = this.$(&#x27;table.object-list-view&#x27;).find(&#x27;th&#x27;);
@@ -1591,7 +1622,7 @@ export default FlexberryBaseComponent.extend(
 
       userWidthSettings.push({
         propName: currentPropertyName,
-        width: currentColumnWidth,
+        width: currentColumnWidth
       });
     });
     this._setCurrentColumnsWidth();
