@@ -6,8 +6,7 @@ toc: true
 permalink: ru/fa_flexberry--web--intro.html
 folder: products/flexberry-aspnet/
 lang: ru
+
 ---
 
-
-# Введение в Flexberry Web
-<msg type=warning head=Внимание >Раздел находится в разработке.</msg>
+{% include warning.html content="Раздел находится в разработке." %}
