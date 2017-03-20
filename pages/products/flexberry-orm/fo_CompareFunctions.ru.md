@@ -14,7 +14,7 @@ permalink: ru/fo_compare-functions.html
 * FuncLEQ - функция, аналогичная сравнению "больше или равно" в SQL, в построителе [функций ограничения](fo_limit-function.html)[SQLWhereLanguageDef](fo_function-list.html).
 
 ## Параметры GetFunction
-Функция [FunctionList|GetFunction] принимает первым параметром тип функции funcG (funcGEQ, funcL, funcLEQ), а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
+Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции funcG (funcGEQ, funcL, funcLEQ), а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
 
 Рассмотрим пример. Требуется вычитать все `Кредиты`, сумма которых больше (больше или равно, меньше, меньше или равно) 100000 рублей.
 
@@ -27,7 +27,7 @@ SELECT * FROM Кредит WHERE СуммаКредита < 100000
 SELECT * FROM Кредит WHERE СуммаКредита <= 100000
 ```
 
-Через [FunctionList|SQLWhereLanguageDef]:
+Через [SQLWhereLanguageDef](fo_function-list.html):
 
 ```cs
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;

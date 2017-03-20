@@ -14,7 +14,7 @@ permalink: ru/fo_code-samples.html
 
 * [Пример: большое количество детейлов](fo_create-multiple-details-example.html)
 * [Пример: выполнение действий при сохранении объекта](fo_data-object-update-hook-example.html)
-* [Пример: загрузка графа объектов](load-multiple-details-example.html)
+* [Пример: загрузка графа объектов](fo_load-multiple-details-example.html)
 * [Пример: загрузка и изменение объекта](fo_load-multiple-details-example.html)
 * [Пример: использование собственных типов](fo_using-custom-types-example.html)
 * [Пример: использование стереотипа 'typedef'](fo_using_stereotypes_example.html)
