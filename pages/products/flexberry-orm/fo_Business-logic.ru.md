@@ -7,7 +7,7 @@ permalink: ru/fo_business-logic.html
 ---
 * **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Программная библиотека**: ICSSoft.STORMNET.Business.dll
-* **Предназначение**: Компонент бизнес-логики реализуется в виде [Business-Servers-Wrapper-Business-Facade|бизнес-серверов) и является частью [трёхуровневой архитектуры](https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0), соединяющей клиентскую часть и базу данных.
+* **Предназначение**: Компонент бизнес-логики реализуется в виде [бизнес-серверов](fo_business--servers--wrapper--business--facade.html) и является частью [трёхуровневой архитектуры](https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0), соединяющей клиентскую часть и базу данных.
 
 ## Бизнес-логика
 Бизнес-логика является частью [трёхуровневой архитектуры](https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0), соединяющей клиентскую часть и базу данных.
@@ -23,7 +23,7 @@ permalink: ru/fo_business-logic.html
 ## Сценарии доработки
 
 * [Добавление проверки при обновлении данных через бизнес-сервер](fo_b-s-example.html).
-* Обновление нескольких объектов [одной транзакцией](fo_bs-transact.html).
+* Обновление нескольких объектов [одной транзакцией](fo_b-s-transact.html.
 * Проверка [уникальности введенных данных](fo_b-s-unique-data-check.html).
 * Проверка [валидности изменений данных объекта](fo_b-s-change-data-check.html).
 * [Дочитка данных](fo_additional-loading-data-object.html)
@@ -31,7 +31,8 @@ permalink: ru/fo_business-logic.html
 * Работа с [копией данных](copies-of-data-and-audit.html).
 
 ## См. также
-[Бизнес-сервер](fd_business-servers.html)
-[Бизнес-серверы, обертки, бизнес-фасад](fo_business--servers--wrapper--business--facade.html)
-[пример использования бизнес-сервера для проверки данных](fo_b-s-example.html)
-[Категория: бизнес-серверы](http://storm:2011/AllPages.aspx?Cat=%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B)
+
+* [Бизнес-сервер](fd_business-servers.html)
+* [Бизнес-серверы, обертки, бизнес-фасад](fo_business--servers--wrapper--business--facade.html)
+* [пример использования бизнес-сервера для проверки данных](fo_b-s-example.html)
+* [Категория: бизнес-серверы](http://storm:2011/AllPages.aspx?Cat=%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B)
