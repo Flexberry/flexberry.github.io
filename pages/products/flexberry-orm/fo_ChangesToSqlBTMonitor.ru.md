@@ -5,23 +5,13 @@ keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_changes-to-sql-b-t-monitor.html
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-
-* **Продукт:** [Flexberry ORM](fo_flexberry-orm.html)
-* **Компонент:** [Монитор задач](business-task-monitor.html)
+* **Продукт:** [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент:** [Монитор задач](fo_business-task-monitor.html)
 * **Предназначение:** краткое описание назначения контрола.
 * **Программная библиотека:** ChangesToSqlBTMonitor.dll
 * **[Автодокументация](http://www.google.ru).**
 * **[Демонстрационное приложение](https://github.com/Flexberry/FlexberryORM-DemoApp).**
-* **[0|Учебный курс].**
-
-</td>
-</tr></tbody></table></a>
-</div>
+* **[Учебный курс].**
 
 ## Описание
 ICSSoft.Services.ChangesToSqlBTMonitor представляет собой разновидность монитора задач, который позволяет осуществлять запись SQL-скриптов изменения данных.
