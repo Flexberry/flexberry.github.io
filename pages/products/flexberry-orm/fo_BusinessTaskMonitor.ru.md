@@ -5,19 +5,9 @@ keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_business-task-monitor.html
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-
-* **Продукт**: [Flexberry ORM](fo_flexberry-orm.html)
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Предназначение:** Отслеживание задач (вызовов некоторых методов), наблюдение за процессом работы где-либо (в отдельном окне, в лог-файле). Отслеживание SQL-запросов [сервиса данных](fo_data-service.html).
 * **Программная библиотека:** ICSSoft.STORMNET.Business.dll
-
-</td>
-</tr></tbody></table>
-</div>
 
 ## Описание
 Бывает удобным подключить к приложению некоторый монитор задач, когда можно отслеживать задачи (вызовы некоторых методов), наблюдая весь процесс работы где-либо (в отдельном окне, в лог-файле). Примером может служить мониторинг SQL-запросов, которые выполняют сервисы данных в хранилище.
@@ -59,4 +49,4 @@ permalink: ru/fo_business-task-monitor.html
 [Перечень стандатных мониторов задач.](fo_BusinessTaskMonitorsInOrm.ru)
 
 ## Как создать свой монитор задач
-[Создание и подключение монитора задач](creating-and-connection--business-task-monitor.html)
+[Создание и подключение монитора задач](fo_creating-and-connection--business-task-monitor.html)
