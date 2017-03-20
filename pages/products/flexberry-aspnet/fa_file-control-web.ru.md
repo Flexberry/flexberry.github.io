@@ -6,37 +6,25 @@ toc: true
 permalink: ru/fa_file-control-web.html
 folder: products/flexberry-aspnet/
 lang: ru
+
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-&nbsp;&nbsp;&nbsp;'''FileControl'''
+* **Платформа:** [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Компонент:** [Web-контролы и web-компоненты](fa_web-controls.html)
+* **Предназначение:** Web-контрол для работы с типом данных ICSSoft.STORMNET.FileType.File в web-приложении.
+* **JavaScript API:** да
 
-* '''Платформа''': Web.
-* '''Предназначение:''' 
-* '''JavaScript API:''' да
-* '''[Автодокументация](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_file_control.html)'''.
-* '''[FileControl на тестовом стенде](http://ru:6158/forms/Controls/FileControl/)'''.
-
-</td>
-</tr></tbody></table></a>
-</div>
-
-
-
-# Описание
+## Описание
 Это контрол для работы с типом данных `ICSSoft.STORMNET.FileType.File` в веб-приложении. Файлы сохраняются в БД в виде сериализованной 
 строки, поэтому данный контрол предназначен для работы с небольшими файлами.
 
 В браузере пользователь имеет возможность выбрать файл из своей файловой системы и сохранить его в БД в соответствующем поле объекта данных, на которое установлен биндинг.
 
 Выглядит контрол следующим образом:
-![](/images/pages/img/page/FileControl-web/FileControl.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/file-control.png)
 
-Вначале указывается наименование текущего сохраненного или выбранного файла.
-Далее идут кнопки: 
+Вначале указывается наименование текущего сохраненного или выбранного файла.Далее идут кнопки: 
+
 * Выбрать файл - открыть диалог для выбора файла,
 * Скачать файл - скачать текущий сохраненный файл из БД,
 * Сбросить файл - сбросить сохраненный или только что выбранный файл.
@@ -48,25 +36,30 @@ lang: ru
 
 Кнопка "Сбросить файл" сбрасывает текущий выбор, после чего в компоненте отобразится надпись "(нет файла)". При сохранении формы редактирования старый файл в БД будет удален, на его место запишется значение null.
 
-Компонент поддерживается в AjaxGroupEdit.
+Компонент поддерживается в [AjaxGroupEdit](fa_ajax-group-edit.html).
 
-# Ограничение на размер загружаемого файла
+## Ограничение на размер загружаемого файла
 По умолчанию ограничение берется из опции [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx) в файле конфигурации приложения (web.config). Значение данного атрибута по умолчанию - 4 МБ, если он отсутствует в файле конфигурации.
 Данное ограничение может быть переопределено в свойстве FileControl.MaxValueSize. Новое значение не может быть меньше 1 и больше maxRequestLength, в противном случае возникнет исключение.
 
-Если пользователь выберет файл, размер которого превышает заданное ограничение, то он получит сообщение о превышении допустимого размера файла, после чего выбранный файл будет сброшен: ![](/images/pages/img/page/FileControl-web/FileControl_MaxFileSize.png).
+Если пользователь выберет файл, размер которого превышает заданное ограничение, то он получит сообщение о превышении допустимого размера файла, после чего выбранный файл будет сброшен: 
+
+![](/images/pages/products/flexberry-aspnet/aspnet/file-control-max-file-size.png).
 
 Примечание: ограничение на размер запроса может быть установлено средствами IIS, которое может расходиться с атрибутом maxRequestLength. Такая ситуация не контролируется компонентом FileControl.
 
 
-# Подключение FileControl (Web) к приложению
+## Подключение FileControl (Web) к приложению
 Для того, чтобы FileControl появился на форме редактирования, нужно его добавить в `aspx`-разметку. 
+
 ```html
 <ac:FileControl ID="ctrlFile" runat="server"/>
 ```
+
 Контрол располагается в сборке `ICSSoft.STORMNET.Web.AjaxControls.dll`.
 
-Для добавления в контролы, которые формируются динамически (например, [AjaxGroupEdit](ajax-group-edit.html)), нужно прописать в [WebControlProvider](web-control-provider.html) следующие строки:
+Для добавления в контролы, которые формируются динамически (например, [AjaxGroupEdit](fa_ajax-group-edit.html)), нужно прописать в [WebControlProvider](fa_web-control-provider.html) следующие строки:
+
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WebControlProvider.xsd">
@@ -80,6 +73,7 @@ lang: ru
 ```
 
 Также необходимо в `web.config` добавить следующие строки:
+
 ```xml
 <configuration>
 <!-- ... -->
@@ -106,34 +100,50 @@ lang: ru
 
 Для сгенерированных "начисто" проектов данные настройки создаются автоматически.
 
-==FileControl в WOLV
+## FileControl в WOLV
 Контрол можно расположить в ячейках столбца WOLV в режиме ReadOnly (только возможность скачивания файла).
 
 Необходимо указать, что для отображения типа File нужно использовать FileControl:
+
 ```xml
 <customproperty class="BugReport" property="Attachment">
     <control typename="ICSSoft.STORMNET.Web.AjaxControls.FileControl, ICSSoft.STORMNET.Web.AjaxControls" property="Value" codefile=""/>
-  </customproperty>```
+  </customproperty>
+```
 
 В WOLVSettApplyer.cs необходимо подписаться на событие WebControlProvider.TuneControlDelegateMethod, чтобы настроить свойство FileControl.ReadOnly = true для всех контролов FileControl, расположенных в WOLV:
+
 ```cs
 wolv.WebControlProvider.TuneControlDelegateMethod += TuneControlDelegateMethod;
 
-        /// <summary>
-        /// Донастройка контролов в WOLV.
-        /// </summary>
-        /// <param name="control">Созданный контрол в WOLV.</param>
-        /// <param name="createdControlData">Информация о созданном контроле.</param>
-        private void TuneControlDelegateMethod(Control control, CreatedControlData createdControlData)
-        {
-            // FileControl в WOLV должен быть в режиме "Только для чтения".
-            var fileControl = control as FileControl;
-            if (fileControl != null)
-            {
-                fileControl.ReadOnly = true;
-                fileControl.EmptyFileNameText = string.Empty;
-            }
-        }
+/// <summary>
+/// Донастройка контролов в WOLV.
+/// </summary>
+/// <param name="control">Созданный контрол в WOLV.</param>
+/// <param name="createdControlData">Информация о созданном контроле.</param>
+private void TuneControlDelegateMethod(Control control, CreatedControlData createdControlData)
+{
+    // FileControl в WOLV должен быть в режиме "Только для чтения".
+    var fileControl = control as FileControl;
+    if (fileControl != null)
+    {
+        fileControl.ReadOnly = true;
+        fileControl.EmptyFileNameText = string.Empty;
+    }
+}
 ```
-# FileControl (Web) [JS API](java-script-a-p-i.html)
-''Раздел находится в процессе заполнения''
+
+## FileControl (Web) [JS API](fa_java-script-a-p-i.html)
+*Раздел находится в процессе заполнения*
+
+## Откуда ссылаются на эту страницу
+
+* [Web-контролы и web-компоненты](fa_web-controls.html)
+
+## Куда ссылается эта страница
+
+* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
+* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* [JavaScript API](fa_java-script-a-p-i.html)
+* [WebControlProvider](fa_web-control-provider.html)
+* [Web-контролы и web-компоненты](fa_web-controls.html)
