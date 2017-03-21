@@ -35,12 +35,3 @@ lang: ru
 <register type="NewPlatform.Flexberry.Web.Http.IPageContentConnector, NewPlatform.Flexberry.Web.Http"
           mapTo="NewPlatform.Flexberry.Web.Http.FilterPageContentConnector, NewPlatform.Flexberry.Web.Http" />
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [PageContentManager](fa_page-content-manager.html)
-* [Подключение скриптов и стилей на основе PlaceholderPageContentConnector](fa_placeholder-page-content-connector.html)
-
-## Куда ссылается эта страница
-
-* [Подключение скриптов и стилей на основе PlaceholderPageContentConnector](fa_placeholder-page-content-connector.html)

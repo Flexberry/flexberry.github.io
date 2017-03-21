@@ -135,15 +135,3 @@ private void TuneControlDelegateMethod(Control control, CreatedControlData creat
 
 ## FileControl (Web) [JS API](fa_java-script-a-p-i.html)
 *Раздел находится в процессе заполнения*
-
-## Откуда ссылаются на эту страницу
-
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-## Куда ссылается эта страница
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [JavaScript API](fa_java-script-a-p-i.html)
-* [WebControlProvider](fa_web-control-provider.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
