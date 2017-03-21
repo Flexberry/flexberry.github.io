@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_details-at-adv-limit-editor.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -45,19 +47,3 @@ permalink: ru/fa_details-at-adv-limit-editor.html
 	</container>
 </unity>
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [Расширенный редактор ограничений в Web](fa_advanced-limit-editor.html)
-* [PseudoDetailInExtendedView](fa_pseudo-detail-in-extended-view.html)
-* [Как задать порядок отображения свойств в расширенном редакторе ограничений в web](fa_set-prop-order-at-web-adv-limit-editor.html)
-
-## Куда ссылается эта страница
-
-* [Расширенный редактор ограничений в Web](fa_advanced-limit-editor.html)
-* [ExternalLangDef - ограничения на детейл (funcExist, funcExistExact, funcExistAll, funcExistAllExact)]()
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Преобразование функции ограничения в linq-ограничение](fo_lcs-to-linq.html)
-* [LINQProvider](fo_linq-provider.html)
-* [Как задать порядок отображения свойств в расширенном редакторе ограничений в web](fa_set-prop-order-at-web-adv-limit-editor.html)
-* [WebObjectListView (WOLV)](web-object-list-view.html)

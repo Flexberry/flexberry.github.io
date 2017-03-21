@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_decimal-text-box.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -86,20 +88,3 @@ private void TuneControlDelegate(Control control, CreatedControlData createdCont
 	}
 }
 ```
-
-# Откуда ссылаются на эту страницу
-
-* [AlphaNumericTextBox](fa_alpha-numeric-text-box.html)
-* [Настройка контролов внутри AGE](fa_controls-in-a-g-e.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-# Куда ссылается эта страница
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [Настройка контролов внутри AGE](fa_controls-in-a-g-e.html)
-* [DataObject](fo_dataobject.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Flexberry Designer]()
-* [WebControlProvider](fa_web-control-provider.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-* [Web-форма редактирования](fa_web-edit-form.html)

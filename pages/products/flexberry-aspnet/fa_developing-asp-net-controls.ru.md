@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_developing-asp-net-controls.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -28,13 +30,3 @@ permalink: ru/fa_developing-asp-net-controls.html
 2. Все скрипты и стили должны храниться в веб-ресурсах сборки.
 3. Подключать все скипты и стили следует при помощи [PageContentManager](fa_page-content-manager.html).
     + это предотвращает множественное подключение одних и тех же скриптов/стилей, если файл поддключается в нескольких местах (контролах);
-
-## Откуда ссылаются на эту страницу
-
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [PageContentManager](fa_page-content-manager.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
