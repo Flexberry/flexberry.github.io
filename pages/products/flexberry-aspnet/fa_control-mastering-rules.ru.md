@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_asp-net-control-mastering-rules.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -45,12 +47,3 @@ _inputField.Attributes["id") = "SomeID";     // Клиентский идент�
 ```html
 <div id="ctl90"></div>
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)

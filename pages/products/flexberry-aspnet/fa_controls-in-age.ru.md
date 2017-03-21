@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_controls-in-a-g-e.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -41,19 +43,3 @@ AjaxGroupEdit.SetControlTuner(
 ## Другие варианты настройки контролов
 
 * [Настройки для LookUp в AGE](fa_settings-for-look-up-in-a-g-e.html)
-
-## Откуда ссылаются на эту страницу
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [DecimalTextBox](fa_decimal-text-box.html)
-
-## Куда ссылается эта страница
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [DecimalTextBox](fa_decimal-text-box.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Настройки для LookUp в AGE](fa_settings-for-look-up-in-a-g-e.html)
-* [Настройка контрола фильтрации в WebObjectListView](fa_tune-control-delegate-method.html)
-
-
- 
