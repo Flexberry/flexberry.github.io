@@ -5,6 +5,9 @@ keywords: Flexberry, Public
 toc: true
 permalink: ru/fo_current-user-service.html
 ---
+* **Программная библиотека**: ICSSoft.Services.CurrentUserService.dll
+* **Предназначение**: Flexberry CurrentUserService  позволяет получать текущего пользователя приложения. А также менять как отдельные свойства пользователя, так и сам способ работы с ним.
+
 
 ## CurrentUserService
 
