@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: FAQ, Flexberry ASP-NET, How to (page)
 toc: true
 permalink: ru/fa_change-l-c-s-for-look-up-in-a-g-e.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -100,16 +102,3 @@ public static string CreateLf(string territoryKey, string lfKey)
         });
     </script>
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
-
-## Куда ссылается эта страница
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Функции ограничения (Limit Function)](fo_limit-function.html)
-* [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
-* [Настройки для LookUp в AGE](fa_settings-for-look-up-in-a-g-e.html)

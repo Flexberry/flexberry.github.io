@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_browsers.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -52,12 +54,3 @@ permalink: ru/fa_browsers.html
 * есть вероятность, что не везде будет работать, но покрытие устройств большое.
 * есть вероятность, что будет медленно работать (в т.ч. за счет передачи большого объема данных – требуется оптимизация на клиенте).
 * требуется подключение к сети + приличный трафик (см предыдущее).
-
-## Откуда ссылаются на эту страницу
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Печать списка WOLV](fa_print-in--w-o-l-v.html)
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
