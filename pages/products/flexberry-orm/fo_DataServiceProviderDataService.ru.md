@@ -5,23 +5,21 @@ keywords: Flexberry ORM, Public
 toc: true
 permalink: ru/fo_data-service-provider-data-service.html
 ---
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Сервис данных](fo_data-service.html)
+* **Программная библиотека**: ICSSoft.STORMNET.Business.dll
+* **Предназначение**: Приведено описание DataServiceProvider.DataService и алгоритм его конструирования на основании настроек в файле конфигурации.
 
-<<<<<<< HEAD
-# DataServiceProvider.DataService
-=======
 ## DataServiceProvider.DataService
->>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
+
 DataServiceProvider.DataService - это [сервис данных](fo_data-service.html), который инициализируется на основании параметров, заданных в файле конфигурации. Таким образом, DataServiceProvider.DataService является [сервисом данных](fo_data-service.html) по умолчанию.
 
-## Алгоритм инициализации DataServiceProvider.DataService
+### Алгоритм инициализации DataServiceProvider.DataService
+
 В версии после 06.04.2015 при инициализации DataServiceProvider.DataService используется следующий алгоритм (инициализация происходит, если нет закэшированного значения, либо стоит флаг, что всегда нужно возвращать новый сервис данных):
 
-<<<<<<< HEAD
-1. Производится попытка разрешить тип [сервиса данных](fo_data-service.html) через Unity. Например, чтобы использовался [Standard-Data-Services-Flexberry-FRAMEWORK|MSSQLDataService], в файле конфигурации требуется добавить следующее определение:
-=======
-1.Производится попытка разрешить тип [сервиса данных](fo_data-service.html) через Unity. Например, чтобы использовался [MSSQLDataService](fo_standard-data-services.html), в файле конфигурации требуется добавить следующее определение:
+1. Производится попытка разрешить тип [сервиса данных](fo_data-service.html) через Unity. Например, чтобы использовался MSSQLDataService, в файле конфигурации требуется добавить следующее определение:
 
->>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
@@ -39,13 +37,10 @@ DataServiceProvider.DataService - это [сервис данных](fo_data-ser
   </unity>
 </configuration>
 ```
-<<<<<<< HEAD
-2. Если тип [сервиса данных](fo_data-service.html) удалось разрешить через Unity, то определяется строка соединения. Сначала в web-стиле, потом в win-стиле.
-=======
-2.Если тип [сервиса данных](fo_data-service.html) удалось разрешить через Unity, то определяется строка соединения. Сначала в web-стиле, потом в win-стиле.
->>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
 
-'''web-стиль''':
+2. Если тип [сервиса данных](fo_data-service.html) удалось разрешить через Unity, то определяется строка соединения. Сначала в web-стиле, потом в win-стиле.
+
+**web-стиль**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,7 +54,7 @@ DataServiceProvider.DataService - это [сервис данных](fo_data-ser
 </configuration>
 ```
 
-'''win-стиль''':
+**win-стиль**:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -70,12 +65,9 @@ DataServiceProvider.DataService - это [сервис данных](fo_data-ser
 </configuration>
 ```
 
-<<<<<<< HEAD
-3. Далее получение DataServiceProvider.DataService происходит по старому алгоритму. Тип [сервиса данных](fo_data-service.html) - через настройку DataServiceType в файле конфигурации. А строка соединения определяется в зависимости от того, в каком режиме приложение, web или win.
-=======
-3.Далее получение DataServiceProvider.DataService происходит по старому алгоритму. Тип [сервиса данных](fo_data-service.html) - через настройку DataServiceType в файле конфигурации. А строка соединения определяется в зависимости от того, в каком режиме приложение, web или win.
 
->>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
+3. Далее получение DataServiceProvider.DataService происходит по старому алгоритму. Тип [сервиса данных](fo_data-service.html) - через настройку DataServiceType в файле конфигурации. А строка соединения определяется в зависимости от того, в каком режиме приложение, web или win.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
@@ -86,6 +78,6 @@ DataServiceProvider.DataService - это [сервис данных](fo_data-ser
 ```
 
 ## Строки соединения
-Подробнее почитать про строки подключения для LocalDB можно почитать в [этой статье](Flexberry-tool-and-s-q-l-express-local-d-b.html).
+Подробнее почитать про строки подключения для LocalDB можно почитать в [этой статье](fd_sql-express-local-db.html).
 
 Про строки подключения в целом можно почитать в [msdn](https://msdn.microsoft.com/ru-ru/library/ms254500(v=vs.110).aspx).
