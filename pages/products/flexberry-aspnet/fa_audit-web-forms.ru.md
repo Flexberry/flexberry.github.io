@@ -4,10 +4,12 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit, Windows UI (формы)
 toc: true
 permalink: ru/fa_audit-web-forms.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
-* **Продукт**: [Flexberry Audit](audit-web.html)
+* **Продукт**: [Flexberry Audit](fa_audit-web.html)
 * **Программная библиотека**: ICSSoft.STORMNET.Web.AjaxControls.dll
 * **Предназначение**: Описаны доступные Web-формы для отображения данных аудита в формате, используемом [ICSSoft.STORMNET.Business.Audit.Audit](efs_efs_i-audit.html).
 
@@ -89,28 +91,3 @@ AuditService.Current.ShowPrimaryKey = false;
   <control typename="NewPlatform.Flexberry.Web.Controls.DataObjectTypeCaption, ICSSoft.STORMNET.Web.AjaxControls" property="Value" codefile="" />
 </customproperty>
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [Хранение данных аудита](efs_audit-data-storage.html)
-* [Flexberry Audit]()
-* [Пример использования API подсистемы аудита. Создание и подтверждение собственных записей аудита](efs_audit-web-api-example.html)
-* [Пример подключения аудита к существующему Web-приложению с использованием перегенерации проекта.](fa_audit-web-example.html)
-* [Win-формы для аудита](efs_audit-win-forms.html)
-* [Этапы разработки подсистемы аудита]()
-* [HierarchicalListView](fa_hierarchical-list-view.html)
-* [Технологические формы Flexberry ASP.NET](fa_tech-forms-web.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-## Куда ссылается эта страница
-
-* [Аудит]()
-* [Flexberry Audit]()
-* [Win-формы для аудита](efs_audit-win-forms.html)
-* [Детейловые ассоциации и их свойства](fo_detail-associations-and-their-properties.html)
-* [Web-формы редактирования](fa_flexberry-asp-net-edit-form.html)
-* [IAudit](efs_i-audit.html)
-* [Мастеровые ассоциации и их свойства](fd_master-association.html)
-* [Первичные ключи объектов (PrimaryKey)](fo_primary-keys-objects.html)
-* [Технологические формы Flexberry ASP.NET](fa_tech-forms-web.html)
-* [Иерархический WOLV](fa_w-o-l-v-hierarhy.html)
