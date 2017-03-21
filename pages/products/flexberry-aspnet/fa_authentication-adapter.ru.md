@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
 permalink: ru/fa_authentication-adapter.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -25,6 +27,7 @@ permalink: ru/fa_authentication-adapter.html
 /// <returns>Объект или null, если ничего не было найдено</returns>
 public static Agent GetDbUser()
 ```
+
 2. 
 
 ```cs
@@ -182,16 +185,3 @@ public static Agent CreateDbUser(string username, string friendlyUserName, bool 
 
 * [Подсистема полномочий](efs_security.html)
 * [Как создать полномочия на классы](fa_authority-to-classes.html)
-* [Все статьи категории "Полномочия".]()
-
-## Откуда ссылаются на эту страницу
-
-* [Как создать полномочия на классы](fa_authority-to-classes.html)
-* [Подсистема полномочий в Web]()
-* [Подсистема полномочий](efs_security.html)
-* [Консоль управления полномочиями (Security Console)](efs_security-console.html)
-
-## Куда ссылается эта страница
-
-* [Как создать полномочия на классы](fa_authority-to-classes.html)
-* [Подсистема полномочий](efs_security.html)
