@@ -5,6 +5,7 @@ keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_custom_naming_of_db_structures_example.html
 ---
+* **Полный список примеров кода [Flexberry ORM](fo_flexberry-o-r-m.html) находится в статье ["Примеры кода"](fo_code-samples.html).**
 
 Существует 2 пути для [определения наименования](fo_data-objects-and-database-structures.html): во Flexberry и в C# коде с помощью атрибутов.
 Если вы выберете первый путь, то Flexberry сгенерирует соответствующие имена автоматически.
