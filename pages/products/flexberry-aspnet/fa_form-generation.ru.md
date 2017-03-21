@@ -40,14 +40,3 @@ lang: ru
 * Папка2\Папка 8
 
 Если свойство Packet не указано, то файлы форм будут генерироваться в папку с именем объекта данных, для которого эта форма создана. При этом имя класса будет транслитерировано.
-
-## Откуда ссылаются на эту страницу
-
-* [Flexberry ASP.NET. Модуль расширения Flexberry Designer для генерации web-приложений по uml-моделям]()
-* [Flexberry ASP.NET генератор](fa_flexberry-asp-net-generator.html)
-* [Генерация форм для external-классов](fd_generate-forms-external-classes.html)
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Flexberry ASP.NET. Модуль расширения Flexberry Designer для генерации web-приложений по uml-моделям]()

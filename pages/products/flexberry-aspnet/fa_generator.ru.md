@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_flexberry-asp-net-generator.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -98,20 +100,3 @@ permalink: ru/fa_flexberry-asp-net-generator.html
 * [Генерация форм во Flexberry ASP.NET](fa_flexberry--a-s-p--n-e-t--form-generation.html)
 
 *[Istomin Denis](), 2012-02-21 18:45*
-
-## Откуда ссылаются на эту страницу
-
-* [Публикация сайтов из Caseberry]()
-* [Контекстные меню в дереве Flexberry Designer]()
-* [Проектирование информационных систем](fd_design.html)
-* [Обновление WebFormsTestStand]()
-* [Генерация форм для external-классов](fd_generate-forms-for-external-classes.html)
-* [Добро пожаловать в базу знаний CASEBERRY!]()
-* [Учебники и руководства пользователя]()
-* [Структура технологической платформы (расширенная)](platform-structure.html)
-* [Использование быстрой прототипизации](fd_using--quick--prototyping.html)
-
-## Куда ссылается эта страница
-
-* [Подключение ASP.NET плагина к CASEBERRY]()
-* [Генерация форм во Flexberry ASP.NET](fa_flexberry--a-s-p--n-e-t--form-generation.html)
