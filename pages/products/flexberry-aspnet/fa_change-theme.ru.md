@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_change-theme.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -68,16 +70,3 @@ permalink: ru/fa_change-theme.html
 {% include note.html content="В пути не должно быть русских букв." %}
 
 6.Если все настроено правильно, то после запуска батника и обновления страницы, мы увидим добавленные стили. Компилируется .css достаточно быстро, так что после каждой внесения, можно батник запускать.
-
-## Откуда ссылаются на эту страницу
-
-* [Базовая тема web-шаблона и ее связь с другими темами](fa_base-theme-structure.html)
-* [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* [Структура тем web-шаблона](fa_theme-structure.html)
-
-## Куда ссылается эта страница
-
-* [DateTimePicker](fw_date-time-picker.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* [Структура тем web-шаблона](fa_theme-structure.html)

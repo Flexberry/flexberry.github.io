@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_context-helper.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -25,16 +27,3 @@ ContextHelper.ПодключитьВнешнийФайл("/shared/script/ListVie
 string script = string.Format("$('#{0}').rehabShowHide(`cookieName: '{1}'`);", ClientID, CookieName);
 ContextHelper.ДобавитьСкриптВDocumentReady(script);
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [Встраивание прикладных контролов в AjaxGroupEdit](fa_a-g-e-applied-controls.html)
-* [PageContentManager](fa_page-content-manager.html)
-* [Сценарии веб-разработки](fa_scenario-web.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [PageContentManager](fa_page-content-manager.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
