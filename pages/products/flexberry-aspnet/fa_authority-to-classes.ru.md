@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
 permalink: ru/fa_authority-to-classes.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -68,18 +70,3 @@ protected void Page_Load(object sender, EventArgs e)
 * [Сценарии использования подсистемы полномочий](efs_rights-scenarios.html).
 * [Генерация скрипта назначения полномочий](efs_permition-script-generation.html).
 * [AccessType (тип проверки полномочий для класса)](efs_access-type.html)
-
-## Откуда ссылаются на эту страницу
-
-* [Подсистема полномочий: разрешение на запуск приложения и открытие форм](efs_access-type-start-app-and-open-forms.html)
-* [RightManager-module. Добавление пользователей в БД системы полномочий при windows-аутентификации](fa_authentication-adapter.html)
-
-## Куда ссылается эта страница
-
-* [AccessType (тип проверки полномочий для класса)](efs_access-type.html)
-* [RightManager-module. Добавление пользователей в БД системы полномочий при windows-аутентификации](fa_authentication-adapter.html)
-* [Как начать работу с подсистемой полномочий]()
-* [Генерация скрипта назначения полномочий](efs_permition-script-generation.html)
-* [Подсистема полномочий](efs_security.html)
-* [Разграничение прав пользователей приложения]efs_rights-scenarios.html()
-* [Консоль управления полномочиями (Security Console)](efs_security-console.html)
