@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_custom-form-design.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -52,13 +54,3 @@ HTML код в списковых web-формах и [web-формах реда
 ### Основные рекомендации
 * для изменения дизайна всех форм следует пользоваться общими классами (*ics-form*, *ics-form-header* и т.п.);
 * для изменения дизайна конкретного типа форм следует пользоваться специальными классами (*ics-form-edit* и т.п.);
-
-## Откуда ссылаются на эту страницу
-
-* [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* [Web-форма редактирования](fa_web-edit-form.html)

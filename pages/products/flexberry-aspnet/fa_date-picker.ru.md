@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API, Web UI (Контролы)
 toc: true
 permalink: ru/fa_date-picker.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -73,7 +75,7 @@ protected override void PostApplyToControls()
 
 Пример использования: 
 
-```JavaScript
+```javascript
 $(document).ready(function () {
     $('#getValBtn').bind('click', function () {
         // получить значение
@@ -91,21 +93,3 @@ $(document).ready(function () {
 
 });
 ```
-
-# Откуда ссылаются на эту страницу
-
-* [Встраивание прикладных контролов в AjaxGroupEdit](fa_a-g-e-applied-controls.html)
-* [Глобальная настройка web-контролов](fa_init-control-settings-delegate.html)
-* [JavaScript API](fa_java-script-a-p-i.html)
-* [Компоненты технологии CASEBERRY]()
-* [Настройка контрола фильтрации в WebObjectListView]()
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-* [Фильтры WebObjectListView](fa_w-o-l-v-filters.html)
-
-# Куда ссылается эта страница
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Глобальная настройка web-контролов](fa_init-control-settings-delegate.html)
-* [JavaScript API](fa_java-script-a-p-i.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)

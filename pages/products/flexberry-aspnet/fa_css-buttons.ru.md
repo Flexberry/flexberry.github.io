@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_css-buttons.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -52,14 +54,3 @@ permalink: ru/fa_css-buttons.html
     border: 1px solid #999;
 }
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [CSS](gbt_css.html)
-* [Решения по верстке страниц и CSS](fa_page-layout.html)
-
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Решения по верстке страниц и CSS](fa_page-layout.html)
