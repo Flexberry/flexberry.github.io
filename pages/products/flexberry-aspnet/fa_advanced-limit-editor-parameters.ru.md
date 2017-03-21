@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
 permalink: ru/fa_advanced-limit-editor-parameters.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -40,14 +42,3 @@ permalink: ru/fa_advanced-limit-editor-parameters.html
 ## См. также
 
 [Ограничения с параметрами в WOLV (для программиста)](fa_limit-with-parameters-for-developer.html)
-
-## Откуда ссылаются на эту страницу
-
-* [Расширенный редактор ограничений в Web](fa_advanced-limit-editor.html)
-* [Ограничения с параметрами (для пользователя) в Web](fa_limit-with-parameters-for-user.html)
-
-## Куда ссылается эта страница
-
-* [Расширенный редактор ограничений в Web](fa_advanced-limit-editor.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Ограничения с параметрами в WOLV (для программиста)](fa_limit-with-parameters-for-developer.html)
