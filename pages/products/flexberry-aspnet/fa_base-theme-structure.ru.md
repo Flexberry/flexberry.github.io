@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_base-theme-structure.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -195,16 +197,3 @@ body {
 Здесь подключаются основная страница базовой темы, а также соответствующие настройки и переменные темы Spring.
 
 После этого файл MainPage.less темы Spring импортируется в BaseStyles.less, после чего с помощью батника RebuildLessTheme компилируется в BaseStyles.css. Подробней о процессе доработки тем и батнике [здесь](fa_change-theme.html).
-
-## Откуда ссылаются на эту страницу
-
-* [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* [Структура тем web-шаблона](fa_theme-structure.html)
-
-
-## Куда ссылается эта страница
-
-* [Доработка тем оформления на прикладных проектах](fa_change-theme.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* [Структура тем web-шаблона](fa_theme-structure.html)

@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_base-master-editor-look-up.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -38,18 +40,3 @@ public static void ChangeLookUpSettings(BaseMasterEditorLookUp lookup)
     lookup.LookUpFormCaption = "Выберете значение";
 }
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [Наложение ограничения на LookUp в Web](fa_look-up-limit-web.html)
-* [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
-* [MasterEditorLookUp](fa_master-editor-look-up.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
-* [MasterEditorLookUp](fa_master-editor-look-up.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
