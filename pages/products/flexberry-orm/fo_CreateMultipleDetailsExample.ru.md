@@ -6,6 +6,8 @@ toc: true
 permalink: ru/fo_create-multiple-details-example.html
 ---
 
+* Полный список примеров кода [Flexberry ORM](fo_flexberry-o-r-m.html) находится в статье ["Примеры кода"](fo_code-samples.html).
+
 ## Создание и сохранение объекта с большим количеством детейлов
 
 Данный тест осуществляет генерацию большого графа объектов с [детейловыми связями](fo_detail-associations-and-their-properties.html) и его сохранение в БД.

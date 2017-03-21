@@ -6,7 +6,7 @@ toc: true
 permalink: ru/fo_convert-type-property-object-data-to-type-storage.html
 ---
 * **Продукт:** [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент:** [Объект данных] (fo_dataobject.html)
+* **Компонент:** [Объект данных](fo_dataobject.html)
 * **Программная библиотека:** ICSSoft.STORMNET.DataObject.dll
 * **Предназначение:** Использование пользовательских типов данных в [объектах данных](fo_dataobject.html) требует соблюдение некоторых условий.
 

@@ -40,7 +40,7 @@ class Class1
 
 Каждый вызов метода `DataObjectCache.StartCaching` образует контекст, простирающийся до вызова `DataObjectCache.StopCaching`.  Вызов метода `DataObjectCache.StartCaching` внутри контекста образует вложенный контекст.
 
-![](/images/pages/products/flexberry-orm/сontext-sensitive-cache-data-objects/context-sensitive-cache-data-objects-1.jpg)
+![](/images/pages/products/flexberry-orm/сontext-sensitive-cache-data-objects/context-sensitive-cache-data-objects.jpg)
 
 Объекты, добавляемые в контекстах более низкого уровня, автоматически попадают в контексты более высокого.
 Доступностью объектов более высокого уровня в контекстах более низкого программист может управлять. Можно «отрезать» вышестоящий контекст. Для этого служит параметр `ClipParentCache` метода `DataObjectCache.StartCaching`. Если метод вызван с параметром `true`, то объекты контекста уровнем выше никогда не доступны создаваемому контексту и всем нижележащим.
