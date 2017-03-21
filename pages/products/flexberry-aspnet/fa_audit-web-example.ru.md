@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit, Flexberry Designer
 toc: true
 permalink: ru/fa_audit-web-example.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
@@ -64,9 +66,9 @@ permalink: ru/fa_audit-web-example.html
 
 #### Настройка класса со стереотипом Application
 
-**Примечание: данные настройки будут актуальны только после реализации [второго этапа](devprocess_audit-stages.html), подробнее смотри [здесь](AuditCaseberrySetup#%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0_%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F_3)*
+* *Примечание: данные настройки будут актуальны только после реализации второго этапа*
 
-##№ Генерация приложения
+### Генерация приложения
 
 Чтобы сгенерировать приложение, необходимо:
 
@@ -119,21 +121,3 @@ permalink: ru/fa_audit-web-example.html
 ![](/images/pages/products/flexberry-aspnet/audit/audit-wolv.png)
 
 Как можно заметить, фиксируется время и тип операции; объект, над которым была произведена операция (его primaryKey); кем и откуда была произведена операция, а также результат выполнения операции.
-
-## Откуда ссылаются на эту страницу
-
-* [Настройка аудита в Flexberry Designer](fd_audit-setup.html)
-* [Миграция со старого аудита на новый]()
-* [Flexberry Audit]()
-
-## Куда ссылается эта страницам
-
-* [Добавление собственной формы на рабочий стол Web-приложения](fw_add-form-to-win-desktop.html)
-* [Настройка аудита в Flexberry Designer](fd_audit-setup.html)
-* [Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта.](efs_audit-web-example-manual.html)
-* [Web-формы аудита](fa_audit-web-forms.html)
-* [Настройки базы данных]()
-* [Классы данных (классы со стереотипом implementation или без указания стереотипа) и их свойства](fd_data-classes.html)
-* [Поля аудита](efs_flexberry-audit-object-fields.html)
-* [Приведение в соответствие БД Microsoft SQL Server](fd_matching--d-b--microsoft--s-q-l--server.html)
-* [WebObjectListView (WOLV)]()
