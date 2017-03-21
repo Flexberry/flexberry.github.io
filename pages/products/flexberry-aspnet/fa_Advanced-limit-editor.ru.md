@@ -4,15 +4,14 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы), Ограничения
 toc: true
 permalink: ru/fa_advanced-limit-editor.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
 * **Платформа**: [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html).
 * **Компонент**: [Web-контролы и web-компоненты](fa_web-controls.html).
 * **Предназначение**: редактор ограничений дает возможность осуществлять сложную фильтрацию выводимых элементов.
-* **JavaScript API**:
-* **[Автодокументация]()**.
-* **[Редактор ограничений на тестовом стенде](http://ru:6158/ErrorForm.aspx)**.
 
 ## Список пользовательских функций
 
@@ -104,41 +103,3 @@ WebObjectListView1.DropLimitFromLimitEditor();
 
 ## External-классы в расширенном редакторе ограничений
 Основная статья [External-классы в расширенном редакторе ограничений.](fa_web-limit-editor-and-external-class.html)
-
-## Откуда ссылаются на эту страницу
-
-* [Параметры в Расширенном редакторе ограничений в Web](fa_advanced-limit-editor-parameters.html)
-* [Работа с детейлами в расширенном редакторе ограничений в web](fa_details-at-adv-limit-editor.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Глобальные настройки редактора ограничений](fa_global-web-limit-editor-settings.html)
-* [Глоссарий](glossary.html)
-* [Преобразование функции ограничения в linq-ограничение](fo_lcs-to-linq.html)
-* [Упрощенный вид редактора ограничений](fw_limit-editor-simple-view.html)
-* [Запуск Расширенного редактора ограничений без WOLV](fa_limit-editor-without-w-o-l-v.html)
-* [Ограничения с параметрами в WOLV (для программиста)](fa_limit-with-parameters-for-developer.html)
-* [Ограничения с параметрами (для пользователя) в Web](fa_limit-with-parameters-for-user.html)
-* [Как задать порядок отображения свойств в расширенном редакторе ограничений в web](fa_set-prop-order-at-web-adv-limit-editor.html)
-* [Компоненты технологии CASEBERRY]()
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-* [External-классы в расширенном редакторе ограничений](fa_web-limit-editor-and-external-class.html)
-* [Задание заголовка класса в Расширенном редакторе ограничений](fa_web-limit-editor-class-caption.html)
-* [Выражения Пусто/Непусто в расширенном редакторе ограничений в Web](fa_web-limit-editor-is-null.html)
-* [WebObjectListView (WOLV)]()
-
-## Куда ссылается эта страница
-
-* [Параметры в Расширенном редакторе ограничений в Web](fa_advanced-limit-editor-parameters.html)
-* [Работа с детейлами в расширенном редакторе ограничений в web](fa_details-at-adv-limit-editor.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Глобальные настройки редактора ограничений](fa_global-web-limit-editor-settings.html)
-* [Преобразование функции ограничения в linq-ограничение](fo_lcs-to-linq.html)
-* [Запуск Расширенного редактора ограничений без WOLV](fa_limit-editor-without-w-o-l-v.html)
-* [Ограничения с параметрами (для пользователя) в Web](fa_limit-with-parameters-for-user.html)
-* [LINQProvider](fo_l-i-n-q-provider.html)
-* [Как задать порядок отображения свойств в расширенном редакторе ограничений в web](fa_set-prop-order-at-web-adv-limit-editor.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-* [External-классы в расширенном редакторе ограничений](fa_web-limit-editor-and-external-class.html)
-* [Задание заголовка класса в Расширенном редакторе ограничений](fa_web-limit-editor-class-caption.html)
-* [Выражения Пусто/Непусто в расширенном редакторе ограничений в Web](fa_web-limit-editor-is-null.html)
-* [WebObjectListView (WOLV)]()
-* [Фильтры WebObjectListView](fa_w-o-l-v-filters.html)
