@@ -70,16 +70,3 @@ protected override void PostApplyToControls()
 
 {% include note.html content="Если [web-форма редактирования](fa_flexberry-asp-net-edit-form.html) открывается в отдельной вкладке (OpenEditorInNewWindow=1, OpenEditorInModalWindow=0), детейл можно редактировать и на вкладке с [AGE](fa_ajax-group-edit.html), и на странице редактирования.
 Это можно решить, например, блокировкой строки в [AGE](fa_ajax-group-edit.html) пока открыта другая вкладка." %}
-
-## Откуда ссылаются на эту страницу
-
-* [Операции AjaxGroupEdit](fa_a-g-e-operations.html)
-* [Пользовательские настройки AjaxGroupEdit](fa_a-g-e-user-settings.html)
-
-
-## Куда ссылается эта страница
-
-* [Операции AjaxGroupEdit](fa_a-g-e-operations.html)
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Web-формы редактирования](fa_flexberry-asp-net-edit-form.html)

@@ -48,14 +48,3 @@ lang: ru
 При загрузке списковой формы будет происходить значительно больше запросов:
 
 ![](/images/pages/products/flexberry-aspnet/aspnet/monitor3.png)
-
-## Откуда ссылаются на эту страницу
-
-* [Мониторы задач Flexberry ASP.NET](fa_monitor-tasks-Flexberry-web.html)
-
-## Куда ссылается эта страница
-
-* [Создание и подключение пользовательского монитора задач](fo_creating-and-connection--business-task-monitor.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Мониторы задач Flexberry ASP.NET](fa_monitor-tasks--Flexberry--web.html)
-* [WebErrorBox и ErrorForm](fa_web-error-box-and--error-form.html)
