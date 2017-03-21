@@ -4,13 +4,13 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_base-edit-form.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
 * **Продукт**: [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
-* **Программная библиотека**: ICSSoft.STORMNET.Web.AjaxControls.XML
 * **Предназначение**: Базовый класс для [web-форм редактирования.](fa_web-edit-form.html)
-
 
 ## Введение
 
@@ -76,14 +76,3 @@ protected void Button1_OnClick(object sender, EventArgs e)
 <br>TextBox1.Text = IsObjectPrototyped.ToString();
 <br>}
 ```
-
-## Откуда ссылаются на эту страницу
-
-* [Межформенное взаимодействие в Web-приложениях](fa_form-interaction-web.html)
-* [Web-контролы и web-компоненты](fa_web-controls.html)
-
-
-## Куда ссылается эта страница
-
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* [Web-форма редактирования](fa_web-edit-form.html)
