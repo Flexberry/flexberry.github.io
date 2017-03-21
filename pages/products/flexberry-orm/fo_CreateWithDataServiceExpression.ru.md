@@ -5,6 +5,10 @@ keywords: Flexberry ORM, Public, View (представление)
 toc: true
 permalink: ru/fo_create-with-data-service-expression.html
 ---
+* **Продукт**:  [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Объект данных](fo_dataobject.html)
+* **Программная библиотека**: ICSSoft.STORMNET.DataObject.dll
+* **Предназначение**: Представлен пример создания [вычислимого поля](fo_not-stored-attributes.html) с помощью [DataServiceExpression](fo_not-stored-attributes.html).
 
 ## Создание вычислимого поля с помощью DataServiceExpression
 
