@@ -4,6 +4,8 @@ sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
 permalink: ru/fa_add-extra-logic-on-save-to-web-form.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 ## Обработка события сохранения объекта на клиенте
@@ -142,11 +144,4 @@ $(function() {
     });
 
 ```
-
-## Откуда ссылаются на эту страницу
-
-[Web-форма редактирования](fa_web-edit-form.html)
-
-## Куда ссылается эта страница
-
-[AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)    
+ 

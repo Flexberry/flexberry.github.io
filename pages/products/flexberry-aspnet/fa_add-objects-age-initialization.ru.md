@@ -4,12 +4,14 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_add-objects-a-g-e-initialization.html
+folder: products/flexberry-aspnet/
+lang: ru
 
 ---
 
-* Платформа: [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
-* Компонент: [AjaxGroupEdit](fa_ajax-group-edit.html)
-* Предназначение: Возможность добавления объектов в [AjaxGroupEdit](fa_ajax-group-edit.html) при инициализации формы.
+* **Платформа:** [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
+* **Компонент:** [AjaxGroupEdit](fa_ajax-group-edit.html)
+* **Предназначение:** Возможность добавления объектов в [AjaxGroupEdit](fa_ajax-group-edit.html) при инициализации формы.
 
 
 ## Алгоритм добавления объектов в AGE при инициализации формы
@@ -40,13 +42,3 @@ protected override void PreApplyToControls()
 ```
 
 Если вы хотите добавить объекты, но не сохранять их БД, если пользователь их не изменил, то нужно также добавлять, но со статусом Unaltered.
-
-## Откуда ссылаются на эту страницу
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-
-
-## Куда ссылается эта страница
-
-* [AjaxGroupEdit (AGE)](fa_ajax-group-edit.html)
-* [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
