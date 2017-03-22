@@ -1822,15 +1822,6 @@
             "fors": {},
             "namespaces": {}
         },
-        "ember-flexberry-gis/addon/mixins/map-layers-loader.js": {
-            "name": "ember-flexberry-gis/addon/mixins/map-layers-loader.js",
-            "modules": {},
-            "classes": {
-                "MapLayersLoaderMixin": 1
-            },
-            "fors": {},
-            "namespaces": {}
-        },
         "ember-flexberry-gis/addon/mixins/required-actions.js": {
             "name": "ember-flexberry-gis/addon/mixins/required-actions.js",
             "modules": {},
@@ -1949,6 +1940,24 @@
                 "NewPlatformFlexberryGISMap": 1
             },
             "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/utils/extended-get.js": {
+            "name": "ember-flexberry-gis/addon/utils/extended-get.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "Utils.Layers": 1
+            },
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/utils/extended-set.js": {
+            "name": "ember-flexberry-gis/addon/utils/extended-set.js",
+            "modules": {},
+            "classes": {},
+            "fors": {
+                "Utils.Layers": 1
+            },
             "namespaces": {}
         },
         "ember-flexberry-gis/addon/utils/string.js": {
@@ -3235,7 +3244,6 @@
                 "LeafletEventsMixin": 1,
                 "LeafletOptionsMixin": 1,
                 "LeafletPropertiesMixin": 1,
-                "MapLayersLoaderMixin": 1,
                 "RequiredActionsMixin": 1,
                 "NewPlatformFlexberryGISCswConnectionModel": 1,
                 "NewPlatformFlexberryGISLayerMetadata": 1,
@@ -4859,7 +4867,7 @@
             "namespace": "",
             "file": "ember-flexberry-gis/addon/components/flexberry-layers-dropdown.js",
             "line": 26,
-            "description": "Flexberry layers dropdown component.\n\nUsage:\ntemplates/my-form.hbs\n```handlebars\n{{flexberry-layers-dropdown\n  class=\"fluid\"\n  filter=(action filterLayers)\n  layers=model.rootLayer.layers\n  value=selectedLayer\n  layerChange=(action \"onLayersDropdownLayerChange\")\n  availableLayersChange=(action \"onLayersDropdownAvailableLayersChange\")\n}}\n```",
+            "description": "Flexberry layers dropdown component.\n\nUsage:\ntemplates/my-form.hbs\n```handlebars\n{{flexberry-layers-dropdown\n  class=\"fluid\"\n  filter=(action filterLayers)\n  layers=model.mapLayer\n  value=selectedLayer\n  layerChange=(action \"onLayersDropdownLayerChange\")\n  availableLayersChange=(action \"onLayersDropdownAvailableLayersChange\")\n}}\n```",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
         },
         "FlexberryLayersComponent": {
@@ -5233,7 +5241,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 68,
+            "line": 69,
             "description": "Get with dynamic actions helper.\nRetrieves property with the specified name from the specified object\n(exactly as [standard get helper](http://emberjs.com/api/classes/Ember.Templates.helpers.html#method_get) does),\nand additionally binds dynamic actions for retrieved property's nested object/objects\n(even if retrieved property has hierarchical structure).\n\nHelper must be used with those component's,\nwhich consumes their inner structure as [JSON-object](http://www.json.org/)\nor [Ember-object](http://emberjs.com/api/classes/Ember.Object.html)\nand there is no way to attach action handlers for their nested component's explicitly in hbs-markup.",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Helper.html\">Ember.Helper</a>\n\nUsage:\ntemplates/my-form.hbs\n```handlebars\n{{!-- Without custom \"path\" keyword (default keyword \"path\" will be used) --}}\n{{flexberry-tree\n  nodes=(get-with-dynamic-actions this \"treeNodes\"\n    hierarchyPropertyName=\"nodes\"\n    dynamicActions=(array\n      (hash\n        on=\"headerClick\"\n        actionName=\"onTreenodeHeaderClick\"\n        actionArguments=(array \"{% path %}\")\n      )\n      (hash\n        on=\"checkboxChange\"\n        actionName=\"onTreenodeCheckboxChange\"\n        actionArguments=(array \"{% path %}.checkboxValue\")\n      )\n    )\n  )\n}}\n\n{{!-- With custom \"path\" keyword --}}\n{{flexberry-tree\n  nodes=(get-with-dynamic-actions this \"treeNodes\"\n    hierarchyPropertyName=\"nodes\"\n    pathKeyword=\"nodePath\"\n    dynamicActions=(array\n      (hash\n        on=\"headerClick\"\n        actionName=\"onTreenodeHeaderClick\"\n        actionArguments=(array \"{% nodePath %}\")\n      )\n      (hash\n        on=\"checkboxChange\"\n        actionName=\"onTreenodeCheckboxChange\"\n        actionArguments=(array \"{% nodePath %}.checkboxValue\")\n      )\n    )\n  )\n}}\n```\n\ncontrollers/my-form.js\n```javascript\nimport Ember from 'ember';\nimport TreeNodeObject from 'ember-flexberry-gis/objects/flexberry-treenode';\n\nexport default Ember.Controller.extend({\n  treeNodes: Ember.A([\n    FlexberryTreenodeObject.create({\n      caption: 'Node 1 (with child nodes)',\n      hasCheckbox: true,\n      checkboxValue: false,\n      iconClass: 'map icon',\n      nodes: Ember.A([\n        caption: 'Node 1.1 (leaf node)',\n        hasCheckbox: true,\n        checkboxValue: false,\n        iconClass: 'apple icon',\n        nodes: null\n      ])\n    }),\n    FlexberryTreenodeObject.create({\n      caption: 'Node 2 (leaf node)',\n      hasCheckbox: true,\n      checkboxValue: false,\n      iconClass: 'compass icon',\n      nodes: null\n    })\n  ]),\n\n  actions: {\n    onTreenodeHeaderClick(...args) {\n      let treeNodePath = args[0];\n      let treeNodeHeaderClickActionEventObject = args[args.length - 1];\n\n      console.log('Clicked tree node\\'s properties:', this.get(treeNodePath));\n      console.log('Clicked tree node\\'s \\'headerClick\\' action event object:', treeNodeHeaderClickActionEventObject);\n    },\n\n    onTreenodeCheckboxChange(...args) {\n      let treeNodeCheckboxValuePath = args[0];\n      let treeNodeCheckboxChangeActionEventObject = args[args.length - 1];\n\n      // Change tree node's 'checkboxValue' property.\n      this.set(treeNodeCheckboxValuePath, treeNodeCheckboxChangeActionEventObject.newValue);\n    }\n  }\n});\n```"
         },
@@ -6072,7 +6080,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/mixins/flexberry-ddau-checkbox-actions-handler.js",
-            "line": 7,
+            "line": 8,
             "description": "Mixin containing handlers for\n{{#crossLink \"FlexberryDdauCheckboxComponent\"}}flexberry-ddau-checkbox component's{{/crossLink}} actions.",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
         },
@@ -6106,7 +6114,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 8,
+            "line": 9,
             "description": "Mixin containing handlers for\n{{#crossLink \"FlexberryMaplayerComponent\"}}flexberry-maplayer component's{{/crossLink}} actions.",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
         },
@@ -6210,23 +6218,6 @@
                 "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
             ]
         },
-        "MapLayersLoaderMixin": {
-            "name": "MapLayersLoaderMixin",
-            "shortname": "MapLayersLoaderMixin",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [
-                "MapRoute"
-            ],
-            "module": "ember-flexberry-gis",
-            "namespace": "",
-            "file": "ember-flexberry-gis/addon/mixins/map-layers-loader.js",
-            "line": 8,
-            "description": "Mixin containing logic that loads map layers hierarchy.",
-            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>."
-        },
         "RequiredActionsMixin": {
             "name": "RequiredActionsMixin",
             "shortname": "RequiredActionsMixin",
@@ -6301,7 +6292,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
-            "line": 13,
+            "line": 15,
             "description": "Map layer model.",
             "extends": "Model",
             "uses": [
@@ -6370,7 +6361,7 @@
             "namespace": "",
             "file": "ember-flexberry-gis/addon/routes/edit-map-new.js",
             "line": 8,
-            "description": "Edit new map route.\nCreates map project & root layer of related layers hierarchy.",
+            "description": "Edit new map route.\nCreates map project & layers of related layers hierarchy.",
             "extends": "EditMapRoute"
         },
         "MapRoute": {
@@ -6384,12 +6375,9 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 10,
+            "line": 11,
             "description": "Edit map route.\nLoads map project & related layers hierarchy.",
-            "extends": "EditFormRoute",
-            "uses": [
-                "MapLayersLoaderMixin"
-            ]
+            "extends": "EditFormRoute"
         },
         "ListMapRoute": {
             "name": "ListMapRoute",
@@ -14061,11 +14049,6 @@
                     "type": "Object"
                 },
                 {
-                    "name": "layerLinks",
-                    "description": "Array contains layer links model, use for filter searched layers",
-                    "type": "Object"
-                },
-                {
                     "name": "queryFilter",
                     "description": "Object with query filter paramteres",
                     "type": "Object"
@@ -20556,11 +20539,6 @@
                     "type": "Object"
                 },
                 {
-                    "name": "layerLinks",
-                    "description": "Array contains layer links model, use for filter searched layers",
-                    "type": "Object"
-                },
-                {
                     "name": "queryFilter",
                     "description": "Object with query filter paramteres",
                     "type": "Object"
@@ -20576,28 +20554,28 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 183,
+            "line": 181,
             "description": "Initializes component.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 191,
+            "line": 189,
             "description": "Initializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 208,
+            "line": 206,
             "description": "Deinitializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 228,
+            "line": 226,
             "description": "Handles changes in {{#crossLink \"BaseLayerComponent/visibility:property\"}}'visibility' property{{/crossLink}}.\nSwitches layer's visibility.",
             "itemtype": "method",
             "name": "visibilityDidChange",
@@ -20606,7 +20584,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 244,
+            "line": 242,
             "description": "Creates leaflet layer related to layer type.",
             "itemtype": "method",
             "name": "createLayer",
@@ -20615,7 +20593,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 253,
+            "line": 251,
             "description": "Identifies layer's objects inside specified bounding box.",
             "itemtype": "method",
             "name": "identify",
@@ -20653,7 +20631,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 272,
+            "line": 270,
             "description": "Handles 'flexberry-map:search' event of leaflet map.",
             "itemtype": "method",
             "name": "search",
@@ -20698,7 +20676,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 288,
+            "line": 286,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
@@ -20706,11 +20684,6 @@
                 {
                     "name": "e",
                     "description": "Event object.",
-                    "type": "Object"
-                },
-                {
-                    "name": "layerLinks",
-                    "description": "Array contains layer links model, use for filter searched layers",
                     "type": "Object"
                 },
                 {
@@ -20729,7 +20702,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 302,
+            "line": 299,
             "description": "Injects (leafelt GeoJSON layers)[http://leafletjs.com/reference-1.0.0.html#geojson] according to current CRS\ninto specified (GeoJSON)[http://geojson.org/geojson-spec] feature, features, or featureCollection",
             "itemtype": "method",
             "name": "injectLeafletLayersIntoGeoJSON",
@@ -22630,17 +22603,6 @@
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
             "line": 172,
-            "description": "Layer links object thats use for query data on map load",
-            "itemtype": "property",
-            "name": "layerLinks",
-            "type": "Ember.Array",
-            "default": "null",
-            "class": "FlexberryMapComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 181,
             "description": "JSON object with query parameters",
             "itemtype": "property",
             "name": "queryFilter",
@@ -22651,7 +22613,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 190,
+            "line": 181,
             "description": "Injects additional methods into initialized leaflet map.",
             "itemtype": "method",
             "name": "_injectMapLoaderMethods",
@@ -22669,7 +22631,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 245,
+            "line": 236,
             "description": "Removes injected additional methods from initialized leaflet map.",
             "itemtype": "method",
             "name": "_removeMapLoaderMethods",
@@ -22687,21 +22649,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 259,
+            "line": 250,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 320,
+            "line": 307,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 337,
+            "line": 324,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) initialized.",
             "itemtype": "method",
             "name": "sendingActions.leafletInit",
@@ -22724,7 +22686,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 345,
+            "line": 332,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) destroyed.",
             "itemtype": "method",
             "name": "sendingActions.leafletDestroy",
@@ -24745,18 +24707,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 30,
-            "description": "Layer links object thats use for query data on map load",
-            "itemtype": "property",
-            "name": "layerLinks",
-            "type": "Ember.Array",
-            "default": "null",
-            "class": "EditMapController",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 41,
+            "line": 32,
             "description": "Query parameter, contains json serialized object with property names and values",
             "itemtype": "property",
             "name": "filter",
@@ -24767,7 +24718,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 49,
+            "line": 40,
             "description": "Deserialized valued of filter property",
             "itemtype": "property",
             "name": "queryFilter",
@@ -24778,7 +24729,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 68,
+            "line": 59,
             "description": "Creates new layer as specified layer's child\n(overridden method from {{#crossLink \"FlexberryMaplayerActionsHandlerMixin:createLayer:method\"}}\nFlexberryMaplayerActionsHandlerMixin\n{{/crossLink}}).",
             "itemtype": "method",
             "name": "createLayer",
@@ -24817,7 +24768,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 94,
+            "line": 85,
             "description": "Updates specified layer with given properties.\n(overridden method from {{#crossLink \"FlexberryMaplayerActionsHandlerMixin:editLayer:method\"}}\nFlexberryMaplayerActionsHandlerMixin\n{{/crossLink}}).",
             "itemtype": "method",
             "name": "editLayer",
@@ -24856,7 +24807,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 112,
+            "line": 103,
             "description": "Removes specified layer from layers hierarchy\n(overridden method from {{#crossLink \"FlexberryMaplayerActionsHandlerMixin:/removeLayer:method\"}}\nFlexberryMaplayerActionsHandlerMixin\n{{/crossLink}}).",
             "itemtype": "method",
             "name": "removeLayer",
@@ -24885,65 +24836,6 @@
             },
             "access": "private",
             "tagname": "",
-            "class": "EditMapController",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 145,
-            "description": "Saves layers hierarchy related to current map project.",
-            "itemtype": "method",
-            "name": "saveLayers",
-            "return": {
-                "description": "Save operation promise.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "class": "EditMapController",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 189,
-            "description": "Deletes layers hierarchy related to current map project.",
-            "itemtype": "method",
-            "name": "deleteLayers",
-            "return": {
-                "description": "Delete operation promise.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "class": "EditMapController",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 235,
-            "description": "Saves model related to current route, and returns to parent route after successful save (if 'close' parameter is true).\n(overridden method from {{#crossLink \"EditFormController/delete:method\"}}edit-form controller{{/crossLink}}.",
-            "params": [
-                {
-                    "name": "close",
-                    "description": "Flag: indicates whether current route must be closed after successful save or not.",
-                    "type": "Boolean"
-                }
-            ],
-            "itemtype": "method",
-            "name": "save",
-            "return": {
-                "description": "Save operation promise.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "class": "EditMapController",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 270,
-            "description": "Deletes model related to current route, and returns to parent route after successful deletion.\n(overridden method from {{#crossLink \"EditFormController/delete:method\"}}edit-form controller{{/crossLink}}.",
-            "itemtype": "method",
-            "name": "delete",
-            "return": {
-                "description": "Delete operation promise.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
             "class": "EditMapController",
             "module": "ember-flexberry-gis"
         },
@@ -25317,7 +25209,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 176,
+            "line": 177,
             "description": "Owner of hierarchy root property.",
             "itemtype": "property",
             "name": "_rootPropertyOwner",
@@ -25330,7 +25222,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 186,
+            "line": 187,
             "description": "Name of those property which must be retrieved from owner & returned from helper\n(after dynamic actions binding).",
             "itemtype": "property",
             "name": "_rootPropertyName",
@@ -25342,7 +25234,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 196,
+            "line": 197,
             "description": "Name of nested property (inside retrieved one), through which\nchild object/objects (objects hierarchy) is/are available.",
             "itemtype": "property",
             "name": "_hierarchyPropertyName",
@@ -25354,7 +25246,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 206,
+            "line": 207,
             "description": "Dynamic actions, which will be binded to object/objects retrieved from the\n{{#crossLink \"GetWithDynamicActionsHelper/_rootPropertyOwner:property\"}}owner{{/crossLink}}\n(and to all nested child objects).",
             "itemtype": "property",
             "name": "_dynamicActions",
@@ -25366,7 +25258,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 217,
+            "line": 218,
             "description": "Array with objects containing names of hierarchy properties and observer handlers related to them.\nEach object in array has following structure: { propertyPath: '...', observerHandler: function() { ... } }.",
             "itemtype": "property",
             "name": "_hierarchyPropertiesObservers",
@@ -25379,7 +25271,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 228,
+            "line": 229,
             "description": "Adds observer for given hierarchy property, which will force helper to recompute\non any changes in the specified hierarchy property.",
             "itemtype": "method",
             "name": "_addHierarchyPropertyObserver",
@@ -25397,7 +25289,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 316,
+            "line": 317,
             "description": "Removes all previously attached to hierarchy properties observers.",
             "itemtype": "method",
             "name": "_removeHierarchyPropertiesObservers",
@@ -25427,7 +25319,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 365,
+            "line": 366,
             "description": "Binds given dynamic actions to every object in the specified hierarchy.",
             "itemtype": "method",
             "name": "_bindDynamicActions",
@@ -25460,7 +25352,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 455,
+            "line": 456,
             "description": "Overridden [Ember.Helper compute method](http://emberjs.com/api/classes/Ember.Helper.html#method_compute).\nExecutes helper's logic, returns helper's value.",
             "itemtype": "method",
             "name": "compute",
@@ -25509,7 +25401,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js",
-            "line": 499,
+            "line": 500,
             "description": "Destroys helper.",
             "class": "GetWithDynamicActionsHelper",
             "module": "ember-flexberry-gis"
@@ -27323,7 +27215,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/regenerated/serializers/new-platform-flexberry-g-i-s-map-object-setting.js",
-            "line": 8,
+            "line": 7,
+            "description": "Field name where object identifier is kept.",
+            "class": "NewPlatformFlexberyGISMapSerializerMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/regenerated/serializers/new-platform-flexberry-g-i-s-map.js",
+            "line": 17,
             "description": "Field name where object identifier is kept.",
             "class": "NewPlatformFlexberyGISMapSerializerMixin",
             "module": "ember-flexberry-gis"
@@ -27681,7 +27580,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-ddau-checkbox-actions-handler.js",
-            "line": 16,
+            "line": 17,
             "description": "Handles {{#crossLink \"FlexberryDdauCheckboxComponent/sendingActions.change:method\"}}flexberry-ddau-checkbox component's 'change' action{{/crossLink}}.\nIt mutates value of property with given name to value of action's event object 'newValue' property.",
             "itemtype": "method",
             "name": "actions.onCheckboxChange",
@@ -27834,7 +27733,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 17,
+            "line": 18,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.headerClick:method\"}}flexberry-maplayers component's 'headerClick' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapLayerHeaderClick",
@@ -27860,7 +27759,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 46,
+            "line": 47,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.beforeExpand:method\"}}flexberry-maplayers component's 'beforeExpand' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapLayerBeforeExpand",
@@ -27886,7 +27785,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 75,
+            "line": 76,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.beforeExpand:method\"}}flexberry-maplayers component's 'beforeCollapse' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapLayerBeforeCollapse",
@@ -27912,7 +27811,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 104,
+            "line": 105,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.visiblilityChange:method\"}}flexberry-maplayers component's 'visiblilityChange' action{{/crossLink}}.\nIt mutates value of property with given name to value of action's event object 'newValue' property.",
             "itemtype": "method",
             "name": "actions.onMapLayerVisibilityChange",
@@ -27948,7 +27847,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 141,
+            "line": 142,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.addChild:method\"}}flexberry-maplayers component's 'addChild' action{{/crossLink}}.\nIt adds new child layer.",
             "itemtype": "method",
             "name": "actions.onMapLayerAdd",
@@ -27979,7 +27878,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 211,
+            "line": 216,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.edit:method\"}}flexberry-maplayers component's 'edit' action{{/crossLink}}.\nIt edits existing layer.",
             "itemtype": "method",
             "name": "actions.onMapLayerEdit",
@@ -28010,7 +27909,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 264,
+            "line": 268,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.remove:method\"}}flexberry-maplayers component's 'remove' action{{/crossLink}}.\nIt removes specified layer.",
             "itemtype": "method",
             "name": "actions.onMapLayerRemove",
@@ -28034,7 +27933,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 310,
+            "line": 313,
             "description": "Creates new layer as specified layer's child.",
             "itemtype": "method",
             "name": "createLayer",
@@ -28044,11 +27943,6 @@
                     "description": "Method options.",
                     "type": "Object",
                     "props": [
-                        {
-                            "name": "parentLayerPath",
-                            "description": "Path to parent layer.",
-                            "type": "String"
-                        },
                         {
                             "name": "parentLayer",
                             "description": "Parent layer.",
@@ -28073,7 +27967,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 328,
+            "line": 330,
             "description": "Updates specified layer in hierarchy with given properties.",
             "itemtype": "method",
             "name": "editLayer",
@@ -28083,11 +27977,6 @@
                     "description": "Method options.",
                     "type": "Object",
                     "props": [
-                        {
-                            "name": "layerPath",
-                            "description": "Path to editing layer.",
-                            "type": "String"
-                        },
                         {
                             "name": "layer",
                             "description": "Editing layer.",
@@ -28112,7 +28001,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 351,
+            "line": 352,
             "description": "Removes specified layer from layers hierarchy.",
             "itemtype": "method",
             "name": "removeLayer",
@@ -28122,11 +28011,6 @@
                     "description": "Method options.",
                     "type": "Object",
                     "props": [
-                        {
-                            "name": "layerPath",
-                            "description": "Path to removing layer.",
-                            "type": "String"
-                        },
                         {
                             "name": "layer",
                             "description": "Removing layer itself.",
@@ -28344,81 +28228,6 @@
             "module": "ember-flexberry-gis"
         },
         {
-            "file": "ember-flexberry-gis/addon/mixins/map-layers-loader.js",
-            "line": 15,
-            "description": "Name of model to be used as map's layer type.",
-            "itemtype": "property",
-            "name": "layerModelName",
-            "type": "String",
-            "default": "'new-platform-flexberry-g-i-s-map-layer'",
-            "class": "MapLayersLoaderMixin",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/mixins/map-layers-loader.js",
-            "line": 24,
-            "description": "Loads given map layer.",
-            "itemtype": "method",
-            "name": "_loadLayer",
-            "params": [
-                {
-                    "name": "Loading",
-                    "description": "layer metadata.",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Promise, which will return loaded layer after resolve.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "MapLayersLoaderMixin",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/mixins/map-layers-loader.js",
-            "line": 62,
-            "description": "Loads nested child layers for given map layer.",
-            "itemtype": "method",
-            "name": "_loadChildLayers",
-            "params": [
-                {
-                    "name": "Loading",
-                    "description": "layer metadata.",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Promise, which will return loaded child layers after resolve.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "MapLayersLoaderMixin",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/mixins/map-layers-loader.js",
-            "line": 88,
-            "description": "Loads nested layers hierarchy for a given map project.",
-            "itemtype": "method",
-            "name": "loadMapLayers",
-            "params": [
-                {
-                    "name": "Promise,",
-                    "description": "which will return loaded map project after resolve.",
-                    "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-                }
-            ],
-            "return": {
-                "description": "Promise, which will return loaded layers hierarchy (root layer wit nested child layers) after resolve.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "class": "MapLayersLoaderMixin",
-            "module": "ember-flexberry-gis"
-        },
-        {
             "file": "ember-flexberry-gis/addon/mixins/required-actions.js",
             "line": 15,
             "description": "Component's required actions names.\nFor actions enumerated in this array an assertion exceptions will be thrown,\nif actions handlers are not defined for them.",
@@ -28467,7 +28276,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
-            "line": 37,
+            "line": 38,
             "description": "Checks whether layer can be identified.",
             "itemtype": "property",
             "name": "canBeIdentified",
@@ -28478,7 +28287,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
-            "line": 56,
+            "line": 57,
             "description": "Checks whether layer can be searched.",
             "itemtype": "property",
             "name": "canBeSearched",
@@ -28487,6 +28296,19 @@
                 "type": "Boolean"
             },
             "readonly": "",
+            "class": "NewPlatformFlexberryGISMapLayer",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
+            "line": 76,
+            "description": "contains collection of nested layers",
+            "itemtype": "property",
+            "name": "layers",
+            "return": {
+                "description": "collection of child layers",
+                "type": "Array"
+            },
             "class": "NewPlatformFlexberryGISMapLayer",
             "module": "ember-flexberry-gis"
         },
@@ -28616,7 +28438,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map-new.js",
-            "line": 44,
+            "line": 41,
             "description": "[Render template hook](http://emberjs.com/api/classes/Ember.Route.html#method_renderTemplate)\nthat renders template for the current route.",
             "itemtype": "method",
             "name": "renderTemplate",
@@ -28638,39 +28460,6 @@
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
             "line": 32,
-            "description": "Name of model to be used as layer link defined by query parameters.",
-            "itemtype": "property",
-            "name": "layerLinkModelName",
-            "type": "String",
-            "default": "'new-platform-flexberry-g-i-s-layer-link'",
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 41,
-            "description": "Name of model projection to be used with layer link defined by query parameters.",
-            "itemtype": "property",
-            "name": "layerLinkProjection",
-            "type": "String",
-            "default": "'LayerLinkD'",
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 50,
-            "description": "Loaded layer links.",
-            "itemtype": "property",
-            "name": "layerLinks",
-            "type": "Object[]",
-            "default": "null",
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 59,
             "description": "Name of CSW connection model projection to be used as record's properties limitation.",
             "itemtype": "property",
             "name": "cswConnectionProjection",
@@ -28681,7 +28470,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 68,
+            "line": 41,
             "description": "Name of CSW connection model to be used as form's record type.",
             "itemtype": "property",
             "name": "modelName",
@@ -28692,7 +28481,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 77,
+            "line": 50,
             "description": "Loaded CSW connections.",
             "itemtype": "property",
             "name": "cswConnections",
@@ -28703,7 +28492,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 86,
+            "line": 59,
             "description": "Name of model projection to be used as record's properties limitation.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -28714,7 +28503,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 95,
+            "line": 68,
             "description": "Name of model to be used as form's record type.",
             "itemtype": "property",
             "name": "modelName",
@@ -28725,27 +28514,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 104,
-            "description": "Loads layer links defined in query params.",
-            "itemtype": "method",
-            "name": "loadLayerLinks",
-            "params": [
-                {
-                    "name": "params",
-                    "description": "Query parameters.",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Promise which will return available layer links after it will be resolved.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 134,
+            "line": 77,
             "description": "Loads available CSW connections.",
             "itemtype": "method",
             "name": "loadCswConnections",
@@ -28765,7 +28534,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 154,
+            "line": 98,
             "description": "[Model hook](http://emberjs.com/api/classes/Ember.Route.html#method_model) that returns a map project for current route.",
             "itemtype": "method",
             "name": "model",
@@ -28782,7 +28551,7 @@
                 }
             ],
             "return": {
-                "description": "Promise which will return map project related to current route & it's layers hierarchy.",
+                "description": "Promise which will return map project related to current route",
                 "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
             },
             "class": "MapRoute",
@@ -28790,7 +28559,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 173,
+            "line": 112,
             "description": "Setups controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",
@@ -28829,6 +28598,61 @@
             "type": "String",
             "default": "'new-platform-flexberry-g-i-s-map'",
             "class": "ListMapRoute",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/utils/extended-get.js",
+            "line": 7,
+            "description": "Used for getting objects by path containing Ember.RecordArray",
+            "itemtype": "method",
+            "name": "getRecord",
+            "params": [
+                {
+                    "name": "source",
+                    "description": "this",
+                    "type": "Object"
+                },
+                {
+                    "name": "keyName",
+                    "description": "Property path",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Retriveved object from path\n\nUsage:\ncontrollers/my-form.js\n```javascript\n  import { getRecord } from 'ember-flexberry-gis/utils/extended-get'l\n  let layer = getRecord(this, 'map.mapLayer.0.layers.1')\n\n```",
+                "type": "Object"
+            },
+            "class": "Utils.Layers",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/utils/extended-set.js",
+            "line": 7,
+            "description": "Used for setting objects properties by path containing Ember.RecordArray",
+            "itemtype": "method",
+            "name": "setRecord",
+            "params": [
+                {
+                    "name": "source",
+                    "description": "this",
+                    "type": "Object"
+                },
+                {
+                    "name": "keyName",
+                    "description": "Property path",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "New value for Property",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Assigned value\n\nUsage:\ncontrollers/my-form.js\n```javascript\n  import { setRecord } from 'ember-flexberry-gis/utils/setRecord'l\n  setRecord(this, 'map.mapLayer.1.visibility', false)\n\n```",
+                "type": "Object"
+            },
+            "class": "Utils.Layers",
             "module": "ember-flexberry-gis"
         },
         {
@@ -41528,7 +41352,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
-            "line": 132,
+            "line": 134,
             "description": "Create predicate for attribute. Can you overload this function for extended logic.\n\nDefault supported attribute types:\n- `string`\n- `number`",
             "example": [
                 "\n  ```javascript\n  // app/routes/example.js\n  ...\n  // Add support for logical attribute\n  predicateForAttribute(attribute, filter) {\n    switch (attribute.type) {\n      case 'boolean':\n        let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];\n        let no = ['False', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];\n\n        if (yes.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'true');\n        }\n\n        if (no.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'false');\n        }\n\n        return null;\n\n      default:\n        return this._super(...arguments);\n    }\n  },\n  ...\n  ```"
@@ -41592,7 +41416,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
-            "line": 228,
+            "line": 230,
             "description": "It forms the filter predicate for data loading.",
             "itemtype": "method",
             "name": "_getFilterPredicate",
@@ -41619,7 +41443,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
-            "line": 254,
+            "line": 256,
             "description": "Generates array attributes for filter.",
             "itemtype": "method",
             "name": "_attributesForFilter",
@@ -44311,19 +44135,19 @@
         },
         {
             "message": "unknown tag: computed",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:49"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:40"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:68"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:59"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:94"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:85"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:112"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:103"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -44439,15 +44263,15 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:310"
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:313"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:328"
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:330"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:351"
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:352"
         },
         {
             "message": "unknown tag: defaul",
@@ -45075,15 +44899,15 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:183"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:181"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:191"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:189"
         },
         {
             "message": "Missing item type\nDeinitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:208"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:206"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -45191,11 +45015,11 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:259"
+            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:250"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:320"
+            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:307"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -45271,7 +45095,7 @@
         },
         {
             "message": "Missing item type\nDestroys helper.",
-            "line": " ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js:499"
+            "line": " ember-flexberry-gis/addon/helpers/get-with-dynamic-actions.js:500"
         },
         {
             "message": "Missing item type\nDestroys map-command.",
@@ -45303,7 +45127,11 @@
         },
         {
             "message": "Missing item type\nField name where object identifier is kept.",
-            "line": " ember-flexberry-gis/addon/mixins/regenerated/serializers/new-platform-flexberry-g-i-s-map-object-setting.js:8"
+            "line": " ember-flexberry-gis/addon/mixins/regenerated/serializers/new-platform-flexberry-g-i-s-map-object-setting.js:7"
+        },
+        {
+            "message": "Missing item type\nField name where object identifier is kept.",
+            "line": " ember-flexberry-gis/addon/mixins/regenerated/serializers/new-platform-flexberry-g-i-s-map.js:17"
         },
         {
             "message": "Missing item type\nInitializes some mixin properties.",
