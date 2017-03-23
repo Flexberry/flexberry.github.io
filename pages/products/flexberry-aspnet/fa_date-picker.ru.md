@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа**: [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа**: [FlexberryASP.NET](fa_flexberry-asp-net.html)
 * **Компонент**: [Web-контролы и web-компоненты](fa_web-controls.html)
 * **Предназначение:** Web-контрол для выбора даты и времени
 * **JavaScript API:** да 

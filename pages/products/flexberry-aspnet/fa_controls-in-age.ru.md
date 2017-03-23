@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт:** [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт:** [Flexberry ASP.Net](fa_flexberry-asp-net.html)
 * **Компонент:** [AjaxGroupEdit](fa_ajax-group-edit.html)
 * **Предназначение:** Представлен механизм, с помощью которого возможно донастроить контролы, которые используются в [AjaxGroupEdit.](fa_ajax-group-edit.html)
 

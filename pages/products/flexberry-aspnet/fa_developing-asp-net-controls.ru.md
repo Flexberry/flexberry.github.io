@@ -9,12 +9,12 @@ lang: ru
 
 ---
 
-* **Платформа:** [FlexberryASP.NET.](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа:** [FlexberryASP.NET.](fa_flexberry-asp-net.html)
 * **Компонент:** [Web-контролы и web-компоненты.](fa_web-controls.html)
-* **Предназначение:** Правил и рекомендаций по разработке ASP.NET web-контролов с использованием платформы [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html).
+* **Предназначение:** Правил и рекомендаций по разработке ASP.NET web-контролов с использованием платформы [FlexberryASP.NET](fa_flexberry-asp-net.html).
 
 ## Введение
-Данная статья содержит пополняемый набор правил и рекомендаций по разработке ASP.NET web-контролов с использованием платформы [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html).
+Данная статья содержит пополняемый набор правил и рекомендаций по разработке ASP.NET web-контролов с использованием платформы [FlexberryASP.NET](fa_flexberry-asp-net.html).
 
 ## Инициализация внутренней структуры контрола
 

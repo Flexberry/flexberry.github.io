@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа:** [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа:** [FlexberryASP.NET](fa_flexberry-asp-net.html)
 * **Компонент:** [Операции AjaxGroupEdit](fa_a-g-e-operations.html)
 * **Предназначение:** Возможность открытия web-формы редактирования в AjaxGroupEdit в разных режимах. 
 

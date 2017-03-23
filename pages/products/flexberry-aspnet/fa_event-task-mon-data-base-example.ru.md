@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа:** [Flexberry ASP.NET.](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа:** [Flexberry ASP.NET.](fa_flexberry-asp-net.html)
 * **Компонент:** [Мониторы задач Flexberry ASP.NET.](fa_monitor-tasks--Flexberry--web.html)
 * **Предназначение:** позволяет посмотреть запросы, которые выполняет сервис данных к хранилищу.
 

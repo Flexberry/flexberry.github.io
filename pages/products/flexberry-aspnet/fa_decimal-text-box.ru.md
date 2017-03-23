@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа:** [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа:** [Flexberry ASP.Net](fa_flexberry-asp-net.html)
 * **Компонент:** [Web-контролы и web-компоненты](fa_web-controls.html)
 * **Предназначение:** Web-контрол, который используется для валидации положительных вещественных чисел в форме десятичной дроби.
 
