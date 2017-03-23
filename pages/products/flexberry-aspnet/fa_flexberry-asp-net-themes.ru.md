@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.Net](fa_flexberry-asp-net.html)
 * **Предназначение**: Темы оформления позволяют использовать и менять единообразное исполнение web-контролов и web-форм.
 
 ## Статьи по теме

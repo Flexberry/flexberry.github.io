@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт:** [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт:** [Flexberry ASP.NET](fa_flexberry-asp-net.html)
 * **Компонент:** [Решения по верстке страниц и CSS](fa_page-layout.html)
 * **Предназначение:** инструкция, как сделать так, чтобы footer всегда был внизу страницы.
 

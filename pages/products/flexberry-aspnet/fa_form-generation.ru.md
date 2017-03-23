@@ -9,9 +9,9 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
 * **Компонент:** [Flexberry ASP.NET. Модуль расширения Flexberry Designer для генерации web-приложений по uml-моделям](flexberry-asp-net-case-plugin.html)
-* **Предназначение**: Генерация форм во [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html).
+* **Предназначение**: Генерация форм во [Flexberry ASP.NET](fa_flexberry-asp-net.html).
 
 ## Общие принципы генерации форм
 Для каждой формы генерируется 3 файла: aspx-разметка, code-behind и designer-код.
