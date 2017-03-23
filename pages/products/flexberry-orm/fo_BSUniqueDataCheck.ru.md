@@ -5,7 +5,10 @@ keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
 permalink: ru/fo_b-s-unique-data-check.html
 ---
-
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Бизнес-сервер](fo_business-logic.html)
+* **Программная библиотека**: ICSSoft.STORMNET.Business.dll
+* **Предназначение**: Приведён способ проверки уникальности данных в [бизнес-сервере](fo_business-logic.html).
 ## Проверка уникальности введенных данных
 
 Если возникает необходимость проверки уникальности введенных данных, необходимо в методе `OnUpdate` [бизнес-сервера](fo_business-servers-wrapper-business-facade.html) производить вычитку данных и сравнивать данные из базы с введенными данными.
@@ -17,8 +20,8 @@ permalink: ru/fo_b-s-unique-data-check.html
 
 Предположим, что мы хотим проверять уникальность введенного номера кредитной карты.
 
-## Добавим бизнес-сервер КредитнаяКартаБС и выставим у объекта КредитнаяКарта ссылку на этот [бизнес-сервер](fo_business-servers-wrapper-business-facade.html).
-## В методе [`OnUpdate`](b-s-example.html) необходимо [вычитать](Flexberry-s-q-l-query.html) все КредитныеКарты клиента и проверить, есть ли среди них карты с таким номером
+* Добавим бизнес-сервер КредитнаяКартаБС и выставим у объекта КредитнаяКарта ссылку на этот [бизнес-сервер](fo_business-servers-wrapper-business-facade.html).
+* В методе [`OnUpdate`](b-s-example.html) необходимо [вычитать](Flexberry-s-q-l-query.html) все КредитныеКарты клиента и проверить, есть ли среди них карты с таким номером
 
 ```
 var ds = (SQLDataService)DataServiceProvider.DataService;
