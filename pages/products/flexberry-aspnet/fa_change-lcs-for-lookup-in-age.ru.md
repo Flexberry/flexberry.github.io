@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа**: [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа**: [FlexberryASP.NET](fa_flexberry-asp-net.html)
 * **Компонент**: [Настройки для LookUp в AGE](fa_settings-for-look-up-in-a-g-e.html)
 * **Предназначение**: Настройка ограничения для LookUp в [AjaxGroupEdit](fa_ajax-group-edit.html) 
 

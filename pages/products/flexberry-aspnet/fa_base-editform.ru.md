@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.Net](fa_flexberry-asp-net.html)
 * **Предназначение**: Базовый класс для [web-форм редактирования.](fa_web-edit-form.html)
 
 ## Введение

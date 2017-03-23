@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
 * **Компонент**: [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
 * **Предназначение**: описание базовой темы web-шаблона.
 

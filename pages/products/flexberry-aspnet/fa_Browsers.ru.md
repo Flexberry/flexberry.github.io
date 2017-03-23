@@ -10,12 +10,12 @@ lang: ru
 ---
 
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
 * **Предназначение**: список поддерживаемых браузеров.
 
 ## Браузеры
 
-На данный момент технология [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html) поддерживает следующие браузеры:
+На данный момент технология [Flexberry ASP.NET](fa_flexberry-asp-net.html) поддерживает следующие браузеры:
 
 * Internet Explorer 8 и старше (за исключением Object.Create(), т.к. он появился только в IE9).
 * Chrome версии 20 и старше
@@ -41,7 +41,7 @@ lang: ru
 
 ## Выводы и рекомендации
 
-Приложения на базе [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html) работают практически на всех платформах, но не на всех браузерах.
+Приложения на базе [Flexberry ASP.NET](fa_flexberry-asp-net.html) работают практически на всех платформах, но не на всех браузерах.
 Для того чтобы работало нормально нужно поддержать обработку касаний.
 
 Какие плюсы у этого:
