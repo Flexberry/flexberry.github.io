@@ -5,13 +5,13 @@ keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
 permalink: ru/fo_attributes-class-data.html
 ---
-* **Продукт**: [FlexberryDesigner|Flexberry Designer)
-* **Компонент**: [Editing-diagram|Редактор UML-диаграмм)
-* **Предназначение**: На [Class-diagram|диаграмме классов) [ClassDiagramConstraction|атрибут в классе) определяется в соответствии с нотацией UML.
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Редактор UML-диаграмм](fd_editing-diagram.html)
+* **Предназначение**: На [диаграмме классов](fd_class-diagram.html) [атрибут в классе](fd_class-diagram-constraction.html) определяется в соответствии с нотацией UML.
 
 ## Определение атрибута и что как с него генерируется
 
-На [Class-diagram|диаграмме классов) [ClassDiagramConstraction|атрибут в классе) определяется строкой вида:
+На [диаграмме классов](fd_class-diagram.html) [атрибут в классе](fd_class-diagram-constraction.html) определяется строкой вида:
 
 ```
 [/)[AccessModifier)Name:Type[=DefaultValue)
@@ -25,7 +25,7 @@ permalink: ru/fo_attributes-class-data.html
 +idx:int=0
 ```
 
-| Что генерируется | Генерация в SQL DDL |Генерация в .Net-язык|
+| Что генерируется | Генерация в SQL DDL |Генерация в .Net-язык |
 |---|---|---|
 | "/" - если указано, [NotStored-Attributes|атрибут является нехранимым) 
 | Если [NotStored-Attributes|атрибут не является хранимым) определение поля в CREATE TABLE не генерируется 
@@ -49,4 +49,3 @@ permalink: ru/fo_attributes-class-data.html
 
  ''Замечание:'' Если вы создаете свой [DataTypesProperties|собственный тип на диаграмме (класс со стериотипом "type")), то, прежде чем задавать значение по-умолчанию, необходимо произвести компиляцию объектов. Лишь после компиляции можно задавать значение по-умолчанию и производить генерацию кода.
 |
-
