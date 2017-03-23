@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
 * **Компонент**: [Расширенный редактор ограничений](fa_advanced-limit-editor.html).
 * **Предназначение**: Типы параметров в [редакторе ограничений](fa_advanced-limit-editor.html) локализованы.
 

@@ -3,7 +3,7 @@ title: Flexberry ASP.NET
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_flexberry-a-s-p-n-e-t.html
+permalink: ru/fa_flexberry-asp-net.html
 folder: products/flexberry-aspnet/
 lang: ru
 

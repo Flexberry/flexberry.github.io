@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа:** [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа:** [Flexberry ASP.Net](fa_flexberry-asp-net.html)
 * **Компонент:** [AjaxGroupEdit](fa_ajax-group-edit.html)
 * **Предназначение:** Возможность добавления объектов в [AjaxGroupEdit](fa_ajax-group-edit.html) при инициализации формы.
 
