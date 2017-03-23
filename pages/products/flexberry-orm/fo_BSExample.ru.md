@@ -116,7 +116,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Created)
 
 **Примечание**: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](fo_func-e-q.html).
 
-**Примечание**: Обратите внимание на первую проверку **[UpdatedObject.GetStatus() == ObjectStatus.Created](object-status-and-loading-state.html)**, она позволяет нам отсечь случаи обновления или удаления объекта. 
+**Примечание**: Обратите внимание на первую проверку **[UpdatedObject.GetStatus() == ObjectStatus.Created](fo_object-status-and-loading-state.html)**, она позволяет нам отсечь случаи обновления или удаления объекта. 
 
 
 ### Итоги
