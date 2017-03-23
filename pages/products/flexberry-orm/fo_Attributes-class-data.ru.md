@@ -24,4 +24,3 @@ permalink: ru/fo_attributes-class-data.html
 
 | Что генерируется | Генерация в SQL DDL | Генерация в .Net-язык|
 |---|---|---|
-
