@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.Net](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.Net](fa_flexberry-asp-net.html)
 * **Компонент**: [Web-контролы и web-компоненты](fa_web-controls.html)
 * **Предназначение**: Web-формы редактирования предназначены для создания и редактирования объектов.
 

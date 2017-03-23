@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа:** [FlexberryASP.NET.](fa_flexberry-a-s-p-n-e-t.html)
+* **Платформа:** [FlexberryASP.NET.](fa_flexberry-asp-net.html)
 * **Предназначение:** Ответы на часто возникающие вопросы.
 
 {% include note.html content="Страница находится в разработке" %}

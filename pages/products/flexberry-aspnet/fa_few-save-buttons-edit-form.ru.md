@@ -9,7 +9,7 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-a-s-p-n-e-t.html)
+* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
 * **Компонент**: [Web-форма редактирования](fa_web-edit-form.html)
 * **Предназначение**: добавлениe нескольких кнопок сохранения на [web-форму редактирования](fa_web-edit-form.html).
 
