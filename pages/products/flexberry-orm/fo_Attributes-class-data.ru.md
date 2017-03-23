@@ -62,3 +62,53 @@ permalink: ru/fo_attributes-class-data.html
 | `PBGetStart` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора get. |
 | `PBSetEnd` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора set. |
 | `PBSetStart` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set. |
+| `Autoincrement` - поле является автоинкрементируемым (указание галочки корректно только для атрибутов, которые помечены `NotNull` и имеют тип, [маппируемый](fd_types-map.html) на тип `int`) | Если отмечено, то у нового поля в таблице будет генерироваться (http://msdn.microsoft.com/ru-ru/library/ms186775.aspx) |  |
+| `IDENTITY(Seed,Increment)`), где `Seed` - ядро инкремента, `Increment` - шаг инкремента. По умолчанию `Seed` и `Increment` равны единице. Если указано `DefaultValue`, то в качестве `Seed` берётся значение `DefaultValue`. | Если галочка указана - у соответствующего элемента добавляется атрибут [`DisableInsertPropertyAttribute`](fo_disable-insert-property-attribute.html). | Свойство, для которого указан `autoincrement`, будет обновлять значения только при записи данных в базу, следовательно, выносить поле для редактирование этого свойства на форму редактирования бессмысленно и даже вредно.
+| `Hint` - подсказка для поля | Никак. |  Никак (свойство используется не во всех плагинах генерации, генерируется подсказка, отображающая рядом с контролом, где представлено значение поля). |
+
+{% include important.html content="Изменение галочки `Autoincrement` у атрибута, который уже сгенерирован в базу данных, невозможно, поскольку MS SQL Server позволяет выполнить назначение необходимых свойств только путём удаления и повторного создания столбца. Если используется `Autoincrement`, то обновление этого поля происходит не сразу, а после записи в БД. Это связано с механизмом работы  IDENTITY(Seed,Increment). Как следствие, Вы __не увидите__ изменений, пока не перевычитаете данные из БД." %}
+
+## Пример
+Если определение свойства выглядит так:
+
+```cs
++Название:Строка100
+```
+
+То код будет следующий:
+
+```cs
+//....
+
+private string fНазвание;
+
+//....
+
+// *** Start programmer edit section *** (Ошибка.Название CustomAttributes)
+
+// *** End programmer edit section *** (Ошибка.Название CustomAttributes)
+public virtual string Название
+{
+	get
+	{
+		// *** Start programmer edit section *** (Ошибка.Название Get start)
+
+		// *** End programmer edit section *** (Ошибка.Название Get start)
+		string result = this.fНазвание;
+		// *** Start programmer edit section *** (Ошибка.Название Get end)
+
+		// *** End programmer edit section *** (Ошибка.Название Get end)
+		return result;
+	}
+	set
+	{
+		// *** Start programmer edit section *** (Ошибка.Название Set start)
+
+		// *** End programmer edit section *** (Ошибка.Название Set start)
+		this.fНазвание = value;
+		// *** Start programmer edit section *** (Ошибка.Название Set end)
+
+		// *** End programmer edit section *** (Ошибка.Название Set end)
+	}
+}
+```
