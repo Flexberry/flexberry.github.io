@@ -49,15 +49,16 @@ permalink: ru/fo_attributes-class-data.html
 | `AccessModifier` - дублирует определение атрибута |  |  | 
 | `Stored` - дублирует определение атрибута |  |  |   
 | `Name` - дублирует определение атрибута |  |  |  
-| `Description` | Никак | | DocComment перед определением свойства |
+| `Description` | Никак | DocComment перед определением свойства |
 | `Type` - дублирует определение атрибута |  |  |   
 | `DefaultValue` - дублирует определение атрибута |  |  |   
 |  `NotNull` - указывает, что данный атрибут не может иметь пустого (Null) значения |  Если отмечено, то определение поля в CREATE TABLE генерируется как NOT NULL |  Перед определением свойства генерируется указание атрибута NotNullAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) |
-|- class="tablerow"
-|  `DataService expression` - некоторое выражение, обеспечивающее счёт вычислимого атрибута 
-|  Никак
-|  Перед определением свойства генерируется указание атрибута [NotStored-Attributes|DataServiceExpressionAttribute) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
-|- class="tablerow"
-|  `Storage` - некоторое логическое имя, под которым хранятся свойства 
-|  Если указано, то такое и будет имя поля
-|  Перед определением свойства генерируется указание атрибута [DataObjectsAndDatabaseStructures#AttributeDefinitionStorage|PropertyStorageAttribute) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
+| `DataService expression` - некоторое выражение, обеспечивающее счёт вычислимого атрибута | Никак |  Перед определением свойства генерируется указание атрибута [DataServiceExpressionAttribute](fo_not-stored-attributes.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
+| `Storage` - некоторое логическое имя, под которым хранятся свойства |  Если указано, то такое и будет имя поля |  Перед определением свойства генерируется указание атрибута [PropertyStorageAttribute](fo_data-objects-and-database-structures.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
+| `Order` - использовать ли упорядочение в случаях, когда объекты являются детейлами. | Никак |  Перед определением свойства генерируется указание атрибута [OrderAttribute](fo_functionality-work-with-detail-array.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
+| `Trim` - для атрибутов строкового типа, применять ли удаление лишних пробелов в значениях | Никак | Перед определением свойства генерируется указание атрибута [TrimmedStringStorageAttribute](fo_trimmed-string-storage.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) <br>При установке значений в свойство [Flexberry ORM](fo_flexberry-o-r-m.html) применяет функцию string.Trim(). |
+| `PBCustomAttributes` - [скобка программиста](fo_programmer-brackets.html) | Никак |  Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения .Net атрибутов перед кодом свойства. |
+| `PBGetEnd` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора get. |
+| `PBGetStart` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора get. |
+| `PBSetEnd` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора set. |
+| `PBSetStart` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set. |
