@@ -17,13 +17,6 @@ permalink: ru/fo_data-object-generated-structure.html
 * хранение [копии данных](fo_data-object-copy.html) для вычисления изменённых [атрибутов](fo_attributes-class-data.html),
 * означивание и хранение [первичного ключа](fo_primary-keys-objects.html).
 
-Все классы данных наследуются от базового `[DataObject](fo_dataobject.html)`, обеспечивающего основные манипуляции:
-
-* [статусы](fo_object-status-and-loading-state.html), 
-* хранение данных, 
-* хранение [копии данных](fo_data-object-copy.html) для вычисления изменённых [атрибутов](fo_attributes-class-data.html), 
-* означивание и хранение [первичного ключа](fo_primary-keys-objects.html).
-
 Пример:
 
 ```cs
