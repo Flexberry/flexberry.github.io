@@ -8,14 +8,14 @@ permalink: ru/fo_variable-def.html
 
 При построении ограничений с помощью метода `GetFunction` параметром этому методу в зависимости от типа применяемой функции может передаваться описание переменной:
 
-* при задании ограничения с помощью `[SQLWhereLanguageDef](fo_function-list.html)` используется класс `VariableDef`,
-* при наложении ограничения на детейл с помощью `[ExternalLangDef](fo_external-lang-def.html)` для описания переменной-детейла применяется класс `DetailVariableDef`.
+* при задании ограничения с помощью [`SQLWhereLanguageDef`](fo_function-list.html) используется класс `VariableDef`,
+* при наложении ограничения на детейл с помощью [`ExternalLangDef`](fo_external-lang-def.html) для описания переменной-детейла применяется класс `DetailVariableDef`.
 
 Рассмотрим далее данные классы.
 
 ## VariableDef
 
-Класс `VariableDef` служит для определения переменной в ограничении (обычно указывает на атрибут в [объекте](fo_dataobject.html)). Используется вместе с `[SQLWhereLanguageDef](fo_function-list.html)`.
+Класс `VariableDef` служит для определения переменной в ограничении (обычно указывает на атрибут в [объекте](fo_dataobject.html)). Используется вместе с [`SQLWhereLanguageDef`](fo_function-list.html).
 
 Определен в пространстве имен: `ICSSoft.STORMNET.FunctionalLanguage`.
 
@@ -104,3 +104,37 @@ D:/PMasalkinGit/flexberry.github.io/images/pages/products/flexberry-orm/variable
 Необходимо отфильтровать ОбразовательныеДокументы для СтрокиРекомендательногоСписка. 
 При задании `DetailVariableDef` следует указать: `OwnerConnectProp` = ЗаявлениеАбитуриента.Личность, `ConnectMasterProp` = Личность.
 
+Необходимо отфильтровать ОбразовательныеДокументы для СтрокиРекомендательногоСписка. 
+При задании `DetailVariableDef` следует указать: `OwnerConnectProp` = ЗаявлениеАбитуриента.Личность, `ConnectMasterProp` = Личность.
+
+### Задание ограничений на псевдодетейлы
+
+Рассмотрим на примере. Пусть сущности "Клиент" и "Кредит" связаны представленным на изображении образом.
+
+[image|Изображение|{UP(VariableDef)}PseudoDetails.png)
+
+Нужно ограничить клиентов, задав при этом ограничение на ссылающихся на них кредиты.
+ 
+Очевидно, что с точки зрения хранения данной объектной модели в БД в соответствии с [существующими правилами](fo_data-objects-and-database-structures.html), нет различия между агрегацией и простой ассоциацией. Поэтому запросы, ограничивающие выборку по критериям из дочерней таблицы, не отличаются в случае агрегации и ассоциации. Следовательно для построения ограничения в случае всевдодетейла необходимо использовать `DetailVariableDef` совместно с [`ExternalLangDef`](fo_external-lang-def.html). 
+ 
+Если в описанном примере надо выбрать клиентов, у которых есть кредиты на срок более 15 лет, код будет выглядеть следующим образом:
+
+``` csharp
+ExternalLangDef ldef = ExternalLangDef.LanguageDef;
+LoadingCustomizationStruct lcsДолгосрочныеКлиенты = LoadingCustomizationStruct.GetSimpleStruct(typeof(Клиент), "КлиентE");
+lcsДолгосрочныеКлиенты.LoadingTypes = new[) { typeof(Клиент) };
+var view = Information.GetView("КредитE", typeof(Кредит));
+var dvd = new DetailVariableDef
+{
+    ConnectMasterPorp = "Клиент",
+    OwnerConnectProp = new[) { SQLWhereLanguageDef.StormMainObjectKey },
+    View = view,
+    Type = ldef.GetObjectType("Details")
+};
+lcsДолгосрочныеКлиенты.LimitFunction = ldef.GetFunction(ldef.funcExist,
+                                                        dvd,
+                                                        ldef.GetFunction(ldef.funcGEQ,
+                                                                         new VariableDef(ldef.GuidType, "СрокКредита"),
+                                                                         15));
+ICSSoft.STORMNET.DataObject[) dobjsДолгосрочныеКлиенты = DataServiceProvider.DataService.LoadObjects(lcsДолгосрочныеКлиенты);
+```

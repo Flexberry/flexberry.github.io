@@ -10,7 +10,7 @@ lang: ru
 
 ## Этот пример показывает, как использовать СУБД Postgres в качестве хранилища.
 
-* Мы надеемся, что вы установили Postgres. Если нет, то посетите http://www.postgresql.org/;
+* Мы надеемся, что вы установили Postgres. Если нет, то посетите [http://www.postgresql.org/]();
 * Создайте базу данных, выполнив скрипт "FlexberryORM\Database\POSTGRES\create.sql";
 * Затем откройте app.config и найдите секцию appSettings;
 * Закомментируйте опции DataServiceType and CustomizationStrings, затем переименуйте опции DataServiceType_POSTGRE и CustomizationStrings_POSTGRE в DataServiceType и CustomizationStrings;

@@ -10,9 +10,9 @@ lang: ru
 
 ## Обработка TypeUsage
 
-Встроенные в `Flexberry Platform` [сервисы данных](fo_data-service.html) (`[SQLDataService](fo_sql-data-service.html)` и его наследники) обрабатывают `[TypeUsage](fo_type-usage-problem.html)` следующим образом:
+Встроенные в `Flexberry Platform` [сервисы данных](fo_data-service.html) ([`SQLDataService`](fo_sql-data-service.html) и его наследники) обрабатывают [`TypeUsage`](fo_type-usage-problem.html) следующим образом:
 
-Если указан `[TypeUsage](fo_type-usage-problem.html)` для [мастерового свойства](fo_master-association.html), этому свойству [в структуре данных соответствуют](fo_data-objects-and-database-structures.html) внешние ключи на таблицы, соответствующие указанным в [TypeUsage](fo_type-usage-problem.html) классам. Имена внешним ключам даются такие: `<ИмяРолиМастера>_M<ПорядкНомерВTypeUsage>.«ПорядкНомерВTypeUsage»` — начинается с 0.
+Если указан [`TypeUsage`](fo_type-usage-problem.html) для [мастерового свойства](fo_master-association.html), этому свойству [в структуре данных соответствуют](fo_data-objects-and-database-structures.html) внешние ключи на таблицы, соответствующие указанным в [TypeUsage](fo_type-usage-problem.html) классам. Имена внешним ключам даются такие: `<ИмяРолиМастера>_M<ПорядкНомерВTypeUsage>.«ПорядкНомерВTypeUsage»` — начинается с 0.
 
 
 Таким образом, вышеприведённому примеру соответствует таблица, у которой есть два внешних ключа с именами M_m0 (соответствует M1) и M_m1 (соответствует M2).
@@ -21,7 +21,7 @@ lang: ru
 
 Если есть потребность задать вместо имён M_m0 и M_m1 некоторые мнемонические имена, то необходимо:
 
-1. Отключить галочку `[AutoGenerateTypeUsage](fo_master-association.html)`.
+1. Отключить галочку [`AutoGenerateTypeUsage`](fo_master-association.html).
 2. Правильно проставить атрибуты [TypeUsage](fo_type-usage-problem.html) и Storage.
 
 Например, пусть имеется диаграмма вида:
