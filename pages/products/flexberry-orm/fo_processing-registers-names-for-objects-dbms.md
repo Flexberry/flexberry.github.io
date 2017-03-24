@@ -10,7 +10,6 @@ lang: ru
 # Обработка регистров в именах объектов для СУБД
 Работая с [SQLDataService](fo_sql-data-service.html) нужно обратить внимание на следующие особенности обработки регистров:
 
-
 <table border='1'>
 <tr class="tablerow">
   <td rowspan='2' bgcolor="LightGray"></td>
