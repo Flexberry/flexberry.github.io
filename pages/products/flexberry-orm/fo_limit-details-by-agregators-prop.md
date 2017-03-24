@@ -17,7 +17,7 @@ lang: ru
 
 Выявить ошибочно занесенные данные в базе: найти все компании, у которых существует программный продукт созданный раньше создания самой компании.
 
-```cpp
+```csharp
  DataServiceLoader.InitializeDataSetvice();
  View view = Information.GetView("CompanyL", typeof(Company));
  View view2 = Information.GetView("SoftwareL", typeof(Software));
@@ -28,8 +28,8 @@ lang: ru
  lcs.LimitFunction = langDef.GetFunction(langDef.funcExist,
                                          detail,
                                          langDef.GetFunction(langDef.funcL,
-                                                             new VariableDef(langDef.DateTimeType, "DateCreation"),
-                                                             new VariableDef(langDef.DateTimeType, "Company.DateCreation")));
+                                                             new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
+                                                             new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
  var dos = DataServiceProvider.DataService.LoadObjects(lcs);
 ```
  

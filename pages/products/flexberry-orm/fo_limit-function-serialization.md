@@ -10,9 +10,9 @@ lang: ru
 
 ## Подход к сериализации LimitFunction
 
-Класс `[Function](fo_limit-function.html)` реализует интерфейс `ISerializable`. Поэтому для функций ограничения доступна как `SOAP`, так и бинарная сериализация. 
+Класс [`Function`](fo_limit-function.html) реализует интерфейс `ISerializable`. Поэтому для функций ограничения доступна как `SOAP`, так и бинарная сериализация. 
 
-Рекомендуется использовать инструменты библиотеки `[ICSSoft.STORMNET.Tools.XmlTools](fo_ics-soft-stormnet-tools.html)` вместо прямого обращения к `System.Runtime.Serialization.Formatters.Soap.SoapFormatter` или `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`.
+Рекомендуется использовать инструменты библиотеки [`ICSSoft.STORMNET.Tools.XmlTools`](fo_ics-soft-stormnet-tools.html) вместо прямого обращения к `System.Runtime.Serialization.Formatters.Soap.SoapFormatter` или `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`.
  
 
 В указанной библиотеке доступны классы:
@@ -20,16 +20,11 @@ lang: ru
 * `ToolXML` - позволяет выполнить сериализацию средствами `SoapFormatter`,
 * `ToolBinarySerializer` - позволяет выполнить сериализацию средствами `BinaryFormatter`.
 
-В технологическом коде для сохранения `[Function](fo_limit-function.html)` используется `binary`-сериализация:
-
-* в Windows-приложениях при [сохранении ограничений на форме задания ограничения](fo_adv-limit-function-serialization.html), 
-* в Web-приложениях для сохранения `[Function](fo_limit-function.html)` в `Session`(веб-сессия ASP.NET), когда сессия хранится в `StateServer`, т.е. в отдельно запущенной службе.
-
 ## Пример сравнения бинарной и SOAP сериализации LimitFunction
 
 Бинарный вид сериализации более производительный и строки получаются короче.
 
-```cpp
+```csharp
 [TestMethod]        
 public void FunctionSerializeTst()        
 {

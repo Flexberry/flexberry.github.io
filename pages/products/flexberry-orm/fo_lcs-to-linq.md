@@ -10,13 +10,13 @@ lang: ru
 
 Существуют методы, позволяющие производить конвертацию из [функции ограничения](fo_limit-function.html) в выражение для [LINQProvider](fo_linq-provider.html) и [наоборот](fo_limitation.html).
 
-**Получение Linq-выражения из функции ограничения**
+`Получение Linq-выражения из функции ограничения`
 
 `lf` - функция ограничения.
 
 `expression` - Linq-выражение.
 
-```cpp
+```csharp
 var limitResolvingViews = new List<View>() { Кредит.Views.C__КредитE }; 
 Expression expression = new LcsInterpretator().Interpret(typeof(Кредит), lf, "x", limitResolvingViews);
 ```

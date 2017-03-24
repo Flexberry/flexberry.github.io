@@ -10,7 +10,7 @@ lang: ru
 
 ## Метод Information.GetPropertyStorageName
 
-Статический метод `GetPropertyStorageName` класса `[Information](fo_information-class-as-metadata-supervisor.html)` позволяет получить [имя хранения] (fo_data-objects-and-database-structures.html) .Net-свойства, установленное атрибутом `PropertyStorageAttribute`).
+Статический метод `GetPropertyStorageName` класса [`Information`](fo_information-class-as-metadata-supervisor.html) позволяет получить [имя хранения .Net-свойства, установленное атрибутом `PropertyStorageAttribute`](fo_data-objects-and-database-structures.html).
 
 ### Метод без использования индекса
 
@@ -56,10 +56,10 @@ static public string GetPropertyStorageName(System.Type type, string property, i
 
 ## Особенности генерации атрибута свойств PropertyStorage
 
-* [Attributes-class-data|Атрибут `Storage`, заданный для свойств классов), после генерации будет представлен в виде объявления атрибута `PropertyStorage` без массива.
-* Атрибуты [Detail-associations-and-their-properties|`Aggregator Storage` детейловой связи) и [Master-Association|`Storage` мастеровой связи) после генерации будут представлен в виде объявления атрибута `PropertyStorage` без массива, если выполнены следующие условия:
-** Storage-атрибут содержит только одно непустое значение.
-** Атрибут [TypeUsage-problem|TypeUsage) содержит более одного значения.
+* [Атрибут `Storage`, заданный для свойств классов](fo_attributes-class-data.html), после генерации будет представлен в виде объявления атрибута `PropertyStorage` без массива.
+* Атрибуты [`Aggregator Storage` детейловой связи](fo_detail-associations-and-their-properties.html) и [`Storage` мастеровой связи](fd_master-association.html) после генерации будут представлен в виде объявления атрибута `PropertyStorage` без массива, если выполнены следующие условия:
+  * Storage-атрибут содержит только одно непустое значение.
+  * Атрибут [TypeUsage](fo_type-usage-problem.html) содержит более одного значения.
 
 
 

@@ -9,6 +9,7 @@ lang: ru
 ---
 
 ## Функция импликации (funcImplication)
+
 funcImplication - функция [ExternalLangDef](fo_external-lang-def.html) для задания логической импликации.
 
 Импликация - функция двух логических операндов: предпосылки и следствия, может принимать следующие значения:
@@ -25,8 +26,10 @@ funcImplication - функция [ExternalLangDef](fo_external-lang-def.html) д
 
 
 ## Пример
+
 **Все Ивановы Иваны и все не Ивановы**
-``` cpp
+
+``` csharp
 var langDef = new ExternalLangDef();
 Function function = langDef.GetFunction(langDef.funcImplication,
                                                     langDef.GetFunction(langDef.funcEQ,

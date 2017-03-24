@@ -27,7 +27,7 @@ lang: ru
 
 Ниже приводится пример [сервиса данных](fo_data-service.html), выполняющего работу с Microsoft SQL Server напрямую, через SQLClient:
 
- cpp
+``` csharp
 public class MSSQLDataService:ICSSoft.STORMNET.Business.SQLDataService
 {
     public override System.Data.IDbConnection GetConnection()
@@ -43,5 +43,6 @@ public class MSSQLDataService:ICSSoft.STORMNET.Business.SQLDataService
         return result;
     } 
 }
+```
 
 В этом примере переопределены всего два метода: один теперь выполняет подсоединение к источнику напрямую, другой учитывает специфику указания в запросы функции ISNULL.

@@ -12,7 +12,7 @@ lang: ru
 
 В данном примере создается граф объектов данных и затем производится их сохранение в БД с помощью [сервиса данных](fo_data-service.html).
 
-```cpp
+```csharp
 Console.WriteLine("1. How to instantiate dataobjects and persist into DB.");
 
 // Объекты данных создаются как и экземпляры других классов .Net - с помощью вызова конструктора.
@@ -101,5 +101,3 @@ catch (Exception exc)
     Console.WriteLine("Something wrong: {0}", exc);
 }
 ```
-
-Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](fo_code-samples.html).
