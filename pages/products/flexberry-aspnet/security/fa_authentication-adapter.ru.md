@@ -1,10 +1,10 @@
 ---
-title: RightManager-module. Добавление пользователей в БД системы полномочий при windows-аутентификации
+title: Добавление пользователей в БД системы полномочий при windows-аутентификации
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
 permalink: ru/fa_authentication-adapter.html
-folder: products/flexberry-aspnet/
+folder: products/flexberry-aspnet/security/
 lang: ru
 
 ---
@@ -19,7 +19,7 @@ lang: ru
 
 1.
 
-```cs
+```csharp
 /// <summary>
 /// Получение объекта, соответствующего текущему пользователю в БД полномочий
 /// (полное имя пользователя берётся как HttpContext.Current.User.Identity.Name)
@@ -30,7 +30,7 @@ public static Agent GetDbUser()
 
 2. 
 
-```cs
+```csharp
 /// <summary>
 /// Получение объекта, соответствующего текущему пользователю в БД полномочий
 /// </summary>
@@ -41,7 +41,7 @@ public static Agent GetDbUser(string username)
 
 3.
 
-```cs 
+```csharp 
 /// <summary>
 /// Получение объекта, соответствующего текущему пользователю в БД полномочий.
 /// </summary>
@@ -54,7 +54,7 @@ public static Agent GetDbUser(string username, IDataService dataService)
 
 4.
 
-```cs
+```csharp
 /// <summary>
 /// Проверка существования в системе полномочий пользователя с указанным логином.
 /// </summary>
@@ -66,7 +66,7 @@ public static bool IsUserExist(string login)
 
 5.
 
-```cs
+```csharp
 /// <summary>
 /// Создание пользователя в БД подсистемы полномочий
 /// </summary>
@@ -78,7 +78,7 @@ public static Agent CreateDbUser(string username, string friendlyUserName)
 
 6.
 
-```cs
+```csharp
 /// <summary>
 /// Создание пользователя в БД подсистемы полномочий.
 /// </summary>
@@ -92,7 +92,7 @@ public static Agent CreateDbUser(string username, string friendlyUserName, bool 
 
 7.
 
-```cs
+```csharp
 /// <summary>
 /// Создание пользователя в БД подсистемы полномочий
 /// (имя пользователя берётся из домена)
@@ -105,7 +105,7 @@ public static Agent CreateDbUser(string username)
 
 {% include warning.html content="Данный метод стоит использовать, если есть уверенность, что в условиях, где развёрнуто приложение, настройки Active Directory позволят  корректно выполнить нижеприведённый код (если такой уверенности нет, лучше использовать перегрузку метода с двумя параметрами)" %}
 
-```cs
+```csharp
 using (var context = new PrincipalContext(ContextType.Domain))
 {
 	using (UserPrincipal userPrincipal = UserPrincipal.FindByIdentity(context, username))
@@ -140,7 +140,7 @@ using (var context = new PrincipalContext(ContextType.Domain))
 
 Использовать AuthenticationAdapter можно, например, при событии Page_Load в Site.Master:
 
-```cs
+```csharp
 protected void Page_Load(object sender, EventArgs e)
 {
 	//...
@@ -158,7 +158,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 Если при создании пользователя нужно, чтобы его пароль не был равен NULL, то нужно взять исходный код метода 6 и подредактировать его, добавив задание значения пароля. Затем использовать полученный метод для создания пользователей. Например:
 
-```cs
+```csharp
 public static Agent CreateDbUser(string username, string friendlyUserName, bool addDefaultRoles, IDataService dataService)
 {
     string login;
@@ -180,8 +180,3 @@ public static Agent CreateDbUser(string username, string friendlyUserName, bool 
     return agent;
 }
 ```
-
-## Смотрите также
-
-* [Подсистема полномочий](efs_security.html)
-* [Как создать полномочия на классы](fa_authority-to-classes.html)
