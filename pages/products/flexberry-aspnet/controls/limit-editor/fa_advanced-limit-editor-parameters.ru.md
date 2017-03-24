@@ -4,19 +4,15 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
 permalink: ru/fa_advanced-limit-editor-parameters.html
-folder: products/flexberry-aspnet/
+folder: products/flexberry-aspnet/limit-editor/
 lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
-* **Компонент**: [Расширенный редактор ограничений](fa_advanced-limit-editor.html).
-* **Предназначение**: Типы параметров в [редакторе ограничений](fa_advanced-limit-editor.html) локализованы.
-
 В [Расширенном редакторе ограничений](fa_advanced-limit-editor.html) доступна работа с параметрами.
 
 ## Локализация типов параметров
-<!--В версии после 21.11.2013-->
+
 Типы параметров в [редакторе ограничений](fa_advanced-limit-editor.html) локализованы:
 
 |Тип	|Русский вариант|	Английский вариант|
@@ -38,7 +34,3 @@ lang: ru
 |System.Enum|	Перечисление|	Enumeration|
 
 Если это Nullable-тип стандартного системного типа, то к локализованному значению типа добавляется в конце "с пустыми значениями".
-
-## См. также
-
-[Ограничения с параметрами в WOLV (для программиста)](fa_limit-with-parameters-for-developer.html)
