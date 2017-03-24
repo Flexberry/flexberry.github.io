@@ -8,9 +8,100 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
-namespace IIS.Product_20008
+## Изменения проекта и перегенерация кода
+
+Скобки программиста представляют собой структуру вида
+
+``` csharp 
+// *** Start programmer edit section *** ({0})
+
+// *** End programmer edit section *** ({0})
+```
+
+где {0} указывает на позицию скобки в коде.
+
+Если код добавлен между скобками программиста, то он будет сохранён при перегенерации приложения.
+
+<div markdown="span" class="alert alert-info" role="important"><i class="fa fa-info-circle"></i>При работе с автогенерируемыми файлами будьте внимательны и добавляйте код в правильное место.</div>
+
+Структура кода относительно скобок программиста выглядит следующим образом:
 
 ```csharp
+Генерируемый код
+Открывающая скобка программиста
+Добавленный в проект код // Не потеряется при перегенерации.
+Закрывающая скобка программиста
+Генерируемый код
+Добавленный в проект код // !! Потеряется при перегенерации, т.к. находится вне скобок программиста.
+Открывающая скобка программиста
+Добавленный в проект код // Не потеряется при перегенерации.
+Закрывающая скобка программиста
+Генерируемый код
+...
+```
+
+## Настройка скобок программиста
+
+При генерации кода добавляются следующие скобки программиста:
+
+* Заданные по умолчанию для конкретной генерируемой сущности.
+* Заданные настройками, определёнными на интерфейсе (например, [свойствами PBCustomAttributes и PBMembers классов данных](fd_data-classes.html)).
+
+Добавление пользовательских скобок программиста не поддерживается.
+
+## Возникающие ошибки
+
+Если при генерации через [Flexberry Designer](fd_landing_page.html) в лог выводится информация следующего типа:
+
+* `Ошибка: Не найдено завершение скобки в файле "D:\Проекты\КредитыTestBuild\Кредиты\Objects\Клиент.cs"`, значит, где-то в указанном файле была удалена или добавлена лишняя скобка.
+
+* исключение типа DuplicateBraceFoundedException значит,что где-то добавлена лишняя открывающая скобка.
+* исключение типа NotFoundEndOfBraceException значит, что где-то удалена закрывающая скобка.
+
+## Пример
+
+Рассмотрим на примере.
+
+В классе ниже встречается 12 скобок программиста, позволяющих внести изменения в любую часть кода. У каждой скобки свое предназначение и свое место. К примеру, скобки 
+
+``` csharp 
+// *** Start programmer edit section *** (Клиент CustomMembers)
+
+// *** End programmer edit section *** (Клиент CustomMembers)
+``` 
+
+отвечают за добавление собственных членов класса. К примеру, если мы захотим добавить метод, возвращающий строку вида "ФИО (Прописка)", то добавлять этот метод нужно будет именно в скобки. 
+
+Предположим, что метод выглядит следующим образом:
+
+``` csharp 
+public string GetFullClientString()
+{
+    return string.Format("{0} ({1})", ФИО, Прописка);
+}
+```
+
+Тогда, после добавления его в __правильное__ место, код класса (отрывок) будет выглядеть так:
+
+``` csharp
+        private string fФИО;
+        
+        private string fПрописка;
+        
+        // *** Start programmer edit section *** (Клиент CustomMembers)
+
+        public string GetFullClientString()
+        {
+            return string.Format("{0} ({1})", ФИО, Прописка);
+        }
+
+        // *** End programmer edit section *** (Клиент CustomMembers)
+```
+
+Код сгенерированного класса:
+
+``` csharp
+namespace IIS.Product_20008
 {
     using System;
     using System.Xml;
@@ -22,14 +113,6 @@ namespace IIS.Product_20008
     // *** Start programmer edit section *** (Клиент CustomAttributes)
 
     // *** End programmer edit section *** (Клиент CustomAttributes)
-    [AutoAltered()]
-    [AccessType(ICSSoft.STORMNET.AccessType.none)]
-    [View("КлиентE", new string[] {
-            "ФИО as \'ФИО\'",
-            "Прописка as \'Прописка\'"})]
-    [View("КлиентL", new string[] {
-            "ФИО as \'ФИО\'",
-            "Прописка as \'Прописка\'"})]
     public class Клиент : ICSSoft.STORMNET.DataObject
     {
         
@@ -48,7 +131,7 @@ namespace IIS.Product_20008
         // *** Start programmer edit section *** (Клиент.ФИО CustomAttributes)
 
         // *** End programmer edit section *** (Клиент.ФИО CustomAttributes)
-        [StrLen(255)]
+        [StrLen(255))
         public virtual string ФИО
         {
             get
@@ -80,7 +163,7 @@ namespace IIS.Product_20008
         // *** Start programmer edit section *** (Клиент.Прописка CustomAttributes)
 
         // *** End programmer edit section *** (Клиент.Прописка CustomAttributes)
-        [StrLen(255)]
+        [StrLen(255))
         public virtual string Прописка
         {
             get
@@ -105,81 +188,6 @@ namespace IIS.Product_20008
                 // *** End programmer edit section *** (Клиент.Прописка Set end)
             }
         }
-        
-        /// <summary>
-        /// Class views container
-        /// </summary>
-        public class Views
-        {
-            
-            /// <summary>
-            /// "КлиентE" view
-            /// </summary>
-            public static ICSSoft.STORMNET.View КлиентE
-            {
-                get
-                {
-                    return ICSSoft.STORMNET.Information.GetView("КлиентE", typeof(IIS.Product_20008.Клиент));
-                }
-            }
-            
-            /// <summary>
-            /// "КлиентL" view
-            /// </summary>
-            public static ICSSoft.STORMNET.View КлиентL
-            {
-                get
-                {
-                    return ICSSoft.STORMNET.Information.GetView("КлиентL", typeof(IIS.Product_20008.Клиент));
-                }
-            }
-        }
     }
 }
 ```
-
-В этом классе встречается 12 скобок программиста, позволяющих внести изменения в любую часть кода. У каждой скобки свое предназначение и свое место. К примеру, скобки 
-
-```csharp
- // *** Start programmer edit section *** (Клиент CustomMembers)
-
- // *** End programmer edit section *** (Клиент CustomMembers)
- ``` 
-
- отвечают за добавление собственных членов класса. К примеру, если мы захотим добавить метод, возвращающий строку вида "ФИО (Прописка)", то добавлять этот метод нужно будет именно в скобки. 
-
-Предположим, что метод выглядит следующим образом:
-
-```csharp
-public string GetFullClientString()
-{
-    return string.Format("{0} ({1})", ФИО, Прописка);
-}
-```
-
-
-Тогда, после добавления его в __правильное__ место, код класса (отрывок) будет выглядеть так:
-
-```csharp
-        private string fФИО;
-        
-        private string fПрописка;
-        
-        // *** Start programmer edit section *** (Клиент CustomMembers)
-
-        public string GetFullClientString()
-        {
-            return string.Format("{0} ({1})", ФИО, Прописка);
-        }
-
-        // *** End programmer edit section *** (Клиент CustomMembers)
-```
-
-## Возникающие ошибки
-
-Если при генерации через Flexberry в лог выводится информация следующего тип:
-`Ошибка: Не найдено завершение скобки в файле "D:\Проекты\КредитыTestBuild\Кредиты\Objects\Клиент.cs"`, значит где-то в указанном файле была удалена или добавлена лишняя скобка.
-
-Если при генерации приложения возникает исключение типа [DuplicateBraceFoundedException](http://storm:20013/class_s_t_o_r_m_c_a_s_e_1_1_s_t_o_r_m_n_e_t_1_1_generator_1_1_duplicate_brace_founded_exception.html), значит где-то добавлена лишняя открывающая скобка.
-
-Если при генерации приложения возникает исключение типа [NotFoundEndOfBraceException](http://storm:20013/class_s_t_o_r_m_c_a_s_e_1_1_s_t_o_r_m_n_e_t_1_1_generator_1_1_not_found_end_of_brace_exception.html), значит где-то удалена закрывающая скобка.
