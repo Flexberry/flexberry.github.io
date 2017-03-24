@@ -5,7 +5,7 @@ keywords: Flexberry ORM, Public, Черновик статьи
 toc: true
 permalink: ru/fo_data-service.html
 ---
-* **Продукт**: [Flexberry ORM](flexberry-o-r-m.html)
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Программная библиотека:** ICSSoft.STORMNET.Business.dll
 * **Предназначение:** Компонент доступа к источнику данных.
 
