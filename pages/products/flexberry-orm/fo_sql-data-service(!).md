@@ -12,10 +12,10 @@ lang: ru
 
 Является абстрактным классом, от него наследуется 
 
-* `[MSSQLDataService](fo_mssql-data-service.html)`,
-* `[ODBCDataService](fo_odbc-data-service.html)`,
-* `[OracleDataService](fo_oracle-data-service.html)`,
-* `[PostgresDataService](fo_postgres-data-service.html)`.
+* [`MSSQLDataService`](fo_mssql-data-service.html),
+* [`ODBCDataService`](fo_odbc-data-service.html),
+* [`OracleDataService`](fo_oracle-data-service.html),
+* [`PostgresDataService`](fo_postgres-data-service.html).
 
 ## Основные возможности SQLDataService
 
@@ -65,8 +65,8 @@ string s1 = loadDistinctValues1.Length.ToString();
 ```
 
 #### `SecondLoadObject` 
-__Назначение__: Метод для [AdditionalLoadingDataObject#usingsecondloadobject|дочитки объекта данных].
- Загруженные ранее свойства не затираются, изменённые свойства не затираются. Подменяются поштучно свойства копии данных. Перед использованием рекомендуется ознакомиться с описанием в [AdditionalLoadingDataObject#usingsecondloadobject|статье].
+__Назначение__: Метод для [дочитки объекта данных](fo_additional-loading-data-object.html).
+ Загруженные ранее свойства не затираются, изменённые свойства не затираются. Подменяются поштучно свойства копии данных. Перед использованием рекомендуется ознакомиться с описанием в [статье](fo_additional-loading-data-object.html).
 
 __Параметры__:
  `dataObjectView` - представление

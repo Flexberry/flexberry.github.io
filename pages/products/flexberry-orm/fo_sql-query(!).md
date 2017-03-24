@@ -24,7 +24,7 @@ lang: ru
 
 Из чего складывается текст SQL-запроса, генерируемого [сервисом данных](fo_data-service.html):
 
-* `[LoadingCustomizationStruct](fo_loading-customization-struct.html)` и `LimitFunction` ([примеры](fo_function-list.html))
+* [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) и `LimitFunction` ([примеры](fo_function-list.html))
 * Атрибутивная разметка (например, атрибут `Storage` как классов, так и связей).
 * Реализация [наследования](fo_inheritance.html) с иcпользованием [TypeUsage](fo_type-usage-problem.html).
 * [Перехват запроса к БД](fo_intercept-formation-sql-query.html).
@@ -42,11 +42,11 @@ lang: ru
 
 ### Общие рекомендации
 
-* При настройке `[LoadingCustomizationStruct](fo_loading-customization-struct.html)` обычно нужно специальное [представление](fo_view-def.html) (его нужно либо [определить в коде](fo_view-def.html), как это сделано [Ограничение-на-детеилы-из-кода|здесь]; либо [создать заранее в Flexberry](fo_data-classes.html)).
+* При настройке [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) обычно нужно специальное [представление](fo_view-def.html) (его нужно либо [определить в коде](fo_view-def.html), как это сделано [Ограничение-на-детеилы-из-кода|здесь]; либо [создать заранее в Flexberry](fo_data-classes.html)).
 
-* Для определения количества возвращаемых записей рекомендуется использовать параметр `[LoadingCustomizationStruct](fo_loading-customization-struct.html)` ReturnTop, как это сделано [Ограничение-на-детеилы-из-кода|здесь].
+* Для определения количества возвращаемых записей рекомендуется использовать параметр [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) ReturnTop, как это сделано [Ограничение-на-детеилы-из-кода|здесь].
 
-* Работу по сортировке, наложению ограничений, подчёту агрегирующих значений и прочим аналогичным действиям необходимо перекладывать на сервер за счёт задания параметров `[LoadingCustomizationStruct](fo_loading-customization-struct.html)`.
+* Работу по сортировке, наложению ограничений, подчёту агрегирующих значений и прочим аналогичным действиям необходимо перекладывать на сервер за счёт задания параметров [`LoadingCustomizationStruct`](fo_loading-customization-struct.html).
 
 ## LinqProvider
 
@@ -92,7 +92,7 @@ __Примечание__: Даже если возникла острая нео
 Есть три варианта вычитки данных:
 
 1. [LINQProvider](fo_linq-provider.html) - находится в стадии доработки, как следствие - реализует не все функции.
-2. [Функциональный язык построения ограничений] - является наиболее полным и объемлющим инструментом для вычитки данных. В перспективе будет вытеснен [LINQProvider](fo_function-list.html)'ом.
+2. Функциональный язык построения ограничений - является наиболее полным и объемлющим инструментом для вычитки данных. В перспективе будет вытеснен [LINQProvider](fo_function-list.html)'ом.
 3. ADO.NET - используется __только__ в случаях, когда первые 2 способа не работают.
 
 `[LINQProvider](fo_linq-provider.html)` предпочтительнее для использования, но пока не может предоставить полного набора функций.
