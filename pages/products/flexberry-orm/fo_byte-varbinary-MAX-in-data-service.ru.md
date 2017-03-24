@@ -14,14 +14,14 @@ permalink: ru/fo_byte-varbinary--m-a-x-in-data-service.html
 
 Для использования **varbinary &amp; byte&#91;&#93;** требуется:
 
-1. Выделяем через typedef новый тип данных на диаграммах:
+1.Выделяем через typedef новый тип данных на диаграммах:
 
 ![](/images/pages/products/flexberry-orm/byte-varbinary-MAX-in-data-service/byteArray.png)
-2. В карте .NET типов отмечаем byte&#91;&#93;
+2.В карте .NET типов отмечаем byte&#91;&#93;
 
 ![](/images/pages/products/flexberry-orm/byte-varbinary-MAX-in-data-service/TypesNet.png)
 
-3. В карте SQL типов выставляем varbinary(MAX)
+3.В карте SQL типов выставляем varbinary(MAX)
 
 ![](/images/pages/products/flexberry-orm/byte-varbinary-MAX-in-data-service/TypesSQL.png)
 
