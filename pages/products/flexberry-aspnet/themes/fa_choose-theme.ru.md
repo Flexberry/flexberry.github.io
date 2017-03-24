@@ -4,16 +4,11 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_choose-theme.html
-folder: products/flexberry-aspnet/
+folder: products/flexberry-aspnet/themes/
 lang: ru
 
 ---
 
-* **Платформа:** [FlexberryASP.NET.](fa_flexberry-asp-net.html)
-* **Компонент:** [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* **Предназначение:** изменение внешнего вида web-приложения.
-
-## Темы
 Темы приложения отвечают за его внешний вид. При изменении темы изменяется:
 
 * Цветовая гамма
@@ -35,6 +30,7 @@ lang: ru
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-default.png)
 
 ### Light
+
 [WOLV](fa_web-object-list-view.html):
 
 ![](/images/pages/products/flexberry-aspnet/themes/light.png)
@@ -44,6 +40,7 @@ lang: ru
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-light.png)
 
 ### Smart
+
 [WOLV](fa_web-object-list-view.html):
 
 ![](/images/pages/products/flexberry-aspnet/themes/smart.png)
@@ -53,6 +50,7 @@ lang: ru
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-smart.png)
 
 ### Spring
+
 [WOLV](fa_web-object-list-view.html):
 
 ![](/images/pages/products/flexberry-aspnet/themes/spring.png)
@@ -62,6 +60,7 @@ lang: ru
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-spring.png)
 
 ## Выбор темы в Web-приложении
+
 Чтобы установить тему по умолчанию в Web-приложении достаточно в файле конфигурации `web.config` вписать название темы
 
 ```xml

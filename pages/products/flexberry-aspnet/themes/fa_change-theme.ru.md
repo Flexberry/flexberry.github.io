@@ -4,20 +4,12 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_change-theme.html
-folder: products/flexberry-aspnet/
+folder: products/flexberry-aspnet/themes/
 lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
-* **Компонент**: [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* **Предназначение**: описание процесса доработки тем оформления и добавления стилей в прикладные проекты.
-
-## Введение
-В данной статье будет описан процесс доработки и добавления стилей в прикладные проекты, используя [новую структуру тем](fa_theme-structure.html).
-
-## Доработка тем оформления на прикладных проектах
-Для того, чтобы правильно дорабатывать стили необходимо выполнить следующее:
+Для того чтобы правильно дорабатывать стили необходимо выполнить следующее:
 
 1. Определить к какой группе и подгруппе стилей относится доработка
 2. Добавить недостающие переменные в соответствующий файл _Variables.less

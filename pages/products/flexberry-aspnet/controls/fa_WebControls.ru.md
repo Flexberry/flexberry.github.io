@@ -78,7 +78,7 @@ Web-контрол - элемент взаимодействия пользов�
 * [WebFileControl](web-file-control_Description.html)
 * WebMessageBox (class)
 * [WebObjectListView](web-object-list-view.html)
-* [Редактор ограничений](advanced-limit-editor.html)
+* [Редактор ограничений](fa_advanced-limit-editor.html)
 * [WebBinder](web-binder.html)
 
 # Провайдеры

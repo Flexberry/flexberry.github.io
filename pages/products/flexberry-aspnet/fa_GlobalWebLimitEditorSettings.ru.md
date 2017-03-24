@@ -26,7 +26,7 @@ public class Global : HttpApplication
 ```
 
 ## Скрытие отображения панели параметров в редакторе ограничений
-Отключения отображения панели с параметрами в [редакторе ограничений](advanced-limit-editor.html) производится через установку "false" (по умолчанию "true") у параметра
+Отключения отображения панели с параметрами в [редакторе ограничений](fa_advanced-limit-editor.html) производится через установку "false" (по умолчанию "true") у параметра
 ```cs
   NewPlatform.Flexberry.Web.LimitEditor.Settings.ShowParameterPanel
 ```
