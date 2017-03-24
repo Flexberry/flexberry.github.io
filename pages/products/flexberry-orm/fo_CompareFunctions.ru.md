@@ -15,7 +15,7 @@ permalink: ru/fo_compare-functions.html
 * FuncL - функция, аналогичная сравнению "меньше" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 * FuncLEQ - функция, аналогичная сравнению "меньше или равно" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 * FuncG - функция, аналогичная сравнению "больше" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
-* FuncLEQ - функция, аналогичная сравнению "больше или равно" в SQL, в построителе [функций ограничения](fo_limit-function.html)[SQLWhereLanguageDef](fo_function-list.html).
+* FuncLEQ - функция, аналогичная сравнению "больше или равно" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
 ## Параметры GetFunction
 Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции funcG (funcGEQ, funcL, funcLEQ), а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
