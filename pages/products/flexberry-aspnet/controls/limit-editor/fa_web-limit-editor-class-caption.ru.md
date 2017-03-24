@@ -8,10 +8,10 @@ folder: products/flexberry-aspnet/limit-editor/
 lang: ru
 ---
 
-# Задание заголовка класса в расширенном редакторе ограничений
 В [расширенном редакторе ограничений](fa_advanced-limit-editor.html) по умолчанию в качестве заголовка класса (корневая вершина в дереве доступных свойств) используется результат работы метода [Information](fo_information-class-as-metadata-supervisor.html).GetClassCaption (метод возвращает либо заданный заголовок для класса, либо имя класса).
 
 Если требуется задать некоторое отличное значение в качестве заголовка класса в [расширенном редакторе ограничений](fa_advanced-limit-editor.html), то можно воспользоваться следующими способами:
-# У соответствуюшего [WOLV](web-object-list-view.html) задать свойство `LimitEditorClassCaption`.
-# если [расширенный редактор ограничений запускается без WOLV](limit-editor-without-w-o-l-v.html), то требуемое имя нужно указать у параметра, заносимого в сессию (`LimitEditorParam.ClassCaption`).
+
+* У соответствуюшего [WOLV](fa_web-object-list-view.html) задать свойство `LimitEditorClassCaption`.
+* если [расширенный редактор ограничений запускается без WOLV](fa_limit-editor-without-wolv.html), то требуемое имя нужно указать у параметра, заносимого в сессию (`LimitEditorParam.ClassCaption`).
 

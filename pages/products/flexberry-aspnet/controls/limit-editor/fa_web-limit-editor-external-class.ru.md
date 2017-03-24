@@ -3,7 +3,7 @@ title: External-классы в расширенном редакторе огр
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
-permalink: ru/fa_web-limit-editor-and-external-class.html
+permalink: ru/fa_web-limit-editor-external-class.html
 folder: products/flexberry-aspnet/limit-editor/
 lang: ru
 ---

@@ -104,4 +104,4 @@ WebObjectListView1.DropLimitFromLimitEditor();
 
 ## External-классы в расширенном редакторе ограничений
 
-Основная статья [External-классы в расширенном редакторе ограничений.](fa_web-limit-editor-and-external-class.html)
+Основная статья [External-классы в расширенном редакторе ограничений.](fa_web-limit-editor-external-class.html)
