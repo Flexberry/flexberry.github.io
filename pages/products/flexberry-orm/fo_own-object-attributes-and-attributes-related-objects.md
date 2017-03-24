@@ -16,7 +16,7 @@ lang: ru
 SimpleDataObject sdo = new SimpleDataObject();
 sdo.Name="Something";//Доступ к собственному атрибуту
 sdo.Master.DblAttr=3.14;//Доступ к мастеровому атрибуту
-sdo.Details[0].StringAttr="DetailAttribute";//Доступ к детейловому атрибуту
+sdo.Details[0).StringAttr="DetailAttribute";//Доступ к детейловому атрибуту
 ```
 
 ## Cтроготипизированное получение свойств в виде строк
@@ -27,83 +27,10 @@ sdo.Details[0].StringAttr="DetailAttribute";//Доступ к детейлово
 var propertyName = ((Пользователь)dataObject).Наименование;
 ```
 
-Можно использовать строготипизированный доступ с использованием лямбды методами [Information](fo_information-class-as-metadata-supervisor.html):
+Можно использовать строготипизированный доступ с использованием лямбды методами [`Information`](fo_information-class-as-metadata-supervisor.html):
 
 ```csharp
 var propertyName = Information.ExtractPropertyName<Пользователь>(x => x.Наименование);
 ```
 
-Все доступные методы:
-
-```csharp
-
-        /// <summary>
-        /// Извлечение свойства внутри текущего класса
-        /// <code>
-        /// // Пример использования:
-        /// ExtractPropertyName[T](() => objectInstance.Name); // вернет "Name", T - тип объекта objectInstance
-        /// ExtractPropertyName[T](() => objectInstance.Master.Name); // вернет "Name", T - тип объекта objectInstance
-        /// </code>
-        /// </summary>
-        /// <typeparam name="TSource"> Тип класса - источника </typeparam>
-        /// <param name="propertyExpression"> Лямбда - выражение для доступа к свойству </param>
-        /// <returns> Имя свойства (одиночное!) </returns>
-        public static string ExtractPropertyName<TSource>(Expression<Func<TSource>> propertyExpression)
-
-        /// <summary>
-        /// Explicit извлечение свойства по типу
-        /// <code>
-        /// // Пример использования:
-        /// ExtractPropertyName(a =&gt; a.Name); // вернет "Name"
-        /// ExtractPropertyName(a =&gt; a.b.c.Name); // вернет "Name"
-        /// </code>
-        /// </summary>
-        /// <typeparam name="TSource">
-        /// Тип класса - источника 
-        /// </typeparam>
-        /// <param name="propertyExpression">
-        /// Лямбда - выражение для доступа к свойству 
-        /// </param>
-        /// <returns>
-        /// Имя свойства (одиночное!) 
-        /// </returns>
-        public static string ExtractPropertyName<TSource>(Expression<Func<TSource, object>> propertyExpression)
-
-        /// <summary>
-        /// Рекурсивный метод получения пути для свойства, заданного через вложенную лямбду.
-        /// Лямбда-выражение может содержать вложенные обращения к мастерам.
-        /// <code>
-        /// // Пример использования:
-        /// ExtractPropertyPath[T](() => objectInstance.Name); // вернет "Name", T - тип объекта objectInstance
-        /// ExtractPropertyPath[T](() => objectInstance.Master.Name); // вернет "Master.Name", T - тип объекта objectInstance
-        /// </code>
-        /// </summary>
-        /// <typeparam name="TProperty"> Тип свойства </typeparam>
-        /// <param name="propertyExpression"> Лямбда - выражение для доступа к свойству </param>
-        /// <returns> Полный путь к свойству (разделение через точку) </returns>
-        public static string ExtractPropertyPath<TProperty>(Expression<Func<TProperty>> propertyExpression)
-
-        /// <summary>
-        /// Рекурсивный метод получения пути для свойства, заданного через вложенную лямбду.
-        /// Лямбда-выражение может содержать вложенные обращения к мастерам.
-        /// <code>
-        /// // Пример использования:
-        /// ExtractPropertyPath(a => a.Name); // вернет "Name"
-        /// ExtractPropertyPath(a => a.b.c.Name); // вернет "b.c.Name"
-        /// </code>
-        /// </summary>
-        /// <typeparam name="TSource"> Тип класса - источника </typeparam>
-        /// <param name="propertyExpression"> Лямбда - выражение для доступа к свойству </param>
-        /// <returns>
-        /// Полный путь к свойству (разделение через точку) 
-        /// </returns>
-        public static string ExtractPropertyPath<TSource>(Expression<Func<TSource, object>> propertyExpression)
-
-        /// <summary>
-        /// Explicit извлечение свойства по типу
-        /// </summary>
-        /// <typeparam name="TSource"> Тип класса - источника </typeparam>
-        /// <param name="propertyExpression"> Лямбда - выражение для доступа к свойству </param>
-        /// <returns> <see cref="PropertyInfo"/> свойства (самого последнего) </returns>
-        public static PropertyInfo ExtractPropertyInfo<TSource>(Expression<Func<TSource, object>> propertyExpression)
-```
+Все доступные методы: [`ExtractPropertyName`](fo_information-class-as-metadata-supervisor), [`ExtractPropertyPath`](fo_information-class-as-metadata-supervisor), [`ExtractPropertyInfo`](fo_information-class-as-metadata-supervisor).
