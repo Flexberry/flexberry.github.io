@@ -10,7 +10,7 @@ lang: ru
 
 В этом примере показывается, каким образом можно получать доступ к преставлениям объектов данных.
 
-```csharp
+``` csharp
             // Получение статически определенного представления с помощью Information.
             ICSSoft.STORMNET.View cd_e_for_cd_view = Information.GetView("CD_E", typeof(CD));
 
