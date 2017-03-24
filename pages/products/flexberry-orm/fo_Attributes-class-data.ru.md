@@ -43,7 +43,7 @@ permalink: ru/fo_attributes-class-data.html
 
 На закладке расположен список всех атрибутов класса:
 
-[image||{UP}/img/Caseberry plugins/attributeprops.jpg)
+![](/images/pages/products/flexberry-orm/attributeprops.jpg)
 
 | Свойство-Описание | Генерация в SQL DDL |Генерация в .Net-язык |
 | `AccessModifier` - дублирует определение атрибута |  |  | 
