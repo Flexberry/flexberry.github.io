@@ -5,6 +5,7 @@ keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_advanced_working_with_views.html
 ---
+* **Полный список примеров кода [Flexberry ORM](fo_flexberry-o-r-m.html) находится в статье ["Примеры кода"](fo_code-samples.html).**
 
 **Вы можете создать [представление](fd_view-definition.html) динамически.**
 
