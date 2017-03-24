@@ -21,7 +21,7 @@ permalink: ru/fo_b-s-unique-data-check.html
 Предположим, что мы хотим проверять уникальность введенного номера кредитной карты.
 
 * Добавим бизнес-сервер КредитнаяКартаБС и выставим у объекта КредитнаяКарта ссылку на этот [бизнес-сервер](fo_business--servers--wrapper--business--facade.html).
-* В методе [`OnUpdate`](fo_b-s-example.html) необходимо [вычитать](fo_sql-query.html) все КредитныеКарты клиента и проверить, есть ли среди них карты с таким номером
+* В методе [`OnUpdate`](fo_bs-example.html) необходимо [вычитать](fo_sql-query.html) все КредитныеКарты клиента и проверить, есть ли среди них карты с таким номером
 
 ```cs
 var ds = (SQLDataService)DataServiceProvider.DataService;
