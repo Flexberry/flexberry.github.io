@@ -5,32 +5,27 @@ keywords: DataObject (объекты данных), Flexberry Designer, Flexberr
 toc: true
 permalink: ru/fo_detail-associations-and-their-properties.html
 ---
-
+* `Продукт`:  [Flexberry ORM](fo_flexberry-o-r-m.html)
+* `Компонент`: [Редактор UML-диаграмм](fd_editing-diagram.html)
+* `Предназначение`: Описано представление детейловых ассоциаций на [диаграмме классов](fd_class-diagram.html) и особенности генерации соответствующей структцры.
 Согласно "Аксиом Flexberry Platform" детейловыми являются композиции, подобные:
 
-![](/images/pages/img/Flexberry plugins/detail.gif)
+![](/images/pages/products/flexberry-orm/detail-associations-and-their-properties/detail.gif)
 
 **Важное замечание:** Принято, чтобы конец ассоциации имел множественность *, а начало (где ромбик) - 1. [Класс-шапка](fd_key-concepts.html) всегда должен находиться со стороны начала композиции, а детейловый класс - со стороны конца.
-{| border="1"
-! Что генерируется
-! Генерация в SQL DDL
-! Генерация в .Net-язык
-|-
-| композиция 
-| Определение структуры SQL DDL создаётся так:
+
+| Что генерируется | Генерация в SQL DDL | Генерация в .Net-язык |
+|---|---|---|
+| Композиция | Определение структуры SQL DDL создаётся так:
 
  * В таблице, соотв. детейловому классу, - внешний ключ на таблицу, соотв. [шапке](fd_key-concepts.html); 
  * Constraint, связывающий таблицы; 
-| См. [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [Структура классов объектов данных](data-object-generated-structure.html).
-
-Вкратце:
-
+| См. [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [Структура классов объектов данных](fo_data-object-generated-structure.html).
+<br>Вкратце:
 1. В классе-детейле генерируется свойство с приписанным .Net-атрибутом AgregatorAttribute и приватный член, оба с типом [класса-шапки](fd_key-concepts.html); 
-
 2. Для хранения наборов детейловых объектов генерируется специальный класс - наследник от DetailArray;
+3. В [классе-шапке](fd_key-concepts.html) генерируется свойство и приватный член, объявленные типом спец.класса, - наследника от DetailArray. |
 
- 3. В [классе-шапке](fd_key-concepts.html) генерируется свойство и приватный член, объявленные типом спец.класса, - наследника от DetailArray. 
-|}
 ## Дополнительно редактируемые свойства и что как генерируется
 Открыв свойства композиции, мы увидим:
 ![](/images/pages/img/Flexberry plugins/composition.jpg)
