@@ -11,7 +11,7 @@ permalink: ru/fo_b-s-unique-data-check.html
 * **Предназначение**: Приведён способ проверки уникальности данных в [бизнес-сервере](fo_business-logic.html).
 ## Проверка уникальности введенных данных
 
-Если возникает необходимость проверки уникальности введенных данных, необходимо в методе `OnUpdate` [бизнес-сервера](fo_business-servers-wrapper-business-facade.html) производить вычитку данных и сравнивать данные из базы с введенными данными.
+Если возникает необходимость проверки уникальности введенных данных, необходимо в методе `OnUpdate` [бизнес-сервера](fo_business--servers--wrapper--business--facade.html) производить вычитку данных и сравнивать данные из базы с введенными данными.
 
 Необходимо учитывать, что объект может быть как только что создан, так и уже находиться в базе. Если объект уже есть в базе, то он попадет в список вычитанных данных и возникнет конфликт.
 
@@ -20,10 +20,10 @@ permalink: ru/fo_b-s-unique-data-check.html
 
 Предположим, что мы хотим проверять уникальность введенного номера кредитной карты.
 
-* Добавим бизнес-сервер КредитнаяКартаБС и выставим у объекта КредитнаяКарта ссылку на этот [бизнес-сервер](fo_business-servers-wrapper-business-facade.html).
-* В методе [`OnUpdate`](b-s-example.html) необходимо [вычитать](Flexberry-s-q-l-query.html) все КредитныеКарты клиента и проверить, есть ли среди них карты с таким номером
+* Добавим бизнес-сервер КредитнаяКартаБС и выставим у объекта КредитнаяКарта ссылку на этот [бизнес-сервер](fo_business--servers--wrapper--business--facade.html).
+* В методе [`OnUpdate`](fo_b-s-example.html) необходимо [вычитать](fo_sql-query.html) все КредитныеКарты клиента и проверить, есть ли среди них карты с таким номером
 
-```
+```cs
 var ds = (SQLDataService)DataServiceProvider.DataService;
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
                      .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
@@ -32,7 +32,7 @@ var кредитныеКарты = ds.Query<КредитнаяКарта>(Кре
 
 Либо так:
 
-```
+```cs
 LoadingCustomizationStruct lcs = new LoadingCustomizationStruct(null);
 lcs.LoadingTypes = new Type[] { typeof(КредитнаяКарта) };
 lcs.View = КредитнаяКарта.Views.КредитнаяКартаE;
@@ -47,7 +47,7 @@ var кредитныеКарты = DataServiceProvider.DataService.GetObjectsCou
 
 Доработаем условие, добавив сравнение с текущей картой:
 
-```
+```cs
 var ds = (SQLDataService)DataServiceProvider.DataService;
 var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
                      .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
@@ -57,7 +57,7 @@ var кредитныеКарты = ds.Query<КредитнаяКарта>(Кре
 
 либо:
 
-```
+```cs
 LoadingCustomizationStruct lcs = new LoadingCustomizationStruct(null);
 lcs.LoadingTypes = new Type[] { typeof(КредитнаяКарта) };
 lcs.View = КредитнаяКарта.Views.КредитнаяКартаE;
