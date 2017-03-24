@@ -6,7 +6,7 @@ toc: true
 permalink: ru/fo_c-a-s-e--insensitive-for--d-b.html
 ---
 * **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент**: [Сервис данных](fo_data-service.html()
+* **Компонент**: [Сервис данных](fo_data-service.html)
 * **Предназначение:** [Flexberry ORM](fo_flexberry-o-r-m.html) позволяет настроить приложение таким образом, чтобы в генерируемом [сервисом данных](fo_data-service.html) запросе применялась функция [UPPER](https://msdn.microsoft.com/ru-ru/library/ms180055.aspx) для обеих сторон выражения сравнения строк.
 * **Программная библиотека:** ICSSoft.STORMNET.Business.dll
 

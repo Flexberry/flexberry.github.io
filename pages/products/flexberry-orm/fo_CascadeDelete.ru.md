@@ -5,6 +5,10 @@ keywords: DataObject (объекты данных), Flexberry ORM, Public, БД,
 toc: true
 permalink: ru/fo_cascade-delete.html
 ---
+* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
+* **Компонент**: [Сервис данных](fo_data-service.html)
+* **Программная библиотека**: ICSSoft.STORMNET.Business.dll
+* **Предназначение**: Описаны некоторые способы каскадного удаления объектов.
 
 ## Удаление мастеров
 Пусть дана следующая [диаграмма](fd_class-diagram.html):
