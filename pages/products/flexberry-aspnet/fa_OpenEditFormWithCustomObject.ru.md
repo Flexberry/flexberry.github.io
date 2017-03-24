@@ -60,4 +60,4 @@ function openUrlWithPost (url, params, target) {
 
 ### Web
 
-[Пример](open-edit-form-web-example.html)
+[Пример](fa_open-edit-form-web-example.html)
