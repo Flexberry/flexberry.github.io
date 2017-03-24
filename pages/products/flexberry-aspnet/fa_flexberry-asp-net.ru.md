@@ -46,7 +46,7 @@ Flexberry ASP.NET состоит из следующих модулей:
     + [Задание колонок для размещения контролов на уровне представлений Flexberry Designer](fd_specify-column-controls.html)
     + [Маршрутизация в Web-приложениях](fa_routing.html)
     + [Рекомендации по работе с технологией](fa_tech-recommendations.html)
-    + [Запуск win-приложения из окна браузера](win-app-start-from-browser.html)
+    + [Запуск win-приложения из окна браузера](fw_win-app-start-from-browser.html)
     + [Сценарии веб-разработки](fa_scenario-web.html)
 
 ## Примеры
