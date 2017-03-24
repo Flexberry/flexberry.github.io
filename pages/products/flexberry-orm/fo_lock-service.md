@@ -35,7 +35,7 @@ Console.ReadLine();
 
 Для реляционного хранения, он определён так:
 
-```sql
+``` sql
 SQL
 CREATE TABLE STORMNETLOCKDATA (
 	LockKey char (300) NOT NULL ,
@@ -43,6 +43,4 @@ CREATE TABLE STORMNETLOCKDATA (
 )
 ```
 
-## См. также
-
-Эта тема тесно связана с режимом "Только чтение" ([ReadOnly для Windows](read-only-win.html), [ReadOnly для Web](read-only-web.html))
+Смотри также: [Блокирование объекта данных](fo_blocking-object-data.html)

@@ -13,10 +13,10 @@ lang: ru
 ## Пример наложения ограничения на загружаемые объекты данных (условия, количество и т.д.)
 
 Обычно приложения не ограничиваются простой загрузкой объектов из БД: требуется сортировка, наложение условий на загружаемые объекты, на их индексы.
-Для хранения и передачи сервису данных всей этой информации используется структура данных `[ICSSoft.STORMNET.Business.LoadingCustomizationStruct](fo_loading-customization-struct.html)`.
+Для хранения и передачи сервису данных всей этой информации используется структура данных [`ICSSoft.STORMNET.Business.LoadingCustomizationStruct`](fo_loading-customization-struct.html).
 В примере показано ее использование при загрузке объектов данных: наложение ограничения, сортировка, диапазон индексов загружаемых объектов.
 
-```cpp
+```csharp
 Console.WriteLine("3. How to load a set of dataobjects in specific view, limitation, quantity, etc..");
 
 // Во Flexberry ORM есть разные наборы операций (языки) для задание ограничений. Самый простой - SQLWhereLanguageDef.

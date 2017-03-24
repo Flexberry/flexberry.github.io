@@ -8,6 +8,11 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
+## Установка клиентского набора для работы OracleDataService
+
+Для функционирования [OracleDataService) необходимо установить клиентское ПО примерно следующим образом (инструкция могла устареть, более свежие инструкции [на сайте Oracle](http://www.oracle.com/technetwork/database/winsoft-098398.html)):
+
+
 ![](/images/pages/products/flexberry-orm/technotes/ora-cli-1.png)
 
 ![](/images/pages/products/flexberry-orm/technotes/ora-cli-2.png)

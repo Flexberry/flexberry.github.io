@@ -8,39 +8,32 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
-## Что это такое
+## Flexberry LogService
 
-Иногда требуется вывести информацию о том, что в системе не всё хорошо. Выдавать эту информацию простым пользователям иногда можно и даже нужно, но самое главное, это предупредить администраторов или разработчиков. В .NET-комопнентах платформы Flexberry используется компонент LogService, который базируется на `[log4net](http://logging.apache.org/log4net/)`. 
+Flexberry LogService является [продуктом платформы Flexberry](platform-structure.html) и предназначен для осуществления записи событий работы программного продукта.
 
-Все внутренние ошибки, которые генерирует технология Flexberry выводятся с уровнем `WARN`.
+Flexberry LogService базируется на [`log4net`](http://logging.apache.org/log4net/).
 
-В том числе, пишутся и те `Exceptions`, которые показываются пользователю в UI-компонентах (`ExceptionBox`).
+<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Information>:</b> Flexberry LogService доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService).</div>
 
-## Как это использовать
-Чтобы использовать `LogService` нужно подключить 2 сборки:
-* **`log4net.dll`**
-* **`LogService.dll`**
+### Пример использования LogService
 
-Данные сборки доступны в виде [NuGet-пакета](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService/).
-
-Пример использования:
-
-```csharp
+``` csharp
 try
 {
   int i = (int)val;
 }
 catch (Exception ex)
 {
-  LogService.LogError("Произошло нечто ужасное", ex);
+   LogService.LogError("Произошло нечто ужасное", ex);
 }
 ```
 
-## Конфигурирование
+### Конфигурирование
 
-Пример конфигурации: 
+Пример конфигурации (дополнительные аппендеры можно найти по ссылке: [http://logging.apache.org/log4net/release/config-examples.html|config-examples]()):
 
-```xml
+``` xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <!-- регистрируем специальную секцию -->
@@ -56,13 +49,13 @@ catch (Exception ex)
       <param name="AppendToFile" value="true"/>
       <param name="RollingStyle" value="Date"/>
       <layout type="log4net.Layout.PatternLayout">
-        <param name="ConversionPattern" value="%-5p %d{yyyy-MM-dd hh:mm:ss} [%t] %m%n" />
+        <param name="ConversionPattern" value="%-5p %d{yyyy-MM-dd hh:mm:ss} [%t) %m%n" />
       </layout>
     </appender>
 	
 	<appender name="EventLogAppender" type="log4net.Appender.EventLogAppender" >
     <layout type="log4net.Layout.PatternLayout">
-        <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+        <conversionPattern value="%date [%thread) %-5level %logger [%property{NDC}) - %message%newline" />
     </layout>
 	</appender>
 
@@ -77,7 +70,7 @@ catch (Exception ex)
         <threshold value="WARN"/>
     </evaluator>
     <layout type="log4net.Layout.PatternLayout">
-        <conversionPattern value="%newline%date [%thread] %-5level %logger [%property{NDC}] - %message%newline%newline%newline" />
+        <conversionPattern value="%newline%date [%thread) %-5level %logger [%property{NDC}) - %message%newline%newline%newline" />
     </layout>
 </appender>
 	
@@ -91,9 +84,78 @@ catch (Exception ex)
 </configuration>
 ```
 
-Дополнительные аппендеры можно найти тут: [config-examples](http://logging.apache.org/log4net/release/config-examples.html)
+### ADO.NET аппендер
 
-## Написание своего аппендера
+Для записи сообщений лога в БД следует использовать ADO.NET аппендер.
+Можно использовать стандартный log4net.Appender.AdoNetAppender, однако в пакете LogService реализован кастомный ADO.NET аппендер (ICSSoft.STORMNET.CustomAdoNetAppender),
+ 
+переопределяющий логику получения строки соединения из конфигурационного файла приложения (в т.ч. зашифрованной строки соединения).
+
+У аппендера есть опциональный атрибут ConnectionStringName. Если его не задавать, то поиск строки соединения будет происходить аналогично тому, как это делает[DataServiceProvider](fo_data-service-provider-data-service.html):
+
+* Пытается получить имя строки соединения из настройки DefaultConnectionStringName в секции appSettings, и затем ищет такую строку в секции conectionStrings.
+* Если имя DefaultConnectionStringName не задано, пытается получить строку из настройки CustomizationStrings в секции appSettings.
+
+Если же атрибут будет задан, то аппендер будет искать строку с таким именем в секции conectionStrings.
+
+При использовании зашифрованной строки соединения необходимо указывать настройку Encrypted со значением true (в секции appSettings),
+иначе аппендер не будет производить расшифровку строки соединения.
+
+#### Пример конфигурации ADO.NET аппендера
+
+```xml
+<appender name="AdoNetAppender" type="ICSSoft.STORMNET.CustomAdoNetAppender">
+      <bufferSize value="0" />
+      <connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+      <ConnectionStringName value="DefConnStr" />
+      <commandText value="INSERT INTO [ApplicationLog) ([primaryKey),[Timestamp),[ThreadName),[Category),[ProcessName),[Message),[FormattedMessage)) VALUES (NEWID(), @log_date, @thread, @log_level, @logger, @message, @exception)" />
+      <parameter>
+        <parameterName value="@log_date" />
+        <dbType value="DateTime" />
+        <layout type="log4net.Layout.RawTimeStampLayout" />
+      </parameter>
+      <parameter>
+        <parameterName value="@thread" />
+        <dbType value="String" />
+        <size value="512" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%thread" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@log_level" />
+        <dbType value="String" />
+        <size value="64" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%level" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@logger" />
+        <dbType value="String" />
+        <size value="512" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%logger" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@message" />
+        <dbType value="String" />
+        <size value="2500" />
+        <layout type="log4net.Layout.PatternLayout">
+          <conversionPattern value="%message" />
+        </layout>
+      </parameter>
+      <parameter>
+        <parameterName value="@exception" />
+        <dbType value="String" />
+        <size value="4000" />
+        <layout type="log4net.Layout.ExceptionLayout" />
+      </parameter>
+    </appender>
+```
+
+### Написание своего аппендера
 
 Часто существующих решений недостаточно, для этого, есть возможность написать свой аппендер. Тут есть всего 2 важных момента:
 
@@ -102,7 +164,7 @@ catch (Exception ex)
 
 Пример кода аппендера:
 
-```csharp
+``` csharp
 using System;
 using System.Collections;
 using System.Runtime.Remoting.Channels;
@@ -128,7 +190,7 @@ namespace Logging
         protected override void Append(log4net.Core.LoggingEvent loggingEvent)
         {
             IDictionary props = new Hashtable();
-            props["name"] = Guid.NewGuid().ToString();
+            props["name") = Guid.NewGuid().ToString();
 
             HttpClientChannel chan = new HttpClientChannel(props, new BinaryClientFormatterSinkProvider());
 
@@ -162,7 +224,7 @@ namespace Logging
 
 В конфиге подключается этот аппендер таким образом:
 
-```xml
+``` xml
     <appender name="remoteLoggerAppender" type="Logging.RemoteLoggerAppender, RemoteLoggerAppender">
       <SrvUrl value="tcp://localhost:2121/RemoteLogSrv"/>
     </appender>

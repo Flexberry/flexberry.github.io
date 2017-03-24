@@ -8,22 +8,27 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
-# Строки в MSSQLDataService NULL или String.Empty
-MSSQLDataService преобразует пустые строки в NULL при обновлении объектов. С другой стороны, когда строите LanguageDef-выражение, если параметром передаётся String.Empty, то запрос будет сгенерирован как IS NULL и всё сработает так как надо. Это упрощение, с одной стороны избавляет от необходимости писать сложные Where-выражения, с другой стороны кому-то может потребоваться отдельные NULL и String.Empty, в этом случае, можно унаследоваться от MSSQLDataService и переопределить метод 
-            '''```
+## Строки NULL или String.Empty в MSSQLDataService
+
+[MSSQLDataService](fo_mssql-data-service.html) преобразует пустые строки в `NULL` при обновлении объектов.
+
+При построении [ограничения](fo_limitation.html), если параметром в проверке на равенство передаётся `String.Empty`, то запрос будет сгенерирован как IS NULL и всё сработает так как надо. Это упрощение избавляет от необходимости писать сложные Where-выражения.
+
+Если есть потребность различать `NULL` и `String.Empty`, то можно [унаследоваться от MSSQLDataService и переопределить метод](fo_implement-a-custom-data-service.html) 
+
+``` csharp
 public virtual string ConvertSimpleValueToQueryValueString(object value)
-```''' таким образом, чтобы не выполнялась замена 
-            '''```
+``` 
+таким образом, чтобы не выполнялась замена 
+
+``` csharp
 if (valType == typeof(string))
-            {
-                if ((string)value == string.Empty)
-                    return "NULL";
-                else
-                    return "'" + value.ToString().Replace("'", "''") + "'";
-            }```'''
+{
+	if ((string)value == string.Empty)
+		return "NULL";
+	else
+		return "'" + value.ToString().Replace("'", "''") + "'";
+}
+```
 
-----
-Особое внимание следует обратить на эту особенность, если используются импортированные данные или SQL-выражения, которые выполняются в обход DataService.
-
-
-
+Особое внимание следует обратить на эту особенность, если используются импортированные данные или SQL-выражения, которые выполняются в обход [сервиса данных](fo_data-service.html).

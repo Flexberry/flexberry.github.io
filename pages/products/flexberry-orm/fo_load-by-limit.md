@@ -12,7 +12,7 @@ lang: ru
 
 В примере ниже берётся язык `ICSSoft.STORMNET.FunctionalLanguage.SQLWhere. SQLWhereLanguageDef` для задания ограничений SQL-запросов и формируется ограничение (выбираются все «Иваны Ивановичи»):
 
-```cpp
+```csharp
 	LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Автор), Автор.Views.Главное);				
 	/*Другая инициализация*/
 	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;

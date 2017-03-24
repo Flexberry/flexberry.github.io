@@ -18,7 +18,7 @@ lang: ru
   При загрузке применяется [представление](fo_view-def.html).
 * Выполняется изменение свойств и сохранение объекта.
 
-```cpp
+```csharp
 Console.WriteLine("2. How to load dataobject in specific view, change it\'s property, then persist. Object status and loading state.");
 
 IDataService dataService = DataServiceProvider.DataService;

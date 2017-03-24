@@ -19,6 +19,6 @@ MSSQLDataService - это [сервис данных](fo_data-service.html) дл
 * MSSQLDataService требует наличия SQL Client, однако скорость работы возрастает приблизительно на 25%.
 * MSSQLDataService [особым образом обрабатывает значения NULL и string.Empty](fo_mssql-data-service-string-null-or-empty.html).
 
-''См. также статью [Обработка регистров в именах объектов для СУБД](fo_processing-registers-names-for-objects-dbms.html).''
+**См. также статью [Обработка регистров в именах объектов для СУБД](fo_processing-registers-names-for-objects-dbms.html).**
 
 
