@@ -51,5 +51,5 @@ lang: ru
 
 ## Переименование диаграммы (редактирование свойств)
 
-1. Выберать диаграмму.
+1. Выбрать диаграмму.
 2. Нажмите на панели инструментов кнопку ![](/images/pages/products/flexberry-designer/diagrams-editor/propertiesbtn.jpg).
