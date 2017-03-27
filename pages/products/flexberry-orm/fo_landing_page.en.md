@@ -3,9 +3,7 @@ title: Flexberry ORM
 keywords: flexberry, designer, uml
 sidebar: flexberry-orm_sidebar
 toc: false
-permalink: ru/fo_landing_page.html
+permalink: en/fo_landing_page.html
 folder: product1
-lang: ru
+lang: en
 ---
-
-орм
