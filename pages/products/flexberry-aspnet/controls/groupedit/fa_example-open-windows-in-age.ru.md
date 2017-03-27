@@ -3,10 +3,9 @@ title:  Примеры открытия окна редактирования в
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_example-open-windows-in-a-g-e.html
-folder: products/flexberry-aspnet/
+permalink: ru/fa_example-open-windows-age.html
+folder: products/flexberry-aspnet/controls/groupedit/
 lang: ru
-
 ---
 
 ## Варианты открытия web-формы редактирования в AGE

@@ -8,12 +8,12 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-
-
 ## Введение
+
 `WebControlProvider` - это провайдер, который позволяет настраивать контролы для отображения свойств объекта на списковых контролах (например, [WebObjectListView](web-object-list-view.html), [AjaxGroupEdit](fa_ajax-group-edit.html)). Все его настройки хранятся в файле /xml/WebControlProvider.xml
 
 ## Настройки
+
 Есть 2 способа настройки:
 1. Указание типа контрола для любого типа (XML-элемент `propertytype`), например
 ```
@@ -57,6 +57,7 @@ lang: ru
 Если вы разработали свой контрол, который используется на формах редактирования и хотите встроить его в [WebObjectListView](web-object-list-view.html). У вас возникает проблема с тем, что в [WebObjectListView](web-object-list-view.html) он выглядит как контрол для ввода данных, а вы хотели бы использовать его только для отображения. Вам нужно реализовать свойство "Enabled" у контрола, и когда контрол будет встраивается в WOLV, то ему автоматически проставится Enabled = false.
 
 ## Пример
+
 ```
 
 <?xml version="1.0" encoding="utf-8" ?>

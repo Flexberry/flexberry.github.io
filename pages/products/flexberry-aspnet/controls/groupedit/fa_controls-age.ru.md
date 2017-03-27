@@ -3,7 +3,7 @@ title: Настройка контролов внутри AGE
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_controls-in-a-g-e.html
+permalink: ru/fa_controls-age.html
 folder: products/flexberry-aspnet/
 lang: ru
 
@@ -38,4 +38,4 @@ AjaxGroupEdit.SetControlTuner(
  
 ## Другие варианты настройки контролов
 
-* [Настройки для LookUp в AGE](fa_settings-for-look-up-in-a-g-e.html)
+* [Настройки для LookUp в AGE](fa_settings-for-lookup-age.html)

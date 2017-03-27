@@ -3,7 +3,7 @@ title: Связывание LookUp'ов в AGE с внешним LookUp'ом
 sidebar: flexberry-aspnet_sidebar
 keywords: FAQ, Flexberry ASP-NET, How to (page)
 toc: true
-permalink: ru/fa_change-l-c-s-for-look-up-in-a-g-e.html
+permalink: ru/fa_change-lcs-lookup-age.html
 folder: products/flexberry-aspnet/
 lang: ru
 

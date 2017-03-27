@@ -3,30 +3,28 @@ title: События AjaxGroupEdit
 sidebar: flexberry-aspnet_sidebar
 keywords: CASE Plugins, Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_a-g-e-events.html
-folder: products/flexberry-aspnet/
+permalink: ru/fa_age-events.html
+folder: products/flexberry-aspnet/controls/groupedit/
 lang: ru
 ---
 
+## Описание событий
 
+Все обработчики событий имеют одинаковый тип:
 
-# Описание событий
+```csharp
+/// <summary>
+/// Делегат обработчиков событий WGE
+/// <summary>
+/// <param name="sender">WGE, которому принадлежат события>/param>
+/// <param name="args">Параметры события</param>
+public delegate void WGEEventHandler(AjaxGroupEdit sender, WGEEventArgs args);
 
-Все обработчики событий имеют одинаковый тип: 
-```
-      
-        /// <summary>
-        /// Делегат обработчиков событий WGE
-        /// <summary>
-        /// <param name="sender">WGE, которому принадлежат события>/param>
-        /// <param name="args">Параметры события</param>
-        public delegate void WGEEventHandler(AjaxGroupEdit sender, WGEEventArgs args);
-
-        /// <summary>
-        /// Тип аргумента для событий WGE
-        /// </summary>
-        public class WGEEventArgs : CancelEventArgs
-         {
+/// <summary>
+/// Тип аргумента для событий WGE
+/// </summary>
+public class WGEEventArgs : CancelEventArgs
+    {
         /// <summary>
         /// DataObject
         /// </summary>
@@ -39,14 +37,16 @@ lang: ru
     }
 ``` 
 
-Любое событие можно отменить, установив свойство у аргументов Cancel = true, т.к. все аргументы наследуются от `CancelEventArgs`.
+Любое событие можно отменить, установив свойство у аргументов `Cancel = true`, т.к. все аргументы наследуются от `CancelEventArgs`.
 
-# Обработка событий AGE
-## Событие '''`rowdeleting`''' 
+## Обработка событий AGE
+
+### Событие `rowdeleting`
+
 Возникает при удалении строки в [AGE](fa_ajax-group-edit.html).
 Вызов триггера при удалении строки в [AGE](fa_ajax-group-edit.html):
-```
-   
+
+```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
     ...
     <div style="clear: left">
@@ -65,10 +65,13 @@ lang: ru
     </script>
 </asp:Content>
 ```
-# Событие '''`rowdeleted`'''. Возникает после удалении строки в AGE.
+
+## Событие `rowdeleted`. 
+
+Возникает после удалении строки в AGE.  
 Вызов триггера после удаления строки в [AGE](fa_ajax-group-edit.html):
-```
-   
+
+```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
     ...
     <div style="clear: left">
@@ -88,11 +91,11 @@ lang: ru
 </asp:Content>
 ```
 
-Методы
+## Методы
 
-Удаление всех строк в AGE - '''`deleteAllRows`'''.
-```
+### Удаление всех строк в AGE - `deleteAllRows`.
 
+```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
     ...
     <span id="delAllRows" style="cursor: pointer">Удалить все записи</span>
@@ -113,9 +116,9 @@ lang: ru
 </asp:Content>
 ```
 
-Получение количества видимых строк в списке - '''`getDataRows`'''
-```
+### Получение количества видимых строк в списке - `getDataRows`
 
+```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
     ...
     <div style="clear: left">
@@ -143,9 +146,9 @@ lang: ru
 </asp:Content>
 ```
 
-Настройка LinkedLookUp в AGE - '''`addDependedLookups`'''
-```
+### Настройка LinkedLookUp в AGE - `addDependedLookups`
 
+```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
     ...
     <div style="clear: left">
@@ -167,9 +170,6 @@ lang: ru
     </script>
 </asp:Content>
 ```
-Подробнее об AjaxGroupEdit можно прочитать в данной [статье](fa_ajax-group-edit.html).
 
- 
-
-
+Подробнее об AjaxGroupEdit можно прочитать в данной [статье AjaxGroupEdit](fa_ajax-group-edit.html).
  

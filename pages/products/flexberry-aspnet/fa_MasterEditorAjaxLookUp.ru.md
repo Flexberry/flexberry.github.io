@@ -8,23 +8,6 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-&nbsp;&nbsp;&nbsp;'''MasterEditorAjaxLookUp'''
-
-* '''Платформа''': Web.
-* '''Предназначение:''' 
-* '''JavaScript API:''' 
-* '''[Автодокументация](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_master_editor_ajax_look_up.html)'''.
-* '''[MasterEditorAjaxLookUp на тестовом стенде](http://ru:6158/forms/Controls/MasterEditorAjaxLookUp/)'''.
-
-</td>
-</tr></tbody></table></a>
-</div>
-
-
 # Введение
 Контрол MasterEditorAjaxLookUp позволяет выбирать объект в лукапе без перезагрузки страницы, используя технологию AJAX. Контрол находится в сборке "ICSSoft.STORMNET.Web.AjaxControls". Он использует веб сервис "ICSSoft.STORMNET.Web.AjaxControls.AjaxDataService.asmx".
 

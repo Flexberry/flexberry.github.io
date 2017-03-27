@@ -3,7 +3,7 @@ title: Включение режима Read-only для отдельных ст�
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_read-only-in-a-g-e.html
+permalink: ru/fa_read-only-age.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

@@ -7,13 +7,13 @@ permalink: ru/fa_web-object-list-view.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
+
 {% capture my-include %}{% include fa_control_info.md %}{% endcapture %}
 {{ my-include | markdownify }}
 
 ## Введение
 
-[WebObjectListView](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_web_object_list_view.html) (далее, `WOLV`)
-- веб-контрол, который используется для отображения списка объектов.
+**WebObjectListView** (далее, `WOLV`) - веб-контрол, который используется для отображения списка объектов.
 
 ## Внешний вид WOLV
 
