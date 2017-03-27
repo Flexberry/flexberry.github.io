@@ -9,15 +9,11 @@ lang: ru
 
 ---
 
-* **Продукт:** [Flexberry ASP.Net](fa_flexberry-asp-net.html)
-* **Компонент:** [AjaxGroupEdit](fa_ajax-group-edit.html)
-* **Предназначение:** Представлен механизм, с помощью которого возможно донастроить контролы, которые используются в [AjaxGroupEdit.](fa_ajax-group-edit.html)
-
 ## Описание настройки
 
 Иногда возникает задача дополнительной настройки свойств контролов, генерируемых для редактирования и отображения значений свойств детейлов в AGE. Для этого можно использовать делегаты, задаваемые статически для класса [AjaxGroupEdit](fa_ajax-group-edit.html). Делегат задается для конкретного имени представления и имеет тип TuneControlDelegate, подробнее про который можно почитать [здесь](fa_tune-control-delegate-method.html). Добавить делегат можно добавить с помощью метода SetControlTuner:
 
-```cs
+```csharp
 /// <summary>
 /// Установить метод для настройки контролов, отображающихся в AGE.
 /// </summary>
@@ -28,7 +24,7 @@ public static void SetControlTuner(string viewName, TuneControlDelegate method)
 
 Задавать делегаты лучше в Global.asax.cs, в методе Application_Start. Пример использования:
 
-```cs
+```csharp
 AjaxGroupEdit.SetControlTuner(
     Подзадача.Views.ПодзадачаE.Name,
         (control, data) =>

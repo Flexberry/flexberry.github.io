@@ -3,18 +3,11 @@ title: Web-форма редактирования
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_flexberry-asp-net-edit-form.html
+permalink: ru/fa_editform.html
 folder: products/flexberry-aspnet/
 lang: ru
 
 ---
-
-* **Продукт**: [Flexberry ASP.Net](fa_flexberry-asp-net.html)
-* **Компонент**: [Web-контролы и web-компоненты](fa_web-controls.html)
-* **Предназначение**: Web-формы редактирования предназначены для создания и редактирования объектов.
-
-
-## Введение
 
 Web-формы редактирования предназначены для создания и редактирования объектов.
 

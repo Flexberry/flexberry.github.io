@@ -8,7 +8,6 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-
 ## Сценарий открытия страницы редактирования со списка
 
 Адрес страницы редактирования определяется настройкой [WebObjectListView](fa_web-object-list-view.html).`EditPage`. На страницу посылаются параметры через адресную строку:

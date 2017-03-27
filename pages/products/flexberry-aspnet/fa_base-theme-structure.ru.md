@@ -9,12 +9,6 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
-* **Компонент**: [Темы оформления и разметка Flexberry ASP.NET](fa_flexberry-asp-net-themes.html)
-* **Предназначение**: описание базовой темы web-шаблона.
-
-## Введение
-
 В этой статье будет описана базовая тема web-шаблона, ее назначение, а также ее связь с другими темами. Структура тем описана [здесь](fa_theme-structure.html).
 
 ## Структура BaseTheme
@@ -22,58 +16,58 @@ lang: ru
 `BaseTheme` - это базовая тема web-шаблона. По структуре она точно такая же как обычные темы, за исключением того, что в ней есть не все файлы. Эта тема является динамической и может обновляться. Но только на стороне web-шаблона. Ее структура представлена ниже.
 
 * Controls
-    + DateTimePicker
-        - _Variables.less
-        - DateTimePicker.less
-    + Lookup
-        - _Variables.less
-        - Lookup
-    + ShowHideDiv
-        - _Variables.less
-        - ShowHideDiv.less
-    + TableControls
-        - AjaxGroupEdit
-            - _Variables.less
-        - WebObjectListView
-            - _Variables.less
-            - WebObjectListView-contextMenu.less
-            - WebObjectListView-pager.less
-            - WebObjectListView-tableToolbar.less
-            - WebObjectListView.less
+    * DateTimePicker
+        * _Variables.less
+        * DateTimePicker.less
+    * Lookup
+        * _Variables.less
+        * Lookup
+    * ShowHideDiv
+        * _Variables.less
+        * ShowHideDiv.less
+    * TableControls
+        * AjaxGroupEdit
+            * _Variables.less
+        * WebObjectListView
+            * _Variables.less
+            * WebObjectListView-contextMenu.less
+            * WebObjectListView-pager.less
+            * WebObjectListView-tableToolbar.less
+            * WebObjectListView.less
 * Forms
-    + Messages
-        - AlertMessage
-            - Images
-            - _Variables.less
-            - AlertMessage.less
-    + ModalWindows
-        - ModalWindowContent
-            - _Variables.less
-            - ModalWindowContent.less
-        - ModalWindowWrapper
-            - _Variables.less
-            - ModalWindowWrapper
-    + Pages
-        - EditPage
-            - _Variables.less
-            - EditPage.less
-        - ExceptionPage
-            - _Variables.less
-            - ExceptionPage.less
-        - LoginPage
-            - _Variables.less
-            - LoginPage.less
-        - MainPage
-            - Images
-            - _Variables.less
-            - MainPage.less
+    * Messages
+        * AlertMessage
+            * Images
+            * _Variables.less
+            * AlertMessage.less
+    * ModalWindows
+        * ModalWindowContent
+            * _Variables.less
+            * ModalWindowContent.less
+        * ModalWindowWrapper
+            * _Variables.less
+            * ModalWindowWrapper
+    * Pages
+        * EditPage
+            * _Variables.less
+            * EditPage.less
+        * ExceptionPage
+            * _Variables.less
+            * ExceptionPage.less
+        * LoginPage
+            * _Variables.less
+            * LoginPage.less
+        * MainPage
+            * Images
+            * _Variables.less
+            * MainPage.less
 * Libraries
-    + jQueryUI
-        - Images
-        - jQueryUI.Base.less
-        - jQueryUI.DateTimePicker.less
-        - jQueryUI.less
-        - jQueryUI.Settings.less
+    * jQueryUI
+        * Images
+        * jQueryUI.Base.less
+        * jQueryUI.DateTimePicker.less
+        * jQueryUI.less
+        * jQueryUI.Settings.less
 * BaseStyles.css
 * BaseStyles.less
 * Theme.skin

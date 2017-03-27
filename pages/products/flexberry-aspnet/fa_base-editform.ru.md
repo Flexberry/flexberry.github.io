@@ -9,13 +9,8 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.Net](fa_flexberry-asp-net.html)
-* **Предназначение**: Базовый класс для [web-форм редактирования.](fa_web-edit-form.html)
-
-## Введение
-
-От этой формы наследуются все [web-формы редактирования](fa_web-edit-form.html). Данная форма не является технологической, ее можно изменять в зависимости от требований проекта.
-Она была создана для переиспользования, структурирования кода и реализации единообразной логики форм редактирования. <br />
+От **BaseEditForm** наследуются все [web-формы редактирования](fa_web-edit-form.html). Данная форма не является технологической, ее можно изменять в зависимости от требований проекта.
+Она была создана для переиспользования, структурирования кода и реализации единообразной логики форм редактирования.
 
 ## Свойства
 
@@ -41,7 +36,7 @@ lang: ru
 
 * DataObject
 
-```cs
+```csharp
 <br>var cat = new Дом();
 <br>var foots = new DetailArrayOfКвартира(cat)
 <br>{
@@ -54,14 +49,14 @@ lang: ru
 
 * DataServiceType
 
-```cs
+```csharp
 var dataServiceTypeName = dataService.GetType().Name;
 <br>this.ctrlТипСервиса.Text = this.ctrlТипСервиса.Text + dataServiceTypeName;
 ```
 
 * IsObjectCreated 
 
-```cs
+```csharp
 protected void Button1_OnClick(object sender, EventArgs e)
 <br>{
 <br>TextBox1.Text = IsObjectCreated.ToString();
@@ -70,7 +65,7 @@ protected void Button1_OnClick(object sender, EventArgs e)
 
 * IsObjectProroryped
 
-```cs
+```csharp
 protected void Button1_OnClick(object sender, EventArgs e)
 <br>{
 <br>TextBox1.Text = IsObjectPrototyped.ToString();

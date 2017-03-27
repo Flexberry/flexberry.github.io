@@ -9,25 +9,21 @@ lang: ru
 
 ---
 
-* **Платформа**: [FlexberryASP.NET](fa_flexberry-asp-net.html)
-* **Компонент**: [Web-контролы и web-компоненты](fa_web-controls.html)
-* **Предназначение**: абстрактный контрол, от которого наследуются [MasterEditorLookUp](fa_master-editor-look-up.html), [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) 
-
-## Введение
-Это абстрактный класс, от которого наследуются MasterEditorLookUp, MasterEditorAjaxLookUp.
+**BaseMasterEditorLookUp** - это абстрактный класс, от которого наследуются MasterEditorLookUp, MasterEditorAjaxLookUp.
 
 ## Единообразное изменение свойств лукапов
+
 Реализовано два статических делегата:
 1. InitLookUpSettings - Делегат для инициализации настроек. Установленные настройки можно переопределять на aspx формах.
 2. ChangeLookUpSettings - Делегат для смены настроек, при помощи которого можно привести все лукапы к единообразному виду.
 
 Пример, нужно подписаться в Global.asax:
 
-```cs
+```csharp
 BaseMasterEditorLookUp.ChangeLookUpSettings = AllForms.ChangeLookUpSettings;
 ```
 
-```cs
+```csharp
 /// <summary>
 /// Смена настроек лукапов
 /// </summary>

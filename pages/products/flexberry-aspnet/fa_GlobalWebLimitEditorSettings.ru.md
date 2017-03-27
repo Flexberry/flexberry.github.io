@@ -27,13 +27,13 @@ public class Global : HttpApplication
 
 ## Скрытие отображения панели параметров в редакторе ограничений
 Отключения отображения панели с параметрами в [редакторе ограничений](fa_advanced-limit-editor.html) производится через установку "false" (по умолчанию "true") у параметра
-```cs
+```csharp
   NewPlatform.Flexberry.Web.LimitEditor.Settings.ShowParameterPanel
 ```
 
 ## Отображение первого родительского свойства
 Для включения режима отображения первого родительского свойства в конструкторе ограничений (чтобы отличать, какое свойство к чему относится) производится установка "false" (по умолчанию "true") в параметр
-```cs
+```csharp
   NewPlatform.Flexberry.Web.LimitEditor.Settings.UseShortNames
 ```
 

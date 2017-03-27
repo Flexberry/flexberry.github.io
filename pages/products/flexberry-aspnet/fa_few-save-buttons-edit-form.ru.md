@@ -9,12 +9,6 @@ lang: ru
 
 ---
 
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
-* **Компонент**: [Web-форма редактирования](fa_web-edit-form.html)
-* **Предназначение**: добавлениe нескольких кнопок сохранения на [web-форму редактирования](fa_web-edit-form.html).
-
-## Web-форма редактирования
-
 Данная статья описывает алгоритм добавления нескольких кнопок сохранения на [web-форму редактирования](fa_web-edit-form.html).
 
 ## Алгоритм добавления нескольких кнопок
@@ -27,18 +21,19 @@ lang: ru
 
 Чтобы добавить кнопку, достаточно скопировать уже существующую кнопку сохранения и поместить её в нужное место. Она примет следующий вид:
 
-```cs
+```csharp
 <asp:ImageButton ID="ImageButton1" runat="server" SkinID="SaveBtn" OnClick="SaveBtn_Click" AlternateText="<%$ Resources: Resource, Save %>" ValidationGroup="savedoc" />
 ```
 
 Оставим её в таком виде и перейдем к следующему пункту.
+
 ### Изменение селекторов
 
 Подробнее о настройках плагина формы редактирования можно посмотреть в [этой статье](fa_ics-edit-form-configuration.html).
 
 Добавим на страницу следующий код:
 
-```cs
+```csharp
 /// <summary>
 /// Переопределение настроек инициализации плагина
 /// </summary>
@@ -57,13 +52,14 @@ public override object PluginInitSettings
 {% include note.html content="Если необходимо добавить кнопку `Сохранить и закрыть`, необходимо переопределить `saveAndCloseBtnSelector`. " %}
 
 ### Изменение ID кнопок на форме
+
 По умолчанию, saveBtnSelector "ищет" кнопки, ID которых оканчивается на **SaveBtn** (не забываем, что реально на странице он превратится в **ContentPlaceHolder1_SaveBtn**). 
 
 На предыдущем шаге мы переопределили его так, чтобы он "искал" ID, оканчивающиеся на **SaveBtn**. 
 
 Таким образом, можно не трогать ID уже существующей кнопки, но надо изменить ID добавленной нами на 1 шаге кнопки следующим образом:
 
-```cs
+```csharp
 <asp:ImageButton ID="BottomSaveBtn" runat="server" SkinID="SaveBtn" OnClick="SaveBtn_Click" AlternateText="<%$ Resources: Resource, Save %>" ValidationGroup="savedoc" />
 ```
 

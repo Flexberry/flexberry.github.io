@@ -3,14 +3,11 @@ title: Темы оформления и разметка Flexberry ASP.NET
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_flexberry-asp-net-themes.html
+permalink: ru/fa_themes.html
 folder: products/flexberry-aspnet/
 lang: ru
 
 ---
-
-* **Продукт**: [Flexberry ASP.Net](fa_flexberry-asp-net.html)
-* **Предназначение**: Темы оформления позволяют использовать и менять единообразное исполнение web-контролов и web-форм.
 
 ## Статьи по теме
 

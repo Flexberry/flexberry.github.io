@@ -9,12 +9,8 @@ lang: ru
 
 ---
 
-* **Платформа:** [FlexberryASP.NET](fa_flexberry-a-s-p-n-e-t.html)
-* **Компонент:** [Web-контролы и web-компоненты](fa_web-controls.html)
-* **Предназначение:** Web-контрол для работы с типом данных ICSSoft.STORMNET.FileType.File в web-приложении.
-* **JavaScript API:** да
-
 ## Описание
+
 Это контрол для работы с типом данных `ICSSoft.STORMNET.FileType.File` в веб-приложении. Файлы сохраняются в БД в виде сериализованной 
 строки, поэтому данный контрол предназначен для работы с небольшими файлами.
 
@@ -39,6 +35,7 @@ lang: ru
 Компонент поддерживается в [AjaxGroupEdit](fa_ajax-group-edit.html).
 
 ## Ограничение на размер загружаемого файла
+
 По умолчанию ограничение берется из опции [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx) в файле конфигурации приложения (web.config). Значение данного атрибута по умолчанию - 4 МБ, если он отсутствует в файле конфигурации.
 Данное ограничение может быть переопределено в свойстве FileControl.MaxValueSize. Новое значение не может быть меньше 1 и больше maxRequestLength, в противном случае возникнет исключение.
 
@@ -50,6 +47,7 @@ lang: ru
 
 
 ## Подключение FileControl (Web) к приложению
+
 Для того, чтобы FileControl появился на форме редактирования, нужно его добавить в `aspx`-разметку. 
 
 ```html
@@ -101,6 +99,7 @@ lang: ru
 Для сгенерированных "начисто" проектов данные настройки создаются автоматически.
 
 ## FileControl в WOLV
+
 Контрол можно расположить в ячейках столбца WOLV в режиме ReadOnly (только возможность скачивания файла).
 
 Необходимо указать, что для отображения типа File нужно использовать FileControl:
@@ -113,7 +112,7 @@ lang: ru
 
 В WOLVSettApplyer.cs необходимо подписаться на событие WebControlProvider.TuneControlDelegateMethod, чтобы настроить свойство FileControl.ReadOnly = true для всех контролов FileControl, расположенных в WOLV:
 
-```cs
+```csharp
 wolv.WebControlProvider.TuneControlDelegateMethod += TuneControlDelegateMethod;
 
 /// <summary>
@@ -133,5 +132,4 @@ private void TuneControlDelegateMethod(Control control, CreatedControlData creat
 }
 ```
 
-## FileControl (Web) [JS API](fa_java-script-a-p-i.html)
-*Раздел находится в процессе заполнения*
+## FileControl (Web) [JS API](fa_java-script-api.html)

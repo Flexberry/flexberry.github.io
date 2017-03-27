@@ -9,13 +9,6 @@ lang: ru
 
 ---
 
-* **Платформа**: [FlexberryASP.NET](fa_flexberry-asp-net.html)
-* **Компонент**: [Web-контролы и web-компоненты](fa_web-controls.html)
-* **Предназначение:** Web-контрол для выбора даты и времени
-* **JavaScript API:** да 
-
-# Описание
-
 DataPicker - web-контрол для выбора даты и времени.
 
 ## Наиболее интересные свойства
@@ -34,7 +27,7 @@ public string BeforeShowFunctionName { get; set; }  - Имя js-функции, 
 
 В следующем примере контролу задается диапазон лет, доступных для ввода:
 
-```cs
+```csharp
 protected override void PostApplyToControls()
 {
     ctrlOnlyDate.YearRange = "2001:2002";
@@ -43,7 +36,7 @@ protected override void PostApplyToControls()
 
 А в этом примере контролу задается минутный шаг:
 
-```cs
+```csharp
 protected override void PostApplyToControls()
 {
     ctrlStepMinute.OnlyDate = false;

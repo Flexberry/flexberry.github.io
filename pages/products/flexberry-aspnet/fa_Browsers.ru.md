@@ -9,10 +9,6 @@ lang: ru
 
 ---
 
-
-* **Продукт**: [Flexberry ASP.NET](fa_flexberry-asp-net.html)
-* **Предназначение**: список поддерживаемых браузеров.
-
 ## Браузеры
 
 На данный момент технология [Flexberry ASP.NET](fa_flexberry-asp-net.html) поддерживает следующие браузеры:

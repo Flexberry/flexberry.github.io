@@ -9,10 +9,6 @@ lang: ru
 
 ---
 
-* **Платформа:** [FlexberryASP.NET](fa_flexberry-asp-net.html)
-* **Компонент:** [Операции AjaxGroupEdit](fa_a-g-e-operations.html)
-* **Предназначение:** Возможность открытия web-формы редактирования в AjaxGroupEdit в разных режимах. 
-
 ## Варианты открытия web-формы редактирования в AGE
 
 Редактирование записей [AjaxGroupEdit](fa_ajax-group-edit.html) возможно в разных режимах:
@@ -25,7 +21,7 @@ lang: ru
 
 Для того, чтобы открыть [web-форму редактирования](fa_flexberry-asp-net-edit-form.html  ) в текущем окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
 
-```cs
+```csharp
 /// <summary>
 /// Здесь лучше всего изменять свойства контролов на странице, которые не обрабатываются WebBinder.
 /// </summary>
@@ -40,7 +36,7 @@ protected override void PostApplyToControls()
 
 Для того, чтобы открыть [web-форму редактирования](fa_flexberry-asp-net-edit-form.html) в модальном окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.ModalWindowSettings в PostApplyToControls().
 
-```cs
+```csharp
 /// <summary>
 /// Здесь лучше всего изменять свойства контролов на странице, которые не обрабатываются WebBinder.
 /// </summary>
@@ -56,7 +52,7 @@ protected override void PostApplyToControls()
 
 Для того, чтобы открыть [web-форму редактирования](fa_flexberry-asp-net-edit-form.html) в новом окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
 
-```cs
+```csharp
 /// <summary>
 /// Здесь лучше всего изменять свойства контролов на странице, которые не обрабатываются WebBinder.
 /// </summary>

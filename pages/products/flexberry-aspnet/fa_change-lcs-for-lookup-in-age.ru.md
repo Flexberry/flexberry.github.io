@@ -9,15 +9,7 @@ lang: ru
 
 ---
 
-* **Платформа**: [FlexberryASP.NET](fa_flexberry-asp-net.html)
-* **Компонент**: [Настройки для LookUp в AGE](fa_settings-for-look-up-in-a-g-e.html)
-* **Предназначение**: Настройка ограничения для LookUp в [AjaxGroupEdit](fa_ajax-group-edit.html) 
-
-## Связывание LookUp'ов в AGE с внешним LookUp'ом
-
-Цель: 
-
-[Функция ограничения](fo_limit-function.html) [LookUp'ов](fa_master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](fa_ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
+**Цель связывания LookUp'ов в AGE с внешним LookUp'ом:** [Функция ограничения](fo_limit-function.html) [LookUp'ов](fa_master-editor-ajax-look-up.html) внутри [AjaxGroupEdit](fa_ajax-group-edit.html) должна зависеть от значения во внешнем LookUp'е.
 
 Модель:
 
@@ -25,7 +17,7 @@ lang: ru
 
 Код:
 
-```cs
+```csharp
 /// <summary>
 /// Метод изменяющий LCS в лукапах, находящихся в AGE.
 /// </summary>

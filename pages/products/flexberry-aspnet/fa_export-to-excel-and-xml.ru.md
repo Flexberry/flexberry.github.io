@@ -9,8 +9,6 @@ lang: ru
 
 ---
 
-## Введение
-
 Вся логика экспорта в Excel и XML находится в Web.Tools.
 
 ## Использование в контролах
@@ -21,13 +19,13 @@ lang: ru
 
 Для того, чтобы сменить значение и тип ячейки при выгрузке нужно переопределить статическое поле, например:
 
-```cs
+```csharp
 Web.Tools.WOLVFeatures.ExcelXMLExport.InitExcelCell = AllForms.InitExcelCell;
 ```
 
 И реализовать инициализацию свойств, например:
 
-```cs
+```csharp
 public static void InitExcelCell(ExcelCellEventArgs args)
 {
     if (args.PropValue is bool)
@@ -43,13 +41,13 @@ public static void InitExcelCell(ExcelCellEventArgs args)
 
 Для того, чтобы задать формат даты при выгрузке, нужно переопределить статическое поле:
 
-```cs
+```csharp
 ICSSoft.STORMNET.Web.Tools.WOLVFeatures.ExcelXMLExport.InitExcelCellFormatDelegate
 ```
 
 и обработать параметр необходимым образом. Передаваемый параметр следующий:
 
-```cs
+```csharp
 public class ExcelCellFormatEventArgs : EventArgs
 {
 	/// <summary>
@@ -82,7 +80,7 @@ public class ExcelCellFormatEventArgs : EventArgs
 
 Например, зададим для свойства "PoleDateTime" класса "LimitEditorMainAgregator" следующий формат даты: "dd.MM.yyyy hh:mm:ss".
 
-```cs
+```csharp
 ICSSoft.STORMNET.Web.Tools.WOLVFeatures.ExcelXMLExport.InitExcelFormat = InitExcelFormat;
 
 /// <summary>

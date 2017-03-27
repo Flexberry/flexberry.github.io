@@ -9,11 +9,11 @@ lang: ru
 
 ---
 
-## Подключение скриптов и стилей на основе FilterPageContentConnector
-Класс FilterPageContentConnector используется для подключения технологических скриптов и стилей, которые необходимы для работы контролов и среды выполнения при помощи пост-обработки разметки страницы. Скрипты подключаются в конце тега `<body>`, стили - в конец тега `<head>`.
-Является альтернативой методу подключения ресурсов через [PlaceholderPageContentConnector](placeholder-page-content-connector.html).
+Класс `FilterPageContentConnector` используется для подключения технологических скриптов и стилей, которые необходимы для работы контролов и среды выполнения при помощи пост-обработки разметки страницы. Скрипты подключаются в конце тега `<body>`, стили - в конец тега `<head>`.
+Является альтернативой методу подключения ресурсов через [PlaceholderPageContentConnector](fa_placeholder-page-content-connector.html).
 
 ## Принцип работы
+
 Перед отправкой сформированной HTML-разметки пользователю происходит пост-обработка страницы
 
 1. определяется позиция для вставки данных (конец тэга `<head>` для стилей и конце тэга `<body>` для скриптов и других спец. компонентов;
@@ -29,9 +29,10 @@ lang: ru
 В большинстве случаев (особенно для новых проектов) стоит использовать [PlaceholderPageContentConnector](fa_placeholder-page-content-connector.html)." %}
 
 ## Настройка
+
 Для подключения ресурсов на основе фильтров нужно настроить unity (web.config):
 
-```cs
+```csharp
 <register type="NewPlatform.Flexberry.Web.Http.IPageContentConnector, NewPlatform.Flexberry.Web.Http"
           mapTo="NewPlatform.Flexberry.Web.Http.FilterPageContentConnector, NewPlatform.Flexberry.Web.Http" />
 ```
