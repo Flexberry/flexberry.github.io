@@ -156,7 +156,7 @@ permalink: ru/fo_detail-associations-and-their-properties.html
 
 Перед определением свойства, указывающего на агрегатор в детейловом классе, генерируется указание атрибута PropertyStorageAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
 
-Как работает этот атрибут, см. документ [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [DataObjectsAndDatabaseStructures#AttributeDefinitionStorage|Именование при хранении объектных данных].
+Как работает этот атрибут, см. документ [Учебник программиста Flexberry Platform](Учебник-программиста--flexberry-platform.html) раздел [Именование при хранении объектных данных](fo_data-objects-and-database-structures.html).
 
 ### Detail AutogenerateTypeUsage 
 
@@ -442,7 +442,6 @@ permalink: ru/fo_detail-associations-and-their-properties.html
 Код для [класса-шапки](fd_key-concepts.html) (фрагмент класса Ошибка: приватный член и свойство типа массива детейловых объектов - DetailArrayOfШаг):
 
 ```cs
-
 public class Ошибка : ICSSoft.STORMNET.DataObject
     {
 
