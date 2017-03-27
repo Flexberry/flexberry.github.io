@@ -193,7 +193,7 @@ ds.Query<Порода>(Порода.Views.ПородаE)
 
 ## PseudoDetail и DetailVariableDef
 
-Ниже показан пример кода, демонстрирующий связь `PseudoDetail` и `[VariableDef#PseudoDetail|DetailVariableDef]`.
+Ниже показан пример кода, демонстрирующий связь `PseudoDetail` и [`DetailVariableDef`](fo_variable-def.html).
 
 (`ComparePseudoDetailWithDetailVariableDef` - это метод, проводящий конвертацию из linq в lcs и сравнивающий результаты.)
 

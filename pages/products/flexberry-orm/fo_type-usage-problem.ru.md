@@ -64,7 +64,7 @@ public class A:DataObject
 }
 ```
 
-Метод `[Information](fo_information-class-as-metadata-supervisor.html).CheckUsingType` позволяет проверить внутри свойства, метода, откуда вызван, совместим ли тип с объявленным, согласно используемых типов.
+Метод [`Information`](fo_information-class-as-metadata-supervisor.html)`.CheckUsingType` позволяет проверить внутри свойства, метода, откуда вызван, совместим ли тип с объявленным, согласно используемых типов.
 
 ## TypeUsageProvider.TypeUsage
 

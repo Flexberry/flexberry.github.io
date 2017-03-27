@@ -35,6 +35,7 @@ lang: ru
 ### Дополнительные способы загрузки данных
 
 #### `LoadRawValues`
+
 __Назначение__: Загрузка без создания объектов при необходимости получить DISTINCT данные.
  Стандартные методы зачитки получают [PrimaryKey](fo_primary-keys-objects.html) для возможности правильного создания объектов данных. Соответственно, DISTINCT с [PrimaryKey](fo_primary-keys-objects.html) в запросе не даёт эффекта ([ключи](fo_primary-keys-objects.html) уникальные, поэтому никакой группировки результатов не произойдёт - они все разные). Данный метод возвращает обычный двумерный массив (как это делает `ADO.NET`).
 
@@ -340,9 +341,11 @@ public virtual void GetLeftJoinExpression(string subTable, string subTableAlias,
 ```
 
 ### `GetInnerJoinExpression`
+
 __Назначение__: Получить InnerJoin выражение 
 
 __Параметры__:
+
  `subTable` - имя таблицы 
 
 `subTableAlias` - псевдоним таблицы 
@@ -383,6 +386,7 @@ public virtual string GetJoinTableModifierExpression()
 __Назначение__: Вернуть in выражение для where 
 
 __Параметры__:
+
  `identifiers` - идентификаторы
  
 __Сигнатура__:
@@ -396,6 +400,7 @@ public virtual string GetINExpression(params string[] identifiers)
 __Назначение__: Вернуть ifnull выражение
  
 __Параметры__:
+
  `identifiers` - идентификаторы
 
 __Сигнатура__:
@@ -409,6 +414,7 @@ public virtual string GetIfNullExpression(params string[] identifiers)
 __Назначение__: Оформить идентификатор 
 
 __Параметры__:
+
  `identifier` - идентификатор
 
 __Возвращаемый результат__: оформленный идентификатор(например в кавычках)
@@ -424,6 +430,7 @@ public virtual string PutIdentifierIntoBrackets(string identifier)
 __Назначение__: Создать join соединения
  
 __Параметры__:
+
  `source` - источник с которого формируется соединение
 
 `parentAlias` - вышестоящий алиас
@@ -451,6 +458,7 @@ public virtual void CreateJoins(STORMDO.Business.StorageStructForView.PropSource
 __Назначение__: Создать join соединения 
 
 __Параметры__:
+
  `source` - источник с которого формируется соединение
 
 `parentAlias` - вышестоящий алиас
@@ -486,6 +494,7 @@ FROM
 ``` 
 
 __Параметры__:
+
  `storageStruct` - структура хранилища 
 
 `AddingAdvansedField` - довленные дополнительные свойства 
@@ -513,6 +522,7 @@ virtual public string GenerateSQLSelectByStorageStruct(STORMDO.Business.StorageS
 __Назначение__: Конвертация константных значений в строки запроса 
 
 __Параметры__:
+
  `value` - значение
 
 __Сигнатура__:

@@ -16,5 +16,5 @@ PostgresDataService- это [сервис данных](fo_data-service.html) д
 
 ## Особенности работы с PostgreSQL
 
-Для обеспечения регистронезависимости Postgres необходимо подключить следующий модуль: [http://www.postgresql.org/docs/current/static/citext.html)
+Для обеспечения регистронезависимости Postgres необходимо подключить следующий модуль: [http://www.postgresql.org/docs/current/static/citext.html]()
 Это необходимо для корректной работы ограничений.

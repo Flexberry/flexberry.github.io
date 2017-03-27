@@ -27,7 +27,7 @@ lang: ru
 
 В случае связанных объектов, мастеровые объекты должны располагаться вначале массива. Т.е., если имеется ситуация вида:
 
-![](/img/Учебник программиста Casseberry/primer7.jpg)
+![](/images/pages/products/flexberry-orm/tutorial-programmer-casseberry/primer-7.jpg)
 
 и есть объекты: a, m1, m2, m3, то правильный массив будет такой: 
 

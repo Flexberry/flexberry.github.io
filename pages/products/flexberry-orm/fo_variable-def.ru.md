@@ -51,10 +51,15 @@ ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, "PrimaryKey"), "64F45BC3-
 var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, SQLWhereLanguageDef.StormMainObjectKey), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
 ```
-<div markdown="span" class="note"><i class="note">Стоит отметить, что ограничение на [первичный ключ](fo_primary-keys-objects.html) __мастера__ накладывается следующим образом:
+
+Стоит отметить, что ограничение на [первичный ключ](fo_primary-keys-objects.html) __мастера__ накладывается следующим образом:
+
+``` csharp
 var ld = SQLWhereLanguageDef.LanguageDef;
 ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, Information.ExtractPropertyPath<СамОбъект>(x => x.СсылкаНаМастера)), "84F456C1-312F-30C0-A238-11E3FE68E852");
-где "СсылкаНаМастера" - ссылка на мастера.</div>
+```
+
+где "СсылкаНаМастера" - ссылка на мастера.
 
 ## DetailVariableDef
 
@@ -91,15 +96,14 @@ Cтоит отметить, что свойство `OwnerConnectProp` опре�
 
 **Пример1:**
 
-![](/images/pages/img/page/VariableDef/Diagramm.JPG)
-D:/PMasalkinGit/flexberry.github.io/images/pages/products/flexberry-orm/variable-def/diagramm.JPG
+![](/images/pages/products/flexberry-orm/variable-def/diagramm.JPG)
 
 Необходимо отфильтровать УдостоверяющиеДокументы для ЗаявленияАбитуриента. 
 При задании `DetailVariableDef` следует указать: `OwnerConnectProp` = Личность, `ConnectMasterProp` = Личность.
 
 **Пример2:**
 
-![Изображение](/images/img/Ограничения/Examples/Diagramm2.PNG)
+![Изображение](/images/pages/products/flexberry-orm/variable-def/diagramm-2.PNG)
 
 Необходимо отфильтровать ОбразовательныеДокументы для СтрокиРекомендательногоСписка. 
 При задании `DetailVariableDef` следует указать: `OwnerConnectProp` = ЗаявлениеАбитуриента.Личность, `ConnectMasterProp` = Личность.
@@ -111,7 +115,8 @@ D:/PMasalkinGit/flexberry.github.io/images/pages/products/flexberry-orm/variable
 
 Рассмотрим на примере. Пусть сущности "Клиент" и "Кредит" связаны представленным на изображении образом.
 
-[image|Изображение|{UP(VariableDef)}PseudoDetails.png)
+
+![](/images/pages/products/flexberry-orm/variable-def/pseudo-details.png)
 
 Нужно ограничить клиентов, задав при этом ограничение на ссылающихся на них кредиты.
  

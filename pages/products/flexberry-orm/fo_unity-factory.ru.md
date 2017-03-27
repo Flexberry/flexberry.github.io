@@ -24,11 +24,6 @@ IService serviceInstance = container.Resolve<IService>();
 * [Сервис текущего пользователя](fo_current-user-service.html).
 * [DRDataService](fo_dr-data-service.html)
 
-
-
-
-
-
 ## Flexberry UnityFactory
 Flexberry UnityFactory является [продуктом платформы Flexberry](platform-structure.html) и позволяет стандартным образом работать с разрешением контейнеров [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Используется версия [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx).
 

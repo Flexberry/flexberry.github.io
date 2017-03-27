@@ -22,11 +22,13 @@ lang: ru
 ### Примеры
 
 Без использования статических свойств:
+
 ``` csharp
 View view = Information.GetView("КошкаL", typeof(Кошка));
 ```
 
 С использованием статических свойств:
+
 ``` csharp
 View view = Кошка.Views.КошкаL;
 ```
