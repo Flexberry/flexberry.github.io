@@ -394,7 +394,7 @@ __Сигнатура__:
 static public System.Type GetKeyGeneratorType(System.Type typeofdataobject) 
 ```
 
-## [DataObjectsAndDatabaseStructures#AttributeDefinitionStorage|Имена хранения объектов]
+## [Имена хранения объектов](fo_data-objects-and-database-structures.html)
 
 ### GetTypeStorageName
 __Назначение__: Имя хранилища для типа

@@ -34,7 +34,8 @@ public static IQueryable<T> Query<T>(this SQLDataService ds) where T : DataObjec
 ```
 
 Параметры:
-|Имя|Описание|
+
+| Имя | Описание |
 |:----|:----|
 | `ds` | [Сервис данных, наследник SQLDataService](fo_sql-data-service.html), для выполнения запроса|
 | `view` | [Представление](fd_view-definition.html), используемое для загрузки объектов|

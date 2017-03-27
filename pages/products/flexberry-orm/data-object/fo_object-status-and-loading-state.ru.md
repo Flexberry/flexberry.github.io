@@ -58,6 +58,7 @@ lang: ru
 * Если нужно перевести объект из состояния `Created` в состояние `Altered`, то достаточно вызвать метод `SetLoadingState(LoadingState.LightLoaded)` тем самым указав, что объект в базе присутствует. Более правильный способ - это вызвать `SetExistObjectPrimaryKey(object primaryKey)` - это не только указывает на то, что объект в БД присутсвует, но и сразу задаёт правильный [ключ](fo_primary-keys-objects.html) этого самого объекта в базе.
 * Метод установки статуса объекту данных DataObject.SetStatus() имеет специальную логику, которая срабатывает при переключении статуса. 
 
+
 | **Устанавливаемое \ Старое** | UnAltered | Created | Altered | Deleted|
 |:---------------|:---------------|:---------------|:---------------|:---------------
 | UnAltered | UnAltered | **Created** | UnAltered | **Created если NotLoaded, иначе UnAltered**|

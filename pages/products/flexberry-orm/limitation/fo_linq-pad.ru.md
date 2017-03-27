@@ -14,7 +14,7 @@ lang: ru
 
 ## Установка LINQPad и подключение к рабочей базе
 
- Скачиваем LINQPad и провайдер отсюда: [\\RU\TEAM\Distrib\Tools\LINQPad](file://///RU\TEAM\Distrib\Tools\LINQPad) или с официального сайта: <http://linqpad.net>.
+ Скачиваем LINQPad и провайдер отсюда: [file://///RU\TEAM\Distrib\Tools\LINQPad](file://///RU\TEAM\Distrib\Tools\LINQPad) или с официального сайта: <http://linqpad.net>.
 * Берем файл `LINQPad4.zip` или `LINQPad4-AnyCPU.zip` (для 64-разрядного процессора).
 * Берем файл драйвера, поддерживающего Flexberry DataService: `SQLDataServiceLinqPadDriver.lpx`
 * Распаковываем архив в удобное место и кладем рядом провайдер.
