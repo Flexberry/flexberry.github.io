@@ -31,7 +31,7 @@ entries:
 
   - title: Data service
     output: web, pdf
-    folderitems:    
+    folderitems:
     - title: Интерпретация булевского значения NULL
       url: //fo_interpretation-boolean-values-null.html
       output: web
@@ -48,11 +48,11 @@ entries:
       url: //fo_minimum-required-client-set-for-oracle-data-service.html
       output: web
       
-    - title: Нехранимые (вычислимые) свойства объекта данных
+    - title: Нехранимые свойства объекта данных
       url: //fo_not-stored-attributes.html
       output: web
     
-      - title: Обработка регистров в именах объектов для СУБД
+    - title: Обработка регистров в именах объектов для СУБД
       url: //fo_processing-registers-names-for-objects-dbms.html
       output: web
 
