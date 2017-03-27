@@ -58,7 +58,9 @@ permalink: ru/fo_dataobject.html
 ### Работа с копией данных
 
 `ContainsAlteredProps`
+
 __Назначение__: Установить было ли изменение значений свойств объекта по сравнению с внутренней копией 
+
 __Сигнатура__:
 
 ```cs
@@ -66,7 +68,9 @@ bool ICSSoft.STORMNET.DataObject.ContainsAlteredProps()
 ```
 
 `GetAlteredPropertyNames` 
+
 __Назначение__: Возвращает список свойств (атрибутов, мастеров, детейлов), значения которых изменились по сравнению с внутренней копией объекта.
+
 __Сигнатура__:
 
 ```cs
@@ -74,6 +78,7 @@ string[] ICSSoft.STORMNET.DataObject.GetAlteredPropertyNames()
 ```
 
 `GetDataCopy`
+
 __Назначение__: Получить внутреннюю копию объекта данных
 
 __Сигнатура__:
@@ -83,7 +88,9 @@ DataObject ICSSoft.STORMNET.DataObject.GetDataCopy()
 ```
 
 `InitDataCopy` 
+
 __Назначение__: Проинициализировать копию данных
+
 __Параметры__:
  
 * DataObjectCache 
@@ -98,7 +105,8 @@ void ICSSoft.STORMNET.DataObject.InitDataCopy()
 void ICSSoft.STORMNET.DataObject.InitDataCopy(DataObjectCache DataObjectCache)
 ```
 
-`SetDataCopy` 
+`SetDataCopy`
+
 __Назначение__: Установить внутреннюю копию объекта данных
 
 __Параметры__:
@@ -140,6 +148,7 @@ public string[] CheckNotNullProperties(View view, bool returnCaptions, Dictionar
 ```
 
 `CopyTo`  
+
 __Назначение__: Создать копию объекта данных. Если полученный в результате копирования объект планируется поместит в хранилище, у него необходимо   вызвать методы `InitDataCopy` или `ClearDataCopy`.
 
 __Параметры__:
@@ -160,7 +169,9 @@ __Сигнатура__:
  ```
 
 `GetStatus`
+
 __Назначение__: Получение значения статуса объекта
+
 __Параметры__:
  
 * recountIfAutoaltered - обновить значение принудительно (если класс с автоматическим вычислением статуса)
@@ -176,6 +187,7 @@ ObjectStatus ICSSoft.STORMNET.DataObject.GetStatus(bool recountIfAutoaltered)
 ```
 
 `LockObject` 
+
 __Назначение__: Заблокировать объект
 
 __Параметры__:
@@ -189,7 +201,9 @@ void ICSSoft.STORMNET.DataObject.LockObject(object key)
 ```
 
 `Prototyping`  
+
 __Назначение__: Прототипизировать
+
 __Параметры__:
  
 * withDetails - с детейлами или без
@@ -201,7 +215,9 @@ virtual void ICSSoft.STORMNET.DataObject.Prototyping(bool withDetails)
 ```
 
 `SetExistObjectPrimaryKey`  
+
 __Назначение__: Установить первичный ключ в объект данных. Выполняется операция Clear() для объекта, присваивается первичный ключ, SetLoadingState(LoadingState.LightLoaded); SetLoadedProperties("__PrimaryKey");
+
 __Параметры__:
  
 * primaryKey Первичный ключ 
@@ -213,7 +229,9 @@ void ICSSoft.STORMNET.DataObject.SetExistObjectPrimaryKey (object primaryKey)
 ```
 
 `SetLoadingState`  
+
 __Назначение__: Установка состояния загрузки.
+
 __Параметры__:
  
 * newState - Состояние загрузки, устанавливаемое объекту. 
@@ -223,8 +241,11 @@ __Сигнатура__:
 ```cs
 void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 ```
+
 `SetLoadedProperties` 
+
 __Назначение__: Установка состояния загрузки.
+
 __Параметры__:
  
 * newState - Состояние загрузки, устанавливаемое объекту. 
@@ -236,7 +257,9 @@ void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 ```
 
 `SetStatus`  
+
 __Назначение__: Установка статуса
+
 __Параметры__:
  
 * newState - Статус, устанавливаемый объекту.
@@ -248,7 +271,9 @@ virtual void ICSSoft.STORMNET.DataObject.SetStatus (ObjectStatus newState)
 ```
 
 `UnLockObject`  
+
 __Назначение__: Разблокировать объект
+
 __Параметры__:
  
 * `key` - ключ блокировки объекта.
