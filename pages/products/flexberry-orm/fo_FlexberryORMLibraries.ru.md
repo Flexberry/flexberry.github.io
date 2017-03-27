@@ -8,14 +8,15 @@ permalink: ru/fo_flexberry-o-r-m-libraries.html
 * **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Предназначение**: Описание основных сборок, входящих в продукт [Flexberry ORM](fo_flexberry-o-r-m.html).
 
-# Список библиотек [Flexberry ORM](fo_flexberry-o-r-m.html)
+## Список библиотек [Flexberry ORM](fo_flexberry-o-r-m.html)
+
 Список библиотек, содержащих Runtime-компоненты [Flexberry ORM](fo_flexberry-o-r-m.html):
-*** ChangesToSqlBTMonitor.dll** - библиотека, содержащая классы для работы [сервиса записи SQL-скриптов изменения данных](fo_changes-to-sql-b-t-monitor.html).
+* **ChangesToSqlBTMonitor.dll** - библиотека, содержащая классы для работы [сервиса записи SQL-скриптов изменения данных](fo_changes-to-sql-b-t-monitor.html).
 * **ExternalLangDef.dll** - библиотека, содержащая [расширение языка ограничений](fo_external-lang-def.html) для [задания ограничений](fo_limit-function.html) на зависимые объекты.
 * **ICSSoft.STORMNET.BF.dll**
 * **ICSSoft.STORMNET.Business.dll** - библиотека, содержащая базовые классы для организации [отображения структуры реляционных таблиц БД на объектную модель](fo_data-service.html).
-* **ICSSoft.STORMNET.Business.DRDataService.dll** - библиотека, содержащая классы для работы [DRDataService](fo_dr-data-service.html).
-* **ICSSoft.STORMNET.Business.LINQProvider.dll** - библиотека, содержащая классы для поддержки LINQ в [Flexberry ORM](fo_flexberry-orm.html).
+* **ICSSoft.STORMNET.Business.DRDataService.dll** - библиотека, содержащая классы для работы [DRDataService](fo_d-r-data-service.html).
+* **ICSSoft.STORMNET.Business.LINQProvider.dll** - библиотека, содержащая классы для поддержки LINQ в [Flexberry ORM](fo_flexberry-o-r-m.html).
 * **ICSSoft.STORMNET.Business.LockService.dll** - библиотека, содержащая классы для работы [сервиса блокировок](fo_lock-service.html).
 * **ICSSoft.STORMNET.Business.MSSQLDataService.dll** - библиотека, содержащая классы для [организации отображения структуры реляционных таблиц MS SQL Server (версии 2005 и выше) на объектную модель](fo_data-service.html).
 * **ICSSoft.STORMNET.Business.ODBCDataService.dll**  - библиотека, содержащая классы для работы [ODBCDataService](fo_odbc-data-service.html).
