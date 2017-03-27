@@ -10,7 +10,7 @@ lang: ru
 
 ## LoadingCustomizationStruct
 
-`LoadingCustomizationStruct` позволяет полностью настроить параметры [Construction-DataService|сервиса данных) для операций чтения объектов данных.
+`LoadingCustomizationStruct` позволяет полностью настроить параметры [сервиса данных](fo_construction-data-service.html) для операций чтения объектов данных.
 
 Удобно создавать структуру `LoadingCustomizationStruct` с помощью статического метода `GetSimpleStruct`.
 

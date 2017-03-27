@@ -33,7 +33,7 @@ lang: ru
 * `BusinessServersComPlus` - сборка [обёртки для обращения к бизнес-серверу](fo_business-servers-wrapper-business-facade.html) через COM+ для бизнес-серверов, у которых установлена галочка `GenerateComPlusServer`; 
 * `BusinessServersHttp` - сборка [обёртки для обращения к бизнес-серверу](fo_business-servers-wrapper-business-facade.html) через веб-сервис для серверов, у которых установлена галочка `GenerateHTTPRemoteServer`; 
 * `Catchers` - для [классов со стереотипом `eventarg`](classes-with-stereotype-eventarg.html), у которых установлена галочка `GenerateCatcher` в эту сборку генерируются классы-перехватчики событий; 
-* `Objects` - классы со стереотипами: `[implementation](fo_data-classes.html), type, [enumeration](enumerations.html), [eventarg](classes-with-stereotype-eventarg.html)`. 
+* `Objects` - классы со стереотипами: [`implementation`](fo_data-classes.html)`, type, `[`enumeration`](enumerations.html), [`eventarg`](classes-with-stereotype-eventarg.html). 
 * `Scripts` - сценарии, определённые диаграммным методом `EBSD`. 
 
 Дополнительно (__при наличии специальных генераторов__) могут генерироваться:

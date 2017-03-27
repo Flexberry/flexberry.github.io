@@ -13,6 +13,7 @@ lang: ru
 ## Описание компонент
 
 Для фильтрации и ограничения выборки данных существует несколько классов, реализующих данную логику:
+
 * [Функции ограничения (Limit Function)](fo_limit-function.html).
 * [LINQProvider](fo_linq-provider.html) (компоненты для поддержки LINQ в [Flexberry ORM](fo_flexberry-orm.html)).
 

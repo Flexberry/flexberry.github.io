@@ -50,7 +50,7 @@ public static IQueryable<T> Query<T>(this SQLDataService ds) where T : DataObjec
 * [Any](http://msdn.microsoft.com/en-us/library/system.linq.queryable.any.aspx)
 * [All](http://msdn.microsoft.com/en-us/library/bb534754.aspx)
 * [Count](http://msdn.microsoft.com/en-us/library/bb534754.aspx)
-* [FirstOrDefault](http://msdn.microsoft.com/ru-ru/library/system.linq.queryable.firstordefault(v=vs.110).aspx)
+* [FirstOrDefault](http://msdn.microsoft.com/ru-ru/library/system.linq.queryable.firstordefault.aspx)
 
 <div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Information:</b> Обратите внимание, что вычитка происходит каждый раз при вызове ToList или ToArray, так что желательно сначала получить коллекцию данных, а потом работать с ней.</div>
 
