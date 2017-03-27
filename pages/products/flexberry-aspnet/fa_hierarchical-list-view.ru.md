@@ -1,9 +1,9 @@
 ---
-title: Hinter
+title: HierarchicalListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_hinter.html
+permalink: ru/fa_hierarchical-list-view.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
@@ -25,4 +25,5 @@ lang: ru
 # JS API
 
 # Возможные ошибки
+ 
  

@@ -3,19 +3,18 @@ title: Конфигурирование Web-формы редактирован�
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_ics-edit-form-configuration.html
+permalink: ru/fa_edit-form-configuration.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-# Форма редактирования
-Данная статья содержит информацию о конфигурировании [Web-формы редактирования](web-edit-form.html).
+## Настройки и jquery.icsEditForm.js
 
-# Настройки и jquery.icsEditForm.js
 Настройки формы редактирования хранятся в javascript-plugin'e, находящемся в файле jquery.icsEditForm.js.
 
 По умолчанию они выглядят следующим образом:
-```
+
+```csharp
 configuration: {
             trackChanges: true,
             trackIncludeSelector: 'input,textarea,select',
@@ -57,31 +56,33 @@ configuration: {
                 okButton: 'OK',
                 cancelButton: 'Cancel'
             }
-        }```
+        }
+```
+
 Чтобы у прикладного разработчика была возможность повлиять на эти настройки с серверной части приложения, было создано свойство базовой формы редактирования `PluginInitSettings`.
 
-# PluginInitSettings
+## PluginInitSettings
+
 У свойства `PluginInitSettings` отсутствует Setter, однако, оно объявлено как `virtual`, следовательно, его можно переопределить на нужной форме.
 
 Для этого необходимо на форме, наследующейся от `BaseEditForm`, написать следующий блок:
 
-```
-
-        public override object PluginInitSettings
-        {
-            get 
-            { 
-                return new
+```csharp
+public override object PluginInitSettings
+{
+    get 
+    { 
+        return new
+            {
+                saveBtnSelector = "input[id$=\"SaveBtn\"]",
+                saveAndCloseBtnSelector: "input[id$=\"SaveAndCloseBtn\"]",
+                messages = new 
                     {
-                        saveBtnSelector = "input[id$=\"SaveBtn\"]",
-                        saveAndCloseBtnSelector: "input[id$=\"SaveAndCloseBtn\"]",
-                        messages = new 
-                            {
-                                okButton = "Хорошо"
-                            }        
-                    };
-            }
-        }
+                        okButton = "Хорошо"
+                    }        
+            };
+    }
+}
 ```
 
 Указав переопределяемые свойства.

@@ -13,7 +13,7 @@ lang: ru
 
 Модель:
 
-![](/images/pages/products/flexberry-aspnet/aspnet/model.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/model.png)
 
 Код:
 
