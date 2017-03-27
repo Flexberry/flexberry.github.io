@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных)
 toc: true
 permalink: ru/fo_using-of-not-stored-classes.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 Генерируемые Flexberry формы для нехранимых классов удобно использовать для выбора некого текущего объекта, проведении авторизации пользователей.

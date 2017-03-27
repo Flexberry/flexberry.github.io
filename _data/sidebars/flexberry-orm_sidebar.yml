@@ -25,10 +25,142 @@ entries:
   - title: Работа с данными
     output: web, pdf
     folderitems:
-    - title: ICSSoft.STORMNET.Tools.XmlTools
-      url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
+    - title: Доступ к собственным атрибутам объекта и атрибутам связанных объектов
+      url: //fo_own-object-attributes-and-attributes-related-objects.html
       output: web
 
+    - title: Наследование 
+      url: //fo_inheritance.html
+      output: web
+
+    - title: Настройка параметров чтения (LoadingCustomizationStruct)
+      url: //fo_loading-customization-struct.html
+      output: web
+
+    - title: Интерфейс ISpecialEmptyValue
+      url: //fo_i-special-empty-value.html
+      output: web
+
+    - title: Как открыть объект только на чтение
+      url: //fo_read-only-object.html
+      output: web
+
+    - title: Обновление связанных объектов
+      url: //fo_update-related-objects.html
+      output: web
+
+    - title: Обработка множества объектов
+      url: //fo_processing-of-multiple-objects.html
+      output: web
+
+    - title: Обработка одного объекта
+      url: //fo_processing-one-object.html
+      output: web
+
+    - title: Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)
+      url: //fo_testing-user-operations-dataservice.html
+      output: web
+
+    - title: Отображение на интерфейсе формы мастеров и детейлов
+      url: //fo_masters-details.html
+      output: web
+
+    - title: Отображение TypeUsage в структуру данных
+      url: //fo_type-usage-in-data-structure.html
+      output: web
+
+    - title: Перегрузка атрибутов, ассоциаций, методов 
+      url: //fo_overloading-attributes-associations-methods.html
+      output: web
+
+    - title: Пример использования стереотипа typedef
+      url: //fo_using_stereotypes_example.html
+      output: web
+
+    - title: Пример использования собственных типов
+      url: //fo_using-custom-types-example.html
+      output: web      
+
+    - title: Применение нехранимых классов
+      url: //fo_using-of-not-stored-classes.html
+      output: web   
+
+    - title: Пример загрузки и изменения объекта
+      url: //fo_load-and-alter-objects.html
+      output: web
+
+    - title: Пример загрузки графа объектов
+      url: //fo_load-multiple-details-example.html
+      output: web
+
+    - title: Пример нехранимых и вычислимых свойств
+      url: //fo_nonstored-calculated-properties.html
+      output: web
+    
+    - title: Пример прототипизации объекта
+      url: //fo_prototyping-example.html
+      output: web\
+
+    - title: Проблема используемых типов (TypeUsage)
+      url: //fo_type-usage-problem.html
+      output: web
+
+    - title: Порядок загрузки свойств объекта данных
+      url: //fo_order-of-loading-property-data-object.html
+      output: web
+
+    - title: Порционное чтение
+      url: //fo_reading-portion.html
+      output: web
+
+    - title: Расположение сборок после генерации кода
+      url: //fo_location-assembly-after-code-generation.html
+      output: web
+
+    - title: Сервис блокировок
+      url: //fo_lock-service.html
+      output: web
+
+    - title: Статус и состояние загрузки объекта данных
+      url: //fo_object-status-and-loading-state.html
+      output: web
+
+    - title: Скобки программиста
+      url: //fo_programmer-brackets.html
+      output: web
+
+    - title: Функция импликации (funcImplication)
+      url: //fo_implication-in-external-lang-def.html
+      output: web
+
+    - title: Flexberry Security API - ISecurityManager
+      url: //fo_i-security-manager.html
+      output: web
+
+    - title: Flexberry UnityFactory
+      url: //fo_unity-factory.html
+      output: web
+
+    - title: ICSSoft.STORMNET.Tools.XmlTools
+      url: //fo_ics-soft-stormnet-tools.html
+      output: web
+
+    - title: Information получение метаданных
+      url: //fo_information-class-as-metadata-supervisor.html
+      output: web
+
+    - title: Information.GetPropertyStorageName
+      url: //fo_information-get-property-storage-name.html
+      output: web
+
+    - title: IReferencesCascadeDelete
+      url: //fo_i-references-cascade-delete.html
+      output: web
+
+    - title: LogService (log4net)
+      url: //fo_log-service-log4net.html
+      output: web
+  
   - title: Data service
     output: web, pdf
     folderitems:

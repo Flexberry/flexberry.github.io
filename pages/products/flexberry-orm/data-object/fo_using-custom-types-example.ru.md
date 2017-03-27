@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Public, Sample, Черновик статьи
 toc: true
 permalink: ru/fo_using-custom-types-example.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 ## Пример использования собственных типов данных в приложении
