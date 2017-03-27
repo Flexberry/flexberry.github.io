@@ -8,31 +8,18 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Платформа''': [FlexberryASP.NET](flexberry-a-s-p-n-e-t.html)
-* '''Компонент''': [Встраивание прикладных контролов в AjaxGroupEdit](a-g-e-applied-controls.html)
-* '''Предназначение''': Возможность настраивать [LookUp](look-up--overview.html) находящийся в  [AjaxGroupEdit](ajax-group-edit.html). 
-</td>
-</tr></tbody></table></a>
-</div>
-
-
-
 # Описание алгоритма
-Для того чтобы задать настройки для [LookUp'ов](look-up--overview.html), используемых в [AjaxGroupEdit](ajax-group-edit.html) нужно создать экземпляр класса `LookUpSetting`, инициализировав ему необходимые поля и при помощи метода AddLookUpSettings добавить их в [AjaxGroupEdit](ajax-group-edit.html).
+Для того чтобы задать настройки для [LookUp'ов](look-up--overview.html), используемых в [AjaxGroupEdit](fa_ajax-group-edit.html) нужно создать экземпляр класса `LookUpSetting`, инициализировав ему необходимые поля и при помощи метода AddLookUpSettings добавить их в [AjaxGroupEdit](fa_ajax-group-edit.html).
 
 Например, необходимо задать [LookUp'у](look-up--overview.html), который в представлении имеет свойство "`ТипЛапы`" представление, по которому будут вычитываться мастеровые объекты.
 
-```cs
+```csharp
 ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.ТипЛапы), new LookUpSetting { MasterViewName = ТипЛапы.Views.ТипЛапыL });
 ```
 Также можно настраивать `LimitFunction`, а для `MasterEditorDropDown` можно задать настройку, отвечающую за `PostBack`.
 
 Полный список свойств:
-```cs
+```csharp
         /// <summary>
         /// Настройки лукапа
         /// </summary>
@@ -76,7 +63,7 @@ ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.
 ```
 
 ## Пример включения автозаполнения в LookUp:
-```cs
+```csharp
         /// <summary>
         /// Вызывается самым первым в Page_Load.
         /// </summary>
@@ -89,10 +76,10 @@ ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.
 ```
 
 ## Пример наложения ограничения на LookUp
-Пример наложения ограничения на [LookUp](look-up--overview.html) в [AGE](ajax-group-edit.html) описан в этой [статье](limited-look-up-in-a-g-e.html).
+Пример наложения ограничения на [LookUp](look-up--overview.html) в [AGE](fa_ajax-group-edit.html) описан в этой [статье](limited-look-up-in-a-g-e.html).
 
 # Множественный выбор по LookUp
-Информацию о множественном выборе по LookUp в [AGE](ajax-group-edit.html) можно прочитать в этой [статье](multi-look-up-in-a-g-e.html).
+Информацию о множественном выборе по LookUp в [AGE](fa_ajax-group-edit.html) можно прочитать в этой [статье](multi-look-up-in-a-g-e.html).
  
 
 

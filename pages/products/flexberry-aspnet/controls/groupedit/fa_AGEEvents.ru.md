@@ -39,12 +39,12 @@ lang: ru
     }
 ``` 
 
-Любое событие можно отменить, установив свойство у аргументов Cancel = true, т.к. все аргументы наследуются от `[CancelEventArgs](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_u_i_1_1_cancel_event_args.html)`.
+Любое событие можно отменить, установив свойство у аргументов Cancel = true, т.к. все аргументы наследуются от `CancelEventArgs`.
 
 # Обработка событий AGE
 ## Событие '''`rowdeleting`''' 
-Возникает при удалении строки в [AGE](ajax-group-edit.html).
-Вызов триггера при удалении строки в [AGE](ajax-group-edit.html):
+Возникает при удалении строки в [AGE](fa_ajax-group-edit.html).
+Вызов триггера при удалении строки в [AGE](fa_ajax-group-edit.html):
 ```
    
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -66,7 +66,7 @@ lang: ru
 </asp:Content>
 ```
 # Событие '''`rowdeleted`'''. Возникает после удалении строки в AGE.
-Вызов триггера после удаления строки в [AGE](ajax-group-edit.html):
+Вызов триггера после удаления строки в [AGE](fa_ajax-group-edit.html):
 ```
    
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -167,7 +167,7 @@ lang: ru
     </script>
 </asp:Content>
 ```
-Подробнее об AjaxGroupEdit можно прочитать в данной [статье](ajax-group-edit.html).
+Подробнее об AjaxGroupEdit можно прочитать в данной [статье](fa_ajax-group-edit.html).
 
  
 

@@ -10,17 +10,19 @@ lang: ru
 
 # Глобальная настройка веб-контролов
 Для расширения возможностей настройки контролов есть тип делегата - `ICSSoft.STORMNET.Web.Tools.InitControlSettingsDelegate`:
-```cs
+
+```csharp
 public delegate void InitControlSettingsDelegate<TControl>(TControl instance) where TControl : Control;
 ```
+
 У контролов, поддерживающих такой путь настройки, есть статические делегаты этого типа, которым можно присваивать методы для настройки.
 Обычно имеется делегат, вызывающийся в конце конструктора контрола. В методе можно инициализировать свойства и т.д. (в качестве параметра ему передается текущий экземпляр объекта).
-
 
 Присваивать статические делегаты можно в `global.asax.cs`.
 
 Пример настройки контрола DatePicker:
-```cs
+
+```csharp
 DatePicker.InitSettings = delegate(DatePicker instance)
     {
         instance.DisplayMode = DataPickerDisplayMode.OnFieldFocused;
@@ -29,11 +31,9 @@ DatePicker.InitSettings = delegate(DatePicker instance)
 
 или через лямбда-выражение:
 
-```
-
+```csharp
 DatePicker.InitSettings = instance =>
                 {
                     instance.DisplayMode = DataPickerDisplayMode.OnFieldFocused;
                 };
 ```
-

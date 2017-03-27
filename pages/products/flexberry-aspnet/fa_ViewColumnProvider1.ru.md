@@ -8,7 +8,7 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 `ViewColumnProvider` - это провайдер, который позволяет настраивать отображение колонок на контролах ([WebObjectListView](web-object-list-view.html),
-[AjaxGroupEdit](ajax-group-edit.html)). Все его настройки хранятся в файле `/xml/ViewColumnProvider.xml`.
+[AjaxGroupEdit](fa_ajax-group-edit.html)). Все его настройки хранятся в файле `/xml/ViewColumnProvider.xml`.
 Провайдер позволяет настраивать отображение колонок как для свойств и панели инструментов пользовательских типов (через тег `type`, `property` и `toolbar`),
 так и для типов отображаемого значения (через тег `basetype`).
 Приоритетными являются настройки свойств. Если они не найдены в файле конфигурации, то ищутся настройки для типа значения.

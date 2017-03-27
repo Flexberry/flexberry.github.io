@@ -3,14 +3,16 @@ title: Встраивание прикладных контролов в AjaxGro
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_a-g-e-applied-controls.html
-folder: products/flexberry-aspnet/
+permalink: ru/fa_age-applied-controls.html
+folder: products/flexberry-aspnet/controls/groupedit/
 lang: ru
 ---
-# Биндинг
-Для того, чтобы контрол мог нормально работать в [AjaxGroupEdit](ajax-group-edit.html), нужно чтобы контрол реализовывал интерфейс IAjaxGroupEditCompatible:
 
-```cs
+## Биндинг
+
+Для корректной работы контрола [AjaxGroupEdit](fa_ajax-group-edit.html) необходимо, чтобы он реализовывал интерфейс `IAjaxGroupEditCompatible`:
+
+```csharp
 namespace ICSSoft.STORMNET.Web.AjaxControls
 {
     /// <summary>
@@ -57,16 +59,17 @@ namespace ICSSoft.STORMNET.Web.AjaxControls
 1. Рядом с контролом должна быть json структура, содержащая свойства `Property` - свойство DataObject и `ID` - ID контрола на клиенте
 2. При нажатии на кнопку `сохранить` значение из контрола на клиенте при помощи js сформирует новую json структуру, которая и пойдет при postback для обработки серверным `WebBinder`;
 
-Если вы проставите GenerateDefaultStructForBinding=true, то сгенерируется структура подобного вида:
+Если проставить `GenerateDefaultStructForBinding=true`, то сгенерируется структура подобного вида:
 
-```
+```csharp
 {"Property":"ДатаРождения", "ID" : "ctrl306940bb5b9e4bb98d7c93989c6ae9ed_ctrlДатаРождения_ctrl"}
 ```
 
-Если вы пишете свой контрол со сложным клиентским биндингом, то генерировать данную структуру нужно будет самостоятельно, проставив значение `GenerateDefaultStructForBinding == false`.
+Если создается пользовательский контрол со сложным клиентским биндингом, то генерировать данную структуру нужно будет самостоятельно, проставив значение `GenerateDefaultStructForBinding == false`.
+
 Пример:
 
-```cs
+```csharp
 protected override void Render(HtmlTextWriter writer)
 {
     if (IsInsideEditor)
@@ -81,13 +84,15 @@ protected override void Render(HtmlTextWriter writer)
 }
 ```
 
-Важно: при использовании стандартной структуры для биндинга в значение поля ID json структуры будет проставляться ControlToEditClientID.
+**Важно:** при использовании стандартной структуры для биндинга в значение поля ID json структуры будет проставляться `ControlToEditClientID`.
 
-# Настройки отображения DatePicker в AGE
-Самый простой способ настроить отображение DatePicker для всех групэдитов приложения - создать метод, производящий необходимые действия над экземпляром контрола (который передан ему в параметрах), и присвоить его в статическое свойство InitSettings класса DatePicker. [Подробнее](init-control-settings-delegate.html).
+## Настройки отображения DatePicker в AGE
 
-# Встраивание MasterEditorAjaxLookUp
-В `AjaxGroupEdit` имеется возможность использовать [MasterEditorAjaxLookUp](master-editor-ajax-look-up.html). Для этого необходимо настраивать [WebControlProvider](master-editor-ajax-look-up.html).
+Самый простой способ настроить отображение DatePicker для всех групэдитов приложения - создать метод, производящий необходимые действия над экземпляром контрола (который передан ему в параметрах), и присвоить его в статическое свойство InitSettings класса DatePicker. Подробнее в сатье [Глобальная настройка веб-контролов](fa_init-control-settings-delegate.html).
+
+## Встраивание MasterEditorAjaxLookUp
+
+В `AjaxGroupEdit` имеется возможность использовать [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html). Для этого необходимо настраивать [WebControlProvider](fa_master-editor-ajax-look-up.html).
 
 Пример куска файла `WebControlProvider.xml`:
 
@@ -100,16 +105,16 @@ protected override void Render(HtmlTextWriter writer)
 
 Выглядеть это будет следующим образом:
 
-![](/images/pages/img/CaseberryWeb/WGEAjaxLookup.JPG)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-ajax-lookup.jpg)
 
-# Контролы для редактирования
-Возникает потребность задать собственные контролы для просмотра и для редактирования свойств объектов в `AjaxGroupEdit`. Контролы для просмотра задаются привычным образом в [WebControlProvider](web-control-provider.html). Для того, чтобы задать контрол, который будет создаваться для редактирования свойства, то нужно в `WebControlProvider` добавить директиву `<editcontrol />` с аналогичными свойствами `<control />`.
+## Контролы для редактирования
+Возникает потребность задать собственные контролы для просмотра и для редактирования свойств объектов в `AjaxGroupEdit`. Контролы для просмотра задаются привычным образом в [WebControlProvider](fa_web-control-provider.html). Для того, чтобы задать контрол, который будет создаваться для редактирования свойства, то нужно в `WebControlProvider` добавить директиву `<editcontrol />` с аналогичными свойствами `<control />`.
 
 Например, для просмотра даты используется `ICSSoft.STORMNET.Web.Controls.DateTimeFormattedControl`, а для редактирования `ICSSoft.STORMNET.Web.Controls.DatePicker`.
 
 Выглядит это следующим образом:
 
-![](/images/pages/img/CaseberryWeb/WGEDates.JPG)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-dates.jpg)
 
 ```xml
   <propertytype name="NullableDateTime">
@@ -118,7 +123,8 @@ protected override void Render(HtmlTextWriter writer)
   </propertytype>
 ```
 
-Подробнее про [WebControlProvider и встраивание контролов](web-control-provider.html).
+Подробнее про [WebControlProvider и встраивание контролов](fa_web-control-provider.html).
 
-# Скрипты
-Если прикладному контролу нужно подключение скриптов (при загрузке страницы), то все скрипты нужно подключать через [ContextHelper](context-helper.html) и скрипты автоматически добавятся. Если контролу нужно подключение внешних скриптов, то нужно использовать свойство ExternalScriptPaths интерфейса IAjaxGroupEditCompatible.
+## Скрипты
+
+Если прикладному контролу нужно подключение скриптов (при загрузке страницы), то все скрипты нужно подключать через [ContextHelper](fa_context-helper.html) и скрипты автоматически добавятся. Если контролу нужно подключение внешних скриптов, то нужно использовать свойство `ExternalScriptPaths` интерфейса `IAjaxGroupEditCompatible`.

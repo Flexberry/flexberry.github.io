@@ -19,7 +19,7 @@ JavaScript API основано на библиотеке jQuery и предст
 
 # '''API контролов''' (набор операций для работы с основными технологическими web-контролами).
 #* `[jquery.icsWolv.js](web-object-list-view.html)`
-#* `[jquery.ajaxgroupedit.js](ajax-group-edit.html)`
+#* `[jquery.ajaxgroupedit.js](fa_ajax-group-edit.html)`
 #* `[jquery.icsDatePicker.js](date-picker.html)`
 #* `[LookUp Overview|jquery.icsMasterEditorAjaxLookup.js]`.
 

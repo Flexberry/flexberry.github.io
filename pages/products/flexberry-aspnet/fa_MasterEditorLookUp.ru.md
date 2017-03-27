@@ -8,4 +8,4 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-Данный контрол нужен для выбора мастерового объекта на странице. Существует "более новая" версия AJAX-версия - [MasterEditorAjaxLookUp](master-editor-ajax-look-up.html)
+Данный контрол нужен для выбора мастерового объекта на странице. Существует "более новая" версия AJAX-версия - [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)

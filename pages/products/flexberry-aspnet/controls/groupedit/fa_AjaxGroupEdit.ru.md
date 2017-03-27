@@ -8,28 +8,11 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-   '''AjaxGroupEdit'''
-
-
-* '''Платформа''': Web.
-* '''Предназначение''': контрол, дающий возможность редактировать множество объектов одновременно.
-* '''JavaScript API:''' да
-* '''[Автодокументация](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_ajax_group_edit.html)'''.
-* '''[AjaxGroupEdit на тестовом стенде](http://ru:6158/forms/Controls/AjaxGroupEdit/)'''.
-
-
-</td>
-</tr></tbody></table></a>
-</div>
 
 (((<msg type=note>Данная статья находится в доработке</msg>)))
 
 # Описание
-[`AjaxGroupEdit`](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_ajax_group_edit.html)- контрол, который позволяет редактировать множество объектов. Является аналогом [GroupEdit](group-edit.html), для Web-приложений.
+`AjaxGroupEdit`- контрол, который позволяет редактировать множество объектов. Является аналогом [GroupEdit](group-edit.html), для Web-приложений.
 
 
 # Настройка внешнего вида контрола

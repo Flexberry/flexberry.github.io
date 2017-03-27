@@ -11,9 +11,9 @@ lang: ru
 # Делегат изменения контрола фильтрации
 В версии шаблона после 10.11.2014 стал доступен делегат изменения контрола [фильтрации](w-o-l-v-filters.html) (на настоящий момент изменение доступно для [DatePicker](date-picker.html)) в [WebObjectListView](web-object-list-view.html). 
 
-Как работает делегат: модуль фильтрации создаёт контролы для фильтрации посредством [WebControlProvider](web-control-provider.html), где вызывается делегат.
+Как работает делегат: модуль фильтрации создаёт контролы для фильтрации посредством [WebControlProvider](fa_web-control-provider.html), где вызывается делегат.
 
-```cs
+```csharp
 namespace ICSSoft.STORMNET.Web.Tools
 {
     public class WebControlProvider
@@ -29,7 +29,7 @@ namespace ICSSoft.STORMNET.Web.Tools
 ```
 ## CreatedControlData
 `CreatedControlData` - это особая структура, сообщающая в делегат, откуда и для чего был создан контрол (выложена версия с описанием от 10.11.2014, планируется расширять перечисление `CreateControlReason`):
-```cs
+```csharp
 namespace ICSSoft.STORMNET.Web.Tools
 {
     public class CreatedControlData
@@ -76,7 +76,7 @@ namespace ICSSoft.STORMNET.Web.Tools
 "http://ru:6158/forms/DataEdit/TestChangeControlDelegate/TestChangeControlDelegateL.aspx"
 
 Делегат можно определить следующим образом. При этом в контроле фильтрации, соответствующем свойству `DateTimePropertyWithDelegate` будет доступно задание даты и в фильтре будет отображаться надпись "По этому полю нельзя отфильтровать.".
-```cs
+```csharp
 /// <summary>
 /// Обработчик события завершения инициализации.
 /// </summary>

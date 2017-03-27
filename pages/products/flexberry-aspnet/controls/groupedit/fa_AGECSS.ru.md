@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # AGE
-Эта статья описывает часть информации о `[AjaxGroupEdit](ajax-group-edit.html)`.
+Эта статья описывает часть информации о `[AjaxGroupEdit](fa_ajax-group-edit.html)`.
 
 ## html-структура
 ```html

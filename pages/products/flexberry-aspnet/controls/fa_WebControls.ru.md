@@ -36,12 +36,12 @@ Web-контрол - элемент взаимодействия пользов�
 
 ## Особенности работы с контролами
 * [JavaScript API](java-script-a-p-i.html)
-* [Глобальная настройка веб-контролов](init-control-settings-delegate.html)
+* [Глобальная настройка веб-контролов](fa_init-control-settings-delegate.html)
 
 ## Список web-контролов
 В технологии Flexberry ASP.Net используются следующие web-контролы:
 * [AjaxAutocomplete](ajax-autocomplete.html)
-* [AjaxGroupEdit](ajax-group-edit.html)
+* [AjaxGroupEdit](fa_ajax-group-edit.html)
 * [AlphaNumericTextBox](alpha-numeric-text-box.html)
 * [BaseListWebControl](base-list-web-control.html)
 * [BaseMasterEditorLookUp](base-master-editor-look-up.html)
@@ -64,7 +64,7 @@ Web-контрол - элемент взаимодействия пользов�
 * [ImageControl](image-control.html)
 * [LinkModalPopupWindow](link-modal-popup-window.html)
 * [MasterEditorAjaxDropDown](master-editor-ajax-drop-down.html)
-* [MasterEditorAjaxLookUp](master-editor-ajax-look-up.html)
+* [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
 * [MasterEditorLookUp](master-editor-look-up.html) 
 * [MasterEditorLinkedAjaxLookUp](master-editor-linked-ajax-look-up.html)
 * [MasterExpander](ajax-controls--master-expander.html)
@@ -83,9 +83,9 @@ Web-контрол - элемент взаимодействия пользов�
 
 # Провайдеры
 ## Список провайдеров
-В технологии [Flexberry ASP.NET](flexberry-a-s-p-n-e-t.html) используются следующие провайдеры:
+В технологии [Flexberry ASP.NET](fa_flexberry-asp-net.html) используются следующие провайдеры:
 * [ServiceSecurityProvider](service-security-provider.html)
-* [WebControlProvider](web-control-provider.html)
+* [WebControlProvider]fa_web-control-provider.html)
 * [ViewColumnProvider](view-column-provider.html)
 * [CaseberryDomainRoleProvider](Flexberry-domain-role-provider.html)
 * [CaseberryMembershipProvider - полномочия](Flexberry-membership-provider.html)

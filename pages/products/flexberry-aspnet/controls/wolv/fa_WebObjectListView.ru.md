@@ -37,7 +37,7 @@ lang: ru
 
 Чтобы зафиксировать шапку списка, чтобы она не "убегала" при прокрутке до самого низа страницы, достаточно добавить на страницу клиентский скрипт:
 
-```cs
+```csharp
 $('.wolv-caption-wrapper').sticky( { topSpacing : <x> } );
 ```
 
@@ -53,7 +53,7 @@ $('.wolv-caption-wrapper').sticky( { topSpacing : <x> } );
 
 Включить настройку:
 
-```cs
+```csharp
 WebObjectListView1.Operations.ScrollToSelectedObject = true;
 ```
 
@@ -61,7 +61,7 @@ WebObjectListView1.Operations.ScrollToSelectedObject = true;
 
 Включается с помощью настроек:
 
-```cs
+```csharp
 WebObjectListView1.Operations.SaveHorizontalScroll = true;
 WebObjectListView1.Operations.SaveVerticalScroll = true;
 ```
@@ -140,7 +140,7 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 
 ### Использование собственных контролов для отображения данных
 
-Для использования собственных контролов для отображения данных используйте [WebControlProvider](web-control-provider.html).
+Для использования собственных контролов для отображения данных используйте [WebControlProvider](fa_web-control-provider.html).
 
 ### Формат данных
 
@@ -149,7 +149,7 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 
 Пример:
 
-```cs
+```csharp
 /// <summary>
 /// Курс реабилитации
 /// </summary>
@@ -173,7 +173,7 @@ public virtual System.Nullable<System.Double> ВыраженностьОгран
 
 * Формат даты, отображаемой в ячейке может быть настроен с помощью атрибута DisplayFormatAttribute:
     
-```cs
+```csharp
 [DisplayFormat(DataFormatString = "yyyy.MM")]
 public virtual System.DateTime OnlyDate
 ```
@@ -221,7 +221,7 @@ public virtual System.DateTime OnlyDate
 
 Например, для `WOLV` удобно указывать высоту и ширину в `WOLVSettAplyer`:
 
-```cs
+```csharp
 wolv.ThickBoxSettings.Height = 480;
 wolv.ThickBoxSettings.Width = 640;
 ```
@@ -232,7 +232,7 @@ wolv.ThickBoxSettings.Width = 640;
    декодирются, занимая очень много места в URL страницы. `WOLV` никак не связан с WebBinder, поэтому ID можно задавать как вам удобно.
 2. Всегда оборачивайте настройку `WOLV` через [WolvSettApplyer](wolv-sett-applyer.html):
     
-```cs
+```csharp
 var wsa = new WOLVSettApplyer();
 wsa.SettingsApply(WebObjectListView1);
 ```
