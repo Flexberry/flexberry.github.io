@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_variable-def.html
+folder: products/flexberry-orm/
+lang: ru
 ---
 
 При построении ограничений с помощью метода `GetFunction` параметром этому методу в зависимости от типа применяемой функции может передаваться описание переменной:
