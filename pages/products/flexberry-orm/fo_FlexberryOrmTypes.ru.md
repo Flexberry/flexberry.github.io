@@ -8,7 +8,7 @@ permalink: ru/fo_flexberry-orm-types.html
 * **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
 * **Предназначение**: Описаны основные поддерживаемые во [Flexberry ORM](fo_flexberry-o-r-m.html) типы.
 
-[Flexberry ORM](fo_flexberry-o-r-m.htmll) позволяет осуществлять работу со следующими типами:
+[Flexberry ORM](fo_flexberry-o-r-m.html) позволяет осуществлять работу со следующими типами:
 
 * .Net основные типы (такие как int, string, float и др.)
 * .Net [Nullable-типы](fd_nullable-types.html).
