@@ -14,39 +14,59 @@ entries:
       title_ru: О модуле
       url: /fo_landing_page.html
       output: web
+  
+  - title: Аудит
+    output: web, pdf
+
+    - title: Настройка аудита в Flexberry Designer
+      url: //fd_audit-setup.html
+      output: web
+
+  - title: Работа с данными
+    output: web, pdf
 
     - title: ICSSoft.STORMNET.Tools.XmlTools
       url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
       output: web
 
-    - title: Функция импликации (funcImplication)
-      url: /fo_implication-in-external-lang-def.html
-      output: web
-
-    - title: Реализация собственного сервис данных
-      url: /fo_implement-a-custom-data-service.html
-      output: web
-
-    - title: Sample 3
-      url: /p1_sample3.html
-      output: web, pdf
-
-  - title: Another heading
+  - title: Data service
     output: web, pdf
 
-    folderitems:
-    - title: Sample 4
-      url: /p1_sample4.html
-      output: web, pdf
+    - title: ICSSoft.STORMNET.Tools.XmlTools
+      url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
+      output: web
+  
+  - title: Ограничения
+    output: web, pdf
 
-    - title: Sample 5
-      url: /p1_sample5.html
-      output: web, pdf
+    - title: ICSSoft.STORMNET.Tools.XmlTools
+      url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
+      output: web
 
-    - title: Sample 6
-      url: /p1_sample6.html
-      output: web, pdf
 
-    - title: Sample 7
-      url: /p1_sample7.html
-      output: web, pdf
+  - title: Представления
+    output: web, pdf
+
+    - title: Как проверить, удовлетворяет ли некоторый объект представлению
+      url: //fo_test-object-for-viewing.html
+      output: web
+
+    - title: Операции с представлениями
+      url: //fo_view-operations.html
+      output: web
+
+    - title: Пример работы с представлениями
+      url: //fo_work-with-views-example.html
+      output: web
+
+    - title: Статические свойства для доступа к представлениям класса
+      url: //fo_static-view-accessors.html
+      output: web
+
+    - title: Чтение принадлежащих различным классам объектов в одном представлении
+      url: //fo_reading-several-types-objects.html
+      output: web
+
+    - title: ViewPropertyAppender
+      url: //fo_view-property-appender.html
+      output: web
