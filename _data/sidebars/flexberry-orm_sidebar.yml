@@ -17,28 +17,28 @@ entries:
   
   - title: Аудит
     output: web, pdf
-
+    folderitems:
     - title: Настройка аудита в Flexberry Designer
       url: //fd_audit-setup.html
       output: web
 
   - title: Работа с данными
     output: web, pdf
-
+    folderitems:
     - title: ICSSoft.STORMNET.Tools.XmlTools
       url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
       output: web
 
   - title: Data service
     output: web, pdf
-
+    folderitems:
     - title: ICSSoft.STORMNET.Tools.XmlTools
       url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
       output: web
   
   - title: Ограничения
     output: web, pdf
-
+    folderitems:
     - title: ICSSoft.STORMNET.Tools.XmlTools
       url: //fo_i-c-s-soft-s-t-o-r-m-n-e-t-tools.html
       output: web
@@ -46,7 +46,7 @@ entries:
 
   - title: Представления
     output: web, pdf
-
+    folderitems:
     - title: Как проверить, удовлетворяет ли некоторый объект представлению
       url: //fo_test-object-for-viewing.html
       output: web
