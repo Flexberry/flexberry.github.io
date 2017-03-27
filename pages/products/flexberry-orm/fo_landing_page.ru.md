@@ -10,7 +10,7 @@ lang: ru
 
 ## Информация о продукте
 
-`Flexberry ORM` является [продуктом платформы Flexberry](platform-structure.html). Сайт продукта `Flexberry ORM`: [http://flexberry.ru/FlexberryORM](http://flexberry.ru/FlexberryORM).
+`Flexberry ORM` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта `Flexberry ORM`: [http://flexberry.ru/FlexberryORM](http://flexberry.ru/FlexberryORM).
 
 "Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)."
 

@@ -52,7 +52,7 @@ public static IQueryable<T> Query<T>(this SQLDataService ds) where T : DataObjec
 * [Count](http://msdn.microsoft.com/en-us/library/bb534754.aspx)
 * [FirstOrDefault](http://msdn.microsoft.com/ru-ru/library/system.linq.queryable.firstordefault.aspx)
 
-<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Information:</b> Обратите внимание, что вычитка происходит каждый раз при вызове ToList или ToArray, так что желательно сначала получить коллекцию данных, а потом работать с ней.</div>
+{% include note.html content="Обратите внимание, что вычитка происходит каждый раз при вызове ToList или ToArray, так что желательно сначала получить коллекцию данных, а потом работать с ней." %}
 
 ## Примеры:
 

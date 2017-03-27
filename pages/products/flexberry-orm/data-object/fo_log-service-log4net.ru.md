@@ -14,7 +14,7 @@ Flexberry LogService является [продуктом платформы Fle
 
 Flexberry LogService базируется на [`log4net`](http://logging.apache.org/log4net/).
 
-<div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Information>:</b> Flexberry LogService доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService).</div>
+{% include note.html content="Flexberry LogService доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService)." %}
 
 ### Пример использования LogService
 

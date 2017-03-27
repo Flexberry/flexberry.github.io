@@ -42,7 +42,7 @@ lang: ru
 
 ### Общие рекомендации
 
-* При настройке [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) обычно нужно специальное [представление](fo_view-def.html) (его нужно либо [определить в коде](fo_view-def.html), как это сделано [Ограничение-на-детеилы-из-кода|здесь]; либо [создать заранее в Flexberry](fo_data-classes.html)).
+* При настройке [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) обычно нужно специальное [представление](fd_view-definition.html) (его нужно либо [определить в коде](fd_view-definition.html), как это сделано [Ограничение-на-детеилы-из-кода|здесь]; либо [создать заранее в Flexberry](fo_data-classes.html)).
 
 * Для определения количества возвращаемых записей рекомендуется использовать параметр [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) ReturnTop, как это сделано [Ограничение-на-детеилы-из-кода|здесь].
 

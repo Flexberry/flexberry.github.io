@@ -44,7 +44,7 @@ static public string GetPropertyStorageName(System.Type type, string property, i
 Данный метод необходимо применять, если при объявлении атрибута свойства `PropertyStorageAttribute` используется массив имён:
 
 ``` csharp
-[PropertyStorage(new string[) {"ПростоКласс"}))
+[PropertyStorage(new string[]) {"ПростоКласс"}))
 ```
 
 В этом случае параметр `index` определит номер элемента из массива имён, определённого при объявлении атрибута свойства `PropertyStorageAttribute`, который будет возвращён методом.

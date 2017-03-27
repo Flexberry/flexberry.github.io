@@ -48,13 +48,13 @@ permalink: ru/fo_data-service.html
 ! Параметры
 ! Описание
 |- 
-|  rowspan="2" | Загрузка объектов данных по [представлению](fo_view-def.html)(массиву [представлений](fo_view-def.html))
+|  rowspan="2" | Загрузка объектов данных по [представлению](fd_view-definition.html)(массиву [представлений](fd_view-definition.html))
 | '''LoadObjects'''
 ```cs
 ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View dataObjectView); ```
-|   rowspan="2" | `dataObjectView(s)` - [представление](fo_view-def.html) (массив [представлений](fo_view-def.html))
+|   rowspan="2" | `dataObjectView(s)` - [представление](fd_view-definition.html) (массив [представлений](fd_view-definition.html))
 
-| Загружаются все объекты данных, доступные в хранилище. При этом выполняется загрузка только тех свойств, которые указаны в [представлении](fo_view-def.html).
+| Загружаются все объекты данных, доступные в хранилище. При этом выполняется загрузка только тех свойств, которые указаны в [представлении](fd_view-definition.html).
 |-
 | '''LoadObjects'''
 ```cs
@@ -170,7 +170,7 @@ void LoadObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectC
 | `dobject` - Объект данных, который требуется загрузить
 | Будут загружены только собственные свойства объекта. При отсутствии в хранилище данных объекта с заданным первичным ключом будет выдано исключение `CantFindDataObjectException`. Не следует использовать данную перегрузку метода для дочитки объекта данных, для этого применимы перегрузки методы с дополнительными параметрами (см. ниже).
 |- 
-| Загрузка объекта данных по [представлению](fo_view-def.html)
+| Загрузка объекта данных по [представлению](fd_view-definition.html)
 | '''LoadObject'''
 ```cs
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject) ```
@@ -186,9 +186,9 @@ void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, 
 '''LoadObject'''
 ```cs
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) ```
-| `dataObjectView(dataObjectViewName)` - [представление](fo_view-def.html) (имя представления)
+| `dataObjectView(dataObjectViewName)` - [представление](fd_view-definition.html) (имя представления)
 
-| Выполняется загрузка только тех свойств, которые указаны в [представлении](fo_view-def.html).
+| Выполняется загрузка только тех свойств, которые указаны в [представлении](fd_view-definition.html).
 |-
 | Загрузка объекта данных с указанием дополнительных параметров
 | '''LoadObject'''

@@ -7,7 +7,7 @@ entries:
   version: 2.1.0
   folders:
 
-  - title: Getting Started
+  - title: О Flexberry ORM
     output: web, pdf
     folderitems:
     - title: About

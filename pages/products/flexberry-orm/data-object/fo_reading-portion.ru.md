@@ -36,4 +36,4 @@ Console.WriteLine("Больше авторов нет. Конец.");
 Console.Read();
 ```
 
-<div markdown="span" class="Note" role="alert"><i class="fa fa-info-circle"></i> Обратите внимание, что сигнатуры вызова метода `LoadObjects` __разные__. Для дочитывания данных используется вызов метода с 1 параметром `ref state`.</div>
+{% include note.html content="Обратите внимание, что сигнатуры вызова метода `LoadObjects` __разные__. Для дочитывания данных используется вызов метода с 1 параметром `ref state`." %}
