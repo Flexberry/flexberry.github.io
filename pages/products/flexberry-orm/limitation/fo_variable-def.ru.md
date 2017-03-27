@@ -34,11 +34,11 @@ public VariableDef(ObjectType objType, string objStringedView)
 * `objType` - ObjectType-тип переменной (например, `langdef.StringType`),
 * `objStringedView` - имя свойства объекта, по которому собираемся строить ограничение.
 
-Примеры конструирования `VariableDef` при задании ограничений доступны в статье `[SQLWhereLanguageDef](fo_function-list.html)`.
+Примеры конструирования `VariableDef` при задании ограничений доступны в статье [`SQLWhereLanguageDef`](fo_function-list.html).
 
 ### VariableDef для PrimaryKey
 
-При построении ограничений на [первичные ключи вычитываемых объектов (собственные ключи)](fo_primary-keys-objects.html) стоит учитывать, что `[SQLWhereLanguageDef](fo_function-list.html)` не обрабатывает константу "`PrimaryKey`". Вместо константы "`PrimaryKey`" надо использовать `StormMainObjectKey` (определена соответствующая константа).
+При построении ограничений на [первичные ключи вычитываемых объектов (собственные ключи)](fo_primary-keys-objects.html) стоит учитывать, что [`SQLWhereLanguageDef`](fo_function-list.html) не обрабатывает константу "`PrimaryKey`". Вместо константы "`PrimaryKey`" надо использовать `StormMainObjectKey` (определена соответствующая константа).
 
 **__Неверно__**:
 
@@ -65,7 +65,7 @@ ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, Information.ExtractProper
 
 ## DetailVariableDef
 
-Класс `DetailVariableDef` служит для определения переменной ограничения, предназначенного для описания детейлов. Используется совместно с `[ExternalLangDef](fo_external-lang-def.html)`.
+Класс `DetailVariableDef` служит для определения переменной ограничения, предназначенного для описания детейлов. Используется совместно с [`ExternalLangDef`](fo_external-lang-def.html).
 
 Определен в пространстве имен: `ICSSoft.STORMNET.Windows.Forms`.
 

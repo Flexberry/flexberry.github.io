@@ -9,7 +9,10 @@ lang: ru
 ---
 
 Если необходимо задать условие на существование [детейлов](fd_key-concepts.html) по условию, в котором должно участвовать свойство [агрегатора](fd_key-concepts.html), необходимо использовать функцию [Exist](fo_exist-exist-exact-exist-all-exist-all-exact.html). При указании свойств в условии для функции [Exist](fo_exist-exist-exact-exist-all-exist-all-exact.html) необходимо явно указывать, что это свойство агрегатора: 
+
+```
 <Имя агрегирующего свойства у детейла>.<Свойство агрегатора>.
+```
 
 ## Пример наложения ограничения на детейлы с использованием свойства агрегатора
 
@@ -17,7 +20,7 @@ lang: ru
 
 Выявить ошибочно занесенные данные в базе: найти все компании, у которых существует программный продукт созданный раньше создания самой компании.
 
-```csharp
+``` csharp
  DataServiceLoader.InitializeDataSetvice();
  View view = Information.GetView("CompanyL", typeof(Company));
  View view2 = Information.GetView("SoftwareL", typeof(Software));

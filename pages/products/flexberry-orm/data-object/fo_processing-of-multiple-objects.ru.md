@@ -32,7 +32,7 @@ lang: ru
 и есть объекты: a, m1, m2, m3, то правильный массив будет такой: 
 
 ```csharp
-new DataObject[){m3,m2,m1,a}
+new DataObject[]){m3,m2,m1,a}
 ```
 
 ## Ошибочное вычисление статуса объекта после обновления
@@ -47,7 +47,7 @@ GetStatus() == ObjectStatus.Altered
 
 Например, создаем следующий граф объектов с мастером и агрегатором:
 
-[imageauto||{UP(Processing-of-multiple-objects)}Модель.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/model.png)
 
 в `UpdateObjects` следует передавать объекты в определенном порядке: мастеровой объект (`Модель`) должен быть добавлен раньше, чем детейловый объект (`Автомобиль`), использующий его:
 

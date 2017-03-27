@@ -17,7 +17,13 @@ lang: ru
 Итак, чтобы организовать эту обработку, необходимо: 
 
 * Описать класс — [бизнес-сервер](fo_business-servers-wrapper-business-facade.html), наследник от `ICSSoft.STORMNET.Business.BusinessServer`.
-* Описать метод-перехватчик вида (public DataObject[] OnUpdateXXXXX(XXXXX UpdatedObject)), где XXXXX — имя класса данных, чьи экземпляры обновляет [сервис данных](fo_data-service.html). Имплементировать этот метод (выполнить необходимые Вам действия при обновлении).
+* Описать метод-перехватчик вида (
+
+	```csharp
+	public DataObject[] OnUpdateXXXXX(XXXXX UpdatedObject))
+	```
+
+	где XXXXX — имя класса данных, чьи экземпляры обновляет [сервис данных](fo_data-service.html). Имплементировать этот метод (выполнить необходимые Вам действия при обновлении).
 
 ## Прописать [бизнес-сервер](fo_business-servers-wrapper-business-facade.html) нужному классу данных `.Net`-атрибутом `BusinessServer`, одновременно указывая тип события.
 

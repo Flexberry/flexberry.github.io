@@ -231,7 +231,7 @@ __Сигнатура__:
 public virtual void UpdateObjectsByExtConn(ref DataObject[] objects, DataObjectCache dataObjectCache, bool alwaysThrowException, IDbConnection connection, IDbTransaction transaction)
 ```
 
-## [anchor|#GenerateSQL]Генерация текстов SQL-запросов
+## Генерация текстов SQL-запросов
 
 ### `GenerateQueriesForUpdateObjects`
 
@@ -576,7 +576,7 @@ __Сигнатура__:
 public virtual string LimitFunction2SQLWhere(STORMFunction LimitFunction)
 ```
 
-## [anchor|#QueryText]Выполнение операций с указанием текста запроса
+## Выполнение операций с указанием текста запроса
 
 ###  `ReadFirst`
 
