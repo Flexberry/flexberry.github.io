@@ -62,7 +62,7 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
 
 ## Сравнения свойств двух различных детейлов (не выше первого уровня) имеющих общий агрегатор
 
-![](/images/pages/products/flexberry-orm/exist-detals/exist-detals-example-2.png)
+![](/images/pages/products/flexberry-orm/exist-detals/exist-detals-example-2.jpg)
 
 Например, необходимо получить все компьютеры у которых хотя бы одна "железка" будет куплена раньше, чем любое программное обеспечение для него.
 Порядок свойств в функции сравнения накладываемой на детейлы имеет значение (в данном случае имена свойств совпали).
@@ -85,13 +85,8 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
  var dos = DataServiceProvider.DataService.LoadObjects(lcs);
 ```
 
-<<<<<<< HEAD
-# Смотрите также
-* [Exist, ExistExact, ExistAll, ExistAllExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
-=======
 ## Смотрите также
 
 * [Exist, ExistExact, ExistAll, ExistAllExact](fo_exist--exist-exact--exist-all--exist-all-exact.html)
->>>>>>> d39794c485bf490f825f86803b545b9c10b0808f
-* [Фильтрация-по-детейлам-мастера-ConnectMasterProp-OwnerConnectProp.ashx|Фильтрация по детейлам мастера]
+* [Фильтрация по детейлам мастера]()
 * [SQLWhereLanguageDef](fo_function-list.html)
