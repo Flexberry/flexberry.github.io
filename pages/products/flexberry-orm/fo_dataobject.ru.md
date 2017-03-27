@@ -147,7 +147,7 @@ public string[] CheckNotNullProperties(View view, bool returnCaptions)
 public string[] CheckNotNullProperties(View view, bool returnCaptions, Dictionary<Type, bool> detailSkip)
 ```
 
- ### `CopyTo`  
+### `CopyTo`  
 
 __Назначение__: Создать копию объекта данных. Если полученный в результате копирования объект планируется поместит в хранилище, у него необходимо   вызвать методы `InitDataCopy` или `ClearDataCopy`.
 
