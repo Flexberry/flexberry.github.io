@@ -64,7 +64,7 @@ Web-контрол - элемент взаимодействия пользов�
 * [ImageControl](image-control.html)
 * [LinkModalPopupWindow](link-modal-popup-window.html)
 * [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)
-* [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
+* [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html)
 * [MasterEditorLookUp](master-editor-look-up.html) 
 * [MasterEditorLinkedAjaxLookUp](master-editor-linked-ajax-look-up.html)
 * [MasterExpander](ajax-controls--master-expander.html)

@@ -125,4 +125,4 @@ ctrlM1.MasterTypeName = typeof(M1).AssemblyQualifiedName;
 # [Произвольный контрол в качестве лукапа](generate-lookup--i-lookup.html)
 # [Предиктивный ввод](прикладные-системы_predict-input.html)
 # [Настройки для LookUp в AGE](settings-for-look-up-in-a-g-e.html)
-# [Ограничение для LookUp в AGE](limited-look-up-in-a-g-e.html)
+# [Ограничение для LookUp в AGE](fa_limited-lookup-age.html)

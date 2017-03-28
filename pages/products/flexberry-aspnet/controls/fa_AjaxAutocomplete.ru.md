@@ -14,7 +14,7 @@ lang: ru
 AjaxAutocomplete используется из библиотеки jquery ui, поэтому библиотека jquery ui должна быть подключена.
 
 Также, имеется возможность связать [автодополнение с лукапом](link--ajax-autocomplete-and--ajax-lookup.html).<br />
-Либо включить автодополнение у [Ajax-лукапа](fa_master-editor-ajax-look-up.html).
+Либо включить автодополнение у [Ajax-лукапа](fa_master-editor-ajax-lookup.html).
 
 # Подключение
 

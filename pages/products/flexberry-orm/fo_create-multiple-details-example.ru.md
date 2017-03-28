@@ -10,7 +10,7 @@ permalink: ru/fo_create-multiple-details-example.html
 
 ## Создание и сохранение объекта с большим количеством детейлов
 
-Данный тест осуществляет генерацию большого графа объектов с [детейловыми связями](fo_detail-associations-and-their-properties.html) и его сохранение в БД.
+Данный тест осуществляет генерацию большого графа объектов с [детейловыми связями](fo_detail-associations-properties.html) и его сохранение в БД.
 Используемая [диаграмма классов](fd_class-diagram.html) имеет вид:
 
 ![Sample Picture Caption](/images/pages/products/flexberry-orm/create-multiple-details-example/Details.png)

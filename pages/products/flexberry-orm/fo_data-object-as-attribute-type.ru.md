@@ -15,7 +15,7 @@ permalink: ru/fo_data-object-as-attribute-type.html
 
 ![](/images/pages/products/flexberry-orm/data-object-as-attribute-type/data-object-as-attribute-type.GIF)
 
-Использование атрибута класса типа объекта данных не рекомендуется использовать в общем случае, если есть возможность использовать [мастера](fd_master-association.html) или [детейлы](fo_detail-associations-and-their-properties.html).
+Использование атрибута класса типа объекта данных не рекомендуется использовать в общем случае, если есть возможность использовать [мастера](fd_master-association.html) или [детейлы](fo_detail-associations-properties.html).
 
 Основною особенностью данного решения является то, что между классами в таком случае нет связи, в данном случае между классами `Зоопарк` и `ДиректорЗоопарка`. Соответственно, поле `Директор` класса `Зоопарк` будет содержать не ссылку на `ДиректорЗоопарка`, а хранить [сериализованный объект](fo_aggregating-function.html) `ДиректорЗоопарка`.
 

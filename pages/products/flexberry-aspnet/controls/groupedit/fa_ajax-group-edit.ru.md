@@ -42,7 +42,7 @@ lang: ru
 [IsHTML()|IsHTML()]
 ```
 
-Т.е. аналогично [HTML в AjaxLookup](fa_master-editor-ajax-look-up.html) и [WOLV](fa_web-object-list-view.html).
+Т.е. аналогично [HTML в AjaxLookup](fa_master-editor-ajax-lookup.html) и [WOLV](fa_web-object-list-view.html).
 
 
 ### Order-атрибуты

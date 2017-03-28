@@ -12,7 +12,7 @@ lang: ru
 
 В [расширенном редакторе ограничений](fa_advanced-limit-editor.html) есть поддержка выражений Пусто/Непусто (Пусто/Заполнено).
 
-![](/images/pages/products/flexberry-aspnet/limit-editor/web-limit-editor-isNull.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor-isNull.png)
 
 `Пусто` соответствует функции [funcIsNull](fo_func-is-null.html) из [SQLWhereLanguageDef](fo_function-list.html). 
 

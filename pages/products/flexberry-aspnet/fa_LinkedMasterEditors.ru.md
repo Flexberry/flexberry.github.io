@@ -10,9 +10,9 @@ lang: ru
 
 # Связывание web-контролов редактирования мастеров
 
-Данная статья рассказывает, каким образом можно связывать такие web-контролы редактирования мастеров как [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) и [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html).
+Данная статья рассказывает, каким образом можно связывать такие web-контролы редактирования мастеров как [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) и [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html).
 
-## Методы для [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
+## Методы для [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html)
 
 ### Создание зависимых лукапов внутри AGE
 
@@ -35,7 +35,7 @@ $('#<%=ctrlМойЛукап.ClientID%>').on('change', function () {
 ```
 
 ## Связывание при помощи серверных методов, которые предусмотрены технологией
-Для конкретного контрола редактирования мастера ([MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) имеется возможность указать его мастеровой контрол ([MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)), т.е. тот, от которого он зависит. При смене мастерового контрола вызовется серверный обработчик для изменения свойств зависимого контрола.
+Для конкретного контрола редактирования мастера ([MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) имеется возможность указать его мастеровой контрол ([MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)), т.е. тот, от которого он зависит. При смене мастерового контрола вызовется серверный обработчик для изменения свойств зависимого контрола.
 
 ```
 
@@ -87,7 +87,7 @@ private void MasterOfSlaveChanged(string masterselectedpk, ref string selectedpk
 )))
 
 (((
-<msg type=important>Мастеровой [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html), может быть зависимым контролом своего зависимого контрола. Например:
+<msg type=important>Мастеровой [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html), может быть зависимым контролом своего зависимого контрола. Например:
 ```
 
 ctrl1.AddMasterLookup(ctrl2, ctrl1Ofctrl2Changed);

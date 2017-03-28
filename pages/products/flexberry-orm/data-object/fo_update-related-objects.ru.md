@@ -12,7 +12,7 @@ lang: ru
 
 ## Обновление детейловых объектов вместе с [шапкой](fd_key-concepts.html)
 
-Если обновляется объект, имеющий [детейловые объекты](fo_detail-associations-and-their-properties.html), то те также обновляются, если это предполагает их [статус](fo_processing-status-and-condition-of-load-object-data-services.html).
+Если обновляется объект, имеющий [детейловые объекты](fo_detail-associations-properties.html), то те также обновляются, если это предполагает их [статус](fo_processing-status-and-condition-of-load-object-data-services.html).
 
 ## Обновление мастеровых объектов вместе с внутренним
 

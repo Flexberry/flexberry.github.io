@@ -12,7 +12,7 @@ lang: ru
 
 * [собственных атрибутов класса](fo_attributes-class-data.html),
 * [мастеров](fd_master-association.html) любой вложенности и их атрибутов,
-* представлений [детейлов](fo_detail-associations-and-their-properties.html).
+* представлений [детейлов](fo_detail-associations-properties.html).
 
 Поэтому, для удобного редактирования [представления](fd_view-definition.html) используется специальная форма-редактор. 
 Данная форма вызывается с вкладки `Представления` при редактировании [свойств класса](fd_data-classes.html).
@@ -38,7 +38,7 @@ lang: ru
 
 Форма имеет следующие закладки: 
 * Закладка `Атрибуты` для редактирования состава [собственных](fo_attributes-class-data.html) и мастеровых атрибутов в представлении,
-* Закладка`Представления` для указания представлений [детейловых классов](fo_detail-associations-and-their-properties.html).
+* Закладка`Представления` для указания представлений [детейловых классов](fo_detail-associations-properties.html).
 
 #### Закладка Атрибуты
 
@@ -83,12 +83,12 @@ lang: ru
 
 #### Закладка `Детейлы`
 
-Кнопки `Добавить детейл`, `Удалить`, позволяют, соответственно поместить в [представление](fd_view-definition.html) какой-либо [детейл](fo_detail-associations-and-their-properties.html) или удалить из [представления](fd_view-definition.html). В списке указаны имеющиеся в представлении детейлы. Для каждого указанного детейла в исходный код генерируется указание атрибута [AssociatedDetailViewAttribute](fd_view-definition.html).
+Кнопки `Добавить детейл`, `Удалить`, позволяют, соответственно поместить в [представление](fd_view-definition.html) какой-либо [детейл](fo_detail-associations-properties.html) или удалить из [представления](fd_view-definition.html). В списке указаны имеющиеся в представлении детейлы. Для каждого указанного детейла в исходный код генерируется указание атрибута [AssociatedDetailViewAttribute](fd_view-definition.html).
 
 Передвигаясь курсором по списку можно настроить свойства, расположенные в правой части формы: 
 * `Заголовок`, `Путь`, `Видимость`- аналогичны тем же свойствам для атрибутов.
-* `Представление` - включаемое [представление](fd_view-definition.html)[детейлового класса](fo_detail-associations-and-their-properties.html) (помните о том, что в [представление](fd_view-definition.html)[шапки](fd_key-concepts.html) включается [представление](fd_view-definition.html)[детейла](fo_detail-associations-and-their-properties.html) а не он сам).
-* `Загружать вместе с шапкой` - при загрузке сервисом данных объекта [шапки](fd_key-concepts.html) в данном [представлении](fd_view-definition.html), будут ли прочитаны [детейлы](fo_detail-associations-and-their-properties.html) в этом [представлении](fd_view-definition.html).
+* `Представление` - включаемое [представление](fd_view-definition.html)[детейлового класса](fo_detail-associations-properties.html) (помните о том, что в [представление](fd_view-definition.html)[шапки](fd_key-concepts.html) включается [представление](fd_view-definition.html)[детейла](fo_detail-associations-properties.html) а не он сам).
+* `Загружать вместе с шапкой` - при загрузке сервисом данных объекта [шапки](fd_key-concepts.html) в данном [представлении](fd_view-definition.html), будут ли прочитаны [детейлы](fo_detail-associations-properties.html) в этом [представлении](fd_view-definition.html).
 
 ![](/images/pages/products/flexberry-designer/views/vieweditor2.jpg)
 

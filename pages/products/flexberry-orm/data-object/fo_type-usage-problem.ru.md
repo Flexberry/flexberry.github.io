@@ -29,7 +29,7 @@ lang: ru
 
 Используемые типы указываются:
 
-Атрибутом `TypeUsage` для [мастерового](fo_master-association.html)/[детейлового](fo_detail-associations-and-their-properties.html) свойств класса данных, либо для класса-массива детейловых объектов (производного от `DetailArray`).
+Атрибутом `TypeUsage` для [мастерового](fo_master-association.html)/[детейлового](fo_detail-associations-properties.html) свойств класса данных, либо для класса-массива детейловых объектов (производного от `DetailArray`).
 
 ```csharp
 public class A:DataObject

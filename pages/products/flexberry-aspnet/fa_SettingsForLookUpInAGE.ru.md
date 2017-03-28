@@ -76,7 +76,7 @@ ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.
 ```
 
 ## Пример наложения ограничения на LookUp
-Пример наложения ограничения на [LookUp](look-up--overview.html) в [AGE](fa_ajax-group-edit.html) описан в этой [статье](limited-look-up-in-a-g-e.html).
+Пример наложения ограничения на [LookUp](look-up--overview.html) в [AGE](fa_ajax-group-edit.html) описан в этой [статье](fa_limited-lookup-age.html).
 
 # Множественный выбор по LookUp
 Информацию о множественном выборе по LookUp в [AGE](fa_ajax-group-edit.html) можно прочитать в этой [статье](multi-look-up-in-a-g-e.html).

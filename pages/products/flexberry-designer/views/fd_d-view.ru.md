@@ -9,7 +9,7 @@ lang: ru
 ---
 
 Детейловое представление.  
-Используется для поиска в [фильтрах](fw_filtersand-limits.html), и служит для построения ограничений на списки по атрибутам [детейла](fo_detail-associations-and-their-properties.html).
+Используется для поиска в [фильтрах](fw_filtersand-limits.html), и служит для построения ограничений на списки по атрибутам [детейла](fo_detail-associations-properties.html).
 
 ## Настройка
 

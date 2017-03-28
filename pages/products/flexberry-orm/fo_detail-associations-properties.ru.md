@@ -3,7 +3,7 @@ title: Детейловые ассоциации и их свойства
 sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry Designer, Flexberry ORM, Public
 toc: true
-permalink: ru/fo_detail-associations-and-their-properties.html
+permalink: ru/fo_detail-associations-properties.html
 ---
 
 Согласно "Аксиом Flexberry Platform" детейловыми являются композиции, подобные:

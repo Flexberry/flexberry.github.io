@@ -31,10 +31,10 @@ lang: ru
 На диаграмме классов можно отобразить следующие элементы нотации UML, доступные в панели элементов: 
 
 Элемент/Нотация | Предназначение
-:------------------------------------------------------------|:---------------------------------------
+:------------------------------|:---------------------------------------
 ![](/images/pages/products/flexberry-designer/diagram/assoc.jpg) | [Ассоциация](fd_master-association.html) (Association)
 ![](/images/pages/products/flexberry-designer/diagram/aggregation.jpg) | Агрегация (Aggregation)
-![](/images/pages/products/flexberry-designer/diagram/composition.jpg) | [Композиция](fo_detail-associations-and-their-properties.html) (Composition)
+![](/images/pages/products/flexberry-designer/diagram/composition.jpg) | [Композиция](fo_detail-associations-properties.html) (Composition)
 ![](/images/pages/products/flexberry-designer/diagram/inheritance.jpg) | [Наследование](fd_inheritance.html)/обобщение (Inheritance/generalization)
 ![](/images/pages/products/flexberry-designer/diagram/implement.jpg) | Реализация (Realization)
 ![](/images/pages/products/flexberry-designer/diagram/nested.jpg) | Ассоциация вложенного класса (Nested class association)

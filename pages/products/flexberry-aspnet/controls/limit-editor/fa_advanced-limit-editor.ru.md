@@ -71,7 +71,7 @@ WebObjectListView1.DropLimitFromLimitEditor();
 
 Существует возможность задавать ограничение по маске. Соответствующий элемент добавлен на риббон редактора. 
 
-![](/images/pages/products/flexberry-aspnet/limit-editor/limit-editor.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor.png)
 
 На настоящий момент наложены некоторые ограничения на шаблон:
 * "*" - это 0 и более любых символов.

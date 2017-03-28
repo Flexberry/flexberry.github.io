@@ -10,7 +10,7 @@ permalink: ru/fo_business-server-order.html
 
 ### Агрегатор, детейлы
 
-Если имеется следующая ситуация c [детейлами](fo_detail-associations-and-their-properties.html):
+Если имеется следующая ситуация c [детейлами](fo_detail-associations-properties.html):
 
 ![](/images/pages/products/flexberry-orm/business-server-order/AgregatorDetailAtBS.png)
 

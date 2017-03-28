@@ -3,13 +3,13 @@ title: Ограничение для LookUp в AGE
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_limited-look-up-in-a-g-e.html
+permalink: ru/fa_limited-lookup-age.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
 
 # Общая информация
-Бывают ситуации, когда в [LookUp](fa_master-editor-ajax-look-up.html) для строк [детейла](fo_detail-associations-and-their-properties.html) нужно вставлять только определенные значения. Для этого [список](web-object-list-view.html), открываемый на LookUp-форме необходимо ограничить. Однако для [AjaxGroupEdit](fa_ajax-group-edit.html) имеются свои особенности, которые необходимо учитывать. В результате чего [код выглядит чуть сложнее](settings-for-look-up-in-a-g-e.html), чем при [ограничении на "обычном" LookUp](look-up-limit-web.html).
+Бывают ситуации, когда в [LookUp](fa_master-editor-ajax-lookup.html) для строк [детейла](fo_detail-associations-properties.html) нужно вставлять только определенные значения. Для этого [список](web-object-list-view.html), открываемый на LookUp-форме необходимо ограничить. Однако для [AjaxGroupEdit](fa_ajax-group-edit.html) имеются свои особенности, которые необходимо учитывать. В результате чего [код выглядит чуть сложнее](settings-for-look-up-in-a-g-e.html), чем при [ограничении на "обычном" LookUp](look-up-limit-web.html).
 
 Предположим, есть следующая [модель данных](design.html):
 

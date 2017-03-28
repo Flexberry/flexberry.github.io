@@ -92,7 +92,7 @@ protected override void Render(HtmlTextWriter writer)
 
 ## Встраивание MasterEditorAjaxLookUp
 
-В `AjaxGroupEdit` имеется возможность использовать [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html). Для этого необходимо настраивать [WebControlProvider](fa_master-editor-ajax-look-up.html).
+В `AjaxGroupEdit` имеется возможность использовать [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html). Для этого необходимо настраивать [WebControlProvider](fa_master-editor-ajax-lookup.html).
 
 Пример куска файла `WebControlProvider.xml`:
 

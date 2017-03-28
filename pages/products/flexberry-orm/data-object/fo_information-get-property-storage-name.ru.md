@@ -57,7 +57,7 @@ PropertyStorage(new string[]) {"ПростоКласс"}))
 ## Особенности генерации атрибута свойств PropertyStorage
 
 * [Атрибут `Storage`, заданный для свойств классов](fo_attributes-class-data.html), после генерации будет представлен в виде объявления атрибута `PropertyStorage` без массива.
-* Атрибуты [`Aggregator Storage` детейловой связи](fo_detail-associations-and-their-properties.html) и [`Storage` мастеровой связи](fd_master-association.html) после генерации будут представлен в виде объявления атрибута `PropertyStorage` без массива, если выполнены следующие условия:
+* Атрибуты [`Aggregator Storage` детейловой связи](fo_detail-associations-properties.html) и [`Storage` мастеровой связи](fd_master-association.html) после генерации будут представлен в виде объявления атрибута `PropertyStorage` без массива, если выполнены следующие условия:
   * Storage-атрибут содержит только одно непустое значение.
   * Атрибут [TypeUsage](fo_type-usage-problem.html) содержит более одного значения.
 

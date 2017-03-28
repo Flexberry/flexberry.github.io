@@ -3,7 +3,7 @@ title: MasterEditorAjaxLookUp
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_master-editor-ajax-look-up.html
+permalink: ru/fa_master-editor-ajax-lookup.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

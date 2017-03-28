@@ -48,7 +48,7 @@ private MasterDataObject fMaster;
 public virtual MasterDataObject Master {get{return fMaster;} set{fMaster=value;}}
 ```
 
-Если [класс является агрегируемым](fo_detail-associations-and-their-properties.html), то:
+Если [класс является агрегируемым](fo_detail-associations-properties.html), то:
 
 1.Генерируется свойство, указывающее [агрегатор(шапку)](fd_key-concepts.html). Это свойство помечается атрибутом `ICSSoft.STORMNET.DataObject.AgregatorAttribute.`
 Пример класса данных детейла:

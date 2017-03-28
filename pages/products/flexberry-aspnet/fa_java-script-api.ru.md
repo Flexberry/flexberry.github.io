@@ -18,14 +18,14 @@ JavaScript API основано на библиотеке jQuery и предст
 
 
 2.`API контролов` (набор операций для работы с основными технологическими web-контролами).
-* [JSAPIWOLV|jquery.icsWolv.js)
+* [jquery.icsWolv.js](fa_js-api-wolv.html)
 * [jquery.ajaxgroupedit.js](fa_ajax-group-edit.html)
 * [jquery.icsDatePicker.js](fa_date-picker.html)
 * [jquery.icsMasterEditorAjaxDropDown.js](fa_master-editor-ajax-dropdown.html)
-* [MasterEditorAjaxLookUp|jquery.icsMasterEditorAjaxLookup.js)
+* [jquery.icsMasterEditorAjaxLookup.js](fa_master-editor-ajax-lookup.html)
 
 3.`API форм` (набор операций для работы с основными технологическими web-формами).
-* `[WebEditForm|jQuery.icsEditForm)`
+* [jQuery.icsEditForm](fa_editform.html)
 
 
 # Конвенция именования
