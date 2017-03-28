@@ -26,7 +26,7 @@ lang: ru
 
 ### Настройка аудита
 
-*Примечание: требуются версии Flexberry, ASP.NET Generator и Flexberry Web, выпущенные после выполнения [первого этапа](devprocess_audit-stages.html) реализации подсистемы аудита.*
+*Примечание: требуются версии Flexberry, ASP.NET Generator и Flexberry ASP.NET, выпущенные после выполнения [первого этапа](devprocess_audit-stages.html) реализации подсистемы аудита.*
 
 #### Настройка базы данных
 

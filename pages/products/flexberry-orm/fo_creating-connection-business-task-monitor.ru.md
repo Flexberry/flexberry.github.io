@@ -3,12 +3,8 @@ title: Создание и подключение монитора задач
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
-permalink: ru/fo_creating-and-connection--business-task-monitor.html
+permalink: ru/fo_creating-connection-business-task-monitor.html
 ---
-* **Продукт:** [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент:** [Монитор задач](fo_business-task-monitor.html)
-* **Предназначение:** Описано создание и подключение пользовательского [монитора задач](fo_business-task-monitor.html).
-* **Программная библиотека:** ICSSoft.STORMNET.Business.dll
 
 ## Создание монитора задач
 
@@ -85,11 +81,3 @@ namespace CustomTaskMon
 Компоненты [Flexberry ORM](fo_flexberry-o-r-m.html) используют [монитор](fo_business-task-monitor.html)  (например, [сервис данных](fo_data-service.html) пишет туда запросы). Так что, при реализации этого примера, в `Windows Application Log` появятся записи, соответствующие чтению списка:
 
 ![](/images/pages/products/flexberry-orm/creating-and-connection-businesstaskmonitor/business-task-monitor.jpg)
-
-
- 
-
-
-
-
-

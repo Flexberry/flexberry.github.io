@@ -27,7 +27,7 @@ lang: ru
 ###	Сервис (WEB, WFC)
 #	Sitemap
 
-## Flexberry Web
+## FFlexberry ASP.NET
 #	Алгоритм работы с технологическими контролами (нельзя изменять на проекте)
 #	AspNetGenerator и WebAppTemplate
 #	ICSSoft.STORMNET.Controls

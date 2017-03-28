@@ -3,7 +3,7 @@ title: Подключение монитора запросов к базе да
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, БД
 toc: true
-permalink: ru/fa_event-task-mon-data-base-example.html
+permalink: ru/fa_connect-task-monitor.html
 folder: products/flexberry-aspnet/
 lang: ru
 
@@ -11,13 +11,13 @@ lang: ru
 
 ## Монитор запросов к SQL
 
-Зачастую бывает необходимо посмотреть запросы, которые выполняет сервис данных к хранилищу. Чтобы не подключать сторонние приложения (по типу SQL-profiler), можно воспользоваться [монитором задач Flexberry Web](monitor-tasks--Flexberry--web.html).
+Зачастую бывает необходимо посмотреть запросы, которые выполняет сервис данных к хранилищу. Чтобы не подключать сторонние приложения (по типу SQL-profiler), можно воспользоваться [монитором задач Flexberry ASP.NET](fa_monitor-tasks.html).
 
 ### Подключение монитора задач
 
 Чтобы мониторить запросы к хранилищу данных можно
 
-* Написать [собственный монитор задач](fo_creating-and-connection--business-task-monitor.html)
+* Написать [собственный монитор задач](fo_creating-and-connection-business-task-monitor.html)
 * Подключить существующий
 
 Рассмотрим второй вариант:

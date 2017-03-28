@@ -45,7 +45,7 @@ Inherits="ICSSoft.STORMNET.AdmConsole.AC_WebSearchE" %>
 Inherits="ICSSoft.STORMNET.AdmConsole.AC_WebSearchE" Trace="true" %>
 ```
 
-Некоторые элементы управления из Flexberry Web Framework выводят служебную информацию о срабатывании тех или иных методов.
+Некоторые элементы управления из Flexberry ASP.NET Framework выводят служебную информацию о срабатывании тех или иных методов.
 
 ## Как посмотреть тайминги исполнения и отладочную информацию для всего веб-приложения?
 

@@ -49,4 +49,4 @@ permalink: ru/fo_business-task-monitor.html
 [Перечень стандатных мониторов задач.](fo_BusinessTaskMonitorsInOrm.ru)
 
 ## Как создать свой монитор задач
-[Создание и подключение монитора задач](fo_creating-and-connection--business-task-monitor.html)
+[Создание и подключение монитора задач](fo_creating-connection-business-task-monitor.html)

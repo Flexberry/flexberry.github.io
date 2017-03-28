@@ -91,4 +91,4 @@ Web-контрол - элемент взаимодействия пользов�
 * [CaseberryMembershipProvider - полномочия](Flexberry-membership-provider.html)
 
 # Дополнительные компоненты
-* [Мониторы задач](monitor-tasks--Flexberry--web.html)
+* [Мониторы задач](fa_monitor-tasks.html)
