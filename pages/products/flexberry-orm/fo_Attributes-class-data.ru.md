@@ -5,9 +5,6 @@ keywords: Flexberry Designer, Flexberry ORM, Public
 toc: true
 permalink: ru/fo_attributes-class-data.html
 ---
-* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент**: [Редактор UML-диаграмм](fd_editing-diagram.html)
-* **Предназначение**: На [диаграмме классов](fd_class-diagram.html) [атрибут в классе](fd_class-diagram-constraction.html) определяется в соответствии с нотацией UML.
 
 ## Определение атрибута и что как с него генерируется
 

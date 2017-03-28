@@ -5,12 +5,6 @@ keywords: Flexberry ORM, Public, View (представление)
 toc: true
 permalink: ru/fo_adaptive-views-for-details.html
 ---
-* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент**: [Представления (View)](fd_view-definition.html)
-* **Программная библиотека**: ICSSoft.STORMNET.Business.dll
-* **Предназначение**: Для вычитки [объектов-наследников](fo_inheritance.html) по более широкому набору свойств, нежели у [предков](fo_inheritance.html), могут использоваться адаптивные представления.
-
-## Адаптивные представления
 
 Допустим, что имеется следующая ситуация:
 
@@ -25,7 +19,7 @@ permalink: ru/fo_adaptive-views-for-details.html
 Для того, чтобы указать, что представление адаптивно, необходимо при ассоциировании детейлового представления в атрибуте `[AssociatedDetailViewAttribute]` проинициализировать свойство `UseAdaptiveViewsLoading=true`.
 Пример:
 
-```
+```csharp
 [AssociatedDetailView("AView", "D", "DView", UseAdaptiveViewsLoading=true)]
 ```
 

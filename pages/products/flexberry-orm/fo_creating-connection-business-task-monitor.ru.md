@@ -17,7 +17,7 @@ permalink: ru/fo_creating-connection-business-task-monitor.html
 
 `Монитор задач, который отображает задачи в  `Windows Application Log``
 
-```cs
+```csharp
 using System;
 using ICSSoft.STORMNET.Business;
 namespace CustomTaskMon

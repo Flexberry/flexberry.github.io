@@ -5,9 +5,7 @@ keywords: DataObject (объекты данных), Flexberry Designer, Flexberr
 toc: true
 permalink: ru/fo_detail-associations-and-their-properties.html
 ---
-* **Продукт**:  [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент**: [Редактор UML-диаграмм](fd_editing-diagram.html)
-* **Предназначение**: Описано представление детейловых ассоциаций на [диаграмме классов](fd_class-diagram.html) и особенности генерации соответствующей структцры.
+
 Согласно "Аксиом Flexberry Platform" детейловыми являются композиции, подобные:
 
 ![](/images/pages/products/flexberry-orm/detail-associations-and-their-properties/detail.gif)

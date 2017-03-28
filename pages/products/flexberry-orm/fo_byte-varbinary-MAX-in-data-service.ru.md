@@ -3,10 +3,8 @@ title: Поддержка полей byte[] & varbinary(MAX) в сервисе �
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry Designer, Public
 toc: true
-permalink: ru/fo_byte-varbinary--m-a-x-in-data-service.html
+permalink: ru/fo_byte-varbinary-max-in-data-service.html
 ---
-* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Предназначение**: Описано, каким образом реализовать поддержку бинарных массивов во [Flexberry ORM](fo_flexberry-o-r-m.html).
 
 Временами в классах требуется поддержка атрибутов - бинарных массивов.
 Это может быть поле для хранения сериализованных объектов, картинок и т.д.

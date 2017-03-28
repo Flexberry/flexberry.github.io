@@ -3,12 +3,8 @@ title: CASE Insensitive для БД
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, For code validate, Public, БД
 toc: true
-permalink: ru/fo_c-a-s-e--insensitive-for--d-b.html
+permalink: ru/fo_case-insensitive-for-db.html
 ---
-* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент**: [Сервис данных](fo_data-service.html)
-* **Предназначение:** [Flexberry ORM](fo_flexberry-o-r-m.html) позволяет настроить приложение таким образом, чтобы в генерируемом [сервисом данных](fo_data-service.html) запросе применялась функция [UPPER](https://msdn.microsoft.com/ru-ru/library/ms180055.aspx) для обеих сторон выражения сравнения строк.
-* **Программная библиотека:** ICSSoft.STORMNET.Business.dll
 
 ## Нечувствительность к регистру в сервисе данных
 

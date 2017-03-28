@@ -3,14 +3,8 @@ title: Бизнес-серверы, обёртки, бизнес-фасад
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Бизнес-серверы
 toc: true
-permalink: ru/fo_business--servers--wrapper--business--facade.html
+permalink: ru/fo_business-servers-wrapper-business-facade.html
 ---
-* **Продукт**: [Flexberry ORM](fo_flexberry-o-r-m.html)
-* **Компонент**: [Бизнес-сервер](fo_business-logic.html)
-* **Программная библиотека**: ICSSoft.STORMNET.Business.dll
-* **Предназначение**: Общее описание бизнес-серверов.
-
-## Бизнес-серверы, обёртки, бизнес-фасад
 
 В сущности: бизнес-сервер есть набор методов. В `CASE` бизнес-сервер отрисовывается [UML-классом с установленным атрибутом «businessserver»](fd_business-servers.html). Система может содержать произвольное число бизнес-серверов. В общем, число бизнес-серверов и состав их методов определяется прикладным разработчиком.
 
@@ -33,9 +27,11 @@ permalink: ru/fo_business--servers--wrapper--business--facade.html
 Таким образом, программист всегда может оперировать бизнес-операциями одинаковым образом (в независимости от того, через какую обёртку работает бизнес-сервер), вызывая их через бизнес-фасад. В зависимости от конфигурации приложения, указанной в настройках, бизнес-фасад маршрутизирует вызов напрямую к бизнес-серверу или к какой-либо обёртке.
 
 ## Порядок вызова бизнес-серверов
+
 Следует учесть, что в бизнес-сервере может быть вызвано обновление объекта не через возвращаемый массив, а отдельным вызовом сервиса данных. В этом случае, надо учесть то, что бизнес-серверы будут вызываться для этого объекта отдельно.
 
 ### Наследование и бизнес-серверы
+
 Если у нас имеется следующая ситуация:
 
 ![](/images/pages/products/flexberry-orm/BSHierarchy.JPG)
@@ -48,6 +44,7 @@ permalink: ru/fo_business--servers--wrapper--business--facade.html
 * **Человек**
 
 ### Агрегатор, детейлы и бизнес-серверы
+
 Если у нас имеется следующая ситуация:
 
 ![](/images/pages/products/flexberry-orm/AgregatorDetailAtBS.png)
@@ -58,6 +55,7 @@ permalink: ru/fo_business--servers--wrapper--business--facade.html
 * **КлассДетейл**
 
 ## Правила обновления объекта данных
+
 Например, у нас имеется следующая ситуация:
 
 ![](/images/pages/products/flexberry-orm/BusinesServerMasters.GIF)
@@ -66,6 +64,7 @@ permalink: ru/fo_business--servers--wrapper--business--facade.html
 
 
 ## Примеры
+
 Примеры использования бизнес-серверов доступны в следующих статьях:
 
 * [Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)](otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html)
