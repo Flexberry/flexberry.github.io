@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # Делегат изменения контрола фильтрации
-В версии шаблона после 10.11.2014 стал доступен делегат изменения контрола [фильтрации](w-o-l-v-filters.html) (на настоящий момент изменение доступно для [DatePicker](date-picker.html)) в [WebObjectListView](web-object-list-view.html). 
+В версии шаблона после 10.11.2014 стал доступен делегат изменения контрола [фильтрации](w-o-l-v-filters.html) (на настоящий момент изменение доступно для [DatePicker](date-picker.html)) в [WebObjectListView](fa_web-object-list-view.html). 
 
 Как работает делегат: модуль фильтрации создаёт контролы для фильтрации посредством [WebControlProvider](fa_web-control-provider.html), где вызывается делегат.
 

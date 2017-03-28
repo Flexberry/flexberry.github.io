@@ -7,15 +7,14 @@ permalink: ru/fa_w-o-l-v-operations.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 При помощи Операций можно настроить поведение WebObjectListView.
 
-Получить доступ к Операциям можно через свойство [Operations](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_controls_1_1_operations_w_o_l_v.html) контрола.
+Получить доступ к Операциям можно через свойство `Operations` контрола.
 
 Чтобы включить отображение кнопки печати списка, необходимо выполнить следующий код при загрузке страницы:
 
-```cs
+```csharp
 webObjectListView1.Operations.Print = true;
 ```
 

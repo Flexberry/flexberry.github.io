@@ -7,7 +7,6 @@ permalink: ru/fa_w-o-l-v-filters.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 Если включить настройку WOLV `Filter=true`, то на тулбаре появится кнопка с фильтрами. При нажатии на кнопку появится первая строка, в которой можно накладывать
 фильтры. Первый контрол в ячейке фильтров - операция, второй - значение. Особым образом обрабатываются свойства типа `bool` и наследники `Enum`: для логических
@@ -15,7 +14,7 @@ lang: ru
 
 Для того чтобы использовать свой контрол в фильтрах, нужно:
 
-* чтобы контрол реализовывал интерфейс [IFilterControl](http://storm:20013/interface_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_tools_1_1_i_filter_control.html)
+* чтобы контрол реализовывал интерфейс `IFilterControl`
 * добавить в WebControlProvider.xml к соотвествующему типу строчку:
 
     ```xml

@@ -17,7 +17,7 @@ lang: ru
 
 Пример:
 
-```cs
+```csharp
 this.objectListView1.Columns = new ICSSoft.STORMNET.Windows.Forms.ColumnInfo[] {
     new ICSSoft.STORMNET.Windows.Forms.ColumnInfo("ФИО", -1, true, ICSSoft.STORMNET.Business.SortOrder.Asc, ((byte)(0)), "ФИО"),
     new ICSSoft.STORMNET.Windows.Forms.ColumnInfo("Прописка", -1, true, ICSSoft.STORMNET.Business.SortOrder.Asc, ((byte)(1)), "Прописка")
@@ -29,12 +29,12 @@ this.objectListView1.Columns = new ICSSoft.STORMNET.Windows.Forms.ColumnInfo[] {
 
 ## Web, WebObjectListView
 
-Настройка сортировки столбцов [WebObjectListView](web-object-list-view.html) осуществляется путем задания свойства `.InitialColumnsSort` типа
+Настройка сортировки столбцов [WebObjectListView](fa_web-object-list-view.html) осуществляется путем задания свойства `.InitialColumnsSort` типа
 `ICSSoft.STORMNET.Business.ColumnsSortDef[]`.
 
 Пример:
 
-```cs
+```csharp
 wolv.InitialColumnsSort = new ColumnsSortDef[] 
 {
     new ColumnsSortDef("ФИО", SortOrder.Asc),

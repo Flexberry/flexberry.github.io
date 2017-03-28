@@ -8,17 +8,6 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ASP.NET](flexberry-a-s-p-n-e-t.html)
-* '''Компонент''': [Web-контролы и web-компоненты](web-controls.html)
-* '''Предназначение''': создание собственной LookUp-страницы.
-</td>
-</tr></tbody></table></a>
-</div>
-
 
 # Механизм взаимодействия
 Можно посмотреть [здесь](form-interaction-web.html).
@@ -27,31 +16,31 @@ lang: ru
 Для создания собственной LookUp-страницы, необходимо:
 
 # Создать новую web-страницу.
-# Добавить на неё [WebObjectListView](web-object-list-view.html) с `ID = "LookUpFormWOLV"`.
+# Добавить на неё [WebObjectListView](fa_web-object-list-view.html) с `ID = "LookUpFormWOLV"`.
 # При загрузке формы
 #* Принять передаваемые параметры.
-#* Настроить [WOLV](web-object-list-view.html)
+#* Настроить [WOLV](fa_web-object-list-view.html)
 #* Подключить скрипты
 # Настроить свойство `LookUpFormURL` у [LookUp'a](look-up--overview.html).
 
 ## Передаваемые параметры
 На LookUp-страницу передается ряд параметров для настройки WOLV'a и страницы:
 
-* `ViewName` - имя представления для [WOLV](web-object-list-view.html)
-* `typeName` - наименование типа данных, отображаемого в [WOLV](web-object-list-view.html)
+* `ViewName` - имя представления для [WOLV](fa_web-object-list-view.html)
+* `typeName` - наименование типа данных, отображаемого в [WOLV](fa_web-object-list-view.html)
 * `connStrName` - строка подключения к базе (опционально)
 * `nameValueControl` - параметры лукапа
 * `PK` - PrimaryKey выбранного мастера (если таковой имеется)
 * `FormCaption` - заголовок страницы (опционально)
-* `csdName` - наименование Column Sort Definition - определения сортировки [WOLV](web-object-list-view.html), которая хранится в сессии
-* `editPage` - адрес страницы редактирования объектов [WOLV](web-object-list-view.html)
-* `countOnPage` - количество объектов на одной странице [WOLV](web-object-list-view.html)
-* `LFName` - наименование Limit Function для ограничения выгрузки данных [WOLV](web-object-list-view.html). Limit Functon хранится в сессии.
+* `csdName` - наименование Column Sort Definition - определения сортировки [WOLV](fa_web-object-list-view.html), которая хранится в сессии
+* `editPage` - адрес страницы редактирования объектов [WOLV](fa_web-object-list-view.html)
+* `countOnPage` - количество объектов на одной странице [WOLV](fa_web-object-list-view.html)
+* `LFName` - наименование Limit Function для ограничения выгрузки данных [WOLV](fa_web-object-list-view.html). Limit Functon хранится в сессии.
 
 ## Настройка WOLV
 Необходимо перебросить значения, переданные в качестве параметров, а также провести некоторую дополнительную настройку:
 
-```
+```csharp
 LookUpFormWOLV.View = Information.GetView(Request["viewName"], Type.GetType(Request["typeName"]));
 LookUpFormWOLV.LookUp = true;
 LookUpFormWOLV.LookUpParam = Request["nameValueControl"];

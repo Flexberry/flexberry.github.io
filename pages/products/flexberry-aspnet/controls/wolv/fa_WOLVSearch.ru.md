@@ -7,7 +7,6 @@ permalink: ru/fa_w-o-l-v-search.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 Система поиска позволяет осуществлять поиск по отображаемым элементам списка.
 
@@ -22,7 +21,7 @@ lang: ru
 
 Чтобы выключить кнопку поиска, необходимо при загрузке страницы установить эту операцию в `false`:
 
-```cs
+```csharp
 webObjectListView1.Operations.Search = false;
 ```
 

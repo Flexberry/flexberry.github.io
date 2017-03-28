@@ -7,9 +7,9 @@ permalink: ru/fa_w-o-l-v-c-s-s.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
+Эта статья описывает часть информации о [WebObjectListView](fa_web-object-list-view.html).
 
-Для возможности кастомизации отображения [WOLV](web-object-list-view.html) при помощи CSS раскрываем информацию о внутренней структуре и CSS-классах:
+Для возможности кастомизации отображения [WOLV](fa_web-object-list-view.html) при помощи CSS раскрываем информацию о внутренней структуре и CSS-классах:
 
 ```html
 <div class="ics-wolv-column-header">

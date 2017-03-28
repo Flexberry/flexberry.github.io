@@ -3,7 +3,7 @@ title: Настройки для LookUp в AGE
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_settings-for-lookup-age.html
+permalink: ru/fa_settings-lookup-age.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

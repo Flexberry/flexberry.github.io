@@ -38,5 +38,5 @@ entries:
       url: /p1_sample4.html
       output: web, pdf
     - title: WebObjectListView
-      url: /web-object-list-view.html
+      url: /fa_web-object-list-view.html
       output: web, pdf

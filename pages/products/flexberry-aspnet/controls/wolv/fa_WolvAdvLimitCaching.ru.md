@@ -8,7 +8,7 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 ## Введение
-Для повышения быстродействия [WebObjectListView](web-object-list-view.html) можно добавить кэширование пользовательских расширенных ограничений.
+Для повышения быстродействия [WebObjectListView](fa_web-object-list-view.html) можно добавить кэширование пользовательских расширенных ограничений.
 
 Для этого можно воспользоваться технологическим типом `NewPlatform.Flexberry.Services.AdvLimitManagerCacheDecorator`, добавляющим кэширование для любого другого сериса следующим образом:
 

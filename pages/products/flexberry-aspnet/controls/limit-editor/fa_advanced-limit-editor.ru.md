@@ -83,7 +83,7 @@ WebObjectListView1.DropLimitFromLimitEditor();
 
 На вкладке `Главная` есть кнопка `Подсчитать количество строк`, по нажатию на которую выдается количество объектов, удовлетворяющих текущему ограничению.
 
-{% include note.html content="Подсчет количества строк не учитывает наложенные на [WebObjectListView](web-object-list-view.html) [фильтры](fa_wolv-filters.html)." %}
+{% include note.html content="Подсчет количества строк не учитывает наложенные на [WebObjectListView](fa_web-object-list-view.html) [фильтры](fa_wolv-filters.html)." %}
 
 
 ## Задание параметров

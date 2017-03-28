@@ -7,7 +7,6 @@ permalink: ru/fa_w-o-l-v-data-service.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 ## Сервис данных WOLV
 

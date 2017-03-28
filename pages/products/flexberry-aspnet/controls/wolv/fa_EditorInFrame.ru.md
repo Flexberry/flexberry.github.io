@@ -7,11 +7,11 @@ permalink: ru/fa_editor-in-frame.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
+Эта статья описывает часть информации о [WebObjectListView](fa_web-object-list-view.html).
 
 Когда пользователь выбирает элемент в списке, бывает удобно сразу увидеть информацию об элементе и отредактировать ее.
 
-Ниже представлен пример настроки [WOLV](web-object-list-view.html), позволяющий одновременно отображать список и
+Ниже представлен пример настроки [WOLV](fa_web-object-list-view.html), позволяющий одновременно отображать список и
 [форму редактирования](flexberry-asp-net-edit-form.html) выбранного в списке элемента со всеми ее возможностями.
 
 [Форма редактирования](flexberry-asp-net-edit-form.html) отображается во фрейме (при необходимости ее можно свернуть или развернуть).

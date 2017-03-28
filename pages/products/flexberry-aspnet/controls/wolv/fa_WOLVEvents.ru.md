@@ -7,11 +7,10 @@ permalink: ru/fa_w-o-l-v-events.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
-Все аргументы событий [WebObjectListView](web-object-list-view.html) наследуются от базового:
+Все аргументы событий [WebObjectListView](fa_web-object-list-view.html) наследуются от базового:
 
-```cs
+```csharp
 /// <summary>
 /// Тип аргумента для событий WOLV.
 /// </summary>
@@ -70,16 +69,16 @@ public class WolvEventArgs : CancelEventArgs
 
 ### Первый этап. Подписка на событие
 
-Первый вариант. Подписаться статично (в разметке страницы, содержащей [WebObjectListView](web-object-list-view.html). Пусть она называется `wolv_page.aspx`).
+Первый вариант. Подписаться статично (в разметке страницы, содержащей [WebObjectListView](fa_web-object-list-view.html). Пусть она называется `wolv_page.aspx`).
 
-```
+```xml
 <%-- Разметка из wolv_page.aspx --%>;
 <ac:WebObjectListView ID="WebObjectListView1" runat="server" OnObjectDeleting="WebObjectListView1_ObjectDeleting" />;
 ```
 
 Второй вариант. Подписаться из кода (в code-behind страницы, содержащей WOLV. Пусть файл с кодом называется `wolv_page.aspx.cs`).
 
-```cs
+```csharp
 // Код из wolv_page.aspx.cs
 protected override void Preload()
 {
@@ -93,7 +92,7 @@ protected override void Preload()
 
 Если еще раз нажать клавишу `Tab`, будет сгенерирован шаблон обработчика:
 
-```cs
+```csharp
 protected void WebObjectListView1_ObjectDeleting(WebObjectListView sender, WolvEventArgs args)
 ```
 {% endcapture %}
@@ -101,7 +100,7 @@ protected void WebObjectListView1_ObjectDeleting(WebObjectListView sender, WolvE
 
 ### Второй этап. Обработка события
 
-```cs
+```csharp
 // Код из wolv_page.aspx.cs
 
 // Колекция объектов в формате [{objectPK: Строковое представление первичного ключа удаляемого адреса, confirmMessage: Текст сообщения о ссылающихся, на адрес, объектах}, ...]
@@ -147,7 +146,7 @@ public string DeletingObjects
 
 ### Третий этап. Получение,в бизнес-сервере, информации о связанных объектах
 
-```cs
+```csharp
 //Код из АдресБС.cs
 public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInstitutionsGuide.Адрес UpdatedObject)
 {
@@ -258,7 +257,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
 
 ### Пятый этап. Выполняем каскадное удаление объектов, если пользователь дал своё согласие
 
-```cs
+```csharp
 // Код из wolv_page.aspx.cs
 protected override void Preload()
 {

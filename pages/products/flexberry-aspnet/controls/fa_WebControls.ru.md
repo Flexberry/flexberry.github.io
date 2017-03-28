@@ -77,7 +77,7 @@ Web-контрол - элемент взаимодействия пользов�
 * [ShowHideDiv (class)](show-hide-div.html)
 * [WebFileControl](web-file-control_Description.html)
 * WebMessageBox (class)
-* [WebObjectListView](web-object-list-view.html)
+* [WebObjectListView](fa_web-object-list-view.html)
 * [Редактор ограничений](fa_advanced-limit-editor.html)
 * [WebBinder](web-binder.html)
 

@@ -10,7 +10,7 @@ lang: ru
 
 ## Введение
 
-`WebControlProvider` - это провайдер, который позволяет настраивать контролы для отображения свойств объекта на списковых контролах (например, [WebObjectListView](web-object-list-view.html), [AjaxGroupEdit](fa_ajax-group-edit.html)). Все его настройки хранятся в файле /xml/WebControlProvider.xml
+`WebControlProvider` - это провайдер, который позволяет настраивать контролы для отображения свойств объекта на списковых контролах (например, [WebObjectListView](fa_web-object-list-view.html), [AjaxGroupEdit](fa_ajax-group-edit.html)). Все его настройки хранятся в файле /xml/WebControlProvider.xml
 
 ## Настройки
 
@@ -34,9 +34,9 @@ lang: ru
   </customproperty>
 ```
 
-* control - контрол, который будет использоваться для отображения (например, в [WebObjectListView](web-object-list-view.html)) или для мастеровых свойств в [AjaxGroupEdit](fa_ajax-group-edit.html);
+* control - контрол, который будет использоваться для отображения (например, в [WebObjectListView](fa_web-object-list-view.html)) или для мастеровых свойств в [AjaxGroupEdit](fa_ajax-group-edit.html);
 * editcontrol - контрол, который будет использоваться для редактирования (например, в [AjaxGroupEdit](fa_ajax-group-edit.html));
-* filtercontrol - контрол, который будет использоваться для фильтрации в [WebObjectListView](web-object-list-view.html);
+* filtercontrol - контрол, который будет использоваться для фильтрации в [WebObjectListView](fa_web-object-list-view.html);
 
 В тэге &lt;control /&gt; (&lt;editcontrol /&gt;,&lt;filtercontrol /&gt;) указываются:
 # `typename` - тип контрола;
@@ -54,7 +54,7 @@ lang: ru
 ## Встраивание контролов
 Имеется возможность указать контрол для просмотра и для редактирования (например, в [WebGroupEdit]) [WebGroupEdit.ashx|Контрол для редактирования в WebGroupEdit].
 
-Если вы разработали свой контрол, который используется на формах редактирования и хотите встроить его в [WebObjectListView](web-object-list-view.html). У вас возникает проблема с тем, что в [WebObjectListView](web-object-list-view.html) он выглядит как контрол для ввода данных, а вы хотели бы использовать его только для отображения. Вам нужно реализовать свойство "Enabled" у контрола, и когда контрол будет встраивается в WOLV, то ему автоматически проставится Enabled = false.
+Если вы разработали свой контрол, который используется на формах редактирования и хотите встроить его в [WebObjectListView](fa_web-object-list-view.html). У вас возникает проблема с тем, что в [WebObjectListView](fa_web-object-list-view.html) он выглядит как контрол для ввода данных, а вы хотели бы использовать его только для отображения. Вам нужно реализовать свойство "Enabled" у контрола, и когда контрол будет встраивается в WOLV, то ему автоматически проставится Enabled = false.
 
 ## Пример
 

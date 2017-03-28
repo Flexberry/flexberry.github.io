@@ -7,15 +7,14 @@ permalink: ru/fa_w-o-l-v-stylization.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 У WOLV имеется свойство
 
-```cs
+```csharp
 public IList<TextStylization> Stylizations;
 ```
 
-Оно дает возможность применять к строкам [WOLV](web-object-list-view.html) определенные css-классы в зависимости от значений в столбцах.
+Оно дает возможность применять к строкам [WOLV](fa_web-object-list-view.html) определенные css-классы в зависимости от значений в столбцах.
 
 Чаще всего используется для раскраски строк.
 
@@ -25,7 +24,7 @@ public IList<TextStylization> Stylizations;
 
 Пример:
 
-```cs
+```csharp
 var stylization = new TextStylization(string.Empty, new TextStyle[0]);
 stylization.ColumnName = "PKОценившихЭкспертов";
 
@@ -42,7 +41,7 @@ WebObjectListView1.Stylizations.Add(stylization);
 
 Пример: cписок, у которого есть столбец `Семья.КоличЧленовСемьи`. Вам нужно раскрасить зеленым, если членов семьи 2, коричневым - 3, черным - 4.
 
-```cs
+```csharp
 var two = new TextStyle("2", "WOLV-color-Green");
 var three = new TextStyle("3", "WOLV-color-Brown");
 var four = new TextStyle("4", "WOLV-color-Black");
@@ -54,7 +53,7 @@ WebObjectListView1.Stylizations.Add(new TextStylization(
 
 CSS:
 
-```css
+```csharps
 tr.WOLV-color-Green td{
     color: green !important;
 }
@@ -76,7 +75,7 @@ tr.WOLV-color-Black td{
 
 Если перепишем приведенный выше пример, добавив еще один стиль:
 
-```cs
+```csharp
 var countStylization = new TextStylization(string.Empty, new TextStyle[0]);
 stylization.ColumnName = "PKОценившихЭкспертов";
 

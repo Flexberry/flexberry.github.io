@@ -7,9 +7,8 @@ permalink: ru/fa_w-o-l-v-export2-excel.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
-[WebObjectListView](web-object-list-view.html) позволяет выгружать данные в формате Excel.
+[WebObjectListView](fa_web-object-list-view.html) позволяет выгружать данные в формате Excel.
 Эта функция включается операцией:
 
 ```cs
@@ -24,7 +23,7 @@ protected override void Preload()
 
 ## Представление для экспорта
 
-Задать [представление](fo_view-def.html), используемое по умолчанию для экспорта, можно из кода, установив поле `ExportView` у [WOLV](web-object-list-view.html):
+Задать [представление](fo_view-def.html), используемое по умолчанию для экспорта, можно из кода, установив поле `ExportView` у [WOLV](fa_web-object-list-view.html):
 
 ```cs
 WebObjectListView1.ExportView = Клиент.View.КлиентExport;

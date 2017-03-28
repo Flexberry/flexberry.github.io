@@ -7,7 +7,7 @@ permalink: ru/fa_w-o-l-v-columns.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
+Эта статья описывает часть информации о [WebObjectListView](fa_web-object-list-view.html).
 
 Данная настройка позволяет пользователю изменить отображение столбцов: порядок, видимость.
 

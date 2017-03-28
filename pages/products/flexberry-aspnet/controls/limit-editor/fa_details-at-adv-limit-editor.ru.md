@@ -26,7 +26,7 @@ lang: ru
 
 ## Динамические представления для детейлов
 
-Для работы детейлов в [расширенном редакторе ограничений в web](fa_advanced-limit-editor.html) при применении ограничения на [WOLV](web-object-list-view.html), может потребоваться:
+Для работы детейлов в [расширенном редакторе ограничений в web](fa_advanced-limit-editor.html) при применении ограничения на [WOLV](fa_web-object-list-view.html), может потребоваться:
 * [Задать детейлы в представление](fa_set-prop-order-at-web-adv-limit-editor.html), если их ещё там нет.
 * Задать [свойство AutoAddUsedInLimitationProperties](fa_set-prop-order-at-web-adv-limit-editor.html), чтобы представление формировалось динамически.
 * Определить механизм формирования динамического представления для детейлов через интерфейс ICSSoft.STORMNET.Windows.Forms.IViewGenerator (расположен в сборке ExternalLangDef). Например, в версии после 14.01.2015 можно в конфиг добавить следующую строчку:

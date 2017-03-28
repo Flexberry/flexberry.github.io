@@ -28,10 +28,10 @@ this.objectListView1.Columns = new ICSSoft.STORMNET.Windows.Forms.ColumnInfo[] {
 Здесь конструктор `ColumnInfo` принимает третьим и четвертым параметрами способ сортировки типа `ICSSoft.STORMNET.Business.SortOrder` (Asc, Desc, None) и приоритет сортировки типа `byte`.
 
 ### Web, WebObjectListView
-Настройка сортировки столбцов [WebObjectListView](web-object-list-view.html) осуществляется путем задания свойства `.InitialColumnsSort` типа `ICSSoft.STORMNET.Business.ColumnsSortDef[]`.
+Настройка сортировки столбцов [WebObjectListView](fa_web-object-list-view.html) осуществляется путем задания свойства `.InitialColumnsSort` типа `ICSSoft.STORMNET.Business.ColumnsSortDef[]`.
 
 Пример:
-```cs
+```csharp
 wolv.InitialColumnsSort = new ColumnsSortDef[] 
 {
     new ColumnsSortDef("ФИО", SortOrder.Asc),

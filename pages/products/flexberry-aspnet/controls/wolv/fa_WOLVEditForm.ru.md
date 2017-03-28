@@ -7,7 +7,6 @@ permalink: ru/fa_w-o-l-v-edit-form.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 Данные способы настройки разработаны в замен [устаревшей](thick-box-click-in-row.html).
 

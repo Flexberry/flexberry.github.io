@@ -180,7 +180,7 @@ if (typeof document.WgeSaveHandlers !== 'undefined') {
 Описание настроек содержится в [статье Пользовательские настройки AjaxGroupEdit](fa_age-user-settings.html).
 
 # Настройки для LookUp
-С описанием настроек можно ознакомиться в [статье](settings-for-look-up-in-a-g-e.html).
+С описанием настроек можно ознакомиться в [статье](fa_settings-lookup-age.html).
 
 # Встраивание прикладных контролов
 Информацию о встраивании прикладных контролов можно прочитать в [статье](a-g-e-applied-controls.html).

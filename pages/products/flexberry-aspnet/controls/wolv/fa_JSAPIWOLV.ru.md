@@ -7,7 +7,7 @@ permalink: ru/fa_j-s-a-p-i-w-o-l-v.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
+Эта статья описывает часть информации о [WebObjectListView](fa_web-object-list-view.html).
 
 Для манипуляций с `WOLV` на стороне клиента следует использовать `WOLV JS API`, который представляет собой jQuery плагин (`icsWolv`).
 

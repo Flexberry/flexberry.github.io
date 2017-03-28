@@ -27,7 +27,7 @@ lang: ru
 
 ## Интерфейс
 Класс реализует интерфейс `ILockHelper`:
-```cs
+```csharp
 public interface ILockHelper
 {
     bool LockDataObject(string dataObjectKey, string userName, out string lockUserName);
@@ -45,10 +45,10 @@ public interface ILockHelper
 `LockTimeout` - время жизни блокировки. Необходимо для того, чтобы удалять старые блокировки. Если страница редактирования открыта, то она периодически посылает ajax-запросы на продление блокировки. При закрытии страницы запросы прекращаются, и блокировка стареет. Периодичность запросов соответствует времени жизни блокировки.<br>
 
 ## Использвание
-Если нужен свой сервис блокировок, можно просто реализовать интерфейс `ILockHelper` и использовать свой класс, где нужно, например, задать его для блокировок в [WebObjectListView](web-object-list-view.html). 
+Если нужен свой сервис блокировок, можно просто реализовать интерфейс `ILockHelper` и использовать свой класс, где нужно, например, задать его для блокировок в [WebObjectListView](fa_web-object-list-view.html). 
 
-Пример использования WebLockHelper (код [WOLV](web-object-list-view.html)):
-```cs
+Пример использования WebLockHelper (код [WOLV](fa_web-object-list-view.html)):
+```csharp
         // Свойство, хранящее LockHelper
         public static ILockHelper LockHelper
         {
@@ -64,7 +64,7 @@ public interface ILockHelper
         }
 ```
 Установка блокировки:
-```cs
+```csharp
 if (lockHelper.LockDataObject(PK, Context.User.Identity.Name, out lockUserName))
 {
     MessageBox.Show("Объект успешно заблокирован");

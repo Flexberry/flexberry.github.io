@@ -7,11 +7,10 @@ permalink: ru/fa_w-o-l-v-hierarhy.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 {% include note.html content='Данная статья актуальная для версий шаблона после 2013-10-08' %}
 
-Иерархический WOLV не является отдельным контролом, это обычный [WebObjectListView](web-object-list-view.html), настроенный особым образом.
+Иерархический WOLV не является отдельным контролом, это обычный [WebObjectListView](fa_web-object-list-view.html), настроенный особым образом.
 
 Иерархический WOLV позволяет отображать иерархические данные.
 

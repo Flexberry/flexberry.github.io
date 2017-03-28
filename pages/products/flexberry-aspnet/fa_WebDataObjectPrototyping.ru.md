@@ -8,17 +8,6 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Платформа''': [FlexberryASP.NET](flexberry-a-s-p-n-e-t.html).
-* '''Компонент''': [WebObjectListView (WOLV)](web-object-list-view.html).
-* '''Предназначение''': возможность выполнять прототипизацию объекта, открываемого на редактирование.
-</td>
-</tr></tbody></table></a>
-</div>
-
 
 В версии шаблона после 08.10.2013 появилась возможность выполнять прототипизацию объекта, открываемого на редактирование.
 
@@ -30,8 +19,8 @@ lang: ru
 * На исходный объект выставляется блокировка, которая снимается при первом сохранении объекта-прототипа.
 
 # WOLV и "создание на основе"
-[WOLV](web-object-list-view.html) предоставляет возможность выполнения прототипизации объекта. Для этого у соответствующего [WOLV](web-object-list-view.html) необходимо включить операцию `[NewByExampleInRow](w-o-l-v-operations.html)`:
-```cs
+[WOLV](fa_web-object-list-view.html) предоставляет возможность выполнения прототипизации объекта. Для этого у соответствующего [WOLV](fa_web-object-list-view.html) необходимо включить операцию `[NewByExampleInRow](w-o-l-v-operations.html)`:
+```csharp
 public partial class КредитL : BaseListForm<Кредит>
 {
 	//...

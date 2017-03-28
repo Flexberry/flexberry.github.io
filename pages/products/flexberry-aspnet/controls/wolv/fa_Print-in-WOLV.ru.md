@@ -7,7 +7,7 @@ permalink: ru/fa_print-in--w-o-l-v.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
+Эта статья описывает часть информации о [WebObjectListView](fa_web-object-list-view.html).
 
 Для того, чтобы включить возможность печати WOLV, нужно установить значение `Operations.Print = true`. Для печати на тулбаре имеется кнопка, при нажатии на
 которую без перезагрузки страницы откроется окошко в thickbox для того, чтобы выбрать необходимые колонки для печати.

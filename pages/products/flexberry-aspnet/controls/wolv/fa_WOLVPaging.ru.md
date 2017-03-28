@@ -7,7 +7,6 @@ permalink: ru/fa_w-o-l-v-paging.html
 folder: flexberry-aspnet
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](web-object-list-view.html).
 
 Для отображения постраничного перехода используются два [пейджинговых контрола](pager.html) _верхний_ и _нижний_. Для разных `Pager`'ов используются разные
 CSS-классы и настройки.
