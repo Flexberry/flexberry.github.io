@@ -10,7 +10,7 @@ lang: ru
 
 # Связывание web-контролов редактирования мастеров
 
-Данная статья рассказывает, каким образом можно связывать такие web-контролы редактирования мастеров как [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) и [MasterEditorAjaxDropDown](master-editor-ajax-drop-down.html).
+Данная статья рассказывает, каким образом можно связывать такие web-контролы редактирования мастеров как [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) и [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html).
 
 ## Методы для [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
 
@@ -35,7 +35,7 @@ $('#<%=ctrlМойЛукап.ClientID%>').on('change', function () {
 ```
 
 ## Связывание при помощи серверных методов, которые предусмотрены технологией
-Для конкретного контрола редактирования мастера ([MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) или [MasterEditorAjaxDropDown](master-editor-ajax-drop-down.html)) имеется возможность указать его мастеровой контрол ([MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) или [MasterEditorAjaxDropDown](master-editor-ajax-drop-down.html)), т.е. тот, от которого он зависит. При смене мастерового контрола вызовется серверный обработчик для изменения свойств зависимого контрола.
+Для конкретного контрола редактирования мастера ([MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) имеется возможность указать его мастеровой контрол ([MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)), т.е. тот, от которого он зависит. При смене мастерового контрола вызовется серверный обработчик для изменения свойств зависимого контрола.
 
 ```
 
@@ -93,6 +93,6 @@ private void MasterOfSlaveChanged(string masterselectedpk, ref string selectedpk
 ctrl1.AddMasterLookup(ctrl2, ctrl1Ofctrl2Changed);
 ctrl2.AddMasterLookup(ctrl1, ctrl2Ofctrl1Changed);
 ```.
-НО: Мастеровой [MasterEditorAjaxDropDown](master-editor-ajax-drop-down.html) не может быть зависимым контролом своего зависимого контрола типа [MasterEditorAjaxDropDown](master-editor-ajax-drop-down.html).
+НО: Мастеровой [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html) не может быть зависимым контролом своего зависимого контрола типа [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html).
 </msg>
 )))

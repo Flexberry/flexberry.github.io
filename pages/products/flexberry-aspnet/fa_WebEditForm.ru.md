@@ -7,7 +7,8 @@ permalink: ru/fa_web-edit-form.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-# [JS API](java-script-a-p-i.html)
+
+# [JS API](fa_java-script-api.html)
 Для работы с формой редактирования на стороне клиента следует использовать JS API, который представляет собой jQuery плагин (`jQuery.icsEditForm`).
 
 Основные возможности:

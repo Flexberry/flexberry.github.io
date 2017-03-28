@@ -3,21 +3,10 @@ title: MasterEditorAjaxDropDown
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
-permalink: ru/fa_master-editor-ajax-drop-down.html
+permalink: ru/fa_master-editor-ajax-dropdown.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry ASP.NET](flexberry-a-s-p-n-e-t.html)
-* '''Компонент''': [Web-контролы и web-компоненты](web-controls.html)
-* '''Предназначение''': Данный web-контрол позволяет просматривать список доступных мастеровых объектов в виде выпадающего списка.
-</td>
-</tr></tbody></table></a>
-</div>
 
 # Описание
 `MasterEditorAjaxDropDown` - это [web-контрол](web-controls.html), который позволяет просматривать список доступных мастеровых объектов в виде выпадающего списка.
@@ -105,7 +94,7 @@ lang: ru
 ## Настройки оформления
 
 # JS API
-Для манипуляций с `MasterEditorAjaxDropDown` на стороне клиента следует использовать [JS API](java-script-a-p-i.html), который представляет собой jQuery плагин (icsMasterEditorAjaxDropDown).
+Для манипуляций с `MasterEditorAjaxDropDown` на стороне клиента следует использовать [JS API](fa_java-script-api.html), который представляет собой jQuery плагин (icsMasterEditorAjaxDropDown).
 
 ''Установка значения `MasterEditorAjaxDropDown`''
 

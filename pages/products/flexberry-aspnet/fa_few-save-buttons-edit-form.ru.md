@@ -63,4 +63,4 @@ public override object PluginInitSettings
 <asp:ImageButton ID="BottomSaveBtn" runat="server" SkinID="SaveBtn" OnClick="SaveBtn_Click" AlternateText="<%$ Resources: Resource, Save %>" ValidationGroup="savedoc" />
 ```
 
-{% include note.html content="В качестве ID можно использовать любой ID, который удовлетворит селектору `"input[id$=\"SaveBtn\"]"`. " %}
+В качестве ID можно использовать любой ID, который удовлетворит селектору "input[id$=\"SaveBtn\"]".

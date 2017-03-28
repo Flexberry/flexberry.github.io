@@ -198,7 +198,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
 
 ### Четвертый этап. Запрашиваем подтверждение на каскадное удаление объектов
 
-Запросим подтверждение при помощи [JavaScript API](j-s-a-p-i-core.html)
+Запросим подтверждение при помощи [JavaScript API](fa_js-api-core.html)
 
 ```javascript
 //Код из wolv_page.aspx

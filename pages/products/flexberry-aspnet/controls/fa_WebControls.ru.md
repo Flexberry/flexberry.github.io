@@ -35,7 +35,7 @@ Web-контрол - элемент взаимодействия пользов�
 
 
 ## Особенности работы с контролами
-* [JavaScript API](java-script-a-p-i.html)
+* [JavaScript API](fa_java-script-api.html)
 * [Глобальная настройка веб-контролов](fa_init-control-settings-delegate.html)
 
 ## Список web-контролов
@@ -59,11 +59,11 @@ Web-контрол - элемент взаимодействия пользов�
 * [FileControlView](file-control-view.html)
 * [FormattedDateTimeControl](formatted-date-time-control.html)
 * [HierarchicalListView](hierarchical-list-view.html)
-* [Hinter](hinter.html)
-* [IcsTreeView](ics-tree-view.html)
+* [Hinter](fa_hinter.html)
+* [IcsTreeView](fa_ics-tree-view.html)
 * [ImageControl](image-control.html)
 * [LinkModalPopupWindow](link-modal-popup-window.html)
-* [MasterEditorAjaxDropDown](master-editor-ajax-drop-down.html)
+* [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)
 * [MasterEditorAjaxLookUp](fa_master-editor-ajax-look-up.html)
 * [MasterEditorLookUp](master-editor-look-up.html) 
 * [MasterEditorLinkedAjaxLookUp](master-editor-linked-ajax-look-up.html)

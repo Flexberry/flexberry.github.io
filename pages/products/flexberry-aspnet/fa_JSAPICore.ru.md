@@ -3,7 +3,7 @@ title: Ядро JavaScript API
 sidebar: flexberry-aspnet_sidebar
 keywords: JavaScript API
 toc: true
-permalink: ru/fa_j-s-a-p-i-core.html
+permalink: ru/fa_js-api-core.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

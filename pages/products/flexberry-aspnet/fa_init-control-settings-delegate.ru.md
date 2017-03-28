@@ -8,7 +8,6 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-# Глобальная настройка веб-контролов
 Для расширения возможностей настройки контролов есть тип делегата - `ICSSoft.STORMNET.Web.Tools.InitControlSettingsDelegate`:
 
 ```csharp
