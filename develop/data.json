@@ -1073,6 +1073,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry-gis/addon/components/spatial-bookmark.js": {
+            "name": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "modules": {},
+            "classes": {
+                "SpaceBookmarkCommandComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-gis/addon/controllers/edit-map.js": {
             "name": "ember-flexberry-gis/addon/controllers/edit-map.js",
             "modules": {},
@@ -3176,6 +3185,7 @@
                 "LayerResultListComponent": 1,
                 "MiniMapComponent": 1,
                 "ScaleControlComponent": 1,
+                "SpaceBookmarkCommandComponent": 1,
                 "EditMapController": 1,
                 "ListMapController": 1,
                 "EarthCrs": 1,
@@ -5081,6 +5091,21 @@
             "line": 7,
             "description": "Simple scale component for leaflet map",
             "extends": "BaseControlComponent"
+        },
+        "SpaceBookmarkCommandComponent": {
+            "name": "SpaceBookmarkCommandComponent",
+            "shortname": "SpaceBookmarkCommandComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 9,
+            "description": "Flexberry component for display and add/remove spatial bookmarks",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
         },
         "EditMapController": {
             "name": "EditMapController",
@@ -24692,6 +24717,123 @@
             "line": 49,
             "description": "Reference to component's template.",
             "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 16,
+            "description": "Validation settings",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 26,
+            "description": "Reference to component's template.",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 31,
+            "description": "Map's id (primarykey). Key for store bookmarks",
+            "itemtype": "property",
+            "name": "mapid",
+            "type": "string",
+            "access": "public",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 40,
+            "description": "Bookmarks array",
+            "itemtype": "property",
+            "name": "bookmarks",
+            "type": "array",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 49,
+            "description": "Flag: indicates whether \"add bookmark\" block is visible",
+            "itemtype": "property",
+            "name": "_addBookmarkInProcess",
+            "type": "boolean",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 58,
+            "description": "New bookmark's name",
+            "itemtype": "property",
+            "name": "_addBookmarkName",
+            "type": "string",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 74,
+            "description": "Show \"add bookmark\" block",
+            "itemtype": "method",
+            "name": "showAddBlock",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 84,
+            "description": "Create and save new bookmark",
+            "itemtype": "method",
+            "name": "addBookmark",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 108,
+            "description": "Hide \"add bookmark\" block",
+            "itemtype": "method",
+            "name": "resetBookmark",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 119,
+            "description": "Go to selected bookmark",
+            "itemtype": "method",
+            "name": "zoomMap",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/spatial-bookmark.js",
+            "line": 130,
+            "description": "Remove selected bookmark",
+            "itemtype": "method",
+            "name": "delBookmark",
+            "access": "private",
+            "tagname": "",
+            "class": "SpaceBookmarkCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
@@ -45092,6 +45234,14 @@
         {
             "message": "Missing item type\nReference to component's template.",
             "line": " ember-flexberry-gis/addon/components/minimap-control.js:49"
+        },
+        {
+            "message": "Missing item type\nValidation settings",
+            "line": " ember-flexberry-gis/addon/components/spatial-bookmark.js:16"
+        },
+        {
+            "message": "Missing item type\nReference to component's template.",
+            "line": " ember-flexberry-gis/addon/components/spatial-bookmark.js:26"
         },
         {
             "message": "Missing item type\nDestroys helper.",

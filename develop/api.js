@@ -246,6 +246,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "SortableColumn",
         "SortableControllerMixin",
         "SortableRoute",
+        "SpaceBookmarkCommandComponent",
         "TileLayer",
         "TileLayerComponent",
         "TileLayerSettingsComponent",
