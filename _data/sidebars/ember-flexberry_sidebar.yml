@@ -131,6 +131,11 @@ entries:
       url: /ef_ui-message.html
       output: web, pdf
 
+    - title: Ember app performance
+      title_ru: Производительность ember-приложений
+      url: /ef_performance-tips.html
+      output: web, pdf
+
   - title: Services
     title_ru: Сервисы
     output: web, pdf
