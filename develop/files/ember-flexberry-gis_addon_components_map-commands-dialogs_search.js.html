@@ -779,6 +779,10 @@ let FlexberrySearchMapCommandDialogComponent = Ember.Component.extend({
       */
       onApprove(e) {
         let selectedLayer = this.get(&#x27;_selectedLayer&#x27;);
+        if (Ember.isNone(e)) {
+          e = {};
+        }
+
         if (Ember.isNone(selectedLayer)) {
           this.set(&#x27;errorMessage&#x27;, this.get(&#x27;i18n&#x27;).t(&#x27;components.map-commands-dialogs.search.error-message-empty-selected-layer&#x27;));
           this.set(&#x27;showErrorMessage&#x27;, true);

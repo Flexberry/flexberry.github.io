@@ -18356,7 +18356,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 430,
+            "line": 434,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.deny:method\"}}'flexberry-dialog' component's 'deny' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.deny:method\"}}'deny' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onDeny",
@@ -18365,7 +18365,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 440,
+            "line": 444,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeShow:method\"}}'flexberry-dialog' component's 'beforeShow' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.beforeShow:method\"}}'beforeShow' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeShow",
@@ -18374,7 +18374,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 450,
+            "line": 454,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeHide:method\"}}'flexberry-dialog' component's 'beforeHide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.beforeHide:method\"}}'beforeHide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeHide",
@@ -18383,7 +18383,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 460,
+            "line": 464,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.show:method\"}}'flexberry-dialog' component's 'show' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.show:method\"}}'show' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onShow",
@@ -18392,7 +18392,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 470,
+            "line": 474,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.hide:method\"}}'flexberry-dialog' component's 'hide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.hide:method\"}}'hide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHide",
@@ -18401,7 +18401,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 480,
+            "line": 484,
             "description": "Handles 'select-all-features' checkboxes 'change' action.\nSelects/deselects all founded features & checkboxes related to them.",
             "itemtype": "method",
             "name": "actions.onSelectAllFeaturesCheckboxChange",
@@ -18424,7 +18424,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 500,
+            "line": 504,
             "description": "Handles 'select-feature' checkbox 'change' action.\nSelects/deselects founded feature related to checkbox.",
             "itemtype": "method",
             "name": "actions.onSelectFeatureCheckboxChange",
@@ -18452,7 +18452,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 518,
+            "line": 522,
             "description": "Handles 'show-all-selected-features' button's 'click' action.\nShows selected features on map.",
             "itemtype": "method",
             "name": "actions.onShowAllFeaturesButtonClick",
@@ -18461,7 +18461,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 538,
+            "line": 542,
             "description": "Handles 'show-selected-feature' button's 'click' action.\nShows feature with the specified index.",
             "itemtype": "method",
             "name": "actions.onShowFeatureButtonClick",
@@ -18477,7 +18477,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 556,
+            "line": 560,
             "description": "Observer changes in available layers & in selected layer.\nRetrieves search options related to selected layer fro cache & remember them as current.",
             "itemtype": "method",
             "name": "_availableOrSelectedLayerDidChange",
@@ -18488,7 +18488,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 584,
+            "line": 588,
             "description": "Observes changes in founded features.\nCaches them in cache related to selected layer.",
             "itemtype": "method",
             "name": "_foundedFeaturesDidChange",
@@ -18499,7 +18499,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 605,
+            "line": 609,
             "description": "Shows specified features on map.",
             "itemtype": "method",
             "name": "_showFoundedFeatures",
@@ -18517,7 +18517,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 626,
+            "line": 630,
             "description": "Filter method for available layers.",
             "itemtype": "method",
             "name": "_layerCanBeSearched",
@@ -18539,14 +18539,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 638,
+            "line": 642,
             "description": "Initializes component.",
             "class": "FlexberrySearchMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 647,
+            "line": 651,
             "description": "Component's action invoking when dialog starts to show.",
             "itemtype": "method",
             "name": "sendingActions.beforeShow",
@@ -18555,7 +18555,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 653,
+            "line": 657,
             "description": "Component's action invoking when dialog starts to hide.",
             "itemtype": "method",
             "name": "sendingActions.beforeHide",
@@ -18564,7 +18564,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 659,
+            "line": 663,
             "description": "Component's action invoking when dialog is shown.",
             "itemtype": "method",
             "name": "sendingActions.show",
@@ -18573,7 +18573,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 665,
+            "line": 669,
             "description": "Component's action invoking when dialog is hidden.",
             "itemtype": "method",
             "name": "sendingActions.hide",
@@ -18582,7 +18582,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 671,
+            "line": 675,
             "description": "Component's action invoking when dialog is approved.",
             "itemtype": "method",
             "name": "sendingActions.approve",
@@ -18591,7 +18591,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 677,
+            "line": 681,
             "description": "Component's action invoking when dialog is denied.",
             "itemtype": "method",
             "name": "sendingActions.deny",
@@ -18600,7 +18600,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/search.js",
-            "line": 683,
+            "line": 687,
             "description": "Component's action invoking when dialog wants to show founded features on map.",
             "itemtype": "method",
             "name": "sendingActions.showFoundedFeatures",
@@ -45111,7 +45111,7 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/search.js:638"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/search.js:642"
         },
         {
             "message": "Missing item type\nFlag: indicates whether related map-tool is enabled or not.",
