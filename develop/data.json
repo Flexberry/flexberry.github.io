@@ -1831,6 +1831,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js": {
+            "name": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "modules": {},
+            "classes": {
+                "MapRouteCswLoaderMixin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-gis/addon/mixins/required-actions.js": {
             "name": "ember-flexberry-gis/addon/mixins/required-actions.js",
             "modules": {},
@@ -3254,6 +3263,7 @@
                 "LeafletEventsMixin": 1,
                 "LeafletOptionsMixin": 1,
                 "LeafletPropertiesMixin": 1,
+                "MapRouteCswLoaderMixin": 1,
                 "RequiredActionsMixin": 1,
                 "NewPlatformFlexberryGISCswConnectionModel": 1,
                 "NewPlatformFlexberryGISLayerMetadata": 1,
@@ -6243,6 +6253,21 @@
                 "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
             ]
         },
+        "MapRouteCswLoaderMixin": {
+            "name": "MapRouteCswLoaderMixin",
+            "shortname": "MapRouteCswLoaderMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "line": 10,
+            "description": "Mixin thats load data for use in add layers dialog by CSW settings.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
+        },
         "RequiredActionsMixin": {
             "name": "RequiredActionsMixin",
             "shortname": "RequiredActionsMixin",
@@ -6400,7 +6425,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 11,
+            "line": 8,
             "description": "Edit map route.\nLoads map project & related layers hierarchy.",
             "extends": "EditFormRoute"
         },
@@ -28524,6 +28549,107 @@
             "module": "ember-flexberry-gis"
         },
         {
+            "file": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "line": 17,
+            "description": "Name of CSW connection model projection to be used as record's properties limitation.",
+            "itemtype": "property",
+            "name": "cswConnectionProjection",
+            "type": "String",
+            "default": "'MapE'",
+            "class": "MapRouteCswLoaderMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "line": 26,
+            "description": "Name of CSW connection model to be used as form's record type.",
+            "itemtype": "property",
+            "name": "modelName",
+            "type": "String",
+            "default": "'new-platform-flexberry-g-i-s-csw-connection'",
+            "class": "MapRouteCswLoaderMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "line": 35,
+            "description": "Loaded CSW connections.",
+            "itemtype": "property",
+            "name": "cswConnections",
+            "type": "Object[]",
+            "default": "null",
+            "class": "MapRouteCswLoaderMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "line": 44,
+            "description": "[Model hook](http://emberjs.com/api/classes/Ember.Route.html#method_model) that returns a map project for current route.",
+            "itemtype": "method",
+            "name": "model",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Promise which will return map project related to current route",
+                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
+            },
+            "class": "MapRouteCswLoaderMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "line": 58,
+            "description": "Setups controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
+            "itemtype": "method",
+            "name": "setupController",
+            "params": [
+                {
+                    "name": "controller",
+                    "description": "",
+                    "type": "Ember.Controller"
+                },
+                {
+                    "name": "model",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "MapRouteCswLoaderMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-route-csw-loader.js",
+            "line": 71,
+            "description": "Loads available CSW connections.",
+            "itemtype": "method",
+            "name": "loadCswConnections",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "Query parameters.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Promise which will return available CSW connections after it will be resolved.",
+                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "MapRouteCswLoaderMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
             "file": "ember-flexberry-gis/addon/mixins/required-actions.js",
             "line": 15,
             "description": "Component's required actions names.\nFor actions enumerated in this array an assertion exceptions will be thrown,\nif actions handlers are not defined for them.",
@@ -28755,40 +28881,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 32,
-            "description": "Name of CSW connection model projection to be used as record's properties limitation.",
-            "itemtype": "property",
-            "name": "cswConnectionProjection",
-            "type": "String",
-            "default": "'MapE'",
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 41,
-            "description": "Name of CSW connection model to be used as form's record type.",
-            "itemtype": "property",
-            "name": "modelName",
-            "type": "String",
-            "default": "'new-platform-flexberry-g-i-s-csw-connection'",
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 50,
-            "description": "Loaded CSW connections.",
-            "itemtype": "property",
-            "name": "cswConnections",
-            "type": "Object[]",
-            "default": "null",
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 59,
+            "line": 29,
             "description": "Name of model projection to be used as record's properties limitation.",
             "itemtype": "property",
             "name": "modelProjection",
@@ -28799,7 +28892,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 68,
+            "line": 38,
             "description": "Name of model to be used as form's record type.",
             "itemtype": "property",
             "name": "modelName",
@@ -28810,52 +28903,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 77,
-            "description": "Loads available CSW connections.",
-            "itemtype": "method",
-            "name": "loadCswConnections",
-            "params": [
-                {
-                    "name": "params",
-                    "description": "Query parameters.",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Promise which will return available CSW connections after it will be resolved.",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 98,
-            "description": "[Model hook](http://emberjs.com/api/classes/Ember.Route.html#method_model) that returns a map project for current route.",
-            "itemtype": "method",
-            "name": "model",
-            "params": [
-                {
-                    "name": "params",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "transition",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Promise which will return map project related to current route",
-                "type": "<a href=\"http://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>"
-            },
-            "class": "MapRoute",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/routes/edit-map.js",
-            "line": 112,
+            "line": 47,
             "description": "Setups controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",

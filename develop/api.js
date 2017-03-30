@@ -155,6 +155,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "LookupDialogController",
         "LookupEvents",
         "MapRoute",
+        "MapRouteCswLoaderMixin",
         "MeasureAreaMapTool",
         "MeasureClearMapTool",
         "MeasureCoordinatesMapTool",
