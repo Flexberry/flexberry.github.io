@@ -1160,8 +1160,12 @@ ErrorableControllerMixin, {
     */
     createNew() {
       let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
+      Ember.assert(&#x27;Property editFormRoute is not defined in controller&#x27;, editFormRoute);
       let currentController = this.get(&#x27;currentController&#x27;);
-      currentController.transitionToRoute(editFormRoute + &#x27;.new&#x27;);
+      currentController.set(&#x27;state&#x27;, &#x27;loading&#x27;);
+      Ember.run.later((function() {
+        currentController.transitionToRoute(editFormRoute + &#x27;.new&#x27;);
+      }), 50);
     },
 
     /**

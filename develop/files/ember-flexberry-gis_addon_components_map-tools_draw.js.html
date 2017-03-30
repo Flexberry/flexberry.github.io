@@ -644,6 +644,60 @@ let DrawMapToolComponent = Ember.Component.extend({
     */
     drawClearIconClass: &#x27;trash icon&#x27;,
 
+    /**
+      Flag: is map tool &#x27;draw-marker&#x27; enable
+
+      @property drawMarker
+      @default true
+      @type Boolean
+    */
+    drawMarker: true,
+
+    /**
+      Flag: is map tool &#x27;draw-polyline&#x27; enable
+
+      @property drawPolyline
+      @default true
+      @type Boolean
+    */
+    drawPolyline: true,
+
+    /**
+      Flag: is map tool &#x27;draw-circle&#x27; enable
+
+      @property drawCircle
+      @default true
+      @type Boolean
+    */
+    drawCircle: true,
+
+    /**
+      Flag: is map tool &#x27;draw-rectangle&#x27; enable
+
+      @property drawRectangle
+      @default true
+      @type Boolean
+    */
+    drawRectangle: true,
+
+    /**
+      Flag: is map tool &#x27;draw-polygon&#x27; enable
+
+      @property drawPolygon
+      @default true
+      @type Boolean
+    */
+    drawPolygon: true,
+
+    /**
+      Flag: is map tool &#x27;draw-clear&#x27; enable
+
+      @property drawClear
+      @default true
+      @type Boolean
+    */
+    drawClear: true,
+
     actions: {
       /**
         Handles {{#crossLink &quot;BaseMapToolComponent/sendingActions.activate:method&quot;}}base map-tool&#x27;s &#x27;activate&#x27; action{{/crossLink}}.

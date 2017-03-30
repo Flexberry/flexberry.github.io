@@ -404,7 +404,7 @@ export default Ember.Mixin.create({
       let colDescs = [];  //Columns description
       let projectionAttributes;
       if (isExportExcel) {
-        let modelName = this.get(&#x27;queryParams.modelName&#x27;);
+        let modelName = this.get(&#x27;modelProjection.modelName&#x27;);
         let exportExcelProjectionName = this.get(&#x27;exportExcelProjection&#x27;);
         Ember.assert(&#x27;Property exportExcelProjection is not defined in controller.&#x27;, exportExcelProjectionName);
 

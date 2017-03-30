@@ -756,8 +756,12 @@ export default FlexberryBaseComponent.extend({
     */
     createNew() {
       let editFormRoute = this.get(&#x27;editFormRoute&#x27;);
+      Ember.assert(&#x27;Property editFormRoute is not defined in controller&#x27;, editFormRoute);
       let modelController = this.get(&#x27;modelController&#x27;);
-      modelController.transitionToRoute(editFormRoute + &#x27;.new&#x27;);
+      modelController.set(&#x27;state&#x27;, &#x27;loading&#x27;);
+      Ember.run.later((function() {
+        modelController.transitionToRoute(editFormRoute + &#x27;.new&#x27;);
+      }), 50);
     },
 
     /**

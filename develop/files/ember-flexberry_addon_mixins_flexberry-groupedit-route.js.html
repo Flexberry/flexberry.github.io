@@ -433,6 +433,8 @@ export default Ember.Mixin.create({
         throw new Error(&#x27;Detail\&#x27;s edit form route is undefined.&#x27;);
       }
 
+      _this.controller.set(&#x27;state&#x27;, &#x27;loading&#x27;);
+
       let goToOtherRouteFunction = function() {
         if (!record)
         {
@@ -459,9 +461,11 @@ export default Ember.Mixin.create({
 
         if (record.get(&#x27;isNew&#x27;)) {
           let newModelPath = _this.newRoutePath(editFormRoute);
-          _this.transitionTo(newModelPath).then((newRoute) =&gt; {
-            newRoute.controller.set(&#x27;readonly&#x27;, methodOptions.readonly);
-          });
+          Ember.run.later((function() {
+            _this.transitionTo(newModelPath).then((newRoute) =&gt; {
+              newRoute.controller.set(&#x27;readonly&#x27;, methodOptions.readonly);
+            });
+          }), 50);
         } else {
           _this.transitionTo(editFormRoute, record.get(&#x27;id&#x27;)).then((newRoute) =&gt; {
             newRoute.controller.set(&#x27;readonly&#x27;, methodOptions.readonly);

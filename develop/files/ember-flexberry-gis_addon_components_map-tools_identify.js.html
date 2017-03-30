@@ -551,6 +551,33 @@ let IdentifyMapToolComponent = Ember.Component.extend({
     */
     identifyTopVisibleIconClass: &#x27;chevron up icon&#x27;,
 
+    /**
+      Flag: is map tool &#x27;identify all layers&#x27; enable
+
+      @property identifyAll
+      @default true
+      @type Boolean
+    */
+    identifyAll: true,
+
+    /**
+      Flag: is map tool &#x27;identify all visible layers&#x27; enable
+
+      @property identifyAllVisible
+      @default true
+      @type Boolean
+    */
+    identifyAllVisible: true,
+
+    /**
+      Flag: is map tool &#x27;identify top layer&#x27; enable
+
+      @property identifyTop
+      @default true
+      @type Boolean
+    */
+    identifyTop: true,
+
     actions: {
       /**
         Handles {{#crossLink &quot;BaseMapToolComponent/sendingActions.activate:method&quot;}}base map-tool&#x27;s &#x27;activate&#x27; action{{/crossLink}}.
