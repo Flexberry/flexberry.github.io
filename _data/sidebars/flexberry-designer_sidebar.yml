@@ -60,7 +60,7 @@ entries:
       url: /fd_model-driven-architecture.html
       output: web, pdf
 
-   - title: Analysis stage
+    - title: Analysis stage
       title_ru: Этап анализа
       url: /fd_analys.html
       output: web, pdf
