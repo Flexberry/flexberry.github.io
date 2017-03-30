@@ -398,7 +398,7 @@ export default BaseMapCommand.extend({
     let leafletMap = this.get(&#x27;leafletMap&#x27;);
     leafletMap.panTo(latlng);
 
-    let popupContent = &#x60;${xCaption}: ${latlng.lng}; ${yCaption}: ${latlng.lat}&#x60;;
+    let popupContent = &#x60;${xCaption}: ${point.x}; ${yCaption}: ${point.y}&#x60;;
 
     leafletMap.openPopup(popupContent, latlng);
   }
