@@ -5,7 +5,7 @@ keywords: performance, bottleneck, perforator, perf, hbs
 toc: true
 permalink: ru/ef_performance-tips.html
 lang: ru
-summary: Советы по проектированию и разработке с применением [EmberJS](https://emberjs.com/), касающиеся производительности приложений.
+summary: Советы по проектированию и разработке с применением EmberJS, касающиеся производительности приложений.
 ---
 
 ## Золотые правила разработки приложений на EmberJS
