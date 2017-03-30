@@ -8,7 +8,7 @@ entries:
   - title: Getting Started
     title_ru: Начало работы
     output: web, pdf
-    
+
     folderitems:
     - title: Flexberry Designer
       title_ru: Flexberry Designer
@@ -48,10 +48,10 @@ entries:
   - title: Creating application
     title_ru: Создание приложений
     output: web, pdf
-    
+
     folderitems:
     - title: Creating application
-      title_ru: Создание приложения 
+      title_ru: Создание приложения
       url: /fd_flexberry.html
       output: web, pdf
 
@@ -154,7 +154,7 @@ entries:
       title_ru: Особенности работы с редактором диаграммы классов  
       url: /fd_class-diagram-editor-features-work.html
       output: web, pdf
-    
+
     - title: Class diagram constraction
       title_ru: Особенности построения диаграммы классов  
       url: /fd_class-diagram-constraction.html
@@ -269,7 +269,7 @@ entries:
       title_ru: Представления (View)
       url: /fd_view-definition.html
       output: web, pdf
-    
+
     - title: View types
       title_ru: Основные виды представлений
       url: /fd_view-types.html
@@ -284,7 +284,7 @@ entries:
       title_ru: Изменение представления формы редактирования
       url: /fd_change-e-view.html
       output: web, pdf
-    
+
     - title: E-view
       title_ru: E-представление
       url: /fd_e-view.html
@@ -414,7 +414,7 @@ entries:
       title_ru: Генерация форм для external-классов
       url: /fd_generate-forms-external-classes.html
       output: web, pdf
-    
+
     - title: Setting columns to place controls at the view level
       title_ru: Задание колонок для размещения контролов на уровне представлений
       url: /fd_specify-column-controls.html
