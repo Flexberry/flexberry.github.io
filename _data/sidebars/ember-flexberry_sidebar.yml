@@ -29,6 +29,11 @@ entries:
       url: /ef_landing_page.html
       output: web
 
+    - title: Ember app performance
+      title_ru: Производительность ember-приложений
+      url: /ef_performance-tips.html
+      output: web, pdf
+
   - title: Forms
     title_ru: Формы
     output: web, pdf
@@ -129,11 +134,6 @@ entries:
 
     - title: UI Message
       url: /ef_ui-message.html
-      output: web, pdf
-
-    - title: Ember app performance
-      title_ru: Производительность ember-приложений
-      url: /ef_performance-tips.html
       output: web, pdf
 
   - title: Services
