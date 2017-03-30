@@ -30,6 +30,11 @@ entries:
       url: /fd_install.html
       output: web
 
+    - title: Running by SQLExpress LocalDB
+      title_ru: Настройка строки соединения к БД 
+      url: /fd_sql-express-local-db.html
+      output: web
+
     - title: Repository browser
       title_ru: Браузер репозиториев
       url: /fd_repository-browser.html
@@ -358,11 +363,6 @@ entries:
     - title: Sign assembly
       title_ru: Подписывание сборок в Flexberry
       url: /fd_sign-assembly.html
-      output: web
-
-    - title: Running by SQLExpress LocalDB
-      title_ru: Запуск под SQL Server Express LocalDB
-      url: /fd_sql-express-local-db.html
       output: web
 
     - title: Standalone install
