@@ -396,11 +396,10 @@ export default BaseMapCommand.extend({
     latlng = crs.unproject(point);
 
     let leafletMap = this.get(&#x27;leafletMap&#x27;);
-    leafletMap.panTo(latlng);
-
     let popupContent = &#x60;${xCaption}: ${point.x}; ${yCaption}: ${point.y}&#x60;;
 
     leafletMap.openPopup(popupContent, latlng);
+    leafletMap.panTo(latlng);
   }
 });
 
