@@ -401,11 +401,28 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
       Available command modes.
 
       @property _availableModes
-      @type String[]
+      @type Object[]
       @default null
       @private
     */
     _availableModes: null,
+
+    /**
+      Available command captions.
+
+      @property _availableCaptions
+      @type String[]
+      @private
+    */
+    _availableCaptions: Ember.computed(&#x27;_availableModes.[]&#x27;, function() {
+      let availableModes = this.get(&#x27;_availableModes&#x27;);
+      let captions = Ember.A();
+      availableModes.forEach(function(item) {
+        captions.push(item.name);
+      });
+
+      return captions;
+    }),
 
     /**
       Selected command mode.
@@ -418,31 +435,24 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
     _selectedMode: null,
 
     /**
-      Flag: indicates whether latLngCrs mode is selected now.
-
-      @property _latlngCrsModeIsSelected
-      @type Boolean
-      @readOnly
-      @private
-    */
-    _latlngCrsModeIsSelected: Ember.computed(&#x27;_selectedMode&#x27;, &#x27;i18n.locale&#x27;, function() {
-      let i18n = this.get(&#x27;i18n&#x27;);
-      let latlngCrsMode = i18n.t(&#x27;components.map-commands-dialogs.go-to.latlng-crs-mode.caption&#x27;);
-      let selectedMode = this.get(&#x27;_selectedMode&#x27;);
-
-      return selectedMode.toString() === latlngCrsMode.toString();
-    }),
-
-    /**
-      Coordinate reference system related to the command&#x27;s selected mode.
+      Current CRS
 
       @property _selectedCrs
-      @type
-      @readOnly
+      @type object
       @private
     */
-    _selectedCrs: Ember.computed(&#x27;_latlngCrsModeIsSelected&#x27;, &#x27;leafletMap.options.crs&#x27;, function() {
-      return this.get(&#x27;_latlngCrsModeIsSelected&#x27;) ? L.CRS.EPSG4326 : this.get(&#x27;leafletMap.options.crs&#x27;);
+    _selectedCrs: Ember.computed(&#x27;_selectedMode&#x27;, function() {
+      let selectedMode = this.get(&#x27;_selectedMode&#x27;);
+      let availableModes = this.get(&#x27;_availableModes&#x27;);
+      let current = null;
+
+      availableModes.forEach(function(item) {
+        if (item.name === selectedMode) {
+          current = item;
+        }
+      });
+
+      return current;
     }),
 
     /**
@@ -547,42 +557,6 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
       @default t(&#x27;components.map-commands-dialogs.mode-dropdown.caption&#x27;)
     */
     modeDropdownCaption: t(&#x27;components.map-commands-dialogs.go-to.mode-dropdown.caption&#x27;),
-
-    /**
-      Dialog&#x27;s &#x27;lat&#x27; textbox caption.
-
-      @property latTextboxCaption
-      @type String
-      @default t(&#x27;components.map-commands-dialogs.go-to.lat-textbox.caption&#x27;)
-    */
-    latTextboxCaption: t(&#x27;components.map-commands-dialogs.go-to.lat-textbox.caption&#x27;),
-
-    /**
-      Dialog&#x27;s &#x27;lng&#x27; textbox caption.
-
-      @property lngTextboxCaption
-      @type String
-      @default t(&#x27;components.map-commands-dialogs.go-to.lng-textbox.caption&#x27;)
-    */
-    lngTextboxCaption: t(&#x27;components.map-commands-dialogs.go-to.lng-textbox.caption&#x27;),
-
-    /**
-      Dialog&#x27;s &#x27;x&#x27; textbox caption.
-
-      @property xTextboxCaption
-      @type String
-      @default t(&#x27;components.map-commands-dialogs.go-to.x-textbox.caption&#x27;)
-    */
-    xTextboxCaption: t(&#x27;components.map-commands-dialogs.go-to.x-textbox.caption&#x27;),
-
-    /**
-      Dialog&#x27;s &#x27;y&#x27; textbox caption.
-
-      @property yTextboxCaption
-      @type String
-      @default t(&#x27;components.map-commands-dialogs.go-to.y-textbox.caption&#x27;)
-    */
-    yTextboxCaption: t(&#x27;components.map-commands-dialogs.go-to.y-textbox.caption&#x27;),
 
     /**
       Flag: indicates whether dialog is visible or not.
@@ -694,6 +668,19 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
       */
       onDeny(e) {
         this.sendAction(&#x27;deny&#x27;, e);
+      },
+
+      /**
+        Switch X and Y options
+
+        @method actions.switchXY
+      */
+      switchXY() {
+        let x = this.get(&#x27;_options.y&#x27;);
+        let y = this.get(&#x27;_options.x&#x27;);
+
+        this.set(&#x27;_options.x&#x27;, x);
+        this.set(&#x27;_options.y&#x27;, y);
       }
     },
 
@@ -706,6 +693,7 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
     _getGoToOptions() {
       let gotoOptions = {};
       let innerOptions = this.get(&#x27;_options&#x27;);
+      let crs = this.get(&#x27;_selectedCrs&#x27;);
 
       let x = parseFloat(Ember.get(innerOptions, &#x27;x&#x27;).replace(&#x27;,&#x27;, &#x27;.&#x27;));
       let y = parseFloat(Ember.get(innerOptions, &#x27;y&#x27;).replace(&#x27;,&#x27;, &#x27;.&#x27;));
@@ -714,25 +702,11 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
       }
 
       Ember.set(gotoOptions, &#x27;point&#x27;, new L.Point(x, y));
-      Ember.set(gotoOptions, &#x27;crs&#x27;, this.get(&#x27;_selectedCrs&#x27;));
+      Ember.set(gotoOptions, &#x27;crs&#x27;, Ember.get(crs, &#x27;crs&#x27;));
+      Ember.set(gotoOptions, &#x27;xCaption&#x27;, Ember.get(crs, &#x27;xCaption&#x27;));
+      Ember.set(gotoOptions, &#x27;yCaption&#x27;, Ember.get(crs, &#x27;yCaption&#x27;));
       return gotoOptions;
     },
-
-    /**
-      Observes changes in current locale.
-      Changes available command&#x27;s modes.
-
-      @method _localeDidChange
-      @private
-    */
-    _localeDidChange: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;i18n.locale&#x27;, function() {
-      let i18n = this.get(&#x27;i18n&#x27;);
-      this.set(&#x27;_availableModes&#x27;, Ember.A([
-        i18n.t(&#x27;components.map-commands-dialogs.go-to.latlng-crs-mode.caption&#x27;),
-        i18n.t(&#x27;components.map-commands-dialogs.go-to.map-crs-mode.caption&#x27;)
-      ]));
-      this.set(&#x27;_selectedMode&#x27;, i18n.t(&#x27;components.map-commands-dialogs.go-to.latlng-crs-mode.caption&#x27;));
-    })),
 
     /**
       Initializes component.
@@ -744,6 +718,11 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
         x: &#x27;&#x27;,
         y: &#x27;&#x27;
       });
+
+      let availableModes = this.get(&#x27;_availableModes&#x27;);
+      if (!Ember.isNone(availableModes) &amp;&amp; availableModes.length &gt; 0) {
+        this.set(&#x27;_selectedMode&#x27;, availableModes[0].name);
+      }
     }
 
     /**

@@ -389,24 +389,16 @@ export default BaseMapCommand.extend({
 
     let point = Ember.get(options, &#x27;point&#x27;);
     let crs = Ember.get(options, &#x27;crs&#x27;);
+    let xCaption = Ember.get(options, &#x27;xCaption&#x27;);
+    let yCaption = Ember.get(options, &#x27;yCaption&#x27;);
 
     let latlng = null;
-    if (crs === L.CRS.EPSG4326) {
-      // X &amp; Y already defined as latitude &amp; longitude.
-      latlng = new L.LatLng(point.x, point.y);
-    } else {
-      latlng = crs.unproject(point);
-    }
+    latlng = crs.unproject(point);
 
     let leafletMap = this.get(&#x27;leafletMap&#x27;);
     leafletMap.panTo(latlng);
 
-    let i18n = this.get(&#x27;i18n&#x27;);
-    let popupContent = crs === L.CRS.EPSG4326 ?
-      &#x60;${i18n.t(&#x27;map-commands.go-to.lat-caption&#x27;)}: ${latlng.lat}; &#x60; +
-      &#x60;${i18n.t(&#x27;map-commands.go-to.lng-caption&#x27;)}: ${latlng.lng}&#x60; :
-      &#x60;${i18n.t(&#x27;map-commands.go-to.x-caption&#x27;)}: ${point.x}; &#x60; +
-      &#x60;${i18n.t(&#x27;map-commands.go-to.y-caption&#x27;)}: ${point.y}&#x60;;
+    let popupContent = &#x60;${xCaption}: ${latlng.lng}; ${yCaption}: ${latlng.lat}&#x60;;
 
     leafletMap.openPopup(popupContent, latlng);
   }

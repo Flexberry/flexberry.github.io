@@ -397,13 +397,22 @@ const flexberryClassNames = {
   as a wrapper.
 
   Usage:
+  controller/my-map-form.js
+  &#x60;&#x60;&#x60;handlebars
+  availableCRS: Ember.computed(function() {
+    let availableModes = Ember.A();
+    availableModes.push({ crs: this.get(&#x27;model.crs&#x27;), name: t(&#x27;crs.current.name&#x27;), xCaption: t(&#x27;crs.current.xCaption&#x27;), yCaption: t(&#x27;crs.current.yCaption&#x27;) });
+    availableModes.push({ crs: L.CRS.EPSG4326, name: t(&#x27;crs.latlng.name&#x27;), xCaption: t(&#x27;crs.latlng.xCaption&#x27;), yCaption: t(&#x27;crs.latlng.yCaption&#x27;) });
+
+    return availableModes;
+  }),
+
   templates/my-map-form.hbs
   &#x60;&#x60;&#x60;handlebars
-  {{#flexberry-maptoolbar leafletMap=leafletMap as |maptoolbar|}}
-    {{map-commands/go-to execute=(action &quot;onMapCommandExecute&quot; target=maptoolbar)}}
-  {{/flexberry-maptoolbar}}
+      {{map-commands/go-to
+        availableCRS=availableCRS
+        execute=(action &quot;onMapCommandExecute&quot; target=mapToolbar)}}
   &#x60;&#x60;&#x60;
-
   @class GoToMapCommandComponent
   @extends &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Component.html&quot;&gt;Ember.Component&lt;/a&gt;
 */
@@ -494,6 +503,22 @@ let GoToMapCommandComponent = Ember.Component.extend({
       @default &#x27;location arrow icon&#x27;&#x27;
     */
     iconClass: &#x27;location arrow icon&#x27;,
+
+    /**
+      Array of available CRS with name and X/Y captions
+
+     availableCRS: Ember.computed(function() {
+        let availableModes = Ember.A();
+        availableModes.push({crs: this.get(&#x27;model.crs&#x27;), name: t(&#x27;crs.current.name&#x27;), xCaption: t(&#x27;crs.current.xCaption&#x27;), yCaption: t(&#x27;crs.current.yCaption&#x27;)});
+        availableModes.push({crs: L.CRS.EPSG4326, name: t(&#x27;crs.latlng.name&#x27;), xCaption: t(&#x27;crs.latlng.xCaption&#x27;), yCaption: t(&#x27;crs.latlng.yCaption&#x27;)});
+
+        return availableModes;
+      }),
+
+      @property availableCRS
+      @type Array
+    */
+    availableCRS: null,
 
     actions: {
       /**

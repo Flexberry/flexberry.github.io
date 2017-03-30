@@ -382,10 +382,20 @@
 Component must be used in combination with {{#crossLink "FlexberryMaptoolbarComponent"}}flexberry-maptoolbar component{{/crossLink}}
 as a wrapper.</p>
 <p>Usage:
-templates/my-map-form.hbs</p>
-<pre class="code prettyprint"><code class="language-handlebars">{{#flexberry-maptoolbar leafletMap=leafletMap as |maptoolbar|}}
-  {{map-commands/go-to execute=(action "onMapCommandExecute" target=maptoolbar)}}
-{{/flexberry-maptoolbar}}
+controller/my-map-form.js</p>
+<pre class="code prettyprint"><code class="language-handlebars">availableCRS: Ember.computed(function() {
+  let availableModes = Ember.A();
+  availableModes.push({ crs: this.get('model.crs'), name: t('crs.current.name'), xCaption: t('crs.current.xCaption'), yCaption: t('crs.current.yCaption') });
+  availableModes.push({ crs: L.CRS.EPSG4326, name: t('crs.latlng.name'), xCaption: t('crs.latlng.xCaption'), yCaption: t('crs.latlng.yCaption') });
+
+  return availableModes;
+}),
+
+templates/my-map-form.hbs
+<code>&#x60;</code>handlebars
+    {{map-commands/go-to
+      availableCRS=availableCRS
+      execute=(action "onMapCommandExecute" target=mapToolbar)}}
 </code></pre>
 
 </div>
@@ -436,6 +446,10 @@ templates/my-map-form.hbs</p>
                             </li>
                             <li class="index-item property private">
                                 <a href="#" data-tabid="#properties" data-anchor="#property__gotoDialogIsVisible" data-tablink="_gotoDialogIsVisible">_gotoDialogIsVisible</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_availableCRS" data-tablink="availableCRS">availableCRS</a>
 
                             </li>
                             <li class="index-item property">
@@ -493,7 +507,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l154"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:154</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l179"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:179</code></a>
                             </p>
                     
                     
@@ -547,7 +561,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l133"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:133</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l158"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:158</code></a>
                             </p>
                     
                     
@@ -600,7 +614,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l188"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:188</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l213"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:213</code></a>
                             </p>
                     
                     
@@ -650,7 +664,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l65"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:65</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l74"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:74</code></a>
                             </p>
                     
                     
@@ -677,7 +691,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l45"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:45</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l54"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:54</code></a>
                             </p>
                     
                     
@@ -704,7 +718,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l55"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:55</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l64"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:64</code></a>
                             </p>
                     
                     
@@ -719,6 +733,38 @@ templates/my-map-form.hbs</p>
                     
                     
                     </div>
+                    <div id="property_availableCRS" class="property item">
+                        <h3 class="name"><code>availableCRS</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l141"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:141</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of available CRS with name and X/Y captions</p>
+                    <pre class="code prettyprint"><code> availableCRS: Ember.computed(function() {
+                    </code></pre>
+                    <p>let availableModes = Ember.A();
+                    availableModes.push({crs: this.get('model.crs'), name: t('<a href="http://crs.current.name">crs.current.name</a>'), xCaption: t('crs.current.xCaption'), yCaption: t('crs.current.yCaption')});
+                    availableModes.push({crs: L.CRS.EPSG4326, name: t('<a href="http://crs.latlng.name">crs.latlng.name</a>'), xCaption: t('crs.latlng.xCaption'), yCaption: t('crs.latlng.yCaption')});</p>
+                    <p>return availableModes;
+                    }),</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="property_caption" class="property item">
                         <h3 class="name"><code>caption</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -730,7 +776,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l105"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:105</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l114"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:114</code></a>
                             </p>
                     
                     
@@ -756,7 +802,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l96"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:96</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l105"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:105</code></a>
                             </p>
                     
                     
@@ -833,7 +879,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l123"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:123</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l132"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:132</code></a>
                             </p>
                     
                     
@@ -859,7 +905,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l86"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:86</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l95"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:95</code></a>
                             </p>
                     
                     
@@ -886,7 +932,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l114"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:114</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_map-commands_go-to.js.html#l123"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;map-commands&#x2F;go-to.js:123</code></a>
                             </p>
                     
                     

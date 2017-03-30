@@ -4473,7 +4473,7 @@
             "namespace": "",
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
             "line": 28,
-            "description": "Flexberry go-to map-command component.\nComponent must be used in combination with {{#crossLink \"FlexberryMaptoolbarComponent\"}}flexberry-maptoolbar component{{/crossLink}}\nas a wrapper.\n\nUsage:\ntemplates/my-map-form.hbs\n```handlebars\n{{#flexberry-maptoolbar leafletMap=leafletMap as |maptoolbar|}}\n  {{map-commands/go-to execute=(action \"onMapCommandExecute\" target=maptoolbar)}}\n{{/flexberry-maptoolbar}}\n```",
+            "description": "Flexberry go-to map-command component.\nComponent must be used in combination with {{#crossLink \"FlexberryMaptoolbarComponent\"}}flexberry-maptoolbar component{{/crossLink}}\nas a wrapper.\n\nUsage:\ncontroller/my-map-form.js\n```handlebars\navailableCRS: Ember.computed(function() {\n  let availableModes = Ember.A();\n  availableModes.push({ crs: this.get('model.crs'), name: t('crs.current.name'), xCaption: t('crs.current.xCaption'), yCaption: t('crs.current.yCaption') });\n  availableModes.push({ crs: L.CRS.EPSG4326, name: t('crs.latlng.name'), xCaption: t('crs.latlng.xCaption'), yCaption: t('crs.latlng.yCaption') });\n\n  return availableModes;\n}),\n\ntemplates/my-map-form.hbs\n```handlebars\n    {{map-commands/go-to\n      availableCRS=availableCRS\n      execute=(action \"onMapCommandExecute\" target=mapToolbar)}}\n```",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
         },
         "SearchMapCommandComponent": {
@@ -16307,7 +16307,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 45,
+            "line": 54,
             "description": "Flag: indicates whether go-to dialog has been already requested by user or not.",
             "itemtype": "property",
             "name": "_gotoDialogHasBeenRequested",
@@ -16320,7 +16320,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 55,
+            "line": 64,
             "description": "Flag: indicates whether go-to dialog is visible or not.",
             "itemtype": "property",
             "name": "_gotoDialogIsVisible",
@@ -16333,7 +16333,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 65,
+            "line": 74,
             "description": "Event object from latest 'execute' action from 'go-to' map-command.",
             "itemtype": "property",
             "name": "_executeActionEventObject",
@@ -16346,21 +16346,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 75,
+            "line": 84,
             "description": "Reference to component's template.",
             "class": "GoToMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 80,
+            "line": 89,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "GoToMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 86,
+            "line": 95,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nto disable a component's wrapping element.",
             "itemtype": "property",
             "name": "tagName",
@@ -16371,7 +16371,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 96,
+            "line": 105,
             "description": "Map command's additional CSS-class.",
             "itemtype": "property",
             "name": "class",
@@ -16382,7 +16382,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 105,
+            "line": 114,
             "description": "Map command's caption.",
             "itemtype": "property",
             "name": "caption",
@@ -16393,7 +16393,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 114,
+            "line": 123,
             "description": "Map command's tooltip text.\nWill be added as wrapper's element 'title' attribute.",
             "itemtype": "property",
             "name": "tooltip",
@@ -16403,7 +16403,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 123,
+            "line": 132,
             "description": "Map command's icon CSS-class names.",
             "itemtype": "property",
             "name": "iconClass",
@@ -16414,7 +16414,17 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 133,
+            "line": 141,
+            "description": "Array of available CRS with name and X/Y captions\n\n     availableCRS: Ember.computed(function() {\n  let availableModes = Ember.A();\n  availableModes.push({crs: this.get('model.crs'), name: t('crs.current.name'), xCaption: t('crs.current.xCaption'), yCaption: t('crs.current.yCaption')});\n  availableModes.push({crs: L.CRS.EPSG4326, name: t('crs.latlng.name'), xCaption: t('crs.latlng.xCaption'), yCaption: t('crs.latlng.yCaption')});\n\n  return availableModes;\n}),",
+            "itemtype": "property",
+            "name": "availableCRS",
+            "type": "Array",
+            "class": "GoToMapCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
+            "line": 158,
             "description": "Handles {{#crossLink \"BaseMapCommandComponent/sendingActions.execute:method\"}}base map-command's 'execute' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapCommandExecute",
@@ -16430,7 +16440,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 154,
+            "line": 179,
             "description": "Handles go-to dialog's 'approve' action.\nInvokes own {{#crossLink \"ExportMapCommandComponent/sendingActions.execute:method\"}}'execute' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onGoToDialogApprove",
@@ -16446,21 +16456,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 169,
+            "line": 194,
             "description": "Destroys DOM-related component's properties & logic.",
             "class": "GoToMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 179,
+            "line": 204,
             "description": "Destroys component.",
             "class": "GoToMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/go-to.js",
-            "line": 188,
+            "line": 213,
             "description": "Component's action invoking when map-command must be executed.",
             "itemtype": "method",
             "name": "sendingActions.execute",
@@ -17629,7 +17639,7 @@
             "description": "Available command modes.",
             "itemtype": "property",
             "name": "_availableModes",
-            "type": "String[]",
+            "type": "Object[]",
             "default": "null",
             "access": "private",
             "tagname": "",
@@ -17639,6 +17649,18 @@
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
             "line": 44,
+            "description": "Available command captions.",
+            "itemtype": "property",
+            "name": "_availableCaptions",
+            "type": "String[]",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryGoToMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
+            "line": 61,
             "description": "Selected command mode.",
             "itemtype": "property",
             "name": "_selectedMode",
@@ -17651,25 +17673,11 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 54,
-            "description": "Flag: indicates whether latLngCrs mode is selected now.",
-            "itemtype": "property",
-            "name": "_latlngCrsModeIsSelected",
-            "type": "Boolean",
-            "readonly": "",
-            "access": "private",
-            "tagname": "",
-            "class": "FlexberryGoToMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 70,
-            "description": "Coordinate reference system related to the command's selected mode.",
+            "line": 71,
+            "description": "Current CRS",
             "itemtype": "property",
             "name": "_selectedCrs",
-            "type": "",
-            "readonly": "",
+            "type": "object",
             "access": "private",
             "tagname": "",
             "class": "FlexberryGoToMapCommandDialogComponent",
@@ -17677,7 +17685,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 82,
+            "line": 92,
             "description": "Hash containing go-to options.",
             "itemtype": "property",
             "name": "_options",
@@ -17690,7 +17698,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 92,
+            "line": 102,
             "description": "Flag: indicates whether to show error message or not.",
             "itemtype": "property",
             "name": "_showErrorMessage",
@@ -17701,21 +17709,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 101,
+            "line": 111,
             "description": "Reference to component's template.",
             "class": "FlexberryGoToMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 106,
+            "line": 116,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "FlexberryGoToMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 112,
+            "line": 122,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nis empty to disable component's wrapping <div>.",
             "itemtype": "property",
             "name": "tagName",
@@ -17726,7 +17734,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 122,
+            "line": 132,
             "description": "Component's additional CSS-class names.",
             "itemtype": "property",
             "name": "class",
@@ -17737,7 +17745,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 131,
+            "line": 141,
             "description": "Component's caption.",
             "itemtype": "property",
             "name": "caption",
@@ -17748,7 +17756,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 140,
+            "line": 150,
             "description": "Component's error message caption.",
             "itemtype": "property",
             "name": "errorMessageCaption",
@@ -17759,7 +17767,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 149,
+            "line": 159,
             "description": "Component's error message content.",
             "itemtype": "property",
             "name": "errorMessageContent",
@@ -17770,7 +17778,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 158,
+            "line": 168,
             "description": "Dialog's 'approve' button caption.",
             "itemtype": "property",
             "name": "approveButtonCaption",
@@ -17781,7 +17789,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 167,
+            "line": 177,
             "description": "Dialog's 'deny' button caption.",
             "itemtype": "property",
             "name": "denyButtonCaption",
@@ -17792,7 +17800,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 176,
+            "line": 186,
             "description": "Dialog's mode dropdown caption.",
             "itemtype": "property",
             "name": "modeDropdownCaption",
@@ -17803,51 +17811,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 185,
-            "description": "Dialog's 'lat' textbox caption.",
-            "itemtype": "property",
-            "name": "latTextboxCaption",
-            "type": "String",
-            "default": "t('components.map-commands-dialogs.go-to.lat-textbox.caption')",
-            "class": "FlexberryGoToMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 194,
-            "description": "Dialog's 'lng' textbox caption.",
-            "itemtype": "property",
-            "name": "lngTextboxCaption",
-            "type": "String",
-            "default": "t('components.map-commands-dialogs.go-to.lng-textbox.caption')",
-            "class": "FlexberryGoToMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 203,
-            "description": "Dialog's 'x' textbox caption.",
-            "itemtype": "property",
-            "name": "xTextboxCaption",
-            "type": "String",
-            "default": "t('components.map-commands-dialogs.go-to.x-textbox.caption')",
-            "class": "FlexberryGoToMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 212,
-            "description": "Dialog's 'y' textbox caption.",
-            "itemtype": "property",
-            "name": "yTextboxCaption",
-            "type": "String",
-            "default": "t('components.map-commands-dialogs.go-to.y-textbox.caption')",
-            "class": "FlexberryGoToMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 221,
+            "line": 195,
             "description": "Flag: indicates whether dialog is visible or not.\nIf true, then dialog will be shown, otherwise dialog will be closed.",
             "itemtype": "property",
             "name": "visible",
@@ -17858,7 +17822,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 231,
+            "line": 205,
             "description": "Leaflet map.",
             "itemtype": "property",
             "name": "leafletMap",
@@ -17869,7 +17833,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 241,
+            "line": 215,
             "description": "Handler for error 'ui-message' component 'onShow' action.",
             "itemtype": "method",
             "name": "actions.onErrorMessageShow",
@@ -17878,7 +17842,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 249,
+            "line": 223,
             "description": "Handler for error 'ui-message' component 'onHide' action.",
             "itemtype": "method",
             "name": "actions.onErrorMessageHide",
@@ -17887,7 +17851,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 258,
+            "line": 232,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeShow:method\"}}'flexberry-dialog' component's 'beforeShow' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryGoToMapCommandDialogComponent/sendingActions.beforeShow:method\"}}'beforeShow' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeShow",
@@ -17896,7 +17860,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 268,
+            "line": 242,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeHide:method\"}}'flexberry-dialog' component's 'beforeHide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryGoToMapCommandDialogComponent/sendingActions.beforeHide:method\"}}'beforeHide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeHide",
@@ -17905,7 +17869,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 278,
+            "line": 252,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.show:method\"}}'flexberry-dialog' component's 'show' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryGoToMapCommandDialogComponent/sendingActions.show:method\"}}'show' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onShow",
@@ -17914,7 +17878,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 288,
+            "line": 262,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.hide:method\"}}'flexberry-dialog' component's 'hide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryGoToMapCommandDialogComponent/sendingActions.hide:method\"}}'hide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHide",
@@ -17923,7 +17887,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 298,
+            "line": 272,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.approve:method\"}}'flexberry-dialog' component's 'approve' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryGoToMapCommandDialogComponent/sendingActions.approve:method\"}}'approve' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onApprove",
@@ -17932,7 +17896,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 323,
+            "line": 297,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.deny:method\"}}'flexberry-dialog' component's 'deny' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryGoToMapCommandDialogComponent/sendingActions.deny:method\"}}'deny' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onDeny",
@@ -17941,7 +17905,16 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 334,
+            "line": 307,
+            "description": "Switch X and Y options",
+            "itemtype": "method",
+            "name": "actions.switchXY",
+            "class": "FlexberryGoToMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
+            "line": 321,
             "description": "Returns inner options transformed into 'go-to' map-command options.",
             "itemtype": "method",
             "name": "_getGoToOptions",
@@ -17954,25 +17927,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 355,
-            "description": "Observes changes in current locale.\nChanges available command's modes.",
-            "itemtype": "method",
-            "name": "_localeDidChange",
-            "access": "private",
-            "tagname": "",
-            "class": "FlexberryGoToMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 371,
+            "line": 345,
             "description": "Initializes component.",
             "class": "FlexberryGoToMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 383,
+            "line": 362,
             "description": "Component's action invoking when dialog starts to show.",
             "itemtype": "method",
             "name": "sendingActions.beforeShow",
@@ -17981,7 +17943,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 389,
+            "line": 368,
             "description": "Component's action invoking when dialog starts to hide.",
             "itemtype": "method",
             "name": "sendingActions.beforeHide",
@@ -17990,7 +17952,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 395,
+            "line": 374,
             "description": "Component's action invoking when dialog is shown.",
             "itemtype": "method",
             "name": "sendingActions.show",
@@ -17999,7 +17961,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 401,
+            "line": 380,
             "description": "Component's action invoking when dialog is hidden.",
             "itemtype": "method",
             "name": "sendingActions.hide",
@@ -18008,7 +17970,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 407,
+            "line": 386,
             "description": "Component's action invoking when dialog is approved.",
             "itemtype": "method",
             "name": "sendingActions.approve",
@@ -18017,7 +17979,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js",
-            "line": 413,
+            "line": 392,
             "description": "Component's action invoking when dialog is denied.",
             "itemtype": "method",
             "name": "sendingActions.deny",
@@ -45057,19 +45019,19 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:75"
+            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:84"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:80"
+            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:89"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties & logic.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:169"
+            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:194"
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:179"
+            "line": " ember-flexberry-gis/addon/components/map-commands/go-to.js:204"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -45121,15 +45083,15 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js:101"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js:111"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js:106"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js:116"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js:371"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/go-to.js:345"
         },
         {
             "message": "Missing item type\nAvailable layers.",
