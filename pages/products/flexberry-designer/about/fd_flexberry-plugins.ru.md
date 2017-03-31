@@ -50,6 +50,9 @@ lang: ru
 ## Стандартные модули Flexberry Designer
 
 * [Модуль расширения Flexberry ORM](fo_flexberry-orm-case-plugin.html)
+* [Модуль расширения Flexberry ASP.NET]()
+* [Модуль расширения Flexberry Ember]()
+* [Модуль расширения Flexberry WinForms]()
 
 ## Как реализовать свой модуль расширения Flexberry Designer
 
