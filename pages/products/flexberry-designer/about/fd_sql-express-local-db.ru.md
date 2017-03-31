@@ -19,26 +19,26 @@ lang: ru
 
 1.Скачать версию SQL Server 2014/2016 Express LocalDB (алгоритм описан в статях выше).  
 
-3.Запустить приложение Flexberry Designer, на панели задач, кликнуть по иконке правой кнопкой и выбрать свойства приложения:
+2.Запустить приложение Flexberry Designer, на панели задач, кликнуть по иконке правой кнопкой и выбрать свойства приложения:
 
 ![](/images/pages/products/flexberry-designer/about/Settings_exe_FD.jpg)
 
-4.Откроется окно свойств приложения, где необходимо скопировать путь расположения файлов приложения
+3.Откроется окно свойств приложения, где необходимо скопировать путь расположения файлов приложения
 
 ![](/images/pages/products/flexberry-designer/about/FB_path.JPG)
 
-5.Открываем проводним и в адресную строку проводника вставляем скопированный путь расположения файлов приложения
+4.Открываем проводним и в адресную строку проводника вставляем скопированный путь расположения файлов приложения
 
 ![](/images/pages/products/flexberry-designer/about/Catalog_FD.jpg)
 
-6.В `CASEBERRY.exe.config` изменяем строку соединения примерно следующим образом (имя сервера и базы данных может отличаться):
+5.В `CASEBERRY.exe.config` изменяем строку соединения примерно следующим образом (имя сервера и базы данных может отличаться):
 
 Изменения для строки подключения к SQL server Express или другой версии: 
 
 ```xml
 <add key="CustomizationStrings" value="SERVER=nameComp\SQLEXPRESS;Trusted_connection=yes;DATABASE=CaseLocalDB;"/>
 ```
-* **nameComp** - это имя локального компьютера или сервера, а также возможно IP-адресс сервера, где установлен SQL Server.
+* **nameComp** - это имя локального компьютера или сервера, а также возможно IP-адрес сервера, где установлен SQL Server.
 * **SQLEXPRESS** - это имя установленого экземпляра SQL Server на компьютере.
 
 Строку соединения с сервером можно посмотреть через Management Studio: 
@@ -51,7 +51,7 @@ lang: ru
 <add key="CustomizationStrings" value="SERVER=(localdb)\MSSQLLocalDB;Trusted_connection=yes;AttachDbFilename=|DataDirectory|\FlexberryDesigner.mdf;"/>
 ```
 
-7.Если вместо русских букв начнут отображаться знаки вопроса, то у соответствующих баз данных необходимо в качестве `Collation` поставить `Cyrillic_General_CI_AS`. Как это сделать, указано в следующих статьях: 
+6.Если вместо русских букв начнут отображаться знаки вопроса, то у соответствующих баз данных необходимо в качестве `Collation` поставить `Cyrillic_General_CI_AS`. Как это сделать, указано в следующих статьях: 
 
 * [SQL Server 2014](http://technet.microsoft.com/en-us/library/ms175835(v=sql.120).aspx) 
 * [SQL Server 2016](http://technet.microsoft.com/en-us/library/ms179254.aspx) 
