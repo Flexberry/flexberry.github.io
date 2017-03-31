@@ -17,8 +17,7 @@ lang: ru
 * [На русском языке](http://msdn.microsoft.com/ru-ru/library/hh510202.aspx)
 * [На английском языке](http://msdn.microsoft.com/en-us/library/hh510202.aspx)
 
-1.Скачать версию SQL Server 2016 Express LocalDB (алгоритм описан в статях выше).  
-2.Подключиться к установленной инстанции SQL Server 2016 Express LocalDB можно через Management Studio. Имя сервера на локальном компьютере вероятно будет следующее: `(localdb)\MSSQLLocalDB`.
+1.Скачать версию SQL Server 2014/2016 Express LocalDB (алгоритм описан в статях выше).  
 
 3.Запустить приложение Flexberry Designer, на панели задач, кликнуть по иконке правой кнопкой и выбрать свойства приложения:
 
@@ -39,13 +38,18 @@ lang: ru
 ```xml
 <add key="CustomizationStrings" value="SERVER=nameComp\SQLEXPRESS;Trusted_connection=yes;DATABASE=CaseLocalDB;"/>
 ```
+* **nameComp** - это имя локального компьютера или сервера, а также возможно IP-адресс сервера, где установлен SQL Server.
+* **SQLEXPRESS** - это имя установленого экземпляра SQL Server на компьютере.
+
+Строку соединения с сервером можно посмотреть через Management Studio: 
+
+![](/images/pages/products/flexberry-designer/about/String_connBaseSQL.JPG)
+
 Изменения для строки подключения к SQL server 2014/2016 Express LocalDB: 
 
 ```xml
 <add key="CustomizationStrings" value="SERVER=(localdb)\MSSQLLocalDB;Trusted_connection=yes;AttachDbFilename=|DataDirectory|\FlexberryDesigner.mdf;"/>
 ```
-
-Либо можно раскомментировать настройки для SQL Server 2014/2016 Express LocalDB из конфиг-файла (соответствующие настройки по умолчанию нужно закомментировать). При этом mdf-файл будет создаваться в папку C:\Users\ИмяПользователя. 
 
 7.Если вместо русских букв начнут отображаться знаки вопроса, то у соответствующих баз данных необходимо в качестве `Collation` поставить `Cyrillic_General_CI_AS`. Как это сделать, указано в следующих статьях: 
 
