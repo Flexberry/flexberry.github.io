@@ -34,7 +34,7 @@ lang: ru
 ### Основы .Net Framework
 
 <div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe width="854" height="480" src="https://www.youtube.com/embed/F9pHwTw3Qxg?list=PLlhqsC7hBaSezv_J4znt-NbFq4MCzcYzk" frameborder="0" allowfullscreen></iframe>
+    <iframe width="854" height="480" src="https://www.youtube.com/embed/sLTmuzBbBj8?list=PLlhqsC7hBaSezv_J4znt-NbFq4MCzcYzk" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Перейти
