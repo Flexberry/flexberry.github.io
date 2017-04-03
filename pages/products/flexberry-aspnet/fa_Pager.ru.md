@@ -8,22 +8,6 @@ folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:50%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-&nbsp;&nbsp;&nbsp;'''Pager'''
-
-* '''Платформа''': Web.
-* '''Предназначение:''' отображение постраничного перехода для произвольного набора данных.
-* '''JavaScript API:''' 
-* '''[Автодокументация](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_pager.html)'''.
-* '''Pager на тестовом стенде:''' расположен на списковых формах.
-
-</td>
-</tr></tbody></table></a>
-</div>
-
 ''Статья находится в разработке''
 
 # Описание

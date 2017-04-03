@@ -62,7 +62,7 @@ protected override void PostApplyToControls()
 
 Для переопределения картинки, которая служит кнопкой для появления/скрытия календаря необходимо переопределить CSS-класс .ui-datepicker-trigger.
 
-# [JS API](fa_java-script-api.html)
+# [JS API](fa_javascript-api.html)
 
 Для манипуляций с DatePicker на стороне клиента следует использовать DatePicker JS API, который представляет собой jQuery плагин (icsDatePicker).
 

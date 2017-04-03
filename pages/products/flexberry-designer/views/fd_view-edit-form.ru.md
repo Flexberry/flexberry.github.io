@@ -3,7 +3,7 @@ title: Форма редактирования представлений
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public, View
 toc: true
-permalink: ru/fd_view-edit-form.html
+permalink: ru/fd_view-
 folder: products/flexberry-desinger/views/
 lang: ru
 ---

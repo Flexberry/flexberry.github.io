@@ -251,4 +251,4 @@ wsa.SettingsApply(WebObjectListView1);
 
 ## JS API
 
-Основная статья про [JavaScript API для WOLV](fa_j-s-a-p-i-w-o-l-v.html).
+Основная статья про [JavaScript API для WOLV](fa_js-api-wolv.html).

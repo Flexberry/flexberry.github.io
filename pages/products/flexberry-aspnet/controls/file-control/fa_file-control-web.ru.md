@@ -132,4 +132,4 @@ private void TuneControlDelegateMethod(Control control, CreatedControlData creat
 }
 ```
 
-## FileControl (Web) [JS API](fa_java-script-api.html)
+## FileControl (Web) [JS API](fa_javascript-api.html)

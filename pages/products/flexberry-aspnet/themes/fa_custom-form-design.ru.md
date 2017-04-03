@@ -9,9 +9,9 @@ lang: ru
 
 ---
 
-HTML код в списковых web-формах и [web-формах редактирования](fa_web-edit-form.html) разделены на основные блоки.
+HTML код в списковых web-формах и [web-формах редактирования](fa_editform.html) разделены на основные блоки.
 
-Для [web-формы редактирования](fa_web-edit-form.html):
+Для [web-формы редактирования](fa_editform.html):
 
 ```html
     <div class="ics-form ics-form-edit">

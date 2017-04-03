@@ -25,7 +25,7 @@ lang: ru
 
 ![](/images/pages/products/flexberry-aspnet/themes/default.png)
 
-[Web-форма редактирования](fa_web-edit-form.html):
+[Web-форма редактирования](fa_editform.html):
 
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-default.png)
 
@@ -35,7 +35,7 @@ lang: ru
 
 ![](/images/pages/products/flexberry-aspnet/themes/light.png)
 
-[Web-форма редактирования](fa_web-edit-form.html):
+[Web-форма редактирования](fa_editform.html):
 
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-light.png)
 
@@ -45,7 +45,7 @@ lang: ru
 
 ![](/images/pages/products/flexberry-aspnet/themes/smart.png)
 
-[Web-форма редактирования](fa_web-edit-form.html):
+[Web-форма редактирования](fa_editform.html):
 
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-smart.png)
 
@@ -55,7 +55,7 @@ lang: ru
 
 ![](/images/pages/products/flexberry-aspnet/themes/spring.png)
 
-[Web-форма редактирования](fa_web-edit-form.html):
+[Web-форма редактирования](fa_editform.html):
 
 ![](/images/pages/products/flexberry-aspnet/themes/edit-page-spring.png)
 

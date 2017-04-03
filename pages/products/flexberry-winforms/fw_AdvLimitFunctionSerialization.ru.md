@@ -8,19 +8,6 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Winforms](flexberry-winforms.html)
-* '''Компонент''': [AdvLimit](limitation-edit-form.html)
-* '''Программная библиотека''': ICSSoft.STORMNET.UI.dll, ICSSoft.STORMNET.Windows.Forms.dll
-* '''Предназначение''': <!--Краткое описание фичи.-->
-</td>
-</tr></tbody></table></a>
-</div>
-
-
 # Средства сериализации-десериализации в `ICSSoft.STORMNET.Windows.Forms.Utils` 
 В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](fo_limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки `[ICSSoft.STORMNET.Tools](fo_ics-soft-stormnet-tools.html)`, и выполняют обращение к ней. 
 

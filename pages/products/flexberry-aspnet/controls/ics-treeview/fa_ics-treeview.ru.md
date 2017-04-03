@@ -3,7 +3,7 @@ title: IcsTreeView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_ics-tree-view.html
+permalink: ru/fa_ics-treeview.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

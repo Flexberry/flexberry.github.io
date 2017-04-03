@@ -3,7 +3,7 @@ title: HierarchicalListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_hierarchical-list-view.html
+permalink: ru/fa_hierarchical-listview.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
