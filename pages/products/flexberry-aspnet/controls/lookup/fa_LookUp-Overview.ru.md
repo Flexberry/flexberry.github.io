@@ -8,13 +8,11 @@ folder: products/flexberry-aspnet/lookup/
 lang: ru
 ---
 
-## Что такое LookUp?
-
 `LookUp` (действие) - выбор мастерового объекта (проставление ссылки на мастеровой объект).
 
 `LookUp` (контрол) - контрол для выбора мастерового объекта, возвращающий ссылку на него.
 
-![](/images/pages/products/flexberry-aspnet/controls/lookup/LookUp.jpg)
+![](/images/pages/products/flexberry-aspnet/controls/lookup/lookup.jpg)
 
 ## Свойства LookUp'ов (Win)
 
@@ -51,9 +49,11 @@ lang: ru
 ApplicationUrl + ListFormURL. Если не указана, то используется стандартная форма.
 
 ## Наложение ограничений на LookUp'ы
+
 Основная статья: [Наложение ограничений на LookUp](fa_lookup-limit-web.html)
 
 ## Стилизация иконок кнопок у LookUp'а
+
 Основная статья: [Стилизация иконок кнопок LookUp](fa_lookup-stylization.html)
 
 ## Наиболее интересные свойства LookUp'ов (Web)
@@ -88,7 +88,6 @@ ctrlКлиент.PropertyToShow = "Прописка.Город";
 
 В отличии от `PropertyToShow`, может устанавливаться в любом месте и не зависит от `AutoComplete`.
 
-
 ### MasterTypeName
 
 Устанавливает тип объекта, который необходимо выбрать на LookUp. Актуально, когда мастеровой объект связан наследованием. То есть если есть два класса, связанных наследованием (класс A наследуется от класса B), и необходимо, чтобы на LookUp открывался класс А (а по умолчанию открывается класс B), то необходимо установить `MasterTypeName` следующим образом:
@@ -111,17 +110,3 @@ ctrlM1.MasterTypeName = typeof(M1).AssemblyQualifiedName;
 
 Устанавливает представление базового объекта.  
 Аналогично `MasterViewName`, актуально для случаев наследования, но на сей раз в наследовании участвует базовый объект, а не мастер. Устанавливается в паре с `ObjectTypeName`.
-
-
-## Полезные ссылки
-* [Как вызвать на LookUp](look-up--how-to-use.html)
-* [Поднятие из GroupEdit'a на лукап объекта, не имеющего ссылку на объект-инициатор](look-up-from--group-edit.html)
-* ['Размазывание' по Control'ам информации с LookUp'а](look-up-fill-information.html)
-* [Изменение внешнего вида контрола LookUp](look-up-appearance.html)
-* [Создание третьей кнопки рядом с LookUp'ом](look-up-third-button.html)
-* [Если не работает LookUp](look-up-does-not-work.html)
-* [Произвольный контрол в качестве лукапа](generate-lookup--i-lookup.html)
-* [Предиктивный ввод](прикладные-системы_predict-input.html)
-* [Настройки для LookUp в AGE](fa_settings-lookup-age.html)
-* [Ограничение для LookUp в AGE](fa_limited-lookup-age.html)
-

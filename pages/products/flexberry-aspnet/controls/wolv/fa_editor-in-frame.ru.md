@@ -17,7 +17,7 @@ lang: ru
 
 Есть возможность настроить, где отображать [форму редактирования](fa_editform.html) относительно списка: слева, справа, внизу, сверху.
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/editor-in-frame1.PNG)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/editor-in-frame1.png)
 
 ## Пример настройки
 
