@@ -4,21 +4,20 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_editor-in-frame.html
-folder: products/flexberry-aspnet/
+folder: products/flexberry-aspnet/controls/wolv/
 lang: ru
 ---
-Эта статья описывает часть информации о [WebObjectListView](fa_web-object-list-view.html).
 
 Когда пользователь выбирает элемент в списке, бывает удобно сразу увидеть информацию об элементе и отредактировать ее.
 
 Ниже представлен пример настроки [WOLV](fa_web-object-list-view.html), позволяющий одновременно отображать список и
-[форму редактирования](flexberry-asp-net-edit-form.html) выбранного в списке элемента со всеми ее возможностями.
+[форму редактирования](fa_editform.html) выбранного в списке элемента со всеми ее возможностями.
 
-[Форма редактирования](flexberry-asp-net-edit-form.html) отображается во фрейме (при необходимости ее можно свернуть или развернуть).
+[Форма редактирования](fa_editform.html) отображается во фрейме (при необходимости ее можно свернуть или развернуть).
 
-Есть возможность настроить, где отображать [форму редактирования](flexberry-asp-net-edit-form.html) относительно списка: слева, справа, внизу, сверху.
+Есть возможность настроить, где отображать [форму редактирования](fa_editform.html) относительно списка: слева, справа, внизу, сверху.
 
-![](/images/pages/img/CaseberryWeb/wolv/editorinframe1.PNG)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/editor-in-frame1.PNG)
 
 ## Пример настройки
 

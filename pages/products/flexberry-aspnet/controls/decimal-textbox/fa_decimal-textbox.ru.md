@@ -3,7 +3,7 @@ title: DecimalTextBox
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_decimal-text-box.html
+permalink: ru/fa_decimal-textbox.html
 folder: products/flexberry-aspnet/
 lang: ru
 

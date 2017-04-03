@@ -3,7 +3,7 @@ title: JavaScript API
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
-permalink: ru/fa_java-script-api.html
+permalink: ru/fa_javascript-api.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

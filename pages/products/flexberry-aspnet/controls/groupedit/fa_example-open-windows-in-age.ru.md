@@ -18,7 +18,7 @@ lang: ru
 
 ### Открытие в текущем окне
 
-Для того, чтобы открыть [web-форму редактирования](fa_flexberry-asp-net-edit-form.html  ) в текущем окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
+Для того, чтобы открыть [web-форму редактирования](fa_editform.html  ) в текущем окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
 
 ```csharp
 /// <summary>
@@ -33,7 +33,7 @@ protected override void PostApplyToControls()
 
 ### Открытие в модальном окне
 
-Для того, чтобы открыть [web-форму редактирования](fa_flexberry-asp-net-edit-form.html) в модальном окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.ModalWindowSettings в PostApplyToControls().
+Для того, чтобы открыть [web-форму редактирования](fa_editform.html) в модальном окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.ModalWindowSettings в PostApplyToControls().
 
 ```csharp
 /// <summary>
@@ -49,7 +49,7 @@ protected override void PostApplyToControls()
 
 ### Открытие в новом окне
 
-Для того, чтобы открыть [web-форму редактирования](fa_flexberry-asp-net-edit-form.html) в новом окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
+Для того, чтобы открыть [web-форму редактирования](fa_editform.html) в новом окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
 
 ```csharp
 /// <summary>
@@ -63,5 +63,5 @@ protected override void PostApplyToControls()
 }
 ```
 
-{% include note.html content="Если [web-форма редактирования](fa_flexberry-asp-net-edit-form.html) открывается в отдельной вкладке (OpenEditorInNewWindow=1, OpenEditorInModalWindow=0), детейл можно редактировать и на вкладке с [AGE](fa_ajax-group-edit.html), и на странице редактирования.
+{% include note.html content="Если [web-форма редактирования](fa_editform.html) открывается в отдельной вкладке (OpenEditorInNewWindow=1, OpenEditorInModalWindow=0), детейл можно редактировать и на вкладке с [AGE](fa_ajax-group-edit.html), и на странице редактирования.
 Это можно решить, например, блокировкой строки в [AGE](fa_ajax-group-edit.html) пока открыта другая вкладка." %}

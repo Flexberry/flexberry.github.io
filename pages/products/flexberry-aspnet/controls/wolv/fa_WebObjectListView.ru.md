@@ -213,7 +213,7 @@ public virtual System.DateTime OnlyDate
 
 ### Варианты открытия формы редактирования при создании\редактировании объекта
 
-Основная статья про [открытие формы редактирования](w-o-l-v-edit-form.html).
+Основная статья про [открытие формы редактирования](fa_w-o-l-v-edit-form.html).
 
 ### Настройки ThickBox
 
@@ -251,4 +251,4 @@ wsa.SettingsApply(WebObjectListView1);
 
 ## JS API
 
-Основная статья про [JavaScript API для WOLV](j-s-a-p-i-w-o-l-v.html).
+Основная статья про [JavaScript API для WOLV](fa_js-api-wolv.html).

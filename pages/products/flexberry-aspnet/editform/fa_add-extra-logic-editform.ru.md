@@ -3,7 +3,7 @@ title: Добавление дополнительной логики при с�
 sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
-permalink: ru/fa_add-extra-logic-on-save-to-web-form.html
+permalink: ru/fa_add-extra-logic-editform.html
 folder: products/flexberry-aspnet/
 lang: ru
 

@@ -94,7 +94,7 @@ lang: ru
 ## Настройки оформления
 
 # JS API
-Для манипуляций с `MasterEditorAjaxDropDown` на стороне клиента следует использовать [JS API](fa_java-script-api.html), который представляет собой jQuery плагин (icsMasterEditorAjaxDropDown).
+Для манипуляций с `MasterEditorAjaxDropDown` на стороне клиента следует использовать [JS API](fa_javascript-api.html), который представляет собой jQuery плагин (icsMasterEditorAjaxDropDown).
 
 ''Установка значения `MasterEditorAjaxDropDown`''
 

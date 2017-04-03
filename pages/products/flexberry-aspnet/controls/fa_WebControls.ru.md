@@ -20,7 +20,7 @@ lang: ru
 
 # Web-формы
 * Списковая web-форма
-* [Web-форма редактирования](flexberry-asp-net-edit-form.html)
+* [Web-форма редактирования](fa_editform.html)
 * [Технологические формы](tech-forms-web.html)
 
 # Web-контролы
@@ -31,11 +31,11 @@ Web-контрол - элемент взаимодействия пользов�
 * [Правила разработки ASP.NET web-контролов](asp-net-control-mastering-rules.html)
 * [Правила создания контролов](control-authoring-rules.html)
 * [Разработка ASP.NET контролов](developing-asp-net-controls.html)
-* [Предиктивный ввод в Web-приложениях](predict-input-web.html)
+* [Предиктивный ввод в Web-приложениях](fa_predict-input-web.html)
 
 
 ## Особенности работы с контролами
-* [JavaScript API](fa_java-script-api.html)
+* [JavaScript API](fa_javascript-api.html)
 * [Глобальная настройка веб-контролов](fa_init-control-settings-delegate.html)
 
 ## Список web-контролов
@@ -44,23 +44,23 @@ Web-контрол - элемент взаимодействия пользов�
 * [AjaxGroupEdit](fa_ajax-group-edit.html)
 * [AlphaNumericTextBox](alpha-numeric-text-box.html)
 * [BaseListWebControl](base-list-web-control.html)
-* [BaseMasterEditorLookUp](base-master-editor-look-up.html)
+* [BaseMasterEditorLookUp](fa_base-master-editor-lookup.html)
 * [BaseWebControl](base-web-control.html)
 * [ColorPicker](color-picker.html)
 * [Constants](constants.html)
 * [ContactControl](contact-control.html)
 * [DatePicker](date-picker.html)
-* [DecimalTextBox](decimal-text-box.html)
+* [DecimalTextBox](fa_decimal-textbox.html)
 * [DynamicEditor](dynamic-editor.html)
 * [EmptyWOLVControl](w-o-l-v-load-data-and-empty-control.html)
 * [EventControl](event-control.html)
 * [ExceptionPanel](exception-panel.html)
 * [FileControl](file-control-web.html)
 * [FileControlView](file-control-view.html)
-* [FormattedDateTimeControl](formatted-date-time-control.html)
-* [HierarchicalListView](hierarchical-list-view.html)
+* [FormattedDateTimeControl](fa_formatted-datetime-control.html)
+* [HierarchicalListView](fa_hierarchical-listview.html)
 * [Hinter](fa_hinter.html)
-* [IcsTreeView](fa_ics-tree-view.html)
+* [IcsTreeView](fa_ics-treeview.html)
 * [ImageControl](image-control.html)
 * [LinkModalPopupWindow](link-modal-popup-window.html)
 * [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)
@@ -73,7 +73,7 @@ Web-контрол - элемент взаимодействия пользов�
 * [ObjectTile](ajax-controls--object-tile.html)
 * [ObjectTileView](ajax-controls--object-tile-view.html)
 * [ObjectTile](ajax-controls--object-tile.html)
-* [Pager (class)](pager.html)
+* [Pager (class)](fa_pager.html)
 * [ShowHideDiv (class)](show-hide-div.html)
 * [WebFileControl](web-file-control_Description.html)
 * WebMessageBox (class)
