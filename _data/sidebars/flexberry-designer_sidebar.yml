@@ -315,8 +315,8 @@ entries:
       url: /fd_t-view.html
       output: web, pdf
 
-  - title: Expansion modules FlexBerry Designer
-    title_ru: Модули расширения FlexBerry Designer
+  - title: Expansion modules Flexberry Designer
+    title_ru: Модули расширения Flexberry Designer
     output: web, pdf
 
     folderitems:
