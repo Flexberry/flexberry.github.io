@@ -18,6 +18,7 @@ public IList<TextStylization> Stylizations;
 
 Чаще всего используется для раскраски строк.
 
+
 ## Подсветка по строковым полям
 
 Есть возможность раскрашивать строки, используя лямбды.
@@ -47,7 +48,7 @@ var three = new TextStyle("3", "WOLV-color-Brown");
 var four = new TextStyle("4", "WOLV-color-Black");
 
 WebObjectListView1.Stylizations.Add(new TextStylization(
-    "Семья.КоличЧленовСемьи", 
+    "Семья.КоличЧленовСемьи",
     new[] { two, three, four });
 ```
 
@@ -68,6 +69,7 @@ tr.WOLV-color-Black td{
 ```
 
 ![](/images/pages/img/CaseberryWeb/wolv/Stylization.png)
+
 
 ## Несколько стилей
 Следует обратить внимание на то, что если к строке применено несколько стилей, задающих одно и то же свойство (например, цвет), то будет применен тот стиль,
@@ -105,6 +107,7 @@ WebObjectListView1.Stylizations.Add(regionStylization);
 
 ![](/images/pages/img/CaseberryWeb/wolv/Stylization1.png)
 
+
 ## Подсветка по полям типа `bool`
 Для раскрашивания строк по полю типа `bool` используйте лямбда-выражение:
 
@@ -124,3 +127,11 @@ WebObjectListView1.Stylizations.Add(stylization);
 Если вам нужно раскрасить конкретную ячейку, то необходимо встраивать web-контрол. Web-контрол должен реализовывать интерфейс
 `ICSSoft.STORMNET.Web.Tools.WOLVFeatures.IWebObjectListViewCompatible`. В свойстве `TableCellCssClass` вы возвращаете класс, который применится к ячейке с
 вашим web-контролом.
+
+
+## Настройка внешнего вида таблиц в теме Crimea
+В тему Crimea были добвлены 2 варианта раскраски таблиц.
+
+По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на стандартную нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на false.
+
+{% include important.html content="При этом, также измениться и стиль таблиц AGE" %}

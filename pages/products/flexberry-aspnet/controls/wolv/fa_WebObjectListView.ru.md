@@ -19,19 +19,19 @@ lang: ru
 
 ### Внешний вид WOLV при использовании различных тем
 
-Внешний вид WOLV при использовании различных тем можно посмотреть в [статье про Темы](choose-theme.html). 
+Внешний вид WOLV при использовании различных тем можно посмотреть в [статье про Темы](choose-theme.html).
 
 ### Stylization
 
-Основная статья про [cтилизацию](w-o-l-v-stylization.html).
+Основная статья про [cтилизацию](fa_w-o-l-v-stylization.html).
 
 ### CSS-классы
 
-Основная статья о [CSS-классах WOLV](w-o-l-v-c-s-s.html).
+Основная статья о [CSS-классах WOLV](fa_w-o-l-v-c-s-s.html).
 
 ### Пейджинг
 
-Основная статья про [пейджинг WOLV](w-o-l-v-paging.html).
+Основная статья про [пейджинг WOLV](fa_w-o-l-v-paging.html).
 
 ### Фиксация шапки списка
 
@@ -74,11 +74,11 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 
 ### Фильтры
 
-Основная статья про [фильтры WOLV](w-o-l-v-filters.html).
+Основная статья про [фильтры WOLV](fa_w-o-l-v-filters.html).
 
 ### Поиск
 
-Основная статья про [поиск в WOLV](w-o-l-v-search.html).
+Основная статья про [поиск в WOLV](fa_w-o-l-v-search.html).
 
 ### Редактор ограничений
 
@@ -88,12 +88,12 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
   будет отображаться сообщение, что список ограничен.
   Обратите внимание, что если при работе в [редакторе ограничений](fa_advanced-limit-editor.html) сохранить ограничение, а потом его применить, то это не
   гарантирует, что было применено именно то ограничение, что было сохранено, поэтому имя ограничения на списке выведено не будет.
-  
-* Для ускорения работы контрола можно добавить [кэширование сохраненных ограничений](wolv-adv-limit-caching.html).
+
+* Для ускорения работы контрола можно добавить [кэширование сохраненных ограничений](fa_wolv-adv-limit-caching.html).
 
 ### Настройка отображения столбцов
 
-Основная статья про [настройку отображения столбцов WOLV](w-o-l-v-columns.html).
+Основная статья про [настройку отображения столбцов WOLV](fa_w-o-l-v-columns.html).
 
 ### Настройка сортировки
 
@@ -115,28 +115,28 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 
 ### Операции
 
-Основная статья об [операциях WOLV](w-o-l-v-operations.html).
+Основная статья об [операциях WOLV](fa_w-o-l-v-operations.html).
 
 ### События
 
-Основная статья про [события WOLV](w-o-l-v-events.html).
+Основная статья про [события WOLV](fa_w-o-l-v-events.html).
 
 ### Печать
 
 Существуют настройки WOLV, позволяющие напечатать список или часть списка. Описание настройки печати представлено в статье
-[печать списка](print-in--w-o-l-v.html).
+[печать списка](fa_print-in--w-o-l-v.html).
 
 ### Отображение иерархических данных
 
-Основная статья про [иерархический WOLV](w-o-l-v-hierarhy.html).
+Основная статья про [иерархический WOLV](fa_w-o-l-v-hierarhy.html).
 
 ### Отображение на одной странице списковой формы и формы редактирования
 
-Основная статья про [EditorInFrame](editor-in-frame.html).
+Основная статья про [EditorInFrame](fa_editor-in-frame.html).
 
 ### Добавление кнопки в тулбар и строки
 
-Основная статья про [добавление кнопок в тулбар и строки WOLV](w-o-l-v-add-button.html).
+Основная статья про [добавление кнопок в тулбар и строки WOLV](fa_w-o-l-v-add-button.html).
 
 ### Использование собственных контролов для отображения данных
 
@@ -159,12 +159,12 @@ WebObjectListView1.Operations.SaveVerticalScroll = true;
 public virtual System.Nullable<System.Double> ВыраженностьОграниченийЗначение
 {
     get
-    { 
-        //... 
+    {
+        //...
     }
-    set 
-    { 
-        //... 
+    set
+    {
+        //...
     }
 }
 ```
@@ -172,7 +172,7 @@ public virtual System.Nullable<System.Double> ВыраженностьОгран
 #### Формат даты и времени
 
 * Формат даты, отображаемой в ячейке может быть настроен с помощью атрибута DisplayFormatAttribute:
-    
+
 ```csharp
 [DisplayFormat(DataFormatString = "yyyy.MM")]
 public virtual System.DateTime OnlyDate
@@ -185,7 +185,7 @@ public virtual System.DateTime OnlyDate
   Либо можно создать новый компонент, унаследованный от `FormattedDateTimeControl`, переопределив свойство `Format`, и указать его в `WebControlProvider.xml`.
 
 * Если в `WebControlProvider.xml` задан пользовательский компонент для отображения дат, но при этом хочется, чтобы для конкретного свойства работал атрибут
-  `DisplayFormatAttribute`, то в `WebControlProvider.xml` необходимо сбросить пользовательский компонент для этого свойства: 
+  `DisplayFormatAttribute`, то в `WebControlProvider.xml` необходимо сбросить пользовательский компонент для этого свойства:
 
 ```xml
 <customproperty class="DatePickerTest" property="OnlyDate">
@@ -195,7 +195,7 @@ public virtual System.DateTime OnlyDate
 
 ### Загрузка данных и EmptyControl
 
-Основная статья о [загрузке данных и EmptyControl в WOLV](w-o-l-v-load-data-and-empty-control.html).
+Основная статья о [загрузке данных и EmptyControl в WOLV](fa_w-o-l-v-load-data-and-empty-control.html).
 
 ### Локализация заголовков атрибутов
 
@@ -213,7 +213,7 @@ public virtual System.DateTime OnlyDate
 
 ### Варианты открытия формы редактирования при создании\редактировании объекта
 
-Основная статья про [открытие формы редактирования](w-o-l-v-edit-form.html).
+Основная статья про [открытие формы редактирования](fa_w-o-l-v-edit-form.html).
 
 ### Настройки ThickBox
 
@@ -230,8 +230,8 @@ wolv.ThickBoxSettings.Width = 640;
 
 1. ID WOLV лучше заполнять **латинскими символами** - это связано с тем, что ID WOLV часто отображается в адресной строке браузера и киррилические символы
    декодирются, занимая очень много места в URL страницы. `WOLV` никак не связан с WebBinder, поэтому ID можно задавать как вам удобно.
-2. Всегда оборачивайте настройку `WOLV` через [WolvSettApplyer](wolv-sett-applyer.html):
-    
+2. Всегда оборачивайте настройку `WOLV` через [WolvSettApplyer](fa_wolv-sett-applyer.html):
+
 ```csharp
 var wsa = new WOLVSettApplyer();
 wsa.SettingsApply(WebObjectListView1);
@@ -239,16 +239,16 @@ wsa.SettingsApply(WebObjectListView1);
 
 ## Сервис данных WOLV
 
-Основная статья про [сервис данных WOLV](w-o-l-v-data-service.html).
+Основная статья про [сервис данных WOLV](fa_w-o-l-v-data-service.html).
 
 ## Экспорт в Excel и XML
 
-Основная статья про [экспорт из WOLV в Excel](w-o-l-v-export2-excel.html).
+Основная статья про [экспорт из WOLV в Excel](fa_w-o-l-v-export2-excel.html).
 
 ## Поведение флажков выбора элементов
 
-Основная статья про [поведение флажков выбора элементов WOLV](w-o-l-v-check-boxes.html).
+Основная статья про [поведение флажков выбора элементов WOLV](fa_w-o-l-v-check-boxes.html).
 
 ## JS API
 
-Основная статья про [JavaScript API для WOLV](j-s-a-p-i-w-o-l-v.html).
+Основная статья про [JavaScript API для WOLV](fa_j-s-a-p-i-w-o-l-v.html).

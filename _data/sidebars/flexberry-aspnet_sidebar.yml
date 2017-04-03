@@ -35,8 +35,11 @@ entries:
     output: web, pdf
     folderitems:
     - title: AjaxGroupEdit
-      url: /p1_sample4.html
+      url: /fa_ajax-group-edit.html
       output: web, pdf
     - title: WebObjectListView
       url: /fa_web-object-list-view.html
+      output: web, pdf
+    - title: LookUp
+      url: /fa_lookup-overview.html
       output: web, pdf
