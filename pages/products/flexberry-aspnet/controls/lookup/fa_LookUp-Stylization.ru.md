@@ -20,4 +20,4 @@ lang: ru
 ```
 
 На выбор доступны следующие иконки:
-![](/images/pages/img/CaseberryWeb/LookUp/LookUpIcons.png)
+![](/images/pages/img/CaseberryWeb/LookUp/LookUpIcons.PNG)
