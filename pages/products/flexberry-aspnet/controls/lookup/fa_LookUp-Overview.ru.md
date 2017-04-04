@@ -41,7 +41,7 @@ lang: ru
 * `MasterTypeName` - тип [мастерового](fo_master-association.html) объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
 * `MasterViewName` - представление мастерового объекта.
 * `ObjectTypeName` - тип редактируемого объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
-* `ObjectViewName` - [представление](fo_view-def.html) редактируемого объекта.
+* `ObjectViewName` - [представление](fd_view-definition.html) редактируемого объекта.
 * `PropertyToShow` - свойство мастера, которое будет отображаться в лукапе при выбранном объекте.
 * `SelectedMasterPK` - [PrimaryKey](fo_primary-keys-objects.html) выбранного объекта.
 * `ShowInThickBox` - показывать форму лукапа в thickbox или нет.

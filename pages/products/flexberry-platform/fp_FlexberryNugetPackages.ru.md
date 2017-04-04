@@ -60,7 +60,7 @@ lang: ru
 Сборки, входящие в пакет:
 * ICSSoft.Services.CurrentUserService.dll
 
-## [Flexberry UserSettingsService](user-settings-service.html)
+## [Flexberry UserSettingsService](fa_user-settings-service.html)
 Сборки, входящие в пакет:
 * UserSettingsService.dll
 

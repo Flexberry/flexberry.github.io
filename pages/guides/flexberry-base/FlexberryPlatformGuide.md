@@ -44,7 +44,7 @@ lang: ru
 #* [SQLDataService-Additional-Capabilities|Дополнительные возможности, предоставляемые SQLDataService]
 #* [Обертки и специализированный бизнес-фасад для сервисов данных](wraps-and-specialized-business-facade-for-data-services.html)
 # Представление
-#* [Определение представления](fo_view-def.html)
+#* [Определение представления](fd_view-definition.html)
 #* [Скрытые свойства в представлении](hidden--properties--in--view.html)
 #* [Операции с представлениями](view--operations.html)
 #* [Адаптивные представления для детейлов](adaptive-views-for-details.html)

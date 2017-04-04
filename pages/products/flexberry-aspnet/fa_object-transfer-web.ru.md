@@ -13,7 +13,7 @@ lang: ru
 ### Генерация уникального идентификатора
 GUID (Globally Unique Identifier) — статистически уникальный 128-битный идентификатор. Его главная особенность — уникальность, которая позволяет создавать расширяемые сервисы и приложения без опасения конфликтов, вызванных совпадением идентификаторов.
 
-```cs
+```csharp
 var guid = Guid.NewGuid().ToString();
 ```
 
@@ -21,14 +21,14 @@ var guid = Guid.NewGuid().ToString();
 
 В Page_Load создаем Limit Function:
 
-```cs
+```csharp
 var ld = ExternalLangDef.LanguageDef;
 Function f = ld.GetFunction(ld.funcEQ,new VariableDef(ld.StringType, "Name"),"Имя");
 ```
 ### 2. Передача объекта
 
 Описываем класс, отмечаем его как Serialisable, создаем экземпляр класса:
-```cs
+```csharp
 [Serializable]
 public class Person
 {
@@ -49,7 +49,7 @@ var f = new Person();
 
 Помещаем объект f в сессию по ключу GUID:
 
-```cs
+```csharp
 HttpContext.Current.Session[guid] = f;
 ```
 
@@ -71,7 +71,7 @@ MyLink.NavigateUrl = "~/SessionTest.aspx?guid=" + guid;
 
 На принимающей странице считываем GUID из строки запроса, по нему считываем объект из сессии:
 
-```cs
+```csharp
 string guid = Request.QueryString.Get("guid");
 var myObject = Context.Session[guid];
 ```
