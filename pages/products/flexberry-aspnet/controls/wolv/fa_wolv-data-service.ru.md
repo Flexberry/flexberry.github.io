@@ -10,13 +10,13 @@ lang: ru
 
 ## Сервис данных WOLV
 
-В версиях после 2013-09-13 появилась возможность переопределять логику сохранения объектов для конкретного WOLV. Для этого было добавлено публичное свойство
+У WOLV-а имеется публичное свойство DataService, через которое можно получать используемый сервис данных и/или устанавливать свой.
 
 ```cs
-public IDataService DataService { get; }
+public IDataService DataService { get; set; }
 ```
 
-Через это свойство можно добавлять свои обработчики некоторых событий, к примеру:
+Получив используемый сервис данных можно добавлять свои обработчики некоторых событий, к примеру:
 
 ```cs
 (webObjectListView.DataService as SQLDataService).AfterUpdateObjects += delegate(object sender, DataObjectsEventArgs args)
@@ -28,6 +28,7 @@ public IDataService DataService { get; }
 {% include note.html content='Обратите внимание, что без приведения к конкретному типу `DataService`, события привязать будет невозможно.' %}
 
 ## Список событий для SQLDataService
+
 | Событие | Описание |
 | ------- | -------- |
 | `AfterGenerateSQLSelectQuery` | Срабатывает после генерации SQL SELECT'а. |
@@ -35,4 +36,3 @@ public IDataService DataService { get; }
 | `BeforeUpdateObjects` | Срабатывает перед обновлением объектов. |
 | `OnCreateCommand` | Срабатывает при создании SQL-команды. |
 | `OnGenerateSQLSelect` | Срабатывает при генерации SQL SELECT'а. |
-
