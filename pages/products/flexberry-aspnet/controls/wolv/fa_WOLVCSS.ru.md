@@ -3,7 +3,7 @@ title: CSS-классы WOLV
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-c-s-s.html
+permalink: ru/fa_wolv-css.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

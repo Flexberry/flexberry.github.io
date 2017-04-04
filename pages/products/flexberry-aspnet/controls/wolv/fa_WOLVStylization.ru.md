@@ -3,7 +3,7 @@ title: Стилизация WOLV
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-stylization.html
+permalink: ru/fa_wolv-stylization.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

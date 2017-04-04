@@ -3,7 +3,7 @@ title: События WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-events.html
+permalink: ru/fa_wolv-events.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

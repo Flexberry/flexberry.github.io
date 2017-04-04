@@ -3,7 +3,7 @@ title: Добавление кнопки в тулбар или в строки 
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-add-button.html
+permalink: ru/fa_wolv-add-button.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
@@ -11,7 +11,6 @@ lang: ru
 ## Добавление  кнопок в тулбар WOLV
 
 Чтобы добавить кнопку в Toolbar WOLV необходимо воспользоваться методом `AddImageButton(...)` списка.
-
 Однако, прежде чем добавлять кнопку в Toolbar, стоит определиться, какой обработчик будет у данной кнопки:
 
 * Серверный
@@ -22,7 +21,7 @@ lang: ru
 
 Если обработчик должен быть серверным, то необходимо воспользоваться следующей перегрузкой метода `AddImageButton`:
 
-```cs
+```csharp
 /// <summary>
 /// Метод для добавления пользовательской кнопки в тулбар с возможностью установки
 /// серверного обработчика.
@@ -36,15 +35,13 @@ public void AddImageButton(string id, string cssClass, string alternateText, Too
 
 Как можно заметить, в метод передаётся ID кнопки, CSS-класс, текст всплывающей подсказки, а также серверный обработчик нажатия следующего вида:
 
-```
+```csharp
 public delegate void ToolBarBtnEventHandler(LinkButton sender, ToolBarBtnEventArgs eventArgs);
 ```
 
 #### ToolBarBtnEventArgs
 
 `ToolBarBtnEventArgs` - аргументы, передаваемые в серверный обработчик нажатия кнопки в Toolbar'e WOLV.
-
-''Подробнее про [ToolBarBtnEventArgs](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_tool_bar_btn_event_args.html)''
 
 Информация, которую можно получить из `ToolBarBtnEventArgs`:
 
@@ -57,9 +54,7 @@ public delegate void ToolBarBtnEventHandler(LinkButton sender, ToolBarBtnEventAr
 
 #### Пример использования
 
-Результат можно посмотреть на [тестовом стенде](http://ru:6158/forms/Gorod/UN_GorodL.aspx).
-
-```cs
+```csharp
 protected override void Preload()
 {
     ...
@@ -105,7 +100,7 @@ private void CustomToolbarButtonClickHandler(object sender, ToolBarBtnEventArgs 
 
 Если обработчик должен быть клиентским, необходимо воспользоваться следующей перегрузкой метода `AddImageButton`:
 
-```cs
+```csharp
 /// <summary>
 /// Метод для добавления пользовательской кнопки в тулбар с возможностью установки
 /// клиентского обработчика.
@@ -120,13 +115,11 @@ public void AddImageButton(string id, string cssClass, string alternateText, str
 
 Кроме ID, CSS-класса и текста всплывающей подсказки в метод также передается имя JS-функции, а также параметры, которые стоит передать в эту функцию.
 
-{% include note.html content='Обратите внимание, что передаётся имя JS-функции, а не её код.' %}
+{% include note.html content="Передаётся имя JS-функции, а не её код." %}
 
 #### Пример использования
 
-Результат можно посмотреть на [тестовом стенде](http://ru:6158/forms/Gorod/UN_GorodL.aspx).
-
-```cs
+```csharp
 protected override void Preload()
 {
     ...
@@ -147,7 +140,7 @@ protected override void Preload()
 
 Чтобы добавить кнопку с одновременно и серверным, и клиентским обработчиком, необходимо воспользоваться следующей перегрузкой метода `AddImageButton(...)`:
 
-```cs
+```csharp
 /// <summary>
 /// Добавление кнопки на тулбар.
 /// </summary>
@@ -156,13 +149,13 @@ public void AddImageButton(LinkButton lb)
 ```
 
 При использовании этого метода важно понимать следующее:
+
 1. Использовать этот метод необходимо только тогда, когда другие методы не подходят.
 2. Вся настройка кнопки (включая внешний вид и стили) ложится на прикладного разработчика.
 
 #### Пример использования
-Результат можно посмотреть на [тестовом стенде](http://ru:6158/forms/Gorod/UN_GorodL.aspx).
 
-```cs
+```csharp
 var twoHandlersButton = new LinkButton
 {
     OnClientClick = "alert('Сработал серверный обработчик кнопки с 2 обработчиками.');",
@@ -176,7 +169,7 @@ WebObjectListView1.AddImageButton(twoHandlersButton);
 
 ## Добавление кнопок в строки WOLV
 
-Чтобы добавить кнопку в Toolbar WOLV необходимо воспользоваться методом '''`AddImageButtonToRow(...)`''' списка.
+Чтобы добавить кнопку в Toolbar WOLV необходимо воспользоваться методом `AddImageButtonToRow(...)` списка.
 
 Однако, прежде чем добавлять кнопку в Toolbar, стоит определиться, какой обработчик будет у данной кнопки:
 
@@ -184,9 +177,10 @@ WebObjectListView1.AddImageButton(twoHandlersButton);
 * Клиентский.
 
 ### Серверный обработчик
+
 Если обработчик должен быть серверным, то необходимо воспользоваться следующей перегрузкой метода `AddImageButtonToRow`:
 
-```cs
+```csharp
 /// <summary>
 /// Добавить кнопку в каждую строку
 /// </summary>
@@ -202,17 +196,17 @@ public void AddImageButtonToRow(string id, string cssClass, string alternateText
 
 Как и в случае с добавлением серверной кнопки на Toolbar, в метод передаётся ID кнопки, CSS-класс, текст всплывающей подсказки, а также серверный обработчик нажатия следующего вида:
 
-```cs
+```csharp
 public delegate void ToolBarBtnEventHandler(LinkButton sender, ToolBarBtnEventArgs eventArgs);
 ```
 
 #### ToolBarBtnEventArgs
-Аналогично [WOLVAddButton#ToolBarBtnEventArgs_0|EventArgs'ам Toolbar'a].
+
+Аналогично EventArgs'ам Toolbar'a.
 
 #### Пример использования
-Результат можно посмотреть на [тестовом стенде](http://ru:6158/forms/Gorod/UN_GorodL.aspx).
 
-```cs
+```csharp
 protected override void Preload()
 {
     ...
@@ -256,9 +250,10 @@ private void CustomToolbarButtonClickHandler(object sender, ToolBarBtnEventArgs 
 ```
 
 ### Клиентский обработчик
+
 Если обработчик должен быть клиентским, необходимо воспользоваться следующей перегрузкой метода `AddImageButton`:
 
-```cs
+```csharp
 /// <summary>
 /// Добавить кнопку в каждую строку
 /// </summary>
@@ -272,12 +267,11 @@ public void AddImageButtonToRow(string id, string cssClass, string alternateText
 
 Кроме ID, CSS-класса и текста всплывающей подсказки в метод также передается имя JS-функции, а также параметры, которые стоит передать в эту функцию.
 
-{% include note.html content='Обратите внимание, что передаётся имя JS-функции, а не её код.' %}
+{% include note.html content="Передаётся имя JS-функции, а не её код." %}
 
 #### Пример использования
-Результат можно посмотреть на [тестовом стенде](http://ru:6158/forms/Gorod/UN_GorodL.aspx).
 
-```cs
+```csharp
 protected override void Preload()
 {
     ...

@@ -52,7 +52,7 @@ Web-контрол - элемент взаимодействия пользов�
 * [DatePicker](date-picker.html)
 * [DecimalTextBox](fa_decimal-textbox.html)
 * [DynamicEditor](dynamic-editor.html)
-* [EmptyWOLVControl](w-o-l-v-load-data-and-empty-control.html)
+* [EmptyWOLVControl](fa_wolv-empty-control.html)
 * [EventControl](event-control.html)
 * [ExceptionPanel](exception-panel.html)
 * [FileControl](file-control-web.html)
@@ -86,7 +86,7 @@ Web-контрол - элемент взаимодействия пользов�
 В технологии [Flexberry ASP.NET](fa_flexberry-asp-net.html) используются следующие провайдеры:
 * [ServiceSecurityProvider](service-security-provider.html)
 * [WebControlProvider]fa_web-control-provider.html)
-* [ViewColumnProvider](view-column-provider.html)
+* [ViewColumnProvider](fa_view-column-provider.html)
 * [CaseberryDomainRoleProvider](Flexberry-domain-role-provider.html)
 * [CaseberryMembershipProvider - полномочия](Flexberry-membership-provider.html)
 

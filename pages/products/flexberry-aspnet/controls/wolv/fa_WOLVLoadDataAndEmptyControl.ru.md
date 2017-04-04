@@ -3,7 +3,7 @@ title: Загрузка данных и EmptyControl в WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-load-data-and-empty-control.html
+permalink: ru/fa_wolv-load-empty-control.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

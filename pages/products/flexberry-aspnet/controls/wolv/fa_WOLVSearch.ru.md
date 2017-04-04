@@ -3,21 +3,21 @@ title: Поиск в WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_w-o-l-v-search.html
+permalink: ru/fa_wolv-search.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
 
 Система поиска позволяет осуществлять поиск по отображаемым элементам списка.
 
-В отличии от [фильтров](w-o-l-v-filters.html), поиск не накладывает ограничение на список, он лишь выделяет объекты при помощи [флажков](w-o-l-v-check-boxes.html).
+В отличии от [фильтров](fa_wolv-filters.html), поиск не накладывает ограничение на список, он лишь выделяет объекты при помощи [флажков](fa_wolv-check-boxes.html).
 
 {% include note.html content='При использовании поиска текущее выделение объектов сбрасывается.' %}
 
 ## Включение поиска
 По умолчанию поиск включен.
 
-За включение поиска отвечает [операция](w-o-l-v-operations.html) `Search`.
+За включение поиска отвечает [операция](fa_wolv-operations.html) `Search`.
 
 Чтобы выключить кнопку поиска, необходимо при загрузке страницы установить эту операцию в `false`:
 
@@ -30,14 +30,14 @@ webObjectListView1.Operations.Search = false;
 При нажатии на эту кнопку появляется дополнительная панель.
 
 ## Простой поиск
-Если [операция](w-o-l-v-operations.html) `FullViewSearch == false`, то появится панель простого поиска:
+Если [операция](fa_wolv-operations.html) `FullViewSearch == false`, то появится панель простого поиска:
 
 ![](/images/pages/img/page/WOLVSearch/sdlkjhsdkjh.PNG)
 
 Данный вид поиска предлагает пользователю выбрать конкретный столбец, по которому производится поиск.
 
 ## Поиск по всему представлению
-Если [операция](w-o-l-v-operations.html) `FullViewSearch == true`, то появится панель поиска по всему представлению:
+Если [операция](fa_wolv-operations.html) `FullViewSearch == true`, то появится панель поиска по всему представлению:
 
 ![](/images/pages/img/page/WOLVSearch/WolvSearchFull.PNG)
 

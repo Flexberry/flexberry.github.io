@@ -19,7 +19,8 @@ lang: ru
 * На исходный объект выставляется блокировка, которая снимается при первом сохранении объекта-прототипа.
 
 # WOLV и "создание на основе"
-[WOLV](fa_web-object-list-view.html) предоставляет возможность выполнения прототипизации объекта. Для этого у соответствующего [WOLV](fa_web-object-list-view.html) необходимо включить операцию `[NewByExampleInRow](w-o-l-v-operations.html)`:
+[WOLV](fa_web-object-list-view.html) предоставляет возможность выполнения прототипизации объекта. Для этого у соответствующего [WOLV](fa_web-object-list-view.html) необходимо включить операцию [NewByExampleInRow](fa_wolv-operations.html):
+
 ```csharp
 public partial class КредитL : BaseListForm<Кредит>
 {

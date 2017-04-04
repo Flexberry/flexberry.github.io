@@ -3,7 +3,7 @@ title: Операции WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-operations.html
+permalink: ru/fa_wolv-operations.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
@@ -55,7 +55,7 @@ webObjectListView1.Operations.Print = true;
 | FilterEndPercent  | Фильтровать с уже подставленными % в конце строки (по умолчанию true) |
 | FilterSubString  | Фильтровать по подстроке: % уже подставлены в начало и конец строки, все пробелы так же заменяются на % (по умолчанию false). |
 | FixTableHeader | Зафиксировать заголовок таблицы. При прокрутке заголовок будет оставаться на месте. |
-| FullViewSearch  | Изменить поиск на поиск по всем полям ([подробнее](w-o-l-v-search.html)). |
+| FullViewSearch  | Изменить поиск на поиск по всем полям ([подробнее](fa_wolv-search.html)). |
 | HighlightObject  | Подсветка объекта, pk которого был указан в URL ("PK" или WOLVSO) (по умолчанию true). Подсветка делается проставлением класса для td |
 | LimitEdit | Расширенный редактор ограничений |
 | MultiSelect  | Множественное выделение объектов |
@@ -89,8 +89,8 @@ webObjectListView1.Operations.Print = true;
 
 Операция `CheckChanges` включает или выключает данную проверку.
 
-{% include note.html content="Обратите внимание, что если данная настройка выключена, то обработка сохранения изменений возлагается на прикладного программиста.
-Для этого можно использовать [события](w-o-l-v-events.html) списка, или его [JS API](fa_js-api-wolv.html)." %}
+{% include note.html content="Eсли данная настройка выключена, то обработка сохранения изменений возлагается на прикладного программиста.
+Для этого можно использовать [события](fa_wolvevents.html) списка, или его [JS API](fa_js-api-wolv.html)." %}
 
 По умолчанию данная настройка включена.
 

@@ -61,7 +61,7 @@ lang: ru
 * Страница настройки столбцов `ICSSoft.STORMNET.Web.AjaxControls.Forms.ChooseColumns`
 ![](/images/pages/img/TechForms/ColumnSetupPage.png)
 
-(((<msg type=note>Страница настройки столбцов идентична странице, используемой для [экспорта в Excel](w-o-l-v-export2-excel.html).</msg>)))
+(((<msg type=note>Страница настройки столбцов идентична странице, используемой для [экспорта в Excel](fa_wolv-export2-excel.html).</msg>)))
 
 * Страница печати (`ICSSoft.STORMNET.Web.AjaxControls.Forms.ListPrintForm`)
 * Страница с информацией о версиях сборок

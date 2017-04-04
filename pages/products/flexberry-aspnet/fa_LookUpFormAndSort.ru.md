@@ -49,7 +49,7 @@ namespace ICSSoft.STORMNET.Web.Controls
 }
 ```
 
-3. В [WOLVSettApplyer](wolv-sett-applyer.html) прикладной доступности переопределяем метод ApplyLookUpSettings. И назначаем необходимую [операцию](w-o-l-v-operations.html).
+3. В [WOLVSettApplyer](wolv-sett-applyer.html) прикладной доступности переопределяем метод ApplyLookUpSettings. И назначаем необходимую [операцию](fa_wolv-operations.html).
 ```cs
 namespace ICSSoft.STORMNET.Web
 {

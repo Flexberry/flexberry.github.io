@@ -3,7 +3,7 @@ title: Пейджеры WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-paging.html
+permalink: ru/fa_wolv-paging.html
 folder: flexberry-aspnet
 lang: ru
 ---

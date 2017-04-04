@@ -10,7 +10,7 @@ lang: ru
 
 
 
-(((<msg type=Warning>Данная настройка больше не используется ([подробнее](w-o-l-v-edit-form.html)).</msg>)))
+(((<msg type=Warning>Данная настройка больше не используется ([подробнее](fa_wolv-edit-form.html)).</msg>)))
 
 # Поддержка открытия формы редактирования в ThickBox при клике на строку в WebObjectListView
 

@@ -3,7 +3,7 @@ title: Экспорт данных из WOLV в Excel
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Reports, БД
 toc: true
-permalink: ru/fa_w-o-l-v-export2-excel.html
+permalink: ru/fa_wolv-export-excel.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

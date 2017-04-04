@@ -76,7 +76,7 @@ AuditService.Current.ShowPrimaryKey = true;
 AuditService.Current.ShowPrimaryKey = false;
 ```
 
-Если AuditService.Current.ShowPrimaryKey имеет значение true, то список изменений полей отображается [в виде иерархии](fa_w-o-l-v-hierarhy.html) аналогично тому, как это сделано в записеориентированных формах аудита.
+Если AuditService.Current.ShowPrimaryKey имеет значение true, то список изменений полей отображается [в виде иерархии](fa_wolv-hierarhy.html) аналогично тому, как это сделано в записеориентированных формах аудита.
 
 {% include warning.html content="При использовании веб-форм аудита необходимо в файле WebControlProvider.xml добавить следующую информацию:" %}
 

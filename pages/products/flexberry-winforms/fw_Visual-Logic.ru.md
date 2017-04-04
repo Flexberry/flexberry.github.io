@@ -21,7 +21,7 @@ lang: ru
 * Настройка стилей и кнопок списков ([Формы-списка-классы-со-стереотипом-listform.ashx?HL=listform#Дополнительно_редактируемые_свойства_и_что_как_генерируется_5|подробнее] см. раздел `ListFormOperations`)
 * Добавление [всплывающих подсказок](http://msdn.microsoft.com/ru-ru/library/system.windows.forms.tooltip.aspx)
 * Генерация контролов предиктивного ввода ([Win](прикладные-системы_predict-input.html), [Web](fa_predict-input-web.html))
-* Настройка [сортировки списков](list-sort.html)
+* Настройка [сортировки списков](fw_list-sort.html)
 <!--* Добавление поиска по списку и\или собственных фильтров для списков-->
 * Реализация режима “ReadOnly” ([Win](read-only-win.html), [Web](read-only-web.html))
 <!--* Добавление плоского списка к иерархическому-->

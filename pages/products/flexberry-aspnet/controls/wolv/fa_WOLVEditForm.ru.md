@@ -3,7 +3,7 @@ title: Варианты открытия формы редактирования
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_w-o-l-v-edit-form.html
+permalink: ru/fa_wolv-edit-form.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
@@ -38,8 +38,8 @@ lang: ru
 
 Соответственно, после ответа на эти вопросы следует установить 2 настройки:
 
-1. `WebObjectListView1.Operations.OpenEditorInNewWindow = true/false;`
-2. `WebObjectListView1.[Operations](w-o-l-v-operations.html).OpenEditorInModalWindow = true/false;`
+1. WebObjectListView1.Operations.OpenEditorInNewWindow = true/false;
+2. WebObjectListView1.[Operations](fa_wolv-operations.html).OpenEditorInModalWindow = true/false;
 
 {% include note.html content='Обратите внимание, что при установленной `OpenEditorInNewWindow == false` вторая настройка не имеет смысла.' %}
 
