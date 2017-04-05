@@ -62,7 +62,7 @@ webObjectListView1.Operations.Print = true;
 | New  | Кнопка "Новый" |
 | NewByExampleInRow  | Кнопка "Создать на основе" в строке (подробнее см. [здесь](web-data-object-prototyping.html)) |
 | OpenEditorInNewWindow | Открывать форму редактирования (при создании\редактировании\просмотре объекта) в другом окне браузера |
-| OpenEditorInModalWindow  | Отображать форму редактирования (при создании\редактировании\просмотре объекта) в модальной форме (thickbox). Работает только если `OpenEditorInNewWindow == true`; |
+| OpenEditorInModalWindow  | Отображать форму редактирования (при создании\редактировании\просмотре объекта) в модальной форме (thickbox). Работает только если `OpenEditorInNewWindow == true`; Кастомный заголовок модяльному окну можно задать через ytj,zpfntkmyjt свойство WOLV-a EditorInModalWindowCaption |
 | Order | Кнопки перемещения строк при наличии в представлении Oreded-атрибутов |
 | Print  | Печать списка |
 | ReadCommittedUsage  | Отменить использование грязного чтения |
