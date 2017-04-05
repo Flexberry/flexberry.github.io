@@ -60,3 +60,40 @@ protected override void Preload()
 После загрузки списка он будет выглядеть следующим образом:
 
 ![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode2.png)
+
+## Настройка подписей в заголовках групп
+По умолчанию подписи в заголовках групп формируются из наименований видимых полей, относящихся к свойству группировки, и их значений разделенных двоеточием (Имя поля: значение поля у записей в группе Имя другого поля: значение поля у записей в группе ...).
+
+При необходимости, подписи в заголовках групп можно гибко настраивать, для этого предусмотрен специальный делегат GroupByPropertyGetCaption.
+
+```csharp
+/// <summary>
+/// Вызывается самым первым в Page_Load.
+/// </summary>
+protected override void Preload()
+{
+    // Зададим иерархического мастера, по которому будет осуществляться группировка.
+    WebObjectListView1.GroupByProperty = Information.ExtractPropertyPath<Квартира>(x => x.Дом.Город);
+    
+    // Зададим свойство иерархии внутри заданного иерархического мастера.
+    WebObjectListView1.GroupByPropertyHierarchy = Information.ExtractPropertyPath<Город>(x => x.Иерархия);
+    
+    // Зададим подпись к группе записей,  в которых не выбран мастер.
+    // Эта настройка опциональна, если она не задана, то будет использовано значение по умолчанию.
+    WebObjectListView1.GroupByPropertyUndefinedText = "Квартиры с домами в неопределенных городах";
+    
+    // Определим прикладной способ формирования подписей в строках, которые являются заголовками групп.
+    WebObjectListView1.GroupByPropertyGetCaption = (WolvGroupByCaptionData captionData) =>
+    {
+        int cityNameIndexInView = captionData
+            .RowContext
+            .ViewToDisplay.GetPropertyIndex(Information.ExtractPropertyPath<Квартира>(x => x.Дом.Город.Наименование));
+
+        return $"Квартиры с домами в городе \"{captionData.DataObject.ObjectedData[cityNameIndexInView]}\"";
+    };
+}
+```
+
+После загрузки списка он будет выглядеть следующим образом:
+
+![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode3.png)
