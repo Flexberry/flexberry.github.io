@@ -1,10 +1,9 @@
 ---
 title: Настройка строки соединения к БД
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public, БД
+keywords: строка соединения, connection string, установка, install, setup
 toc: true
 permalink: ru/fd_sql-express-local-db.html
-folder: products/flexberry-designer/about/
 lang: ru
 ---
 
@@ -21,7 +20,7 @@ lang: ru
 
 2.После запуска [Flexberry Designer](fd_flexberry_desinger.html) можно изменить строку соединения, выбрав пункт меню `Настройка` – `Сменить БД...` или в файле конфигурации выбрав пункт меню `Настройка` – `Открыть файл конфигурации...`
 
-3.В `FLEXBERRY.exe.config` изменяем строку соединения примерно следующим образом (имя сервера и базы данных может отличаться):
+3.В файле конфигурации, который называется `CASEBERRY.exe.config` изменяем строку соединения примерно следующим образом (имя сервера и базы данных может отличаться):
 
 Изменения для строки подключения к SQL server Express или другой версии: 
 
