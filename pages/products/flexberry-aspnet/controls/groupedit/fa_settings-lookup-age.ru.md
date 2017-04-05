@@ -9,9 +9,10 @@ lang: ru
 ---
 
 # Описание алгоритма
-Для того чтобы задать настройки для [LookUp'ов](look-up--overview.html), используемых в [AjaxGroupEdit](fa_ajax-group-edit.html) нужно создать экземпляр класса `LookUpSetting`, инициализировав ему необходимые поля и при помощи метода AddLookUpSettings добавить их в [AjaxGroupEdit](fa_ajax-group-edit.html).
 
-Например, необходимо задать [LookUp'у](look-up--overview.html), который в представлении имеет свойство "`ТипЛапы`" представление, по которому будут вычитываться мастеровые объекты.
+Для того чтобы задать настройки для [LookUp'ов](fa_lookup-overview.html), используемых в [AjaxGroupEdit](fa_ajax-group-edit.html) нужно создать экземпляр класса `LookUpSetting`, инициализировав ему необходимые поля и при помощи метода AddLookUpSettings добавить их в [AjaxGroupEdit](fa_ajax-group-edit.html).
+
+Например, необходимо задать [LookUp'у](fa_lookup-overview.html), который в представлении имеет свойство "`ТипЛапы`" представление, по которому будут вычитываться мастеровые объекты.
 
 ```csharp
 ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.ТипЛапы), new LookUpSetting { MasterViewName = ТипЛапы.Views.ТипЛапыL });
@@ -19,6 +20,7 @@ ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.
 Также можно настраивать `LimitFunction`, а для `MasterEditorDropDown` можно задать настройку, отвечающую за `PostBack`.
 
 Полный список свойств:
+
 ```csharp
         /// <summary>
         /// Настройки лукапа
@@ -62,7 +64,8 @@ ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.
         }
 ```
 
-## Пример включения автозаполнения в LookUp:
+### Пример включения автозаполнения в LookUp:
+
 ```csharp
         /// <summary>
         /// Вызывается самым первым в Page_Load.
@@ -75,12 +78,11 @@ ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.
         }
 ```
 
-## Пример наложения ограничения на LookUp
-Пример наложения ограничения на [LookUp](look-up--overview.html) в [AGE](fa_ajax-group-edit.html) описан в этой [статье](fa_limited-lookup-age.html).
+### Пример наложения ограничения на LookUp
 
-# Множественный выбор по LookUp
-Информацию о множественном выборе по LookUp в [AGE](fa_ajax-group-edit.html) можно прочитать в этой [статье](multi-look-up-in-a-g-e.html).
- 
+Пример наложения ограничения на [LookUp](fa_lookup-overview.html) в [AGE](fa_ajax-group-edit.html) описан в этой [статье](fa_limited-lookup-age.html).
 
+## Множественный выбор по LookUp
 
+Информацию о множественном выборе по LookUp в [AGE](fa_ajax-group-edit.html) можно прочитать в [статье Использование множественного выбора в LookUp в AjaxGroupEdit](fa_multi-lookup-age.html).
  

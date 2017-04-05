@@ -56,7 +56,7 @@ lang: ru
 </configuration>
 ```
 ## Другие технологические формы
-* [Lookup](look-up--overview.html)-страница `ICSSoft.STORMNET.Web.AjaxControls.Forms.LookUpForm`
+* [Lookup](fa_lookup-overview.html)-страница `ICSSoft.STORMNET.Web.AjaxControls.Forms.LookUpForm`
 ![](/images/pages/img/TechForms/LookUpForm.png)
 * Страница настройки столбцов `ICSSoft.STORMNET.Web.AjaxControls.Forms.ChooseColumns`
 ![](/images/pages/img/TechForms/ColumnSetupPage.png)

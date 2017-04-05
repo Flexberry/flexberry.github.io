@@ -14,10 +14,7 @@ lang: ru
 public IList<TextStylization> Stylizations;
 ```
 
-Оно дает возможность применять к строкам [WOLV](fa_web-object-list-view.html) определенные css-классы в зависимости от значений в столбцах.
-
-Чаще всего используется для раскраски строк.
-
+Оно дает возможность применять к строкам [WOLV](fa_web-object-list-view.html) определенные css-классы в зависимости от значений в столбцах. Чаще всего используется для раскраски строк.
 
 ## Подсветка по строковым полям
 
@@ -40,7 +37,7 @@ stylization.LambdaStyle =
 WebObjectListView1.Stylizations.Add(stylization);
 ```
 
-Пример: cписок, у которого есть столбец `Семья.КоличЧленовСемьи`. Вам нужно раскрасить зеленым, если членов семьи 2, коричневым - 3, черным - 4.
+Пример: cписок, у которого есть столбец `Семья.КоличЧленовСемьи`. Нужно раскрасить зеленым, если членов семьи 2, коричневым - 3, черным - 4.
 
 ```csharp
 var two = new TextStyle("2", "WOLV-color-Green");
@@ -54,7 +51,7 @@ WebObjectListView1.Stylizations.Add(new TextStylization(
 
 CSS:
 
-```csharps
+```css
 tr.WOLV-color-Green td{
     color: green !important;
 }
@@ -68,14 +65,14 @@ tr.WOLV-color-Black td{
 }
 ```
 
-![](/images/pages/img/CaseberryWeb/wolv/Stylization.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/stylization.png)
 
 
 ## Несколько стилей
-Следует обратить внимание на то, что если к строке применено несколько стилей, задающих одно и то же свойство (например, цвет), то будет применен тот стиль,
-который наиболее поздно описан в .css файле.
 
-Если перепишем приведенный выше пример, добавив еще один стиль:
+Следует обратить внимание на то, что если к строке применено несколько стилей, задающих одно и то же свойство (например, цвет), то будет применен тот стиль, который наиболее поздно описан в .css файле.
+
+Если изменить приведенный выше пример, добавив еще один стиль:
 
 ```csharp
 var countStylization = new TextStylization(string.Empty, new TextStyle[0]);
@@ -103,15 +100,15 @@ regionStylization.LambdaStyle =
 WebObjectListView1.Stylizations.Add(regionStylization);
 ```
 
-и если в .css-файле стиль `wolv-color-Red` описан после остальных, то получим в результате:
+и если в .css-файле стиль `wolv-color-Red` описан после остальных, то в результате:
 
-![](/images/pages/img/CaseberryWeb/wolv/Stylization1.png)
-
+![](/images/pages/products/flexberry-aspnet/controls/wolv/stylization1.png)
 
 ## Подсветка по полям типа `bool`
+
 Для раскрашивания строк по полю типа `bool` используйте лямбда-выражение:
 
-```
+```csharp
 var stylization = new TextStylization(Information.ExtractPropertyPath<ТипСПолемBool>(x => x.ПолеТипаBool),
                           new TextStyle[0])
 {
@@ -124,13 +121,11 @@ var stylization = new TextStylization(Information.ExtractPropertyPath<ТипСП
 WebObjectListView1.Stylizations.Add(stylization);
 ```
 
-Если вам нужно раскрасить конкретную ячейку, то необходимо встраивать web-контрол. Web-контрол должен реализовывать интерфейс
-`ICSSoft.STORMNET.Web.Tools.WOLVFeatures.IWebObjectListViewCompatible`. В свойстве `TableCellCssClass` вы возвращаете класс, который применится к ячейке с
-вашим web-контролом.
-
+Если нужно раскрасить конкретную ячейку, то необходимо встраивать web-контрол. Web-контрол должен реализовывать интерфейс `ICSSoft.STORMNET.Web.Tools.WOLVFeatures.IWebObjectListViewCompatible`. В свойстве `TableCellCssClass` возвращается класс, который применится к ячейке с заданным web-контролом.
 
 ## Настройка внешнего вида таблиц в теме Crimea
-В тему Crimea были добвлены 2 варианта раскраски таблиц.
+
+В тему `Crimea` были добвлены 2 варианта раскраски таблиц.
 
 По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на стандартную нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на false.
 

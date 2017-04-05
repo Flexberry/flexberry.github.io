@@ -80,7 +80,7 @@ lang: ru
 #* [Проблема используемых типов](fo_type-usage-problem.html)
 #* [Отображение TypeUsage в структуру данных](type-usage-in-data-structure.html)
 #* [ObjectListView, основная функциональность в RunTime](object-list-view-basic-functionality-in--run-time.html)
-#* [LookUp'ы](look-up--overview.html)
+#* [LookUp'ы](fa_lookup-overview.html)
 #* [Универсальная форма редактирования ](Универсальная-форма-редактирования.html)
 #* [Поддержка схем Windows XP](support-schemes--windows--x-p.html)
 #* [Сервис блокировок](lock-service.html)

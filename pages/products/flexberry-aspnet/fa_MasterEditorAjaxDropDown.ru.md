@@ -18,7 +18,7 @@ lang: ru
 # Подключение
 Для того, чтобы использовать `MasterEditorAjaxDropDown` на форме редактирования, необходимо на [форме редактирования представления во Flexberry Designer выбрать тип лукапа `combo`](view-edit-form.html), а в качестве свойства мастера указать предпочитаемое для отображения свойство объекта мастера.
 
-Чтобы [встроить данный контрол в AGE](a-g-e-applied-controls.html), требуется произвести настройки, аналогичные [этим](a-g-e-applied-controls.html). При этом в [WebControlProvider.xml](fa_web-control-provider.html) появится запись вида:
+Чтобы [встроить данный контрол в AGE](fa_age-applied-controls.html), требуется произвести настройки, аналогичные [этим](fa_age-applied-controls.html). При этом в [WebControlProvider.xml](fa_web-control-provider.html) появится запись вида:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="WebControlProvider.xsd">
@@ -43,7 +43,7 @@ lang: ru
 [MasterViewDefineAttribute("TestMasterEditorAjaxDropDownDetailView", "TestSpecialControlLink", ICSSoft.STORMNET.LookupTypeEnum.Combo, "", "PoleString")]
 ```
 
-на веб-форме (если контрол не [встроен в AGE](a-g-e-applied-controls.html)):
+на веб-форме (если контрол не [встроен в AGE](fa_age-applied-controls.html)):
 ```cs
 <ac:MasterEditorAjaxDropDown ID="ctrlTestSpecialControlLink" CssClass="descTxt" runat="server" EnablePostBack="false"/>
 ```

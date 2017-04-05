@@ -21,7 +21,7 @@ lang: ru
 #* Принять передаваемые параметры.
 #* Настроить [WOLV](fa_web-object-list-view.html)
 #* Подключить скрипты
-# Настроить свойство `LookUpFormURL` у [LookUp'a](look-up--overview.html).
+# Настроить свойство `LookUpFormURL` у [LookUp'a](fa_lookup-overview.html).
 
 ## Передаваемые параметры
 На LookUp-страницу передается ряд параметров для настройки WOLV'a и страницы:
@@ -70,7 +70,7 @@ if (!string.IsNullOrEmpty(Request["csdName"]))
                 LookUpFormWOLV.InitialColumnsSort = columnSortDef;
             }```
 
-(((<msg type=note>Перед вызовом на [LookUp](look-up--overview.html) ColumnSortDefinition помещается в сессию под ключом, передаваемым в качестве параметра, и достается из сессии по этому ключу.</msg>)))
+(((<msg type=note>Перед вызовом на [LookUp](fa_lookup-overview.html) ColumnSortDefinition помещается в сессию под ключом, передаваемым в качестве параметра, и достается из сессии по этому ключу.</msg>)))
 
 Ну и конечно же LimitFunction:
 ```
