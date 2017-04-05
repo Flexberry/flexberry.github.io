@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: JavaScript API, Windows UI (Контролы)
 toc: true
 permalink: ru/fa_lookup-overview.html
-folder: products/flexberry-aspnet/lookup/
 lang: ru
 ---
 

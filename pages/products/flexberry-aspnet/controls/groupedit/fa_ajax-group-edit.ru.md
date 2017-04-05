@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API, Web UI (Контролы)
 toc: true
 permalink: ru/fa_ajax-group-edit.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
@@ -60,7 +59,7 @@ lang: ru
 
 {% include warning.html content="Атрибут `Order` выставляется через Flexberry или добавляется вручную в код:
 
-```
+```csharp
 [Order()]
 ```
 
@@ -85,7 +84,7 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 
 ## JavaScript API
 
-Для манипуляций с AGE на стороне клиента следует использовать AGE JS API, который представляет собой jQuery плагин (ajaxgroupedit).
+Для манипуляций с AGE на стороне клиента следует использовать AGE JS API, который представляет собой jQuery плагин (`ajaxgroupedit`).
 
 ### Методы
 
@@ -169,7 +168,7 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 
 * Не сохраняются изменения (например, добавленные объекты):
     * Убедитесь, что на странице нет js ошибок;
-    * Проверьте, вызывается ли метод сохранения в AGE, который хранится в document.WgeSaveHandlers.
+    * Проверьте, вызывается ли метод сохранения в AGE, который хранится в `document.WgeSaveHandlers`.
 
 Например, по-умолчанию вызов происходит в masterpage.js:
 

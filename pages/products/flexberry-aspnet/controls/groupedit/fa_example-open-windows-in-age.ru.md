@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_example-open-windows-age.html
-folder: products/flexberry-aspnet/controls/groupedit/
 lang: ru
 ---
 
@@ -18,7 +17,7 @@ lang: ru
 
 ### Открытие в текущем окне
 
-Для того, чтобы открыть [web-форму редактирования](fa_editform.html  ) в текущем окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
+Для того, чтобы открыть [web-форму редактирования](fa_editform.html) в текущем окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в `PostApplyToControls()`.
 
 ```csharp
 /// <summary>
@@ -33,7 +32,7 @@ protected override void PostApplyToControls()
 
 ### Открытие в модальном окне
 
-Для того, чтобы открыть [web-форму редактирования](fa_editform.html) в модальном окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.ModalWindowSettings в PostApplyToControls().
+Для того, чтобы открыть [web-форму редактирования](fa_editform.html) в модальном окне, следует на форме редактирования мастера указать `ctrl<Имя детейла>.ModalWindowSettings` в `PostApplyToControls()`.
 
 ```csharp
 /// <summary>
@@ -49,7 +48,7 @@ protected override void PostApplyToControls()
 
 ### Открытие в новом окне
 
-Для того, чтобы открыть [web-форму редактирования](fa_editform.html) в новом окне, следует на форме редактирования мастера указать ctrl<Имя детейла>.DetailEditForm в PostApplyToControls().
+Для того, чтобы открыть [web-форму редактирования](fa_editform.html) в новом окне, следует на форме редактирования мастера указать `ctrl<Имя детейла>.DetailEditForm` в `PostApplyToControls()`.
 
 ```csharp
 /// <summary>

@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Reports, БД
 toc: true
 permalink: ru/fa_wolv-export-excel.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 

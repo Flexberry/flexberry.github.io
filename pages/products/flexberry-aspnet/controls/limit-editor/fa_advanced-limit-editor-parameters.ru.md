@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
 permalink: ru/fa_advanced-limit-editor-parameters.html
-folder: products/flexberry-aspnet/limit-editor/
 lang: ru
-
 ---
 
 В [Расширенном редакторе ограничений](fa_advanced-limit-editor.html) доступна работа с параметрами.

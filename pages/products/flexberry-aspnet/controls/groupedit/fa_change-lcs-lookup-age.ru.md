@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: FAQ, Flexberry ASP-NET, How to (page)
 toc: true
 permalink: ru/fa_change-lcs-lookup-age.html
-folder: products/flexberry-aspnet/
 lang: ru
 
 ---

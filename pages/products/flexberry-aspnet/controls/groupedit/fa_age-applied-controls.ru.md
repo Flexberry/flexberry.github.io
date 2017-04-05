@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_age-applied-controls.html
-folder: products/flexberry-aspnet/controls/groupedit/
 lang: ru
 ---
 

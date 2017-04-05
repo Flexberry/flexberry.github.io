@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_wolv-group-by-mode.html
-folder: products/flexberry-aspnet/controls/wolv
 lang: ru
 ---
 

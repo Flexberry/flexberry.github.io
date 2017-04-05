@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы), Ограничения
 toc: true
 permalink: ru/fa_advanced-limit-editor.html
-folder: products/flexberry-aspnet/limit-editor/
 lang: ru
-
 ---
 
 ## Список пользовательских функций
@@ -84,7 +82,6 @@ WebObjectListView1.DropLimitFromLimitEditor();
 На вкладке `Главная` есть кнопка `Подсчитать количество строк`, по нажатию на которую выдается количество объектов, удовлетворяющих текущему ограничению.
 
 {% include note.html content="Подсчет количества строк не учитывает наложенные на [WebObjectListView](fa_web-object-list-view.html) [фильтры](fa_wolv-filters.html)." %}
-
 
 ## Задание параметров
 

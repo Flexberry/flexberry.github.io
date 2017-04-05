@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_editor-in-frame.html
-folder: products/flexberry-aspnet/controls/wolv/
 lang: ru
 ---
 

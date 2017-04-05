@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_details-at-adv-limit-editor.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 ## Работа с детейлами в расширенном редакторе ограничений в web

@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_global-web-limit-editor-settings.html
-folder: products/flexberry-aspnet/controls/limit-editor/
 lang: ru
 ---
 

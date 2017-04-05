@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_age-user-settings.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
@@ -19,7 +18,7 @@ lang: ru
 
 ![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-modified.png)
  
-Это нужно для того, чтобы при нажатии на кнопку сохранить на странице (не в AGE) можно было предупредить пользователя, что он не сохранил данные в AGE. Если разрабатывается собственный контрол и встраивается в AGE, то для поддержки данного функционала следует реализовать контролу интерфейс IGroupEditCompatible.
+Это нужно для того, чтобы при нажатии на кнопку сохранить на странице (не в AGE) можно было предупредить пользователя, что он не сохранил данные в AGE. Если разрабатывается собственный контрол и встраивается в AGE, то для поддержки данного функционала следует реализовать контролу интерфейс `IGroupEditCompatible`.
 
 ## Редактирование списка детейлов
 

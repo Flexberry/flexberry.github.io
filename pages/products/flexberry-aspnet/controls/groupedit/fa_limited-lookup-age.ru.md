@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_limited-lookup-age.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 

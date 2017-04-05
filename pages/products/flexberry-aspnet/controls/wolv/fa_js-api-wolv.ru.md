@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
 permalink: ru/fa_js-api-wolv.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
