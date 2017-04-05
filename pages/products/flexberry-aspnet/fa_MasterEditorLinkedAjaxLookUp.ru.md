@@ -13,7 +13,7 @@ lang: ru
 
 (((<msg type=Warning>Данная статья описывает создание `MasterEditorLinkedLinkedLookup`, расположенных в AGE, а не непосредственно на форме редактирования! 
 
-На формах редактирования необходимо использовать логику [Связывание AjaxAutocomplete и AjaxLookup](link--ajax-autocomplete-and--ajax-lookup.html).</msg>)))
+На формах редактирования необходимо использовать логику [Связывание AjaxAutocomplete и AjaxLookup](fa_link-ajax-autocomplete-ajax-lookup.html).</msg>)))
 
 # Постановка задачи
 Предположим, у нас есть диаграмма классов:
