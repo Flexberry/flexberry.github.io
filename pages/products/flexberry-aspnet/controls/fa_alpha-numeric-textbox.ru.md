@@ -4,14 +4,11 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_alpha-numeric-textbox.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-# AlphaNumericTextBox
-
-Контрол `ICSSoft.STORMNET.Web.AjaxControls.AlphaNumericTextBox` предназначен для полей, где допустимы только буквы и/или числа. Наследует `System.Web.UI.WebControls.TextBox`, реализует `ICSSoft.STORMNET.Web.AjaxControls.IAjaxGroupEditCompatible`.
-<BR>Поддерживает вставку значений из буфера. 
+Контрол `ICSSoft.STORMNET.Web.AjaxControls.AlphaNumericTextBox` предназначен для полей, где допустимы только буквы и/или числа. Наследует `System.Web.UI.WebControls.TextBox`, реализует `ICSSoft.STORMNET.Web.AjaxControls.IAjaxGroupEditCompatible`.  
+Поддерживает вставку значений из буфера. 
 
 ## Настройка
 
@@ -56,9 +53,13 @@ public enum AlphaNumericType
 
 Для инициализации свойств контрола можно использовать статическое свойство-делегат `InitSettings` типа [InitControlSettingsDelegate<>](fa_init-control-settings-delegate.html), который будет вызван в конструкторе контрола.
 
+### Особенности
+
+При отключенном `ViewState` контрол не сохраняет значения между PostBack-ами, если он находится в состоянии `Disabled` (из-за особенностей инфраструктуры ASP.NET).
+
 ## Примеры
 
-Следующий код устанавливает тип контрола в Numeric (что позволит вводить в него только цифры), а также устанавливает словарь допустимых символов (что позволит вводить в него только цифры 0, 1 и 2):
+Следующий код устанавливает тип контрола в `Numeric` (что позволит вводить в него только цифры), а также устанавливает словарь допустимых символов (что позволит вводить в него только цифры 0, 1 и 2):
 
 ```csharp
 ctrlAlpha.Type = AlphaNumericType.Numeric;
@@ -73,7 +74,7 @@ ctrlAlpha.Min = 1200;
 ctrlAlpha.Max = 1300;
 ```
 
-Следующий код устанавливает тип в AlphaNumeric (что позволит вводить и буквы и цифры), а также устанавливает словари допустмых символов. Таким образом, в контрол можно будет вводить только цифры 1 и 2, а также буквы 'a' и 'b':
+Следующий код устанавливает тип в `AlphaNumeric` (что позволит вводить и буквы и цифры), а также устанавливает словари допустмых символов. Таким образом, в контрол можно будет вводить только цифры 1 и 2, а также буквы 'a' и 'b':
 
 ```csharp
 ctrlAlpha.Type = AlphaNumericType.AlphaNumeric;

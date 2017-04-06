@@ -1,12 +1,10 @@
 ---
-title: BaseListWebControl
+title: Constants
 sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
+keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_base-list-web-control.html
-folder: products/flexberry-aspnet/
+permalink: ru/fa_constants.html
 lang: ru
-
 ---
 
 ## Описание
@@ -26,5 +24,3 @@ lang: ru
 ## JS API
 
 ## Возможные ошибки
- 
-## Откуда ссылаются на эту страницу

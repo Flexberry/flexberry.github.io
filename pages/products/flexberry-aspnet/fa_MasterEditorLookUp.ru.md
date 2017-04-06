@@ -3,7 +3,7 @@ title: MasterEditorLookUp
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Архив
 toc: true
-permalink: ru/fa_master-editor-look-up.html
+permalink: ru/fa_master-editor-lookup.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

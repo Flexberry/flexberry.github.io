@@ -3,26 +3,10 @@ title: Использование WebFileControl
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_web-file-control_Description.html
+permalink: ru/fa_web-file-control-description.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-&nbsp;&nbsp;&nbsp;'''WebFileControl'''
-
-* '''Платформа''': Web.
-* '''Предназначение:''' контрол, используемый для добавления, удаления файлов на форме редактирования.
-* '''JavaScript API:''' 
-* '''[Автодокументация](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_web_1_1_ajax_controls_1_1_web_file_control.html)'''.
-* '''[WebFileControl на тестовом стенде](http://ru:6158/forms/Controls/WebFileControl/)'''.
-
-</td>
-</tr></tbody></table></a>
-</div>
 
 # Описание
 

@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_control-authoring-rules.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 ## Подключение внешних файлов

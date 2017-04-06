@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit
 toc: true
 permalink: ru/fa_audit-web.html
-folder: products/flexberry-aspnet/audit/
 lang: ru
-
 ---
 
 Система аудита позволяет отслеживать действия пользователей и состояние объектов системы.

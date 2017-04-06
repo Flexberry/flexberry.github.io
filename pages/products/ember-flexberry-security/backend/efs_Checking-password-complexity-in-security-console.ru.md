@@ -44,5 +44,5 @@ lang: ru
 * [Как начать работу с подсистемой полномочий](how-to-start-work-with-right-manager.html).
 * [Сценарии использования подсистемы полномочий](rights-scenarios.html).
 * [RightService-Flexberry-Rights|Сервис полномочий Flexberry Rights (CheckingLibrary)]
-* [Подсистема полномочий в WEB](right-manager-in--w-e-b.html).
+* [Подсистема полномочий в WEB](fa_right-manager.html).
 * [c:Полномочия|Все статьи категории "Полномочия"].

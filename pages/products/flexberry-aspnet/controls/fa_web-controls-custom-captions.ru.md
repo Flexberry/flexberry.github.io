@@ -1,30 +1,28 @@
 ---
-title: Кастомизаия подписей в Web-контролах
+title: Кастомизация подписей в Web-контролах
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_web-controls-custom-captions.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-## Кастомизация подписей к элементам контролов
 Подписи к контролам храняться в строковых ресурсах в *.resx-файлах соответствующих тому или иному контролу.
 Например подписи к элементам WebObjectListView храняться в проекте `ICSSoft.STORMNET.Web.AjaxControls` в файле `Resources/WebObjectListView.resx`,
 а подписи к контролу DatePicker в том же проекте ICSSoft.STORMNET.Web.AjaxControls в файле Resources/DatePicker.resx, и т.д.
 
-Если на прикладном уровне требуется переопределить подпись к тому или иному элементу контрола, достаточно в прикладном проекте создать файл со строковыми ресурсами, с именем соответствующим контролу,
-и переопределить в нем желаемый строковый ресурс.
+Если на прикладном уровне требуется переопределить подпись к тому или иному элементу контрола, достаточно в прикладном проекте создать файл со строковыми ресурсами, с именем соответствующим контролу, и переопределить в нем желаемый строковый ресурс.  
 Например, чтобы в контроле WebObjectListView изменить подпись к кнопке обновления с "Обновить" на "Обновить список", достаточно в прикладном проеекте создать файл `Resources/WebObjectListView.resx`
 и определить в нем строковый ресурс "ToolbarButtonRefreshCaption" со значением "Обновить список".
 Актуальный перечень доступных `*.resx-файлов` и их содержимое лучше смотреть в проекте `ICSSoft.STORMNET.Web.AjaxControls` в каталоге `Resources`.
 
-## Разработка контролов так, чтобы их подписи были кастомизируемы
-Для того, чтобы подписи разрабатываемых контролов были кастомизируемы (при помощи ранее описанного подхода),
-в designer-e генерируемых `*.resx-файлов` необходимо заменять использование стандартного `ResourceManager-a ` на `ICSSoft.STORMNET.Web.Tools.Resources.ResourceManger`.
+## Разработка контролов с кастомизируемыми подписями
 
-Например в WebObjectListView.Designer.cs, соответствующем файлу WebObjectListView.resx, следующий сгенерированный код:
-```cs
+Для того, чтобы подписи разрабатываемых контролов были кастомизируемы (при помощи ранее описанного подхода), в designer-e генерируемых `*.resx-файлов` необходимо заменять использование стандартного `ResourceManager-a ` на `ICSSoft.STORMNET.Web.Tools.Resources.ResourceManger`.
+
+Например в `WebObjectListView.Designer.cs`, соответствующем файлу `WebObjectListView.resx`, следующий сгенерированный код:
+
+```csharp
 private static global::System.Resources.ResourceManager resourceMan;
         
 private static global::System.Globalization.CultureInfo resourceCulture;
@@ -50,8 +48,10 @@ internal static global::System.Resources.ResourceManager ResourceManager {
 }
 
 ```
+
 был заменен на:
-```cs
+
+```csharp
 private static ICSSoft.STORMNET.Web.Tools.Resources.ResourceManager resourceManager;
 
 private static global::System.Globalization.CultureInfo resourceCulture;

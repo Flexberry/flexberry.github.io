@@ -3,7 +3,7 @@ title: Передача параметров на LookUp-форму в Web-пр�
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
-permalink: ru/fa_look-up-form-send-params.html
+permalink: ru/fa_lookup-form-send-params.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

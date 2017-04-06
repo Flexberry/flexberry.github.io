@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit, Windows UI (формы)
 toc: true
 permalink: ru/fa_audit-web-forms.html
-folder: products/flexberry-aspnet/audit/
 lang: ru
-
 ---
 
 [Web-формы](fa_tech-forms-web.html) [аудита](audit-web.html) были разработаны для отображения объектов, используемых [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html). Формы расположены в сборке "ICSSoft.STORMNET.Web.AjaxControls.dll".
@@ -21,12 +19,12 @@ lang: ru
 Чтобы просматривать данные по всей системе, достаточно просто подключить форму AuditEntityL к проекту (~/Forms/Audit/AuditEntityL.aspx).
 Для просмотра данных по конкретному объекту необходимо передать форме дополнительно параметр AuPK, где указан [первичный ключ объект](fo_primary-keys-objects.html), чей аудит необходимо отобразить. 
 
-Например, адрес может быть следующим: http://ru:6158/Forms/Audit/AuditEntityL.aspx?AuPK={1843fc3c-b4fc-4a37-bf6e-60a0ea84aead}.
+Например, адрес может быть следующим: http://some:1111/Forms/Audit/AuditEntityL.aspx?AuPK={1843fc3c-b4fc-4a37-bf6e-60a0ea84aead}.
 
 **[Форма редактирования](fa_editform.html)** позволяет просмотреть детальную информацию по конкретной записи аудита. На данной форме присутствует таблица, где представлена информация об изменении полей объекта при проведении аудируемой операции. 
 Отдельной строкой идёт изменение [первичного ключа объекта](fo_primary-keys-objects.html) (такая строка формируется при изменении детейла или мастера). Доступно два режима отображения этих строчек: они совсем не отображаются или они скрываются в древовидную структуру (второй вариант был реализован в [старой версии аудита](audit.html)). По умолчанию реализуется первый вариант, но это можно изменить следующей инициализацией:
 
-```cs
+```csharp
 AuditService.Current.ShowPrimaryKey = true;
 ```
 
@@ -36,7 +34,7 @@ AuditService.Current.ShowPrimaryKey = true;
 
 **Списковая форма** AuditEntityByObjectsL (~/Forms/Audit/AuditEntityByObjectsL.aspx) позволяет просматривать сведения по объектам, над которыми производились аудируемые действия.
 
-Форма содержит [следующие поля](audit-web.html):
+Форма содержит [следующие поля](fa_audit-web.html):
 
 * Редактирование - дата последнего изменения объекта (создание, изменение или удаление).
 * Редактор - имя пользователя, который последний изменял объект.
@@ -49,7 +47,7 @@ AuditService.Current.ShowPrimaryKey = true;
 
 **Форма редактирования** AuditEntityByObjectsE позволяет просмотреть детальную информацию по конкретному аудируемому объекту.
 
-Форма содержит [следующие поля](audit-web.html):
+Форма содержит [следующие поля](fa_audit-web.html):
 
 * Идентификатор - идентификатор аудируемого объекта (обычно [первичный ключ](fo_primary-keys-objects.html)).
 * Тип объекта - тип аудируемого объекта.
@@ -72,7 +70,7 @@ AuditService.Current.ShowPrimaryKey = true;
 
 Чтобы отключить отображение записей, содержащих [первичные ключи](fo_primary-keys-objects.html) [мастеров](fd_master-association.html) и [детейлов](fo_detail-associations-properties.html), можно выполнить следующую настройку:
 
-```cs
+```csharp
 AuditService.Current.ShowPrimaryKey = false;
 ```
 
@@ -80,7 +78,7 @@ AuditService.Current.ShowPrimaryKey = false;
 
 {% include warning.html content="При использовании веб-форм аудита необходимо в файле WebControlProvider.xml добавить следующую информацию:" %}
 
-```cs 
+```cs harp
 <customproperty class="AuditEntity" property="ObjectType.Name">
   <control typename="NewPlatform.Flexberry.Web.Controls.DataObjectTypeCaption, ICSSoft.STORMNET.Web.AjaxControls" property="Value" codefile="" />
 </customproperty>

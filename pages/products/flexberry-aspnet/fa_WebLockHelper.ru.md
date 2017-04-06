@@ -4,25 +4,9 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_web-lock-helper.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:60%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-&nbsp;&nbsp;&nbsp;'''WebLockHelper'''
-
-* '''Платформа''': [FlexberryASP.NET](flexberry-a-s-p-n-e-t.html).
-* '''Компонент''': [Web-контролы и web-компоненты](web-controls.html).
-* '''Предназначение''': класс для работы с блокировками объектов данных в web-приложениях.
-
-</td>
-</tr></tbody></table></a>
-</div>
-
-# WebLockHelper
 `ICSSoft.STORMNET.Web.Tools.WebLockHelper` - класс для работы с web-блокировками объектов данных в веб-приложениях. Использует дату и время жизни блокировки для определения ее актуальности, блокировки хранит в БД.
 
 ## Интерфейс

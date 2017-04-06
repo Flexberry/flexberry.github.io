@@ -4,10 +4,9 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_context-helper.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
+
 ContextHelper нужен для того, чтобы подключать скриты (js), стили (css) в C#-коде.
 
 {% include warning.html content="ContextHelper устарел и не должен использоваться в новых проектах. Вместо него следует использовать [PageContentManager](fa_page-content-manager.html)." %}

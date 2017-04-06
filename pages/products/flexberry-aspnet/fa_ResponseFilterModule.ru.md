@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_response-filter-module.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 

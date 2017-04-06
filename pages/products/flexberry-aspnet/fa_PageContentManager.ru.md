@@ -4,11 +4,9 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_page-content-manager.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-# PageContentManager
 Класс `PageContentManager` предназначен для подключения скритов (js) и стилей (css) в C#-коде.
 
 Является заменой устаревшего [ContextHelper](context-helper.html). Во всех новых проектах следует использовать именно его.

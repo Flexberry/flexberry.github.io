@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Audit, Flexberry Designer
 toc: true
 permalink: ru/fa_audit-web-example.html
-folder: products/flexberry-aspnet/audit/
 lang: ru
-
 ---
 
 {% include note.html content="Если перегенерировать проект нет желания\возможности
