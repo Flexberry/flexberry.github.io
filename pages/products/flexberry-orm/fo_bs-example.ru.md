@@ -8,7 +8,7 @@ permalink: ru/fo_bs-example.html
 
 ## Бизнес-сервер
 
-Что такое бизнес-сервер и зачем он нужен можно прочитать **[здесь](fo_business--servers--wrapper--business--facade.html)**
+Что такое бизнес-сервер и зачем он нужен можно прочитать **[здесь](fo_business-servers-wrapper-business-facade.html)**
 
 ## Пример
 
@@ -57,7 +57,7 @@ permalink: ru/fo_bs-example.html
 
 Откроем файл бизнес-сервера `КредитБС.cs`
 
-Обратим внимание на [метод `OnUpdateКредит`, принимающий в качестве параметра объект типа `Кредит` и возвращающий объект типа `DataObject[]`](fo_b-s-example.html)
+Обратим внимание на [метод `OnUpdateКредит`, принимающий в качестве параметра объект типа `Кредит` и возвращающий объект типа `DataObject[]`](fo_bs-example.html)
 
 ```cs
         public virtual ICSSoft.STORMNET.DataObject[] OnUpdateКредит(IIS.Кредиты.Кредит UpdatedObject)
@@ -115,7 +115,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Created)
 }
 ```
 
-**Примечание**: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](fo_func-e-q.html).
+**Примечание**: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](fo_func-eq.html).
 
 **Примечание**: Обратите внимание на первую проверку **[UpdatedObject.GetStatus() == ObjectStatus.Created](fo_object-status-and-loading-state.html)**, она позволяет нам отсечь случаи обновления или удаления объекта. 
 
