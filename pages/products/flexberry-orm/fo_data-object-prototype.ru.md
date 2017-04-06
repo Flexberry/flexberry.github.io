@@ -8,7 +8,7 @@ permalink: ru/fo_data-object-prototype.html
 
 ## Методы для прототипизации DataObject
 
-Для прототипизации [`DataObject`](fo_dataobject.html) существует метод `Prototyping`.
+Для прототипизации [`DataObject`](fo_data-object.html) существует метод `Prototyping`.
 
 ```cs
 /// <summary>

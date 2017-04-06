@@ -69,7 +69,7 @@ permalink: ru/fo_business-servers-wrapper-business-facade.html
 
 * [Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)](otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html)
 * [Пример использования бизнес-сервера](fo_bs-example.html)
-* [Проверка валидности изменений данных объекта в бизнес-сервере](fo_b-s-unique-data-check.html)
+* [Проверка валидности изменений данных объекта в бизнес-сервере](fo_bs-unique-data-check.html)
 * [Особенности задания значения по умолчанию](fo_features-of-dafault-value-assignment.html) (в данной статье также описано, как получить бизнес-сервер класса)
 
 ----

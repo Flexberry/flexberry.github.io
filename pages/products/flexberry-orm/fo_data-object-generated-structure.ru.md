@@ -6,7 +6,7 @@ toc: true
 permalink: ru/fo_data-object-generated-structure.html
 ---
 
-Все классы данных наследуются от базового [`DataObject`](fo_dataobject.html), обеспечивающего основные манипуляции:
+Все классы данных наследуются от базового [`DataObject`](fo_data-object.html), обеспечивающего основные манипуляции:
 
 * [статусы](fo_object-status-and-loading-state.html), 
 * хранение данных, 

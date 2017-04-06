@@ -46,7 +46,7 @@ permalink: ru/fo_business-task-monitor.html
 
 ## Перечень стандартных мониторов задач
 
-[Перечень стандатных мониторов задач.](fo_BusinessTaskMonitorsInOrm.ru)
+[Перечень стандатных мониторов задач.](fo_business-task-monitors-in-orm.ru)
 
 ## Как создать свой монитор задач
 

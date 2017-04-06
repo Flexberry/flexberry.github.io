@@ -3,7 +3,7 @@ title: FuncNEQ
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/fo_func-n-e-q.html
+permalink: ru/fo_func-neq.html
 ---
 
 FuncNEQ = Not Equal
@@ -71,6 +71,6 @@ var credits = DataServiceProvider.DataService.LoadObjects(lcs);
 ## См. также
 
 [Перечень функций](fo_function-list.html)
-[FuncEQ](fo_func-e-q.html)
+[FuncEQ](fo_func-eq.html)
 
 

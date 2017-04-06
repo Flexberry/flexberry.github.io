@@ -6,7 +6,7 @@ toc: true
 permalink: ru/fo_create-multiple-details-example.html
 ---
 
-* Полный список примеров кода [Flexberry ORM](fo_flexberry-o-r-m.html) находится в статье ["Примеры кода"](fo_code-samples.html).
+* Полный список примеров кода [Flexberry ORM](fo_flexberry-orm.html) находится в статье ["Примеры кода"](fo_code-samples.html).
 
 ## Создание и сохранение объекта с большим количеством детейлов
 

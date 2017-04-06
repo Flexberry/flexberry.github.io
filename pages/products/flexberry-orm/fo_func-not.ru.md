@@ -12,7 +12,7 @@ FuncNot = Not
 
 ## Пример
 
-[FuncNEQ](fo_func-n-e-q.html) = FuncNOT ( [FuncEQ](fo_func-e-q.html) )
+[FuncNEQ](fo_func-neq.html) = FuncNOT ( [FuncEQ](fo_func-eq.html) )
 [FuncL](fo_compare-functions.html) = FuncNOT ( [FuncGEQ](fo_compare-functions.html) )
 [FuncLEQ](fo_compare-functions.html) = FuncNOT ( [FuncG](fo_compare-functions.html) )
 

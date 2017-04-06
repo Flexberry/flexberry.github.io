@@ -139,19 +139,19 @@ var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
 
 ## Список функций
 
-* [FuncNOT](fo_func-n-o-t.html)
+* [FuncNOT](fo_func-not.html)
 * [FuncIsNull](fo_func-is-null.html)
-* [FuncEQ](fo_func-e-q.html)
-* [FuncNEQ](fo_func-n-e-q.html)
+* [FuncEQ](fo_func-eq.html)
+* [FuncNEQ](fo_func-neq.html)
 * [FuncG](fo_compare-functions.html)
 * [FuncGEQ](fo_compare-functions.html)
 * [FuncL](fo_compare-functions.html)
 * [FuncLEQ](fo_compare-functions.html)
-* [FuncIN](fo_func-i-n.html)
-* [FuncAND](fo_func-a-n-d.html)
-* [FuncOR](fo_func-o-r.html)
+* [FuncIN](fo_func-in.html)
+* [FuncAND](fo_func-and.html)
+* [FuncOR](fo_func-or.html)
 * [FuncLike](fo_func-like.html)
 * [FuncBETWEEN](fo_func-between.html)
-* [funcSQL](fo_func-s-q-l.html)
+* [funcSQL](fo_func-sql.html)
 
 

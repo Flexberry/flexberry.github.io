@@ -78,6 +78,6 @@ namespace CustomTaskMon
 
 {% include important.html content="Сборка с монитором задач должна обязательно находиться в том же каталоге, что и приложение." %}
 
-Компоненты [Flexberry ORM](fo_flexberry-o-r-m.html) используют [монитор](fo_business-task-monitor.html)  (например, [сервис данных](fo_data-service.html) пишет туда запросы). Так что, при реализации этого примера, в `Windows Application Log` появятся записи, соответствующие чтению списка:
+Компоненты [Flexberry ORM](fo_flexberry-orm.html) используют [монитор](fo_business-task-monitor.html)  (например, [сервис данных](fo_data-service.html) пишет туда запросы). Так что, при реализации этого примера, в `Windows Application Log` появятся записи, соответствующие чтению списка:
 
 ![](/images/pages/products/flexberry-orm/creating-and-connection-businesstaskmonitor/business-task-monitor.jpg)

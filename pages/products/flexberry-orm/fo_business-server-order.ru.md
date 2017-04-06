@@ -6,7 +6,7 @@ toc: true
 permalink: ru/fo_business-server-order.html
 ---
 
-Следует учесть, что в [бизнес-сервере](fo_business--servers--wrapper--business--facade.html) может быть вызвано обновление объекта не через возвращаемый массив, а отдельным вызовом [сервиса данных](fo_data-service.html). В этом случае, надо учесть то, что [бизнес-серверы](fo_business--servers--wrapper--business--facade.html) будут вызываться для этого объекта отдельно.
+Следует учесть, что в [бизнес-сервере](fo_business-servers-wrapper-business-facade.html) может быть вызвано обновление объекта не через возвращаемый массив, а отдельным вызовом [сервиса данных](fo_data-service.html). В этом случае, надо учесть то, что [бизнес-серверы](fo_business-servers-wrapper-business-facade.html) будут вызываться для этого объекта отдельно.
 
 ### Агрегатор, детейлы
 
@@ -57,7 +57,7 @@ public class Class1:Class2, Interface1, Interface2
 * бизнес-сервер, привязанный к Interface1
 * бизнес-сервер, привязанный к Class1
 
-{% include note.html content="Если некоторый интерфейс встретится несколько раз, то [бизнес-сервер](fo_business--servers--wrapper--business--facade.html) для него будет выполнен только один раз в соответствии с уровнем самого дальнего предка." %}
+{% include note.html content="Если некоторый интерфейс встретится несколько раз, то [бизнес-сервер](fo_business-servers-wrapper-business-facade.html) для него будет выполнен только один раз в соответствии с уровнем самого дальнего предка." %}
 
 ### Правила обновления объекта данных
 

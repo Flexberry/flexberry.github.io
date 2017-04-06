@@ -32,7 +32,7 @@ lcs.LimitFunction = ldef.GetFunction(ldef.funcAND,
 WHERE ( "abc" = 1 AND "def" = 2)
 ```
 
-{% include note.html content="Названия атрибутов необходимо заключать в кавычки, это поможет [Flexberry ORM](fo_flexberry-o-r-m.html) корректно обрабатывать [ограничение](fo_limit-function.html)." %}
+{% include note.html content="Названия атрибутов необходимо заключать в кавычки, это поможет [Flexberry ORM](fo_flexberry-orm.html) корректно обрабатывать [ограничение](fo_limit-function.html)." %}
 
 
 

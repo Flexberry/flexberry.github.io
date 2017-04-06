@@ -16,11 +16,11 @@ permalink: ru/fo_external-lang-def.html
 
 ### Функции ограничения на существование детейлов
 
-* [funcExistExact](fo_exist--exist-exact--exist-all--exist-all-exact.html)
-* [funcExistAllExact](fo_exist--exist-exact--exist-all--exist-all-exact.html)
-* [funcExist](fo_exist--exist-exact--exist-all--exist-all-exact.html)
+* [funcExistExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
+* [funcExistAllExact](fo_exist-exist-exact-exist-all-exist-all-exact.html)
+* [funcExist](fo_exist-exist-exact-exist-all-exist-all-exact.html)
 * [funcExistDetails](fo_exist-detals.html)
-* [funcExistAll](fo_exist--exist-exact--exist-all--exist-all-exact.html)
+* [funcExistAll](fo_exist-exist-exact-exist-all-exist-all-exact.html)
 
 ### Функции ограничения на значения детейлов
 

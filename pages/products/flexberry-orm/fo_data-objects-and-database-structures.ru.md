@@ -7,7 +7,7 @@ permalink: ru/fo_data-objects-and-database-structures.html
 ---
 
 Большинство [сервисов данных](fo_data-service.html) обеспечивают работу с реляционным хранилищем.
-Объектные данные [Flexberry ORM](fo_flexberry-o-r-m.html) хранит следующим образом:
+Объектные данные [Flexberry ORM](fo_flexberry-orm.html) хранит следующим образом:
 
 * Каждый класс — отдельная таблица. 
 * Каждый атрибут — отдельное поле в таблице.
