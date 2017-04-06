@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_base-theme-structure.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 В этой статье будет описана базовая тема web-шаблона, ее назначение, а также ее связь с другими темами. Структура тем описана [здесь](fa_theme-structure.html).

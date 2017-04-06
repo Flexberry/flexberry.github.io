@@ -78,7 +78,7 @@ AuditService.Current.ShowPrimaryKey = false;
 
 {% include warning.html content="При использовании веб-форм аудита необходимо в файле WebControlProvider.xml добавить следующую информацию:" %}
 
-```cs harp
+```csharp
 <customproperty class="AuditEntity" property="ObjectType.Name">
   <control typename="NewPlatform.Flexberry.Web.Controls.DataObjectTypeCaption, ICSSoft.STORMNET.Web.AjaxControls" property="Value" codefile="" />
 </customproperty>

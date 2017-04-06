@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_few-save-buttons-editform.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 Данная статья описывает алгоритм добавления нескольких кнопок сохранения на [web-форму редактирования](fa_editform.html).

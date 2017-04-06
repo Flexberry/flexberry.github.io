@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_custom-form-design.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 HTML код в списковых web-формах и [web-формах редактирования](fa_editform.html) разделены на основные блоки.

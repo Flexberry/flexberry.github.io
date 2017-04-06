@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_footer-stick-to-bottom-of-page.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 В тег body (при использовании ASP.NET в тег form) помещаются блоки с классами ‘wrapper’ и ‘footer’. В самом конце содержимого тега с классом ‘wrapper’ вставляется пустой блок с классом ‘push’ — он служит для создания пустого пространства между этими блоками, когда содержимое ‘wrapper’ полностью помещается в область экрана.

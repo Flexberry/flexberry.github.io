@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_change-theme.html
-folder: products/flexberry-aspnet/themes/
 lang: ru
-
 ---
 
 Для того чтобы правильно дорабатывать стили необходимо выполнить следующее:

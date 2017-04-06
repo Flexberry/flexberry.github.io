@@ -5,7 +5,6 @@ keywords: Flexberry ASP-NET, JavaScript API, Web UI (Контролы)
 toc: true
 permalink: ru/fa_date-picker.html
 lang: ru
-
 ---
 
 **DataPicker** - web-контрол для выбора даты и времени.

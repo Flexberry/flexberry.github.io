@@ -4,11 +4,9 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, JavaScript API
 toc: true
 permalink: ru/fa_javascript-api.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-# JS API
 JavaScript API основано на библиотеке jQuery и представляет собой набор плагинов для неё.
  	
 Всю систему клиентского JS API можно разделить на несколько основны групп.
@@ -26,7 +24,6 @@ JavaScript API основано на библиотеке jQuery и предст
 
 3.`API форм` (набор операций для работы с основными технологическими web-формами).
 * [jQuery.icsEditForm](fa_editform.html)
-
 
 # Конвенция именования
 

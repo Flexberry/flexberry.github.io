@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_choose-theme.html
-folder: products/flexberry-aspnet/themes/
 lang: ru
-
 ---
 
 Темы приложения отвечают за его внешний вид. При изменении темы изменяется:

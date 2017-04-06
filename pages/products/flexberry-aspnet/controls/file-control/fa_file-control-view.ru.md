@@ -5,7 +5,6 @@ keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_file-control-view.html
 lang: ru
-
 ---
 
 ## Описание

@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
 permalink: ru/fa_authentication-adapter.html
-folder: products/flexberry-aspnet/security/
 lang: ru
-
 ---
 
 ## AuthenticationAdapter

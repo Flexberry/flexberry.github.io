@@ -3,7 +3,7 @@ title: Настройка аудита в Flexberry Designer
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry Audit, Flexberry Designer
 toc: true
-permalink: ru/fd_audit-setup.html
+permalink: ru/fo_audit-setup.html
 folder: products/flexberry-orm/audit/
 lang: ru
 ---
@@ -14,9 +14,9 @@ lang: ru
 ### Настройка базы аудита
 База аудита может храниться как в отдельной базе, так и в базе приложения.
 
-Настройка совершается на форме настройки [MS SQL Direct Generator](configure-mssql-server-direct-generator.html) (см. пункт БД аудита в БД приложения). Также часть настроек базы данных находится в свойствах класса со стереотипом [Application](fd_application.html).
+Настройка совершается на форме настройки [MS SQL Direct Generator](fd_configure-mssql-server-generator.html) (см. пункт БД аудита в БД приложения). Также часть настроек базы данных находится в свойствах класса со стереотипом [Application](fd_application.html).
 
-{% include note.html content="При использовании базы приложения в качестве хранилища для аудита `рекомедуется` установить галочку `Не удалять существующие таблицы` на форме настройки [MS SQL Direct Generator](configure-mssql-server-direct-generator.html), чтобы избежать проблем с приведением в соответствие базы данных и модели приложения." %}
+{% include note.html content="При использовании базы приложения в качестве хранилища для аудита `рекомедуется` установить галочку `Не удалять существующие таблицы` на форме настройки [MS SQL Direct Generator](fd_configure-ms-sql-generator.html), чтобы избежать проблем с приведением в соответствие базы данных и модели приложения." %}
 
 ### Настройка стадии
 
@@ -98,5 +98,5 @@ lang: ru
 * [Пример подключения аудита к существующему Web-приложению с использованием перегенерации](fa_audit-web-example.html)
 
 В случае, если нет желания или возможности перегенерировать проект, можно воспользоваться следующими инструкциями:
-* [Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта](efs_audit-web-example-manual.html)
+* [Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта](fa_audit-web-example-manual.html)
 * [Пример подключения аудита к существующему Win-приложению без использования перегенерации проекта](efs_audit-win-example-manual.html)

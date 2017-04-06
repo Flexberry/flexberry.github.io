@@ -4,10 +4,9 @@ sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
 permalink: ru/fa_add-extra-logic-editform.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
+
 ## Обработка события сохранения объекта на клиенте
 
 В клиентских обработчиках событий нажатия на кнопки сохранения, расположенных на Web-форме редактирования, перед отправкой постбэка и сохранением объекта выполняется проверка редактируемых данных в технологическом коде (валидаторы контролов, [AjaxGroupEdit](fa_ajax-group-edit.html)).

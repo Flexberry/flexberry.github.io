@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_base-edit-form.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 От **BaseEditForm** наследуются все [web-формы редактирования](fa_editform.html). Данная форма не является технологической, ее можно изменять в зависимости от требований проекта.

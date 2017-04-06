@@ -5,7 +5,6 @@ keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
 permalink: ru/fa_decimal-textbox.html
 lang: ru
-
 ---
 
 ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox - это [web-контрол](fa_web-controls.html), представляющий собой TextBox, на который наложен фильтр ввода для валидации положительных вещественных чисел в форме десятичной дроби. Работа с ним аналогична работе с обычным TextBox'ом, так как это его наследник. Для разделения целой и дробной части используется точка или запятая.
