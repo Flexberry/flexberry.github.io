@@ -29610,7 +29610,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 147,
+            "line": 97,
+            "description": "Current model name.",
+            "itemtype": "property",
+            "name": "modelName",
+            "type": "{String}",
+            "default": "undefined",
+            "class": "ColsconfigDialogContentComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
+            "line": 157,
             "description": "Invert column visibility (On/Off)",
             "itemtype": "method",
             "name": "actions.invertVisibility",
@@ -29626,7 +29637,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 168,
+            "line": 178,
             "description": "Set sort order for column: descending ascending, none) and eneble/disable sort priority",
             "itemtype": "method",
             "name": "actions.setSortOrder",
@@ -29642,7 +29653,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 209,
+            "line": 219,
             "description": "Set sort priority for column",
             "itemtype": "method",
             "name": "actions.setSortPriority",
@@ -29658,7 +29669,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 265,
+            "line": 275,
             "description": "Increase column in list (exchange previous column)",
             "itemtype": "method",
             "name": "actions.rowUp",
@@ -29674,7 +29685,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 298,
+            "line": 308,
             "description": "Decrease column in list (exchange  next column)",
             "itemtype": "method",
             "name": "actions.rowDown",
@@ -29690,7 +29701,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 334,
+            "line": 344,
             "description": "Apply settings specified in the interface as DEFAULT values",
             "itemtype": "method",
             "name": "actions.apply",
@@ -29699,7 +29710,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 369,
+            "line": 383,
             "description": "Save named settings specified in the interface as named values",
             "itemtype": "method",
             "name": "actions.saveColsSetting",
@@ -29708,7 +29719,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 407,
+            "line": 421,
             "description": "Column width is changed",
             "itemtype": "method",
             "name": "actions.widthChanged",
@@ -29717,7 +29728,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 416,
+            "line": 430,
             "description": "Config name is defined",
             "itemtype": "method",
             "name": "actions.setConfigName",
@@ -29726,7 +29737,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 425,
+            "line": 439,
             "description": "Per page value is changed",
             "itemtype": "method",
             "name": "actions.perPageChanged",
@@ -29735,7 +29746,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 434,
+            "line": 448,
             "description": "DetSeparateCols value is changed",
             "itemtype": "method",
             "name": "actions.detSeparateColsChange",
@@ -29744,7 +29755,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 443,
+            "line": 457,
             "description": "DetSeparateRows value is changed",
             "itemtype": "method",
             "name": "actions.detSeparateRowsChange",
@@ -29753,7 +29764,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 453,
+            "line": 467,
             "description": "Gets current query for export excel",
             "itemtype": "method",
             "name": "_getCurrentQuery",
@@ -34772,21 +34783,21 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1111,
+            "line": 1105,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "FlexberryTextarea",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1132,
+            "line": 1126,
             "description": "Called when the element of the view is going to be destroyed.\nFor more information see [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "FlexberryTextarea",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1145,
+            "line": 1139,
             "description": "It reinits plugin for column resize.\nReinit is important for proper position of resize elements.",
             "itemtype": "method",
             "name": "_reinitResizablePlugin",
@@ -34797,7 +34808,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1193,
+            "line": 1187,
             "description": "It handles the end of getting user setting with column widths.",
             "itemtype": "method",
             "name": "_setColumnWidths",
@@ -34815,7 +34826,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1261,
+            "line": 1255,
             "description": "Table columns related to current model projection.",
             "itemtype": "property",
             "name": "columns",
@@ -34826,7 +34837,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1346,
+            "line": 1340,
             "description": "It handles the end of column resize.\nNew column widths are send to user settings service for saving.",
             "itemtype": "method",
             "name": "_afterColumnResize",
@@ -34844,7 +34855,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1377,
+            "line": 1371,
             "description": "This method returns property name for column.\nProperty name is got from atribute `data-olv-header-property-name` of column header.\nIf property name won't be found, exeption will be thrown.",
             "itemtype": "method",
             "name": "_getColumnPropertyName",
@@ -34866,7 +34877,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1400,
+            "line": 1394,
             "description": "Set current columns width for currentController.",
             "itemtype": "method",
             "name": "_setCurrentColumnsWidth",
@@ -34877,7 +34888,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1424,
+            "line": 1418,
             "description": "Generate the columns.",
             "itemtype": "method",
             "name": "_generateColumns",
@@ -34888,14 +34899,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1481,
+            "line": 1475,
             "description": "Create the key from locales.",
             "class": "FlexberryTextarea",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1509,
+            "line": 1503,
             "description": "Create the column.",
             "itemtype": "method",
             "name": "_createColumn",
@@ -34906,7 +34917,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1565,
+            "line": 1559,
             "description": "Add filter parameters for column.",
             "itemtype": "method",
             "name": "_addFilterForColumn",
@@ -34932,7 +34943,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1606,
+            "line": 1600,
             "description": "Return attribute of model.",
             "itemtype": "method",
             "name": "_getAttribute",
@@ -34957,7 +34968,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1633,
+            "line": 1627,
             "description": "Return available conditions for filter.",
             "itemtype": "method",
             "name": "_conditionsByType",
@@ -34977,7 +34988,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1658,
+            "line": 1652,
             "description": "Return object with parameters for component.",
             "itemtype": "method",
             "name": "_getFilterComponent",
@@ -35002,7 +35013,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1719,
+            "line": 1713,
             "description": "Refresh list with the entered filter.",
             "itemtype": "method",
             "name": "_refreshList",
@@ -35020,7 +35031,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1749,
+            "line": 1743,
             "description": "Get the row by key.",
             "itemtype": "method",
             "name": "_getRowByKey",
@@ -35031,7 +35042,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1767,
+            "line": 1761,
             "description": "Get the key of model.",
             "itemtype": "method",
             "name": "_getModelKey",
@@ -35042,7 +35053,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1782,
+            "line": 1776,
             "description": "Remove the model with key.",
             "itemtype": "method",
             "name": "_removeModelWithKey",
@@ -35053,7 +35064,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1795,
+            "line": 1789,
             "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
             "itemtype": "method",
             "name": "_addModel",
@@ -35075,7 +35086,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1831,
+            "line": 1825,
             "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
             "itemtype": "method",
             "name": "_addRow",
@@ -35093,7 +35104,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1856,
+            "line": 1850,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -35114,7 +35125,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1880,
+            "line": 1874,
             "description": "Delete the record.",
             "itemtype": "method",
             "name": "_deleteRecord",
@@ -35137,7 +35148,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1919,
+            "line": 1913,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -35164,7 +35175,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1942,
+            "line": 1936,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -35182,7 +35193,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1960,
+            "line": 1954,
             "description": "Set the active record.",
             "itemtype": "method",
             "name": "_setActiveRecord",
@@ -35200,7 +35211,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 1985,
+            "line": 1979,
             "description": "It observes changes of flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}searchForContentChange{{/crossLink}}.\n\nIf flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} changes its value\nobserver on component content is set otherwise it is removed.",
             "itemtype": "method",
             "name": "_searchForContentChange",
@@ -35211,7 +35222,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2003,
+            "line": 1997,
             "description": "It observes changes of model's data that are displayed on component\nif flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} is enabled.\n\nProperty changing displayes automatically.\nComponent compares current detail array with used on component,\nremoves deleted and marked as deleted on model level records, adds created on model level records.",
             "itemtype": "method",
             "name": "_contentDidChange",
@@ -35222,7 +35233,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2056,
+            "line": 2050,
             "description": "Get attributes name from model.",
             "itemtype": "method",
             "name": "_getAttributesName",
@@ -35233,7 +35244,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2073,
+            "line": 2067,
             "description": "Flag used to display filters.",
             "itemtype": "property",
             "name": "showFilters",
@@ -35244,7 +35255,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2082,
+            "line": 2076,
             "description": "Route for edit form by click row.",
             "itemtype": "property",
             "name": "editFormRoute",
@@ -35254,7 +35265,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2090,
+            "line": 2084,
             "description": "Flag to use creation button at toolbar.",
             "itemtype": "property",
             "name": "createNewButton",
@@ -35265,7 +35276,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2099,
+            "line": 2093,
             "description": "Flag to specify whether the create button is enabled.",
             "itemtype": "property",
             "name": "enableCreateNewButton",
@@ -35276,7 +35287,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2108,
+            "line": 2102,
             "description": "Flag to use refresh button at toolbar.",
             "itemtype": "property",
             "name": "refreshButton",
@@ -35287,7 +35298,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2117,
+            "line": 2111,
             "description": "Flag to use delete button at toolbar.",
             "itemtype": "property",
             "name": "deleteButton",
@@ -35298,7 +35309,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2126,
+            "line": 2120,
             "description": "Flag to use colsConfigButton button at toolbar.",
             "itemtype": "property",
             "name": "colsConfigButton",
@@ -35310,7 +35321,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2136,
+            "line": 2130,
             "description": "Flag indicates whether to show exportExcelButton button at toolbar.",
             "itemtype": "property",
             "name": "exportExcelButton",
@@ -35321,7 +35332,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2145,
+            "line": 2139,
             "description": "Flag to use filter button at toolbar.",
             "itemtype": "property",
             "name": "filterButton",
@@ -35332,7 +35343,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2154,
+            "line": 2148,
             "description": "Used to specify default 'filter by any match' field text.",
             "itemtype": "property",
             "name": "filterText",
@@ -35343,7 +35354,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2163,
+            "line": 2157,
             "description": "If this option is enabled, search query will be split by words, search will be on lines that contain any word of search query.",
             "itemtype": "property",
             "name": "filterByAnyWord",
@@ -35354,7 +35365,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2172,
+            "line": 2166,
             "description": "If this option is enabled, search query will be split by words, search will be on lines that contain each of search query word.",
             "itemtype": "property",
             "name": "filterByAllWords",
@@ -35365,7 +35376,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2181,
+            "line": 2175,
             "description": "The flag to specify whether the delete button is enabled.",
             "itemtype": "property",
             "name": "enableDeleteButton",
@@ -35376,7 +35387,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2190,
+            "line": 2184,
             "description": "Name of action to send out, action triggered by click on user button.",
             "itemtype": "property",
             "name": "customButtonAction",
@@ -35387,7 +35398,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2199,
+            "line": 2193,
             "description": "Array of custom buttons of special structures [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...].",
             "example": [
                 "\n  ```\n  {\n    buttonName: '...', // Button displayed name.\n    buttonAction: '...', // Action that is called from controller on this button click (it has to be registered at component).\n    buttonClasses: '...' // Css classes for button.\n  }\n  ```"
@@ -35400,7 +35411,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2216,
+            "line": 2210,
             "itemtype": "property",
             "name": "listNamedUserSettings",
             "class": "FlexberryTextarea",
@@ -35408,7 +35419,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2230,
+            "line": 2224,
             "itemtype": "property",
             "name": "listNamedExportSettings",
             "class": "FlexberryTextarea",
@@ -35416,7 +35427,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2247,
+            "line": 2241,
             "itemtype": "property",
             "name": "colsConfigMenu",
             "type": "Service",
@@ -35425,7 +35436,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2259,
+            "line": 2253,
             "itemtype": "property",
             "name": "colsSettingsItems",
             "readonly": "",
@@ -35434,7 +35445,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2320,
+            "line": 2314,
             "itemtype": "property",
             "name": "exportExcelItems",
             "readonly": "",
@@ -35443,7 +35454,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2363,
+            "line": 2357,
             "description": "Flag shows enable-state of delete button.\nIf there are selected rows button is enabled. Otherwise - not.",
             "itemtype": "property",
             "name": "isDeleteButtonEnabled",
@@ -35454,7 +35465,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2373,
+            "line": 2367,
             "description": "Stores the text from \"Filter by any match\" input field.",
             "itemtype": "property",
             "name": "filterByAnyMatchText",
@@ -35464,7 +35475,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2381,
+            "line": 2375,
             "description": "Caption to be displayed in info modal dialog.\nIt will be displayed only if some info occurs.",
             "itemtype": "property",
             "name": "_infoModalDialogCaption",
@@ -35477,7 +35488,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2392,
+            "line": 2386,
             "description": "Content to be displayed in info modal dialog.\nIt will be displayed only if some info occurs.",
             "itemtype": "property",
             "name": "_infoModalDialogContent",
@@ -35490,7 +35501,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2403,
+            "line": 2397,
             "description": "Selected jQuery object, containing HTML of error modal dialog.",
             "itemtype": "property",
             "name": "_errorModalDialog",
@@ -35503,7 +35514,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2413,
+            "line": 2407,
             "description": "Shows info modal dialog.",
             "itemtype": "method",
             "name": "showInfoModalDialog",
@@ -35528,7 +35539,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpleolv.js",
-            "line": 2435,
+            "line": 2429,
             "description": "Event handler for \"row has been selected\" event in objectlistview.",
             "itemtype": "method",
             "name": "_rowSelected",
@@ -38194,14 +38205,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 625,
+            "line": 627,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "OlvToolbar",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 638,
+            "line": 640,
             "description": "Event handler for \"row has been selected\" event in objectlistview.",
             "itemtype": "method",
             "name": "_rowSelected",
@@ -40674,6 +40685,17 @@
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
             "line": 46,
+            "description": "Result predicate with all restrictions for olv.",
+            "itemtype": "property",
+            "name": "resultPredicate",
+            "type": "BasePredicate",
+            "default": "null",
+            "class": "FlexberryObjectlistviewOnEditFormControllerMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
+            "line": 55,
             "description": "Total count of FOLV records.",
             "itemtype": "property",
             "name": "recordsTotalCount",
@@ -40684,7 +40706,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 66,
+            "line": 75,
             "description": "Content of FOLV on this edit form.",
             "itemtype": "property",
             "name": "customFolvContent",
@@ -40695,7 +40717,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 142,
+            "line": 151,
             "description": "Dictionary with sorting data related to properties.",
             "itemtype": "property",
             "name": "computedSorting",
@@ -40706,7 +40728,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 167,
+            "line": 176,
             "description": "Return predicate to filter through.",
             "example": [
                 "\n  ```javascript\n  // app/routes/example.js\n  ...\n  predicateForFilter(filter) {\n    if (filter.type === 'string' && filter.condition === 'like') {\n      return new StringPredicate(filter.name).contains(filter.pattern);\n    }\n\n    return this._super(...arguments);\n  },\n  ...\n  ```"
@@ -40729,7 +40751,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 200,
+            "line": 209,
             "description": "Return predicate for `QueryBuilder` or `undefined`.",
             "itemtype": "method",
             "name": "_filtersPredicate",
@@ -40744,7 +40766,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 226,
+            "line": 235,
             "description": "It forms the limit predicate for FOLV loaded data on edit form.\n\nBy default it returns `undefined`.\nIn order to set specific limit predicate, this method have to be overriden on applied-specific controller.",
             "itemtype": "method",
             "name": "objectListViewLimitPredicate",
@@ -40786,7 +40808,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 246,
+            "line": 255,
             "description": "Set in `property` for `target` promise that load nested records.",
             "itemtype": "method",
             "name": "actions.loadRecordsById",
@@ -40812,7 +40834,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 266,
+            "line": 275,
             "description": "Switch hierarchical mode.",
             "itemtype": "method",
             "name": "actions.switchHierarchicalMode",
@@ -40929,6 +40951,17 @@
         {
             "file": "ember-flexberry/addon/mixins/limited-controller.js",
             "line": 78,
+            "description": "Result predicate with all restrictions for olv.",
+            "itemtype": "property",
+            "name": "resultPredicate",
+            "type": "BasePredicate",
+            "default": "null",
+            "class": "LimitedController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/limited-controller.js",
+            "line": 87,
             "description": "Condition for predicate uses at filter by any match, can be `or` or `and`.",
             "itemtype": "property",
             "name": "filterCondition",
@@ -40938,7 +40971,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/limited-controller.js",
-            "line": 86,
+            "line": 95,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEventsService",
@@ -40948,7 +40981,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/limited-controller.js",
-            "line": 95,
+            "line": 104,
             "description": "Save filters and refresh list.",
             "itemtype": "method",
             "name": "actions.applyFilters",
@@ -40964,7 +40997,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/limited-controller.js",
-            "line": 106,
+            "line": 115,
             "description": "Reset filters and refresh list.",
             "itemtype": "method",
             "name": "actions.resetFilters",
@@ -40980,7 +41013,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/limited-controller.js",
-            "line": 118,
+            "line": 127,
             "description": "Changes current pattern for objects filtering.",
             "itemtype": "method",
             "name": "filterByAnyMatch",
@@ -41023,6 +41056,17 @@
         {
             "file": "ember-flexberry/addon/mixins/limited-route.js",
             "line": 74,
+            "description": "Result predicate with all restrictions for olv.",
+            "itemtype": "property",
+            "name": "resultPredicate",
+            "type": "BasePredicate",
+            "default": "null",
+            "class": "LimitedRouteMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/limited-route.js",
+            "line": 83,
             "description": "Return predicate to filter through.",
             "example": [
                 "\n  ```javascript\n  // app/routes/example.js\n  ...\n  predicateForFilter(filter) {\n    if (filter.type === 'string' && filter.condition === 'like') {\n      return new StringPredicate(filter.name).contains(filter.pattern);\n    }\n\n    return this._super(...arguments);\n  },\n  ...\n  ```"
@@ -41045,7 +41089,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/limited-route.js",
-            "line": 107,
+            "line": 116,
             "description": "Return predicate for `QueryBuilder` or `undefined`.",
             "itemtype": "method",
             "name": "_filtersPredicate",
@@ -41387,7 +41431,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/olv-toolbar-controller.js",
-            "line": 186,
+            "line": 188,
             "description": "Generate the columns.",
             "itemtype": "method",
             "name": "_generateColumns",
@@ -41398,14 +41442,14 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/olv-toolbar-controller.js",
-            "line": 249,
+            "line": 251,
             "description": "Create the key from locales.",
             "class": "PaginatedController",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/mixins/olv-toolbar-controller.js",
-            "line": 277,
+            "line": 279,
             "description": "Create the column.",
             "itemtype": "method",
             "name": "_createColumn",
@@ -41719,7 +41763,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
-            "line": 134,
+            "line": 135,
             "description": "Create predicate for attribute. Can you overload this function for extended logic.\n\nDefault supported attribute types:\n- `string`\n- `number`",
             "example": [
                 "\n  ```javascript\n  // app/routes/example.js\n  ...\n  // Add support for logical attribute\n  predicateForAttribute(attribute, filter) {\n    switch (attribute.type) {\n      case 'boolean':\n        let yes = ['TRUE', 'True', 'true', 'YES', 'Yes', 'yes', 'ДА', 'Да', 'да', '1', '+'];\n        let no = ['False', 'False', 'false', 'NO', 'No', 'no', 'НЕТ', 'Нет', 'нет', '0', '-'];\n\n        if (yes.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'true');\n        }\n\n        if (no.indexOf(filter) > 0) {\n          return new SimplePredicate(attribute.name, 'eq', 'false');\n        }\n\n        return null;\n\n      default:\n        return this._super(...arguments);\n    }\n  },\n  ...\n  ```"
@@ -41783,7 +41827,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
-            "line": 230,
+            "line": 231,
             "description": "It forms the filter predicate for data loading.",
             "itemtype": "method",
             "name": "_getFilterPredicate",
@@ -41810,7 +41854,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/reload-list-mixin.js",
-            "line": 256,
+            "line": 257,
             "description": "Generates array attributes for filter.",
             "itemtype": "method",
             "name": "_attributesForFilter",
@@ -43980,7 +44024,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 623,
+            "line": 629,
             "description": "Returns current user name.\nMethod must be overridden if application uses some authentication.",
             "itemtype": "method",
             "name": "getCurrentUser",
@@ -43993,7 +44037,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 635,
+            "line": 641,
             "description": "Returns  user setting for current appPage from storage.",
             "itemtype": "method",
             "name": "_getUserSettings",
@@ -44006,7 +44050,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 677,
+            "line": 683,
             "description": "Merge current developerUserSettings with appPageUserSettings",
             "itemtype": "method",
             "name": "_setCurrentUserSettings",
@@ -44026,7 +44070,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 715,
+            "line": 721,
             "description": "Merge two settings.",
             "itemtype": "method",
             "name": "_mergeSettings",
@@ -44053,7 +44097,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 741,
+            "line": 747,
             "description": "Deletes user settings record.",
             "itemtype": "method",
             "name": "_deleteExistingRecord",
@@ -44080,7 +44124,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 779,
+            "line": 785,
             "description": "Looks for already created user settings record.",
             "itemtype": "method",
             "name": "_getExistingRecord",
@@ -44107,7 +44151,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 815,
+            "line": 821,
             "description": "Looks for all created user settings records.",
             "itemtype": "method",
             "name": "_getExistingSettings",
@@ -44670,7 +44714,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:2413"
+            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:2407"
         },
         {
             "message": "unknown tag: defaul",
@@ -45698,15 +45742,15 @@
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:1111"
+            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:1105"
         },
         {
             "message": "Missing item type\nCalled when the element of the view is going to be destroyed.\nFor more information see [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:1132"
+            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:1126"
         },
         {
             "message": "Missing item type\nCreate the key from locales.",
-            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:1481"
+            "line": " ember-flexberry/addon/components/flexberry-simpleolv.js:1475"
         },
         {
             "message": "Missing item type\nInitializes component.",
@@ -45798,7 +45842,7 @@
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/olv-toolbar.js:625"
+            "line": " ember-flexberry/addon/components/olv-toolbar.js:627"
         },
         {
             "message": "Missing item type\nI can not remember what it is.",
@@ -45830,7 +45874,7 @@
         },
         {
             "message": "Missing item type\nCreate the key from locales.",
-            "line": " ember-flexberry/addon/mixins/olv-toolbar-controller.js:249"
+            "line": " ember-flexberry/addon/mixins/olv-toolbar-controller.js:251"
         },
         {
             "message": "Missing item type\nInitializes service.",

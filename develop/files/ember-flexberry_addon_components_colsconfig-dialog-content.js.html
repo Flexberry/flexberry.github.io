@@ -460,6 +460,15 @@ export default FlexberryBaseComponent.extend({
   */
   store: undefined,
 
+  /**
+    Current model name.
+
+    @property modelName
+    @type {String}
+    @default undefined
+  */
+  modelName: undefined,
+
   init: function() {
     this._super(...arguments);
     this.modelForDOM = [];
@@ -472,6 +481,7 @@ export default FlexberryBaseComponent.extend({
     this.perPageValue = this.model.perPageValue;
     this.saveColWidthState = this.model.saveColWidthState;
     this.exportParams = this.model.exportParams;
+    this.modelName = this.model.modelName;
     this.set(&#x27;store&#x27;, this.model.store);
     let colDescs = this.model.colDescs;
     for (let i = 0; i &lt; colDescs.length; i++) {
@@ -721,15 +731,19 @@ export default FlexberryBaseComponent.extend({
         );
         this.sendAction(&#x27;close&#x27;, colsConfig); // close modal window
       } else {
-        let store = this.get(&#x27;store&#x27;);
-        let adapter = store.adapterFor(this.exportParams.queryParams.modelName);
-        let url = adapter.buildExportExcelURL(store, this._getCurrentQuery(), this.exportParams.detSeparateCols, this.exportParams.detSeparateRows);
-        let anchor = Ember.$(&#x27;.download-anchor&#x27;);
-        if (!Ember.isNone(anchor)) {
-          anchor.prop(&#x27;href&#x27;, url);
-          anchor.prop(&#x27;download&#x27;, &#x27;list.xlsx&#x27;);
-          anchor.get(0).click();
-        }
+        let store = this.get(&#x27;store.onlineStore&#x27;) || this.get(&#x27;store&#x27;);
+        let adapter = store.adapterFor(this.modelName);
+        let currentQuery = this._getCurrentQuery();
+        adapter.query(store, this.modelName, currentQuery).then((result) =&gt; {
+          let blob = new Blob([result], { type: &#x27;application/vnd.ms-excel&#x27; });
+          let downloadUrl = URL.createObjectURL(blob);
+          let anchor = Ember.$(&#x27;.download-anchor&#x27;);
+          if (!Ember.isNone(anchor)) {
+            anchor.prop(&#x27;href&#x27;, downloadUrl);
+            anchor.prop(&#x27;download&#x27;, &#x27;list.xlsx&#x27;);
+            anchor.get(0).click();
+          }
+        });
       }
     },
     /**
@@ -825,21 +839,32 @@ export default FlexberryBaseComponent.extend({
     let settings = this._getSettings();
     let select = settings.colsOrder.filter(({ hide }) =&gt; !hide).map(({ propName }) =&gt; propName);
     let sortString = &#x27;&#x27;;
-    let modelName = this.exportParams.queryParams.modelName;
+    let modelName = this.modelName;
     settings.sorting.map(sort =&gt; {
       sortString += &#x60;${sort.propName} ${sort.direction},&#x60;;
     });
     sortString = sortString.slice(0, -1);
-    let builder = new QueryBuilder(this.get(&#x27;store&#x27;), modelName);
-    let adapter = new ODataAdapter(&#x27;123&#x27;, this.get(&#x27;store&#x27;));
+    let store = this.get(&#x27;store.onlineStore&#x27;) || this.get(&#x27;store&#x27;);
+    let builder = new QueryBuilder(store, modelName);
+    let adapter = new ODataAdapter(&#x27;123&#x27;, store);
     builder.selectByProjection(this.exportParams.projectionName, true);
-    let colsOrder = select.map(propName =&gt; adapter._getODataAttributeName(modelName, propName).replace(&#x27;/&#x27;, &#x27;.&#x27;)).join();
+    let colsOrder = select.map(propName =&gt; adapter._getODataAttributeName(modelName, propName).replace(/\//g, &#x27;.&#x27;)).join();
     if (sortString) {
       builder.orderBy(sortString);
     }
 
+    if (this.exportParams.predicate) {
+      builder.where(this.exportParams.predicate);
+    }
+
+    if (this.exportParams.isExportExcel) {
+      builder.ofDataType(&#x27;blob&#x27;);
+      let customQueryParams = { colsOrder: colsOrder, exportExcel: this.exportParams.isExportExcel,
+        detSeparateRows: this.exportParams.detSeparateRows, detSeparateCols: this.exportParams.detSeparateCols };
+      builder.withCustomParams(customQueryParams);
+    }
+
     let query = builder.build();
-    query.colsOrder = colsOrder;
 
     return query;
   },

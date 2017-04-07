@@ -485,6 +485,7 @@ export default Ember.Mixin.create({
                             (filterPredicate ?
                               filterPredicate :
                               undefined));
+    this.set(&#x27;resultPredicate&#x27;, resultPredicate);
 
     if (resultPredicate) {
       builder.where(resultPredicate);

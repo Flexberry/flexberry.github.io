@@ -404,8 +404,8 @@ export default Ember.Mixin.create({
       let colDesc;  //Column description
       let colDescs = [];  //Columns description
       let projectionAttributes;
+      let modelName = this.get(&#x27;modelProjection.modelName&#x27;);
       if (isExportExcel) {
-        let modelName = this.get(&#x27;modelProjection.modelName&#x27;);
         let exportExcelProjectionName = this.get(&#x27;exportExcelProjection&#x27;);
         Ember.assert(&#x27;Property exportExcelProjection is not defined in controller.&#x27;, exportExcelProjectionName);
 
@@ -518,6 +518,7 @@ export default Ember.Mixin.create({
         exportParams.queryParams = this.get(&#x27;queryParams&#x27;);
         exportParams.isExportExcel = true;
         exportParams.immediateExport = immediateExport;
+        exportParams.predicate = this.get(&#x27;resultPredicate&#x27;);
         exportParams.projectionName = this.get(&#x27;exportExcelProjection&#x27;);
         exportParams.detSeparateCols = this.get(&#x27;_userSettingsService&#x27;).getDetSeparateCols(componentName, settingName);
         exportParams.detSeparateRows = this.get(&#x27;_userSettingsService&#x27;).getDetSeparateRows(componentName, settingName);
@@ -543,8 +544,9 @@ export default Ember.Mixin.create({
         outlet: &#x27;modal-content&#x27;
       };
       this.send(&#x27;showModalDialog&#x27;, &#x27;colsconfig-dialog-content&#x27;,
-                { controller: controller, model: { colDescs: colDescs, componentName: componentName, settingName: settName, perPageValue: perPageValue,
-                saveColWidthState: saveColWidthState, exportParams: exportParams, store: store } }, loadingParams);
+                { controller: controller, model: { modelName: modelName, colDescs: colDescs, componentName: componentName,
+                settingName: settName, perPageValue: perPageValue, saveColWidthState: saveColWidthState,
+                exportParams: exportParams, store: store } }, loadingParams);
     }
 
   },

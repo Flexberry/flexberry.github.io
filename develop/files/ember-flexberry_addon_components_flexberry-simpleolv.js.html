@@ -1460,13 +1460,7 @@ ErrorableControllerMixin, {
       }
     }
 
-    let $currentTable = this.$(&#x27;table.object-list-view&#x27;);
-    if (this.get(&#x27;allowColumnResize&#x27;)) {
-      $currentTable.addClass(&#x27;fixed&#x27;);
-      this._reinitResizablePlugin();
-    } else {
-      $currentTable.colResizable({ disable: true });
-    }
+    this._setColumnWidths();
 
     this.$(&#x27;.object-list-view-menu &gt; .ui.dropdown&#x27;).dropdown();
     Ember.$(&#x27;.object-list-view-menu:last .ui.dropdown&#x27;).addClass(&#x27;bottom&#x27;);

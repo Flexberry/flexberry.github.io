@@ -986,6 +986,8 @@ export default FlexberryBaseComponent.extend({
     if (Ember.isNone(modelController)) {
       this.set(&#x27;modelController&#x27;, this.get(&#x27;currentController&#x27;));
     }
+
+    this._updateListNamedUserSettings();
   },
 
   /**

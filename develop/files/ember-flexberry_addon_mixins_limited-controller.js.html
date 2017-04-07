@@ -442,6 +442,15 @@ export default Ember.Mixin.create({
   filter: null,
 
   /**
+    Result predicate with all restrictions for olv.
+
+    @property resultPredicate
+    @type BasePredicate
+    @default null
+   */
+  resultPredicate: null,
+
+  /**
     Condition for predicate uses at filter by any match, can be &#x60;or&#x60; or &#x60;and&#x60;.
 
     @property filterCondition
