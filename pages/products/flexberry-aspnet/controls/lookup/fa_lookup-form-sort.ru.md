@@ -4,14 +4,13 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Web UI (Контролы)
 toc: true
 permalink: ru/fa_lookup-form-sort.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-# Сортировка в списковой форме, поднятой по лукапу
-Для того чтобы была возможность осуществлять сортировку на списковой форме, [поднятой по лукапу, в web](fa_lookup-overview.html), необходимо сделать следующее:
+Для того чтобы была возможность осуществлять сортировку на списковой форме, [поднятой по лукапу в web](fa_lookup-overview.html), необходимо сделать следующее:
 
-1. Нужно удостовериться, что LookUp-форма правильная. Например, будем использовать стандартную пользовательскую форму, расположенную на тестовом стенде, тогда настройки в web.config должны быть следующие:
+1.Нужно удостовериться, что LookUp-форма правильная. Например, использовать стандартную пользовательскую форму, расположенную на тестовом стенде, тогда настройки в `web.config` должны быть следующие:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
@@ -28,7 +27,9 @@ lang: ru
   </system.webServer>
 </configuration>
 ```
-2. Проверяем, что на форме в методе ApplyWolvSettings используется [WOLVSettApplyer](wolv-sett-applyer.html) прикладной доступности (а не расположенный в сборке AjaxControls) и что нет вызовов базового метода ApplyWolvSettings (данный вызов может перетереть настройки).
+
+2.Проверить, что на форме в методе ApplyWolvSettings используется [WOLVSettApplyer](fa_wolv-sett-applyer.html) прикладной доступности (а не расположенный в сборке AjaxControls) и что нет вызовов базового метода ApplyWolvSettings (данный вызов может перетереть настройки).
+
 ```cs
 namespace ICSSoft.STORMNET.Web.Controls
 {
@@ -49,8 +50,9 @@ namespace ICSSoft.STORMNET.Web.Controls
 }
 ```
 
-3. В [WOLVSettApplyer](wolv-sett-applyer.html) прикладной доступности переопределяем метод ApplyLookUpSettings. И назначаем необходимую [операцию](fa_wolv-operations.html).
-```cs
+3.В [WOLVSettApplyer](fa_wolv-sett-applyer.html) переопределить метод `ApplyLookUpSettings`. И назначить необходимую [операцию](fa_wolv-operations.html).
+
+```csharp
 namespace ICSSoft.STORMNET.Web
 {
     /// <summary>
