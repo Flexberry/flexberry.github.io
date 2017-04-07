@@ -3793,8 +3793,18 @@
                 },
                 {
                     "name": "extend",
-                    "description": "A additional computed set of properties for each requested entity. Based on properties in predicate and order, but not included in select and expand.",
+                    "description": "An additional computed set of properties for each requested entity. Based on properties in predicate and order, but not included in select and expand.",
                     "type": "Object"
+                },
+                {
+                    "name": "customQueryParams",
+                    "description": "An additional query parameters.",
+                    "type": "Object"
+                },
+                {
+                    "name": "dataType",
+                    "description": "A data type for the request. Supported types: 'json' and 'blob'.",
+                    "type": "String"
                 }
             ],
             "is_constructor": 1
@@ -7930,6 +7940,37 @@
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
             "line": 59,
+            "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCustomizes ajax options for the requests.",
+            "itemtype": "method",
+            "name": "ajaxOptions",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "DS.Model"
+                },
+                {
+                    "name": "options",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "Adapter.OData",
+            "module": "ember-flexberry-data",
+            "namespace": "Adapter"
+        },
+        {
+            "file": "ember-flexberry-data/addon/adapters/odata.js",
+            "line": 79,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch single record from the server.",
             "itemtype": "method",
             "name": "queryRecord",
@@ -7960,7 +8001,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 78,
+            "line": 98,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch single record by ID from the server.",
             "itemtype": "method",
             "name": "findRecord",
@@ -7996,7 +8037,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 98,
+            "line": 118,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch all records from the server.",
             "itemtype": "method",
             "name": "findAll",
@@ -8032,7 +8073,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 118,
+            "line": 138,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), that determines the pathname for a given type.\nAdditionally capitalizes the type name (requirement of Flexberry OData Server).",
             "itemtype": "method",
             "name": "pathForType",
@@ -8053,43 +8094,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 132,
-            "description": "Returns URL for exported excel file.",
-            "itemtype": "method",
-            "name": "buildExportExcelURL",
-            "params": [
-                {
-                    "name": "store",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "query",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "detSeparateCols",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "detSeparateRows",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "The URL for excel file.",
-                "type": "String"
-            },
-            "class": "Adapter.OData",
-            "module": "ember-flexberry-data",
-            "namespace": "Adapter"
-        },
-        {
-            "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 150,
+            "line": 152,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), taht builds URL to OData feed.\nAppends id as `(id)` (OData specification) instead of `/id`.",
             "itemtype": "method",
             "name": "_buildURL",
@@ -8117,7 +8122,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 190,
+            "line": 192,
             "description": "Appends id to URL according to the OData specification.",
             "itemtype": "method",
             "name": "_appendIdToURL",
@@ -8141,7 +8146,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 221,
+            "line": 223,
             "description": "Makes HTTP request for creating, updating or deleting the record.",
             "itemtype": "method",
             "name": "_sendRecord",
@@ -9536,7 +9541,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 48,
+            "line": 50,
             "description": "Sets the id of the requested entity.",
             "itemtype": "method",
             "name": "byId",
@@ -9560,7 +9565,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 62,
+            "line": 64,
             "description": "Sets the name of the requested entity.",
             "itemtype": "method",
             "name": "from",
@@ -9584,7 +9589,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 76,
+            "line": 78,
             "itemtype": "method",
             "name": "where",
             "params": [
@@ -9607,7 +9612,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 89,
+            "line": 91,
             "itemtype": "method",
             "name": "orderBy",
             "params": [
@@ -9630,7 +9635,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 106,
+            "line": 108,
             "itemtype": "method",
             "name": "top",
             "params": [
@@ -9653,7 +9658,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 119,
+            "line": 121,
             "itemtype": "method",
             "name": "skip",
             "params": [
@@ -9676,7 +9681,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 132,
+            "line": 134,
             "itemtype": "method",
             "name": "count",
             "return": {
@@ -9692,7 +9697,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 144,
+            "line": 146,
             "description": "Adds attributes for selection.\nAutomatically checks duplications.",
             "itemtype": "method",
             "name": "select",
@@ -9716,7 +9721,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 159,
+            "line": 161,
             "description": "Adds attributes for selection from specified projection.\nMerges attributes with added using `select`.",
             "itemtype": "method",
             "name": "selectByProjection",
@@ -9745,7 +9750,53 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/builder.js",
-            "line": 176,
+            "line": 178,
+            "itemtype": "method",
+            "name": "ofDataType",
+            "params": [
+                {
+                    "name": "dataType",
+                    "description": "The name of the data type.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 191,
+            "itemtype": "method",
+            "name": "withCustomParams",
+            "params": [
+                {
+                    "name": "customQueryParams",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Returns this instance.",
+                "type": "Query.Builder"
+            },
+            "access": "public",
+            "tagname": "",
+            "chainable": 1,
+            "class": "Query.Builder",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/builder.js",
+            "line": 204,
             "description": "Builds query instance using all provided data.",
             "itemtype": "method",
             "name": "build",
@@ -10205,7 +10256,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 74,
+            "line": 81,
             "description": "Returns full URL for querying OData feed (base part and query part).",
             "itemtype": "method",
             "name": "getODataFullUrl",
@@ -10226,7 +10277,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 189,
+            "line": 196,
             "description": "Converts specified predicate into OData filter part.",
             "params": [
                 {
@@ -10255,7 +10306,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 241,
+            "line": 248,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -44275,7 +44326,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:241"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:248"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -44711,11 +44762,11 @@
         },
         {
             "message": "Missing item type\nConverts specified predicate into OData filter part.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:189"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:196"
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:241"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:248"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",

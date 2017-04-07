@@ -419,7 +419,27 @@ export default DS.RESTAdapter.extend({
     Ember.debug(&#x60;Flexberry ODataAdapter::query &#x27;${type}&#x27;&#x60;, data);
 
     // TODO: think about moving request execution into query adapter
-    return this.ajax(url, &#x27;GET&#x27;, { data: data, timeout: timeout });
+    return this.ajax(url, &#x27;GET&#x27;, { data: data, timeout: timeout, dataType: query.dataType || &#x27;json&#x27; });
+  },
+
+  /**
+    Overloaded method from &#x60;RESTAdapter&#x60; (Ember Data).
+    Customizes ajax options for the requests.
+
+    @method ajaxOptions
+    @param {String} url
+    @param {DS.Model} type
+    @param {Object} options
+    @return {Object}
+  */
+  ajaxOptions: function ajaxOptions(url, type, options) {
+    let dataType = options.dataType;
+    let hash = this._super(...arguments);
+    if (dataType === &#x27;blob&#x27;) {
+      hash.dataType = dataType;
+    }
+
+    return hash;
   },
 
   /**
@@ -493,24 +513,6 @@ export default DS.RESTAdapter.extend({
     var camelized = Ember.String.camelize(modelName);
     var capitalized = Ember.String.capitalize(camelized);
     return Ember.String.pluralize(capitalized);
-  },
-
-  /**
-   * Returns URL for exported excel file.
-   *
-   * @method buildExportExcelURL
-   * @param {Object} store
-   * @param {Object} query
-   * @param {Object} detSeparateCols
-   * @param {Object} detSeparateRows
-   * @return {String} The URL for excel file.
-   */
-  buildExportExcelURL(store, query, detSeparateCols, detSeparateRows) {
-    let url = this._buildURL(query.modelName);
-    let builder = new ODataQueryAdapter(url, store);
-    url = &#x60;${builder.getODataFullUrl(query)}&amp;colsOrder=${query.colsOrder}&amp;&#x60; +
-      &#x60;exportExcel=true&amp;detSeparateRows=${detSeparateRows}&amp;detSeparateCols=${detSeparateCols}&#x60;;
-    return url;
   },
 
   /**

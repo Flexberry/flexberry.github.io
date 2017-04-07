@@ -410,7 +410,7 @@ Uses Flexberry Query as a language for requesting server.</p>
 
                             </li>
                             <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_buildExportExcelURL" data-tablink="buildExportExcelURL">buildExportExcelURL</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method_ajaxOptions" data-tablink="ajaxOptions">ajaxOptions</a>
 
                             </li>
                             <li class="index-item method">
@@ -478,7 +478,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l190"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:190</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l192"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:192</code></a>
                             </p>
                     
                     
@@ -547,7 +547,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l150"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:150</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l152"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:152</code></a>
                             </p>
                     
                     
@@ -612,7 +612,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l221"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:221</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l223"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:223</code></a>
                             </p>
                     
                     
@@ -627,28 +627,25 @@ Uses Flexberry Query as a language for requesting server.</p>
                     
                     
                     </div>
-                    <div id="method_buildExportExcelURL" class="method item">
-                        <h3 class="name"><code>buildExportExcelURL</code></h3>
+                    <div id="method_ajaxOptions" class="method item">
+                        <h3 class="name"><code>ajaxOptions</code></h3>
                     
                             <div class="args">
                                 <span class="paren">(</span><ul class="args-list inline commas">
                                     <li class="arg">
-                                            <code>store</code>
+                                            <code>url</code>
                                     </li>
                                     <li class="arg">
-                                            <code>query</code>
+                                            <code>type</code>
                                     </li>
                                     <li class="arg">
-                                            <code>detSeparateCols</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>detSeparateRows</code>
+                                            <code>options</code>
                                     </li>
                                 </ul><span class="paren">)</span>
                             </div>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                             </span>
                     
                     
@@ -660,7 +657,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l132"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:132</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l59"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:59</code></a>
                             </p>
                     
                     
@@ -668,7 +665,8 @@ Uses Flexberry Query as a language for requesting server.</p>
                         </div>
                     
                         <div class="description">
-                            <p>Returns URL for exported excel file.</p>
+                            <p>Overloaded method from <code>RESTAdapter</code> (Ember Data).
+                    Customizes ajax options for the requests.</p>
                     
                         </div>
                     
@@ -677,8 +675,8 @@ Uses Flexberry Query as a language for requesting server.</p>
                     
                                 <ul class="params-list">
                                     <li class="param">
-                                            <code class="param-name">store</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <code class="param-name">url</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
                     
                                         <div class="param-description">
@@ -687,8 +685,8 @@ Uses Flexberry Query as a language for requesting server.</p>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">query</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <code class="param-name">type</code>
+                                            <span class="type"><a href="http://emberjs.com/api/data/classes/DS.Model.html" class="crosslink external" target="_blank">DS.Model</a></span>
                     
                     
                                         <div class="param-description">
@@ -697,17 +695,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                     
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">detSeparateCols</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                             
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">detSeparateRows</code>
+                                            <code class="param-name">options</code>
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
                     
                     
@@ -723,9 +711,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
-                                        <p>The URL for excel file.</p>
-                    
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>:
                                 </div>
                             </div>
                     
@@ -763,7 +749,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l98"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:98</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l118"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:118</code></a>
                             </p>
                     
                     
@@ -867,7 +853,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l78"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:78</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l98"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:98</code></a>
                             </p>
                     
                     
@@ -962,7 +948,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l118"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:118</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l138"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:138</code></a>
                             </p>
                     
                     
@@ -1123,7 +1109,7 @@ Uses Flexberry Query as a language for requesting server.</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l59"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:59</code></a>
+                            <a href="../files/ember-flexberry-data_addon_adapters_odata.js.html#l79"><code>ember-flexberry-data&#x2F;addon&#x2F;adapters&#x2F;odata.js:79</code></a>
                             </p>
                     
                     
