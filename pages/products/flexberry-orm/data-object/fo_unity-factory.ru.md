@@ -8,7 +8,7 @@ folder: products/flexberry-orm/
 lang: ru
 ---
 
-Flexberry UnityFactory является [продуктом платформы Flexberry](platform-structure.html) и позволяет стандартным образом работать с разрешением контейнеров [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Используется версия [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx).
+Flexberry UnityFactory является [продуктом платформы Flexberry](fp_platform-structure.html) и позволяет стандартным образом работать с разрешением контейнеров [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Используется версия [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx).
 
 {% include note.html content="Flexberry UnityFactory доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.UnityFactory)." %}
 
@@ -25,7 +25,7 @@ IService serviceInstance = container.Resolve<IService>();
 * [DRDataService](fo_dr-data-service.html)
 
 ## Flexberry UnityFactory
-Flexberry UnityFactory является [продуктом платформы Flexberry](platform-structure.html) и позволяет стандартным образом работать с разрешением контейнеров [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Используется версия [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx).
+Flexberry UnityFactory является [продуктом платформы Flexberry](fp_platform-structure.html) и позволяет стандартным образом работать с разрешением контейнеров [Unity Container](https://msdn.microsoft.com/en-us/library/ff647202.aspx). Используется версия [Unity 2.1](https://msdn.microsoft.com/en-us/library/hh237493.aspx).
 
 {% include note.html content="Flexberry UnityFactory доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.UnityFactory)." %}
 

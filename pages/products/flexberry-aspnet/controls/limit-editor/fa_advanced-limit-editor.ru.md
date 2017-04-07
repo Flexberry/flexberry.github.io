@@ -85,7 +85,7 @@ WebObjectListView1.DropLimitFromLimitEditor();
 
 ## Задание параметров
 
-[Задать ограничение с параметрами](fa_limit-with-parameters-for-user.html)
+[Задать ограничение с параметрами](fa_limit-with-parameters-user.html)
 
 [Типы параметров, используемых в ограничениях.](fa_advanced-limit-editor-parameters.html)
 

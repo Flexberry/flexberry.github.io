@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, БД
 toc: true
 permalink: ru/fa_connect-task-monitor.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 ## Монитор запросов к SQL

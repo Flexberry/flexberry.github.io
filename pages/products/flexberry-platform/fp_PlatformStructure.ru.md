@@ -3,7 +3,7 @@ title: Структура технологической платформы
 sidebar: product--sidebar
 keywords: Public
 toc: true
-permalink: ru/platform-structure.html
+permalink: ru/fp_platform-structure.html
 folder: product--folder
 lang: ru
 ---

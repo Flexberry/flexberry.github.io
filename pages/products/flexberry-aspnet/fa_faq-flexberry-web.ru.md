@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Учебники
 toc: true
 permalink: ru/fa_faq-flexberry-web.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 ## Как посмотреть запросы, идущие к источнику данных?
@@ -125,7 +123,6 @@ webBinder.SetReadonlyToControl(Ctrl, ReadOnlyFlag);
 ```csharp
  public static void ДобавитьСкрипт(string скрипт) 
 ```
-
 
 ## Как настроить отображение колонок в WebObjectListView?
 

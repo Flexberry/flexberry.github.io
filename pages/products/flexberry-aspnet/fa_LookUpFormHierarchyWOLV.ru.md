@@ -3,7 +3,7 @@ title: Открытие лукап-формы с поддержкой иерар
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_look-up-form-hierarchy-w-o-l-v.html
+permalink: ru/fa_lookup-form-hierarchy-wolv.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
 permalink: ru/fa_i-master-page-service.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
@@ -77,7 +76,7 @@ public class StaticMasterPageService : IMasterPageService
 
 2.Изменить Web.config. Параметр **mapTo**.
 
-```csharp
+```xml
 <!-- Конфигурация сервиса Master-страниц. -->
 <register type="NewPlatform.Flexberry.Web.MasterPage.IMasterPageService, ICSSoft.STORMNET.Web.AjaxControls" 
 	mapTo="IIS.Бюджет.StaticMasterPageService, Бюджет(ASP.NET Application)">

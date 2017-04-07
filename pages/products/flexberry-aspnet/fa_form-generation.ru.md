@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_form-generation.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 ## Общие принципы генерации форм

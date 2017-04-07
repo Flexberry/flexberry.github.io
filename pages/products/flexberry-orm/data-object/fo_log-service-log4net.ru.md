@@ -10,7 +10,7 @@ lang: ru
 
 ## Flexberry LogService
 
-Flexberry LogService является [продуктом платформы Flexberry](platform-structure.html) и предназначен для осуществления записи событий работы программного продукта.
+Flexberry LogService является [продуктом платформы Flexberry](fp_platform-structure.html) и предназначен для осуществления записи событий работы программного продукта.
 
 Flexberry LogService базируется на [`log4net`](http://logging.apache.org/log4net/).
 

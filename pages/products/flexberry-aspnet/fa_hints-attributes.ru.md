@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Designer
 toc: true
 permalink: ru/fa_hints-attributes.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 

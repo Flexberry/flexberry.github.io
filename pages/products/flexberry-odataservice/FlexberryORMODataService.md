@@ -10,7 +10,7 @@ lang: ru
 
 ## Информация о продукте
 
-`Flexberry ORM ODataService` является [продуктом платформы Flexberry](platform-structure.html). Сайт продукта: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
+`Flexberry ORM ODataService` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
 
 (((
 <msg type=information>`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](NewPlatform.Flexberry.ORM.ODataService).</msg>

@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # Информация о продукте
-`Flexberry Winforms` является [продуктом платформы Flexberry](platform-structure.html). Сайт продукта `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryWinforms).
+`Flexberry Winforms` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryWinforms).
 
 # Состав продукта
 `Flexberry Winforms` состоит из следующих модулей:

@@ -3,7 +3,7 @@ title: Пусто/Непусто в расширенном редакторе о
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_web-limit-editor-is-null.html
+permalink: ru/fa_web-limit-editor-null.html
 lang: ru
 ---
 
@@ -11,7 +11,7 @@ lang: ru
 
 В [расширенном редакторе ограничений](fa_advanced-limit-editor.html) есть поддержка выражений Пусто/Непусто (Пусто/Заполнено).
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor-isNull.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor-null.png)
 
 `Пусто` соответствует функции [funcIsNull](fo_func-is-null.html) из [SQLWhereLanguageDef](fo_function-list.html). 
 

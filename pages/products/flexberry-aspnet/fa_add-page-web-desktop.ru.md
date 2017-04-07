@@ -3,7 +3,7 @@ title: Добавить собственную форму на рабочий с
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_add-page-to-web-desktop.html
+permalink: ru/fa_add-page-web-desktop.html
 lang: ru
 ---
 

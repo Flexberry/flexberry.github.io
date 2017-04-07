@@ -3,7 +3,7 @@ title: Работа с блокировками в веб
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_working-with-locks--w-e-b.html
+permalink: ru/fa_working-locks-web.html
 folder: products/flexberry-aspnet/
 lang: ru
 ---

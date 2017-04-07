@@ -4,9 +4,7 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_export-excel-xml.html
-folder: products/flexberry-aspnet/
 lang: ru
-
 ---
 
 Вся логика экспорта в Excel и XML находится в Web.Tools.
