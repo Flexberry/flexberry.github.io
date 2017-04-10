@@ -366,7 +366,7 @@
     <pre class="prettyprint linenums">
 /**
   @module ember-flexberry-gis
-*/
+ */
 
 import Ember from &#x27;ember&#x27;;
 import layout from &#x27;../templates/components/flexberry-search&#x27;;
@@ -433,7 +433,28 @@ let FlexberrySearchComponent = Ember.Component.extend(DynamicPropertiesMixin, {
       @method actions.enter
     */
     enter() {
-      this.sendAction(&#x27;enter&#x27;);
+      if (this.get(&#x27;_lastAction&#x27;) &amp;&amp; this.get(&#x27;_lastAction&#x27;) === &#x27;select&#x27;) {
+        this.set(&#x27;_lastAction&#x27;, null);
+        return;
+      }
+
+      let $component = this.$();
+      if (Ember.isNone($component)) {
+        return;
+      }
+
+      if (Ember.isNone(this.get(&#x27;apiSettings&#x27;))) {
+        return;
+      }
+
+      $component.search(&#x27;cancel query&#x27;);
+      $component.search(&#x27;hide results&#x27;);
+
+      if (this.get(&#x27;_valueWasSelected&#x27;)) {
+        this.sendAction(&#x27;select&#x27;);
+      } else {
+        this.sendAction(&#x27;enter&#x27;);
+      }
     }
   },
 
@@ -469,7 +490,8 @@ let FlexberrySearchComponent = Ember.Component.extend(DynamicPropertiesMixin, {
     &#x27;minCharacters&#x27;,
     &#x27;fields&#x27;,
     &#x27;showNoResults&#x27;,
-    &#x27;onResults&#x27;
+    &#x27;onResults&#x27;,
+    &#x27;maxResults&#x27;
   ],
 
   /**
@@ -516,6 +538,15 @@ let FlexberrySearchComponent = Ember.Component.extend(DynamicPropertiesMixin, {
   minCharacters: 3,
 
   /**
+    Maximum results to display when using local and simple search, maximum category count for category search
+
+    @property maxResults
+    @type Number
+    @default 10
+  */
+  maxResults: 10,
+
+  /**
     Search API settings.
     See [Semantic UI examples](http://semantic-ui.com/modules/search.html#using-api-settings).
 
@@ -546,6 +577,35 @@ let FlexberrySearchComponent = Ember.Component.extend(DynamicPropertiesMixin, {
   showNoResults: false,
 
   /**
+    &quot;Select&quot; or something else
+    Need to prevent &quot;enter&quot; action after &quot;onSelect&quot; event
+
+    @property _lastAction
+    @type String
+    @default null
+  */
+  _lastAction: null,
+
+  /**
+    Flag: is value typed or selected
+
+    @property _valueWasSelected
+    @type Boolean
+    @default false
+  */
+  _valueWasSelected: false,
+
+  /**
+    Clean _lastAction if user change value
+
+    @method _valueChange
+  */
+  _valueChange:  Ember.observer(&#x27;value&#x27;,  function () {
+    this.set(&#x27;_lastAction&#x27;, null);
+    this.set(&#x27;_valueWasSelected&#x27;, false);
+    }),
+
+  /**
     Initializes Semantic UI search module.
 
     @method _initializeSearchModule
@@ -569,6 +629,25 @@ let FlexberrySearchComponent = Ember.Component.extend(DynamicPropertiesMixin, {
         semanticProperties[propertyName] = propertyValue;
       }
     });
+
+    let _this = this;
+    let onSelect = function (element) {
+      var field = semanticProperties.fields &amp;&amp; semanticProperties.fields.title ? semanticProperties.fields.title : null;
+      if (field) {
+        _this.set(&#x27;value&#x27;, element[field]);
+        _this.set(&#x27;_lastAction&#x27;, &#x27;select&#x27;);
+        _this.set(&#x27;_valueWasSelected&#x27;, true);
+        _this.sendAction(&#x27;select&#x27;, element);
+      }
+    };
+
+    semanticProperties.onSelect = onSelect;
+
+    let onSearchQuery = function (query) {
+      _this.set(&#x27;_lastAction&#x27;, null);
+    };
+
+    semanticProperties.onSearchQuery = onSearchQuery;
 
     $component.search(semanticProperties);
   },

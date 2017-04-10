@@ -380,15 +380,15 @@ import layout from &#x27;../templates/components/layer-result-list&#x27;;
 export default Ember.Component.extend({
 
   /**
-    Flag: indicates when one or more results contains more than 0 features
-    @property _hasData
+    Flag: indicates when results contains no data
+    @property _noData
     @type boolean
     @default false
    */
-  _hasData: false,
+  _noData: false,
 
   /**
-    Flag: inciates when one or more results.features promises rejected
+    Flag: indicates when one or more results.features promises rejected
     @property _hasError
     @type boolean
     @default false
@@ -424,6 +424,15 @@ export default Ember.Component.extend({
   leafletMap: null,
 
   /**
+    Ready results for display without promise
+
+    @property _displayResults
+    @type Ember.A()
+    @default null
+  */
+  _displayResults: null,
+
+  /**
     Array of results for display, each result contains object with following properties
     layerModel - MapLayer model
     features - promise for array of GeoJSON features
@@ -437,17 +446,20 @@ export default Ember.Component.extend({
     /**
       Set selected feature and add its layer to serviceLayer on map
       @method actions.selectFeature
-     */
+    */
     selectFeature(feature) {
       let selectedFeature = this.get(&#x27;_selectedFeature&#x27;);
       let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
-      if (selectedFeature !== feature) {
-        if (!Ember.isNone(selectedFeature)) {
-          serviceLayer.removeLayer(selectedFeature.leafletLayer);
-        }
 
-        if (!Ember.isNone(feature)) {
-          serviceLayer.addLayer(feature.leafletLayer);
+      if (selectedFeature !== feature) {
+        if (!Ember.isNone(serviceLayer)) {
+          if (!Ember.isNone(selectedFeature)) {
+            serviceLayer.removeLayer(selectedFeature.leafletLayer);
+          }
+
+          if (!Ember.isNone(feature)) {
+            serviceLayer.addLayer(feature.leafletLayer);
+          }
         }
 
         this.set(&#x27;_selectedFeature&#x27;, feature);
@@ -459,7 +471,10 @@ export default Ember.Component.extend({
       @method actions.zoomTo
      */
     zoomTo(feature) {
-      this.send(&#x27;selectFeature&#x27;, feature);
+      let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
+      if (!Ember.isNone(serviceLayer)) {
+        serviceLayer.clearLayers();
+      }
 
       let bounds;
       if (typeof (feature.leafletLayer.getBounds) === &#x27;function&#x27;) {
@@ -471,6 +486,7 @@ export default Ember.Component.extend({
 
       // TODO: pass action with zoomTo bounds outside
       this.get(&#x27;leafletMap&#x27;).fitBounds(bounds.pad(1));
+      this.send(&#x27;selectFeature&#x27;, feature);
     },
 
     /**
@@ -478,7 +494,10 @@ export default Ember.Component.extend({
       @method actions.panTo
      */
     panTo(feature) {
-      this.send(&#x27;selectFeature&#x27;, feature);
+      let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
+      if (!Ember.isNone(serviceLayer)) {
+        serviceLayer.clearLayers();
+      }
 
       let latLng;
       if (typeof (feature.leafletLayer.getBounds) === &#x27;function&#x27;) {
@@ -489,6 +508,7 @@ export default Ember.Component.extend({
 
       // TODO: pass action with panTo latLng outside
       this.get(&#x27;leafletMap&#x27;).panTo(latLng);
+      this.send(&#x27;selectFeature&#x27;, feature);
     }
   },
 
@@ -498,23 +518,63 @@ export default Ember.Component.extend({
    */
   _resultObserver: Ember.observer(&#x27;results&#x27;, function () {
     this.send(&#x27;selectFeature&#x27;, null);
-    this.set(&#x27;_showLoader&#x27;, true);
     this.set(&#x27;_hasError&#x27;, false);
+    this.set(&#x27;_noData&#x27;, false);
+    this.set(&#x27;_displayResults&#x27;, null);
 
+    // если это не поиск, а очистка результатов
+    if (!this.get(&#x27;results&#x27;)) {
+      return;
+    }
+
+    this.set(&#x27;_showLoader&#x27;, true);
     let results = this.get(&#x27;results&#x27;) || [];
 
-    let promises = results.map((result) =&gt; { return result.features; });
+    let displayResults = Ember.A();
+    results.forEach((result) =&gt; {
+      let r = {
+        name: Ember.get(result, &#x27;layerModel.name&#x27;) ? Ember.get(result, &#x27;layerModel.name&#x27;) : &#x27;&#x27;,
+        settings: Ember.get(result, &#x27;layerModel.settingsAsObject.searchSettings.featuresPropertiesSettings&#x27;),
+        sortField: Ember.get(result, &#x27;layerModel.settingsAsObject.searchSettings.featuresPropertiesSettings.displayProperty&#x27;)
+      };
 
-    Ember.RSVP.all(promises).then(
-      (features) =&gt; {
-        let featuresCount = features.reduce((sum, feature) =&gt; { return sum + feature.length; }, 0);
-        this.set(&#x27;_hasData&#x27;, featuresCount &gt; 0);
-      },
-      (error) =&gt; {
-        this.set(&#x27;_hasData&#x27;, true);
-        this.set(&#x27;_hasError&#x27;, true);
-      }
-    ).finally(() =&gt; {
+      result.features.then(
+        (features) =&gt; {
+          if (features.length &gt; 0) {
+            r.features = features;
+            displayResults.pushObject(r);
+          }
+        }
+      );
+    });
+
+    let promises = results.map((result) =&gt; { return result.features; });
+    Ember.RSVP.allSettled(promises).finally(() =&gt; {
+      let order = 1;
+      displayResults.forEach((result) =&gt; {
+        result.order = order;
+        result.first = result.order === 1;
+        result.last = result.order === displayResults.length;
+        order += 1;
+
+        if (!Ember.isNone(result.sortField) &amp;&amp; result.sortField) {
+          var sort = &#x27;properties.&#x27; + result.sortField;
+          result.features = result.features.sort(function (a, b) {
+            if (Ember.get(a, sort) &gt; Ember.get(b, sort)) {
+              return 1;
+            }
+
+            if (Ember.get(a, sort) &lt; Ember.get(b, sort)) {
+              return -1;
+            }
+
+            return 0;
+          });
+        }
+      });
+
+      this.set(&#x27;_displayResults&#x27;, displayResults);
+      this.set(&#x27;_noData&#x27;, displayResults.length === 0);
       this.set(&#x27;_showLoader&#x27;, false);
     });
   })

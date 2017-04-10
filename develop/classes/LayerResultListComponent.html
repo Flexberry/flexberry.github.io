@@ -423,11 +423,15 @@
 
                     <ul class="index-list properties extends">
                             <li class="index-item property">
-                                <a href="#" data-tabid="#properties" data-anchor="#property__hasData" data-tablink="_hasData">_hasData</a>
+                                <a href="#" data-tabid="#properties" data-anchor="#property__displayResults" data-tablink="_displayResults">_displayResults</a>
 
                             </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property__hasError" data-tablink="_hasError">_hasError</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property__noData" data-tablink="_noData">_noData</a>
 
                             </li>
                             <li class="index-item property">
@@ -470,7 +474,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l129"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:129</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l149"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:149</code></a>
                             </p>
                     
                     
@@ -500,7 +504,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l110"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:110</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l126"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:126</code></a>
                             </p>
                     
                     
@@ -530,7 +534,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l71"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:71</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l80"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:80</code></a>
                             </p>
                     
                     
@@ -560,7 +564,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l91"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:91</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l103"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:103</code></a>
                             </p>
                     
                     
@@ -580,9 +584,9 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
-                    <div id="property__hasData" class="property item">
-                        <h3 class="name"><code>_hasData</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    <div id="property__displayResults" class="property item">
+                        <h3 class="name"><code>_displayResults</code></h3>
+                        <span class="type">Ember.A()</span>
                     
                     
                     
@@ -591,18 +595,18 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l16"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:16</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l60"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:60</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Flag: indicates when one or more results contains more than 0 features</p>
+                            <p>Ready results for display without promise</p>
                     
                         </div>
                     
-                            <p><strong>Default:</strong> false</p>
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>
@@ -624,7 +628,33 @@
                         </div>
                     
                         <div class="description">
-                            <p>Flag: inciates when one or more results.features promises rejected</p>
+                            <p>Flag: indicates when one or more results.features promises rejected</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property__noData" class="property item">
+                        <h3 class="name"><code>_noData</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l16"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:16</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates when results contains no data</p>
                     
                         </div>
                     
@@ -695,7 +725,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l60"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:60</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_layer-result-list.js.html#l69"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;layer-result-list.js:69</code></a>
                             </p>
                     
                     

@@ -24125,21 +24125,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 74,
+            "line": 95,
             "description": "Reference to component's template.",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 79,
+            "line": 100,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 85,
+            "line": 106,
             "description": "Names of observable component's properties.\nChanges in these properties must trigger Semantic UI module's reinitialization.",
             "itemtype": "property",
             "name": "observableProperties",
@@ -24150,7 +24150,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 95,
+            "line": 116,
             "description": "Names of component's properties used for init semantic search module",
             "itemtype": "property",
             "name": "semanticProperties",
@@ -24160,7 +24160,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 109,
+            "line": 131,
             "description": "Component's wrapping <div> CSS-classes names.\n\nAny other CSS-classes can be added through component's 'class' property.\n```handlebars\n{{flexberry-icon\n  class=\"map icon\"\n}}\n```",
             "itemtype": "property",
             "name": "classNames",
@@ -24171,7 +24171,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 125,
+            "line": 147,
             "description": "Components class names bindings.",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -24182,7 +24182,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 134,
+            "line": 156,
             "description": "Search type.",
             "itemtype": "property",
             "name": "type",
@@ -24193,7 +24193,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 143,
+            "line": 165,
             "description": "Minimum characters count to query for results.",
             "itemtype": "property",
             "name": "minCharacters",
@@ -24204,7 +24204,18 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 152,
+            "line": 174,
+            "description": "Maximum results to display when using local and simple search, maximum category count for category search",
+            "itemtype": "property",
+            "name": "maxResults",
+            "type": "Number",
+            "default": "10",
+            "class": "FlexberrySearchComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
+            "line": 183,
             "description": "Search API settings.\nSee [Semantic UI examples](http://semantic-ui.com/modules/search.html#using-api-settings).",
             "itemtype": "property",
             "name": "apiSettings",
@@ -24215,7 +24226,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 162,
+            "line": 193,
             "description": "Hash describing rules how to map response into display content.",
             "itemtype": "property",
             "name": "fields",
@@ -24226,7 +24237,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 171,
+            "line": 202,
             "description": "Value typed into input.",
             "itemtype": "property",
             "name": "value",
@@ -24237,7 +24248,38 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 182,
+            "line": 213,
+            "description": "\"Select\" or something else\nNeed to prevent \"enter\" action after \"onSelect\" event",
+            "itemtype": "property",
+            "name": "_lastAction",
+            "type": "String",
+            "default": "null",
+            "class": "FlexberrySearchComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
+            "line": 223,
+            "description": "Flag: is value typed or selected",
+            "itemtype": "property",
+            "name": "_valueWasSelected",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberrySearchComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
+            "line": 232,
+            "description": "Clean _lastAction if user change value",
+            "itemtype": "method",
+            "name": "_valueChange",
+            "class": "FlexberrySearchComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
+            "line": 242,
             "description": "Initializes Semantic UI search module.",
             "itemtype": "method",
             "name": "_initializeSearchModule",
@@ -24248,7 +24290,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 210,
+            "line": 289,
             "description": "Destroys Semantic UI search module.",
             "itemtype": "method",
             "name": "_initializeSearchModule",
@@ -24259,7 +24301,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 225,
+            "line": 304,
             "description": "Handles changes in properties related to Semantic UI search module.",
             "itemtype": "method",
             "name": "_searchPropertiesDidChange",
@@ -24270,21 +24312,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 236,
+            "line": 315,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 254,
+            "line": 333,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberrySearchComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-search.js",
-            "line": 272,
+            "line": 351,
             "description": "Component's action invoking when user press enter in search box",
             "itemtype": "method",
             "name": "sendingActions.enter",
@@ -24761,9 +24803,9 @@
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
             "line": 16,
-            "description": "Flag: indicates when one or more results contains more than 0 features",
+            "description": "Flag: indicates when results contains no data",
             "itemtype": "property",
-            "name": "_hasData",
+            "name": "_noData",
             "type": "boolean",
             "default": "false",
             "class": "LayerResultListComponent",
@@ -24772,7 +24814,7 @@
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
             "line": 24,
-            "description": "Flag: inciates when one or more results.features promises rejected",
+            "description": "Flag: indicates when one or more results.features promises rejected",
             "itemtype": "property",
             "name": "_hasError",
             "type": "boolean",
@@ -24816,6 +24858,17 @@
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
             "line": 60,
+            "description": "Ready results for display without promise",
+            "itemtype": "property",
+            "name": "_displayResults",
+            "type": "Ember.A()",
+            "default": "null",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 69,
             "description": "Array of results for display, each result contains object with following properties\nlayerModel - MapLayer model\nfeatures - promise for array of GeoJSON features",
             "itemtype": "property",
             "name": "results",
@@ -24826,7 +24879,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 71,
+            "line": 80,
             "description": "Set selected feature and add its layer to serviceLayer on map",
             "itemtype": "method",
             "name": "actions.selectFeature",
@@ -24835,7 +24888,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 91,
+            "line": 103,
             "description": "Select passed feature and zoom map to its layer bounds",
             "itemtype": "method",
             "name": "actions.zoomTo",
@@ -24844,7 +24897,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 110,
+            "line": 126,
             "description": "Select passed feature and pan map to its layer centroid",
             "itemtype": "method",
             "name": "actions.panTo",
@@ -24853,7 +24906,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 129,
+            "line": 149,
             "description": "Observer for passed results",
             "itemtype": "method",
             "name": "_resultObserver",
@@ -45462,19 +45515,19 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:74"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:95"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:79"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:100"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:236"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:315"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:254"
+            "line": " ember-flexberry-gis/addon/components/flexberry-search.js:333"
         },
         {
             "message": "Missing item type\nReference to component's template.",
