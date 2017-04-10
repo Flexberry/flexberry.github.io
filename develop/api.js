@@ -128,6 +128,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "GroupLayerComponent",
         "GroupLayerSettingsComponent",
         "GuidTransform",
+        "HistoryControlComponent",
         "IISCaseberryLoggingObjectsApplicationLogEController",
         "IISCaseberryLoggingObjectsApplicationLogERoute",
         "IISCaseberryLoggingObjectsApplicationLogLController",

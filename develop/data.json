@@ -1046,6 +1046,15 @@
             },
             "namespaces": {}
         },
+        "ember-flexberry-gis/addon/components/history-control.js": {
+            "name": "ember-flexberry-gis/addon/components/history-control.js",
+            "modules": {},
+            "classes": {
+                "HistoryControlComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-gis/addon/components/layer-result-list.js": {
             "name": "ember-flexberry-gis/addon/components/layer-result-list.js",
             "modules": {},
@@ -3191,6 +3200,7 @@
                 "FlexberrySearchComponent": 1,
                 "FlexberryTreeComponent": 1,
                 "FlexberryTreenodeComponent": 1,
+                "HistoryControlComponent": 1,
                 "LayerResultListComponent": 1,
                 "MiniMapComponent": 1,
                 "ScaleControlComponent": 1,
@@ -5066,6 +5076,21 @@
                 "DynamicActionsMixin",
                 "DynamicPropertiesMixin"
             ]
+        },
+        "HistoryControlComponent": {
+            "name": "HistoryControlComponent",
+            "shortname": "HistoryControlComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/history-control.js",
+            "line": 7,
+            "description": "Simple history component for leaflet map",
+            "extends": "BaseControlComponent"
         },
         "LayerResultListComponent": {
             "name": "LayerResultListComponent",
@@ -24798,6 +24823,27 @@
                 }
             ],
             "class": "FlexberryTreenodeComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/history-control.js",
+            "line": 13,
+            "description": "The class used for the back button image",
+            "class": "HistoryControlComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/history-control.js",
+            "line": 18,
+            "description": "The class used for the forward button image",
+            "class": "HistoryControlComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/history-control.js",
+            "line": 23,
+            "description": "- position - sets which corner of the map to place your controls.\npossible values are 'topleft' | 'topright'(default) | 'bottomleft' | 'bottomright'\n- maxMovesToSave - the number of moves in the history to save before clearing out the oldest.\ndefault value is 10, use 0 or a negative number to make unlimited.\n- backImage, forwardImage - the class used for the button images. defaults are 'fa fa-caret-left' and 'fa fa-caret-right', respectively.\n- no image will be displayed if set to empty string.\n- backText, forwardText - the text in the buttons. defaults are '' (empty).\n- backTooltip, forwardTooltip - tooltip contents. defaults are 'Go to Previous Extent' and 'Go to Next Extent', respectively.\n- backImageBeforeText, forwardImageBeforeText - when both text and image are present\n- orientation - 'vertical' | 'horizontal'(default) - whether to position the buttons on top of one another or side-by-side.\n- useExternalControls - true | false(default) - set to true to hide these controls on the map and instead use your own controls.\nSee the Events and API for more details on this.\n- shouldSaveMoveInHistory - function(zoomCenter) { return true; } a callback you can provide that gets called with every move.\nreturn false to not save a move.",
+            "class": "HistoryControlComponent",
             "module": "ember-flexberry-gis"
         },
         {
@@ -45552,6 +45598,18 @@
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's hbs-markup.",
             "line": " ember-flexberry-gis/addon/components/flexberry-treenode.js:124"
+        },
+        {
+            "message": "Missing item type\nThe class used for the back button image",
+            "line": " ember-flexberry-gis/addon/components/history-control.js:13"
+        },
+        {
+            "message": "Missing item type\nThe class used for the forward button image",
+            "line": " ember-flexberry-gis/addon/components/history-control.js:18"
+        },
+        {
+            "message": "Missing item type\n- position - sets which corner of the map to place your controls.\npossible values are 'topleft' | 'topright'(default) | 'bottomleft' | 'bottomright'\n- maxMovesToSave - the number of moves in the history to save before clearing out the oldest.\ndefault value is 10, use 0 or a negative number to make unlimited.\n- backImage, forwardImage - the class used for the button images. defaults are 'fa fa-caret-left' and 'fa fa-caret-right', respectively.\n- no image will be displayed if set to empty string.\n- backText, forwardText - the text in the buttons. defaults are '' (empty).\n- backTooltip, forwardTooltip - tooltip contents. defaults are 'Go to Previous Extent' and 'Go to Next Extent', respectively.\n- backImageBeforeText, forwardImageBeforeText - when both text and image are present\n- orientation - 'vertical' | 'horizontal'(default) - whether to position the buttons on top of one another or side-by-side.\n- useExternalControls - true | false(default) - set to true to hide these controls on the map and instead use your own controls.\nSee the Events and API for more details on this.\n- shouldSaveMoveInHistory - function(zoomCenter) { return true; } a callback you can provide that gets called with every move.\nreturn false to not save a move.",
+            "line": " ember-flexberry-gis/addon/components/history-control.js:23"
         },
         {
             "message": "Missing item type\nReference to component's template.",
