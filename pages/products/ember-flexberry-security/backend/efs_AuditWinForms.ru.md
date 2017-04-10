@@ -22,7 +22,7 @@ lang: ru
 # Доступные win-формы [аудита](audit-web.html)
 Win-формы [аудита](audit-web.html) были разработаны для отображения объектов, используемых [ICSSoft.STORMNET.Business.Audit.Audit](i-audit.html). Формы упакованы в виде nuget-пакета `NewPlatform.Flexberry.Audit.WinForms`.
 
-Существуют также [web-формы аудита](audit-web-forms.html).
+Существуют также [web-формы аудита](fa_audit-web-forms.html).
 
 Win-формы [аудита](audit-web.html):
 * Формы просмотра записей о выполнении аудируемых действий.
