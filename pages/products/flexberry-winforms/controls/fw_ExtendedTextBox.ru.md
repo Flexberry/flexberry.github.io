@@ -3,15 +3,14 @@ title: ExtendedTextBox
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_extended-text-box.html
-folder: products/flexberry-winforms/
+permalink: ru/fw_extended-textbox.html
 lang: ru
 ---
 
 # ExtendedTextBox
 Содержится в сборке `ICSSoft.STORMNET.Windows.Forms`.
 
-Это контрол для организации [предиктивного ввода](прикладные-системы_predict-input.html). Обычно используется для выбора мастерового объекта на основании некоторой строки. Самый распространённый случай - ввод ФИО: заводим справочник ФИО, настраиваем `ExtendedTextBox` на него и получаем быстрый выбор среди граждан, имеющихся в БД.
+Это контрол для организации [предиктивного ввода](fw_predict-input.html). Обычно используется для выбора мастерового объекта на основании некоторой строки. Самый распространённый случай - ввод ФИО: заводим справочник ФИО, настраиваем `ExtendedTextBox` на него и получаем быстрый выбор среди граждан, имеющихся в БД.
 
 ## Свойства
 * Свойство `AutoOpenListForSuggestions` – при значении `true` автоматически открывается список для вариантов при вводе текста.

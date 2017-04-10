@@ -3,7 +3,7 @@ title: Произвольный контрол в качестве лукапа
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
-permalink: ru/fd_generate-lookup--i-lookup.html
+permalink: ru/fo_generate-lookup-i-lookup.html
 folder: products/flexberry-designer/
 lang: ru
 ---
@@ -18,7 +18,7 @@ lang: ru
 
 (((
 <msg type=warning>
-В настоящее время лучше использовать [ExtendedLookUp](extended-look-up.html) вместо ExtLookUpTextControl (оба контрола находятся в одной библиотеке). 
+В настоящее время лучше использовать [ExtendedLookUp](fw_extended-lookup.html) вместо ExtLookUpTextControl (оба контрола находятся в одной библиотеке). 
 </msg>
 )))
 

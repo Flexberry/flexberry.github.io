@@ -3,14 +3,13 @@ title: PseudoDetailInExtendedView
 sidebar: flexberry-aspnet_sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/fa_pseudo-detail-in-extended-view.html
-folder: products/flexberry-aspnet/
+permalink: ru/fa_pseudo-detail-extended-view.html
 lang: ru
 ---
-# PseudoDetailInExtendedView
-`PseudoDetailInExtendedView` - структура, используемая для работы [псевдодетейлов в расширенном редакторе ограничений](details-at-adv-limit-editor.html).
 
-```cs
+`PseudoDetailInExtendedView` - структура, используемая для работы [псевдодетейлов в расширенном редакторе ограничений](fa_details-at-adv-limit-editor.html).
+
+```csharp
 /// <summary>
 /// Конструктор.
 /// </summary>
@@ -21,7 +20,8 @@ lang: ru
 public PseudoDetailInExtendedView(
 	string pseudoDetailViewName, Type pseudoDetailType, string masterLinkName, string masterToDetailPseudoProperty)
 ```
-```cs
+
+```csharp
 /// <summary>
 /// Конструктор.
 /// </summary>
@@ -30,5 +30,3 @@ public PseudoDetailInExtendedView(
 /// <param name="masterToDetailPseudoProperty">Имя псевдосвойства, по которому идёт связь от мастера к детейлу.</param>
 public PseudoDetailInExtendedView(View pseudoDetailView, string masterLinkName, string masterToDetailPseudoProperty)
 ```
-
-----
