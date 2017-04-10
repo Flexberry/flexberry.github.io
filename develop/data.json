@@ -19849,20 +19849,31 @@
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
             "line": 51,
+            "description": "Properties which will be passed to the map-tool when it will be instantiated.",
+            "itemtype": "property",
+            "name": "_identifyToolProperties",
+            "type": "Object",
+            "default": "null",
+            "class": "IdentifyMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
+            "line": 60,
             "description": "Reference to component's template.",
             "class": "IdentifyMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 56,
+            "line": 65,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "IdentifyMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 62,
+            "line": 71,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nto disable a component's wrapping element.",
             "itemtype": "property",
             "name": "tagName",
@@ -19873,7 +19884,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 72,
+            "line": 81,
             "description": "Map tool's additional CSS-class.",
             "itemtype": "property",
             "name": "class",
@@ -19884,7 +19895,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 81,
+            "line": 90,
             "description": "Map tool's caption.",
             "itemtype": "property",
             "name": "caption",
@@ -19895,7 +19906,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 90,
+            "line": 99,
             "description": "Map tool's tooltip text.\nWill be added as wrapper's element 'title' attribute.",
             "itemtype": "property",
             "name": "tooltip",
@@ -19905,7 +19916,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 99,
+            "line": 108,
             "description": "Map tool's icon CSS-class names.",
             "itemtype": "property",
             "name": "iconClass",
@@ -19916,7 +19927,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 108,
+            "line": 117,
             "description": "Map tool's 'idenify-all' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "identifyAllClass",
@@ -19927,7 +19938,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 117,
+            "line": 126,
             "description": "Map tool's 'idenify-all' mode's caption.",
             "itemtype": "property",
             "name": "identifyAllCaption",
@@ -19938,7 +19949,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 126,
+            "line": 135,
             "description": "Map tool's 'idenify-all' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "identifyAllIconClass",
@@ -19949,7 +19960,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 135,
+            "line": 144,
             "description": "Map tool's 'idenify-all-visible' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "identifyAllVisibleClass",
@@ -19960,7 +19971,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 144,
+            "line": 153,
             "description": "Map tool's 'idenify-all-visible' mode's caption.",
             "itemtype": "property",
             "name": "identifyAllVisibleCaption",
@@ -19971,7 +19982,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 153,
+            "line": 162,
             "description": "Map tool's 'idenify-all-visible' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "identifyAllVisibleIconClass",
@@ -19982,7 +19993,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 162,
+            "line": 171,
             "description": "Map tool's 'idenify-top-visible' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "identifyTopVisibleClass",
@@ -19993,7 +20004,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 171,
+            "line": 180,
             "description": "Map tool's 'idenify-top-visible' mode's caption.",
             "itemtype": "property",
             "name": "identifyTopVisibleCaption",
@@ -20004,7 +20015,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 180,
+            "line": 189,
             "description": "Map tool's 'idenify-top-visible' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "identifyTopVisibleIconClass",
@@ -20015,7 +20026,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 189,
+            "line": 198,
             "description": "Flag: is map tool 'identify all layers' enable",
             "itemtype": "property",
             "name": "identifyAll",
@@ -20026,7 +20037,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 198,
+            "line": 207,
             "description": "Flag: is map tool 'identify all visible layers' enable",
             "itemtype": "property",
             "name": "identifyAllVisible",
@@ -20037,7 +20048,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 207,
+            "line": 216,
             "description": "Flag: is map tool 'identify top layer' enable",
             "itemtype": "property",
             "name": "identifyTop",
@@ -20048,7 +20059,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 217,
+            "line": 226,
             "description": "Handles {{#crossLink \"BaseMapToolComponent/sendingActions.activate:method\"}}base map-tool's 'activate' action{{/crossLink}}.\nInvokes own {{#crossLink \"IdentifyMapToolComponent/sendingActions.activate:method\"}}'activate' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapToolActivate",
@@ -20064,7 +20075,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 229,
+            "line": 238,
             "description": "Component's action invoking when map-tool must be activated.",
             "itemtype": "method",
             "name": "sendingActions.activate",
@@ -27272,6 +27283,16 @@
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
             "line": 33,
+            "description": "Method to prepare identify result if need",
+            "itemtype": "method",
+            "name": "prepareIdentifyResult",
+            "default": "null",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 41,
             "description": "Returns flat array of layers satisfying to current identification mode.",
             "itemtype": "method",
             "name": "_getLayersToIdentify",
@@ -27300,7 +27321,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 46,
+            "line": 54,
             "description": "Starts identification by array of satisfying layers inside given bounding box.",
             "itemtype": "method",
             "name": "_startIdentification",
@@ -27340,7 +27361,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 117,
+            "line": 125,
             "description": "Finishes identification.",
             "itemtype": "method",
             "name": "_finishIdentification",
@@ -27394,7 +27415,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 545,
+            "line": 557,
             "description": "Handles identification popup layer element creation.",
             "itemtype": "method",
             "name": "_popupLayerElementCreated",
@@ -27434,7 +27455,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 559,
+            "line": 571,
             "description": "Handles identification popup feature element creation.",
             "itemtype": "method",
             "name": "_popupLayerTreeItemElementCreated",
@@ -27474,7 +27495,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 573,
+            "line": 585,
             "description": "Handles map's 'editable:drawing:end' event.",
             "itemtype": "method",
             "name": "_rectangleDrawingDidEnd",
@@ -27499,7 +27520,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 618,
+            "line": 630,
             "description": "Enables tool.",
             "itemtype": "method",
             "name": "_enable",
@@ -27510,7 +27531,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 628,
+            "line": 640,
             "description": "Disables tool.",
             "itemtype": "method",
             "name": "_disable",
@@ -44930,7 +44951,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/map-tools/identify.js:33"
+            "line": " ember-flexberry-gis/addon/map-tools/identify.js:41"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -45530,11 +45551,11 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:51"
+            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:60"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:56"
+            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:65"
         },
         {
             "message": "Missing item type\nReference to component's template.",
