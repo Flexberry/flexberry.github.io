@@ -4474,7 +4474,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 27,
+            "line": 29,
             "description": "Flexberry full-extent map-command component.\nComponent must be used in combination with {{#crossLink \"FlexberryMaptoolbarComponent\"}}flexberry-maptoolbar component{{/crossLink}}\nas a wrapper.\n\nUsage:\ntemplates/my-map-form.hbs\n```handlebars\n{{#flexberry-maptoolbar leafletMap=leafletMap as |maptoolbar|}}\n  {{map-commands/full-extent execute=(action \"onMapCommandExecute\" target=maptoolbar)}}\n{{/flexberry-maptoolbar}}\n```",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>",
             "uses": [
@@ -5515,7 +5515,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/map-commands/full-extent.js",
-            "line": 7,
+            "line": 8,
             "description": "Full extent map-command.\nChanges map view to it's full extent.",
             "extends": "BaseMapCommand"
         },
@@ -16235,7 +16235,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 9,
+            "line": 11,
             "description": "Component's CSS-classes names.\nJSON-object containing string constants with CSS-classes names related to component's .hbs markup elements.",
             "itemtype": "property",
             "name": "flexberryClassNames",
@@ -16259,21 +16259,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 45,
+            "line": 47,
             "description": "Reference to component's template.",
             "class": "FullExtentMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 50,
+            "line": 52,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "FullExtentMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 56,
+            "line": 58,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nto disable a component's wrapping element.",
             "itemtype": "property",
             "name": "tagName",
@@ -16284,7 +16284,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 66,
+            "line": 68,
             "description": "Map command's additional CSS-class.",
             "itemtype": "property",
             "name": "class",
@@ -16295,7 +16295,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 75,
+            "line": 77,
             "description": "Map command's caption.",
             "itemtype": "property",
             "name": "caption",
@@ -16306,7 +16306,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 84,
+            "line": 86,
             "description": "Map command's tooltip text.\nWill be added as wrapper's element 'title' attribute.",
             "itemtype": "property",
             "name": "tooltip",
@@ -16316,7 +16316,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 93,
+            "line": 95,
             "description": "Map command's icon CSS-class names.",
             "itemtype": "property",
             "name": "iconClass",
@@ -16327,7 +16327,40 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 103,
+            "line": 104,
+            "description": "Map command's default X position",
+            "itemtype": "property",
+            "name": "lat",
+            "type": "float",
+            "default": "0",
+            "class": "FullExtentMapCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
+            "line": 113,
+            "description": "Map command's default Y position",
+            "itemtype": "property",
+            "name": "lng",
+            "type": "float",
+            "default": "0",
+            "class": "FullExtentMapCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
+            "line": 122,
+            "description": "Map command's default zoom",
+            "itemtype": "property",
+            "name": "zoom",
+            "type": "float",
+            "default": "0",
+            "class": "FullExtentMapCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
+            "line": 132,
             "description": "Handles {{#crossLink \"BaseMapCommandComponent/sendingActions.execute:method\"}}base map-command's 'execute' action{{/crossLink}}.\nInvokes own {{#crossLink \"FullExtentMapCommandComponent/sendingActions.execute:method\"}}'execute' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapCommandExecute",
@@ -16343,7 +16376,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/full-extent.js",
-            "line": 115,
+            "line": 150,
             "description": "Component's action invoking when map-command must be executed.",
             "itemtype": "method",
             "name": "sendingActions.execute",
@@ -26551,7 +26584,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-commands/full-extent.js",
-            "line": 15,
+            "line": 16,
             "description": "Executes map-command.",
             "itemtype": "method",
             "name": "execute",
@@ -45205,11 +45238,11 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/full-extent.js:45"
+            "line": " ember-flexberry-gis/addon/components/map-commands/full-extent.js:47"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/full-extent.js:50"
+            "line": " ember-flexberry-gis/addon/components/map-commands/full-extent.js:52"
         },
         {
             "message": "Missing item type\nReference to component's template.",
