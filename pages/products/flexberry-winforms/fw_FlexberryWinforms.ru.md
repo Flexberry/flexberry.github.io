@@ -38,7 +38,7 @@ lang: ru
 * [Интерфейс ISpecialEmptyValue](i-special-empty-value.html)
 * [Установка заголовка списковой формы](list-form-caption.html)
 * [Добавление на форму редактирования Lookup мастера, не относящегося к основному объекту](lookup-another-object.html)
-* [Открытие формы редактирования с передачей объекта с частично заполненными полями](open-edit-form-with-custom-object.html)
+* [Открытие формы редактирования с передачей объекта с частично заполненными полями](open-edit-form-custom-object.html)
 * [ Определение контролов, доступных только на чтение, с помощью EditManager](read-only-in-edit-manager.html)
 * [Как открыть объект только на чтение](read-only-object.html)
 * [Возврат нескольких объектов по лукапу](return--multiple--objects--lookup.html)

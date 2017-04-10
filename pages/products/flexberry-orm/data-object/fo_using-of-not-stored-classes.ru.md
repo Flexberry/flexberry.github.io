@@ -20,7 +20,7 @@ protected override void OnClosing(CancelEventArgs e)
 ```
 ## Запуск немодальной формы
 
-Для запуска полученной формы немодально можно воспользоваться [инструкцией](prinuditelnyi-vyzov-formy-redaktirovaniya.html).
+Для запуска полученной формы немодально можно воспользоваться [инструкцией](fw_force-call-editing-form.html).
 
 {% include note.html content="Обратите внимание, что при создании формы используется независимая форма, которая и вызовет зависимую форму." %}
 

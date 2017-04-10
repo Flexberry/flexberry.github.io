@@ -184,7 +184,7 @@ ds.Query<Кошка>(Кошка.Views.КошкаE).Where(o => ПородаPKs.Co
 
 ### Детейлы
 
-С учётом [особенностей написания Linq-запросов к массивам детейлов](fo_functionality-work-with-detail-array.html):
+С учётом [особенностей написания Linq-запросов к массивам детейлов](fo_functionality-work-detail-array.html):
 
 ``` csharp
 ds.Query<Порода>(Порода.Views.КотенокE).Where(

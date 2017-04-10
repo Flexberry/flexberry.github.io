@@ -3,7 +3,7 @@ title: Функциональность при работе с массивам�
 sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public
 toc: true
-permalink: ru/fo_functionality-work-with-detail-array.html
+permalink: ru/fo_functionality-work-detail-array.html
 ---
 
 ## Базовая функциональность по работе с массивами детейловых объектов
