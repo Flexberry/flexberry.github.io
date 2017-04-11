@@ -1,5 +1,5 @@
 ---
-title: Работа с блокировками в веб
+title: Работа с блокировками в web-системах
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

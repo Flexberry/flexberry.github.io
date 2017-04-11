@@ -1,5 +1,5 @@
 ---
-title: Подсистема полномочий в Web
+title: Подсистема полномочий для Flexberry ASP.NET
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true
@@ -81,3 +81,27 @@ lang: ru
 Чтобы использовать AzMan необходимо подменить провайдеры.
 
 Полномочия можно также настраивать с помощью [Security Console](efs_security-console.html).
+
+## Добавление пользователей в БД системы полномочий при windows-аутентификации
+
+Добавление пользователей в БД системы полномочий при windows-аутентификации описано в соотвествующей [статье](fa_authentication-adapter.html).
+
+## Создание полномочий на классы для Flexberry ASP.NET
+
+Создание полномочий на классы для Flexberry ASP.NET описано в соотвествующей [статье](fa_authority-classes.html).
+
+## CaseberryDomainRoleProvider
+
+Использование `CaseberryDomainRoleProvider` описано в соотвествующей [статье](fa_domain-role-provider.html).
+
+## CaseberryMembershipProvider 
+
+Использование `CaseberryMembershipProvider` описано в соотвествующей [статье](fa_membership-provider.html).
+
+## Web-формы подсистемы полномочий
+
+Использование подсистемы полномочий для web-форм описано в [статье Web-формы подсистемы полномочий](fa_security-forms.html).
+
+## UserSettingsService
+
+Использование `UserSettingsService` описано в соотвествующей [статье](fa_user-settings-service.html).

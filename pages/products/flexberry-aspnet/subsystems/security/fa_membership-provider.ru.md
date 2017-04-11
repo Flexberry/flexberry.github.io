@@ -1,5 +1,5 @@
 ---
-title: CaseberryMembershipProvider - полномочия
+title: CaseberryMembershipProvider 
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Security
 toc: true

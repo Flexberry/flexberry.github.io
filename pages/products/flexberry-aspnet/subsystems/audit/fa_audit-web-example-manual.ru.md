@@ -1,6 +1,6 @@
 ---
-title: Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта.
-sidebar: ember-flexberry-security_sidebar
+title: Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта
+sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry Audit
 toc: true
 permalink: ru/fa_audit-web-example-manual.html

@@ -1,7 +1,7 @@
 ---
 title: Web-формы аудита
 sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Audit, Windows UI (формы)
+keywords: Flexberry ASP-NET, Flexberry Audit
 toc: true
 permalink: ru/fa_audit-web-forms.html
 lang: ru
@@ -9,7 +9,7 @@ lang: ru
 
 [Web-формы](fa_tech-forms-web.html) [аудита](audit-web.html) были разработаны для отображения объектов, используемых [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html). Формы расположены в сборке "ICSSoft.STORMNET.Web.AjaxControls.dll".
 
-Существуют также [web-формы аудита](efs_audit-win-forms.html).
+Существуют также [win-формы аудита](efs_audit-win-forms.html).
 
 ### Записеориентированные формы аудита
 

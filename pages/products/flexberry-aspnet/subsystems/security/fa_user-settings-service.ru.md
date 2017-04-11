@@ -1,5 +1,5 @@
 ---
-title: Flexberry UserSettingsService
+title: UserSettingsService
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry UserSettingsService
 toc: true
