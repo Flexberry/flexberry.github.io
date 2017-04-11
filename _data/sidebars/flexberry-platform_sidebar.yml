@@ -7,42 +7,27 @@ entries:
   folders:
 
   - title: Getting Started
+    title_ru: С чего начать
     output: web, pdf
+
     folderitems:
     - title: About platform
       title_ru: О платформе
       url: /fp_landing_page.html
       output: web
 
-    - title: Article`s creating
+
+  - title: Platform development
+    title_ru: Разработка платформы
+    output: web, pdf
+
+    folderitems:
+    - title: Articles authoring
       title_ru: Правила оформления статей 
       url: /fp_how-create-article.html
       output: web, pdf
 
-    - title: Sample 2
-      url: /p1_sample2.html
-      output: web, pdf
-
-    - title: Sample 3
-      url: /p1_sample3.html
-      output: web, pdf
-
-  - title: Another heading
-    output: web, pdf
-
-    folderitems:
-    - title: Sample 4
-      url: /p1_sample4.html
-      output: web, pdf
-
-    - title: Sample 5
-      url: /p1_sample5.html
-      output: web, pdf
-
-    - title: Sample 6
-      url: /p1_sample6.html
-      output: web, pdf
-
-    - title: Sample 7
-      url: /p1_sample7.html
+    - title: Code style
+      title_ru: Стиль оформления кода
+      url: /fp_code-style.html
       output: web, pdf
