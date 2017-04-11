@@ -1,10 +1,11 @@
 ---
 title: Стиль оформления кода
 sidebar: flexberry-platform_sidebar
-keywords: Code, style, stylecop, convention,
+keywords: Code, style, stylecop, convention, стиль
 toc: true
 permalink: ru/fp_code-style.html
 lang: ru
+summary: При разработке компонентов платформы Flexberry команда должна придерживаться единого стиля написания кода.
 ---
 
 ## Общие сведения
