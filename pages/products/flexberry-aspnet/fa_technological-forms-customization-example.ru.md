@@ -7,9 +7,9 @@ permalink: ru/fa_technological-forms-customization-example.html
 lang: ru
 ---
 
-Для настройки технологических форм [web-приложений](flexberry-a-s-p-n-e-t.html) реализован пример - сервис '''DynamicPageTuner'''. Класс зарегистрирован в секции unity.
+Настройки технологических форм [web-приложений](fa_flexberry-asp-net.html) осуществляются с помощью сервиса `DynamicPageTuner`. Класс зарегистрирован в секции `unity`.
 
-```cs
+```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
       <...>
     <container>
@@ -23,13 +23,19 @@ lang: ru
     </container>
   </unity>
 ```
-С его помощью можно изменить внешний вид технологических форм, настроить заголовки форм, отложить загрузку списка, настроить порядок и отображение столбцов и многое другое. 
+
+С его помощью можно:
+
+* изменить внешний вид технологических форм,
+* настроить заголовки форм,
+* отложить загрузку списка,
+* настроить порядок и отображение столбцов и многое другое. 
 
 ## Пример отложенной загрузки данных
-```cs
+
+```csharp
 public class DynamicPageTuner : IDynamicPageTuner, IDynamicPageWolvTuner
 {
-        
    /// <summary>
    /// Пример реализации метода настройки <see cref="WebObjectListView" /> на технологических страницах.
    /// </summary>
@@ -50,10 +56,9 @@ public class DynamicPageTuner : IDynamicPageTuner, IDynamicPageWolvTuner
 
 ## Пример настройки отображения столбцов
 
-```cs
+```csharp
 public class DynamicPageTuner : IDynamicPageTuner, IDynamicPageWolvTuner
 {
-        
    // Настройка порядка и количества столбцов на списке пользователей.
    if (pageId == DynamicPageIdentifier.SecurityUsersList)
    {
@@ -72,4 +77,5 @@ public class DynamicPageTuner : IDynamicPageTuner, IDynamicPageWolvTuner
 ```
 
 Выглядит следующим образом:
-![](/images/pages/ABratchikova/Пример настройки столбцов на списке пользователей.png)
+
+![](/images/pages/products/flexberry-aspnet/example-teh-settings.png)

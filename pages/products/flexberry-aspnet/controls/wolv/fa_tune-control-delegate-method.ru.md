@@ -4,12 +4,12 @@ sidebar: flexberry-aspnet_sidebar
 keywords: 
 toc: true
 permalink: ru/fa_tune-control-delegate-method.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
-# Делегат изменения контрола фильтрации
-Делегат изменения контрола [фильтрации](fa_wolv-filters.html) (на настоящий момент изменение доступно для [DatePicker](fa_date-picker.html)) в [WebObjectListView](fa_web-object-list-view.html). 
+##  Делегат изменения контрола фильтрации
+
+В Flexberry ASP.NET существует делегат изменения контрола [фильтрации](fa_wolv-filters.html) (на настоящий момент изменение доступно для [DatePicker](fa_date-picker.html)) в [WebObjectListView](fa_web-object-list-view.html). 
 
 Как работает делегат: модуль фильтрации создаёт контролы для фильтрации посредством [WebControlProvider](fa_web-control-provider.html), где вызывается делегат.
 
@@ -27,16 +27,17 @@ namespace ICSSoft.STORMNET.Web.Tools
     }
 }
 ```
+
 ## CreatedControlData
-`CreatedControlData` - это особая структура, сообщающая в делегат, откуда и для чего был создан контрол (выложена версия с описанием от 10.11.2014, планируется расширять перечисление `CreateControlReason`):
+
+`CreatedControlData` - это особая структура, сообщающая в делегат, откуда и для чего был создан контрол:
+
 ```csharp
 namespace ICSSoft.STORMNET.Web.Tools
 {
     public class CreatedControlData
     {
-	
 		...
-	
         /// <summary>
         /// Список вариантов причин создания контролов.
         /// </summary>
@@ -72,10 +73,9 @@ namespace ICSSoft.STORMNET.Web.Tools
 ```
 
 ## Пример
-Пример работы делегата реализован на тестовом стенде:
-"http://ru:6158/forms/DataEdit/TestChangeControlDelegate/TestChangeControlDelegateL.aspx"
 
-Делегат можно определить следующим образом. При этом в контроле фильтрации, соответствующем свойству `DateTimePropertyWithDelegate` будет доступно задание даты и в фильтре будет отображаться надпись "По этому полю нельзя отфильтровать.".
+Делегат можно определить следующим образом:
+
 ```csharp
 /// <summary>
 /// Обработчик события завершения инициализации.
@@ -109,6 +109,4 @@ private void ChangeControlDelegateMethod(Control control, CreatedControlData cha
 }  
 ```  
  
-  
-
-
+При этом в контроле фильтрации, соответствующем свойству `DateTimePropertyWithDelegate` будет доступно задание даты и в фильтре будет отображаться надпись "По этому полю нельзя отфильтровать".  

@@ -39,7 +39,7 @@ lang: ru
 
 В качестве контролов для фильтров на данный момент могут использоваться:
 
-* [AlphaNumericTextBox](fa_alpha-numeric-textbox.html) (для версии веб-шаблона после 10.07.2015)
+* [AlphaNumericTextBox](fa_alpha-numeric-textbox.html)
 * [DatePicker](fa_date-picker.html)
 * [MasterEditorLinkedAjaxLookUp](fa_master-editor-linked-ajax-lookup.html)
 
