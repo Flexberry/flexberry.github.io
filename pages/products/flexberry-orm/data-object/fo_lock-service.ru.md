@@ -4,7 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Черновик статьи
 toc: true
 permalink: ru/fo_lock-service.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 

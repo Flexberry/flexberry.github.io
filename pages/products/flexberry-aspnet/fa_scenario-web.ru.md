@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: ru/fa_scenario-web.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 
@@ -20,4 +19,3 @@ lang: ru
 * Замена AjaxGroupEdit на WebObjectListView
 * Как правильно подключать скрипты из *.cs ([ContextHelper](fa_context-helper.html))
 * Редактирование нескольких объектов на одной странице
-

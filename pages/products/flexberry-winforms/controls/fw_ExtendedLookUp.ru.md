@@ -3,7 +3,7 @@ title: ExtendedLookUp
 sidebar: product--sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_extended-look-up.html
+permalink: ru/fw_extended-lookup.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
@@ -11,7 +11,7 @@ lang: ru
 '''ExtendedLookUp''' представляет из себя лукап с предиктивным вводом. Находится в сборке `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`
 
 # ExtendedLookUp в качестве лукапа
-Как установить `ExtendedLookUp` в качестве лукапа описано в статье [Произвольный контрол в качестве лукапа](generate-lookup--i-lookup.html). 
+Как установить `ExtendedLookUp` в качестве лукапа описано в статье [Произвольный контрол в качестве лукапа](fo_generate-lookup-i-lookup.html). 
 
 Если необходимо установить `ExtendedLookUp` в качестве лукапа в [GroupEdit](group-edit.html), то у соответствующего [GroupEdit](group-edit.html) необходимо [установить свойство `EnableValueDisplayResponsibility` в `true`](displaying-master-in--group-edit.html).
 
