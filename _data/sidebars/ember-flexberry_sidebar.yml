@@ -176,6 +176,11 @@ entries:
       url: /ef_cordova.html
       output: web, pdf
 
+    - title: Mobile templates
+      title_ru: Мобильные шаблоны
+      url: /ef_resolver.html
+      output: web, pdf
+
   - title: Generation
     title_ru: Генерация
     output: web, pdf
