@@ -99,13 +99,17 @@ APP: {
 
 * **deviceRelatedTypes** - задает перечень устройство-зависимых типов ресурсов (по умолчанию это компоненты, шаблоны и представления).
 
-Изменить настройку можно в файле `node_modules\ember-flexberry\addon\resolver.js` изменив содержимое массива `deviceRelatedTypes`:
+Изменить настройку можно в прикладном resolver.js унаследовав его от `ember-flexberry/resolver` и переопределив в нем этот массив `deviceRelatedTypes`:
 
 ```js
-deviceRelatedTypes: [
-  'template',
-  'controller'
-],
+import Resolver from 'ember-flexberry/resolver';
+
+export default Resolver.extend({
+  deviceRelatedTypes: [
+    'template',
+    'controller'
+  ],
+});
 ```
 
 По умолчанию: `deviceRelatedTypes: ['component', 'template', 'view']`
