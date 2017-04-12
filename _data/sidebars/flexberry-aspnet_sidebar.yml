@@ -198,6 +198,6 @@ entries:
       output: web, pdf
 
     - title: Open editform for custom object
-      title_ru: НОткрытие формы редактирования с передачей объекта с частично заполненными полями
+      title_ru: Открытие формы редактирования с передачей объекта с частично заполненными полями
       url: /fa_open-edit-form-custom-object.html
       output: web, pdf
