@@ -496,6 +496,11 @@ export default Ember.Mixin.create({
       return this.reloadList(queryParameters)
       .then(records =&gt; {
         _this.set(&#x27;customFolvContent&#x27;, records);
+      })
+      .finally(() =&gt; {
+        if (_this.get(&#x27;state&#x27;) === &#x27;loading&#x27;) {
+          _this.set(&#x27;state&#x27;, &#x27;&#x27;);
+        }
       });
     }
 
