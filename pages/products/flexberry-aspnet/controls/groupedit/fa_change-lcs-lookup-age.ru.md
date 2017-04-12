@@ -1,5 +1,5 @@
 ---
-title: Связывание LookUp'ов в AGE с внешним LookUp'ом
+title: Связывание LookUp'ов в AjaxGroupEdit с внешним LookUp'ом
 sidebar: flexberry-aspnet_sidebar
 keywords: FAQ, Flexberry ASP-NET, How to (page)
 toc: true

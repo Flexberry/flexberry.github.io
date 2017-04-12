@@ -1,5 +1,5 @@
 ---
-title: Настройки для LookUp в AGE
+title: Настройки для LookUp в AjaxGroupEdit
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true

@@ -1,9 +1,9 @@
 ---
-title:  Примеры открытия окна редактирования в AjaxGroupEdit
+title:  Открытие окна редактирования в AjaxGroupEdit
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_example-open-windows-age.html
+permalink: ru/fa_open-windows-age.html
 lang: ru
 ---
 
