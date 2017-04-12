@@ -3,7 +3,7 @@ title: Открытие формы редактирования с переда�
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Windows UI (формы)
 toc: true
-permalink: ru/fa_open-edit-form-custom-object.html
+permalink: ru/fa_open-editform-custom-object.html
 lang: ru
 ---
 

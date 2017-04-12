@@ -3,7 +3,7 @@ title: Конфигурирование Web-формы редактирован�
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_edit-form-configuration.html
+permalink: ru/fa_editform-configuration.html
 lang: ru
 ---
 

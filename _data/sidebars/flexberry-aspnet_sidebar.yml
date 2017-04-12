@@ -167,3 +167,37 @@ entries:
       title_ru: Кастомизация подписей в Web-контролах
       url: /fa_web-controls-custom-captions.html
       output: web, pdf
+
+  - title: Editform
+    title_ru: Форма редактирования для Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: Editform
+      title_ru: Web-форма редактирования
+      url: /fa_editform.html
+      output: web, pdf
+
+    - title: Adding additional logic for editform
+      title_ru: Добавление дополнительной логики при сохранении объекта
+      url: /fa_add-extra-logic-editform.html
+      output: web, pdf
+
+    - title: BaseEditForm
+      url: /fa_base-edit-form.html
+      output: web, pdf
+
+    - title: Editform configuration
+      title_ru: Конфигурирование Web-формы редактирования
+      url: /fa_editform-configuration.html
+      output: web, pdf
+
+    - title: Few save-buttons on editform
+      title_ru: Несколько кнопок сохранения на web-форме редактирования
+      url: /fa_few-save-buttons-editform.html
+      output: web, pdf
+
+    - title: Open editform for custom object
+      title_ru: НОткрытие формы редактирования с передачей объекта с частично заполненными полями
+      url: /fa_open-edit-form-custom-object.html
+      output: web, pdf
