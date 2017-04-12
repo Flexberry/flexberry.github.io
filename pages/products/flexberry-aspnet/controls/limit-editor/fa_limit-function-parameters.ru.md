@@ -1,5 +1,5 @@
 ---
-title: Подстановка значений параметров в ограничивающую функцию (в Web)
+title: Подстановка значений параметров в ограничивающую функцию
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true

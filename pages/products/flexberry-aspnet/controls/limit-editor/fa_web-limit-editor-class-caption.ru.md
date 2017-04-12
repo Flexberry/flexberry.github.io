@@ -1,5 +1,5 @@
 ---
-title: Задание заголовка класса в Расширенном редакторе ограничений
+title: Задание заголовка класса в расширенном редакторе ограничений
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

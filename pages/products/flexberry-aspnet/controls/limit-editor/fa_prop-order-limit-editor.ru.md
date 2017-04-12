@@ -1,5 +1,5 @@
 ---
-title: Как задать порядок отображения свойств в расширенном редакторе ограничений в web
+title: Задание порядка отображения свойств в расширенном редакторе ограничений
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
@@ -51,7 +51,7 @@ public partial class C__КредитL : BaseListForm<Кредит>
 
 {% include important.html content="Обратите внимание, что использовать `ViewPropertiesOrderedList` без `LimitResolvingViews` нельзя." %}
 
-Или при наличии [псевдодетейлов](fa_details-at-adv-limit-editor.html) используется структура [PseudoDetailInExtendedView](fa_pseudo-detail-extended-view.html):
+Или при наличии [псевдодетейлов](fa_details-limit-editor.html) используется структура [PseudoDetailInExtendedView](fa_pseudo-detail-extended-view.html):
 
 ```csharp
 public partial class C__КлиентL : BaseListForm<Клиент>

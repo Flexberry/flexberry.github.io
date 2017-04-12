@@ -1,5 +1,5 @@
 ---
-title: PseudoDetailInExtendedView
+title: Работа с псевдодетейлами в расширенном редакторе ограничений
 sidebar: flexberry-aspnet_sidebar
 keywords: Ограничения
 toc: true
@@ -7,7 +7,7 @@ permalink: ru/fa_pseudo-detail-extended-view.html
 lang: ru
 ---
 
-`PseudoDetailInExtendedView` - структура, используемая для работы [псевдодетейлов в расширенном редакторе ограничений](fa_details-at-adv-limit-editor.html).
+`PseudoDetailInExtendedView` - структура, используемая для работы [псевдодетейлов в расширенном редакторе ограничений](fa_details-limit-editor.html).
 
 ```csharp
 /// <summary>

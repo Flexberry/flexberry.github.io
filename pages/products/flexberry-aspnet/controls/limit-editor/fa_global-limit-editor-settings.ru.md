@@ -3,7 +3,7 @@ title: Глобальные настройки редактора огранич
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_global-web-limit-editor-settings.html
+permalink: ru/fa_global-limit-editor-settings.html
 lang: ru
 ---
 

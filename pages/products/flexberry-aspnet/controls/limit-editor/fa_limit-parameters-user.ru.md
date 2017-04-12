@@ -1,13 +1,11 @@
 ---
-title: Ограничения с параметрами (для пользователя) в Web
+title: Ограничения с параметрами для пользователя
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
-permalink: ru/fa_limit-with-parameters-user.html
+permalink: ru/fa_limit-parameters-user.html
 lang: ru
 ---
-
-Редактор ограничений поддерживает возможность формирования условий с параметрами, другими словами пользователь имеет возможность использовать вместо константы имя параметра), конкретное значение параметра будет запрошено у пользователя перед выполнением запроса.
 
 ## Добавление параметра
 
@@ -28,4 +26,4 @@ lang: ru
 ![](/images/pages/products/flexberry-aspnet/controls/limit-editor/input-parameter.png)
 
 # См. также
-[Ограничения с параметрами в WOLV (для программиста)](fa_limit-with-parameters-developer.html)
+[Ограничения с параметрами в WOLV (для программиста)](fa_limit-parameters-developer.html)

@@ -1,5 +1,5 @@
 ---
-title: Параметры в расширенном редакторе ограничений в web
+title: Параметры в расширенном редакторе ограничений
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Ограничения
 toc: true
