@@ -7,7 +7,7 @@ permalink: ru/fa_ajax-controls-object-tile-view.html
 lang: ru
 ---
 
-Контрол служит для чтения из сервиса данных и группового постраничного отображения объектов. Для отображения каждого конкретного объекта служит контрол, реализующий интерфейс `IObjectTile`. Тип тайлов задается в свойстве TileType. По умолчанию в качестве тайлов используется [AjaxControls.ObjectTile](fa_ajax-controls-object-tile.html).
+Для отображения каждого конкретного объекта служит контрол, реализующий интерфейс `IObjectTile`. Тип тайлов задается в свойстве TileType. По умолчанию в качестве тайлов используется [AjaxControls.ObjectTile](fa_ajax-controls-object-tile.html).
 
 ## Интерфейс
 

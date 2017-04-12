@@ -39,6 +39,20 @@ entries:
     output: web, pdf
     
     folderitems:
+    - title: Web controls
+      title_ru: Web-контролы и web-компоненты
+      url: /fa_web-controls.html
+      output: web, pdf
+
+    - title: Developing controls
+      title_ru: Разработка ASP.NET контролов
+      url: /fa_developing-controls.html
+      output: web, pdf
+
+    - title: BaseWebControl
+      url: /fa_base-web-control.html
+      output: web, pdf
+
     - title: AjaxGroupEdit
       url: /fa_ajax-group-edit.html
       output: web, pdf
@@ -73,4 +87,83 @@ entries:
 
     - title: Advanced limit editor
       url: /fa_advanced-limit-editor.html
+      output: web, pdf
+
+    - title: AjaxAutocomplete
+      url: /fa_ajax-autocomplete.html
+      output: web, pdf
+
+    - title: MasterExpander
+      url: /fa_ajax-controls-master-expander.html
+      output: web, pdf
+
+    - title: ObjectTile
+      url: /fa_ajax-controls-object-tile.html
+      output: web, pdf
+
+    - title: ObjectTileView
+      url: /fa_ajax-controls-object-tile-view.html
+      output: web, pdf
+
+    - title: AlphaNumericTextBox
+      url: /fa_alpha-numeric-textbox.html
+      output: web, pdf
+
+    - title: ColorPicker
+      url: /fa_color-picker.html
+      output: web, pdf
+
+    - title: Constants
+      url: /fa_constants.html
+      output: web, pdf
+
+    - title: Contact control
+      url: /fa_contact-control.html
+      output: web, pdf
+
+    - title: Dynamic editor
+      url: /fa_dynamic-editor.html
+      output: web, pdf
+
+    - title: Event control
+      url: /fa_event-control.html
+      output: web, pdf
+
+    - title: ImageControl
+      url: /fa_image-control.html
+      output: web, pdf
+
+    - title: Iinit control settings delegate
+      title_ru: Глобальная настройка веб-контролов
+      url: /fa_init-control-settings-delegate.html
+      output: web, pdf
+
+    - title: LinkModalPopupWindow
+      url: /fa_link-modal-popup-window.html
+      output: web, pdf
+
+    - title: Pager
+      title_ru: Универсальный пейджинговый контрол
+      url: /fa_pager.html
+      output: web, pdf
+
+    - title: ShowHideDiv
+      url: /fa_show-hide-div.html
+      output: web, pdf
+
+    - title: ViewColumnProvider
+      url: /fa_view-column-provider.html
+      output: web, pdf
+
+    - title: WebBinder
+      url: /fa_web-binder.html
+      output: web, pdf
+
+    - title: WebControlProvider
+      url: /fa_web-control-provider.html
+      output: web, pdf
+
+    - title: Custom captions for web-controls
+      title_ru: Кастомизация подписей в Web-контролах
+      url: /fa_web-controls-custom-captions.html
       output: web, pdf

@@ -43,13 +43,17 @@ lang: ru
 
 Связывание AjaxAutocomplete и AjaxLookup описано в соответствующей [статье](fa_link-ajax-autocomplete-ajax-lookup.html).
 
+### Связывание контролов редактирования мастеров
+
+Связывание контролов редактирования мастеров описано в соответствующей [статье](fa_linked-master-editors.html).
+
 ## Наложение ограничений на LookUp'ы
 
-Основная статья: [Наложение ограничений на LookUp](fa_lookup-limit-web.html).
+Наложение ограничений на LookUp описано в соответствующей [статье](fa_lookup-limit-web.html).
 
 ## Стилизация иконок кнопок у LookUp'а
 
-Основная статья: [Стилизация иконок кнопок LookUp](fa_lookup-stylization.html).
+Стилизация иконок кнопок LookUp в соответствующей [статье](fa_lookup-stylization.html).
 
 ## Открытие лукап-формы с поддержкой иерархии 
 
