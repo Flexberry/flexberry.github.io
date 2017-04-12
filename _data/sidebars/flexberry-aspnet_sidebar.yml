@@ -46,7 +46,31 @@ entries:
     - title: WebObjectListView
       url: /fa_web-object-list-view.html
       output: web, pdf
-      
+
     - title: LookUp
       url: /fa_lookup-overview.html
+      output: web, pdf
+
+    - title: Date picker
+      url: /fa_date-picker.html
+      output: web, pdf
+
+    - title: DecimalTextBox
+      url: /fa_decimal-textbox.html
+      output: web, pdf
+
+    - title: FileControl
+      url: /fa_file-control-web.html
+      output: web, pdf
+
+    - title: HierarchicalListView
+      url: /fa_hierarchical-listview.html
+      output: web, pdf
+
+    - title: IcsTreeView
+      url: /fa_ics-treeview.html
+      output: web, pdf
+
+    - title: Advanced limit editor
+      url: /fa_advanced-limit-editor.html
       output: web, pdf

@@ -84,7 +84,7 @@ lang: ru
 * [ObjectTileView](fa_ajax-controls-object-tile-view.html)
 * [Pager (class)](fa_pager.html)
 * [ShowHideDiv (class)](fa_show-hide-div.html)
-* [WebFileControl](fa_web-file-control-description.html)
+* [WebFileControl](fa_file-control-description.html)
 * WebMessageBox (class)
 * [WebObjectListView](fa_web-object-list-view.html)
 * [Редактор ограничений](fa_advanced-limit-editor.html)

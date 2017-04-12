@@ -1,9 +1,9 @@
 ---
-title: Использование WebFileControl
+title: Использование WebFileControl на формах редактирования
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы)
 toc: true
-permalink: ru/fa_web-file-control-description.html
+permalink: ru/fa_file-control-description.html
 lang: ru
 ---
 
