@@ -1,5 +1,5 @@
 ---
-title: Стилизация WOLV
+title: Стилизация WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

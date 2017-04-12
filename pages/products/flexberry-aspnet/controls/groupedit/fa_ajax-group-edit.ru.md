@@ -65,11 +65,7 @@ ctrlMyWebGroupEdit.Operations.PlusInRow = false;
 
 Если в представлении есть order атрибут, то AjaxGroupEdit сбросит сортировку и наложит сортировку по этому атрибуту. В тулбар добавятся 2 кнопки для перемещения строк "вверх" и "вниз", которые уменьшают\увеличивают значение order-атрибута.
 
-{% include warning.html content="Атрибут `Order` выставляется через Flexberry или добавляется вручную в код:
-
-```csharp
-[Order()]
-```
+{% include warning.html content="Атрибут `Order` выставляется через Flexberry или добавляется вручную в код: `[Order()]`
 
 Атрибут Order применим только к полям типа `int`." %}
 

@@ -1,5 +1,5 @@
 ---
-title: Экспорт данных из WOLV в Excel
+title: Экспорт данных из WebObjectListView в Excel
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Flexberry Reports, БД
 toc: true

@@ -37,13 +37,16 @@ entries:
   - title: Controls
     title_ru: Контролы
     output: web, pdf
+    
     folderitems:
     - title: AjaxGroupEdit
       url: /fa_ajax-group-edit.html
       output: web, pdf
+
     - title: WebObjectListView
       url: /fa_web-object-list-view.html
       output: web, pdf
+      
     - title: LookUp
       url: /fa_lookup-overview.html
       output: web, pdf

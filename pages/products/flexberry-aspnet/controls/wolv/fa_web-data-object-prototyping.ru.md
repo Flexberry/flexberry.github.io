@@ -1,5 +1,5 @@
 ---
-title: Прототипизация во Flexberry ASP.NET
+title: Прототипизация для Flexberry ASP.NET
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

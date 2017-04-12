@@ -1,5 +1,5 @@
 ---
-title: Варианты открытия формы редактирования при создании или редактировании объекта в WOLV
+title: Варианты открытия формы редактирования при создании или редактировании объекта в WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

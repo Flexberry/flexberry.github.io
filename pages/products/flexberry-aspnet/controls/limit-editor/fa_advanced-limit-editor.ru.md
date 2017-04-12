@@ -1,5 +1,5 @@
 ---
-title: Расширенный редактор ограничений в WEB
+title: Расширенный редактор ограничений для Flexberry ASP.NET
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Web UI (Контролы), Ограничения
 toc: true

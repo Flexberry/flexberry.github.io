@@ -1,5 +1,5 @@
 ---
-title: Иерархический WOLV
+title: Иерархический WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

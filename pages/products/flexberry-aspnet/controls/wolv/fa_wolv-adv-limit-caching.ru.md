@@ -1,5 +1,5 @@
 ---
-title: Кэширование расширенных ограничений в WOLV
+title: Кэширование расширенных ограничений в WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP.NET
 toc: true

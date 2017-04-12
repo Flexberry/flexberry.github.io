@@ -1,5 +1,5 @@
 ---
-title: Сортировка списков WOLV
+title: Сортировка для WebObjectListView
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

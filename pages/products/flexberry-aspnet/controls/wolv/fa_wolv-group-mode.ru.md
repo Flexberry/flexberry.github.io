@@ -3,7 +3,7 @@ title: Режим группировки данных по заданному п
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_wolv-group-by-mode.html
+permalink: ru/fa_wolv-group-mode.html
 lang: ru
 ---
 
