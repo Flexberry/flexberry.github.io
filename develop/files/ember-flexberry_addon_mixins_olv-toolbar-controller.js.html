@@ -410,7 +410,7 @@ export default Ember.Mixin.create({
       let projectionAttributes;
       let modelName = this.get(&#x27;modelProjection.modelName&#x27;);
       if (isExportExcel) {
-        let exportExcelProjectionName = this.get(&#x27;exportExcelProjection&#x27;);
+        let exportExcelProjectionName = this.get(&#x27;exportExcelProjection&#x27;) || this.get(&#x27;modelProjection.projectionName&#x27;);
         Ember.assert(&#x27;Property exportExcelProjection is not defined in controller.&#x27;, exportExcelProjectionName);
 
         let exportExcelProjection = this.store.modelFor(modelName).projections.get(exportExcelProjectionName);
@@ -516,14 +516,11 @@ export default Ember.Mixin.create({
           isHasMany: namedColList[propName].isHasMany, fixed: namedColList[propName].fixed });
       }
 
-      let exportParams = { isExportExcel: false };
+      let exportParams = { isExportExcel: isExportExcel };
       let settName = settingName;
       if (isExportExcel) {
-        exportParams.queryParams = this.get(&#x27;queryParams&#x27;);
-        exportParams.isExportExcel = true;
         exportParams.immediateExport = immediateExport;
-        exportParams.predicate = this.get(&#x27;resultPredicate&#x27;);
-        exportParams.projectionName = this.get(&#x27;exportExcelProjection&#x27;);
+        exportParams.projectionName = this.get(&#x27;exportExcelProjection&#x27;) || this.get(&#x27;modelProjection.projectionName&#x27;);
         exportParams.detSeparateCols = this.get(&#x27;_userSettingsService&#x27;).getDetSeparateCols(componentName, settingName);
         exportParams.detSeparateRows = this.get(&#x27;_userSettingsService&#x27;).getDetSeparateRows(componentName, settingName);
         if (settName) {

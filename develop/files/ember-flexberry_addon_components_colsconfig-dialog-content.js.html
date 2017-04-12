@@ -393,6 +393,15 @@ export default FlexberryBaseComponent.extend({
   colsConfigMenu: Ember.inject.service(),
 
   /**
+   Service that triggers objectlistview events.
+
+   @property objectlistviewEvents
+   @type {Class}
+   @default Ember.inject.service()
+   */
+  objectlistviewEvents: Ember.inject.service(),
+
+  /**
    Model with added DOM elements.
 
    @property modelForDOM
@@ -418,6 +427,14 @@ export default FlexberryBaseComponent.extend({
    @default &#x27;&#x27;
    */
   settingName: &#x27;&#x27;,
+
+  /**
+    Form state. A form is in different states: loading, success, error.
+
+    @property state
+    @type String
+  */
+  state: &#x27;&#x27;,
 
   /**
     Changed flag.
@@ -517,7 +534,7 @@ export default FlexberryBaseComponent.extend({
     firstButtonUp.addClass(&#x27;disabled&#x27;); // Disable first button up
     let lastButtondown = Ember.$(&#x27;#ColDescRowDown_&#x27; + (this.modelForDOM.length - 1));
     lastButtondown.addClass(&#x27;disabled&#x27;); // Disable last button down
-    if (this.exportParams.queryParams &amp;&amp; this.exportParams.isExportExcel &amp;&amp; this.exportParams.immediateExport) {
+    if (this.exportParams.isExportExcel &amp;&amp; this.exportParams.immediateExport) {
       this.exportParams.immediateExport = false;
       this.actions.apply.call(this);
     }
@@ -735,6 +752,8 @@ export default FlexberryBaseComponent.extend({
         );
         this.sendAction(&#x27;close&#x27;, colsConfig); // close modal window
       } else {
+        let _this = this;
+        _this.set(&#x27;state&#x27;, &#x27;loading&#x27;);
         let store = this.get(&#x27;store.onlineStore&#x27;) || this.get(&#x27;store&#x27;);
         let adapter = store.adapterFor(this.modelName);
         let currentQuery = this._getCurrentQuery();
@@ -746,7 +765,10 @@ export default FlexberryBaseComponent.extend({
             anchor.prop(&#x27;href&#x27;, downloadUrl);
             anchor.prop(&#x27;download&#x27;, &#x27;list.xlsx&#x27;);
             anchor.get(0).click();
+            _this.set(&#x27;state&#x27;, &#x27;&#x27;);
           }
+        }).catch(() =&gt; {
+          _this.set(&#x27;state&#x27;, &#x27;&#x27;);
         });
       }
     },
@@ -841,7 +863,6 @@ export default FlexberryBaseComponent.extend({
   */
   _getCurrentQuery: function() {
     let settings = this._getSettings();
-    let select = settings.colsOrder.filter(({ hide }) =&gt; !hide).map(({ propName }) =&gt; propName);
     let sortString = &#x27;&#x27;;
     let modelName = this.modelName;
     settings.sorting.map(sort =&gt; {
@@ -852,13 +873,16 @@ export default FlexberryBaseComponent.extend({
     let builder = new QueryBuilder(store, modelName);
     let adapter = new ODataAdapter(&#x27;123&#x27;, store);
     builder.selectByProjection(this.exportParams.projectionName, true);
-    let colsOrder = select.map(propName =&gt; adapter._getODataAttributeName(modelName, propName).replace(/\//g, &#x27;.&#x27;)).join();
+    let colsOrder = settings.colsOrder.filter(({ hide }) =&gt; !hide)
+      .map(column =&gt; adapter._getODataAttributeName(modelName, column.propName).replace(/\//g, &#x27;.&#x27;) + &#x27;/&#x27; + column.name || column.propName)
+      .join();
     if (sortString) {
       builder.orderBy(sortString);
     }
 
-    if (this.exportParams.predicate) {
-      builder.where(this.exportParams.predicate);
+    let limitFunction = this.get(&#x27;objectlistviewEvents&#x27;).getLimitFunction();
+    if (limitFunction) {
+      builder.where(limitFunction);
     }
 
     if (this.exportParams.isExportExcel) {
@@ -892,7 +916,7 @@ export default FlexberryBaseComponent.extend({
       let tr = trs[i];
       let index = this._getIndexFromId(tr.id);  // get index of initial (model) order
       let colDesc = this.model.colDescs[index];  // Model for this tr
-      colsOrder[i] = { propName: colDesc.propName, hide: colDesc.hide };  //Set colsOrder element
+      colsOrder[i] = { propName: colDesc.propName, hide: colDesc.hide, name: colDesc.name.toString() };  //Set colsOrder element
       if (colDesc.sortPriority !== undefined) { // Sort priority defined
         sortSettings[sortSettings.length] = { propName: colDesc.propName, sortOrder: colDesc.sortOrder, sortPriority: colDesc.sortPriority }; //Add sortSetting element
       }
