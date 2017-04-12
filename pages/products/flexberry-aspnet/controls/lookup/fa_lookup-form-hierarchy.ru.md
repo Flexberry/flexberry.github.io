@@ -3,11 +3,12 @@ title: Открытие лукап-формы с поддержкой иерар
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_lookup-form-hierarchy-wolv.html
+permalink: ru/fa_lookup-form-hierarchy.html
 lang: ru
 ---
 
 Два способа, с помощью которых можно вывести данные на LookUp-форму в иерархическом виде:
+
 * Использование свойства `LookUpFormURL`;
 * Использование `WOLVSettApplyer`.
 
@@ -42,14 +43,14 @@ lookupTest.LookUpFormURL = TestHierarchy.FormPath;
 
 Также можно воспользоваться специальным тюнером для WOLV, который позволяет задавать дополнительные настройки для WOLV на прикладном уровне, - `WOLVSettApplyer`, который в свою очередь находится в `корне` сборки с ASP.NET приложением.
 
-Однако необходимо проверить, что в конфигурационном файле веб-приложения указан правильный обработчик для лукап-формы, а именно той, которая была сгенерирована. То есть, если имеется сборка `TestStand(ASP.NET Application)`, то правильным указанием обработчика лукап-формы будут следующие:
+Однако необходимо проверить, что в конфигурационном файле веб-приложения указан правильный обработчик для лукап-формы, а именно той, которая была сгенерирована. То есть, если имеется сборка `SomeAssambly(ASP.NET Application)`, то правильным указанием обработчика лукап-формы будут следующие:
 
 __Для IIS 7:__
 
 ```xml
 <handlers>
 ...
-<add name="LookUpForm" path="LookUpForm.aspx" verb="*" type="ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories.PageHandlersFactory`1[[ICSSoft.STORMNET.Web.Controls.LookUpForm, TestStand(ASP.NET Application)]], ICSSoft.STORMNET.Web.AjaxControls" resourceType="Unspecified" preCondition="integratedMode" />
+<add name="LookUpForm" path="LookUpForm.aspx" verb="*" type="ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories.PageHandlersFactory`1[[ICSSoft.STORMNET.Web.Controls.LookUpForm, SomeAssambly(ASP.NET Application)]], ICSSoft.STORMNET.Web.AjaxControls" resourceType="Unspecified" preCondition="integratedMode" />
 ...
 </handlers>
 ```
@@ -59,7 +60,7 @@ __Для IIS 6:__
 ```csharp
 <httpHandlers>
 ...
-<add verb="*" path="LookUpForm.aspx" type="ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories.PageHandlersFactory`1[[ICSSoft.STORMNET.Web.Controls.LookUpForm, TestStand(ASP.NET Application)]], ICSSoft.STORMNET.Web.AjaxControls" validate="false" />
+<add verb="*" path="LookUpForm.aspx" type="ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories.PageHandlersFactory`1[[ICSSoft.STORMNET.Web.Controls.LookUpForm, SomeAssambly(ASP.NET Application)]], ICSSoft.STORMNET.Web.AjaxControls" validate="false" />
 ...
 </httpHandlers>
 ```

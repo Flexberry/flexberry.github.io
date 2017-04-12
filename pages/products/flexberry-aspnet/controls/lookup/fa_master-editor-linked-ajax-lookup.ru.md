@@ -7,8 +7,6 @@ permalink: ru/fa_master-editor-linked-ajax-lookup.html
 lang: ru
 ---
 
-Данный контрол позволяет редактировать и свойство и мастера в одной ячейке [AjaxGroupEdit](fa_ajax-group-edit.html). 
-
 {% include warning.html content="Данная статья описывает создание `MasterEditorLinkedLinkedLookup`, расположенных в AGE, а не непосредственно на форме редактирования!  
 На формах редактирования необходимо использовать логику [Связывание AjaxAutocomplete и AjaxLookup](fa_link-ajax-autocomplete-ajax-lookup.html)." %}
 

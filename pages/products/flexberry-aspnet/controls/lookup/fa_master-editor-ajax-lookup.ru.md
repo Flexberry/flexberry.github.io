@@ -7,8 +7,6 @@ permalink: ru/fa_master-editor-ajax-lookup.html
 lang: ru
 ---
 
-Контрол `MasterEditorAjaxLookUp` позволяет выбирать объект в лукапе без перезагрузки страницы, используя технологию AJAX. Контрол находится в сборке `ICSSoft.STORMNET.Web.AjaxControls`. Он использует веб сервис `ICSSoft.STORMNET.Web.AjaxControls.AjaxDataService.asmx`.
-
 ## Особенности работы
 
 Когда поднимается форма на лукап, а потом в ней выбирается объект, то происходит запрос к сервису. Сервис возвращает список контролов, значения которых нужно изменить, и сами значения. 

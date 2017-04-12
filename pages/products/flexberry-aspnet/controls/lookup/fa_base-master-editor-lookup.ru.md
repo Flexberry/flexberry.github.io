@@ -7,8 +7,6 @@ permalink: ru/fa_base-master-editor-lookup.html
 lang: ru
 ---
 
-**BaseMasterEditorLookUp** - это абстрактный класс, от которого наследуются MasterEditorLookUp, MasterEditorAjaxLookUp.
-
 ## Единообразное изменение свойств лукапов
 
 Реализовано два статических делегата:

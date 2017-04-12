@@ -32,7 +32,7 @@ Flexberry ASP.NET состоит из следующих модулей:
 * ASP.NET web-контролы, компоненты
     * [WebObjectListView](fa_web-object-list-view.html)
         * [Сортировка в списковой форме, поднятой по лукапу](fa_lookup-form-sort.html)
-        * [Открытие лукап-формы с поддержкой иерархии ](fa_lookup-form-hierarchy-wolv.html)
+        * [Открытие лукап-формы с поддержкой иерархии ](fa_lookup-form-hierarchy.html)
     * [Расширенный редактор ограничений в WEB](fa_advanced-limit-editor.html)
         * [External-классы в расширенном редакторе ограничений](fa_web-limit-editor-external-class.html)
         * [Пусто/Непусто в расширенном редакторе ограничений в WEB](fa_web-limit-editor-null.html)

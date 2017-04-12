@@ -13,99 +13,58 @@ lang: ru
 
 ![](/images/pages/products/flexberry-aspnet/controls/lookup/lookup.jpg)
 
-## Свойства LookUp'ов (Win)
+## Свойства LookUp'ов
 
-## Свойства LookUp'ов (Web)
+Свойства LookUp'ов для Flexberry ASP.NET изложены в соответствующей [статье](fa_lookup-settigs.html).
 
-* `ColumnsSort` - сортировка по колонкам в [WOLV](fa_web-object-list-view.html) на открываемой форме.
-* `ConnStrName` - строка подключения к базе.
-* `EditedProperty` - свойство редактируемого объекта.
-* `EnablePostBack` - включить ли обновление страницы после выбора значения.
-* `LimitFunction` - ограничивающая функция, накладывает ограничение на список на поднимаемой на лукап форме. Автоматически пропишется `LookUpFormLFName` при установке.
-* `LookUpFormCaption` - заголовок формы, поднимаемой на лукап. По умолчанию `Выбор значения`.
-* `LookUpFormCountOnPage` - Количество строк [WOLV](fa_web-object-list-view.html) на форме выбора значения лукапа.
-По умолчанию количество строк [WOLV](fa_web-object-list-view.html) на базовой лукап-форме будет определяться на основе сохраненных настроек пользователя или значения по умолчанию в [Pager](fa_web-object-list-view.html). Такое поведение может быть переопределено в прикладной лукап-форме.
-Если установлено конкретное значение, то количество строк в списке при открытии формы будет всегда равно указанному. При установке значения следует учитывать, что [Универсальный пейджинговый контрол. Pager.](fa_pager.html) использует белый список возможных значений количества отображаемых объектов.
-* `LookUpFormHeight` - высота формы, поднимаемой на лукап. По умолчанию `600`.
-* `LookUpFormLeft` - левая граница открываемой формы. По умолчанию `100`.
-* `LookUpFormLocation` - отображать ли в браузере адресную строку при открыти на лукап. По умолчанию не отображается.
-* `LookUpFormMenubar` - отображать ли меню в браузере при открытии на лукап. По умолчанию не отображается.
-* `LookUpFormResizable` - давать ли возможность изменять размер открываемой на лукап формы. По умолчанию возможность есть.
-* `LookUpFormScrollbars` - отображать ли скроллбары на открываемой форме. По умолчанию отображаются.
-* `LookUpFormStatus` - отображать ли строку состояния на открываемой форме. По умолчанию не отображаются.
-* `LookUpFormToolbar` - отображать ли панель браузера (кнопки "Вперед", "Назад" и пр.). По умолчанию не отображаются.
-* `LookUpFormTop` - верхняя граница открываемой формы. По умолчанию `100`.
-* `LookUpFormURL` - URL списковой формы, которая будет использоваться для выбора значения.
-* `LookUpFormWidth` - ширина открываемой формы. По умолчанию `750`.
-* `MasterTypeName` - тип [мастерового](fo_master-association.html) объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
-* `MasterViewName` - представление мастерового объекта.
-* `ObjectTypeName` - тип редактируемого объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
-* `ObjectViewName` - [представление](fd_view-definition.html) редактируемого объекта.
-* `PropertyToShow` - свойство мастера, которое будет отображаться в лукапе при выбранном объекте.
-* `SelectedMasterPK` - [PrimaryKey](fo_primary-keys-objects.html) выбранного объекта.
-* `ShowInThickBox` - показывать форму лукапа в thickbox или нет.
-* `ShowObjectUrl` - URL, по которому будет подниматься форма просмотра для выбранного объекта.
-ApplicationUrl + ListFormURL. Если не указана, то используется стандартная форма.
+### Наиболее интересные свойства LookUp'ов
+
+Наиболее интересные свойства LookUp'ов описаны в соответствующей [статье](fa_interesting-lookup-settigs.html).
+
+## MasterEditorAjaxLookUp
+
+Контрол `MasterEditorAjaxLookUp` позволяет выбирать объект в лукапе без перезагрузки страницы, используя технологию AJAX. Контрол находится в сборке `ICSSoft.STORMNET.Web.AjaxControls`. Он использует веб сервис `ICSSoft.STORMNET.Web.AjaxControls.AjaxDataService.asmx`.
+
+Подробнее в [статье MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html).
+
+### BaseMasterEditorLookUp
+
+**BaseMasterEditorLookUp** - это абстрактный класс, от которого наследуются MasterEditorLookUp, MasterEditorAjaxLookUp.
+
+Подробнее `BaseMasterEditorLookUp` описан в соответствующей [статье](fa_base-master-editor-lookup.html).
+
+### MasterEditorLinkedAjaxLookUp
+
+Данный контрол позволяет редактировать и свойство и мастера в одной ячейке [AjaxGroupEdit](fa_ajax-group-edit.html).  
+
+Подробнее о `MasterEditorLinkedAjaxLookUp` в [статье MasterEditorLinkedAjaxLookUp](fa_master-editor-linked-ajax-lookup.html).
+
+### Связывание AjaxAutocomplete и AjaxLookup
+
+Связывание AjaxAutocomplete и AjaxLookup описано в соответствующей [статье](fa_link-ajax-autocomplete-ajax-lookup.html).
 
 ## Наложение ограничений на LookUp'ы
 
-Основная статья: [Наложение ограничений на LookUp](fa_lookup-limit-web.html)
+Основная статья: [Наложение ограничений на LookUp](fa_lookup-limit-web.html).
 
 ## Стилизация иконок кнопок у LookUp'а
 
-Основная статья: [Стилизация иконок кнопок LookUp](fa_lookup-stylization.html)
+Основная статья: [Стилизация иконок кнопок LookUp](fa_lookup-stylization.html).
 
-## Наиболее интересные свойства LookUp'ов (Web)
+## Открытие лукап-формы с поддержкой иерархии 
 
-* PropertyToShow
-* MasterViewName
-* MasterTypeName
-* ObjectTypeName
-* ObjectViewName
+Открытие лукап-формы с поддержкой иерархии описано в соответствующей [статье](fa_lookup-form-hierarchy.html).
 
-Ниже они описываются подробно.
+## Передача параметров на LookUp-форму в Web-приложениях
 
-### PropertyToShow
+Особенности передачи параметров на LookUp-форму в Web-приложениях описаны в соответствующей [статье](fa_lookup-form-send-params.html).
 
-Отвечает за отображаемое свойство __мастера__ после выбора лукапа. 
+## Сортировка на списковой LookUp-форме
 
-Не работает при включеном [AutoComplete](fa_predict-input-web.html).
+Сортировка на списковой LookUp-форме описана в [статье Сортировка в списковой форме, поднятой по лукапу](fa_lookup-form-sort.html).
 
-Устанавливается в методе `PostApplyToControls` или `PostLoad` формы редактирования. Если установить в методах, срабатывающих раньше, то изменения перезапишутся WebBinder'ом.
+## Предиктивный ввод в Web-приложениях
 
-Принимает составные свойства (свойства мастеров). К примеру, можно указать:
+Предиктивный ввод позволяет модифицировать контролы для выбора мастера или ввода текста таким образом, чтобы система подсказывала пользователю возможные варианты по мере ввода данных в поле LookUp`а.
 
-```csharp
-ctrlКлиент.PropertyToShow = "Прописка.Город";
-```
-
-Таким образом, при выборе мастера `Клиент` будет отображаться свойство `Клиент.Прописка.Город`.
-
-### MasterViewName
-
-Устанавливает представление, которое будет использоваться на открываемой форме лукапа.
-
-В отличии от `PropertyToShow`, может устанавливаться в любом месте и не зависит от `AutoComplete`.
-
-### MasterTypeName
-
-Устанавливает тип объекта, который необходимо выбрать на LookUp. Актуально, когда мастеровой объект связан наследованием. То есть если есть два класса, связанных наследованием (класс A наследуется от класса B), и необходимо, чтобы на LookUp открывался класс А (а по умолчанию открывается класс B), то необходимо установить `MasterTypeName` следующим образом:
-
-```
-ctrlM1.MasterTypeName = typeof(M1).AssemblyQualifiedName;
-```
-
-не забыв при этом установить `MasterViewName`
-
-{% include note.html content="Для означивания `MasterTypeName` следует использовать `typeof(Тип).AssemblyQualifiedName`.  
-Подробнее можно посмотреть [в статье Проблема используемых типов (TypeUsage)](fo_type-usage-problem.html)." %}
-
-### ObjectTypeName
-
-Устанавливает тип объекта, для которого устанавливается мастер.  
-Аналогично `MasterTypeName`, актуально для случаев наследования, но на сей раз в наследовании участвует базовый объект, а не мастер. Устанавливается в паре с `ObjectViewName`.
-
-### ObjectViewName
-
-Устанавливает представление базового объекта.  
-Аналогично `MasterViewName`, актуально для случаев наследования, но на сей раз в наследовании участвует базовый объект, а не мастер. Устанавливается в паре с `ObjectTypeName`.
+Подробнее в [статье Предиктивный ввод в Web-приложениях](fa_predict-input-web.html).
