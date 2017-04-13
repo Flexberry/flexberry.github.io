@@ -17,7 +17,10 @@ lang: ru
 
 В тему Crimea были добвлены 2 варианта раскраски таблиц.
 
-По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на стандартную нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на `false`.
+![Default](/images/pages/products/flexberry-aspnet/controls/groupedit/CrimeaDefaultAGE.png)
+![Classic](/images/pages/products/flexberry-aspnet/controls/groupedit/CrimeaClassicAGE.png)
+
+По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на `false`.
 
 {% include important.html content="При этом также измениться и стиль таблиц WOLV" %}
 
