@@ -1,5 +1,5 @@
 ---
-title: Выбор темы Web-приложения
+title: Выбор темы Flexberry ASP.NET
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true

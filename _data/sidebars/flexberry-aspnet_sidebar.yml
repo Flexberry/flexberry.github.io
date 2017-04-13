@@ -201,3 +201,79 @@ entries:
       title_ru: Открытие формы редактирования с передачей объекта с частично заполненными полями
       url: /fa_open-edit-form-custom-object.html
       output: web, pdf
+
+  - title: JavaScript API
+    title_ru: JavaScript API для Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: JavaScript API
+      title_ru: JavaScript API
+      url: /fa_javascript-api.html
+      output: web, pdf
+
+    - title: JavaScript API Core
+      title_ru: Ядро JavaScript API
+      url: /fa_js-api-core.html
+      output: web, pdf
+
+  - title: Themes in  Flexberry ASP.NET
+    title_ru: Темы оформления и разметка Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: Themes
+      title_ru: Темы оформления и разметка Flexberry ASP.NET
+      url: /fa_themes.html
+      output: web, pdf
+
+    - title: Theme structure
+      title_ru: Структура тем Flexberry ASP.NET
+      url: /fa_theme-structure.html
+      output: web, pdf
+
+    - title: Theme structure controls
+      title_ru: Структура тем Flexberry ASP.NET для контролов
+      url: /fa_themes-structure-controls.html
+      output: web, pdf
+
+    - title: Structure of base theme
+      title_ru: Базовая тема Flexberry ASP.NET и ее связь с другими темами
+      url: /fa_base-theme-structure.html
+      output: web, pdf
+
+    - title: Change theme
+      title_ru: Доработка тем оформления на прикладных проектах
+      url: /fa_change-theme.html
+      output: web, pdf
+
+    - title: Choose theme
+      title_ru: Выбор темы Flexberry ASP.NET
+      url: /fa_choose-theme.html
+      output: web, pdf
+
+    - title: Css buttons
+      title_ru: Кнопки на CSS
+      url: /fa_css-buttons.html
+      output: web, pdf
+
+    - title: Custom form design
+      title_ru: Кастомизация оформления форм
+      url: /fa_custom-form-design.html
+      output: web, pdf
+
+    - title: Font icons
+      title_ru: Шрифтовые иконки
+      url: /fa_font-icons.html
+      output: web, pdf
+
+    - title: Footer stick bottom
+      title_ru: Расположение footer внизу страницы
+      url: /fa_footer-stick-bottom.html
+      output: web, pdf
+
+    - title: Page layout
+      title_ru: Верстка страниц
+      url: /fa_page-layout.html
+      output: web, pdf
+ 
