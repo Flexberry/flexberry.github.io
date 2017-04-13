@@ -18,9 +18,9 @@ lang: ru
 * Написать [собственный монитор задач](fo_creating-and-connection-business-task-monitor.html)
 * Подключить существующий
 
-Рассмотрим второй вариант:
+Подробнее о втором варианте:
 
-Чтобы подключить монитор задач ASPContextBusinessTaskMonitor.ASPContextBusinessTaskMon необходимо:
+Чтобы подключить монитор задач `ASPContextBusinessTaskMonitor.ASPContextBusinessTaskMon` необходимо:
 
 1. Добавить в файл конфигурации Web.Config строчку 
 

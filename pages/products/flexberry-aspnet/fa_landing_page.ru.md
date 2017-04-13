@@ -1,5 +1,5 @@
 ---
-title: Flexberry ASP.NET
+title: Структура Flexberry ASP.NET
 keywords: Flexberry ASP.NET
 toc: false
 sidebar: flexberry-aspnet_sidebar

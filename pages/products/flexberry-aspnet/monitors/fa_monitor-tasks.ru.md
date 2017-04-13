@@ -4,7 +4,6 @@ sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET, Архив
 toc: true
 permalink: ru/fa_monitor-tasks.html.html
-folder: products/flexberry-aspnet/
 lang: ru
 ---
 

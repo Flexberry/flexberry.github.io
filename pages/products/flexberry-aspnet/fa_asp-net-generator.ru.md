@@ -3,7 +3,7 @@ title: Плагин генерации Flexberry ASP.NET
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
-permalink: ru/fa_flexberry-asp-net-generator.html
+permalink: ru/fa_asp-net-generator.html
 lang: ru
 ---
 

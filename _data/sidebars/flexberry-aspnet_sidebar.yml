@@ -9,10 +9,104 @@ entries:
     output: web, pdf
     
     folderitems:
-    - title: About
-      title_ru: О продукте
+    - title: Structure of Flexberry ASP.NET
+      title_ru: Структура Flexberry ASP.NET
       url: /fa_landing_page.html
-      output: web
+      output: web, pdf
+
+    - title: Flexberry ASP.NET
+      url: /fa_flexberry-asp-net.html
+      output: web, pdf
+
+    - title: Add a page on web-desktop
+      title_ru: Добавить собственную форму на рабочий стол Web-приложения
+      url: /fa_add-page-web-desktop.html
+      output: web, pdf
+
+    - title: Browsers
+      title_ru: Список поддерживаемых браузеров
+      url: /fa_browsers.html
+      output: web, pdf
+
+    - title: FAQ Flexberry ASP.NET
+      title_ru: Вопросы и ответы
+      url: /fa_faq-flexberry-web.html
+      output: web, pdf
+
+    - title: Scenario of web-development
+      title_ru: Сценарии веб-разработки
+      url: /fa_scenario-web.html
+      output: web, pdf
+
+    - title: ContextHelper
+      url: /fa_context-helper.html
+      output: web, pdf
+
+    - title: Form interaction
+      title_ru: Подключение скриптов и стилей на основе FilterPageContentConnector
+      url: /fa_form-interaction.html
+      output: web, pdf
+
+    - title: FilterPageContentConnector
+      title_ru: Межформенное взаимодействие в Web-приложениях
+      url: /fa_filter-page-content-connector.html
+      output: web, pdf
+
+    - title: Object transfer for Flexberry ASP.NET
+      title_ru: Межформенное взаимодействие — передача объекта между страницами
+      url: /fa_object-transfer-web.html
+      output: web, pdf
+
+    - title: Get query parameters of forms
+      title_ru: Параметры GET-запроса для форм
+      url: /fa_get-query-parameters-forms.html
+      output: web, pdf
+
+    - title: IMasterPageService
+      url: /fa_i-master-page-service.html
+      output: web, pdf
+
+    - title: PageContentManager
+      url: /fa_page-content-manager.html
+      output: web, pdf
+
+    - title: PlaceholderPageContentConnector
+      title_ru: Подключение скриптов и стилей на основе PlaceholderPageContentConnector
+      url: /fa_placeholder-page-content-connector.html
+      output: web, pdf
+    
+    - title: Read only in web
+      title_ru: Режим "Только чтение" в Web-приложениях
+      url: /fa_read-only-web.html
+      output: web, pdf
+
+    - title: ResponseFilterModule
+      url: /fa_response-filter-module.html
+      output: web, pdf
+
+    - title: Routing
+      title_ru: Маршрутизация в Web-приложениях
+      url: /fa_routing.html
+      output: web, pdf
+
+    - title: ServiceSecurityProvider
+      url: /fa_service-security-provider.html
+      output: web, pdf
+
+    - title: Sitemap according roles
+      title_ru: Настройка карты сайта по ролям
+      url: /fa_sitemap-according-roles.html
+      output: web, pdf
+
+    - title: Technological forms in web
+      title_ru: Технологические формы Flexberry ASP.NET
+      url: /fa_tech-forms-web.html
+      output: web, pdf
+
+    - title: Technological forms customization example
+      title_ru: Примеры настройки технологических форм
+      url: /fa_technological-forms-customization-example.html
+      output: web, pdf
   
   - title: Subsystems
     title_ru: Подсистемы
@@ -168,6 +262,32 @@ entries:
       url: /fa_web-controls-custom-captions.html
       output: web, pdf
 
+    - title: ExceptionPanel
+      url: /fa_exception-panel.html
+      output: web, pdf
+
+    - title: WebErrorBoxRiser and ErrorForm
+      title_ru: WebErrorBoxRiser и ErrorForm
+      url: /fa_exception-handling.html
+      output: web, pdf
+    
+    - title: Hinter
+      url: /fa_hinter.html
+      output: web, pdf
+
+    - title: MasterEditorAjaxDropDown
+      url: /fa_master-editor-ajax-dropdown.html
+      output: web, pdf
+
+    - title: MsDropDown
+      url: /fa_ms-drop-down.html
+      output: web, pdf
+
+    - title: Memory leaks
+      title_ru: Возможные места утечки памяти в web-приложениях
+      url: /fa_memory-leaks.html
+      output: web, pdf
+
   - title: Editform
     title_ru: Форма редактирования для Flexberry ASP.NET
     output: web, pdf
@@ -215,6 +335,11 @@ entries:
     - title: JavaScript API Core
       title_ru: Ядро JavaScript API
       url: /fa_js-api-core.html
+      output: web, pdf
+
+    - title: Jquery colresize
+      title_ru:  Плагин для изменения размера колонок таблицы (wolv, age)
+      url: /fa_jquery-colresize.html
       output: web, pdf
 
   - title: Themes in  Flexberry ASP.NET
@@ -275,5 +400,35 @@ entries:
     - title: Page layout
       title_ru: Верстка страниц
       url: /fa_page-layout.html
+      output: web, pdf
+
+  - title: Monitors for Flexberry ASP.NET
+    title_ru: Генерация для Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: Monitor tasks
+      title_ru: Мониторы задач Flexberry ASP.NET
+      url: /fa_monitor-tasks.html
+      output: web, pdf
+
+    - title: Connect of task monitor
+      title_ru: Подключение монитора запросов к базе данных
+      url: /fa_connect-task-monitor.html
+      output: web, pdf
+
+  - title: Generation
+    title_ru: Генерация для Flexberry ASP.NET
+    output: web, pdf
+    
+    folderitems:
+    - title: Flexberry ASP.NET generator
+      title_ru: Плагин генерации Flexberry ASP.NET
+      url: /fa_asp-net-generator.html
+      output: web, pdf
+
+    - title: Form generation
+      title_ru: Генерация форм во Flexberry ASP.NET
+      url: /fa_form-generation.html
       output: web, pdf
  
