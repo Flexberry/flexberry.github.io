@@ -84,7 +84,7 @@ lang: ru
 #* [Универсальная форма редактирования ](Универсальная-форма-редактирования.html)
 #* [Поддержка схем Windows XP](support-schemes--windows--x-p.html)
 #* [Сервис блокировок](lock-service.html)
-#* [Создание и подключение монитора задач](creating-and-connection--business-task-monitor.html)
+#* [Создание и подключение монитора задач](fo_creating-connection-business-task-monitor.html)
 #* [Подсистема полномочий](right-manager-module.html)
 #* [Прочие возможности](class-image.html)
 #* [Перечислимые типы данных](enumerations.html)

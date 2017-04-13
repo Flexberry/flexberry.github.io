@@ -37,4 +37,4 @@ AjaxGroupEdit.SetControlTuner(
  
 ## Другие варианты настройки контролов
 
-* [Настройки для LookUp в AGE](fa_settings-for-lookup-age.html)
+* [Настройки для LookUp в AGE](fa_settings-lookup-age.html)

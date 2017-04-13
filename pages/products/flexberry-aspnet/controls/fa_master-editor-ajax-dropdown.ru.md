@@ -11,7 +11,7 @@ lang: ru
 
 Ниже показан пример отображения данного контрола на веб-форме.
 
-![](/images/pages/products/flexberry-aspnet/aspnet/on-form.png)
+![](/images/pages/products/flexberry-aspnet/on-form.png)
 
 ## Подключение
 
@@ -124,7 +124,7 @@ $(document).ready(function () {
 
 Если `MasterEditorAjaxDropDown` отображает не только значение мастерового свойства, а весь мастеровой объект целиком, то вероятнее всего не была закончена [настройка лукапа в представлении во Flexberry Designer](fd_view-edit-form.html).
 
-![](/images/pages/products/flexberry-aspnet/aspnet/on-form-bad.png)
+![](/images/pages/products/flexberry-aspnet/on-form-bad.png)
 
 Проверить это можно, удостоверившись, что у соответствующего объекта данных есть запись вида:
 

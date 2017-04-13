@@ -15,7 +15,7 @@ lang: ru
 
 Чтобы мониторить запросы к хранилищу данных можно
 
-* Написать [собственный монитор задач](fo_creating-and-connection-business-task-monitor.html)
+* Написать [собственный монитор задач](fo_creating-connection-business-task-monitor.html)
 * Подключить существующий
 
 Подробнее о втором варианте:
