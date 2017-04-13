@@ -9,7 +9,7 @@ lang: ru
 
 ## Схема взаимодействия компонент подсистемы аудита
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm1.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm1.png)
 
 *Схема взаимодействия компонент подсистемы аудита без отдельного сервиса аудита*
 
@@ -25,7 +25,7 @@ lang: ru
     * если аудит необходим, то в соответствующее сообщение идёт либо в [IAudit](efs_i-audit.html), если нет отдельного сервиса аудита, либо в AuditWinService (ожидание ответа будет зависеть от настроек аудита).
 * Класс AuditService реализовывает интерфейс IAuditService, а также имеет статическое поле типа IAuditService, куда будет записана инстанция класса AuditService (это позволит вести работу как со статическим классом через обращение «AuditService.CurrentAuditService»). Все вызовы осуществляются через интерфейс (если появится потребность, то класс Audit можно легко подменить).
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm2.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm2.png)
 
 *Схема взаимодействия компонент подсистемы аудита при наличии отдельного сервиса аудита*
 
@@ -49,7 +49,7 @@ lang: ru
 
 * ServiceAuditController – класс, отвечающий за взаимодействие через wcf с win-сервисом аудита AuditWinService, связанному с wcf-сервисом, реализующим интерфейс IAuditWcfServiceLibrary.
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm3.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm3.png)
 
 *Схема взаимодействия компонент подсистемы аудита*
 
@@ -60,7 +60,7 @@ lang: ru
 Класс [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html), реализующий интерфейс [IAudit](efs_i-audit.html), содержит в себе логику работы со сведениями аудита.
 Сервис аудита AuditWinService c wcf-сервисом AuditWcfServiceLibrary, поддерживающим интерфейс IAuditWcfServiceLibrary, являются контейнером для логики работы со сведениями аудита.
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm4.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm4.png)
 
 *Схема расположения классов подсистемы аудита в сборках Flexberry и их взаимодействия*
 
@@ -129,7 +129,7 @@ lang: ru
 | **БД приложения** | В этом случае запись события аудита и выполнение операции [можно совместить в одной транзакции](audit-and-transactions.html). Соответственно, если что-то пошло не так, все действия будут откачены.  В этом случае в первую очередь выполняется аудируемая операция. Данные аудита отправляются отдельному процессу, который отвечает, чтобы данные аудита были в итоге записаны (возможна запись данных в некое временное хранилище).|
 | **Внешняя БД** | Сначала будет выполнена запись аудита (флаг Executed=false). Если запись об аудите выполнена успешно, то проводится попытка выполнить аудируемую операцию. Если аудируемая операция выполнена успешно, то в записи об аудите флаг Executed изменяется на true.  В этом случае в первую очередь выполняется аудируемая операция. Данные аудита отправляются отдельному процессу, который отвечает, чтобы данные аудита были в итоге записаны (возможна запись данных в некое временное хранилище).|
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-store-structure.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-store-structure.png)
 
 *Структура базы данных для хранения сведений аудита*
 
@@ -164,7 +164,7 @@ lang: ru
 
 **Примечание:** на текущей реализации аудита используются классы: AuditAppSetting и AuditDSSetting; класс AuditClassSetting используется не в полной мере.
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-store-settings.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-store-settings.png)
 
 *Общая структура для хранения настроек аудита приложения*
 
@@ -260,7 +260,7 @@ lang: ru
 
 ## Алгоритм определения актуальных настроек аудита
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-find-setting.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-find-setting.png)
 
 *Схема определения, является ли операция аудируемой для класса*
 
@@ -278,7 +278,7 @@ lang: ru
 * Настройки классов со стереотипом «application» (настройки аудита, определяемые для конкретного генерируемого приложения (на настоящий момент ASP-генератор поддерживает генерацию только одного приложения)).
 * Настройки классов со стереотипом «implementation» (настройки аудита, определяемые для конкретных классов, которые войдут в сборку объектов).
 
-![Изображение](/images/img/page/AuditWeb/AuditSettingGenerate.PNG)
+![Изображение](/images/img/page/AuditWeb/AuditSettingGenerate.png)
 
 Схема генерации настроек аудита из Flexberry Tool в web-приложение*
 
@@ -290,13 +290,13 @@ lang: ru
 AuditService основные настройки классов объектов получает непосредственно из классов через reflection.
 Общие настройки аудита приложения загружаются в AuditService в начале работы web-приложения в Global.asax.cs, откуда идёт обращение к специализированному классу AuditSetter, который отвечает за формирование настроек из config-файла и первичную инициализацию AuditService.
 
-![Изображение](/images/pages/products/flexberry-aspnet/audit/audit-setting-read.PNG)
+![Изображение](/images/pages/products/flexberry-aspnet/audit/audit-setting-read.png)
 
 *Схема чтения настроек для AuditService*
 
 ## Обработка ошибок
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-error-handle.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/audit-error-handle.png)
 
 * AuditException – базовое исключение подсистемы аудита. При выполнении таких базовых операций аудита как WriteCustomAuditOperation, RatifyAuditOperation, WriteCommonAuditOperation наружу пробрасываются только исключения такого типа.
 * DisabledAuditException – исключение сообщает, что аудит выключен, соответственно, ничего в БД аудита не попадёт.

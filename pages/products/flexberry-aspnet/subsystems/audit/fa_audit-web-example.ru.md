@@ -20,7 +20,7 @@ lang: ru
 
 ## Диаграмма классов
 
-![](/images/pages/products/flexberry-aspnet/audit/filter-ex-diagram.PNG)
+![](/images/pages/products/flexberry-aspnet/audit/filter-ex-diagram.png)
 
 ### Настройка аудита
 
