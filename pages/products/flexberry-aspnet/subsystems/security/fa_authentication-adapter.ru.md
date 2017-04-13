@@ -26,7 +26,7 @@ lang: ru
 public static Agent GetDbUser()
 ```
 
-2. 
+2.
 
 ```csharp
 /// <summary>
