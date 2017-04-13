@@ -15,14 +15,14 @@ lang: ru
 
 ### Настройка внешнего вида таблиц в теме Crimea
 
-В тему Crimea были добвлены 2 варианта раскраски таблиц.
+В тему Crimea были добавлены 2 варианта раскраски таблиц:
 
 ![Default](/images/pages/products/flexberry-aspnet/controls/groupedit/CrimeaDefaultAGE.png)
 ![Classic](/images/pages/products/flexberry-aspnet/controls/groupedit/CrimeaClassicAGE.png)
 
 По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на `false`.
 
-{% include important.html content="При этом также измениться и стиль таблиц WOLV" %}
+{% include important.html content="При этом также изменится и стиль таблиц WOLV" %}
 
 ## Настройка контролов внутри AGE
 

@@ -124,10 +124,10 @@ WebObjectListView1.Stylizations.Add(stylization);
 
 ## Настройка внешнего вида таблиц в теме Crimea
 
-В тему `Crimea` были добвлены 2 варианта раскраски таблиц.
+В тему `Crimea` были добавлены 2 варианта раскраски таблиц:
 ![Default](/images/pages/products/flexberry-aspnet/controls/wolv/CrimeaDefaultWOLV.png)
 ![Classic](/images/pages/products/flexberry-aspnet/controls/wolv/CrimeaClassicWOLV.png)
 
 По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на false.
 
-{% include important.html content="При этом, также измениться и стиль таблиц AGE" %}
+{% include important.html content="При этом, также изменится и стиль таблиц AGE" %}
