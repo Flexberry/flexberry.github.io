@@ -15,6 +15,7 @@ entries:
       output: web, pdf
 
     - title: Flexberry ASP.NET
+      title_ru: Flexberry ASP.NET
       url: /fa_flexberry-asp-net.html
       output: web, pdf
 
@@ -39,6 +40,7 @@ entries:
       output: web, pdf
 
     - title: ContextHelper
+      title_ru: ContextHelper
       url: /fa_context-helper.html
       output: web, pdf
 
@@ -63,10 +65,12 @@ entries:
       output: web, pdf
 
     - title: IMasterPageService
+      title_ru: IMasterPageService
       url: /fa_i-master-page-service.html
       output: web, pdf
 
     - title: PageContentManager
+      title_ru: PageContentManager
       url: /fa_page-content-manager.html
       output: web, pdf
 
@@ -81,6 +85,7 @@ entries:
       output: web, pdf
 
     - title: ResponseFilterModule
+      title_ru: ResponseFilterModule
       url: /fa_response-filter-module.html
       output: web, pdf
 
@@ -90,6 +95,7 @@ entries:
       output: web, pdf
 
     - title: ServiceSecurityProvider
+      title_ru: ServiceSecurityProvider
       url: /fa_service-security-provider.html
       output: web, pdf
 
@@ -144,86 +150,107 @@ entries:
       output: web, pdf
 
     - title: BaseWebControl
+      title_ru: BaseWebControl
       url: /fa_base-web-control.html
       output: web, pdf
 
     - title: AjaxGroupEdit
+      title_ru: AjaxGroupEdit
       url: /fa_ajax-group-edit.html
       output: web, pdf
 
     - title: WebObjectListView
+      title_ru: WebObjectListView
       url: /fa_web-object-list-view.html
       output: web, pdf
 
     - title: LookUp
+      title_ru: LookUp
       url: /fa_lookup-overview.html
       output: web, pdf
 
     - title: Date picker
+      title_ru: Date picker
       url: /fa_date-picker.html
       output: web, pdf
 
     - title: DecimalTextBox
+      title_ru: DecimalTextBox
       url: /fa_decimal-textbox.html
       output: web, pdf
 
     - title: FileControl
+      title_ru: FileControl
       url: /fa_file-control-web.html
       output: web, pdf
 
     - title: HierarchicalListView
+      title_ru: HierarchicalListView
       url: /fa_hierarchical-listview.html
       output: web, pdf
 
-    - title: IcsTreeView
+    - title: IcsTreeView 
+      title_ru: IcsTreeView 
       url: /fa_ics-treeview.html
       output: web, pdf
 
     - title: Advanced limit editor
+      title_ru: Advanced limit editor
       url: /fa_advanced-limit-editor.html
       output: web, pdf
 
     - title: AjaxAutocomplete
+      title_ru: AjaxAutocomplete
       url: /fa_ajax-autocomplete.html
       output: web, pdf
 
     - title: MasterExpander
+      title_ru: MasterExpander
       url: /fa_ajax-controls-master-expander.html
       output: web, pdf
 
     - title: ObjectTile
+      title_ru: ObjectTile
       url: /fa_ajax-controls-object-tile.html
       output: web, pdf
 
     - title: ObjectTileView
+      title_ru: ObjectTileView
       url: /fa_ajax-controls-object-tile-view.html
       output: web, pdf
 
     - title: AlphaNumericTextBox
+      title_ru: AlphaNumericTextBox
       url: /fa_alpha-numeric-textbox.html
       output: web, pdf
 
     - title: ColorPicker
+      title_ru: ColorPicker
       url: /fa_color-picker.html
       output: web, pdf
 
     - title: Constants
+      title_ru: Constants
       url: /fa_constants.html
       output: web, pdf
 
     - title: Contact control
+      title_ru: Contact control
       url: /fa_contact-control.html
       output: web, pdf
 
     - title: Dynamic editor
+      title_ru: Dynamic editor
       url: /fa_dynamic-editor.html
       output: web, pdf
 
     - title: Event control
+      title_ru: Event control
       url: /fa_event-control.html
       output: web, pdf
 
     - title: ImageControl
+      title_ru: ImageControl
       url: /fa_image-control.html
       output: web, pdf
 
@@ -233,6 +260,7 @@ entries:
       output: web, pdf
 
     - title: LinkModalPopupWindow
+      title_ru: LinkModalPopupWindow
       url: /fa_link-modal-popup-window.html
       output: web, pdf
 
@@ -242,18 +270,22 @@ entries:
       output: web, pdf
 
     - title: ShowHideDiv
+      title_ru: ShowHideDiv
       url: /fa_show-hide-div.html
       output: web, pdf
 
     - title: ViewColumnProvider
+      title_ru: ViewColumnProvider
       url: /fa_view-column-provider.html
       output: web, pdf
 
     - title: WebBinder
+      title_ru: WebBinder
       url: /fa_web-binder.html
       output: web, pdf
 
     - title: WebControlProvider
+      title_ru: WebControlProvider
       url: /fa_web-control-provider.html
       output: web, pdf
 
@@ -263,6 +295,7 @@ entries:
       output: web, pdf
 
     - title: ExceptionPanel
+      title_ru: ExceptionPanel
       url: /fa_exception-panel.html
       output: web, pdf
 
@@ -272,14 +305,17 @@ entries:
       output: web, pdf
     
     - title: Hinter
+      title_ru: Hinter
       url: /fa_hinter.html
       output: web, pdf
 
     - title: MasterEditorAjaxDropDown
+      title_ru: MasterEditorAjaxDropDown
       url: /fa_master-editor-ajax-dropdown.html
       output: web, pdf
 
     - title: MsDropDown
+      title_ru: MsDropDown
       url: /fa_ms-drop-down.html
       output: web, pdf
 
@@ -304,6 +340,7 @@ entries:
       output: web, pdf
 
     - title: BaseEditForm
+      title_ru: BaseEditForm
       url: /fa_base-edit-form.html
       output: web, pdf
 
