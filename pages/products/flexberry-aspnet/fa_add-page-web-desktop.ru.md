@@ -60,6 +60,6 @@ lang: ru
 
 В итоге получится примерно следующее:
 
-![](/images/pages/products/flexberry-aspnet/aspnet/web-desktop-plus.png)
+![](/images/pages/products/flexberry-aspnet/web-desktop-plus.png)
 
 Подробнее о карте сайта можно посмотреть в [MSDN](http://msdn.microsoft.com/ru-ru/library/yy2ykkab%28v=vs.100%29.aspx).
