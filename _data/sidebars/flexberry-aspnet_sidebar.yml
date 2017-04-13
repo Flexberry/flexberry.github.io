@@ -113,6 +113,11 @@ entries:
       title_ru: Примеры настройки технологических форм
       url: /fa_technological-forms-customization-example.html
       output: web, pdf
+
+    - title: Memory leaks
+      title_ru: Возможные места утечки памяти в web-приложениях
+      url: /fa_memory-leaks.html
+      output: web, pdf
   
   - title: Subsystems
     title_ru: Подсистемы
@@ -317,11 +322,6 @@ entries:
     - title: MsDropDown
       title_ru: MsDropDown
       url: /fa_ms-drop-down.html
-      output: web, pdf
-
-    - title: Memory leaks
-      title_ru: Возможные места утечки памяти в web-приложениях
-      url: /fa_memory-leaks.html
       output: web, pdf
 
   - title: Editform
