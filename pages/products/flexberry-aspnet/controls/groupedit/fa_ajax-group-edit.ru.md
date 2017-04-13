@@ -17,8 +17,13 @@ lang: ru
 
 В тему Crimea были добавлены 2 варианта раскраски таблиц:
 
-![Default](/images/pages/products/flexberry-aspnet/controls/groupedit/CrimeaDefaultAGE.png)
-![Classic](/images/pages/products/flexberry-aspnet/controls/groupedit/CrimeaClassicAGE.png)
+* Вид таблицы по умолчанию:
+
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/crimea-default-age.png)
+
+* Классический вид таблицы:
+
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/crimea-classic-age.png)
 
 По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на `false`.
 
