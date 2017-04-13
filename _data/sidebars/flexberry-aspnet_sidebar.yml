@@ -440,7 +440,7 @@ entries:
       output: web, pdf
 
   - title: Monitors for Flexberry ASP.NET
-    title_ru: Генерация для Flexberry ASP.NET
+    title_ru: Мониторы задач для Flexberry ASP.NET
     output: web, pdf
     
     folderitems:
