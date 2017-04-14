@@ -8663,6 +8663,11 @@
                     "name": "fieldsToUpdate",
                     "description": "",
                     "type": "Object"
+                },
+                {
+                    "name": "syncDownTime",
+                    "description": "",
+                    "type": "Boolean"
                 }
             ],
             "return": {
@@ -8675,7 +8680,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 366,
+            "line": 375,
             "description": "Performing bulk operaion with previously stored hashes.",
             "itemtype": "method",
             "name": "bulkUpdateOrCreate",
@@ -8706,7 +8711,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 417,
+            "line": 426,
             "description": "Stores hash for performing bulk operaion into map.",
             "itemtype": "method",
             "name": "_storeHashForBulkOperation",
@@ -8730,7 +8735,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 435,
+            "line": 444,
             "description": "Makes {{#crossLink \"Query.QueryObject\"}}{{/crossLink}} out of queries that look like this:\n {\n   <property to query>: <value to match>,\n   ...\n }.",
             "itemtype": "method",
             "name": "_makeQueryObject",
@@ -8768,7 +8773,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/offline.js",
-            "line": 486,
+            "line": 495,
             "description": "Retrieves projection from query and returns it.\nRetrieved projection removes from the query.",
             "itemtype": "method",
             "name": "_extractProjectionFromQuery",
