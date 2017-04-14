@@ -1211,7 +1211,7 @@ ErrorableControllerMixin, {
     */
     removeFilter() {
       let _this = this;
-      if (_this.get(&#x27;filterText&#x27;) || _this.get(&#x27;filterByAnyMatchText&#x27;)) {
+      if (_this.get(&#x27;filterText&#x27;)) {
         _this.get(&#x27;currentController&#x27;).set(&#x27;state&#x27;, &#x27;loading&#x27;);
       }
 
