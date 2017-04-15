@@ -1,7 +1,7 @@
 ---
-title: Плагин перемещения или копирования
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+title: Функция перемещения или копирования
+sidebar: flexberry-orm_sidebar
+keywords: Flexberry ORM
 toc: true
 permalink: ru/fd_move-case-plugin.html
 folder: products/flexberry-designer/about/

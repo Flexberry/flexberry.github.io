@@ -333,3 +333,25 @@ entries:
     - title: ViewPropertyAppender
       url: /fo_view-property-appender.html
       output: web
+  - title: Генераторы
+    output: web, pdf
+    folderitems:
+    - title: Модуль расширения Flexberry Designer для генерации кода по uml-моделям
+      url: /fo_flexberry-orm-case-plugin.html
+      output: web
+
+    - title: Функция для поиска
+      url: /fo_intelli-search-plugin.html
+      output: web
+
+    - title: Функция генерации документации по диаграммам
+      url: /fo_doc-gen.html
+      output: web
+
+    - title: Функция перемещения или копирования
+      url: /fd_move-case-plugin.html
+      output: web
+
+    - title: Функции создания бэкапа и истории изменений
+      url: /fo_history-plugin.html
+      output: web

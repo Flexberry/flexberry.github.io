@@ -4,6 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: CASE Plugins, Flexberry ORM, Public
 toc: true
 permalink: ru/fo_flexberry-orm-case-plugin.html
+folder: products/flexberry-orm/generation/
+lang: ru
 ---
 
 ## C#

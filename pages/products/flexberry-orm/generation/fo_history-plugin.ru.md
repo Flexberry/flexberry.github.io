@@ -1,16 +1,16 @@
 ---
-title: Модуль расширения History
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+title: Функции создания бэкапа и истории изменений
+sidebar: flexberry-orm_sidebar
+keywords: Flexberry ORM
 toc: true
-permalink: ru/fd_history-plugin.html
-folder: products/flexberry-designer/about/
+permalink: ru/fo_history-plugin.html
+folder: products/flexberry-orm/generation/
 lang: ru
 ---
 
 ## Описание
 
-Модуль расширения [Flexberry Designer](fd_landing_page.html): History разработан для хранения истории изменения Стадий с возможностью восстановления состояния стадии на момент сохранения.
+Модуль расширения Flexberry ORM: History разработан для хранения истории изменения Стадий с возможностью восстановления состояния стадии на момент сохранения.
 
 ## Возможности плагина
 
@@ -29,27 +29,6 @@ lang: ru
     * Сравнение записи в истории с текущим состоянием стадии.
 * Подключение модуля расширения
 
-Подключение осуществляется по следующему алгоритму:
-
-* Зарегистрировать плагин в Flexberry Designer
-    * Открыть меню `Настройки - Модули`
-    * Нажать `Создать`
-    * Указать путь к библиотеке `History Case Tool plugin.dll`
-* Добавить плагин к репозиторию:
-    * Открыть свойства репозитория, выбрав пункт меню `Репозиторий - Редактировать свойства`
-    * В разделе Модули нажать `Создать`, в добавившейся строке в колонке `Модуль` выбрать `HistoryPlugin`
-    * Сохранить изменения.
-
-Подробнее о модулях и их подключении можно посмотреть в [статье Модули расширения функциональности](fd_flexberry-plugins.html).
-
-После этого появится пункты меню Стадии `HistoryPlugin`:
-*   `История изменения стадии`
-*   `Создать бекап`
-
-![](/images/pages/products/flexberry-designer/about/item-history-plugin.jpg)
-
-Также, наряду с кнопками `Сохранить` и `Сохранить и закрыть`, появится кнопка `Сохранить с созданием бекапа`, которая сохраняет стадию и автоматически создает для неё бекап.
-
 ## Создание бекапов
 
 При создании бекапа создается запись о состоянии стадии на текущий момент. 
@@ -58,13 +37,13 @@ lang: ru
 
 Создать бекап можно двумя способами:
 
-* Выбрать пункт меню Стадии `HistoryPlugin - Создать бекап`
+* Выбрать пункт меню Стадии `Утилиты - Создать бекап`
 
-![](/images/pages/products/flexberry-designer/about/create-backup.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/create-backup.jpg)
  
 * Нажать на кнопку`Сохранить с созданием бекапа` на любой форме, привязанной к стадии (любая диаграмма, класс и пр.).
 
-![](/images/pages/products/flexberry-designer/about/save-backup.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/save-backup.jpg)
 
 Бекап создается для всей стадии сразу, независимо от формы, на которой была нажата кнопка `Сохранить с созданием бекапа`.
 К примеру, если нажать эту кнопку на форме редактирования класса, то создастся бекап для всей стадии, к которой привязан этот класс, а не для класса и не для диаграммы.
@@ -76,12 +55,12 @@ lang: ru
 * Выбрать пункт меню Конфигурации - `HistoryPlugin - История стадий конфигурации`.
 Откроется форма просмотра бэкапов всех стадий выбранной Конфигурации.
 
-![](/images/pages/products/flexberry-designer/about/history-configuration.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/history-configuration.jpg)
 
 * Выбрать пункт меню Стадии `HistoryPlugin - История изменения стадии`.
 Откроется форма просмотра бэкапов конкретной Стадии.
 
-![](/images/pages/products/flexberry-designer/about/add-item-history.png)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/add-item-history.png)
 
 На форме `История изменений стадии` представлен список с указанием:
 
@@ -92,7 +71,7 @@ lang: ru
 *   Наименования стадии
 *   Пути до стадии
 
-![](/images/pages/products/flexberry-designer/about/history-change-stage.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/history-change-stage.jpg)
 
 ## Восстановление состояния стадии
 
@@ -108,11 +87,11 @@ lang: ru
 *   Выделить строку бэкапа из которого нужно восстановить состояние стадии
 *   В разворачивающемся списке на панели инструментов выбрать пункт `Восстановить в текущую`
 
-![](/images/pages/products/flexberry-designer/about/restore-current.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/restore-current.jpg)
 
 *   Во всплвающем окне с предупреждением нажать `ОК`
 
-![](/images/pages/products/flexberry-designer/about/warning-window.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/warning-window.jpg)
 
 ### Алгоритм восстановления состояния стадии, которая была удалена
 
@@ -121,14 +100,14 @@ lang: ru
 * Выделить строку бэкапа из которого нужно восстановить состояние удаленной стадии
 * В разворачивающемся списке на панели инструментов выбрать пункт `Восстановить как...`
 
-![](/images/pages/products/flexberry-designer/about/restore-as.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/restore-as.jpg)
 
 * В появившемся окне указать имя, с которым стадия будет восстановлена. Далее есть несколько вариантов:
     * Оставить имя, которое было у стадии до удаления. Стадия будет восстановлена со старым именем
     * Ввести новое имя. Стадия будет создана с новым именем
     * Выбрать существующую стадию из списка (данные в выбранной стадии будут перезаписаны!)
 
-![](/images/pages/products/flexberry-designer/about/choose-stage-name.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/choose-stage-name.jpg)
 
 * Нажать ОК.
 
@@ -145,7 +124,7 @@ lang: ru
 *   Выбрать в раскрывающемся списке пункт `Сравнить с текущей`
 *   Будут открыты окно с логом выполнения сравнения и окно с результатом сравнения
 
-![](/images/pages/products/flexberry-designer/about/compare-current.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/compare-current.jpg)
 
 ### Сравнение двух бэкапов одной стадии/кофигурации
 
@@ -160,7 +139,7 @@ lang: ru
 *   Выделить второй бэкап, зажав `Ctrl` и кликнув правой клавишей мыши по другой строке
 *   Выбрать в раскрывающемся списке пункт `Сравнить`
 
-![](/images/pages/products/flexberry-designer/about/compare-two-backups.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/compare-two-backups.jpg)
 
 *   Будут открыты окно с логом выполнения сравнения и окно с результатом сравнения.
 
@@ -176,7 +155,7 @@ lang: ru
 *   Выбрать в раскрывающемся списке пункт `Сравнить`
 *   В открывшемся окне из списка всех существующих в данном репозитории стадий выбрать ту, с которой будем сравнивать.
 
-![](/images/pages/products/flexberry-designer/about/compare-stage.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/compare-stage.jpg)
 
 *   Нажать ОК
 *   удут открыты окно с логом выполнения сравнения и окно с результатом сравнения.
@@ -185,7 +164,7 @@ lang: ru
 
 Результаты сравнения отображаются на форме:
 
-![](/images/pages/products/flexberry-designer/about/showing-comparison-results.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/showing-comparison-results.jpg)
 
 На форме отображено между какими стадиями происходит сравнение. Подписан путь для каждой стадии в формате `Репозиторий/Проект/Конфигурация/Стадия`.
 
@@ -205,30 +184,30 @@ lang: ru
 * Красным цветом на диаграмме показываются классы и представления, которые есть в обеих сравниваемых стадиях и являются одинаковыми. Детальную информацию о них можно получить на вкладке `Совпадают`
 * Синим цветом на диаграмме показываются классы и представления, которые есть в обеих сравниваемых стадиях, но имеют некоторые отличия. Получить детальную информацию о них и посмотреть, в чем именно состоят отличия можно на вкладке `Совпадают`
 
-![](/images/pages/products/flexberry-designer/about/comparison-chart.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/comparison-chart.jpg)
 
 Вкладка `Объекты различаются`
 Информация о классах и представлениях, которые есть в обеих сравниваемых стадиях, но имеют некоторые отличия.
 На вкладке расположена таблица, в которой в столбце `Тип объекта` видим 2 раскрывающихся списка с классами (`Classes`) и представлениями (`Views`). В столбце `Наименование объекта`, напротив свернутых списков написано количество найденных классов и представлений имеющих отличия.
 
-![](/images/pages/products/flexberry-designer/about/number-different-objects.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/number-different-objects.jpg)
 
 Раскрыть список `Classes` и выбрать один из найденных классов, например `Дом`.
 
 В нижнем окне есть 2 вкладки: `Поля` и `Ассоциации`.  
 1.Вкладка `Поля` позволяет посмотреть какие поля имеет класс в стадии 1 и в стадии 2. Показан стереотип, родитель, значения атрибутов. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом.
 
-![](/images/pages/products/flexberry-designer/about/field-compare.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/field-compare.jpg)
 
 2.Вкладка `Ассоциации` позволяет посмотреть какие у данного класса есть мастеры, детейлы, агрегаторы, роли, кардинальность связи. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом (в данном примере у класса `Дом` нет отличий в ассоциациях).
 
-![](/images/pages/products/flexberry-designer/about/association-compare.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/association-compare.jpg)
 
 Раскрыть список `Views` и выбрать одно из найденных представлений, например `Заказ.ЗаказЕ`.
 Вкладка `Свойства` позволяет посмотреть какие свойства имеет представление в стадии 1 и в стадии 2. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом.
 
-![](/images/pages/products/flexberry-designer/about/views-compare-attribute.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/views-compare-attribute.jpg)
 
 Вкладка `Детейлы` позволяет посмотреть какие Детейлы имеет представление в стадии 1 и в стадии 2. Элементы, которых нет в одной из сравниваемых стадий выделены красным цветом. В данном примере представление `Заказ.ЗаказЕ` не имеет детейлов в стадии `TestStandWin`.
 
-![](/images/pages/products/flexberry-designer/about/views-compare-detail.jpg)
+![](/images/pages/products/flexberry-orm/generation/history-plugin/views-compare-detail.jpg)
