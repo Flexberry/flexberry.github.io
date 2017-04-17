@@ -425,7 +425,6 @@ export default Ember.Mixin.create({
   _addEventListeners() {
     let eventHandlers = {};
     this.get(&#x27;usedLeafletEvents&#x27;).forEach(eventName =&gt; {
-
       let actionName = eventName;
       let methodName = &#x27;_&#x27; + eventName;
 
@@ -454,13 +453,16 @@ export default Ember.Mixin.create({
   */
   _removeEventListeners() {
     let eventHandlers = this.get(&#x27;_eventHandlers&#x27;);
-    if (eventHandlers) {
-      this.get(&#x27;usedLeafletEvents&#x27;).forEach(eventName =&gt; {
-        this.get(&#x27;_leafletObject&#x27;).removeEventListener(eventName,
-          eventHandlers[eventName], this);
-        delete eventHandlers[eventName];
-      });
+    let leafletObject = this.get(&#x27;_leafletObject&#x27;);
+    if (Ember.isNone(eventHandlers) || Ember.isNone(leafletObject)) {
+      return;
     }
+
+    this.get(&#x27;usedLeafletEvents&#x27;).forEach(eventName =&gt; {
+      leafletObject.removeEventListener(eventName,
+        eventHandlers[eventName], this);
+      delete eventHandlers[eventName];
+    });
   },
 
   /**

@@ -14284,7 +14284,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers/wms-layer.js",
-            "line": 84,
+            "line": 89,
             "description": "Creates leaflet layer related to layer type.",
             "itemtype": "method",
             "name": "createLayer",
@@ -14293,7 +14293,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers/wms-layer.js",
-            "line": 93,
+            "line": 98,
             "description": "Handles 'flexberry-map:identify' event of leaflet map.",
             "itemtype": "method",
             "name": "identify",
@@ -14331,7 +14331,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers/wms-layer.js",
-            "line": 115,
+            "line": 120,
             "description": "Handles 'flexberry-map:search' event of leaflet map.",
             "itemtype": "method",
             "name": "search",
@@ -20771,7 +20771,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 25,
+            "line": 26,
             "description": "Leaflet layer object init by settings from model.",
             "itemtype": "property",
             "name": "_leafletObject",
@@ -20784,14 +20784,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 35,
+            "line": 36,
             "description": "Overload wrapper tag name for disabling wrapper.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 40,
+            "line": 41,
             "description": "Leaflet map.",
             "itemtype": "property",
             "name": "leafletMap",
@@ -20802,7 +20802,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 49,
+            "line": 50,
             "description": "Leaflet container for layers.",
             "itemtype": "property",
             "name": "leafletContainer",
@@ -20813,7 +20813,18 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 58,
+            "line": 59,
+            "description": "Promise returning Leaflet layer.",
+            "itemtype": "property",
+            "name": "leafletLayerPromise",
+            "type": "<a href=\"https://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>",
+            "default": "null",
+            "class": "BaseLayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/base-layer.js",
+            "line": 68,
             "description": "Layer metadata.",
             "itemtype": "property",
             "name": "layerModel",
@@ -20824,7 +20835,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 67,
+            "line": 77,
             "description": "This layer index, used for layer ordering in Map.",
             "itemtype": "property",
             "name": "index",
@@ -20835,7 +20846,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 75,
+            "line": 86,
             "description": "Call leaflet layer setZIndex if it presents.",
             "itemtype": "method",
             "name": "setZIndex",
@@ -20844,7 +20855,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 86,
+            "line": 100,
             "description": "Flag, indicates visible or not current layer on map.",
             "itemtype": "property",
             "name": "visibility",
@@ -20855,7 +20866,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 94,
+            "line": 109,
             "description": "Layer's coordinate reference system (CRS).",
             "itemtype": "property",
             "name": "crs",
@@ -20866,7 +20877,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 110,
+            "line": 125,
             "description": "Handles 'flexberry-map:identify' event of leaflet map.",
             "itemtype": "method",
             "name": "_identify",
@@ -20906,7 +20917,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 136,
+            "line": 151,
             "description": "Handles 'flexberry-map:search' event of leaflet map.",
             "itemtype": "method",
             "name": "search",
@@ -20951,7 +20962,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 161,
+            "line": 176,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
@@ -20977,28 +20988,28 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 181,
+            "line": 196,
             "description": "Initializes component.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 189,
+            "line": 215,
             "description": "Initializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 206,
+            "line": 235,
             "description": "Deinitializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 226,
+            "line": 258,
             "description": "Handles changes in {{#crossLink \"BaseLayerComponent/visibility:property\"}}'visibility' property{{/crossLink}}.\nSwitches layer's visibility.",
             "itemtype": "method",
             "name": "visibilityDidChange",
@@ -21007,7 +21018,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 242,
+            "line": 278,
             "description": "Creates leaflet layer related to layer type.",
             "itemtype": "method",
             "name": "createLayer",
@@ -21016,7 +21027,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 251,
+            "line": 287,
             "description": "Identifies layer's objects inside specified bounding box.",
             "itemtype": "method",
             "name": "identify",
@@ -21054,7 +21065,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 270,
+            "line": 306,
             "description": "Handles 'flexberry-map:search' event of leaflet map.",
             "itemtype": "method",
             "name": "search",
@@ -21099,7 +21110,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 286,
+            "line": 322,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
@@ -21125,7 +21136,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 299,
+            "line": 335,
             "description": "Injects (leafelt GeoJSON layers)[http://leafletjs.com/reference-1.0.0.html#geojson] according to current CRS\ninto specified (GeoJSON)[http://geojson.org/geojson-spec] feature, features, or featureCollection",
             "itemtype": "method",
             "name": "injectLeafletLayersIntoGeoJSON",
@@ -28786,7 +28797,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/leaflet-events.js",
-            "line": 80,
+            "line": 79,
             "description": "Remove all event listeners from leaflet object.",
             "itemtype": "method",
             "name": "_removeEventListeners",
@@ -28795,7 +28806,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/leaflet-events.js",
-            "line": 96,
+            "line": 98,
             "description": "Removes attached event listeners on destroy.",
             "class": "LeafletEventsMixin",
             "module": "ember-flexberry-gis"
@@ -28844,7 +28855,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/leaflet-properties.js",
-            "line": 68,
+            "line": 72,
             "description": "Method for remove created observers",
             "itemtype": "method",
             "name": "_removeObservers",
@@ -45676,19 +45687,19 @@
         },
         {
             "message": "Missing item type\nOverload wrapper tag name for disabling wrapper.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:35"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:36"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:181"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:196"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:189"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:215"
         },
         {
             "message": "Missing item type\nDeinitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:206"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:235"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -45968,7 +45979,7 @@
         },
         {
             "message": "Missing item type\nRemoves attached event listeners on destroy.",
-            "line": " ember-flexberry-gis/addon/mixins/leaflet-events.js:96"
+            "line": " ember-flexberry-gis/addon/mixins/leaflet-events.js:98"
         },
         {
             "message": "Missing item type\nInitializes required actions logic.",

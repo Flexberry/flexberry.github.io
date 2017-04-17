@@ -381,6 +381,7 @@ const { assert } = Ember;
 
 /**
   BaseLayer component for other flexberry-gis layers.
+
   @class BaseLayerComponent
   @extends &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Component.html&quot;&gt;Ember.Component&lt;/a&gt;
   @uses DynamicPropertiesMixin
@@ -426,6 +427,15 @@ export default Ember.Component.extend(
     leafletContainer: null,
 
     /**
+      Promise returning Leaflet layer.
+
+      @property leafletLayerPromise
+      @type &lt;a href=&quot;https://emberjs.com/api/classes/RSVP.Promise.html&quot;&gt;Ember.RSVP.Promise&lt;/a&gt;
+      @default null
+    */
+    leafletLayerPromise: null,
+
+    /**
       Layer metadata.
 
       @property layerModel
@@ -436,6 +446,7 @@ export default Ember.Component.extend(
 
     /**
       This layer index, used for layer ordering in Map.
+
       @property index
       @type Int
       @default null
@@ -444,17 +455,21 @@ export default Ember.Component.extend(
 
     /**
       Call leaflet layer setZIndex if it presents.
+
       @method setZIndex
      */
     setZIndex: Ember.observer(&#x27;index&#x27;, function () {
-      let layer = this.get(&#x27;_leafletObject&#x27;);
-      if (layer &amp;&amp; layer.setZIndex) {
-        layer.setZIndex(this.get(&#x27;index&#x27;));
+      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
+      if (Ember.isNone(leafletLayer) || Ember.typeOf(leafletLayer.setZIndex) !== &#x27;function&#x27;) {
+        return;
       }
+
+      leafletLayer.setZIndex(this.get(&#x27;index&#x27;));
     }),
 
     /**
       Flag, indicates visible or not current layer on map.
+
       @property visibility
       @type Boolean
       @default null
@@ -544,7 +559,7 @@ export default Ember.Component.extend(
         return;
       }
 
-      // Call public query method
+      // Call public query method.
       this.query(e);
     },
 
@@ -553,7 +568,18 @@ export default Ember.Component.extend(
     */
     init() {
       this._super(...arguments);
-      this.set(&#x27;_leafletObject&#x27;, this.createLayer());
+
+      // Call to createLayer could potentially return a promise,
+      // wraping this call into Ember.RSVP.hash helps us to handle straight/promise results universally.
+      this.set(&#x27;leafletLayerPromise&#x27;, Ember.RSVP.hash({
+        leafletLayer: this.createLayer()
+      }).then(({ leafletLayer }) =&gt; {
+        this.set(&#x27;_leafletObject&#x27;, leafletLayer);
+
+        return leafletLayer;
+      }).catch((errorMessage) =&gt; {
+        Ember.Logger.error(&#x60;Failed to create leaflet layer for &#x27;${this.get(&#x27;layerModel.name&#x27;)}&#x27;: ${errorMessage}&#x60;);
+      }));
     },
 
     /**
@@ -561,8 +587,11 @@ export default Ember.Component.extend(
     */
     didInsertElement() {
       this._super(...arguments);
-      this.visibilityDidChange();
-      this.setZIndex();
+
+      this.get(&#x27;leafletLayerPromise&#x27;).then((leafletLayer) =&gt; {
+        this.visibilityDidChange();
+        this.setZIndex();
+      });
 
       let leafletMap = this.get(&#x27;leafletMap&#x27;);
       if (!Ember.isNone(leafletMap)) {
@@ -588,9 +617,12 @@ export default Ember.Component.extend(
       }
 
       let leafletContainer = this.get(&#x27;leafletContainer&#x27;);
-      if (!Ember.isNone(leafletContainer)) {
-        leafletContainer.removeLayer(this.get(&#x27;_leafletObject&#x27;));
+      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
+      if (Ember.isNone(leafletContainer) || Ember.isNone(leafletLayer) &amp;&amp; leafletContainer.hasLayer(leafletLayer)) {
+        return;
       }
+
+      leafletContainer.removeLayer(leafletLayer);
     },
 
     /**
@@ -600,12 +632,16 @@ export default Ember.Component.extend(
       @method visibilityDidChange
      */
     visibilityDidChange: Ember.observer(&#x27;visibility&#x27;, function () {
-      let container = this.get(&#x27;leafletContainer&#x27;);
+      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
+      if (Ember.isNone(leafletLayer)) {
+        return;
+      }
 
+      let leafletContainer = this.get(&#x27;leafletContainer&#x27;);
       if (this.get(&#x27;visibility&#x27;)) {
-        container.addLayer(this.get(&#x27;_leafletObject&#x27;));
+        leafletContainer.addLayer(leafletLayer);
       } else {
-        container.removeLayer(this.get(&#x27;_leafletObject&#x27;));
+        leafletContainer.removeLayer(leafletLayer);
       }
     }),
 

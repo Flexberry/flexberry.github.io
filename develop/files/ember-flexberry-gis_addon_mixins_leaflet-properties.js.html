@@ -424,6 +424,10 @@ export default Ember.Mixin.create({
       this._observers[property] = () =&gt; {
         Ember.run.once(() =&gt; {
           let leafletObject = this.get(&#x27;_leafletObject&#x27;);
+          if (Ember.isNone(leafletObject)) {
+            return;
+          }
+
           let value = this.get(objectProperty);
           Ember.assert(this.constructor + &#x27; must have a &#x27; + leafletProperty + &#x27; function.&#x27;, !!leafletObject[leafletProperty]);
           let propertyParams = params.map(p =&gt; this.get(p));
