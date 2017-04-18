@@ -4,7 +4,6 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Desinger, Ключевые понятия
 toc: true
 permalink: ru/fd_prototype-creation.html
-folder: products/flexberry-designer/creating/
 lang: ru
 ---
 

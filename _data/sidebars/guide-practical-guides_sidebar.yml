@@ -14,16 +14,14 @@ entries:
       output: web
 
   - title: Practical guide by Flexberry Desinger
-    title_ru: Практическое руководство для Flexberry Desinger
+    title_ru: Практическое руководство по Flexberry Desinger
     output: web
     
     folderitems:
     - title: Practical guide to creating UML-charts
       title_ru: Практическое руководство по созданию UML-диаграмм
       url: /gpg_practical-guides-uml.html
-      output: web
-
-    
+      output: web   
 
     - title: Formulation problem
       title_ru: Постановка задачи
@@ -58,4 +56,54 @@ entries:
     - title: Deployment diagram
       title_ru: Диаграмма развёртывания
       url: /gpg_deployment-diagram.html
-      output: web     
+      output: web  
+
+  - title: Practical guide by Flexberry ASP.NET
+    title_ru: Практическое руководство по веб-разработке
+    output: web
+    
+    folderitems:
+    - title: Preparatory stage of web application development
+      title_ru: Подготовительный этап разработки веб-приложений
+      url: /gpg_preparatory-stage.html
+      output: web
+
+    - title: Configuring the script generator for the database
+      title_ru: Настройка генератора скриптов для БД
+      url: /gpg_configuring-script-generator-db.html
+      output: web 
+
+    - title: Prototyping
+      title_ru: Создание прототипа
+      url: /gpg_prototype-creating.html
+      output: web 
+
+    - title: Checking connection settings to the database
+      title_ru: Проверка настроек подключения к БД
+      url: /gpg_connection-settings-db.html
+      output: web 
+
+    - title: Configuring the application structure
+      title_ru: Настройка структуры приложения
+      url: /gpg_configuring-application-structure.html
+      output: web
+
+    - title: Configuring code generation (CSharp)
+      title_ru: Настройка кодогенерации (CSharp)
+      url: /gpg_configuring-generation.html
+      output: web 
+
+    - title: Generating a Web-application
+      title_ru: Генерация веб-приложения
+      url: /gpg_generation-application.html
+      output: web   
+
+    - title: Launching the Web-application
+      title_ru: Запуск веб-приложения
+      url: /gpg_start-application.html
+      output: web  
+
+    - title: Enabling the ASP.NET State Service
+      title_ru: Включение службы ASP.NET State Service
+      url: /gpg_asp-net-state-service.html
+      output: web  

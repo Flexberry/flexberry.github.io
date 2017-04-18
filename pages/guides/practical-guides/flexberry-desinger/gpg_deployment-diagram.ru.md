@@ -21,4 +21,4 @@ lang: ru
 ## Перейти
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграмм состояний](gpg_statechart-diagram.html)
-* [Практическое руководство ("Делай как я")](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+* [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
