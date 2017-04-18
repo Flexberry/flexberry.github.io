@@ -48,5 +48,5 @@ lang: ru
 
 ## Перейти
 
-* [Построение диаграммы классов](gpg_class-diagram.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграммы классов](gpg_class-diagram.html)
 * [Построение диаграмм состояний](gpg_statechart-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

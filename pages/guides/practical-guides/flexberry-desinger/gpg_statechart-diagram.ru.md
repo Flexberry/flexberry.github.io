@@ -31,5 +31,5 @@ lang: ru
 
 ## Перейти
 
-* [Построение диаграмм взаимодействия](gpg_interaction-diagram.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграмм взаимодействия](gpg_interaction-diagram.html)
 * [Диаграмма развёртывания](gpg_deployment-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

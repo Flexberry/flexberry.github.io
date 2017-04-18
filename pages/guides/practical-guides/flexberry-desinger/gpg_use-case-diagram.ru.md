@@ -49,5 +49,5 @@ __Достоинства модели вариантов использован�
 
 ## Перейти
 
-* [Постановка задачи](gpg_formulation-problem.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Постановка задачи](gpg_formulation-problem.html)
 * [Построение диаграммы видов деятельности](gpg_activity-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

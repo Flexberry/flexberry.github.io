@@ -61,5 +61,5 @@ __Виды связей:__
 
 ## Перейти
 
-* [Построение диаграммы видов деятельности](gpg_activity-diagram.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграммы видов деятельности](gpg_activity-diagram.html)
 * [Построение диаграмм взаимодействия](gpg_interaction-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
