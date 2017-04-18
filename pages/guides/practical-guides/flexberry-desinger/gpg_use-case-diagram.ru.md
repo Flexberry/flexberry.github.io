@@ -45,4 +45,9 @@ __Достоинства модели вариантов использован�
 
 ![](/images/pages/guides/flexberry-designer/use-case-diagram.png)
 
-8.Сохранить диаграмму 
+8.Сохранить диаграмму
+
+## Перейти
+
+* [Постановка задачи](gpg_formulation-problem.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* [Построение диаграммы видов деятельности](gpg_activity-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

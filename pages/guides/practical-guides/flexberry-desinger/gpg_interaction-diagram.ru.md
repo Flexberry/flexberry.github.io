@@ -45,3 +45,8 @@ lang: ru
 ![](/images/pages/guides/flexberry-designer/collaboration-diagram.png)
  
 3.Сохранить диаграмму.
+
+## Перейти
+
+* [Построение диаграммы классов](gpg_class-diagram.html) <i class="fa fa-arrow-left" aria-hidden="true"></i>
+* [Построение диаграмм состояний](gpg_statechart-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>

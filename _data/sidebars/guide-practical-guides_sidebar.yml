@@ -57,5 +57,5 @@ entries:
 
     - title: Deployment diagram
       title_ru: Диаграмма развёртывания
-      url: /gpg_statechart-diagram.html
+      url: /gpg_deployment-diagram.html
       output: web     
