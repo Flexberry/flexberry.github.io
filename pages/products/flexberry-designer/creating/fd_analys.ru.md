@@ -4,11 +4,10 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
 permalink: ru/fd_analys.html
-folder: products/flexberry-designer/creating/
 lang: ru
 ---
 
-В данной статье описывается этап анализа создания приложения при помощи Flexberry Desinger.  
+В данной статье описывается этап анализа создания приложения при помощи [Flexberry Desinger](fd_landing_page.html).  
 Результатом выполнения данного этапа считается создание модели приложения.
 
 ## Алгоритм создания модели

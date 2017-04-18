@@ -58,6 +58,9 @@ topnav_dropdowns:
         - title: Tasks
           title_ru: Практические задания
           url: /gt_landing-page.html
+        - title: Practical guides
+          title_ru: Практические руководства
+          url: /gpg_landing-page.html
     - title: API
       folderitems:
         - title: Release

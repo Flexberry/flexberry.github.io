@@ -4,7 +4,6 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer
 toc: true
 permalink: ru/fd_development.html
-folder: products/flexberry-designer/creating/
 lang: ru
 ---
 

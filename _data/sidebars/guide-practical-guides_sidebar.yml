@@ -1,0 +1,61 @@
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Get started
+    title_ru: Введение
+    output: web
+    
+    folderitems:
+    - title: About
+      title_ru: Общие сведения
+      url: /gpg_landing-page.html
+      output: web
+
+  - title: Practical guide by Flexberry Desinger
+    title_ru: Практическое руководство для Flexberry Desinger
+    output: web
+    
+    folderitems:
+    - title: Practical guide to creating UML-charts
+      title_ru: Практическое руководство по созданию UML-диаграмм
+      url: /gpg_practical-guides-uml.html
+      output: web
+
+    
+
+    - title: Formulation problem
+      title_ru: Постановка задачи
+      url: /gpg_formulation-problem.html
+      output: web 
+
+    - title: Use Case Diagram
+      title_ru: Построение диаграммы вариантов использования
+      url: /gpg_use-case-diagram.html
+      output: web 
+
+    - title: Activity Diagram
+      title_ru: Построение диаграммы видов деятельности
+      url: /gpg_activity-diagram.html
+      output: web 
+
+    - title: Class Diagram
+      title_ru: Построение диаграммы классов
+      url: /gpg_class-diagram.html
+      output: web 
+
+    - title: Interaction diagram
+      title_ru:  Построение диаграмм взаимодействия
+      url: /gpg_interaction-diagram.html
+      output: web 
+
+    - title: Statechart Diagram
+      title_ru: Построение диаграмм состояний
+      url: /gpg_statechart-diagram.html
+      output: web 
+
+    - title: Deployment diagram
+      title_ru: Диаграмма развёртывания
+      url: /gpg_statechart-diagram.html
+      output: web     

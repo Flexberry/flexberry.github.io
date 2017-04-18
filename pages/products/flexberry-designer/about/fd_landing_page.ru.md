@@ -4,7 +4,6 @@ keywords: flexberry, designer, uml
 sidebar: flexberry-designer_sidebar
 toc: false
 permalink: ru/fd_landing_page.html
-folder: products/flexberry-designer/about/
 lang: ru
 ---
 

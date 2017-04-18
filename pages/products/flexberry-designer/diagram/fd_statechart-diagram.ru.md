@@ -4,7 +4,6 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, Public
 toc: true
 permalink: ru/fd_statechart-diagram.html
-folder: products/flexberry-designer/diagram/
 lang: ru
 ---
 
