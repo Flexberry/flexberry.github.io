@@ -35,7 +35,7 @@ lang: ru
 ![](/images/pages/products/flexberry-designer/diagram/instance.jpg) | Объект (Object)
 ![](/images/pages/products/flexberry-designer/diagram/activeobject1.jpg)  | Активный объект (Active object)
 ![](/images/pages/products/flexberry-designer/diagram/dependency1.jpg) | Зависимость (Dependency)
-![](/images/pages/products/flexberry-designer/diagram/Connection.jpg) | Связь (Connection)
+![](/images/pages/products/flexberry-designer/diagram/connection.jpg) | Связь (Connection)
 ![](/images/pages/products/flexberry-designer/diagram/corner.jpg) | Точка изгиба связей (Point)
 ![](/images/pages/products/flexberry-designer/diagram/note.jpg) | Комментарий (Note)
 ![](/images/pages/products/flexberry-designer/diagram/noteconn.jpg) | Коннектор комментария (Note connector)
