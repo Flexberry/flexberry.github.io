@@ -106,4 +106,26 @@ entries:
     - title: Enabling the ASP.NET State Service
       title_ru: Включение службы ASP.NET State Service
       url: /gpg_asp-net-state-service.html
-      output: web  
+      output: web
+
+    - title: Identifying the roles of users and their functions
+      title_ru: Определение ролей пользователей и их функций
+      url: /gpg_identifying-roles.html
+      output: web 
+
+    - title: Adding user roles from an application
+      title_ru: Добавление ролей пользователей из приложения
+      url: /gpg_adding-user-roles.html
+      output: web
+
+    - title: Configuring the paths for generating web application forms
+      title_ru: Настройка путей генерации форм веб-приложения
+      url: /gpg_configuring-paths-generating.html
+      output: web 
+
+    - title: Customize the application menu for different user roles
+      title_ru: Настройка меню приложения для разных ролей пользователей
+      url: /gpg_customize-application-menu.html
+      output: web 
+
+        

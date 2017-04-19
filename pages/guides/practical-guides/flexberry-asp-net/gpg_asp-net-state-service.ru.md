@@ -26,4 +26,4 @@ lang: ru
 ## Перейти
 
 *  <i class="fa fa-arrow-left" aria-hidden="true"></i> [Запуск веб-приложения](gpg_start-application.html)
-* [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
+* [Определение ролей пользователей и их функций](gpg_identifying-roles.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
