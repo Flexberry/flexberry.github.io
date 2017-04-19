@@ -101,6 +101,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "FlexberrySearchComponent",
         "FlexberrySearchMapCommandDialogComponent",
         "FlexberrySimpledatetime",
+        "FlexberryTabBarComponent",
         "FlexberryTextarea",
         "FlexberryTextbox",
         "FlexberryToggler",
