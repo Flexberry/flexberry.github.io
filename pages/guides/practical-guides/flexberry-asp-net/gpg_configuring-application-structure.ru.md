@@ -64,5 +64,5 @@ lang: ru
 
 ## Перейти
 
-*  <i class="fa fa-arrow-left" aria-hidden="true"></i> [Проверка настроек подключения к БД](gpg_connection-settings-db.html)
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Создание прототипа](gpg_prototype-creating.html)
 * [Настройка кодогенерации (CSharp)](gpg_configuring-generation.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 

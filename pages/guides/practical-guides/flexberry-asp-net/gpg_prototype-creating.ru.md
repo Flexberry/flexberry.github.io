@@ -32,4 +32,4 @@ lang: ru
 ## Перейти
 
 *  <i class="fa fa-arrow-left" aria-hidden="true"></i> [Настройка генератора скриптов для БД](gpg_configuring-script-generator-db.html)
-* [Проверка настроек подключения к БД](gpg_connection-settings-db.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [Настройка структуры приложения](gpg_configuring-application-structure.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
