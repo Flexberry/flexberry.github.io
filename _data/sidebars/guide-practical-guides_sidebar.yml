@@ -78,11 +78,7 @@ entries:
       url: /gpg_prototype-creating.html
       output: web 
 
-    - title: Checking connection settings to the database
-      title_ru: Проверка настроек подключения к БД
-      url: /gpg_connection-settings-db.html
-      output: web 
-
+    
     - title: Configuring the application structure
       title_ru: Настройка структуры приложения
       url: /gpg_configuring-application-structure.html
