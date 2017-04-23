@@ -468,8 +468,9 @@ export default Ember.Component.extend({
         Handles tab &#x27;click&#x27; action.
         @method actions.change
         @param {String} currentTab describes currently clicked tab
+        @param {Object} event [jQuery event object](http://api.jquery.com/category/events/event-object/)
     */
-    change(currentTab) {
+    change(currentTab, event) {
       let prevTab = this.get(&#x27;prevTab&#x27;);
       let changed = false;
 

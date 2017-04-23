@@ -24666,6 +24666,11 @@
                     "name": "currentTab",
                     "description": "describes currently clicked tab",
                     "type": "String"
+                },
+                {
+                    "name": "event",
+                    "description": "[jQuery event object](http://api.jquery.com/category/events/event-object/)",
+                    "type": "Object"
                 }
             ],
             "class": "FlexberryTabBarComponent",
@@ -24673,28 +24678,28 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-tab-bar.js",
-            "line": 131,
+            "line": 132,
             "description": "Initializes component's DOM-related properties.",
             "class": "FlexberryTabBarComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-tab-bar.js",
-            "line": 141,
+            "line": 142,
             "description": "Handles DOM-related component's properties after each render.",
             "class": "FlexberryTabBarComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-tab-bar.js",
-            "line": 151,
+            "line": 152,
             "description": "Deinitializes component's DOM-related properties.",
             "class": "FlexberryTabBarComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-tab-bar.js",
-            "line": 161,
+            "line": 162,
             "description": "Component's action invoking when tab was clicked and it's 'active' state changed.",
             "itemtype": "method",
             "name": "sendingActions.change",
@@ -46046,15 +46051,15 @@
         },
         {
             "message": "Missing item type\nInitializes component's DOM-related properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-tab-bar.js:131"
+            "line": " ember-flexberry-gis/addon/components/flexberry-tab-bar.js:132"
         },
         {
             "message": "Missing item type\nHandles DOM-related component's properties after each render.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-tab-bar.js:141"
+            "line": " ember-flexberry-gis/addon/components/flexberry-tab-bar.js:142"
         },
         {
             "message": "Missing item type\nDeinitializes component's DOM-related properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-tab-bar.js:151"
+            "line": " ember-flexberry-gis/addon/components/flexberry-tab-bar.js:152"
         },
         {
             "message": "Missing item type\nReference to component's template.",
