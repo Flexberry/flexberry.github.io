@@ -675,6 +675,44 @@
             },
             "namespaces": {}
         },
+        "ember-flexberry-gis/addon/components/legends/base-legend.js": {
+            "name": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "modules": {},
+            "classes": {
+                "BaseLegendComponent": 1
+            },
+            "fors": {
+                "BaseLegendComponent": 1
+            },
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/components/legends/wfs-legend.js": {
+            "name": "ember-flexberry-gis/addon/components/legends/wfs-legend.js",
+            "modules": {},
+            "classes": {
+                "WfsLegendComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/components/legends/wms-legend.js": {
+            "name": "ember-flexberry-gis/addon/components/legends/wms-legend.js",
+            "modules": {},
+            "classes": {
+                "WmsLegendComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/components/legends/wms-wfs-legend.js": {
+            "name": "ember-flexberry-gis/addon/components/legends/wms-wfs-legend.js",
+            "modules": {},
+            "classes": {
+                "WmsWfsLegendComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-gis/addon/components/map-commands/base.js": {
             "name": "ember-flexberry-gis/addon/components/map-commands/base.js",
             "modules": {},
@@ -3201,6 +3239,10 @@
                 "FlexberryAddLayerDialogComponent": 1,
                 "FlexberryEditLayerDialogComponent": 1,
                 "FlexberryRemoveLayerDialogComponent": 1,
+                "BaseLegendComponent": 1,
+                "WfsLegendComponent": 1,
+                "WmsLegendComponent": 1,
+                "WmsWfsLegendComponent": 1,
                 "BaseMapCommandComponent": 1,
                 "ExportMapCommandComponent": 1,
                 "FullExtentMapCommandComponent": 1,
@@ -3331,6 +3373,7 @@
                 "FlexberryAddLayerDialogComponent": 1,
                 "FlexberryEditLayerDialogComponent": 1,
                 "FlexberryRemoveLayerDialogComponent": 1,
+                "BaseLegendComponent": 1,
                 "BaseMapCommandComponent": 1,
                 "ExportMapCommandComponent": 1,
                 "FullExtentMapCommandComponent": 1,
@@ -4497,6 +4540,66 @@
                 "DynamicPropertiesMixin"
             ]
         },
+        "BaseLegendComponent": {
+            "name": "BaseLegendComponent",
+            "shortname": "BaseLegendComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 26,
+            "description": "Base component representing map layer's legend.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
+        },
+        "WfsLegendComponent": {
+            "name": "WfsLegendComponent",
+            "shortname": "WfsLegendComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/legends/wfs-legend.js",
+            "line": 4,
+            "description": "Component representing map layer's legend for WFS-layers.",
+            "extends": "BaseLegendComponent"
+        },
+        "WmsLegendComponent": {
+            "name": "WmsLegendComponent",
+            "shortname": "WmsLegendComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/legends/wms-legend.js",
+            "line": 4,
+            "description": "Component representing map layer's legend for WMS-layers.",
+            "extends": "BaseLegendComponent"
+        },
+        "WmsWfsLegendComponent": {
+            "name": "WmsWfsLegendComponent",
+            "shortname": "WmsWfsLegendComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/legends/wms-wfs-legend.js",
+            "line": 3,
+            "description": "Component representing map layer's legend for WMS-WFS-layers.",
+            "extends": "WmsLegendComponent"
+        },
         "BaseMapCommandComponent": {
             "name": "BaseMapCommandComponent",
             "shortname": "BaseMapCommandComponent",
@@ -5430,7 +5533,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/layers/-private/base.js",
-            "line": 35,
+            "line": 41,
             "description": "Class describing base layer metadata."
         },
         "GeocoderOsmRuLayer": {
@@ -15087,6 +15190,19 @@
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
             "line": 179,
+            "description": "Flag: indicates whether 'legend' operation is available for the selected layer type.",
+            "itemtype": "property",
+            "name": "_legendIsAvailableForType",
+            "type": "Boolean",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryEditLayerDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
+            "line": 194,
             "description": "Flag: indicates whether layer type is in readonly mode.",
             "itemtype": "property",
             "name": "_typeIsReadonly",
@@ -15099,7 +15215,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 189,
+            "line": 204,
             "description": "Inner hash containing editing layer.",
             "itemtype": "property",
             "name": "layer",
@@ -15110,7 +15226,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 198,
+            "line": 213,
             "description": "Inner hash containing type-related settings mapped by available layer types.",
             "itemtype": "property",
             "name": "_settings",
@@ -15123,7 +15239,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 208,
+            "line": 223,
             "description": "Inner hash containing coordinate reference systems settings mapped by available codes.",
             "itemtype": "property",
             "name": "_coordinateReferenceSystems",
@@ -15136,7 +15252,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 218,
+            "line": 233,
             "description": "User friendly coordinate reference system (CRS) code.\nFor example 'ESPG:4326'.",
             "itemtype": "property",
             "name": "_coordinateReferenceSystemCode",
@@ -15149,7 +15265,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 229,
+            "line": 244,
             "description": "Array containing user friendly coordinate reference systems (CRS) codes.\nFor example ['ESPG:4326', 'PROJ4'].",
             "itemtype": "property",
             "name": "_availableCoordinateReferenceSystemsCodes",
@@ -15162,7 +15278,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 240,
+            "line": 255,
             "description": "Flag: indicates whether coordinate reference system (CRS) edit fields must be shown.",
             "itemtype": "property",
             "name": "_availableCoordinateReferenceSystemsCodes",
@@ -15175,7 +15291,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 252,
+            "line": 267,
             "description": "Tabular menu containing tabs items.",
             "itemtype": "property",
             "name": "_tabularMenu",
@@ -15188,21 +15304,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 262,
+            "line": 277,
             "description": "Reference to component's template.",
             "class": "FlexberryEditLayerDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 267,
+            "line": 282,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "FlexberryEditLayerDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 273,
+            "line": 288,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nis empty to disable component's wrapping <div>.",
             "itemtype": "property",
             "name": "tagName",
@@ -15213,7 +15329,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 283,
+            "line": 298,
             "description": "Component's additional CSS-class names.",
             "itemtype": "property",
             "name": "class",
@@ -15224,7 +15340,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 292,
+            "line": 307,
             "description": "Component's caption.",
             "itemtype": "property",
             "name": "class",
@@ -15235,7 +15351,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 301,
+            "line": 316,
             "description": "Dialog's 'approve' button caption.",
             "itemtype": "property",
             "name": "approveButtonCaption",
@@ -15246,7 +15362,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 310,
+            "line": 325,
             "description": "Dialog's 'deny' button caption.",
             "itemtype": "property",
             "name": "denyButtonCaption",
@@ -15257,7 +15373,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 319,
+            "line": 334,
             "description": "Dialog's 'type' dropdown caption.",
             "itemtype": "property",
             "name": "typeDropdownCaption",
@@ -15268,7 +15384,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 328,
+            "line": 343,
             "description": "Dialog's 'name' textbox caption.",
             "itemtype": "property",
             "name": "nameTextboxCaption",
@@ -15279,7 +15395,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 337,
+            "line": 352,
             "description": "Dialog's 'CRS' segment caption.",
             "itemtype": "property",
             "name": "crsCaption",
@@ -15290,7 +15406,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 346,
+            "line": 361,
             "description": "Dialog's 'CRS' segment's name textbox caption.",
             "itemtype": "property",
             "name": "crsNameTextboxCaption",
@@ -15301,7 +15417,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 355,
+            "line": 370,
             "description": "Dialog's 'CRS' segment's code textbox caption.",
             "itemtype": "property",
             "name": "crsCodeTextboxCaption",
@@ -15312,7 +15428,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 364,
+            "line": 379,
             "description": "Dialog's 'CRS' segment's definition textarea caption.",
             "itemtype": "property",
             "name": "crsDefinitionTextareaCaption",
@@ -15323,7 +15439,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 373,
+            "line": 388,
             "description": "Flag: indicates whether dialog is visible or not.\nIf true, then dialog will be shown, otherwise dialog will be closed.",
             "itemtype": "property",
             "name": "visible",
@@ -15334,7 +15450,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 383,
+            "line": 398,
             "description": "Hash containing editing layer.",
             "itemtype": "property",
             "name": "layer",
@@ -15345,7 +15461,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 392,
+            "line": 407,
             "description": "Leaflet map.",
             "itemtype": "property",
             "name": "leafletMap",
@@ -15356,7 +15472,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 402,
+            "line": 417,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.approve:method\"}}'flexberry-dialog' component's 'approve' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryRemoveLayerDialogComponent/sendingActions.approve:method\"}}'approve' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onApprove",
@@ -15365,7 +15481,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 424,
+            "line": 439,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.deny:method\"}}'flexberry-dialog' component's 'deny' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryEditLayerDialogComponent/sendingActions.deny:method\"}}'deny' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onDeny",
@@ -15374,7 +15490,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 434,
+            "line": 449,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeShow:method\"}}'flexberry-dialog' component's 'beforeShow' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryEditLayerDialogComponent/sendingActions.beforeShow:method\"}}'beforeShow' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeShow",
@@ -15383,7 +15499,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 444,
+            "line": 459,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeHide:method\"}}'flexberry-dialog' component's 'beforeHide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryEditLayerDialogComponent/sendingActions.beforeHide:method\"}}'beforeHide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeHide",
@@ -15392,7 +15508,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 454,
+            "line": 469,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.show:method\"}}'flexberry-dialog' component's 'show' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryEditLayerDialogComponent/sendingActions.show:method\"}}'show' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onShow",
@@ -15401,7 +15517,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 464,
+            "line": 479,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.hide:method\"}}'flexberry-dialog' component's 'hide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryEditLayerDialogComponent/sendingActions.hide:method\"}}'hide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHide",
@@ -15410,7 +15526,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 474,
+            "line": 489,
             "description": "Handles {{#crossLink \"FlexberryCswComponent/sendingActions.recordSelected:method\"}}'flexberry-csw' component's 'recordSelectd' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onCswRecordSelected",
@@ -15426,7 +15542,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 502,
+            "line": 517,
             "description": "Creates inner hash containing layer CRS settings for different CRS codes.",
             "itemtype": "method",
             "name": "_createInnerCoordinateReferenceSystems",
@@ -15437,7 +15553,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 520,
+            "line": 535,
             "description": "Creates inner hash containing layer settings for different layer types.",
             "itemtype": "method",
             "name": "_createInnerSettings",
@@ -15448,7 +15564,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 536,
+            "line": 551,
             "description": "Destroys inner hash containing layer settings.",
             "itemtype": "method",
             "name": "_destroyInnerSettings",
@@ -15459,7 +15575,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 546,
+            "line": 561,
             "description": "Creates inner hash containing layer copy.",
             "itemtype": "method",
             "name": "_createInnerLayer",
@@ -15470,7 +15586,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 591,
+            "line": 606,
             "description": "Destroys inner hash containing layer copy.",
             "itemtype": "method",
             "name": "_destroyInnerLayer",
@@ -15481,7 +15597,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 602,
+            "line": 617,
             "description": "Observes visibility changes & creates/destroys inner hash containing layer copy.",
             "itemtype": "method",
             "name": "_visibleDidChange",
@@ -15492,7 +15608,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 616,
+            "line": 631,
             "description": "Observes type changes & changes link to object containing type-related settings.",
             "itemtype": "method",
             "name": "_innerLayerTypeDidChange",
@@ -15503,7 +15619,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 631,
+            "line": 646,
             "description": "Observes _coordinateReferenceSystemCode changes & changes link to object containing code-related CRS settings.",
             "itemtype": "method",
             "name": "_coordinateReferenceSystemCodeDidChange",
@@ -15514,7 +15630,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 646,
+            "line": 661,
             "description": "Observes changes in current locale.\nChanges available modes.",
             "itemtype": "method",
             "name": "_localeDidChange",
@@ -15525,35 +15641,35 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 663,
+            "line": 678,
             "description": "Initializes component.",
             "class": "FlexberryEditLayerDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 686,
+            "line": 701,
             "description": "Initializes component's DOM-related properties.",
             "class": "FlexberryEditLayerDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 698,
+            "line": 713,
             "description": "Handles DOM-related component's properties after each render.",
             "class": "FlexberryEditLayerDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 711,
+            "line": 726,
             "description": "Deinitializes component's DOM-related properties.",
             "class": "FlexberryEditLayerDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 724,
+            "line": 739,
             "description": "Component's action invoking when dialog starts to show.",
             "itemtype": "method",
             "name": "sendingActions.beforeShow",
@@ -15562,7 +15678,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 730,
+            "line": 745,
             "description": "Component's action invoking when dialog starts to hide.",
             "itemtype": "method",
             "name": "sendingActions.beforeHide",
@@ -15571,7 +15687,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 736,
+            "line": 751,
             "description": "Component's action invoking when dialog is shown.",
             "itemtype": "method",
             "name": "sendingActions.show",
@@ -15580,7 +15696,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 742,
+            "line": 757,
             "description": "Component's action invoking when dialog is hidden.",
             "itemtype": "method",
             "name": "sendingActions.hide",
@@ -15589,7 +15705,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 748,
+            "line": 763,
             "description": "Component's action invoking when dialog is approved.",
             "itemtype": "method",
             "name": "sendingActions.approve",
@@ -15598,7 +15714,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers-dialogs/edit.js",
-            "line": 754,
+            "line": 769,
             "description": "Component's action invoking when dialog is denied.",
             "itemtype": "method",
             "name": "sendingActions.deny",
@@ -15837,6 +15953,126 @@
             "itemtype": "method",
             "name": "sendingActions.deny",
             "class": "FlexberryRemoveLayerDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 4,
+            "description": "Component's CSS-classes names.\nJSON-object containing string constants with CSS-classes names related to component's hbs-markup elements.",
+            "itemtype": "property",
+            "name": "flexberryClassNames",
+            "type": "Object",
+            "readonly": "",
+            "static": 1,
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis",
+            "subprops": [
+                {
+                    "name": "prefix",
+                    "description": "Component's CSS-class names prefix ('layer-legend').",
+                    "type": "String"
+                },
+                {
+                    "name": "wrapper",
+                    "description": "Component's wrapping <div> CSS-class name ('layer-legend').",
+                    "type": "String"
+                },
+                {
+                    "name": "imageWrapper",
+                    "description": "Legend's image wrapping <div> CSS-class name ('layer-legend-image-wrapper').",
+                    "type": "String"
+                },
+                {
+                    "name": "image",
+                    "description": "Legend's image CSS-class name ('layer-legend-image').",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 33,
+            "description": "Reference to component's template.",
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 38,
+            "description": "eference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 44,
+            "description": "Component's wrapping <div> CSS-classes names.\n\nAny other CSS-classes can be added through component's 'class' property.",
+            "itemtype": "property",
+            "name": "classNames",
+            "type": "String[]",
+            "default": "['layer-legend']",
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 55,
+            "description": "Related layer's name.",
+            "itemtype": "property",
+            "name": "layerName",
+            "type": "String",
+            "default": "null",
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 64,
+            "description": "Related layer's settings as JSON object.",
+            "itemtype": "property",
+            "name": "layerSettings",
+            "type": "Object",
+            "default": "null",
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 73,
+            "description": "Array of legend's for layer.\nEvery legend is an object with following structure { src: ... },\nwhere 'src' is legend's image source (url or base64-string).",
+            "itemtype": "property",
+            "name": "_legends",
+            "type": "Object[]",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/wfs-legend.js",
+            "line": 11,
+            "description": "Array of legend's for layer.\nEvery legend is an object with following structure { src: ... },\nwhere 'src' is legend's image source (url or base64-string).",
+            "itemtype": "property",
+            "name": "_legends",
+            "type": "Object[]",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "WfsLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/wms-legend.js",
+            "line": 11,
+            "description": "Array of legend's for layer.\nEvery legend is an object with following structure { src: ... },\nwhere 'src' is legend's image source (url or base64-string).",
+            "itemtype": "property",
+            "name": "_legends",
+            "type": "Object[]",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "WmsLegendComponent",
             "module": "ember-flexberry-gis"
         },
         {
@@ -23423,6 +23659,17 @@
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
             "line": 324,
+            "description": "Layer's settings as JSON-object.",
+            "itemtype": "property",
+            "name": "settingsAsObject",
+            "type": "String",
+            "default": "null",
+            "class": "FlexberryMaplayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
+            "line": 333,
             "description": "Layer's visibility.",
             "itemtype": "property",
             "name": "visibility",
@@ -23433,7 +23680,18 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 333,
+            "line": 342,
+            "description": "Flag: indicates whether layer's legend can be displayed.",
+            "itemtype": "property",
+            "name": "legendCanBeDisplayed",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryMaplayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
+            "line": 351,
             "description": "Child layers.\nThis property is optional and must be used when there are too many child layers,\nand you don't want to define them explicitly in the .hbs markup,\nthen you can define layers array somewhere in code & pass defined array to this component's property.",
             "itemtype": "property",
             "name": "layers",
@@ -23444,7 +23702,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 345,
+            "line": 363,
             "description": "Available CSW connections.",
             "itemtype": "property",
             "name": "cswConnections",
@@ -23455,7 +23713,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 354,
+            "line": 372,
             "description": "Leaflet map.",
             "itemtype": "property",
             "name": "leafletMap",
@@ -23466,7 +23724,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 363,
+            "line": 381,
             "description": "Flag: indicates whether layer node is in readonly mode.\nIf true, layer node's data-related UI will be in readonly mode.",
             "itemtype": "property",
             "name": "readonly",
@@ -23477,7 +23735,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 374,
+            "line": 392,
             "description": "Handles {{#crossLink \"FlexberryTreenodeComponent/sendingActions.headerClick:method\"}}'flexberry-treenode' component's 'headerClick' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.headerClick:method\"}}'headerClick' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHeaderClick",
@@ -23493,7 +23751,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 386,
+            "line": 404,
             "description": "Handles {{#crossLink \"FlexberryTreenodeComponent/sendingActions.beforeExpand:method\"}}'flexberry-treenode' component's 'beforeExpand' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.beforeExpand:method\"}}'beforeExpand' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHeaderClick",
@@ -23509,7 +23767,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 398,
+            "line": 416,
             "description": "Handles {{#crossLink \"FlexberryTreenodeComponent/sendingActions.beforeCollapse:method\"}}'flexberry-treenode' component's 'beforeCollapse' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.beforeCollapse:method\"}}'beforeCollapse' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHeaderClick",
@@ -23525,7 +23783,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 410,
+            "line": 428,
             "description": "Handles {{#crossLink \"FlexberryDdauCheckboxComponent/sendingActions.change:method\"}}'flexberry-ddau-checkbox' component's 'change' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.changeVisibility:method\"}}'changeVisibility'action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onVisibilityCheckboxChange",
@@ -23541,7 +23799,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 421,
+            "line": 439,
             "description": "Handles add button's 'click' event.\nInvokes component's {{#crossLink \"FlexberryMaplayersComponent/sendingActions.add:method\"}}'add'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onAddButtonClick",
@@ -23557,7 +23815,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 437,
+            "line": 455,
             "description": "Handles add dialog's 'approve' action.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.add:method\"}}'add'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onAddDialogApprove",
@@ -23580,7 +23838,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 450,
+            "line": 468,
             "description": "Handles edit button's 'click' event.\nShows component's edit dialog.",
             "itemtype": "method",
             "name": "actions.onEditButtonClick",
@@ -23597,7 +23855,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 466,
+            "line": 484,
             "description": "Handles edit dialog's 'approve' action.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.add:method\"}}'edit'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onEditDialogApprove",
@@ -23620,7 +23878,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 479,
+            "line": 497,
             "description": "Handles remove button's 'click' event.\nShows component's remove dialog.",
             "itemtype": "method",
             "name": "actions.onRemoveButtonClick",
@@ -23637,7 +23895,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 495,
+            "line": 513,
             "description": "Handles remove dialog's 'approve' action.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.remove:method\"}}'remove'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onRemoveDialogApprove",
@@ -23646,7 +23904,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 507,
+            "line": 525,
             "description": "Component's action invoking when layer node's header has been clicked.",
             "itemtype": "method",
             "name": "sendingActions.headerClick",
@@ -23662,7 +23920,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 515,
+            "line": 533,
             "description": "Component's action invoking before layer node will be expanded.\nLayer node can be prevented from being expanded with call to action event object's 'originalEvent.stopPropagation()'.",
             "itemtype": "method",
             "name": "sendingActions.beforeExpand",
@@ -23678,7 +23936,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 524,
+            "line": 542,
             "description": "Component's action invoking before layer node will be collapsed.\nLayer node can be prevented from being collapsed with call to action event object's 'originalEvent.stopPropagation()'.",
             "itemtype": "method",
             "name": "sendingActions.beforeCollapse",
@@ -23694,7 +23952,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 533,
+            "line": 551,
             "description": "Component's action invoking when layer node's 'visibility' state changed.",
             "itemtype": "method",
             "name": "sendingActions.changeVisibility",
@@ -23710,7 +23968,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 541,
+            "line": 559,
             "description": "Component's action invoking when user wants to add child layer into current.",
             "itemtype": "method",
             "name": "sendingActions.add",
@@ -23733,7 +23991,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 549,
+            "line": 567,
             "description": "Component's action invoking when user wants to edit current layer.",
             "itemtype": "method",
             "name": "sendingActions.edit",
@@ -23756,7 +24014,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 557,
+            "line": 575,
             "description": "Component's action invoking when user wants to remove current layer.",
             "itemtype": "method",
             "name": "sendingActions.remove",
@@ -26471,7 +26729,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/layers/-private/base.js",
-            "line": 41,
+            "line": 47,
             "description": "Icon class related to layer type.",
             "itemtype": "property",
             "name": "iconClass",
@@ -26482,8 +26740,8 @@
         },
         {
             "file": "ember-flexberry-gis/addon/layers/-private/base.js",
-            "line": 50,
-            "description": "Permitted operations related to layer type.\nPossible values are 'add', 'edit', 'remove', 'search', 'identify'.",
+            "line": 56,
+            "description": "Permitted operations related to layer type.\nPossible values are 'add', 'edit', 'remove', 'search', 'identify', 'legend'.",
             "itemtype": "property",
             "name": "operations",
             "type": "String[]",
@@ -26493,7 +26751,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/layers/-private/base.js",
-            "line": 60,
+            "line": 66,
             "description": "Creates new settings object (with settings related to layer-type).",
             "itemtype": "method",
             "name": "createSettings",
@@ -26506,7 +26764,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/layers/-private/base.js",
-            "line": 83,
+            "line": 93,
             "description": "Creates new settings object (with settings related to layer-type) from the specified CSW record.",
             "itemtype": "method",
             "name": "createSetingsFromCsw",
@@ -26526,7 +26784,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/layers/-private/base.js",
-            "line": 94,
+            "line": 104,
             "description": "Creates new search settings object (with search settings related to layer-type).",
             "itemtype": "method",
             "name": "createSearchSettings",
@@ -26697,7 +26955,7 @@
             "itemtype": "property",
             "name": "operations",
             "type": "String[]",
-            "default": "['edit', 'remove', 'identify', 'search']",
+            "default": "['edit', 'remove', 'identify', 'search', 'legend']",
             "class": "WfsLayer",
             "module": "ember-flexberry-gis"
         },
@@ -26745,7 +27003,7 @@
             "itemtype": "property",
             "name": "operations",
             "type": "String[]",
-            "default": "['edit', 'remove', 'identify', 'search']",
+            "default": "['edit', 'remove', 'identify', 'search', 'legend']",
             "class": "WmsWfsLayer",
             "module": "ember-flexberry-gis"
         },
@@ -26782,7 +27040,7 @@
             "itemtype": "property",
             "name": "operations",
             "type": "String[]",
-            "default": "['edit', 'remove', 'identify']",
+            "default": "['edit', 'remove', 'identify', 'legend']",
             "class": "WmsLayer",
             "module": "ember-flexberry-gis"
         },
@@ -26801,7 +27059,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/layers/wms.js",
-            "line": 44,
+            "line": 50,
             "description": "Creates new settings object (with settings related to layer-type) from the specified CSW record.",
             "itemtype": "method",
             "name": "createSetingsFromCsw",
@@ -29192,39 +29450,45 @@
         },
         {
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
-            "line": 38,
-            "description": "Checks whether layer can be identified.",
+            "line": 37,
+            "description": "Flag: indicates whether layer can be identified.",
             "itemtype": "property",
             "name": "canBeIdentified",
-            "type": "{Boolean} Flag: indicates whether layer can be identified.",
+            "type": "Boolean",
             "readonly": "",
             "class": "NewPlatformFlexberryGISMapLayer",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
-            "line": 57,
-            "description": "Checks whether layer can be searched.",
+            "line": 56,
+            "description": "Flag: indicates whether 'search' operation is available for this layer.",
             "itemtype": "property",
             "name": "canBeSearched",
-            "return": {
-                "description": "Flag: indicates whether 'search' operation is available for this layer.",
-                "type": "Boolean"
-            },
+            "type": "Boolean",
             "readonly": "",
             "class": "NewPlatformFlexberryGISMapLayer",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
-            "line": 76,
-            "description": "contains collection of nested layers",
+            "line": 75,
+            "description": "Flag: layer's whether layer's legend can be displayed.",
+            "itemtype": "property",
+            "name": "hasLegend",
+            "type": "Boolean",
+            "readonly": "",
+            "class": "NewPlatformFlexberryGISMapLayer",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
+            "line": 94,
+            "description": "Child layers.",
             "itemtype": "property",
             "name": "layers",
-            "return": {
-                "description": "collection of child layers",
-                "type": "Array"
-            },
+            "type": "Object[]",
+            "readonly": "",
             "class": "NewPlatformFlexberryGISMapLayer",
             "module": "ember-flexberry-gis"
         },
@@ -45155,15 +45419,15 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/layers/-private/base.js:60"
+            "line": " ember-flexberry-gis/addon/layers/-private/base.js:66"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/layers/-private/base.js:83"
+            "line": " ember-flexberry-gis/addon/layers/-private/base.js:93"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/layers/-private/base.js:94"
+            "line": " ember-flexberry-gis/addon/layers/-private/base.js:104"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -45207,7 +45471,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/layers/wms.js:44"
+            "line": " ember-flexberry-gis/addon/layers/wms.js:50"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -45615,27 +45879,27 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:262"
+            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:277"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:267"
+            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:282"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:663"
+            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:678"
         },
         {
             "message": "Missing item type\nInitializes component's DOM-related properties.",
-            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:686"
+            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:701"
         },
         {
             "message": "Missing item type\nHandles DOM-related component's properties after each render.",
-            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:698"
+            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:713"
         },
         {
             "message": "Missing item type\nDeinitializes component's DOM-related properties.",
-            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:711"
+            "line": " ember-flexberry-gis/addon/components/layers-dialogs/edit.js:726"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -45644,6 +45908,14 @@
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "line": " ember-flexberry-gis/addon/components/layers-dialogs/remove.js:49"
+        },
+        {
+            "message": "Missing item type\nReference to component's template.",
+            "line": " ember-flexberry-gis/addon/components/legends/base-legend.js:33"
+        },
+        {
+            "message": "Missing item type\neference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
+            "line": " ember-flexberry-gis/addon/components/legends/base-legend.js:38"
         },
         {
             "message": "Missing item type\nReference to component's template.",
