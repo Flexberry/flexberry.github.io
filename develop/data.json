@@ -28951,7 +28951,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 216,
+            "line": 218,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.edit:method\"}}flexberry-maplayers component's 'edit' action{{/crossLink}}.\nIt edits existing layer.",
             "itemtype": "method",
             "name": "actions.onMapLayerEdit",
@@ -28982,7 +28982,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 268,
+            "line": 270,
             "description": "Handles {{#crossLink \"FlexberryMaplayerComponent/sendingActions.remove:method\"}}flexberry-maplayers component's 'remove' action{{/crossLink}}.\nIt removes specified layer.",
             "itemtype": "method",
             "name": "actions.onMapLayerRemove",
@@ -29006,7 +29006,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 313,
+            "line": 320,
             "description": "Creates new layer as specified layer's child.",
             "itemtype": "method",
             "name": "createLayer",
@@ -29040,7 +29040,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 330,
+            "line": 337,
             "description": "Updates specified layer in hierarchy with given properties.",
             "itemtype": "method",
             "name": "editLayer",
@@ -29074,7 +29074,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 352,
+            "line": 359,
             "description": "Removes specified layer from layers hierarchy.",
             "itemtype": "method",
             "name": "removeLayer",
@@ -29095,6 +29095,55 @@
             "return": {
                 "description": "Removed layer.",
                 "type": "Object"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryMaplayerActionsHandlerMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
+            "line": 387,
+            "description": "Sets indexes for layers hierarchy.",
+            "itemtype": "method",
+            "name": "_setIndexes",
+            "params": [
+                {
+                    "name": "layers",
+                    "description": "Array of layers to set indexes.",
+                    "type": "Array"
+                },
+                {
+                    "name": "index",
+                    "description": "First index.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "Last index.",
+                "type": "Int"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryMaplayerActionsHandlerMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
+            "line": 412,
+            "description": "Finds root layers.",
+            "itemtype": "method",
+            "name": "_findRootLayers",
+            "params": [
+                {
+                    "name": "layerPath",
+                    "description": "LayerPath to child layer.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Root layers.",
+                "type": "Array"
             },
             "access": "private",
             "tagname": "",
@@ -45495,15 +45544,23 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:313"
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:320"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:330"
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:337"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:352"
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:359"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:387"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:412"
         },
         {
             "message": "unknown tag: defaul",

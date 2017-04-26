@@ -586,6 +586,8 @@ export default Ember.Mixin.create({
 
       let rootArray = Ember.get(this, rootPath);
       rootArray.pushObject(childLayer);
+
+      this._setIndexes(Ember.isArray(parentLayer) ? parentLayer : this._findRootLayers(parentLayerPath), rootArray.length);
     },
 
     /**
@@ -667,6 +669,7 @@ export default Ember.Mixin.create({
       &#x60;&#x60;&#x60;
     */
     onMapLayerRemove(...args) {
+      let rootPath = &#x27;model.mapLayer&#x27;;
       let layerPath = args[0];
       Ember.assert(
         &#x60;Wrong type of \&#x60;layerPath\&#x60; argument: actual type is \&#x60;${Ember.typeOf(layerPath)}\&#x60;, &#x60; +
@@ -679,9 +682,13 @@ export default Ember.Mixin.create({
         &#x60;but \&#x60;object\&#x60; or  \&#x60;instance\&#x60; is expected&#x60;,
         Ember.typeOf(layer) === &#x27;object&#x27; || Ember.typeOf(layer) === &#x27;instance&#x27;);
 
+      let rootLayers = this._findRootLayers(layerPath);
       this.removeLayer({
         layer: layer
       });
+
+      let rootArray = Ember.get(this, rootPath);
+      this._setIndexes(rootLayers, rootArray.length);
     }
   },
 
@@ -750,7 +757,64 @@ export default Ember.Mixin.create({
 
     Ember.set(layer, &#x27;isDeleted&#x27;, true);
     return layer;
-  }
+  },
+
+  /**
+    Sets indexes for layers hierarchy.
+
+    @method _setIndexes
+    @param {Array} layers Array of layers to set indexes.
+    @param {Int} index First index.
+    @returns {Int} Last index.
+    @private
+  */
+  _setIndexes(layers, index) {
+    if (Ember.isArray(layers) &amp;&amp; index &gt; 0) {
+      layers.forEach((layer) =&gt; {
+        if (!layer.get(&#x27;isDeleted&#x27;)) {
+          layer.set(&#x27;index&#x27;, index);
+          index--;
+          if (Ember.isArray(layer.get(&#x27;layers&#x27;))) {
+            index = this._setIndexes(layer.get(&#x27;layers&#x27;), index);
+          }
+        }
+      }, this);
+    }
+
+    return index;
+  },
+
+  /**
+    Finds root layers.
+
+    @method _findRootLayers
+    @param {String} layerPath LayerPath to child layer.
+    @returns {Array} Root layers.
+    @private
+  */
+  _findRootLayers(layerPath) {
+    let layer = getRecord(this, layerPath);
+    let nextInPath = function(path) {
+      let index = path.lastIndexOf(&#x27;.&#x27;);
+      if (index &gt; -1) {
+        path = path.slice(0, index);
+      }
+
+      return path;
+    };
+
+    // Get layerPath for layers on same hierarchy level.
+    layerPath = nextInPath(layerPath);
+
+    if (Ember.isBlank(layer.get(&#x27;parent&#x27;))) {
+      return getRecord(this, layerPath);
+    }
+
+    // Get layerPath for parent layer.
+    layerPath = nextInPath(layerPath);
+
+    return this._findRootLayers(layerPath);
+  },
 });
 
     </pre>
