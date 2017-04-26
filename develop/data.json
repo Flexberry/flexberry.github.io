@@ -23139,6 +23139,17 @@
             "module": "ember-flexberry-gis"
         },
         {
+            "file": "ember-flexberry-gis/addon/components/flexberry-layers.js",
+            "line": 57,
+            "description": "Flag: indicates whether layers for minimap..",
+            "itemtype": "property",
+            "name": "forMinimap",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryLayersComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
             "line": 11,
             "description": "Component's CSS-classes names.\nJSON-object containing string constants with CSS-classes names related to component's .hbs markup elements.",
@@ -29522,6 +29533,17 @@
         {
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
             "line": 75,
+            "description": "Checks whether layer should be shown on minimap.",
+            "itemtype": "property",
+            "name": "showOnMinimap",
+            "type": "{Boolean} Flag: indicates whether layer should be shown on minimap.",
+            "readonly": "",
+            "class": "NewPlatformFlexberryGISMapLayer",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
+            "line": 86,
             "description": "Flag: layer's whether layer's legend can be displayed.",
             "itemtype": "property",
             "name": "hasLegend",
@@ -29532,12 +29554,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/models/new-platform-flexberry-g-i-s-map-layer.js",
-            "line": 94,
-            "description": "Child layers.",
+            "line": 105,
+            "description": "contains collection of nested layers",
             "itemtype": "property",
             "name": "layers",
-            "type": "Object[]",
-            "readonly": "",
+            "return": {
+                "description": "collection of child layers",
+                "type": "Array"
+            },
             "class": "NewPlatformFlexberryGISMapLayer",
             "module": "ember-flexberry-gis"
         },
