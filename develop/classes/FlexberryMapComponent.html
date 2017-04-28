@@ -521,6 +521,14 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                                 <a href="#" data-tabid="#properties" data-anchor="#property_zoom" data-tablink="zoom">zoom</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_zoomDelta" data-tablink="zoomDelta">zoomDelta</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_zoomSnap" data-tablink="zoomSnap">zoomSnap</a>
+
+                            </li>
                     </ul>
                 </div>
 
@@ -610,7 +618,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l181"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:181</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l200"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:200</code></a>
                             </p>
                     
                     
@@ -693,7 +701,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l236"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:236</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l255"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:255</code></a>
                             </p>
                     
                     
@@ -769,7 +777,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l332"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:332</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l351"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:351</code></a>
                             </p>
                     
                     
@@ -805,7 +813,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l324"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:324</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l343"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:343</code></a>
                             </p>
                     
                     
@@ -1097,7 +1105,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l164"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:164</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l183"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:183</code></a>
                             </p>
                     
                     
@@ -1247,7 +1255,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l172"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:172</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l191"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:191</code></a>
                             </p>
                     
                     
@@ -1309,6 +1317,59 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         </div>
                     
                             <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_zoomDelta" class="property item">
+                        <h3 class="name"><code>zoomDelta</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l173"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:173</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Controls how much the map's zoom level will change after a zoomIn(), zoomOut(),
+                    pressing + or - on the keyboard, or using the zoom controls.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0.25</p>
+                    
+                    
+                    </div>
+                    <div id="property_zoomSnap" class="property item">
+                        <h3 class="name"><code>zoomSnap</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l164"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:164</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Forces the map's zoom level to always be a multiple of this.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
                     
                     
                     </div>

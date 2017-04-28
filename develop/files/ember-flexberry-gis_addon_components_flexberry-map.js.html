@@ -476,8 +476,8 @@ let FlexberryMapComponent = Ember.Component.extend(
 
       // Interaction options.
       &#x27;dragging&#x27;, &#x27;touchZoom&#x27;, &#x27;scrollWheelZoom&#x27;, &#x27;doubleClickZoom&#x27;, &#x27;boxZoom&#x27;,
-      &#x27;tap&#x27;, &#x27;tapTolerance&#x27;, &#x27;trackResize&#x27;, &#x27;worldCopyJump&#x27;, &#x27;closePopupOnClick&#x27;,
-      &#x27;bounceAtZoomLimits&#x27;,
+      &#x27;zoomSnap&#x27;, &#x27;zoomDelta&#x27;, &#x27;tap&#x27;, &#x27;tapTolerance&#x27;, &#x27;trackResize&#x27;, &#x27;worldCopyJump&#x27;,
+      &#x27;closePopupOnClick&#x27;, &#x27;bounceAtZoomLimits&#x27;,
 
       // Keyboard navigation options.
       &#x27;keyboard&#x27;, &#x27;keyboardPanOffset&#x27;, &#x27;keyboardZoomOffset&#x27;,
@@ -535,6 +535,25 @@ let FlexberryMapComponent = Ember.Component.extend(
       @default null
     */
     zoom: null,
+
+    /**
+      Forces the map&#x27;s zoom level to always be a multiple of this.
+
+      @property zoomSnap
+      @type Number
+      @default 0
+    */
+    zoomSnap: 0,
+
+    /**
+      Controls how much the map&#x27;s zoom level will change after a zoomIn(), zoomOut(),
+      pressing + or - on the keyboard, or using the zoom controls.
+
+      @property zoomDelta
+      @type Number
+      @default 0.25
+    */
+    zoomDelta: 0.25,
 
     /**
       Array of map layers.

@@ -23296,6 +23296,28 @@
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
             "line": 164,
+            "description": "Forces the map's zoom level to always be a multiple of this.",
+            "itemtype": "property",
+            "name": "zoomSnap",
+            "type": "Number",
+            "default": "0",
+            "class": "FlexberryMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
+            "line": 173,
+            "description": "Controls how much the map's zoom level will change after a zoomIn(), zoomOut(),\npressing + or - on the keyboard, or using the zoom controls.",
+            "itemtype": "property",
+            "name": "zoomDelta",
+            "type": "Number",
+            "default": "0.25",
+            "class": "FlexberryMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
+            "line": 183,
             "description": "Array of map layers.",
             "itemtype": "property",
             "name": "layers",
@@ -23305,7 +23327,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 172,
+            "line": 191,
             "description": "JSON object with query parameters",
             "itemtype": "property",
             "name": "queryFilter",
@@ -23316,7 +23338,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 181,
+            "line": 200,
             "description": "Injects additional methods into initialized leaflet map.",
             "itemtype": "method",
             "name": "_injectMapLoaderMethods",
@@ -23334,7 +23356,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 236,
+            "line": 255,
             "description": "Removes injected additional methods from initialized leaflet map.",
             "itemtype": "method",
             "name": "_removeMapLoaderMethods",
@@ -23352,21 +23374,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 250,
+            "line": 269,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 307,
+            "line": 326,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 324,
+            "line": 343,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) initialized.",
             "itemtype": "method",
             "name": "sendingActions.leafletInit",
@@ -23389,7 +23411,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 332,
+            "line": 351,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) destroyed.",
             "itemtype": "method",
             "name": "sendingActions.leafletDestroy",
@@ -46344,11 +46366,11 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:250"
+            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:269"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:307"
+            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:326"
         },
         {
             "message": "Missing item type\nReference to component's template.",
