@@ -1156,6 +1156,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry-gis/addon/components/zoomslider-control.js": {
+            "name": "ember-flexberry-gis/addon/components/zoomslider-control.js",
+            "modules": {},
+            "classes": {
+                "ZoomsliderControlComponent": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-gis/addon/controllers/edit-map.js": {
             "name": "ember-flexberry-gis/addon/controllers/edit-map.js",
             "modules": {},
@@ -3286,6 +3295,7 @@
                 "MiniMapComponent": 1,
                 "ScaleControlComponent": 1,
                 "SpaceBookmarkCommandComponent": 1,
+                "ZoomsliderControlComponent": 1,
                 "EditMapController": 1,
                 "ListMapController": 1,
                 "EarthCrs": 1,
@@ -5336,6 +5346,21 @@
             "line": 9,
             "description": "Flexberry component for display and add/remove spatial bookmarks",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
+        },
+        "ZoomsliderControlComponent": {
+            "name": "ZoomsliderControlComponent",
+            "shortname": "ZoomsliderControlComponent",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/components/zoomslider-control.js",
+            "line": 7,
+            "description": "Zoomslider component for leaflet map",
+            "extends": "BaseControlComponent"
         },
         "EditMapController": {
             "name": "EditMapController",

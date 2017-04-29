@@ -279,7 +279,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "ZoomInMapTool",
         "ZoomInMapToolComponent",
         "ZoomOutMapToolComponent",
-        "ZoomOutMaptool"
+        "ZoomOutMaptool",
+        "ZoomsliderControlComponent"
     ],
     "modules": [
         "ember-flexberry",
