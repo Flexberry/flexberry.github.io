@@ -7,7 +7,7 @@ permalink: ru/fa_ms-drop-down.html
 lang: ru
 ---
 
-`MsDropDown` - это [web-контрол](fa_web-controls.html), который позволяет просматривать список доступных мастеровых объектов в виде выпадающего списка (аналогично [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) с иконками для элементов списка.
+`MsDropDown` - это [web-контрол](fa_web-controls.html), который позволяет просматривать список в виде выпадающего списка (по аналогии [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) с иконками для элементов списка.
 
 Ниже показан пример отображения данного контрола на веб-форме.
 
@@ -33,21 +33,10 @@ lang: ru
 
 ## Подключение
 
-Подключение возможно только вручную в коде. Для этого в разметке страницы .aspx надо добавить соответствующий контрол:
+Подключение возможно через разметку страницы, наполнение списка доступно только вручную в коде. Для этого в разметке страницы .aspx надо добавить соответствующий контрол:
 
 ```xml
 <ac:MsDropDown ID="<ID контрола>" ReadOnly="<False/True>" runat="server"/>
-```
-
-В коде обработчика страницы (в методе `Page_Load`) сформировать список элементов:
-
-```csharp
-var <item> = new MsDropDownItem();
-<item>.Text = "<Текст объекта>";
-<item>.ImagePath = "<Путь до иконки>";
-<item>.Description = "<Описание объекта>";
-
-<контрол>.Items.Add(<item>);
 ```
 
 ## Использование
@@ -58,26 +47,17 @@ var <item> = new MsDropDownItem();
 
 Для того чтобы получить список, продемонстрированный на картинке выше, следует сделать следующее:
 
-Код .aspx-страницы с возможностью менять состояние `ReadOnly` контрола `MsDropDown`:
+Код .aspx-страницы:
 
 ```xml
-<asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
-    <%--CheckBox для возможности менять состояние контрола--%>
-    <div class="clearfix">
-        <asp:Label CssClass="descLbl" ID="ctrlReadOnlyEnabledLabel" runat="server" Text="Только для чтения" EnableViewState="False">
-        </asp:Label>
-        <asp:CheckBox ID="ctrlReadOnlyEnabled" AutoPostBack="True" runat="server" OnCheckedChanged="ctrlReadOnlyEnabled_OnCheckedChanged"/>
-    </div>
-    <%--Собственно добавление MsDropDown в разметку страницы--%>
-    <div class="clearfix">
-        <asp:Label CssClass="descLbl" ID="ctrlTestMsDropDownLabel" runat="server" Text="Список" EnableViewState="False">
-        </asp:Label>
-        <ac:MsDropDown ID="ctrlTestMsDropDown" ReadOnly="False" runat="server"/>
-    </div>
-</asp:Content>
+<div class="clearfix">
+    <asp:Label CssClass="descLbl" ID="ctrlTestMsDropDownLabel" runat="server" Text="Список" EnableViewState="False">
+    </asp:Label>
+    <ac:MsDropDown ID="ctrlTestMsDropDown" ReadOnly="False" runat="server"/>
+</div>
 ```
 
-Формирование списка элементов и обработчик состояния `MsDropDown` в зависимости от состояния `CheckBox` (Checked/Unchecked):
+Формирование списка элементов:
 
 ```csharp
 /// <summary>
@@ -109,17 +89,6 @@ protected void Page_Load(object sender, EventArgs e)
     ctrlTestMsDropDown.Items.Add(item1);
     ctrlTestMsDropDown.Items.Add(item2);
     ctrlTestMsDropDown.Items.Add(item3);
-}
-
-/// <summary>
-/// Определение состояния контрола: доступен для чтения/ не доступен для чтения.
-/// Переводится в состояние ReadOnly при активном checkBox "Только для чтения".
-/// </summary>
-/// <param name="sender">Параметры события.</param>
-/// <param name="e">Параметры события.</param>
-protected void ctrlReadOnlyEnabled_OnCheckedChanged(object sender, EventArgs e)
-{
-    ctrlTestMsDropDown.ReadOnly = ctrlReadOnlyEnabled.Checked;
 }
 ```
  
