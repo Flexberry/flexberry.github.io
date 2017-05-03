@@ -384,7 +384,6 @@
 import Ember from &#x27;ember&#x27;;
 import DynamicPropertiesMixin from &#x27;ember-flexberry-gis/mixins/dynamic-properties&#x27;;
 import LeafletOptionsMixin from &#x27;ember-flexberry-gis/mixins/leaflet-options&#x27;;
-import LeafletPropertiesMixin from &#x27;ember-flexberry-gis/mixins/leaflet-properties&#x27;;
 
 const { assert } = Ember;
 
@@ -395,12 +394,10 @@ const { assert } = Ember;
   @extends &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Component.html&quot;&gt;Ember.Component&lt;/a&gt;
   @uses DynamicPropertiesMixin
   @uses LeafletOptionsMixin
-  @uses LeafletPropertiesMixin
  */
 export default Ember.Component.extend(
   DynamicPropertiesMixin,
-  LeafletOptionsMixin,
-  LeafletPropertiesMixin, {
+  LeafletOptionsMixin, {
 
     /**
       Leaflet layer object init by settings from model.
@@ -410,7 +407,17 @@ export default Ember.Component.extend(
       @default null
       @private
      */
-    _leafletObject: undefined,
+    _leafletObject: null,
+
+    /**
+      Promise returning Leaflet layer.
+
+      @property leafletLayerPromise
+      @type &lt;a href=&quot;https://emberjs.com/api/classes/RSVP.Promise.html&quot;&gt;Ember.RSVP.Promise&lt;/a&gt;
+      @default null
+      @private
+    */
+    _leafletLayerPromise: null,
 
     /**
       Overload wrapper tag name for disabling wrapper.
@@ -436,15 +443,6 @@ export default Ember.Component.extend(
     leafletContainer: null,
 
     /**
-      Promise returning Leaflet layer.
-
-      @property leafletLayerPromise
-      @type &lt;a href=&quot;https://emberjs.com/api/classes/RSVP.Promise.html&quot;&gt;Ember.RSVP.Promise&lt;/a&gt;
-      @default null
-    */
-    leafletLayerPromise: null,
-
-    /**
       Layer metadata.
 
       @property layerModel
@@ -461,20 +459,6 @@ export default Ember.Component.extend(
       @default null
      */
     index: null,
-
-    /**
-      Call leaflet layer setZIndex if it presents.
-
-      @method setZIndex
-     */
-    setZIndex: Ember.observer(&#x27;index&#x27;, function () {
-      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
-      if (Ember.isNone(leafletLayer) || Ember.typeOf(leafletLayer.setZIndex) !== &#x27;function&#x27;) {
-        return;
-      }
-
-      leafletLayer.setZIndex(this.get(&#x27;index&#x27;));
-    }),
 
     /**
       Flag, indicates visible or not current layer on map.
@@ -499,6 +483,153 @@ export default Ember.Component.extend(
       }
 
       return crs;
+    }),
+
+    /**
+      Creates leaflet layer related to layer type.
+
+      @method _createLayer
+      @private
+    */
+    _createLayer() {
+      // Call to &#x27;createLayer&#x27; could potentially return a promise,
+      // wraping this call into Ember.RSVP.hash helps us to handle straight/promise results universally.
+      this.set(&#x27;_leafletLayerPromise&#x27;, Ember.RSVP.hash({
+        leafletLayer: this.createLayer()
+      }).then(({ leafletLayer }) =&gt; {
+        this.set(&#x27;_leafletObject&#x27;, leafletLayer);
+
+        return leafletLayer;
+      }).catch((errorMessage) =&gt; {
+        Ember.Logger.error(&#x60;Failed to create leaflet layer for &#x27;${this.get(&#x27;layerModel.name&#x27;)}&#x27;: ${errorMessage}&#x60;);
+      }));
+    },
+
+    /**
+      Destroys leaflet layer related to layer type.
+
+      @method _destroyLayer
+      @private
+    */
+    _destroyLayer() {
+      this._removeLayerFromLeafletContainer();
+
+      this.set(&#x27;_leafletObject&#x27;, null);
+      this.set(&#x27;_leafletLayerPromise&#x27;, null);
+    },
+
+    /**
+      Sets leaflet layer&#x27;s state related to actual settings.
+
+      @method _setLayerState
+      @private
+    */
+    _setLayerState() {
+      this._setLayerVisibility();
+      this._setLayerZIndex();
+    },
+
+    /**
+      Sets leaflet layer&#x27;s zindex.
+
+      @method _setLayerZIndex
+      @private
+    */
+    _setLayerZIndex() {
+      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
+      if (Ember.isNone(leafletLayer) || Ember.typeOf(leafletLayer.setZIndex) !== &#x27;function&#x27;) {
+        return;
+      }
+
+      leafletLayer.setZIndex(this.get(&#x27;index&#x27;));
+    },
+
+    /**
+      Sets leaflet layer&#x27;s visibility.
+
+      @method _setLayerVisibility
+      @private
+    */
+    _setLayerVisibility() {
+      if (this.get(&#x27;visibility&#x27;)) {
+        this._addLayerToLeafletContainer();
+      } else {
+        this._removeLayerFromLeafletContainer();
+      }
+    },
+
+    /**
+      Adds layer to it&#x27;s leaflet container.
+
+      @method _addLayerToLeafletContainer
+      @private
+    */
+    _addLayerToLeafletContainer() {
+      let leafletContainer = this.get(&#x27;leafletContainer&#x27;);
+      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
+      if (Ember.isNone(leafletContainer) || Ember.isNone(leafletLayer) || leafletContainer.hasLayer(leafletLayer)) {
+        return;
+      }
+
+      leafletContainer.addLayer(leafletLayer);
+    },
+
+    /**
+      Removes layer from it&#x27;s leaflet container.
+
+      @method _removeLayerFromLeafletContainer
+      @private
+    */
+    _removeLayerFromLeafletContainer() {
+      let leafletContainer = this.get(&#x27;leafletContainer&#x27;);
+      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
+      if (Ember.isNone(leafletContainer) || Ember.isNone(leafletLayer) || !leafletContainer.hasLayer(leafletLayer)) {
+        return;
+      }
+
+      leafletContainer.removeLayer(leafletLayer);
+    },
+
+    /**
+      Observes and handles changes in JSON-string with layer settings.
+      Performs layer&#x27;s recreation with new settings.
+
+      @method visibilityDidChange
+      @private
+    */
+    _indexDidChange: Ember.observer(&#x27;index&#x27;, function() {
+      this._setLayerZIndex();
+    }),
+
+    /**
+      Observes and handles changes in {{#crossLink &quot;BaseLayerComponent/visibility:property&quot;}}&#x27;visibility&#x27; property{{/crossLink}}.
+      Switches layer&#x27;s visibility.
+
+      @method visibilityDidChange
+      @private
+    */
+    _visibilityDidChange: Ember.observer(&#x27;visibility&#x27;, function () {
+      this._setLayerVisibility();
+    }),
+
+    /**
+      Observes and handles changes in layer&#x27;s properties marked as leaflet options.
+      Performs layer&#x27;s recreation with new options.
+
+      @method _optionsDidChange
+      @private
+    */
+    _optionsDidChange: Ember.observer(&#x27;options&#x27;, function () {
+      // Destroy previously created leaflet layer (created with old settings).
+      this._destroyLayer();
+
+      // Create new leaflet layer (with new settings).
+      this._createLayer();
+
+      // Wait for the layer creation to be finished and set it&#x27;s state related to new settings.
+      this.get(&#x27;_leafletLayerPromise&#x27;).then((leafletLayer) =&gt; {
+        this._setLayerState();
+      });
     }),
 
     /**
@@ -578,17 +709,8 @@ export default Ember.Component.extend(
     init() {
       this._super(...arguments);
 
-      // Call to createLayer could potentially return a promise,
-      // wraping this call into Ember.RSVP.hash helps us to handle straight/promise results universally.
-      this.set(&#x27;leafletLayerPromise&#x27;, Ember.RSVP.hash({
-        leafletLayer: this.createLayer()
-      }).then(({ leafletLayer }) =&gt; {
-        this.set(&#x27;_leafletObject&#x27;, leafletLayer);
-
-        return leafletLayer;
-      }).catch((errorMessage) =&gt; {
-        Ember.Logger.error(&#x60;Failed to create leaflet layer for &#x27;${this.get(&#x27;layerModel.name&#x27;)}&#x27;: ${errorMessage}&#x60;);
-      }));
+      // Create leaflet layer.
+      this._createLayer();
     },
 
     /**
@@ -597,9 +719,9 @@ export default Ember.Component.extend(
     didInsertElement() {
       this._super(...arguments);
 
-      this.get(&#x27;leafletLayerPromise&#x27;).then((leafletLayer) =&gt; {
-        this.visibilityDidChange();
-        this.setZIndex();
+      // Wait for the layer creation to be finished and set it&#x27;s state related to actual settings.
+      this.get(&#x27;_leafletLayerPromise&#x27;).then((leafletLayer) =&gt; {
+        this._setLayerState();
       });
 
       let leafletMap = this.get(&#x27;leafletMap&#x27;);
@@ -625,39 +747,16 @@ export default Ember.Component.extend(
         leafletMap.off(&#x27;flexberry-map:query&#x27;, this._query, this);
       }
 
-      let leafletContainer = this.get(&#x27;leafletContainer&#x27;);
-      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
-      if (Ember.isNone(leafletContainer) || Ember.isNone(leafletLayer) &amp;&amp; leafletContainer.hasLayer(leafletLayer)) {
-        return;
-      }
-
-      leafletContainer.removeLayer(leafletLayer);
+      // Destroy leaflet layer.
+      this._destroyLayer();
     },
-
-    /**
-      Handles changes in {{#crossLink &quot;BaseLayerComponent/visibility:property&quot;}}&#x27;visibility&#x27; property{{/crossLink}}.
-      Switches layer&#x27;s visibility.
-
-      @method visibilityDidChange
-     */
-    visibilityDidChange: Ember.observer(&#x27;visibility&#x27;, function () {
-      let leafletLayer = this.get(&#x27;_leafletObject&#x27;);
-      if (Ember.isNone(leafletLayer)) {
-        return;
-      }
-
-      let leafletContainer = this.get(&#x27;leafletContainer&#x27;);
-      if (this.get(&#x27;visibility&#x27;)) {
-        leafletContainer.addLayer(leafletLayer);
-      } else {
-        leafletContainer.removeLayer(leafletLayer);
-      }
-    }),
 
     /**
       Creates leaflet layer related to layer type.
 
       @method createLayer
+      @returns &lt;a href=&quot;http://leafletjs.com/reference-1.0.1.html#layer&quot;&gt;L.Layer&lt;/a&gt;|&lt;a href=&quot;https://emberjs.com/api/classes/RSVP.Promise.html&quot;&gt;Ember.RSVP.Promise&lt;/a&gt;
+      Leaflet layer or promise returning such layer.
     */
     createLayer() {
       assert(&#x27;BaseLayer\&#x27;s \&#x27;createLayer\&#x27; should be overridden.&#x27;);

@@ -421,6 +421,15 @@ export default WmsLayerComponent.extend({
     }
   },
 
+  /**
+    Handles &#x27;flexberry-map:query&#x27; event of leaflet map.
+
+    @method _query
+    @param {Object} e Event object.
+    @param {Object} queryFilter Object with query filter paramteres
+    @param {Object[]} results.features Array containing leaflet layers objects
+    or a promise returning such array.
+  */
   query(e) {
     let innerWfsLayer = this.get(&#x27;_wfsLayer&#x27;);
     if (!Ember.isNone(innerWfsLayer)) {

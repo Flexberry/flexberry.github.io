@@ -383,8 +383,6 @@
 
 import Ember from &#x27;ember&#x27;;
 
-const { computed } = Ember;
-
 /**
   Mixin for use in leaflet initialize objects with options.
   @example
@@ -418,22 +416,70 @@ export default Ember.Mixin.create({
   leafletOptions: null,
 
   /**
-    Object with copy of this object properties with specified in leafletOptions names
+    Object containing properties marked as leaflet options.
+
     @property options
     @type Object
-    @default {}
+    @default null
    */
-  options: computed(function () {
-    let leafletOptions = this.get(&#x27;leafletOptions&#x27;) || [];
+  options: null,
+
+  /**
+    Observes changes in each defined leaflet option and once call single &#x27;_leafletOptionsDidChange&#x27; handler
+
+    @method _leafletObjectptionDidChange
+    @private
+  */
+  _leafletOptionDidChange() {
+    Ember.run.once(this, &#x27;_leafletOptionsDidChange&#x27;);
+  },
+
+  /**
+    Handles changes in leaflet options.
+    Method will be called after changes in all options will be applied.
+
+    @method _leafletOptionsDidChange
+    @private
+  */
+  _leafletOptionsDidChange() {
     let options = {};
-    leafletOptions.forEach(optionName =&gt; {
+    let leafletOptions = Ember.A(this.get(&#x27;leafletOptions&#x27;) || []);
+
+    leafletOptions.forEach((optionName) =&gt; {
       let optionValue = this.get(optionName);
       if (optionValue !== undefined) {
         options[optionName] = optionValue;
       }
     });
-    return options;
-  }),
+
+    this.set(&#x27;options&#x27;, options);
+  },
+
+  /**
+    Initializes mixin.
+  */
+  init() {
+    this._super(...arguments);
+
+    let leafletOptions = Ember.A(this.get(&#x27;leafletOptions&#x27;) || []);
+    leafletOptions.forEach((optionName) =&gt; {
+      this.addObserver(optionName, this._leafletOptionDidChange);
+    });
+
+    this._leafletOptionsDidChange();
+  },
+
+  /**
+    Destroys mixin.
+  */
+  willDestroy() {
+    this._super(...arguments);
+
+    let leafletOptions = Ember.A(this.get(&#x27;leafletOptions&#x27;) || []);
+    leafletOptions.forEach((optionName) =&gt; {
+      this.removeObserver(optionName, this._leafletOptionDidChange);
+    });
+  }
 });
 
     </pre>

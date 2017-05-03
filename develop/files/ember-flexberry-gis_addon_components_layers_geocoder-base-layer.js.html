@@ -413,7 +413,8 @@ export default BaseLayer.extend({
     Creates leaflet layer related to layer type.
 
     @method createLayer
-    @returns {&lt;a href=&quot;http://leafletjs.com/reference-1.0.0.html#layer&quot;&gt;L.Layer&lt;/a&gt;} Created leaflet-layer.
+    @returns &lt;a href=&quot;http://leafletjs.com/reference-1.0.1.html#layer&quot;&gt;L.Layer&lt;/a&gt;|&lt;a href=&quot;https://emberjs.com/api/classes/RSVP.Promise.html&quot;&gt;Ember.RSVP.Promise&lt;/a&gt;
+    Leaflet layer or promise returning such layer.
   */
   createLayer() {
     // Leaflet-layer is actually unnecessary for geocoder-layer,

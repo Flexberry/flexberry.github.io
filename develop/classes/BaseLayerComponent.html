@@ -381,7 +381,6 @@
             <ul class="inline commas">
                     <li><a href="DynamicPropertiesMixin.html">DynamicPropertiesMixin</a></li>
                     <li><a href="LeafletOptionsMixin.html">LeafletOptionsMixin</a></li>
-                    <li><a href="LeafletPropertiesMixin.html">LeafletPropertiesMixin</a></li>
             </ul>
         </div>
 
@@ -390,7 +389,7 @@
         </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l12"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:12</code></a>
+            Defined in: <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l11"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:11</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry-gis.html">ember-flexberry-gis</a>
@@ -424,8 +423,16 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method__addDynamicProperty" data-tablink="_addDynamicProperty">_addDynamicProperty</a>
 
                             </li>
-                            <li class="index-item method inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__addObservers" data-tablink="_addObservers">_addObservers</a>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__addLayerToLeafletContainer" data-tablink="_addLayerToLeafletContainer">_addLayerToLeafletContainer</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__createLayer" data-tablink="_createLayer">_createLayer</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__destroyLayer" data-tablink="_destroyLayer">_destroyLayer</a>
 
                             </li>
                             <li class="index-item method private inherited inherited">
@@ -434,6 +441,18 @@
                             </li>
                             <li class="index-item method private">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__identify" data-tablink="_identify">_identify</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__leafletObjectptionDidChange" data-tablink="_leafletObjectptionDidChange">_leafletObjectptionDidChange</a>
+
+                            </li>
+                            <li class="index-item method private inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__leafletOptionsDidChange" data-tablink="_leafletOptionsDidChange">_leafletOptionsDidChange</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__optionsDidChange" data-tablink="_optionsDidChange">_optionsDidChange</a>
 
                             </li>
                             <li class="index-item method">
@@ -452,8 +471,20 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method__removeDynamicProperty" data-tablink="_removeDynamicProperty">_removeDynamicProperty</a>
 
                             </li>
-                            <li class="index-item method inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__removeObservers" data-tablink="_removeObservers">_removeObservers</a>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__removeLayerFromLeafletContainer" data-tablink="_removeLayerFromLeafletContainer">_removeLayerFromLeafletContainer</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__setLayerState" data-tablink="_setLayerState">_setLayerState</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__setLayerVisibility" data-tablink="_setLayerVisibility">_setLayerVisibility</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__setLayerZIndex" data-tablink="_setLayerZIndex">_setLayerZIndex</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -484,11 +515,11 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_search" data-tablink="search">search</a>
 
                             </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_setZIndex" data-tablink="setZIndex">setZIndex</a>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_visibilityDidChange" data-tablink="visibilityDidChange">visibilityDidChange</a>
 
                             </li>
-                            <li class="index-item method">
+                            <li class="index-item method private">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_visibilityDidChange" data-tablink="visibilityDidChange">visibilityDidChange</a>
 
                             </li>
@@ -539,7 +570,7 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_leafletContainer" data-tablink="leafletContainer">leafletContainer</a>
 
                             </li>
-                            <li class="index-item property">
+                            <li class="index-item property private">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_leafletLayerPromise" data-tablink="leafletLayerPromise">leafletLayerPromise</a>
 
                             </li>
@@ -549,10 +580,6 @@
                             </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_leafletOptions" data-tablink="leafletOptions">leafletOptions</a>
-
-                            </li>
-                            <li class="index-item property inherited">
-                                <a href="#" data-tabid="#properties" data-anchor="#property_leafletProperties" data-tablink="leafletProperties">leafletProperties</a>
 
                             </li>
                             <li class="index-item property inherited">
@@ -629,22 +656,23 @@
                     
                     
                     </div>
-                    <div id="method__addObservers" class="method item inherited">
-                        <h3 class="name"><code>_addObservers</code></h3>
+                    <div id="method__addLayerToLeafletContainer" class="method item private">
+                        <h3 class="name"><code>_addLayerToLeafletContainer</code></h3>
                     
                             <span class="paren">()</span>
                     
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/LeafletPropertiesMixin.html#method__addObservers">LeafletPropertiesMixin</a>:
-                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-properties.js.html#l39"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-properties.js:39</code></a>
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l182"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:182</code></a>
                             </p>
                     
                     
@@ -652,7 +680,70 @@
                         </div>
                     
                         <div class="description">
-                            Method for add observers for all specified properties
+                            <p>Adds layer to it's leaflet container.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__createLayer" class="method item private">
+                        <h3 class="name"><code>_createLayer</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l109"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:109</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Creates leaflet layer related to layer type.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__destroyLayer" class="method item private">
+                        <h3 class="name"><code>_destroyLayer</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l129"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:129</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Destroys leaflet layer related to layer type.</p>
+                    
                         </div>
                     
                     
@@ -721,7 +812,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l125"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:125</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l256"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:256</code></a>
                             </p>
                     
                     
@@ -802,6 +893,99 @@
                     
                     
                     </div>
+                    <div id="method__leafletObjectptionDidChange" class="method item private inherited">
+                        <h3 class="name"><code>_leafletObjectptionDidChange</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/LeafletOptionsMixin.html#method__leafletObjectptionDidChange">LeafletOptionsMixin</a>:
+                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-options.js.html#l48"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-options.js:48</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Observes changes in each defined leaflet option and once call single '_leafletOptionsDidChange' handler
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__leafletOptionsDidChange" class="method item private inherited">
+                        <h3 class="name"><code>_leafletOptionsDidChange</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/LeafletOptionsMixin.html#method__leafletOptionsDidChange">LeafletOptionsMixin</a>:
+                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-options.js.html#l58"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-options.js:58</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Handles changes in leaflet options.
+                    Method will be called after changes in all options will be applied.
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__optionsDidChange" class="method item private">
+                        <h3 class="name"><code>_optionsDidChange</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l236"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:236</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Observes and handles changes in layer's properties marked as leaflet options.
+                    Performs layer's recreation with new options.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method__query" class="method item">
                         <h3 class="name"><code>_query</code></h3>
                     
@@ -829,7 +1013,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l322"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:322</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l307"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:307</code></a>
                             </p>
                     
                     
@@ -911,7 +1095,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l176"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:176</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l421"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:421</code></a>
                             </p>
                     
                     
@@ -1056,22 +1240,23 @@
                     
                     
                     </div>
-                    <div id="method__removeObservers" class="method item inherited">
-                        <h3 class="name"><code>_removeObservers</code></h3>
+                    <div id="method__removeLayerFromLeafletContainer" class="method item private">
+                        <h3 class="name"><code>_removeLayerFromLeafletContainer</code></h3>
                     
                             <span class="paren">()</span>
                     
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/LeafletPropertiesMixin.html#method__removeObservers">LeafletPropertiesMixin</a>:
-                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-properties.js.html#l72"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-properties.js:72</code></a>
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l198"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:198</code></a>
                             </p>
                     
                     
@@ -1079,7 +1264,101 @@
                         </div>
                     
                         <div class="description">
-                            Method for remove created observers
+                            <p>Removes layer from it's leaflet container.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__setLayerState" class="method item private">
+                        <h3 class="name"><code>_setLayerState</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l142"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:142</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets leaflet layer's state related to actual settings.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__setLayerVisibility" class="method item private">
+                        <h3 class="name"><code>_setLayerVisibility</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l168"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:168</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets leaflet layer's visibility.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__setLayerZIndex" class="method item private">
+                        <h3 class="name"><code>_setLayerZIndex</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l153"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:153</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets leaflet layer's zindex.</p>
+                    
                         </div>
                     
                     
@@ -1171,6 +1450,9 @@
                     
                             <span class="paren">()</span>
                     
+                            <span class="returns-inline">
+                                <span class="type"></span>
+                            </span>
                     
                     
                     
@@ -1181,7 +1463,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l278"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:278</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l375"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:375</code></a>
                             </p>
                     
                     
@@ -1194,6 +1476,15 @@
                         </div>
                     
                     
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                        <p><a href="http://leafletjs.com/reference-1.0.1.html#layer">L.Layer</a>|<a href="https://emberjs.com/api/classes/RSVP.Promise.html">Ember.RSVP.Promise</a>
+                    Leaflet layer or promise returning such layer.</p>
+                    
+                                </div>
+                            </div>
                     
                     </div>
                     <div id="method_identify" class="method item">
@@ -1223,7 +1514,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l287"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:287</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l386"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:386</code></a>
                             </p>
                     
                     
@@ -1331,7 +1622,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l335"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:335</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l434"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:434</code></a>
                             </p>
                     
                     
@@ -1414,7 +1705,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l306"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:306</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l405"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:405</code></a>
                             </p>
                     
                     
@@ -1534,7 +1825,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l151"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:151</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l282"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:282</code></a>
                             </p>
                     
                     
@@ -1624,43 +1915,14 @@
                     
                     
                     </div>
-                    <div id="method_setZIndex" class="method item">
-                        <h3 class="name"><code>setZIndex</code></h3>
-                    
-                            <span class="paren">()</span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l86"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:86</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Call leaflet layer setZIndex if it presents.</p>
-                    
-                        </div>
-                    
-                    
-                    
-                    </div>
-                    <div id="method_visibilityDidChange" class="method item">
+                    <div id="method_visibilityDidChange" class="method item private">
                         <h3 class="name"><code>visibilityDidChange</code></h3>
                     
                             <span class="paren">()</span>
                     
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
@@ -1669,7 +1931,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l258"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:258</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l225"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:225</code></a>
                             </p>
                     
                     
@@ -1677,8 +1939,40 @@
                         </div>
                     
                         <div class="description">
-                            <p>Handles changes in <a href="../classes/BaseLayerComponent.html#property_visibility" class="crosslink">'visibility' property</a>.
+                            <p>Observes and handles changes in <a href="../classes/BaseLayerComponent.html#property_visibility" class="crosslink">'visibility' property</a>.
                     Switches layer's visibility.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_visibilityDidChange" class="method item private">
+                        <h3 class="name"><code>visibilityDidChange</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l214"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:214</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Observes and handles changes in JSON-string with layer settings.
+                    Performs layer's recreation with new settings.</p>
                     
                         </div>
                     
@@ -1762,7 +2056,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l26"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:26</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l23"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:23</code></a>
                             </p>
                     
                     
@@ -1813,7 +2107,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l109"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:109</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l93"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:93</code></a>
                             </p>
                     
                     
@@ -1867,7 +2161,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l77"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:77</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l75"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:75</code></a>
                             </p>
                     
                     
@@ -1921,7 +2215,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l68"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:68</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l66"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:66</code></a>
                             </p>
                     
                     
@@ -1947,7 +2241,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l50"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:50</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l57"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:57</code></a>
                             </p>
                     
                     
@@ -1962,18 +2256,19 @@
                     
                     
                     </div>
-                    <div id="property_leafletLayerPromise" class="property item">
+                    <div id="property_leafletLayerPromise" class="property item private">
                         <h3 class="name"><code>leafletLayerPromise</code></h3>
                         <span class="type"><a href="https://emberjs.com/api/classes/RSVP.Promise.html">Ember.RSVP.Promise</a></span>
                     
                     
+                            <span class="flag private">private</span>
                     
                     
                     
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l59"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:59</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l33"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:33</code></a>
                             </p>
                     
                     
@@ -1999,7 +2294,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l41"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:41</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l48"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:48</code></a>
                             </p>
                     
                     
@@ -2025,7 +2320,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/LeafletOptionsMixin.html#property_leafletOptions">LeafletOptionsMixin</a>:
-                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-options.js.html#l33"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-options.js:33</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-options.js.html#l31"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-options.js:31</code></a>
                             </p>
                     
                     
@@ -2036,30 +2331,6 @@
                         </div>
                     
                             <p><strong>Default:</strong> null</p>
-                    
-                    
-                    </div>
-                    <div id="property_leafletProperties" class="property item inherited">
-                        <h3 class="name"><code>leafletProperties</code></h3>
-                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/LeafletPropertiesMixin.html#property_leafletProperties">LeafletPropertiesMixin</a>:
-                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-properties.js.html#l31"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-properties.js:31</code></a>
-                            </p>
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            Array of properties, thats should be observe by leaflet object specified method.
-                        </div>
-                    
                     
                     
                     </div>
@@ -2074,17 +2345,17 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/LeafletOptionsMixin.html#property_options">LeafletOptionsMixin</a>:
-                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-options.js.html#l41"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-options.js:41</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_mixins_leaflet-options.js.html#l39"><code>ember-flexberry-gis&#x2F;addon&#x2F;mixins&#x2F;leaflet-options.js:39</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            Object with copy of this object properties with specified in leafletOptions names
+                            Object containing properties marked as leaflet options.
                         </div>
                     
-                            <p><strong>Default:</strong> {}</p>
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>
@@ -2099,7 +2370,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l100"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:100</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l84"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:84</code></a>
                             </p>
                     
                     
