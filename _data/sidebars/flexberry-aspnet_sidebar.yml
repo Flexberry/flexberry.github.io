@@ -19,34 +19,44 @@ entries:
       url: /fa_flexberry-asp-net.html
       output: web, pdf
 
-    - title: Add a page on web-desktop
-      title_ru: Добавить собственную форму на рабочий стол Web-приложения
-      url: /fa_add-page-web-desktop.html
-      output: web, pdf
-
-    - title: Browsers
-      title_ru: Список поддерживаемых браузеров
-      url: /fa_browsers.html
-      output: web, pdf
-
-    - title: FAQ Flexberry ASP.NET
-      title_ru: Вопросы и ответы
-      url: /fa_faq-flexberry-web.html
-      output: web, pdf
-
     - title: Scenario of web-development
       title_ru: Сценарии веб-разработки
       url: /fa_scenario-web.html
+      output: web, pdf
+
+    - title: PageContentManager
+      title_ru: PageContentManager
+      url: /fa_page-content-manager.html
+      output: web, pdf
+
+    - title: Form interaction
+      title_ru: Подключение скриптов и стилей на основе FilterPageContentConnector
+      url: /fa_form-interaction.html
+      output: web, pdf
+
+    - title: PlaceholderPageContentConnector
+      title_ru: Подключение скриптов и стилей на основе PlaceholderPageContentConnector
+      url: /fa_placeholder-page-content-connector.html
       output: web, pdf
 
     - title: ContextHelper
       title_ru: ContextHelper
       url: /fa_context-helper.html
       output: web, pdf
+    
+    - title: Routing
+      title_ru: Маршрутизация в Web-приложениях
+      url: /fa_routing.html
+      output: web, pdf
 
-    - title: Form interaction
-      title_ru: Подключение скриптов и стилей на основе FilterPageContentConnector
-      url: /fa_form-interaction.html
+    - title: ServiceSecurityProvider
+      title_ru: ServiceSecurityProvider
+      url: /fa_service-security-provider.html
+      output: web, pdf
+
+    - title: Sitemap according roles
+      title_ru: Настройка карты сайта по ролям
+      url: /fa_sitemap-according-roles.html
       output: web, pdf
 
     - title: FilterPageContentConnector
@@ -64,21 +74,26 @@ entries:
       url: /fa_get-query-parameters-forms.html
       output: web, pdf
 
+    - title: Technological forms in web
+      title_ru: Технологические формы Flexberry ASP.NET
+      url: /fa_tech-forms-web.html
+      output: web, pdf
+
     - title: IMasterPageService
       title_ru: IMasterPageService
       url: /fa_i-master-page-service.html
       output: web, pdf
 
-    - title: PageContentManager
-      title_ru: PageContentManager
-      url: /fa_page-content-manager.html
+    - title: Technological forms customization example
+      title_ru: Примеры настройки технологических форм
+      url: /fa_technological-forms-customization-example.html
       output: web, pdf
 
-    - title: PlaceholderPageContentConnector
-      title_ru: Подключение скриптов и стилей на основе PlaceholderPageContentConnector
-      url: /fa_placeholder-page-content-connector.html
+    - title: Add a page on web-desktop
+      title_ru: Добавить собственную форму на рабочий стол Web-приложения
+      url: /fa_add-page-web-desktop.html
       output: web, pdf
-    
+
     - title: Read only in web
       title_ru: Режим "Только чтение" в Web-приложениях
       url: /fa_read-only-web.html
@@ -89,34 +104,19 @@ entries:
       url: /fa_response-filter-module.html
       output: web, pdf
 
-    - title: Routing
-      title_ru: Маршрутизация в Web-приложениях
-      url: /fa_routing.html
-      output: web, pdf
-
-    - title: ServiceSecurityProvider
-      title_ru: ServiceSecurityProvider
-      url: /fa_service-security-provider.html
-      output: web, pdf
-
-    - title: Sitemap according roles
-      title_ru: Настройка карты сайта по ролям
-      url: /fa_sitemap-according-roles.html
-      output: web, pdf
-
-    - title: Technological forms in web
-      title_ru: Технологические формы Flexberry ASP.NET
-      url: /fa_tech-forms-web.html
-      output: web, pdf
-
-    - title: Technological forms customization example
-      title_ru: Примеры настройки технологических форм
-      url: /fa_technological-forms-customization-example.html
+    - title: Browsers
+      title_ru: Список поддерживаемых браузеров
+      url: /fa_browsers.html
       output: web, pdf
 
     - title: Memory leaks
       title_ru: Возможные места утечки памяти в web-приложениях
       url: /fa_memory-leaks.html
+      output: web, pdf
+
+    - title: FAQ Flexberry ASP.NET
+      title_ru: Вопросы и ответы
+      url: /fa_faq-flexberry-web.html
       output: web, pdf
   
   - title: Subsystems
@@ -154,51 +154,6 @@ entries:
       url: /fa_developing-controls.html
       output: web, pdf
 
-    - title: BaseWebControl
-      title_ru: BaseWebControl
-      url: /fa_base-web-control.html
-      output: web, pdf
-
-    - title: AjaxGroupEdit
-      title_ru: AjaxGroupEdit
-      url: /fa_ajax-group-edit.html
-      output: web, pdf
-
-    - title: WebObjectListView
-      title_ru: WebObjectListView
-      url: /fa_web-object-list-view.html
-      output: web, pdf
-
-    - title: LookUp
-      title_ru: LookUp
-      url: /fa_lookup-overview.html
-      output: web, pdf
-
-    - title: Date picker
-      title_ru: Date picker
-      url: /fa_date-picker.html
-      output: web, pdf
-
-    - title: DecimalTextBox
-      title_ru: DecimalTextBox
-      url: /fa_decimal-textbox.html
-      output: web, pdf
-
-    - title: FileControl
-      title_ru: FileControl
-      url: /fa_file-control-web.html
-      output: web, pdf
-
-    - title: HierarchicalListView
-      title_ru: HierarchicalListView
-      url: /fa_hierarchical-listview.html
-      output: web, pdf
-
-    - title: IcsTreeView 
-      title_ru: IcsTreeView 
-      url: /fa_ics-treeview.html
-      output: web, pdf
-
     - title: Advanced limit editor
       title_ru: Advanced limit editor
       url: /fa_advanced-limit-editor.html
@@ -209,24 +164,19 @@ entries:
       url: /fa_ajax-autocomplete.html
       output: web, pdf
 
-    - title: MasterExpander
-      title_ru: MasterExpander
-      url: /fa_ajax-controls-master-expander.html
-      output: web, pdf
-
-    - title: ObjectTile
-      title_ru: ObjectTile
-      url: /fa_ajax-controls-object-tile.html
-      output: web, pdf
-
-    - title: ObjectTileView
-      title_ru: ObjectTileView
-      url: /fa_ajax-controls-object-tile-view.html
+    - title: AjaxGroupEdit
+      title_ru: AjaxGroupEdit
+      url: /fa_ajax-group-edit.html
       output: web, pdf
 
     - title: AlphaNumericTextBox
       title_ru: AlphaNumericTextBox
       url: /fa_alpha-numeric-textbox.html
+      output: web, pdf
+
+    - title: BaseWebControl
+      title_ru: BaseWebControl
+      url: /fa_base-web-control.html
       output: web, pdf
 
     - title: ColorPicker
@@ -244,6 +194,16 @@ entries:
       url: /fa_contact-control.html
       output: web, pdf
 
+    - title: Date picker
+      title_ru: Date picker
+      url: /fa_date-picker.html
+      output: web, pdf
+
+    - title: DecimalTextBox
+      title_ru: DecimalTextBox
+      url: /fa_decimal-textbox.html
+      output: web, pdf
+
     - title: Dynamic editor
       title_ru: Dynamic editor
       url: /fa_dynamic-editor.html
@@ -254,12 +214,37 @@ entries:
       url: /fa_event-control.html
       output: web, pdf
 
+    - title: ExceptionPanel
+      title_ru: ExceptionPanel
+      url: /fa_exception-panel.html
+      output: web, pdf
+
+    - title: FileControl
+      title_ru: FileControl
+      url: /fa_file-control-web.html
+      output: web, pdf
+
+    - title: HierarchicalListView
+      title_ru: HierarchicalListView
+      url: /fa_hierarchical-listview.html
+      output: web, pdf
+
+    - title: Hinter
+      title_ru: Hinter
+      url: /fa_hinter.html
+      output: web, pdf
+
+    - title: IcsTreeView 
+      title_ru: IcsTreeView 
+      url: /fa_ics-treeview.html
+      output: web, pdf
+
     - title: ImageControl
       title_ru: ImageControl
       url: /fa_image-control.html
       output: web, pdf
 
-    - title: Iinit control settings delegate
+    - title: Init control settings delegate
       title_ru: Глобальная настройка веб-контролов
       url: /fa_init-control-settings-delegate.html
       output: web, pdf
@@ -269,9 +254,34 @@ entries:
       url: /fa_link-modal-popup-window.html
       output: web, pdf
 
-    - title: Pager
-      title_ru: Универсальный пейджинговый контрол
-      url: /fa_pager.html
+    - title: LookUp
+      title_ru: LookUp
+      url: /fa_lookup-overview.html
+      output: web, pdf
+
+    - title: MasterEditorAjaxDropDown
+      title_ru: MasterEditorAjaxDropDown
+      url: /fa_master-editor-ajax-dropdown.html
+      output: web, pdf
+
+    - title: MasterExpander
+      title_ru: MasterExpander
+      url: /fa_ajax-controls-master-expander.html
+      output: web, pdf
+
+    - title: MsDropDown
+      title_ru: MsDropDown
+      url: /fa_ms-drop-down.html
+      output: web, pdf
+
+    - title: ObjectTile
+      title_ru: ObjectTile
+      url: /fa_ajax-controls-object-tile.html
+      output: web, pdf
+
+    - title: ObjectTileView
+      title_ru: ObjectTileView
+      url: /fa_ajax-controls-object-tile-view.html
       output: web, pdf
 
     - title: ShowHideDiv
@@ -294,36 +304,26 @@ entries:
       url: /fa_web-control-provider.html
       output: web, pdf
 
+    - title: WebErrorBoxRiser and ErrorForm
+      title_ru: WebErrorBoxRiser и ErrorForm
+      url: /fa_exception-handling.html
+      output: web, pdf
+
+    - title: WebObjectListView
+      title_ru: WebObjectListView
+      url: /fa_web-object-list-view.html
+      output: web, pdf
+
     - title: Custom captions for web-controls
       title_ru: Кастомизация подписей в Web-контролах
       url: /fa_web-controls-custom-captions.html
       output: web, pdf
 
-    - title: ExceptionPanel
-      title_ru: ExceptionPanel
-      url: /fa_exception-panel.html
+    - title: Pager
+      title_ru: Универсальный пейджинговый контрол
+      url: /fa_pager.html
       output: web, pdf
-
-    - title: WebErrorBoxRiser and ErrorForm
-      title_ru: WebErrorBoxRiser и ErrorForm
-      url: /fa_exception-handling.html
-      output: web, pdf
-    
-    - title: Hinter
-      title_ru: Hinter
-      url: /fa_hinter.html
-      output: web, pdf
-
-    - title: MasterEditorAjaxDropDown
-      title_ru: MasterEditorAjaxDropDown
-      url: /fa_master-editor-ajax-dropdown.html
-      output: web, pdf
-
-    - title: MsDropDown
-      title_ru: MsDropDown
-      url: /fa_ms-drop-down.html
-      output: web, pdf
-
+   
   - title: Editform
     title_ru: Форма редактирования для Flexberry ASP.NET
     output: web, pdf
@@ -334,14 +334,14 @@ entries:
       url: /fa_editform.html
       output: web, pdf
 
-    - title: Adding additional logic for editform
-      title_ru: Добавление дополнительной логики при сохранении объекта
-      url: /fa_add-extra-logic-editform.html
-      output: web, pdf
-
     - title: BaseEditForm
       title_ru: BaseEditForm
       url: /fa_base-edit-form.html
+      output: web, pdf
+
+    - title: Adding additional logic for editform
+      title_ru: Добавление дополнительной логики при сохранении объекта
+      url: /fa_add-extra-logic-editform.html
       output: web, pdf
 
     - title: Editform configuration
