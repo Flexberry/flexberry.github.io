@@ -244,11 +244,6 @@ entries:
       url: /fa_image-control.html
       output: web, pdf
 
-    - title: Init control settings delegate
-      title_ru: Глобальная настройка веб-контролов
-      url: /fa_init-control-settings-delegate.html
-      output: web, pdf
-
     - title: LinkModalPopupWindow
       title_ru: LinkModalPopupWindow
       url: /fa_link-modal-popup-window.html
@@ -312,6 +307,11 @@ entries:
     - title: WebObjectListView
       title_ru: WebObjectListView
       url: /fa_web-object-list-view.html
+      output: web, pdf
+
+    - title: Init control settings delegate
+      title_ru: Глобальная настройка веб-контролов
+      url: /fa_init-control-settings-delegate.html
       output: web, pdf
 
     - title: Custom captions for web-controls
