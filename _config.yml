@@ -123,3 +123,6 @@ sidebars:
 - guide-tasks_sidebar
 - guide-practical-guides_sidebar
 - other
+
+gems:
+  - jekyll-seo-tag
