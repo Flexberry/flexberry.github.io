@@ -65,6 +65,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "FlexberryDatePicker",
         "FlexberryDdauCheckboxActionsHandlerMixin",
         "FlexberryDdauCheckboxComponent",
+        "FlexberryDdauSliderActionsHandlerMixin",
+        "FlexberryDdauSliderComponent",
         "FlexberryDialogComponent",
         "FlexberryDropDown",
         "FlexberryEditLayerDialogComponent",
