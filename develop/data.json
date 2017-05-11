@@ -1685,11 +1685,47 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry-gis/addon/map-tools/identify-all-polygon.js": {
+            "name": "ember-flexberry-gis/addon/map-tools/identify-all-polygon.js",
+            "modules": {},
+            "classes": {
+                "IdentifyAllPolygonMapTool": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-gis/addon/map-tools/identify-all-rectangle.js": {
             "name": "ember-flexberry-gis/addon/map-tools/identify-all-rectangle.js",
             "modules": {},
             "classes": {
-                "IdentifyAllMapTool": 1
+                "IdentifyAllRectangleMapTool": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/map-tools/identify-polygon.js": {
+            "name": "ember-flexberry-gis/addon/map-tools/identify-polygon.js",
+            "modules": {},
+            "classes": {
+                "PolygonIdentifyMapTool": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/map-tools/identify-rectangle.js": {
+            "name": "ember-flexberry-gis/addon/map-tools/identify-rectangle.js",
+            "modules": {},
+            "classes": {
+                "RectangleIdentifyMapTool": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/map-tools/identify-top-polygon.js": {
+            "name": "ember-flexberry-gis/addon/map-tools/identify-top-polygon.js",
+            "modules": {},
+            "classes": {
+                "IdentifyTopVisiblePolygonMapTool": 1
             },
             "fors": {},
             "namespaces": {}
@@ -1698,7 +1734,16 @@
             "name": "ember-flexberry-gis/addon/map-tools/identify-top-rectangle.js",
             "modules": {},
             "classes": {
-                "IdentifyTopVisibleMapTool": 1
+                "IdentifyTopVisibleRectangleMapTool": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/map-tools/identify-visible-polygon.js": {
+            "name": "ember-flexberry-gis/addon/map-tools/identify-visible-polygon.js",
+            "modules": {},
+            "classes": {
+                "IdentifyAllVisiblePolygonMapTool": 1
             },
             "fors": {},
             "namespaces": {}
@@ -1707,7 +1752,7 @@
             "name": "ember-flexberry-gis/addon/map-tools/identify-visible-rectangle.js",
             "modules": {},
             "classes": {
-                "IdentifyAllVisibleMapTool": 1
+                "IdentifyAllVisibleRectangleMapTool": 1
             },
             "fors": {},
             "namespaces": {}
@@ -1798,6 +1843,33 @@
             "modules": {},
             "classes": {
                 "ZoomOutMaptool": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/mixins/map-tools/identify-all.js": {
+            "name": "ember-flexberry-gis/addon/mixins/map-tools/identify-all.js",
+            "modules": {},
+            "classes": {
+                "IdentifyAllMixin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/mixins/map-tools/identify-top.js": {
+            "name": "ember-flexberry-gis/addon/mixins/map-tools/identify-top.js",
+            "modules": {},
+            "classes": {
+                "IdentifyTopMixin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "ember-flexberry-gis/addon/mixins/map-tools/identify-visible.js": {
+            "name": "ember-flexberry-gis/addon/mixins/map-tools/identify-visible.js",
+            "modules": {},
+            "classes": {
+                "IdentifyVisibleMixin": 1
             },
             "fors": {},
             "namespaces": {}
@@ -3429,9 +3501,14 @@
                 "DrawPolylineMapTool": 1,
                 "DrawRectangleMapTool": 1,
                 "DrawMapTool": 1,
-                "IdentifyAllMapTool": 1,
-                "IdentifyTopVisibleMapTool": 1,
-                "IdentifyAllVisibleMapTool": 1,
+                "IdentifyAllPolygonMapTool": 1,
+                "IdentifyAllRectangleMapTool": 1,
+                "PolygonIdentifyMapTool": 1,
+                "RectangleIdentifyMapTool": 1,
+                "IdentifyTopVisiblePolygonMapTool": 1,
+                "IdentifyTopVisibleRectangleMapTool": 1,
+                "IdentifyAllVisiblePolygonMapTool": 1,
+                "IdentifyAllVisibleRectangleMapTool": 1,
                 "IdentifyMapTool": 1,
                 "MeasureAreaMapTool": 1,
                 "MeasureClearMapTool": 1,
@@ -3442,6 +3519,9 @@
                 "RectangleMapTool": 1,
                 "ZoomInMapTool": 1,
                 "ZoomOutMaptool": 1,
+                "IdentifyAllMixin": 1,
+                "IdentifyTopMixin": 1,
+                "IdentifyVisibleMixin": 1,
                 "NewPlatformFlexberyGISCswConnectionModelMixin": 1,
                 "NewPlatformFlexberyGISLayerMetadataModelMixin": 1,
                 "NewPlatformFlexberyGISMapLayerModelMixin": 1,
@@ -6175,9 +6255,24 @@
             "description": "Draw map-tool.",
             "extends": "BaseMapTool"
         },
-        "IdentifyAllMapTool": {
-            "name": "IdentifyAllMapTool",
-            "shortname": "IdentifyAllMapTool",
+        "IdentifyAllPolygonMapTool": {
+            "name": "IdentifyAllPolygonMapTool",
+            "shortname": "IdentifyAllPolygonMapTool",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/map-tools/identify-all-polygon.js",
+            "line": 8,
+            "description": "Identify map-tool that identifies all map layers.",
+            "extends": "IdentifyMapTool"
+        },
+        "IdentifyAllRectangleMapTool": {
+            "name": "IdentifyAllRectangleMapTool",
+            "shortname": "IdentifyAllRectangleMapTool",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -6190,9 +6285,54 @@
             "description": "Identify map-tool that identifies all map layers.",
             "extends": "IdentifyMapTool"
         },
-        "IdentifyTopVisibleMapTool": {
-            "name": "IdentifyTopVisibleMapTool",
-            "shortname": "IdentifyTopVisibleMapTool",
+        "PolygonIdentifyMapTool": {
+            "name": "PolygonIdentifyMapTool",
+            "shortname": "PolygonIdentifyMapTool",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/map-tools/identify-polygon.js",
+            "line": 7,
+            "description": "Polygon identify map-tool.",
+            "extends": "IdentifyMapTool"
+        },
+        "RectangleIdentifyMapTool": {
+            "name": "RectangleIdentifyMapTool",
+            "shortname": "RectangleIdentifyMapTool",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/map-tools/identify-rectangle.js",
+            "line": 7,
+            "description": "Rectangle identify map-tool.",
+            "extends": "IdentifyMapTool"
+        },
+        "IdentifyTopVisiblePolygonMapTool": {
+            "name": "IdentifyTopVisiblePolygonMapTool",
+            "shortname": "IdentifyTopVisiblePolygonMapTool",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/map-tools/identify-top-polygon.js",
+            "line": 8,
+            "description": "Identify map-tool that identifies only top visible map layer.",
+            "extends": "IdentifyAllVisibleMapTool"
+        },
+        "IdentifyTopVisibleRectangleMapTool": {
+            "name": "IdentifyTopVisibleRectangleMapTool",
+            "shortname": "IdentifyTopVisibleRectangleMapTool",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -6205,9 +6345,24 @@
             "description": "Identify map-tool that identifies only top visible map layer.",
             "extends": "IdentifyAllVisibleMapTool"
         },
-        "IdentifyAllVisibleMapTool": {
-            "name": "IdentifyAllVisibleMapTool",
-            "shortname": "IdentifyAllVisibleMapTool",
+        "IdentifyAllVisiblePolygonMapTool": {
+            "name": "IdentifyAllVisiblePolygonMapTool",
+            "shortname": "IdentifyAllVisiblePolygonMapTool",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/map-tools/identify-visible-polygon.js",
+            "line": 8,
+            "description": "Identify map-tool that identifies all visible map layers.",
+            "extends": "IdentifyMapTool"
+        },
+        "IdentifyAllVisibleRectangleMapTool": {
+            "name": "IdentifyAllVisibleRectangleMapTool",
+            "shortname": "IdentifyAllVisibleRectangleMapTool",
             "classitems": [],
             "plugins": [],
             "extensions": [],
@@ -6233,7 +6388,7 @@
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
             "line": 8,
             "description": "Identify map-tool.",
-            "extends": "RectangleMapTool"
+            "extends": "BaseMapTool"
         },
         "MeasureAreaMapTool": {
             "name": "MeasureAreaMapTool",
@@ -6369,6 +6524,51 @@
             "line": 7,
             "description": "Zoom out map-tool.",
             "extends": "RectangleMaptool"
+        },
+        "IdentifyAllMixin": {
+            "name": "IdentifyAllMixin",
+            "shortname": "IdentifyAllMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/mixins/map-tools/identify-all.js",
+            "line": 7,
+            "description": "Mixin for identify-all map tools.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
+        },
+        "IdentifyTopMixin": {
+            "name": "IdentifyTopMixin",
+            "shortname": "IdentifyTopMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/mixins/map-tools/identify-top.js",
+            "line": 7,
+            "description": "Mixin for identify-top map tools.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
+        },
+        "IdentifyVisibleMixin": {
+            "name": "IdentifyVisibleMixin",
+            "shortname": "IdentifyVisibleMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-gis",
+            "namespace": "",
+            "file": "ember-flexberry-gis/addon/mixins/map-tools/identify-visible.js",
+            "line": 7,
+            "description": "Mixin for identify-visible map tools.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
         },
         "NewPlatformFlexberyGISCswConnectionModelMixin": {
             "name": "NewPlatformFlexberyGISCswConnectionModelMixin",
@@ -14595,19 +14795,12 @@
                 {
                     "name": "e",
                     "description": "Event object.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "latlng",
-                            "description": "Center of the bounding box.",
-                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>"
-                        }
-                    ]
+                    "type": "Object"
                 },
                 {
-                    "name": "options.boundingBox",
-                    "description": "Bounds of identification area.",
-                    "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlngbounds\">L.LatLngBounds</a>"
+                    "name": "options.polygonVertices",
+                    "description": "Polygon vertices of type <a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>.",
+                    "type": "Array"
                 },
                 {
                     "name": "layers",
@@ -14625,7 +14818,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers/wfs-layer.js",
-            "line": 178,
+            "line": 177,
             "description": "Handles 'flexberry-map:search' event of leaflet map.",
             "itemtype": "method",
             "name": "search",
@@ -14670,7 +14863,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers/wfs-layer.js",
-            "line": 214,
+            "line": 213,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
@@ -29240,318 +29433,45 @@
             "module": "ember-flexberry-gis"
         },
         {
-            "file": "ember-flexberry-gis/addon/map-tools/identify-all-rectangle.js",
-            "line": 15,
-            "description": "Returns flat array of layers satisfying to current identification mode.",
-            "itemtype": "method",
-            "name": "_getLayersToIdentify",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "Method options.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "excludedLayers",
-                            "description": "Layers that must be excluded from identification.",
-                            "type": "Object[]"
-                        }
-                    ]
-                }
-            ],
-            "return": {
-                "description": "Flat array of layers satisfying to current identification mode.",
-                "type": "Object[]"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyAllMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify-top-rectangle.js",
-            "line": 15,
-            "description": "Returns flat array of layers satisfying to current identification mode.",
-            "itemtype": "method",
-            "name": "_getLayersToIdentify",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "Method options.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "excludedLayers",
-                            "description": "Layers that must be excluded from identification.",
-                            "type": "Object[]"
-                        }
-                    ]
-                }
-            ],
-            "return": {
-                "description": "Flat array of layers satisfying to current identification mode.",
-                "type": "Object[]"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyTopVisibleMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify-top-rectangle.js",
-            "line": 35,
-            "description": "Finishes identification.",
-            "itemtype": "method",
-            "name": "_finishIdentification",
-            "params": [
-                {
-                    "name": "e",
-                    "description": "Event object.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "boundingBox",
-                            "description": "Bounds of identification area.",
-                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlngbounds\">L.LatLngBounds</a>"
-                        },
-                        {
-                            "name": "latlng",
-                            "description": "Center of the bounding box.",
-                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>"
-                        }
-                    ]
-                },
-                {
-                    "name": "options.boundingBoxLayer",
-                    "description": "Rectangle layer related to bounding box.",
-                    "type": "<a href=\"http://leafletjs.com/reference.html#rectangle\">L.Rectangle</a>"
-                },
-                {
-                    "name": "excludedLayers",
-                    "description": "Objects describing those layers which were excluded from identification.",
-                    "type": "Object[]"
-                },
-                {
-                    "name": "layers",
-                    "description": "Objects describing those layers which are identified.",
-                    "type": "Object[]"
-                },
-                {
-                    "name": "results",
-                    "description": "Objects describing identification results.\nEvery result-object has the following structure: { layer: ..., features: [...] },\nwhere 'layer' is metadata of layer related to identification result, features is array\ncontaining (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].",
-                    "type": "Object[]"
-                }
-            ],
-            "return": {
-                "description": "Popup containing identification results.",
-                "type": "<a href=\"http://leafletjs.com/reference.html#popup\">L.Popup</a>"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyTopVisibleMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify-visible-rectangle.js",
-            "line": 15,
-            "description": "Returns flat array of layers satisfying to current identification mode.",
-            "itemtype": "method",
-            "name": "_getLayersToIdentify",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "Method options.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "excludedLayers",
-                            "description": "Layers that must be excluded from identification.",
-                            "type": "Object[]"
-                        }
-                    ]
-                }
-            ],
-            "return": {
-                "description": "Flat array of layers satisfying to current identification mode.",
-                "type": "Object[]"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyAllVisibleMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 15,
-            "description": "Tool's cursor CSS-class.",
-            "itemtype": "property",
-            "name": "cursor",
-            "type": "String",
-            "default": "'help'",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 24,
-            "description": "Flag: indicates whether to hide rectangle on drawing end or not.",
-            "itemtype": "property",
-            "name": "hideRectangleOnDrawingEnd",
-            "type": "Boolean",
-            "default": "false",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 33,
-            "description": "Flag: indicates whether to hide previously drawn rectangle on drawing end or not.",
-            "itemtype": "property",
-            "name": "hidePreviousRectangleOnDrawingEnd",
-            "type": "Boolean",
-            "default": "true",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 42,
-            "description": "Method to prepare identify result if need",
-            "itemtype": "method",
-            "name": "prepareIdentifyResult",
-            "default": "null",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 50,
-            "description": "Returns flat array of layers satisfying to current identification mode.",
-            "itemtype": "method",
-            "name": "_getLayersToIdentify",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "Method options.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "excludedLayers",
-                            "description": "Layers that must be excluded from identification.",
-                            "type": "Object[]"
-                        }
-                    ]
-                }
-            ],
-            "return": {
-                "description": "Flat array of layers satisfying to current identification mode.",
-                "type": "Object[]"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 65,
-            "description": "Starts identification by array of satisfying layers inside given bounding box.",
-            "itemtype": "method",
-            "name": "_startIdentification",
-            "params": [
-                {
-                    "name": "options",
-                    "description": "Method options.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "boundingBox",
-                            "description": "Bounds of identification area.",
-                            "type": "<a href=\"http://leafletjs.com/reference.html#latlngbounds\">L.LatLngBounds</a>"
-                        },
-                        {
-                            "name": "latlng",
-                            "description": "Center of the bounding box.",
-                            "type": "<a href=\"http://leafletjs.com/reference.html#latlng\">L.LatLng</a>"
-                        },
-                        {
-                            "name": "boundingBoxLayer",
-                            "description": "Rectangle layer related to bounding box.",
-                            "type": "<a href=\"http://leafletjs.com/reference.html#rectangle\">L.Rectangle</a>"
-                        },
-                        {
-                            "name": "excludedLayers",
-                            "description": "Layers excluded from identification.",
-                            "type": "Object[]"
-                        }
-                    ]
-                }
-            ],
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 127,
-            "description": "Finishes identification.",
-            "itemtype": "method",
-            "name": "_finishIdentification",
-            "params": [
-                {
-                    "name": "e",
-                    "description": "Event object.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "boundingBox",
-                            "description": "Bounds of identification area.",
-                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlngbounds\">L.LatLngBounds</a>"
-                        },
-                        {
-                            "name": "latlng",
-                            "description": "Center of the bounding box.",
-                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>"
-                        }
-                    ]
-                },
-                {
-                    "name": "options.boundingBoxLayer",
-                    "description": "Rectangle layer related to bounding box.",
-                    "type": "<a href=\"http://leafletjs.com/reference.html#rectangle\">L.Rectangle</a>"
-                },
-                {
-                    "name": "excludedLayers",
-                    "description": "Objects describing those layers which were excluded from identification.",
-                    "type": "Object[]"
-                },
-                {
-                    "name": "layers",
-                    "description": "Objects describing those layers which are identified.",
-                    "type": "Object[]"
-                },
-                {
-                    "name": "results",
-                    "description": "Objects describing identification results.\nEvery result-object has the following structure: { layer: ..., features: [...] },\nwhere 'layer' is metadata of layer related to identification result, features is array\ncontaining (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].",
-                    "type": "Object[]"
-                }
-            ],
-            "return": {
-                "description": "Popup containing identification results.",
-                "type": "<a href=\"http://leafletjs.com/reference.html#popup\">L.Popup</a>"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "IdentifyMapTool",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 183,
+            "file": "ember-flexberry-gis/addon/map-tools/identify-polygon.js",
+            "line": 14,
             "description": "Handles map's 'editable:drawing:end' event.",
             "itemtype": "method",
-            "name": "_rectangleDrawingDidEnd",
+            "name": "_drawingDidEnd",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "layer",
+                            "description": "Drawn polygon layer.",
+                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#polygon\">L.Polygon</a>"
+                        }
+                    ]
+                }
+            ],
+            "class": "PolygonIdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify-polygon.js",
+            "line": 35,
+            "description": "Enables tool.",
+            "itemtype": "method",
+            "name": "_enable",
+            "access": "private",
+            "tagname": "",
+            "class": "PolygonIdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify-rectangle.js",
+            "line": 14,
+            "description": "Handles map's 'editable:drawing:end' event.",
+            "itemtype": "method",
+            "name": "_drawingDidEnd",
             "params": [
                 {
                     "name": "e",
@@ -29566,6 +29486,28 @@
                     ]
                 }
             ],
+            "class": "RectangleIdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify-rectangle.js",
+            "line": 35,
+            "description": "Enables tool.",
+            "itemtype": "method",
+            "name": "_enable",
+            "access": "private",
+            "tagname": "",
+            "class": "RectangleIdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 15,
+            "description": "Leaflet.Editable drawing tools instance.",
+            "itemtype": "property",
+            "name": "_editTools",
+            "type": "<a href=\"http://leaflet.github.io/Leaflet.Editable/doc/api.html\">L.Ediatble</a>",
+            "default": "null",
             "access": "private",
             "tagname": "",
             "class": "IdentifyMapTool",
@@ -29573,7 +29515,198 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 235,
+            "line": 25,
+            "description": "Tool's cursor CSS-class.",
+            "itemtype": "property",
+            "name": "cursor",
+            "type": "String",
+            "default": "'help'",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 34,
+            "description": "Flag: indicates whether to hide figure on drawing end or not.",
+            "itemtype": "property",
+            "name": "hideOnDrawingEnd",
+            "type": "Boolean",
+            "default": "false",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 43,
+            "description": "Flag: indicates whether to hide previously drawn figure on drawing end or not.",
+            "itemtype": "property",
+            "name": "hidePreviousOnDrawingEnd",
+            "type": "Boolean",
+            "default": "true",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 52,
+            "description": "Method to prepare identify result if need.",
+            "itemtype": "method",
+            "name": "prepareIdentifyResult",
+            "default": "null",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 60,
+            "description": "Returns flat array of layers satisfying to current identification mode.",
+            "itemtype": "method",
+            "name": "_getLayersToIdentify",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "excludedLayers",
+                            "description": "Layers that must be excluded from identification.",
+                            "type": "Object[]"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Flat array of layers satisfying to current identification mode.",
+                "type": "Object[]"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 75,
+            "description": "Starts identification by array of satisfying layers inside given polygon area.",
+            "itemtype": "method",
+            "name": "_startIdentification",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "polygonVertices",
+                            "description": "Polygon vertices of type <a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>.",
+                            "type": "Array"
+                        },
+                        {
+                            "name": "relatedLayer",
+                            "description": "Polygon layer related to given vertices.",
+                            "type": "<a href=\"http://leafletjs.com/reference.html#polygon\">L.Polygon</a>"
+                        },
+                        {
+                            "name": "excludedLayers",
+                            "description": "Layers excluded from identification.",
+                            "type": "Object[]"
+                        }
+                    ]
+                },
+                {
+                    "name": "e.latlng",
+                    "description": "Center of the polygon layer.",
+                    "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 137,
+            "description": "Finishes identification.",
+            "itemtype": "method",
+            "name": "_finishIdentification",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "latlng",
+                            "description": "Center of the polygon layer.",
+                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>"
+                        }
+                    ]
+                },
+                {
+                    "name": "options.polygonVertices",
+                    "description": "Polygon vertices of type <a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>.",
+                    "type": "Array"
+                },
+                {
+                    "name": "options.relatedLayer",
+                    "description": "Polygon layer related to given vertices.",
+                    "type": "<a href=\"http://leafletjs.com/reference.html#polygon\">L.Polygon</a>"
+                },
+                {
+                    "name": "excludedLayers",
+                    "description": "Objects describing those layers which were excluded from identification.",
+                    "type": "Object[]"
+                },
+                {
+                    "name": "layers",
+                    "description": "Objects describing those layers which are identified.",
+                    "type": "Object[]"
+                },
+                {
+                    "name": "results",
+                    "description": "Objects describing identification results.\nEvery result-object has the following structure: { layer: ..., features: [...] },\nwhere 'layer' is metadata of layer related to identification result, features is array\ncontaining (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].",
+                    "type": "Object[]"
+                }
+            ],
+            "return": {
+                "description": "Popup containing identification results.",
+                "type": "<a href=\"http://leafletjs.com/reference.html#popup\">L.Popup</a>"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 193,
+            "description": "Handles map's 'editable:drawing:end' event.",
+            "itemtype": "method",
+            "name": "_drawingDidEnd",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "layer",
+                            "description": "Drawn polygon layer.",
+                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#polygon\">L.Polygon</a>"
+                        }
+                    ]
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 243,
             "description": "Enables tool.",
             "itemtype": "method",
             "name": "_enable",
@@ -29584,7 +29717,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 245,
+            "line": 263,
             "description": "Disables tool.",
             "itemtype": "method",
             "name": "_disable",
@@ -29595,8 +29728,15 @@
         },
         {
             "file": "ember-flexberry-gis/addon/map-tools/identify.js",
-            "line": 256,
-            "description": "Remove already drawn rectangle",
+            "line": 280,
+            "description": "Destroys map-tool.",
+            "class": "IdentifyMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/identify.js",
+            "line": 301,
+            "description": "Remove already drawn figure",
             "itemtype": "method",
             "name": "_clearBoundingBox",
             "access": "private",
@@ -29880,6 +30020,147 @@
             "access": "private",
             "tagname": "",
             "class": "ZoomOutMaptool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-tools/identify-all.js",
+            "line": 14,
+            "description": "Returns flat array of layers satisfying to current identification mode.",
+            "itemtype": "method",
+            "name": "_getLayersToIdentify",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "excludedLayers",
+                            "description": "Layers that must be excluded from identification.",
+                            "type": "Object[]"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Flat array of layers satisfying to current identification mode.",
+                "type": "Object[]"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyAllMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-tools/identify-top.js",
+            "line": 14,
+            "description": "Returns flat array of layers satisfying to current identification mode.",
+            "itemtype": "method",
+            "name": "_getLayersToIdentify",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "excludedLayers",
+                            "description": "Layers that must be excluded from identification.",
+                            "type": "Object[]"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Flat array of layers satisfying to current identification mode.",
+                "type": "Object[]"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyTopMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-tools/identify-top.js",
+            "line": 34,
+            "description": "Finishes identification.",
+            "itemtype": "method",
+            "name": "_finishIdentification",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "latlng",
+                            "description": "Center of the polygon layer.",
+                            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>"
+                        }
+                    ]
+                },
+                {
+                    "name": "options.polygonVertices",
+                    "description": "Polygon vertices of type <a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>.",
+                    "type": "Array"
+                },
+                {
+                    "name": "options.relatedLayer",
+                    "description": "Polygon layer related to given vertices.",
+                    "type": "<a href=\"http://leafletjs.com/reference.html#polygon\">L.Polygon</a>"
+                },
+                {
+                    "name": "excludedLayers",
+                    "description": "Objects describing those layers which were excluded from identification.",
+                    "type": "Object[]"
+                },
+                {
+                    "name": "layers",
+                    "description": "Objects describing those layers which are identified.",
+                    "type": "Object[]"
+                },
+                {
+                    "name": "results",
+                    "description": "Objects describing identification results.\nEvery result-object has the following structure: { layer: ..., features: [...] },\nwhere 'layer' is metadata of layer related to identification result, features is array\ncontaining (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].",
+                    "type": "Object[]"
+                }
+            ],
+            "return": {
+                "description": "Popup containing identification results.",
+                "type": "<a href=\"http://leafletjs.com/reference.html#popup\">L.Popup</a>"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyTopMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/map-tools/identify-visible.js",
+            "line": 14,
+            "description": "Returns flat array of layers satisfying to current identification mode.",
+            "itemtype": "method",
+            "name": "_getLayersToIdentify",
+            "params": [
+                {
+                    "name": "options",
+                    "description": "Method options.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "excludedLayers",
+                            "description": "Layers that must be excluded from identification.",
+                            "type": "Object[]"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "Flat array of layers satisfying to current identification mode.",
+                "type": "Object[]"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "IdentifyVisibleMixin",
             "module": "ember-flexberry-gis"
         },
         {
@@ -47299,19 +47580,19 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/map-tools/identify-all-rectangle.js:15"
+            "line": " ember-flexberry-gis/addon/map-tools/identify.js:60"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/map-tools/identify-top-rectangle.js:15"
+            "line": " ember-flexberry-gis/addon/mixins/map-tools/identify-all.js:14"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/map-tools/identify-visible-rectangle.js:15"
+            "line": " ember-flexberry-gis/addon/mixins/map-tools/identify-top.js:14"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/map-tools/identify.js:50"
+            "line": " ember-flexberry-gis/addon/mixins/map-tools/identify-visible.js:14"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -48324,6 +48605,10 @@
         {
             "message": "Missing item type\nDestroys map-tool.",
             "line": " ember-flexberry-gis/addon/map-tools/draw.js:101"
+        },
+        {
+            "message": "Missing item type\nDestroys map-tool.",
+            "line": " ember-flexberry-gis/addon/map-tools/identify.js:280"
         },
         {
             "message": "Missing item type\nDestroys map-tool.",
