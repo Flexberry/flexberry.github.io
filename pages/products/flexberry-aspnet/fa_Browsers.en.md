@@ -8,14 +8,14 @@ lang: en
 published: true
 ---
 
-## Браузеры
+## Browsers
 
 At the moment [Flexberry ASP.NET](fa_flexberry-asp-net.html) technology supports following browsers:
 
-* Internet Explorer 8 и старше (за исключением Object.Create(), т.к. он появился только в IE9).
-* Chrome версии 20 и старше
-* Opera версии 15 и старше
-* Mozilla Firefox версии 20 и старше
+* Internet Explorer 8 or higher (exept Object.Create(), only IE9 and older supports that functionality).
+* Chrome 20 or higher
+* Opera 15 or higher
+* Mozilla Firefox 20 or higher
 * Safari OS X
 
 ## Мобильные устройства
