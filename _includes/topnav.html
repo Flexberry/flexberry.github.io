@@ -49,7 +49,7 @@
                 <!-- entries with language drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
                 
-                {% assign url_string = page.permalink | replace_first: 'ru', '' | replace_first: 'en', '' %}
+                {% assign url_string = page.permalink | replace_first: 'ru/', '/' | replace_first: 'en/', '/' %}
 
                 {% for entry in site.data.topnav.topnav_langs %}
                 <li class="dropdown">
