@@ -1,15 +1,16 @@
 ---
-title: Список поддерживаемых браузеров
+title: Supported browsers list
 sidebar: flexberry-aspnet_sidebar
 keywords: Flexberry ASP-NET
 toc: true
 permalink: en/fa_browsers.html
 lang: en
+published: true
 ---
 
 ## Браузеры
 
-На данный момент технология [Flexberry ASP.NET](fa_flexberry-asp-net.html) поддерживает следующие браузеры:
+At the moment [Flexberry ASP.NET](fa_flexberry-asp-net.html) technology supports following browsers:
 
 * Internet Explorer 8 и старше (за исключением Object.Create(), т.к. он появился только в IE9).
 * Chrome версии 20 и старше
