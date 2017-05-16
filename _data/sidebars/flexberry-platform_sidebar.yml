@@ -27,6 +27,11 @@ entries:
       url: /fp_how-create-article.html
       output: web, pdf
 
+    - title: Rules for translating articles
+      title_ru: Правила перевода статей 
+      url: /fp_translation-article.html
+      output: web, pdf
+
     - title: Code style
       title_ru: Стиль оформления кода
       url: /fp_code-style.html
