@@ -7,6 +7,8 @@ permalink: ru/fp_translation-article.html
 lang: ru
 ---
 
+{% include note.html content="В случае возникновения вопросов обращаться [в чат](https://gitter.im/Flexberry/PlatformDevelopment)." %}
+
 ## Подключение к GitHub
 
 _Если регистрация на GitHub осуществлена ранее, перейти к пункту "Подключение к редактору контента"._
