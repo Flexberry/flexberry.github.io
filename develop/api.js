@@ -18,6 +18,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "BaseMapCommandComponent",
         "BaseMapTool",
         "BaseMapToolComponent",
+        "BaseNonclickableMapTool",
         "ColsConfigMenuService",
         "ColsconfigDialogContentComponent",
         "DecimalTransform",
