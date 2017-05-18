@@ -5830,7 +5830,7 @@
             "namespace": "",
             "file": "ember-flexberry-gis/addon/helpers/regex-test.js",
             "line": 7,
-            "description": "Array contains helper.\nChecks whether the specified item contains in the given array or not.",
+            "description": "Regex tester helper.\nChecks whether the specified item matching provided regex expression",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Helper.html\">Ember.Helper</a>"
         },
         "ApplicationInstanceInitializer": {
@@ -20155,9 +20155,20 @@
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
             "line": 248,
-            "description": "Flag: indicates whether map tool has to be enabled on rerender.",
+            "description": "Leaflet map.",
             "itemtype": "property",
-            "name": "enableOnRerender",
+            "name": "leafletMap",
+            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#map\">L.Map</a>",
+            "default": "null",
+            "class": "BaseMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
+            "line": 257,
+            "description": "Flag: indicates whether map tool is activated",
+            "itemtype": "property",
+            "name": "activated",
             "type": "Boolean",
             "default": "false",
             "class": "BaseMapToolComponent",
@@ -20165,7 +20176,19 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 258,
+            "line": 266,
+            "description": "Observes changes in {{#crossLink \"BaseMapToolComponent/leafletMap:property\"}}'leafletMap' property{{/crossLink}}.\nActivates default map-tool when leafletMap initialized and subscribes on flexberry-map:identificationOptionChanged event.",
+            "itemtype": "method",
+            "name": "_leafletMapDidChange",
+            "type": "Observer",
+            "access": "private",
+            "tagname": "",
+            "class": "BaseMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
+            "line": 285,
             "description": "Handles map-tools click event.\nInvokes {{#crossLink \"BaseMapToolComponent/sendingActions.activate:method\"}}'activate' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.click",
@@ -20181,7 +20204,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 271,
+            "line": 298,
             "description": "Invokes {{#crossLink \"BaseMapToolComponent/sendingActions.activate:method\"}}'activate' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "activateMapTool",
@@ -20197,7 +20220,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 286,
+            "line": 314,
             "description": "Creates map-tool in component's initialization time.",
             "itemtype": "method",
             "name": "createMapTool",
@@ -20206,7 +20229,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 313,
+            "line": 348,
             "description": "Destroys map-tool in components destroy time.",
             "itemtype": "method",
             "name": "destroyMapTool",
@@ -20215,42 +20238,58 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 326,
+            "line": 361,
+            "description": "Force map-tool to activate",
+            "itemtype": "method",
+            "name": "forceMapToolActivation",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "",
+                    "type": "<a href=\"http://learn.jquery.com/events/introduction-to-events/#the-event-object\">jQuery event object</a>"
+                }
+            ],
+            "class": "BaseMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
+            "line": 378,
             "description": "Initializes component.",
             "class": "BaseMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 335,
+            "line": 387,
             "description": "Initializes DOM-related component's properties  & logic.",
             "class": "BaseMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 368,
+            "line": 420,
             "description": "Handles DOM-related component's properties after each render.",
             "class": "BaseMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 393,
+            "line": 438,
             "description": "Destroys DOM-related component's properties & logic.",
             "class": "BaseMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 412,
+            "line": 457,
             "description": "Destroys component.",
             "class": "BaseMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 421,
+            "line": 466,
             "description": "Component's action invoking when component was initialized.",
             "itemtype": "method",
             "name": "sendingActions.initialize",
@@ -20285,7 +20324,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/base.js",
-            "line": 433,
+            "line": 478,
             "description": "Component's action invoking when component was clicked & map tool must be activated.",
             "itemtype": "method",
             "name": "sendingActions.activate",
@@ -20918,6 +20957,17 @@
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
             "line": 69,
+            "description": "Leaflet map.",
+            "itemtype": "property",
+            "name": "leafletMap",
+            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#map\">L.Map</a>",
+            "default": "null",
+            "class": "IdentifyMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
+            "line": 78,
             "description": "Map tool's additional CSS-class.",
             "itemtype": "property",
             "name": "class",
@@ -20928,7 +20978,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 78,
+            "line": 87,
             "description": "Map tool's caption.",
             "itemtype": "property",
             "name": "caption",
@@ -20939,7 +20989,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 87,
+            "line": 96,
             "description": "Map tool's tooltip text.\nWill be added as wrapper's element 'title' attribute.",
             "itemtype": "property",
             "name": "tooltip",
@@ -20949,7 +20999,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 96,
+            "line": 105,
             "description": "Map tool's icon CSS-class names.",
             "itemtype": "property",
             "name": "iconClass",
@@ -20960,7 +21010,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 105,
+            "line": 114,
             "itemtype": "property",
             "name": "layerMode",
             "default": "''",
@@ -20970,7 +21020,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 112,
+            "line": 121,
             "itemtype": "property",
             "name": "toolMode",
             "default": "''",
@@ -20980,29 +21030,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 119,
-            "description": "Flag: indicates whether map tool should be enabled after it's re-render",
-            "itemtype": "property",
-            "name": "enableOnRerender",
-            "default": "true",
-            "type": "{Boolean}",
-            "class": "IdentifyMapToolComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 127,
-            "description": "Flag: indicates whether map tool should be enabled after it's re-render",
-            "itemtype": "property",
-            "name": "_enableOnRerender",
-            "default": "true",
-            "type": "{Boolean}",
-            "class": "IdentifyMapToolComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 135,
+            "line": 128,
             "description": "Contains formatted tool name with layers options",
             "itemtype": "property",
             "name": "_toolName",
@@ -21016,7 +21044,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 160,
+            "line": 147,
             "description": "Handles {{#crossLink \"BaseMapToolComponent/sendingActions.activate:method\"}}base map-tool's 'activate' action{{/crossLink}}.\nInvokes own {{#crossLink \"IdentifyMapToolComponent/sendingActions.activate:method\"}}'activate' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapToolActivate",
@@ -21032,21 +21060,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 172,
+            "line": 159,
             "description": "Initializes DOM-related component's properties  & logic.",
             "class": "IdentifyMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 190,
-            "description": "Handles DOM-related component's properties after each render.",
-            "class": "IdentifyMapToolComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-tools/identify.js",
-            "line": 200,
+            "line": 177,
             "description": "Component's action invoking when map-tool must be activated.",
             "itemtype": "method",
             "name": "sendingActions.activate",
@@ -24189,6 +24210,39 @@
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
             "line": 257,
+            "description": "clear button's CSS-class.",
+            "itemtype": "property",
+            "name": "clearClass",
+            "type": "String",
+            "default": "null",
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 266,
+            "description": "clear button's caption.",
+            "itemtype": "property",
+            "name": "clearCaption",
+            "type": "String",
+            "default": "t('components.map-tools.idenify.rectangle.caption')",
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 275,
+            "description": "clear button's icon CSS-class names.",
+            "itemtype": "property",
+            "name": "clearIconClass",
+            "type": "String",
+            "default": "'remove icon'",
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 284,
             "description": "Flag: is tools option 'rectangle' enable",
             "itemtype": "property",
             "name": "rectangle",
@@ -24199,7 +24253,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 266,
+            "line": 293,
             "description": "Flag: is tools option 'polygon' enable",
             "itemtype": "property",
             "name": "polygon",
@@ -24210,7 +24264,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 275,
+            "line": 302,
             "itemtype": "property",
             "name": "toolMode",
             "default": "'rectangle'",
@@ -24220,21 +24274,92 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 282,
-            "type": "Observer",
+            "line": 309,
+            "description": "Leaflet map.",
+            "itemtype": "property",
+            "name": "leafletMap",
+            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#map\">L.Map</a>",
+            "default": "null",
             "class": "FlexberryIdentifyPanelComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 293,
+            "line": 318,
+            "description": "Observes changes in {{#crossLink \"FlexberryMaptoolbarComponent/leafletMap:propery\"}}'leafletMap' property{{/crossLink}}.\nActivates default map-tool when leafletMap initialized and subscribes on flexberry-map:identificationFinished event.",
+            "itemtype": "method",
+            "name": "_leafletMapDidChange",
+            "type": "Observer",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 338,
+            "description": "Handles inner layer option button's 'click' action.",
+            "itemtype": "method",
+            "name": "actions.onLayerOptionChange",
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 350,
+            "description": "Handles inner tool option button's 'click' action.",
+            "itemtype": "method",
+            "name": "actions.onToolOptionChange",
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 362,
+            "description": "Handles inner clear button's 'click' action.",
+            "itemtype": "method",
+            "name": "actions.clear",
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 372,
+            "description": "Handles 'flexberry-map:identificationFinished' event of leaflet map.",
+            "itemtype": "method",
+            "name": "identificationFinished",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Event object.",
+                    "type": "Object"
+                },
+                {
+                    "name": "results",
+                    "description": "Hash containing search results.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "features",
+                            "description": "Array containing (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects]\nor a promise returning such array.",
+                            "type": "Object[]"
+                        }
+                    ]
+                }
+            ],
+            "class": "FlexberryIdentifyPanelComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
+            "line": 385,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberryIdentifyPanelComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 305,
+            "line": 397,
             "itemtype": "method",
             "name": "_switchActiveLayer",
             "params": [
@@ -24249,7 +24374,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 317,
+            "line": 409,
             "itemtype": "method",
             "name": "_switchActiveLayer",
             "params": [
@@ -24264,34 +24389,17 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 329,
-            "description": "Handles inner layer option button's 'click' action.",
+            "line": 420,
             "itemtype": "method",
-            "name": "actions.onLayerOptionChange",
+            "name": "_switch\nhandles changes in layer and tools options and fires 'flexberry-map:identificationOptionChanged' event",
+            "access": "private",
+            "tagname": "",
             "class": "FlexberryIdentifyPanelComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 340,
-            "description": "Handles inner tool option button's 'click' action.",
-            "itemtype": "method",
-            "name": "actions.onToolOptionChange",
-            "class": "FlexberryIdentifyPanelComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 351,
-            "description": "Handles inner clear button's 'click' action.",
-            "itemtype": "method",
-            "name": "actions.clear",
-            "class": "FlexberryIdentifyPanelComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 361,
+            "line": 448,
             "description": "Component's action invoking when layer option changed.",
             "itemtype": "method",
             "name": "sendingActions.onLayerOptionChange!~YUIDOC_LINE~!}identify panel's on layer option changed action{{/crossLink}}.",
@@ -24301,7 +24409,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 368,
+            "line": 455,
             "description": "Component's action invoking when tool option changed.",
             "itemtype": "method",
             "name": "sendingActions.onToolOptionChange!~YUIDOC_LINE~!}identify panel's on tool option changed action{{/crossLink}}.",
@@ -24311,7 +24419,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-identify-panel.js",
-            "line": 375,
+            "line": 462,
             "description": "Component's action invoking when map-tool must be activated.",
             "itemtype": "method",
             "name": "sendingActions.clear!~YUIDOC_LINE~!}identify panel's on clear button clicked action{{/crossLink}}.",
@@ -26328,35 +26436,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maptoolbar.js",
-            "line": 255,
-            "description": "Handles 'flexberry-map:identificationFinished' event of leaflet map.",
-            "itemtype": "method",
-            "name": "identificationFinished",
-            "params": [
-                {
-                    "name": "e",
-                    "description": "Event object.",
-                    "type": "Object"
-                },
-                {
-                    "name": "results",
-                    "description": "Hash containing search results.",
-                    "type": "Object",
-                    "props": [
-                        {
-                            "name": "features",
-                            "description": "Array containing (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects]\nor a promise returning such array.",
-                            "type": "Object[]"
-                        }
-                    ]
-                }
-            ],
-            "class": "FlexberryMaptoolbarComponet",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/flexberry-maptoolbar.js",
-            "line": 268,
+            "line": 252,
             "description": "Destroys component.",
             "class": "FlexberryMaptoolbarComponet",
             "module": "ember-flexberry-gis"
@@ -27353,15 +27433,22 @@
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
             "line": 80,
-            "description": "Set selected feature and add its layer to serviceLayer on map",
+            "description": "Handles inner FeatureResultItem's bubbled 'selectFeature' action.\nInvokes component's {{#crossLink \"FeatureResultItem/sendingActions.selectFeature:method\"}}'selectFeature'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.selectFeature",
+            "params": [
+                {
+                    "name": "feature\nwhich",
+                    "description": "describes inner FeatureResultItem's 'selectFeature' feature object.",
+                    "type": "Object"
+                }
+            ],
             "class": "LayerResultListComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 103,
+            "line": 113,
             "description": "Select passed feature and zoom map to its layer bounds",
             "itemtype": "method",
             "name": "actions.zoomTo",
@@ -27370,7 +27457,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 126,
+            "line": 136,
             "description": "Select passed feature and pan map to its layer centroid",
             "itemtype": "method",
             "name": "actions.panTo",
@@ -27379,7 +27466,18 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 149,
+            "line": 159,
+            "description": "Set selected feature and add its layer to serviceLayer on map",
+            "itemtype": "method",
+            "name": "_selectFeature",
+            "access": "private",
+            "tagname": "",
+            "class": "LayerResultListComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
+            "line": 171,
             "description": "Observer for passed results",
             "itemtype": "method",
             "name": "_resultObserver",
@@ -47518,7 +47616,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:135"
+            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:128"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -48258,23 +48356,23 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:326"
+            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:378"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties  & logic.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:335"
+            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:387"
         },
         {
             "message": "Missing item type\nHandles DOM-related component's properties after each render.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:368"
+            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:420"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties & logic.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:393"
+            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:438"
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:412"
+            "line": " ember-flexberry-gis/addon/components/map-tools/base.js:457"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -48306,11 +48404,7 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties  & logic.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:172"
-        },
-        {
-            "message": "Missing item type\nHandles DOM-related component's properties after each render.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:190"
+            "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:159"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -48469,12 +48563,8 @@
             "line": " ember-flexberry-gis/addon/components/flexberry-identify-panel.js:63"
         },
         {
-            "message": "Missing item type",
-            "line": " ember-flexberry-gis/addon/components/flexberry-identify-panel.js:282"
-        },
-        {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-identify-panel.js:293"
+            "line": " ember-flexberry-gis/addon/components/flexberry-identify-panel.js:385"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -48558,7 +48648,7 @@
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-maptoolbar.js:268"
+            "line": " ember-flexberry-gis/addon/components/flexberry-maptoolbar.js:252"
         },
         {
             "message": "Missing item type\nReference to component's template.",

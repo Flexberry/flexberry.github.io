@@ -431,6 +431,17 @@ templates/my-map-form.hbs</p>
                     <h3>Methods</h3>
 
                     <ul class="index-list methods extends">
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__leafletMapDidChange" data-tablink="_leafletMapDidChange">_leafletMapDidChange</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__switch
+handles changes in layer and tools options and fires &#x27;flexberry-map:identificationOptionChanged&#x27; event" data-tablink="_switch
+handles changes in layer and tools options and fires &#x27;flexberry-map:identificationOptionChanged&#x27; event">_switch
+handles changes in layer and tools options and fires &#x27;flexberry-map:identificationOptionChanged&#x27; event</a>
+
+                            </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__switchActiveLayer" data-tablink="_switchActiveLayer">_switchActiveLayer</a>
 
@@ -449,6 +460,10 @@ templates/my-map-form.hbs</p>
                             </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_actions.onToolOptionChange" data-tablink="actions.onToolOptionChange">actions.onToolOptionChange</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_identificationFinished" data-tablink="identificationFinished">identificationFinished</a>
 
                             </li>
                             <li class="index-item method">
@@ -491,12 +506,28 @@ templates/my-map-form.hbs</p>
 
                             </li>
                             <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_clearCaption" data-tablink="clearCaption">clearCaption</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_clearClass" data-tablink="clearClass">clearClass</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_clearIconClass" data-tablink="clearIconClass">clearIconClass</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_flexberryClassNames" data-tablink="flexberryClassNames">flexberryClassNames</a>
 
                                     <span class="flag static">static</span>
                             </li>
                             <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_layerMode" data-tablink="layerMode">layerMode</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_leafletMap" data-tablink="leafletMap">leafletMap</a>
 
                             </li>
                             <li class="index-item property">
@@ -580,6 +611,70 @@ templates/my-map-form.hbs</p>
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
+                    <div id="method__leafletMapDidChange" class="method item private">
+                        <h3 class="name"><code>_leafletMapDidChange</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l318"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:318</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Observes changes in FlexberryMaptoolbarComponent/leafletMap:propery.
+                    Activates default map-tool when leafletMap initialized and subscribes on flexberry-map:identificationFinished event.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__switch
+                    handles changes in layer and tools options and fires &#x27;flexberry-map:identificationOptionChanged&#x27; event" class="method item private">
+                        <h3 class="name"><code>_switch
+                    handles changes in layer and tools options and fires &#x27;flexberry-map:identificationOptionChanged&#x27; event</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l420"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:420</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
                     <div id="method__switchActiveLayer" class="method item">
                         <h3 class="name"><code>_switchActiveLayer</code></h3>
                     
@@ -601,7 +696,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l305"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:305</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l397"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:397</code></a>
                             </p>
                     
                     
@@ -652,7 +747,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l317"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:317</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l409"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:409</code></a>
                             </p>
                     
                     
@@ -697,7 +792,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l351"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:351</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l362"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:362</code></a>
                             </p>
                     
                     
@@ -727,7 +822,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l329"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:329</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l338"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:338</code></a>
                             </p>
                     
                     
@@ -757,7 +852,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l340"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:340</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l350"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:350</code></a>
                             </p>
                     
                     
@@ -769,6 +864,86 @@ templates/my-map-form.hbs</p>
                     
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="method_identificationFinished" class="method item">
+                        <h3 class="name"><code>identificationFinished</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>e</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>results</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l372"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:372</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handles 'flexberry-map:identificationFinished' event of leaflet map.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">e</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Event object.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">results</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Hash containing search results.</p>
+                    
+                                        </div>
+                    
+                                            <ul class="params-list">
+                                                <li class="param">
+                                                        <code class="param-name">features</code>
+                                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object[]</a></span>
+                    
+                                                    <div class="param-description">
+                                                        <p>Array containing (GeoJSON feature-objects)[<a href="http://geojson.org/geojson-spec.html#feature-objects">http://geojson.org/geojson-spec.html#feature-objects</a>]
+                    or a promise returning such array.</p>
+                    
+                                                    </div>
+                    
+                                                </li>
+                                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
                     
                     
                     </div>
@@ -787,7 +962,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l375"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:375</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l462"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:462</code></a>
                             </p>
                     
                     
@@ -817,7 +992,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l361"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:361</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l448"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:448</code></a>
                             </p>
                     
                     
@@ -847,7 +1022,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l368"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:368</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l455"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:455</code></a>
                             </p>
                     
                     
@@ -994,6 +1169,84 @@ templates/my-map-form.hbs</p>
                         </div>
                     
                             <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_clearCaption" class="property item">
+                        <h3 class="name"><code>clearCaption</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l266"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:266</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>clear button's caption.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> t(&#x27;components.map-tools.idenify.rectangle.caption&#x27;)</p>
+                    
+                    
+                    </div>
+                    <div id="property_clearClass" class="property item">
+                        <h3 class="name"><code>clearClass</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l257"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:257</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>clear button's CSS-class.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_clearIconClass" class="property item">
+                        <h3 class="name"><code>clearIconClass</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l275"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:275</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>clear button's icon CSS-class names.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> &#x27;remove icon&#x27;</p>
                     
                     
                     </div>
@@ -1153,6 +1406,32 @@ templates/my-map-form.hbs</p>
                     
                     
                     </div>
+                    <div id="property_leafletMap" class="property item">
+                        <h3 class="name"><code>leafletMap</code></h3>
+                        <span class="type"><a href="http://leafletjs.com/reference-1.0.0.html#map">L.Map</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l309"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:309</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Leaflet map.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
                     <div id="property_polygon" class="property item">
                         <h3 class="name"><code>polygon</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
@@ -1164,7 +1443,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l266"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:266</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l293"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:293</code></a>
                             </p>
                     
                     
@@ -1268,7 +1547,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l257"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:257</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l284"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:284</code></a>
                             </p>
                     
                     
@@ -1399,7 +1678,7 @@ templates/my-map-form.hbs</p>
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l275"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:275</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-identify-panel.js.html#l302"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-identify-panel.js:302</code></a>
                             </p>
                     
                     

@@ -640,13 +640,40 @@ let BaseMapToolComponent = Ember.Component.extend(
     mapToolProperties: null,
 
     /**
-      Flag: indicates whether map tool has to be enabled on rerender.
+      Leaflet map.
 
-      @property enableOnRerender
+      @property leafletMap
+      @type &lt;a href=&quot;http://leafletjs.com/reference-1.0.0.html#map&quot;&gt;L.Map&lt;/a&gt;
+      @default null
+    */
+    leafletMap: null,
+
+    /**
+      Flag: indicates whether map tool is activated
+
+      @property activated
       @type Boolean
       @default false
     */
-    enableOnRerender: false,
+    activated: false,
+
+    /**
+      Observes changes in {{#crossLink &quot;BaseMapToolComponent/leafletMap:property&quot;}}&#x27;leafletMap&#x27; property{{/crossLink}}.
+      Activates default map-tool when leafletMap initialized and subscribes on flexberry-map:identificationOptionChanged event.
+
+      @method _leafletMapDidChange
+      @type Observer
+      @private
+    */
+    _leafletMapDidChange: Ember.on(&#x27;didRender&#x27;, Ember.observer(&#x27;leafletMap&#x27;, function () {
+
+      let leafletMap = this.get(&#x27;leafletMap&#x27;);
+      if (Ember.isNone(leafletMap)) {
+        return;
+      }
+
+      leafletMap.on(&#x27;flexberry-map:identificationOptionChanged&#x27;, this.forceMapToolActivation, this);
+    })),
 
     actions: {
       /**
@@ -670,6 +697,7 @@ let BaseMapToolComponent = Ember.Component.extend(
       Original event object.
     */
     activateMapTool(e) {
+      this.set(&#x27;activated&#x27;, false);
       this.sendAction(&#x27;activate&#x27;, {
         mapTool: this.get(&#x27;_mapTool&#x27;),
         target: this.$(),
@@ -702,6 +730,13 @@ let BaseMapToolComponent = Ember.Component.extend(
       Ember.set(mapTool, &#x27;name&#x27;, mapToolName);
 
       this.set(&#x27;_mapTool&#x27;, mapTool);
+
+      // delayed activation of maptool
+      if (this.get(&#x27;activated&#x27;)) {
+        this.activateMapTool({
+          mapToolName
+        });
+      }
     },
 
     /**
@@ -714,6 +749,23 @@ let BaseMapToolComponent = Ember.Component.extend(
       if (!Ember.isNone(mapTool) &amp;&amp; Ember.typeOf(mapTool.destroy) === &#x27;function&#x27;) {
         mapTool.destroy();
         this.set(&#x27;_mapTool&#x27;, null);
+      }
+    },
+
+    /**
+      Force map-tool to activate
+
+      @method forceMapToolActivation
+      @param {&lt;a href=&quot;http://learn.jquery.com/events/introduction-to-events/#the-event-object&quot;&gt;jQuery event object&lt;/a&gt;} e
+    */
+    forceMapToolActivation(e) {
+      let currentName = this.get(&#x27;_mapTool.name&#x27;);
+
+      if (e.mapToolName === currentName) {
+        this.activateMapTool(...arguments);
+      } else {
+        // changing mapToolName forces re-render so we make delayed activation
+        this.set(&#x27;activated&#x27;, true);
       }
     },
 
@@ -775,13 +827,6 @@ let BaseMapToolComponent = Ember.Component.extend(
       // if map tool name has changed - recreate it
       this.destroyMapTool();
       this.createMapTool();
-
-      let enabled = this.get(&#x27;enableOnRerender&#x27;);
-
-      // if map tool has to be enabled on rerender - activate it
-      if (enabled) {
-        this.activateMapTool();
-      }
     },
 
     /**

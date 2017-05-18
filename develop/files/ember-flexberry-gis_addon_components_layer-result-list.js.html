@@ -472,8 +472,12 @@ export default Ember.Component.extend({
 
   actions: {
     /**
-      Set selected feature and add its layer to serviceLayer on map
-      @method actions.selectFeature
+        Handles inner FeatureResultItem&#x27;s bubbled &#x27;selectFeature&#x27; action.
+        Invokes component&#x27;s {{#crossLink &quot;FeatureResultItem/sendingActions.selectFeature:method&quot;}}&#x27;selectFeature&#x27;{{/crossLink}} action.
+
+        @method actions.selectFeature
+        @param {Object} feature
+        which describes inner FeatureResultItem&#x27;s &#x27;selectFeature&#x27; feature object.
     */
     selectFeature(feature) {
       let selectedFeature = this.get(&#x27;_selectedFeature&#x27;);
@@ -482,16 +486,22 @@ export default Ember.Component.extend({
       if (selectedFeature !== feature) {
         if (!Ember.isNone(serviceLayer)) {
           if (!Ember.isNone(selectedFeature)) {
-            serviceLayer.removeLayer(selectedFeature.leafletLayer);
+            if (Ember.isArray(selectedFeature)) {
+              selectedFeature.forEach((item) =&gt; serviceLayer.removeLayer(item.leafletLayer));
+            } else {
+              serviceLayer.removeLayer(selectedFeature.leafletLayer);
+            }
           }
 
-          if (!Ember.isNone(feature)) {
-            serviceLayer.addLayer(feature.leafletLayer);
+          if (Ember.isArray(feature)) {
+            feature.forEach((item) =&gt; this._selectFeature(item));
+          } else {
+            this._selectFeature(feature);
           }
         }
-
-        this.set(&#x27;_selectedFeature&#x27;, feature);
       }
+
+      this.set(&#x27;_selectedFeature&#x27;, feature);
     },
 
     /**
@@ -541,6 +551,18 @@ export default Ember.Component.extend({
   },
 
   /**
+    Set selected feature and add its layer to serviceLayer on map
+    @method _selectFeature
+    @private
+   */
+  _selectFeature(feature) {
+    let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
+    if (!Ember.isNone(feature)) {
+      serviceLayer.addLayer(feature.leafletLayer);
+    }
+  },
+
+  /**
     Observer for passed results
     @method _resultObserver
    */
@@ -576,7 +598,9 @@ export default Ember.Component.extend({
       );
     });
 
-    let promises = results.map((result) =&gt; { return result.features; });
+    let promises = results.map((result) =&gt; {
+      return result.features;
+    });
     Ember.RSVP.allSettled(promises).finally(() =&gt; {
       let order = 1;
       displayResults.forEach((result) =&gt; {
