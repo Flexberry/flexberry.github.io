@@ -429,8 +429,8 @@ const flexberryClassNames = {
   &#x60;&#x60;&#x60;handlebars
   availableCRS: Ember.computed(function() {
     let availableModes = Ember.A();
-    availableModes.push({ crs: this.get(&#x27;model.crs&#x27;), name: t(&#x27;crs.current.name&#x27;), xCaption: t(&#x27;crs.current.xCaption&#x27;), yCaption: t(&#x27;crs.current.yCaption&#x27;) });
-    availableModes.push({ crs: L.CRS.EPSG4326, name: t(&#x27;crs.latlng.name&#x27;), xCaption: t(&#x27;crs.latlng.xCaption&#x27;), yCaption: t(&#x27;crs.latlng.yCaption&#x27;) });
+    availableModes.push({ crs: this.get(&#x27;model.crs&#x27;), name: t(&#x27;crs.current.name&#x27;), xCaption: t(&#x27;crs.current.xCaption&#x27;), yCaption: t(&#x27;crs.current.yCaption&#x27;), isLatlng: false });
+    availableModes.push({ crs: L.CRS.EPSG4326, name: t(&#x27;crs.latlng.name&#x27;), xCaption: t(&#x27;crs.latlng.xCaption&#x27;), yCaption: t(&#x27;crs.latlng.yCaption&#x27;), isLatlng: true });
 
     return availableModes;
   }),
@@ -537,8 +537,8 @@ let GoToMapCommandComponent = Ember.Component.extend({
 
      availableCRS: Ember.computed(function() {
         let availableModes = Ember.A();
-        availableModes.push({crs: this.get(&#x27;model.crs&#x27;), name: t(&#x27;crs.current.name&#x27;), xCaption: t(&#x27;crs.current.xCaption&#x27;), yCaption: t(&#x27;crs.current.yCaption&#x27;)});
-        availableModes.push({crs: L.CRS.EPSG4326, name: t(&#x27;crs.latlng.name&#x27;), xCaption: t(&#x27;crs.latlng.xCaption&#x27;), yCaption: t(&#x27;crs.latlng.yCaption&#x27;)});
+        availableModes.push({crs: this.get(&#x27;model.crs&#x27;), name: t(&#x27;crs.current.name&#x27;), xCaption: t(&#x27;crs.current.xCaption&#x27;), yCaption: t(&#x27;crs.current.yCaption&#x27;), isLatlng: false});
+        availableModes.push({crs: L.CRS.EPSG4326, name: t(&#x27;crs.latlng.name&#x27;), xCaption: t(&#x27;crs.latlng.xCaption&#x27;), yCaption: t(&#x27;crs.latlng.yCaption&#x27;), isLatlng: true});
 
         return availableModes;
       }),
@@ -547,6 +547,10 @@ let GoToMapCommandComponent = Ember.Component.extend({
       @type Array
     */
     availableCRS: null,
+
+    localeObserver: Ember.observer(&#x27;i18n.locale&#x27;, function() {
+      this.set(&#x27;_gotoDialogHasBeenRequested&#x27;, false);
+    }),
 
     actions: {
       /**

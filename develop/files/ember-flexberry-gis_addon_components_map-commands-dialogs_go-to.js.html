@@ -709,6 +709,17 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
 
         this.set(&#x27;_options.x&#x27;, x);
         this.set(&#x27;_options.y&#x27;, y);
+      },
+
+      /**
+        Handles coordinate input textboxes keyPress events.
+
+        @method actions.coordsInputKeyPress
+      */
+      coordsInputKeyPress(e) {
+        if (e.which !== 45 &amp;&amp; e.which !== 44 &amp;&amp; e.which !== 46 &amp;&amp; (e.which &lt; 48 || e.which &gt; 57)) {
+          return false;
+        }
       }
     },
 
@@ -723,16 +734,37 @@ let FlexberryGoToMapCommandDialogComponent = Ember.Component.extend({
       let innerOptions = this.get(&#x27;_options&#x27;);
       let crs = this.get(&#x27;_selectedCrs&#x27;);
 
-      let x = parseFloat(Ember.get(innerOptions, &#x27;x&#x27;).replace(&#x27;,&#x27;, &#x27;.&#x27;));
-      let y = parseFloat(Ember.get(innerOptions, &#x27;y&#x27;).replace(&#x27;,&#x27;, &#x27;.&#x27;));
-      if (isNaN(x) || isNaN(y)) {
+      let x = Ember.get(innerOptions, &#x27;x&#x27;).replace(&#x27;,&#x27;, &#x27;.&#x27;);
+      let y = Ember.get(innerOptions, &#x27;y&#x27;).replace(&#x27;,&#x27;, &#x27;.&#x27;);
+      let regEx = /^(\-|\+)?([0-9]+(\.[0-9]+)?)$/;
+      if (!(regEx.test(x) &amp;&amp; regEx.test(y))) {
+        this.set(&#x27;errorMessageContent&#x27;, t(&#x27;components.map-commands-dialogs.go-to.error-message.content&#x27;));
+        return null;
+      }
+
+      x = parseFloat(x);
+      y = parseFloat(y);
+
+      let isLatlng = Ember.get(crs, &#x27;isLatlng&#x27;);
+      let usedCrs = Ember.get(crs, &#x27;crs&#x27;);
+      let leafletMap = this.get(&#x27;leafletMap&#x27;);
+      let maxBounds = Ember.get(leafletMap, &#x27;options.maxBounds&#x27;);
+      if (Ember.isBlank(maxBounds)) {
+        let maxPixelBounds = leafletMap.getPixelWorldBounds(0);
+        maxBounds = L.latLngBounds(leafletMap.unproject(maxPixelBounds.min, 0), leafletMap.unproject(maxPixelBounds.max, 0));
+      }
+
+      let latLng = isLatlng ? new L.LatLng(x, y) : usedCrs.unproject(new L.Point(x, y));
+      if (!maxBounds.contains(latLng)) {
+        this.set(&#x27;errorMessageContent&#x27;, t(&#x27;components.map-commands-dialogs.go-to.error-message.large-coords&#x27;));
         return null;
       }
 
       Ember.set(gotoOptions, &#x27;point&#x27;, new L.Point(x, y));
-      Ember.set(gotoOptions, &#x27;crs&#x27;, Ember.get(crs, &#x27;crs&#x27;));
+      Ember.set(gotoOptions, &#x27;crs&#x27;, usedCrs);
       Ember.set(gotoOptions, &#x27;xCaption&#x27;, Ember.get(crs, &#x27;xCaption&#x27;));
       Ember.set(gotoOptions, &#x27;yCaption&#x27;, Ember.get(crs, &#x27;yCaption&#x27;));
+      Ember.set(gotoOptions, &#x27;isLatlng&#x27;, isLatlng);
       return gotoOptions;
     },
 
