@@ -428,7 +428,7 @@
 
                     <ul class="index-list methods extends">
                             <li class="index-item method private inherited">
-                                <a href="#" data-tabid="#methods" data-anchor="#method__clearBoundingBox" data-tablink="_clearBoundingBox">_clearBoundingBox</a>
+                                <a href="#" data-tabid="#methods" data-anchor="#method__clearPolygonLayer" data-tablink="_clearPolygonLayer">_clearPolygonLayer</a>
 
                             </li>
                             <li class="index-item method private inherited inherited">
@@ -522,6 +522,10 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_leafletMapContainer" data-tablink="leafletMapContainer">leafletMapContainer</a>
 
                             </li>
+                            <li class="index-item property inherited">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_polygonLayer" data-tablink="polygonLayer">polygonLayer</a>
+
+                            </li>
                     </ul>
                 </div>
 
@@ -531,8 +535,8 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method__clearBoundingBox" class="method item private inherited">
-                        <h3 class="name"><code>_clearBoundingBox</code></h3>
+                    <div id="method__clearPolygonLayer" class="method item private inherited">
+                        <h3 class="name"><code>_clearPolygonLayer</code></h3>
                     
                             <span class="paren">()</span>
                     
@@ -546,8 +550,8 @@
                     
                         <div class="meta">
                                     <p>Inherited from
-                                    <a href="../classes/IdentifyMapTool.html#method__clearBoundingBox">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l301"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:301</code></a>
+                                    <a href="../classes/IdentifyMapTool.html#method__clearPolygonLayer">IdentifyMapTool</a>:
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l304"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:304</code></a>
                             </p>
                     
                     
@@ -580,7 +584,7 @@
                                     BaseMapTool
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l263"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:263</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l266"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:266</code></a>
                             </p>
                     
                     
@@ -616,7 +620,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/IdentifyMapTool.html#method__drawingDidEnd">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l193"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:193</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l198"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:198</code></a>
                             </p>
                     
                     
@@ -677,7 +681,7 @@
                                     BaseMapTool
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l243"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:243</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l246"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:246</code></a>
                             </p>
                     
                     
@@ -700,10 +704,7 @@
                                             <code>e</code>
                                     </li>
                                     <li class="arg">
-                                            <code>options.polygonVertices</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>options.relatedLayer</code>
+                                            <code>options.polygonLayer</code>
                                     </li>
                                     <li class="arg">
                                             <code>excludedLayers</code>
@@ -731,7 +732,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/IdentifyMapTool.html#method__finishIdentification">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l137"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:137</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l143"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:143</code></a>
                             </p>
                     
                     
@@ -769,17 +770,7 @@
                                             </ul>
                                     </li>
                                     <li class="param">
-                                            <code class="param-name">options.polygonVertices</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            Polygon vertices of type <a href="http://leafletjs.com/reference-1.0.0.html#latlng">L.LatLng</a>.
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">options.relatedLayer</code>
+                                            <code class="param-name">options.polygonLayer</code>
                                             <span class="type"><a href="http://leafletjs.com/reference.html#polygon">L.Polygon</a></span>
                     
                     
@@ -859,7 +850,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/IdentifyMapTool.html#method__getLayersToIdentify">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l60"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:60</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l69"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:69</code></a>
                             </p>
                     
                     
@@ -934,7 +925,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/IdentifyMapTool.html#method__startIdentification">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l75"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:75</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l84"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:84</code></a>
                             </p>
                     
                     
@@ -960,21 +951,11 @@
                     
                                             <ul class="params-list">
                                                 <li class="param">
-                                                        <code class="param-name">polygonVertices</code>
-                                                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
-                    
-                                                    <div class="param-description">
-                                                        <p>Polygon vertices of type <a href="http://leafletjs.com/reference-1.0.0.html#latlng">L.LatLng</a>.</p>
-                    
-                                                    </div>
-                    
-                                                </li>
-                                                <li class="param">
-                                                        <code class="param-name">relatedLayer</code>
+                                                        <code class="param-name">polygonLayer</code>
                                                         <span class="type"><a href="http://leafletjs.com/reference.html#polygon">L.Polygon</a></span>
                     
                                                     <div class="param-description">
-                                                        <p>Polygon layer related to given vertices.</p>
+                                                        <p>Polygon layer related to given area.</p>
                     
                                                     </div>
                     
@@ -1141,7 +1122,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/IdentifyMapTool.html#method_prepareIdentifyResult">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l52"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:52</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l61"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:61</code></a>
                             </p>
                     
                     
@@ -1279,7 +1260,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/IdentifyMapTool.html#property_hideOnDrawingEnd">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l34"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:34</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l43"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:43</code></a>
                             </p>
                     
                     
@@ -1304,7 +1285,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/IdentifyMapTool.html#property_hidePreviousOnDrawingEnd">IdentifyMapTool</a>:
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l43"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:43</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l52"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:52</code></a>
                             </p>
                     
                     
@@ -1422,6 +1403,31 @@
                     
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="property_polygonLayer" class="property item inherited">
+                        <h3 class="name"><code>polygonLayer</code></h3>
+                        <span class="type"><a href="http://leafletjs.com/reference.html#polygon">L.Polygon</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/IdentifyMapTool.html#property_polygonLayer">IdentifyMapTool</a>:
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_identify.js.html#l34"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;identify.js:34</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Tool's polygon area layer.
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>

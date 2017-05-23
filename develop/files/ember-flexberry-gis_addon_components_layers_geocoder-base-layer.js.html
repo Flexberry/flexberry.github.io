@@ -495,6 +495,7 @@ export default BaseLayer.extend({
     @param {Object} e Event object.
     @param {&lt;a href=&quot;http://leafletjs.com/reference-1.0.0.html#latlngbounds&quot;&gt;L.LatLngBounds&lt;/a&gt;} e.boundingBox Bounds of identification area.
     @param {&lt;a href=&quot;http://leafletjs.com/reference-1.0.0.html#latlng&quot;&gt;L.LatLng&lt;/a&gt;} e.latlng Center of the bounding box.
+    @param {&lt;a href=&quot;http://leafletjs.com/reference.html#polygon&quot;&gt;L.Polygon&lt;/a&gt;} polygonLayer Polygon layer related to given area.
     @param {Object[]} e.layers Objects describing those layers which must be identified.
     @param {Object[]} e.results Objects describing identification results.
     Every result-object has the following structure: { layer: ..., features: [...] },
@@ -503,8 +504,10 @@ export default BaseLayer.extend({
     or a promise returning such array.
   */
   identify(e) {
+    let boundingBox = Ember.get(e, &#x27;polygonLayer&#x27;).getBounds();
+
     let reverseGeocodingResults = this.executeReverseGeocoding({
-      boundingBox: Ember.get(e, &#x27;boundingBox&#x27;)
+      boundingBox: boundingBox
     });
 
     if (!(reverseGeocodingResults instanceof Ember.RSVP.Promise)) {

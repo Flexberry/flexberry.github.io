@@ -788,14 +788,25 @@ export default FlexberryBaseComponent.extend({
         let currentQuery = this._getCurrentQuery();
         adapter.query(store, this.modelName, currentQuery).then((result) =&gt; {
           let blob = new Blob([result], { type: &#x27;application/vnd.ms-excel&#x27; });
-          let downloadUrl = URL.createObjectURL(blob);
           let anchor = Ember.$(&#x27;.download-anchor&#x27;);
-          if (!Ember.isNone(anchor)) {
-            anchor.prop(&#x27;href&#x27;, downloadUrl);
-            anchor.prop(&#x27;download&#x27;, &#x27;list.xlsx&#x27;);
-            anchor.get(0).click();
-            _this.set(&#x27;state&#x27;, &#x27;&#x27;);
+          if (!Ember.isBlank(anchor)) {
+            if (window.navigator.msSaveOrOpenBlob) {
+              let downloadFunction = function() {
+                window.navigator.msSaveOrOpenBlob(blob, &#x27;list.xlsx&#x27;);
+              };
+
+              anchor.on(&#x27;click&#x27;, downloadFunction);
+              anchor.get(0).click();
+              anchor.off(&#x27;click&#x27;, downloadFunction);
+            } else {
+              let downloadUrl = URL.createObjectURL(blob);
+              anchor.prop(&#x27;href&#x27;, downloadUrl);
+              anchor.prop(&#x27;download&#x27;, &#x27;list.xlsx&#x27;);
+              anchor.get(0).click();
+            }
           }
+
+          _this.set(&#x27;state&#x27;, &#x27;&#x27;);
         }).catch(() =&gt; {
           _this.set(&#x27;state&#x27;, &#x27;&#x27;);
         });
