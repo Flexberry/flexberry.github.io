@@ -473,6 +473,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry-data/addon/utils/string-functions.js": {
+            "name": "ember-flexberry-data/addon/utils/string-functions.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry-data/addon/index.js": {
             "name": "ember-flexberry-data/addon/index.js",
             "modules": {
@@ -3623,7 +3630,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Adapter",
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 7,
+            "line": 8,
             "description": "The OData adapter class.\nUses Flexberry Query as a language for requesting server."
         },
         "Adapter.Offline": {
@@ -3861,7 +3868,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Query",
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 19,
+            "line": 20,
             "params": [
                 {
                     "name": "baseUrl",
@@ -4113,7 +4120,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Serializer",
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 5,
+            "line": 6,
             "description": "Base serializer class."
         },
         "Serializer.OData": {
@@ -4127,7 +4134,7 @@
             "module": "ember-flexberry-data",
             "namespace": "Serializer",
             "file": "ember-flexberry-data/addon/serializers/odata.js",
-            "line": 6,
+            "line": 7,
             "description": "Serializer class for OData."
         },
         "Serializer.Offline": {
@@ -8628,7 +8635,7 @@
     "classitems": [
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 24,
+            "line": 25,
             "description": "Timeout for AJAX-requests.",
             "itemtype": "property",
             "name": "timeout",
@@ -8640,7 +8647,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 33,
+            "line": 34,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch data from the server.",
             "itemtype": "method",
             "name": "query",
@@ -8671,7 +8678,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 59,
+            "line": 60,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCustomizes ajax options for the requests.",
             "itemtype": "method",
             "name": "ajaxOptions",
@@ -8702,7 +8709,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 79,
+            "line": 80,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch single record from the server.",
             "itemtype": "method",
             "name": "queryRecord",
@@ -8733,7 +8740,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 98,
+            "line": 99,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch single record by ID from the server.",
             "itemtype": "method",
             "name": "findRecord",
@@ -8769,7 +8776,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 118,
+            "line": 119,
             "description": "Overloaded method from `RESTAdapter` (Ember Data).\nCalled by the sore in order to fetch all records from the server.",
             "itemtype": "method",
             "name": "findAll",
@@ -8805,7 +8812,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 138,
+            "line": 139,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), that determines the pathname for a given type.\nAdditionally capitalizes the type name (requirement of Flexberry OData Server).",
             "itemtype": "method",
             "name": "pathForType",
@@ -8826,7 +8833,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 152,
+            "line": 153,
             "description": "Overloaded method from `build-url-mixin` (Ember Data), taht builds URL to OData feed.\nAppends id as `(id)` (OData specification) instead of `/id`.",
             "itemtype": "method",
             "name": "_buildURL",
@@ -8854,7 +8861,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 192,
+            "line": 193,
             "description": "Appends id to URL according to the OData specification.",
             "itemtype": "method",
             "name": "_appendIdToURL",
@@ -8878,7 +8885,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/adapters/odata.js",
-            "line": 223,
+            "line": 224,
             "description": "Makes HTTP request for creating, updating or deleting the record.",
             "itemtype": "method",
             "name": "_sendRecord",
@@ -10970,7 +10977,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 41,
+            "line": 42,
             "description": "Returns query data for querying OData feed (for query part).",
             "itemtype": "method",
             "name": "getODataQuery",
@@ -10993,7 +11000,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 81,
+            "line": 82,
             "description": "Returns full URL for querying OData feed (base part and query part).",
             "itemtype": "method",
             "name": "getODataFullUrl",
@@ -11014,7 +11021,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 196,
+            "line": 197,
             "description": "Converts specified predicate into OData filter part.",
             "params": [
                 {
@@ -11043,7 +11050,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 248,
+            "line": 249,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -11407,7 +11414,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 13,
+            "line": 14,
             "description": "Flag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
@@ -11415,7 +11422,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 18,
+            "line": 19,
             "description": "Prefix for response metadata properties names.",
             "class": "Serializer.Base",
             "module": "ember-flexberry-data",
@@ -11423,7 +11430,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 23,
+            "line": 24,
             "description": "Normalization method for single objects.",
             "params": [
                 {
@@ -11453,7 +11460,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 43,
+            "line": 44,
             "description": "Normalization method for arrays of objects.",
             "params": [
                 {
@@ -11479,7 +11486,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 59,
+            "line": 60,
             "description": "Extracts metadata from received object.",
             "params": [
                 {
@@ -11505,7 +11512,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 78,
+            "line": 79,
             "description": "Returns key for a given attribute.",
             "params": [
                 {
@@ -11523,7 +11530,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 88,
+            "line": 89,
             "description": "Returns key for a given relationship.",
             "params": [
                 {
@@ -11545,7 +11552,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 101,
+            "line": 102,
             "description": "Return model name for relationship.",
             "itemtype": "method",
             "name": "modelNameFromRelationshipType",
@@ -11562,7 +11569,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 111,
+            "line": 112,
             "description": "Serialization method to serialize record into hash.",
             "params": [
                 {
@@ -11588,7 +11595,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 128,
+            "line": 129,
             "description": "You can use this method to customize how polymorphic objects are serialized.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_serializePolymorphicType).",
             "itemtype": "method",
             "name": "serializePolymorphicType",
@@ -11615,7 +11622,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 145,
+            "line": 146,
             "description": "You can use this method to customize how a polymorphic relationship should be extracted.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_extractPolymorphicRelationship).",
             "itemtype": "method",
             "name": "extractPolymorphicRelationship",
@@ -11641,7 +11648,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 165,
+            "line": 166,
             "description": "This method is used to convert each JSON root key in the payload into a modelName that it can use to look up the appropriate model for that part of the payload.\n[More info](http://emberjs.com/api/data/classes/DS.RESTSerializer.html#method_modelNameFromPayloadKey).",
             "itemtype": "method",
             "name": "modelNameFromPayloadKey",
@@ -11662,7 +11669,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/base.js",
-            "line": 177,
+            "line": 178,
             "description": "Moves metadata from one object to another.",
             "params": [
                 {
@@ -11686,7 +11693,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/serializers/odata.js",
-            "line": 14,
+            "line": 15,
             "description": "`serializeBelongsTo` can be used to customize how `DS.belongsTo` properties are serialized.\nIf there is set option `odata-id` at serializer and `DS.belongsTo` property is not null,\nthen property will be serialized like:\n```\nRelationName@odata.bind': RelationType(RelatedObjectId)\n```",
             "itemtype": "method",
             "name": "serializeBelongsTo",
@@ -11707,6 +11714,24 @@
                     "type": "Object"
                 }
             ],
+            "class": "Serializer.OData",
+            "module": "ember-flexberry-data",
+            "namespace": "Serializer"
+        },
+        {
+            "file": "ember-flexberry-data/addon/serializers/odata.js",
+            "line": 49,
+            "description": "Returns key for a given relationship.",
+            "params": [
+                {
+                    "name": "key",
+                    "description": "Existing relationship key."
+                }
+            ],
+            "return": {
+                "description": "Key for a given relationship.",
+                "type": "String"
+            },
             "class": "Serializer.OData",
             "module": "ember-flexberry-data",
             "namespace": "Serializer"
@@ -14116,6 +14141,126 @@
             },
             "class": "Offline",
             "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/string-functions.js",
+            "line": 21,
+            "description": "Converts a camelized string into all lower case separated by underscores.\n```javascript\n'innerHTML'.decamelize();           // 'inner_html'\n'action_name'.decamelize();        // 'action_name'\n'css-class-name'.decamelize();     // 'css-class-name'\n'my favorite items'.decamelize();  // 'my favorite items'\n```",
+            "itemtype": "method",
+            "name": "decamelize",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "The string to decamelize.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "the decamelized string.",
+                "type": "String"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/string-functions.js",
+            "line": 37,
+            "description": "Replaces underscores, spaces, or camelCase with dashes.\n```javascript\n'innerHTML'.dasherize();          // 'inner-html'\n'action_name'.dasherize();        // 'action-name'\n'css-class-name'.dasherize();     // 'css-class-name'\n'my favorite items'.dasherize();  // 'my-favorite-items'\n'privateDocs/ownerInvoice'.dasherize(); // 'private-docs/owner-invoice'\n```",
+            "itemtype": "method",
+            "name": "dasherize",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "The string to dasherize.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "the dasherized string.",
+                "type": "String"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/string-functions.js",
+            "line": 54,
+            "description": "Returns the lowerCamelCase form of a string.\n```javascript\n'innerHTML'.camelize();          // 'innerHTML'\n'action_name'.camelize();        // 'actionName'\n'css-class-name'.camelize();     // 'cssClassName'\n'my favorite items'.camelize();  // 'myFavoriteItems'\n'My Favorite Items'.camelize();  // 'myFavoriteItems'\n'private-docs/owner-invoice'.camelize(); // 'privateDocs/ownerInvoice'\n```",
+            "itemtype": "method",
+            "name": "camelize",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "The string to camelize.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "the camelized string.",
+                "type": "String"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/string-functions.js",
+            "line": 73,
+            "description": "Returns the UpperCamelCase form of a string.\n```javascript\n'innerHTML'.classify();          // 'InnerHTML'\n'action_name'.classify();        // 'ActionName'\n'css-class-name'.classify();     // 'CssClassName'\n'my favorite items'.classify();  // 'MyFavoriteItems'\n'private-docs/owner-invoice'.classify(); // 'PrivateDocs/OwnerInvoice'\n```",
+            "itemtype": "method",
+            "name": "classify",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "the string to classify",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "the classified string",
+                "type": "String"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/string-functions.js",
+            "line": 99,
+            "description": "More general than decamelize. Returns the lower\\_case\\_and\\_underscored\nform of a string.\n```javascript\n'innerHTML'.underscore();          // 'inner_html'\n'action_name'.underscore();        // 'action_name'\n'css-class-name'.underscore();     // 'css_class_name'\n'my favorite items'.underscore();  // 'my_favorite_items'\n'privateDocs/ownerInvoice'.underscore(); // 'private_docs/owner_invoice'\n```",
+            "itemtype": "method",
+            "name": "underscore",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "The string to underscore.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "the underscored string.",
+                "type": "String"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry-data"
+        },
+        {
+            "file": "ember-flexberry-data/addon/utils/string-functions.js",
+            "line": 117,
+            "description": "Returns the Capitalized form of a string\n```javascript\n'innerHTML'.capitalize()         // 'InnerHTML'\n'action_name'.capitalize()       // 'Action_name'\n'css-class-name'.capitalize()    // 'Css-class-name'\n'my favorite items'.capitalize() // 'My favorite items'\n'privateDocs/ownerInvoice'.capitalize(); // 'PrivateDocs/ownerInvoice'\n```",
+            "itemtype": "method",
+            "name": "capitalize",
+            "params": [
+                {
+                    "name": "str",
+                    "description": "The string to capitalize.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The capitalized string.",
+                "type": "String"
+            },
+            "class": "Offline",
+            "module": "ember-flexberry-data"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layers/geocoder-base-layer.js",
@@ -47464,7 +47609,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:248"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:249"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -47492,23 +47637,27 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:23"
+            "line": " ember-flexberry-data/addon/serializers/base.js:24"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:43"
+            "line": " ember-flexberry-data/addon/serializers/base.js:44"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:59"
+            "line": " ember-flexberry-data/addon/serializers/base.js:60"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:78"
+            "line": " ember-flexberry-data/addon/serializers/base.js:79"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/serializers/base.js:88"
+            "line": " ember-flexberry-data/addon/serializers/base.js:89"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-data/addon/serializers/odata.js:49"
         },
         {
             "message": "replacing incorrect tag: function with method",
@@ -47940,11 +48089,11 @@
         },
         {
             "message": "Missing item type\nConverts specified predicate into OData filter part.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:196"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:197"
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:248"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:249"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",
@@ -47968,39 +48117,43 @@
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:13"
+            "line": " ember-flexberry-data/addon/serializers/base.js:14"
         },
         {
             "message": "Missing item type\nPrefix for response metadata properties names.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:18"
+            "line": " ember-flexberry-data/addon/serializers/base.js:19"
         },
         {
             "message": "Missing item type\nNormalization method for single objects.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:23"
+            "line": " ember-flexberry-data/addon/serializers/base.js:24"
         },
         {
             "message": "Missing item type\nNormalization method for arrays of objects.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:43"
+            "line": " ember-flexberry-data/addon/serializers/base.js:44"
         },
         {
             "message": "Missing item type\nExtracts metadata from received object.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:59"
+            "line": " ember-flexberry-data/addon/serializers/base.js:60"
         },
         {
             "message": "Missing item type\nReturns key for a given attribute.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:78"
+            "line": " ember-flexberry-data/addon/serializers/base.js:79"
         },
         {
             "message": "Missing item type\nReturns key for a given relationship.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:88"
+            "line": " ember-flexberry-data/addon/serializers/base.js:89"
         },
         {
             "message": "Missing item type\nSerialization method to serialize record into hash.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:111"
+            "line": " ember-flexberry-data/addon/serializers/base.js:112"
         },
         {
             "message": "Missing item type\nMoves metadata from one object to another.",
-            "line": " ember-flexberry-data/addon/serializers/base.js:177"
+            "line": " ember-flexberry-data/addon/serializers/base.js:178"
+        },
+        {
+            "message": "Missing item type\nReturns key for a given relationship.",
+            "line": " ember-flexberry-data/addon/serializers/odata.js:49"
         },
         {
             "message": "Missing item type",

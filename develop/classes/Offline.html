@@ -433,11 +433,35 @@
 
                             </li>
                             <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_camelize" data-tablink="camelize">camelize</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_capitalize" data-tablink="capitalize">capitalize</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_classify" data-tablink="classify">classify</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_dasherize" data-tablink="dasherize">dasherize</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_decamelize" data-tablink="decamelize">decamelize</a>
+
+                            </li>
+                            <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_getValueFromLocales" data-tablink="getValueFromLocales">getValueFromLocales</a>
 
                             </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_isEmbedded" data-tablink="isEmbedded">isEmbedded</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_underscore" data-tablink="underscore">underscore</a>
 
                             </li>
                     </ul>
@@ -600,6 +624,361 @@
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_camelize" class="method item">
+                        <h3 class="name"><code>camelize</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>str</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_utils_string-functions.js.html#l54"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;string-functions.js:54</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns the lowerCamelCase form of a string.</p>
+                    <pre class="code prettyprint"><code class="language-javascript">'innerHTML'.camelize();          // 'innerHTML'
+                    'action_name'.camelize();        // 'actionName'
+                    'css-class-name'.camelize();     // 'cssClassName'
+                    'my favorite items'.camelize();  // 'myFavoriteItems'
+                    'My Favorite Items'.camelize();  // 'myFavoriteItems'
+                    'private-docs/owner-invoice'.camelize(); // 'privateDocs/ownerInvoice'
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">str</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The string to camelize.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>the camelized string.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_capitalize" class="method item">
+                        <h3 class="name"><code>capitalize</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>str</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_utils_string-functions.js.html#l117"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;string-functions.js:117</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns the Capitalized form of a string</p>
+                    <pre class="code prettyprint"><code class="language-javascript">'innerHTML'.capitalize()         // 'InnerHTML'
+                    'action_name'.capitalize()       // 'Action_name'
+                    'css-class-name'.capitalize()    // 'Css-class-name'
+                    'my favorite items'.capitalize() // 'My favorite items'
+                    'privateDocs/ownerInvoice'.capitalize(); // 'PrivateDocs/ownerInvoice'
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">str</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The string to capitalize.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>The capitalized string.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_classify" class="method item">
+                        <h3 class="name"><code>classify</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>str</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_utils_string-functions.js.html#l73"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;string-functions.js:73</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns the UpperCamelCase form of a string.</p>
+                    <pre class="code prettyprint"><code class="language-javascript">'innerHTML'.classify();          // 'InnerHTML'
+                    'action_name'.classify();        // 'ActionName'
+                    'css-class-name'.classify();     // 'CssClassName'
+                    'my favorite items'.classify();  // 'MyFavoriteItems'
+                    'private-docs/owner-invoice'.classify(); // 'PrivateDocs/OwnerInvoice'
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">str</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>the string to classify</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>the classified string</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_dasherize" class="method item">
+                        <h3 class="name"><code>dasherize</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>str</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_utils_string-functions.js.html#l37"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;string-functions.js:37</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Replaces underscores, spaces, or camelCase with dashes.</p>
+                    <pre class="code prettyprint"><code class="language-javascript">'innerHTML'.dasherize();          // 'inner-html'
+                    'action_name'.dasherize();        // 'action-name'
+                    'css-class-name'.dasherize();     // 'css-class-name'
+                    'my favorite items'.dasherize();  // 'my-favorite-items'
+                    'privateDocs/ownerInvoice'.dasherize(); // 'private-docs/owner-invoice'
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">str</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The string to dasherize.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>the dasherized string.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_decamelize" class="method item">
+                        <h3 class="name"><code>decamelize</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>str</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_utils_string-functions.js.html#l21"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;string-functions.js:21</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Converts a camelized string into all lower case separated by underscores.</p>
+                    <pre class="code prettyprint"><code class="language-javascript">'innerHTML'.decamelize();           // 'inner_html'
+                    'action_name'.decamelize();        // 'action_name'
+                    'css-class-name'.decamelize();     // 'css-class-name'
+                    'my favorite items'.decamelize();  // 'my favorite items'
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">str</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The string to decamelize.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>the decamelized string.</p>
+                    
                                 </div>
                             </div>
                     
@@ -767,6 +1146,78 @@
                     
                                 <div class="returns-description">
                                             <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_underscore" class="method item">
+                        <h3 class="name"><code>underscore</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>str</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_utils_string-functions.js.html#l99"><code>ember-flexberry-data&#x2F;addon&#x2F;utils&#x2F;string-functions.js:99</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>More general than decamelize. Returns the lower_case_and_underscored
+                    form of a string.</p>
+                    <pre class="code prettyprint"><code class="language-javascript">'innerHTML'.underscore();          // 'inner_html'
+                    'action_name'.underscore();        // 'action_name'
+                    'css-class-name'.underscore();     // 'css_class_name'
+                    'my favorite items'.underscore();  // 'my_favorite_items'
+                    'privateDocs/ownerInvoice'.underscore(); // 'private_docs/owner_invoice'
+                    </code></pre>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">str</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The string to underscore.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>the underscored string.</p>
+                    
                                 </div>
                             </div>
                     

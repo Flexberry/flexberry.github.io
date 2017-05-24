@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-gis/addon/map-tools/identify-all-visible.js - Flexberry Documentation</title>
+    <title>ember-flexberry-data/addon/utils/string-functions.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.OData", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstance", "classes/ApplicationInstanceInitializer", "classes/ArrayContainsHelper", "classes/ArrayHelper", "classes/Audit", "classes/BaseControlComponent", "classes/BaseLayer", "classes/BaseLayerComponent", "classes/BaseLegendComponent", "classes/BaseMapCommand", "classes/BaseMapCommandComponent", "classes/BaseMapTool", "classes/BaseMapToolComponent", "classes/ColsconfigDialogContentComponent", "classes/ColsConfigMenuService", "classes/DecimalTransform", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DivControlComponent", "classes/DomActionsMixin", "classes/DragMapTool", "classes/DragMapToolComponent", "classes/DrawCircleMapTool", "classes/DrawClearMapTool", "classes/DrawMapTool", "classes/DrawMapToolComponent", "classes/DrawMarkerMapTool", "classes/DrawPolygonMapTool", "classes/DrawPolylineMapTool", "classes/DrawRectangleMapTool", "classes/DynamicActionObject", "classes/DynamicActionsMixin", "classes/DynamicPropertiesMixin", "classes/EarthCrs", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EditMapController", "classes/EditMapNewRoute", "classes/EnumCaptionHelper", "classes/Epsg3395Crs", "classes/Epsg3857Crs", "classes/Epsg4326Crs", "classes/ErrorableControllerMixin", "classes/ExportDownloadMapCommand", "classes/ExportMapCommand", "classes/ExportMapCommandComponent", "classes/ExportPrintMapCommand", "classes/FeatureResultItemComponent", "classes/FileTransform", "classes/FlexberryAddLayerDialogComponent", "classes/FlexberryBaseComponent", "classes/FlexberryButtonComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryCswComponent", "classes/FlexberryDatePicker", "classes/FlexberryDdauCheckboxActionsHandlerMixin", "classes/FlexberryDdauCheckboxComponent", "classes/FlexberryDialogComponent", "classes/FlexberryDropDown", "classes/FlexberryEditLayerDialogComponent", "classes/FlexberryEnumTransform", "classes/FlexberryExportMapCommandDialogComponent", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGoToMapCommandDialogComponent", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryIconComponent", "classes/FlexberryJsonareaComponent", "classes/FlexberryLayersComponent", "classes/FlexberryLayersDropdownComponent", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMapActionsHandlerMixin", "classes/FlexberryMapComponent", "classes/FlexberryMaplayerActionsHandlerMixin", "classes/FlexberryMaplayerComponent", "classes/FlexberryMaplayersComponent", "classes/FlexberryMaptoolbarComponent", "classes/FlexberryMaptoolbarComponet", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewHierarchicalControllerMixin", "classes/FlexberryObjectlistviewHierarchicalRouteMixin", "classes/FlexberryObjectlistviewOnEditFormControllerMixin", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberryRemoveLayerDialogComponent", "classes/FlexberrySearchComponent", "classes/FlexberrySearchMapCommandDialogComponent", "classes/FlexberrySimpledatetime", "classes/FlexberryTabBarComponent", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryTreeComponent", "classes/FlexberryTreenodeActionsHandlerMixin", "classes/FlexberryTreenodeComponent", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/FormLoadTimeTrackerComponent", "classes/FormLoadTimeTrackerService", "classes/FullExtentMapCommand", "classes/FullExtentMapCommandComponent", "classes/GeocoderBaseLayerComponent", "classes/GeocoderOsmOverpassLayerComponent", "classes/GeocoderOsmOverpassLayerSettingsComponent", "classes/GeocoderOsmRuLayer", "classes/GeocoderOsmRuLayerComponent", "classes/GeocoderOsmRuLayerSettingsComponent", "classes/GeocoderOsmRuSearchSettingsComponent", "classes/GetWithDynamicActionsHelper", "classes/GoToMapCommand", "classes/GoToMapCommandComponent", "classes/GroupEditToolbarComponent", "classes/GroupLayer", "classes/GroupLayerComponent", "classes/GroupLayerSettingsComponent", "classes/GuidTransform", "classes/HistoryControlComponent", "classes/IdentifyAllMapTool", "classes/IdentifyAllVisibleMapTool", "classes/IdentifyMapTool", "classes/IdentifyMapToolComponent", "classes/IdentifyTopVisibleMapTool", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LayerResultListComponent", "classes/LeafletCrsMixin", "classes/LeafletEventsMixin", "classes/LeafletOptionsMixin", "classes/LeafletPropertiesMixin", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/ListMapController", "classes/ListMapRoute", "classes/LockRouteMixin", "classes/LogService", "classes/LookupDialogController", "classes/LookupEvents", "classes/MapRoute", "classes/MapRouteCswLoaderMixin", "classes/MeasureAreaMapTool", "classes/MeasureClearMapTool", "classes/MeasureCoordinatesMapTool", "classes/MeasureDistanceMapTool", "classes/MeasureMapTool", "classes/MeasureMapToolComponent", "classes/MeasureRadiusMapTool", "classes/MiniMapComponent", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/Mobile.ObjectListViewRowComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/NewPlatformFlexberryGISCswConnectionModel", "classes/NewPlatformFlexberryGISCswConnectionSerializer", "classes/NewPlatformFlexberryGISLayerMetadata", "classes/NewPlatformFlexberryGISMap", "classes/NewPlatformFlexberryGISMapLayer", "classes/NewPlatformFlexberryServicesLockAdapter", "classes/NewPlatformFlexberryServicesLockListController", "classes/NewPlatformFlexberryServicesLockListRoute", "classes/NewPlatformFlexberryServicesLockModel", "classes/NewPlatformFlexberryServicesLockSerializer", "classes/NewPlatformFlexberyGISCswConnectionModelMixin", "classes/NewPlatformFlexberyGISCswConnectionSerializerMixin", "classes/NewPlatformFlexberyGISLayerMetadataModelMixin", "classes/NewPlatformFlexberyGISLayerMetadataSerializerMixin", "classes/NewPlatformFlexberyGISMapLayerModelMixin", "classes/NewPlatformFlexberyGISMapLayerSerializerMixin", "classes/NewPlatformFlexberyGISMapModelMixin", "classes/NewPlatformFlexberyGISMapSerializerMixin", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewRowComponent", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.DexieService", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/Proj4Crs", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDBAdapter", "classes/Query.JsAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.QueryObject", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/RectangleMapTool", "classes/ReloadListMixin", "classes/RequiredActionsMixin", "classes/Resolver", "classes/ScaleControlComponent", "classes/SearchAttributesMapCommand", "classes/SearchClearMapCommand", "classes/SearchMapCommand", "classes/SearchMapCommandComponent", "classes/SearchShowMapCommand", "classes/Security", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.OData", "classes/Serializer.Offline", "classes/SimpleCrs", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/SpaceBookmarkCommandComponent", "classes/TileLayer", "classes/TileLayerComponent", "classes/TileLayerSettingsComponent", "classes/TreeNodeObject", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/Utils.Layers", "classes/ValidationDataObject", "classes/WfsLayer", "classes/WfsLayerComponent", "classes/WfsLayerSettingsComponent", "classes/WfsLegendComponent", "classes/WFSSearchSettingsComponent", "classes/WmsLayer", "classes/WMSLayerComponent", "classes/WmsLayerSettingsComponent", "classes/WmsLegendComponent", "classes/WmsSingleTileLayer", "classes/WMSSingleTileLayerComponent", "classes/WmsSingleTileLayerSettingsComponent", "classes/WmsWfsLayer", "classes/WmsWfsLayerComponent", "classes/WmsWfsLegendComponent", "classes/ZoomInMapTool", "classes/ZoomInMapToolComponent", "classes/ZoomOutMaptool", "classes/ZoomOutMapToolComponent", "classes/ZoomsliderControlComponent", "modules/ember-flexberry", "modules/ember-flexberry-data", "modules/ember-flexberry-gis"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Adapter", "classes/Adapter.OData", "classes/Adapter.Offline", "classes/ApplicationInitializer", "classes/ApplicationInstance", "classes/ApplicationInstanceInitializer", "classes/ArrayContainsHelper", "classes/ArrayHelper", "classes/Audit", "classes/BaseControlComponent", "classes/BaseLayer", "classes/BaseLayerComponent", "classes/BaseLegendComponent", "classes/BaseMapCommand", "classes/BaseMapCommandComponent", "classes/BaseMapTool", "classes/BaseMapToolComponent", "classes/BaseNonclickableMapTool", "classes/ColsconfigDialogContentComponent", "classes/ColsConfigMenuService", "classes/DecimalTransform", "classes/DetailEditFormController", "classes/DetailInterationService", "classes/DeviceService", "classes/DivControlComponent", "classes/DomActionsMixin", "classes/DragMapTool", "classes/DragMapToolComponent", "classes/DrawCircleMapTool", "classes/DrawClearMapTool", "classes/DrawMapTool", "classes/DrawMapToolComponent", "classes/DrawMarkerMapTool", "classes/DrawPolygonMapTool", "classes/DrawPolylineMapTool", "classes/DrawRectangleMapTool", "classes/DynamicActionObject", "classes/DynamicActionsMixin", "classes/DynamicPropertiesMixin", "classes/EarthCrs", "classes/EditFormController", "classes/EditFormNewRoute", "classes/EditFormRoute", "classes/EditMapController", "classes/EditMapNewRoute", "classes/EnumCaptionHelper", "classes/Epsg3395Crs", "classes/Epsg3857Crs", "classes/Epsg4326Crs", "classes/ErrorableControllerMixin", "classes/ExportDownloadMapCommand", "classes/ExportMapCommand", "classes/ExportMapCommandComponent", "classes/ExportPrintMapCommand", "classes/FeatureResultItemComponent", "classes/FileTransform", "classes/FlexberryAddLayerDialogComponent", "classes/FlexberryBaseComponent", "classes/FlexberryButtonComponent", "classes/FlexberryCheckboxComponent", "classes/FlexberryColorpickerComponent", "classes/FlexberryCswComponent", "classes/FlexberryDatePicker", "classes/FlexberryDdauCheckboxActionsHandlerMixin", "classes/FlexberryDdauCheckboxComponent", "classes/FlexberryDdauSliderActionsHandlerMixin", "classes/FlexberryDdauSliderComponent", "classes/FlexberryDialogComponent", "classes/FlexberryDropDown", "classes/FlexberryEditLayerDialogComponent", "classes/FlexberryEnumTransform", "classes/FlexberryExportMapCommandDialogComponent", "classes/FlexberryField", "classes/FlexberryFileCompatibleComponentMixin", "classes/FlexberryFileComponent", "classes/FlexberryFileControllerMixin", "classes/FlexberryFileViewDialogController", "classes/FlexberryGoToMapCommandDialogComponent", "classes/FlexberryGroupeditComponent", "classes/FlexberryGroupeditRouteMixin", "classes/FlexberryIconComponent", "classes/FlexberryIdentifyPanelComponent", "classes/FlexberryJsonareaComponent", "classes/FlexberryLayersComponent", "classes/FlexberryLayersDropdownComponent", "classes/FlexberryLayerslegendsComponent", "classes/FlexberryLookup", "classes/FlexberryLookupCompatibleComponent", "classes/FlexberryLookupMixin", "classes/FlexberryMapActionsHandlerMixin", "classes/FlexberryMapComponent", "classes/FlexberryMaplayerActionsHandlerMixin", "classes/FlexberryMaplayerComponent", "classes/FlexberryMaplayersComponent", "classes/FlexberryMaptoolbarComponent", "classes/FlexberryMaptoolbarComponet", "classes/FlexberryMenu", "classes/FlexberryMenuitem", "classes/FlexberryObjectlistview", "classes/FlexberryObjectlistviewHierarchicalControllerMixin", "classes/FlexberryObjectlistviewHierarchicalRouteMixin", "classes/FlexberryObjectlistviewOnEditFormControllerMixin", "classes/FlexberryObjectlistviewRouteMixin", "classes/FlexberryRemoveLayerDialogComponent", "classes/FlexberrySearchComponent", "classes/FlexberrySearchMapCommandDialogComponent", "classes/FlexberrySimpledatetime", "classes/FlexberryTabBarComponent", "classes/FlexberryTextarea", "classes/FlexberryTextbox", "classes/FlexberryToggler", "classes/FlexberryTreeComponent", "classes/FlexberryTreenodeActionsHandlerMixin", "classes/FlexberryTreenodeComponent", "classes/FlexberryValidationmessage", "classes/FlexberryValidationsummary", "classes/FormLoadTimeTrackerComponent", "classes/FormLoadTimeTrackerService", "classes/FullExtentMapCommand", "classes/FullExtentMapCommandComponent", "classes/GeocoderBaseLayerComponent", "classes/GeocoderOsmOverpassLayerComponent", "classes/GeocoderOsmOverpassLayerSettingsComponent", "classes/GeocoderOsmRuLayer", "classes/GeocoderOsmRuLayerComponent", "classes/GeocoderOsmRuLayerSettingsComponent", "classes/GeocoderOsmRuSearchSettingsComponent", "classes/GetWithDynamicActionsHelper", "classes/GoToMapCommand", "classes/GoToMapCommandComponent", "classes/GroupEditToolbarComponent", "classes/GroupLayer", "classes/GroupLayerComponent", "classes/GroupLayerSettingsComponent", "classes/GuidTransform", "classes/HistoryControlComponent", "classes/IdentifyAllMixin", "classes/IdentifyAllPolygonMapTool", "classes/IdentifyAllRectangleMapTool", "classes/IdentifyAllVisiblePolygonMapTool", "classes/IdentifyAllVisibleRectangleMapTool", "classes/IdentifyMapTool", "classes/IdentifyMapToolComponent", "classes/IdentifyTopMixin", "classes/IdentifyTopVisiblePolygonMapTool", "classes/IdentifyTopVisibleRectangleMapTool", "classes/IdentifyVisibleMixin", "classes/IISCaseberryLoggingObjectsApplicationLogEController", "classes/IISCaseberryLoggingObjectsApplicationLogERoute", "classes/IISCaseberryLoggingObjectsApplicationLogLController", "classes/IISCaseberryLoggingObjectsApplicationLogLRoute", "classes/IISCaseberryLoggingObjectsApplicationLogModel", "classes/IISCaseberryLoggingObjectsApplicationLogSerializer", "classes/LayerResultListComponent", "classes/LeafletCrsMixin", "classes/LeafletEventsMixin", "classes/LeafletOptionsMixin", "classes/LeafletPropertiesMixin", "classes/LegendControlComponent", "classes/LimitedController", "classes/LimitedRouteMixin", "classes/ListFormController", "classes/ListFormRoute", "classes/ListMapController", "classes/ListMapRoute", "classes/LockRouteMixin", "classes/LogService", "classes/LookupDialogController", "classes/LookupEvents", "classes/MapRoute", "classes/MapRouteCswLoaderMixin", "classes/MeasureAreaMapTool", "classes/MeasureClearMapTool", "classes/MeasureCoordinatesMapTool", "classes/MeasureDistanceMapTool", "classes/MeasureMapTool", "classes/MeasureMapToolComponent", "classes/MeasureRadiusMapTool", "classes/MiniMapComponent", "classes/Mobile.FlexberryFileComponent", "classes/Mobile.FlexberryGroupeditComponent", "classes/Mobile.FlexberryObjectlistview", "classes/Mobile.ObjectListViewComponent", "classes/Mobile.ObjectListViewRowComponent", "classes/ModalApplicationRoute", "classes/ModalDialog", "classes/NewPlatformFlexberryFlexberryUserSettingModel", "classes/NewPlatformFlexberryFlexberryUserSettingSerializer", "classes/NewPlatformFlexberryGISCswConnectionModel", "classes/NewPlatformFlexberryGISCswConnectionSerializer", "classes/NewPlatformFlexberryGISLayerMetadata", "classes/NewPlatformFlexberryGISMap", "classes/NewPlatformFlexberryGISMapLayer", "classes/NewPlatformFlexberryServicesLockAdapter", "classes/NewPlatformFlexberryServicesLockListController", "classes/NewPlatformFlexberryServicesLockListRoute", "classes/NewPlatformFlexberryServicesLockModel", "classes/NewPlatformFlexberryServicesLockSerializer", "classes/NewPlatformFlexberyGISCswConnectionModelMixin", "classes/NewPlatformFlexberyGISCswConnectionSerializerMixin", "classes/NewPlatformFlexberyGISLayerMetadataModelMixin", "classes/NewPlatformFlexberyGISLayerMetadataSerializerMixin", "classes/NewPlatformFlexberyGISMapLayerModelMixin", "classes/NewPlatformFlexberyGISMapLayerSerializerMixin", "classes/NewPlatformFlexberyGISMapModelMixin", "classes/NewPlatformFlexberyGISMapSerializerMixin", "classes/ObjectListViewCell", "classes/ObjectListViewComponent", "classes/ObjectlistviewEvents", "classes/ObjectListViewRowComponent", "classes/ObjectListViewSingleColumnCellComponent", "classes/Offline", "classes/Offline.DexieService", "classes/Offline.GlobalsService", "classes/Offline.LocalStore", "classes/Offline.Model", "classes/Offline.ModelMixin", "classes/Offline.Store", "classes/Offline.Syncer", "classes/OlvToolbar", "classes/PaginatedController", "classes/PolygonIdentifyMapTool", "classes/Proj4Crs", "classes/ProjectedModelForm", "classes/Projection", "classes/Projection.AdapterMixin", "classes/Projection.Model", "classes/Projection.StoreMixin", "classes/Query", "classes/Query.BaseAdapter", "classes/Query.BaseBuilder", "classes/Query.BasePredicate", "classes/Query.Builder", "classes/Query.ComplexPredicate", "classes/Query.Condition", "classes/Query.DetailPredicate", "classes/Query.FilterOperator", "classes/Query.IndexedDBAdapter", "classes/Query.JsAdapter", "classes/Query.ODataAdapter", "classes/Query.OrderByClause", "classes/Query.QueryObject", "classes/Query.SimplePredicate", "classes/Query.StringPredicate", "classes/ReadonlyCellHelper", "classes/RectangleIdentifyMapTool", "classes/RectangleMapTool", "classes/RegexTestHelper", "classes/ReloadListMixin", "classes/RequiredActionsMixin", "classes/Resolver", "classes/ScaleControlComponent", "classes/SearchAttributesMapCommand", "classes/SearchClearMapCommand", "classes/SearchMapCommand", "classes/SearchMapCommandComponent", "classes/SearchShowMapCommand", "classes/Security", "classes/Serializer", "classes/Serializer.Base", "classes/Serializer.OData", "classes/Serializer.Offline", "classes/SimpleCrs", "classes/SortableColumn", "classes/SortableControllerMixin", "classes/SortableRoute", "classes/SpaceBookmarkCommandComponent", "classes/SwitchScaleControlComponent", "classes/TileLayer", "classes/TileLayerComponent", "classes/TileLayerSettingsComponent", "classes/TreeNodeObject", "classes/UIMessage", "classes/UserSettingsService", "classes/Utils", "classes/Utils.Information", "classes/Utils.Layers", "classes/ValidationDataObject", "classes/WfsLayer", "classes/WfsLayerComponent", "classes/WfsLayerSettingsComponent", "classes/WfsLegendComponent", "classes/WFSSearchSettingsComponent", "classes/WmsLayer", "classes/WMSLayerComponent", "classes/WmsLayerSettingsComponent", "classes/WmsLegendComponent", "classes/WmsSingleTileLayer", "classes/WMSSingleTileLayerComponent", "classes/WmsSingleTileLayerSettingsComponent", "classes/WmsWfsLayer", "classes/WmsWfsLayerComponent", "classes/WmsWfsLegendComponent", "classes/ZoomInMapTool", "classes/ZoomInMapToolComponent", "classes/ZoomOutMaptool", "classes/ZoomOutMapToolComponent", "classes/ZoomsliderControlComponent", "modules/ember-flexberry", "modules/ember-flexberry-data", "modules/ember-flexberry-gis"]'>
         </form>
     </div>
 </div>
@@ -65,6 +65,7 @@
 	                            <li><a href="../classes/BaseMapCommandComponent.html">BaseMapCommandComponent</a></li>
 	                            <li><a href="../classes/BaseMapTool.html">BaseMapTool</a></li>
 	                            <li><a href="../classes/BaseMapToolComponent.html">BaseMapToolComponent</a></li>
+	                            <li><a href="../classes/BaseNonclickableMapTool.html">BaseNonclickableMapTool</a></li>
 	                            <li><a href="../classes/ColsconfigDialogContentComponent.html">ColsconfigDialogContentComponent</a></li>
 	                            <li><a href="../classes/ColsConfigMenuService.html">ColsConfigMenuService</a></li>
 	                            <li><a href="../classes/DecimalTransform.html">DecimalTransform</a></li>
@@ -107,10 +108,13 @@
 	                            <li><a href="../classes/FlexberryBaseComponent.html">FlexberryBaseComponent</a></li>
 	                            <li><a href="../classes/FlexberryButtonComponent.html">FlexberryButtonComponent</a></li>
 	                            <li><a href="../classes/FlexberryCheckboxComponent.html">FlexberryCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryColorpickerComponent.html">FlexberryColorpickerComponent</a></li>
 	                            <li><a href="../classes/FlexberryCswComponent.html">FlexberryCswComponent</a></li>
 	                            <li><a href="../classes/FlexberryDatePicker.html">FlexberryDatePicker</a></li>
 	                            <li><a href="../classes/FlexberryDdauCheckboxActionsHandlerMixin.html">FlexberryDdauCheckboxActionsHandlerMixin</a></li>
 	                            <li><a href="../classes/FlexberryDdauCheckboxComponent.html">FlexberryDdauCheckboxComponent</a></li>
+	                            <li><a href="../classes/FlexberryDdauSliderActionsHandlerMixin.html">FlexberryDdauSliderActionsHandlerMixin</a></li>
+	                            <li><a href="../classes/FlexberryDdauSliderComponent.html">FlexberryDdauSliderComponent</a></li>
 	                            <li><a href="../classes/FlexberryDialogComponent.html">FlexberryDialogComponent</a></li>
 	                            <li><a href="../classes/FlexberryDropDown.html">FlexberryDropDown</a></li>
 	                            <li><a href="../classes/FlexberryEditLayerDialogComponent.html">FlexberryEditLayerDialogComponent</a></li>
@@ -125,9 +129,11 @@
 	                            <li><a href="../classes/FlexberryGroupeditComponent.html">FlexberryGroupeditComponent</a></li>
 	                            <li><a href="../classes/FlexberryGroupeditRouteMixin.html">FlexberryGroupeditRouteMixin</a></li>
 	                            <li><a href="../classes/FlexberryIconComponent.html">FlexberryIconComponent</a></li>
+	                            <li><a href="../classes/FlexberryIdentifyPanelComponent.html">FlexberryIdentifyPanelComponent</a></li>
 	                            <li><a href="../classes/FlexberryJsonareaComponent.html">FlexberryJsonareaComponent</a></li>
 	                            <li><a href="../classes/FlexberryLayersComponent.html">FlexberryLayersComponent</a></li>
 	                            <li><a href="../classes/FlexberryLayersDropdownComponent.html">FlexberryLayersDropdownComponent</a></li>
+	                            <li><a href="../classes/FlexberryLayerslegendsComponent.html">FlexberryLayerslegendsComponent</a></li>
 	                            <li><a href="../classes/FlexberryLookup.html">FlexberryLookup</a></li>
 	                            <li><a href="../classes/FlexberryLookupCompatibleComponent.html">FlexberryLookupCompatibleComponent</a></li>
 	                            <li><a href="../classes/FlexberryLookupMixin.html">FlexberryLookupMixin</a></li>
@@ -178,11 +184,17 @@
 	                            <li><a href="../classes/GroupLayerSettingsComponent.html">GroupLayerSettingsComponent</a></li>
 	                            <li><a href="../classes/GuidTransform.html">GuidTransform</a></li>
 	                            <li><a href="../classes/HistoryControlComponent.html">HistoryControlComponent</a></li>
-	                            <li><a href="../classes/IdentifyAllMapTool.html">IdentifyAllMapTool</a></li>
-	                            <li><a href="../classes/IdentifyAllVisibleMapTool.html">IdentifyAllVisibleMapTool</a></li>
+	                            <li><a href="../classes/IdentifyAllMixin.html">IdentifyAllMixin</a></li>
+	                            <li><a href="../classes/IdentifyAllPolygonMapTool.html">IdentifyAllPolygonMapTool</a></li>
+	                            <li><a href="../classes/IdentifyAllRectangleMapTool.html">IdentifyAllRectangleMapTool</a></li>
+	                            <li><a href="../classes/IdentifyAllVisiblePolygonMapTool.html">IdentifyAllVisiblePolygonMapTool</a></li>
+	                            <li><a href="../classes/IdentifyAllVisibleRectangleMapTool.html">IdentifyAllVisibleRectangleMapTool</a></li>
 	                            <li><a href="../classes/IdentifyMapTool.html">IdentifyMapTool</a></li>
 	                            <li><a href="../classes/IdentifyMapToolComponent.html">IdentifyMapToolComponent</a></li>
-	                            <li><a href="../classes/IdentifyTopVisibleMapTool.html">IdentifyTopVisibleMapTool</a></li>
+	                            <li><a href="../classes/IdentifyTopMixin.html">IdentifyTopMixin</a></li>
+	                            <li><a href="../classes/IdentifyTopVisiblePolygonMapTool.html">IdentifyTopVisiblePolygonMapTool</a></li>
+	                            <li><a href="../classes/IdentifyTopVisibleRectangleMapTool.html">IdentifyTopVisibleRectangleMapTool</a></li>
+	                            <li><a href="../classes/IdentifyVisibleMixin.html">IdentifyVisibleMixin</a></li>
 	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogEController.html">IISCaseberryLoggingObjectsApplicationLogEController</a></li>
 	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogERoute.html">IISCaseberryLoggingObjectsApplicationLogERoute</a></li>
 	                            <li><a href="../classes/IISCaseberryLoggingObjectsApplicationLogLController.html">IISCaseberryLoggingObjectsApplicationLogLController</a></li>
@@ -194,6 +206,7 @@
 	                            <li><a href="../classes/LeafletEventsMixin.html">LeafletEventsMixin</a></li>
 	                            <li><a href="../classes/LeafletOptionsMixin.html">LeafletOptionsMixin</a></li>
 	                            <li><a href="../classes/LeafletPropertiesMixin.html">LeafletPropertiesMixin</a></li>
+	                            <li><a href="../classes/LegendControlComponent.html">LegendControlComponent</a></li>
 	                            <li><a href="../classes/LimitedController.html">LimitedController</a></li>
 	                            <li><a href="../classes/LimitedRouteMixin.html">LimitedRouteMixin</a></li>
 	                            <li><a href="../classes/ListFormController.html">ListFormController</a></li>
@@ -255,6 +268,7 @@
 	                            <li><a href="../classes/Offline.Syncer.html">Offline.Syncer</a></li>
 	                            <li><a href="../classes/OlvToolbar.html">OlvToolbar</a></li>
 	                            <li><a href="../classes/PaginatedController.html">PaginatedController</a></li>
+	                            <li><a href="../classes/PolygonIdentifyMapTool.html">PolygonIdentifyMapTool</a></li>
 	                            <li><a href="../classes/Proj4Crs.html">Proj4Crs</a></li>
 	                            <li><a href="../classes/ProjectedModelForm.html">ProjectedModelForm</a></li>
 	                            <li><a href="../classes/Projection.html">Projection</a></li>
@@ -277,7 +291,10 @@
 	                            <li><a href="../classes/Query.QueryObject.html">Query.QueryObject</a></li>
 	                            <li><a href="../classes/Query.SimplePredicate.html">Query.SimplePredicate</a></li>
 	                            <li><a href="../classes/Query.StringPredicate.html">Query.StringPredicate</a></li>
+	                            <li><a href="../classes/ReadonlyCellHelper.html">ReadonlyCellHelper</a></li>
+	                            <li><a href="../classes/RectangleIdentifyMapTool.html">RectangleIdentifyMapTool</a></li>
 	                            <li><a href="../classes/RectangleMapTool.html">RectangleMapTool</a></li>
+	                            <li><a href="../classes/RegexTestHelper.html">RegexTestHelper</a></li>
 	                            <li><a href="../classes/ReloadListMixin.html">ReloadListMixin</a></li>
 	                            <li><a href="../classes/RequiredActionsMixin.html">RequiredActionsMixin</a></li>
 	                            <li><a href="../classes/Resolver.html">Resolver</a></li>
@@ -297,6 +314,7 @@
 	                            <li><a href="../classes/SortableControllerMixin.html">SortableControllerMixin</a></li>
 	                            <li><a href="../classes/SortableRoute.html">SortableRoute</a></li>
 	                            <li><a href="../classes/SpaceBookmarkCommandComponent.html">SpaceBookmarkCommandComponent</a></li>
+	                            <li><a href="../classes/SwitchScaleControlComponent.html">SwitchScaleControlComponent</a></li>
 	                            <li><a href="../classes/TileLayer.html">TileLayer</a></li>
 	                            <li><a href="../classes/TileLayerComponent.html">TileLayerComponent</a></li>
 	                            <li><a href="../classes/TileLayerSettingsComponent.html">TileLayerSettingsComponent</a></li>
@@ -369,65 +387,152 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-gis/addon/map-tools/identify-all-visible.js <small>File</small></h1>
+    <h1>ember-flexberry-data/addon/utils/string-functions.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 /**
-  @module ember-flexberry-gis
+  @module ember-flexberry-data
 */
 
-import Ember from &#x27;ember&#x27;;
-import IdentifyMapTool from &#x27;./identify&#x27;;
+const STRING_DASHERIZE_REGEXP = (/[ _]/g);
+
+const STRING_CAMELIZE_REGEXP_1 = (/(\-|\_|\.|\s)+(.)?/g);
+const STRING_CAMELIZE_REGEXP_2 = (/(^|\/)([A-ZА-ЯЁ])/g);
+
+const STRING_CLASSIFY_REGEXP_1 = (/^(\-|_)+(.)?/);
+const STRING_CLASSIFY_REGEXP_2 = (/(.)(\-|\_|\.|\s)+(.)?/g);
+const STRING_CLASSIFY_REGEXP_3 = (/(^|\/|\.)([a-zа-яё])/g);
+
+const STRING_UNDERSCORE_REGEXP_1 = (/([a-zа-яё\d])([A-ZА-ЯЁ]+)/g);
+const STRING_UNDERSCORE_REGEXP_2 = (/\-|\s+/g);
+
+const STRING_CAPITALIZE_REGEXP = (/(^|\/)([a-zа-яё])/g);
+
+const STRING_DECAMELIZE_REGEXP = (/([a-zа-яё\d])([A-ZА-ЯЁ])/g);
 
 /**
-  Identify map-tool that identifies all visible map layers.
-
-  @class IdentifyAllVisibleMapTool
-  @extends IdentifyMapTool
+  Converts a camelized string into all lower case separated by underscores.
+  &#x60;&#x60;&#x60;javascript
+  &#x27;innerHTML&#x27;.decamelize();           // &#x27;inner_html&#x27;
+  &#x27;action_name&#x27;.decamelize();        // &#x27;action_name&#x27;
+  &#x27;css-class-name&#x27;.decamelize();     // &#x27;css-class-name&#x27;
+  &#x27;my favorite items&#x27;.decamelize();  // &#x27;my favorite items&#x27;
+  &#x60;&#x60;&#x60;
+  @method decamelize
+  @param {String} str The string to decamelize.
+  @return {String} the decamelized string.
 */
-export default IdentifyMapTool.extend({
-  /**
-    Returns flat array of layers satisfying to current identification mode.
+function decamelize(str) {
+  return str.replace(STRING_DECAMELIZE_REGEXP, &#x27;$1_$2&#x27;).toLowerCase();
+}
 
-    @method _getLayersToIdentify
-    @param {Object} options Method options.
-    @param {Object[]} options.excludedLayers Layers that must be excluded from identification.
-    @returns {Object[]} Flat array of layers satisfying to current identification mode.
-    @private
-  */
-  _getLayersToIdentify({ excludedLayers }) {
-    excludedLayers = Ember.A(excludedLayers || []);
+/**
+  Replaces underscores, spaces, or camelCase with dashes.
+  &#x60;&#x60;&#x60;javascript
+  &#x27;innerHTML&#x27;.dasherize();          // &#x27;inner-html&#x27;
+  &#x27;action_name&#x27;.dasherize();        // &#x27;action-name&#x27;
+  &#x27;css-class-name&#x27;.dasherize();     // &#x27;css-class-name&#x27;
+  &#x27;my favorite items&#x27;.dasherize();  // &#x27;my-favorite-items&#x27;
+  &#x27;privateDocs/ownerInvoice&#x27;.dasherize(); // &#x27;private-docs/owner-invoice&#x27;
+  &#x60;&#x60;&#x60;
+  @method dasherize
+  @param {String} str The string to dasherize.
+  @return {String} the dasherized string.
+*/
+function dasherize(str) {
+  return decamelize(str).replace(STRING_DASHERIZE_REGEXP, &#x27;-&#x27;);
+}
 
-    let getVisibleLayersToIdentify = (layers) =&gt; {
-      let result = Ember.A();
+/**
+  Returns the lowerCamelCase form of a string.
+  &#x60;&#x60;&#x60;javascript
+  &#x27;innerHTML&#x27;.camelize();          // &#x27;innerHTML&#x27;
+  &#x27;action_name&#x27;.camelize();        // &#x27;actionName&#x27;
+  &#x27;css-class-name&#x27;.camelize();     // &#x27;cssClassName&#x27;
+  &#x27;my favorite items&#x27;.camelize();  // &#x27;myFavoriteItems&#x27;
+  &#x27;My Favorite Items&#x27;.camelize();  // &#x27;myFavoriteItems&#x27;
+  &#x27;private-docs/owner-invoice&#x27;.camelize(); // &#x27;privateDocs/ownerInvoice&#x27;
+  &#x60;&#x60;&#x60;
+  @method camelize
+  @param {String} str The string to camelize.
+  @return {String} the camelized string.
+*/
+function camelize(str) {
+  return str.replace(STRING_CAMELIZE_REGEXP_1, (match, separator, chr) =&gt; chr ? chr.toUpperCase() : &#x27;&#x27;)
+    .replace(STRING_CAMELIZE_REGEXP_2, (match, separator, chr) =&gt; match.toLowerCase());
+}
 
-      if (Ember.isArray(layers)) {
-        layers.forEach((layer) =&gt; {
-          let layerIsVisible = Ember.get(layer, &#x27;visibility&#x27;) === true;
-          if (Ember.get(layer, &#x27;canBeIdentified&#x27;) &amp;&amp; layerIsVisible &amp;&amp; !excludedLayers.contains(layer)) {
-            result.pushObject(layer);
-          }
-
-          // If parent layer is invisible then all child layers are invisible too,
-          // so there is no need to check them.
-          if (!layerIsVisible) {
-            return result;
-          }
-
-          let childLayers = Ember.get(layer, &#x27;layers&#x27;);
-          result.pushObjects(getVisibleLayersToIdentify(childLayers));
-        });
-      }
-
-      return result;
-    };
-
-    let rootLayers = this.get(&#x27;layers&#x27;);
-    return getVisibleLayersToIdentify(rootLayers);
+/**
+  Returns the UpperCamelCase form of a string.
+  &#x60;&#x60;&#x60;javascript
+  &#x27;innerHTML&#x27;.classify();          // &#x27;InnerHTML&#x27;
+  &#x27;action_name&#x27;.classify();        // &#x27;ActionName&#x27;
+  &#x27;css-class-name&#x27;.classify();     // &#x27;CssClassName&#x27;
+  &#x27;my favorite items&#x27;.classify();  // &#x27;MyFavoriteItems&#x27;
+  &#x27;private-docs/owner-invoice&#x27;.classify(); // &#x27;PrivateDocs/OwnerInvoice&#x27;
+  &#x60;&#x60;&#x60;
+  @method classify
+  @param {String} str the string to classify
+  @return {String} the classified string
+*/
+function classify(str) {
+  let replace1 = (match, separator, chr) =&gt; chr ? (&#x60;_${chr.toUpperCase()}&#x60;) : &#x27;&#x27;;
+  let replace2 = (match, initialChar, separator, chr) =&gt; initialChar + (chr ? chr.toUpperCase() : &#x27;&#x27;);
+  let parts = str.split(&#x27;/&#x27;);
+  for (let i = 0; i &lt; parts.length; i++) {
+    parts[i] = parts[i]
+      .replace(STRING_CLASSIFY_REGEXP_1, replace1)
+      .replace(STRING_CLASSIFY_REGEXP_2, replace2);
   }
-});
+
+  return parts.join(&#x27;/&#x27;).replace(STRING_CLASSIFY_REGEXP_3, (match, separator, chr) =&gt; match.toUpperCase());
+}
+
+/**
+  More general than decamelize. Returns the lower\_case\_and\_underscored
+  form of a string.
+  &#x60;&#x60;&#x60;javascript
+  &#x27;innerHTML&#x27;.underscore();          // &#x27;inner_html&#x27;
+  &#x27;action_name&#x27;.underscore();        // &#x27;action_name&#x27;
+  &#x27;css-class-name&#x27;.underscore();     // &#x27;css_class_name&#x27;
+  &#x27;my favorite items&#x27;.underscore();  // &#x27;my_favorite_items&#x27;
+  &#x27;privateDocs/ownerInvoice&#x27;.underscore(); // &#x27;private_docs/owner_invoice&#x27;
+  &#x60;&#x60;&#x60;
+  @method underscore
+  @param {String} str The string to underscore.
+  @return {String} the underscored string.
+*/
+function underscore(str) {
+  return str.replace(STRING_UNDERSCORE_REGEXP_1, &#x27;$1_$2&#x27;).replace(STRING_UNDERSCORE_REGEXP_2, &#x27;_&#x27;).toLowerCase();
+}
+
+/**
+  Returns the Capitalized form of a string
+  &#x60;&#x60;&#x60;javascript
+  &#x27;innerHTML&#x27;.capitalize()         // &#x27;InnerHTML&#x27;
+  &#x27;action_name&#x27;.capitalize()       // &#x27;Action_name&#x27;
+  &#x27;css-class-name&#x27;.capitalize()    // &#x27;Css-class-name&#x27;
+  &#x27;my favorite items&#x27;.capitalize() // &#x27;My favorite items&#x27;
+  &#x27;privateDocs/ownerInvoice&#x27;.capitalize(); // &#x27;PrivateDocs/ownerInvoice&#x27;
+  &#x60;&#x60;&#x60;
+  @method capitalize
+  @param {String} str The string to capitalize.
+  @return {String} The capitalized string.
+*/
+function capitalize(str) {
+  return str.replace(STRING_CAPITALIZE_REGEXP, (match, separator, chr) =&gt; match.toUpperCase());
+}
+
+export {
+  decamelize,
+  dasherize,
+  camelize,
+  classify,
+  underscore,
+  capitalize
+};
 
     </pre>
 </div>

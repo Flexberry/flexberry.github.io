@@ -400,6 +400,7 @@ import { SimplePredicate, ComplexPredicate, StringPredicate, DetailPredicate } f
 import FilterOperator from &#x27;./filter-operator&#x27;;
 import Information from &#x27;../utils/information&#x27;;
 import getSerializedDateValue from &#x27;../utils/get-serialized-date-value&#x27;;
+import { classify } from &#x27;../utils/string-functions&#x27;;
 
 /**
  * Class of query adapter that translates query object into OData URL.
@@ -724,7 +725,7 @@ export default class ODataAdapter extends BaseAdapter {
           Ember.warn(&#x60;Source type is not specified for the enum &#x27;${meta.type}&#x27; (${modelName}.${predicate.attributePath}).&#x60;,
           false,
           { id: &#x27;ember-flexberry-data-debug.odata-adapter.source-type-is-not-specified-for-enum&#x27; });
-          type = Ember.String.classify(meta.type);
+          type = classify(meta.type);
         }
 
         value = &#x60;${type}&#x27;${predicate.value}&#x27;&#x60;;
