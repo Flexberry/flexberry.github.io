@@ -465,7 +465,16 @@ export let defineProjections = function (model) {
         }, { hidden: true }),
         mapObjectSetting: Projection.belongsTo(&#x27;new-platform-flexberry-g-i-s-map-object-setting&#x27;, &#x27;&#x27;, {
 
-        }, { hidden: true })
+        }, { hidden: true }),
+        linkParameter: Projection.hasMany(&#x27;new-platform-flexberry-g-i-s-link-parameter&#x27;, &#x27;&#x27;, {
+          objectField: Projection.attr(&#x27;Поле объекта&#x27;),
+          layerField: Projection.attr(&#x27;Поле слоя&#x27;),
+          expression: Projection.attr(&#x27;Выражение&#x27;),
+          queryKey: Projection.attr(&#x27;Параметр запроса&#x27;),
+          linkField: Projection.attr(&#x27;Поле связи&#x27;)
+        }, {
+          hidden: true
+        })
       })
     })
   });
