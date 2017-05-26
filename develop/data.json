@@ -4932,11 +4932,8 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 91,
+            "line": 89,
             "description": "Flexberry 'export' map-command modal dialog with [Semantic UI modal](http://semantic-ui.com/modules/modal.html) style.",
-            "uses": [
-                "FlexberyMapActionsHandlerMixin"
-            ],
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>"
         },
         "FlexberryGoToMapCommandDialogComponent": {
@@ -17255,7 +17252,18 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 237,
+            "line": 236,
+            "description": "Max timeout (in milliseconds) to wait for map's layers readiness before export.",
+            "itemtype": "property",
+            "name": "timeout",
+            "type": "Number",
+            "default": "30000",
+            "class": "ExportMapCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
+            "line": 246,
             "description": "Handles {{#crossLink \"BaseMapCommandComponent/sendingActions.execute:method\"}}base map-command's 'execute' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onExportDownloadMapCommandExecute",
@@ -17271,7 +17279,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 247,
+            "line": 256,
             "description": "Handles {{#crossLink \"BaseMapCommandComponent/sendingActions.execute:method\"}}base map-command's 'execute' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onExportDownloadMapCommandExecute",
@@ -17287,7 +17295,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 257,
+            "line": 266,
             "description": "Handles export dialog's 'approve' action.\nInvokes own {{#crossLink \"ExportMapCommandComponent/sendingActions.execute:method\"}}'execute' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onExportDialogApprove",
@@ -17303,7 +17311,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 313,
+            "line": 322,
             "description": "Handles export dialog's 'deny' action.",
             "itemtype": "method",
             "name": "actions.onExportDialogDeny",
@@ -17319,7 +17327,23 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 324,
+            "line": 333,
+            "description": "Handles export dialog's 'beforeHide' action.",
+            "itemtype": "method",
+            "name": "actions.onExportDialogBeforeHide",
+            "params": [
+                {
+                    "name": "e",
+                    "description": "Action's event object.",
+                    "type": "Object"
+                }
+            ],
+            "class": "ExportMapCommandComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
+            "line": 344,
             "description": "Handles export dialog's 'hide' action.",
             "itemtype": "method",
             "name": "actions.onExportDialogHide",
@@ -17335,7 +17359,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 337,
+            "line": 357,
             "description": "Shows export dialog.",
             "itemtype": "method",
             "name": "_showExportDialog",
@@ -17362,7 +17386,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 366,
+            "line": 386,
             "description": "Hides export dialog.",
             "itemtype": "method",
             "name": "_hideExportDialog",
@@ -17373,21 +17397,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 377,
+            "line": 397,
             "description": "Destroys DOM-related component's properties & logic.",
             "class": "ExportMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 386,
+            "line": 406,
             "description": "Destroys component.",
             "class": "ExportMapCommandComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands/export.js",
-            "line": 395,
+            "line": 415,
             "description": "Component's action invoking when map-command must be executed.",
             "itemtype": "method",
             "name": "sendingActions.execute",
@@ -18389,35 +18413,35 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 9,
-            "description": "Constant representing dependency between element height and font size in pixels.",
-            "class": "FlexberryExportMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 14,
+            "line": 8,
             "description": "Constants representing default print/eport options.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 34,
-            "description": "Constant representing dialog content's style (see styles/components/map-commands-dialogs/export.scss).",
-            "class": "FlexberryExportMapCommandDialogComponent",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 42,
+            "line": 29,
             "description": "Constant representing sizes (in millimeters) of available paper formats.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 68,
+            "line": 55,
+            "description": "Constant representing default DPI.\nThe most common value used by browsers is 96.",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 61,
+            "description": "Constant representing count of millimeters in one inch.",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 66,
             "description": "Component's CSS-classes names.\nJSON-object containing string constants with CSS-classes names related to component's .hbs markup elements.",
             "itemtype": "property",
             "name": "flexberryClassNames",
@@ -18441,7 +18465,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 99,
+            "line": 96,
             "description": "Sheet of paper placed on dialog's preview block.",
             "itemtype": "property",
             "name": "_$sheetOfPaper",
@@ -18454,7 +18478,20 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 109,
+            "line": 106,
+            "description": "Sheet of paper clone which will be placed on dialog's preview block while export operation is executing.",
+            "itemtype": "property",
+            "name": "_$sheetOfPaperClone",
+            "type": "<a href=\"http://learn.jquery.com/using-jquery-core/jquery-object/\">jQuery-object</a>",
+            "default": "null",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 116,
             "description": "Tabular menu tabs items placed on dialog's settings block.",
             "itemtype": "property",
             "name": "_$tabularMenuTabItems",
@@ -18467,7 +18504,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 119,
+            "line": 126,
             "description": "Tabular menu tabs placed on dialog's settings block.",
             "itemtype": "property",
             "name": "_$tabularMenuTabs",
@@ -18480,7 +18517,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 129,
+            "line": 136,
             "description": "Tabular menu clicked tab.",
             "itemtype": "property",
             "name": "_tabularMenuClickedTab",
@@ -18493,7 +18530,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 139,
+            "line": 146,
             "description": "Tabular menu active tab.",
             "itemtype": "property",
             "name": "_activeSettingsTab",
@@ -18506,7 +18543,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 156,
+            "line": 163,
             "description": "Available font families.",
             "itemtype": "property",
             "name": "_availableFontFamilies",
@@ -18519,7 +18556,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 166,
+            "line": 173,
             "description": "Available font sizes.",
             "itemtype": "property",
             "name": "_availableFontSizes",
@@ -18532,7 +18569,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 176,
+            "line": 183,
             "description": "Available paper formats.",
             "itemtype": "property",
             "name": "_availablePaperFormats",
@@ -18545,7 +18582,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 186,
+            "line": 193,
             "description": "Available file types.",
             "itemtype": "property",
             "name": "_availableFileTypes",
@@ -18558,7 +18595,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 196,
+            "line": 203,
             "description": "Hash containing export options.",
             "itemtype": "property",
             "name": "_options",
@@ -18571,10 +18608,50 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 206,
-            "description": "Map caption height related to user-defined font settings.",
+            "line": 213,
+            "description": "Current screen approximate DPI.\nWill be computed in component's 'didInsertElement' hook.",
             "itemtype": "property",
-            "name": "_mapCaptionHeight",
+            "name": "_dpi",
+            "type": "Number",
+            "default": "96",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 225,
+            "description": "Sheet of paper real height.",
+            "itemtype": "property",
+            "name": "_sheetOfPaperRealHeight",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 247,
+            "description": "Sheet of paper real width.",
+            "itemtype": "property",
+            "name": "_sheetOfPaperRealWidth",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 269,
+            "description": "Sheet of paper real style.",
+            "itemtype": "property",
+            "name": "_sheetOfPaperRealStyle",
             "type": "String",
             "access": "private",
             "tagname": "",
@@ -18584,11 +18661,11 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 218,
-            "description": "Map caption style related to user-defined font settings.",
+            "line": 288,
+            "description": "Sheet of paper preview height.\nInitializes in 'didInsertElement' hook.",
             "itemtype": "property",
-            "name": "_mapCaptionStyle",
-            "type": "String",
+            "name": "_sheetOfPaperPreviewHeight",
+            "type": "Number",
             "access": "private",
             "tagname": "",
             "readonly": "",
@@ -18597,11 +18674,11 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 244,
-            "description": "Map style related to user-defined font settings.",
+            "line": 299,
+            "description": "Fixed difference between map height and sheet of paper height.\nInitializes in 'didInsertElement' hook.",
             "itemtype": "property",
-            "name": "_mapStyle",
-            "type": "String",
+            "name": "_mapHeightDelta",
+            "type": "Number",
             "access": "private",
             "tagname": "",
             "readonly": "",
@@ -18610,10 +18687,36 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 268,
+            "line": 310,
+            "description": "Sheet of paper preview scale factor.",
+            "itemtype": "property",
+            "name": "_sheetOfPaperPreviewScaleFactor",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 331,
+            "description": "Sheet of paper preview width.",
+            "itemtype": "property",
+            "name": "_sheetOfPaperPreviewWidth",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 352,
             "description": "Style related to user-defined sheet of paper settings.",
             "itemtype": "property",
-            "name": "_sheetOfPaperSyle",
+            "name": "_sheetOfPaperPreviewStyle",
             "type": "String",
             "access": "private",
             "tagname": "",
@@ -18623,7 +18726,135 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 304,
+            "line": 374,
+            "description": "Map caption real height.",
+            "itemtype": "property",
+            "name": "_mapCaptionRealHeight",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 390,
+            "description": "Map caption real style.",
+            "itemtype": "property",
+            "name": "_mapCaptionRealStyle",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 420,
+            "description": "Map caption preview height.",
+            "itemtype": "property",
+            "name": "_mapCaptionPreviewHeight",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 441,
+            "description": "Map caption preview font size.",
+            "itemtype": "property",
+            "name": "_mapCaptionPreviewFontSize",
+            "type": "Number",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 462,
+            "description": "Map caption preview style.",
+            "itemtype": "property",
+            "name": "_mapCaptionPreviewStyle",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 498,
+            "description": "Map real style.",
+            "itemtype": "property",
+            "name": "_mapRealStyle",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 520,
+            "description": "Map preview style.",
+            "itemtype": "property",
+            "name": "_mapPreviewStyle",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 553,
+            "description": "Flag: indicates whether file name has been changed by user or not.",
+            "itemtype": "property",
+            "name": "_fileNameHasBeenChanged",
+            "type": "Boolean",
+            "default": "false",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 563,
+            "description": "File name which will be applied to exported file.",
+            "itemtype": "property",
+            "name": "_fileName",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 581,
+            "description": "Map caption.",
+            "itemtype": "property",
+            "name": "_caption",
+            "type": "String",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 602,
             "description": "Flag: indicates whether print/export dialog is already rendered.",
             "itemtype": "property",
             "name": "_isDialogAlreadyRendered",
@@ -18636,11 +18867,11 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 314,
-            "description": "Preview leaflet map.",
+            "line": 612,
+            "description": "Flag: indicates whether print/export dialog is shown.",
             "itemtype": "property",
-            "name": "_previewLeafletMap",
-            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#map\">L.Map</a>",
+            "name": "_isDialogShown",
+            "type": "Boolean",
             "default": "null",
             "access": "private",
             "tagname": "",
@@ -18649,7 +18880,45 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 324,
+            "line": 622,
+            "description": "Flag: indicates whether map can be shown or not.",
+            "itemtype": "property",
+            "name": "_mapCanBeShown",
+            "type": "Boolean",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 632,
+            "description": "Leaflet map's initial bounds which must be restored after dialog will be closed.",
+            "itemtype": "property",
+            "name": "_leafletMapInitialBounds",
+            "type": "<a href=\"http://leafletjs.com/reference-1.0.1.html#latlngbounds\">L.LatLngBounds</a>",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 641,
+            "description": "Leaflet map container's clone.",
+            "itemtype": "property",
+            "name": "_$leafletMapClone",
+            "type": "<a href=\"http://learn.jquery.com/using-jquery-core/jquery-object/\">jQuery-object</a>",
+            "default": "null",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 651,
             "description": "Main leaflet map.",
             "itemtype": "property",
             "name": "leafletMap",
@@ -18660,7 +18929,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 333,
+            "line": 660,
             "description": "Map layers hierarchy.",
             "itemtype": "property",
             "name": "layers",
@@ -18671,21 +18940,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 342,
+            "line": 669,
             "description": "Reference to component's template.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 347,
+            "line": 674,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 353,
+            "line": 680,
             "description": "Component's additional CSS-class names.",
             "itemtype": "property",
             "name": "class",
@@ -18696,7 +18965,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 362,
+            "line": 689,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nis empty to disable component's wrapping <div>.",
             "itemtype": "property",
             "name": "tagName",
@@ -18707,7 +18976,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 372,
+            "line": 699,
             "description": "Flag: indicates whether dialog is visible or not.\nIf true, then dialog will be shown, otherwise dialog will be closed.",
             "itemtype": "property",
             "name": "visible",
@@ -18718,7 +18987,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 382,
+            "line": 709,
             "description": "Flag: indicates whether export dialog is busy or not.",
             "type": "Boolean",
             "default": "false",
@@ -18730,7 +18999,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 392,
+            "line": 719,
             "description": "Flag: indicates whether to show downloading file settings or not.",
             "itemtype": "property",
             "name": "showDownloadingFileSettings",
@@ -18741,7 +19010,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 401,
+            "line": 728,
             "description": "Flag: indicates whether to show error message or not.",
             "itemtype": "property",
             "name": "showErrorMessage",
@@ -18752,7 +19021,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 410,
+            "line": 737,
             "description": "Error message.",
             "itemtype": "property",
             "name": "errorMessage",
@@ -18763,7 +19032,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 419,
+            "line": 746,
             "description": "Map caption that will be displayed on print/export preview by default.",
             "itemtype": "property",
             "name": "defaultMapCaption",
@@ -18774,7 +19043,18 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 429,
+            "line": 755,
+            "description": "Max timeout (in milliseconds) to wait for map's layers readiness before export.",
+            "itemtype": "property",
+            "name": "timeout",
+            "type": "Number",
+            "default": "30000",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 765,
             "description": "Handler for settings tabs 'click' action.",
             "itemtype": "method",
             "name": "actions.onSettingsTabClick",
@@ -18790,7 +19070,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 448,
+            "line": 784,
             "description": "Handler for bold font button's 'click' action.",
             "itemtype": "method",
             "name": "actions.onBoldFontButtonClick",
@@ -18799,7 +19079,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 458,
+            "line": 794,
             "description": "Handler for italic font button's 'click' action.",
             "itemtype": "method",
             "name": "actions.onItalicFontButtonClick",
@@ -18808,7 +19088,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 468,
+            "line": 804,
             "description": "Handler for underline font button's 'click' action.",
             "itemtype": "method",
             "name": "actions.onUnderlineFontButtonClick",
@@ -18817,7 +19097,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 478,
+            "line": 814,
             "description": "Handler for line-through font button's 'click' action.",
             "itemtype": "method",
             "name": "actions.onLinethroughFontButtonClick",
@@ -18826,7 +19106,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 488,
+            "line": 824,
             "description": "Handler for font colorpicker's 'change' action.",
             "itemtype": "method",
             "name": "actions.onCaptionFontColorChange",
@@ -18835,7 +19115,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 497,
+            "line": 833,
             "description": "Handler for display mode change.",
             "itemtype": "method",
             "name": "actions.onDisplayModeChange",
@@ -18851,7 +19131,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 507,
+            "line": 843,
             "description": "Handler for paper orientation change.",
             "itemtype": "method",
             "name": "actions.onPaperOrientationChange",
@@ -18867,7 +19147,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 517,
+            "line": 853,
             "description": "Handler for map control change.",
             "itemtype": "method",
             "name": "actions.onMapControlChange",
@@ -18883,7 +19163,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 528,
+            "line": 864,
             "description": "Handler for error 'ui-message' component 'onShow' action.",
             "itemtype": "method",
             "name": "actions.onErrorMessageShow",
@@ -18892,7 +19172,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 536,
+            "line": 872,
             "description": "Handler for error 'ui-message' component 'onHide' action.",
             "itemtype": "method",
             "name": "actions.onErrorMessageHide",
@@ -18901,7 +19181,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 545,
+            "line": 881,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.approve:method\"}}'flexberry-dialog' component's 'approve' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.approve:method\"}}'approve' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onApprove",
@@ -18910,7 +19190,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 557,
+            "line": 893,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.deny:method\"}}'flexberry-dialog' component's 'deny' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.deny:method\"}}'deny' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onDeny",
@@ -18919,7 +19199,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 567,
+            "line": 903,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeShow:method\"}}'flexberry-dialog' component's 'beforeShow' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.beforeShow:method\"}}'beforeShow' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeShow",
@@ -18928,7 +19208,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 577,
+            "line": 913,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.beforeHide:method\"}}'flexberry-dialog' component's 'beforeHide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.beforeHide:method\"}}'beforeHide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onBeforeHide",
@@ -18937,7 +19217,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 587,
+            "line": 925,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.show:method\"}}'flexberry-dialog' component's 'show' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.show:method\"}}'show' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onShow",
@@ -18946,7 +19226,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 603,
+            "line": 937,
             "description": "Handles {{#crossLink \"FlexberryDialogComponent/sendingActions.hide:method\"}}'flexberry-dialog' component's 'hide' action{{/crossLink}}.\nInvokes {{#crossLink \"FlexberryExportMapCommandDialogComponent/sendingActions.hide:method\"}}'hide' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHide",
@@ -18955,10 +19235,10 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 614,
-            "description": "Observes changes in reference to leaflet map.\nAttaches map events handlers.",
+            "line": 948,
+            "description": "Observers changes in properties that affect the ability to show leaflet map.",
             "itemtype": "method",
-            "name": "_leafletMapDidChange",
+            "name": "_mapCanBeShownDidChange",
             "access": "private",
             "tagname": "",
             "class": "FlexberryExportMapCommandDialogComponent",
@@ -18966,10 +19246,77 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 633,
-            "description": "Handles changes in leaflet map's current view.",
+            "line": 971,
+            "description": "Invalidates leaflet map's size.",
             "itemtype": "method",
-            "name": "_onLeafletMapViewChanged",
+            "name": "_invalidateSizeOfLeafletMap",
+            "return": {
+                "description": "<a htef=\"https://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>\nPromise which will be resolved when invalidation will be finished."
+            },
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 990,
+            "description": "Fits specified leaflet map's bounds.",
+            "itemtype": "method",
+            "name": "_fitBoundsOfLeafletMap",
+            "params": [
+                {
+                    "name": "bounds",
+                    "description": "Bounds to be fitted.",
+                    "type": "<a href=\"http://leafletjs.com/reference-1.0.1.html#latlngbounds\">L.LatLngBounds</a>"
+                }
+            ],
+            "return": {
+                "description": "<a htef=\"https://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>\nPromise which will be resolved when fitting will be finished."
+            },
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1012,
+            "description": "Waits for leaflet map tile layers to be ready.",
+            "itemtype": "method",
+            "name": "_waitForLeafletMapTileLayersToBeReady",
+            "return": {
+                "description": "<a htef=\"https://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>\nPromise which will be resolved when map's tile layers will be ready."
+            },
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1064,
+            "description": "Waits for leaflet map overlay layers to be ready.",
+            "itemtype": "method",
+            "name": "_waitForLeafletMapOverlayLayersToBeReady",
+            "return": {
+                "description": "<a htef=\"https://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>\nPromise which will be resolved when map's overlay layers will be ready."
+            },
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1103,
+            "description": "Waits for leaflet map layers to be ready.",
+            "itemtype": "method",
+            "name": "_waitForLeafletMapLayersToBeReady",
+            "return": {
+                "description": "<a htef=\"https://emberjs.com/api/classes/RSVP.Promise.html\">Ember.RSVP.Promise</a>\nPromise which will be resolved when map's layers will be ready."
+            },
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1117,
+            "description": "Shows leaflet map.",
+            "itemtype": "method",
+            "name": "_showLeafletMap",
             "access": "private",
             "tagname": "",
             "class": "FlexberryExportMapCommandDialogComponent",
@@ -18977,7 +19324,29 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 649,
+            "line": 1154,
+            "description": "Hides leaflet map.",
+            "itemtype": "method",
+            "name": "_hideLeafletMap",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1191,
+            "description": "Computes current scren approximate DPI.",
+            "return": {
+                "description": "Current scren approximate DPI.",
+                "type": "Number"
+            },
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1215,
             "description": "Returns inner options transformed into Leaflet.Export options.",
             "itemtype": "method",
             "name": "_getLeafletExportOptions",
@@ -18990,35 +19359,73 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 739,
+            "line": 1249,
+            "description": "Export's map with respect to selected export options.",
+            "itemtype": "method",
+            "name": "_export",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1265,
+            "description": "Prepares map for export with respect to selected export options.",
+            "itemtype": "method",
+            "name": "beforeExport",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1313,
+            "description": "Export's map with respect to selected export options.",
+            "itemtype": "method",
+            "name": "export",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1366,
+            "description": "Performs after export clean up.",
+            "itemtype": "method",
+            "name": "afterExport",
+            "class": "FlexberryExportMapCommandDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
+            "line": 1408,
             "description": "Initializes component.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 782,
+            "line": 1451,
             "description": "Initializes component's DOM-related properties.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 806,
+            "line": 1486,
             "description": "Called after a component has been rendered, both on initial render and in subsequent rerenders.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 815,
+            "line": 1495,
             "description": "Destroys component.",
             "class": "FlexberryExportMapCommandDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 843,
+            "line": 1518,
             "description": "Component's action invoking when dialog starts to show.",
             "itemtype": "method",
             "name": "sendingActions.beforeShow",
@@ -19027,7 +19434,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 849,
+            "line": 1524,
             "description": "Component's action invoking when dialog starts to hide.",
             "itemtype": "method",
             "name": "sendingActions.beforeHide",
@@ -19036,7 +19443,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 855,
+            "line": 1530,
             "description": "Component's action invoking when dialog is shown.",
             "itemtype": "method",
             "name": "sendingActions.show",
@@ -19045,7 +19452,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 861,
+            "line": 1536,
             "description": "Component's action invoking when dialog is hidden.",
             "itemtype": "method",
             "name": "sendingActions.hide",
@@ -19054,7 +19461,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 867,
+            "line": 1542,
             "description": "Component's action invoking when dialog is approved.",
             "itemtype": "method",
             "name": "sendingActions.approve",
@@ -19063,7 +19470,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-commands-dialogs/export.js",
-            "line": 873,
+            "line": 1548,
             "description": "Component's action invoking when dialog is denied.",
             "itemtype": "method",
             "name": "sendingActions.deny",
@@ -23841,6 +24248,17 @@
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
             "line": 93,
+            "description": "Component's content CSS-class.",
+            "itemtype": "property",
+            "name": "contentClass",
+            "type": "String",
+            "default": "null",
+            "class": "FlexberryDialogComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
+            "line": 102,
             "description": "Component's caption.",
             "itemtype": "property",
             "name": "caption",
@@ -23851,7 +24269,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 102,
+            "line": 111,
             "description": "Component's content.",
             "itemtype": "property",
             "name": "content",
@@ -23862,7 +24280,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 111,
+            "line": 120,
             "description": "Component's approve button caption.",
             "itemtype": "property",
             "name": "approveButtonCaption",
@@ -23873,7 +24291,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 120,
+            "line": 129,
             "description": "Component's deny button caption.",
             "itemtype": "property",
             "name": "denyButtonCaption",
@@ -23884,7 +24302,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 129,
+            "line": 138,
             "description": "Component's vertical offset to allow for content outside of dialog, for example a close button, to be centered.",
             "itemtype": "property",
             "name": "offset",
@@ -23895,7 +24313,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 138,
+            "line": 147,
             "description": "Flag: indicates whether multiple dialogs are allowed at the same time.",
             "itemtype": "property",
             "name": "allowMultiple",
@@ -23906,7 +24324,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 147,
+            "line": 156,
             "description": "Flag: indicates whether dialog is closable (can be closed on it's dimmer click).",
             "itemtype": "property",
             "name": "allowMultiple",
@@ -23917,7 +24335,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 156,
+            "line": 165,
             "description": "Component's transition animation name.",
             "itemtype": "property",
             "name": "duration",
@@ -23928,7 +24346,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 165,
+            "line": 174,
             "description": "Component's animation duration (in milliseconds).",
             "itemtype": "property",
             "name": "duration",
@@ -23939,7 +24357,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 174,
+            "line": 183,
             "description": "Flag: indicates whether dialog is visible or not.\nIf true, then dialog will be shown, otherwise dialog will be closed.",
             "itemtype": "property",
             "name": "visible",
@@ -23950,7 +24368,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 184,
+            "line": 193,
             "description": "Observes {{#crossLink \"FlexberryDialogComponent/visible:property\"}}'visible' property{{/crossLink}}.\nShows dialog if property is true, otherwise hides dialog.",
             "itemtype": "method",
             "name": "_visibleDidChange",
@@ -23961,21 +24379,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 204,
+            "line": 213,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberryDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 271,
+            "line": 280,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberryDialogComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 292,
+            "line": 301,
             "description": "Component's action invoking when dialog starts to show.",
             "itemtype": "method",
             "name": "sendingActions.beforeShow",
@@ -23984,7 +24402,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 298,
+            "line": 307,
             "description": "Component's action invoking when dialog starts to hide.",
             "itemtype": "method",
             "name": "sendingActions.beforeHide",
@@ -23993,7 +24411,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 304,
+            "line": 313,
             "description": "Component's action invoking when dialog is shown.",
             "itemtype": "method",
             "name": "sendingActions.show",
@@ -24002,7 +24420,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 310,
+            "line": 319,
             "description": "Component's action invoking when dialog is hidden.",
             "itemtype": "method",
             "name": "sendingActions.hide",
@@ -24011,7 +24429,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 316,
+            "line": 325,
             "description": "Component's action invoking when dialog is approved.",
             "itemtype": "method",
             "name": "sendingActions.approve",
@@ -24020,7 +24438,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-dialog.js",
-            "line": 322,
+            "line": 331,
             "description": "Component's action invoking when dialog is denied.",
             "itemtype": "method",
             "name": "sendingActions.deny",
@@ -47830,6 +48248,30 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:971"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:990"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1012"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1064"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1103"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1191"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
             "line": " ember-flexberry-gis/addon/components/map-tools/identify.js:128"
         },
         {
@@ -48418,11 +48860,11 @@
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties & logic.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/export.js:377"
+            "line": " ember-flexberry-gis/addon/components/map-commands/export.js:397"
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands/export.js:386"
+            "line": " ember-flexberry-gis/addon/components/map-commands/export.js:406"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -48481,48 +48923,52 @@
             "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/search-settings/wfs.js:39"
         },
         {
-            "message": "Missing item type\nConstant representing dependency between element height and font size in pixels.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:9"
-        },
-        {
             "message": "Missing item type\nConstants representing default print/eport options.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:14"
-        },
-        {
-            "message": "Missing item type\nConstant representing dialog content's style (see styles/components/map-commands-dialogs/export.scss).",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:34"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:8"
         },
         {
             "message": "Missing item type\nConstant representing sizes (in millimeters) of available paper formats.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:42"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:29"
+        },
+        {
+            "message": "Missing item type\nConstant representing default DPI.\nThe most common value used by browsers is 96.",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:55"
+        },
+        {
+            "message": "Missing item type\nConstant representing count of millimeters in one inch.",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:61"
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:342"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:669"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:347"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:674"
         },
         {
             "message": "Missing item type\nFlag: indicates whether export dialog is busy or not.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:382"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:709"
+        },
+        {
+            "message": "Missing item type\nComputes current scren approximate DPI.",
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1191"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:739"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1408"
         },
         {
             "message": "Missing item type\nInitializes component's DOM-related properties.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:782"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1451"
         },
         {
             "message": "Missing item type\nCalled after a component has been rendered, both on initial render and in subsequent rerenders.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:806"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1486"
         },
         {
             "message": "Missing item type\nDestroys component.",
-            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:815"
+            "line": " ember-flexberry-gis/addon/components/map-commands-dialogs/export.js:1495"
         },
         {
             "message": "Missing item type\nReference to component's template.",
@@ -48754,11 +49200,11 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-dialog.js:204"
+            "line": " ember-flexberry-gis/addon/components/flexberry-dialog.js:213"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-dialog.js:271"
+            "line": " ember-flexberry-gis/addon/components/flexberry-dialog.js:280"
         },
         {
             "message": "Missing item type\nReference to component's template.",

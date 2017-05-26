@@ -627,6 +627,15 @@ let ExportMapCommandComponent = Ember.Component.extend({
     */
     defaultMapCaption: &#x27;&#x27;,
 
+    /**
+      Max timeout (in milliseconds) to wait for map&#x27;s layers readiness before export.
+
+      @property timeout
+      @type Number
+      @default 30000
+    */
+    timeout: 30000,
+
     actions: {
       /**
         Handles {{#crossLink &quot;BaseMapCommandComponent/sendingActions.execute:method&quot;}}base map-command&#x27;s &#x27;execute&#x27; action{{/crossLink}}.
@@ -711,6 +720,17 @@ let ExportMapCommandComponent = Ember.Component.extend({
         @param {Object} e Action&#x27;s event object.
       */
       onExportDialogDeny(e) {
+        // Prevent export dialog from hiding until already executing export will be completed.
+        e.closeDialog = !this.get(&#x27;_exportIsInProgress&#x27;);
+      },
+
+      /**
+        Handles export dialog&#x27;s &#x27;beforeHide&#x27; action.
+
+        @method actions.onExportDialogBeforeHide
+        @param {Object} e Action&#x27;s event object.
+      */
+      onExportDialogBeforeHide(e) {
         // Prevent export dialog from hiding until already executing export will be completed.
         e.closeDialog = !this.get(&#x27;_exportIsInProgress&#x27;);
       },
