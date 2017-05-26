@@ -27626,8 +27626,8 @@
             "name": "actions.selectFeature",
             "params": [
                 {
-                    "name": "feature\nwhich",
-                    "description": "describes inner FeatureResultItem's 'selectFeature' feature object.",
+                    "name": "feature",
+                    "description": "Describes inner FeatureResultItem's feature object or array of it.",
                     "type": "Object"
                 }
             ],
@@ -27636,28 +27636,49 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 113,
+            "line": 106,
             "description": "Select passed feature and zoom map to its layer bounds",
             "itemtype": "method",
             "name": "actions.zoomTo",
+            "params": [
+                {
+                    "name": "feature",
+                    "description": "Describes inner FeatureResultItem's feature object or array of it.",
+                    "type": "Object"
+                }
+            ],
             "class": "LayerResultListComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 136,
+            "line": 134,
             "description": "Select passed feature and pan map to its layer centroid",
             "itemtype": "method",
             "name": "actions.panTo",
+            "params": [
+                {
+                    "name": "feature",
+                    "description": "Describes inner FeatureResultItem's feature object or array of it.",
+                    "type": "Object"
+                }
+            ],
             "class": "LayerResultListComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 159,
-            "description": "Set selected feature and add its layer to serviceLayer on map",
+            "line": 153,
+            "description": "Set selected feature and add its layer to serviceLayer on map.",
             "itemtype": "method",
             "name": "_selectFeature",
+            "params": [
+                {
+                    "name": "feature",
+                    "description": "Describes inner FeatureResultItem's feature object or array of it.",
+                    "type": "Object"
+                }
+            ],
             "access": "private",
             "tagname": "",
             "class": "LayerResultListComponent",
@@ -27665,7 +27686,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/layer-result-list.js",
-            "line": 171,
+            "line": 166,
             "description": "Observer for passed results",
             "itemtype": "method",
             "name": "_resultObserver",

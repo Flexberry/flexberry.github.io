@@ -476,8 +476,7 @@ export default Ember.Component.extend({
         Invokes component&#x27;s {{#crossLink &quot;FeatureResultItem/sendingActions.selectFeature:method&quot;}}&#x27;selectFeature&#x27;{{/crossLink}} action.
 
         @method actions.selectFeature
-        @param {Object} feature
-        which describes inner FeatureResultItem&#x27;s &#x27;selectFeature&#x27; feature object.
+        @param {Object} feature Describes inner FeatureResultItem&#x27;s feature object or array of it.
     */
     selectFeature(feature) {
       let selectedFeature = this.get(&#x27;_selectedFeature&#x27;);
@@ -485,13 +484,7 @@ export default Ember.Component.extend({
 
       if (selectedFeature !== feature) {
         if (!Ember.isNone(serviceLayer)) {
-          if (!Ember.isNone(selectedFeature)) {
-            if (Ember.isArray(selectedFeature)) {
-              selectedFeature.forEach((item) =&gt; serviceLayer.removeLayer(item.leafletLayer));
-            } else {
-              serviceLayer.removeLayer(selectedFeature.leafletLayer);
-            }
-          }
+          serviceLayer.clearLayers();
 
           if (Ember.isArray(feature)) {
             feature.forEach((item) =&gt; this._selectFeature(item));
@@ -499,44 +492,45 @@ export default Ember.Component.extend({
             this._selectFeature(feature);
           }
         }
-      }
 
-      this.set(&#x27;_selectedFeature&#x27;, feature);
+        this.set(&#x27;_selectedFeature&#x27;, feature);
+      }
     },
 
     /**
       Select passed feature and zoom map to its layer bounds
       @method actions.zoomTo
+      @param {Object} feature Describes inner FeatureResultItem&#x27;s feature object or array of it.
      */
     zoomTo(feature) {
       let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
       if (!Ember.isNone(serviceLayer)) {
-        serviceLayer.clearLayers();
-      }
+        this.send(&#x27;selectFeature&#x27;, feature);
 
-      let bounds;
-      if (typeof (feature.leafletLayer.getBounds) === &#x27;function&#x27;) {
-        bounds = feature.leafletLayer.getBounds();
-      } else {
-        let ll = feature.leafletLayer.getLatLng();
-        bounds = L.latLngBounds(ll, ll);
-      }
+        let bounds;
+        if (typeof (serviceLayer.getBounds) === &#x27;function&#x27;) {
+          bounds = serviceLayer.getBounds();
+        } else {
+          let featureGroup = L.featureGroup(serviceLayer.getLayers());
+          if (featureGroup) {
+            bounds = featureGroup.getBounds();
+          }
+        }
 
-      // TODO: pass action with zoomTo bounds outside
-      this.get(&#x27;leafletMap&#x27;).fitBounds(bounds.pad(1));
-      this.send(&#x27;selectFeature&#x27;, feature);
+        if (!Ember.isBlank(bounds)) {
+          // &#x27;bound.pad(1)&#x27; bounds with zoom decreased by 1 point (padding).
+          //  That allows to make map&#x27;s bounds slightly larger than serviceLayer&#x27;s bounds to make better UI.
+          this.get(&#x27;leafletMap&#x27;).fitBounds(bounds.pad(1));
+        }
+      }
     },
 
     /**
       Select passed feature and pan map to its layer centroid
       @method actions.panTo
+      @param {Object} feature Describes inner FeatureResultItem&#x27;s feature object or array of it.
      */
     panTo(feature) {
-      let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
-      if (!Ember.isNone(serviceLayer)) {
-        serviceLayer.clearLayers();
-      }
-
       let latLng;
       if (typeof (feature.leafletLayer.getBounds) === &#x27;function&#x27;) {
         latLng = feature.leafletLayer.getBounds().getCenter();
@@ -551,8 +545,9 @@ export default Ember.Component.extend({
   },
 
   /**
-    Set selected feature and add its layer to serviceLayer on map
+    Set selected feature and add its layer to serviceLayer on map.
     @method _selectFeature
+    @param {Object} feature Describes inner FeatureResultItem&#x27;s feature object or array of it.
     @private
    */
   _selectFeature(feature) {
