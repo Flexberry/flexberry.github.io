@@ -617,6 +617,18 @@ let FlexberryEditLayerDialogComponent = Ember.Component.extend(
     }),
 
     /**
+      Flag: indicates whether &#x27;display&#x27; operation settings are available for the selected layer type.
+
+      @property _displaySettingsAreAvailableForType
+      @type Boolean
+      @private
+      @readOnly
+    */
+    _displaySettingsAreAvailableForType: Ember.computed(&#x27;_layer.type&#x27;, function() {
+      return true;
+    }),
+
+    /**
       Flag: indicates whether &#x27;legend&#x27; operation settings are available for the selected layer type.
 
       @property _legendSettingaAreAvailableForType

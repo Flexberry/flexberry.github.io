@@ -487,10 +487,10 @@ let FlexberrySearchMapCommandDialogComponent = Ember.Component.extend({
       @private
     */
     _selectedLayerFeaturesExcludedProperties: Ember.computed(
-      &#x27;_selectedLayer.settingsAsObject.searchSettings.featuresPropertiesSettings.excludedProperties&#x27;,
+      &#x27;_selectedLayer.settingsAsObject.displaySettings.featuresPropertiesSettings.excludedProperties&#x27;,
       function() {
         let excludedProperties = Ember.A(
-          this.get(&#x27;_selectedLayer.settingsAsObject.searchSettings.featuresPropertiesSettings.excludedProperties&#x27;) || []);
+          this.get(&#x27;_selectedLayer.settingsAsObject.displaySettings.featuresPropertiesSettings.excludedProperties&#x27;) || []);
         return excludedProperties;
       }
     ),
@@ -504,12 +504,12 @@ let FlexberrySearchMapCommandDialogComponent = Ember.Component.extend({
       @private
     */
     _selectedLayerFeaturesLocalizedProperties: Ember.computed(
-      &#x27;_selectedLayer.settingsAsObject.searchSettings.featuresPropertiesSettings.localizedProperties&#x27;,
+      &#x27;_selectedLayer.settingsAsObject.displaySettings.featuresPropertiesSettings.localizedProperties&#x27;,
       &#x27;i18n.locale&#x27;,
       function() {
         let currentLocale = this.get(&#x27;i18n.locale&#x27;);
         let localizedProperties = this.get(
-          &#x60;_selectedLayer.settingsAsObject.searchSettings.&#x60; +
+          &#x60;_selectedLayer.settingsAsObject.displaySettings.&#x60; +
           &#x60;featuresPropertiesSettings.localizedProperties.${currentLocale}&#x60;) || {};
         return localizedProperties;
       }

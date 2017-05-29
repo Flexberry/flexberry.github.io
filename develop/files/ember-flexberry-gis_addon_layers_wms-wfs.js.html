@@ -441,6 +441,9 @@ export default WmsLayer.extend({
     Ember.set(settings, &#x27;searchSettings&#x27;, wfsSettings.searchSettings);
     delete wfsSettings.searchSettings;
 
+    Ember.set(settings, &#x27;displaySettings&#x27;, wfsSettings.displaySettings);
+    delete wfsSettings.displaySettings;
+
     Ember.set(settings, &#x27;wfs&#x27;, wfsSettings);
 
     return settings;

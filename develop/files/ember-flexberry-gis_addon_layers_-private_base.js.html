@@ -398,7 +398,7 @@
 
 import Ember from &#x27;ember&#x27;;
 
-const createFeaturesPropertiesSettings = function() {
+const createFeaturesPropertiesSettings = function () {
   return {
     displayPropertyIsCallback: false,
     displayProperty: null,
@@ -412,21 +412,29 @@ const createFeaturesPropertiesSettings = function() {
   };
 };
 
-const createCommonSearchSettings = function() {
+const createDisplaySettings = function () {
+  return {
+    dateFormat: &#x27;DD.MM.YYYY&#x27;,
+    featuresPropertiesSettings: createFeaturesPropertiesSettings()
+  };
+};
+
+const createCommonSearchSettings = function () {
   return {
     canBeSearched: true,
-    featuresPropertiesSettings: createFeaturesPropertiesSettings()
+    canBeContextSearched: true,
+    contextSearchFields: null,
+    searchFields: null,
   };
 };
 
-const createCommonIdenifySettings = function() {
+const createCommonIdentifySettings = function () {
   return {
-    canBeIdentified: true,
-    featuresPropertiesSettings: createFeaturesPropertiesSettings()
+    canBeIdentified: true
   };
 };
 
-const createCommonLegendSettings = function() {
+const createCommonLegendSettings = function () {
   return {
     legendCanBeDisplayed: true
   };
@@ -476,8 +484,10 @@ export default Ember.Object.extend({
     }
 
     if (availableOperations.contains(&#x27;identify&#x27;)) {
-      Ember.set(settings, &#x27;identifySettings&#x27;, createCommonIdenifySettings());
+      Ember.set(settings, &#x27;identifySettings&#x27;, createCommonIdentifySettings());
     }
+
+    Ember.set(settings, &#x27;displaySettings&#x27;, createDisplaySettings());
 
     if (availableOperations.contains(&#x27;legend&#x27;)) {
       Ember.set(settings, &#x27;legendSettings&#x27;, createCommonLegendSettings());

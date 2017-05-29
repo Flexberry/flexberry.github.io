@@ -419,35 +419,46 @@ export default SearchMapCommand.extend({
     let features = Ember.get(options, &#x27;features&#x27;);
     let layer = Ember.get(options, &#x27;layer&#x27;) || {};
     let layerName = Ember.get(layer, &#x27;name&#x27;);
-    let featuresPropertiesSettings = Ember.get(layer, &#x27;settingsAsObject.searchSettings.featuresPropertiesSettings&#x27;) || {};
+    let featuresPropertiesSettings = Ember.get(layer, &#x27;settingsAsObject.displaySettings.featuresPropertiesSettings&#x27;) || {};
 
-    let getFeatureFirstAvailableProperty = function(feature) {
+    let getFeatureFirstAvailableProperty = function (feature) {
       let featureProperties = Ember.get(feature, &#x27;properties&#x27;) || {};
       let displayPropertyName = Object.keys(featureProperties)[0];
       return featureProperties[displayPropertyName];
     };
 
-    let getFeatureDisplayProperty = function(feature, featuresPropertiesSettings) {
+    let getFeatureDisplayProperty = function (feature, featuresPropertiesSettings) {
       let displayPropertyIsCallback = Ember.get(featuresPropertiesSettings, &#x27;displayPropertyIsCallback&#x27;) === true;
       let displayProperty = Ember.get(featuresPropertiesSettings, &#x27;displayProperty&#x27;);
 
-      if (Ember.typeOf(displayProperty) !== &#x27;string&#x27;) {
-        // Retrieve first available property.
+      if ((Ember.typeOf(displayProperty) !== &#x27;array&#x27; &amp;&amp; !displayPropertyIsCallback)) {
+        return getFeatureFirstAvailableProperty(feature);
+      }
+
+      if ((Ember.typeOf(displayProperty) !== &#x27;string&#x27; &amp;&amp; displayPropertyIsCallback)) {
         return getFeatureFirstAvailableProperty(feature);
       }
 
       if (!displayPropertyIsCallback) {
-        // Return defined property (or first available if defined property doesn&#x27;t exist).
         let featureProperties = Ember.get(feature, &#x27;properties&#x27;) || {};
-        return featureProperties.hasOwnProperty(displayProperty) ?
-          featureProperties[displayProperty] :
-          getFeatureFirstAvailableProperty(feature);
+
+        let displayValue = Ember.none;
+        displayProperty.forEach((prop) =&gt; {
+          if (featureProperties.hasOwnProperty(prop)) {
+            let value = featureProperties[prop];
+            if (Ember.isNone(displayValue) &amp;&amp; !Ember.isNone(value) &amp;&amp; !Ember.isEmpty(value)) {
+              displayValue = value;
+            }
+          }
+        });
+
+        return !Ember.isNone(displayValue) ? displayValue : getFeatureFirstAvailableProperty(feature);
       }
 
       // Defined displayProperty is a serialized java script function, which can calculate display property.
       let calculateDisplayProperty = eval(&#x60;(${displayProperty})&#x60;);
       Ember.assert(
-        &#x27;Property \&#x27;settings.searchSettings.featuresPropertiesSettings.displayProperty\&#x27; &#x27; +
+        &#x27;Property \&#x27;settings.displaySettings.featuresPropertiesSettings.displayProperty\&#x27; &#x27; +
         &#x27;in layer \&#x27;&#x27; + layerName + &#x27;\&#x27; is not a valid java script function&#x27;,
         Ember.typeOf(calculateDisplayProperty) === &#x27;function&#x27;);
 
@@ -472,9 +483,7 @@ export default SearchMapCommand.extend({
           }
 
           if (Ember.typeOf(leafletLayer.bindPopup) === &#x27;function&#x27;) {
-            leafletLayer.bindPopup(() =&gt; {
-              return &#x27;&#x27; + getFeatureDisplayProperty(feature, featuresPropertiesSettings);
-            });
+            leafletLayer.bindPopup(getFeatureDisplayProperty(feature, featuresPropertiesSettings));
           }
 
           leafletLayer.addTo(featuresLayer);

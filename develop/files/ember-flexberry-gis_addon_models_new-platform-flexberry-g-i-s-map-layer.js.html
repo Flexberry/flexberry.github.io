@@ -457,7 +457,7 @@ let Model = Projection.Model.extend(NewPlatformFlexberyGISMapLayerModelMixin, Le
     @type Boolean
     @readOnly
   */
-  canBeSearched: Ember.computed(&#x27;isDeleted&#x27;, &#x27;type&#x27;, &#x27;settingsAsObject.identifySettings.canBeSearched&#x27;, function () {
+  canBeSearched: Ember.computed(&#x27;isDeleted&#x27;, &#x27;type&#x27;, &#x27;settingsAsObject.searchSettings.canBeSearched&#x27;, function () {
     if (this.get(&#x27;isDeleted&#x27;)) {
       return false;
     }
@@ -465,6 +465,25 @@ let Model = Projection.Model.extend(NewPlatformFlexberyGISMapLayerModelMixin, Le
     let layerClassFactory = Ember.getOwner(this).knownForType(&#x27;layer&#x27;, this.get(&#x27;type&#x27;));
     let searchOperationIsAvailableForLayerClass = Ember.A(Ember.get(layerClassFactory, &#x27;operations&#x27;) || []).contains(&#x27;search&#x27;);
     let searchOperationIsAvailableForLayerInstance = this.get(&#x27;settingsAsObject.searchSettings.canBeSearched&#x27;) !== false;
+
+    return searchOperationIsAvailableForLayerClass &amp;&amp; searchOperationIsAvailableForLayerInstance;
+  }),
+
+  /**
+    Flag: indicates whether &#x27;context search&#x27; operation is available for this layer.
+
+    @property canBeContextSearched
+    @type Boolean
+    @readOnly
+  */
+  canBeContextSearched: Ember.computed(&#x27;isDeleted&#x27;, &#x27;type&#x27;, &#x27;settingsAsObject.searchSettings.canBeContextSearched&#x27;, function () {
+    if (this.get(&#x27;isDeleted&#x27;)) {
+      return false;
+    }
+
+    let layerClassFactory = Ember.getOwner(this).knownForType(&#x27;layer&#x27;, this.get(&#x27;type&#x27;));
+    let searchOperationIsAvailableForLayerClass = Ember.A(Ember.get(layerClassFactory, &#x27;operations&#x27;) || []).contains(&#x27;search&#x27;);
+    let searchOperationIsAvailableForLayerInstance = this.get(&#x27;settingsAsObject.searchSettings.canBeContextSearched&#x27;) !== false;
 
     return searchOperationIsAvailableForLayerClass &amp;&amp; searchOperationIsAvailableForLayerInstance;
   }),
