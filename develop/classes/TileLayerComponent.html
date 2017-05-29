@@ -459,7 +459,7 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method__leafletOptionsDidChange" data-tablink="_leafletOptionsDidChange">_leafletOptionsDidChange</a>
 
                             </li>
-                            <li class="index-item method inherited inherited">
+                            <li class="index-item method inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__query" data-tablink="_query">_query</a>
 
                             </li>
@@ -517,6 +517,10 @@
                             </li>
                             <li class="index-item method private inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_opacityDidChange" data-tablink="opacityDidChange">opacityDidChange</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_query" data-tablink="query">query</a>
 
                             </li>
                             <li class="index-item method inherited">
@@ -984,12 +988,9 @@
                     
                     
                         <div class="meta">
-                                <p>Inherited from
-                                <a href="../classes/BaseLayerComponent.html#method__query">
-                                    BaseLayerComponent
-                                </a>
-                                but overwritten in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l327"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:327</code></a>
+                                    <p>Inherited from
+                                    <a href="../classes/BaseLayerComponent.html#method__query">BaseLayerComponent</a>:
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l450"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:450</code></a>
                             </p>
                     
                     
@@ -1547,7 +1548,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/BaseLayerComponent.html#method_injectLeafletLayersIntoGeoJSON">BaseLayerComponent</a>:
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l489"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:489</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l498"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:498</code></a>
                             </p>
                     
                     
@@ -1620,7 +1621,7 @@
                                     LeafletOptionsMixin
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l454"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:454</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l463"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:463</code></a>
                             </p>
                     
                     
@@ -1680,6 +1681,87 @@
                     Changes layer's opacity.
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="method_query" class="method item inherited">
+                        <h3 class="name"><code>query</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>e</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>queryFilter</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>results</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/BaseLayerComponent.html#method_query">BaseLayerComponent</a>:
+                            <a href="../files/ember-flexberry-gis_addon_components_base-layer.js.html#l330"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-layer.js:330</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Handles 'flexberry-map:query' event of leaflet map.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">e</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Event object.
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">queryFilter</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Object with query filter parameters
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">results</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object[]</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            Objects describing query results.
+                    Every result-object has the following structure: { layer: ..., features: [...] },
+                    where 'layer' is metadata of layer related to query result, features is array
+                    containing (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects]
+                    or a promise returning such array.
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
                     
                     
                     </div>

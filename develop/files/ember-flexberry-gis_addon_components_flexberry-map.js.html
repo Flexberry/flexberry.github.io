@@ -669,6 +669,88 @@ let FlexberryMapComponent = Ember.Component.extend(
       delete leafletMap._fireDOMEvent;
     },
 
+    _runQuery(queryFilter) {
+      let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
+      let leafletMap = this.get(&#x27;_leafletObject&#x27;);
+
+      let e = {
+        queryFilter: queryFilter,
+        results: Ember.A(),
+        serviceLayer: serviceLayer
+      };
+
+      // Show map loader
+      leafletMap.setLoaderContent(this.get(&#x27;i18n&#x27;).t(&#x27;components.flexberry-map.queryText&#x27;));
+      leafletMap.showLoader();
+
+      leafletMap.fire(&#x27;flexberry-map:query&#x27;, e);
+
+      // Promises array could be totally changed in &#x27;flexberry-map:query&#x27; event handlers, we should prevent possible errors.
+      e.results = Ember.isArray(e.results) ? e.results : Ember.A();
+      let promises = Ember.A();
+
+      // Handle each result.
+      // Detach promises from already received features.
+      e.results.forEach((result) =&gt; {
+        if (Ember.isNone(result)) {
+          return;
+        }
+
+        let features = Ember.get(result, &#x27;features&#x27;);
+
+        if (!(features instanceof Ember.RSVP.Promise)) {
+          return;
+        }
+
+        promises.pushObject(features);
+      });
+
+      // Wait for all promises to be settled &amp; call &#x27;_finishIdentification&#x27; hook.
+      Ember.RSVP.allSettled(promises).then(() =&gt; {
+        this._finishQuery(e);
+      });
+    },
+
+    /**
+      Finishes query.
+
+      @method _finishQuery
+      @param {Object} e Event object.
+      @param {Object[]} results Objects describing query results.
+      Every result-object has the following structure: { layer: ..., features: [...] },
+      where &#x27;layer&#x27; is metadata of layer related to query result, features is array
+      containing (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects].
+      @return {&lt;a href=&quot;http://leafletjs.com/reference.html#popup&quot;&gt;L.Popup&lt;/a&gt;} Popup containing identification results.
+      @private
+    */
+    _finishQuery(e) {
+      let leafletMap = this.get(&#x27;_leafletObject&#x27;);
+
+      e.results.forEach((identificationResult) =&gt; {
+        identificationResult.features.then(
+          (features) =&gt; {
+            // Show new features.
+            features.forEach((feature) =&gt; {
+              let leafletLayer = Ember.get(feature, &#x27;leafletLayer&#x27;) || new L.GeoJSON([feature]);
+              if (Ember.typeOf(leafletLayer.setStyle) === &#x27;function&#x27;) {
+                leafletLayer.setStyle({
+                  color: &#x27;salmon&#x27;
+                });
+              }
+
+              Ember.set(feature, &#x27;leafletLayer&#x27;, leafletLayer);
+            });
+          });
+      });
+
+      // Hide map loader.
+      leafletMap.setLoaderContent(&#x27;&#x27;);
+      leafletMap.hideLoader();
+
+      // Fire custom event on leaflet map.
+      leafletMap.fire(&#x27;flexberry-map:queryFinished&#x27;, e);
+    },
+
     /**
       Initializes DOM-related component&#x27;s properties.
     */
@@ -691,37 +773,9 @@ let FlexberryMapComponent = Ember.Component.extend(
 
       let queryFilter = this.get(&#x27;queryFilter&#x27;);
 
-      if (!Ember.isNone(queryFilter)) {
+      if (!Ember.isBlank(queryFilter)) {
         Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function () {
-          let e = {
-            queryFilter,
-            results: Ember.A()
-          };
-
-          // Show map loader
-          leafletMap.setLoaderContent(this.get(&#x27;i18n&#x27;).t(&#x27;components.flexberry-map.queryText&#x27;));
-          leafletMap.showLoader();
-
-          leafletMap.fire(&#x27;flexberry-map:query&#x27;, e);
-
-          Ember.RSVP.all(e.results).then(results =&gt; {
-            results.forEach(result =&gt; {
-              serviceLayer.addLayer(result);
-            });
-
-            let queryBounds = serviceLayer.getBounds();
-            if (queryBounds.isValid()) {
-              leafletMap.fitBounds(queryBounds);
-            } else {
-
-              // Should alert user about not found objects
-              Ember.Logger.warn(&#x27;Object not found for query&#x27;, queryFilter);
-            }
-
-            // Hide map loader.
-            leafletMap.setLoaderContent(&#x27;&#x27;);
-            leafletMap.hideLoader();
-          });
+          this._runQuery(queryFilter);
         });
       }
     },

@@ -432,7 +432,7 @@ export default WmsLayerComponent.extend({
   identify(e) {
     let innerWfsLayer = this.get(&#x27;_wfsLayer&#x27;);
     if (!Ember.isNone(innerWfsLayer)) {
-      innerWfsLayer.identify.apply(innerWfsLayer, arguments);
+      return innerWfsLayer.identify.apply(innerWfsLayer, arguments);
     }
   },
 
@@ -448,7 +448,7 @@ export default WmsLayerComponent.extend({
   query(e) {
     let innerWfsLayer = this.get(&#x27;_wfsLayer&#x27;);
     if (!Ember.isNone(innerWfsLayer)) {
-      innerWfsLayer.query.apply(innerWfsLayer, arguments);
+      return innerWfsLayer.query.apply(innerWfsLayer, arguments);
     }
   },
 
@@ -512,7 +512,7 @@ export default WmsLayerComponent.extend({
     let innerWfsLayer = this.get(&#x27;_wfsLayer&#x27;);
     if (!Ember.isNone(innerWfsLayer)) {
       innerWfsLayer.destroy();
-      this.set(&#x27;_wfsLayer&#x27;,  null);
+      this.set(&#x27;_wfsLayer&#x27;, null);
     }
   }
 });

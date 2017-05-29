@@ -455,6 +455,7 @@ export let defineProjections = function (model) {
 
     }),
     layerLink: Projection.hasMany(&#x27;new-platform-flexberry-g-i-s-layer-link&#x27;, &#x27;&#x27;, {
+      allowShow: Projection.attr(&#x27;Показывать&#x27;),
       layer: Projection.belongsTo(&#x27;new-platform-flexberry-g-i-s-map-layer&#x27;, &#x27;&#x27;, {
         name: Projection.attr(&#x27;Слой&#x27;)
       }, { hidden: true }),

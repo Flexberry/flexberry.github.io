@@ -445,6 +445,10 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
 
                             </li>
                             <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__finishQuery" data-tablink="_finishQuery">_finishQuery</a>
+
+                            </li>
+                            <li class="index-item method private">
                                 <a href="#" data-tabid="#methods" data-anchor="#method__injectMapLoaderMethods" data-tablink="_injectMapLoaderMethods">_injectMapLoaderMethods</a>
 
                             </li>
@@ -629,6 +633,89 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         </div>
                     
                     
+                    
+                    </div>
+                    <div id="method__finishQuery" class="method item private">
+                        <h3 class="name"><code>_finishQuery</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>e</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>results</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="http://leafletjs.com/reference.html#popup">L.Popup</a></span>
+                            </span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l320"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:320</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Finishes query.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">e</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Event object.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">results</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object[]</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Objects describing query results.
+                    Every result-object has the following structure: { layer: ..., features: [...] },
+                    where 'layer' is metadata of layer related to query result, features is array
+                    containing (GeoJSON feature-objects)[<a href="http://geojson.org/geojson-spec.html#feature-objects">http://geojson.org/geojson-spec.html#feature-objects</a>].</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="http://leafletjs.com/reference.html#popup">L.Popup</a></span>:
+                                        <p>Popup containing identification results.</p>
+                    
+                                </div>
+                            </div>
                     
                     </div>
                     <div id="method__injectMapLoaderMethods" class="method item private">
@@ -926,7 +1013,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l360"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:360</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l414"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:414</code></a>
                             </p>
                     
                     
@@ -962,7 +1049,7 @@ Wraps <a href="http://leafletjs.com/reference-1.0.0.html#map">leaflet map</a> in
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l352"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:352</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_flexberry-map.js.html#l406"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;flexberry-map.js:406</code></a>
                             </p>
                     
                     

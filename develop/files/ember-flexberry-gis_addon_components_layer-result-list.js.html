@@ -662,6 +662,10 @@ export default Ember.Component.extend({
       this.set(&#x27;_displayResults&#x27;, displayResults);
       this.set(&#x27;_noData&#x27;, displayResults.length === 0);
       this.set(&#x27;_showLoader&#x27;, false);
+
+      if (displayResults.length === 1) {
+        this.send(&#x27;zoomTo&#x27;, displayResults.objectAt(0).features);
+      }
     });
   })
 });
