@@ -181,6 +181,26 @@ entries:
       url: /ef_resolver.html
       output: web, pdf
 
+  - title: Themes
+    title_ru: Темы оформления
+    output: web, pdf
+
+    folderitems:
+    - title: Supported themes
+      title_ru: Поддерживаемые темы оформления
+      url: /ef_supported_themes.html
+      output: web, pdf
+
+    - title: Structure of themes
+      title_ru: Внутреннее устройство тем
+      url: /ef_themes_structure.html
+      output: web, pdf
+
+    - title: Migrating to the new themes
+      title_ru: Переход на новые темы оформления
+      url: /ef_themes_migrating.html
+      output: web, pdf
+
   - title: Generation
     title_ru: Генерация
     output: web, pdf
