@@ -836,39 +836,10 @@ var Model = DS.Model.extend(EmberValidations, Ember.Evented, {
     @private
   */
   _aggregateHasManyRelationshipValidationErrors(changedObject, changedPropertyPath) {
-    let aggregator = this;
-    let detailsPath;
-
-    if (changedObject === aggregator) {
-      detailsPath = changedPropertyPath;
-    } else {
-      this.eachRelationship((name, attrs) =&gt; {
-        if (detailsPath) {
-          return;
-        }
-
-        if (attrs.kind !== &#x27;hasMany&#x27;) {
-          return;
-        }
-
-        let detailsName = attrs.key;
-        let details = this.get(detailsName);
-        details.forEach((detail, i) =&gt; {
-          if (detailsPath) {
-            return;
-          }
-
-          if (detail === changedObject) {
-            detailsPath = &#x60;${detailsName}.[]&#x60;;
-          }
-        });
-      });
-    }
-
     // Retrieve aggregator&#x27;s validation errors object.
     let errors = Ember.get(this, &#x27;errors&#x27;);
 
-    let detailsName = detailsPath.split(&#x27;.&#x27;)[0];
+    let detailsName = changedPropertyPath.split(&#x27;.&#x27;)[0];
     let details = Ember.get(this, detailsName);
     if (!Ember.isArray(details)) {
       return;
@@ -883,10 +854,10 @@ var Model = DS.Model.extend(EmberValidations, Ember.Evented, {
         let detailPropertyErrorMessages = detailErrors[detailPropertyName];
         if (detailErrors.hasOwnProperty(detailPropertyName) &amp;&amp; Ember.isArray(detailPropertyErrorMessages)) {
           detailPropertyErrorMessages.forEach((detailPropertyErrorMessage) =&gt; {
-            Ember.removeObserver(detail, &#x60;errors.${detailPropertyName}.[]&#x60;, this, this._onChangeHasManyRelationship);
+            Ember.removeObserver(this, &#x60;${detailsName}.@each.${detailPropertyName}&#x60;, this, this._onChangeHasManyRelationship);
 
             if (!Ember.get(detail, &#x27;isDeleted&#x27;)) {
-              Ember.addObserver(detail, &#x60;errors.${detailPropertyName}.[]&#x60;, this, this._onChangeHasManyRelationship);
+              Ember.addObserver(this, &#x60;${detailsName}.@each.${detailPropertyName}&#x60;, this, this._onChangeHasManyRelationship);
               detailsErrorMessages.pushObject(detailPropertyErrorMessage);
             }
           });

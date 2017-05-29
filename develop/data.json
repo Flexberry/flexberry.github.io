@@ -10166,7 +10166,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 507,
+            "line": 478,
             "description": "Set each `belongsTo` relationship, observer, that save canonical state.",
             "itemtype": "method",
             "name": "_saveCanonicalBelongsTo",
@@ -10178,7 +10178,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 533,
+            "line": 504,
             "description": "Save canonical state for `belongsTo` relationships.",
             "itemtype": "method",
             "name": "_saveBelongsToObserver",
@@ -10202,7 +10202,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 549,
+            "line": 520,
             "description": "Defined projections for current model type.",
             "itemtype": "property",
             "name": "projections",
@@ -10217,7 +10217,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 560,
+            "line": 531,
             "description": "Defines projection for specified model type.",
             "itemtype": "method",
             "name": "defineProjection",
@@ -10251,7 +10251,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/models/model.js",
-            "line": 584,
+            "line": 555,
             "description": "Parent model type name.",
             "itemtype": "property",
             "name": "_parentModelName",
