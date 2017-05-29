@@ -40,7 +40,7 @@ element.overrides в них можно записывать полноценны
 ![screenshoot](/images/pages/img_themes/screenshots/semantic_less.jpg)
 
 ## theme.less
-![screenshoot](/images/pages/img_themes/screenshots/theme.less.jpg)
+![screenshoot](/images/pages/img_themes/screenshots/theme_less.jpg)
 
 ## Для того чтобы, можно было добавлять свои кастомизированные темы в ember-flexberry необходимо:
 
