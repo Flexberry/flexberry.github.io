@@ -10,3 +10,13 @@ summary: Представлено описание распространяем�
 ---
 
 ## Доступные темы оформления
+
+На данный момент в Ember кастомизированы 2 темы:  
+
+## BlueSky theme
+
+![screenshoot](/images/pages/img_themes/screenshots/blueSky-theme.jpg)
+
+## Orange theme
+
+![screenshoot](/images/pages/img_themes/screenshots/orange-theme.jpg)
