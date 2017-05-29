@@ -60,7 +60,7 @@ element.overrides в них можно записывать полноценны
 
    ```app.import('bower_components/semantic-ui/dist/semantic.js');``` 
    
-5. В ../ember-cli-build.js добавить строчку
+5. В ../ember-cli-build.js добавить строчки
 
    ```lessOptions: {
       paths: [
