@@ -90,21 +90,21 @@ summary: Описание перехода на новые темы оформл
 
 Также чтобы менялась надпись шрифтовой иконки меню и цвет при нажатии надо чтобы в /test/dummy/app/controllers/application.js method actions.toggleSidebar выглядел вот так:
 
- <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/controllers/application.js>
+<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/controllers/application.js>
 
 Если меню состоит не только из главных пунктов но и есть подпункты, то необходимо добавить скрипты, для того чтобы элементы меню скрывались, для этого необходимо в /tests/dummy/app/controllers/sitemap-node.js  добавить method actions.subMenuEl чтобы он выглядел вот так:
 
- <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/controllers/sitemap-node.js>
+<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/controllers/sitemap-node.js>
  
 Осталось добавить действие и иконки скрытия подменю в ember-flexberry/app/templates/sitemap-node-content.hbs и в /ember-flexberry/app/templates/sitemap-node.hbs в итоге должно получиться вот так:
  
- <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node-content.hbs>
- <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node-content.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node.hbs>
  
- И в завершении осталось подправить кнопки удаления и добавления а также изменения, для этого надо добавить классы кнопкам ui-add, ui-delete, ui-change:
+И в завершении осталось подправить кнопки удаления и добавления а также изменения, для этого надо добавить классы кнопкам ui-add, ui-delete, ui-change:
  
- <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/components/groupedit-toolbar.hbs>
- <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/components/flexberry-lookup.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/components/groupedit-toolbar.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/components/flexberry-lookup.hbs>
  
  
  
