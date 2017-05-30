@@ -61,7 +61,7 @@ summary: Описание перехода на новые темы оформл
 
 <https://github.com/Flexberry/ember-flexberry/tree/flexberry-crimean-theme/vendor>
 
-необходимо скопировать папку fonts, font-icon.css и папку serviseImages(некоторые иконки темы, только для темы blueSky), а также надо добавить в ember-cli-build.js импорт этих файлов
+необходимо скопировать папку fonts, font-icon.css и папку serviseImages(некоторые иконки темы, только для темы blueSky) в ember-flexberry/vendor/, а также надо добавить в ember-cli-build.js импорт этих файлов
 
  ```app.import('vendor/font-icon.css');  
   app.import('vendor/fonts/icons.eot', { destDir: 'assets/fonts' });  
