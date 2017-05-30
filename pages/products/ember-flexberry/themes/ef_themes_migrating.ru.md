@@ -86,8 +86,8 @@ summary: Описание перехода на новые темы оформл
   });  
     app.import('vendor/serviceImages/Minus.png', {   
     destDir: 'assets/serviceImages'   
-  });```  
-
+  });
+  ```  
 Также чтобы менялась надпись шрифтовой иконки меню и цвет при нажатии надо чтобы в /test/dummy/app/controllers/application.js method actions.toggleSidebar выглядел вот так:
 
 <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/controllers/application.js>
