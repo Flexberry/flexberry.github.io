@@ -102,7 +102,7 @@ summary: Описание перехода на новые темы оформл
 <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node-content.hbs>
 <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node.hbs>
  
-И в завершении осталось подправить кнопки удаления и добавления а также изменения, для этого надо добавить классы кнопкам ui-add, ui-delete, ui-change:
+И в завершении осталось подправить кнопки удаления и добавления а также изменения, для этого надо добавить кнопкам классы ui-add, ui-delete, ui-change:
  
 <https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/components/groupedit-toolbar.hbs>
 
