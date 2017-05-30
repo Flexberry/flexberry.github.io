@@ -31,19 +31,19 @@ summary: Описание перехода на новые темы оформл
    
 5. В ../ember-cli-build.js добавить строчки
 
-   ```lessOptions: {
-      paths: [
-        'bower_components/semantic-ui'
-      ]
-    },
-    SemanticUI: {
-      import: {
-        css: false,
-        javascript: false,
-        images: false,
-        fonts: true
-      }
-    },
+   ```lessOptions: {  
+      paths: [  
+        'bower_components/semantic-ui'  
+      ]  
+    },  
+    SemanticUI: {  
+      import: {  
+        css: false,  
+        javascript: false,  
+        images: false,  
+        fonts: true  
+      }  
+    },  
     ``` 
 6. Закинуть папку с темой, например blueSky в /test/dummy/app/style/themes, и прописать в theme.config для всех элементов blueSky
   
@@ -62,19 +62,19 @@ summary: Описание перехода на новые темы оформл
 
 необходимо скопировать папку fonts, font-icon.css и папку serviseImages(некоторые иконки темы, только для темы blueSky), а также надо добавить в ember-cli-build.js импорт этих файлов
 
- ```app.import('vendor/font-icon.css'); <br/>
-  app.import('vendor/fonts/icons.eot', { destDir: 'assets/fonts' }); <br/>
-  app.import('vendor/fonts/icons.otf', { destDir: 'assets/fonts' }); <br/> 
-  app.import('vendor/fonts/icons.svg', { destDir: 'assets/fonts' }); <br/>  
-  app.import('vendor/fonts/icons.ttf', { destDir: 'assets/fonts' }); <br/>  
-  app.import('vendor/fonts/icons.woff', { destDir: 'assets/fonts' }); <br/>  
-  app.import('vendor/fonts/icons.woff2', { destDir: 'assets/fonts' }); <br/>  
-  app.import('vendor/fonts/crim.eot', { destDir: 'assets/fonts' }); <br/>    
-  app.import('vendor/fonts/crim.otf', { destDir: 'assets/fonts' }); <br/>    
-  app.import('vendor/fonts/crim.svg', { destDir: 'assets/fonts' }); <br/>  
-  app.import('vendor/fonts/crim.ttf', { destDir: 'assets/fonts' }); <br/>  
-  app.import('vendor/fonts/crim.woff', { destDir: 'assets/fonts' }); <br/>  
-  app.import('vendor/fonts/crim.woff2', { destDir: 'assets/fonts' }); <br/>  
+ ```app.import('vendor/font-icon.css');  
+  app.import('vendor/fonts/icons.eot', { destDir: 'assets/fonts' });  
+  app.import('vendor/fonts/icons.otf', { destDir: 'assets/fonts' });  
+  app.import('vendor/fonts/icons.svg', { destDir: 'assets/fonts' });    
+  app.import('vendor/fonts/icons.ttf', { destDir: 'assets/fonts' });    
+  app.import('vendor/fonts/icons.woff', { destDir: 'assets/fonts' });   
+  app.import('vendor/fonts/icons.woff2', { destDir: 'assets/fonts' });   
+  app.import('vendor/fonts/crim.eot', { destDir: 'assets/fonts' });     
+  app.import('vendor/fonts/crim.otf', { destDir: 'assets/fonts' });     
+  app.import('vendor/fonts/crim.svg', { destDir: 'assets/fonts' });   
+  app.import('vendor/fonts/crim.ttf', { destDir: 'assets/fonts' });    
+  app.import('vendor/fonts/crim.woff', { destDir: 'assets/fonts' });   
+  app.import('vendor/fonts/crim.woff2', { destDir: 'assets/fonts' });  
   app.import('vendor/serviceImages/close.png', {   
     destDir: 'assets/serviceImages'   
   });  
