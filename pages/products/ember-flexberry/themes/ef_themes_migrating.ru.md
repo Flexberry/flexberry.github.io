@@ -31,7 +31,8 @@ summary: Описание перехода на новые темы оформл
    
 5. В ../ember-cli-build.js добавить строчки
 
-   ```lessOptions: {  
+   ```
+   lessOptions: {  
       paths: [  
         'bower_components/semantic-ui'  
       ]  
