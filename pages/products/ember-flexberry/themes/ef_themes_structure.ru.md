@@ -34,7 +34,7 @@ element.overrides в них можно записывать полноценны
 ## theme.config.example
 ![screenshoot](/images/pages/img_themes/screenshots/config_theme.jpg)
 
-Также в папке /src находятся semantic.less и theme.less отвечающие за пути и импорт элементов тем.
+Также в папке /src находятся semantic.less и theme.less отвечающие за импорт элементов тем.
 
 ## semantic.less
 ![screenshoot](/images/pages/img_themes/screenshots/semantic_less.jpg)
