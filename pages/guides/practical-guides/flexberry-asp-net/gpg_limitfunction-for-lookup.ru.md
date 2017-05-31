@@ -53,5 +53,7 @@ protected override void PreApplyToControls()
 
 7. Перекомпилировать `Solution`, запустить приложение и проверить, как работают внесённые изменения (при нажатии на кнопку лукапа открывается список, в котором только менеджеры).
 
+ ## Перейти
+
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Настройка меню приложения для разных ролей пользователей](gpg_customize-application-menu)
 * [Указание текущей даты](gpg_date-time-now.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 

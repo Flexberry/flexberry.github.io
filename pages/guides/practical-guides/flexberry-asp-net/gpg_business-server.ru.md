@@ -165,5 +165,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 }
 ```
 
+ ## Перейти
+
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Автоматическое получение данных из LookUp](gpg_auto-get-data-from-lookup.html)
 * [Блокировка элемента на форме редактирования](gpg_set-ctrl-read-only.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 

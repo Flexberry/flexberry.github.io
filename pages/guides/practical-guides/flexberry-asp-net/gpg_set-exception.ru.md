@@ -32,5 +32,7 @@ set
 
 Когда данное исключение будет сгенерировано, на форме будет выдано сообщение об ошибочном вводе.
 
+ ## Перейти
+
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Наложение ограничения на LookUp в AGE, связывание лукапов.](gpg_limit-function-for-lookup-in-age.html)
 * [Автоматическое получение данных из LookUp](gpg_auto-get-data-from-lookup.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 

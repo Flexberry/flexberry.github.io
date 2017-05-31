@@ -25,5 +25,7 @@ private System.DateTime fДатаЗаполнения = System.DateTime.Now;
 
 __Примечание:__ Согласно `C#` инициализаторы равнозначны конструктору класса по-умолчанию, поэтому при каждом конструировании нового `Документа` и любого его наследника будет проставляться текущее время.
 
+ ## Перейти
+
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Наложение ограничения на LookUp](gpg_limitfunction-for-lookup.html)
 * [Автоматическое вычисление](gpg_auto-calculation.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 

@@ -158,5 +158,7 @@ public static string CreateLf(string[] ordKeys, string lfKey)
 </asp:Content>
 ```
 
+ ## Перейти
+
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Автоматическое вычисление](gpg_auto-calculation.html)
 * [Обработка исключений](gpg_set-exception.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
