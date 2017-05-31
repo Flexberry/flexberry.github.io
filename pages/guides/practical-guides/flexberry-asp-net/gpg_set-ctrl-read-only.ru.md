@@ -14,12 +14,12 @@ lang: ru
 ```csharp
 protected override void PostApplyToControls()
 {
-		if ((DataObject != null) && (DataObject.Статус == СостояниеЗаказа.Оплаченный))
-		{
-				wb.SetReadonlyToControl(ctrlСтатус, true);
-		}
+	if ((DataObject != null) && (DataObject.Статус == СостояниеЗаказа.Оплаченный))
+	{
+		wb.SetReadonlyToControl(ctrlСтатус, true);
+	}
 
-		Page.Validate();
+	Page.Validate();
 }
 ```
 

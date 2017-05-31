@@ -21,23 +21,23 @@ lang: ru
 ```csharp
 protected override void PreApplyToControls()
 {
-		if (IsPostBack && (DataObject == null || DataObject.GetStatus(true) == ObjectStatus.Created))
+	if (IsPostBack && (DataObject == null || DataObject.GetStatus(true) == ObjectStatus.Created))
+	{
+		var заказ = ctrlЗаказ.SelectedMasterPK;
+		ctrlЗаказ.MasterViewName = Заказ.Views.ЗаказL.Name;
+
+		var langdef = ExternalLangDef.LanguageDef;
+		var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(СтрокаЗаказа), СтрокаЗаказа.Views.СтрокаЗаказаE);
+		lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
+										new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<СтрокаЗаказа>(x => x.Заказ)), заказ);
+		var строкиЗаказа = DataServiceProvider.DataService.LoadObjects(lcs);
+
+		foreach (var s in строкиЗаказа)
 		{
-				var заказ = ctrlЗаказ.SelectedMasterPK;
-				ctrlЗаказ.MasterViewName = Заказ.Views.ЗаказL.Name;
-
-				var langdef = ExternalLangDef.LanguageDef;
-				var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(СтрокаЗаказа), СтрокаЗаказа.Views.СтрокаЗаказаE);
-				lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-												new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<СтрокаЗаказа>(x => x.Заказ)), заказ);
-				var строкиЗаказа = DataServiceProvider.DataService.LoadObjects(lcs);
-
-				foreach (var s in строкиЗаказа)
-				{
-						var строкаЗаказа = (СтрокаЗаказа)s;
-						DataObject.ЗаписьВНакладной.Add(new ЗаписьВНакладной { Количество = строкаЗаказа.Количество, Товар = строкаЗаказа.Товар });
-				}
+			var строкаЗаказа = (СтрокаЗаказа)s;
+			DataObject.ЗаписьВНакладной.Add(new ЗаписьВНакладной { Количество = строкаЗаказа.Количество, Товар = строкаЗаказа.Товар });
 		}
+	}
 }
 ```
 
@@ -50,9 +50,9 @@ protected override void PreApplyToControls()
 
 ```js
 <script type="text/javascript">
-		$('#<%= ctrlЗаказ.ClientID %>').on('change', function (e, d) {
-				$.ics.postBack('', '');
-		});
+	$('#<%= ctrlЗаказ.ClientID %>').on('change', function (e, d) {
+		$.ics.postBack('', '');
+	});
 </script>
 ```
 

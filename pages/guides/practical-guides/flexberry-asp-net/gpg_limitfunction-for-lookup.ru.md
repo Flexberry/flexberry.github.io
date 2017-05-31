@@ -32,12 +32,11 @@ lang: ru
 ```csharp
 protected override void PreApplyToControls()
 {
-		ExternalLangDef langdef = ExternalLangDef.LanguageDef;
+	ExternalLangDef langdef = ExternalLangDef.LanguageDef;
 
-		ctrlМенеджер.LimitFunction = langdef.GetFunction(
-				langdef.funcEQ, new VariableDef(
-						langdef.StringType, Information.ExtractPropertyName<Сотрудник>(x => x.Должность)), EnumCaption.GetCaptionFor(Должность.Менеджер));
-
+	ctrlМенеджер.LimitFunction = langdef.GetFunction(
+		langdef.funcEQ, new VariableDef(
+			langdef.StringType, Information.ExtractPropertyName<Сотрудник>(x => x.Должность)), EnumCaption.GetCaptionFor(Должность.Менеджер));
 }
 ```
 
