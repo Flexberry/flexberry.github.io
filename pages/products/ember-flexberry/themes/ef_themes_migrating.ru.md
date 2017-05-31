@@ -14,7 +14,7 @@ summary: Описание перехода на новые темы оформл
 Для того чтобы, можно было добавлять свои кастомизированные темы в ember-flexberry необходимо:
 
 1. bower_components/semantic-ui/src/theme.config.example скопировать в корневую папку ember-flexberry, переименовать в theme.config и 
-   прописать вместо @import "theme.less";  другой путь @import "tests/dummy/app/styles/theme.less";
+   прописать вместо @import "theme.less";   другой путь  @import "tests/dummy/app/styles/theme.less";
 2. скопировать bower_components/semantic-ui/src/theme.less и папку themes в /test/dummy/app/style
 3. переименовать /test/dummy/app/style/app.scss в app.less и добавить в него сверху строчку
 
