@@ -27,23 +27,31 @@ lang: ru
 
 ![](/images/pages/guides/flexberry-aspnet/zakaz-no-gen.png)
 
-5. Изменить метод `PreApplyToControls()` файла `ZakazE.aspx.cs` следующим образом:
+5. Прописать следующие строчки (для выбора вариантов используется сочетание Ctrl+Пробел): 
+
+```csharp
+using ICSSoft.STORMNET.FunctionalLanguage;
+using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
+```
+
+6. Изменить метод `PreApplyToControls()` файла `ZakazE.aspx.cs` следующим образом:
 
 ```csharp
 protected override void PreApplyToControls()
 {
-	ExternalLangDef langdef = ExternalLangDef.LanguageDef;
+	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 
-	ctrlМенеджер.LimitFunction = langdef.GetFunction(
-		langdef.funcEQ, new VariableDef(
-			langdef.StringType, Information.ExtractPropertyName<Сотрудник>(x => x.Должность)), EnumCaption.GetCaptionFor(Должность.Менеджер));
+	Function lf = langdef.GetFunction(langdef.funcEQ,
+		new VariableDef(langdef.StringType, Information.ExtractPropertyName<Сотрудник>(x => x.Должность)), EnumCaption.GetCaptionFor(Должность.Менеджер));
+
+	ctrlМенеджер.LimitFunction = lf;
 }
 ```
 
 Метод `PreApplyToControls()` вызывается перед распределением данных объекта по контролам страницы. На момент вызова этого метода объект уже вычитан из базы (либо при `PostBack'e` значения уже записаны в объект), можно совершить какие-то дополнительные манипуляции с объектом прежде чем его значения попадут на страницу.
 В коде данного метода формируется специальная конструкция `LimitFunction`, которая позволяет накладывать ограничения.
 
-6. Перекомпилировать `Solution`, запустить приложение и проверить, как работают внесённые изменения (при нажатии на кнопку лукапа открывается список, в котором только менеджеры).
+7. Перекомпилировать `Solution`, запустить приложение и проверить, как работают внесённые изменения (при нажатии на кнопку лукапа открывается список, в котором только менеджеры).
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Настройка меню приложения для разных ролей пользователей](gpg_customize-application-menu)
 * [Указание текущей даты](gpg_date-time-now.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 

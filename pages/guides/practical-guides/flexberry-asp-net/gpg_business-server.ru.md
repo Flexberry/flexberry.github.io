@@ -27,7 +27,20 @@ lang: ru
 ![](/images/pages/guides/flexberry-aspnet/gen-bs-and-objects.png)
 
 4. Проект с бизнес-серверами добавить в `Solution`. Добавить ссылку на проект с бизнес-сервером в проекты приложений.
-5. Далее в коде бизнес-сервера обработать всё следующим образом:
+5. После этого прописать в скобках программиста следующие строчки (для выбора вариантов используется сочетание `Ctrl`+Пробел):
+
+```csharp
+// *** Start programmer edit section *** (Using statements)
+using System.Collections;
+
+using ICSSoft.STORMNET;
+using ICSSoft.STORMNET.FunctionalLanguage;
+using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
+
+// *** End programmer edit section *** (Using statements)
+``` 
+
+6. Далее в коде бизнес-сервера обработать всё следующим образом:
 
 ```csharp
 public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Склад.Заказ UpdatedObject)
