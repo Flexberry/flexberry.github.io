@@ -1,30 +1,31 @@
----
+ ---
 title: ShowHideDiv
 sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
+keywords: 'Flexberry ASP-NET, Web UI (Контролы)'
 toc: true
 permalink: en/fa_show-hide-div.html
 lang: en
+published: true
 ---
 
-`ICSSoft.STORMNET.Web.AjaxControls.ShowHideDiv` - контрол для показа/скрытия контента. 
+`ICSSoft.STORMNET.Web.AjaxControls.ShowHideDiv` - control to show/hide a content. 
 
-### Свойства:
+### Settings:
 
-| Свойство | Тип | Описание|
+| Settings | Type | Description|
 |-----------------|--------------------|----------------------------|
-| `Content` | `System.Web.UI.ControlCollection` | Контент, который нужно скрывать/показывать|
-| `CookieName` | `string` | Возвращает имя для сохранения состояния контрола в cookies (формируется из имени формы и ID контрола)|
-| `Title` | `string` | Заголовок|
+| `Content` | `System.Web.UI.ControlCollection` | Content to hide/show|
+| `CookieName` | `string` | Returns the name to save the status of the control in cookies (it is formed from the name of the form and the ID of the control)|
+| `Title` | `string` | Header|
 
-### Методы:
+### Methods:
 
-| Метод | Описание|
+| Method | Description|
 |--------|---------|
-| `HideDiv()` | Скрыть контент|
-| `ShowDiv()` | Показать контент|
+| `HideDiv()` | Hide the content|
+| `ShowDiv()` | Show the content|
 
-## Пример использования:
+## Example of use:
 
 ```xml
 ...
@@ -36,22 +37,20 @@ lang: en
 ...
 ```
 
-## Вид
+## View
 
-### В закрытом состоянии:
+### In the closed state:
 
 ![](/images/pages/products/flexberry-aspnet/controls/show-hide-div-collapsed.png)
 
-### В открытом состоянии:
+### In the showed state:
 
 ![](/images/pages/products/flexberry-aspnet/controls/show-hide-div-expanded.png)
 
-## Клиентские методы
+## Client methods
 
-Скрытие и раскрытие: `setExpand`
+Hide and show: `setExpand`
 
 ```csharp
 $('#ИД').showHide('setExpand', false)
 ```
- 
- 
