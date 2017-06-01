@@ -28216,7 +28216,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/minimap-control.js",
-            "line": 15,
+            "line": 14,
+            "description": "Reference to component's template.",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 19,
             "description": "Leaflet layerGroup for this control",
             "itemtype": "property",
             "name": "layerGroup",
@@ -28227,18 +28234,40 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/minimap-control.js",
-            "line": 25,
-            "description": "Sets whether the minimap should have a button to minimise it.",
+            "line": 43,
+            "description": "The standard Leaflet.Control position parameter, used like all the other controls.",
             "itemtype": "property",
-            "name": "toggleDisplay",
-            "type": "boolean",
-            "default": "true",
+            "name": "position",
+            "type": "String",
+            "default": "'bottomright'",
             "class": "MiniMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/minimap-control.js",
-            "line": 33,
+            "line": 51,
+            "description": "The width of the minimap in pixels.",
+            "itemtype": "property",
+            "name": "width",
+            "type": "number",
+            "default": "150",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 59,
+            "description": "The height of the minimap in pixels.",
+            "itemtype": "property",
+            "name": "height",
+            "type": "number",
+            "default": "150",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 67,
             "description": "The width of the toggle marker and the minimap when collapsed, in pixels",
             "itemtype": "property",
             "name": "collapsedWidth",
@@ -28249,7 +28278,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/minimap-control.js",
-            "line": 41,
+            "line": 75,
             "description": "The height of the toggle marker and the minimap when collapsed, in pixels.",
             "itemtype": "property",
             "name": "collapsedHeight",
@@ -28260,8 +28289,89 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/minimap-control.js",
-            "line": 49,
-            "description": "Reference to component's template.",
+            "line": 83,
+            "description": "The offset applied to the zoom in the minimap compared to the zoom of the main map. Can be positive or negative.",
+            "itemtype": "property",
+            "name": "zoomLevelOffset",
+            "type": "number",
+            "default": "-5",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 91,
+            "description": "Overrides the offset to apply a fixed zoom level to the minimap regardless of the main map zoom.\nSet it to any valid zoom level, if unset zoomLevelOffset is used instead.",
+            "itemtype": "property",
+            "name": "zoomLevelFixed",
+            "type": "number",
+            "default": "null",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 100,
+            "description": "Applies a fixed position to the minimap regardless of the main map's view / position.\nPrevents panning the minimap, but does allow zooming (both in the minimap and the main map).\nIf the minimap is zoomed, it will always zoom around the centerFixed point. You can pass in a LatLng-equivalent object.",
+            "itemtype": "property",
+            "name": "centerFixed",
+            "type": "{<a href=\"http://leafletjs.com/reference-1.0.0.html#latlng\">L.LatLng</a>}",
+            "default": "false",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 110,
+            "description": "Sets whether the minimap should have an animated zoom.\nWill cause it to lag a bit after the movement of the main map.",
+            "itemtype": "property",
+            "name": "zoomAnimation",
+            "type": "boolean",
+            "default": "false",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 119,
+            "description": "Sets whether the minimap should have a button to minimise it.",
+            "itemtype": "property",
+            "name": "toggleDisplay",
+            "type": "boolean",
+            "default": "true",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 127,
+            "description": "Sets whether the minimap should hide automatically if the parent map bounds does not fit within the minimap bounds.\nEspecially useful when 'zoomLevelFixed' is set.",
+            "itemtype": "property",
+            "name": "autoToggleDisplay",
+            "type": "boolean",
+            "default": "false",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 136,
+            "description": "Sets whether the minimap should start in a minimized position.",
+            "itemtype": "property",
+            "name": "minimized",
+            "type": "boolean",
+            "default": "false",
+            "class": "MiniMapComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/minimap-control.js",
+            "line": 144,
+            "description": "Overrides the default strings allowing for translation.\nSee {<a href=\"https://github.com/Norkart/Leaflet-MiniMap#available-strings\">for available strings</a>}",
+            "itemtype": "property",
+            "name": "strings",
+            "type": "Object",
+            "default": "{hideText:'', showText:''}",
             "class": "MiniMapComponent",
             "module": "ember-flexberry-gis"
         },
@@ -49505,7 +49615,7 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/minimap-control.js:49"
+            "line": " ember-flexberry-gis/addon/components/minimap-control.js:14"
         },
         {
             "message": "Missing item type\nValidation settings",

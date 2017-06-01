@@ -455,6 +455,14 @@
 
                     <ul class="index-list properties extends">
                             <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_autoToggleDisplay" data-tablink="autoToggleDisplay">autoToggleDisplay</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_centerFixed" data-tablink="centerFixed">centerFixed</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_collapsedHeight" data-tablink="collapsedHeight">collapsedHeight</a>
 
                             </li>
@@ -464,6 +472,10 @@
                             </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_control" data-tablink="control">control</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_height" data-tablink="height">height</a>
 
                             </li>
                             <li class="index-item property">
@@ -478,6 +490,10 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property_map" data-tablink="map">map</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_minimized" data-tablink="minimized">minimized</a>
+
+                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_options" data-tablink="options">options</a>
 
@@ -487,7 +503,27 @@
 
                             </li>
                             <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_strings" data-tablink="strings">strings</a>
+
+                            </li>
+                            <li class="index-item property">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_toggleDisplay" data-tablink="toggleDisplay">toggleDisplay</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_width" data-tablink="width">width</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_zoomAnimation" data-tablink="zoomAnimation">zoomAnimation</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_zoomLevelFixed" data-tablink="zoomLevelFixed">zoomLevelFixed</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_zoomLevelOffset" data-tablink="zoomLevelOffset">zoomLevelOffset</a>
 
                             </li>
                     </ul>
@@ -693,6 +729,61 @@
             <div id="properties" class="tab-pane">
                 <h2 class="off-left">Properties</h2>
 
+                    <div id="property_autoToggleDisplay" class="property item">
+                        <h3 class="name"><code>autoToggleDisplay</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l127"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:127</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets whether the minimap should hide automatically if the parent map bounds does not fit within the minimap bounds.
+                    Especially useful when 'zoomLevelFixed' is set.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_centerFixed" class="property item">
+                        <h3 class="name"><code>centerFixed</code></h3>
+                        <span class="type"><a href="http://leafletjs.com/reference-1.0.0.html#latlng">L.LatLng</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l100"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:100</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Applies a fixed position to the minimap regardless of the main map's view / position.
+                    Prevents panning the minimap, but does allow zooming (both in the minimap and the main map).
+                    If the minimap is zoomed, it will always zoom around the centerFixed point. You can pass in a LatLng-equivalent object.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
                     <div id="property_collapsedHeight" class="property item">
                         <h3 class="name"><code>collapsedHeight</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
@@ -704,7 +795,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l41"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:41</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l75"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:75</code></a>
                             </p>
                     
                     
@@ -730,7 +821,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l33"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:33</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l67"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:67</code></a>
                             </p>
                     
                     
@@ -771,6 +862,32 @@
                     
                     
                     </div>
+                    <div id="property_height" class="property item">
+                        <h3 class="name"><code>height</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l59"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:59</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The height of the minimap in pixels.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 150</p>
+                    
+                    
+                    </div>
                     <div id="property_layerGroup" class="property item">
                         <h3 class="name"><code>layerGroup</code></h3>
                         <span class="type">L.LayerGroup</span>
@@ -782,7 +899,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l15"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:15</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l19"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:19</code></a>
                             </p>
                     
                     
@@ -848,6 +965,32 @@
                     
                     
                     </div>
+                    <div id="property_minimized" class="property item">
+                        <h3 class="name"><code>minimized</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l136"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:136</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets whether the minimap should start in a minimized position.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
                     <div id="property_options" class="property item inherited">
                         <h3 class="name"><code>options</code></h3>
                         <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
@@ -873,7 +1016,7 @@
                     
                     
                     </div>
-                    <div id="property_position" class="property item inherited">
+                    <div id="property_position" class="property item">
                         <h3 class="name"><code>position</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                     
@@ -882,20 +1025,50 @@
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/BaseControlComponent.html#property_position">BaseControlComponent</a>:
-                            <a href="../files/ember-flexberry-gis_addon_components_base-control.js.html#l25"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;base-control.js:25</code></a>
+                                <p>Inherited from
+                                <a href="../classes/BaseControlComponent.html#property_position">
+                                    BaseControlComponent
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l43"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:43</code></a>
                             </p>
                     
                     
                         </div>
                     
                         <div class="description">
-                            <p>Conrol's position inside map.
-                    Possible values are: 'topleft', 'topright', 'bottomleft' or 'bottomright'.</p>
+                            <p>The standard Leaflet.Control position parameter, used like all the other controls.</p>
                     
                         </div>
                     
+                            <p><strong>Default:</strong> &#x27;bottomright&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_strings" class="property item">
+                        <h3 class="name"><code>strings</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l144"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:144</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Overrides the default strings allowing for translation.
+                    See {<a href="https://github.com/Norkart/Leaflet-MiniMap#available-strings">for available strings</a>}</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> {hideText:&#x27;&#x27;, showText:&#x27;&#x27;}</p>
                     
                     
                     </div>
@@ -910,7 +1083,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l25"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:25</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l119"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:119</code></a>
                             </p>
                     
                     
@@ -922,6 +1095,112 @@
                         </div>
                     
                             <p><strong>Default:</strong> true</p>
+                    
+                    
+                    </div>
+                    <div id="property_width" class="property item">
+                        <h3 class="name"><code>width</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l51"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:51</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The width of the minimap in pixels.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 150</p>
+                    
+                    
+                    </div>
+                    <div id="property_zoomAnimation" class="property item">
+                        <h3 class="name"><code>zoomAnimation</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l110"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:110</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets whether the minimap should have an animated zoom.
+                    Will cause it to lag a bit after the movement of the main map.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_zoomLevelFixed" class="property item">
+                        <h3 class="name"><code>zoomLevelFixed</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l91"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:91</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Overrides the offset to apply a fixed zoom level to the minimap regardless of the main map zoom.
+                    Set it to any valid zoom level, if unset zoomLevelOffset is used instead.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_zoomLevelOffset" class="property item">
+                        <h3 class="name"><code>zoomLevelOffset</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_components_minimap-control.js.html#l83"><code>ember-flexberry-gis&#x2F;addon&#x2F;components&#x2F;minimap-control.js:83</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The offset applied to the zoom in the minimap compared to the zoom of the main map. Can be positive or negative.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> -5</p>
                     
                     
                     </div>
