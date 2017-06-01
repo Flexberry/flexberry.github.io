@@ -27,7 +27,7 @@ protected override void PostApplyToControls()
 а метод `AfterApplyToControl()`, в свою очередь, вызывается после распределения данных объекта 
 по контролам страницы. На момент вызова этого метода все контролы на странице уже обновлены в соответствии с данными объекта. 
  
- ## Перейти
+## Перейти
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Работа с бизнес-сервером](gpg_business-server.html)
 * [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
