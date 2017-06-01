@@ -124,42 +124,42 @@ entries:
       url: /gpg_customize-application-menu.html
       output: web 
 
-      - title: 
+    - title: Limitfunction for Lookup
       title_ru: Наложение ограничения на LookUp
       url: /gpg_limitfunction-for-lookup.html
       output: web 
 
-      - title: Specifying the current date
+    - title: Specifying the current date
       title_ru: Указание текущей даты
       url: /gpg_date-time-now.html
       output: web 
 
-      - title: Automatic calculation
+    - title: Automatic calculation
       title_ru: Автоматическое вычисление
       url: /gpg_auto-calculation.html
       output: web 
 
-      - title: 
+    - title: Limitfunction for Lookup in AGE
       title_ru: Наложение ограничения на LookUp в AGE, связывание лукапов.
       url: /gpg_limit-function-for-lookup-in-age.html
       output: web
 
-      - title: Exception handling
+    - title: Exception handling
       title_ru: Обработка исключений
       url: /gpg_set-exception.html
       output: web 
         
-      - title: Automatic retrieval of data from LookUp
+    - title: Automatic retrieval of data from LookUp
       title_ru: Автоматическое получение данных из LookUp
       url: /gpg_auto-get-data-from-lookup.html
       output: web
 
-      - title: Working with the business-server
+    - title: Working with the business-server
       title_ru: Работа с бизнес-сервером
       url: /gpg_business-server.html
       output: web
 
-      - title: Lock an item on an editing form
+    - title: Lock an item on an editing form
       title_ru: Блокировка элемента на форме редактирования
       url: /gpg_set-ctrl-read-only.html
       output: web      
