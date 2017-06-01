@@ -1199,10 +1199,15 @@ export default FlexberryBaseComponent.extend(
 
       @method actions.rowClick
       @public
-      @param {DS.Model} recordWithKey A record with key
-      @param {jQuery.Event} e jQuery.Event by click on row
+      @param {Object} recordWithKey Object containing record related to clicked row and it&#x27;s key.
+      @param {Object} recordWithKey.key Key of record related to clicked row
+      @param {Object} recordWithKey.data Record related to clicked row.
+      @param {Object} params Additional parameters describing clicked row.
+      @param {Object} params.column Column in row wich owns the clicked cell.
+      @param {Number} params.columnIndex Index of column in row wich owns the clicked cell.
+      @param {jQuery.Event} params.originalEvent Сlick event object.
     */
-    rowClick(recordWithKey, e) {
+    rowClick(recordWithKey, params) {
       let editOnSeparateRoute = this.get(&#x27;editOnSeparateRoute&#x27;);
       if (this.get(&#x27;readonly&#x27;)) {
         if (!editOnSeparateRoute) {
@@ -1216,16 +1221,18 @@ export default FlexberryBaseComponent.extend(
 
         let $selectedRow = this._getRowByKey(recordKey);
         let editOnSeparateRoute = this.get(&#x27;editOnSeparateRoute&#x27;);
+        Ember.$.extend(params, {
+          onEditForm: this.get(&#x27;onEditForm&#x27;),
+          saveBeforeRouteLeave: this.get(&#x27;saveBeforeRouteLeave&#x27;),
+          editOnSeparateRoute: editOnSeparateRoute,
+          modelName: this.get(&#x27;modelProjection&#x27;).modelName,
+          detailArray: this.get(&#x27;content&#x27;),
+          readonly: this.get(&#x27;readonly&#x27;),
+          goToEditForm: true
+        });
 
         Ember.run.after(this, () =&gt; { return Ember.isNone($selectedRow) || $selectedRow.hasClass(&#x27;active&#x27;); }, () =&gt; {
-          this.sendAction(&#x27;action&#x27;, recordData, {
-            onEditForm: this.get(&#x27;onEditForm&#x27;),
-            saveBeforeRouteLeave: this.get(&#x27;saveBeforeRouteLeave&#x27;),
-            editOnSeparateRoute: editOnSeparateRoute,
-            modelName: this.get(&#x27;modelProjection&#x27;).modelName,
-            detailArray: this.get(&#x27;content&#x27;),
-            readonly: this.get(&#x27;readonly&#x27;)
-          });
+          this.sendAction(&#x27;action&#x27;, recordData, params);
         });
 
         this._setActiveRecord(recordKey);
