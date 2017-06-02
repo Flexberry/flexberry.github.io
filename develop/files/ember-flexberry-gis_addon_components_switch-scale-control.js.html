@@ -407,7 +407,7 @@ export default BaseControl.extend({
 
   leafletOptions: [&#x27;position&#x27;, &#x27;dropdownDirection&#x27;, &#x27;className&#x27;, &#x27;ratio&#x27;, &#x27;updateWhenIdle&#x27;, &#x27;ratioPrefix&#x27;, &#x27;ratioCustomItemText&#x27;,
     &#x27;ratioMenu&#x27;, &#x27;pixelsInMeterWidth&#x27;, &#x27;getMapWidthForLanInMeters&#x27;, &#x27;customScaleTitle&#x27;, &#x27;recalcOnPositionChange&#x27;,
-    &#x27;recalcOnZoomChange&#x27;, &#x27;scales&#x27;, &#x27;roundScales&#x27;],
+    &#x27;recalcOnZoomChange&#x27;, &#x27;scales&#x27;, &#x27;roundScales&#x27;, &#x27;adjustScales&#x27;],
 
   createControl() {
     return new L.Control.SwitchScaleControl(this.get(&#x27;options&#x27;));
