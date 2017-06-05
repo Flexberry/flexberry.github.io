@@ -39,6 +39,7 @@ lang: ru
 * [Практическое применение ООП](https://www.youtube.com/watch?v=BmJH3I3McOs)
 * [Вебинар на тему "ООП. Простыми словами о сложных вещах"](https://www.youtube.com/watch?v=atjD9GQcFhs)
 * [Видео курс C# Базовый. Урок 1. Введение в ООП. Классы и объекты](https://www.youtube.com/watch?v=x0udrpe_gZE)
+* [Объектно-Ориентированное Программирование](https://www.youtube.com/playlist?list=PLY7PmJJFH5nRcWGKbgl9N7txM5YLtela6)
 
 ### Презентация
 
@@ -49,6 +50,9 @@ lang: ru
 ### Рекомендованные книги
 
 * [Объектно-ориентированное конструирование программных систем](http://www.ozon.ru/context/detail/id/2336754/)
+* [Объектно-ориентированное мышление](https://www.ozon.ru/context/detail/id/26036833/)
+* [Объектно-ориентированный анализ и проектирование с примерами приложений](http://www.ozon.ru/context/detail/id/3905587/)
+* [Почувствуй класс. Учимся программировать хорошо с объектами и контрактами](https://www.ozon.ru/context/detail/id/6304950/)
 
 ## Перейти
 
