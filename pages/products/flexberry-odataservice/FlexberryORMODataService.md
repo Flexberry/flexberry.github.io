@@ -279,3 +279,53 @@ private static object GetLastRoundIdForTopic(ODataFunctions.QueryParameters quer
     return bs.GetLastRoundIdForTopic((string)parameters["topicId"]);
 }
 ```
+
+## Фильтрация свойств для типов при регистрации метаданных в ODataService
+
+Пример фильтрации свойств для типов
+
+```cs
+/// <summary>
+/// Register Data objects.
+/// </summary>
+/// <param name="config">Http configuration.</param>
+public static void Register(HttpConfiguration config)
+{
+            var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
+            config.EnableCors(cors);
+
+            config.DependencyResolver = new UnityDependencyResolver(container);
+
+            var assemblies = new[]
+            {
+                typeof(Suggestion).Assembly,
+                typeof(ApplicationLog).Assembly,
+                typeof(UserSetting).Assembly,
+                typeof(FlexberryUserSetting).Assembly,
+                typeof(Agent).Assembly,
+                typeof(AuditEntity).Assembly,
+                typeof(Lock).Assembly
+            };
+            var modelBuilder = new DefaultDataObjectEdmModelBuilder(assemblies);
+            modelBuilder.PropertyFilter = PropertyFilter;
+            var token = config.MapODataServiceDataObjectRoute(modelBuilder);
+            config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+    }
+    catch (Exception ex)
+    {
+        LogService.LogError("RunApp odata service error.", ex);
+        throw;
+    }
+}
+
+/// <summary>
+/// Функция, которая фильтрует свойство для типа. В данном случае из регистрации будет исключено свойство Agent.Pwd.
+/// Эта функция вызывается при регистрации свойства в метаданных.
+/// </summary>
+/// <param name="propertyInfo">Свойство для типа, для которого нужно выполнить фильтрацию.</param>
+/// <returns>Если возвращается true, то свойство будет зарегистрировано, иначе не будет.</returns>
+private static bool PropertyFilter(PropertyInfo propertyInfo)
+{
+    return Information.ExtractPropertyInfo<Agent>(x => x.Pwd) != propertyInfo;
+}
+```
