@@ -669,12 +669,13 @@ let FlexberryMapComponent = Ember.Component.extend(
       delete leafletMap._fireDOMEvent;
     },
 
-    _runQuery(queryFilter) {
+    _runQuery(queryFilter, mapObjectSetting) {
       let serviceLayer = this.get(&#x27;serviceLayer&#x27;);
       let leafletMap = this.get(&#x27;_leafletObject&#x27;);
 
       let e = {
         queryFilter: queryFilter,
+        mapObjectSetting: mapObjectSetting,
         results: Ember.A(),
         serviceLayer: serviceLayer
       };
@@ -772,10 +773,11 @@ let FlexberryMapComponent = Ember.Component.extend(
       this.set(&#x27;serviceLayer&#x27;, serviceLayer);
 
       let queryFilter = this.get(&#x27;queryFilter&#x27;);
+      let mapObjectSetting = this.get(&#x27;mapObjectSetting&#x27;);
 
       if (!Ember.isBlank(queryFilter)) {
         Ember.run.scheduleOnce(&#x27;afterRender&#x27;, this, function () {
-          this._runQuery(queryFilter);
+          this._runQuery(queryFilter, mapObjectSetting);
         });
       }
     },

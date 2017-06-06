@@ -25778,7 +25778,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 320,
+            "line": 321,
             "description": "Finishes query.",
             "itemtype": "method",
             "name": "_finishQuery",
@@ -25805,21 +25805,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 360,
+            "line": 361,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 389,
+            "line": 391,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberryMapComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 406,
+            "line": 408,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) initialized.",
             "itemtype": "method",
             "name": "sendingActions.leafletInit",
@@ -25842,7 +25842,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-map.js",
-            "line": 414,
+            "line": 416,
             "description": "Component's action invoking when [leaflet map](http://leafletjs.com/reference-1.0.0.html#map) destroyed.",
             "itemtype": "method",
             "name": "sendingActions.leafletDestroy",
@@ -28517,6 +28517,17 @@
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
             "line": 40,
+            "description": "Query parameter, contains map object setting primary key",
+            "itemtype": "property",
+            "name": "setting",
+            "type": "String",
+            "default": "null",
+            "class": "EditMapController",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
+            "line": 48,
             "description": "Deserialized valued of filter property",
             "itemtype": "property",
             "name": "queryFilter",
@@ -28527,7 +28538,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 59,
+            "line": 67,
             "description": "Creates new layer as specified layer's child\n(overridden method from {{#crossLink \"FlexberryMaplayerActionsHandlerMixin:createLayer:method\"}}\nFlexberryMaplayerActionsHandlerMixin\n{{/crossLink}}).",
             "itemtype": "method",
             "name": "createLayer",
@@ -28566,7 +28577,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 85,
+            "line": 93,
             "description": "Updates specified layer with given properties.\n(overridden method from {{#crossLink \"FlexberryMaplayerActionsHandlerMixin:editLayer:method\"}}\nFlexberryMaplayerActionsHandlerMixin\n{{/crossLink}}).",
             "itemtype": "method",
             "name": "editLayer",
@@ -28605,7 +28616,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/controllers/edit-map.js",
-            "line": 103,
+            "line": 111,
             "description": "Removes specified layer from layers hierarchy\n(overridden method from {{#crossLink \"FlexberryMaplayerActionsHandlerMixin:/removeLayer:method\"}}\nFlexberryMaplayerActionsHandlerMixin\n{{/crossLink}}).",
             "itemtype": "method",
             "name": "removeLayer",
@@ -48511,19 +48522,19 @@
         },
         {
             "message": "unknown tag: computed",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:40"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:48"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:59"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:67"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:85"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:93"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:103"
+            "line": " ember-flexberry-gis/addon/controllers/edit-map.js:111"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -49503,11 +49514,11 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:360"
+            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:361"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:389"
+            "line": " ember-flexberry-gis/addon/components/flexberry-map.js:391"
         },
         {
             "message": "Missing item type\nReference to component's template.",
