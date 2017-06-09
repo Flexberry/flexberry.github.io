@@ -824,6 +824,15 @@ let FlexberryMaplayerComponent = Ember.Component.extend(
     */
     readonly: false,
 
+    /**
+      Flag: indicates whether layer node has been expanded once.
+
+      @property hasBeenExpanded
+      @type Boolean
+      @default false
+    */
+    hasBeenExpanded: false,
+
     actions: {
       /**
         Handles {{#crossLink &quot;FlexberryTreenodeComponent/sendingActions.headerClick:method&quot;}}&#x27;flexberry-treenode&#x27; component&#x27;s &#x27;headerClick&#x27; action{{/crossLink}}.
@@ -846,6 +855,12 @@ let FlexberryMaplayerComponent = Ember.Component.extend(
         {{#crossLink &quot;FlexberryTreenodeComponent/sendingActions.beforeExpand:method&quot;}}&#x27;flexberry-treenode&#x27; component&#x27;s &#x27;beforeExpand&#x27; action{{/crossLink}}.
       */
       onBeforeExpand(...args) {
+        // Set has been expanded flag once.
+        let hasBeenExpanded = this.set(&#x27;hasBeenExpanded&#x27;);
+        if (!hasBeenExpanded) {
+          this.set(&#x27;hasBeenExpanded&#x27;, true);
+        }
+
         this.sendAction(&#x27;beforeExpand&#x27;, ...args);
       },
 

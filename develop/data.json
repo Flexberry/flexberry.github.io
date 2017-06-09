@@ -16789,6 +16789,17 @@
         {
             "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
             "line": 66,
+            "description": "Flag: indicates whether legend was lazy loaded.",
+            "itemtype": "property",
+            "name": "lazyLoaded",
+            "type": "Boolean",
+            "default": "true",
+            "class": "BaseLegendComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
+            "line": 75,
             "description": "Related layer's name.",
             "itemtype": "property",
             "name": "layerName",
@@ -16799,7 +16810,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
-            "line": 75,
+            "line": 84,
             "description": "Related layer's settings as JSON object.",
             "itemtype": "property",
             "name": "layerSettings",
@@ -16810,7 +16821,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/legends/base-legend.js",
-            "line": 84,
+            "line": 93,
             "description": "Array of legend's for layer.\nEvery legend is an object with following structure { src: ... },\nwhere 'src' is legend's image source (url or base64-string).",
             "itemtype": "property",
             "name": "_legends",
@@ -22737,6 +22748,11 @@
                     "type": "Object"
                 },
                 {
+                    "name": "mapObjectSetting",
+                    "description": "Object describing current query setting",
+                    "type": "Object"
+                },
+                {
                     "name": "results",
                     "description": "Objects describing query results.\nEvery result-object has the following structure: { layer: ..., features: [...] },\nwhere 'layer' is metadata of layer related to query result, features is array\ncontaining (GeoJSON feature-objects)[http://geojson.org/geojson-spec.html#feature-objects]\nor a promise returning such array.",
                     "type": "Object[]"
@@ -22747,28 +22763,28 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 356,
+            "line": 360,
             "description": "Initializes component.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 366,
+            "line": 370,
             "description": "Initializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 386,
+            "line": 390,
             "description": "Deinitializes DOM-related component's properties.",
             "class": "BaseLayerComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 404,
+            "line": 408,
             "description": "Creates leaflet layer related to layer type.",
             "itemtype": "method",
             "name": "createLayer",
@@ -22780,7 +22796,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 415,
+            "line": 419,
             "description": "Identifies layer's objects inside specified bounding box.",
             "itemtype": "method",
             "name": "identify",
@@ -22818,7 +22834,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 434,
+            "line": 438,
             "description": "Handles 'flexberry-map:search' event of leaflet map.",
             "itemtype": "method",
             "name": "search",
@@ -22863,11 +22879,16 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 450,
+            "line": 454,
             "description": "Handles 'flexberry-map:query' event of leaflet map.",
             "itemtype": "method",
             "name": "_query",
             "params": [
+                {
+                    "name": "layerLinks",
+                    "description": "Array containing metadata for query",
+                    "type": "Object[]"
+                },
                 {
                     "name": "e",
                     "description": "Event object.",
@@ -22889,7 +22910,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 463,
+            "line": 468,
             "description": "Observes and handles changes in layer's properties marked as leaflet options.\nPerforms layer's recreation with new options.\nNote: it is overridden method from 'leaflet-options' mixin.",
             "itemtype": "method",
             "name": "leafletOptionsDidChange",
@@ -22905,7 +22926,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/base-layer.js",
-            "line": 498,
+            "line": 503,
             "description": "Injects (leafelt GeoJSON layers)[http://leafletjs.com/reference-1.0.0.html#geojson] according to current CRS\ninto specified (GeoJSON)[http://geojson.org/geojson-spec] feature, features, or featureCollection",
             "itemtype": "method",
             "name": "injectLeafletLayersIntoGeoJSON",
@@ -26241,7 +26262,18 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 434,
+            "line": 433,
+            "description": "Flag: indicates whether layer node has been expanded once.",
+            "itemtype": "property",
+            "name": "hasBeenExpanded",
+            "type": "Boolean",
+            "default": "false",
+            "class": "FlexberryMaplayerComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
+            "line": 443,
             "description": "Handles {{#crossLink \"FlexberryTreenodeComponent/sendingActions.headerClick:method\"}}'flexberry-treenode' component's 'headerClick' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.headerClick:method\"}}'headerClick' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHeaderClick",
@@ -26257,7 +26289,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 446,
+            "line": 455,
             "description": "Handles {{#crossLink \"FlexberryTreenodeComponent/sendingActions.beforeExpand:method\"}}'flexberry-treenode' component's 'beforeExpand' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.beforeExpand:method\"}}'beforeExpand' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHeaderClick",
@@ -26273,7 +26305,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 458,
+            "line": 473,
             "description": "Handles {{#crossLink \"FlexberryTreenodeComponent/sendingActions.beforeCollapse:method\"}}'flexberry-treenode' component's 'beforeCollapse' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.beforeCollapse:method\"}}'beforeCollapse' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onHeaderClick",
@@ -26289,7 +26321,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 470,
+            "line": 485,
             "description": "Handles {{#crossLink \"FlexberryDdauCheckboxComponent/sendingActions.change:method\"}}'flexberry-ddau-checkbox' component's 'change' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.changeVisibility:method\"}}'changeVisibility'action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onVisibilityCheckboxChange",
@@ -26305,7 +26337,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 481,
+            "line": 496,
             "description": "Handles {{#crossLink \"FlexberryDdauSliderComponent/sendingActions.change:method\"}}'flexberry-ddau-slider' component's 'change' action{{/crossLink}}.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.changeVisibility:method\"}}'changeOpacity'action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onOpacitySliderChange",
@@ -26321,7 +26353,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 492,
+            "line": 507,
             "description": "Handles add button's 'click' event.\nInvokes component's {{#crossLink \"FlexberryMaplayersComponent/sendingActions.add:method\"}}'add'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onAddButtonClick",
@@ -26337,7 +26369,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 508,
+            "line": 523,
             "description": "Handles add dialog's 'approve' action.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.add:method\"}}'add'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onAddDialogApprove",
@@ -26360,7 +26392,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 521,
+            "line": 536,
             "description": "Handles edit button's 'click' event.\nShows component's edit dialog.",
             "itemtype": "method",
             "name": "actions.onEditButtonClick",
@@ -26377,7 +26409,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 537,
+            "line": 552,
             "description": "Handles edit dialog's 'approve' action.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.add:method\"}}'edit'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onEditDialogApprove",
@@ -26400,7 +26432,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 550,
+            "line": 565,
             "description": "Handles remove button's 'click' event.\nShows component's remove dialog.",
             "itemtype": "method",
             "name": "actions.onRemoveButtonClick",
@@ -26417,7 +26449,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 566,
+            "line": 581,
             "description": "Handles remove dialog's 'approve' action.\nInvokes component's {{#crossLink \"FlexberryMaplayerComponent/sendingActions.remove:method\"}}'remove'{{/crossLink}} action.",
             "itemtype": "method",
             "name": "actions.onRemoveDialogApprove",
@@ -26426,7 +26458,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 578,
+            "line": 593,
             "description": "Component's action invoking when layer node's header has been clicked.",
             "itemtype": "method",
             "name": "sendingActions.headerClick",
@@ -26442,7 +26474,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 586,
+            "line": 601,
             "description": "Component's action invoking before layer node will be expanded.\nLayer node can be prevented from being expanded with call to action event object's 'originalEvent.stopPropagation()'.",
             "itemtype": "method",
             "name": "sendingActions.beforeExpand",
@@ -26458,7 +26490,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 595,
+            "line": 610,
             "description": "Component's action invoking before layer node will be collapsed.\nLayer node can be prevented from being collapsed with call to action event object's 'originalEvent.stopPropagation()'.",
             "itemtype": "method",
             "name": "sendingActions.beforeCollapse",
@@ -26474,7 +26506,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 604,
+            "line": 619,
             "description": "Component's action invoking when layer node's 'visibility' state changed.",
             "itemtype": "method",
             "name": "sendingActions.changeVisibility",
@@ -26490,7 +26522,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 612,
+            "line": 627,
             "description": "Component's action invoking when user wants to add child layer into current.",
             "itemtype": "method",
             "name": "sendingActions.add",
@@ -26513,7 +26545,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 620,
+            "line": 635,
             "description": "Component's action invoking when user wants to edit current layer.",
             "itemtype": "method",
             "name": "sendingActions.edit",
@@ -26536,7 +26568,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/flexberry-maplayer.js",
-            "line": 628,
+            "line": 643,
             "description": "Component's action invoking when user wants to remove current layer.",
             "itemtype": "method",
             "name": "sendingActions.remove",
@@ -48514,7 +48546,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:404"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:408"
         },
         {
             "message": "unknown tag: desc",
@@ -49350,15 +49382,15 @@
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:356"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:360"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:366"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:370"
         },
         {
             "message": "Missing item type\nDeinitializes DOM-related component's properties.",
-            "line": " ember-flexberry-gis/addon/components/base-layer.js:386"
+            "line": " ember-flexberry-gis/addon/components/base-layer.js:390"
         },
         {
             "message": "Missing item type\nReference to component's template.",
