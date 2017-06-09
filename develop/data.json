@@ -5050,7 +5050,7 @@
             "module": "ember-flexberry-gis",
             "namespace": "",
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 35,
+            "line": 37,
             "description": "Flexberry measure map-tool component.\nComponent must be used in combination with {{#crossLink \"FlexberryMaptoolbarComponent\"}}flexberry-maptoolbar component{{/crossLink}}\nas a wrapper.\n\nUsage:\ntemplates/my-map-form.hbs\n```handlebars\n{{#flexberry-maptoolbar leafletMap=leafletMap as |maptoolbar|}}\n  {{map-tools/measure activate=(action \"onMapToolActivate\" target=maptoolbar)}}\n{{/flexberry-maptoolbar}}\n```",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Component.html\">Ember.Component</a>",
             "uses": [
@@ -21702,7 +21702,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 9,
+            "line": 11,
             "description": "Component's CSS-classes names.\nJSON-object containing string constants with CSS-classes names related to component's .hbs markup elements.",
             "itemtype": "property",
             "name": "flexberryClassNames",
@@ -21746,7 +21746,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 53,
+            "line": 55,
             "description": "Properties which will be passed to the map-tool when it will be instantiated.",
             "itemtype": "property",
             "name": "_measureToolProperties",
@@ -21757,21 +21757,21 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 62,
+            "line": 64,
             "description": "Reference to component's template.",
             "class": "MeasureMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 67,
+            "line": 69,
             "description": "Reference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
             "class": "MeasureMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 73,
+            "line": 75,
             "description": "Overridden ['tagName'](http://emberjs.com/api/classes/Ember.Component.html#property_tagName)\nto disable a component's wrapping element.",
             "itemtype": "property",
             "name": "tagName",
@@ -21782,7 +21782,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 83,
+            "line": 85,
             "description": "Map tool's additional CSS-class.",
             "itemtype": "property",
             "name": "class",
@@ -21793,7 +21793,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 92,
+            "line": 94,
             "description": "Map tool's caption.",
             "itemtype": "property",
             "name": "caption",
@@ -21804,7 +21804,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 101,
+            "line": 103,
             "description": "Map tool's tooltip text.\nWill be added as wrapper's element 'title' attribute.",
             "itemtype": "property",
             "name": "tooltip",
@@ -21814,7 +21814,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 110,
+            "line": 112,
             "description": "Map tool's icon CSS-class names.",
             "itemtype": "property",
             "name": "iconClass",
@@ -21825,7 +21825,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 119,
+            "line": 121,
             "description": "Map tool's 'measure-coordinates' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "measureCoordinates",
@@ -21836,7 +21836,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 128,
+            "line": 130,
             "description": "Map tool's 'measure-coordinates' mode's caption.",
             "itemtype": "property",
             "name": "measureCoordinatesCaption",
@@ -21847,7 +21847,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 137,
+            "line": 139,
             "description": "Map tool's 'measure-coordinates' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "measureCoordinatesIconClass",
@@ -21858,7 +21858,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 146,
+            "line": 148,
             "description": "Map tool's 'measure-radius' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "measureRadiusClass",
@@ -21869,7 +21869,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 155,
+            "line": 157,
             "description": "Map tool's 'measure-radius' mode's caption.",
             "itemtype": "property",
             "name": "measureRadiusCaption",
@@ -21880,7 +21880,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 164,
+            "line": 166,
             "description": "Map tool's 'measure-radius' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "measureRadiusIconClass",
@@ -21891,7 +21891,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 173,
+            "line": 175,
             "description": "Map tool's 'measure-distance' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "measureDistanceClass",
@@ -21902,7 +21902,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 182,
+            "line": 184,
             "description": "Map tool's 'measure-distance' mode's caption.",
             "itemtype": "property",
             "name": "measureDistanceCaption",
@@ -21913,7 +21913,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 191,
+            "line": 193,
             "description": "Map tool's 'measure-distance' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "measureDistanceIconClass",
@@ -21924,7 +21924,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 200,
+            "line": 202,
             "description": "Map tool's 'measure-area' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "measureAreaClass",
@@ -21935,7 +21935,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 209,
+            "line": 211,
             "description": "Map tool's 'measure-area' mode's caption.",
             "itemtype": "property",
             "name": "measureAreaCaption",
@@ -21946,7 +21946,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 218,
+            "line": 220,
             "description": "Map tool's 'measure-area' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "measureAreaIconClass",
@@ -21957,7 +21957,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 227,
+            "line": 229,
             "description": "Map tool's 'measure-clear' mode's additional CSS-class.",
             "itemtype": "property",
             "name": "measureClearClass",
@@ -21968,7 +21968,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 236,
+            "line": 238,
             "description": "Map tool's 'measure-clear' mode's caption.",
             "itemtype": "property",
             "name": "measureClearCaption",
@@ -21979,7 +21979,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 245,
+            "line": 247,
             "description": "Map tool's 'measure-clear' mode's icon CSS-class names.",
             "itemtype": "property",
             "name": "measureClearIconClass",
@@ -21990,7 +21990,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 254,
+            "line": 256,
             "description": "Flag: is map tool 'measure-coordinates' enable",
             "itemtype": "property",
             "name": "measureCoordinates",
@@ -22001,7 +22001,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 263,
+            "line": 265,
             "description": "Flag: is map tool 'measure-radius' enable",
             "itemtype": "property",
             "name": "measureRadius",
@@ -22012,7 +22012,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 272,
+            "line": 274,
             "description": "Flag: is map tool 'measure-distance' enable",
             "itemtype": "property",
             "name": "measureDistance",
@@ -22023,7 +22023,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 281,
+            "line": 283,
             "description": "Flag: is map tool 'measure-area' enable",
             "itemtype": "property",
             "name": "measureArea",
@@ -22034,7 +22034,7 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 290,
+            "line": 292,
             "description": "Flag: is map tool 'measure-clear' enable",
             "itemtype": "property",
             "name": "measureClear",
@@ -22045,7 +22045,53 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 300,
+            "line": 301,
+            "description": "Tool's coordinate reference system (CRS).",
+            "itemtype": "property",
+            "name": "crs",
+            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#crs\">L.CRS</a>",
+            "default": "null",
+            "class": "MeasureMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
+            "line": 310,
+            "description": "Coordinates tool's captions",
+            "itemtype": "property",
+            "name": "coordinatesCaptions",
+            "default": "null",
+            "example": [
+                " ```javascript\n{\n    northLatitude: ' с.ш. ',\n    southLatitude: ' ю.ш. ',\n    eastLongitude: ' в.д. ',\n    westLongitude: ' з.д. ',\n    x: 'X: ',\n    y: 'Y: '\n}\n```"
+            ],
+            "class": "MeasureMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
+            "line": 328,
+            "description": "Coordinates tool's precision",
+            "itemtype": "property",
+            "name": "precision",
+            "type": "Number",
+            "default": "null",
+            "class": "MeasureMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
+            "line": 337,
+            "description": "Flag: indicates whether to display coordinates instead of LatLng's",
+            "itemtype": "property",
+            "name": "displayCoordinates",
+            "default": "false",
+            "type": "Boolean",
+            "class": "MeasureMapToolComponent",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
+            "line": 347,
             "description": "Handles {{#crossLink \"BaseMapToolComponent/sendingActions.activate:method\"}}base map-tool's 'activate' action{{/crossLink}}.\nInvokes own {{#crossLink \"MeasureMapToolComponent/sendingActions.activate:method\"}}'activate' action{{/crossLink}}.",
             "itemtype": "method",
             "name": "actions.onMapToolActivate",
@@ -22061,14 +22107,14 @@
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 312,
+            "line": 359,
             "description": "Initializes component.",
             "class": "MeasureMapToolComponent",
             "module": "ember-flexberry-gis"
         },
         {
             "file": "ember-flexberry-gis/addon/components/map-tools/measure.js",
-            "line": 324,
+            "line": 375,
             "description": "Component's action invoking when map-tool must be activated.",
             "itemtype": "method",
             "name": "sendingActions.activate",
@@ -30745,6 +30791,53 @@
         {
             "file": "ember-flexberry-gis/addon/map-tools/measure-coordinates.js",
             "line": 14,
+            "description": "Tool's coordinate reference system (CRS).",
+            "itemtype": "property",
+            "name": "crs",
+            "type": "<a href=\"http://leafletjs.com/reference-1.0.0.html#crs\">L.CRS</a>",
+            "default": "null",
+            "class": "MeasureCoordinatesMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/measure-coordinates.js",
+            "line": 23,
+            "description": "Coordinates tool's captions",
+            "itemtype": "property",
+            "name": "captions",
+            "type": "{Object}",
+            "default": "null",
+            "example": [
+                " ```javascript\n{\n  northLatitude: ' с.ш. ',\n  southLatitude: ' ю.ш. ',\n  eastLongitude: ' в.д. ',\n  westLongitude: ' з.д. ',\n  x: 'X: ',\n  y: 'Y: '\n}\n```"
+            ],
+            "class": "MeasureCoordinatesMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/measure-coordinates.js",
+            "line": 42,
+            "description": "Coordinates tool's results precision",
+            "itemtype": "property",
+            "name": "precision",
+            "type": "Number",
+            "default": "null",
+            "class": "MeasureCoordinatesMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/measure-coordinates.js",
+            "line": 51,
+            "description": "Flag: indicates whether to display coordinates instead of LatLng's",
+            "itemtype": "property",
+            "name": "displayCoordinates",
+            "default": "false",
+            "type": "Boolean",
+            "class": "MeasureCoordinatesMapTool",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/map-tools/measure-coordinates.js",
+            "line": 60,
             "description": "Enables tool.",
             "itemtype": "method",
             "name": "_enable",
@@ -49338,15 +49431,15 @@
         },
         {
             "message": "Missing item type\nReference to component's template.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/measure.js:62"
+            "line": " ember-flexberry-gis/addon/components/map-tools/measure.js:64"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/measure.js:67"
+            "line": " ember-flexberry-gis/addon/components/map-tools/measure.js:69"
         },
         {
             "message": "Missing item type\nInitializes component.",
-            "line": " ember-flexberry-gis/addon/components/map-tools/measure.js:312"
+            "line": " ember-flexberry-gis/addon/components/map-tools/measure.js:359"
         },
         {
             "message": "Missing item type\nReference to component's template.",

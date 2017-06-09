@@ -406,6 +406,52 @@ import MeasureMapTool from &#x27;./measure&#x27;;
 */
 export default MeasureMapTool.extend({
   /**
+    Tool&#x27;s coordinate reference system (CRS).
+
+    @property crs
+    @type &lt;a href=&quot;http://leafletjs.com/reference-1.0.0.html#crs&quot;&gt;L.CRS&lt;/a&gt;
+    @default null
+  */
+  crs: null,
+
+  /**
+    Coordinates tool&#x27;s captions
+
+    @property captions
+    @type {Object}
+    @default null
+    @example &#x60;&#x60;&#x60;javascript
+    {
+      northLatitude: &#x27; с.ш. &#x27;,
+      southLatitude: &#x27; ю.ш. &#x27;,
+      eastLongitude: &#x27; в.д. &#x27;,
+      westLongitude: &#x27; з.д. &#x27;,
+      x: &#x27;X: &#x27;,
+      y: &#x27;Y: &#x27;
+    }
+    &#x60;&#x60;&#x60;
+  */
+  captions: null,
+
+  /**
+    Coordinates tool&#x27;s results precision
+
+    @property precision
+    @type Number
+    @default null
+  */
+  precision: null,
+
+  /**
+    Flag: indicates whether to display coordinates instead of LatLng&#x27;s
+
+    @property displayCoordinates
+    @default false
+    @type Boolean
+  */
+  displayCoordinates: false,
+
+  /**
     Enables tool.
 
     @method _enable
@@ -413,7 +459,17 @@ export default MeasureMapTool.extend({
   */
   _enable() {
     this._super(...arguments);
-    this.get(&#x27;_measureTools&#x27;).markerBaseTool.startMeasure();
+    let crs = this.get(&#x27;crs&#x27;);
+    let captions = this.get(&#x27;captions&#x27;);
+    let precision = this.get(&#x27;precision&#x27;);
+    let displayCoordinates = this.get(&#x27;displayCoordinates&#x27;);
+
+    this.get(&#x27;_measureTools&#x27;).markerBaseTool.startMeasure({
+      crs: crs,
+      precision: precision,
+      captions: captions,
+      displayCoordinates: displayCoordinates
+    });
   }
 });
 

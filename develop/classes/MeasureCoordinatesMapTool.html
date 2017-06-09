@@ -466,8 +466,20 @@
                                 <a href="#" data-tabid="#properties" data-anchor="#property__measureTools" data-tablink="_measureTools">_measureTools</a>
 
                             </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_captions" data-tablink="captions">captions</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_crs" data-tablink="crs">crs</a>
+
+                            </li>
                             <li class="index-item property inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_cursor" data-tablink="cursor">cursor</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_displayCoordinates" data-tablink="displayCoordinates">displayCoordinates</a>
 
                             </li>
                             <li class="index-item property inherited">
@@ -496,6 +508,10 @@
                             </li>
                             <li class="index-item property private inherited">
                                 <a href="#" data-tabid="#properties" data-anchor="#property_leafletMapContainer" data-tablink="leafletMapContainer">leafletMapContainer</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_precision" data-tablink="precision">precision</a>
 
                             </li>
                     </ul>
@@ -559,7 +575,7 @@
                                     BaseMapTool
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry-gis_addon_map-tools_measure-coordinates.js.html#l14"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;measure-coordinates.js:14</code></a>
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_measure-coordinates.js.html#l60"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;measure-coordinates.js:60</code></a>
                             </p>
                     
                     
@@ -752,6 +768,74 @@
                     
                     
                     </div>
+                    <div id="property_captions" class="property item">
+                        <h3 class="name"><code>captions</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_measure-coordinates.js.html#l23"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;measure-coordinates.js:23</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Coordinates tool's captions</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">{
+                     northLatitude: ' с.ш. ',
+                     southLatitude: ' ю.ш. ',
+                     eastLongitude: ' в.д. ',
+                     westLongitude: ' з.д. ',
+                     x: 'X: ',
+                     y: 'Y: '
+                    }
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="property_crs" class="property item">
+                        <h3 class="name"><code>crs</code></h3>
+                        <span class="type"><a href="http://leafletjs.com/reference-1.0.0.html#crs">L.CRS</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_measure-coordinates.js.html#l14"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;measure-coordinates.js:14</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Tool's coordinate reference system (CRS).</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
                     <div id="property_cursor" class="property item inherited">
                         <h3 class="name"><code>cursor</code></h3>
                         <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
@@ -775,6 +859,32 @@
                         </div>
                     
                             <p><strong>Default:</strong> &#x27;&#x27;</p>
+                    
+                    
+                    </div>
+                    <div id="property_displayCoordinates" class="property item">
+                        <h3 class="name"><code>displayCoordinates</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_measure-coordinates.js.html#l51"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;measure-coordinates.js:51</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Flag: indicates whether to display coordinates instead of LatLng's</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
                     
                     
                     </div>
@@ -961,6 +1071,32 @@
                     
                         </div>
                     
+                    
+                    
+                    </div>
+                    <div id="property_precision" class="property item">
+                        <h3 class="name"><code>precision</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-gis_addon_map-tools_measure-coordinates.js.html#l42"><code>ember-flexberry-gis&#x2F;addon&#x2F;map-tools&#x2F;measure-coordinates.js:42</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Coordinates tool's results precision</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
                     
                     
                     </div>
