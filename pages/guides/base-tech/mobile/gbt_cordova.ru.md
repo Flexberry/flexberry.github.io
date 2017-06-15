@@ -20,8 +20,15 @@ Apache Cordova позволяет создавать приложения для
 
 ##  Ссылки на материалы для изучения
 
+### Базовый курс
+
 * [Официальная документация Apache Cordova](https://cordova.apache.org/docs/en/latest/)
-* []()
+
+### Видеокурсы
+
+* [Getting Started with Apache Cordova Mobile App Development](https://www.youtube.com/playlist?list=PLReL099Y5nRd9BNsMZwXvTDeqnfRMiGJy)
+* [Getting Started with Cross-Platform Mobile Development with Apache Cordova](https://www.youtube.com/watch?v=3wMzrBgQqDM)
+* [Top videos for 'apache cordova'](https://www.youtube.com/watch?v=3wMzrBgQqDM&list=PLFqy-mg1Mw0-QlKsuglFYowV5A0x9lNu0)
 
 ### Презентация
 
@@ -32,40 +39,14 @@ Apache Cordova позволяет создавать приложения для
 
 ### Рекомендованные книги
 
-* [-]()
-* [-]()
+* [Apache Cordova API Cookbook (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Cookbook-Mobile-Programming/dp/0321994809)
+* [Apache Cordova 4 Programming (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Programming-Mobile/dp/0134048199/ref=pd_lpo_sbs_14_t_1/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA)
+* [Apache Cordova in Action](https://www.amazon.com/Apache-Cordova-Action-Raymond-Camden/dp/1633430065/ref=pd_lpo_sbs_14_t_0/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA)
 
 ## Программное обеспечение
 
-* [-]()
-* [-]()
-
-## Лабораторные работы и практические задания
-
-* [-]()
-* [-]()
-
-Варианты заданий для самостоятельного выполнения с последующей проверкой со стороны преподавателя.
-
-### Вариант №1
-
-### Вариант №2
-
-### Вариант №3
-
-### Вариант №4
-
-### Вариант №5
-
-## Примеры
-
-* [-]()
-* [-]()
-
-## Возможности по сертификации
-
-* [-]()
-* [-]()
+* [Apache Cordova](https://cordova.apache.org/#getstarted)
+* [Microsoft Visual Studio](https://www.visualstudio.com/ru/)
 
 ## Перейти
 
