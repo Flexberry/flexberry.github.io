@@ -15,7 +15,10 @@ entries:
       title_ru: О платформе
       url: /fp_landing_page.html
       output: web
-
+    - title: Architecture
+      title_ru: Архитектура платформы
+      url: /fp_architecture.html
+      output: web    
 
   - title: Platform development
     title_ru: Разработка платформы
