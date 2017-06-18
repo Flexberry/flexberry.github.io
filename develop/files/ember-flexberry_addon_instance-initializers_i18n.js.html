@@ -412,10 +412,31 @@ export function initialize(applicationInstance) {
     return;
   }
 
-  // See https://alicoding.com/detect-browser-language-preference-in-firefox-and-chrome-using-javascript
-  let browserCurrentLocale = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
-  if (!Ember.isBlank(browserCurrentLocale)) {
-    i18n.set(&#x27;locale&#x27;, browserCurrentLocale);
+  let ENV = applicationInstance._lookupFactory(&#x27;config:environment&#x27;);
+  let defaultLocale = (ENV.i18n || {}).defaultLocale;
+  let currentLocale = defaultLocale;
+
+  // If no default locale is set...
+  if (Ember.isBlank(defaultLocale)) {
+    // ...then trying to get locale from browser settings.
+    // See https://alicoding.com/detect-browser-language-preference-in-firefox-and-chrome-using-javascript
+    currentLocale = navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
+    let indexOfDash = currentLocale.indexOf(&#x27;-&#x27;);
+    if (!Ember.isBlank(currentLocale) &amp;&amp; indexOfDash &gt; -1) {
+      currentLocale = currentLocale.substr(0, indexOfDash);
+    }
+  }
+
+  // Check if current locale is supported.
+  let locales = applicationInstance.lookup(&#x27;controller:application&#x27;).get(&#x27;locales&#x27;);
+  if (!locales || Ember.typeOf(locales) !== &#x27;array&#x27; || locales.indexOf(currentLocale) === -1 || Ember.isBlank(currentLocale)) {
+    Ember.warn(&#x27;Default locale from &#x60;environment.js&#x60; or current browser language is not supported. Use &quot;en&quot; as default locale.&#x27;);
+    currentLocale = &#x27;en&#x27;;
+  }
+
+  let i18nLocale = i18n.get(&#x27;locale&#x27;);
+  if (currentLocale !== i18nLocale) {
+    i18n.set(&#x27;locale&#x27;, currentLocale);
   }
 }
 
