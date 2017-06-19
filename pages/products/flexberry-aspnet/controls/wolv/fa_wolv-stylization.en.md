@@ -122,18 +122,18 @@ WebObjectListView1.Stylizations.Add(stylization);
 
 Если нужно раскрасить конкретную ячейку, то необходимо встраивать web-контрол. Web-контрол должен реализовывать интерфейс `ICSSoft.STORMNET.Web.Tools.WOLVFeatures.IWebObjectListViewCompatible`. В свойстве `TableCellCssClass` возвращается класс, который применится к ячейке с заданным web-контролом.
 
-## Настройка внешнего вида таблиц в теме Crimea
+## Настройка внешнего вида таблиц в теме BlueSky
 
-В тему `Crimea` были добавлены 2 варианта раскраски таблиц:
+В тему `BlueSky` были добавлены 2 варианта раскраски таблиц:
 
 * Вид таблицы по умолчанию:
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/crimea-default-wolv.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/bluesky-default-wolv.png)
 
 * Классический вид таблицы:
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/crimea-classic-wolv.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/bluesky-classic-wolv.png)
 
-По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на false.
+По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@BlueSkyTableStyle` на false.
 
 {% include important.html content="При этом, также изменится и стиль таблиц AGE" %}

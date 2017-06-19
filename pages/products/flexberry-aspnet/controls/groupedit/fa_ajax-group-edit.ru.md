@@ -13,19 +13,19 @@ lang: ru
 
 ## Настройка внешнего вида контрола
 
-### Настройка внешнего вида таблиц в теме Crimea
+### Настройка внешнего вида таблиц в теме BlueSky
 
-В тему Crimea были добавлены 2 варианта раскраски таблиц:
+В тему BlueSky были добавлены 2 варианта раскраски таблиц:
 
 * Вид таблицы по умолчанию:
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/crimea-default-age.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-default-age.png)
 
 * Классический вид таблицы:
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/crimea-classic-age.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/bluesky-classic-age.png)
 
-По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@CrimeaTableStyle` на `false`.
+По умолчанию используется новый стиль с вертикальной зеброй, для того чтобы изменить раскраску на классическую нужно в `_VariablesBasic.less` изменить значение переменной `@BlueSkyTableStyle` на `false`.
 
 {% include important.html content="При этом также изменится и стиль таблиц WOLV" %}
 
