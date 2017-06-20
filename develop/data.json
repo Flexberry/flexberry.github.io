@@ -32135,47 +32135,41 @@
         },
         {
             "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 425,
+            "line": 424,
+            "description": "Sets indexes for layers hierarchy.",
+            "itemtype": "method",
+            "name": "setIndexes",
+            "params": [
+                {
+                    "name": "rootArray",
+                    "description": "Array of layers to set indexes.",
+                    "type": "Array"
+                }
+            ],
+            "class": "FlexberryMaplayerActionsHandlerMixin",
+            "module": "ember-flexberry-gis"
+        },
+        {
+            "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
+            "line": 439,
             "description": "Sets indexes for layers hierarchy.",
             "itemtype": "method",
             "name": "_setIndexes",
             "params": [
                 {
                     "name": "layers",
-                    "description": "Array of layers to set indexes.",
+                    "description": "Hierarchy of layers to set indexes.",
                     "type": "Array"
                 },
                 {
                     "name": "index",
-                    "description": "First index.",
+                    "description": "Max index.",
                     "type": "Int"
                 }
             ],
             "return": {
-                "description": "Last index.",
+                "description": "Min index.",
                 "type": "Int"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "FlexberryMaplayerActionsHandlerMixin",
-            "module": "ember-flexberry-gis"
-        },
-        {
-            "file": "ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js",
-            "line": 450,
-            "description": "Finds root layers.",
-            "itemtype": "method",
-            "name": "_findRootLayers",
-            "params": [
-                {
-                    "name": "layerPath",
-                    "description": "LayerPath to child layer.",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "Root layers.",
-                "type": "Array"
             },
             "access": "private",
             "tagname": "",
@@ -48787,11 +48781,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:425"
-        },
-        {
-            "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:450"
+            "line": " ember-flexberry-gis/addon/mixins/flexberry-maplayer-actions-handler.js:439"
         },
         {
             "message": "unknown tag: defaul",
