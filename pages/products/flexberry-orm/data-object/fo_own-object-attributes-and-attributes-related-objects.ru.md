@@ -33,4 +33,10 @@ var propertyName = ((Пользователь)dataObject).Наименовани
 var propertyName = Information.ExtractPropertyName<Пользователь>(x => x.Наименование);
 ```
 
+```csharp
+var propertyName = Information.ExtractPropertyPath<Пользователь>(x => x.Наименование.Полномочия);
+```
+
+{% include important.html content="Для получения полей мастера нужо использовать **ExtractPropertyPath**" %}
+
 Все доступные методы: [`ExtractPropertyName`](fo_information-class-as-metadata-supervisor), [`ExtractPropertyPath`](fo_information-class-as-metadata-supervisor), [`ExtractPropertyInfo`](fo_information-class-as-metadata-supervisor).
