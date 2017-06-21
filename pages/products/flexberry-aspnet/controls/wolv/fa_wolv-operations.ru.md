@@ -93,3 +93,19 @@ webObjectListView1.Operations.Print = true;
 ## Внешний вид WOLV с включенными операциями
 
 ![](/images/pages/products/flexberry-aspnet/controls/wolv/all-operations-wolv.png)
+
+## Применение настроек для WOLV'а на лукапе
+
+Для прикладных проектов реализован функционал настройки WOLV внутри LookUp'а. Настройки применяются в классе
+`WOLWSettApplyer.cs`, который расположен в корневой директории.В нём нужно переопределить метод `ApplyLookUpSettings`.
+Сначала вызывается базовый метод `base.ApplyLookUpSettings(wolv)`; после него то что вы хотите переопределить.
+Например для того, чтобы в лукапе фильтр работал без использования * нужно:
+
+```csharp
+public override void ApplyLookUpSettings(WebObjectListView wolv)
+        {
+            base.ApplyLookUpSettings(wolv);
+
+            wolv.Operations.FilterSubString = true;
+        }
+```
