@@ -14,7 +14,7 @@ entries:
       title_ru: О модуле
       url: /fo_landing_page.html
       output: web
-  
+
   - title: Аудит
     output: web, pdf
     folderitems:
@@ -29,7 +29,7 @@ entries:
       url: /fo_own-object-attributes-and-attributes-related-objects.html
       output: web
 
-    - title: Наследование 
+    - title: Наследование
       url: /fo_inheritance.html
       output: web
 
@@ -69,7 +69,7 @@ entries:
       url: /fo_type-usage-in-data-structure.html
       output: web
 
-    - title: Перегрузка атрибутов, ассоциаций, методов 
+    - title: Перегрузка атрибутов, ассоциаций, методов
       url: /fo_overloading-attributes-associations-methods.html
       output: web
 
@@ -79,11 +79,11 @@ entries:
 
     - title: Пример использования собственных типов
       url: /fo_using-custom-types-example.html
-      output: web      
+      output: web
 
     - title: Применение нехранимых классов
       url: /fo_using-of-not-stored-classes.html
-      output: web   
+      output: web
 
     - title: Пример загрузки и изменения объекта
       url: /fo_load-and-alter-objects.html
@@ -96,7 +96,7 @@ entries:
     - title: Пример нехранимых и вычислимых свойств
       url: /fo_nonstored-calculated-properties.html
       output: web
-    
+
     - title: Пример прототипизации объекта
       url: /fo_prototyping-example.html
       output: web\
@@ -160,7 +160,11 @@ entries:
     - title: LogService (log4net)
       url: /fo_log-service-log4net.html
       output: web
-  
+
+    - title: Преобразование KeyGuid в строку
+      url: /fo_key-guid-to-string.html
+      output: web, pdf
+
   - title: Data service
     output: web, pdf
     folderitems:
@@ -171,7 +175,7 @@ entries:
     - title: Как перехватить формирование SQL-запроса к БД
       url: /fo_intercept-formation-sql-query.html
       output: web
-    
+
     - title: Как сменить тип хранилища
       url: /fo_switching-storages-and-storage-types.html
       output: web
@@ -179,18 +183,18 @@ entries:
     - title: Минимальный необходимый клиентский набор для работы Oracle Data Service
       url: /fo_minimum-required-client-set-for-oracle-data-service.html
       output: web
-      
+
     - title: Нехранимые свойства объекта данных
       url: /fo_not-stored-attributes.html
       output: web
-    
+
     - title: Обработка регистров в именах объектов для СУБД
       url: /fo_processing-registers-names-for-objects-dbms.html
       output: web
 
     - title: Обработка статуса и состояния загрузки объекта сервисами данных
       url: /fo_processing-status-and-condition-of-load-object-data-services.html
-      output: web  
+      output: web
 
     - title: Пример создания объектов данных и сохранение их в БД
       url: /fo_instantiate-and-persist-objects-example.html
@@ -199,7 +203,7 @@ entries:
     - title: Поддержка нескольких хранилищ данных в одном приложении
       url: /fo_multibase.html
       output: web
-    
+
     - title: Первичные ключи объектов
       url: /fo_primary-keys-objects.html
       output: web
@@ -214,16 +218,16 @@ entries:
 
     - title: SQL-запросы в Flexberry
       url: /fo_sql-query.html
-      output: web  
-      
+      output: web
+
     - title: SQLDataService
       url: /fo_sql-data-service.html
-      output: web      
+      output: web
 
     - title: MSSQLDataService
       url: /fo_mssql-data-service.html
       output: web
-  
+
     - title: ODBCDataService
       url: /fo_odbc-data-service.html
       output: web
@@ -234,7 +238,7 @@ entries:
 
     - title: ODBCMySqlDataService
       url: /fo_odbc-mysql-data-service.html
-      output: web    
+      output: web
 
     - title: OracleDataService
       url: /fo_oracle-data-service.html
@@ -246,11 +250,11 @@ entries:
 
     - title: TrimmedStringStorage - обрезка строк сервисом данных
       url: /fo_trimmed-string-storage.html
-      output: web  
+      output: web
 
     - title: XMLFileDataService
       url: /fo_xml-file-data-service.html
-      output: web  
+      output: web
 
     - title: PostgresDataService
       url: /fo_postgres-data-service.html
@@ -285,7 +289,7 @@ entries:
 
     - title: Фильтрация и ограничение выборки данных
       url: /fo_limitation.html
-      output: web  
+      output: web
 
     - title: Чтение объектов с наложенным ограничением
       url: /fo_load-by-limit.html
