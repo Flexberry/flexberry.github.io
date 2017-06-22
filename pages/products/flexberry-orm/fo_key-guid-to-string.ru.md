@@ -4,8 +4,7 @@ sidebar: product--sidebar
 keywords: Flexberry ORM ODataService, OData
 toc: true
 permalink: ru/key-guid-to-string.html
-folder: product--folder
-lang: ru
+lang: en
 ---
 
 ## ICSSoft.STORMNET.DataObject KeyGen
