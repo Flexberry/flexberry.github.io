@@ -1,14 +1,14 @@
 ---
 title: Ярлыки для диаграмм
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, ярлыки, добавить
+summary: Куда добавляются ярлыки, как добавить ярлыки
 toc: true
 permalink: en/fd_diagram-links.html
-folder: products/flexberry-designer/about/
 lang: en
 ---
 
-В Flexberry Designer возможно добавлять ярлыки (ссылки) на диаграммы.
+В [Flexberry Designer](fd_flexberry_desinger.html) возможно добавлять ярлыки (ссылки) на диаграммы.
 Ярлыки можно ставить на любые диаграммы, находящиеся в любом месте (другая Система, Стадия и т.д.).
 Для того чтобы добавить ярлык на диаграмму в системе, нужно:
 

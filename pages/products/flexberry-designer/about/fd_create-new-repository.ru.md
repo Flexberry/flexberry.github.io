@@ -1,10 +1,10 @@
 ---
 title: Создание нового репозитория
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Private
+keywords: Репозиторий, создать, плагины
+summary: Описание создания нового репозитория
 toc: true
 permalink: ru/fd_create-new-repository.html
-folder: products/flexberry-designer/about/
 lang: ru
 ---
 

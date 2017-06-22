@@ -1,10 +1,10 @@
 ---
 title: Установка Flexberry Designer
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, алгоритм установки, лицензии
+summary: Алгоритм установки Flexberry Designer, лицензии и возможные проблемы при установке
 toc: true
 permalink: en/fd_install.html
-folder: products/flexberry-designer/about/
 lang: en
 ---
 

@@ -1,14 +1,15 @@
 ---
 title: Связь моделей с системно-технологической архитектурой приложений
 sidebar: flexberry-designer_sidebar
-keywords: Ключевые понятия
+keywords: Логические уровни, бизнес-логика, пользовательский интерфейс
+summary: Описание общей концепции уровней приложений
 toc: true
 permalink: en/fd_communication-models-applications.html
-folder: products/flexberry-designer/about/
 lang: en
 ---
 
 ## Логические уровни
+
 В соответствии с [Системно-технологической архитектурой приложений](fw_flexberry-winforms-architecture.html),  имеются три логических уровня:
 
 1. Пользовательский интерфейс

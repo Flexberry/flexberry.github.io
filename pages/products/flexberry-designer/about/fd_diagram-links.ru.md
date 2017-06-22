@@ -1,10 +1,10 @@
 ---
 title: Ярлыки для диаграмм
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, ярлыки, добавить
+summary: Куда добавляются ярлыки, как добавить ярлыки
 toc: true
 permalink: ru/fd_diagram-links.html
-folder: products/flexberry-designer/about/
 lang: ru
 ---
 

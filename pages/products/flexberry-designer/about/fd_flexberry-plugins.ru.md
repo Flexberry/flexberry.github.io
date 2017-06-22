@@ -1,10 +1,10 @@
 ---
 title: Модули расширения функциональности
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, подключение модуля, регистрация модуля, создание модуля
+summary: Как подключить и настроить модули для генерации приложений, БД и работы с диаграммами
 toc: true
 permalink: ru/fd_flexberry-plugins.html
-folder: products/flexberry-designer/about/
 lang: ru
 ---
 
