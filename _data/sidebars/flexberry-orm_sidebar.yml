@@ -161,9 +161,9 @@ entries:
       url: /fo_log-service-log4net.html
       output: web
 
-    - title: Преобразование KeyGuid в строку
-      url: /fo_key-guid-to-string.html
-      output: web, pdf
+    - title: ICSSoft.STORMNET.KeyGen.KeyGuid
+      url: /fo_key-guid.html
+      output: web
 
   - title: Data service
     output: web, pdf
