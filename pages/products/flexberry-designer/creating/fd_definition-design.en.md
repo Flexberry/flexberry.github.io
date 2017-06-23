@@ -1,10 +1,10 @@
 ---
 title: Определение проектирования
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, проектирование
+summary: Характеристика и особенности проектирования
 toc: true
 permalink: en/fd_definition-design.html
-folder: products/flexberry-designer/creating/
 lang: en
 ---
 

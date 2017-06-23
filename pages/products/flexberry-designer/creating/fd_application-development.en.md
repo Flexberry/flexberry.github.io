@@ -1,10 +1,10 @@
 ---
 title: Этап доработки приложения 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry, Ключевые понятия
+keywords: Flexberry, ключевые понятия, доработка приложений, перегенерация, скобки программиста, UML, генерация, этапы создания приложения
+summary: Особенности и сложности этапа доработки приложения, перегенерация приложений
 toc: true
 permalink: en/fd_application-development.html
-folder: products/flexberry-designer/creating/
 lang: en
 ---
 

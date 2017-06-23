@@ -1,7 +1,8 @@
 ---
 title: Реализация информационных систем
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, реализация, задачи лоработки, пользовательский интерфейс, логика приложения, валидация данных, прототип, доработка прототипа, этапы создания приложения
+summary: Задачи доработки и реализации информационных систем
 toc: true
 permalink: en/fd_development.html
 lang: en

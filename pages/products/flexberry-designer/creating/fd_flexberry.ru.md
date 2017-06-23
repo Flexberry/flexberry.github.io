@@ -1,10 +1,10 @@
 ---
 title: Создание приложения
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, приложение, создание приложения,этапы реализации приложения, анализ, протоип, прототипирование, модулии, сценарии доработки приложения
+summary: Этапы реализации приложения, анализ, прототипирование и сценарии ддоработки приложения
 toc: true
 permalink: ru/fd_flexberry.html
-folder: products/flexberry-designer/creating/
 lang: ru
 ---
 

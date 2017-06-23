@@ -1,7 +1,8 @@
 ---
 title: Этап анализа
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, анализ, модель, проблема, приложение, типы диаграмм, UML, этапы создания приложения
+summary: Характеристика этапа анализа, создание модели и типы диаграмм
 toc: true
 permalink: en/fd_analys.html
 lang: en
@@ -56,6 +57,6 @@ lang: en
     * Убедиться, что используются [Nullable-аналоги](fd_nullable-types.html) соответствующих типов (DateTime, int, bool, decimal...)
 * Проставление значений по умолчанию (подробнее про [значения по умолчанию](fo_features-of-dafault-value-assignment.html)).
 
-
 ## Следующий этап
+
 После создания модели приложения можно приступать к созданию [минимального рабочего приложения](fd_prototype-creation.html).

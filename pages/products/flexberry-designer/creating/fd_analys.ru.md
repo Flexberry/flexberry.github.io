@@ -1,7 +1,8 @@
 ---
 title: Этап анализа
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, анализ, модель, проблема, приложение, типы диаграмм, UML, этапы создания приложения
+summary: Характеристика этапа анализа, создание модели и типы диаграмм
 toc: true
 permalink: ru/fd_analys.html
 lang: ru

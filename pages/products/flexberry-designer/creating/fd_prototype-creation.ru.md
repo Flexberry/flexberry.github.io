@@ -1,7 +1,8 @@
 ---
 title: Этап создания прототипа 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, Ключевые понятия
+keywords: Flexberry Desinger, ключевые понятия, прототип, прототипирование, UML, генерация, этапы создания приложения, модули
+summary: Операция быстрого прототипирования, генрация прототипа, подключение модулей
 toc: true
 permalink: ru/fd_prototype-creation.html
 lang: ru

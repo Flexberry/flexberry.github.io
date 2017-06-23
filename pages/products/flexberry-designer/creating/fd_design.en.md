@@ -1,10 +1,10 @@
 ---
 title: Проектирование информационных систем
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, проектирование, инструменты проектирования, плагины, моделирование, этапы проектирования, генерация, прототип приложения, настройка, сценарии доработки, UML, этапы создания приложения
+summary: Описание проектирования информационных систем, алгоритм создания прототипа, генерация прототипа, настройка приложения, добработка прототипа
 toc: true
 permalink: en/fd_design.html
-folder: products/flexberry-designer/creating/
 lang: en
 ---
 

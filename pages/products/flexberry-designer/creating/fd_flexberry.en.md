@@ -1,10 +1,10 @@
 ---
 title: Создание приложения
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, приложение, создание приложения,этапы реализации приложения, анализ, протоип, прототипирование, модулии, сценарии доработки приложения
+summary: Этапы реализации приложения, анализ, прототипирование и сценарии ддоработки приложения
 toc: true
 permalink: en/fd_flexberry.html
-folder: products/flexberry-designer/creating/
 lang: en
 ---
 
@@ -13,6 +13,7 @@ lang: en
 При разработке на Flexberry используется подход "разработка, управляемая моделями" (Model-Driven Development).
 
 Описание подхода можно найти в [статье Описание методологии MDD](fd_model-driven-architecture.html) (а также в [википедии](http://ru.wikipedia.org/wiki/Model_Driven_Architecture)).
+
 Реализация приложения делится на следующие этапы:
 
 *	[Анализ](fd_analys.html)
