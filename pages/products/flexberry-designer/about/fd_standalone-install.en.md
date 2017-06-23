@@ -1,10 +1,10 @@
 ---
 title: Независимая установка
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, установить, настроить, лицензия, запуск, репозиторий, СУБД, база данных
+summary: Алгоритм установки Flexberry Desinger из архива, начало работы, подключение сервера СУБД
 toc: true
 permalink: en/fd_standalone-install.html
-folder: products/flexberry-designer/about/
 lang: en
 ---
 

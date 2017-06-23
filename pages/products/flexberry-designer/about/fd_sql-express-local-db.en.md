@@ -2,6 +2,7 @@
 title: Настройка строки соединения к БД
 sidebar: flexberry-designer_sidebar
 keywords: строка соединения, connection string, установка, install, setup
+summary: Взаимодействие с SQL Server, изменение строки соединения, настройка строки соединения
 toc: true
 permalink: en/fd_sql-express-local-db.html
 lang: en
@@ -42,6 +43,7 @@ lang: en
 * [SQL Server 2016](http://technet.microsoft.com/en-us/library/ms179254.aspx) 
 
 ## Работа Flexberry Desinger c SQL Server 2012 Express LocalDB
+
 Если по какой-то причине не удалось скачать SQL Server 2016 Express LocalDB, можно воспользоваться версией [2012](http://www.microsoft.com/ru-ru/download/details.aspx?id=35579).
 
 Пример строки соединения для LоcalDB:

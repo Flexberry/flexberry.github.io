@@ -2,6 +2,7 @@
 title: Настройка строки соединения к БД
 sidebar: flexberry-designer_sidebar
 keywords: строка соединения, connection string, установка, install, setup
+summary: Взаимодействие с SQL Server, изменение строки соединения, настройка строки соединения
 toc: true
 permalink: ru/fd_sql-express-local-db.html
 lang: ru

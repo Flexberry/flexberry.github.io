@@ -1,10 +1,10 @@
 ---
 title: Создание модуля расширения
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, создание модуля, пример, отладка
+summary: Пример создания модуля и его отладка
 toc: true
 permalink: ru/fd_plugins-development.html
-folder: products/flexberry-designer/about/
 lang: ru
 ---
 

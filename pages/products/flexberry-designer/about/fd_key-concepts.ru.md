@@ -1,10 +1,10 @@
 ---
 title: Ключевые понятия объектной структуры
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, мастер, детейл, ассоциация, наследование, стереотипы
+summary: Понятие мастера, детейла, связей между классами, стереотипы классов
 toc: true
 permalink: ru/fd_key-concepts.html
-folder: products/flexberry-designer/about/
 lang: ru
 ---
 
