@@ -1,10 +1,10 @@
 ---
 title: Nullable-типы
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, Public
+keywords: Flexberry Desinger, nullable, nullable-типы, типы данных
+summary: Поддержка nullable-типов Flexberry ORM и .NET
 toc: true
 permalink: en/fd_nullable-types.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

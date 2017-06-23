@@ -1,10 +1,10 @@
 ---
 title: Приложения (классы со стереотипом application) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, application, стереотип, приложение, генерация, свойства, атрибуты, методы
+summary: Генерация приложения, особенности классов со стериотипом application
 toc: true
 permalink: en/fd_application.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

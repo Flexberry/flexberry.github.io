@@ -1,10 +1,10 @@
 ---
 title: События и параметры событий (классы со стереотипом eventarg)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, eventarg, стереотип, события, генерация, атрибуты, методы, пример
+summary: Особенности генерации событий и их параметров, пример генерации
 toc: true
 permalink: ru/fd_eventarg.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

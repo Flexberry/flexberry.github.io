@@ -1,10 +1,10 @@
 ---
 title: Перечислимые типы данных (классы со стереотипом enumeration)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, перечисление, выпадающий список, emnumeration, enum, стереотип, генерация, пример, заголовки, dropdown
+summary: Особенности генерации перечислимого типа, генерация заголовков для перечислимого типа, пример генерации перечисления
 toc: true
 permalink: en/fd_enumerations.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 
@@ -38,7 +38,7 @@ lang: en
 * `Caption` - позволяет указать значение, информативное для пользователя (используется в пользовательском интерфейсе); 
 * `DefaultValue` - [целое число для значения перечислимого типа](http://msdn.microsoft.com/en-us/library/sbbt4032%28v=vs.71%29.aspx). 
 
-## Что генерируется с описания перечислимого типа
+## Что генерируется по описанию перечислимого типа
 
 Что генерируется | Генерация в SQL DDL | Генерация в .Net-язык
 :--------------|:----------------------------|:----------------------------------------------

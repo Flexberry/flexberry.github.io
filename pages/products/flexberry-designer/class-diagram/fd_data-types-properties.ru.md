@@ -1,10 +1,10 @@
 ---
 title: Типы данных (классы со стереотипом type) и их свойства
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, типы данных, type, стереотип, дополнительные свойства, редактирование свойств, пример
+summary: Особенности генерации типов данных, свойства типов данных и их редактирование, пример сгенерированного кода
 toc: true
 permalink: ru/fd_data-types-properties.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

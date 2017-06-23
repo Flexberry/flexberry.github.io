@@ -1,10 +1,10 @@
 ---
 title: Интерфейсы (классы со стереотипом interface) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, интерфейс, interface, стереотип, свойства интерфейсов, генерация
+summary: Особенности и правила генерации интерфейсов, свойства интерфейсов
 toc: true
 permalink: ru/fd_interfaces.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Перечислимые типы данных (классы со стереотипом enumeration)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, перечисление, выпадающий список, emnumeration, enum, стереотип, генерация, пример, заголовки, dropdown
+summary: Особенности генерации перечислимого типа, генерация заголовков для перечислимого типа, пример генерации перечисления
 toc: true
 permalink: ru/fd_enumerations.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Классы данных и их свойства 
 sidebar: flexberry-designer_sidebar
-keywords: DataObject, Flexberry Designer, Public
+keywords: DataObject, Flexberry Designer, класс данных, стереотип, implementation, представление
+summary: Генерация класса данных в СУБД и .Net-язык
 toc: true
 permalink: en/fd_data-classes.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 
@@ -17,7 +17,7 @@ lang: en
 {% include note.html content="Классы данных, связанные [иерархией наследования](fo_inheritance.html), [ассоциациями](fd_master-association.html) и [агрегациями](fo_detail-associations-properties.html) друг с другом, образуют так называемую [объектную структуру прикладной системы](fd_key-concepts.html), т.е. структуру предметных сущностей и их отношения." %}
 
 
-### Что генерируется с класса данных
+### Что генерируется по классу данных
 
 Что генерируется | Генерация в SQL DDL | Генерация в .Net-язык
 :--------------|:---------------------------|:----------------------------------------

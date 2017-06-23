@@ -1,10 +1,10 @@
 ---
 title: Бизнес-серверы (классы со стереотипом businessserver) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public, Businessserver
+keywords: Flexberry Designer, Businessserver, бизнес-сервер, стереотип, генерация, свойства, бизнес-фасад
+summary: Особенности генеации классов со стереотипом businessserver, свойства бизнес-сервера
 toc: true
 permalink: en/fd_business-servers.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

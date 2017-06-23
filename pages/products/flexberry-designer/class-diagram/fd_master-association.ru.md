@@ -1,10 +1,10 @@
 ---
 title: Мастеровые ассоциации и их свойства 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, ассоциация, мастер, свойства мастеровой ассоциации, генерация, пример
+summary: Особенности мастеровых ассоциаций и их свойства, пример генерации
 toc: true
 permalink: ru/fd_master-association.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

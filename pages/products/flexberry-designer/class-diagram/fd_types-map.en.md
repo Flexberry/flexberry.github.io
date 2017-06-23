@@ -1,10 +1,10 @@
 ---
 title: Карта типов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, карта типов, типы, настройка, БД, программный код, атрибуты, генерация
+summary: Создание и генерация типов данных для СУБД и программного кода
 toc: true
 permalink: en/fd_types-map.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

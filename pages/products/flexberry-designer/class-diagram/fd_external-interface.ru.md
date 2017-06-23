@@ -1,10 +1,10 @@
 ---
 title: Классы со стереотипом ExternalInterface
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, ExternalInterface, интерфейс, наследование, пример
+summary: Описание особенностей и пример генерации ExternalInterface
 toc: true
 permalink: ru/fd_external-interface.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

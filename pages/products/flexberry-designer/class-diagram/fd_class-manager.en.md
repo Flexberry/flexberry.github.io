@@ -1,10 +1,10 @@
 ---
 title: Менеджер классов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, менеджер классов, упоминание класса, зависимости
+summary: Количество упоминаний в менеджере классов, отображение зависимостей
 toc: true
 permalink: en/fd_class-manager.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

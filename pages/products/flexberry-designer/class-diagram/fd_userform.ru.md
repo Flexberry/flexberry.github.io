@@ -1,10 +1,10 @@
 ---
 title: Пользовательские формы (классы со стереотипом userform) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, пользовательские формы, userform, генерация, свойства, атрибуты, методы
+summary: Особенности пользовательской формы, ее свойства и генерация
 toc: true
 permalink: ru/fd_userform.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

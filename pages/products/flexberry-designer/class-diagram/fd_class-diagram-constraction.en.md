@@ -1,10 +1,10 @@
 ---
 title: Особенности построения диаграммы классов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграмма классов, методы, параметры, атрибуты, ассоцияция, агрегация, композиция, карта типов, наследование, мастер, детейл
+summary: Элементы диаграммы классов, связи между классами, структура класса
 toc: true
 permalink: en/fd_class-diagram-constraction.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

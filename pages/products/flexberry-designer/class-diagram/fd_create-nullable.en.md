@@ -1,10 +1,10 @@
 ---
 title: Настройка Flexberry Designer для Nullable-типов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, nullable, typedef, карта типов, пример
+summary: Особенности настройки nullable-типов на примере nullbool
 toc: true
 permalink: en/fd_create-nullable.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Формы редактирования (классы со стереотипом editform)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, форма редактирования, editform, генерация, атрибут, метод, операция
+summary: Особенности генерации и свойства формы редактирования, операции, атрибуты и методы формы редактирования
 toc: true
 permalink: ru/fd_editform.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: События и параметры событий (классы со стереотипом eventarg)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, eventarg, стереотип, события, генерация, атрибуты, методы, пример
+summary: Особенности генерации событий и их параметров, пример генерации
 toc: true
 permalink: en/fd_eventarg.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 
@@ -110,6 +110,7 @@ lang: en
 `PBSetStart` | Скобка программиста | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set.
 
 ## Свойства методов аргументов события
+
 Свойства и генерация методов, см. в [статье Методы классов и параметры методов](fd_methods-parameters.html).
 
 ![](/images/pages/products/flexberry-designer/class-diagram/eventprops.jpg)

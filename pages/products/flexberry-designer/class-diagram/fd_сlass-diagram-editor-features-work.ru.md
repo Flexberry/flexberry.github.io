@@ -1,10 +1,10 @@
 ---
 title: Особенности работы с редактором диаграммы классов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграмма, диаграмма классов, особенности диаграммы классов, ассоциация, storage
+summary: Переименование классов, изменение роли и прописывание storage у ассоциации
 toc: true
 permalink: ru/fd_class-diagram-editor-features-work.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Дополнительные стереотипы классов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, listform, editform, userform, application, стереотип
+summary: Особенности listform, editform, userform, application
 toc: true
 permalink: en/fd_additional-stereotypes.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

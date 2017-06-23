@@ -1,10 +1,10 @@
 ---
 title: Внешние классы (классы со стереотипом external) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, external-класс, external, генерация, стереотип
+summary: Описание особенностей external-классов и их генерации
 toc: true
 permalink: ru/fd_external-classes.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

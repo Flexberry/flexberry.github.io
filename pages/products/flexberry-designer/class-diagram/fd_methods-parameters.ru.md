@@ -1,10 +1,10 @@
 ---
 title: Методы классов и параметры методов
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, методы, параметры, генерация, пример
+summary: Описание методов классов и пример их генерации
 toc: true
 permalink: ru/fd_methods-parameters.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 

@@ -1,10 +1,10 @@
 ---
 title: Скрытые свойства в представлении
 sidebar: flexberry-designer_sidebar
-keywords: View
+keywords: Flexberry Desinger, View, представление, скрытые свойства, пример
+summary: Особенности генерации скрытых свойств в представлении, продемонстрированные на примере
 toc: true
 permalink: en/fd_hidden-properties-view.html
-folder: products/flexberry-designer/class-diagram/
 lang: en
 ---
 

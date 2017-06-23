@@ -1,10 +1,10 @@
 ---
 title: Классы данных и их свойства 
 sidebar: flexberry-designer_sidebar
-keywords: DataObject, Flexberry Designer, Public
+keywords: DataObject, Flexberry Designer, класс данных, стереотип, implementation, представление
+summary: Генерация класса данных в СУБД и .Net-язык
 toc: true
 permalink: ru/fd_data-classes.html
-folder: products/flexberry-designer/class-diagram/
 lang: ru
 ---
 
