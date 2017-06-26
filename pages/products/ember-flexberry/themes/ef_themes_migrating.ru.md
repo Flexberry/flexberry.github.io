@@ -55,12 +55,12 @@ summary: Описание перехода на новые темы оформл
 В основном разметка изменилась на главной странице, поэтому нам нужно поправить файл /test/dummy/app/templates/application.hbs
 он должен выглядеть вот так:
 
-<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/templates/application.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/templates/application.hbs>
 
 Так как semantic-ui не позволяет подключать 2 варианта шрифтовых иконок, то проще всего их подключить через vendor,
 взять их можно отсюда:
 
-<https://github.com/Flexberry/ember-flexberry/tree/flexberry-crimean-theme/vendor>
+<https://github.com/Flexberry/ember-flexberry/tree/develop/vendor>
 
 необходимо скопировать папку fonts, font-icon.css и папку serviseImages(некоторые иконки темы, только для темы blueSky) в ember-flexberry/vendor/, а также надо добавить в ember-cli-build.js импорт этих файлов
 
@@ -92,23 +92,23 @@ summary: Описание перехода на новые темы оформл
   ```  
 Также чтобы менялась надпись шрифтовой иконки меню и цвет при нажатии надо чтобы в /test/dummy/app/controllers/application.js method actions.toggleSidebar выглядел вот так:
 
-<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/controllers/application.js>
+<https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/controllers/application.js>
 
 Если меню состоит не только из главных пунктов но и есть подпункты, то необходимо добавить скрипты, для того чтобы элементы меню скрывались, для этого необходимо в /tests/dummy/app/controllers/sitemap-node.js  добавить method actions.subMenuEl чтобы он выглядел вот так:
 
-<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/tests/dummy/app/controllers/sitemap-node.js>
+<https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/controllers/sitemap-node.js>
  
 Осталось добавить действие и иконки скрытия подменю в ember-flexberry/app/templates/sitemap-node-content.hbs и в /ember-flexberry/app/templates/sitemap-node.hbs в итоге должно получиться вот так:
  
-<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node-content.hbs>
-<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/sitemap-node.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/develop/app/templates/sitemap-node-content.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/develop/app/templates/sitemap-node.hbs>
  
 И в завершении осталось подправить кнопки удаления и добавления а также изменения, для этого надо добавить кнопкам классы ui-add, ui-delete, ui-change:
  
-<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/components/groupedit-toolbar.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/develop/app/templates/components/groupedit-toolbar.hbs>
 
 
-<https://github.com/Flexberry/ember-flexberry/blob/flexberry-crimean-theme/app/templates/components/flexberry-lookup.hbs>
+<https://github.com/Flexberry/ember-flexberry/blob/develop/app/templates/components/flexberry-lookup.hbs>
  
  
  
