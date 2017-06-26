@@ -1,14 +1,16 @@
 ---
 title: Мастера в представлении (View)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, Public, View
+keywords: Flexberry Desinger, View, мастер, представление, первичный ключ
+summary: Правила использования мастеров и их свойств
 toc: true
 permalink: en/fd_masters-view.html
-folder: products/flexberry-designer/views/
 lang: en
 ---
 
-Когда нужно выбирать в представлении самих [мастеров](fd_master-association.html), а когда достаточно просто их свойства? Общие рекомендации такие:
+Когда нужно выбирать в представлении самих [мастеров](fd_master-association.html), а когда достаточно просто их свойства?
+
+Общие рекомендации такие:
 * Если создаётся [представление](fd_view-definition.html), которое будет использоваться на списке и никакой логики не планируется, то достаточно вытащить в [представление](fd_view-definition.html) атрибуты [мастера](fd_master-association.html). 
 * Если [представление](fd_view-definition.html) будет применяться для какой-то логики, то, чтобы иметь полноценный [объект-мастер](fd_master-association.html), нужно вытащить в [представление](fd_view-definition.html) его.
 

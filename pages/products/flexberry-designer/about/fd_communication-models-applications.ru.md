@@ -1,7 +1,7 @@
 ---
 title: Связь моделей с системно-технологической архитектурой приложений
 sidebar: flexberry-designer_sidebar
-keywords: Логические уровни, бизнес-логика, пользовательский интерфейс
+keywords: Flexberry Desinger, логические уровни, бизнес-логика, пользовательский интерфейс
 summary: Описание общей концепции уровней приложений
 toc: true
 permalink: ru/fd_communication-models-applications.html

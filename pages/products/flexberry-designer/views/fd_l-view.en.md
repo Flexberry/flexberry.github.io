@@ -1,10 +1,10 @@
 ---
 title: Представление списка
 sidebar: flexberry-designer_sidebar
-keywords: View
+keywords: Flexberry Desinger, View, списковая форма,  ObjectListView, WebObjectListView, список, представление
+summary: Особенности списковой формы
 toc: true
 permalink: en/fd_l-view.html
-folder: products/flexberry-designer/views/
 lang: en
 ---
 

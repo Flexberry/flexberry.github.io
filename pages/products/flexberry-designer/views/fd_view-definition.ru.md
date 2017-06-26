@@ -1,10 +1,10 @@
 ---
 title: Представления (View)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, Public
+keywords: Flexberry Desinger, представления, View, атрибуты, мастер, детейл, наследование, пример
+summary: Назначение представлений и особенности работы с ними
 toc: true
 permalink: ru/fd_view-definition.html
-folder: products/flexberry-desinger/views/
 lang: ru
 ---
 ## Определение представления

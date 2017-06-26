@@ -1,10 +1,10 @@
 ---
 title: T-представление
 sidebar: flexberry-designer_sidebar
-keywords: View
+keywords: Flexberry Desinger, View, представление, мастер, генерация, аудит
+summary: Представление для работы с фильтрами и ограничениями
 toc: true
 permalink: en/fd_t-view.html
-folder: products/flexberry-designer/views/
 lang: en
 ---
 

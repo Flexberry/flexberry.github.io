@@ -1,6 +1,6 @@
 ---
 title: Flexberry Designer
-keywords: flexberry, designer, uml, основы проектирования, модули, настройка
+keywords: Flexberry Desinger, UML, основы проектирования, модули, настройка
 summary: Общие сведения о Flexberry Desinger, его установке и настройке
 sidebar: flexberry-designer_sidebar
 toc: false

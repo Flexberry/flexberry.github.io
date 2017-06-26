@@ -1,10 +1,10 @@
 ---
 title: E-представление
 sidebar: flexberry-designer_sidebar
-keywords: View
+keywords: Flexberry Desinger, View, форма редактирования, groupedit, представление
+summary: Особенности формы редактирования
 toc: true
 permalink: en/fd_e-view.html
-folder: products/flexberry-designer/views/
 lang: en
 ---
 

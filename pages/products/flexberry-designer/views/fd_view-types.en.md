@@ -1,10 +1,10 @@
 ---
 title: Основные виды представлений
 sidebar: flexberry-designer_sidebar
-keywords: View
+keywords: Flexberry Desinger, View, представление, виды представлений
+summary: Виды представлений и особенности работы с ними
 toc: true
 permalink: en/fd_view-types.html
-folder: products/flexberry-desinger/views/
 lang: en
 ---
 

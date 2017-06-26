@@ -1,10 +1,10 @@
 ---
 title: D-представление
 sidebar: flexberry-designer_sidebar
-keywords: View
+keywords: Flexberry Desinger, View, детейл, представление
+summary: Особенности представления для детейлов
 toc: true
 permalink: en/fd_d-view.html
-folder: products/flexberry-designer/views/
 lang: en
 ---
 

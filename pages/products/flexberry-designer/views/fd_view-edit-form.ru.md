@@ -1,7 +1,8 @@
 ---
 title: Форма редактирования представлений
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public, View
+keywords: Flexberry Designer, View, представление, мастер, детейл, форма редактирования, атрибуты
+summary: Настройка представлений
 toc: true
 permalink: ru/fd_view-edit-form.html
 lang: ru

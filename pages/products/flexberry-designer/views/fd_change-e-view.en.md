@@ -1,10 +1,10 @@
 ---
 title: Изменение представления формы редактирования
 sidebar: flexberry-designer_sidebar
-keywords: View
+keywords: Flexberry Desinger, View, представление, форма редактирования, group edit
+summary: Основы работы с формой редактирования
 toc: true
 permalink: en/fd_change-e-view.html
-folder: products/flexberry-designer/views/
 lang: en
 ---
 
