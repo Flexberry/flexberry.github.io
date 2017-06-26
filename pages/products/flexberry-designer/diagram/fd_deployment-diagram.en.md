@@ -1,7 +1,8 @@
 ---
 title: Диаграмма развёртывания (Deployment diagram) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, диаграмма развертывания, сервер, инфраструктура
+summary: Основные сведения о диаграмме развертывания и ее элементах
 toc: true
 permalink: en/fd_deployment-diagram.html
 lang: en

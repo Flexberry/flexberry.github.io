@@ -1,7 +1,8 @@
 ---
 title: Диаграмма состояний (Statechart diagram) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, диаграмма состояний, состояние, история
+summary: Основные сведения о диаграмме состояний и ее элементах
 toc: true
 permalink: en/fd_statechart-diagram.html
 lang: en

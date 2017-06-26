@@ -1,10 +1,10 @@
 ---
 title: Редактор UML-диаграмм
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, UML, интерфейс редактора диаграмм, строка состояния, панель инструментов, типы диаграмм
+summary: Типы диаграмм, связи и не-связи, панель инструментов, элементы диаграммы
 toc: true
 permalink: ru/fd_editing-diagram.html
-folder: products/flexberry-designer/diagrams-editor/
 lang: ru
 ---
 

@@ -1,7 +1,8 @@
 ---
 title: Диаграмма классов (Class diagram)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, диаграмма классов, ассоциация, композиция, наследование, класс
+summary: Основные сведения о диаграмме классов и ее особенностях
 toc: true
 permalink: ru/fd_class-diagram.html
 lang: ru

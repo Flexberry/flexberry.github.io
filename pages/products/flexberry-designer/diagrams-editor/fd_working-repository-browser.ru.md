@@ -1,10 +1,10 @@
 ---
 title: Работа с диаграммами в браузере репозитория
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, создание диаграммы, работа с диаграммами
+summary: Общие принципы работы с диаграммами
 toc: true
 permalink: ru/fd_working-repository-browser.html
-folder: products/flexberry-designer/diagrams-editor/
 lang: ru
 ---
 

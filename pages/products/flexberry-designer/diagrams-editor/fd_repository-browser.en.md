@@ -1,10 +1,10 @@
 ---
 title: Браузер репозиториев
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, репозиторий, интерфейс, браузер репозиториев
+summary: Использование пользовательского интерфейса, работа с уровнями репозитория
 toc: true
 permalink: en/fd_repository-browser.html
-folder: products/flexberry-designer/diagrams-editor/
 lang: en
 ---
 

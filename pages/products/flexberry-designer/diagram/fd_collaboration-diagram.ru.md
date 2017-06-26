@@ -1,7 +1,8 @@
 ---
 title: Диаграмма сотрудничества (Collaboration diagram) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, диаграмма сотрудничества, кооперация
+summary: Основные сведения о диаграмме сотрудничества и ее элементах
 toc: true
 permalink: ru/fd_collaboration-diagram.html
 lang: ru

@@ -1,7 +1,8 @@
 ---
 title: Диаграмма активностей (Activity diagram)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, диаграмма активностей, дорожки
+summary: Основные сведения о диаграмме активностей и ее элементах
 toc: true
 permalink: en/fd_activity-diagram.html
 lang: en

@@ -1,7 +1,8 @@
 ---
 title: Диаграмма вариантов использования (UseCase diagram)
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, диаграмма вариантов использования, участник, актор, прецедент
+summary: Основные сведения о диаграмме вариантов использования и ее элементах
 toc: true
 permalink: ru/fd_use-case-diagram.html
 lang: ru

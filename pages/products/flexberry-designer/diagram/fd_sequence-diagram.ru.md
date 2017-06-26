@@ -1,7 +1,8 @@
 ---
 title: Диаграмма последовательности (Sequence diagram) 
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, диаграммы, диаграмма последовательности, объекты, сценарий, время жизни, актор, процедура
+summary: Основные сведения о диаграмме последовательности и ее элементах
 toc: true
 permalink: ru/fd_sequence-diagram.html
 lang: ru
