@@ -1,10 +1,10 @@
 ---
 title: Внесение изменений в модель приложения
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Security, View
+keywords: Flexberry Security, View, скобки программиста, связи, классы, представления, интерфейс, полномочия, аудит
+summary: Доработка модели приложения, изменения и удаление атрибутов и связей
 toc: true
 permalink: ru/fd_change-model.html
-folder: products/flexberry-designer/generate/
 lang: ru
 ---
 

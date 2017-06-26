@@ -1,10 +1,10 @@
 ---
 title: Настройка модели для генерации
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Audit, Flexberry Designer, Public
+keywords: Flexberry Audit, Flexberry Designer, плагин, стадия
+summary: Добавление аудита в приложение и основные свойства стадии
 toc: true
 permalink: en/fd_project-customization.html
-folder: products/flexberry-designer/generate/
 lang: en
 ---
 

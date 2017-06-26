@@ -1,10 +1,10 @@
 ---
 title: Настройки базы данных
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, стадия, карта типов, БД, модель
+summary: Возможности плагинов в настройке БД
 toc: true
 permalink: ru/fd_configure-ms-sql-generator.html
-folder: products/flexberry-designer/generate/
 lang: ru
 ---
 

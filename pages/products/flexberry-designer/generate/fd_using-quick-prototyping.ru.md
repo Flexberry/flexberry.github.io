@@ -1,10 +1,10 @@
 ---
 title: Использование быстрой прототипизации
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer
+keywords: Flexberry Designer, прототип, прототипизация, генерация, стереотип, приложение, объекты, формы, сборки
+summary: Генерация кода прототипа приложения
 toc: true
 permalink: ru/fd_using-quick-prototyping.html
-folder: products/flexberry-designer/generate/
 lang: ru
 ---
 

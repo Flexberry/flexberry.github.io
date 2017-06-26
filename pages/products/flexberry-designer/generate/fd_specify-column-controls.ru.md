@@ -1,10 +1,10 @@
 ---
 title: Задание колонок для размещения контролов на уровне представлений
 sidebar: flexberry-designer_sidebar
-keywords: CASE Plugins, Flexberry ASPNET, Flexberry Winforms, View
+keywords: CASE Plugins, Flexberry ASPNET, Flexberry Winforms, плагин, представления, колонки, контролы, пример
+summary: Размещение контролов в колонках на уровне модели
 toc: true
 permalink: ru/fd_specify-column-controls.html
-folder: products/flexberry-designer/generate/
 lang: ru
 ---
 

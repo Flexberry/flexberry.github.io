@@ -1,10 +1,10 @@
 ---
 title: Описание процесса перегенерации кода
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, архитектура, модель, скобки программиста
+summary: Нюансы перегенерации приложения через изменение диаграммы
 toc: true
 permalink: ru/fd_code-generation.html
-folder: products/flexberry-designer/generate/
 lang: ru
 ---
 

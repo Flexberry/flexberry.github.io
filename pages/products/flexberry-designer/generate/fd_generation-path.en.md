@@ -1,13 +1,12 @@
 ---
 title: Путь генерации
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, путь, генерация, исходный код
+summary: Правила настройки пути генерации для приложения
 toc: true
 permalink: en/fd_generation-path.html
-folder: products/flexberry-designer/generate/
 lang: en
 ---
-
 
 ## Описание
 

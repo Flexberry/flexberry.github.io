@@ -1,10 +1,10 @@
 ---
 title: Приведение в соответствие БД
 sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Public
+keywords: Flexberry Designer, БД, плагин, структура таблиц, модель
+summary: Правила создания и изменения БД с помощью плагинов Flexberyy Desinger
 toc: true
 permalink: en/fd_matching-db.html
-folder: products/flexberry-designer/generate/
 lang: en
 ---
 
