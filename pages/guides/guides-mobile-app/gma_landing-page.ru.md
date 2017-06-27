@@ -1,7 +1,7 @@
 ---
 title: Создание мобильных приложений 
 keywords: MobileApp
-sidebar: guides-mobile-app
+sidebar: guide-mobile-app
 toc: false
 permalink: ru/gma_landing-page.html
 folder: guides/guides-mobile-app/

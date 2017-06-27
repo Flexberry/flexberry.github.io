@@ -123,6 +123,7 @@ sidebars:
 - guide-tasks_sidebar
 - guide-practical-guides_sidebar
 - other
+- guide-mobile-app
 
 gems:
   - jekyll-seo-tag
