@@ -12,4 +12,20 @@ entries:
     - title: Practical tasks
       title_ru: Создание мобильных приложений
       url: /gma_landing-page.html
-      output: web    
+      output: web
+  - title: Create application
+    title_ru: Создание приложения
+    output: web
+    folderitems:
+    - title: Info in create application
+      title_ru: Введение в cоздание приложения
+      url: /gbt_information-system-design.html
+      output: web
+  - title: Wrapping the application
+    title_ru: Обертывание приложения
+    output: web
+    folderitems:
+    - title: Info in wrapping the application
+      title_ru: Введение в обертывание приложения
+      url: /gbt_frontend.html
+      output: web
