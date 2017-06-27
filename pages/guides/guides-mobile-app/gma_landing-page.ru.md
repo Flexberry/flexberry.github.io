@@ -1,6 +1,6 @@
 ---
 title: Создание мобильных приложений 
-keywords: Programming
+keywords: MobileApp
 sidebar: guides-mobile-app
 toc: false
 permalink: ru/gma_landing-page.html
