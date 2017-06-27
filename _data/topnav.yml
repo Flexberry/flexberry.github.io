@@ -48,7 +48,7 @@ topnav_dropdowns:
           url: /mydoc_introduction.html
         - title: Create mobile app
           title_ru: Создание мобильных приложений
-          url: /mydoc_introduction.html
+          url: /gma_landing-page.html
         - title: Create gis app
           title_ru: Создание ГИС приложений
           url: /mydoc_introduction.html
