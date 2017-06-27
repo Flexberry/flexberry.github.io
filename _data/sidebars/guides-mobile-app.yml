@@ -1,0 +1,15 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Get started
+    title_ru: Введение
+    output: web
+    folderitems:
+    - title: Practical tasks
+      title_ru: Создание мобильных приложений
+      url: /gma_landing-page.html
+      output: web    
