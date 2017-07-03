@@ -17,7 +17,7 @@ summary: Представлено описание сервиса блокиро
 
 ## Добавление сервиса блокировок для более ранних версий
 
-Включить в EmberFlexberry проекте LockService, добавив в environment.js:
+1. Включить в EmberFlexberry проекте LockService, добавив в environment:
 
 ```js
 // Settings lock.
@@ -33,9 +33,9 @@ lock: {
 * openReadOnly - отвечает за открытие формы редактирования только для чтения, если форма заблокирована.
 * unlockObject -  отвечает за удаление блокировки при выходе с формы.
 
-Добавить в Backend ODataService бибилиотеку NewPlatform.Flexberry.LockService.
+2. Добавить в Backend ODataService бибилиотеку NewPlatform.Flexberry.LockService.
 
-Добавить в ODataConfig.cs библиотеку:
+3. Добавить в ODataConfig библиотеку:
 
 ```cs
 using NewPlatform.Flexberry.Services;
