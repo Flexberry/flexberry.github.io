@@ -151,6 +151,11 @@ entries:
       url: /ef_log-service.html
       output: web, pdf
 
+    - title: Lock service
+      title_ru: Сервис блокировок
+      url: /ef_lock-service.html
+      output: web, pdf
+
     - title: User settings service
       title_ru: Сервис пользовательских настроек
       url: /ef_model-user-settings-service.html
