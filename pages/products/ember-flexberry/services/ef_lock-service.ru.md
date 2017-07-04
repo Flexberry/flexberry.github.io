@@ -29,9 +29,9 @@ lock: {
 ```
 
 Где:
-- enabled - включение/выключение LockService.
-- openReadOnly - отвечает за открытие формы редактирования только для чтения, если форма заблокирована.
-- unlockObject -  отвечает за удаление блокировки при выходе с формы.
+  - enabled - включение/выключение LockService.
+  - openReadOnly - отвечает за открытие формы редактирования только для чтения, если форма заблокирована.
+  - unlockObject -  отвечает за удаление блокировки при выходе с формы.
 
 * Добавить в Backend [ODataService](flexberry-o-r-m-o-data-service.html) бибилиотеку NewPlatform.Flexberry.LockService.
 
