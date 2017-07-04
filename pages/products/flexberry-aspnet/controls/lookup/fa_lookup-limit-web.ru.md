@@ -67,4 +67,5 @@ Function onlyWorkingInspektors = LinqToLcs.GetLcs(limit2.Expression, Креди�
 
 ```csharp
 ctrlКлиент.LimitFunction = onlyPermKlients;
-ctrlКредитныйИнспектор.LimitFunction = onlyWorkingInspektors;```
+ctrlКредитныйИнспектор.LimitFunction = onlyWorkingInspektors;
+```
