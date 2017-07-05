@@ -29,13 +29,13 @@ lock: {
 ```
 
 Где:
->enabled - включение/выключение LockService.
->openReadOnly - отвечает за открытие формы редактирования только для чтения, если форма заблокирована.
->unlockObject -  отвечает за удаление блокировки при выходе с формы.
+> * enabled - включение/выключение LockService.
+> * openReadOnly - отвечает за открытие формы редактирования только для чтения, если форма заблокирована.
+> * unlockObject -  отвечает за удаление блокировки при выходе с формы.
 
 * Добавить в Backend [ODataService](flexberry-o-r-m-o-data-service.html) библиотеку NewPlatform.Flexberry.LockService.
 
-* Добавить в ODataConfig тип Lock:
+* Добавить в ODataConfig assemblies тип Lock:
 ```cs
 namespace NewPlatform.Flexberry.Services
 {
@@ -51,6 +51,4 @@ namespace NewPlatform.Flexberry.Services
 * Рекомендуется унаследовать все формы редактирования от созданной формы, где определён userName.
 Так же возможно устанавливать userName в каждой отдельной форме редактирования.
 
-(((
-<msg type=important>Это решение временно и свойство usernem будет перенесено в один из сервисов.</msg>
-)))
+{% include note.html content="Это решение временно и свойство usernem будет перенесено в один из сервисов." %}
