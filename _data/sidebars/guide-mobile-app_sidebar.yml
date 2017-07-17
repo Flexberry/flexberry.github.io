@@ -14,8 +14,8 @@ entries:
       url: /gma_landing-page.html
       output: web
     - title: Info in create application
-      title_ru: Введение в cоздание приложения
-      url: /gbt_information-system-design.html
+      title_ru: Cоздание мобильного приложения
+      url: /gma_create-mobile-app.html
       output: web
     - title: Info in wrapping the application
       title_ru: Введение в обертывание приложения
