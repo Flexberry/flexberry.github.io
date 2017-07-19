@@ -8,8 +8,6 @@ lang: ru
 summary: Руководство по созданию мобильных приложений на платформе Flexberry.
 ---
 
-## Публикация мобильного приложения
-
 ## Публикация в GOOGLE PLAY
 
 * [Официальная документация публикации приложения](https://developer.android.com/studio/publish/index.html)
