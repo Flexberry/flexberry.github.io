@@ -21,11 +21,11 @@ entries:
       title_ru: Построение мобильного приложения
       url: /gma_build-mobile-app.html
       output: web
-      title: Launch a mobile application
+    - title: Launch a mobile application
       title_ru: Запуск мобильного приложения
       url: /gma_launch-mobile-app.html
       output: web
-      title: Publishing a mobile application
+    - title: Publishing a mobile application
       title_ru: Публикация мобильного приложения
       url: /gma_publish-mobile-app.html
       output: web
