@@ -13,9 +13,10 @@ lang: ru
 
 По умолчанию они выглядят следующим образом:
 
-```csharp
+```javascript
 configuration: {
             trackChanges: true,
+            trackChangesInDisabledFields: true,
             trackIncludeSelector: 'input,textarea,select',
             trackExcludeSelector: undefined,
             trackExcludeContainerSelector: undefined,
@@ -51,7 +52,7 @@ configuration: {
                 objectBlockedByUser: 'The object is blocked by user ',
                 objectBlockedByUnknown: 'The object is blocked',
                 openReadOnly: 'Do you want to open it only for reading?',
-                validationErrorMessage: 'Not all values ​​are correctly filled',
+                validationErrorMessage: 'Not all values are correctly filled',
                 okButton: 'OK',
                 cancelButton: 'Cancel'
             }
