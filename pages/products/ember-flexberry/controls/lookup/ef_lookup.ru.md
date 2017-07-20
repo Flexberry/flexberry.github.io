@@ -83,6 +83,7 @@ export default ApplicationSerializer.extend({
     choose='showLookupDialog'
     remove='removeLookupValue'
     value=model.редактор
+    relatedModel=model
     relationName='редактор'
     projection='ПользовательE'
   }}
@@ -101,6 +102,7 @@ export default ApplicationSerializer.extend({
 `removeButtonClass` | Определяет css-class на кнопку 'remove'.|
 `placeholder` | Определяет placeholder | t('flexberry-lookup.placeholder')
 `value` | Определяет выбранный экземпляр модели (мастеровой объект) |
+`relatedModel` | Определяет модель для которой будет редактироваться ссылка на мастеровой объект) |
 `relationName` | Определяет имя отношения  |
 `projection` | Определяет, по какому представлению будут отображаться мастера в списке |
 `sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small
