@@ -1,5 +1,5 @@
 ---
-title: Построение мобильного приложения 
+title: Сборка мобильного приложения 
 keywords: Mobile, Phobe, Cordova, tablet, Android, iOS, App, AppStore, play market
 sidebar: guide-mobile-app_sidebar
 toc: false
@@ -8,7 +8,7 @@ lang: ru
 summary: Руководство по созданию мобильных приложений на платформе Flexberry.
 ---
 
-## Построение мобильного приложения
+## Сборка мобильного приложения
 
 1. 
 
