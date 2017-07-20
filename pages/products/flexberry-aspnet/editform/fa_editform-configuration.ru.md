@@ -16,7 +16,6 @@ lang: ru
 ```javascript
 configuration: {
             trackChanges: true,
-            trackChangesInDisabledFields: true,
             trackIncludeSelector: 'input,textarea,select',
             trackExcludeSelector: undefined,
             trackExcludeContainerSelector: undefined,
