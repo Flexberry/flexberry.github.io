@@ -18,7 +18,7 @@ entries:
       url: /gma_create-mobile-app.html
       output: web
     - title: Building a mobile application
-      title_ru: Построение мобильного приложения
+      title_ru: Сборка мобильного приложения
       url: /gma_build-mobile-app.html
       output: web
     - title: Launch a mobile application
