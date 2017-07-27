@@ -5,31 +5,23 @@ sidebar: guide-mobile-app_sidebar
 toc: true
 permalink: ru/gma_setting_ember-mobile-app.html
 lang: ru
+summary: Руководство по созданию мобильных приложений на платформе Flexberry.
 ---
 
 ## Основные настройки
 
 Для корректной работы Ember приложения в Apache Cordova необходимо сделать следующие:
 
-{% include note.html content="Все последующие действия должны выполняться в директории www приложения" %}
+{% include note.html content="Все последующие действия должны выполняться в директории Ember приложения" %}
 
-1.В файле `index.html` необходимо изменить следующие:
+1.В файле `environment.js` расположенного в папке `config` необходимо изменить следующие:
 
-1.1.Необходимо из файла удалить строку с тегом `<base href="/" />`.
+* Параметр `baseURL` заменяем на `rootURL`.
+* В параметре `locationType` заменить значение `auto` на `none`.
 
-![](/images/pages/guides/mobile-app/edit-index-ember.PNG)
+![](/images/pages/guides/mobile-app/edit-ember-environment.PNG)
 
-1.2.В строке с тегом `<meta name="ember-app/config/environment" ...` в атрибуте `content` необходимо поправить значения у следующих параметров:
-
-1.2.1.Параметр `baseURL` или `rootURL` удалить у него значение `/`.
-
-![](/images/pages/guides/mobile-app/edit-index-ember-baseURL.PNG)
-
-1.2.2.Параметр `locationType` заменить значение `auto` на `none`.
-
-![](/images/pages/guides/mobile-app/edit-index-ember-locType.PNG)
-
-1.3Всем тегам `script` ссылающиеся на сторонние источники (например `src="//cdn.polyfill.io/v1/polyfill.js?features=es6"`), необходимо дописать протокол `https` или `http`.
+2.В файле `index.html` расположенного в папке `app` всем тегам `script` ссылающиеся на сторонние источники (например `src="//cdn.polyfill.io/v1/polyfill.js?features=es6"`), необходимо дописать протокол `https` или `http`.
 
 ![](/images/pages/guides/mobile-app/edit-index-ember-src.PNG)
 
@@ -43,7 +35,7 @@ lang: ru
 
 ## Настройка оторбражения иконок
 
-Для корректного отображения иконок в Ember приложение, необходимо удалить `/assets/` из путь до иконок, в файле `font-icon.css` расположенный в папке `vendor` Ember приложения.
+Для корректного отображения иконок в Ember приложение, необходимо удалить `/assets/` из пути до иконок, в файле `font-icon.css` расположенный в папке `vendor` Ember приложения.
 
 ![](/images/pages/guides/mobile-app/edit-font-icon.PNG)
 
