@@ -17,6 +17,10 @@ entries:
       title_ru: Cоздание мобильного приложения
       url: /gma_create-mobile-app.html
       output: web
+    - title: Settings a ember application
+      title_ru: Настройка Ember приложения
+      url: /gma_setting_ember-mobile-app.html
+      output: web
     - title: Building a mobile application
       title_ru: Сборка мобильного приложения
       url: /gma_build-mobile-app.html
