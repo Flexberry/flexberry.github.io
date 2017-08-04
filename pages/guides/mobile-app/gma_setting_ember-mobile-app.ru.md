@@ -5,7 +5,6 @@ sidebar: guide-mobile-app_sidebar
 toc: true
 permalink: ru/gma_setting_ember-mobile-app.html
 lang: ru
-summary: Руководство по созданию мобильных приложений на платформе Flexberry.
 ---
 
 ## Основные настройки
