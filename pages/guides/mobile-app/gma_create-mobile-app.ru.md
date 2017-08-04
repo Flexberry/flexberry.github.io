@@ -1,5 +1,5 @@
 ---
-title: Создание мобильного приложения 
+title: Создание приложения Cordova
 keywords: Mobile, Phone, Cordova, tablet, Android, iOS, App, AppStore, play market
 sidebar: guide-mobile-app_sidebar
 toc: true
@@ -7,13 +7,17 @@ permalink: ru/gma_create-mobile-app.html
 lang: ru
 ---
 
-## Создание мобильного приложения
+## Описание
 
-1.Запускаем командную строку.
+На данном шаге будет описан процесс создания и настройки приложения Cordova.
+
+## Создание приложения Cordova
+
+1.Запускаем командную строку (терминал).
 
 2.Переходим в директорию где будет хранится мобильное приложение.
 
-3.При помощи команды [`cordova create`](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html#cordova-create-command) создаем каркас для мобильного приложения. 
+3.При помощи команды `cordova create` создаем каркас для мобильного приложения. С полным описанием синтаксиса команды, можно ознакомится [здесь](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html#cordova-create-command)
 
 ![](/images/pages/guides/mobile-app/terminal.png)
 
@@ -23,25 +27,25 @@ lang: ru
 
 ![](/images/pages/guides/mobile-app/create-finder-ember-app.png)
 
-5.Подробная настройка Ember приложения описана [здесь](gma_setting_ember-mobile-app.html).
-
-6.Далее создаем папку с именем `scripts`, в которой будет хранится файл со скриптом, для загрузки актуальных пакетов приложения и генерации актуальной версии приложения в папку `www` Apache Cordova.
+5.Далее создаем папку с именем `scripts`, в которой будет хранится файл со скриптом, для загрузки актуальных пакетов приложения и генерации актуальной версии приложения в папку `www` Apache Cordova.
 
 ![](/images/pages/guides/mobile-app/create-finder-scripts.png)
 
-7.В папке `scripts` создаем файл `buildEmberApp.js` со следущим содержимым [кодом](https://github.com/Flexberry/flexberry-cordova-ember-demo/blob/master/scripts/buildEmberApp.js).
+6.В папке `scripts` создаем файл `buildEmberApp.js` со следущим содержимым [кодом](https://github.com/Flexberry/flexberry-cordova-ember-demo/blob/master/scripts/buildEmberApp.js).
 
 ![](/images/pages/guides/mobile-app/create-file-buildEmberApp.png)
 
-8.В коде файла находим функцию `process.chdir('demoapp');`, и заменяем имя папки `demoapp` на имя созданой папки на **шаге 4** (например: `ember-app`).
+7.В коде файла находим функцию `process.chdir('demoapp');`, и заменяем имя папки `demoapp` на имя созданой папки на **шаге 4** (например: `ember-app`).
 
 ![](/images/pages/guides/mobile-app/update-name-app-code.png)
 
-9.Для выполнения скрипта в файле `buildEmberApp.js` при выполнение команд Apache Cordova, необходимо в файле конфигурации `config.xml` прописать путь до файла, при помощи команды `<hook src="scripts/buildEmberApp.js" type="before_prepare" />`. 
+8.Для выполнения скрипта в файле `buildEmberApp.js` при выполнение команд Apache Cordova, необходимо в файле конфигурации `config.xml` прописать путь до файла, при помощи команды `<hook src="scripts/buildEmberApp.js" type="before_prepare" />`. 
 
 ![](/images/pages/guides/mobile-app/add-hook-config-cordova.PNG)
 
+В результате выполнения данного шага было создано приложение Cordova и произведены первоначальные настройки данного приложения. Далее будет описан процесс настройки Flexberry Ember приложения.
+
 ## Вы можете
 
-* [Настройка Ember приложения](gma_setting_ember-mobile-app.html)
-* [Введение](gma_landing-page.html)
+* [Перейти на следующий шаг ->](gma_setting_ember-mobile-app.html)
+* [<- Вернутся на предыдущий шаг](gma_po-mobile-app)
