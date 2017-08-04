@@ -1,11 +1,10 @@
 ---
 title: Публикация мобильного приложения 
-keywords: Mobile, Phobe, Cordova, tablet, Android, iOS, App, AppStore, play market
+keywords: Mobile, Phone, Cordova, tablet, Android, iOS, App, AppStore, play market
 sidebar: guide-mobile-app_sidebar
 toc: false
 permalink: ru/gma_publish-mobile-app.html
 lang: ru
-summary: Руководство по созданию мобильных приложений на платформе Flexberry.
 ---
 
 ## Публикация в GOOGLE PLAY
