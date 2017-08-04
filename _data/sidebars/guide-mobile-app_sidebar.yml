@@ -22,7 +22,7 @@ entries:
       url: /gma_po-mobile-app.html
       output: web
     - title: Creating a mobile application
-      title_ru: Cоздание мобильного приложения
+      title_ru: Cоздание приложения Cordova
       url: /gma_create-mobile-app.html
       output: web
     - title: Settings a ember application
