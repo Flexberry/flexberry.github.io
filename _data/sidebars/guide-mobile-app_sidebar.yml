@@ -13,6 +13,14 @@ entries:
       title_ru: Введение
       url: /gma_landing-page.html
       output: web
+    - title: Practical tasks
+      title_ru: Архитектура приложения
+      url: /gms_architecture-mobile-app.html
+      output: web
+    - title: Practical tasks
+      title_ru: Состав программного обеспечения
+      url: /gma_po-mobile-app.html
+      output: web
     - title: Creating a mobile application
       title_ru: Cоздание мобильного приложения
       url: /gma_create-mobile-app.html
