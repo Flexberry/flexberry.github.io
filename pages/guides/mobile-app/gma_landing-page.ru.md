@@ -1,5 +1,5 @@
 ---
-title: Введение в создание мобильных приложений 
+title: Руководство по созданию мобильных приложений 
 keywords: Mobile, Phone, Cordova, tablet, Android, iOS, App, AppStore, play market
 sidebar: guide-mobile-app_sidebar
 toc: false
@@ -7,16 +7,23 @@ permalink: ru/gma_landing-page.html
 lang: ru
 ---
 
-## Мобильное приложение
+## Описание
 
-**Мобильное приложение** — программное обеспечение, предназначенное для работы на смартфонах, планшетах и других мобильных устройствах. Многие мобильные приложения предустановлены на самом устройстве или могут быть загружены на него из онлайновых магазинов приложений.
+В данном руководстве показано, как из разработанного Ember приложения построить мобильное приложение для платформ Android и iOS с помощью Apache Cordova.
 
-## Состав программного обеспечения
+В данном руководстве выполняются следующие задачи:
 
-- [Ember-CLI](http://emjs.ru/v2/getting-started/) версии 2.4.3
-- [Apache Cordova](https://cordova.apache.org/)
-- [Flexberry Designer](https://flexberry.github.io/ru/fd_landing_page.html)
-- [Android Studio](https://developer.android.com/studio/index.html)
+- [Ознакомление с архитектурой приложения](gms_architecture-mobile-app)
+- [Установка необходимого программного обеспечения](gma_po-mobile-app.html)
+- [Cоздание мобильного приложения](gma_create-mobile-app.html)
+- [Настройка Ember приложения](gma_setting_ember-mobile-app.html)
+- [Сборка мобильного приложения](gma_build-mobile-app.html)
+- [Запуск мобильного приложения](gma_launch-mobile-app.html)
+- [Публикация мобильного приложения](gma_publish-mobile-app.html)
+
+В итоге будут созданы мобильные приложения для платформ Android и iOS.
+
+Данное руководство будет построено на примере демо-приложения, которое можно скачать [здесь](https://github.com/Flexberry/flexberry-cordova-ember-demo)
 
 ## Вы можете
 
