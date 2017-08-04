@@ -1,11 +1,10 @@
 ---
 title: Введение в создание мобильных приложений 
-keywords: Mobile, Phobe, Cordova, tablet, Android, iOS, App, AppStore, play market
+keywords: Mobile, Phone, Cordova, tablet, Android, iOS, App, AppStore, play market
 sidebar: guide-mobile-app_sidebar
 toc: false
 permalink: ru/gma_landing-page.html
 lang: ru
-summary: Руководство по созданию мобильных приложений на платформе Flexberry.
 ---
 
 ## Мобильное приложение
