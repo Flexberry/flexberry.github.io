@@ -6,6 +6,9 @@ toc: false
 permalink: ru/gma_publish-mobile-app.html
 lang: ru
 ---
+## Описание
+
+На данном шаге представлен список статей о том как опубликовать разработанное мобильное приложение в магазинах AppStore и Google Play.
 
 ## Публикация в GOOGLE PLAY
 
@@ -20,4 +23,4 @@ lang: ru
 
 ## Вы можете
 
-* [Запуск мобильного приложения](gma_launch-mobile-app.html)
+* [<- Вернутся на предыдущий шаг](gma_launch-mobile-app.html)
