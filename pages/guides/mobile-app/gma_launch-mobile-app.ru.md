@@ -42,7 +42,7 @@ lang: ru
 
 ## Запуск мобильного приложения iOS
 
-Чтобы просмотреть мобильное приложение для iOS, необходимо откройть файл рабочей области `platforms/ios/Flexberry Ember Demo.xcodeproj` в **Xcode** или в командной строки выполнить команду `$ open ./platforms/ios/Flexberry\ Ember\ Demo.xcodeproj/`.
+Чтобы просмотреть мобильное приложение для iOS, необходимо открыть файл рабочей области `platforms/ios/Flexberry Ember Demo.xcodeproj` в **Xcode** или в командной строки выполнить команду `$ open ./platforms/ios/Flexberry\ Ember\ Demo.xcodeproj/`.
 
 Убедитесь, что `Flexberry Ember Demo` проект выбран на левой панели (1).
 
