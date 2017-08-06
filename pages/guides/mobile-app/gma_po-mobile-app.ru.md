@@ -11,7 +11,9 @@ lang: ru
 
 На данном шаге будет представлен список требуемого программного обечпечения для разработки мобильных приложений на платформе Apache Cordova.
 
-Основное программное обеспечение:
+Базовое программное обеспечение:
+- [Node.js](https://nodejs.org/en/download/) версии: от 5.11 до 6.11
+- [Bower](https://bower.io/#install-bower)
 - [Ember-CLI](http://emjs.ru/v2/getting-started/) версии 2.4.3
 - [Apache Cordova](https://cordova.apache.org/)
 
