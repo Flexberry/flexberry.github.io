@@ -46,5 +46,5 @@ lang: ru
 
 ## Вы можете
 
-* [Перейти на следующий шаг ->](gma_create-mobile-app.html)
-* [<- Вернутся на предыдущий шаг](gma_build-mobile-app.html)
+* [Перейти на следующий шаг ->](gma_build-mobile-app.html)
+* [<- Вернутся на предыдущий шаг](gma_create-mobile-app.html)
