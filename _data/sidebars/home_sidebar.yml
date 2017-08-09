@@ -69,7 +69,7 @@ entries:
       output: web    
     - title: Create mobile app
       title_ru: Создание мобильных приложений
-      url: /news.html
+      url: /gma_landing-page.html
       output: web    
     - title: Create gis app
       title_ru: Создание ГИС приложений
