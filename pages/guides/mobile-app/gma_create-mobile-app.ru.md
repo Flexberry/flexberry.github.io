@@ -15,9 +15,9 @@ lang: ru
 
 1.Запускаем командную строку (терминал).
 
-2.Переходим в директорию где будет хранится мобильное приложение.
+2.Переходим в директорию где будет хранится приложение Cordova.
 
-3.При помощи команды `cordova create` создаем каркас для мобильного приложения. С полным описанием синтаксиса команды, можно ознакомится [здесь](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html#cordova-create-command)
+3.При помощи команды `cordova create` создаем приложение. С полным описанием синтаксиса команды, можно ознакомится [здесь](https://cordova.apache.org/docs/en/latest/reference/cordova-cli/index.html#cordova-create-command)
 
 ![](/images/pages/guides/mobile-app/terminal.png)
 
@@ -39,11 +39,11 @@ lang: ru
 
 ![](/images/pages/guides/mobile-app/update-name-app-code.png)
 
-8.Для выполнения скрипта в файле `buildEmberApp.js` при выполнение команд Apache Cordova, необходимо в файле конфигурации `config.xml` прописать путь до файла, при помощи команды `<hook src="scripts/buildEmberApp.js" type="before_prepare" />`. 
+8.Для выполнения скрипта в файле `buildEmberApp.js` при выполнение команд Apache Cordova, необходимо в файле конфигурации `config.xml` прописать путь до файла. Окрываем файл конфигурации и добавляем инструкцию `<hook src="scripts/buildEmberApp.js" type="before_prepare" />` в файл. 
 
 ![](/images/pages/guides/mobile-app/add-hook-config-cordova.PNG)
 
-В результате выполнения данного шага было создано приложение Cordova и произведены первоначальные настройки данного приложения. Далее будет описан процесс настройки Flexberry Ember приложения.
+В результате выполнения данного шага было создано приложение Cordova и произведены первоначальные настройки приложения. Далее будет описан процесс настройки Flexberry Ember приложения.
 
 ## Вы можете
 
