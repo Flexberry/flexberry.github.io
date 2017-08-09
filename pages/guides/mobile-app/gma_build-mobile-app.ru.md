@@ -17,13 +17,13 @@ lang: ru
 
 ![](/images/pages/guides/mobile-app/jump-mobile-app.png)
 
-2.Для того чтобы добавить платформу к проекту, необходимо в командной строке выполним команду `cordova platform add имя_платформы`. С полным списоком поддерживаемых платформ можно ознакомится [здесь](https://cordova.apache.org/docs/en/latest/guide/support/index.html)
+2.Для того чтобы добавить платформу в приложение Cordova, необходимо в командной строке выполнить команду `cordova platform add имя_платформы`. С полным списоком поддерживаемых платформ можно ознакомится [здесь](https://cordova.apache.org/docs/en/latest/guide/support/index.html)
 
 ![](/images/pages/guides/mobile-app/add-new-platforms.png)
 
 {% include note.html content="Перед первой сборкой приложения желательно произвести предварительную проверку платформ на соотвествие всем требования для построения приложений на добавленных платформах. Предварительная проверка делается при помощи команды `cordova requirements`" %}
 
-3.Для сборки мобильных приложений, для всех добавленных платформ в проекте Cordova, в командной строке выполним команду `cordova build`.
+3.Для сборки мобильных приложений, для всех добавленных платформ, в приложение Cordova, в командной строке выполним команду `cordova build`.
 
 ![](/images/pages/guides/mobile-app/mobile-app-build1.png)
 ![](/images/pages/guides/mobile-app/mobile-app-build2.png)
