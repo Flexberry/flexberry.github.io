@@ -13,6 +13,8 @@ lang: ru
 
 ## Архитектура Apache Cordova
 
+[**Apache Cordova**](http://cordova.apache.org/) - это платформа разработки мобильных приложений с открытым исходным кодом. Она позволяет использовать стандартные веб-технологии, такие как HTML5, CSS3, JavaScript и [JavaScript-фреймворки](https://www.reclamare.ua/blog/javascript-frejmvorki/) для кросс-платформенной разработки.
+
 В приложении Apache Cordova есть несколько компонентов. На следующей диаграмме показан высокоуровневый вид архитектуры приложения Cordova.
 
 ![](/images/pages/guides/mobile-app/cordovaapparchitecture-ru.png)
