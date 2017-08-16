@@ -36,6 +36,10 @@ entries:
       url: /efs_security_schema.html
       output: web, pdf
 
+    - title: Security Manager
+      url: /efs_security-manager.html
+      output: web, pdf
+
   - title: Audit
     title_ru: Аудит
     output: web, pdf
