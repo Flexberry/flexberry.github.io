@@ -329,3 +329,65 @@ private static bool PropertyFilter(PropertyInfo propertyInfo)
     return Information.ExtractPropertyInfo<Agent>(x => x.Pwd) != propertyInfo;
 }
 ```
+## Фильтрация результата выборки в ODataService с использованием callback-функций
+
+Пример фильтрации результата выборки
+
+```cs
+/// <summary>
+/// Register Data objects.
+/// </summary>
+/// <param name="config">Http configuration.</param>
+public static void Register(HttpConfiguration config)
+{
+            var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
+            config.EnableCors(cors);
+
+            config.DependencyResolver = new UnityDependencyResolver(container);
+
+            var assemblies = new[]
+            {
+                typeof(Suggestion).Assembly,
+                typeof(ApplicationLog).Assembly,
+                typeof(UserSetting).Assembly,
+                typeof(FlexberryUserSetting).Assembly,
+                typeof(Agent).Assembly,
+                typeof(AuditEntity).Assembly,
+                typeof(Lock).Assembly
+            };
+            var modelBuilder = new DefaultDataObjectEdmModelBuilder(assemblies);
+            modelBuilder.PropertyFilter = PropertyFilter;
+            var token = config.MapODataServiceDataObjectRoute(modelBuilder);
+            token.Events.CallbackAfterGet = BeforeGet;
+            token.Events.CallbackAfterGet = AfterGet;
+            config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+    }
+    catch (Exception ex)
+    {
+        LogService.LogError("RunApp odata service error.", ex);
+        throw;
+    }
+}
+
+
+/// <summary>
+/// Метод вызываемый перед загрузкой объектов. В нем производится дополнительная настройка lcs.
+/// </summary>
+/// <param name="lcs"></param>
+/// <returns>Возвращает true, если нужно выполнить запрос к ORM с использованием данной lcs.</returns>
+public static bool BeforeGet(ref LoadingCustomizationStruct lcs)
+{
+    return true;
+} 
+
+/// <summary>
+/// Метод вызываемый после вычитывания объектов. В нем производится дополнительная обработка возвращаемого результата.
+/// </summary>
+/// <param name="objs"></param>
+public static void AfterGet(ref DataObject[] objs)
+{
+}
+
+
+
+```
