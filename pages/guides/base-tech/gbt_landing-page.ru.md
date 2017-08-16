@@ -4,8 +4,8 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: false
 permalink: ru/gbt_landing-page.html
-folder: guides/base-tech/
 lang: ru
+summary: Курс по базовым технологиям, применяемым в платформе Flexberry.
 ---
 
 ## Описание
