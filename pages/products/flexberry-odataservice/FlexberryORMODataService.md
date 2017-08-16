@@ -131,94 +131,73 @@ namespace ODataServiceTemplate
 </configuration>
 ```
 
-## Механизм вызова логики после сохранения объекта
-
-Заменить содержимое класса "WebApiConfig.cs" примерно на следующее:
+## Механизм вызова логики после сохранения объекта с использованием callback-функций
 
 ```cs
-namespace SomeApp.App_Start
+/// <summary>
+/// Register Data objects.
+/// </summary>
+/// <param name="config">Http configuration.</param>
+public static void Register(HttpConfiguration config)
 {
-    using System;
-    using System.Web.Http;
-    using System.Web.Http.Cors;
-
-    using ICSSoft.STORMNET;
-    using NewPlatform.Flexberry.ORM.ODataService.Extensions;
-
-    /// <summary>
-    /// Класс конфигурации сервисов приложения.
-    /// </summary>
-    public class WebApiConfig : System.Web.HttpApplication
-    {
-        /// <summary>
-        /// Метод для конфигурации всех сервисов приложения.
-        /// </summary>
-        public static void Register(HttpConfiguration config)
-        {
-            // TODO: настроить Cross Origin Requests.
-            var cors = new EnableCorsAttribute("*", "*", "*");
+            var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
             config.EnableCors(cors);
 
-            var container = new UnityContainer().LoadConfiguration();
-            // WebApi будет создавать контроллеры, передавая в конструкторы различные параметры, инстанции которых будут запрашиваться у этого самого DependencyResolver.
             config.DependencyResolver = new UnityDependencyResolver(container);
 
-            // Самое главное для ODataService - знать какой сервис данных используется. Можно зарегистрировать тут или в web.config в секции Unity.
-            container.RegisterInstance(DataServiceProvider.DataService);
-
-            try
+            var assemblies = new[]
             {
-                var dataObjectEdmModel = config.CreateDataObjectEdmModel(new[] {
-                    typeof(SomeApplicationDataObject).Assembly.FullName,
-                    // Сборка с типами для записи и чтения логов приложения.
-                    typeof(IIS.Flexberry.Logging.Objects.ApplicationLog).Assembly.FullName,
-                    // Сборка с типами для записи и чтения пользовательских настроек.
-                    typeof(NewPlatform.Flexberry.FlexberryUserSetting).Assembly.FullName,
-                    // TODO: после исправления бага в ODataService, из-за которого все предки тоже должны указываться эта сборка будет не нужна.
-                    typeof(UserSetting).Assembly.FullName });
-
-                dataObjectEdmModel.CallbackAfterCreate = AfterCreate;
-                dataObjectEdmModel.CallbackAfterUpdate = AfterUpdate;
-                dataObjectEdmModel.CallbackAfterDelete = AfterDelete;
-
-            }
-            catch (Exception ex)
-            {
-                // TODO: правильно внести информацию в лог приложения.
-                LogService.LogError("RunApp odata service error.", ex);
-                throw;
-            }
-        }
-        /// <summary>
-        /// Метод вызываемый после создания объекта.
-        /// </summary>
-        /// <param name="obj">Объект после создания.</param>
-        public void AfterCreate(DataObject obj){
-
-        }
-        /// <summary>
-        /// Метод вызываемый после обновления объекта.
-        /// </summary>
-        /// <param name="obj">Объект после обновления.</param>
-        public void AfterUpdate(DataObject obj){
-
-        }
-        /// <summary>
-        /// Метод вызываемый после удаления объекта.
-        /// </summary>
-        /// <param name="obj">Объект перед удалением.</param>
-        public void AfterDelete(DataObject obj){
-
-        }
-
+                typeof(Suggestion).Assembly,
+                typeof(ApplicationLog).Assembly,
+                typeof(UserSetting).Assembly,
+                typeof(FlexberryUserSetting).Assembly,
+                typeof(Agent).Assembly,
+                typeof(AuditEntity).Assembly,
+                typeof(Lock).Assembly
+            };
+            var modelBuilder = new DefaultDataObjectEdmModelBuilder(assemblies);
+            modelBuilder.PropertyFilter = PropertyFilter;
+            var token = config.MapODataServiceDataObjectRoute(modelBuilder);
+            token.Events.CallbackAfterCreate = AfterCreate;
+            token.Events.CallbackAfterUpdate = AfterUpdate;
+            token.Events.CallbackAfterDelete = AfterDelete;
+            config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+    }
+    catch (Exception ex)
+    {
+        LogService.LogError("RunApp odata service error.", ex);
+        throw;
     }
 }
+
+
+/// <summary>
+/// Метод вызываемый после создания объекта.
+/// </summary>
+/// <param name="obj">Объект после создания.</param>
+public static void AfterCreate(DataObject obj){
+
+}
+/// <summary>
+/// Метод вызываемый после обновления объекта.
+/// </summary>
+/// <param name="obj">Объект после обновления.</param>
+public static void AfterUpdate(DataObject obj){
+
+}
+/// <summary>
+/// Метод вызываемый после удаления объекта.
+/// </summary>
+/// <param name="obj">Объект перед удалением.</param>
+public static void AfterDelete(DataObject obj){
+
+}
+
 ```
 
 Метод `AfterCreate` будет вызываться после каждого запроса POST, сделанного клиентом для создания сущности.
 Метод `AfterUpdate` будет вызываться после каждого запроса PATCH, сделанного клиентом для обновления сущности.
 Метод `AfterDelete` будет вызываться после каждого запроса DELETE, сделанного клиентом для удаления сущности.
-
 
 ## Пользовательские OData-функции
 
@@ -358,7 +337,7 @@ public static void Register(HttpConfiguration config)
             var modelBuilder = new DefaultDataObjectEdmModelBuilder(assemblies);
             modelBuilder.PropertyFilter = PropertyFilter;
             var token = config.MapODataServiceDataObjectRoute(modelBuilder);
-            token.Events.CallbackAfterGet = BeforeGet;
+            token.Events.CallbackBeforeGet = BeforeGet;
             token.Events.CallbackAfterGet = AfterGet;
             config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
     }
@@ -373,7 +352,7 @@ public static void Register(HttpConfiguration config)
 /// <summary>
 /// Метод вызываемый перед загрузкой объектов. В нем производится дополнительная настройка lcs.
 /// </summary>
-/// <param name="lcs"></param>
+/// <param name="lcs">Lcs сформированная из строки запроса ODataService.</param>
 /// <returns>Возвращает true, если нужно выполнить запрос к ORM с использованием данной lcs.</returns>
 public static bool BeforeGet(ref LoadingCustomizationStruct lcs)
 {
@@ -387,7 +366,5 @@ public static bool BeforeGet(ref LoadingCustomizationStruct lcs)
 public static void AfterGet(ref DataObject[] objs)
 {
 }
-
-
 
 ```
