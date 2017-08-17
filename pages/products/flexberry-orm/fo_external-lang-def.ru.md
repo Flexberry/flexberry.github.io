@@ -58,5 +58,5 @@ permalink: ru/fo_external-lang-def.html
 ### Разное
 * [funcToChar](fo_func-to-char.html) - функция преобразования выражения в строку.
 * funcCurrentUser
-* [funcImplication](fo_implication-in-external-lang-def.html) - функция импликации.
+* [funcImplication](fo_function-implication.html) - функция импликации.
 * `ExternalLangDef.ExistViewName` - строковая константа, которая используется для обозначения имени представления, когда строятся ограничения на детейлы.

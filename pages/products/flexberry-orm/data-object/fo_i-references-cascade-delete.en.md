@@ -1,14 +1,12 @@
 ---
 title: IReferencesCascadeDelete
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public, Бизнес-серверы
+keywords: DataObject, Flexberry ORM, business-servers, сascading deletion of objects
+summary: Features of cascading deletion of objects
 toc: true
 permalink: en/fo_i-references-cascade-delete.html
-folder: products/flexberry-orm/
 lang: en
 ---
-
-## IReferencesCascadeDelete
 
 Интерфейс `IReferencesCascadeDelete` позволяет осуществлять каскадное удаление объектов (при удалении самого объекта все ссылающиеся на него объекты также удаляются).
 
@@ -24,7 +22,7 @@ lang: en
 
 ## Пример
 
-Пусть у нас есть диаграмма вида:
+Пусть у есть диаграмма вида:
 
 ![](/images/pages/products/flexberry-orm/i-references-cascade-delete/i-references-cascade-delete.png)
 

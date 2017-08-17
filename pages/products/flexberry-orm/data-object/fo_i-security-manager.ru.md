@@ -1,10 +1,10 @@
 ---
 title: Flexberry Security API - ISecurityManager
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Flexberry Security
+keywords: Flexberry ORM, Flexberry Security, полномочия, сервис полномочий
+summary: Сервисы времени выполнения подсистемы полномочий Flexberry
 toc: true
 permalink: ru/fo_i-security-manager.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 

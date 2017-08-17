@@ -130,7 +130,7 @@ entries:
       output: web
 
     - title: Функция импликации (funcImplication)
-      url: /fo_implication-in-external-lang-def.html
+      url: /fo_function-implication.html
       output: web
 
     - title: Flexberry Security API - ISecurityManager

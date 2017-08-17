@@ -1,10 +1,10 @@
 ---
 title: IReferencesCascadeDelete
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public, Бизнес-серверы
+keywords: Объекты данных, Flexberry ORM, бизнес-серверы, каскадное удаление объектов
+summary: Особенности каскадного удаления объектов
 toc: true
 permalink: ru/fo_i-references-cascade-delete.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 

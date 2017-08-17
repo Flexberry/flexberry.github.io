@@ -1,10 +1,10 @@
 ---
-title: Flexberry Security API - ISecurityManager
+title: ISecurityManager
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Flexberry Security
+keywords: Flexberry ORM, Flexberry Security, authority, authority service
+summary: Flexberry Subsystem Lifecycle Services
 toc: true
 permalink: en/fo_i-security-manager.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
@@ -82,10 +82,6 @@ ISecurityManager применяется в [Flexberry ORM](fo_flexberry-orm.html
 	
 </configuration>
 ```
-
-### Способ 2. Программная настройка
-
-**Не описано.**
 
 ## Управление правами доступа на уровне экземпляра сервиса данных
 

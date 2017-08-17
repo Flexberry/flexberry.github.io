@@ -1,16 +1,14 @@
 ---
 title: Функция импликации (funcImplication)
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, ограничения, импликация
+summary: Использование импликации в ограничениях
 toc: true
-permalink: en/fo_implication-in-external-lang-def.html
-folder: products/flexberry-orm/
-lang: en
+permalink: ru/fo_function-implication.html
+lang: ru
 ---
 
-## Функция импликации (funcImplication)
-
-funcImplication - функция [ExternalLangDef](fo_external-lang-def.html) для задания логической импликации.
+`funcImplication` - функция [ExternalLangDef](fo_external-lang-def.html) для задания логической импликации.
 
 Импликация - функция двух логических операндов: предпосылки и следствия, может принимать следующие значения:
 
@@ -32,10 +30,6 @@ funcImplication - функция [ExternalLangDef](fo_external-lang-def.html) д
 ``` csharp
 var langDef = new ExternalLangDef();
 Function function = langDef.GetFunction(langDef.funcImplication,
-                                                    langDef.GetFunction(langDef.funcEQ,
-                                                                        new VariableDef(langDef.StringType, "Фамилия"),
-                                                                        "Иванов"),
-                                                    langDef.GetFunction(langDef.funcEQ,
-                                                                        new VariableDef(langDef.StringType, "Имя"),
-                                                                        "Иван"));
+                    langDef.GetFunction(langDef.funcEQ, new VariableDef(langDef.StringType, "Фамилия"),"Иванов"),
+                    langDef.GetFunction(langDef.funcEQ, new VariableDef(langDef.StringType, "Имя"), "Иван"));
 ```

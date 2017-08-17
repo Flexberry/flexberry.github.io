@@ -1,14 +1,12 @@
 ---
 title: ICSSoft.STORMNET.Tools.XmlTools
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, библиотеки, сериализация, десереализация
+summary: Инструменты для сериализации-десериализации
 toc: true
 permalink: ru/fo_ics-soft-stormnet-tools.html
-folder: products/flexberry-orm/
 lang: ru
 ---
-
-## Библиотека ICSSoft.STORMNET.Tools.dll
 
 Библиотека `ICSSoft.STORMNET.Tools.dll` предоставляет различные вспомогательные инструменты для работы, в её классах реализованы функции:
 
@@ -21,13 +19,11 @@ lang: ru
 
 Данные вспомогательные методы рекомендованы к применению разработчикам.
 
-Рассмотрим подробнее некоторые из них.
-
-### Инструменты для сериализации-десериализации
+## Инструменты для сериализации-десериализации
 
 При выборе между бинарной и SOAP-сериализацией следует учесть, что бинарный вид сериализации более производительный и результирующие строки получаются короче.
 
-#### ICSSoft.STORMNET.Tools.ToolXML
+### ICSSoft.STORMNET.Tools.ToolXML
 
 `ICSSoft.STORMNET.Tools.ToolXML` - инструмент для сериализации-десериализации в XML.
 
@@ -38,55 +34,44 @@ lang: ru
 
 В классе реализованы следующие методы:
 
-##### [`XMLDocument2DataObject`](fo_aggregating-function.html)
+#### [`XMLDocument2DataObject`](fo_aggregating-function.html)
 
 __Назначение__: Получение объекта данных из ранее полученного XML документа. Данный метод написан специально для [`ICSSoft.STORMNET.DataObject`](fo_data-object.html)
 
 __Параметры__:
  
-`dataObject` - Объект данных, в который будем десериализовывать 
-
-`xmlDoc` - Сериализованный объект данных 
-
-__Сигнатура__:
+* `dataObject` - Объект данных, в который будем десериализовывать 
+* `xmlDoc` - Сериализованный объект данных 
 
 ``` csharp
 public static void XMLDocument2DataObject(ref ICSSoft.STORMNET.DataObject dataObject, XmlDocument xmlDoc)
 ```
 
-##### [`DataObject2XMLDocument`](fo_aggregating-function.html)
+#### [`DataObject2XMLDocument`](fo_aggregating-function.html)
 
 __Назначение__: Получение XML документа из объекта данных. Данный вид сериализации написан специально для [`ICSSoft.STORMNET.DataObject`](fo_data-object.html) и основан на переборе свойств, детейлов и ссылок на мастеров с последующим занесением всего этого в `XMLDocument`. 
 
 __Параметры__:
  
-`dataObject` - Сам объект данных 
-
-`serializeAggregators` - Следует ли сериализовать детейлы 
-
-`setObjectLoadingStateLoaded` - Установить LoadingState объекта в Loaded 
-
-`setObjectStatusCreated` - Установить ObjectStatus объекта в Created 
-
-`serializeMasters` - Проводить полную сериализацию мастеров объектов 
+* `dataObject` - Сам объект данных 
+* `serializeAggregators` - Следует ли сериализовать детейлы 
+* `setObjectLoadingStateLoaded` - Установить LoadingState объекта в Loaded 
+* `setObjectStatusCreated` - Установить ObjectStatus объекта в Created 
+* `serializeMasters` - Проводить полную сериализацию мастеров объектов 
 
 __Возвращаемый результат__: Сериализованное представление объекта 
 
-__Сигнатура__:
-
 ``` csharp
+// 1.
 public static XmlDocument DataObject2XMLDocument(ref ICSSoft.STORMNET.DataObject dataObject)
-```
 
-``` csharp
+// 2.
 public static XmlDocument DataObject2XMLDocument(ref ICSSoft.STORMNET.DataObject dataObject, bool serializeAggregators)
-``` 
 
-``` csharp
+// 3.
 public static XmlDocument DataObject2XMLDocument(ref ICSSoft.STORMNET.DataObject dataObject, bool serializeAggregators, bool setObjectLoadingStateLoaded, bool setObjectStatusCreated)
-```
 
-``` csharp
+// 4.
 public static XmlDocument DataObject2XMLDocument(
             ref ICSSoft.STORMNET.DataObject dataObject, 
             bool serializeAggregators,
@@ -95,7 +80,7 @@ public static XmlDocument DataObject2XMLDocument(
             bool serializeMasters)
 ```
 
-##### [`ObjectToString`](fo_aggregating-function.html)
+#### [`ObjectToString`](fo_aggregating-function.html)
 
 __Назначение__: Сериализация объекта при помощи `SoapFormatter`. 
 
@@ -105,13 +90,11 @@ __Параметры__:
 
 __Возвращаемый результат__: Сериализованный объект
 
-__Сигнатура__:
-
 ``` csharp
 public static string ObjectToString(object o)
 ```
 
-##### [`ObjectFromString`](fo_aggregating-function.html)
+#### [`ObjectFromString`](fo_aggregating-function.html)
 
 __Назначение__: Десериализация объекта при помощи `SoapFormatter`. 
 
@@ -121,13 +104,11 @@ __Параметры__:
 
 __Возвращаемый результат__: Востановленный объект 
 
-__Сигнатура__:
-
 ``` csharp
 public static object ObjectFromString(string s)
 ```
 
-#### ICSSoft.STORMNET.Tools.ToolBinarySerializer
+### ICSSoft.STORMNET.Tools.ToolBinarySerializer
 
 `ICSSoft.STORMNET.Tools.ToolBinarySerializer` - инструмент для бинарной сериализации-десериализации.
 
@@ -135,7 +116,7 @@ public static object ObjectFromString(string s)
 
 В классе реализованы следующие методы:
 
-##### `ObjectToString`
+#### `ObjectToString`
 
 __Назначение__: Сериализация объекта при помощи `BinaryFormatter`.
 
@@ -145,74 +126,59 @@ __Параметры__:
 
 __Возвращаемый результат__: Строка.
 
-__Сигнатура__:
-
 ``` csharp
 public static string ObjectToString(object o)
 ```
 
-##### `ObjectFromString`
+#### `ObjectFromString`
 
 __Назначение__: Десериализация объекта при помощи `BinaryFormatter`.
 
 __Параметры__:
 
-`s` - Сериализованный объект
-
-`binder` - Binder, который необходимо указать, если при десереализации необходимо реализовать собственную логику по поиску типов. 
+* `s` - Сериализованный объект
+* `binder` - Binder, который необходимо указать, если при десереализации необходимо реализовать собственную логику по поиску типов. 
 
 __Возвращаемый результат__: Востановленный объект.
 
-__Сигнатура__:
-
 ``` csharp
+// 1.
 public static object ObjectFromString(string s)
-```
 
-``` csharp
+// 2.
 public static object ObjectFromString(string s, SerializationBinder binder)
 ```
 
-<!--BinarySerializer - также предназначен для бинарной сериализации. Похож на ToolBinarySerializer, но использует Generic.-->
-
-
-### ICSSoft.STORMNET.Tools.XmlTools
+## ICSSoft.STORMNET.Tools.XmlTools
 
 `ICSSoft.STORMNET.Tools.XmlTools` - класс для работы с XML.
 
 В классе реализованы следующие методы:
 
-#### `GetXDocumentByXElement`
+### `GetXDocumentByXElement`
 
 __Назначение__: Конвертация `System.Xml.Linq.XElement` в `System.Xml.XmlDocument`.
 
 __Параметры__:
 
-`xElement` - xElement для конвертации.
-
-`versionXmlDoc` - Версия создаваемого xml документа.
-
-`encodingXmlDoc` - Кодировка для создаваемого xml документа.
+* `xElement` - xElement для конвертации.
+* `versionXmlDoc` - Версия создаваемого xml документа.
+* `encodingXmlDoc` - Кодировка для создаваемого xml документа.
 
 __Возвращаемый результат__: Результат конвертации - `XmlDocument`.
-
-__Сигнатура__:
 
 ``` csharp
 public static XmlDocument GetXDocumentByXElement(XElement xElement, string versionXmlDoc, string encodingXmlDoc)
 ```
 
-#### `LoadXml`
+### `LoadXml`
 
 __Назначение__: Прочитать Xml-файл. Может автоматически определить кодировку на основании кодировки, использующейся внутри Xml.
 
 __Параметры__:
 
-`filePath` - Путь до Xml-файла.
-
-`encoding` - Кодировка, которую необходимо использовать для чтения Xml-файла.
-
-__Сигнатура__:
+* `filePath` - Путь до Xml-файла.
+* `encoding` - Кодировка, которую необходимо использовать для чтения Xml-файла.
 
 ``` csharp
 public static XmlDocument LoadXml(string filePath, Encoding encoding = null)
