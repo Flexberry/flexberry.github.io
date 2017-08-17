@@ -34,13 +34,13 @@ lang: en
 Данный класс реализует два варианта преобразований в XML:
 
 * SOAP сериализация с помощью стандартного `System.Runtime.Serialization.Formatters.Soap.SoapFormatter`,
-* специально реализованная конвертация [объекта данных](fo_dataobject.html) к `XmlDocument`, применима только для [`ICSSoft.STORMNET.DataObject`](fo_dataobject.html) (информация о применении данного варианта доступна в [статье](fo_aggregating-function.html)).
+* специально реализованная конвертация [объекта данных](fo_data-object.html) к `XmlDocument`, применима только для [`ICSSoft.STORMNET.DataObject`](fo_data-object.html) (информация о применении данного варианта доступна в [статье](fo_aggregating-function.html)).
 
 В классе реализованы следующие методы:
 
 ##### [`XMLDocument2DataObject`](fo_aggregating-function.html)
 
-__Назначение__: Получение объекта данных из ранее полученного XML документа. Данный метод написан специально для [`ICSSoft.STORMNET.DataObject`](fo_dataobject.html)
+__Назначение__: Получение объекта данных из ранее полученного XML документа. Данный метод написан специально для [`ICSSoft.STORMNET.DataObject`](fo_data-object.html)
 
 __Параметры__:
  
@@ -56,7 +56,7 @@ public static void XMLDocument2DataObject(ref ICSSoft.STORMNET.DataObject dataOb
 
 ##### [`DataObject2XMLDocument`](fo_aggregating-function.html)
 
-__Назначение__: Получение XML документа из объекта данных. Данный вид сериализации написан специально для [`ICSSoft.STORMNET.DataObject`](fo_dataobject.html) и основан на переборе свойств, детейлов и ссылок на мастеров с последующим занесением всего этого в `XMLDocument`. 
+__Назначение__: Получение XML документа из объекта данных. Данный вид сериализации написан специально для [`ICSSoft.STORMNET.DataObject`](fo_data-object.html) и основан на переборе свойств, детейлов и ссылок на мастеров с последующим занесением всего этого в `XMLDocument`. 
 
 __Параметры__:
  

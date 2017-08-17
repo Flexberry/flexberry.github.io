@@ -10,7 +10,7 @@ lang: ru
 
 Для того, чтобы прочитать множество объектов необходимо (как минимум) произвести настройки [`LoadingCustomizationStruct`](fo_loading-customization-struct.html):
 
-* указать [классы данных](fo_dataobject.html), для которых выполняется чтение ([`LoadingTypes`](fo_loading-customization-struct.html));
+* указать [классы данных](fo_data-object.html), для которых выполняется чтение ([`LoadingTypes`](fo_loading-customization-struct.html));
 * указать общее для них [представление](fd_view-definition.html) ([`View`](fo_loading-customization-struct.html)).
 
 Таким образом, если имеется ситуация вида:

@@ -17,7 +17,7 @@ lang: en
 
 ## VariableDef
 
-Класс `VariableDef` служит для определения переменной в ограничении (обычно указывает на атрибут в [объекте](fo_dataobject.html)). Используется вместе с [`SQLWhereLanguageDef`](fo_function-list.html).
+Класс `VariableDef` служит для определения переменной в ограничении (обычно указывает на атрибут в [объекте](fo_data-object.html)). Используется вместе с [`SQLWhereLanguageDef`](fo_function-list.html).
 
 Определен в пространстве имен: `ICSSoft.STORMNET.FunctionalLanguage`.
 
