@@ -43,8 +43,6 @@ lang: en
 
 ### Загрузка объектов данных по представлению или массиву представлений
 
-#### Перегрузка
-
 * Загружаются все объекты данных, доступные в хранилище. При этом выполняется загрузка только тех свойств, которые указаны в [представлении](fd_view-definition.html).
 
 ```csharp
@@ -63,8 +61,6 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View[] dataObjectView
 
 ### Загрузка объектов данных по настроечной структуре для выборки LoadingCustomizationStruct (массиву структур)
 
-#### Перегрузка
-
 * Данная перегрузка метода позволяет тонко настроить выборку загружаемых объектов за счёт использования структуры [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
 
     * указать представление (вертикальное ограничение выборки: загрузка только определенных свойств), 
@@ -78,12 +74,10 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View[] dataObjectView
 _Замечание_: Данная перегрузка позволяет реализовать [чтение принадлежащих различным классам объектов в одном представлении](fo_reading-several-types-objects.html).
 
 ```csharp
+// 1.
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct);
-```
 
-или
-
-```csharp
+// 2.
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct, DataObjectCache DataObjectCache);
 ```
 
@@ -99,24 +93,23 @@ ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct[] customiza
 
 ### Загрузка объектов с использованием состояния вычитки (для реализации порционного чтения)
 
-#### Перегрузка
-
 * Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции объектов данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах (см. Загрузка одного объекта данных). 
 
 ```csharp
+// 1.
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct,ref object State);
-``` 
 
-```csharp
+// 2.
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct, ref object State, DataObjectCache DataObjectCache);
 ```
+
 * Получение очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов в указанной выше перегрузке.
 
 ```csharp
+// 1.
 ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State);
-``` 
 
-```csharp
+// 2.
 ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State, DataObjectCache DataObjectCache);
 ``` 
 
@@ -139,16 +132,13 @@ _Примечание_: Размер порции может быть задан
 
 ### Загрузка объекта данных по первичному ключу
 
-#### Перегрузка
-
 Будут загружены только собственные свойства объекта. При отсутствии в хранилище данных объекта с заданным первичным ключом будет выдано исключение `CantFindDataObjectException`. Не следует использовать данную перегрузку метода для дочитки объекта данных, для этого применимы перегрузки методы с дополнительными параметрами.
 
 ```csharp
+// 1.
 void LoadObject(ICSSoft.STORMNET.DataObject dobject)
-```
-или
 
-```csharp
+// 2.
 void LoadObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
 ```
 
@@ -158,29 +148,19 @@ void LoadObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectC
 
 ### Загрузка объекта данных по представлению
 
-#### Перегрузка
-
 Выполняется загрузка только тех свойств, которые указаны в [представлении](fd_view-definition.html).
 
-1.
-
 ```csharp
+// 1.
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject)
-```
 
-2.
-
-```csharp
+// 2.
 void LoadObject(void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject)
-```
-3.
 
-```csharp
+// 3.
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
-```
-4.
 
-```csharp
+// 4.
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
 ```
 
@@ -190,42 +170,25 @@ void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObjec
 
 ### Загрузка объекта данных с указанием дополнительных параметров
 
-#### Перегрузка
-
 Данная перегрузка метода может быть использована, в частности, для выполнения [догрузки свойств объекта](fo_additional-loading-data-object.html).
 
-1.
-
 ```csharp
+// 1.
 void LoadObject(ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject)
-```
 
-2.
-
-```csharp
+// 2.
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject)
-``` 
 
-3.
-
-```csharp
+// 3.
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject)
-``` 
 
-4.
+// 4.
+void LoadObject(ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache) 
 
-```csharp
-void LoadObject(ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache) ``` 
-
-5.
-
-```csharp
+// 5.
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
-``` 
 
-6.
-
-```csharp
+// 6.
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
 ```
 
@@ -247,49 +210,28 @@ void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObjec
 
 Следует иметь в виду, что сохранение объекта может вызвать [сохранение связанных с ним объектов](fo_update-related-objects.html).
 
-#### Перегрузка
-
 Обновление объекта данных.
 
-1.
-
 ```csharp
+// 1.
 void UpdateObject(ICSSoft.STORMNET.DataObject dobject) 
-``` 
 
-2.
-
-```csharp
+// 2.
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject) 
-``` 
 
-3.
-
-```csharp
+// 3.
 void UpdateObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) 
-``` 
 
-4.
-
-```csharp
+// 4.
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) 
-``` 
 
-5.
-
-```csharp
+// 5.
 void UpdateObject(ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException) 
-``` 
 
-6.
-
-```csharp
+// 6.
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException) 
-``` 
 
-7.
-
-```csharp
+// 7.
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache, bool AlwaysThrowException) 
 ```
 
@@ -311,31 +253,19 @@ void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataO
 
 [Пример использования](fo_instantiate-and-persist-objects-example.html).
 
-#### Перегрузка
-
 Обновление нескольких объектов данных в хранилище.
 
-1.
-
 ```csharp
+// 1.
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects)
-``` 
 
-2.
-
-```csharp
+// 2.
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, bool AlwaysThrowException)
-``` 
 
-3.
-
-```csharp
+// 3.
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache DataObjectCache)
-``` 
 
-4.
-
-```csharp
+// 4.
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache DataObjectCache, bool AlwaysThrowException)
 ```
 
@@ -353,8 +283,6 @@ void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache Da
 
 ### Загрузка без создания объектов
 
-#### Перегрузка
-
 __Возвращаемый результат__: массив структур `ObjectStringDataView`
 
 ```csharp
@@ -370,9 +298,7 @@ __Примечание__: порядок следования свойств о�
 
 ### Загрузка без создания объектов с использованием состояния вычитки (для реализации порционного чтения)
 
-#### Перегрузка
-
-`LoadStringedObjectView`
+1.`LoadStringedObjectView`
 
 * Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах.
 
@@ -386,7 +312,8 @@ ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizati
 ObjectStringDataView[] LoadStringedObjectView(ref object state)
 ```
 
-`CompleteLoadStringedObjectView`
+2.`CompleteLoadStringedObjectView`
+
 Корректное завершения операции порционного чтения при `LoadStringedObjectView`.
 
 ```csharp
@@ -403,8 +330,6 @@ __Примечание__: Размер порции может быть зада
 ## Получение количества объектов, удовлетворяющих запросу
 
 [Пример использования](fo_load-limitation-example.html). 
-
-#### Перегрузка
 
 Возвращает количество объектов удовлетворяющих условиям выборки,не выполняя загрузку данных.
 
