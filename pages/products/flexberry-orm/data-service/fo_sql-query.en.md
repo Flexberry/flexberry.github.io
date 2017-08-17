@@ -4,7 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, БД
 toc: true
 permalink: en/fo_sql-query.html
-folder: products/flexberry-orm/
 lang: en
 ---
 

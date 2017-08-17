@@ -168,36 +168,28 @@ entries:
   - title: Data service
     output: web, pdf
     folderitems:
-    - title: Интерпретация булевского значения NULL
-      url: /fo_interpretation-boolean-values-null.html
+    - title: Стандартные сервисы данных Flexberry ORM
+      url: /fo_standard-data-services.html
       output: web
 
-    - title: Как перехватить формирование SQL-запроса к БД
-      url: /fo_intercept-formation-sql-query.html
+    - title: Сервис данных
+      url: /fo_data-service.html
       output: web
 
-    - title: Как сменить тип хранилища
-      url: /fo_switching-storages-and-storage-types.html
-      output: web
-
-    - title: Минимальный необходимый клиентский набор для работы Oracle Data Service
-      url: /fo_minimum-required-client-set-for-oracle-data-service.html
+    - title: Реализация собственного сервиса данных
+      url: /fo_implement-a-custom-data-service.html
       output: web
 
     - title: Нехранимые свойства объекта данных
       url: /fo_not-stored-attributes.html
       output: web
 
-    - title: Обработка регистров в именах объектов для СУБД
-      url: /fo_processing-registers-names-for-objects-dbms.html
-      output: web
-
     - title: Обработка статуса и состояния загрузки объекта сервисами данных
       url: /fo_processing-status-and-condition-of-load-object-data-services.html
       output: web
 
-    - title: Пример создания объектов данных и сохранение их в БД
-      url: /fo_instantiate-and-persist-objects-example.html
+    - title: Обработка регистров в именах объектов для СУБД
+      url: /fo_processing-registers-names-for-objects-dbms.html
       output: web
 
     - title: Поддержка нескольких хранилищ данных в одном приложении
@@ -208,12 +200,12 @@ entries:
       url: /fo_primary-keys-objects.html
       output: web
 
-    - title: Реализация собственного сервис данных
-      url: /fo_implement-a-custom-data-service.html
+    - title: TrimmedStringStorage - обрезка строк сервисом данных
+      url: /fo_trimmed-string-storage.html
       output: web
 
-    - title: Стандартные сервисы данных Flexberry ORM
-      url: /fo_standard-data-services.html
+    - title: Пример создания объектов данных и сохранение их в БД
+      url: /fo_instantiate-and-persist-objects-example.html
       output: web
 
     - title: SQL-запросы в Flexberry
@@ -226,6 +218,14 @@ entries:
 
     - title: MSSQLDataService
       url: /fo_mssql-data-service.html
+      output: web
+
+    - title: MSSQLDataService String NULL or Empty
+      url: /fo_mssql-data-service-string-null-or-empty.html
+      output: web
+
+    - title: Как перехватить формирование SQL-запроса к БД
+      url: /fo_intercept-formation-sql-query.html
       output: web
 
     - title: ODBCDataService
@@ -244,14 +244,6 @@ entries:
       url: /fo_oracle-data-service.html
       output: web
 
-    - title: MSSQLDataService String NULL or Empty
-      url: /fo_mssql-data-service-string-null-or-empty.html
-      output: web
-
-    - title: TrimmedStringStorage - обрезка строк сервисом данных
-      url: /fo_trimmed-string-storage.html
-      output: web
-
     - title: XMLFileDataService
       url: /fo_xml-file-data-service.html
       output: web
@@ -260,6 +252,18 @@ entries:
       url: /fo_postgres-data-service.html
       output: web
 
+    - title: Интерпретация булевского значения NULL
+      url: /fo_interpretation-boolean-values-null.html
+      output: web
+
+    - title: Как сменить тип хранилища
+      url: /fo_switching-storages-and-storage-types.html
+      output: web
+
+    - title: Минимальный необходимый клиентский набор для работы Oracle Data Service
+      url: /fo_minimum-required-client-set-for-oracle-data-service.html
+      output: web
+    
   - title: Функции ограничения
     output: web, pdf
     folderitems:

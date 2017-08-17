@@ -1,10 +1,9 @@
 ---
 title: Пример загрузки и изменения объекта
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: Public, Sample
 toc: true
 permalink: ru/fo_load-and-alter-objects.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 

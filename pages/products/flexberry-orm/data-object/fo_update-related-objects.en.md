@@ -4,7 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public
 toc: true
 permalink: en/fo_update-related-objects.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
