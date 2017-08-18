@@ -51,7 +51,7 @@ permalink: en/fo_data-object.html
 * [Блокировка объекта для монопольного редактирования](fo_lock-service.html).
 * [Проверка совместимости объекта и представления](fo_test-object-for-viewing.html).
 * [Получение презентационного значения для объекта данных](fo_data-object-get-presentation-value.html)
-* [Дочитка объекта данных](fo_additional-loading-data-object.html)
+* [Дочитка объекта данных](fo_additional-loading.html)
 
 
 ## Сохранение объекта данных в хранилище

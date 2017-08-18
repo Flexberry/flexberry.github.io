@@ -1,9 +1,11 @@
 ---
 title: Dynamic Properties
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public
+keywords: DataObject, Flexberry ORM, Example, property
+summary: Features, algorithms for creating and using dynamic properties
 toc: true
 permalink: en/fo_dynamic-properties.html
+lang: en
 ---
 
 `DynamicProperties` - экземпляр класса NameObjectCollection (расширение класса [NameObjectCollectionBase](http://msdn.microsoft.com/ru-ru/library/system.collections.specialized.nameobjectcollectionbase.aspx)), который является, по сути, словарем, хранящим пары значений строка-объект.
@@ -12,7 +14,6 @@ permalink: en/fo_dynamic-properties.html
 
 Динамические свойства __не сохраняются__ в базу.
 
-
 {% include important.html content="Собственный экземпляр `DynamicProperties` содержится в __каждом__ объекте класса, наследуемого от [DataObject](fo_data-object.html)." %}
 
 ## Использование динамических свойств
@@ -20,7 +21,7 @@ permalink: en/fo_dynamic-properties.html
 Обратиться к динамическим свойствам объекта можно следующим образом:
 
 ```csharp
-dataObject.DynamicProperties @@
+dataObject.DynamicProperties
 ```
 
 `Добавление свойства`
@@ -42,7 +43,7 @@ if (dataObject.DynamicProperties.ContainsKey("propertyName"))
 `Удаление свойства объекта`
 
 ```csharp
-dataObject.DynamicProperties.Remove("propertyName"); @@
+dataObject.DynamicProperties.Remove("propertyName");
 ```
 
 ## Основной сценарий использования динамических свойств объекта
@@ -54,9 +55,9 @@ dataObject.DynamicProperties.Remove("propertyName"); @@
 
 ### Пример
 
-![image](/images/pages/products/flexberry-orm/dynamic-properties/Templates.PNG)
+![image](/images/pages/products/flexberry-orm/additional-features/templates.png)
 
-Рассмотрим объект `СтрокаПланаПогашения`. Предположим, что мы хотим ввести шаблон оплаты, содержащий в себе информацию о `КредитнойКарте` и `Кредите`, но с незаполненными полями `ДатыОплаты` и `Суммы`. Однако, в [бизнес-сервере](fo_business-servers-wrapper-business-facade.html) обновления объекта уже находится проверка, отвечающая за заполненность этих полей => объект не сможет обновиться и сохраниться в базу.
+Объект `СтрокаПланаПогашения`. Например, необходимо ввести шаблон оплаты, содержащий в себе информацию о `КредитнойКарте` и `Кредите`, но с незаполненными полями `ДатыОплаты` и `Суммы`. Однако, в [бизнес-сервере](fo_business-servers-wrapper-business-facade.html) обновления объекта уже находится проверка, отвечающая за заполненность этих полей. Следовательно, объект не сможет обновиться и сохраниться в базу.
 
 На форме создания шаблона оплаты перед отправкой объекта на сохранение необходимо добавить динамическое свойство 
 
@@ -72,12 +73,3 @@ if (!UpdatedObject.DynamicProperties.ContainsKey("Template"))
     // Проверки на обязательность заполненности полей Сумма и ДатаОплаты
 }
 ```
-
-
- 
-
-
-
-
-
-

@@ -1,9 +1,11 @@
 ---
-title: Ассоциирование картинок с классами данных
+title: Associating pictures with data classes
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public
+keywords: DataObject, Flexberry ORM, Image, class, property, object
+summary: A way to associate an image with a class, object, or data property
 toc: true
 permalink: en/fo_class-image.html
+lang: ru
 ---
 
 С [классом данных](fo_data-object.html) может быть ассоциировано изображение.
@@ -14,24 +16,8 @@ permalink: en/fo_class-image.html
 
 Кроме того, что картинка отображается в пользовательском интерфейсе (например, контролы для работы с группой объектов), разработчик может получить:
 
-* картинку для конкретного объекта данных методом [`Information`](fo_information-class-as-metadata-supervisor.html)`.GetImageForInstance`, 
-* картинку для класса методом  [`Information`](fo_information-class-as-metadata-supervisor.html)`.GetClassImage`, 
-* имя свойства, предоставляющее картинку, методом [`Information`](fo_information-class-as-metadata-supervisor.html)`.GetClassImageProperty`.
+* картинку для конкретного объекта данных методом [Information](fo_information-class-as-metadata-supervisor.html)`.GetImageForInstance`, 
+* картинку для класса методом  `Information.GetClassImage`, 
+* имя свойства, предоставляющее картинку, методом `Information.GetClassImageProperty`.
 
 {% include note.html content="В свойствах сборки с картинкой должен быть указан правильный `Default Namespace` (соответствующий пространству имён того класса, к которому привязывается картинка)." %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

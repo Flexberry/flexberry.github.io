@@ -1,12 +1,12 @@
 ---
 title: Библиотеки Flexberry ORM
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, библиотеки, сборки, nuget
+summary: Список библиотек Flexberry ORM, доступных через NuGet
 toc: true
 permalink: ru/fo_flexberry-orm-libraries.html
+lang: ru
 ---
-
-## Список библиотек [Flexberry ORM](fo_flexberry-orm.html)
 
 Список библиотек, содержащих Runtime-компоненты [Flexberry ORM](fo_flexberry-orm.html):
 
@@ -30,6 +30,3 @@ permalink: ru/fo_flexberry-orm-libraries.html
 * **NewPlatform.Flexberry.Data.ODataService.dll**
 
 {% include note.html content="Flexberry ORM доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)." %}
-
-
-

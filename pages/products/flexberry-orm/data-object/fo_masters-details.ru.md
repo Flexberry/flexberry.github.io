@@ -20,4 +20,4 @@ lang: ru
 
 ![](/images/pages/products/flexberry-orm/masters-and-details/web-form-interface.jpg)
 
-Как можно заметить, [мастеровые ассоциации](fd_master-association.html) определили лукапы (как настроить внешний вид лукапа, описано [здесь](fd_generate-lookup-i-lookup.html)), а [детейловая композиция](fo_detail-associations-properties.html) - [GroupEdit](group-edit.html).
+Как можно заметить, [мастеровые ассоциации](fd_master-association.html) определили лукапы (как настроить внешний вид лукапа, описано [здесь](fo_custom-lookup.html)), а [детейловая композиция](fo_detail-associations-properties.html) - [GroupEdit](group-edit.html).

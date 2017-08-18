@@ -1,10 +1,10 @@
 ---
-title: Перегрузка атрибутов, ассоциаций, методов 
+title: Overloading of attributes, associations, methods
 sidebar: flexberry-orm_sidebar
-keywords: Ключевые понятия
+keywords: Flexberry ORM, attributes, methods, associations, overload, example
+summary: Description of methods for overloading attributes, associations and methods
 toc: true
-permalink: en/fo_overloading-attributes-associations-methods.html
-folder: products/flexberry-orm/
+permalink: en/fo_overloading.html
 lang: en
 ---
 
@@ -14,9 +14,9 @@ lang: en
 
 Например:
 
-![](/images/pages/products/flexberry-orm/flexberry-plugins/override.gif)
+![](/images/pages/products/flexberry-orm/additional-features/override-orm.png)
 
-В данном случае, будут перегружены атрибут и метод, следующим образом:
+В данном случае, будут перегружены атрибут и метод следующим образом:
 
 В унаследованном классе свойство будет обращаться к свойству базового класса, а метод, соответственно, также, к методу базового класса.
 

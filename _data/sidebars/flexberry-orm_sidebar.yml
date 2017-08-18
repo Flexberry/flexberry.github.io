@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Flexberry ORM
-  version: 2.1.0
+  version: 4.0.0
   folders:
 
   - title: О Flexberry ORM
@@ -13,6 +13,70 @@ entries:
     - title: About
       title_ru: О модуле
       url: /fo_landing_page.html
+      output: web
+
+  - title: Дополнительные возможности
+    output: web, pdf
+    folderitems:
+    - title: Additional loading data object
+      title_ru: Дочитка объекта данных
+      url: /fo_additional-loading.html
+      output: web
+    - title: Serializing and Deserializing Data Objects
+      title_ru: Сериализация и десериализация объектов данных
+      url: /fo_aggregating-function.html
+      output: web
+    - title: Associating pictures with data classes
+      title_ru: Ассоциирование картинок с классами данных
+      url: /fo_class-image.html
+      output: web
+    - title: Code Examples
+      title_ru: Примеры кода
+      url: /fo_code-samples.html
+      output: web
+    - title: Example of custom names for structures in a database
+      title_ru: Пример пользовательских наименований для структур в БД
+      url: /fo_custom-naming-db-structures.html
+      output: web
+    - title: Dynamic Properties
+      title_ru: Динамические свойства объекта
+      url: /fo_dynamic-properties.html
+      output: web
+    - title: Flexberry ORM Libraries
+      title_ru: Библиотеки Flexberry ORM
+      url: /fo_flexberry-orm-libraries.html
+      output: web
+    - title: Custom control as LookUp
+      title_ru: Произвольный контрол в качестве лукапа
+      url: /fo_custom-lookup.html
+      output: web
+    - title: Features of determining the load of properties
+      title_ru: Особенности определения загруженности свойств
+      url: /fo_definition-loaded-properties.html
+      output: web
+    - title: ISpecialEmptyValue
+      title_ru: ISpecialEmptyValue
+      url: /fo_i-special-empty-value.html
+      output: web
+    - title: ICSSoft.STORMNET.Tools.XmlTools
+      title_ru: ICSSoft.STORMNET.Tools.XmlTools
+      url: /fo_ics-soft-stormnet-tools.html
+      output: web
+    - title: Interpreting the Boolean NULL Value
+      title_ru: Интерпретация булевского значения NULL
+      url: /fo_interpretation-boolean-null.html
+      output: web
+    - title: ICSSoft.STORMNET.KeyGen.KeyGuid class
+      title_ru: Класс ICSSoft.STORMNET.KeyGen.KeyGuid
+      url: /fo_key-guid.html
+      output: web
+    - title: Overloading of attributes, associations, methods
+      title_ru: Перегрузка атрибутов, ассоциаций, методов
+      url: /fo_overloading.html
+      output: web
+    - title: Reading objects belonging to different classes in one view
+      title_ru: Чтение принадлежащих различным классам объектов в одном представлении
+      url: /fo_reading-several-types-objects.html
       output: web
 
   - title: Аудит

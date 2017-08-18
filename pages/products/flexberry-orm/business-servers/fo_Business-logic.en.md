@@ -22,7 +22,7 @@ permalink: en/fo_business-logic.html
 * Обновление нескольких объектов [одной транзакцией](fo_bs-transact.html).
 * Проверка [уникальности введенных данных](fo_bs-unique-data-check.html).
 * Проверка [валидности изменений данных объекта](fo_bs-change-data-check.html).
-* [Дочитка данных](fo_additional-loading-data-object.html)
+* [Дочитка данных](fo_additional-loading.html)
 * Добавление методов [вычитки данных](fo_sql-query.html).
 * Работа с [копией данных](copies-of-data-and-audit.html).
 

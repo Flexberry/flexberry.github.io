@@ -1,11 +1,11 @@
 ---
-title: Класс ICSSoft.STORMNET.KeyGen.KeyGuid
+title: ICSSoft.STORMNET.KeyGen.KeyGuid class
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, KeyGen, KeyGuid
-summary: Описание класса KeyGuid
+summary: KeyGuid Class description
 toc: true
 permalink: ru/fo_key-guid.html
-lang: ru
+lang: en
 ---
 
 `KeyGuid` отличается от `System.Guid` наличием метода `Parse` и отсутствием некоторых конструкторов.

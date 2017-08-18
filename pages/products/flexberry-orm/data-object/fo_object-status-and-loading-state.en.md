@@ -44,7 +44,7 @@ lang: en
 
 * `LoadingState.Loaded` — вычитаны все собственные атрибуты объекта данных, все мастеровые первого уровня, все детейловые первого уровня.
 
-* `LoadingState.LightLoaded` — объект данных частично загружен, подробности могут быть выяснены вызовом у объекта данных методов [`GetLoadedProperties`](fo_get-loaded-properties-and-check-loaded-property.html) и [`CheckLoadedProperty`](fo_get-loaded-properties-and-check-loaded-property.html).
+* `LoadingState.LightLoaded` — объект данных частично загружен, подробности могут быть выяснены вызовом у объекта методов [GetLoadedProperties и CheckLoadedProperty](fo_definition-loaded-properties.html).
 
 Состояние загрузки можно выяснить через метод `GetLoadingState`, а установить — `SetLoadingState`.
 

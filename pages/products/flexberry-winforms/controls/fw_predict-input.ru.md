@@ -12,7 +12,7 @@ lang: ru
 
 В качестве контрола-подсказчика может выступать 
 * Контрол, содержащийся в сборке `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll` ([ExtendedLookUp](fw_extended-lookup.html) или `ExtLookUpTextControl`)
-* Контрол, созданный программистом ([подробнее в статье Произвольный контрол в качестве лукапа](fo_generate-lookup-i-lookup.html)).
+* Контрол, созданный программистом ([подробнее в статье Произвольный контрол в качестве лукапа](fo_custom-lookup.html)).
 
 ## Подключение контрола
 

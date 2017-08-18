@@ -1,9 +1,11 @@
 ---
-title: Примеры кода
+title: Code Examples
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: Public, Sample
+summary: List of examples of recommended work with Flexberry ORM
 toc: true
 permalink: en/fo_code-samples.html
+lang: en
 ---
 
 Примеры кода можно увидеть в [репозитории платформы Flexberry на GitHub](https://github.com/Flexberry).
