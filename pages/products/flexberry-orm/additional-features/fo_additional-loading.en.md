@@ -1,7 +1,7 @@
 ---
-title: Data object doc
+title: Additional loading data object
 sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, data object doc, data copy
+keywords: DataObject, Flexberry ORM, loading data object, data copy
 summary: Description of data validation methods
 toc: true
 permalink: en/fo_additional-loading.html
