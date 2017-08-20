@@ -98,7 +98,7 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Created)
 }
 ```
 
-{% include note.html content=">Первая проверка [UpdatedObject.GetStatus() == ObjectStatus.Created](fo_object-status-and-loading-state.html), она позволяет отсечь случаи обновления или удаления объекта." %}
+{% include note.html content="Первая проверка [UpdatedObject.GetStatus() == ObjectStatus.Created](fo_object-status-and-loading-state.html), она позволяет отсечь случаи обновления или удаления объекта." %}
 
 Теперь при попытке создания нового `Кредита` будет происходить проверка, описанная выше.
 

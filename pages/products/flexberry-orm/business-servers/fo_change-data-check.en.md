@@ -1,10 +1,10 @@
 ---
 title: Checking the validity of changes to object data in the business server
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM,dDatabase, business servers, example
+keywords: Flexberry ORM, database, business servers, example
 summary: Description of the object change according to the specified conditions
 toc: true
-permalink: ru/fo_change-data-check.html
+permalink: en/fo_change-data-check.html
 lang: en
 ---
 

@@ -4,7 +4,7 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, база данных, бизнес-серверы, пример
 summary: Описание изменения объекта по заданным условиям
 toc: true
-permalink: en/fo_change-data-check.html
+permalink: ru/fo_change-data-check.html
 lang: ru
 ---
 
