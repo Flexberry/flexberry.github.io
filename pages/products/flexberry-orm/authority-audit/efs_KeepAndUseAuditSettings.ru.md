@@ -4,20 +4,8 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
 permalink: ru/efs_keep-and-use-audit-settings.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Audit](audit-web.html)
-* '''Программная библиотека''': ICSSoft.STORMNET.Business.dll
-* '''Предназначение''': Описана структура хранения настроек аудита и их использование.
-</td>
-</tr></tbody></table></a>
-</div>
 
 # Хранение настроек
 

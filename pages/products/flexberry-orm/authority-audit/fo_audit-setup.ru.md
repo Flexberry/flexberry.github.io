@@ -4,7 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry Audit, Flexberry Designer
 toc: true
 permalink: ru/fo_audit-setup.html
-folder: products/flexberry-orm/audit/
 lang: ru
 ---
 

@@ -4,7 +4,6 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, БД
 toc: true
 permalink: ru/efs_data-service-for-audit.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

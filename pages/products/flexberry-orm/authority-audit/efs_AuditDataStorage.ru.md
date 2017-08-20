@@ -4,20 +4,8 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, БД
 toc: true
 permalink: ru/efs_audit-data-storage.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Audit](audit-web.html)
-* '''Программная библиотека''': ICSSoft.STORMNET.Business.dll, ICSSoft.STORMNET.Business.Audit.dll
-* '''Предназначение''': Описана структура хранения данных аудита для реализации [ICSSoft.STORMNET.Business.Audit.Audit интерфейса IAudit](i-audit.html).
-</td>
-</tr></tbody></table></a>
-</div>
 
 # Хранение данных аудита
 Для хранения данных аудита можно использовать структуру, аналогичную представленной ниже (такую структуру возможно использовать вне базы данных приложения; названия соответствующих таблиц будут иметь префикс STORM). Данная структура для хранения используется в реализации [ICSSoft.STORMNET.Business.Audit.Audit интерфейса IAudit](i-audit.html).

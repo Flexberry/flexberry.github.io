@@ -4,20 +4,8 @@ sidebar: ember-flexberry-security_sidebar
 keywords: FAQ, Flexberry Audit
 toc: true
 permalink: ru/efs_flexberry-audit-faq.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Audit](audit-web.html)
-* '''Программная библиотека''': ICSSoft.STORMNET.Business.dll, ICSSoft.STORMNET.Business.Audit.dll
-* '''Предназначение''': Представлены основные вопросы, возникающие у пользователей аудита, и возможные способы их решения.
-</td>
-</tr></tbody></table></a>
-</div>
 
 # Аудит совсем ничего не пишет
 «Аудит совсем ничего не пишет – не знаю, куда смотреть». Что можно сделать:

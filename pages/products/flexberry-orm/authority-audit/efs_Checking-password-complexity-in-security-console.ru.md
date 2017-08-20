@@ -4,9 +4,9 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true
 permalink: ru/efs_checking-password-complexity-in-security-console.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
+
 # Проверка сложности пароля в консоли безопасности
 При установке пароля пользователя в консоли безопасности есть возможность организовать контроль его сложности. Задать ограничения, которым должен удовлетворять пароль, можно либо через конфигурационный файл приложения, либо через диалоговое окно «Агенты\Сложность пароля» (настройки сохраняются в конфигурационном файле).
 

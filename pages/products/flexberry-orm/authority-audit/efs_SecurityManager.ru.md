@@ -2,10 +2,10 @@
 title: SecurityManager
 sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security, Ключевые понятия
+summary: Основная реализация интерфейса модуля аутентификации и авторизации ISecurityManager - SecurityManager.
 toc: true
 permalink: ru/efs_security-manager.html
 lang: ru
-summary: Основная реализация интерфейса модуля аутентификации и авторизации ISecurityManager - SecurityManager.
 ---
 
 ## Описание SecurityManager

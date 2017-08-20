@@ -1,7 +1,7 @@
 ---
 title: ISecurityManager
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Flexberry Security, authority, authority service
+keywords: Flexberry Security, authority, authority service
 summary: Flexberry Subsystem Lifecycle Services
 toc: true
 permalink: en/fo_i-security-manager.html
@@ -59,7 +59,7 @@ ISecurityManager применяется в [Flexberry ORM](fo_flexberry-orm.html
 </configuration>
 ```
 
-**Примечание:** для корректного взаимодействия [CheckingLibrary](flexberry-security-legacy-services.html) с [RightManager](right-manager.html) в файл конфигурации необходимо добавить именованую регистрацию разрешения `ISecurityManager` с именем `securityManagerWithoutRightsCheck`.
+**Примечание:** для корректного взаимодействия [CheckingLibrary](efs_security-legacy-services.html) с [RightManager](fa_right-manager.html) в файл конфигурации необходимо добавить именованую регистрацию разрешения `ISecurityManager` с именем `securityManagerWithoutRightsCheck`.
 
 Если система полномочий не применяется, то можно использовать упрощённый вариант конфигурации:
 
@@ -85,7 +85,7 @@ ISecurityManager применяется в [Flexberry ORM](fo_flexberry-orm.html
 
 ## Управление правами доступа на уровне экземпляра сервиса данных
 
-Для управления механизмом проверки [полномочий](right-manager-module.html) на уровне [сервиса данных](fo_data-service.html) реализован специальный конструктор для [сервисов данных](fo_data-service.html), позволяющий выключить или проверки полномочий в рамках данной инстанции. Это позволяет избежать выключения проверки полномочий целиком для всего приложения, если есть реальная необходимость отключения полномочий для одной или нескольких операций.
+Для управления механизмом проверки [полномочий](fa_right-manager-module.html) на уровне [сервиса данных](fo_data-service.html) реализован специальный конструктор для [сервисов данных](fo_data-service.html), позволяющий выключить или проверки полномочий в рамках данной инстанции. Это позволяет избежать выключения проверки полномочий целиком для всего приложения, если есть реальная необходимость отключения полномочий для одной или нескольких операций.
 
 Конструктор принимает в качестве параметра инстанцию `ICSSoft.STORMNET.Security.ISecurityManager`, которая содержит настройки механизма проверки полномочий. В качестве реализации по умолчанию можно использовать имплементацию этого интерфейса: `DefaultSecurityManager`.
 

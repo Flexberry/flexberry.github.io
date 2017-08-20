@@ -4,20 +4,8 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
 permalink: ru/efs_flexberry-audit-components.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
-
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Audit](audit-web.html)
-* '''Программная библиотека''': ICSSoft.STORMNET.Business.dll, ICSSoft.STORMNET.Business.Audit.dll, ICSSoft.STORMNET.Business.AuditWinService.exe, ICSSoft.STORMNET.Business.AuditWcfServiceLibrary.dll.
-* '''Предназначение''': Описаны основные элементы [Flexberry Audit](audit-web.html) и представлены схемы их взаимодействия.
-</td>
-</tr></tbody></table></a>
-</div>
 
 # AuditService
 У приложения есть класс `AuditService`. Через класс `AuditService` реализуются API для обращения: 

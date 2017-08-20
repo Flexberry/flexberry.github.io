@@ -4,7 +4,6 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Security
 toc: true
 permalink: ru/efs_security-console.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

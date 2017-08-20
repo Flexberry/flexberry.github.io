@@ -4,7 +4,6 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, Flexberry Security
 toc: true
 permalink: ru/efs_rights-and-audit-subsystems.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

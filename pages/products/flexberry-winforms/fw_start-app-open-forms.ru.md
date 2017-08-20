@@ -1,10 +1,10 @@
 ---
-title: "Подсистема полномочий:  разрешение на запуск приложения и открытие форм"
-sidebar: ember-flexberry-security_sidebar
-keywords: Flexberry Security
+title: Разрешение на запуск приложения и открытие форм
+sidebar: flexberry-orm_sidebar
+keywords: Flexberry Winforms 
+summary: 
 toc: true
-permalink: ru/efs_access-type-start-app-and-open-forms.html
-folder: products/ember-flexberry-security/backend/
+permalink: ru/fw_start-app-open-forms.html
 lang: ru
 ---
 
@@ -14,7 +14,7 @@ lang: ru
 # Добавить разрешение на старт приложения
 Для добавления определенным пользователям прав на запуск приложения необходимо:
  
-# Для приложения (класс application) в атрибуте `[AccessType](access-type.html)` указать "`this`".
+# Для приложения (класс application) в атрибуте `[AccessType](fo_access-type.html)` указать "`this`".
 
 # В [консоли управления полномочиями](security-console.html) в разделе "Субъекты\Операции" создать операцию, название которой соответствует названию приложения.
 Затем на форме редактирования пользователя в разделе "Агенты\Пользователи" на вкладке "Операции" отметить добавленную операцию с [RightManager|типом доступа `Execute`(Исполнение).

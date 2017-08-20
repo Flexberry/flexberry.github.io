@@ -4,7 +4,6 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit, View (представление)
 toc: true
 permalink: ru/efs_not-stored-properties-and-audit.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 

@@ -4,7 +4,6 @@ sidebar: ember-flexberry-security_sidebar
 keywords: Flexberry Audit
 toc: true
 permalink: ru/efs_audit-disable-insert-property-attribute.html
-folder: products/ember-flexberry-security/backend/
 lang: ru
 ---
 В версии после 16.10.2013 появилась возможность при создании объекта записывать в [аудит](audit-web.html) сведения о свойствах объекта, помеченных атрибутом [DisableInsertPropertyAttribute](disable-insert-property-attribute.html).
