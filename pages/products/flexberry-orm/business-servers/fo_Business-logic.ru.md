@@ -21,14 +21,7 @@ permalink: ru/fo_business-logic.html
 * [Добавление проверки при обновлении данных через бизнес-сервер](fo_bs-example.html).
 * Обновление нескольких объектов [одной транзакцией](fo_bs-transact.html).
 * Проверка [уникальности введенных данных](fo_bs-unique-data-check.html).
-* Проверка [валидности изменений данных объекта](fo_bs-change-data-check.html).
+* Проверка [валидности изменений данных объекта](fo_change-data-check.html).
 * [Дочитка данных](fo_additional-loading.html)
 * Добавление методов [вычитки данных](fo_sql-query.html).
 * Работа с [копией данных](copies-of-data-and-audit.html).
-
-## См. также
-
-* [Бизнес-сервер](fd_business-servers.html)
-* [Бизнес-серверы, обертки, бизнес-фасад](fo_business-servers-wrapper-business-facade.html)
-* [пример использования бизнес-сервера для проверки данных](fo_bs-example.html)
-* [Категория: бизнес-серверы](http://storm:2011/AllPages.aspx?Cat=%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B)

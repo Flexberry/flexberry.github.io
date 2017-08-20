@@ -79,12 +79,21 @@ entries:
       url: /fo_reading-several-types-objects.html
       output: web
 
-  - title: Аудит
+  - title: Бизнес-серверы
     output: web, pdf
     folderitems:
-    - title: Настройка аудита в Flexberry Designer
-      url: /fd_audit-setup.html
+    - title: Checking the validity of changes to object data in the business server
+      title_ru: Проверка валидности изменений данных объекта в бизнес-сервере
+      url: /fo_change-data-check.html
       output: web
+    - title: Example of using a business server
+      title_ru: Пример использования бизнес-сервера
+      url: /fo_bs-example.html
+      output: web
+    - title: Updating multiple objects with a single transaction
+      title_ru: Обновление нескольких объектов одной транзакцией
+      url: /fo_bs-transact.html
+      output: web   
 
   - title: Работа с данными
     output: web, pdf

@@ -1,102 +1,85 @@
 ---
-title: Пример использования бизнес-сервера
+title: Example of using a business server
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry Designer, Flexberry ORM, Public, Бизнес-серверы
+keywords: Flexberry Designer, Flexberry ORM, business servers, example
+summary: Example of a business server implementation
 toc: true
 permalink: en/fo_bs-example.html
+lang: en
 ---
 
-## Бизнес-сервер
+В данном примере будет рассмотрено введение ограничений на создание новых объектов на примере следующей [диаграммы классов](fd_class-diagram.html):
 
-Что такое бизнес-сервер и зачем он нужен можно прочитать **[здесь](fo_business-servers-wrapper-business-facade.html)**
+![](/images/pages/products/flexberry-orm/business-servers/filter-ex-diagram.png)
 
-## Пример
+`Задача.` При попытке создания нового кредита необходимо проверить, существуют ли непогашенные кредиты для этого Клиента.
 
-В качестве примера мы рассмотрим введение ограничений на создание новых объектов
+## Реализация
 
-#### Диаграмма
+Прежде всего необходимо создать класс со стереотипом [businessserver](fd_business-servers.html) на диаграмме классов с наименованием, например, `КредитБС`.
 
-![](/images/pages/products/flexberry-orm/FilterExDiagram.PNG)
+{% include note.html content="Чтобы класс не занимал много места, его можно свернуть, выбрав контекстное меню `Свернуть`." %}
 
-#### Задача
+![](/images/pages/products/flexberry-orm/business-servers/bs-example.PNG)
 
-При попытке создания нового кредита необходимо проверить, существуют ли непогашенные кредиты для этого Клиента.
+Сохранть диаграмму, чтобы бизнес-сервер попал в список доступных классов.
 
-#### Добавление бизнес-сервера
+В свойствах класса `Кредит` в поле [BSClass](fd_data-classes.html) выбирать из выпадающего списка созданный бизнес-сервер.
 
-Прежде всего необходимо [создать класс со стереотипом `businessserver` на диаграмме классов](fd_business-servers.html). Назовем его `КредитБС`.
-''__Примечание__: чтобы класс не занимал много места, его можно свернуть, выбрав контекстное меню `Свернуть`''
+![](/images/pages/products/flexberry-orm/business-servers/bs-example1.PNG)
 
-![](/images/pages/products/flexberry-orm/BSExample.PNG)
+Сохранить и закроем окно, а затем - диаграмму классов. Теперь появилась возможность генерации бизнес-серверов. Сгенерировать проект бизнес-серверов.
 
-Сохраним диаграмму, чтобы бизнес-сервер попал в список доступных классов.
+{% include important.html content="Объекты также нужно перегенерировать, чтобы ссылки объектов и бизнес-серверов были актуализированы." %}
 
-Зайдем в свойства класса `Кредит` и в поле `BSClass` выберем из выпадающего списка созданный бизнес-сервер
+Добавить в проект Visual Studio сгенерированный проект бизнес-серверов.
 
-![](/images/pages/products/flexberry-orm/BSExample1.PNG)
+В классе `Кредит` появилась ссылка в виде атрибута класса на новый бизнес-сервер:
 
-Сохраним и закроем окно.
-
-Сохраним и закроем диаграмму классов.
-
-Теперь в меню стадии `CSharp` -> `Генерировать` появилась возможность генерации бизнес-серверов и бизнес-фасадов.
-
-![](/images/pages/products/flexberry-orm/BSExample2.PNG)
-
-Сгенерируем их.
-
-''__Примечание__: объекты тоже нужно перегенерировать, чтобы внеслись изменения касательно ссылок объектов и бизнес-серверов''
-
-Добавим в проект Visual Studio сгенерированные проекты бизнес-серверов и фасадов.
-
-Обратим внимание, что в классе `Кредит` появилась ссылка в виде атрибута класса на новый бизнес-сервер:
-
-```cs 
-[BusinessServer("IIS.Кредиты.КредитБС, Кредиты(BusinessServers)", ICSSoft.STORMNET.Business.DataServiceObjectEvents.OnAllEvents)] 
+``` csharp
+[BusinessServer("IIS.Кредиты.КредитБС, Кредиты(BusinessServers)", ICSSoft.STORMNET.Business.DataServiceObjectEvents.OnAllEvents))
 ```
 
-Откроем файл бизнес-сервера `КредитБС.cs`
+Открыть файл бизнес-сервера `КредитБС.cs`.
 
-Обратим внимание на [метод `OnUpdateКредит`, принимающий в качестве параметра объект типа `Кредит` и возвращающий объект типа `DataObject[]`](fo_bs-example.html)
+Код метода `OnUpdateКредит`, принимающий в качестве параметра объект типа `Кредит` и возвращающий объект типа `DataObject[)`
 
-```cs
-        public virtual ICSSoft.STORMNET.DataObject[] OnUpdateКредит(IIS.Кредиты.Кредит UpdatedObject)
-        {
-            // *** Start programmer edit section *** (OnUpdateКредит)
+``` csharp
+public virtual ICSSoft.STORMNET.DataObject[) OnUpdateКредит(IIS.Кредиты.Кредит UpdatedObject)
+{
+	// *** Start programmer edit section *** (OnUpdateКредит)
 
-            return new ICSSoft.STORMNET.DataObject[0];
-            // *** End programmer edit section *** (OnUpdateКредит)
-        }```
-
-Как можно заметить, в этом методе ничего не происходит. Добавим в него логику по проверке вводимого значения суммы кредита: она должна быть неотрицательной.
-
-```cs
-        public virtual ICSSoft.STORMNET.DataObject[] OnUpdateКредит(IIS.Кредиты.Кредит UpdatedObject)
-        {
-            // *** Start programmer edit section *** (OnUpdateКредит)
-            if (UpdatedObject.СуммаКредита < 0)
-                throw new Exception("Сумма кредита не может быть отрицательной");
-
-            return new ICSSoft.STORMNET.DataObject[0];
-            // *** End programmer edit section *** (OnUpdateКредит)
-        }
+	return new ICSSoft.STORMNET.DataObject[0);
+	// *** End programmer edit section *** (OnUpdateКредит)
+}
 ```
 
-Запустим проект и попробуем ввести отрицательное число в поле `Сумма кредита`, получим
+Как можно заметить, в этом методе ничего не происходит. В него следует добавить логику по проверке вводимого значения суммы кредита: она должна быть неотрицательной.
 
-![](/images/pages/products/flexberry-orm/BSExample3.PNG)
+``` csharp
+public virtual ICSSoft.STORMNET.DataObject[) OnUpdateКредит(IIS.Кредиты.Кредит UpdatedObject)
+{
+	// *** Start programmer edit section *** (OnUpdateКредит)
+	if (UpdatedObject.СуммаКредита < 0)
+		throw new Exception("Сумма кредита не может быть отрицательной");
+
+	return new ICSSoft.STORMNET.DataObject[0);
+	// *** End programmer edit section *** (OnUpdateКредит)
+}
+```
+
+Теперь при попытке ввода отрицательного числа в поле `Сумма кредита` будет выдаваться исключение.
 
 Аналогично можно поставить проверки на `СрокКредита` и на `ДатуВыдачи`.
 
-Однако, вернемся к нашей задаче. Нам необходимо проверить, нет ли у данного клиента незакрытых кредитов.
+По условиям задачи необходимо проверить, нет ли у данного клиента незакрытых кредитов:
 
-* Учтем, что данная проверка имеет место только при создании `Кредита`
-* Найдем все кредиты `Клиента`, для которого создается `Кредит`
->__Примечание__: подробнее о вычитке данных из SQL базы данных описано в [другой статье](fo_sql-query.html)
-* Проверим сколько из них не закрыты
-* Выдадим сообщение об ошибке если обнаружим незакрытый Кредит
+* Данная проверка имеет место только при создании `Кредита`.
+* Необходимо найти все кредиты `Клиента`, для которого создается `Кредит` (потребуется наложение [ограничения](fo_limitation.html)).
+* Проверить сколько из них не закрыты.
+* Вывести сообщение об ошибке если обнаружен незакрытый Кредит.
 
-```cs
+``` csharp
 // Учтем, что данная проверка имеет место только при создании кредита
 if (UpdatedObject.GetStatus() == ObjectStatus.Created)
 {
@@ -115,13 +98,8 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Created)
 }
 ```
 
-**Примечание**: Реализацию метода `LoadAllByClient` можно посмотреть в [этой статье](fo_func-eq.html).
-
-**Примечание**: Обратите внимание на первую проверку **[UpdatedObject.GetStatus() == ObjectStatus.Created](fo_object-status-and-loading-state.html)**, она позволяет нам отсечь случаи обновления или удаления объекта. 
-
-### Итоги
+{% include note.html content=">Первая проверка [UpdatedObject.GetStatus() == ObjectStatus.Created](fo_object-status-and-loading-state.html), она позволяет отсечь случаи обновления или удаления объекта." %}
 
 Теперь при попытке создания нового `Кредита` будет происходить проверка, описанная выше.
 
-Бизнес-сервер можно создать для каждого класса и вводить необходимую логику, которая будет выполняться в момент сохранения изменений в объект, будь то создание, удаление или изменение состояния объекта.
-
+[Бизнес-сервер](fo_business-servers-wrapper-business-facade.html) можно создать для каждого класса и вводить необходимую логику, которая будет выполняться в момент сохранения изменений в объект, будь то создание, удаление или изменение состояния объекта.
