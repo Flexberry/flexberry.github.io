@@ -1,5 +1,5 @@
 ---
-title: ember-flexberry-gis
+title: Flexberry GIS
 keywords: ember
 sidebar: flexberry-gis_sidebar
 toc: true
@@ -24,3 +24,25 @@ lang: ru
 * Пространственные интерполяции.
 
 Благодаря специальным визуализациям размер и внешний вид объектов на карте могут динамически определяться в зависимости от типа визуализации и значений каких-либо прикладных атрибутивных свойств.
+
+## Аддоны
+
+* [ember-flexberry-gis](efg_ember-flexberry-gis.html)
+* [ember-flexberry-gis-yandex](efgy_ember-flexberry-gis-yandex.html)
+* [ember-flexberry-gis-csw](efgcsw_ember-flexberry-gis-csw.html)
+* [ember-flexberry-gis-esri](efgesri_ember-flexberry-gis-esri.html)
+* [ember-flexberry-geolocation](efgeo_ember-flexberry-geolocation.html)
+
+## Плагины
+
+* [Leaflet-WMS](lwms_leaflet-wms.html)
+* [Leaflet-WFST](lwfst_leaflet-wfst.html)
+* [Leaflet.Export](le_leaflet-export.html)
+* [leaflet-switch-scale-control](lssc_leaflet-switch-scale-control.html)
+* [Leaflet.zoomslider](lz_leaflet-zoomslider.html)
+* [Leaflet.Editable.Measures](lem_leaflet-editable-measures.html)
+* [leaflet-history](lh_leaflet-history.html)
+
+## Тестовый стенд
+
+* [ember-flexberry-gis-test-stand](ef_service.html)
