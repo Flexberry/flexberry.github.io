@@ -1,5 +1,5 @@
 ---
-title: ember-flexberry-gis
+title: Builds setting
 keywords: ember
 sidebar: flexberry-gis_sidebar
 toc: true

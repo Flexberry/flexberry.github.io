@@ -73,3 +73,6 @@ entries:
     - title: ember-flexberry-gis-test-stand
       url: /fg_ember-flexberry-gis-test-stand.html
       output: web, pdf
+    - title: Устройство билдов
+      url: /fg_content-builds.html
+      output: web, pdf
