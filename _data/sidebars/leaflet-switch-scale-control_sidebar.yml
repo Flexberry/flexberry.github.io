@@ -1,0 +1,15 @@
+entries:
+- title: Sidebar
+  product: leaflet-switch-scale-control
+  version: 0.1.0
+
+  folders:
+  - title: Сommon information about leaflet-switch-scale-control
+    title_ru: Общие сведения о leaflet-switch-scale-control
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /lssc_leaflet-switch-scale-control.html
+      output: web, pdf

@@ -1,0 +1,15 @@
+entries:
+- title: Sidebar
+  product: ember-flexberry-gis-esri
+  version: 0.1.1
+
+  folders:
+  - title: Сommon information about ember-flexberry-gis-esri
+    title_ru: Общие сведения о ember-flexberry-gis-esri
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /efgesri_ember-flexberry-gis-esri.html
+      output: web, pdf

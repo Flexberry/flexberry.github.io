@@ -1,0 +1,14 @@
+entries:
+- title: Sidebar
+  product: leaflet-history
+
+  folders:
+  - title: Сommon information about leaflet-history
+    title_ru: Общие сведения о leaflet-history
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /lh_leaflet-history.html
+      output: web, pdf

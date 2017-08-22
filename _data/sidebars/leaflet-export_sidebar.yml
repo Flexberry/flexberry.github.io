@@ -1,0 +1,15 @@
+entries:
+- title: Sidebar
+  product: Leaflet.Export
+  version: 0.1.0
+
+  folders:
+  - title: Сommon information about Leaflet.Export
+    title_ru: Общие сведения о Leaflet.Export
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /le_leaflet-export.html
+      output: web, pdf

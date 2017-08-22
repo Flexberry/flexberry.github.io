@@ -1,0 +1,15 @@
+entries:
+- title: Sidebar
+  product: Leaflet.zoomslider
+  version: 0.7.0
+
+  folders:
+  - title: Сommon information about Leaflet.zoomslider
+    title_ru: Общие сведения оLeaflet.zoomslider
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /lz_leaflet-zoomslider.html
+      output: web, pdf

@@ -1,0 +1,15 @@
+entries:
+- title: Sidebar
+  product: Leaflet-WMS
+  version: 1.0.0
+
+  folders:
+  - title: Сommon information about Leaflet-WMS
+    title_ru: Общие сведения о Leaflet-WMS
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /lwms_leaflet-wms.html
+      output: web, pdf

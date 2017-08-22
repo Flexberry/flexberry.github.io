@@ -1,0 +1,77 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Flexberry GIS
+  folders:
+
+  - title: Сommon information about Flexberry GIS
+    title_ru: Общие сведения о Flexberry GIS
+    output: web, pdf
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /fg_landing_page.html
+      output: web
+
+  - title: Аддоны и плагины
+    title_ru: Addons and plugins
+    output: web, pdf
+
+    folderitems:
+    - title: ember-flexberry-gis
+      url: /efg_ember-flexberry-gis.html
+      output: web, pdf
+
+    - title: ember-flexberry-gis-yandex
+      url: /efgy_ember-flexberry-gis-yandex.html
+      output: web, pdf
+
+    - title: ember-flexberry-gis-esri
+      url: /efgesri_ember-flexberry-gis-esri.html
+      output: web, pdf
+
+    - title: ember-flexberry-gis-csw
+      url: /efgcsw_ember-flexberry-gis-csw.html
+      output: web, pdf
+
+    - title: ember-flexberry-geolocation
+      url: /efgeo_ember-flexberry-geolocation.html
+      output: web, pdf
+
+    - title: Leaflet-WMS
+      url: /lwms_leaflet-wms.html
+      output: web, pdf
+
+    - title: Leaflet-WFST
+      url: /lwfst_leaflet-wfst.html
+      output: web, pdf
+
+    - title: Leaflet.Export
+      url: /le_leaflet-export.en.html
+      output: web, pdf
+
+    - title: Leaflet.zoomslider
+      url: /lz_leaflet-zoomslider.html
+      output: web, pdf
+
+    - title: Leaflet.Editable.Measures
+      url: /lem_leaflet-editable-measures.html
+      output: web, pdf
+
+    - title: leaflet-switch-scale-control
+      url: /lssc_leaflet-switch-scale-control.html
+      output: web, pdf
+
+    - title: leaflet-history
+      url: /lh_leaflet-history.html
+      output: web, pdf
+
+  - title: Демонстрационный стенд
+    title_ru: Demonstration stand
+    output: web, pdf
+
+    - title: ember-flexberry-gis-test-stand
+      url: /fg_ember-flexberry-gis-test-stand.html
+      output: web, pdf

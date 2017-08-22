@@ -1,0 +1,14 @@
+entries:
+- title: Sidebar
+  product: ember-flexberry-geolocation
+
+  folders:
+  - title: Сommon information about ember-flexberry-geolocation
+    title_ru: Общие сведения о ember-flexberry-geolocation
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /efgeo_ember-flexberry-geolocation.html
+      output: web, pdf

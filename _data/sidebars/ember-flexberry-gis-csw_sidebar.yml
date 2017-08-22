@@ -1,0 +1,15 @@
+entries:
+- title: Sidebar
+  product: ember-flexberry-gis-csw
+  version: 0.1.0
+
+  folders:
+  - title: Сommon information about ember-flexberry-gis-csw
+    title_ru: Общие сведения о ember-flexberry-gis-csw
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /efgcsw_ember-flexberry-gis-csw.html
+      output: web, pdf

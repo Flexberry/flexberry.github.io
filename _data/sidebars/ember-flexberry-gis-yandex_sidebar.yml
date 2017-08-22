@@ -1,0 +1,15 @@
+entries:
+- title: Sidebar
+  product: ember-flexberry-gis-yandex
+  version: 0.1.0
+
+  folders:
+  - title: Сommon information about ember-flexberry-gis-yandex
+    title_ru: Общие сведения о ember-flexberry-gis-yandex
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О системе
+      url: /efgy_ember-flexberry-gis-yandex.html
+      output: web, pdf

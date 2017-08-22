@@ -31,12 +31,8 @@ topnav_dropdowns:
           url: /fod_landing_page.html
         - title: ember-flexberry-security
           url: /efs_landing_page.html
-        - title: ember-flexberry-gis
-          url: /efg_landing_page.html
-        - title: Leaflet-WFST
-          url: /lw_landing_page.html
-        - title: Leaflet.Editable.Measures
-          url: /lem_landing_page.html
+        - title: Flexberry GIS
+          url: /fg_landing_page.html
     - title: Guides
       title_ru: Руководства
       folderitems:
