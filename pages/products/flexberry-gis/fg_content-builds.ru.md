@@ -16,8 +16,7 @@ lang: ru
 
 1.Надо добавить в **config** своего приложиния [следующий код](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/config/environment.js#L165):
 
-js
-```
+```js
 // Change paths to application assets if build has been started with the following parameters:
 // ember build --gh-pages --brunch=<brunch-to-publish-on-gh-pages>.
 if (process.argv.indexOf('--gh-pages') >= 0) {
@@ -39,8 +38,7 @@ if (process.argv.indexOf('--gh-pages') >= 0) {
 
 2.Добавить в проект файл `.travis.yml` со [следующим содержанием](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/.travis.yml).
 
-yaml
-```
+```yaml
 ---
 language: node_js
 node_js:
