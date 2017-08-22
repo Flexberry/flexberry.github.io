@@ -12,8 +12,8 @@ entries:
       url: /fg_landing_page.html
       output: web
 
-  - title: Аддоны и плагины
-    title_ru: Addons and plugins
+  - title: Addons and plugins
+    title_ru: Аддоны и плагины
     output: web, pdf
 
     folderitems:
@@ -65,8 +65,8 @@ entries:
       url: /lh_leaflet-history.html
       output: web, pdf
 
-  - title: Демонстрационный стенд
-    title_ru: Demonstration stand
+  - title: Demonstration stand
+    title_ru: Демонстрационный стенд
     output: web, pdf
 
     folderitems:
