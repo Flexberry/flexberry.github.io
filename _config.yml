@@ -2,7 +2,7 @@
 title: Flexberry PLATFORM Documentation
 email: mail@flexberry.net
 description: > # this means to ignore newlines until "baseurl:"
-  Technical documentation for Flexberry PLATFORM Projects. 
+  Technical documentation for Flexberry PLATFORM Projects.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://flexberry.github.io" # the base hostname & protocol for your site
 repository: "Flexberry/flexberry.github.io"
@@ -114,11 +114,23 @@ sidebars:
 - ember-flexberry-data_sidebar
 - ember-flexberry-security_sidebar
 - ember-flexberry-gis_sidebar
+- ember-flexberry-geolocation_sidebar
+- ember-flexberry-gis-csw_sidebar
+- ember-flexberry-gis-esri_sidebar
+- ember-flexberry-gis-yandex_sidebar
 - flexberry-aspnet_sidebar
 - flexberry-designer_sidebar
 - flexberry-odataservice_sidebar
 - flexberry-orm_sidebar
 - flexberry-platform_sidebar
+- flexberry-gis_sidebar
+- leaflet-editable-measures_sidebar
+- leaflet-export_sidebar
+- leaflet-history_sidebar
+- leaflet-switch-scale-control_sidebar
+- leaflet-wfst_sidebar
+- leaflet-wms_sidebar
+- leaflet-zoomslider_sidebar
 - guide-base-tech_sidebar
 - guide-tasks_sidebar
 - guide-practical-guides_sidebar
