@@ -12,11 +12,11 @@ entries:
     - title: Index
       title_ru: Главная
       url: /index.html
-      output: web    
+      output: web
     - title: Architecture
       title_ru: Архитектура платформы
       url: /fp_architecture.html
-      output: web    
+      output: web
   - title: Products
     title_ru: Продукты
     output: web
@@ -46,14 +46,8 @@ entries:
     - title: ember-flexberry-security
       url: /efs_landing_page.html
       output: web
-    - title: ember-flexberry-gis
-      url: /efg_landing_page.html
-      output: web
-    - title: Leaflet-WFST
-      url: /lw_landing_page.html
-      output: web
-    - title: Leaflet.Editable.Measures
-      url: /lem_landing_page.html
+    - title: Flexberry GIS
+      url: /fg_landing_page.html
       output: web
   - title: Guides
     title_ru: Руководства
@@ -62,19 +56,19 @@ entries:
     - title: Base tech
       title_ru: Базовые технологии
       url: /gbt_landing-page.html
-      output: web    
+      output: web
     - title: Create web app
       title_ru: Создание веб-приложений
       url: /news.html
-      output: web    
+      output: web
     - title: Create mobile app
       title_ru: Создание мобильных приложений
       url: /gma_landing-page.html
-      output: web    
+      output: web
     - title: Create gis app
       title_ru: Создание ГИС приложений
       url: /news.html
-      output: web    
+      output: web
     - title: App security and audit
       title_ru: Полномочия и аудит
       url: /news.html
@@ -82,4 +76,4 @@ entries:
     - title: Tasks
       title_ru: Практические задания
       url: /gt_landing-page.html
-      output: web      
+      output: web
