@@ -39,7 +39,7 @@ lang: ru
 #* [Обработка статуса и состояния загрузки объекта сервисами данных](processing-status-and-condition-of-load-object-data-services.html)
 #* [Стандартные сервисы данных Flexberry Platform](standard-data-services.html)
 #* [Конструирование/получение сервиса данных](construction--data-service.html)
-#* [Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)](otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html)
+#* [Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)](fo_testing-user-operations-dataservice.html)
 #* [Как реализовать собственный сервис данных](implement-a-custom--data-service.html)
 #* [SQLDataService-Additional-Capabilities|Дополнительные возможности, предоставляемые SQLDataService]
 #* [Обертки и специализированный бизнес-фасад для сервисов данных](wraps-and-specialized-business-facade-for-data-services.html)
@@ -71,7 +71,7 @@ lang: ru
 #* [Установка и конфигурирование заглушки COM+](Установка-и-конфигурирование-заглушки--c-o-m.html)
 #* [Установка и конфигурирование заглушки IISHosted](Установка-и-конфигурирование-заглушки--i-i-s-hosted.html)
 #* [Конфигурирование бизнес-фасадов из настроек приложения ](configuring-business-facades-of-application-settings.html)
-#* [Бизнес-серверы, обёртки, бизнес-фасад](fo_business-servers-wrapper-business-facade.html)
+#* [Бизнес-серверы, обёртки, бизнес-фасад](fo_bs-wrapper.html)
 #* [Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов](control-provider-winforms.html)
 #* [Настройка отладочных пакетов и выбор активного отладочного пакета](visual-studio-design-packages.html)
 #* [Подсистема настроек](setting-manager.html)

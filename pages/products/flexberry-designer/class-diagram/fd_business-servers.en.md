@@ -8,7 +8,7 @@ permalink: en/fd_business-servers.html
 lang: en
 ---
 
-Для описания [бизнес-сервера](fo_business-servers-wrapper-business-facade.html) необходимо создать на диаграмме класс со [стереотипом](fd_key-concepts.html) `businessserver`.
+Для описания [бизнес-сервера](fo_bs-wrapper.html) необходимо создать на диаграмме класс со [стереотипом](fd_key-concepts.html) `businessserver`.
 
 Например:
 
@@ -16,9 +16,8 @@ lang: en
 
 ## Что генерируется
 
-* Код [бизнес-сервера](fo_business-servers-wrapper-business-facade.html): [класс, наследующийся от ICSSoft.STORMNET.Business.BusinessServer](fo_testing-user-operations-dataservice.html), методы генерируются как виртуальные методы с соответствующими параметрами и модификаторами. Тело метода пустое со [скобкой программиста](fo_programmer-brackets.html) для внесения кода метода. UML-атрибуты не генерируются, т.к. объекты [бизнес-сервера](fo_business-servers-wrapper-business-facade.html) не имеют состояния, о чём генератором выдаётся соответствующее предупреждение. 
-* Указанные в свойствах заглушки для [бизнес-сервера](fo_business-servers-wrapper-business-facade.html). 
-* [Бизнес-фасад](fo_business-servers-wrapper-business-facade.html).
+* Код бизнес-сервера: [класс, наследующийся от ICSSoft.STORMNET.Business.BusinessServer](fo_testing-user-operations-dataservice.html), методы генерируются как виртуальные методы с соответствующими параметрами и модификаторами. Тело метода пустое со [скобкой программиста](fo_programmer-brackets.html) для внесения кода метода. UML-атрибуты не генерируются, т.к. объекты бизнес-сервера не имеют состояния, о чём генератором выдаётся соответствующее предупреждение. 
+* Указанные в свойствах заглушки для бизнес-сервера. 
 
 # Свойства бизнес-сервера
 

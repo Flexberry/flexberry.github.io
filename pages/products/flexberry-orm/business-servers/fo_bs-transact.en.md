@@ -1,14 +1,14 @@
 ---
 title: Updating multiple objects with a single transaction
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, business servers, transaction, example
+keywords: Flexberry ORM, business servers, transaction, example
 summary: Illustration of updating objects with a single transaction by example
 toc: true
 permalink: en/fo_bs-transact.html
 lang: en
 ---
 
-Если возникает необходимость обновить несколько объектов одной транзакцией (к примеру, чтобы поддержать ссылочную целостность), можно воспользоваться стандартным механизмом [бизнес-сервера](fo_business-servers-wrapper-business-facade.html).
+Если возникает необходимость обновить несколько объектов одной транзакцией (к примеру, чтобы поддержать ссылочную целостность), можно воспользоваться стандартным механизмом [бизнес-сервера](fo_bs-wrapper.html).
 
 Для формирования транзакции используются объекты, возвращаемые методом [`OnUpdate`](fo_bs-example.html) любого бизнес-сервера:
 

@@ -29,9 +29,8 @@ lang: ru
 Внутри каждого пакета могут находиться следующие исходные коды сборок(в отдельных каталогах, прямо с такими именами):
 
 * `BusinessServers` - [сборка классов со стереотипами businessserver](business-servers.html); 
-* `BusinessServersBF` - сборка [бизнес-фасадов](fo_business-servers-wrapper-business-facade.html) для классов со [стереотипами businessserver](business-servers.html); 
-* `BusinessServersComPlus` - сборка [обёртки для обращения к бизнес-серверу](fo_business-servers-wrapper-business-facade.html) через COM+ для бизнес-серверов, у которых установлена галочка `GenerateComPlusServer`; 
-* `BusinessServersHttp` - сборка [обёртки для обращения к бизнес-серверу](fo_business-servers-wrapper-business-facade.html) через веб-сервис для серверов, у которых установлена галочка `GenerateHTTPRemoteServer`; 
+* `BusinessServersComPlus` - сборка [обёртки для обращения к бизнес-серверу](fo_bs-wrapper.html) через COM+ для бизнес-серверов, у которых установлена галочка `GenerateComPlusServer`; 
+* `BusinessServersHttp` - сборка [обёртки для обращения к бизнес-серверу](fo_bs-wrapper.html) через веб-сервис для серверов, у которых установлена галочка `GenerateHTTPRemoteServer`; 
 * `Catchers` - для [классов со стереотипом `eventarg`](classes-with-stereotype-eventarg.html), у которых установлена галочка `GenerateCatcher` в эту сборку генерируются классы-перехватчики событий; 
 * `Objects` - классы со стереотипами: [`implementation`](fo_data-classes.html)`, type, `[`enumeration`](enumerations.html), [`eventarg`](classes-with-stereotype-eventarg.html). 
 * `Scripts` - сценарии, определённые диаграммным методом `EBSD`. 

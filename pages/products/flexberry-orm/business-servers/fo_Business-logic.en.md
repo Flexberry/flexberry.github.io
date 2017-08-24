@@ -1,9 +1,11 @@
 ---
-title: Бизнес-логика
+title: Business logic
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Бизнес-серверы
+keywords: Flexberry ORM, business servers
+summary: Principles of the architecture of the business server
 toc: true
 permalink: en/fo_business-logic.html
+lang: en
 ---
 
 Бизнес-логика является частью [трёхуровневой архитектуры](https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0), соединяющей клиентскую часть и базу данных.
@@ -15,20 +17,3 @@ permalink: en/fo_business-logic.html
 * Вся работа с данными и все бизнес-операции должны быть вынесены в бизнес-сервера.
 * Никаких элементов пользовательского интерфейса в бизнес-серверах быть не должно (Форм, MessageBox'ов и пр).
 * В каждом бизнес-сервере должен быть свой [сервис данных](fo_construction-data-service.html)
-
-## Сценарии доработки
-
-* [Добавление проверки при обновлении данных через бизнес-сервер](fo_bs-example.html).
-* Обновление нескольких объектов [одной транзакцией](fo_bs-transact.html).
-* Проверка [уникальности введенных данных](fo_bs-unique-data-check.html).
-* Проверка [валидности изменений данных объекта](fo_change-data-check.html).
-* [Дочитка данных](fo_additional-loading.html)
-* Добавление методов [вычитки данных](fo_sql-query.html).
-* Работа с [копией данных](copies-of-data-and-audit.html).
-
-## См. также
-
-* [Бизнес-сервер](fd_business-servers.html)
-* [Бизнес-серверы, обертки, бизнес-фасад](fo_business-servers-wrapper-business-facade.html)
-* [пример использования бизнес-сервера для проверки данных](fo_bs-example.html)
-* [Категория: бизнес-серверы](http://storm:2011/AllPages.aspx?Cat=%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D1%8B)

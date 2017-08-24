@@ -1,0 +1,45 @@
+---
+title: Checking the uniqueness of the entered data in the business server
+sidebar: flexberry-orm_sidebar
+keywords: Flexberry ORM, Business servers, example, limitation
+summary: Use of the business server and limitations for checking the uniqueness of objects
+toc: true
+permalink: en/fo_unique-data-check.html
+lang: en
+---
+
+Если возникает необходимость проверки уникальности введенных данных, необходимо в методе `OnUpdate` [бизнес-сервера](fo_bs-wrapper.html) производить вычитку данных и сравнивать данные из базы с введенными данными.
+
+Необходимо учитывать, что объект может быть как только что создан, так и уже находиться в базе. Если объект уже есть в базе, то он попадет в список вычитанных данных и возникнет конфликт.
+
+## Пример
+
+![](/images/pages/products/flexberry-orm/additional-features/templates.PNG)
+
+Требуется проверять уникальность введенного номера кредитной карты.
+
+* Добавить [бизнес-сервер](fo_bs-wrapper.html) `КредитнаяКартаБС` и выставить у объекта `КредитнаяКарта` ссылку на этот бизнес-сервер.
+* В методе [OnUpdate](fo_bs-example.html) необходимо [вычитать](fo_sql-query.html) все КредитныеКарты клиента и проверить, есть ли среди них карты с таким номером.
+
+Код с применением [LinqProvider](fo_linq-provider.html):
+
+```csharp
+var ds = (SQLDataService)DataServiceProvider.DataService;
+var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
+                     .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
+                              && k.Номер == UpdatedObject.Номер);
+```
+
+Таким образом, в переменной `кредитныеКарты` будет количество искомых кредитных карт. Если такие карты уже есть, это число будет неравным нулю. Однако, если `Карта` не создается, а обновляется, то вернется единица, так как в базе лежит информация об обновляемой кредитной карте.
+
+Следует доработать условие, добавив сравнение с текущей картой, используя `LinqProvider`:
+
+```csharp
+var ds = (SQLDataService)DataServiceProvider.DataService;
+var кредитныеКарты = ds.Query<КредитнаяКарта>(КредитнаяКарта.Views.КредитнаяКартаE)
+                     .Count(k => k.Клиент.__PrimaryKey == UpdatedObject.Клиент.__PrimaryKey 
+                              && k.Номер == UpdatedObject.Номер
+                              && k.__primaryKey != UpdatedObject.__PrimaryKey);
+```
+
+Таким образом, проверяется уникальность номера создаваемой `Кредитной карты`.

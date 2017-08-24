@@ -82,18 +82,50 @@ entries:
   - title: Бизнес-серверы
     output: web, pdf
     folderitems:
+    - title: Business servers and wrappers
+      title_ru: Бизнес-серверы и обёртки
+      url: /fo_bs-wrapper.html
+      output: web
+    - title: Business logic
+      title_ru: Бизнес-логика
+      url: /fo_business-logic.html
+      output: web
+    - title: Order of calls of business servers
+      title_ru: Порядок вызовов бизнес-серверов
+      url: /fo_order-calls-bs.html
+      output: web
     - title: Checking the validity of changes to object data in the business server
       title_ru: Проверка валидности изменений данных объекта в бизнес-сервере
       url: /fo_change-data-check.html
+      output: web
+    - title: Updating multiple objects with a single transaction
+      title_ru: Обновление нескольких объектов одной транзакцией
+      url: /fo_bs-transact.html
+      output: web
+    - title: Checking the uniqueness of the entered data in the business server
+      title_ru: Проверка уникальности введенных данных в бизнес-сервере
+      url: /fo_unique-data-check.html
+      output: web
+    - title: Cascading deletion of objects
+      title_ru: Каскадное удаление объектов
+      url: /fo_cascade-delete.html
+      output: web
+    - title: IReferencesCascadeDelete
+      title_ru: IReferencesCascadeDelete
+      url: /fo_i-references-cascade-delete.html
+      output: web
+    - title: IReferencesNullDelete
+      title_ru: IReferencesNullDelete
+      url: /fo_i-references-null-delete.html
+      output: web
+    - title:  Cancellation of deletion of the used value from the directory
+      title_ru: Отмена удаления используемого значения из справочника
+      url: /fo_delete-cancel.html
       output: web
     - title: Example of using a business server
       title_ru: Пример использования бизнес-сервера
       url: /fo_bs-example.html
       output: web
-    - title: Updating multiple objects with a single transaction
-      title_ru: Обновление нескольких объектов одной транзакцией
-      url: /fo_bs-transact.html
-      output: web   
 
   - title: Работа с данными
     output: web, pdf
@@ -224,10 +256,6 @@ entries:
 
     - title: Information.GetPropertyStorageName
       url: /fo_information-get-property-storage-name.html
-      output: web
-
-    - title: IReferencesCascadeDelete
-      url: /fo_i-references-cascade-delete.html
       output: web
 
     - title: LogService (log4net)
