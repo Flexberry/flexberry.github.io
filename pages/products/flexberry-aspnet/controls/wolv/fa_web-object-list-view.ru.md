@@ -194,6 +194,35 @@ public virtual System.DateTime OnlyDate
 </customproperty>
 ```
 
+#### Формат даты и времени с использованием дополнительного класса
+
+* Еще один способ задания формата для даты и вермени без использования атрибута DataFormatString.  
+Необходимо создать новый класс:  
+
+```csharp 
+/// <summary>
+/// Вспомогательный класс для вывода даты в формате "HH:mm".
+/// </summary>
+public sealed class DateTimeFormattedHHmm : FormattedDateTimeControl
+{
+    /// <summary>
+    /// Метод установки формата даты.
+    /// </summary>
+    public DateTimeFormattedHHmm()
+    {
+        Format = "HH:mm";
+    }
+} 
+``` 
+
+Так же необходимо внести изменения в `WebControlProvider.xml`:  
+
+```xml 
+<customproperty class="TestDataTimeClassObject" property="poleDateTime">
+<control typename="WebFormsTestStand.Forms.Controls.WOLV.AppearanceTests.DateTimeFormattedHHmm, TestStand(ASP.NET Application)" property="Text" codefile="" />
+</customproperty> 
+```
+
 ## Редактор ограничений
 
 Подробно о редакторе ограничений изложено в [статье Расширенный редактор ограничений для Flexberry ASP.NET](fa_advanced-limit-editor.html).
