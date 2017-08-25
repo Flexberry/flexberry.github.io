@@ -196,7 +196,7 @@ public virtual System.DateTime OnlyDate
 
 #### Формат даты и времени с использованием дополнительного класса
 
-* Еще один способ задания формата для даты и вермени без использования атрибута DataFormatString.  
+* Способ задания формата для даты и времени без использования атрибута DataFormatString.  
 Необходимо создать новый класс:  
 
 ```csharp 
@@ -219,7 +219,7 @@ public sealed class DateTimeFormattedHHmm : FormattedDateTimeControl
 
 ```xml 
 <customproperty class="TestDataTimeClassObject" property="poleDateTime">
-<control typename="WebFormsTestStand.Forms.Controls.WOLV.AppearanceTests.DateTimeFormattedHHmm, TestStand(ASP.NET Application)" property="Text" codefile="" />
+    <control typename="WebFormsTestStand.Forms.Controls.WOLV.AppearanceTests.DateTimeFormattedHHmm, TestStand(ASP.NET Application)" property="Text" codefile="" />
 </customproperty> 
 ```
 
