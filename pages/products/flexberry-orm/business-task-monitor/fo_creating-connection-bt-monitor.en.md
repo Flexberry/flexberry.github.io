@@ -1,9 +1,11 @@
 ---
-title: Создание и подключение монитора задач
+title: Creating and Connecting a Task Monitor
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, BusinessTaskMonitor, example
+summary: Example of creating and connecting a task monitor
 toc: true
-permalink: en/fo_creating-connection-business-task-monitor.html
+permalink: en/fo_creating-connection-bt-monitor.html
+lang: en
 ---
 
 ## Создание монитора задач
@@ -13,9 +15,9 @@ permalink: en/fo_creating-connection-business-task-monitor.html
 * Какой монитор задач должен предоставляться (выбор стандартного монитора задач или создание какого-то собственного);
 * Подключение монитора задач непосредственно к системе.
 
-Если разработчику требуется какая-то особая функциональность (например, запись задач в `log`-файл или какое-то иное отображение), может потребоваться создать свой [монитор задач](fo_business-task-monitor.html). Для этого, необходимо создать класс с реализованным интерфейсом `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`.
+Если разработчику требуется какая-то особая функциональность (например, запись задач в `log`-файл или какое-то иное отображение), может потребоваться создать свой монитор задач. Для этого необходимо создать класс с реализованным интерфейсом `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`.
 
-`Монитор задач, который отображает задачи в  `Windows Application Log``
+**Монитор задач, который отображает задачи в  Windows Application Log**
 
 ```csharp
 using System;
@@ -78,6 +80,6 @@ namespace CustomTaskMon
 
 {% include important.html content="Сборка с монитором задач должна обязательно находиться в том же каталоге, что и приложение." %}
 
-Компоненты [Flexberry ORM](fo_flexberry-orm.html) используют [монитор](fo_business-task-monitor.html)  (например, [сервис данных](fo_data-service.html) пишет туда запросы). Так что, при реализации этого примера, в `Windows Application Log` появятся записи, соответствующие чтению списка:
+Компоненты [Flexberry ORM](fo_flexberry-orm.html) используют [монитор](fo_business-task-monitor.html)  (например, [сервис данных](fo_data-service.html) пишет туда запросы). Поэтому при реализации этого примера в `Windows Application Log` появятся записи, соответствующие чтению списка:
 
-![](/images/pages/products/flexberry-orm/creating-and-connection-businesstaskmonitor/business-task-monitor.jpg)
+![](/images/pages/products/flexberry-orm/business-task-monitor/business-task-monitor.jpg)

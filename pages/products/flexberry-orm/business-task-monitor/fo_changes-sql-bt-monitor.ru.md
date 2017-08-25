@@ -1,14 +1,16 @@
 ---
 title: Сервис записи SQL-скриптов изменения данных
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, монитор задач, изменение данных
+summary: Пример реализации записи SQL-скриптов с помощью монитора задач
 toc: true
-permalink: ru/fo_changes-to-sql-bt-monitor.html
+permalink: ru/fo_changes-sql-bt-monitor.html
+lang: ru
 ---
 
 ## Описание
 
-ICSSoft.Services.ChangesToSqlBTMonitor представляет собой разновидность монитора задач, который позволяет осуществлять запись SQL-скриптов изменения данных.
+`ICSSoft.Services.ChangesToSqlBTMonitor` представляет собой разновидность [монитора задач](fo_business-task-monitor.html), который позволяет осуществлять запись SQL-скриптов изменения данных.
 
 ## Подключение сервиса
 
@@ -22,7 +24,7 @@ ICSSoft.Services.ChangesToSqlBTMonitor представляет собой ра�
 
 Пример обработчиков пунктов меню:
 
-```cs
+```csharp
 private void RecorderClearClick(object sender, EventArgs e)
 {
 	ICSSoft.Services.ChangesToSqlBTMonitor.Clear();
