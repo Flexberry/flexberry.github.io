@@ -127,6 +127,22 @@ entries:
       url: /fo_bs-example.html
       output: web
 
+  - title: Монитор SQL-запросов
+    output: web, pdf
+    folderitems:
+    - title: Business task monitor
+      title_ru: Монитор задач
+      url: /fo_business-task-monitor.html
+      output: web
+    - title: Service for writing SQL-scripts for data changes
+      title_ru: Сервис записи SQL-скриптов изменения данных
+      url: /fo_changes-sql-bt-monitor.html
+      output: web
+    - title: Creating and Connecting a Task Monitor
+      title_ru: Создание и подключение монитора задач
+      url: /fo_creating-connection-bt-monitor.html
+      output: web
+
   - title: Работа с данными
     output: web, pdf
     folderitems:

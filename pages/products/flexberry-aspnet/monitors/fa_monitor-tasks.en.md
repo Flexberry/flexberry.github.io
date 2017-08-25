@@ -8,7 +8,7 @@ lang: en
 ---
 
 В Flexberry ASP.NET существует два класса, реализующих интерфейс [монитора задач](fo_business-task-monitor.html) `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`.
-О том, как использовать функциональность одного из них, написано в статье [Создание и подключение монитора задач](fo_creating-connection-business-task-monitor.html). Сами мониторы описаны ниже.
+О том, как использовать функциональность одного из них, написано в статье [Создание и подключение монитора задач](fo_creating-connection-bt-monitor.html). Сами мониторы описаны ниже.
 
 ## EventTaskMonitor.EventTaskMon
 
