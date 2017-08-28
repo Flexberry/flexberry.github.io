@@ -142,6 +142,34 @@ entries:
       title_ru: Создание и подключение монитора задач
       url: /fo_creating-connection-bt-monitor.html
       output: web
+  
+  - title: Сервис текущего пользователя
+    output: web, pdf
+    folderitems:
+    - title: Current User Service
+      title_ru: Сервис текущего пользователя
+      url: /fo_current-user-service.html
+      output: web
+
+  - title: Dependency Injection
+    output: web, pdf
+    folderitems:
+    - title: Flexberry UnityFactory
+      title_ru: Flexberry UnityFactory
+      url: /fo_unity-factory.html
+      output: web
+  
+  - title: Сервис блокировок
+    output: web, pdf
+    folderitems:
+    - title: Locking service
+      title_ru: Сервис блокировок
+      url: /fo_lock-service.html
+      output: web
+    - title: Data object locking
+      title_ru: Блокирование объекта данных
+      url: /fo_blocking-object-data.html
+      output: web
 
   - title: Работа с данными
     output: web, pdf
@@ -238,10 +266,6 @@ entries:
       url: /fo_location-assembly-after-code-generation.html
       output: web
 
-    - title: Сервис блокировок
-      url: /fo_lock-service.html
-      output: web
-
     - title: Статус и состояние загрузки объекта данных
       url: /fo_object-status-and-loading-state.html
       output: web
@@ -256,10 +280,6 @@ entries:
 
     - title: Flexberry Security API - ISecurityManager
       url: /fo_i-security-manager.html
-      output: web
-
-    - title: Flexberry UnityFactory
-      url: /fo_unity-factory.html
       output: web
 
     - title: ICSSoft.STORMNET.Tools.XmlTools
