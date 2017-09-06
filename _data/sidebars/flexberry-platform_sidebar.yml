@@ -39,3 +39,8 @@ entries:
       title_ru: Стиль оформления кода
       url: /fp_code-style.html
       output: web, pdf
+
+    - title: EmberJS code comments
+      title_ru: Комментарии в Ember-проектах
+      url: /fp_ember-comments-style-yuidoc.html
+      output: web, pdf

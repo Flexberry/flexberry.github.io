@@ -15,6 +15,7 @@ summary: При разработке компонентов платформы F
 ## JavaScript
 
 В JavaScript Open Source-проектах платформы Flexberry есть принятый набор соглашений, который опубликован на странице нашей организации на GitHub: <https://github.com/Flexberry/javascript-style-guide>.
+Также есть отдельное [соглашение по написанию комментариев в коде EmberJS-проектов](fp_ember-comments-style-yuidoc.html).
 
 ## CSharp
 
