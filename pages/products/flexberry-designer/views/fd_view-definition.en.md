@@ -102,7 +102,7 @@ public class Stage:STORMCASE.Repository.Stage
 }
 ```
 
-В `RunTime` представления являются экземплярами класса `ICSSoft.STORMNET.View`. Разработчик может получить проинициализированный экземпляр класса, соответствующий статически определённому представлению, вызовом метода [Information](fo_information-class-as-metadata-supervisor.html).GetView, либо через [специальные статические свойства](fo_static-view-accessors.html).
+В `RunTime` представления являются экземплярами класса `ICSSoft.STORMNET.View`. Разработчик может получить проинициализированный экземпляр класса, соответствующий статически определённому представлению, вызовом метода [Information](fo_methods-class-information.html).GetView, либо через [специальные статические свойства](fo_static-view-accessors.html).
 
 ### Динамически заданные представления
 

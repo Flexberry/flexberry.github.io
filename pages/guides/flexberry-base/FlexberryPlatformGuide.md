@@ -17,15 +17,15 @@ lang: ru
 #* [Структура-классов-объектов-данных|Структура классов объектов данных]
 #* [Конструирование объектов данных](construction--data-objects.html)
 #* [Создание объекта данных на основе другого (прототипизация)](data-object-prototype.html)
-#* [Статус и состояние загрузки объекта данных](object-status-and-loading-state.html)
+#* [Статус и состояние загрузки объекта данных](fo_object-status.html)
 #* [Блокирование объекта данных](blocking-object-data.html)
-#* [Преобразование типа свойства объекта данных к типу хранилища](convert-type-property-object-data-to-type-storage.html)
+#* [Преобразование типа свойства объекта данных к типу хранилища](fo_convert-type-property.html)
 #* [Нехранимые (вычислимые) свойства объекта данных](fo_not-stored-attributes.html)
 #* [Контекстно-зависимый кэш объектов данных](context--sensitive--cache--data--objects.html)
 #* [Первичные ключи объектов](fo_primary-keys-objects.html)
-#* [Хранение объектных данных в реляционной базе данных](fo_data-objects-and-database-structures.html)
+#* [Хранение объектных данных в реляционной базе данных](fo_storing-data-objects.html)
 #* [Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий](interception-events--object-list-view.html)
-#* [Получение метаданных через Information](fo_information-class-as-metadata-supervisor.html)
+#* [Получение метаданных через Information](fo_methods-class-information.html)
 #* [Update-related-objects|Обновление связанных объектов]
 #* [Функциональность-при-работе-с-массивами-детеиловых-объектов-DetailArray|Функциональность при работе с массивами детейловых объектов (DetailArray)]
 #* [Межформенное взаимодействие при редактировании объектов](interaction-between-forms-when-editing-objects.html)
@@ -33,7 +33,7 @@ lang: ru
 #* [Как редактировать объекты данных на формах, связывание полей ввода со свойствами объекта данных ](edit--data-objects-on--forms.html)
 #* [Как «закрутить» объект данных в строку XML и восстановить обратно](aggregating-function.html)
 # Атрибуты объектов
-#* [Доступ к собственным атрибутам объекта и атрибутам связанных объектов](own-object-attributes-and-attributes-related-objects.html)
+#* [Доступ к собственным атрибутам объекта и атрибутам связанных объектов](fo_own-object-attributes.html)
 #* [Динамические атрибуты объектов](dynamic-properties.html)
 # Сервисы данных
 #* [Обработка статуса и состояния загрузки объекта сервисами данных](processing-status-and-condition-of-load-object-data-services.html)

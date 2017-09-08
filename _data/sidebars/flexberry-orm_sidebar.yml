@@ -171,135 +171,172 @@ entries:
       url: /fo_blocking-object-data.html
       output: web
 
-  - title: Работа с данными
+  - title: Объектная модель
     output: web, pdf
     folderitems:
-    - title: Доступ к собственным атрибутам объекта и атрибутам связанных объектов
-      url: /fo_own-object-attributes-and-attributes-related-objects.html
+    - title: DataObject
+      title_ru: Объекты данных
+      url: /fo_data-object.html
       output: web
 
-    - title: Наследование
-      url: /fo_inheritance.html
+    - title: Data Class Attributes
+      title_ru: Атрибуты классов данных
+      url: /fo_attributes-class-data.html
       output: web
 
-    - title: Настройка параметров чтения (LoadingCustomizationStruct)
-      url: /fo_loading-customization-struct.html
+    - title: Storing object data in a relational database
+      title_ru: Хранение объектных данных в реляционной базе данных
+      url: /fo_storing-data-objects.html
       output: web
 
-    - title: Интерфейс ISpecialEmptyValue
-      url: /fo_i-special-empty-value.html
+    - title: Checking the object field in the set method
+      title_ru: Проверка поля объекта в методе set
+      url: /fo_check-object-set.html
       output: web
 
-    - title: Как открыть объект только на чтение
-      url: /fo_read-only-object.html
+    - title: Designing Data Objects
+      title_ru: Конструирование объектов данных
+      url: /fo_construction-data-objects.html
       output: web
 
-    - title: Обновление связанных объектов
-      url: /fo_update-related-objects.html
+    - title: Context-sensitive data object cache
+      title_ru: Контекстно-зависимый кэш объектов данных
+      url: /fo_context-sensitive-cache.html
       output: web
 
-    - title: Обработка множества объектов
-      url: /fo_processing-of-multiple-objects.html
+    - title: Converting the data object property type to a storage type
+      title_ru: Преобразование типа свойства объекта данных к типу хранилища
+      url: /fo_convert-type-property.html
       output: web
 
-    - title: Обработка одного объекта
-      url: /fo_processing-one-object.html
+    - title: Copying Data Objects
+      title_ru: Копирование объектов данных
+      url: /fo_copying-data-objects.html
       output: web
 
-    - title: Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)
-      url: /fo_testing-user-operations-dataservice.html
+    - title: Data object as a class attribute
+      title_ru: Атрибут класса типа объекта данных
+      url: /fo_data-object-as-attribute-type.html
       output: web
 
-    - title: Отображение на интерфейсе формы мастеров и детейлов
-      url: /fo_masters-details.html
+    - title: DataObjectCopy
+      title_ru: Копия объекта данных
+      url: /fo_data-object-copy.html
       output: web
 
-    - title: Отображение TypeUsage в структуру данных
-      url: /fo_type-usage-in-data-structure.html
+    - title: Structure of data object classes
+      title_ru: Структура классов объектов данных
+      url: /fo_data-object-structure.html
       output: web
 
-    - title: Перегрузка атрибутов, ассоциаций, методов
-      url: /fo_overloading-attributes-associations-methods.html
+    - title: Getting a Presentation Value for a Data Object
+      title_ru: Получение презентационного значения для объекта данных
+      url: /fo_get-presentation-value.html
       output: web
 
-    - title: Пример использования стереотипа typedef
-      url: /fo_using_stereotypes_example.html
+    - title: Set the current object when the application starts
+      title_ru: Установка текущего объекта при запуске приложения
+      url: /fo_define-default-object.html
       output: web
 
-    - title: Пример использования собственных типов
-      url: /fo_using-custom-types-example.html
+    - title: Prototyping
+      title_ru: Прототипизация
+      url: /fo_data-object-prototype.html
+      output: 
+      
+    - title: Setting the value of the field of the object to be created
+      title_ru: Задание значения поля создаваемого объекта
+      url: /fo_define-field-created.html
       output: web
 
-    - title: Применение нехранимых классов
-      url: /fo_using-of-not-stored-classes.html
+    - title: Children's associations and their properties
+      title_ru: Детейловые ассоциации и их свойства
+      url: /fo_detail-associations-properties.html
       output: web
 
-    - title: Пример загрузки и изменения объекта
-      url: /fo_load-and-alter-objects.html
+    - title: DisableInsertPropertyAttribute
+      title_ru: DisableInsertPropertyAttribute
+      url: /fo_disable-insert-property-attribute.html
       output: web
 
-    - title: Пример загрузки графа объектов
-      url: /fo_load-multiple-details-example.html
+    - title: Features of setting the default value
+      title_ru: Особенности задания значения по умолчанию
+      url: /fo_features-dafault-value.html
       output: web
 
-    - title: Пример нехранимых и вычислимых свойств
-      url: /fo_nonstored-calculated-properties.html
+    - title: Functionality when working with arrays of child objects
+      title_ru: Функциональность при работе с массивами детейловых объектов
+      url: /fo_functionality-work-detail-array.html
       output: web
 
-    - title: Пример прототипизации объекта
-      url: /fo_prototyping-example.html
-      output: web\
-
-    - title: Проблема используемых типов (TypeUsage)
-      url: /fo_type-usage-problem.html
-      output: web
-
-    - title: Порядок загрузки свойств объекта данных
-      url: /fo_order-of-loading-property-data-object.html
-      output: web
-
-    - title: Порционное чтение
-      url: /fo_reading-portion.html
-      output: web
-
-    - title: Расположение сборок после генерации кода
-      url: /fo_location-assembly-after-code-generation.html
-      output: web
-
-    - title: Статус и состояние загрузки объекта данных
-      url: /fo_object-status-and-loading-state.html
-      output: web
-
-    - title: Скобки программиста
-      url: /fo_programmer-brackets.html
-      output: web
-
-    - title: Функция импликации (funcImplication)
-      url: /fo_function-implication.html
-      output: web
-
-    - title: Flexberry Security API - ISecurityManager
-      url: /fo_i-security-manager.html
-      output: web
-
-    - title: ICSSoft.STORMNET.Tools.XmlTools
-      url: /fo_ics-soft-stormnet-tools.html
-      output: web
-
-    - title: Information получение метаданных
-      url: /fo_information-class-as-metadata-supervisor.html
+    - title: Obtaining metadata for objects
+      title_ru: Получение метаданных объектов
+      url: /fo_methods-class-information.html
       output: web
 
     - title: Information.GetPropertyStorageName
+      title_ru: Information.GetPropertyStorageName
       url: /fo_information-get-property-storage-name.html
       output: web
 
-    - title: LogService (log4net)
-      url: /fo_log-service-log4net.html
+    - title: Inheritance 
+      title_ru: Наследование 
+      url: /fo_inheritance.html
       output: web
 
-    - title: ICSSoft.STORMNET.KeyGen.KeyGuid
-      url: /fo_key-guid.html
+    - title: Status and loading state of the data object
+      title_ru: Статус и состояние загрузки объекта данных
+      url: /fo_object-status.html
+      output: web
+
+    - title: How to load data object properties
+      title_ru: Порядок загрузки свойств объекта данных
+      url: /fo_order-loading-property.html
+      output: web
+
+    - title: Access to the object's own attributes and attributes of related objects
+      title_ru: Доступ к собственным атрибутам объекта и атрибутам связанных объектов
+      url: /fo_own-object-attributes.html
+      output: web
+
+    - title: Variants of opening an object for Readonly
+      title_ru: Варианты открытия объекта только на чтение
+      url: /fo_read-only-object.html
+      output: web
+
+    - title: Updating related objects
+      title_ru: Обновление связанных объектов
+      url: /fo_update-related-objects.html
+      output: web
+
+    - title: Displaying the form of masters and children on the interface
+      title_ru: Отображение на интерфейсе формы мастеров и детейлов
+      url: /fo_masters-details.html
+      output: web
+
+    - title: Example of loading and changing an object
+      title_ru: Пример загрузки и изменения объекта
+      url: /fo_load-alter-objects.html
+      output: web
+
+    - title: Example of loading an object graph
+      title_ru: Пример загрузки графа объектов
+      url: /fo_load-multiple-details-example.html
+      output: web
+
+    - title: Example of object prototyping
+      title_ru: Пример прототипизации объекта
+      url: /fo_prototyping-example.html
+      output: web
+
+    - title: Example of loading an object graph
+      title_ru: Пример загрузки графа объектов
+      url: /fo_load-multiple-details-example.html
+      output: web
+
+    - title: An example of an action when saving an object
+      title_ru: Пример действий при сохранении объекта
+      url: /fo_actions-saving-object.html
       output: web
 
   - title: Data service

@@ -45,17 +45,21 @@ lang: ru
 
 
 #### Построение диаграммы классов
-Посмотрите [здесь](class-diagram-constraction.html).
+
+Описано [здесь](class-diagram-constraction.html).
 
 #### Задание значения по умолчанию
-Посмотрите [здесь](features-of-dafault-value-assignment.html).
+
+Описано [здесь](fo_features-dafault-value.html).
 
 #### Определение вычислимых полей
+
 Как создавать вычислимые поля описано [в этой статье](fo_not-stored-attributes.html) (ещё [в данной статье](fo_create-with-data-service-expression.html) разобран подробный пример, как использовать [атрибут DataService Expression](fo_attributes-class-data.html) для создания вычислимого поля).
 
 Если требуется просто среди объектов, находящихся в массиве детейлов, посчитать какую-либо агрегирующую функцию, то можно воспользоваться [Функциональность-при-работе-с-массивами-детеиловых-объектов-DetailArray|этим] решением.
 
 #### Зависимая и независимая формы
+
 Что такое зависимая и независимая формы можно почитать [здесь](flexberry-winforms-architecture.html) (например, если Flexberry сгенерировала формы `С_покупкаЕ` и `winformС_покупкаЕ`, то `С_покупкаЕ` - это независимая форма, а `winformС_покупкаЕ` - зависимая).
 
 
@@ -116,7 +120,7 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 
 
 #### Валидация данных на форме редактирования
-Посмотрите [здесь](edit-form-validation.html).
+Посмотрите [здесь](fw_edit-form-validation.html).
 
 #### Работа на форме редактирования с полями нескольких объектов
 Посмотрите [здесь](work-with-several-objects-on-editform.html).
@@ -150,26 +154,33 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 Если необходим лукап с предикативным вводом, то можно использовать компонент [ExtendedLookUp](fw_extended-lookup.html).
 
 #### Подсветка активного контрола на форме
+
 Для подсветки активного контрола на форме используется [HighLighter](high-lighter.html).
 
 #### Переход по Enter на форме редактирования
+
 Для перехода по Enter на форме редактирования можно использовать [CustomFormTuner](custom-form-tuner.html).
 
 #### Определение доступных для редактирования полей
+
 Пример решения такой задачи описан [здесь](different-applications-and-fields.html).
 
 
-# Разное
+## Разное
+
 #### Фильтры
+
 Подробности читайте [здесь](filtersand-limits.html).
 
 #### Бизнес-сервер
-Как определить [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервер], читайте [здесь](business-servers.html) (как работать с [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервером], читайте [здесь](otrabotka-polzovatelskih-operacii-v-processe-raboty-servisa-dannyh-integraciya-s-biznes-serverom.html); пример есть [здесь](features-of-dafault-value-assignment.html)).
+
+Как определить [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервер], читайте [здесь](business-servers.html) (как работать с [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервером], читайте [здесь](fo_testing-user-operations-dataservice.html); пример есть [здесь](fo_features-dafault-value.html)).
 
 #### Отчёты
+
 О создании универсальных отчётов написано [здесь](create-uni-report.html), о создании отчётов на базе Статитора написано [здесь](statitor-environment-start.html).
 
 #### Аудит
+
 Общие положения об аудите приведены [здесь](audit.html), особенности работы с аудитом представлены в [этой статье](features-of-work-with-audit.html).
 
-----
