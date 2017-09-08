@@ -1,10 +1,10 @@
 ---
 title: Обновление связанных объектов
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, DataObject, мастер, детейл
+summary: Особенности обновления детейловых и мастеровых объектов
 toc: true
 permalink: ru/fo_update-related-objects.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 

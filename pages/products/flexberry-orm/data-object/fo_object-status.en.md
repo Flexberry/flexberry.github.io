@@ -1,10 +1,10 @@
 ---
-title: Статус и состояние загрузки объекта данных
+title: Status and loading state of the data object
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public
+keywords: DataObject, Flexberry ORM, status
+summary: Description and features of generation and loading state of data objects
 toc: true
-permalink: en/fo_object-status-and-loading-state.html
-folder: products/flexberry-orm/
+permalink: en/fo_object-status.html
 lang: en
 ---
 
@@ -12,24 +12,20 @@ lang: en
 
 Статусы объектов данных могут быть:
 
-
 * `ObjectStatus.UnAltered` — объект данных не изменён.
-
 * `ObjectStatus.Created` — объект данных создан.
-
 * `ObjectStatus.Altered` — объект данных изменён.
-
 * `ObjectStatus.Deleted` — объект данных удалён.
 
 Статус объекта можно выяснить методом объекта данных `GetStatus`, а установить — `SetStatus`. Статус позволяет выяснить, какие именно изменения были внесены в объект данных.
 
 ### AutoAltered
 
-Статус `Altered` может вычисляться автоматически в момент вызова метода `GetStatus`. Для этого необходимо классу объекта данных приписать атрибут `AutoAltered`. Если этот атрибут не приписан, то установку статуса `Altered` программист должен выполнять «вручную». Следует внимательно пользоваться данной возможностью, помнить, что установка `AutoAltered` замедляет работу, поскольку ''при каждом получении статуса происходит реальная проверка свойств объекта данных на изменение''. По-умолчанию `AutoAltered=True;`
+Статус `Altered` может вычисляться автоматически в момент вызова метода `GetStatus`. Для этого необходимо классу объекта данных приписать атрибут `AutoAltered`. Если этот атрибут не приписан, то установку статуса `Altered` программист должен выполнять «вручную». Следует внимательно пользоваться данной возможностью, помнить, что установка `AutoAltered` замедляет работу, поскольку *при каждом получении статуса происходит реальная проверка свойств объекта данных на изменение*. По-умолчанию `AutoAltered=True;`
 
 Существует возможность не перевычислять статус при установленном `AutoAltered`, для этого необходимо вызывать метод `GetStatus(false)`.
 
-Проверить, установлен ли атрибут `AutoAltered`, можно методом [`Information`](fo_information-class-as-metadata-supervisor.html)`.AutoAlteredClass`.
+Проверить, установлен ли атрибут `AutoAltered`, можно методом [Information](fo_methods-class-information.html)`.AutoAlteredClass`.
 
 ### Проверка на изменение свойств пользовательского типа
 
@@ -39,11 +35,8 @@ lang: en
 
 Состояние загрузки объекта данных:
 
-
 * `LoadingState.NotLoaded` — объект данных не загружен.
-
 * `LoadingState.Loaded` — вычитаны все собственные атрибуты объекта данных, все мастеровые первого уровня, все детейловые первого уровня.
-
 * `LoadingState.LightLoaded` — объект данных частично загружен, подробности могут быть выяснены вызовом у объекта методов [GetLoadedProperties и CheckLoadedProperty](fo_definition-loaded-properties.html).
 
 Состояние загрузки можно выяснить через метод `GetLoadingState`, а установить — `SetLoadingState`.
@@ -51,13 +44,13 @@ lang: en
 ## Особенности отношений статуса и состояния загрузки
 
 Ниже представлены некоторые особенности связи между статусами и состояниями загрузки объектов данных:
+
 * Когда объект данных создан, он всегда `NotLoaded Created` (то же самое происходит и при вызове метода Clear). Если объект `NotLoaded`, то он может быть только `Created`.
 * Если объект имеет состояние `Loaded/LightLoaded`, то он ни при каких условиях не может иметь статус `Created`. 
 * Объект не бывает `NotLoaded UnAltered`.
 * [Особым образом обрабатываются статус и состояние загрузки объекта при его обновлении](fo_processing-status-and-condition-of-load-object-data-services.html).
 * Если нужно перевести объект из состояния `Created` в состояние `Altered`, то достаточно вызвать метод `SetLoadingState(LoadingState.LightLoaded)` тем самым указав, что объект в базе присутствует. Более правильный способ - это вызвать `SetExistObjectPrimaryKey(object primaryKey)` - это не только указывает на то, что объект в БД присутсвует, но и сразу задаёт правильный [ключ](fo_primary-keys-objects.html) этого самого объекта в базе.
 * Метод установки статуса объекту данных DataObject.SetStatus() имеет специальную логику, которая срабатывает при переключении статуса. 
-
 
 | **Устанавливаемое \ Старое** | UnAltered | Created | Altered | Deleted|
 |:---------------|:---------------|:---------------|:---------------|:---------------

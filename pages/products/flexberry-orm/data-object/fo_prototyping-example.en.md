@@ -1,10 +1,10 @@
 ---
-title: Пример прототипизации объекта
+title: Example of object prototyping
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: DataObject, Flexberry ORM, example
+summary: Example of creating a copy of a data object
 toc: true
 permalink: en/fo_prototyping-example.html
-folder: products/flexberry-orm/
 lang: en
 ---
 

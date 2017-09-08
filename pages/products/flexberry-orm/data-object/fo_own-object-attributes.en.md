@@ -1,10 +1,10 @@
 ---
-title: Доступ к собственным атрибутам объекта и атрибутам связанных объектов
+title: Access to the object's own attributes and attributes of related objects
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public
+keywords: DataObject, Flexberry ORM, attributes
+summary: Getting Object Properties
 toc: true
-permalink: en/fo_own-object-attributes-and-attributes-related-objects.html
-folder: products/flexberry-orm/
+permalink: en/fo_own-object-attributes.html
 lang: en
 ---
 
@@ -27,16 +27,10 @@ sdo.Details[0).StringAttr="DetailAttribute";//Доступ к детейлово
 var propertyName = ((Пользователь)dataObject).Наименование;
 ```
 
-Можно использовать строготипизированный доступ с использованием лямбды методами [`Information`](fo_information-class-as-metadata-supervisor.html):
+Можно использовать строготипизированный доступ с использованием лямбды методами [`Information`](fo_methods-class-information.html):
 
 ```csharp
 var propertyName = Information.ExtractPropertyName<Пользователь>(x => x.Наименование);
 ```
 
-```csharp
-var propertyName = Information.ExtractPropertyPath<Пользователь>(x => x.Наименование.Полномочия);
-```
-
-{% include important.html content="Для получения полей мастера нужо использовать **ExtractPropertyPath**" %}
-
-Все доступные методы: [`ExtractPropertyName`](fo_information-class-as-metadata-supervisor), [`ExtractPropertyPath`](fo_information-class-as-metadata-supervisor), [`ExtractPropertyInfo`](fo_information-class-as-metadata-supervisor).
+Все доступные методы: `ExtractPropertyName`, `ExtractPropertyPath`, `ExtractPropertyInfo` описаны в статье [Получение метаданных объектов](fo_methods-class-information.html).

@@ -14,12 +14,12 @@ lang: ru
 
 Если необходимо реализовать собственный [сервис данных](fo_data-service.html), следует учитывать следующее:
 
-1. Необходимо учитывать атрибуты хранения. Установку этих атрибутов можно проверить методами [Information](fo_information-class-as-metadata-supervisor.html): GetAssemblyStorageName, GetClassStorageName, GetPropertyStorageName.
-2. Классы, [атрибуты, мастера, детейлы могут быть нехранимыми](fo_not-stored-attributes.html), что указывается NotStoredAttribute. Метод [Information](fo_information-class-as-metadata-supervisor.html).GetStorablePropertyNames возвращает список хранимых атрибутов.
-3. Сначала всё вычитывается в соответствии с порядком, указанным атрибутом [LoadingOrderAttribute](fo_order-of-loading-property--data-object.html), затем, всё остальное. Метод [Information](fo_information-class-as-metadata-supervisor.html).GetLoadingOrder возвращает порядок.
+1. Необходимо учитывать атрибуты хранения. Установку этих атрибутов можно проверить методами [Information](fo_methods-class-information.html): GetAssemblyStorageName, GetClassStorageName, GetPropertyStorageName.
+2. Классы, [атрибуты, мастера, детейлы могут быть нехранимыми](fo_not-stored-attributes.html), что указывается NotStoredAttribute. Метод [Information](fo_methods-class-information.html).GetStorablePropertyNames возвращает список хранимых атрибутов.
+3. Сначала всё вычитывается в соответствии с порядком, указанным атрибутом [LoadingOrderAttribute](fo_order-of-loading-property--data-object.html), затем, всё остальное. Метод [Information](fo_methods-class-information.html).GetLoadingOrder возвращает порядок.
 4. В атрибутах, мастерах могут не допускаться пустые значения, что указывается атрибутом NotNullAttribute.
 
-С целью оптимизации, нужно обновлять только изменённые атрибуты [Information](fo_information-class-as-metadata-supervisor.html).GetAlteredProperyNames.
+С целью оптимизации, нужно обновлять только изменённые атрибуты [Information](fo_methods-class-information.html).GetAlteredProperyNames.
 
 ## Реализация сервиса данных для реляционного хранилища
 

@@ -1,14 +1,12 @@
 ---
-title: Как открыть объект только на чтение
+title: Variants of opening an object for Readonly
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Windows UI (формы)
+keywords: DataObject, Flexberry ORM
+summary: Variants of object editing blocking
 toc: true
 permalink: en/fo_read-only-object.html
-folder: products/flexberry-orm/
 lang: en
 ---
-
-## Как открыть объект только на чтение 
 
 ### Вариант 1: упреждающее действие
 

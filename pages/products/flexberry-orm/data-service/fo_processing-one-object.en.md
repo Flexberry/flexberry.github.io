@@ -10,7 +10,7 @@ lang: en
 
 ## Обработка одного объекта
 
-Для того, чтобы обновить данные в [хранилище для объекта данных](fo_data-objects-and-database-structures.html), необходимо выполнить метод [сервиса данных](fo_data-service.html) `UpdateObject`.
+Для того, чтобы обновить данные в [хранилище для объекта данных](fo_storing-data-objects.html), необходимо выполнить метод [сервиса данных](fo_data-service.html) `UpdateObject`.
 
 Для того, чтобы прочитать объект данных из хранилища по его [ключу](fo_primary-keys-objects.html) необходимо вызвать метод [сервиса данных](fo_data-service.html) `LoadObject` (объект данных будет прочитан в [представлении](fd_view-definition.html), объявленном как «*»).
 
@@ -43,5 +43,4 @@ private static void LoadObject(DataObject dparam)
 }
 ```
 
-Важно учитывать `.Net`-атрибут [`AutoAltered`](fo_object-status-and-loading-state.html)! Если прочитан некоторый объект данных, изменены его свойства и выполняется обновление в хранилище, то если объект данных не является `AutoAltered`, не следует ждать от [сервиса данных](fo_data-service.html) обновления данных в хранилище без [«ручной» установки этому объекту статуса `Altered`](fo_object-status-and-loading-state.html).
-
+Важно учитывать `.Net`-атрибут [`AutoAltered`](fo_object-status.html)! Если прочитан некоторый объект данных, изменены его свойства и выполняется обновление в хранилище, то если объект данных не является `AutoAltered`, не следует ждать от [сервиса данных](fo_data-service.html) обновления данных в хранилище без «ручной» установки этому объекту статуса `Altered`.

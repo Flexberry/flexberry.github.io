@@ -1,10 +1,10 @@
 ---
 title: Пример прототипизации объекта
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: Объекты данных, Flexberry ORM, пример
+summary: Пример создания копии объекта данных
 toc: true
 permalink: ru/fo_prototyping-example.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 
