@@ -8,14 +8,14 @@ permalink: en/fo_custom-naming-db-structures.html
 lang: en
 ---
 
-Существует 2 пути для [определения наименования](fo_data-objects-and-database-structures.html):
+Существует 2 пути для [определения наименования](fo_storing-data-objects.html):
 
 * во Flexberry Desinger
 * в C# коде с помощью атрибутов.
 
 Если выбран первый путь, то Flexberry Desinger сгенерирует соответствующие имена автоматически.
 
-Можно [соотнести объекты данных и атрибуты с любым наименованием БД-структуры](fo_data-objects-and-database-structures.html):
+Можно [соотнести объекты данных и атрибуты с любым наименованием БД-структуры](fo_storing-data-objects.htmll):
 
 * Имя таблицы для класса (атрибут [ClassStorage](fd_data-classes.html) для класса);
 * Имя столбца для атрибута (атрибут [PropertyStorage](fo_attributes-class-data.html) для свойства);

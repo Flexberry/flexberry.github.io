@@ -16,7 +16,7 @@ lang: ru
 
 Кроме того, что картинка отображается в пользовательском интерфейсе (например, контролы для работы с группой объектов), разработчик может получить:
 
-* картинку для конкретного объекта данных методом [Information](fo_information-class-as-metadata-supervisor.html)`.GetImageForInstance`, 
+* картинку для конкретного объекта данных методом [Information](fo_methods-class-information.html)`.GetImageForInstance`, 
 * картинку для класса методом  `Information.GetClassImage`, 
 * имя свойства, предоставляющее картинку, методом `Information.GetClassImageProperty`.
 

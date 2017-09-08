@@ -53,6 +53,6 @@ var oldValue = DataService.LoadObjects(lcs)[0) as Кредит;
 UpdatedObject.GetStatus() == ObjectStatus.Altered
 ```
 
-При такой проверке [статуса](fo_object-status-and-loading-state.html) отсекаются варианты, когда объект создан или удален.
+При такой проверке [статуса](fo_object-status.html) отсекаются варианты, когда объект создан или удален.
 
 Таким образом мы можем проверять вводимые данные на основании уже существующих данных.

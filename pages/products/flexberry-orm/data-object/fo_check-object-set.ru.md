@@ -1,9 +1,11 @@
 ---
 title: Проверка поля объекта в методе set
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных)
+keywords: Flexberry ORM, объекты данных, исключения
+summary: Описание использования метода set
 toc: true
-permalink: en/fo_check-user-field-at-set-method.html
+permalink: ru/fo_check-object-set.html
+lang: ru
 ---
 
 Проверка данных на форме может осуществляться за счёт генерации исключения при неправильном вводе в методе `set` соответствующего поля объекта.
@@ -31,6 +33,6 @@ public class Кредит : ICSSoft.STORMNET.DataObject
 }
 ```
 
-Другие методы проверки данных на форме описаны [здесь](edit-form-validation.html).
+Другие методы проверки данных на форме описаны в статье [Валидация данных](fw_edit-form-validation.html).
  
-Сравнение этого метода с некоторыми другими можно найти [здесь](fw_check-form-field-during-edit.html).
+Сравнение этого метода с некоторыми другими можно найти в статье [Проверка данных на форме во время редактирования](fw_check-form-field-during-edit.html).

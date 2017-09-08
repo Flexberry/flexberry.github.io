@@ -1,14 +1,16 @@
 ---
-title: Конструирование объектов данных
+title: Designing Data Objects
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных)
+keywords: Flexberry ORM, DataObject, example
+summary: Illustration of data object construction
 toc: true
 permalink: en/fo_construction-data-objects.html
+lang: en
 ---
 
 Разработчик конструирует любой объект данных стандартным для `.Net` образом: вызовом `new` с необходимым конструктором.
 
-Для нашего примера:
+Пример:
 
 ```csharp
 SimpleDataObject sdo = new SimpleDataObject();
