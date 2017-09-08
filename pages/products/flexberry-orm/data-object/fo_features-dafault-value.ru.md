@@ -1,9 +1,11 @@
 ---
 title: Особенности задания значения по умолчанию
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public
+keywords: Объекты данных, Flexberry ORM, типы данных
+summary: Особенности методов задания значения по умолчанию
 toc: true
-permalink: en/fo_features-of-dafault-value-assignment.html
+permalink: ru/fo_features-dafault-value.html
+lang: ru
 ---
 
 Задание значений по умолчанию доступно как при редактировании [диаграммы классов](fd_class-diagram.html), так и в программном коде. Рассмотрим основные особенности этих методов.

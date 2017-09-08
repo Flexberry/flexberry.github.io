@@ -1,16 +1,14 @@
 ---
 title: Information.GetPropertyStorageName
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public, БД
+keywords: Объекты данных, Flexberry ORM, базы данных
+summary: Особенности использования метода GetPropertyStorageName класса Information
 toc: true
 permalink: ru/fo_information-get-property-storage-name.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 
-## Метод Information.GetPropertyStorageName
-
-Статический метод `GetPropertyStorageName` класса [`Information`](fo_information-class-as-metadata-supervisor.html) позволяет получить [имя хранения .Net-свойства, установленное атрибутом `PropertyStorageAttribute`](fo_data-objects-and-database-structures.html).
+Статический метод `GetPropertyStorageName` класса [Information](fo_methods-class-information.html) позволяет получить [имя хранения .Net-свойства, установленное атрибутом `PropertyStorageAttribute`](fo_storing-data-objects.html).
 
 ### Метод без использования индекса
 
@@ -56,15 +54,7 @@ PropertyStorage(new string[]) {"ПростоКласс"}))
 
 ## Особенности генерации атрибута свойств PropertyStorage
 
-* [Атрибут `Storage`, заданный для свойств классов](fo_attributes-class-data.html), после генерации будет представлен в виде объявления атрибута `PropertyStorage` без массива.
-* Атрибуты [`Aggregator Storage` детейловой связи](fo_detail-associations-properties.html) и [`Storage` мастеровой связи](fd_master-association.html) после генерации будут представлен в виде объявления атрибута `PropertyStorage` без массива, если выполнены следующие условия:
+* Атрибут `Storage`, заданный для [свойств классов](fo_attributes-class-data.html), после генерации будет представлен в виде объявления атрибута `PropertyStorage` без массива.
+* Атрибуты `Aggregator Storage` [детейловой связи](fo_detail-associations-properties.html) и `Storage` [мастеровой связи](fd_master-association.html) после генерации будут представлены в виде объявления атрибута `PropertyStorage` без массива, если выполнены следующие условия:
   * Storage-атрибут содержит только одно непустое значение.
   * Атрибут [TypeUsage](fo_type-usage-problem.html) содержит более одного значения.
-
-
-
-
-
-
-
-

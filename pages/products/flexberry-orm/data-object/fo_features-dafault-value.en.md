@@ -1,18 +1,20 @@
 ---
-title: Особенности задания значения по умолчанию
+title: Features of setting the default value
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public
+keywords: DataObject, Flexberry ORM, data types
+summary: Features of the methods for setting the default value
 toc: true
-permalink: ru/fo_features-of-dafault-value-assignment.html
+permalink: en/fo_features-dafault-value.html
+lang: en
 ---
 
-Задание значений по умолчанию доступно как при редактировании [диаграммы классов](fd_class-diagram.html), так и в программном коде. Рассмотрим основные особенности этих методов.
+Задание значений по умолчанию доступно как при редактировании [диаграммы классов](fd_class-diagram.html), так и в программном коде.
 
 ## Задание значения по умолчанию на диаграмме классов
 
 ### Скалярные типы
 
-Чтобы указать на [диаграмме классов](fd_class-diagram.html) значение по умолчанию для полей скалярных типов достаточно определить его в [DefaultValue](fo_attributes-class-data.html) у соответствующего поля (обратите внимание на особенности генерации для [DefaultValue](fo_attributes-class-data.html)).
+Чтобы указать на [диаграмме классов](fd_class-diagram.html) значение по умолчанию для полей скалярных типов достаточно определить его в [DefaultValue](fo_attributes-class-data.html) у соответствующего поля (существуют особенности генерации для [DefaultValue](fo_attributes-class-data.html)).
 
 {% include note.html content="Если тип значения по умолчанию не будет соответствовать типу поля, то проект будет сгенерирован, но не скомпилируется." %}
 
@@ -22,14 +24,14 @@ permalink: ru/fo_features-of-dafault-value-assignment.html
 
 Generic Nullable-типы могут быть инициализированы значениями, которые достаются из внутренних типов. Например, если присвоить значение `Now` в поле `Default` для атрибута на диаграмме классов, можно получить такой код:
 
-```cs
+```csharp
 private System.Nullable<System.DateTime> fRelease = System.DateTime.Now;
 ```
-{% include note.html content="Обратите внимание, что задать по умолчанию `null` не получится." %}
+{% include important.html content="Задать по умолчанию `null` не получится." %}
 
 ### Комплексные типы
 
-Задать значение по умолчанию на диаграмме классов для поля комплексного типа (например, заданного с помощью класса со [стереотипом](fd_key-concepts.html) [Типы-данных-классы-со-стереотипом-type-и-их-своиства](fd_data-types-properties.html)) в общем случае невозможно.
+Задать значение по умолчанию на диаграмме классов для поля комплексного типа (например, заданного с помощью класса со [стереотипом](fd_key-concepts.html) [type](fd_data-types-properties.html)) в общем случае невозможно.
 
 ### Синонимы типов
 
@@ -80,6 +82,7 @@ public class Пациент : ICSSoft.STORMNET.DataObject
 ```
 
 ### Задание значения по умолчанию в бизнес-сервере
+
 Код формы:
 
 ```csharp

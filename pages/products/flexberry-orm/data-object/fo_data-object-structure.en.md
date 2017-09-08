@@ -1,19 +1,25 @@
 ---
-title: Структура классов объектов данных
+title: Structure of data object classes
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public
+keywords: DataObject, Flexberry ORM, class 
+summary:  Description and examples of data classes and their relationships
 toc: true
-permalink: en/fo_data-object-generated-structure.html
+permalink: en/fo_data-object-structure.html
+lang: ru
 ---
 
-Все классы данных наследуются от базового [`DataObject`](fo_data-object.html), обеспечивающего основные манипуляции:
+Используемая в примерах диаграмма:
 
-* [статусы](fo_object-status-and-loading-state.html), 
+![](/images/pages/products/flexberry-orm/data-object/data-object-structure.jpg)
+
+## Класс данных
+
+Все классы данных наследуются от базового [DataObject](fo_data-object.html), обеспечивающего основные манипуляции:
+
+* [статусы](fo_object-status.html), 
 * хранение данных, 
 * хранение [копии данных](fo_data-object-copy.html) для вычисления изменённых [атрибутов](fo_attributes-class-data.html),
 * означивание и хранение [первичного ключа](fo_primary-keys-objects.html).
-
-Пример:
 
 ```csharp
 public class SimpleDataObject:DataObject 
@@ -24,10 +30,11 @@ public class SimpleDataObject:DataObject
 	}
 ```
 
-Атрибуты UML-класса прописываются в класс данных приватным членом указанного типа с именем атрибута и соответствующим свойством для получения/установки значения. Свойство всегда виртуальное, но с любым модификатором.
-Пример:
+## Атрибут
 
-```csharo
+Атрибуты UML-класса прописываются в класс данных приватным членом указанного типа с именем атрибута и соответствующим свойством для получения/установки значения. Свойство всегда виртуальное, но с любым модификатором.
+
+```csharp
 public class SimpleDataObject:DataObject 
 	{
 		public SimpleDataObject()
@@ -40,6 +47,8 @@ public class SimpleDataObject:DataObject
 	}
 ```
 
+## Мастер
+
 [Мастеровая ассоциация](fd_master-association.html) представлена в классе данных членом соответствующего типа – мастерового класса данных, и аналогичным свойством, объявленным как virtual.
 Пример:
 
@@ -47,6 +56,8 @@ public class SimpleDataObject:DataObject
 private MasterDataObject fMaster;
 public virtual MasterDataObject Master {get{return fMaster;} set{fMaster=value;}}
 ```
+
+## Детейл
 
 Если [класс является агрегируемым](fo_detail-associations-properties.html), то:
 
@@ -99,11 +110,10 @@ private DetailArrayOfDetailDataObject fDetails;
 public virtual DetailArrayOfDetailDataObject Details {get{return fDetails;} set{fDetails=value;}}
 ```
 
-Описанной выше в примерах ситуации соответствует диаграмма:
+Также пример доступен [по адресу] (https://github.com/Flexberry/FlexberryORM-DemoApp/tree/master/FlexberryORM/CDLIB/Objects).
 
-![](/images/pages/products/flexberry-orm/data-object-generated-structure/data-object-generated-structure.jpg)
+## Наследование
 
-Если класс является унаследованным, то в исходном коде он наследуется от соответствующего предка (в соответствии с диаграммой).
+Если класс является [унаследованным](fo_inheritance.html), то в исходном коде он наследуется от соответствующего предка (в соответствии с диаграммой).
 Если у унаследованного класса есть атрибут (детейл, мастер) с тем же именем, что и у предка, он перегружается. При этом не может меняться тип.
 Операции UML-класса генерируются виртуальными методами .Net-класса. Методы также могут быть перегружены в наследниках, для чего у наследника должен быть указан метод с аналогичным числом и типом параметров.
-
