@@ -1,7 +1,11 @@
-﻿
-
-
-
+﻿---
+title: Валидация данных
+sidebar: product--sidebar
+keywords: Flexberry Designer, Flexberry Winforms
+toc: true
+permalink: ru/fw_edit-form-validation.html
+lang: ru
+---
 
 ## Валидация данных
 

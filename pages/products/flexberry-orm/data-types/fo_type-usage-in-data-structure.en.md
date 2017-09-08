@@ -12,7 +12,7 @@ lang: en
 
 Встроенные в `Flexberry Platform` [сервисы данных](fo_data-service.html) ([`SQLDataService`](fo_sql-data-service.html) и его наследники) обрабатывают [`TypeUsage`](fo_type-usage-problem.html) следующим образом:
 
-Если указан [`TypeUsage`](fo_type-usage-problem.html) для [мастерового свойства](fo_master-association.html), этому свойству [в структуре данных соответствуют](fo_data-objects-and-database-structures.html) внешние ключи на таблицы, соответствующие указанным в [TypeUsage](fo_type-usage-problem.html) классам. Имена внешним ключам даются такие: `<ИмяРолиМастера>_M<ПорядкНомерВTypeUsage>.«ПорядкНомерВTypeUsage»` — начинается с 0.
+Если указан [`TypeUsage`](fo_type-usage-problem.html) для [мастерового свойства](fo_master-association.html), этому свойству [в структуре данных соответствуют](fo_storing-data-objects.html) внешние ключи на таблицы, соответствующие указанным в [TypeUsage](fo_type-usage-problem.html) классам. Имена внешним ключам даются такие: `<ИмяРолиМастера>_M<ПорядкНомерВTypeUsage>.«ПорядкНомерВTypeUsage»` — начинается с 0.
 
 
 Таким образом, вышеприведённому примеру соответствует таблица, у которой есть два внешних ключа с именами M_m0 (соответствует M1) и M_m1 (соответствует M2).

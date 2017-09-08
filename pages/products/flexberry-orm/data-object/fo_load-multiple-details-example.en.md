@@ -1,16 +1,14 @@
 ---
-title: Пример загрузки графа объектов
+title: Example of loading an object graph
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: Flexberry ORM, data objects, example
+summary: Features of data object loading with a large number of children
 toc: true
 permalink: en/fo_load-multiple-details-example.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
-## Загрузка объекта с большим количеством детейлов
-
-Здесь производится загрузка всех объектов, созданных в [предыдущем примере](fo_data-object-update-hook-example.html).
+Здесь производится загрузка всех объектов, созданных в [примере](fo_actions-saving-object.html).
 
 ```csharp
 Console.WriteLine("6. Loading a dataobject with multiple details.");
