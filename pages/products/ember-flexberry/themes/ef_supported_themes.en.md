@@ -1,7 +1,7 @@
 ---
 title: Supported themes
 sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
+keywords: Flexberry Ember Themes
 toc: true
 permalink: en/ef_supported_themes.html
 folder: products/ember-flexberry/themes/

@@ -206,6 +206,11 @@ entries:
       url: /ef_themes_migrating.html
       output: web, pdf
 
+    - title: Creating new themes
+      title_ru: Создание новых тем
+      url: /ef_themes_creating.html
+      output: web, pdf
+
   - title: Generation
     title_ru: Генерация
     output: web, pdf

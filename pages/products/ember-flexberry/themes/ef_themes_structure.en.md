@@ -1,7 +1,7 @@
 ---
 title: Structure of themes
 sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
+keywords: Flexberry Ember Themes
 toc: true
 permalink: en/ef_themes_structure.html
 folder: products/ember-flexberry/themes/

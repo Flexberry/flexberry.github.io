@@ -1,7 +1,7 @@
 ---
 title: Поддерживаемые темы оформления
 sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
+keywords: Flexberry Ember Themes
 toc: true
 permalink: ru/ef_supported_themes.html
 folder: products/ember-flexberry/themes/
@@ -17,7 +17,7 @@ summary: Представлено описание распространяем�
 
 ![screenshoot](/images/pages/img_themes/screenshots/blueSky-theme.jpg)
 
-## Orange theme
+## Orange theme (Временно не поддерживается)
 
 ![screenshoot](/images/pages/img_themes/screenshots/orange-theme.jpg)
 
