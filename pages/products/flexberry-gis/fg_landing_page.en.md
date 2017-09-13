@@ -27,7 +27,7 @@ lang: en
 
 ## Аддоны
 
-* [ember-flexberry-gis](efg_ember-flexberry-gis.html)
+* [ember-flexberry-gis](efg_landing_page.html)
 * [ember-flexberry-gis-yandex](efgy_ember-flexberry-gis-yandex.html)
 * [ember-flexberry-gis-csw](efgcsw_ember-flexberry-gis-csw.html)
 * [ember-flexberry-gis-esri](efgesri_ember-flexberry-gis-esri.html)

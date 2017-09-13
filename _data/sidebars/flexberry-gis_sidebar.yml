@@ -18,7 +18,7 @@ entries:
 
     folderitems:
     - title: ember-flexberry-gis
-      url: /efg_ember-flexberry-gis.html
+      url: /efg_landing_page.html
       output: web, pdf
 
     - title: ember-flexberry-gis-yandex

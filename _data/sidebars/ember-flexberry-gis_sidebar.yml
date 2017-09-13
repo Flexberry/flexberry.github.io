@@ -1,7 +1,7 @@
 entries:
 - title: Sidebar
   product: ember-flexberry-gis
-  version: 0.1.1
+  version: 0.3.0
 
   folders:
   - title: Сommon information about ember-flexberry-gis
@@ -11,5 +11,20 @@ entries:
     folderitems:
     - title: About
       title_ru: О системе
-      url: /efg_ember-flexberry-gis.html
+      url: /efg_landing_page.html
+      output: web, pdf
+
+  - title: Themes
+    title_ru: Темы оформления
+    output: web, pdf
+
+    folderitems:
+    - title: Themes support
+      title_ru: Поддержка тем в аддоне
+      url: /efg_themes_support.html
+      output: web, pdf
+
+    - title: Creating themes in addon
+      title_ru: Создание тем в аддоне
+      url: /efg_themes_creating.html
       output: web, pdf
