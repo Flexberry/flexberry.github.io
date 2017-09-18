@@ -301,24 +301,18 @@ predicate.containsValue
 
 ### Query.GeographyPredicate
 
-`Query.StringPredicate` - класс для построения фильтров по строковым полям.
+`Query.GeographyPredicate` - класс для построения фильтров по геопространственным данным.
 
 #### Конструктор
 
-Конструктор `Query.StringPredicate` принимает единственный параметр: `attributePath` - путь атрибута предиката.
+Конструктор `Query.GeographyPredicate` принимает единственный параметр: `attributePath` - путь атрибута предиката.
 
-#### Поиск по подстроке
+#### Поиск по геопространственным данным
 
-Добавление значения, которое заданный в конструкторе атрибут должен содержать:
-
-```javascript
-let sp1 = new Query.StringPredicate('country').contains('i');
-```
-
-Добавление значения, которое атрибут мастера должен содержать:
+Добавление значения, которое заданно в конструкторе атрибута должен содержать:
 
 ```javascript
-let sp1 = new Query.StringPredicate('country.name').contains('i');
+let gp1 = new Query.GeographyPredicate('Location').contains('SRID=12345;POLYGON((-127.89734578345 45.234534534,-127.89734578345 45.234534534,-127.89734578345 45.234534534))');
 ```
 
 ### Query.DetailPredicate
