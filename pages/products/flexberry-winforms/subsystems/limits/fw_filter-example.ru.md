@@ -16,7 +16,7 @@ lang: ru
 
 ### Диаграмма классов
 
-![](/images/pages/img/Filters/FilterExDiagram.PNG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filter-ex-diagram.PNG)
 
 ### Форма задания пользовательских ограничений
 

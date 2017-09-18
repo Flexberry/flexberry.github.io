@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # Диаграмма
-![](/images/pages/img/Flexberry plugins/ConnectDetailsMaster.PNG)
+![](/images/pages/products/flexberry-winforms/forms/connect-details-master.png)
 
 Одной из особенностью детейлов является отсутствие формы списка и формы редактирования: и тем и другим служит [GroupEdit](group-edit.html) на форме редактирования объекта-агрегатора. Однако, если возникает необходимость сделать детейл мастером другого объекта, то для начала необходимо создать для неё форму редактирования (и, как следствие, [L-представление](l-view.html)).
 

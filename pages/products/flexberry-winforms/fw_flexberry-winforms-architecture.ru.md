@@ -10,7 +10,7 @@ lang: ru
 
 # Архитектурные концепции и их реализация
 ## Архитектурные логические уровни системы на базе Flexberry Platform
-![](/images/pages/img/«Аксиомы» Flexberry/пример4.jpg)
+![](/images/pages/products/flexberry-winforms/primer4.jpg)
 Любая прикладная система, создаваемая на базе `Flexberry Platform`, содержит три логических уровня:
 # Пользовательский интерфейс.
 # Бизнес-логика.
