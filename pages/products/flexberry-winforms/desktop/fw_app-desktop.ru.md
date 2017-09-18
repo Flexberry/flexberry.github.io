@@ -16,7 +16,7 @@ lang: ru
 # Windows-приложение
 ## Настройка рабочего стола
 Рабочий стол представляет из себя следующее (внешний вид, пример):
-![](/images/pages/img/Учебник программиста Casseberry/windesktop.png)
+![](/images/pages/products/flexberry-winforms/desktop/windesktop.png)
 В левой части — древовидная структура пунктов меню.
 
 В правой части — список т.н. «стартеров» (Runner) для пункта меню, выбранного в левой части меню.
@@ -58,7 +58,7 @@ lang: ru
 # Web-приложение
 В Web-приложении рабочий стол превращается в набор ссылок в меню SiteMaster'a.
 
-![](/images/pages/img/Учебник программиста Casseberry/webdesktop.png)
+![](/images/pages/products/flexberry-winforms/desktop/webdesktop.png)
 
 Меню настраивается при помощи [Карты сайта ASP.NET](http://msdn.microsoft.com/ru-ru/library/yy2ykkab%28v=vs.100%29.aspx), по умолчанию используется файл `Web.sitemap` из директории приложения (генерируется системой Flexberry). Настроить карту сайта по умолчанию можно в `Web.config` в разделе `SiteMap`. 
 

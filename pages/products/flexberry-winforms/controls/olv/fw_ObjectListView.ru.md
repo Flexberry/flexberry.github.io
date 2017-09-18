@@ -48,7 +48,7 @@ ObjectListView - списковый контрол для win-приложени
 
 
 
-![](/images/pages/img/page/ObjectListView/LoadQuestion.jpg)
+![](/images/pages/products/flexberry-winforms/controls/olv/LoadQuestion.jpg)
 
 
 

@@ -12,7 +12,7 @@ lang: ru
 
 
 Для описания формы списка необходимо создать в CASE UML-класс со стереотипом "listform". Например:
-![](/images/pages/img/Flexberry plugins/listform.gif)
+![](/images/pages/products/flexberry-winforms/forms/listform.gif)
 # Что генерируется
 # Класс UI-независимой формы списка, наследующийся от ICSSoft.STORMNET.UI.BaseIndpdList. 
 # .Net-интерфейс для зависимой формы списка. 
@@ -28,7 +28,7 @@ lang: ru
 
 # Дополнительно редактируемые свойства и что как генерируется
 Самое главное в дополнительных свойствах, - выбрать, какие списки (каких классов и в каких представлениях), должны быть размещены на списковой форме. Это делается на закладке "Составные представления". 
-![](/images/pages/img/Flexberry plugins/listcpxviews.jpg)
+![](/images/pages/products/flexberry-winforms/forms/listcpxviews.jpg)
 На форме (неважно, универсальной или генерируемой) будет размещено столько списковых контролов (ObjectListView), сколько указано составных представлений.
 
 
@@ -45,7 +45,7 @@ lang: ru
 | Для того, чтобы выбрать класс и представление, нажмите на кнопку "...": ![](/images/pages/img/Flexberry plugins/ViewSel.jpg)
 |-
 | `DataObjectTypes` - классы данных, объекты которых должны "закачиваться" в список. Это может быть класс, чьё представление указано во `ViewForForm` и любые его наследники. 
-| Для того, чтобы отредактировать состав типов, нажмите на кнопку "...": ![](/images/pages/img/Flexberry plugins/typeuselist.jpg) 
+| Для того, чтобы отредактировать состав типов, нажмите на кнопку "...": ![](/images/pages/products/flexberry-winforms/forms/typeuselist.jpg) 
 
 Также, для каждого типа указывается, какая форма должна использоваться при редактировании и создании объектов этого типа.
 
@@ -54,7 +54,7 @@ lang: ru
 | `ListFormOperations[anchor|#ListFormOperations]` - перечисление доступных для данного списка операций.
 | Позволяет указать, какие операции доступны на этом списке (соответственно, какие кнопки появляются на панели управления): 
 
-Для того, чтобы отредактировать состав доступных операций, нажмите на кнопку "...": ![](/images/pages/img/Flexberry plugins/listoptions.jpg) Операции:  
+Для того, чтобы отредактировать состав доступных операций, нажмите на кнопку "...": ![](/images/pages/products/flexberry-winforms/forms/listoptions.jpg) Операции:  
 
  * `ColVisibleEdit` - доступна возможность редактирования состава, порядка расположения, настроек колонок; 
 
@@ -91,7 +91,7 @@ lang: ru
 |}
 
 ## Закладка "Форма":
-![](/images/pages/img/Flexberry plugins/listformprops.jpg)
+![](/images/pages/products/flexberry-winforms/forms/listformprops.jpg)
 
 {| border="2"
 ! Свойство-Описание

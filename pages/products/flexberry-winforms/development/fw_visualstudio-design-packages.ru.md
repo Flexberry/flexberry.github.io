@@ -12,9 +12,9 @@ lang: ru
 
 
 Чтобы вызвать окно настройки отладочных пакетов, программист должен выбрать контрол, открыть окно свойств,  где нажать на ссылку “`Configure design packages`”:
-![](/images/pages/img/Учебник программиста Casseberry/primer13.jpg)
+![](/images/pages/products/flexberry-winforms/development/primer13.jpg)
 Тогда появится окно:
-![](/images/pages/img/Учебник программиста Casseberry/primer14.jpg)
+![](/images/pages/products/flexberry-winforms/development/primer14.jpg)
 Здесь, передвигаясь по списку пакетов, можно настроить в каждом пакете библиотеки.
 
 При нажатии на кнопку «сохранить» происходит сохранение состава пакетов и выбранный в списке пакет становится текущим.

@@ -15,13 +15,13 @@ lang: ru
 
 
 
-![](/images/pages/img/page/PagedObjectListView/POLV.png)
+![](/images/pages/products/flexberry-winforms/controls/olv/POLV.png)
 
 Для настройки количества записей на странице используется контекстное меню, в котором пользователь может выбрать пункт со стандартным значением, или ввести свое значение в текстовое поле.
 
 
 
-![](/images/pages/img/page/PagedObjectListView/POLV2.png)
+![](/images/pages/products/flexberry-winforms/controls/olv/POLV2.png)
 
 ## Свойства
 Дополнительные свойства (по сравнению с базовым классом) элемента управления представлены в таблице ниже.

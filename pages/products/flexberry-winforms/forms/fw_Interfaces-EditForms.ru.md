@@ -9,4 +9,4 @@ lang: ru
 ---
 
 Нижеприведённая диаграмма показывает интерфейсы для инициатора, для редактора:
-![](/images/pages/img/Учебник программиста Casseberry/primer10.jpg)
+![](/images/pages/products/flexberry-winforms/forms/primer10.jpg)

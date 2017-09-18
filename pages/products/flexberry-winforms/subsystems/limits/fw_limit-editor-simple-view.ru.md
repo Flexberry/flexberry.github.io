@@ -14,12 +14,12 @@ lang: ru
 
 Пример ограничения в упрощенном виде:
 
-![](/images/pages/img/page/limit-editor-simple-view/Scr02.jpg)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/Scr02.jpg)
 
 
 Это же ограничение в стандартном виде:
 
-![](/images/pages/img/page/limit-editor-simple-view/Scr03.jpg)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/Scr03.jpg)
 
 
 '''Чтобы создать ограничение, нужно:'''
@@ -27,19 +27,19 @@ lang: ru
 
 #В первой колонке дважды кликнуть мышкой в ячейке. Появится форма «Выбор поля». 
 #Выбрать поля, для которых нужно будет создать ограничение. При необходимости можно отменить выбор полей, закрыв окно «Выбор поля».
-![](/images/pages/RedaktorOgrWin/17.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/17.png)
 #В окне "Выбор поля" нажать кнопку «Вернуть значение». В окне «Редактирование ограничения» автоматически добавятся строки с указанными полями. По умолчанию вид ограничения будет установлен «=»:
-![](/images/pages/RedaktorOgrWin/18.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/18.png)
 При необходимости можно удалить строку с ограничением:
 выделить эту строку, нажать кнопку «Удалить строку». Строка будет удалена из списка. 
 #Выбрать из списка нужный Вид ограничения. 
-![](/images/pages/RedaktorOgrWin/19.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/19.png)
 В зависимости от вида ограничения могут появиться/стать недоступными поля для ввода значения.
-![](/images/pages/RedaktorOgrWin/20.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/20.png)
 Желтым цветом выделены поля недоступные для редактирования при установленном виде ограничения. Белым – доступные для редактирования, обязательные для заполнения. 
 #Нажать на поле Значение. В строке справа появится кнопка «…».
 #Нажать кнопку «…».
-![](/images/pages/RedaktorOgrWin/21.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/21.png)
 #Выбрать значение, относительно которого создается ограничение.
 #Нажать кнопку «Вернуть значение». 
 #После того, как редактирование ограничений по всем полям будет окончено, нажать кнопку «Сохранить и применить». Ограничение сохранится и будет применено.

@@ -12,12 +12,12 @@ lang: ru
 В редакторе есть возможность применять функции для атрибутов, которые имеют тип "Дата".
 <br />
 При добавлении атрибута типа "Дата" появляется окно "стандартного вида" с контролами, при помощи которых можно накладывать дополнительные функции.
-![](/images/pages/img/Ограничения/Стандартный вид/1.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/1.JPG)
 Если функция возвращает значение другого типа (например, "Целое"), то тип автоматически сменится. И если, там уже было значение того же типа, что и текущий, то оно сохранится, иначе будет сброшено.
-![](/images/pages/img/Ограничения/Стандартный вид/2.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/2.JPG)
 Если выбрана [функция для дат](date-time-funtions-in-limits.html) и ее аргумент типа "Дата", то она будет применена и к аргументу.
-![](/images/pages/img/Ограничения/Стандартный вид/3.JPG)
-![](/images/pages/img/Ограничения/Стандартный вид/4.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/3.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/4.JPG)
 
 
 

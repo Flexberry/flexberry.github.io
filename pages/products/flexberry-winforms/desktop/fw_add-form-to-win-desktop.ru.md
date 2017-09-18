@@ -40,4 +40,4 @@ public override ICSSoft.STORMNET.UI.Runner[] GetRunners()
 Примечание2: Формы принято именовать c префиксом `winform`.
 
 После запуска приложения можно наблюдать следующую картину:
-![](/images/pages/img/Учебник программиста Casseberry/WinDesktopPlus.png)
+![](/images/pages/products/flexberry-winforms/desktop/WinDesktopPlus.png)

@@ -110,13 +110,13 @@ ChangeToolStripMenuItem(ts, 2, 0,(System.Drawing.Image)global::IIS.Product.Prope
  
 
 Запускаем компиляцию и видим немного обновленный интерфейс:
-![](/images/pages/img/Code Examples/image001.jpg)
+![](/images/pages/products/flexberry-winforms/desktop/image001.jpg)
 Меню «Файл»:
-![](/images/pages/img/Code Examples/image002.jpg)
+![](/images/pages/products/flexberry-winforms/desktop/image002.jpg)
 Меню «Справочники»:
-![](/images/pages/img/Code Examples/image003.jpg)
+![](/images/pages/products/flexberry-winforms/desktop/image003.jpg)
 Меню «?»:
-![](/images/pages/img/Code Examples/image004.jpg)
+![](/images/pages/products/flexberry-winforms/desktop/image004.jpg)
 
 На данном примере мы решили несколько проблем:
 
