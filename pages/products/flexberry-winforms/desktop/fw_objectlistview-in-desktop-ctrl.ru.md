@@ -33,7 +33,7 @@ listView1.OverlayImage.Image = Image.FromFile("D:\\images\\limeleaf.png");
 listView1.OverlayImage.Alignment = ContentAlignment.BottomLeft;
 listView1.OverlayImage.Transparency = 50;
 ```
-![](/images/pages/products/flexberry-winforms/desktop/Картинка на рабочем столе.png)
+![](/images/pages/products/flexberry-winforms/desktop/desctop-picture.png)
 
 Отступы по горизонтали и вертикали соответственно задаются с помощью атрибутов `OverlayImage.InsetX` и `OverlayImage.InsetY` (типы - int)
 
@@ -41,7 +41,7 @@ listView1.OverlayImage.Transparency = 50;
 Рассматриваемое контекстное меню вызывается кликом правой кнопки мыши в свободном пространстве.
 
 
-![](/images/pages/products/flexberry-winforms/desktop/Контекстное меню.png)
+![](/images/pages/products/flexberry-winforms/desktop/context-menu.png)
 
 # '''Обновить '''– обновляет все элементы списка с сохранением текущей позиции - `listView1.BuildList(true)`.
 # '''Отображать дерево '''– скрыть/показать treeView (свойство `treeView1.Visible`).
@@ -64,7 +64,7 @@ listView1.ShowGroups = true;
 listView1.AlwaysGroupByColumn = this.ItemType;
 ```
 
-![](/images/pages/products/flexberry-winforms/desktop/Группировка элементов рабочего стола.png)
+![](/images/pages/products/flexberry-winforms/desktop/desctop-group.png)
 
 ## [anchor|#Icons]Замена иконок элементов списка
 Если не устраивают стандартные иконки, отображаемые для папок, пользовательских форм и форм редактирования, заменить их можно следующим образом:
@@ -85,7 +85,7 @@ arr.Add(new ICSSoft.STORMNET.Windows.Forms.FormRunner(typeof(IIS.Люди.Winfor
 // *** End programmer edit section *** (Люди GetRunners() End)
 ```
 
-![](/images/pages/products/flexberry-winforms/desktop/Замена иконок элементов списка.png)
+![](/images/pages/products/flexberry-winforms/desktop/list-icons.png)
 
 ## [anchor|#UpdateObject]Обновление объектов `ListView`
 Возможны ситуации, когда при добавлении, изменении или удалении каких-то объектов в `ListView` некоторые его элементы отображаются неправильно. Тогда `ListView` нужно обновить принудительно. Для этого используются следующие методы:
@@ -149,7 +149,7 @@ private void desktopCtrl2_TreeViewItemSelected(object sender, ICSSoft.STORMNET.W
 }
 ```
 
-![](/images/pages/products/flexberry-winforms/desktop/Событие TreeViewItemSelected.png)
+![](/images/pages/products/flexberry-winforms/desktop/treeview-item-selected.png)
 
 ## [anchor|#DesktopSettings]DesktopSettings
 Серилиазуемый класс `DesktopSettings` служит для хранения таких пользовательских настроек как размер окна, ширина столбцов, столбцы для отображения и т.д. Для того чтобы настройки сохранялись и загружались, нужно установить свойство `UseSettings` класса `SettingManager` равным true. В таком случае настройки сохраняются перед закрытием пользовательского приложения, а загружаются при запуске.

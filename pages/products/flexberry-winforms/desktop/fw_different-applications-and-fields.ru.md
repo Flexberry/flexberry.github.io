@@ -20,7 +20,7 @@ lang: ru
 В Flexberry была создана диаграмма классов.
 
 
-![](/images/pages/products/flexberry-winforms/desktop/ClassDiagram_Workers.jpg)
+![](/images/pages/products/flexberry-winforms/desktop/class-diagram_-workers.jpg)
 
 
 Затем определены приложения пользователей и сгенерирован программный код.

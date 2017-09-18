@@ -12,7 +12,7 @@ lang: ru
 ![Изображение](/images/img/page/SendToEmailBugReportProvider/ErrorForm.png)
 
 При выборе пункта меню "Отправить по электронной почте..." запускается почтовый клиент по умолчанию. Письмо содержит вложение с архивом, в котором находятся снимок экрана, описание ошибки и информация о текущей системной конфигурации.
-![](/images/pages/products/flexberry-winforms/development/Letter.png)
+![](/images/pages/products/flexberry-winforms/development/letter.png)
 
 Для запуска почтового клиента используется интерфейс MAPI.
 Адрес отправки, заголовок и текст сообщения могут быть настроены в конфигурационном файле приложения с помощью ключей BugReportEmailAddress, BugReportEmailTitle, BugReportEmailBody.

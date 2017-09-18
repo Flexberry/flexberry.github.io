@@ -36,14 +36,14 @@ lang: ru
 # В папке с кэшем сборок должна находиться сборка "IIS.WinUI.AdvancedFSCtrl.dll" (DLL находится в папке с AdmConsole);
 # В папке с кэшем сборок должна находиться сборка форм, для удобного проставления настроек лукапов (Сборка форм берется из проекта, и имеет вид <ИмяПроекта>(Forms).dll);
 # В AdmConsole открыть списковую форму "Специальные формы настройки" -> "Настройки фильтров". Форма выглядит следующим образом:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated1.JPG)
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated2.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated1.jpg)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated2.jpg)
 
 ## Создание настройки "вручную" в AdmConsole
 # Открыть списковую форму "Общие" -> "Настройки фильтров".
 # Нажать на кнопку добавления объекта
 # Появится форма
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_before.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_before.jpg)
 # Поля: 
 #* `Name` - название настройки, 
 #* `DataObjectView` - представление объекта, на которое накладывается ограничение
@@ -62,13 +62,13 @@ lang: ru
 #** `[OwnerConnectProp](Фильтрация-по-детейлам-мастера--connect-master-prop--owner-connect-prop.html)` – имя свойства, ссылающегося на класс детейла.
 Мастера детейлов должна быть также добавлены в список Lookups 
 # После заполнения всех полей форма может выглядеть следующим образом:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_after.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_after.jpg)
 
 
 ## Задание настройки форме в дизайнере VS
 Имя настройки, сохранённой в базе прикладной системы необходимо указать на списковой форме в компоненте `AdvLimit`. 
 На списковой форме нужно выделить AdvLimitComponent и установить ему свойство "FilterSettingName".
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_vs.JPG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_vs.jpg)
 
 ## Задание настройки форме в коде
 Если списковая форма является универсальной формой (сгенерированного кода нет), то имя настройки фильтра можно указать в независимой форме в методе ('''применимо если на форме только один список'''): 

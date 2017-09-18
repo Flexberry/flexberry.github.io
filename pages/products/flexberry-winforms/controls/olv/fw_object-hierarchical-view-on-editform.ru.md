@@ -13,7 +13,7 @@ lang: ru
 
 Например, в модели иерархический список выглядит так:
 
-![](/images/pages/products/flexberry-winforms/controls/olv/ObjectHierarchicalView.png)
+![](/images/pages/products/flexberry-winforms/controls/olv/object-hierarchical-view.png)
 
 Однако по-умолчанию генерируется отдельная форма для отображения иерархии (в данном случае, "Территория)".
 Для того чтобы иерархический список был отображен на форме редактирования, на форму необходимо добавить контрол ObjectHierarchicalView.

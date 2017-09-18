@@ -115,7 +115,7 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
 {|
 ! Без Highlighter'a !! С Highlighter'ом
 |-
-| ![](/images/pages/products/flexberry-winforms/controls/highlighter/HighlighterOff.gif)||![](/images/pages/products/flexberry-winforms/controls/highlighter/HighlighterOn.gif)|}
+| ![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-off.gif)||![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-on.gif)|}
 |-
 |}
 

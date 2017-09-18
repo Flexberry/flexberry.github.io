@@ -19,11 +19,11 @@ lang: ru
 # Внешний вид
 
 Расширенный вид редактора ограничений выглядит следующим образом:
-[|]![](/images/pages/products/flexberry-winforms/subsystems/limits/Расширенный вид.PNG)
+[|]![](/images/pages/products/flexberry-winforms/subsystems/limits/advanced-view.png)
 
 ## Задание заголовков полей
 Заголовки полей, которые используются в редакторе ограничений, задаются на уровне `Flexberry` при определение представления, то есть:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/ПредставлениеЗаголовокПоля.PNG)
-![](/images/pages/products/flexberry-winforms/subsystems/limits/РедОгрЗаголовокПоля.PNG)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/field-caption.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/field-caption1.png)
 
 # Доступные функции

@@ -102,7 +102,7 @@ ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
 ```
 `GroupEdit` с прорисованными границами будет выглядеть следующим образом:
 
-![](/images/pages/products/flexberry-winforms/controls/groupedit/РазъясненияПоGE.png)
+![](/images/pages/products/flexberry-winforms/controls/groupedit/groupedit-explain.png)
 
 ## EditManager
 Обычно `GroupEdit` располагается на [форме редактирования](fd_classes-with-stereotype-editform.html), имеющей свой `[EditManager](edit-manager.html)`. Однако, у `GroupEdit'а` есть __свой `EditManager`__, отвечающий за связывание и события.

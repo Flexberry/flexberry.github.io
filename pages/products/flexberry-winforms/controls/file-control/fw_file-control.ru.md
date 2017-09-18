@@ -16,7 +16,7 @@ FileControl - это контрол для работы с файлами, да�
 * удаление файла.
 * запуск файла (файл открывается в ассоциированном с ним приложении).
 
-![](/images/pages/products/flexberry-winforms/controls/file-control/FileControl.png)
+![](/images/pages/products/flexberry-winforms/controls/file-control/file-control.png)
 
 # Как подключить к проекту FileControl
 Для работы FileControl необходима ICSSoft.STORMNET.FileType.dll (есть в стандартной поставке Flexberry). 

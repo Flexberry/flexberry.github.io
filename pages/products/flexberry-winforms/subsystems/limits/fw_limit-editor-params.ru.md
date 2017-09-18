@@ -18,7 +18,7 @@ lang: ru
 Параметры создаются на форме создания ограничений в `Стандартном` или `Расширенном` виде.
 
 Блок создания параметров выглядит следующим образом:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limitParams.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-params.png)
 
 Каждая строка это отдельный параметр.
 
@@ -46,21 +46,21 @@ lang: ru
 Форма выбора параметра генерируется автоматически исходя из количества и типа параметров.
 
 К примеру, если форма создания ограничения выглядит следующим образом:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/Limit1.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit1.png)
 
 то форма выбора параметров не отобразится, т.к. параметры отсутствуют.
 
 Если ограничение выглядит вот так:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/Limit2.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit2.png)
 
 то форма выбора параметров будет выглядеть следующим образом:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/Limit3.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit3.png)
 
 Соответственно, если в параметре проставлена `Множественность`:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/Limit4.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit4.png)
 
 то форма выбора параметров будет выглядеть следующим образом:
-![](/images/pages/products/flexberry-winforms/subsystems/limits/Limit5.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit5.png)
 
 то есть появится возможность выбрать несколько элементов, которые будут объединены условием ИЛИ.
 

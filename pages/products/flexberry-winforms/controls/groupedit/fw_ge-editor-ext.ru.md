@@ -28,7 +28,7 @@ lang: ru
 Разберём пример подключения `GEEditorExt` на примере, где "Покупатель" - это [класс мастера](fd_key-concepts.html), "Покупка" - [класс детейла](fd_key-concepts.html).
 
 
-![](/images/pages/products/flexberry-winforms/controls/groupedit/ClassDiagram_CustomerPurchase2.jpg)
+![](/images/pages/products/flexberry-winforms/controls/groupedit/class-diagram_-customer-purchase2.jpg)
 (((
 <msg type=note>Обратите внимание, что для редактирования детейлов необходимо сгенерировать соответствующую форму редактирования (при быстрой прототипизации она не создаётся).</msg>
 )))

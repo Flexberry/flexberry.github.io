@@ -14,12 +14,12 @@ lang: ru
 
 Пример ограничения в упрощенном виде:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/Scr02.jpg)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/scr02.jpg)
 
 
 Это же ограничение в стандартном виде:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/Scr03.jpg)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/scr03.jpg)
 
 
 '''Чтобы создать ограничение, нужно:'''

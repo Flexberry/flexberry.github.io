@@ -21,22 +21,22 @@ lang: ru
 ### Создать L-представление
 Чтобы создать L-представление, необходимо зайти в свойства класса мастерового лукапа (в нашем случае - СтрокаПогашенияПлана), перейти на вкладку "Представления" и создать новое представление, назвав его `"СтрокаПогашенияПланаL"`
 
-![](/images/pages/products/flexberry-winforms/forms/ConnectDetailsMasterLView.PNG)
+![](/images/pages/products/flexberry-winforms/forms/connect-details-master-l-view.png)
 
 ### Создать форму списка
 Чтобы создать форму списка, откроем диаграмму с приложением и формами, созданную при быстром прототипировании. Создадим новый класс, назовем его `СтрокаПогашенияПланаL`. Выберем стереотип `listform`. Зайдем в свойства класса, на вкладке "Составные представления" выберем представление `СтрокаПланаПогашенияL`, созданное на предыдущем шаге.
 
-![](/images/pages/products/flexberry-winforms/forms/ConnectDetailsMasterLForm.PNG)
+![](/images/pages/products/flexberry-winforms/forms/connect-details-master-l-form.png)
 
 ### Настроить E-представление
 Чтобы у детейла не было возможности изменения агрегирующего объекта, необходимо удалить из E-представления все ссылки на него, а также добавить ссылки на объект, для которого он будет являться мастером.
 
-![](/images/pages/products/flexberry-winforms/forms/ConnectDetailsMasterEView.PNG)
+![](/images/pages/products/flexberry-winforms/forms/connect-details-master-e-view.png)
 
 ### Настроить LookUp'ы
 Последним шагом является настройка лукапов агрегирующего объекта нашего "не-мастерового детейла" (в нашем случае это объект `Клиент`, являющийся агрегатором для `КредитнойКарты`). Зайдем в настройки формы редактирования класса `КлиентE`, нажмем на кнопку `PropertyLookups` и выберем соответствующий контейнер (форму, созданную на шаге 2).
 
-![](/images/pages/products/flexberry-winforms/forms/ConnectDetailsMasterLookups.PNG)
+![](/images/pages/products/flexberry-winforms/forms/connect-details-master-lookups.png)
 
 ### Ошибки
 Если что-то сделано неправильно, то при попытке открыть объект на LookUp будет появляться сообщение об ошибке "`No Such Container`".

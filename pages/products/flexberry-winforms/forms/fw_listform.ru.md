@@ -42,7 +42,7 @@ lang: ru
 ! Описание
 |-
 | `ViewForForm` - представление, в котором в списке будут ображаться данные
-| Для того, чтобы выбрать класс и представление, нажмите на кнопку "...": ![](/images/pages/img/Flexberry plugins/ViewSel.jpg)
+| Для того, чтобы выбрать класс и представление, нажмите на кнопку "...": ![](/images/pages/products/flexberry-winforms/forms/view-sel.jpg)
 |-
 | `DataObjectTypes` - классы данных, объекты которых должны "закачиваться" в список. Это может быть класс, чьё представление указано во `ViewForForm` и любые его наследники. 
 | Для того, чтобы отредактировать состав типов, нажмите на кнопку "...": ![](/images/pages/products/flexberry-winforms/forms/typeuselist.jpg) 
