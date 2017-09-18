@@ -35,6 +35,7 @@ import { Query } from 'ember-flexberry-data';
 * `StringPredicate` - класс для создания фильтра в запросе по строковым полям.
 * `DetailPredicate` - класс для создания фильтра в запросе по детейловым объектам.
 * `createPredicate` - метод для создания предиката по заданным параметрам.
+* `GeographyPredicate` - класс для создания фильтра в запросе для геопространственных данных
 
 Пример использования классов из пространства имен:
 
@@ -296,6 +297,28 @@ predicate.attributePath
 
 ```javascript
 predicate.containsValue
+```
+
+### Query.GeographyPredicate
+
+`Query.StringPredicate` - класс для построения фильтров по строковым полям.
+
+#### Конструктор
+
+Конструктор `Query.StringPredicate` принимает единственный параметр: `attributePath` - путь атрибута предиката.
+
+#### Поиск по подстроке
+
+Добавление значения, которое заданный в конструкторе атрибут должен содержать:
+
+```javascript
+let sp1 = new Query.StringPredicate('country').contains('i');
+```
+
+Добавление значения, которое атрибут мастера должен содержать:
+
+```javascript
+let sp1 = new Query.StringPredicate('country.name').contains('i');
 ```
 
 ### Query.DetailPredicate
