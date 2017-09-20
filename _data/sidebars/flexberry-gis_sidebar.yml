@@ -15,10 +15,9 @@ entries:
   - title: OData-service with GIS support
     title_ru: OData-сервис c поддержкой ГИС
     output: web, pdf
-
     folderitems:
     - title: gis-odata-service
-      url: /gos_landing_page.html
+      url: /gos_gis-odata-service.html
       output: web, pdf
 
   - title: Addons and plugins
