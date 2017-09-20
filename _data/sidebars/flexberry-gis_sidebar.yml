@@ -12,6 +12,14 @@ entries:
       url: /fg_landing_page.html
       output: web
 
+  - title: OData-service with GIS support
+    title_ru: OData-сервис c поддержкой ГИС
+    output: web, pdf
+    folderitems:
+    - title: gis-odata-service
+      url: /gos_gis-odata-service.html
+      output: web, pdf
+
   - title: Addons and plugins
     title_ru: Аддоны и плагины
     output: web, pdf
