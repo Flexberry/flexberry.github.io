@@ -3,7 +3,7 @@ title: GEEditorExt
 sidebar: product--sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/fw_g-e-editor-ext.html
+permalink: ru/fw_ge-editor-ext.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
