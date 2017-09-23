@@ -15,51 +15,18 @@ lang: ru
 
 Существует т.н. стандартный провайдер контролов `ICSSoft.STORMNET.Windows.Forms.Binders.StandardControlProvider`, в котором метод `GetControl` перегружен таким образом, что возвращает контролы некоторым предопределённым образом. 
 
+## Контролы, возвращаемые `StandardControlProvider`
 
-{| border="1" 
-|+ Контролы, возвращаемые `StandardControlProvider`.
-
-! Тип !! Контрол
-|-
-| string
-| System.Windows.Forms.TextBox
-|-
-| System.Decimal
-| rowspan="10" | System.Windows.Forms.TextBox
-|-
-| System.Double
-|-
-| System.Int16
-|-
-| System.Int32
-|-
-| System.Int64
-|-
-| System.SByte
-|-
-| System.Single
-|-
-| System.UInt16
-|-
-| System.UInt32
-|-
-| System.UInt64
-|-
-| System.DateTime
-| ICSSoft.STORMNET.Windows.Forms.DateTimePicker
-|-
-| bool
-| System.Windows.Forms.CheckBox
-|-
-| Enum
-| ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox
-|-
-| ICSSoft.STORMNET.DetailArray
-| ICSSoft.STORMNET.Windows.Forms.GroupEditBase
-|-
-| ICSSoft.STORMNET.DataObject
-| ICSSoft.STORMNET.Windows.Forms.ComboLookup или (в зависимости от параметров) ICSSoft.STORMNET.Windows.Forms.LookUp.LookUp
-|}
+| Тип | Контрол
+|--|--
+| string| System.Windows.Forms.TextBox
+| System.Decimal<br>System.Double<br> System.Int16<br>System.Int32<br>System.Int64<br>System.SByte<br>System.Single<br>System.UInt16<br>System.UInt32<br>System.UInt64| System.Windows.Forms.TextBox
+| System.DateTime| ICSSoft.STORMNET.Windows.Forms.DateTimePicker
+| bool| System.Windows.Forms.CheckBox
+| Enum| ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox
+| ICSSoft.STORMNET.DetailArray| ICSSoft.STORMNET.Windows.Forms.GroupEditBase
+| ICSSoft.STORMNET.DataObject| ICSSoft.STORMNET.Windows.Forms.ComboLookup или (в зависимости от параметров) ICSSoft.STORMNET.Windows.Forms.LookUp.LookUp
+||
 
 Если требуется, чтобы редактировался другой тип, или другим контролом, необходимо определить свой провайдер контрола и ассоциировать его с типом.
 

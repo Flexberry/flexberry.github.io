@@ -112,12 +112,9 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
 ### Результат
 Сравнение одной и той же формы с включенным Highlighter'ом и без:
 
-{|
-! Без Highlighter'a !! С Highlighter'ом
-|-
-| ![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-off.gif)||![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-on.gif)|}
-|-
-|}
+| Без Highlighter'a | С Highlighter'ом |
+|--|--|
+| ![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-off.gif)|![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-on.gif)|
 
 
 

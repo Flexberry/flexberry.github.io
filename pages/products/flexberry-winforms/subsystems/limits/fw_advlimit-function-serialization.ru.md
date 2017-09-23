@@ -11,14 +11,11 @@ lang: ru
 # Средства сериализации-десериализации в `ICSSoft.STORMNET.Windows.Forms.Utils` 
 В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](fo_limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки `[ICSSoft.STORMNET.Tools](fo_ics-soft-stormnet-tools.html)`, и выполняют обращение к ней. 
 
-Методы сериализации класса `ICSSoft.STORMNET.Windows.Forms.Utils`:
+## Методы сериализации класса `ICSSoft.STORMNET.Windows.Forms.Utils`:
 
-{| border="1"
-! Метод
-! Описание
-|-
-| `ObjectToString`
-| __Назначение__:  Сериализация в строку при помощи `SoapFormatter`.
+### `ObjectToString`
+
+ __Назначение__:  Сериализация в строку при помощи `SoapFormatter`. 
 
 __Параметры__:
 
@@ -34,9 +31,9 @@ public static string ObjectToString(object o)
 	return ICSSoft.STORMNET.Tools.ToolXML.ObjectToString(o);
 }
  ```
-|-
-| `ObjectFromString`
-| __Назначение__: Десериализация из строки при помощи `SoapFormatter`.
+ 
+ ### `ObjectFromString`
+ __Назначение__: Десериализация из строки при помощи `SoapFormatter`.
 
 __Параметры__:
 
@@ -52,9 +49,9 @@ public static object ObjectFromString(string s)
 	return ICSSoft.STORMNET.Tools.ToolXML.ObjectFromString(s);
 }
 ```
-|-
-| `ObjectToBinaryString`
-| __Назначение__: Сериализация в строку при помощи `BinaryFormatter`.
+
+### `ObjectToBinaryString`
+ __Назначение__: Сериализация в строку при помощи `BinaryFormatter`.
 
 __Параметры__:
 
@@ -70,9 +67,9 @@ public static string ObjectToBinaryString(object o)
     return ICSSoft.STORMNET.Tools.ToolBinarySerializer.ObjectToString(o);
 }
 ```
-|-
-| `ObjectFromBinaryString`
-| __Назначение__: Десериализация из строки при помощи `BinaryFormatter `(если не получится, то попробуем `SoapFormatter`- для совместимости с унаследованными данными).
+
+### `ObjectFromBinaryString`
+ __Назначение__: Десериализация из строки при помощи `BinaryFormatter `(если не получится, то попробуем `SoapFormatter`- для совместимости с унаследованными данными).
 
 __Параметры__:
 
@@ -97,7 +94,7 @@ public static object ObjectFromBinaryString(string s)
     return retObj;
 }
 ```
-|}
+
 
 На [форме задания ограничений] при сохранении (восстановлении) [LimitFunction](limitation-edit-form.html) используются методы `Utils.ObjectToBinaryString` (`Utils.ObjectFromBinaryString`), т.е. сериализуются ограничения с помощью бинарной сериализации, а восстанавливаются как бинарные строки, так и SOAP, т.к. в ранних версиях технологии использовалась SOAP-сериализация.
 

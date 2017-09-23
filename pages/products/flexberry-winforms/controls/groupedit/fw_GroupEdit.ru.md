@@ -23,7 +23,7 @@ lang: ru
 | `AlternativeColor`  | Альтернативный цвет для раскраски строк.  |
 | `BackOnShiftEnter` | Переход на следующую ячейку по нажатию &lt;Shift&gt; + &lt;Enter&gt; при выключенном режиме `EditOnEnter`.
 | `DoNotAutoLoadItems` | Не загружать данные из базы автоматически.
-| `EnableValueDisplayResponsibility` | Поддержка режима `[ValueDisplayResponsibility](displaying-master-in--group-edit.html)`.
+| `EnableValueDisplayResponsibility` | Поддержка режима [`ValueDisplayResponsibility`](fw_displaying-master-in-groupedit.html).
 | `EditOnEnter` | Редактирование содержимого ячейки по нажатию на клавишу &lt;Enter&gt;
 | `GenerateValueChangedEventOnRowOperations` | Генерировать события изменения при добавлении или удалении строки.
 | `KeepFocus` | По умолчанию "false". Если установлено "true", то при сохранении будет установлен фокус на той же строке, где он был до сохранения. Запоминается не номер строки, а идентификатор выделенного объекта.
