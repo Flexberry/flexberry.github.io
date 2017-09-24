@@ -1,6 +1,6 @@
 ---
 title: Несколько классов приложений в одной стадии
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ключевые понятия
 toc: true
 permalink: ru/fw_several-classes-of-applications-in-a-single-stage.html

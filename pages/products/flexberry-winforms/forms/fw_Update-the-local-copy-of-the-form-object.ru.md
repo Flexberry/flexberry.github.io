@@ -1,6 +1,6 @@
 ---
 title: Обновление локальной копии объекта формы
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_update-the-local-copy-of-the-form-object.html

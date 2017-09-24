@@ -1,6 +1,6 @@
 ---
 title: Переключение редактируемого объекта без закрытия формы редактирования
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_switch-editing-object.html

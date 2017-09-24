@@ -1,6 +1,6 @@
 ---
 title: Наложение ограничений на GroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_add-limit-to-group-edit.html

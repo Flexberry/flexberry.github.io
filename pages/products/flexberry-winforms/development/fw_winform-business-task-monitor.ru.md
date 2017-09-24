@@ -1,6 +1,6 @@
 ---
 title: Стандартный монитор задач WinformBusinessTaskMonitor
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
 permalink: ru/fw_winform-business-task-monitor.html

@@ -1,6 +1,6 @@
 ---
 title: Проверка данных на форме во время редактирования
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_check-form-field-during-edit.html

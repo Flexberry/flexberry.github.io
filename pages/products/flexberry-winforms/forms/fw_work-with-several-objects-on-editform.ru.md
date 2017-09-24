@@ -1,6 +1,6 @@
 ---
 title: Работа на форме редактирования с полями нескольких объектов 
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: View (представление)
 toc: true
 permalink: ru/fw_work-with-several-objects-on-editform.html

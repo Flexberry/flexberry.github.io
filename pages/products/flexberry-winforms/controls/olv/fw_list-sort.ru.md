@@ -1,9 +1,9 @@
 ---
 title: Сортировка списков
-sidebar: flexberry-aspnet_sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fa_list-sort.html
+permalink: ru/fw_list-sort.html
 lang: ru
 ---
 

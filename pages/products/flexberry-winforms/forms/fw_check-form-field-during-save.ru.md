@@ -1,6 +1,6 @@
 ---
 title: Проверка данных на форме во время сохранения
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: DataObject (объекты данных)
 toc: true
 permalink: ru/fw_check-form-field-during-save.html

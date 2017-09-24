@@ -1,6 +1,6 @@
 ---
 title: И опять работа с меню
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
 permalink: ru/fw_working-with-menu.html

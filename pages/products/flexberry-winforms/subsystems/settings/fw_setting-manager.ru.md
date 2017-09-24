@@ -1,6 +1,6 @@
 ---
 title: Подсистема настроек
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
 permalink: ru/fw_setting-manager.html

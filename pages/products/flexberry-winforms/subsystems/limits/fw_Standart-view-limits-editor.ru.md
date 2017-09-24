@@ -1,6 +1,6 @@
 ---
 title: Стандартный вид редактора ограничений. Формат ограничений
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_standart-view-limits-editor.html

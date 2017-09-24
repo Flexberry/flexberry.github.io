@@ -1,6 +1,6 @@
 ---
 title: Запуск произвольной зависимой формы с рабочего стола
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_running-any-dependent-forms-from-the-desktop.html

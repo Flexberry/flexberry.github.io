@@ -1,6 +1,6 @@
 ---
 title: EditManager.Change
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
 permalink: ru/fw_edit-manager-change.html

@@ -1,6 +1,6 @@
 ---
 title: Общие концепции
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_general-concepts.html

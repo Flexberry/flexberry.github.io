@@ -1,6 +1,6 @@
 ---
 title: Сохранение ограничений на форме задания ограничения 
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Windows UI (формы), Ограничения, Черновик статьи
 toc: true
 permalink: ru/fw_adv-limit-function-serialization.html

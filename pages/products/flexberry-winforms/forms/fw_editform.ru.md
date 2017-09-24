@@ -1,6 +1,6 @@
 ---
 title: Формы редактирования (классы со стереотипом editform) 
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
 permalink: ru/fw_Формы-редактирования-классы-со-стереотипом-editform.html

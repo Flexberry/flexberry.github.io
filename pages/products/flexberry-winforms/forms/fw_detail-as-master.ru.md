@@ -1,6 +1,6 @@
 ---
 title: Детейл в качестве мастера
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
 permalink: ru/fw_detail-as-master.html

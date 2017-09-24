@@ -1,6 +1,6 @@
 ---
 title: Определение доступных для редактирования полей для одной формы, но разных приложений
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_different-applications-and-fields.html

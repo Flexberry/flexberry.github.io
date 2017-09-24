@@ -1,6 +1,6 @@
 ---
 title: Приложение и рабочий стол
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_app-desktop.html

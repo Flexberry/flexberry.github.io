@@ -1,6 +1,6 @@
 ---
 title: Форма «Редактор ограничений» (WIN)
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ограничения
 toc: true
 permalink: ru/fw_winforms-limit-editor-form.html

@@ -1,6 +1,6 @@
-﻿---
+---
 title: Валидация данных
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
 permalink: ru/fw_edit-form-validation.html

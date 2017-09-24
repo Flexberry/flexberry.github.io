@@ -1,6 +1,6 @@
 ---
 title: Как единообразно обработать все формы приложения
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_uniformly-handle-all-application-forms.html

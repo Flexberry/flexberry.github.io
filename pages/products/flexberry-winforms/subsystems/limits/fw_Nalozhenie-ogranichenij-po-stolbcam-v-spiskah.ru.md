@@ -1,6 +1,6 @@
 ---
 title: Наложение ограничений по столбцам в списках
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html

@@ -1,6 +1,6 @@
 ---
 title: Разрешение на запуск приложения и открытие форм
-sidebar: flexberry-orm_sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms 
 summary: 
 toc: true

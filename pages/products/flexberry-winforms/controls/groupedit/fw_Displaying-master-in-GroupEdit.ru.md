@@ -1,6 +1,6 @@
 ---
 title: Отображение мастера в GroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_displaying-master-in--group-edit.html

@@ -1,6 +1,6 @@
 ---
 title: Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_interception-events--object-list-view.html

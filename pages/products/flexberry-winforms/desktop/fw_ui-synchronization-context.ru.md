@@ -1,6 +1,6 @@
 ---
 title: Запуск кода в основном потоке приложения из другого потока
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
 permalink: ru/fw_u-i-synchronization-context.html

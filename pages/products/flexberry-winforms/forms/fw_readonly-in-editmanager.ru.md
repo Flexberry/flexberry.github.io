@@ -1,6 +1,6 @@
 ---
 title:  Определение контролов, доступных только на чтение, с помощью EditManager
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
 permalink: ru/fw_read-only-in-edit-manager.html

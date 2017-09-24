@@ -1,6 +1,6 @@
 ---
 title: Обновление объекта в OLV
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_updating-object-in--o-l-v.html

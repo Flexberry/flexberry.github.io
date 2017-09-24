@@ -1,6 +1,6 @@
 ---
 title: Алиасы системных / пользовательских типов для параметров на форме ограничений
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ограничения
 toc: true
 permalink: ru/fw_aliases-system-and-user-types.html

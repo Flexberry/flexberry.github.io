@@ -1,6 +1,6 @@
 ---
 title: Настройка отладочных пакетов и выбор активного отладочного пакета
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_visual-studio-design-packages.html

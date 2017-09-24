@@ -1,6 +1,6 @@
 ---
 title: Запуск независимых форм без рабочего стола (из кода)
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_running-independent-forms-without-desktop.html

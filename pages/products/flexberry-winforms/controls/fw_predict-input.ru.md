@@ -1,6 +1,6 @@
 ---
 title: Предиктивный ввод в Windows-приложениях
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
 permalink: ru/fw_predict-input.html

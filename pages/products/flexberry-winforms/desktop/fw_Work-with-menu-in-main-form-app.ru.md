@@ -1,6 +1,6 @@
 ---
 title: Работа с меню в главной форме приложения
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
 permalink: ru/fw_work-with-menu-in-main-form-app.html

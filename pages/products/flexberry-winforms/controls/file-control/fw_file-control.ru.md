@@ -1,6 +1,6 @@
 ---
 title: FileControl (Winforms)
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Windows UI (Контролы)
 toc: true
 permalink: ru/fw_file-control.html

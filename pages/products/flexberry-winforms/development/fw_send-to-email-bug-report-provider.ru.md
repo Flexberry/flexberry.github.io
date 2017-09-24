@@ -1,6 +1,6 @@
 ---
 title: Отправка сообщения об ошибке по электронной почте
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_send-to-email-bug-report-provider.html

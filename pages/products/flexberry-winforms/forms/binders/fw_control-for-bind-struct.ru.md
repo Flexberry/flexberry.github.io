@@ -1,6 +1,6 @@
 ---
 title: ControlForBindStruct
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_control-for-bind-struct.html

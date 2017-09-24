@@ -1,6 +1,6 @@
 ---
 title: Функции для работы с датами в "стандартном виде"
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_date-limits--standart-view.html

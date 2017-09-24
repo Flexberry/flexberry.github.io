@@ -1,6 +1,6 @@
 ---
 title: Как без использования генераторов кода сделать на форме список объектов данных
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_make-a-list-of-data-objects-without-generators.html

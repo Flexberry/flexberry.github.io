@@ -1,6 +1,6 @@
 ---
 title: Фильтрация по детейлам мастера. ConnectMasterProp, OwnerConnectProp
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_Фильтрация-по-детейлам-мастера--connect-master-prop--owner-connect-prop.html

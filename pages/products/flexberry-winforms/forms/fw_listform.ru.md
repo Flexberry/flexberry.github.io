@@ -1,6 +1,6 @@
 ---
 title: Формы списка (классы со стереотипом listform) 
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
 permalink: ru/fw_Формы-списка-классы-со-стереотипом-listform.html

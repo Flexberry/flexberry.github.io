@@ -1,6 +1,6 @@
 ---
 title: Базовая системно-технологическая архитектура Flexberry Winforms
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ключевые понятия
 toc: true
 permalink: ru/fw_flexberry-winforms-architecture.html

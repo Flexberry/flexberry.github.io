@@ -1,6 +1,6 @@
 ---
 title: Доступность операций на OLV в зависимости от прав пользователя
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
 permalink: ru/fw_object-list-view-rights.html

@@ -1,6 +1,6 @@
 ---
 title: Flexberry Winforms
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
 permalink: ru/fw_flexberry-winforms.html

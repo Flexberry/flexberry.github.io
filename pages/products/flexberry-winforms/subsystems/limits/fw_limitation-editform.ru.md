@@ -1,6 +1,6 @@
 ---
 title: Форма задания ограничений
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_limitation-edit-form.html

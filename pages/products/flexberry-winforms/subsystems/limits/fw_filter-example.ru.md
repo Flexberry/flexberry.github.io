@@ -1,6 +1,6 @@
 ---
 title: Пример использования AdvLimit и создания FilterSettings
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_filter-example.html

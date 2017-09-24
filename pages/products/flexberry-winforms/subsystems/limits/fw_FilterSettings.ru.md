@@ -1,6 +1,6 @@
 ---
 title: Настройки фильтров. FilterSettings.
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Ограничения
 toc: true
 permalink: ru/fw_filter-settings.html

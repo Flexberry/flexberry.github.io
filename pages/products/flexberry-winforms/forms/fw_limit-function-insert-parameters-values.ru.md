@@ -1,6 +1,6 @@
 ---
 title: Подстановка значений параметров в ограничивающую функцию
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ограничения
 toc: true
 permalink: ru/fw_limit-function-insert-parameters-values.html

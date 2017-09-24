@@ -1,6 +1,6 @@
 ---
 title: Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_control-provider-winforms.html

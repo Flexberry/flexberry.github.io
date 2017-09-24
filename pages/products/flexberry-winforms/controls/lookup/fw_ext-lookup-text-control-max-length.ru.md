@@ -1,6 +1,6 @@
 ---
 title: Свойство MaxLength элемента управления ExtLookUpTextControl
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_ext-look-up-text-control-max-length.html

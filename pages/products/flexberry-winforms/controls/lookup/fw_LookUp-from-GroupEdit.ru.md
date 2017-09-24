@@ -1,6 +1,6 @@
 ---
 title: Поднятие из GroupEdit'a на лукап объекта, не имеющего ссылку на объект-инициатор
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_look-up-from--group-edit.html

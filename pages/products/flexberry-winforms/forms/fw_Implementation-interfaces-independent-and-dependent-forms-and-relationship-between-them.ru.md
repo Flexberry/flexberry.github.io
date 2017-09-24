@@ -1,6 +1,6 @@
 ---
 title: Реализация интерфейсов независимыми и зависимыми формами и отношения между ними
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html

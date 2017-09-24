@@ -1,6 +1,6 @@
 ---
 title: Обработка события отметки строк в GroupEdit
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_processing-events-mark-the-rows-in-groupedit.html

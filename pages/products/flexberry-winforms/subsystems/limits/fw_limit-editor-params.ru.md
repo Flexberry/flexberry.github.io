@@ -1,6 +1,6 @@
 ---
 title: Ограничение с параметрами (для пользователя) в Win
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Ограничения
 toc: true
 permalink: ru/fw_limit-editor-params.html

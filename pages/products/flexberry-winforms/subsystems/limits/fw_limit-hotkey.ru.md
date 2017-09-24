@@ -1,6 +1,6 @@
 ---
 title: Задание горячих клавиш для ограничений
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_limit-hot-key.html

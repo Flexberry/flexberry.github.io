@@ -1,6 +1,6 @@
 ---
 title: Режим "Только чтение" в Windows-приложениях
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: DataObject (объекты данных), Windows UI (формы)
 toc: true
 permalink: ru/fw_read-only-win.html

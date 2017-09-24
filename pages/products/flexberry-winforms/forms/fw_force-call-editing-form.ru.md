@@ -1,6 +1,6 @@
 ---
 title: Принудительный вызов формы редактирования
-sidebar: product-sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_force-call-editing-form.html

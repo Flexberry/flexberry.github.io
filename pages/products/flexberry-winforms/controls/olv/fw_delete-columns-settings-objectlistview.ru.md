@@ -1,6 +1,6 @@
 ---
 title: Удаление настроек пользователя в ObjectListView
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
 permalink: ru/fw_delete-columns-settings-object-list-view.html

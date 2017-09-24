@@ -1,6 +1,6 @@
 ---
 title: Ограничение на себя
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
 permalink: ru/fw_self-limit.html

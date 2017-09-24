@@ -1,6 +1,6 @@
 ---
 title: Как редактировать объекты данных на формах, связывание полей ввода со свойствами объекта данных 
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
 permalink: ru/fw_edit--data-objects-on--forms.html

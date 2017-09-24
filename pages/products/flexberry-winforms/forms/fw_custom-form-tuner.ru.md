@@ -1,6 +1,6 @@
 ---
 title: Переход по Enter на форме
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
 permalink: ru/fw_custom-form-tuner.html

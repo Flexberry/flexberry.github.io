@@ -1,6 +1,6 @@
 ---
 title: Пример проверки данных на форме через OnSave/OnSaveEvent
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: DataObject (объекты данных)
 toc: true
 permalink: ru/fw_check-through-on-save-event-example.html

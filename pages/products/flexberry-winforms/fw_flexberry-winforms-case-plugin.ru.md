@@ -1,6 +1,6 @@
 ---
 title: Flexberry Winforms. Модуль расширения Flexberry Designer для генерации win-приложений по uml-моделям
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
 permalink: ru/fw_flexberry-winforms-case-plugin.html

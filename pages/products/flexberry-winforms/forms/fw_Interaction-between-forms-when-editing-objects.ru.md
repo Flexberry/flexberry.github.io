@@ -1,6 +1,6 @@
 ---
 title: Межформенное взаимодействие при редактировании объектов
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Учебники
 toc: true
 permalink: ru/fw_interaction-between-forms-when-editing-objects.html

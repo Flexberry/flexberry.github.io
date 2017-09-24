@@ -1,6 +1,6 @@
 ---
 title: Настройка форм для приложения
-sidebar: product--sidebar
+sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Конкретная реализация, ПНИПУ, Разработка
 toc: true
 permalink: ru/fw_form-tuner.html
