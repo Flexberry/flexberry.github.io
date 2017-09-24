@@ -3,7 +3,7 @@ title: EditManager.Change
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/fw_edit-manager-change.html
+permalink: ru/fw_editmanager-change.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

@@ -3,7 +3,7 @@ title: Как редактировать объекты данных на фор
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/fw_edit--data-objects-on--forms.html
+permalink: ru/fw_edit-data-objects-on-forms.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

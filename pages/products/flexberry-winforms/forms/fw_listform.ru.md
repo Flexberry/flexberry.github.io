@@ -3,7 +3,7 @@ title: Формы списка (классы со стереотипом listfor
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
-permalink: ru/fw_Формы-списка-классы-со-стереотипом-listform.html
+permalink: ru/fw_listform.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

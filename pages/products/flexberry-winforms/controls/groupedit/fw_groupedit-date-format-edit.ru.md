@@ -3,7 +3,7 @@ title: Формат даты GroupEdit в режиме редактирован�
 sidebar: flexberry-winforms_sidebar
 keywords: DateTime (работа с датами)
 toc: true
-permalink: ru/fw_Формат-даты--group-edit-в-режиме-редактирования.html
+permalink: ru/fw_groupedit-date-format-edit.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

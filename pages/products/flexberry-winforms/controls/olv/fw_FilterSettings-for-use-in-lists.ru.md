@@ -3,7 +3,7 @@ title: Откуда берутся фильтерсеттинги для при�
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Ограничения
 toc: true
-permalink: ru/fw_filter-settings-for-use-in-lists.html
+permalink: ru/fw_filtersettings-for-use-in-lists.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

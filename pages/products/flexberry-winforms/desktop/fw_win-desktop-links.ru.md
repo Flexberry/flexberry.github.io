@@ -3,7 +3,7 @@ title: Ярлыки рабочего стола
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_Ярлыки-рабочего-стола.html
+permalink: ru/fw_win-desktop-links.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

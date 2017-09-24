@@ -3,7 +3,7 @@ title: Списковый элемент управления PagedObjectListVie
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/fw_paged-object-list-view.html
+permalink: ru/fw_paged-objectlistview.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

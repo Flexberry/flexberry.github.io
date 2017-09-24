@@ -3,7 +3,7 @@ title: Фильтрация по детейлам мастера. ConnectMasterP
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/fw_Фильтрация-по-детейлам-мастера--connect-master-prop--owner-connect-prop.html
+permalink: ru/fw_master-details-filters.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

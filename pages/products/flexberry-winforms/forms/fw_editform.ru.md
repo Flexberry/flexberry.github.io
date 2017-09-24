@@ -3,7 +3,7 @@ title: Формы редактирования (классы со стереот
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
-permalink: ru/fw_Формы-редактирования-классы-со-стереотипом-editform.html
+permalink: ru/fw_editform.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

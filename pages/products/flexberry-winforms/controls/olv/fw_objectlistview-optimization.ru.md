@@ -3,7 +3,7 @@ title: Оптимизация чтения данных ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_object-list-view-optimization.html
+permalink: ru/fw_objectlistview-optimization.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

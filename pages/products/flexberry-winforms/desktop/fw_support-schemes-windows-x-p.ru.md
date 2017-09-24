@@ -3,7 +3,7 @@ title: Поддержка схем Windows XP
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_support-schemes--windows--x-p.html
+permalink: ru/fw_support-schemes-windows-x-p.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

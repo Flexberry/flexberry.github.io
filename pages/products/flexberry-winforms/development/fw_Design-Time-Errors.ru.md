@@ -3,7 +3,7 @@ title: Если что-либо «глючит» в Design-Time
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_design--time--errors.html
+permalink: ru/fw_design-time-errors.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

@@ -3,7 +3,7 @@ title: Присвоение LimitFunction для второго ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Ограничения
 toc: true
-permalink: ru/fw_assigning--limit-function-second--object-list-view.html
+permalink: ru/fw_assigning-limit-function-second-objectlistview.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

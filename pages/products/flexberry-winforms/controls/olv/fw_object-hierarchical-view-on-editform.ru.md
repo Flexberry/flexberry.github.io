@@ -3,7 +3,7 @@ title: Создание формы редактирования с иерарх�
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/fw_object-hierarchical-view-on-edit-form.html
+permalink: ru/fw_object-hierarchical-view-on-editform.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

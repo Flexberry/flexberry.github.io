@@ -3,7 +3,7 @@ title: Локализация пользовательского интерфе�
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_localization--u-i.html
+permalink: ru/fw_localization-ui.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

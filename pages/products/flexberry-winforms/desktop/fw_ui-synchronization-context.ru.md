@@ -3,7 +3,7 @@ title: Запуск кода в основном потоке приложени
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
 toc: true
-permalink: ru/fw_u-i-synchronization-context.html
+permalink: ru/fw_ui-synchronization-context.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

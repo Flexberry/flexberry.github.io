@@ -3,7 +3,7 @@ title: Альтернативный лукап
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_alternative--lookup.html
+permalink: ru/fw_alternative-lookup.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

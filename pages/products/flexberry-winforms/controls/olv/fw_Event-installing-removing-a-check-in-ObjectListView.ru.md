@@ -3,7 +3,7 @@ title: Событие установки/снятия галочки в ObjectLi
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_event-installing-removing-a-check-in--object-list-view.html
+permalink: ru/fw_event-installing-removing-a-check-in-objectlistview.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

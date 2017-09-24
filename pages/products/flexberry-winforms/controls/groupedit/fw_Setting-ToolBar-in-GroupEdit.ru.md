@@ -3,7 +3,7 @@ title: Настройка ToolBar в GroupEdit (настройка вертик�
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_setting--tool-bar-in--group-edit.html
+permalink: ru/fw_setting-toolbar-in-groupedit.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

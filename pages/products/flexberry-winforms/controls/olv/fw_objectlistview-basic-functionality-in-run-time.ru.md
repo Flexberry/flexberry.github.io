@@ -3,7 +3,7 @@ title: ObjectListView, основная функциональность в RunT
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_object-list-view-basic-functionality-in--run-time.html
+permalink: ru/fw_objectlistview-basic-functionality-in-run-time.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

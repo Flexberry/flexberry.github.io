@@ -3,7 +3,7 @@ title: Контрол рабочего стола
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_object-list-view-in--desktop-ctrl.html
+permalink: ru/fw_objectlistview-in-desktop-ctrl.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

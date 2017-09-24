@@ -31,6 +31,8 @@ topnav_dropdowns:
           url: /flexberry-o-r-m-o-data-service.html
         - title: ember-flexberry-security
           url: /efs_landing_page.html
+          title: Flexberry Winforms
+          url: /fw_flexberry-winforms.html
         - title: Flexberry GIS
           url: /fg_landing_page.html
     - title: Guides

@@ -3,7 +3,7 @@ title: Отображение подсказки(tooltip) для отдельн�
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_object-list-view-tool-tip.html
+permalink: ru/fw_objectlistview-tooltip.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

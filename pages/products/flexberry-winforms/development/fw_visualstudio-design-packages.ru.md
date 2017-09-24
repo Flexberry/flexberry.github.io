@@ -3,7 +3,7 @@ title: Настройка отладочных пакетов и выбор ак
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_visual-studio-design-packages.html
+permalink: ru/fw_visualstudio-design-packages.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

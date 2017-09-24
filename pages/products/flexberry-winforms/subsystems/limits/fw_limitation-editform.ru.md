@@ -3,7 +3,7 @@ title: Форма задания ограничений
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/fw_limitation-edit-form.html
+permalink: ru/fw_limitation-editform.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

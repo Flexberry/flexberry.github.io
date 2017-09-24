@@ -3,7 +3,7 @@ title: Визуальная логика
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_visual--logic.html
+permalink: ru/fw_visual-logic.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

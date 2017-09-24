@@ -3,7 +3,7 @@ title: Наложение ограничений на GroupEdit
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_add-limit-to-group-edit.html
+permalink: ru/fw_add-limit-to-groupedit.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

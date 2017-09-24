@@ -3,7 +3,7 @@ title: Стандартный вид редактора ограничений. 
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/fw_description-form--limit-editor-in-standard-form.html
+permalink: ru/fw_description-form-limit-editor-in-standard-form.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

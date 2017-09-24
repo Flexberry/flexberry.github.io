@@ -3,7 +3,7 @@ title: ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_object-list-view.html
+permalink: ru/fw_ObjectListView.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

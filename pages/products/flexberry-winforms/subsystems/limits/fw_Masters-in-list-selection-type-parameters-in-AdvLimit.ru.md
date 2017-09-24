@@ -3,7 +3,7 @@ title: Мастера в списке выбора типа параметров
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
 toc: true
-permalink: ru/fw_masters-in-list-selection-type-parameters-in--adv-limit.html
+permalink: ru/fw_masters-in-list-selection-type-parameters-in-advlimit.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

@@ -3,7 +3,7 @@ title: Как вызвать на LookUp
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_look-up--how-to-use.html
+permalink: ru/fw_lookup-how-to-use.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

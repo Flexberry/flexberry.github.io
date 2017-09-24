@@ -3,7 +3,7 @@ title: Режим редактирования с блокировками в Gr
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_lock-rows-in-group-edit.html
+permalink: ru/fw_lock-rows-in-groupedit.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

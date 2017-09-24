@@ -3,7 +3,7 @@ title:  Определение контролов, доступных толь
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/fw_read-only-in-edit-manager.html
+permalink: ru/fw_readonly-in-editmanager.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

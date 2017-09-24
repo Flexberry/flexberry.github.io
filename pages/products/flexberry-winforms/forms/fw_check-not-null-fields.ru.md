@@ -3,7 +3,7 @@ title: Проверка обязательных полей
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_check--not-null-fields.html
+permalink: ru/fw_check-not-null-fields.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
