@@ -3,7 +3,7 @@ title: HighLighter
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_HighLighter.html
+permalink: ru/fw_high-lighter.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

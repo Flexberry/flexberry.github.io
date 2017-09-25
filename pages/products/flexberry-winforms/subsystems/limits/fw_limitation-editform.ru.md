@@ -65,4 +65,4 @@ lang: ru
 [Мастера в списке выбора типа параметров в редакторе AdvLimit](masters-in-list-selection-type-parameters-in--adv-limit.html),<BR>
 [Функция импликации при задании ограничений](implication-in-limits.html),<BR>
 [Функции для работы с датой при задании ограничений](fw_date-time-funtions-in-limits.html) (пример использования [здесь](fw_date-limits-standart-view.html))<BR>
-[Сохранение ограничений на форме задания ограничения](fo_adv-limit-function-serialization.html)
+[Сохранение ограничений на форме задания ограничения](fo_limit-function-serialization.html)

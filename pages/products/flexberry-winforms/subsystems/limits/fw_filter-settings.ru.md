@@ -3,7 +3,7 @@ title: Настройки фильтров. FilterSettings.
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Ограничения
 toc: true
-permalink: ru/fw_FilterSettings.html
+permalink: ru/fw_filter-settings.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

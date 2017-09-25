@@ -23,14 +23,14 @@ ObjectListView - списковый контрол для win-приложени
 * События:
 ** [Событие установки/снятия галочки в ObjectListView](fw_event-installing-removing-a-check-in-objectlistview.html)
 ** [Перехват-событии-ObjectListView-создание-удаление-изменение-объекта-выполнение-деиствии.ashx|Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий ] 
-** [Событие ObjectListView.BeforeRefresh](object-list-view_Before-refresh.html)
+** [Событие ObjectListView.BeforeRefresh](fw_objectlistview-before-refresh.html)
 * Дизайн и функциональность
 ** [ObjectListView, основная функциональность в RunTime](fw_objectlistview-basic-functionality-in-run-time.html)
 ** [Настройка видимости колонок ObjectListView](fw_objectlistview-column-visibility-customization.html)
 ** [Как без использования генераторов кода сделать на форме список объектов данных](fw_make-a-list-of-data-objects-without-generators.html)
 ** [Настройка невидимых по умолчанию колонок](прикладные-системы_Настроика-невидимых-по-умолчанию-колонок-использование-атрибута--default-visible.html)
 ** [Задание отображения даты по умолчанию](Формат-отображения-даты-по-умолчанию.html)
-** [Отображение подсказки(tooltip) для отдельных записей в ObjectListView ](object-list-view-tool-tip.html)
+** [Отображение подсказки(tooltip) для отдельных записей в ObjectListView ](fw_objectlistview-tooltip.html)
 * Разное
 ** [Присвоение LimitFunction для второго ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
 ** [Удаление настроек пользователя в ObjectListView](fw_delete-columns-settings-objectlistview.html)

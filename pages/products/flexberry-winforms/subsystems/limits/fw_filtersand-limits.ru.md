@@ -21,7 +21,7 @@ lang: ru
 Подробнее о редакторе можно посмотреть в [этой статье](fw_limit-editor-simple-view.html)
 
 # Настройки фильтров (FilterSettings)
-Для задания [FilterSettings](filter-settings.html) необходимо воспользоваться [Flexberry Administrative Console (AdmConsole)]() или [Генератором настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html) (не все необходимые для генератора dll входят в стандартную поставку Flexberry).
+Для задания [FilterSettings](fw_filter-settings.html) необходимо воспользоваться [Flexberry Administrative Console (AdmConsole)]() или [Генератором настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html) (не все необходимые для генератора dll входят в стандартную поставку Flexberry).
 
 
 (((
@@ -40,12 +40,12 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 
 3. У объектов обязательно должно быть [T-представление](fd_t-view.html). 
 
-4. После того, как настройки фильтров будут сгенерированы, их необходимо подключить как указано [здесь](filter-settings.html).
+4. После того, как настройки фильтров будут сгенерированы, их необходимо подключить как указано [здесь](fw_filter-settings.html).
 </msg>
 )))
 
 
-[FilterSettings](filter-settings.html) определяют настройки для [детейлов](fd_key-concepts.html) и лукапов (например, без таких настроек при задании ограничений невозможно использовать [детейлы](fd_key-concepts.html)). 
+[FilterSettings](fw_filter-settings.html) определяют настройки для [детейлов](fd_key-concepts.html) и лукапов (например, без таких настроек при задании ограничений невозможно использовать [детейлы](fd_key-concepts.html)). 
 
 
 После задания FilterSettings в БД приложения, на которую была настроена [AdmConsole](), заполнятся следующие таблицы:
@@ -54,7 +54,7 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 * STORMFILTERDETAIL (содержит настройки для [детейлов](fd_key-concepts.html));
 
 (((
-<msg type=note>[AdmConsole]() адекватно [создаёт настройки автоматически](filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](set-runtime-dotnet-version.html) для [AdmConsole]().</msg>
+<msg type=note>[AdmConsole]() адекватно [создаёт настройки автоматически](fw_filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](set-runtime-dotnet-version.html) для [AdmConsole]().</msg>
 )))
 
 (((
@@ -62,7 +62,7 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 )))
 
 # Форма задания ограничений AdvLimit
-[AdvLimit](limitation-edit-form.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](filter-settings.html) и [здесь](fw_filter-example.html)).
+[AdvLimit](limitation-edit-form.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](fw_filter-settings.html) и [здесь](fw_filter-example.html)).
 
 # LimitFunction
 Через [свойство LimitFunction структуры LoadingCustomizationStruct](fo_loading-customization-struct.html) можно программно задавать ограничения (пример см. [здесь](filter-settings-for-use-in-lists.html) и [Ограничение-на-детеилы-из-кода|здесь]).

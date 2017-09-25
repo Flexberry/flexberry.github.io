@@ -16,7 +16,7 @@ lang: ru
 
 # Сценарии доработки
 
-* Добавление подсветки полей ([HighLighter](high-lighter.html))
+* Добавление подсветки полей ([HighLighter](fw_high-lighter.html))
 * Настройка [лукапов](fa_lookup-overview.html) и [детейлов](fo_detail-associations-properties.html)
 * Настройка стилей и кнопок списков ([Формы-списка-классы-со-стереотипом-listform.ashx?HL=listform#Дополнительно_редактируемые_свойства_и_что_как_генерируется_5|подробнее] см. раздел `ListFormOperations`)
 * Добавление [всплывающих подсказок](http://msdn.microsoft.com/ru-ru/library/system.windows.forms.tooltip.aspx)
