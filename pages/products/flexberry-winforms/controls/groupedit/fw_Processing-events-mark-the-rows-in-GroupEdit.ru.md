@@ -8,7 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-Как обработать check\uncheck в строках [GroupEdit](group-edit.html)
+Как обработать check\uncheck в строках [GroupEdit](fw_groupedit.html)
 1. [Получение-FlexGrid-из-GroupEdit|Получаем FlexGrid из GroupEdit]. 
  
 2. Подписываемся на событие  CellChanged:

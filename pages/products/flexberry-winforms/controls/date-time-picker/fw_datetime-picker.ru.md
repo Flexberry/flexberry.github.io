@@ -11,7 +11,7 @@ lang: ru
 (((Данная статья ещё редактируется)))
 
 # DateTimePicker
-Для того чтобы настроить корректное отображение даты необходимо создать свой [ControlProvider](control-provider-winforms.html) для даты.
+Для того чтобы настроить корректное отображение даты необходимо создать свой [ControlProvider](fw_control-provider-winforms.html) для даты.
 
 ```cs
 /// <summary>

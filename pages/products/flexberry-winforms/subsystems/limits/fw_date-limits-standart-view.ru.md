@@ -15,7 +15,7 @@ lang: ru
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/1.jpg)
 Если функция возвращает значение другого типа (например, "Целое"), то тип автоматически сменится. И если, там уже было значение того же типа, что и текущий, то оно сохранится, иначе будет сброшено.
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/2.jpg)
-Если выбрана [функция для дат](date-time-funtions-in-limits.html) и ее аргумент типа "Дата", то она будет применена и к аргументу.
+Если выбрана [функция для дат](fw_date-time-funtions-in-limits.html) и ее аргумент типа "Дата", то она будет применена и к аргументу.
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/3.jpg)
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/4.jpg)
 

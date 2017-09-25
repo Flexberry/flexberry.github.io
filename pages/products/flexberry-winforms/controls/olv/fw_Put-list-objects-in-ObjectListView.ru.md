@@ -8,7 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# Имеется список объектов, которые были созданы не из базы, а прямо в коде. Как этот список отобразить в [ObjectListView](object-list-view.html)?
+# Имеется список объектов, которые были созданы не из базы, а прямо в коде. Как этот список отобразить в [ObjectListView](fw_objectlistview.html)?
 
 # ObjectListView
 

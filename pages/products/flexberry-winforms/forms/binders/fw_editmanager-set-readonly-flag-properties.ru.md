@@ -8,14 +8,14 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 # Метод EditManager.SetReadonlyFlagProperties
-Метод `[EditManager](edit-manager.html).SetReadonlyFlagProperties` позволяет установить значение свойства `ReadOnly` у контролов, редактирующих поля, указанные в параметрах вызова данного метода.
+Метод `[EditManager](fw_editmanager.html).SetReadonlyFlagProperties` позволяет установить значение свойства `ReadOnly` у контролов, редактирующих поля, указанные в параметрах вызова данного метода.
 ```cs
 void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] properties)
 ```
 Параметр `readonlyflag` определяет значение, которое будет установлено свойству ReadOnly у контролов, редактирующих поля, указанные в `properties`.
 
 
-Пример использования данного метода представлен [здесь](different-applications-and-fields.html).
+Пример использования данного метода представлен [здесь](fw_different-applications-and-fields.html).
 # Метод AddControlsToForcedReadOnlyList
 
 ```cs

@@ -11,7 +11,7 @@ lang: ru
 # Общее внутреннее устройство формы
 ## AdvLimitComponent
 
-Программист видит AdvLimitComponent, который располагается на форме вместе со списковым контролом [ObjectListView](object-list-view.html). Этот компонент добавляет на тулбар ObjectListView кнопку, которая позволяет управлять накладываемыми ограничениями. Для иерархических списков AdvLimitComponent автоматически не генерируется, но его можно добавить вручную. Главным параметром AdvLimitComponent является списковый контрол, к которому будет привязан этот компонент.
+Программист видит AdvLimitComponent, который располагается на форме вместе со списковым контролом [ObjectListView](fw_objectlistview.html). Этот компонент добавляет на тулбар ObjectListView кнопку, которая позволяет управлять накладываемыми ограничениями. Для иерархических списков AdvLimitComponent автоматически не генерируется, но его можно добавить вручную. Главным параметром AdvLimitComponent является списковый контрол, к которому будет привязан этот компонент.
 
 ''тут подробнее будет рассказано о параметрах, методах и свойствах этого компонента''
 
@@ -57,12 +57,12 @@ lang: ru
 
 # Полезные ссылки
 
-[Ограничение на себя](self-limit.html), <BR>
-[Упрощенный вид редактора ограничений](limit-editor-simple-view.html), <BR>
-[Стандартный вид редактора ограничений](standart-view-limits-editor.html), <BR>
-[Наложение ограничений по столбцам в списках](nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html), <BR>
+[Ограничение на себя](fw_self-limit.html), <BR>
+[Упрощенный вид редактора ограничений](fw_limit-editor-simple-view.html), <BR>
+[Стандартный вид редактора ограничений](fw_standart-view-limits-editor.html), <BR>
+[Наложение ограничений по столбцам в списках](fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html), <BR>
 [Копирование / вставка ветки ограничений (сохранение и загрузка из файла))](copy--paste-branch--limitation-preservation-and-load-of-file.html), <BR>
 [Мастера в списке выбора типа параметров в редакторе AdvLimit](masters-in-list-selection-type-parameters-in--adv-limit.html),<BR>
 [Функция импликации при задании ограничений](implication-in-limits.html),<BR>
-[Функции для работы с датой при задании ограничений](date-time-funtions-in-limits.html) (пример использования [здесь](date-limits--standart-view.html))<BR>
+[Функции для работы с датой при задании ограничений](fw_date-time-funtions-in-limits.html) (пример использования [здесь](fw_date-limits-standart-view.html))<BR>
 [Сохранение ограничений на форме задания ограничения](fo_adv-limit-function-serialization.html)

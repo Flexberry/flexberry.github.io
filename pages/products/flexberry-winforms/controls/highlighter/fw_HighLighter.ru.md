@@ -14,7 +14,7 @@ lang: ru
 ### Объявление: 
 Для его работы, в проекте должна быть ссылка на сборку `ICSSoft.STORMNET.Windows.Forms.AdditionalControls`
 
-В [скобки программиста](programmer-brackets.html) `CustomMembers` поместить код:
+В [скобки программиста](fo_programmer-brackets.html) `CustomMembers` поместить код:
 ```cs
 // Объявление HighLighter'а HL
 ICSSoft.STORMNET.Windows.Forms.HighLighter HL;

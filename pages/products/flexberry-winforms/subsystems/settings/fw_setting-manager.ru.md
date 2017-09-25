@@ -61,4 +61,4 @@ SettingManager.SetSetting("SettingsTest", "Form Position&Size", string.Join(",",
 
 Сериализация объектов данных выполняется другим образом: [Агрегирующие-функции|Как «закрутить» объект данных в строку XML и восстановить обратно]
 
-'''Внимание: разработан новый [UserSettingsService](user-settings-service.html), призванный заменить `SettingManager`.'''
+'''Внимание: разработан новый [UserSettingsService](fa_user-settings-service.html), призванный заменить `SettingManager`.'''

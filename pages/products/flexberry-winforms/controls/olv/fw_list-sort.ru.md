@@ -12,7 +12,7 @@ lang: ru
 
 ## Windows, ObjectListView
 
-Настройка сортировки столбцов [ObjectListView](object-list-view.html) осуществляется путем указания типа сортировки у объекта
+Настройка сортировки столбцов [ObjectListView](fw_objectlistview.html) осуществляется путем указания типа сортировки у объекта
 `ICSSoft.STORMNET.Windows.Forms.ColumnInfo` свойства `.Columns`.
 
 Пример:

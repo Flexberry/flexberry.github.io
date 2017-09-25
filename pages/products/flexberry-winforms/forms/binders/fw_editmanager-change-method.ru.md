@@ -8,6 +8,6 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# [EditManager](edit-manager.html).Change()
+# [EditManager](fw_editmanager.html).Change()
 
 Метод без параметра, либо с одним параметром-строкой не вызовет AfterChangeProperties()

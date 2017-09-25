@@ -17,9 +17,9 @@ lang: ru
 Если с первым вариантом все более-менее понятно, то со вторым дела обстоят несколько сложнее:
 
 ## Алгоритм добавления LookUp'а
-# Добавить на форму [LookUp](look-up--overview.html) (контрол).
-# Создать еще один [EditManager](edit-manager.html).
-# Приписать [LookUp](look-up--overview.html) к созданному EditManager'у в методе `TuneLookupInformation`, а также добавить соответсвующую запись в метод `GetRunners()`.
+# Добавить на форму [LookUp](fa_lookup-overview.html) (контрол).
+# Создать еще один [EditManager](fw_editmanager.html).
+# Приписать [LookUp](fa_lookup-overview.html) к созданному EditManager'у в методе `TuneLookupInformation`, а также добавить соответсвующую запись в метод `GetRunners()`.
 # Добавить в конец пути контрола "(GroupEditBase)".
 
 (((<msg type=Important>

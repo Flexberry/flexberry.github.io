@@ -12,7 +12,7 @@ lang: ru
 <br>
 <table border="0" width="100%" bgcolor="#6495ED">
 <tbody><tr><td bgcolor="#FFFFFF">
-* '''Продукт''': [Flexberry Winforms](flexberry-winforms.html)
+* '''Продукт''': [Flexberry Winforms](fw_flexberry-winforms.html)
 * '''Предназначение''': <!--Краткое описание фичи.-->
 </td>
 </tr></tbody></table></a>

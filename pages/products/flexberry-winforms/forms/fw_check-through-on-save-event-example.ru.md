@@ -10,10 +10,10 @@ lang: ru
 
 (((Данная статья ещё редактируется)))
 
-Cуть проверки состоит в том, что событие `[OnSave](form-interaction.html)`/`[OnSaveEvent](form-interaction.html)` переопределяется и, если данные не удовлетворяют некоторым условиям, базовый метод вызван не будет.
+Cуть проверки состоит в том, что событие `[OnSave](fw_form-interaction.html)`/`[OnSaveEvent](fw_form-interaction.html)` переопределяется и, если данные не удовлетворяют некоторым условиям, базовый метод вызван не будет.
 
 
-`[OnSaveEvent](form-interaction.html)` зависимой формы:
+`[OnSaveEvent](fw_form-interaction.html)` зависимой формы:
 ```cs
 protected override void OnSaveEvent()
 {
@@ -35,7 +35,7 @@ protected override void OnSaveEvent()
 	}
 }
 ```
-`[OnSave](form-interaction.html)` независимой формы:
+`[OnSave](fw_form-interaction.html)` независимой формы:
 ```cs
 protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)
 {
@@ -57,7 +57,7 @@ protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)
 
 
 (((
-<msg type=important> Следует различать `OnSave()` и `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. Если говорить [упрощённо](form-interaction.html), то если закрытие формы осуществлялось по крестику и пользователь согласился сохранить объект, то будет вызван `OnSave()`, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)`, а если сохранение формы осуществлялось через тулбар, то сначала будет вызван `OnSaveEvent()` зависимой формы, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. 
+<msg type=important> Следует различать `OnSave()` и `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. Если говорить [упрощённо](fw_form-interaction.html), то если закрытие формы осуществлялось по крестику и пользователь согласился сохранить объект, то будет вызван `OnSave()`, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)`, а если сохранение формы осуществлялось через тулбар, то сначала будет вызван `OnSaveEvent()` зависимой формы, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. 
 </msg>
 )))
 
