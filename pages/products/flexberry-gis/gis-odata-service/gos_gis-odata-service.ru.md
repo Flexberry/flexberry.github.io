@@ -38,7 +38,7 @@ lang: ru
 ##### MSSQL сервер
 Поле в таблице для MSSQL сервера должна иметь тип `Geography`
 ##### PostgreSQL сервер
-Поле в таблице для PostgreSQL сервера должна иметь тип `Geometry`
+Поле в таблице для PostgreSQL сервера должна иметь тип `Geography`
 ##### .Net
 Тип свойства в классе наследуемом от  `DataObject` должен быть `Microsoft.Spatial.Geography`
 
