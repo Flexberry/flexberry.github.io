@@ -11,7 +11,7 @@ lang: ru
 (((Данная статья ещё редактируется)))
 
 # GEEmptyDetailRemover
-`GEEmptyDetailRemover` - расширение компонента `[GroupEdit](fw_groupedit.html)`, позволяющее организовать следующее поведение: удаление пустых строк из `[GroupEdit](fw_groupedit.html)` при сохранении (при наличии пустых строк в `[GroupEdit](fw_groupedit.html)` и сохранении может возникнуть сообщение о незаполненных полях (в этой пустой строке).).
+`GEEmptyDetailRemover` - расширение компонента `[GroupEdit](fw_group-edit.html)`, позволяющее организовать следующее поведение: удаление пустых строк из `[GroupEdit](fw_group-edit.html)` при сохранении (при наличии пустых строк в `[GroupEdit](fw_group-edit.html)` и сохранении может возникнуть сообщение о незаполненных полях (в этой пустой строке).).
 
 
 (((
@@ -29,7 +29,7 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 	//...
 }
 ```
-2. Указываем в конструкторе формы `[GroupEdit](fw_groupedit.html)`'ы, для которых надо удалять пустые строки:
+2. Указываем в конструкторе формы `[GroupEdit](fw_group-edit.html)`'ы, для которых надо удалять пустые строки:
 ```cs
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {

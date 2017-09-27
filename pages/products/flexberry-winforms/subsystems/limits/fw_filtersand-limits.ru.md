@@ -21,7 +21,7 @@ lang: ru
 Подробнее о редакторе можно посмотреть в [этой статье](fw_limit-editor-simple-view.html)
 
 # Настройки фильтров (FilterSettings)
-Для задания [FilterSettings](fw_filter-settings.html) необходимо воспользоваться [Flexberry Administrative Console (AdmConsole)]() или [Генератором настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html) (не все необходимые для генератора dll входят в стандартную поставку Flexberry).
+Для задания [FilterSettings](fw_filter-settings.html) необходимо воспользоваться Flexberry Administrative Console (AdmConsole) или [Генератором настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html) (не все необходимые для генератора dll входят в стандартную поставку Flexberry).
 
 
 (((
@@ -48,13 +48,13 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 [FilterSettings](fw_filter-settings.html) определяют настройки для [детейлов](fd_key-concepts.html) и лукапов (например, без таких настроек при задании ограничений невозможно использовать [детейлы](fd_key-concepts.html)). 
 
 
-После задания FilterSettings в БД приложения, на которую была настроена [AdmConsole](), заполнятся следующие таблицы:
+После задания FilterSettings в БД приложения, на которую была настроена AdmConsole, заполнятся следующие таблицы:
 * STORMFILTERSETTING (содержит названия настроек фильтров и названия объектов, к которым будут применены данные настройки);
 * STORMFILTERLOOKUP (содержит настройки для лукапов); 
 * STORMFILTERDETAIL (содержит настройки для [детейлов](fd_key-concepts.html));
 
 (((
-<msg type=note>[AdmConsole]() адекватно [создаёт настройки автоматически](fw_filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](set-runtime-dotnet-version.html) для [AdmConsole]().</msg>
+<msg type=note>AdmConsole адекватно [создаёт настройки автоматически](fw_filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](set-runtime-dotnet-version.html) для AdmConsole.</msg>
 )))
 
 (((

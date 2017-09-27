@@ -41,7 +41,8 @@ lang: ru
 
 Для того, чтобы выполнить настройку контрола, который встраивается в ячейку GroupEdit, нужно использовать событие `gr_SetupEditorEventHandler`, обработчик которого автоматически генерируется на формах редактирования. В аргументы данного события передаются и объект данных, контрол и имя редактируемого в данный момент свойства.
 Пример:
-```cs
+
+```csharp
 protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e)
 {
     // *** Start programmer edit section *** (gr_SetupEditorEventHandler( object sender, ICSSoft.STORMNET.Windows.Forms.SetupEditorEventArgs e ))
@@ -66,24 +67,24 @@ protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMN
 
 Как и [ObjectListView](fw_objectlistview.html) `GroupEdit` позволяет отсортировать содержимое по различным столбцам. Чтобы быстро настроить многоуровневую сортировку, можно щелкать по столбцам левой кнопокой мыши, зажав клавишу &lt;Ctrl&gt;
 
-Чтобы многоуровневая сортировка не сбросилась при случайном нажатии на столбец, в версиях Flexberry после 2013.11.14 добавлен уточняющий вопрос о смене сортировки.
+Чтобы многоуровневая сортировка не сбросилась при случайном нажатии на столбец добавлен уточняющий вопрос о смене сортировки.
 
 ### Именованые настройки отображения столбцов
 
-В версиях Flexberry после 2013.11.14 добавлена возможность сохранения именованых настроек отображения столбцов по аналогии с [ObjectListView](fw_objectlistview.html). Настройки сохраняются в базе данных отдельно для каждого пользователя.
+Существует возможность сохранения именованых настроек отображения столбцов по аналогии с [ObjectListView](fw_objectlistview.html). Настройки сохраняются в базе данных отдельно для каждого пользователя.
 
-(((<msg type=note>Данная опция работает только при включенной настройке `UseSettings = true` в файле конфигурации.</msg>)))
+{% include note.html content="Данная опция работает только при включенной настройке `UseSettings = true` в файле конфигурации." %}
 
 ### Прорисовка границ ячеек
 
 Сделать рамки в `GroupEdit` можно, используя следующий код:
 
-```
-
+```csharp
 C1FlexGrid ge = GetGridFromGE(Лапа);
 ge.Styles.Normal.Border.Direction = BorderDirEnum.Both;
 ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
 ```
+
 `GroupEdit` с прорисованными границами будет выглядеть следующим образом:
 
 ![](/images/pages/products/flexberry-winforms/controls/groupedit/groupedit-explain.png)
@@ -94,21 +95,17 @@ ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
 
 К примеру, если необходимо отловить событие возврата значения при выборе мастера, то необходимо подписаться на событие `AfterChangeProperty` EditManager'a, относящегося к GroupEdit'у, а не к странице редактирования:
 
-```
-
+```csharp
 GroupEdit1.EditManager.AfterChangeProperty += (o, s) => 
 {
     // Обработчики
 };
 ```
 
-(((<msg type=Important>Стоит учесть, что событие `AfterChangeProperty` при выборе мастера сработает __дважды__: 1ый раз при нажатии на кнопку [лукапа](fa_lookup-overview.html), а 2ой раз при возврате значения.</msg>)))
+{% include note.html content="Стоит учесть, что событие `AfterChangeProperty` при выборе мастера сработает __дважды__: 1ый раз при нажатии на кнопку [лукапа](fa_lookup-overview.html), а 2ой раз при возврате значения." %}
 
 
-
-## Версии
-
-В версии Flexberry после 27.09.2013 в `GroupEdit` добавлена полоса состояния, отображающая количество элементов.
+В `GroupEdit` добавлена полоса состояния, отображающая количество элементов.
 
 Чтобы включить отображение полосы состояния, необходимо установить свойство `ShowStatusBar = true;`
 
@@ -116,17 +113,17 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 ## Полезные ссылки по GroupEdit
 
 * Некоторые часто задаваемые вопросы освящены в статье [FAQ по вводному обучению](initial-trainig-f-a-q.html), а также в статье [WinForms UI FAQ](fw_winforms-ui-faq.html).
-* [Обработка-нажатии-клавиш-контролами-в-GE|Обработка нажатий клавиш контролами в GE] и [Переход по Enter в `GroupEdit`](прикладные-системы_Переход-по--enter-в--group-edit.html).
+* [Обработка нажатий клавиш контролами в GE](fw_processing-keystrokes-of-ge.html).
 * [Отображение мастера в `GroupEdit`](fw_displaying-master-in-groupedit.html).
 * [Блокировка редактирования отдельных записей в `GroupEdit`](fw_lock-rows-in-groupedit.html).
-* [Настроика-ToolBar-в-GroupEdit-настроика-вертикального-размера|Настройка `ToolBar` в `GroupEdit` (настройка вертикального размера)].
-* [Установка формата даты](Установка-формата-даты.html).
+* [Настройка `ToolBar` в `GroupEdit` (настройка вертикального размера)](fw_setting-toolbar-in-groupedit.html).
+* Установка формата даты [в режиме редактирования](fw_groupedit-date-format-edit.html) и  [в режиме отображения](fw_groupedit-date-format-view.html).
 * [Получение FlexGrid из GroupEdit](fw_flex-grid.html).
 * Обработка событий:
 ** [Обработка события отметки строк в `GroupEdit`](fw_processing-events-mark-the-rows-in-groupedit.html).
-** [События-добавления-и-удаления-в-GroupEditBase|События добавления и удаления в `GroupEdit`].
-* [Ограничение-тип-лукапа-combo-в-GroupEdit|Ограничение на тип лукапа «combo» в `GroupEdit`].
-* [Функциональность-при-работе-с-массивами-детеиловых-объектов-DetailArray|Функциональность при работе с массивами детейловых объектов (DetailArray)].
+** [События добавления и удаления в `GroupEdit`](fw_addition-and-removal-events-in-groupedit.html).
+* [Ограничение-тип-лукапа-combo-в-GroupEdit](fw_restriction-type-lookup-combo-in-groupedit.html).
+* [Функциональность при работе с массивами детеиловых объектов DetailArray](fo_functionality-work-detail-array.html).
 * [Наложение ограничений на GroupEdit](fw_add-limit-to-groupedit.html).
 
 
@@ -134,4 +131,3 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 Для `GroupEdit` существует ряд расширений, например:
 * [GEEditorExt](fw_ge-editor-ext.html) (редактирование детейлов в отдельном окне).
 * [GEEmptyDetailRemover](fw_ge-empty-detail-remover.html) (удаление пустых строк).
-----* [Переход по Enter в GroupEdit](прикладные-системы_Переход-по--enter-в--group-edit.html)

@@ -8,14 +8,13 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-При необходимости отображения в ячейке `[GroupEdit](fw_groupedit.html)` «презентационного» атрибута мастера (т.е. некоторого выражения из атрибутов мастера) можно воспользоваться одним из описанных ниже решений.
+При необходимости отображения в ячейке `[GroupEdit](fw_group-edit.html)` «презентационного» атрибута мастера (т.е. некоторого выражения из атрибутов мастера) можно воспользоваться одним из описанных ниже решений.
  
-# Переопределить метод `ToString()` у объекта данных. Особенность данного решения в том, что переопределение повлияет всюду, где используется метод `ToString()`.
+1. Переопределить метод `ToString()` у объекта данных. Особенность данного решения в том, что переопределение повлияет всюду, где используется метод `ToString()`.
 
-# Реализовать у контрола, который связан со столбцом GroupEdit, интерфейс `IValueDisplayResponsible`. Единственный метод  `GetDisplayValue` данного интерфейса должен вернуть отображаемое в ячейке значение. У [GroupEdit](fw_groupedit.html) установить свойство `EnableValueDisplayResponsibility` в `true`.
+2. Реализовать у контрола, который связан со столбцом GroupEdit, интерфейс `IValueDisplayResponsible`. Единственный метод  `GetDisplayValue` данного интерфейса должен вернуть отображаемое в ячейке значение. У [GroupEdit](fw_group-edit.html) установить свойство `EnableValueDisplayResponsibility` в `true`.
 
-
-```cs
+```csharp
 #region IValueDisplayResponsible Members
 
 public string GetDisplayValue(ICSSoft.STORMNET.DataObject dataObject)

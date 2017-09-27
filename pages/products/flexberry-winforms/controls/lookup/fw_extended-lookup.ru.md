@@ -13,7 +13,7 @@ lang: ru
 # ExtendedLookUp в качестве лукапа
 Как установить `ExtendedLookUp` в качестве лукапа описано в статье [Произвольный контрол в качестве лукапа](fo_custom-lookup.html). 
 
-Если необходимо установить `ExtendedLookUp` в качестве лукапа в [GroupEdit](fw_groupedit.html), то у соответствующего [GroupEdit](fw_groupedit.html) необходимо [установить свойство `EnableValueDisplayResponsibility` в `true`](fw_displaying-master-in-groupedit.html).
+Если необходимо установить `ExtendedLookUp` в качестве лукапа в [GroupEdit](fw_group-edit.html), то у соответствующего [GroupEdit](fw_group-edit.html) необходимо [установить свойство `EnableValueDisplayResponsibility` в `true`](fw_displaying-master-in-groupedit.html).
 
 # События
 Событие `ValueSelected` срабатывает при нажатии Enter и закрытии списка.

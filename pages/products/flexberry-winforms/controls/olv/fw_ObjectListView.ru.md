@@ -3,7 +3,7 @@ title: ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
 toc: true
-permalink: ru/fw_ObjectListView.html
+permalink: ru/fw_objectlistview.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
@@ -19,7 +19,6 @@ ObjectListView - списковый контрол для win-приложени
 ** [Обновление объекта в ObjectListView](fw_updating-object-in-olv.html)
 ** [Получение информации об удачности загрузки ОbjectListView](fw_after-fill-data-event-args.html)
 ** [Оптимизация чтения данных ObjectListView](fw_objectlistview-optimization.html)
-** [Загрузка списка из нескольких источников данных](прикладные-системы_Загрузка-списка-из-нескольких-источников.html)
 * События:
 ** [Событие установки/снятия галочки в ObjectListView](fw_event-installing-removing-a-check-in-objectlistview.html)
 ** [Перехват-событии-ObjectListView-создание-удаление-изменение-объекта-выполнение-деиствии.ashx|Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий ] 
@@ -46,12 +45,6 @@ ObjectListView - списковый контрол для win-приложени
 # Сообщение о продолжении загрузки при нехватке ресурсов
 Сообщение с вопросом о продолжении загрузки возникает при исчерпании физической памяти, выделенной приложению, т.к. выделение памяти в файле подкачки требует значительных временных затрат.
 
-
-
 ![](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg)
 
-
-
 Для включения данной функции необходимо присвоить свойству ''MemoryTimeLoadLimit'' любое положительное значение.
-----* [Загрузка списка из нескольких источников данных](прикладные-системы_Загрузка-списка-из-нескольких-источников.html)
-* [Настройка невидимых по умолчанию колонок](прикладные-системы_Настроика-невидимых-по-умолчанию-колонок-использование-атрибута--default-visible.html)

@@ -11,7 +11,7 @@ lang: ru
 # FlexGrid
 [FlexGrid](http://www.componentone.com/SuperProducts/FlexGridWinForms/) - простой в использовании контрол-таблица от компании ComponentOne. Позволяет отображать, редактировать, форматировать, организовывать и печатать данные в виде таблицы.
 
-Контрол используется в [GroupEdit](fw_groupedit.html), [ObjectListView](fw_objectlistview.html), а также в [Статиторе](statitor.html).
+Контрол используется в [GroupEdit](fw_group-edit.html), [ObjectListView](fw_objectlistview.html), а также в Статиторе.
 
 
 # Документация
