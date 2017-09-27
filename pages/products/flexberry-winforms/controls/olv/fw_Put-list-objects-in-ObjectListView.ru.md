@@ -37,7 +37,8 @@ lang: ru
 ```
 objectListView1.DataObjectTypes = new[] { typeof(Адрес) };
 objectListView1.ViewName = "АдресL";```
-(((<msg type=Important>Несмотря на то, что данные не обязательно должны находиться в базе, представления у класса, отвечающего за эти данные '''должно быть'''</msg>)))
+
+{% include important.html content=">Несмотря на то, что данные не обязательно должны находиться в базе, представления у класса, отвечающего за эти данные '''должно быть'''" %}
 
 
 ## Блокировка подгрузки данных из базы
@@ -47,7 +48,7 @@ objectListView1.ViewName = "АдресL";```
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 objectListView1.LimitFunction = langdef.GetFunction(langdef.funcSQL, "1 = 2");```
 
-(((<msg type=note>В качестве функции-блокироватора можно использовать все что угодно, на ваш вкус и фантазию.</msg>)))
+{% include note.html content="В качестве функции-блокироватора можно использовать все что угодно, на ваш вкус и фантазию." %}
 
 ## Непосредственно добавление объектов в список
 Чтобы добавить объекты в список достаточно вызвать метод `SetObjects` у OLV'a:

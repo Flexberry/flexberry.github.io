@@ -14,14 +14,13 @@ lang: ru
 `GEEmptyDetailRemover` - расширение компонента `[GroupEdit](fw_group-edit.html)`, позволяющее организовать следующее поведение: удаление пустых строк из `[GroupEdit](fw_group-edit.html)` при сохранении (при наличии пустых строк в `[GroupEdit](fw_group-edit.html)` и сохранении может возникнуть сообщение о незаполненных полях (в этой пустой строке).).
 
 
-(((
-<msg type=important>
-`GEEmptyDetailRemover` не входит в стандартную поставку Flexberry.</msg>
-)))
+
+{% include important.html content="`GEEmptyDetailRemover` не входит в стандартную поставку Flexberry." %}
 
 
 # Как подключить GEEmptyDetailRemover
 1. В зависимой форме класса определяем объект класса GEEmptyDetailRemover:
+
 ```cs
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
@@ -29,7 +28,9 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 	//...
 }
 ```
+
 2. Указываем в конструкторе формы `[GroupEdit](fw_group-edit.html)`'ы, для которых надо удалять пустые строки:
+
 ```cs
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
@@ -50,7 +51,9 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 	//...
 }
 ```
+
 3. В независимой форме в методе `[OnSave](fw_form-interaction.html)` вызываем функцию удаления пустых детейлов:
+
 ```cs
 public class C__ПокупательE : ICSSoft.STORMNET.UI.BaseIndpdEdit
 { 

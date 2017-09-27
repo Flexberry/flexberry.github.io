@@ -91,7 +91,7 @@ ge.Styles.Normal.Border.Style = BorderStyleEnum.Flat;
 
 ### EditManager
 
-Обычно `GroupEdit` располагается на [форме редактирования](fd_editform.html), имеющей свой `[EditManager](fw_editmanager.html)`. Однако, у `GroupEdit'а` есть __свой `EditManager`__, отвечающий за связывание и события.
+Обычно `GroupEdit` располагается на [форме редактирования](fd_editform.html), имеющей свой [`EditManager`](fw_editmanager.html). Однако, у `GroupEdit'а` есть __свой `EditManager`__, отвечающий за связывание и события.
 
 К примеру, если необходимо отловить событие возврата значения при выборе мастера, то необходимо подписаться на событие `AfterChangeProperty` EditManager'a, относящегося к GroupEdit'у, а не к странице редактирования:
 
@@ -120,8 +120,8 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 * Установка формата даты [в режиме редактирования](fw_groupedit-date-format-edit.html) и  [в режиме отображения](fw_groupedit-date-format-view.html).
 * [Получение FlexGrid из GroupEdit](fw_flex-grid.html).
 * Обработка событий:
-** [Обработка события отметки строк в `GroupEdit`](fw_processing-events-mark-the-rows-in-groupedit.html).
-** [События добавления и удаления в `GroupEdit`](fw_addition-and-removal-events-in-groupedit.html).
+    * [Обработка события отметки строк в `GroupEdit`](fw_processing-events-mark-the-rows-in-groupedit.html).
+    * [События добавления и удаления в `GroupEdit`](fw_addition-and-removal-events-in-groupedit.html).
 * [Ограничение-тип-лукапа-combo-в-GroupEdit](fw_restriction-type-lookup-combo-in-groupedit.html).
 * [Функциональность при работе с массивами детеиловых объектов DetailArray](fo_functionality-work-detail-array.html).
 * [Наложение ограничений на GroupEdit](fw_add-limit-to-groupedit.html).

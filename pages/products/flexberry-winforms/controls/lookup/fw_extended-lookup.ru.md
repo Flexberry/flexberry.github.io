@@ -29,10 +29,4 @@ ctrlКлиент.AutoCompleteBox.OrderColumns = new ColumnsSortDef[] {new Column
 ```
 
 
-(((
-<msg type=note>В настоящее время задание `AutoCompleteBox.OrderColumns` возможно только в программном коде.</msg>
-)))
-
- 
-
-----
+{% include note.html content="В настоящее время задание `AutoCompleteBox.OrderColumns` возможно только в программном коде." %}

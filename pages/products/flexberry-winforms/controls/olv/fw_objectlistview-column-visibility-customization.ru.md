@@ -43,13 +43,7 @@ public class WinformC__ПользовательПриложенияL : ICSSoft.S
 ```
 
 
-(((
-<msg type=note>Специфика работы с массивом `ObjectListView.View.Properties` объясняется тем, что `PropertyInView` - это [не класс, а структура](http://generally.wordpress.com/2007/06/21/c-list-of-struct/).</msg>
-)))
+{% include note.html content="Специфика работы с массивом `ObjectListView.View.Properties` объясняется тем, что `PropertyInView` - это [не класс, а структура](http://generally.wordpress.com/2007/06/21/c-list-of-struct/)." %}
 
 
-(((
-<msg type=important>Обратите внимание, что настройка видимости колонки происходит в конструкторе формы.</msg>
-)))
-
-----* [Настройка невидимых по умолчанию колонок (использование атрибута DefaultVisible)](прикладные-системы_Настроика-невидимых-по-умолчанию-колонок-использование-атрибута--default-visible.html).
+{% include important.html content="Обратите внимание, что настройка видимости колонки происходит в конструкторе формы." %}

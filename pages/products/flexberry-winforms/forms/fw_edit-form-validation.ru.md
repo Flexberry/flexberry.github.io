@@ -26,7 +26,7 @@ lang: ru
 * Проверки [во время сохранения](fw_check-form-field-during-save.html) объекта.
 * Проверки в [бизнес-сервере](BSExample.html).
 
-<msg type=note head=Примечание>Чтобы сгенерировать код формы редактирования (или списка), необходимо в свойствах класса со [стереотипом EditForm](fd_editform.html)) установить флажок `GenerateDependedForm`.</msg>
+{% include note.html content="Чтобы сгенерировать код формы редактирования (или списка), необходимо в свойствах класса со [стереотипом EditForm](fd_editform.html)) установить флажок `GenerateDependedForm`." %}
 
 | Приём | Преимущества | Недостатки|
 |--|--|--|

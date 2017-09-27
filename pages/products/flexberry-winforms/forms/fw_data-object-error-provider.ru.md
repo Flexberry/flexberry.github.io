@@ -16,8 +16,5 @@ lang: ru
 
 Комментарии по подсветке полей с помощью `DataObjectErrorProvider` представлены в статье [Подсветка ошибочных полей](прикладные-системы_Подсветка-ошибочных-полеи.html).
 
-(((
-<msg type=important>
-`DataObjectErrorProvider` не входит в стандартную поставку Flexberry.</msg>
-)))
-----* [Подсветка ошибочных полей](прикладные-системы_Подсветка-ошибочных-полеи.html)
+{% include important.html content="
+`DataObjectErrorProvider` не входит в стандартную поставку Flexberry." %}

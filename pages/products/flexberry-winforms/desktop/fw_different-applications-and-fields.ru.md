@@ -77,8 +77,4 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
 }
 ```
 
-
-(((
-<msg type=note>Вызов `base.Edit(...)` должен предшествовать определению полей, доступных на редактирование.</msg>
-)))
-----
+{% include note.html content="Вызов `base.Edit(...)` должен предшествовать определению полей, доступных на редактирование." %}
