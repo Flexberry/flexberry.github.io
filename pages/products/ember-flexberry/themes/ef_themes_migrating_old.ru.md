@@ -23,10 +23,6 @@ summary: Описание перехода на новые темы оформл
 
    и установить компилятор less командой `npm install --save-dev ember-cli-less`
 
-5. В ../index.js добавить строчку
-
-   `app.import('bower_components/semantic-ui/dist/semantic.js');`
-
 5. В ../ember-cli-build.js добавить строчки
 
 ```
@@ -45,9 +41,9 @@ summary: Описание перехода на новые темы оформл
     },  
 ```
 
-6. Закинуть папку с темой, например blueSky, в `addon/styles/themes`, и прописать в `theme.config` для необходимых элементов название blueSky
+6. В `theme.config` прописать для необходимых элементов название blueSky. Посмотреть пример можно здесь:
 
-Впринципе стили темы blueSky должны примениться, но пока что без необходимой разметки, шрифтов и скриптов под эту тему.
+<https://github.com/Flexberry/ember-flexberry/blob/develop/theme.config>
 
 В основном разметка изменилась на главной странице, поэтому нам нужно поправить файл `/test/dummy/app/templates/application.hbs`
 он должен выглядеть вот так:
@@ -109,11 +105,11 @@ summary: Описание перехода на новые темы оформл
 
 Дополнение:
 
-*	В шаблонах списковых форм заменить <div class="ui {{state}} row form"> на <div class="row">
+*	В шаблонах списковых форм заменить `<div class="ui {{state}} row form">` на `<div class="row">`
 *	Во всех файлах заменить `hidden-menu` на `hidden`.
 *	В controllers/application.js заменить `.sidebar.icon.text-menu-1` на `.sidebar.icon.text-menu-show`, `.sidebar.icon.text-menu-2` на .`sidebar.icon.text-menu-hide`.
 *	В templates/application.hbs сделать замены как в предыдущем пункте. Затем добавить в блок `<div id="example" class="pusher">` - `<div class="ui form {{objectlistviewEventsService.loadingState}}">` <https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/templates/application.hbs#L38>
 *	В theme.config сделать как в <https://github.com/Flexberry/ember-flexberry/blob/03751c63e852ed2fde8c7519022a17cbc9d284d1/theme.config#L21> с 21 по 73 строку
 *	В controllers/application.js – вставить action toggleSidebarMobile и сервис objectlistview-events, также изменить toggleSidebar. (изменения для controllers/application.js  - <https://github.com/Flexberry/ember-flexberry-security/commit/ebfd645c00834dba426b97c00bf0cd6eb25e5807#diff-b02194543e6fcf5c7caff7b1a2f3d0f4>;
-*	В templates/application.hbs – вынести компонент ui-sidebar в начало страницы, чтобы он был вне блоков с контентом (по умолчанию нужно перенести выше блока с классом ‘bgw¬ fix’),  под блоком с классом 'pusher', создать блок с классом ‘ui main container’ и перенести в него {{outlet "modal"}}. (изменения для templates/application.hbs  - <https://github.com/Flexberry/ember-flexberry-security/commit/ebfd645c00834dba426b97c00bf0cd6eb25e5807#diff-33efff51085b97215b246f6fcfd9e0fe>;
+*	В templates/application.hbs – вынести компонент ui-sidebar в начало страницы, чтобы он был вне блоков с контентом (по умолчанию нужно перенести выше блока с классом `bgw-fix`),  под блоком с классом `pusher`, создать блок с классом `ui main container` и перенести в него `{% raw %}{{outlet "modal"}}{% endraw %}`. (изменения для templates/application.hbs - <https://github.com/Flexberry/ember-flexberry-security/commit/ebfd645c00834dba426b97c00bf0cd6eb25e5807#diff-33efff51085b97215b246f6fcfd9e0fe>;
 *	Если используется мобильный шаблон application.hbs, то для него нужно проделать действия из предыдущего пункта для ui-sidebar, а также заменить action toggleSidebar на toggleSidebarMobile;
