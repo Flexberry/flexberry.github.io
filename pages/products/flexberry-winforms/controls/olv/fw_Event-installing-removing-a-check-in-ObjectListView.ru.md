@@ -9,6 +9,7 @@ lang: ru
 ---
 
 Отследить изменение состояния галочки у `ObjectListView` возможно с помощью события `MarkObjectChanged`. В качестве аргумента события передается `DataObjectDef` объекта и состояние галочки.
-```
+
+```csharp
 public event MarkObjectChangedEventHandler MarkObjectChanged;
 ```

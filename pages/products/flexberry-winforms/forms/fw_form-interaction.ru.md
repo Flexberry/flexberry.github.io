@@ -89,15 +89,18 @@ lang: ru
 Чтобы вызвать списковую форму, в которой редактируется объект, можно использовать метод OnEdit, а получать обработанный объект в методе Edited.
 
 Для того, чтобы поднять модальную форму можно делать, например, следующим образом:
-```
+
+```csharp
 (form as ICSSoft.STORMNET.UI.BaseIndpdList).SaveEvent += new ICSSoft.STORMNET.UI.SaveEventArgsHandler(OnReturnFromList);
 (form as ICSSoft.STORMNET.UI.BaseIndpdList).Edit(dobj, "", LookUpProp, lf);
 DPD_frm = (System.Windows.Forms.Form) (form as ICSSoft.STORMNET.UI.BaseIndpdList).EditInitiator;
 DPD_frm.Hide();
 DPD_frm.ShowDialog(); 
 ```
+
 Хотя, с точки зрения технологии, правильнее будет вызывать форму на OnEdit, а в зависимой форме (той формы, которую хотим поднять), переопределить базовыйметод Edit, который выглядит так: 
-```
+
+```csharp
 /// <summary>
 /// Начать редактирование свойства объекта данных (фактически вызов на лукап)
 /// </summary>
@@ -113,6 +116,7 @@ if( tag is ICSSoft.STORMNET.FunctionalLanguage.Function && tag != null )
 {objListView.LimitFunction = ( ICSSoft.STORMNET.FunctionalLanguage.Function )tag;}this.Show();
 return;}
 ```
+
 Например, вместо this.Show(); можно написать this.ShowDialog(); 
 
 # См. также

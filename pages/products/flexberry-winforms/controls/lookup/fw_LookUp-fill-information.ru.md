@@ -12,7 +12,7 @@ lang: ru
 
 Переопределяем метод '''Edited''':
 
-```
+```csharp
 public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)
 		{
 			base.Edited (dataobject, contpath, propertyname);
@@ -45,4 +45,5 @@ public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contp
 				}
 				else extTextControl1.Text = "";
 			}	
-		}```
+		}
+```

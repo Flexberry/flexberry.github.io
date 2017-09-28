@@ -8,7 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-```cs	
+```csharp	
 public class CustomControlProvider:ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider 
 	{
 	   public override ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct GetControl(string ApplicationType, Type type, ICSSoft.STORMNET.View view, string propertyName, object initControl)

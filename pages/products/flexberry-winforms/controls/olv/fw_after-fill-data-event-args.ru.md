@@ -10,7 +10,8 @@ lang: ru
 
 В обработчике события `ОbjectListView.AfterFillData` появилась возможность получить информацию об успешности загрузки. В качестве параметра события вместо типа `EventArgs` передается его наследник `AfterFillDataEventArgs`.
 Тип `AfterFillDataEventArgs` имеет три свойства:
-```cs
+
+```csharp
         /// <summary>
         /// Исключение, произошедшее во время загрузки
         /// </summary>
@@ -24,8 +25,10 @@ lang: ru
         /// </summary>
         public bool IsFillSuccessfullyCompleted { get; private set; }
 ```
+
 Пример:
-```cs
+
+```csharp
         private void objectListView1_AfterFillData(object sender, EventArgs e)
         {
             if (e is AfterFillDataEventArgs)
@@ -37,6 +40,7 @@ lang: ru
             }
         }
 ```
+
 Работы выполнены в рамках задания Flexberry '''2085'''.
 
  

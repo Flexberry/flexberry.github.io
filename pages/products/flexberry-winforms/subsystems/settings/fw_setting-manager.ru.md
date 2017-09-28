@@ -16,9 +16,11 @@ lang: ru
 
 
 Для того, чтобы включить подсистему настроек, необходимо установить статическое свойство `ICSSoft.STORMNET.Settings.SettingManager.UseSettings` в `true`. Также, можно это сделать в `config`-файле приложения, для чего необходимо добавить строку:
+
 ```xml
 <add key="UseSettings" value="True"/>	
 ```
+
 ## Сохранение собственных настроек
 Сохранение настроек выполняется функцией `SetSettings`, чтение настроек функцией `GetSetting`.
 
@@ -32,8 +34,7 @@ lang: ru
 
 Пример (сохранение позиции и размера формы):
 
-```
-
+```csharp
 SettingManager.SetSetting("SettingsTest", "Form Position&Size", string.Join(",", new string[]{
 					this.Left.ToString(),
 					this.Top.ToString(),
@@ -44,8 +45,7 @@ SettingManager.SetSetting("SettingsTest", "Form Position&Size", string.Join(",",
 
 Пример (чтение позиции и размера формы):
 
-```
-
+```csharp
 	string setting = SettingManager.GetSetting("SettingsTest", "Form Position&Size");
 	if (setting!=null)
 	{

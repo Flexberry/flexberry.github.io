@@ -14,7 +14,7 @@ lang: ru
 * привязать DataObjectErrorProvider к EditManager (к которому привязаны проверяемые поля)(DataObjectErrorProvider.EditManagerForBind)
 * задать проверяемые поля в DataObjectErrorProvider.Properties
 
-```cs
+```csharp
 // 
 // dataObjectErrorProvider1
 // 
@@ -30,7 +30,7 @@ this.dataObjectErrorProvider1.Properties = new string[] {
 * связать DataObjectErrorProvider с объектом данных. Вызвать dataObjectErrorProvider1.BindToData(); в методе Edit
 * для того чтобы отобразить ошибку для поля объекта (таракан), можно воспользоваться BindToData() или SetError() для определенного поля
 
-```
+```csharp
 if (obj #  null || obj.ToString()  "")
     dataObjectErrorProvider1.SetError(property, EditManager.NotNullToolTip);
 else
@@ -39,8 +39,7 @@ else
 
 * добавления полей в сообщение о не заполненности обязательных полей при сохранении. В независимой форме редактирования в методе OnSave() написать:
 
-```
-
+```csharp
 System.Collections.ArrayList arl = new System.Collections.ArrayList();//массив, куда попадут заголовки, из указанного представления, незаполненные полей
 arl.AddRange(obj.CheckNotNullProperties(m_objView, true));//обязательные поля объекта (отмеченных в классе атрибутом NotNull)          
 string[] s1 = form.dataObjectErrorProvider1.GetNullProperties();//обязательные поля, указанные в dataObjectErrorProvider1

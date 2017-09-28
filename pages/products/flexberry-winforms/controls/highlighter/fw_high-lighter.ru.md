@@ -15,12 +15,15 @@ lang: ru
 Для его работы, в проекте должна быть ссылка на сборку `ICSSoft.STORMNET.Windows.Forms.AdditionalControls`
 
 В [скобки программиста](fo_programmer-brackets.html) `CustomMembers` поместить код:
-```cs
+
+```csharp
 // Объявление HighLighter'а HL
 ICSSoft.STORMNET.Windows.Forms.HighLighter HL;
 ```
+
 В конструкторе зависимой формы:
-```cs  
+
+```csharp  
 // Создание объекта                            
 HL = new ICSSoft.STORMNET.Windows.Forms.HighLighter(this);
 
@@ -29,7 +32,8 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
 ```
 
 В конструкторе независимой формы:
-```cs  
+
+```csharp  
 // Создание объекта                            
 HL = new ICSSoft.STORMNET.Windows.Forms.HighLighter(form);
 
@@ -46,8 +50,7 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
 
 Пример
 
-```
-
+```csharp
  [AccessType(ICSSoft.STORMNET.AccessType.none)]
  public class TestStandWinformsDesktop : ICSSoft.STORMNET.Windows.Forms.Desktop
     {

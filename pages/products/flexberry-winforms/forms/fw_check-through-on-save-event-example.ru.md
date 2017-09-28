@@ -14,7 +14,8 @@ Cуть проверки состоит в том, что событие `[OnSav
 
 
 `[OnSaveEvent](fw_form-interaction.html)` зависимой формы:
-```cs
+
+```csharp
 protected override void OnSaveEvent()
 {
 	ОбъектыДанных.ЗаявНаВыплату vЗаяв = (ОбъектыДанных.ЗаявНаВыплату) EditManager.DataObject;
@@ -35,8 +36,10 @@ protected override void OnSaveEvent()
 	}
 }
 ```
+
 `[OnSave](fw_form-interaction.html)` независимой формы:
-```cs
+
+```csharp
 protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)
 {
 	BS.BFСправочникиBS BS = new ICSSoft.Соцзащита.BS.BFСправочникиBS();
@@ -54,8 +57,6 @@ protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)
 	base.OnSave(e); //вызов базового метода
 }
 ```
-
-
 
 {% include important.html content=" Следует различать `OnSave()` и `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. Если говорить [упрощённо](fw_form-interaction.html), то если закрытие формы осуществлялось по крестику и пользователь согласился сохранить объект, то будет вызван `OnSave()`, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)`, а если сохранение формы осуществлялось через тулбар, то сначала будет вызван `OnSaveEvent()` зависимой формы, после чего `OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)` независимой формы. 
 " %}

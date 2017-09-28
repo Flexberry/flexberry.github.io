@@ -13,7 +13,7 @@ lang: ru
 # DateTimePicker
 Для того чтобы настроить корректное отображение даты необходимо создать свой [ControlProvider](fw_control-provider-winforms.html) для даты.
 
-```cs
+```csharp
 /// <summary>
 /// ControlProvider для NullableDateTime.
 /// </summary>

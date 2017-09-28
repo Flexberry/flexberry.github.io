@@ -20,26 +20,29 @@ lang: ru
 ## [anchor|#Desktop pict]Картинка на рабочем столе
 
 Фоновая картинка рабочего стола задается свойством `listView1.OverlayImage.Image`. Можно выбрать любую картинку форматов ''gif, jpg, jpeg, bmp, wmf, png''. Можно установить анимированную картинку, но анимироваться она не будет. После смены изображения нужно его обновить вызовом метода `RefreshOverlay`:
-```cs
+
+```csharp
 listView1.RefreshOverlay(listView1.OverlayImage)
 ```
+
 Выравнивание картинки производится путём задания необходимого значения свойству `OverlayImage.Alignment` (тип - `System.Drawing.ContentAlignment`), после чего рекомендуется обновить картинку вышеуказанным способом.
 
 Чтобы изменить прозрачность картинки нужно менять значение поля `OverlayImage.Transparency`. Оно принимает значения от 0 (абсолютная прозрачность) до 255 (совершенно непрозрачная картинка), значение по умолчанию 128.
 
 ### Пример
-```cs
+
+```csharp
 listView1.OverlayImage.Image = Image.FromFile("D:\\images\\limeleaf.png");
 listView1.OverlayImage.Alignment = ContentAlignment.BottomLeft;
 listView1.OverlayImage.Transparency = 50;
 ```
+
 ![](/images/pages/products/flexberry-winforms/desktop/desctop-picture.png)
 
 Отступы по горизонтали и вертикали соответственно задаются с помощью атрибутов `OverlayImage.InsetX` и `OverlayImage.InsetY` (типы - int)
 
 ## [anchor|#ContextMenu]Контекстное меню
 Рассматриваемое контекстное меню вызывается кликом правой кнопки мыши в свободном пространстве.
-
 
 ![](/images/pages/products/flexberry-winforms/desktop/context-menu.png)
 
@@ -59,7 +62,8 @@ listView1.OverlayImage.Transparency = 50;
 Существует возможность задания столбца, по которому группировка будет происходить всегда, даже если сортировка производится по другому столбцу. Для этого служит атрибут `AlwaysGroupByColumn` (по умолчанию `null`), ему присваивается соответствующий столбец.
 
 ### Пример
-```cs
+
+```csharp
 listView1.ShowGroups = true;
 listView1.AlwaysGroupByColumn = this.ItemType;
 ```
@@ -72,7 +76,8 @@ listView1.AlwaysGroupByColumn = this.ItemType;
 # Замена иконки для конкретного экземпляра класса `Runner` (пользовательская форма или форма редактирования). Замена происходит в коде пользовательского приложения.
 
 ### Пример (ЛюдиDesktopCustomizer.cs)
-```cs
+
+```csharp
 public override ICSSoft.STORMNET.UI.Runner[] GetRunners()
 …
 arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Люди.Л_ЧеловекL), "Люди", "Человек", "Описание человека"));
@@ -103,14 +108,16 @@ arr.Add(new ICSSoft.STORMNET.Windows.Forms.FormRunner(typeof(IIS.Люди.Winfor
 # Добавили его в `ObjectListView` методом `AddObjects` для нескольких item или `AddObject` для одного item.
 
 При таком подходе отпадает необходимость в работе с subItem и к каждому добавленному item можно обращаться как к `ItemInListView`:
-```cs
+
+```csharp
 ((ItemInListView)listView1.SelectedObjects[0]).Description
 ```
 
 При создании столбцов нужно указать `AspectName` для связи с данными и `ImageAspectName` для связи с картинкой. Добавлять столбцы нужно в два массива.
 
 ### Пример
-```cs
+
+```csharp
 listView1.AllColumns.Add(Caption);
 listView1.AllColumns.Add(Description);
 listView1.AllColumns.Add(ItemType);
@@ -128,7 +135,8 @@ listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
 В пользовательском приложении нужно подписаться на событие `TreeViewItemSelected` у экземпляра `DesktopCtrl`. В унаследованном классе `TreeViewShowControlsEventArgs` нужно задать значение true полю `Handled` если нужно отобразить свои контролы  и false если нужно отобразить listView. Далее создаются контролы и помещаются в `PanelOnListView`.
 
 ### Пример
-```cs
+
+```csharp
 private void desktopCtrl2_TreeViewItemSelected(object sender, ICSSoft.STORMNET.Windows.Forms.DesktopCtrl.TreeViewShowControlsEventArgs e)
 {
     if (this.desktopCtrl2.IsListNodeSelected)

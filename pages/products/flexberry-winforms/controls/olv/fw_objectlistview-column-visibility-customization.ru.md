@@ -14,7 +14,8 @@ lang: ru
 
 # PropertyInView[] ObjectListView.View.Properties
 Одним из решений поставленной задачи может быть использование `ObjectListView.View.Properties`.
-```cs
+
+```csharp
 public class WinformC__ПользовательПриложенияL : ICSSoft.STORMNET.UI.BaseWinListStandard, IIS.TryAccessSystem.DPDIC__ПользовательПриложенияL
 {
 	public WinformC__ПользовательПриложенияL() //конструктор формы

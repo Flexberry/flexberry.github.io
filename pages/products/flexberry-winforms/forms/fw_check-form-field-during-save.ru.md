@@ -23,7 +23,8 @@ lang: ru
 |||
 
 Пример использования всех методов:
-```cs
+
+```csharp
 protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e) //метод OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e) независимой формы
 {
 	System.Collections.ArrayList arl = new System.Collections.ArrayList();

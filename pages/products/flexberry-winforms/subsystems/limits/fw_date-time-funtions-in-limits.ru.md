@@ -25,7 +25,8 @@ lang: ru
 ''Примечание'': Чтобы получить, например, текущий день или текущее время нужно выполнить суперпозицию, соответственно, ТолькоДата(СЕГОДНЯ()) или ТолькоВремя(СЕГОДНЯ()).
 
 # Пример: вывести тех, у кого сегодня день рождения
-```
+
+```csharp
 var langDef = new ExternalLangDef();
 Function function = langDef.GetFunction(langDef.funcEQ,
                                         langDef.GetFunction(langDef.funcOnlyDate,
@@ -35,8 +36,8 @@ Function function = langDef.GetFunction(langDef.funcEQ,
 ```
 
 # Пример: вывести тех, кто умер в 01:00:00
-```
 
+```csharp
 var langDef = new ExternalLangDef();
 Function function = langDef.GetFunction(langDef.funcEQ,
                                         langDef.GetFunction(langDef.funcOnlyTime,

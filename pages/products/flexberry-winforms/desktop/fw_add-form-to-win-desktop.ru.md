@@ -14,7 +14,7 @@ lang: ru
 
 В результате должно получиться примерно следующее:
 
-```cs
+```csharp
 public override ICSSoft.STORMNET.UI.Runner[] GetRunners()
 {
     System.Collections.ArrayList arr = new System.Collections.ArrayList();

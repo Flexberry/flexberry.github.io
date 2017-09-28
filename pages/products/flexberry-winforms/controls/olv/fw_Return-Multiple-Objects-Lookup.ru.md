@@ -13,7 +13,8 @@ lang: ru
 
 
 Все выбранные объекты можно получить, обратившись к DynamicProperties стандартно возвращаемого объекта. А именно:
-```cs
+
+```csharp
 o.DynamicProperties["retFromObjectListView"] as List<DataObject>
 ```
 

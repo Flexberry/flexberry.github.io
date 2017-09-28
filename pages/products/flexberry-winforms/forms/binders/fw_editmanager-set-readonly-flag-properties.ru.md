@@ -9,24 +9,28 @@ lang: ru
 ---
 # Метод EditManager.SetReadonlyFlagProperties
 Метод `[EditManager](fw_editmanager.html).SetReadonlyFlagProperties` позволяет установить значение свойства `ReadOnly` у контролов, редактирующих поля, указанные в параметрах вызова данного метода.
-```cs
+
+```csharp
 void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] properties)
 ```
+
 Параметр `readonlyflag` определяет значение, которое будет установлено свойству ReadOnly у контролов, редактирующих поля, указанные в `properties`.
 
 
 Пример использования данного метода представлен [здесь](fw_different-applications-and-fields.html).
 # Метод AddControlsToForcedReadOnlyList
 
-```cs
+```csharp
 /// <summary>
 /// Добавить элементы в список контролов, у которых EditManager не будет менять флаг ReadOnly.
 /// </summary>
 /// <param name="controlList">Новые элементы.</param>
 public void AddControlsToForcedReadOnlyList(List<Control> controlList)
 ```
+
 ## Пример использования
-```cs 
+
+```csharp 
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
         {
             base.Edit(dataobject, contpath, propertyname, tag);
@@ -39,7 +43,8 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
 
 
 # Метод RemoveControlsFromForcedReadOnlyList
-```cs 
+
+```csharp 
 /// <summary>
 /// Удалить элементы из списка контролов, у которых EditManager не будет менять флаг ReadOnly.
 /// </summary>

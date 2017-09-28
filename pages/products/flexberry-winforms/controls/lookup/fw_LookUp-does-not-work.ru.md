@@ -18,18 +18,22 @@ lang: ru
 
 # Указать форму вызова в методе '''GetEditor''' независимой формы
 # На кнопку LookUp'а (например, для Гражданства это будет ctrlГражданство) навесить обработчик '''события''' LookUp'а 
-```
+
+```csharp
 this.ctrlГражданство.LookUpEvent += look_LookUpEvent
 ```
+
 ### В GroupEdit'е
 # Привязка GropEdit'а к EditManager'у формы
 # Наличие обработчика this.gr_SetupEditorEventHandler типа OnSetupEditorEventHandler для события SetupEditor
 # Упоминание GroupEdit'a в методе prv_TuneLookupInformations (в зависимой форме), __например__:
-```
+
+```csharp
 m_arrGroupEditInformations.Add(
                new ICSSoft.STORMNET.UI.GroupEditInformation(this.ПредметыИзъятия,
                "ИтогиИзъятия.ПредметыИзъятия",
-               "STORMCASE.STORMNET.Generator.SerializeNewEditForm/EditPanel(Panel)/TabControl(TabControl)/panel(TabPage)/ПредметыИзъятия(GroupEditBase)"));```
+               "STORMCASE.STORMNET.Generator.SerializeNewEditForm/EditPanel(Panel)/TabControl(TabControl)/panel(TabPage)/ПредметыИзъятия(GroupEditBase)"));
+```
 
 ## Руками навешенный или сгенерированный для хитрого случая Lookup:
 ### Если не поднимается форма на Lookup, то проверьте в указанном порядке:

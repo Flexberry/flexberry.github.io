@@ -13,18 +13,22 @@ lang: ru
 
 # Ответ
 Пусть задана функция `limitFunction` с параметром @Дата:
-```cs ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
+```csharp 
+ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
  
  ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(
    externalLangDef.funcEQ,
    new ParameterDef("Дата", externalLangDef.DateTimeType, false, ""),
    new DateTime(2000, 01, 01));
 ```
+
 Подробнее о [ExternalLangDef](fo_external-lang-def.html).
 
 ## Для Web
 Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
-```cs /// <summary>
+
+```csharp 
+/// <summary>
 /// Подставить конкретные значения вместо параметров функции.
 /// </summary>
 /// <param name="function">Сама функция, в которой будут заменять параметры.</param>
@@ -32,15 +36,19 @@ lang: ru
 /// <returns>Функция, в которой все параметры заменены на соответствующие значения.</returns>
 public static Function SubstituteParameters(Function function, IDictionary<string, object> paramValues)
 ```
+
 ### Пример
-```cs limitFunction = AdvLimitUtils.SubstituteParameters(
+
+```csharp 
+    limitFunction = AdvLimitUtils.SubstituteParameters(
     limitFunction,
     new Dictionary<string, object>() { {"Дата", DateTime.Now} });
 ```
 
 ## Для Win
 Для подстановки параметров в ограничивающую функцию в классе `ICSSoft.STORMNET.Windows.Forms.AdvansedLimitExtension` есть метод:
-```cs /// <summary>
+```csharp 
+/// <summary>
  /// Получить ограничение с подставленными значениями параметров
  /// </summary>
  /// <param name="advansedLimit">Само ограничение.</param>
@@ -50,10 +58,12 @@ public static Function SubstituteParameters(Function function, IDictionary<strin
      where T : IDictionary, IDictionary<string, object>
      where R : AdvansedLimit
 ```
+
 Но для этого метода нужен экземпляр класса `ICSSoft.STORMNET.Windows.Forms.AdvansedLimit` (объектная модель ограничения, включает в себя как ограничивающую функцию, так и определения параметров). 
 
 ### Пример
-```cs AdvansedLimit advlimit = new AdvansedLimit {Function = limitFunction};
+```csharp 
+ AdvansedLimit advlimit = new AdvansedLimit {Function = limitFunction};
  advlimit.Parameters = new ParameterDef[1](ис-управления-проектами_1.html) { (ParameterDef)advlimit.Function.Parameters[0] };
  limitFunction = AdvansedLimitExtension.GetCustomizedFunctionByParameters(
     advlimit,

@@ -20,7 +20,8 @@ lang: ru
 Чтобы это сделать следует выполнить ряд действий:
 # Сгенерировать форму редактирования.
 # Добавить на форму в Form Designer Fields:
-```cs
+
+```csharp
 // *** Start programmer edit section *** (Form Designer Fields)
 
        //...
@@ -28,12 +29,14 @@ lang: ru
         
 // *** End programmer edit section *** (Form Designer Fields)
 ```
+
 # Далее следует внести дополнения в InitializeComponent.
 
 ## Дополнения InitializeComponent
 
 Для корректного отображения ObjectHierarchicalView необходимо правильно прописать все свойства контрола.
-```cs
+
+```csharp
  private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinformTestHierarchicalForm));

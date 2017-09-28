@@ -16,7 +16,8 @@ lang: ru
 1. В случае если требуется изменить изображения в рамках всего приложения, необходимо инициализировать статический ImageList при запуске приложения. В этом списке должны присутствовать изображения с именами "LookUp", "Clear" и "Edit".
 
 Пример:
-```cs
+
+```csharp
 LookUp.UserImageList.Images.Add("LookUp", Properties.Resources.LookUpImage);
 LookUp.UserImageList.Images.Add("Clear", Properties.Resources.ClearImage);
 LookUp.UserImageList.Images.Add("Edit", Properties.Resources.EditImage);

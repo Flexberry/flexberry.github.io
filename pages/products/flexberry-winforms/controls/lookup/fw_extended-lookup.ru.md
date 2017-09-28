@@ -24,7 +24,7 @@ lang: ru
 ## AutoCompleteBox.OrderColumns
 Свойство `AutoCompleteBox.OrderColumns` определяет столбцы, по которым будет производиться сортировка, при определении порядка следования элементов в выводимой подсказке. 
 
-```cs
+```csharp
 ctrlКлиент.AutoCompleteBox.OrderColumns = new ColumnsSortDef[] {new ColumnsSortDef("Прописка", SortOrder.Asc) };
 ```
 

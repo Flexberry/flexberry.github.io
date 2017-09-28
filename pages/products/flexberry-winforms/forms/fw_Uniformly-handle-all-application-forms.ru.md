@@ -11,7 +11,8 @@ lang: ru
 Подписка на глобальные события
 
 В методе Main можно подписаться на специальное событие:
-```
+
+```csharp
 static void Main()
 ...
 // *** Start programmer edit section *** (Детейломания Main())
@@ -24,8 +25,8 @@ ICSSoft.STORMNET.Business.LockService.ClearAllUserLocks();
 ```
 
 В обработчик этого события будет приходить форма в переменной sender. Собственно что с ней делать дальше - знаете сами. Например, можно все формы подписать на нажатие определённых клавиш:
-```
 
+```csharp
 // *** Start programmer edit section *** (ДетейломанияDesktop CustomMembers)
 static void GlobalWinformEvents_Load(object sender, EventArgs e)
 {

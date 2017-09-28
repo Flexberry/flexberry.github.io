@@ -18,8 +18,8 @@ lang: ru
 Документацию можно найти на официальном сайте компонента, или скачать [здесь](http://wiki.ics.perm.ru/GetFile.aspx?File=FlexGrid.rar&AsStreamAttachment=1&Provider=ScrewTurn.Wiki.Plugins.SqlServer.SqlServerFilesStorageProvider&IsPageAttachment=1&Page=FlexGrid&NoHit=1).
 
 # Получение FlexGrid из GroupEdit
-```
 
+```csharp
 public static C1.Win.C1FlexGrid.C1FlexGrid GetGridFromGE(ICSSoft.STORMNET.Windows.Forms.GroupEditBase groupEdit)
 // Ищем FlexGrid 
 {

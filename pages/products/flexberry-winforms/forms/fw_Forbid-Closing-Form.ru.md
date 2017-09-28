@@ -14,7 +14,7 @@ lang: ru
 
 Пример:
 
-```cs
+```csharp
 [Scriptizer.RunTime.ScriptFinalizer]
 public override bool Finalize()
 {

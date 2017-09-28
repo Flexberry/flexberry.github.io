@@ -12,15 +12,17 @@ lang: ru
 
 # Метод AddControlsToForcedReadOnlyList
 
-```cs
+```csharp
 /// <summary>
 /// Добавить элементы в список контролов, у которых EditManager не будет менять флаг ReadOnly.
 /// </summary>
 /// <param name="controlList">Новые элементы.</param>
 public void AddControlsToForcedReadOnlyList(List<Control> controlList)
 ```
+
 ## Пример использования
-```cs 
+
+```csharp 
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
         {
             base.Edit(dataobject, contpath, propertyname, tag);
@@ -33,7 +35,8 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
 
 # Метод RemoveControlsFromForcedReadOnlyList
 Данный метод позволяет удалить контролы, добавленные методом AddControlsToForcedReadOnlyList.
-```cs 
+
+```csharp 
 /// <summary>
 /// Удалить элементы из списка контролов, у которых EditManager не будет менять флаг ReadOnly.
 /// </summary>

@@ -13,7 +13,7 @@ lang: ru
 # Закрытие всех открытых форм Flexberry
 Чтобы закрыть все открытые формы приложения, как происходит при закрытии главного окна приложения Flexberry, можно использовать следующий код.
 
-```
+```csharp
 var coll = desktopCtrl2.PathRunners;
 
 foreach (ArrayList runList in coll.GetAllValues())
@@ -25,4 +25,5 @@ foreach (ArrayList runList in coll.GetAllValues())
 			run.Stop();
 		}
 	}
-}```
+}
+```

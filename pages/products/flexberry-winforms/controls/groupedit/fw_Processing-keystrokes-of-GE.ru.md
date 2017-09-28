@@ -13,7 +13,7 @@ lang: ru
 
 Пример реализации интерфейса представлен ниже. Обрабатываются сочетания `F2+Shift+Ctrl` и `F3`.
 
-```
+```csharp
         #region ISpecialKeysEditable Members
 
         public List<Keys> GetSpecialEditKeys()

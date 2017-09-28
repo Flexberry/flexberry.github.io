@@ -27,14 +27,18 @@ lang: ru
 Если используется [генератор настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html), то необходимо обратить внимание на следующие моменты: 
 
 1. Для работы его можно определить как [ярлык](Ярлыки-рабочего-стола.html) на [рабочий стол](fw_app-desktop.html):
-```cs
+
+```csharp
 arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsGeneratorE), "Администрирование", "Генератор настроек фильтров", "", new IIS.Core.App_FilterSettingsGenerator(), typeof(IIS.Core.App_FilterSettingsGenerator), false));
 ```
+
 2. В конфиг-файле приложения должны быть строчки вида:
+
 ```xml
 <add key="DefaultLibFolder" value="lib"/>
 <add key="FilterSettingStrategy" value="reflection"/>
 ```
+
 Сборки объектов и форм при этом нужно перенести в папку, указанную в `DefaultLibFolder`. 
 
 3. У объектов обязательно должно быть [T-представление](fd_t-view.html). 

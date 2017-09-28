@@ -14,7 +14,7 @@ lang: ru
 # Навесить картинку из '''ImageList'''.
 # На нажатие это кнопки повесить '''вызов''' следующей функции:
 
-```
+```csharp
 public void ПоказатьСписок()
 		{
 			SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
@@ -37,6 +37,7 @@ public void ПоказатьСписок()
 					"Control)/panel(TabPage)/panel(GroupBox)/ctrlЛицо(LookUp)";
 				base.OnEdit("Лицо", EditManager.DataObject, contpath, lf);
 			}
-		}```
+		}
+```
  
 

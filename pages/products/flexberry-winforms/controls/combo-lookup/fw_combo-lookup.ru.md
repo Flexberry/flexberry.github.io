@@ -18,8 +18,7 @@ lang: ru
 * '''CachedData''' – данные читаются из базы при каждом открытии списка или кэшируются.
 * '''Limit''' – ограничение на список мастеровых объектов. Следует заметить, что свойство имеет тип FunctionForControls (см. пример).
 
-```
-  CSharp
+```csharp
 comboLookup1.CachedData = true;
 comboLookup1.ComboPropertyName = "Название";
 comboLookup1.DataObjectType = typeof(IIS.КошкиСЛапами.Кошка);

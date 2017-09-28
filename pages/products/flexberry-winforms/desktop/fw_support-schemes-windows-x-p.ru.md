@@ -16,6 +16,7 @@ lang: ru
 # Создать `Manifest`-файл в том же каталоге, где расположен exe-файл, например:
 
 Файл приложения — `BugLeR.exe`, файл манифеста — `BugLeR.exe.manifest`, содержимое:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">

@@ -34,9 +34,10 @@ lang: ru
 
 В коде установить настройки OLV'а:
 
-```
+```csharp
 objectListView1.DataObjectTypes = new[] { typeof(Адрес) };
-objectListView1.ViewName = "АдресL";```
+objectListView1.ViewName = "АдресL";
+```
 
 {% include important.html content=">Несмотря на то, что данные не обязательно должны находиться в базе, представления у класса, отвечающего за эти данные '''должно быть'''" %}
 
@@ -44,16 +45,17 @@ objectListView1.ViewName = "АдресL";```
 ## Блокировка подгрузки данных из базы
 Чтобы данные из базы не подгружались во время обновления (нажатия на кнопку Refresh), необходимо установить LimitFunction у OLV'а так, чтобы условие никогда не выполнялось. Вполне подойдет следующий вариант:
 
-```
+```csharp
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-objectListView1.LimitFunction = langdef.GetFunction(langdef.funcSQL, "1 = 2");```
+objectListView1.LimitFunction = langdef.GetFunction(langdef.funcSQL, "1 = 2");
+```
 
 {% include note.html content="В качестве функции-блокироватора можно использовать все что угодно, на ваш вкус и фантазию." %}
 
 ## Непосредственно добавление объектов в список
 Чтобы добавить объекты в список достаточно вызвать метод `SetObjects` у OLV'a:
 
-```
+```csharp
 objectListView1.SetObjects(myObjects.ToArray());
 ```
 
@@ -61,7 +63,7 @@ objectListView1.SetObjects(myObjects.ToArray());
 
 Чтобы данные сохранялись, необходимо вызывать этот метод после загрузки данных из базы. Для этого, необходимо подписаться на событие `AfterFillData` и добавить в обработчик вызов метода `SetObjects`, к примеру так:
 
-```
+```csharp
 objectListView1.AfterFillData += (o, s) =>
 {
 	objectListView1.SetObjects(myObjects.ToArray());

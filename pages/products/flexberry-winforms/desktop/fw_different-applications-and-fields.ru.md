@@ -28,7 +28,8 @@ lang: ru
 
 # Работа с программным кодом
 В общедоступном для разрабатываемых приложений классе определяем статическое поле.
-```cs
+
+```csharp
     public enum tWorkerShowType //перечислимый тип для указания запущенного приложения
     {
         Unknown, //ничего не было установлено
@@ -41,8 +42,10 @@ lang: ru
         //...
     }
 ```
+
 В коде приложения определяем значение этого статического поля.
-```cs
+
+```csharp
 static void Main()
 {
 	try
@@ -53,8 +56,10 @@ static void Main()
 	//...
 }
 ```
+
 Переопределяем метод `[Edit](fw_form-interaction.html)` на форме редактирования.
-```cs
+
+```csharp
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
 {
 	base.Edit(dataobject, contpath, propertyname, tag); //вызов базового метода

@@ -16,7 +16,8 @@ Flexberry Platform в сборке `ICSSoft.STORMNET.UI.dll` содержит к
 
 ## Простое отображение ошибки
 Стандартный сценарий отображения Exception в специальной форме выглядит так:
-```cs
+
+```csharp
 try
 {
   throw new Exception("Опаньки!");
@@ -27,21 +28,22 @@ catch(Exception ex)
   ErrorBox.Show(ex);
 }
 ```
+
 ## Более сложный сценарий выдачи информации об исключениях
 Иногда чтобы понять что случилось в системе недостаточно знать номер строки в исходном коде. Для таких случаев есть возможность сделать ряд снимков экрана, добавить дополнительную информацию об ошибках и передать это всё на форму отображения ошибки. Оговоримся, что вся эта информация не будет использована пока пользователь не выгрузит её с помощью какого-либо провайдера отчётов об ошибках.
 
 Итак, чтобы получить снимки экрана:
 
-```cs
+```csharp
 //Сделаем снимок только формы
 Bitmap screen1 = ErrorBox.CaptureScreenShot(formToCapture);
 //или снимем весь экран
 Bitmap screen2 = ErrorBox.CaptureScreenShot();
-
 ```
 
 Для того чтобы вывести эти снимки и сообщение:
-```cs
+
+```csharp
 //...
 catch(Exception ex)
 {
@@ -71,7 +73,7 @@ catch(Exception ex)
 ## Добавление информации о прикладной системе
 Класс `ICSSoft.STORMNET.Windows.Forms.ErrorBox` содержит статический делегат, который позволяет собрать информацию о системе для того, чтобы она попала в информацию об ошибке.
 
-```cs
+```csharp
 /// <summary>
 /// Делегат для сбора информации о прикладной системе
 /// </summary>
@@ -88,10 +90,12 @@ public static GetCurrentAppInfoDelegate GetCurrentAppInfo = null;
 Чтобы пользователям не показывалась "страшная" форма с информацией об ошибке, если случилось неотловленное исключение, нужно подписаться на события `Application.ThreadException` и `System.AppDomain.CurrentDomain.UnhandledException` для того чтобы обработать их правильным образом.
 
 Генератор приложений Flexberry добавляет строки
-```cs
+
+```csharp
 System.Windows.Forms.Application.ThreadException += ICSSoft.STORMNET.Windows.Forms.ErrorBox.ApplicationThreadException;
 System.AppDomain.CurrentDomain.UnhandledException += ICSSoft.STORMNET.Windows.Forms.ErrorBox.CurrentDomainUnhandledException;
 ```
+
 в метод `Main` приложения (в скобках программиста). Обработчики `ICSSoft.STORMNET.Windows.Forms.ErrorBox.ApplicationThreadException` и `ICSSoft.STORMNET.Windows.Forms.ErrorBox.CurrentDomainUnhandledException` просто запускают стандартную `ErrorForm` с информацией об исключении. Если требуется особая логика, то можно использовать собственный обработчик события. 
 
 ''* приложения, сгенерированные в версии Flexberry ранее 2011-02-04 требуют ручного добавления этой строки для обработки неотловленных исключений.''

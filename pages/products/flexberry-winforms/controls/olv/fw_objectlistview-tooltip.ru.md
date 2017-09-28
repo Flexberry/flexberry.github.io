@@ -15,7 +15,8 @@ lang: ru
 Пример:
 
 В данном примере выводится подсказка к ячейкам первых 5-ти столбцов.
-```cs
+
+```csharp
 private void objectListView1_BeforeToolTipRequired(object sender, BeforeToolTipRequiredEventArgs e)
 {
      e.TipText = string.Format("Строка {0}, столбец {1}", e.Row, e.Column);

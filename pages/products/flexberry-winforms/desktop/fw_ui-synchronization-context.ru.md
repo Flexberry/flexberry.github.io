@@ -13,7 +13,7 @@ lang: ru
 
 '''Пример:'''
 
-```cs
+```csharp
 if (UISynchronization.Context!=null)
 UISynchronization.Context.Send((delegate
        {

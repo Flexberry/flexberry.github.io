@@ -72,7 +72,8 @@ lang: ru
 
 ## Задание настройки форме в коде
 Если списковая форма является универсальной формой (сгенерированного кода нет), то имя настройки фильтра можно указать в независимой форме в методе ('''применимо если на форме только один список'''): 
-```cs
+
+```csharp
 protected override ICSSoft.STORMNET.UI.IEditInitiator GetDpdForm()
 {
 // *** Start programmer edit section *** (ПроектL.GetDpdForm() start)

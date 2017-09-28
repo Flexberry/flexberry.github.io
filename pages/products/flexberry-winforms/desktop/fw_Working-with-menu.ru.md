@@ -37,7 +37,8 @@ lang: ru
  
 
 Код приведен ниже:
-```
+
+```csharp
 // *** Start programmer edit section *** (ThreatsModelDesktop CustomMembers)
         static void AddToolStripMenu(ToolStrip ts, int menuindex, int submenuindex, 
             string Text, Image image, EventHandler e, System.Windows.Forms.Keys shortkeys)
@@ -78,8 +79,8 @@ lang: ru
  
 
 В методе main в скобках программиста работаете с меню:
-```
 
+```csharp
 //Уберем Properties
 desktop.menuItem1.MenuItems[0].Visible = false;                 
 //Вставим обработчик на Help

@@ -26,7 +26,7 @@ lang: ru
 
 Далее в коде конструктора формы необходимо выполнить создание и настройку:
 
-```cs
+```csharp
 public class WinformC__СотрудникE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.TryDOEPOnEnter.DPDIC__СотрудникE
 {
 	//...
@@ -56,11 +56,14 @@ NextControlByEnterTuner Tuner = new NextControlByEnterTuner();
 ```
 
 2. Подписать подходящие контролы формы на переход по кнопке Enter, при этом формируется список подписанных контролов, который можно узнать через свойство `SubscribedOnEnterControls`. На настоящий момент автоматически подписываются контролы следующих типов (эти контролы не должны быть контролами-контейнерами): `System.Windows.Forms.TextBox` , `System.Windows.Forms.DateTimePicker` , `System.Windows.Forms.CheckBox` , `System.Windows.Forms.ComboBox` , `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` , `ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox` , `ICSSoft.STORMNET.Windows.Forms.ExtendedTextBox` , `ICSSoft.STORMNET.Windows.Forms.ExtTextControl`.
-```cs
+
+```csharp
 Tuner.SubscribeDefaultSetOfControlsOnEnter(this);
 ```
+
 3. Также, если есть необходимость, можно добавить контролы, которые должны быть подписаны на переход по кнопке Enter.
-```cs
+
+```csharp
 Tuner.AddToSubscribedOnEnterControls(new System.Windows.Forms.Control[] {lsvРезультат, btnНайти};
 ```
 
@@ -73,7 +76,7 @@ Tuner.AddToSubscribedOnEnterControls(new System.Windows.Forms.Control[] {lsvРе
 ## Интерфейс ICanChangeByEnter
 Интерфейс `ICanChangeByEnter` разработан для организации взаимодействия `NextControlByEnterTuner` с контролами, в которых на нажатие Enter повешена какая-то логика.
 
-```cs
+```csharp
 public interface ICanChangeByEnter
 {
 	/// <summary>
@@ -93,6 +96,7 @@ public interface ICanChangeByEnter
 	bool LetReleaseEnterNow { get; }
 }
 ```
+
 Если `LetReleaseEnterNow == true`, то переход по Enter будет выполнен; в противном случае - нет.
 
 ----

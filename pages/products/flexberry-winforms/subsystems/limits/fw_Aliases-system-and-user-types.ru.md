@@ -22,7 +22,7 @@ lang: ru
 ----
 ### Пример использования:
 
-```
+```csharp
 static void Main()
 {
   ...
@@ -39,4 +39,5 @@ private static string MyStringViewForSpecificType(Type type)
     return "ПланетаОбезьян";
              
   return null;
-}```
+}
+```

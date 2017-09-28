@@ -12,9 +12,11 @@ lang: ru
 
 Для того, чтобы использовать универсальную форму редактирования, необходимо:
 # Конструировать универсальную форму редактирования, передав в конструктор параметром представления, в которых должно осуществляться редактирование:
-```
+
+```csharp
 StormNetUI.IDpdEditForm editcont = new StormNetUI.UniWinEdit(new StormNet.View[]{viewforedit});
 ```
+
 # Установить обработчики на события (как минимум, на `CloseEvent`, чтобы можно было закрыть форму и `SaveEvent`, чтобы «отловить» вызов пользователем сохранения).
 # Вызвать метод Edit, передавая объект данных.
 
@@ -24,7 +26,7 @@ StormNetUI.IDpdEditForm editcont = new StormNetUI.UniWinEdit(new StormNet.View[]
 
 Пример обработчика события CloseEvent:
 
-```cs
+```csharp
 private void ContainerCloseHandler (object sender, StormNetUI.CloseEventArgs args)
 		{
 			((StormNetUI.IDpdForm)sender).CloseForm();
