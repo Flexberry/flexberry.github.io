@@ -10,10 +10,10 @@ lang: ru
 
 (((Данная статья ещё редактируется)))
 
-Cуть проверки состоит в том, что событие `[OnSave](fw_form-interaction.html)`/`[OnSaveEvent](fw_form-interaction.html)` переопределяется и, если данные не удовлетворяют некоторым условиям, базовый метод вызван не будет.
+Cуть проверки состоит в том, что событие [`OnSave`](fw_form-interaction.html)/[`OnSaveEvent`](fw_form-interaction.html) переопределяется и, если данные не удовлетворяют некоторым условиям, базовый метод вызван не будет.
 
 
-`[OnSaveEvent](fw_form-interaction.html)` зависимой формы:
+[`OnSaveEvent`](fw_form-interaction.html) зависимой формы:
 
 ```csharp
 protected override void OnSaveEvent()
@@ -37,7 +37,7 @@ protected override void OnSaveEvent()
 }
 ```
 
-`[OnSave](fw_form-interaction.html)` независимой формы:
+[`OnSave`](fw_form-interaction.html) независимой формы:
 
 ```csharp
 protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e)

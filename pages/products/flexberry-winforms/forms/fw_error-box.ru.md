@@ -98,7 +98,3 @@ System.AppDomain.CurrentDomain.UnhandledException += ICSSoft.STORMNET.Windows.Fo
 
 в метод `Main` приложения (в скобках программиста). Обработчики `ICSSoft.STORMNET.Windows.Forms.ErrorBox.ApplicationThreadException` и `ICSSoft.STORMNET.Windows.Forms.ErrorBox.CurrentDomainUnhandledException` просто запускают стандартную `ErrorForm` с информацией об исключении. Если требуется особая логика, то можно использовать собственный обработчик события. 
 
-''* приложения, сгенерированные в версии Flexberry ранее 2011-02-04 требуют ручного добавления этой строки для обработки неотловленных исключений.''
-
- 
-

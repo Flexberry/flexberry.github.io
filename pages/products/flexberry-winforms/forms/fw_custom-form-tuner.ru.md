@@ -45,7 +45,7 @@ public class WinformC__СотрудникE : ICSSoft.STORMNET.UI.BaseWinEdit, II
 `NextControlByEnterTuner` - усовершенствованный `CustomFormTuner`.
 
 ## Подключение NextControlByEnterTuner
-Для работы `NextControlByEnterTuner` необходима следующая dll: `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll` (входит в стандартную поставку Flexberry, необходимый класс включён в версию после 08.11.2012).
+Для работы `NextControlByEnterTuner` необходима следующая dll: `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`.
 
 Для подключения в программном коде можно в конструкторе формы выполнить следующую последовательность действий: 
 

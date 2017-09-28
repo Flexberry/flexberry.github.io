@@ -9,7 +9,7 @@ lang: ru
 ---
 
 # Средства сериализации-десериализации в `ICSSoft.STORMNET.Windows.Forms.Utils` 
-В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](fo_limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки `[ICSSoft.STORMNET.Tools](fo_ics-soft-stormnet-tools.html)`, и выполняют обращение к ней. 
+В сборке `ICSSoft.STORMNET.Windows.Forms` реализован класс `ICSSoft.STORMNET.Windows.Forms.Utils`, предоставляющий, в частности, методы для сериализации-десериализации, которые применимы в т.ч. для [функции ограничения](fo_limit-function.html). Данные методы представляют собой обертку над соответствующими методами сборки [`ICSSoft.STORMNET.Tools`](fo_ics-soft-stormnet-tools.html), и выполняют обращение к ней. 
 
 ## Методы сериализации класса `ICSSoft.STORMNET.Windows.Forms.Utils`:
 

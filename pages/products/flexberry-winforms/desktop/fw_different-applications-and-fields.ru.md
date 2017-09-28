@@ -57,7 +57,7 @@ static void Main()
 }
 ```
 
-Переопределяем метод `[Edit](fw_form-interaction.html)` на форме редактирования.
+Переопределяем метод [`Edit`](fw_form-interaction.html) на форме редактирования.
 
 ```csharp
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)

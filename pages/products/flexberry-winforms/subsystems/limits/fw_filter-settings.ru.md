@@ -58,8 +58,8 @@ lang: ru
 Неявные детейлы должны указываться после явных. Порядок внутри этих групп должнен определять аналитик.
 #** `Caption` – заголовок детейла
 #** `DataObjectView` – [D-представление](fd_d-view.html) детейла
-#** `[ConnectMasterProp](Фильтрация-по-детейлам-мастера--connect-master-prop--owner-connect-prop.html)` – имя свойства, ссылающегося на класс мастера.
-#** `[OwnerConnectProp](Фильтрация-по-детейлам-мастера--connect-master-prop--owner-connect-prop.html)` – имя свойства, ссылающегося на класс детейла.
+#** [`ConnectMasterProp`](Фильтрация-по-детейлам-мастера--connect-master-prop--owner-connect-prop.html) – имя свойства, ссылающегося на класс мастера.
+#** [`OwnerConnectProp`](Фильтрация-по-детейлам-мастера--connect-master-prop--owner-connect-prop.html) – имя свойства, ссылающегося на класс детейла.
 Мастера детейлов должна быть также добавлены в список Lookups 
 # После заполнения всех полей форма может выглядеть следующим образом:
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_after.jpg)
