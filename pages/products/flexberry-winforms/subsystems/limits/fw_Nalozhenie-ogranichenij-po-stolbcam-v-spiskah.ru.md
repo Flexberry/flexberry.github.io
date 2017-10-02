@@ -10,8 +10,11 @@ lang: ru
 
 При наложении ограничений по столбцам в списках с AdvLimitComponent теперь можно сбрасывать отдельные ограничения.
 
-![Изображение](/images/img/page/Nalozhenie-ogranichenij-po-stolbcam-v-spiskah/Scr00.jpg)
-![Изображение](/images/img/page/Nalozhenie-ogranichenij-po-stolbcam-v-spiskah/Scr01.jpg)
-![Изображение](/images/img/page/Nalozhenie-ogranichenij-po-stolbcam-v-spiskah/Scr02.jpg)
-![Изображение](/images/img/page/Nalozhenie-ogranichenij-po-stolbcam-v-spiskah/Scr03.jpg)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/nost_scr00.jpg)
+
+![](/images/pages/products/flexberry-winforms/subsystems/limits/nost_scr01.jpg)
+
+![](/images/pages/products/flexberry-winforms/subsystems/limits/nost_scr02.jpg)
+
+![](/images/pages/products/flexberry-winforms/subsystems/limits/nost_scr03.jpg)
 

@@ -8,7 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# [ComboLookup](http://storm:20013/class_i_c_s_soft_1_1_s_t_o_r_m_n_e_t_1_1_windows_1_1_forms_1_1_combo_lookup.html)
+# Описание
 Элемент управления для выбора мастера из комбинированного списка ComboBox.
 
 Основные свойства:

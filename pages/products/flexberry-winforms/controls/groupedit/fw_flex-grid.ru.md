@@ -15,7 +15,7 @@ lang: ru
 
 
 # Документация
-Документацию можно найти на официальном сайте компонента, или скачать [здесь](http://wiki.ics.perm.ru/GetFile.aspx?File=FlexGrid.rar&AsStreamAttachment=1&Provider=ScrewTurn.Wiki.Plugins.SqlServer.SqlServerFilesStorageProvider&IsPageAttachment=1&Page=FlexGrid&NoHit=1).
+Документацию можно найти на официальном сайте компонента.
 
 # Получение FlexGrid из GroupEdit
 

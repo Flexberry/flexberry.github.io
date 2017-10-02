@@ -36,6 +36,7 @@ lang: ru
 # В папке с кэшем сборок должна находиться сборка "IIS.WinUI.AdvancedFSCtrl.dll" (DLL находится в папке с AdmConsole);
 # В папке с кэшем сборок должна находиться сборка форм, для удобного проставления настроек лукапов (Сборка форм берется из проекта, и имеет вид <ИмяПроекта>(Forms).dll);
 # В AdmConsole открыть списковую форму "Специальные формы настройки" -> "Настройки фильтров". Форма выглядит следующим образом:
+
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated1.jpg)
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated2.jpg)
 
@@ -43,7 +44,9 @@ lang: ru
 # Открыть списковую форму "Общие" -> "Настройки фильтров".
 # Нажать на кнопку добавления объекта
 # Появится форма
+
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_before.jpg)
+
 # Поля: 
 #* `Name` - название настройки, 
 #* `DataObjectView` - представление объекта, на которое накладывается ограничение
