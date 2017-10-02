@@ -14,27 +14,26 @@ ObjectListView - списковый контрол для win-приложени
 
 # Полезные ссылки
 * Объекты в ObjectListView
-** [Помещение списка объектов в ObjectListView](fw_put-list-objects-in-objectlistview.html)
-** [Отслеживание окончания загрузки данных в ObjectListView](fw_end-load-data-in-objectlistview.html)
-** [Обновление объекта в ObjectListView](fw_updating-object-in-olv.html)
-** [Получение информации об удачности загрузки ОbjectListView](fw_after-fill-data-event-args.html)
-** [Оптимизация чтения данных ObjectListView](fw_objectlistview-optimization.html)
+    * [Помещение списка объектов в ObjectListView](fw_put-list-objects-in-objectlistview.html)
+    * [Отслеживание окончания загрузки данных в ObjectListView](fw_end-load-data-in-objectlistview.html)
+    * [Обновление объекта в ObjectListView](fw_updating-object-in-olv.html)
+    * [Получение информации об удачности загрузки ОbjectListView](fw_after-fill-data-event-args.html)
+    * [Оптимизация чтения данных ObjectListView](fw_objectlistview-optimization.html)
 * События:
-** [Событие установки/снятия галочки в ObjectListView](fw_event-installing-removing-a-check-in-objectlistview.html)
-** [Перехват-событии-ObjectListView-создание-удаление-изменение-объекта-выполнение-деиствии.ashx|Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий ] 
-** [Событие ObjectListView.BeforeRefresh](fw_objectlistview-before-refresh.html)
+    * [Событие установки/снятия галочки в ObjectListView](fw_event-installing-removing-a-check-in-objectlistview.html)
+    * [Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий](fw_interception-events-objectlistview.html) 
+    * [Событие ObjectListView.BeforeRefresh](fw_objectlistview-before-refresh.html)
 * Дизайн и функциональность
-** [ObjectListView, основная функциональность в RunTime](fw_objectlistview-basic-functionality-in-run-time.html)
-** [Настройка видимости колонок ObjectListView](fw_objectlistview-column-visibility-customization.html)
-** [Как без использования генераторов кода сделать на форме список объектов данных](fw_make-a-list-of-data-objects-without-generators.html)
-** [Настройка невидимых по умолчанию колонок](прикладные-системы_Настроика-невидимых-по-умолчанию-колонок-использование-атрибута--default-visible.html)
-** [Задание отображения даты по умолчанию](Формат-отображения-даты-по-умолчанию.html)
-** [Отображение подсказки(tooltip) для отдельных записей в ObjectListView ](fw_objectlistview-tooltip.html)
+    * [ObjectListView, основная функциональность в RunTime](fw_objectlistview-basic-functionality-in-run-time.html)
+    * [Настройка видимости колонок ObjectListView](fw_objectlistview-column-visibility-customization.html)
+    * [Как без использования генераторов кода сделать на форме список объектов данных](fw_make-a-list-of-data-objects-without-generators.html)
+    * [Задание отображения даты по умолчанию](fw_date-format.html)
+    * [Отображение подсказки(tooltip) для отдельных записей в ObjectListView ](fw_objectlistview-tooltip.html)
 * Разное
-** [Присвоение LimitFunction для второго ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
-** [Удаление настроек пользователя в ObjectListView](fw_delete-columns-settings-objectlistview.html)
-** [Доступность операций на ObjectListView в зависимости от прав пользователя](fw_objectlistview-rights.html)
-** [Настройка и добавлении столбцов и записей в ObjectListView](fw_objectlistview-in-desktop-ctrl.html)
+    * [Присвоение LimitFunction для второго ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
+    * [Удаление настроек пользователя в ObjectListView](fw_delete-columns-settings-objectlistview.html)
+    * [Доступность операций на ObjectListView в зависимости от прав пользователя](fw_objectlistview-rights.html)
+    * [Настройка и добавлении столбцов и записей в ObjectListView](fw_objectlistview-in-desktop-ctrl.html)
 
 # Как отключить хоткей F2 для редактирования объектов
 Нужно в `ObjectListView` указать `UseHotkeyForEdit = false;`. Это повлияет и на тултип, который появляется над кнопкой редактирования.

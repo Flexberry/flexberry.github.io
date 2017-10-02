@@ -8,4 +8,4 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# Уставновка признака Cancel в методе BeforeChangeProperty при изменении мастерового поля не блокирует Lookup и последующее изменение свойства.
+Уставновка признака Cancel в методе BeforeChangeProperty при изменении мастерового поля не блокирует Lookup и последующее изменение свойства.

@@ -1,0 +1,133 @@
+entries:
+- title: Sidebar
+  product: Flexberry Winforms
+  folders:
+  - title: Сommon information
+    title_ru: Общие сведения
+    output: web, pdf
+
+    folderitems:
+    - title: Flexberry Winforms
+      title_ru: Flexberry Winforms
+      url: /fw_flexberry-winforms.html
+      output: web
+
+    - title: General concepts
+      title_ru: Общие концепции
+      url: /fw_general-concepts.html
+      output: web
+
+    - title: Flexberry Winforms architecture
+      title_ru: Базовая системно-технологическая архитектура Flexberry Winforms
+      url: /fw_flexberry-winforms-architecture.html
+      output: web
+
+    - title: Flexberry Winforms case plugin
+      title_ru: Модуль расширения Flexberry Designer для генерации win-приложений по uml-моделям
+      url: /fw_flexberry-winforms-case-plugin.html
+      output: web
+
+    - title: Winforms UI FAQ
+      title_ru: Winforms UI FAQ
+      url: /fw_winforms-ui-faq.html
+      output: web
+
+  - title: Controls
+    title_ru: Контролы
+    output: web, pdf
+
+    folderitems:
+
+    - title: ComboLookup
+      title_ru: ComboLookup
+      url: /fw_combo-lookup.html
+      output: web
+  
+    - title: DateTimePicker
+      title_ru: DateTimePicker
+      url: /fw_datetime-picker.html
+      output: web
+
+    - title: ExtendedTextBox
+      title_ru: ExtendedTextBox
+      url: /fw_extended-textbox.html
+      output: web
+    
+    - title: FileControl
+      title_ru: FileControl
+      url: /fw_file-control.html
+      output: web
+
+    - title: GroupEdit
+      title_ru: GroupEdit
+      url: /fw_group-edit.html
+      output: web
+  
+    - title: HighLighter
+      title_ru: HighLighter
+      url: /fw_high-lighter.html
+      output: web
+
+    - title: LookUp
+      title_ru: LookUp
+      url: /fw_lookup.html
+      output: web
+    
+    - title: ObjectListView
+      title_ru: ObjectListView
+      url: /fw_objectlistview.html
+      output: web
+
+      - title: Focus and Ctrl-S
+      title_ru: Фокус ввода и «Ctrl+S»
+      url: /fw_focus-and-ctrl-s.html
+      output: web
+  
+    - title: Predict input
+      title_ru: Предиктивный ввод в Windows-приложениях
+      url: /fw_predict-input.html
+      output: web
+
+  - title: Forms
+    title_ru: Формы
+    output: web, pdf
+
+    folderitems:
+
+    - title: Edit form
+      title_ru: Формы редактирования (классы со стереотипом editform)
+      url: /fw_editform.html
+      output: web
+
+  - title: Application
+    title_ru: Приложение
+    output: web, pdf
+
+    folderitems:
+
+    - title: Application and desktop
+      title_ru: Приложение и рабочий стол
+      url: /fw_app-desktop.html
+      output: web
+
+  - title: Подсистемы
+    title_ru: Subsystems
+    output: web, pdf
+
+    folderitems:
+
+    - title: Default date format
+      title_ru: Формат отображения даты по умолчанию
+      url: /fw_date-format.html
+      output: web
+
+  - title: Development
+    title_ru: Процесс разработки
+    output: web, pdf
+
+    folderitems:
+
+    - title: Design time errors
+      title_ru: Если что-либо «глючит» в Design-Time
+      url: /fw_design-time-errors.html
+      output: web
