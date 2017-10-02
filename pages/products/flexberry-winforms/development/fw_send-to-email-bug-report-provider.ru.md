@@ -9,7 +9,8 @@ lang: ru
 ---
 
 В стандартном окне сообщения об ошибке появилась возможность отправить письмо с сообщением об ошибке.
-![Изображение](/images/img/page/SendToEmailBugReportProvider/ErrorForm.png)
+
+![](/images/pages/products/flexberry-winforms/development/error-form.png)
 
 При выборе пункта меню "Отправить по электронной почте..." запускается почтовый клиент по умолчанию. Письмо содержит вложение с архивом, в котором находятся снимок экрана, описание ошибки и информация о текущей системной конфигурации.
 ![](/images/pages/products/flexberry-winforms/development/letter.png)
