@@ -78,7 +78,7 @@ entries:
       url: /fw_objectlistview.html
       output: web
 
-      - title: Focus and Ctrl-S
+    - title: Focus and Ctrl-S
       title_ru: Фокус ввода и «Ctrl+S»
       url: /fw_focus-and-ctrl-s.html
       output: web
