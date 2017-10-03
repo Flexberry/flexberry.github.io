@@ -386,16 +386,22 @@ entries:
       url: /fw_working-with-menu.html
       output: web
 
-  - title: Подсистемы
-    title_ru: Subsystems
+  - title: Subsystems
+    title_ru: Подсистемы
     output: web, pdf
 
     folderitems:
 
-    - title: Default date format
-      title_ru: Формат отображения даты по умолчанию
-      url: /fw_date-format.html
+    - title: Setting manager
+      title_ru: Подсистема настроек
       output: web
+
+      folderitems:
+
+      - title: Default date format
+        title_ru: Формат отображения даты по умолчанию
+        url: /fw_date-format.html
+        output: web
 
   - title: Development
     title_ru: Процесс разработки
