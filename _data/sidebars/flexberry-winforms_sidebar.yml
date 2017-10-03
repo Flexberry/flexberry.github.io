@@ -386,22 +386,148 @@ entries:
       url: /fw_working-with-menu.html
       output: web
 
-  - title: Subsystems
-    title_ru: Подсистемы
+  - title: Rights
+    title_ru: Подсистема полномочий
     output: web, pdf
 
     folderitems:
 
-    - title: Setting manager
-      title_ru: Подсистема настроек
+    - title: Application start permission
+      title_ru: Разрешение на запуск приложения и открытие форм
+      url: /fw_start-app-open-forms.html
       output: web
 
-      folderitems:
+  - title: Customization
+    title_ru: Настройка приложения
+    output: web, pdf
 
-      - title: Default date format
-        title_ru: Формат отображения даты по умолчанию
-        url: /fw_date-format.html
-        output: web
+    folderitems:
+
+    - title: Localization ui
+      title_ru: Локализация пользовательского интерфейса
+      url: /fw_localization-ui.html
+      output: web
+
+    - title: Visual logic
+      title_ru: Визуальная логика
+      url: /fw_visual-logic.html
+      output: web
+
+    - title: Default date format
+      title_ru: Формат отображения даты по умолчанию
+      url: /fw_date-format.html
+      output: web
+
+    - title: Setting manager
+      title_ru: Хранение настроек пользователя
+      url: /fw_setting-manager.html
+      output: web
+
+  - title: Filters and limits
+    title_ru: Фильтры и ограничения
+    output: web, pdf
+
+    folderitems:
+
+    - title: Advlimit function serialization
+      title_ru: Сохранение ограничений на форме задания ограничения 
+      url: /fw_advlimit-function-serialization.html
+      output: web
+
+    - title: Aliases system and user types
+      title_ru: Алиасы системных / пользовательских типов для параметров на форме ограничений
+      url: /fw_aliases-system-and-user-types.html
+      output: web
+
+    - title: Date limits standart view
+      title_ru: Функции для работы с датами в "стандартном виде"
+      url: /fw_date-limits-standart-view.html
+      output: web
+
+    - title: Date time funtions in limits
+      title_ru: Функции для работы с датой при задании ограничений
+      url: /fw_date-time-funtions-in-limits.html
+      output: web
+
+    - title: Description form limit editor in standard form
+      title_ru: Стандартный вид редактора ограничений. Описание формы
+      url: /fw_description-form-limit-editor-in-standard-form.html
+      output: web
+
+    - title: Filter example
+      title_ru: Пример использования AdvLimit и создания FilterSettings
+      url: /fw_filter-example.html
+      output: web
+
+    - title: Filter settings
+      title_ru: Настройки фильтров. FilterSettings.
+      url: /fw_filter-settings.html
+      output: web
+
+    - title: Filtersand limits
+      title_ru: Фильтры и ограничения
+      url: /fw_filtersand-limits.html
+      output: web
+
+    - title: Limit editor advanced view
+      title_ru: Расширенный вид редактора ограничений
+      url: /fw_limit-editor-advanced-view.html
+      output: web
+
+    - title: Limit editor params
+      title_ru: Ограничение с параметрами (для пользователя) в Win
+      url: /fw_limit-editor-params.html
+      output: web
+
+    - title: Limit editor simple view
+      title_ru: Упрощенный вид редактора ограничений
+      url: /fw_limit-editor-simple-view.html
+      output: web
+
+    - title: Limit hotkey
+      title_ru: Задание горячих клавиш для ограничений
+      url: /fw_limit-hotkey.html
+      output: web
+
+    - title: Limitation editform
+      title_ru: Форма задания ограничений
+      url: /fw_limitation-editform.html
+      output: web
+
+    - title: Master details filters
+      title_ru: Фильтрация по детейлам мастера. ConnectMasterProp, OwnerConnectProp
+      url: /fw_master-details-filters.html
+      output: web
+
+    - title: Masters in list selection type parameters in advlimit
+      title_ru: Мастера в списке выбора типа параметров в редакторе AdvLimit
+      url: /fw_masters-in-list-selection-type-parameters-in-advlimit.html
+      output: web
+
+    - title: Nalozhenie ogranichenij po stolbcam v spiskah
+      title_ru: Наложение ограничений по столбцам в списках
+      url: /fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html
+      output: web
+
+    - title: Self limit
+      title_ru: Ограничение на себя
+      url: /fw_self-limit.html
+      output: web
+
+    - title: Setting permissions for publication restrictions
+      title_ru: Настройка прав доступа на публикацию ограничений
+      url: /fw_setting-permissions-for-publication-restrictions.html
+      output: web
+
+    - title: Standart view limits editor
+      title_ru: Стандартный вид редактора ограничений. Формат ограничений
+      url: /fw_standart-view-limits-editor.html
+      output: web
+
+    - title: Winforms limit editor form
+      title_ru: Форма «Редактор ограничений» (WIN)
+      url: /fw_winforms-limit-editor-form.html
+      output: web
 
   - title: Development
     title_ru: Процесс разработки
