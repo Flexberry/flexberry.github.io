@@ -8,9 +8,9 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-На форме редактирования иногда необходимы поля, которые блокируются через EditManager. Однако возникают ситуации, когда при использовании [EditManager.SetReadonlyFlagProperties](fw_editmanager-set-readonly-flag-properties.html) после сохранения объекта на какой-то время снимается блокировка и значение может быть изменено. Для предотвращения таких ситуаций существует метод '''AddControlsToForcedReadOnlyList''', блокирующий изменение флаг ReadOnly. Данный метод работает со списком контролов. Список в свою очередь можно редактировать: добавлять или удалять контролы.
+На форме редактирования иногда необходимы поля, которые блокируются через EditManager. Однако возникают ситуации, когда при использовании [EditManager.SetReadonlyFlagProperties](fw_editmanager-set-readonly-flag-properties.html) после сохранения объекта на какой-то время снимается блокировка и значение может быть изменено. Для предотвращения таких ситуаций существует метод __AddControlsToForcedReadOnlyList__, блокирующий изменение флаг ReadOnly. Данный метод работает со списком контролов. Список в свою очередь можно редактировать: добавлять или удалять контролы.
 
-# Метод AddControlsToForcedReadOnlyList
+## Метод AddControlsToForcedReadOnlyList
 
 ```csharp
 /// <summary>
@@ -20,7 +20,7 @@ lang: ru
 public void AddControlsToForcedReadOnlyList(List<Control> controlList)
 ```
 
-## Пример использования
+### Пример использования
 
 ```csharp 
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
@@ -33,7 +33,7 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
         }
 ```
 
-# Метод RemoveControlsFromForcedReadOnlyList
+## Метод RemoveControlsFromForcedReadOnlyList
 Данный метод позволяет удалить контролы, добавленные методом AddControlsToForcedReadOnlyList.
 
 ```csharp 

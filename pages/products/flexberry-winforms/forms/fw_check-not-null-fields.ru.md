@@ -9,7 +9,8 @@ lang: ru
 ---
 
 Если поля одного класса на одной форме редактирования должны быть обязательно заполнены, а на другой нет, то для отображения и проверки обязательных для заполнения полей (не отмеченных в классе атрибутом [Атрибуты-классов-данных|NotNull]) можно воспользоваться [DataObjectErrorProvider](fw_data-object-error-provider.html)
-### '''Порядок действий'''
+
+### __Порядок действий__
 * кинуть DataObjectErrorProvider на форму
 * привязать DataObjectErrorProvider к EditManager (к которому привязаны проверяемые поля)(DataObjectErrorProvider.EditManagerForBind)
 * задать проверяемые поля в DataObjectErrorProvider.Properties

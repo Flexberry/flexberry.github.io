@@ -21,4 +21,4 @@ o.DynamicProperties["retFromObjectListView"] as List<DataObject>
 Полученный список не будет содержать первого выбранного объекта `o`.
 
 
-'''Замечание''' относительно форм, имеющих несколько ObjectListView или ObjectHierarchicalView (такие есть в '''АСУ-ДЧ''': `WinformВидРешенияL`, `WinformВидРешенияПоУДL` и др.). Дабы возврат нескольких объектов работал на таких формах, нужно убрать перегрузку `prv_EditData` и подписку на `OLV.ReturnData`.
+__Замечание__ относительно форм, имеющих несколько ObjectListView или ObjectHierarchicalView. Дабы возврат нескольких объектов работал на таких формах, нужно убрать перегрузку `prv_EditData` и подписку на `OLV.ReturnData`.

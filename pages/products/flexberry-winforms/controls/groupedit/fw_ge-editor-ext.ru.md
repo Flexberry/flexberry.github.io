@@ -31,15 +31,17 @@ lang: ru
 
 
 1. В классе формы агрегатора объявляем переменную типа GEEditorExt:
-```
-CSHARP
+
+```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
 	IIS.AMS02.GEEditorExt extGEПокупки;
 	//...
 }
 ```
+
 2. В метод `Edit` формы агрегатора добавляем код  по инициализации этой переменной. Конструктору класса `GEEditorExt` в качестве параметра передается [`GroupEdit`](fw_group-edit.html), функциональность которого мы расширяем.
+
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
@@ -56,10 +58,12 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 	//...
 }
 ```
+
 {% include note.html content="Вместо пунктов 1 и 2, если не надо совершать дополнительных действий с кнопками (скрывать их, переименовывать и т.п.) можно использовать метод-расширение у [`GroupEdit`](fw_group-edit.html)." %}
 
 
 3. В метод `GetEditor` формы агрегатора добавляем код, указывающий какую форму поднимать для редактирования конкретного детейла:
+
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
@@ -74,7 +78,9 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 	//...
 }
 ```
+
 4. Переопределяем метод `PromtUserForActionAtClose` формы детейла (это связанно с особенностью 1 класса `GEEditorExt`):
+
 ```csharp
 public class WinformC__ПокупкаE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупкаE
 {
@@ -90,7 +96,9 @@ public class WinformC__ПокупкаE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.Ma
 	//...
 }
 ```
+
 5. В независимой форме детейла переопределяем метод вычитки из БД (для того, чтобы не вычитывался полностью объект при поднятии формы редактирования):
+
 ```csharp
 public class C__ПокупкаE : ICSSoft.STORMNET.UI.BaseIndpdEdit
 {

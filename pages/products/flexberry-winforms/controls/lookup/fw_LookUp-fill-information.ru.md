@@ -8,9 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# "Размазывание" по Control'ам информации с LookUp'а
-
-Переопределяем метод '''Edited''':
+Переопределяем метод __Edited__:
 
 ```csharp
 public override void Edited(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)

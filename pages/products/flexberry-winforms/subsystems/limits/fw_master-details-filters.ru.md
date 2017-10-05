@@ -7,7 +7,6 @@ permalink: ru/fw_master-details-filters.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
-# Фильтрация по детейлам мастера
 
 Рассмотрим несколько примеров.
 
@@ -46,11 +45,8 @@ lang: ru
 
 Таким образом, СтрокаРекомендательногоСписка и ОбразовательныйДокумент свяжутся через ЗаявлениеАбитуриента и Личность.
 
-# OwnerConnectProp, ConnectMasterProp
+## OwnerConnectProp, ConnectMasterProp
 
-Таким образом, в ConnectMasterProp указывается путь от детейла, а в OwnerConnectProp - к детейлу от объекта. Связка происходит следующим образом: '''Детейл.ConnectMasterProp = Объект.OwnerConnectProp'''.
+Таким образом, в ConnectMasterProp указывается путь от детейла, а в OwnerConnectProp - к детейлу от объекта. Связка происходит следующим образом: __Детейл.ConnectMasterProp = Объект.OwnerConnectProp__.
 
 Также стоит отметить, что свойство OwnerConnectProp определяет, к какому объекту относятся детейлы. Если свойство не указано (т.е. указан null), то связка происходит по __первичному ключу__ (StormMainObjectKey).
-
-
-

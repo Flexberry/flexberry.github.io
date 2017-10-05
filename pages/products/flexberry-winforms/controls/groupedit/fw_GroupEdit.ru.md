@@ -102,7 +102,7 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 };
 ```
 
-{% include note.html content="Стоит учесть, что событие `AfterChangeProperty` при выборе мастера сработает __дважды__: 1ый раз при нажатии на кнопку [лукапа](fa_lookup-overview.html), а 2ой раз при возврате значения." %}
+{% include note.html content="Стоит учесть, что событие `AfterChangeProperty` при выборе мастера сработает _дважды_: 1ый раз при нажатии на кнопку [лукапа](fa_lookup-overview.html), а 2ой раз при возврате значения." %}
 
 
 В `GroupEdit` добавлена полоса состояния, отображающая количество элементов.

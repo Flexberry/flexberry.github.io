@@ -18,5 +18,5 @@ lang: ru
 
 ![](/images/pages/products/flexberry-winforms/development/generation/2-app_-s-l-n.jpg)
 
-'''Примечание:''' отдельная сборка DesktopCustomizers для каждого приложения не генерируется.
+__Примечание:__ отдельная сборка DesktopCustomizers для каждого приложения не генерируется.
 

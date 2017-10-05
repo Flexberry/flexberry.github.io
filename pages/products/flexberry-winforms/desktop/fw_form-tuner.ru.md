@@ -13,9 +13,9 @@ lang: ru
 
 Последовательность действий такова:
 
-#Добавить в прикладное приложение класс, наследующий от `ICSSoft.STORMNET.UI .UniversalFormTuner`.
+1. Добавить в прикладное приложение класс, наследующий от `ICSSoft.STORMNET.UI .UniversalFormTuner`.
 
-#Переопределить метод 
+0. Переопределить метод 
 
 ```csharp
 public virtual void TuneForm( BaseWin form )
@@ -23,7 +23,7 @@ public virtual void TuneForm( BaseWin form )
 
 Параметр `form` – ссылка на экземпляр формы перед ее отображением.
 
-#Присвоить свойству `UniversalFormTuner.StandardTuner` ссылку на экземпляр Вашего «тюнера».
+3. Присвоить свойству `UniversalFormTuner.StandardTuner` ссылку на экземпляр Вашего «тюнера».
 
 
 Кроме того, для осуществления единообразной обработки форм приложения, можно подписаться на специальное глобальное событие (в методе `Main`):

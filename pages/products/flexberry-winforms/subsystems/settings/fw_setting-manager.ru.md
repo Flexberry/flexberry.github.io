@@ -57,8 +57,8 @@ SettingManager.SetSetting("SettingsTest", "Form Position&Size", string.Join(",",
 	}
 ```
 
-'''Важное замечание.''' Существует возможность представить любой объект в виде `XML`-строки используя стандартную `SOAP`-сериализацию `.NET`. Это делается утилитой `ICSSoft.STORMNET.Windows.Forms.Utils.ObjectToString` (обратное преобразование — `ObjectFromString`). Следовательно, можно не формировать вручную строку значения настройки, а воспользоваться этой утилитой.
+{% include important.html content="Существует возможность представить любой объект в виде `XML`-строки используя стандартную `SOAP`-сериализацию `.NET`. Это делается утилитой `ICSSoft.STORMNET.Windows.Forms.Utils.ObjectToString` (обратное преобразование — `ObjectFromString`). Следовательно, можно не формировать вручную строку значения настройки, а воспользоваться этой утилитой." %}
 
-Сериализация объектов данных выполняется другим образом: [Агрегирующие-функции|Как «закрутить» объект данных в строку XML и восстановить обратно]
+Сериализация объектов данных выполняется другим образом: [Как «закрутить» объект данных в строку XML и восстановить обратно](aggregating-function.html).
 
-'''Внимание: разработан новый [UserSettingsService](fa_user-settings-service.html), призванный заменить `SettingManager`.'''
+{% include note.html content="Разработан новый [UserSettingsService](fa_user-settings-service.html), призванный заменить `SettingManager`." %}

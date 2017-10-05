@@ -8,5 +8,4 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-'''Переход на генерируемую форму с универсальной с контролами ICustomizable'''
 Метод Customize необходимо вызвать вручную в перегруженном методе Edit.

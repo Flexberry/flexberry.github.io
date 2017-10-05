@@ -8,14 +8,14 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# Передача параметров в DesktopCustomizer
+## Передача параметров в DesktopCustomizer
 Для того чтобы передать параметр контейнеру запуска используйте перегруженный метод создания `ContRunner`.
 
 ```csharp
 arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.LimitsTesting_Blog.LTB_БлогL), "MyTag1FromContRunner", "LimitsTesting_Blog", "Блог", ""));
 ```
 
-# Приём параметра в списковой форме и передача на форму редактирования
+## Приём параметра в списковой форме и передача на форму редактирования
 Параметр в списковую форму попадает в метод `Activate(object tag)`. 
 Обратите внимание на количество параметров в перегруженном методе `OnNewEvent()`. Перегрузить следует метод с 2мя параметрами, а вызвать в нём метод с 3мя. По-умолчанию создание объектов происходит без передачи тега.
 
@@ -44,7 +44,7 @@ protected override void OnEditEvent(string propertyname, ICSSoft.STORMNET.DataOb
 // *** End programmer edit section *** (LTB_БлогL CustomMembers)
 ```
 
-# Приём параметра на форме редактирования
+## Приём параметра на форме редактирования
 В метод `Edit` с самым большим числом параметров придёт тот самый тег.
 
 ```csharp
@@ -56,6 +56,3 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
 }
 // *** End programmer edit section *** (WinformLTB_БлогE CustomMembers)
 ```
-
-
-

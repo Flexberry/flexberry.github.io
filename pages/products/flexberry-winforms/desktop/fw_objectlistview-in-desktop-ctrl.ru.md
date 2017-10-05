@@ -8,7 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# [#Desktop pict|Картинка на рабочем столе]
+# [Картинка на рабочем столе](#markdown-header-Картинка-на-рабочем-столе)
 # [#ContextMenu|Контекстное меню]
 # [#ShowGroups|Группировка элементов рабочего стола]
 # [#Icons|Замена иконок элементов списка]
@@ -17,7 +17,7 @@ lang: ru
 # [#Event|Событие TreeViewItemSelected]
 # [#DesktopSettings|DesktopSettings]
 
-## [anchor|#Desktop pict]Картинка на рабочем столе
+## Картинка на рабочем столе
 
 Фоновая картинка рабочего стола задается свойством `listView1.OverlayImage.Image`. Можно выбрать любую картинку форматов ''gif, jpg, jpeg, bmp, wmf, png''. Можно установить анимированную картинку, но анимироваться она не будет. После смены изображения нужно его обновить вызовом метода `RefreshOverlay`:
 
@@ -46,12 +46,12 @@ listView1.OverlayImage.Transparency = 50;
 
 ![](/images/pages/products/flexberry-winforms/desktop/context-menu.png)
 
-# '''Обновить '''– обновляет все элементы списка с сохранением текущей позиции - `listView1.BuildList(true)`.
-# '''Отображать дерево '''– скрыть/показать treeView (свойство `treeView1.Visible`).
-# '''Показывать папки '''– выводить/не выводить папки в listView.
-# '''Группировать элементы '''– группировать/не группировать элементы listView (свойство `ShowGroups`).
-# '''Столбцы '''– выбрать столбцы для отображения в listView. Столбец «Название» отображается всегда.
-# '''Всегда группировать по '''– выбрать столбец, по которому всегда будет происходить группировка элементов (свойство `AlwaysGroupByColumn`).
+* __Обновить__ – обновляет все элементы списка с сохранением текущей позиции - `listView1.BuildList(true)`.
+* __Отображать дерево__ – скрыть/показать treeView (свойство `treeView1.Visible`).
+* __Показывать папки__ – выводить/не выводить папки в listView.
+* __Группировать элементы__ – группировать/не группировать элементы listView (свойство `ShowGroups`).
+* __Столбцы__ – выбрать столбцы для отображения в listView. Столбец «Название» отображается всегда.
+* __Всегда группировать по__ – выбрать столбец, по которому всегда будет происходить группировка элементов (свойство `AlwaysGroupByColumn`).
 
 ## [anchor|#ShowGroups]Группировка элементов рабочего стола
 Группировка задаётся свойством `ShowGroups` (по умолчанию `true`).
@@ -72,8 +72,8 @@ listView1.AlwaysGroupByColumn = this.ItemType;
 
 ## [anchor|#Icons]Замена иконок элементов списка
 Если не устраивают стандартные иконки, отображаемые для папок, пользовательских форм и форм редактирования, заменить их можно следующим образом:
-# Замена всей группы иконок. В экземпляре класса `Runner` поле для картинки `imagecache` должно быть `null` (стоит по умолчанию). Тогда рисунок берется из `imageListRunners` и `imageListRunnersLarge` (для отображения мелких (16x16) и крупных (32x32) иконок соответственно). В качестве ключа используются следующие значения: ''"IconFolder"'' – папка, ''"IconForm"'' – пользовательская форма, ''"IconEdit"'' – форма редактирования, ''"IconFolderUp"'' – на уровень вверх. В пользовательском приложении иконка меняется через одноимённые поля компонента `DesktopCtrl`, за исключением ''"IconFolderUp"'' – здесь её заменить нельзя.
-# Замена иконки для конкретного экземпляра класса `Runner` (пользовательская форма или форма редактирования). Замена происходит в коде пользовательского приложения.
+* Замена всей группы иконок. <br>В экземпляре класса `Runner` поле для картинки `imagecache` должно быть `null` (стоит по умолчанию). Тогда рисунок берется из `imageListRunners` и `imageListRunnersLarge` (для отображения мелких (16x16) и крупных (32x32) иконок соответственно). В качестве ключа используются следующие значения: ''"IconFolder"'' – папка, ''"IconForm"'' – пользовательская форма, ''"IconEdit"'' – форма редактирования, ''"IconFolderUp"'' – на уровень вверх. В пользовательском приложении иконка меняется через одноимённые поля компонента `DesktopCtrl`, за исключением ''"IconFolderUp"'' – здесь её заменить нельзя.
+* Замена иконки для конкретного экземпляра класса `Runner` (пользовательская форма или форма редактирования). <br>Замена происходит в коде пользовательского приложения.
 
 ### Пример (ЛюдиDesktopCustomizer.cs)
 
@@ -104,8 +104,8 @@ arr.Add(new ICSSoft.STORMNET.Windows.Forms.FormRunner(typeof(IIS.Люди.Winfor
 
 Класс `ItemInListView` по сути связывает Items с Columns. `ObjectListView` сам создаёт новый item и присваивает каждому полю нужное значение. Чтобы составить однозначное соответствие «поле в `ItemInListView` – столбец в `ObjectListView`» имена полей в `ItemInListView` совпадают со значением полей `AspectName` (тип `string`) у соответствующих столбцов.
 Добавление нового item происходит по схеме: 
-# Создали экземпляр класса `ItemInListView` и заполнили его поля.
-# Добавили его в `ObjectListView` методом `AddObjects` для нескольких item или `AddObject` для одного item.
+* Создали экземпляр класса `ItemInListView` и заполнили его поля.
+* Добавили его в `ObjectListView` методом `AddObjects` для нескольких item или `AddObject` для одного item.
 
 При таком подходе отпадает необходимость в работе с subItem и к каждому добавленному item можно обращаться как к `ItemInListView`:
 
@@ -163,17 +163,17 @@ private void desktopCtrl2_TreeViewItemSelected(object sender, ICSSoft.STORMNET.W
 Серилиазуемый класс `DesktopSettings` служит для хранения таких пользовательских настроек как размер окна, ширина столбцов, столбцы для отображения и т.д. Для того чтобы настройки сохранялись и загружались, нужно установить свойство `UseSettings` класса `SettingManager` равным true. В таком случае настройки сохраняются перед закрытием пользовательского приложения, а загружаются при запуске.
 
 Хранятся следующие настройки:
-# string[] `History` - история строки в `AddressBar`.
-# string `curpath` - текущий путь в папках.
-# int `Viewmode` - режим представления элементов. 0 – большие иконки, 1 – список, 2 – подробности, 3 – маленькие иконки.
-# int `FoldersSplitterPos` - позиция сплиттера между treeView и listView.
-# bool `TreeViewVisible` – отображать treeView.
-# bool `ListViewShowFolders` – отображать папки в listView.
-# bool `ListViewShowGroups` – группировать элементы в listView.
-# string `ListViewAlwaysGroupByColumnName` – название столбца, по которому нужно всегда группировать элементы (''“Caption”'' - название, ''“Description”'' - описание, ''"ItemType"'' - тип, ''"ParentFolder"'' - папка).
-# string `ListViewColumnSort` – название столбца, по которому производится сортировка элементов listView.
-# SortOrder `ListViewSortOrder` – порядок сортировки элементов listView (убывание, возрастание).
-# Отображать столбцы: `ColumnDescriptionVisible` – описание, `ColumnItemTypeVisible` – тип, `ColumnParentFolderVisible` – папка. Столбец «Название» отображается всегда.
-# Ширина столбцов: `ColumnCaptionWidth` - название, `ColumnDescriptionWidth` - описание, `ColumnItemTypeWidth` - тип, `ColumnParentFolderWidth` – папка.
+* string[] `History` - история строки в `AddressBar`.
+* string `curpath` - текущий путь в папках.
+* int `Viewmode` - режим представления элементов. 0 – большие иконки, 1 – список, 2 – подробности, 3 – маленькие иконки.
+* int `FoldersSplitterPos` - позиция сплиттера между treeView и listView.
+* bool `TreeViewVisible` – отображать treeView.
+* bool `ListViewShowFolders` – отображать папки в listView.
+* bool `ListViewShowGroups` – группировать элементы в listView.
+* string `ListViewAlwaysGroupByColumnName` – название столбца, по которому нужно всегда группировать элементы (''“Caption”'' - название, ''“Description”'' - описание, ''"ItemType"'' - тип, ''"ParentFolder"'' - папка).
+* string `ListViewColumnSort` – название столбца, по которому производится сортировка элементов listView.
+* SortOrder `ListViewSortOrder` – порядок сортировки элементов listView (убывание, возрастание).
+* Отображать столбцы: `ColumnDescriptionVisible` – описание, `ColumnItemTypeVisible` – тип, `ColumnParentFolderVisible` – папка. Столбец «Название» отображается всегда.
+* Ширина столбцов: `ColumnCaptionWidth` - название, `ColumnDescriptionWidth` - описание, `ColumnItemTypeWidth` - тип, `ColumnParentFolderWidth` – папка.
  
 

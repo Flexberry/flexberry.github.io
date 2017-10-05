@@ -38,6 +38,7 @@ lang: ru
 ![](/images/pages/products/flexberry-winforms/controls/path2dll.png)
 
 В диалоговой форме выбора типа необходимо отметить `ExtendedLookUp`, `ExtLookUpTextControl` или оба.
+
  __Примечание__: рекомендуется использовать только `ExtendedLookUp`.
 
 ![](/images/pages/products/flexberry-winforms/controls/type-select.png)
@@ -58,12 +59,12 @@ lang: ru
 
 ![](/images/pages/products/flexberry-winforms/controls/select-type.png)
 
-* В поле `Свойство мастера` указать свойство __мастера__, по которому будет производиться поиск для предиктивного ввода.
+* В поле `Свойство мастера` указать свойство __мастера__, по которому будет производиться поиск для предиктивного ввода.<br>
 __Примечание__: свойство мастера должно содержаться в представлении. Наименование свойства вводится с клавиатуры.
 
 ![](/images/pages/products/flexberry-winforms/controls/select-property.png)
 
-* В поле `Имя лукапа` выбрать из выпадающего списка необходимый LookUp.
+* В поле `Имя лукапа` выбрать из выпадающего списка необходимый LookUp.<br>
 __Примечание__: если в выпадающем списке нет необходимого LookUp'а, или вообще нет ничего, следует к пункту `Регистрация контрола в Стадии Flexberry Desinger`.
 
 ![](/images/pages/products/flexberry-winforms/controls/select-lookup.png)

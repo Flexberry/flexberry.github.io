@@ -8,25 +8,25 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# Фильтры
+## Фильтры
 
-'''Фильтры''' - это инструмент наложения пользовательских ограничений на список объектов.
+__Фильтры__ - это инструмент наложения пользовательских ограничений на список объектов.
 
 Все списки имеют функциональность по наложению на них фильтров. Для загрузки списка используется [представление](fd_view-types.html) L, а представления T и D используется для наложения на него ограничений. Поэтому представления L и T (D для детейлов объекта) должны содержать одинаковый набор атрибутов.
 
-# Редактор ограничений
+## Редактор ограничений
 
 Редактор ограничений служит для создания фильтров.
 
 Подробнее о редакторе можно посмотреть в [этой статье](fw_limit-editor-simple-view.html)
 
-# Настройки фильтров (FilterSettings)
+## Настройки фильтров (FilterSettings)
 Для задания [FilterSettings](fw_filter-settings.html) необходимо воспользоваться Flexberry Administrative Console (AdmConsole) или [Генератором настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html) (не все необходимые для генератора dll входят в стандартную поставку Flexberry).
 
 
 Если используется [генератор настроек фильтров](прикладные-системы_Генератор-настроек-фильтров.html), то необходимо обратить внимание на следующие моменты: 
 
-1. Для работы его можно определить как [ярлык](Ярлыки-рабочего-стола.html) на [рабочий стол](fw_app-desktop.html):
+1. Для работы его можно определить как [ярлык](fw_win-desktop-links.html) на [рабочий стол](fw_app-desktop.html):
 
 ```csharp
 arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsGeneratorE), "Администрирование", "Генератор настроек фильтров", "", new IIS.Core.App_FilterSettingsGenerator(), typeof(IIS.Core.App_FilterSettingsGenerator), false));
@@ -58,8 +58,8 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 
 {% include note.html content="Для того, чтобы ограничение «сам объект» заработало - нужно создать STORMFILTERLOOKUP для этого объекта." %}
 
-# Форма задания ограничений AdvLimit
+## Форма задания ограничений AdvLimit
 [AdvLimit](limitation-edit-form.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](fw_filter-settings.html) и [здесь](fw_filter-example.html)).
 
-# LimitFunction
+## LimitFunction
 Через [свойство LimitFunction структуры LoadingCustomizationStruct](fo_loading-customization-struct.html) можно программно задавать ограничения (пример см. [здесь](filter-settings-for-use-in-lists.html) и [Ограничение-на-детеилы-из-кода|здесь]).
