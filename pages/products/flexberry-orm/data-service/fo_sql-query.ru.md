@@ -1,7 +1,7 @@
 ---
 title: SQL-запросы в Flexberry
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, база данных, запросы, ограничения, ADO.NET 
+keywords: Flexberry ORM, сервис данных, база данных, запросы, ограничения, ADO.NET 
 summary: Описание способов работы с БД и рекомендуемые способы доступа к БД
 toc: true
 permalink: ru/fo_sql-query.html
@@ -24,6 +24,7 @@ lang: ru
 ### Формирование запроса в сервисе данных
 
 Из чего складывается текст SQL-запроса, генерируемого [сервисом данных](fo_data-service.html):
+
 * Настройки [LoadingCustomizationStruct](fo_loading-customization-struct.html) (работу по сортировке, наложению [limitFunction](fo_limit-function.html), подчёту агрегирующих значений и прочим аналогичным действиям необходимо перекладывать на сервер за счёт задания параметров `LoadingCustomizationStruct`.
 * Атрибутивная разметка (например, атрибут `Storage` как классов, так и связей).
 * Реализация [Inheritance](fo_inheritance.html) с иcпользованием [TypeUsage](fo_type-usage-problem.html).

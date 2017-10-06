@@ -1,20 +1,19 @@
 ---
 title: Порционное чтение
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, сервис данных
+summary: Правила использования порционного чтения
 toc: true
 permalink: ru/fo_reading-portion.html
-folder: products/flexberry-orm/
 lang: ru
 ---
-
-## Порционное чтение
 
 Весьма удобной возможностью является чтение объектов данных порциями, по частям. Существует возможность вызвать операцию чтения таким образом, чтобы кроме порции объектов данных, [сервис данных](fo_data-service.html) возвратил некоторое состояние чтения. Передавая последующим операциям чтения это состояние, можно получать очередные порции. 
 
 Для выполнения порционного чтения необходимо:
-* Установить в [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) дополнительно размер порции через свойство [`LoadingCustomizationStruct`](fo_loading-customization-struct.html).
-* Вызвать метод чтения объектов с параметрами [`LoadingCustomizationStruct`](fo_loading-customization-struct.html) и состояния, получить состояние.
+
+* Установить в [LoadingCustomizationStruct](fo_loading-customization-struct.html) дополнительно размер порции через свойство `LoadingCustomizationStruct`.
+* Вызвать метод чтения объектов с параметрами `LoadingCustomizationStruct` и состояния, получить состояние.
 * Выполнять последующее дочитывание по состоянию.
 
 ``` csharp
@@ -36,4 +35,4 @@ Console.WriteLine("Больше авторов нет. Конец.");
 Console.Read();
 ```
 
-{% include note.html content="Обратите внимание, что сигнатуры вызова метода `LoadObjects` __разные__. Для дочитывания данных используется вызов метода с 1 параметром `ref state`." %}
+{% include note.html content="Сигнатуры вызова метода `LoadObjects` __разные__. Для дочитывания данных используется вызов метода с 1 параметром `ref state`." %}

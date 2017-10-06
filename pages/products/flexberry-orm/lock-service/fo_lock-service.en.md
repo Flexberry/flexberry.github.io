@@ -29,7 +29,7 @@ ls.ClearLock(автор);//Очистка блокировки
 Console.ReadLine();
 ```
 
-Сервис блокировок обращается к хранилищу данных через [сервис данных](fo_data-service.html), указанный в [провайдере сервиса данных](fo_data-service-provider-data-service.html) (`ICSSoft.STORMNET.Business.DataServiceProvider.DataService`).
+Сервис блокировок обращается к хранилищу данных через [сервис данных](fo_data-service.html), указанный в [провайдере сервиса данных](fo_ds-provider.html) (`ICSSoft.STORMNET.Business.DataServiceProvider.DataService`).
 
 В хранилище для блокировок должен существовать соответствующий источник.
 

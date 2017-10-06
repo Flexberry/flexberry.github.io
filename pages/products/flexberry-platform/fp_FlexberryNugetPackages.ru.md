@@ -43,7 +43,7 @@ lang: ru
 Сборки, входящие в пакет:
 * LogService.dll
 
-## [Flexberry LogService Objects](flexberry-log-service-objects.html)
+## [Flexberry LogService Objects](fo_log-service-objects.html)
 
 Сборки, входящие в пакет:
 * IIS.Flexberry.Logging(BusinessServers).dll
