@@ -1,13 +1,12 @@
 ---
-title: Как перехватить формирование SQL-запроса к БД
+title: Перехват формирования SQL-запроса к БД
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, БД
+keywords: Flexberry ORM, база данных, сервис данных, пример
+summary: Примеры перехватов формирования SQL-запросов
 toc: true
 permalink: ru/fo_intercept-formation-sql-query.html
 lang: ru
 ---
-
-## Перехват формирования SQL-запроса к БД
 
 [SQLDataService](fo_sql-data-service.html) позволяет осуществлять перехват формирования SQL-запроса к БД за счёт применения [делегатов OnGenerateSQLSelect, AfterGenerateSQLSelectQuery, OnCreateCommand](fo_sql-data-service.html). 
 
