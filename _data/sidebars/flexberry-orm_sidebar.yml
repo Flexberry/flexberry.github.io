@@ -162,6 +162,10 @@ entries:
   - title: Dependency Injection
     output: web, pdf
     folderitems:
+    - title: Default data service
+      title_ru: Сервис данных по умолчанию
+      url: /fo_ds-provider.html
+      output: web
     - title: Flexberry UnityFactory
       title_ru: Flexberry UnityFactory
       url: /fo_unity-factory.html
@@ -474,6 +478,22 @@ entries:
     - title: Data service for working with XML
       title_ru: Cервис данных для работы с XML
       url: /fo_xml-file-ds.html
+      output: web
+
+  - title: Типы данных
+    output: web, pdf
+    folderitems:
+    - title: Data types in Flexberry ORM
+      title_ru: Типы данных во Flexberry ORM
+      url: /fo_flexberry-orm-types.html
+      output: web
+    - title: Notstored (computable) properties of the data object
+      title_ru: Нехранимые (вычислимые) свойства объекта данных
+      url: /fo_not-stored-attributes.html
+      output: web
+    - title: Example of non-stored object properties
+      title_ru: Пример нехранимых свойств объектов
+      url: /fo_nonstored-calculated-properties.html
       output: web
                 
   - title: Функции ограничения
