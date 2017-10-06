@@ -47,7 +47,7 @@ lang: en
 Наиболее часто встречаются следующие задачи обработки объектов данных: 
 
 * [Изменение значений атрибутов](fo_own-object-attributes.html).
-* [Получение информации о статусе объекта](fo_processing-status-and-condition-of-load-object-data-services.html).
+* [Получение информации о статусе объекта](fo_processing-status-condition-load.html).
 * [Получение информации о загруженных свойствах](fo_get-loaded-properties-and--check-loaded-property.html).
 * [Получение метаданных объекта](fo_methods-class-information.html).
 * [Блокировка объекта для монопольного редактирования](fo_lock-service.html).

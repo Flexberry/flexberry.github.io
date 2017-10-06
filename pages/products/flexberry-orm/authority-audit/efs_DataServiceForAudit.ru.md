@@ -53,7 +53,7 @@ public class FirstClass : ICSSoft.STORMNET.DataObject, IDataObjectWithAuditField
 
 Реализация интерфейса `[IAudit](i-audit.html)` `[ICSSoft.STORMNET.Business.Audit.Audit](i-audit.html)` обрабатывает полученное имя строки соединения следующим образом:
 # Производится поиск строки соединения по имени среди доступных в файле конфигурации.
-# Если строка соединения не была найдена, то используется строка соединения из [DataServiceProvider.DataService](data-service-provider-data-service.html).
+# Если строка соединения не была найдена, то используется строка соединения из [DataServiceProvider.DataService](fo_ds-provider.html).
 
 ## Определение типа сервиса данных
 Тип [сервиса данных](fo_data-service.html), посредством которого будет записываться аудит, не определяется на этапе подготовки данных для записи в аудит. Тип определяется уже в реализации интерфейса `[IAudit](i-audit.html)`.
@@ -61,4 +61,4 @@ public class FirstClass : ICSSoft.STORMNET.DataObject, IDataObjectWithAuditField
 Реализация интерфейса `[IAudit](i-audit.html)` `[ICSSoft.STORMNET.Business.Audit.Audit](i-audit.html)` определяет тип сервиса данных следующим образом (см. также [следующую статью](audit-win-service.html)):
 # Тип сервиса данных всегда ищется в конфиг-файле по ключу <Имя строки соединения>_DSType.
 # Если такой записи нет, то берётся сервис данных, указанных в настройке "DefaultDSType".
-# Иначе используется тип сервиса данных [DataServiceProvider.DataService](data-service-provider-data-service.html).
+# Иначе используется тип сервиса данных [DataServiceProvider.DataService](fo_ds-provider.html).

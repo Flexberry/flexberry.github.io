@@ -36,7 +36,7 @@ stopwatch.Stop();
 Console.WriteLine("Time taken for loading and persistence: {0} ms.", stopwatch.ElapsedMilliseconds);
 ```
 
-Пример [метода бизнес-сервера, срабатывающего при обновлении объекта данных](fo_testing-user-operations-dataservice.html) класса `CDDA`:
+Пример [метода бизнес-сервера, срабатывающего при обновлении объекта данных](fo_user-operations-dataservice.html) класса `CDDA`:
 
 ```csharp
 public virtual ICSSoft.STORMNET.DataObject[] OnUpdateCDDA(IIS.CDLIB.CDDA UpdatedObject)

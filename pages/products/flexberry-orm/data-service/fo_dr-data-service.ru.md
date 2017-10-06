@@ -1,14 +1,17 @@
 ---
 title: DRDataService
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, сервис данных, чтение данных
+summary: Использование dirty read
 toc: true
 permalink: ru/fo_dr-data-service.html
+lang: ru
 ---
 
 `DRDataService` - [сервис данных](fo_data-service.html), наследник [SQLDataService](fo_sql-data-service.html), обладает тем же функционалом, что и обычный [MSSQLDataService](fo_mssql-data-service.html), но при чтении данных используется ["грязное чтение (dirty read)"](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx).
 
 ## Получение экземпляра DRDataService
+
 Экземпляр DRDataService можно получить через [UnityFactory](fo_unity-factory.html), выполнив следующий код:
 
 ```csharp
@@ -38,4 +41,4 @@ permalink: ru/fo_dr-data-service.html
 </configuration>
 ```
 
-Строка соединения в данном примере настраивается так, как указано в статье про [`DataServiceProvider`](fo_data-service-provider-data-service.html)
+Строка соединения в данном примере настраивается так, как указано в статье про [`DataServiceProvider`](fo_ds-provider.html)
