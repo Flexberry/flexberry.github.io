@@ -9,13 +9,13 @@ lang: ru
 ---
 
 - [Картинка на рабочем столе](#картинка-на-рабочем-столе)
-- [Контекстное меню](#Контекстное-меню)
-- [Группировка элементов рабочего стола](#Группировка-элементов-рабочего-стола)
-- [Замена иконок элементов списка](#Замена-иконок-элементов-списка)
-- [Обновление объектов ListView](#Обновление-объектов-ListView)
-- [Работа с Column и Item](#Работа-с-Column-и-Item)
-- [Событие TreeViewItemSelected](#событие-TreeViewItemSelected)
-- [DesktopSettings](#DesktopSettings)
+- [Контекстное меню](#контекстное-меню)
+- [Группировка элементов рабочего стола](#группировка-элементов-рабочего-стола)
+- [Замена иконок элементов списка](#замена-иконок-элементов-списка)
+- [Обновление объектов ListView](#обновление-объектов-listview)
+- [Работа с Column и Item](#работа-с-column-и-item)
+- [Событие TreeViewItemSelected](#событие-treeviewitemselected)
+- [DesktopSettings](#desktopsettings)
 
 ## Картинка на рабочем столе
 
@@ -159,7 +159,7 @@ private void desktopCtrl2_TreeViewItemSelected(object sender, ICSSoft.STORMNET.W
 
 ![](/images/pages/products/flexberry-winforms/desktop/treeview-item-selected.png)
 
-## DesktopSettings]DesktopSettings
+## DesktopSettings
 Серилиазуемый класс `DesktopSettings` служит для хранения таких пользовательских настроек как размер окна, ширина столбцов, столбцы для отображения и т.д. Для того чтобы настройки сохранялись и загружались, нужно установить свойство `UseSettings` класса `SettingManager` равным true. В таком случае настройки сохраняются перед закрытием пользовательского приложения, а загружаются при запуске.
 
 Хранятся следующие настройки:

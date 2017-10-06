@@ -8,11 +8,11 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-(((Данная статья ещё редактируется)))
+<!-- Данная статья ещё редактируется -->
 
 Проверка данных на форме во время сохранения осуществляется [ через события `OnSave`/`OnSaveEvent`](fw_check-through-on-save-event-example.html) и может включать следующие элементы:
 * Определение обязательных для заполнения полей на диаграмме классов через атрибут [`NotNull`](fo_attributes-class-data.html).
-* Проверка через [`DataObjectErrorProvider`](fw_data-object-error-provider.html) (как при этом осуществить подсветку ошибочных полей описано [здесь](прикладные-системы_Подсветка-ошибочных-полеи.html)).
+* Проверка через [`DataObjectErrorProvider`](fw_data-object-error-provider.html).
 
 | Приём | Преимущества | Недостатки |
 |--|--|--|
@@ -52,4 +52,4 @@ protected override void OnSave(ICSSoft.STORMNET.UI.SaveEventArgs e) //метод
 }
 ```
 
-Другие методы проверки данных на форме описаны [здесь](fw_edit-form-validation.html. 
+Другие методы проверки данных на форме описаны [здесь](fw_edit-form-validation.html). 

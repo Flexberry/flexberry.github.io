@@ -120,4 +120,4 @@ return;}
 Например, вместо this.Show(); можно написать this.ShowDialog(); 
 
 # См. также
-[Межформенное взаимодействие в Web-приложениях](form-interaction-web.html)
+[Межформенное взаимодействие в Web-приложениях](fa_form-interaction.html)
