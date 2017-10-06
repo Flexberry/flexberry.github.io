@@ -78,6 +78,14 @@ entries:
       title_ru: Чтение принадлежащих различным классам объектов в одном представлении
       url: /fo_reading-several-types-objects.html
       output: web
+    - title: Flexberry LogService
+      title_ru: FFlexberry LogService
+      url: /fo_log-service-log4net.html
+      output: web
+    - title: Flexberry LogService Objects
+      title_ru: Flexberry LogService Objects
+      url: /fo_log-service-objects.html
+      output: web
 
   - title: Бизнес-серверы
     output: web, pdf
@@ -224,6 +232,11 @@ entries:
       url: /fo_data-object-copy.html
       output: web
 
+    - title: 
+      title_ru: Первичные ключи объектов
+      url: /fo_primary-keys-objects.html
+      output: web
+
     - title: Structure of data object classes
       title_ru: Структура классов объектов данных
       url: /fo_data-object-structure.html
@@ -339,105 +352,130 @@ entries:
       url: /fo_actions-saving-object.html
       output: web
 
-  - title: Data service
+  - title: Сервисы данных
     output: web, pdf
     folderitems:
-    - title: Стандартные сервисы данных Flexberry ORM
-      url: /fo_standard-data-services.html
-      output: web
-
-    - title: Сервис данных
+    - title: Data service
+      title_ru: Сервис данных
       url: /fo_data-service.html
       output: web
-
-    - title: Реализация собственного сервиса данных
-      url: /fo_implement-a-custom-data-service.html
+    - title: Flexberry ORM Standard Data Services
+      title_ru: Стандартные сервисы данных Flexberry ORM
+      url: /fo_standard-data-services.html
       output: web
-
-    - title: Нехранимые свойства объекта данных
-      url: /fo_not-stored-attributes.html
+    - title: Support for binary arrays with data service
+      title_ru: Поддержка бинарных массивов сервисом данных
+      url: /fo_binary-array-ds.html
       output: web
-
-    - title: Обработка статуса и состояния загрузки объекта сервисами данных
-      url: /fo_processing-status-and-condition-of-load-object-data-services.html
+    - title: Designing a Data Service
+      title_ru: Конструирование сервиса данных
+      url: /fo_construction-ds.html
       output: web
-
-    - title: Обработка регистров в именах объектов для СУБД
-      url: /fo_processing-registers-names-for-objects-dbms.html
+    - title: DRDataService
+      title_ru: DRDataService
+      url: /fo_dr-data-service.html
       output: web
-
-    - title: Поддержка нескольких хранилищ данных в одном приложении
-      url: /fo_multibase.html
+    - title: Implementing an arbitrary data service
+      title_ru: Реализация собственного сервиса данных
+      url: /fo_implement-custom-ds.html
       output: web
-
-    - title: Первичные ключи объектов
-      url: /fo_primary-keys-objects.html
+    - title: Insensitivity to the register in the data service
+      title_ru: Нечувствительность к регистру в сервисе данных
+      url: /fo_insensitivity-register-ds.html
       output: web
-
-    - title: TrimmedStringStorage - обрезка строк сервисом данных
-      url: /fo_trimmed-string-storage.html
+    - title: Creating and saving data objects
+      title_ru: Создание и сохранение объектов данных
+      url: /fo_instantiate-persist-objects.html
       output: web
-
-    - title: Пример создания объектов данных и сохранение их в БД
-      url: /fo_instantiate-and-persist-objects-example.html
-      output: web
-
-    - title: SQL-запросы в Flexberry
-      url: /fo_sql-query.html
-      output: web
-
-    - title: SQLDataService
-      url: /fo_sql-data-service.html
-      output: web
-
-    - title: MSSQLDataService
-      url: /fo_mssql-data-service.html
-      output: web
-
-    - title: MSSQLDataService String NULL or Empty
-      url: /fo_mssql-data-service-string-null-or-empty.html
-      output: web
-
-    - title: Как перехватить формирование SQL-запроса к БД
+    - title: Interception of the formation of SQL-query to the database
+      title_ru: Перехват формирования SQL-запроса к БД
       url: /fo_intercept-formation-sql-query.html
       output: web
-
+    - title: Setting up read options
+      title_ru: Настройка параметров чтения
+      url: /fo_loading-customization-struct.html
+      output: web
+    - title: Tools for Oracle Data Service
+      title_ru: Инструменты для работы Oracle Data Service
+      url: /fo_tools-oracle-ds.html
+      output: web
+    - title: SQLDataService
+      title_ru: SQLDataService
+      url: /fo_sql-data-service.html
+      output: web
+    - title: MSSQLDataService
+      title_ru: MSSQLDataService
+      url: /fo_mssql-data-service.html
+      output: web
+    - title: Updating objects with empty rows
+      title_ru: Обновление объектов с пустыми строками
+      url: /fo_updating-objects-empty-rows.html
+      output: web
+    - title: Support for multiple data warehouses in a single application
+      title_ru: Поддержка нескольких хранилищ данных в одном приложении
+      url: /fo_multibase.html
+      output: web
+    - title: Data service for access to the Access DBMS
+      title_ru: Cервис данных для доступа к СУБД Access
+      url: /fo_odbc-access-ds.html
+      output: web
     - title: ODBCDataService
+      title_ru: ODBCDataService
       url: /fo_odbc-data-service.html
       output: web
-
-    - title: ODBCAccessDataService
-      url: /fo_odbc-access-data-service.html
-      output: web
-
     - title: ODBCMySqlDataService
+      title_ru: ODBCMySqlDataService
       url: /fo_odbc-mysql-data-service.html
       output: web
-
-    - title: OracleDataService
+    - title: Data service for working with Oracle Server
+      title_ru: Cервис данных для работы с Oracle Server
       url: /fo_oracle-data-service.html
       output: web
-
-    - title: XMLFileDataService
-      url: /fo_xml-file-data-service.html
-      output: web
-
-    - title: PostgresDataService
+    - title: Data service for working with PostgreSQL
+      title_ru: Cервис данных для работы с PostgreSQL
       url: /fo_postgres-data-service.html
       output: web
-
-    - title: Интерпретация булевского значения NULL
-      url: /fo_interpretation-boolean-values-null.html
+    - title: Processing of one object
+      title_ru: Обработка одного объекта
+      url: /fo_processing-one-object.html
       output: web
-
-    - title: Как сменить тип хранилища
-      url: /fo_switching-storages-and-storage-types.html
+    - title: Processing of a set of objects
+      title_ru: Обработка множества объектов
+      url: /fo_processing-multiple-objects.html
       output: web
-
-    - title: Минимальный необходимый клиентский набор для работы Oracle Data Service
-      url: /fo_minimum-required-client-set-for-oracle-data-service.html
+    - title: Handling registers in object names
+      title_ru: Обработка регистров в именах объектов
+      url: /fo_processing-registers-names.html
       output: web
-    
+    - title: Processing of the status and status of object loading
+      title_ru: Обработка статуса и состояния загрузки объекта
+      url: /fo_processing-status-condition-load.html
+      output: web
+    - title: Portion reading
+      title_ru: Порционное чтение
+      url: /fo_reading-portion.html
+      output: web
+    - title: Using Postgres as a repository
+      title_ru: Использование СУБД Postgres в качестве хранилища
+      url: /fo_switching-storages.html
+      output: web
+    - title: SQL-queries in Flexberry
+      title_ru: SQL-запросы в Flexberry
+      url: /fo_sql-query.html
+      output: web
+    - title: Integration with Business Server
+      title_ru: Интеграция с бизнес-сервером
+      url: /fo_user-operations-dataservice.html
+      output: web
+    - title: Cropping rows with data service
+      title_ru: Обрезка строк сервисом данных
+      url: /fo_trimmed-string-storage.html
+      output: web
+    - title: Data service for working with XML
+      title_ru: Cервис данных для работы с XML
+      url: /fo_xml-file-ds.html
+      output: web
+                
   - title: Функции ограничения
     output: web, pdf
     folderitems:

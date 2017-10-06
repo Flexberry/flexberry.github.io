@@ -1,5 +1,5 @@
 ---
-title: Настройка строки соединения к БД
+title: Настройка строки соединения c БД
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Desinger, строка соединения, connection string, установка, install, setup
 summary: Взаимодействие с SQL Server, изменение строки соединения, настройка строки соединения

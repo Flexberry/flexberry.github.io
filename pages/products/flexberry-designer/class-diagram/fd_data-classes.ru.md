@@ -54,7 +54,7 @@ lang: ru
 `Packet, NamespacePostfix` - позволяют настроить сборку и пространство имен | | см. [Расположение сборок после генерации кода](fo_location-assembly-after-code-generation.html).
 `PBCustomAttributes` - позволяет указать, необходима ли скобка программиста непосредственно перед описанием класса для "ручного" внесения атрибутов | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения `.Net` атрибутов перед классом.
 `PBMembers` - позволяет указать, необходима ли скобка программиста внутри класса для "ручного" внесения членов класса | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения членов класса.
-`BSClass` - [бизнес-сервер](fd_business-servers.html), обрабатывающий этот класс данных | | Если указан, генерируется атрибут [BusinessServerAttribute](fo_testing-user-operations-dataservice.html) (Namespace: ICSSoft.STORMNET.Business, Assembly: ICSSoft.STORMNET.Business (in ICSSoft.STORMNET.Business.dll))
+`BSClass` - [бизнес-сервер](fd_business-servers.html), обрабатывающий этот класс данных | | Если указан, генерируется атрибут [BusinessServerAttribute](fo_user-operations-dataservice.html) (Namespace: ICSSoft.STORMNET.Business, Assembly: ICSSoft.STORMNET.Business (in ICSSoft.STORMNET.Business.dll))
 `PublishToEBSD` | | Если галочка указана - перед классом генерируется указание атрибута `PublishToEBSDAttribute`, который указывает доступность данного класса для использования в редакторе диаграмм сценариев.
 
 2.Закладка редактирования [представлений](fd_view-definition.html) класса

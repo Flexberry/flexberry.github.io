@@ -88,7 +88,7 @@ if ((DataObject as Кредит).Ставки.Count > 0)
 }
 ```
 #### Удаление элементов из детейлов
-Для удаления [детейла](fd_key-concepts.html) необходимо установить ему статус [Deleted](processing-status-and-condition-of-load-object-data-services.html) (при этом [детейл](fd_key-concepts.html) только метится на удаление, а физически удаляется при обновлении).
+Для удаления [детейла](fd_key-concepts.html) необходимо установить ему статус [Deleted](fo_processing-status-condition-load.html) (при этом [детейл](fd_key-concepts.html) только метится на удаление, а физически удаляется при обновлении).
 Ниже представлен пример удаления всех элементов из [детейлов](fd_key-concepts.html):
 ```cs
 foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObject).СтрокиПланаВыплат)
@@ -115,7 +115,7 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 
 
 (((
-<msg type=note>Заметим, что для [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-серверов] определён свой [сервис данных](fo_data-service.html), поэтому обращение идёт как `this.DataService`; для остальных элементов определён статический класс. Подробнее о конструировании/получении [сервиса данных](fo_data-service.html),  смотрите [здесь](construction--data-service.html).</msg>
+<msg type=note>Заметим, что для [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-серверов] определён свой [сервис данных](fo_data-service.html), поэтому обращение идёт как `this.DataService`; для остальных элементов определён статический класс. Подробнее о конструировании/получении [сервиса данных](fo_data-service.html),  смотрите [здесь](fo_construction-ds.html).</msg>
 )))
 
 
@@ -174,7 +174,7 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 
 #### Бизнес-сервер
 
-Как определить [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервер], читайте [здесь](business-servers.html) (как работать с [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервером], читайте [здесь](fo_testing-user-operations-dataservice.html); пример есть [здесь](fo_features-dafault-value.html)).
+Как определить [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервер], читайте [здесь](business-servers.html) (как работать с [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервером], читайте в статье [Интеграция с бизнес-сервером](fo_user-operations-dataservice.html); пример есть [здесь](fo_features-dafault-value.html)).
 
 #### Отчёты
 

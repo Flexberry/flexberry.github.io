@@ -36,10 +36,10 @@ lang: ru
 #* [Доступ к собственным атрибутам объекта и атрибутам связанных объектов](fo_own-object-attributes.html)
 #* [Динамические атрибуты объектов](dynamic-properties.html)
 # Сервисы данных
-#* [Обработка статуса и состояния загрузки объекта сервисами данных](processing-status-and-condition-of-load-object-data-services.html)
+#* [Обработка статуса и состояния загрузки объекта сервисами данных](fo_processing-status-condition-load.html)
 #* [Стандартные сервисы данных Flexberry Platform](standard-data-services.html)
-#* [Конструирование/получение сервиса данных](construction--data-service.html)
-#* [Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)](fo_testing-user-operations-dataservice.html)
+#* [Конструирование/получение сервиса данных](fo_construction-ds.html)
+#* [Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)](fo_user-operations-dataservice.html)
 #* [Как реализовать собственный сервис данных](implement-a-custom--data-service.html)
 #* [SQLDataService-Additional-Capabilities|Дополнительные возможности, предоставляемые SQLDataService]
 #* [Обертки и специализированный бизнес-фасад для сервисов данных](wraps-and-specialized-business-facade-for-data-services.html)
@@ -51,7 +51,7 @@ lang: ru
 #* [Как проверить, удовлетворяет ли некоторый объект представлению](test-object-for-viewing.html)
 # Обработка объектов
 #* [Обработка одного объекта](processing-one-object.html)
-#* [Обработка множества объектов (в т.ч. и разнотипных)](processing-of-multiple-objects.html)
+#* [Обработка множества объектов (в т.ч. и разнотипных)](fo_processing-multiple-objects.html)
 # Приложение и рабочий стол
 #* [Приложение и рабочий стол](app-desktop.html)
 #* [Запуск независимых форм с рабочего стола](running-independent-forms-from-the-desktop.html)
