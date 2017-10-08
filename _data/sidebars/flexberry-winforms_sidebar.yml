@@ -290,11 +290,6 @@ entries:
       url: /fw_control-for-bind-struct.html
       output: web
 
-    - title: Editmanager change method
-      title_ru: Метод EditManager.Change()
-      url: /fw_editmanager-change-method.html
-      output: web
-
     - title: Editmanager change
       title_ru: EditManager.Change
       url: /fw_editmanager-change.html

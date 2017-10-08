@@ -9,10 +9,8 @@ lang: ru
 ---
 Пусть необходимо, например, в зависимости от полномочий пользователя устанавливать видимость некоторой колонки в [ObjectListView](fw_objectlistview.html).
 
-# ColumnInfo[] ObjectListView.Columns
 Изменять objectListView1.Columns во время работы приложения нельзя.
 
-# PropertyInView[] ObjectListView.View.Properties
 Одним из решений поставленной задачи может быть использование `ObjectListView.View.Properties`.
 
 ```csharp

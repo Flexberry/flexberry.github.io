@@ -44,5 +44,3 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
 /// <param name="readOnlyFlag">Флаг, который у удаляемых из списка элементов нужно проставить в свойство ReadOnly.</param>
 public void RemoveControlsFromForcedReadOnlyList(List<Control> controlList, bool readOnlyFlag = false)
 ```
-
-----

@@ -7,8 +7,9 @@ permalink: ru/fw_editmanager-set-readonly-flag-properties.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
-# Метод EditManager.SetReadonlyFlagProperties
-Метод `[EditManager](fw_editmanager.html).SetReadonlyFlagProperties` позволяет установить значение свойства `ReadOnly` у контролов, редактирующих поля, указанные в параметрах вызова данного метода.
+## Назначение
+
+Метод [`EditManager`](fw_editmanager.html).`SetReadonlyFlagProperties` позволяет установить значение свойства `ReadOnly` у контролов, редактирующих поля, указанные в параметрах вызова данного метода.
 
 ```csharp
 void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] properties)
@@ -16,9 +17,9 @@ void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] pr
 
 Параметр `readonlyflag` определяет значение, которое будет установлено свойству ReadOnly у контролов, редактирующих поля, указанные в `properties`.
 
-
 Пример использования данного метода представлен [здесь](fw_different-applications-and-fields.html).
-# Метод AddControlsToForcedReadOnlyList
+
+## Метод AddControlsToForcedReadOnlyList
 
 ```csharp
 /// <summary>
@@ -28,7 +29,7 @@ void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] pr
 public void AddControlsToForcedReadOnlyList(List<Control> controlList)
 ```
 
-## Пример использования
+### Пример использования
 
 ```csharp 
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
@@ -42,7 +43,7 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
 ```
 
 
-# Метод RemoveControlsFromForcedReadOnlyList
+## Метод RemoveControlsFromForcedReadOnlyList
 
 ```csharp 
 /// <summary>
@@ -52,5 +53,3 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
 /// <param name="readOnlyFlag">Флаг, который у удаляемых из списка элементов нужно проставить в свойство ReadOnly.</param>
 public void RemoveControlsFromForcedReadOnlyList(List<Control> controlList, bool readOnlyFlag = false)
 ```
-
-----

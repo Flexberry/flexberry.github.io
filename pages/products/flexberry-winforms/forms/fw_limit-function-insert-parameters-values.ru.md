@@ -8,10 +8,10 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# Вопрос
+## Вопрос
 Имеется [limitFunction](fo_limit-function.html) (класс `ICSSoft.STORMNET.FunctionalLanguage.Function`) с параметром @Дата. Как вместо этого параметра подставить текущую дату?
 
-# Ответ
+### Ответ
 Пусть задана функция `limitFunction` с параметром @Дата:
 ```csharp 
 ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
@@ -24,7 +24,7 @@ ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
 
 Подробнее о [ExternalLangDef](fo_external-lang-def.html).
 
-## Для Web
+### Для Web
 Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
 
 ```csharp 
@@ -45,7 +45,7 @@ public static Function SubstituteParameters(Function function, IDictionary<strin
     new Dictionary<string, object>() { {"Дата", DateTime.Now} });
 ```
 
-## Для Win
+### Для Win
 Для подстановки параметров в ограничивающую функцию в классе `ICSSoft.STORMNET.Windows.Forms.AdvansedLimitExtension` есть метод:
 ```csharp 
 /// <summary>

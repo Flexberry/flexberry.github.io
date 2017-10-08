@@ -8,17 +8,16 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-(((Данная статья ещё редактируется)))
+<!-- Данная статья ещё редактируется -->
 
-# GEEmptyDetailRemover
+## Описание
 `GEEmptyDetailRemover` - расширение компонента [`GroupEdit`](fw_group-edit.html), позволяющее организовать следующее поведение: удаление пустых строк из [`GroupEdit`](fw_group-edit.html) при сохранении (при наличии пустых строк в [`GroupEdit`](fw_group-edit.html) и сохранении может возникнуть сообщение о незаполненных полях (в этой пустой строке).).
-
 
 
 {% include important.html content="`GEEmptyDetailRemover` не входит в стандартную поставку Flexberry." %}
 
 
-# Как подключить GEEmptyDetailRemover
+## Как подключить GEEmptyDetailRemover
 1. В зависимой форме класса определяем объект класса GEEmptyDetailRemover:
 
 ```csharp
@@ -69,4 +68,3 @@ public class C__ПокупательE : ICSSoft.STORMNET.UI.BaseIndpdEdit
 	//...
 }
 ```
-----

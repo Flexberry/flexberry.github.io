@@ -8,10 +8,10 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# Информация о продукте
+## Информация о продукте
 `Flexberry Winforms` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryWinforms).
 
-# Состав продукта
+## Состав продукта
 `Flexberry Winforms` состоит из следующих модулей:
 * [Модуль расширения Flexberry Designer для генерации win-приложений по uml-моделям](fw_flexberry-winforms-case-plugin.html).
 * Win-контролы и win-формы.
@@ -51,5 +51,5 @@ lang: ru
 * [Задание колонок для размещения контролов на уровне представлений Flexberry Designer](specify-column-to-accommodate-the-controls.html)
 * [Стандартный монитор задач WinformBusinessTaskMonitor](fw_winform-business-task-monitor.html)
 
-# Описание продукта
+## Описание продукта
 Посредством [`Flexberry Designer`](fd_landing_page.html) возможно создание [диаграммы классов](fd_class-diagram.html). С этой [диаграммы](fd_class-diagram.html) можно сформировать необходимую структуру базы данных (БД), объектную модель и готовое win-приложение.

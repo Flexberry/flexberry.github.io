@@ -93,13 +93,15 @@ StormNetForms.Binders.StandardControlProvider.ControlProviderForNotCustomizedTyp
 Необходимо создать контрол для редактирования значений нестандартного типа.
 
 Для этого:
-# Реализуем контрол, как наследник от `ICSSoft.STORMNET.Windows.Forms.Binders.BindableUserControl`
-# Контрол обязательно должен иметь значащее свойство и событие, сигнализирующее об изменении значения, с именем `ХХХХХChanged`, где ХХХХХ — имя значащего свойства. Событие обязательно должно взводиться при изменении значения значащего свойства.
-# Контрол может имплементировать интерфейс `ICSSoft.STORMNET.Windows.Forms.ICustomizableControl` для более точной настройки в зависимости от класса данных, представления, имени свойства.
-# Контрол также может имплементировать интерфейс `ICSSoft.STORMNET.Windows.Forms.IButtonizableControl` специально для более удобного ввода значений через `ICSSoft.STORMNET.Windows.Forms.GroupEditBase`.
+* Реализуем контрол, как наследник от `ICSSoft.STORMNET.Windows.Forms.Binders.BindableUserControl`
+* Контрол обязательно должен иметь значащее свойство и событие, сигнализирующее об изменении значения, с именем `ХХХХХChanged`, где ХХХХХ — имя значащего свойства. Событие обязательно должно взводиться при изменении значения значащего свойства.
+* Контрол может имплементировать интерфейс `ICSSoft.STORMNET.Windows.Forms.ICustomizableControl` для более точной настройки в зависимости от класса данных, представления, имени свойства.
+* Контрол также может имплементировать интерфейс `ICSSoft.STORMNET.Windows.Forms.IButtonizableControl` специально для более удобного ввода значений через `ICSSoft.STORMNET.Windows.Forms.GroupEditBase`.
 
 Далее необходимо реализовать провайдер контролов и ассоциировать его с типом, либо установить его в статическое свойство `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
+
 ## Общие замечания по провайдерам контролов
+
 Поскольку тип и прочие параметры приходят в перегружаемый метод `GetControl` провайдера, разумеется, нет необходимости делать по одному провайдеру для каждого контрола. Можно использовать один на несколько типов, хоть вообще создать один провайдер контролов на всю систему и установить его в `StandardControlProvider.ControlProviderForNotCustomizedTypes`.
 
 Примеры:
@@ -107,5 +109,3 @@ StormNetForms.Binders.StandardControlProvider.ControlProviderForNotCustomizedTyp
 * Реализации для редактирования значений стандартных типов;
 * Реализации для редактирования значений нестандартного типа стандартным контролом;
 * Реализации для редактирования значений нестандартного типа нестандартным контролом, особенности реализации таких контролов, а также особенности работы контролов с `ICSSoft.STORMNET.Windows.Forms.GroupEditBase` — рассматриваются в примере ([\ruFlexberry DistrDocSamplesDpdUIUniversalEdit|\\ru\Flexberry Distr\DocSamples\DpdUI\UniversalEdit]).
-
-

@@ -8,7 +8,7 @@ lang: ru
 ---
 `Предиктивный ввод` позволяет модифицировать контролы для выбора мастера ([LookUp'ы](fa_lookup-overview.html)) или ввода текста таким образом, чтобы система подсказывала пользователю возможные варианты по мере ввода данных.
 
-### Предиктивный ввод для LookUp'ов
+## Предиктивный ввод для LookUp'ов
 
 В качестве контрола-подсказчика может выступать 
 * Контрол, содержащийся в сборке `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll` ([ExtendedLookUp](fw_extended-lookup.html) или `ExtLookUpTextControl`)

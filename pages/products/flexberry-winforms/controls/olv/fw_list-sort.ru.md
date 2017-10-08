@@ -10,8 +10,6 @@ lang: ru
 Списки позволяют сортировать содержащиеся в них объекты по определенным столбцам. Пользователь может сам настроить необходимую ему сортировку.
 Также сортировку списка можно настроить из кода.
 
-## Windows, ObjectListView
-
 Настройка сортировки столбцов [ObjectListView](fw_objectlistview.html) осуществляется путем указания типа сортировки у объекта
 `ICSSoft.STORMNET.Windows.Forms.ColumnInfo` свойства `.Columns`.
 
@@ -24,5 +22,4 @@ this.objectListView1.Columns = new ICSSoft.STORMNET.Windows.Forms.ColumnInfo[] {
 }
 ```
 
-Здесь конструктор `ColumnInfo` принимает третьим и четвертым параметрами способ сортировки типа `ICSSoft.STORMNET.Business.SortOrder` (Asc, Desc, None) и
-приоритет сортировки типа `byte`.
+Здесь конструктор `ColumnInfo` принимает третьим и четвертым параметрами способ сортировки типа `ICSSoft.STORMNET.Business.SortOrder` (Asc, Desc, None) и приоритет сортировки типа `byte`.

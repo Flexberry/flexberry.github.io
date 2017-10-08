@@ -12,8 +12,8 @@ lang: ru
 
 
 Для того, чтобы настольное приложение поддержало схему пользовательского интерфейса `Windows XP`, необходимо:
-# В методе `Main()` приложения вызвать метод `ICSSoft.STORMNET.Windows.Forms.WinApplication.EnableVisualStyles()`;
-# Создать `Manifest`-файл в том же каталоге, где расположен exe-файл, например:
+* В методе `Main()` приложения вызвать метод `ICSSoft.STORMNET.Windows.Forms.WinApplication.EnableVisualStyles()`;
+* Создать `Manifest`-файл в том же каталоге, где расположен exe-файл, например:
 
 Файл приложения — `BugLeR.exe`, файл манифеста — `BugLeR.exe.manifest`, содержимое:
 

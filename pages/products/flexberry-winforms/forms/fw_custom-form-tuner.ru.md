@@ -8,18 +8,18 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-(((Данная статья ещё редактируется)))
+<!-- Данная статья ещё редактируется -->
 
 Для осуществления перехода по кнопке Enter, аналогично тому, как выполняются переходы по кнопке Tab, существуют специальные контролы.
 
-# CustomFormTuner
+## CustomFormTuner
 `CustomFormTuner` - один из контролов для осуществления перехода по кнопке Enter.
 
 {% include important.html content="
 `CustomFormTuner` не входит в стандартную поставку Flexberry." %}
 
 
-## Подключение CustomFormTuner
+### Подключение CustomFormTuner
 Для работы `CustomFormTuner` необходимы следующие dll:
 * IIS.AMS02.SpecificControls.dll
 * ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll (входит в стандартную поставку Flexberry)
@@ -41,10 +41,10 @@ public class WinformC__СотрудникE : ICSSoft.STORMNET.UI.BaseWinEdit, II
 }
 ```
 
-# NextControlByEnterTuner
+## NextControlByEnterTuner
 `NextControlByEnterTuner` - усовершенствованный `CustomFormTuner`.
 
-## Подключение NextControlByEnterTuner
+### Подключение NextControlByEnterTuner
 Для работы `NextControlByEnterTuner` необходима следующая dll: `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`.
 
 Для подключения в программном коде можно в конструкторе формы выполнить следующую последовательность действий: 
@@ -98,5 +98,3 @@ public interface ICanChangeByEnter
 ```
 
 Если `LetReleaseEnterNow == true`, то переход по Enter будет выполнен; в противном случае - нет.
-
-----

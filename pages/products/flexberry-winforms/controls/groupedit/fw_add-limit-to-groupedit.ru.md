@@ -7,7 +7,7 @@ permalink: ru/fw_add-limit-to-groupedit.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
-# Делегат скрытия строк в GroupEdit
+## Делегат скрытия строк в GroupEdit
 Для наложения простых ограничений на записи, отображаемые в [GroupEdit](fw_group-edit.html), можно воспользоваться делегатом скрытия строк соответствующего контрола. Данный делегат определяет видимость каждой записи в [GroupEdit](fw_group-edit.html).
 
 ```csharp
@@ -15,7 +15,7 @@ public IsObjectVisibleDelegate IsObjectVisible;
 public delegate bool IsObjectVisibleDelegate(DataObject dataObject);
 ```
 
-# Пример использования делегата скрытия строк
+## Пример использования делегата скрытия строк
 Пусть на форме имеется [GroupEdit](fw_group-edit.html) `geВизитКлиентаВБанк`, содержащий записи типа `ВизитКлиентаВБанк`, и в `geВизитКлиентаВБанк` необходимо отобразить только те записи, что содержат пустое значение в поле `ЦельВизита`.
 
 Для решения данной задачи выполним следующее:

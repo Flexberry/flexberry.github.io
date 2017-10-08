@@ -8,9 +8,8 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-(((Данная статья ещё редактируется)))
+<!-- Данная статья ещё редактируется -->
 
-# DateTimePicker
 Для того чтобы настроить корректное отображение даты необходимо создать свой [ControlProvider](fw_control-provider-winforms.html) для даты.
 
 ```csharp

@@ -8,16 +8,16 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# FlexGrid
+## Описание
 [FlexGrid](http://www.componentone.com/SuperProducts/FlexGridWinForms/) - простой в использовании контрол-таблица от компании ComponentOne. Позволяет отображать, редактировать, форматировать, организовывать и печатать данные в виде таблицы.
 
 Контрол используется в [GroupEdit](fw_group-edit.html), [ObjectListView](fw_objectlistview.html), а также в Статиторе.
 
 
-# Документация
+## Документация
 Документацию можно найти на официальном сайте компонента.
 
-# Получение FlexGrid из GroupEdit
+## Получение FlexGrid из GroupEdit
 
 ```csharp
 public static C1.Win.C1FlexGrid.C1FlexGrid GetGridFromGE(ICSSoft.STORMNET.Windows.Forms.GroupEditBase groupEdit)

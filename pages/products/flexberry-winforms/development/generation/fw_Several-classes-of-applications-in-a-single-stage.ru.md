@@ -8,8 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-# В одной стадии встречается несколько классов со стереотипом &laquo;application&raquo;
-Если у вас в одной стадии встречается несколько [Приложения-классы-со-стереотипом-application|классов со стереотипом &laquo;application&raquo;],
+Если у вас в одной стадии встречается несколько [классов со стереотипом &laquo;application&raquo;](fd_application.html),
 
 ![](/images/pages/products/flexberry-winforms/development/generation/2-app_-u-m-l.jpg)
 

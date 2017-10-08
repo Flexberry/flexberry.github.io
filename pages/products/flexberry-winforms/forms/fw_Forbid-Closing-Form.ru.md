@@ -8,8 +8,6 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-## Как запретить закрытие фомы Flexberry Winforms
-
 Для того, чтобы запретить закрытие формы, надо переопределить метод `Finalize()` независимой формы.
 
 Пример:
