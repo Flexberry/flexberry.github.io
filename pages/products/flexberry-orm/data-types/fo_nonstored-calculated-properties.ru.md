@@ -1,49 +1,45 @@
 ---
-title: Пример нехранимых и вычислимых свойств
+title: Пример нехранимых свойств объектов
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: Flexberry ORM, типы данных
+summary: Пример использования вычислимых свойств объектов
 toc: true
 permalink: ru/fo_nonstored-calculated-properties.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 
-Полный список примеров кода [Flexberry ORM](fo_flexberry-orm.html) находится в статье ["Примеры кода"](fo_code-samples.html).
-
-## Использование нехранимых и вычислимых свойств
-
 В этом примере показывается, как использовать [вычислимые свойства](fo_not-stored-attributes.html).
 
-Давайте посмотрим на пример определения [вычислимого свойства](fo_not-stored-attributes.html) для объекта Person:
+Пример определения вычислимого свойства для объекта `Person`:
 
 ```csharp
-        [ICSSoft.STORMNET.NotStored())
-        [StrLen(255))
-        [DataServiceExpression(typeof(SQLDataService), "isnull(@FirstName@,\'\') + \' \' + isnull(@LastName@,\'\')"))
-        public virtual string FullName
-        {
-            get
-            {
-                return string.Format("{0} {1}", fFirstName, fLastName);
-            }
-            set
-            {
-            }
-        }
+[ICSSoft.STORMNET.NotStored())
+[StrLen(255))
+[DataServiceExpression(typeof(SQLDataService), "isnull(@FirstName@,\'\') + \' \' + isnull(@LastName@,\'\')"))
+public virtual string FullName
+{
+    get
+    {
+        return string.Format("{0} {1}", fFirstName, fLastName);
+    }
+    set
+    {
+    }
+}
 ```
 
-В атрибуте [DataServiceExpression](fo_not-stored-attributes.html) определено выражение, которое будет использоваться [сервисом данных](fo_data-service.html) при выполнении запроса из таблицы.
+В атрибуте `DataServiceExpression` определено выражение, которое будет использоваться [сервисом данных](fo_data-service.html) при выполнении запроса из таблицы.
 Эквивалентный этому выражению код на C# написан в геттере свойства.
 
 ```csharp
-            IDataService dataService = DataServiceProvider.DataService;
-            LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Person), Person.Views.Person_E);
+IDataService dataService = DataServiceProvider.DataService;
+LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Person), Person.Views.Person_E);
 
-            // Загрузить все объекты данных. Нехранимое свойство будет вычислено с помощью выражения в геттере.
-            ICSSoft.STORMNET.DataObject[) persons = dataService.LoadObjects(lcs);
+// Загрузить все объекты данных. Нехранимое свойство будет вычислено с помощью выражения в геттере.
+ICSSoft.STORMNET.DataObject[) persons = dataService.LoadObjects(lcs);
 
-            // Загрузка в виде строкового представления, свойства отделены друг от друга точкой с запятой. Нехранимое свойство будет вычислено с помощью выражения в атрибуте DataServiceExpression.
-            ObjectStringDataView[) osdvpersons = dataService.LoadStringedObjectView(';', lcs);
+// Загрузка в виде строкового представления, свойства отделены друг от друга точкой с запятой. Нехранимое свойство будет вычислено с помощью выражения в атрибуте DataServiceExpression.
+ObjectStringDataView[) osdvpersons = dataService.LoadStringedObjectView(';', lcs);
 
-            Console.WriteLine("OK.");
+Console.WriteLine("OK.");
 ```

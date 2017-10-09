@@ -17,7 +17,7 @@ lang: ru
 * [Пример: загрузка графа объектов](fo_load-multiple-details-example.html)
 * [Пример: загрузка и изменение объекта](fo_load-multiple-details-example.html)
 * [Пример: использование собственных типов](fo_using-custom-types-example.html)
-* [Пример: использование стереотипа 'typedef'](fo_using_stereotypes_example.html)
+* [Пример: использование стереотипа 'typedef'](fo_creating-stereotypes-example.html)
 * [Пример: как сменить тип хранилища](fo_switching-storages.html)
 * [Пример: наложение ограничений на загрузку объектов](fo_load-limitation-example.html)
 * [Пример: нехранимые и вычислимые свойства](fo_nonstored-calculated-properties.html)

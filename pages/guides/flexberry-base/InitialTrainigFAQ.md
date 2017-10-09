@@ -54,7 +54,7 @@ lang: ru
 
 #### Определение вычислимых полей
 
-Как создавать вычислимые поля описано [в этой статье](fo_not-stored-attributes.html) (ещё [в данной статье](fo_create-with-data-service-expression.html) разобран подробный пример, как использовать [атрибут DataService Expression](fo_attributes-class-data.html) для создания вычислимого поля).
+Как создавать вычислимые поля описано [в этой статье](fo_not-stored-attributes.html) (ещё [в данной статье](fo_creating-computable-field.html) разобран подробный пример, как использовать [атрибут DataService Expression](fo_attributes-class-data.html) для создания вычислимого поля).
 
 Если требуется просто среди объектов, находящихся в массиве детейлов, посчитать какую-либо агрегирующую функцию, то можно воспользоваться [Функциональность-при-работе-с-массивами-детеиловых-объектов-DetailArray|этим] решением.
 
@@ -133,7 +133,7 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 #### Проведение авторизации пользователя
 Посмотрите [здесь](right-manager-module.html) и обратите внимание на [SimpleLogInForm](using-simple-login-form.html) (как начать работу с [подсистемой полномочий](right-manager-module.html) описано [здесь](how-to-start-work-with-right-manager.html)).
 
-Также можно в некоторых случаях для данных целей использовать [нехранимый класс](using-of-not-stored-classes.html) и генерируемую Flexberry форму; как это сделать, описано в статье ["Установка текущего объекта при запуске приложения"](define-default-object.html).
+Также можно в некоторых случаях для данных целей использовать [нехранимый класс](fo_using-not-stored-classes.html) и генерируемую Flexberry форму; как это сделать, описано в статье ["Установка текущего объекта при запуске приложения"](define-default-object.html).
 
 
 (((

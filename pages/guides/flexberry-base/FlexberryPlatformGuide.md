@@ -78,7 +78,7 @@ lang: ru
 # Прочие возможности
 #* [DataObjectsAndDatabaseStructures#AttributeDefinitionStorage|Определение атрибутов хранения]
 #* [Проблема используемых типов](fo_type-usage-problem.html)
-#* [Отображение TypeUsage в структуру данных](type-usage-in-data-structure.html)
+#* [Отображение TypeUsage в структуру данных](fo_type-usage.html)
 #* [ObjectListView, основная функциональность в RunTime](object-list-view-basic-functionality-in--run-time.html)
 #* [LookUp'ы](fa_lookup-overview.html)
 #* [Универсальная форма редактирования ](Универсальная-форма-редактирования.html)

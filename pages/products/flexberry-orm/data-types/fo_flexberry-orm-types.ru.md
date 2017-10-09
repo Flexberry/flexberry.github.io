@@ -1,12 +1,14 @@
 ---
-title: Поддерживаемая во Flexberry ORM типизация
+title: Типы данных во Flexberry ORM
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public
+keywords: Flexberry ORM, типы данных
+summary: Краткая характеристика поддерживаемых Flexberry ORM типов
 toc: true
 permalink: ru/fo_flexberry-orm-types.html
+lang: ru
 ---
 
-[Flexberry ORM](fo_flexberry-o-m.html) позволяет осуществлять работу со следующими типами:
+[Flexberry ORM](fo_flexberry-orm.html) позволяет осуществлять работу со следующими типами:
 
 * .Net основные типы (такие как int, string, float и др.)
 * .Net [Nullable-типы](fd_nullable-types.html).
