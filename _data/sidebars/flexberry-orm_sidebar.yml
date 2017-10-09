@@ -495,6 +495,30 @@ entries:
       title_ru: Пример нехранимых свойств объектов
       url: /fo_nonstored-calculated-properties.html
       output: web
+    - title: The use of not-stored classes
+      title_ru: Применение нехранимых классов
+      url: /fo_using-not-stored-classes.html
+      output: web
+    - title: Using data types in the application structure
+      title_ru: Использование типов данных в структуре приложения
+      url: /fo_type-usage.html
+      output: web
+    - title: The problem of the types used
+      title_ru: Проблема используемых типов
+      url: /fo_type-usage-problem.html
+      output: web
+    - title: Creating a computable field
+      title_ru: Создание вычислимого поля
+      url: /fo_creating-computable-field.html
+      output: web
+    - title: Creating a Custom Data Type
+      title_ru: Создание пользовательского типа данных
+      url: /fo_creating-stereotypes-example.html
+      output: web
+    - title: An example of using custom types
+      title_ru: Пример использования собственных типов
+      url: /fo_using-custom-types-example.html
+      output: web
                 
   - title: Функции ограничения
     output: web, pdf
