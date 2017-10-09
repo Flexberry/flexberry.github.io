@@ -10,7 +10,7 @@ lang: ru
 
 Форма редактора ограничений выглядит следующим образом:
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}1.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/1.png)
 
 Можно выбрать вид отображения формы редактирования ограничения, выбрав одну из вкладок: 
 * Стандартный вид, 
@@ -21,62 +21,68 @@ lang: ru
 
 __Общие контролы для всех видов:__
 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/2.png)
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}2.png]
  - __Сохранить и применить__ – ограничение сохраняется
 и на списке отображаются только те записи, которые удовлетворяют заданному
 ограничению. 
 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/3.png)
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}3.png]
  - __Сохранить в файл__ (доступно
 только в расш. виде) – выбранная ветка ограничения сохраняется в файл
 формата .. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}4.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/4.png)
+
  - __Загрузить из файла__ (доступно
 только в расш. виде) – из файла формата . вставляется ветка с условием в свободную ветку 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}5.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/5.png)
+
  - __Наименование__ - поле для ввода названия создаваемого
 ограничения. Чтобы сохранить ограничение нужно ввести наименование ограничения
 и нажать кнопку Сохранить. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}6.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/6.png)
+
  - __Гор. клавиша__ – поле, где отображается комбинация
 клавиш, с помощью которой можно установить на списке данное ограничение. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}7.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/7.png)
+
  - __Задать__ – кнопка, после
 нажатия на которую появляется окно для настройки комбинации горячих клавиш. Нужно
 нажать одну клавишу или их комбинацию, они отобразятся в этом окне. Если всё
 верно нажать ОК. В противном случае – Cancel.
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}8.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/8.png)
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}9.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/9.png)
+
 - __Очистить__ - кнопка, после нажатия которой комбинация
 горячих клавиш удаляется. 
 
 
 ## Работа с дизайном формы параметров
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}37.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/37.png)
+
  - __Изменить дизайн формы параметров__ – появится окно для настройки дизайна редактора форм.
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}15.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/15.png)
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}38.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/38.png)
  - __Открыть форму параметров__ – будет открыта форма для редактирования значений параметров, форма
 будет иметь настроенный дизайн. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}39.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/39.png)
  - __Сбросить дизайн формы параметров__ – дизайн формы параметров изменится на стандартный.

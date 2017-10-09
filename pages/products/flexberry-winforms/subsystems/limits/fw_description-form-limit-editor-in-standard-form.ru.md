@@ -10,7 +10,7 @@ lang: ru
 
 ## Стандартный вид
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}10.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/10.png)
 
 1 – __«Доступные свойства»__ - свойства класса, доступные для создания
 ограничения.
@@ -31,19 +31,19 @@ lang: ru
 
 ### Кнопки на форме
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}27.png] 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/27.png)
 - __Подсчитать количество строк__ - по нажатию выдается количество объектов, удовлетворяющих, соответствующих созданному ограничению (без применения ограничения к списку).
 Будет выдано сообщение вида:
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}11.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/11.png)
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}28.png] 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/28.png)
 
 - __Добавить ограничение по полю__ – после нажатия на эту кнопку появляется окно «Создание ограничения»:
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}12.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/12.png)
 
 
 В зависимости от типа выбранного поля появляется возможность
@@ -51,20 +51,20 @@ lang: ru
 появляется параметр «Функции для дат» со следующими значениями:
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}13.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/13.png)
 
 
 Колонка и имя свойства подставляются автоматически и равны
 выбранному полю в окне «Доступные свойства». В этом окне нужно выбрать вид операции. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}42.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/42.png)
 
 
 Далее нужно нажать на кнопку «…», «Выбрать из базы». Появится окошко:
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}14.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/14.png)
 
 
 Нужно найти в списке значение из базы, необходимое для
@@ -83,44 +83,44 @@ lang: ru
 В окне «Создание ограничения» нужно нажать «Сохранить». Это
 окно тоже закроется. Ограничение по заданному полю будет создано.
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}29.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/29.png)
  
  - __Редактировать__ – откроется окно «Редактирование ограничения», аналогичное
 окну «Создание ограничение», все параметры соответствуют созданному ограничению.
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}30.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/30.png)
  - __Удалить__ – выделенное ограничение в списке будет удалено.
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}31.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/31.png)
  - __Вырезать__ - выделенное ограничение в списке будет вырезано.
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}32.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/32.png)
  - __Вставить__ - скопированное/вырезанное ограничение будет вставлено в указанное
 место.
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}33.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/33.png)
  - __Добавить ограничение И__ – ниже по иерархии относительно выделенной в дереве ветки будет добавлена ветка И. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}34.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/34.png)
  - __Добавить ограничение ИЛИ__ - ниже по иерархии относительно выделенной в дереве ветки будет добавлена ветка ИЛИ. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}35.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/35.png)
  - __Добавить ограничение НЕ__ – ниже по иерархии относительно выделенной в дереве ветки будет добавлена ветка НЕ. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}36.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/36.png)
  - __Вставлять И, ИЛИ, НЕ выше по иерархии__ – следующая ветка будет добавлена выше по иерархии относительно выделенной ветки.
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}40.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/40.png)
  - __Показать/скрыть панель текста запроса__ – панель текста запроса закроется, а панель с ограничением развернется на ее место. 
 
 
-[image||{UP(Форма «Редактор ограничений» (WIN))}41.png]
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/41.png)
  - __Показать/скрыть панель параметров__ – панель параметров закроется, форма редактирования ограничения станет уже.
