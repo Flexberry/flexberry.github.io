@@ -27,6 +27,8 @@ topnav_dropdowns:
           url: /efd_landing_page.html
         - title: Flexberry ORM
           url: /fo_landing_page.html
+        - title: Flexberry Security
+          url: /fs_landing_page.html
         - title: Flexberry ODataService
           url: /flexberry-o-r-m-o-data-service.html
         - title: ember-flexberry-security
