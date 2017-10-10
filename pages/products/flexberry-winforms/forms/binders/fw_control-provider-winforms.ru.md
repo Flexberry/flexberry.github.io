@@ -107,5 +107,4 @@ StormNetForms.Binders.StandardControlProvider.ControlProviderForNotCustomizedTyp
 Примеры:
 * Реализаций провайдеров контролов, ассоциирования с типами и установки в `StandardControlProvider.ControlProviderForNotCustomizedTypes`;
 * Реализации для редактирования значений стандартных типов;
-* Реализации для редактирования значений нестандартного типа стандартным контролом;
-* Реализации для редактирования значений нестандартного типа нестандартным контролом, особенности реализации таких контролов, а также особенности работы контролов с `ICSSoft.STORMNET.Windows.Forms.GroupEditBase` — рассматриваются в примере ([\ruFlexberry DistrDocSamplesDpdUIUniversalEdit|\\ru\Flexberry Distr\DocSamples\DpdUI\UniversalEdit]).
+* Реализации для редактирования значений нестандартного типа стандартным контролом.

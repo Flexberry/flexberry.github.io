@@ -9,7 +9,7 @@ lang: ru
 ---
 
 Как обработать check\uncheck в строках [GroupEdit](fw_group-edit.html)
-1. [Получение-FlexGrid-из-GroupEdit|Получаем FlexGrid из GroupEdit]. 
+1. [Получаем FlexGrid из GroupEdit](fw_flex-grid.html). 
  
 2. Подписываемся на событие  CellChanged:
 
