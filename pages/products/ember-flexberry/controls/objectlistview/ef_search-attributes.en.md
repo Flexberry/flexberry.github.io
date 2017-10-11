@@ -10,7 +10,7 @@ lang: en
 
 ## Настройка поиска по всем атрибутам для стандартного списка
 
-Для того чтобы на [списковой форме](ef_object-list-view.html) была отображена кнопка поиска по всем атрибутам должно быть прописано следующее:
+Для того чтобы на [списковой форме](ef_object-list-view.html) реализовать возможность поиска по всем атрибутам необходимо:
 
 1. Указаны свойства поиска в [шаблоне](ef_template.html) списковой формы.
 2. При необходимости переопределены предикаты в [роуте](ef_route.html) списковой формы.
@@ -44,6 +44,12 @@ lang: en
 ![](/images/pages/products/ember-flexberry/controls/filter-by-all-words.png)
 
 По-умолчанию поиск осуществляется по подстроке.
+
+Реализация отображена на [ember-стенде](https://flexberry-ember-dev.firebaseapp.com/)
+* [для OLV](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-objectlistview/custom-filter?filterCondition=and&perPage=20).
+* [для simpleolv](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-simpleolv/custom-filter)
+
+{% include note.html content="`filterByAnyWord` и `filterByAllWords` нельзя использовать вместе, если не реализованы дополнительные элементы тулбара (кнопки) для включения/отключения типа поиска." %}
 
 ### Настройка роута формы
 
@@ -86,13 +92,16 @@ getLookupFolvProperties: function(options) {
 
     if (methodArgs.relationName === 'type') {
     return {
-        filterButton: true
-    };
+        filterButton: true,
+        filterByAnyWord: true
+      };
     }
 
     // ...
 }
 ```
+
+{% include note.html content="Необходимо выбрать тип поиска (`filterByAnyWord` или `filterByAllWords`), так на lookup-форме использовать использовать можно только один из них." %}
 
 Далее указать событие в шаблоне настраевомого списка для LookUp:
 
@@ -102,3 +111,5 @@ getLookupFolvProperties: function(options) {
     lookupWindowCustomProperties=(action 'getLookupFolvProperties')
 }}{% endraw %}
 ```
+
+Реализация отображена на [ember-стенде](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-lookup/customizing-window-example).
