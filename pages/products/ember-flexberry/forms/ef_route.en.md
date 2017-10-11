@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_route.html
-folder: products/ember-flexberry/forms/
 lang: en
 ---
 

@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_lookup.html
-folder: products/ember-flexberry/controls/lookup/
 lang: en
 summary: Представлены основные особенности лукапов
 ---

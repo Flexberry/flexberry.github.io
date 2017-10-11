@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_template.html
-folder: products/ember-flexberry/forms/
 lang: ru
 summary: Представлена основная информация о структуре handlebars-шаблонов в ember-flexberry-приложениях.
 ---

@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_object-list-view.html
-folder: products/ember-flexberry/controls/objectlistview/
 lang: en
 summary: Представлено описание контрола для просмотра списка объектов Flexberry Objectlistview.
 ---

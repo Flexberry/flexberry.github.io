@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_olv-toolbar.html
-folder: products/ember-flexberry/controls/objectlistview/
 lang: en
 summary: Представлено, каким образом настраивается панель управления (тулбар) контрола Flexberry Objectlistview.
 ---

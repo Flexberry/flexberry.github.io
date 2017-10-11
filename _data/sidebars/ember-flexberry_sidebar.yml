@@ -105,6 +105,11 @@ entries:
       url: /ef_olv-toolbar.html
       output: web, pdf
 
+    - title: Search all attributes
+      title_ru: Поиск по всем атрибутам
+      url: /ef_search-attributes.html
+      output: web, pdf
+
     - title: Lookup
       url: /ef_lookup.html
       output: web, pdf
