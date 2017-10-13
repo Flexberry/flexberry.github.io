@@ -51,7 +51,7 @@ SettingManager.SetSetting("SettingsTest", "Form Position&Size", string.Join(",",
 	{
 		string[] splittedsetting = setting.Split(',');
 		this.Left=int.Parse(splittedsetting[0]);
-		this.Top=int.Parse(splittedsetting[1](ис-управления-проектами_1.html));
+		this.Top=int.Parse(splittedsetting[1]);
 		this.Width=int.Parse(splittedsetting[2]);
 		this.Height=int.Parse(splittedsetting[3]);
 	}

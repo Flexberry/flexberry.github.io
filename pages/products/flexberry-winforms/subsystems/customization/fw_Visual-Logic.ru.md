@@ -16,7 +16,7 @@ lang: ru
 
 * Добавление подсветки полей ([HighLighter](fw_high-lighter.html))
 * Настройка [лукапов](fa_lookup-overview.html) и [детейлов](fo_detail-associations-properties.html)
-* Настройка стилей и кнопок списков ([подробнее](fw_listform.html#дополнительно_редактируемые_свойства_и_что_как_генерируется) см. раздел `ListFormOperations`)
+* Настройка стилей и кнопок списков ([подробнее](fw_listform.html#дополнительно-редактируемые-свойства-и-что-как-генерируется) см. раздел `ListFormOperations`)
 * Добавление [всплывающих подсказок](http://msdn.microsoft.com/ru-ru/library/system.windows.forms.tooltip.aspx)
 * Генерация контролов предиктивного ввода ([Win](fw_predict-input.html), [Web](fa_predict-input-web.html))
 * Настройка [сортировки списков](fw_list-sort.html)

@@ -96,7 +96,7 @@ public static object ObjectFromBinaryString(string s)
 ```
 
 
-На [форме задания ограничений] при сохранении (восстановлении) [LimitFunction](limitation-edit-form.html) используются методы `Utils.ObjectToBinaryString` (`Utils.ObjectFromBinaryString`), т.е. сериализуются ограничения с помощью бинарной сериализации, а восстанавливаются как бинарные строки, так и SOAP, т.к. в ранних версиях технологии использовалась SOAP-сериализация.
+На [форме задания ограничений] при сохранении (восстановлении) [LimitFunction](fw_limitation-editform.html) используются методы `Utils.ObjectToBinaryString` (`Utils.ObjectFromBinaryString`), т.е. сериализуются ограничения с помощью бинарной сериализации, а восстанавливаются как бинарные строки, так и SOAP, т.к. в ранних версиях технологии использовалась SOAP-сериализация.
 
 ### Пример SOAP-сериализации LimitFunction
 

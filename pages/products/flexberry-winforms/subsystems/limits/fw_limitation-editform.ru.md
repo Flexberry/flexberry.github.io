@@ -22,6 +22,7 @@ lang: ru
 Параметры диалога задаются при помощи свойства EditAdvLimitDialog.DialogParameters типа EditAdvLimitDialog.DialogParams.
 
 Настроить при помощи этого свойства можно следующее:
+
 | Свойство | Описание|
 |--|--|
 | `DoNotShowStandardTab` | Не показывать вкладку стандартного ограничения
@@ -61,8 +62,8 @@ lang: ru
 [Упрощенный вид редактора ограничений](fw_limit-editor-simple-view.html), <BR>
 [Стандартный вид редактора ограничений](fw_standart-view-limits-editor.html), <BR>
 [Наложение ограничений по столбцам в списках](fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html), <BR>
-[Копирование / вставка ветки ограничений (сохранение и загрузка из файла))](copy--paste-branch--limitation-preservation-and-load-of-file.html), <BR>
-[Мастера в списке выбора типа параметров в редакторе AdvLimit](masters-in-list-selection-type-parameters-in--adv-limit.html),<BR>
+[Копирование / вставка ветки ограничений (сохранение и загрузка из файла))](fw_copy-paste-limitation-branch.html), <BR>
+[Мастера в списке выбора типа параметров в редакторе AdvLimit](fw_masters-in-list-selection-type-parameters-in-advlimit.html),<BR>
 [Функция импликации при задании ограничений](fo_function-implication.html),<BR>
 [Функции для работы с датой при задании ограничений](fw_date-time-funtions-in-limits.html) (пример использования [здесь](fw_date-limits-standart-view.html))<BR>
 [Сохранение ограничений на форме задания ограничения](fo_limit-function-serialization.html)

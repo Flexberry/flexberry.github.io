@@ -8,3 +8,45 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
+ А берутся они после применения примерно такого ограничения: ___AND ( = ( Module IIS.AMS02.Происшествия.WinformЗадержанныйL/objectListView1(ObjectListView) ) OR ( = ( User KOSHEL Sergey ) ISNULL ( User) ) )___
+
+Код, используемый для построения ограничения: 
+
+```csharp
+var ldef = SQLWhereLanguageDef.LanguageDef;
+lcs.LimitFunction = ldef.GetFunction(
+    ldef.funcAND,
+    ldef.GetFunction(
+    ldef.funcEQ, vdModule, prv_GenModuleName(ObjectListView)
+    ),
+    ldef.GetFunction(
+    ldef.funcOR,
+    ldef.GetFunction(ldef.funcEQ, vdUser, Settings.SettingManager.GetUserName()),
+    ldef.GetFunction(ldef.funcIsNull, vdUser)
+    )
+    );
+```
+
+То есть, юзер берется из Settings.SettingManager.GetUserName(). А там, в свою очередь, либо из установленного значения, либо из AD, либо из Environment: 
+
+```csharp
+public static string GetUserName()
+{
+      if (username==string.Empty)
+      {
+           try
+           {
+                System.DirectoryServices.DirectorySearcher ds = new System.DirectoryServices.DirectorySearcher("(&(objectClass=user)(sAMAccountName= "+Environment.UserName+"))",
+                     new string[]{"cn"});
+                ds.CacheResults = true;
+                System.DirectoryServices.SearchResult sr =  ds.FindOne();
+                username = sr.Properties["cn"][0].ToString();
+           }
+           catch
+           {
+                username =Environment.UserName;
+           }
+      }
+      return username;
+}
+```

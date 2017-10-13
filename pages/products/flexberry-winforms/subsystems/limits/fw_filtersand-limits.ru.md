@@ -59,7 +59,7 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 {% include note.html content="Для того, чтобы ограничение «сам объект» заработало - нужно создать STORMFILTERLOOKUP для этого объекта." %}
 
 ## Форма задания ограничений AdvLimit
-[AdvLimit](limitation-edit-form.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](fw_filter-settings.html) и [здесь](fw_filter-example.html)).
+[AdvLimit](fw_limitation-editform.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](fw_filter-settings.html) и [здесь](fw_filter-example.html)).
 
 ## LimitFunction
-Через [свойство LimitFunction структуры LoadingCustomizationStruct](fo_loading-customization-struct.html) можно программно задавать ограничения (пример см. [здесь](filter-settings-for-use-in-lists.html)).
+Через [свойство LimitFunction структуры LoadingCustomizationStruct](fo_loading-customization-struct.html) можно программно задавать ограничения (пример см. [здесь](fw_filtersettings-for-use-in-lists.html)).

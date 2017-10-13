@@ -28,7 +28,6 @@ lang: ru
 * [Ограничение с параметрами (для пользователя) в Win](fw_limit-editor-params.html)
 * [Задание горячих клавиш для ограничений](fw_limit-hotkey.html)
 * [Кнопка «Свернуть/развернуть папки» на рабочем столе](fw_desktop-operations.html)
-* [Отображение списка допустимых значений в редакторе ограничений для пользовательских типов данных](displays-a-list-of-valid-values-in-the--limit-editor-for-user-data-type.html)
 * [«Тараканы» и перечислимый тип](fw_empty-enum-value-validation.html)
 * [Свойство MaxLength элемента управления ExtLookUpTextControl](fw_ext-lookup-text-control-max-length.html)
 * [Как запретить закрытие фомы (только формы Flexberry Winforms)](fw_forbid-closing-form.html)
@@ -48,7 +47,6 @@ lang: ru
 * [И опять работа с меню](fw_working-with-menu.html)
 * [Детейл в качестве мастера](fw_detail-as-master.html)
 * [Отображение на интерфейсе формы мастеров и детейлов](fo_masters-details.html)
-* [Задание колонок для размещения контролов на уровне представлений Flexberry Designer](specify-column-to-accommodate-the-controls.html)
 * [Стандартный монитор задач WinformBusinessTaskMonitor](fw_winform-business-task-monitor.html)
 
 ## Описание продукта

@@ -64,7 +64,7 @@ public static Function SubstituteParameters(Function function, IDictionary<strin
 ### Пример
 ```csharp 
  AdvansedLimit advlimit = new AdvansedLimit {Function = limitFunction};
- advlimit.Parameters = new ParameterDef[1](ис-управления-проектами_1.html) { (ParameterDef)advlimit.Function.Parameters[0] };
+ advlimit.Parameters = new ParameterDef[1] { (ParameterDef)advlimit.Function.Parameters[0] };
  limitFunction = AdvansedLimitExtension.GetCustomizedFunctionByParameters(
     advlimit,
     new Dictionary<string, object>() { { "Дата", DateTime.Now } });
