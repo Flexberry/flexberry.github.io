@@ -14,8 +14,7 @@ lang: ru
 
 Для этого:
 
-1. В методе __GetControl__ класса CustomControlProvide устанавливаем контрол для поля НомерГруппы:
-
+1. В методе __GetControl__ класса CustomControlProvide устанавливаем контрол для поля НомерГруппы:<br>
 ```csharp
             if (view.Name #  "ДежурнаяГруппаСменыE" && propertyName  "НомерГруппы")
             {
@@ -24,11 +23,9 @@ lang: ru
                 ctrl = new ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct(lookUp, "Value");
             }
 ```
-
+<br>
 2. Переопределяем метод __OnEdit__ в winformДежурнаяСменаE. Так как класс ДежурнаяГруппаСмены не имеет ссылки на ДежурнуюГруппу, то выбираем любой другой класс, имеющий такую ссылку, в нашем случае подойдет __ЧленДежурнойГруппы__.
-
-То есть пишем :
-
+<br>То есть пишем :
 ```csharp
 dataobject = new ЧленДежурнойГруппы(); //класс, имеющий ссылку на дежурную группу
 propertyname = "ДежураяГруппа"; //имя ссылки
@@ -50,7 +47,6 @@ public override void OnEdit(string propertyname, ICSSoft.STORMNET.DataObject dat
             base.OnEdit(propertyname, dataobject, contpath, tag);
         }
 ```
-
 3. Переопределяем метод __Edited__ в winformДежурнаяСменаE. Записываем все необходимые свойства в ДежурнуюГруппуСмены из выбранной ДежурнойГруппы:
 
 ```csharp

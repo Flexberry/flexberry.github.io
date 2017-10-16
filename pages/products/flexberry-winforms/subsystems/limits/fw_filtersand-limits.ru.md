@@ -26,13 +26,13 @@ __Фильтры__ - это инструмент наложения пользо
 
 Если используется генератор настроек фильтров, то необходимо обратить внимание на следующие моменты: 
 
-1. Для работы его можно определить как [ярлык](fw_win-desktop-links.html) на [рабочий стол](fw_app-desktop.html):
+* Для работы его можно определить как [ярлык](fw_win-desktop-links.html) на [рабочий стол](fw_app-desktop.html):
 
 ```csharp
 arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsGeneratorE), "Администрирование", "Генератор настроек фильтров", "", new IIS.Core.App_FilterSettingsGenerator(), typeof(IIS.Core.App_FilterSettingsGenerator), false));
 ```
 
-2. В конфиг-файле приложения должны быть строчки вида:
+* В конфиг-файле приложения должны быть строчки вида:
 
 ```xml
 <add key="DefaultLibFolder" value="lib"/>
@@ -41,9 +41,9 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 
 Сборки объектов и форм при этом нужно перенести в папку, указанную в `DefaultLibFolder`. 
 
-3. У объектов обязательно должно быть [T-представление](fd_t-view.html). 
+* У объектов обязательно должно быть [T-представление](fd_t-view.html). 
 
-4. После того, как настройки фильтров будут сгенерированы, их необходимо подключить как указано [здесь](fw_filter-settings.html).
+* После того, как настройки фильтров будут сгенерированы, их необходимо подключить как указано [здесь](fw_filter-settings.html).
 
 
 [FilterSettings](fw_filter-settings.html) определяют настройки для [детейлов](fd_key-concepts.html) и лукапов (например, без таких настроек при задании ограничений невозможно использовать [детейлы](fd_key-concepts.html)). 

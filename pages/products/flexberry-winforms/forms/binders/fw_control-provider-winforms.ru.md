@@ -26,7 +26,6 @@ lang: ru
 | Enum| ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox
 | ICSSoft.STORMNET.DetailArray| ICSSoft.STORMNET.Windows.Forms.GroupEditBase
 | ICSSoft.STORMNET.DataObject| ICSSoft.STORMNET.Windows.Forms.ComboLookup или (в зависимости от параметров) ICSSoft.STORMNET.Windows.Forms.LookUp.LookUp
-||
 
 Если требуется, чтобы редактировался другой тип, или другим контролом, необходимо определить свой провайдер контрола и ассоциировать его с типом.
 

@@ -44,19 +44,15 @@ var dateTimePicker = new ICSSoft.STORMNET.Windows.Forms.DateTimePicker();
 Например, 
 
 1. если значение типа `System.String` будет обрабатываться с помощью `System.Windows.Forms.TextBox`, то маппинг можно опустить:
-
 ```csharp
 new ControlForBindStruct(new System.Windows.Forms.TextBox(), "Text")
 ```
-
 2. если значение типа `ICSSoft.STORMNET.UserDataTypes.NullableDateTime` будет обрабатываться с помощью `ICSSoft.STORMNET.Windows.Forms.DateTimePicker`, который работает с типом `System.DateTime`, то необходимо выполнить маппинг (полный пример [здесь](fw_processing-date-in-control-provider.html)):
-
 ```csharp
 ControlForBindStruct(new ICSSoft.STORMNET.Windows.Forms.DateTimePicker(), "ObjectValue", 
 							new System.Type[] {typeof(ICSSoft.STORMNET.UserDataTypes.NullableDateTime),
 										typeof(System.DateTime)})
 ```
-
 3. если значение типа `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` будет обрабатываться с помощью `System.Windows.Forms.TextBox`, который работает с типом `System.String`, то необходима цепочка маппинга, поскольку системе известно, как перевести `ICSSoft.STORMNET.UserDataTypes.NullableDecimal` в `System.Decimal`, а из `System.Decimal` уже в `System.String`.
 
 ```csharp

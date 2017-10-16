@@ -8,14 +8,8 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-<div style="margin:5px; padding-left:28px; float:right; width:40%; outline:1px solid white;">
-<br>
-<table border="0" width="100%" bgcolor="#6495ED">
-<tbody><tr><td bgcolor="#FFFFFF">
-* __Продукт__: [Flexberry Winforms](fw_landing_page.html)
-* __Предназначение__: <!--Краткое описание фичи.-->
-</td>
-</tr></tbody></table></a>
-</div>
+| __Продукт__ | __Предназначение__ |
+ ---|---| 
+|[Flexberry Winforms](fw_landing_page.html)||
 
 <!--Непосредственно текст статьи-->
