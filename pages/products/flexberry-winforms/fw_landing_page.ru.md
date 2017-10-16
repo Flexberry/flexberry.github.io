@@ -3,7 +3,7 @@ title: Flexberry Winforms
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
 toc: true
-permalink: ru/fw_flexberry-winforms.html
+permalink: ru/fw_landing_page.html
 folder: products/flexberry-winforms/
 lang: ru
 ---

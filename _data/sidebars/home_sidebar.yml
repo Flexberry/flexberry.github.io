@@ -44,7 +44,7 @@ entries:
       url: /fs_landing_page.html
       output: web
     - title: Flexberry Winforms
-      url: /fw_flexberry-winforms.html
+      url: /fw_landing_page.html
       output: web
     - title: Flexberry ODataService
       url: /fod_landing_page.html

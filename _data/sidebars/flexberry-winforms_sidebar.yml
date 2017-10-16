@@ -9,7 +9,7 @@ entries:
     folderitems:
     - title: Flexberry Winforms
       title_ru: Flexberry Winforms
-      url: /fw_flexberry-winforms.html
+      url: /fw_landing_page.html
       output: web
 
     - title: General concepts
