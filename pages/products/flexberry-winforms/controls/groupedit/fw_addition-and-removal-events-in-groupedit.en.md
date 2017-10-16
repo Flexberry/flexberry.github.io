@@ -1,0 +1,17 @@
+---
+title: События добавления и удаления в GroupEditBase 
+sidebar: flexberry-winforms_sidebar
+keywords: Windows UI (Контролы)
+toc: true
+permalink: en/fw_addition-and-removal-events-in-groupedit.html
+folder: products/flexberry-winforms/
+lang: en
+---
+
+Как в __GroupEditBase__ перехватить события удаления и добавления объекта и при определенных условиях эти события отменить? тока получением FlexGrida?
+
+__Ответ__:
+
+1) Можно управлять кнопкой удаления на тулбаре (показать, скрыть)
+
+2) У FlexGrid есть событие перед удалением, в котором можно вернуть отмену удаления

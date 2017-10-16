@@ -3,9 +3,9 @@ title: Переключение редактируемого объекта бе
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: ru/fw_switch-editing-object.html
+permalink: en/fw_switch-editing-object.html
 folder: products/flexberry-winforms/
-lang: ru
+lang: en
 ---
 
 Иногда сценарий работы системы подразумевает последовательное переключение просматриваемых или редактируемых объектов на форме редактирования без закрытия самой этой формы. Аналогом такой функциональности является просмотр событий в системном логе Windows (EventLog). Flexberry Platform для организации данного сценария поддерживает специальную функцию, доступную из независимых форм редактирования: `SwitchEditingObject(newObject)`.

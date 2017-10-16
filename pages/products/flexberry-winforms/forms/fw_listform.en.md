@@ -3,9 +3,9 @@ title: Формы списка (классы со стереотипом listfor
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
 toc: true
-permalink: ru/fw_listform.html
+permalink: en/fw_listform.html
 folder: products/flexberry-winforms/
-lang: ru
+lang: en
 ---
 
 Форма списка обеспечивает пользовательский интерфейс по отображению списка объектов данных в некотором представлении.
