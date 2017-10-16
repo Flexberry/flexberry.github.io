@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_controller.html
-folder: products/ember-flexberry/forms/
 lang: en
 summary: Представлена основная информация о структуре контроллеров в ember-flexberry-приложениях.
 ---

@@ -110,6 +110,11 @@ entries:
       url: /ef_search-attributes.html
       output: web, pdf
 
+    - title: Configuring filters on lists
+      title_ru: Настройка фильтров на списках
+      url: /ef_configuring-filters.html
+      output: web, pdf
+
     - title: Lookup
       url: /ef_lookup.html
       output: web, pdf
