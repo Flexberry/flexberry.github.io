@@ -1,23 +1,13 @@
-Flexberry Documentation generated using [YUIDoc](http://yui.github.io/yuidoc/).
+Flexberry Documentation site generated using [Jekyll](https://jekyllrb.com/).
 
 ## Prerequisites
-* [Node.js](http://nodejs.org/) (with NPM)
-* `npm install -g yuidocjs`
+* [Jekyll](https://jekyllrb.com/)
 
 ## Installation
-* `git clone --recursive https://github.com/Flexberry/Documentation.git`
-* `npm install`
-
-## Generation docs
-* `git submodule update --remote --merge` (upgrade submodules and pull latest changes)
-* `cd <branch_name>` (master or develop)
-* `yuidoc` (pay attention to warnings in the process output)
+* `git clone --recursive https://github.com/Flexberry/flexberry.github.io.git`
 
 ## Running / Development
-* `cd <branch_name>` (master or develop)
-* `yuidoc --server`
-* Visit [http://localhost:3000](http://localhost:3000).
+* `cd flexberry.github.io`
+* `bundle exec jekyll serve`
+* Visit [http://localhost:4000](http://localhost:4000).
 
-## Adding a new project in Generation
-* `git submodule add -b <branch_name> <project_repo_url> <branch_name>/<project_repo_name>`
-* Add path to generate docs in `options.paths` array in `<branch_name>/yuidoc.json`.
