@@ -14,11 +14,3 @@
 	path = develop/ember-flexberry-data
 	url = https://github.com/Flexberry/ember-flexberry-data.git
 	branch = develop
-[submodule "master/ember-flexberry-gis"]
-	path = master/ember-flexberry-gis
-	url = https://github.com/Flexberry/ember-flexberry-gis.git
-	branch = master
-[submodule "develop/ember-flexberry-gis"]
-	path = develop/ember-flexberry-gis
-	url = https://github.com/Flexberry/ember-flexberry-gis.git
-	branch = develop
