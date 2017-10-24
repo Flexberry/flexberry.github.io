@@ -126,6 +126,7 @@ sidebars:
 - flexberry-platform_sidebar
 - flexberry-security_sidebar
 - flexberry-gis_sidebar
+- flexberry-bpm_sidebar
 - leaflet-editable-measures_sidebar
 - leaflet-export_sidebar
 - leaflet-history_sidebar

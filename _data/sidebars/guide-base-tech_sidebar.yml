@@ -118,6 +118,18 @@ entries:
       title_ru: Введение в ГИС-разработку
       url: /gbt_gis.html
       output: web
+  - title: BPM Development
+    title_ru: Разработка BPM приложений
+    output: web
+    folderitems:
+    - title: BPM development
+      title_ru: Введение в BPM-разработку
+      url: /gbt_bpm.html
+      output: web
+    - title: jBPM development
+      title_ru: Разработка с использованием jBPM
+      url: /gbt_jbpm.html
+      output: web
   - title: Testing, debugging, performance
     title_ru: Тестирование и отладка
     output: web

@@ -1,0 +1,42 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Flexberry BPM
+  version: 0.1.0
+  folders:
+
+  - title: О Flexberry BPM
+    output: web, pdf
+    folderitems:
+    - title: About
+      title_ru: О модуле
+      url: /fbpm_landing_page.html
+      output: web
+
+  - title: Компоненты
+    output: web, pdf
+    folderitems:
+    - title: Architecture Flexberry BPM
+      title_ru: Архитектура Flexberry BPM
+      url: /fbpm_architecture.html
+      output: web
+    - title: All components Flexberry BPM
+      title_ru: Все компоненты Flexberry BPM
+      url: /fbpm_components.html
+      output: web
+  - title: Разработка
+    output: web, pdf
+    folderitems:
+    - title: BPM Development
+      title_ru: Разработка процессной части
+      url: /fbpm_development.html
+      output: web
+  - title: Разворачивание
+    output: web, pdf
+    folderitems:
+    - title: BPM Deployment
+      title_ru: Разворачивание процессной части
+      url: /fbpm_deployment.html
+      output: web

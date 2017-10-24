@@ -49,6 +49,8 @@ summary: Курс по базовым технологиям, применяем
   * [iOS](gbt_ios.html)
   * [Apache Cordova](gbt_cordova.html)
 * [Разработка ГИС-систем](gbt_gis.html)
+* [Разработка BPM-систем](gbt_bpm.html)
+  * [jBPM](gbt_jbpm.html)
 * [Тестирование, отладка, вопросы производительности приложений](gbt_testing.html)
 * [Командная разработка](gbt_team-management.html)
 * [Разворачивание и установка решений](gbt_deployment.html)
