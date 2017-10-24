@@ -28,14 +28,32 @@ entries:
     - title: Flexberry Designer
       url: /fd_landing_page.html
       output: web
+    - title: Flexberry Ember
+      url: /fe_landing_page.html
+      output: web
     - title: Flexberry ASP.NET
       url: /fa_landing_page.html
       output: web
-    - title: ember-flexberry
-      url: /ef_landing_page.html
+    - title: Flexberry Winforms
+      url: /fw_landing_page.html
       output: web
-    - title: ember-flexberry-data
-      url: /efd_landing_page.html
+    - title: Flexberry Foundation
+      url: /ff_landing_page.html
+      output: web
+    - title: Flexberry GIS
+      url: /fg_landing_page.html
+      output: web
+    - title: Flexberry Service Bus
+      url: /fsb_landing_page.html
+      output: web
+    - title: Flexberry Analytics
+      url: /fan_landing_page.html
+      output: web
+    - title: Flexberry BPM
+      url: /fbpm_landing_page.html
+      output: web
+    - title: Flexberry Portal
+      url: /fprt_landing_page.html
       output: web
     - title: Flexberry ORM
       url: /fo_landing_page.html
@@ -43,17 +61,8 @@ entries:
     - title: Flexberry Security
       url: /fs_landing_page.html
       output: web
-    - title: Flexberry Winforms
-      url: /fw_landing_page.html
-      output: web
-    - title: Flexberry ODataService
-      url: /fod_landing_page.html
-      output: web
-    - title: ember-flexberry-security
-      url: /efs_landing_page.html
-      output: web
-    - title: Flexberry GIS
-      url: /fg_landing_page.html
+    - title: Flexberry Audit
+      url: /fau_landing_page.html
       output: web
   - title: Guides
     title_ru: Руководства
@@ -65,7 +74,7 @@ entries:
       output: web
     - title: Create web app
       title_ru: Создание веб-приложений
-      url: /news.html
+      url: /gwa_landing-page.html
       output: web
     - title: Create mobile app
       title_ru: Создание мобильных приложений
@@ -73,13 +82,26 @@ entries:
       output: web
     - title: Create gis app
       title_ru: Создание ГИС приложений
-      url: /news.html
+      url: /gga_landing-page.html
+      output: web
+    - title: Create BPM app
+      title_ru: Создание BPM приложений
+      url: /gbpm_landing-page.html
+      output: web
+    - title: Create BigData app
+      title_ru: Создание BigData приложений
+      url: /gbd_landing-page.html
       output: web
     - title: App security and audit
       title_ru: Полномочия и аудит
-      url: /news.html
+      url: /gsa_landing-page.html
       output: web
     - title: Tasks
       title_ru: Практические задания
       url: /gt_landing-page.html
       output: web
+    - title: Practical guides
+      title_ru: Практические руководства
+      url: /gpg_landing-page.html
+      output: web
+
