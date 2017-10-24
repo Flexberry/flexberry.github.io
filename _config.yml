@@ -139,6 +139,7 @@ sidebars:
 - guide-practical-guides_sidebar
 - other
 - guide-mobile-app_sidebar
+- guide-bpm-app_sidebar
 
 gems:
   - jekyll-seo-tag

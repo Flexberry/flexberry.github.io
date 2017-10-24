@@ -1,7 +1,7 @@
 ---
 title: Создание BPM приложений
 keywords: BPMN
-sidebar: guide-base-tech_sidebar
+sidebar: guide-bpm-app_sidebar
 toc: false
 permalink: ru/gbpm_landing-page.html
 lang: ru
