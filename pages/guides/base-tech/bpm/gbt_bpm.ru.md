@@ -7,4 +7,4 @@ permalink: ru/gbt_bpm.html
 lang: ru
 ---
 
-BPM
+## О BPM
