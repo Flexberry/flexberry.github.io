@@ -27,6 +27,6 @@ lang: en
 ![](/images/pages/products/flexberry-orm/i-references-cascade-delete/i-references-cascade-delete.png)
 
 На диаграмму добавлен `IReferencesCascadeDelete` со стереотипом [externalinterface](fd_external-interface.html) , от которого наследуется класс `Territory2` и `Country2`. При удалении экземпляров этого класса будут удаляться также все объекты, которые ссылаются на них.
-При указанном расположении классов с учётом [наследования](fo_inheritance.html):
+При указанном расположении классов с учётом [наследования](fd_inheritance.html):
 1. При удалении экземпляра класса `Territory2` будут проверяться ссылки среди экземпляров классов `Human2` и `Place2`.
 2. При удалении экземпляра класса `Country2` будут проверяться ссылки среди экземпляров классов `Human2`, `Place2`, `Adress2`, `Apparatus2` (экземпляры класса `Region` являются детейлами и будут удаляться даже без использования соответствующего интерфейса).

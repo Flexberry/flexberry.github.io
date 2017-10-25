@@ -23,7 +23,7 @@ lang: en
 
 ### Наследование
 
-Если имеется следующая ситуация с [наследованием](fo_inheritance.html):
+Если имеется следующая ситуация с [наследованием](fd_inheritance.html):
 
 ![](/images/pages/products/flexberry-orm/business-servers/bs-hierarchy.JPG)
 

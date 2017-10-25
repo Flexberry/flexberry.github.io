@@ -21,8 +21,8 @@ permalink: ru/fo_flexberry-orm.html
 * [Компоненты для фильтрации получаемых данных (ограничения).](fo_limitation.html)
 * [Компоненты пессимистической блокировки, обеспечивающие возможность блокировать объекты данных во время выполнения операций над ними.](fo_lock-service.html) 
 * [Бизнес-серверы](fo_business-logic.html).
-* [Монитор задач.](fo_business-task-monitor.html)
-* [Модуль расширения Flexberry Designer для генерации кода по uml-моделям.](fo_flexberry-orm-case-plugin.html)
+* [Монитор задач](fo_business-task-monitor.html)
+* [Модуль расширения Flexberry Designer для генерации кода по uml-моделям.](fo_orm-case-plugin.html)
 * [Вспомогательные инструменты ICSSoft.STORMNET.Tools.](fo_ics-soft-stormnet-tools.html)
 
 ## Описание продукта
