@@ -20,7 +20,7 @@ Flexberry Designer является [продуктом платформы Flexb
 
 Репозиторий моделей позволяет удобно хранить диаграммы в структурированном виде. Для работы с репозиторием применяется  [браузер репозиториев Flexberry Designer](fd_repository-browser.html).
 
-[Репозиторий имеет структуру](fd_recommended-structure-repository-and-placing-diagrams.html), не ограничивающую пользователя какой-либо методологией.
+[Репозиторий имеет структуру](fd_recommended-structure-repository.html), не ограничивающую пользователя какой-либо методологией.
 
 Для диаграммы как репозиторного объекта реализованы [дополнительные возможности для манипуляции](fd_working-repository-browser.html).
 
@@ -49,6 +49,5 @@ Flexberry Designer является [продуктом платформы Flexb
 
 Дополнительно Flexberry Designer предоставляет следующие полезные возможности:
 
-*   [Импорт стадии и диаграммы при открытии файлов crp и csdg](fd_import-crp-csdg.html)
-*   [Запуск Flexberry Designer с открытием указанной стадии](fd_running-with-the-opening-of-stage.html)
-*   [Настройка имени главной формы Flexberry Designer](fd_form-name.html)
+* [Запуск Flexberry Designer с открытием указанной стадии](fd_running-with-the-opening-of-stage.html)
+* [Настройка имени главной формы Flexberry Designer](fd_form-name.html)

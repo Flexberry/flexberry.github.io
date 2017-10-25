@@ -10,7 +10,7 @@ lang: en
 
 Модули расширения добавляют функциональность во [Flexberry Designer](fd_landing_page.html), предоставляя новые возможности. Модулем может быть генератор исходного кода, утилита поиска, импорта-экспорта и т.п.
 
-При использовании модулей расширения появляются дополнительные пункты меню при выборе репозитарных объектов Flexberry Designer: [Конфигурации, Стадии или Системы](fd_recommended-structure-repository-and-placing-diagrams.html).
+При использовании модулей расширения появляются дополнительные пункты меню при выборе репозитарных объектов Flexberry Designer: [Конфигурации, Стадии или Системы](fd_recommended-structure-repository.html).
 
 Модули хранятся в библиотеках (DLL) и располагаются в папке с исполняемым файлом `Flexberry Designer`.
 
@@ -49,7 +49,7 @@ lang: en
 
 ## Стандартные модули Flexberry Designer
 
-* [Модуль расширения Flexberry ORM](fo_flexberry-orm-case-plugin.html)
+* [Модуль расширения Flexberry ORM](fo_orm-case-plugin.html)
 * [Модуль расширения Flexberry ASP.NET]()
 * [Модуль расширения Flexberry Ember]()
 * [Модуль расширения Flexberry WinForms]()

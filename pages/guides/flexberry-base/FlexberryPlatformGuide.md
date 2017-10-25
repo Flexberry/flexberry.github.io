@@ -87,5 +87,5 @@ lang: ru
 #* [Создание и подключение монитора задач](fo_creating-connection-bt-monitor.html)
 #* [Подсистема полномочий](right-manager-module.html)
 #* [Прочие возможности](class-image.html)
-#* [Перечислимые типы данных](enumerations.html)
+#* [Перечислимые типы данных](fd_enumerations.html)
 #* [Если что-либо «глючит» в Design-Time](design--time--errors.html)

@@ -14,7 +14,7 @@ lang: en
 
 ![](/images/pages/products/flexberry-designer/class-diagram/implementation.png)
 
-{% include note.html content="Классы данных, связанные [иерархией наследования](fo_inheritance.html), [ассоциациями](fd_master-association.html) и [агрегациями](fo_detail-associations-properties.html) друг с другом, образуют так называемую [объектную структуру прикладной системы](fd_key-concepts.html), т.е. структуру предметных сущностей и их отношения." %}
+{% include note.html content="Классы данных, связанные [иерархией наследования](fd_inheritance.html), [ассоциациями](fd_master-association.html) и [агрегациями](fo_detail-associations-properties.html) друг с другом, образуют так называемую [объектную структуру прикладной системы](fd_key-concepts.html), т.е. структуру предметных сущностей и их отношения." %}
 
 
 ### Что генерируется по классу данных
@@ -51,7 +51,7 @@ lang: en
 `AutoAltered` - автоматическое вычисление статуса с проверкой изменённых свойств | | Если указан, генерируется атрибут [AutoAlteredAttribute](fo_object-status.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
 `LoadingOrderXML` - позволяет указать порядок загрузки свойств экземпляров этого класса сервисами данных | | Если указан, генерируется атрибут [LoadingOrderAttribute](fo_order-loading-property.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
 `Trim` - применяется ли удаление пробелов (функция Trim()) для строковых данных при работе [сервиса данных](fo_data-service.html) ( см. [дополнительную информацию](fo_trimmed-string-storage.html)) | |   
-`Packet, NamespacePostfix` - позволяют настроить сборку и пространство имен | | см. [Расположение сборок после генерации кода](fo_location-assembly-after-code-generation.html).
+`Packet, NamespacePostfix` - позволяют настроить сборку и пространство имен | | см. [Расположение сборок после генерации кода](fo_location-assembly.html).
 `PBCustomAttributes` - позволяет указать, необходима ли скобка программиста непосредственно перед описанием класса для "ручного" внесения атрибутов | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения `.Net` атрибутов перед классом.
 `PBMembers` - позволяет указать, необходима ли скобка программиста внутри класса для "ручного" внесения членов класса | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения членов класса.
 `BSClass` - [бизнес-сервер](fd_business-servers.html), обрабатывающий этот класс данных | | Если указан, генерируется атрибут [BusinessServerAttribute](fo_user-operations-dataservice.html) (Namespace: ICSSoft.STORMNET.Business, Assembly: ICSSoft.STORMNET.Business (in ICSSoft.STORMNET.Business.dll))

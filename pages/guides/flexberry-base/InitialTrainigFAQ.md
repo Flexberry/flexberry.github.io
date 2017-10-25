@@ -39,7 +39,7 @@ lang: ru
 
 (((
 <msg type=important>
-Переименование классов лучше проводить через пункт "Переименовать" контекстного меню. Менять название непосредственно в заголовке у заполненного атрибутами класса не стоит, поскольку он будет считаться другим новым классом без атрибутов (некоторое объяснение этому можно почитать [здесь](recommended-structure-repository-and--placing-diagrams.html)).
+Переименование классов лучше проводить через пункт "Переименовать" контекстного меню. Менять название непосредственно в заголовке у заполненного атрибутами класса не стоит, поскольку он будет считаться другим новым классом без атрибутов (некоторое объяснение этому можно почитать [здесь](fd_recommended-structure-repository.html)).
 </msg>
 )))
 
@@ -174,7 +174,7 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 
 #### Бизнес-сервер
 
-Как определить [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервер], читайте [здесь](business-servers.html) (как работать с [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервером], читайте в статье [Интеграция с бизнес-сервером](fo_user-operations-dataservice.html); пример есть [здесь](fo_features-dafault-value.html)).
+Как определить [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервер], читайте [здесь](fd_business-servers.html) (как работать с [Base-system-technology-architecture-Flexberry-FRAMEWORK|бизнес-сервером], читайте в статье [Интеграция с бизнес-сервером](fo_user-operations-dataservice.html); пример есть [здесь](fo_features-dafault-value.html)).
 
 #### Отчёты
 

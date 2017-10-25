@@ -2,10 +2,9 @@
 title: Рекомендуемая структура репозитория
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, уровни репозитория, репозиторий, конфигурация, стадия, типы стадий, системы, диаграммы
-summary: Определение уровней в репозитории, рекомендации по делени. модели на конфигурации, стадии, системы и распределение модели на диаграммах
+summary: Определение уровней в репозитории, рекомендации по делению модели на конфигурации, стадии, системы и распределение модели на диаграммах
 toc: true
 permalink: en/fd_recommended-structure-repository.html
-folder: products/flexberry-designer/about/
 lang: en
 ---
 
