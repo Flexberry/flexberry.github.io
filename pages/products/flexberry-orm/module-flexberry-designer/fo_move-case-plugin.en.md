@@ -1,10 +1,10 @@
 ---
-title: Функция перемещения или копирования
+title: Move or copy function
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM
+keywords: Flexberry Designer, Flexberry ORM
+summary: Types of repository objects available for copying and moving
 toc: true
-permalink: en/fd_move-case-plugin.html
-folder: products/flexberry-designer/about/
+permalink: en/fo_move-case-plugin.html
 lang: en
 ---
 

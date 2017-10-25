@@ -1,10 +1,10 @@
 ---
-title: Скобки программиста
+title: Brackets of the programmer
 sidebar: flexberry-orm_sidebar
-keywords: CASE Plugins, Flexberry ORM, Public
+keywords: Flexberry Designer, Flexberry ORM, plugins
+summary: Assignment of programmer brackets, features of application and example of use
 toc: true
 permalink: en/fo_programmer-brackets.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
@@ -22,7 +22,7 @@ lang: en
 
 Если код добавлен между скобками программиста, то он будет сохранён при перегенерации приложения.
 
-<div markdown="span" class="alert alert-info" role="important"><i class="fa fa-info-circle"></i>При работе с автогенерируемыми файлами будьте внимательны и добавляйте код в правильное место.</div>
+{% include note.html content="При работе с автогенерируемыми файлами следует проверять, что код добавлен в правильное место." %}
 
 Структура кода относительно скобок программиста выглядит следующим образом:
 
@@ -37,7 +37,7 @@ lang: en
 Добавленный в проект код // Не потеряется при перегенерации.
 Закрывающая скобка программиста
 Генерируемый код
-...
+// ...
 ```
 
 ## Настройка скобок программиста
@@ -45,7 +45,7 @@ lang: en
 При генерации кода добавляются следующие скобки программиста:
 
 * Заданные по умолчанию для конкретной генерируемой сущности.
-* Заданные настройками, определёнными на интерфейсе (например, [свойствами PBCustomAttributes и PBMembers классов данных](fd_data-classes.html)).
+* Заданные настройками, определёнными на интерфейсе (например, свойствами `PBCustomAttributes` и `PBMembers` [классов данных](fd_data-classes.html)).
 
 Добавление пользовательских скобок программиста не поддерживается.
 
@@ -55,12 +55,10 @@ lang: en
 
 * `Ошибка: Не найдено завершение скобки в файле "D:\Проекты\КредитыTestBuild\Кредиты\Objects\Клиент.cs"`, значит, где-то в указанном файле была удалена или добавлена лишняя скобка.
 
-* исключение типа DuplicateBraceFoundedException значит,что где-то добавлена лишняя открывающая скобка.
-* исключение типа NotFoundEndOfBraceException значит, что где-то удалена закрывающая скобка.
+* исключение типа `DuplicateBraceFoundedException` значит,что где-то добавлена лишняя открывающая скобка.
+* исключение типа `NotFoundEndOfBraceException` значит, что где-то удалена закрывающая скобка.
 
 ## Пример
-
-Рассмотрим на примере.
 
 В классе ниже встречается 12 скобок программиста, позволяющих внести изменения в любую часть кода. У каждой скобки свое предназначение и свое место. К примеру, скобки 
 
@@ -70,9 +68,9 @@ lang: en
 // *** End programmer edit section *** (Клиент CustomMembers)
 ``` 
 
-отвечают за добавление собственных членов класса. К примеру, если мы захотим добавить метод, возвращающий строку вида "ФИО (Прописка)", то добавлять этот метод нужно будет именно в скобки. 
+отвечают за добавление собственных членов класса. К примеру, если необходимо добавить метод, возвращающий строку вида "ФИО (Прописка)", то добавлять этот метод нужно будет именно в скобки. 
 
-Предположим, что метод выглядит следующим образом:
+Например, что метод выглядит следующим образом:
 
 ``` csharp 
 public string GetFullClientString()
@@ -84,18 +82,18 @@ public string GetFullClientString()
 Тогда, после добавления его в __правильное__ место, код класса (отрывок) будет выглядеть так:
 
 ``` csharp
-        private string fФИО;
-        
-        private string fПрописка;
-        
-        // *** Start programmer edit section *** (Клиент CustomMembers)
+private string fФИО;
 
-        public string GetFullClientString()
-        {
-            return string.Format("{0} ({1})", ФИО, Прописка);
-        }
+private string fПрописка;
 
-        // *** End programmer edit section *** (Клиент CustomMembers)
+// *** Start programmer edit section *** (Клиент CustomMembers)
+
+public string GetFullClientString()
+{
+    return string.Format("{0} ({1})", ФИО, Прописка);
+}
+
+// *** End programmer edit section *** (Клиент CustomMembers)
 ```
 
 Код сгенерированного класса:
