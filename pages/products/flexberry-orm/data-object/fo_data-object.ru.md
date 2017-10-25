@@ -16,7 +16,7 @@ lang: ru
 
 Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](fo_dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](fo_not-stored-attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](fo_features-dafault-value.html).
 
-Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](fo_inheritance.html), [мастеровые](fd_master-association.html) и [детейловые](fo_detail-associations-properties.html) связи.
+Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](fd_inheritance.html), [мастеровые](fd_master-association.html) и [детейловые](fo_detail-associations-properties.html) связи.
 
 К объектам данным может быть привязана дополнительная информация (метаинформация), например, [представления](fd_view-definition.html) или [изображение](fo_class-image.html). 
 

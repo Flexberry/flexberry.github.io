@@ -27,7 +27,7 @@ lang: en
 
 * Настройки [LoadingCustomizationStruct](fo_loading-customization-struct.html) (работу по сортировке, наложению [limitFunction](fo_limit-function.html), подчёту агрегирующих значений и прочим аналогичным действиям необходимо перекладывать на сервер за счёт задания параметров `LoadingCustomizationStruct`.
 * Атрибутивная разметка (например, атрибут `Storage` как классов, так и связей).
-* Реализация [Inheritance](fo_inheritance.html) с иcпользованием [TypeUsage](fo_type-usage-problem.html).
+* Реализация [Inheritance](fd_inheritance.html) с иcпользованием [TypeUsage](fo_type-usage-problem.html).
 * [Перехват запроса к БД](fo_intercept-formation-sql-query.html).
 
 Если посмотреть, какие запросы отправляет сервис данных на сервер, то в нём встречаются константы типа `StormMainObjectKey` и `STORMJoinedMasterKey`.
