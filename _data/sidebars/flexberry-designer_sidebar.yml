@@ -216,7 +216,12 @@ entries:
     - title: Master association
       title_ru: Мастеровые ассоциации и их свойства  
       url: /fd_master-association.html
-      output: web, pdf   
+      output: web, pdf
+
+    - title: Inheritance 
+      title_ru: Наследование 
+      url: /fd_inheritance.html
+      output: web, pdf  
 
     - title: Types map
       title_ru: Карта типов 

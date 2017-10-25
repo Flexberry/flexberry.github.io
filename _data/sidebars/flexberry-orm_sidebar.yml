@@ -296,11 +296,6 @@ entries:
       url: /fo_information-get-property-storage-name.html
       output: web
 
-    - title: Inheritance 
-      title_ru: Наследование 
-      url: /fo_inheritance.html
-      output: web
-
     - title: Status and loading state of the data object
       title_ru: Статус и состояние загрузки объекта данных
       url: /fo_object-status.html
@@ -519,6 +514,50 @@ entries:
       title_ru: Пример использования собственных типов
       url: /fo_using-custom-types-example.html
       output: web
+
+  - title: Модуль для Flexberry Designer
+    output: web, pdf
+    folderitems:
+    - title: Generic methods in Flexberry Designer
+      title_ru: Генерик-методы в Flexberry Designer
+      url: /fo_generic-methods.html
+      output: web
+    - title: Create a class diagram for the database
+      title_ru: Создание диаграммы классов по базе данных
+      url: /fo_reverse-data-base.html
+      output: web
+    - title: Generate documentation on charts
+      title_ru: Генерация документации по диаграммам
+      url: /fo_doc-gen.html
+      output: web
+    - title: Plugin for generating XSD schema
+      title_ru: XMLSchemaGenerator Features
+      url: /fo_xml-schema-generator.html
+      output: web
+    - title: Generating application code using uml models
+      title_ru: Генерации кода приложения по uml-моделям
+      url: /fo_orm-case-plugin.html
+      output: web
+    - title: Functions of creating a backup and history of changes
+      title_ru: Функции создания бэкапа и истории изменений
+      url: /fo_history-plugin.html
+      output: web
+    - title: Search function
+      title_ru: Функция поиска
+      url: /fo_intelli-search-plugin.html
+      output: web
+    - title: Location of assemblies after code generation
+      title_ru: Расположение сборок после генерации кода
+      url: /fo_location-assembly.html
+      output: web
+    - title: Move or copy function
+      title_ru: Функция перемещения или копирования
+      url: /fo_move-case-plugin.html
+      output: web
+    - title: Brackets of the programmer
+      title_ru: Скобки программиста
+      url: /fo_programmer-brackets.html
+      output: web
                 
   - title: Функции ограничения
     output: web, pdf
@@ -597,25 +636,4 @@ entries:
     - title: ViewPropertyAppender
       url: /fo_view-property-appender.html
       output: web
-  - title: Генераторы
-    output: web, pdf
-    folderitems:
-    - title: Модуль расширения Flexberry Designer для генерации кода по uml-моделям
-      url: /fo_flexberry-orm-case-plugin.html
-      output: web
-
-    - title: Функция для поиска
-      url: /fo_intelli-search-plugin.html
-      output: web
-
-    - title: Функция генерации документации по диаграммам
-      url: /fo_doc-gen.html
-      output: web
-
-    - title: Функция перемещения или копирования
-      url: /fd_move-case-plugin.html
-      output: web
-
-    - title: Функции создания бэкапа и истории изменений
-      url: /fo_history-plugin.html
-      output: web
+  
