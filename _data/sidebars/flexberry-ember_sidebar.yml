@@ -1,0 +1,37 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Flexberry Ember
+  version: 0.9.2
+  folders:
+
+  - title: О Flexberry Ember
+    output: web, pdf
+    folderitems:
+    - title: About
+      title_ru: О модуле
+      url: /fe_landing_page.html
+      output: web
+
+  - title: Формы и контролы
+    output: web, pdf
+    folderitems:
+    - title: ember-flexberry
+      url: /ef_landing_page.html
+      output: web
+  - title: Доступ к данным
+    output: web, pdf
+    folderitems:
+    - title: ember-flexberry-data
+      url: /efd_landing_page.html
+      output: web
+  - title: Инструментарий разработки
+    output: web, pdf
+    folderitems:
+    - title: Ember-CLI via Docker Image
+      url: /fe_docker-for-ember-cli.html
+      output: web
+
+  

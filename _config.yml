@@ -124,6 +124,7 @@ sidebars:
 - flexberry-odataservice_sidebar
 - flexberry-orm_sidebar
 - flexberry-platform_sidebar
+- flexberry-ember_sidebar
 - flexberry-security_sidebar
 - flexberry-gis_sidebar
 - flexberry-bpm_sidebar
