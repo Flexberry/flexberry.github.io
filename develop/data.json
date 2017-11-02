@@ -12791,6 +12791,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-error.js",
             "line": 38,
+            "description": "Selector for modal dialog's context.",
+            "itemtype": "property",
+            "name": "modalContext",
+            "type": "String",
+            "default": "'.pusher:first'",
+            "class": "FlexberryErrorComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-error.js",
+            "line": 47,
             "description": "Error for displaying.",
             "itemtype": "property",
             "name": "error",
@@ -12800,7 +12811,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-error.js",
-            "line": 54,
+            "line": 63,
             "description": "Cleans error after displaying.",
             "itemtype": "method",
             "name": "actions.close",
