@@ -20,7 +20,7 @@ public delegate bool IsObjectVisibleDelegate(DataObject dataObject);
 
 Для решения данной задачи выполним следующее:
 
-1. Определим требуемый делегат (он возвращает `true`, если поле `ЦельВизита` у поданной на вход записи типа `ВизитКлиентаВБанк` не заполнено):
+1) Определим требуемый делегат (он возвращает `true`, если поле `ЦельВизита` у поданной на вход записи типа `ВизитКлиентаВБанк` не заполнено):
 
 ```csharp
 private bool IsObjectVisibleMyImplement(DataObject dataObject)
@@ -29,7 +29,7 @@ private bool IsObjectVisibleMyImplement(DataObject dataObject)
 }
 ```
 
-2. Назначим делегат `geВизитКлиентаВБанк`:
+2) Назначим делегат `geВизитКлиентаВБанк`:
 
 ```csharp
 public class WinformБанкE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.LookUpEditManager2.DPDIБанкE

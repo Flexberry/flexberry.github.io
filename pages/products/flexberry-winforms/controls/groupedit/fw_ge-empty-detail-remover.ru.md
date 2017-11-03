@@ -18,7 +18,7 @@ lang: ru
 
 
 ## Как подключить GEEmptyDetailRemover
-1. В зависимой форме класса определяем объект класса GEEmptyDetailRemover:
+1) В зависимой форме класса определяем объект класса GEEmptyDetailRemover:
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
@@ -28,7 +28,7 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 }
 ```
 
-2. Указываем в конструкторе формы [`GroupEdit`](fw_group-edit.html)'ы, для которых надо удалять пустые строки:
+2) Указываем в конструкторе формы [`GroupEdit`](fw_group-edit.html)'ы, для которых надо удалять пустые строки:
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
@@ -51,7 +51,7 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 }
 ```
 
-3. В независимой форме в методе [`OnSave`](fw_form-interaction.html) вызываем функцию удаления пустых детейлов:
+3) В независимой форме в методе [`OnSave`](fw_form-interaction.html) вызываем функцию удаления пустых детейлов:
 
 ```csharp
 public class C__ПокупательE : ICSSoft.STORMNET.UI.BaseIndpdEdit

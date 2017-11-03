@@ -9,16 +9,16 @@ lang: ru
 ---
 
 Как обработать check\uncheck в строках [GroupEdit](fw_group-edit.html)
-1. [Получаем FlexGrid из GroupEdit](fw_flex-grid.html). 
+* [Получаем FlexGrid из GroupEdit](fw_flex-grid.html). 
  
-2. Подписываемся на событие  CellChanged:
+* Подписываемся на событие  CellChanged:
 
 ```csharp
  fg.CellChanged-=new RowColEventHandler(fg_CellChanged); 
  fg.CellChanged+=new RowColEventHandler(fg_CellChanged); 
 ```
 
-3. В обработчике проверяем все, что нужно... 
+* В обработчике проверяем все, что нужно... 
 
 ```csharp
  private void fg_CellChanged(object sender, RowColEventArgs e)
