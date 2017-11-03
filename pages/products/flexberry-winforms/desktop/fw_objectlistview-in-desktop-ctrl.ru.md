@@ -99,7 +99,7 @@ arr.Add(new ICSSoft.STORMNET.Windows.Forms.FormRunner(typeof(IIS.Люди.Winfor
 * `RefreshObject` – обновить строку с передаваемым в качестве аргумента объектом.
 * `RebuildColumns` – обновить имеющиеся столбцы. Вызывается, например, после изменения свойства `IsVisible` столбца. 
 
-## ColumnItem]Работа с Column и Item
+## Работа с Column и Item
 У компонента `ObjectListView` существуют некоторые особенности при настройке и добавлении столбцов и записей. Прежде всего нужно сказать несколько слов о вспомогательном классе `ItemInListView`.
 
 Класс `ItemInListView` по сути связывает Items с Columns. `ObjectListView` сам создаёт новый item и присваивает каждому полю нужное значение. Чтобы составить однозначное соответствие «поле в `ItemInListView` – столбец в `ObjectListView`» имена полей в `ItemInListView` совпадают со значением полей `AspectName` (тип `string`) у соответствующих столбцов.

@@ -49,19 +49,19 @@ public class WinformC__СотрудникE : ICSSoft.STORMNET.UI.BaseWinEdit, II
 
 Для подключения в программном коде можно в конструкторе формы выполнить следующую последовательность действий: 
 
-1. Создать объект необходимого типа.
+1) Создать объект необходимого типа.
 
 ```csharp
 NextControlByEnterTuner Tuner = new NextControlByEnterTuner();
 ```
 
-2. Подписать подходящие контролы формы на переход по кнопке Enter, при этом формируется список подписанных контролов, который можно узнать через свойство `SubscribedOnEnterControls`. На настоящий момент автоматически подписываются контролы следующих типов (эти контролы не должны быть контролами-контейнерами): `System.Windows.Forms.TextBox` , `System.Windows.Forms.DateTimePicker` , `System.Windows.Forms.CheckBox` , `System.Windows.Forms.ComboBox` , `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` , `ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox` , `ICSSoft.STORMNET.Windows.Forms.ExtendedTextBox` , `ICSSoft.STORMNET.Windows.Forms.ExtTextControl`.
+2) Подписать подходящие контролы формы на переход по кнопке Enter, при этом формируется список подписанных контролов, который можно узнать через свойство `SubscribedOnEnterControls`. На настоящий момент автоматически подписываются контролы следующих типов (эти контролы не должны быть контролами-контейнерами): `System.Windows.Forms.TextBox` , `System.Windows.Forms.DateTimePicker` , `System.Windows.Forms.CheckBox` , `System.Windows.Forms.ComboBox` , `ICSSoft.STORMNET.Windows.Forms.DateTimePicker` , `ICSSoft.STORMNET.Windows.Forms.ExtendedComboBox` , `ICSSoft.STORMNET.Windows.Forms.ExtendedTextBox` , `ICSSoft.STORMNET.Windows.Forms.ExtTextControl`.
 
 ```csharp
 Tuner.SubscribeDefaultSetOfControlsOnEnter(this);
 ```
 
-3. Также, если есть необходимость, можно добавить контролы, которые должны быть подписаны на переход по кнопке Enter.
+3) Также, если есть необходимость, можно добавить контролы, которые должны быть подписаны на переход по кнопке Enter.
 
 ```csharp
 Tuner.AddToSubscribedOnEnterControls(new System.Windows.Forms.Control[] {lsvРезультат, btnНайти};
@@ -71,7 +71,7 @@ Tuner.AddToSubscribedOnEnterControls(new System.Windows.Forms.Control[] {lsvРе
 Обратите внимание, что при добавлении контролов через метод AddToSubscribedOnEnterControls, передаваемые контролы не должны быть контейнерами для других контролов. Также стоит заметить, что если передаваемый контрол, например, класса `System.Windows.Forms.Button`, то сначала выполнится событие, навешенное на клик, после чего уже будет осуществлён переход по Enter (переход организован в событии `Control.KeyUp`)." %}
 
 
-4. Для достижения желаемого результата также необходимо выполнить аккуратную настройку свойств `TabIndex` и `TabStop` у контролов формы.
+4) Для достижения желаемого результата также необходимо выполнить аккуратную настройку свойств `TabIndex` и `TabStop` у контролов формы.
 
 ## Интерфейс ICanChangeByEnter
 Интерфейс `ICanChangeByEnter` разработан для организации взаимодействия `NextControlByEnterTuner` с контролами, в которых на нажатие Enter повешена какая-то логика.

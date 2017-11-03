@@ -52,7 +52,7 @@ lang: ru
 * __ViewMode__ отвечает за тип отображения элементов списка (иконки, список, таблица)
 * __Font__ отвечает за шрифт элементов в дереве и в списке
 
-{% include note.html content="Подробнее о контроле рабочего стола можно посмотреть [хдесь](fw_objectlistview-in-desktop-ctrl.html)" %}
+{% include note.html content="Подробнее о контроле рабочего стола можно посмотреть [здесь](fw_objectlistview-in-desktop-ctrl.html)" %}
 
 ## Web-приложение
 В Web-приложении рабочий стол превращается в набор ссылок в меню SiteMaster'a.

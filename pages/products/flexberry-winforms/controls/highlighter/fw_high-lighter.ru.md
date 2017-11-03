@@ -10,7 +10,7 @@ lang: ru
 
 __HighLighter__ - класс, обеспечивающий подсветку активного контрола на форме.
 
-## Объявление: 
+## Объявление
 Для его работы, в проекте должна быть ссылка на сборку `ICSSoft.STORMNET.Windows.Forms.AdditionalControls`
 
 В [скобки программиста](fo_programmer-brackets.html) `CustomMembers` поместить код:
@@ -108,7 +108,7 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
  }
 ```
 
-## Как работает:
+## Как работает
 Судя по всему, `HighLighter` подписывается на события `OnGotFocus` и `OnLostFocus` объектов формы и меняет их свойство `BackColor` на свой и обратно при срабатывании.
 
 ## Результат

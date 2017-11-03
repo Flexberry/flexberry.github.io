@@ -13,7 +13,7 @@ lang: en
 
 ## Состав продукта
 `Flexberry Winforms` состоит из следующих модулей:
-* [Модуль расширения Flexberry Designer для генерации win-приложений по uml-моделям](fw_flexberry-winforms-case-plugin.html).
+* Модуль расширения Flexberry Designer для генерации win-приложений по uml-моделям.
 * Win-контролы и win-формы.
 
 ## Статьи по теме
@@ -26,13 +26,11 @@ lang: en
 * [Стандартный вид редактора ограничений. Описание формы](fw_description-form-limit-editor-in-standard-form.html)
 * [Расширенный вид редактора ограничений](fw_limit-editor-advanced-view.html)
 * [Ограничение с параметрами (для пользователя) в Win](fw_limit-editor-params.html)
-* [Задание горячих клавиш для ограничений](fw_limit-hotkey.html)
 * [Кнопка «Свернуть/развернуть папки» на рабочем столе](fw_desktop-operations.html)
 * [«Тараканы» и перечислимый тип](fw_empty-enum-value-validation.html)
 * [Свойство MaxLength элемента управления ExtLookUpTextControl](fw_ext-lookup-text-control-max-length.html)
 * [Как запретить закрытие фомы (только формы Flexberry Winforms)](fw_forbid-closing-form.html)
 * [Переход на генерируемую форму с универсальной с контролами ICustomizable](fw_going-on-generated-form-with-universal-i-customizable.html)
-* [Наследование Captions](fw_inheritance-captions.html)
 * [Интерфейс ISpecialEmptyValue](fo_i-special-empty-value.html)
 * [Установка заголовка списковой формы](fw_list-form-caption.html)
 * [Добавление на форму редактирования Lookup мастера, не относящегося к основному объекту](fw_lookup-another-object.html)

@@ -22,11 +22,6 @@ entries:
       url: /fw_flexberry-winforms-architecture.html
       output: web
 
-    - title: Flexberry Winforms case plugin
-      title_ru: Модуль расширения Flexberry Designer для генерации win-приложений по uml-моделям
-      url: /fw_flexberry-winforms-case-plugin.html
-      output: web
-
     - title: Winforms UI FAQ
       title_ru: Winforms UI FAQ
       url: /fw_winforms-ui-faq.html
@@ -194,11 +189,6 @@ entries:
       url: /fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
       output: web
 
-    - title: Inheritance captions
-      title_ru: Наследование Captions
-      url: /fw_inheritance-captions.html
-      output: web
-
     - title: Interfaces editforms
       title_ru: Интерфейсы форм редактирования
       url: /fw_interfaces-editforms.html
@@ -247,16 +237,6 @@ entries:
     - title: List form caption
       title_ru: Установка заголовка списковой формы
       url: /fw_list-form-caption.html
-      output: web
-
-    - title: Running independent forms from the desktop
-      title_ru: Запуск независимых форм с рабочего стола
-      url: /fw_running-independent-forms-from-the-desktop.html
-      output: web
-
-    - title: Running independent forms without desktop
-      title_ru: Запуск независимых форм без рабочего стола (из кода)
-      url: /fw_running-independent-forms-without-desktop.html
       output: web
 
     - title: Uniformly handle all application forms
@@ -346,19 +326,9 @@ entries:
       url: /fw_readonly-win.html
       output: web
 
-    - title: Running any dependent forms from the desktop
-      title_ru: Запуск произвольной зависимой формы с рабочего стола
-      url: /fw_running-any-dependent-forms-from-the-desktop.html
-      output: web
-
     - title: Support schemes Windows XP
       title_ru: Поддержка схем Windows XP
       url: /fw_support-schemes-windows-x-p.html
-      output: web
-
-    - title: Ui independent user interface
-      title_ru: UI-независимый пользовательский интерфейс
-      url: /fw_ui-independent-user-interface.html
       output: web
 
     - title: Ui synchronization context
@@ -477,11 +447,6 @@ entries:
     - title: Limit editor simple view
       title_ru: Упрощенный вид редактора ограничений
       url: /fw_limit-editor-simple-view.html
-      output: web
-
-    - title: Limit hotkey
-      title_ru: Задание горячих клавиш для ограничений
-      url: /fw_limit-hotkey.html
       output: web
 
     - title: Limitation editform

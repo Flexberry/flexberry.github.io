@@ -32,7 +32,8 @@ public static string ObjectToString(object o)
 }
 ```
  
- #### `ObjectFromString`
+#### `ObjectFromString`
+ 
  __Назначение__: Десериализация из строки при помощи `SoapFormatter`.
 
 __Параметры__:
