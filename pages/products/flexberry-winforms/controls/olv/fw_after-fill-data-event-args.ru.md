@@ -8,7 +8,7 @@ folder: products/flexberry-winforms/
 lang: ru
 ---
 
-В обработчике события `ОbjectListView.AfterFillData` появилась возможность получить информацию об успешности загрузки. В качестве параметра события вместо типа `EventArgs` передается его наследник `AfterFillDataEventArgs`.
+В обработчике события `ОbjectListView.AfterFillData` существует возможность получить информацию об успешности загрузки. В качестве параметра события вместо типа `EventArgs` передается его наследник `AfterFillDataEventArgs`.
 Тип `AfterFillDataEventArgs` имеет три свойства:
 
 ```csharp

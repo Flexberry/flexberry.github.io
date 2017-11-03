@@ -28,4 +28,4 @@ __ExtendedLookUp__ представляет из себя лукап с пред
 ctrlКлиент.AutoCompleteBox.OrderColumns = new ColumnsSortDef[] {new ColumnsSortDef("Прописка", SortOrder.Asc) };
 ```
 
-{% include note.html content="В настоящее время задание `AutoCompleteBox.OrderColumns` возможно только в программном коде." %}
+{% include note.html content="Задание `AutoCompleteBox.OrderColumns` возможно только в программном коде." %}
