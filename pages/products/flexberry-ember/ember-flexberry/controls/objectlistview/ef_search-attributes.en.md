@@ -81,9 +81,9 @@ predicateForAttribute(attribute, filter) {
 
 _Для flexberry-simpleolve настройки аналогичны._
 
-## Настройка поиска по всем атрибутам для формы мастера (LookUp)
+## Настройка списка, отображаемого в лукапе
 
-Для того чтобы настроить поиск по всем атрибутам на форме, поднимаемой по [LookUp](ef_lookup.html), необходимо настроить событие в контроллере формы:
+В [LookUp](ef_lookup.html) показывается компонент [flexberry-objectlistview](ef_object-list-view.html). Параметры для этого компонента можно задавать через событие `getLookupFolvProperties` в контроллере формы:
 
 ```javascript
 getLookupFolvProperties: function(options) {
@@ -92,7 +92,9 @@ getLookupFolvProperties: function(options) {
     if (methodArgs.relationName === 'type') {
     return {
         filterButton: true,
-        filterByAnyWord: true
+        filterByAnyWord: true,
+        enableFiltres: true,
+        refreshButton: true
       };
     }
 
