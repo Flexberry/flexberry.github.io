@@ -45,11 +45,11 @@ lang: ru
 ![](/images/pages/products/flexberry-orm/data-object/attributeprops.jpg)
 
 | Свойство-Описание | Генерация в SQL DDL |Генерация в .Net-язык |
-| `AccessModifier` - дублирует определение атрибута |  |  | 
-| `Stored` - дублирует определение атрибута |  |  |   
-| `Name` - дублирует определение атрибута |  |  |  
+| `AccessModifier` - квалификатор доступа к атрибуту (`public`, `private`, `protected`) |  | Генерируется соответствующий квалификатор при объявлении класса (`public`, `private`, `protected`) | 
+| `Stored` - хранимый или нет атрибут | Для хранимых атрибутов генерируется DDL-описание, для нехранимых - нет | Если атрибут нехранимый, то генерируется NotSotedAttribute |   
+| `Name` - название атрибута |  |  |  
 | `Description` | Никак | DocComment перед определением свойства |
-| `Type` - дублирует определение атрибута |  |  |   
+| `Type` - тип атрибута | Отображается в соответствии с картой типов | Отображается в соответствии с картой типов |   
 | `DefaultValue` - дублирует определение атрибута |  |  |   
 | `NotNull` - указывает, что данный атрибут не может иметь пустого (Null) значения. __Для данного типа обязательно должно быть указано `DefaultValue` (значение по умолчанию)__ |  Если отмечено, то определение поля в CREATE TABLE генерируется как NOT NULL |  Перед определением свойства генерируется указание атрибута NotNullAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) |
 | `DataService expression` - некоторое выражение, обеспечивающее счёт вычислимого атрибута | Никак |  Перед определением свойства генерируется указание атрибута [DataServiceExpressionAttribute](fo_not-stored-attributes.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
