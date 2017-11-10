@@ -10,7 +10,7 @@ lang: en
 
 ##  Обновление Security
 
-Классы старых полномочий (`RightManager`, `Checking` и пр., в том числе старые варианты мембершип-провайдеров всяких) живут теперь в пакете [`NewPlatform.Flexberry.LegacySecurity`](fs_legacy-security-install.html).
+Классы старых полномочий (`RightManager`, `Checking` и пр., в том числе старые варианты мембершип-провайдеров всяких) живут теперь в пакете [NewPlatform.Flexberry.LegacySecurity](fs_legacy-security-install.html).
 
 {% include note.html content="Этот пакет НЕ нужно ставить вместе с пакетом `NewPlatform.Flexberry.Security`!
 Т.е. в коде должны присутствовать зависимости либо только от старых классов полномочий, либо только от новых." %}
