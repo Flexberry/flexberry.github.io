@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Flexberry Security
-  version: 
+  version:
   folders:
 
   - title: О Flexberry Security
@@ -13,4 +13,12 @@ entries:
     - title: About
       title_ru: О модуле
       url: /fo_landing_page.html
+      output: web
+    - title: Flexberry Security Update
+      title_ru: Обновление Security
+      url: /fs_flexberry_security_update.html
+      output: web
+    - title: Flexberry Legacy Security install
+      title_ru: Установка LegacySecurity
+      url: /fs_legacy-security-install.html
       output: web
