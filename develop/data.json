@@ -1395,6 +1395,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/mixins/predicate-from-filters.js": {
+            "name": "ember-flexberry/addon/mixins/predicate-from-filters.js",
+            "modules": {},
+            "classes": {
+                "PredicateFromFiltersMixin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/mixins/reload-list-mixin.js": {
             "name": "ember-flexberry/addon/mixins/reload-list-mixin.js",
             "modules": {},
@@ -1905,6 +1914,7 @@
                 "EditFormRoute": 1,
                 "ModalApplicationRoute": 1,
                 "PaginatedController": 1,
+                "PredicateFromFiltersMixin": 1,
                 "ReloadListMixin": 1,
                 "ListFormRoute": 1,
                 "RequiredActionsMixin": 1,
@@ -3701,7 +3711,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 10,
+            "line": 11,
             "description": "Controller to support a modal windows in FlexberryLookup component.",
             "extends": "ListFormController",
             "uses": [
@@ -4085,9 +4095,12 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 11,
+            "line": 10,
             "description": "Mixin for edit-form-controller for ObjectListView support.",
             "extends": "Ember.Mixin",
+            "uses": [
+                "PredicateFromFiltersMixin"
+            ],
             "access": "public",
             "tagname": ""
         },
@@ -4238,6 +4251,25 @@
             "uses": [
                 "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>"
             ]
+        },
+        "PredicateFromFiltersMixin": {
+            "name": "PredicateFromFiltersMixin",
+            "shortname": "PredicateFromFiltersMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [
+                "FlexberryObjectlistviewOnEditFormControllerMixin"
+            ],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/mixins/predicate-from-filters.js",
+            "line": 10,
+            "description": "Mixin contains functions for predicate build from filters object.",
+            "extends": "Ember.Mixin",
+            "access": "public",
+            "tagname": ""
         },
         "ReloadListMixin": {
             "name": "ReloadListMixin",
@@ -16489,7 +16521,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 143,
+            "line": 144,
             "description": "Minimum value of date.",
             "itemtype": "property",
             "name": "min",
@@ -16499,7 +16531,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 167,
+            "line": 168,
             "description": "Maximum value of date.",
             "itemtype": "property",
             "name": "max",
@@ -16509,7 +16541,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 191,
+            "line": 192,
             "description": "Text to be displayed in field, if field has not been filled.",
             "itemtype": "property",
             "name": "placeholder",
@@ -16520,7 +16552,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 200,
+            "line": 201,
             "description": "Array CSS class names.\n[More info.](http://emberjs.com/api/classes/Ember.Component.html#property_classNames)",
             "itemtype": "property",
             "name": "classNames",
@@ -16531,7 +16563,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 210,
+            "line": 211,
             "description": "If true, then onClick calling flatpickr.open().",
             "itemtype": "property",
             "name": "canClick",
@@ -16541,7 +16573,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 218,
+            "line": 219,
             "description": "If undefined, then uses application locale.\nSupported locales: 'en', 'ru'.",
             "itemtype": "property",
             "name": "locale",
@@ -16551,7 +16583,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 227,
+            "line": 228,
             "description": "If true, then flatpickr has remove button.",
             "itemtype": "property",
             "name": "removeButton",
@@ -16561,14 +16593,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 235,
+            "line": 236,
             "description": "Initializes DOM-related component's logic.",
             "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 245,
+            "line": 246,
             "description": "Called when the element of the view is going to be destroyed. Override this function to do any teardown that requires an element, like removing event listeners.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).",
             "itemtype": "method",
             "name": "willDestroyElement",
@@ -16577,7 +16609,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 256,
+            "line": 257,
             "description": "Component click handler.",
             "itemtype": "method",
             "name": "click",
@@ -16588,7 +16620,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 269,
+            "line": 270,
             "description": "Validation date and time.",
             "itemtype": "method",
             "name": "_validationDateTime",
@@ -16599,7 +16631,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 303,
+            "line": 304,
             "description": "Create Flatpickr instance, and save it into `_flatpickr` property.",
             "itemtype": "method",
             "name": "_flatpickrCreate",
@@ -16610,21 +16642,21 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 363,
+            "line": 364,
             "description": "Sets readonly attr for flatpickr.",
             "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 370,
+            "line": 371,
             "description": "Reinit flatpickr.",
             "class": "FlexberrySimpledatetime",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 378,
+            "line": 379,
             "description": "Destroy Flatpickr instance.",
             "itemtype": "method",
             "name": "_flatpickrDestroy",
@@ -16635,7 +16667,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 392,
+            "line": 393,
             "description": "Convert Date object to appropriate string value for input.",
             "itemtype": "method",
             "name": "_convertDateToString",
@@ -16657,7 +16689,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 423,
+            "line": 424,
             "description": "Converts string value of input to Date object.",
             "itemtype": "method",
             "name": "_convertStringToDate",
@@ -16679,7 +16711,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 443,
+            "line": 444,
             "description": "Converts date (without time) to local date.",
             "itemtype": "method",
             "name": "_convertDateToLocal",
@@ -16701,7 +16733,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-simpledatetime.js",
-            "line": 465,
+            "line": 466,
             "description": "Clear current value.",
             "itemtype": "method",
             "name": "actions.remove",
@@ -23038,7 +23070,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 18,
+            "line": 19,
             "description": "Current open a modal window.",
             "itemtype": "property",
             "name": "_openedModalDialog",
@@ -23050,7 +23082,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 27,
+            "line": 28,
             "description": "Title for modal window.",
             "itemtype": "property",
             "name": "title",
@@ -23060,7 +23092,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 35,
+            "line": 36,
             "description": "Size of Semantic-UI modal.\n[More info](http://semantic-ui.com/modules/modal.html#size).\n\nPossible variants:\n- **small**\n- **large**\n- **fullscreen**",
             "itemtype": "property",
             "name": "sizeClass",
@@ -23071,7 +23103,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 50,
+            "line": 51,
             "description": "Current lookup selected record.\nIt is used to highlight selected record.",
             "itemtype": "property",
             "name": "currentLookupRow",
@@ -23081,7 +23113,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 59,
+            "line": 60,
             "description": "Set of properties to set for list commponent.",
             "itemtype": "property",
             "name": "customPropertiesData",
@@ -23091,7 +23123,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 67,
+            "line": 68,
             "description": "Type of current loaded data.",
             "itemtype": "property",
             "name": "modelType",
@@ -23101,7 +23133,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 75,
+            "line": 76,
             "description": "Name of projection data were loaded by.",
             "itemtype": "property",
             "name": "projectionName",
@@ -23111,7 +23143,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 83,
+            "line": 84,
             "description": "Predicate to limit loaded data by.",
             "itemtype": "property",
             "name": "predicate",
@@ -23121,7 +23153,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 91,
+            "line": 92,
             "description": "Handler to call when parameters of loaded data changed (filter, currentPage, etc.).",
             "itemtype": "property",
             "name": "reloadDataHandler",
@@ -23131,7 +23163,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 99,
+            "line": 100,
             "description": "Context for handler of data reloading call.",
             "itemtype": "property",
             "name": "reloadContext",
@@ -23142,7 +23174,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 108,
+            "line": 109,
             "description": "Flag indicates whether to observe query parameters or they are not still initiated..",
             "itemtype": "property",
             "name": "reloadObserverIsActive",
@@ -23153,7 +23185,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 117,
+            "line": 118,
             "description": "Service that triggers lookup events.",
             "itemtype": "property",
             "name": "lookupEventsService",
@@ -23163,7 +23195,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 126,
+            "line": 127,
             "description": "Handlers OLV row click, Save selected row to object master property and close modal window.",
             "itemtype": "method",
             "name": "actions.objectListViewRowClick",
@@ -23179,7 +23211,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 137,
+            "line": 138,
             "description": "Handlers create modal window action. Save created window, to have opportunity to close it later.",
             "itemtype": "method",
             "name": "actions.createdModalDialog",
@@ -23195,7 +23227,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 148,
+            "line": 149,
             "description": "Handlers correcponding route's willTransition action.\nIt closes modal window if it is opened (if Ember uses hash location type, modal window won't be closed automatically).",
             "itemtype": "method",
             "name": "actions.routeWillTransition",
@@ -23205,6 +23237,40 @@
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
             "line": 159,
+            "description": "Save filters and refresh list.",
+            "itemtype": "method",
+            "name": "actions.applyFilters",
+            "params": [
+                {
+                    "name": "filters",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "LookupDialogController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 170,
+            "description": "Reset filters and refresh list.",
+            "itemtype": "method",
+            "name": "actions.resetFilters",
+            "class": "LookupDialogController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 180,
+            "description": "Refresh list with actual parameters.",
+            "itemtype": "method",
+            "name": "actions.refreshList",
+            "class": "LookupDialogController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
+            "line": 216,
             "description": "It observes query parameters changing.\nIf query parameter (filter, current page, etc.) is changed then displayed data are reloaded.",
             "itemtype": "method",
             "name": "queryParametersChanged",
@@ -23213,7 +23279,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 198,
+            "line": 228,
             "description": "It clears current controller.\nIt has to be done before each use.",
             "itemtype": "method",
             "name": "clear",
@@ -23229,7 +23295,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 230,
+            "line": 261,
             "description": "Set master to corresponding property of editing object.",
             "itemtype": "method",
             "name": "_selectMaster",
@@ -23247,7 +23313,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 249,
+            "line": 280,
             "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "_closeModalDialog",
@@ -25194,44 +25260,6 @@
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
             "line": 189,
-            "description": "Return predicate to filter through.",
-            "example": [
-                "\n  ```javascript\n  // app/routes/example.js\n  ...\n  predicateForFilter(filter) {\n    if (filter.type === 'string' && filter.condition === 'like') {\n      return new StringPredicate(filter.name).contains(filter.pattern);\n    }\n\n    return this._super(...arguments);\n  },\n  ...\n  ```"
-            ],
-            "itemtype": "method",
-            "name": "predicateForFilter",
-            "params": [
-                {
-                    "name": "filter",
-                    "description": "Object (`{ name, condition, pattern }`) with parameters for filter.",
-                    "type": "Object"
-                }
-            ],
-            "return": {
-                "description": "Predicate to filter through.",
-                "type": "BasePredicate|null"
-            },
-            "class": "FlexberryObjectlistviewOnEditFormControllerMixin",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 237,
-            "description": "Return predicate for `QueryBuilder` or `undefined`.",
-            "itemtype": "method",
-            "name": "_filtersPredicate",
-            "return": {
-                "description": "Predicate for `QueryBuilder` or `undefined`.",
-                "type": "BasePredicate|undefined"
-            },
-            "access": "private",
-            "tagname": "",
-            "class": "FlexberryObjectlistviewOnEditFormControllerMixin",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 265,
             "description": "It forms the limit predicate for FOLV loaded data on edit form.\n\nBy default it returns `undefined`.\nIn order to set specific limit predicate, this method have to be overriden on applied-specific controller.",
             "itemtype": "method",
             "name": "objectListViewLimitPredicate",
@@ -25273,7 +25301,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 285,
+            "line": 209,
             "description": "Set in `property` for `target` promise that load nested records.",
             "itemtype": "method",
             "name": "actions.loadRecordsById",
@@ -25299,7 +25327,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 305,
+            "line": 229,
             "description": "Switch hierarchical mode.",
             "itemtype": "method",
             "name": "actions.switchHierarchicalMode",
@@ -26224,7 +26252,45 @@
             "itemtype": "property",
             "name": "queryParams",
             "type": "Object",
-            "class": "ReloadListMixin",
+            "class": "PredicateFromFiltersMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/predicate-from-filters.js",
+            "line": 18,
+            "description": "Return predicate to filter through.",
+            "example": [
+                "\n  ```javascript\n  // app/routes/example.js\n  ...\n  predicateForFilter(filter) {\n    if (filter.type === 'string' && filter.condition === 'like') {\n      return new StringPredicate(filter.name).contains(filter.pattern);\n    }\n\n    return this._super(...arguments);\n  },\n  ...\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "predicateForFilter",
+            "params": [
+                {
+                    "name": "filter",
+                    "description": "Object (`{ name, condition, pattern }`) with parameters for filter.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "Predicate to filter through.",
+                "type": "BasePredicate|null"
+            },
+            "class": "PredicateFromFiltersMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/predicate-from-filters.js",
+            "line": 66,
+            "description": "Return predicate for `QueryBuilder` or `undefined`.",
+            "itemtype": "method",
+            "name": "_filtersPredicate",
+            "return": {
+                "description": "Predicate for `QueryBuilder` or `undefined`.",
+                "type": "BasePredicate|undefined"
+            },
+            "access": "private",
+            "tagname": "",
+            "class": "PredicateFromFiltersMixin",
             "module": "ember-flexberry"
         },
         {
@@ -27067,7 +27133,28 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 210,
+            "line": 211,
+            "description": "Event handler for processing promise model rejecting.\n[More info](https://emberjs.com/api/ember/2.4/classes/Ember.Route/events/error?anchor=error).",
+            "itemtype": "method",
+            "name": "actions.error",
+            "params": [
+                {
+                    "name": "error",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "ListFormRoute",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/routes/list-form.js",
+            "line": 224,
             "description": "This method will be invoked before model loading operation will be called.\nOverride this method to add some custom logic on model loading operation start.",
             "example": [
                 "\n  ```javascript\n  onModelLoadingStarted(queryParameters) {\n    alert('Model loading operation started!');\n  }\n  ```"
@@ -27086,7 +27173,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 226,
+            "line": 240,
             "description": "This method will be invoked when model loading operation successfully completed.\nOverride this method to add some custom logic on model loading operation success.",
             "example": [
                 "\n  ```javascript\n  onModelLoadingFulfilled() {\n    alert('Model loading operation succeed!');\n  }\n  ```"
@@ -27105,7 +27192,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 242,
+            "line": 256,
             "description": "This method will be invoked when model loading operation completed, but failed.\nOverride this method to add some custom logic on model loading operation fail.\nBy default showing error form.",
             "example": [
                 "\n  ```javascript\n  onModelLoadingRejected() {\n    alert('Model loading operation failed!');\n  }\n  ```"
@@ -27124,7 +27211,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 266,
+            "line": 281,
             "description": "This method will be invoked always when model loading operation completed,\nregardless of model loading promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on model loading operation completion.",
             "example": [
                 "\n  ```js\n  onModelLoadingAlways(data) {\n    alert('Model loading operation completed!');\n  }\n  ```"
@@ -27143,7 +27230,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 284,
+            "line": 299,
             "description": "A hook you can use to setup the controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",
@@ -29836,15 +29923,15 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
-            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:235"
+            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:236"
         },
         {
             "message": "Missing item type\nSets readonly attr for flatpickr.",
-            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:363"
+            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:364"
         },
         {
             "message": "Missing item type\nReinit flatpickr.",
-            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:370"
+            "line": " ember-flexberry/addon/components/flexberry-simpledatetime.js:371"
         },
         {
             "message": "Missing item type\nSimple object list view  component.",

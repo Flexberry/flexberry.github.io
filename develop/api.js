@@ -116,6 +116,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Offline.Syncer",
         "OlvToolbar",
         "PaginatedController",
+        "PredicateFromFiltersMixin",
         "ProjectedModelForm",
         "Projection",
         "Projection.AdapterMixin",
