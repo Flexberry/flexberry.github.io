@@ -636,4 +636,11 @@ entries:
     - title: ViewPropertyAppender
       url: /fo_view-property-appender.html
       output: web
-  
+
+  - title: Flexberry ORM ODataService
+    output: web, pdf
+    folderitems:
+    - title: Flexberry ORM ODataService
+      title_ru: Flexberry ORM ODataService
+      url: /fo_orm-odata-service.html
+      output: web

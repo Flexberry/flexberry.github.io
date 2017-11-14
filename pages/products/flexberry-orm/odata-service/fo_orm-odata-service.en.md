@@ -1,11 +1,10 @@
 ---
 title: Flexberry ORM ODataService
-sidebar: product--sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM ODataService, OData
 toc: true
-permalink: ru/flexberry-o-r-m-o-data-service.html
-folder: product--folder
-lang: ru
+permalink: en/fo_orm-odata-service.html
+lang: en
 ---
 
 ## Информация о продукте
