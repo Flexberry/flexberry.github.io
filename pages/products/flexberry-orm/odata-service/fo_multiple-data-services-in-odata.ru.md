@@ -119,7 +119,7 @@ namespace IIS.MyProject
 </configuration>
 ```
 
-{% include note.html content="При использовании такого решения, в `ember` приложении потребуется [настройка адаптеров](ru/efd_adapters.html)." %}
+{% include note.html content="При использовании такого решения, в `ember` приложении потребуется [настройка адаптеров](efd_adapters.html)." %}
 
 ### Определение типа сервиса данных по типу объектов
 
