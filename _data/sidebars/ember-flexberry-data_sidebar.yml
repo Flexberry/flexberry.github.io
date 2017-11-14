@@ -30,6 +30,11 @@ entries:
       url: /efd_model-projection.html
       output: web, pdf
 
+    - title: Adapters
+      title_ru: Адаптеры
+      url: /efd_adapters.html
+      output: web, pdf
+
     - title: Serializer
       title_ru: Сериализаторы
       url: /efd_serializer.html
