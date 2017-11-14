@@ -644,3 +644,8 @@ entries:
       title_ru: Flexberry ORM ODataService
       url: /fo_orm-odata-service.html
       output: web
+
+    - title: Настройка ODataService с несколькими типами сервисов данных
+      title_ru: Настройка ODataService с несколькими типами сервисов данных
+      url: /fo_multiple-data-services-in-odata.html
+      output: web
