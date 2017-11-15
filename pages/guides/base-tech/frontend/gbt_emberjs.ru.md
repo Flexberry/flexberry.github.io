@@ -1,6 +1,6 @@
 ---
 title: Ember JS
-keywords: Programming
+keywords: Programming, ember-cli, ember weekly, ember times, frontend
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_emberjs.html
@@ -24,12 +24,12 @@ lang: ru
 
 ### Примеры
 
-* [Приложение для сайта с арендой недвижимости (eng)](https://guides.emberjs.com/v2.11.0/tutorial/ember-cli/)
+* [Приложение для сайта с арендой недвижимости (eng)](https://guides.emberjs.com/v2.16.0/tutorial/ember-cli/)
 * [Приложение для сайта с арендой недвижимости (rus)](http://emjs.ru/v2/tutorial/ember-cli/)
 
-### Базовый сведения
+### Базовые сведения
 
-* [Официальная документация по Ember.js](https://guides.emberjs.com/v2.11.0/)
+* [Официальная документация по Ember.js](https://guides.emberjs.com/v2.16.0/)
 * [Официальная документация по Ember-CLI](https://ember-cli.com/user-guide/)
 * [Базовая структура приложения](http://emjs.ru/v2/getting-started/core-concepts/)
 * Состав приложения
@@ -72,11 +72,14 @@ lang: ru
     <iframe src="//www.slideshare.net/slideshow/embed_code/key/5snk9pZdXKzcES?startSlide=23" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 </div>
 
-## 
+## Подписка на новости от команды EmberJS и сообщества
+
+* [The Ember.js Times](https://the-emberjs-times.ongoodbits.com/)
+* [Ember Weekly](http://www.emberweekly.com/)
 
 ## Программное обеспечение
 
-* [Ember-CLI](https://guides.emberjs.com/v2.11.0/getting-started/)
+* [Ember-CLI](https://guides.emberjs.com/v2.16.0/getting-started/quick-start/)
 
 ## Перейти
 
