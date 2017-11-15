@@ -43,4 +43,13 @@ export default ApplicationAdapter.extend({
 });
 ```
 
-Для того что бы изменить адрес `OData` сервиса для этой модели, необходимо переопределить свойство `host`, указав в нем новый адрес `OData` сервиса.
+Для того что бы изменить адрес `OData` сервиса для этой модели, необходимо переопределить свойство `host`, указав в нем новый адрес `OData` сервиса. Например, если в конфигурации второй адрес `OData` сервиса задан в свойстве `api2`, то получится такой вариант:
+
+```javascript
+import ApplicationAdapter from './application';
+import config from '../config/environment';
+
+export default ApplicationAdapter.extend({
+  host: config.APP.backendUrls.api2,
+});
+```
