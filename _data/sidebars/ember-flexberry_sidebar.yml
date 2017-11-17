@@ -81,6 +81,11 @@ entries:
       url: /ef_show-ember-form-in-frame.html
       output: web, pdf
 
+    - title: Отображение ошибок на формах
+      title_ru: Отображение ошибок на формах
+      url: /ef_displaying-errors-on-forms.html
+      output: web, pdf
+
   - title: Controls
     title_ru: Элементы управления
     output: web, pdf
