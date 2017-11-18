@@ -1,12 +1,11 @@
 ---
 title: Клиентский язык запросов
 sidebar: ember-flexberry-data_sidebar
-keywords: Flexberry Ember
+keywords: Flexberry Ember, queryes, predicate
 toc: true
 permalink: en/efd_query-language.html
-folder: products/ember-flexberry-data/query-language/
 lang: en
-summary: Описание клиенткого языка запросов.
+summary: Описание клиенткого языка запросов
 ---
 
 ## Пространство имен Query
@@ -102,13 +101,13 @@ builder.where(Query.SomePredicate);
 let builder = new Query.Builder(store, 'customer').where('firstName', Query.FilterOperator.Eq, 'Vasya');
 ```
 
-Для мастера
+_Для мастера_
 
 ```javascript
 let builder = new Query.Builder(store, 'customer').where('manager', Query.FilterOperator.Eq, '3bcc4730-9cc1-4237-a843-c4b1de881d7c');
 ```
 
-Для поля мастера
+_Для поля мастера_
 
 ```javascript
 let builder = new Query.Builder(store, 'customer').where('manager.firstName', Query.FilterOperator.Eq, 'Vasya');
@@ -125,7 +124,7 @@ let builder = new Query.Builder(store, 'customer').where('manager.firstName', Qu
 builder.orderBy('age desc, price asc');
 ```
 
-По полю мастера:
+_По полю мастера:_
 
 ```javascript
 builder.orderBy('creator.age desc, price asc');
@@ -158,6 +157,7 @@ builder.select('id,age,name');
 ```
 
 ## Задание проекции для запроса
+
 __Проекция и задание атрибутов вычитки(select) - взаимоисключающие вещи, необходимо использовать одно из этого!__
 
 ```javascript
@@ -191,6 +191,7 @@ let predicate = new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Vasy
 ```
 
 ### Получение свойств предиката
+
 Получение пути атрибута:
 
 ```javascript
@@ -303,6 +304,7 @@ predicate.containsValue
 `Query.DetailPredicate` - класс для построения фильтров по детейлам.
 
 #### Конструктор
+
 Конструктор `Query.DetailPredicate` принимает единственный параметр - наименование детейла.
 
 ```javascript
@@ -321,7 +323,7 @@ dp.all(new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag1'));
 let p = new Query.DetailPredicate('detailName').all('field', Query.FilterOperator.Eq, 'Value');
 ```
 
-Для поля мастера
+_Для поля мастера_
 
 ```javascript
 dp.all(new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X'));
@@ -339,7 +341,7 @@ dp.any(new Query.SimplePredicate('name', Query.FilterOperator.Eq, 'Tag1'));
 let p = new Query.DetailPredicate('detailName').any('field', Query.FilterOperator.Eq, 'Value');
 ```
 
-Для поля мастера
+_Для поля мастера_
 
 ```javascript
 dp.any(new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X'));
@@ -354,7 +356,7 @@ let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').all(cp1);
 ```
 
-Для поля мастера
+_Для поля мастера_
 
 ```javascript
 let sp1 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X');
@@ -372,7 +374,7 @@ let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').any(cp1);
 ```
 
-Для поля мастера
+_Для поля мастера_
 
 ```javascript
 let sp1 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X');
@@ -447,6 +449,32 @@ let builder = new Query.QueryBuilder(store, modelName).where('age', Query.Filter
 
 ```javascript
 let builder = new Query.QueryBuilder(store, modelName).where('age', Query.FilterOperator.Leq, 11);
+```
+
+### Создание запроса для фильтрации перечислений
+
+По названию и типу перечисления берется `name` и пишется в предикат:
+
+```javascript
+let enumValues = Ember.getOwner(this).lookup('enum:' + filter.type);
+let pattern = '';
+
+for (let key in enumValues) {
+    if (enumValues[key] === filter.pattern) {
+        pattern = key;
+        break;
+    }
+}
+
+switch (filter.condition) {
+    case 'Равно':
+    return new SimplePredicate(filter.name, FilterOperator.Eq, pattern);
+    case 'Не равно':
+    return new SimplePredicate(filter.name, FilterOperator.Neq, pattern);
+    // по умолчанию Равно
+    default:
+    return new SimplePredicate(filter.name, FilterOperator.Eq, pattern);
+}
 ```
 
 ## Пример комплексного запроса
