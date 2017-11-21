@@ -334,7 +334,6 @@ public static void Register(HttpConfiguration config)
                 typeof(Lock).Assembly
             };
             var modelBuilder = new DefaultDataObjectEdmModelBuilder(assemblies);
-            modelBuilder.PropertyFilter = PropertyFilter;
             var token = config.MapODataServiceDataObjectRoute(modelBuilder);
             token.Events.CallbackBeforeGet = BeforeGet;
             token.Events.CallbackAfterGet = AfterGet;
@@ -367,3 +366,53 @@ public static void AfterGet(ref DataObject[] objs)
 }
 
 ```
+## Обработка исключения в ODataService с использованием callback-функции
+
+Пример обработки исключения
+```cs
+/// <summary>
+/// Register Data objects.
+/// </summary>
+/// <param name="config">Http configuration.</param>
+public static void Register(HttpConfiguration config)
+{
+            var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
+            config.EnableCors(cors);
+
+            config.DependencyResolver = new UnityDependencyResolver(container);
+
+            var assemblies = new[]
+            {
+                typeof(Suggestion).Assembly,
+                typeof(ApplicationLog).Assembly,
+                typeof(UserSetting).Assembly,
+                typeof(FlexberryUserSetting).Assembly,
+                typeof(Agent).Assembly,
+                typeof(AuditEntity).Assembly,
+                typeof(Lock).Assembly
+            };
+            var modelBuilder = new DefaultDataObjectEdmModelBuilder(assemblies);
+            var token = config.MapODataServiceDataObjectRoute(modelBuilder);
+            token.Events.CallbackAfterInternalServerError = AfterInternalServerError;
+            config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+    }
+    catch (Exception ex)
+    {
+        LogService.LogError("RunApp odata service error.", ex);
+        throw;
+    }
+}
+
+
+/// <summary>
+/// Метод вызываемый после возникновения исключения.
+/// </summary>
+/// <param name="e">Исключение, которое возникло внутри ODataService.</param>
+/// <returns>Исключение, которое будет отправлено клиенту.</returns>
+public static Exception AfterInternalServerError(Exception e)
+{
+    return e;
+}
+
+```
+
