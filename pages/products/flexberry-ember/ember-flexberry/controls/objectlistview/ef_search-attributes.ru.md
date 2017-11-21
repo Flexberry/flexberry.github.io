@@ -93,7 +93,7 @@ getLookupFolvProperties: function(options) {
     return {
         filterButton: true,
         filterByAnyWord: true,
-        enableFiltres: true,
+        enableFilters: true,
         refreshButton: true
       };
     }
