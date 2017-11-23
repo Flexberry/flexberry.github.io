@@ -394,7 +394,8 @@ let FlexberryJsonareaComponent = Ember.Component.extend({
       let jsonMustBeSaved = this.get(&#x27;_isEditing&#x27;);
       if (jsonMustBeSaved) {
         try {
-          let value = JSON.parse(this.get(&#x27;_jsonText&#x27;));
+          let text = this.get(&#x27;_jsonText&#x27;);
+          let value = Ember.isBlank(text) ? null : JSON.parse(text);
           this.set(&#x27;value&#x27;, value);
 
           this.set(&#x27;_errorMessage&#x27;, &#x27;&#x27;);

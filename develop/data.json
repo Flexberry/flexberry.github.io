@@ -14428,7 +14428,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-jsonarea.js",
-            "line": 169,
+            "line": 170,
             "description": "Observes changes in value.\nChanges related stringified value.",
             "itemtype": "method",
             "name": "_valueDidChange",
