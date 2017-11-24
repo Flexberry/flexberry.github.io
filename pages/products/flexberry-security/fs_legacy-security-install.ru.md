@@ -1,5 +1,5 @@
 ---
-title: Legacy Security install
+title: Установка Legacy Security
 sidebar: flexberry-security_sidebar
 keywords: flexberry, legacysecurity, legacy, security, install
 summary: Установка LegacySecurity

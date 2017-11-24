@@ -1,5 +1,5 @@
 ---
-title: Flexberry Security Update
+title: Обновление Flexberry Security
 sidebar: flexberry-security_sidebar
 keywords: flexberry, security, update
 summary: Обновление Flexberry Security с 1.7.0 до 2.0.0 и выше.
