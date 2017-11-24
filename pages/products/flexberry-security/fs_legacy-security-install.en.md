@@ -13,10 +13,10 @@ lang: en
 Для установки `LegacySecurity` надо:
 
 1. Установить пакеты:
-    * `NewPlatform.Flexberry.ORM` 4.1.0-beta04
-    * `NewPlatform.Flexberry.AspNet` 2.3.1-beta06
+    * `NewPlatform.Flexberry.ORM` 4.1.0-beta07
+    * `NewPlatform.Flexberry.AspNet` 2.3.1-beta07
     * `NewPlatform.Flexberry.Audit` 3.0.0-beta01
-    * `NewPlatform.Flexberry.LegacySecurity` 2.0.0-beta04
+    * `NewPlatform.Flexberry.LegacySecurity` 1.0.0-beta02
 
 2. Удалить `NewPlatform.Flexberry.Security` и его изменения в конфиге не обращая внимания на связь с `ASP.NET`.
 
