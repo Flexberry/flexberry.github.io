@@ -58,8 +58,9 @@ MongoDB имеет следующие уровни представления д
 
 ## Программное обеспечение
 
-* [-]()
-* [-]()
+* [Install MongoDB](https://docs.mongodb.com/manual/installation/);
+* [Официальный Docker-образ MongoDB](https://hub.docker.com/_/mongo/)
+* [Официальный Docker-образ WEB-интерфейса MongoDB](https://hub.docker.com/_/mongo-express/)
 
 ## Лабораторные работы и практические задания
 
