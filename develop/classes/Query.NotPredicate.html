@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Query.IndexedDBAdapter - Flexberry Documentation</title>
+    <title>Query.NotPredicate - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -247,14 +247,17 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>Query.IndexedDBAdapter <small>Class</small></h1>
+    <h1>Query.NotPredicate <small>Class</small></h1>
 </div>
 
 <div class="well well-small">
 
+        <div class="extends">
+            Extends BasePredicate
+        </div>
 
         <div class="foundat">
-            Defined in: <a href="../files/ember-flexberry-data_addon_query_js-adapter.js.html#l34"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;js-adapter.js:34</code></a>
+            Defined in: <a href="../files/ember-flexberry-data_addon_query_predicate.js.html#l444"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;predicate.js:444</code></a>
         </div>
 
             Module: <a href="../modules/ember-flexberry-data.html">ember-flexberry-data</a>
@@ -263,18 +266,19 @@
 
 
 <div class="well well-small">
-    
+    <p>The class of not predicate.</p>
+
 </div>
 
     <div class="constructor">
         <h2>Constructor</h2>
-        <div id="method_Query.IndexedDBAdapter" class="method item">
-            <h3 class="name"><code>Query.IndexedDBAdapter</code></h3>
+        <div id="method_Query.NotPredicate" class="method item">
+            <h3 class="name"><code>Query.NotPredicate</code></h3>
         
                 <div class="args">
                     <span class="paren">(</span><ul class="args-list inline commas">
                         <li class="arg">
-                                <code>moment</code>
+                                <code>predicate</code>
                         </li>
                     </ul><span class="paren">)</span>
                 </div>
@@ -289,7 +293,7 @@
             <div class="meta">
                         <p>
                         Defined in
-                <a href="../files/ember-flexberry-data_addon_query_js-adapter.js.html#l34"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;js-adapter.js:34</code></a>
+                <a href="../files/ember-flexberry-data_addon_query_predicate.js.html#l444"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;predicate.js:444</code></a>
                 </p>
         
         
@@ -305,12 +309,12 @@
         
                     <ul class="params-list">
                         <li class="param">
-                                <code class="param-name">moment</code>
-                                <span class="type">Moment</span>
+                                <code class="param-name">predicate</code>
+                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
         
         
                             <div class="param-description">
-                                <p>Moment service.</p>
+                                <p>Another predicate.</p>
         
                             </div>
         
@@ -327,6 +331,7 @@
         <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
 
             <li><a data-toggle="tab" href="#methods">Methods</a></li>
+            <li><a data-toggle="tab" href="#properties">Properties</a></li>
     </ul>
 
     <div class="tab-content">
@@ -336,22 +341,24 @@
                 <div class="index-section methods">
                     <h3>Methods</h3>
 
-                    <ul class="index-list methods">
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_buildFunc" data-tablink="buildFunc">buildFunc</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_containsRelationships" data-tablink="containsRelationships">containsRelationships</a>
-
-                            </li>
-                            <li class="index-item method">
-                                <a href="#" data-tabid="#methods" data-anchor="#method_query" data-tablink="query">query</a>
+                    <ul class="index-list methods extends">
+                            <li class="index-item method public">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_toString" data-tablink="toString">toString</a>
 
                             </li>
                     </ul>
                 </div>
 
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                            <li class="index-item property public">
+                                <a href="#" data-tabid="#properties" data-anchor="#property_predicate" data-tablink="predicate">predicate</a>
+
+                            </li>
+                    </ul>
+                </div>
 
 
         </div>
@@ -359,22 +366,17 @@
             <div id="methods" class="tab-pane">
                 <h2 class="off-left">Methods</h2>
 
-                    <div id="method_buildFunc" class="method item">
-                        <h3 class="name"><code>buildFunc</code></h3>
+                    <div id="method_toString" class="method item public">
+                        <h3 class="name"><code>toString</code></h3>
                     
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>query</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
+                            <span class="paren">()</span>
                     
                             <span class="returns-inline">
-                                <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>
+                                <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
                             </span>
                     
                     
+                            <span class="flag public">public</span>
                     
                     
                     
@@ -383,7 +385,7 @@
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry-data_addon_query_js-adapter.js.html#l47"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;js-adapter.js:47</code></a>
+                            <a href="../files/ember-flexberry-data_addon_query_predicate.js.html#l476"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;predicate.js:476</code></a>
                             </p>
                     
                     
@@ -391,175 +393,17 @@
                         </div>
                     
                         <div class="description">
-                            <p>Builds JS function for filtering JS array of objects by specified logic from query.</p>
+                            <p>Converts this instance to string.</p>
                     
                         </div>
                     
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">query</code>
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Query language instance.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
                     
                             <div class="returns">
                                 <h4>Returns:</h4>
                     
                                 <div class="returns-description">
-                                            <span class="type"><a href="http://emberjs.com/api/classes/Function.html" class="crosslink external" target="_blank">Function</a></span>:
-                                        <p>Function for filtering JS array of objects.</p>
-                    
-                                </div>
-                            </div>
-                    
-                    </div>
-                    <div id="method_containsRelationships" class="method item">
-                        <h3 class="name"><code>containsRelationships</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>query</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-data_addon_query_indexeddb-adapter.js.html#l668"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;indexeddb-adapter.js:668</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Checks query on contains restrictions by relationships.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">query</code>
-                                            <span class="type">QueryObject</span>
-                    
-                    
-                                        <div class="param-description">
-                                             
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>:
-                                </div>
-                            </div>
-                    
-                    </div>
-                    <div id="method_query" class="method item">
-                        <h3 class="name"><code>query</code></h3>
-                    
-                            <div class="args">
-                                <span class="paren">(</span><ul class="args-list inline commas">
-                                    <li class="arg">
-                                            <code>store</code>
-                                    </li>
-                                    <li class="arg">
-                                            <code>query</code>
-                                    </li>
-                                </ul><span class="paren">)</span>
-                            </div>
-                    
-                            <span class="returns-inline">
-                                <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>
-                            </span>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                        <div class="meta">
-                                    <p>
-                                    Defined in
-                            <a href="../files/ember-flexberry-data_addon_query_indexeddb-adapter.js.html#l38"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;indexeddb-adapter.js:38</code></a>
-                            </p>
-                    
-                    
-                    
-                        </div>
-                    
-                        <div class="description">
-                            <p>Loads data from IndexedDB.</p>
-                    
-                        </div>
-                    
-                            <div class="params">
-                                <h4>Parameters:</h4>
-                    
-                                <ul class="params-list">
-                                    <li class="param">
-                                            <code class="param-name">store</code>
-                                            <span class="type">DS.Store or subclass</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>Store instance to the adapter.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                    <li class="param">
-                                            <code class="param-name">query</code>
-                                            <span class="type">QueryObject</span>
-                    
-                    
-                                        <div class="param-description">
-                                            <p>QueryObject instance to the adapter.</p>
-                    
-                                        </div>
-                    
-                                    </li>
-                                </ul>
-                            </div>
-                    
-                            <div class="returns">
-                                <h4>Returns:</h4>
-                    
-                                <div class="returns-description">
-                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" class="crosslink external" target="_blank">Promise</a></span>:
-                                        <p>Promise with loaded data.</p>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>Text representation of result predicate.</p>
                     
                                 </div>
                             </div>
@@ -567,6 +411,36 @@
                     </div>
             </div>
 
+            <div id="properties" class="tab-pane">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_predicate" class="property item public">
+                        <h3 class="name"><code>predicate</code></h3>
+                        <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry-data_addon_query_predicate.js.html#l465"><code>ember-flexberry-data&#x2F;addon&#x2F;query&#x2F;predicate.js:465</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Predicate getter.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
 
 
     </div>

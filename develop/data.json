@@ -250,7 +250,8 @@
                 "Query.ComplexPredicate": 1,
                 "Query.StringPredicate": 1,
                 "Query.GeographyPredicate": 1,
-                "Query.DetailPredicate": 1
+                "Query.DetailPredicate": 1,
+                "Query.NotPredicate": 1
             },
             "fors": {
                 "BasePredicate": 1,
@@ -1762,6 +1763,7 @@
                 "Query.StringPredicate": 1,
                 "Query.GeographyPredicate": 1,
                 "Query.DetailPredicate": 1,
+                "Query.NotPredicate": 1,
                 "Query.QueryObject": 1,
                 "Serializer.Base": 1,
                 "Serializer.OData": 1,
@@ -2425,6 +2427,29 @@
                     "name": "detailPath",
                     "description": "The path to the detail for predicate.",
                     "type": "String"
+                }
+            ],
+            "is_constructor": 1
+        },
+        "Query.NotPredicate": {
+            "name": "Query.NotPredicate",
+            "shortname": "Query.NotPredicate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry-data",
+            "namespace": "Query",
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 444,
+            "description": "The class of not predicate.",
+            "extends": "BasePredicate",
+            "params": [
+                {
+                    "name": "predicate",
+                    "description": "Another predicate.",
+                    "type": "Object"
                 }
             ],
             "is_constructor": 1
@@ -7218,7 +7243,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/odata-adapter.js",
-            "line": 258,
+            "line": 311,
             "description": "Converts filter operator to OData representation.",
             "params": [
                 {
@@ -7603,7 +7628,36 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/predicate.js",
-            "line": 444,
+            "line": 465,
+            "description": "Predicate getter.",
+            "itemtype": "property",
+            "name": "predicate",
+            "type": "String",
+            "access": "public",
+            "tagname": "",
+            "class": "Query.NotPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 476,
+            "description": "Converts this instance to string.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "Text representation of result predicate.",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Query.NotPredicate",
+            "module": "ember-flexberry-data",
+            "namespace": "Query"
+        },
+        {
+            "file": "ember-flexberry-data/addon/query/predicate.js",
+            "line": 488,
             "description": "Combines specified predicates using `and` logic condition.",
             "itemtype": "method",
             "name": "and",
@@ -7626,7 +7680,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/predicate.js",
-            "line": 458,
+            "line": 502,
             "description": "Combines specified predicates using `or` logic condition.",
             "itemtype": "method",
             "name": "or",
@@ -7650,8 +7704,8 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/predicate.js",
-            "line": 472,
-            "description": "Throws error if specified arguemnt is not a predicate.",
+            "line": 516,
+            "description": "Throws error if specified argument is not a predicate.",
             "params": [
                 {
                     "name": "predicate",
@@ -7665,7 +7719,7 @@
         },
         {
             "file": "ember-flexberry-data/addon/query/predicate.js",
-            "line": 483,
+            "line": 527,
             "description": "Creates predicate by various parameters.",
             "itemtype": "method",
             "name": "createPredicate",
@@ -29335,7 +29389,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:258"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:311"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -29555,7 +29609,7 @@
         },
         {
             "message": "Missing item type\nConverts filter operator to OData representation.",
-            "line": " ember-flexberry-data/addon/query/odata-adapter.js:258"
+            "line": " ember-flexberry-data/addon/query/odata-adapter.js:311"
         },
         {
             "message": "Missing item type\nThe path to the detail for predicate.",
@@ -29574,8 +29628,8 @@
             "line": " ember-flexberry-data/addon/query/predicate.js:384"
         },
         {
-            "message": "Missing item type\nThrows error if specified arguemnt is not a predicate.",
-            "line": " ember-flexberry-data/addon/query/predicate.js:472"
+            "message": "Missing item type\nThrows error if specified argument is not a predicate.",
+            "line": " ember-flexberry-data/addon/query/predicate.js:516"
         },
         {
             "message": "Missing item type\nFlag: indicates whether to use new {@link http://jsonapi.org|JSON API} serialization.",

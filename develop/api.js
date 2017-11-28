@@ -135,6 +135,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "Query.GeographyPredicate",
         "Query.IndexedDBAdapter",
         "Query.JsAdapter",
+        "Query.NotPredicate",
         "Query.ODataAdapter",
         "Query.OrderByClause",
         "Query.QueryObject",
