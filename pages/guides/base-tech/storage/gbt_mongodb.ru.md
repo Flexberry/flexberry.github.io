@@ -41,16 +41,20 @@ MongoDB имеет следующие уровни представления д
 
 ##  Ссылки на материалы для изучения
 
-* [-]()
-* [-]()
-* [Руководство по MongoDB (Записки задумчивого программиста)](http://proselyte.net/tutorials/mongodb/)
+* [Getting Started with MongoDB (MongoDB Shell Edition)](https://docs.mongodb.com/getting-started/shell/);
+* [MongoDB Краткое руководство](http://www.w3ii.com/ru/mongodb/mongodb_quick_guide.html);
+* [Руководство по MongoDB (Записки задумчивого программиста)](http://proselyte.net/tutorials/mongodb/);
+* [Руководство по безопасности MongoDB](http://security-corp.org/administration/sys_admin/39539-rukovodstvo-po-bezopasnosti-mongodb.html)
 
 ### Презентация
+* [MongoDB вводная лекция](https://www.youtube.com/watch?v=tgckAOyjXPI)
 
 ### Рекомендованные книги
 
-* [-]()
-* 
+* [MongoDB в действии](https://www.ozon.ru/context/detail/id/8688130/);
+* [MongoDB в действии (электронный вариант)](https://cafe-aristokrat.nethouse.ru/static/doc/0000/0000/0165/165988.c2f3acpbax.pdf)
+* [The Little MongoDB Book](http://www.pvsm.ru/download/mongodb-ru.pdf);
+
 
 ## Программное обеспечение
 
@@ -81,8 +85,8 @@ MongoDB имеет следующие уровни представления д
 
 ## Возможности по сертификации
 
-* [-]()
-* [-]()
+* [MongoDB Professional Certification Program ](https://university.mongodb.com/certification)
+* [Сертификация mongoDB](https://habrahabr.ru/post/273011/)
 
 ## Перейти
 
