@@ -65,19 +65,6 @@ entries:
       title_ru: Введение в серверную разработку
       url: /gbt_backend.html
       output: web
-    - title: DBMS
-      title_ru: СУБД
-      url: /gbt_dbms.html
-      output: web
-    - title: SQL
-      url: /gbt_sql.html
-      output: web
-    - title: Microsoft SQL Server
-      url: /gbt_mssql.html
-      output: web
-    - title: PostgreSQL
-      url: /gbt_postgresql.html
-      output: web
     - title: Microsoft .NET Framework
       url: /gbt_dotnet.html
       output: web
@@ -92,6 +79,30 @@ entries:
       output: web
     - title: ORM
       url: /gbt_orm.html
+      output: web
+  - title: Storage
+    title_ru: Хранилища данных
+    output: web
+    folderitems:
+    - title: Storage
+      title_ru: Введение в хранилища данных
+      url: /gbt_storage.html
+      output: web
+    - title: DBMS
+      title_ru: СУБД
+      url: /gbt_dbms.html
+      output: web
+    - title: SQL
+      url: /gbt_sql.html
+      output: web
+    - title: Microsoft SQL Server
+      url: /gbt_mssql.html
+      output: web
+    - title: PostgreSQL
+      url: /gbt_postgresql.html
+      output: web
+    - title: MongoDB
+      url: /gbt_mongodb.html
       output: web
   - title: Mobile development
     title_ru: Мобильная разработка

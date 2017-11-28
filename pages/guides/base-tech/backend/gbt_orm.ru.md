@@ -4,7 +4,6 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_orm.html
-folder: guides/base-tech/backend/
 lang: ru
 ---
 
@@ -60,5 +59,5 @@ lang: ru
 
 ## Перейти
 
-* [Разработка мобильных приложений](gbt_mobile.html)
+* [Введение в хранилища данных](gbt_storage.html)
 * [Главная страница курса](gbt_landing-page.html)

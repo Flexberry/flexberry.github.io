@@ -4,7 +4,6 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_backend.html
-folder: guides/base-tech/backend/
 lang: ru
 ---
 
@@ -39,5 +38,5 @@ lang: ru
 
 ## Перейти
 
-* [СУБД](gbt_dbms.html)
+* [Microsoft .NET Framework](gbt_dotnet.html)
 * [Главная страница курса](gbt_landing-page.html)
