@@ -1,5 +1,5 @@
 ---
-title: Настройки фильтров. FilterSettings.
+title: Настройки фильтров
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Ограничения
 toc: true

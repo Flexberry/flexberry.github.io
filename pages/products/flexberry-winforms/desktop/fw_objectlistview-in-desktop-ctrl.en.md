@@ -3,19 +3,10 @@ title: Контрол рабочего стола
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
-permalink: en/fw_objectlistview-in-desktop-ctrl.html
+permalink: ru/fw_objectlistview-in-desktop-ctrl.html
 folder: products/flexberry-winforms/
-lang: en
+lang: ru
 ---
-
-- [Картинка на рабочем столе](#картинка-на-рабочем-столе)
-- [Контекстное меню](#контекстное-меню)
-- [Группировка элементов рабочего стола](#группировка-элементов-рабочего-стола)
-- [Замена иконок элементов списка](#замена-иконок-элементов-списка)
-- [Обновление объектов ListView](#обновление-объектов-listview)
-- [Работа с Column и Item](#работа-с-column-и-item)
-- [Событие TreeViewItemSelected](#событие-treeviewitemselected)
-- [DesktopSettings](#desktopsettings)
 
 ## Картинка на рабочем столе
 

@@ -1,5 +1,5 @@
 ---
-title: Если что-либо «глючит» в Design-Time
+title: Устранение неполадок в Design-Time
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
 toc: true
