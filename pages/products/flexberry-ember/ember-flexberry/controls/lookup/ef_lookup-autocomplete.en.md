@@ -1,12 +1,11 @@
 ---
-title: Автодополнение в лукапе
+title: Auto-completion in the lookup
 sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_lookup-autocomplete.html
-folder: products/ember-flexberry/controls/lookup/
 lang: en
-summary: Описаны основные особенности использования лукапа в режиме автодополнения.
+summary: The main features of using a lock in the autocomplete mode are described
 ---
 
 ## Описание
@@ -49,3 +48,11 @@ summary: Описаны основные особенности использо
 
 * Максимальное количество возвращаемых значений определяется как autocompleteMaxResults.
 * Накладываемое ограничение на возвращаемые значения определяются как объединение через "И" наложенной функции ограничения на лукап (limitFunction) и функции Contains.
+
+## Наложение сортировки на скрытые поля мастера
+
+Если возникает необходимость сортировки скрытых полей при использовании автодополнения, то следует использовать свойство `autocompleteOrder`. Для этого в шаблоне приложения необходимо добавить данное свойство с указанием полей, по которым требуется отсортировать, и направления сортировки. К примеру:
+
+```hbs
+autocompleteOrder="moderated asc, parent desc"
+```
