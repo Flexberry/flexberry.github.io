@@ -408,9 +408,11 @@ public static void Register(HttpConfiguration config)
 /// Метод вызываемый после возникновения исключения.
 /// </summary>
 /// <param name="e">Исключение, которое возникло внутри ODataService.</param>
+/// <param name="code">Возвращаемый код HTTP. По-умолчанияю 500.</param>
 /// <returns>Исключение, которое будет отправлено клиенту.</returns>
-public static Exception AfterInternalServerError(Exception e)
+public static Exception AfterInternalServerError(Exception e, ref HttpStatusCode code)
 {
+    code = HttpStatusCode.InternalServerError;
     return e;
 }
 

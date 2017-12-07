@@ -1,11 +1,11 @@
 ---
 title: Клиентский язык запросов
 sidebar: ember-flexberry-data_sidebar
-keywords: Flexberry Ember, запрсы, предикат
+keywords: Flexberry Ember, запросы, предикат
 toc: true
 permalink: ru/efd_query-language.html
 lang: ru
-summary: Описание клиенткого языка запросов.
+summary: Описание клиентского языка запросов.
 ---
 
 ## Пространство имен Query
@@ -33,6 +33,7 @@ import { Query } from 'ember-flexberry-data';
 * `ComplexPredicate` - класс для создания фильтра в запросе из нескольких предикатов, объединенных логическими операциями.
 * `StringPredicate` - класс для создания фильтра в запросе по строковым полям.
 * `DetailPredicate` - класс для создания фильтра в запросе по детейловым объектам.
+* `NotPredicate` - класс для инверсии вложенного предиката.
 * `createPredicate` - метод для создания предиката по заданным параметрам.
 
 Пример использования классов из пространства имен:
@@ -383,6 +384,25 @@ let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').any(cp1);
 ```
 
+### Query.NotPredicate
+
+`Query.NotPredicate` – класс для инверсии вложенного предиката.
+
+#### Конструктор
+
+Конструктор `Query.NotPredicate` принимает единственный параметр – другой предикат.
+
+```javascript
+let np = new Query.NotPredicate(new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X'));
+```
+
+#### Получение свойств предиката
+
+Получение вложенного предиката:
+
+```javascript
+let innerPredicate = np.predicate;
+```
 ## Логические операторы для сложных предикатов
 
 ### Or

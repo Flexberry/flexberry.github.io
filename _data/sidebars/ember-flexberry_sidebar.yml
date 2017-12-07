@@ -110,6 +110,11 @@ entries:
       url: /ef_olv-toolbar.html
       output: web, pdf
 
+    - title: Button select all at list component
+      title_ru: Кнопка выделить все в списковых компонентах
+      url: /ef_list-component-select-all.html
+      output: web, pdf
+
     - title: Search all attributes
       title_ru: Поиск по всем атрибутам
       url: /ef_search-attributes.html
