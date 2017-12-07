@@ -2,6 +2,7 @@
 title: HighLighter
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Описан компонент, обеспечивающий подсветку активного контрола на форме, и рассмотрены способы его применения на отдельной форме и для всех форм приложения
 toc: true
 permalink: ru/fw_high-lighter.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: Обработка события отметки строк в GroupEdit
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: На примере рассмотрен способ обработки событий установки и снятия ометки строк GroupEdit
 toc: true
 permalink: en/fw_processing-events-mark-the-rows-in-groupedit.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: GEEditorExt
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
+summary: Рассмотрен компонент GEEditorExt, позволяющий организовать редактирование детейловых объектов на отдельной форме, вызываемой с GroupEdit
 toc: true
 permalink: ru/fw_ge-editor-ext.html
 folder: products/flexberry-winforms/

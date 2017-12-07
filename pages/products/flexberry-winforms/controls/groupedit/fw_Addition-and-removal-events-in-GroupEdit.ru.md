@@ -2,6 +2,7 @@
 title: События добавления и удаления в GroupEditBase 
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Указаны способы перехвата событий добавления и удаления строк в GroupEditBase 
 toc: true
 permalink: ru/fw_addition-and-removal-events-in-groupedit.html
 folder: products/flexberry-winforms/

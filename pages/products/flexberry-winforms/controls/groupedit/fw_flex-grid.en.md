@@ -2,6 +2,7 @@
 title: FlexGrid
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описание FlexGrid и пример получения из Gr
 toc: true
 permalink: en/fw_flex-grid.html
 folder: products/flexberry-winforms/

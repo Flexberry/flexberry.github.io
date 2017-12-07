@@ -2,6 +2,7 @@
 title: GroupEdit
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Основные моменты использования компонента для редактирования детейлов GroupEdit и список статей для рассмотрения конкретых особенностей использования
 toc: true
 permalink: ru/fw_group-edit.html
 lang: ru

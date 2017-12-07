@@ -2,6 +2,7 @@
 title: Отображение мастера в GroupEdit
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Рассмотрены способы отображения в ячейке GroupEdit «презентационного» атрибута мастера
 toc: true
 permalink: ru/fw_displaying-master-in-groupedit.html
 folder: products/flexberry-winforms/

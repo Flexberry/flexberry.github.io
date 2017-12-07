@@ -2,6 +2,7 @@
 title: ExtendedLookUp
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Рассматривается компонент ExtendedLookUp, представляющий собой лукап с предиктивным вводом
 toc: true
 permalink: ru/fw_extended-lookup.html
 folder: products/flexberry-winforms/

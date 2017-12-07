@@ -2,6 +2,7 @@
 title: Альтернативный лукап
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Рассматривается пример смены обработчика look_LookUpEvent
 toc: true
 permalink: en/fw_alternative-lookup.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: ExtendedTextBox
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описание элемента управления ExtendedTextBox
 toc: true
 permalink: en/fw_extended-textbox.html
 lang: en

@@ -2,6 +2,7 @@
 title: Обработка нажатий клавиш контролами в GE
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описан интерфейс `ISpecialKeysEditable`, реализация которого контролом для редактирования позволяет передать из GroupEdit этому контролу нажатые клавиши, не являющиеся алфавитно-цифровыми.
 toc: true
 permalink: ru/fw_processing-keystrokes-of-ge.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: FileControl (Winforms)
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Windows UI (Контролы)
+summary: Описаны основные моменты использования FileControl
 toc: true
 permalink: en/fw_file-control.html
 folder: products/flexberry-winforms/

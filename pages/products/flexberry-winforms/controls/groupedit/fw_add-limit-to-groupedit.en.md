@@ -2,6 +2,7 @@
 title: Наложение ограничений на GroupEdit
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Рассматривается делегат скрытия строк в GroupEdit, позволяющий накладывать ограничения на записи
 toc: true
 permalink: en/fw_add-limit-to-groupedit.html
 folder: products/flexberry-winforms/

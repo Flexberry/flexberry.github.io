@@ -2,6 +2,7 @@
 title: GEEmptyDetailRemover
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
+summary: Рассмотрен компонент GEEmptyDetailRemover, позволяющий удалять пустые (незаполненные) объекты  GroupEdit при сохранении агрегатора
 toc: true
 permalink: en/fw_ge-empty-detail-remover.html
 folder: products/flexberry-winforms/

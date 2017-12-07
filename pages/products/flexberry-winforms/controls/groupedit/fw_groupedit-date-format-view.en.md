@@ -2,6 +2,7 @@
 title: Формат даты GroupEdit в режиме отображения
 sidebar: flexberry-winforms_sidebar
 keywords: DateTime (работа с датами), Windows UI (Контролы)
+summary: Рассмотрен способ задания формата даты в ячейке GroupEdit в режиме отображения
 toc: true
 permalink: en/fw_groupedit-date-format-view.html
 folder: products/flexberry-winforms/

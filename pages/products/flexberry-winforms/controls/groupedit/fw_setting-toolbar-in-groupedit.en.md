@@ -2,6 +2,7 @@
 title: Настройка ToolBar в GroupEdit (настройка вертикального размера)
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Указана особенность изменения высоты тулбара GroupEdit в дизайнере
 toc: true
 permalink: en/fw_setting-toolbar-in-groupedit.html
 folder: products/flexberry-winforms/

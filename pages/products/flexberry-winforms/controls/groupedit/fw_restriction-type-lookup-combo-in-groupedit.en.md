@@ -2,6 +2,7 @@
 title: Ограничение тип лукапа «combo» в GroupEdit
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Рассмотрено поле «Настройка выборки» в окне настройки представления, служащее для задания ограничения на мастера
 toc: true
 permalink: en/fw_restriction-type-lookup-combo-in-groupedit.html
 folder: products/flexberry-winforms/
