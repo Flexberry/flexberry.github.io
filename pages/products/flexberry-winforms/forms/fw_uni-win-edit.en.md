@@ -32,3 +32,5 @@ private void ContainerCloseHandler (object sender, StormNetUI.CloseEventArgs arg
 			((StormNetUI.IDpdForm)sender).CloseForm();
 		}
 ```
+
+{% include note.html content="Если необходимо выполнить переход на генерируемую форму с универсальной с контролами ICustomizable, метод Customize необходимо вызвать вручную в перегруженном методе Edit." %}

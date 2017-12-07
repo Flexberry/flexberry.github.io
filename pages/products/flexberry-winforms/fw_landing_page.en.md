@@ -30,7 +30,6 @@ lang: en
 * [«Тараканы» и перечислимый тип](fw_empty-enum-value-validation.html)
 * [Свойство MaxLength элемента управления ExtLookUpTextControl](fw_ext-lookup-text-control-max-length.html)
 * [Как запретить закрытие фомы (только формы Flexberry Winforms)](fw_forbid-closing-form.html)
-* [Переход на генерируемую форму с универсальной с контролами ICustomizable](fw_going-on-generated-form-with-universal-i-customizable.html)
 * [Интерфейс ISpecialEmptyValue](fo_i-special-empty-value.html)
 * [Установка заголовка списковой формы](fw_list-form-caption.html)
 * [Добавление на форму редактирования Lookup мастера, не относящегося к основному объекту](fw_lookup-another-object.html)

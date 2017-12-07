@@ -179,11 +179,6 @@ entries:
       url: /fw_interaction-between-forms-when-editing-objects.html
       output: web
 
-    - title: Going on generated form with universal i customizable
-      title_ru: Переход на генерируемую форму с универсальной с контролами ICustomizable
-      url: /fw_going-on-generated-form-with-universal-i-customizable.html
-      output: web
-
     - title: Implementation interfaces independent and dependent forms and relationship between them
       title_ru: Реализация интерфейсов независимыми и зависимыми формами и отношения между ними
       url: /fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
