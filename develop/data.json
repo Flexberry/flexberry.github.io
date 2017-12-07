@@ -14769,6 +14769,17 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
             "line": 342,
+            "description": "Name of the attribute of the model to display for the user\nfor hidden attribute by master.\nIs required for autocomplete and dropdown modes.",
+            "itemtype": "property",
+            "name": "autocompleteOrder",
+            "type": "String",
+            "default": "null",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 353,
             "description": "Current selected instance of the model.",
             "itemtype": "property",
             "name": "value",
@@ -14778,7 +14789,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 350,
+            "line": 361,
             "description": "Flag indicating whether a modal dialog is open.",
             "itemtype": "property",
             "name": "modalIsShow",
@@ -14789,7 +14800,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 359,
+            "line": 370,
             "description": "Flag indicating whether a modal dialog starts to show.\nNeeds for add loading indicator for choose button.",
             "itemtype": "property",
             "name": "modalIsStartToShow",
@@ -14800,7 +14811,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 369,
+            "line": 380,
             "description": "Flag: indicates whether a modal dialog will be shown soon.",
             "itemtype": "property",
             "name": "modalIsBeforeToShow",
@@ -14811,7 +14822,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 378,
+            "line": 389,
             "description": "Service that triggers lookup events.",
             "itemtype": "property",
             "name": "lookupEventsService",
@@ -14821,7 +14832,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 386,
+            "line": 397,
             "description": "Text that displayed for the user as representation of currently selected value.\nThis property is binded to the view and can be changed by user (it won't be applied to model automatically).",
             "itemtype": "property",
             "name": "displayValue",
@@ -14832,7 +14843,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 398,
+            "line": 409,
             "description": "Standard CSS class names to apply to the view's outer element.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNames).",
             "itemtype": "property",
             "name": "classNames",
@@ -14843,7 +14854,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 408,
+            "line": 419,
             "description": "A list of properties of the view to apply as class names.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#property_classNameBindings).",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -14854,7 +14865,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 418,
+            "line": 429,
             "description": "Flag: indicates whether component is active or not.\nUsed to highlight component before data loading operation will be started.",
             "itemtype": "property",
             "name": "isActive",
@@ -14865,7 +14876,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 428,
+            "line": 439,
             "description": "Flag: indicates whether component is in blocked state now.",
             "itemtype": "property",
             "name": "isBlocked",
@@ -14876,7 +14887,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 439,
+            "line": 450,
             "description": "Used to identify lookup on the page.",
             "itemtype": "property",
             "name": "componentName",
@@ -14886,14 +14897,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 447,
+            "line": 458,
             "description": "Semantic-ui settings for dropdown.\nFor more information see [semantic-ui](http://semantic-ui.com/modules/dropdown.html#/settings)",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 471,
+            "line": 482,
             "description": "Open window for select value.",
             "itemtype": "method",
             "name": "actions.choose",
@@ -14909,7 +14920,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 503,
+            "line": 514,
             "description": "Clear current value.",
             "itemtype": "method",
             "name": "actions.remove",
@@ -14925,14 +14936,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 518,
+            "line": 529,
             "description": "An overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 535,
+            "line": 546,
             "description": "It seems to me a mistake here, it should be [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement).\n# WRANING!",
             "itemtype": "method",
             "name": "didDestroyElement",
@@ -14941,7 +14952,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 546,
+            "line": 557,
             "description": "Called when the element of the view has been inserted into the DOM or after the view was re-rendered.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_didInsertElement).",
             "itemtype": "method",
             "name": "didInsertElement",
@@ -14950,7 +14961,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 557,
+            "line": 568,
             "description": "Called after a component has been rendered, both on initial render and in subsequent rerenders.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_didRender).",
             "itemtype": "method",
             "name": "didRender",
@@ -14959,14 +14970,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 585,
+            "line": 596,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 600,
+            "line": 611,
             "description": "Additional observer of value and `relatedModel.relationName` change, updates `displayValue`.",
             "itemtype": "method",
             "name": "_valueObserver",
@@ -14977,7 +14988,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 610,
+            "line": 621,
             "description": "Set the value for the property `modalIsStartToShow`.",
             "itemtype": "method",
             "name": "_setModalIsStartToShow",
@@ -14988,7 +14999,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 623,
+            "line": 634,
             "description": "Set the value for the property `modalIsShow` & `modalIsStartToShow`.",
             "itemtype": "method",
             "name": "_setModalIsVisible",
@@ -14999,7 +15010,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 637,
+            "line": 648,
             "description": "Set the value for the property `modalIsShow`.",
             "itemtype": "method",
             "name": "_setModalIsHidden",
@@ -15010,7 +15021,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 651,
+            "line": 662,
             "description": "Initialize component with autocomplete mode.",
             "itemtype": "method",
             "name": "_onAutocomplete",
@@ -15021,7 +15032,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 690,
+            "line": 712,
             "description": "Mocks call to the data source,\nUses query language and store for loading data explicitly.",
             "params": [
                 {
@@ -15040,14 +15051,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 732,
+            "line": 760,
             "description": "Handles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 741,
+            "line": 769,
             "description": "Handles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
             "params": [
                 {
@@ -15061,14 +15072,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 760,
+            "line": 788,
             "description": "Handles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
             "class": "FlexberryLookup",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 781,
+            "line": 809,
             "description": "Initialize component with dropdown mode.",
             "itemtype": "method",
             "name": "_onDropdown",
@@ -15079,7 +15090,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 890,
+            "line": 918,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "_buildDisplayValue",
@@ -15094,7 +15105,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 912,
+            "line": 940,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -15123,7 +15134,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 940,
+            "line": 968,
             "description": "Handles changing current locale.\nIt reinits autocomplete or dropdown mode (depending on flag) in order to localize messages.",
             "itemtype": "method",
             "name": "_languageReinit",
@@ -19476,20 +19487,30 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
             "line": 52,
+            "description": "Header of validationsummary",
+            "itemtype": "property",
+            "name": "headerText",
+            "type": "String",
+            "class": "FlexberryValidationsummary",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
+            "line": 60,
             "description": "An overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
             "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 79,
+            "line": 87,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-validationsummary.js",
-            "line": 89,
+            "line": 97,
             "description": "Push validation errors to messages array\nand change component visibility if no errors occurred.",
             "class": "FlexberryValidationsummary",
             "module": "ember-flexberry"
@@ -23478,7 +23499,7 @@
         },
         {
             "file": "ember-flexberry/addon/helpers/get-with-dynamic-actions.js",
-            "line": 321,
+            "line": 334,
             "description": "Removes all previously attached to hierarchy properties observers.",
             "itemtype": "method",
             "name": "_removeHierarchyPropertiesObservers",
@@ -23508,7 +23529,48 @@
         },
         {
             "file": "ember-flexberry/addon/helpers/get-with-dynamic-actions.js",
-            "line": 370,
+            "line": 389,
+            "description": "Renames property path of observers.",
+            "itemtype": "method",
+            "name": "_renamePropertyPath",
+            "params": [
+                {
+                    "name": "observerPropertyPath",
+                    "description": "Path to property from which observers must be removed.",
+                    "type": "String"
+                },
+                {
+                    "name": "len",
+                    "description": "Index of observer in the array to be removed.",
+                    "type": "Number"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "GetWithDynamicActionsHelper",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/helpers/get-with-dynamic-actions.js",
+            "line": 437,
+            "description": "Sort array with hierarchy properties observers.",
+            "itemtype": "method",
+            "name": "_sort",
+            "params": [
+                {
+                    "name": "hierarchyPropertiesObservers",
+                    "description": "Array with hierarchy properties observers.",
+                    "type": "Array"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "GetWithDynamicActionsHelper",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/helpers/get-with-dynamic-actions.js",
+            "line": 460,
             "description": "Binds given dynamic actions to every object in the specified hierarchy.",
             "itemtype": "method",
             "name": "_bindDynamicActions",
@@ -23541,7 +23603,7 @@
         },
         {
             "file": "ember-flexberry/addon/helpers/get-with-dynamic-actions.js",
-            "line": 460,
+            "line": 550,
             "description": "Overridden [Ember.Helper compute method](http://emberjs.com/api/classes/Ember.Helper.html#method_compute).\nExecutes helper's logic, returns helper's value.",
             "itemtype": "method",
             "name": "compute",
@@ -23590,7 +23652,7 @@
         },
         {
             "file": "ember-flexberry/addon/helpers/get-with-dynamic-actions.js",
-            "line": 504,
+            "line": 594,
             "description": "Destroys helper.",
             "class": "GetWithDynamicActionsHelper",
             "module": "ember-flexberry"
@@ -29501,7 +29563,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:890"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:918"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -29917,31 +29979,31 @@
         },
         {
             "message": "Missing item type\nSemantic-ui settings for dropdown.\nFor more information see [semantic-ui](http://semantic-ui.com/modules/dropdown.html#/settings)",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:447"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:458"
         },
         {
             "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:518"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:529"
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:585"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:596"
         },
         {
             "message": "Missing item type\nMocks call to the data source,\nUses query language and store for loading data explicitly.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:690"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:712"
         },
         {
             "message": "Missing item type\nHandles opening of the autocomplete list.\nSets current state (taht autocomplete list is opened) for future purposes.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:732"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:760"
         },
         {
             "message": "Missing item type\nHandles selection of item from the autocomplete list.\nSaves selected model and notifies the controller.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:741"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:769"
         },
         {
             "message": "Missing item type\nHandles closing of the autocomplete list.\nRestores display text if nothing has been selected.",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:760"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:788"
         },
         {
             "message": "Missing item type\nInitializes component.",
@@ -30085,15 +30147,15 @@
         },
         {
             "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
-            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:52"
+            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:60"
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:79"
+            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:87"
         },
         {
             "message": "Missing item type\nPush validation errors to messages array\nand change component visibility if no errors occurred.",
-            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:89"
+            "line": " ember-flexberry/addon/components/flexberry-validationsummary.js:97"
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's logic.",
@@ -30157,7 +30219,7 @@
         },
         {
             "message": "Missing item type\nDestroys helper.",
-            "line": " ember-flexberry/addon/helpers/get-with-dynamic-actions.js:504"
+            "line": " ember-flexberry/addon/helpers/get-with-dynamic-actions.js:594"
         },
         {
             "message": "Missing item type\nInjects a {{#crossLink \"PerfService\"}}perf service{{/crossLink}} into current application\ncomponents, controllers, models, routes, and views.",

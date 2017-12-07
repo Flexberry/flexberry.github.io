@@ -399,6 +399,14 @@ and there is no way to attach action handlers for their nested component's expli
                                 <a href="#" data-tabid="#methods" data-anchor="#method__removeHierarchyPropertiesObservers" data-tablink="_removeHierarchyPropertiesObservers">_removeHierarchyPropertiesObservers</a>
 
                             </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__renamePropertyPath" data-tablink="_renamePropertyPath">_renamePropertyPath</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__sort" data-tablink="_sort">_sort</a>
+
+                            </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_compute" data-tablink="compute">compute</a>
 
@@ -525,7 +533,7 @@ and there is no way to attach action handlers for their nested component's expli
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l370"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:370</code></a>
+                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l460"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:460</code></a>
                             </p>
                     
                     
@@ -612,7 +620,7 @@ and there is no way to attach action handlers for their nested component's expli
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l321"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:321</code></a>
+                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l334"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:334</code></a>
                             </p>
                     
                     
@@ -666,6 +674,128 @@ and there is no way to attach action handlers for their nested component's expli
                     
                     
                     </div>
+                    <div id="method__renamePropertyPath" class="method item private">
+                        <h3 class="name"><code>_renamePropertyPath</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>observerPropertyPath</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>len</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l389"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:389</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Renames property path of observers.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">observerPropertyPath</code>
+                                            <span class="type"><a href="http://emberjs.com/api/classes/String.html" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Path to property from which observers must be removed.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">len</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Index of observer in the array to be removed.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method__sort" class="method item private">
+                        <h3 class="name"><code>_sort</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>hierarchyPropertiesObservers</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l437"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:437</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sort array with hierarchy properties observers.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">hierarchyPropertiesObservers</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Array with hierarchy properties observers.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
                     <div id="method_compute" class="method item">
                         <h3 class="name"><code>compute</code></h3>
                     
@@ -700,7 +830,7 @@ and there is no way to attach action handlers for their nested component's expli
                         <div class="meta">
                                     <p>
                                     Defined in
-                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l460"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:460</code></a>
+                            <a href="../files/ember-flexberry_addon_helpers_get-with-dynamic-actions.js.html#l550"><code>ember-flexberry&#x2F;addon&#x2F;helpers&#x2F;get-with-dynamic-actions.js:550</code></a>
                             </p>
                     
                     
