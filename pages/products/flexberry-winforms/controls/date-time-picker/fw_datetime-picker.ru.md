@@ -2,6 +2,7 @@
 title: DateTimePicker
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описание и пример создания ControlProvider для NullableDateTime
 toc: true
 permalink: ru/fw_datetime-picker.html
 folder: products/flexberry-winforms/

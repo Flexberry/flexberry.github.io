@@ -2,6 +2,7 @@
 title: ComboLookup
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описание основных свойств элемента управления ComboLookup, пример их использования. Особенности генерации.
 toc: true
 permalink: ru/fw_combo-lookup.html
 folder: products/flexberry-winforms/

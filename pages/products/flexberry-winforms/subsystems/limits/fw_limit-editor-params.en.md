@@ -48,25 +48,25 @@ lang: en
 
 К примеру, если форма создания ограничения выглядит следующим образом:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit1.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit01.png)
 
 то форма выбора параметров не отобразится, т.к. параметры отсутствуют.
 
 Если ограничение выглядит вот так:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit2.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit02.png)
 
 то форма выбора параметров будет выглядеть следующим образом:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit3.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit03.png)
 
 Соответственно, если в параметре проставлена `Множественность`:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit4.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit04.png)
 
 то форма выбора параметров будет выглядеть следующим образом:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit5.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limit05.png)
 
 то есть появится возможность выбрать несколько элементов, которые будут объединены условием ИЛИ.
 

@@ -2,6 +2,7 @@
 title: Поведение ExtendedTextBox.GetCurrentObject
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Рассматривается перегрузка метода GetCurrentDataObject элемента управления ExtendedTextBox
 toc: true
 permalink: ru/fw_actions-extended-textbox-get-current-object.html
 lang: ru
