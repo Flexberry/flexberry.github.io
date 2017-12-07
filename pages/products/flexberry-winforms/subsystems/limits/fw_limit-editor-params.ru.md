@@ -17,6 +17,8 @@ lang: ru
 ### Создание параметров
 Параметры создаются на форме создания ограничений в `Стандартном` или `Расширенном` виде.
 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limittry.png)
+
 Блок создания параметров выглядит следующим образом:
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-params.png)
@@ -48,7 +50,7 @@ lang: ru
 
 К примеру, если форма создания ограничения выглядит следующим образом:
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/limit1.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/limittry.png)
 
 то форма выбора параметров не отобразится, т.к. параметры отсутствуют.
 
