@@ -2,6 +2,7 @@
 title: Запрет изменения в BeforeChangeProperty 
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Указана особенность использования признака Cancel в методе BeforeChangeProperty
 toc: true
 permalink: ru/fw_restrict-changes-in-before-change-property.html
 folder: products/flexberry-winforms/

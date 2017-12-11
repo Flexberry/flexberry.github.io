@@ -2,6 +2,7 @@
 title: Настройка видимости колонок ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы), Ограничения
+summary: Описан вариант как устанавить видимость некоторой колонки в ObjectListView
 toc: true
 permalink: en/fw_objectlistview-column-visibility-customization.html
 folder: products/flexberry-winforms/

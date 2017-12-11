@@ -2,6 +2,7 @@
 title: Предиктивный ввод в Windows-приложениях
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
+summary: Рассказано что необходимо сделать для реализации в контролах приложения предиктивного ввода (ввода текста таким образом, чтобы система подсказывала пользователю возможные варианты по мере ввода данных)
 toc: true
 permalink: ru/fw_predict-input.html
 lang: ru

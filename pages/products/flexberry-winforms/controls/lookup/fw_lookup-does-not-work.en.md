@@ -2,6 +2,7 @@
 title: Если не работает LookUp
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Указаны причины и рассмотрены способы их устранения для различных ситуаций, когда не работает LookUp
 toc: true
 permalink: en/fw_lookup-does-not-work.html
 folder: products/flexberry-winforms/

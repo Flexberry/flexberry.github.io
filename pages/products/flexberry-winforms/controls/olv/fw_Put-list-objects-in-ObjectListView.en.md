@@ -2,6 +2,7 @@
 title: Помещение списка объектов в ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: DataObject (объекты данных), Windows UI (Контролы)
+summary: Описан метод отображения в ObjectListView списка объектов, которые были созданы не из базы, а прямо в коде
 toc: true
 permalink: en/fw_put-list-objects-in-objectlistview.html
 folder: products/flexberry-winforms/

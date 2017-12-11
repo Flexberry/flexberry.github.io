@@ -2,6 +2,7 @@
 title: Отображение подсказки(tooltip) для отдельных записей в ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описано как реализовать отображение подсказки для отдельных строк в ObjectListView
 toc: true
 permalink: ru/fw_objectlistview-tooltip.html
 folder: products/flexberry-winforms/

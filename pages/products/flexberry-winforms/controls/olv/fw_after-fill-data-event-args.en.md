@@ -2,6 +2,7 @@
 title: Получение информации об удачности загрузки ОbjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Объясняется как в обработчике события `ОbjectListView.AfterFillData` получить информацию об успешности загрузки
 toc: true
 permalink: en/fw_after-fill-data-event-args.html
 folder: products/flexberry-winforms/

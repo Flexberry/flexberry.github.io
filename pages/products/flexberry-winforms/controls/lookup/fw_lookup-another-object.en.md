@@ -2,6 +2,7 @@
 title: Добавление на форму редактирования Lookup мастера, не относящегося к основному объекту
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
+summary: Описан способ добавления на форму редактирования лукапа для выбора объекта, который никак не связан с объектом, редактируемым на этой форме
 toc: true
 permalink: en/fw_lookup-another-object.html
 folder: products/flexberry-winforms/

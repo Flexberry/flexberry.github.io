@@ -2,6 +2,7 @@
 title: Поднятие из GroupEdit'a на лукап объекта, не имеющего ссылку на объект-инициатор
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: На примере показано как можно из GroupEdit вызвать на лукап список объектов, не имеющих связей c объектом-инициатором
 toc: true
 permalink: ru/fw_lookup-from-groupedit.html
 folder: products/flexberry-winforms/

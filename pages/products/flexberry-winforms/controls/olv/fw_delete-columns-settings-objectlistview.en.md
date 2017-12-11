@@ -2,6 +2,7 @@
 title: Удаление настроек пользователя в ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Объясняется что при удалении настроек пользователя в ObjectListView изменения отобразятся после повторного открытия списка
 toc: true
 permalink: en/fw_delete-columns-settings-objectlistview.html
 folder: products/flexberry-winforms/

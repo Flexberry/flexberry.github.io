@@ -2,6 +2,7 @@
 title: Откуда берутся фильтерсеттинги для применения на списках
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Ограничения
+summary: Объясняется как определяется пользователь для отображения настроек списка только для текущего пользователя
 toc: true
 permalink: en/fw_filtersettings-for-use-in-lists.html
 folder: products/flexberry-winforms/

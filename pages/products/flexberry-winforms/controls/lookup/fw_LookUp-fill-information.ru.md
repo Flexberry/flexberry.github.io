@@ -2,6 +2,7 @@
 title: Размазывание по Control-ам информации с LookUp-а
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: На примере показано как можно переопределить метод __Edited__, чтобы использовать полученные  от LookUp данные
 toc: true
 permalink: ru/fw_lookup-fill-information.html
 folder: products/flexberry-winforms/

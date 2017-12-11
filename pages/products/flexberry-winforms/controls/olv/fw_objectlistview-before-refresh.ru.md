@@ -2,6 +2,7 @@
 title: Событие ObjectListView.BeforeRefresh
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описано событие ObjectListView.BeforeRefresh
 toc: true
 permalink: ru/fw_objectlistview-before-refresh.html
 folder: products/flexberry-winforms/

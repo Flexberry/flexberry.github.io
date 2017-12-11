@@ -2,6 +2,7 @@
 title: Как без использования генераторов кода сделать на форме список объектов данных
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Указано как разместить на форме список объектов данных без генерации кода
 toc: true
 permalink: ru/fw_make-a-list-of-data-objects-without-generators.html
 folder: products/flexberry-winforms/

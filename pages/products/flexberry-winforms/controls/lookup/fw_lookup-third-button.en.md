@@ -2,6 +2,7 @@
 title: Создание третьей кнопки рядом с LookUp'ом
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: На примере показано как можно создать третью кнопку рядом с LookUp'ом
 toc: true
 permalink: en/fw_lookup-third-button.html
 folder: products/flexberry-winforms/

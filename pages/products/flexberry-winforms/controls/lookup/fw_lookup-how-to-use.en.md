@@ -2,6 +2,7 @@
 title: Как вызвать на LookUp
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: На примере показано как можно вызвать на лукап список объектов, не имеющих связей c объектом-инициатором и не являющихся мастером для какого-либо другого объекта в модели предметной области
 toc: true
 permalink: en/fw_lookup-how-to-use.html
 folder: products/flexberry-winforms/

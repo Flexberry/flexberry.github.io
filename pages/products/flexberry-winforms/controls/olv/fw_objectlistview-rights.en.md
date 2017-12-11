@@ -2,6 +2,7 @@
 title: Доступность операций на OLV в зависимости от прав пользователя
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: Указана доступность операций (создание/удаление/просмотр/редактирование) в списке в зависимости от прав пользователя. Указаны программные методы обработки прав.
 toc: true
 permalink: en/fw_objectlistview-rights.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: Отслеживание окончания загрузки данных в ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Указан способ отслеживания окончания загрузки данных в ObjectListView
 toc: true
 permalink: ru/fw_end-load-data-in-objectlistview.html
 folder: products/flexberry-winforms/

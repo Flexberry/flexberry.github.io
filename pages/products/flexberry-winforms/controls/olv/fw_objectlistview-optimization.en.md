@@ -2,6 +2,7 @@
 title: Оптимизация чтения данных ObjectListView
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описано использование свойства ObjectListView.UseColumnOptimization для удаления из запроса к БД, генерируемого ObjectListView, скрытых колонок списка
 toc: true
 permalink: en/fw_objectlistview-optimization.html
 folder: products/flexberry-winforms/

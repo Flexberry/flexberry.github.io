@@ -2,6 +2,7 @@
 title: Создание формы редактирования с иерархическим списком
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: Указано как вручную разместить на форме иерархический список объектов
 toc: true
 permalink: en/fw_object-hierarchical-view-on-editform.html
 folder: products/flexberry-winforms/

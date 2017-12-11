@@ -2,6 +2,7 @@
 title: Сортировка списков
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Указано как задать сортировку списка программным путём
 toc: true
 permalink: ru/fw_list-sort.html
 lang: ru

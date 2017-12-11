@@ -2,6 +2,7 @@
 title: LookUp
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Приведен перечень статей, в которых рассматриваются основные аспекты использования контрола LookUp
 toc: true
 permalink: en/fw_lookup.html
 folder: products/flexberry-winforms/

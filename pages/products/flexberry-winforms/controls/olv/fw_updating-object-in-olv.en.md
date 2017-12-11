@@ -2,6 +2,7 @@
 title: Обновление объекта в OLV
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Указаны методы обновления объектов в списке
 toc: true
 permalink: en/fw_updating-object-in-olv.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: Изменение внешнего вида контрола LookUp
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описаны способы изменения внешнего вида кнопок контрола LookUp: картинок, размера, границ
 toc: true
 permalink: ru/fw_lookup-appearance.html
 folder: products/flexberry-winforms/
