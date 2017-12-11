@@ -521,7 +521,7 @@ public static Exception AfterInternalServerError(Exception e, ref HttpStatusCode
             ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
             config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
             Dictionary<string, Type> parametersTypes = new Dictionary<string, Type> { { "entitySet", typeof(string) }, { "query", typeof(string) } };
-            odataServiceManagementToken.Functions.Register(new Function("ActionWithLcs", ActionWithLcs, typeof(IEnumerable<DataObject>), parametersTypes));
+            odataServiceManagementToken.Functions.Register(new NewPlatform.Flexberry.ORM.ODataService.Functions.Action("ActionWithLcs", ActionWithLcs, typeof(IEnumerable<DataObject>), parametersTypes));
         }
 
         /// <summary>
