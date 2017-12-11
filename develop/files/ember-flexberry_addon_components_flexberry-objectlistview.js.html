@@ -307,6 +307,15 @@ export default FlexberryBaseComponent.extend({
   _switchHierarchicalMode: &#x27;switchHierarchicalMode&#x27;,
 
   /**
+    Store the action name at controller for switch to the collapse/expand mode.
+
+    @property _switchExpandMode
+    @type String
+    @default &#x27;switchExpandMode&#x27;
+    @private
+  */
+  _switchExpandMode: &#x27;switchExpandMode&#x27;,
+  /**
     Store the action name at controller for save the hierarchical attribute name.
 
     @property _saveHierarchicalAttribute
@@ -327,6 +336,16 @@ export default FlexberryBaseComponent.extend({
   _availableHierarchicalMode: false,
 
   /**
+    Flag indicate when available the collapse/expand all hierarchies mode.
+
+    @property _availableCollExpandMode
+    @type Boolean
+    @default false
+    @private
+  */
+  _availableCollExpandMode: false,
+
+  /**
     Flag indicate when component is in the hierarchical mode.
 
     @property _inHierarchicalMode
@@ -336,6 +355,24 @@ export default FlexberryBaseComponent.extend({
   */
   _inHierarchicalMode: Ember.computed(&#x27;currentController.inHierarchicalMode&#x27;, function() {
     return this.get(&#x27;currentController.inHierarchicalMode&#x27;);
+  }),
+
+  /**
+    Flag indicate when component is in the collapse/expand mode.
+
+    @property _inExpandMode
+    @type Boolean
+    @default false
+    @private
+  */
+  _inExpandMode: Ember.computed(&#x27;currentController.inExpandMode&#x27;, {
+    get(key) {
+      return this.get(&#x27;currentController.inExpandMode&#x27;);
+    },
+    set(key, value) {
+      this.set(&#x27;currentController.inExpandMode&#x27;,  value);
+      return value;
+    }
   }),
 
   /**
@@ -1162,6 +1199,15 @@ export default FlexberryBaseComponent.extend({
     */
     switchHierarchicalMode() {
       this.sendAction(&#x27;_switchHierarchicalMode&#x27;);
+    },
+
+    /**
+      Called controller action to switch in collapse/expand mode.
+
+      @method actions.switchExpandMode
+    */
+    switchExpandMode() {
+      this.sendAction(&#x27;_switchExpandMode&#x27;);
     },
 
     /**

@@ -275,6 +275,15 @@ export default Ember.Mixin.create({
   inHierarchicalMode: false,
 
   /**
+    Flag indicate whether component is in collapse/expand mode.
+
+    @property inExpandMode
+    @type Boolean
+    @default false
+  */
+  inExpandMode: false,
+
+  /**
     Attribute name to hierarchy build.
 
     @property hierarchicalAttribute
@@ -290,6 +299,16 @@ export default Ember.Mixin.create({
     */
     switchHierarchicalMode() {
       this.toggleProperty(&#x27;inHierarchicalMode&#x27;);
+      this.send(&#x27;refreshList&#x27;);
+    },
+
+    /**
+      Switch collapse/expand mode.
+
+      @method actions.switchExpandMode
+    */
+    switchExpandMode() {
+      this.toggleProperty(&#x27;inExpandMode&#x27;);
       this.send(&#x27;refreshList&#x27;);
     },
 

@@ -267,16 +267,6 @@ import FlexberryBaseComponent from &#x27;./flexberry-base-component&#x27;;
 */
 export default FlexberryBaseComponent.extend({
   /**
-    Flag used to display embedded records.
-
-    @property _expanded
-    @type Boolean
-    @default false
-    @private
-  */
-  _expanded: false,
-
-  /**
     Stores the number of pixels to isolate one level of hierarchy.
 
     @property _hierarchicalIndent
@@ -472,7 +462,7 @@ export default FlexberryBaseComponent.extend({
       @method actions.expand
     */
     expand() {
-      this.toggleProperty(&#x27;_expanded&#x27;);
+      this.toggleProperty(&#x27;inExpandMode&#x27;);
     },
 
     /**
