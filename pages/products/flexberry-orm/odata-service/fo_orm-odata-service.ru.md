@@ -418,3 +418,129 @@ public static Exception AfterInternalServerError(Exception e, ref HttpStatusCode
 
 ```
 
+## Фильтрация в пользовательских OData-функциях
+
+Пример использования в пользовательских OData-функциях структуры LCS, которая создана из строки запроса OData.
+
+```cs
+        /// <summary>
+        /// Configures Web API.
+        /// </summary>
+        /// <param name="config">Current configuration.</param>
+        /// <param name="container">DI container for WebAPI.</param>
+        /// <param name="activator">Controller activator for WebAPI.</param>
+        public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
+        {
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
+            // Use Unity for DI in WebAPI.
+            config.DependencyResolver = new UnityDependencyResolver(container);
+
+            var assemblies = new[]
+            {
+                typeof(Suggestion).Assembly,
+                typeof(ApplicationLog).Assembly,
+                typeof(UserSetting).Assembly,
+                typeof(FlexberryUserSetting).Assembly,
+                typeof(Lock).Assembly
+            };
+            var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
+
+            ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
+            config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+            Dictionary<string, Type> parametersTypes1 = new Dictionary<string, Type> { { "entitySet", typeof(string) } };
+            odataServiceManagementToken.Functions.Register(new Function("FunctionWithLcs1", FunctionWithLcs1, typeof(IEnumerable<DataObject>), parametersTypes1));
+            Dictionary<string, Type> parametersTypes2 = new Dictionary<string, Type> { { "entitySet", typeof(string) }, { "query", typeof(string) } };
+            odataServiceManagementToken.Functions.Register(new Function("FunctionWithLcs2", FunctionWithLcs2, typeof(int), parametersTypes2));
+        }
+
+        /// <summary>
+        /// Функция которая используют LCS, созданный на основе запроса OData.
+        /// http://localhost/odata/FunctionWithLcs1(entitySet='Suggestions')?$filter=Text eq 'txt'
+        /// </summary>
+        /// <param name="queryParameters"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        private static object FunctionWithLcs1(QueryParameters queryParameters, IDictionary<string, object> parameters)
+        {
+            SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+            var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
+            var lcs = queryParameters.CreateLcs(type);
+            var dobjs = dataService.LoadObjects(lcs);
+            return dobjs.AsEnumerable();
+        }
+
+        /// <summary>
+        /// Функция которая использует LCS, созданный на основе параметра функции.
+        /// http://localhost/odata/FunctionWithLcs2(entitySet='Suggestions',query='$filter=Text eq ''txt''')
+        /// </summary>
+        /// <param name="queryParameters"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        private static object FunctionWithLcs2(QueryParameters queryParameters, IDictionary<string, object> parameters)
+        {
+            SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+            var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
+            var uri = $"http://a/b/c?{parameters["query"]}";
+            var lcs = queryParameters.CreateLcs(type, uri);
+            var dobjs = dataService.LoadObjects(lcs);
+            return dobjs.Length;
+        }
+```
+
+## Использование actions
+
+Пример использования в action структуры LCS, которая создана из строки запроса OData.
+
+```cs
+        /// <summary>
+        /// Configures Web API.
+        /// </summary>
+        /// <param name="config">Current configuration.</param>
+        /// <param name="container">DI container for WebAPI.</param>
+        /// <param name="activator">Controller activator for WebAPI.</param>
+        public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
+        {
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
+            // Use Unity for DI in WebAPI.
+            config.DependencyResolver = new UnityDependencyResolver(container);
+
+            var assemblies = new[]
+            {
+                typeof(Suggestion).Assembly,
+                typeof(ApplicationLog).Assembly,
+                typeof(UserSetting).Assembly,
+                typeof(FlexberryUserSetting).Assembly,
+                typeof(Lock).Assembly
+            };
+            var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
+
+            ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
+            config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+            Dictionary<string, Type> parametersTypes = new Dictionary<string, Type> { { "entitySet", typeof(string) }, { "query", typeof(string) } };
+            odataServiceManagementToken.Functions.Register(new Function("ActionWithLcs", ActionWithLcs, typeof(IEnumerable<DataObject>), parametersTypes));
+        }
+
+        /// <summary>
+        /// Action, который использует LCS, созданный на основе параметра action.
+        /// http://localhost/odata/ActionWithLcs
+        /// Json в теле POST-запроса: {"entitySet": "Suggestions", "query": "$filter=Text eq 'txt'"}
+        /// </summary>
+        /// <param name="queryParameters"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        private static object ActionWithLcs(QueryParameters queryParameters, IDictionary<string, object> parameters)
+        {
+            SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+            var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
+            var uri = $"http://a/b/c?{parameters["query"]}";
+            var lcs = queryParameters.CreateLcs(type, uri);
+            var dobjs = dataService.LoadObjects(lcs);
+            return dobjs.AsEnumerable();
+        }
+    }
+```
+
