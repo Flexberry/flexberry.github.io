@@ -2,7 +2,7 @@
 title: Описание методологии MDD
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Desinger, модели, моделирование
-summary: Преимущества подхода модеkирования и особенности его реализации на Flexberry
+summary: Преимущества подхода моделирования и особенности его реализации на Flexberry
 toc: true
 permalink: ru/fd_model-driven-architecture.html
 lang: ru
