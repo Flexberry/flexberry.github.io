@@ -2,6 +2,7 @@
 title: Flexberry ORM ODataService
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM ODataService, OData
+summary: Features, limitations, recommendations for using ODataService
 toc: true
 permalink: en/fo_orm-odata-service.html
 lang: en
@@ -11,34 +12,28 @@ lang: en
 
 `Flexberry ORM ODataService` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
 
-(((
-<msg type=information>`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](NewPlatform.Flexberry.ORM.ODataService).</msg>
-)))
+`Flexberry ORM ODataService` позволяет удобным образом создать OData-сервис.
 
-## Список библиотек `Flexberry ORM ODataService`
+{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](NewPlatform.Flexberry.ORM.ODataService)." %}
+
+##№ Список библиотек `Flexberry ORM ODataService`
 
 В состав NuGet-пакета `Flexberry ORM ODataService` входят следующие сборки:
+
 * NewPlatform.Flexberry.ORM.ODataService.dll
-
-## Описание продукта
-
-Данный продукт позволяет удобным образом создать OData-сервис.
 
 ## Ограничения, особенности, рекомендации к проектированию
 
 Существует ряд особенностей при проектировании объектов, которые будут использоваться через `Flexberry ORM ODataService`:
-- В E-представление (представление, имеющее название "<ИмяКласса>E") детейла должна быть добавлена ссылка на агрегатор.
 
-- Подключение `Flexberry ORM ODataService`
-Чтобы в web-проекте (WebForms) воспользоваться возможностями `Flexberry ORM ODataService`, необходимо сделать следующее:
+* В E-представление (представление, имеющее название "<ИмяКласса>E") детейла должна быть добавлена ссылка на агрегатор.
+* Подключение `Flexberry ORM ODataService`. Для подключения в web-проект (WebForms) воспользоваться возможностями `Flexberry ORM ODataService`, необходимо сделать следующее:
 
-1. Подключить NuGet-пакет `Flexberry ORM ODataService`.
+    * Подключить NuGet-пакет `Flexberry ORM ODataService`.
+    * В App_Start приложения создать класс "ODataConfig.cs".
+    * Заменить содержимое класса примерно на следующее:
 
-2. В App_Start приложения создать класс "ODataConfig.cs".
-
-3. Заменить содержимое класса примерно на следующее:
-
-```cs
+```csharp
 namespace ODataServiceTemplate
 {
     using System;
@@ -87,9 +82,9 @@ namespace ODataServiceTemplate
 }
 ```
 
-4. В Global.asax добавить:
+   * В Global.asax добавить:
 
-```cs
+```csharp
 namespace ODataServiceTemplate
 {
     using System;
@@ -112,27 +107,27 @@ namespace ODataServiceTemplate
 }
 ```
 
-5. Для того, чтобы код компилировался, может потребоваться установить дополнительно NuGet-пакеты в приложение: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) и [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
+   * Для того, чтобы код компилировался, может потребоваться установить дополнительно NuGet-пакеты в приложение: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) и [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
 
-6. Добавить в web.config или проверить наличие следующих записей:
+   * Добавить в web.config или проверить наличие следующих записей:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
-  <system.webServer>
+<system.webServer>
     <handlers>
-      <remove name="OPTIONSVerbHandler" />
-      <remove name="TRACEVerbHandler" />
-      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
-      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+    <remove name="OPTIONSVerbHandler" />
+    <remove name="TRACEVerbHandler" />
+    <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+    <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="*" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
     </handlers> 
-  </system.webServer>
+</system.webServer>
 </configuration>
 ```
 
 ## Механизм вызова логики после сохранения объекта с использованием callback-функций
 
-```cs
+```csharp
 /// <summary>
 /// Register Data objects.
 /// </summary>
@@ -202,7 +197,7 @@ public static void AfterDelete(DataObject obj){
 
 Пример регистрации пользовательской OData-функции
 
-```cs
+```csharp
 /// <summary>
 /// Register Data objects.
 /// </summary>
@@ -262,7 +257,7 @@ private static object GetLastRoundIdForTopic(ODataFunctions.QueryParameters quer
 
 Пример фильтрации свойств для типов
 
-```cs
+```csharp
 /// <summary>
 /// Register Data objects.
 /// </summary>
@@ -307,11 +302,12 @@ private static bool PropertyFilter(PropertyInfo propertyInfo)
     return Information.ExtractPropertyInfo<Agent>(x => x.Pwd) != propertyInfo;
 }
 ```
+
 ## Фильтрация результата выборки в ODataService с использованием callback-функций
 
 Пример фильтрации результата выборки
 
-```cs
+```csharp
 /// <summary>
 /// Register Data objects.
 /// </summary>
