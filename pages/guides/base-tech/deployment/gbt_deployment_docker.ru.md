@@ -340,6 +340,12 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 
 ### Лекции, курсы, презентации, видео
 
+* [DOCKER: ВВЕДЕНИЕ В ТЕХНОЛОГИИ ВИРТУАЛИЗАЦИИ])https://dev-ops-notes.ru/docker/docker-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8/)
+* [DOCKER: ПРОВЕРКА КОНТЕЙНЕРОВ НА БЕЗОПАСНОСТЬ](https://dev-ops-notes.ru/docker/docker-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81/)
+
+ 
+
+#### Docker для Linux
 * [Docker Video Tutorials](https://www.docker.com/products/resources/video-tutorials)
 * [Docker YouTube Channel](https://www.youtube.com/user/dockerrun)
 * [5 must-watch Docker videos](https://opensource.com/business/15/5/must-watch-docker-videos)
@@ -349,6 +355,27 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 * [Get started with Docker](https://docs.docker.com/engine/getstarted/)
 * [The Docker commands](https://docs.docker.com/engine/reference/commandline/)
 * [Docker run reference](https://docs.docker.com/engine/reference/run/)
+
+#### Docker для Windows
+
+* [WINDOWS КОНТЕЙНЕРЫ И DOCKER](https://dev-ops-notes.ru/docker/windows-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D0%B8-docker/)
+* [РАБОТА С КОНТЕЙНЕРАМИ В WINDOWS И DOCKER])https://dev-ops-notes.ru/docker/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-%D0%B2-windows-%D0%B8-docker/)
+* [Docker: Windows и Linux в контейнерах на одной машине[(https://blog.amartynov.ru/docker-windows-%D0%B8-linux-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B5/)
+
+
+ 
+
+
+
+Docker: Windows и Linux в контейнерах на одной машине
+
+https://blog.amartynov.ru/docker-windows-%D0%B8-linux-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B5/
+
+ 
+
+Linux-контейнеры для Windows
+
+https://habrahabr.ru/company/microsoft/blog/339214/
 
 
 ### Рекомендованные книги
