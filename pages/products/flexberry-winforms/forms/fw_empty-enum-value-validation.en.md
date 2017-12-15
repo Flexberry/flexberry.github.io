@@ -2,6 +2,7 @@
 title: «Тараканы» и перечислимый тип
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Приведены способы указать, что одно из значений перечислимого типа является значением, соответствующим незаполненному, "пустому"
 toc: true
 permalink: en/fw_empty-enum-value-validation.html
 folder: products/flexberry-winforms/

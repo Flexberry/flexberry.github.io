@@ -2,6 +2,7 @@
 title: Метод EditManager.Change
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: Указаны различные варианты использования метода Change у EditManager для обновления значений на форме при изменении объектов данных программным путём
 toc: true
 permalink: ru/fw_editmanager-change.html
 folder: products/flexberry-winforms/

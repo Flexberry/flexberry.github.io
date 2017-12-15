@@ -2,6 +2,7 @@
 title: Использование ToolStrip для организации меню
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
+summary: На примере рассмотрено использование ToolStrip для организации меню на главной форме приложения
 toc: true
 permalink: ru/fw_working-with-menu.html
 folder: products/flexberry-winforms/

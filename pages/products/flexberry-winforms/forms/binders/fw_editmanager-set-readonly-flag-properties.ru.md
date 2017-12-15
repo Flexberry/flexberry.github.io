@@ -2,6 +2,7 @@
 title: Метод EditManager.SetReadonlyFlagProperties
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: Указаны методы EditManager для работы со свойством ReadOnly контролов
 toc: true
 permalink: ru/fw_editmanager-set-readonly-flag-properties.html
 folder: products/flexberry-winforms/

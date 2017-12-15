@@ -2,6 +2,7 @@
 title: Закрытие всех открытых форм Flexberry
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: На примере показано как закрыть все открытые формы приложения
 toc: true
 permalink: ru/fw_close-all-opened-forms.html
 folder: products/flexberry-winforms/

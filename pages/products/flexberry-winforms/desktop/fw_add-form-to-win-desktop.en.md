@@ -2,6 +2,7 @@
 title: Добавить собственную форму на рабочий стол Windows-приложения
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Пошаговое описание добавления собственной формы на рабочий стол Windows-приложения с примером
 toc: true
 permalink: en/fw_add-form-to-win-desktop.html
 folder: products/flexberry-winforms/

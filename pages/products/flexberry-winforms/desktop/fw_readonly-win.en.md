@@ -2,6 +2,7 @@
 title: Режим "Только чтение" в Windows-приложениях
 sidebar: flexberry-winforms_sidebar
 keywords: DataObject (объекты данных), Windows UI (формы)
+summary: Описано, что предполагает собой режим "Только чтение" в приложении. Рассмотрены методы блокировки пользовательского интерфейса с помощью EditManager, указано как блокировать объект в памяти приложения, и за счет чего достигается блокировка в базе
 toc: true
 permalink: en/fw_readonly-win.html
 folder: products/flexberry-winforms/

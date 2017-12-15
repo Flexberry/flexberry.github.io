@@ -2,6 +2,7 @@
 title: Приложение и рабочий стол
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Приведено описание рабочего стола приложения, рассмотрены возможности прикладного программиста по его настройке, полезные ссылки
 toc: true
 permalink: en/fw_app-desktop.html
 folder: products/flexberry-winforms/

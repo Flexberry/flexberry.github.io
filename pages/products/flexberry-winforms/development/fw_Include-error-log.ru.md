@@ -2,6 +2,7 @@
 title: Как включить лог ошибок
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Windows UI (формы), Развёртывание
+summary: Указано как включить лог ошибок в конфигурационном файле
 toc: true
 permalink: ru/fw_include-error-log.html
 folder: products/flexberry-winforms/

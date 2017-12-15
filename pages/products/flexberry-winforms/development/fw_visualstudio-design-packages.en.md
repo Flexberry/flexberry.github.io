@@ -2,6 +2,7 @@
 title: Настройка отладочных пакетов и выбор активного отладочного пакета
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Показано как задать отладочный пакет, т.е. указать классы данных, представления и т.д. для удобства настройки свойств контролов в `DesignTime`
 toc: true
 permalink: en/fw_visualstudio-design-packages.html
 folder: products/flexberry-winforms/

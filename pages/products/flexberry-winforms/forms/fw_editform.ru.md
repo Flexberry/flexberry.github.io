@@ -2,6 +2,7 @@
 title: Формы редактирования (классы со стереотипом editform) 
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
+summary: Описано создание формы редактирования в среде  Flexberry Designer и указано, что будет сгенерировано в коде формы в зависимости от указанных в дизайнере свойств
 toc: true
 permalink: ru/fw_editform.html
 folder: products/flexberry-winforms/

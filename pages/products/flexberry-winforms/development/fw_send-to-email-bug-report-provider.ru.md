@@ -2,6 +2,7 @@
 title: Отправка сообщения об ошибке по электронной почте
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Описана возможность отправить письмо с сообщением об ошибке в приложении и указаны необходимые настройки в конфигурационном файле приложения
 toc: true
 permalink: ru/fw_send-to-email-bug-report-provider.html
 folder: products/flexberry-winforms/

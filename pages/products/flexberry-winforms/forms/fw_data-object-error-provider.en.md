@@ -2,6 +2,7 @@
 title: DataObjectErrorProvider
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Описан компонент DataObjectErrorProvider, позволяющий осуществлять проверку и подсветку полей на форме редактирования, ссылки на статьи по его использованию в конкретных сценариях
 toc: true
 permalink: en/fw_data-object-error-provider.html
 folder: products/flexberry-winforms/

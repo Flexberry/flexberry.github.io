@@ -2,6 +2,7 @@
 title: Работа с меню в главной форме приложения
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
+summary: На примере рассмотрено как изменять элементы меню на главной форме приложения
 toc: true
 permalink: ru/fw_work-with-menu-in-main-form-app.html
 folder: products/flexberry-winforms/

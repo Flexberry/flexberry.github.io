@@ -2,6 +2,7 @@
 title: Определение доступных для редактирования полей для одной формы, но разных приложений
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Представлены варианты решения задачи доступности разных полей для одной и той же формы в разных приложениях, рассмотрен подробный пример с пошаговым объяснением
 toc: true
 permalink: ru/fw_different-applications-and-fields.html
 folder: products/flexberry-winforms/

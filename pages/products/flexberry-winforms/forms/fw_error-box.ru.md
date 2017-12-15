@@ -2,6 +2,7 @@
 title: ErrorBox
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Рассматриваются способы обработки ошибочных ситуаций в приложении, указаны способы изменения стандартного поведения в прикладном коде
 toc: true
 permalink: ru/fw_error-box.html
 folder: products/flexberry-winforms/

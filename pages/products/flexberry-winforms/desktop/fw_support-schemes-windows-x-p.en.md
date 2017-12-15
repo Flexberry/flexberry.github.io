@@ -2,6 +2,7 @@
 title: Поддержка схем Windows XP
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Указано как включить поддержку схем пользовательских интерфейсов `Windows XP`, например, «мягкие» кнопки, градиентные заливки на закладках и т.д., пример
 toc: true
 permalink: en/fw_support-schemes-windows-x-p.html
 folder: products/flexberry-winforms/

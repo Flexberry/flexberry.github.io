@@ -2,6 +2,7 @@
 title: Детейл в качестве мастера
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: Описан порядок действий при необходимости сделать детейл мастером другого объекта и иметь возможность выбирать объекты-детейлы со списковой формы, указаны возможные проблемы
 toc: true
 permalink: en/fw_detail-as-master.html
 folder: products/flexberry-winforms/

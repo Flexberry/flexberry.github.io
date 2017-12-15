@@ -2,6 +2,7 @@
 title: Ярлыки рабочего стола
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Подробно рассмотрен механизм применения ярлыков, предназначенный для работы с экземплярами объектов данных с рабочего стола, указано как его применять, примеры
 toc: true
 permalink: en/fw_win-desktop-links.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: Несколько классов приложений в одной стадии
 sidebar: flexberry-winforms_sidebar
 keywords: Ключевые понятия
+summary: Указано что генерируется в приложении при наличии на диаграммах нескольких объектов со стереотипом application
 toc: true
 permalink: ru/fw_Several-classes-of-applications-in-a-single-stage.html
 folder: products/flexberry-winforms/

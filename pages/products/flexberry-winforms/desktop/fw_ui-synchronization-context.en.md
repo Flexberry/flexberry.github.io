@@ -2,6 +2,7 @@
 title: Запуск кода в основном потоке приложения из другого потока
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы), Windows UI (формы)
+summary: Указано что делать, если возникает необходимость запустить код в основном потоке приложения при отсутствии ссылки на контрол, созданный в этом потоке
 toc: true
 permalink: en/fw_ui-synchronization-context.html
 folder: products/flexberry-winforms/

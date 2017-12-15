@@ -2,6 +2,7 @@
 title: Настройка форм для приложения
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Конкретная реализация, ПНИПУ, Разработка
+summary: Рассмотрено два варианта единообразной обработки форм приложения. Использование класса `UniversalFormTuner` и обработка глобального события Load
 toc: true
 permalink: ru/fw_form-tuner.html
 folder: products/flexberry-winforms/

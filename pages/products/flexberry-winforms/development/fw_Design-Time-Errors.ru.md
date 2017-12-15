@@ -2,6 +2,7 @@
 title: Устранение неполадок в Design-Time
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Указаны сборки, которые должны быть установлены в GAC для верной работы в Design Time
 toc: true
 permalink: ru/fw_design-time-errors.html
 folder: products/flexberry-winforms/

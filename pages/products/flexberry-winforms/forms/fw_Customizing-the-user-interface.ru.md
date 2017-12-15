@@ -2,6 +2,7 @@
 title: Настройка пользовательского интерфейса
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Приведен перечень наиболее часто требуемых доработок пользовательского интерфейса, полученного в результате генерации кода
 toc: true
 permalink: ru/fw_customizing-the-user-interface.html
 folder: products/flexberry-winforms/

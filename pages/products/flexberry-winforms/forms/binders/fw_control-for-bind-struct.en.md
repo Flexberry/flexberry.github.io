@@ -2,6 +2,7 @@
 title: ControlForBindStruct
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Описано использование ControlForBindStruct для определения контрола для редактирования некоторого свойства
 toc: true
 permalink: en/fw_control-for-bind-struct.html
 folder: products/flexberry-winforms/

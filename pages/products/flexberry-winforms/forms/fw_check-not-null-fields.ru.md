@@ -2,6 +2,7 @@
 title: Проверка обязательных полей
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Рассказано как использовать DataObjectErrorProvider для проверки обязательности заполнения поля, не являющегося обязательным в модели, примеры
 toc: true
 permalink: ru/fw_check-not-null-fields.html
 folder: products/flexberry-winforms/
