@@ -349,7 +349,7 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 ### Запуск Windows-контейнеров в Windows Server 2016 и Windows 10 Professional
 
 Поддерживается [два режима запуска Windows-контейнеров](https://dev-ops-notes.ru/docker/windows-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D0%B8-docker/):
-* контейнер Windows Server -  контейнер запускается в рамках HOST ОС и использует ядро и общи ресурсы HOST-системы.
+* контейнер Windows Server -  контейнер запускается в рамках HOST ОС и использует ядро и общие ресурсы HOST-системы.
 * Hyper-V контейнер - контейнер запускается в рамках отдельной виртуальной машины Hyper-V.
 
 
