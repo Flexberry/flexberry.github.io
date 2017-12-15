@@ -336,11 +336,28 @@ docker run -d -p 80:80 --rm --name=apache2 kafnevod/altlinux.p8-apache2
 docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux.p8-apache2
 ```
 
+### docker для Windows
+
+Запуск Docker для Windews 8 и Windews Server 2012 возможен только в виртуальной машине Virtualbox.
+
+В Windeos 10 Professional и Windows Server 2016 появилась натиная поддержка Docker.
+
+### Запуск Linux-контейнеров в Windows Server 2016 и Windows 10 Professional
+
+При запуске Linux-контейнеров в HyperV создается виртуальная машина Linux, загружается Linux Moby и в рамках нее запускаются все Linux-контейнеры.
+
+### Запуск Windows-контейнеров в Windows Server 2016 и Windows 10 Professional
+
+Поддерживается [два режима запуска Windows-контейнеров](https://dev-ops-notes.ru/docker/windows-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D0%B8-docker/):
+* контейнер Windows Server -  контейнер запускается в рамках HOST ОС и использует ядро и общи ресурсы HOST-системы.
+* Hyper-V контейнер - контейнер запускается в рамках отдельной виртуальной машины Hyper-V.
+
+
 ## Ссылки на материалы для изучения
 
 ### Лекции, курсы, презентации, видео
 
-* [DOCKER: ВВЕДЕНИЕ В ТЕХНОЛОГИИ ВИРТУАЛИЗАЦИИ])https://dev-ops-notes.ru/docker/docker-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8/)
+* [DOCKER: ВВЕДЕНИЕ В ТЕХНОЛОГИИ ВИРТУАЛИЗАЦИИ](https://dev-ops-notes.ru/docker/docker-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8/)
 * [DOCKER: ПРОВЕРКА КОНТЕЙНЕРОВ НА БЕЗОПАСНОСТЬ](https://dev-ops-notes.ru/docker/docker-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%BE%D0%B2-%D0%BD%D0%B0-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81/)
 
 
@@ -360,20 +377,6 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 * [РАБОТА С КОНТЕЙНЕРАМИ В WINDOWS И DOCKER](https://dev-ops-notes.ru/docker/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D0%BC%D0%B8-%D0%B2-windows-%D0%B8-docker/)
 * [Docker: Windows и Linux в контейнерах на одной машине](https://blog.amartynov.ru/docker-windows-%D0%B8-linux-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B5/)
 
-
- 
-
-
-
-Docker: Windows и Linux в контейнерах на одной машине
-
-https://blog.amartynov.ru/docker-windows-%D0%B8-linux-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B0%D1%85-%D0%BD%D0%B0-%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B5/
-
- 
-
-Linux-контейнеры для Windows
-
-https://habrahabr.ru/company/microsoft/blog/339214/
 
 
 ### Рекомендованные книги
