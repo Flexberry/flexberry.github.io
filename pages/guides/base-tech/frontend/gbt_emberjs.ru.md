@@ -31,6 +31,7 @@ lang: ru
 
 * [Официальная документация по Ember.js](https://guides.emberjs.com/v2.16.0/)
 * [Официальная документация по Ember-CLI](https://ember-cli.com/user-guide/)
+* [Ember.js — идеальный фреймворк для веб приложений](https://medium.com/devschacht/graham-cox-ember-the-perfect-framework-for-web-applications-970e817ded98)
 * [Базовая структура приложения](http://emjs.ru/v2/getting-started/core-concepts/)
 * Состав приложения
     * [Маршрутизация](http://emjs.ru/v2/routing/)

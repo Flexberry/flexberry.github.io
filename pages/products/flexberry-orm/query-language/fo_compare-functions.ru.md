@@ -1,7 +1,8 @@
 ---
-title: FuncG, FuncGE, FuncL, FuncLE
+title: Функции сравнения
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, ограничения, funcG,  funcGEQ, funcL, funcLEQ
+summary: Построение выражений с функциями сравнения
 toc: true
 permalink: ru/fo_compare-functions.html
 ---

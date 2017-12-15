@@ -5,7 +5,7 @@ keywords: Flexberry Ember
 toc: true
 permalink: en/ef_object-list-view.html
 lang: en
-summary: Представлено описание контрола для просмотра списка объектов Flexberry Objectlistview.
+summary: Представлено описание контрола для просмотра списка объектов Flexberry Objectlistview
 ---
 
 ## Описание
@@ -178,6 +178,10 @@ export default ListFormRoute.extend({
   }
 });
 ```
+
+## Удаление элементов списка
+
+Для удаления элементов списка используется метод `beforeDeleteRecord`. Метод поддерживает асинхронный режим, тщ есть можно возвращать `promises` в качестве значения результата.
 
 ## Другие возможности
 
