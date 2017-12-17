@@ -1,14 +1,14 @@
 ---
-title: Настройка параметров чтения
+title: Настройка параметров чтения (LCS)
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, сервис данных
-summary: Параметры, применение и пример метода LoadingCustomizationStruct
+keywords: Flexberry ORM, сервис данных, lcs, ограничение, вычитка, фильтрация, loading
+summary: Настройка параметров выборки данных LoadingCustomizationStruct: тип данных, представление, ограничение, постраничная загрузка.
 toc: true
 permalink: ru/fo_loading-customization-struct.html
 lang: ru
 ---
 
-`LoadingCustomizationStruct` позволяет полностью настроить параметры [сервиса данных](fo_construction-ds.html) для операций чтения объектов данных.
+`LoadingCustomizationStruct` - это класс Flexberry ORM для задания параметров выборки данных (в т.ч. ограничение), реализующий собственное API, в отличие от альтернативного варианта на основе LINQ. `LoadingCustomizationStruct` позволяет полностью настроить параметры [сервиса данных](fo_construction-ds.html) для операций чтения объектов данных.
 
 Удобно создавать структуру `LoadingCustomizationStruct` с помощью статического метода `GetSimpleStruct`.
 
