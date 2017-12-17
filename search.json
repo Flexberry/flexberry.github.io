@@ -12,7 +12,7 @@ search: exclude
 "tags": "{{ page.tags }}",
 "keywords": "{{page.keywords}}",
 "url": "{{ page.url | remove: "/"}}",
-"summary": "{{page.summary | strip }}"
+"summary": "{{page.summary | strip | escape }}"
 },
 {% endunless %}
 {% endfor %}
@@ -24,7 +24,7 @@ search: exclude
 "tags": "{{ post.tags }}",
 "keywords": "{{post.keywords}}",
 "url": "{{ post.url }}",
-"summary": "{{post.summary | strip }}"
+"summary": "{{post.summary | strip | escape }}"
 }
 {% unless forloop.last %},{% endunless %}
 {% endfor %}
