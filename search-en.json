@@ -12,7 +12,7 @@ permalink: en/search.json
 "tags": "{{ page.tags }}",
 "keywords": "{{page.keywords}}",
 "url": "{{ page.url }}",
-"summary": "{{page.summary | strip }}"
+"summary": "{{page.summary | strip | escape }}"
 },
 {% endunless %}{% endif %}{% endfor %}
 
@@ -23,7 +23,7 @@ permalink: en/search.json
 "tags": "{{ post.tags }}",
 "keywords": "{{post.keywords}}",
 "url": "{{ post.url }}",
-"summary": "{{post.summary | strip }}"
+"summary": "{{post.summary | strip | escape }}"
 }
 {% unless forloop.last %},{% endunless %}
 {% endif %}
