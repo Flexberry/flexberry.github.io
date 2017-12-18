@@ -4,9 +4,8 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_read-only-form.html
-folder: products/ember-flexberry/forms/
 lang: en
-summary: Данная возможность позволяет открыть ember-форму только на чтение.
+summary: Данная возможность позволяет открыть ember-форму только на чтение
 ---
 
 ## Описание

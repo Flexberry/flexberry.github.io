@@ -5,7 +5,7 @@ keywords: Flexberry Ember
 toc: true
 permalink: en/ef_template.html
 lang: en
-summary: Представлена основная информация о структуре handlebars-шаблонов в ember-flexberry-приложениях.
+summary: Представлена основная информация о структуре handlebars-шаблонов в ember-flexberry-приложениях
 ---
 
 ## Описание
