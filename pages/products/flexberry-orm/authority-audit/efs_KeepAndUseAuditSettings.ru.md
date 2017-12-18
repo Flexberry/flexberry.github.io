@@ -22,11 +22,11 @@ lang: ru
 Общие настройки аудита находятся в классе `AuditService`, куда вычитываются в начале работы приложения.
 
 Общие настройки аудита (`AuditAppSetting`):
-* `AppName` – имя приложения (используется [сервисом аудита](audit-win-service.html))
+* `AppName` – имя приложения (используется [сервисом аудита](efs_audit-win-service.html))
 * `AuditEnabled` – включён ли аудит в приложении.
-* `IsDatabaseLocal` – [используется ли аудитом локальная база данных](data-service-for-audit.html) (то есть БД приложения совмещена с БД аудита).
-* `AuditConnectionStringName` – [имя cтроки подключения к БД аудита](data-service-for-audit.html).
-* `AuditWinServiceUrl` – url, где располагается [сервис аудита](audit-win-service.html).
+* `IsDatabaseLocal` – [используется ли аудитом локальная база данных](efs_data-service-for-audit.html) (то есть БД приложения совмещена с БД аудита).
+* `AuditConnectionStringName` – [имя cтроки подключения к БД аудита](efs_data-service-for-audit.html).
+* `AuditWinServiceUrl` – url, где располагается [сервис аудита](efs_audit-win-service.html).
 * `WriteSessions` – следует ли сохранять сведения о сессиях пользователей.
 
 ## Настройки класса и настройки полей  (AuditClassSetting и AuditFieldSetting)
@@ -45,7 +45,7 @@ lang: ru
 * `bool Compress ` – следует ли сжимать сохраняемые значения полей ('''не используется''').
 * `bool KeepAllValues` – следует ли сохранять только изменяемые поля из представления, либо все поля, входящие в представление ('''не используется''').
 * `IAudit [AuditClassService](rights-and-audit-subsystems.html)` - реализация интерфейса `[IAudit](i-audit.html)`, через который необходимо производить аудит конкретного класса.
-* `string [AuditClassConnectionStringName](rights-and-audit-subsystems.html)` - [имя строки подключения к БД, посредством которой необходимо писать аудит](data-service-for-audit.html).
+* `string [AuditClassConnectionStringName](rights-and-audit-subsystems.html)` - [имя строки подключения к БД, посредством которой необходимо писать аудит](efs_data-service-for-audit.html).
 
 ```cs
 namespace ICSSoft.STORMNET.Security
@@ -192,7 +192,7 @@ namespace ICSSoft.STORMNET.Security
 * `ConnString` – строка соединения сервиса.
 * `ConnStringName` – имя строки соединения (имя задаётся программистом для идентификации сервиса данных; далее в конфиге сервиса аудита будет использоваться это имя).
 
-Сервис данных, когда им была выявлена потенциально аудируемая операция, сообщает об этом классу `AuditService`. Если класс `AuditService` принял решение о том, что необходимо провести запись данных аудита, то среди отправляемой [сервису аудита](audit-win-service.html) информации будет имя строки подключения к базе данных приложения ([имя строки подключения определяется](data-service-for-audit.html) из `AuditDSSetting` на основании того, какой сервис данных и с какой строкой подключения обратился к классу `AuditService`).
+Сервис данных, когда им была выявлена потенциально аудируемая операция, сообщает об этом классу `AuditService`. Если класс `AuditService` принял решение о том, что необходимо провести запись данных аудита, то среди отправляемой [сервису аудита](efs_audit-win-service.html) информации будет имя строки подключения к базе данных приложения ([имя строки подключения определяется](efs_data-service-for-audit.html) из `AuditDSSetting` на основании того, какой сервис данных и с какой строкой подключения обратился к классу `AuditService`).
 
 # Алгоритм определения актуальных настроек аудита
 Схема определения, является ли операция аудируемой для класса (с учётом запланированных доработок):
@@ -206,7 +206,7 @@ namespace ICSSoft.STORMNET.Security
 
 # Чтение настроек
 `[AuditService](flexberry-audit-components.html)` основные настройки классов объектов получает непосредственно из классов через `reflection`.
-Общие настройки аудита приложения загружаются в `[AuditService](flexberry-audit-components.html)` в начале работы web-приложения в Global.asax.cs, откуда идёт обращение к специализированному классу `[Инициализация аудита](audit-setter.html)`, который отвечает за формирование настроек из config-файла и первичную инициализацию `[AuditService](flexberry-audit-components.html)`.
+Общие настройки аудита приложения загружаются в `[AuditService](flexberry-audit-components.html)` в начале работы web-приложения в Global.asax.cs, откуда идёт обращение к специализированному классу `[Инициализация аудита](efs_audit-setter.html)`, который отвечает за формирование настроек из config-файла и первичную инициализацию `[AuditService](flexberry-audit-components.html)`.
 
 Схема чтения настроек для `AuditService`:
 

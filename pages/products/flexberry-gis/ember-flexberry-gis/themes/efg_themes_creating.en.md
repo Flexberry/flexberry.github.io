@@ -11,4 +11,4 @@ summary: The description of creating new themes
 
 ## Creating themes in addon
 
-[Base topic](ef_themes_creating.html#ember-flexberry-1)
+[Base topic](ef_themes_creating.html)

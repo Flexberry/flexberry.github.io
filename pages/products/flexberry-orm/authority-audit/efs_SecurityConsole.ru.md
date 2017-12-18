@@ -25,8 +25,8 @@ lang: ru
 * [Сценарии использования подсистемы полномочий](rights-scenarios.html).
 * [RightService-Flexberry-Rights|Сервис полномочий Flexberry Rights (CheckingLibrary)]
 * [Подсистема полномочий в WEB](fa_right-manager.html).
-* [Проверка сложности пароля в консоли безопасности](checking-password-complexity-in-security-console.html)
-* [Добавление пользователей в БД системы полномочий при windows-аутентификации](authentication-adapter.html).
+* [Проверка сложности пароля в консоли безопасности](efs_checking-password-complexity-in-security-console.html)
+* [Добавление пользователей в БД системы полномочий при windows-аутентификации](fa_authentication-adapter.html).
 * [Плагины в подсистеме полномочий](security-system-plugins.html)
 * [c:Полномочия|Все статьи категории "Полномочия"].
 

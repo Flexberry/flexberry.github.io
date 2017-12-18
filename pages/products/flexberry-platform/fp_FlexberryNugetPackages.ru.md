@@ -115,14 +115,14 @@ lang: ru
 * Microsoft.Interop.Security.AzRoles.dll
 
 
-## [Flexberry Audit](audit-web.html)
-Пакет содержит компоненты [подсистемы аудита](audit-web.html).
+## [Flexberry Audit](fa_audit-web.html)
+Пакет содержит компоненты [подсистемы аудита](fa_audit-web.html).
 
 Сборки, входящие в пакет:
 * ICSSoft.STORMNET.Business.Audit.dll
 
-## [Flexberry Audit WinForms](audit-win-forms.html)
-Пакет содержит [WinForms-компоненты подсистемы аудита](audit-win-forms.html).
+## Flexberry Audit WinForms
+Пакет содержит [WinForms-компоненты подсистемы аудита](efs_audit-win-forms.html).
 
 Сборки, входящие в пакет:
 * ICSSoft.STORMNET.Business.Audit(WinForms).dll

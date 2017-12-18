@@ -6,7 +6,7 @@ toc: true
 permalink: ru/efs_audit-web-api.html
 lang: ru
 ---
-(((Данная статья относится к [новому аудиту](audit-web.html))))
+(((Данная статья относится к [новому аудиту](fa_audit-web.html))))
 
 # API и IAuditService
 Интерфейс API подсистемы аудита содержится в классе `IAuditService` и предназначен для фиксирования собственных операций аудита.
