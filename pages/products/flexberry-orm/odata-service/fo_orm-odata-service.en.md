@@ -414,7 +414,7 @@ public static Exception AfterInternalServerError(Exception e, ref HttpStatusCode
 }
 ```
 
- ## Фильтрация в пользовательских OData-функциях
+## Фильтрация в пользовательских OData-функциях
 
 Пример использования в пользовательских OData-функциях структуры LCS, которая создана из строки запроса OData:
 
