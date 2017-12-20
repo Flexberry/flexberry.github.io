@@ -64,6 +64,15 @@ entries:
       url: /efd_query-language.html
       output: web, pdf
 
+  - title: Work with files
+    title_ru: Работа с файлами
+    output: web, pdf
+    folderitems:
+    - title: Work with files support
+      title_ru: Поддержка работы с файлами
+      url: /efd_work-files.html
+      output: web, pdf
+
   - title: Offline
     title_ru: Офлайн
     output: web, pdf

@@ -12,13 +12,13 @@ lang: ru
 
 ## Объекты данных в модели
 
-[Классы объектов данных](fo_data-object-structure.html) описываются на [диаграмме классов](fd_class-diagram-constraction.html) в [Flexberry Designer](fd_landing_page.html) и имеют стереотип [implementation](fd_data-classes.html). При описании объекта данных задаются [атрибуты](fo_attributes-class-data.html), связи и метаданные. 
+[Классы объектов данных](fo_data-object-structure.html) описываются на [диаграмме классов](fd_class-diagram-constraction.html) в [Flexberry Designer](fd_landing_page.html) и имеют стереотип [implementation](fd_data-classes.html). При описании объекта данных задаются [атрибуты](fo_attributes-class-data.html), связи и метаданные.
 
 Атрибуты объекта данных могут быть двух типов стандартные (описанные на диаграмме) и динамические [динамические свойства объекта данных](fo_dynamic-properties.html). В случае если значение атрибута не предполагается размещать в хранилище, он может быть объявлен как [нехранимый](fo_not-stored-attributes.html). При описании атрибутов им могут быть присвоены [значения по умолчанию](fo_features-dafault-value.html).
 
 Также в Flexberry ORM поддерживаются несколько видов связей: [наследование](fd_inheritance.html), [мастеровые](fd_master-association.html) и [детейловые](fo_detail-associations-properties.html) связи.
 
-К объектам данным может быть привязана дополнительная информация (метаинформация), например, [представления](fd_view-definition.html) или [изображение](fo_class-image.html). 
+К объектам данным может быть привязана дополнительная информация (метаинформация), например, [представления](fd_view-definition.html) или [изображение](fo_class-image.html).
 
 Стереотип [implementation](fd_data-classes.html) является значением по умолчанию, т.е. при разработке диаграммы его можно не указывать, оставляя пустое значение.
 
@@ -34,7 +34,7 @@ lang: ru
 
 Объект данных может быть создан следующими способами:
 
-* Создание экземпляра класса стандартными средствами языка 
+* Создание экземпляра класса стандартными средствами языка
 * Загрузка из хранилища методами LoadObject/LoadObjects [сервиса данных](fo_data-service.html).
 * [Прототипирование](fo_data-object-prototype.html)
 * [Копирование](fo_copying-data-objects.html).
@@ -44,7 +44,7 @@ lang: ru
 
 Одним из основных атрибутов объекта является [ключ объекта](fo_primary-keys-objects.html), для доступа к которому используется свойство `PrimaryKey`. В большинстве случаев для ключа используется глобальный уникальный идентификатор (GUID), хотя при необходимости могут быть использованы другие типы.
 
-Наиболее часто встречаются следующие задачи обработки объектов данных: 
+Наиболее часто встречаются следующие задачи обработки объектов данных:
 
 * [Изменение значений атрибутов](fo_own-object-attributes.html).
 * [Получение информации о статусе объекта](fo_processing-status-condition-load.html).
@@ -73,14 +73,14 @@ __Сигнатура__:
 DataObject ICSSoft.STORMNET.DataObject.GetDataCopy()
 ```
 
-#### InitDataCopy 
+#### InitDataCopy
 
 __Назначение__: Проинициализировать копию данных
 
 __Параметры__:
- 
-`DataObjectCache` 
- 
+
+`DataObjectCache`
+
 __Сигнатура__:
 
 ```csharp
@@ -96,20 +96,20 @@ void ICSSoft.STORMNET.DataObject.InitDataCopy(DataObjectCache DataObjectCache)
 __Назначение__: Установить внутреннюю копию объекта данных
 
 __Параметры__:
- 
-`value` - Устанавливаемый объект как копия существующего 
- 
+
+`value` - Устанавливаемый объект как копия существующего
+
 __Сигнатура__:
 
 ```csharp
-void ICSSoft.STORMNET.DataObject.SetDataCopy (DataObject value) 
+void ICSSoft.STORMNET.DataObject.SetDataCopy (DataObject value)
 ```
 
 ### Получение и установка состояния объекта
 
 #### ContainsAlteredProps
 
-__Назначение__: Установить было ли изменение значений свойств объекта по сравнению с внутренней копией 
+__Назначение__: Установить было ли изменение значений свойств объекта по сравнению с внутренней копией
 
 __Сигнатура__:
 
@@ -117,7 +117,7 @@ __Сигнатура__:
 bool ICSSoft.STORMNET.DataObject.ContainsAlteredProps()
 ```
 
-#### GetAlteredPropertyNames 
+#### GetAlteredPropertyNames
 
 __Назначение__: Возвращает список свойств (атрибутов, мастеров, детейлов), значения которых изменились по сравнению с внутренней копией объекта.
 
@@ -132,9 +132,9 @@ string[] ICSSoft.STORMNET.DataObject.GetAlteredPropertyNames()
 __Назначение__: Вернуть список незаполненных полей (значения не могут быть пустыми согласно модели данных)
 
 __Параметры__:
-    
+
 * `detailSkip` - Пропускать при проверке удаленные детейлы. Словарь со списком типов детейлов и флагами для них. Если детейла нет в словаре или значение для него False, то проверка детейла не будет пропущена. Параметр может иметь значение null.
-* `view` - Представление, по свойствам которого происходит проверка и возвращение заголовков свойств. 
+* `view` - Представление, по свойствам которого происходит проверка и возвращение заголовков свойств.
 * `returnCaptions` - true при необходимости вернуть заголовки свойств из представления, а не имена свойств, false в противном случае.
 
 __Сигнатура__:
@@ -158,9 +158,9 @@ public string[] CheckNotNullProperties(View view, bool returnCaptions, Dictionar
 __Назначение__: Получение значения статуса объекта
 
 __Параметры__:
- 
+
 `recountIfAutoaltered` - обновить значение принудительно (если класс с автоматическим вычислением статуса)
- 
+
 __Сигнатура__:
 
 ```csharp
@@ -171,14 +171,14 @@ ObjectStatus ICSSoft.STORMNET.DataObject.GetStatus()
 ObjectStatus ICSSoft.STORMNET.DataObject.GetStatus(bool recountIfAutoaltered)
 ```
 
-#### SetLoadingState 
+#### SetLoadingState
 
 __Назначение__: Установка состояния загрузки.
 
 __Параметры__:
- 
-`newState` - Состояние загрузки, устанавливаемое объекту. 
- 
+
+`newState` - Состояние загрузки, устанавливаемое объекту.
+
 __Сигнатура__:
 
 ```csharp
@@ -190,9 +190,9 @@ void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 __Назначение__: Установка состояния загрузки.
 
 __Параметры__:
- 
-`newState` - Состояние загрузки, устанавливаемое объекту. 
- 
+
+`newState` - Состояние загрузки, устанавливаемое объекту.
+
 __Сигнатура__:
 
 ```csharp
@@ -204,9 +204,9 @@ void ICSSoft.STORMNET.DataObject.SetLoadingState (LoadingState newState)
 __Назначение__: Установка статуса
 
 __Параметры__:
- 
+
 `newState` - Статус, устанавливаемый объекту.
- 
+
 __Сигнатура__:
 
 ```csharp
@@ -220,15 +220,15 @@ virtual void ICSSoft.STORMNET.DataObject.SetStatus (ObjectStatus newState)
 __Назначение__: Создать копию объекта данных. Если полученный в результате копирования объект планируется поместит в хранилище, у него необходимо   вызвать методы `InitDataCopy` или `ClearDataCopy`.
 
 __Параметры__:
-    
+
 * `toObject` = объект данный, в который  
-* `CreateDataObjectsCopy` - true - создавать копии связанных объектов, false - ограничиться копированием ссылки 
-* `PrimaryKeyCopy` - true - копировать первичные ключи 
-* `UseParentCaching` - использовать ранее установленное кеширование 
+* `CreateDataObjectsCopy` - true - создавать копии связанных объектов, false - ограничиться копированием ссылки
+* `PrimaryKeyCopy` - true - копировать первичные ключи
+* `UseParentCaching` - использовать ранее установленное кеширование
 
 __Сигнатура__:
 
-```csharp 
+```csharp
   virtual void ICSSoft.STORMNET.DataObject.CopyTo(DataObject toObject,  
   bool  CreateDataObjectsCopy,  
   bool  PrimaryKeyCopy,  
@@ -241,9 +241,9 @@ __Сигнатура__:
 __Назначение__: Прототипизировать
 
 __Параметры__:
- 
+
 `withDetails` - с детейлами или без
- 
+
 __Сигнатура__:
 
 ```csharp virtual void ICSSoft.STORMNET.DataObject.Prototyping()
@@ -255,9 +255,9 @@ virtual void ICSSoft.STORMNET.DataObject.Prototyping(bool withDetails)
 __Назначение__: Установить первичный ключ в объект данных. Выполняется операция Clear() для объекта, присваивается первичный ключ, SetLoadingState(LoadingState.LightLoaded); SetLoadedProperties("__PrimaryKey");
 
 __Параметры__:
- 
-`primaryKey` - первичный ключ 
- 
+
+`primaryKey` - первичный ключ
+
 __Сигнатура__:
 
 ```csharp
@@ -266,14 +266,14 @@ void ICSSoft.STORMNET.DataObject.SetExistObjectPrimaryKey (object primaryKey)
 
 ### Блокировка объекта
 
-#### LockObject 
+#### LockObject
 
 __Назначение__: Заблокировать объект
 
 __Параметры__:
- 
+
 `key` - ключ блокировки объекта
- 
+
 __Сигнатура__:
 
 ```csharp
@@ -285,9 +285,9 @@ void ICSSoft.STORMNET.DataObject.LockObject(object key)
 __Назначение__: Разблокировать объект
 
 __Параметры__:
- 
+
 `key` - ключ блокировки объекта.
- 
+
 __Сигнатура__:
 
 ```csharp

@@ -2,9 +2,9 @@
 title: Файлы в odata
 sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember, odata, файлы
-summary: Особенности работы с файлами через odata
+summary: Особенности работы с файлами через OData-сервис
 toc: true
-permalink: ru/efd_work-fiels.html
+permalink: ru/efd_work-files.html
 lang: ru
 ---
 
@@ -445,7 +445,7 @@ public Task<FileDescription> Post()
 }
 ```
 
-Также в обработчике предусмотрена возможность, при загрузке очередного файла, удалить ранее загруженный файл, который не пригодился (например пользователь выбрал один файл, загрузил его на сервер, но еще не связывал с объектом данных, а потом передумал и решил загрузить какой-то другой файл) в этом случае можно отправить в теле запроса, в свойстве `formData.previousFileDescription` ранее загруженного файла, и он будет удален из файловой системы сервера, после успешной загрузки нового файла (ранее упомянутый компонент компонент [flexberry-file](ef_file.html) так и делает, указывает `formData.previousFileDescription` при необходимости).
+Также в обработчике предусмотрена возможность, при загрузке очередного файла, удалить ранее загруженный файл, который не пригодился (например пользователь выбрал один файл, загрузил его на сервер, но еще не связывал с объектом данных, а потом передумал и решил загрузить какой-то другой файл) в этом случае можно отправить в теле запроса, в свойстве `formData.previousFileDescription` ранее загруженного файла, и он будет удален из файловой системы сервера, после успешной загрузки нового файла (ранее упомянутый компонент [flexberry-file](ef_file.html) так и делает, указывает `formData.previousFileDescription` при необходимости).
 
 ### Привязка файла к свойству объекта данных
 Файл просто загруженный в файловую систему сервера, сам по себе не представляет большой ценности, нужно еще связать его с файловым свойством объекта данных. Этим занимается `DataObjectController`, обеспечивающий всю работу с объектами данных в OData-сервисе, при обработке создания/обновления объектов данных.
@@ -514,7 +514,9 @@ if (FileController.HasDataObjectFileProvider(dataObjectPropertyType))
     }
 ```
 
-Если бы свойство `file` имело тип `ICSSoft.STORMNET.FileType.WebFile` смысл был бы тот же самый, только файл бы не преобразовывался в base64-строку и не удалялся бы потом из файловой системы, а так бы и остался на "постоянном месте жительства" по пути "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png".
+Как видно из приведенной выше части кода `DataObjectController`-а, для удаления файла достаточно проставить `null` в качестве значения файлового свойства объекта данных (тогда, в случае успешного сохранения изменений, файловое свойство будет сброшено, а ассоциированный файл будет удален).
+
+Если бы свойство `file` имело тип `ICSSoft.STORMNET.FileType.WebFile` смысл был бы тот же самый, только файл бы не преобразовывался в base64-строку и не удалялся бы потом из файловой системы, а так бы и остался на "постоянном месте жительства" по пути "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png", а в файловом свойстве объекта данных (и соответственно в БД) сохранилось бы метаописание файла, содержащее URL-адрес файлового контроллера и fileUploadKey (`<Домен, на котором развернут OData-сервис>/api/File?fileUploadKey=0d57629c-7d6e-4847-97cb-9e2fc25083fe`).
 
 После успешного сохранения объекта данных, `DataObjectController` возвращает его на клиент в виде JSON-объекта, и после того как осуществлено связывание файла с файловым свойством в объекте данных, метаописание файла, которое вернется на клиент в свойстве `file` несколько изменится, в нем уже не будет ключа загрузки `fileUploadKey`, вместо него будут свойства указывающие на тип объекта данных, его первичный ключ, и имя свойства, в котором хранится файл:
 ```javascript
@@ -529,5 +531,78 @@ if (FileController.HasDataObjectFileProvider(dataObjectPropertyType))
 ```
 
 ### Скачивание файла
-* При наличии свойства `fileUploadKey` в метаописании
-* При наличии свойств `entityTypeName`, `entityPrimaryKey`, `entityPropertyName` в метаописании
+Скачивание файлов с сервера осуществляется обработчиком GET-запросов файлового контроллера:
+```csharp
+/// <summary>
+/// Осуществляет скачивание файлов с сервера.
+/// В зависимости от значения флага <paramref name="getPreview"/> возвращается либо содержимое файла, либо файл в виде приложения.
+/// </summary>
+/// <param name="fileDescription">Описание запрашиваемого файла.</param>
+/// <param name="getPreview">Параметр, определяющий, требуется ли файл просто для предпросмотра (если значение <c>true</c>), либо требуется его скачать и сохранить.</param>
+/// <returns>Описание загруженного файла.</returns>
+[HttpGet]
+public HttpResponseMessage Get([FromUri] FileDescription fileDescription = null, [FromUri] bool getPreview = false)
+```
+
+В качестве основного параметра обработчик принимает метаописание скачиваемого файла (`fileDescription`),
+а в качестве опционального параметра принимает флаг определяющий, требуется ли файл просто для предпросмотра, или же его требуется скачать в виде вложения с последующим сохранением на клиентском устройстве (`getPreview`), по умолчанию флаг имеет значение `false`, а значит по умолчанию запрашиваемые файлы будет скачиваться в виде вложения, но если этот флаг имеет значение `true`, то файл будет возвращаться в виде base64-строки представленной через [Data URL](https://ru.wikipedia.org/wiki/Data:_URL), в случае изображений такие данные можно подставлять в качестве атрибута `src` тега `img` (`<img src=...></img>`), в ранее упомянутом компоненте [flexberry-file](ef_file.html) так и реализован предпросмотр для файлов изображений.
+
+Получив метаописание файла, обработчик смотрит на состав свойств в нем, и в зависимости от состава действует немного по разному:
+* При наличии свойств `entityTypeName`, `entityPrimaryKey`, `entityPropertyName` в метаописании, обработчик понимает что файл уже был связан с объектом данных, вычитывает его, извлекает из него файловое свойство, и с помощью соответствующего свойству файлового провайдера извлекает поток данных файла (`FileStream`).
+* При наличии свойства `fileUploadKey` в метаописании, обработчик понимает что файл еще не был был связан с объектом данных, а значит хранится в файловой системе, в каталоге именуемом так же как `fileUploadKey`, значит не нужно предварительно вычитывать никакой объект данных, а можно сразу получить поток данных файла (`FileStream`). А поскольку тип `ICSSoft.STORMNET.FileType.WebFile` как раз хранит файлы в файловой системе по ключу `fileUploadKey`, обработчик использует `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectWebFileProvider` для этих целей.
+
+Часть логики обработчика отвечающая за получения потока данных файла, на основе метаописания выглядит следующим образом:
+```csharp
+/// <summary>
+/// Осуществляет получение потока данных для запрашиваемого файла (а также имя файла, MIME-тип, и размер в байтах).
+/// </summary>
+/// <param name="fileDescription">Описание файла.</param>
+/// <param name="fileName">Имя файла.</param>
+/// <param name="fileMimeType">MIME-тип файла.</param>
+/// <param name="fileSize">Размер файла в байтах.</param>
+/// <returns>Поток данных для запрашиваемого файла.</returns>
+private Stream GetFileStream(
+    FileDescription fileDescription,
+    out string fileName,
+    out string fileMimeType,
+    out long fileSize)
+{
+    if (fileDescription == null)
+    {
+        throw new ArgumentNullException(nameof(fileDescription));
+    }
+
+    Stream fileStream = null;
+    Type dataObjectType = null;
+    Type filePropertyType = null;
+
+    if (!string.IsNullOrEmpty(fileDescription.EntityPrimaryKey))
+    {
+        // Запрашиваемый файл уже был связан с объектом данных, и нужно вычитать из него файловое свойство.
+        dataObjectType = Type.GetType(fileDescription.EntityTypeName, true);
+        filePropertyType = Information.GetPropertyType(dataObjectType, fileDescription.EntityPropertyName);
+    }
+    else
+    {
+        // Запрашиваемый файл еще не был связан с объектом данных, а значит находится в каталоге загрузок,
+        // в подкаталоге с именем fileDescription.FileUplodKey.
+        // Получение файлов по ключу загрузки реализовано в DataObjectWebFileProvider.
+        filePropertyType = typeof(WebFile);
+    }
+
+    if (!HasDataObjectFileProvider(filePropertyType))
+    {
+        throw new Exception(string.Format("DataObjectFileProvider for \"{0}\" property type not found.", filePropertyType.AssemblyQualifiedName));
+    }
+
+    IDataObjectFileProvider dataObjectFileProvider = GetDataObjectFileProvider(filePropertyType);
+    object fileProperty = dataObjectFileProvider.GetFileProperty(fileDescription);
+
+    fileStream = dataObjectFileProvider.GetFileStream(fileProperty);
+    fileName = dataObjectFileProvider.GetFileName(fileProperty);
+    fileMimeType = dataObjectFileProvider.GetFileMimeType(fileProperty);
+    fileSize = fileStream.Length;
+
+    return fileStream;
+}
+```
