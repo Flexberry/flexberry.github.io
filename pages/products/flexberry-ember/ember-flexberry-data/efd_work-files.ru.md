@@ -12,6 +12,54 @@ lang: ru
 OData-сервис предоставляет возможность загружать какие-либо файлы на сервер, скачивать их, а также осуществлять их привязку к свойствам объектов данных.
 Клиентская часть, в свою очередь, содержит специальную трансформацию для представления файловых свойств на клиенте, и компонент [flexberry-file](ef_file.html) для работы с ними, далее подробнее.
 
+## Быстрый старт
+Если вам нужно по быстрому наладить работу с файлами через OData-сервис, не изучая всех подробностей того как в сервисе реализована работа с ними, то краткий алгоритм будет таким:
+* Проставьте файловому свойству .NET-класса объекта данных тип `ICSSoft.STORMNET.FileType.File` (если хотите хранить файлы в БД) или `ICSSoft.STORMNET.UserDataTypes.WebFile` (если хотите хранить файлы в файловой системе)
+* Проставьте файловому свойству ember-модели тип `DS.attr('file')`
+* В БД проставьте этому свойству тип `NVARCHAR(MAX)` (если работаете с MS SQL Server) или тип `TEXT` (если работаете с PostrgreSQL)
+* Зарегистрируйте файловый контроллер в OData-сервисе, прописав в классе `App_Start\ODataConfig.cs` в методе `Configure` следующую команду:
+  ```csharp
+  config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+  ```
+* В `hbs`-шаблоне ember-формы "скормите" файловое свойство объекта данных свойству `value` компонента [flexberry-file](ef_file.html) и сконфигурируйте компонент указав ему как минимум URL-для для загрузки файлов:
+  * Либо прямо в `hbs`-шаблоне:
+
+    Шаблон:
+    ```hbs
+    {% raw %}{{flexberry-file
+      value=model.filePropertyName
+      uploadUrl="<Адрес узла, на котором развернут OData-сервис>/api/File"
+    }}{% endraw %}
+    ```
+  * Либо `value` в шаблоне, а `uploadUrl` в конфигурационном файле приложения (чтобы не указывать его каждый раз, когда используем компонент):
+
+    Шаблон:
+    ```hbs
+    {% raw %}{{flexberry-file
+      value=model.filePropertyName
+    }}{% endraw %}
+    ```
+
+    Конфигурационный файл приложения (`config/environment.js`):
+    ```javascript
+    {
+      ...
+      APP: {
+        ...
+        components: {
+          flexberryFile: {
+            uploadUrl: '<Адрес узла, на котором развернут OData-сервис>/api/File'
+          }
+        }
+        ...
+      }
+      ...
+    }
+    ```
+* Успех! Работа с файлами через OData-сервис налажена.
+
+Если хотите знать подробности того как в OData-сервисе реализована работа с файлами, читайте продолжение статьи.
+
 ## Файловые свойства объектов данных в .NET и в СУБД
 Для работы с файлами в привязке к свойствам объектов данных, первое что необходимо сделать, это определиться с типом данных, который будет использоваться файловыми свойствами объектов данных.
 OData-сервис поддерживает два типа данных для таких свойств:
@@ -48,8 +96,8 @@ var Model = BaseModel.extend({
 });
 
 Model.defineProjection('SuggestionFileE', 'flexberry-ember-demo-suggestion-file', {
-order: Proj.attr('Order'),
-file: Proj.attr('File')
+  order: Proj.attr('Order'),
+  file: Proj.attr('File')
 });
 
 export default Model;
@@ -375,7 +423,7 @@ public static IHttpRoute MapODataServiceFileRoute(
 config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
 ```
 
-Этот вызов сопоставит файловый контроллер адресу `<Домен, на котором развернут OData-сервис>/api/File`, и зарегистрирует в контроллере файловые провайдеры `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectFileProvider` и `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectWebFileProvider`.
+Этот вызов сопоставит файловый контроллер адресу `<Адрес узла, на котором развернут OData-сервис>/api/File`, и зарегистрирует в контроллере файловые провайдеры `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectFileProvider` и `NewPlatform.Flexberry.ORM.ODataService.Files.Providers.DataObjectWebFileProvider`.
 
 Для регистрации файловых провайдеров контроллер содержит статический метод:
 ```csharp
@@ -516,7 +564,7 @@ if (FileController.HasDataObjectFileProvider(dataObjectPropertyType))
 
 Как видно из приведенной выше части кода `DataObjectController`-а, для удаления файла достаточно проставить `null` в качестве значения файлового свойства объекта данных (тогда, в случае успешного сохранения изменений, файловое свойство будет сброшено, а ассоциированный файл будет удален).
 
-Если бы свойство `file` имело тип `ICSSoft.STORMNET.FileType.WebFile` смысл был бы тот же самый, только файл бы не преобразовывался в base64-строку и не удалялся бы потом из файловой системы, а так бы и остался на "постоянном месте жительства" по пути "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png", а в файловом свойстве объекта данных (и соответственно в БД) сохранилось бы метаописание файла, содержащее URL-адрес файлового контроллера и fileUploadKey (`<Домен, на котором развернут OData-сервис>/api/File?fileUploadKey=0d57629c-7d6e-4847-97cb-9e2fc25083fe`).
+Если бы свойство `file` имело тип `ICSSoft.STORMNET.FileType.WebFile` смысл был бы тот же самый, только файл бы не преобразовывался в base64-строку и не удалялся бы потом из файловой системы, а так бы и остался на "постоянном месте жительства" по пути "~/Uploads/0d57629c-7d6e-4847-97cb-9e2fc25083fe/image.png", а в файловом свойстве объекта данных (и соответственно в БД) сохранилось бы метаописание файла, содержащее URL-адрес файлового контроллера и fileUploadKey (`<Адрес узла, на котором развернут OData-сервис>/api/File?fileUploadKey=0d57629c-7d6e-4847-97cb-9e2fc25083fe`).
 
 После успешного сохранения объекта данных, `DataObjectController` возвращает его на клиент в виде JSON-объекта, и после того как осуществлено связывание файла с файловым свойством в объекте данных, метаописание файла, которое вернется на клиент в свойстве `file` несколько изменится, в нем уже не будет ключа загрузки `fileUploadKey`, вместо него будут свойства указывающие на тип объекта данных, его первичный ключ, и имя свойства, в котором хранится файл:
 ```javascript
