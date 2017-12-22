@@ -445,10 +445,8 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 
     ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
     config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
-    Dictionary<string, Type> parametersTypes1 = new Dictionary<string, Type> { { "entitySet", typeof(string) } };
-    odataServiceManagementToken.Functions.Register(new Function("FunctionWithLcs1", FunctionWithLcs1, typeof(IEnumerable<DataObject>), parametersTypes1));
-    Dictionary<string, Type> parametersTypes2 = new Dictionary<string, Type> { { "entitySet", typeof(string) }, { "query", typeof(string) } };
-    odataServiceManagementToken.Functions.Register(new Function("FunctionWithLcs2", FunctionWithLcs2, typeof(int), parametersTypes2));
+    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, IEnumerable<DataObject>>(FunctionWithLcs1));
+    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, string, int>(FunctionWithLcs2));    
 }
 
 /// <summary>
@@ -458,10 +456,10 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <param name="queryParameters"></param>
 /// <param name="parameters"></param>
 /// <returns></returns>
-private static object FunctionWithLcs1(QueryParameters queryParameters, IDictionary<string, object> parameters)
+private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryParameters, string entitySet)
 {
     SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
-    var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
+    var type = queryParameters.GetDataObjectType(entitySet);
     var lcs = queryParameters.CreateLcs(type);
     var dobjs = dataService.LoadObjects(lcs);
     return dobjs.AsEnumerable();
@@ -474,11 +472,11 @@ private static object FunctionWithLcs1(QueryParameters queryParameters, IDiction
 /// <param name="queryParameters"></param>
 /// <param name="parameters"></param>
 /// <returns></returns>
-private static object FunctionWithLcs2(QueryParameters queryParameters, IDictionary<string, object> parameters)
+private static int FunctionWithLcs2(QueryParameters queryParameters, string entitySet, string query)
 {
     SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
-    var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
-    var uri = $"http://a/b/c?{parameters["query"]}";
+    var type = queryParameters.GetDataObjectType(entitySet);
+    var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
     var dobjs = dataService.LoadObjects(lcs);
     return dobjs.Length;
@@ -516,8 +514,7 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 
     ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
     config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
-    Dictionary<string, Type> parametersTypes = new Dictionary<string, Type> { { "entitySet", typeof(string) }, { "query", typeof(string) } };
-    odataServiceManagementToken.Functions.Register(new NewPlatform.Flexberry.ORM.ODataService.Functions.Action("ActionWithLcs", ActionWithLcs, typeof(IEnumerable<DataObject>), parametersTypes));
+    odataServiceManagementToken.Functions.RegisterAction(new Func<QueryParameters, string, string, IEnumerable<DataObject>>(ActionWithLcs));
 }
 
 /// <summary>
@@ -528,11 +525,11 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 /// <param name="queryParameters"></param>
 /// <param name="parameters"></param>
 /// <returns></returns>
-private static object ActionWithLcs(QueryParameters queryParameters, IDictionary<string, object> parameters)
+private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParameters, string entitySet, string query)
 {
     SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
-    var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
-    var uri = $"http://a/b/c?{parameters["query"]}";
+    var type = queryParameters.GetDataObjectType(entitySet);
+    var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
     var dobjs = dataService.LoadObjects(lcs);
     return dobjs.AsEnumerable();
