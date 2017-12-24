@@ -2,6 +2,7 @@
 title: Упрощенный вид редактора ограничений
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Ограничения
+summary: Описан упрощенный вид редактора ограничений
 toc: true
 permalink: en/fw_limit-editor-simple-view.html
 folder: products/flexberry-winforms/

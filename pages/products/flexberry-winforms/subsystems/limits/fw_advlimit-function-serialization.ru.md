@@ -2,6 +2,7 @@
 title: Сохранение ограничений на форме задания ограничения 
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Windows UI (формы), Ограничения, Черновик статьи
+summary: Перечислены методы класса `ICSSoft.STORMNET.Windows.Forms.Utils` для сериализации-десериализации; указано какие из них применяются для функции ограничения, приведены примеры; описана проблема десериализации ограничений при использовании  подписанных и неподписанных сборок, указан подход к решению
 toc: true
 permalink: ru/fw_advlimit-function-serialization.html
 folder: products/flexberry-winforms/

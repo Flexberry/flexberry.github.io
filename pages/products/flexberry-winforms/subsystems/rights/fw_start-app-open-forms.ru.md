@@ -2,7 +2,7 @@
 title: Разрешение на запуск приложения и открытие форм
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms 
-summary: 
+summary: Указано как добавлять пользователю те или иные полномочия
 toc: true
 permalink: ru/fw_start-app-open-forms.html
 lang: ru

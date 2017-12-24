@@ -2,6 +2,7 @@
 title: Подсистема настроек
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: Описана работа с подсистемой хранения настроек пользователя с помощью класса SettingManager; указано как включить хранение настроек, какие методы использовать для записи и чтения настроек
 toc: true
 permalink: en/fw_setting-manager.html
 folder: products/flexberry-winforms/

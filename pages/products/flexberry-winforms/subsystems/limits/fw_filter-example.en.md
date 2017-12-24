@@ -2,6 +2,7 @@
 title: Пример использования AdvLimit и создания FilterSettings
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: Описание формы задания пользовательских ограничений, и указание как настроить её для обеспечения возможности накладывать ограничения по детейлам
 toc: true
 permalink: en/fw_filter-example.html
 folder: products/flexberry-winforms/

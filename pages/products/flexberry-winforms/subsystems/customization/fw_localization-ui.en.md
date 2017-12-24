@@ -2,6 +2,7 @@
 title: Локализация пользовательского интерфейса
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Указано как в приложении установить локализацию
 toc: true
 permalink: en/fw_localization-ui.html
 folder: products/flexberry-winforms/

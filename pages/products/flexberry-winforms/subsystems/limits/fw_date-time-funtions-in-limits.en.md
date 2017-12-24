@@ -2,6 +2,7 @@
 title: Функции для работы с датой при задании ограничений
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: Список функций для работы с датой при задании ограничений, пример применения в коде
 toc: true
 permalink: en/fw_date-time-funtions-in-limits.html
 folder: products/flexberry-winforms/

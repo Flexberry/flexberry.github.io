@@ -2,6 +2,7 @@
 title: Фильтры и ограничения
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ограничения
+summary: Объясняются понятия, связанные с понятиями фильтров и ограничений
 toc: true
 permalink: ru/fw_filtersand-limits.html
 folder: products/flexberry-winforms/

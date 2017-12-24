@@ -2,6 +2,7 @@
 title: Функции для работы с датами в "стандартном виде"
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: Описана возможность редактора ограничений применять функции для атрибутов, которые имеют тип "Дата"
 toc: true
 permalink: ru/fw_date-limits-standart-view.html
 folder: products/flexberry-winforms/

@@ -2,6 +2,7 @@
 title: Копирование / вставка ветки ограничений (сохранение и загрузка из файла)) 
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ограничения
+summary: Описана возможность редактора ограничений по сохранению и загрузке ветви ограничений из файла
 toc: true
 permalink: ru/fw_copy-paste-limitation-branch.html
 folder: products/flexberry-winforms/

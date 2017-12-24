@@ -2,6 +2,7 @@
 title: Визуальная логика
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Перечислены наиболее часто применяемые на прикладных проектах варианты доработки визуальной логики, приведены ссылки на статьи по реализации данных возможностей
 toc: true
 permalink: en/fw_visual-logic.html
 folder: products/flexberry-winforms/

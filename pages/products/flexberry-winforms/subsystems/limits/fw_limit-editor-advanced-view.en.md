@@ -2,6 +2,7 @@
 title: Расширенный вид редактора ограничений
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Windows UI (Контролы)
+summary: Описание основных возможностей расширенного вида редактора ограничений в win-приложении
 toc: true
 permalink: en/fw_limit-editor-advanced-view.html
 folder: products/flexberry-winforms/

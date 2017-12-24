@@ -2,6 +2,7 @@
 title: Flexberry Winforms
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: Ссылки на основные статьи по Flexberry Winforms
 toc: true
 permalink: ru/fw_landing_page.html
 folder: products/flexberry-winforms/

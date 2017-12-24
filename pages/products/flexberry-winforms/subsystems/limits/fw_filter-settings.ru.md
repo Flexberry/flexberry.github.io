@@ -2,6 +2,7 @@
 title: Настройки фильтров
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Ограничения
+summary: Описание задания настроек фильтров при помощи специального приложения AdmConsole и в коде
 toc: true
 permalink: ru/fw_filter-settings.html
 folder: products/flexberry-winforms/

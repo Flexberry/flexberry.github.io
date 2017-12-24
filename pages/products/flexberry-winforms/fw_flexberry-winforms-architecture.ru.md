@@ -2,6 +2,7 @@
 title: Базовая системно-технологическая архитектура Flexberry Winforms
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ключевые понятия
+summary: Расписаны три логических уровня прикладных систем, создаваемых на базе `Flexberry Platform`, дано краткое описание основных терминов, применяемых в технологии
 toc: true
 permalink: ru/fw_flexberry-winforms-architecture.html
 folder: products/flexberry-winforms/

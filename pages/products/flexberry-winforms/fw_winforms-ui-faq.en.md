@@ -2,6 +2,7 @@
 title: WinForms UI FAQ
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Часто задаваемые вопросы по Flexberry Winforms
 toc: true
 permalink: ru/fw_winforms-ui-faq.html
 folder: products/flexberry-winforms/

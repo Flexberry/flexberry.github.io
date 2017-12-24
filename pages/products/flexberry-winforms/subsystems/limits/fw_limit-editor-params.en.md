@@ -2,6 +2,7 @@
 title: Ограничение с параметрами (для пользователя) в Win
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Ограничения
+summary: Описание части функциональности редактора ограничений в Windows-приложениях
 toc: true
 permalink: en/fw_limit-editor-params.html
 folder: products/flexberry-winforms/

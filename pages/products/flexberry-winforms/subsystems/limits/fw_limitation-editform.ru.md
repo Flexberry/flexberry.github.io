@@ -2,6 +2,7 @@
 title: Форма задания ограничений
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: Описано внутреннее устройство формы AdvLimitComponent
 toc: true
 permalink: ru/fw_limitation-editform.html
 folder: products/flexberry-winforms/
