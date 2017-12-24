@@ -2,6 +2,7 @@
 title: Обновление локальной копии объекта формы
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Указано как с помощью метода ResetDataObjectCopy управлять локальной для формы копией объекта
 toc: true
 permalink: en/fw_update-the-local-copy-of-the-form-object.html
 folder: products/flexberry-winforms/

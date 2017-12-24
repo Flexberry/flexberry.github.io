@@ -2,6 +2,7 @@
 title: Формы списка (классы со стереотипом listform) 
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Designer, Flexberry Winforms
+summary: Указано для чего применяется списковая форма, описан процесс её создания в дизайнере, и объяснено что будет сгенерировано в коде в зависимости от значений свойств, установленных в дизайнере
 toc: true
 permalink: ru/fw_listform.html
 folder: products/flexberry-winforms/

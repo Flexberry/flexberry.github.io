@@ -2,6 +2,7 @@
 title: Работа на форме редактирования с полями нескольких объектов 
 sidebar: flexberry-winforms_sidebar
 keywords: View (представление)
+summary: Приведены ссылки на статьи, которые помогут в реализации работы с полями объектов разных классов на одной форме редактирования за счёт исользования нескольких EditManager
 toc: true
 permalink: en/fw_work-with-several-objects-on-editform.html
 folder: products/flexberry-winforms/

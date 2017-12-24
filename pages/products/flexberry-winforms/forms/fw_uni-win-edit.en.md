@@ -2,6 +2,7 @@
 title: Универсальная форма редактирования 
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Описано использование универсальной формы редактирования объекта
 toc: true
 permalink: en/fw_uni-win-edit.html
 folder: products/flexberry-winforms/

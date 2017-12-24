@@ -2,6 +2,7 @@
 title: Как единообразно обработать все формы приложения
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Описано как единообразно обработать все формы приложения, подписавшись на специальное событие. Приведён пример, в котором все формы подписываются на нажатие определённых клавиш.
 toc: true
 permalink: ru/fw_uniformly-handle-all-application-forms.html
 folder: products/flexberry-winforms/

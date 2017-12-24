@@ -2,6 +2,7 @@
 title: Рекомендации по доработке форм редактирования
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (Контролы)
+summary: Приведены рекомендации по доработке внешнего вида форм, указаны наиболее часто применяемые механизмы и даны ссылки на статьи, описывающие их реализацию
 toc: true
 permalink: en/fw_forms-recommendations.html
 lang: en

@@ -2,6 +2,7 @@
 title: Передача параметров от ContRunner до формы редактирования
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Указано какие методы и как следует переопределить, чтобы принять параметр от DesktopCustomizer в списковой форме и передать на форму редактирования
 toc: true
 permalink: en/fw_parameters-from-cont-runner-to-editform.html
 folder: products/flexberry-winforms/

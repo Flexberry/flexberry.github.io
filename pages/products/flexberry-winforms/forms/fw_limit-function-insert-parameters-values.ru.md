@@ -2,6 +2,7 @@
 title: Подстановка значений параметров в ограничивающую функцию
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms, Ограничения
+summary: На примере показано как в limitFunction с параметром типа Дата вставить в качестве значения этого параметра текущую дату
 toc: true
 permalink: ru/fw_limit-function-insert-parameters-values.html
 folder: products/flexberry-winforms/
@@ -11,7 +12,7 @@ lang: ru
 ## Вопрос
 Имеется [limitFunction](fo_limit-function.html) (класс `ICSSoft.STORMNET.FunctionalLanguage.Function`) с параметром @Дата. Как вместо этого параметра подставить текущую дату?
 
-### Ответ
+## Ответ
 Пусть задана функция `limitFunction` с параметром @Дата:
 ```csharp 
 ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;

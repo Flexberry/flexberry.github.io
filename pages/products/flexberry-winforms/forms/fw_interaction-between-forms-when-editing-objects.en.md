@@ -2,6 +2,7 @@
 title: Межформенное взаимодействие при редактировании объектов
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы), Учебники
+summary: Объяснение понятий "инициатор" и "редактор" в контексте межформенного взаимодействия
 toc: true
 permalink: en/fw_interaction-between-forms-when-editing-objects.html
 folder: products/flexberry-winforms/

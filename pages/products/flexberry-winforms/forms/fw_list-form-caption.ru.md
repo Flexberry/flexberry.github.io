@@ -2,6 +2,7 @@
 title: Установка заголовка списковой формы
 sidebar: flexberry-winforms_sidebar
 keywords: Windows UI (формы)
+summary: Объяснено как переопределить заголовок списковой формы, открываемой при редактировании объекта (поднятии на LookUp)
 toc: true
 permalink: ru/fw_list-form-caption.html
 folder: products/flexberry-winforms/

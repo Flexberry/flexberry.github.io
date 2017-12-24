@@ -2,6 +2,7 @@
 title:  Определение контролов, доступных только на чтение, с помощью EditManager
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Winforms
+summary: На примере показано использование методов EditManager, которые позволяют менять список контролов, для которых EditManager не будет менять флаг ReadOnly
 toc: true
 permalink: ru/fw_readonly-in-editmanager.html
 folder: products/flexberry-winforms/
