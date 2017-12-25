@@ -381,6 +381,15 @@ export default FlexberryBaseComponent.extend({
   enableDeleteButton: true,
 
   /**
+  The flag to specify whether the select all button is on.
+
+    @property selectAll
+    @type Boolean
+    @default true
+  */
+  allSelect: false,
+
+  /**
     Name of action to send out, action triggered by click on user button.
 
     @property customButtonAction
@@ -671,7 +680,12 @@ export default FlexberryBaseComponent.extend({
       }
 
       let componentName = this.get(&#x27;componentName&#x27;);
-      this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
+
+      //TODO: Implement the method of removing all objects.
+      if (!this.get(&#x27;allSelect&#x27;))
+      {
+        this.get(&#x27;objectlistviewEventsService&#x27;).deleteRowsTrigger(componentName, true);
+      }
     },
 
     /**
@@ -865,6 +879,7 @@ export default FlexberryBaseComponent.extend({
 
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvRowSelected&#x27;, this, this._rowSelected);
     this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;olvRowsDeleted&#x27;, this, this._rowsDeleted);
+    this.get(&#x27;objectlistviewEventsService&#x27;).on(&#x27;updateSelectAll&#x27;, this, this._selectAll);
 
     this.get(&#x27;colsConfigMenu&#x27;).on(&#x27;updateNamedSetting&#x27;, this, this._updateListNamedUserSettings);
     this.get(&#x27;colsConfigMenu&#x27;).on(&#x27;addNamedSetting&#x27;, this, this.__addNamedSetting);
@@ -894,6 +909,7 @@ export default FlexberryBaseComponent.extend({
   willDestroy() {
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvRowSelected&#x27;, this, this._rowSelected);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;olvRowsDeleted&#x27;, this, this._rowsDeleted);
+    this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;updateSelectAll&#x27;, this, this._selectAll);
     this.get(&#x27;colsConfigMenu&#x27;).off(&#x27;updateNamedSetting&#x27;, this, this._updateListNamedUserSettings);
     this.get(&#x27;colsConfigMenu&#x27;).off(&#x27;addNamedSetting&#x27;, this, this.__addNamedSetting);
     this.get(&#x27;colsConfigMenu&#x27;).off(&#x27;deleteNamedSetting&#x27;, this, this._deleteNamedSetting);
@@ -909,8 +925,10 @@ export default FlexberryBaseComponent.extend({
     @param {String} componentName The name of objectlistview component
     @param {DS.Model} record The model corresponding to selected row in objectlistview
     @param {Number} count Count of selected rows in objectlistview
+    @param {Boolean} checked Current state of row in objectlistview (checked or not)
+    @param {Object} recordWithKey The model wrapper with additional key corresponding to selected row
   */
-  _rowSelected(componentName, record, count) {
+  _rowSelected(componentName, record, count, checked, recordWithKey) {
     if (componentName === this.get(&#x27;componentName&#x27;)) {
       this.set(&#x27;isDeleteButtonEnabled&#x27;, count &gt; 0 &amp;&amp; this.get(&#x27;enableDeleteButton&#x27;));
     }
@@ -975,6 +993,14 @@ export default FlexberryBaseComponent.extend({
 
   _deleteNamedSetting(namedSetting) {
     this._updateListNamedUserSettings();
+  },
+
+  _selectAll(componentName, selectAllParameter) {
+    if (componentName === this.componentName)
+    {
+      this.set(&#x27;allSelect&#x27;, selectAllParameter);
+      this.set(&#x27;isDeleteButtonEnabled&#x27;, selectAllParameter);
+    }
   },
 
   _sortNamedSetting(isExportExcel) {

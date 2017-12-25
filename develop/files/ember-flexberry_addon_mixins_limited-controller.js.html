@@ -362,6 +362,7 @@ export default Ember.Mixin.create({
       @param {Object} filters
     */
     applyFilters(filters) {
+      this.set(&#x27;page&#x27;, 1);
       this.set(&#x27;filters&#x27;, filters);
       this.get(&#x27;objectlistviewEventsService&#x27;).setLoadingState(&#x27;loading&#x27;);
       this.send(&#x27;refreshList&#x27;);
@@ -374,6 +375,7 @@ export default Ember.Mixin.create({
       @param {String} componentName The name of objectlistview component.
     */
     resetFilters(componentName) {
+      this.set(&#x27;page&#x27;, 1);
       this.set(&#x27;filters&#x27;, null);
       this.get(&#x27;objectlistviewEventsService&#x27;).setLoadingState(&#x27;loading&#x27;);
       this.send(&#x27;refreshList&#x27;);

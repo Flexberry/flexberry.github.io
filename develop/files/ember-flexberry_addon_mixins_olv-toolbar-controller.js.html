@@ -543,7 +543,7 @@ export default Ember.Mixin.create({
     let cellComponent = this.get(&#x27;cellComponent&#x27;);
 
     if (!this.get(&#x27;editOnSeparateRoute&#x27;) &amp;&amp; Ember.typeOf(getCellComponent) === &#x27;function&#x27;) {
-      let recordModel =  (this.get(&#x27;content&#x27;) || {}).type || null;
+      let recordModel = Ember.isNone(this.get(&#x27;content&#x27;)) ? null : this.get(&#x27;content.type&#x27;);
       cellComponent = getCellComponent.call(currentController, attr, bindingPath, recordModel);
     }
 

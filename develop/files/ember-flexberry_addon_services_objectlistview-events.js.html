@@ -268,6 +268,25 @@ import { BasePredicate } from &#x27;ember-flexberry-data/query/predicate&#x27;;
   @public
  */
 export default Ember.Service.extend(Ember.Evented, {
+
+  /**
+    Current set of selected records for all list components.
+
+    @property _selectedRecords
+    @type Array
+    @private
+  */
+  _selectedRecords: undefined,
+
+  /**
+    Init service.
+
+    @method init
+  */
+  init() {
+    this.set(&#x27;_selectedRecords&#x27;, []);
+  },
+
   /**
     Trigger for &quot;add new row&quot; event in objectlistview.
     Event name: olvAddRow.
@@ -379,9 +398,23 @@ export default Ember.Service.extend(Ember.Evented, {
     @param {DS.Model} record The model corresponding to selected row in objectlistview
     @param {Number} count Count of selected rows in objectlistview
     @param {Boolean} checked Current state of row in objectlistview (checked or not)
+    @param {Object} recordWithKey The model wrapper with additional key corresponding to selected row
   */
-  rowSelectedTrigger(componentName, record, count, checked) {
-    this.trigger(&#x27;olvRowSelected&#x27;, componentName, record, count, checked);
+  rowSelectedTrigger(componentName, record, count, checked, recordWithKey) {
+    if (count &gt; 0 || !Ember.isNone(recordWithKey)) {
+      if (!this.get(&#x27;_selectedRecords&#x27;)[componentName]) {
+        this.get(&#x27;_selectedRecords&#x27;)[componentName] = Ember.Map.create();
+      }
+
+      if (checked) {
+        this.get(&#x27;_selectedRecords&#x27;)[componentName].set(recordWithKey.key, recordWithKey);
+      } else
+      {
+        this.get(&#x27;_selectedRecords&#x27;)[componentName].delete(recordWithKey.key);
+      }
+    }
+
+    this.trigger(&#x27;olvRowSelected&#x27;, componentName, record, count, checked, recordWithKey);
   },
 
   /**
@@ -435,6 +468,23 @@ export default Ember.Service.extend(Ember.Evented, {
   },
 
   /**
+    Trigger for &quot;selectAll&quot; event in object-list-view.
+    Event name: updateSelectAll.
+
+    @method updateSelectAll
+
+    @param {String} componentName The name of object-list-view component
+    @param {Boolean} selectAllParameter Flag to selet all records parameter.
+  */
+  updateSelectAllTrigger(componentName, selectAllParameter) {
+    if (!selectAllParameter) {
+      this.clearSelectedRecords(componentName);
+    }
+
+    this.trigger(&#x27;updateSelectAll&#x27;, componentName, selectAllParameter);
+  },
+
+  /**
     Current limit function for OLV.
 
     @property currentLimitFunction
@@ -474,7 +524,7 @@ export default Ember.Service.extend(Ember.Evented, {
   },
 
   /**
-   Method that sets the form&#x27;s loading state.
+    Method that sets the form&#x27;s loading state.
 
     @method setLoadingState
 
@@ -482,6 +532,33 @@ export default Ember.Service.extend(Ember.Evented, {
   */
   setLoadingState(loadingState) {
     this.set(&#x27;loadingState&#x27;, loadingState);
+  },
+
+  /**
+    Returns map with previously saved selected records for OLV component with specified name.
+
+    @method getSelectedRecords
+
+    @param {String} componentName The name of OLV component.
+    @return {Ember.Map} Selected records for OLV component.
+  */
+  getSelectedRecords(componentName) {
+    return this.get(&#x27;_selectedRecords&#x27;)[componentName];
+  },
+
+  /**
+    Clears set of previously saved selected records for OLV component with specified name.
+
+    @method clearSelectedRecords
+
+    @param {String} componentName The name of OLV component.
+  */
+  clearSelectedRecords(componentName) {
+    if (this.get(&#x27;_selectedRecords&#x27;)[componentName] &amp;&amp;
+    this.get(&#x27;_selectedRecords&#x27;)[componentName].clear &amp;&amp;
+    typeof this.get(&#x27;_selectedRecords&#x27;)[componentName].clear === &#x27;function&#x27;) {
+      this.get(&#x27;_selectedRecords&#x27;)[componentName].clear();
+    }
   }
 });
 

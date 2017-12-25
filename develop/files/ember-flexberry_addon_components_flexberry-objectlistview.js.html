@@ -533,6 +533,15 @@ export default FlexberryBaseComponent.extend({
   showDeleteButtonInRow: false,
 
   /**
+    Flag indicates whether to show edit button in first column of every row.
+
+    @property showEditButtonInRow
+    @type Boolean
+    @default false
+  */
+  showEditButtonInRow: false,
+
+  /**
     Flag indicates whether to show dropdown menu with edit menu item, in last column of every row.
 
     @property showEditMenuItemInRow
@@ -974,7 +983,7 @@ export default FlexberryBaseComponent.extend({
       @param {Object} options Different parameters to handle action.
     */
     objectListViewRowClick(record, options) {
-      if (this.get(&#x27;rowClickable&#x27;) &amp;&amp; !this.get(&#x27;readonly&#x27;)) {
+      if ((this.get(&#x27;rowClickable&#x27;) || options.rowEdit) &amp;&amp; !this.get(&#x27;readonly&#x27;)) {
         let $clickedRow = this._getRowByKey(record.key || Ember.guidFor(record));
         Ember.run.after(this, () =&gt; { return $clickedRow.hasClass(&#x27;active&#x27;); }, () =&gt; {
           if (this.get(&#x27;componentMode&#x27;) === &#x27;lookupform&#x27;) {
@@ -1217,9 +1226,10 @@ export default FlexberryBaseComponent.extend({
       @param {String} Primary key.
       @param {ObjectListViewRowComponent} Instance of {{#crossLink &quot;ObjectListViewRowComponent&quot;}}{{/crossLink}}.
       @param {String} Property name.
+      @param {Boolean} Flag indicates that this is the first download of data.
     */
-    loadRecords(id, target, property) {
-      this.sendAction(&#x27;_loadRecords&#x27;, id, target, property);
+    loadRecords(id, target, property, firstRunMode) {
+      this.sendAction(&#x27;_loadRecords&#x27;, id, target, property, firstRunMode);
     },
 
     /**

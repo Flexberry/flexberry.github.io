@@ -343,6 +343,15 @@ export default FlexberryBaseComponent.extend({
   minDate: undefined,
 
   /**
+    Whether the calendar opens below (&#x27;down&#x27; by default) or above (&#x27;up&#x27;) the element it&#x27;s attached to.
+
+    @property drops
+    @type String
+    @default &#x27;down&#x27;
+  */
+  drops: &#x27;down&#x27;,
+
+  /**
     The latest date a user may select.
 
     @property maxDate
@@ -379,6 +388,7 @@ export default FlexberryBaseComponent.extend({
       this.$(&#x27;input&#x27;).val(startDate.format(this.dateTimeFormat));
     }
 
+    let drops = this.get(&#x27;drops&#x27;);
     let readonly = this.get(&#x27;readonly&#x27;);
     let _this = this;
     let i18n = _this.get(&#x27;i18n&#x27;);
@@ -398,7 +408,8 @@ export default FlexberryBaseComponent.extend({
         timePickerSeconds: true,
         minDate: this.minDate,
         maxDate: this.maxDate,
-        format: this.dateTimeFormat
+        format: this.dateTimeFormat,
+        drops: drops
       },
       function(start) {
         _this._setValue(start);

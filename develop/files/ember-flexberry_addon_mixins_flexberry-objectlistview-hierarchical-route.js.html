@@ -268,6 +268,7 @@ const { Builder } = Query;
   @uses &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;
 */
 export default Ember.Mixin.create({
+
   actions: {
     /**
       Set in &#x60;property&#x60; for &#x60;target&#x60; promise that load nested records.
@@ -276,17 +277,43 @@ export default Ember.Mixin.create({
       @param {String} id Record ID.
       @param {ObjectListViewRowComponent} Instance of {{#crossLink &quot;ObjectListViewRowComponent&quot;}}{{/crossLink}}.
       @param {String} property Property name into {{#crossLink &quot;ObjectListViewRowComponent&quot;}}{{/crossLink}}.
+      @param {Boolean} Flag indicates that this is the first download of data.
     */
-    loadRecordsById(id, target, property) {
+    loadRecordsById(id, target, property, firstRunMode) {
+
       let hierarchicalAttribute = this.controllerFor(this.routeName).get(&#x27;hierarchicalAttribute&#x27;);
       let modelName = this.get(&#x27;modelName&#x27;);
-      let projectionName = this.get(&#x27;modelProjection&#x27;);
-      let builder = new Builder(this.store)
-        .from(modelName)
-        .selectByProjection(projectionName)
-        .where(hierarchicalAttribute, &#x27;eq&#x27;, id);
 
-      Ember.set(target, property, this.store.query(modelName, builder.build()));
+      if (!firstRunMode) {
+
+        let projectionName = this.get(&#x27;modelProjection&#x27;);
+        let builder = new Builder(this.store)
+          .from(modelName)
+          .selectByProjection(projectionName)
+          .where(hierarchicalAttribute, &#x27;eq&#x27;, id);
+
+        Ember.set(target, property, this.store.query(modelName, builder.build()));
+      } else {
+
+        let store = this.get(&#x27;store&#x27;);
+        let records = store.peekAll(modelName);
+        let recordsArray = records.content;
+        let sortRecordsArray = Ember.A();
+        for (let i = 0; i &lt; recordsArray.length; i++) {
+          let record = store.peekRecord(modelName, recordsArray[i].id);
+
+          if ((!Ember.isNone(record.get(hierarchicalAttribute))) &amp;&amp; (record.get(hierarchicalAttribute).id === id)) {
+            sortRecordsArray.push(record);
+          }
+        }
+
+        let recordsArrayinPromise = new Ember.RSVP.Promise((resolve, reject) =&gt; {
+          resolve(sortRecordsArray);
+        });
+
+        Ember.set(target, property, recordsArrayinPromise);
+      }
+
     },
 
     objectListViewRowClick(record, params) {

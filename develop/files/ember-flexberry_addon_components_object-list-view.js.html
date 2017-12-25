@@ -261,6 +261,7 @@ import FlexberryLookupCompatibleComponentMixin from &#x27;../mixins/flexberry-lo
 import FlexberryFileCompatibleComponentMixin from &#x27;../mixins/flexberry-file-compatible-component&#x27;;
 import { translationMacro as t } from &#x27;ember-i18n&#x27;;
 import { getValueFromLocales } from &#x27;ember-flexberry-data/utils/model-functions&#x27;;
+import serializeSortingParam from &#x27;../utils/serialize-sorting-param&#x27;;
 
 /**
   Object list view component.
@@ -286,6 +287,17 @@ export default FlexberryBaseComponent.extend(
 
   _contentObserver: Ember.on(&#x27;init&#x27;, Ember.observer(&#x27;content&#x27;, function() {
     this._setContent(this.get(&#x27;componentName&#x27;));
+
+    if (this.get(&#x27;allSelect&#x27;))
+    {
+      let contentWithKeys = this.get(&#x27;contentWithKeys&#x27;);
+      let checked = this.get(&#x27;allSelect&#x27;);
+
+      contentWithKeys.forEach((item) =&gt; {
+        item.set(&#x27;selected&#x27;, checked);
+        item.set(&#x27;rowConfig.canBeSelected&#x27;, !checked);
+      });
+    }
   })),
 
   sortTitle: t(&#x27;components.object-list-view.header-title-attr&#x27;),
@@ -459,6 +471,15 @@ export default FlexberryBaseComponent.extend(
   customTableClass: &#x27;&#x27;,
 
   /**
+    The flag is selected for all records.
+
+    @property allSelect
+    @type Boolean
+    @default false
+  */
+  allSelect: false,
+
+  /**
     Classes for table.
 
     @property tableClass
@@ -544,6 +565,15 @@ export default FlexberryBaseComponent.extend(
   showDeleteButtonInRow: false,
 
   /**
+    Flag indicates whether to show edit button in first column of every row.
+
+    @property showEditButtonInRow
+    @type Boolean
+    @default false
+  */
+  showEditButtonInRow: false,
+
+  /**
     Flag indicates whether to not use userSetting from backend
     @property notUseUserSettings
     @type Boolean
@@ -562,10 +592,11 @@ export default FlexberryBaseComponent.extend(
     &#x27;showAsteriskInRow&#x27;,
     &#x27;showCheckBoxInRow&#x27;,
     &#x27;showDeleteButtonInRow&#x27;,
+    &#x27;showEditButtonInRow&#x27;,
     &#x27;modelProjection&#x27;,
     function() {
       if (this.get(&#x27;modelProjection&#x27;)) {
-        return this.get(&#x27;showAsteriskInRow&#x27;) || this.get(&#x27;showCheckBoxInRow&#x27;) || this.get(&#x27;showDeleteButtonInRow&#x27;);
+        return this.get(&#x27;showAsteriskInRow&#x27;) || this.get(&#x27;showCheckBoxInRow&#x27;) || this.get(&#x27;showDeleteButtonInRow&#x27;) || this.get(&#x27;showEditButtonInRow&#x27;);
       } else {
         return false;
       }
@@ -1055,7 +1086,7 @@ export default FlexberryBaseComponent.extend(
         }
       }
 
-      if (this.rowClickable) {
+      if (this.rowClickable || params.rowEdit) {
         let recordKey = recordWithKey &amp;&amp; recordWithKey.key;
         let recordData = recordWithKey &amp;&amp; recordWithKey.data;
 
@@ -1159,7 +1190,120 @@ export default FlexberryBaseComponent.extend(
       }
 
       let componentName = this.get(&#x27;componentName&#x27;);
-      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, recordWithKey.data, selectedRecords.length, e.checked);
+      this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, recordWithKey.data, selectedRecords.length, e.checked, recordWithKey);
+    },
+
+    /**
+      This action is called when click check all at page button.
+
+      @method actions.checkAllAtPage
+      @public
+      @param {jQuery.Event} e jQuery.Event by click on check all at page button
+    */
+    checkAllAtPage(e) {
+      if (this.get(&#x27;allSelect&#x27;)) {
+        return;
+      }
+
+      let contentWithKeys = this.get(&#x27;contentWithKeys&#x27;);
+      let selectedRecords = this.get(&#x27;selectedRecords&#x27;);
+
+      let checked = false;
+
+      for (let i = 0; i &lt; contentWithKeys.length; i++) {
+        if (!contentWithKeys[i].get(&#x27;selected&#x27;)) {
+          checked = true;
+        }
+      }
+
+      for (let i = 0; i &lt; contentWithKeys.length; i++) {
+        let recordWithKey = contentWithKeys[i];
+        let selectedRow = this._getRowByKey(recordWithKey.key);
+
+        if (checked) {
+          if (!selectedRow.hasClass(&#x27;active&#x27;)) {
+            selectedRow.addClass(&#x27;active&#x27;);
+          }
+
+          if (selectedRecords.indexOf(recordWithKey.data) === -1) {
+            selectedRecords.pushObject(recordWithKey.data);
+          }
+        } else {
+          if (selectedRow.hasClass(&#x27;active&#x27;)) {
+            selectedRow.removeClass(&#x27;active&#x27;);
+          }
+
+          selectedRecords.removeObject(recordWithKey.data);
+        }
+
+        recordWithKey.set(&#x27;selected&#x27;, checked);
+
+        let componentName = this.get(&#x27;componentName&#x27;);
+        this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, recordWithKey.data, selectedRecords.length, checked, recordWithKey);
+      }
+    },
+
+    /**
+      This action is called when click check all at all button.
+
+      @method actions.checkAll
+      @public
+      @param {jQuery.Event} e jQuery.Event by click on ckeck all button
+    */
+    checkAll(e) {
+      let contentWithKeys = this.get(&#x27;contentWithKeys&#x27;);
+
+      let checked = !this.get(&#x27;allSelect&#x27;);
+      Ember.set(this, &#x27;allSelect&#x27;, checked);
+
+      for (let i = 0; i &lt; contentWithKeys.length; i++) {
+        let recordWithKey = contentWithKeys[i];
+        let selectedRow = this._getRowByKey(recordWithKey.key);
+
+        if (checked) {
+          if (!selectedRow.hasClass(&#x27;active&#x27;)) {
+            selectedRow.addClass(&#x27;active&#x27;);
+          }
+        } else {
+          if (selectedRow.hasClass(&#x27;active&#x27;)) {
+            selectedRow.removeClass(&#x27;active&#x27;);
+          }
+        }
+
+        recordWithKey.set(&#x27;selected&#x27;, checked);
+        recordWithKey.set(&#x27;rowConfig.canBeSelected&#x27;, !checked);
+      }
+
+      let componentName = this.get(&#x27;componentName&#x27;);
+      this.get(&#x27;objectlistviewEventsService&#x27;).updateSelectAllTrigger(componentName, checked);
+    },
+
+    /**
+      This action is called when click clear sorting button.
+
+      @method actions.clearSorting
+      @public
+      @param {jQuery.Event} e jQuery.Event by click on clear sorting button
+    */
+    clearSorting(e) {
+      let componentName = this.get(&#x27;componentName&#x27;);
+      let userSettingsService = this.get(&#x27;userSettingsService&#x27;);
+
+      if (!userSettingsService.haveDefaultUserSetting(componentName)) {
+        alert(&#x27;No default usersettings&#x27;);
+        return;
+      }
+
+      this._router = Ember.getOwner(this).lookup(&#x27;router:main&#x27;);
+
+      let defaultDeveloperUserSetting = userSettingsService.getDefaultDeveloperUserSetting(componentName);
+      let currentUserSetting = userSettingsService.getCurrentUserSetting(componentName);
+      currentUserSetting.sorting = defaultDeveloperUserSetting.sorting;
+      userSettingsService.saveUserSetting(componentName, undefined, currentUserSetting)
+      .then(record =&gt; {
+        let sort = serializeSortingParam(currentUserSetting.sorting);
+        this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { sort: sort } });
+      });
     }
   },
 
@@ -1284,6 +1428,34 @@ export default FlexberryBaseComponent.extend(
           let renderedRowIndex = this.get(&#x27;_renderedRowIndex&#x27;) + 1;
 
           if (renderedRowIndex &gt;= contentLength) {
+            // Restore selected records.
+            if (this.get(&#x27;selectedRecords&#x27;)) {
+              this.get(&#x27;selectedRecords&#x27;).clear();
+            }
+
+            let componentName = this.get(&#x27;componentName&#x27;);
+            let selectedRecordsToRestore = this.get(&#x27;objectlistviewEventsService&#x27;).getSelectedRecords(componentName);
+            if (selectedRecordsToRestore &amp;&amp; selectedRecordsToRestore.size &amp;&amp; selectedRecordsToRestore.size &gt; 0) {
+              let e = {
+                checked: true
+              };
+
+              let someRecordWasSelected = false;
+              selectedRecordsToRestore.forEach((recordWithData, key) =&gt; {
+                if (this._getModelKey(recordWithData.data)) {
+                  someRecordWasSelected = true;
+                  this.send(&#x27;selectRow&#x27;, recordWithData, e);
+                }
+              });
+
+              if (!someRecordWasSelected &amp;&amp; !this.get(&#x27;allSelect&#x27;)) {
+                // Reset toolbar buttons enabled state.
+                this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, null, 0, false, null);
+              }
+            } else if (!this.get(&#x27;allSelect&#x27;)) {
+              // Reset toolbar buttons enabled state.
+              this.get(&#x27;objectlistviewEventsService&#x27;).rowSelectedTrigger(componentName, null, 0, false, null);
+            }
 
             // Remove long loading spinners.
             this.set(&#x27;rowByRowLoadingProgress&#x27;, false);
@@ -1364,6 +1536,8 @@ export default FlexberryBaseComponent.extend(
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;refreshList&#x27;, this, this._refreshList);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;geSortApply&#x27;, this, this._setContent);
     this.get(&#x27;objectlistviewEventsService&#x27;).off(&#x27;updateWidth&#x27;, this, this.setColumnWidths);
+
+    this.get(&#x27;objectlistviewEventsService&#x27;).clearSelectedRecords(this.get(&#x27;componentName&#x27;));
 
     this._super(...arguments);
   },
@@ -1484,8 +1658,11 @@ export default FlexberryBaseComponent.extend(
           if (currentPropertyName === &#x27;OlvRowToolbar&#x27;) {
             let checkbox = this.get(&#x27;showCheckBoxInRow&#x27;);
             let delButton = this.get(&#x27;showDeleteButtonInRow&#x27;);
+            let editButton = this.get(&#x27;showEditButtonInRow&#x27;);
 
-            setting.width = (checkbox &amp;&amp; delButton ? 100 : delButton ? 70 : 65) - padding;
+            // TODO: Probably need to replace this.
+            setting.width = (checkbox &amp;&amp; delButton &amp;&amp; editButton ? 130 : (checkbox &amp;&amp; delButton) || (checkbox &amp;&amp; editButton) ||
+            (delButton &amp;&amp; editButton) ? 100 : checkbox || delButton || editButton ? 70 : 65) - padding;
           }
         }
 
@@ -1711,7 +1888,7 @@ export default FlexberryBaseComponent.extend(
     let cellComponent = this.get(&#x27;cellComponent&#x27;);
 
     if (!this.get(&#x27;editOnSeparateRoute&#x27;) &amp;&amp; Ember.typeOf(getCellComponent) === &#x27;function&#x27;) {
-      let recordModel =  (this.get(&#x27;content&#x27;) || {}).type || null;
+      let recordModel = Ember.isNone(this.get(&#x27;content&#x27;)) ? null : this.get(&#x27;content.type&#x27;);
       cellComponent = getCellComponent.call(currentController, attr, bindingPath, recordModel);
     }
 
@@ -2086,6 +2263,17 @@ export default FlexberryBaseComponent.extend(
     if (configurateRow) {
       Ember.assert(&#x27;configurateRow must be a function&#x27;, typeof configurateRow === &#x27;function&#x27;);
       configurateRow(rowConfig, record);
+    }
+
+    // Mark previously selected records.
+    let componentName = this.get(&#x27;componentName&#x27;);
+    let selectedRecordsToRestore = this.get(&#x27;objectlistviewEventsService&#x27;).getSelectedRecords(componentName);
+    if (selectedRecordsToRestore &amp;&amp; selectedRecordsToRestore.size &amp;&amp; selectedRecordsToRestore.size &gt; 0) {
+      selectedRecordsToRestore.forEach((recordWithData, key) =&gt; {
+        if (record === recordWithData.data) {
+          modelWithKey.selected = true;
+        }
+      });
     }
 
     if (this.get(&#x27;useRowByRowLoading&#x27;)) {

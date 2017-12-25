@@ -515,7 +515,12 @@ export default FlexberryBaseComponent.extend({
       let id = this.get(&#x27;record.data.id&#x27;);
       if (id &amp;&amp; this.get(&#x27;inHierarchicalMode&#x27;)) {
         this.set(&#x27;recordsLoaded&#x27;, true);
-        this.sendAction(&#x27;loadRecords&#x27;, id, this, &#x27;records&#x27;);
+        if (this.get(&#x27;_level&#x27;) &gt; 0) {
+          this.sendAction(&#x27;loadRecords&#x27;, id, this, &#x27;records&#x27;, false);
+        } else {
+          this.sendAction(&#x27;loadRecords&#x27;, id, this, &#x27;records&#x27;, true);
+        }
+
       }
     }
   },
