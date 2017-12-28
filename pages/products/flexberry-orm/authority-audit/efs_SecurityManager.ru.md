@@ -51,31 +51,45 @@ lang: ru
   <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
     <container>
       <!-- … -->
+      <!-- Конфигурация сервиса кеширования. -->
+      <register type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <constructor>
+          <param name="cacheName" type="System.String" value="defaultCacheForApplication" />
+        </constructor>
+      </register>
+
       <!-- securityManagerWithoutRightsCheck - менеджер полномочий с выключенной проверкой полномочий. -->
       <register name="securityManagerWithoutRightsCheck" type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject"
          mapTo="ICSSoft.STORMNET.Security.EmptySecurityManager, ICSSoft.STORMNET.DataObject">
         <lifetime type="singleton" />
       </register>
 
-      <!-- Сервис данных, через который будет идти запрос к полномочиям. Здесь дублируется тип сервиса данных и строка соединения с БД полномочий. Использовать данный сервис данных где-либо ещё крайне нежелательно. -->
+      <!-- Сервис данных, через который будет идти запрос к полномочиям. Здесь дублируется тип сервиса данных, а также указывается строка соединения с БД полномочий. Использовать данный сервис данных где-либо ещё крайне нежелательно. -->
       <register name="dataServiceForSecurityManager" type="ICSSoft.STORMNET.Business.IDataService, ICSSoft.STORMNET.Business"
         mapTo="ICSSoft.STORMNET.Business.MSSQLDataService, ICSSoft.STORMNET.Business.MSSQLDataService" >
         <constructor>
-          <!-- Менеджер полномочий, который используется сервисом данных для проверки полномочий. Чтобы сервис данных имел возможность обращаться к объектам системы полномочий в БД для пользователей которые ещё не прошли аутентификацию он будет использовать securityManagerWithoutRightsCheck - это менеджер полномочий с выключенной проверкой полномочий. -->
+          <!-- Менеджер полномочий, который используется сервисом данных для проверки полномочий. Чтобы сервис данных имел возможность обращаться к объектам системы полномочий в БД для пользователей которые ещё не прошли аутентификацию, он будет использовать securityManagerWithoutRightsCheck - это менеджер полномочий с выключенной проверкой полномочий. -->
           <param name="securityManager" type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject">
             <dependency name="securityManagerWithoutRightsCheck" />
           </param>
         </constructor>
-        <!-- Строка соединения к БД полномочий. -->
-        <property name="CustomizationString" dependencyType="System.String" value="СТРОКА СОЕДИНЕНИЯ С БД ПОЛНОМОЧИЙ"/>
+        <!-- Имя строки соединения с БД полномочий. -->
+        <property name="CustomizationStringName" dependencyType="System.String" value="CaseberrySecurity" />
       </register>
 
-      <!-- Сервис кэширования, который будет использоваться для временного хранения настроек, вычитанных из базы данных. По имени данного кэша его можно полностью очистить в случае необходимости. -->
+      <!-- Сервис кэширования, который будет использоваться для временного хранения настроек, вычитанных из базы данных для менеджера полномочий. По имени данного кэша его можно полностью очистить в случае необходимости. -->
       <register name="cacheServiceForSecurityManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching"
         mapTo=" NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching" >
         <constructor>
           <!-- Имя кэша, по которому можно будет осуществить его очистку. -->
-          <param name="cacheName" type="System.String" value="cacheForSecurity" />
+          <param name="cacheName" type="System.String" value="cacheForSecurityManager" />
+        </constructor>
+      </register>
+      
+      <!-- Сервис кэширования, который будет использоваться для временного хранения настроек, вычитанных из базы данных для менеджера агентов. По имени данного кэша его можно полностью очистить в случае необходимости. -->
+      <register name="cacheServiceForAgentManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <constructor>
+          <param name="cacheName" type="System.String" value="cacheForAgentManager" />
         </constructor>
       </register>
       
@@ -99,58 +113,28 @@ lang: ru
         </constructor>
       </register>
 
-      <register name="passwordHasher" type="NewPlatform.Flexberry.Security.IPasswordHasher, NewPlatform.Flexberry.Security"
-  mapTo="NewPlatform.Flexberry.Security.Sha256PasswordHasher, NewPlatform.Flexberry.Security" />
-
-      <register name="agentManagerForMembershipProvider" type="NewPlatform.Flexberry.Security.IAgentManager, NewPlatform.Flexberry.Security"
-  mapTo="NewPlatform.Flexberry.Security.AgentManager, NewPlatform.Flexberry.Security">
+      <!-- Менеджер агентов. -->
+      <register type="NewPlatform.Flexberry.Security.IAgentManager, NewPlatform.Flexberry.Security" mapTo="NewPlatform.Flexberry.Security.AgentManager, NewPlatform.Flexberry.Security">
         <constructor>
-          <!-- dataServiceForSecurityManager - сервис данных, через который будет идти запрос к полномочиям. -->
           <param name="dataService" type="ICSSoft.STORMNET.Business.IDataService, ICSSoft.STORMNET.Business">
             <dependency name="dataServiceForSecurityManager" />
           </param>
-          <param name="passwordHasher" type="NewPlatform.Flexberry.Security.IPasswordHasher, NewPlatform.Flexberry.Security">
-            <dependency name="passwordHasher" />
-          </param>
           <param name="cacheService" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching">
-            <dependency name="cacheServiceForSecurityManager" />
+            <dependency name="cacheServiceForAgentManager" />
           </param>
-          <param name="salt" type="System.String" value="tlAs"/>
         </constructor>
       </register>
 
-      <register name="agentManagerForProfileProvider" type="NewPlatform.Flexberry.Security.IAgentManager, NewPlatform.Flexberry.Security"
-  mapTo="NewPlatform.Flexberry.Security.AgentManager, NewPlatform.Flexberry.Security">
-        <constructor>
-          <!-- dataServiceForSecurityManager - сервис данных, через который будет идти запрос к полномочиям. -->
-          <param name="dataService" type="ICSSoft.STORMNET.Business.IDataService, ICSSoft.STORMNET.Business">
-            <dependency name="dataServiceForSecurityManager" />
-          </param>
-          <param name="passwordHasher" type="NewPlatform.Flexberry.Security.IPasswordHasher, NewPlatform.Flexberry.Security">
-            <dependency name="passwordHasher" />
-          </param>
-          <param name="cacheService" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching">
-            <dependency name="cacheServiceForSecurityManager" />
-          </param>
-          <param name="salt" type="System.String" value="tlAs"/>
-        </constructor>
+      <!-- Хешер паролей для приложения, который будет использоваться в частности для хеширования паролей для агентов. Можно в конструкторе ему указать соль через строковый параметр salt.-->
+      <register type="NewPlatform.Flexberry.Security.IPasswordHasher, NewPlatform.Flexberry.Security" mapTo="NewPlatform.Flexberry.Security.Sha1PasswordHasher, NewPlatform.Flexberry.Security">
+        <lifetime type="singleton" />
+        <constructor />
       </register>
 
-      <register name="agentManagerForRoleProvider" type="NewPlatform.Flexberry.Security.IAgentManager, NewPlatform.Flexberry.Security"
-  mapTo="NewPlatform.Flexberry.Security.AgentManager, NewPlatform.Flexberry.Security">
-        <constructor>
-          <!-- dataServiceForSecurityManager - сервис данных, через который будет идти запрос к полномочиям. -->
-          <param name="dataService" type="ICSSoft.STORMNET.Business.IDataService, ICSSoft.STORMNET.Business">
-            <dependency name="dataServiceForSecurityManager" />
-          </param>
-          <param name="passwordHasher" type="NewPlatform.Flexberry.Security.IPasswordHasher, NewPlatform.Flexberry.Security">
-            <dependency name="passwordHasher" />
-          </param>
-          <param name="cacheService" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching">
-            <dependency name="cacheServiceForSecurityManager" />
-          </param>
-          <param name="salt" type="System.String" value="tlAs"/>
-        </constructor>
+      <!-- Сервис, позволяющий разрешать имя строки соединения, переданное через параметр CustomizationStringName.-->
+      <register type="ICSSoft.STORMNET.Business.IConfigResolver, ICSSoft.STORMNET.Business" mapTo="ICSSoft.STORMNET.Business.ConfigResolver, ICSSoft.STORMNET.Business">
+        <lifetime type="singleton" />
+        <constructor />
       </register>
     <!-- … -->
     </container>
