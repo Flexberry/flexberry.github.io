@@ -125,7 +125,7 @@ lang: ru
         </constructor>
       </register>
 
-      <!-- Хешер паролей для приложения, который будет использоваться в частности для хеширования паролей для агентов. Можно в конструкторе ему указать соль через строковый параметр salt.-->
+      <!-- Хешер паролей для приложения, который будет использоваться в частности для хеширования паролей агентов полномочий. Можно в конструкторе хешеру указать соль через строковый параметр salt.-->
       <register type="NewPlatform.Flexberry.Security.IPasswordHasher, NewPlatform.Flexberry.Security" mapTo="NewPlatform.Flexberry.Security.Sha1PasswordHasher, NewPlatform.Flexberry.Security">
         <lifetime type="singleton" />
         <constructor />
