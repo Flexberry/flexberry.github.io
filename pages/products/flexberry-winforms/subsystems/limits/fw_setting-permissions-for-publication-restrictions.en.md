@@ -2,6 +2,7 @@
 title: Настройка прав доступа на публикацию ограничений
 sidebar: flexberry-winforms_sidebar
 keywords: Flexberry Security, Flexberry Winforms, Ограничения
+summary: Указано что следует сделать, чтобы настроить права доступа на публикацию ограничений
 toc: true
 permalink: en/fw_setting-permissions-for-publication-restrictions.html
 folder: products/flexberry-winforms/

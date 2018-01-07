@@ -2,6 +2,7 @@
 title: Наложение ограничений по столбцам в списках
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: На рисунках показано как сбрасывать отдельные ограничения при определении ограничений по столбцам в списках
 toc: true
 permalink: ru/fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html
 folder: products/flexberry-winforms/

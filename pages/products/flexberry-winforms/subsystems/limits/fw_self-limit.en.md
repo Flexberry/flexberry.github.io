@@ -2,6 +2,7 @@
 title: Ограничение на себя
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: На рисунках показано как в списке задать ограничение на то, какие элементы этого списка будут отображаться (ограничение "на себя", т.е. на сами элементы списка)
 toc: true
 permalink: en/fw_self-limit.html
 folder: products/flexberry-winforms/

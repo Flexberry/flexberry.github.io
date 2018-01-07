@@ -2,6 +2,7 @@
 title: Фильтрация по детейлам мастера. ConnectMasterProp, OwnerConnectProp
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: На примерах показано как использовать OwnerConnectProp, ConnectMasterProp при построении ограничений
 toc: true
 permalink: ru/fw_master-details-filters.html
 folder: products/flexberry-winforms/

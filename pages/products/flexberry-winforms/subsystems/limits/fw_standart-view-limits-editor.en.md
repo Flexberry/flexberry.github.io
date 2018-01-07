@@ -2,6 +2,7 @@
 title: Стандартный вид редактора ограничений. Формат ограничений
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: Описаны возможности задания ограничений для атрибутов с типом дата и логических атрибутов, а также использования SQL-выражений в ограничениях
 toc: true
 permalink: en/fw_standart-view-limits-editor.html
 folder: products/flexberry-winforms/

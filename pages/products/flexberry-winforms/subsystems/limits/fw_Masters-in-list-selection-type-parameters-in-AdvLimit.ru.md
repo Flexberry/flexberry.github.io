@@ -2,6 +2,7 @@
 title: Мастера в списке выбора типа параметров в редакторе AdvLimit
 sidebar: flexberry-winforms_sidebar
 keywords: Ограничения
+summary: Перечислены условия отображения мастера в списке параметров на форме задания ограничений
 toc: true
 permalink: ru/fw_masters-in-list-selection-type-parameters-in-advlimit.html
 folder: products/flexberry-winforms/
