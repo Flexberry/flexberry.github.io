@@ -345,6 +345,22 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_getCellComponent" data-tablink="getCellComponent">getCellComponent</a>
 
                             </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionFulfilled." data-tablink="onDeleteActionFulfilled.">onDeleteActionFulfilled.</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionRejected." data-tablink="onDeleteActionRejected.">onDeleteActionRejected.</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onDeleteActionStarted." data-tablink="onDeleteActionStarted.">onDeleteActionStarted.</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_onSaveActionAlways." data-tablink="onSaveActionAlways.">onSaveActionAlways.</a>
+
+                            </li>
                             <li class="index-item method">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_queryParametersChanged" data-tablink="queryParametersChanged">queryParametersChanged</a>
 
@@ -1117,6 +1133,221 @@
                                 </div>
                             </div>
                     
+                    </div>
+                    <div id="method_onDeleteActionFulfilled." class="method item inherited">
+                        <h3 class="name"><code>onDeleteActionFulfilled.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/ListFormController.html#method_onDeleteActionFulfilled.">ListFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_list-form.js.html#l119"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;list-form.js:119</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This method will be invoked when delete operation successfully completed.
+                    Override this method to add some custom logic on delete operation success.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">onDeleteActionFulfilled() {
+                      alert('Delete operation succeed!');
+                    }
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div id="method_onDeleteActionRejected." class="method item inherited">
+                        <h3 class="name"><code>onDeleteActionRejected.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>errorData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/ListFormController.html#method_onDeleteActionRejected.">ListFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_list-form.js.html#l134"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;list-form.js:134</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This method will be invoked when delete operation completed, but failed.
+                    Override this method to add some custom logic on delete operation fail.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">errorData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Data about delete operation fail.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">onDeleteActionRejected() {
+                      alert('Delete operation failed!');
+                    }
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div id="method_onDeleteActionStarted." class="method item inherited">
+                        <h3 class="name"><code>onDeleteActionStarted.</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/ListFormController.html#method_onDeleteActionStarted.">ListFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_list-form.js.html#l104"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;list-form.js:104</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This method will be invoked before delete operation will be called.
+                    Override this method to add custom logic on delete operation start.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-javascript">onDeleteActionStarted() {
+                      alert('Delete operation started!');
+                    }
+                    </code></pre>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div id="method_onSaveActionAlways." class="method item inherited">
+                        <h3 class="name"><code>onSaveActionAlways.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>data</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/ListFormController.html#method_onSaveActionAlways.">ListFormController</a>:
+                            <a href="../files/ember-flexberry_addon_controllers_list-form.js.html#l151"><code>ember-flexberry&#x2F;addon&#x2F;controllers&#x2F;list-form.js:151</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This method will be invoked always when delete operation completed,
+                    regardless of save promise's state (was it fulfilled or rejected).
+                    Override this method to add some custom logic on delete operation completion.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">data</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Data about completed save operation.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                            <div class="example">
+                                <h4>Example:</h4>
+                    
+                                <div class="example-content">
+                                    <pre class="code prettyprint"><code class="language-js">onDeleteActionAlways(data) {
+                      alert('Delete operation completed!');
+                    }
+                    </code></pre>
+                    
+                                </div>
+                            </div>
                     </div>
                     <div id="method_queryParametersChanged" class="method item">
                         <h3 class="name"><code>queryParametersChanged</code></h3>

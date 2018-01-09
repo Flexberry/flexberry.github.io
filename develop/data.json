@@ -21582,7 +21582,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2125,
+            "line": 2127,
             "description": "Actually delete the record.",
             "itemtype": "method",
             "name": "_actualDeleteRecord",
@@ -21605,7 +21605,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2150,
+            "line": 2159,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -21632,7 +21632,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2173,
+            "line": 2182,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -21650,7 +21650,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2191,
+            "line": 2200,
             "description": "Set the active record.",
             "itemtype": "method",
             "name": "_setActiveRecord",
@@ -21668,7 +21668,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2219,
+            "line": 2228,
             "description": "It observes changes of flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}searchForContentChange{{/crossLink}}.\n\nIf flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} changes its value\nobserver on component content is set otherwise it is removed.",
             "itemtype": "method",
             "name": "_searchForContentChange",
@@ -21679,7 +21679,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2237,
+            "line": 2246,
             "description": "It observes changes of model's data that are displayed on component\nif flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} is enabled.\n\nProperty changing displayes automatically.\nComponent compares current detail array with used on component,\nremoves deleted and marked as deleted on model level records, adds created on model level records.",
             "itemtype": "method",
             "name": "_contentDidChange",
@@ -21690,7 +21690,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2291,
+            "line": 2300,
             "description": "Get attributes name from model.",
             "itemtype": "method",
             "name": "_getAttributesName",
@@ -23395,6 +23395,68 @@
                 "description": "Object containing name & properties of component, which will be used to render current table cell\n({ componentName: 'my-component',  componentProperties: { ... } }).",
                 "type": "Object"
             },
+            "class": "ListFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/list-form.js",
+            "line": 104,
+            "description": "This method will be invoked before delete operation will be called.\nOverride this method to add custom logic on delete operation start.",
+            "example": [
+                "\n  ```javascript\n  onDeleteActionStarted() {\n    alert('Delete operation started!');\n  }\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "onDeleteActionStarted.",
+            "class": "ListFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/list-form.js",
+            "line": 119,
+            "description": "This method will be invoked when delete operation successfully completed.\nOverride this method to add some custom logic on delete operation success.",
+            "example": [
+                "\n  ```javascript\n  onDeleteActionFulfilled() {\n    alert('Delete operation succeed!');\n  }\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "onDeleteActionFulfilled.",
+            "class": "ListFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/list-form.js",
+            "line": 134,
+            "description": "This method will be invoked when delete operation completed, but failed.\nOverride this method to add some custom logic on delete operation fail.",
+            "example": [
+                "\n  ```javascript\n  onDeleteActionRejected() {\n    alert('Delete operation failed!');\n  }\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "onDeleteActionRejected.",
+            "params": [
+                {
+                    "name": "errorData",
+                    "description": "Data about delete operation fail.",
+                    "type": "Object"
+                }
+            ],
+            "class": "ListFormController",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/controllers/list-form.js",
+            "line": 151,
+            "description": "This method will be invoked always when delete operation completed,\nregardless of save promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on delete operation completion.",
+            "example": [
+                "\n  ```js\n  onDeleteActionAlways(data) {\n    alert('Delete operation completed!');\n  }\n  ```"
+            ],
+            "itemtype": "method",
+            "name": "onSaveActionAlways.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "Data about completed save operation.",
+                    "type": "Object"
+                }
+            ],
             "class": "ListFormController",
             "module": "ember-flexberry"
         },

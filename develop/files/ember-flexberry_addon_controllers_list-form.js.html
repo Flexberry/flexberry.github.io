@@ -353,6 +353,71 @@ export default Ember.Controller.extend(PaginatedControllerMixin,
     };
 
     return cellComponent;
+  },
+
+  /**
+    This method will be invoked before delete operation will be called.
+    Override this method to add custom logic on delete operation start.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      onDeleteActionStarted() {
+        alert(&#x27;Delete operation started!&#x27;);
+      }
+      &#x60;&#x60;&#x60;
+    @method onDeleteActionStarted.
+  */
+  onDeleteActionStarted() {
+  },
+
+  /**
+    This method will be invoked when delete operation successfully completed.
+    Override this method to add some custom logic on delete operation success.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      onDeleteActionFulfilled() {
+        alert(&#x27;Delete operation succeed!&#x27;);
+      }
+      &#x60;&#x60;&#x60;
+    @method onDeleteActionFulfilled.
+  */
+  onDeleteActionFulfilled() {
+  },
+
+  /**
+    This method will be invoked when delete operation completed, but failed.
+    Override this method to add some custom logic on delete operation fail.
+
+    @example
+      &#x60;&#x60;&#x60;javascript
+      onDeleteActionRejected() {
+        alert(&#x27;Delete operation failed!&#x27;);
+      }
+      &#x60;&#x60;&#x60;
+    @method onDeleteActionRejected.
+    @param {Object} errorData Data about delete operation fail.
+  */
+  onDeleteActionRejected(errorData, record) {
+    this.rejectError(errorData, &#x60;Unable to delete a record: ${record.toString()}.&#x60;);
+  },
+
+  /**
+    This method will be invoked always when delete operation completed,
+    regardless of save promise&#x27;s state (was it fulfilled or rejected).
+    Override this method to add some custom logic on delete operation completion.
+
+    @example
+      &#x60;&#x60;&#x60;js
+      onDeleteActionAlways(data) {
+        alert(&#x27;Delete operation completed!&#x27;);
+      }
+      &#x60;&#x60;&#x60;
+
+    @method onSaveActionAlways.
+    @param {Object} data Data about completed save operation.
+  */
+  onDeleteActionAlways(data) {
   }
 });
 
