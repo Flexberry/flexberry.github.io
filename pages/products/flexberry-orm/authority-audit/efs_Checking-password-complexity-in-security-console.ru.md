@@ -38,11 +38,9 @@ lang: ru
 </configuration>
 ```
 
-
 # Смотрите также
-* [Консоль управления полномочиями (Security Console)](security-console.html)
-* [Как начать работу с подсистемой полномочий](how-to-start-work-with-right-manager.html).
-* [Сценарии использования подсистемы полномочий](rights-scenarios.html).
-* [RightService-Flexberry-Rights|Сервис полномочий Flexberry Rights (CheckingLibrary)]
+
+* [Консоль управления полномочиями (Security Console)](efs_security-console.html)
+* [Сценарии использования подсистемы полномочий](efs_rights-scenarios.html).
+* [Сервис полномочий Flexberry Rights (CheckingLibrary)](efs_security-legacy-services.html)
 * [Подсистема полномочий в WEB](fa_right-manager.html).
-* [c:Полномочия|Все статьи категории "Полномочия"].

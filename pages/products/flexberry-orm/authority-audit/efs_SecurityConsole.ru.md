@@ -9,7 +9,7 @@ lang: ru
 
 ## Консоль управления полномочиями (Security Console)
 
-В консоли управления [полномочиями](right-manager-module.html) задаются права на классы и на операции.
+В консоли управления [полномочиями](efs_right-manager-module.html) задаются права на классы и на операции.
 
 Консоль управления полномочиями собрана под 3.5 .NET Framework.
 
@@ -21,13 +21,8 @@ lang: ru
 
 ## Смотрите также
 
-* [Как начать работу с подсистемой полномочий](how-to-start-work-with-right-manager.html).
-* [Сценарии использования подсистемы полномочий](rights-scenarios.html).
-* [RightService-Flexberry-Rights|Сервис полномочий Flexberry Rights (CheckingLibrary)]
+* [Сценарии использования подсистемы полномочий](efs_rights-scenarios.html).
+* [Сервис полномочий Flexberry Rights (CheckingLibrary)](efs_security-legacy-services.html)
 * [Подсистема полномочий в WEB](fa_right-manager.html).
 * [Проверка сложности пароля в консоли безопасности](efs_checking-password-complexity-in-security-console.html)
 * [Добавление пользователей в БД системы полномочий при windows-аутентификации](fa_authentication-adapter.html).
-* [Плагины в подсистеме полномочий](security-system-plugins.html)
-* [c:Полномочия|Все статьи категории "Полномочия"].
-
-

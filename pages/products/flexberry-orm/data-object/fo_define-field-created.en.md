@@ -8,7 +8,7 @@ permalink: en/fo_define-field-created.html
 lang: en
 ---
 
-Если есть некий текущий объект, который должен быть указан по умолчанию при создании другого объекта, то можно переопределить метод [Edit](fw_form-interaction.html), где проверить, что [статус загрузки данных определён как `ObjectStatus.Created`](fo_object-status.html), после чего установить текущий объект в интересующее поле и [отразить изменения на форме с помощью `EditManager`](fw_edit-manager-change.html).
+Если есть некий текущий объект, который должен быть указан по умолчанию при создании другого объекта, то можно переопределить метод [Edit](fw_form-interaction.html), где проверить, что [статус загрузки данных определён как `ObjectStatus.Created`](fo_object-status.html), после чего установить текущий объект в интересующее поле и [отразить изменения на форме с помощью `EditManager`](fw_editmanager-change.html).
 
 ```csharp
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)

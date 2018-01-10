@@ -19,7 +19,7 @@ lang: ru
 3. Сначала всё вычитывается в соответствии с порядком, указанным атрибутом [LoadingOrderAttribute](fo_order-loading-property.html), затем, всё остальное. Метод [Information](fo_methods-class-information.html).GetLoadingOrder возвращает порядок.
 4. В атрибутах, мастерах могут не допускаться пустые значения, что указывается атрибутом NotNullAttribute.
 
-С целью оптимизации, нужно обновлять только изменённые атрибуты [Information](fo_methods-class-information.html ).GetAlteredProperyNames.
+С целью оптимизации, нужно обновлять только изменённые атрибуты [Information](fo_methods-class-information.html).GetAlteredProperyNames.
 
 ## Реализация сервиса данных для реляционного хранилища
 

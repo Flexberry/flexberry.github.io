@@ -14,7 +14,7 @@ lang: en
 
 `Flexberry ORM ODataService` позволяет удобным образом создать OData-сервис.
 
-{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](NewPlatform.Flexberry.ORM.ODataService)." %}
+{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](https://www.nuget.org)." %}
 
 ##№ Список библиотек `Flexberry ORM ODataService`
 

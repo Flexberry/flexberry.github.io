@@ -17,7 +17,7 @@ lang: ru
 ## Определение имени строки подключения
 Определение имени строки подключения происходит по следующему алгоритму:
 
-1. Из настроек аудита из класса (`[AuditClassSetting](keep-and-use-audit-settings.html)`) берётся настройка `AuditClassConnectionStringName`.
+1. Из настроек аудита из класса ([AuditClassSetting](efs_keep-and-use-audit-settings.html)) берётся настройка `AuditClassConnectionStringName`.
 
 ```cs
 public class FirstClass : ICSSoft.STORMNET.DataObject, IDataObjectWithAuditFields
@@ -37,28 +37,28 @@ public class FirstClass : ICSSoft.STORMNET.DataObject, IDataObjectWithAuditField
 }
 ```
 
-Если `AuditClassConnectionStringName` определено в настройках аудита класса и значение является непустой последовательностью символов, '''то оно берётся в качестве имени строки подключения'''.
+Если `AuditClassConnectionStringName` определено в настройках аудита класса и значение является непустой последовательностью символов, то оно берётся в качестве имени строки подключения.
 
-2. Если предыдущим способом имя строки подключения не было определено, то берётся настройка `[IsDatabaseLocal](keep-and-use-audit-settings.html)` (см. также [следующую статью](efs_audit-win-service.html)).
+2. Если предыдущим способом имя строки подключения не было определено, то берётся настройка [IsDatabaseLocal](efs_keep-and-use-audit-settings.html) (см. также [следующую статью](efs_audit-win-service.html)).
 
-2.1. Если `[IsDatabaseLocal](keep-and-use-audit-settings.html) = false`, то '''в качестве имени строки соединения берётся значение `[AuditConnectionStringName](keep-and-use-audit-settings.html)`'''.
+2.1. Если `IsDatabaseLocal = false`, то в качестве имени строки соединения берётся значение [AuditConnectionStringName](efs_keep-and-use-audit-settings.html).
 
-2.2. Если `[IsDatabaseLocal](keep-and-use-audit-settings.html) = true`, то происходит поиск по структурам `[AuditDSSetting](keep-and-use-audit-settings.html)`.
+2.2. Если `IsDatabaseLocal = true`, то происходит поиск по структурам [AuditDSSetting](efs_keep-and-use-audit-settings.html).
 
-''Считается, что если `[IsDatabaseLocal](keep-and-use-audit-settings.html) = true`, то запись аудита будет производиться в "текущую" БД посредством "текущего" [сервиса данных](fo_data-service.html) (понятие "текущий" условно, поскольку в метод определения имени строки подключения тип "текущего" [сервиса данных](fo_data-service.html) может попасть различными способами).
-''
-*Если "текущий" [сервис данных](fo_data-service.html) некорректен, то '''в качестве имени строки соединения используется значение `[ConnStringName](keep-and-use-audit-settings.html)` из первой `[AuditDSSetting](keep-and-use-audit-settings.html)` из массива `[AuditDSSettings](keep-and-use-audit-settings.html)`''' ([имя строки соединения по умолчанию определено как &lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;](efs_audit-setter.html)).
+Считается, что если `IsDatabaseLocal = true`, то запись аудита будет производиться в "текущую" БД посредством "текущего" [сервиса данных](fo_data-service.html) (понятие "текущий" условно, поскольку в метод определения имени строки подключения тип "текущего" [сервиса данных](fo_data-service.html) может попасть различными способами).
 
-*Иначе среди массива `[AuditDSSettings](keep-and-use-audit-settings.html)` ищется `[AuditDSSetting](keep-and-use-audit-settings.html)`, где `[ConnString](keep-and-use-audit-settings.html)` равно строке соединения "текущего" [сервиса данных](fo_data-service.html), а `[DataServiceType](keep-and-use-audit-settings.html)` - типу "текущего" [сервиса данных](fo_data-service.html), и '''значение первой найденной `[ConnStringName](keep-and-use-audit-settings.html)` будет искомым именем строки соединения для аудита'''.
+Если "текущий" [сервис данных](fo_data-service.html) некорректен, то в качестве имени строки соединения используется значение [ConnStringName](efs_keep-and-use-audit-settings.html) из первой `AuditDSSetting` из массива `AuditDSSettings` ([имя строки соединения по умолчанию определено как &lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;](efs_audit-setter.html)).
 
-Реализация интерфейса `[IAudit](i-audit.html)` `[ICSSoft.STORMNET.Business.Audit.Audit](i-audit.html)` обрабатывает полученное имя строки соединения следующим образом:
+Иначе среди массива `AuditDSSettings` ищется `AuditDSSetting`, где [ConnString](efs_keep-and-use-audit-settings.html) равно строке соединения "текущего" [сервиса данных](fo_data-service.html), а [DataServiceType](efs_keep-and-use-audit-settings.html) - типу "текущего" [сервиса данных](fo_data-service.html), и значение первой найденной `ConnStringName` будет искомым именем строки соединения для аудита.
+
+Реализация интерфейса [IAudit](efs_i-audit.html) `ICSSoft.STORMNET.Business.Audit.Audit` обрабатывает полученное имя строки соединения следующим образом:
 # Производится поиск строки соединения по имени среди доступных в файле конфигурации.
 # Если строка соединения не была найдена, то используется строка соединения из [DataServiceProvider.DataService](fo_ds-provider.html).
 
 ## Определение типа сервиса данных
-Тип [сервиса данных](fo_data-service.html), посредством которого будет записываться аудит, не определяется на этапе подготовки данных для записи в аудит. Тип определяется уже в реализации интерфейса `[IAudit](i-audit.html)`.
+Тип [сервиса данных](fo_data-service.html), посредством которого будет записываться аудит, не определяется на этапе подготовки данных для записи в аудит. Тип определяется уже в реализации интерфейса `IAudit`.
 
-Реализация интерфейса `[IAudit](i-audit.html)` `[ICSSoft.STORMNET.Business.Audit.Audit](i-audit.html)` определяет тип сервиса данных следующим образом (см. также [следующую статью](efs_audit-win-service.html)):
+Реализация интерфейса `IAudit` `ICSSoft.STORMNET.Business.Audit.Audit` определяет тип сервиса данных следующим образом (см. также [следующую статью](efs_audit-win-service.html)):
 # Тип сервиса данных всегда ищется в конфиг-файле по ключу <Имя строки соединения>_DSType.
 # Если такой записи нет, то берётся сервис данных, указанных в настройке "DefaultDSType".
 # Иначе используется тип сервиса данных [DataServiceProvider.DataService](fo_ds-provider.html).

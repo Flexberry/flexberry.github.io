@@ -13,7 +13,6 @@ lang: ru
 
 ![Изображение](/images/img/page/AuditWeb/AuditStoreSettings.PNG)
 
-
 (((
 <msg type=note>На текущем этапе реализации аудита используются классы: `AuditAppSetting` и `AuditDSSetting`; класс `AuditClassSetting` используется не в полной мере.</msg>
 )))
@@ -30,7 +29,7 @@ lang: ru
 * `WriteSessions` – следует ли сохранять сведения о сессиях пользователей.
 
 ## Настройки класса и настройки полей  (AuditClassSetting и AuditFieldSetting)
-Настройки класса генерируются непосредственно в код класса объектов (аналогично тому, как в [код класса объектов добавлен атрибут `Views`](static--view--accessors.html)):
+Настройки класса генерируются непосредственно в код класса объектов (аналогично тому, как в [код класса объектов добавлен атрибут `Views`](fo_static-view-accessors.html)):
 * `bool AuditEnabled` - включён ли аудит для класса.
 * `bool UseDefaultView` - cледует ли использовать представление по умолчанию при аудите.
 * `bool InsertAudit`, `string InsertAuditViewName` - настройки аудита операции создания объекта (имя представления + включён ли аудит для данной операции).
@@ -44,10 +43,10 @@ lang: ru
 * `bool KeepOldValue` - следует ли в записи об изменении сохранять старое значение аудируемого поля ('''не используется''').
 * `bool Compress ` – следует ли сжимать сохраняемые значения полей ('''не используется''').
 * `bool KeepAllValues` – следует ли сохранять только изменяемые поля из представления, либо все поля, входящие в представление ('''не используется''').
-* `IAudit [AuditClassService](rights-and-audit-subsystems.html)` - реализация интерфейса `[IAudit](i-audit.html)`, через который необходимо производить аудит конкретного класса.
-* `string [AuditClassConnectionStringName](rights-and-audit-subsystems.html)` - [имя строки подключения к БД, посредством которой необходимо писать аудит](efs_data-service-for-audit.html).
+* `IAudit` [AuditClassService](efs_rights-and-audit-subsystems.html) - реализация интерфейса [IAudit](efs_i-audit.html), через который необходимо производить аудит конкретного класса.
+* `string` [AuditClassConnectionStringName](efs_rights-and-audit-subsystems.html) - [имя строки подключения к БД, посредством которой необходимо писать аудит](efs_data-service-for-audit.html).
 
-```cs
+```csharp
 namespace ICSSoft.STORMNET.Security
 {
     public class Agent : ICSSoft.STORMNET.DataObject, IDataObjectWithAuditFields
@@ -205,8 +204,9 @@ namespace ICSSoft.STORMNET.Security
 # Если настройка класса по умолчанию отсутствует, то аналогичный поиск осуществляется для дополнительных настроек, где объект удовлетворяет соответствующим `LimitFunction`.
 
 # Чтение настроек
-`[AuditService](flexberry-audit-components.html)` основные настройки классов объектов получает непосредственно из классов через `reflection`.
-Общие настройки аудита приложения загружаются в `[AuditService](flexberry-audit-components.html)` в начале работы web-приложения в Global.asax.cs, откуда идёт обращение к специализированному классу `[Инициализация аудита](efs_audit-setter.html)`, который отвечает за формирование настроек из config-файла и первичную инициализацию `[AuditService](flexberry-audit-components.html)`.
+
+[AuditService](efs_flexberry-audit-components.html) основные настройки классов объектов получает непосредственно из классов через `reflection`.
+Общие настройки аудита приложения загружаются в `AuditService` в начале работы web-приложения в Global.asax.cs, откуда идёт обращение к специализированному классу `[Инициализация аудита](efs_audit-setter.html)`, который отвечает за формирование настроек из config-файла и первичную инициализацию `AuditService`.
 
 Схема чтения настроек для `AuditService`:
 

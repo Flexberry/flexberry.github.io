@@ -48,7 +48,7 @@ lang: en
 
 * [Изменение значений атрибутов](fo_own-object-attributes.html).
 * [Получение информации о статусе объекта](fo_processing-status-condition-load.html).
-* [Получение информации о загруженных свойствах](fo_get-loaded-properties-and--check-loaded-property.html).
+* [Получение информации о загруженных свойствах](fo_definition-loaded-properties.html).
 * [Получение метаданных объекта](fo_methods-class-information.html).
 * [Блокировка объекта для монопольного редактирования](fo_lock-service.html).
 * [Проверка совместимости объекта и представления](fo_test-object-for-viewing.html).

@@ -2,7 +2,7 @@
 title: Настройка параметров чтения (LCS)
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, сервис данных, lcs, ограничение, вычитка, фильтрация, loading
-summary: Настройка параметров выборки данных LoadingCustomizationStruct: тип данных, представление, ограничение, постраничная загрузка.
+summary: Настройка параметров выборки данных LoadingCustomizationStruct, типы данных, представление, ограничение, постраничная загрузка
 toc: true
 permalink: ru/fo_loading-customization-struct.html
 lang: ru
@@ -24,7 +24,7 @@ LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(type
 * `ReturnTop` — указание количества возвращаемых записей;
 * `LoadingTypes` — указывает классы данных, чьи экземпляры требуется читать ([пример](fo_reading-several-types-objects.html));
 * `ColumnsSort` — параметры сортировки возвращаемых результатов;
-* `ColumnsOrder` — порядок следования свойств объекта данных в результирующей строке с разделителями, актуально, если для чтения используется метод [сервиса данных](fo_construction-ds.htm) `LoadStringedObjectView`.
+* `ColumnsOrder` — порядок следования свойств объекта данных в результирующей строке с разделителями, актуально, если для чтения используется метод [сервиса данных](fo_construction-ds.html) `LoadStringedObjectView`.
 * `InitDataCopy` — включение или отключение инициализации [копии данных](fo_data-object-copy.html) при вычитке данных.
 * `LimitFunction` — [ограничение на зачитываемые объекты данных](fo_limit-function.html), с сервера будут возвращены только те объекты, что удовлетворяют данному ограничению;
 * `Distinct` — получение различных данных (используется, например, с методом [LoadRawValues SQLDataService](fo_standard-data-services.html)).

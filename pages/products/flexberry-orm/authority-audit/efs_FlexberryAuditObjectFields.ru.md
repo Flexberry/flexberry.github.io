@@ -18,10 +18,11 @@ lang: ru
 
 После генерации поля аудита добавляются непосредственно в объект и контролируются специальным интерфейсом «IDataObjectWithAuditFields».
 
-Значения, которые [при выполнении подставляются в данные поля], берутся из `[CurrentUserService](not-stored-properties-and-audit.html)`.
+Значения, которые [при выполнении подставляются в данные поля], берутся из [CurrentUserService](efs_not-stored-properties-and-audit.html).
 
 # Пример полей аудита в коде класса
-```cs
+
+```csharp
 public class Клиент : ICSSoft.STORMNET.DataObject, IDataObjectWithAuditFields
 {
 	// ...

@@ -7,9 +7,9 @@ permalink: ru/efs_audit-setter.html
 lang: ru
 ---
 
-
 # AuditSetter
-`AuditSetter` осуществляет [инициализацию настроек аудита](keep-and-use-audit-settings.html).
+
+`AuditSetter` осуществляет [инициализацию настроек аудита](efs_keep-and-use-audit-settings.html).
 
 Инициализацию не обязательно выполнять посредством данного класса, в нём просто собрана наиболее удачная инициализация значениями по умолчанию.
 
@@ -30,10 +30,10 @@ lang: ru
 #* "AuditWinServiceUrl" = `string.Empty`.
 #* "WriteSessions" = `false`.
 #* "DefaultWriteMode" = `tWriteMode.Synchronous`.
-# Создаётся экземпляр класса `[AuditAppSetting](keep-and-use-audit-settings.html)`, куда записываются полученные настройки.
-# Создаётся экземпляр класса `[AuditDSSetting](keep-and-use-audit-settings.html)`, куда передаётся полученный методом `AuditSetter.InitAuditService` [сервис данных](fo_sql-data-service.html) и для него формируется имя вида "&lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;".
+# Создаётся экземпляр класса [AuditAppSetting](efs_keep-and-use-audit-settings.html), куда записываются полученные настройки.
+# Создаётся экземпляр класса [AuditDSSetting](efs_keep-and-use-audit-settings.html), куда передаётся полученный методом `AuditSetter.InitAuditService` [сервис данных](fo_sql-data-service.html) и для него формируется имя вида "&lt;AppNameForAudit&gt;_&lt;AuditConnectionStringName&gt;".
 
-После этого происходит инициализация [AuditService](flexberry-audit-components.html).
+После этого происходит инициализация [AuditService](efs_flexberry-audit-components.html).
 ```cs
 AuditService.InitAuditService(auditAppSetting, new ICSSoft.STORMNET.Business.Audit.Audit());
 ```
