@@ -5,7 +5,6 @@ keywords: Flexberry Winforms,
 summary: Объясняются понятия, связанные с понятиями фильтров и ограничений
 toc: true
 permalink: en/fw_filtersand-limits.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 
@@ -55,7 +54,7 @@ arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsG
 * STORMFILTERLOOKUP (содержит настройки для лукапов); 
 * STORMFILTERDETAIL (содержит настройки для [детейлов](fd_key-concepts.html));
 
-{% include note.html content="AdmConsole адекватно [создаёт настройки автоматически](fw_filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](set-runtime-dotnet-version.html) для AdmConsole." %}
+{% include note.html content="AdmConsole адекватно [создаёт настройки автоматически](fw_filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](gbt_set-runtime-dotnet-version.html) для AdmConsole." %}
 
 {% include note.html content="Для того, чтобы ограничение «сам объект» заработало - нужно создать STORMFILTERLOOKUP для этого объекта." %}
 

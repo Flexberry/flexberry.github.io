@@ -248,6 +248,11 @@ entries:
       url: /fd_editform.html
       output: web, pdf
 
+    - title: Сlasses with stereotype listform
+      title_ru: Формы списка (классы со стереотипом listform) 
+      url: /fd_listform.html
+      output: web, pdf
+
     - title: Business servers 
       title_ru: Бизнес-серверы (классы со стереотипом businessserver)
       url: /fd_business-servers.html

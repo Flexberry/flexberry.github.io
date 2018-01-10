@@ -5,7 +5,6 @@ keywords: Flexberry Winforms
 summary: Указаны различные варианты использования метода Change у EditManager для обновления значений на форме при изменении объектов данных программным путём
 toc: true
 permalink: en/fw_editmanager-change.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 

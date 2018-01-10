@@ -5,11 +5,10 @@ keywords: Ограничения
 summary: На примерах показано как использовать OwnerConnectProp, ConnectMasterProp при построении ограничений
 toc: true
 permalink: en/fw_master-details-filters.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 
-Рассмотрим несколько примеров.
+Фильтрация по детейлам мастера может быть проиллюстрированна на нескольких примерах.
 
 ## Диаграмма-пример для 3 классов
 

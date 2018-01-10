@@ -5,7 +5,6 @@ keywords: DateTime (работа с датами)
 summary: Указано как с помощью настройки в конфиге задать формат даты для отображения в ObjectListView
 toc: true
 permalink: en/fw_date-format.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 
