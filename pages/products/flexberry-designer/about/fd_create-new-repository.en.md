@@ -8,7 +8,7 @@ permalink: en/fd_create-new-repository.html
 lang: en
 ---
 
-После запуска [Flexberry Designer](fd_flexberry_desinger.html) можно создать новый `Репозиторий` для работы, выбрав пункт меню `Репозиторий` – `Создать новый`:
+После запуска [Flexberry Designer](fd_landing_page.html) можно создать новый `Репозиторий` для работы, выбрав пункт меню `Репозиторий` – `Создать новый`:
 
 ![](/images/pages/products/flexberry-designer/about/create-new-repository.png)
 

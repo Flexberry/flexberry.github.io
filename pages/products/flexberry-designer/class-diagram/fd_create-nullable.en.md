@@ -8,7 +8,7 @@ permalink: en/fd_create-nullable.html
 lang: en
 ---
 
-Порядок настройки [Flexberry Designer](fd_landing_page.html) для поддержки [Nullable-типов](fo_nullable-types.html) на примере создания типа `bool?`.
+Порядок настройки [Flexberry Designer](fd_landing_page.html) для поддержки [Nullable-типов](fd_nullable-types.html) на примере создания типа `bool?`.
 
 Требуется использовать на [диаграмме классов](fd_class-diagram.html) тип `bool?`. Для этого необходимо:
 

@@ -45,9 +45,8 @@ Flexberry Designer является [продуктом платформы Flexb
 *   [из дистрибутива](fd_standalone-install.html).
 *   [с сайта продукта](fd_install.html).
 
-Для работы Flexberry Designer должна быть [установлена корректная лицензия](fd_installation-licensing-files.html) на все используемые продукты.
+Для работы Flexberry Designer должна быть установлена корректная лицензия на все используемые продукты.
 
 Дополнительно Flexberry Designer предоставляет следующие полезные возможности:
 
-* [Запуск Flexberry Designer с открытием указанной стадии](fd_running-with-the-opening-of-stage.html)
-* [Настройка имени главной формы Flexberry Designer](fd_form-name.html)
+* [Запуск Flexberry Designer с открытием указанной стадии](fd_running-opening-stage.html)

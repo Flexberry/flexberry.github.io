@@ -50,10 +50,10 @@ lang: en
 ## Стандартные модули Flexberry Designer
 
 * [Модуль расширения Flexberry ORM](fo_orm-case-plugin.html)
-* [Модуль расширения Flexberry ASP.NET]()
-* [Модуль расширения Flexberry Ember]()
-* [Модуль расширения Flexberry WinForms]()
+* [Модуль расширения Flexberry ASP.NET](fa_asp-net-generator.html)
+* [Модуль расширения Flexberry Ember](ef_generator.html)
+* [Модуль расширения Flexberry WinForms](fw_flexberry-winforms-case-plugin.html)
 
 ## Как реализовать свой модуль расширения Flexberry Designer
 
-[Как создать свой модуль расширения для Flexberry Designer описывается в отдельной статье.](fd_plugins-development.html)
+[Как создать свой модуль расширения для Flexberry Designer описывается в отдельной статье](fd_plugins-development.html)
