@@ -1,6 +1,12 @@
-﻿
-
-
+﻿---
+title: Подсистема интеграции и запуска отчетов
+sidebar: flexberry-platform_sidebar
+keywords: 
+toc: true
+permalink: ru/fp_flex-reports.html
+lang: ru
+summary: 
+---
 
 ## Подсистема интеграции и запуска отчетов
 
@@ -15,12 +21,3 @@
 * [Stimulsoft-Reports-Designer-Web|Stimulsoft Reports Designer.Web)
 * [StimulSoftConnectionString|Строка подключения к базе в отчетах StimulSoft)
 * [StimulsoftQueryEdit|Изменение запроса Stimulsoft)
-
-
-
-
-
-
-
-
-

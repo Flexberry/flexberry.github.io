@@ -4,11 +4,8 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, View (представление)
 toc: true
 permalink: en/fo_view-operations.html
-folder: products/flexberry-orm/
 lang: en
 ---
-
-## Операции с представлениями
 
 Над [представлениями](fd_view-definition.html), как над множествами свойств связанных объектов данных, возможны следующие операции:
 
@@ -19,6 +16,6 @@ lang: en
 
 Связанные [представления детейлов](fd_view-definition.html) обрабатываются рекурсивно.
 
-Операции с представлением являются очень удобной возможностью при выполнении [дочитывания объектов данных сервисами данных](fo_additional-loading-data-object) (например, если имеется объект данных с частью проинициализированных свойств, а требуется отобразить его в представлении с более широким набором свойств, можно вычислить разницу и дочитать объект данных только по ней).
+Операции с представлением являются очень удобной возможностью при выполнении [дочитывания объектов данных сервисами данных](fo_additional-loading.html) (например, если имеется объект данных с частью проинициализированных свойств, а требуется отобразить его в представлении с более широким набором свойств, можно вычислить разницу и дочитать объект данных только по ней).
 
-Пример работы с операциями над представлениями доступен по адресу [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs]().
+Пример работы с операциями над представлениями доступен по адресу [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs).

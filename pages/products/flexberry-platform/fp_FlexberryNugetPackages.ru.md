@@ -12,9 +12,9 @@ lang: ru
 
 Отдельные компоненты технологии проектирования и программирования Flexberry распространяются через пакетный менеджер [NuGet](https://nuget.org). Часть пакетов располагается в открытом публичном доступе в галерее [NuGet.org](https://www.nuget.org/packages?q=Flexberry). Для ведения версий пакетов применяется принцип [семантического версионирования] (http://semver.org/lang/ru/).
 
-## [Flexberry Asp.Net](flexberry-a-s-p-n-e-t.html)
+## Flexberry ASP.NET
 
-Сборки, входящие в пакет:
+Сборки, входящие в пакет [Flexberry ASP.NET](fa_flexberry-asp-net.html):
 
 * CacheBaseLibrary.dll
 * ClientLibrary.dll
@@ -37,13 +37,14 @@ lang: ru
 * OfficeWebUI.dll
 * SmartScroller.dll
 
-## [Flexberry LogService](log-service-log4net.html)
-Пакет содержит компоненты [сервиса логирования событий](log-service-log4net.html) (этот пакет также определяет используемую версию сборки log4net).
+## Flexberry LogService
+
+Пакет содержит компоненты [сервиса логирования событий](fo_log-service-log4net.html) (этот пакет также определяет используемую версию сборки log4net).
 
 Сборки, входящие в пакет:
 * LogService.dll
 
-## [Flexberry LogService Objects](fo_log-service-objects.html)
+## Flexberry LogService Objects
 
 Сборки, входящие в пакет:
 * IIS.Flexberry.Logging(BusinessServers).dll
@@ -73,14 +74,16 @@ lang: ru
 ## [Flexberry ORM](fo_flexberry-orm.html)
 Пакет содержит компоненты для объектно-реляционного отображения.
 
-Сборки, входящие в пакет описаны [тут](flexberry-o-r-m-libraries.html).
+Сборки, входящие в пакет описаны [тут](fo_flexberry-orm-libraries.html).
 
-## [Flexberry ORM ODataService](flexberry-o-r-m-o-data-service.html)
+## Flexberry ORM ODataService
+
 Пакет содержит компоненты для создания OData-сервиса.
 
-Сборки, входящие в пакет описаны [тут](flexberry-o-r-m-o-data-service.html).
+Сборки, входящие в пакет описаны [тут](fo_orm-odata-service.html).
 
-## [Flexberry Winforms](flexberry-winforms.html)
+## Flexberry Winforms
+
 Пакет содержит компоненты фреймворка Flexberry Winforms: WinForms-контролы и основные типы, необходимые для работы генерируемых WinForms-приложений.
 
 Сборки, входящие в пакет:
@@ -101,8 +104,9 @@ lang: ru
 * ActiveReports.Viewer.dll
 * MagicLocalLibrary.dll
 
-## [Flexberry Security](flexberry-security.html)
-Пакет содержит компоненты [подсистемы полномочий](right-manager-module.html).
+## Flexberry Security
+
+Пакет содержит компоненты [подсистемы полномочий](efs_security.html).
 
 Сборки, входящие в пакет:
 * CheckingLibrary.dll

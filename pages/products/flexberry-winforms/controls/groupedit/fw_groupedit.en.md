@@ -112,7 +112,7 @@ GroupEdit1.EditManager.AfterChangeProperty += (o, s) =>
 
 ## Полезные ссылки по GroupEdit
 
-* Некоторые часто задаваемые вопросы освящены в статье [FAQ по вводному обучению](initial-trainig-f-a-q.html), а также в статье [WinForms UI FAQ](fw_winforms-ui-faq.html).
+* Некоторые часто задаваемые вопросы освящены в статье [FAQ по вводному обучению](gbt_initial-trainig-faq.html), а также в статье [WinForms UI FAQ](fw_winforms-ui-faq.html).
 * [Обработка нажатий клавиш контролами в GE](fw_processing-keystrokes-of-ge.html).
 * [Отображение мастера в `GroupEdit`](fw_displaying-master-in-groupedit.html).
 * [Блокировка редактирования отдельных записей в `GroupEdit`](fw_lock-rows-in-groupedit.html).

@@ -4,7 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: en/fo_limit-function.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
@@ -20,7 +19,7 @@ lang: en
 
 [ExternalLangDef](fo_external-lang-def.html) - расширение языка ограничений для задания ограничений на зависимые объекты (детейлы).
 
-Существует [возможность расширить реализованные языки ограничений](fo_creation-function-when-using-language-def.html).
+Существует [возможность расширить реализованные языки ограничений](fo_using-languagedef.html).
 
 ## Применение функций ограничения
 

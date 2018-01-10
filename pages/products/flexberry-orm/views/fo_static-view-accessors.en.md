@@ -4,7 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: DataObject (объекты данных), Flexberry ORM, Public, View (представление)
 toc: true
 permalink: en/fo_static-view-accessors.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
@@ -33,4 +32,4 @@ View view = Information.GetView("КошкаL", typeof(Кошка));
 View view = Кошка.Views.КошкаL;
 ```
 
-Пример определения статических свойств доступен по адресу [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/CDDA.cs]().
+Пример определения статических свойств доступен по адресу [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/CDDA.cs](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/CDDA.cs).

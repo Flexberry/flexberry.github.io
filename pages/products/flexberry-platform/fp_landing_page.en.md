@@ -4,9 +4,9 @@ keywords: flexberry
 sidebar: flexberry-platform_sidebar
 toc: false
 permalink: en/fp_landing_page.html
-folder: product1
 lang: en
 ---
+
 <!-- TODO: Fix "Edit me" button link
 now
 https://github.com//Flexberry/flexberry.github.io/edit/_pages/product1/rufp_landing_page.html.md

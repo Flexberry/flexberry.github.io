@@ -5,7 +5,6 @@ keywords: DataObject (объекты данных), Windows UI (формы)
 summary: Описано, что предполагает собой режим "Только чтение" в приложении. Рассмотрены методы блокировки пользовательского интерфейса с помощью EditManager, указано как блокировать объект в памяти приложения, и за счет чего достигается блокировка в базе
 toc: true
 permalink: ru/fw_readonly-win.html
-folder: products/flexberry-winforms/
 lang: ru
 ---
 

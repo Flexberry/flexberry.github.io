@@ -1,5 +1,12 @@
-﻿
-
+﻿---
+title: Создание универсальных отчётов
+sidebar: flexberry-platform_sidebar
+keywords: 
+toc: true
+permalink: ru/fp_create-uni-report.html
+lang: ru
+summary: 
+---
 
 ## Общие замечания
 
@@ -17,7 +24,7 @@
 3. [StatitorEnvironmentStart|Запустить среду Статитора через ярлыки на рабочем столе). Выполнить пункты 1,2 и 3 (в пункте 3 вместо StatitorReport необходимо добавить отчет UniReport из библиотеки ICSSoft.STORMNET.Reports.UniReports.dll).
 
 
-==Создание универсальных отчётов
+## Создание универсальных отчётов
 
 Для создания универсальных отчётов необходимо: 
 

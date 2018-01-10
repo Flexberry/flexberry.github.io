@@ -4,9 +4,9 @@ keywords: flexberry
 sidebar: flexberry-platform_sidebar
 toc: false
 permalink: ru/fp_landing_page.html
-folder: product1
 lang: ru
 ---
+
 <div class="row">
         <div class="col-lg-12">
             <h2 class="page-header">Services Panels</h2>

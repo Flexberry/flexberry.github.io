@@ -3,7 +3,7 @@ title: Создание собственных функций при испол�
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
-permalink: ru/fo_creation-function-when-using--language-def.html
+permalink: ru/fo_using-languagedef.html
 ---
 
 Существуют стандартные "построители" функций для наложения ограничений, [SQLWhereLanguageDef](fo_function-list.html) и [ExternalLangDef](fo_external-lang-def.html). 

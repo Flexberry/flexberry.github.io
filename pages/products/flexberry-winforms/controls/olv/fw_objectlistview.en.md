@@ -5,7 +5,6 @@ keywords: Windows UI (Контролы)
 summary: Перечень статей по ObjectListView и некоторые свойства и методы
 toc: true
 permalink: en/fw_objectlistview.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 
