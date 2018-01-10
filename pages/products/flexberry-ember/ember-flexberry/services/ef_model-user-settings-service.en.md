@@ -212,7 +212,7 @@ developerUserSettings: { «componentName»: { } }
 
 ## Настройка ODataService
 
-Если серверная часть представляет собой приложение с подключённым [Flexberry ORM ODataService](flexberry-o-r-m-o-data-service.html), то для корректной работы сервиса необходимо, чтобы, помимо прикладных сборок с объектами, дополнительно передавались имена двух технологических сборок: "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService".
+Если серверная часть представляет собой приложение с подключённым [Flexberry ORM ODataService](fo_orm-odata-service.html), то для корректной работы сервиса необходимо, чтобы, помимо прикладных сборок с объектами, дополнительно передавались имена двух технологических сборок: "UserSettingsService", "NewPlatform.Flexberry.ORM.ODataService".
 
 
 ``` cs

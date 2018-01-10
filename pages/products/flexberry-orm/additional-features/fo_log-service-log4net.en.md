@@ -29,7 +29,7 @@ catch (Exception ex)
 
 ### Конфигурирование
 
-Пример конфигурации (дополнительные аппендеры можно найти по ссылке: [http://logging.apache.org/log4net/release/config-examples.html|config-examples]()):
+Пример конфигурации (дополнительные аппендеры можно найти по ссылке: [config-examples](http://logging.apache.org/log4net/release/config-examples.html)):
 
 ``` xml
 <?xml version="1.0" encoding="utf-8" ?>

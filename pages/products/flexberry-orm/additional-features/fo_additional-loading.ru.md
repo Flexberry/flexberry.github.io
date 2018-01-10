@@ -157,7 +157,7 @@ DataObject dataObject, bool checkExistingObject, DataObjectCache dataObjectCache
 * Если мастер не был вычитан ранее, то он будет зачитан со всеми его мастерами
 * Если мастер уже был вычитан, то будут обновлены его свойства по общему принципу
 * **Если мастер был зачитан ранее, но был заменён на другой, то будет зачитан новый объект** 
-* При дочитке мастер проставляется в LoadedProperties даже если явно не был указан в представлении предка и в БД его нет (изменена [стандартная логика](fo_get-loaded-properties-and--check-loaded-property.html)). Мастер не будет указан в LoadedProperties только если LoadingState объекта: `LoadingState.NotLoaded`
+* При дочитке мастер проставляется в LoadedProperties даже если явно не был указан в представлении предка и в БД его нет (изменена [стандартная логика](fo_definition-loaded-properties.html)). Мастер не будет указан в LoadedProperties только если LoadingState объекта: `LoadingState.NotLoaded`
 
 ##### Копия данных
 

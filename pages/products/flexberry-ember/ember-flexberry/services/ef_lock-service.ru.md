@@ -33,7 +33,7 @@ lock: {
 > * openReadOnly - отвечает за открытие формы редактирования только для чтения, если форма заблокирована.
 > * unlockObject -  отвечает за удаление блокировки при выходе с формы.
 
-* Добавить в Backend [ODataService](flexberry-o-r-m-o-data-service.html) библиотеку NewPlatform.Flexberry.LockService.
+* Добавить в Backend [ODataService](fo_orm-odata-service.html) библиотеку NewPlatform.Flexberry.LockService.
 
 * Добавить в ODataConfig assemblies тип Lock:
 ```cs

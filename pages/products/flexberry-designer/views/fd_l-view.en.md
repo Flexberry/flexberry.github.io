@@ -9,7 +9,7 @@ lang: en
 ---
 
 
-Используется на [списковых формах](fd_listform.html) (свойство ViewName компонента [ObjectListView](fw_object-list-view.html), [WebObjectListView](fa_web-object-list-view.html) и [Flexberry ObjectListView](ef_object-list-view.html)).
+Используется на [списковых формах](fd_listform.html) (свойство ViewName компонента [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html) и [Flexberry ObjectListView](ef_object-list-view.html)).
 
 ## Настройка
 

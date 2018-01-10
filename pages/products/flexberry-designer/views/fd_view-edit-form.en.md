@@ -71,7 +71,7 @@ lang: en
 
 #### Свойства интерфейсов в представлении
 
-Во [Flexberry Designer](fa_flexberry-designer.html) поддерживается добавление в [представление](fd_view-definition.html) свойств, объявленных у [интерфейсов](fd_interfaces.html), от которых наследовались [классы объектов](fd_data-classes.html).
+Во [Flexberry Designer](fd_landing_page.html) поддерживается добавление в [представление](fd_view-definition.html) свойств, объявленных у [интерфейсов](fd_interfaces.html), от которых наследовались [классы объектов](fd_data-classes.html).
 
 Например, пусть есть диаграмма вида: 
 
