@@ -35,8 +35,7 @@ lang: ru
 ### Правила разработки Flexberry ASP.NET web-контролов
 
 Основные особенности создания Flexberry ASP.NET web-контролов:
-* [Правила разработки ASP.NET web-контролов](fa_mastering-rules.html)
-* [Правила создания контролов](control-authoring-rules.html)
+
 * [Разработка ASP.NET контролов](fa_developing-controls.html)
 * [Предиктивный ввод в Web-приложениях](fa_predict-input-web.html)
 
@@ -75,7 +74,6 @@ lang: ru
 * [LinkModalPopupWindow](fa_link-modal-popup-window.html)
 * [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)
 * [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html)
-* [MasterEditorLookUp](fa_master-editor-lookup.html) 
 * [MasterEditorLinkedAjaxLookUp](fa_master-editor-linked-ajax-lookup.html)
 * [MasterExpander](fa_ajax-controls-master-expander.html)
 * [MsDropDown](fa_ms-drop-down.html)

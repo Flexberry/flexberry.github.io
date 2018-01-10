@@ -17,10 +17,10 @@ Flexberry ASP.NET является [продуктом платформы Flexbe
 
 Flexberry ASP.NET состоит из следующих модулей:
 
-* [Модуль расширения Flexberry Designer для генерации web-приложений по uml-моделям](fa_case-plugin.html).
+* [Модуль расширения Flexberry Designer для генерации web-приложений по uml-моделям](fa_asp-net-generator.html).
 * [Web-контролы и web-компоненты](fa_web-controls.html).
 * [Подсистема полномочий (web)](fa_right-manager.html)
-* [Темы оформления](fa_flexberry-asp-net-themes.html)
+* [Темы оформления](fa_themes.html)
 
 ## Ограничения Flexberry ASP.Net
 
@@ -44,8 +44,6 @@ Flexberry ASP.NET состоит из следующих модулей:
 * Проектирование и разработка веб-приложений
     * [Задание колонок для размещения контролов на уровне представлений Flexberry Designer](fd_specify-column-controls.html)
     * [Маршрутизация в Web-приложениях](fa_routing.html)
-    * [Рекомендации по работе с технологией](fa_tech-recommendations.html)
-    * [Запуск win-приложения из окна браузера](fw_win-app-start-from-browser.html)
     * [Сценарии веб-разработки](fa_scenario-web.html)
 
 ## Примеры

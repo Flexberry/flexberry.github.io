@@ -1,14 +1,14 @@
 ---
 title: Учебник программиста Flexberry Platform
-sidebar: product--sidebar
+sidebar: guide-base-tech_sidebar
 keywords: Учебники
 toc: true
-permalink: ru/Учебник-программиста--flexberry-platform.html
-folder: product--folder
+permalink: ru/gbt_flexberry-platform-guide.html
 lang: ru
 ---
 
 # Учебник программиста Flexberry Platform
+
 '''Учебник программиста''' - это азы программирования на Flexberry Platform. Тут собраны основные моменты, касающиеся данной технологией. Рекомендуется к прочтению новыми сотрудниками при поступлении на работу.
 
 ## Оглавление:
@@ -85,7 +85,7 @@ lang: ru
 #* [Поддержка схем Windows XP](support-schemes--windows--x-p.html)
 #* [Сервис блокировок](lock-service.html)
 #* [Создание и подключение монитора задач](fo_creating-connection-bt-monitor.html)
-#* [Подсистема полномочий](right-manager-module.html)
+#* [Подсистема полномочий](efs_right-manager-module.html)
 #* [Прочие возможности](class-image.html)
 #* [Перечислимые типы данных](fd_enumerations.html)
 #* [Если что-либо «глючит» в Design-Time](design--time--errors.html)

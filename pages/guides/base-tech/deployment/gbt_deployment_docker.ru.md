@@ -4,7 +4,6 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_deployment_docker.html
-folder: guides/base-tech/deployment/
 lang: ru
 ---
 

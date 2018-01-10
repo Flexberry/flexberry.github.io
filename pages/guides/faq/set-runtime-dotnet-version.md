@@ -1,10 +1,9 @@
 ---
 title: Запуск приложения в конкретной версии .NET Framework
-sidebar: product--sidebar
+sidebar: guide-base-tech_sidebar
 keywords: Развёртывание
 toc: true
-permalink: ru/set-runtime-dotnet-version.html
-folder: product--folder
+permalink: ru/gbt_set-runtime-dotnet-version.html
 lang: ru
 ---
 

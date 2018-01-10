@@ -76,4 +76,4 @@ lang: ru
 
 ## Настройка WOLV'а на LookUp-форме
 
-Описание применения настроек описано в [статье Операции WebObjectListView](fa_wolv-operations.html#wolv--)
+Описание применения настроек описано в [статье Операции WebObjectListView](fa_wolv-operations.html)

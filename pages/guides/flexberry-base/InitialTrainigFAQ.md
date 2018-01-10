@@ -1,14 +1,14 @@
 ---
 title: FAQ по вводному обучению
-sidebar: product--sidebar
+sidebar: guide-base-tech_sidebar
 keywords: FAQ
 toc: true
-permalink: ru/initial-trainig-f-a-q.html
-folder: product--folder
+permalink: ru/gbt_initial-trainig-faq.html
 lang: ru
 ---
+
 (((
-<msg type=important>При работе с "дополнительными приложениями", например, [AdmConsole](filter-settings.html) может оказаться, что версия .Net Framework, под которую разрабатывается приложение, выше той, что используется "дополнительным приложением". В этом случае необходимо либо опустить версию разрабатываемого приложения, что зачастую нежелательно, либо [указать более высокую версию для "дополнительного приложения"](set-runtime-dotnet-version.html).</msg>
+<msg type=important>При работе с "дополнительными приложениями", например, [AdmConsole](filter-settings.html) может оказаться, что версия .Net Framework, под которую разрабатывается приложение, выше той, что используется "дополнительным приложением". В этом случае необходимо либо опустить версию разрабатываемого приложения, что зачастую нежелательно, либо [указать более высокую версию для "дополнительного приложения"](gbt_set-runtime-dotnet-version.html).</msg>
 )))
 
 
@@ -34,7 +34,7 @@ lang: ru
 
 # Особенности построения моделей в Flexberry
 
-При работе с Flexberry необходимо иметь представления о сведениях, представленных в учебниках "[Введение в Flexberry](Flexberry--intro.html)", "[Сaseberry plugins(Модули)](Flexberry-plugins-modules.html)", "[«Аксиомы» Flexberry ](flexberry-axioms.html)" и "[Учебник программиста](Учебник-программиста--flexberry-platform.html)".
+При работе с Flexberry необходимо иметь представления о сведениях, представленных в учебниках "[Введение в Flexberry](Flexberry--intro.html)", "[Сaseberry plugins(Модули)](Flexberry-plugins-modules.html)", "[«Аксиомы» Flexberry ](flexberry-axioms.html)" и "[Учебник программиста](gbt_flexberry-platform-guide.html)".
 
 
 (((
@@ -131,13 +131,14 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 Посмотрите [здесь](lock-service.html).
 
 #### Проведение авторизации пользователя
-Посмотрите [здесь](right-manager-module.html) и обратите внимание на [SimpleLogInForm](using-simple-login-form.html) (как начать работу с [подсистемой полномочий](right-manager-module.html) описано [здесь](how-to-start-work-with-right-manager.html)).
+
+Посмотрите [здесь](efs_right-manager-module.html) и обратите внимание на [SimpleLogInForm](using-simple-login-form.html).
 
 Также можно в некоторых случаях для данных целей использовать [нехранимый класс](fo_using-not-stored-classes.html) и генерируемую Flexberry форму; как это сделать, описано в статье ["Установка текущего объекта при запуске приложения"](define-default-object.html).
 
 
 (((
-<msg type=important> Необходимо помнить, что БД приложения может находится на разных серверах с БД [подсистемы полномочий](right-manager-module.html) (соответственно, все логины, пароли, роли и назначенные права хранятся отдельно и их не должно быть на диаграмме Flexberry при генерации приложения (если всё же возникает сильная потребность вынести данные элементы на диаграмму, то см. статью [Пример задания полномочий на строки и переопределения сервиса текущего пользователя](right-manager-for-strokes-example.html))). 
+<msg type=important> Необходимо помнить, что БД приложения может находится на разных серверах с БД `подсистемы полномочий` (соответственно, все логины, пароли, роли и назначенные права хранятся отдельно и их не должно быть на диаграмме Flexberry при генерации приложения (если всё же возникает сильная потребность вынести данные элементы на диаграмму, то см. статью [Пример задания полномочий на строки и переопределения сервиса текущего пользователя](right-manager-for-strokes-example.html))). 
  
 Также не рекомендуется классы приложения называть так, как называются некоторые служебные таблицы Flexberry и её подсистем (например, "Пользователь").
 </msg>
@@ -170,7 +171,7 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 
 #### Фильтры
 
-Подробности читайте [здесь](filtersand-limits.html).
+Подробности читайте [здесь](fw_filtersand-limits.html).
 
 #### Бизнес-сервер
 
@@ -178,7 +179,7 @@ foreach (СтрокаПланаВыплат curStroke in ((Кредит)DataObje
 
 #### Отчёты
 
-О создании универсальных отчётов написано [здесь](create-uni-report.html), о создании отчётов на базе Статитора написано [здесь](statitor-environment-start.html).
+О создании универсальных отчётов написано [здесь](fp_create-uni-report.html), о создании отчётов на базе Статитора написано [здесь](statitor-environment-start.html).
 
 #### Аудит
 

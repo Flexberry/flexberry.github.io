@@ -224,11 +224,6 @@ entries:
       url: /fw_work-with-several-objects-on-editform.html
       output: web
 
-    - title: Listform
-      title_ru: Формы списка (классы со стереотипом listform) 
-      url: /fw_listform.html
-      output: web
-
     - title: List form caption
       title_ru: Установка заголовка списковой формы
       url: /fw_list-form-caption.html
@@ -517,5 +512,5 @@ entries:
 
     - title: Several classes of applications in a single stage
       title_ru: Несколько классов приложений в одной стадии
-      url: /fw_Several-classes-of-applications-in-a-single-stage.html
+      url: /fw_several-classes-single-stage.html
       output: web
