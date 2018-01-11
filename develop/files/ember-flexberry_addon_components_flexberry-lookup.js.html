@@ -1124,27 +1124,29 @@ export default FlexberryBaseComponent.extend({
             builder.where(resultPredicate);
           }
 
-          store.query(relationModelName, builder.build()).then((records) =&gt; {
-            // We have to cache data because dropdown component sets text as value and we lose object value.
-            let resultArray = [];
-            let results = records.map((i) =&gt; {
-              let attributeName = i.get(displayAttributeName);
-              resultArray[i.id] = i;
-              return {
-                name: attributeName,
-                value: i.id
-              };
+          Ember.run(() =&gt; {
+            store.query(relationModelName, builder.build()).then((records) =&gt; {
+              // We have to cache data because dropdown component sets text as value and we lose object value.
+              let resultArray = [];
+              let results = records.map((i) =&gt; {
+                let attributeName = i.get(displayAttributeName);
+                resultArray[i.id] = i;
+                return {
+                  name: attributeName,
+                  value: i.id
+                };
+              });
+
+              if (!_this.get(&#x27;required&#x27;)) {
+                results.unshift({ name: _this.get(&#x27;placeholder&#x27;), value: null });
+                resultArray[&#x27;null&#x27;] = null;
+              }
+
+              callback({ success: true, results: results });
+              _this.set(&#x27;_cachedDropdownValues&#x27;, resultArray);
+            }, () =&gt; {
+              callback({ success: false });
             });
-
-            if (!_this.get(&#x27;required&#x27;)) {
-              results.unshift({ name: _this.get(&#x27;placeholder&#x27;), value: null });
-              resultArray[&#x27;null&#x27;] = null;
-            }
-
-            callback({ success: true, results: results });
-            _this.set(&#x27;_cachedDropdownValues&#x27;, resultArray);
-          }, () =&gt; {
-            callback({ success: false });
           });
         }
       },

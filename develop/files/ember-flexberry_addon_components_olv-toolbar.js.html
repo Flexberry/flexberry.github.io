@@ -700,6 +700,21 @@ export default FlexberryBaseComponent.extend({
     },
 
     /**
+      Checks if &quot;Enter&quot; button was pressed.
+      If &quot;Enter&quot; button was pressed then filters the content by &quot;Filter by any match&quot; field value.
+
+      @method actions.keyDownFilterAction
+      @public
+    */
+    keyDownFilterAction(currentValue, e) {
+      if (e.keyCode === 13) {
+        this.send(&#x27;filterByAnyMatch&#x27;);
+      }
+
+      this._super(...arguments);
+    },
+
+    /**
       Remove filter from url.
 
       @method actions.removeFilter

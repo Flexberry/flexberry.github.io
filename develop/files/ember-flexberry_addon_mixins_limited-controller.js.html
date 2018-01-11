@@ -390,7 +390,7 @@ export default Ember.Mixin.create({
       @param {String} filterCondition Condition for predicate, can be &#x60;or&#x60; or &#x60;and&#x60;.
     */
     filterByAnyMatch(pattern, filterCondition) {
-      if (this.get(&#x27;filter&#x27;) !== pattern) {
+      if (this.get(&#x27;filter&#x27;) !== pattern || this.get(&#x27;filterCondition&#x27;) !== filterCondition) {
         this.get(&#x27;objectlistviewEventsService&#x27;).setLoadingState(&#x27;loading&#x27;);
         let _this = this;
         Ember.run.later((function() {

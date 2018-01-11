@@ -3056,7 +3056,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 7,
+            "line": 8,
             "description": "Flexberry checkbox component with [Semantic UI checkbox](http://semantic-ui.com/modules/checkbox.html) style.",
             "example": [
                 "\n  templates/my-form.hbs\n  ```handlebars\n  {{flexberry-checkbox\n    value=model.flag\n    onChange=(action \"onModelFlagChange\")\n  }}\n  ```\n\n  controllers/my-form.js\n  ```javascript\n  actions: {\n    onModelFlagChange(e) {\n      console.log('Model flag changed: ', e.checked);\n    }\n  }\n  ```"
@@ -11649,7 +11649,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 32,
+            "line": 33,
             "description": "Component's wrapping <div> CSS-classes names.\n\nAny other CSS-classes can be added through component's 'class' property.",
             "example": [
                 "\n  ```handlebars\n  {{flexberry-checkbox class=\"toggle\" value=model.flag}}\n  ```"
@@ -11663,7 +11663,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 48,
+            "line": 49,
             "description": "Components class names bindings.",
             "itemtype": "property",
             "name": "classNameBindings",
@@ -11674,7 +11674,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 57,
+            "line": 58,
             "description": "Component's value (if true, then checkbox is checked).",
             "itemtype": "property",
             "name": "value",
@@ -11685,7 +11685,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 66,
+            "line": 67,
             "description": "Component's label.",
             "itemtype": "property",
             "name": "label",
@@ -11696,21 +11696,21 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 75,
+            "line": 81,
             "description": "Initializes DOM-related component's properties.",
             "class": "FlexberryCheckboxComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 98,
+            "line": 108,
             "description": "Destroys DOM-related component's properties.",
             "class": "FlexberryCheckboxComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-checkbox.js",
-            "line": 108,
+            "line": 118,
             "description": "Component's action invoking when checkbox was clicked and it's 'checked' state changed.",
             "itemtype": "method",
             "name": "sendingActions.onChange",
@@ -15101,7 +15101,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 918,
+            "line": 920,
             "description": "Builds display text by selected model.",
             "itemtype": "method",
             "name": "_buildDisplayValue",
@@ -15116,7 +15116,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 940,
+            "line": 942,
             "description": "Concatenates predicates.",
             "itemtype": "method",
             "name": "_conjuctPredicates",
@@ -15145,7 +15145,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 968,
+            "line": 970,
             "description": "Handles changing current locale.\nIt reinits autocomplete or dropdown mode (depending on flag) in order to localize messages.",
             "itemtype": "method",
             "name": "_languageReinit",
@@ -22050,6 +22050,17 @@
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
             "line": 448,
+            "description": "Checks if \"Enter\" button was pressed.\nIf \"Enter\" button was pressed then filters the content by \"Filter by any match\" field value.",
+            "itemtype": "method",
+            "name": "actions.keyDownFilterAction",
+            "access": "public",
+            "tagname": "",
+            "class": "OlvToolbar",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/olv-toolbar.js",
+            "line": 463,
             "description": "Remove filter from url.",
             "itemtype": "method",
             "name": "actions.removeFilter",
@@ -22060,7 +22071,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 466,
+            "line": 481,
             "description": "Action for custom button.",
             "itemtype": "method",
             "name": "actions.customButtonAction",
@@ -22078,7 +22089,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 477,
+            "line": 492,
             "description": "Action to show confis dialog.",
             "itemtype": "method",
             "name": "actions.showConfigDialog",
@@ -22089,7 +22100,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 488,
+            "line": 503,
             "description": "Action to show export dialog.",
             "itemtype": "method",
             "name": "actions.showExportDialog",
@@ -22100,7 +22111,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 500,
+            "line": 515,
             "description": "Handler click on flexberry-menu.",
             "itemtype": "method",
             "name": "actions.onMenuItemClick",
@@ -22118,7 +22129,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 565,
+            "line": 580,
             "description": "Handler click on flexberry-menu.",
             "itemtype": "method",
             "name": "actions.onExportMenuItemClick",
@@ -22136,21 +22147,21 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 614,
+            "line": 629,
             "description": "An overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
             "class": "OlvToolbar",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 651,
+            "line": 666,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "OlvToolbar",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 665,
+            "line": 680,
             "description": "Event handler for \"row has been selected\" event in objectlistview.",
             "itemtype": "method",
             "name": "_rowSelected",
@@ -22188,7 +22199,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/olv-toolbar.js",
-            "line": 683,
+            "line": 698,
             "description": "Handler for \"Olv rows deleted\" event in objectlistview.",
             "itemtype": "method",
             "name": "_rowsDeleted",
@@ -29993,7 +30004,7 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-lookup.js:918"
+            "line": " ember-flexberry/addon/components/flexberry-lookup.js:920"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -30293,11 +30304,11 @@
         },
         {
             "message": "Missing item type\nInitializes DOM-related component's properties.",
-            "line": " ember-flexberry/addon/components/flexberry-checkbox.js:75"
+            "line": " ember-flexberry/addon/components/flexberry-checkbox.js:81"
         },
         {
             "message": "Missing item type\nDestroys DOM-related component's properties.",
-            "line": " ember-flexberry/addon/components/flexberry-checkbox.js:98"
+            "line": " ember-flexberry/addon/components/flexberry-checkbox.js:108"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
@@ -30633,11 +30644,11 @@
         },
         {
             "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",
-            "line": " ember-flexberry/addon/components/olv-toolbar.js:614"
+            "line": " ember-flexberry/addon/components/olv-toolbar.js:629"
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/olv-toolbar.js:651"
+            "line": " ember-flexberry/addon/components/olv-toolbar.js:666"
         },
         {
             "message": "Missing item type\nI can not remember what it is.",
