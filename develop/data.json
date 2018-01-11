@@ -11994,7 +11994,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-datepicker.js",
-            "line": 263,
+            "line": 265,
             "description": "Set empty value.",
             "itemtype": "method",
             "name": "_setEmptyValue",
@@ -12005,7 +12005,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-datepicker.js",
-            "line": 277,
+            "line": 279,
             "description": "Change state of calendar.",
             "example": [
                 "\n  ```javascript\n  getDateToSet: function(dateFromPicker) {\n    if (!dateFromPicker.isValid()) {\n      return this.invalidDate;\n    }\n\n    let minDate = this.get('minDate');\n    let maxDate = this.get('maxDate');\n    if (moment.isDate(minDate) && dateFromPicker.isBefore(this.minDate) ||\n        moment.isDate(maxDate) && dateFromPicker.isAfter(this.maxDate)) {\n        return this.invalidDate;\n    }\n  }\n  ```"
@@ -12019,7 +12019,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-datepicker.js",
-            "line": 309,
+            "line": 311,
             "description": "Waiting for end of validation and displaying errors if model is not valid.",
             "itemtype": "method",
             "name": "_setProperOffsetToCalendar",
@@ -12030,7 +12030,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-datepicker.js",
-            "line": 320,
+            "line": 322,
             "description": "Set proper start date when value changed outside of component.",
             "itemtype": "method",
             "name": "_valueChanged",
@@ -13734,7 +13734,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 886,
+            "line": 888,
             "description": "Preview options change handler.",
             "itemtype": "method",
             "name": "_previewOptionsDidChange",
