@@ -951,7 +951,7 @@ export default FlexberryBaseComponent.extend({
     let i18n = _this.get(&#x27;i18n&#x27;);
     this.$().search({
       minCharacters: minCharacters,
-      maxResults: maxResults,
+      maxResults: maxResults + 1,
       cache: false,
       templates: {
         message: function(message, type) {
@@ -994,15 +994,27 @@ export default FlexberryBaseComponent.extend({
             builder.where(resultPredicate);
           }
 
+          let maxRes = _this.get(&#x27;maxResults&#x27;);
+          let iCount = 1;
+          builder.top(maxRes + 1);
+          builder.count();
+
           store.query(relationModelName, builder.build()).then((records) =&gt; {
             callback({
               success: true,
               results: records.map(i =&gt; {
                 let attributeName = i.get(displayAttributeName);
-                return {
-                  title: attributeName,
-                  instance: i
-                };
+                if (iCount &gt; maxRes &amp;&amp; records.meta.count &gt; maxRes) {
+                  return {
+                    title: &#x27;...&#x27;
+                  };
+                } else {
+                  iCount += 1;
+                  return {
+                    title: attributeName,
+                    instance: i
+                  };
+                }
               })
             });
           }, () =&gt; {
