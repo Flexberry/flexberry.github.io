@@ -11,6 +11,6 @@ entries:
     folderitems:
     - title: About
       title_ru: Введение
-      url: /gdb_landing-page.html
+      url: /gbd_landing-page.html
       output: web
 
