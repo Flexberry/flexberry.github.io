@@ -434,6 +434,10 @@ entries:
       title_ru: Cервис данных для работы с PostgreSQL
       url: /fo_postgres-data-service.html
       output: web
+    - title: Data service for MongoDB
+      title_ru: Cервис данных для работы с MongoDB
+      url: /fo_mongodb-data-service.html
+      output: web
     - title: Processing of one object
       title_ru: Обработка одного объекта
       url: /fo_processing-one-object.html
