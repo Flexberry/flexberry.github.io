@@ -263,6 +263,7 @@ export default Ember.Service.extend({
   */
   getCurrentUser() {
     let store = Ember.getOwner(this).lookup(&#x27;service:store&#x27;);
+    let _this = this;
     return store.query(&#x27;i-c-s-soft-s-t-o-r-m-n-e-t-security-agent&#x27;, {
       useOnlineStore: false,
     }).then((users) =&gt; {
@@ -270,7 +271,7 @@ export default Ember.Service.extend({
         return new Ember.RSVP.resolve(users.get(&#x27;firstObject&#x27;));
       } else {
         return store.createRecord(&#x27;i-c-s-soft-s-t-o-r-m-n-e-t-security-agent&#x27;, {
-          name: &#x27;user&#x27;,
+          name: _this.getCurrentUserName(),
           isUser: true,
           isGroup: false,
           isRole: false,
@@ -278,6 +279,19 @@ export default Ember.Service.extend({
       }
     });
   },
+
+  /**
+
+    Returns current user name.
+    Method must be overridden if application uses some authentication.
+
+    @method getCurrentUserName
+    @return {String} Current user name. Returns &#x27;userName&#x27; as default value if method is not overridden.
+  */
+  getCurrentUserName() {
+    // TODO: add mechanism to return name of current user.
+    return &#x27;userName&#x27;;
+  }
 });
 
     </pre>

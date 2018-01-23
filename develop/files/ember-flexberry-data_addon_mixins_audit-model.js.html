@@ -299,7 +299,8 @@ export default Ember.Mixin.create({
     @readOnly
   */
   currentUserName: Ember.computed(function() {
-    return &#x27;userName&#x27;;
+    let userService = Ember.getOwner(this).lookup(&#x27;service:user&#x27;);
+    return userService.getCurrentUserName();
   }).readOnly(),
 
   /**

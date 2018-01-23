@@ -315,6 +315,15 @@ export default FlexberryBaseComponent.extend({
   */
   deleteButton: true,
 
+  /**
+    Flag: indicates whether to show default settings button at toolbar.
+
+    @property defaultSettingsButton
+    @type Boolean
+    @default true
+  */
+  defaultSettingsButton: true,
+
   actions: {
     /**
       Handles add record button click and triggers add record event on
@@ -352,6 +361,32 @@ export default FlexberryBaseComponent.extend({
 
       let componentName = this.get(&#x27;componentName&#x27;);
       this.get(&#x27;_groupEditEventsService&#x27;).deleteRowsTrigger(componentName);
+    },
+
+    /**
+      Handles default usersettings button click.
+
+      @method actions.setDefaultSettings
+    */
+    setDefaultSettings() {
+      let componentName = this.get(&#x27;componentName&#x27;);
+      let userSettingsService = this.get(&#x27;userSettingsService&#x27;);
+      let _this = this;
+
+      if (!userSettingsService.haveDefaultUserSetting(componentName)) {
+        return;
+      }
+
+      let defaultDeveloperUserSetting = userSettingsService.getDefaultDeveloperUserSetting(componentName) || {};
+      let currentUserSetting = userSettingsService.getCurrentUserSetting(componentName);
+      currentUserSetting.sorting = defaultDeveloperUserSetting.sorting || [];
+      currentUserSetting.colsOrder = defaultDeveloperUserSetting.colsOrder;
+      currentUserSetting.columnWidths = defaultDeveloperUserSetting.columnWidths;
+      userSettingsService.saveUserSetting(componentName, undefined, currentUserSetting)
+      .then(record =&gt; {
+        this.set(&#x27;sorting&#x27;, currentUserSetting.sorting);
+        _this.get(&#x27;_groupEditEventsService&#x27;).updateWidthTrigger(componentName);
+      });
     }
   },
 

@@ -283,8 +283,7 @@ export default Ember.Helper.extend({
         let dateFormat = Ember.get(hash, &#x27;dateFormat&#x27;);
         return dateFormat ? momentValue.format(dateFormat) : momentValue.format();
       case &#x27;boolean&#x27;:
-        return value ? this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view-cell.boolean-true-caption&#x27;)
-          : this.get(&#x27;i18n&#x27;).t(&#x27;components.object-list-view-cell.boolean-false-caption&#x27;);
+        return Ember.String.htmlSafe(&#x60;&lt;div class=&#x27;ui checkbox disabled&#x27;&gt;&lt;input type=&#x27;checkbox&#x27; class=&#x27;hidden&#x27; ${value ? &#x27;checked&#x27; : &#x27;&#x27;}&gt;&lt;label&gt;&lt;/label&gt;&lt;/div&gt;&#x60;);
       default:
         return value;
     }
