@@ -13,8 +13,8 @@ entries:
       title_ru: Практические задания
       url: /gt_landing-page.html
       output: web    
-  - title: Full stack tasks
-    title_ru: Задания на проектирование и разработку
+  - title: Tasks ASP.NET
+    title_ru: Задания на проектирование и разработку ASP.NET
     output: web
     folderitems:
     - title: Case 01
@@ -74,3 +74,19 @@ entries:
       url: /gt_full-stack-task-case-14.html
       output: web
 
+  - title: Tasks Ember
+    title_ru: Задания на проектирование и разработку Ember
+    output: web
+    folderitems:
+    - title: Case 01
+      title_ru: Вариант 01
+      url: /gt_flexberry-ember-case-01.html
+      output: web
+    - title: Case 02
+      title_ru: Вариант 02
+      url: /gt_flexberry-ember-case-02.html
+      output: web
+    - title: Case 03
+      title_ru: Вариант 03
+      url: /gt_flexberry-ember-case-03.html
+      output: web
