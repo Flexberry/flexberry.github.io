@@ -3,8 +3,7 @@ title: Вариант 03 - «Сетевые образовательные пр�
 keywords: Tasks
 sidebar: guide-tasks_sidebar
 toc: true
-permalink: ru/gt_full-stack-task-case-03.html
-folder: guides/tasks/
+permalink: ru/gt_flexberry-ember-case-03.html
 lang: ru
 ---
 
