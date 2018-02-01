@@ -1,0 +1,16 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Flexberry Service Bus
+  version: 1.0.0
+  folders:
+
+  - title: О Flexberry Service Bus
+    output: web, pdf
+    folderitems:
+    - title: About
+      title_ru: О модуле
+      url: /fsb_landing_page.html
+      output: web
