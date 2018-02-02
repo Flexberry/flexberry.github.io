@@ -17,7 +17,7 @@ entries:
     title_ru: Проектирование
     output: web
     folderitems:
-    - title: System design
+    - title: System design fundamentals
       title_ru: Введение в проектирование
       url: /gbt_information-system-design.html
       output: web
@@ -80,11 +80,11 @@ entries:
     - title: ORM
       url: /gbt_orm.html
       output: web
-  - title: Storage
+  - title: Storages
     title_ru: Хранилища данных
     output: web
     folderitems:
-    - title: Storage
+    - title: Storages fundamentals
       title_ru: Введение в хранилища данных
       url: /gbt_storage.html
       output: web
@@ -108,7 +108,7 @@ entries:
     title_ru: Мобильная разработка
     output: web
     folderitems:
-    - title: Mobile development
+    - title: Mobile development fundamentals
       title_ru: Введение в мобильную разработку
       url: /gbt_mobile.html
       output: web
@@ -125,7 +125,7 @@ entries:
     title_ru: Разработка ГИС
     output: web
     folderitems:
-    - title: GIS development
+    - title: GIS development fundamentals
       title_ru: Введение в ГИС-разработку
       url: /gbt_gis.html
       output: web
@@ -133,7 +133,7 @@ entries:
     title_ru: Разработка BPM приложений
     output: web
     folderitems:
-    - title: BPM development
+    - title: BPM development fundamentals
       title_ru: Введение в BPM-разработку
       url: /gbt_bpm.html
       output: web
@@ -153,7 +153,7 @@ entries:
     title_ru: Командная разработка
     output: web
     folderitems:
-    - title: Team development
+    - title: Team development fundamentals
       title_ru: Введение в командную разработку
       url: /gbt_team-management.html
       output: web
@@ -161,7 +161,7 @@ entries:
     title_ru: Развёртывание и установка решений
     output: web
     folderitems:
-    - title: Flexberry PLATFORM
+    - title: Deployment fundamentals
       title_ru: Введение в процесс развёртывания
       url: /gbt_deployment.html
       output: web
@@ -181,6 +181,10 @@ entries:
     title_ru: Интеграция систем
     output: web
     folderitems:
+    - title: System integration fundamentals
+      title_ru: Введение в интеграцию систем
+      url: /gbt_integration.html
+      output: web
     - title: Methods and approaches to systems integration
       title_ru: Методы и подходы к интеграции систем
       url: /gbt_integration-methods.html
