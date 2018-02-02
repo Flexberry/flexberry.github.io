@@ -7,10 +7,23 @@ entries:
   version: 1.0.0
   folders:
 
-  - title: О Flexberry Service Bus
+  - title: About Flexberry Service Bus
+    title_ru: О Flexberry Service Bus
     output: web, pdf
     folderitems:
     - title: About
-      title_ru: О модуле
+      title_ru: О подсистеме
       url: /fsb_landing_page.html
+      output: web
+    - title: Thesaurus
+      title_ru: Тезаурус
+      url: /fsb_thesaurus.html
+      output: web
+  - title: Architecture
+    title_ru: Архитектура
+    output: web, pdf
+    folderitems:
+    - title: Schema
+      title_ru: Общая архитектура шины
+      url: /fsb_architecture.html
       output: web

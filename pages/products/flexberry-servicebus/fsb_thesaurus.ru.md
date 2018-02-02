@@ -1,9 +1,10 @@
 ---
 title: Тезаурус
 sidebar: flexberry-servicebus_sidebar
-keywords: DnsIdentity, Callback, тип сообщения, шина
+keywords: DnsIdentity, Callback, Тип сообщения, Шина
 toc: true
 permalink: ru/fsb_thesaurus.html
+lang: ru
 summary: Основные термины и определения, относящиеся к Flexberry Service Bus.
 ---
 
