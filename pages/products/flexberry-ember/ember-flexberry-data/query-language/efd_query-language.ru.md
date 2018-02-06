@@ -33,6 +33,7 @@ import { Query } from 'ember-flexberry-data';
 * `ComplexPredicate` - класс для создания фильтра в запросе из нескольких предикатов, объединенных логическими операциями.
 * `StringPredicate` - класс для создания фильтра в запросе по строковым полям.
 * `DetailPredicate` - класс для создания фильтра в запросе по детейловым объектам.
+* `DatePredicate` - класс для создания фильтра в запросе по полям с типом дата.
 * `NotPredicate` - класс для инверсии вложенного предиката.
 * `createPredicate` - метод для создания предиката по заданным параметрам.
 
@@ -382,6 +383,45 @@ let sp1 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'X'
 let sp2 = new Query.SimplePredicate('creator.name', Query.FilterOperator.Eq, 'Y');
 let cp1 = new Query.ComplexPredicate(Query.Condition.Or, sp1, sp2);
 let dp = new Query.DetailPredicate('tags').any(cp1);
+```
+
+### Query.DatePredicate
+
+`Query.DatePredicate` - класс для предикатов для фильтрации поля с типом дата по значению и указанному оператору.
+
+#### Конструктор
+
+Конструктор `Query.DatePredicate` принимает 4 параметра: `attributePath` - путь атрибута, `operator` - оператор, `value` - значение и `timeless` - флаг указывающий нужно ли учитывать время при сравнении дат (если true, то время не учитывается).
+
+```javascript
+let predicate = new Query.DatePredicate('birthday', Query.FilterOperator.Eq, '2018-02-06T11:00:00.000Z');
+let predicate = new Query.DatePredicate('birthday', Query.FilterOperator.Eq, '2018-02-06', true);
+```
+
+#### Получение свойств предиката
+
+Получение пути атрибута:
+
+```javascript
+predicate.attributePath
+```
+
+Получение оператора:
+
+```javascript
+predicate.operator
+```
+
+Получение значения фильтрации:
+
+```javascript
+predicate.value
+```
+
+Получение флага учета времени:
+
+```javascript
+predicate.timeless
 ```
 
 ### Query.NotPredicate
