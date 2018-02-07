@@ -39,3 +39,7 @@ entries:
       title_ru: Внутренняя архитектура Flexberry Service Bus
       url: /fsb_internal-architecture.html
       output: web
+    - title: Flexberry Service Bus in docker swarms
+      title_ru: Работа шины Flexberry Service Bus в режиме docker swarms
+      url: /fsb_installation.html
+      output: web
