@@ -1,3 +1,13 @@
+---
+title: Работа шины Flexberry Service Bus в режиме docker swarms
+sidebar: flexberry-servicebus_sidebar
+keywords: ESB docker swarms
+toc: true
+permalink: ru/fsb_installation.html
+lang: ru
+summary: Запуск и остановка шины в docker swarms.
+---
+
 ## Работа шины Flexberry Service Bus в режиме docker swarms
 
 ### Старт сервисов
