@@ -3,9 +3,9 @@ title: Вычислимые свойства в getCellComponent
 sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
-permalink: en/ef_dynamic-getCellComponent.html
+permalink: ru/ef_computed-properties-in-getcellcomponent.html
 folder: products/ember-flexberry/controls/
-lang: en
+lang: ru
 summary: Вычислимые свойства в getCellComponent
 ---
 
