@@ -1,26 +1,27 @@
 ---
 title: FuncEQ
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Параметры и пример использования функции FuncEQ
 toc: true
 permalink: ru/fo_func-eq.html
 ---
 
-FuncEQ - функция, аналогичная сравнению на равенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+`FuncEQ` - функция, аналогичная сравнению на равенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
 ## Параметры GetFunction
 
-Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции funcEQ, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
+Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции `funcEQ`, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (`Variable Definition`), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
 
 **Исключение** составляет тип `bool`: `langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.BoolType, "SomeBoolFlag"))` сработает и без указания второго параметра (по умолчанию будет происходить сравнение с `true`).
 
-**Проверку на `null`** надо проводить при помощи функции [FuncIsNull), при попытке проверить что-либо на `null` с помощью FuncEQ возникнет исключительная ситуация **Object reference not set to an instance of an object.**
+**Проверку на `null`** надо проводить при помощи функции [FuncIsNull](fo_func-is-null.html), при попытке проверить что-либо на `null` с помощью `FuncEQ` возникнет исключительная ситуация **Object reference not set to an instance of an object.**
 
 ## Пример использования
 
-Рассмотрим пример. Требуется вычитать все **Кредиты** определенного **Клиента**.
+Например, требуется вычитать все **Кредиты** определенного **Клиента**.
 
-![](/images/pages/products/flexberry-orm/func-e-q/FilterExDiagram.PNG)
+![](/images/pages/products/flexberry-orm/query-language/filter-ex-diagram.png)
 
 SQL-выражение выглядело бы следующим образом:
 
@@ -49,4 +50,4 @@ Function lf = langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidTy
 
 Это касается сравнений типа WHERE strfield = '...', или HAVING strfield='...', или strfield IN ('...', '...', ...). В этих случаях строки 'abc' и 'abc  ' будут считаться равными.
 
-Исключением является оператор LIKE (WHERE strfield LIKE '...'), для него строки 'abc' и 'abc  ' - различны, поэтому для наложения ограничений на строки следует использовать функцию [funcLike](fo_func-like.html).
+Исключением является оператор `LIKE` (WHERE strfield LIKE '...'), для него строки 'abc' и 'abc  ' - различны, поэтому для наложения ограничений на строки следует использовать функцию [funcLike](fo_func-like.html).

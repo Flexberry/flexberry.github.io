@@ -1,18 +1,19 @@
 ---
 title: FuncAND
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Параметры и пример использования функции FuncAND
 toc: true
 permalink: ru/fo_func-and.html
 ---
 
-FuncAND - функция, аналогичная логическому "И" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+`FuncAND` - функция, аналогичная логическому "И" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
 ## Параметры GetFunction
 
 Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции funcAND, а дальше принимает N (>= 2) функций, которые необходимо объединить логическим "И".
 
-Рассмотрим пример. Требуется вычитать все **Кредиты** определенного **Клиента**, выданные на сумму, превышающую 100000 рублей.
+Например, требуется вычитать все **Кредиты** определенного **Клиента**, выданные на сумму, превышающую 100000 рублей.
 
 SQL-выражение выглядело бы следующим образом:
 
@@ -37,12 +38,3 @@ Function lf = langdef.GetFunction(
 						new VariableDef(langdef.NumericType, Information.ExtractPropertyPath<Кредит>(x => x.СуммаКредита)), 
 						100000));
 ```
-
-
-
-
-
-
-
-
-
