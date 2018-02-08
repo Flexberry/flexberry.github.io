@@ -1,10 +1,10 @@
 ---
 title: Пример наложения ограничений на загрузку объектов
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: Flexberry ORM, Ограничения, Sample
+summary: 
 toc: true
 permalink: en/fo_load-limitation-example.html
-folder: products/flexberry-orm/
 lang: en
 ---
 

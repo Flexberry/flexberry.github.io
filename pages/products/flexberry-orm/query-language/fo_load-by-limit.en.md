@@ -1,14 +1,14 @@
 ---
 title: Чтение объектов с наложенным ограничением
 sidebar: flexberry-orm_sidebar
-keywords: Ограничения
+keywords:  Flexberry ORM, Ограничения
+summary: Пример на основе SQLWhereLanguageDef
 toc: true
 permalink: en/fo_load-by-limit.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
-Для того, чтобы наложить ограничение, требуется в свойство `LimitFunction` структуры `LoadingCustomizationStruct` установить ограничивающую функцию (`ICSSoft.STORMNET.FunctionalLanguage.Function`) любого языка ограничений.
+Для того чтобы наложить ограничение, требуется в свойство `LimitFunction` структуры `LoadingCustomizationStruct` установить ограничивающую функцию (`ICSSoft.STORMNET.FunctionalLanguage.Function`) любого языка ограничений.
 
 В примере ниже берётся язык `ICSSoft.STORMNET.FunctionalLanguage.SQLWhere. SQLWhereLanguageDef` для задания ограничений SQL-запросов и формируется ограничение (выбираются все «Иваны Ивановичи»):
 

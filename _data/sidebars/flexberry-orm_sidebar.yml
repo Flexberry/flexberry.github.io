@@ -649,3 +649,110 @@ entries:
       title_ru: Настройка ODataService с несколькими типами сервисов данных
       url: /fo_multiple-data-services-in-odata.html
       output: web
+
+  - title: Язык запросов
+    output: web, pdf
+    folderitems:
+    - title: Comparison functions
+      title_ru: Функции ограничения
+      url: /fo_compare-functions.html
+      output: web
+    - title: ExternalLangDef
+      title_ru: ExternalLangDef
+      url: /fo_external-lang-def.html
+      output: web
+    - title: Restrictions on detail
+      title_ru: Ограничения на детейлы
+      url: /fo_exist-details.html
+      output: web
+    - title: Restrictions on the part of the date
+      title_ru: Ограничения на части даты
+      url: /fo_restriction-datetime.html
+      output: web
+    - title: FuncAND
+      title_ru: FuncAND
+      url: /fo_func-and.html
+      output: web
+    - title: FuncBETWEEN
+      title_ru: FuncBETWEEN
+      url: /fo_func-between.html
+      output: web
+    - title: FuncEQ
+      title_ru: FuncEQ
+      url: /fo_func-eq.html
+      output: web
+    - title: FuncIN
+      title_ru: FuncIN
+      url: /fo_func-in.html
+      output: web
+    - title: FuncIsNull
+      title_ru: FuncIsNull
+      url: /fo_func-is-null.html
+      output: web
+    - title: FuncLike
+      title_ru: FuncLike
+      url: /fo_func-like.html
+      output: web
+    - title: FuncNEQ
+      title_ru: FuncNEQ
+      url: /fo_func-neq.html
+      output: web
+    - title: FuncNOT
+      title_ru: FuncNOT
+      url: /fo_func-not.html
+      output: web
+    - title: FuncOR
+      title_ru: FuncOR
+      url: /fo_func-or.html
+      output: web
+    - title: FuncSQL
+      title_ru: FuncSQL
+      url: /fo_func-sql.html
+      output: web
+    - title: FuncToChar
+      title_ru: FuncToChar
+      url: /fo_func-to-char.html
+      output: web
+    - title: Function of implication
+      title_ru: Функция импликации
+      url: /fo_function-implication.html
+      output: web
+    - title: Convert constraint function to linq-constraint
+      title_ru: Преобразование функции ограничения в linq-ограничение
+      url: /fo_lcs-to-linq.html
+      output: web
+    - title: Restriction on children using aggregator properties
+      title_ru: Ограничение на детейлы с использованием свойств агрегатора
+      url: /fo_limit-details.html
+      output: web
+    - title: Serializing LimitFunction
+      title_ru: Сериализация LimitFunction
+      url: /fo_limit-function-serialization.html
+      output: web
+    - title: Limit Function
+      title_ru: Функции ограничения
+      url: /fo_limit-function.html
+      output: web
+    - title: Filtering and data sampling
+      title_ru: Фильтрация и ограничение выборки данных
+      url: /fo_limitation.html
+      output: web
+    - title: LINQPad
+      title_ru: LINQPad
+      url: /fo_linq-pad.html
+      output: web
+    - title: LINQProvider
+      title_ru: LINQProvider
+      url: /fo_linq-provider.html
+      output: web
+    - title: Features of LinqProvider
+      title_ru: Возможности LinqProvider
+      url: /fo_linq-provider-faetures.html
+      output: web
+    - title: Reading objects with a constraint
+      title_ru: Чтение объектов с наложенным ограничением
+      url: /fo_load-by-limit.html
+      output: web
+    
+
+    

@@ -1,10 +1,10 @@
 ---
 title: Чтение объектов с наложенным ограничением
 sidebar: flexberry-orm_sidebar
-keywords: Ограничения
+keywords:  Flexberry ORM, Ограничения
+summary: Пример на основе SQLWhereLanguageDef
 toc: true
 permalink: ru/fo_load-by-limit.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 

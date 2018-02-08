@@ -4,7 +4,6 @@ sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
 toc: true
 permalink: ru/fo_variable-def.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 
@@ -80,9 +79,8 @@ ld.GetFunction(ld.funcEQ, new VariableDef(ld.GuidType, Information.ExtractProper
 
 Примеры конструирования `DetailVariableDef` при задании ограничений доступны в статьях:
 
-* [ExternalLangDef - ограничения на детейл (funcExist, funcExistExact, funcExistAll, funcExistAllExact)](fo_exist-exist-exact-exist-all-exist-all-exact.html),
-* [ExternalLangDef - ограничение на два детейла (funcExistDetails)](fo_exist-detals.html),
-* [Ограничение на детейлы с использованием свойств агрегатора](fo_limit-details-by-agregators-prop.html).
+* [Ограничения на детейлы](fo_exist-details.html),
+* [Ограничение на детейлы с использованием свойств агрегатора](fo_limit-details.htmll).
 
 ### Задание `OwnerConnectProp` и `ConnectMasterProp`
 
