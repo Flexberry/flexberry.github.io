@@ -1,58 +1,30 @@
 ---
 title: FuncIsNull
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Параметры и пример использования функции FuncIsNull
 toc: true
 permalink: ru/fo_func-is-null.html
 ---
 
-FuncIsNull = is null
+`FuncIsNull` - функция, аналогичная проверке на null в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
-Функция, аналогичная проверке на null в SQL
+## Параметры GetFunction
 
-## Пример
+Для `FuncIsNull` необходим один параметр - описание переменной (Variable Definition), которую надо проверить на `null`.
 
-Рассмотрим пример
-
-![](/images/pages/products/flexberry-orm/func-e-q/FilterExDiagram.PNG)
-
-## Задача
-
-Вычитать все `Кредиты`, у которых `ДатаВыдачи` равняется `null`
-
-## SQL
+Рассмотрим пример. Требуется вычитать все `Кредиты`, у которых `ДатаВыдачи` равняется `null`.
 
 SQL-выражение выглядело бы следующим образом:
 
 ```sql
- SELECT * FROM Кредит WHERE ДатаВыдачи is null 
+SELECT * FROM Кредит WHERE ДатаВыдачи is null
 ```
 
-## [FunctionalLanguage](fo_function-list.html)
+Через [SQLWhereLanguageDef](fo_function-list.html):
 
-```csharp    
-	Клиент клиент = new Клиент();
-	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-	Function lf = langdef.GetFunction(langdef.funcIsNull, new VariableDef(langdef.DateTimeType, "ДатаВыдачи"));
-```
-
-## Параметры GetFunction
-
-Для FuncIsNull необходим один параметр - описание переменной (Variable Definition), которую надо проверить на `null`
-
-## Пример
-
-```csharp
+``` csharp    
+Клиент клиент = new Клиент();
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-
-LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Кредит), Кредит.Views.КредитE);	
-Function lf = langdef.GetFunction(langdef.funcIsNull, new VariableDef(langdef.DateTimeType, "ДатаВыдачи"));
-lcs.LimitFunction = lf;
-
-var credits = DataServiceProvider.DataService.LoadObjects(lcs);```
+Function lf = langdef.GetFunction(langdef.funcIsNull, new VariableDef(langdef.DateTimeType, Information.ExtractPropertyPath<Клиент>(x => x.ДатаВыдачи)));
 ```
-
-## См. также
-[Перечень функций](fo_function-list.html)
-
-----

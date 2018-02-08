@@ -1,10 +1,10 @@
 ---
 title: LINQProvider
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Поддержка, принципы и примеры использования
 toc: true
 permalink: en/fo_linq-provider.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
@@ -12,10 +12,11 @@ lang: en
 
 Класс `LinqToLcs` пространства имен `ICSSoft.STORMNET.Business.LINQProvider` предназначен для поддержки [LINQ](http://ru.wikipedia.org/wiki/LINQ) запросов к сервисам данных [`SQLDataService`](fo_sql-data-service.html).
 
-Основные возможности LINQProvider описаны в [этой статье](fo_linq-provider-faetures.html).
+Основные возможности LINQProvider описаны в статье [Возможности LinqProvider](fo_linq-provider-faetures.html).
 
 ## Как использовать LinqProvider
 
+Для работы LINQ-провайдера необходима ссылка на System.Linq
 
 ``` csharp
  using System.Linq;
@@ -23,7 +24,7 @@ lang: en
 
 **А также проектная ссылка на `ICSSoft.STORMNET.Business.MSSQLDataService.DLL`.**
 
-При подключении пространства имен ICSSoft.STORMNET.Business.LINQProvider объектам [SQLDataService](fo_sql-data-service.html) добавляется метод Query со следующими прототипами:
+При подключении пространства имен `ICSSoft.STORMNET.Business.LINQProvider` объектам [SQLDataService](fo_sql-data-service.html) добавляется метод Query со следующими прототипами:
 
 ``` csharp
 public static IQueryable<T> Query<T>(this SQLDataService ds, string viewName) where T : DataObject
@@ -53,9 +54,9 @@ public static IQueryable<T> Query<T>(this SQLDataService ds) where T : DataObjec
 * [Count](http://msdn.microsoft.com/en-us/library/bb534754.aspx)
 * [FirstOrDefault](http://msdn.microsoft.com/ru-ru/library/system.linq.queryable.firstordefault.aspx)
 
-{% include note.html content="Обратите внимание, что вычитка происходит каждый раз при вызове ToList или ToArray, так что желательно сначала получить коллекцию данных, а потом работать с ней." %}
+{% include note.html content="Вычитка происходит каждый раз при вызове ToList или ToArray, так что желательно сначала получить коллекцию данных, а потом работать с ней." %}
 
-## Примеры:
+## Примеры использования
 
 ### Получение первого подходящего объекта
 
@@ -92,7 +93,7 @@ List<Кошка> data = query.ToList(); // Вычитать данные в ко
 Console.WriteLine(data[0).Кличка); // Пользуемся полученными данными.
 ```
 
-Следующий код эквивалентен предыдущему
+#### Следующий код эквивалентен предыдущему
 
 ``` csharp
 var ds = (SQLDataService)DataServiceProvider.DataService; // Сервис данных.

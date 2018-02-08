@@ -1,14 +1,14 @@
 ---
 title: Ограничение на детейлы с использованием свойств агрегатора
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Пример использования ограничения
 toc: true
-permalink: ru/fo_limit-details-by-agregators-prop.html
-folder: products/flexberry-orm/
+permalink: ru/fo_limit-details.html
 lang: ru
 ---
 
-Если необходимо задать условие на существование [детейлов](fd_key-concepts.html) по условию, в котором должно участвовать свойство [агрегатора](fd_key-concepts.html), необходимо использовать функцию [Exist](fo_exist-exist-exact-exist-all-exist-all-exact.html). При указании свойств в условии для функции [Exist](fo_exist-exist-exact-exist-all-exist-all-exact.html) необходимо явно указывать, что это свойство агрегатора: 
+Если необходимо задать условие на существование [детейлов](fd_key-concepts.html) по условию, в котором должно участвовать свойство [агрегатора](fd_key-concepts.html), необходимо использовать функцию [Exist](fo_exist-details.html). При указании свойств в условии для функции `Exist` необходимо явно указывать, что это свойство агрегатора: 
 
 ```
 <Имя агрегирующего свойства у детейла>.<Свойство агрегатора>.
@@ -16,7 +16,7 @@ lang: ru
 
 ## Пример наложения ограничения на детейлы с использованием свойства агрегатора
 
-![](/images/pages/products/flexberry-orm/limit-details-by-agregators-prop/exist-example.png)
+![](/images/pages/products/flexberry-orm/query-language/exist-example.png)
 
 Выявить ошибочно занесенные данные в базе: найти все компании, у которых существует программный продукт созданный раньше создания самой компании.
 
@@ -28,12 +28,9 @@ lang: ru
  var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Company), view);
  ExternalLangDef langDef = ExternalLangDef.LanguageDef;
  var detail = new DetailVariableDef(langDef.GetObjectType("Details"), "Software", view2, "Company");
- lcs.LimitFunction = langDef.GetFunction(langDef.funcExist,
-                                         detail,
+ lcs.LimitFunction = langDef.GetFunction(langDef.funcExist, detail,
                                          langDef.GetFunction(langDef.funcL,
-                                                             new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
-                                                             new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
+                                         new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.DateCreation)),
+                                         new VariableDef(langDef.DateTimeType, Information.ExtractPropertyPath<Software>(x => x.Company.DateCreation))));
  var dos = DataServiceProvider.DataService.LoadObjects(lcs);
 ```
- 
-

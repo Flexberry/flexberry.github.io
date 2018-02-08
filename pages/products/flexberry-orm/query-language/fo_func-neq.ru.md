@@ -1,26 +1,27 @@
 ---
 title: FuncNEQ
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Параметры и пример использования функции FuncLike
 toc: true
 permalink: ru/fo_func-neq.html
 ---
 
-FuncNEQ = Not Equal
+`FuncNEQ` - функция, аналогичная сравнению на неравенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
-Функция, аналогичная неравенству в SQL.
+## Параметры GetFunction
 
-## Пример
+Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции `funcNEQ`, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
 
-Рассмотрим пример
+__Примечание__: несмотря на то, что при построении ограничения на переменную типа `bool` [FuncEQ](fo_func-eq.html) позволяет не посылать второй параметр, FuncNEQ не позволяет этого сделать. Таким образом, следующая конструкция приведёт к ошибке: 
 
-![](/images/pages/products/flexberry-orm/func-e-q/FilterExDiagram.PNG)
+```csharp
+langdef.GetFunction(langdef.funcNEQ, new VariableDef(langdef.BoolType, "SomeBoolFlag"))
+``` 
 
-## Задача
+Рассмотрим пример. Требуется вычитать все `Кредиты`, не относящиеся к определенному `Клиенту`.
 
-Вычитать все `Кредиты`, не относящиеся к определенному `Клиенту`.
-
-## SQL
+![](/images/pages/products/flexberry-orm/query-language/filter-ex-diagram.png)
 
 SQL-выражение выглядело бы следующим образом:
 
@@ -28,49 +29,12 @@ SQL-выражение выглядело бы следующим образом
 SELECT * FROM Кредит WHERE Клиент <> '{ID}'
 ```
 
-Где {ID} - [первичный ключ](fo_primary-keys-objects.html) `Клиента`
+Где {ID} - [первичный ключ](fo_primary-keys-objects.html) искомого `Клиента`.
 
-
-## [FunctionalLanguage](fo_function-list.html)
+Через [SQLWhereLanguageDef](fo_function-list.html):
 
 ```csharp    
-	Клиент клиент = new Клиент();
-	SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-	Function lf = langdef.GetFunction(langdef.funcNEQ,
-				new VariableDef(langdef.GuidType, "Клиент"), клиент.__PrimaryKey);
-```
-
-
-## Параметры GetFunction
-
-Из примера видно, что функция GetFunction принимает первым параметром тип функции funcNEQ, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
-
-**Примечание**: несмотря на то, что при построении ограничения на переменную типа `bool` [FuncEQ](fo_func-eq.html) позволяет не посылать второй параметр, FuncNEQ не позволяет этого сделать. Таким образом 
-
-```csharp
- langdef.GetFunction(langdef.funcNEQ, new VariableDef(langdef.BoolType, "SomeBoolFlag")) 
-``` 
-
-выдаст ошибку.
-
-
-## Пример
-
-```csharp
+Клиент клиент = new Клиент();
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-
-LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Кредит), Кредит.Views.КредитE);	
-Function lf = langdef.GetFunction(langdef.funcNEQ, 
-new VariableDef(langdef.GuidType, "Клиент"), клиент.__PrimaryKey);
-lcs.LimitFunction = lf;
-
-var credits = DataServiceProvider.DataService.LoadObjects(lcs);
+Function lf = langdef.GetFunction(langdef.funcNEQ, new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Клиент)), клиент.__PrimaryKey);
 ```
-
-
-## См. также
-
-[Перечень функций](fo_function-list.html)
-[FuncEQ](fo_func-eq.html)
-
-

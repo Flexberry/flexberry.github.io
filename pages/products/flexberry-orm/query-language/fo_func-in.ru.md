@@ -2,96 +2,54 @@
 title: FuncIN
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Public, Ограничения
+summary: Параметры и пример использования функции FuncIN
 toc: true
 permalink: ru/fo_func-in.html
 ---
 
-FuncIN = In
+`FuncIN` - функция, аналогичная сравнению на равенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
-Функция, аналогичная проверке на вхождение в SQL.
+## Параметры GetFunction
 
-## Пример
+Функция [GetFunction](fo_function-list.html) принимает один параметр: массив, состоящий из определения переменной (Variable Def) и объектов, среди которых будет производиться поиск.
 
-Рассмотрим пример
+## Пример использования
 
-![](/images/pages/products/flexberry-orm/func-in/FilterExDiagram.PNG)
+Рассмотрим пример. Требуется вычитать все `Кредиты`, выданные особым клиентам, список ключей которых нам известен.
 
-## Задача
-
-Вычитать все `Кредиты`, выданные особым клиентам, список ключей которых нам известен.
-
-## SQL
+![](/images/pages/products/flexberry-orm/query-language/filter-ex-diagram.png)
 
 SQL-выражение выглядело бы следующим образом:
 
 ```sql
-SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')
+SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')@@
+Где {IDList} - список [Primary-keys-objects|первичных ключей) искомых `Клиентов`
 ```
 
-Где {IDList} - список [первичных ключей](fo_primary-keys-objects.html) искомых `Клиентов`
+Через [SQLWhereLanguageDef](fo_function-list.html):
 
-## [FunctionalLanguage](fo_function-list.html)
-
-```csharp       
-		List<Клиент> клиенты = new List<Клиент>();
-        SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
-        List<object> clientKeys = new List<object>();
-        clientKeys.Add(new VariableDef(langdef.GuidType, "Клиент"));
-
-        foreach (var клиент in клиенты)
-            clientKeys.Add(клиент.__PrimaryKey);
-
-        Function lf = langdef.GetFunction(langdef.funcIN, clientKeys.ToArray());
-```
-
-
-## Параметры GetFunction
-
-Из примера видно, что функция GetFunction принимает один параметр: массив, состоящий из определения переменной (Variable Def) и объектов, среди которых будет производиться поиск.
-
-## Пример
-
-Более сложный пример использования FuncIN вкупе с другими функциями-ограничителями
-
-```csharp 
-lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Награждение), "НаграждениеВСпискеНаграждений2L");
-SQLWhereLanguageDef ldef = SQLWhereLanguageDef.LanguageDef;
-
-// Создадим список объектов, по которым будем ограничивать FuncIN
+``` csharp        
+List<Клиент> клиенты = new List<Клиент>();
+SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 List<object> clientKeys = new List<object>();
+clientKeys.Add(new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Клиент)));
 
-// Добавим первым параметром VariableDef объекта, который мы будем ограничивать функцией FuncIN
-clientKeys.Add(new VariableDef(ldef.GuidType, "Гражданин.УИК"));
+foreach (var клиент in клиенты)
+	clientKeys.Add(клиент.__PrimaryKey);
 
-// Добавим все ключи, по которым будем ограничивать FuncIN
-for (int i = 0; i < dobjs.Length; i++)
-{
-	clientKeys.Add(dobjs[i].__PrimaryKey);
-}
-
-lcs.LimitFunction = ldef.GetFunction(ldef.funcAND,
-
-// Добавим FuncIN в качестве ограничения
-ldef.GetFunction(ldef.funcIN, clientKeys.ToArray()),
-ldef.GetFunction(ldef.funcEQ,
-	new VariableDef(ldef.DateTimeType, "Гражданин.ДатаРождения"),
-	fDataObject.ДатаРождения),
-ldef.GetFunction(ldef.funcNEQ,
-	new VariableDef(ldef.GuidType, "Гражданин"),
-	fDataObject.__PrimaryKey),
-ldef.GetFunction(ldef.funcEQ,
-	new VariableDef(ldef.NumericType, "Актуально"),
-	1),
-ldef.GetFunction(ldef.funcNOT,
-	ldef.GetFunction(ldef.funcIsNull,
-		new VariableDef(ldef.StringType, "Гражданин.Комментарий"))),
-ldef.GetFunction(ldef.funcEQ,
-	new VariableDef(ldef.StringType, "СписокНаграждений.Награда.Наименование"),
-	nagr.СписокНаграждений.Награда.Наименование));
+Function lf = langdef.GetFunction(langdef.funcIN, clientKeys.ToArray());
 ```
 
+## Особенности сравнения строк
 
+{% include note.html content="При использовании [MS SQL DataService](fo_mssql-data-service.html) могут возникать [проблемы со сравнением строк с пробелами на конце](http://improvingsoftware.com/2009/09/09/beware-of-this-trap-when-comparing-strings-in-t-sql-with-trailing-spaces/)." %}
 
-## См. также
+Дело в том, что MS SQL Sever следует стандарту [ANSI SQL-92](https://ru.wikipedia.org/wiki/SQL-92) в том, что касается сравнения строк.
 
-[Перечень функций](fo_function-list.html)
+Чтобы определить, равны ли строки неодинаковой длины, прежде всего с правой стороны более короткой строки добавляются пробелы, так что длины строк становятся равными.
+
+Затем символы в первой строке сравниваются с символами второй с учетом их расположения. Если не равна хотя бы одна пара, строки считаются неравными.
+
+Это касается сравнений типа WHERE strfield = '...', или HAVING strfield='...', или strfield IN ('...', '...', ...). В этих случаях строки 'abc' и 'abc ' будут считаться равными.
+
+Исключением является оператор `LIKE` (WHERE strfield LIKE '...'), для него строки 'abc' и 'abc ' - различны, поэтому для наложения ограничений на строки, вместо `FuncIN` следует использовать сочетание функций [FuncOR](fo_func-or.html), [FuncLike](fo_func-like.html).

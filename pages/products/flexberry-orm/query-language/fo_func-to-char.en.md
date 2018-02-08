@@ -1,12 +1,13 @@
 ---
-title: funcToChar
+title: FuncToChar
 sidebar: flexberry-orm_sidebar
-keywords: DateTime (работа с датами), Flexberry ORM, Public
+keywords: DateTime, Flexberry ORM, Ограничения
+summary: Parameters and an example of using the function FuncToChar
 toc: true
 permalink: en/fo_func-to-char.html
 ---
 
-`funcToChar` - функция из [ExternalLangDef](fo_external-lang-def.html), служащая для того, чтобы задать преобразование выражения в строку. Это бывает необходимо для корректного сравнения значений выражений со строковыми константами. На данный момент реализована только для [MSSQLDataService](fo_mssql-data-service.html) и [OracleDataService](fo_oracle-data-service.html).
+`FuncToChar` - функция из [ExternalLangDef](fo_external-lang-def.html), служащая для того, чтобы задать преобразование выражения в строку. Это бывает необходимо для корректного сравнения значений выражений со строковыми константами. На данный момент реализована только для [MSSQLDataService](fo_mssql-data-service.html) и [OracleDataService](fo_oracle-data-service.html).
 
 ## Использование
 
@@ -39,13 +40,3 @@ return _langdef.GetFunction(
 			stringDate,
 			string.Format("%{0}%", searchValue.Trim().ToLower()));
 ```
-
-
-
-
-
-
-
-
-
-

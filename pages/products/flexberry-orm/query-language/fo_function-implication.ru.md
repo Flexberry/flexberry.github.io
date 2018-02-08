@@ -1,7 +1,7 @@
 ---
-title: Функция импликации (funcImplication)
+title: Функция импликации
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, ограничения, импликация
+keywords: Flexberry ORM, ограничения, импликация? funcImplication
 summary: Использование импликации в ограничениях
 toc: true
 permalink: ru/fo_function-implication.html

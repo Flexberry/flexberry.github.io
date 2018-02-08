@@ -1,10 +1,10 @@
 ---
 title: Сериализация LimitFunction
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Подход и пример сериализации функции ограничения
 toc: true
 permalink: en/fo_limit-function-serialization.html
-folder: products/flexberry-orm/
 lang: en
 ---
 
@@ -12,8 +12,7 @@ lang: en
 
 Класс [`Function`](fo_limit-function.html) реализует интерфейс `ISerializable`. Поэтому для функций ограничения доступна как `SOAP`, так и бинарная сериализация. 
 
-Рекомендуется использовать инструменты библиотеки [`ICSSoft.STORMNET.Tools.XmlTools`](fo_ics-soft-stormnet-tools.html) вместо прямого обращения к `System.Runtime.Serialization.Formatters.Soap.SoapFormatter` или `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`.
- 
+Рекомендуется использовать инструменты библиотеки [ICSSoft.STORMNET.Tools.XmlTools](fo_ics-soft-stormnet-tools.html) вместо прямого обращения к `System.Runtime.Serialization.Formatters.Soap.SoapFormatter` или `System.Runtime.Serialization.Formatters.Binary.BinaryFormatter`.
 
 В указанной библиотеке доступны классы:
 

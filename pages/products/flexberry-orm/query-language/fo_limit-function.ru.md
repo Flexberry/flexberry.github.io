@@ -1,10 +1,10 @@
 ---
-title: Функции ограничения (Limit Function)
+title: Функции ограничения
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Определение и предназначение построителей ограничений
 toc: true
 permalink: ru/fo_limit-function.html
-folder: products/flexberry-orm/
 lang: ru
 ---
 

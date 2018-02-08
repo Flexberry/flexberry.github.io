@@ -1,7 +1,7 @@
 ---
-title: Function of implication (funcImplication)
+title: Function of implication
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, limitations, implication
+keywords: Flexberry ORM, limitations, implication, funcImplication
 summary: The use of implication in constraints
 toc: true
 permalink: en/fo_function-implication.html

@@ -1,16 +1,17 @@
 ---
 title: FuncLike
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Parameters and an example of using the function FuncLike
 toc: true
 permalink: en/fo_func-like.html
 ---
 
-FuncLike - функция, аналогичная проверке на вхождение подстроки в другую строку в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+`FuncLike` - функция, аналогичная проверке на вхождение подстроки в другую строку в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
 
 ## Параметры GetFunction
 
-Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции funcLike, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - маска, с которой будет происходить сравнение.
+Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции `funcLike`, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - маска, с которой будет происходить сравнение.
 
 ## Пример использования
 
@@ -32,12 +33,3 @@ Function lf = langdef.GetFunction(
 			new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Клиент>(x => x.Прописка)), 
 			"%Пермь%");
 ```
-
-
-
-
-
-
-
-
-
