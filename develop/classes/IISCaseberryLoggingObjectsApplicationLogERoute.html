@@ -315,7 +315,7 @@
                                 <a href="#" data-tabid="#methods" data-anchor="#method_activate" data-tablink="activate">activate</a>
 
                             </li>
-                            <li class="index-item method inherited">
+                            <li class="index-item method inherited inherited">
                                 <a href="#" data-tabid="#methods" data-anchor="#method_beforeModel" data-tablink="beforeModel">beforeModel</a>
 
                             </li>
@@ -419,7 +419,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormRoute.html#method__openReadOnly">EditFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l211"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:211</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l195"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:195</code></a>
                             </p>
                     
                     
@@ -805,7 +805,7 @@
                                     EditFormRoute
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l62"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:62</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l45"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:45</code></a>
                             </p>
                     
                     
@@ -890,9 +890,12 @@
                     
                     
                         <div class="meta">
-                                    <p>Inherited from
-                                    <a href="../classes/EditFormRoute.html#method_beforeModel">EditFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l86"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:86</code></a>
+                                <p>Inherited from
+                                <a href="../classes/EditFormRoute.html#method_beforeModel">
+                                    EditFormRoute
+                                </a>
+                                but overwritten in
+                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l67"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:67</code></a>
                             </p>
                     
                     
@@ -986,7 +989,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormRoute.html#method_model">EditFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l79"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:79</code></a>
+                            <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l116"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:116</code></a>
                             </p>
                     
                     
@@ -1117,7 +1120,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormRoute.html#method_openReadOnly">EditFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l146"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:146</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l130"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:130</code></a>
                             </p>
                     
                     
@@ -1205,7 +1208,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormRoute.html#method_resetController">EditFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l108"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:108</code></a>
+                            <a href="../files/ember-flexberry_addon_routes_edit-form.js.html#l145"><code>ember-flexberry&#x2F;addon&#x2F;routes&#x2F;edit-form.js:145</code></a>
                             </p>
                     
                     
@@ -1284,7 +1287,7 @@
                                     EditFormRoute
                                 </a>
                                 but overwritten in
-                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l131"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:131</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l115"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:115</code></a>
                             </p>
                     
                     
@@ -1344,7 +1347,7 @@
                         <div class="meta">
                                     <p>Inherited from
                                     <a href="../classes/EditFormRoute.html#method_unlockObject">EditFormRoute</a>:
-                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l179"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:179</code></a>
+                            <a href="../files/ember-flexberry_addon_mixins_lock-route.js.html#l163"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;lock-route.js:163</code></a>
                             </p>
                     
                     
@@ -1439,32 +1442,12 @@
                         </div>
                     
                         <div class="description">
-                            <p>This property uses for setting user name.</p>
+                            <p>This object contains answers which will corresponding functions resolved.</p>
                     
                         </div>
                     
                             <p><strong>Default:</strong> { openReadOnly: true, unlockObject: true }</p>
                     
-                            <div class="example">
-                                <h4>Example:</h4>
-                    
-                                <div class="example-content">
-                                    <pre class="code prettyprint"><code class="language-javascript">// app/routes/user-edit.js
-                    import EditFormRoute from 'ember-flexberry/routes/edit-form';
-                    export default EditFormRoute.extend({
-                      ...
-                      userName: Ember.computed(function() {
-                        let userService = Ember.getOwner(this).lookup('service:user');
-                        return userService.getCurrentUserName();
-                      }),
-                      ...
-                    });
-                    </code></pre>
-                    <p>/**
-                    This object contains answers which will corresponding functions resolved.</p>
-                    
-                                </div>
-                            </div>
                     
                     </div>
                     <div id="property_flexberryDetailInteractionService" class="property item inherited">

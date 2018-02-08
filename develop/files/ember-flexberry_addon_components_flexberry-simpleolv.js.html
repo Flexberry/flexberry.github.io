@@ -1243,13 +1243,10 @@ export default folv.extend(
             break;
           }
 
-          userSettingsService.deleteUserSetting(componentName)
-          .then(record =&gt; {
-            if (this._router.location.location.href.indexOf(&#x27;sort=&#x27;) &gt;= 0) { // sort parameter exist in URL (ugly - TODO find sort in query parameters)
-              this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { sort: null, perPage: 5 } }); // Show page without sort parameters
-            } else {
-              this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { perPage: 5 } });  //Reload current page and records (model) list
-            }
+          let defaultDeveloperUserSetting = userSettingsService.getDefaultDeveloperUserSetting(componentName);
+          userSettingsService.saveUserSetting(componentName, undefined, defaultDeveloperUserSetting).then(() =&gt; {
+            let sort = serializeSortingParam(defaultDeveloperUserSetting.sorting);
+            this._router.router.transitionTo(this._router.currentRouteName, { queryParams: { sort: sort, perPage: 5 } });
           });
           break;
         case &#x27;unhide icon&#x27;:
@@ -1530,6 +1527,7 @@ export default folv.extend(
     this._super(...arguments);
 
     // Restore selected records.
+    // TODO: when we will ask user about actions with selected records clearing selected records won&#x27;t be use, because it resets selecting on other pages.
     if (this.get(&#x27;selectedRecords&#x27;)) {
       this.get(&#x27;selectedRecords&#x27;).clear();
     }
@@ -1548,6 +1546,11 @@ export default folv.extend(
           this.send(&#x27;selectRow&#x27;, recordWithData, e);
         }
       });
+
+      // TODO: when we will ask user about actions with selected records clearing selected records won&#x27;t be use, because it resets selecting on other pages.
+      if (someRecordWasSelected) {
+        this.get(&#x27;objectlistviewEventsService&#x27;).clearSelectedRecords(componentName);
+      }
 
       if (!someRecordWasSelected &amp;&amp; !this.get(&#x27;allSelect&#x27;)) {
         // Reset toolbar buttons enabled state.
@@ -1721,7 +1724,7 @@ export default folv.extend(
 
             // TODO: Probably need to replace this.
             setting.width = (checkbox &amp;&amp; delButton &amp;&amp; editButton ? 130 : (checkbox &amp;&amp; delButton) || (checkbox &amp;&amp; editButton) ||
-            (delButton &amp;&amp; editButton) ? 100 : checkbox || delButton || editButton ? 70 : 65) - padding;
+            (delButton &amp;&amp; editButton) ? 100 : checkbox || delButton || editButton ? 86 : 65) - padding;
           }
         }
 

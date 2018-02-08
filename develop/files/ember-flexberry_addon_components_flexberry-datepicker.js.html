@@ -367,7 +367,7 @@ export default FlexberryBaseComponent.extend({
     @type Array
     @readOnly
   */
-  classNames: [&#x27;ui&#x27;, &#x27;icon&#x27;, &#x27;input&#x27;],
+  classNames: [&#x27;ui&#x27;, &#x27;icon&#x27;, &#x27;input&#x27;, &#x27;flexberry-datepicker&#x27;],
 
   /**
     Init component when DOM is ready.
@@ -487,31 +487,33 @@ export default FlexberryBaseComponent.extend({
     @private
   */
   _setValue(dateFromPicker) {
-    let valueFromInput = this.$(&#x27;input&#x27;).val();
-    if (valueFromInput === &#x27;&#x27; &amp;&amp; !dateFromPicker.isValid()) {
-      this._setEmptyValue();
-    } else {
-      let dateToSet = this._getDateToSet(dateFromPicker);
-      if (!this.get(&#x27;hasTimePicker&#x27;)) {
-        dateToSet.setHours(13);
-        dateToSet.setUTCHours(11);
-        dateToSet.setUTCMinutes(0);
-        dateToSet.setUTCSeconds(0);
-        dateToSet.setUTCMilliseconds(0);
+    Ember.run(() =&gt; {
+      let valueFromInput = this.$(&#x27;input&#x27;).val();
+      if (valueFromInput === &#x27;&#x27; &amp;&amp; !dateFromPicker.isValid()) {
+        this._setEmptyValue();
+      } else {
+        let dateToSet = this._getDateToSet(dateFromPicker);
+        if (!this.get(&#x27;hasTimePicker&#x27;)) {
+          dateToSet.setHours(13);
+          dateToSet.setUTCHours(11);
+          dateToSet.setUTCMinutes(0);
+          dateToSet.setUTCSeconds(0);
+          dateToSet.setUTCMilliseconds(0);
+        }
+
+        let currentValue = this.get(&#x27;value&#x27;);
+
+        // TODO: refactor
+        let tmp = moment(dateToSet).format(this.dateTimeFormat);
+        let tmp2 = !moment(tmp, this.dateTimeFormat).isSame(moment(moment(currentValue).format(this.dateTimeFormat), this.dateTimeFormat));
+        if (currentValue === null || tmp2) {
+          this.set(&#x27;value&#x27;, dateToSet);
+          this._setProperOffsetToCalendar();
+        }
+
+        this._setCalendarEnabledState();
       }
-
-      let currentValue = this.get(&#x27;value&#x27;);
-
-      // TODO: refactor
-      let tmp = moment(dateToSet).format(this.dateTimeFormat);
-      let tmp2 = !moment(tmp, this.dateTimeFormat).isSame(moment(moment(currentValue).format(this.dateTimeFormat), this.dateTimeFormat));
-      if (currentValue === null || tmp2) {
-        this.set(&#x27;value&#x27;, dateToSet);
-        this._setProperOffsetToCalendar();
-      }
-    }
-
-    this._setCalendarEnabledState();
+    });
   },
 
   /**

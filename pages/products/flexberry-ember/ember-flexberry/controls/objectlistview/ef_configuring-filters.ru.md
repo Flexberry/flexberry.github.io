@@ -53,6 +53,20 @@ predicateForFilter(filter) {
   },
 ```
 
+#### Фильтрация по датам без учета времени
+
+Если нужно фильтровать поля с датами не учитывая время, то нужно в роуте в predicateForFilter добавить условие:
+
+```javascript
+predicateForFilter(filter) {
+    if (filter.type === 'date') {
+      return new DatePredicate(filter.name, filter.condition, filter.pattern, true);
+    }
+
+    return this._super(...arguments);
+  },
+```
+
 #### Пользовательские функции для фильтров
 
 Если на прикладном уровне нужны специфические фильтры, то можно использовать функцию `predicateForAttribute`. Данная функция получает на вход атрибут, по которому происходит фильтрация, значение, по которому фильтровать, условие фильтра и возвращает предикат, по которому затем формируется параметр `$filter` в [OData-запросе](fo_orm-odata-service.html). 

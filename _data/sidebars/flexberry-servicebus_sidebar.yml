@@ -1,0 +1,45 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+
+entries:
+- title: Sidebar
+  product: Flexberry Service Bus
+  version: 1.0.0
+  folders:
+
+  - title: About Flexberry Service Bus
+    title_ru: О Flexberry Service Bus
+    output: web, pdf
+    folderitems:
+    - title: About
+      title_ru: О подсистеме
+      url: /fsb_landing_page.html
+      output: web
+    - title: Thesaurus
+      title_ru: Тезаурус
+      url: /fsb_thesaurus.html
+      output: web
+  - title: Architecture
+    title_ru: Архитектура
+    output: web, pdf
+    folderitems:
+    - title: Schema
+      title_ru: Общая архитектура шины
+      url: /fsb_architecture.html
+      output: web
+  - title: Development
+    title_ru: Разработка
+    output: web, pdf
+    folderitems:
+    - title: Development Flexberry Service Bus
+      title_ru: Разработка Flexberry Service Bus
+      url: /fsb_development.html
+      output: web
+    - title: Internal architecture Flexberry Service Bus
+      title_ru: Внутренняя архитектура Flexberry Service Bus
+      url: /fsb_internal-architecture.html
+      output: web
+    - title: Flexberry Service Bus in docker swarms
+      title_ru: Запуск и остановка шины Flexberry Service Bus в режиме docker swarms
+      url: /fsb_installation.html
+      output: web

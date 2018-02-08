@@ -528,6 +528,30 @@ var Model = DS.Model.extend(EmberValidations, Ember.Evented, {
   },
 
   /**
+    Сheck whether there is a changed &#x60;belongsTo&#x60; relationships.
+
+    @method hasChangedBelongsTo
+    @return {Boolean} Returns &#x60;true&#x60; if &#x60;belongsTo&#x60; relationships have changed, else &#x60;false&#x60;.
+  */
+  hasChangedBelongsTo() {
+    let hasChangedBelongsTo = false;
+    let changedBelongsTo = this.changedBelongsTo();
+    for (let changes in changedBelongsTo) {
+      if (changedBelongsTo.hasOwnProperty(changes)) {
+        let [oldValue, newValue] = changedBelongsTo[changes];
+        let oldValueId = oldValue ? oldValue.get(&#x27;id&#x27;) : null;
+        let newValueId = newValue ? newValue.get(&#x27;id&#x27;) : null;
+        if (oldValue !== newValue || oldValueId !== newValueId) {
+          hasChangedBelongsTo = true;
+          break;
+        }
+      }
+    }
+
+    return hasChangedBelongsTo;
+  },
+
+  /**
     Return object with changes.
 
     Object will have structure:

@@ -53,10 +53,12 @@ summary: Курс по базовым технологиям, применяем
   * [jBPM](gbt_jbpm.html)
 * [Тестирование, отладка, вопросы производительности приложений](gbt_testing.html)
 * [Командная разработка](gbt_team-management.html)
-* [Разворачивание и установка решений](gbt_deployment.html)
-  * [Разворачивание решений в Windows](gbt_deployment_windows.html)
-  * [Разворачивание решений в Linux](gbt_deployment_linux.html)
-  * [Разворачивание решений в контейнерах Docker](gbt_deployment_docker.html)
+* [Развёртывание и установка решений](gbt_deployment.html)
+  * [Развёртывание решений в Windows](gbt_deployment_windows.html)
+  * [Развёртывание решений в Linux](gbt_deployment_linux.html)
+  * [Развёртывание решений в контейнерах Docker](gbt_deployment_docker.html)
+* [Интеграция систем](gbt_integration.html)
+  * [Методы и подходы к интеграции систем](gbt_integration-methods.html)
 
 ## Формат курса
 

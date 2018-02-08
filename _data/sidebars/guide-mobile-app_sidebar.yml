@@ -5,19 +5,19 @@ entries:
   levels: one
   folders:
 
-  - title: Practical tasks
+  - title: Mobile app development
     title_ru: Создание мобильного приложения
     output: web
     folderitems:
-    - title: Practical tasks
+    - title: About
       title_ru: Введение
       url: /gma_landing-page.html
       output: web
-    - title: Practical tasks
+    - title: Architecture
       title_ru: Архитектура приложения
       url: /gms_architecture-mobile-app.html
       output: web
-    - title: Practical tasks
+    - title: Software
       title_ru: Состав программного обеспечения
       url: /gma_po-mobile-app.html
       output: web

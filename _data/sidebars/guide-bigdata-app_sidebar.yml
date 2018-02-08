@@ -1,0 +1,16 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: BigData app development
+    title_ru: Создание BigData приложений
+    output: web
+    folderitems:
+    - title: About
+      title_ru: Введение
+      url: /gbd_landing-page.html
+      output: web
+
