@@ -159,5 +159,5 @@ ember install ember-flexberry
   * Скопировать метаданные из папки vendor\flexberry в такую же папку созданного addon-а.
   * Указывать путь до папки с метаданными при вызове блюпринтов генерации, статья [Blueprints кодогенерация в ember-flexberry](ef_blueprints.html).
 * Вызвать генерацию по метаданным: `ember g flexberry-application`
-* Если нужно указывать путь до метаданных, то можно использовать вот такой формат: `ember g flexberry-application app --metadata-dir=vendor/flexberry`
-* Можно генерировать формы и модели для Dummy-приложения этим же самым генератором, для этого нужно выполнять команду генрации с флагом `--dummy`: `ember g flexberry-application --metadata-dir=vendor/dummy-metadata --dummy`
+* Если нужно указывать путь до метаданных, то можно использовать вот такой формат: `ember g flexberry-addon addon --metadata-dir vendor\flexberry`
+* Можно генерировать формы и модели для Dummy-приложения этим же самым генератором, для этого нужно выполнять команду генрации с флагом `--dummy`: `ember g flexberry-application app --metadata-dir vendor\flexberry --dummy`
