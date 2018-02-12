@@ -43,3 +43,11 @@ entries:
       title_ru: Запуск и остановка шины Flexberry Service Bus в режиме docker swarms
       url: /fsb_installation.html
       output: web
+  - title: Adapters
+    title_ru: Адаптеры
+    output: web, pdf
+    folderitems:
+    - title: Rules for creating and configuring adapters
+      title_ru: Правила создания и настройки адаптеров
+      url: /fsb_castomization-adapters.html
+      output: web
