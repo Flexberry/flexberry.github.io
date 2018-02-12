@@ -60,6 +60,7 @@ CentOS | [Скачать](https://wiki.centos.org/Download) | [Запись](htt
 
 * [ALT Linux снаружи. ALT Linux изнутри](http://www.altlinux.ru/products/books/inside-outside/)
 * [Linux: Полное руководство / Д.Н. Колисниченко, Питер В. Аллен (PDF)](http://www.softlabirint.ru/book/18371-linux-polnoe-rukovodstvo-dn-kolisnichenko-piter-v-allen-pdf.html)
+* [Команды Linux «от A до Z», обзор с примерами](http://edu-cisco.org/docs/lp/Linux-handbook-comands-A-Z-SEDICOMM-University.pdf)
 * [Даниэл Дж. Баррет - Linux основные команды карманный справочник](http://www.proklondike.com/books/linux/barret-linux-osnovnye-komandy.html)
 * [Лучшие книги о Linux](https://losst.ru/luchshie-knigi-o-linux)
 
