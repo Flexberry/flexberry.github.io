@@ -5,19 +5,21 @@ keywords: DnsIdentity, Callback, Тип сообщения, Шина, Адапт
 toc: true
 permalink: ru/fsb_castomization-adapters.html
 lang: ru
-summary: 
+summary: Поэтапное создание приложений для отправки и приема сообщений с помощью Flexberry SB
 ---
 
-Создание адептеров (или клиентов) шины продемонстрировано на двух примерах:
+Создание [адептеров](fsb_adapters.html) (или клиентов) [Flexberry SB](fsb_landing_page.html) (шина) продемонстрировано на двух примерах:
 
 * `MsgSender` – это консольное приложение, не имеющее собственного сервиса для подписок. После запуска приложения, оно просит пользователя ввести строку и затем отправляет введенное сообщение в сервисную шину.
 * `MsgListener` – консольное приложение с собственным сервисом для приема сообщений. После запуска приложения, оно выводит на консоль текст приходящих сообщений.
+
+Код описываемых приложений выложен в примерах для Flexberry SB на [GitHub](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples).
 
 ## Разработка MsgSender
 
 #### Создать консольное приложение
 
-Для создания консольного приложения можно использовать [MS Visual Studio]()
+Для создания консольного приложения можно использовать [MS Visual Studio](https://www.visualstudio.com)
 
 ![](/images/pages/products/flexberry-servicebus/adapters/creating-console-app.png)
 
@@ -31,22 +33,22 @@ summary:
 
 Далее нужно добавить nuget-пакет [NewPlatform.Flexberry.ServiceBus.ClientTools](https://www.nuget.org/packages/NewPlatform.Flexberry.ServiceBus.ClientTools) с актуальной версией (самое большое число без слов).
 
-Для этого следует щелкнуть правой кнопкой "мыши" на Solution и выбрать пункт Manage NuGet Packages for Solution...:
+Для этого следует щелкнуть правой кнопкой "мыши" на `Solution` и выбрать пункт `Manage NuGet Packages for Solution...`:
 
 ![](/images/pages/products/flexberry-servicebus/adapters/nuget-manager.png)
 
-Выбрать пункт меню Browse и вставить название пакета в окне поиска. Когда пакет будет найден, в окне справа отметить "галочкой" название созданного приложения и нажать Install:
+Выбрать пункт меню `Browse` и вставить название пакета в окне поиска. Когда пакет будет найден, в окне справа отметить "галочкой" название созданного приложения и нажать `Install`:
 
 ![](/images/pages/products/flexberry-servicebus/adapters/install-packege.png)
 
-Если будет предложена установка ряда дополнительных пакетов в появившемся окне, нажать ОК. В следующем появившемся окне нажать I Accept.
+Если будет предложена установка ряда дополнительных пакетов в появившемся окне, нажать "ОК". В следующем появившемся окне нажать `I Accept`.
 
-Далее код файла Program.cs необходимо заменить следующим:
+Далее код файла `Program.cs` необходимо заменить следующим:
 
 ```csharp
 namespace MsgSender
 {
-    using MsgSender.ServiceBusServiceClient;
+    using ServiceBusServiceClient;
     using System;
     using System.Net;
     using System.Configuration;
@@ -115,7 +117,7 @@ namespace MsgSender
 * Запустить сервисную шину:
     * локально по адресу [http://127.0.0.1:7075/HighwaySBMonoPostgreSQLWcfService](http://127.0.0.1:7075/HighwaySBMonoPostgreSQLWcfService). Данный вариант возможен, если используется [Docker](fsb_installation.html).
     * с помощью адреса предоставленного Администратором, в случае централизованно развернутой шины
-* Нажать в MS Visual Studio правой клавишей мыши на проект в `Solution Explorer`
+* Нажать в `MS Visual Studio` правой клавишей мыши на проект в `Solution Explorer`
 * В контекстном меню выберать пункт `Add Service Reference…`
 
 ![](/images/pages/products/flexberry-servicebus/adapters/add-reference.png)
@@ -131,9 +133,9 @@ namespace MsgSender
 * ICSSoft.STORMNET.Tools 
 * System.Configuration
 
-Сначала следует убедиться, что ссылки не добавлены по умолчанию. Для этого в Solution нужно распахнуть папку Reference.
+Сначала следует убедиться, что ссылки не добавлены по умолчанию. Для этого в `Solution` нужно распахнуть папку `Reference`.
 
-Если ссылки не установлены, то щелкнуть правой кнопкой "мыши" по Reference, далее Add reference... . В появившемся окне выбрать Assemblies/Framework. Далее отметить "галочкой" необходимые библиотеки (существующие отметки не снимать).
+Если ссылки не установлены, то щелкнуть правой кнопкой "мыши" по `Reference`, далее `Add reference...`. В появившемся окне выбрать `Assemblies/Framework`. Далее отметить "галочкой" необходимые библиотеки (существующие отметки не снимать).
 
 ![](/images/pages/products/flexberry-servicebus/adapters/add-lib.png)
 
@@ -153,7 +155,7 @@ namespace MsgSender
 
 #### Настроить файл конфигурации
 
-* Открыть в MS Visual Studio в проекте файл App.config
+* Открыть в `MS Visual Studio` в проекте файл `App.config`
 * Добавить следующую секцию:
 
 ```csharp
@@ -171,11 +173,11 @@ namespace MsgSender
 
 #### Создать консольное приложение
 
-Консольное приложение для MsgListener создается также, как и для MsgSender.
+Консольное приложение для `MsgListener` создается также, как и для `MsgSender`.
 
 #### Добавить ссылки на следующие библиотеки
 
-Также, как и для MsgSender необходимо добавить ссылки на некоторые библиотеки:
+Также, как и для `MsgSender` необходимо добавить ссылки на некоторые библиотеки:
 
 * System.ServiceModel
 * ICSSoft.STORMNET.Tools
@@ -185,7 +187,7 @@ namespace MsgSender
 
 Также нужно добавить nuget-пакет [NewPlatform.Flexberry.ServiceBus.ClientTools](https://www.nuget.org/packages/NewPlatform.Flexberry.ServiceBus.ClientTools) с актуальной версией (самое большое число без слов).
 
-Далее код файла Program.cs необходимо заменить следующим:
+Далее код файла `Program.cs` необходимо заменить следующим:
 
 ```csharp
 namespace MsgListener
@@ -195,12 +197,13 @@ namespace MsgListener
     using System.ServiceModel;
     using System.Threading;
     using ICSSoft.STORMNET.Tools;
-    using MsgListener.ESB;
+    using ServiceBusServiceClient;
 
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
+            var messageFromESB = new MessageFromESB();
             MyServiceHost.StartService();
 
             Console.WriteLine("MsgListener started.");
@@ -209,90 +212,90 @@ namespace MsgListener
 
             MyServiceHost.StopService();
         }
-    }
 
-    internal class MyServiceHost
-    {
-        private static Thread ScanThread;
-
-        internal static ServiceHost myServiceHost = null;
-
-        internal static void StartService()
+        internal class MyServiceHost
         {
-            myServiceHost = new ServiceHost(typeof(MsgListenerClass));
+            private static Thread ScanThread;
 
-            myServiceHost.Open();
+            internal static ServiceHost myServiceHost = null;
 
-            ScanThread = MsgListenerClass.GetScanningThread();
-            ScanThread.Start();
-        }
-
-        internal static void StopService()
-        {
-            ScanThread.Abort();
-
-            if (myServiceHost.State != CommunicationState.Closed)
-                myServiceHost.Close();
-        }
-    }
-
-    [ServiceContract]
-    public interface ICallbackSubscriber
-    {
-        [OperationContract]
-        void AcceptMessage(MessageFromESB msg);
-
-        [OperationContract]
-        void RiseEvent(string ИдТипаСобытия);
-
-        string GetSourceId();
-    }
-
-    public class MsgListenerClass : ICallbackSubscriber
-    {
-        public string GetSourceId()
-        {
-            return ConfigurationManager.AppSettings["ExternalKey"];
-        }
-
-        public void AcceptMessage(MessageFromESB msg)
-        {
-            Console.WriteLine(ToolZIP.Decompress(msg.Body));
-        }
-
-        public void RiseEvent(string ИдТипаСобытия)
-        {
-            Console.WriteLine(ИдТипаСобытия);
-        }
-
-        internal static void SubscribeMe4Messages(string ИдТипаСообщения)
-        {
-            using (ServiceBusServiceClient ServiceBus = new
-            ServiceBusServiceClient())
+            internal static void StartService()
             {
-                ServiceBus.SubscribeClientForMessageCallback(
-                ConfigurationManager.AppSettings["ServiceID4SB"],
-                ИдТипаСообщения);
+                myServiceHost = new ServiceHost(typeof(MsgListenerClass));
 
-                ServiceBus.Close();
+                myServiceHost.Open();
+
+                ScanThread = MsgListenerClass.GetScanningThread();
+                ScanThread.Start();
+            }
+
+            internal static void StopService()
+            {
+                ScanThread.Abort();
+
+                if (myServiceHost.State != CommunicationState.Closed)
+                    myServiceHost.Close();
             }
         }
 
-        private static void NewSubscribeOrUpdate()
+        [ServiceContract]
+        public interface ICallbackSubscriber
         {
-            while (true)
-            {
-                SubscribeMe4Messages(
-                ConfigurationManager.AppSettings["MessageTypeID"]);
+            [OperationContract]
+            void AcceptMessage(MessageFromESB msg);
 
-                Thread.Sleep(Convert.ToInt32(
-                ConfigurationManager.AppSettings["ScanPeriod"]));
-            }
+            [OperationContract]
+            void RiseEvent(string ИдТипаСобытия);
+
+            string GetSourceId();
         }
 
-        public static Thread GetScanningThread()
+        public class MsgListenerClass : ICallbackSubscriber
         {
-            return new Thread(NewSubscribeOrUpdate);
+            public string GetSourceId()
+            {
+                return ConfigurationManager.AppSettings["ExternalKey"];
+            }
+
+            public void AcceptMessage(MessageFromESB msg)
+            {
+                Console.WriteLine(ToolZIP.Decompress(msg.Body));
+            }
+
+            public void RiseEvent(string ИдТипаСобытия)
+            {
+                Console.WriteLine(ИдТипаСобытия);
+            }
+
+            internal static void SubscribeMe4Messages(string ИдТипаСообщения)
+            {
+                using (ServiceBusServiceClient.ServiceBusServiceClient ServiceBus = new
+                ServiceBusServiceClient.ServiceBusServiceClient())
+                {
+                    ServiceBus.SubscribeClientForMessageCallback(
+                    ConfigurationManager.AppSettings["ServiceID4SB"],
+                    ИдТипаСообщения);
+
+                    ServiceBus.Close();
+                }
+            }
+
+            private static void NewSubscribeOrUpdate()
+            {
+                while (true)
+                {
+                    SubscribeMe4Messages(
+                    ConfigurationManager.AppSettings["MessageTypeID"]);
+
+                    Thread.Sleep(Convert.ToInt32(
+                    ConfigurationManager.AppSettings["ScanPeriod"]));
+                }
+            }
+
+            public static Thread GetScanningThread()
+            {
+                return new Thread(NewSubscribeOrUpdate);
+            }
         }
     }
 }
@@ -300,7 +303,7 @@ namespace MsgListener
 
 #### Зарегистрировать клиента в сервисной шине
 
-* Запустите приложение администратора также, как и для MsgSender (если не было запущено ранее)
+* Запустить приложение администратора также, как и для `MsgSender` (если не было запущено ранее)
 * Зайти в контейнер "Клиенты"
 * Выберите пункт меню "Создать"
 * В открывшемся окне ввести наименование клиента и адрес, на который будут приходить сообщения от сервисной шины
@@ -310,7 +313,7 @@ namespace MsgListener
 
 #### Дополнить конфигурационный файл
 
-* Открыть файл с названием app.config
+* Открыть файл с названием `App.config`
 * Дополнить его код следующим:
 
 ```xml
@@ -350,10 +353,12 @@ namespace MsgListener
 
 #### Добавить ссылку на сервисную шину в приложение
 
-* Запустить сервисную шину также, как и для MsgSender (если не было запущено ранее)
-* Нажать правой клавишей мыши на проект в Solution Explorer
-* В контекстном меню выберать пункт Add Service Reference…
+* Запустить сервисную шину также, как и для `MsgSender` (если не было запущено ранее)
+* Нажать правой клавишей мыши на проект в `Solution Explorer`
+* В контекстном меню выберать пункт `Add Service Reference…`
 * В появившемся окне указать адрес сервисной шины и название сервиса (также, как и для MsgSender)
 * Нажать "OK"
 
-Результатом выполнения будет сообщение с текстом из TestSender должно прийти в TestListener.
+Результатом выполнения будет сообщение с текстом из `TestSender` должно прийти в `TestListener`.
+
+![](/images/pages/products/flexberry-servicebus/adapters/result.png)
