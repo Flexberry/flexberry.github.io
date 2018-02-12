@@ -8,15 +8,6 @@ lang: ru
 summary: 
 ---
 
-Для создания адаптеров необходимо выполнить подготовительные этапы:
-
-1. Установить Docker
-3. Запустить [сервис шины](fsb_installation.html) с помощью командного интерпритатора
-4. Убедиться, что шина запущена (команда `docker ps`, результатом выполнения которой являются 3 строки)
-5. Запустить приложение Администратора [http://localhost:180/](http://localhost:180/), `логин/пароль admin/admin`
-6. Запустить [интерфейсы шины](fsb_installation.html) по адресу [http://127.0.0.1:7075/HighwaySBMonoPostgreSQLWcfService](http://127.0.0.1:7075/HighwaySBMonoPostgreSQLWcfService)
-
----------------------------------------------
 Создание адептеров (или клиентов) шины продемонстрировано на двух примерах:
 
 * `MsgSender` – это консольное приложение, не имеющее собственного сервиса для подписок. После запуска приложения, оно просит пользователя ввести строку и затем отправляет введенное сообщение в сервисную шину.
@@ -50,47 +41,61 @@ summary:
 
 Если будет предложена установка ряда дополнительных пакетов в появившемся окне, нажать ОК. В следующем появившемся окне нажать I Accept.
 
-Далее вставить в метод Main код:
+Далее код файла Program.cs необходимо заменить следующим:
 
 ```csharp
-string s = "";
+namespace MsgSender
+{
+    using MsgSender.ServiceBusServiceClient;
+    using System;
+    using System.Net;
+    using System.Configuration;
 
-    while (s != "exit")
+    class Program
     {
-        Console.WriteLine("Enter your name (for exit type \"exit\"):");
-
-        s = Console.ReadLine();
-
-        if (s != "exit")
+        static void Main(string[] args)
         {
-            using (var ServiceBus = new ServiceBusServiceClient("SBService"))
+            string s = "";
+
+            while (s != "exit")
             {
-                // Установим прокси, если нужно.
-                var useProxy = ConfigurationManager.AppSettings["UseProxy"];
-                if (!string.IsNullOrEmpty(useProxy) && useProxy.ToLower() == "true")
+                Console.WriteLine("Enter your name (for exit type \"exit\"):");
+
+                s = Console.ReadLine();
+
+                if (s != "exit")
                 {
-                    var proxy = new WebProxy(ConfigurationManager.AppSettings["ProxyServer"], true)
+                    using (var ServiceBus = new ServiceBusServiceClient.ServiceBusServiceClient("SBService"))
                     {
-                        Credentials = new NetworkCredential(ConfigurationManager.AppSettings["ProxyLogin"], ConfigurationManager.AppSettings["ProxyPass"])
-                    };
-                    WebRequest.DefaultWebProxy = proxy;
+                        // Установим прокси, если нужно.
+                        var useProxy = ConfigurationManager.AppSettings["UseProxy"];
+                        if (!string.IsNullOrEmpty(useProxy) && useProxy.ToLower() == "true")
+                        {
+                            var proxy = new WebProxy(ConfigurationManager.AppSettings["ProxyServer"], true)
+                            {
+                                Credentials = new NetworkCredential(ConfigurationManager.AppSettings["ProxyLogin"], ConfigurationManager.AppSettings["ProxyPass"])
+                            };
+                            WebRequest.DefaultWebProxy = proxy;
+                        }
+
+                        // Создадим сообщение.
+                        var message = new MessageForESB
+                        {
+                            ClientID = ConfigurationManager.AppSettings["ServiceID4SB"],
+                            MessageTypeID = ConfigurationManager.AppSettings["MessageTypeID"],
+                            Body = "Hello from " + s + "!" 
+                        };
+
+                        // И отправим его через шину.
+                        ServiceBus.SendMessageToESB(message);
+
+                        ServiceBus.Close();
+                    }
                 }
-
-                // Создадим сообщение.
-                var message = new MessageForESB
-                {
-                    ClientID = ConfigurationManager.AppSettings["ServiceID4SB"],
-                    MessageTypeID = ConfigurationManager.AppSettings["MessageTypeID"],
-                    Body = ToolZIP.Compress("Hello from " + s + "!")
-                };
-
-                // И отправим его через шину.
-                ServiceBus.SendMessageToESB(message);
-
-                ServiceBus.Close();
             }
         }
     }
+}
 ```
 
 #### Создать новый тип сообщений
@@ -298,6 +303,57 @@ namespace MsgListener
 * Запустите приложение администратора также, как и для MsgSender (если не было запущено ранее)
 * Зайти в контейнер "Клиенты"
 * Выберите пункт меню "Создать"
-* В открывшемся окне введите наименование клиента и адрес, на который будут приходить сообщения от сервисной шины
-* Сохраните клиента, выбрав пункт меню «Сохранить и закрыть»
+* В открывшемся окне ввести наименование клиента и адрес, на который будут приходить сообщения от сервисной шины
+* Сохранить по кнопке "Сохранить и закрыть"
 
+![](/images/pages/products/flexberry-servicebus/adapters/add-client-msglistener.png)
+
+#### Дополнить конфигурационный файл
+
+* Открыть файл с названием app.config
+* Дополнить его код следующим:
+
+```xml
+  <appSettings>
+    <add key="ExternalKey"  value="MsgListener" />
+    <add key="ServiceID4SB" value ="{45ef0dc6-645c-4e8d-bd28-7abc8459c5cb}"/>
+    <add key ="MessageTypeID" value ="{1c5207ae-6e48-4798-9a2a-188d3b096d8e}"/>
+    <add key="ScanPeriod" value="3000"/>
+  </appSettings>
+
+  <system.serviceModel>
+    <services>
+      <service name="MsgListener.MsgListenerClass"
+	behaviorConfiguration="MsgListenerClientBehaviors">
+        <host>
+          <baseAddresses>
+            <add baseAddress="http://localhost:8080/MsgListener"/>
+          </baseAddresses>
+        </host>
+        <endpoint contract="MsgListener.ICallbackSubscriber" binding="wsHttpBinding"/>
+        <endpoint contract="IMetadataExchange" binding="mexHttpBinding" address="mex" />
+      </service>
+    </services>
+
+    <behaviors>
+      <serviceBehaviors>
+        <behavior name="MsgListenerClientBehaviors" >
+          <serviceMetadata httpGetEnabled="true" />
+          <serviceDebug includeExceptionDetailInFaults="True" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+  </system.serviceModel>
+```
+
+* Для ключей `ServiceID4SB` (клиент) и `MessageTypeID` (сообщение) указать ключи из приложения администратора. `ScanPeriod` – значение обновления подписки в миллисекундах. `ExternalKey` – внешний идентификатор для клиента.
+
+#### Добавить ссылку на сервисную шину в приложение
+
+* Запустить сервисную шину также, как и для MsgSender (если не было запущено ранее)
+* Нажать правой клавишей мыши на проект в Solution Explorer
+* В контекстном меню выберать пункт Add Service Reference…
+* В появившемся окне указать адрес сервисной шины и название сервиса (также, как и для MsgSender)
+* Нажать "OK"
+
+Результатом выполнения будет сообщение с текстом из TestSender должно прийти в TestListener.
