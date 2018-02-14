@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: blueprints, Прототипизация
 toc: true
 permalink: ru/ef_blueprints.html
-folder: products/ember-flexberry/generation/
 lang: ru
 summary: Кодогенерация средствами аддона ember-flexberry на основе `blueprints`
 ---
