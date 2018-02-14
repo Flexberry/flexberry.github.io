@@ -141,6 +141,18 @@ entries:
       title_ru: Разработка с использованием jBPM
       url: /gbt_jbpm.html
       output: web
+  - title: System integration
+    title_ru: Интеграция систем
+    output: web
+    folderitems:
+    - title: System integration fundamentals
+      title_ru: Введение в интеграцию систем
+      url: /gbt_integration.html
+      output: web
+    - title: Methods and approaches to systems integration
+      title_ru: Методы и подходы к интеграции систем
+      url: /gbt_integration-methods.html
+      output: web
   - title: Testing, debugging, performance
     title_ru: Тестирование и отладка
     output: web
@@ -176,16 +188,4 @@ entries:
     - title: Deployment on Docker
       title_ru: Развёртывание решений в контейнерах Docker
       url: /gbt_deployment_docker.html
-      output: web
-  - title: System integration
-    title_ru: Интеграция систем
-    output: web
-    folderitems:
-    - title: System integration fundamentals
-      title_ru: Введение в интеграцию систем
-      url: /gbt_integration.html
-      output: web
-    - title: Methods and approaches to systems integration
-      title_ru: Методы и подходы к интеграции систем
-      url: /gbt_integration-methods.html
       output: web

@@ -14,7 +14,6 @@ summary: Запуск и остановка шины в docker swarms.
 Для запуска `Flexberry Service Bus` требуется иметь установленное ПО [Docker](https://docs.docker.com). Для пользоателей ОС Windows есть соответствующая версия [Docker for Windows](https://docs.docker.com/docker-for-windows/install/).
 
 ### PowerShell-скрипт установки и запуска шины
-* Скрипт можно скачать с [GitHub](https://raw.githubusercontent.com/Flexberry/NewPlatform.Flexberry.ServiceBus/develop/Docker/getServiceBus.ps1).
 
 ```powershell
 $documentsPath = [Environment]::GetFolderPath('MyDocuments')
@@ -30,7 +29,8 @@ $client.DownloadFile("$downloadPath/stopCloud.cmd", "$pwd\stopCloud.cmd")
 .\startCloud.cmd
 ```
 
-* Для запуска скрипта нужно открыть PowerShell консоль. Затем можно либо прописать в консоли путь к скрипту (например D:\userName\NewPlatform.Flexberry.ServiceBus\Docker\getServiceBus.ps1), либо просто скопировать текст скрипта в консоль.
+Скрипт можно скачать с [GitHub](https://raw.githubusercontent.com/Flexberry/NewPlatform.Flexberry.ServiceBus/develop/Docker/getServiceBus.ps1).  
+Для запуска скрипта нужно открыть [PowerShell консоль](https://docs.microsoft.com/ru-ru/powershell/scripting/setup/starting-windows-powershell?view=powershell-6). Затем можно либо прописать в консоли путь к скрипту (например D:\userName\NewPlatform.Flexberry.ServiceBus\Docker\getServiceBus.ps1) и запустить его, либо просто скопировать текст скрипта в консоль и выполнить.
 
 ### Проверка успешности запуска шины
 * В PowerShell консоли нужно ввести "docker ps", в результате будет выдан список запущенных docker образов (среди них должны быть hwsb-postgres, servicebuseditor и hwsb).
