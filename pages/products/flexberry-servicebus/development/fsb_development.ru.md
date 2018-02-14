@@ -17,7 +17,7 @@ summary: Функциональная подсистема платформы Fl
 
 ### Flexberry/NewPlatform.Flexberry.ServiceBus
 
-Адрес репозитория на GitHub: https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus  
+Адрес репозитория на GitHub: <https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus>  
 Репозиторий с основными компонентами `Flexberry Service Bus`, cодержит два решения:
 
 * **NewPlatform.Flexberry.ServiceBus** - решение, включающее следующие проекты:
@@ -33,10 +33,10 @@ summary: Функциональная подсистема платформы Fl
 
 ### Flexberry/ember-flexberry-service-bus
 
-Адрес репозитория на GitHub: https://github.com/Flexberry/ember-flexberry-service-bus  
+Адрес репозитория на GitHub: <https://github.com/Flexberry/ember-flexberry-service-bus>  
 Репозиторий, хранящий реализацию основных возможностей по управлению `Flexberry Service Bus` в виде ember-аддона.
 
 ### Flexberry/flexberry-service-bus-editor
 
-Адрес репозитория на GitHub: https://github.com/Flexberry/flexberry-service-bus-editor  
+Адрес репозитория на GitHub: <https://github.com/Flexberry/flexberry-service-bus-editor>  
 Репозиторий, хранящий приложение для управления `Flexberry Service Bus`, реализованое с использованием аддона `ember-flexberry-service-bus`. В качестве backend-части используется ASP.NET приложение `NewPlatform.Flexberry.ServiceBus.Editor` из репозитория `Flexberry/NewPlatform.Flexberry.ServiceBus`.

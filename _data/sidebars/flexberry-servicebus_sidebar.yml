@@ -59,7 +59,7 @@ entries:
       url: /fsb_castomization-adapters.html
       output: web, pdf
     - title: REST-adapters sample
-      title_ru: Пример REST-адаптера
+      title_ru: Пример REST-адаптеров
       url: /fsb_rest-adapters-sample.html
       output: web, pdf
   - title: Development
@@ -67,10 +67,10 @@ entries:
     output: web, pdf
     folderitems:
     - title: Development Flexberry Service Bus
-      title_ru: Разработка Flexberry Service Bus
+      title_ru: Разработка шины
       url: /fsb_development.html
       output: web, pdf
     - title: Internal architecture Flexberry Service Bus
-      title_ru: Внутренняя архитектура Flexberry Service Bus
+      title_ru: Внутреннее устройство шины
       url: /fsb_internal-architecture.html
       output: web, pdf
