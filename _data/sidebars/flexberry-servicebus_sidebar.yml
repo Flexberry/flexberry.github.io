@@ -7,26 +7,61 @@ entries:
   version: 1.0.0
   folders:
 
-  - title: About Flexberry Service Bus
-    title_ru: О Flexberry Service Bus
+  - title: About
+    title_ru: О подсистеме
     output: web, pdf
     folderitems:
-    - title: About
-      title_ru: О подсистеме
+    - title: Flexberry Service Bus
       url: /fsb_landing_page.html
-      output: web
+      output: web, pdf
+    - title: Installation and start via Docker
+      title_ru: Установка и запуск шины в Docker
+      url: /fsb_installation.html
+      output: web, pdf
+    - title: Architecture
+      title_ru: Архитектура шины
+      url: /fsb_architecture.html
+      output: web, pdf
+    - title: Features
+      title_ru: Возможности шины
+      url: /fsb_features.html
+      output: web, pdf
     - title: Thesaurus
       title_ru: Тезаурус
       url: /fsb_thesaurus.html
-      output: web
-  - title: Architecture
-    title_ru: Архитектура
+      output: web, pdf
+  - title: Components
+    title_ru: Компоненты шины
     output: web, pdf
     folderitems:
-    - title: Schema
-      title_ru: Общая архитектура шины
-      url: /fsb_architecture.html
-      output: web
+    - title: Service
+      title_ru: Сервис шины
+      url: /fsb_service.html
+      output: web, pdf
+    - title: Editor
+      title_ru: Административное приложение
+      url: /fsb_editor.html
+      output: web, pdf
+    - title: Database
+      title_ru: База данных
+      url: /fsb_database.html
+      output: web, pdf
+  - title: Adapters
+    title_ru: Адаптеры
+    output: web, pdf
+    folderitems:
+    - title: Разработка адаптеров для приложений
+      title_ru: Разработка адаптеров для приложений
+      url: /fsb_adapters.html
+      output: web, pdf
+    - title: WCF-adapters sample
+      title_ru: Пример WCF-адаптеров
+      url: /fsb_castomization-adapters.html
+      output: web, pdf
+    - title: REST-adapters sample
+      title_ru: Пример REST-адаптера
+      url: /fsb_rest-adapters-sample.html
+      output: web, pdf
   - title: Development
     title_ru: Разработка
     output: web, pdf
@@ -34,20 +69,8 @@ entries:
     - title: Development Flexberry Service Bus
       title_ru: Разработка Flexberry Service Bus
       url: /fsb_development.html
-      output: web
+      output: web, pdf
     - title: Internal architecture Flexberry Service Bus
       title_ru: Внутренняя архитектура Flexberry Service Bus
       url: /fsb_internal-architecture.html
-      output: web
-    - title: Flexberry Service Bus in docker swarms
-      title_ru: Запуск и остановка шины Flexberry Service Bus в режиме docker swarms
-      url: /fsb_installation.html
-      output: web
-  - title: Adapters
-    title_ru: Адаптеры
-    output: web, pdf
-    folderitems:
-    - title: Rules for creating and configuring adapters
-      title_ru: Правила создания и настройки адаптеров
-      url: /fsb_castomization-adapters.html
-      output: web
+      output: web, pdf

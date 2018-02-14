@@ -1,5 +1,5 @@
 ---
-title: Тезаурус
+title: Тезаурус по Flexberry Service Bus
 sidebar: flexberry-servicebus_sidebar
 keywords: DnsIdentity, Callback, Тип сообщения, Шина
 toc: true
