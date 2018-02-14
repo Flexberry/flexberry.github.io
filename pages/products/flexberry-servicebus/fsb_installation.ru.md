@@ -30,7 +30,10 @@ $client.DownloadFile("$downloadPath/stopCloud.cmd", "$pwd\stopCloud.cmd")
 .\startCloud.cmd
 ```
 
+* Для запуска скрипта нужно открыть PowerShell консоль. Затем можно либо прописать в консоли путь к скрипту (например D:\userName\NewPlatform.Flexberry.ServiceBus\Docker\getServiceBus.ps1), либо просто скопировать текст скрипта в консоль.
+
 ### Проверка успешности запуска шины
+* В PowerShell консоли нужно ввести "docker ps", в результате будет выдан список запущенных docker образов (среди них должны быть hwsb-postgres, servicebuseditor и hwsb).
 * Административное приложение с конфигурацией по умолчанию доступно по адресу <http://localhost:180>. Логин и пароль: `admin`, `admin` (при переходе на промышленную эксплуатацию обязательно нужно сменить).
 * WCF-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7075/HighwaySBMonoPostgreSQLWcfService>.
 * REST-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7085/HighwaySBMonoPostgreSQLWebApiService>.
