@@ -1,5 +1,5 @@
 ---
-title: Пример создания и настройки адаптеров
+title: Пример WCF-адаптеров
 sidebar: flexberry-servicebus_sidebar
 keywords: DnsIdentity, Callback, Тип сообщения, Шина, Адаптер
 toc: true

@@ -56,7 +56,7 @@ entries:
       output: web, pdf
     - title: WCF-adapters sample
       title_ru: Пример WCF-адаптеров
-      url: /fsb_castomization-adapters.html
+      url: /fsb_wcf-adapters-sample.html
       output: web, pdf
     - title: REST-adapters sample
       title_ru: Пример REST-адаптеров
