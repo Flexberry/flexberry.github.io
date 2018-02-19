@@ -106,73 +106,68 @@ summary: Поэтапное создание приложений для отп�
 
 ![](/images/pages/products/flexberry-servicebus/adapters/method-main.png)
 
-Далее нужно добавить nuget-пакет [NewPlatform.Flexberry.ServiceBus.ClientTools](https://www.nuget.org/packages/NewPlatform.Flexberry.ServiceBus.ClientTools) с актуальной версией.
-
-{% include important.html content="Флаг `Include prerelease` должен быть выключен." %}
-
-Для этого следует щелкнуть правой кнопкой "мыши" на `Solution` и выбрать пункт `Manage NuGet Packages for Solution...`:
-
-![](/images/pages/products/flexberry-servicebus/adapters/nuget-manager.png)
-
-Выбрать пункт меню `Browse` и вставить название пакета в окне поиска. Когда пакет будет найден, в окне справа отметить "галочкой" название созданного приложения и нажать `Install`:
-
-![](/images/pages/products/flexberry-servicebus/adapters/install-packege.png)
-
-Если будет предложена установка ряда дополнительных пакетов в появившемся окне, нажать "ОК". В следующем появившемся окне нажать `I Accept`.
-
-Далее код файла `Program.cs` в `namespace` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/MsgSender/MsgSender/Program.cs):
+Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp1/ConsoleApp1/Program.cs):
 
 ```csharp
-using ServiceBusServiceClient;
+using ConsoleApp1.ServiceBus;
 using System;
-using System.Net;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace ConsoleApp1
 {
-    static void Main(string[] args)
+        class Program
     {
-        string s = "";
-
-        while (s != "exit")
+        static void Main(string[] args)
         {
-            Console.WriteLine("Enter your name (for exit type \"exit\"):");
+            string s = "";
 
-            s = Console.ReadLine();
-
-            if (s != "exit")
+            while (s != "exit")
             {
-                using (var ServiceBus = new ServiceBusServiceClient.ServiceBusServiceClient())
+                Console.WriteLine("Enter your name (for exit type \"exit\"):");
+
+                s = Console.ReadLine();
+
+                if (s != "exit")
                 {
-                    // Установим прокси, если нужно.
-                    var useProxy = ConfigurationManager.AppSettings["UseProxy"];
-                    if (!string.IsNullOrEmpty(useProxy) && useProxy.ToLower() == "true")
+                    using (var ServiceBus = new ServiceBus.ServiceBusServiceClient())
                     {
-                        var proxy = new WebProxy(ConfigurationManager.AppSettings["ProxyServer"], true)
+                        // Установим прокси, если нужно.
+                        var useProxy = ConfigurationManager.AppSettings["UseProxy"];
+                        if (!string.IsNullOrEmpty(useProxy) && useProxy.ToLower() == "true")
                         {
-                            Credentials = new NetworkCredential(ConfigurationManager.AppSettings["ProxyLogin"], ConfigurationManager.AppSettings["ProxyPass"])
+                            var proxy = new WebProxy(ConfigurationManager.AppSettings["ProxyServer"], true)
+                            {
+                                Credentials = new NetworkCredential(ConfigurationManager.AppSettings["ProxyLogin"], ConfigurationManager.AppSettings["ProxyPass"])
+                            };
+                            WebRequest.DefaultWebProxy = proxy;
+                        }
+
+                        // Создадим сообщение.
+                        var message = new MessageForESB
+                        {
+                            ClientID = ConfigurationManager.AppSettings["ServiceID4SB"],
+                            MessageTypeID = ConfigurationManager.AppSettings["MessageTypeID"],
+                            Body = "Hello from " + s + "!"
                         };
-                        WebRequest.DefaultWebProxy = proxy;
+
+                        // И отправим его через шину.
+                        ServiceBus.SendMessageToESB(message);
+
+                        ServiceBus.Close();
                     }
-
-                    // Создадим сообщение.
-                    var message = new MessageForESB
-                    {
-                        ClientID = ConfigurationManager.AppSettings["ServiceID4SB"],
-                        MessageTypeID = ConfigurationManager.AppSettings["MessageTypeID"],
-                        Body = "Hello from " + s + "!" 
-                    };
-
-                    // И отправим его через шину.
-                    ServiceBus.SendMessageToESB(message);
-
-                    ServiceBus.Close();
                 }
             }
         }
     }
 }
 ```
+
+{% include note.html content="`ConsoleApp1` в `using ConsoleApp1.ServiceBus;` - это название созданного приложения" %}
 
 #### Добавление ссылки на сервис шины в приложение
 
@@ -191,61 +186,52 @@ class Program
 #### Настройка файла конфигурации
 
 * Открыть в `MS Visual Studio` в проекте созданного адаптера, отправляющего сообщения, файл `App.config`
-* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/MsgSender/MsgSender/App.config):
+* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp1/ConsoleApp1/App.config):
 
 ```xml
 <appSettings>
     <add key="ServiceID4SB" value="{e053821c-e44a-4547-b8d1-162f44e59f90}"/>
     <add key="MessageTypeID" value="{cc54b462-b76d-4b7c-981c-295645f3b5a1}"/>
 </appSettings>
-  <system.serviceModel>
-    <bindings>
-      <customBinding>
-        <binding name="WSHttpBinding_IServiceBusService">
-          <textMessageEncoding messageVersion="Soap11WSAddressing10" />
-          <httpTransport />
-        </binding>
-        <binding name="WSHttpBinding_IServiceBusInterop">
-          <textMessageEncoding messageVersion="Soap11WSAddressing10" />
-          <httpTransport />
-        </binding>
-        <binding name="WSHttpBinding_ICallbackSubscriber">
-          <textMessageEncoding messageVersion="Soap11WSAddressing10" />
-          <httpTransport />
-        </binding>
-      </customBinding>
-      <wsHttpBinding>
-        <binding name="WSHttpBinding_IServiceBusService">
-          <security mode="None" />
-        </binding>
-      </wsHttpBinding>
-    </bindings>
-    <client>
-      <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
-          binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IServiceBusService"
-          contract="ServiceBusServiceClient.IServiceBusService" name="WSHttpBinding_IServiceBusService" />
-      <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
-          binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusInterop"
-          contract="ServiceBusServiceClient.IServiceBusInterop" name="WSHttpBinding_IServiceBusInterop" />
-      <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
-          binding="customBinding" bindingConfiguration="WSHttpBinding_ICallbackSubscriber"
-          contract="ServiceBusServiceClient.ICallbackSubscriber" name="WSHttpBinding_ICallbackSubscriber" />
-    </client>
-  </system.serviceModel>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="WSHttpBinding_IServiceBusService">
+                    <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+                    <httpTransport />
+                </binding>
+                <binding name="WSHttpBinding_IServiceBusInterop">
+                    <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+                    <httpTransport />
+                </binding>
+                <binding name="WSHttpBinding_ICallbackSubscriber">
+                    <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+                    <httpTransport />
+                </binding>
+            </customBinding>
+          <wsHttpBinding>
+            <binding name="WSHttpBinding_IServiceBusService">
+              <security mode="None"/>
+            </binding>
+          </wsHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+                binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IServiceBusService"
+                contract="ServiceBus.IServiceBusService" name="WSHttpBinding_IServiceBusService" />
+            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+                binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusInterop"
+                contract="ServiceBus.IServiceBusInterop" name="WSHttpBinding_IServiceBusInterop" />
+            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+                binding="customBinding" bindingConfiguration="WSHttpBinding_ICallbackSubscriber"
+                contract="ServiceBus.ICallbackSubscriber" name="WSHttpBinding_ICallbackSubscriber" />
+        </client>
+    </system.serviceModel>
 ```
 
 Для ключей `ServiceID4SB` (клиент) и `MessageTypeID` (сообщение) указать ключи из приложения Администратора.
 
 Свойство "address" в секции `client` должно содержать адрес сервиса шины (см. пункт "Работа с приложением администратора").
-
-##### Возможные проблемы
-
-Ошибки при компиляции приложения:
-* не установлена ссылка на сборку `System.Configuration`. Для добавления ссылки щелкнуть правой кнопкой "мыши" по `Reference`, далее `Add reference...`. В появившемся окне выбрать `Assemblies/Framework`. Далее отметить "галочкой" необходимые библиотеки (существующие отметки не снимать).
-
-![](/images/pages/products/flexberry-servicebus/adapters/add-lib.png)
-
-Нажать "OK".
 
 ## Пример создания клиента, принимающего сообщения
 
@@ -255,127 +241,129 @@ class Program
 
 #### Написание кода адаптера
 
-Для клиента, принимающего сообщения, также нужно добавить nuget-пакет [NewPlatform.Flexberry.ServiceBus.ClientTools](https://www.nuget.org/packages/NewPlatform.Flexberry.ServiceBus.ClientTools) с актуальной версией.
-
-{% include important.html content="Флаг `Include prerelease` должен быть выключен." %}
-
-Далее код файла `Program.cs` в `namespace` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/MsgListener/MsgListener/Program.cs):
+Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp2/ConsoleApp2/Program.cs):
 
 ```csharp
+using ConsoleApp2.ServiceBus;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.ServiceModel;
+using System.Text;
 using System.Threading;
-using ICSSoft.STORMNET.Tools;
-using ServiceBusServiceClient;
+using System.Threading.Tasks;
 
-class Program
+namespace ConsoleApp2
 {
-    static void Main(string[] args)
-    {
-        var messageFromESB = new MessageFromESB();
-        MyServiceHost.StartService();
-
-        Console.WriteLine("MsgListener started.");
-        Console.WriteLine("Press any key to exit...");
-        Console.ReadKey();
-
-        MyServiceHost.StopService();
-    }
-
-    internal class MyServiceHost
-    {
-        private static Thread ScanThread;
-
-        internal static ServiceHost myServiceHost = null;
-
-        internal static void StartService()
+    class Program
+        static void Main(string[] args)
         {
-            var service = new MsgListenerClass();
-            myServiceHost = new ServiceHost(service);
+            var messageFromESB = new MessageFromESB();
+            MyServiceHost.StartService();
 
-            myServiceHost.Open();
+            Console.WriteLine("MsgListener started.");
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
 
-            //ScanThread = MsgListenerClass.GetScanningThread();
-            //ScanThread.Start();
+            MyServiceHost.StopService();
         }
 
-        internal static void StopService()
+        internal class MyServiceHost
         {
-            //ScanThread.Abort();
+            private static Thread ScanThread;
 
-            if (myServiceHost.State != CommunicationState.Closed)
-                myServiceHost.Close();
+            internal static ServiceHost myServiceHost = null;
+
+            internal static void StartService()
+            {
+                myServiceHost = new ServiceHost(new MsgListenerClass());
+
+                myServiceHost.Open();
+
+                //ScanThread = MsgListenerClass.GetScanningThread();
+                //ScanThread.Start();
+            }
+
+            internal static void StopService()
+            {
+                //ScanThread.Abort();
+
+                if (myServiceHost.State != CommunicationState.Closed)
+                    myServiceHost.Close();
+            }
+        }
+
+    }
+
+    [ServiceContract(ConfigurationName = "MsgListener.ICallbackSubscriber")]
+    public interface ICallbackSubscriber
+    {
+        [OperationContract]
+        void AcceptMessage(MessageFromESB msg);
+
+        [OperationContract]
+        void RiseEvent(string ИдТипаСобытия);
+
+        string GetSourceId();
+    }
+
+    [ServiceBehavior(InstanceContextMode =InstanceContextMode.Single)]
+    public class MsgListenerClass : ICallbackSubscriber
+    {
+        public string GetSourceId()
+        {
+            return ConfigurationManager.AppSettings["ExternalKey"];
+        }
+
+        public void AcceptMessage(MessageFromESB msg)
+        {
+            Console.WriteLine(msg.Body);
+        }
+
+        public void RiseEvent(string ИдТипаСобытия)
+        {
+            Console.WriteLine(ИдТипаСобытия);
+        }
+
+        internal static void SubscribeMe4Messages(string ИдТипаСообщения)
+        {
+            using (ServiceBus.ServiceBusServiceClient ServiceBus = new
+            ServiceBus.ServiceBusServiceClient())
+            {
+                ServiceBus.SubscribeClientForMessageCallback(
+                ConfigurationManager.AppSettings["ServiceID4SB"],
+                ИдТипаСообщения);
+
+                ServiceBus.Close();
+            }
+        }
+
+        private static void NewSubscribeOrUpdate()
+        {
+            while (true)
+            {
+                SubscribeMe4Messages(
+                ConfigurationManager.AppSettings["MessageTypeID"]);
+
+                Thread.Sleep(Convert.ToInt32(
+                ConfigurationManager.AppSettings["ScanPeriod"]));
+            }
+        }
+
+        public static Thread GetScanningThread()
+        {
+            return new Thread(NewSubscribeOrUpdate);
         }
     }
-}
-
-[ServiceContract(ConfigurationName = "MsgListener.ICallbackSubscriber")]
-public interface ICallbackSubscriber
-{
-    [OperationContract]
-    void AcceptMessage(MessageFromESB msg);
-
-    [OperationContract]
-    void RiseEvent(string ИдТипаСобытия);
-
-    string GetSourceId();
-}
-
-[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple, InstanceContextMode = InstanceContextMode.Single)]
-public class MsgListenerClass : ICallbackSubscriber
-{
-    public string GetSourceId()
-    {
-        return ConfigurationManager.AppSettings["ExternalKey"];
-    }
-
-    public void AcceptMessage(MessageFromESB msg)
-    {
-        Console.WriteLine(ToolZIP.Decompress(msg.Body));
-    }
-
-    public void RiseEvent(string ИдТипаСобытия)
-    {
-        Console.WriteLine(ИдТипаСобытия);
-    }
-
-    internal static void SubscribeMe4Messages(string ИдТипаСообщения)
-    {
-        using (ServiceBusServiceClient.ServiceBusServiceClient ServiceBus = new
-        ServiceBusServiceClient.ServiceBusServiceClient())
-        {
-            ServiceBus.SubscribeClientForMessageCallback(
-            ConfigurationManager.AppSettings["ServiceID4SB"],
-            ИдТипаСообщения);
-
-            ServiceBus.Close();
-        }
-    }
-
-    private static void NewSubscribeOrUpdate()
-    {
-        while (true)
-        {
-            SubscribeMe4Messages(
-            ConfigurationManager.AppSettings["MessageTypeID"]);
-
-            Thread.Sleep(Convert.ToInt32(
-            ConfigurationManager.AppSettings["ScanPeriod"]));
-        }
-    }
-
-    public static Thread GetScanningThread()
-    {
-        return new Thread(NewSubscribeOrUpdate);
-    }
-}
 ```
+
+{% include note.html content="`ConsoleApp2` в `using ConsoleApp2.ServiceBus;` - это название созданного приложения" %}
 
 #### Дополнить конфигурационный файл
 
 * Открыть в `MS Visual Studio` в проекте созданного адаптера, отправляющего сообщения, файл `App.config`
-* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/MsgListener/MsgListener/App.config):
+* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp2/ConsoleApp2/App.config):
 
 ```xml
 <appSettings>
@@ -387,59 +375,55 @@ public class MsgListenerClass : ICallbackSubscriber
 <startup> 
     <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/>
 </startup>
-<system.serviceModel>
-<bindings>
-    <customBinding>
-    <binding name="WSHttpBinding_IServiceBusService">
-        <textMessageEncoding messageVersion="Soap11WSAddressing10"/>
-        <httpTransport/>
-    </binding>
-    <binding name="WSHttpBinding_IServiceBusInterop">
-        <textMessageEncoding messageVersion="Soap11WSAddressing10"/>
-        <httpTransport/>
-    </binding>
-    <binding name="WSHttpBinding_ICallbackSubscriber">
-        <textMessageEncoding messageVersion="Soap11WSAddressing10"/>
-        <httpTransport/>
-    </binding>
-    </customBinding>
-    <wsHttpBinding>
-    <binding name="BINDDD">
-        <security mode="None"/>
-    </binding>
-    </wsHttpBinding>
-</bindings>
-<client>
-    <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService" binding="customBinding"
-        bindingConfiguration="WSHttpBinding_IServiceBusService" contract="ServiceBusServiceClient.IServiceBusService"
-        name="WSHttpBinding_IServiceBusService"/>
-    <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService" binding="customBinding"
-        bindingConfiguration="WSHttpBinding_IServiceBusInterop" contract="ServiceBusServiceClient.IServiceBusInterop"
-        name="WSHttpBinding_IServiceBusInterop"/>
-    <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService" binding="customBinding"
-        bindingConfiguration="WSHttpBinding_ICallbackSubscriber" contract="ServiceBusServiceClient.ICallbackSubscriber"
-        name="WSHttpBinding_ICallbackSubscriber"/>
-</client>
-<services>
-    <service name="MsgListener.MsgListenerClass" behaviorConfiguration="MsgListenerClientBehaviors">
-    <endpoint address="" binding="wsHttpBinding" bindingConfiguration="BINDDD" name="MsgListenerClass" contract="MsgListener.ICallbackSubscriber"/>
-    <endpoint contract="IMetadataExchange" binding="mexHttpBinding" address="mex" />
-    <host>
-        <baseAddresses>
-        <add baseAddress="http://localhost:8080/MsgListener"/>
-        </baseAddresses>
-    </host>
-    </service>
-</services>
-<behaviors>
-    <serviceBehaviors>
-    <behavior name="MsgListenerClientBehaviors" >
-        <serviceMetadata httpGetEnabled="true" />
-        <serviceDebug includeExceptionDetailInFaults="True" />
-    </behavior>
-    </serviceBehaviors>
-</behaviors>
-</system.serviceModel>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="WSHttpBinding_IServiceBusService">
+                    <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+                    <httpTransport />
+                </binding>
+                <binding name="WSHttpBinding_IServiceBusInterop">
+                    <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+                    <httpTransport />
+                </binding>
+                <binding name="WSHttpBinding_ICallbackSubscriber">
+                    <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+                    <httpTransport />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+                binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusService"
+                contract="ServiceBus.IServiceBusService" name="WSHttpBinding_IServiceBusService" />
+            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+                binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusInterop"
+                contract="ServiceBus.IServiceBusInterop" name="WSHttpBinding_IServiceBusInterop" />
+            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+                binding="customBinding" bindingConfiguration="WSHttpBinding_ICallbackSubscriber"
+                contract="ServiceBus.ICallbackSubscriber" name="WSHttpBinding_ICallbackSubscriber" />
+        </client>
+      <services>
+        <service name="ConsoleApp2.MsgListenerClass" behaviorConfiguration="MsgListenerClientBehaviors">
+          <host>
+            <baseAddresses>
+              <add baseAddress="http://localhost:8080/Listener"/>
+            </baseAddresses>
+          </host>
+          <endpoint contract="MsgListener.ICallbackSubscriber" binding="basicHttpBinding"/>
+          <endpoint contract="IMetadataExchange" binding="mexHttpBinding" address="mex" />
+        </service>
+      </services>
+
+      <behaviors>
+        <serviceBehaviors>
+          <behavior name="MsgListenerClientBehaviors" >
+            <serviceMetadata httpGetEnabled="true" />
+            <serviceDebug includeExceptionDetailInFaults="True" />
+          </behavior>
+        </serviceBehaviors>
+      </behaviors>
+    </system.serviceModel>
 ```
 
 Для ключей `ServiceID4SB` (клиент) и `MessageTypeID` (сообщение) указать ключи из приложения Администратора. `ScanPeriod` – значение обновления подписки в миллисекундах. `ExternalKey` – внешний идентификатор для клиента.
@@ -455,14 +439,11 @@ public class MsgListenerClass : ICallbackSubscriber
 * В появившемся окне указать адрес сервиса шины и название сервиса
 * Нажать "OK"
 
-##### Возможные проблемы
-
-Ошибки при компиляции приложения:
-* не установлена ссылка на сборку `System.ServiceModel` - добавить в `Reference` проекта адаптера 
-* не установлена ссылка на сборку `System.Configuration` - добавить в `Reference` проекта адаптера
-* не установлена ссылка на сборку `ICSSoft.STORMNET.Tools` - добавить nuget-пакет [NewPlatform.Flexberry.ORM](https://www.nuget.org/packages/NewPlatform.Flexberry.ORM)
-
 ## Результаты взаимодействия адаптеров отправки-приема сообщений
+
+Для отправки-получения сообщений нужно запустить приложения.
+
+{% include note.html content="Для запуска приложений `MS Visual Studio` должна быть запущена от имени Администратора" %}
 
 Результатом выполнения будет сообщение с текстом отправленного сообщения в адаптере, принимающем сообщения.
 
