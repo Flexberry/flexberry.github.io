@@ -454,6 +454,7 @@ export default ListFormController.extend(SortableRouteMixin, PredicateFromFilter
         filter: this.get(&#x27;filter&#x27;),
         filterCondition: this.get(&#x27;filterCondition&#x27;),
         predicate: this.get(&#x27;predicate&#x27;),
+        hierarchicalAttribute: this.get(&#x27;hierarchicalAttribute&#x27;),
 
         title: this.get(&#x27;title&#x27;),
         sizeClass: this.get(&#x27;sizeClass&#x27;),
@@ -464,6 +465,23 @@ export default ListFormController.extend(SortableRouteMixin, PredicateFromFilter
       };
 
       reloadDataHandler(this.get(&#x27;reloadContext&#x27;), reloadData);
+    },
+
+    /**
+      Redirect actions into route.
+
+      @method actions.loadRecords
+      @param {String} id Record ID.
+      @param {ObjectListViewRowComponent} target Instance of {{#crossLink &quot;ObjectListViewRowComponent&quot;}}{{/crossLink}}.
+      @param {String} property Property name into {{#crossLink &quot;ObjectListViewRowComponent&quot;}}{{/crossLink}}.
+      @param {Boolean} firstRunMode Flag indicates that this is the first download of data.
+    */
+    loadRecords(id, target, property, firstRunMode) {
+      let params = {};
+      params.hierarchicalAttribute = this.get(&#x27;hierarchicalAttribute&#x27;);
+      params.modelName = this.get(&#x27;customPropertiesData.modelName&#x27;);
+      params.modelProjection = this.get(&#x27;customPropertiesData.modelProjection&#x27;);
+      this.send(&#x27;loadRecordsById&#x27;, id, target, property, firstRunMode, params);
     },
   },
 

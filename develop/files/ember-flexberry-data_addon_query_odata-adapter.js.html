@@ -630,6 +630,10 @@ export default class ODataAdapter extends BaseAdapter {
       attribute = &#x60;${prefix}/${attribute}&#x60;;
     }
 
+    if (predicate.timeless) {
+      attribute = &#x60;date(${attribute})&#x60;;
+    }
+
     let value;
     if (predicate.value === null) {
       value = &#x27;null&#x27;;
@@ -654,7 +658,7 @@ export default class ODataAdapter extends BaseAdapter {
       } else if (meta.type === &#x27;string&#x27;) {
         value = &#x60;&#x27;${predicate.value}&#x27;&#x60;;
       } else if (meta.type === &#x27;date&#x27;) {
-        value = getSerializedDateValue.call(this._store, predicate.value);
+        value = getSerializedDateValue.call(this._store, predicate.value, predicate.timeless);
       } else {
         value = predicate.value;
       }

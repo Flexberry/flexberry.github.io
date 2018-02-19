@@ -1020,6 +1020,10 @@ export default FlexberryBaseComponent.extend({
       }
 
       this.get(&#x27;objectlistviewEventsService&#x27;).setLoadingState(&#x27;loading&#x27;);
+
+      // TODO: when we will ask user about actions with selected records clearing selected records won&#x27;t be use, because it resets selecting on other pages.
+      this._clearSelectedRecords();
+
       action();
     },
 
@@ -1037,6 +1041,10 @@ export default FlexberryBaseComponent.extend({
       }
 
       this.get(&#x27;objectlistviewEventsService&#x27;).setLoadingState(&#x27;loading&#x27;);
+
+      // TODO: when we will ask user about actions with selected records clearing selected records won&#x27;t be use, because it resets selecting on other pages.
+      this._clearSelectedRecords();
+
       action();
     },
 
@@ -1055,6 +1063,10 @@ export default FlexberryBaseComponent.extend({
       }
 
       this.get(&#x27;objectlistviewEventsService&#x27;).setLoadingState(&#x27;loading&#x27;);
+
+      // TODO: when we will ask user about actions with selected records clearing selected records won&#x27;t be use, because it resets selecting on other pages.
+      this._clearSelectedRecords();
+
       action(pageNumber);
     },
 
@@ -1451,7 +1463,19 @@ export default FlexberryBaseComponent.extend({
 
     this.$(&#x27;.ui.secondary.menu&#x27;).css({ &#x27;width&#x27;: (this.get(&#x27;columnsWidthAutoresize&#x27;) ?
       containerWidth : containerWidth &lt; tableWidth ? containerWidth : tableWidth) + &#x27;px&#x27; });
-  }
+  },
+
+  /**
+    Clear selected records on all pages.
+    This method should be removed when we will ask user about actions with selected records.
+
+    @method _clearSelectedRecords
+    @private
+  */
+  _clearSelectedRecords() {
+    let componentName = this.get(&#x27;componentName&#x27;);
+    this.get(&#x27;objectlistviewEventsService&#x27;).clearSelectedRecords(componentName);
+  },
 });
 
     </pre>

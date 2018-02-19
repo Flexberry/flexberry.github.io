@@ -1502,7 +1502,9 @@ export default folv.extend(
   */
   didInsertElement() {
     this._super(...arguments);
-
+    let infoModalDialog = this.$(&#x27;.olv-toolbar-info-modal-dialog&#x27;);
+    infoModalDialog.modal(&#x27;setting&#x27;, &#x27;closable&#x27;, true);
+    this.set(&#x27;_infoModalDialog&#x27;, infoModalDialog);
     Ember.$(window).bind(&#x60;resize.${this.get(&#x27;componentName&#x27;)}&#x60;, Ember.$.proxy(function() {
       if (this.get(&#x27;columnsWidthAutoresize&#x27;)) {
         this._setColumnWidths();
@@ -1533,6 +1535,7 @@ export default folv.extend(
     }
 
     let componentName = this.get(&#x27;componentName&#x27;);
+
     let selectedRecordsToRestore = this.get(&#x27;objectlistviewEventsService&#x27;).getSelectedRecords(componentName);
     if (selectedRecordsToRestore &amp;&amp; selectedRecordsToRestore.size &amp;&amp; selectedRecordsToRestore.size &gt; 0) {
       let e = {
@@ -1546,11 +1549,6 @@ export default folv.extend(
           this.send(&#x27;selectRow&#x27;, recordWithData, e);
         }
       });
-
-      // TODO: when we will ask user about actions with selected records clearing selected records won&#x27;t be use, because it resets selecting on other pages.
-      if (someRecordWasSelected) {
-        this.get(&#x27;objectlistviewEventsService&#x27;).clearSelectedRecords(componentName);
-      }
 
       if (!someRecordWasSelected &amp;&amp; !this.get(&#x27;allSelect&#x27;)) {
         // Reset toolbar buttons enabled state.

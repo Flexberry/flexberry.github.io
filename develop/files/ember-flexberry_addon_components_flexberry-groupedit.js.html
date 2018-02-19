@@ -691,7 +691,7 @@ export default FlexberryBaseComponent.extend({
         attributePath += diplayAttribute ? &#x60;.${diplayAttribute}&#x60; : &#x27;&#x27;;
       }
 
-      let sorting = this.get(&#x27;sorting&#x27;) || [];
+      let sorting = Ember.copy(this.get(&#x27;sorting&#x27;), true) || [];
       for (let i = 0; i &lt; sorting.length; i++) {
         if (sorting[i].propName === &#x27;id&#x27;) {
           sorting.splice(i, 1);
@@ -701,6 +701,7 @@ export default FlexberryBaseComponent.extend({
 
       if (Ember.isNone(sortAscending)) {
         sorting.push({ propName: columnName, direction: &#x27;asc&#x27;, attributePath: attributePath });
+        this.set(&#x27;sorting&#x27;, sorting);
         this.sortingFunction();
       } else if (sortAscending) {
         for (let i = 0; i &lt; sorting.length; i++) {
@@ -710,6 +711,7 @@ export default FlexberryBaseComponent.extend({
           }
         }
 
+        this.set(&#x27;sorting&#x27;, sorting);
         this.sortingFunction();
       } else {
         for (let i = 0; i &lt; sorting.length; i++) {
@@ -720,6 +722,7 @@ export default FlexberryBaseComponent.extend({
           }
         }
 
+        this.set(&#x27;sorting&#x27;, sorting);
         this.sortingFunction();
       }
     },

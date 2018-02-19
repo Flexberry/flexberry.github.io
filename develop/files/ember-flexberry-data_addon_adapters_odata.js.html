@@ -259,6 +259,8 @@ import SnapshotTransform from &#x27;../utils/snapshot-transform&#x27;;
 import ODataQueryAdapter from &#x27;../query/odata-adapter&#x27;;
 import { capitalize, camelize } from &#x27;../utils/string-functions&#x27;;
 
+const { getOwner } = Ember;
+
 /**
  * The OData adapter class.
  * Uses Flexberry Query as a language for requesting server.
@@ -307,7 +309,7 @@ export default DS.RESTAdapter.extend({
 
     Ember.debug(&#x60;Flexberry ODataAdapter::query &#x27;${type}&#x27;&#x60;, data);
 
-    // TODO: think about moving request execution into query adapter
+    //f TODO: think about moving request execution into query adapter
     return this.ajax(url, &#x27;GET&#x27;, { data: data, timeout: timeout, dataType: query.dataType || &#x27;json&#x27; });
   },
 
@@ -418,6 +420,193 @@ export default DS.RESTAdapter.extend({
     var camelized = camelize(modelName);
     var capitalized = capitalize(camelized);
     return Ember.String.pluralize(capitalized);
+  },
+
+  /**
+   * A method to make ajax requests.
+   *
+   * @method makeRequest
+   * @param {Object} params
+   * @public
+   */
+  makeRequest(params) {
+    Ember.aserrt(&#x27;You should specify both method and url&#x27;, params.method || params.url);
+    return Ember.$.ajax(params);
+  },
+
+  /**
+   * A method to call functions using ajax requests.
+   *
+   * @method callFunction
+   * @param {string} url
+   * @param {Object} functionName
+   * @param {Object} params
+   * @param {Function} successCallback
+   * @param {Function} failCallback
+   * @param {Function} alwaysCallback
+   * @return {Promise}
+   * @public
+   */
+  callFunction(url, functionName, params, successCallback, failCallback, alwaysCallback) {
+    let config = getOwner(this)._lookupFactory(&#x27;config:environment&#x27;);
+    if (Ember.isNone(url)) {
+      url = &#x60;${config.APP.backendUrls.api}&#x60;;
+    }
+
+    let resultUrl = &#x60;${url}/${functionName}(&#x60;;
+    let counter = 0;
+    for (var key in params) {
+      counter++;
+    }
+
+    let i = 0;
+    for (key in params) {
+      //TODO: Check types and &#x27;&#x27;
+      if (typeof params[key] === &#x27;number&#x27;) {
+        resultUrl = resultUrl + &#x60;${key}=${params[key]}&#x60;;
+      } else {
+        resultUrl = resultUrl + &#x60;${key}=&#x27;${params[key]}&#x27;&#x60;;
+      }
+
+      i++;
+      if (i &lt; counter) {
+        resultUrl += &#x27;,&#x27;;
+      } else {
+        resultUrl += &#x27;)&#x27;;
+      }
+    }
+
+    if (resultUrl[resultUrl.length - 1] !== &#x27;)&#x27;) {
+      resultUrl += &#x27;)&#x27;;
+    }
+
+    return this._callAjax({ url: resultUrl, method: &#x27;GET&#x27; }, successCallback, failCallback, alwaysCallback);
+
+  },
+
+  /**
+   * A method to call actions using ajax requests.
+   *
+   * @method callFunction
+   * @param {String} url
+   * @param {String} actionName
+   * @param {Object} data
+   * @param {Function} successCallback
+   * @param {Function} failCallback
+   * @param {Function} alwaysCallback
+   * @return {Promise}
+   * @public
+   */
+  callAction(url, actionName, data, successCallback, failCallback, alwaysCallback) {
+    let config = getOwner(this)._lookupFactory(&#x27;config:environment&#x27;);
+    if (Ember.isNone(url)) {
+      url = &#x60;${config.APP.backendUrls.api}&#x60;;
+    }
+
+    data = JSON.stringify(data);
+    url =  &#x60;${url}/${actionName}&#x60;;
+
+    return this._callAjax(
+      { data: data, url: url, method: &#x27;POST&#x27;, contentType: &#x27;application/json; charset=utf-8&#x27;, dataType: &#x27;json&#x27; },
+      successCallback,
+      failCallback,
+      alwaysCallback);
+  },
+
+  /**
+   * A method to make ajax requests.
+   *
+   * @method _callAjax
+   * @param {Object} params
+   * @param {Function} successCallback
+   * @param {Function} failCallback
+   * @param {Function} alwaysCallback
+   * @return {Promise}
+   * @private
+   */
+  _callAjax(params, successCallback, failCallback, alwaysCallback) {
+    Ember.assert(&#x27;Params must be Object!&#x27;, typeof params === &#x27;object&#x27;);
+    Ember.assert(&#x27;params.method or params.url is not defined.&#x27;, !(Ember.isNone(params.method) || Ember.isNone(params.url)));
+
+    return new Ember.RSVP.Promise(function(resolve, reject) {
+      Ember.$.ajax(params).done((msg) =&gt; {
+        if (!Ember.isNone(successCallback)) {
+          if (typeof successCallback.then === &#x27;function&#x27;) {
+            if (!Ember.isNone(alwaysCallback)) {
+              if (typeof alwaysCallback.then === &#x27;function&#x27;) {
+                successCallback(msg).then(() =&gt; {alwaysCallback(msg).then(resolve(msg));});
+              } else {
+                successCallback(msg).then(alwaysCallback(msg)).then(resolve(msg));
+              }
+            } else {
+              successCallback(msg).then(resolve(msg));
+            }
+          } else {
+            successCallback(msg);
+            if (!Ember.isNone(alwaysCallback)) {
+              if (typeof alwaysCallback.then === &#x27;function&#x27;) {
+                alwaysCallback(msg).then(resolve(msg));
+              } else {
+                alwaysCallback(msg);
+                resolve(msg);
+              }
+            } else {
+              resolve(msg);
+            }
+          }
+        } else {
+          if (!Ember.isNone(alwaysCallback)) {
+            if (typeof alwaysCallback.then === &#x27;function&#x27;) {
+              alwaysCallback(msg).then(resolve(msg));
+            } else {
+              alwaysCallback(msg);
+              resolve(msg);
+            }
+          } else {
+            resolve(msg);
+          }
+        }
+      }).fail((msg)=&gt; {
+        if (!Ember.isNone(failCallback)) {
+          if (typeof failCallback.then === &#x27;function&#x27;) {
+            if (!Ember.isNone(alwaysCallback)) {
+              if (typeof alwaysCallback.then === &#x27;function&#x27;) {
+                failCallback(msg).then(() =&gt; {alwaysCallback(msg).then(reject(msg));});
+              } else {
+                failCallback(msg).then(alwaysCallback(msg)).then(reject(msg));
+              }
+
+            } else {
+              failCallback(msg).then(reject(msg));
+            }
+
+          } else {
+            failCallback(msg);
+            if (!Ember.isNone(alwaysCallback)) {
+              if (typeof alwaysCallback === &#x27;function&#x27;) {
+                alwaysCallback(msg).then(reject(msg));
+              } else {
+                alwaysCallback(msg);
+                reject(msg);
+              }
+            } else {
+              reject(msg);
+            }
+          }
+        } else {
+          if (!Ember.isNone(alwaysCallback)) {
+            if (typeof alwaysCallback.then === &#x27;function&#x27;) {
+              alwaysCallback(msg).then(reject(msg));
+            } else {
+              alwaysCallback(msg);
+              reject(msg);
+            }
+          } else {
+            reject(msg);
+          }
+        }
+      });
+    });
   },
 
   /**

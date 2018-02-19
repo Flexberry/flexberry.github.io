@@ -365,6 +365,7 @@ export default Ember.Component.extend({
         observeChanges: true,
         detachable: false,
         allowMultiple: true,
+        context: &#x27;.ember-application &gt; .ember-view&#x27;,
 
         onApprove: function () {
           // Call to &#x27;lookupDialogOnHiddenTrigger&#x27; causes asynchronous animation, so Ember.run is necessary.

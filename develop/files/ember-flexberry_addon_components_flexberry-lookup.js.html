@@ -299,6 +299,7 @@ const {
       placeholder=&quot;Not select&quot;
       chooseText=&quot;Select&quot;
       removeText=&quot;Clear&quot;
+      perPage=50
     }}
     ...
     &#x60;&#x60;&#x60;
@@ -506,6 +507,45 @@ export default FlexberryBaseComponent.extend({
     Closure action &#x60;lookupWindowCustomProperties&#x60; is called here if defined,
     otherwise &#x60;undefined&#x60; is returned.
 
+    @example
+      &#x60;&#x60;&#x60;javascript
+      // app/controllers/post.js
+      import EditFormController from &#x27;./edit-form&#x27;;
+      export default EditFormController.extend({
+        actions: {
+          lookupWindowCustomProperties({ relationName, projection }) {
+            if (relationName === &#x27;author&#x27; &amp;&amp; projection === &#x27;UserL&#x27;) {
+              return {
+                filterButton: true,
+                filterByAnyWord: true,
+                enableFilters: true,
+                refreshButton: true,
+                perPage: 25,
+              };
+            }
+          },
+        },
+      });
+      &#x60;&#x60;&#x60;
+
+      &#x60;&#x60;&#x60;handlebars
+      &lt;!-- app/templates/post.hbs --&gt;
+      {{flexberry-lookup
+        componentName=&quot;AuthorLookup&quot;
+        choose=&quot;showLookupDialog&quot;
+        remove=&quot;removeLookupValue&quot;
+        value=model.author
+        projection=&quot;UserL&quot;
+        relationName=&quot;author&quot;
+        displayAttributeName=&quot;name&quot;
+        title=&quot;Author&quot;
+        placeholder=&quot;Not select&quot;
+        chooseText=&quot;Select&quot;
+        removeText=&quot;Clear&quot;
+        lookupWindowCustomProperties=(action &quot;getLookupFolvProperties&quot;)
+      }}
+      &#x60;&#x60;&#x60;
+
     @property _lookupWindowCustomPropertiesData
     @type Object
     @private
@@ -545,6 +585,7 @@ export default FlexberryBaseComponent.extend({
     &#x27;orderBy&#x27;,
     function() {
       let ordering = this.get(&#x27;orderBy&#x27;) ? this.get(&#x27;orderBy&#x27;) : &#x27;&#x27;;
+      let perPage = this.get(&#x27;userSettings&#x27;).getCurrentPerPage(&#x60;folw_in_${this.get(&#x27;componentName&#x27;)}_lookup&#x60;);
       return {
         projection: this.get(&#x27;projection&#x27;),
         relationName: this.get(&#x27;relationName&#x27;),
@@ -553,6 +594,8 @@ export default FlexberryBaseComponent.extend({
         modelToLookup: this.get(&#x27;relatedModel&#x27;),
         lookupWindowCustomPropertiesData: this.get(&#x27;_lookupWindowCustomPropertiesData&#x27;),
         componentName: this.get(&#x27;componentName&#x27;),
+        notUseUserSettings: this.get(&#x27;notUseUserSettings&#x27;),
+        perPage: perPage || this.get(&#x27;perPage&#x27;),
         sorting: deserializeSortingParam(ordering),
 
         //TODO: move to modal settings.
@@ -582,6 +625,14 @@ export default FlexberryBaseComponent.extend({
     @readOnly
   */
   store: Ember.inject.service(&#x27;store&#x27;),
+
+  /**
+    The user settings service.
+
+    @property userSettings
+    @type UserSettingsService
+  */
+  userSettings: Ember.inject.service(&#x27;user-settings&#x27;),
 
   /**
     Name of the attribute of the model to display for the user.
@@ -794,6 +845,7 @@ export default FlexberryBaseComponent.extend({
 
     // TODO: This is necessary because of incomprehensible one-way binding on new detail form, perhaps the truth is out there, but I did not find it.
     this.addObserver(&#x27;value&#x27;, this, this._valueObserver);
+    this.addObserver(&#x27;displayAttributeName&#x27;, this, this._valueObserver);
     this.addObserver(&#x60;relatedModel.${this.get(&#x27;relationName&#x27;)}&#x60;, this, this._valueObserver);
   },
 
@@ -859,6 +911,7 @@ export default FlexberryBaseComponent.extend({
 
     // TODO: This is necessary because of incomprehensible one-way binding on new detail form, perhaps the truth is out there, but I did not find it.
     this.removeObserver(&#x27;value&#x27;, this, this._valueObserver);
+    this.removeObserver(&#x27;displayAttributeName&#x27;, this, this._valueObserver);
     this.removeObserver(&#x60;relatedModel.${this.get(&#x27;relationName&#x27;)}&#x60;, this, this._valueObserver);
   },
 
