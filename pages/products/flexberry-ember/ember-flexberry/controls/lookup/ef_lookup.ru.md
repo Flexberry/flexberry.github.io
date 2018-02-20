@@ -79,6 +79,7 @@ export default ApplicationSerializer.extend({
     <span style="color:red">{{model.errors.редактор }}</span>
   {{/if}}
   {{flexberry-lookup
+    componentName="lookupUsers"
     choose='showLookupDialog'
     remove='removeLookupValue'
     value=model.редактор
