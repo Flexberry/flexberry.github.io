@@ -23,18 +23,18 @@ New-Item -ErrorAction Ignore -Path $folderName -ItemType 'directory'
 cd $folderName
 $client = new-object System.Net.WebClient
 $downloadPath = 'https://raw.githubusercontent.com/Flexberry/NewPlatform.Flexberry.ServiceBus/develop/Docker'
-$client.DownloadFile("$downloadPath/cloud.yml", "$pwd\cloud.yml")
-$client.DownloadFile("$downloadPath/startCloud.cmd", "$pwd\startCloud.cmd")
-$client.DownloadFile("$downloadPath/stopCloud.cmd", "$pwd\stopCloud.cmd")
-.\startCloud.cmd
+$client.DownloadFile("$downloadPath/flexberry-service-bus-swarm-configuration.yml", "$pwd\flexberry-service-bus-swarm-configuration.yml")
+$client.DownloadFile("$downloadPath/start-flexberry-service-bus.cmd", "$pwd\start-flexberry-service-bus.cmd")
+$client.DownloadFile("$downloadPath/stop-flexberry-service-bus.cmd", "$pwd\stop-flexberry-service-bus.cmd")
+.\start-flexberry-service-bus.cmd
 ```
 
 Скрипт можно скачать с [GitHub](https://raw.githubusercontent.com/Flexberry/NewPlatform.Flexberry.ServiceBus/develop/Docker/getServiceBus.ps1).  
 Для запуска скрипта нужно открыть [PowerShell консоль](https://docs.microsoft.com/ru-ru/powershell/scripting/setup/starting-windows-powershell?view=powershell-6). Затем можно либо прописать в консоли путь к скрипту (например D:\userName\NewPlatform.Flexberry.ServiceBus\Docker\getServiceBus.ps1) и запустить его, либо просто скопировать текст скрипта в консоль и выполнить.
 
 ### Проверка успешности запуска шины
-* В PowerShell консоли нужно ввести "docker ps", в результате будет выдан список запущенных docker образов (среди них должны быть hwsb-postgres, servicebuseditor и hwsb).
-* Административное приложение с конфигурацией по умолчанию доступно по адресу <http://localhost:180>. Логин и пароль: `admin`, `admin` (при переходе на промышленную эксплуатацию обязательно нужно сменить).
+* В PowerShell консоли нужно ввести "docker ps", в результате будет выдан список запущенных docker образов (среди них должны быть flexberry-service-bus-postgres-db, flexberry-service-bus-editor и flexberry-service-bus).
+* Административное приложение с конфигурацией по умолчанию доступно по адресу <http://localhost:1818>. Логин и пароль: `admin`, `admin` (при переходе на промышленную эксплуатацию обязательно нужно сменить).
 * WCF-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7075/HighwaySBMonoPostgreSQLWcfService>.
 * REST-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7085/HighwaySBMonoPostgreSQLWebApiService>.
 
@@ -46,6 +46,6 @@ $client.DownloadFile("$downloadPath/stopCloud.cmd", "$pwd\stopCloud.cmd")
 * Настройка контейнеров:
 [замена Web.config для административного приложения шины](fsb_editor.html), [замена App.Config для сервиса шины](fsb_service.html).
 * Запуск контейнеров:
-для старта требуется выполнить командный файл [startCloud.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/startCloud.cmd).
+для старта требуется выполнить командный файл [start-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/startCloud.cmd).
 * Остановка контейнеров:
-для остановки необходимо выполнить командный файл [stopCloud.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/stopCloud.cmd).
+для остановки необходимо выполнить командный файл [stop-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/stopCloud.cmd).
