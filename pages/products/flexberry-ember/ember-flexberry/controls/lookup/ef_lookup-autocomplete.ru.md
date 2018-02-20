@@ -17,6 +17,7 @@ summary: Описаны основные особенности использо
 ```hbs
 {% raw %}
 {{flexberry-lookup
+        componentName="lookupUsers"
 	choose='showLookupDialog'
 	remove='removeLookupValue'
 	value=model.employee1
