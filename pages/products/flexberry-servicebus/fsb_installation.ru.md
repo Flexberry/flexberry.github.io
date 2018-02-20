@@ -46,6 +46,6 @@ $client.DownloadFile("$downloadPath/stop-flexberry-service-bus.cmd", "$pwd\stop-
 * Настройка контейнеров:
 [замена Web.config для административного приложения шины](fsb_editor.html), [замена App.Config для сервиса шины](fsb_service.html).
 * Запуск контейнеров:
-для старта требуется выполнить командный файл [start-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/startCloud.cmd).
+для старта требуется выполнить командный файл [start-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/start-flexberry-service-bus.cmd).
 * Остановка контейнеров:
-для остановки необходимо выполнить командный файл [stop-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/stopCloud.cmd).
+для остановки необходимо выполнить командный файл [stop-flexberry-service-bus.cmd](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus/blob/develop/Docker/stop-flexberry-service-bus.cmd).
