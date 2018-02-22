@@ -1,5 +1,5 @@
 ---
-title: Ember-CLI via Docker Image
+title: Ember-CLI via Docker
 keywords: ember, ember-cli, docker, build
 tags: [EmberJS]
 sidebar: flexberry-ember_sidebar
@@ -25,9 +25,9 @@ Docker-контейнер может "прокидывать" порты из к
 
 Для работы с `Ember-CLI` можно воспользоваться самым популярным Docker-образом - [danlynn/ember-cli](https://hub.docker.com/r/danlynn/ember-cli/), который опубликован на [hub.docker.com](https://hub.docker.com). Данный образ реализован для различных версий Ember-CLI, например для версии `2.4.3` образ будет называться: `danlynn/ember-cli:2.4.3`. **Следует учесть, что для разных версий образов есть небольшие различия в команде запуска Docker-контейнера (см. [документацию к образу](https://hub.docker.com/r/danlynn/ember-cli/)).**
 
-## Запуск образа с Ember-CLI
+## Запуск Docker-контейнера с Ember-CLI
 
-Для запуска образа следует выполнить 2 шага в интерфейсе командной строки (для `Windows` рекомендуется `PowerShell`):
+Для запуска образа следует выполнить 2 шага в интерфейсе командной строки (для `Windows` рекомендуется `PowerShell`):  
 1) Скачать нужный образ - `danlynn/ember-cli:2.4.3`
 
 ``` bash
@@ -53,4 +53,5 @@ docker run --rm -ti -v ${PWD}:/myapp --entrypoint=/bin/bash -p 4200:4200 -p 4915
 docker run --rm -ti -v $(pwd):/myapp --entrypoint=/bin/bash -p 4200:4200 -p 49153:49153 -p 7357:7357 danlynn/ember-cli:2.4.3
 ```
 
-4) В запустившемся терминале выполняем все нужные команды Ember-CLI: `npm i`, `bower i --allow-root`, `ember b`, `ember s` и т.д..
+4) В запустившемся терминале выполняем все нужные команды Ember-CLI:  
+`npm i`, `bower i --allow-root`, `ember b`, `ember s` и т.д..
