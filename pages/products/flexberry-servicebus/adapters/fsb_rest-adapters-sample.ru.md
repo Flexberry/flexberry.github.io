@@ -319,7 +319,7 @@ DELETE http://servicebus:1235/RestService/Message/{330732E9-7DB6-42C6-883D-E1596
 
 ![](/images/pages/products/flexberry-servicebus/adapters/method-main.png)
 
-Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgSender/Program.cs):
+Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgSender/MsgSender/Program.cs):
 
 ```csharp
 using System;
@@ -368,7 +368,7 @@ namespace MsgSender
 #### Настройка файла конфигурации
 
 * Открыть в `MS Visual Studio` в проекте созданного адаптера, отправляющего сообщения, файл `App.config`
-* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgSender/App.config):
+* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgSender/MsgSender/App.config):
 
 ```xml
 <appSettings>
@@ -390,7 +390,7 @@ namespace MsgSender
 
 #### Написание кода адаптера
 
-Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgRecipient/Program.cs):
+Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgRecipient/MsgRecipient/Program.cs):
 
 ```csharp
 using System;
@@ -426,7 +426,7 @@ namespace MsgRecipient
 #### Дополнить конфигурационный файл
 
 * Открыть в `MS Visual Studio` в проекте созданного адаптера, отправляющего сообщения, файл `App.config`
-* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgRecipient/App.config):
+* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/RESTAdapter/MsgRecipient/MsgRecipient/App.config):
 
 ```xml
 <appSettings>
