@@ -117,7 +117,7 @@ summary: Поэтапное создание приложений для отп�
 
 ![](/images/pages/products/flexberry-servicebus/adapters/method-main.png)
 
-Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp1/ConsoleApp1/Program.cs):
+Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/WCFAdapter/ConsoleApp1/ConsoleApp1/Program.cs):
 
 ```csharp
 using ConsoleApp1.ServiceBus;
@@ -183,7 +183,7 @@ namespace ConsoleApp1
 #### Настройка файла конфигурации
 
 * Открыть в `MS Visual Studio` в проекте созданного адаптера, отправляющего сообщения, файл `App.config`
-* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp1/ConsoleApp1/App.config):
+* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/WCFAdapter/ConsoleApp1/ConsoleApp1/App.config):
 
 ```xml
 <appSettings>
@@ -245,7 +245,7 @@ namespace ConsoleApp1
 
 #### Написание кода адаптера
 
-Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp2/ConsoleApp2/Program.cs):
+Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/WCFAdapter/ConsoleApp2/ConsoleApp2/Program.cs):
 
 ```csharp
 using ConsoleApp2.ServiceBus;
@@ -367,7 +367,7 @@ namespace ConsoleApp2
 #### Дополнить конфигурационный файл
 
 * Открыть в `MS Visual Studio` в проекте созданного адаптера, отправляющего сообщения, файл `App.config`
-* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/ConsoleApp2/ConsoleApp2/App.config):
+* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/WCFAdapter/ConsoleApp2/ConsoleApp2/App.config):
 
 ```xml
 <appSettings>
@@ -376,7 +376,7 @@ namespace ConsoleApp2
 <add key ="MessageTypeID" value ="{e053821c-e44a-4547-b8d1-162f44e59f90}"/>
 <add key="ScanPeriod" value="3000"/>
 </appSettings>
-<startup> 
+<startup>
     <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5"/>
 </startup>
     <system.serviceModel>
