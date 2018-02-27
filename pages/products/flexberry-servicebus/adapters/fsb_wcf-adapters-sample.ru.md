@@ -27,7 +27,7 @@ summary: Поэтапное создание приложений для отп�
 
 Для работы с приложениями отправки-приема сообщений требуется иметь доступ к запущенной инстанции шины (административному приложению). Для этого действия нужен адрес административного приложения и адрес запущенного сервиса шины. Получить их можно следующими способами:
 * административное приложение - локально по адресу [http://localhost:1818/](http://localhost:1818/). Данный вариант возможен, если используется [Docker](fsb_installation.html).
-* сервис - локально по адресу [http://127.0.0.1:7075/HighwaySBMonoPostgreSQLWcfService](http://127.0.0.1:7075/HighwaySBMonoPostgreSQLWcfService). Данный вариант возможен, если используется `Docker`.
+* сервис - локально по адресу [http://localhost:7075/WcfService](http://localhost:7075/WcfService). Данный вариант возможен, если используется `Docker`.
 * с помощью адресов, предоставленных Администратором, в случае централизованно развернутой шины
 
 Также для последующей работы адаптеров нужно:
@@ -213,13 +213,13 @@ namespace ConsoleApp1
           </wsHttpBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+            <endpoint address="http://localhost:7075/WcfService"
                 binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IServiceBusService"
                 contract="ServiceBus.IServiceBusService" name="WSHttpBinding_IServiceBusService" />
-            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+            <endpoint address="http://localhost:7075/WcfService"
                 binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusInterop"
                 contract="ServiceBus.IServiceBusInterop" name="WSHttpBinding_IServiceBusInterop" />
-            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+            <endpoint address="http://localhost:7075/WcfService"
                 binding="customBinding" bindingConfiguration="WSHttpBinding_ICallbackSubscriber"
                 contract="ServiceBus.ICallbackSubscriber" name="WSHttpBinding_ICallbackSubscriber" />
         </client>
@@ -397,13 +397,13 @@ namespace ConsoleApp2
             </customBinding>
         </bindings>
         <client>
-            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+            <endpoint address="http://localhost:7075/MonoPostgreSQLWcfService"
                 binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusService"
                 contract="ServiceBus.IServiceBusService" name="WSHttpBinding_IServiceBusService" />
-            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+            <endpoint address="http://localhost:7075/MonoPostgreSQLWcfService"
                 binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusInterop"
                 contract="ServiceBus.IServiceBusInterop" name="WSHttpBinding_IServiceBusInterop" />
-            <endpoint address="http://localhost:7075/HighwaySBMonoPostgreSQLWcfService"
+            <endpoint address="http://localhost:7075/MonoPostgreSQLWcfService"
                 binding="customBinding" bindingConfiguration="WSHttpBinding_ICallbackSubscriber"
                 contract="ServiceBus.ICallbackSubscriber" name="WSHttpBinding_ICallbackSubscriber" />
         </client>
