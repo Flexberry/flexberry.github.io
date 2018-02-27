@@ -35,6 +35,11 @@ entries:
       url: /fp_translation-article.html
       output: web, pdf
 
+    - title: Contribution
+      title_ru: Развитие платформы силами сообщества
+      url: /fp_contribution.html
+      output: web, pdf
+
     - title: Code style
       title_ru: Стиль оформления кода
       url: /fp_code-style.html
@@ -44,3 +49,5 @@ entries:
       title_ru: Комментарии в Ember-проектах
       url: /fp_ember-comments-style-yuidoc.html
       output: web, pdf
+
+      
