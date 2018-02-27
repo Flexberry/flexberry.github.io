@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-data/addon/utils/attributes.js - Flexberry Documentation</title>
+    <title>ErrorableRouteMixin - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -248,82 +248,259 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-data/addon/utils/attributes.js <small>File</small></h1>
+    <h1>ErrorableRouteMixin <small>Class</small></h1>
 </div>
 
-<div class="file">
-    <pre class="prettyprint linenums">
-import Ember from &#x27;ember&#x27;;
-import createProj from &#x27;./create&#x27;;
+<div class="well well-small">
 
-/**
- * @module ember-flexberry-data
- */
+        <div class="extends">
+            Extends <a href="http://emberjs.com/api/classes/Ember.Mixin.html">Ember.Mixin</a>
+        </div>
 
-/**
- * Define plain attribute in projection.
- *
- * @method attr
- * @for Projection
- * @public
- *
- * @param {String} caption A user-friendly caption for attribute.
- * @param {Object} [options] Attribute options.
- * @return {Object} Projection attribute.
- */
-export function attr(caption, options) {
-  return createAttr(&#x27;attr&#x27;, caption, options);
-}
+        <div class="foundat">
+            Defined in: <a href="../files/ember-flexberry_addon_mixins_errorable-route.js.html#l3"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;errorable-route.js:3</code></a>
+        </div>
 
-/**
- * Define belongsTo relationship attribute in projection.
- *
- * @method belongsTo
- * @for Projection
- * @public
- *
- * @param {String} modelName The name of the model type.
- * @param {String} caption A user-friendly caption for attribute.
- * @param {Object} attributes Projection attributes.
- * @param {Object} [options] Attribute options.
- * @return {Object} Projection attribute.
- */
-export function belongsTo(modelName, caption, attributes, options) {
-  let attr = createAttr(&#x27;belongsTo&#x27;, caption, options);
-  let proj = createProj(modelName, attributes);
-  attr = Ember.merge(attr, proj);
-  return attr;
-}
+            Module: <a href="../modules/ember-flexberry.html">ember-flexberry</a>
 
-/**
- * Define hasMany relationship attribute in projection.
- *
- * @method hasMany
- * @for Projection
- * @public
- *
- * @param {String} modelName The name of the model type.
- * @param {String} caption A user-friendly caption for attribute.
- * @param {Object} attributes Projection attributes.
- * @param {Object} [options] Attribute options.
- * @return {Object} Projection attribute.
- */
-export function hasMany(modelName, caption, attributes, options) {
-  let attr = createAttr(&#x27;hasMany&#x27;, caption, options);
-  let proj = createProj(modelName, attributes);
-  attr = Ember.merge(attr, proj);
-  return attr;
-}
+</div>
 
-function createAttr(kind, caption, options) {
-  return {
-    kind: kind,
-    caption: caption,
-    options: options || {}
-  };
-}
 
-    </pre>
+<div class="well well-small">
+    <p>Mixin for handling errors.</p>
+
+</div>
+
+
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method__updateErrorToDisplay." data-tablink="_updateErrorToDisplay.">_updateErrorToDisplay.</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_actions.error" data-tablink="actions.error">actions.error</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_handleError." data-tablink="handleError.">handleError.</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method__updateErrorToDisplay." class="method item private">
+                        <h3 class="name"><code>_updateErrorToDisplay.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>errorData</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_errorable-route.js.html#l52"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;errorable-route.js:52</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This method checks error message and makes some messages more appropriate for perception.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">errorData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Data with error description and details.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_actions.error" class="method item">
+                        <h3 class="name"><code>actions.error</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>error</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>transition</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_errorable-route.js.html#l12"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;errorable-route.js:12</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Event handler for processing promise model rejecting.
+                    <a href="https://emberjs.com/api/ember/2.4/classes/Ember.Route/events/error?anchor=error">More info</a>.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">error</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">transition</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_handleError." class="method item">
+                        <h3 class="name"><code>handleError.</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>errorData</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>transition</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/ember-flexberry_addon_mixins_errorable-route.js.html#l29"><code>ember-flexberry&#x2F;addon&#x2F;mixins&#x2F;errorable-route.js:29</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>This method will be invoked during any of route hooks return a promise that rejects.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">errorData</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Error info.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">transition</code>
+                                            <span class="type">Transition</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Current transition object.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+            </div>
+
+
+
+    </div>
 </div>
                     </div>
                 </div>

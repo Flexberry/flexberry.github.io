@@ -25,6 +25,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "EditFormRouteOperationsIndicationMixin",
         "EnumCaptionHelper",
         "ErrorableControllerMixin",
+        "ErrorableRouteMixin",
         "FileTransform",
         "FlexberryBaseComponent",
         "FlexberryButtonComponent",

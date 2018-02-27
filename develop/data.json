@@ -1227,6 +1227,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "ember-flexberry/addon/mixins/errorable-route.js": {
+            "name": "ember-flexberry/addon/mixins/errorable-route.js",
+            "modules": {},
+            "classes": {
+                "ErrorableRouteMixin": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "ember-flexberry/addon/mixins/flexberry-ddau-checkbox-actions-handler.js": {
             "name": "ember-flexberry/addon/mixins/flexberry-ddau-checkbox-actions-handler.js",
             "modules": {},
@@ -1898,6 +1907,7 @@
                 "EditFormControllerOperationsIndicationMixin": 1,
                 "EditFormRouteOperationsIndicationMixin": 1,
                 "ErrorableControllerMixin": 1,
+                "ErrorableRouteMixin": 1,
                 "FlexberryDdauCheckboxActionsHandlerMixin": 1,
                 "FlexberryDdauSliderActionsHandlerMixin": 1,
                 "FlexberryFileCompatibleComponentMixin": 1,
@@ -3276,7 +3286,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 21,
+            "line": 20,
             "description": "Lookup component for Semantic UI.",
             "example": [
                 "\n  ```javascript\n  // app/controllers/post.js\n  import EditFormController from './edit-form';\n  export default EditFormController.extend({\n    ...\n  });\n  ```\n\n  ```handlebars\n  <!-- app/templates/post.hbs -->\n  ...\n  {{flexberry-lookup\n    componentName=\"AuthorLookup\"\n    choose=\"showLookupDialog\"\n    remove=\"removeLookupValue\"\n    value=model.author\n    projection=\"UserL\"\n    relationName=\"author\"\n    displayAttributeName=\"name\"\n    title=\"Author\"\n    placeholder=\"Not select\"\n    chooseText=\"Select\"\n    removeText=\"Clear\"\n    perPage=50\n  }}\n  ...\n  ```"
@@ -3955,7 +3965,24 @@
             "namespace": "",
             "file": "ember-flexberry/addon/mixins/errorable-controller.js",
             "line": 4,
-            "description": "Mixin for validation.",
+            "description": "Mixin for handling errors.",
+            "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>",
+            "access": "public",
+            "tagname": ""
+        },
+        "ErrorableRouteMixin": {
+            "name": "ErrorableRouteMixin",
+            "shortname": "ErrorableRouteMixin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "ember-flexberry",
+            "namespace": "",
+            "file": "ember-flexberry/addon/mixins/errorable-route.js",
+            "line": 3,
+            "description": "Mixin for handling errors.",
             "extends": "<a href=\"http://emberjs.com/api/classes/Ember.Mixin.html\">Ember.Mixin</a>",
             "access": "public",
             "tagname": ""
@@ -4238,7 +4265,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 11,
+            "line": 12,
             "description": "Base route for the Edit Forms.\n\nThis class re-exports to the application as `/routes/edit-form`.\nSo, you can inherit from `./edit-form`, even if file `app/routes/edit-form.js` is not presented in the application.\n\nExample:\n```javascript\n// app/routes/employee.js\nimport EditFormRoute from './edit-form';\nexport default EditFormRoute.extend({\n});\n```\n\nIf you want to add some common logic on all Edit Forms, you can override `app/routes/edit-form.js` as follows:\n```javascript\n// app/routes/edit-form.js\nimport EditFormRoute from 'ember-flexberry/routes/edit-form';\nexport default EditFormRoute.extend({\n});\n```",
             "extends": "ProjectedModelForm",
             "uses": [
@@ -4332,7 +4359,7 @@
             "module": "ember-flexberry",
             "namespace": "",
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 14,
+            "line": 15,
             "description": "Base route for the List Forms.\n\nThis class re-exports to the application as `/routes/list-form`.\nSo, you can inherit from `./list-form`, even if file `app/routes/list-form.js` is not presented in the application.",
             "example": [
                 "\n  ```javascript\n  // app/routes/employees.js\n  import ListFormRoute from './list-form';\n  export default ListFormRoute.extend({\n  });\n  ```\n\n  If you want to add some common logic on all List Forms, you can override `app/routes/list-form.js` as follows:\n  ```javascript\n  // app/routes/list-form.js\n  import ListFormRoute from 'ember-flexberry/routes/list-form';\n  export default ListFormRoute.extend({\n  });\n  ```"
@@ -11159,17 +11186,6 @@
             "module": "ember-flexberry"
         },
         {
-            "file": "ember-flexberry/addon/components/mobile/flexberry-objectlistview.js",
-            "line": 133,
-            "description": "Indicates whether or not autoresize columns for fit the page width.",
-            "itemtype": "property",
-            "name": "columnsWidthAutoresize",
-            "type": "Boolean",
-            "default": "true",
-            "class": "Mobile.FlexberryObjectlistview",
-            "module": "ember-flexberry"
-        },
-        {
             "file": "ember-flexberry/addon/components/mobile/object-list-view-row.js",
             "line": 15,
             "description": "Stores the number of pixels to isolate one level of hierarchy.",
@@ -11463,7 +11479,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 413,
+            "line": 418,
             "description": "Save named settings specified in the interface as named values",
             "itemtype": "method",
             "name": "actions.saveColsSetting",
@@ -11472,7 +11488,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 451,
+            "line": 458,
             "description": "Column width is changed",
             "itemtype": "method",
             "name": "actions.widthChanged",
@@ -11481,7 +11497,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 460,
+            "line": 467,
             "description": "Config name is defined",
             "itemtype": "method",
             "name": "actions.setConfigName",
@@ -11490,7 +11506,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 469,
+            "line": 476,
             "description": "Per page value is changed",
             "itemtype": "method",
             "name": "actions.perPageChanged",
@@ -11499,7 +11515,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 478,
+            "line": 485,
             "description": "DetSeparateCols value is changed",
             "itemtype": "method",
             "name": "actions.detSeparateColsChange",
@@ -11508,7 +11524,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 487,
+            "line": 494,
             "description": "DetSeparateRows value is changed",
             "itemtype": "method",
             "name": "actions.detSeparateRowsChange",
@@ -11517,7 +11533,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/colsconfig-dialog-content.js",
-            "line": 497,
+            "line": 509,
             "description": "Gets current query for export excel",
             "itemtype": "method",
             "name": "_getCurrentQuery",
@@ -13066,7 +13082,7 @@
             "description": "Internal property to store the error.",
             "itemtype": "property",
             "name": "_error",
-            "type": "Error",
+            "type": "Error or Array",
             "access": "private",
             "tagname": "",
             "class": "FlexberryErrorComponent",
@@ -13075,6 +13091,30 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-error.js",
             "line": 29,
+            "description": "Detects if error is an array.",
+            "itemtype": "property",
+            "name": "_errorIsArray",
+            "type": "Boolean",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryErrorComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-error.js",
+            "line": 40,
+            "description": "Detects if error has not own property with message.",
+            "itemtype": "property",
+            "name": "_messageIsNotSpecified",
+            "type": "Boolean",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryErrorComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-error.js",
+            "line": 51,
             "description": "Define error display mode, in `{{modal-dailog}}` or `{{ui-message}}` component.",
             "itemtype": "property",
             "name": "modal",
@@ -13085,7 +13125,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-error.js",
-            "line": 38,
+            "line": 60,
             "description": "Selector for modal dialog's context.",
             "itemtype": "property",
             "name": "modalContext",
@@ -13096,7 +13136,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-error.js",
-            "line": 47,
+            "line": 69,
             "description": "Error for displaying.",
             "itemtype": "property",
             "name": "error",
@@ -13106,7 +13146,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-error.js",
-            "line": 63,
+            "line": 85,
             "description": "Cleans error after displaying.",
             "itemtype": "method",
             "name": "actions.close",
@@ -13483,6 +13523,19 @@
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
             "line": 298,
+            "description": "Caption to be displayed in loaded file table cell.\nIt will be displayed only if preview can't be loaded.",
+            "itemtype": "property",
+            "name": "_errorPreviewCaption",
+            "type": "String",
+            "default": "t('components.flexberry-file.error-preview-caption')",
+            "access": "private",
+            "tagname": "",
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-file.js",
+            "line": 309,
             "description": "Selected jQuery object, containing HTML of error modal dialog.",
             "itemtype": "property",
             "name": "_errorModalDialog",
@@ -13495,7 +13548,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 308,
+            "line": 319,
             "description": "Component's wrapping <div> CSS-class names.",
             "itemtype": "property",
             "name": "classNames",
@@ -13506,7 +13559,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 317,
+            "line": 328,
             "description": "Component's input additional CSS-class names.\nSee [Semantic UI inputs classes](http://semantic-ui.com/elements/input.html).",
             "itemtype": "property",
             "name": "inputClass",
@@ -13520,7 +13573,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 334,
+            "line": 345,
             "description": "CSS-classes names for component's add, remove, upload, download buttons.\nSee [Semantic UI buttons classes](http://semantic-ui.com/elements/button.html).",
             "itemtype": "property",
             "name": "buttonClass",
@@ -13534,7 +13587,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 351,
+            "line": 362,
             "description": "Path to component's settings in application configuration (JSON from ./config/environment.js).",
             "itemtype": "property",
             "name": "appConfigSettingsPath",
@@ -13545,7 +13598,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 360,
+            "line": 371,
             "description": "Name of the action which will be send outside after click on selected image preview.",
             "itemtype": "property",
             "name": "viewImageAction",
@@ -13556,7 +13609,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 369,
+            "line": 380,
             "description": "Value of file component (contains serialized file metadata such as fileName, fileSize, etc.).\nIt is binded to related model property, so every change to value will automatically change model property.",
             "itemtype": "property",
             "name": "value",
@@ -13566,7 +13619,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 378,
+            "line": 389,
             "description": "Flag: indicates whether to upload file on 'relatedModel' 'preSave' event.",
             "itemtype": "property",
             "name": "uploadOnModelPreSave",
@@ -13577,7 +13630,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 387,
+            "line": 398,
             "description": "Flag: indicates whether to show preview element for images or not.",
             "itemtype": "property",
             "name": "showPreview",
@@ -13588,7 +13641,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 396,
+            "line": 407,
+            "description": "indicates whether preview img can be loaded when show.",
+            "itemtype": "property",
+            "name": "_canLoadPreview",
+            "type": "Boolean",
+            "default": "true",
+            "class": "FlexberryFileComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-file.js",
+            "line": 416,
             "description": "Flag: indicates whether to show upload button or not.",
             "itemtype": "property",
             "name": "showUploadButton",
@@ -13599,7 +13663,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 405,
+            "line": 425,
             "description": "Flag: indicates whether to show download button or not.",
             "itemtype": "property",
             "name": "showDownloadButton",
@@ -13610,7 +13674,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 414,
+            "line": 434,
             "description": "Maximum file size in bytes for uploading files.\nIt should be greater then 0 and less or equal then APP.components.file.maxUploadFileSize from application config\\environment.\nIf null or undefined, then APP.components.file.maxUploadFileSize from application config\\environment will be used.",
             "itemtype": "property",
             "name": "maxUploadFileSize",
@@ -13620,7 +13684,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 424,
+            "line": 444,
             "description": "Text to be displayed instead of file name, if file has not been selected.",
             "itemtype": "property",
             "name": "placeholder",
@@ -13631,7 +13695,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 433,
+            "line": 453,
             "description": "File upload URL.\nIf null or undefined, then APP.components.file.uploadUrl from application config\\environment will be used.",
             "itemtype": "property",
             "name": "uploadUrl",
@@ -13641,7 +13705,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 442,
+            "line": 462,
             "description": "Flag: indicates whether to show modal dialog on upload errors or not.",
             "itemtype": "property",
             "name": "showModalDialogOnUploadError",
@@ -13652,7 +13716,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 452,
+            "line": 472,
             "description": "Handles click on selected image preview and sends action with data outside component\nin order to view selected image at modal window.",
             "itemtype": "method",
             "name": "actions.viewLoadedImage",
@@ -13663,7 +13727,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 470,
+            "line": 490,
             "description": "Handles click on add button.",
             "itemtype": "method",
             "name": "actions.addButtonClick",
@@ -13674,7 +13738,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 481,
+            "line": 501,
             "description": "Handles click on remove button.",
             "itemtype": "method",
             "name": "actions.removeButtonClick",
@@ -13685,7 +13749,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 491,
+            "line": 511,
             "description": "Handles click on upload button.",
             "itemtype": "method",
             "name": "actions.uploadButtonClick",
@@ -13696,7 +13760,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 501,
+            "line": 521,
             "description": "Handles click on download button.",
             "itemtype": "method",
             "name": "actions.downloadButtonClick",
@@ -13707,35 +13771,35 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 512,
+            "line": 532,
             "description": "Initializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 536,
+            "line": 556,
             "description": "Initializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component DOM-related properties.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 595,
+            "line": 615,
             "description": "Changes url in jQuery fileupload when uploadUrl changed.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 610,
+            "line": 630,
             "description": "Destroys {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
             "class": "FlexberryFileComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 622,
+            "line": 642,
             "description": "Removes selected file.",
             "itemtype": "method",
             "name": "removeFile",
@@ -13744,7 +13808,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 634,
+            "line": 654,
             "description": "Uploads selected file.",
             "itemtype": "method",
             "name": "uploadFile",
@@ -13753,7 +13817,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 691,
+            "line": 711,
             "description": "Downloads previously uploaded file.",
             "itemtype": "method",
             "name": "downloadFile",
@@ -13762,7 +13826,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 714,
+            "line": 734,
             "description": "Shows error modal dialog.",
             "itemtype": "method",
             "name": "showErrorModalDialog",
@@ -13787,7 +13851,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 733,
+            "line": 757,
             "description": "Shows file size errors if there were some.",
             "itemtype": "method",
             "name": "showUploadErrorModalDialog",
@@ -13817,7 +13881,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 756,
+            "line": 780,
             "description": "Shows errors if there were some during file upload.",
             "itemtype": "method",
             "name": "showUploadErrorModalDialog",
@@ -13842,7 +13906,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 778,
+            "line": 802,
             "description": "Shows errors if there were some during file download.",
             "itemtype": "method",
             "name": "showDownloadErrorModalDialog",
@@ -13863,7 +13927,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 800,
+            "line": 824,
             "description": "Handles related model's 'preSave' event.",
             "itemtype": "method",
             "name": "_onRelatedModelPreSave",
@@ -13888,7 +13952,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 819,
+            "line": 843,
             "description": "Subscribes on related model's 'preSave' event.",
             "itemtype": "method",
             "name": "_subscribeOnRelatedModelPreSaveEvent",
@@ -13899,7 +13963,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 839,
+            "line": 863,
             "description": "Unsubscribes from related model's 'preSave' event.",
             "itemtype": "method",
             "name": "_unsubscribeFromRelatedModelPresaveEvent",
@@ -13910,7 +13974,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 854,
+            "line": 878,
             "description": "Value change handler.",
             "itemtype": "method",
             "name": "_valueDidChange",
@@ -13921,7 +13985,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 867,
+            "line": 891,
             "description": "Upload data change handler.",
             "itemtype": "method",
             "name": "_uploadDataDidChange",
@@ -13932,7 +13996,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-file.js",
-            "line": 888,
+            "line": 912,
             "description": "Preview options change handler.",
             "itemtype": "method",
             "name": "_previewOptionsDidChange",
@@ -14713,7 +14777,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 57,
+            "line": 56,
             "description": "This property is used in order to cache loaded for dropdown mode values.\nValues are kept as array with master id as key and master object as value.\nThis property is initialized after request to server got dropdown values.\nThis cache is important because semantic ui dropdown component lets use only text values,\nwhile for lookup it is necessary to get object values.",
             "itemtype": "property",
             "name": "_cachedDropdownValues",
@@ -14725,7 +14789,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 70,
+            "line": 69,
             "description": "This property is used in order to cache last value\nof flag {{#crossLink \"FlexberryLookup/autocomplete:property\"}}{{/crossLink}}\nin order to let init this mode afrer re-render only once if flag was enabled.",
             "itemtype": "property",
             "name": "_cachedAutocompleteValue",
@@ -14737,7 +14801,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 81,
+            "line": 80,
             "description": "This property is used in order to cache last value\nof flag {{#crossLink \"FlexberryLookup/dropdown:property\"}}{{/crossLink}}\nin order to let init this mode afrer re-render only once if flag was enabled.",
             "itemtype": "property",
             "name": "_cachedDropdownValue",
@@ -14749,7 +14813,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 92,
+            "line": 91,
             "description": "Text to be displayed in field, if value not selected.",
             "itemtype": "property",
             "name": "placeholder",
@@ -14760,7 +14824,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 101,
+            "line": 100,
             "description": "Text on button opening a modal window.",
             "itemtype": "property",
             "name": "chooseText",
@@ -14771,7 +14835,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 110,
+            "line": 109,
             "description": "Text on button clear value.\n\nTODD: Use 'flexberry-lookup.remove-button-text' from locale.",
             "itemtype": "property",
             "name": "removeText",
@@ -14782,7 +14846,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 121,
+            "line": 120,
             "description": "CSS classes for choose button.",
             "itemtype": "property",
             "name": "chooseButtonClass",
@@ -14792,7 +14856,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 129,
+            "line": 128,
             "description": "CSS classes for remove button.",
             "itemtype": "property",
             "name": "removeButtonClass",
@@ -14802,7 +14866,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 137,
+            "line": 136,
             "description": "Projection name.",
             "itemtype": "property",
             "name": "projection",
@@ -14813,7 +14877,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 146,
+            "line": 145,
             "description": "Relation name.",
             "itemtype": "property",
             "name": "relationName",
@@ -14824,7 +14888,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 155,
+            "line": 154,
             "description": "Title for modal window.",
             "itemtype": "property",
             "name": "title",
@@ -14834,7 +14898,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 163,
+            "line": 162,
             "description": "Flag to show that lookup is in autocomplete mode.",
             "itemtype": "property",
             "name": "autocomplete",
@@ -14845,7 +14909,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 172,
+            "line": 171,
             "description": "Flag to show that lookup is in dropdown mode.",
             "itemtype": "property",
             "name": "dropdown",
@@ -14856,7 +14920,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 181,
+            "line": 180,
             "description": "Flag to show that lookup has search or autocomplete in dropdown mode.",
             "itemtype": "property",
             "name": "dropdownIsSearch",
@@ -14867,7 +14931,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 190,
+            "line": 189,
             "description": "Specify direction for sorting by `displayAttributeName`.\nFor `autocomplete` or `dropdown` mode only.\nPossible values: `asc` or `desc`.",
             "itemtype": "property",
             "name": "sorting",
@@ -14878,17 +14942,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 201,
-            "description": "Ordering condition for list of records to choose.\nExpected string type: '+Name1-Name2...', where: '+' and '-' - sorting direction, 'NameX' - property name for soring.",
-            "itemtype": "property",
-            "name": "orderBy",
-            "type": "String",
-            "class": "FlexberryLookup",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 210,
+            "line": 200,
             "description": "Classes by property of autocomplete.",
             "itemtype": "property",
             "name": "autocompleteClass",
@@ -14899,7 +14953,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 223,
+            "line": 213,
+            "description": "FOLV component name.",
+            "itemtype": "property",
+            "name": "folvComponentName",
+            "type": "String",
+            "readonly": "",
+            "class": "FlexberryLookup",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/flexberry-lookup.js",
+            "line": 225,
             "description": "Action's name to update model's relation value.",
             "itemtype": "property",
             "name": "updateLookupAction",
@@ -14910,7 +14975,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 232,
+            "line": 234,
             "description": "Maximum number of results to display on autocomplete or dropdown.",
             "itemtype": "property",
             "name": "maxResults",
@@ -14921,7 +14986,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 241,
+            "line": 243,
             "description": "Limit function on lookup.\nIt should not be just a string, it has to be predicate function (otherwise an exception will be thrown).",
             "itemtype": "property",
             "name": "lookupLimitPredicate",
@@ -14932,7 +14997,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 251,
+            "line": 253,
             "description": "This computed property forms a set of properties to send to lookup window.\nClosure action `lookupWindowCustomProperties` is called here if defined,\notherwise `undefined` is returned.",
             "example": [
                 "\n  ```javascript\n  // app/controllers/post.js\n  import EditFormController from './edit-form';\n  export default EditFormController.extend({\n    actions: {\n      lookupWindowCustomProperties({ relationName, projection }) {\n        if (relationName === 'author' && projection === 'UserL') {\n          return {\n            filterButton: true,\n            filterByAnyWord: true,\n            enableFilters: true,\n            refreshButton: true,\n            perPage: 25,\n          };\n        }\n      },\n    },\n  });\n  ```\n\n  ```handlebars\n  <!-- app/templates/post.hbs -->\n  {{flexberry-lookup\n    componentName=\"AuthorLookup\"\n    choose=\"showLookupDialog\"\n    remove=\"removeLookupValue\"\n    value=model.author\n    projection=\"UserL\"\n    relationName=\"author\"\n    displayAttributeName=\"name\"\n    title=\"Author\"\n    placeholder=\"Not select\"\n    chooseText=\"Select\"\n    removeText=\"Clear\"\n    lookupWindowCustomProperties=(action \"getLookupFolvProperties\")\n  }}\n  ```"
@@ -14947,7 +15012,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/flexberry-lookup.js",
-            "line": 317,
+            "line": 319,
             "description": "Object with lookup properties to send on choose action.",
             "itemtype": "property",
             "name": "chooseData",
@@ -20422,7 +20487,18 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view-row.js",
-            "line": 222,
+            "line": 221,
+            "description": "Level of hierarchy, that already was loaded.",
+            "itemtype": "property",
+            "name": "hierarchyLoadedLevel",
+            "type": "Integer",
+            "default": "-1",
+            "class": "ObjectListViewRowComponent",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/components/object-list-view-row.js",
+            "line": 231,
             "description": "Show/hide embedded records.",
             "itemtype": "method",
             "name": "actions.expand",
@@ -20431,7 +20507,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view-row.js",
-            "line": 234,
+            "line": 243,
             "description": "Redirect action from FlexberryLookupComponent in the controller.",
             "itemtype": "method",
             "name": "actions.showLookupDialog",
@@ -20447,7 +20523,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view-row.js",
-            "line": 244,
+            "line": 253,
             "description": "Redirect action from FlexberryLookupComponent in the controller.",
             "itemtype": "method",
             "name": "actions.removeLookupValue",
@@ -20463,7 +20539,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view-row.js",
-            "line": 254,
+            "line": 263,
             "description": "Handles rows clicks and sends 'rowClick' action outside.",
             "itemtype": "method",
             "name": "actions.onRowClick",
@@ -20501,7 +20577,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view-row.js",
-            "line": 278,
+            "line": 287,
             "description": "Called after a component has been rendered, both on initial render and in subsequent rerenders.\n[More info](http://emberjs.com/api/classes/Ember.Component.html#event_didRender).",
             "itemtype": "method",
             "name": "didRender",
@@ -21480,21 +21556,21 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1261,
+            "line": 1256,
             "description": "Override to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "ObjectListViewComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1280,
+            "line": 1275,
             "description": "Called when the element of the view is going to be destroyed.\nFor more information see [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
             "class": "ObjectListViewComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1290,
+            "line": 1285,
             "description": "It reinits plugin for column resize.\nReinit is important for proper position of resize elements.",
             "itemtype": "method",
             "name": "_reinitResizablePlugin",
@@ -21505,7 +21581,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1348,
+            "line": 1343,
             "description": "It handles the end of getting user setting with column widths.",
             "itemtype": "method",
             "name": "_setColumnWidths",
@@ -21523,7 +21599,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1455,
+            "line": 1454,
             "description": "It handles the end of column resize.\nNew column widths are send to user settings service for saving.",
             "itemtype": "method",
             "name": "_afterColumnResize",
@@ -21541,7 +21617,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1487,
+            "line": 1486,
             "description": "This method returns property name for column.\nProperty name is got from atribute `data-olv-header-property-name` of column header.\nIf property name won't be found, exeption will be thrown.",
             "itemtype": "method",
             "name": "_getColumnPropertyName",
@@ -21563,7 +21639,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1510,
+            "line": 1509,
             "description": "Generate the columns.",
             "itemtype": "method",
             "name": "_generateColumns",
@@ -21574,7 +21650,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1567,
+            "line": 1566,
             "description": "Set current columns width for currentController.",
             "itemtype": "method",
             "name": "_setCurrentColumnsWidth",
@@ -21585,14 +21661,14 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1591,
+            "line": 1590,
             "description": "Create the key from locales.",
             "class": "ObjectListViewComponent",
             "module": "ember-flexberry"
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1619,
+            "line": 1618,
             "description": "Create the column.",
             "itemtype": "method",
             "name": "_createColumn",
@@ -21603,7 +21679,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1676,
+            "line": 1675,
             "description": "Add filter parameters for column.",
             "itemtype": "method",
             "name": "_addFilterForColumn",
@@ -21629,7 +21705,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1717,
+            "line": 1716,
             "description": "Return attribute of model.",
             "itemtype": "method",
             "name": "_getAttribute",
@@ -21654,7 +21730,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1744,
+            "line": 1743,
             "description": "Return available conditions for filter.",
             "itemtype": "method",
             "name": "_conditionsByType",
@@ -21674,7 +21750,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1771,
+            "line": 1770,
             "description": "Return object with parameters for component.",
             "itemtype": "method",
             "name": "_getFilterComponent",
@@ -21699,7 +21775,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1839,
+            "line": 1838,
             "description": "Sets content for component.",
             "itemtype": "method",
             "name": "_setContent",
@@ -21720,7 +21796,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1893,
+            "line": 1892,
             "description": "Refresh list with the entered filter.",
             "itemtype": "method",
             "name": "_refreshList",
@@ -21738,7 +21814,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1931,
+            "line": 1930,
             "description": "Get the row by key.",
             "itemtype": "method",
             "name": "_getRowByKey",
@@ -21749,7 +21825,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1954,
+            "line": 1953,
             "description": "Get the key of model.",
             "itemtype": "method",
             "name": "_getModelKey",
@@ -21760,7 +21836,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1969,
+            "line": 1968,
             "description": "Remove the model with key.",
             "itemtype": "method",
             "name": "_removeModelWithKey",
@@ -21771,7 +21847,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 1982,
+            "line": 1981,
             "description": "Adds detail model to current model, generates unique key for detail model.\nIf record is deleted then `undefined` is returned and record isn't added to list.",
             "itemtype": "method",
             "name": "_addModel",
@@ -21793,7 +21869,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2037,
+            "line": 2036,
             "description": "Adds row to component and calls click on row action if detail is edited on separate route.\nThis method is triggered on toolbar's add batton click.",
             "itemtype": "method",
             "name": "_addRow",
@@ -21811,7 +21887,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2063,
+            "line": 2062,
             "description": "Handler for \"delete selected rows\" event in objectlistview.",
             "itemtype": "method",
             "name": "_deleteRows",
@@ -21832,7 +21908,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2086,
+            "line": 2085,
             "description": "Delete the record.",
             "itemtype": "method",
             "name": "_deleteRecord",
@@ -21855,7 +21931,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2126,
+            "line": 2125,
             "description": "Actually delete the record.",
             "itemtype": "method",
             "name": "_actualDeleteRecord",
@@ -21878,7 +21954,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2158,
+            "line": 2157,
             "description": "Delete all hasMany relationships in the `record`.",
             "itemtype": "method",
             "name": "_deleteHasManyRelationships",
@@ -21905,7 +21981,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2181,
+            "line": 2180,
             "description": "The handler for \"filter by any match\" event triggered in objectlistview events service.",
             "itemtype": "method",
             "name": "_filterByAnyMatch",
@@ -21923,7 +21999,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2199,
+            "line": 2198,
             "description": "Set the active record.",
             "itemtype": "method",
             "name": "_setActiveRecord",
@@ -21941,7 +22017,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2227,
+            "line": 2226,
             "description": "It observes changes of flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}searchForContentChange{{/crossLink}}.\n\nIf flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} changes its value\nobserver on component content is set otherwise it is removed.",
             "itemtype": "method",
             "name": "_searchForContentChange",
@@ -21952,7 +22028,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2245,
+            "line": 2244,
             "description": "It observes changes of model's data that are displayed on component\nif flag {{#crossLink \"ObjectListViewComponent/searchForContentChange:property\"}}{{/crossLink}} is enabled.\n\nProperty changing displayes automatically.\nComponent compares current detail array with used on component,\nremoves deleted and marked as deleted on model level records, adds created on model level records.",
             "itemtype": "method",
             "name": "_contentDidChange",
@@ -21963,7 +22039,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2299,
+            "line": 2298,
             "description": "Get attributes name from model.",
             "itemtype": "method",
             "name": "_getAttributesName",
@@ -21974,7 +22050,7 @@
         },
         {
             "file": "ember-flexberry/addon/components/object-list-view.js",
-            "line": 2316,
+            "line": 2315,
             "description": "Restore selected records after refreshing or transition to other page.",
             "itemtype": "method",
             "name": "_restoreSelectedRecords",
@@ -22672,7 +22748,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/colsconfig-dialog.js",
-            "line": 10,
+            "line": 9,
             "description": "Current opened modal window.",
             "itemtype": "property",
             "name": "_openedModalDialog",
@@ -22683,7 +22759,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/colsconfig-dialog.js",
-            "line": 20,
+            "line": 18,
             "description": "Handles create modal window action.\nIt saves created window to have opportunity to close it later.",
             "itemtype": "method",
             "name": "createdModalDialog",
@@ -22699,7 +22775,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/colsconfig-dialog.js",
-            "line": 33,
+            "line": 31,
             "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "closeModalDialog",
@@ -23183,7 +23259,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 404,
+            "line": 424,
             "description": "Delete object, if successful transition to parent route.",
             "itemtype": "method",
             "name": "delete",
@@ -23203,7 +23279,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 449,
+            "line": 469,
             "description": "Сlose edit form and transition to parent route.",
             "itemtype": "method",
             "name": "close",
@@ -23224,7 +23300,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 464,
+            "line": 484,
             "description": "This method will be invoked before save operation will be called.\nOverride this method to add some custom logic on save operation start.",
             "example": [
                 "\n  ```javascript\n  onSaveActionStarted() {\n    alert('Save operation started!');\n  }\n  ```"
@@ -23236,7 +23312,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 479,
+            "line": 499,
             "description": "This method will be invoked when save operation successfully completed.\nOverride this method to add some custom logic on save operation success.",
             "example": [
                 "\n  ```javascript\n  onSaveActionFulfilled() {\n    alert('Save operation succeed!');\n  }\n  ```"
@@ -23248,7 +23324,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 494,
+            "line": 514,
             "description": "This method will be invoked when save operation completed, but failed.\nOverride this method to add some custom logic on save operation fail.",
             "example": [
                 "\n  ```javascript\n  onSaveActionRejected() {\n    alert('Save operation failed!');\n  }\n  ```"
@@ -23267,7 +23343,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 513,
+            "line": 534,
             "description": "This method will be invoked always when save operation completed,\nregardless of save promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on save operation completion.",
             "example": [
                 "\n  ```js\n  onSaveActionAlways(data) {\n    alert('Save operation completed!');\n  }\n  ```"
@@ -23286,7 +23362,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 531,
+            "line": 552,
             "description": "This method will be invoked before delete operation will be called.\nOverride this method to add custom logic on delete operation start.",
             "example": [
                 "\n  ```javascript\n  onDeleteActionStarted() {\n    alert('Delete operation started!');\n  }\n  ```"
@@ -23298,7 +23374,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 546,
+            "line": 567,
             "description": "This method will be invoked when delete operation successfully completed.\nOverride this method to add some custom logic on delete operation success.",
             "example": [
                 "\n  ```javascript\n  onDeleteActionFulfilled() {\n    alert('Delete operation succeed!');\n    this.close(false);\n  }\n  ```"
@@ -23317,7 +23393,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 564,
+            "line": 585,
             "description": "This method will be invoked when delete operation completed, but failed.\nOverride this method to add some custom logic on delete operation fail.",
             "example": [
                 "\n  ```javascript\n  onDeleteActionRejected() {\n    alert('Delete operation failed!');\n  }\n  ```"
@@ -23336,7 +23412,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 581,
+            "line": 602,
             "description": "This method will be invoked always when delete operation completed,\nregardless of save promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on delete operation completion.",
             "example": [
                 "\n  ```js\n  onDeleteActionAlways(data) {\n    alert('Delete operation completed!');\n  }\n  ```"
@@ -23355,7 +23431,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 599,
+            "line": 620,
             "description": "This method will be invoked before close method will be called.\nOverride this method to add custom logic on close method start.",
             "example": [
                 "\n  ```javascript\n  onCloseActionStarted() {\n    alert('Form will be closed right now!');\n  }\n  ```"
@@ -23367,7 +23443,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 614,
+            "line": 635,
             "description": "Method transition to parent route (corresponding list form).",
             "itemtype": "method",
             "name": "transitionToParentRoute",
@@ -23383,7 +23459,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 631,
+            "line": 652,
             "description": "Method to get type and attributes of component, which will be embeded in object-list-view cell.",
             "itemtype": "method",
             "name": "getCellComponent",
@@ -23413,7 +23489,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 698,
+            "line": 719,
             "description": "Rollback dirty hasMany relationships in the `model` recursively.\nThis method invokes by `resetController` in the `edit-form` route.",
             "itemtype": "method",
             "name": "rollbackHasManyRelationships",
@@ -23431,7 +23507,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 711,
+            "line": 732,
             "description": "Service that lets interact between agregator's and detail's form.",
             "itemtype": "property",
             "name": "flexberryDetailInteractionService",
@@ -23444,7 +23520,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 721,
+            "line": 742,
             "description": "Save dirty hasMany relationships in the `model` recursively.\nThis method invokes by `save` method.",
             "itemtype": "method",
             "name": "_saveHasManyRelationships",
@@ -23466,7 +23542,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/edit-form.js",
-            "line": 749,
+            "line": 777,
             "description": "Destroy (delete and save) all hasMany relationships in the `model` recursively.\nThis method invokes by `delete` method.",
             "itemtype": "method",
             "name": "_destroyHasManyRelationships",
@@ -23957,7 +24033,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 216,
+            "line": 227,
             "description": "Redirect actions into route.",
             "itemtype": "method",
             "name": "actions.loadRecords",
@@ -23988,7 +24064,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 234,
+            "line": 245,
             "description": "It observes query parameters changing.\nIf query parameter (filter, current page, etc.) is changed then displayed data are reloaded.",
             "itemtype": "method",
             "name": "queryParametersChanged",
@@ -23997,7 +24073,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 246,
+            "line": 257,
             "description": "It clears current controller.\nIt has to be done before each use.",
             "itemtype": "method",
             "name": "clear",
@@ -24013,7 +24089,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 279,
+            "line": 290,
             "description": "Set master to corresponding property of editing object.",
             "itemtype": "method",
             "name": "_selectMaster",
@@ -24031,7 +24107,7 @@
         },
         {
             "file": "ember-flexberry/addon/controllers/lookup-dialog.js",
-            "line": 298,
+            "line": 309,
             "description": "Close current modal window if it exists.",
             "itemtype": "method",
             "name": "_closeModalDialog",
@@ -25120,7 +25196,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/edit-form-route-operations-indication.js",
-            "line": 36,
+            "line": 47,
             "description": "A hook you can use to setup the controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",
@@ -25136,7 +25212,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/edit-form-route-operations-indication.js",
-            "line": 53,
+            "line": 64,
             "description": "A hook you can use to reset controller values either when the model changes or the route is exiting.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_resetController).",
             "itemtype": "method",
             "name": "resetController",
@@ -25233,6 +25309,66 @@
                 }
             ],
             "class": "ErrorableControllerMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/errorable-route.js",
+            "line": 12,
+            "description": "Event handler for processing promise model rejecting.\n[More info](https://emberjs.com/api/ember/2.4/classes/Ember.Route/events/error?anchor=error).",
+            "itemtype": "method",
+            "name": "actions.error",
+            "params": [
+                {
+                    "name": "error",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "ErrorableRouteMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/errorable-route.js",
+            "line": 29,
+            "description": "This method will be invoked during any of route hooks return a promise that rejects.",
+            "itemtype": "method",
+            "name": "handleError.",
+            "params": [
+                {
+                    "name": "errorData",
+                    "description": "Error info.",
+                    "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "Current transition object.",
+                    "type": "Transition"
+                }
+            ],
+            "class": "ErrorableRouteMixin",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/mixins/errorable-route.js",
+            "line": 52,
+            "description": "This method checks error message and makes some messages more appropriate for perception.",
+            "itemtype": "method",
+            "name": "_updateErrorToDisplay.",
+            "params": [
+                {
+                    "name": "errorData",
+                    "description": "Data with error description and details.",
+                    "type": "Object"
+                }
+            ],
+            "access": "private",
+            "tagname": "",
+            "class": "ErrorableRouteMixin",
             "module": "ember-flexberry"
         },
         {
@@ -25470,7 +25606,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 146,
+            "line": 144,
             "description": "This hook is executed when the router enters the route. It is not executed when the model for the route changes.\n\nIt is used to subscribe on {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}} events.",
             "itemtype": "method",
             "name": "activate",
@@ -25479,7 +25615,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 161,
+            "line": 159,
             "description": "This hook is executed when the router completely exits this route. It is not executed when the model for the route changes.\n\nIt is used to unsubscribe from {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}} events.",
             "itemtype": "method",
             "name": "deactivate",
@@ -25488,7 +25624,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 176,
+            "line": 174,
             "description": "It forms path for new model's route.",
             "itemtype": "method",
             "name": "newRoutePath",
@@ -25508,7 +25644,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 187,
+            "line": 185,
             "description": "Event handler for \"row has been selected\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowAdded",
@@ -25531,7 +25667,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 201,
+            "line": 199,
             "description": "Event handler for \"row has been deleted\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowDeleted",
@@ -25554,7 +25690,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-groupedit-route.js",
-            "line": 215,
+            "line": 213,
             "description": "Event handler for \"model(s) corresponding to some row(s) was changed\" event in {{#crossLink \"FlexberryGroupeditComponent\"}}{{/crossLink}}.",
             "itemtype": "method",
             "name": "_rowChanged",
@@ -25677,7 +25813,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-controller.js",
-            "line": 177,
+            "line": 183,
             "description": "Handlers corresponding route's willTransition action.\nIt sends message about transition to showing lookup modal window controller.",
             "itemtype": "method",
             "name": "actions.routeWillTransition",
@@ -25686,7 +25822,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-controller.js",
-            "line": 187,
+            "line": 193,
             "description": "Handlers action from FlexberryLookup remove action.",
             "itemtype": "method",
             "name": "actions.removeLookupValue",
@@ -25702,7 +25838,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-controller.js",
-            "line": 208,
+            "line": 214,
             "description": "Update relation value at model.",
             "itemtype": "method",
             "name": "actions.updateLookupValue",
@@ -25718,7 +25854,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-lookup-controller.js",
-            "line": 231,
+            "line": 237,
             "description": "This method refreshes displayed data on lookup modal window.\n\nIt reloads current lookup modal window in order to show loading image.\nThen proper request to load data is formed (it considers current page, filter, etc).\nAfter the data loading data are displayed on lookup modal window.\n\nThis method is called during the first data loading\nand after each change of request parameters (current page, filter, etc) on lookup modal window controller\n(it is implemented by sending handler on this method to lookup modal window controller).",
             "itemtype": "method",
             "name": "_reloadModalData",
@@ -25947,8 +26083,8 @@
                     "type": "String"
                 },
                 {
-                    "name": "Instance",
-                    "description": "of {{#crossLink \"ObjectListViewRowComponent\"}}{{/crossLink}}.",
+                    "name": "target",
+                    "description": "Instance of {{#crossLink \"ObjectListViewRowComponent\"}}{{/crossLink}}.",
                     "type": "ObjectListViewRowComponent"
                 },
                 {
@@ -25957,8 +26093,8 @@
                     "type": "String"
                 },
                 {
-                    "name": "Flag",
-                    "description": "indicates that this is the first download of data.",
+                    "name": "firstRunMode",
+                    "description": "Flag indicates that this is the first download of data.",
                     "type": "Boolean"
                 },
                 {
@@ -26048,7 +26184,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 164,
+            "line": 167,
             "description": "Dictionary with sorting data related to properties.",
             "itemtype": "property",
             "name": "computedSorting",
@@ -26059,7 +26195,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 189,
+            "line": 192,
             "description": "It forms the limit predicate for FOLV loaded data on edit form.\n\nBy default it returns `undefined`.\nIn order to set specific limit predicate, this method have to be overriden on applied-specific controller.",
             "itemtype": "method",
             "name": "objectListViewLimitPredicate",
@@ -26101,7 +26237,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 209,
+            "line": 212,
             "description": "Set in `property` for `target` promise that load nested records.",
             "itemtype": "method",
             "name": "actions.loadRecordsById",
@@ -26127,7 +26263,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-on-edit-form-controller.js",
-            "line": 229,
+            "line": 232,
             "description": "Switch hierarchical mode.",
             "itemtype": "method",
             "name": "actions.switchHierarchicalMode",
@@ -26154,7 +26290,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
-            "line": 75,
+            "line": 77,
             "description": "This action is called when user click on refresh button.",
             "itemtype": "method",
             "name": "actions.refreshList",
@@ -26165,7 +26301,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/flexberry-objectlistview-route.js",
-            "line": 90,
+            "line": 92,
             "description": "It forms the limit predicate for loaded data.\n\nBy default it returns `undefined`.\nIn order to set specific limit predicate, this method have to be overriden on applied-specific route.",
             "example": [
                 "\n  ``` js\n  // app/routes/limit-function-example.js\n  import Ember from 'ember';\n  import ListFormRoute from 'ember-flexberry/routes/list-form';\n  import { Query } from 'ember-flexberry-data';\n\n  const { StringPredicate } = Query;\n\n  export default ListFormRoute.extend({\n    modelProjection: 'FolvWithLimitFunctionExampleView',\n\n    modelName: 'ember-flexberry-dummy-suggestion',\n\n    objectListViewLimitPredicate: function(options) {\n      let methodOptions = Ember.merge({\n        modelName: undefined,\n        projectionName: undefined,\n        params: undefined\n      }, options);\n\n      if (methodOptions.modelName === this.get('modelName') &&\n          methodOptions.projectionName === this.get('modelProjection')) {\n        let currentPerPageValue = methodOptions.params ? methodOptions.params.perPage : undefined;\n        let limitFunction = (currentPerPageValue && currentPerPageValue % 2 === 0) ?\n                            new StringPredicate('address').contains('S') :\n                            new StringPredicate('address').contains('п');\n        return limitFunction;\n      }\n\n      return undefined;\n    }\n  });\n\n  ```"
@@ -26546,7 +26682,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/lock-route.js",
-            "line": 115,
+            "line": 125,
             "description": "A hook you can use to setup the controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",
@@ -26567,7 +26703,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/lock-route.js",
-            "line": 130,
+            "line": 140,
             "description": "This function will be called to solve open form read only or transition to parent route.\nYou can override function for custom behavior.",
             "example": [
                 "\n  ```javascript\n  // app/routes/user-edit.js\n\n  import EditFormRoute from 'ember-flexberry/routes/edit-form';\n\n  export default EditFormRoute.extend({\n    ...\n    openReadOnly(lockUserName) {\n      return new Ember.RSVP.Promise((resolve) => {\n        let answer = confirm(`This object lock user with name: '${lockUserName}'. Open read only?`);\n        resolve(answer);\n      });\n    },\n    ...\n  });\n  ```"
@@ -26590,7 +26726,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/lock-route.js",
-            "line": 163,
+            "line": 173,
             "description": "This function will be called to solve unlock the object before form close.\nYou can override function for custom behavior.",
             "example": [
                 "\n  ```javascript\n  // app/routes/user-edit.js\n\n  import EditFormRoute from 'ember-flexberry/routes/edit-form';\n\n  export default EditFormRoute.extend({\n    ...\n    unlockObject() {\n      return new Ember.RSVP.Promise((resolve) => {\n        let answer = confirm(`Unlock this object?`);\n        resolve(answer);\n      });\n    },\n    ...\n  });\n  ```"
@@ -26606,7 +26742,7 @@
         },
         {
             "file": "ember-flexberry/addon/mixins/lock-route.js",
-            "line": 195,
+            "line": 205,
             "description": "Depending on answer, open form read only or transition to parent route.",
             "itemtype": "method",
             "name": "_openReadOnly",
@@ -26625,6 +26761,11 @@
                     "name": "reject",
                     "description": "",
                     "type": "Function"
+                },
+                {
+                    "name": "reason",
+                    "description": "",
+                    "type": "Object"
                 }
             ],
             "access": "private",
@@ -27686,6 +27827,16 @@
         {
             "file": "ember-flexberry/addon/routes/edit-form-new.js",
             "line": 23,
+            "description": "Suffix for new route (has value only on new routes).",
+            "itemtype": "property",
+            "name": "newSuffix",
+            "type": "String",
+            "class": "EditFormNewRoute",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/routes/edit-form-new.js",
+            "line": 31,
             "description": "A hook you can implement to convert the URL into the model for this route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_model).",
             "itemtype": "method",
             "name": "model",
@@ -27706,7 +27857,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form-new.js",
-            "line": 51,
+            "line": 59,
             "description": "A hook you can use to render the template for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_renderTemplate).",
             "itemtype": "method",
             "name": "renderTemplate",
@@ -27727,7 +27878,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 42,
+            "line": 44,
             "description": "It sends message about transition to corresponding controller.\n\nThe willTransition action is fired at the beginning of any attempted transition with a Transition object as the sole argument.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#event_willTransition).",
             "itemtype": "method",
             "name": "actions.willTransition",
@@ -27743,7 +27894,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 57,
+            "line": 59,
             "description": "Configuration hash for this route's queryParams. [More info](http://emberjs.com/api/classes/Ember.Route.html#property_queryParams).",
             "itemtype": "property",
             "name": "queryParams",
@@ -27753,7 +27904,17 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 71,
+            "line": 73,
+            "description": "Suffix for new route (has value only on new routes).",
+            "itemtype": "property",
+            "name": "newSuffix",
+            "type": "String",
+            "class": "EditFormRoute",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/routes/edit-form.js",
+            "line": 81,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEventsService",
@@ -27763,7 +27924,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 79,
+            "line": 89,
             "description": "This hook is the first of the route entry validation hooks called when an attempt is made to transition into a route or one of its children.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_beforeModel).",
             "itemtype": "method",
             "name": "beforeModel",
@@ -27783,7 +27944,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 116,
+            "line": 131,
             "description": "A hook you can implement to convert the URL into the model for this route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_model).",
             "itemtype": "method",
             "name": "model",
@@ -27804,7 +27965,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 145,
+            "line": 160,
             "description": "A hook you can use to reset controller values either when the model changes or the route is exiting.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_resetController).",
             "itemtype": "method",
             "name": "resetController",
@@ -27830,7 +27991,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/edit-form.js",
-            "line": 188,
+            "line": 203,
             "description": "A hook you can use to setup the controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",
@@ -27909,7 +28070,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 51,
+            "line": 53,
             "description": "Link on {{#crossLink FormLoadTimeTrackerService}}{{/crossLink}}.",
             "itemtype": "property",
             "name": "formLoadTimeTracker",
@@ -27921,7 +28082,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 60,
+            "line": 62,
             "description": "Current sorting.",
             "itemtype": "property",
             "name": "sorting",
@@ -27932,7 +28093,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 69,
+            "line": 71,
             "itemtype": "property",
             "name": "colsConfigMenu",
             "type": "Service",
@@ -27941,7 +28102,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 75,
+            "line": 77,
             "description": "Service that triggers objectlistview events.",
             "itemtype": "property",
             "name": "objectlistviewEventsService",
@@ -27951,7 +28112,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 83,
+            "line": 85,
             "description": "A hook you can implement to convert the URL into the model for this route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_model).",
             "itemtype": "method",
             "name": "model",
@@ -27972,31 +28133,10 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 211,
-            "description": "Event handler for processing promise model rejecting.\n[More info](https://emberjs.com/api/ember/2.4/classes/Ember.Route/events/error?anchor=error).",
-            "itemtype": "method",
-            "name": "actions.error",
-            "params": [
-                {
-                    "name": "error",
-                    "description": "",
-                    "type": "Object"
-                },
-                {
-                    "name": "transition",
-                    "description": "",
-                    "type": "Object"
-                }
-            ],
-            "class": "ListFormRoute",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 224,
+            "line": 212,
             "description": "This method will be invoked before model loading operation will be called.\nOverride this method to add some custom logic on model loading operation start.",
             "example": [
-                "\n  ```javascript\n  onModelLoadingStarted(queryParameters) {\n    alert('Model loading operation started!');\n  }\n  ```"
+                "\n  ```javascript\n  onModelLoadingStarted(queryParameters, transition) {\n    alert('Model loading operation started!');\n  }\n  ```"
             ],
             "itemtype": "method",
             "name": "onModelLoadingStarted.",
@@ -28005,6 +28145,11 @@
                     "name": "queryParameters",
                     "description": "Query parameters used for model loading operation.",
                     "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "Current transition object.",
+                    "type": "Transition"
                 }
             ],
             "class": "ListFormRoute",
@@ -28012,10 +28157,10 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 240,
+            "line": 229,
             "description": "This method will be invoked when model loading operation successfully completed.\nOverride this method to add some custom logic on model loading operation success.",
             "example": [
-                "\n  ```javascript\n  onModelLoadingFulfilled() {\n    alert('Model loading operation succeed!');\n  }\n  ```"
+                "\n  ```javascript\n  onModelLoadingFulfilled(model, transition) {\n    alert('Model loading operation succeed!');\n  }\n  ```"
             ],
             "itemtype": "method",
             "name": "onModelLoadingFulfilled.",
@@ -28024,6 +28169,11 @@
                     "name": "model",
                     "description": "Loaded model data.",
                     "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "Current transition object.",
+                    "type": "Transition"
                 }
             ],
             "class": "ListFormRoute",
@@ -28031,10 +28181,10 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 256,
+            "line": 246,
             "description": "This method will be invoked when model loading operation completed, but failed.\nOverride this method to add some custom logic on model loading operation fail.\nBy default showing error form.",
             "example": [
-                "\n  ```javascript\n  onModelLoadingRejected() {\n    alert('Model loading operation failed!');\n  }\n  ```"
+                "\n  ```javascript\n  onModelLoadingRejected(errorData, transition) {\n    alert('Model loading operation failed!');\n  }\n  ```"
             ],
             "itemtype": "method",
             "name": "onModelLoadingRejected.",
@@ -28043,6 +28193,11 @@
                     "name": "errorData",
                     "description": "Data about model loading operation fail.",
                     "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "Current transition object.",
+                    "type": "Transition"
                 }
             ],
             "class": "ListFormRoute",
@@ -28050,10 +28205,10 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 282,
+            "line": 265,
             "description": "This method will be invoked always when model loading operation completed,\nregardless of model loading promise's state (was it fulfilled or rejected).\nOverride this method to add some custom logic on model loading operation completion.",
             "example": [
-                "\n  ```js\n  onModelLoadingAlways(data) {\n    alert('Model loading operation completed!');\n  }\n  ```"
+                "\n  ```js\n  onModelLoadingAlways(data, transition) {\n    alert('Model loading operation completed!');\n  }\n  ```"
             ],
             "itemtype": "method",
             "name": "onModelLoadingAlways.",
@@ -28062,6 +28217,11 @@
                     "name": "data",
                     "description": "Data about completed model loading operation.",
                     "type": "Object"
+                },
+                {
+                    "name": "transition",
+                    "description": "Current transition object.",
+                    "type": "Transition"
                 }
             ],
             "class": "ListFormRoute",
@@ -28069,7 +28229,7 @@
         },
         {
             "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 300,
+            "line": 284,
             "description": "A hook you can use to setup the controller for the current route.\n[More info](http://emberjs.com/api/classes/Ember.Route.html#method_setupController).",
             "itemtype": "method",
             "name": "setupController",
@@ -28085,24 +28245,6 @@
                     "type": "Object"
                 }
             ],
-            "class": "ListFormRoute",
-            "module": "ember-flexberry"
-        },
-        {
-            "file": "ember-flexberry/addon/routes/list-form.js",
-            "line": 325,
-            "description": "This method checks error message and makes some messages more appropriate for perception.",
-            "itemtype": "method",
-            "name": "_updateErrorToDisplay.",
-            "params": [
-                {
-                    "name": "errorData",
-                    "description": "Data with error description and details.",
-                    "type": "Object"
-                }
-            ],
-            "access": "private",
-            "tagname": "",
             "class": "ListFormRoute",
             "module": "ember-flexberry"
         },
@@ -29427,7 +29569,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 204,
+            "line": 229,
             "description": "Set initial userSetting for current webPage, defined by application developer",
             "itemtype": "method",
             "name": "setDefaultDeveloperUserSettings",
@@ -29443,7 +29585,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 228,
+            "line": 253,
             "description": "Get list components Names.",
             "itemtype": "method",
             "name": "getListComponentNames",
@@ -29456,7 +29598,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 246,
+            "line": 271,
             "description": "Implements current URL-params to currentUserSettings",
             "itemtype": "method",
             "name": "setCurrentParams",
@@ -29472,7 +29614,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 264,
+            "line": 289,
             "description": "Returns  true if userSettings for current appPage exists.",
             "itemtype": "method",
             "name": "exists",
@@ -29485,7 +29627,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 275,
+            "line": 300,
             "description": "Returns  true if default userSettings for current appPage exists.",
             "itemtype": "method",
             "name": "exists",
@@ -29498,7 +29640,23 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 288,
+            "line": 313,
+            "description": "Creates default user setting if setting for specified component isn't exists.",
+            "itemtype": "method",
+            "name": "createDefaultUserSetting",
+            "params": [
+                {
+                    "name": "componentName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "UserSettingsService",
+            "module": "ember-flexberry"
+        },
+        {
+            "file": "ember-flexberry/addon/services/user-settings.js",
+            "line": 333,
             "description": "Returns current list of userSetting.",
             "itemtype": "method",
             "name": "getListCurrentUserSetting",
@@ -29511,7 +29669,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 316,
+            "line": 361,
             "description": "Returns current list of named userSetting.",
             "itemtype": "method",
             "name": "getListCurrentNamedUserSetting",
@@ -29524,7 +29682,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 336,
+            "line": 381,
             "description": "Returns current userSetting.",
             "itemtype": "method",
             "name": "getCurrentSorting",
@@ -29549,7 +29707,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 360,
+            "line": 405,
             "description": "Returns default developer user settings for component.",
             "itemtype": "method",
             "name": "getDefaultDeveloperUserSetting",
@@ -29569,7 +29727,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 381,
+            "line": 426,
             "description": "Returns current sorting .",
             "itemtype": "method",
             "name": "getCurrentSorting",
@@ -29594,7 +29752,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 394,
+            "line": 439,
             "description": "Returns current perPageValue .",
             "itemtype": "method",
             "name": "getCurrentPerPage",
@@ -29619,7 +29777,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 407,
+            "line": 452,
             "description": "Returns current colsOrder .",
             "itemtype": "method",
             "name": "getCurrentColsOrder",
@@ -29644,7 +29802,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 420,
+            "line": 465,
             "description": "Returns current columnWidths.",
             "itemtype": "method",
             "name": "getCurrentColumnWidths",
@@ -29669,7 +29827,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 433,
+            "line": 478,
             "description": "Returns current detSeparateCols.",
             "itemtype": "method",
             "name": "getDetSeparateCols",
@@ -29694,7 +29852,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 446,
+            "line": 491,
             "description": "Returns current detSeparateRows.",
             "itemtype": "method",
             "name": "getDetSeparateRows",
@@ -29719,7 +29877,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 459,
+            "line": 504,
             "description": "Set current columnWidths.",
             "itemtype": "method",
             "name": "setCurrentColumnWidths",
@@ -29745,7 +29903,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 488,
+            "line": 533,
             "description": "Set current perPage.",
             "itemtype": "method",
             "name": "setCurrentPerPage",
@@ -29771,7 +29929,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 517,
+            "line": 562,
             "description": "Deletes given user setting from storage.",
             "itemtype": "method",
             "name": "deleteUserSetting",
@@ -29802,7 +29960,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 558,
+            "line": 603,
             "description": "Saves given user setting to storage.",
             "itemtype": "method",
             "name": "saveUserSetting",
@@ -29832,7 +29990,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 631,
+            "line": 676,
             "description": "Returns  user setting for current appPage from storage.",
             "itemtype": "method",
             "name": "_getUserSettings",
@@ -29845,7 +30003,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 673,
+            "line": 692,
             "description": "Merge current developerUserSettings with appPageUserSettings",
             "itemtype": "method",
             "name": "_setCurrentUserSettings",
@@ -29865,7 +30023,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 711,
+            "line": 730,
             "description": "Merge two settings.",
             "itemtype": "method",
             "name": "_mergeSettings",
@@ -29892,7 +30050,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 737,
+            "line": 756,
             "description": "Deletes user settings record.",
             "itemtype": "method",
             "name": "_deleteExistingRecord",
@@ -29919,7 +30077,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 775,
+            "line": 794,
             "description": "Looks for already created user settings record.",
             "itemtype": "method",
             "name": "_getExistingRecord",
@@ -29946,7 +30104,7 @@
         },
         {
             "file": "ember-flexberry/addon/services/user-settings.js",
-            "line": 811,
+            "line": 830,
             "description": "Looks for all created user settings records.",
             "itemtype": "method",
             "name": "_getExistingSettings",
@@ -30362,15 +30520,15 @@
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:714"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:734"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:733"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:757"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:756"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:780"
         },
         {
             "message": "replacing incorrect tag: returns with return",
@@ -30766,19 +30924,19 @@
         },
         {
             "message": "Missing item type\nInitializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:512"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:532"
         },
         {
             "message": "Missing item type\nInitializes {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component DOM-related properties.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:536"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:556"
         },
         {
             "message": "Missing item type\nChanges url in jQuery fileupload when uploadUrl changed.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:595"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:615"
         },
         {
             "message": "Missing item type\nDestroys {{#crossLink \"FlexberryFileComponent\"}}flexberry-file{{/crossLink}} component.",
-            "line": " ember-flexberry/addon/components/flexberry-file.js:610"
+            "line": " ember-flexberry/addon/components/flexberry-file.js:630"
         },
         {
             "message": "Missing item type\nReference to component's CSS-classes names.\nMust be also a component's instance property to be available from component's .hbs template.",
@@ -31006,15 +31164,15 @@
         },
         {
             "message": "Missing item type\nOverride to implement teardown.\nFor more information see [willDestroy](http://emberjs.com/api/classes/Ember.Component.html#method_willDestroy) method of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/object-list-view.js:1261"
+            "line": " ember-flexberry/addon/components/object-list-view.js:1256"
         },
         {
             "message": "Missing item type\nCalled when the element of the view is going to be destroyed.\nFor more information see [willDestroyElement](http://emberjs.com/api/classes/Ember.Component.html#event_willDestroyElement) event of [Ember.Component](http://emberjs.com/api/classes/Ember.Component.html).",
-            "line": " ember-flexberry/addon/components/object-list-view.js:1280"
+            "line": " ember-flexberry/addon/components/object-list-view.js:1275"
         },
         {
             "message": "Missing item type\nCreate the key from locales.",
-            "line": " ember-flexberry/addon/components/object-list-view.js:1591"
+            "line": " ember-flexberry/addon/components/object-list-view.js:1590"
         },
         {
             "message": "Missing item type\nAn overridable method called when objects are instantiated.\nFor more information see [init](http://emberjs.com/api/classes/Ember.View.html#method_init) method of [Ember.View](http://emberjs.com/api/classes/Ember.View.html).",

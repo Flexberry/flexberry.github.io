@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>ember-flexberry-data/addon/utils/attributes.js - Flexberry Documentation</title>
+    <title>ember-flexberry/addon/mixins/errorable-route.js - Flexberry Documentation</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -248,80 +248,89 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>ember-flexberry-data/addon/utils/attributes.js <small>File</small></h1>
+    <h1>ember-flexberry/addon/mixins/errorable-route.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
 import Ember from &#x27;ember&#x27;;
-import createProj from &#x27;./create&#x27;;
 
 /**
- * @module ember-flexberry-data
- */
+  Mixin for handling errors.
 
-/**
- * Define plain attribute in projection.
- *
- * @method attr
- * @for Projection
- * @public
- *
- * @param {String} caption A user-friendly caption for attribute.
- * @param {Object} [options] Attribute options.
- * @return {Object} Projection attribute.
- */
-export function attr(caption, options) {
-  return createAttr(&#x27;attr&#x27;, caption, options);
-}
+  @class ErrorableRouteMixin
+  @extends &lt;a href=&quot;http://emberjs.com/api/classes/Ember.Mixin.html&quot;&gt;Ember.Mixin&lt;/a&gt;
+  @public
+*/
+export default Ember.Mixin.create({
+  actions: {
+    /**
+      Event handler for processing promise model rejecting.
+      [More info](https://emberjs.com/api/ember/2.4/classes/Ember.Route/events/error?anchor=error).
 
-/**
- * Define belongsTo relationship attribute in projection.
- *
- * @method belongsTo
- * @for Projection
- * @public
- *
- * @param {String} modelName The name of the model type.
- * @param {String} caption A user-friendly caption for attribute.
- * @param {Object} attributes Projection attributes.
- * @param {Object} [options] Attribute options.
- * @return {Object} Projection attribute.
- */
-export function belongsTo(modelName, caption, attributes, options) {
-  let attr = createAttr(&#x27;belongsTo&#x27;, caption, options);
-  let proj = createProj(modelName, attributes);
-  attr = Ember.merge(attr, proj);
-  return attr;
-}
+      @method actions.error
+      @param {Object} error
+      @param {Object} transition
+    */
+    error: function(error, transition) {
+      this.handleError(error, transition);
+    },
 
-/**
- * Define hasMany relationship attribute in projection.
- *
- * @method hasMany
- * @for Projection
- * @public
- *
- * @param {String} modelName The name of the model type.
- * @param {String} caption A user-friendly caption for attribute.
- * @param {Object} attributes Projection attributes.
- * @param {Object} [options] Attribute options.
- * @return {Object} Projection attribute.
- */
-export function hasMany(modelName, caption, attributes, options) {
-  let attr = createAttr(&#x27;hasMany&#x27;, caption, options);
-  let proj = createProj(modelName, attributes);
-  attr = Ember.merge(attr, proj);
-  return attr;
-}
+    handleError: function(error, transition) {
+      this.handleError(error, transition);
+    }
+  },
 
-function createAttr(kind, caption, options) {
-  return {
-    kind: kind,
-    caption: caption,
-    options: options || {}
-  };
-}
+  /**
+    This method will be invoked during any of route hooks return a promise that rejects.
+
+    @method handleError.
+    @param {Object} errorData Error info.
+    @param {Transition} transition Current transition object.
+  */
+  handleError(errorData, transition) {
+    errorData = errorData || {};
+    this._updateErrorToDisplay(errorData);
+    if (!this.get(&#x27;controller&#x27;) || !this.get(&#x27;controller.model&#x27;) || this.get(&#x27;controller.model.isLoading&#x27;) || (transition &amp;&amp; transition.isActive !== false)) {
+      this.get(&#x27;objectlistviewEventsService&#x27;).setLoadingState(&#x27;error&#x27;);
+      errorData.retryRoute = this.routeName;
+
+      // Trying to figure out if there is an id param.
+      errorData.id = transition &amp;&amp; transition.params[this.routeName] ? transition.params[this.routeName].id : undefined;
+
+      this.intermediateTransitionTo(&#x27;error&#x27;, errorData);
+    } else {
+      this.controller.send(&#x27;error&#x27;, errorData);
+    }
+  },
+
+  /**
+    This method checks error message and makes some messages more appropriate for perception.
+
+    @method _updateErrorToDisplay.
+    @param {Object} errorData Data with error description and details.
+    @private
+  */
+  _updateErrorToDisplay(errorData) {
+    let msg;
+    if (Ember.isArray(errorData)) {
+      for (let i = 0; i &lt; errorData.length; i++) {
+        if (errorData[i].state &amp;&amp; errorData[i].state === &#x27;rejected&#x27;) {
+          msg += errorData[i].reason.message;
+          msg += i !== (errorData.length - 1) ? &#x27;&lt;br&gt;&#x27; : &#x27;&#x27;;
+        }
+      }
+    } else {
+      msg = errorData.message;
+    }
+
+    let message = msg ? msg.replace(/\n/g, &#x27; &#x27;) : &#x27;&#x27;;
+    if (message.indexOf(&#x27;Ember Data Request&#x27;) !== -1 &amp;&amp; message.indexOf(&#x27;returned a 0 Payload (Empty Content-Type)&#x27;) !== -1) {
+      errorData.name = this.get(&#x27;i18n&#x27;).t(&#x27;forms.error-form.error&#x27;).string.toString();
+      errorData.message = this.get(&#x27;i18n&#x27;).t(&#x27;forms.error-form.ember-data-request&#x27;).string.toString();
+    }
+  }
+});
 
     </pre>
 </div>
