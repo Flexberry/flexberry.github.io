@@ -23,7 +23,7 @@ summary: Пошаговое руководство по созданию при�
 
 Код описываемых приложений выложен в примерах для `Flexberry Service Bus` на [GitHub](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples). Принципы работы с GitHub описаны на сайте [https://help.github.com](https://help.github.com/articles/cloning-a-repository/) или на сайте [https://git-scm.com](https://git-scm.com/book/ru/v1/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5)
 
-## Описание HTTP-запросов для взаимодействия с Highway SB
+## Описание HTTP-запросов для взаимодействия с Flexberry Service Bus
 
 ### Отправка сообщения в шину
 
@@ -54,7 +54,7 @@ summary: Пошаговое руководство по созданию при�
 * Пример:
 
 ```js
-POST http://ru:1235/RestService/Message
+POST http://localhost:7085/RestService/Message
 {
  "Body": "Message body",
  "MessageTypeID": "MsgType1",
@@ -96,7 +96,7 @@ POST http://ru:1235/RestService/Message
 * Пример:
 
 ```js
-http://servicebus:1235/RestService/Messages?clientId=client1
+http://localhost:7085/RestService/Messages?clientId=client1
 ```
 
 ### Получение сообщения по идентификатору клиента, индексу и типу сообщения
@@ -145,7 +145,7 @@ index (обязательный) – индекс сообщения в упор
 Для получения сообщения, наиболее приоритетного к отправке, следует запросить сообщение с индексом 0:
 
 ```js
-http://servicebus:1235/RestService/Message?clientId=client1&messageTypeId=msgType1&index=0
+http://localhost:7085/RestService/Message?clientId=client1&messageTypeId=msgType1&index=0
  ```
 
 ### Получение сообщения по уникальному идентификатору
@@ -176,7 +176,7 @@ http://servicebus:1235/RestService/Message?clientId=client1&messageTypeId=msgTyp
 * Пример:
 
 ```
-http://servicebus:1235/RestService/Message/{330732E9-7DB6-42C6-883D-E1596F4FBF78}
+http://localhost:7085/RestService/Message/{330732E9-7DB6-42C6-883D-E1596F4FBF78}
 ```
 
 ### Удаление сообщения из шины
@@ -196,7 +196,7 @@ id (обязательный, часть URL) – идентификатор с�
 * Пример:
 
 ```
-DELETE http://servicebus:1235/RestService/Message/{330732E9-7DB6-42C6-883D-E1596F4FBF78}
+DELETE http://localhost:7085/RestService/Message/{330732E9-7DB6-42C6-883D-E1596F4FBF78}
 ```
 
 ### Запрос отправки сообщения клиенту по callback
@@ -297,10 +297,6 @@ DELETE http://servicebus:1235/RestService/Message/{330732E9-7DB6-42C6-883D-E1596
 
 ![](/images/pages/products/flexberry-servicebus/adapters/subscription-message.png)
 
-
-
-
-
 ## Пример создания клиента, отправляющего сообщения
 
 #### Создание консольного приложения
@@ -325,8 +321,8 @@ DELETE http://servicebus:1235/RestService/Message/{330732E9-7DB6-42C6-883D-E1596
 using System;
 using System.Net;
 using System.Text;
-using Newtonsoft.Json;
 using System.Configuration;
+using Newtonsoft.Json;
 
 namespace MsgSender
 {
@@ -343,6 +339,7 @@ namespace MsgSender
 
                 msgBody = Console.ReadLine();
 
+                // Создадим сообщение.
                 string jsonData = JsonConvert.SerializeObject(new
                 {
                     Body = msgBody,
@@ -350,7 +347,7 @@ namespace MsgSender
                     MessageTypeID = ConfigurationManager.AppSettings["MessageTypeID"]
                 });
 
-                string url = "http://rtc-web:7076/HighwaySBWinPostgreSQLWebApiService/Message";
+                string url = ConfigurationManager.AppSettings["Address"] + "/Message";
 
                 using (var webClient = new WebClient())
                 {
@@ -363,6 +360,7 @@ namespace MsgSender
         }
     }
 }
+
 ```
 
 #### Настройка файла конфигурации
@@ -372,9 +370,9 @@ namespace MsgSender
 
 ```xml
 <appSettings>
-    <add key="SenderID" value="399c5f73-fcf7-47b1-9bbe-73b1ae5544d3"/>
-    <add key="MessageTypeID" value="d1b5e8d0-5cb9-4c83-adc9-f661a4928048"/>
-    <add key="Address" value="http://rtc-web:7076/HighwaySBWinPostgreSQLWebApiService"/>
+    <add key="SenderID" value=""/>
+    <add key="MessageTypeID" value=""/>
+    <add key="Address" value="http://localhost:7085/RestService"/>
 </appSettings>
 ```
 
@@ -430,8 +428,8 @@ namespace MsgRecipient
 
 ```xml
 <appSettings>
-  <add key="RecipientID" value="c4ae8b39-0988-40af-bf30-097bb12c00f1"/>
-  <add key="Address" value="http://rtc-web:7076/HighwaySBWinPostgreSQLWebApiService"/>
+  <add key="RecipientID" value=""/>
+  <add key="Address" value="http://localhost:7085/RestService"/>
 </appSettings>
 ```
 
