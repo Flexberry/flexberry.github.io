@@ -1,5 +1,5 @@
 ---
-title: `FuncLike`
+title: FuncLike
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Ограничения
 summary: Параметры и пример использования функции FuncLike

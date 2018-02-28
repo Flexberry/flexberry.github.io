@@ -1,11 +1,11 @@
 ---
 title: Псевдодетейлы в LinqProvider
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Варианты задания ограничений, используемые методы, связь с DetailVariableDef
 toc: true
-permalink: en/fo_psedo-details-in-linq-provider.html
-folder: products/flexberry-orm/
-lang: en
+permalink: ru/fo_psedodetails-linq-provider.html
+lang: ru
 ---
 
 ## Постановка задачи задания ограничений на псевдодетейлы
@@ -193,9 +193,9 @@ ds.Query<Порода>(Порода.Views.ПородаE)
 
 ## PseudoDetail и DetailVariableDef
 
-Ниже показан пример кода, демонстрирующий связь `PseudoDetail` и [`DetailVariableDef`](fo_variable-def.html).
+Ниже показан пример кода, демонстрирующий связь `PseudoDetail` и [DetailVariableDef](fo_variable-def.html).
 
-(`ComparePseudoDetailWithDetailVariableDef` - это метод, проводящий конвертацию из linq в lcs и сравнивающий результаты.)
+`ComparePseudoDetailWithDetailVariableDef` - это метод, проводящий конвертацию из linq в lcs и сравнивающий результаты.
 
 ```csharp
 const string masterToDetailPropertyName = "SomePropertyName";

@@ -1,8 +1,8 @@
 ---
-title: Пример наложения ограничений на загрузку объектов
+title: An example of imposing restrictions on the loading of objects
 sidebar: flexberry-orm_sidebar
 keywords: Flexberry ORM, Ограничения, Sample
-summary: 
+summary: Наложение ограничения, сортировка, диапазон индексов загружаемых объектов
 toc: true
 permalink: en/fo_load-limitation-example.html
 lang: en

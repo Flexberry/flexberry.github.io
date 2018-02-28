@@ -1,18 +1,18 @@
 ---
-title: Псевдодетейлы в LinqProvider
+title: Psedodetails in LinqProvider
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Public, Ограничения
+keywords: Flexberry ORM, Ограничения
+summary: Варианты задания ограничений, используемые методы, связь с DetailVariableDef
 toc: true
-permalink: ru/fo_psedo-details-in-linq-provider.html
-folder: products/flexberry-orm/
-lang: ru
+permalink: en/fo_psedodetails-linq-provider.html
+lang: en
 ---
 
 ## Постановка задачи задания ограничений на псевдодетейлы
 
 Пусть сущности "Клиент" и "Кредит" связаны представленным на изображении образом.
 
-![](/images/pages/products/flexberry-orm/linq-provider/pseudo-details.png)
+![](/images/pages/products/flexberry-orm/query-language/pseudo-details.png)
 
 Нужно ограничить клиентов, задав при этом ограничение на ссылающихся на них кредиты. Специфика данной задачи состоит в том, что согласно модели клиент не знает, какие кредиты на него ссылаются.
 
@@ -33,6 +33,8 @@ var ds = (SQLDataService)DataServiceProvider.DataService;
 (Большое число конструкторов обусловлено тем, что в Linq-выражении сложности с использованием конструкторов со значением по умолчанию).
 
 ```csharp
+// Вариант 1
+
 /// <summary>
 /// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
 /// </summary>
@@ -41,9 +43,9 @@ var ds = (SQLDataService)DataServiceProvider.DataService;
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	string masterLinkName)
-```
 
-```csharp
+// Вариант2
+
 /// <summary>
 /// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
 /// </summary>
@@ -52,18 +54,18 @@ public PseudoDetail(
 public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	Expression<Func<TP, object>> masterLink)
-```
 
-```csharp
+// Вариант 3
+
 /// <summary>
 /// Конструктор сущности, представляющей в Linq-выражении настоящий детейл (для псевдодетейлов данный метод будет некорректен).
 /// </summary>
 /// <param name="view"> Представление детейла. </param>
 public PseudoDetail(
 	ICSSoft.STORMNET.View view)
-```
 
-```csharp
+// Вариант 4
+
 /// <summary>
 /// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
 /// </summary>
@@ -74,9 +76,9 @@ public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	Expression<Func<TP, object>> masterLink,
 	string masterToDetailPseudoProperty)
-```
 
-```csharp
+// Вариант 5
+
 /// <summary>
 /// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
 /// </summary>
@@ -89,9 +91,9 @@ public PseudoDetail(
 	Expression<Func<TP, object>> masterLink,
 	string masterToDetailPseudoProperty,
 	string[] masterConnectProperties)
-```
 
-```csharp
+// Вариант 6
+
 /// <summary>
 /// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
 /// </summary>
@@ -102,9 +104,9 @@ public PseudoDetail(
 	ICSSoft.STORMNET.View view,
 	string masterLinkName,
 	string masterToDetailPseudoProperty)
-```
 
-```csharp
+// Вариант 7
+
 /// <summary>
 /// Конструктор сущности, представляющей в Linq-выражении псевдодетейл.
 /// </summary>
@@ -119,28 +121,30 @@ public PseudoDetail(
 	string[] masterConnectProperties)
 ```
 
-### Методы `PseudoDetail`
+### Методы PseudoDetail
 
 На псевдодетейлы возможно накладывать ограничения существования и всеобщности.
 
 ```csharp
+// Вариант 1
+
 /// <summary>
 /// Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExist.
 /// </summary>
 /// <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
 public bool Any()
-```
 
-```csharp
+// Вариант 2
+
 /// <summary>
 /// Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExist.
 /// </summary>
 /// <param name="predicate"> LimitFunction для псевдодетейла. </param>
 /// <returns> При компиляции вернёт true, при интерпретации в Linq формируется DetailVariableDef. </returns>
 public bool Any(Expression<Func<TP, bool>> predicate)
-```
 
-```csharp
+// Вариант 3
+
 /// <summary>
 /// Вспомогательный метод, преобразуемый на этапе компиляции Linq-выражения в funcExistExact.
 /// </summary>
@@ -193,9 +197,9 @@ ds.Query<Порода>(Порода.Views.ПородаE)
 
 ## PseudoDetail и DetailVariableDef
 
-Ниже показан пример кода, демонстрирующий связь `PseudoDetail` и [`DetailVariableDef`](fo_variable-def.html).
+Ниже показан пример кода, демонстрирующий связь `PseudoDetail` и [DetailVariableDef](fo_variable-def.html).
 
-(`ComparePseudoDetailWithDetailVariableDef` - это метод, проводящий конвертацию из linq в lcs и сравнивающий результаты.)
+`ComparePseudoDetailWithDetailVariableDef` - это метод, проводящий конвертацию из linq в lcs и сравнивающий результаты.
 
 ```csharp
 const string masterToDetailPropertyName = "SomePropertyName";

@@ -191,7 +191,7 @@ ds.Query<Порода>(Порода.Views.КотенокE).Where(
 
 ### Псевдодетейлы
 
-Работа с псевдодетейлами описана в [отдельной статье](fo_psedo-details-in-linq-provider.html).
+Работа с псевдодетейлами описана в статье [Псевдодетейлы в LinqProvider](fo_psedodetails-linq-provider.html).
 
 ## Примеры использования
 
