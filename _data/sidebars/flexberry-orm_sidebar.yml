@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: Flexberry ORM
-  version: 4.0.0
+  version: 4.1.0
   folders:
 
   - title: О Flexberry ORM
@@ -13,174 +13,6 @@ entries:
     - title: About
       title_ru: О модуле
       url: /fo_landing_page.html
-      output: web
-
-  - title: Дополнительные возможности
-    output: web, pdf
-    folderitems:
-    - title: Additional loading data object
-      title_ru: Дочитка объекта данных
-      url: /fo_additional-loading.html
-      output: web
-    - title: Serializing and Deserializing Data Objects
-      title_ru: Сериализация и десериализация объектов данных
-      url: /fo_aggregating-function.html
-      output: web
-    - title: Associating pictures with data classes
-      title_ru: Ассоциирование картинок с классами данных
-      url: /fo_class-image.html
-      output: web
-    - title: Code Examples
-      title_ru: Примеры кода
-      url: /fo_code-samples.html
-      output: web
-    - title: Example of custom names for structures in a database
-      title_ru: Пример пользовательских наименований для структур в БД
-      url: /fo_custom-naming-db-structures.html
-      output: web
-    - title: Dynamic Properties
-      title_ru: Динамические свойства объекта
-      url: /fo_dynamic-properties.html
-      output: web
-    - title: Flexberry ORM Libraries
-      title_ru: Библиотеки Flexberry ORM
-      url: /fo_flexberry-orm-libraries.html
-      output: web
-    - title: Custom control as LookUp
-      title_ru: Произвольный контрол в качестве лукапа
-      url: /fo_custom-lookup.html
-      output: web
-    - title: Features of determining the load of properties
-      title_ru: Особенности определения загруженности свойств
-      url: /fo_definition-loaded-properties.html
-      output: web
-    - title: ISpecialEmptyValue
-      title_ru: ISpecialEmptyValue
-      url: /fo_i-special-empty-value.html
-      output: web
-    - title: ICSSoft.STORMNET.Tools.XmlTools
-      title_ru: ICSSoft.STORMNET.Tools.XmlTools
-      url: /fo_ics-soft-stormnet-tools.html
-      output: web
-    - title: Interpreting the Boolean NULL Value
-      title_ru: Интерпретация булевского значения NULL
-      url: /fo_interpretation-boolean-null.html
-      output: web
-    - title: ICSSoft.STORMNET.KeyGen.KeyGuid class
-      title_ru: Класс ICSSoft.STORMNET.KeyGen.KeyGuid
-      url: /fo_key-guid.html
-      output: web
-    - title: Overloading of attributes, associations, methods
-      title_ru: Перегрузка атрибутов, ассоциаций, методов
-      url: /fo_overloading.html
-      output: web
-    - title: Reading objects belonging to different classes in one view
-      title_ru: Чтение принадлежащих различным классам объектов в одном представлении
-      url: /fo_reading-several-types-objects.html
-      output: web
-    - title: Flexberry LogService
-      title_ru: FFlexberry LogService
-      url: /fo_log-service-log4net.html
-      output: web
-    - title: Flexberry LogService Objects
-      title_ru: Flexberry LogService Objects
-      url: /fo_log-service-objects.html
-      output: web
-
-  - title: Бизнес-серверы
-    output: web, pdf
-    folderitems:
-    - title: Business servers and wrappers
-      title_ru: Бизнес-серверы и обёртки
-      url: /fo_bs-wrapper.html
-      output: web
-    - title: Business logic
-      title_ru: Бизнес-логика
-      url: /fo_business-logic.html
-      output: web
-    - title: Order of calls of business servers
-      title_ru: Порядок вызовов бизнес-серверов
-      url: /fo_order-calls-bs.html
-      output: web
-    - title: Checking the validity of changes to object data in the business server
-      title_ru: Проверка валидности изменений данных объекта в бизнес-сервере
-      url: /fo_change-data-check.html
-      output: web
-    - title: Updating multiple objects with a single transaction
-      title_ru: Обновление нескольких объектов одной транзакцией
-      url: /fo_bs-transact.html
-      output: web
-    - title: Checking the uniqueness of the entered data in the business server
-      title_ru: Проверка уникальности введенных данных в бизнес-сервере
-      url: /fo_unique-data-check.html
-      output: web
-    - title: Cascading deletion of objects
-      title_ru: Каскадное удаление объектов
-      url: /fo_cascade-delete.html
-      output: web
-    - title: IReferencesCascadeDelete
-      title_ru: IReferencesCascadeDelete
-      url: /fo_i-references-cascade-delete.html
-      output: web
-    - title: IReferencesNullDelete
-      title_ru: IReferencesNullDelete
-      url: /fo_i-references-null-delete.html
-      output: web
-    - title:  Cancellation of deletion of the used value from the directory
-      title_ru: Отмена удаления используемого значения из справочника
-      url: /fo_delete-cancel.html
-      output: web
-    - title: Example of using a business server
-      title_ru: Пример использования бизнес-сервера
-      url: /fo_bs-example.html
-      output: web
-
-  - title: Монитор SQL-запросов
-    output: web, pdf
-    folderitems:
-    - title: Business task monitor
-      title_ru: Монитор задач
-      url: /fo_business-task-monitor.html
-      output: web
-    - title: Service for writing SQL-scripts for data changes
-      title_ru: Сервис записи SQL-скриптов изменения данных
-      url: /fo_changes-sql-bt-monitor.html
-      output: web
-    - title: Creating and Connecting a Task Monitor
-      title_ru: Создание и подключение монитора задач
-      url: /fo_creating-connection-bt-monitor.html
-      output: web
-  
-  - title: Сервис текущего пользователя
-    output: web, pdf
-    folderitems:
-    - title: Current User Service
-      title_ru: Сервис текущего пользователя
-      url: /fo_current-user-service.html
-      output: web
-
-  - title: Dependency Injection
-    output: web, pdf
-    folderitems:
-    - title: Default data service
-      title_ru: Сервис данных по умолчанию
-      url: /fo_ds-provider.html
-      output: web
-    - title: Flexberry UnityFactory
-      title_ru: Flexberry UnityFactory
-      url: /fo_unity-factory.html
-      output: web
-  
-  - title: Сервис блокировок
-    output: web, pdf
-    folderitems:
-    - title: Locking service
-      title_ru: Сервис блокировок
-      url: /fo_lock-service.html
-      output: web
-    - title: Data object locking
-      title_ru: Блокирование объекта данных
-      url: /fo_blocking-object-data.html
       output: web
 
   - title: Объектная модель
@@ -518,142 +350,7 @@ entries:
       title_ru: Пример использования собственных типов
       url: /fo_using-custom-types-example.html
       output: web
-
-  - title: Модуль для Flexberry Designer
-    output: web, pdf
-    folderitems:
-    - title: Generic methods in Flexberry Designer
-      title_ru: Генерик-методы в Flexberry Designer
-      url: /fo_generic-methods.html
-      output: web
-    - title: Create a class diagram for the database
-      title_ru: Создание диаграммы классов по базе данных
-      url: /fo_reverse-data-base.html
-      output: web
-    - title: Generate documentation on charts
-      title_ru: Генерация документации по диаграммам
-      url: /fo_doc-gen.html
-      output: web
-    - title: Plugin for generating XSD schema
-      title_ru: XMLSchemaGenerator Features
-      url: /fo_xml-schema-generator.html
-      output: web
-    - title: Generating application code using uml models
-      title_ru: Генерации кода приложения по uml-моделям
-      url: /fo_orm-case-plugin.html
-      output: web
-    - title: Functions of creating a backup and history of changes
-      title_ru: Функции создания бэкапа и истории изменений
-      url: /fo_history-plugin.html
-      output: web
-    - title: Search function
-      title_ru: Функция поиска
-      url: /fo_intelli-search-plugin.html
-      output: web
-    - title: Location of assemblies after code generation
-      title_ru: Расположение сборок после генерации кода
-      url: /fo_location-assembly.html
-      output: web
-    - title: Move or copy function
-      title_ru: Функция перемещения или копирования
-      url: /fo_move-case-plugin.html
-      output: web
-    - title: Brackets of the programmer
-      title_ru: Скобки программиста
-      url: /fo_programmer-brackets.html
-      output: web
                 
-  - title: Функции ограничения
-    output: web, pdf
-    folderitems:
-    - title: Функции ограничения (Limit Function)
-      url: /fo_limit-function.html
-      output: web
-
-    - title: Сериализация LimitFunction
-      url: /fo_limit-function-serialization.html
-      output: web
-
-    - title: Описание переменных при построении функций ограничения
-      url: /fo_variable-def.html
-      output: web
-
-    - title: Ограничение на детейлы с использованием свойств агрегатора
-      url: /fo_limit-details-by-agregators-prop.html
-      output: web
-
-    - title: Преобразование функции ограничения в linq-ограничение
-      url: /fo_lcs-to-linq.html
-      output: web
-
-    - title: Пример наложения ограничений на загрузку объектов
-      url: /fo_load-limitation-example.html
-      output: web
-
-    - title: Фильтрация и ограничение выборки данных
-      url: /fo_limitation.html
-      output: web
-
-    - title: Чтение объектов с наложенным ограничением
-      url: /fo_load-by-limit.html
-      output: web
-
-    - title: LINQPad
-      url: /fo_linq-pad.html
-      output: web
-
-    - title: Возможности LinqProvider
-      url: /fo_linq-provider-faetures.html
-      output: web
-
-    - title: Псевдодетейлы в LinqProvider
-      url: /fo_psedo-details-in-linq-provider.html
-      output: web
-
-    - title: LINQProvider
-      url: /fo_linq-provider.html
-      output: web
-
-  - title: Представления
-    output: web, pdf
-    folderitems:
-    - title: Как проверить, удовлетворяет ли некоторый объект представлению
-      url: /fo_test-object-for-viewing.html
-      output: web
-
-    - title: Операции с представлениями
-      url: /fo_view-operations.html
-      output: web
-
-    - title: Пример работы с представлениями
-      url: /fo_work-with-views-example.html
-      output: web
-
-    - title: Статические свойства для доступа к представлениям класса
-      url: /fo_static-view-accessors.html
-      output: web
-
-    - title: Чтение принадлежащих различным классам объектов в одном представлении
-      url: /fo_reading-several-types-objects.html
-      output: web
-
-    - title: ViewPropertyAppender
-      url: /fo_view-property-appender.html
-      output: web
-
-  - title: Flexberry ORM ODataService
-    output: web, pdf
-    folderitems:
-    - title: Flexberry ORM ODataService
-      title_ru: Flexberry ORM ODataService
-      url: /fo_orm-odata-service.html
-      output: web
-
-    - title: Configuring ODataService with several types of data services
-      title_ru: Настройка ODataService с несколькими типами сервисов данных
-      url: /fo_multiple-data-services-in-odata.html
-      output: web
-
   - title: Язык запросов
     output: web, pdf
     folderitems:
@@ -757,6 +454,304 @@ entries:
       title_ru: Чтение объектов с наложенным ограничением
       url: /fo_load-by-limit.html
       output: web
-    
+      
+    - title: Функции ограничения (Limit Function)
+      url: /fo_limit-function.html
+      output: web
 
+    - title: Сериализация LimitFunction
+      url: /fo_limit-function-serialization.html
+      output: web
+
+    - title: Описание переменных при построении функций ограничения
+      url: /fo_variable-def.html
+      output: web
+
+    - title: Ограничение на детейлы с использованием свойств агрегатора
+      url: /fo_limit-details-by-agregators-prop.html
+      output: web
+
+    - title: Преобразование функции ограничения в linq-ограничение
+      url: /fo_lcs-to-linq.html
+      output: web
+
+    - title: Пример наложения ограничений на загрузку объектов
+      url: /fo_load-limitation-example.html
+      output: web
+
+    - title: Фильтрация и ограничение выборки данных
+      url: /fo_limitation.html
+      output: web
+
+    - title: Чтение объектов с наложенным ограничением
+      url: /fo_load-by-limit.html
+      output: web
+
+    - title: LINQPad
+      url: /fo_linq-pad.html
+      output: web
+
+    - title: Возможности LinqProvider
+      url: /fo_linq-provider-faetures.html
+      output: web
+
+    - title: Псевдодетейлы в LinqProvider
+      url: /fo_psedo-details-in-linq-provider.html
+      output: web
+
+    - title: LINQProvider
+      url: /fo_linq-provider.html
+      output: web
+
+  - title: Представления
+    output: web, pdf
+    folderitems:
+    - title: Как проверить, удовлетворяет ли некоторый объект представлению
+      url: /fo_test-object-for-viewing.html
+      output: web
+
+    - title: Операции с представлениями
+      url: /fo_view-operations.html
+      output: web
+
+    - title: Пример работы с представлениями
+      url: /fo_work-with-views-example.html
+      output: web
+
+    - title: Статические свойства для доступа к представлениям класса
+      url: /fo_static-view-accessors.html
+      output: web
+
+    - title: Чтение принадлежащих различным классам объектов в одном представлении
+      url: /fo_reading-several-types-objects.html
+      output: web
+
+    - title: ViewPropertyAppender
+      url: /fo_view-property-appender.html
+      output: web
+     
+  - title: Бизнес-серверы
+    output: web, pdf
+    folderitems:
+    - title: Business servers and wrappers
+      title_ru: Бизнес-серверы и обёртки
+      url: /fo_bs-wrapper.html
+      output: web
+    - title: Business logic
+      title_ru: Бизнес-логика
+      url: /fo_business-logic.html
+      output: web
+    - title: Order of calls of business servers
+      title_ru: Порядок вызовов бизнес-серверов
+      url: /fo_order-calls-bs.html
+      output: web
+    - title: Checking the validity of changes to object data in the business server
+      title_ru: Проверка валидности изменений данных объекта в бизнес-сервере
+      url: /fo_change-data-check.html
+      output: web
+    - title: Updating multiple objects with a single transaction
+      title_ru: Обновление нескольких объектов одной транзакцией
+      url: /fo_bs-transact.html
+      output: web
+    - title: Checking the uniqueness of the entered data in the business server
+      title_ru: Проверка уникальности введенных данных в бизнес-сервере
+      url: /fo_unique-data-check.html
+      output: web
+    - title: Cascading deletion of objects
+      title_ru: Каскадное удаление объектов
+      url: /fo_cascade-delete.html
+      output: web
+    - title: IReferencesCascadeDelete
+      title_ru: IReferencesCascadeDelete
+      url: /fo_i-references-cascade-delete.html
+      output: web
+    - title: IReferencesNullDelete
+      title_ru: IReferencesNullDelete
+      url: /fo_i-references-null-delete.html
+      output: web
+    - title:  Cancellation of deletion of the used value from the directory
+      title_ru: Отмена удаления используемого значения из справочника
+      url: /fo_delete-cancel.html
+      output: web
+    - title: Example of using a business server
+      title_ru: Пример использования бизнес-сервера
+      url: /fo_bs-example.html
+      output: web
+
+  - title: Модуль для Flexberry Designer
+    output: web, pdf
+    folderitems:
+    - title: Generic methods in Flexberry Designer
+      title_ru: Генерик-методы в Flexberry Designer
+      url: /fo_generic-methods.html
+      output: web
+    - title: Create a class diagram for the database
+      title_ru: Создание диаграммы классов по базе данных
+      url: /fo_reverse-data-base.html
+      output: web
+    - title: Generate documentation on charts
+      title_ru: Генерация документации по диаграммам
+      url: /fo_doc-gen.html
+      output: web
+    - title: Plugin for generating XSD schema
+      title_ru: XMLSchemaGenerator Features
+      url: /fo_xml-schema-generator.html
+      output: web
+    - title: Generating application code using uml models
+      title_ru: Генерации кода приложения по uml-моделям
+      url: /fo_orm-case-plugin.html
+      output: web
+    - title: Functions of creating a backup and history of changes
+      title_ru: Функции создания бэкапа и истории изменений
+      url: /fo_history-plugin.html
+      output: web
+    - title: Search function
+      title_ru: Функция поиска
+      url: /fo_intelli-search-plugin.html
+      output: web
+    - title: Location of assemblies after code generation
+      title_ru: Расположение сборок после генерации кода
+      url: /fo_location-assembly.html
+      output: web
+    - title: Move or copy function
+      title_ru: Функция перемещения или копирования
+      url: /fo_move-case-plugin.html
+      output: web
+    - title: Brackets of the programmer
+      title_ru: Скобки программиста
+      url: /fo_programmer-brackets.html
+      output: web
+      
+  - title: Flexberry ORM ODataService
+    output: web, pdf
+    folderitems:
+    - title: Flexberry ORM ODataService
+      title_ru: Flexberry ORM ODataService
+      url: /fo_orm-odata-service.html
+      output: web
+
+    - title: Configuring ODataService with several types of data services
+      title_ru: Настройка ODataService с несколькими типами сервисов данных
+      url: /fo_multiple-data-services-in-odata.html
+      output: web
+
+  - title: Монитор SQL-запросов
+    output: web, pdf
+    folderitems:
+    - title: Business task monitor
+      title_ru: Монитор задач
+      url: /fo_business-task-monitor.html
+      output: web
+    - title: Service for writing SQL-scripts for data changes
+      title_ru: Сервис записи SQL-скриптов изменения данных
+      url: /fo_changes-sql-bt-monitor.html
+      output: web
+    - title: Creating and Connecting a Task Monitor
+      title_ru: Создание и подключение монитора задач
+      url: /fo_creating-connection-bt-monitor.html
+      output: web
+  
+  - title: Сервис текущего пользователя
+    output: web, pdf
+    folderitems:
+    - title: Current User Service
+      title_ru: Сервис текущего пользователя
+      url: /fo_current-user-service.html
+      output: web
+
+  - title: Dependency Injection
+    output: web, pdf
+    folderitems:
+    - title: Default data service
+      title_ru: Сервис данных по умолчанию
+      url: /fo_ds-provider.html
+      output: web
+    - title: Flexberry UnityFactory
+      title_ru: Flexberry UnityFactory
+      url: /fo_unity-factory.html
+      output: web
+  
+  - title: Сервис блокировок
+    output: web, pdf
+    folderitems:
+    - title: Locking service
+      title_ru: Сервис блокировок
+      url: /fo_lock-service.html
+      output: web
+    - title: Data object locking
+      title_ru: Блокирование объекта данных
+      url: /fo_blocking-object-data.html
+      output: web
+      
+  - title: Дополнительные возможности
+    output: web, pdf
+    folderitems:
+    - title: Additional loading data object
+      title_ru: Дочитка объекта данных
+      url: /fo_additional-loading.html
+      output: web
+    - title: Serializing and Deserializing Data Objects
+      title_ru: Сериализация и десериализация объектов данных
+      url: /fo_aggregating-function.html
+      output: web
+    - title: Associating pictures with data classes
+      title_ru: Ассоциирование картинок с классами данных
+      url: /fo_class-image.html
+      output: web
+    - title: Code Examples
+      title_ru: Примеры кода
+      url: /fo_code-samples.html
+      output: web
+    - title: Example of custom names for structures in a database
+      title_ru: Пример пользовательских наименований для структур в БД
+      url: /fo_custom-naming-db-structures.html
+      output: web
+    - title: Dynamic Properties
+      title_ru: Динамические свойства объекта
+      url: /fo_dynamic-properties.html
+      output: web
+    - title: Flexberry ORM Libraries
+      title_ru: Библиотеки Flexberry ORM
+      url: /fo_flexberry-orm-libraries.html
+      output: web
+    - title: Custom control as LookUp
+      title_ru: Произвольный контрол в качестве лукапа
+      url: /fo_custom-lookup.html
+      output: web
+    - title: Features of determining the load of properties
+      title_ru: Особенности определения загруженности свойств
+      url: /fo_definition-loaded-properties.html
+      output: web
+    - title: ISpecialEmptyValue
+      title_ru: ISpecialEmptyValue
+      url: /fo_i-special-empty-value.html
+      output: web
+    - title: ICSSoft.STORMNET.Tools.XmlTools
+      title_ru: ICSSoft.STORMNET.Tools.XmlTools
+      url: /fo_ics-soft-stormnet-tools.html
+      output: web
+    - title: Interpreting the Boolean NULL Value
+      title_ru: Интерпретация булевского значения NULL
+      url: /fo_interpretation-boolean-null.html
+      output: web
+    - title: ICSSoft.STORMNET.KeyGen.KeyGuid class
+      title_ru: Класс ICSSoft.STORMNET.KeyGen.KeyGuid
+      url: /fo_key-guid.html
+      output: web
+    - title: Overloading of attributes, associations, methods
+      title_ru: Перегрузка атрибутов, ассоциаций, методов
+      url: /fo_overloading.html
+      output: web
+    - title: Reading objects belonging to different classes in one view
+      title_ru: Чтение принадлежащих различным классам объектов в одном представлении
+      url: /fo_reading-several-types-objects.html
+      output: web
+    - title: Flexberry LogService
+      title_ru: FFlexberry LogService
+      url: /fo_log-service-log4net.html
+      output: web
+    - title: Flexberry LogService Objects
+      title_ru: Flexberry LogService Objects
+      url: /fo_log-service-objects.html
+      output: web
     
