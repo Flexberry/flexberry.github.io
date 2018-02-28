@@ -355,7 +355,7 @@ entries:
     output: web, pdf
     folderitems:
     - title: Comparison functions
-      title_ru: Функции ограничения
+      title_ru: Функции сравнения
       url: /fo_compare-functions.html
       output: web
     - title: ExternalLangDef
@@ -414,6 +414,10 @@ entries:
       title_ru: FuncToChar
       url: /fo_func-to-char.html
       output: web
+    - title: SQLWhereLanguageDef
+      title_ru: SQLWhereLanguageDef
+      url: /fo_function-list.html
+      output: web
     - title: Function of implication
       title_ru: Функция импликации
       url: /fo_function-implication.html
@@ -454,53 +458,21 @@ entries:
       title_ru: Чтение объектов с наложенным ограничением
       url: /fo_load-by-limit.html
       output: web
-      
-    - title: Функции ограничения (Limit Function)
-      url: /fo_limit-function.html
-      output: web
-
-    - title: Сериализация LimitFunction
-      url: /fo_limit-function-serialization.html
-      output: web
-
-    - title: Описание переменных при построении функций ограничения
+    - title: Description of variables when constructing constraint functions
+      title_ru: Описание переменных при построении функций ограничения
       url: /fo_variable-def.html
       output: web
-
-    - title: Ограничение на детейлы с использованием свойств агрегатора
-      url: /fo_limit-details-by-agregators-prop.html
-      output: web
-
-    - title: Преобразование функции ограничения в linq-ограничение
-      url: /fo_lcs-to-linq.html
-      output: web
-
-    - title: Пример наложения ограничений на загрузку объектов
+    - title: An example of imposing restrictions on the loading of objects
+      title_ru: Пример наложения ограничений на загрузку объектов
       url: /fo_load-limitation-example.html
       output: web
-
-    - title: Фильтрация и ограничение выборки данных
-      url: /fo_limitation.html
+    - title: Psedodetails in LinqProvider
+      title_ru: Псевдодетейлы в LinqProvider
+      url: /fo_psedodetails-linq-provider.html
       output: web
-
-    - title: Чтение объектов с наложенным ограничением
-      url: /fo_load-by-limit.html
-      output: web
-
-    - title: LINQPad
-      url: /fo_linq-pad.html
-      output: web
-
-    - title: Возможности LinqProvider
-      url: /fo_linq-provider-faetures.html
-      output: web
-
-    - title: Псевдодетейлы в LinqProvider
-      url: /fo_psedo-details-in-linq-provider.html
-      output: web
-
-    - title: LINQProvider
-      url: /fo_linq-provider.html
+    - title: Creating your own functions when using LanguageDef
+      title_ru: Создание собственных функций при использовании LanguageDef
+      url: /fo_using-languagedef.html
       output: web
 
   - title: Представления
