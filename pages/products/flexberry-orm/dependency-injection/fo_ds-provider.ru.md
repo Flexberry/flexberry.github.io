@@ -1,8 +1,8 @@
 ---
-title: Сервис данных по умолчанию
+title: Получение сервиса данных
 sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, сервис данных
-summary: Алгоритм инициализации сервиса данных
+keywords: Dataserviceprovider, DataService, connectionstring, config, app.config, web.config
+summary: Как настроить сервис данных и получить его инстанцию из любого места приложения
 toc: true
 permalink: ru/fo_ds-provider.html
 lang: ru
