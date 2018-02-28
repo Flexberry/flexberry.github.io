@@ -3,9 +3,8 @@
 topnav:
 - title: Topnav
   items:
-    - title: News
-      title_ru: Новости
-      url: /news
+    - title: flexberry.net
+      url: http://flexberry.net
 
 #Topnav dropdowns
 topnav_dropdowns:
@@ -73,14 +72,11 @@ topnav_dropdowns:
         - title: Practical guides
           title_ru: Практические руководства
           url: /gpg_landing-page.html
-    - title: API
-      folderitems:
-        - title: Release
-          full_url: /master
-        - title: Beta
-          full_url: /develop
     - title: GitHub Repos
       folderitems:
+        - title: All repositories
+          title_ru: Все репозитории        
+          external_url: https://github.com/flexberry/
         - title: ember-flexberry
           external_url: https://github.com/flexberry/ember-flexberry
         - title: ember-flexberry-data
@@ -93,6 +89,10 @@ topnav_dropdowns:
           external_url: https://github.com/flexberry/Leaflet-WFST
         - title: Leaflet.Editable.Measures
           external_url: https://github.com/Flexberry/Leaflet.Editable.Measures
+        - title: NewPlatform.Flexberry.ORM
+          external_url: https://github.com/Flexberry/NewPlatform.Flexberry.ORM
+        - title: NewPlatform.Flexberry.ORM.ODataService
+          external_url: https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService
 
 topnav_langs:
 - title: Language
