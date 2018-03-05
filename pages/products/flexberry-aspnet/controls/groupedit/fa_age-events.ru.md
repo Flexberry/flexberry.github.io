@@ -99,7 +99,7 @@ public class WGEEventArgs : CancelEventArgs
 ```javascript
 /**
 * Если добавлена новая строка в АГЕ, сразу назначим limit function.
-* @param {int} row Номер добавленной строки.
+* @param  {Element} row Элемент добавленой строки в DOM.
 */
 $('#<%=ctrlCompanyEmployee.ClientID%>').on('rowadded.ajaxgroupedit', function(row) {
     $('[id$=ctrlCompany]', row).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
