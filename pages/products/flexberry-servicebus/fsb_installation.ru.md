@@ -35,8 +35,8 @@ $client.DownloadFile("$downloadPath/stop-flexberry-service-bus.cmd", "$pwd\stop-
 ### Проверка успешности запуска шины
 * В PowerShell консоли нужно ввести "docker ps", в результате будет выдан список запущенных docker образов (среди них должны быть flexberry-service-bus-postgres-db, flexberry-service-bus-editor и flexberry-service-bus).
 * Административное приложение с конфигурацией по умолчанию доступно по адресу <http://localhost:1818>. Логин и пароль: `admin`, `admin` (при переходе на промышленную эксплуатацию обязательно нужно сменить).
-* WCF-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7075/HighwaySBMonoPostgreSQLWcfService>.
-* REST-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7085/HighwaySBMonoPostgreSQLWebApiService>.
+* WCF-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7075/WcfService>.
+* REST-интерфейс шины с конфигурацией по умолчанию: <http://localhost:7085/RestService>.
 
 ### Дальнейшие действия с шиной
 * [Разработка адаптера для шины](fsb_adapters.html)
