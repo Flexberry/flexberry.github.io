@@ -40,7 +40,7 @@ public class WGEEventArgs : CancelEventArgs
 
 ## Обработка событий AGE
 
-### Событие `rowdeleting`
+### Событие rowdeleting
 
 Возникает при удалении строки в [AGE](fa_ajax-group-edit.html).
 Вызов триггера при удалении строки в [AGE](fa_ajax-group-edit.html):
@@ -65,7 +65,7 @@ public class WGEEventArgs : CancelEventArgs
 </asp:Content>
 ```
 
-## Событие `rowdeleted`. 
+### Событие rowdeleted
 
 Возникает после удалении строки в AGE.  
 Вызов триггера после удаления строки в [AGE](fa_ajax-group-edit.html):
@@ -88,6 +88,22 @@ public class WGEEventArgs : CancelEventArgs
             });
     </script>
 </asp:Content>
+```
+
+### Событие rowadded
+
+Возникает в момент добавления новой строки в AGE. Может использоваться для операций со строками AGE в момент их добавления в список [детейлов](fd_d-view.html).
+
+Например, для наложения ограничения на строки.
+
+```javascript
+/**
+* Если добавлена новая строка в АГЕ, сразу назначим limit function.
+* @param {int} row Номер добавленной строки.
+*/
+$('#<%=ctrlCompanyEmployee.ClientID%>').on('rowadded.ajaxgroupedit', function(row) {
+    $('[id$=ctrlCompany]', row).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
+});
 ```
 
 ## Методы
@@ -115,7 +131,7 @@ public class WGEEventArgs : CancelEventArgs
 </asp:Content>
 ```
 
-### Получение количества видимых строк в списке - `getDataRows`
+### Получение количества видимых строк в списке - getDataRows
 
 ```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
@@ -145,7 +161,7 @@ public class WGEEventArgs : CancelEventArgs
 </asp:Content>
 ```
 
-### Настройка LinkedLookUp в AGE - `addDependedLookups`
+### Настройка LinkedLookUp в AGE - addDependedLookups
 
 ```xml
 <asp:Content ID="Content2" ContentPlaceHolderID="TestContentPlaceHolder" runat="server">
