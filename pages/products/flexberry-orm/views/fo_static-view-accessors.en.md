@@ -1,7 +1,8 @@
 ---
 title: Статические свойства для доступа к представлениям класса
 sidebar: flexberry-orm_sidebar
-keywords: DataObject (объекты данных), Flexberry ORM, Public, View (представление)
+keywords: Flexberry ORM,  DataObject, View
+summary:
 toc: true
 permalink: en/fo_static-view-accessors.html
 lang: en

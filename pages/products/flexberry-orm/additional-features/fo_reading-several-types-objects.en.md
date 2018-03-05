@@ -29,4 +29,4 @@ lcs.LoadingTypes=new Type[]{typeof(CDDD), typeof(CDDA)};
 
 Пример доступен по адресу: [на GitHub](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs).
 
-Для решения противоположной задачи, а именно, для вычитки объектов-наследников по более широкому набору свойств, нежели у предков, могут использоваться [адаптивные представления](fo_adaptive-views-for-details.html).
+Для решения противоположной задачи, а именно, для вычитки объектов-наследников по более широкому набору свойств, нежели у предков, могут использоваться [адаптивные представления](fo_adaptive-views-details.html).

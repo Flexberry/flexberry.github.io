@@ -486,16 +486,18 @@ entries:
       url: /fo_view-operations.html
       output: web
 
-    - title: Пример работы с представлениями
-      url: /fo_work-with-views-example.html
+    - title: An example of advanced work with views
+      title_ru: Пример продвинутой работы с представлениями
+      url: /fo_advanced-working-with-views.html
       output: web
 
     - title: Статические свойства для доступа к представлениям класса
       url: /fo_static-view-accessors.html
       output: web
 
-    - title: Чтение принадлежащих различным классам объектов в одном представлении
-      url: /fo_reading-several-types-objects.html
+    - title: Adaptive representations for details
+      title_ru: Адаптивные представления для детейлов
+      url: /fo_adaptive-views-details.html
       output: web
 
     - title: ViewPropertyAppender

@@ -42,7 +42,7 @@ lang: en
 
 В связи с наследованием представлений:
 * Особым образом настраивается [чтение принадлежащих различным классам объектов в одном представлении](fo_reading-several-types-objects.html)
-* Реализованы [адаптивные представления](fo_adaptive-views-for-details.html).
+* Реализованы [адаптивные представления](fo_adaptive-views-details.html).
 
 ### Задание представлений
 
@@ -68,7 +68,7 @@ lang: en
 	* Заголовок на форме;
 	* Видимость на форме;
 	* Имена агрегирующих функций, доступных пользователю из данного представления;
-	* Должно ли представление быть [адаптивным (UseAdaptiveViewsLoading)](fo_adaptive-views-for-details.html).
+	* Должно ли представление быть [адаптивным (UseAdaptiveViewsLoading)](fo_adaptive-views-details.html).
 
 * `MasterViewDefineAttribute` — дополнительно настраивает мастера в представлении [шапки](fd_key-concepts.html), можно указать:
 	* Тип выбора (lookup type) мастерового объекта;

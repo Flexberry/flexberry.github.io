@@ -1,18 +1,21 @@
 ---
 title: Пример продвинутой работы с представлениями
 sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Черновик статьи
+keywords: Flexberry ORM, представления
+summary: Динамическое создание представлений, операции с прдставлениями
 toc: true
 permalink: ru/fo_advanced-working-with-views.html
 ---
 
-**Вы можете создать [представление](fd_view-definition.html) динамически.**
+## Динамическое создание представлений
 
-Если вам нужно создать [представление](fd_view-definition.html) "в коде", "на лету", тогда используйте один из следующих вариантов:
+[Представление](fd_view-definition.html) можно создать динамически.
 
-1. Создать [представление](fd_view-definition.html), используя конструктор по умолчанию, затем заполнить необходимые свойства
+Если нужно создать представление "в коде", "на лету", то подойдет один из следующих вариантов:
 
-```cs
+1. Создать представление, используя конструктор по умолчанию, затем заполнить необходимые свойства
+
+```csharp
 // Создать пустое представление.
 ICSSoft.STORMNET.View dynaview = new ICSSoft.STORMNET.View();
 
@@ -29,17 +32,19 @@ dynaview.AddMasterInView("Publisher");
 // Также вы можете использовать метод dynaview.AddDetailInView для связывания этого представления с детейловыми представлениями.
 ```
 
-2. Создать динамическое [представление](fd_view-definition.html) с помощью ViewAttribute
+2. Создать динамическое представление с помощью ViewAttribute
 
-```cs
+```csharp
 ICSSoft.STORMNET.View dynaview1 = new ICSSoft.STORMNET.View(
     new ViewAttribute("DynaView", new string[] { "Name", "Publisher.Name" }), 
     typeof(CDDA));
 ```
 
-**[Операции с представлениями](fo_view-operations.html). Каждое представление выступает как набор свойств.**
+## Операции с представлениями 
 
-```cs
+Каждое представление выступает как [набор свойств](fo_view-operations.html).
+
+```csharp
 ICSSoft.STORMNET.View view1 = new ICSSoft.STORMNET.View(
     new ViewAttribute("DynaView1", new string[] { "Name", "Publisher.Name" }), 
     typeof(CDDA));
