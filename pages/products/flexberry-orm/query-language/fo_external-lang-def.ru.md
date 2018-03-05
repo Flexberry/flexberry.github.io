@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения, ExternalLangDef
 summary: Возможности, используемые функции и параметры ExternalLangDef
 toc: true
 permalink: ru/fo_external-lang-def.html
+lang: ru
 ---
 
 `ExternalLangDef` является расширением базового функционального языка [SQLWhereLanguageDef](fo_function-list.html).

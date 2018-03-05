@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Параметры и пример использования функции FuncIsNull
 toc: true
 permalink: ru/fo_func-is-null.html
+lang: ru
 ---
 
 `FuncIsNull` - функция, аналогичная проверке на null в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

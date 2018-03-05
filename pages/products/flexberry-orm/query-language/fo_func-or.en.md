@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Parameters and an example of using the function FuncOR
 toc: true
 permalink: en/fo_func-or.html
+lang: en
 ---
 
 `FuncOR` - функция, аналогичная логическому "ИЛИ" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

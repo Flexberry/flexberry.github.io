@@ -5,6 +5,7 @@ keywords: Flexberry ORM, ограничения, funcG,  funcGEQ, funcL, funcLEQ
 summary: Building expressions with comparison functions
 toc: true
 permalink: en/fo_compare-functions.html
+lang: en
 ---
 
 `FuncL` - функция, аналогичная сравнению "меньше" в SQL, в конструкторе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

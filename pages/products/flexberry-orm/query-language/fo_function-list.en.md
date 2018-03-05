@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Правила наложения ограничений на вычитываемые объекты
 toc: true
 permalink: en/fo_function-list.html
+lang: en
 ---
 
 `SQLWhereLanguageDef` - класс-построитель [функций для наложения ограничений](fo_limit-function.html) на вычитываемые объекты.

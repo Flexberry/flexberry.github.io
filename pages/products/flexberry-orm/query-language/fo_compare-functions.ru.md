@@ -5,6 +5,7 @@ keywords: Flexberry ORM, ограничения, funcG,  funcGEQ, funcL, funcLEQ
 summary: Построение выражений с функциями сравнения
 toc: true
 permalink: ru/fo_compare-functions.html
+lang: ru
 ---
 
 ## Функции сравнения

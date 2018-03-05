@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Параметры и пример использования функции FuncSQL
 toc: true
 permalink: ru/fo_func-sql.html
+lang: ru
 ---
 
 `FuncSQL` - функция в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html), позволяющая выполнять вставки SQL.

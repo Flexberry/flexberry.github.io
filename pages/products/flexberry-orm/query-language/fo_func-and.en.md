@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Parameters and an example of using the function FuncAND
 toc: true
 permalink: en/fo_func-and.html
+lang: en
 ---
 
 `FuncAND` - функция, аналогичная логическому "И" в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

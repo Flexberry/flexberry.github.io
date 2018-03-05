@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Параметры и пример использования функции FuncNOT
 toc: true
 permalink: ru/fo_func-not.html
+lang: ru
 ---
 
 `FuncNot` - функция, аналогичная отрицанию в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

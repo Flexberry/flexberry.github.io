@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Functions funcExist, funcExistExact, funcExistAll, funcExistAllExact, funcExistDetails
 toc: true
 permalink: en/fo_exist-details.html
+lang: en
 ---
 
 ## Описание и ключевые различия функций

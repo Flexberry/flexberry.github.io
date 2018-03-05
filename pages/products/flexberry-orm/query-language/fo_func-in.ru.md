@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Public, Ограничения
 summary: Параметры и пример использования функции FuncIN
 toc: true
 permalink: ru/fo_func-in.html
+lang: ru
 ---
 
 `FuncIN` - функция, аналогичная сравнению на равенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

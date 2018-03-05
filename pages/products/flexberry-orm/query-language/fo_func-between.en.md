@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Parameters and an example of using the function FuncBETWEEN
 toc: true
 permalink: en/fo_func-between.html
+lang: en
 ---
 
 `FuncBETWEEN` - функция, аналогичная проверке на попадание элемента в диапазон значений в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

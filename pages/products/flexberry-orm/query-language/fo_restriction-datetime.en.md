@@ -5,6 +5,7 @@ keywords: Flexberry ORM, restriction, ExternalLangDef
 summary: Rules for the formation of restrictions for the year, month, day, hour, minute, specific date, time and day of the week, the parameters used
 toc: true
 permalink: en/fo_restriction-datetime.html
+lang: en
 ---
 
 ## Ограничения на части даты

@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Разработка языка задания ограничений
 toc: true
 permalink: ru/fo_using-languagedef.html
+lang: ru
 ---
 
 Существуют стандартные "построители" функций для наложения ограничений, [SQLWhereLanguageDef](fo_function-list.html) и [ExternalLangDef](fo_external-lang-def.html). 

@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Parameters and an example of using the function FuncLike
 toc: true
 permalink: en/fo_func-like.html
+lang: en
 ---
 
 `FuncLike` - функция, аналогичная проверке на вхождение подстроки в другую строку в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).

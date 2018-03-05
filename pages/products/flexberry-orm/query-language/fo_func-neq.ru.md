@@ -5,6 +5,7 @@ keywords: Flexberry ORM, Ограничения
 summary: Параметры и пример использования функции FuncLike
 toc: true
 permalink: ru/fo_func-neq.html
+lang: ru
 ---
 
 `FuncNEQ` - функция, аналогичная сравнению на неравенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
