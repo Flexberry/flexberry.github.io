@@ -4,7 +4,6 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_modal-window-settings.html
-folder: products/ember-flexberry/controls/lookup/
 lang: ru
 summary: Представлены основные возможности настройки по настройке поднимаемой по лукапу формы.
 ---
@@ -39,9 +38,8 @@ lookupSettings: {
 
 ## Настройка размера
 
-`modalWindowWidth` - это ширина открываемого по лукапу модального окна.
-
-`modalWindowHeight` - это ширина открываемого по лукапу модального окна.
+* `modalWindowWidth` - это ширина открываемого по лукапу модального окна.
+* `modalWindowHeight` - это высота открываемого по лукапу модального окна.
 
 Если требуется изменить размер открываемого по лукапу модального окна, то можно переопределить заданные по умолчанию значения.
 
@@ -64,4 +62,37 @@ lookupSettings: {
 
 ![](/images/pages/img/page/EditFormTitle/lookuptitle.png)
 
+## Настройка фильтрации и количества элементов на странице
 
+Параметры настройки фильтраци и/или количества элементов на странице осуществляется через событие `getLookupFolvProperties` в контроллере формы:
+
+```javascript
+getLookupFolvProperties: function(options) {
+    //...
+
+    if (methodArgs.relationName === 'type') {
+    return {
+        filterButton: true,
+        filterByAnyWord: true,
+        enableFiltres: true,
+        refreshButton: true,
+        perPage: 25,
+      };
+    }
+
+    // ...
+}
+```
+
+{% include note.html content="Необходимо выбрать тип поиска (`filterByAnyWord` или `filterByAllWords`), так на lookup-форме использовать использовать можно только один из них." %}
+
+Далее указать событие в шаблоне настраевомого для LookUp списка:
+
+```hbs
+{% raw %}{{flexberry-lookup
+    // ...
+    lookupWindowCustomProperties=(action 'getLookupFolvProperties')
+}}{% endraw %}
+```
+
+Реализация отображена на [ember-стенде](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-lookup/customizing-window-example).

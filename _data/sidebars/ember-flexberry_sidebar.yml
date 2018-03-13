@@ -129,16 +129,6 @@ entries:
       url: /ef_lookup.html
       output: web, pdf
 
-    - title: Lookup autocomplete
-      title_ru: Автодополнение в лукапе
-      url: /ef_lookup-autocomplete.html
-      output: web, pdf
-
-    - title: Modal window settings
-      title_ru: Настройки формы лукапа
-      url: /ef_modal-window-settings.html
-      output: web, pdf
-
     - title: Groupedit
       url: /ef_groupedit.html
       output: web, pdf

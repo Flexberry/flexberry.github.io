@@ -83,34 +83,4 @@ _Для flexberry-simpleolve настройки аналогичны._
 
 ## Настройка списка, отображаемого в лукапе
 
-В [LookUp](ef_lookup.html) показывается компонент [flexberry-objectlistview](ef_object-list-view.html). Параметры для этого компонента можно задавать через событие `getLookupFolvProperties` в контроллере формы:
-
-```javascript
-getLookupFolvProperties: function(options) {
-    //...
-
-    if (methodArgs.relationName === 'type') {
-    return {
-        filterButton: true,
-        filterByAnyWord: true,
-        enableFiltres: true,
-        refreshButton: true
-      };
-    }
-
-    // ...
-}
-```
-
-{% include note.html content="Необходимо выбрать тип поиска (`filterByAnyWord` или `filterByAllWords`), так на lookup-форме использовать использовать можно только один из них." %}
-
-Далее указать событие в шаблоне настраевомого списка для LookUp:
-
-```hbs
-{% raw %}{{flexberry-lookup
-    // ...
-    lookupWindowCustomProperties=(action 'getLookupFolvProperties')
-}}{% endraw %}
-```
-
-Реализация отображена на [ember-стенде](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-lookup/customizing-window-example).
+В [LookUp](ef_lookup.html) показывается компонент [flexberry-objectlistview](ef_object-list-view.html). Параметры для этого компонента можно задавать через событие `getLookupFolvProperties` в контроллере формы. Данная настройка описана в статье [Настройка поднимаемой по лукапу формы](ef_modal-window-settings.html) в п. "Настройка фильтрации и количества элементов на странице".
