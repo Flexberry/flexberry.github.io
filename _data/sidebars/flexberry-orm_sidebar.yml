@@ -478,21 +478,9 @@ entries:
   - title: Представления
     output: web, pdf
     folderitems:
-    - title: Как проверить, удовлетворяет ли некоторый объект представлению
-      url: /fo_test-object-for-viewing.html
-      output: web
-
-    - title: Операции с представлениями
+    - title: Operations with views
+      title_ru: Операции с представлениями
       url: /fo_view-operations.html
-      output: web
-
-    - title: An example of advanced work with views
-      title_ru: Пример продвинутой работы с представлениями
-      url: /fo_advanced-working-with-views.html
-      output: web
-
-    - title: Статические свойства для доступа к представлениям класса
-      url: /fo_static-view-accessors.html
       output: web
 
     - title: Adaptive representations for details
@@ -501,9 +489,25 @@ entries:
       output: web
 
     - title: ViewPropertyAppender
+      title_ru: ViewPropertyAppender
       url: /fo_view-property-appender.html
       output: web
-     
+    
+    - title: Static properties for accessing class representations
+      title_ru: Статические свойства для доступа к представлениям класса  
+      url: /fo_static-view-accessors.html
+      output: web
+
+    - title: An example of working with views
+      title_ru: Пример работы с представлениями
+      url: /fo_work-with-views-example.html
+      output: web
+
+    - title: An example of advanced work with views
+      title_ru: Пример продвинутой работы с представлениями
+      url: /fo_advanced-working-with-views.html
+      output: web
+         
   - title: Бизнес-серверы
     output: web, pdf
     folderitems:
