@@ -90,3 +90,7 @@ entries:
       title_ru: Вариант 03
       url: /gt_flexberry-ember-case-03.html
       output: web
+    - title: Case 04
+      title_ru: Вариант 04
+      url: /gt_flexberry-ember-case-04.html
+      output: web
