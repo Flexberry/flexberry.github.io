@@ -133,31 +133,31 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-        class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            string s = "";
+            string adaptersCommand = "";
 
-            while (s != "exit")
+            while (adaptersCommand != "exit")
             {
                 Console.WriteLine("Enter your name (for exit type \"exit\"):");
 
-                s = Console.ReadLine();
+                adaptersCommand = Console.ReadLine();
 
-                if (s != "exit")
+                if (adaptersCommand != "exit")
                 {
                     using (var ServiceBus = new ServiceBus.ServiceBusServiceClient())
                     {
-                        // Создадим сообщение.
+                        // Ввести сообщение.
                         var message = new MessageForESB
                         {
                             ClientID = ConfigurationManager.AppSettings["ServiceID4SB"],
                             MessageTypeID = ConfigurationManager.AppSettings["MessageTypeID"],
-                            Body = "Hello from " + s + "!"
+                            Body = "Hello from " + adaptersCommand + "!"
                         };
 
-                        // И отправим его через шину.
+                        // Отправить сообщение через шину.
                         ServiceBus.SendMessageToESB(message);
 
                         ServiceBus.Close();
@@ -221,9 +221,123 @@ namespace ConsoleApp1
 
 Свойство "address" в секции `client` должно содержать адрес сервиса шины (см. пункт "Работа с административным приложением").
 
+## Пример создания клиента, принимающего сообщения
+
+#### Создать консольное приложение
+
+Консольное приложение для клиента, принимающего сообщения, создается по тому же алгоритму, что и для адаптера, отправляющего сообщения.
+
+#### Добавить ссылку на сервис шины в приложение
+
+* Нажать правой клавишей мыши на проект в `Solution Explorer`
+* В контекстном меню выберать пункт `Add Service Reference…`
+* В появившемся окне указать адрес сервиса шины и пространство имен (Namespace).
+* Нажать "OK"
+
+#### Написание кода адаптера
+
+Код файла `Program.cs` необходимо заменить [следующим](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/WCFAdapter/ConsoleApp3/ConsoleApp3/Program.cs):
+
+```csharp
+using ConsoleApp3.ServiceBus;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string adaptersCommand = "";
+
+            while (adaptersCommand != "exit")
+            {
+                using (var ServiceBus = new ServiceBus.ServiceBusServiceClient())
+                {
+                    string serviceID = ConfigurationManager.AppSettings["ServiceID4SB"];
+                    string messageTypeID = ConfigurationManager.AppSettings["MessageTypeID"];
+
+                    //Получить все адресованные сообщения (при запуске).
+                    MessageFromESB message = ServiceBus.GetMessageFromESB(serviceID, messageTypeID);
+                    Console.WriteLine(message.Body);
+
+                    // Получить новые сообщения/выйти из приложения.
+                    Console.WriteLine("Enter \"get\" for get a message (for exit type \"exit\"):");
+                    adaptersCommand = Console.ReadLine();
+
+                    while (message != null)
+                    {
+                        // Получить новый список сообщений через команду "get".
+                        message = ServiceBus.GetMessageFromESB(serviceID, messageTypeID);
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+{% include note.html content="`ConsoleApp3` в `using ConsoleApp3.ServiceBus;` - это название созданного приложения,  _ServiceBus_ - это пространство имен, указанное при подключении сервиса шины (в коде должно использоваться _заданное на предыдущем этапе_ пространство имен)." %}
+
+#### Дополнить конфигурационный файл
+
+* Открыть в `MS Visual Studio` в проекте созданного адаптера, отправляющего сообщения, файл `App.config`
+* Добавить [следующий код](https://github.com/Flexberry/NewPlatform.Flexberry.ServiceBus.Samples/blob/master/WCFAdapter/ConsoleApp3/ConsoleApp3/App.config):
+
+```xml
+  <appSettings>
+    <add key="ServiceID4SB" value="7"/>
+    <add key="MessageTypeID" value="4"/>
+  </appSettings>
+  <system.serviceModel>
+    <bindings>
+      <customBinding>
+        <binding name="WSHttpBinding_IServiceBusService">
+          <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+          <httpTransport />
+        </binding>
+        <binding name="WSHttpBinding_IServiceBusInterop">
+          <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+          <httpTransport />
+        </binding>
+        <binding name="WSHttpBinding_ICallbackSubscriber">
+          <textMessageEncoding messageVersion="Soap11WSAddressing10" />
+          <httpTransport />
+        </binding>
+      </customBinding>
+      <wsHttpBinding>
+        <binding name="WSHttpBinding_IServiceBusService">
+          <security mode="None"/>
+        </binding>
+      </wsHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:7075/WcfService"
+          binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IServiceBusService"
+          contract="ServiceBus.IServiceBusService" name="WSHttpBinding_IServiceBusService" />
+      <endpoint address="http://localhost:7075/WcfService"
+          binding="customBinding" bindingConfiguration="WSHttpBinding_IServiceBusInterop"
+          contract="ServiceBus.IServiceBusInterop" name="WSHttpBinding_IServiceBusInterop" />
+      <endpoint address="http://localhost:7075/WcfService"
+          binding="customBinding" bindingConfiguration="WSHttpBinding_ICallbackSubscriber"
+          contract="ServiceBus.ICallbackSubscriber" name="WSHttpBinding_ICallbackSubscriber" />
+    </client>
+  </system.serviceModel>
+```
+
+Для ключей `ServiceID4SB` (клиент) и `MessageTypeID` (сообщение) указать ключи из административного приложения.
+
+Свойство "address" в секции `client` должно содержать адрес сервиса шины (см. пункт "Работа с административным приложением").
+
 ## Пример создания клиента, принимающего сообщения с использованием ICallbackSubscriber
 
-Адаптер, использующий интерфейс `ICallbackSubscriber`, проверяет наличе отправленных на его адрес сообщений и передает принятое сообщение при его наличии в приложение-получатель.
+Адаптер, использующий интерфейс `ICallbackSubscriber`, проверяет наличе отправленных на его адрес сообщений и передает принятое сообщение при его наличии в приложение-получатель. Инициатором передачи сообщения является сам сервис шины.
 
 #### Создать консольное приложение
 
