@@ -33,5 +33,7 @@ entries:
     - title: Ember-CLI via Docker Image
       url: /fe_docker-for-ember-cli.html
       output: web
-
+    - title: Обновление Ember-CLI
+      url: /fe_update-ember-js.html
+      output: web
   
