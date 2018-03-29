@@ -18,7 +18,7 @@ summary: Представлены основные особенности лук
 
 Пусть у сущности `Подготовка` есть мастер `Редактор` типа `Пользователь`. Требуется настроить лукап по свойству `ExtendedName` мастера.
 
-## Настройка модели
+### Настройка модели
 
 [Модель](efd_model.html) `Подготовка` должна содержать ссылку на мастера. [Представление](efd_model-projection.html) для отображения формы, где будет расположен лукап, также должно включать описание мастера.
 
@@ -46,7 +46,7 @@ Model.defineProjection('ПользовательE', 'пользователь', 
 });
 ```
 
-## Настройка сериализаторов
+### Настройка сериализаторов
 
 В [сериализаторе](efd_serializer.html) `Подготовка` описываем ссылку на мастера.
 
@@ -68,7 +68,7 @@ export default ApplicationSerializer.extend({
 });
 ```
 
-## Настройка шаблона
+### Настройка шаблона
 
 На страницу редактирования класса `Подготовка` можно вставить конструкцию
 
@@ -79,9 +79,11 @@ export default ApplicationSerializer.extend({
     <span style="color:red">{{model.errors.редактор }}</span>
   {{/if}}
   {{flexberry-lookup
+    componentName="lookupUsers"
     choose='showLookupDialog'
     remove='removeLookupValue'
     value=model.редактор
+    relatedModel=model
     relationName='редактор'
     projection='ПользовательE'
   }}
@@ -100,6 +102,7 @@ export default ApplicationSerializer.extend({
 `removeButtonClass` | Определяет css-class на кнопку 'remove'.|
 `placeholder` | Определяет placeholder | t('flexberry-lookup.placeholder')
 `value` | Определяет выбранный экземпляр модели (мастеровой объект) |
+`relatedModel` | Определяет модель для которой будет редактироваться ссылка на мастеровой объект) |
 `relationName` | Определяет имя отношения  |
 `projection` | Определяет, по какому представлению будут отображаться мастера в списке |
 `sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small

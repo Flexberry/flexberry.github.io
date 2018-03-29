@@ -96,3 +96,37 @@ getLookupFolvProperties: function(options) {
 ```
 
 Реализация отображена на [ember-стенде](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-lookup/customizing-window-example).
+
+## Настройка иерархии
+
+В контроллере формы редактирования указать:
+
+```javascript
+export default EditFormController.extend({
+
+  // Активировать иерархию при загрузке lookup-формы.
+  init() {
+    this._super(...arguments);
+
+    this.set('lookupController.inHierarchicalMode', true);
+    this.set('lookupController.hierarchicalAttribute', 'parent');
+  },
+
+    // ...
+    getLookupFolvProperties: function(options) {
+      // ...
+
+      if (methodArgs.relationName === 'type') {
+        return {
+            // ...
+            disableHierarchicalMode: false,
+
+            // Активировать иерархию при загрузке lookup-формы.
+            inHierarchicalMode: true,
+            hierarchicalAttribute: 'Name' // Свойство, по которому осуществляется иерархия.
+        };
+      }
+
+     // ...
+});
+```
