@@ -17,7 +17,10 @@ summary: Экспорт данных из ODataService в Excel.
 * detSeparateRows - используется для установки свойства DetailsInSeparateRows
 
 Параметр exportExcel используется для перехода в режим экспорта в Excel.
-Пример строки запроса к ODataService: `http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название/НазваниеCAPTION&detSeparateCols=false&detSeparateRows=false&$filter=contains(Название,'1')`
+Пример строки запроса к ODataService:
+```
+http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название/НазваниеCAPTION&detSeparateCols=false&detSeparateRows=false&$filter=contains(Название,'1')
+```
 В строке запроса могут присутствовать любые другие параметры, которые необходимы в реализации интерфейсов экспорта данных в Excel - `IODataExportService` и `ISpreadsheetCustomizer`.
 
 ### Пример реализации интерфейса IODataExportService
