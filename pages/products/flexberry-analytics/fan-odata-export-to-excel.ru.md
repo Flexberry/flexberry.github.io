@@ -11,12 +11,12 @@ summary: Экспорт данных из ODataService в Excel.
 ## Экспорт данных из ODataService в Excel
 
 ### Параметры строки запроса к ODataService
+Включение режима экспорта в Excel происходит, если в строке запроса установлен параметр: `exportExcel=true`.
 В запросе на получение документа Excel в текущей реализации ODataService должны присутствовать следующие параметры для установки свойств в ExportParams:
 * colsOrder - используется для установки порядка колонок в свойствах PropertiesOrder и HeaderCaptions
 * detSeparateCols -  используется для установки свойства DetailsInSeparateColumns
 * detSeparateRows - используется для установки свойства DetailsInSeparateRows
 
-Параметр exportExcel используется для перехода в режим экспорта в Excel.
 Пример строки запроса к ODataService:
 ```
 http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название/НазваниеCAPTION&detSeparateCols=false&detSeparateRows=false&$filter=contains(Название,'1')
