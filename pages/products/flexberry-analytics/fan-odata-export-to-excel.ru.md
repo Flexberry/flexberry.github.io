@@ -21,7 +21,7 @@ summary: Экспорт данных из ODataService в Excel.
 ```
 http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название/НазваниеCAPTION&detSeparateCols=false&detSeparateRows=false&$filter=contains(Название,'1')
 ```
-В строке запроса могут присутствовать любые другие параметры, которые необходимы в реализации интерфейсов экспорта данных в Excel - `IODataExportService` и `ISpreadsheetCustomizer`.
+В строке запроса могут присутствовать любые другие параметры, которые необходимы в реализации интерфейсов экспорта данных в Excel - `IODataExportService` и `ISpreadsheetCustomizer`. [Тест с примером реализации данных интерфейсов](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService/tree/develop/Tests/NewPlatform.Flexberry.ORM.ODataService.Tests/CRUD/Read/Excel).
 
 ### Настройка файла конфигурации
 ```xml
