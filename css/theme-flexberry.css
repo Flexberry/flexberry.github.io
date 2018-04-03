@@ -1,6 +1,6 @@
 .summary {
     color: #808080;
-    border-left: 5px solid #ED1951;
+    border-left: 5px solid #9324db;
     font-size:16px;
 }
 
@@ -8,7 +8,7 @@
   color: #C5B64D;
 }
 
-h3 {color: #ED1951; }
+h3 {color: #9324db; }
 h4 {color: #808080; }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -25,7 +25,7 @@ h4 {color: #808080; }
 }
 
 div.navbar-collapse .dropdown-menu > li > a:hover {
-    background-color: #917eff;
+    background-color: #93047b;
 }
 
 .nav li.thirdlevel > a {
@@ -43,8 +43,8 @@ a[data-toggle] {
     color: #650f8b;
 }
 .navbar-inverse {
-    background-color: #5b4dc5;
-    border-color: #4336a8;
+    background-color: #93047b;
+    border-color: #4e1493;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
@@ -68,7 +68,7 @@ a[data-toggle] {
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    background-color: #917eff;
+    background-color: #93047b;
 }
 
 .btn-primary:hover,
