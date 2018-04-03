@@ -117,3 +117,16 @@ http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название
     }
 
 ```
+
+### Настройка файла конфигурации для базовой функциональности без использования дополнительных параметров запроса HTTP и без необходимости реализации интерфейсов экспорта данных в Excel - `IODataExportService` и `ISpreadsheetCustomizer`.
+```xml
+  <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
+    <container>
+        <register name="Export" type="NewPlatform.Flexberry.IExportService, ICSSoft.STORMNET.Business" mapTo="NewPlatform.Flexberry.Reports.ExportToExcel.ExportExcelODataService, NewPlatform.Flexberry.Reports.ExportToExcel">
+            <lifetime type="singleton" />
+        </register>
+    </container>
+    <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
+  </unity>
+```
+
