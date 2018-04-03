@@ -5,7 +5,7 @@
 }
 
 .text-primary {
-  color: #C5B64D;
+  color: #10c0de;
 }
 
 h3 {color: #9324db; }
@@ -43,7 +43,11 @@ a[data-toggle] {
     color: #650f8b;
 }
 .navbar-inverse {
-    background-color: #93047b;
+    background-color: #93047b; /* Old browsers */
+    background-color: -moz-linear-gradient(-45deg, #93047b 0%, #4e1493 100%); /* FF3.6-15 */
+    background-color: -webkit-linear-gradient(-45deg, #93047b 0%,#4e1493 100%); /* Chrome10-25,Safari5.1-6 */
+    background-color: linear-gradient(135deg, #93047b 0%,#4e1493 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93047b', endColorstr='#4e1493',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     border-color: #4e1493;
 }
 
