@@ -23,6 +23,18 @@ http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название
 ```
 В строке запроса могут присутствовать любые другие параметры, которые необходимы в реализации интерфейсов экспорта данных в Excel - `IODataExportService` и `ISpreadsheetCustomizer`.
 
+### Настройка файла конфигурации
+```xml
+  <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
+    <container>
+       <register type="NewPlatform.Flexberry.IODataExportService, ICSSoft.STORMNET.Business" mapTo="NewPlatform.Flexberry.ORM.ODataService.Tests.CRUD.Read.Excel.ExportExcel,NewPlatform.Flexberry.ORM.ODataService.Tests">
+        <lifetime type="singleton" />
+      </register>
+    </container>
+    <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
+  </unity>
+```
+
 ### Пример реализации интерфейса IODataExportService
 ```csharp
     /// <summary>
@@ -49,7 +61,7 @@ http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название
         }
     }
 ```
-### Пример реализации интерфейса IODataExportService
+### Пример реализации интерфейса ISpreadsheetCustomizer
 ```csharp
     /// <summary>
     /// Реализация интерфейса для обработки документа Excel.
