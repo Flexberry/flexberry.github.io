@@ -96,46 +96,17 @@ entries:
       url: /ef_controls.html
       output: web, pdf
 
-    - title: object-list-view
+    - title: List components
+      title_ru: Списковые компоненты
       url: /ef_object-list-view.html
-      output: web, pdf
-
-    - title: object-list-view columns resize
-      title_ru: Размер столбцов в OLV
-      url: /ef_olv-resize.html
-      output: web, pdf
-
-    - title: object-list-view toolbar
-      title_ru: Тулбар в OLV
-      url: /ef_olv-toolbar.html
-      output: web, pdf
-
-    - title: Button select all at list component
-      title_ru: Кнопка выделить все в списковых компонентах
-      url: /ef_list-component-select-all.html
-      output: web, pdf
-
-    - title: Search all attributes
-      title_ru: Поиск по всем атрибутам
-      url: /ef_search-attributes.html
-      output: web, pdf
-
-    - title: Configuring filters on lists
-      title_ru: Настройка фильтров на списках
-      url: /ef_configuring-filters.html
-      output: web, pdf
-
-    - title: Lookup
-      url: /ef_lookup.html
       output: web, pdf
 
     - title: Groupedit
       url: /ef_groupedit.html
       output: web, pdf
 
-    - title: Groupedit detail in route
-      title_ru: Groupedit с редактированием в роуте
-      url: /ef_groupedit-detail-in-route.html
+    - title: Lookup
+      url: /ef_lookup.html
       output: web, pdf
 
     - title: Computed properties in getCellComponent
