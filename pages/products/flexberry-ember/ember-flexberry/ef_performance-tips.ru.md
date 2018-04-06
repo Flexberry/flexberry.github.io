@@ -3,9 +3,9 @@ title: Производительность ember-приложений
 sidebar: ember-flexberry_sidebar
 keywords: performance, bottleneck, perforator, perf, hbs
 toc: true
-permalink: en/ef_performance-tips.html
-lang: en
-summary: Советы по проектированию и разработке с применением EmberJS, касающиеся производительности приложений.
+permalink: ru/ef_performance-tips.html
+lang: ru
+summary: Советы по проектированию и разработке с применением EmberJS, касающиеся производительности приложений
 ---
 
 ## Золотые правила разработки приложений на EmberJS

@@ -4,9 +4,8 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_ui-message.html
-folder: products/ember-flexberry/controls/
 lang: en
-summary: Представлено описание контрола для отображения сообщений о состоянии контента
+summary: Описание, свойства и пример использования
 ---
 
 ## Описание

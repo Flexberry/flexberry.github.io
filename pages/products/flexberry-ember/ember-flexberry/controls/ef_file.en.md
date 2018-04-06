@@ -4,14 +4,14 @@ sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_file.html
-folder: products/ember-flexberry/controls/
 lang: en
-summary: Description of ember-component implementing work with files
+summary: Description, settings of the address of loading and appearance, binding of components
 ---
 
 ## Описание
 
 Компонент `flexberry-file` предоставляет несколько возможностей:
+
 * Возможность выбора пользователем какого-либо файла на клиентском устройстве;
 * Возможность загрузки этого файла на сервер;
 * Возможность скачивания ранее загруженного файла с сервера, с последующим сохранением на клиентском устройстве;
@@ -19,12 +19,13 @@ summary: Description of ember-component implementing work with files
 
 Общий вид компонента, в случае, если текущая тема оформления "BlueSky":
 
-![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file.png)
 
 Компонент реализован под средства для работы с файлами имеющиеся в распоряжении OData-сервиса (читайте о них в статье ["Особенности работы с файлами через OData-сервис"](efd_work-files.html)).
 Далее будем считать, что средства работы с файлами в OData-сервисе уже сконфигурированы, и файловый контроллер доступен по адресу `<Адрес узла, на котором развернут OData-сервис>/api/File`.
 
 ## Настройка адреса для загрузки файлов на сервер
+
 Чтобы компонент `flexberry-file` мог загружать файлы на сервер, ему нужно, как минимум, знать URL для загрузки, под этот URL в компоненте предусмотрено свойство `uploadUrl`, в котором должен быть указан адрес файлового контроллера.
 Свойство `uploadUrl` можно сконфигурировать двумя способами:
 * Либо прямо в `hbs`-шаблоне:
@@ -51,6 +52,7 @@ summary: Description of ember-component implementing work with files
   ```
 
 ## Файловое свойство в ember-моделях и привязка компонента к нему
+
 Когда мы запрашиваем у OData-сервиса объект данных, содержащий в себе какое-либо файловое свойство, в качестве значения этого свойства OData-сервис всегда присылает не сам файл (т.к. вычитка объектов данных вместе с файлами длилась бы очень долго), а только сериализованное метаописание файла, которое имеет следующий вид:
 ```javascript
 {
@@ -90,36 +92,38 @@ export default BaseModel.extend({
 Свойство `relatedModel` так же необходимо указывать, оно должно ссылаться на модель, в которой содержится файловое свойство, чтобы при сохранении модели компонент `flexberry-file` смог сначала загрузить на сервер выбранный пользователем файл (если такой имеется).
 
 ## Настройки внешнего вида
+
 Компонент flexberry-file содержит несколько настроек позволяющих настраивать его внешний вид:
 * `showUploadButton` - флаг, показывающий нужно ли отображать отдельную кнопку загрузки файла на сервер или нет (по умолчанию имеет значение `false` т.к. загрузка файла происходит при сохранении модели из свойства `relatedModel` и потребности в отдельной кнопке - нет).
 
   Внешний вид с включенной кнопкой загрузки:
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file-show-upload-button-true.png)
+  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-upload-button-true.png)
 
 * `showDownloadButton` - флаг, показывающий нужно ли отображать отдельную кнопку скачивания файла с сервера или нет (по умолчанию имеет значение `true`).
 
   Внешний вид с выключенной кнопкой скачивания:
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file-show-download-button-false.png)
+  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-download-button-false.png)
 
 * `readonly` - флаг, показывающий находится ли компонент в режиме только для чтения (по умолчанию имеет значение `false`). В этом режиме скрыты кнопки выбора файла, удаления файла, загрузки файла на сервер, и нет возможности изменить или удалить файл, есть только возможность его скачать.
 
   Внешний вид в режиме только для чтения:
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file-readonly-true.png)
+  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-readonly-true.png)
 
 * `showPreview` - флаг, показывающий нужно ли отображать блок предпросмотра (по умолчанию имеет значение `false`, настройка актуальна для файлов изображений, в случае с файлами других типов блок предпросмотра будет пустым).
 
   Внешний вид с включенным блоком предпросмотра:
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file-show-preview-true.png)
+  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-preview-true.png)
 
   Если нажать блок предпросмтора, то будет открыт модальный диалог, в котором выбранный фал изображения будет отображен в своих реальных размерах без сжатия:
 
-   ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file-preview-dialog.png)
+   ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-preview-dialog.png)
 
    За открытие диалога отвечает `action` `flexberryFileViewImageAction`, который уже реализован в базовом контроллере форм редактирования, но если зачем-то захочется его переопределить, или выполнять какие-то другие действия по нажатию на блок предпросмотра, можно задать свой `action` через свойство компонента `viewImageAction`:
+
    ```hbs
    {% raw %}{{flexberry-file
      ...
@@ -129,12 +133,13 @@ export default BaseModel.extend({
    ```
 
 ## Настройки внешнего вида в мобильном представлении
+
 Компонент `flexberry-file` имеет специальное представление для мобильных устройств.
 
 В этом представлении компонент, в котором пользователем еще не выбран файл, выглядит как кнопка с надписью "Добавить файл" (эту надпись можно кастомизировать задав её через свойство `addButtonText` компонента):
 
-![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file-mobile-with-no-file.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-mobile-with-no-file.png)
 
 Когда пользователь выбрал какой-либо файл, компонент выглядит уже как кнопка с выпадающим меню и пунктами для замены файла, его загрузки, скачивания, и в случае, если файл является изображением, его увеличения:
 
-![](/images/pages/products/flexberry-ember/ember-flexberry/controls/ef_file/flexberry-file-mobile-with-selected-file.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-mobile-with-selected-file.png)

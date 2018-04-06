@@ -109,11 +109,6 @@ entries:
       url: /ef_lookup.html
       output: web, pdf
 
-    - title: Computed properties in getCellComponent
-      title_ru: Вычислимые свойства в getCellComponent
-      url: /ef_computed-properties-in-getcellcomponent.html
-      output: web, pdf
-
     - title: File
       url: /ef_file.html
       output: web, pdf
