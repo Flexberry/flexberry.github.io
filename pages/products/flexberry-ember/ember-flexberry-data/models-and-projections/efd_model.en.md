@@ -1,10 +1,9 @@
 ---
-title: Описание модели в ember-flexberry-приложении
+title: Description of the model in the ember-flexberry application
 sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/efd_model.html
-folder: products/ember-flexberry-data/models-and-projections/
 lang: en
 summary: Представлено детализированное описание того, как выглядит модель в приложении.
 ---
@@ -88,7 +87,27 @@ var Model = BaseModel.extend({
 
 Как называется соответствующее свойство на сервере, определяется в [сериализаторе](efd_serializer.html).
 
+### Тип первичного ключа
+
+Первичные ключи моделей в `ember`-приложениях всегда являются строками, но на сервере [это поведение можно изменить](fo_primary-keys-objects.html).
+При изменении типа первичного ключа на сервере, необходимо переопределить статическое свойство `idType` в классе модели:
+
+```javascript
+import { Projection } from 'ember-flexberry-data';
+
+let Model = Projection.Model.extend({
+  // ...
+});
+
+Model.reopenClass({
+  idType: 'string',
+});
+
+export default Model;
+``` 
+
 ## inverse-связи
+
 Задание [inverse-связи](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations) используется, например, при работе с детейлами.
 
 Задание связи от агрегатора к детейлу.
