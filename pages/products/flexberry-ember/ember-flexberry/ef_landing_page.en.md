@@ -4,23 +4,26 @@ keywords: mydoc
 sidebar: ember-flexberry_sidebar
 toc: false
 permalink: en/ef_landing_page.html
-folder: products/ember-flexberry/
 lang: en
 ---
 
 ## Информация о продукте
+
 `ember-flexberry` является [частью платформы Flexberry](http://flexberry.ru), реализованным на javascript-фреймворке [EmberJS](http://emberjs.com/).
 
 ## Компоненты Flexberry ASP.NET Ember
+
 * [Контролы](ef_controls.html)
 * [Формы](ef_forms.html)
 
 ## Дополнительные возможности
+
 * [Запуск приложения Flexberry Ember в качестве мобильного приложения Apache Cordova](ef_cordova.html)
 * [Генерация Ember-приложения из меню Flexberry Designer](ef_generator.html)
 
 
 # Структурные элементы Flexberry ASP.NET Ember-приложения
+
 Структура ember-flexberry приложения такая же как и у классического [ember-приложения](https://guides.emberjs.com/v2.0.0/getting-started/core-concepts/), но есть некоторые нюансы, которые описаны в отдельных статьях.
 
 * [Модели](efd_model.html)

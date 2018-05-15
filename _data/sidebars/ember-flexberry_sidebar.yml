@@ -34,6 +34,11 @@ entries:
       url: /ef_performance-tips.html
       output: web, pdf
 
+    - title: Access to the Ember application from outside
+      title_ru: Доступ к Ember-приложению извне
+      url: /ef_access-ember-application-outside.html
+      output: web, pdf
+
   - title: Forms
     title_ru: Формы
     output: web, pdf
