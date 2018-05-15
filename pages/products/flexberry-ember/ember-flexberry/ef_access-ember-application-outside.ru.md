@@ -8,7 +8,7 @@ permalink: ru/ef_access-ember-application-outside.html
 lang: ru
 ---
 
-Доступ к приложению, использующему [Flexberry Ember](ef_landing_page.html) возможен через глобальный объект, имя которого определяется в конфигурации (`environment.js`) в свойстве `ENV.modulePrefix`.
+Доступ к приложению, использующему [Flexberry Ember](ef_landing_page.html) (как и к любому Ember-приложению), возможен через глобальный объект, имя которого определяется в конфигурации (`environment.js`) в свойстве `ENV.modulePrefix`.
 
 Например, если в `modulePrefix` указано значение 'ember-app', то глобально будет доступен объект с именем `EmberApp`. Это есть экземпляр класса [`Ember.Application`](https://emberjs.com/api/ember/2.4/classes/Ember.Application).
 
