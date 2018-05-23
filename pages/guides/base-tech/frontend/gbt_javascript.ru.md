@@ -132,6 +132,7 @@ lang: ru
 ### Практические задания
 * [Learn JavaScript - Codecademy](https://www.codecademy.com/learn/learn-javascript)
 * [JavaScript Challenge - Codewars](https://www.codewars.com/?language=javascript)
+* [Простые задачи на JavaScript - codedokode](https://gist.github.com/codedokode/ce30e7a036f18f416ae0)
 
 ## Возможности по сертификации
 
