@@ -75,6 +75,7 @@ lang: ru
 
 ### Практические задания
 * [Learn jQuery - Codecademy](https://www.codecademy.com/learn/jquery)
+* [Задания по DOM/jQuery - codedokode](https://gist.github.com/codedokode/ce30e7a036f18f416ae0#dom--jquery)
 
 ## Возможности по сертификации
 
