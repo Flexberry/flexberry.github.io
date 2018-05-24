@@ -29,14 +29,21 @@ summary: Перечень контролов, используемых в ember-
 flexberry-textbox placeholder="(no value)" readonly=readonly required=true value=model.employee.firstName{% endraw %}
 ```
 
-## DatetimePicker
+## FlexberrySimpledatetime
 
-`DatetimePicker` - контрол для отображения даты.
+`FlexberrySimpledatetime` - контрол для отображения даты/даты и времени.
 
 ```hbs
-{% raw %}
-datetime-picker placeholder="(no value)" readonly=readonly hasTimePicker=true value=model.orderDate{% endraw %}
+{% raw %}{flexberry-simpledatetime
+  	type=type
+  	removeButton=removeButton
+  	value=model.date
+  	min=min
+ 	max=max
+  	readonly=readonly
+}}{% endraw %}
 ```
+{% include note.html content="Важно! При указании минимальной и максимальной дат необходимо сбрасывать в ноль миллисекунды у этих дат, в противном случае календарь может не позволить выбирать крайние значения диапазона!" %}
 
 ## ObjectListView
 
