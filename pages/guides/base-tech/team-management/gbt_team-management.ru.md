@@ -49,6 +49,7 @@ lang: ru
 
 ##  Ссылки на материалы для изучения
 
+* [Скринкасты по Git - Javascript.ru](https://learn.javascript.ru/screencast/git)
 * [-]()
 * [-]()
 
