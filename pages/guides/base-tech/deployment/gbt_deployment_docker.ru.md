@@ -370,6 +370,11 @@ docker run -d -p 80:80 --restart=unless-stopped --name=apache2 kafnevod/altlinux
 * [Get started with Docker](https://docs.docker.com/engine/getstarted/)
 * [The Docker commands](https://docs.docker.com/engine/reference/commandline/)
 * [Docker run reference](https://docs.docker.com/engine/reference/run/)
+* Серия Play-With:
+  - [ Play with Docker](http://play-with-docker.com/);
+  - [Play with Docker Classroom](https://training.play-with-docker.com/);
+  - [Play with Kubernetes](https://labs.play-with-k8s.com/);
+  - [Play with Kubernetes Classroom](https://training.play-with-kubernetes.com/);
 
 #### Docker для Windows
 * [WINDOWS КОНТЕЙНЕРЫ И DOCKER](https://dev-ops-notes.ru/docker/windows-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D1%8B-%D0%B8-docker/)
