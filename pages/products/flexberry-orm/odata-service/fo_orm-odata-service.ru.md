@@ -536,3 +536,58 @@ private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParame
     }
 }
 ```
+
+## Использование пользовательских функций для экспорта в Excel 
+
+Пример использования пользовательских функций для экспорта в Excel.
+Пример запроса:
+http://localhost/odata/FunctionExportExcel(entitySet='Странаs')?exportExcel=true&colsOrder=Название/Название&detSeparateCols=false&detSeparateRows=false&$filter=contains(Название,'1')
+.
+
+```csharp
+/// <summary>
+/// Configures Web API.
+/// </summary>
+/// <param name="config">Current configuration.</param>
+/// <param name="container">DI container for WebAPI.</param>
+/// <param name="activator">Controller activator for WebAPI.</param>
+public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
+{
+    var cors = new EnableCorsAttribute("*", "*", "*");
+    config.EnableCors(cors);
+
+    // Use Unity for DI in WebAPI.
+    config.DependencyResolver = new UnityDependencyResolver(container);
+
+    var assemblies = new[]
+    {
+        typeof(Suggestion).Assembly,
+        typeof(ApplicationLog).Assembly,
+        typeof(UserSetting).Assembly,
+        typeof(FlexberryUserSetting).Assembly,
+        typeof(Lock).Assembly
+    };
+    var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
+
+    ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
+    config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, Страна[]>(FunctionExportExcel));
+}
+
+/// <summary>
+/// Функция подготавливающая данные для экспорта в Excel. Для правильной работы необходимо, чтобы в декларации был указан реальный тип возвращаемых значений.
+/// Не подходит указание типа DataObject.
+/// </summary>
+/// <param name="queryParameters"></param>
+/// <param name="entitySet"></param>
+/// <returns></returns>
+private static Страна[] FunctionExportExcel(QueryParameters queryParameters, string entitySet)
+{
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    Type type = queryParameters.GetDataObjectType(entitySet);
+    LoadingCustomizationStruct lcs = queryParameters.CreateLcs(type);
+    Страна[] dobjs = dataService.LoadObjects(lcs).Cast<Страна>().ToArray();
+    return dobjs;
+}
+```
+
