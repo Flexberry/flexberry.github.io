@@ -16,7 +16,7 @@ lang: en
 
 {% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](https://www.nuget.org)." %}
 
-##№ Список библиотек `Flexberry ORM ODataService`
+### Список библиотек `Flexberry ORM ODataService`
 
 В состав NuGet-пакета `Flexberry ORM ODataService` входят следующие сборки:
 
