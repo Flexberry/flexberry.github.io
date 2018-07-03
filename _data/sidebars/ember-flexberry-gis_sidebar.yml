@@ -14,17 +14,37 @@ entries:
       url: /efg_landing_page.html
       output: web, pdf
 
-  - title: Themes
-    title_ru: Темы оформления
+  - title: Platform development
+    title_ru: Разработка платформы
     output: web, pdf
 
     folderitems:
-    - title: Themes support
-      title_ru: Поддержка тем в аддоне
-      url: /efg_themes_support.html
+    - title: Article
+      title_ru: 
+      url: 
       output: web, pdf
 
-    - title: Creating themes in addon
-      title_ru: Создание тем в аддоне
-      url: /efg_themes_creating.html
+  - title: Development using components
+    title_ru: Разработка с использованием компонентов
+    output: web, pdf
+
+    folderitems:
+    - title: Article
+      title_ru: 
+      url: 
+      output: web, pdf
+
+  - title: Custom toolkit
+    title_ru: Пользовательский инструментарий
+    output: web, pdf
+
+    folderitems:
+    - title: System Setup
+      title_ru: Настройка системы
+      url: efg_system-setup.html
+      output: web, pdf
+
+    - title: Using the system
+      title_ru: Использование системы
+      url: efg_using-system.html
       output: web, pdf

@@ -12,16 +12,8 @@ entries:
       url: /fg_landing_page.html
       output: web
 
-  - title: OData-service with GIS support
-    title_ru: OData-сервис c поддержкой ГИС
-    output: web, pdf
-    folderitems:
-    - title: gis-odata-service
-      url: /gos_gis-odata-service.html
-      output: web, pdf
-
-  - title: Addons and plugins
-    title_ru: Аддоны и плагины
+  - title: Addons
+    title_ru: Аддоны
     output: web, pdf
 
     folderitems:
@@ -45,6 +37,11 @@ entries:
       url: /efgeo_ember-flexberry-geolocation.html
       output: web, pdf
 
+  - title: Plugins
+    title_ru: Плагины
+    output: web, pdf
+
+    folderitems:
     - title: Leaflet-WMS
       url: /lwms_leaflet-wms.html
       output: web, pdf
@@ -71,6 +68,16 @@ entries:
 
     - title: leaflet-history
       url: /lh_leaflet-history.html
+      output: web, pdf
+
+  - title: Services
+    title_ru: Сервисы
+    output: web, pdf
+
+    folderitems:
+    - title: OData-service with GIS support
+      title_ru: OData-сервис c поддержкой ГИС
+      url: /gos_gis-odata-service.html
       output: web, pdf
 
   - title: Demonstration stand
