@@ -3,6 +3,7 @@ title: ember-flexberry-gis
 keywords: ember
 sidebar: ember-flexberry-gis_sidebar
 toc: false
-permalink: ru/efg_landing_page.html
-lang: ru
+permalink: en/efg_wms-wfs.html
+lang: en
+published: true
 ---
