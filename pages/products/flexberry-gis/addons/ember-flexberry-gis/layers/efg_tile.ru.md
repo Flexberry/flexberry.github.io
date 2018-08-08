@@ -12,13 +12,13 @@ published: true
 
 Название тайловый слой (от англ. tile - плитка) обусловлено тем, что получаемое такими слоями изображение некоторой карты составляется из набора заранее подготовленных картинок фиксированного размера т.н. тайлов, которые размещаются на плотной сетке рядом друг с другом (как плитка в ванной, только без зазоров).
 
-![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tiles/tiles-map.png)
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tiles-map.png)
 
 Тайлы подготавливаются таким образом, что при максимальном масштабе вся карта покрывается одним единственным тайлом, который изображает всю площадь карты, но делает это наименее детализировано, как бы "с высоты птичьего полёта".
 При минимальном же масштабе карта покрывается достаточно большим количеством тайлов, каждый из которых максимально детализировано изображает соответствующий ему участок карты.
 Множество доступных масштабов карты от максимального до минимального равномерно разбивается на конечное число, каждому из которых ставится в соответствие целочисенное обозначение, это так называемый зум (от англ. zoom level - уровень увеличения/уровень масштабирования), который принимает значение 0 для максимального масштаба, и некоторое n для минимального, как правило n = 18, но может быть как меньше так и больше. 
 
-![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tiles/tiles-pyramid.png)
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tiles-pyramid.png)
 
 Любой тайловый слой запрашивает подготовленные таким образом изображения у специализированных тайловых сервисов, сообщая им зум и координаты изображений, соответствующих просматриваемой области карты. 
 Однако т.к. для любого значения зума сетка состоит из конечного числа тайлов, а именно 2^(zoom*2) (т.е. 1, 4, 16, 64, ...), то географические координаты просматриваемой области карты, перед обращением к сервису, преобразуются в целочисленные координаты тайловой сетки для указанного зума.
@@ -32,11 +32,11 @@ published: true
 
 В сервисах TMS координатные оси сетки направлены традиционным образом, а координаты начала отсчёта тайловой сетки (minx, miny):
 
-![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tiles/tile-map-service-tiles-grid.png)
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tile-map-service-tiles-grid.png)
 
 В Slippy map сервисах ось Y инвертирована, а координаты начала отсчёта тайловой сетки (minx, maxy):
 
-![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tiles/slippy-map-tiles-grid.png)
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/slippy-map-tiles-grid.png)
 
 Для общего понимания разницы этого достаточно, формулы приведения координат здесь рассматривать не будем.
 
@@ -55,4 +55,4 @@ Ember-компонент реализующий работу с тайловым
 
 Пример добавления на карту тайлового слоя Open Street Map (OSM):
 
-![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tiles/tile-osm-example.png)
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tile-osm-example.png)
