@@ -10,7 +10,7 @@ published: true
 
 ## Спецификация
 
-tile
+wms-wfs
 
 ## Ember-компонент слоя и его свойства
 
