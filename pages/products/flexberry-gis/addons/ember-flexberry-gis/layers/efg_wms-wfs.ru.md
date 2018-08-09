@@ -1,5 +1,5 @@
 ---
-title: ember-flexberry-gis
+title: Тип слоя wms-wfs
 keywords: ember
 sidebar: ember-flexberry-gis_sidebar
 toc: true
