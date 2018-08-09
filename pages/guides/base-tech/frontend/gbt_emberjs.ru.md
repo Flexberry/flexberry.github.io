@@ -66,6 +66,7 @@ lang: ru
 * [Разработка Ember-компонентов](gbt_devcomp.html)
 * [Разработка Ember-сервисов](gbt_devservic.html)
 * [Ember Data](gbt_emddata.html)
+* [Profiling Ember.js Apps](https://speakerdeck.com/selvagsz/profiling-emberjs-apps)
 
 ### Презентация
 
