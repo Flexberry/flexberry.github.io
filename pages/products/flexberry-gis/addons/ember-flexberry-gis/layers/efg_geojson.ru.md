@@ -1,5 +1,5 @@
 ---
-title: Тип слоя geocoder-geojson
+title: Тип слоя geojson
 keywords: ember
 sidebar: ember-flexberry-gis_sidebar
 toc: true
