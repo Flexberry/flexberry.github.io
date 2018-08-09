@@ -56,3 +56,18 @@ Ember-компонент реализующий работу с тайловым
 Пример добавления на карту тайлового слоя Open Street Map (OSM):
 
 ![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tile-osm-example.png)
+
+Пример добавления на карту тайлового слоя Google карты:
+
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tile-google-map-example.png)
+
+Пример добавления на карту тайлового слоя Google карты со спутниковыми снимками:
+
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tile-google-satellite-example.png)
+
+Пример добавления на карту тайлового слоя гибридной Google карты, объединяющей спутниковые снимки с обозначениями дорог и прочих объектов с обычной рисованной карты:
+
+![](/images/pages/products/flexberry-gis/addons/ember-flexberry-gis/layers/efg_tile/tile-google-hybrid-example.png)
+
+Обратите внимание, что при добавлении любого тайлового слоя обязательно указывается система координат, для OSM это EPSG:3857, для Google EPSG:4326 (хотя поддерживаются и другие системы координат), другими сервисами могут использоваться еще какие-то системы координат.
+Если, при добавлении тайлового слоя, указать систему координат, которая не поддерживается сервисом, тогда тайлы будут визуально смещены, или даже перепутаны.
