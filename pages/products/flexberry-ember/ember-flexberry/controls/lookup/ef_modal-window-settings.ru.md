@@ -103,27 +103,20 @@ getLookupFolvProperties: function(options) {
 
 ```javascript
 export default EditFormController.extend({
-
-  // Активировать иерархию при загрузке lookup-формы.
-  init() {
-    this._super(...arguments);
-
-    this.set('lookupController.inHierarchicalMode', true);
-    this.set('lookupController.hierarchicalAttribute', 'parent');
-  },
-
     // ...
     getLookupFolvProperties: function(options) {
       // ...
 
-      if (methodArgs.relationName === 'type') {
+      if (options.relationName === 'type') { // Свойство лукапа.
         return {
             // ...
+	    // Показывать ли кнопку переключения иерархии, если иерархия для списка доступна
+	    // (при false кнопка показывается)
             disableHierarchicalMode: false,
 
             // Активировать иерархию при загрузке lookup-формы.
             inHierarchicalMode: true,
-            hierarchicalAttribute: 'Name' // Свойство, по которому осуществляется иерархия.
+            hierarchicalAttribute: 'Name' // Свойство, по которому строится иерархия.
         };
       }
 
