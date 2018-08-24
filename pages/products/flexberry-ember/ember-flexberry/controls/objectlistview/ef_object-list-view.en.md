@@ -184,6 +184,10 @@ export default ListFormRoute.extend({
 
 Инструменты работы с объектами на странице/ всех страницах описаны в статье описаны в статье [Инструменты работы с объектами на списках](ef_list-component-select-all.html).
 
+## Настройка ячеек списка
+
+Возможности настроек поведения отдельных ячеек списка описано в статье [Блокирование отдельных ячеек списка](ef_block-cells-click.html).
+
 ## Вычислимые свойства в getCellComponent
 
 Чтобы создать вычисляемое свойство нужно, в `controllers`, в `getCellComponent` добавить свойство `computedProperties: { thisController: this }`:
