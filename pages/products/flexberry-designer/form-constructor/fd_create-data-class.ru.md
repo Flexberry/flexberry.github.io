@@ -1,11 +1,11 @@
 ---
-title: Creating and editing data classes
+title: Создание и редактирование классов данных
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, структура приложения, все формы классы данных
 summary: 
 toc: true
-permalink: en/fd_create-data-class.html
-lang: en
+permalink: ru/fd_create-data-class.html
+lang: ru
 ---
 
 ## метаданные класса

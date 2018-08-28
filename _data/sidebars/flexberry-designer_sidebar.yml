@@ -13,6 +13,11 @@ entries:
       url: /fd_landing_page.html
       output: web
 
+    - title: Ember Flexberry Designer
+      title_ru: Flexberry Designer
+      url: /fd_ember-flexberry-desinger.html
+      output: web
+
     - title: Definition of design
       title_ru: Определение проектирования
       url: /fd_definition-design.html
@@ -81,6 +86,21 @@ entries:
     - title: Stage of application development
       title_ru: Этап доработки приложения
       url: /fd_application-development.html
+      output: web, pdf
+
+  - title: Creating an application using the class designer
+    title_ru: Создание приложения с помощью конструктора классов
+    output: web, pdf
+
+    folderitems:
+    - title: List of forms in the application structure
+      title_ru: Список форм в структуре приложения
+      url: /fd_structure_all_forms.html
+      output: web, pdf
+
+    - title: Creating and editing data classes
+      title_ru: Создание и редактирование классов данных
+      url: /fd_create-data-class.html
       output: web, pdf
 
   - title: Сommon information about diagrams editor

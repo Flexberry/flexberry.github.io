@@ -1,11 +1,11 @@
 ---
-title: List of forms in the application structure
+title: Список форм в структуре приложения
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, структура приложения, все формы
 summary: 
 toc: true
-permalink: en/fd_structure_all_forms.html
-lang: en
+permalink: ru/fd_structure_all_forms.html
+lang: ru
 ---
 
 ## Левое "дерево"
