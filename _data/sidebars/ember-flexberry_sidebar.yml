@@ -4,7 +4,7 @@
 entries:
 - title: Sidebar
   product: ember-flexberry
-  version: 0.12.0
+  version: 0.12.1
   folders:
 
   - title:
@@ -116,6 +116,10 @@ entries:
 
     - title: File
       url: /ef_file.html
+      output: web, pdf
+
+    - title: Flexberry toggler
+      url: /ef_flexberry-toggler.html
       output: web, pdf
 
     - title: UI Message
