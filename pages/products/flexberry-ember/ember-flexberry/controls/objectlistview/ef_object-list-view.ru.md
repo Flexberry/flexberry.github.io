@@ -151,6 +151,35 @@ export default ListFormRoute.extend({
 
 Для удаления элементов списка используется метод `beforeDeleteRecord`. Метод поддерживает асинхронный режим, то есть можно возвращать `promises` в качестве значения результата.
 
+### Удаление всех выделенных элементов
+
+Для настройки одновременного удаления всех выделенных элементов списка нужно в контроллере прописать событие `beforeDeleteAllRecords`:
+
+```javascript
+import ListFormController from './list-form';
+
+export default ListFormController.extend({
+  actions: {
+    beforeDeleteAllRecords(modelName, data) {
+      if (modelName === 'application-user') {
+        data.cancel = false;
+      }
+    }
+  }
+});
+```
+
+и указать его в шаблоне списка:
+
+```hbs
+{% raw %}
+{{flexberry-objectlistview
+  ...
+  beforeDeleteAllRecords=(action 'beforeDeleteAllRecords')
+  ...
+}}{% endraw %}
+```
+
 ## Проверка списков перед удалением элементов
 
 При работе со списком есть возможность возвращать promise через `return` в теле обработчика `beforeDeleteRecord`, то есть можно реализовать асинхронную логику. Если сделать return <промис>- тогда операция удаления будет вызываться после того, как будет выполнен promise . Если он выполнение будет прервано, то удаление выполнено не будет.
