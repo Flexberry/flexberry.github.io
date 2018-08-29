@@ -26,13 +26,15 @@ summary: Описание, свойства и пример использова
 ### Пример использования
 
 ```hbs
+{% raw %}
 {{#flexberry-toggler
     expandedCaption='Expanded caption'
     collapsedCaption='Collapsed caption'
     expanded=true
 }}
-    Content.
+    Content
 {{/flexberry-toggler}}
+{% endraw %}
 ```
 
 При загрузке страницы компонент находится в развернутом состоянии, заголовок для развернутого сосостояния `Expanded caption`, а для свернутого - `Collapsed caption`.
