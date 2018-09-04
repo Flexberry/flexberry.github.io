@@ -1,5 +1,5 @@
 ---
-title: Boot status service
+title: Application state service
 sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember LockService
 toc: true
