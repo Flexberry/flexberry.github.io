@@ -151,6 +151,11 @@ entries:
       url: /ef_model-user-settings-service.html
       output: web, pdf
 
+    - title: Boot status service
+      title_ru: Сервис состояния загрузки
+      url: /ef_boot-status-service.html
+      output: web, pdf
+
   - title: Application customization
     title_ru: Настройка приложения
     output: web, pdf
