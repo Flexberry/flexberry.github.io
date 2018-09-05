@@ -125,6 +125,11 @@ entries:
     - title: UI Message
       url: /ef_ui-message.html
       output: web, pdf
+    
+    - title: Displaying errors in the application
+      title_ru: Отображение ошибок в приложении
+      url: /ef_error.html
+      output: web, pdf
 
   - title: Services
     title_ru: Сервисы
