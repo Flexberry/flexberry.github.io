@@ -103,6 +103,16 @@ entries:
       url: /fd_create-data-class.html
       output: web, pdf
 
+    - title: Working with the editing form in the visual editor
+      title_ru: Работа с формой редактирования в визуальном редакторе
+      url: /fd_ember-editform-constructor.html
+      output: web, pdf
+
+    - title: Working with lists in the visual editor
+      title_ru: Работа со списками в визуальном редакторе
+      url: /fd_create-data-class.html
+      output: web, pdf
+
   - title: Сommon information about diagrams editor
     title_ru: Общие сведения о редакторе UML-диаграмм
     output: web, pdf

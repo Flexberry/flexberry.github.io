@@ -1,5 +1,5 @@
 ---
-title: Работа с формой редактирования в визуальном редакторе
+title: Working with lists in the visual editor
 sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, структура приложения, listform
 summary: Принципы создания и редактирования listform
