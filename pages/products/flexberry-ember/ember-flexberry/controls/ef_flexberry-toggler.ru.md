@@ -5,12 +5,12 @@ keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_flexberry-toggler.html
 lang: ru
-summary: Описание, свойства и пример использования
+summary: Свойства flexberry-toggler, настройка flexberry-toggler
 ---
 
 ## Описание
 
-`Flexberry-toggler` - компонент, позволяющий пользователю, показывать или скрывать вложенное в него содержимое. В нем могут быть размещены поля формы, [список](ef_object-list-view.html), [детейлы](ef_groupedit.html) и другое.
+[flexberry-toggler](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js) - компонент, позволяющий пользователю, показывать или скрывать вложенное в него содержимое. В нем могут быть размещены поля формы, [список](ef_object-list-view.html), [детейлы](ef_groupedit.html) и другое.
 
 ### Список свойств
 
@@ -26,6 +26,8 @@ summary: Описание, свойства и пример использова
 
 ### Пример использования
 
+Настройка `flexberry-toggler` осуществляется в [шаблоне страницы](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js#L10):
+
 ```hbs
 {% raw %}
 {{#flexberry-toggler
@@ -40,9 +42,9 @@ summary: Описание, свойства и пример использова
 
 При загрузке страницы компонент находится в развернутом состоянии, заголовок для развернутого сосостояния `Expanded caption`, а для свернутого - `Collapsed caption`.
 
-### Пользовательские настройки toggler
+### Пользовательские настройки
 
-Состояние `toggler` может быть сохранено в [пользовательских настройках](ef_model-user-settings-service.html) приложения.
+Состояние `flexberry-toggler` может быть сохранено в [пользовательских настройках](ef_model-user-settings-service.html) приложения.
 
 Для использования сервиса настроек пользователя компонент `flexberry-toggler` должен содержать следующие атрибуты:
 
