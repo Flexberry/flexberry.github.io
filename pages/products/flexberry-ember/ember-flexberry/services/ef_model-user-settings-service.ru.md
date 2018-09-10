@@ -74,7 +74,13 @@ module.exports = function(environment) {
 
 ## Конфигурация для flexberry-toggler
 
-Если [flexberry-toggler](ef_flexberry-toggler.html) будет в шаблоне роута, не являющешлся наследником `list-form` и `edit-form` `ember-flexberry`, то настройки не будут загружены, и соответственно никакого эффекта не будет.
+Для того чтобы для [flexberry-toggler](ef_flexberry-toggler.html) были применимы пользовательские настройки, он должен находиться в шаблоне роута, являющимся наследником `list-form` и `edit-form` `ember-flexberry`.
+
+В тех случаях, когда данные условия не выполнимы, необходимо пользовательские настройки загружать в сервис. Например, так:
+
+```javascript
+this.get('userSettingsService').setDeveloperUserSettings(this.get('developerUserSettings') || {}).then(...)
+```
 
 ## Работа с сервисом
 
