@@ -1,5 +1,5 @@
 ---
-title: Изменение ширины столбцов
+title: Изменение ширины столбцов списка
 sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true

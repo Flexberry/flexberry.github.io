@@ -1,5 +1,5 @@
 ---
-title: Настройка панели управления для списков
+title: Configuring the control panel for lists
 sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true

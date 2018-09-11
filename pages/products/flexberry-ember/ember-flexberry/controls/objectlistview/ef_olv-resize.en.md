@@ -1,5 +1,5 @@
 ---
-title: Изменение ширины столбцов
+title: Changing the columns of the list columns
 sidebar: ember-flexberry_sidebar
 keywords: Flexberry Ember
 toc: true
