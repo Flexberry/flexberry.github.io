@@ -101,14 +101,6 @@ entries:
       url: /ef_controls.html
       output: web, pdf
 
-    - title: Groupedit
-      url: /ef_groupedit.html
-      output: web, pdf
-
-    - title: Lookup
-      url: /ef_lookup.html
-      output: web, pdf
-
     - title: File
       url: /ef_file.html
       output: web, pdf
@@ -125,7 +117,7 @@ entries:
       title_ru: Отображение ошибок в приложении
       url: /ef_error.html
       output: web, pdf
-
+  
   - title: List components
     title_ru: Списковые компоненты
     output: web, pdf
@@ -169,6 +161,39 @@ entries:
     - title: Search all attributes
       title_ru: Поиск по всем атрибутам
       url: /ef_search-attributes.html
+      output: web, pdf
+
+  - title: Groupedit
+    output: web, pdf
+
+    folderitems:
+    - title: Flexberry Groupedit
+      title_ru: Flexberry Groupedit
+      url: /ef_groupedit.html
+      output: web, pdf
+
+    - title: Editing detailes in a separate route
+      title_ru: Редактирование детейлов в отдельном роуте
+      url: /ef_groupedit-detail-in-route.html
+      output: web, pdf
+
+  - title: Lookup
+    output: web, pdf
+
+    folderitems:
+    - title: Lookupes in the ember-flexberry application
+      title_ru: Лукапы в ember-flexberry приложении
+      url: /ef_lookup.html
+      output: web, pdf
+
+    - title: Adjusting the form to be lifted by the lookup
+      title_ru: Настройка поднимаемой по лукапу формы
+      url: /ef_modal-window-settings.html
+      output: web, pdf
+
+    - title: AAuto-completion in the lookup
+      title_ru: Автодополнение в лукапе
+      url: /ef_lookup-autocomplete.html
       output: web, pdf
 
   - title: Services

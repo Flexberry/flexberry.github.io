@@ -10,7 +10,7 @@ summary: Свойства, особенности реализации, наст
 
 ## Описание
 
-Flexberry Groupedit предназначен для работы с [детейлами](fo_detail-associations-properties.html) на форме редактирования.
+`flexberry-groupedit` предназначен для работы с [детейлами](fo_detail-associations-properties.html) на форме редактирования.
 
 Чтобы добавить groupedit на страницу, в шаблоне нужно указать:
 
