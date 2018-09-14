@@ -1,5 +1,6 @@
 body {
     font-size:15px;
+    color: #333333;
 }
 
 .bs-callout {
@@ -76,7 +77,7 @@ h5[id],
 h6[id],
 dt[id]{
 padding-top: 60px;
-margin-top: -60px
+margin-top: -40px
 }
 
 body h1 {margin-top:40px;}
@@ -606,7 +607,7 @@ a.fa.fa-envelope-o.mailto {
 }
 
 h3 {color: #ED1951; font-weight:normal; font-size:130%;}
-h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
+h4 {color: #808080; font-weight:normal; font-size:120%;}
 
 .alert, .callout {
     overflow: hidden;
@@ -1178,6 +1179,7 @@ h4.panel-title {
 a:hover,
 a:focus {
   color: #7c7cda;
+  text-decoration: none;
 }
 .media, .media .media {
   margin-top: 0px;
@@ -1210,4 +1212,8 @@ footer .fa {
 footer .copyright {
   text-align: right;
   margin: 10px 0;
+}
+
+.gitter-chat-embed {
+  z-index: 1031;
 }
