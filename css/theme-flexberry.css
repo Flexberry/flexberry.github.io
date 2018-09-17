@@ -367,7 +367,7 @@ a[data-toggle="collapse"] {
   margin-bottom: 50px;
 }
 
-.fa {
+.portfolio-item .fa {
   background: #93047b; /* Old browsers */
   background: -moz-linear-gradient(-45deg, #93047b 0%, #4e1493 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, #93047b 0%,#4e1493 100%); /* Chrome10-25,Safari5.1-6 */
