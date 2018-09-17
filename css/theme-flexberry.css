@@ -367,6 +367,15 @@ a[data-toggle="collapse"] {
   margin-bottom: 50px;
 }
 
+.fa {
+  background: #93047b; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #93047b 0%, #4e1493 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #93047b 0%,#4e1493 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #93047b 0%,#4e1493 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media (max-width: 992px) {
   .wrapper {
     display: block;
