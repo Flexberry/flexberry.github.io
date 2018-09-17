@@ -21,6 +21,10 @@ $( document ).ready(function() {
      */
     anchors.add('h2,h3,h4,h5');
 
+    $("#sidebarCollapse").on("click", function() {
+      $("#sidebar").toggleClass("active");
+      $(this).toggleClass("active");
+    });
 });
 
 // needed for nav tabs on pages. See Formatting > Nav tabs for more details.

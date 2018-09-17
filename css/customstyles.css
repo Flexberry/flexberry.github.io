@@ -325,7 +325,7 @@ li.dropdownActive a {
 
 footer {
     font-size: smaller;
-    margin: 50px 0 0;
+    margin: 0;
     padding: 20px 0;
     background: #f4f4f4;
 }
@@ -584,7 +584,7 @@ hr.shaded {
     height: 12px;
     border: 0;
     box-shadow: inset 0 6px 6px -6px rgba(0,0,0,0.5);
-    margin-top: 50px;
+    margin-top: 0;
     background: white;
     width: 100%;
     margin-bottom: 0;
