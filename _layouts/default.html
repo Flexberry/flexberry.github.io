@@ -69,7 +69,7 @@
           {% unless page.toc == false %} {% include toc.html %} {% endunless %}
           {% if site.github_editme_path %}
           {% assign page_url = page.url | split: '/' | last | split: "." | first | append: "." | append: page.lang | append: ".md" %}
-          <a target="_blank" href="https://github.com/{{site.github_editme_path}}{{page.path | uri_escape}}" class="btn btn-default githubEditButton" role="button">
+          <a target="_blank" href=https://github.com/{{site.github_editme_path}}{{page.path | uri_escape}}" class="btn btn-md btn-primary githubEditButton" role="button">
               <i class="fa fa-github fa-lg"></i> {% if page.lang == "ru" %} Редактировать{% else %} Edit me{% endif %}
           </a>
           {% endif %}
