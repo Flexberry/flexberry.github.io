@@ -311,3 +311,92 @@ footer .footer-above ul {
       right: -1px;
   }
 }
+
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  transition: all 0.3s;
+  position: relative;
+  background: #f1f1f1;
+  margin-right: 10px;
+  text-align: center
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #6d7fcc;
+}
+
+#sidebar ul li a {
+  display: block;
+}
+
+#sidebarCollapse {
+  position: absolute;
+  left: 10px;
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #fff;
+  opacity: 0.8;
+}
+
+#sidebarCollapse:hover {
+  opacity: 1;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+#mysidebar {
+  text-align: left;
+}
+
+#content {
+  min-height: 100vh;
+  transition: all 0.3s;
+  margin-bottom: 50px;
+}
+
+.portfolio-item .fa {
+  background: #93047b; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #93047b 0%, #4e1493 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #93047b 0%,#4e1493 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #93047b 0%,#4e1493 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    display: block;
+  }
+
+  #sidebar,
+  #sidebar.active {
+    min-width: 0px;
+    max-width: 90%;
+    margin: auto
+  }
+
+  #sidebarCollapse {
+    display: none;
+  }
+
+  a.dropdown-toggle, .navbar-inverse .navbar-nav > li > a {
+    margin-left: 0;
+  }
+
+  #search-input {
+    width: auto;
+  }
+}
