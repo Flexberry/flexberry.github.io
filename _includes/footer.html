@@ -1,22 +1,35 @@
 <footer>
-    <div class="footer container">
-        <div class="row">
-            <div class="col-md-4 footer list-social">
-                <a target="_blank" href="http://vk.com/flexberry"><i class="fa fa-vk"></i></a>
-                <a target="_blank" href="https://www.facebook.com/groups/Flexberry/"><i class="fa fa-facebook"></i></a>
-                <a target="_blank" href="https://twitter.com/Flexberry"><i class="fa fa-twitter"></i></a>
-                <a target="_blank" href="https://github.com/Flexberry"><i class="fa fa-github"></i></a>
-                <a target="_blank" href="http://www.youtube.com/user/FlexberryPLATFORM"><i class="fa fa-youtube"></i></a>
-                <a target="_blank" href="https://gitter.im/Flexberry"><i class="fa fa-comments-o"></i></a>
-            </div>
-            <div class="col-lg-6 footer copyright">
-                &copy;{{ site.time | date: "%Y" }} {{site.company_name}}. All rights reserved. <br /> {% if page.last_updated %}
-                <span>Page last updated:</span> {{page.last_updated}}
-                <br/> {% endif %} Site last generated: {{ site.time | date: "%b %-d, %Y" }} <br />
-            </div>
-            <div class="col-lg-2 footer">
-                <img src="{{ " /images/company_logo.png "  | prepend: site.baseurl}}" alt="Flexberry PLATFORM" />
-            </div>
+  <div class="footer-below text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          Copyright &copy; New platform Ltd. 20{{ site.time | date: '%y' }} Создано при поддержке Фонда содействия развитию малых форм предприятий в научно-технической сфере (программа СТАРТ-2013).
         </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-lg-12">
+            <ul class="list-inline">
+              <li><a target="_blank" href="http://vk.com/flexberry" class="btn-social">
+                {% include /icons/soc-vk.svg %}</a>
+              </li>
+              <li><a target="_blank" href="https://www.facebook.com/groups/Flexberry/" class="btn-social">
+                {% include /icons/soc-fb.svg %}</a>
+              </li>
+              <li><a target="_blank" href="https://twitter.com/Flexberry" class="btn-social">
+                {% include /icons/soc-tw.svg %}</a>
+              </li>
+              <li><a target="_blank" href="https://github.com/Flexberry" class="btn-social">
+                {% include /icons/soc-git.svg %}</a>
+              </li>
+              <li><a target="_blank" href="http://www.youtube.com/user/FlexberryPLATFORM" class="btn-social">
+                {% include /icons/soc-yt.svg %}</a>
+              </li>
+              <li><a target="_blank" href="https://gitter.im/Flexberry" class="btn-social">
+                {% include /icons/soc-gt.svg %}</a>
+              </li>
+            </ul>
+        </div>
+      </div>
     </div>
+  </div>
 </footer>

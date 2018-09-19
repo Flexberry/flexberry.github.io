@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Thin), url("/css/fonts/Roboto/Roboto-Thin.eot");
+  src: url("/css/fonts/Roboto/Roboto-Thin.eot?#iefix") format("embedded-opentype"), 
+  url("/css/fonts/Roboto/Roboto-Thin.woff2") format("woff2"), 
+  url("/css/fonts/Roboto/Roboto-Thin.woff") format("woff"), 
+  url("/css/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
+  font-weight: 200; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Light), url("/css/fonts/Roboto/Roboto-Light.eot");
+  src: url("/css/fonts/Roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), 
+  url("/css/fonts/Roboto/Roboto-Light.woff2") format("woff2"), 
+  url("/css/fonts/Roboto/Roboto-Light.woff") format("woff"), 
+  url("/css/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300; }
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Regular), url("/css/fonts/Roboto/Roboto-Regular.eot");
+  src: url("/css/fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), 
+  url("/css/fonts/Roboto/Roboto-Regular.woff2") format("woff2"), 
+  url("/css/fonts/Roboto/Roboto-Regular.woff") format("woff"), 
+  url("/css/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/css/fonts/Roboto/Roboto-Medium.eot");
+  src: url("/css/fonts/Roboto/Roboto-Medium.eot?#iefix") format("embedded-opentype"), 
+  url("/css/fonts/Roboto/Roboto-Medium.woff2") format("woff2"), 
+  url("/css/fonts/Roboto/Roboto-Medium.woff") format("woff"), 
+  url("/css/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500; }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/css/fonts/Roboto/Roboto-Bold.eot");
+  src: url("/css/fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), 
+  url("/css/fonts/Roboto/Roboto-Bold.woff2") format("woff2"), 
+  url("/css/fonts/Roboto/Roboto-Bold.woff") format("woff"), 
+  url("/css/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: 600; }
