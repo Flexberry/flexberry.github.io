@@ -4,7 +4,6 @@ keywords: Programming
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_csharp.html
-folder: guides/base-tech/backend/
 lang: ru
 ---
 
@@ -39,12 +38,6 @@ lang: ru
 * [Язык программирования C# (часть 2)](https://mva.microsoft.com/ru/training-courses/-c-2-8877?l=ATbUZg02_6104984382)
 * [Programming in C# Jump Start](https://mva.microsoft.com/en-US/training-courses/programming-in-c-jump-start-14254?l=MqbQvzSfB_1500115888)
 * [Видеоуроки по языку программирования C#](https://www.youtube.com/playlist?list=PLWCoo5SF-qAMDIAqikhB2hvIytrMiR5TC)
-
-### Презентация
-
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe src="//www.slideshare.net/slideshow/embed_code/key/9xvZLeXn93oW9" width="854" height="480" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/shwars/c-5178455" title="Язык программирования C#" target="_blank">Язык программирования C#</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/shwars">Dmitri Soshnikov</a></strong> </div>
-</div>
 
 ### Рекомендованные книги
 

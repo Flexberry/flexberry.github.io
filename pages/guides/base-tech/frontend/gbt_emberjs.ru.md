@@ -4,7 +4,6 @@ keywords: Programming, ember-cli, ember weekly, ember times, frontend
 sidebar: guide-base-tech_sidebar
 toc: true
 permalink: ru/gbt_emberjs.html
-folder: guides/base-tech/frontend/
 lang: ru
 ---
 
@@ -25,37 +24,36 @@ lang: ru
 ### Примеры
 
 * [Приложение для сайта с арендой недвижимости (eng)](https://guides.emberjs.com/v2.16.0/tutorial/ember-cli/)
-* [Приложение для сайта с арендой недвижимости (rus)](http://emjs.ru/v2/tutorial/ember-cli/)
 
 ### Базовые сведения
 
 * [Официальная документация по Ember.js](https://guides.emberjs.com/v2.16.0/)
 * [Официальная документация по Ember-CLI](https://ember-cli.com/user-guide/)
 * [Ember.js — идеальный фреймворк для веб приложений](https://medium.com/devschacht/graham-cox-ember-the-perfect-framework-for-web-applications-970e817ded98)
-* [Базовая структура приложения](http://emjs.ru/v2/getting-started/core-concepts/)
+* [Базовая структура приложения](https://guides.emberjs.com/release/getting-started/core-concepts/)
 * Состав приложения
-    * [Маршрутизация](http://emjs.ru/v2/routing/)
-    * [Контроллеры](http://emjs.ru/v2/controllers/)
-    * [Шаблоны](http://emjs.ru/v2/templates/handlebars-basics/)
-    * [Компоненты](http://emjs.ru/v2/components/defining-a-component/)
-* [Тестирование](http://emjs.ru/v2/testing/)
-    * [Приемочные тесты](http://emjs.ru/v2/testing/acceptance/#)
-    * [Основы модульного тестирования](http://emjs.ru/v2/testing/unit-testing-basics/)
-    * [Тестирование контроллеров](http://emjs.ru/v2/testing/testing-controllers/)
-    * [Тестирование маршрутов](http://emjs.ru/v2/testing/testing-routes/)
-    * [Тестирование моделей](http://emjs.ru/v2/testing/testing-models/)
-    * [Тестирование компонентов](http://emjs.ru/v2/testing/testing-components/)
+    * [Маршрутизация](https://guides.emberjs.com/release/routing/)
+    * [Контроллеры](https://guides.emberjs.com/release/controllers/)
+    * [Шаблоны](https://guides.emberjs.com/release/templates/handlebars-basics/)
+    * [Компоненты](https://guides.emberjs.com/release/components/defining-a-component/)
+* [Тестирование](https://guides.emberjs.com/release/testing/)
+    * [Приемочные тесты](https://guides.emberjs.com/release/testing/acceptance/)
+    * [Основы модульного тестирования](https://guides.emberjs.com/release/testing/unit-testing-basics/)
+    * [Тестирование контроллеров](https://guides.emberjs.com/release/testing/testing-controllers/)
+    * [Тестирование маршрутов](https://guides.emberjs.com/release/testing/testing-routes/)
+    * [Тестирование моделей](https://guides.emberjs.com/release/testing/testing-models/)
+    * [Тестирование компонентов](https://guides.emberjs.com/release/testing/testing-components/)
 
 ### Детальный обзор
 
-* [Управление зависимостями приложения](http://emjs.ru/v2/addons-and-dependencies/managing-dependencies/)
+* [Управление зависимостями приложения](https://guides.emberjs.com/release/addons-and-dependencies/managing-dependencies/)
     * [Установка ember-addon-ов](gbt_embaddon.html)
     * [Установка npm-пакетов](gbt_embnpm.html)
     * [Установка bower-пакетов](gbt_embbower.html)
     * [Vendor](gbt_embvendor.html)
     * [Каталог assets](gbt_embassets.html)
     * [Ember-cli-build](gbt_embclibuild.html)
-* [Конфигурирование Ember.js](http://emjs.ru/v2/configuring-ember/configuring-your-app/)
+* [Конфигурирование Ember.js](https://guides.emberjs.com/release/configuring-ember/configuring-your-app/)
     * [Базовая структура конфигурационного файл](gbt_embbaseconf.html)
     * [Настройки зависящие от окружения](gbt_embsetting.html)
     * [Как импортировать его в свои классы  и вычитывать оттуда настройки](gbt_embiosetting.html)
@@ -67,12 +65,6 @@ lang: ru
 * [Разработка Ember-сервисов](gbt_devservic.html)
 * [Ember Data](gbt_emddata.html)
 * [Profiling Ember.js Apps](https://speakerdeck.com/selvagsz/profiling-emberjs-apps)
-
-### Презентация
-
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-    <iframe src="//www.slideshare.net/slideshow/embed_code/key/5snk9pZdXKzcES?startSlide=23" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-</div>
 
 ## Подписка на новости от команды EmberJS и сообщества
 
