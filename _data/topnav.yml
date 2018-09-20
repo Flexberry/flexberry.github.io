@@ -48,24 +48,15 @@ topnav_dropdowns:
         - title: Base tech
           title_ru: Базовые технологии
           url: /gbt_landing-page.html
-        - title: Create web app
-          title_ru: Создание веб-приложений
-          url: /gwa_landing-page.html
         - title: Create mobile app
           title_ru: Создание мобильных приложений
           url: /gma_landing-page.html
-        - title: Create gis app
-          title_ru: Создание ГИС приложений
-          url: /gga_landing-page.html
         - title: Create BPM app
           title_ru: Создание BPM приложений
           url: /gbpm_landing-page.html
         - title: Create BigData app
           title_ru: Создание BigData приложений
           url: /gbd_landing-page.html
-        - title: App security and audit
-          title_ru: Полномочия и аудит
-          url: /gsa_landing-page.html
         - title: Tasks
           title_ru: Практические задания
           url: /gt_landing-page.html
