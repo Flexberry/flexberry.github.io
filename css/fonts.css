@@ -42,3 +42,12 @@
   url("/css/fonts/Roboto/Roboto-Bold.woff") format("woff"), 
   url("/css/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
   font-weight: 600; }
+
+  @font-face {
+  font-family: 'Crimean';
+  src: url("/css/fonts/Crimean/crim.eot");
+  src: url("/css/fonts/Crimean/crim.woff2") format('woff2'),
+    url("/css/fonts/Crimean/crim.woff") format('woff'),
+    url("/css/fonts/Crimean/crim.ttf") format('truetype'),
+    url("/css/fonts/Crimean/crim.svg#icons") format('svg');
+}

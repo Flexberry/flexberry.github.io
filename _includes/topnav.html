@@ -9,9 +9,9 @@
                 <span class="icon-bar"></span>
             </button>
             <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-              <i class="glyphicon glyphicon-align-left"></i>
+              <i class="glyphicon sidebar"></i>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> {{site.topnav_title}}</span></a>
+            <a class="navbar-brand" href="index.html"><span class="flexberry-logo"></span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -66,9 +66,10 @@
                 {% endfor %}
                 
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
-			            {% include feedback.html %}
-		            {% endif %}
-                <!--comment out this block if you want to hide search-->
+                  <li>
+                    {% include feedback.html %}
+                  </li>
+                {% endif %}
                 <li>
                     <!--start search-->
                     <div id="search-demo-container">
