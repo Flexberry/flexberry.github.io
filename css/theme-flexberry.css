@@ -1,4 +1,14 @@
 body {
+  font-family: Segoe UI,SegoeUI,Segoe WP,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: #000;
+  padding-top: 90px;
+}
+
+.panel-group, .nav {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #333333;
@@ -19,7 +29,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 300;
 }
 
-h3 {color: #9324db; }
+h3 {
+    color: #333333;
+    font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: 10px;
+ }
 
 h2 {
     color: #333333;
@@ -34,6 +49,22 @@ h4 {
     /*line-height: 30px;*/
     margin-bottom: 20px;
     font-weight: 500;
+}
+
+.flexberry-logo {
+  display: inline-block;
+  background-repeat: no-repeat;
+  z-index: 1000;
+  text-decoration: none !important;
+  width: 80px;
+  height: 90px;
+  background-image: url(https://new.flexberry.net/img/logo.png);
+  background-position: 0 4.37px !important;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+    font-size: 1.5em;
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
@@ -232,6 +263,7 @@ li.sidebarTitle {
     color: rgba(255, 255, 255, 0.8);
     padding-bottom: 7px;
     padding-top: 7px;
+    font-size: 16px;
 }
 
 .navbar-fixed-top .navbar-nav .active > a, .navbar-fixed-top .navbar-nav li > a:hover, .navbar-fixed-top .navbar-nav li > a:focus {
@@ -261,6 +293,17 @@ li.sidebarTitle {
 .navbar-inverse .navbar-nav > .open > a:focus .caret {
     border-top-color: #333;
     border-bottom-color: #333;
+}
+
+.navbar-collapse .navbar-nav {
+  margin-top: 15px;
+}
+
+.dropdown-menu > li > a {
+  color: rgba(94, 16, 141, 0.8);
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 /*Footer*/
@@ -317,9 +360,10 @@ footer .footer-above ul {
   align-items: stretch;
 }
 
+/*Sidebar*/
 #sidebar {
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 260px;
+  max-width: 260px;
   transition: all 0.3s;
   position: relative;
   background: #f1f1f1;
@@ -328,7 +372,7 @@ footer .footer-above ul {
 }
 
 #sidebar.active {
-  margin-left: -250px;
+  margin-left: -260px;
 }
 
 #sidebar .sidebar-header {
@@ -345,8 +389,9 @@ footer .footer-above ul {
   left: 10px;
   color: #ffffff;
   background-color: transparent;
-  border-color: #fff;
+  border: none;
   opacity: 0.8;
+  margin-top: 28px;
 }
 
 #sidebarCollapse:hover {
@@ -357,7 +402,7 @@ a[data-toggle="collapse"] {
   position: relative;
 }
 
-#mysidebar {
+#sidebar ul {
   text-align: left;
 }
 
@@ -376,7 +421,21 @@ a[data-toggle="collapse"] {
   -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 992px) {
+/*Sidebar icon*/
+.glyphicon.sidebar:before {
+    content: "\e800";
+    color: #fff;
+    font-family: 'Crimean';
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar.navbar-inverse.navbar-fixed-top >.container {
+    width: auto;
+    display: flex;
+  }
+}
+
+@media (max-width: 991px) {
   .wrapper {
     display: block;
   }
@@ -398,5 +457,103 @@ a[data-toggle="collapse"] {
 
   #search-input {
     width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+
+  /*Navbar collapse*/
+  .navbar .navbar-collapse {
+    text-align: left;
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    padding-bottom: 20px;
+  }
+
+  .navbar-fixed-top .navbar-nav > li > a {
+    color: #777;
+  }
+
+  .navbar-fixed-top .navbar-nav .active > a,
+  .navbar-fixed-top .navbar-nav li > a:hover,
+  .navbar-fixed-top .navbar-nav li > a:focus {
+      color: #333;
+      background-color: transparent;
+  }
+
+  .navbar-collapse {
+      max-height: calc(100vh - 115px);
+  }
+
+  .navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+    position: absolute;
+    right: 15px;
+  }
+
+  .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+      border-top-color: #333;
+      border-bottom-color: #333;
+  }
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    display: block;
+    font-weight: 500;
+    margin-left: 15px;
+    padding: 6px 0;
+    outline: 0;
+    color: rgba(94, 16, 141, 0.8);
+    text-decoration: none;
+  }
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #5a0d80;
+  }
+
+  /*Search input in collapse navbar*/
+  #search-input {
+    border-color: #333;
+    color: #333;
+    float: left;
+    margin-left: 0;
+    max-width: 20em;
+    width: 100%;
+  }
+
+  #search-input::placeholder {
+    color: #333;
+    opacity: 0.8;
+  }
+
+  .dropdown-menu > li > a {
+    font-size: 14px;
+  }
+
+  .navbar-nav .open .dropdown-menu {
+    padding: 5px 0 0 20px;
+  }
+
+  .nav.navbar-nav > li:not(:last-child) {
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  /*Navbar toggle button*/
+  .navbar-inverse .navbar-toggle {
+      background: #fff;
+  }
+
+  .navbar-inverse .navbar-toggle .icon-bar {
+      background-color: #888;
+  }
+
+  .navbar-inverse .navbar-toggle:hover,
+  .navbar-inverse .navbar-toggle:focus {
+      background-color: #ddd;
+  }
+
+  #search-demo-container ul#results-container {
+    z-index:1;
   }
 }
