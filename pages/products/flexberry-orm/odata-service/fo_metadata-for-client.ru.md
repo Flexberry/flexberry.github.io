@@ -1,6 +1,6 @@
 ---
 title: Настройка имен типов сущностей в метаданных OData
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Ember, odata, метаданные
 summary: 
 toc: true

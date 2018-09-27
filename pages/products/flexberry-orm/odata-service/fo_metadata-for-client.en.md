@@ -1,6 +1,6 @@
 ---
 title: Configuring entity type names in OData metadata
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-orm_sidebar
 keywords: Flexberry Ember, odata, метаданные
 summary: 
 toc: true
