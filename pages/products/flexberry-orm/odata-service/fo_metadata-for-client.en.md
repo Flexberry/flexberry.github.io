@@ -1,11 +1,11 @@
 ---
-title: Настройка имен типов сущностей в метаданных OData
+title: Configuring entity type names in OData metadata
 sidebar: ember-flexberry-data_sidebar
 keywords: Flexberry Ember, odata, метаданные
 summary: 
 toc: true
-permalink: ru/efd_metadata-for-client.html
-lang: ru
+permalink: en/fo_metadata-for-client.html
+lang: en
 ---
 
 За преобразование имен типов отвечает два делегата `EntityTypeNamespaceBuilder` и `EntityTypeNameBuilder`.
@@ -17,7 +17,7 @@ lang: ru
 public Func<Type, string> EntityTypeNameBuilder { get; set; }
 ```
 
-В `EntityTypeNameBuilder` можно реализовать исправленную функциональность, т.е. сделать свой аналог метода:
+В нём можно реализовать исправленную функциональность, т.е. сделать свой аналог метода:
 
 ```javascript
 /// <summary>

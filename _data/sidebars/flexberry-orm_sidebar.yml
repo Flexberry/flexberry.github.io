@@ -615,7 +615,7 @@ entries:
 
     - title: Configuring entity type names in OData metadata
       title_ru: Настройка имен типов сущностей в метаданных OData
-      url: /efd_metadata-for-client.html
+      url: /fo_metadata-for-client.html
       output: web
 
   - title: Монитор SQL-запросов
