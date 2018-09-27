@@ -15,6 +15,10 @@ entries:
       title_ru: О модуле
       url: /efd_landing_page.html
       output: web
+    - title: Configuring entity type names in OData metadata
+      title_ru: Настройка имен типов сущностей в метаданных OData
+      url: /efd_metadata-for-client.html
+      output: web
 
   - title: Models and projections
     title_ru: Модели и проекции
