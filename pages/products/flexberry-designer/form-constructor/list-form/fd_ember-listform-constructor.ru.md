@@ -4,8 +4,8 @@ sidebar: flexberry-designer_sidebar
 keywords: Flexberry Designer, структура приложения, listform
 summary: Принципы создания и редактирования listform
 toc: true
-permalink: en/fd_ember-listform-constructor.html
-lang: en
+permalink: ru/fd_ember-listform-constructor.html
+lang: ru
 ---
 
 Создание списковой формы доступно через редактирование [Структуры приложения](fd_structure_all_forms.html) по кнопке «Добавить форму редактирования». 
