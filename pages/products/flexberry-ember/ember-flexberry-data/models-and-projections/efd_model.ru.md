@@ -65,6 +65,7 @@ export default Model;
 ## Определение модели
 
 Модели определяются ["стандартным" для Ember способом](https://guides.emberjs.com/v2.4.0/models/defining-models/).
+
 Дополнительно в моделях, унаследованных от базовой технологической модели, используются [правила валидации модели](efd_model-validation.html).
 
 Для атрибутов любых моделей Ember доступны встроенные типы данных `string` (строка), `number` (число), `boolean` (логический тип) и `date` (дата). Для определения других типов данных в моделях Ember используются [трансформации](https://guides.emberjs.com/v2.4.0/models/defining-models/#toc_transforms).
