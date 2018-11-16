@@ -49,7 +49,9 @@ summary: Описание, свойства и пример использова
 Сообщению задан заголовок (`caption`), тип (`error`), содержание сообщения (`message`) и возможность скрывать сообщение (`closable`).
 В итоге сообщение будет выглядеть следующим образом:
 
-![](/images/pages/products/ember-flexberry/controls/example-for-ui-message.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/example-for-ui-message.png)
+
+{% include note.html content="У типов `success`, `error` и `warning` отображение зависит от состояния формы, на которой они находятся. (т.е. их первого родителя с классами ui form). Типы `positive`, `negative`, `info` отображаются и без родителя." %}
 
 Свойства сообщений можно компоновать необходимым для решения поставленной задачи образом (менять цвет, размер, добавлять иконки и т.д.). 
 Однако есть некоторые исключения в использовании свойств:  
