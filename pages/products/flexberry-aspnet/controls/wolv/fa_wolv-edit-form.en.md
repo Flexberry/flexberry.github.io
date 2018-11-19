@@ -34,6 +34,7 @@ lang: en
 
 1. WebObjectListView1.Operations.OpenEditorInNewWindow = true/false;
 2. WebObjectListView1.[Operations](fa_wolv-operations.html).OpenEditorInModalWindow = true/false;
+3. WebObjectListView1.Operations.EditInRow = true; - редактирование по щелчку в строке.
 
 {% include note.html content="При установленной `OpenEditorInNewWindow == false` вторая настройка не имеет смысла." %}
 

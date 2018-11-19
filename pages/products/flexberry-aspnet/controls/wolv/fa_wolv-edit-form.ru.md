@@ -23,7 +23,7 @@ lang: ru
     * окно может быть в виде **соседней вкладки**;
     * или в виде **модального окна**.
 
-### Настройка открытия формы редактирования
+## Настройка открытия формы редактирования
 
 Соответственно, для настройки открытия [web-формы редактирования](fa_editform.html) необходимо:
 
@@ -34,6 +34,7 @@ lang: ru
 
 1. WebObjectListView1.Operations.OpenEditorInNewWindow = true/false;
 2. WebObjectListView1.[Operations](fa_wolv-operations.html).OpenEditorInModalWindow = true/false;
+3. WebObjectListView1.Operations.EditInRow = true; - редактирование по щелчку в строке.
 
 {% include note.html content="При установленной `OpenEditorInNewWindow == false` вторая настройка не имеет смысла." %}
 
