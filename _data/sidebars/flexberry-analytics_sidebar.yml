@@ -3,7 +3,7 @@
 
 entries:
 - title: Sidebar
-  product: flexberry-analytics
+  product: Flexberry Analytics
   folders:
 
   folders:
@@ -15,4 +15,22 @@ entries:
     - title: Exporting data from ODataService to Excel
       title_ru: Экспорт данных из ODataService в Excel
       url: /fan_odata-export-to-excel.html
+      output: web, pdf
+    
+  - title: On-Line Analytical Processing
+    title_ru: Интерактивный анализ данных
+    output: web, pdf
+    
+    folderitems:
+    - title: Creating a Mondrian scheme for a OLAP-cube
+      title_ru: Создание Mondrian-схемы для OLAP-куба
+      url: /fan_mondrian-cube.html
+      output: web, pdf
+    - title: KNOWAGE. Business-process of creating OLAP-cube
+      title_ru: KNOWAGE. Бизнес-процесс создания OLAP-куба
+      url: /fan_knowage-cube.html
+      output: web, pdf
+    - title: Saiku. Business-process of creating OLAP-cube
+      title_ru: Saiku. Бизнес-процесс создания OLAP-куба
+      url: /fan_saiku-cube.html
       output: web, pdf
