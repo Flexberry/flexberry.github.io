@@ -160,13 +160,13 @@ Elements` в меню `View`. Таким образом, при располож
 Например: 
 
 ```
-http://dh.ics.perm.ru:12000/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d
+http://localhost:4200/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d
 ```
 
 При этом в URL можно указать и требуемый тип файла отчета:
 
 ```
-http://dh.ics.perm.ru:12000/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?output-target=table/excel;page-mode=flow&orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d
+http://localhost:4200/pentaho/api/repos/:home:msp:report1.prpt/generatedContent?output-target=table/excel;page-mode=flow&orgId=f5078a44-2ef6-49d9-ad2e-0099ba1cf02d
 ```
 
 Форматы вывода:
