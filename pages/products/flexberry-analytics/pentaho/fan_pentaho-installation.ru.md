@@ -18,7 +18,7 @@ summary:
 - сервис docker compose;
 - сервис docker swarm
 
-Режим запуска мультиконтейнерных приложений `docker-compose` обеспечивает удобный запуск образа на одном сервере, но для ряда Linux-дистрибутивов требует предварительной установки `docker-compose`,
+Режим запуска мультиконтейнерных приложений `docker-compose` обеспечивает удобный запуск образа на одном сервере, но для ряда дистрибутивов требует предварительной установки `docker-compose`,
 так как команда  не входит в стандартный набор команд docker.
 Установка `docker-compose` описана на странице [http://docker.crank.ru/docs/docker-compose/install-compose/](http://docker.crank.ru/docs/docker-compose/install-compose/).
 
