@@ -7,3 +7,7 @@ permalink: ru/fan_pentaho-installation.html
 lang: ru
 summary:
 ---
+
+# Установка и запуск Pentaho в Docker
+
+...
