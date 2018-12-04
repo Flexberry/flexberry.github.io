@@ -22,15 +22,25 @@ entries:
     output: web, pdf
     
     folderitems:
+    - title: Installing and running Pentaho in Docker
+      title_ru: Установка и запуск Pentaho в Docker
+      url: /fan_pentaho-installation.html
+      output: web, pdf
     - title: Creating a Mondrian scheme for a OLAP-cube
       title_ru: Создание Mondrian-схемы для OLAP-куба
       url: /fan_mondrian-cube.html
       output: web, pdf
-    - title: KNOWAGE. Business-process of creating OLAP-cube
-      title_ru: KNOWAGE. Бизнес-процесс создания OLAP-куба
-      url: /fan_knowage-cube.html
-      output: web, pdf
     - title: Saiku. Business-process of creating OLAP-cube
       title_ru: Saiku. Бизнес-процесс создания OLAP-куба
       url: /fan_saiku-cube.html
+      output: web, pdf
+
+  - title: additionally
+    title_ru: Дополнительно
+    output: web, pdf
+    
+    folderitems:
+    - title: KNOWAGE. Business-process of creating OLAP-cube
+      title_ru: KNOWAGE. Бизнес-процесс создания OLAP-куба
+      url: /fan_knowage-cube.html
       output: web, pdf
