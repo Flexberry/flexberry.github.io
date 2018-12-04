@@ -1,6 +1,6 @@
 ---
 title: Pentaho Report Designer Quick Start Guide
-sidebar: fan_sidebar
+sidebar: flexberry-analytics_sidebar
 keywords: Pentaho, issues, запросы, отчеты, типы данных, псевдонимы, отображение
 toc: true
 permalink: en/fan_pentaho-faq.html

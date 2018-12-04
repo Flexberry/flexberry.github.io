@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по Pentaho Report Designer
-sidebar: fan_sidebar
+sidebar: flexberry-analytics_sidebar
 keywords: Pentaho, проблемы, запросы, отчеты, типы данных, псевдонимы, отображение
 toc: true
 permalink: ru/fan_pentaho-faq.html
