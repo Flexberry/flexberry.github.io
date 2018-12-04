@@ -8,6 +8,6 @@ lang: ru
 summary:
 ---
 
-# Установка и запуск Pentaho в Docker
+## Установка и запуск Pentaho в Docker
 
 ...
