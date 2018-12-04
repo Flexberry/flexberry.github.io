@@ -42,9 +42,9 @@ $client.DownloadFile("$downloadPath/.env", "$pwd\.env")
 $client.DownloadFile("$downloadPath/pull.sh", "$pwd\pull.cmd")
 $client.DownloadFile("$downloadPath/docker-compose.yml", "$pwd\docker-compose.yml")
 $client.DownloadFile("$downloadPath/composeStart.sh", "$pwd\composeStart.cmd")
-$client.DownloadFile("$downloadPath/composeStart.sh", "$pwd\composeStart.cmd")
+$client.DownloadFile("$downloadPath/composeStop.sh", "$pwd\composeStop.cmd")
 $client.DownloadFile("$downloadPath/swarmStart.sh", "$pwd\swarmStart.cmd")
-$client.DownloadFile("$downloadPath/swarmStart.sh", "$pwd\swarmStart.cmd")
+$client.DownloadFile("$downloadPath/swarmStop.sh", "$pwd\swarmStop.cmd")
 ```
 
 Скрипт можно скачать с [GitHub](https://raw.githubusercontent.com/Flexberry/NewPlatform.Flexberry.Analytics/master/pentaho/getPentaho.ps1).  
