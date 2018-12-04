@@ -26,6 +26,10 @@ entries:
       title_ru: Установка и запуск Pentaho в Docker
       url: /fan_pentaho-installation.html
       output: web, pdf
+    - title: Pentaho Report Designer Quick Start Guide
+      title_ru: Краткое руководство по Pentaho Report Designer
+      url: /fan_pentaho-faq.html
+      output: web, pdf
     - title: Creating a Mondrian scheme for a OLAP-cube
       title_ru: Создание Mondrian-схемы для OLAP-куба
       url: /fan_mondrian-cube.html

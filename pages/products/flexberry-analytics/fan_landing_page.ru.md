@@ -1,5 +1,5 @@
 ---
-title: flexberry-analytics
+title: Flexberry Analytics
 keywords: mydoc
 sidebar: flexberry-analytics_sidebar
 toc: false

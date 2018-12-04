@@ -1,6 +1,6 @@
 ---
 title: Creating a Mondrian scheme for a OLAP-cube
-keywords: mydoc
+keywords:  OLAP, куб, измерение, схема, подключение БД
 sidebar: flexberry-analytics_sidebar
 toc: false
 permalink: en/fan_mondrian-cube.html
