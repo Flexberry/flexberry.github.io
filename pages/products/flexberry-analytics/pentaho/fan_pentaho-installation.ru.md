@@ -93,7 +93,7 @@ SERVER_PROM_PORT=1234
 
 В PowerShell консоли нужно ввести 
 ```powershell
-`docker ps`
+docker ps
 ```
 
 В результате будет выдан список запущенных `docker образов` (среди них должен быть `flexberry/pentaho:latest`).
