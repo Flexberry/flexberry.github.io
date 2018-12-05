@@ -1,5 +1,5 @@
 ---
-title: Установка и запуск Pentaho в Docker
+title: Установка и запуск «Flexberry Analytics» в Docker
 keywords: Pentaho, installation, Docker, инструкция
 sidebar: flexberry-analytics_sidebar
 toc: false
@@ -8,7 +8,9 @@ lang: ru
 summary:
 ---
 
-## Установка и запуск Pentaho в Docker
+## Установка и запуск «Flexberry Analytics» в Docker
+
+Сервис «Flexberry Analytics» обеспечивает сервер `Pentaho`, офомленный в виде [Docker-образа](https://hub.docker.com/r/flexberry/pentaho/).
 
 ### Условия для запуска
 
