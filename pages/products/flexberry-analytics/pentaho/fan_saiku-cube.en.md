@@ -73,9 +73,13 @@ summary:
 
 4.В открывшемся окне справа нужно кликнуть на иконку ![](/images/pages/products/flexberry-analytics/saiku-cube-refresh.png) для обновления данных;
 
-5.Выбрать нужный куб из выпадающего списка;
+5.Выбрать нужный куб из выпадающего списка:
+
+![](/images/pages/products/flexberry-analytics/saiku-cube005.png)
 
 6.Добавить измерения и меры, отображен результат:
 
-![](/images/pages/products/flexberry-analytics/saiku-cube005.png)
+![](/images/pages/products/flexberry-analytics/saiku-cube006.png)
+
+![](/images/pages/products/flexberry-analytics/saiku-cube007.png)
  
