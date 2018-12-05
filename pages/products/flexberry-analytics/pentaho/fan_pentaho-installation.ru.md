@@ -82,8 +82,53 @@ SERVER_PROM_PORT=1234
 
 ### Запуск в режиме docker swarm
 
- Запуск в режиме docker swarm обеспечивается docker-скриптом `swarmStart.cmd`.
+ Запуск в режиме `docker swarm` обеспечивается docker-скриптом `swarmStart.cmd`.
 
  Инициализация сервиса происходит в течении 30-60 секунд.
 
  Останов сервиса обеспечивает скриптом `swarmStop.cmd`.
+ 
+ 
+### Проверка успешности запуска Pentaho
+
+В PowerShell консоли нужно ввести 
+```powershell
+docker ps
+```
+
+В результате будет выдан список запущенных `docker образов` (среди них должен быть `flexberry/pentaho:latest`).
+* Административное приложение с конфигурацией по умолчанию доступно по адресу <`http://localhost:8080`>. Логин и пароль: `admin`, `password` (при переходе на промышленную эксплуатацию обязательно нужно сменить).
+
+При запуске `Pentaho` в режиме `docker swarm` проверить работоспособность сервиса также можно командой
+```powershell
+docker service ls
+ID    NAME            MODE         REPLICAS IMAGE                      PORTS
+...   pentaho_pentaho replicated   1/1      flexberry/pentaho:latest   ...
+...
+```
+В столбце `REPLICAS` должно быть значение `1/1`.
+
+При первоначальном запуске образа создаются именованые тома:
+- pentaho_hidden - скрытые файлы сервера pentaho;
+- pentaho_hsqldb - внутренняя база данных типа  hsql для хранения текущих настроек;
+- pentaho_repository - файловая система пользователей;
+- pentaho_logs - логи сервера;
+- pentaho_tmp - временные файлы сервера.
+
+При повторных запусках образ использует данные из указанным именованых томов.
+Таким образов файлы пользователя и текущие настройки сохраняются при перезапуске контейнера.
+
+Для просмотра списка созданных именованных томов используйте команду
+```
+docker volume ls
+```
+
+Если Вы планируете использовать данные настройки на другом сервере необходимо перенести указанные именованые тома.
+Одноименненные папки томов располагаются в каталоге `/var/lib/docker/volumes`.
+
+### Дополнительно
+
+- [git-репозиторий сборки образа Pentaho](https://github.com/Flexberry/dockerfiles/blob/master/pentaho/README_ru.md);
+- [git-репозиторий скриптов запуска образа](https://github.com/Flexberry/NewPlatform.Flexberry.Analytics/tree/master/pentaho);
+- [репозиторий docker-образа](https://hub.docker.com/r/flexberry/pentaho/).
+
