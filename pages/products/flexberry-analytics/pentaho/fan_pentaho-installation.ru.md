@@ -12,23 +12,7 @@ summary:
 
 Сервис «Flexberry Analytics» обеспечивает сервер `Pentaho`, офомленный в виде [Docker-образа](https://hub.docker.com/r/flexberry/pentaho/).
 
-### Условия для запуска
-
 Для запуска образа `Pentaho` требуется иметь установленное ПО [Docker](https://docs.docker.com). Для пользователей ОС Windows есть соответствующая версия [Docker for Windows](https://docs.docker.com/docker-for-windows/install/).
-
-Образ `Pentaho` может быть запущен в двух режимах:
-- сервис docker compose;
-- сервис docker swarm
-
-Режим запуска мультиконтейнерных приложений `docker-compose` обеспечивает удобный запуск образа на одном сервере, но для ряда дистрибутивов требует предварительной установки `docker-compose`,
-так как команда  не входит в стандартный набор команд docker.
-Установка `docker-compose` описана на странице [http://docker.crank.ru/docs/docker-compose/install-compose/](http://docker.crank.ru/docs/docker-compose/install-compose/).
-
-Режим запуска в кластерном режиме обеспечивает удобный запуск образа на кластере серверов (в том числе на кластере из одного сервера), но требует предварительной инициализации кластера.
-Инициализации кластера описана на странице [https://docs.docker.com/engine/reference/commandline/swarm_init/](https://docs.docker.com/engine/reference/commandline/swarm_init/).
-
-Оба режима запуска используют один и тот же файл конфигурации `.env` и одни и те же именованные тома.
-Использование именованных томов обеспечивает сохранение всех настроек и текущего состояния `pentaho` при перезапуске контейнера.
 
 ### PowerShell-скрипт установки и запуск Pentaho
 
@@ -80,15 +64,7 @@ SERVER_PROM_PORT=1234
 
  Инициализация сервиса происходит в течении 30-60 секунд.
 
- Останов сервиса обеспечивает скриптом `composeStop.cmd`.
-
-### Запуск в режиме docker swarm
-
- Запуск в режиме `docker swarm` обеспечивается docker-скриптом `swarmStart.cmd`.
-
- Инициализация сервиса происходит в течении 30-60 секунд.
-
- Останов сервиса обеспечивает скриптом `swarmStop.cmd`.
+ Останов сервиса обеспечивает скриптом `composeStop.cmd`
 
 
 ### Проверка успешности запуска Pentaho
@@ -100,15 +76,6 @@ docker ps
 
 В результате будет выдан список запущенных `docker образов` (среди них должен быть `flexberry/pentaho:latest`).
 * Административное приложение с конфигурацией по умолчанию доступно по адресу <`http://localhost:8080`>. Логин и пароль: `admin`, `password` (при переходе на промышленную эксплуатацию обязательно нужно сменить).
-
-При запуске `Pentaho` в режиме `docker swarm` проверить работоспособность сервиса также можно командой
-```powershell
-docker service ls
-ID    NAME            MODE         REPLICAS IMAGE                      PORTS
-...   pentaho_pentaho replicated   1/1      flexberry/pentaho:latest   ...
-...
-```
-В столбце `REPLICAS` должно быть значение `1/1`.
 
 При первоначальном запуске образа создаются именованые тома:
 - pentaho_hidden - скрытые файлы сервера pentaho;
@@ -127,6 +94,17 @@ docker volume ls
 
 Если Вы планируете использовать данные настройки на другом сервере необходимо перенести указанные именованые тома.
 Одноименненные папки томов располагаются в каталоге `/var/lib/docker/volumes`.
+
+### Запуск в режиме docker swarm
+
+Описанный режим запуска мультиконтейнерных приложений `docker-compose` обеспечивает удобный запуск образа на одном сервере, но для ряда Linux-дистрибутивов требует предварительной установки `docker-compose`,
+так как команда  не входит в стандартный набор команд docker.
+Установка `docker-compose` описана на странице [http://docker.crank.ru/docs/docker-compose/install-compose/](http://docker.crank.ru/docs/docker-compose/install-compose/).
+
+Если сервис Pentaho используется в проекте, развернутом на нескольких (виртуальных) серверах, то рекомедуется запускать сервис в режиме `docker swarm`. 
+
+Описание запуска образа в режиме `docker swarm` описана на [github странице образа](https://github.com/Flexberry/dockerfiles/tree/master/pentaho).
+
 
 ### Дополнительно
 
