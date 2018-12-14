@@ -39,7 +39,7 @@ cd $documentsPath
 New-Item -ErrorAction Ignore -Path $folderName -ItemType 'directory'
 cd $folderName
 $client = new-object System.Net.WebClient
-$downloadPath = 'https://github.com/Flexberry/NewPlatform.Flexberry.Analytics/tree/master/pentaho'
+$downloadPath = 'https://raw.githubusercontent.com/Flexberry/NewPlatform.Flexberry.Analytics/master/pentaho'
 $client.DownloadFile("$downloadPath/.env", "$pwd\.env")
 $client.DownloadFile("$downloadPath/pull.sh", "$pwd\pull.cmd")
 $client.DownloadFile("$downloadPath/docker-compose.yml", "$pwd\docker-compose.yml")
@@ -89,11 +89,11 @@ SERVER_PROM_PORT=1234
  Инициализация сервиса происходит в течении 30-60 секунд.
 
  Останов сервиса обеспечивает скриптом `swarmStop.cmd`.
- 
- 
+
+
 ### Проверка успешности запуска Pentaho
 
-В PowerShell консоли нужно ввести 
+В PowerShell консоли нужно ввести
 ```powershell
 docker ps
 ```
@@ -133,4 +133,3 @@ docker volume ls
 - [git-репозиторий сборки образа Pentaho](https://github.com/Flexberry/dockerfiles/blob/master/pentaho/README_ru.md);
 - [git-репозиторий скриптов запуска образа](https://github.com/Flexberry/NewPlatform.Flexberry.Analytics/tree/master/pentaho);
 - [репозиторий docker-образа](https://hub.docker.com/r/flexberry/pentaho/).
-
