@@ -121,6 +121,14 @@ entries:
     - title: Apache Cordova
       url: /gbt_cordova.html
       output: web
+  - title: Interface Design
+    title_ru: Дизайн интерфейса
+    output: web
+    folderitems:
+    - title: UI Fundamentals
+      title_ru: Основы UI
+      url: /gbt_design.ru.html
+      output: web
   - title: GIS Development
     title_ru: Разработка ГИС
     output: web
