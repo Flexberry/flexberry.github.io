@@ -64,6 +64,17 @@ SERVER_PROM_PORT=1234
 
  Останов сервиса обеспечивает скриптом `composeStop.cmd`
 
+### Запуск в режиме docker swarm
+
+Описанный режим запуска мультиконтейнерных приложений `docker-compose` обеспечивает удобный запуск образа на одном сервере, но для ряда Linux-дистрибутивов требует предварительной установки `docker-compose`,
+так как команда  не входит в стандартный набор команд docker.
+Установка `docker-compose` описана на странице [http://docker.crank.ru/docs/docker-compose/install-compose/](http://docker.crank.ru/docs/docker-compose/install-compose/).
+
+Если сервис Pentaho используется в проекте, развернутом на нескольких (виртуальных) серверах, то рекомедуется запускать сервис в режиме `docker swarm`. 
+
+Запуск и останов сервиса `Pentaho` в режиме `docker swarm` обеспечивают скрипты  `swarmStart.cmd`, `swarmStop.cmd` соответсвенно.`
+
+Подробное описание запуска образа в режиме `docker swarm` описана на [github странице образа](https://github.com/Flexberry/dockerfiles/tree/master/pentaho).
 
 ### Проверка успешности запуска Pentaho
 
@@ -93,17 +104,21 @@ docker volume ls
 Если Вы планируете использовать данные настройки на другом сервере необходимо перенести указанные именованые тома.
 Одноименненные папки томов располагаются в каталоге `/var/lib/docker/volumes`.
 
-### Запуск в режиме docker swarm
+### Работа с сервисом
 
-Описанный режим запуска мультиконтейнерных приложений `docker-compose` обеспечивает удобный запуск образа на одном сервере, но для ряда Linux-дистрибутивов требует предварительной установки `docker-compose`,
-так как команда  не входит в стандартный набор команд docker.
-Установка `docker-compose` описана на странице [http://docker.crank.ru/docs/docker-compose/install-compose/](http://docker.crank.ru/docs/docker-compose/install-compose/).
+После запуска сервера `pentaho` работа с сервисом аналитики производится по URL:
+`http://<IP_адрес_сервера>:<SERVER_HTTP_PORT>`
 
-Если сервис Pentaho используется в проекте, развернутом на нескольких (виртуальных) серверах, то рекомедуется запускать сервис в режиме `docker swarm`. 
+Где `SERVER_HTTP_PORT` - значение, указанное в одноименной переменной файла `.env`.
 
-Запуск и останов сервиса `Pentaho` в режиме `docker swarm` обеспечивают скрипты  `swarmStart.cmd`, `swarmStop.cmd` соответсвенно.`
+Если работа доступ к серверу производится с компьютера на котором запущен сервис, то URL будет выглядеть как:
+`http://localhost:8080/`.
 
-Подробное описание запуска образа в режиме `docker swarm` описана на [github странице образа](https://github.com/Flexberry/dockerfiles/tree/master/pentaho).
+Параметры авторизации:
+```
+User name: admin
+Passwoed: password
+```
 
 
 ### Дополнительно
