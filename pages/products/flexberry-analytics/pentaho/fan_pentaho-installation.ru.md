@@ -64,17 +64,6 @@ SERVER_PROM_PORT=1234
 
  Останов сервиса обеспечивает скриптом `composeStop.cmd`
 
-### Запуск в режиме docker swarm
-
-Описанный режим запуска мультиконтейнерных приложений `docker-compose` обеспечивает удобный запуск образа на одном сервере, но для ряда Linux-дистрибутивов требует предварительной установки `docker-compose`,
-так как команда  не входит в стандартный набор команд docker.
-Установка `docker-compose` описана на странице [http://docker.crank.ru/docs/docker-compose/install-compose/](http://docker.crank.ru/docs/docker-compose/install-compose/).
-
-Если сервис Pentaho используется в проекте, развернутом на нескольких (виртуальных) серверах, то рекомедуется запускать сервис в режиме `docker swarm`. 
-
-Запуск и останов сервиса `Pentaho` в режиме `docker swarm` обеспечивают скрипты  `swarmStart.cmd`, `swarmStop.cmd` соответсвенно.`
-
-Подробное описание запуска образа в режиме `docker swarm` описана на [github странице образа](https://github.com/Flexberry/dockerfiles/tree/master/pentaho).
 
 ### Проверка успешности запуска Pentaho
 
@@ -83,7 +72,8 @@ SERVER_PROM_PORT=1234
 docker ps
 ```
 
-В результате будет выдан список запущенных `docker образов` (среди них должен быть `flexberry/pentaho:latest`).
+В результате будет выдан список запущенных `docker образов`.
+Среди них должен быть `flexberry/pentaho-saiku:8.0`.
 
 Административное приложение с конфигурацией по умолчанию доступно по адресу <`http://<IP_адрес_сервера>:<SERVER_HTTP_PORT>`>. 
 
