@@ -222,7 +222,7 @@ export default EditFormController.extend({
 `preview` | Определяет имя action'а, которое будет происходит по клику на кнопку 'preview'.|
 `showPreviewButton` | Флаг, определяющий, отображать ли кнопку просмотра. | false
 `previewFormRoute` | Определяет Route, в котором будет открыто выбранное значение.|
-`previewOnSeparateRoute` | Флаг, определяющий, открывать ли выбранное значение в отдельной странице.|
+`previewOnSeparateRoute` | Флаг, определяющий, открывать ли выбранное значение в отдельной странице (по умолчанию открывается в модальном окне)| false
 `previewButtonClass` | Определяет css-class на кнопку 'preview'.|
 `previewText` | Определяет текст/html внутри кнопки 'preview'.|
 
