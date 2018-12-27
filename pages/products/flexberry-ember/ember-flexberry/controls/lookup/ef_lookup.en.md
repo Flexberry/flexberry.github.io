@@ -52,7 +52,7 @@ Model.defineProjection('ПользовательE', 'пользователь', 
 
 ```javascript
 export default ApplicationSerializer.extend({
-  attrs: { 
+  attrs: {
       редактор: { serialize: 'odata-id', deserialize: 'records' }
   },
   primaryKey: '__PrimaryKey'
@@ -109,7 +109,7 @@ export default ApplicationSerializer.extend({
 `title` | Заголовок модального окна |
 `autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
 `dropdown` | Режим выпадающего списка, в режиме "Только для чтения" не работает | false
-`displayAttributeName` | Имя атрибута модели (свойства мастера), которое отображается для пользователя | 
+`displayAttributeName` | Имя атрибута модели (свойства мастера), которое отображается для пользователя |
 `minCharacters` | Минимальное количество символов для автокомпилита, в режиме автокомплита и в режиме выпадающего списка | 1
 `maxResults` | Максимальное количество отображаемых записей в режиме автокомплита и в режиме в режиме выпадающего списка, не обязательное свойство | 10
 
@@ -200,3 +200,28 @@ export default EditFormController.extend({
 ## Лукап в режиме автодополнения
 
 Лукап можно переводить в [режим автодополнения](ef_lookup-autocomplete.html).
+
+## Кнопка просмотра выбранного значения
+
+Для использования данной возможности лукапа требуется определить следующие свойства:
+
+```hbs
+{% raw %}
+{{flexberry-lookup
+  preview=(action "previewLookupValue")
+  showPreviewButton=true
+  previewFormRoute=previewFormRoute
+  // ...
+}}{% endraw %}
+```
+
+Ниже указаны добавленные в лукап свойства для работы кнопки просмотра:
+
+Свойство | Описание | Дефолтное значение
+:---------------------|:------------------------------------------------------------|:----------------
+`preview` | Определяет имя action'а, которое будет происходит по клику на кнопку 'preview'.|
+`showPreviewButton` | Флаг, определяющий, отображать ли кнопку просмотра. | false
+`previewFormRoute` | Определяет Route, в котором будет открыто выбранное значение.|
+`previewOnSeparateRoute` | Флаг, определяющий, открывать ли выбранное значение в отдельной странице.|
+`previewButtonClass` | Определяет css-class на кнопку 'preview'.|
+`previewText` | Определяет текст/html внутри кнопки 'preview'.|
