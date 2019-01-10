@@ -34,7 +34,7 @@ $client.DownloadFile("$downloadPath/stop-flexberry-service-bus.cmd", "$pwd\stop-
 Для запуска скрипта нужно открыть [PowerShell консоль](https://docs.microsoft.com/ru-ru/powershell/scripting/setup/starting-windows-powershell?view=powershell-6). Затем можно либо прописать в консоли путь к скрипту (например D:\userName\NewPlatform.Flexberry.ServiceBus\Docker\getServiceBus.ps1) и запустить его, либо просто скопировать текст скрипта в консоль и выполнить.
 После выполнения скрипта будут скачаны все необходимые файлы для запуска шины, в командной строке выполните `start-flexberry-service-bus.cmd` для запуска и `stop-flexberry-service-bus.cmd` для остановки контейнеров шины.
 
-{% include note.html content="С версии `1.2.0-beta02` появилась поддержка `RabbitMQ`, используйте команду `start-flexberry-service-bus.cmd rabbitmq` для запуска." %}
+{% include note.html content="С версии `1.2.0` шина запускается в конфигурации с `RabbitMQ`, используйте команду `start-flexberry-service-bus.cmd no-rabbit` для запуска в конфигурации по умолчанию." %}
 
 ### Проверка успешности запуска шины
 

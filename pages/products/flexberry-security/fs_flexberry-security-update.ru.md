@@ -82,6 +82,7 @@ lang: ru
       …
       <!-- Конфигурация сервиса кеширования. -->
       <register type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <lifetime type="singleton" />
         <constructor>
           <param name="cacheName" type="System.String" value="defaultCacheForApplication" />
         </constructor>
@@ -104,11 +105,13 @@ lang: ru
         <property name="CustomizationStringName" dependencyType="System.String" value="DefConnStr или другое имя строки соединения с БД ПОЛНОМОЧИЙ" />
       </register>
       <register name="cacheServiceForSecurityManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <lifetime type="singleton" />
         <constructor>
           <param name="cacheName" type="System.String" value="cacheForSecurityManager" />
         </constructor>
       </register>
       <register name="cacheServiceForAgentManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <lifetime type="singleton" />
         <constructor>
           <param name="cacheName" type="System.String" value="cacheForAgentManager" />
         </constructor>
