@@ -8,8 +8,6 @@ lang: ru
 summary:
 ---
 
-## Установка и запуск «Flexberry Analytics» в Docker
-
 Сервис «Flexberry Analytics» обеспечивает сервер `Pentaho`, офомленный в виде [Docker-образа](https://hub.docker.com/r/flexberry/pentaho/).
 
 ### Условия для запуска
@@ -89,8 +87,7 @@ SERVER_PROM_PORT=1234
  Инициализация сервиса происходит в течении 30-60 секунд.
 
  Останов сервиса обеспечивает скриптом `swarmStop.cmd`.
- 
- 
+  
 ### Проверка успешности запуска Pentaho
 
 В PowerShell консоли нужно ввести 

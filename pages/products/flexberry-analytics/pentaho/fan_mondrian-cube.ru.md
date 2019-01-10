@@ -279,3 +279,35 @@ summary:
 10.Заполнить Dimension Usage:
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-041.png)
+
+## Создание виртуального Куба
+
+Для отображения нескольких кубов на одной схеме используется функция создания виртуальных кубов. Для этого требуется:
+
+1.Создать как минимум два куба с измерениями и мерами
+
+2.В открытой схеме нужно создать виртуальный куб (ПКМ по схеме и кликнуть `Add virtual cube`)
+ 
+![](/images/pages/products/flexberry-analytics/mondrian-cube-042.png)
+
+3.Заполнить, в появившимся окне, наименование (name) для виртуального куба
+
+4.Добавить в виртуальный куб ссылки на измерения обычных кубов, для этого:
+   * Кликнуть ПКМ по виртуальному кубу и выбрать `Add virtual cube dimension`
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-043.png)
+
+   * В появившемся окне виртуального измерения заполнить атрибуты: name и cubeName в точности, как они называются в исходном кубе
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-044.png) 
+
+5.Добавить в виртуальный куб ссылки на меры обычных кубов, для этого:
+   * Кликнуть ПКМ по виртуальному кубу и выбрать `Add virtual cube measure`
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-045.png)
+
+   * В появившемся окне виртуального измерения заполнить атрибуты: name и cubeName в точности, как они называются в исходном кубе
+
+{% include important.html content=" Параметр name заполнять в формате: [Measures].[<Наименование меры>]." %}
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-046.png)
