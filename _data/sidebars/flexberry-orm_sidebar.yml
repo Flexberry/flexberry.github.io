@@ -338,9 +338,6 @@ entries:
       title_ru: Проблема используемых типов
       url: /fo_type-usage-problem.html
       output: web
-    - title: Creating a computable field
-      title_ru: Создание вычислимого поля
-      url: /fo_creating-computable-field.html
       output: web
     - title: Creating a Custom Data Type
       title_ru: Создание пользовательского типа данных
