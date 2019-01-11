@@ -54,7 +54,7 @@ monodevelop&
 
 7.В Visual Studio указать:
 
-[MdbConverter.exe](https://download.freedownloadmanager.org/Windows-PC/MDB-Converter/FREE-3.0.html) . с:/catalog:/childrencatalog
+[MdbConverter.exe](https://github.com/akosinsky/MdbConverter). с:/catalog:/childrencatalog
 
 ![](/images/pages/products/base-tech/mono/Monodevelop02.png)
 
