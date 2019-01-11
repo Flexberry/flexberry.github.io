@@ -29,9 +29,9 @@ entries:
       url: /fa_page-content-manager.html
       output: web, pdf
 
-    - title: Form interaction
+    - title: FilterPageContentConnector
       title_ru: Подключение скриптов и стилей на основе FilterPageContentConnector
-      url: /fa_form-interaction.html
+      url: /fa_filter-page-content-connector.html
       output: web, pdf
 
     - title: PlaceholderPageContentConnector
@@ -57,11 +57,11 @@ entries:
     - title: Sitemap according roles
       title_ru: Настройка карты сайта по ролям
       url: /fa_sitemap-according-roles.html
-      output: web, pdf
+      output: web, pdf    
 
-    - title: FilterPageContentConnector
+    - title: Form interaction
       title_ru: Межформенное взаимодействие в Web-приложениях
-      url: /fa_filter-page-content-connector.html
+      url: /fa_form-interaction.html
       output: web, pdf
 
     - title: Object transfer for Flexberry ASP.NET
