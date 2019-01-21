@@ -39,7 +39,7 @@ docker pull akosinsky/monodevelop-ember:latest
 4.Выполнить команду
 
 ```
-docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=00.000.0.00:0.0" -e "http_proxy=http://00.000.000.0:8080" -v с:/catalog:/childrencatalog  developer/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory
+docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=<IP-castom>" -e "http_proxy=http://<IP-castom>" -v с:/catalog:/childrencatalog  developer/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory
 ```
 
 5.В открывшимся окне терминал выполнить команду:
@@ -54,7 +54,14 @@ monodevelop&
 
 7.В Visual Studio указать:
 
-[MdbConverter.exe](https://github.com/akosinsky/MdbConverter). с:/catalog:/childrencatalog
+[MdbConverter.exe](https://github.com/Flexberry/mono/tree/MdbConverter). с:/catalog:/childrencatalog
+
+Чтобы собрать `MdbConverter` необходимо:
+1. Выполнить git clone https://github.com/Flexberry/mono
+2. git checkout MdbConverter
+3. Открыть в Visual Studio проект 
+mono\mcs\tools\pdb2mdb\MdbConverter.csproj
+4. Выполнить Build.
 
 ![](/images/pages/products/base-tech/mono/Monodevelop02.png)
 
