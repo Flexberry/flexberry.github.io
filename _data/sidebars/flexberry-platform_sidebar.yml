@@ -18,7 +18,7 @@ entries:
     - title: Architecture
       title_ru: Архитектура платформы
       url: /fp_architecture.html
-      output: web    
+      output: web
 
   - title: Platform development
     title_ru: Разработка платформы
@@ -26,12 +26,12 @@ entries:
 
     folderitems:
     - title: Articles authoring
-      title_ru: Правила оформления статей 
+      title_ru: Правила оформления статей
       url: /fp_how-create-article.html
       output: web, pdf
 
     - title: Rules for translating articles
-      title_ru: Правила перевода статей 
+      title_ru: Правила перевода статей
       url: /fp_translation-article.html
       output: web, pdf
 
@@ -45,9 +45,12 @@ entries:
       url: /fp_code-style.html
       output: web, pdf
 
+    - title: Check list for Code Review
+      title_ru: Чек-лист для Code Review
+      url: /fp_code-review-check-list.html
+      output: web, pdf
+
     - title: EmberJS code comments
       title_ru: Комментарии в Ember-проектах
       url: /fp_ember-comments-style-yuidoc.html
       output: web, pdf
-
-      
