@@ -10,7 +10,7 @@ lang: ru
 
 ## Отладка
 
-### Отладка JavaScript с использованием Chrome Web Tools
+### Отладка JavaScript и Ember.js с использованием Chrome Web Tools
 При разработке массивных SPA наиболее удобно отлаживать код JavaScript с помощью стандартной консоли браузера Google Chrome (Chrome Web Tools).
 ![Chrome Web Tools](../../../../images/pages/guides/base-technologies/debugging/chrome-web-tools.png)
 
@@ -49,6 +49,28 @@ lang: ru
 2. Вкладка Call Stack показывает стек вызовов, во вкладке Exception Settings можно настроить поведение при различных исключениях.
 3. В разделе Diagnostic Tools находится информация об использовании приложением памяти и ресурсов процессора, данные отображены на таймлайне. Кроме этого, на таймлайн наносятся различные события (например, при работе с ASP.NET на таймлайн наносятся запросы к серверу) и исключения. Нажатие на событие на таймлайне позволяет перейти в режим Historical Debugging.
 
+### Отладка Mono-приложений
+
+Для того, чтобы приступить к отладке приложения в  Monodevelop из Windows, нужно выполнить следующие шаги:
+
+1. Выполнить команду `docker pull akosinsky/monodevelop-ember:latest`
+2. Установить XServer для Windows, запустить XServer
+4. Выполнить команду
+`docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=XX.XX.XX.XX:0.0" -v d:/projects:/root/projects  akosinsky/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory`
+
+**Вместо XX.XX.XX.XX указать свой ip, вместо d:/projects указать свою папку проектов**
+
+5. В открывшимся окне терминала выполнить команду:
+`monodevelop&`
+6. Открыть нужный проект и в свойствах указать:
+0.0.0.0
+![Project Options](../../../../images/pages/guides/base-technologies/debugging/xsp-web.png)
+7. В Visual Studio указать:
+`MdbConverter.exe . d:\projects /root/projects`
+![Project Options](../../../../images/pages/guides/base-technologies/debugging/vs-settings.png)
+MdbConverter.exe можно взять [здесь](https://github.com/akosinsky/MdbConverter)
+
+Теперь можно выполнять отладку из среды Monodevelop под Windows.
 ## Перейти
 
 * [Командная разработка](gbt_team-management.html)
