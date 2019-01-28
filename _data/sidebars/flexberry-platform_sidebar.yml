@@ -18,7 +18,7 @@ entries:
     - title: Architecture
       title_ru: Архитектура платформы
       url: /fp_architecture.html
-      output: web    
+      output: web
 
   - title: Platform development
     title_ru: Разработка платформы
@@ -26,12 +26,12 @@ entries:
 
     folderitems:
     - title: Articles authoring
-      title_ru: Правила оформления статей 
+      title_ru: Правила оформления статей
       url: /fp_how-create-article.html
       output: web, pdf
 
     - title: Rules for translating articles
-      title_ru: Правила перевода статей 
+      title_ru: Правила перевода статей
       url: /fp_translation-article.html
       output: web, pdf
 
@@ -50,4 +50,7 @@ entries:
       url: /fp_ember-comments-style-yuidoc.html
       output: web, pdf
 
-      
+    - title: Description of recommended tools for developers
+      title_ru: Описание рекомендуемых инструментов для разработчиков
+      url: /fp_tool-description.html
+      output: web, pdf
