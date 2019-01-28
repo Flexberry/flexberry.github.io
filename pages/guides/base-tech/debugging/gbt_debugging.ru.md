@@ -53,7 +53,7 @@ lang: ru
 
 Для того, чтобы приступить к отладке приложения в  Monodevelop из Windows, нужно выполнить следующие шаги:
 
-1. Выполнить команду `docker pull akosinsky/monodevelop-ember:latest`
+1. Выполнить команду `flexberry/monodevelop:latest`
 2. Установить XServer для Windows, запустить XServer
 4. Выполнить команду
 `docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=XX.XX.XX.XX:0.0" -v d:/projects:/root/projects  akosinsky/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory`
@@ -62,15 +62,17 @@ lang: ru
 
 5. В открывшимся окне терминала выполнить команду:
 `monodevelop&`
-6. Открыть нужный проект и в свойствах указать:
+6. Открыть нужный проект, в свойствах указать:
 0.0.0.0
 ![Project Options](../../../../images/pages/guides/base-technologies/debugging/xsp-web.png)
-7. В Visual Studio указать:
-`MdbConverter.exe . d:\projects /root/projects`
+Кроме этого в свойствах необходимо отключить сборку. Сборку необходимо осуществлять в Visual Studio, но отлаживать в Mono.
+7. Скачать и собрать [MdbConverter.exe](https://github.com/akosinsky/MdbConverter).
+В Visual Studio указать:
+`MdbConverter\pdb2mdb\bin\Debug\MdbConverter.exe . d:\projects /root/projects`
 ![Project Options](../../../../images/pages/guides/base-technologies/debugging/vs-settings.png)
-MdbConverter.exe можно взять [здесь](https://github.com/akosinsky/MdbConverter)
 
-Теперь можно выполнять отладку из среды Monodevelop под Windows.
+
+Теперь можно выполнять отладку из среды Monodevelop под Windows. Открыть отлаживаемый в Mono проект можно по адресу `10.0.75.2`
 ## Перейти
 
 * [Командная разработка](gbt_team-management.html)
