@@ -54,3 +54,8 @@ entries:
       title_ru: Описание рекомендуемых инструментов для разработчиков
       url: /fp_tool-description.html
       output: web, pdf
+
+    - title: Git rules
+      title_ru: Правила работы с git
+      url: /fp_git-rules.html
+      output: web, pdf
