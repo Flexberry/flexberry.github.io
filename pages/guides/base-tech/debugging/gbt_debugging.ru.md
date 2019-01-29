@@ -53,10 +53,10 @@ lang: ru
 
 Для того, чтобы приступить к отладке приложения в  Monodevelop из Windows, нужно выполнить следующие шаги:
 
-1. Выполнить команду `flexberry/monodevelop:latest`
+1. Выполнить команду `docker pull flexberry/monodevelop:latest`
 2. Установить XServer для Windows, запустить XServer
 4. Выполнить команду
-`docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=XX.XX.XX.XX:0.0" -v d:/projects:/root/projects  akosinsky/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory`
+`docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=XX.XX.XX.XX:0.0" -v d:/projects:/root/projects  flexberry/monodevelop:latest /usr/bin/mate-terminal --disable-factory`
 
 **Вместо XX.XX.XX.XX указать свой ip, вместо d:/projects указать свою папку проектов**
 
