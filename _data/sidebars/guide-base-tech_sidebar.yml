@@ -169,6 +169,10 @@ entries:
       title_ru: Введение в тестирование и отладку
       url: /gbt_testing.html
       output: web
+    - title: Debugging recommendations (js, Ember, C#, Mono)
+      title_ru: Рекомендации по отладке (js, Ember, C#, Mono)
+      url: /gbt_debugging.html
+      output: web
   - title: Team development
     title_ru: Командная разработка
     output: web
