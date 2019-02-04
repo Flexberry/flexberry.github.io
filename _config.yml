@@ -146,3 +146,12 @@ sidebars:
 
 gems:
   - jekyll-seo-tag
+
+algolia:
+  application_id: '70PUTEHCHV'
+  index_name: 'fberry'
+  search_only_api_key: '03628f285d60a0b644ba3dacdf852231'
+  extensions_to_index:
+    - md
+  files_to_exclude: 
+    - _layouts/*.html
