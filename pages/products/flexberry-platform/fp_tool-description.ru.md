@@ -13,7 +13,8 @@ summary: Список инструментов, рекомендуемых к п
 ### Обязательный набор
 * [Flexberry Designer](https://flexberry.net/ru/);
 * Microsoft Visual Studio 2017;
-* SQL Management Studio.
+* SQL Management Studio;
+* pgAdmin.
 
 ### Дополнительно рекомендуется
 * Resharper;
@@ -37,7 +38,7 @@ summary: Список инструментов, рекомендуемых к п
 * [Bower](http://bower.io). Является аналогом npm, но они часто применяются на проекте вместе.
 * [Git](http://git-scm.com). Распределённая система управления версиями.
 * [Ember CLI](http://www.ember-cli.com).
-* [PhantomJS](http://phantomjs.org/).
+* [yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable).
 
 ### Остальные инструменты
 
@@ -104,15 +105,11 @@ summary: Список инструментов, рекомендуемых к п
 1. Когда npm и bower установлены, нужно установить [Ember CLI](https://ember-cli.com/), для этого введите команду `npm install -g ember-cli@2.4.3`.
 2. После завершения установки Ember CLI введите команду `ember -v`, если выдан номер версии - установка прошла успешно.
 
-#### Алгоритм установки PhantomJS
-
-{% include important.html content="Перед установкой PhantomJS необходимо вначале установить Node.js" %}
-
-1. Чтобы установить [PhantomJS](http://phantomjs.org/), введите команду `npm install -g phantomjs-prebuilt`.
-
 ## Инструменты для работы с Docker-образами
 
 * [Docker](https://www.docker.com/get-started)
+
+[Разворачивание решений в контейнерах Docker](gbt_deployment_docker.html)
 
 #### Алгоритм установки
 
