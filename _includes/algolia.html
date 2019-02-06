@@ -1,61 +1,64 @@
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.32.0/dist/algoliasearchLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.0.0/dist/instantsearch.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
 
 <script>
     const search = instantsearch({
-        appId: '{{ site.algolia.application_id }}',
-        apiKey: '{{ site.algolia.search_only_api_key }}',
-        indexName: '{{ site.algolia.index_name }}'
+        indexName: '{{ site.algolia.index_name }}',
+        searchClient: algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_only_api_key }}' )
     });
+    const renderIndexListItem = ({ label, hits }) => `
+  <li>
+    Index: ${label}
+    <ol>
+      ${hits
+                .map(
+                    hit =>
+                        `<li>${instantsearch.highlight({ attribute: 'title', hit })}</li>`
+                )
+                .join('')}
+    </ol>
+  </li>
+`;
 
-    const hitTemplate = function (hit) {
-        let date = '';
-        if (hit.date) {
-            date = moment.unix(hit.date).format('MMM D, YYYY');
-        }
+        // Create the render function
+        const renderAutocomplete = (renderOptions, isFirstRender) => {
+            const { indices, currentRefinement, refine, widgetParams } = renderOptions;
 
-        let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
+            if (isFirstRender) {
+                const input = document.createElement('input');
+                const ul = document.createElement('ul');
 
-        const title = hit._highlightResult.title.value;
+                input.addEventListener('input', event => {
+                    refine(event.currentTarget.value);
+                });
 
-        let breadcrumbs = '';
-        if (hit._highlightResult.headings) {
-            breadcrumbs = hit._highlightResult.headings.map(match => {
-                return `<span class="post-breadcrumb">${match.value}</span>`
-            }).join(' > ')
-        }
-
-        const content = hit._highlightResult.html.value;
-
-        return `
-    <div class="post-item">
-      <span class="post-meta">${date}</span>
-      <h2><a class="post-link" href="${url}">${title}</a></h2>
-      {{#breadcrumbs}}<a href="${url}" class="post-breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
-      <div class="post-snippet">${content}</div>
-    </div>
-  `;
-    }
-
-
-    search.addWidget(
-        instantsearch.widgets.searchBox({
-            container: '#search-searchbar',
-            placeholder: 'Search into posts...',
-            poweredBy: true // This is required if you're on the free Community plan
-        })
-    );
-
-    search.addWidget(
-        instantsearch.widgets.hits({
-            container: '#search-hits',
-            templates: {
-                item: hitTemplate
+                widgetParams.container.appendChild(input);
+                widgetParams.container.appendChild(ul);
             }
-        })
-    );
+
+            widgetParams.container.querySelector('input').value = currentRefinement;
+            widgetParams.container.querySelector('ul').innerHTML = indices
+                .map(renderIndexListItem)
+                .join('');
+        };
+
+        // Create the custom widget
+        const customAutocomplete = instantsearch.connectors.connectAutocomplete(
+            renderAutocomplete
+        );
+
+        // Instantiate the custom widget
+        search.addWidget(
+            customAutocomplete({
+                container: document.querySelector('#autocomplete'),
+                indices: [
+                    { label: 'Flexberry Documentation', value: 'fberry' },
+                ],
+            })
+        );
 
     search.start();
 </script>
