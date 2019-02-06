@@ -14,7 +14,7 @@ summary: При разработке компонентов платформы F
 
 ## JavaScript
 
-В JavaScript Open Source-проектах платформы Flexberry есть принятый набор соглашений, который опубликован на странице GitHub: <https://github.com/Flexberry/javascript-style-guide>.
+В JavaScript Open Source-проектах платформы Flexberry есть принятый набор соглашений, который опубликован на [странице GitHub](https://github.com/Flexberry/javascript-style-guide).
 Также есть отдельное [соглашение по написанию комментариев в коде EmberJS-проектов](fp_ember-comments-style-yuidoc.html).
 
 ## CSharp
@@ -25,6 +25,7 @@ summary: При разработке компонентов платформы F
 ## Статические анализаторы кода
 
 ### StyleCop
+
 StyleCop — статический анализатор C# кода на предмет соответствия стилю.
 
 **Настройка:**
@@ -37,6 +38,7 @@ StyleCop — статический анализатор C# кода на пре
 С [перечнем правил](https://github.com/Flexberry/NewPlatform.Flexberry.ORM/blob/develop/Flexberry.ruleset), которые используются в проектах платформы Flexberry можно ознакомится на GitHub-e.
 
 ### JSLint
+
 JSLint — это статический анализатор кода для программ на языке JavaScript, проверяющий их соответствие стандартам оформления кода.
 
 {% include note.html content="JSLint используется на проектах с версией Ember-a 3.X.X" %}
@@ -50,6 +52,7 @@ JSLint — это статический анализатор кода для п
 Более подробную информацию можно найти [на официальном сайте JSLint](https://eslint.org/docs/user-guide/configuring)
 
 ### JSHint
+
 JSHint - это инструмент статического анализа кода, используемый при разработке программного обеспечения для проверки соответствия исходного кода JavaScript правилам кодирования.
 
 {% include note.html content="JSHint используется на проектах с версией Ember-a 2.X.X" %}

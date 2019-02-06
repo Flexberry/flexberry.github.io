@@ -11,12 +11,14 @@ summary: Список инструментов, рекомендуемых к п
 ## Инструменты для работы с ASP.NET приложениями
 
 ### Обязательный набор
+
 * [Flexberry Designer](https://flexberry.net/ru/);
 * Microsoft Visual Studio 2017;
 * SQL Management Studio;
 * pgAdmin.
 
 ### Дополнительно рекомендуется
+
 * Resharper;
 * DotPeek;
 * StyleCop;
@@ -32,7 +34,7 @@ summary: Список инструментов, рекомендуемых к п
 
 ## Инструменты для работы с Ember приложениями
 
-### [Инструменты](https://github.com/Flexberry/ember-flexberry#prerequisites), необходимые в первую очередь
+### Инструменты, необходимые в первую очередь
 
 * [Node.js](http://nodejs.org). Позволяет работать с инструментами для фронтенда вне браузера. Также в состав node.js входит менеджер пакетов npm (node package manager), для работы с зависимостями во фронтенд-проектах, аналогично NuGet в Flexberry ASP.NET WebForms.
 * [Bower](http://bower.io). Является аналогом npm, но они часто применяются на проекте вместе.
