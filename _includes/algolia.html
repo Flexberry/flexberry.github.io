@@ -10,18 +10,17 @@
         searchClient: algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_only_api_key }}' )
     });
     const renderIndexListItem = ({ label, hits }) => `
-  <li>
-    Index: ${label}
-    <ol>
-      ${hits
-                .map(
-                    hit =>
-                        `<li>${instantsearch.highlight({ attribute: 'title', hit })}</li>`
-                )
-                .join('')}
-    </ol>
-  </li>
-`;
+        <li>
+            <ol>
+            ${hits
+                        .map(
+                            hit =>
+                                `<li><a href=${hit.url}>${hit.title}</a></li>`
+                        )
+                        .join('')}
+            </ol>
+        </li>
+        `;
 
         // Create the render function
         const renderAutocomplete = (renderOptions, isFirstRender) => {
@@ -54,9 +53,6 @@
         search.addWidget(
             customAutocomplete({
                 container: document.querySelector('#autocomplete'),
-                indices: [
-                    { label: 'Flexberry Documentation', value: 'fberry' },
-                ],
             })
         );
 
