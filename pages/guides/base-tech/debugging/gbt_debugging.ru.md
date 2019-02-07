@@ -19,7 +19,7 @@ lang: ru
 #### Наиболее частоиспользуемые вкладки инструмента:
 * `Elements` — HTML-код отображаемой страницы. 
 * `Console` — JavaScript-консоль. Контекстом выполнения команд является текущий контекст всего веб-приложения. То есть, если код остановлен (например, точкой останова), то текущим контекстом будет являться место, где остановилось выполнение программы. Это очень удобно.
-* `Sources` — проводник файлов веб страницы. Непосредственно в этой вкладке вы сможете отлаживать JavaScript-код.
+* `Sources` — проводник файлов веб страницы. Непосредственно в этой вкладке можно отлаживать JavaScript-код.
 * `Network` — отображение работы с сетью. С помощью этой вкладки можно удобно отслеживать обмен данными между клиентским приложением и бекендом.
 * `Ember` — если вы используете аддон [Ember Inspector](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi), то в этой вкладке можно более детально, но в то же время просто посмотреть "под капот" фреймворка: просмотреть все Routes приложения, информацию о рендере, цепочки Promises и так далее.
 
@@ -59,38 +59,37 @@ lang: ru
 
 ![Режим отладки VS](../../../../images/pages/guides/base-technologies/debugging/vs-window.png)
 
-
 1. Вкладки Locals, Watch. С помощью этих вкладок можно смотреть значения переменных в текущем контексте (Locals) или заданные вручную (Watch). Кроме этого, посмотреть текущее значение переменной можно просто наводя на неё указатель мыши.
 2. Вкладка Call Stack показывает стек вызовов, во вкладке Exception Settings можно настроить поведение при различных исключениях.
 3. В разделе Diagnostic Tools находится информация об использовании приложением памяти и ресурсов процессора, данные отображены на таймлайне. Кроме этого, на таймлайн наносятся различные события (например, при работе с ASP.NET на таймлайн наносятся запросы к серверу) и исключения. Нажатие на событие на таймлайне позволяет перейти в режим Historical Debugging.
 
 ### Отладка Mono-приложений
 
-Для того, чтобы приступить к отладке приложения в  Monodevelop из Windows, нужно выполнить следующие шаги:
+Для того чтобы приступить к отладке приложения в  Monodevelop из Windows, нужно выполнить следующие шаги:
 
-1. Выполнить команду `docker pull flexberry/monodevelop:latest`
-2. Установить XServer для Windows, запустить XServer
-4. Выполнить команду
+1.Выполнить команду `docker pull flexberry/monodevelop:latest`
+2.Установить XServer для Windows, запустить XServer
+3.Выполнить команду
 `docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=XX.XX.XX.XX:0.0" -v d:/projects:/root/projects  flexberry/monodevelop:latest /usr/bin/mate-terminal --disable-factory`
 
 **Вместо XX.XX.XX.XX указать свой ip, вместо d:/projects указать свою папку проектов**
 
-5. В открывшимся окне терминала выполнить команду:
+4.В открывшимся окне терминала выполнить команду:
 `monodevelop&`
-6. Открыть нужный проект, в свойствах указать:
+5.Открыть нужный проект, в свойствах указать:
 0.0.0.0
 
 ![Project Options](../../../../images/pages/guides/base-technologies/debugging/xsp-web.png)
 
 Кроме этого в свойствах необходимо отключить сборку. Сборку необходимо осуществлять в Visual Studio, но отлаживать в Mono.
-7. Скачать и собрать [MdbConverter.exe](https://github.com/akosinsky/MdbConverter).
+6.Скачать и собрать [MdbConverter.exe](https://github.com/akosinsky/MdbConverter).
 В Visual Studio указать:
 `MdbConverter\pdb2mdb\bin\Debug\MdbConverter.exe . d:\projects /root/projects`
 
 ![Project Options](../../../../images/pages/guides/base-technologies/debugging/vs-settings.png)
 
-
 Теперь можно выполнять отладку из среды Monodevelop под Windows. Открыть отлаживаемый в Mono проект можно по адресу `10.0.75.2`
+
 ## Перейти
 
 * [Командная разработка](gbt_team-management.html)
