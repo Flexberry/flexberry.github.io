@@ -113,7 +113,43 @@ entries:
       title_ru: Управление операциями списков в зависимости от прав пользователя
       url: /fw_objectlistview-rights.html
       output: web
-  
+
+  - title: GroupEdit
+    title_ru: GroupEdit
+    output: web, pdf
+
+    folderitems:
+
+    - title: Events GroupEdit
+      title_ru: События в GroupEdit
+      url: /fw_events-groupedit.html
+      output: web
+
+    - title: FlexGrid
+      title_ru: FlexGrid
+      url: /fw_flex-grid.html
+      output: web
+
+    - title: Editing the details on a separate form
+      title_ru: Редактирование детейлов на отдельной форме
+      url: /fw_ge-editor-ext.html
+      output: web
+
+    - title: Delete empty lines when saving
+      title_ru: Удаление пустых строк при сохранении
+      url: /fw_ge-empty-detail-remover.html
+      output: web
+
+    - title: Date format in GroupEdit 
+      title_ru: Формат даты в GroupEdit
+      url: /fw_groupedit-date-format.html
+      output: web
+
+    - title: Edit mode with locks in GroupEdit
+      title_ru: Режим редактирования с блокировками в GroupEdit
+      url: /fw_lock-rows-in-groupedit.html
+      output: web
+      
   - title: Forms
     title_ru: Формы
     output: web, pdf
