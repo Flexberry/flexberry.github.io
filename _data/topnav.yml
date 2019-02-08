@@ -63,6 +63,9 @@ topnav_dropdowns:
         - title: Practical guides
           title_ru: Практические руководства
           url: /gpg_landing-page.html
+        - title: UI UX Guideline
+          title_ru: Руководство по интерфейсам
+          url: /uiuxg_landing-page.ru.html
     - title: GitHub Repos
       folderitems:
         - title: All repositories
