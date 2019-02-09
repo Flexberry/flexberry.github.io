@@ -54,3 +54,13 @@ entries:
       title_ru: Комментарии в Ember-проектах
       url: /fp_ember-comments-style-yuidoc.html
       output: web, pdf
+
+    - title: Description of recommended tools for developers
+      title_ru: Описание рекомендуемых инструментов для разработчиков
+      url: /fp_tool-description.html
+      output: web, pdf
+
+    - title: Git rules
+      title_ru: Правила работы с git
+      url: /fp_git-rules.html
+      output: web, pdf

@@ -1,49 +1,101 @@
 ---
 title: ObjectListView
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы)
-summary: Перечень статей по ObjectListView и некоторые свойства и методы
+keywords: Flexberry Winforms, Controls, OLV
+summary: Описание, основная функциональность, обновление списков, обработка и оптимизация загрузки списка
 toc: true
 permalink: en/fw_objectlistview.html
 lang: en
 ---
 
-<!-- Данная статья ещё редактируется -->
+__Для отображения на форме списка объектов__ существует специализированный элемент управления, `ObjectListView`.
 
-ObjectListView - списковый контрол для win-приложений.
+Список объектов может быть сгенерирован на основе модели [Flexberry Desinger](fd_landing_page.html) или создан вручную.
 
-## Полезные ссылки
-* Объекты в ObjectListView
-    * [Помещение списка объектов в ObjectListView](fw_put-list-objects-in-objectlistview.html)
-    * [Отслеживание окончания загрузки данных в ObjectListView](fw_end-load-data-in-objectlistview.html)
-    * [Обновление объекта в ObjectListView](fw_updating-object-in-olv.html)
-    * [Получение информации об удачности загрузки ОbjectListView](fw_after-fill-data-event-args.html)
-    * [Оптимизация чтения данных ObjectListView](fw_objectlistview-optimization.html)
-* События:
-    * [Событие установки/снятия галочки в ObjectListView](fw_event-installing-removing-a-check-in-objectlistview.html)
-    * [Перехват событий ObjectListView (создание, удаление, изменение объекта), выполнение действий](fw_interception-events-objectlistview.html) 
-    * [Событие ObjectListView.BeforeRefresh](fw_objectlistview-before-refresh.html)
-* Дизайн и функциональность
-    * [ObjectListView, основная функциональность в RunTime](fw_objectlistview-basic-functionality-in-run-time.html)
-    * [Настройка видимости колонок ObjectListView](fw_objectlistview-column-visibility-customization.html)
-    * [Как без использования генераторов кода сделать на форме список объектов данных](fw_make-a-list-of-data-objects-without-generators.html)
-    * [Задание отображения даты по умолчанию](fw_date-format.html)
-    * [Отображение подсказки(tooltip) для отдельных записей в ObjectListView ](fw_objectlistview-tooltip.html)
-* Разное
-    * [Присвоение LimitFunction для второго ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
-    * [Удаление настроек пользователя в ObjectListView](fw_delete-columns-settings-objectlistview.html)
-    * [Доступность операций на ObjectListView в зависимости от прав пользователя](fw_objectlistview-rights.html)
-    * [Настройка и добавлении столбцов и записей в ObjectListView](fw_objectlistview-in-desktop-ctrl.html)
+Для отображения списока объектов без генерации необходимо:
 
-## Как отключить хоткей F2 для редактирования объектов
-Нужно в `ObjectListView` указать `UseHotkeyForEdit = false;`. Это повлияет и на тултип, который появляется над кнопкой редактирования.
+*	Поместить `ObjectListView` на форму.
+*	Присоединить к `ObjectListView` [сервис данных](fo_data-service.html). Для этого проинициализировать у `ObjectListView` свойство `DataService`. Если на форме уже реализованы сервисы данных, то указать можно в окне редактирования свойств, где есть для этого выпадающий список.
+*	Настроить отладочный пакет (если есть необходимость).
+*	Выбрать один или несколько классов для отображения. Для этого проинициализировать у `ObjectListView` свойство `DataObjectTypes`. Это можно также сделать при помощи специального дизайнера, доступного из окна редактирования свойств.
+*	Выбрать совместимое со всеми классами представление. Для этого необходимо проинициализировать у `ObjectListView` свойство `ViewName`. Это также можно сделать из окна редактирования свойств. Внимание! В выпадающий список попадают только совместимые со всеми типами, перечисленными в `DataObjectTypes`, представления.
+*	Установить, при необходимости, ограничение. Для этого проинициализировать свойство `LimitFunction`. Если делать в среде VS из окна редактирования свойств, то через свойство `Limit`.
+*	Настроить при необходимости видимость и ширину колонок. Для этого настроить у `ObjectListView` свойство `Columns` через окно редактирования свойств.
 
+## Основная функциональность ObjectListView для пользователя
+
+`ObjectListView` отображает разнотипные объекты в одном списке в соответствии с совместимым представлением. Кроме атрибутивного состава, согласно представлению, `ObjectListView` может отображать картинки (`Image`), приписанные классам данных.
+
+Основная функциональность `ObjectListView` для пользователя:
+
+![](/images/pages/products/flexberry-winforms/controls/olv/primer15.jpg)
+
+Пользователь может:
+
+* Просматривать список объектов (в т.ч. и разнотипных)
+* Обновить список объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer16.jpg)
+
+* Вернуть выбранные объекты (LookUp) ![](/images/pages/products/flexberry-winforms/controls/olv/primer17.jpg)
+
+*  Выполнять сортировку объектов, для чего необходимо ткнуть мышью в заголовок колонки
+* Создать объект (если DataObjectTypes содержит несколько типов, то пользователь может из выпадающего списка выбрать, какого типа необходимо создать объект) ![](/images/pages/products/flexberry-winforms/controls/olv/primer18.jpg)
+
+* Создать объект на основе выделенного ![](/images/pages/products/flexberry-winforms/controls/olv/primer19.jpg)
+
+* Отредактировать один или несколько выделенных объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer20.jpg)
+
+* Удалить один или несколько выделенных объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer21.jpg)
+
+* Настроить видимость колонок (пользователь может скрыть часть колонок для удобства) ![](/images/pages/products/flexberry-winforms/controls/olv/primer22.jpg)
+
+* Наложить ограничение на список отображаемых объектов ![](/images/pages/products/flexberry-winforms/controls/olv/primer23.jpg)
+
+* Выполнить поиск по списку ![](/images/pages/products/flexberry-winforms/controls/olv/primer24.jpg)
+
+Также пользователю доступны:
+
+* Предварительный просмотр печати списка ![](/images/pages/products/flexberry-winforms/controls/olv/primer25.jpg)
+
+* Печать списка ![](/images/pages/products/flexberry-winforms/controls/olv/primer26.jpg)
+
+* Настройки печати ![](/images/pages/products/flexberry-winforms/controls/olv/primer27.jpg)
+
+* Копирование выделенного в буфер обмена ![](/images/pages/products/flexberry-winforms/controls/olv/primer28.jpg)
+
+* Операции с пометками и выделением ![](/images/pages/products/flexberry-winforms/controls/olv/primer29.jpg)
+ 
 ## Обновление рабочего стола
+
 Для принудительного обновления дерева папок и списка рабочего стола необходимо вызвать метод `DesktopCtrl.ReloadDesktopcustomizer()`.
 
 ## Сообщение о продолжении загрузки при нехватке ресурсов
+
 Сообщение с вопросом о продолжении загрузки возникает при исчерпании физической памяти, выделенной приложению, т.к. выделение памяти в файле подкачки требует значительных временных затрат.
 
 ![](/images/pages/products/flexberry-winforms/controls/olv/load-question.jpg)
 
 Для включения данной функции необходимо присвоить свойству ''MemoryTimeLoadLimit'' любое положительное значение.
+
+## Оптимизация чтения данных
+
+В обычном режиме `ObjectListView` зачитывает все поля, находящиеся в представлении, даже если некоторые колонки скрыты. SQL Server при выполнении запроса руководствуется полями входящими в самый верхний запрос (при их вложении) и ограничением. Если поле мастера не используется ни в списке выводимых, ни в ограничении, то SQL Server не выполняет join, тем самым ускоряя ограничение запроса.
+
+Установка свойства `ObjectListView.UseColumnOptimization=true` позволяет не включать в запрос скрытые поля.
+
+Установить режим оптимизации для всех списков приложения позволяет метод `Tuner.Customize`, в котором следует установить свойство `UseColumnOptimization` для `ObjectListView`, переданного в качестве параметра.
+
+## Отключение хоткей F2 для редактирования объектов
+
+Нужно в `ObjectListView` указать `UseHotkeyForEdit = false;`. Это повлияет и на тултип, который появляется над кнопкой редактирования.
+
+## Полезные ссылки
+
+* Объекты в ObjectListView
+    * [Помещение списка объектов в ObjectListView](fw_put-list-objects.html)
+    * [События ОbjectListView](fw_olv-event.html)
+* Дизайн и функциональность
+    * [Задание отображения даты по умолчанию](fw_date-format.html)
+* Разное
+    * [Присвоение LimitFunction для второго ObjectListView](fw_assigning-limit-function-second-objectlistview.html)
+    * [Доступность операций на ObjectListView в зависимости от прав пользователя](fw_objectlistview-rights.html)
+    * [Настройка и добавлении столбцов и записей в ObjectListView](fw_objectlistview-in-desktop-ctrl.html)

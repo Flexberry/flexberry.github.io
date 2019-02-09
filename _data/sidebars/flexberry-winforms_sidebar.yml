@@ -33,6 +33,26 @@ entries:
 
     folderitems:
 
+    - title: ObjectListView
+      title_ru: ObjectListView
+      url: /fw_objectlistview.html
+      output: web
+
+    - title: GroupEdit
+      title_ru: GroupEdit
+      url: /fw_group-edit.html
+      output: web
+
+    - title: LookUp
+      title_ru: LookUp
+      url: /fw_lookup.html
+      output: web
+
+    - title: FileControl
+      title_ru: FileControl
+      url: /fw_file-control.html
+      output: web
+    
     - title: ComboLookup
       title_ru: ComboLookup
       url: /fw_combo-lookup.html
@@ -48,29 +68,9 @@ entries:
       url: /fw_extended-textbox.html
       output: web
     
-    - title: FileControl
-      title_ru: FileControl
-      url: /fw_file-control.html
-      output: web
-
-    - title: GroupEdit
-      title_ru: GroupEdit
-      url: /fw_group-edit.html
-      output: web
-  
     - title: HighLighter
       title_ru: HighLighter
       url: /fw_high-lighter.html
-      output: web
-
-    - title: LookUp
-      title_ru: LookUp
-      url: /fw_lookup.html
-      output: web
-    
-    - title: ObjectListView
-      title_ru: ObjectListView
-      url: /fw_objectlistview.html
       output: web
 
     - title: Focus and Ctrl-S
@@ -83,6 +83,73 @@ entries:
       url: /fw_predict-input.html
       output: web
 
+  - title: ObjectListView
+    title_ru: ObjectListView
+    output: web, pdf
+
+    folderitems:
+
+    - title: Events ObjectListView
+      title_ru: События ОbjectListView
+      url: /fw_olv-event.html
+      output: web
+
+    - title: Placing a list of objects in an ObjectListView
+      title_ru: Помещение списка объектов в ObjectListView
+      url: /fw_put-list-objects.html
+      output: web
+
+    - title: PagedObjectListView List Control
+      title_ru: Списковый элемент управления PagedObjectListView
+      url: /fw_paged-objectlistview.html
+      output: web
+
+    - title: Sort Lists
+      title_ru: Сортировка списков
+      url: /fw_list-sort.html
+      output: web
+
+    - title: Managing list operations based on user rights
+      title_ru: Управление операциями списков в зависимости от прав пользователя
+      url: /fw_objectlistview-rights.html
+      output: web
+
+  - title: GroupEdit
+    title_ru: GroupEdit
+    output: web, pdf
+
+    folderitems:
+
+    - title: Events GroupEdit
+      title_ru: События в GroupEdit
+      url: /fw_events-groupedit.html
+      output: web
+
+    - title: FlexGrid
+      title_ru: FlexGrid
+      url: /fw_flex-grid.html
+      output: web
+
+    - title: Editing the details on a separate form
+      title_ru: Редактирование детейлов на отдельной форме
+      url: /fw_ge-editor-ext.html
+      output: web
+
+    - title: Delete empty lines when saving
+      title_ru: Удаление пустых строк при сохранении
+      url: /fw_ge-empty-detail-remover.html
+      output: web
+
+    - title: Date format in GroupEdit 
+      title_ru: Формат даты в GroupEdit
+      url: /fw_groupedit-date-format.html
+      output: web
+
+    - title: Edit mode with locks in GroupEdit
+      title_ru: Режим редактирования с блокировками в GroupEdit
+      url: /fw_lock-rows-in-groupedit.html
+      output: web
+      
   - title: Forms
     title_ru: Формы
     output: web, pdf
@@ -239,37 +306,6 @@ entries:
       url: /fw_change-name-list-with-lookup.html
       output: web
 
-  - title: Bindings
-    title_ru: Bindings
-    output: web, pdf
-
-    folderitems:
-
-    - title: Control provider winforms
-      title_ru: Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов
-      url: /fw_control-provider-winforms.html
-      output: web
-
-    - title: Editmanager
-      title_ru: EditManager
-      url: /fw_editmanager.html
-      output: web
-
-    - title: Control for bind struct
-      title_ru: ControlForBindStruct
-      url: /fw_control-for-bind-struct.html
-      output: web
-
-    - title: Editmanager change
-      title_ru: EditManager.Change
-      url: /fw_editmanager-change.html
-      output: web
-
-    - title: Editmanager set readonly flag properties
-      title_ru: Метод EditManager.SetReadonlyFlagProperties
-      url: /fw_editmanager-set-readonly-flag-properties.html
-      output: web
-
   - title: Application
     title_ru: Приложение
     output: web, pdf
@@ -339,17 +375,6 @@ entries:
     - title: Working with menu
       title_ru: И опять работа с меню
       url: /fw_working-with-menu.html
-      output: web
-
-  - title: Rights
-    title_ru: Подсистема полномочий
-    output: web, pdf
-
-    folderitems:
-
-    - title: Application start permission
-      title_ru: Разрешение на запуск приложения и открытие форм
-      url: /fw_start-app-open-forms.html
       output: web
 
   - title: Customization
@@ -513,4 +538,46 @@ entries:
     - title: Several classes of applications in a single stage
       title_ru: Несколько классов приложений в одной стадии
       url: /fw_several-classes-single-stage.html
+      output: web
+
+  - title: Bindings
+    title_ru: Bindings
+    output: web, pdf
+
+    folderitems:
+
+    - title: Control provider winforms
+      title_ru: Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов
+      url: /fw_control-provider-winforms.html
+      output: web
+
+    - title: Editmanager
+      title_ru: EditManager
+      url: /fw_editmanager.html
+      output: web
+
+    - title: Control for bind struct
+      title_ru: ControlForBindStruct
+      url: /fw_control-for-bind-struct.html
+      output: web
+
+    - title: Editmanager change
+      title_ru: EditManager.Change
+      url: /fw_editmanager-change.html
+      output: web
+
+    - title: Editmanager set readonly flag properties
+      title_ru: Метод EditManager.SetReadonlyFlagProperties
+      url: /fw_editmanager-set-readonly-flag-properties.html
+      output: web
+
+  - title: Rights
+    title_ru: Подсистема полномочий
+    output: web, pdf
+
+    folderitems:
+
+    - title: Application start permission
+      title_ru: Разрешение на запуск приложения и открытие форм
+      url: /fw_start-app-open-forms.html
       output: web
