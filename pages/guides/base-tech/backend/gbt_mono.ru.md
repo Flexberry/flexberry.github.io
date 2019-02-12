@@ -24,56 +24,6 @@ lang: ru
     <iframe width="854" height="480" src="https://www.youtube.com/embed/5oLgQc_gnJg?list=PLaKXsWB2aJ1utjsUDJDmZBUW2KylhYsx0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
-## Отладка проекта
-
-1.Выполнить команду
-
-```
-docker pull akosinsky/monodevelop-ember:latest
-```
-
-2.Установить [XServer](http://www.netsarang.com/download/down_xmg.html) под windows.
-
-3.Запустить XServer.
-
-4.Выполнить команду
-
-```
-docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=<IP-castom>" -e "http_proxy=http://<IP-castom>" -v с:/catalog:/childrencatalog  developer/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory
-```
-
-5.В открывшимся окне терминал выполнить команду:
-
-```
-monodevelop&
-```
-
-6.Открыть нужный проект и в свойствах указать:
-
-![](/images/pages/products/base-tech/mono/Monodevelop01.png)
-
-7.В Visual Studio указать:
-
-[MdbConverter.exe](https://github.com/Flexberry/mono/tree/MdbConverter). с:/catalog:/childrencatalog
-
-Чтобы собрать `MdbConverter` необходимо:
-1. Выполнить git clone https://github.com/Flexberry/mono
-2. git checkout MdbConverter
-3. Открыть в Visual Studio проект 
-mono\mcs\tools\pdb2mdb\MdbConverter.csproj
-4. Выполнить Build.
-
-![](/images/pages/products/base-tech/mono/Monodevelop02.png)
-
-8.В итоге можно выполнять отладку:
-
-![](/images/pages/products/base-tech/mono/Monodevelop03.png)
-
-## Программное обеспечение
-
-* [Mono](http://www.mono-project.com/download/#download-win)
-* [Xamarin Studio](https://www.xamarin.com/studio)
-
 ## Перейти
 
 * [ORM](gbt_orm.html)
