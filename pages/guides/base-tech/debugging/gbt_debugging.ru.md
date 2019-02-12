@@ -63,7 +63,7 @@ lang: ru
 2. Вкладка Call Stack показывает стек вызовов, во вкладке Exception Settings можно настроить поведение при различных исключениях.
 3. В разделе Diagnostic Tools находится информация об использовании приложением памяти и ресурсов процессора, данные отображены на таймлайне. Кроме этого, на таймлайн наносятся различные события (например, при работе с ASP.NET на таймлайн наносятся запросы к серверу) и исключения. Нажатие на событие на таймлайне позволяет перейти в режим Historical Debugging.
 
-## Отладка Mono-прриложений
+## Отладка Mono-приложений
 
 1.Выполнить команду
 
@@ -78,7 +78,7 @@ docker pull akosinsky/monodevelop-ember:latest
 4.Выполнить команду
 
 ```
-docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=<IP-castom>" -e "http_proxy=http://<IP-castom>" -v с:/catalog:/childrencatalog  developer/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory
+docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=<IP-custom>" -e "http_proxy=http://<IP-custom>" -v с:/catalog:/childrencatalog  developer/monodevelop-ember:latest /usr/bin/mate-terminal --disable-factory
 ```
 
 5.В открывшимся окне терминал выполнить команду:
