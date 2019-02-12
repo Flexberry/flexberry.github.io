@@ -5,7 +5,6 @@ keywords: Flexberry Winforms
 summary: Ссылки на основные статьи по Flexberry Winforms
 toc: true
 permalink: en/fw_landing_page.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 

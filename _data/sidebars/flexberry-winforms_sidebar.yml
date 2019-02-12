@@ -48,7 +48,7 @@ entries:
       url: /fw_lookup.html
       output: web
 
-    - title: FileControl
+    - title: FileControl для Winforms
       title_ru: FileControl
       url: /fw_file-control.html
       output: web
@@ -64,12 +64,12 @@ entries:
       output: web
 
     - title: ExtendedTextBox
-      title_ru: ExtendedTextBox
+      title_ru: Предиктивный ввод значений
       url: /fw_extended-textbox.html
       output: web
     
-    - title: HighLighter
-      title_ru: HighLighter
+    - title: Highlight active controls
+      title_ru: Подсветка активного контрола
       url: /fw_high-lighter.html
       output: web
 

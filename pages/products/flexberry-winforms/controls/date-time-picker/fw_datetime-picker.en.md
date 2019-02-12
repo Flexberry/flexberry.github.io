@@ -1,15 +1,12 @@
 ---
 title: DateTimePicker
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы)
+keywords: Flexberry Winforms, Controls, DateTime
 summary: Описание и пример создания ControlProvider для NullableDateTime
 toc: true
 permalink: en/fw_datetime-picker.html
-folder: products/flexberry-winforms/
 lang: en
 ---
-
-<!-- Данная статья ещё редактируется -->
 
 Для того чтобы настроить корректное отображение даты необходимо создать свой [ControlProvider](fw_control-provider-winforms.html) для даты.
 

@@ -1,18 +1,19 @@
 ---
-title: HighLighter
+title: Подсветка активного контрола
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Описан компонент, обеспечивающий подсветку активного контрола на форме, и рассмотрены способы его применения на отдельной форме и для всех форм приложения
+keywords: Flexberry Winforms, Controls, HighLighter
+summary: Объявление, настройка для одной или нескольких форм, пример использования HighLighter
 toc: true
 permalink: ru/fw_high-lighter.html
 folder: products/flexberry-winforms/
 lang: ru
 ---
 
-__HighLighter__ - класс, обеспечивающий подсветку активного контрола на форме.
+`HighLighter` - комаонент, обеспечивающий подсветку активного контрола на форме.
 
 ## Объявление
-Для его работы, в проекте должна быть ссылка на сборку `ICSSoft.STORMNET.Windows.Forms.AdditionalControls`
+
+Для его использования `HighLighter` в проекте должна быть ссылка на сборку `ICSSoft.STORMNET.Windows.Forms.AdditionalControls`
 
 В [скобки программиста](fo_programmer-brackets.html) `CustomMembers` поместить код:
 
@@ -42,9 +43,10 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
 ```
 
 Также можно настроить подсветку для нескольких форм сразу. Для этого необходимо следующее:
-* В самом начале приложения подписаться на событие загрузки формы посредством Desktop.GlobalWinformEvents.Load.
-* Определить список «changingFormTypes», куда записываются типы форм, для которых необходимо организовать подсветку.
-* В обработчике включаем подсветку.
+
+* В самом начале приложения подписаться на событие загрузки формы посредством `Desktop.GlobalWinformEvents.Load`.
+* Определить список `changingFormTypes`, куда записываются типы форм, для которых необходимо организовать подсветку.
+* В обработчике включить подсветку.
 
 Настройка производится в приложении.
 
@@ -109,15 +111,13 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
  }
 ```
 
-## Как работает
-Судя по всему, `HighLighter` подписывается на события `OnGotFocus` и `OnLostFocus` объектов формы и меняет их свойство `BackColor` на свой и обратно при срабатывании.
+`HighLighter` подписывается на события `OnGotFocus` и `OnLostFocus` объектов формы и меняет их свойство `BackColor` на свой и обратно при срабатывании.
 
 ## Результат
-Сравнение одной и той же формы с включенным Highlighter'ом и без:
+
+Сравнение одной и той же формы с включенным `Highlighter` и без:
 
 | Без Highlighter'a | С Highlighter'ом |
 |--|--|
 | ![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-off.gif)|![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-on.gif)|
-
-
-
+ 
