@@ -45,6 +45,11 @@ entries:
       url: /fp_code-style.html
       output: web, pdf
 
+    - title: Check list for Code Review
+      title_ru: Чек-лист для Code Review
+      url: /fp_code-review-check-list.html
+      output: web, pdf
+
     - title: EmberJS code comments
       title_ru: Комментарии в Ember-проектах
       url: /fp_ember-comments-style-yuidoc.html

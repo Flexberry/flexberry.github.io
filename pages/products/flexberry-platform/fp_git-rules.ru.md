@@ -3,7 +3,7 @@ title: Правила работы с git
 sidebar: flexberry-platform_sidebar
 keywords: Code
 toc: true
-permalink: en/fp_git-rules.html
+permalink: ru/fp_git-rules.html
 lang: ru
 ---
 
