@@ -148,9 +148,9 @@ gems:
   - jekyll-seo-tag
 
 algolia:
-  application_id: '70PUTEHCHV'
-  index_name: 'fberry'
-  search_only_api_key: '03628f285d60a0b644ba3dacdf852231'
+  application_id: 'M7DAVJFOZ6'
+  index_name: 'Flexberry documentation'
+  search_only_api_key: '9b89c6671341729d3e1691813c869553'
   extensions_to_index:
     - md
   files_to_exclude: 
