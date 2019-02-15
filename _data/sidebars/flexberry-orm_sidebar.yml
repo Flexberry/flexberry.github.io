@@ -68,7 +68,7 @@ entries:
       url: /fo_data-object-copy.html
       output: web
 
-    - title: 
+    - title:
       title_ru: Первичные ключи объектов
       url: /fo_primary-keys-objects.html
       output: web
@@ -91,8 +91,8 @@ entries:
     - title: Prototyping
       title_ru: Прототипизация
       url: /fo_data-object-prototype.html
-      output: 
-      
+      output:
+
     - title: Setting the value of the field of the object to be created
       title_ru: Задание значения поля создаваемого объекта
       url: /fo_define-field-created.html
@@ -347,7 +347,7 @@ entries:
       title_ru: Пример использования собственных типов
       url: /fo_using-custom-types-example.html
       output: web
-                
+
   - title: Язык запросов
     output: web, pdf
     folderitems:
@@ -489,9 +489,9 @@ entries:
       title_ru: ViewPropertyAppender
       url: /fo_view-property-appender.html
       output: web
-    
+
     - title: Static properties for accessing class representations
-      title_ru: Статические свойства для доступа к представлениям класса  
+      title_ru: Статические свойства для доступа к представлениям класса
       url: /fo_static-view-accessors.html
       output: web
 
@@ -504,7 +504,7 @@ entries:
       title_ru: Пример продвинутой работы с представлениями
       url: /fo_advanced-working-with-views.html
       output: web
-         
+
   - title: Бизнес-серверы
     output: web, pdf
     folderitems:
@@ -596,7 +596,7 @@ entries:
       title_ru: Скобки программиста
       url: /fo_programmer-brackets.html
       output: web
-      
+
   - title: Flexberry ORM ODataService
     output: web, pdf
     folderitems:
@@ -630,7 +630,7 @@ entries:
       title_ru: Создание и подключение монитора задач
       url: /fo_creating-connection-bt-monitor.html
       output: web
-  
+
   - title: Сервис текущего пользователя
     output: web, pdf
     folderitems:
@@ -650,7 +650,7 @@ entries:
       title_ru: Flexberry UnityFactory
       url: /fo_unity-factory.html
       output: web
-  
+
   - title: Сервис блокировок
     output: web, pdf
     folderitems:
@@ -662,7 +662,7 @@ entries:
       title_ru: Блокирование объекта данных
       url: /fo_blocking-object-data.html
       output: web
-      
+
   - title: Дополнительные возможности
     output: web, pdf
     folderitems:
@@ -734,4 +734,16 @@ entries:
       title_ru: Flexberry LogService Objects
       url: /fo_log-service-objects.html
       output: web
-    
+
+  - title: API references
+    title_ru: Справочники по API
+    output: web, pdf
+     folderitems:
+    - title: Flexberry ORM
+      title_ru: Flexberry ORM
+      url: /ef_flexberry-orm-api.html
+      output: web, pdf
+    - title: Flexberry ORM ODataService
+      title_ru: Flexberry ORM ODataService
+      url: /ef_orm-odata-service-api.html
+      output: web, pdf
