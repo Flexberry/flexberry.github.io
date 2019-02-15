@@ -112,12 +112,12 @@ entries:
     - title: UI Message
       url: /ef_ui-message.html
       output: web, pdf
-    
+
     - title: Displaying errors in the application
       title_ru: Отображение ошибок в приложении
       url: /ef_error.html
       output: web, pdf
-  
+
   - title: List components
     title_ru: Списковые компоненты
     output: web, pdf
@@ -289,4 +289,19 @@ entries:
     - title: Blueprints generation
       title_ru: Blueprints кодогенерация
       url: /ef_blueprints.html
+      output: web, pdf
+
+  - title: API references
+    title_ru: Справочники по API
+    output: web, pdf
+
+    folderitems:
+    - title: ember-flexberry
+      title_ru: ember-flexberry
+      url: /ef_ember-flexberry-api.html
+      output: web, pdf
+
+    - title: ember-flexberry-data
+      title_ru: ember-flexberry-data
+      url: /ef_ember-flexberry-data-api.html
       output: web, pdf
