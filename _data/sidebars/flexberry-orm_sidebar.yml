@@ -738,7 +738,7 @@ entries:
   - title: API references
     title_ru: Справочники по API
     output: web, pdf
-     folderitems:
+    folderitems:
     - title: Flexberry ORM
       title_ru: Flexberry ORM
       url: /ef_flexberry-orm-api.html
