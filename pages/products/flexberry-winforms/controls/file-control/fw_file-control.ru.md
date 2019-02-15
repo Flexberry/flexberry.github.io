@@ -25,17 +25,17 @@ lang: ru
 
 * Определить на диаграмме классов класс `File` со стереотипом [typedef](fd_typedef.html). 
 
-* Настроить карту типов (открыть карту типов можно, например, так: .NET CSharp -> Редактировать -> Карта типов), добавив строку:
+* Настроить карту типов (ORM -> C# -> Свойства модели -> Карта типов), добавив строку:
 
-    Маппинг выглядит вот так:
+```
+File | ICSSoft.STORMNET.FileType.File | ICSSoft.STORMNET.UserDataTypes.dll
+```
 
-    File | ICSSoft.STORMNET.FileType.File | ICSSoft.STORMNET.UserDataTypes.dll 
+* Настроить карту отображения типов (ORM -> SQL -> Microsoft SQL Server -> Настройка БД -> Карта типов), добавив строку:
 
-    Сборка _ICSSoft.STORMNET.FileType.dll_ исключена из билда Flexberry.
-
-* Настроить карту отображения типов (открыть карту отображения типов можно, например, так: MSSQLServer Direct Generator -> Редактировать -> Карта типов), добавив строку:
-
-     File | TEXT
+```
+File | TEXT
+```
 
 ## Свойства и методы FileControl
 

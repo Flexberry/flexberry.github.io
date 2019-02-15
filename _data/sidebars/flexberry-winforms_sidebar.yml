@@ -63,11 +63,6 @@ entries:
       url: /fw_datetime-picker.html
       output: web
 
-    - title: ExtendedTextBox
-      title_ru: Предиктивный ввод значений
-      url: /fw_extended-textbox.html
-      output: web
-    
     - title: Highlight active controls
       title_ru: Подсветка активного контрола
       url: /fw_high-lighter.html

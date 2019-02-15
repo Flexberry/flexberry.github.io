@@ -5,11 +5,10 @@ keywords: Flexberry Winforms, Controls, HighLighter
 summary: Объявление, настройка для одной или нескольких форм, пример использования HighLighter
 toc: true
 permalink: ru/fw_high-lighter.html
-folder: products/flexberry-winforms/
 lang: ru
 ---
 
-`HighLighter` - комаонент, обеспечивающий подсветку активного контрола на форме.
+`HighLighter` - компонент, обеспечивающий подсветку активного контрола на форме.
 
 ## Объявление
 
