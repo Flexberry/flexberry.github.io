@@ -25,9 +25,9 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Articles authoring
-      title_ru: Правила оформления статей
-      url: /fp_how-create-article.html
+    - title: Documentation writing guidelines
+      title_ru: Рекомендации по написанию документации
+      url: /fp_documentation-writing-guidelines.html
       output: web, pdf
 
     - title: Rules for translating articles
