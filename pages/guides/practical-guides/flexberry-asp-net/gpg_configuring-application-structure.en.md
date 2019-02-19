@@ -1,68 +1,74 @@
 ---
-title: Настройка структуры приложения
+title: setting up the application structure
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_configuring-application-structure.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: 9f2dea7015d2d8b1c163e52eed32d0552959abd5f14b8bb8dc7a72ebb5d6d588
 ---
 
-1.Открыть диаграмму классов с прототипом приложения (например, `АСУ_Склад`).
+1.Open a class diagram of the prototype application (for example, `АСУ_Склад`).
 
-2.Правой кнопкой нажать на классе со стереотипом `application`. Выберать пункт меню `Редактировать свойства`.
+2.Right-button click on the class with the stereotype `application`. Select the menu item `Редактировать свойства`.
 
-3.На вкладке `Приложение` напротив поля `Containers` нажать кнопку `…`. Откроется окно `Контейнеры для запуска`:
- 
+3.Tab `Приложение` opposite field `Containers` click `...`. A window will open `Контейнеры for запуска`:
+
 ![](/images/pages/guides/flexberry-aspnet/containers-launching.png) 
 
-По умолчанию слева есть папка, называющаяся именем самого приложения. В нее вложены все имеющиеся списковые формы. Нужно сгруппировать списковые формы по какому-либо признаку, и создать для каждой группы/подгруппы свою папку/подпапку и разместить там подходящие списковые формы.
+By default, on the left there is a folder called the name of the application itself. It is embedded in all the available forms list. You want to group a list form, on any basis, and to create for each group/subgroup a folder/subfolder and place the appropriate list form.
 
-4.Выделить в отдельную группу, например, данные о сотрудниках:
+4.To allocate in separate group, for example, data about employees:
 
-  * Добавить в приложение папку, например, `Сотрудники`: остаться на корневой папке `-`, нажать кнопку `Добавить подпапку` ![](/images/pages/guides/flexberry-aspnet/subfolder.png).  
-  * Дважды кликнуть на названии новой папки и написать `Сотрудники`.
+* Add to application folder, for example, `Сотрудники`: stay on the root folder `-`, click `Добавить подпапку` ![](/images/pages/guides/flexberry-aspnet/subfolder.png). 
+* Double-click on the name of the new folder and write `Сотрудники`.
 
- ![](/images/pages/guides/flexberry-aspnet/employees.png) 
+![](/images/pages/guides/flexberry-aspnet/employees.png) 
 
-  * В правом поле нажать кнопку `Добавить контейнер`  ![](/images/pages/guides/flexberry-aspnet/add.png) . Появится окно `Добавить…`. Оно будет пустое, т.к. по умолчанию в нем показываются только те списковые формы, которые еще не добавлены ни в одну папку. 
-  * Чтобы отобразить существующие списковые формы, нужно поставить галочку `Показать все элементы` и выбрать список, например, `СотрудникL`.
+* In the right margin click `Добавить контейнер` ![](/images/pages/guides/flexberry-aspnet/add.png) . A window will appear `Добавить...`. It will be empty because by default, it displays only a list of forms that have not yet been added to any folder. 
+* To display the existing list of forms you need to tick all `Показать элементы` and select lists, for example, `СотрудникL`.
 
- ![](/images/pages/guides/flexberry-aspnet/employeer-l.png) 
+![](/images/pages/guides/flexberry-aspnet/employeer-l.png) 
 
-  * Нажать `ОК`.
-  * Теперь в окне `Контейнеры для запуска` напротив папки `Сотрудники` назначен контейнер `СотрудникL`.
+* Click `ОК`.
+* Now in the window `Контейнеры for запуска` next to the folder `Сотрудники` assigned container `СотрудникL`.
 
- ![](/images/pages/guides/flexberry-aspnet/employeer-l-container.jpg) 
+![](/images/pages/guides/flexberry-aspnet/employeer-l-container.jpg) 
 
-  * В поле заголовок измените значение по умолчанию на, например, `Сотрудники`.
+* In the title field, change the default value to, for example, `Сотрудники`.
 
-5.Аналогичным образом создать подпапки в следующей папке.
+5.In a similar way to create subfolders in the following folder.
 
- ![](/images/pages/guides/flexberry-aspnet/other-folders.png) 
+![](/images/pages/guides/flexberry-aspnet/other-folders.png) 
 
-6.Удалить все контейнеры из папки, где их быть не должно (например, `АСУ_Склад`), пользуясь кнопкой `Удалить контейнер` ![](/images/pages/guides/flexberry-aspnet/delete.png) в правой части окна.
+6.To remove all containers from the folder where they shouldn't be (for example, `АСУ_Склад`), using the button `Удалить контейнер` ![](/images/pages/guides/flexberry-aspnet/delete.png) in the right part of the window.
 
-7.Добавить списковые формы в созданные папки:
+7.Add the list of forms in the created folder:
 
-  * Например, в папку `Информация о заказах`:
+* For example, `Информация about заказах`:
 
- ![](/images/pages/guides/flexberry-aspnet/orders.png) 
+![](/images/pages/guides/flexberry-aspnet/orders.png) 
 
-  * В папку `Товары на складе`:
+* In the folder `Товары on складе`:
 
- ![](/images/pages/guides/flexberry-aspnet/goods.png)
+![](/images/pages/guides/flexberry-aspnet/goods.png)
 
-8.Изменить заголовки для списковых форм.
+8.To change the header for a list of forms.
 
-9.Порядок следования папок и контейнеров в них при необходимости изменить с помощью соответствующих стрелок справа от окна.
+9.The order of the folders and containers in them if you need to change with the arrows to the right of the window.
 
-10.В окне `Контейнеры для запуска` нажать `ОК`.
+10.In the window `Контейнеры for запуска` click `ОК`.
 
-11.В окне `Class (редактирование)` нажать `Сохранить и закрыть`.
+11.In the window `Class (edit)` click `Сохранить and закрыть`.
 
-12.В окне с диаграммой тоже нажать `Сохранить и закрыть`.
+12.In the window with a chart and also click `Сохранить закрыть`.
 
-## Перейти
+## Go
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Создание прототипа](gpg_prototype-creating.html)
-* [Настройка кодогенерации (CSharp)](gpg_configuring-generation.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [the prototype](gpg_prototype-creating.html)
+* [Configuration of code generation (CSharp)](gpg_configuring-generation.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
