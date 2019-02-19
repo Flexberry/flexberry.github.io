@@ -1,25 +1,20 @@
 ---
-title: GEEmptyDetailRemover
+title: Удаление пустых строк при сохранении
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы), Windows UI (формы)
-summary: Рассмотрен компонент GEEmptyDetailRemover, позволяющий удалять пустые (незаполненные) объекты  GroupEdit при сохранении агрегатора
+keywords: Flexberry Winforms, Controls, GroupEdit, GEEmptyDetailRemover
+summary: Правила подключения компонента для удаления пустых строк детейлов при сохранении
 toc: true
 permalink: ru/fw_ge-empty-detail-remover.html
-folder: products/flexberry-winforms/
 lang: ru
 ---
 
-<!-- Данная статья ещё редактируется -->
+`GEEmptyDetailRemover` - расширение компонента [GroupEdit](fw_group-edit.html), позволяющее реализовать удаление пустых строк из `GroupEdit` при сохранении. При сохранении `GroupEdit` с пустыми строками может возникнуть сообщение о незаполненных полях (в этой пустой строке).
 
-## Описание
-`GEEmptyDetailRemover` - расширение компонента [`GroupEdit`](fw_group-edit.html), позволяющее организовать следующее поведение: удаление пустых строк из [`GroupEdit`](fw_group-edit.html) при сохранении (при наличии пустых строк в [`GroupEdit`](fw_group-edit.html) и сохранении может возникнуть сообщение о незаполненных полях (в этой пустой строке).).
+{% include important.html content="`GEEmptyDetailRemover` не входит в стандартную поставку Flexberry Winforms." %}
 
+## Подключение GEEmptyDetailRemover
 
-{% include important.html content="`GEEmptyDetailRemover` не входит в стандартную поставку Flexberry." %}
-
-
-## Как подключить GEEmptyDetailRemover
-1) В зависимой форме класса определяем объект класса GEEmptyDetailRemover:
+1) В зависимой форме класса определяется объект класса `GEEmptyDetailRemover`:
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
@@ -29,7 +24,7 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 }
 ```
 
-2) Указываем в конструкторе формы [`GroupEdit`](fw_group-edit.html)'ы, для которых надо удалять пустые строки:
+2) Указываются в конструкторе формы `GroupEdit`, для которых надо удалять пустые строки:
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
@@ -52,7 +47,7 @@ public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, 
 }
 ```
 
-3) В независимой форме в методе [`OnSave`](fw_form-interaction.html) вызываем функцию удаления пустых детейлов:
+3) В независимой форме в методе [OnSave](fw_form-interaction.html) вызывается функция удаления пустых детейлов:
 
 ```csharp
 public class C__ПокупательE : ICSSoft.STORMNET.UI.BaseIndpdEdit

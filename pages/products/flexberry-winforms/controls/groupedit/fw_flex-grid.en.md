@@ -1,22 +1,16 @@
 ---
 title: FlexGrid
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы)
-summary: Описание FlexGrid и пример получения из Gr
+keywords: Flexberry Winforms, Controls, GroupEdit, FlexGrid
+summary: Получение FlexGrid из GroupEdit
 toc: true
 permalink: en/fw_flex-grid.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 
-## Описание
 [FlexGrid](http://www.componentone.com/SuperProducts/FlexGridWinForms/) - простой в использовании контрол-таблица от компании ComponentOne. Позволяет отображать, редактировать, форматировать, организовывать и печатать данные в виде таблицы.
 
 Контрол используется в [GroupEdit](fw_group-edit.html), [ObjectListView](fw_objectlistview.html), а также в Статиторе.
-
-
-## Документация
-Документацию можно найти на официальном сайте компонента.
 
 ## Получение FlexGrid из GroupEdit
 

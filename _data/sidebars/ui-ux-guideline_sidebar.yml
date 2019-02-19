@@ -1,0 +1,32 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Get started
+    title_ru: Введение
+    output: web
+    folderitems:
+    - title: Base technologies
+      title_ru: Flexberry Guideline
+      url: /uiuxg_landing-page.ru.html
+      output: web    
+  - title: System design
+    title_ru: Проектирование
+    output: web
+    folderitems:
+    - title: System design fundamentals
+      title_ru: Введение в проектирование
+      url: /gbt_information-system-design.html
+      output: web
+    - title: ООП
+      url: /gbt_ood.html
+      output: web
+    - title: UML
+      url: /gbt_uml.html
+      output: web
+    - title: Паттерны проектирования
+      url: /gbt_design-patterns.html
+      output: web
