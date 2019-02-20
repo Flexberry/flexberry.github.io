@@ -1,24 +1,30 @@
 ---
-title: Диаграмма развёртывания
+title: Diagram of the deployment
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_deployment-diagram.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: 3d260c3b96d0019b21af45b69e20e2437dabedc17fce89f9287de928f808e2ce
 ---
 
-[Диаграмма развертывания](fd_deployment-diagram.html) является физической диаграммой в языке UML. Она отображает физические взаимосвязи между программными и аппаратным компонентами проектируемой системы.
+[Chart deployment](fd_deployment-diagram.html) is a physical diagram in the UML. It displays the physical relationship between hardware and software components of the designed system.
 
-## Порядок создания диаграммы
+## how to create a chart
 
-1.	Создать диаграмму развёртывания.
-2.	Расположить элементы как показано на рисунке:
+1. To create a diagram of the deployment.
+2. Arrange the elements as shown in the figure below:
 
 ![](/images/pages/guides/flexberry-designer/statechart-diagram.png)
 
-3.Сохранить диаграмму.
+3.To save the graph.
 
-## Перейти
+## Go
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграмм состояний](gpg_statechart-diagram.html)
-* [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Build Statecharts](gpg_statechart-diagram.html)
+* [A practical guide "do as I Do"](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

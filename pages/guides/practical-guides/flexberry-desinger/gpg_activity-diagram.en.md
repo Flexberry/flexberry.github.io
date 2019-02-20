@@ -1,32 +1,38 @@
 ---
-title: Построение диаграммы видов деятельности
+title: diagram of activities
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_activity-diagram.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: dea901eec8661d1f8cb98c759fc85b43a314fcabf226e223eac061baacce9b4c
 ---
 
-## Краткие теоретические сведения
+## Brief theoretical information
 
-[Диаграмма видов деятельности](fd_activity-diagram.html), как и диаграмма состояний, `отражает динамические аспекты поведения системы`. По существу, эта диаграмма представляет собой блок-схему, которая наглядно показывает, как поток управления переходит от одной деятельности к другой.
+[Chart of activities](fd_activity-diagram.html) as state diagram, `отражает dynamic aspects of behavior системы`. Essentially, this diagram is a flowchart that shows the flow of control passes from one activity to another.
 
-В качестве примера предлагается рассмотреть укрупненную диаграмму деятельности для описания процесса реализации продукции клиенту. Это позволит лучше разобраться в происходящих действиях.
+As an example, it is proposed to consider, will the activity diagram to describe the process of selling products to customers. This will allow better understanding of the situation of action.
 
-## Порядок построения диаграммы видов деятельности
+## build Order charts of activities
 
-1.	Создать диаграмму видов деятельности.
-2.	Например, в бизнес-процессе участвуют четыре объекта: клиент, менеджер, бухгалтер и кладовщик. Следует создать `дорожки` (`swimlanes`) для каждого из объектов. Каждая из дорожек ответственна за выполнение определенных действий тем объектом, с которым она проассоциирована.
-3.	Далее необходимо расположить на диаграмме все деятельности/действия, которые выполняются тем или иным объектом.
-4.	Результатом является диаграмма. Например, представленная ниже:
+1. Create a chart of activities.
+2. For example, the business process involves four objects: customer, Manager, accountant, and storekeeper. You should create `дорожки` (`swimlanes`) for each object. Each of the pathways responsible for specific actions the object with which it is associated.
+3. Next, you need to place on the chart all activities/actions performed on an object.
+4. The result is a diagram. For example, the following:
 
 ![](/images/pages/guides/flexberry-designer/activity-diagram.png)
- 
-5.Сохранить диаграмму.
 
-Эта диаграмма также может `оказаться опорной для построения` [диаграммы классов](fd_class-diagram.html).
+5.To save the graph.
 
-## Перейти
+This diagram can also `оказаться reference for построения` [class diagram](fd_class-diagram.html).
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграммы вариантов использования](gpg_use-case-diagram.html)
-* [Построение диаграммы классов](gpg_class-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Build entity relationship diagram](gpg_use-case-diagram.html)
+* [Class diagram](gpg_class-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

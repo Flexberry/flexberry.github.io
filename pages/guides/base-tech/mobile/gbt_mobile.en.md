@@ -1,0 +1,65 @@
+---
+title: mobile application Development
+keywords: Programming
+sidebar: guide-base-tech_sidebar
+toc: true
+permalink: en/gbt_mobile.html
+folder: guides/base-tech/mobile/
+lang: en 
+autotranslated: true 
+hash: 49d73968a73f5fc4dd40c48c6e0df078a7b401eef0f4173417ba03c7b328c34c
+---
+
+## Brief description
+
+## Links to materials for the study
+
+* [-]()
+* [-]()
+
+### Presentation
+
+### Recommended books
+
+* [-]()
+* [-]()
+
+## Software
+
+* [-]()
+* [-]()
+
+## Laboratory work and practical tasks
+
+* [-]()
+* [-]()
+
+Variants of tasks for independent performance, and then reviewing on the part of the teacher.
+
+### Option # 1
+
+### Option # 2
+
+### Option # 3
+
+### Option # 4
+
+### Option # 5
+
+## Examples
+
+* [-]()
+* [-]()
+
+## Opportunities for certification
+
+* [-]()
+* [-]()
+
+## Go
+
+* [Development for Android](gbt_android.html)
+* [Course home page](gbt_landing-page.html)
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

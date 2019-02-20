@@ -26,7 +26,7 @@ summary: The main features of using a lock in the autocomplete mode are describe
 	readonly=readonly
 	displayAttributeName='FirstName'
 
-	autocomplete=true	
+	autocomplete=true
 }}{% endraw %}
 ```
 
@@ -39,6 +39,7 @@ summary: The main features of using a lock in the autocomplete mode are describe
 `autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
 `minCharacters` | Минимальное количество символов для автокомпилита, в режиме автокомплита и в режиме выпадающего списка | 1
 `maxResults` | Максимальное количество отображаемых записей в режиме автокомплита и в режиме в режиме выпадающего списка, не обязательное свойство | 10
+`autocompleteProjection` | Имя проекции по которому считываются поля в запросе для отображения записей, не обязательное свойство используется для вычислимых полей | undefined
 
 ## Особенности запроса к серверу за результатами автодополнения
 

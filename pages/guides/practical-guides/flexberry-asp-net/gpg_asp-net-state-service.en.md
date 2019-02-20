@@ -1,29 +1,35 @@
 ---
-title: Включение службы ASP.NET State Service
+title: Incorporation services ASP.NET State Service
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_asp-net-state-service.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: 2e3d233d4f1eb166e86ba91d46dd7c7f842635113af9d3d0ca326cbe7aed457b
 ---
 
-Для корректной работы сгенерированного приложения необходимо, чтобы была запущена служба `ASP.NET State Service` (Служба состояний ASP.NET). Если при запуске сгенерированного веб-приложения выводится сообщение об ошибке, связанное с данной службой, необходимо:
+For the correct operation of the generated application is required to run the service `ASP.NET Service` State (Service state ASP.NET). If you run the generated web application displays the error message associated with this service, you must:
 
-1.Зайти на панель управления, переключиться при необходимости в режим отображения мелких значков, далее выбрать пункт `Администрирование`, далее – `Службы`. Откроется окно:
- 
+1.Go to control panel, switch if necessary, to display small icons, then select `Администрирование`, then – `Службы`. A window will open:
+
 ![](/images/pages/guides/flexberry-aspnet/services.png)
 
-2.В списке дважды кликнуть по `ASP.NET State Service` (или `Служба состояний ASP.NET`).
+2.In the list double-click on `ASP.NET State Service` (or `Служба States ASP.NET`).
 
-3.Если в поле `Тип запуска` стоит значение `Вручную`, нужно изменить его на `Автоматически` и нажать кнопку `Запустить`.
+3.If the `Тип запуска` is set to `Вручную`, you need to change it to `Автоматически` and click `Запустить`.
 
 ![](/images/pages/guides/flexberry-aspnet/settings-services.png)
- 
-4.Нажать `Применить`, `ОК`.
 
-5.Закрыть все окна, относящиеся к Панели управления.
+4.Click `Применить`, `ОК`.
 
-## Перейти
+5.Close all Windows related to the control Panel.
 
-*  <i class="fa fa-arrow-left" aria-hidden="true"></i> [Запуск веб-приложения](gpg_start-application.html)
-* [Определение ролей пользователей и их функций](gpg_identifying-roles.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Launch web apps](gpg_start-application.html)
+* [The definition of user roles and their functions](gpg_identifying-roles.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

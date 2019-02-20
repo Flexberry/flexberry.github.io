@@ -46,6 +46,7 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - vendor
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_subject_line: Flexberry documentation
@@ -143,6 +144,7 @@ sidebars:
 - other
 - guide-mobile-app_sidebar
 - guide-bpm-app_sidebar
+- ui-ux-guideline_sidebar
 
 gems:
   - jekyll-seo-tag

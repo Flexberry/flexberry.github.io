@@ -1,39 +1,45 @@
 ---
-title: Добавление ролей пользователей из приложения
+title: Add user roles from an application
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_adding-user-roles.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: 2008fc54ffc3ace382c4a5bb300b8a20d6a47c93ac7fb7dd957e198e0990d3ec
 ---
 
-Для разных ролей пользователей, как правило, необходим различный интерфейс приложения. То есть разным ролям пользователей должны быть доступны разные «разделы» приложения.  
-Добавить новые роли и пользователей, а также назначить им полномочия на доступ к классам данных можно в разделе `Администрирование` веб-приложения. 
-Меню приложения для пользователей и ролей определяется в файле `Web.sitemap` проекта с веб-приложением, а возможность доступа к отдельным страницам, или страницам, расположенным в отдельных папках приложения, определяется в файлах `Web.config` (такой всегда присутствует в корневой папке проекта с веб-приложением, кроме того, такие файлы могут создаваться для каждой вложенной папки со страницами в том же проекте).
+For different roles of users, typically requiring a different application interface. That is, different user roles must be available in different "sections" of the application. 
+To add new roles and users and assign them access privileges to the data classes in the section `Администрирование` web application. 
+The application menu for users and roles is defined in the file `Web.sitemap` project web app, and the possibility of access to individual pages, or pages that are located in separate folders in the application, is defined in the file `Web.config` (this is always present in the root folder of the project with the web application, in addition, such files may be created for each subfolder with pages in the same project).
 
-Подробнее с механизмом фильтрации карты веб-приложения ASP.NET можно ознакомиться в документации [MSDN](https://msdn.microsoft.com/ru-ru/library/ms178428(v=vs.100).aspx).
+Details of the filtering mechanism maps web application ASP.NET you can see in the documentation [MSDN](https://msdn.microsoft.com/ru-ru/library/ms178428(v=vs.100).aspx).
 
-Более подробно ознакомиться с механизмом управления авторизацией в веб-приложении ASP.NET с помощью ролей можно также ознакомиться в документации [MSDN](https://msdn.microsoft.com/ru-ru/library/9ab2fxh0(v=vs.100).aspx).
+Learn more about the mechanism of authorization control in web application ASP.NET using roles can also be found in the documentation [MSDN](https://msdn.microsoft.com/ru-ru/library/9ab2fxh0(v=vs.100).aspx).
 
-Сначала следует добавить новые роли согласно сделанным на основании [диаграммы вариантов использования](gpg_identifying-roles.html) выводам.
+You must first add a new role, according to made on the basis of the [entity relationship diagram](gpg_identifying-roles.html) conclusions.
 
-1.Для того чтобы добавить роли менеджера, бухгалтера и кладовщика, необходимо запустить приложение из `Visual Studio`, авторизоваться под пользователем `admin\admin` и открыть ветку `Администрирование\Роли`.
+1.To add the role of Manager, accountant and storekeeper, you need to run the app from `Visual Studio`, log in under user `admin\admin` and to open a branch `Администрирование\Роли`.
 
 ![](/images/pages/guides/flexberry-aspnet/administration.jpg)
- 
-2.Далее в открывшейся списковой форме необходимо нажать на кнопку `Добавить`
+
+2.In the opened list form please click on the `Добавить`
 
 ![](/images/pages/guides/flexberry-aspnet/add-role.png)
- 
-3.В открывшейся форме редактирования роли необходимо заполнить данные о роли (`Наименование`) и далее сохранить созданную роль. Помимо ввода названия роли ничего другого пока на данной форме отмечать не требуется.
+
+3.In the opened form edit role, you need to fill in details about the role (`Наименование`) and then save the role. In addition to entering the role name anything else while on this form of note is not required.
 
 ![](/images/pages/guides/flexberry-aspnet/save-role.png)
 
-Затем необходимо аналогичным образом создать хотя бы по одному пользователю для каждой роли, открыв соответствующие формы из ветки `Администрирование\Пользователи`.
+Then use a similar process to create at least one user for each role, opening the relevant forms from branch `Администрирование\Пользователи`.
 
 ![](/images/pages/guides/flexberry-aspnet/add-other-roles.jpg)
 
-## Перейти
+## Go
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Определение ролей пользователей и их функций](gpg_identifying-roles.html)
-* [Настройка путей генерации форм веб-приложения](gpg_configuring-paths-generating.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [the Definition of user roles and their functions](gpg_identifying-roles.html)
+* [Set up ways of generating web apps](gpg_configuring-paths-generating.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

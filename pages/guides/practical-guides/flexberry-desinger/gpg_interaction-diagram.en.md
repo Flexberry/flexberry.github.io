@@ -1,52 +1,58 @@
 ---
-title: Построение диаграмм взаимодействия
+title: charting the interaction
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_interaction-diagram.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: bdebdce354fc4cb7ae148a56ae01c1fe541f2afeed41e320ad7562fd7241aede
 ---
 
-## Краткие теоретические сведения
+## Brief theoretical information
 
-В нотации UML взаимодействие элементов рассматривается в информационном аспекте их коммуникации. Другими словами, взаимодействующие объекты обмениваются между собой некоторой информацией. При этом информация представляет собой законченные сообщения.  
-Для описания взаимодействия объектов, участвующих в некотором прецеденте, используются сценарии. `Сценарий` – это экземпляр прецедента, определяющий один из возможных потоков событий данного прецедента. Сам прецедент представляет собой переплетение сценариев – как основных, представляющих нормальное течение событий, так и вспомогательных, определяющих логику функционирования системы в ситуациях вида «что произойдет, если…». На ранних стадиях проектирования системы, как правило, ограничиваются рассмотрением основного сценария для каждого выявленного прецедента.
+In UML notation an interaction of elements is considered in the information aspect of communication. In other words, the interacting objects exchange some information. This information is a complete message. 
+To describe the interaction of objects involved in a precedent use scripts. `Сценарий` is an instance of precedent that defines one of the possible flows of events of a given precedent. The precedent itself is an interweaving of scenarios – as the main, represent the normal course of events, and support defining the logic of the functioning of the system in situations of the form "what happens if...". In the early stages of system design, usually limited to a review of the basic scenario for each identified use case.
 
-Например, реализация прецедента `Оформление заказа`:
+For example, the implementation of the precedent `Оформление заказа`:
 
 ![](/images/pages/guides/flexberry-designer/precedent.png)
- 
-Для данной реализации следует построить [диаграмму последовательностей](fd_sequence-diagram.html), которая будет описывать `сценарий размещения нового заказа`.
 
-## Порядок построения диаграммы последовательностей (Sequence Diagram)
+For this implementation you should build [sequence diagram](fd_sequence-diagram.html), which will describe `сценарий the new заказа`.
 
-1.	Создать диаграмму последовательностей. Например, «Создание нового заказа».
-2.	На данной диаграмме должно быть отражено взаимодействие объектов классов. Например, «Менеджер», «Списковая форма товаров на складе», «Списковая форма заказов», «Форма редактирования заказов», «Заказ», «Позиция Заказов». Построенная диаграмма представлена на рисунке:
+## build Order charts of the sequences (Sequence Diagram)
+
+1. To create a sequence diagram. For example, "Create new order".
+2. This diagram should reflect the interaction of objects classes. For example, "Manager", "List form of goods in the warehouse", "List of orders form", "Form edit orders", "Ordering", "Position Orders". The diagram shown in figure:
 
 ![](/images/pages/guides/flexberry-designer/sequence-diagram.jpg)
- 
-3.	Сохранить диаграмму.
 
-Диаграммы последовательностей не только отображают взаимодействие объектов, но и позволяют определить/отыскать операции, которые должны иметь те или иные классы.
+3. To save the graph.
 
-## Краткие теоретические сведения о диаграмме сотрудничества
+Sequence diagrams not only show the interaction of objects, but also allow us to determine/to find operations that needs to have certain classes.
 
-[Диаграмма сотрудничества](fd_collaboration-diagram.html) представляет альтернативный способ описания взаимодействия объектов и акцентирует внимание в первую очередь на организации объектов. Сообщения между объектами обозначаются стрелками, однако, их временная последовательность определяется нумерацией стрелок.
+## Brief theoretical information about the chart of cooperation
 
-Создать реализацию прецедента «Оформление накладных» - построить диаграмму кооперации для сценария «Печать накладной».
+[Collaboration diagram](fd_collaboration-diagram.html) is an alternative way of describing the interaction of objects and focuses primarily on the organization of the objects. Messages between objects are denoted by arrows, however, their temporal sequence is determined by the numbered arrows.
+
+To create an implementation of precedent "invoiced" - to chart the progress of societies for the scenario "Print invoice".
 
 ![](/images/pages/guides/flexberry-designer/precedent1.png)
- 
-## Порядок построения диаграммы сотрудничества (Collaboration Diagram)
 
-1.	Создать диаграмму сотрудничества
-2.	Разместить следующие элементы:
+## build Order charts of the cooperation (Collaboration Diagram)
+
+1. Create a chart of cooperation
+2. Place the following elements:
 
 ![](/images/pages/guides/flexberry-designer/collaboration-diagram.png)
- 
-3.Сохранить диаграмму.
 
-## Перейти
+3.To save the graph.
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Построение диаграммы классов](gpg_class-diagram.html)
-* [Построение диаграмм состояний](gpg_statechart-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [class diagram](gpg_class-diagram.html)
+* [Build Statecharts](gpg_statechart-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

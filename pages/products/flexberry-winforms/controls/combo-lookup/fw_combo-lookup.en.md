@@ -1,23 +1,22 @@
 ---
 title: ComboLookup
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы)
+keywords: Flexberry Winforms, Controls, Lookup
 summary: Описание основных свойств элемента управления ComboLookup, пример их использования. Особенности генерации.
 toc: true
 permalink: en/fw_combo-lookup.html
-folder: products/flexberry-winforms/
 lang: en
 ---
 
-## Описание
-Элемент управления для выбора мастера из комбинированного списка ComboBox.
+Элемент управления для выбора мастера из комбинированного [списка](fw_objectlistview.html) ComboBox.
 
 Основные свойства:
-* _DataObjectType_ – тип мастерового объекта.
-* _MasterPropertyName_ – свойство объекта данных, которое редактируется ComboLookup.
-* _ComboPropertyName_ – мастерового объекта, которое будет отображаться в списке.
-* _CachedData_ – данные читаются из базы при каждом открытии списка или кэшируются.
-* _Limit_ – ограничение на список мастеровых объектов. Следует заметить, что свойство имеет тип FunctionForControls (см. пример).
+
+* `DataObjectType` – тип мастерового объекта.
+* `MasterPropertyName` – свойство объекта данных, которое редактируется ComboLookup.
+* `ComboPropertyName` – мастерового объекта, которое будет отображаться в списке.
+* `CachedData` – данные читаются из базы при каждом открытии списка или кэшируются.
+* `Limit` – ограничение на список мастеровых объектов. Следует заметить, что свойство имеет тип `FunctionForControls`.
 
 ```csharp
 comboLookup1.CachedData = true;
@@ -32,6 +31,7 @@ comboLookup1.Limit = new FunctionForControls("ПородаL", lf);
 ```
 
 ## Изменение типа лукапа с Default на Combo
+
 Если форма уже существует, то при попытке изменения типа у существующего лукапа изменения __не применятся__. 
 
 Чтобы изменения вступили в силу необходимо вручную удалить весь код, связанный с контролом, из кода страницы и запустить перегенерацию.
