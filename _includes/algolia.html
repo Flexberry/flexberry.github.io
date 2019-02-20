@@ -28,11 +28,17 @@
 
             if (isFirstRender) {
                 const input = document.createElement('input');
+                input.setAttribute('placeholder', "search...");
                 const ul = document.createElement('ul');
+                ul.setAttribute('class', "hidden");    
 
                 input.addEventListener('input', event => {
                     refine(event.currentTarget.value);
                 });
+                input.addEventListener('focus', function ( event ) {
+                    event.target.nextSibling.classList.remove("hidden");});
+                input.addEventListener('blur', function ( event ) {
+                    event.target.nextSibling.classList.add("hidden");});
 
                 widgetParams.container.appendChild(input);
                 widgetParams.container.appendChild(ul);
@@ -103,7 +109,6 @@
     #autocomplete ul {
       background: #fff;
       position: absolute;
-      min-width: 400px;
       border-radius: 4px;
       -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
@@ -126,5 +131,13 @@
       opacity: 0.8;
       color: #fff;
       border-radius: 50px;
+      outline: none;
+      width: 150px;
+      transition: width 1s ease;
     }
+
+    #autocomplete input:focus  {
+        width: 250px;
+    }
+
 </style>
