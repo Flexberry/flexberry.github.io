@@ -20,6 +20,9 @@
                         .join('')}
             </ol>
         </li>
+        <a href="https://www.algolia.com/">
+            <img height="15px" align="right" src="https://www.algolia.com/static_assets/images/v3/shared/logos/algolia/search-by-algolia-light-background-99ac347c.png">
+        </a>
         `;
 
         // Create the render function
@@ -39,8 +42,16 @@
                 input.addEventListener('focus', function ( event ) {
                     event.target.nextSibling.classList.remove("hidden");});
 
-                // input.addEventListener('blur', function ( event ) {
-                //     event.target.nextSibling.classList.add("hidden");}); вот тут вместо блюра надо что-то сделать. из-за блюра как раз и закрывается эта фигня выпадающая когда не надо
+                input.addEventListener('focusout', function (event) {
+                    if (event.relatedTarget === null || event.relatedTarget === undefined) {
+                        event.target.nextSibling.classList.add("hidden");
+                    } else {
+                        if (event.relatedTarget.tagName !== 'A') {
+                            event.target.nextSibling.classList.add("hidden");
+                        }
+                    }
+
+                });
 
                 widgetParams.container.appendChild(input);
                 widgetParams.container.appendChild(ul);
