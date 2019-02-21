@@ -22,106 +22,106 @@ lang: en
 
 Подключение `GEEditorExt` рассмотрено на примере: "Покупатель" - это [класс мастера](fd_key-concepts.html), "Покупка" - [класс детейла](fd_key-concepts.html).
 
-![](/images/pages/products/flexberry-winforms/controls/groupedit/class-diagram_-customer-purchase2.jpg)
+![Пример диаграммы](/images/pages/products/flexberry-winforms/controls/groupedit/class-diagram_-customer-purchase2.jpg)
 
 {% include note.html content="Для редактирования детейлов необходимо сгенерировать соответствующую форму редактирования (при быстрой прототипизации она не создаётся)." %}
 
-1) В классе формы агрегатора объявляется переменную типа `GEEditorExt`:
+1.В классе формы агрегатора объявляется переменную типа `GEEditorExt`:
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
-	IIS.AMS02.GEEditorExt extGEПокупки;
-	//...
+    IIS.AMS02.GEEditorExt extGEПокупки;
+    //...
 }
 ```
 
-2) В метод `Edit` формы агрегатора добавляется код  по инициализации данной переменной. Конструктору класса `GEEditorExt` в качестве параметра передается [`GroupEdit`](fw_group-edit.html), функциональность которого планируется расширить.
+2.В метод `Edit` формы агрегатора добавляется код  по инициализации данной переменной. Конструктору класса `GEEditorExt` в качестве параметра передается [`GroupEdit`](fw_group-edit.html), функциональность которого планируется расширить.
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
-	IIS.AMS02.GEEditorExt extGEПокупки;
-	public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
-	{
-		//...
-		#region возможность создания и редактирования реагирований на отдельной формы из GE
-            if (this.extGEПокупки == null)
-                this.extGEПокупки = new IIS.AMS02.GEEditorExt(Покупки);
-        #endregion возможность создания и редактирования реагирований на отдельной формы из GE
-		//...
-	}
-	//...
+    IIS.AMS02.GEEditorExt extGEПокупки;
+    public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
+    {
+        //...
+        #region возможность создания и редактирования реагирований на отдельной формы из GE
+                        if (this.extGEПокупки == null)
+                                this.extGEПокупки = new IIS.AMS02.GEEditorExt(Покупки);
+                #endregion возможность создания и редактирования реагирований на отдельной формы из GE
+        //...
+    }
+    //...
 }
 ```
 
 {% include note.html content="Вместо пунктов 1 и 2, если не надо совершать дополнительных действий с кнопками (скрывать их, переименовывать и т.п.) можно использовать метод-расширение у GroupEdit." %}
 
-3) В метод `GetEditor` формы агрегатора добавляется код, указывающий, какую форму поднимать для редактирования конкретного детейла:
+3.В метод `GetEditor` формы агрегатора добавляется код, указывающий, какую форму поднимать для редактирования конкретного детейла:
 
 ```csharp
 public class WinformC__ПокупательE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупательE
 {
-	public override Type GetEditor(ICSSoft.STORMNET.UI.EventType eventtype, ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)
-	{
-		if ((propertyname == "Покупка"))
-		{
-			return System.Type.GetType("IIS.MasterField.C__ПокупкаE");
-		}
-		//...
-	}
-	//...
+    public override Type GetEditor(ICSSoft.STORMNET.UI.EventType eventtype, ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname)
+    {
+        if ((propertyname == "Покупка"))
+        {
+            return System.Type.GetType("IIS.MasterField.C__ПокупкаE");
+        }
+        //...
+    }
+    //...
 }
 ```
 
-4) Переопределить метод `PromtUserForActionAtClose` формы детейла (это связанно с особенностью 1 класса `GEEditorExt`):
+4.Переопределить метод `PromtUserForActionAtClose` формы детейла (это связанно с особенностью 1 класса `GEEditorExt`):
 
 ```csharp
 public class WinformC__ПокупкаE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.MasterField.DPDIC__ПокупкаE
 {
-	public override ICSSoft.STORMNET.UI.DialogResult PromtUserForActionAtClose()
-	{
-		if (EditManager.DataObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Created &&
-			EditManager.DataObject.DynamicProperties.ContainsKey("Псевдосохранен") ||
-			EditManager.DataObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.UnAltered &&
-			EditManager.DataObject.GetAlteredPropertyNames().Length == 0)
-			return ICSSoft.STORMNET.UI.DialogResult.Yes;
-		return base.PromtUserForActionAtClose();
-	}
-	//...
+    public override ICSSoft.STORMNET.UI.DialogResult PromtUserForActionAtClose()
+    {
+        if (EditManager.DataObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Created &&
+            EditManager.DataObject.DynamicProperties.ContainsKey("Псевдосохранен") ||
+            EditManager.DataObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.UnAltered &&
+            EditManager.DataObject.GetAlteredPropertyNames().Length == 0)
+            return ICSSoft.STORMNET.UI.DialogResult.Yes;
+        return base.PromtUserForActionAtClose();
+    }
+    //...
 }
 ```
 
-5) В независимой форме детейла переопределить метод вычитки из БД (для того, чтобы не вычитывался полностью объект при поднятии формы редактирования):
+5.В независимой форме детейла переопределить метод вычитки из БД (для того, чтобы не вычитывался полностью объект при поднятии формы редактирования):
 
 ```csharp
 public class C__ПокупкаE : ICSSoft.STORMNET.UI.BaseIndpdEdit
 {
-	protected override void PrepareDataObjectForEdit(ICSSoft.STORMNET.DataObject dobject)
-	{
-		// *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) start)
-		if (dobject.GetStatus(false) == ICSSoft.STORMNET.ObjectStatus.Altered)
-		{
-			m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
-			return;
-		}
-		// *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) start)
-		m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
-		if ((dobject.GetStatus(false) != ICSSoft.STORMNET.ObjectStatus.Created) 
-					|| dobject.Prototyped)
-		{
-			ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(m_objView, dobject, false, false);
-			dobject.InitDataCopy();
-		}
-		// *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) end)
+    protected override void PrepareDataObjectForEdit(ICSSoft.STORMNET.DataObject dobject)
+    {
+        // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) start)
+        if (dobject.GetStatus(false) == ICSSoft.STORMNET.ObjectStatus.Altered)
+        {
+            m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
+            return;
+        }
+        // *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) start)
+        m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
+        if ((dobject.GetStatus(false) != ICSSoft.STORMNET.ObjectStatus.Created)
+                    || dobject.Prototyped)
+        {
+            ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(m_objView, dobject, false, false);
+            dobject.InitDataCopy();
+        }
+        // *** Start programmer edit section *** (PrepareDataObjectForEdit (DataObject) end)
 
-		// *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) end)
-	}
-	//...
+        // *** End programmer edit section *** (PrepareDataObjectForEdit (DataObject) end)
+    }
+    //...
 }
 ```
 
-Здесь предполагается, что представления для отображения детейла на форме редактирования и в [`GroupEdit`](fw_group-edit.html) совпадают (т.е. это одно и то же представление или представления с одинаковым набором атрибутов). Если представления разные, то код в скобках программиста в приведенном выше методе `PrepareDataObjectForEdit` надо заменить на такой:
+Здесь предполагается, что представления для отображения детейла на форме редактирования и в [GroupEdit](fw_group-edit.html) совпадают (т.е. это одно и то же представление или представления с одинаковым набором атрибутов). Если представления разные, то код в скобках программиста в приведенном выше методе `PrepareDataObjectForEdit` надо заменить на такой:
 
 ```csharp
 m_objView = ICSSoft.STORMNET.Information.GetView("C__ПокупкаE", typeof(IIS.MasterField.Покупка));
@@ -131,7 +131,7 @@ ICSSoft.STORMNET.View дочитать_View = m_objView - ge_View;
 //из этого представления убираем свойства, которые могли быть изменены на форме редактирования,
 //если она открывалась ранее
 foreach (string altprop in dobject.GetAlteredPropertyNames())
-	дочитать_View.RemoveProperty(altprop);
+    дочитать_View.RemoveProperty(altprop);
 ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(дочитать_View, dobject, false, false);
 return;
 ```

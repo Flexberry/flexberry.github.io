@@ -16,7 +16,7 @@ lang: en
 
 ```csharp
 public static C1.Win.C1FlexGrid.C1FlexGrid GetGridFromGE(ICSSoft.STORMNET.Windows.Forms.GroupEditBase groupEdit)
-// Ищем FlexGrid 
+// Ищем FlexGrid
 {
  for(int i =0; i < groupEdit.Controls.Count;i++)
  {

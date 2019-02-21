@@ -144,6 +144,22 @@ entries:
       title_ru: Режим редактирования с блокировками в GroupEdit
       url: /fw_lock-rows-in-groupedit.html
       output: web
+
+  - title: Lookup
+    title_ru: Lookup
+    output: web, pdf
+
+    folderitems:
+
+    - title: Lucap with predictive input
+      title_ru: Лукап с предиктивным вводом
+      url: /fw_extended-lookup.html
+      output: web
+
+    - title: Call an independent master
+      title_ru: Вызов независимого мастера
+      url: /fw_lookup-another-object.html
+      output: web
       
   - title: Forms
     title_ru: Формы
