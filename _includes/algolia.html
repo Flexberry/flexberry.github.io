@@ -28,6 +28,7 @@
 
             if (isFirstRender) {
                 const input = document.createElement('input');
+                input.setAttribute('type', "text");
                 input.setAttribute('placeholder', "search...");
                 const ul = document.createElement('ul');
                 ul.setAttribute('class', "hidden");    
@@ -37,8 +38,9 @@
                 });
                 input.addEventListener('focus', function ( event ) {
                     event.target.nextSibling.classList.remove("hidden");});
-                input.addEventListener('blur', function ( event ) {
-                    event.target.nextSibling.classList.add("hidden");});
+
+                // input.addEventListener('blur', function ( event ) {
+                //     event.target.nextSibling.classList.add("hidden");}); вот тут вместо блюра надо что-то сделать. из-за блюра как раз и закрывается эта фигня выпадающая когда не надо
 
                 widgetParams.container.appendChild(input);
                 widgetParams.container.appendChild(ul);
@@ -138,6 +140,10 @@
 
     #autocomplete input:focus  {
         width: 250px;
+    }
+
+    #autocomplete input::placeholder {
+        color: #fff;
     }
 
 </style>
