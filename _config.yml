@@ -148,12 +148,3 @@ sidebars:
 
 gems:
   - jekyll-seo-tag
-
-algolia:
-  application_id: 'M7DAVJFOZ6'
-  index_name: 'Flexberry documentation'
-  search_only_api_key: '9b89c6671341729d3e1691813c869553'
-  extensions_to_index:
-    - md
-  files_to_exclude: 
-    - _layouts/*.html
