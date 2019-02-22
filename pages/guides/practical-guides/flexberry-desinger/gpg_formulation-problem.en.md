@@ -1,30 +1,36 @@
 ---
-title: Постановка задачи
+title: statement of the problem
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_formulation-problem.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: 0bbf36d98a91fcd94715d87e6ccd7e40eaaeaf80dfc6c9091f14be82e197a31d
 ---
 
-## Характеристики объекта автоматизации
+## characteristics of the automation object
 
-_Описание процесса работы будет произведено на примере приложения «АСУ Склад»._
+Opisanie process will be made on the sample application "ACS Warehouse"._
 
-Предприятие производит оптовую реализацию промышленной продукции широкого ассортимента. Поставщиками компании выступают заводы и фабрики, находящиеся на территории РФ. Клиенты предприятия – предприниматели, фирмы и др. организации, осуществляющие розничную и мелкооптовую продажу.
+The company produces wholesale distribution of industrial products of wide assortment. Suppliers of the company are the factories located on the territory of the Russian Federation. Enterprise customers – businesses, firms and other organizations engaged in retail and wholesale sale.
 
-## Постановка задачи на проектирование информационной системы
+## statement of the problem in designing an information system
 
-Проектируемая система обязана производить учет и контроль движения продуктов на складе. Автоматизировать процесс выписки накладных, счётов и других документов.
+The designed system must produce accounting and control the movement of products in the warehouse. To automate the process of invoicing, accounts and other documents.
 
-## Описание бизнес-процесса «Реализация продукции со склада»
+## Description of the business process "sale of products from the warehouse"
 
-Клиент, решивший оформить заказ на поставку продукции, обращается в офис предприятия. Менеджер согласовывает с клиентом все условия по оформлению заказа. При этом менеджер обязан проверить наличие на складе каждого из заявленных продуктов.  
-В случае если все затребованные клиентом позиции продуктов есть в наличии, либо клиентом приняты альтернативные варианты, заказ передается в бухгалтерию, и клиенту предлагается его оплатить.
-Если клиент оплачивает заказ по наличному расчету, то после оплаты бухгалтер сразу выписывает две товарно-транспортные накладные, которые передаются клиенту.  
-После получения накладной клиент прибывает на склад за своим товаром. Кладовщик выдает необходимые продукты и делает отметку в обоих экземплярах накладной о том, что груз выдан. Далее, клиент расписывается в двух экземплярах накладной и отбывает с полученным товаром и одним экземпляром накладной. Второй экземпляр накладной остается у кладовщика.
+A client who decides to place an order for the supply of products, appeals to the office of the company. Manager coordinates with the customer all the conditions for ordering. The Manager is obliged to check the stock of each of the stated products. 
+If all the customer's requested product items are in stock or client accepted alternatives, the order is passed to accounting, and the customer has to pay for it.
+If the customer pays for the order in cash, after payment, the accountant immediately writes out two waybills are sent to the client. 
+After receiving the invoice the customer arrives at the warehouse for their goods. The storekeeper gives the necessary products and making a mark in both copies of the invoice stating that the goods are issued. Next, the client signs two copies of the invoice and is serving with the product you received, and one copy of the invoice. The second copy of the consignment note retained by the storekeeper.
 
-## Перейти
+## Go
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Практическое руководство по созданию UML-диаграмм](gpg_practical-guides-uml.html)
-* [Построение диаграммы вариантов использования](gpg_use-case-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [a Practical guide for creating UML diagrams](gpg_practical-guides-uml.html)
+* [Building the entity relationship diagram](gpg_use-case-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

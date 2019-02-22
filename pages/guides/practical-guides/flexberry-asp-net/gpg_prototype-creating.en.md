@@ -1,35 +1,41 @@
 ---
-title: Создание прототипа
+title: creating a prototype
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_prototype-creating.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: c18177afd675c5950626d29a2880623abeac32f521196a4eb0ff51eda170363d
 ---
 
-{% include important.html content="Перед [созданием прототипа](fd_prototype-creation.html) необходимо убедиться, что в модели всё верно, т.к. исправление модели после создания прототипа будет более трудоёмким. 
-Для исправления нужно будет удалять автоматически созданную диаграмму и представления в классах и повторить [быстрое прототипирование](fd_using-quick-prototyping.html)." %}
+{% include important.html content="Before the [prototype](fd_prototype-creation.html) you must ensure that the models are all right, because the correction of the model after the prototype will be more time consuming. 
+To fix need to delete the automatically created chart and presentation in classes and repeat [rapid prototyping](fd_using-quick-prototyping.html)." %}
 
-1.В дереве проектов перейти на созданную систему:
+1.In the project tree go to the created system:
 
 ![](/images/pages/guides/flexberry-aspnet/system.png) 
- 
-2.Далее нажать на системе правой кнопкой мыши. В появившемся меню выберать пункт `ASP.NET` -> `Утилиты` -> `Создать представления, формы и приложение`. Появится окно `Создать прототип приложения`.
+
+2.Next, click on the system right click. In the menu that appears, select `ASP.NET` -> `Утилиты` -> `Создать views, forms and приложение`. A window will appear `Создать prototype приложения`.
 
 ![](/images/pages/guides/flexberry-aspnet/create-prototype.jpg) 
- 
-3.В появившемся окне указать имя приложения (можно указать любое, главное, чтобы оно не совпало с именем уже имеющегося класса), например, `АСУ_Склад`. Нажать `OK`.
 
-4.Если система состоит из нескольких приложений, которые надо явно разделить, следует указать префикс данного приложения (более актуально при генерации Win-приложений). 
+3.In the appeared window specify the application name (can be any, the main thing that it does not coincide with the name of an existing class), for example, `АСУ_Склад`. Click `OK`.
 
-5.Если всё сделано верно, прототип будет успешно создан:
+4.If the system consists of multiple applications that need to explicitly share, you must specify the prefix of the application (more important in generating Win-apps). 
 
-* появится диаграмма классов, содержащая класс с именем приложения и стереотипом `application` (например, `АСУ_Склад`),
-* а также классы со стереотипами `editform` и `listform`, описывающие для классов предметной области формы редактирования и списковые формы соответственно.
+5.If done correctly, the prototype will be created successfully:
 
-Всплывет окно с логом сообщений. Если всё прошло успешно, его можно закрыть.
+* will display the class diagram that contains the class name of the application and the stereotype `application` (e.g. `АСУ_Склад`),
+* as well as classes with stereotypes `editform` and `listform` describing domain classes edit forms and list forms, respectively.
 
-## Перейти
+POPs up a window with log messages. If all goes well, you can close it.
 
-*  <i class="fa fa-arrow-left" aria-hidden="true"></i> [Настройка генератора скриптов для БД](gpg_configuring-script-generator-db.html)
-* [Настройка структуры приложения](gpg_configuring-application-structure.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [configure script generator for database](gpg_configuring-script-generator-db.html)
+* [Setup app structure](gpg_configuring-application-structure.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

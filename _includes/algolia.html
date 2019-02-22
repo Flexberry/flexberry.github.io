@@ -1,0 +1,160 @@
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.32.0/dist/algoliasearchLite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.0.0/dist/instantsearch.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+    const search = instantsearch({
+        indexName: '{{ site.algolia.index_name }}',
+        searchClient: algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_only_api_key }}' )
+    });
+    const renderIndexListItem = ({ label, hits }) => `
+        <li>
+            <ol>
+            ${hits
+                        .map(
+                            hit =>
+                                `<li><a href=${hit.url}>${hit.title}</a></li>`
+                        )
+                        .join('')}
+            </ol>
+        </li>
+        <a href="https://www.algolia.com/">
+            <img height="15px" align="right" src="https://www.algolia.com/static_assets/images/v3/shared/logos/algolia/search-by-algolia-light-background-99ac347c.png">
+        </a>
+        `;
+
+        // Create the render function
+        const renderAutocomplete = (renderOptions, isFirstRender) => {
+            const { indices, currentRefinement, refine, widgetParams } = renderOptions;
+
+            if (isFirstRender) {
+                const input = document.createElement('input');
+                input.setAttribute('type', "text");
+                input.setAttribute('placeholder', "search...");
+                const ul = document.createElement('ul');
+                ul.setAttribute('class', "hidden");    
+
+                input.addEventListener('input', event => {
+                    refine(event.currentTarget.value);
+                });
+                input.addEventListener('focus', function ( event ) {
+                    event.target.nextSibling.classList.remove("hidden");});
+
+                input.addEventListener('focusout', function (event) {
+                    if (event.relatedTarget === null || event.relatedTarget === undefined) {
+                        event.target.nextSibling.classList.add("hidden");
+                    } else {
+                        if (event.relatedTarget.tagName !== 'A') {
+                            event.target.nextSibling.classList.add("hidden");
+                        }
+                    }
+
+                });
+
+                widgetParams.container.appendChild(input);
+                widgetParams.container.appendChild(ul);
+            }
+
+            widgetParams.container.querySelector('input').value = currentRefinement;
+            widgetParams.container.querySelector('ul').innerHTML = indices
+                .map(renderIndexListItem)
+                .join('');
+        };
+
+        // Create the custom widget
+        const customAutocomplete = instantsearch.connectors.connectAutocomplete(
+            renderAutocomplete
+        );
+
+        // Instantiate the custom widget
+        search.addWidget(
+            customAutocomplete({
+                container: document.querySelector('#autocomplete'),
+            })
+        );
+
+    search.start();
+</script>
+
+<style>
+    .ais-search-box {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .post-item {
+        margin-bottom: 30px;
+    }
+
+    .post-link .ais-Highlight {
+        color: #111;
+        font-style: normal;
+        text-decoration: underline;
+    }
+
+    .post-breadcrumbs {
+        color: #424242;
+        display: block;
+    }
+
+    .post-breadcrumb {
+        font-size: 18px;
+        color: #424242;
+    }
+
+    .post-breadcrumb .ais-Highlight {
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    .post-snippet .ais-Highlight {
+        color: #2a7ae2;
+        font-style: normal;
+        font-weight: bold;
+    }
+
+    .post-snippet img {
+        display: none;
+    }
+
+    #autocomplete ul {
+      background: #fff;
+      position: absolute;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+      top: 40px;
+      left: 20px;
+    }
+
+    #autocomplete ul > li > ol {
+      padding: 0;
+    }
+
+    #autocomplete input {
+      height: 30px;
+      margin: 10px 0 0 20px;
+      padding: .5em;
+      font-size: 0.8em;
+      float: right;
+      background: transparent;
+      border: 1px solid #fff;
+      opacity: 0.8;
+      color: #fff;
+      border-radius: 50px;
+      outline: none;
+      width: 150px;
+      transition: width 1s ease;
+    }
+
+    #autocomplete input:focus  {
+        width: 250px;
+    }
+
+    #autocomplete input::placeholder {
+        color: #fff;
+    }
+
+</style>
