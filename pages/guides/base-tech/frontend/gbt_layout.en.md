@@ -1,0 +1,66 @@
+---
+title: Layout web pages
+keywords: Programming
+sidebar: guide-base-tech_sidebar
+toc: true
+permalink: en/gbt_layout.html
+folder: guides/base-tech/frontend/
+lang: en 
+autotranslated: true 
+hash: cd8a36891f214ddccb408efa12d8f654139011eb76a23f296b0344ed773fdfa6
+---
+
+## Brief description
+
+## Links to materials for the study
+
+* [-]()
+* [-]()
+
+### Presentation
+
+### Recommended books
+
+* [-]()
+* [-]()
+
+## Software
+
+* [-]()
+* [-]()
+
+## Laboratory work and practical tasks
+
+* [-]()
+* [-]()
+
+Variants of tasks for independent performance, and then reviewing on the part of the teacher.
+
+### Option # 1
+
+### Option # 2
+
+### Option # 3
+
+### Option # 4
+
+### Option # 5
+
+## Examples
+
+* [-]()
+* [-]()
+
+## Opportunities for certification
+
+* [-]()
+* [-]()
+
+## Go
+
+* [Ember.js](gbt_emberjs.html)
+* [Course home page](gbt_landing-page.html)
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

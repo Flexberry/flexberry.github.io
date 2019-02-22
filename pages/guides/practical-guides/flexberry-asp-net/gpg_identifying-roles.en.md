@@ -1,35 +1,41 @@
 ---
-title: Определение ролей пользователей и их функций
+title: Definition of user roles and their functions
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_identifying-roles.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: ffa0d65d6160814b3c3cd9793a0cc7ba25eff87e7d57caa17335242dc3fc8346
 ---
 
-Проектируюмую систему-пример необходимо доработать в соответствии с требованиями. Сначала следует вернуться к [диаграмме вариантов использования](gpg_use-case-diagram.html) и оценить, какие акторы должны вступать во взаимодействие с системой. На основе этой информации можно увидеть роли пользователей, которые должны использоваться в системе.
+Proektiruemy system example to be worked up in accordance with the requirements. You must first return to the [chart options use](gpg_use-case-diagram.html) and to assess which actors have to interact with the system. Based on this information, you can see the user roles that should be used in the system.
 
 ![](/images/pages/guides/flexberry-aspnet/use-case-diagram-old.png)
- 
-На основании данной диаграммы можно сделать вывод, что в системе будет присутствовать `три роли пользователей`:
 
-* Менеджер
-* Бухгалтер
-* Кладовщик
+Based on this chart, we can conclude that the system will be present `три role пользователей`:
 
-Кроме того, на основании информации из других диаграмм, построенных ранее (например, [диаграммы классов](gpg_class-diagram.html)), становится очевидным, что не все функции приложения покрываются перечисленными вариантами использования (например, не учтена работа с сотрудниками и контроль складов).
+* Manager
+* Accountant
+* Storekeeper
 
-Диаграмму вариантов использования следует уточнить в соответствии с указанными выше замечаниями (для упрощения задачи, пусть контроль за складами осуществляют сами кладовщики, а ведение списка сотрудников осуществляют менеджеры):
+In addition, on the basis of information from other charts previously constructed (for example, [class diagram](gpg_class-diagram.html)), it becomes apparent that not all application functions are covered by the above use cases (for example, do not include work with employees and control of warehouses).
+
+Diagram of use cases should be clarified in accordance with the above observations (to simplify the problem, let the control over the warehouses are storekeepers, and maintain a list of employees managers):
 
 ![](/images/pages/guides/flexberry-aspnet/use-case-diagram-new.png)
- 
-Таким образом, перечисленным ролям пользователей должны быть доступны следующие функции (полномочия для пользователей в рамках данного практикума не иллюстрируются):
 
-* Менеджер должен иметь возможность работать с товарами, заказами, документами, накладными и с сотрудниками.
-* Бухгалтер иметь возможность должен работать с документами, накладными и заказами.
-* Кладовщик иметь возможность должен работать со складами, товарами, товарами на складе.
+Thus, the listed user roles must be available the following functions (the permissions for the users in the framework of this workshop not illustrated):
 
-## Перейти
+* The Manager must be able to work with products, orders, documents, invoices and employees.
+* Accountant to be able needs to work with documents, invoices and orders.
+* Storekeeper have the opportunity must work with warehouses, goods, goods in stock.
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Включение службы ASP.NET State Service](gpg_asp-net-state-service.html)
-* [Добавление ролей пользователей из приложения](gpg_adding-user-roles.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Enable ASP.NET State Service](gpg_asp-net-state-service.html)
+* [Add user roles from an application](gpg_adding-user-roles.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

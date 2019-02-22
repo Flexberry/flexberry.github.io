@@ -1,22 +1,28 @@
 ---
-title: Настройка кодогенерации (CSharp)
+title: setup of code generation (CSharp)
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_configuring-generation.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: 8476a063401ea3bd5fb56e37f51472fde57bcf24f77d2751cfb5ec53a42a0038
 ---
 
-1.	Выбрать стадию (щелкнуть левой кнопкой мыши).
-2.	Далее нажать на стадии правой кнопкой мыши. В появившемся меню выбрать пункт `ASP.NET` -> `C#` -> `Свойства модели`.
-3.	В поле Product указать имя программного продукта (например, `АСУ_Склад`). По умолчанию название проекта будет иметь вид: `Product_****`, оно должно быть изменено. 
-4.	Настроить путь до каталога, в который будут помещены сгенерированные проекты: в поле `Каталог для исходного кода` указать относительный путь для генерации веб-приложения, например, `CodeGen\АСУ_Склад`. Базовый путь для генерации приложений можно изменить, выбрав в главном меню пункт `Настройки` -> `Путь генерации…`
+1. Choose the stage (click the left mouse button).
+2. Next, click on the stage, right-click. In the menu that appears, select `ASP.NET` -> `C#` -> `Свойства модели`.
+3. In the Product field to specify the name of the software product (for example, `АСУ_Склад`). By default, the project name will be: `Product_****`, it should be changed. 
+4. To configure the path to the directory that will contain the generated projects in the field `Каталог for the original кода` a relative path to generate a web application, for example, `CodeGen\АСУ_Склад`. The base path for generating applications can be changed by selecting the main menu item `Настройки` -> `Путь generation...`
 
 ![](/images/pages/guides/flexberry-aspnet/generation-path.png) 
- 
-5.В окне `Стадия (редактирование)` нажать `Сохранить и закрыть`.
 
-## Перейти
+5.In the window `Стадия (edit)` click `Сохранить and закрыть`.
 
-*  <i class="fa fa-arrow-left" aria-hidden="true"></i> [Настройка структуры приложения](gpg_connection-settings-db.html)
-* [Генерация веб-приложения](gpg_generation-application.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [setting up the application structure](gpg_connection-settings-db.html)
+* [Generation of web applications](gpg_generation-application.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

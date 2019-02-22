@@ -1,59 +1,65 @@
 ---
-title: Настройка путей генерации форм веб-приложения
+title: configuring routes generate forms web application
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_configuring-paths-generating.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: a10268b4ef17092e17ee895b614761984f03a7be29d9e49880935b0fd68de72c
 ---
 
-По умолчанию в проект с веб-приложением все формы генерируются следующим образом:
+By default, project web app all the forms are generated in the following way:
 
-1.	В корневой папке проекта создается папка `forms`
-2.	В папке `forms` создается отдельная папка для каждой формы, которая указана на [диаграмме классов с прототипом приложения](gpg_prototype-creating.html), при этом папки для форм создаются латинскими буквами, даже если на диаграмме формы были названы по-русски. При этом формы с одинаковым названием, но разными стереотипами (обычно это формы со стереотипами `listform` и `editform`) попадают в одну папку.
-Таким образом, структура рассматриваемого проекта с веб-приложением по умолчанию выглядит следующим образом:
- 
+1. In the root folder of the project folder is created `forms`
+2. In the folder `forms` creates a separate folder for each form that is listed on [the class diagram of the prototype application](gpg_prototype-creating.html), and folders for forms created in Latin letters, even if the graph shape was named in Russian. At the same form with the same name but with different stereotypes (usually form stereotypes `listform` and `editform`) are in one folder.
+Thus, the structure of the project with the web application default as follows:
+
 ![](/images/pages/guides/flexberry-aspnet/project-structure.png)
 
-Для последующей настройки меню веб-приложения для разных ролей пользователей было бы удобнее организовать структуру папок с формами несколько другим образом, поскольку в каждой такой папке будет создан файл с настройками для доступа пользователей с различными ролями к веб-формам, расположенным внутри этих папок.  
-Кроме того, при создании реальных корпоративных приложений веб-форм может быть достаточно много и требуется, как правило, возможность их более гибкой структуризации внутри проекта прямо на этапе генерации веб-приложения.
+For setting the menu of the web application for different user roles would be more convenient to organize the folder structure of the forms in a slightly different way, since each folder will be a file with the settings for users with different roles to the web forms located within these folders. 
+In addition, when you create real enterprise applications, web forms can be quite a lot and requires, usually, a more flexible structure within the project right at the stage of generation of web applications.
 
-__Примечание:__ для решения задачи создания конфигурационных файлов структуру папок менять не обязательно – это стремление оптимизировать таким образом содержание файлов конфигурации.
+__Note:__ to solve the problem of creating configuration files, folder structure change is not necessary is the desire to optimize in this way the content of configuration files.
 
-Чтобы изменить пути генерации веб-форм на этапе проектирования, необходимо:
+To change the way of generating web forms in the design phase, you must:
 
-1.Во [Flexberry Designer](fd_landing_page.html) открыть диаграмму с [прототипом приложения](gpg_prototype-creating.html) и открыть свойства формы (класса с соответствующим стереотипом), путь генерации которой следует изменить.
+1.In [Flexberry Designer](fd_landing_page.html) open a chart with [application prototype](gpg_prototype-creating.html) to open the form properties (the class with the appropriate stereotype), the way of generation which you want to change.
 
 ![](/images/pages/guides/flexberry-aspnet/prototype-change.png)
- 
-2.В открывшейся форме необходимо заполнить свойство `Packet`.
+
+2.In the form you must fill in the property `Packet`.
 
 ![](/images/pages/guides/flexberry-aspnet/packet.png)
- 
-Свойство `Packet` для форм необходимо заполнить следующим образом:
 
-* Для форм `СкладE`, `СкладL`, `ТоварE`, `ТоварL` указать значение `Products` (без кавычек).
-* Для форм `НакладнаяE`, `НакладнаяL`, `ЗаказE`, `ЗаказL`, `ДокументE`, `ДокументL` указать значение `Orders` (без кавычек).
-* Для форм `СотрудникE`, `СотрудникL` указать значение `Employees` (без кавычек).
+Property `Packet` for forms should be filled in as follows:
 
-Далее необходимо выполнить перегенерацию приложения, чтобы структура папок проекта веб-приложения изменилась соответствующим образом.  
-Однако после изменения свойства `Packet` и последующей перегенерации веб-приложения старые версии ранее сгенерированных форм не удалятся, поэтому в реальном приложении потребуется перенести код из старых версий форм в новые, а далее удалить старые версии форм. Но поскольку изменений в код сгенерированных веб-форм еще не внесено, можно удалить ранее сгенерированное веб-приложение и выполнить перегенерацию заново:
+* For forms `СкладE`, `СкладL`, `ТоварE`, `ТоварL` to specify the value `Products` (without the quotes).
+* For forms `НакладнаяE`, `НакладнаяL`, `ЗаказE`, `ЗаказL`, `ДокументE`, `ДокументL` to specify the value `Orders` (without the quotes).
+* For forms `СотрудникE`, `СотрудникL` to specify the value `Employees` (without the quotes).
 
-1.Чтобы посмотреть путь к сгенерированному веб-приложению, следует выберать пункт меню `Настройки` -> `Путь генерации…` на главной форме `Flexberry Designer`.
+Then you need to perform regeneration of the application to the project folder structure the web application has changed accordingly.
+However, after modifying the properties `Packet` and the subsequent generation of the web application, the old version of the previously generated forms will not be removed, so in a real application, you'll need to migrate your code from old versions of forms in the new and then remove old versions of the forms. But because of changes in the code of the generated web forms is not yet included, you can delete the previously generated web application and to do the mistake again:
+
+1.To view the path to the generated web application, choose the menu item `Настройки` -> `Путь generation...` on the main form `Flexberry Designer`.
 
 ![](/images/pages/guides/flexberry-aspnet/paths-generating.png)
- 
-2.Закрыть окно для выбора пути генерации приложений.
-3.Закрыть `Visual Studio`, если она открыта.
-4.Открыть `в проводнике Windows` папку со сгенерированным веб-приложением.
-5.Удалить все файлы внутри этой папки или всю папку целиком.
-После этого заново выполнить генерацию веб-приложения (у стадии выбрать пункт меню `ASP.NET` -> `C#` -> `Генерировать и компилировать`).
 
-В результате структура повторно сгенерированного проекта веб-приложения должна иметь следующий вид:
+2.Close the window to select the path generation applications.
+3.Close `Visual Studio` if it is open.
+4.Open `в Explorer Windows` folder with the generated web application.
+5.Delete all files inside this folder or the entire folder.
+Then re-generate the web application (from stage select menu `ASP.NET` -> `C#` -> `Генерировать and компилировать`).
+
+The resulting structure is re-generated project, the web application should have the following form:
 
 ![](/images/pages/guides/flexberry-aspnet/project-structure-new.png)
- 
-## Перейти
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Добавление ролей пользователей из приложения](gpg_adding-user-roles.html)
-* [Настройка меню приложения для разных ролей пользователей](gpg_customize-application-menu.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Add user roles from an application](gpg_adding-user-roles.html)
+* [Customize application menu for different user roles](gpg_customize-application-menu.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
