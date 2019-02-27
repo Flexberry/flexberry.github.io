@@ -89,7 +89,9 @@ lang: ru
 ![Project Options](../../../../images/pages/guides/base-technologies/debugging/vs-settings.png)
 
 Теперь можно выполнять отладку из среды Monodevelop под Windows. Открыть отлаживаемый в Mono проект можно по адресу `10.0.75.2`
-
+Окно отладки в MonoDevelop выглядит следующим образом:
+![Monodevelop](../../../../images/pages/guides/base-technologies/debugging/monodevelop.png)
+Работа с ним аналогична с работой с Visual Studio в режиме отладки.
 ## Перейти
 
 * [Командная разработка](gbt_team-management.html)
