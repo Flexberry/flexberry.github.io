@@ -101,7 +101,7 @@ monodevelop&
 
 6.Открыть нужный проект и в свойствах указать:
 
-![](/images/pages/products/base-tech/mono/Monodevelop01.png)
+![Свойства проекта](/images/pages/products/base-tech/mono/Monodevelop01.png)
 
 7.В Visual Studio указать:
 
@@ -114,11 +114,11 @@ monodevelop&
 mono\mcs\tools\pdb2mdb\MdbConverter.csproj
 4. Выполнить Build.
 
-![](/images/pages/products/base-tech/mono/Monodevelop02.png)
+![Выполнение билда](/images/pages/products/base-tech/mono/Monodevelop02.png)
 
 8.В итоге можно выполнять отладку:
 
-![](/images/pages/products/base-tech/mono/Monodevelop03.png)
+![Выполнение отладки](/images/pages/products/base-tech/mono/Monodevelop03.png)
 
 ## Программное обеспечение
 
