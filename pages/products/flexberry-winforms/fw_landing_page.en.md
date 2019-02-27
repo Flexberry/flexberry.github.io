@@ -39,7 +39,7 @@ lang: en
 * [Установка заголовка списковой формы](fw_list-form-caption.html)
 * [Добавление на форму редактирования Lookup мастера, не относящегося к основному объекту](fw_lookup-another-object.html)
 * [Открытие формы редактирования с передачей объекта с частично заполненными полями](fa_open-editform-custom-object.html)
-* [Определение контролов, доступных только на чтение, с помощью EditManager](fw_readonly-in-editmanager.html)
+* [Менеджер редактирования форм](fw_editmanager.html)
 * [Как открыть объект только на чтение](fo_read-only-object.html)
 * [LookUp](fw_lookup.html)
 * [Настройка прав доступа на публикацию ограничений](fw_setting-permissions-for-publication-restrictions.html)

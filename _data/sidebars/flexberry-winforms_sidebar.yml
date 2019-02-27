@@ -287,11 +287,6 @@ entries:
       url: /fw_processing-date-in-control-provider.html
       output: web
 
-    - title: Readonly in editmanager
-      title_ru:  Определение контролов, доступных только на чтение, с помощью EditManager
-      url: /fw_readonly-in-editmanager.html
-      output: web
-
     - title: Update the local copy of the form object
       title_ru: Обновление локальной копии объекта формы
       url: /fw_update-the-local-copy-of-the-form-object.html
@@ -558,7 +553,7 @@ entries:
     folderitems:
 
     - title: Control provider winforms
-      title_ru: Настройка контролов, понятие провайдера контролов, стандартный провайдер контролов
+      title_ru: Провайдер контролов для Flexberry Winforms
       url: /fw_control-provider-winforms.html
       output: web
 
@@ -570,16 +565,6 @@ entries:
     - title: Control for bind struct
       title_ru: ControlForBindStruct
       url: /fw_control-for-bind-struct.html
-      output: web
-
-    - title: Editmanager change
-      title_ru: EditManager.Change
-      url: /fw_editmanager-change.html
-      output: web
-
-    - title: Editmanager set readonly flag properties
-      title_ru: Метод EditManager.SetReadonlyFlagProperties
-      url: /fw_editmanager-set-readonly-flag-properties.html
       output: web
 
   - title: Rights
