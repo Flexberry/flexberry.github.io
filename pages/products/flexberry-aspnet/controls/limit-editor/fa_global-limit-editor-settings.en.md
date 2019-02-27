@@ -1,49 +1,55 @@
----
-title: Глобальные настройки редактора ограничений
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_global-limit-editor-settings.html
-lang: en
----
+--- 
+title: Global settings editor limitations 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_global-limit-editor-settings.html 
+lang: en 
+autotranslated: true 
+hash: 9baa8aeef6cbbb27cd25ee4a9cda060b3f5f2874be3aa85deb2db99dc965f155 
+--- 
 
-Глобальные настройки [редактора ограничений](fa_advanced-limit-editor.html) позволяют задать в одном месте настройки, которые будут использоваться для всех запускаемых в этом приложении редакторов ограничений.
+Global settings [editor limitations](fa_advanced-limit-editor.html) allow you to specify in one place the settings that will be used for all runs in this app editors restrictions. 
 
-Настройка производится через статический класс (например, в `Global.asax.cs`):
+The configuration is done via a static class (for example, in `Global.asax.cs`): 
 
 ```csharp
 public class Global : HttpApplication
 {
-	// ...
+	// ... 
 	
 	private void ServiceInit()
 	{
-		// ...
+		// ... 
 		NewPlatform.Flexberry.Web.LimitEditor.Settings.ShowParameterPanel = true;
 	}
 }
-```
+``` 
 
-## Скрытие отображения панели параметров в редакторе ограничений
+## hide the panel display options in the constraint editor 
 
-Отключения отображения панели с параметрами в [редакторе ограничений](fa_advanced-limit-editor.html) производится через установку "false" (по умолчанию "true") у параметра
+Turn off the display panel with the parameters in the [constraint editor](fa_advanced-limit-editor.html) is done by setting "false" (default "true") parameter 
 
 ```csharp
 NewPlatform.Flexberry.Web.LimitEditor.Settings.ShowParameterPanel
-```
+``` 
 
-## Отображение первого родительского свойства
+## displays the first parent properties 
 
-Для включения режима отображения первого родительского свойства в конструкторе ограничений (чтобы отличать, какое свойство к чему относится) производится установка "false" (по умолчанию "true") в параметр
+To enable the display of the first parent property in the constructor constraint (to distinguish which property refers to) is being set to "false" (default "true") parameter 
 
 ```csharp
 NewPlatform.Flexberry.Web.LimitEditor.Settings.UseShortNames
-```
+``` 
 
-Отображение свойств, если `UseShortNames = true`:
+The display properties if `UseShortNames = true`: 
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/use-short-names.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/use-short-names.png) 
 
-Отображение свойств, если `UseShortNames = false`:
+The display properties if `UseShortNames = false`: 
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/not-use-short-names.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/not-use-short-names.png) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

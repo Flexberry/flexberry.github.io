@@ -1,54 +1,59 @@
----
-title: Настройка группировки в AjaxGroupEdit
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_grouping-age.html
-lang: en
----
+--- 
+title: configuring groups in AjaxGroupEdit 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_grouping-age.html 
+lang: en 
+autotranslated: true 
+hash: 861353672e527b889da14fb5e3404950b604468e7615d15cd73fd508d841f4bc 
+--- 
 
-Можно сгруппировать колонки по мастеру (мастеру мастера и т.д.). Для этого в AGE есть свойство Grouping.
+You can group columns on master (master of masters, etc.). For this AGE is the Grouping property. 
 
 ```csharp
 public class Grouping
 {
-    /// <summary>
-    /// Скрывать пустые группы (без объектов)
-    /// </summary>
+    /// <summary> 
+    /// Hide empty groups (without objects) 
+    /// </summary> 
     public bool HideEmptyGroups { get; set; }
 
-    /// <summary>
-    /// Сортировка групп
-    /// </summary>
+    /// <summary> 
+    /// Sort group 
+    /// </summary> 
     public ColumnsSortDef MasterColSortDef
 
-    /// <summary>
-    /// Название мастера (не свойство мастера)
-    /// </summary>
+    /// <summary> 
+    /// The name of the master (not the property of the master) 
+    /// </summary> 
     public string MasterName 
 
-    /// <summary>
-    /// Название свойства мастера, которое будет появляться в виде заголовка группы
-    /// </summary>
+    /// <summary> 
+    /// Property name in the wizard that will appear in the group header 
+    /// </summary> 
     public string MasterCaptionProp
 
-    /// <summary>
-    /// Ограничение на группы
-    /// </summary>
+    /// <summary> 
+    /// Limit on group 
+    /// </summary> 
     public Function MasterLimitFunction
 
-    /// <summary>
-    /// Представление по которому будут читаться группы
-    /// </summary>
+    /// <summary> 
+    /// Representation which will be read group 
+    /// </summary> 
     public View MasterView
 }
-```
+``` 
 
-Пример (групировка по мастеру "ТипЛапы", в качестве заголовка группы будет использоваться ТипЛапы.Название):
+Example (gang wizard "Tiplady" as the group header will be used Tiplady.Name): 
 
 ```csharp
 ctrlЛапа.Group =
                 new Grouping(
                     new ColumnsSortDef(Information.ExtractPropertyPath<Лапа>(x => x.ТипЛапы.Название), SortOrder.Desc));
-```
- 
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

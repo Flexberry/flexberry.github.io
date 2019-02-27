@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_orm.html 
 lang: en 
 autotranslated: true 
-hash: 664e818d6e2d27dcd2c8f62aafbe8b067c0a61eaa7832d18fac42bbbf978b6d3 
+hash: f13c1aba0d07b3bd5d95b8b6a91a0f4c34ef34019efb4df29b67b53c11cbdd23 
 --- 
 
 ## Brief description 

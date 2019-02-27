@@ -1,26 +1,28 @@
----
-title: Кастомизация подписей в Web-контролах
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_web-controls-custom-captions.html
-lang: en
----
+--- 
+title: Customizing signatures in Web controls 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_web-controls-custom-captions.html 
+lang: en 
+autotranslated: true 
+hash: 60f2fe1e7288e0e40ab04ca1ee989456718ab1f6911b903751c410b245d0dd50 
+--- 
 
-Подписи к контролам храняться в строковых ресурсах в *.resx-файлах соответствующих тому или иному контролу.
-Например подписи к элементам WebObjectListView храняться в проекте `ICSSoft.STORMNET.Web.AjaxControls` в файле `Resources/WebObjectListView.resx`,
-а подписи к контролу DatePicker в том же проекте ICSSoft.STORMNET.Web.AjaxControls в файле Resources/DatePicker.resx, и т.д.
+Captions controls are stored in the string resources in *.. resx files corresponding to one or another control. 
+For example, the signature elements WebObjectListView are stored in the project `ICSSoft.STORMNET.Web.AjaxControls` in the file `Resources/WebObjectListView.resx`, 
+a signature to the DatePicker control in the same project ICSSoft.STORMNET.Web.AjaxControls in the file Resources/DatePicker.resx, etc. 
 
-Если на прикладном уровне требуется переопределить подпись к тому или иному элементу контрола, достаточно в прикладном проекте создать файл со строковыми ресурсами, с именем соответствующим контролу, и переопределить в нем желаемый строковый ресурс.  
-Например, чтобы в контроле WebObjectListView изменить подпись к кнопке обновления с "Обновить" на "Обновить список", достаточно в прикладном проеекте создать файл `Resources/WebObjectListView.resx`
-и определить в нем строковый ресурс "ToolbarButtonRefreshCaption" со значением "Обновить список".
-Актуальный перечень доступных `*.resx-файлов` и их содержимое лучше смотреть в проекте `ICSSoft.STORMNET.Web.AjaxControls` в каталоге `Resources`.
+If at the application level you want to override the caption for a particular control element, is sufficient in the application project create a file with string resource with the name of the relevant control, and override the desired string resource. 
+For example, to the control WebObjectListView to change the caption on the update button from "Update" to "Refresh list", just in the application proiecte to create a file `Resources/WebObjectListView.resx` 
+and define it in the string resource "ToolbarButtonRefreshCaption" with the value "Update". 
+The current list of available `*.resx файлов` and their contents a better look at the project `ICSSoft.STORMNET.Web.AjaxControls` in the directory `Resources`. 
 
-## Разработка контролов с кастомизируемыми подписями
+## Development of controls with customizable captions 
 
-Для того, чтобы подписи разрабатываемых контролов были кастомизируемы (при помощи ранее описанного подхода), в designer-e генерируемых `*.resx-файлов` необходимо заменять использование стандартного `ResourceManager-a ` на `ICSSoft.STORMNET.Web.Tools.Resources.ResourceManger`.
+In order to develop signatures of the controls were customizable (using the previously described approach), in designer-generated e `*.resx файлов` need to replace the use of standard `ResourceManager-a ` on `ICSSoft.STORMNET.Web.Tools.Resources.ResourceManger`. 
 
-Например в `WebObjectListView.Designer.cs`, соответствующем файлу `WebObjectListView.resx`, следующий сгенерированный код:
+For example, in `WebObjectListView.Designer.cs` corresponding to the file `WebObjectListView.resx` following generated code: 
 
 ```csharp
 private static global::System.Resources.ResourceManager resourceMan;
@@ -31,15 +33,15 @@ private static global::System.Globalization.CultureInfo resourceCulture;
 internal WebObjectListView() {
 }
 
-/// <summary>
-///   Returns the cached ResourceManager instance used by this class.
-/// </summary>
+/// <summary> 
+/// Returns the cached ResourceManager instance used by this class. 
+/// </summary> 
 [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
 internal static global::System.Resources.ResourceManager ResourceManager {
 	get {
 		if (object.ReferenceEquals(resourceMan, null)) {
-		    // Обратите внимание, в автоматически сгенерированном коде первым параметром отдается полный путь к *.resx-файлу, включая пространство имен.
-			// В этом случае для компонента не будет недоступна кастомизация подписей.
+		    // Please note, in the automatically-generated code, the first parameter is given the full path to the *.the. resx file, including the namespace. 
+			// In this case, the component may not be available customization of the signatures. 
 			global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ICSSoft.STORMNET.Web.AjaxControls.Resources.WebObjectListView", typeof(WebObjectListView).Assembly);
 			resourceMan = temp;
 		}
@@ -47,9 +49,9 @@ internal static global::System.Resources.ResourceManager ResourceManager {
 	}
 }
 
-```
+``` 
 
-был заменен на:
+was replaced by: 
 
 ```csharp
 private static ICSSoft.STORMNET.Web.Tools.Resources.ResourceManager resourceManager;
@@ -60,21 +62,25 @@ private static global::System.Globalization.CultureInfo resourceCulture;
 internal WebObjectListView() {
 }
 
-/// <summary>
-///   Returns the cached ResourceManager instance used by this class.
-/// </summary>
+/// <summary> 
+/// Returns the cached ResourceManager instance used by this class. 
+/// </summary> 
 [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
 internal static ICSSoft.STORMNET.Web.Tools.Resources.ResourceManager ResourceManager {
 	get {
 		if (object.ReferenceEquals(resourceManager, null)) {
-		    // Обратите внимание, что здесь первым параметром отдается не полный путь к *.resx-файлу, а путь относительно каталога Resources.
-			// Ожидается, что строковые ресурсы как в сборке ICSSoft.STORMNET.Web.AjaxControls, так и в прикладном приложении нажодятся в каталоге Resources в файле WebObjectListView.resx.
+		    // Note that the first parameter is given not the full path *.the. resx file and a path relative to the Resources directory. 
+			// Expected string resources in the Assembly ICSSoft.STORMNET.Web.AjaxControls, and applied nahodatsa application in the Resources directory in the file WebObjectListView.resx. 
 			ICSSoft.STORMNET.Web.Tools.Resources.ResourceManager temp = new ICSSoft.STORMNET.Web.Tools.Resources.ResourceManager("WebObjectListView", typeof(WebObjectListView).Assembly);
 			resourceManager = temp;
 		}
 		return resourceManager;
 	}
 }
-```
+``` 
 
-**Важно: в designer-e прикладного *.resx-файла ничего изменять не нужно.**
+**Important: designer-e application *.a. resx file to change anything not necessary.** 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

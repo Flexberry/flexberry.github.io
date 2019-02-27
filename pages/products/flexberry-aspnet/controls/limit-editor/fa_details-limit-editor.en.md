@@ -1,33 +1,35 @@
----
-title: Работа с детейлами в расширенном редакторе ограничений
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_details-limit-editor.html
-lang: en
----
+--- 
+title: detaylari in the advanced editor limitations 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_details-limit-editor.html 
+lang: en 
+autotranslated: true 
+hash: 68fbf7b04ffb156ebe825f2feef7a2ca1165eb1e3ae0ef66dfa4533edb6b3ee5 
+--- 
 
-## Работа с детейлами в расширенном редакторе ограничений в web
+## Work with detaylari in the advanced editor, limitations in the web 
 
-На что стоит обратить внимание (особенности связаны с [преобразованием функции ограничения в linq-выражение](fo_lcs-to-linq.html)):
+You should pay attention (especially associated with the [conversion functions restrictions in linq-expression](fo_lcs-to-linq.html)): 
 
-* При задании ограничения всеобщности на детейлы (в lcs это [ExistExact](fo_exist-details.html)) в используемое представление детейла должна быть включена ссылка на агрегатора.
-* При задании ограничения на детейлы через расширенный редактор ограничений в используемое представление агрегатора может потребоваться включить ссылку на детейлы.
+* When you set the constraint of universality on detaily (in lcs is [ExistExact](fo_exist-details.html)) in the view of detail should be included a reference to the aggregator. 
+* When setting limits on detaily using the advanced editor restrictions to the view of the aggregator may want to include a link to detali. 
 
-##  Работа с псевдодетейлами в расширенном редакторе ограничений в web
+## Work with pseudocatalase in the advanced editor, limitations in the web 
 
-Для работы с псевдодетейлами в [расширенном редакторе ограничений](fa_advanced-limit-editor.html) необходимо сделать следующее:
-* При [задании порядка отображения свойств в расширенном редакторе ограничений](fa_prop-order-limit-editor.html) добавить интересующие псевдодетейлы (постановка задачи задания ограничений на псевдодетейлы описана [здесь](fo_linq-provider.html)) 
-* В редакторе ограничений можно открывать сохранённые в виде lcs ограничения, либо конструировать новые.
+For pseudocatalase in the expanded constraint editor](fa_advanced-limit-editor.html) you must do the following: 
+* When [specify display order of the properties in the advanced editor, limitations](fa_prop-order-limit-editor.html) add interest pseudometal (problem of specifying limits on pseudometal described [here](fo_linq-provider.html)) 
+* In the constraint editor, you can open stored in the lcs limits, or designing a new one. 
 
-![](/images/pages/products/flexberry-aspnet/ogranicheniye/le-pseudo-detail.png)
+![](/images/pages/products/flexberry-aspnet/ogranicheniye/le-pseudo-detail.png) 
 
-## Динамические представления для детейлов
+## Dynamic view of datalow 
 
-Для работы детейлов в [расширенном редакторе ограничений в web](fa_advanced-limit-editor.html) при применении ограничения на [WOLV](fa_web-object-list-view.html), может потребоваться:
-* [Задать детейлы в представление](fa_prop-order-limit-editor.html), если их ещё там нет.
-* Задать [свойство AutoAddUsedInLimitationProperties](fa_prop-order-limit-editor.html), чтобы представление формировалось динамически.
-* Определить механизм формирования динамического представления для детейлов через интерфейс ICSSoft.STORMNET.Windows.Forms.IViewGenerator (расположен в сборке ExternalLangDef). Например, в версии после 14.01.2015 можно в конфиг добавить следующую строчку:
+For the work of datalow in the expanded constraint editor in the web](fa_advanced-limit-editor.html) in the application of restrictions on [WOLV](fa_web-object-list-view.html), you may need: 
+* [Ask detaily to view](fa_prop-order-limit-editor.html) if they are not already there. 
+* Ask [property AutoAddUsedInLimitationProperties](fa_prop-order-limit-editor.html) that the view formed dynamically. 
+* To determine the mechanism of formation of dynamic representations for detailov through the interface ICSSoft.STORMNET.Windows.Forms.IViewGenerator (located in the Assembly ExternalLangDef). For example, in the version after 14.01.2015 in config add the following line: 
 
 ```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
@@ -37,4 +39,8 @@ lang: en
 	<register type="ICSSoft.STORMNET.Windows.Forms.IViewGenerator, ExternalLangDef" mapTo="NewPlatform.Flexberry.Web.Page.LimitEditorViewGenerator, NewPlatform.Flexberry.Web.LimitEditor" />
 	</container>
 </unity>
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,125 +1,127 @@
----
-title: Добавление дополнительной логики при сохранении объекта
-sidebar: flexberry-aspnet_sidebar
+--- 
+title: Add additional logic when the object is saved 
+sidebar: flexberry-aspnet_sidebar 
 keywords: 
-toc: true
-permalink: en/fa_add-extra-logic-editform.html
-lang: en
----
+toc: true 
+permalink: en/fa_add-extra-logic-editform.html 
+lang: en 
+autotranslated: true 
+hash: ab8af6d3df3909c3d62a54e0d4c06563e66691b8f2ca09557ee75b47d5f2a59d 
+--- 
 
-## Обработка события сохранения объекта на клиенте
+## Processing event save object on the client 
 
-В клиентских обработчиках событий нажатия на кнопки сохранения, расположенных на Web-форме редактирования, перед отправкой постбэка и сохранением объекта выполняется проверка редактируемых данных в технологическом коде (валидаторы контролов, [AjaxGroupEdit](fa_ajax-group-edit.html)).
+In the client event handlers clicking on the save button located on a Web edit form, before sending the callback and save the object, the system checks the editable data in the technological code (validators controls [AjaxGroupEdit](fa_ajax-group-edit.html)). 
 
-Стандартный процесс проверки редактируемых данных может быть расширен за счет добавления обработчиков событий с помощью функции `$.icsEditForm.attachEventHandler`. Возможно добавление обработчиков следующих событий:
+The standard verification process of the edited data can be extended by adding event handlers using the function `$.icsEditForm.attachEventHandler`. It's possible to add handlers to the following events: 
 
-| Событие | Описание|
-|---|---|
-| `onCheckStarts` | Инициируется перед началом проверки редактируемых данных в технологическом коде. В обработчике данного события возможно отменить последующее сохранение редактируемых данных или инициировать выполнение асинхронных операций, которые должны завершиться до выполнения проверкиредактируемых данных в технологическом коде (за счет передачи Deferred-объектов через параметр обработчика данного события в технологический обработчик события сохранения объекта).|
-| `onCheckStopped` | Инициируется в случае отмены сохранения данных в обработчике события onCheckStarts.|
-| `onCheckSucceed` | Инициируется в случае успешного выполнения проверки редактируемых данных в технологическом коде.|
-| `onCheckFailed` | Инициируется в случае неуспешного выполнения проверки редактируемых данных в технологическом коде или в случае перевода в состояние "отменено" хотя бы одного из Deferred-объектов, созданных в обработчике события `onCheckStarts`.|
-| `onCheckProgress` | Инициируется в случае получения уведомлений о прогрессе от одного из Deferred-объектов, созданных в обработчике события `onCheckStarts`.|
+| Event | Description| 
+|---|---| 
+| `onCheckStarts` | Triggers before checking the editable data in the technological code. In the handler of this event can be cancelled and then save the edited data or execute asynchronous operations that must complete before executing povertyreduction data in the technological code (due to the transfer of Deferred objects using the parameter handler of this event in the technological event handler to save the object).| 
+| `onCheckStopped` | Triggered in the event of cancellation of preserving data in the event handler onCheckStarts.| 
+| `onCheckSucceed` | Triggered in case of successful validation of the edited data in the technological code.| 
+| `onCheckFailed` | Triggered in case of unsuccessful validation of data editable in a technological code or in case of transfer to a status of "cancelled" at least one of the Deferred-objects created in the event handler `onCheckStarts`.| 
+| `onCheckProgress` | Initiated when a notification of progress from one of the Deferred-objects created in the event handler `onCheckStarts`.| 
 
-### Методы $.icsEditForm.attachEventHandler и $.icsEditForm.attachOnceEventHandler
+### $Methods.icsEditForm.attachEventHandler and $.icsEditForm.attachOnceEventHandler 
 
-Методы $.icsEditForm.attachEventHandler и $.icsEditForm.attachOnceEventHandler предназначены для регистрации обработчиков событий формы редактирования. Разница между ними в том, что $.icsEditForm.attachEventHandler регистрирует обработчик, который будет выполняться всегда, при возникновении соответствующего события, а $.icsEditForm.attachOnceEventHandler регистрирует обработчик, который будет выполнен однократно.
+$Methods.icsEditForm.attachEventHandler and $.icsEditForm.attachOnceEventHandler designed to register event handlers for the edit form. The difference between them is that the $.icsEditForm.attachEventHandler registers a handler that will be executed always when the corresponding event occurs, and $.icsEditForm.attachOnceEventHandler registers a handler that will be executed once. 
 
-Оба метода принимают два параметра:
+Both methods take two parameters: 
 
-| Параметр | Описание |
-|---|---|
-| `handler` | Функция-обработчик события.|
-| `eventName` | Имя события. Если не указано, то регистрируется обработчик события `onCheckStarts`.|
+| Parameter | Description | 
+|---|---| 
+| `handler` | Function-event handler.| 
+| `eventName` | event Name. If not specified, the registers an event handler `onCheckStarts`.| 
 
-### Обработчики событий
+### event Handlers 
 
-Все обработчики событий, принимают объект, в качестве аргумента. Этот объект содержит как минимум одно свойство: saveOptions - параметры, с которыми был вызван метод сохранения.
-По этим параметрам можно отличить был ли метод сохранения вызван из технологического кода (например по нажатию на кнопку сохранения), или из прикладного.
+All event handlers take an object as argument. This object contains one property: saveOptions - the parameters with which the method was invoked save. 
+According to these parameters it is possible to distinguish whether there was a method of preservation called from the process code (for example by clicking on the save button), or from an application. 
 
 
-Аргумент обработчиков событий onCheckStarts и onCheckSucceed содержит еще два свойства (stop и deferreds):
+The argument of the event handlers onCheckStarts and onCheckSucceed contains two properties (stop and deferreds): 
 
-|Свойство|	Описание|
-|---|---|
-|saveOptions|	Параметры, с которыми был вызван метод сохранения.|
-|stop	|Логическое свойство, которое позволяет отменить дальнейшую логику сохранения, в случае установки значения true.|
-|deferreds|	Массив Deferred-объектов для возможности выполнения асинхронных операций до выполнения проверки редактируемых данных в технологическом коде. Обработчик события сохранения объекта, определенный в технологическом коде, выполнится только в том случае, если все Deferred-объекты, добавленные в данный массив, перейдут в состояние "выполнено" (т.е. будет вызван метод resolve() для каждого их них). В случае перевода хотя бы одного такого Deferred-объекта в состояние "отменено" проверка редактируемых данных в технологическом коде и последующее инициирование процесса сохранения объекта выполнено не будет, но будет выполнен обработчик события onCheckFailed.|
+|Property| Description| 
+|---|---| 
+|saveOptions| Options with which the method was invoked save.| 
+|stop |Boolean property that allows you to cancel further persistence logic, if you set the value to true.| 
+|deferreds| Array of Deferred objects for asynchronous operations to perform validation on editable data in the technological code. The event handler save the object defined in the technological code will be executed only if all Deferred objects attached to the given array, go into the completed state (i.e. a method called resolve() on each of them). In the case of the translation of at least one of the Deferred object's state to "canceled" verification of edited data in the technological code and the subsequent initiation of the process to save the object will fail, but will fail the event handler onCheckFailed.| 
 
-## Пример добавления дополнительной логики при сохранении объекта
+## Example of adding additional logic when the object is saved 
 
 ```javascript
 
 $(function() {
-    // Регистрация пользовательского обработчика события onCheckStarts.
-    // Внимание! Пользовательские проверки, зарегистрированные в качестве обработчиков события {{onCheckStarts}} выполняются до технологических проверок.
+    // Register custom event handler onCheckStarts. 
+    // Note! Custom checks are registered as event handlers {{onCheckStarts}} are executed to process checks. 
     $.icsEditForm.attachEventHandler(function(p) {
         var d1 = $.Deferred();
         p.deferreds.push(d1);
-        // Функция $.ics.dialog.confirm - асинхронная.
-        // Технологический обработчик сохранения объекта будет приостановлен до тех пор, пока объект d1 не перейдет в состояние "выполнено" или "отменено".
+        // Function $.ics.dialog.confirm - asynchronous. 
+        // Process the save handler object will be suspended as long as the object d1 will not be switched to the status "completed" or "cancelled". 
         $.ics.dialog.confirm({
             message: 'Данные изменены. Сохранить изменения?',
             callback: function (res) {
                 if (!res) {
-                    // В этом случае выполнится проверка редактируемых данных в технологическом коде и последующее сохранение объекта в случае успешного завершения проверки.
+                    // In this case, to perform the verification of edited data in the technological code, and then save object in case of successful verification is complete. 
                     d1.reject();
                 } else {
-                    // В этом случае выполнится обработчик события onCheckFailed, определенный ниже.
+                    // In this case will execute the event handler onCheckFailed defined below. 
                     d1.resolve();
                 }
             }
         });
     });
-    // Выполнение действий в случае перевода объекта d1 в состояние "отменено" или в случае возникновения ошибок при проверке данных в технологическом коде.
+    // Perform actions in case of transfer of the object d1 is in state "cancelled" or in the case of validation errors, the data in the technological code. 
     $.icsEditForm.attachEventHandler(function (p) {
-        // ...
+        // ... 
     }, 'onCheckFailed');
 });
 
-```
+``` 
 
-## Методы save и saveAndClose
+## Methods save and saveAndClose 
 
-У jQuery-плагина jquery.icsEditForm есть публичные методы save и saveAndClose, которые предназначены соответственно для сохранения формы редактирования, и сохранения с последующим закрытием страницы.
+From a jQuery jquery plugin.icsEditForm there are public methods save and saveAndClose, which are respectively designed to save the edit form, and save, followed by the closure of the page. 
 
-Оба метода принимают объект с опциями в качестве параметра.
+Both methods accept an object with options as parameter. 
 
-|Опция	|Описание	|Значение по умолчанию|
-|---|---|---|
-|showSaveWaitingWindow|	Флаг, показывающий нужно ли отображать модальное окно со спиннером, во время ожидания сохранения формы.|	true|
-|saveWaitingWindow|	Объект с настройками модального окна ожидания||	
-|saveWaitingWindow.width|	Ширина модального окна ожидания|	310|
-|saveWaitingWindow.height|	Высота модального окна ожидания|	110|
-|saveWaitingWindow.title|	Заголовок модального окна ожидания|	'Подождите, пожалуйста'|
-|saveWaitingWindow.contentSelector|	CSS-селектор для элемента разметки с содержанием модального окна ожидания|	'#hiddenContent'|
-|postBackEventTarget	|Значение, которое попадет в form.EVENTTARGET.value при вызове submit() формы	|Значение атрибута 'name' технологической кнопки 'Сохранить' (для метода 'save'), или кнопки 'Сохранить и закрыть' (для метода 'saveAndClose')|
-|postBackEventArgument|	Значение, которое попадет в form.EVENTARGUMENT.value при вызове submit() формы|"|	
+|Option |Description |default| 
+|---|---|---| 
+|showSaveWaitingWindow| Flag indicating whether to display a modal window with a spinner, while waiting to save the form.| true| 
+|saveWaitingWindow| Object with settings modal waiting|| 
+|saveWaitingWindow.width| Width modal window standby| 310| 
+|saveWaitingWindow.height| height of the modal window standby| 110| 
+|saveWaitingWindow.title| the title of the modal waiting| 'please Wait'| 
+|saveWaitingWindow.contentSelector| CSS selector for the markup element with the contents of the modal waiting| '#hiddenContent'| 
+|postBackEventTarget |Value that gets into form.EVENTTARGET.value when you call submit() the form |Value of the attribute 'name' of process button 'Save' (method 'save') or click 'Save and close' (method 'saveAndClose')| 
+|postBackEventArgument| Value that gets into form.EVENTARGUMENT.value when you call submit ()|"| 
 
-## Пример использования метода save и обработки событий формы
+## an Example of using the save method and handle events of the form 
 
-Предположим, что по нажатию на прикладную кнопку нужно выполнить все необходимые проверки валидности формы,
-и в случае успешной проверки, не производя сохранения объекта данных, сделать postback, указав, что он произошел по нажатию прикладной кнопки.
+Suppose that by pressing a button on the application you want to run all the necessary tests of the validity of the form, 
+in the case of successful validation, without saving the data object to do a postback, indicating that it occurred by pressing the application button. 
 
 ```javascript
 
 $(function() {
         var customSaveBtn = $('#<%= CustomSaveBtn.ClientID %>');
         var customSaveBtnId = customSaveBtn.attr('id');
-        var messageColorDropDown = $("#<%= MessageColorDropDown.ClientID %>");
+        var messageColorDropDown = $("#<%= MessageColorDropDown.The ClientID %>");
         var pageForm = $('#pageForm');
-        // Обрабатываем событие, сигнализирующее о начале сохранения формы.
-        // Делаем дополнительную прикладную проверку (она будет выполнена до технологических проверок).
-        // Внимание! Если нужно выполнить прикладные проверки после технологических, то можно абсолютно аналогичным образом обрабатывать событие 'onCheckSucceed'.
+        // Handle the event that signals the beginning of the structure. 
+        // Do additional application inspection (it will fail to process checks). 
+        // Note! If you want to do applied check after the process, you can absolutely likewise handle the event 'onCheckSucceed'. 
         $.icsEditForm.attachEventHandler(function (e) {
             if (e.saveOptions.postBackEventTarget !== customSaveBtnId) {
-                // Не выполняем обработку, если метод 'save' был вызван по нажатию технологической, а не прикладной кнопки сохранения.
+                // Perform the processing, if the method 'save' was invoked by clicking a process, not applied for the save button. 
                 return;
             }
             var selectedColor = $('option:selected', messageColorDropDown).val();
             if (selectedColor === '') {
                 alert('Форма не прошла дополнительную прикладную проверку. Не выбран цвет сообщения.');
-                // Прерываем дальнейшее сохранение.
+                // Interrupt further preservation. 
                 e.stop = true;
                 return;
             }
@@ -127,14 +129,14 @@ $(function() {
         $.icsEditForm.attachEventHandler(function (e) {
             alert('Форма не прошла проверку. Возможно не заполнены обязательные поля.');
         }, 'onCheckFailed');
-        // Обрабатываем клик по прикладной кнопке на форме редактирования.
+        // Handle a click on the application button on the edit form. 
         customSaveBtn.on('click', function () {
-            // Вызываем метод сохранения формы, чтобы инициировать прикладные и технологические проверки.
-            // В случае успешного завершения всех проверок, будет сделан postpack, при котором
-            // postBackEventTarget будет доступен через Request.Form['__EVENTTARGET'],
-            // postBackEventArgument будет доступен через Request.Form['__EVENTARGUMENT'].
-            // Внимание! Сохранение объекта данных не произойдет, если postBackEventTarget не совпадает с атрибутом 'name',
-            // технологической кнопки 'Сохранить' или 'Сохранить и закрыть'.
+            // Call save method of the form to initiate applied and technological validation. 
+            // In case of successful completion of all inspections will be made by postpack, in which 
+            // postBackEventTarget will be available via Request.Form['__EVENTTARGET'], 
+            // postBackEventArgument will be available via Request.Form['__EVENTARGUMENT']. 
+            // Note! The preservation of the data object will not happen if postBackEventTarget does not coincide with the 'name' attribute, 
+            // process the button 'Save' or 'Save and close'. 
             pageForm.icsEditForm('save', {
                 showSaveWaitingWindow: false,
                 postBackEventTarget: customSaveBtn.attr('id'),
@@ -144,5 +146,8 @@ $(function() {
         });
     });
 
-```
- 
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

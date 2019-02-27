@@ -1,19 +1,21 @@
----
-title: WebControlProvider
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_web-control-provider.html
-lang: en
----
+--- 
+title: WebControlProvider 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_web-control-provider.html 
+lang: en 
+autotranslated: true 
+hash: afff32cc925cdecd5fb9bd4faa669f4efc4b5ced670e5e90522a4ca95c1cf175 
+--- 
 
-`WebControlProvider` - это провайдер, который позволяет настраивать контролы для отображения свойств объекта на списковых контролах (например, [WebObjectListView](fa_web-object-list-view.html), [AjaxGroupEdit](fa_ajax-group-edit.html)). Все его настройки хранятся в файле /xml/WebControlProvider.xml
+`WebControlProvider` is a provider that allows you to configure controls to display object properties for list controls (e.g., [WebObjectListView](fa_web-object-list-view.html), [AjaxGroupEdit](fa_ajax-group-edit.html)). All its settings are stored in the file /xml/WebControlProvider.xml 
 
-## Настройки
+## Settings 
 
-Есть 2 способа настройки:
+There are 2 way settings: 
 
-1.Указание типа контрола для любого типа (XML-элемент `propertytype`), например
+1.Specify the type of control for any type (XML element `propertytype`), for example 
 
 ```xml
   <propertytype name="Boolean">
@@ -21,43 +23,43 @@ lang: en
     <editcontrol ... />
     <filtercontrol ... />
   </propertytype>
-```
+``` 
 
-2.Указание типа контрола для свойства конкретного типа (XML-элемент `customproperty`), например
+2.Specify the type of the control property to a specific type (XML element `customproperty`), for example 
 
 ```xml
-  <customproperty class="Адрес" property="ПервичныйКлюч">
-    <control typename="IIS.ISOGD.Controls.Partials.ArcMapViewControl" property="PrimaryKey" codefile="~/Controls/Partials/ArcMapViewControl.ascx" /> 
+  <customproperty class="Address" property="Pervichnykh">
+    <control typename="IIS.ISOGD.Controls.The Partials.ArcMapViewControl" property="PrimaryKey" codefile="~/Controls/Partials/ArcMapViewControl.ascx" /> 
     <editcontrol ... />
     <filtercontrol .. />
   </customproperty>
-```
+``` 
 
-* control - контрол, который будет использоваться для отображения (например, в [WebObjectListView](fa_web-object-list-view.html)) или для мастеровых свойств в [AjaxGroupEdit](fa_ajax-group-edit.html);
-* editcontrol - контрол, который будет использоваться для редактирования (например, в [AjaxGroupEdit](fa_ajax-group-edit.html));
-* filtercontrol - контрол, который будет использоваться для фильтрации в [WebObjectListView](fa_web-object-list-view.html);
+* control - the control that will be used for display (for example, in [WebObjectListView](fa_web-object-list-view.html)) or for artisan properties in [AjaxGroupEdit](fa_ajax-group-edit.html); 
+* editcontrol is the control that will be used for editing (for example, in [AjaxGroupEdit](fa_ajax-group-edit.html)); 
+* filtercontrol control to be used for filtering in [WebObjectListView](fa_web-object-list-view.html); 
 
-В тэге `<control /> (<editcontrol />,<filtercontrol />)` указываются:
+In the tag `<control /> (<editcontrol />,<filtercontrol />)` shall include: 
 
-* `typename` - тип контрола;
-* `property` - свойство контрола, которое биндится со значением в списке (в конкретной ячейке, где должен располагаться контрол);
-* `codefile` - путь к ASCX-файлу контрола (только для ASCX контролов);
+* `typename` - type контрола; 
+* `property` - property control, which bendida the value in the list (in the particular cell where you want the control); 
+* `codefile` - the path to the. ASCX file of the control (only for ASCX controls); 
 
-{% include important.html content="Важно помнить, что `customproperty` имеет б*о*льший приоритет, чем `propertytype`.
+{% include important.html content="it is Important to remember that `customproperty` has b**LSI priority than `propertytype`. 
 
-1. Сначала ищется контрол для конкретного свойства.
-2. Если настройка не найдена, то ищется контрол для типа этого свойства.
-" %}
+1. First searched for control specific properties. 
+2. If the setting is not found, it looks for a control for the type of this property. 
+"%} 
 
-{% include note.html content="Мастеровые свойства в [AjaxGroupEdit](fa_ajax-group-edit.html) будут всегда браться только из control, никак не из editcontrol." %}
+{% include note.html content="the Artisans of the properties in [AjaxGroupEdit](fa_ajax-group-edit.html) are always taken only from control, not from the editcontrol." %} 
 
-## Встраивание контролов
+## Embedding controls 
 
-Имеется возможность указать контрол для просмотра и для редактирования (например, в [AjaxGroupEdit](fa_ajax-group-edit.html)).
+You can specify the control for viewing and for editing (for example, in [AjaxGroupEdit](fa_ajax-group-edit.html)). 
 
-Если разработан пользовательский контрол, который используется на формах редактирования и необходимо встроить его в [WebObjectListView](fa_web-object-list-view.html). Может возникнуть проблема с тем, что в [WebObjectListView](fa_web-object-list-view.html) он выглядит как контрол для ввода данных, а использовать его планируется только для отображения.В таких случаях можно реализовать свойство `Enabled` у контрола, и когда контрол будет встраивается в WOLV, то ему автоматически проставится `Enabled = false`.
+If you have developed a custom control that is used on edit forms and want to embed it in [WebObjectListView](fa_web-object-list-view.html). It may be a problem with the fact that in [WebObjectListView](fa_web-object-list-view.html) it looks like the control for data entry, and planned to use it for display only.In such cases, you can implement a property `Enabled` have control, and when control will be embedded in WOLV, he automatically put down `Enabled = false`. 
 
-## Пример
+## Example 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -67,14 +69,18 @@ lang: en
   </propertytype>
   <propertytype name="NullableDateTime">
     <control typename="ICSSoft.STORMNET.Web.Controls.DateTimeFormattedControl" property="Text" codefile="DateTimeFormattedControl.ascx"/>
-    <editcontrol typename="ICSSoft.STORMNET.Web.Controls.DatePicker" property="Text" codefile="DatePicker.ascx"/>
+    <editcontrol typename="ICSSoft.STORMNET.Web.Controls.DatePicker" property="Text" codefile="The DatePicker.ascx"/>
   </propertytype>
   <propertytype name="DateTime">
     <control typename="ICSSoft.STORMNET.Web.Controls.DateTimeFormattedControl" property="Text" codefile="DateTimeFormattedControl.ascx"/>
-    <editcontrol typename="ICSSoft.STORMNET.Web.Controls.DatePicker" property="Text" codefile="DatePicker.ascx"/>
+    <editcontrol typename="ICSSoft.STORMNET.Web.Controls.DatePicker" property="Text" codefile="The DatePicker.ascx"/>
   </propertytype>
-  <customproperty class="Адрес" property="ПервичныйКлюч">
-    <control typename="IIS.ISOGD.Controls.Partials.ArcMapViewControl" property="PrimaryKey" codefile="~/Controls/Partials/ArcMapViewControl.ascx" /> 
+  <customproperty class="Address" property="Pervichnykh">
+    <control typename="IIS.ISOGD.Controls.The Partials.ArcMapViewControl" property="PrimaryKey" codefile="~/Controls/Partials/ArcMapViewControl.ascx" /> 
   </customproperty>
 </root>
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

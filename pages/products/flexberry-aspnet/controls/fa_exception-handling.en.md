@@ -1,63 +1,69 @@
----
-title: WebErrorBoxRiser и ErrorForm
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_exception-handling.html
-lang: en
----
+--- 
+title: WebErrorBoxRiser and ErrorForm 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_exception-handling.html 
+lang: en 
+autotranslated: true 
+hash: 432c791c0a819da88080e955073fe95d33a79fdbe81f7ddbd88e1cbef48a796a 
+--- 
 
-`ErrorForm` - aspx-страница, которая показывает необработанное исключение, она вызывается в `Global.asax`.
+`ErrorForm` - aspx-page that shows an unhandled exception, it is called in `Global.asax`. 
 
-`WebErrorBoxRiser` - контрол, который используется для показа исключения.
+`WebErrorBoxRiser` - control, which is used to display exceptions. 
 
-## Отображение исключения
+## Display exception 
 
-Для того чтобы показать красивое окно с обработанным исключением нужно вызывать метод `WebErrorBox.Rise(exception, showDetails, errorCaption)`.
+In order to show the beautiful window with the processed exception call the `WebErrorBox.Rise(exception, showDetails, errorCaption)`. 
 
-Пример:
+Example: 
 
 ```csharp
 try
 {
-    // Делаем что-нибудь небезопасное.
+    // Do something unsafe. 
 }
 catch (Exception ex)
 {
-    WebErrorBoxRiser.Rise(ex, false, "Произошла ошибка при обработке формы");
+    WebErrorBoxRiser.Rise(ex, false, "An error occurred while processing the form");
 }
-```
+``` 
 
-## Отображение ErrorForm
+## Display ErrorForm 
 
-`ErrorForm` отображается, когда происходит необработанное исключение. На ней показывается случившееся исключение.
+`ErrorForm` is displayed when an unhandled exception occurs. It shows the incident the exception. 
 
-{% include note.html content="Возможен случай, когда в `Page_Load` страницы обработано исключение при помощи `WebErrorBoxRiser`, но после этого будут вызываться `Page_Load` контролы, которые, в свою очередь, создадут исключительную ситуацию. Таким образом, окно с ошибкой не появится, а появится `ErrorForm`, которая отобразит и исключение из контрола и то исключение, которое обработано в `WebErrorBoxRiser`." %}
+{% include note.html content="it is Possible when in `Page_Load` page an exception is handled using `WebErrorBoxRiser`, but after that will be called `Page_Load` controls, which, in turn, will create an exception. Thus, an error window will not appear and will appear `ErrorForm`, which displays to the exclusion of the control and the exception that is processed in `WebErrorBoxRiser`." %} 
 
-## Отображение WebErrorBoxRiser
+## Display WebErrorBoxRiser 
 
-При вызове метода 
+When you call the method 
 
 ```csharp
 WebErrorBoxRiser.Rise(exception, showDetails, errorCaption)
-```
-исключение добавляется в
+``` 
+an exception is added to 
 
 ```csharp
 HttpContext.Current.Items[WebParamController.PageFilter_WebErrorBoxExceptions]
-```
+``` 
 
-Затем, при помощи [ICSSoft.STORMNET.Web.HttpModules.ResponseFilterModule](fa_response-filter-module.html), вызывается `Render` у `WebErrorBoxRiser`, который генерирует Html и отображает на страницу.
-Для того чтобы получить все исключения, которые были добавлены при помощи `WebErrorBoxRiser` следует воспользоваться
+Then, by [ICSSoft.STORMNET.Web.HttpModules.ResponseFilterModule](fa_response-filter-module.html), is called `Render` have `WebErrorBoxRiser` that generates the Html and displays the page. 
+To get all the exceptions that were added using the `WebErrorBoxRiser` you should use 
 
 ```csharp
 (List<WebErrorBoxRiser>) HttpContext.Current.Items[WebParamController.PageFilter_WebErrorBoxExceptions];
-```
+``` 
 
-## Показ дополонительной информации об исключении
+## Show dopolnitelnoi information about the exception 
 
-Для того чтобы увидеть `StackTrace` на странице следует добавить в `web.config` в `<appSettings>`
+To see `StackTrace` on the page you want to add to `web.config` in `<appSettings>` 
 
 ```xml
 <add key="ShowErrorDetails" value="true" />
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

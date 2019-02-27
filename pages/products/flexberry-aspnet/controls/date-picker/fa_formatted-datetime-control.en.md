@@ -1,28 +1,33 @@
----
-title: FormattedDateTimeControl
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_formatted-datetime-control.html
-lang: en
----
+--- 
+title: FormattedDateTimeControl 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_formatted-datetime-control.html 
+lang: en 
+autotranslated: true 
+hash: c8b5c9cac7375e35485bc2241aaa964d1b232107be996a612093424dcb561d0b 
+--- 
 
-## Описание
+## Description 
 
-## Подключение
+## Connection 
 
-## Использование
+## Use 
 
-### Пример кода
+### Sample code 
 
-### Настройки контрола
+### Settings control 
 
-### Настройки оформления
+### formatting Settings 
 
-### ...полезные способы использования...
+### ...useful ways to use... 
 
-## JS API
+## JS API 
 
-## Возможные ошибки
- 
- 
+## Possible errors 
+
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

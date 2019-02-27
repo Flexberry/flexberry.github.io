@@ -1,46 +1,48 @@
----
-title: Создание LookUp-страницы в Web-приложении
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_lookup-form.html
-lang: en
----
+--- 
+title: creating a LookUp page in your Web application 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_lookup-form.html 
+lang: en 
+autotranslated: true 
+hash: c966b105e9f4dd9b179cfaebc15e31c938bcef57ee746c38fe44adcb1de0d338 
+--- 
 
-## Механизм взаимодействия
+## interaction Mechanism 
 
-Можно посмотреть в статье [Межформенное взаимодействие в Web-приложениях](fa_form-interaction.html).
+You can see the article [Performanoe interaction in Web-applications](fa_form-interaction.html). 
 
-## Создание страницы
+## page Creation 
 
-Для создания LookUp-страницы необходимо:
+To create a LookUp page should: 
 
-1. Создать новую web-страницу.
-2. Добавить на неё [WebObjectListView](fa_web-object-list-view.html) с `ID = "LookUpFormWOLV"`.
-3. При загрузке формы
-    * Принять передаваемые параметры.
-    * Настроить [WOLV](fa_web-object-list-view.html)
-    * Подключить скрипты
-4. Настроить свойство `LookUpFormURL` у [LookUp'a](fa_lookup-overview.html).
+1. Create a new web page. 
+2. Adding [WebObjectListView](fa_web-object-list-view.html) `ID = "LookUpFormWOLV"`. 
+3. When the form is loaded 
+* To accept passed parameters. 
+* Set up [WOLV](fa_web-object-list-view.html) 
+* Connect scripts 
+4. Configure the property `LookUpFormURL` [LookUp'a](fa_lookup-overview.html). 
 
-### Передаваемые параметры
+### Passed parameters 
 
-На LookUp-страницу передается ряд параметров для настройки WOLV'a и страницы:
+On the LookUp page is transmitted a number of options for configuring WOLV'a and pages: 
 
-* `ViewName` - имя представления для [WOLV](fa_web-object-list-view.html)
-* `typeName` - наименование типа данных, отображаемого в [WOLV](fa_web-object-list-view.html)
-* `connStrName` - строка подключения к базе (опционально)
-* `nameValueControl` - параметры лукапа
-* `PK` - PrimaryKey выбранного мастера (если таковой имеется)
-* `FormCaption` - заголовок страницы (опционально)
-* `csdName` - наименование Column Sort Definition - определения сортировки [WOLV](fa_web-object-list-view.html), которая хранится в сессии
-* `editPage` - адрес страницы редактирования объектов [WOLV](fa_web-object-list-view.html)
-* `countOnPage` - количество объектов на одной странице [WOLV](fa_web-object-list-view.html)
-* `LFName` - наименование Limit Function для ограничения выгрузки данных [WOLV](fa_web-object-list-view.html). Limit Functon хранится в сессии.
+* `ViewName` - the name of the view to [WOLV](fa_web-object-list-view.html) 
+* `typeName` - the name of the data type displayed in [WOLV](fa_web-object-list-view.html) 
+* `connStrName` - the connection string to the database (optional) 
+* `nameValueControl` - parameters lucapa 
+* `PK` - the PrimaryKey of the selected master (if any) 
+* `FormCaption` - title (optional) 
+* `csdName` - name Column-Definition Sort - definition sort [WOLV](fa_web-object-list-view.html), which is stored in the session 
+* `editPage` - address edit page objects [WOLV](fa_web-object-list-view.html) 
+* `countOnPage` - number of objects on one page [WOLV](fa_web-object-list-view.html) 
+* `LFName` - name Limit Function to limit the discharge data [WOLV](fa_web-object-list-view.html). Limit Functon is stored in the session. 
 
-### Настройка WOLV
+### setting WOLV 
 
-Необходимо перебросить значения, переданные в качестве параметров, а также провести некоторую дополнительную настройку:
+You need to throw the values passed in as parameters, and to make some additional configuration: 
 
 ```csharp
 LookUpFormWOLV.View = Information.GetView(Request["viewName"], Type.GetType(Request["typeName"]));
@@ -55,20 +57,20 @@ LookUpFormWOLV.Operations.ShowMarks = false;
 
 var applyer = new WolvSettApplyer();
 applyer.SettingsApply(LookUpFormWOLV);
-```
+``` 
 
-Также необходимо проверить наличие необязательных параметров и применить их:
+You also need to check for optional parameters and apply them: 
 
-`PrimaryKey`:
+`PrimaryKey`: 
 
 ```csharp
 if (!string.IsNullOrEmpty(Request["PK"]))
             {
                 LookUpFormWOLV.SetInitialSearch("__PrimaryKey", Request["PK"]);
             }
-```
+``` 
 
-`ColumnSortDef`:
+`ColumnSortDef`: 
 
 ```csharp
 if (!string.IsNullOrEmpty(Request["csdName"]))
@@ -76,11 +78,11 @@ if (!string.IsNullOrEmpty(Request["csdName"]))
                 var columnSortDef = (ColumnsSortDef[])HttpContext.Current.Session[Request["csdName"]];
                 LookUpFormWOLV.InitialColumnsSort = columnSortDef;
             }
-```
+``` 
 
-{% include note.html content="Перед вызовом на [LookUp](fa_lookup-overview.html) ColumnSortDefinition помещается в сессию под ключом, передаваемым в качестве параметра, и достается из сессии по этому ключу." %}
+{% include note.html content="Before the call to [LookUp](fa_lookup-overview.html) ColumnSortDefinition placed into the session under the key passed as parameter, and gets out session for this key." %} 
 
-Ну и конечно же `LimitFunction`:
+And of course `LimitFunction`: 
 
 ```csharp
 string lfName = HttpContext.Current.Request["LFName"];
@@ -90,13 +92,13 @@ Function lf1 = LimitFunctionsHolder.LoadLimitFunction(lfName);
 LookUpFormWOLV.LimitFunction = LookUpFormWOLV.LimitFunction != null
               ? lng.GetFunction(lng.funcAND, LookUpFormWOLV.LimitFunction, lf1)
               : lf1;
-```
+``` 
 
-{% include note.html content="Желательно обернуть вызов метода `LoadLimitFunction` в блок `try-catch`." %}
+{% include note.html content="it is Advisable to wrap the method call in the block `LoadLimitFunction` `try-catch`." %} 
 
-### Подключение скриптов
+### Connection scripts 
 
-Для функционирования WOLV необходимо подключить следующие скрипты:
+For the functioning of the WOLV, you need to connect the following scripts: 
 
 ```csharp
 ResourcesPaths.Add("Scripts.ListView.js");
@@ -104,9 +106,9 @@ ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery-
 ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery-ui-1.8.17.min.js");
 ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery.color.js");
 ContextHelper.ПодключитьВнешнийФайл("/shared/script/jquery.tooltip.js");
-```
+``` 
 
-## Полный код метода OnLoad
+## the Complete code for the OnLoad method 
 
 ```csharp
 protected override void OnLoad(EventArgs e)
@@ -146,9 +148,9 @@ protected override void OnLoad(EventArgs e)
                 catch (LimitFunctionNotFoundException)
                 {
                     WebMessageBox.Show(
-                        "Произошла ошибка при получении данных." + "\\n"
-                        + "Возможно, прошло много времени с момента последних действий." + "\\n"
-                        + "Обновите страницу, с которой была выполнена операция выбора значений.");
+                        "An error occurred while receiving data." + "\\n"
+                        + "Maybe it's been a long time since the last action." + "\\n"
+                        + "Refresh the page with which the operation was performed on selection of values.");
 
                     LookUpFormWOLV.SkipDataLoad = true;
                 }
@@ -193,9 +195,13 @@ protected override void OnLoad(EventArgs e)
 
             base.OnLoad(e);
         }
-```
+``` 
 
-## Передача параметров на LookUp-форму
+## passing parameters on the LookUp form 
 
-Передача параметров на LookUp-форму описана в [статье](fa_lookup-form-send-params.html).
+Passing parameters on the LookUp form described in [article](fa_lookup-form-send-params.html). 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

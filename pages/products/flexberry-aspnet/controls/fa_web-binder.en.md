@@ -1,96 +1,102 @@
----
-title: WebBinder
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_web-binder.html
-lang: en
----
+--- 
+title: WebBinder 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_web-binder.html 
+lang: en 
+autotranslated: true 
+hash: 414f0d274bcb8cc8773f1fb6bd8b5b18eb448b6dd26a01d66e3982d52053aad5 
+--- 
 
-`WebBinder` - компонент, осуществляющий связывание web-контролов на форме и значений объектов.
+`WebBinder` component performing the binding web controls on the form and values of objects. 
 
-## Публичные методы
+## Public methods 
 
 ```xml
-/// <summary>
-/// Установить флаг доступности редактирования для контролов всей формы.
-/// </summary>
-/// <param name="controls">Корень коллекции контролов, в которой будут искаться контролы.</param>
-/// <param name="view">Представление (будут управляться только контролы, редактирующие свойства из этого представления).</param>
-/// <param name="readOnlyFlag">Значение свойства "Только для чтения".</param>
-/// <param name="controlIdsComparer">Кастомная функция сравнения идентификаторов контролов, использующаяся при поиске контролов в дереве (если не задана, то производится посимвольное сравнение).</param>
+/// <summary> 
+/// Set the accessibility of edit controls for the whole form. 
+/// </summary> 
+/// <param name="controls">Root collection of controls that will searched the controls.</param> 
+/// <param name="view">the View (will only be managed by controls that edit the properties of this representation).</param> 
+/// <param name="readOnlyFlag">the property Value is "readonly".</param> 
+/// <param name="controlIdsComparer">Custom comparison function identifiers of the controls used to search the controls in the tree (if not specified, the comparison is performed character-by-character).</param> 
 public void SetReadOnlyForm(ControlCollection controls, View view, bool readOnlyFlag, Func<string, string, bool> controlIdsComparer = null)
-```
+``` 
 
 ```xml
-/// <summary>
-/// Установить флаг доступности редактирования для определённого свойства объекта данных
-/// (Сначала будет попытка установить флаг ReadOnly, а потом Enabled.
-/// В дальнейшем при получении данных из контрола, соответствующего свойству объекта, эти данные будут игнорироваться).
-/// </summary>
-/// <param name="controls">Корень коллекции контролов, в которой будет искаться нужный контрол.</param>
-/// <param name="propName">Имя свойства в объекте данных.</param>
-/// <param name="readOnlyFlag">Значение свойства "Только для чтения".</</param>
+/// <summary> 
+/// Set the edit availability for a specific property of data object 
+/// (First is the attempt to set the ReadOnly flag, and then Enabled. 
+/// In the future when receiving data from the control, the corresponding property of the object, these data should be ignored). 
+/// </summary> 
+/// <param name="controls">Root collection of controls that will be searched for the desired control.</param> 
+/// <param name="propName">the property Name in the data object.</param> 
+/// <param name="readOnlyFlag">the property Value is "readonly".</</param> 
 public void SetReadOnlyProperty(ControlCollection controls, string propName, bool readOnlyFlag)
-```
+``` 
 
 ```xml
-/// <summary>
-/// Установить контролу флаг доступности редактирования
-/// (Сначала будет попытка установить флаг ReadOnly, а потом Enabled.
-/// В дальнейшем при получении данных из контролов
-/// эти контролы будут игнорироваться).
-/// </summary>
-/// <param name="ctrl">Контрол, которому устанавливаем флаг.</param>
-/// <param name="readOnlyFlag">Флаг доступности редактирования.</param>
+/// <summary> 
+/// Set the control flag of availability edit 
+/// (First is the attempt to set the ReadOnly flag, and then Enabled. 
+/// In the future when retrieving data from controls 
+/// these controls will be ignored). 
+/// </summary> 
+/// <param name="ctrl">the Control that set the flag.</param> 
+/// <param name="readOnlyFlag">Flag availability edit.</param> 
 public void SetReadonlyToControl(Control ctrl, bool readOnlyFlag)
-```
+``` 
 
 ```xml
-/// <summary>
-/// Применить данные из объекта к контролам на странице.
-/// </summary>
-/// <param name="controls">Корень коллекции контролов, в которой будут искаться контролы.</param>
-/// <param name="view">Представление.</param>
-/// <param name="dataObject">Объект, из которого берутся данные.</param>
-/// <param name="isPostBack">Флаг, показывающий происходит ли сейчас postback (в зависимости от этого флага будут, или наоборот не будут обновлены значения в лукапах).</param>
-/// <param name="isSaving">Флаг, показывающий производится сейчас сохранение объекта данных.</param>
-/// <param name="controlsIdComparer">Кастомная функция сравнения идентификаторов контролов, использующаяся при поиске контролов в дереве (если не задана, то производится посимвольное сравнение).</param>
+/// <summary> 
+/// Apply the data object to the controls on the page. 
+/// </summary> 
+/// <param name="controls">Root collection of controls that will searched the controls.</param> 
+/// <param name="view">the View.</param> 
+/// <param name="dataObject">the Object from which data is obtained.</param> 
+/// <param name="isPostBack">a Flag that indicates whether postback is happening now (depending on this flag will be, or Vice versa will not update the values in lukapa).</param> 
+/// <param name="isSaving">the Flag that indicates is the preservation of the data object.</param> 
+/// <param name="controlsIdComparer">Custom comparison function identifiers of the controls used to search the controls in the tree (if not specified, the comparison is performed character-by-character).</param> 
 public void ApplyDataToControls(ControlCollection controls, View view, DataObject dataObject, bool isPostBack, bool isSaving = false, Func<string, string, bool> controlsIdComparer = null)
-```
+``` 
 
 ```xml
-/// <summary>
-/// Проставляет заданным контролам, реализующим интерфейс ISaveActionCompatible,
-/// заданое значение флага ISaveActionCompatible.IsSaveNow.
-/// </summary>
-/// <param name="controls">Корень коллекции контролов.</param>
-/// <param name="view">Представление соответствующее объекту данных.</param>
-/// <param name="isSaving">Желаемое значение флага ISaveActionCompatible.IsSaveNow, показывающее производиться ли сейчас сохранение объекта данных.</param>
+/// <summary> 
+/// Marks the specified control implementing the interface ISaveActionCompatible, 
+/// given a flag value ISaveActionCompatible.IsSaveNow. 
+/// </summary> 
+/// <param name="controls">Root collection of controls.</param> 
+/// <param name="view">the View corresponding to the data object.</param> 
+/// <param name="isSaving">the Desired value of the flag ISaveActionCompatible.IsSaveNow showing is made whether the preservation of the data object.</param> 
 public void ApplySavingFlagToSaveActionCompatibleControls(ControlCollection controls, View view, bool isSaving)
-```
+``` 
 
-## Биндинг нескольких свойств
+## Binding multiple properties 
 
-В папке ~/Xml/Bindings могут находится настройки для нестандартного биндинга. Если на форме есть детейл, внутри которого находится контрол, который редактирует несколько свойств объекта, то нужно настраивать нестандартный биндинг.  
-Для того чтобы дополнить стандартный биндинг своим, нужно элементу `root` добавить атрибут `partial="true"`.
+In the folder ~/Xml/Bindings can be setup with custom binding. If the form contains detail, inside of which is a control that edits a few object properties, then you need to configure a custom binding. 
+To complement its standard binding, you need the element `root` add attribute `partial="true"`. 
 
-Пример:
+Example: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <root partial="true">
-  <detail name="МероприятияМедРеаб">
-    <property name="Исполнитель">
+  <detail name="Meropriyatiya">
+    <property name="Contractor">
       <control id="ctrlИсполнитель" prop="SelectedMasterPK">
       </control>
     </property>
-    <property name="ИсполнительПроп">
+    <property name="Ispolnitelnoe">
       <control id="ctrlИсполнитель" prop="Text">
       </control>
     </property>
   </detail>
 </root>
-```
+``` 
 
-В примере описано, что в детейле 'МероприятияМедРеаб' находится контрол 'ctrlИсполнитель', который одновременно редактирует свойства 'SelectedMasterPK' и 'Text'
+In the example described that in detale 'Meroprijatija' is control 'ctrlИсполнитель', which simultaneously edits the properties 'SelectedMasterPK' and 'Text' 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

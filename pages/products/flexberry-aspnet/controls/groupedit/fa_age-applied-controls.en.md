@@ -1,72 +1,74 @@
----
-title: Встраивание прикладных контролов в AjaxGroupEdit
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_age-applied-controls.html
-lang: en
----
+--- 
+title: Embedding application controls in AjaxGroupEdit 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_age-applied-controls.html 
+lang: en 
+autotranslated: true 
+hash: 9116daab5648587d31518da12283d3fde86e936aae348cf88433bd7364e9ade5 
+--- 
 
-## Биндинг
+## Binding 
 
-Для корректной работы контрола [AjaxGroupEdit](fa_ajax-group-edit.html) необходимо, чтобы он реализовывал интерфейс `IAjaxGroupEditCompatible`:
+For correct operation of control [AjaxGroupEdit](fa_ajax-group-edit.html), it must implement the interface `IAjaxGroupEditCompatible`: 
 
 ```csharp
 namespace ICSSoft.STORMNET.Web.AjaxControls
 {
-    /// <summary>
-    /// Контролы, реализующие этот интерфейс могут быть встроены в AjaxGroupEdit
-    /// </summary>
+    /// <summary> 
+    /// Controls that implement this interface can be embedded in AjaxGroupEdit 
+    /// </summary> 
     public interface IAjaxGroupEditCompatible : IGroupEditCompatible
     {
-        /// <summary>
-        /// Свойство, на которое биндится значение в столбце AjaxGroupEdit. 
-        /// Проставится самим AjaxGroupEdit, контрол только пользуется значением.
-        /// </summary>
+        /// <summary> 
+        /// The property to which bendida the value in the column AjaxGroupEdit. 
+        /// Put down by AjaxGroupEdit, control only uses the value. 
+        /// </summary> 
         string BindingPropertyName { get; set; }
 
-        /// <summary>
-        /// Индикатор, который устанавливается в true, если контрол находится внутри в AjaxGroupEdit.
-        /// Проставится самим AjaxGroupEdit.
-        /// </summary>
+        /// <summary> 
+        /// Indicator that is set to true if the control is inside in AjaxGroupEdit. 
+        /// Put down by AjaxGroupEdit. 
+        /// </summary> 
         bool IsInsideEditor { get; set; }
 
-        /// <summary>
-        /// Генерировать или нет стандартную структуру для клиентского биндинга.
-        /// Упрощает разработку для контролов с простым биндингом.
-        /// </summary>
+        /// <summary> 
+        /// Generate or not the standard structure for the client binding. 
+        /// Simplifies the development of controls with a simple bindinga. 
+        /// </summary> 
         bool GenerateDefaultStructForBinding { get; }
 
-        /// <summary>
-        /// Список внешних скриптов для поключения.
-        /// Все эти скрипты внутри AjaxGroupEdit будут подключаться через ContextHelper.
-        /// Например, "AjaxDataService.js"
-        /// </summary>
+        /// <summary> 
+        /// The list of external scripts to attach. 
+        /// All these scripts in AjaxGroupEdit will connect through the ContextHelper. 
+        /// For Example "AjaxDataService.js" 
+        /// </summary> 
         List<string> ExternalScriptPaths { get; }
 
-        /// <summary>
-        /// Текст скриптов, которые будут выполнены на document ready AjaxGroupEdit
-        /// </summary>
+        /// <summary> 
+        /// The text of the scripts which will be executed on document ready AjaxGroupEdit 
+        /// </summary> 
         List<string> DocumentReadyScripts { get; }
     }
 }
-```
+``` 
 
-Важным аспектом работы AGE является клиентский биндинг, который срабатывает в javascript.
+An important aspect of working AGE is the client binding that is triggered in javascript. 
 
-Работает он следующим образом: 
-1. Рядом с контролом должна быть json структура, содержащая свойства `Property` - свойство DataObject и `ID` - ID контрола на клиенте
-2. При нажатии на кнопку `сохранить` значение из контрола на клиенте при помощи js сформирует новую json структуру, которая и пойдет при postback для обработки серверным `WebBinder`;
+It works as follows: 
+1. Close control should be a json structure containing properties `Property` - property of the DataObject and `ID` - ID of the control on the client 
+2. By clicking on the button `сохранить` the value from the control on the client using js will create a new json structure, which will go with the postback to handle server-side `WebBinder`; 
 
-Если проставить `GenerateDefaultStructForBinding=true`, то сгенерируется структура подобного вида:
+If you enable `GenerateDefaultStructForBinding=true`, will generate a structure like 
 
 ```csharp
-{"Property":"ДатаРождения", "ID" : "ctrl306940bb5b9e4bb98d7c93989c6ae9ed_ctrlДатаРождения_ctrl"}
-```
+{"Property":"Dataromance", "ID" : "ctrl306940bb5b9e4bb98d7c93989c6ae9ed_ctrlдатарождения_ctrl"}
+``` 
 
-Если создается пользовательский контрол со сложным клиентским биндингом, то генерировать данную структуру нужно будет самостоятельно, проставив значение `GenerateDefaultStructForBinding == false`.
+If you create a custom control with a complex client bindinga, to generate this structure will need themselves, checking the value `GenerateDefaultStructForBinding == false`. 
 
-Пример:
+Example: 
 
 ```csharp
 protected override void Render(HtmlTextWriter writer)
@@ -81,49 +83,52 @@ protected override void Render(HtmlTextWriter writer)
         writer.RenderEndTag();
     }
 }
-```
+``` 
 
-**Важно:** при использовании стандартной структуры для биндинга в значение поля ID json структуры будет проставляться `ControlToEditClientID`.
+**Important:** if you use the standard structure for binding in the value of the ID field of the json structure will be placed `ControlToEditClientID`. 
 
-## Настройки отображения DatePicker в AGE
+## customize the display of DatePicker in AGE 
 
-Самый простой способ настроить отображение DatePicker для всех групэдитов приложения - создать метод, производящий необходимые действия над экземпляром контрола (который передан ему в параметрах), и присвоить его в статическое свойство InitSettings класса DatePicker. Подробнее в сатье [Глобальная настройка веб-контролов](fa_init-control-settings-delegate.html).
+The easiest way to display a DatePicker for all groupedit application to create the method producing the necessary actions on an instance of the control (which is passed to it as parameters), and assign it a static property InitSettings class DatePicker. Read more in Satya [global setting web controls](fa_init-control-settings-delegate.html). 
 
-## Встраивание MasterEditorAjaxLookUp
+## Embedding MasterEditorAjaxLookUp 
 
-В `AjaxGroupEdit` имеется возможность использовать [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html). Для этого необходимо настраивать [WebControlProvider](fa_master-editor-ajax-lookup.html).
+In `AjaxGroupEdit` you can use [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html). To do this, set [WebControlProvider](fa_master-editor-ajax-lookup.html). 
 
-Пример куска файла `WebControlProvider.xml`:
+An example of a piece of the file `WebControlProvider.xml`: 
 
 ```xml
-  <propertytype name="ТипЛапы">
+  <propertytype name="Tiplady">
     <control typename="" property="" codefile=""/>
     <editcontrol typename="ICSSoft.STORMNET.Web.AjaxControls.MasterEditorAjaxLookUp" property="SelectedMasterPK" codefile=""/>
   </propertytype>
-```
+``` 
 
-Выглядеть это будет следующим образом:
+It will look as follows: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-ajax-lookup.jpg)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-ajax-lookup.jpg) 
 
-## Контролы для редактирования
-Возникает потребность задать собственные контролы для просмотра и для редактирования свойств объектов в `AjaxGroupEdit`. Контролы для просмотра задаются привычным образом в [WebControlProvider](fa_web-control-provider.html). Для того, чтобы задать контрол, который будет создаваться для редактирования свойства, то нужно в `WebControlProvider` добавить директиву `<editcontrol />` с аналогичными свойствами `<control />`.
+## Controls for editing 
+There is a need to define custom controls for viewing and editing properties of objects in `AjaxGroupEdit`. The controls for viewing are defined in the usual way [WebControlProvider](fa_web-control-provider.html). In order to specify the control that will be created to edit the properties, then you need to `WebControlProvider` add Directive `<editcontrol />` with similar properties `<control />`. 
 
-Например, для просмотра даты используется `ICSSoft.STORMNET.Web.Controls.DateTimeFormattedControl`, а для редактирования `ICSSoft.STORMNET.Web.Controls.DatePicker`.
+For example, to view the date used `ICSSoft.STORMNET.Web.Controls.DateTimeFormattedControl`, and to edit `ICSSoft.STORMNET.Web.Controls.DatePicker`. 
 
-Выглядит это следующим образом:
+It looks as follows: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-dates.jpg)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-dates.jpg) 
 
 ```xml
   <propertytype name="NullableDateTime">
     <control typename="ICSSoft.STORMNET.Web.Controls.DateTimeFormattedControl" property="Text" codefile="DateTimeFormattedControl.ascx"/>
-    <editcontrol typename="ICSSoft.STORMNET.Web.Controls.DatePicker" property="Text" codefile="DatePicker.ascx"/>
+    <editcontrol typename="ICSSoft.STORMNET.Web.Controls.DatePicker" property="Text" codefile="The DatePicker.ascx"/>
   </propertytype>
-```
+``` 
 
-Подробнее про [WebControlProvider и встраивание контролов](fa_web-control-provider.html).
+Read more about [WebControlProvider and embedding controls](fa_web-control-provider.html). 
 
-## Скрипты
+## Scripts 
 
-Если прикладному контролу нужно подключение скриптов (при загрузке страницы), то все скрипты нужно подключать через [ContextHelper](fa_context-helper.html) и скрипты автоматически добавятся. Если контролу нужно подключение внешних скриптов, то нужно использовать свойство `ExternalScriptPaths` интерфейса `IAjaxGroupEditCompatible`.
+If the application control interface scripts (on page load), then all the scripts need to connect via [ContextHelper](fa_context-helper.html) and the scripts will automatically be added. If control is necessary connection of external scripts, you need to use a property `ExternalScriptPaths` interface `IAjaxGroupEditCompatible`.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

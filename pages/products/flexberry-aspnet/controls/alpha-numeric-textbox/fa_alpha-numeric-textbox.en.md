@@ -1,83 +1,89 @@
----
-title: AlphaNumericTextBox
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_alpha-numeric-textbox.html
-lang: en
----
+--- 
+title: AlphaNumericTextBox 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_alpha-numeric-textbox.html 
+lang: en 
+autotranslated: true 
+hash: 08426d4198a3b2b08b9fca935cd824514639283bc3b146cf440efc84fea2ab2e 
+--- 
 
-Контрол `ICSSoft.STORMNET.Web.AjaxControls.AlphaNumericTextBox` предназначен для полей, где допустимы только буквы и/или числа. Наследует `System.Web.UI.WebControls.TextBox`, реализует `ICSSoft.STORMNET.Web.AjaxControls.IAjaxGroupEditCompatible`.  
-Поддерживает вставку значений из буфера. 
+Control `ICSSoft.STORMNET.Web.AjaxControls.AlphaNumericTextBox` designed for fields where you may use only letters and/or numbers. Inherits `System.Web.UI.WebControls.TextBox`, implements `ICSSoft.STORMNET.Web.AjaxControls.IAjaxGroupEditCompatible`. 
+Supports the insertion of values from the buffer. 
 
-## Настройка
+## Setting 
 
-Настройка свойств осуществляется при загрузке страницы в методе `PreApplyToControls()`.
+Setting properties when the page is loaded in the method `PreApplyToControls()`. 
 
-### Тип
+### Type 
 
-Для задания типа ввода используется свойство `Type` типа `AlphaNumericType`:
+To specify the type of the input property is used `Type` type `AlphaNumericType`: 
 
 ```csharp
-/// <summary>
-/// Перечисление с типами ввода для контрола AlphaNumericTextBox
-/// </summary>
+/// <summary> 
+/// Enumeration of input types to control AlphaNumericTextBox 
+/// </summary> 
 public enum AlphaNumericType
 {
-	/// <summary>
-	/// Буквенный
-	/// </summary>
+	/// <summary> 
+	/// Literal 
+	/// </summary> 
 	Alpha, 
 
-	/// <summary>
-	/// Числовой
-	/// </summary>
+	/// <summary> 
+	/// Numeric 
+	/// </summary> 
 	Numeric, 
 	
-	/// <summary>
-	/// Буквенно-числовой
-	/// </summary>
+	/// <summary> 
+	/// Alphanumeric 
+	/// </summary> 
 	AlphaNumeric
 }
-```
+``` 
 
-### Интервал
+### Interval 
 
-Можно задать допустимый интервал вводимых чисел: `Min` и `Max`. По умолчанию, можно вводить числа из диапазона `int32`, то есть можно использовать как положительные, так и отрицательные значения.
+You can specify the range of input numbers: `Min` and `Max`. By default, you can enter numbers from `int32`, it is possible to use both positive and negative values. 
 
-### Алфавиты
+### Alphabets 
 
-В поля `NumericChars` и `AlphabeticChars` можно вводить символы допустимого алфавита цифр и букв соответственно. Символы, не попадающие в эти алфавиты, не будут вводиться в данный контрол.
+In the field `NumericChars` and `AlphabeticChars` you can enter the valid characters of the alphabet of numbers and letters, respectively. Characters that do not fall into these alphabets will not be entered in this control. 
 
-### Инициализация
+### Initialization 
 
-Для инициализации свойств контрола можно использовать статическое свойство-делегат `InitSettings` типа [InitControlSettingsDelegate<>](fa_init-control-settings-delegate.html), который будет вызван в конструкторе контрола.
+To initialize the properties of the control you can use a static property-delegate `InitSettings` [InitControlSettingsDelegate<>](fa_init-control-settings-delegate.html), which will be called in the constructor of the control. 
 
-### Особенности
+### Features 
 
-При отключенном `ViewState` контрол не сохраняет значения между PostBack-ами, если он находится в состоянии `Disabled` (из-за особенностей инфраструктуры ASP.NET).
+When disabled `ViewState` control does not save the value between PostBack s, if he is in a state `Disabled` (because of the peculiarities of the infrastructure ASP.NET). 
 
-## Примеры
+## Examples 
 
-Следующий код устанавливает тип контрола в `Numeric` (что позволит вводить в него только цифры), а также устанавливает словарь допустимых символов (что позволит вводить в него только цифры 0, 1 и 2):
+The following code sets the type of control in `Numeric` (which will allow to enter only digits), and sets a dictionary of valid characters (which allows to enter only digits 0, 1 and 2): 
 
 ```csharp
 ctrlAlpha.Type = AlphaNumericType.Numeric;
 ctrlAlpha.NumericChars = "012";
-```
+``` 
 
-Следующий код устанавливает минимальное и максимальное значение, допустимое для ввода:
+The following code sets a minimum and maximum value allowed for input: 
 
 ```csharp
 ctrlAlpha.Type = AlphaNumericType.Numeric;
 ctrlAlpha.Min = 1200;
 ctrlAlpha.Max = 1300;
-```
+``` 
 
-Следующий код устанавливает тип в `AlphaNumeric` (что позволит вводить и буквы и цифры), а также устанавливает словари допустмых символов. Таким образом, в контрол можно будет вводить только цифры 1 и 2, а также буквы 'a' и 'b':
+The following code sets the type to `AlphaNumeric` (which will allow you to enter letters and numbers), and sets dictionaries dopustimyh characters. Thus, control can only enter numbers 1 and 2, as well as letters 'a' and 'b': 
 
 ```csharp
 ctrlAlpha.Type = AlphaNumericType.AlphaNumeric;
 ctrlAlpha.NumericChars = "12";
-ctrlAlpha.AlphabeticChars = "ab";
-```
+ctrlAlpha.AlphabeticChars = ab;
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,22 +1,22 @@
----
-title: installing a bower package
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_embbower.html
-folder: guides/base-tech/frontend/emberjs/embaddondep/
+--- 
+title: installing a bower package 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_embbower.html 
+folder: guides/base-tech/frontend/emberjs/embaddondep/ 
 lang: en 
 autotranslated: true 
-hash: bc60134e8333ec29e28c4d7a0c09186d4920f255a930de788c9856ee698a9018
----
+hash: 0c401e93f982ade9b2a5a3cc5201d7e882ae38264b535e463cdec0de16b58166 
+--- 
 
-## Brief description
+## Brief description 
 
-The contents of this page:
+The contents of this page: 
 
-* Installing bower package
+* Installing bower package 
 
-## Go
+## Go 
 
 * [Back](gbt_emberjs.html)
 

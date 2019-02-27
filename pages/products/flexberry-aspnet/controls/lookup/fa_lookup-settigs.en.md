@@ -1,38 +1,44 @@
----
-title: Свойства LookUp'ов для Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: JavaScript API, Windows UI (Контролы)
-toc: true
-permalink: en/fa_lookup-settigs.html
-lang: en
----
+--- 
+title: Properties LookUp's for Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: JavaScript, Windows UI (Controls) 
+toc: true 
+permalink: en/fa_lookup-settigs.html 
+lang: en 
+autotranslated: true 
+hash: f50b1907d6d7c15d284e0f7b67926d046c89270c99086733679e664c2198f193 
+--- 
 
-* `ColumnsSort` - сортировка по колонкам в [WOLV](fa_web-object-list-view.html) на открываемой форме.
-* `ConnStrName` - строка подключения к базе.
-* `EditedProperty` - свойство редактируемого объекта.
-* `EnablePostBack` - включить ли обновление страницы после выбора значения.
-* `LimitFunction` - ограничивающая функция, накладывает ограничение на список на поднимаемой на лукап форме. Автоматически пропишется `LookUpFormLFName` при установке.
-* `LookUpFormCaption` - заголовок формы, поднимаемой на лукап. По умолчанию `Выбор значения`.
-* `LookUpFormCountOnPage` - Количество строк [WOLV](fa_web-object-list-view.html) на форме выбора значения лукапа.
-По умолчанию количество строк [WOLV](fa_web-object-list-view.html) на базовой лукап-форме будет определяться на основе сохраненных настроек пользователя или значения по умолчанию в [Pager](fa_web-object-list-view.html). Такое поведение может быть переопределено в прикладной лукап-форме.
-Если установлено конкретное значение, то количество строк в списке при открытии формы будет всегда равно указанному. При установке значения следует учитывать, что [Универсальный пейджинговый контрол. Pager.](fa_pager.html) использует белый список возможных значений количества отображаемых объектов.
-* `LookUpFormHeight` - высота формы, поднимаемой на лукап. По умолчанию `600`.
-* `LookUpFormLeft` - левая граница открываемой формы. По умолчанию `100`.
-* `LookUpFormLocation` - отображать ли в браузере адресную строку при открыти на лукап. По умолчанию не отображается.
-* `LookUpFormMenubar` - отображать ли меню в браузере при открытии на лукап. По умолчанию не отображается.
-* `LookUpFormResizable` - давать ли возможность изменять размер открываемой на лукап формы. По умолчанию возможность есть.
-* `LookUpFormScrollbars` - отображать ли скроллбары на открываемой форме. По умолчанию отображаются.
-* `LookUpFormStatus` - отображать ли строку состояния на открываемой форме. По умолчанию не отображаются.
-* `LookUpFormToolbar` - отображать ли панель браузера (кнопки "Вперед", "Назад" и пр.). По умолчанию не отображаются.
-* `LookUpFormTop` - верхняя граница открываемой формы. По умолчанию `100`.
-* `LookUpFormURL` - URL списковой формы, которая будет использоваться для выбора значения.
-* `LookUpFormWidth` - ширина открываемой формы. По умолчанию `750`.
-* `MasterTypeName` - тип [мастерового](fd_master-association.html) объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
-* `MasterViewName` - представление мастерового объекта.
-* `ObjectTypeName` - тип редактируемого объекта. Устанавливается при помощи `typeof(Тип).AssemblyQualifiedName`.
-* `ObjectViewName` - [представление](fd_view-definition.html) редактируемого объекта.
-* `PropertyToShow` - свойство мастера, которое будет отображаться в лукапе при выбранном объекте.
-* `SelectedMasterPK` - [PrimaryKey](fo_primary-keys-objects.html) выбранного объекта.
-* `ShowInThickBox` - показывать форму лукапа в thickbox или нет.
-* `ShowObjectUrl` - URL, по которому будет подниматься форма просмотра для выбранного объекта.
-ApplicationUrl + ListFormURL. Если не указана, то используется стандартная форма.
+* `ColumnsSort` - sorting by columns in [WOLV](fa_web-object-list-view.html) to open the form. 
+* `ConnStrName` - the connection string to the database. 
+* `EditedProperty` - editable property of the object. 
+* `EnablePostBack` - turn the page refresh after selecting. 
+* `LimitFunction` - limiting function, limiting the list to raise on lookup form. PstrfLookUpFormLFName` will automatically register during installation. 
+* `LookUpFormCaption` - header form, raised on lookup. Default `Выбор значения`. 
+* `LookUpFormCountOnPage` - the Number of rows [WOLV](fa_web-object-list-view.html) in the form of selecting values of lucapa. 
+The default number of rows [WOLV](fa_web-object-list-view.html) on the underlying lookup form will be determined based on stored user preferences or default values in the [Pager](fa_web-object-list-view.html). This behavior can be overridden in the application lookup-form. 
+If there is a specific value, the number of rows in the list when opening the form will always be equal. When setting the value, note that [a Universal paging control. Pager.](fa_pager.html) uses a white list of possible values for the number of displayed objects. 
+* `LookUpFormHeight` - height form raised on lookup. Default `600`. 
+* `LookUpFormLeft` the left border of the unit. Default `100`. 
+* `LookUpFormLocation` - whether to display in the browser address bar when you open on lookup. Is not displayed by default. 
+* `LookUpFormMenubar` - whether to display the menu in the browser when opening lookup. Is not displayed by default. 
+* `LookUpFormResizable` - to give the ability to change the size of the opening on lookup form. By default, the opportunity is there. 
+* `LookUpFormScrollbars` show whether scrollbar to open the form. By default. 
+* `LookUpFormStatus` - whether to display the status bar to open the form. Are not displayed by default. 
+* `LookUpFormToolbar` - whether to display the toolbar (the button "Forward", "Back", etc.). Are not displayed by default. 
+* `LookUpFormTop` is the upper bound of the unit. Default `100`. 
+* `LookUpFormURL` - URL list form that will be used to select a value. 
+* `LookUpFormWidth` - the width of the unit. Default `750`. 
+* `MasterTypeName` - type [artisan](fd_master-association.html) of the object. Installed with `typeof(Type).AssemblyQualifiedName`.
+* `MasterViewName` representation of the workman of the object. 
+* `ObjectTypeName` - type of the edited object. Installed with `typeof(Type).AssemblyQualifiedName`. 
+* `ObjectViewName` - [view](fd_view-definition.html) of the edited object. 
+* `PropertyToShow` is the property of the master, which will be displayed in lucapa for the selected object. 
+* `SelectedMasterPK` - [PrimaryKey] in(fo_primary-keys-objects.html) of the selected object. 
+* `ShowInThickBox` - show lucapa in thickbox or not. 
+* `ShowObjectUrl` - URL, which will rise form view for the selected object. 
+ApplicationUrl ListFormURL. If not specified, the standard form is used. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

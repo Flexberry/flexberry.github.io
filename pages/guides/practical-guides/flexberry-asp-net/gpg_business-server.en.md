@@ -1,61 +1,61 @@
----
-title: Work with business server
-sidebar: guide-practical-guides_sidebar
-keywords: guide
-toc: true
-permalink: en/gpg_business-server.html
+--- 
+title: Work with business server 
+sidebar: guide-practical-guides_sidebar 
+keywords: guide 
+toc: true 
+permalink: en/gpg_business-server.html 
 lang: en 
 autotranslated: true 
-hash: 908dd63253608ed453a3412acda24b042eb47351c3bf87b5de007b685179b2e7
----
+hash: 8b5bb705fa3f4c049e81f986b1c068e5ba5dee78f6a95cffcb4fe4241f4a307d 
+--- 
 
-Goal: to translate the order into a state `Оплаченный` it is necessary to check whether the goods to be discharged, and if so subtract the required amount of product.
-Note: for simplicity, we assume that the goods may be located in different warehouses, and the requested amount is searched from all warehouses, summing up.
+Goal: to translate the order into a state `Оплаченный` it is necessary to check whether the goods to be discharged, and if so subtract the required amount of product. 
+Note: for simplicity, we assume that the goods may be located in different warehouses, and the requested amount is searched from all warehouses, summing up. 
 
-A business server is a specialized class that allows to intercept the current service data operations on a data source (such as creating a record in a database table, delete, update), depending on the state of the data object. To implement such a class has the stereotype `businessserver`.
+A business server is a specialized class that allows to intercept the current service data operations on a data source (such as creating a record in a database table, delete, update), depending on the state of the data object. To implement such a class has the stereotype `businessserver`. 
 
-Such as, in order to check the availability of goods in stock at the time the order is saved with status `Оплаченный`, you must:
+Such as, in order to check the availability of goods in stock at the time the order is saved with status `Оплаченный`, you must: 
 
-1.To add to the class diagram the class with the stereotype `businessserver`.
+1.To add to the class diagram the class with the stereotype `businessserver`. 
 
-![](/images/pages/guides/flexberry-aspnet/add-bsclass.png)
+![](/images/pages/guides/flexberry-aspnet/add-bsclass.png) 
 
-2.To save the graph, in the properties of the class `Заказ` to specify the name of the business server, and save the editing form class. Then, from the drop-down list, choose positive `OnAllEvents` (i.e. during any service operations, data):
+2.To save the graph, in the properties of the class `Заказ` to specify the name of the business server, and save the editing form class. Then, from the drop-down list, choose positive `OnAllEvents` (i.e. during any service operations, data): 
 
-![](/images/pages/guides/flexberry-aspnet/set-bsclass-in-zakaz.png)
+![](/images/pages/guides/flexberry-aspnet/set-bsclass-in-zakaz.png) 
 
-3.To save the graph. Generate business servers and data objects.
+3.To save the graph. Generate business servers and data objects. 
 
-![](/images/pages/guides/flexberry-aspnet/gen-bs-and-objects.png)
+![](/images/pages/guides/flexberry-aspnet/gen-bs-and-objects.png) 
 
-4.The project with the business servers to add to `Solution`. Add a project reference to the business server to the application projects.
-5.Then register in parentheses programmer the following lines (to select the options use a combination of `Ctrl` Space):
+4.The project with the business servers to add to `Solution`. Add a project reference to the business server to the application projects. 
+5.Then register in parentheses programmer the following lines (to select the options use a combination of `Ctrl` Space): 
 
 ```csharp
-// *** Start programmer edit section *** (Using statements)
+// *** Start programmer edit section *** (Using statements) 
 using System.Collections;
 
 using ICSSoft.STORMNET;
 using ICSSoft.STORMNET.FunctionalLanguage;
 using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
 
-// *** End programmer edit section *** (Using statements)
+// *** End programmer edit section *** (Using statements) 
 ``` 
 
-6.Later in the code business servers to handle all of the following:
+6.Later in the code business servers to handle all of the following: 
 
 ```csharp
 public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Склад.Заказ UpdatedObject)
 {
-	// *** Start programmer edit section *** (OnUpdateЗаказ)
+	// *** Start programmer edit section *** (OnUpdateЗаказ) 
 
-	// Define the array that will return for updates.
+	// Define the array that will return for updates. 
 	DataObject[] ret = new DataObject[0];
 
 	// Check that the received object is exactly what we need (created or modified and the status is set to Paid). 
 	if ((UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Created || UpdatedObject.GetStatus() == ICSSoft.STORMNET.ObjectStatus.Altered) && Array.IndexOf(UpdatedObject.GetAlteredPropertyNames(), Status) >= 0 && UpdatedObject.Статус == СостояниеЗаказа.Оплаченный)			
 	{   
-		// Build the restriction and subtract all the objects in Tavarnelle that suit us.
+		// Build the restriction and subtract all the objects in Tavarnelle that suit us. 
 		Заказ заказ = UpdatedObject;
 		SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 		ICSSoft.STORMNET.FunctionalLanguage.Function lf = null; 
@@ -83,7 +83,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 		lcs.LimitFunction = lf;
 		ICSSoft.STORMNET.DataObject[] objs = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcs);
 
-		// Place the read objects in a sorted list for easy access later on.
+		// Place the read objects in a sorted list for easy access later on. 
 		System.Collections.SortedList sl = new System.Collections.SortedList();
 
 		for (int i = 0; i < objs.Length; i++)
@@ -104,7 +104,7 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 		string errStr = string.Empty;
 		ArrayList retObjs = new ArrayList();
 
-		// Check the availability of goods in warehouses, if not enough, then give error message if missing, then subtract the number.
+		// Check the availability of goods in warehouses, if not enough, then give error message if missing, then subtract the number. 
 		for (int i = 0; i < заказ.СтрокаЗаказа.Count; i++)
 		{
 			if (sl.ContainsKey(заказ.СтрокаЗаказа[i].Товар.__PrimaryKey))
@@ -152,24 +152,24 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateЗаказ(АСУ_Скла�
 			}
 		}
 
-		// In case something is not enough, we inform the user.
+		// In case something is not enough, we inform the user. 
 		if (errStr != string.Empty)
 		{
 			throw new Exception(errStr);
 		}
 
-		// If everything is fine, then return an array of objects that need to be updated.
+		// If everything is fine, then return an array of objects that need to be updated. 
 		ret = new DataObject[retObjs.Count]; retObjs.CopyTo(ret, 0);
 	}
 	return ret;
 
-	// *** End programmer edit section *** (OnUpdateЗаказ)
+	// *** End programmer edit section *** (OnUpdateЗаказ) 
 }
-```
+``` 
 
-## Go
+## Go 
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Automatic retrieving data from LookUp](gpg_auto-get-data-from-lookup.html)
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Automatic retrieving data from LookUp](gpg_auto-get-data-from-lookup.html) 
 * [Lock item in the edit form](gpg_set-ctrl-read-only.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
 
 

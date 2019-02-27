@@ -1,213 +1,215 @@
----
-title: WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_web-object-list-view.html
-lang: en
----
+--- 
+title: WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_web-object-list-view.html 
+lang: en 
+autotranslated: true 
+hash: 56463530ef9a09bd4274e48b3aca61a0e6abee42aba951000c13129e5db1ae85 
+--- 
 
-**WebObjectListView** (далее, `WOLV`) - веб-контрол, который используется для отображения списка объектов.
+**WebObjectListView** (hereinafter, `WOLV`) is a web control that is used to display a list of objects. 
 
-## Внешний вид WOLV
+## appearance WOLV 
 
-### Внешний вид WOLV при использовании различных тем
+### appearance WOLV when using different themes 
 
-Внешний вид WOLV при использовании различных тем можно посмотреть в [статье Выбор темы Web-приложения](fa_choose-theme.html).
+Appearance WOLV when using different themes you can see in the article, the Choice of theme of Web apps](fa_choose-theme.html). 
 
-### Stylization
+### Stylization 
 
-Основная статья про [cтилизацию WebObjectListView](fa_wolv-stylization.html).
+Main article Pro [styling WebObjectListView](fa_wolv-stylization.html). 
 
-### CSS-классы
+### CSS classes 
 
-Основная статья о [CSS-классах WebObjectListView](fa_wolv-css.html).
+Main article about [CSS-classes WebObjectListView](fa_wolv-css.html). 
 
-### Пейджинг
+### Paging 
 
-Основная статья про [пейджинг WebObjectListView](fa_wolv-paging.html).
+Main article Pro [paging WebObjectListView](fa_wolv-paging.html). 
 
-### Фиксация шапки списка
+### Fixing caps list 
 
-Зафиксировать шапку списка можно, добавив на страницу клиентский скрипт:
+To fix the header of the list by adding to the page client script: 
 
 ```javascript
 $('.wolv-caption-wrapper').sticky( { topSpacing : <x> } );
-```
+``` 
 
-где `x` - высота от верхнего края в пикселях.
+where `x` - height from top edge in pixels. 
 
-### Прокрутка списка `ScrollToSelectedObject`
+### scroll the list `ScrollToSelectedObject` 
 
-После совершения операции с элементом список прокручивается к выделенному объекту данных.  
-Настройку удобно применять к большим спискам, когда выделенный объект по умолчанию не всегда попадает в зону видимости пользователем.
+After the transaction with the item, the list scrolls to the selected data object. 
+The setting is convenient to apply to large lists, when the selected object is not by default always occurs in the zone of visibility of the user. 
 
-Включить настройку:
+To switch the setting: 
 
 ```csharp
 WebObjectListView1.Operations.ScrollToSelectedObject = true;
-```
+``` 
 
-### Сохранение состояния прокрутки списка
+### Save state scroll list 
 
-Включается с помощью настроек:
+Included with settings: 
 
 ```csharp
 WebObjectListView1.Operations.SaveHorizontalScroll = true;
 WebObjectListView1.Operations.SaveVerticalScroll = true;
-```
+``` 
 
-Позиции скроллов списка будут восстанавливаться всегда, в т.ч. при переходах по страницам и сортировке в `WOLV`.
+Position scrolls the list will always recover, including the page navigation and sorting in `WOLV`. 
 
-### Отображение иерархических данных
+### Displaying hierarchical data 
 
-Основная статья про [иерархический WebObjectListView](fa_wolv-hierarhy.html).
+Main article Pro [hierarchical WebObjectListView](fa_wolv-hierarhy.html). 
 
-### Группировка данных
+### data Grouping 
 
-Основная статья про [группировку данных в WebObjectListView](fa_wolv-group-mode.html).
+Main article Pro [grouping data in WebObjectListView](fa_wolv-group-mode.html). 
 
-### Загрузка данных и EmptyControl
+### data Download and EmptyControl 
 
-Основная статья о [загрузке данных и EmptyControl в WebObjectListView](fa_wolv-empty-control.html).
+The main item on the [loading data and EmptyControl in WebObjectListView](fa_wolv-empty-control.html). 
 
-## Операции
+## Operations 
 
-Основная статья об [операциях WebObjectListView](fa_wolv-operations.html).
+Main article about the [operations WebObjectListView](fa_wolv-operations.html). 
 
-## События
+## Events 
 
-Основная статья про [события WebObjectListView](fa_wolv-events.html).
+Main article Pro [event WebObjectListView](fa_wolv-events.html). 
 
-## Взаимодействие WebObjectListView и формы редактирования
+## Interaction WebObjectListView and edit form 
 
-### Отображение на одной странице списковой формы и формы редактирования
+### Display on one page in list form and edit form 
 
-Отображение на одной странице списковой формы и формы редактирования описано в соответствующей [статье](fa_editor-in-frame.html).
+Display on one page in list form and edit form are described in the corresponding [article](fa_editor-in-frame.html). 
 
-### Создание нового объекта на основе (прототипизация)
+### create a new object based on (prototypical) 
 
-Особенности использования прототипизицаии в `WebObjectListView` описано в [статье Прототипизация для Flexberry ASP.NET](fa_web-data-object-prototyping.html).
+Features of the use of prototypization in `WebObjectListView` described in [article Prototypical for Flexberry ASP.NET](fa_web-data-object-prototyping.html). 
 
-### Варианты открытия формы редактирования при создании\редактировании объекта
+### Options open the edit form when creating\editing a feature 
 
-Основная статья про [открытие формы редактирования](fa_wolv-edit-form.html).
+Main article Pro [editing form](fa_wolv-edit-form.html). 
 
-## Фильтры
+## Filters 
 
-Основная статья про [фильтры WebObjectListView](fa_wolv-filters.html).
+Main article Pro [filters WebObjectListView](fa_wolv-filters.html). 
 
-## Поиск
+## Search 
 
-Основная статья про [поиск в WebObjectListView](fa_wolv-search.html).
+Main article Pro [search WebObjectListView](fa_wolv-search.html). 
 
-## Печать
+## Print 
 
-Существуют настройки WOLV, позволяющие напечатать список или часть списка. Описание настройки печати представлено в статье [Печать списка](fa_print-wolv.html).
+There are settings WOLV, which you can print a list or part list. Description of print settings presented in the paper [Print list](fa_print-wolv.html). 
 
-## Пользовательские настройки WebObjectListView
+## Customizing WebObjectListView 
 
-Инструмент настройки для WebObjectListView описан в [статье WolvSettApplyer](fa_wolv-sett-applyer.html).
+The configuration tool for WebObjectListView described in [article WolvSettApplyer](fa_wolv-sett-applyer.html). 
 
-### Настройка отображения столбцов
+### configuring display columns 
 
-Основная статья про [настройку отображения столбцов WebObjectListView](fa_wolv-columns.html).
+Main article Pro [setting of display columns WebObjectListView](fa_wolv-columns.html). 
 
-### Настройка сортировки
+### sort 
 
-Настройка сортировки списка описана в [статье Сортировка для WebObjectListView](fa_list-sort.html).
+Sort the list described in [article Sorting for WebObjectListView](fa_list-sort.html). 
 
-### Возможность изменения ширины столбцов
+### the ability to change the width of columns 
 
-Пользователь может самостоятельно изменить ширину каждого столбца списка, если установлено свойство `Operations.AllowColumnResizing = true`. Настроенные размеры столбцов сохраняются для каждого пользователя на сервере и восстанавливаются при следующей загрузке страницы.  
-Установленная пользователем ширина столбца более приоритетна, чем значение, указанное в [ViewColumnProvider.xml](fa_view-column-provider.html).  
-При изменении ширины столбцов таблицы исползуется jQuery-плагин [jquery.colresize](fa_jquery-colresize.html).  
-Поведение содержимого ячейки при переполнении по ширине столбца может быть настроено с помощью опции `OperationsWOLV.OverflowWordEllipsis`. Если опция
-установлена в `false` (по умолчанию), то происходит перенос содержимого ячейки на новую строку. Если опция установлена в `true`, то содержимое ячейки обрезается
-и в конец добавляется многоточие.
+The user can change the width of each column in the list if set the property `Operations.AllowColumnResizing = true`. Customized sizes of columns are saved for each user on the server, and restored when the page is loaded. 
+User defined width of the column a higher priority than the value specified in [ViewColumnProvider.xml](fa_view-column-provider.html). 
+If you change the width of table columns used jQuery plugin jquery.colresize](fa_jquery-colresize.html). 
+The behavior of the cell contents overflow the width of the column can be configured with the option `OperationsWOLV.OverflowWordEllipsis`. If the option 
+established in `false` (default), then transfer the contents of a cell on a new line. If the option is set to `true`, the cell content is truncated 
+and in the end added the ellipsis. 
 
-### Добавление кнопки в тулбар и строки
+### Add buttons to the toolbar and row 
 
-Основная статья про [добавление кнопок в тулбар и строки WebObjectListView](fa_wolv-add-button.html).
+The main article about [adding buttons to the toolbar and row WebObjectListView](fa_wolv-add-button.html). 
 
-### Использование собственных контролов для отображения данных
+### Using native controls to display data 
 
-Для использования собственных контролов для отображения данных предназначен [WebControlProvider](fa_web-control-provider.html).
+To use your own controls for display data intended [WebControlProvider](fa_web-control-provider.html). 
 
-### Локализация заголовков атрибутов
+### Localization of the title attributes 
 
-Операцию WOLV `UseLocalizedCaptions` нужно использовать в том случае, если требуется поддержка нескольких языков. Когда она включена, WOLV использует метод `View.GetLocalizedPropertyCaption(propName)`. Чтобы задать локализованные заголовки, нужно:
-* в сборке с объектами создать файл ресурсов `Captions.resx`;
-* задать ему Acess modifier `"Public"`;
-* поместить класс, соответствующий файлу ресурсов, в пространство имен `"<namespace сборки>.ObjectsResources"` (можно сразу создавать файл в папке `ObjectsResources`);
-* для каждого локализуемого заголовка добавить строчки с ключами вида: `"<namespace сборки>_<класс>_<имя представления>_<имя атрибута>"`, причем в пространстве имен сборки нужно заменить точки на "_";
-* в этом же пространстве имен для каждой культуры создать свой файл ресурсов.
+Operation WOLV `UseLocalizedCaptions` you want to use if you need to support multiple languages. When it is enabled, WOLV uses the `View.GetLocalizedPropertyCaption(propName)`. To specify localized titles, you need to: 
+* Assembly objects to create a resource file `Captions.resx`; 
+* ask him Acess modifier `"Public"`; 
+* place an appropriate resource file in the namespace `"<Assembly namespace>.ObjectsResources"` (you can create a file in the folder `ObjectsResources`); 
+* for each localizable to add header lines with keys of the form: `"<Assembly namespace>_<class>_<view name>_<attribute name>"`, and in the namespace of the Assembly you need to replace the dots with "_"; 
+* in the same namespace for each culture to create a resource file.
 
-Если нужно задать заголовок независимо от представления, то вместо имени преставления следует написать "DefCaption". __Например:__ `"IIS_КошкиСЛапами_Кошка_DefCaption_Кличка"`.
+If you want to set the title, regardless of the view, instead of the name of repose, they should write "DefCaption". __Example:__ `"IIS_КошкиСЛапами_Кошка_DefCaption_кличка"`. 
 
-### Формат данных
+### data Format 
 
-Для того чтобы отобразить данные в определенном формате, можно написать отдельный контрол.  
-Также, есть возможность задать свойству атрибут `System.ComponentModel.DataAnnotations.DisplayFormat`.
+In order to display data in a specific format, you can write a separate control. 
+Also, it is possible to set the attribute `System.ComponentModel.DataAnnotations.DisplayFormat`. 
 
-Пример:
+Example: 
 
 ```csharp
-/// <summary>
-/// Курс реабилитации
-/// </summary>
-// *** Start programmer edit section *** (КурсРеабилитации.ВыраженностьОграниченийЗначение CustomAttributes)
+/// <summary> 
+/// Rehabilitation 
+/// </summary> 
+// *** Start programmer edit section *** (Surreality.Virginmobileringtone CustomAttributes) 
 [System.ComponentModel.DataAnnotations.DisplayFormat(DataFormatString = "F2")]
-// *** End programmer edit section *** (КурсРеабилитации.ВыраженностьОграниченийЗначение CustomAttributes)
+// *** End programmer edit section *** (Surreality.Virginmobileringtone CustomAttributes) 
 public virtual System.Nullable<System.Double> ВыраженностьОграниченийЗначение
 {
     get
     {
-        //...
+        //... 
     }
     set
     {
-        //...
+        //... 
     }
 }
-```
+``` 
 
-#### Формат даты и времени
+#### Format date and time 
 
-* Формат даты, отображаемой в ячейке может быть настроен с помощью атрибута DisplayFormatAttribute:
+* The format of the date displayed in the cell can be configured using the DisplayFormatAttribute attribute: 
 
 ```csharp
 [DisplayFormat(DataFormatString = "yyyy.MM")]
 public virtual System.DateTime OnlyDate
-```
+``` 
 
-Чтобы это работало, дата должна отображаться в ячейке WOLV с помощью стандартного компонента (т.е. если компонент не переопределен в WebControlProvider.xml).
+For this to work, the date should appear in cell WOLV using the standard component (i.e. if the component is not overridden in WebControlProvider.xml). 
 
-* Если в `WebControlProvider.xml` задан пользовательский компонент для отображения дат (например, `FormattedDateTimeControl`), то формат должен быть настроен непосредственно в компоненте (с помощью `WebControlProvider.TuneControlDelegateMethod`).  
-Либо можно создать новый компонент, унаследованный от `FormattedDateTimeControl`, переопределив  свойство `Format`, и указать его в `WebControlProvider.xml`.
-* Если в `WebControlProvider.xml` задан пользовательский компонент для отображения дат, но при этом хочется, чтобы для конкретного свойства работал атрибут
-  `DisplayFormatAttribute`, то в `WebControlProvider.xml` необходимо сбросить пользовательский компонент для этого свойства:
+* If `WebControlProvider.xml` set a custom component for displaying dates (e.g., `FormattedDateTimeControl`), then the format should be set directly in the component (using the `WebControlProvider.TuneControlDelegateMethod`). 
+Or you can create a new component, inherited from `FormattedDateTimeControl` by overriding the property `Format`, and specify `WebControlProvider.xml`. 
+* If `WebControlProvider.xml` set a custom component for displaying dates, but want to for a specific property, attribute worked 
+`DisplayFormatAttribute`, `WebControlProvider.xml` you must reset a custom component for this property: 
 
 ```xml
 <customproperty class="DatePickerTest" property="OnlyDate">
     <control typename="" property="" codefile="" />
 </customproperty>
-```
+``` 
 
-#### Формат даты и времени с использованием дополнительного класса
+#### Format date and time using the additional class 
 
-* Способ задания формата для даты и времени без использования атрибута DataFormatString.  
-Необходимо создать новый класс:  
+* How to specify format for date and time without using the DataFormatString attribute. 
+You must create a new class: 
 
 ```csharp 
-/// <summary>
-/// Вспомогательный класс для вывода даты в формате "HH:mm".
-/// </summary>
+/// <summary> 
+/// Helper class to display the date in the format "HH:mm". 
+/// </summary> 
 public sealed class DateTimeFormattedHHmm : FormattedDateTimeControl
 {
-    /// <summary>
-    /// Метод установки формата даты.
-    /// </summary>
+    /// <summary> 
+    /// Method to set the date format. 
+    /// </summary> 
     public DateTimeFormattedHHmm()
     {
         Format = "HH:mm";
@@ -215,46 +217,50 @@ public sealed class DateTimeFormattedHHmm : FormattedDateTimeControl
 } 
 ``` 
 
-Так же необходимо внести изменения в `WebControlProvider.xml`:  
+It is also necessary to amend `WebControlProvider.xml`: 
 
 ```xml 
 <customproperty class="TestDataTimeClassObject" property="poleDateTime">
     <control typename="WebFormsTestStand.Forms.Controls.WOLV.AppearanceTests.DateTimeFormattedHHmm, TestStand(ASP.NET Application)" property="Text" codefile="" />
 </customproperty> 
-```
+``` 
 
-## Редактор ограничений
+## the constraint Editor 
 
-Подробно о редакторе ограничений изложено в [статье Расширенный редактор ограничений для Flexberry ASP.NET](fa_advanced-limit-editor.html).
+Details about editor limitations set forth in [article Advanced editor restrictions Flexberry ASP.NET](fa_advanced-limit-editor.html). 
 
-* `WOLV` проводит индикацию наложенного ограничения в углу. Если имя ограничения известно, то оно будет выводиться. Если нет - то будет отображаться сообщение, что список ограничен.  
-__Внимание:__ если при работе в редакторе ограничений сохранить ограничение, а потом его применить, то это не гарантирует, что было применено именно то ограничение, что было сохранено, поэтому имя ограничения на списке выведено не будет.
+* `WOLV` holds the indication is restricted in the corner. If a constraint name is known, it will be displayed. If not - it will display a message that the list is limited. 
+__Attention:__ if you are working in the editor constraints to keep the constraint, and then to apply it, it does not guarantee that was applied is the constraint that has been preserved, so the constraint name on the list not displayed. 
 
-* Для ускорения работы контрола можно добавить [кэширование сохраненных ограничений](fa_wolv-adv-limit-caching.html).
+* For speed control, you can add [caching saved limitations](fa_wolv-adv-limit-caching.html). 
 
-## Сервис данных WOLV
+## data Service WOLV 
 
-Основная статья про [сервис данных WebObjectListView](fa_wolv-data-service.html).
+Main article Pro [service data WebObjectListView](fa_wolv-data-service.html). 
 
-## Экспорт в Excel и XML
+## Export to Excel and XML 
 
-Экспорт из WebObjectListView в Excel описан в соответствующей [статье](fa_wolv-export-excel.html).  
-Экспорт в Excel и XML описан в соответствующей [статье](fa_export-excel-xml.html).
+Exports from WebObjectListView in Excel is described in the corresponding [article](fa_wolv-export-excel.html). 
+Export to Excel and XML are described in the corresponding [article](fa_export-excel-xml.html).
 
-## Поведение флажков выбора элементов
+## the Behavior of the checkboxes to select items 
 
-Основная статья про [поведение флажков выбора элементов WebObjectListView](fa_wolv-check-boxes.html).
+The main article about [the behavior of the check boxes to select items WebObjectListView](fa_wolv-check-boxes.html). 
 
-## JS API
+## JS API 
 
-Основная статья про [JavaScript API для WebObjectListView](fa_js-api-wolv.html).
+Main article about the [JavaScript API for WebObjectListView](fa_js-api-wolv.html). 
 
-## Советы
+## Tips 
 
-1. ID WOLV лучше заполнять **латинскими символами** - это связано с тем, что ID WOLV часто отображается в адресной строке браузера и киррилические символы декодирются, занимая очень много места в URL страницы. `WOLV` никак не связан с WebBinder, поэтому ID можно задавать как удобно.
-2. Всегда оборачивайть настройку `WOLV` через [WolvSettApplyer](fa_wolv-sett-applyer.html):
+1. ID WOLV better to fill in the **Latin characters** is due to the fact that ID WOLV often displayed in the address bar of the browser and the Cyrillic characters dekogida, occupying a lot of space in the page URL. `WOLV` nothing to do with WebBinder, so ID can be set as convenient. 
+2. Always abrasivity setting `WOLV` [WolvSettApplyer](fa_wolv-sett-applyer.html): 
 
 ```csharp
 var wsa = new WOLVSettApplyer();
 wsa.SettingsApply(WebObjectListView1);
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

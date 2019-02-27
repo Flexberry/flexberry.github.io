@@ -1,16 +1,16 @@
----
-title: Apache Cordova
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_cordova.html
-folder: guides/base-tech/mobile/
+--- 
+title: Apache Cordova 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_cordova.html 
+folder: guides/base-tech/mobile/ 
 lang: en 
 autotranslated: true 
-hash: 46917d3743e6686eb5d3f75b8bad89715d4c3874b3a174643da8c991da6003f9
----
+hash: 4b6b394f0ca1ff1f075f48f10bcf126174cb65df3b7f6d2c923ea36a18e20631 
+--- 
 
-## Brief description
+## Brief description 
 
 **Apache Cordova** (old name PhoneGap) mobile application development environment, originally developed by Nitobi. Adobe Systems acquired Nitobi in 2011 and rebranded PhoneGap released version of the open source software called Apache Cordova. 
 
@@ -18,41 +18,41 @@ Apache Cordova allows you to create applications for mobile devices using CSS3, 
 
 The resulting application is hybrid, which means that they are neither truly mobile application (because all layout generation are using the web view instead of the main structure of the user interface platform) or the web because they are not only web application, but packaged as apps for distribution and have access to the API the basic functions of the device, such as a file system, camera, etc.). 
 
-The software was previously called just "PhoneGap", then "Apache Cordova". As open-source Apache Cordova is used in other programs such as Appery.io or Intel XDK.
+The software was previously called just "PhoneGap", then "Apache Cordova". As open-source Apache Cordova is used in other programs such as Appery.io or Intel XDK. 
 
-## Links to materials for the study
+## Links to materials for the study 
 
-### Basic course
+### Basic course 
 
-* [Official documentation for the Apache Cordova](https://cordova.apache.org/docs/en/latest/)
+* [Official documentation for the Apache Cordova](https://cordova.apache.org/docs/en/latest/) 
 
-### Video
+### Video 
 
-* [Getting Started with Apache Cordova Mobile App Development](https://www.youtube.com/playlist?list=PLReL099Y5nRd9BNsMZwXvTDeqnfRMiGJy)
-* [Getting Started with Cross-Platform Mobile Development with Apache Cordova](https://www.youtube.com/watch?v=3wMzrBgQqDM)
-* [Top videos for 'apache cordova'](https://www.youtube.com/watch?v=3wMzrBgQqDM&list=PLFqy-mg1Mw0-QlKsuglFYowV5A0x9lNu0)
+* [Getting Started with Apache Cordova Mobile App Development](https://www.youtube.com/playlist?list=PLReL099Y5nRd9BNsMZwXvTDeqnfRMiGJy) 
+* [Getting Started with Cross-Platform Mobile Development with Apache Cordova](https://www.youtube.com/watch?v=3wMzrBgQqDM) 
+* [Top videos for 'apache cordova'](https://www.youtube.com/watch?v=3wMzrBgQqDM&list=PLFqy-mg1Mw0-QlKsuglFYowV5A0x9lNu0) 
 
-### Presentation
+### Presentation 
 
-<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px">
-<iframe src="https://www.youtube.com/embed/FiItIyVniJo?ecver=2" width="854" height="480" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen>
-</iframe>
-</div>
+<div class="thumb-wrap" style="margin-top: 20px; margin-bottom: 20px"> 
+<iframe src="https://www.youtube.com/embed/FiItIyVniJo?ecver=2" width="854" height="480" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen> 
+</iframe> 
+</div> 
 
-### Recommended books
+### Recommended books 
 
-* [Apache Cordova API Cookbook (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Cookbook-Mobile-Programming/dp/0321994809)
-* [Apache Cordova 4 Programming (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Programming-Mobile/dp/0134048199/ref=pd_lpo_sbs_14_t_1/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA)
-* [Apache Cordova in Action](https://www.amazon.com/Apache-Cordova-Action-Raymond-Camden/dp/1633430065/ref=pd_lpo_sbs_14_t_0/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA)
+* [Apache Cordova API Cookbook (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Cookbook-Mobile-Programming/dp/0321994809) 
+* [Apache Cordova 4 Programming (Mobile Programming)](https://www.amazon.com/Apache-Cordova-Programming-Mobile/dp/0134048199/ref=pd_lpo_sbs_14_t_1/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA) 
+* [Apache Cordova in Action](https://www.amazon.com/Apache-Cordova-Action-Raymond-Camden/dp/1633430065/ref=pd_lpo_sbs_14_t_0/142-6513688-8635118?_encoding=UTF8&psc=1&refRID=YE8HJYP4YAHXNVY8ZYJA) 
 
-## Software
+## Software 
 
-* [Apache Cordova](https://cordova.apache.org/#getstarted)
-* [Microsoft Visual Studio](https://www.visualstudio.com/ru/)
+* [Apache Cordova](https://cordova.apache.org/#getstarted) 
+* [Microsoft Visual Studio](https://www.visualstudio.com/ru/) 
 
-## Go
+## Go 
 
-* [GIS](gbt_gis.html)
+* [GIS](gbt_gis.html) 
 * [Course home page](gbt_landing-page.html)
 
 

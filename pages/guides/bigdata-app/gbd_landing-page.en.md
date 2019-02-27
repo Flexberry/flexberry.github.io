@@ -6,7 +6,7 @@ toc: false
 permalink: en/gbd_landing-page.html 
 lang: en 
 autotranslated: true 
-hash: 96b0083f7fa58d0cd1d8d097a595dfc55d851139dd084fe502310e279c115cd6 
+hash: f950ae20fd067c900b3b98ea841200235b17bd586a4a912ee80683e191cef210 
 summary: a Course on creating applications with the capabilities of storing and processing big data on the platform Flexberry. 
 --- 
 

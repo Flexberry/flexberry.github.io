@@ -1,70 +1,72 @@
----
-title: Экспорт данных из WebObjectListView в Excel
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Reports, БД
-toc: true
-permalink: en/fa_wolv-export-excel.html
-lang: en
----
+--- 
+title: Export data to Excel from WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Reports, database 
+toc: true 
+permalink: en/fa_wolv-export-excel.html 
+lang: en 
+autotranslated: true 
+hash: 1d6ec13ca4c9cadc78c64d04a431d17b350ec8a5e07163983e89c91c00c9384d 
+--- 
 
-## Выгрузка в Excel (инструкция для программиста)
+## download to Excel (instructions to the programmer) 
 
-[WebObjectListView](fa_web-object-list-view.html) позволяет выгружать данные в формате Excel.
+[WebObjectListView](fa_web-object-list-view.html) allows to download data in Excel format. 
 
-Эта функция включается операцией:
+This feature is included with the operation: 
 
 ```csharp
-/// <summary>
-/// Вызывается самым первым в Page_Load.
-/// </summary>
+/// <summary> 
+/// Called the first in the Page_Load. 
+/// </summary> 
 protected override void Preload()
 {
     WebObjectListView1.Operations.ExportToExcel = true;
 }
-```
+``` 
 
-### Представление для экспорта
+### the View to export 
 
-Задать [представление](fd_view-definition.html), используемое по умолчанию для экспорта, можно из кода, установив поле `ExportView` у [WOLV](fa_web-object-list-view.html):
+Ask a [view](fd_view-definition.html), the default for export is possible from code by setting the `ExportView` [WOLV](fa_web-object-list-view.html): 
 
 ```csharp
 WebObjectListView1.ExportView = Клиент.View.КлиентExport;
-```
+``` 
 
-### Выгрузка детейлов
+### Unloading of datalow 
 
-Выгрузка детейлов осуществляется в том случае, если они присутствуют в [представлении](fd_view-definition.html). Пользователь может настроить параметры детейлового столбца также, как и остальные свойства объекта.
+Unloading of datalow occurs if they are present in a [view](fd_view-definition.html). The user can configure the settings metalowego column as well as other properties of the object. 
 
-Существует 2 настройки на [web-форме редактирования](fa_editform.html) для управления выгрузкой детейлов.
+There are 2 settings on the [web edit](fa_editform.html) to control the unloading of detailov. 
 
-1. Поля детейлов в отдельные столбцы.
-2. Детейлы в отдельные строки.
+1. Detailov fields in separate columns. 
+2. Detaily in a single row. 
 
-* Если ни 1 из настроек не выставлена, то детейлы выгружаются в 1 ячейку в строку:
-    
-| Аггрегатор | Детейл|
-|------------|--------|
-| Поле аггрегатора | Детейл: Поле 1го детейла; Детейл: Поле 2го детейла; Детейл: Поле 3го детейла;|
+* If 1 of the settings is not set, then detaily unloaded in 1 cell in the line: 
 
-* Если выставлена настройка `Поля детейлов в отдельные столбцы`, то детейлы выгружаются в 1 ячейку в столбец:
-    
-| Аггрегатор | Детейл|
-|------------|---------|
-| Поле аггрегатора | Поле 1го детейла|
-||Поле 2го детейла|
-||Поле 3го детейла|
+| Aggregator | Detail| 
+|------------|--------| 
+| Field of the aggregator | Detail: 1st Field детейла; Detail: Field детейла; Detail 2nd: Field 3rd детейла;| 
 
-* Если выставить обе настройки сразу, то каждый детейл будет выводиться в новую строку, а поля агрегатора с различных строк объединятся в 1 ячейку:
+* If there is a setting `Поля of datalow in a separate столбцы`, detaily unloaded in 1 cell in a column: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/two-options.png)
+| Aggregator | Detail| 
+|------------|---------| 
+| Aggregator field | Field 1st of detail| 
+||2nd field of detail| 
+||3rd field of detail| 
 
-* Выставлять только настройку `Детейлы в отдельные строки`, пока бессмысллено, ведется доработка данной настройки.
+* If you set both settings at once, each detail will be displayed in a new line, and a field aggregator with different strings will be merged into 1 cell. 
 
-__Примечание__: если в представление у поля детейла не задан заголовок, то в качестве заголовка поля при выгрузке будет использоваться имя поля.
+![](/images/pages/products/flexberry-aspnet/controls/wolv/two-options.png) 
 
-### Сервис данных
+* To set only the setting `Детейлы in a separate строки` until bessmyslenno, conducted a revision this setting. 
 
-По умолчанию для выгрузки в Excel используется сервис данных `DataServiceProvider.DataService`. Если требуется задать другой, отдельный сервис данных для выгрузки в Excel, то это может быть сделано в `Web.config` путем регистрации сервиса под именем `ExcelExportDataService` в `Unity`. Пример конфигурации, чтобы для выгрузки в Excel использовался сервис данных `IcsharpSoft.STORMNET.Business.DRDataService`:
+__Note__: if you have an idea of the field of detail not specified title as the title field when uploading, you will use the field name. 
+
+### data Service 
+
+The default for the Excel spreadsheets used the data service `DataServiceProvider.DataService`. If you want to ask another, separate service data to unload in Excel, this can be done in `Web.config` by registering a service under the name `ExcelExportDataService` in `Unity`. The example configuration below for the Excel spreadsheets used the data service `IcsharpSoft.STORMNET.Business.DRDataService`: 
 
 ```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
@@ -74,11 +76,11 @@ __Примечание__: если в представление у поля д�
     </register>
   </container>
 </unity>
-```
+``` 
 
-#### Огриничение на максимальное количество объектов
+#### Ogranichenie on the maximum number of objects 
 
-Для настройки максимального количества экспортируемых объектов следует вопспользоваться параметром конфигурации `WOLVExportLimit`:
+To configure the maximum number of exported objects should be vopspolzovatsya configuration parameter `WOLVExportLimit`: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -87,45 +89,49 @@ __Примечание__: если в представление у поля д�
     <add key="WOLVExportLimit" value="10000" />
   </appSettings>
 </configuration>
-```
+``` 
 
-Отрицательные значения параметра и 0 отключают ограничение на максимальное количество экспортируемых объектов.
+Negative values of the parameter, and 0 disables the limit on the maximum number of exported objects. 
 
-### Добавление таблицы для хранения настроек
+### adding a table for storing settings 
 
-Чтобы добавить в базу данных таблицу для хранения пользовательских настроек, необходимо иметь структуру данных, используемую [UserSettingsService](fa_user-settings-service.html). Таблица генерируется автоматически.
+To add a database table to store user settings, you must have a data structure that is used [UserSettingsService](fa_user-settings-service.html). The table is generated automatically. 
 
-## Выгрузка в Excel (инструкция для пользователя)
+## download to Excel (user manual) 
 
-Для выгрузки данных из списка необходимо нажать на кнопку `Выгрузить в Excel` ![](/images/pages/products/flexberry-aspnet/controls/wolv/export-button.png) на панели инструментов, в открывшемся окне настроить формат выгружаемых данных и подтвердить выгрузку, нажав на кнопку `OK`.
+To unload data from a list, click on `Выгрузить in Excel` ![](/images/pages/products/flexberry-aspnet/controls/wolv/export-button.png) on the toolbar, in the opened window configure the format of uploaded data and confirm the unload by clicking on the button `OK`. 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/export-form.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/export-form.png) 
 
-На форме можно:
+On the form you can: 
 
-* Указать видимость полей, установив или сняв флажок в левой части каждой строки.
-* Указать направление сортировки (без сортировки, по возрастанию или по убыванию) для каждого столбца данных.
-* Указать приоритет сортировки (если указана одна из сортировок)
-* Указать название столбца данных
-* Поменять порядок следования столбцов данных
-    * При помощи кнопок `вверх` и `вниз` в правой части каждой строки
-    * Или при помощи перетаскивания строк
+* Specify the visibility of the fields by selecting or deselecting the check box at the left of each row. 
+* Specify the direction of the sort (no sorting, ascending or descending) for each column of data. 
+* To specify the sort priority (if one of the sorts) 
+* Specify the name of the data column 
+* To change the order of columns of data 
+* The buttons `вверх` and `вниз` the right side of each row 
+* Or by dragging rows 
 
-По умолчанию выгружаются все данные, содержащиеся в списке с учётом наложенных фильтров и сортировки. 
+By default, unloaded all data contained in the list subject to the imposed filters and sorting. 
 
-Если в списке выделить какие-либо записи при помощи галочек, то будут выгружаться только выбранные записи.
+If you highlight any record with ticks, it will be loaded only the selected records. 
 
-Созданные настройки выгрузки можно сохранять для последующего применения. Настройки задаются отдельными пользователями и не могут быть опубликованы для других пользователей.
+Setting of discharge can be saved for later use. The settings are individual users and cannot be shared with other users. 
 
-Для создания настройки необходимо выбрать пункт меню `Создать набор полей для экспорта...`. В открывшемся окне необходимо произвести необходимую настройку, указать наименование настройки и нажать кнопку `Сохранить`. Сохраненные настройки доступны из меню списка. При выборе сохраненной настройки автоматически будет предложено сохранить Excel-файл.
+To create a configuration, you must select the menu item `Создать set of fields for export...`. In the opened window it is necessary to produce the necessary configuration, specify the name of the configuration and click `Сохранить`. Saved settings are available from the list menu. When you select a saved settings are automatically prompted to save the Excel file. 
 
-Отредактировать или удалить настройки можно при выборе соответствующего пункта меню.
+To edit or delete settings can be set by selecting the appropriate menu item. 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/export-menu.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/export-menu.png) 
 
-Файлы выгружаются в XML, интерпретируемый `Microsoft Excel`, расширение у файла выставлено как *.xls (стандартное расширение документов MS Excel). При открытии
-полученного файла в Excel выведется предупреждение:
+Files are uploaded in XML, which is interpreted `Microsoft Excel`, the file extension is exposed as *.xls (the default extension of Excel documents). When you open 
+the resulting file in Excel you will see the following warning: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/export-warning.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/export-warning.png) 
 
-{% include note.html content="Если авторизация выключена или не работает, то возможность создания настроек будет отключена." %}
+{% include note.html content="If authentication is turned off or not working then the possibility of creating settings will be disabled." %} 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

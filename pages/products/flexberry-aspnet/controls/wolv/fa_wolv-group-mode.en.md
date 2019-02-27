@@ -1,98 +1,104 @@
----
-title: Режим группировки данных по заданному полю
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_wolv-group-mode.html
-lang: en
----
+--- 
+title: Mode of grouping data by the specified field 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_wolv-group-mode.html 
+lang: en 
+autotranslated: true 
+hash: eca6384b5cea69d4a35a56fc9843b1a250563ebc6d93d10bf7fc0ef399bc8bab 
+--- 
 
-## Включение режима группировки данных
-Для WebObjectListView предусмотрен режим отображения данных с группировкой по заданному полю, в котором все доступные данные
-будут загружаться не постранично, а все сразу на единственной странице, при этом данные будут сгруппированы
-по значениям заранее заданного свойства объектов.
+## mode group data 
+For WebObjectListView mode display data grouped by the specified field, in which all available data 
+will not load page by page, and all at once on a single page, the data will be grouped 
+according to values of predetermined properties of objects. 
 
-Режим группировки данных по заданному полю можно включить из behind-кода страницы, проставив у контрола настройку GroupByProperty.
+The mode of grouping data by the specified field can be enabled from the behind code page by checking the control setting GroupByProperty. 
 
 ```csharp
-/// <summary>
-/// Вызывается самым первым в Page_Load.
-/// </summary>
+/// <summary> 
+/// Called the first in the Page_Load. 
+/// </summary> 
 protected override void Preload()
 {
-    // Зададим свойство, по которому будет осуществляться группировка.
+    // Define the property that will be implemented by the group. 
     WebObjectListView1.GroupByProperty = Information.ExtractPropertyPath<Квартира>(x => x.ВидОтделки);
     
-    // Укажем, что хотим, чтобы на панели инструментов присутствовала кнопка включения/отключения режима группировки данных.
-    // Эта кнопка не обязательна, группировка будет рабатать и без нее.
+    // Indicate that you want the toolbar present button on/off mode of the group data. 
+    // This button is not mandatory, the group will handle without it. 
     WebObjectListView1.Operations.ToggleGroupByModeToolbarButton = true;
 }
-```
+``` 
 
-После загрузки списка он будет выглядеть следующим образом:
+After you download the list it will look like the following: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode1.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode1.png) 
 
-## Включение режима группировки данных по иерархическому мастеру
-При группировке данных по полю иерархического мастера, может быть удобным, если для групп также будет выстроена иерархия.
-Для WebObjectListView предусмотрен такой режим группировки данных.
-Чтобы включить режим группировки данных по иерархическому мастеру необходимо задать несколько свойств контрола в behind-коде страницы
- 
+## mode group data in a hierarchical wizard 
+Grouping data by a hierarchical field in the wizard can be handy if groups will also be arranged hierarchy. 
+WebObjectListView provided for this mode of grouping the data. 
+To enable grouping of data in a hierarchical wizard, you must set several properties of a control in behind-code page 
+
 ```csharp
-/// <summary>
-/// Вызывается самым первым в Page_Load.
-/// </summary>
+/// <summary> 
+/// Called the first in the Page_Load. 
+/// </summary> 
 protected override void Preload()
 {
-    // Зададим иерархического мастера, по которому будет осуществляться группировка.
+    // Define a hierarchical wizard, which will be implemented by the group. 
     WebObjectListView1.GroupByProperty = Information.ExtractPropertyPath<Квартира>(x => x.Дом.Город);
     
-    // Зададим свойство иерархии внутри заданного иерархического мастера.
+    // Define a property hierarchy within a set of hierarchical master. 
     WebObjectListView1.GroupByPropertyHierarchy = Information.ExtractPropertyPath<Город>(x => x.Иерархия);
     
-    // Зададим подпись к группе записей,  в которых не выбран мастер.
-    // Эта настройка опциональна, если она не задана, то будет использовано значение по умолчанию.
-    WebObjectListView1.GroupByPropertyUndefinedText = "Квартиры с домами в неопределенных городах";
+    // Set the caption for the group of records in which the selected master. 
+    // This setting is optional, if not set, then it will use the default value. 
+    WebObjectListView1.GroupByPropertyUndefinedText = "Apartment houses in the uncertain cities";
 }
-```
+``` 
 
-После загрузки списка он будет выглядеть следующим образом:
+After you download the list it will look like the following: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode2.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode2.png) 
 
-## Настройка подписей в заголовках групп
-По умолчанию подписи в заголовках групп формируются из наименований видимых полей, относящихся к свойству группировки, и их значений разделенных двоеточием (Имя поля: значение поля у записей в группе Имя другого поля: значение поля у записей в группе ...).
+## setting of signatures in the group headers 
+By default, the signature in the headers of the groups are formed from the names of the visible fields pertaining to property groups and their values separated by a colon (the field Name: field value from records in the group the Name of another field: the field value of the records in the group ...). 
 
-При необходимости, подписи в заголовках групп можно гибко настраивать, для этого предусмотрен специальный делегат GroupByPropertyGetCaption.
+If necessary, the signature in the headers of the groups can be flexibly configured, this is a special delegate GroupByPropertyGetCaption. 
 
 ```csharp
-/// <summary>
-/// Вызывается самым первым в Page_Load.
-/// </summary>
+/// <summary> 
+/// Called the first in the Page_Load. 
+/// </summary> 
 protected override void Preload()
 {
-    // Зададим иерархического мастера, по которому будет осуществляться группировка.
+    // Define a hierarchical wizard, which will be implemented by the group. 
     WebObjectListView1.GroupByProperty = Information.ExtractPropertyPath<Квартира>(x => x.Дом.Город);
     
-    // Зададим свойство иерархии внутри заданного иерархического мастера.
+    // Define a property hierarchy within a set of hierarchical master. 
     WebObjectListView1.GroupByPropertyHierarchy = Information.ExtractPropertyPath<Город>(x => x.Иерархия);
     
-    // Зададим подпись к группе записей,  в которых не выбран мастер.
-    // Эта настройка опциональна, если она не задана, то будет использовано значение по умолчанию.
-    WebObjectListView1.GroupByPropertyUndefinedText = "Квартиры с домами в неопределенных городах";
+    // Set the caption for the group of records in which the selected master. 
+    // This setting is optional, if not set, then it will use the default value. 
+    WebObjectListView1.GroupByPropertyUndefinedText = "Apartment houses in the uncertain cities";
     
-    // Определим прикладной способ формирования подписей в строках, которые являются заголовками групп.
+    // Define the application method of forming signatures in the rows which are headings of groups. 
     WebObjectListView1.GroupByPropertyGetCaption = (WolvGroupByCaptionData captionData) =>
     {
         int cityNameIndexInView = captionData
             .RowContext
             .ViewToDisplay.GetPropertyIndex(Information.ExtractPropertyPath<Квартира>(x => x.Дом.Город.Наименование));
 
-        return $"Квартиры с домами в городе \"{captionData.DataObject.ObjectedData[cityNameIndexInView]}\"";
+        return $"Apartment houses in the city \"{captionData.DataObject.ObjectedData[cityNameIndexInView]}\"";
     };
 }
-```
+``` 
 
-После загрузки списка он будет выглядеть следующим образом:
+After you download the list it will look like the following: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode3.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/group-by-mode3.png) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

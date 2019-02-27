@@ -1,18 +1,23 @@
----
-title: Ограничения с параметрами для программиста
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Ограничения
-toc: true
-permalink: en/fa_limit-parameters-developer.html
-lang: en
----
+--- 
+title: Constraints with parameters for the programmer 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Restrictions 
+toc: true 
+permalink: en/fa_limit-parameters-developer.html 
+lang: en 
+autotranslated: true 
+hash: aba2bd836f0ff32ad3c841c0f1328def3fee876ed8acc655379db62e23d6e21b 
+--- 
 
-Проблема применения ограничений с параметрами заключается в необходимости подставить конкретные значения параметров в ограничение до генерации списка, происходящей в Page_Load [WOLV](fa_web-object-list-view.html).
-При необходимости получения значений параметров WOLV отображает динамически генерируемую [форму ввода параметров](fa_limit-parameters-user.html), после ввода значений которых список может быть отображен. Дополнительную сложность вызывает тот факт, что до Page_Load WOLV неопределенны некоторые из его свойств (например, View).
+The problem of applying constraints to parameters is necessary to substitute specific values of parameters in the restriction to generate a list of what is happening in the Page_Load [WOLV](fa_web-object-list-view.html). 
+If you need parameter values WOLV displays a dynamically generated [input parameters](fa_limit-parameters-user.html), after entering the values that the list can be displayed. An additional complication is the fact that before the Page_Load WOLV uncertain, some of its properties (e.g., View). 
 
-Схема обработки ограничения c параметрами:
+The flow limitation parameters: 
 
-1. В Page_Init WOLV установить, есть ли у текущего ограничения параметры. Если есть, то вместо списка отображать контрол `WolvParametersInputControl`, которому передается список параметров, для каждого из которых динамически генерируется контрол для ввода значения.
-2. При нажатии на контроле `WolvParametersInputControl` кнопки `Применить ограничение`, значения параметров подставляются в ограничение. Список отображается штатным образом. Введенные значения сохраняются в сессию.
+1. In the Page_Init WOLV to establish whether the current restrictions settings. If so, instead of a list display control `WolvParametersInputControl` that retrieves a list of parameters, each of which is dynamically generated control to enter the value. 
+2. When clicking on the control button `WolvParametersInputControl` `Применить ограничение`, parameter values are substituted into the constraint. The list is displayed in a regular way. Entered values are saved in session. 
 
-Текущея реализация не предполагает наличие параметров в ограничении наложенном программистом.
+Ecosea implementation does not imply the existence of parameters in the restriction imposed by the programmer.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

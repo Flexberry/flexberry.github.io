@@ -1,32 +1,34 @@
----
-title: Экспорт данных из ODataService в Excel
-sidebar: flexberry-analytics_sidebar
-keywords: ODataService, Excel, export
-toc: true
-permalink: en/fan_odata-export-to-excel.html
-lang: en
-summary: Параметры, настройка файла конфигурации и примеры использования
----
+--- 
+title: Export data to Excel from the ODataService 
+sidebar: flexberry-analytics_sidebar 
+keywords: ODataService, Excel, export 
+toc: true 
+permalink: en/fan_odata-export-to-excel.html 
+lang: en 
+autotranslated: true 
+hash: bbbeb5966e09b8b2ceabe6ddac1ce626059eafc29ddaa5b8087b5117adc41bdb 
+summary: Parameters, configuration, configuration file, and examples of usage 
+--- 
 
-## Параметры строки запроса к ODataService
+## the query string Parameters to the ODataService 
 
-Включение режима экспорта в Excel происходит, если в строке запроса установлен параметр `exportExcel=true`.
+Enabling the export to Excel happens when the query string is set `exportExcel=true`. 
 
-В запросе на получение документа Excel должны присутствовать следующие параметры для установки свойств в `ExportParams`:
+In request to get the Excel document should contain the following parameters to set properties in `ExportParams`: 
 
-* `colsOrder` - используется для установки порядка колонок в свойствах PropertiesOrder и HeaderCaptions
-* `detSeparateCols` -  используется для установки свойства DetailsInSeparateColumns
-* `detSeparateRows` - используется для установки свойства DetailsInSeparateRows
+* `colsOrder` - used to set the order of columns in the properties PropertiesOrder and HeaderCaptions 
+* `detSeparateCols` - used to set properties DetailsInSeparateColumns 
+* `detSeparateRows` - used to set properties DetailsInSeparateRows 
 
-Пример строки запроса к ODataService:
+Example query string to the ODataService: 
 
 ```http
-http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название/НазваниеCAPTION&detSeparateCols=false&detSeparateRows=false&$filter=contains(Название,'1')
-```
+http://localhost/odata/Strana?exportExcel=true&colsOrder=Nazvanie/НазваниеCAPTION&detSeparatecols=false&detSeparateRows=false&$filter=contains(Nazvanie,'1') 
+``` 
 
-В строке запроса могут присутствовать любые другие параметры, которые необходимы в реализации интерфейсов экспорта данных в Excel - `IODataExportService` и `ISpreadsheetCustomizer`. [Тест с примером реализации данных интерфейсов](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService/tree/develop/Tests/NewPlatform.Flexberry.ORM.ODataService.Tests/CRUD/Read/Excel).
+In the query string can be of any other settings that are needed in the implementation of interfaces to export data to Excel - `IODataExportService` and `ISpreadsheetCustomizer`. [Test example implementation of the data interfejsow](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService/tree/develop/Tests/NewPlatform.Flexberry.ORM.ODataService.Tests/CRUD/Read/Excel). 
 
-## Настройка файла конфигурации
+## setup configuration file 
 
 ```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
@@ -37,11 +39,11 @@ http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название
 </container>
 <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
 </unity>
-```
+``` 
 
-### Настройка файла конфигурации без использования дополнительных параметров
+### setting of the configuration file without the use of additional parameters 
 
-Настройка файла конфигурации для базовой функциональности без использования дополнительных параметров запроса HTTP и без необходимости реализации интерфейсов экспорта данных в Excel - `IODataExportService` и `ISpreadsheetCustomizer`.
+Configure the configuration file for basic functionality without the use of additional HTTP request parameters and without the need of implementing interfaces to export data to Excel - `IODataExportService` and `ISpreadsheetCustomizer`. 
 
 ```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
@@ -52,24 +54,24 @@ http://localhost/odata/Странаs?exportExcel=true&colsOrder=Название
 </container>
 <alias alias="singleton" type="Microsoft.Practices.Unity.ContainerControlledLifetimeManager, Microsoft.Practices.Unity" />
 </unity>
-```
+``` 
 
-## Пример реализации интерфейса IODataExportService
+## an Example implementation of the interface IODataExportService 
 
 ```csharp
-/// <summary>
-/// Реализация интерфейса для экспорта данных из ODataService.
-/// </summary>
+/// <summary> 
+/// Implementation of the interface to export data from the ODataService. 
+/// </summary> 
 public class ExportExcel : IODataExportService
 {
-    /// <summary>
-    /// Создаёт файл экспорта  данных из ORM.
-    /// </summary>
-    /// <param name="dataService">Сервис данных ORM.</param>
-    /// <param name="parameters">Параметры экпорта.</param>
-    /// <param name="objs">Объекты для экспорта.</param>
-    /// <param name="queryParams">Параметры в запросе HTTP.</param>
-    /// <returns>Возвращает файл экспорта в виде MemoryStream.</returns>
+    /// <summary> 
+    /// Creates an export file of data from ORM. 
+    /// </summary> 
+    /// <param name="dataService">data Service ORM.</param> 
+    /// <param name="parameters">the parameters of the export.</param> 
+    /// <param name="objs">the Objects to export.</param> 
+    /// <param name="queryParams">Parameters in the HTTP request.</param> 
+    /// <returns>Returns the export file in a MemoryStream.</returns> 
     public MemoryStream CreateExportStream(IDataService dataService, IExportParams parameters, DataObject[] objs, NameValueCollection queryParams)
     {
         var exportService = new DataExportLimitedService(parameters, dataService);
@@ -80,22 +82,22 @@ public class ExportExcel : IODataExportService
         return result;
     }
 }
-```
+``` 
 
-## Пример реализации интерфейса ISpreadsheetCustomizer
+## an Example implementation of the interface ISpreadsheetCustomizer 
 
 ```csharp
-/// <summary>
-/// Реализация интерфейса для обработки документа Excel.
-/// </summary>
+/// <summary> 
+/// Implementation of interface for handling Excel document. 
+/// </summary> 
 public class SpreadsheetCustomizer : ISpreadsheetCustomizer
 {
-    /// <summary>
-    /// Обработка документа Excel.
-    /// </summary>
-    /// <param name="document">Документ Excel.</param>
-    /// <param name="parameters">Параметры экпорта.</param>
-    /// <param name="queryParams">Параметры в запросе HTTP.</param>
+    /// <summary> 
+    /// Excel document. 
+    /// </summary> 
+    /// <param name="document">Excel Document.</param> 
+    /// <param name="parameters">the parameters of the export.</param> 
+    /// <param name="queryParams">Parameters in the HTTP request.</param> 
     public void Process(ref SpreadsheetDocument document, IExportParams parameters = null, NameValueCollection queryParams = null)
     {
         var worksheetPart = document.WorkbookPart.GetPartsOfType<WorksheetPart>().First();
@@ -119,12 +121,12 @@ public class SpreadsheetCustomizer : ISpreadsheetCustomizer
         return;
     }
 
-    /// <summary>
-    /// Создание объекта ячейки Excel с указанным значение и форматом.
-    /// </summary>
-    /// <param name="value">Значение ячейки.</param>
-    /// <param name="excelDataType">Формат ячейки.</param>
-    /// <returns>Объект Cell.</returns>
+    /// <summary> 
+    /// Create object of Excel cell with the specified value and format. 
+    /// </summary> 
+    /// <param name="value">the value of the cell.</param> 
+    /// <param name="excelDataType">Format cells.</param> 
+    /// <returns>the Cell Object.</returns> 
     private static Cell CreateCell(string value, ExcelTypeDefinition excelDataType)
     {
         var headerCell = new Cell { CellValue = new CellValue(value), StyleIndex = excelDataType.StyleIndex };
@@ -137,4 +139,8 @@ public class SpreadsheetCustomizer : ISpreadsheetCustomizer
         return headerCell;
     }
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

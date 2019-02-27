@@ -1,35 +1,41 @@
----
-title: Сортировка для WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_list-sort.html
-lang: en
----
+--- 
+title: Sorting for WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_list-sort.html 
+lang: en 
+autotranslated: true 
+hash: 3a02d5cedf073bd77d1d2b233f48d738dd82ad562a93bdeee7ef0b40e9957799 
+--- 
 
-Списки позволяют сортировать содержащиеся в них объекты по определенным столбцам. Пользователь может сам настроить необходимую ему сортировку. Также сортировку списка можно настроить из кода.
+Lists allow you to sort the contained objects in specific columns. The user can set the necessary sorting. Also sorting the list can be customized from the code. 
 
-## Сортировка списков WOLV
+## Sorting lists WOLV 
 
-Настройка сортировки столбцов [WebObjectListView](fa_web-object-list-view.html) осуществляется путем задания свойства `.InitialColumnsSort` типа `ICSSoft.STORMNET.Business.ColumnsSortDef[]`.
+Sort columns [WebObjectListView](fa_web-object-list-view.html) by specifying properties `.InitialColumnsSort` type `ICSSoft.STORMNET.Business.ColumnsSortDef[]`. 
 
-Пример:
+Example: 
 
 ```csharp
 wolv.InitialColumnsSort = new ColumnsSortDef[] 
 {
-    new ColumnsSortDef("ФИО", SortOrder.Asc),
-    new ColumnsSortDef("Прописка", SortOrder.Asc),
+    new ColumnsSortDef("Name", SortOrder.Asc),
+    new ColumnsSortDef("Registration", SortOrder.Asc),
 };
-```
+``` 
 
-Здесь конструктор `ColumnsSortDef` принимает 2 параметра: наименование колонки типа `string` и способ сортировки типа `ICSSoft.STORMNET.Business.SortOrder` (Asc, Desc, None).
+Here `ColumnsSortDef` the constructor takes 2 parameters: the name of the column `string` and method of sorting type `ICSSoft.STORMNET.Business.SortOrder` (Asc, Desc, None). 
 
-Приоритет сортировки определяется порядком следования элементов в массиве `ColumnsSortDef`.
+The sort priority determines the order of elements in the array `ColumnsSortDef`. 
 
-### Доступ к текущим настройкам сортировки в наследниках
+### Access to current sorting settings in the heirs 
 
-Текущие настройки [WebObjectListView](fa_web-object-list-view.html) складываются из наложенных разработчиком через публичное экземплярное свойство `InitialColumnsSort` + настройки, сделанные пользователем через интерфейс [WebObjectListView](fa_web-object-list-view.html).
+Current settings [WebObjectListView](fa_web-object-list-view.html) consist of imposed by the developer through a public instance property `InitialColumnsSort` settings made by the user via the interface [WebObjectListView](fa_web-object-list-view.html). 
 
-Получить доступ к агрегированным текущим настройкам сортировки можно через защищенное виртуальное свойство `ActualColumnSort` в классах-наследниках.
+To access the aggregated current sorting settings through a protected virtual property `ActualColumnSort` in descendant classes. 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

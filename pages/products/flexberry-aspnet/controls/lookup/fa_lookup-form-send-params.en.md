@@ -1,59 +1,61 @@
----
-title: Передача параметров на LookUp-форму в Web-приложениях
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, JavaScript API
-toc: true
-permalink: en/fa_lookup-form-send-params.html
-lang: en
----
+--- 
+title: passing parameters into a LookUp form in a Web application 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP NET, JavaScript API 
+toc: true 
+permalink: en/fa_lookup-form-send-params.html 
+lang: en 
+autotranslated: true 
+hash: 7c484676d850e9c6320d263757dc5d54d6ab6153392243e21b230c3c9fea7407 
+--- 
 
-Данная статья относится к технологической [LookUp-форме](fa_tech-forms-web.html) и описывает способ передачи собственных параметров в LookUp-форму при помощи [JavaSript API](fa_lookup-overview.html).
+This article applies to technological [LookUp-form](fa_tech-forms-web.html) and describes how to transfer their own parameters in a LookUp-form with [JavaSript API](fa_lookup-overview.html). 
 
-## LookUp-форма
+## LookUp-form 
 
-При реализации собственной LookUp-формы может появиться необходимость передать несколько собственных параметров и разобрать их при загрузке формы. В данной статье будет разобран пример передачи параметров при использовании технологической LookUp-формы.
+When implementing your own LookUp form, you may need to pass several parameters and parse them when the form loads. This article will be reviewed by an example of transmission parameters when using the technological LookUp. 
 
-## Постановка задачи
+## statement of the problem 
 
-Пусть дана форма редактирования с лукапом `ctrlLookUp1`, лукап "смотрит" на форму `LookUpForm.cs`, генерируемую вместе с приложением.  
-Необходимо добавить на форму редактирования кнопку, при нажатии на которую на LookUp-форму добавляется переданное сообщение.
+Given the edit form with lucapa `ctrlLookUp1`, lookup "looks" to the form `LookUpForm.cs` generated along with the application. 
+Want to add to the edit form button, when clicked on the LookUp form is added to the transferred message. 
 
-## Алгоритм решения
+## solution Algorithm 
 
-1. Создать кнопку и прописать для неё метод `click`, в котором будет происходить передача дополнительных параметров.
-2. "Отловить" на LookUp-форме приход дополнительных параметров и добавить требуемое сообщение (при необходимости).
+1. Create a button and register for her `click` method, which will be the transfer of additional parameters. 
+2. "Catch" on the LookUp form, the arrival of additional parameters and add the desired message (if necessary). 
 
-### Создание кнопки и передача параметров
+### creating a button and passing parameters 
 
-* Создать кнопку:
+* Create button: 
 
 ```xml
  <button id="addMessageButton">Добавить сообщение на LookUp-форму</button> 
-```
+``` 
 
-* Создать для неё обработчик нажатия:
+* To create a handler for the clicking: 
 
 ```javascript
 $('#addMessageButton').click(function () {
     $('#<%=ctrlLookUp1.ClientID%>').icsMasterEditorAjaxLookup('updateOptions', { formParams: 'ShowMessage=true&TheMessage=Сообщение' });
     return false;
 });
-```
+``` 
 
-{% include note.html content=">Как и в других случаях работы с JS API, не забываем `return false;`, чтобы не происходил PostBack." %}
+{% include note.html content=">As in other cases work with the JS API, do not forget `return false;` to avoid PostBack." %} 
 
 
-{% include warning.html content="В коде прикладных приложений не стоит явно использовать константы `LookUp` и др., так как их значение может измениться в будущем. Для получения специальных технологических параметров из запроса следует использовать класс [WebParamController](fa_get-query-parameters-forms.html) . Рекомендуем проверить текущие проекты." %}
+{% include warning.html content="In the code of applications is not necessary to explicitly use constants `LookUp` etc., as their value may change in the future. For special technological parameters from the request, use class [WebParamController](fa_get-query-parameters-forms.html) . Please check the latest projects." %} 
 
-## Обработка параметров на LookUp-форме
+## Processing parameters on the LookUp form 
 
-На технологической LookUp-форме по умолчанию добавлен метод 
+On the technological LookUp-the default form method added 
 
 ```csharp
  protected override void ApplyWolvSettings() 
-```
+``` 
 
-Добавить в него следующий код:
+Add the following code: 
 
 ```csharp
 bool showMessage = Request["ShowMessage"] != null && Request["ShowMessage"] == "true";
@@ -61,6 +63,10 @@ bool showMessage = Request["ShowMessage"] != null && Request["ShowMessage"] == "
 if (showMessage)
 {
     string message = Request["TheMessage"];
-    // Добавить сообщение.
+    // Add the message. 
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

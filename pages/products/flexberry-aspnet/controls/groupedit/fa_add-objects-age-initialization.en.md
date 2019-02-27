@@ -1,24 +1,26 @@
----
-title: Добавление объектов в AjaxGroupEdit при инициализации формы (новый объект)
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_add-objects-age-initialization.html
-lang: en
----
+--- 
+title: Adding objects in AjaxGroupEdit at form initialization (new object) 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_add-objects-age-initialization.html 
+lang: en 
+autotranslated: true 
+hash: 7a7e3551208dae649bb4a185cfb9f5f8552ba1c4f5f28ee000e7765b9bf7fbc7 
+--- 
 
-## Алгоритм добавления объектов в AGE при инициализации формы
+## Algorithm add objects to AGE at form initialization 
 
-`AjaxGroupEdit` редактирует уже зачитанные детейлы мастерового объекта (сам AGE в БД ничего не читает). Поэтому, если нужно при создании нового объекта добавить ему детейлы, то нужно редактируемому объекту просто добавить детейлы.
+`AjaxGroupEdit` edits already read detaily artisan object (he AGE in DB reads nothing). Therefore, if you want when you create a new object add him detaily, then you need an editable object, just add detaily. 
 
-## Пример
+## Example 
 
-Пример редактирования объекта "Кошка" с детейлами "Лапа":
+An example of the edit object "Cat" detaylari "paw": 
 
 ```csharp
-/// <summary>
-/// Здесь лучше всего писать бизнес-логику, оперируя только объектом данных
-/// </summary>
+/// <summary> 
+/// It is best to write the business logic, operating only with the data object 
+/// </summary> 
 protected override void PreApplyToControls()
 {
     if (!IsPostBack && (DataObject == null || DataObject.GetStatus(true) == ObjectStatus.Created))
@@ -34,6 +36,10 @@ protected override void PreApplyToControls()
         DataObject = cat;
     }
 }
-```
+``` 
 
-Если вы хотите добавить объекты, но не сохранять их БД, если пользователь их не изменил, то нужно также добавлять, но со статусом Unaltered.
+If you want to add objects, but not to save the database, if the user has not changed, you will need to add, but with the status Unaltered. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

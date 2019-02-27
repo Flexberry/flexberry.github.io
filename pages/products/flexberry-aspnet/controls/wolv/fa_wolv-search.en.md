@@ -1,54 +1,60 @@
----
-title: Поиск в WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_wolv-search.html
-lang: en
----
+--- 
+title: Search WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_wolv-search.html 
+lang: en 
+autotranslated: true 
+hash: c563603fe792984654e66dc85d89f23fd982b87f3419f8155d2e3b2f4b6507e9 
+--- 
 
-Система поиска позволяет осуществлять поиск по отображаемым элементам списка. В отличии от [фильтров](fa_wolv-filters.html), поиск не накладывает ограничение на список, он лишь выделяет объекты при помощи [флажков](fa_wolv-check-boxes.html).
+The search system allows to search the displayed list items. In contrast [filters](fa_wolv-filters.html), search does not impose a limit on the list, it only selects objects using [flags](fa_wolv-check-boxes.html). 
 
-{% include note.html content="При использовании поиска текущее выделение объектов сбрасывается." %}
+{% include note.html content="When you search the currently selected objects is cleared." %} 
 
-## Включение поиска
+## Enabling search 
 
-По умолчанию поиск включен. За включение поиска отвечает [операция](fa_wolv-operations.html) `Search`. Чтобы выключить кнопку поиска, необходимо при загрузке страницы установить эту операцию в `false`:
+By default the search is enabled. The inclusion of search answers [operation](fa_wolv-operations.html) `Search`. To disable the search button you need the page loads to set this operation in `false`: 
 
 ```csharp
 webObjectListView1.Operations.Search = false;
-```
+``` 
 
-Включение данной опции добавляет на Toolbar WOLV кнопку поиска ![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-search-btn.png)
+Enabling this option adds the Toolbar WOLV search button ![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-search-btn.png) 
 
-При нажатии на эту кнопку появляется дополнительная панель.
+Clicking on this button, an additional panel. 
 
-## Простой поиск
+## Simple search 
 
-Если [операция](fa_wolv-operations.html) `FullViewSearch == false`, то появится панель простого поиска:
+If [operation](fa_wolv-operations.html) `FullViewSearch == false`, the panel will appear simple search: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/simple-search.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/simple-search.png) 
 
-Данный вид поиска предлагает пользователю выбрать конкретный столбец, по которому производится поиск.
+This type of search offers the user to select a specific column which is searched. 
 
-## Поиск по всему представлению
+## search the entire presentation 
 
-Если [операция](fa_wolv-operations.html) `FullViewSearch == true`, то появится панель поиска по всему представлению:
+If [operation](fa_wolv-operations.html) `FullViewSearch == true`, you will see a search bar throughout the performance: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-search-full.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-search-full.png) 
 
-От простого поиска он отличается отсутствием выбора столбца данных, так как поиск осуществляется по всем столбцам сразу.
+From a simple search it differs in the absence of selecting a data column, as the search is performed on all columns at once. 
 
-## Правила
+## Rules 
 
-1. Если поле имеет строковый тип, то ищутся вхождения подстроки в строку.
-2. Если поле имеет другой тип, то ищутся точные совпадения с введенной строкой.
+1. If the field is a string, it is searched for occurrences of a substring in a string. 
+2. If the field has any other type, it is searched for an exact match with the entered string. 
 
-## Спецсимволы
+## Special Characters 
 
-Во вводимой строке допустимо использование следующих символов:
+The input string is a valid use of the following symbols: 
 
-1. `*` - любое количество любых символов (в том числе и 0).
-2. `?` - один любой символ.
-3. `[abcdef]` или `[a-f]` - любые символы из указанных.
-4. `[^abcdef]` или `[^a-f]` - любые символы кроме указанных.
+1. `*` - any number of any characters (including 0). 
+2. `?` - any single character. 
+3. `[abcdef]` or `[a-f]` any of the characters. 
+4. `[^abcdef]` or `[^a-f]` - any character except those specified. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

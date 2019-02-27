@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_mono.html 
 lang: en 
 autotranslated: true 
-hash: b4834529de9e539dc71c719942f54cae6bf66b964d064badcfbee09c91c6e4ae 
+hash: f6e35f8761739c0bd51871575d4a40bcb80c68a4ed0af73e70e76d88a2f9a7d7 
 --- 
 
 **Mono** — a project to create a full-fledged incarnation of the system .NET Framework on the basis of free software. The main developer of the Mono project — the Corporation Xamarin, formerly Novell. The project is headed by Miguel de Icaza, a well-known developer, founder of the GNOME project. The implementation of Mono are available for the following operating systems: Windows, Linux, BSD (FreeBSD, OpenBSD, NetBSD), Solaris, Mac OS X, Apple iOS, Wii. Supported platforms: s390, SPARC, PowerPC, x86/x86-64, IA-64, ARM, Alpha, MIPS, HP PA. 

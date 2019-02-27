@@ -1,29 +1,31 @@
----
-title: Технологические формы Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_tech-forms-web.html
-lang: en
----
+--- 
+title: Technological forms Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_tech-forms-web.html 
+lang: en 
+autotranslated: true 
+hash: 94f4cd97a08c4159f204244f821563eec9d1b9ae4cbbcd3fb2e657127069b629 
+--- 
 
-Технология Flexberry ASP.Net генерирует стандартные (универсальные) страницы для отображения и редактирования данных.
+Technology Flexberry ASP.Net generates a standard (universal) page to display and edit data. 
 
-## Список технологических форм
+## a List of process forms 
 
-### Страницы с настройкой через DynamicPageRoute
+### Page setup using DynamicPageRoute 
 
-Часть технологических страниц доступна через [DynamicPageRoute](fa_routing.html):
-* [Web-формы аудита](fa_audit-web-forms.html)
-* Форма пользовательских блокировок (`routes.AddDynamicPageRoute("flexberry/LocksList", DynamicPageIdentifier.LocksList)`)
-* Форма записей лога (`routes.AddDynamicPageRoute("flexberry/LogList", DynamicPageIdentifier.LogList)`)
-* Форма версий используемых сборок (`routes.AddDynamicPageRoute("flexberry/Version", DynamicPageIdentifier.Version)`)
-* LookUp-форма
-* Другие
+Part of the process pages are available via [DynamicPageRoute](fa_routing.html): 
+* [Web-form audit](fa_audit-web-forms.html) 
+* User locks (`routes.AddDynamicPageRoute("flexberry/LocksList", DynamicPageIdentifier.LocksList)`) 
+* Entry form log (`routes.AddDynamicPageRoute("flexberry/LogList", DynamicPageIdentifier.LogList)`) 
+* Form versions of assemblies (`routes.AddDynamicPageRoute("flexberry/Version", DynamicPageIdentifier.Version)`) 
+* LookUp-form 
+* Other 
 
-### Ограничение доступа к формам
+### Limiting access to forms 
 
-Поскольку доступ к формам должен быть ограничен, то в файле web.config, чтобы дать доступ на технологические формы только пользователям, имеющим роль `admin`, можно добавить:
+Because access forms needs to be restricted, then in the web.config to give access to a technological form that only users that have the role `admin`, you can add: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -31,57 +33,61 @@ lang: en
 
 	...
 
-  <!--Определяем доступ на технологические формы.-->
+  <!--Define access to technological forms.-->
   <location path="flexberry">
     <system.web>
       <authorization>
-        <!--Кодом ниже даётся доступ только админам. Чтобы закрыть доступ неавторизованным пользователям, можно воспользоваться конструкцией 'deny users="?"'.-->
+        <!--The following code is given access only to admins. To prevent access by unauthorized users, you can use the 'deny users="?"'.-->
         <allow roles="admin"/>
         <deny users="*"/>
       </authorization>
     </system.web>
   </location>
 </configuration>
-```
+``` 
 
-## Другие технологические формы
+## Other technological forms 
 
-* [Lookup](fa_lookup-overview.html)-страница `ICSSoft.STORMNET.Web.AjaxControls.Forms.LookUpForm`
+* [Lookup](fa_lookup-overview.html)-page `ICSSoft.STORMNET.Web.AjaxControls.Forms.LookUpForm` 
 
-![](/images/pages/products/flexberry-aspnet/lookup-form.png)
+![](/images/pages/products/flexberry-aspnet/lookup-form.png) 
 
-* Страница настройки столбцов `ICSSoft.STORMNET.Web.AjaxControls.Forms.ChooseColumns`
+* Page column settings `ICSSoft.STORMNET.Web.AjaxControls.Forms.ChooseColumns` 
 
-![](/images/pages/products/flexberry-aspnet/column-setup-page.png)
+![](/images/pages/products/flexberry-aspnet/column-setup-page.png) 
 
-{% include note.html content="Страница настройки столбцов идентична странице, используемой для [экспорта в Excel](fa_wolv-export-excel.html)." %}
+{% include note.html content="columns settings Page identical to the page used for the [export to Excel](fa_wolv-export-excel.html)." %} 
 
-* Страница печати (`ICSSoft.STORMNET.Web.AjaxControls.Forms.ListPrintForm`)
-* Страница с информацией о версиях сборок
+* Page printing (`ICSSoft.STORMNET.Web.AjaxControls.Forms.ListPrintForm`) 
+* A page with information about the versions of the assemblies 
 
-## Настройка технологических форм
+## adjustment of process forms 
 
-Основная статья [Настройка технологиченских страниц Flexberry ASP.NET](fa_technological-forms-customization-example.html)
+Main article [setup tehnologicheskih pages Flexberry ASP.NET](fa_technological-forms-customization-example.html) 
 
-## Создание собственной страницы (на примере Lookup-страницы)
+## Create your own page (for example, Lookup page) 
 
-1. Создать собственный класс и понаследовать его от `ICSSoft.STORMNET.Web.Controls.LookUpForm`.
-2. (опционально) Создать свой экземпляр фабрики страницы (класс, который будет создавать страницу). Вместо создания своей реализации можно использовать технологический класс `ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories<T>`.
-3. Установить в `web.config` HTTP-handler для страницы
+1. To create your own class and posledovat it from `ICSSoft.STORMNET.Web.Controls.LookUpForm`. 
+2. (optional) to Create a factory instance on the page (a class that will create a page). Instead of creating your implementation, you may use technological class `ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories<T>`. 
+3. Set in `web.config` HTTP handler for the page 
 
-для HTTP-обработчика:
+for the HTTP handler: 
 
 ```xml
-<add verb="*" path="LookUpForm.aspx" type=" MyProjectNamespace.LookUpFormHandlerFactoryType" validate="false"/>
-```
+<add verb="*" path="LookUpForm.aspx" type="MyProjectNamespace.LookUpFormHandlerFactoryType" validate="false"/>
+``` 
 
-для технологического HTTP-обработчика:
+for processing HTTP handler: 
 
 ```xml
 <add path="LookUpForm.aspx" 
        verb="*" 
        type="ICSSoft.STORMNET.Web.AjaxControls.HandlerFactories.PageHandlersFactory`1[[MyProjectNamespace.LookUpFormType, MyProjectAssembly]], ICSSoft.STORMNET.Web.AjaxControls" 
        validate="false" />
-```
+``` 
 
-{% include note.html content="Генератор автоматически создает и регистрирует прикладную лукап-форму для новых проектов." %}
+{% include note.html content="the Generator automatically creates and registers lucap application form for new projects." %} 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

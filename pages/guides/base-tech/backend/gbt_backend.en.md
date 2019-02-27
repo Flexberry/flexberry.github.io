@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_backend.html 
 lang: en 
 autotranslated: true 
-hash: bb381afd0a6aeaae047d168237a48f2aa173339e4c3a34e82bfa37b6cccdbb8f 
+hash: 421ec035567c1e4546bc70e042864d791089557f706b9638e3fd8ebb8304e4e6 
 --- 
 
 ## Brief description 

@@ -1,48 +1,54 @@
----
-title: Поведение флажков выбора элементов WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_wolv-check-boxes.html
-lang: en
----
+--- 
+title: the Behavior of the check boxes to select items WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_wolv-check-boxes.html 
+lang: en 
+autotranslated: true 
+hash: 4b06a8fcdbd96d1ee6f73c85414b4860eb4e544769b282474694d4d1982e51a9 
+--- 
 
-[WOLV](fa_web-object-list-view.html) предоставляет возможность выделить несколько элементов, чтобы произвести над ними какое-либо действие (к примеру, удалить).
+[WOLV](fa_web-object-list-view.html) provides the ability to select multiple items to perform on them some action (e.g. delete). 
 
-{% include note.html content="Данная опция доступна только в случае, если выставлена соответствующая настройка [WOLV](fa_web-object-list-view.html):
+{% include note.html content="This option is available only if the corresponding set [WOLV](fa_web-object-list-view.html): 
 
 ```csharp
  webObjectListView1.Operations.MultiSelect = true;
-```
-" %}
+``` 
+"%} 
 
-Выбрать объект можно, щелкнув левой кнопкой мыши на флажок в строке.
+Select object by clicking left mouse button on the checkbox in the row. 
 
-Также для удобства работы с выбором объектов добавлены две кнопки:
+Also for the convenience of working with a variety of objects added two buttons: 
 
-* `Отметить все`
-* `Отметить все на всех страницах`
+* `Отметить все` 
+* `Отметить all in all страницах` 
 
-## Отметить все
+## Mark all 
 
-Данная опция отмечает все объекты на текущей странице. При повторном нажатии снимает выделение со всех объектов на данной странице.
+This option selects all objects on the current page. Pressing again deselects all objects on the page. 
 
-## Отметить все на всех страницах
+## Mark all on all pages 
 
-Данная опция отмечает все объекты на всех страницах и блокирует возможность их ручного выделения.
+This option selects all objects on all pages and blocks the possibility of manual selection. 
 
-## Поведение выбранных объектов
+## Behavior of selected objects 
 
-После применения фильтров, выбранные объекты сохраняют своё выделение.
+After filtering, the selected objects retain their selection. 
 
-К примеру, если в списке есть 3 объекта: `Саша Маша Вася`, пользователь выбрал объекты `Саша` и `Вася`, а затем воспользовался [поиском](fa_wolv-search.html) по маске `*аша`, то в списке отобразится 2 объекта: `Саша Маша`, при этом будет выделен только 1 объект `Саша`.
+For example, if the list contains 3 objects: `Саша Masha Вася`, the user has selected the objects `Саша` and `Вася`, and then used the [search](fa_wolv-search.html) mask `*аша`, then the list will display 2 objects: `Саша Маша`, this will select only 1 object `Саша`. 
 
-{% include note.html content="Если при поиске отмечено больше 100 элементов, и при этом найдено больше 100 элементов из списка отмеченных, то отмеченными останутся только первые 100, а пользователь увидит предупреждающее сообщение. На данный момент число 100 изменить нельзя." %}
+{% include note.html content="If you marked more than 100 elements, and found more than 100 items from a list is marked, then the marked will be only the first 100, and the user will see a warning message. At the moment, the number 100 cannot be changed." %} 
 
-Также выделение сохраняется при смене страницы отображаемых объектов и при смене количества отображаемых на странице объектов.
+Also, the selection is preserved when changing the page displayed objects and when you change the number displayed on the page objects. 
 
-Однако, при Поиске по [WOLV'y](fa_web-object-list-view.html) происходит сброс выделенных объектов. Перед сбросом пользователю задается уточняющий вопрос.
+However, a Search for [WOLV'y](fa_web-object-list-view.html) resets the selected objects. Before you reset the user asks a clarification question. 
 
-## JS API
+## JS API 
 
-Для манипуляции флажками на стороне клиента можно использовать [JS API](fa_js-api-wolv.html).
+For the manipulation of flags on the client side you can use [JS API](fa_js-api-wolv.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

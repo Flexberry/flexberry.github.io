@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_dbms.html 
 lang: en 
 autotranslated: true 
-hash: d4b7f845dd09e7f347cab6b4adb99f491fb248fc8a4053c6fabfea03d4513abf 
+hash: ca58cad2d410ff321472179f2906114b719e0067cd7f1ef1f74b9f946fb10a7d 
 --- 
 
 ## Brief description 

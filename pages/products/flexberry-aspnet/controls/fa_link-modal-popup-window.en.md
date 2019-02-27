@@ -1,53 +1,58 @@
----
-title: LinkModalPopupWindow
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_link-modal-popup-window.html
-lang: en
----
+--- 
+title: LinkModalPopupWindow 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_link-modal-popup-window.html 
+lang: en 
+autotranslated: true 
+hash: 65cf655fbd252332e3c1c5df3783951e957842c92df47688c9bcbfa2ca33faa7 
+--- 
 
-С помощью данного контрола можно поднять модальное окно и открыть в нём страницу.
+With this control you can raise a modal window and open the page. 
 
-## Подключение
+## Connection 
 
-Контрол можно подключить двумя способами:
+The control can be connected in two ways: 
 
-* расположить на странице
-* добавить динамически.
+* positioning on the page 
+* add dynamically. 
 
-## Использование
+## Use 
 
-Расположить контрол на странице и настроить:
+Positioning the control on the page and configure: 
 
 ```xml
-<ac:LinkModalPopupWindow ID="myLink" EnableViewState="false" runat="server" URL="homework.aspx" Enabled="true" Text="Ссылка" WindowTitle="Домашнее задание" />
-```
+<ac:LinkModalPopupWindow ID="myLink" EnableViewState="false" runat="server" URL="homework.aspx" Enabled="true" Text=Link WindowTitle=Homework />
+``` 
 
-Можно этот контрол добавить динамически или даже отрендерить вручную.
-Или получить, используя следующую функцию:
+Can this control to add dynamically or even render manually. 
+Or receive using the following function: 
 
 ```csharp
-LinkModalPopupWindow.GetHtml(this.ClientID + "_lmpw" + j.ToString(), "Подробнее", "TemaPlanLessonE.aspx?LookUp=true&amp;pk={0}", "Тематический план урока", 640, 480, true)
-```
+LinkModalPopupWindow.GetHtml(this.ClientID + "_lmpw" + j.ToString(), "Read more", "TemaPlanLessonE.aspx?LookUp=true&amp;pk={0}", "Thematic lesson plan", 640, 480, true)
+``` 
 
-### Настройки контрола
+### Settings control 
 
-| Параметры | Описание|
-|---------------|--------------------|
-| ClientId | ID-контрола|
-| Text | Текст ссылки|
-| Url | Адрес, который нужно открывать|
-| Enabled | Доступна ли ссылка|
-| WindowTitle | Заголовок окна|
-| ATitle | Tooltip для ссылки|
+| Parameters | Description| 
+|---------------|--------------------| 
+| ClientId | ID-control| 
+| Text | link Text| 
+| Url | Address that you want to open| 
+Enabled | Available link| 
+| WindowTitle | window Title| 
+| ATitle | Tooltip for link| 
 
-### Настройки оформления
+### formatting Settings 
 
-| Параметры | Описание|
-|-----------------------|----------------------|
-| WindowWidth | Ширина окна|
-| WindowHeight | Высота окна|-
-| CssStyle | Стиль ссылки|-
-| CssClass | CSS-Класс ссылки| 
- 
+| Parameters | Description| 
+|-----------------------|----------------------| 
+| WindowWidth | Width of window| 
+| WindowHeight | Height of window|- 
+| CssStyle | Style links|- 
+| CssClass | CSS Class links| 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,217 +1,219 @@
----
-title: MasterEditorAjaxLookUp
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_master-editor-ajax-lookup.html
-lang: en
----
+--- 
+title: MasterEditorAjaxLookUp 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_master-editor-ajax-lookup.html 
+lang: en 
+autotranslated: true 
+hash: bb9d8f9bb6ec1ae7c282e09e1994776373817be6194bc6d6478d7f9be2f8d3bd 
+--- 
 
-Когда поднимается форма на лукап, а потом в ней выбирается объект, то происходит запрос к сервису. Сервис возвращает список контролов, значения которых нужно изменить, и сами значения.
+If there is a form on lookup, and then it selects the object, then the request for the service. The service returns the list of controls whose values you want to change, and the values themselves. 
 
-{% include note.html content="При работе с сервисом используется [ServiceSecurityProvider](fa_service-security-provider.html)." %}
+{% include note.html content="When working with the service uses [ServiceSecurityProvider](fa_service-security-provider.html)." %} 
 
-У контрола имеется свойство:
+The control has a property: 
 
 ```csharp
-/// <summary>
-/// Добавлять ли используемый тип в ServiceSecurityProvider при использовании контрола
-/// </summary>
+/// <summary> 
+/// To add the type in ServiceSecurityProvider when using control 
+/// </summary> 
 public bool AddTypeToSecurityProvider = true;
-```
+``` 
 
-По умолчанию, контрол сам добавит все необходимые типы и название методов в [ServiceSecurityProvider](fa_service-security-provider.html), но это будет происходить в рантайме и на конфигурационном XML файле никак не отразится. Поэтому, если необходимо, чтобы все настройки [ServiceSecurityProvider](fa_service-security-provider.html) брались из файла и не менялись во время исполнения, то нужно добавить в `ServiceSecurityProvider.xml` настройки для метода `LoadObject`. Если у сервиса не будет полномочий для вычитки объектов из базы, то он всегда будет возвращать пустые значения.
+By default, the control will add all the necessary types and the name of the methods in [ServiceSecurityProvider](fa_service-security-provider.html), but it will happen in the runtime and in the configuration XML file will not change. So, if you want all settings [ServiceSecurityProvider](fa_service-security-provider.html) were taken from the file and not changed during the execution, you need to add `ServiceSecurityProvider.xml` settings for the method `LoadObject`. If the service will not have the power for proof-reading objects from the database, it will always return empty values. 
 
-## Возможные проблемы
+## Possible problems 
 
-При разворачивании приложения, использующего данный контрол, нужно обязательно удостовериться, что в `iis веб-сад` установлен только 1 процесс. Иначе лукапы будут работать "через раз".
+If you deploy applications that use this control, it is necessary to ensure that, in `iis web сад` set only 1 process. Otherwise lucapa will work "over time." 
 
-## UpdateOnDocumentReady
+## UpdateOnDocumentReady 
 
-Использовать данное свойство нужно аккуратно. Свойство отвечает за обновление значения лукапа при загрузке страницы. По-умолчанию, значение свойства `false`.  
-Значение в лукап проставляет `WebBinder`, но если по каким-то причинам нужно обновлять лукап во время загрузки страницы, то следует обратить внимание на фокусо на странице и возможные побочные эффекты.
+To use this feature you need to carefully. The property is responsible for updating the values of lucapa when the page loads. By default, the value of the property `false`. 
+The value in lookup affix `WebBinder`, but if for some reason you need to update lookup during page load, we should pay attention to focus on the page and possible side effects. 
 
-## Автодополнение
+## Autocompletion 
 
-Имеется возможность по вынесенному мастеровому свойству (например, лукап типа `Standard`) добавить автодополнение и по введенному мастеровому свойству будет проставляться значение в лукап. Имеется возможность реализовать схожую функциональность: [Связывание AjaxAutocomplete и AjaxLookup](fa_link-ajax-autocomplete-ajax-lookup.html).  
-Для того чтобы включить автодополнение, нужно установить лукапу свойство `Autocomplete = true` и убедиться, что лукапу проставляется значение свойства `PropertyToShow` (в стандартном случае это делает `WebBinder`).
+It is possible for the rendered Masterova property (for example, lookup type `Standard`) to add autocompletion and introduced Masterova property will bear the value in lookup. It is possible to implement similar functionality: [Linking AjaxAutocomplete and AjaxLookup](fa_link-ajax-autocomplete-ajax-lookup.html). 
+To enable autocompletion, you need to install lucapa property `Autocomplete = true` and make sure lucapa affixed the value of the property `PropertyToShow` (in the standard case, it makes `WebBinder`). 
 
-Например,
+For example, 
 
 ```xml
 <ac:MasterEditorAjaxLookUp Autocomplete="true" ID="ctrlВладелецАвтокомплит" CssClass="descTxt" runat="server" />
-```
+``` 
 
-И у объекта проставлен атрибут
-
-```csharp
-[MasterViewDefineAttribute("КошкаE", "ВладелецАвтокомплит", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Имя")]
-```
-
-Для автодополнения можно задать следующие настройки:
+And the object marked with the attribute 
 
 ```csharp
-    /// <summary>
-    /// Применять ли значение при выборе объекта в autocomplete.
-    /// </summary>
+[MasterViewDefineAttribute("Koskee", "Plateletapheresis", ICSSoft.STORMNET.LookupTypeEnum.Standard, "", "Name")]
+``` 
+
+For autocompletion, you can specify the following settings: 
+
+```csharp
+    /// <summary> 
+    /// Whether to use the value in the object selection in autocomplete. 
+    /// </summary> 
     public bool ApplyOnAutocompleteSelect = true;
 
-    /// <summary>
-    /// Применять ли значение при autocomplete, если сменился фокус.
-    /// </summary>
+    /// <summary> 
+    /// Whether to use the value in autocomplete, if the change of focus. 
+    /// </summary> 
     public bool ApplyOnAutocompleteLostFocus;
 
-    /// <summary>
-    /// Имя представления для предиктивного ввода.
-    /// </summary>
+    /// <summary> 
+    /// The name of the view to predictive. 
+    /// </summary> 
     public string AutocompleteViewName;
 
-    /// <summary>
-    /// Включить поиск по подстроке для автокомплита.
-    /// </summary>
+    /// <summary> 
+    /// To search by substring for autocomplete. 
+    /// </summary> 
     public bool IsSubstring;
 
-    /// <summary>
-    /// Свойство для предиктивного ввода - по умолчанию PropertyToShow.
-    /// </summary>
+    /// <summary> 
+    /// Property to predictive - default PropertyToShow. 
+    /// </summary> 
     public string PropertyToAutocomplete;
 
-    /// <summary>
-    /// Свойство для предиктивного ввода - Multiline.
-    /// </summary>
+    /// <summary> 
+    /// Property to predictive - Multiline. 
+    /// </summary> 
     public TextBoxMode PropertyToAutocompleteMultiline;
 
-    /// <summary>
-    /// Количество символов, с которых начинается предиктивный ввод (по умолчанию 2).
-    /// </summary>
+    /// <summary> 
+    /// The number of characters which begins with predictive text input (default 2). 
+    /// </summary> 
     public int AutocompleteMinChars;
 
-    /// <summary>
-    /// Количество возможных вариантов для выбора при предиктивном вводе (по умолчанию 10).
-    /// </summary>
+    /// <summary> 
+    /// Number of possible options to choose from when predictive input (default is 10). 
+    /// </summary> 
     public int AutocompleteLimitCount;
-```
+``` 
 
-Стоит отметить, что для [автодополнения](fa_ajax-autocomplete.html) вызывается еще один метод сервиса(`GetPropertyValues`), поэтому, если изменено свойство `AddTypeToSecurityProvider` на `false`, то нужно убедиться, что данный тип объекта прописан в `ServiceSecurityProvider.xml`.
+It should be noted that for the [completion](fa_ajax-autocomplete.html) is called by another service method(`GetPropertyValues`), so if the property is modified `AddTypeToSecurityProvider` on `false`, you need to make sure that the object type is spelled out in `ServiceSecurityProvider.xml`. 
 
-{% include important.html content="По умолчанию свойство `IsSubstring` имеет значение `False` =&gt; без изменения значения в `True` поиск по подстроке не будет работать." %}
+{% include important.html content="default property `IsSubstring` matters `False` =&gt; without changing the value in `True` search for the substring will not work." %} 
 
-{% include important.html content="Если в качестве PropertyToShow используется свойство объекта данных не строкового типа, а например типа дата, то следует внимательно ознакомиться со [статьей Автодополнение в веб-системах (AjaxAutocomplete)](fa_ajax-autocomplete.html), и завести в объекте специальное нехранимое вычислимое свойство.  
-И в качестве `PropertyToShow` для `MasterEditorAjaxLookup` указывать именно это вычислимое свойство." %}
+{% include important.html content="If PropertyToShow uses a property of the data object is not of string type, such as the type of date you should carefully read [article auto-Completion in web systems (AjaxAutocomplete)](fa_ajax-autocomplete.html), and make the object of special Nechranice computable property. 
+And as for `PropertyToShow` `MasterEditorAjaxLookup` to specify that it is a computable property." %} 
 
-## Создание зависимых лукапов
+## Creating dependent lyapov 
 
-Про создание зависимых лукапов рассказывается в [статье Связывание контролов редактирования мастеров](fa_linked-master-editors.html).
+About the creation of dependent lyapov described in [article Linking controls edit masters](fa_linked-master-editors.html). 
 
-## Кнопка для просмотра
+## Button to view 
 
-Если указать лукапу свойство `ShowObjectUr`l, то рядом с кнопками лукапа появится еще одна кнопка по нажатию на которую можно будет просмотреть мастеровой объект
+If you specify lucapa property `ShowObjectUr`l, next to the buttons lucapa will see another button by clicking on which you can view artisan object 
 
 ```xml
 <uc1:MasterEditorLookUp ID="ctrlВладелец" ShowObjectUrl="~/forms/Vladelec/VladelecE.aspx" CssClass="descTxt" runat="server" />
-```
+``` 
 
-Также, если у WOLV на поднимающейся форме с лукапа не указан путь к форме редактирования, то `ShowObjectUrl` проставится WOLV в качестве `EditPage`. Размер всплывающего окна берется из размеров формы, которая поднимается на лукап.
+Also, if you have a WOLV on the rising form lucapa is not specified the path to the edit form, `ShowObjectUrl` put WOLV as `EditPage`. The size of the popup window is taken from the size of the form, which rises to lookup. 
 
-## Показ HTML свойств, например, картинки
+## HTML rendering properties, for example, pictures 
 
-Если в `PropertyToShow` необходимо показать HTML, то необходимо, чтобы у свойства в объекте был атрибут `IsHTMLAttribute` (т.е. `ViewColumnProvider.GetPropertyIsHTML` от свойства возвращал бы `true`).
+If `PropertyToShow` need to display HTML, you need to have the properties in the object was an attribute `IsHTMLAttribute` (i.e. `ViewColumnProvider.GetPropertyIsHTML` of the property would return `true`). 
 
-![Пример](/images/pages/products/flexberry-aspnet/controls/lookup/ajax-look-html.png)
+![Example](/images/pages/products/flexberry-aspnet/controls/lookup/ajax-look-html.png) 
 
-## Задание типов объектов, доступных для выбора в лукапе
+## specifies the types of objects available for selection in lucapa 
 
-Для задания типов отображаемых в `MasterEditorAjaxLookUp` объектов используется свойство `MasterTypes`:
+For the job types displayed in `MasterEditorAjaxLookUp` objects, use the property `MasterTypes`: 
 
 ```csharp
 public Type[] MasterTypes { get; set; }
-```
+``` 
 
-По умолчанию это свойство хранит типы, заданные для редактируемого свойства объекта в атрибуте [TypeUsage](fo_type-usage-problem.html). Если же атрибут у соответствующего свойства отсутствует, используется тип из свойства `MasterTypeName` и его потомки, при этом выбираются только хранимые классы. Инициализировать свойство `MasterTypes` нужно в `OnInit` или `OnPreInit`.
+By default, this property stores the types defined for an editable object properties in the attribute [a typeusage](fo_type-usage-problem.html). If the attribute of the corresponding property is missing, use the type of properties `MasterTypeName` and his descendants, this selects only the stored classes. To initialize property `MasterTypes` need to `OnInit` or `OnPreInit`. 
 
-## [JS API](fa_javascript-api.html)
+## [JS API](fa_javascript-api.html) 
 
-Для манипуляций с LookUp на стороне клиента следует использовать `LookUp JS API`, который представляет собой jQuery плагин (`icsMasterEditorAjaxLookup`).
+For simple LookUp on the client side, use JS `LookUp API`, which is a jQuery plugin (`icsMasterEditorAjaxLookup`). 
 
-### Операции
+### Operations 
 
-| Наименование | Параметры | Описание
-|------------------|--------------------|------------------------------|
-| clear |  | Метод очистки лукапа|
-| block |  | Метод блокировки лукапа. Блокирует поле ввода и установливает флаг блокировки обработчиков кликов по кнопкам|
-| show |  | Метод запуска окна лукапа|
-| unblock |  | Метод разблокировки лукапа. Разблокирует поле ввода и сбрасывает установленный флаг блокировки обработчиков кликов по кнопкам|
-| val | value | Метод установки значения лукапа. Лукапу ставится значение `value`|
-| updateOptions | См. таблицу ниже. | Метод обновления опций плагина|
+| Name | Parameters | Description 
+|------------------|--------------------|------------------------------| 
+| clear | | Method of cleaning lucapa| 
+| block | | blocking Method lucapa. Blocks the input field and sets the lockout flag handlers for clicks on the buttons| 
+| show | | Method run window lucapa| 
+| unblock | | unlock Method lucapa. Unlocks the entry field and resets the flag set of blocking handlers for clicks on the buttons| 
+| val | value | Method to set the value lucapa. Lucapa is the value `value`| 
+| updateOptions | Cm. in the table below. | Update method of the plugin options| 
 
-### Параметры `updateOptions`
+### Parameters `updateOptions` 
 
-| Параметр | Описание|
-|---------------|---------------------------------|
-| `Свойства лукапа`||
-| LFName | Наименование LimitFunction, хранящейся в сессии|
-| viewname | Наименование представления, аналогично свойству лукапа `MasterViewName`|
-| typename | Наименование используемого типа, аналогично свойству лукапа `MasterTypeName`|
-| connStrName | Наименование строки подключения, аналогично свойству лукапа `ConnStrName`|
-| nameValueControl | `ClientID` лукапа, в который будет проставлено значение с лукап-формы, `OBSOLETE`|
-| FormCaption | Заголовок открываемой на лукап формы, аналогично свойству лукапа `LookUpFormCaption`|
-| CountOnPage | Количество элементов на странице WOLV'а страницы-лукапа, аналогично свойству лукапа `LookUpFormCountOnPage`|
-| EditPage | Страница редактирования элементов WOLV'a страницы-лукапа|
-| csdName | Наименование настройки хранения столбцов, хранящейся в сессии|-
-| `Свойства открываемой формы`||
-| width | Ширина формы, по умолчанию `800`|
-| height | Высота формы, по умолчанию `600`|
-| left | Отступ слева|
-| top | Отступ сверху|
-| status | Текст в статусбаре у стандартного браузерного окна|
-| resizable | Можно ли изменять размер окна|
-| menubar | Показывать ли меню браузера|
-| toolbar | Показывать ли toolBar браузера|
-| caption | Заголовок окна|
-| `Прочие параметры`||
-| useDefaultWindow | Использовать браузерное окно для открытия лукап-формы, по умолчанию `false`|
-| formParams | Url-параметры окна лукапа|
-| url | Ссылка для окна лукапа|
-| additionalControls | Связанные лукапы|
+| Parameter | Description| 
+|---------------|---------------------------------| 
+| `Свойства лукапа`|| 
+| LFName | Name LimitFunction stored in session| 
+| viewname | view Name, similar to lucapa `MasterViewName`| 
+| typename | Name type to be used, similar to lucapa `MasterTypeName`| 
+| connStrName | Name of the connection string, similar to lucapa `ConnStrName`| 
+| nameValueControl | `ClientID` lucapa, which will bear value lookup forms `OBSOLETE`| 
+| FormCaption | Header opened at lucap shape, similar to lucapa `LookUpFormCaption`| 
+| CountOnPage | Number of elements on the page WOLV'and pages lucapa, lucapa similar to `LookUpFormCountOnPage`| 
+| EditPage | edit Page elements WOLV'a page-lucapa| 
+| csdName | Name set storage for columns stored in session|- 
+| `Свойства open формы`|| 
+| width | Width of the shape default `800`| 
+| height | form Height, default `600`| 
+| left | left margin| 
+| top | the top margin| 
+| status | the status bar Text in a standard browser window| 
+| resizable | Can I change the window size| 
+| menubar | whether to Show the browser menu| 
+| toolbar | Show toolBar browser| 
+| caption | window Title| 
+| `Прочие параметры`|| 
+| useDefaultWindow | Use the browser window to open lookup forms default `false`| 
+| formParams | Url-window options lucapa| 
+| url | Link to window lucapa| 
+| additionalControls | Related lucapa| 
 
-### Практическая реализация
+### Practical implementation 
 
-Кнопки, которые будут:
+The buttons that are: 
 
-* очищать лукап
-* блокировать лукап
-* разблокировать лукап
-* открывать форму лукапа
-* подменять адрес формы лукапа
+* clear lookup 
+* block lookup 
+* unlock lookup 
+* open the form lucapa 
+* replace the address of the form lucapa 
 
-Добавить клиентские кнопки и повесить обработчики `onclick`:
+To add client button and hang handlers `onclick`: 
 
 ```javascript
 <button onclick="$('#<%=ctrlИнспектор.ClientID%>').icsMasterEditorAjaxLookup('unblock'); return false;">РАЗБЛОКИРОВАТЬ</button>
 
-<button onclick="$('#<%=ctrlИнспектор.ClientID%>').icsMasterEditorAjaxLookup('block'); return false;">ЗАБЛОКИРОВАТЬ</button>
+<button onclick="$('#<%=ctrlИнспектор.ClientID%>').icsMasterEditorAjaxLookup('block')return ; false;">ЗАБЛОКИРОВАТЬ</button>
 
 <button onclick="$('#<%=ctrlИнспектор.ClientID%>').icsMasterEditorAjaxLookup('clear'); return false;">ОЧИСТИТЬ</button>
 
-<button onclick="$('#<%=ctrlИнспектор.ClientID%>').icsMasterEditorAjaxLookup('show'); return false;">ОТКРЫТЬ</button>
+<button onclick="$('#<%=ctrlИнспектор.ClientID%>').icsMasterEditorAjaxLookup('show')return ; false;">ОТКРЫТЬ</button>
 
 <button onclick="$('#<%=ctrlИнспектор.ClientID%>').icsMasterEditorAjaxLookup('updateOptions', {lookup:{LFName:'LFName1'}}); return false;">Настройки</button>
-```
+``` 
 
-{% include important.html content="Без добавления директивы `return false;` будет происходить PostBack и ничего работать не будет."%}
+{% include important.html content="Without adding `return false;` PostBack will occur and it will not work."%} 
 
-Для вызова `JS API MasterEditorAjaxLookup` при загрузке страницы нужно вызывать эти функции в самом конце события `ready`. Для этого существует несколько способов:
+To call `JS API MasterEditorAjaxLookup` when the page is loaded we need to call these functions at the end of the event `ready`. There are a couple of ways: 
 
-1.Обработка события `load`.
+1.Processing events `load`. 
 
 ```javascript
 $(window).load(function () {
     $('#<%=ctrlСтруктурноеПодразделение.ClientID %>').icsMasterEditorAjaxLookup('block');
     $('#<%=ctrlСтруктурноеПодразделение.ClientID %>').icsMasterEditorAjaxLookup('clear');
 });
-```
+``` 
 
-2.Использование трюка добавления обработчика события `ready` при обработке этого же события. Данный способ работает, так как обработчики выполняются в том порядке, в котором они были добавлены.
+2.Using the trick of adding an event handler `ready` when processing this same event. This method works because the handlers are executed in the order in which they were added.
 
 ```javascript
 $(function () {
@@ -220,11 +222,11 @@ $(function () {
         $('#<%=ctrlСтруктурноеПодразделение.ClientID %>').icsMasterEditorAjaxLookup('clear');
     });
 });
-```
+``` 
 
-#### Установка значения `MasterEditorAjaxLookup`
+#### Setting `MasterEditorAjaxLookup` 
 
-Например, если по нажатию кнопки `changeMasterLookUpValue` должно изменяться значение `MasterEditorAjaxLookup` `ctrlLimitEditorMaster1` на указанное в контроле `masterLookUpValues`, то:
+For example, if the button is pressed `changeMasterLookUpValue` should change the value `MasterEditorAjaxLookup` `ctrlLimitEditorMaster1` specified in the control `masterLookUpValues`: 
 
 ```javascript
 $(document).ready(function () {
@@ -233,18 +235,22 @@ $('#<%= changeMasterLookUpValue.ClientID %>').click(function () {
     return false;
 });
 });
-```
+``` 
 
-### События
+### Events 
 
-| Событие | Описание|
-|------------|---------------------------------------|
-| change | Срабатывает после выбора значения мастера и "размазывания" значений лукапа по контролам|
+| Event | Description| 
+|------------|---------------------------------------| 
+| change | Triggered when you select the wizard, and "smearing" of values lucapa at the controls| 
 
-#### Практическая реализация контрола
+#### Practical implementation of the control 
 
-См. [LookUp](fw_lookup.html).
+Cm. [LookUp](fw_lookup.html). 
 
-### Связывание лукапов, находящихся внутри других элементов
+### Bondage lyapov inside other elements 
 
-См. [статью Связывание LookUp'ов в AGE с внешним LookUp'ом](fa_change-lcs-lookup-age.html).
+Cm. [an article Linking LookUp's AGE with external LookUp'ω](fa_change-lcs-lookup-age.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

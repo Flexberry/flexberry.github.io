@@ -1,123 +1,129 @@
----
-title: ViewColumnProvider
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_view-column-provider.html
-lang: en
----
+--- 
+title: ViewColumnProvider 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_view-column-provider.html 
+lang: en 
+autotranslated: true 
+hash: 24d04a8325501983c005c8134cec5048b2a1e2e36b81dbe24dcecb2f7e5a7a2e 
+--- 
 
-`ViewColumnProvider` - это провайдер, который позволяет настраивать отображение колонок на контролах ([WebObjectListView](fa_web-object-list-view.html),
-[AjaxGroupEdit](fa_ajax-group-edit.html)). Все его настройки хранятся в файле `/xml/ViewColumnProvider.xml`.  
-Провайдер позволяет настраивать отображение колонок как для свойств и панели инструментов пользовательских типов (через тег `type`, `property` и `toolbar`), так и для типов отображаемого значения (через тег `basetype`).  
-Приоритетными являются настройки свойств. Если они не найдены в файле конфигурации, то ищутся настройки для типа значения.
+`ViewColumnProvider` is a provider that allows you to configure the display of columns in the controls ([WebObjectListView](fa_web-object-list-view.html), 
+[AjaxGroupEdit](fa_ajax-group-edit.html)). All its settings are stored in the file `/xml/ViewColumnProvider.xml`. 
+The provider allows you to configure the display of columns for the properties and the Toolbox user-defined types (using the tag `type`, `property` and `toolbar`), and types of displayed values (using the tag `basetype`). 
+Priority setting properties. If they are not found in the configuration file, the settings are searched for a value type. 
 
-Параметр `name` применяется в составе тегов (`type`, `property` и `basetype`). Остальные параметры (`width`, `fixedwidth`, `cut` и другие) применяются в составе тегов `property` и `basetype`.
+Option `name` used in composition tags (`type`, `property` and `basetype`). The remaining parameters (`width`, `fixedwidth`, `cut` and others) used in the composition of the tags `property` and `basetype`. 
 
-__После смены значения в xml-файле, проект нужно перекомпилировать.__
+__After changing the values in the xml file, the project need to be recompiled.__ 
 
-## Параметры
+## Settings 
 
-* `name` - Атрибут объекта из представления, с которым работает контрол. **Является обязательным!** 
-  
-    ```xml 
+* `name` - object Attribute from the view, which operates the control. **Is a must!** 
+
+```xml 
     <basetype name="System.Int32"/>
-    ```
-    
-    ```xml
-    <type name="Здание">
-        <property name="Наименование"/>
+    ``` 
+
+```xml
+    <type name="Building">
+        <property name="Name"/>
     </type>
-    ```
+    ``` 
 
-* `width` - Ширина колонки. Этот параметр применится не к самой колонке, а к ее содержимому. Обычно, всем колонкам, которые должны иметь определенную ширину, задается этот параметр, а остальным колонкам в css задается 100% ширина.
+* `width` - column Width. This parameter is applied to the column and its contents. Usually, all columns must have a certain width, set this option and the rest of the columns in css is set to 100% width. 
 
-    ```xml
-    <property name="Здание.Наименование" width="150" />
-    ```
+```xml
+    <property name="The building.The name" width="150" />
+    ``` 
 
-* `fixedwidth` - Задает ширину колонки. Параметр применится к самой колонке. Можно задавать как просто числом(100 - по умолчанию, пиксели), так и с указанием пикселей(100px) и процентов(100%)
-    
-    ```xml
-    <property name="Здание.Наименование" fixedwidth="100" />
-    ```
+* `fixedwidth` - Sets the width of the column. The setting will apply to the column. You can specify as just the number(100 - by default, pixels), and pixels(100px), and percent(100%) 
 
-* `minwidth` - Задает минимальную ширину колонки. Задавать параметр можно `только в пикселях`, иначе не сработает. Минимальная ширина применяется, когда текущая ширина колонки становится меньше минимальной.
+```xml
+    <property name="The building.The name" fixedwidth="100" />
+    ``` 
 
-    ```xml
-    <property name="Здание.Наименование" minwidth="100px" />
-    ```
+* `minwidth` - Sets the minimum width of the column. Ask option `только in пикселях` or it won't work. The minimum width used when the current column width becomes less than the minimum. 
 
-* `filter` - Нужна ли возможность фильтрования по данному столбцу
+```xml
+    <property name="The building.The name" minwidth="100px" />
+    ``` 
 
-    ```xml
-    <property name="Здание.Наименование" filter="false" />
-    ```
+* `filter` - do you Need the possibility to filter on this column 
 
-* `filteroperations` - Нужна ли возможность использовать операции фильтрования по данному столбцу (`>=`, `<=`)
+```xml
+    <property name="The building.The name" filter="false" />
+    ``` 
 
-    ```xml
-    <property name="Здание.Наименование" filteroperations="false" />
-    ```
+* `filteroperations` - do you Need the ability to use filter operations on this column (`>=`, `<=`) 
 
-* `noteditbyclick` - Запрет на редактирование объекта по клику на ячейку в этом столбце (редактирование и так отменяется, если указать `filter=false`).
-  
-    ```xml
-    <property name="Здание.Наименование" noteditbyclick="true" />
-    ```
+```xml
+    <property name="The building.The name" filteroperations="false" />
+    ``` 
 
-* `sort` - Включить\выключить сортировку для столбца
+* `noteditbyclick` - a Ban on the edit object by clicking on a cell in this column (edit and so is canceled if you specify `filter=false`). 
 
-    ```xml
-    <property name="Здание.Наименование" sort="true" />
-    ```
+```xml
+    <property name="The building.The name" noteditbyclick="true" />
+    ``` 
 
-* `cut` - Включить\выключить обрезание содержимого для столбца. Если текст превышает 30 символов, то текст обрезается и в конце добавляется многоточие
-    
-    ```xml
-    <property name="Здание.Наименование" cut="true" />
-    ```
+* `sort` - Enable / disable sorting for a column 
 
-* `cutwidth` - Количество символов, которое нужно оставлять в столбце не обрезая. Если задан этот параметр, то можно не задавать cut="true"
+```xml
+    <property name="The building.The name" sort="true" />
+    ``` 
 
-    ```xml
-    <property name="Здание.Наименование" cutwidth="80" />
-    ```
+* `cut` - Turn on\off cutting off content for the column. If the text exceeds 30 characters, the text is clipped at the end and adds an ellipsis 
 
-* `align` | Выравнивание содержимого столбца. Значения: "ПоЛевомуКраю", "ПоЦентру", "ПоПравомуКраю"
+```xml
+    <property name="The building.The name" cut="true" />
+    ``` 
 
-    ```xml
-    <property name="Здание.Наименование" align="ПоЦентру" />
-    ```
+* `cutwidth` is the Number of characters that you want to leave the column without clipping. If this parameter is specified, there is no set cut="true" 
 
-Можно добавлять свои свойства и обрабатывать их, например, в `WolvSettApplyer`. Получать произвольные настройки отображения можно при помощи метода `GetColumnSettingsBySettingsName(тип, имя_настройки, имя_свойства);` 
+```xml
+    <property name="The building.The name" cutwidth="80" />
+    ``` 
 
-## Настройки колонки с панелью инструментов
+* `align` | Alignment of the column. Values: "Poliamory", "Pacentro", "Poprawka" 
 
-Настройки для колонки с панелью инструментов осуществляется через тэг `toolbar`. Данный тэг допускает следующие параметры: `width`, `fixedwidth`, `minwidth`, `align`.
+```xml
+    <property name="The building.The name" align="Pacentro" />
+    ``` 
 
-## Пример
+You can add your properties, and handle, for example, in `WolvSettApplyer`. To arbitrary display settings you can use the method `GetColumnSettingsBySettingsname(type imantrek, PropertyName);` 
+
+## Settings column toolbar 
+
+Settings for columns with the toolbar is done via the tag `toolbar`. This tag allows the following parameters: `width`, `fixedwidth`, `minwidth`, `align`. 
+
+## Example 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <basetype name="System.DateTime" width="100" />
   <basetype name="System.Guid?" cut="false" />
-  <type name="IIS.ISOGD.Адрес">
+  <type name="IIS.ISOGD.Address">
     <toolbar fixedwidth="300px" width="200" minwidth="100px" />
-    <property name="ПервичныйКлюч" width="10" cut="false" filter="false" sort="false" align="ПоЦентру" noteditbyclick="true"/>
-    <property name="ТерриторияПроп" width="180" cut="false" />
-    <property name="УлицаПроп" width="100" cut="false" />
-    <property name="Дом" width="50" cut="false"/>
-    <property name="Корпус" width="50" cut="false"/>
-    <property name="Строение" width="50" cut="false" />
-    <property name="ЖилойРайон.НаименованиеВидТеррЕд" width="100" cut="false" />
-    <property name="Микрорайон.НаименованиеВидТеррЕд" width="100" cut="false" />
-    <property name="Квартал.НаименованиеВидТеррЕд" width="100" cut="false" />
-    <property name="КодКЛАДР" width="60" cut="false" />
-    <property name="СостояниеАдреса" width="80" cut="false" />
-    <property name="ДатаИзмененияСостояния" width="80" cut="false" />
-    <property name="СрокРезервированияАдреса" width="80" cut="false" />
+    <property name="Pervichnykh" width="10" cut="false" filter="false" sort="false" align="Pacentro" noteditbyclick="true"/>
+    <property name="Territoriale" width="180" cut="false" />
+    <property name="Alitaptap" width="100" cut="false" />
+    <property name="Home" width="50" cut="false"/>
+    <property name="Building" width="50" cut="false"/>
+    <property name="Structure" width="50" cut="false" />
+    <property name="Ilirian.Naimenovaniya" width="100" cut="false" />
+    <property name="Neighborhood.Naimenovaniya" width="100" cut="false" />
+    <property name="The quarter.Naimenovaniya" width="100" cut="false" />
+    <property name="Kodlar" width="60" cut="false" />
+    <property name="Sostoyaniyakh" width="80" cut="false" />
+    <property name="Datastreamtype" width="80" cut="false" />
+    <property name="Socratesanisaseaton" width="80" cut="false" />
   </type>
 </root>
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

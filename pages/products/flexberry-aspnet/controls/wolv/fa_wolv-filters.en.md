@@ -1,98 +1,104 @@
----
-title: Фильтры WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_wolv-filters.html
-lang: en
----
+--- 
+title: Filters WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_wolv-filters.html 
+lang: en 
+autotranslated: true 
+hash: 2e736a2869e66cfabd095ec5e52ea034645dad290d64b3f89a26dd7243962e53 
+--- 
 
-Если включить настройку [WOLV](fa_web-object-list-view.html) `Filter=true`, то на тулбаре появится кнопка с фильтрами. При нажатии на кнопку появится первая строка, в которой можно накладывать фильтры. Первый контрол в ячейке фильтров - операция, второй - значение. Особым образом обрабатываются свойства типа `bool` и наследники `Enum`: для логических полей генерируется `DropDownList` с тремя значениями - `Пусто`, `Да`, `Нет`, для `Enum` - `DropDownList` с диапазоном значений перечисления (caption'ы).
+If you enable the setting up [WOLV](fa_web-object-list-view.html) `Filter=true`, the toolbar button will appear with filters. When you press the button you will see the first line where you can apply filters to. The first control cell filter operation, the second the value. Especially treated type properties `bool` and heirs `Enum`: for Boolean fields are generated `DropDownList` with three values - `Пусто`, `Да`, `Нет` for `Enum` - `DropDownList` with the range of enumeration values (caption's). 
 
-Для того чтобы использовать свой контрол в фильтрах, нужно:
+In order to use your control in filters, you need to: 
 
-* чтобы контрол реализовывал интерфейс `IFilterControl`
-* добавить в WebControlProvider.xml к соотвествующему типу строчку:
+* to control to implement the interface `IFilterControl` 
+* add to WebControlProvider.xml to the appropriate type line: 
 
-    ```xml
+```xml
     ...
-    <propertytype name="ИмяТипа">
+    <propertytype name="Imathia">
       <control .../>
       <editcontrol ...>
-      <filtercontrol typename="ИмяТипаКонтрола" codefile="ФайлКодаКонтрола" />
+      <filtercontrol typename="Imediacontrol" codefile="Talktalktalk" />
     </propertytype>
     ...
-    ```
-    
-* Если нужна возможность ручного определения функции ограничения для специфического контрола фильтрации, то нужно реализовать интерфейс `ICSSoft.STORMNET.Web.Tools.IComparableFilterControl`.
+    ``` 
 
-То есть контрол для фильтра можно задать аналогично контролу для редактирования или просмотра, только не указывается имя свойства данных, потому что
-используется интерфейс.
+* If you need the ability to manually determine the limit function for the specific control of the filter, then you need to implement the interface `ICSSoft.STORMNET.Web.Tools.IComparableFilterControl`. 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-filters.png)
+That is, the control filter can be set similarly to the control for editing or viewing, not the name of a data property, because 
+used interface. 
 
-При нажатии на ячейку правой кнопкой мыши появляется контекстное меню, в котором можно наложить фильтр на колонку.
+![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-filters.png) 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-context-filters.png)
+When you click on the cell right-click context menu appears in which you can apply a filter to the column. 
 
-## Контролы для фильтрации
+![](/images/pages/products/flexberry-aspnet/controls/wolv/wolv-context-filters.png) 
 
-В качестве контролов для фильтров на данный момент могут использоваться:
+## Controls for filtering 
 
-* [AlphaNumericTextBox](fa_alpha-numeric-textbox.html)
-* [DatePicker](fa_date-picker.html)
-* [MasterEditorLinkedAjaxLookUp](fa_master-editor-linked-ajax-lookup.html)
+As controls for filters at the moment can be used: 
 
-По умолчанию для свойств различных типов будут использоваться следующие контролы для фильтрации (используемые контролы для различных типов могут переопределяться в файле `WebControlProvider.xml`):
+* [AlphaNumericTextBox](fa_alpha-numeric-textbox.html) 
+* [DatePicker](fa_date-picker.html) 
+* [MasterEditorLinkedAjaxLookUp](fa_master-editor-linked-ajax-lookup.html) 
 
-* Для свойств с типами `int`, `Nullable<int>` и `NullableInt` используется [AlphaNumericTextBox](fa_alpha-numeric-textbox.html)
-* Для свойств с типами `DateTime`, `Nullable<DateTime>` и `NullableDateTime` используется [DatePicker](fa_date-picker.html)
-* Для свойств с типами `bool` и `Enum` используется `DropDownList`
-* Для свойств с остальными типами используется `TextBox`
+The default properties of different types will be used the following controls for filtering (used for controls of various types can be overridden in the file `WebControlProvider.xml`): 
 
-## Правила фильтрации
+* For properties with types `int`, `Nullable<int>` and `NullableInt` used [AlphaNumericTextBox](fa_alpha-numeric-textbox.html) 
+* For properties with types `DateTime`, `Nullable<DateTime>` and `NullableDateTime` use [DatePicker](fa_date-picker.html) 
+* For properties with types `bool` and `Enum` used `DropDownList` 
+* For properties with other types of used `TextBox` 
 
-Правила фильтрации элементов на списковых формах:
+## filtering Rules 
 
-* при вводе некорректных значений (в том числе числовых) все операции фильрации будут возвращать пустой список элементов и будет выводиться соответствующее сообщение для пользователя
-* пустое значение (за исключением полей с типами, допускающими значение `null`) будет обрабатываться так же как некорректное (если выбрана операция фильтрации)
-* для строковых полей или полей, допускающих значение `null`, пустое значение рассматривается как null, при этом операции `больше равно` и `меньше равно` не будут ограничивать список 
-* исключения в случае ввода некорректных значений в общем случае выбрасываться не будут
+Rules for filtering items in list forms: 
 
-{% include note.html content="Исключения пока будут выбрасываться только в случае когда контрол, используемый для фильтрации в WOLV, выбрасывает исключение при установке некорректного значения в свойство Text (из-за механизма работы ASP.NET)." %}
+* if you enter incorrect values (including numeric) filtering, all operations will return an empty list of items and will display an appropriate message to the user 
+* empty value (except for fields with a type that allows the value `null`) would be treated the same as incorrect (if the selected filtering operation) 
+* for string fields, or fields that allow `null` value, an empty value is considered as null when this operation `больше равно` and `меньше равно` will not limit the list 
+* exceptions in case of incorrect values in the General case will not be thrown 
 
-### Особенности работы с фильтрами
+{% include note.html content="Exception is thrown only in the case where the control used to filter in WOLV, throws an exception when setting incorrect value to the Text property (because of the mechanism of ASP.NET)." %} 
 
-Особенности работы с символом `*`:
+### Features of working with filters 
 
-* если фильтр накладывается на поле строкового типа, то `*` определяет любое количество символов, то есть:
+Features of the symbol `*`: 
 
-    * `*123` будет искать все строки, оканчивающиеся на `123`.
-    * `123*` будет искать все строки, начинающиеся на `123`.
-    * `*123*` будет искать все строки, содержащие подстроку `123`.
-    
-* если фильтр накладывается на поле нестрокового типа, то `*` не интерпретируется каким-нибудь особым образом (например, если по числовому столбцу искать `*123*`, то ничего не будет найдено, поскольку ни одно число не представлено подобной последовательностью символов).
+* if the filter is superimposed on a field of string type, then `*` defines any number of characters, i.e.: 
 
-### Передача параметров фильтров через GET-запрос
+* `*123` will look for all lines ending in `123`. 
+* `123*` will search for all lines beginning with `123`. 
+* `*123*` will search all strings that contain a substring `123`. 
 
-Параметры фильтрации можно передавать через GET-запрос, то есть можно указать необходимый параметр в адресной строке и таким образом наложить ограничение на список. В дальнейшем можно настроить быстрый доступ к полученному списку через ссылку или контрол. Строка GET-запроса выглядит следующим образом: 
+* if the filter is superimposed on the field of non-string type, `*` is not interpreted in any special way (for example, if the numeric column to look for `*123*`, nothing will be found, since no number is presented in a similar sequence of characters). 
 
-`?WOLF_WebObjectListView1=<НомерКолонки>:<Фильтр>`.
+### Transfer of filter parameters via a GET request 
 
-Нумерация колонок идет слева направо и начинается с `0` (не учитывая колонку с кнопками).
+The filter parameters can be transmitted via GET request, it is possible to specify the necessary parameter in the address bar and thus to restrict the list. In the future, you can configure quick access to the list via a link or control. String of a GET request as follows: 
 
-{% include warning.html content="Учитываются все колонки списка, а не только отображенные на странице." %}
+`?WOLF_WebObjectListView1=<Numerology>:<Filter>`. 
 
-Допустимо применение разделителя `|` между параметрами, в таком случае параметры объединяются по принципу `И`.
+Numbering of columns runs from left to right and starts with `0` (not including the column of buttons). 
 
-В результате указанные значения фильтра будут проставлены в соответствующие колонки.
+{% include warning.html content="Considered all the columns of the list, not just displayed on the page." %} 
 
-Например, есть список квартир:
+Use a separator `|` between the parameters, in this case, the settings are merged according to the principle `И`. 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/apartments1.png)
+In the result of specified filter values will be indicated in the appropriate column. 
 
-Необходимо получить ограниченный список: "Квартиры №1 стандартной отделки". На странице отображены не все колонки. Колонка "Номер" нулевая по счету на списке по умолчанию, колонка `Вид отделки` - десятая. GET-запрос будет выглядеть как `?WOLF_WebObjectListView1=0:1|10:Стандартная`.
+For example, there is a list of apartments: 
 
-В результате список примет следующий вид: 
+![](/images/pages/products/flexberry-aspnet/controls/wolv/apartments1.png) 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/apartments2.png)
+You must obtain a restricted list: "Apartment No. 1 standard finishing." The page doesn't display all columns. The column "Number" scoreless in the default list, column `Вид отделки` - tenth. A GET request will look like `?WOLF_WebObjectListView1=0:1/10:Стандартная`. 
+
+The resulting list will be as follows: 
+
+![](/images/pages/products/flexberry-aspnet/controls/wolv/apartments2.png) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

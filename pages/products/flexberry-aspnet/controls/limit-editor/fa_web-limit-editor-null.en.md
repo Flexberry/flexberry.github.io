@@ -1,43 +1,49 @@
----
-title: Пусто/Непусто в расширенном редакторе ограничений в WEB
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_web-limit-editor-null.html
-lang: en
----
+--- 
+title: is Empty/is non-empty in the advanced editor, limitations in the WEB 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_web-limit-editor-null.html 
+lang: en 
+autotranslated: true 
+hash: 8bce8afe4dda647536b0b82c6242a9276f865a6ef9b4ec23b9f9acd01aaa6b02 
+--- 
 
-## Пусто/Непусто
+## Empty/Is Nonempty 
 
-В [расширенном редакторе ограничений](fa_advanced-limit-editor.html) есть поддержка выражений Пусто/Непусто (Пусто/Заполнено).
+In the expanded constraint editor](fa_advanced-limit-editor.html) there is support for expressions is Empty/is nonempty (Empty/Filled). 
 
-![](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor-null.png)
+![](/images/pages/products/flexberry-aspnet/controls/limit-editor/web-limit-editor is null.png) 
 
-`Пусто` соответствует функции [funcIsNull](fo_func-is-null.html) из [SQLWhereLanguageDef](fo_function-list.html). 
+`Пусто` to the [funcIsNull](fo_func-is-null.html a) of [SQLWhereLanguageDef](fo_function-list.html). 
 
-`Непусто` соответствует функции funcNotIsNull из [ExternalLangDef](fo_external-lang-def.html).
+`Непусто` corresponds to the function of funcNotIsNull [ExternalLangDef](fo_external-lang-def.html). 
 
-## Возможности выражений Пусто/Непусто
+## Possible expressions is Empty/is nonempty 
 
-Выражения Пусто/Непусто можно накладывать на:
+Expression is Empty/is nonempty can be applied to: 
 
-* собственные свойства,
-* свойства детейлов,
-* мастера,
-* свойства мастеров (при этом выражение вида `Пусто(A.B.C)` интерпретируется как `A==null || A.B==null || A.B.C==null`).
+* own properties, 
+* properties of datalow, 
+* masters, 
+* properties of the masters (the expression of the `Пусто(A. B. C)` interpreted as `A==null || A. B==null || A. B. C==null`). 
 
-## Несравнимые с null свойства и Пусто/Непусто
+## Incomparable with null properties and Empty/is nonempty 
 
-Если имеется класс `Кредит` со свойством `СуммаКредита` вещественного типа, то при переводе в [LINQProvider|LinqProvider) оно будет представляться следующим образом:
+If you have a class with a property `Кредит` `СуммаКредита` real type, the translation in [LINQProvider|LinqProvider) it will be presented as follows: 
 
 ``` csharp
 var ds = (SQLDataService)DataServiceProvider.DataService;
 IQueryable<Кредит> limit = ds.Query<Кредит>(Кредит.Views.C__КредитE).Where(x => (x.СуммаКредита as object) == null);
-```
+``` 
 
-а при переводе в lcs:
+and transfer in lcs: 
 
 ``` csharp
 Function lf = ldef.GetFunction(
-                ldef.funcIsNull, new VariableDef(ldef.StringType, "СуммаКредита"));
-```
+                ldef.funcIsNull, new VariableDef(ldef.StringType, "Summarydata"));
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

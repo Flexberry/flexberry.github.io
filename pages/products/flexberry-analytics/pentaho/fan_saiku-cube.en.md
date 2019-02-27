@@ -1,85 +1,86 @@
----
-title: Saiku. Business-process of creating OLAP-cube
-keywords: mydoc
-sidebar: flexberry-analytics_sidebar
-toc: false
-permalink: en/fan_saiku-cube.html
-lang: en
-summary:
----
+--- 
+title: Saiku. The business process of creating OLAP cube 
+keywords: mydoc 
+sidebar: flexberry-analytics_sidebar 
+toc: false 
+permalink: en/fan_saiku-cube.html 
+lang: en 
+autotranslated: true 
+hash: 113a4cb99b08e2390d3a461635a800369434a9ecb5c594895ef4f28077f2d0d0 
+summary: 
+--- 
 
-`Saiku Analytics` - это клиент для работы с массивами данных с открытыми исходными кодами. Разрабатывается и поддерживается корпорацией `Pentaho`.
+`Saiku Analytics` is a client for working with datasets open source. Developed and maintained by the Corporation `Pentaho`. 
 
-`OLAP-куб` — (_On-Line Analytical Processing_ — интерактивный анализ данных) многомерный массив данных, как правило, разреженный и долговременно хранимый, используемый в OLAP. Может быть реализован на основе универсальных реляционных СУБД или специализированным программным обеспечением. Подробнее в статье [OLAP-куб](https://ru.wikipedia.org/wiki/OLAP-%D0%BA%D1%83%D0%B1).
+`OLAP-куб` — (_On-Line Analytical Processing_ — interactive data analysis) multidimensional array data are usually sparse and long-term stored, used in OLAP. Can be implemented on the basis of a universal relational DBMS or specialized software. For details, see [OLAP cube](https://ru.wikipedia.org/wiki/OLAP-куб). 
 
-## Настройка подключения к БД
+## configure a connection to a database 
 
-Первым шагом для создания OLAP куба является подключение источника данных. Для этого необходимо произвести следующие действия:
+The first step to build an OLAP cube is the data source connection. To do this you must perform the following steps: 
 
-{% include important.html content="Pentaho не умеет подключаться к базам с русским наименованием БД. Но корректно работает с русскими наименованиями таблиц." %}
+{% include important.html content="Pentaho is not able to connect to the database with Russian name of the database. But it works correctly with Russian names of the tables." %} 
 
-1.Авторизоваться под ролью «Администратор»;
+1.Log in under the "Administrator"role ; 
 
-2.Открыть «Manage Data Sources» и во всплывающем окне кликнуть на шестеренку ![](/images/pages/products/flexberry-analytics/saiku-cube-settings.png);
+2.Open "Manage Data Sources" and in the popup window, click on the gear ![](/images/pages/products/flexberry-analytics/saiku-cube-settings.png); 
 
-3.В выпадающем меню кликнуть на «New connection»;
+3.In the drop down menu click on "New connection"; 
 
-4.В открывшемся pop up «Database Connection» заполнить поля для подключения к БД:
+4.In the opened pop up the "Database Connection" fill in fields to connect to the database: 
 
-   * Connection Name;
-   * Database Type (при выборе различным типов БД меняются поля для настройки подключения, далее указаны поля для PostgreSQL);
-   * Access (по умолчанию Native (JDBC))
-   * Host Name;
-   * Database Name;
-   * Port Number (по умолчанию 5432);
-   * User Name;
-   * Password
+* Connection Name; 
+* Database Type (if you select different types of databases are changing fields to configure the connection, following are the fields for PostgreSQL); 
+* Access (by default, Native (JDBC)) 
+* Host Name; 
+* Database Name; 
+* Port Number (default 5432); 
+* User Name; 
+* Password 
 
-![](/images/pages/products/flexberry-analytics/saiku-cube001.png)
- 
-5.После заполнения полей кликнуть на кнопку «Test» для проверки соединения;
+![](/images/pages/products/flexberry-analytics/saiku-cube001.png) 
 
-![](/images/pages/products/flexberry-analytics/saiku-cube002.png)
- 
-6.Если все корректно отработало, кликнуть по кнопке «OK» для сохранения конфигурации.
+5.After filling the fields, click on the "Test" button to check соединения; 
 
-## Публикация схемы OLAP куба
+![](/images/pages/products/flexberry-analytics/saiku-cube002.png) 
 
-Вторым шагом для создания куба является публикация схемы, разработанной в Pentaho Schema Workbrench или вручную.
+6.If everything worked correctly, click on the "OK" button to save the configuration. 
 
-1.Открыть «Manage Data Sources» и во всплывающем окне кликнуть на шестеренку  ![](/images/pages/products/flexberry-analytics/saiku-cube-settings.png);
+## Publish OLAP schema cube 
 
-2.В выпадающем меню кликнуть на «Import Analysis»;
+The second step to create the cube is the publication scheme, developed in Pentaho Schema Workbrench or manually. 
 
-3.Во всплывающем окне «Import Analysis» нужно заполнить следующие поля:
+1.Open "Manage Data Sources" and in the popup window, click on the gear ![](/images/pages/products/flexberry-analytics/saiku-cube-settings.png); 
 
-   * Mondrian File (Выбирается xml файл схемы с директории своего ПК);
-   * Выбрать «Select from available data sources»;
-   * Data Source (Выбрать из списка подключение к БД, созданное на 1 шаге)
+2.In the drop down menu click on "Import Analysis"; 
 
-![](/images/pages/products/flexberry-analytics/saiku-cube003.png)
- 
-4.После заполнения кликнуть на кнопку «Import»;
+3.In the pop-up window "Import Analysis" to fill in the following fields: 
 
-## Создание куба
+* Mondrian File (Select xml schema file from a directory on your PC); 
+* Select "Select from available data sources"; 
+* Data Source (Choose from the list the DB connection you created in step 1) 
 
-1.На главной странице Pentaho кликнуть на кнопку «Create New»;
+![](/images/pages/products/flexberry-analytics/saiku-cube003.png) 
 
-2.В появившемся списке кликнуть на кнопку «Saiku Analytics»;
+4.After filling click on the button "Import"; 
 
-![](/images/pages/products/flexberry-analytics/saiku-cube004.png)
- 
-3.Далее кликнуть на кнопку «Create a new quary»
+## cube Creation 
 
-4.В открывшемся окне справа нужно кликнуть на иконку ![](/images/pages/products/flexberry-analytics/saiku-cube-refresh.png) для обновления данных;
+1.On the main page of Pentaho click on the button "Create New"; 
 
-5.Выбрать нужный куб из выпадающего списка:
+2.In the list that appears, click on the button "Saiku Analytics"; 
 
-![](/images/pages/products/flexberry-analytics/saiku-cube005.png)
+![](/images/pages/products/flexberry-analytics/saiku-cube004.png) 
 
-6.Добавить измерения и меры, отображен результат:
+3.Next, click on the button "Create a new quary" 
 
-![](/images/pages/products/flexberry-analytics/saiku-cube006.png)
+4.In the opened window, right click on the icon ![](/images/pages/products/flexberry-analytics/saiku-cube-refresh.png) to update данных; 
 
-![](/images/pages/products/flexberry-analytics/saiku-cube007.png)
- 
+5.Select the desired cube from the drop-down списка; 
+
+6.Add dimensions and measures, see the result: 
+
+![](/images/pages/products/flexberry-analytics/saiku-cube005.png) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,53 +1,58 @@
----
-title: Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_flexberry-asp-net.html
-lang: en
----
+--- 
+title: Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_flexberry-asp-net.html 
+lang: en 
+autotranslated: true 
+hash: 4f9f663293a88d837c9aa6413cf14ae04cd5d8a5d3bc786e283412b1d072c935 
+--- 
 
-Flexberry ASP.NET является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet).
+Flexberry ASP.NET is [product platform Flexberry](fp_platform-structure.html). The product website Flexberry ASP.NET: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryASPNet). 
 
-## Описание продукта
+## product Description 
 
-Посредством [Flexberry Designer](fd_landing_page.html) возможно создание [диаграммы классов](fd_class-diagram.html). С этой [диаграммы](fd_class-diagram.html) можно сформировать необходимую структуру базы данных (БД), объектную модель и готовое web-приложение.
+By [Flexberry Designer](fd_landing_page.html) it is possible to create [class diagram](fd_class-diagram.html). This [chart](fd_class-diagram.html) you can generate the required database structure (DB), the object model and ready web application. 
 
-## Состав продукта
+## the product 
 
-Flexberry ASP.NET состоит из следующих модулей:
+Flexberry ASP.NET consists of the following modules: 
 
-* [Модуль расширения Flexberry Designer для генерации web-приложений по uml-моделям](fa_asp-net-generator.html).
-* [Web-контролы и web-компоненты](fa_web-controls.html).
-* [Подсистема полномочий (web)](fa_right-manager.html)
-* [Темы оформления](fa_themes.html)
+* [Expander Flexberry Designer to generate web applications in the uml models](fa_asp-net-generator.html). 
+* [Web controls and web components](fa_web-controls.html). 
+* [Subsystem powers (web)](fa_right-manager.html) 
+* [Themes](fa_themes.html) 
 
-## Ограничения Flexberry ASP.Net
+## Restrictions Flexberry ASP.Net 
 
-* [Список поддерживаемых браузеров](fa_browsers.html)
-* [Возможные места утечки памяти в веб-приложениях](fa_memory-leaks.html)
+* [Supported browsers](fa_browsers.html) 
+* [Possible locations of a memory leak in web applications](fa_memory-leaks.html) 
 
-### Статьи по теме
+### related Articles 
 
-* ASP.NET web-контролы, компоненты
-    * [WebObjectListView](fa_web-object-list-view.html)
-        * [Сортировка в списковой форме, поднятой по лукапу](fa_lookup-form-sort.html)
-        * [Открытие лукап-формы с поддержкой иерархии ](fa_lookup-form-hierarchy.html)
-    * [Расширенный редактор ограничений в WEB](fa_advanced-limit-editor.html)
-        * [External-классы в расширенном редакторе ограничений](fa_web-limit-editor-external-class.html)
-        * [Пусто/Непусто в расширенном редакторе ограничений в WEB](fa_web-limit-editor-null.html)
-    * [Отображение на интерфейсе формы мастеров и детейлов](fo_masters-details.html)
-    * [ViewColumnProvider](fa_view-column-provider.html)
-* Блокировки
-    * [Работа с блокировками в веб](fa_working-locks-web.html)
-    * [WebLockHelper](fa_web-lock-helper.html)
-* Проектирование и разработка веб-приложений
-    * [Задание колонок для размещения контролов на уровне представлений Flexberry Designer](fd_specify-column-controls.html)
-    * [Маршрутизация в Web-приложениях](fa_routing.html)
-    * [Сценарии веб-разработки](fa_scenario-web.html)
+* ASP.NET web controls, components 
+* [WebObjectListView](fa_web-object-list-view.html) 
+* [Sorting in list form, raised on locapo](fa_lookup-form-sort.html) 
+* [Opening lookup-enabled form hierarchy ](fa_lookup-form-hierarchy.html) 
+* [Advanced constraint editor in the WEB](fa_advanced-limit-editor.html) 
+* [External-classes in the advanced editor, limitations](fa_web-limit-editor-external-class.html) 
+* [Empty/is non-empty in the advanced editor, limitations in the WEB](fa_web-limit-editor-null.html) 
+* [Display on the interface shape and datalow](fo_masters-details.html) 
+* [ViewColumnProvider](fa_view-column-provider.html) 
+* Lock 
+* [Lock web](fa_working-locks-web.html) 
+* [WebLockHelper](fa_web-lock-helper.html) 
+* Design and development of web applications 
+* [Set of columns for placing the controls on the level of representation Flexberry Designer](fd_specify-column-controls.html) 
+* [Routing in a Web app](fa_routing.html) 
+* [Scripting web development](fa_scenario-web.html) 
 
-## Примеры
+## Examples 
 
-### Пример настройки технологических форм
+### configuration Example of technological forms 
 
-Примеры настройки технологических форм представлены в [статье Примеры настройки технологических форм](fa_technological-forms-customization-example.html).
+Examples of how technological forms presented in [article, Examples of how technological forms](fa_technological-forms-customization-example.html).
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

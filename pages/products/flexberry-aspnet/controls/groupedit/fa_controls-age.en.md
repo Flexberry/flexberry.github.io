@@ -1,27 +1,29 @@
----
-title: Настройка контролов внутри AjaxGroupEdit
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_controls-age.html
-lang: en
+--- 
+title: configuring controls inside AjaxGroupEdit 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_controls-age.html 
+lang: en 
+autotranslated: true 
+hash: 7731265644f9eb59aedaffeaee83759a2edcc7ceb536cf83d60c4014245e81a0 
 
----
+--- 
 
-## Описание настройки
+## Description settings 
 
-Иногда возникает задача дополнительной настройки свойств контролов, генерируемых для редактирования и отображения значений свойств детейлов в AGE. Для этого можно использовать делегаты, задаваемые статически для класса [AjaxGroupEdit](fa_ajax-group-edit.html). Делегат задается для конкретного имени представления и имеет тип TuneControlDelegate, подробнее про который можно почитать [здесь](fa_tune-control-delegate-method.html). Добавить делегат можно добавить с помощью метода SetControlTuner:
+Sometimes there is a problem additional setting properties of the controls generated to edit and display the property values of datalow in AGE. You can use the delegates defined statically for the class [AjaxGroupEdit](fa_ajax-group-edit.html). The delegate is set for a specific view name and is of type TuneControlDelegate, more about which you can read [here](fa_tune-control-delegate-method.html). To add a delegate, you can add using the method SetControlTuner: 
 
 ```csharp
-/// <summary>
-/// Установить метод для настройки контролов, отображающихся в AGE.
-/// </summary>
-/// <param name="viewName">Имя представления (детейла, отображаемого в AGE), для которого будет вызываться передаваемый метод.</param>
-/// <param name="method">Метод, выполняющий настройку контролов.</param>
+/// <summary> 
+/// Set method to configure the controls that appear in the AGE. 
+/// </summary> 
+/// <param name="viewName">view Name (detail displayed in AGE), which will be passed to invoked method.</param> 
+/// <param name="method">Method that performs the setting of controls.</param> 
 public static void SetControlTuner(string viewName, TuneControlDelegate method)
-```
+``` 
 
-Задавать делегаты лучше в Global.asax.cs, в методе Application_Start. Пример использования:
+Ask delegates better in the Global.asax.cs, in the Application_Start method. Example usage: 
 
 ```csharp
 AjaxGroupEdit.SetControlTuner(
@@ -31,10 +33,14 @@ AjaxGroupEdit.SetControlTuner(
               if (control.GetType() == typeof(TextBox) && data.PropertyName == Information.ExtractPropertyName<Подзадача>(x => x.Описание)) 
                  ((TextBox)control).TextMode = TextBoxMode.MultiLine; 
            });
-```
+``` 
 
-Подробно об AjaxGroupEdit написано в этой [статье](fa_ajax-group-edit.html).
- 
-## Другие варианты настройки контролов
+Details about AjaxGroupEdit written in this [article](fa_ajax-group-edit.html). 
 
-* [Настройки для LookUp в AGE](fa_settings-lookup-age.html)
+## Other options for the controls 
+
+* [Settings for LookUp in AGE](fa_settings-lookup-age.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

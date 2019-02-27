@@ -1,43 +1,49 @@
----
-title: PageContentManager
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_page-content-manager.html
-lang: en
----
+--- 
+title: PageContentManager 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_page-content-manager.html 
+lang: en 
+autotranslated: true 
+hash: 7b022578857d566a923b6e5ddde1664739d95a53626c41dd5e5eae8c35bbafce 
+--- 
 
-Класс `PageContentManager` предназначен для подключения скритов (js) и стилей (css) в C#-коде.
+Class `PageContentManager` is designed to connect skitov (js) and styles (css) in C# code. 
 
-{% include note.html content="`PageContentManager` является заменой устаревшего [ContextHelper](fa_context-helper.html). Во всех новых проектах следует использовать именно его." %}
+{% include note.html content="`PageContentManager` is a replacement for the deprecated [ContextHelper](fa_context-helper.html). All new projects should use it." %} 
 
-## Принцип работы
+## working Principle 
 
-Основное предназначение `PageContentManager` - формирование списка ресурсов, которые нужно подключить к текущей странице. Подключение осуществляется через `IPageContentConnector` (который должен быть сконфигурирован через unity). 
+The main purpose of `PageContentManager` - formation of the list of resources that need to be connected to the current page. The connection is made through `IPageContentConnector` (which must be configured in unity). 
 
-Существует два способа подключения ресурсов:
+There are two ways of connecting resources: 
 
-* [на основе фильтрации HTML](fa_filter-page-content-connector.html) (по умолчанию, из соображений обратной совместимости);
-* [на основе контролов-плейсхолдеров](fa_placeholder-page-content-connector.html) (рекомендуется);
+* [based on filtering HTML](fa_filter-page-content-connector.html) (default for reasons of backward compatibility); 
+* [on the basis of the controls-placeholders](fa_placeholder-page-content-connector.html) (recommended); 
 
-{% include note.html content="Если не зарегистрировать тип в файле конфигурации unity, то будет работать старый метод добавления скриптов на страницу - с использованием  [FilterPageContentConnector](fa_filter-page-content-connector.html)." %}
+{% include note.html content="If you do not register a type in the unity configuration file, it will work the old way of adding scripts to the page using [FilterPageContentConnector](fa_filter-page-content-connector.html)." %} 
 
-{% include note.html content="Ресурсы будут подключены в том же самом порядке, в котором они были добавлены (FIFO)." %}
+{% include note.html content="Resources will be connected in the same order in which they were added (FIFO)." %} 
 
-{% include note.html content="Скрипты и стили с одинаковыми путями подключаются только один раз." %}
+{% include note.html content="Scripts and styles with the same path are connected only once." %} 
 
-### Настройка момента срабатывания скрипта
+### setup activation script 
 
-По аналогии с `ContextHelper`'ом и его методами `ДобавитьСкрипт` и `ДобавитьСкриптВDocumentReady`, у `PageContentManager`'а есть возможность настроить момент срабатывания скрипта. Для этого в вызове метода добавления скрипта есть флаг `onPageLoad`, по умолчанию равный `false`.
+By analogy with Ohm `ContextHelper`'and his methods `ДобавитьСкрипт` and `ДобавитьСкриптВDocumentReady`, `PageContentManager`'and have the ability to customize the activation of the script. To this end, the method call to add the script has a flag `onPageLoad` the default `false`. 
 
-Таким образом, аналогом метода `ДобавитьСкриптВDocumentReady` является вызов `AttachJavaScriptCode(script, true);`
+Thus, the analog method is `ДобавитьСкриптВDocumentReady` call `AttachJavaScriptCode(script, true);` 
 
-## Пример использования
+## Example usage 
 
 ```csharp
-PageContentManager.AttachJavaScriptCode("alert('Hello');", true); // Отобразит окно с сообщением при загрузке страницы.
-```
+PageContentManager.AttachJavaScriptCode("alert('Hello');", true); // Displays a message box when the page loads. 
+``` 
 
-## Собственный способ подключения скриптов и стилей
+## Own method of connection of scripts and styles 
 
-Чтобы использовать собственный способ подключения ресурсов, необходимо создать новый класс и унаследовать интерфейса `IPageContentConnector`.
+To use your own method of connection resources, you must create a new class and inherit interface `IPageContentConnector`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

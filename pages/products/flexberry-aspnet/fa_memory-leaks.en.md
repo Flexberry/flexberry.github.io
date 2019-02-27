@@ -1,15 +1,21 @@
----
-title: Возможные места утечки памяти в web-приложениях
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_memory-leaks.html
-lang: en
----
+--- 
+title: Possible locations of a memory leak in web applications 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_memory-leaks.html 
+lang: en 
+autotranslated: true 
+hash: 1899b630615ac454da585fd80ace6b6556f36b3ad7860c6fe359793b47dc022f 
+--- 
 
-В первую очередь стоит обратить внимание на:
+The first is to pay attention to: 
 
-* Статические классы и атрибуты.
-* Подписка на события. Garbage collector не собирает объекты, на события которого кто-то ещё подписан.
-* Любые внешние ресурсы, которые не закрываются должным образом: файлы, соединение с БД и пр.
-* Параметры пользовательской сессии.
+* Static classes and attributes. 
+* Subscribe to events. Garbage collector does not collect objects on which someone else signed. 
+* Any external resources that are not closed properly: all files, DB connection, etc. 
+* Settings for the user session. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

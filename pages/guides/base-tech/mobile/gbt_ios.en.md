@@ -1,64 +1,64 @@
----
-title: iOS Development
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_ios.html
-folder: guides/base-tech/mobile/
+--- 
+title: iOS Development 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_ios.html 
+folder: guides/base-tech/mobile/ 
 lang: en 
 autotranslated: true 
-hash: f1facd5aedb44c4e410c4d6ec1aac74c97c6def5ee6f46edda197091b81240ab
----
+hash: 36b74c7dae1582afce83bf3c3fc540845b1df488eb606a442dc7bfac070b649b 
+--- 
 
-## Brief description
+## Brief description 
 
-## Links to materials for the study
+## Links to materials for the study 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-### Presentation
+### Presentation 
 
-### Recommended books
+### Recommended books 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Software
+## Software 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Laboratory work and practical tasks
+## Laboratory work and practical tasks 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-Variants of tasks for independent performance, and then reviewing on the part of the teacher.
+Variants of tasks for independent performance, and then reviewing on the part of the teacher. 
 
-### Option # 1
+### Option # 1 
 
-### Option # 2
+### Option # 2 
 
-### Option # 3
+### Option # 3 
 
-### Option # 4
+### Option # 4 
 
-### Option # 5
+### Option # 5 
 
-## Examples
+## Examples 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Opportunities for certification
+## Opportunities for certification 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Go
+## Go 
 
-* [Apache Cordova](gbt_cordova.html)
+* [Apache Cordova](gbt_cordova.html) 
 * [Course home page](gbt_landing-page.html)
 
 

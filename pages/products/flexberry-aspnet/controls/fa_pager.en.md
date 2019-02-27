@@ -1,100 +1,62 @@
----
-title: Универсальный пейджинговый контрол Pager
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_pager.html
-lang: en
----
+--- 
+title: Universal pager control Pager 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_pager.html 
+lang: en 
+autotranslated: true 
+hash: 0104e72592b1cb4d03615d96eda9b52eba16b4da48d9abc9bed8db105dd18b66 
+--- 
 
-`ICSSoft.STORMNET.Web.AjaxControls.Pager` - класс контрола для отображения постраничного перехода для произвольного набора данных. Для корректной работы необходимо только задание полного числа страниц для отображения.
+`ICSSoft.STORMNET.Web.AjaxControls.Pager` class control to display paging for an arbitrary set of data. To work correctly you need only task the total number of pages to display. 
 
-Контрол наследуется от базового веб-контрола [BaseWebControl](fa_base-web-control.html).
+The control is inherited from the base web control [BaseWebControl](fa_base-web-control.html). 
 
-## Подключение
+## Connection 
 
-Контрол автоматически подключает все необходимые для его работы скрипты. В частности, `jquery.icsPager.js`, а также скрипты базового веб-контрола.
+Control automatically attaches all necessary scripts. In particular, `jquery.icsPager.js` and scripts basic web control. 
 
-## Интерфейс
+## Interface 
 
-### Методы
+### Methods 
 
-| Сигнатура | Описание|
-|------------------------|----------------------------------------------|
-| `AddPageToContainer()` | Добавляет в контейнер нужный контрол для отображения индекса страницы|
-| `GenerateCurrentPage()` | Метод для генерации внутренней структуры текущей страницы. Генерация и создание контрола находятся в разных методах в связи с тем, что создание контрола происходит до его добавления в коллекцию контролов родителя. В этом случае, на момент генерации будет отсутствовать клиентский идентификатор у поля ввода номера страницы.|
-| `GenerateGoToPage()` | Метод для генерации блока навигации (переход на введённый номер страницы)|
-| `GenerateInforamtion()` | Метод генерации информации о числе страниц и отображаемых элементах. Для формирования строки использует установленный метод для форматирования, если он установлен. В противном случае используется шаблон из ресурсов|
-| `GenerateItemsOnPage()` | Метод генерации блока с выпадающим списком выбора для установки числа элементов, отображаемых на странице|
-| `GenerateNavigation()` | Метод для генерации блока навигации (вперёд-назад)|
-| `GeneratePages()` | Метод для генерации списка страниц|
-| `GetCurrentPageControl()` | Метод для создания контрола, отображающего текущую страницу|
-| `GetNavigateUrl()` | Метод для генерации ссылки для перехода на указанную страницу|
-| `GetOtherPageControl()` | Метод для создания контрола, отображающего другие (не текущую) страницы. Подсказка к кнопке перехода формируется либо через шаблон из ресурсов, либо через установленный в прикладном приложении делегат для формирования|
-| `GetPageSeparatorControl()` | Метод для создания контрола-разделителя между страницами|
-| `GetSkipPagesControl()` | Метод для создания контрола, отображающего пропуски в длинных списках страниц. Пример: 1 2 ... 10|
-| `OnInit()` | Переопределенный метод обработчика события инициализации контрола. Инициализирует вспомогательные контролы|
-| `OnPreRender()` | Переопределенный метод обработчика события перед рендерингом контрола. Генерирует структуру контрола. Структура контрола генерируется перед самим рендерингом в связи с тем, что родительским контролом должно быть установлено полное число отображаемых страниц и, при необходимости, номер текущей страницы. В методе нельзя назначать серверные обработчики события, т.к. для корректной обработки события контролы должны быть добавлены в коллекцию страницы раньше|
-| `Render()` | Обработчик события рендеринга контрола. Регистрирует контролы-источники PostBack|
+| Signature | Description| 
+|------------------------|----------------------------------------------| 
+| `AddPageToContainer()` | Adds the container to the desired control to display the index page| 
+| `GenerateCurrentPage()` | Method to generate the internal structure of the current page. Generation and establishment of control are different methods due to the fact that the establishment of control occurs before adding it to the controls collection of the parent. In this case, at the time of generation will be missing the client ID of the input field the page number.| 
+| `GenerateGoToPage()` | Method for generating a block of navigation (go to the entered page number)| 
+| `GenerateInforamtion()` | Method of generating information on the number of pages and display items. To build a string uses a specified method for formatting, if it is installed. Otherwise, use a template from resources,| 
+| `GenerateItemsOnPage()` | generation Method block with a dropdown selection list to set the number of items displayed on the page| 
+| `GenerateNavigation()` | Method for generating navigation unit (forwards / backwards)| 
+| `GeneratePages()` | Method to generate the list of pages| 
+| `GetCurrentPageControl()` | Method to create a control that displays the current page| 
+| `GetNavigateUrl()` | Method to generate the link to jump to the specified page| 
+| `GetOtherPageControl()` | Method to create a control that displays other (not current) page. A hint to the button is generated using either a pattern resource or through the application installed in the app delegate for formation| 
+| `GetPageSeparatorControl()` | Method to create the control separator between pages| 
+| `GetSkipPagesControl()` | Method to create a control that displays absences in the long lists of pages. Example: 1 2 ... 10| 
+| `OnInit()` | Override event handler for initialize the control. Initialisere auxiliary controls| 
+| `OnPreRender()` | Overridden event handler method before rendering the control. Generate a structure of control. The structure of the control is generated before the rendering of due to the fact that the parent control must be set to the total number of page displays and optionally, the current page number. In the method you cannot assign server-side event handlers, because for correct processing of events, controls must be added to the collection page is used to| 
+| `Render()` | the event Handler for rendering the control. Registers controls-sources PostBack| 
 
-### Свойства
+### Properties 
 
-| Наименование | Тип | Описание|
-|---------------------|-------|---------------------------------------------------------------|
-| `CurrentPage` | ` int ` | Свойство для получения номера текущей выбранной страницы|
-| `DisplayInformation` | `bool` | Отображать блок информации о числе страниц и элементов или нет|
-| `DisplayNavigation` | `bool` |  Отображать блок навигации или нет|
-| `DisplayPages` | `bool` | Отображать список страниц или нет|
-| `EnableGoToPage` | `bool` | Отображать блок для перехода на введённый номер страницы или нет|
-| `EnableItemsOnPage` | `bool` | Отображать блок выбора числа элементов на странице или нет|
-| `FirstPages` | `int` | Минимальное число страниц, отображаемое в начале списка страниц|
-| `FirstPagesWithoutSkipping` | `int` | Число страниц, отображаемое без пропусков, если текущая страница в начале списка|
-| `GoToPageLabelText` | `string` | Текст подписи для перехода на введённый номер страницы|
-| `HideOnNoData` | `bool` | Прятать все контейнеры при отсутствии данных|
-| `HideOnOnePage` | `bool` | Прятать все контейнеры если только одна страница с данными|
-| `ItemsOnPage` | `int` | Свойство для получения числа отображаемых элементов на странице|
-| `ItemsOnPageCaptionText` | `string` | Текст подписи к списку выбора числа элементов на странице|
-| `ItemsOnPageSettingsKey` | `string` | Свойство для получения или установки ключа, однозначно идентифицирующего пейджер для сохранения пользовательских настроек между страницами. По умолчанию определяется через URL страницы и уникальный идентификатор контрола|
-| `ItemsCount` | `int` | Свойство для доступа к полному числу отображаемых элементов|
-| `InlineGoToPage` | `bool` | Добавлять для текущей страницы поле ввода для быстрого перехода к введённой странице или нет|
-| `PagesCount` | `int` | Полное число отображаемых страниц|
-| `LastPages` | `int` | Минимальное число страниц, отображаемое в конце списка страниц|
-| `LastPagesWithoutSkipping` | `int` | Число страниц, отображаемое без пропусков, если текущая страница в конце списка|
-| `NavigationBackText` | `string` | Текст кнопки навигации для перехода на предыдущую страницу|
-| `NavigationForwardText` | `string` | Текст кнопки навигации для перехода на следующую страницу|
-| `NavigationSeparatorText` | `string` | Текст разделителя между кнопками навигации|
-| `PagesSkipText` | `string` | Текст блока пропуска в длинных списках страниц|
-| `PageSeparatorText` | `string` | Текст разделителя между страницами|
-| `PagesWithoutSkipping` | `int` | Максимальное число страниц, при котором не отображаются блоки пропуска|
-| `Sequence` | `IEnumerable < PagerContainerType >` | Последовательность контейнеров пейджера|
+| Name | Type | Description| 
+|---------------------|-------|---------------------------------------------------------------| 
+| `CurrentPage` | ` int ` | Property to get the number of the current selected page| 
+| `DisplayInformation` | `bool` | Show unit information about the number of pages and elements or no| 
+| `DisplayNavigation` | `bool` | Show the navigation bar or not| 
+| `DisplayPages` | `bool` | Show a list of pages or not| 
+| `EnableGoToPage` | `bool` | Display unit to switch to an entered page number or not| 
+| `EnableItemsOnPage` | `bool` | Show block selection of the number of elements on the page or not| 
+| `FirstPages` | `int` | Minimum number of pages displayed in the list of pages| 
+| `FirstPagesWithoutSkipping` | `int` | Number of pages to be displayed without gaps, if the current page at the beginning of the list| 
+| `GoToPageLabelText` | `string` | Text captions to navigate to the entered page number| 
+| `HideOnNoData` | `bool` | Hide all the containers in the absence of data| 
+| `HideOnOnePage` | `bool` | Hide all the containers if only one page data| 
+| `ItemsOnPage` | `int` | Property to get the number of items to display on the page| 
+| `ItemsOnPageCaptionText` | `string` | Text captions select list number of items on the page| 
+| `ItemsOnPageSettingsKey` | `string` | Property to get or set the key that uniquely identifies the pager to store user settings between pages.
 
-## Настройка внешнего вида контрола
 
-| CSS | Описание|
-|----------------------|-----------------------------------------|
-| `ContainerCssClass` | CSS класс для контейнеров пейджера|
-| `CurrentPageCssClass` | CSS класс для текущей страницы|
-| `GoToPageCssClass` | CSS класс контейнера блока для перехода на введённый номер страницы|
-| `GoToPageInputCssClass` | CSS класс поля ввода перехода на введённый номер страницы|
-| `GoToPageLabelCssClass` | CSS класс подписи для перехода на введённый номер страницы|
-| `InformationContainerCssClass` | CSS класс контейнера блока информации о числе страниц и отображаемых элементах|
-| `InlineGoToPageCssClass` | CSS класс для текущей страницы с полем ввода для быстрого перехода к введённой странице|
-| `InlineGoToPageInputCssClass` | CSS класс поля ввода для быстрого перехода к введённой странице|
-| `ItemsOnPageCaptionCssClass` || CSS класс для подписи к списку выбора числа элементов на странице|
-| `ItemsOnPageContainerCssClass` | CSS класс контейнера для блока выбора числа элементов на странице|
-| `ItemsOnPageListCssClass` | CSS класс для списка выбора числа элементов на странице|
-| `NavigationButtonBackCssClass` | CSS класс кнопки навигации для перехода на предыдущую страницу|
-| `NavigationButtonCssClass` | Общий CSS класс кнопок навигации|
-| `NavigationButtonDisabledCssClass` | CSS класс отключённой кнопки навигации (когда переход невозможен)|
-| `NavigationButtonEnabledCssClass` | CSS класс включённой кнопки навигации (когда переход возможен)|
-| `NavigationButtonForwardCssClass` | CSS класс кнопки навигации для перехода на следующую страницу|
-| `NavigationContainerCssClass` | CSS класс базового контейнера блока навигации|
-| `NavigationSeparatorCssClass` || CSS класс разделителя между кнопками навигации|
-| `PageCssClass` | Общий CSS класс для всех страниц|
-| `PagesContainerCssClass` | CSS класс для контейнера с списком страниц|
-| `PagesSkipCssClass` || CSS класс для блока пропуска в длинных списках страниц|
-
-## Пользовательские настройки
-
-Следует обратить внимание на то, что при указании несуществующего номера страницы и попытке перехода к нему, будет осуществлен переход к первой странице списка.
- 
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

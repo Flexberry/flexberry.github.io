@@ -1,94 +1,99 @@
----
-title: MsDropDown
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_ms-drop-down.html
-lang: en
----
+--- 
+title: MsDropDown 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_ms-drop-down.html 
+lang: en 
+autotranslated: true 
+hash: bb619b9347a557dbda7a519afc2b4d9b37948b7061b6f463df1894906e34a9f1 
+--- 
 
-`MsDropDown` - это [web-контрол](fa_web-controls.html), который позволяет просматривать список в виде выпадающего списка (по аналогии [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) с иконками для элементов списка.
+`MsDropDown` is [web control](fa_web-controls.html), which allows you to view the list in a drop-down list (similar [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) with the icons for list items. 
 
-Ниже показан пример отображения данного контрола на веб-форме.
+Below shows an example of displaying this control on web form. 
 
-![](/images/pages/products/flexberry-aspnet/controls/ms-drop-down.png)
+![](/images/pages/products/flexberry-aspnet/controls/ms-drop-down.png) 
 
-### Публичные свойства MsDropDown
+### Public properties MsDropDown 
 
-|Свойство|Описание|
-|-------------|---------------------------------|
-|`Items`|Список элементов|
-|`SelectedItem`|Выбранный элемент|
-|`ReadOnly`|Флаг, отвечающий за разрешение/запрет манипуляций с контролом|
+|Property|Description| 
+|-------------|---------------------------------| 
+|`Items`|List items| 
+|`SelectedItem`|Selected element| 
+|`ReadOnly`|the Flag responsible for allow/disallow manipulation of control| 
 
-### MsDropDownItem и его свойства
+### MsDropDownItem and its properties 
 
-Каждый `Item` (элемент списка) является экземпляром класса `MsDropDownItem`.
+Each `Item` (list item) is an instance of the class `MsDropDownItem`. 
 
-|Свойство|Описание|
-|-------------|---------------------------------|
-|`Text`|Основной текст, по которому можно идентифицировать объект в отображаемом списке|
-|`ImagePath`|Путь до картинки, которую следует отображать рядом с текстом|
-|`Description`|Описание, дополнительный текст, который будет расположен рядом с основным|
+|Property|Description| 
+|-------------|---------------------------------| 
+|`Text`|Main text by which to identify the object in display list| 
+|`ImagePath`|Path to the picture you want to display next to the text| 
+|`Description`|Description, alternate text, which will be located near the main| 
 
-## Подключение
+## Connection 
 
-Подключение возможно через разметку страницы, наполнение списка доступно только вручную в коде. Для этого в разметке страницы .aspx надо добавить соответствующий контрол:
+The connection is possible using a page layout content list is available only manually in the code. To do this in the markup of the page .aspx we need to add the appropriate control: 
 
 ```xml
-<ac:MsDropDown ID="<ID контрола>" ReadOnly="<False/True>" runat="server"/>
-```
+<ac:MsDropDown ID="<ID of control>" ReadOnly="<False/True>" runat="server"/>
+``` 
 
-## Использование
+## Use 
 
-Использование `MsDropDown` (как и [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) уместно, когда заранее известно, что количество мастеровых объектов небольшое и нет потребности для их выбора поднимать отдельную форму выбора.
+Use `MsDropDown` (as [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) appropriate when it is known beforehand that the number of craftsmen small and there is no need to select them to raise a separate form of choice. 
 
-### Пример кода
+### Sample code 
 
-Для того чтобы получить список, продемонстрированный на картинке выше, следует сделать следующее:
+To get the list shown in the picture above, you should do the following: 
 
-Код .aspx-страницы:
+Code .aspx page: 
 
 ```xml
 <div class="clearfix">
-    <asp:Label CssClass="descLbl" ID="ctrlTestMsDropDownLabel" runat="server" Text="Список" EnableViewState="False">
+    <asp:Label CssClass="descLbl" ID="ctrlTestMsDropDownLabel" runat="server" Text=List EnableViewState="False">
     </asp:Label>
     <ac:MsDropDown ID="ctrlTestMsDropDown" ReadOnly="False" runat="server"/>
 </div>
-```
+``` 
 
-Формирование списка элементов:
+Creating a list of elements: 
 
 ```csharp
-/// <summary>
-/// Формирование списка элементов для <see cref="MsDropDown"/> при загрузке контрола.
-/// </summary>
-/// <param name="e">Параметры события.</param> 
+/// <summary> 
+/// Creating a list of elements of <see cref="MsDropDown"/> when loading the control. 
+/// </summary> 
+/// <param name="e">event Parameters.</param> 
 protected void Page_Load(object sender, EventArgs e)
 {
-    // Создание списка элементов програмно.
-    // Text - сновной текст, по которому можно идентифицировать объект в отображаемом списке.
-    // ImagePath - путь до картинки, которую следует отображать рядом с текстом.
-    // Description - дополнительный текст, который будет расположен рядом с основным.
+    // Create list items programmatically. 
+    // Text - the primary text by which to identify the object in the display list. 
+    // ImagePath is the path to the picture you want to display next to the text. 
+    // Description - additional text that will be located next to the main. 
     var item1 = new MsDropDownItem();
-    item1.Text = "Первый";
+    item1.Text = "First";
     item1.ImagePath = "/Images/cat.png";
-    item1.Description = "Элемент списка";
+    item1.Description = "List element";
 
     var item2 = new MsDropDownItem();
-    item2.Text = "Второй";
+    item2.Text = "Second";
     item2.ImagePath = "/Images/dog.png";
-    item2.Description = "Элемент списка";
+    item2.Description = "List element";
 
     var item3 = new MsDropDownItem();
-    item3.Text = "Третий";
+    item3.Text = "Third";
     item3.ImagePath = "/Images/pig.png";
-    item3.Description = "Элемент списка";
+    item3.Description = "List element";
 
-    // Добавление созданных элементов в контрол.
+    // Add created elements to the control. 
     ctrlTestMsDropDown.Items.Add(item1);
     ctrlTestMsDropDown.Items.Add(item2);
     ctrlTestMsDropDown.Items.Add(item3);
 }
-```
- 
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

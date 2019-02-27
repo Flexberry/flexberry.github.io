@@ -1,38 +1,40 @@
----
-title: BaseEditForm
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_base-edit-form.html
-lang: en
----
+--- 
+title: BaseEditForm 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_base-edit-form.html 
+lang: en 
+autotranslated: true 
+hash: ff90cc985bf8ba4c054db58dc66188f7bc26925aa7eb1c60279e7c27f3ce1952 
+--- 
 
-От **BaseEditForm** наследуются все [web-формы редактирования](fa_editform.html). Данная форма не является технологической, ее можно изменять в зависимости от требований проекта.
-Она была создана для переиспользования, структурирования кода и реализации единообразной логики форм редактирования.
+From **BaseEditForm** inherit all the [web editor](fa_editform.html). This form is not technological, it can be changed depending on the requirements of the project. 
+It was created for reuse, code structure and implementation of a uniform logic of edit forms. 
 
-## Свойства
+## Properties 
 
-|Свойство|Описание|
-|---|---|
-| DataObject | Редактируемый объект данных.|
-| DataServiceType| Тип сервиса данных.|
-| IsObjectCreated| Является ли объект новым.  Возвращает true в случае, когда объект создан нажатием кнопки "Добавить" или "Создать на основе".  В ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.Preload() всегда возвращает false! | 
-| IsObjectPrototyped| Является ли объект [прототипом](http://wiki.ics.perm.ru/DataObjectPrototype.ashx).  Возвращает true в случае, когда объект создан нажатием кнопки "Создать на основе".  В ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.Preload() всегда возвращает false!|
-| LockKey| Ключ для [блокировки](fw_readonly-win.html) объекта.  По умолчанию блокировка происходит по имени текущего авторизованного пользователя.|
-| LockObject | Нужно ли блокировать объект данных.  По умолчанию блокировка включена при указанном первичном ключе ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.PK, при выключенном режиме "только чтение" ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.ReadOnly и только для авторизованных пользователей.  Требование авторизованности пользователей связано с тем, что ключ блокировки ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.LockKey по умолчанию формируется на основе имени текущего авторизованного пользователя.|
-| OpenInModalWindow | Открыта ли форма во всплывающем окне.  По умолчанию определяется на основе параметра запроса ICSSoft.STORMNET.Web.Tools.WebParamController.OpenedInNewWindowParamName, добавляемого в ICSSoft.STORMNET.Web.AjaxControls.WebObjectListView при формировании адресов страниц редактирования (ICSSoft.STORMNET.Web.AjaxControls.WebObjectListView.GetRealEditPage(System.String)) и создания нового объекта данных (ICSSoft.STORMNET.Web.AjaxControls.WebObjectListView.GetRealAddPage()).  Проверяется только наличие параметра. | 
-| PK| [Первичный ключ](fo_primary-keys-objects.html) редактируемого объекта.|  
-| PluginInitSettings | Настройки инициализации плагина формы редактирования.|
-| ReadOnly | Флаг открытия формы только для чтения.|
-| ReturnUrl | Адрес возврата.  Адрес всегда проверяется на "локальность" (соответствие текущему хосту) для предотвращения Open Redirection Attack.  Если адрес возврата отсутствует или не соответствует хосту, то возвращается адрес до корня сервера.|
-| ShowCancelButton | Определяет, нужно ли показывать кнопку "Закрыть". В базовой реализации возвращает true, если ReturnUrl не пустой или форма открыта во всплывающем окне.|
-| ShowSaveAndCloseButton | Определяет, нужно ли показывать кнопку "Сохранить и закрыть". В базовой реализации возвращает true, если форма не ReadOnly и ReturnUrl не пустой или форма открыта во всплывающем окне.|
-| ShowSaveButton | Определяет, нужно ли показывать кнопку "Сохранить". В базовой реализации возвращает !ReadOnly.|
-| View | Представление для загрузки редактируемых данных.|
+|Property|Description| 
+|---|---| 
+| DataObject | edit the data object.| 
+| DataServiceType| Type of data service.| 
+| IsObjectCreated| if the object Is new. Returns true when the object is created by pressing "Add" or "Create". In ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.Preload() always returns false! | 
+| IsObjectPrototyped| whether the [prototype](http://wiki.ics.perm.ru/DataObjectPrototype.ashx). Returns true when the object is created by clicking "Create". In ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.Preload() always returns false!| 
+| LockKey| Key [lock](fw_readonly-win.html) of the object. By default, the lock is on the name of the current authenticated user.| 
+| LockObject | whether to lock the data object. By default, a lock is enabled when the specified primary key ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.PK, when you turn off the "read only" ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.ReadOnly and only for authorized users. The requirement of autorizovanem users due to the fact that the system lock key ICSSoft.STORMNET.Web.AjaxControls.Forms.BaseEditForm<T>.LockKey default is based on the name of the current authenticated user.| 
+| OpenInModalWindow | Open the form in a popup window. The default is determined based on the query parameter ICSSoft.STORMNET.Web.Tools.WebParamController.OpenedInNewWindowParamName added to ICSSoft.STORMNET.Web.AjaxControls.WebObjectListView in the formation of URLs editing (ICSSoft.STORMNET.Web.AjaxControls.WebObjectListView.GetRealEditPage(System.String)) and create a new data object (ICSSoft.STORMNET.Web.AjaxControls.WebObjectListView.GetRealAddPage()). Only checks the presence parameter. | 
+| PK| [Primary key](fo_primary-keys-objects.html) editable object.| 
+| PluginInitSettings | Settings initialize the plugin edit form.| 
+The | ReadOnly | Flag open the form read-only.| 
+| ReturnUrl | return Address. The address is always checked on "locality" (under current host) to prevent Open Redirection Attack. If the return address is missing or does not match the host, it returns the address to the root server.| 
+| ShowCancelButton | Determines whether to show the Close button. In the base implementation returns true if the ReturnUrl is not empty or open the form in a popup window.| 
+| ShowSaveAndCloseButton | Determines whether to show the button "Save and close". In the base implementation returns true if the form is not ReadOnly and ReturnUrl is not empty or open the form in a popup window.| 
+| ShowSaveButton | Determines whether to show the "Save" button. In the base implementation returns !ReadOnly.| 
+| View | View to load the editable data.| 
 
-## Примеры
+## Examples 
 
-* DataObject
+* DataObject 
 
 ```csharp
 <br>var cat = new Дом();
@@ -43,14 +45,14 @@ lang: en
 <br>};
 <br>cat.Квартира = foots;
 <br>DataObject = cat;
-```
+``` 
 
-* DataServiceType
+* DataServiceType 
 
 ```csharp
 var dataServiceTypeName = dataService.GetType().Name;
 <br>this.ctrlТипСервиса.Text = this.ctrlТипСервиса.Text + dataServiceTypeName;
-```
+``` 
 
 * IsObjectCreated 
 
@@ -59,13 +61,17 @@ protected void Button1_OnClick(object sender, EventArgs e)
 <br>{
 <br>TextBox1.Text = IsObjectCreated.ToString();
 <br>}
-```
+``` 
 
-* IsObjectProroryped
+* IsObjectProroryped 
 
 ```csharp
 protected void Button1_OnClick(object sender, EventArgs e)
 <br>{
 <br>TextBox1.Text = IsObjectPrototyped.ToString();
 <br>}
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

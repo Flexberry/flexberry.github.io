@@ -1,83 +1,85 @@
----
-title: Пользовательские настройки AjaxGroupEdit
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_age-user-settings.html
-lang: en
----
+--- 
+title: Customizing AjaxGroupEdit 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_age-user-settings.html 
+lang: en 
+autotranslated: true 
+hash: 10707d77856154e91d1cab9e2b4164260a6c2d3fea751754bb3a0318aa110774 
+--- 
 
-## Настройка ширины столбцов
+## adjusting column widths 
 
-Делается [аналогично WebObjectListView](fa_web-object-list-view.html).
+Is done [same WebObjectListView](fa_web-object-list-view.html). 
 
-### Сохранение объектов
+### Saving objects 
 
-У [AGE](fa_ajax-group-edit.html) есть элемент под названием `Status`, который отражает редактировался объект или нет, т.е. начинал ли пользователь что-либо вводить.  
-Когда пользователь начинает вводить что-либо в строчку AGE, то рядом с кнопками в строке появляется индикатор ☀ - звездочка:
+[AGE](fa_ajax-group-edit.html) there is an item called `Status` that reflects the edited object or not, i.e., whether the user started something to enter. 
+When the user begins to enter anything in line of AGE, the next buttons in the row indicator appears ☀ - asterisk: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-modified.png)
- 
-Это нужно для того, чтобы при нажатии на кнопку сохранить на странице (не в AGE) можно было предупредить пользователя, что он не сохранил данные в AGE. Если разрабатывается собственный контрол и встраивается в AGE, то для поддержки данного функционала следует реализовать контролу интерфейс `IGroupEditCompatible`.
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/wge-modified.png) 
 
-## Редактирование списка детейлов
+This is necessary in order to clicking on the save button on the page (not in AGE) it was possible to warn the user that it is not retained in the data AGE. If you are developing your own control and is embedded in AGE, to support this functionality must implement the control interface `IGroupEditCompatible`. 
 
-Строки детейла можно редактировать с формы редактирования элемента: в текущем окне, в новом окне и в модальном окне.
-Настройка данных операций производится аналогично подобному в [WebObjectListView](fa_web-object-list-view.html).
+## edit the list of datalow 
+
+Line detail can be edited with the edit form element: in this window in a new window in a modal window. 
+Setting of these operations is done similarly in [WebObjectListView](fa_web-object-list-view.html). 
 
 ```csharp
 protected override void PostApplyToControls()
 {
-    // В новом или модальном окне.
+    // In a new or modal window. 
     ctrlКвартира.DetailEditForm = КвартираE.FormPath;
     ctrlКвартира.Operations.OpenEditorInModalWindow = false(true);
     ctrlКвартира.Operations.OpenEditorInNewWindow = true(false);
             
-    // В текущем окне.
-    // Формирование URL формы редактирования детейла с ReturnUrl для возврата к этой (текущей) форме.
+    // In the current window. 
+    // Forming the URL of the edit form of detail with ReturnUrl to return to this (current) form. 
     ctrlКвартира.DetailEditForm = FormUrlHelper.UpdateParam(
         WebParamController.ReturnURL,
         FormUrlHelper.RedirectEditFormUrl(Page.ResolveUrl(FormPath), DataObject.__PrimaryKey.ToString()),
 
-        // КвартираE - форма редактирования детейла.
+        // Kvartira - form editing of detail. 
         КвартираE.FormPath);
 }
-```
+``` 
 
-## Особенности открытия формы редактирования в отдельной вкладке в AGE
+## Features open edit form in a separate tab in the AGE 
 
-Если форма редактирования открывается в отдельной вкладке (OpenEditorInNewWindow=1, OpenEditorInModalWindow=0), детейл можно редактировать
-и на вкладке с AGE, и на странице редактирования. Исключить параллельное редактирование, например, блокировкой строки в AGE пока открыта другая вкладка.
+If the edit form opens in a separate tab (OpenEditorInNewWindow=1, OpenEditorInModalWindow=0), detail you can edit 
+and on the tab with AGE, and on the edit page. To exclude parallel editing, for example, a row lock in the AGE while is open another tab. 
 
-## Смена представления в зависимости от состояния агрегатора
+## Change view depending on the state of the aggregator 
 
-Иногда необходимо отображать представления детейла с разными настройками для одного и того же агрегатора в разных состояниях. Например, при отмеченном/неотмеченном чекбоксе.
+Sometimes you want to display representations of detail with different settings for the same aggregator are in different States. For example, if you marked/unmarked checkbox. 
 
-Например, есть такая модель данных:
+For example, there is a data model: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/model-agregator.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/model-agregator.png) 
 
-У детейла есть два представления с разными настройками: 
+Detail there are two views with different settings: 
 
-![](/images/pages/products/flexberry-aspnet/controls/groupedit/two-view-detail.png)
+![](/images/pages/products/flexberry-aspnet/controls/groupedit/two-view-detail.png) 
 
-На диаграмме для мастера возможно установить только одно представление детейла. Следовательно, смену представлений необходимо настраивать в коде приложения на форме редактирования. 
-Выглядеть это будет следующим образом:
+In the chart wizard there is only one representation of detail. Therefore, to change views, you must configure the application code to the edit form. 
+It will look as follows: 
 
 ```csharp
-/// <summary>
-/// Здесь лучше всего изменять свойства контролов на странице, которые не обрабатываются WebBinder.
-/// </summary>
+/// <summary> 
+/// It is best to change the properties of controls on the page that are not handled WebBinder. 
+/// </summary> 
 protected override void PostApplyToControls()
 {
-      //Если не отмечено состояние "Активно" в чекбоксе,
-      //то выводится первое представление детейла (свойства 1,3,5).
+      //If not marked as "Active" checkbox, and 
+      //displays the first view of detail (1,3,5 properties). 
             
       if (ctrlАктивно.Checked == false)
       {
           ctrlSeveralViewsDetail.DetailViewName = SeveralViewsDetail.Views.SeveralViewsDetailD1.Name;
       }
-      //Если чекбокс отмечен, то выводить второе представление (свойства 2,4,6).
+      //If the checkbox is checked, then display the second view (properties 2,4,6). 
       else
       {
           ctrlSeveralViewsDetail.DetailViewName = SeveralViewsDetail.Views.SeveralViewsDetailD2.Name;
@@ -85,5 +87,8 @@ protected override void PostApplyToControls()
 
       Page.Validate();
 }
-```
- 
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

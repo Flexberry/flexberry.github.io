@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_postgresql.html 
 lang: en 
 autotranslated: true 
-hash: 3ce7d72b0d4a56ebd309ff76a16125214fb44f570974d0df94f4707cfe99993e 
+hash: 87c3879ead5f3fececb3b0d5ef5641037a7d48ac43edcd5a7ed469bacd423250 
 --- 
 
 ## Brief description 

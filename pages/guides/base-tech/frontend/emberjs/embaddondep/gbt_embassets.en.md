@@ -1,22 +1,22 @@
----
-title: the assets Directory
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_embassets.html
-folder: guides/base-tech/frontend/emberjs/embaddondep/
+--- 
+title: the assets Directory 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_embassets.html 
+folder: guides/base-tech/frontend/emberjs/embaddondep/ 
 lang: en 
 autotranslated: true 
-hash: 9d8f84f43f11f541e8a24215124109729d4ef5f2c5b3d945eb07eeb02e506c63
----
+hash: bc27287c5d1e59130119f608b649f2f5596bf3b4afa43e27823196c39e7fa785 
+--- 
 
-## Brief description
+## Brief description 
 
-The contents of this page:
+The contents of this page: 
 
-* The assets directory and import images and other resources into it with ember-cli-build.js
+* The assets directory and import images and other resources into it with ember-cli-build.js 
 
-## Go
+## Go 
 
 * [Back](gbt_emberjs.html)
 

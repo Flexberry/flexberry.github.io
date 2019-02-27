@@ -1,43 +1,45 @@
----
-title: Кэширование расширенных ограничений в WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP.NET
-toc: true
-permalink: en/fa_wolv-adv-limit-caching.html
-lang: en
----
+--- 
+title: Caching of extended restrictions in WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP.NET 
+toc: true 
+permalink: en/fa_wolv-adv-limit-caching.html 
+lang: en 
+autotranslated: true 
+hash: 040a8845b51f734033f9d15077fd4b7ff3fe85e477b1ba919767465f33a0f964 
+--- 
 
-Для повышения быстродействия [WebObjectListView](fa_web-object-list-view.html) можно добавить кэширование пользовательских расширенных ограничений.
+To improve the performance [WebObjectListView](fa_web-object-list-view.html) you can add caching custom extended restrictions. 
 
-Для этого можно воспользоваться технологическим типом `NewPlatform.Flexberry.Services.AdvLimitManagerCacheDecorator`, добавляющим кэширование для любого другого сериса следующим образом:
+You can use the technological type `NewPlatform.Flexberry.Services.AdvLimitManagerCacheDecorator` that adds caching to any other seris as follows: 
 
 ```csharp
-// Global.asax / Application_Start
+// Global.asax / Application_Start 
 var decorable = new DefaultAdvLimitManager(BridgeToDS.GetDataService());
 var cache = new InternalCacheService();
 AdvLimitManager.Current = new AdvLimitManagerCacheDecorator(decorable, cache);
-```
+``` 
 
-Либо воспользоваться конфигурационной секцией Unity.
+Or you can use the Unity configuration section. 
 
-## Подключение кэширования настроек и функций ограничений
+## Connection caching settings and functions limitations 
 
-Для того чтобы у нас запросы к БД лишний раз не выполнялись нужно настроить текущий `UserSettingsService`.
+In order to have database queries once again not carried out need to set the current `UserSettingsService`. 
 
-Пример:
+Example: 
 
 ```csharp
-// Сервис настроек пользователя.
+// Service settings of the user. 
 if (container.IsRegistered<IUserSettingsService>())
     UserSettingsService.Current = container.Resolve<IUserSettingsService>();
 else
-    LogService.LogWarn("IUserSettingsService не сконфигурирован в Unity. Будет использована реализация по умолчанию.");
-```
+    LogService.LogWarn("IUserSettingsService is not configured in Unity. Will use the default implementation.");
+``` 
 
 ```xml
 <unity xmlns="http://schemas.microsoft.com/practices/2010/unity">
     <!-- ... -->
-    <!-- Конфигурация сервиса пользовательских настроек с поддержкой кэширования. -->
+    <!-- The service configuration custom settings and enabled caching. -->
     <register name="DecorableUserSettingsService" type="IcsharpSoft.Services.IUserSettingsService, UserSettingsService" mapTo="IcsharpSoft.Services.UserSettingsService, UserSettingsService">
         <lifetime type="singleton" />
         <constructor />
@@ -54,6 +56,10 @@ else
     </register>
     <!-- ... -->
 </unity>
-```
+``` 
 
-Можно обойтись без Unity и устанавливать `UserSettingsService.Current` программно.
+You can do without Unity and install `UserSettingsService.Current` software. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

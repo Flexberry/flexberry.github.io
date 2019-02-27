@@ -1,31 +1,33 @@
----
-title: Межформенное взаимодействие — передача объекта между страницами
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_object-transfer-web.html
-lang: en
----
+--- 
+title: Performance interaction — the transfer of an object between pages 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_object-transfer-web.html 
+lang: en 
+autotranslated: true 
+hash: 50c2666f8cbdb198b981ddfc48b51787ce14bc23be35cb850fd03d9778a826ae 
+--- 
 
-Цель — передать объект с одной страницы на другую. Объект помещается в сессию, для этого генерируется `уникальный идентификатор` (GUID), по которому объект извлекается из сессии на другой странице.
+The goal is to pass an object from one page to another. The object is placed in session, this is generated `уникальный идентификатор` (GUID) on which the object is retrieved from session on other page. 
 
-`GUID (Globally Unique Identifier)` — статистически уникальный 128-битный идентификатор. Его главная особенность — уникальность, которая позволяет создавать расширяемые сервисы и приложения без опасения конфликтов, вызванных совпадением идентификаторов.
+`GUID (Globally Unique Identifier)` — statistically unique 128-bit identifier. Its main feature is the uniqueness that allows you to create extensible services and apps without fear of conflicts caused by duplicate IDs. 
 
 ```csharp
 var guid = Guid.NewGuid().ToString();
-```
+``` 
 
-### Передача Limit Function
+### Transfer Limit Function 
 
-В `Page_Load` создать Limit Function:
+In `Page_Load` to create a Limit Function: 
 
 ```csharp
 var ld = ExternalLangDef.LanguageDef;
-Function f = ld.GetFunction(ld.funcEQ,new VariableDef(ld.StringType, "Name"),"Имя");
-```
-### Передача объекта
+Function f = ld.GetFunction(ld.funcEQ,new VariableDef(ld.StringType, "Name"),"Name");
+``` 
+### Transfer object 
 
-Описывать класс, отметить его как `Serialisable`, создать экземпляр класса:
+To describe the class, to mark it as `Serialisable`, create an instance of the class: 
 
 ```csharp
 [Serializable]
@@ -40,43 +42,47 @@ public class Person
 }
 
 var f = new Person();
-```
+``` 
 
-### Сохранение объекта в сессии
+### Saving object in session 
 
-Поместить объект f в сессию по ключу GUID:
+Place the object f to the session key GUID: 
 
 ```csharp
 HttpContext.Current.Session[guid] = f;
-```
+``` 
 
-### Передача идентификатора в строке запроса
+### Transmission ID in the query string 
 
-Создать ссылку на странице
+To create a link on the page 
 
 ```xml
-<asp:HyperLink runat="server" ID="MyLink" Text="Передать объект"></asp:HyperLink>
-```
+<asp:HyperLink runat="server" ID="MyLink" Text="Pass an object"></asp:HyperLink>
+``` 
 
-Для ссылки указать URL, в параметре `guid` указать идентификатор:
+For the link URL, in the parameter `guid` to specify the ID: 
 
 ```xml
 MyLink.NavigateUrl = "~/SessionTest.aspx?guid=" + guid;
-```
+``` 
 
-### Получение объекта из сессии
+### retrieve object from session 
 
-На принимающей странице считать GUID из строки запроса, по нему считать объект из сессии:
+On the receiving page to count the GUID from the query string, for him to consider the object from the session: 
 
 ```csharp
 string guid = Request.QueryString.Get("guid");
 var myObject = Context.Session[guid];
-```
+``` 
 
-### ISerializable
+### ISerializable 
 
-### Отказоустойчивость при хранении значений состояния сеанса
+### fault tolerance when storing the values in session state 
 
-Состояние сеанса может завершиться (по умолчанию через 20 минут бездействия), и данные могут быть потеряны. Временем жизни состояния сеанса можно управлять при помощи атрибута `timeout` раздела конфигурации [sessionState](http://msdn.microsoft.com/ru-ru/library/h6bb9cz9(v=vs.90).aspx).
+Session state can be completed (by default after 20 minutes of inactivity) and data may be lost. The lifetime of the session state can be managed using the attribute `timeout` configuration section [sessionState](http://msdn.microsoft.com/ru-ru/library/h6bb9cz9(v=vs.90).aspx). 
 
-В зависимости от требований приложения может понадобиться альтернативный состоянию сеанса способ хранения данных каждого пользователя. ASP.NET предоставляет дополнительные параметры для сохранения данных в приложении. Их сравнение содержится в разделе [Рекомендации по управлению состоянием ASP.NET](http://msdn.microsoft.com/ru-ru/library/z1hkazw7(v=vs.90).aspx).
+Depending on your application requirements, you may need alternative session state, the data storing method of each user. ASP.NET provides additional options for saving data in the app. Their comparison, see [recommendations for the management of the condition ASP.NET](http://msdn.microsoft.com/ru-ru/library/z1hkazw7(v=vs.90).aspx). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

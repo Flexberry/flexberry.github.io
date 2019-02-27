@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_bpm.html 
 lang: en 
 autotranslated: true 
-hash: 620bbec60d6225e481fd399f70026111d858e93761c48de8c1ac92b6515aa179 
+hash: f8246430d898088b0d39c5bd18502fd6af39021b2711698bb5be7bca0b6aa09d 
 --- 
 
 ## About BPM 

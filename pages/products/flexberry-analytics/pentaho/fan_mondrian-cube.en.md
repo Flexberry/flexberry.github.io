@@ -1,313 +1,319 @@
----
-title: Creating a Mondrian scheme for a OLAP-cube
-keywords:  OLAP, куб, измерение, схема, подключение БД
-sidebar: flexberry-analytics_sidebar
-toc: false
-permalink: en/fan_mondrian-cube.html
-lang: en
-summary:
----
+--- 
+title: creating a Mondrian schema for OLAP cube 
+keywords: OLAP, cube, dimension, diagram, connection, database 
+sidebar: flexberry-analytics_sidebar 
+toc: false 
+permalink: en/fan_mondrian-cube.html 
+lang: en 
+autotranslated: true 
+hash: 07a15d7efaacac7d4b0e2446e33ffef8c6ce89041055db45e88cec81b35977be 
+summary: 
+--- 
 
-`Mondrian` — сервер OLAP (аналитической обработки в реальном времени) с открытыми исходными кодами, написанный на языке `Java`. Разрабатывается и поддерживается корпорацией `Pentaho`.
+`Mondrian` server OLAP (analytical processing in real time) with open source codes written in `Java`. Developed and maintained by the Corporation `Pentaho`. 
 
-Для создания схемы потребуется воспользоваться desktop-приложением `Pentaho schema workbench`.
+To create the schema you will need to use a desktop application `Pentaho schema workbench`. 
 
-`OLAP-куб` — (_On-Line Analytical Processing_ — интерактивный анализ данных) многомерный массив данных, как правило, разреженный и долговременно хранимый, используемый в OLAP. Может быть реализован на основе универсальных реляционных СУБД или специализированным программным обеспечением. Подробнее в статье [OLAP-куб](https://ru.wikipedia.org/wiki/OLAP-%D0%BA%D1%83%D0%B1).
+`OLAP-куб` — (_On-Line Analytical Processing_ — interactive data analysis) multidimensional array data are usually sparse and long-term stored, used in OLAP. Can be implemented on the basis of a universal relational DBMS or specialized software. For details, see [OLAP cube](https://ru.wikipedia.org/wiki/OLAP-куб). 
 
-## Создание схемы
+## the creation of the schema 
 
-Для создания схемы необходимо выполнить действие: `File -> new -> schema`. В атрибутах новой схемы заполнить `name` (наименование схемы).
+To generate the schema, you must run the action: `File -> new -> schema`. The attributes of the new scheme to fill `name` (name of scheme). 
 
-Для сохранения схемы необходимо выполнить действие: `File -> save`.
+To save the schema, you need to run the action: `File -> save`. 
 
-## Настройка подключения к БД
+## configure a connection to a database 
 
-{% include important.html content="Наименование базы данных должно быть только на английском языке." %}
+{% include important.html content="the database Name should be in English only." %} 
 
-Задается соединение с БД: `Options -> connection`. В появившемся окне в разделе `General` заполнить:
+Sets the DB connection: `Options -> connection`. In the window that appears in section `General` to fill: 
 
-   * Connection Name – Наименование для подключения;
-   * Connection Type = Postgre SQL – Тип хранения данных;
-   * Access = Native (JDBC) – Тип подключения;
-   * Settings:
+* Connection name – Name for подключения; 
+* Connection Type = Postgre SQL – Type storage данных; 
+* Access = Native (JDBC) – Type подключения; 
+* Settings: 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-001.png) 
- 
 
-## Создание куба
 
-* В созданной схеме необходимо создать куб (ПКМ по схеме и кликнуть «Add cube»)
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-002.png)
+## cube Creation 
 
-В атрибутах нового куба заполнить:
+* Created schema, you must create a cube (PCM scheme and click "Add cube") 
 
-   * name – наименование куба.
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-003.png)
+![](/images/pages/products/flexberry-analytics/mondrian-cube-002.png) 
 
-* Далее необходимо добавить таблица фактов для куба (ПКМ по кубу и кликнуть «Add Table»);
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-004.png)
+The attributes of the new cube to fill: 
 
-В атрибутах новой таблицы заполнить:
+* name – the name of the cube. 
 
-   * schema - схема БД;
-   * name – таблица фактов для куба.
+![](/images/pages/products/flexberry-analytics/mondrian-cube-003.png) 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-005.png)
- 
-## Создание Меры
+* Next, you need to add the fact table for the cube (RMB on the cube and click "Add Table"); 
 
-Добавить меру для куба (ПКМ по кубу и выбрать «Add Measure») и заполнить:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-004.png) 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-006.png)
- 
-* name – наименование меры (Отображается на веб-интерфейсе);
-* aggregator – тип вычисления, который принимает одно из значений:
+The attributes of the new table to fill in: 
 
-    * sum;
-    * count;
-    * min;
-    * max;
-    * avg;
-    * distinct-count.
-* column – наименование атрибута таблицы фактов, по которому будет считаться мера.
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-007.png)
- 
-## Создание Измерения
+* schema diagram БД; 
+* name – fact table for the cube. 
 
-### Измерение для схемы
+![](/images/pages/products/flexberry-analytics/mondrian-cube-005.png) 
 
-Измерение для схемы используется в случаях, когда в рамках одной схемы создается несколько кубов. Для нескольких кубов можно использовать одно измерение схемы. При этом нужно лишь добавить ссылку на это измерение в кубе.
+## Create A Measure 
 
-1.Создать новое измерение для схемы (ПКМ по схеме и кликнуть на Dimension).
+Add measure to the cube (RMB on the cube and select "Add Measure") and fill in: 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-008.png)
- 
-Если измерение создано для схемы, а не для куба то из обязательных атрибутов только поле name – имя.
-Поле type ¬– тип измерения, заполняется по умолчанию значением StandartDimension, для не временных измерений. Для временных измерений заполняется значением TimeDimension.
+![](/images/pages/products/flexberry-analytics/mondrian-cube-006.png) 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-009.png)
- 
-2.При раскрытии измерения появляется иерархия. Обязательные атрибуты для иерархии:
+* name – the name of the action (Displayed in the web interface); 
+* aggregator – a type of calculation that takes one of the values: 
 
-* name – наименование иерархии, 
-* primarykey - столбец таблицы измерения, значения которого совпадают с каким – либо столбцом таблиц (ы) фактов (для связи куба и измерения)
+* sum; 
+* count; 
+* min; 
+* max; 
+* avg; 
+* distinct-count.
+* column – the name attribute of the fact table, which will be considered as a measure. 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-010.png)
- 
-3.Добавить таблицу для измерения (ПКМ по иерархии и кликнуть на Add Table). Среди обязательных атрибутов, уровень имеет следующие:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-007.png) 
 
-* schema – схема БД;
-* name – наименование таблицы
+## Create A Dimension 
 
-4.После добавлении таблицы, аналогично нужно добавить хотя бы один уровень (Level). Среди обязательных атрибутов, уровень имеет следующие:
+### Measurement scheme 
 
-* name – наименование уровня;
-* column (столбец, который будет отражаться как измерение в кубе).
+The measurement scheme is used in cases when within the same schema creates several cubes. For multiple cubes, you can use a single measurement scheme. Thus we only need to add a reference to this dimension in the cube. 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-011.png)
- 
-5.Чтобы использовать измерение схемы в кубе, нужно кликнуть ПКМ по нужному кубу и нажать add dimension usage
+1.To create a new dimension for the circuit (PCM scheme and click on the Dimension). 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-012.png)
- 
-Обязательные атрибуты:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-008.png) 
 
-* name – наименование измерения в кубе.
-* foreign key – столбец таблицы фактов, значения которого должны совпадать с ключом, указанном в иерархиях измерения. 
-* source – необходимо выбрать измерение, которое будет использоваться.
+If a dimension is created for the schema, not the Cuba of the essential attributes only the name field is the name. 
+Field type – the type of measure is populated by default value StandartDimension for time measurements. For time measurements is populated with the value of the TimeDimension. 
 
-Необязательный атрибут:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-009.png) 
 
-* caption –  имя для измерения, которое будет отражаться для конкретного  куба.
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-013.png)
+2.The disclosure of the measurement appears in the hierarchy. Required attributes for hierarchy: 
 
-### Измерение для куба
+* name – name of hierarchy 
+* primarykey - column in the dimension table, the values of which coincide with any column of the tables (s) of facts (for the connection of cube and dimension) 
 
-1.Чтобы использовать измерение для куба, нужно кликнуть ПКМ по нужному кубу и нажать add dimension
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-014.png)
+![](/images/pages/products/flexberry-analytics/mondrian-cube-010.png) 
 
-Если измерение создано для куба, то заполнить следующие поля:
+3.Add table to measure (PCM hierarchy and click on Add Table). Among the mandatory attributes, the level has the following: 
 
-   * name – имя;
-   * type ¬– тип измерения, заполняется по умолчанию значением StandartDimension, для не временных измерений. Для временных измерений заполняется значением TimeDimension.
-   * foreignKey –  внешний ключ для связи с таблицей фактов куба.
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-015.png)
+* schema diagram БД; 
+* name – the name of the table 
 
-2.При раскрытии измерения появляется иерархия. Обязательные атрибуты для иерархии:
+4.After the table is added, we similarly need to add at least one level (level). Among the mandatory attributes, the level has the following: 
 
-   * name – наименование иерархии, 
-   * primarykey - столбец таблицы измерения, значения которого совпадают с каким – либо столбцом таблиц (ы) фактов (для связи куба и измерения)
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-016.png)
+* name – the name уровня; 
+* column (the column that will be displayed as a dimension in the cube). 
 
-3.Добавить таблицу для измерения (ПКМ по иерархии и кликнуть на Add Table). Среди обязательных атрибутов, уровень имеет следующие:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-011.png) 
 
-   * schema – схема БД;
-   * name – наименование таблицы
+5.To use the dimension diagrams in the cube, you need to click RMB on the desired cube and click add dimension usage 
 
-4.После добавлении таблицы, аналогично нужно добавить хотя бы один уровень (Level). Среди обязательных атрибутов, уровень имеет следующие:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-012.png) 
 
-   * name – наименование уровня;
-   * column (столбец, который будет отражаться как измерение в кубе).
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-017.png)
- 
+Required attributes: 
 
-### Измерение JOIN
+* name – the name of the dimension in the cube. 
+* foreign key – a column in the fact table whose values must match the key specified in the dimension hierarchies. 
+* source – select the dimension that will be used. 
 
-Используемая диаграмма классов:
+Optional attribute: 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-018.png)
- 
-1.Создать Измерение
-2.В уже созданной иерархии кликнуть ПКМ и создать Join
-3.Заполнить в Join ссылки на таблицы
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-019.png)
+* caption – the name for the measurement that will be carried for a specific cube. 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-020.png)
- 
-4.В самом Join необходимо указать primarykey и foreignkey
+![](/images/pages/products/flexberry-analytics/mondrian-cube-013.png) 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-021.png)
- 
-5.Создать Level:
+### Dimension for the cube 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-022.png)
- 
-6.Заполнить Иерархию для связи с таблицей фактов
+1.To use a dimension for a cube, you need to click RMB on the desired cube and click add dimension 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-023.png)
- 
-7.В кубе нужно создать Dimension Usage
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-024.png)
+![](/images/pages/products/flexberry-analytics/mondrian-cube-014.png) 
 
-Схема куба:
+If a dimension is created for cube, then fill in the following fields: 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-025.png)
- 
-### Измерение с иерархией
+* name – имя; 
+* type – the type of measure is populated by default value StandartDimension for time measurements. For time measurements is populated with the value of the TimeDimension. 
+* foreignKey – foreign key to link to the fact table of the cube.
 
-#### Использование Уровней
+![](/images/pages/products/flexberry-analytics/mondrian-cube-015.png) 
 
-1.Модель:
+2.The disclosure of the measurement appears in the hierarchy. Required attributes for hierarchy: 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-026.png)
- 
-2.Создать новое измерение для схемы или для куба
+* name – name of hierarchy 
+* primarykey - column in the dimension table, the values of which coincide with any column of the tables (s) of facts (for the connection of cube and dimension) 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-027.png)
- 
-Если предполагается работа с датами, то нужно отметить атрибут type = TimeDimension
-3.Далее заполнить поля в Иерархии
-4.Добавить таблицу для иерархии
-5.После создать первый уровень:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-016.png) 
 
-   * Заполнить Год:
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-028.png)
+3.Add table to measure (PCM hierarchy and click on Add Table). Among the mandatory attributes, the level has the following: 
 
-{% include important.html content="Для первого уровня требуется отметить галочкой uniqueMembers = true." %}
+* schema diagram БД; 
+* name – the name of the table 
 
-   * Заполнить Месяц:
+4.After the table is added, we similarly need to add at least one level (level). Among the mandatory attributes, the level has the following: 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-029.png)
- 
-#### Использование Closure Table
+* name – the name уровня; 
+* column (the column that will be displayed as a dimension in the cube). 
 
-0.Модель:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-017.png) 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-030.png)
- 
-1.Создать новое измерение для схемы или для куба
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-031.png)
- 
-2.Далее заполнить поля в Иерархии
+### Dimension JOIN 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-032.png)
- 
-3.Добавить таблицу для иерархии
+Used class diagram: 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-018.png) 
+
+1.Create A Dimension 
+2.In an already established hierarchy RMB and create Join 
+3.Fill in the Join table references 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-019.png) 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-020.png) 
+
+4.In the Join you need to specify the primarykey and foreignkey 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-021.png) 
+
+5.Create A Level: 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-022.png) 
+
+6.Fill in the Hierarchy to associate with a fact table 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-023.png) 
+
+7.In the cube you need to create a Dimension Usage 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-024.png) 
+
+The cube schema: 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-025.png) 
+
+### Dimension hierarchy 
+
+#### Use Levels 
+
+1.Model: 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-026.png) 
+
+2.To create a new dimension for the scheme or for the cube 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-027.png) 
+
+If you intend to work with dates, it should be noted attribute type = TimeDimension 
+3.Next, fill in the Hierarchy 
+4.Add a table for the hierarchy 
+5.After creating the first level: 
+
+* Fill In The Year: 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-028.png) 
+
+{% include important.html content="For first level is required to tick uniqueMembers = true." %} 
+
+* Fill In The Month: 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-029.png) 
+
+#### Using Closure Table 
+
+0.Model: 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-030.png) 
+
+1.To create a new dimension for the scheme or for the cube 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-031.png) 
+
+2.Next, fill in the Hierarchy 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-032.png) 
+
+3.Add a table for the hierarchy 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-033.png) 
- 
-4.Далее в раскрытой иерархии нужно добавить уровень
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-034.png)
- 
-5.В созданном уровне нужно добавить Closure
+4.Further, in the disclosed hierarchy need to add a level 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-035.png)
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-036.png)
- 
-6.Заполнить Closure, для этого нужно выбрать в Table нужную таблицу
+![](/images/pages/products/flexberry-analytics/mondrian-cube-034.png) 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-037.png)
- 
-7.Заполнить уровень, для этого необходимо заполнить поля:
+5.In the generated level, you need to add Closure 
 
-   * name – наименование уровня;
-   * table – выбрать из выпадающего списка таблицу для измерения;
-   * column – атрибут первичного ключа таблицы;
-   * nameColumn – атрибут для отображения значения измерения;
-   * parentColumn – атрибут для ключа родителя;
-   * type – тип данных;
-   * uniqueMembers –  отметить галочку для отметки, что данный уровень является первичным по счету;
-   * levelType – Regular;
-   * hideMemberlf – Never
-   * caption – отображаемое имя
+![](/images/pages/products/flexberry-analytics/mondrian-cube-035.png) 
 
-![](/images/pages/products/lexberry-analytics/mondrian-cube-038.png)
- 
-8.Заполнить в Closure атрибуты parentColumn и childColumn значениями из выпадающих списков:
+![](/images/pages/products/flexberry-analytics/mondrian-cube-036.png) 
+
+6.Fill in Closure, select the Table in the desired table 
+
+![](/images/pages/products/flexberry-analytics/mondrian-cube-037.png) 
+
+7.To complete a level, it is necessary to fill fields: 
+
+* name – the name уровня; 
+* table – select from the drop-down list for table измерения; 
+* column – attribute primary key таблицы; 
+* nameColumn attribute to display the value измерения; 
+* the parentColumn attribute is for a key родителя; 
+* type – the type данных; 
+* uniqueMembers – mark the checkbox to mark that this level is the primary счету; 
+* levelType – Regular; 
+* hideMemberlf – Never 
+* caption – the display name 
+
+![](/images/pages/products/lexberry-analytics/mondrian-cube-038.png) 
+
+8.Fill in the attributes Closure parentColumn and childColumn values from drop down lists: 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-039.png) 
 
-9.Для куба создать ссылку на измерение:
+9.For a cube to create a link to measurement: 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-040.png) 
 
-10.Заполнить Dimension Usage:
+10.To Fill In The Dimension Usage: 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-041.png)
+![](/images/pages/products/flexberry-analytics/mondrian-cube-041.png) 
 
-## Создание виртуального Куба
+## Create a virtual cube 
 
-Для отображения нескольких кубов на одной схеме используется функция создания виртуальных кубов. Для этого требуется:
+To display multiple cubes in one schema function create the virtual cubes. This requires: 
 
-1.Создать как минимум два куба с измерениями и мерами
+1.Create at least two of the cube dimensions and measures 
 
-2.В открытой схеме нужно создать виртуальный куб (ПКМ по схеме и кликнуть `Add virtual cube`)
- 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-042.png)
+2.In an open circuit, you need to create a virtual cube (PCM scheme and click `Add virtual cube`) 
 
-3.Заполнить, в появившимся окне, наименование (name) для виртуального куба
+![](/images/pages/products/flexberry-analytics/mondrian-cube-042.png) 
 
-4.Добавить в виртуальный куб ссылки на измерения обычных кубов, для этого:
-   * Кликнуть ПКМ по виртуальному кубу и выбрать `Add virtual cube dimension`
+3.Fill in the window that appears, name (name) for a virtual cube 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-043.png)
+4.To add to the virtual cube is references to dimension normal cubes, for this: 
+* RMB on the virtual cube and virtual cube choose `Add dimension` 
 
-   * В появившемся окне виртуального измерения заполнить атрибуты: name и cubeName в точности, как они называются в исходном кубе
+![](/images/pages/products/flexberry-analytics/mondrian-cube-043.png) 
+
+* In the resulting window, a virtual measurement to fill in the attributes: name and cubeName exactly as they are called in the source cube 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-044.png) 
 
-5.Добавить в виртуальный куб ссылки на меры обычных кубов, для этого:
-   * Кликнуть ПКМ по виртуальному кубу и выбрать `Add virtual cube measure`
+5.Add in a virtual cube reference measures a normal cubes for this: 
+* RMB on the virtual cube and virtual cube choose `Add measure` 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-045.png)
+![](/images/pages/products/flexberry-analytics/mondrian-cube-045.png) 
 
-   * В появившемся окне виртуального измерения заполнить атрибуты: name и cubeName в точности, как они называются в исходном кубе
+* In the resulting window, a virtual measurement to fill in the attributes: name and cubeName exactly as they are called in the source cube 
 
-{% include important.html content=" Параметр name заполнять в формате: [Measures].[<Наименование меры>]." %}
+{% include important.html content=" the name Parameter to fill in the format: [Measures].[<Measure name>]." %} 
 
-![](/images/pages/products/flexberry-analytics/mondrian-cube-046.png)
+![](/images/pages/products/flexberry-analytics/mondrian-cube-046.png) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

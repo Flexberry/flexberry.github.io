@@ -7,7 +7,7 @@ permalink: en/gt_landing-page.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 75f741d5e0c589cf9bcacbce0d681425d788ec7648a24da9c8defd561b4ff630 
+hash: 6c70e2300fbff8530e13a844e8f78806b1d21f8d26d2784973784ce6443d73a1 
 --- 
 
 ## Practical exercises for courses 

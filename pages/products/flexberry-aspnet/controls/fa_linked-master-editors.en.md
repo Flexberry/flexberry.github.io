@@ -1,61 +1,63 @@
----
-title: Связывание контролов редактирования мастеров
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_linked-master-editors.html
-lang: en
----
+--- 
+title: link controls editing masters 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_linked-master-editors.html 
+lang: en 
+autotranslated: true 
+hash: dbc3d0ed36bca5ab476047cf756667e9f548a93c5fe4ae84d441fbb5ad42f4e9 
+--- 
 
-Данная статья рассказывает, каким образом можно связывать такие web-контролы редактирования мастеров как [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) и [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html).
+This article tells how to link these web controls edit masters as [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) and [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html). 
 
-## Методы для [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html)
+## Methods [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) 
 
-### Создание зависимых лукапов внутри AGE
+### Creating dependent lyapov inside AGE 
 
-Если лукапы находятся внутри [AGE](fa_ajax-group-edit.html), то для этого нужно воспользоваться [следующим способом](fa_controls-age.html).
+If lucapa are inside the [AGE](fa_ajax-group-edit.html), then you need to use [next method](fa_controls-age.html). 
 
-### Работа с LookUp'ом из javascript
+### Work with LookUp'om from javascript 
 
-Подписка на изменение значения в LookUp'e
+Subscription to change of value in LookUp'e 
 
 ```javascript
 $('#<%=ctrlМойЛукап.ClientID%>').on('change', function () {
-  // alert('Значение изменилось');
+  // alert('Value changed'); 
 });
-```
+``` 
 
-Либо можно задать клиентский обработчик изменения в серверном коде:
-
-```csharp
-    lookup.ChangeClientHandler = "alert('Значение изменилось в лукапе с идентификатором {0}');";
-```
-
-## Связывание при помощи серверных методов, которые предусмотрены технологией
-
-Для конкретного контрола редактирования мастера ([MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) имеется возможность указать его мастеровой контрол ([MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) или [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)), т.е. тот, от которого он зависит. При смене мастерового контрола вызовется серверный обработчик для изменения свойств зависимого контрола.
+Alternatively, you can specify client-side change handler in server code: 
 
 ```csharp
-// Это нужно писать только тогда, когда все свойства у контролов проставлены WebBinder (тип и пр.)
+    lookup.ChangeClientHandler = "alert('Value changed in lucapa with ID {0}');";
+``` 
+
+## Binding by using the server methods provided by technology 
+
+For specific control of the edit master ([MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) or [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) you can specify it workman the control ([MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) or [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)), i.e. the one from which it depends. When changing control of the workman will be called server-side handler to modify the properties of dependent control. 
+
+```csharp
+// It is necessary to write only when all properties of controls surrounding WebBinder (type, etc.) 
 ctrlSlave.AddMasterLookup(ctrlMaster, MasterOfSlaveChanged);
-```
+``` 
 
-`MasterOfSlaveChanged` - это делегат вида:
+`MasterOfSlaveChanged` is a delegate of the form: 
 
 ```csharp
-/// <summary>
-/// Делегат обработки смены значения в AJAX-лукапе
-/// </summary>
-/// <param name="masterSelectedPk">Текущее значение мастерового лукапа</param>
-/// <param name="selectedPk">Текущее значение зависимого лукапа</param>
-/// <param name="masterLookups">Список остальных мастеровых лукапов</param>
+/// <summary> 
+/// Delegate the processing of changing the values in the AJAX lucapa 
+/// </summary> 
+/// <param name="masterSelectedPk">the Current value of the workman lucapa</param> 
+/// <param name="selectedPk">the Current value of the dependent lucapa</param> 
+/// <param name="masterLookups">a List of other workmen of lyapov</param> 
 public delegate void AjaxLookUpChangeHandler(
     string masterSelectedPk,
     ref string selectedPk,
     List<MasterLookup> masterLookups);
-```
+``` 
 
-Например, если нужно очистить зависимый контрол, если очистился мастеровой:
+For example, if you want to clear dependent control, if purified of the artisan: 
 
 ```csharp
 private void MasterOfSlaveChanged(string masterselectedpk, ref string selectedpk, List<MasterLookup> masterLookups)
@@ -65,25 +67,29 @@ private void MasterOfSlaveChanged(string masterselectedpk, ref string selectedpk
         selectedpk = string.Empty;
     }
 }
-```
+``` 
 
-Также, можно изменять LimitFunction и пр.
+Also, you can change LimitFunction, etc. 
 
-В такой обработчик приходит значение мастерового контрола - `masterselectedpk` и значение зависимого контрола - `selectedPk` (передается по ссылке). (Т.е. если будет изменён `selectedpk`, то в javascript методе проставится значение и пойдет еще один AJAX-запрос на зачитку объекта по `selectedpk`).
+In this handler comes to the value of the workman control - `masterselectedpk` and the value of the dependent control - `selectedPk` (passed by reference). (I.e. if `selectedpk` is changed, the javascript method is put the value and go another AJAX request to zachetku object `selectedpk`). 
 
-{% include note.html content="Один контрол редактирования мастера может иметь несколько мастеровых контролов. При связывании каждый раз задается новый обработчик." %}
+{% include note.html content="Single control of the edit wizard can have several artisans of controls. When you link every time you set a new handler." %} 
 
-{% include note.html content="В динамике нельзя менять мастеровой контрол." %}
+{% include note.html content="In dynamics you can't change the master control." %} 
 
-{% include note.html content="Есть возможность узнавать в обработчике, какой контрол редактирования мастера его вызвал - `bool Triggered`." %}
+{% include note.html content="Have the opportunity to learn in the handler for which control editing of the master called him - `bool Triggered`." %} 
 
-{% include important.html content="Мастеровой [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html), может быть зависимым контролом своего зависимого контрола." %} 
+{% include important.html content="Artisan [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) may be your dependent control dependent control." %} 
 
-Например:
+For example: 
 
 ```csharp
 ctrl1.AddMasterLookup(ctrl2, ctrl1Ofctrl2Changed);
 ctrl2.AddMasterLookup(ctrl1, ctrl2Ofctrl1Changed);
-```
+``` 
 
-НО: Мастеровой [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html) не может быть зависимым контролом своего зависимого контрола типа [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html).
+BUT: Artisan [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html) cannot be a dependent dependent control control type [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

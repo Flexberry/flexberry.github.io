@@ -1,24 +1,24 @@
----
-title: Development of Ember services
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_devservic.html
-folder: guides/base-tech/frontend/emberjs/
+--- 
+title: Development of Ember services 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_devservic.html 
+folder: guides/base-tech/frontend/emberjs/ 
 lang: en 
 autotranslated: true 
-hash: 4919475aa809101866fc56c841ce0ae838edad718181ca7ac7124ba723788010
----
+hash: 5caa4c404a82ae7b01f61bbe731979f6e9a7cb1462423a324720b8d5cb978923 
+--- 
 
-## Brief description
+## Brief description 
 
-The contents of this page:
+The contents of this page: 
 
-* Development of ember services, their features (by default they are singletons), and susannae them are of type injectService
-* Features testing services
-* Links to useful services (i18n, moment)
+* Development of ember services, their features (by default they are singletons), and susannae them are of type injectService 
+* Features testing services 
+* Links to useful services (i18n, moment) 
 
-## Go
+## Go 
 
 * [Back](gbt_emberjs.html)
 

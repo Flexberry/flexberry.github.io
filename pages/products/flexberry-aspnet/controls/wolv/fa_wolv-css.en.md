@@ -1,13 +1,15 @@
----
-title: CSS-классы WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_wolv-css.html
-lang: en
----
+--- 
+title: CSS classes WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_wolv-css.html 
+lang: en 
+autotranslated: true 
+hash: f183ba61641c85c13d10199cdcce7d23d01a986884feea3e97fbbf277840a8cb 
+--- 
 
-Возможность кастомизации отображения [WOLV](fa_web-object-list-view.html) при помощи CSS отображена во внутренней структуре и CSS-классах:
+The ability to customize the display [WOLV](fa_web-object-list-view.html) via CSS displayed in the internal structure and the CSS classes: 
 
 ```html
 <div class="ics-wolv-column-header">
@@ -15,15 +17,19 @@ lang: en
     <span class="ics-wolv-column-sort-direction (ics-wolv-column-sort-asc|ics-wolv-column-sort-desc)"></span>
     <span class="ics-wolv-column-caption (ics-wolv-column-sort-enabled|ics-wolv-column-sort-disabled)">[подпись столбца]</span>
 </div>
-```
+``` 
 
-| CSS-класс | Описание |
-| --------- | -------- |
-| `ics-wolv-column-header` | Контейнер заголовка столбца |
-| `ics-wolv-column-sort-order` | Цифра, отвечающая за порядок сортировки |
-| `ics-wolv-column-sort-direction` | Элемент дизайна, показывающий направление сортировки (общий для сортировки по убыванию и по возрастанию) |
-| `ics-wolv-column-sort-asc` | Элемент дизайна, показывающий направление сортировки по возрастанию |
-| `ics-wolv-column-sort-desc` | Элемент дизайна, показывающий направление сортировки по убыванию |
-| `ics-wolv-column-caption`  | Подпись столбца (общая для включенной и отключенной сортировки) |
-| `ics-wolv-column-sort-enabled` | Подпись столбца с включенной сортировкой |
-| `ics-wolv-column-sort-disabled` | Подпись столбца с отключенной сортировкой |
+| CSS class | Description | 
+| --------- | -------- | 
+| `ics-wolv-column-header` | Container column header | 
+| `ics-wolv-column-sort-order` | Figure responsible for the sort order | 
+| `ics-wolv-column-sort-direction` | design Element showing the sort direction (descending and ascending) | 
+| `ics-wolv-column-sort-asc` | design Element showing the direction of sort ascending | 
+| `ics-wolv-column-sort-desc` | design Element showing the direction of sorting in descending order | 
+| `ics-wolv-column-caption` | Signature column (for the enabled and disabled sorting) | 
+| `ics-wolv-column-sort-enabled` | Signature column with sorting enabled | 
+| `ics-wolv-column-sort-disabled` | Signature columns with disabled sorting | 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

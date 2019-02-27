@@ -1,12 +1,18 @@
----
-title: Подсказки к полям данных
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Designer
-toc: true
-permalink: en/fa_hints-attributes.html
-lang: en
----
+--- 
+title: Tips to data fields 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Designer 
+toc: true 
+permalink: en/fa_hints-attributes.html 
+lang: en 
+autotranslated: true 
+hash: 3a071513a1ab940b3cd70d5d1fe66e9ac34e05636e45d4d7e2cd88e1cbafb829 
+--- 
 
-В технологии Flexberry  у [атрибута](fo_attributes-class-data.html) добавлено свойство `Hint`, содержащее подсказку к полю. 
+Technology Flexberry [attribute](fo_attributes-class-data.html) added `Hint` property containing the tooltip for the field. 
 
-Данное поле используется при генерации web-приложений: после контрола, если у соответствующего ему атрибута свойство `Hint` не пусто, генерируется дополнительный контрол, при наведении на который возникает всплывающая подсказка с текстом, указанным в `Hint`.
+This field is used to generate web application: after the control, if its corresponding attribute property `Hint` is not empty, generate an additional control, when you hover on which arises a tooltip with the text specified in `Hint`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

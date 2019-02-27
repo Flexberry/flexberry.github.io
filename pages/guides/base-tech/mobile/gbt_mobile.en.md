@@ -1,64 +1,64 @@
----
-title: mobile application Development
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_mobile.html
-folder: guides/base-tech/mobile/
+--- 
+title: mobile application Development 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_mobile.html 
+folder: guides/base-tech/mobile/ 
 lang: en 
 autotranslated: true 
-hash: 49d73968a73f5fc4dd40c48c6e0df078a7b401eef0f4173417ba03c7b328c34c
----
+hash: 0bbdb94d0986003487350f016d88b77695a5ebdfe2ed9e20085374b05356a3ed 
+--- 
 
-## Brief description
+## Brief description 
 
-## Links to materials for the study
+## Links to materials for the study 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-### Presentation
+### Presentation 
 
-### Recommended books
+### Recommended books 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Software
+## Software 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Laboratory work and practical tasks
+## Laboratory work and practical tasks 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-Variants of tasks for independent performance, and then reviewing on the part of the teacher.
+Variants of tasks for independent performance, and then reviewing on the part of the teacher. 
 
-### Option # 1
+### Option # 1 
 
-### Option # 2
+### Option # 2 
 
-### Option # 3
+### Option # 3 
 
-### Option # 4
+### Option # 4 
 
-### Option # 5
+### Option # 5 
 
-## Examples
+## Examples 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Opportunities for certification
+## Opportunities for certification 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Go
+## Go 
 
-* [Development for Android](gbt_android.html)
+* [Development for Android](gbt_android.html) 
 * [Course home page](gbt_landing-page.html)
 
 

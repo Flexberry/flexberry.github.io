@@ -1,49 +1,55 @@
----
-title: Подключение скриптов и стилей на основе PlaceholderPageContentConnector
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_placeholder-page-content-connector.html
-lang: en
----
+--- 
+title: Connection of scripts and styles based on PlaceholderPageContentConnector 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_placeholder-page-content-connector.html 
+lang: en 
+autotranslated: true 
+hash: cc0b7abd48ce8644ab781e71638b71833dd45a730c0dbc299ea5a244bb5a7a0f 
+--- 
 
-Класс `PlaceholderPageContentConnector` используется для подключения технологических скриптов и стилей, которые необходимы для работы контролов и среды выполнения при помощи контролов-плейсхолдеров. Такой способ позволяет настраивать приложение более гибко, добавляя прикладной код до/после технологического и пользовательского.
+Class `PlaceholderPageContentConnector` is used to connect the technological scripts and styles necessary to operate the controls and runtime using the controls-placeholders. This method allows you to configure your application more flexible by adding application code before/after the technological and user. 
 
-Является альтернативой методу подключения ресурсов через [FilterPageContentConnector](fa_filter-page-content-connector.html).
+Is an alternative method of connection resources [FilterPageContentConnector](fa_filter-page-content-connector.html). 
 
-## Принцип работы
+## working Principle 
 
-Подключение ресурсов происходит при помощи обработки события начала реднеринга страницы (`PreRenderComplete`):
+Connect resources is by handling events of the beginning of rednering page (`PreRenderComplete`): 
 
-1. в коллекции контролов страницы (включая Master-страницу) ищутся контролы с следующими идентификаторами:
-    * `FlexberryScripts` - плейсхолдер для подключения скриптов;
-    * `FlexberryStyles` - плейсхолдер для подключения стилей;
-    * `FlexberryRawHtml` - плейсхолдер для подключения специальных технологических элементов;
-2. в коллекцию контролов плейсхолдеров добавляются контролы, подключающие ресурсы.
+1. in the collection of controls on the page (including Master page) are the controls with the following IDs: 
+* `FlexberryScripts` is a placeholder for the connection скриптов; 
+* `FlexberryStyles` is a placeholder for the connection стилей; 
+* `FlexberryRawHtml` is a placeholder for the connection of special technological элементов; 
+2. the collection of placeholders controls are added controls that connect resources. 
 
-В случае, если контролы не найдены, то будет сгенерировано исключение.
+If controls are found, an exception will be raised. 
 
-{% include warning.html content="В связи с тем, что ресурсы подключаются в `PreRenderComplete`, то элементы, подключенные после уже не будут добавлены в разметку." %}
+{% include warning.html content="due To the fact that the resources are connected in `PreRenderComplete` the elements connected after will not be added to the markup." %} 
 
-## Настройка
+## Setting 
 
-1.Для подключения ресурсов на основе плейсхолдеров нужно настроить `unity` (`web.config`):
+1.To connect resources based on the placeholders you want to configure `unity` (`web.config`): 
 
 ```xml
 <register type="NewPlatform.Flexberry.Web.Http.IPageContentConnector, NewPlatform.Flexberry.Web.Http"
           mapTo="NewPlatform.Flexberry.Web.Http.PlaceholderPageContentConnector, NewPlatform.Flexberry.Web.Http" />
-```
+``` 
 
-2.В разметку страницы / Master-страницы нужно добавить контролы-плейсхолдеры:
+2.In the page layout / Master page you need to add controls-placeholders: 
 
 ```xml
 <asp:Placeholder ID="FlexberryStyles" runat="server" />
 <asp:Placeholder ID="FlexberryScripts" runat="server" />
 <asp:Placeholder ID="FlexberryRawHtml" runat="server" />
-```
+``` 
 
-{% include note.html content="Плейсхолдер `FlexberryStyles` обычно добавляется в <head> страницы." %}
+{% include note.html content="a Placeholder `FlexberryStyles` usually added in the <head> of the page." %} 
 
-{% include warning.html content="Положение плейсхолдера `FlexberryScripts` влияет на корректность работы пользовательских скриптов, добавляемых на страницу в `ContentPlaceHolder0`. `FlexberryScripts` должен находиться выше в разметке." %}
+{% include warning.html content="the placeholder `FlexberryScripts` affect the correct operation of custom scripts added to the page in `ContentPlaceHolder0`. `FlexberryScripts` should be placed higher in the markup." %} 
 
-{% include note.html content="В случае, когда вручную не добавлен FlexberryScripts, данные всё равно могут быть подключены в конец тега <body> (для этого он должен иметь атрибут `runat=server`)!" %}
+{% include note.html content="when manually added FlexberryScripts, the data can still be connected to the end of the <body> tag (it should have an attribute `runat=server`)!" %} 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

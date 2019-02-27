@@ -1,34 +1,40 @@
----
-title: ServiceSecurityProvider
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_service-security-provider.html
-lang: en
----
+--- 
+title: ServiceSecurityProvider 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_service-security-provider.html 
+lang: en 
+autotranslated: true 
+hash: d0e6059e035cf85aaa7bb6a7896bee642c8ee2b8c37f05657fab322cd23b91e1 
+--- 
 
-Данный провайдер используется для того, чтобы сделать использование веб-сервиса в веб-приложении более безопасным. При помощи него можно указать какому методу из веб-сервиса какие типы объектов можно читать из базы. Это сделано потому, что есть довольно общие методы, при помощи которых можно прочитать все данные из базы.
+This provider is used in order to make use of the web service in a web application more secure. With it you can specify what method of web service what types of objects can be read from the database. This is because there are quite common techniques in which you can read all the data from the database. 
 
-## Конфигурационный файл
+## Configuration file 
 
-Конфигурационный файл находится в папке `/xml` под названием `ServiceSecurityProvider.xml`
+The configuration file is in the folder `/xml` called `ServiceSecurityProvider.xml` 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
   <method name="GetPropertyValues">
-    <type name="IIS.КошкиСЛапами.Кошка, КошкиСЛапами(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
-    <type name="IIS.КошкиСЛапами.Порода, КошкиСЛапами(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
+    <type name="IIS.Kokilabari.Cat, Kokilabari(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
+    <type name="IIS.Kokilabari.Breed Kokilabari(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
   </method>
 
   <method name="LoadObject">
-    <type name="IIS.КошкиСЛапами.Порода, КошкиСЛапами(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
+    <type name="IIS.Kokilabari.Breed Kokilabari(Objects), Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
   </method>
 </root>
-```
+``` 
 
-Для каждого метода указывается список разрешенных типов.
+For each method, specify a list of allowed types. 
 
-## Места использования
+## using it 
 
-На текущий момент в WebTools есть класс `AjaxServiceHelper`, который инкапсулирует в себе работу с базой и настройками из конфигурационного файла `ServiceSecurityProvider.xml`. Данный класс (`AjaxServiceHelper`) вызывается из методов веб-сервиса в веб-приложении.
+Currently WebTools `AjaxServiceHelper` there is a class that encapsulates the work with the database and settings from the configuration file `ServiceSecurityProvider.xml`. This class (`AjaxServiceHelper`) is called from methods of the web service in a web application. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,13 +1,15 @@
----
-title: ResponseFilterModule
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_response-filter-module.html
-lang: en
----
+--- 
+title: ResponseFilterModule 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_response-filter-module.html 
+lang: en 
+autotranslated: true 
+hash: 220ee02cadae975e25fb7d818e6ebae49b70f57ebaa462ab89db58ca2c6e0691 
+--- 
 
-В сгенерированных веб-приложениях, используется `ICSSoft.STORMNET.Web.HttpModules.ResponseFilterModule`. Он подключается в `Web.config`.
+In the generated web applications used `ICSSoft.STORMNET.Web.HttpModules.ResponseFilterModule`. It connects to `Web.config`. 
 
 ```xml
   <system.web>
@@ -15,17 +17,17 @@ lang: en
       <add name="ResponseFilterModule" type="ICSSoft.STORMNET.Web.HttpModules.ResponseFilterModule, ICSSoft.STORMNET.Web.HttpModules"/>
     </httpModules>
   </system.web>
-```
+``` 
 
-`ResponseFilterModule` используется для изменения html в конце обработки запроса. Например, в нем просматривается `HttpContext` на наличие записанных в него данных об исключениях, и по ним генерируется html код для того, чтобы красиво отобразить сообщение об исключении на странице. Подробности на [msdn.microsoft.com](http://msdn.microsoft.com/ru-ru/library/system.web.httpresponse.filter.aspx).
+`ResponseFilterModule` is used to change the html at the end of request processing. For example, it can be seen `HttpContext` the presence of recorded data about exceptions, and it generates the html code to nicely display the exception message on the page. Details [msdn.microsoft.com](http://msdn.microsoft.com/ru-ru/library/system.web.httpresponse.filter.aspx). 
 
-## Связанные ошибки
+## Related errors 
 
-Если не подключен `ResponseFilterModul`, то все файлы и скрипты, которые будут подключены через `ContextHelper`, _не будут_ выведены на страницу.
+If not connected `ResponseFilterModul`, all the files and scripts that will be connected via `ContextHelper`, _not_ budut displayed on the page. 
 
-## Версия IIS
+## Version of IIS 
 
-Если используется `IIS 7`, то нужно помнить, что в нем модули подключаются другим образом, а именно:
+If you use `IIS 7`, you need to remember is that it's modules are connected in another way, namely: 
 
 ```xml
 <system.webServer>    
@@ -33,4 +35,8 @@ lang: en
       <add name="ResponseFilterModule" type="ICSSoft.STORMNET.Web.HttpModules.ResponseFilterModule, ICSSoft.STORMNET.Web.HttpModules"/>
   </modules>    
 </system.webServer>  
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

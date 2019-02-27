@@ -1,63 +1,65 @@
----
-title: MasterExpander
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_ajax-controls-master-expander.html
-lang: en
----
+--- 
+title: MasterExpander 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_ajax-controls-master-expander.html 
+lang: en 
+autotranslated: true 
+hash: 8ba871e1e575e4c41be56e6d12617ea7b63ac1c613648c20fdda7b3684163158 
+--- 
 
-Веб-контрол для отображения объектов разворачиваемыми группами, сформированными по значению мастера. Объекты без мастера помещаются в категорию `Остальное`. Для отображения каждой группы используется контрол [ObjecTileView](fa_ajax-controls-object-tile-view.html).
+Web control for displaying objects deployed by groups formed according to the value of the master. Objects without a master are placed in the category `Остальное`. To display each group uses control [ObjecTileView](fa_ajax-controls-object-tile-view.html). 
 
-## Интерфейс
+## Interface 
 
-### Методы
+### Methods 
 
-| Сигнатура | Описание|
-|---------------------------------------|----------------------------------------|
-| `protected override void OnLoad(EventArgs e)` | Перегрузка метода класса `WebControl`, вызывается при загрузке контрола|
-| `protected override void RenderContents(HtmlTextWriter writer)` | Перегрузка метода класса `WebControl`, используется для рендеринга контрола при размещении на веб-форме|
-| `protected override IEnumerable<SсriptDesсriptor> GetSсriptDesсriptors()` | Перегрузка метода класса `SсriptControl`. Метод для получения дескрипторов скриптов, используемых контролом|
-| `protected override IEnumerable<SсriptReference> GetSсriptReferences()` | Перегрузка метода класса `SсriptControl`. Метод для получения ссылок на скриптовые ресурсы, используемые контролом.|
-| `public static string GetMarkup(string guid, int pageNum)` | Статический метод, возвращающий строку с разметкой нужной страницы. Вызывается веб-сервисом `MasterExpanderService` при обработке ajax-запросов. Настройки берутся из сессии по `guid`'у|
-| `public static string GetTileViewMarkup(string guid, int index)` | Статический метод, возвращающий строку с разметкой конкретного `ObjectTileView`. Вызывается веб-сервисом `MasterExpanderService` при обработке ajax-запросов разворачивания какой-либо категории. Настройки берутся из сессии по `guid`'у. Внутри метода происходит конструирование экземпляра `ObjectTileView` и получение его разметки|
+| Signature | Description| 
+|---------------------------------------|----------------------------------------| 
+| `protected override void OnLoad(EventArgs e)` | Overload a class method `WebControl` is called when the download control| 
+| `protected override void RenderContents(HtmlTextWriter writer)` | Overload a class method `WebControl` used for rendering the control when placed on a web form| 
+| `protected override IEnumerable<SсriptDesсriptor> GetSсriptDesсriptors()` | Overload a class method `SсriptControl`. Method to retrieve the handles of the scripts used control| 
+| `protected override IEnumerable<SсriptReference> GetSсriptReferences()` | Overload a class method `SсriptControl`. Method for obtaining of links to scripting resources used by the control.| 
+| `public static string GetMarkup(string guid, int pageNum)` | Static method that returns a string with the markup for the page you want. It calls the web service `MasterExpanderService` when processing ajax requests. Settings are taken from the session on `guid`'| 
+| `public static string GetTileViewMarkup(string guid, int index)` | Static method that returns a string with markup specific `ObjectTileView`. It calls the web service `MasterExpanderService` when processing ajax requests expand a category. Settings are taken from the session on `guid`'. Inside the method the instance `ObjectTileView`'s receipt markup| 
 
-### Свойства
+### Properties 
 
-Свойства, которые по именам совпадают со свойствами `ObjecTileView`, просто передаются конкретному экземпляру этого контрола при его создании, про них можно почитать [в статье ObjectTileView](fa_ajax-controls-object-tile-view.html). Значение `TilesPerPage` будет записано в `ItemsPerPage` каждого `ObjectTileView`. Остальные свойства перечислены ниже:
+Properties which names match the properties of the `ObjecTileView` are simply passed to a specific instance of this control when it is created, about which you can read [the article ObjectTileView](fa_ajax-controls-object-tile-view.html). The value `TilesPerPage` will be recorded in `ItemsPerPage` each `ObjectTileView`. The other properties listed below: 
 
-| Название | Тип | Описание|
-|--------------|------------------------|------------------------|
-| `MastersPerPage` | `uint` | Количество категорий на одной странице `MasterExpander`|
-| `MasterName` | `string` | Имя атрибута объектов, **хранящего мастера**, используемого для группировки|
-| `MasterAttributeName` | `string` | Имя атрибута **мастера**, по которому производится разделение. Если, например, группировать объекты по названию темы, то `MasterName` будет равен `Тема`, а `MasterAttributeName` - `Название`|
-| `SectionHeaderUserContentGenerator` | `ICSSoft.STORMNET.Web.AjaxControls.<br>MasterExpanderUserContentDelegate` | Используется для задания функции, которая будет генерировать пользовательское содержимое в заголовках каждой категории. Подробнее о типе делегата MasterExpanderUserContentDelegate написано ниже.|
+| Name | Type | Description| 
+|--------------|------------------------|------------------------| 
+| `MastersPerPage` | `uint` | the Number of categories on one page `MasterExpander`| 
+| `MasterName` | `string` | the name of the attribute objects **stores master** used to group| 
+| `MasterAttributeName` | `string` | the name of the attribute **masters**, which is separation. If, for example, to group objects by topic name, then `MasterName` will be equal to `Тема` and `MasterAttributeName` - `Название`| 
+| `SectionHeaderUserContentGenerator` | `ICSSoft.STORMNET.Web.AjaxControls.<br>MasterExpanderUserContentDelegate` | is Used to specify a function that will generate the custom content in the headers of each category. Read more about the delegate type MasterExpanderUserContentDelegate written below.| 
 
-### MasterExpanderUserContentDelegate
+### MasterExpanderUserContentDelegate 
 
 ```csharp
     public delegate string MasterExpanderUserContentDelegate<in TData>(
         MasterExpander.MasterExpanderSettings settings,
         TData data);
-```
+``` 
 
-Делегат, который предполагается использовать для передачи пользовательских функции генерации содержимого в контрол MasterExpander. В качестве параметров функция должна принимать настройки MasterExpander (типа MasterExpander.MasterExpanderSettings) и какие-нибудь данные, зависящие от контекста использования. Ниже приведен пример реализации функции для добавления разметки в заголовок категории MasterExpander, где в качестве "данных" выступает индекс категории, соответственно, `TData` конкретизируется в `int`.
+The delegate that will be used for the transmission of user-defined functions generating content in the control MasterExpander. As parameters the function should accept the settings MasterExpander (type MasterExpander.MasterExpanderSettings) and any data that depends on the context of use. The following is an example implementation of the function to add markup to the title of the category MasterExpander, where the "data" is the index categories, respectively, `TData` specified in `int`. 
 
 ```csharp
 protected static string GenerateSectionHeaderContent(
     MasterExpander.MasterExpanderSettings settings,
     int index)
 {
-    return string.Format("<p>Категория №{0} из {1}</p>", index, 
+    return string.Format("<p>Category # {0} of {1}</p>", index, 
     settings.MastersValues.Count);
 }
-```
+``` 
 
-### Web.config
+### Web.config 
 
-Для включения веб-сервиса `MasterExpanderService.asmx` необходимо добавить запись в `Web.config`:
+To enable the web service `MasterExpanderService.asmx` you must add the entry in `Web.config`: 
 
-#### Для IIS6
+#### IIS6 
 
 ```xml
 <configuration>
@@ -74,9 +76,9 @@ protected static string GenerateSectionHeaderContent(
   </system.web>
   ...
 </configuration>
-```
+``` 
 
-#### Для IIS7
+#### For IIS7 
 
 ```xml
 <configuration>
@@ -94,21 +96,24 @@ protected static string GenerateSectionHeaderContent(
   </system.webServer>
   ...
 </configuration>
-```
+``` 
 
-## Вид контрола
+## Kind of control 
 
-![](/images/pages/products/flexberry-aspnet/controls/master-expander.png)
+![](/images/pages/products/flexberry-aspnet/controls/master expander.png) 
 
-## CSS
+## CSS 
 
-Для изменения вида контрола можно переопределить CSS-атрибуты для классов:
+To change the control, you can override the CSS attributes for the classes: 
 
-* Внешний див контрола: `div.me-masterName-expander`
-* Заголовок категории: `div.me-section-header`
-* Разворачивающийся див (содержащий `ObjectTileView`): `div.me-expandable`
-* Область выбора страницы: `div.me-page-select-area`
-* Кнопка выбора страницы: `a.me-page-button`
-* Кнопка выбранной страницы: `a.me-selected-page-button`
-* Свойства для `ObjectTileView` также можно посмотреть в соответствующей [статье ObjectTileView](fa_ajax-controls-object-tile-view.html). 
- 
+* The outer div control: `div.me-masterName-expander` 
+* The title of the category: `div.me-section-header` 
+* The unfolding of div (containing `ObjectTileView`): `div.me-expandable` 
+* The selection page: `div.me-page-select-area` 
+* Select button page: `a.me-page-button` 
+* Button is selected page: `a.me-selected-page-button` 
+* Properties for `ObjectTileView` can also be viewed in the appropriate [article ObjectTileView](fa_ajax-controls-object-tile-view.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
