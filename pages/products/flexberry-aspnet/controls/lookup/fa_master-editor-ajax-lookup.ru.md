@@ -7,9 +7,7 @@ permalink: ru/fa_master-editor-ajax-lookup.html
 lang: ru
 ---
 
-## Особенности работы
-
-Когда поднимается форма на лукап, а потом в ней выбирается объект, то происходит запрос к сервису. Сервис возвращает список контролов, значения которых нужно изменить, и сами значения. 
+Когда поднимается форма на лукап, а потом в ней выбирается объект, то происходит запрос к сервису. Сервис возвращает список контролов, значения которых нужно изменить, и сами значения.
 
 {% include note.html content="При работе с сервисом используется [ServiceSecurityProvider](fa_service-security-provider.html)." %}
 
@@ -119,7 +117,7 @@ public bool AddTypeToSecurityProvider = true;
 
 Если в `PropertyToShow` необходимо показать HTML, то необходимо, чтобы у свойства в объекте был атрибут `IsHTMLAttribute` (т.е. `ViewColumnProvider.GetPropertyIsHTML` от свойства возвращал бы `true`).
 
-![](/images/pages/products/flexberry-aspnet/controls/lookup/ajax-look-html.png)
+![Пример](/images/pages/products/flexberry-aspnet/controls/lookup/ajax-look-html.png)
 
 ## Задание типов объектов, доступных для выбора в лукапе
 
@@ -128,9 +126,11 @@ public bool AddTypeToSecurityProvider = true;
 ```csharp
 public Type[] MasterTypes { get; set; }
 ```
+
 По умолчанию это свойство хранит типы, заданные для редактируемого свойства объекта в атрибуте [TypeUsage](fo_type-usage-problem.html). Если же атрибут у соответствующего свойства отсутствует, используется тип из свойства `MasterTypeName` и его потомки, при этом выбираются только хранимые классы. Инициализировать свойство `MasterTypes` нужно в `OnInit` или `OnPreInit`.
 
 ## [JS API](fa_javascript-api.html)
+
 Для манипуляций с LookUp на стороне клиента следует использовать `LookUp JS API`, который представляет собой jQuery плагин (`icsMasterEditorAjaxLookup`).
 
 ### Операции
@@ -228,10 +228,10 @@ $(function () {
 
 ```javascript
 $(document).ready(function () {
-	$('#<%= changeMasterLookUpValue.ClientID %>').click(function () {
-		$('#<%=ctrlLimitEditorMaster1.ClientID%>').icsMasterEditorAjaxLookup('val', $('#<%=masterLookUpValues.ClientID%>').val());
-		return false;
-	});
+$('#<%= changeMasterLookUpValue.ClientID %>').click(function () {
+    $('#<%=ctrlLimitEditorMaster1.ClientID%>').icsMasterEditorAjaxLookup('val', $('#<%=masterLookUpValues.ClientID%>').val());
+    return false;
+});
 });
 ```
 
@@ -241,9 +241,9 @@ $(document).ready(function () {
 |------------|---------------------------------------|
 | change | Срабатывает после выбора значения мастера и "размазывания" значений лукапа по контролам|
 
-#### Практическая реализация
+#### Практическая реализация контрола
 
-См. [статью Размазывание по Control-ам информации с LookUp-а](fw_lookup-fill-information.html).
+См. [LookUp](fw_lookup.html).
 
 ### Связывание лукапов, находящихся внутри других элементов
 

@@ -1,53 +1,59 @@
 ---
-title: Практическое руководство по созданию UML-диаграмм
+title: a Practical guide for creating UML diagrams
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_practical-guides-uml.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: c5829cc80f22ab59024707efe5348e22cd4e37957a2a93de5204bb055466aa67
 ---
 
-## Использование объектно-ориентированного подхода при проектировании систем
+## using an object-oriented approach when designing systems
 
-Большинство современных методов объектно-ориентированного проектирования основаны на использовании `языка UML`.
+The majority of modern methods of object-oriented design based on the use of `языка UML`.
 
-`Унифицированный язык моделирования` (UML, Unified Model Language) является приемником языков и методов объектно-ориентированного анализа и проектирования, которые появились в конце 80-х и начале 90-х. Он непосредственно унифицирует методы Буча, Рембо и Джекобсона, однако обладает большими возможностями. Язык моделирования UML прошел процесс стандартизации в рамках консорциума `OMG (Object Management Group)` и в настоящее время является стандартом [OMG](http://www.omg.org/spec/UML/).
+`Унифицированный моделирования` language (UML, Unified Model Language) is the successor of the languages and methods of object-oriented analysis and design that emerged in the late 80s and early 90s. He directly unifies the methods of Booch, Rambo and Jacobson, however, has great potential. Modeling language UML has undergone the process of standardization within the consortium `OMG (Object Management Group)` and is currently the standard [OMG](http://www.omg.org/spec/UML/).
 
-UML представляет собой _универсальный язык для анализа предметных областей, существующих систем, моделирования систем документирования объектных моделей, проектирования программного обеспечения_. На UML можно содержательно описывать классы, объекты и компоненты в различных предметных областях, часто сильно отличающихся друг от друга.
+Uniwersalny UML is a language for the analysis of subject areas, existing systems, systems simulation, document object models, software design obespecheniya. In the UML can be meaningful to describe classes, objects and components in a variety of subject areas, often very different from each other.
 
-В процессе разработки система представляется в виде объединения нескольких проекций, каждая из которых описывает определенный аспект разрабатываемой системы, а вместе они определяют систему во всей ее полноте.
+In the process of developing the system is presented in the form of combining several projections, each of which describes a particular aspect of a software system, and together they define the system in its entirety.
 
-## Использование Flexberry Designer как инструмента работы с UML
+## Use Flexberry Designer as a tool to work with UML
 
-`Ключевой идеей технологии`, на которой основана концепция инструментов [платформы Flexberry](fp_landing_page.html), является `поддержка всего жизненного цикла разработки программного обеспечения через единую`, от анализа до кода, `модель информационной системы`, связанную на всех этапах.  
-Непосредственно с моделей в нотации UML автоматизировано создаются заготовки исходных кодов, проработанные до вполне завершённых, включая и пользовательский интерфейс, приложений, которые компилируются и запускаются непосредственно из среды комплекса, что выгодно отличает его от большинства аналогичных CASE - средств. 
-Такой подход позволяет _значительно сократить сроки производства ПО, освободить от рутины программирования разработчиков, сосредоточив их усилия на реализации сугубо прикладных задач, а также избежать многих архитектурных ошибок_. Кроме того, можно в сжатые сроки разрабатывать прототипы для оперативного предъявления заказчику на начальных стадиях проекта.
+`Ключевой idea технологии`, which is based on the concept of tools [platform Flexberry](fp_landing_page.html) is `поддержка the entire life cycle of software development through единую`, from analysis to code information `модель системы` associated at all stages. 
+Directly from models in UML notation created automated procurement source codes, designed to be very complete, including user interface, applications that are compiled and run directly from the environment of the complex, which distinguishes it from most similar to CASE - tools. 
+This approach allows znachitelno to reduce the time of production, the release from the routine of programming developers, concentrating their efforts on the implementation of purely practical tasks, as well as avoid many architectural oshibok. In addition, it is possible to quickly develop prototypes for operational presentation to the customer in the initial stages of the project.
 
-## Комплекс инструментов платформы Flexberry
+## Complex platform-tools Flexberry
 
-* Инструмент объектно-ориентированного проектирования (средство создания диаграмм);
-* Инструменты автоматизированного создания исходного кода систем и баз данных, а также библиотеки для программистов.
-* Репозиторий моделей, который имеет чёткую структуру, не ограничивающую, вместе с тем, проектировщика какой-либо одной, предопределённой, методикой. Например, можно создать любое количество систем, конфигураций, стадий и поддерживать жизненный цикл проекта. Репозиторий может быть расширен с целью добавления другой функциональности при помощи механизма надстроек (PlugIn).
-* Разработчикам ПО комплекс инструментов платформы Flexberry помогает решать и автоматизировать множество практических задач, таких, как: 
-    * создание на уровне кода классов и объектов, соответствующих предметным сущностям и их отношениям; 
-    * ORM (Object-Relational Mapping) - объектно-реляционное отображение, хранение объектных данных в реляционных БД, в том числе объектов наследующихся классов; 
-    * поддержка различных реляционных СУБД и поддержка источников данных любой другой «природы»; 
-    создание пользовательского интерфейса (наличие готовых элементов управления как для Win-, так и для Web-приложений);
-    * реализация системной архитектуры: от монолитной до распределённой многоуровневой.
+* Tool object-oriented design (creating charts);
+* Tools for automated creation of source code systems and databases, and libraries for programmers.
+* Repository of models, which has a clear structure, not limiting, however, designer a single, predefined technique. For example, you can create any number of systems, configurations, and support stages of the project life cycle. The repository can be expanded to add other functionality by means of add-ins (PlugIn).
+* Software developers a set of tools platform Flexberry helps to solve and automate many practical tasks, such as: 
+* creating code-level classes and objects, relevant to the subject entities and their отношениям; 
+* ORM (Object-Relational Mapping) object - relational mapping, storing object data in a relational database, including object nasledujuca классов; 
+* support for various RDBMS and data source support any other "nature"; 
+creating a UI (availability of ready-made controls for Win-and Web-applications);
+* implementation of the system architecture from a monolithic to a distributed multi-level.
 
-## Подготовительный этап к построению диаграмм
+## a Preparatory stage for charting
 
-В самом начале необходимо создать требуемые репозиторные объекты. Для этого необходимо:
+In the beginning you need to create the required repository objects. To do this:
 
-1.Запустить [Flexberry Designer](fd_landing_page.html).  
-2.Выбрать репозиторий, наведя на него указатель мыши и щелкнув левой кнопкой, далее добавить новый проект. Присвоить проекту название.
+1.Start [Flexberry Designer](fd_landing_page.html). 
+2.Select the repository, hovering over it with the mouse pointer and clicking the left button, then add new project. To give the project a name.
 
 ![](/images/pages/guides/flexberry-designer/create-repository.png)
 
-3.Создать конфигурацию (внутри проекта), стадию (внутри конфигурации) и систему (внутри стадии).  
-4.Далее внутри системы можно будет создавать UML-диаграммы.
+3.To create a configuration (within a project), phase (within the configuration) and the system (inside the stage). 
+4.Then inside the system you can create UML diagrams.
 
-## Перейти
+## Go
 
-* [Практическое руководство  «Делай как я»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
-* [Постановка задачи](gpg_formulation-problem.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* [A practical guide "do as I Do"](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i>
+* [Formulation](gpg_formulation-problem.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

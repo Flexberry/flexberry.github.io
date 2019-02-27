@@ -1,53 +1,59 @@
 ---
-title: Построение диаграммы вариантов использования
+title: Building entity relationship diagram
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_use-case-diagram.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: f7f4352e4e1e4e1d71564a612773e6688f05e57ed856ee05216bbb450540322f
 ---
 
-## Краткие сведения о диаграмме вариантов использования
+## a summary of the diagram of use cases
 
-[Диаграмма вариантов использования](fd_use-case-diagram.html) является самым общим представлением функциональных требований к системе. Для последующего проектирования системы требуются более конкретные детали, которые описываются в документе, называемом `сценарием варианта использования` или `потоком событий` (`flow of events`). Сценарий подробно документирует процесс взаимодействия действующего лица с системой, реализуемого в рамках варианта использования. Основной поток событий описывает нормальный ход событий (при отсутствии ошибок). Альтернативные потоки описывают отклонения от нормального хода событий (ошибочные ситуации) и их обработку.
+[Chart options use](fd_use-case-diagram.html) is the most common representation of functional requirements to the system. For the subsequent design of the system requires more specific details, which are described in the document called `сценарием option использования` or `потоком событий` (`flow of events`). The scenario in detail, documenting the process of actor interaction with the system implemented in the framework of the use case. Main flow of events describes the normal course of events (if no errors). Alternative flows describe deviations from the normal course of events (erroneous situations) and their treatment.
 
-__Достоинства модели вариантов использования__ заключаются в том, что она:
+__The advantages of the model variants to use__ is that it:
 
-* определяет пользователей и границы системы;
-* определяет системный интерфейс;
-* удобна для общения пользователей с разработчиками;
-* используется для написания тестов;
-* является основой для написания пользовательской документации;
-* хорошо вписывается в любые методы проектирования (как объектно-ориентированные, так и структурные).
+* defines users and border системы;
+* defines system интерфейс;
+* convenient for users to communicate with разработчиками;
+* used for writing тестов;
+* is the basis for writing custom документации;
+* fits well in any design techniques (as object-oriented and structural).
 
-## Основные элементы диаграмм вариантов использования
+## the Basic elements of diagrams using
 
-![](/images/pages/guides/flexberry-designer/actor.png) `Активный субъект` (`actor`) отождествляется с чем-то или с кем-то, взаимодействующим с системой, т.е. играет определённую роль по отношению к системе, это может быть не обязательно пользователь будущей системы, так же это может быть внешняя система.
+![](/images/pages/guides/flexberry-designer/actor.png) `Активный субъект` (`actor`) is identified with something or someone interacting with the system, i.e. plays a role in relation to the system, it may not necessarily be the user of the future system, it may also be an external system.
 
-![](/images/pages/guides/flexberry-designer/use-cases.png) `Варианты использования (use cases)` позволяют моделировать диалог между активным субъектом и системой и отображают функции системы. С каждым вариантом использования связан определенный поток событий, происходящих по мере выполнения соответствующих функций системы. При описании потока событий определяется, что необходимо осуществить, и игнорируются аспекты того, как это делается.
+![](/images/pages/guides/flexberry-designer/use cases.png) `Варианты of use (use cases)` can simulate a dialogue between an active subject and the system and display functions of the system. Each use case has a flow of events that occur as you perform the relevant functions of the system. In describing the flow of events is defined that must be implemented, and ignored the aspects of how it's done.
 
-Между активным субъектом и вариантом использования устанавливаются связь `ассоциация` (`association relationship`), которая выполняет коммуникативную функцию, сообщая о взаимодействии субъекта с системой в рамках определенного варианта использования. Направление связи указывает, кто (субъект или система) является инициатором взаимодействия.  
-Помимо связей между субъектом и вариантом использования, связи могут устанавливаться и между вариантами использования. Связи бывают двух типов - `включающими` (`inclusive`) и `расширяющими` (`extensive`).
+Between an active actor and a use established communication `ассоциация` (`association relationship`), which performs a communicative function, informing about the interaction of the subject with the system within a particular use case. The direction of the relationship indicates who (the subject or the system) is the initiator of the interaction. 
+In addition to the relations between an actor and a use case, communication can be established between use cases. Connections are of two types - `включающими` (`inclusive`) and `расширяющими` (`extensive`).
 
-## Порядок построения Usecase Diagram
+## build Order Usecase Diagram
 
-1.	Создать usecase диаграмму с именем «Основная функциональность»
-2.	Проанализировать какие активные субъекты должны взаимодействовать с будущей системой.
-3.	Создать actor’ов. (Например, Менеджер, Бухгалтер и Кладовщик).
-4.	Создать прецеденты. Например,
-    * Оформление заказа.
-    * Оформление счёта.
-    * Оформление накладной.
-    * Выдача товара.
-5.	Для пояснения можно использовать комментарии.
-6.	Расставить связи, обозначающие зависимость (необходимо продумать, какие прецеденты находятся в отношении зависимости).
-7.	Результатом является подобная диаграмма:
+1. To create a usecase diagram with a name of "Main functionality"
+2. To perform any of the active actors must interact with the future system.
+3. To create an actor s. (E.g., Manager, Accountant, and Storekeeper).
+4. To create precedents. For example,
+* Execution of the order.
+* Processing invoices.
+* Making the invoice.
+* The results of the product.
+5. To clarify, you can use comments.
+6. To set the context for the relationship (consider what the precedents are in a dependency relationship).
+7. The result is this chart:
 
 ![](/images/pages/guides/flexberry-designer/use-case-diagram.png)
 
-8.Сохранить диаграмму
+8.To save the graph
 
-## Перейти
+## Go
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Постановка задачи](gpg_formulation-problem.html)
-* [Построение диаграммы видов деятельности](gpg_activity-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [problem Statement](gpg_formulation-problem.html)
+* [Diagram construction activities](gpg_activity-diagram.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

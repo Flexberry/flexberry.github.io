@@ -83,6 +83,17 @@
             </div>
         </div>
     </div>
+
+    <!-- Algolia DocSearch -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+    <script type="text/javascript"> docsearch({
+            apiKey: '1a6f8a40b360b474e07ba965ab9e7b34',
+            indexName: 'flexberry',
+            inputSelector: '#search-input',
+            algoliaOptions: { 'facetFilters': ["lang: {{ page.lang }}"] },
+            debug: false // Set debug to true if you want to inspect the dropdown
+        });
+    </script>
 </body>
 {% if site.google_analytics %} {% include google_analytics.html %} {% endif %} {{site.data.alerts.hr_shaded}} {% include footer.html %}
 

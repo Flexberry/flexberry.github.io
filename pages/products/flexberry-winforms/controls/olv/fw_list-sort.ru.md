@@ -1,8 +1,8 @@
 ---
 title: Сортировка списков
 sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы)
-summary: Указано как задать сортировку списка программным путём
+keywords: Flexberry Winforms, Контролы, список
+summary: Пример задания настройки сортировки списка в коде
 toc: true
 permalink: ru/fw_list-sort.html
 lang: ru

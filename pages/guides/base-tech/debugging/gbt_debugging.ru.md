@@ -8,6 +8,8 @@ folder: guides/base-tech/debugging/
 lang: ru
 ---
 
+
+
 ## Отладка
 
 ### Отладка JavaScript и Ember.js с использованием Chrome Web Tools

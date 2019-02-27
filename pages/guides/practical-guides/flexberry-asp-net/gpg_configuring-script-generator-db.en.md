@@ -1,56 +1,62 @@
 ---
-title: Настройка генератора скриптов для БД
+title: setup script generator for database
 sidebar: guide-practical-guides_sidebar
 keywords: guide
 toc: true
 permalink: en/gpg_configuring-script-generator-db.html
-lang: en
+lang: en 
+autotranslated: true 
+hash: e182a0fff04e9e4d4ffea0bd865d15833b8ad9f6416f10e3900252ea2a84338d
 ---
 
-1.	Перейти на стадию: выберать в дереве слева пункт `Стадия` левой кнопкой мыши.
+1. Go to the step: select in the left tree item `Стадия` the left mouse button.
 
 ![](/images/pages/guides/flexberry-aspnet/stage.png) 
- 
-2.Далее нажать на стадии правой кнопкой мыши. В появившемся меню выберать пункт `ASP.NET` -> `SQL` -> `Microsoft SQL Server` -> `Настройка БД`. Появится окно `Стадия (редактирование)`.
 
-3.В появившемся окне изменить поле `Строка соединения`:
+2.Next, click on the stage, right-click. In the menu that appears, select `ASP.NET` -> `SQL` -> `Microsoft SQL Server` -> `Настройка БД`. A window will appear `Стадия (edit)`.
 
- * вместо `server` надо указать имя конкретного сервера; для локального сервера могут использоваться следующие варианты:
-    * .\<имя экземпляра SQL SERVER> или <имя компьютера>\<имя экземпляра SQL SERVER>, например, .\SQLEXPRESS
-    * <имя компьютера>
-    * (local)
-* вместо `database` необходимо указать имя конкретной базы данных, с которой будет работать приложение – желательно указать имя несуществующей базы данных, так как при первой генерации она будет создана автоматически. 
+3.In the appearing window change the field `Строка соединения`:
 
-Пример строки соединения: `SERVER=.\SQLEXPRESS;Trusted_connection=yes;DATABASE=sklad;`  
-__Примечание:__ если один из вариантов окажется нерабочим, попробуйте другие.
+* instead `server` need to specify the name of the specific сервера; for the local server you can use the following options:
+* .\<the SQL SERVER instance name> or <computer name>\<SQL SERVER instance name>, eg .\SQLEXPRESS
+* <computer name>
+* (local)
+* instead `database` you must specify the name of the specific database to which the application will work – it is desirable to specify the name of a nonexistent database, as in the first generation it will be created automatically. 
 
-4.Установить в поле `Дополнительные настройки` «галочку» `БД полномочий в БД приложения`.
+Connection string example: `SERVER=.\SQLEXPRESS;Trusted_connection=yes;DATABASE=sklad;` 
+__Note:__ if one of the options will be non-working, try the other.
+
+4.Install in the field `Дополнительные настройки` "tick" `БД powers in DB приложения`.
 
 ![](/images/pages/guides/flexberry-aspnet/stage-edit.jpg) 
 
-5.Нажать кнопку `Сохранить и закрыть` ![](/images/pages/guides/flexberry-aspnet/save-and-close.png).
+5.Click `Сохранить and закрыть` ![](/images/pages/guides/flexberry-aspnet/save-and-close.png).
 
-6.Далее нажать на стадии правой кнопкой мыши. В появившемся меню выберите пункт `ASP.NET` -> `SQL` -> `Microsoft SQL Server` -> `Привести БД в соответствие с моделью`. Появится окно `Сообщения…`. 
- 
+6.Next, click on the stage, right-click. In the appeared menu, select `ASP.NET` -> `SQL` -> `Microsoft SQL Server` -> `Привести database in accordance with моделью`. A window will appear `Сообщения...`. 
+
 ![](/images/pages/guides/flexberry-aspnet/messages.png) 
 
-Если база данных, указанная в строке соединения не существует, то она будет создана. Также будет сгенерирован скрипт, который представляет собой набор SQL-DDL-команд. В результате их применения будет получена структура базы данных, соответствующая модели.
+If the database specified in the connection string does not exist it will be created. Also it will generate a script that represents a set of SQL DDL commands. The result of their application will be the resulting structure of the corresponding database model.
 
-7.Если база данных успешно создана и генерация скрипта завершена, всплывет окно `Результат` с вопросом о применении этого скрипта. Следует нажать `Применить`.
+7.If the database is successfully created, and generating the script is complete, a window will pop up `Результат` with the question of the use of this script. Press `Применить`.
 
 ![](/images/pages/guides/flexberry-aspnet/script.jpg) 
-  
-8.В окне `Требуется подтверждение` необходимо подтвердить применение скрипта - нажмите `Да`.
+
+8.In the window `Требуется подтверждение` need to confirm the use of the script - click `Да`.
 
 ![](/images/pages/guides/flexberry-aspnet/script-application.png) 
- 
-9.В результате скрипт будет применен:
 
-![](/images/pages/guides/flexberry-aspnet/script-applied.png)  
+9.As a result, the script will be applied:
 
-10.Закрыть все окна с сообщениями.
+![](/images/pages/guides/flexberry-aspnet/script-applied.png) 
 
-## Перейти
+10.Close all Windows with messages.
 
-*  <i class="fa fa-arrow-left" aria-hidden="true"></i> [Подготовительный этап разработки веб-приложений](gpg_preparatory-stage.html)
-* [Создание прототипа](gpg_prototype-creating.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+## Go
+
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [the Preparatory stage of developing web-applications](gpg_preparatory-stage.html)
+* [Prototype](gpg_prototype-creating.html) <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
