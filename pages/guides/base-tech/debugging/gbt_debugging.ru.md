@@ -70,7 +70,9 @@ lang: ru
 Для того чтобы приступить к отладке приложения в  Monodevelop из Windows, нужно выполнить следующие шаги:
 
 1.Выполнить команду `docker pull flexberry/monodevelop:latest`
+
 2.Установить XServer для Windows, запустить XServer
+
 3.Выполнить команду
 `docker run -dti --network host -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/projects/scripts" -e "DISPLAY=XX.XX.XX.XX:0.0" -v d:/projects:/root/projects  flexberry/monodevelop:latest /usr/bin/mate-terminal --disable-factory`
 
@@ -78,19 +80,23 @@ lang: ru
 
 4.В открывшимся окне терминала выполнить команду:
 `monodevelop&`
+
 5.Открыть нужный проект, в свойствах указать:
 0.0.0.0
 
 ![Project Options](../../../../images/pages/guides/base-technologies/debugging/xsp-web.png)
 
 Кроме этого в свойствах необходимо отключить сборку. Сборку необходимо осуществлять в Visual Studio, но отлаживать в Mono.
+
 6.Скачать и собрать [MdbConverter.exe](https://github.com/akosinsky/MdbConverter).
+
 В Visual Studio указать:
 `MdbConverter\pdb2mdb\bin\Debug\MdbConverter.exe . d:\projects /root/projects`
 
 ![Project Options](../../../../images/pages/guides/base-technologies/debugging/vs-settings.png)
 
 Теперь можно выполнять отладку из среды Monodevelop под Windows. Открыть отлаживаемый в Mono проект можно по адресу `10.0.75.2`
+
 Окно отладки в MonoDevelop выглядит следующим образом:
 ![Monodevelop](../../../../images/pages/guides/base-technologies/debugging/monodevelop.png)
 Работа с ним аналогична с работой с Visual Studio в режиме отладки.
