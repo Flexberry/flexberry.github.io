@@ -1,24 +1,26 @@
----
-title: Editing detailes in a separate route
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_groupedit-detail-in-route.html
-lang: en
-summary: Настройка шаблонов и моделей агрегатора и детейла, сериализатора агрегатора и контроллера детейла для реализации возможности редактирования в отдельном роуте
----
+--- 
+title: Editing of datalow in a separate roat 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_groupedit-detail-in-route.html 
+lang: en 
+autotranslated: true 
+hash: 86827ee2cf29723d3899134b46b84fca4d77072d2d93f6ad97ea52172f11f7ab 
+summary: setting up templates and models aggregator and detail, serializer aggregator and controller of detail for enabling editing in a separate the router 
+--- 
 
-## Описание
+## Description 
 
-Часто детейлы на [форме редактирования](ef_edit-form.html) корректируются непосредственно внутри контрола [flexberry-groupedit](ef_groupedit.html), однако в некоторых случаях (например, при работе на мобильных устройствах) есть потребность редактировать детейл на отдельном роуте, при этом:
+Often detaily on [edit form](ef_edit-form.html) are adjusted directly in the control [flexberry-groupedit](ef_groupedit.html), but in some cases (for example, when working on mobile devices) there is a need to edit detail on a separate router. 
 
-* Изменения в агрегаторе и детейлах сохраняются в БД только при нажатии кнопки "Сохранить" на форме агрегатора.
-* На странице детейла есть только две кнопки: "Сохранить" и "Закрыть" (на форме нет кнопки, чтобы откатить состояние детейла на момент захода на форму).
-* При нажатии на кнопку "Сохранить" на странице детейла происходит возврат на страницу агрегатора без сохранения изменений в БД.
+* Changes in the aggregator and detalaj persisted in the database only when you click "Save" on the form of the aggregator. 
+* On the page of detail there are only two buttons: "Save" and "Close" (on the form there is no button to roll back the state of detail at the time of entry on the form). 
+* Clicking on the "Save" button on the page of detail return to the aggregator page without saving changes to the database. 
 
-## Настройка шаблона агрегатора и роутера
+## customize template aggregator and router 
 
-В [шаблоне](ef_template.html) формы редактирования агрегатора у контрола `flexberry-groupedit` определить следующие свойства:
+In the [template](ef_template.html) edit form of the aggregator, the control `flexberry-groupedit` to define the following properties: 
 
 ```hbs
 {% raw %}
@@ -28,66 +30,66 @@ summary: Настройка шаблонов и моделей агрегато�
   rowClick='rowClick'
   editOnSeparateRoute=true
 }}{% endraw %}
-```
+``` 
 
-* `rowClickable` - флаг, определяющий, следует ли обрабатывать нажатие на строчку. По умолчанию имеет значение "false", для редактирования детейла в отдельном роуте нужно задать "true".
-* `rowClick` - действие, выполняемое при нажатии на строчку. По умолчанию имеет значение "rowClick", для редактирования детейла в отдельном роуте нужно, чтобы действие (action) с заданным в свойстве именем было определено в [контроллере](ef_controller.html) или [роуте](ef_route.html) ("rowClick" определено в базовом роуте формы редактирования).
+* `rowClickable` - a flag that determines whether to treat depression is on the line. The default value is "false" to edit detail in a separate the router need to be set to "true". 
+* `rowClick` - the action to perform when clicking the line. The default is set to "rowClick", to edit detail in a separate router need to act (action) with the given property name was defined in [controller](ef_controller.html) or [roat](ef_route.html) ("rowClick" is defined in the base of the route edit form). 
 
-{% include note.html content="Текущий обработчик метода `rowClick` реализован таким образом, что в случае, если детейл сохранён, то будет произведена переадресация на роут как `modelName/:id`, а если не сохранён, то `modelName.new` (соответственно, [роутер](ef_router.html) должен быть настроен, чтобы переадресация могла пройти корректно)." %}
+{% include note.html content="Current handler method `rowClick` implemented in such a way that if detail saved, then you will be redirected to Routh as `modelName/:id`, and if not saved, then `modelName.new` (respectively, [router](ef_router.html) must be configured to divert could pass properly)." %} 
 
-* `editOnSeparateRoute` - флаг, определяющий, следует ли редактировать детейл в отдельном роуте. По умолчанию имеет значение "false". При задании значения "true" изменяется внешний вид `flexberry-groupedit`: отключается возможность редактирования непосредственно в контроле, при нажатии на кнопку "Добавить" теперь создаётся новая запись и сразу происходит переадресация на роут редактирования.
+* `editOnSeparateRoute` - a flag that determines whether edit detail in a separate route. The default value is "false". When you set the value to true changes the appearance `flexberry-groupedit`: disables the ability to edit directly in the control, clicking on the "Add" button now creates a new record and immediately redirected to route editing. 
 
-## Настройка шаблона детейла
+## setting template detail 
 
-Чтобы была возможность редактировать детейл в отдельном роуте, соответствующая форма должна быть создана.
+To be able to edit detail in separate routes, the appropriate form must be created.
 
-Если предполагается, что форма редактирования детейла может быть использована не только с формы агрегатора, но и со списковой формы детейлов, то для настройки отображения кнопок "Сохранить", "Удалить", "Закрыть" можно использовать условия, представленные в статье [Формы редактирования и создания](ef_edit-form.html).
+If it is assumed that the edit form of detail can be used not only with the forms of the aggregator, but the list form of datalow, to customize the display buttons "Save", "Delete", "Close", you can use the conditions presented in article [edit Form and creation](ef_edit-form.html). 
 
-## Настройка контроллера детейла
+## controller configuration of detail 
 
-Контроллер формы редактирования детейла должен наследоваться от "detail-edit-form" вместо "edit-form". В "detail-edit-form" присутствует дополнительная логика, организующая корректное взаимодействие между формами агрегатора и детейла. В случае, если определено, что пользователь попал на форму детейла не с формы агрегатора, то будет выполняться логика базового контроллера "edit-form".
+Controller edit form of detail must inherit from "detail-edit-form" instead of "edit-form". In "detail-edit-form" there is additional logic that organizes the correct interaction between the forms of the aggregator and detail. If it is determined that the user has come in the form of detail not with the forms of the aggregator, it will execute the logic base controller "edit-form". 
 
 ```javascript
 import DetailEditFormController from 'ember-flexberry/controllers/detail-edit-form';
 
 export default DetailEditFormController;
-```
+``` 
 
-## Настройка моделей агрегатора и детейла
+## setting models aggregator and detail 
 
-При описании [модели](efd_model.html) агрегатора важно проверить, что проставлена детейловая [inverse-связь](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations).
+In the description [models](efd_model.html) aggregator it is important to check that bearing dealova [inverse-link](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations). 
 
 ```javascript
 var Model = BaseModel.extend({
   ...
   orders: DS.hasMany('order', { inverse: 'employee', async: false }),
 });
-```
+``` 
 
-При описании модели детейла важно проверить, что проставлена [inverse-связь](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations) на агрегатора.
+To describe the model of detail important to check that indicated [inverse-link](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations) on the aggregator. 
 
 ```javascript
 var Model = BaseModel.extend({
   ...
   employee: DS.belongsTo('employee', { inverse: 'orders', async: false })
 });
-```
+``` 
 
-## Настройка сериализатора агрегатора
+## configuring the aggregator 
 
-Важно, чтобы [сериализаторы](efd_serializer.html) для агрегатора и детейла были настроены корректно.
+It is important that [serializer](efd_serializer.html) for the aggregator and detail have been configured correctly. 
 
-## Дополнительные особенности реализации
+## Additional features of the implementation 
 
-* У базового контроллера формы редактирования есть свойство `returnToAgregatorRoute`, которое определяет, следует ли производить настройки для потенциального возвращения на предыдущий роут агрегатора. По умолчанию в базовом контроллере значение "false". В базовом контроллере детейла данное значение переопределено на "true" (при необходимости можно в прикладном контроллере детейла поменять его обратно на "false", чтобы не происходило возвращение). Вычитка данного флага происходит в методе роута [setupController](http://devdocs.io/ember/classes/ember.route#method_setupController).
-* Для организации сохранения информации между роутами агрегатора и детейла используется специальный сервис `detail-interaction`. Данный сервис не предназначен для использования на прикладных проектах.
-* В базовый роут формы редактирования миксинится свойство `newRoutePath`, где определяется, каким образом по роуту модели определяется роут для новой записи. Сейчас метод реализован как "currentPath + '.new'". Потенциально этот метод можно переопределить на прикладном роуте.
+* Base controller for the edit form has a property `returnToAgregatorRoute`, which determines whether to adjust for a potential return to the previous route aggregator. By default, the base controller is set to "false". In the base controller detail this value is overridden to "true" (if necessary, in the application controller detail to change it back to "false" to prevent the return). Proofreading this flag happens in the roat [setupController](http://devdocs.io/ember/classes/ember.route#method_setupController). 
+* For organization to preserve information between ranting and aggregator and detail used special service `detail-interaction`. This service is not intended for use in applied projects. 
+* The basic route edit form myxinidae property `newRoutePath` where you determine how the router model determines the route for the new entry. Now the method is implemented as "currentPath '.new'". Potentially this method can be overridden in the application route. 
 
-## Редактирование детейлов в отдельном роуте во Flexberry Groupedit с сохранением
+## Editing detailov in a separate router in Flexberry Groupedit preserving 
 
-Существует режим работы `flexberry-groupedit`, при котором редактирование детейла происходит на отдельном роуте, при этом, при переходе с роута агрегатора на роут детейла, происходит сохранение агрегатора, а при переходе обратно - сохранение детейла.
+There is a mode `flexberry-groupedit`, wherein the editing of detail occurs on a separate route, thus, in the transition from get the aggregator to route detail, saves the aggregator, and the transition back is the preservation of detail. 
 
-Настройка данного варианта аналогичная описываемому выше способу. В шаблоне контрола при этом нужно выставить один дополнительный флаг `saveBeforeRouteLeave`.
+Configuration of this option is similar to the described above method. In the template of the control you need to set one additional flag `saveBeforeRouteLeave`. 
 
 ```hbs
 {% raw %}
@@ -98,8 +100,12 @@ var Model = BaseModel.extend({
   editOnSeparateRoute=true
   saveBeforeRouteLeave=true
 }}{% endraw %}
-```
+``` 
 
-`saveBeforeRouteLeave` - флаг, определяющий, следует ли сохранять текущую модель при переходах между агрегатором и детейлом. По умолчанию имеет значение "false".
+`saveBeforeRouteLeave` - a flag that determines whether to save the current model, and the transitions between the aggregator and detaila. The default value is "false". 
 
-О том, как функционируют кнопки на такой детейловой форме, описано в статье [Формы редактирования и создания](ef_edit-form.html).
+About how to operate the buttons on this dyelovoi the form described in the article [edit Form and creation](ef_edit-form.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

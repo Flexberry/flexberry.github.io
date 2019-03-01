@@ -1,45 +1,47 @@
----
-title: SQLDataService
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Opportunities, methods, methods of working with queries, operations and events
-toc: true
-permalink: en/fo_sql-data-service.html
-lang: en
----
+--- 
+title: SQLDataService 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: Opportunities, methods, demands, activities, and events 
+toc: true 
+permalink: en/fo_sql-data-service.html 
+lang: en 
+autotranslated: true 
+hash: 96d3cdd0e0444df7ad3ebd9c2baa83aae2d46f79c0ffadcf873da3a04489ccd5 
+--- 
 
-[Сервис данных](fo_data-service.html), работающий с реляционными хранилищами.
+[Service data](fo_data-service.html) working with relational storage. 
 
-Является абстрактным классом, от него наследуется 
+Is an abstract class, inherited from it 
 
-* [`MSSQLDataService`](fo_mssql-data-service.html),
-* [`ODBCDataService`](fo_odbc-data-service.html),
-* [`OracleDataService`](fo_oracle-data-service.html),
-* [`PostgresDataService`](fo_postgres-data-service.html).
+* [`MSSQLDataService`](fo_mssql-data-service.html), 
+* [`ODBCDataService`](fo_odbc-data-service.html), 
+* [`OracleDataService`](fo_oracle-data-service.html), 
+* [`PostgresDataService`](fo_postgres-data-service.html). 
 
-## Основные возможности SQLDataService
+## Main features SQLDataService 
 
-Поскольку `SQLDataService` реализует интерфейс `ICSSoft.STORMNET.Business.IDataService`, то он поддерживает все [методы, определенные в данном интерфейсе](fo_data-service.html).
-Следует отметить, что часть методов лишь декларируется в классе `SQLDataService`, а их реализация должна быть выполнена в классах-наследниках.
+Because `SQLDataService` implements the interface `ICSSoft.STORMNET.Business.IDataService`, it supports all the methods defined in this interface](fo_data-service.html). 
+It should be noted that some of the methods only declared in the class `SQLDataService`, and their implementation must be implemented in descendant classes. 
 
-### Дополнительные способы загрузки данных
+### Additional ways to load data 
 
-#### LoadRawValues
+#### LoadRawValues 
 
-__Назначение__: Загрузка без создания объектов при необходимости получить DISTINCT данные.
- Стандартные методы зачитки получают [PrimaryKey](fo_primary-keys-objects.html) для возможности правильного создания объектов данных. Соответственно, DISTINCT с [PrimaryKey](fo_primary-keys-objects.html) в запросе не даёт эффекта (ключи уникальные, поэтому никакой группировки результатов не произойдёт - они все разные). Данный метод возвращает обычный двумерный массив (как это делает `ADO.NET`).
+__Assign__: Download without create objects when you need to get DISTINCT data. 
+Standard methods zachetki get [PrimaryKey] in(fo_primary-keys-objects.html) to allow the correct creation of data objects. Accordingly, DISTINCT [PrimaryKey] in(fo_primary-keys-objects.html) in the query has no effect (keys are unique, so no grouping the results will not happen - they are all different). This method returns a regular two-dimensional array (as it does `ADO.NET`). 
 
-__Параметры__:
+__Settings__: 
 
-`customizationStruct` - Структура [LoadingCustomizationStruct](fo_loading-customization-struct.html), определяющая, что и как грузить. Должен быть указан параметр `Distinct`. 
+`customizationStruct` - Structure [LoadingCustomizationStruct](fo_loading-customization-struct.html) defining what and how to ship. Must be specified `Distinct`. 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
     virtual public object[][] LoadRawValues(LoadingCustomizationStruct customizationStruct) 
 ``` 
 
-__Пример__:
+__Example__: 
 
 ```csharp
 SQLDataService ds = (SQLDataService)DataServiceProvider.DataService;
@@ -47,55 +49,55 @@ View v = new View();
 v.DefineClassType = typeof (Door);
 v.AddProperty("Street.Name");
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Door), v);
-lcs.Distinct = false; //Получим двумерный массив свойств без DISTINCT в верхнем SELECT-е
+lcs.Distinct = false; //Get a two-dimensional array of properties without DISTINCT in the upper SELECT-e 
 object[][] loadDistinctValues = ds.LoadRawValues(lcs);
 string s = loadDistinctValues.Length.ToString();
 
-lcs.Distinct = true; //Получим двумерный массив свойств с DISTINCT в верхнем SELECT-е
+lcs.Distinct = true; //Get a two-dimensional array with DISTINCT properties at the top SELECT-e 
 object[][] loadDistinctValues1 = ds.LoadRawValues(lcs);
 string s1 = loadDistinctValues1.Length.ToString();
-```
+``` 
 
-#### SecondLoadObject
+#### SecondLoadObject 
 
-__Назначение__: Метод для дочитки объекта данных.
-Загруженные ранее свойства не затираются, изменённые свойства не затираются. Подменяются поштучно свойства копии данных. Перед использованием рекомендуется ознакомиться с описанием в статье [Дочитка объекта данных](fo_additional-loading.html).
+__Assign__: Method for decide data object. 
+Previously loaded properties are not overwritten, the modified properties are not overwritten. Replaced the piece the properties of the clone data. It is recommended to read the description in the article [Dochitcu data object](fo_additional-loading.html). 
 
-__Параметры__:
+__Settings__: 
 
-* `dataObjectView` - представление
-* `dataObject` - бъект данных, который требуется загрузить
-* `checkExistingObject` - проверять ли существование объекта в хранилище
-* `dataObjectCache` - кэш
+* `dataObjectView` - view 
+* `dataObject` - bject data that you want to download 
+* `checkExistingObject` is to check whether the object exists in the repository 
+* `dataObjectCache` - cache 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
 protected virtual void SecondLoadObject(View dataObjectView, DataObject dataObject, bool checkExistingObject, DataObjectCache dataObjectCache) 
-```
+``` 
 
-## Дополнительные способы обновления данных
+## Additional ways to update data 
 
-### UpdateObjectsOrdered
+### UpdateObjectsOrdered 
 
-__Назначение__: Обновить объекты данных в указанном порядке. 
+__Assign__: to Update the data objects in the specified order. 
 
-`SQLDataService` умеет сам выстраивать порядок запросов на обновление объектов данных. Особенно это актуально, когда есть большое количество разнотипных объектов в одной транзакции. К сожалению, не всегда есть возможность автоматизированно вычислить правильный порядок запросов. В первую очередь, это относится к ситуациям, когда в графе типов есть циклы. Для решения этой проблемы предлагается использовать данный метод, который выполняет обновление объектов последовательно в том порядке, в котором они приходят в этот метод.
+`SQLDataService` knows himself to build the order query to update the data objects. This is especially true when there are a large number of diverse objects in a single transaction. Unfortunately, it is not always possible to automatically compute the correct order of requests. First and foremost, this applies to situations when the graph types, there are cycles. To solve this problem, we propose to use the method that performs updating of objects sequentially in the order in which they come in this method. 
 
-__Параметры__:
+__Settings__: 
 
-* `objects` - обновляемые объекты 
-* `alwaysThrowException` - Если произошла ошибка в базе данных, не пытаться выполнять других запросов, сразу взводить ошибку и откатывать транзакцию.
+* `objects` - refreshable 
+* `alwaysThrowException` - If an error occurred in the database, don't try to fulfill other requests, just cocked an error and roll back the transaction. 
 
-__Сигнатура__:
+__Signature__: 
 
- ```csharp
+```csharp
 virtual public void UpdateObjectsOrdered(ref DataObject[] objects, bool alwaysThrowException = true)
 ``` 
 
-__Пример__:
+__Example__: 
 
- ```csharp
+```csharp
 protected void UpdateButtonClick(object sender, EventArgs e)
 {
     SQLDataService ds = (SQLDataService)DataServiceProvider.DataService;
@@ -106,25 +108,25 @@ DataObject[] dObjs = new DataObject[] { ko };
 }
 ``` 
 
-### Выполнение операций в рамках указанных коннекции и транзакции
+### operations within the specified connection and transaction 
 
-#### LoadObjectByExtConn
+#### LoadObjectByExtConn 
 
-__Назначение__: Загрузка объекта с указанной коннекцией в рамках указанной транзакции
+__Assign__: Loading the object with the specified connectie within the specified transaction 
 
-__Параметры__:
+__Settings__: 
 
-* `dataObjectView` - Представление, по которому будет зачитываться объект.
-* `dobject` - Объект, который будет дочитываться/зачитываться.
-* `сlearDataObject` - Следует ли при зачитке очистить поля существующего объекта данных.
-* `сheckExistingObject` - Проверить существование встречающихся при зачитке объектов.
-* `dataObjectCache` - Кэш объектов.
-* `connection` - Коннекция, через которую будет происходить зачитка.
-* `transaction` - Транзакция, в рамках которой будет проходить зачитка.
+* `dataObjectView` - Representation that will be counted towards the object. 
+* `dobject` - the Object that will be zachityvalis/counted. 
+* `сlearDataObject` - whether zachitka to clear the fields of an existing data object. 
+* `сheckExistingObject` - to Verify the existence encountered sacide objects. 
+* `dataObjectCache` - the object Cache. 
+* `connection` - Connecte through which will occur zachitka. 
+* `transaction` Transaction, which will be held zachitka. 
 
-__Сигнатура__:
+__Signature__: 
 
- ```csharp
+```csharp
 public virtual void LoadObjectByExtConn(
     View dataObjectView,
     DataObject dobject, 
@@ -135,19 +137,19 @@ public virtual void LoadObjectByExtConn(
     IDbTransaction transaction) 
 ``` 
 
-####  LoadObjectsByExtConn
+#### LoadObjectsByExtConn 
 
-__Назначение__: Загрузка объектов с использованием указанной коннекции и транзакции
+__Assign__: Loading objects using the specified connection and transaction 
 
-__Параметры__:
+__Settings__: 
 
-* `customizationStruct` - Структура, определяющая, что и как грузить.
-* `state` - Состояние вычитки(для последующей дочитки, если используется [порционное чтение](fo_reading-portion.html), размер порции задаётся в `customizationStruct.LoadingBufferSize`)
-* `dataObjectCache` - Кэш объектов для зачитки.
-* `connection` - Коннекция, через которую будут выполнена зачитка.
-* `transaction` - Транзакция, в рамках которой будет выполнена зачитка.
+* `customizationStruct` - Structure that defines what and how to ship. 
+* `state` - a State of proof-reading(for the subsequent decide if you use [batch reading](fo_reading-portion.html), the serving size specified in `customizationStruct.LoadingBufferSize`) 
+* `dataObjectCache` - object Cache for zazitky. 
+* `connection` - Connecte through which will be fulfilled zachitka. 
+* `transaction` Transaction, which will be performed zachitka. 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
 public virtual DataObject[] LoadObjectsByExtConn(
@@ -156,85 +158,85 @@ public virtual DataObject[] LoadObjectsByExtConn(
     DataObjectCache dataObjectCache,
     IDbConnection connection,
     IDbTransaction transaction)
-```
+``` 
 
-#### ReadFirstByExtConn
+#### ReadFirstByExtConn 
 
-__Назначение__: Получение первой порции при [порционном чтении](fo_reading-portion.html) с использованием указанной коннекции и транзакции. Кроме порции объектов данных, сервис данных возвращает состояние чтения `state`. Это состояние передается сервису данных для получения очередных порций (см. следующий метод).
-Аналог предыдущего метода, но вместо настроечной структуры выборка определяется текстом запроса. 
+__Appointment___: Receive the first portion when [batch reading](fo_reading-portion.html) using the specified connection and transaction. In addition to portions of data objects, the data service returns a status read `state`. This condition is transmitted to the data service to retrieve the next portion (see next method). 
+Analogue to the previous method, but instead of adjusting the structure of the sample is determined by the text of the query.
 
-__Параметры__:
+__Settings__: 
 
-* `Query` - Текст запроса для выборки данных 
-* `state` - Состояние вычитки(для последующей дочитки)
-* `LoadingBufferSize` - размер порции
-* `Connection` - Коннекция, через которую будут выполнена зачитка
-* `Transaction` - Транзакция, в рамках которой будет выполнена зачитка
+* `Query` - Text query to fetch data 
+* `state` - a State of proof-reading(for the subsequent decide) 
+* `LoadingBufferSize` - size portions 
+* `Connection` - Connecte through which will be fulfilled zachitka 
+* `Transaction` Transaction, which will be performed zachitka 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
 public virtual object[][] ReadFirstByExtConn(string Query, ref object State, int LoadingBufferSize, System.Data.IDbConnection Connection, System.Data.IDbTransaction Transaction)
-```
+``` 
 
-#### ReadNextByExtConn
+#### ReadNextByExtConn 
 
-__Назначение__: Получение  очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов одного из двух вышеуказанных методов с получением состояния `state`. 
+__Appointment___: Receiving another batch [batch reading](fo_reading-portion.html). Must be preceded by a call to one of the above two methods of obtaining status `state`. 
 
-__Параметры__:
+__Settings__: 
 
-* `state` - Состояние вычитки(для последующей дочитки)
-* `LoadingBufferSize` - размер порции
+* `state` - a State of proof-reading(for the subsequent decide) 
+* `LoadingBufferSize` - size portions 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
 public virtual object[][] ReadNextByExtConn(ref object State, int LoadingBufferSize)
-```
+``` 
 
-#### UpdateObjectsByExtConn
+#### UpdateObjectsByExtConn 
 
-__Назначение__:  Обновить хранилище по объектам с использованием указанной коннекции и транзакции. 
+__Assign__: to Update the store objects using the specified connection and transaction. 
 
-{% include note.html content="Если параметр `alwaysThrowException`=`true`, всегда взводится ошибка. Иначе, выполнение продолжается. Однако, при этом есть опасность преждевременного окончания транзакции, с переходом для остальных запросов режима транзакционности в autocommit. Проявлением проблемы являются ошибки вроде: The COMMIT TRANSACTION request has no corresponding BEGIN TRANSACTION." %}
+{% include note.html content="If the option `alwaysThrowException`=`true`, always cocked an error. Otherwise, execution continues. However, while there is a risk of premature end of the transaction, with the transition to the other mode queries in autocommit transaction. A manifestation of the problem are errors like: The COMMIT TRANSACTION request has no corresponding BEGIN TRANSACTION." %} 
 
-__Параметры__:
+__Settings__: 
 
-* `objects` - Объекты для обновления.
-* `dataObjectCache` - Кеш объектов.
-* `alwaysThrowException` - Если произошла ошибка в базе данных, не пытаться выполнять других запросов, сразу взводить ошибку и откатывать транзакцию.
-* `connection` - Коннекция (не забудьте закрыть).
-* `transaction` - Транзакция (не забудьте завершить).
+* `objects` Objects to update. 
+* `dataObjectCache` - the object Cache. 
+* `alwaysThrowException` - If an error occurred in the database, don't try to fulfill other requests, just cocked an error and roll back the transaction. 
+* `connection` - Konekcija (remember to close). 
+* `transaction` Transaction (don't forget to complete). 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
 public virtual void UpdateObjectsByExtConn(ref DataObject[] objects, DataObjectCache dataObjectCache, bool alwaysThrowException, IDbConnection connection, IDbTransaction transaction)
-```
+``` 
 
-## Генерация текстов SQL-запросов
+## Generation of the texts of SQL queries 
 
-### GenerateQueriesForUpdateObjects
+### GenerateQueriesForUpdateObjects 
 
-__Назначение__: Генерация запросов для изменения объектов 
+__Assign__: Generating requests to modify objects 
 
-__Параметры__:
+__Settings__: 
 
-* `deleteQueries` - Запросы для удаление (выходной параметр)
-* `deleteTables` - Таблицы, из которых будет проведено удаление данных (выходной параметр)
-* `updateQueries` - Сгенерированные запросы для изменения (выходной параметр).
-* `updateTables` - Таблицы, в которых будет проведено изменение данных (выходной параметр).
-* `insertQueries` - Сгенерированные запросы для добавления (выходной параметр).
-* `insertTables` - Таблицы, в которые будет проведена вставка данных (выходной параметр).
-* `tableOperations` - Операции, которые будут произведены над таблицами (выходной параметр).
-* `queryOrder` - Порядок исполнения генерируемых запросов, задаваемый именами таблиц (выходной параметр).
-* `checkLoadedProps` - Проверять ли загруженность свойств.
-* `processingObjects` - Текущие обрабатываемые объекты (то есть объекты, которые данный сервис данных планирует подтвердить в БД в текущей транзакции). Выходной параметр.
-* `dataObjectCache` - Кэш объектов данных.
-* `auditObjects` - Список объектов, которые необходимо записать в аудит (выходной параметр). Заполняется в том случае, когда передан не null и текущий сервис аудита включен.
-* `dobjects` - Объекты, для которых генерируются запросы.
+* `deleteQueries` Queries for delete (output parameter) 
+* `deleteTables` - Table that will be conducted the deletion of data (output parameter) 
+* `updateQueries` - Generated requests for change (output parameter). 
+* `updateTables` - Tables, which will be held modifying the database (output parameter). 
+* `insertQueries` - Generated requests to add (output parameter). 
+* `insertTables` - Table that will be inserting data (output parameter). 
+* `tableOperations` Operation that will be performed on the tables (output parameter). 
+* `queryOrder` - the Order of execution of the generated queries specified by a table name (output parameter). 
+* `checkLoadedProps` is to Check whether the workload properties. 
+* `processingObjects` - Current processed objects (i.e., objects that the service plans to confirm data in the database in the current transaction). An output parameter. 
+* `dataObjectCache` - Cache data objects.
+* `auditObjects` is a List of objects that you want to record in the audit (the output parameter). Is filled in case when passed is not null and current audit service is enabled. 
+* `dobjects` - the objects for which the generated queries. 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
 public virtual void GenerateQueriesForUpdateObjects(
@@ -251,8 +253,8 @@ public virtual void GenerateQueriesForUpdateObjects(
     DataObjectCache dataObjectCache,
     params ICSSoft.STORMNET.DataObject[] dobjects)
 ``` 
- 
-В данной перегрузке дополнительно возвращается список объектов, для которых необходимо создание записей аудита:
+
+In this overload returns a list of additional objects that require the creation of audit records: 
 
 ```csharp
 public virtual void GenerateQueriesForUpdateObjects(
@@ -269,376 +271,75 @@ public virtual void GenerateQueriesForUpdateObjects(
     DataObjectCache dataObjectCache,
     List<DataObject> auditObjects,
     params ICSSoft.STORMNET.DataObject[] dobjects)
-```   
+``` 
 
-### GenerateSQLSelect
+### GenerateSQLSelect 
 
-__Назначение__: Получить запрос на вычитку данных
- 
-__Параметры__:
+__Assign__: Receive a request to read data 
 
-* `customizationStruct` - настройка выборки
-* `StorageStruct` - возвращается соответствующая структура выборки
+__Settings__: 
 
-__Возвращаемый результат__: запрос
+* `customizationStruct` - customize sample 
+* `StorageStruct` - returns the corresponding structure of the sample 
 
-__Сигнатура__:
+__The result is___: request 
+
+__Signature__: 
 
 ```csharp
-// 1.
+// 1. 
 public virtual string GenerateSQLSelect(LoadingCustomizationStruct customizationStruct, bool ForReadValues, out STORMDO.Business.StorageStructForView[] StorageStruct, bool Optimized)
 
-// 2.
+// 2. 
 public virtual string GenerateSQLSelect(LoadingCustomizationStruct customizationStruct, bool Optimized)
-```
+``` 
 
-### GetLeftJoinExpression
+### GetLeftJoinExpression 
 
-__Назначение__: Получить LeftJoin выражение
- 
-__Параметры__:
+__Assign__: to LeftJoin expression 
 
-* `subTable` - имя таблицы
-* `subTableAlias` - псевдоним таблицы
+__Settings__: 
+
+* `subTable` the name of the table 
+* `subTableAlias` - the table alias 
 * `parentAliasWithKey` 
-* `subTableKey`  
-* `subJoins`  
-* `baseOutline`  
- 
-__Сигнатура__:
+* `subTableKey` 
+* `subJoins` 
+* `baseOutline` 
+
+__Signature__: 
 
 ```csharp
 public virtual void GetLeftJoinExpression(string subTable, string subTableAlias, string parentAliasWithKey, string subTableKey, string subJoins, string baseOutline, out string FromPart, out string WherePart)
-```
+``` 
 
-### GetInnerJoinExpression
+### GetInnerJoinExpression 
 
-__Назначение__: Получить InnerJoin выражение 
+__Assign__: to InnerJoin expression 
 
-__Параметры__:
+__Settings__: 
 
-* `subTable` - имя таблицы 
-* `subTableAlias` - псевдоним таблицы 
+* `subTable` the name of the table 
+* `subTableAlias` - the table alias 
 * `parentAliasWithKey` 
-* `subTableKey`  
-* `subJoins`  
-* `baseOutline`  
-* `FromPart`  
-* `WherePart`  
+* `subTableKey` 
+* `subJoins` 
+* `baseOutline` 
+* `FromPart` 
+* `WherePart` 
 
-__Сигнатура__:
+__Signature__: 
 
 ```csharp
 public virtual void GetInnerJoinExpression(string subTable, string subTableAlias, string parentAliasWithKey, string subTableKey, string subJoins, string baseOutline, out string FromPart, out string WherePart)
 ``` 
 
-### GetJoinTableModifierExpression
+### GetJoinTableModifierExpression 
 
-__Назначение__: Вернуть модификатор для обращения к таблице (напр WITH (NOLOCK))
+__Assign__: Return a modifier to access a table (e.g. WITH (NOLOCK)) 
 
-Можно перегрузить этот метод в сервисе данных-наследнике для возврата соответствующего своего модификатора.
-Базовый `SQLDataService` возвращает пустую строку. 
+You can overload this method in the data service-the successor to return its corresponding modifier. 
+Basic `SQLDataService` returns an empty string.
 
-__Сигнатура__:
 
-```csharp
-public virtual string GetJoinTableModifierExpression()
-```
-
-### GetINExpression
-
-__Назначение__: Вернуть in выражение для where 
-
-__Параметры__:
-
-`identifiers` - идентификаторы
- 
-__Сигнатура__:
-
-```csharp
-public virtual string GetINExpression(params string[] identifiers)
-```
-
-### GetIfNullExpression
-
-__Назначение__: Вернуть ifnull выражение
- 
-__Параметры__:
-
-`identifiers` - идентификаторы
-
-__Сигнатура__:
-
-```csharp
-public virtual string GetIfNullExpression(params string[] identifiers)
-```
-
-### PutIdentifierIntoBrackets
-
-__Назначение__: Оформить идентификатор 
-
-__Параметры__:
-
-`identifier` - идентификатор
-
-__Возвращаемый результат__: оформленный идентификатор(например в кавычках)
- 
-__Сигнатура__:
-
-```csharp
-public virtual string PutIdentifierIntoBrackets(string identifier)
-```
-
-### CreateJoins
-
-__Назначение__: Создать join соединения
- 
-__Параметры__:
-
-* `source` - источник с которого формируется соединение
-* `parentAlias` - вышестоящий алиас
-* `index` - индекс источника
-* `keysandtypes` - ключи и типы
-* `baseOutline` - смещение в запросе
-* `joinscount` - количество соединений
-
-__Сигнатура__:
-
-```csharp
-public virtual void CreateJoins(STORMDO.Business.StorageStructForView.PropSource source,
-    string parentAlias, int index,
-    System.Collections.ArrayList keysandtypes,
-    string baseOutline, out int joinscount,
-    out string FromPart, out string WherePart)
-```
-
-### `CreateJoins`
-
-__Назначение__: Создать join соединения 
-
-__Параметры__:
-
-* `source` - источник с которого формируется соединение
-* `parentAlias` - вышестоящий алиас
-* `index` - индекс источника
-* `keysandtypes` - ключи и типы
-* `baseOutline` - смещение в запросе
-* `joinscount` - количество соединений
- 
-__Сигнатура__:
-
-```csharp
-public virtual void CreateJoins(STORMDO.Business.StorageStructForView.PropSource source,
-    string parentAlias, int index,
-    System.Collections.ArrayList keysandtypes,
-    string baseOutline, out int joinscount,
-    out string FromPart, out string WherePart, bool MustNewGenerate)
-```
-
-### GenerateSQLSelectByStorageStruct
-
-__Назначение__: Получение SQL запроса в следующем формате
-
-```sql
-SELECT
-  atr1,atr2,... atr3,
-  Key1,Key2,... key3
-FROM
-  fromjoins
-``` 
-
-__Параметры__:
-
-* `storageStruct` - структура хранилища 
-* `AddingAdvansedField` - довленные дополнительные свойства 
-* `AddingKeysCount` - добавленниые ключи
-* `addMasterFieldsCustomizer`  
-* `addNotMainKeys`  
-* `SelectTypesIds`  
-
-__Сигнатура__:
-
-```csharp
-// 1.
-virtual public string GenerateSQLSelectByStorageStruct(STORMDO.Business.StorageStructForView storageStruct, bool addNotMainKeys, bool addMasterFieldsCustomizer, string AddingAdvansedField, int AddingKeysCount, bool SelectTypesIds)
-
-// 2.
-virtual public string GenerateSQLSelectByStorageStruct(STORMDO.Business.StorageStructForView storageStruct, bool addNotMainKeys, bool addMasterFieldsCustomizer, string AddingAdvansedField, int AddingKeysCount, bool SelectTypesIds, bool MustNewGenerate, bool MustDopSelect)
-``` 
-
-### ConvertSimpleValueToQueryValueString
-
-__Назначение__: Конвертация константных значений в строки запроса 
-
-__Параметры__:
-
-`value` - значение
-
-__Сигнатура__:
-
-```csharp
-public virtual string ConvertSimpleValueToQueryValueString(object value)
-```
-
-### ConvertValueToQueryValueString
-
-__Назначение__: Конвертация значений в строки запроса 
-
-__Параметры__:
-
-`value` - значение
-
-__Сигнатура__:
-
-```csharp
-public virtual string ConvertValueToQueryValueString(object value)
-```
-
-### ConvertValueToQueryValueString
-
-__Назначение__: Преобразование значение свойства в строку для запроса 
-
-__Параметры__:
-
-* `dataobject` - объект данных 
-* `propname` - имя свойства
- 
-__Сигнатура__:
-
-```csharp
-public virtual string ConvertValueToQueryValueString(DataObject dataobject, string propname)
-```
-
-### LimitFunction2SQLWhere
-
-__Назначение__: Преобразование функции 
-
-__Параметры__:`LimitFunction` - настроечная структура выборки
-
-__Сигнатура__:
-
-```csharp
-public virtual string LimitFunction2SQLWhere(STORMFunction LimitFunction, STORMDO.Business.StorageStructForView[] StorageStruct, string[] asnameprop, bool MustNewGenerate)
-```
-
-### LimitFunction2SQLWhere
-
-__Назначение__: Преобразование функции 
-
-__Параметры__:
-
-`LimitFunction` - настроечная структура выборки
-
-__Сигнатура__:
-
-```csharp
-public virtual string LimitFunction2SQLWhere(STORMFunction LimitFunction)
-```
-
-## Выполнение операций с указанием текста запроса
-
-###  ReadFirst
-
-__Назначение__: Вычитка первой партии данных при [порционном чтении](fo_reading-portion.html). Кроме порции объектов данных, сервис данных возвращает состояние чтения `state`. Это состояние передается сервису данных для получения очередных порций (см. следующий метод).Выборка определяется текстом запроса.
-
-__Параметры__:
-
-* `Query` - Текст запроса для выборки данных 
-* `state` - Состояние вычитки(для последующей дочитки)
-* `LoadingBufferSize` - размер порции
-   
-__Сигнатура__:
-
-```csharp
-public virtual object[][] ReadFirst(string Query, ref object State, int LoadingBufferSize)
-```
-
-### ReadNext
-
-__Назначение__: Получение  очередной порции при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов предыдущего метода с получением состояния `state`.
-
-__Параметры__:
-
-* `state` - Состояние вычитки(для последующей дочитки)
-* `LoadingBufferSize` - размер порции
-  
-__Сигнатура__:
-
-```csharp
-public virtual object[][] ReadNext(ref object State, int LoadingBufferSize)
-```
-
-### ExecuteNonQuery 
-
-__Назначение__: Выполнить запрос
-
-__Параметры__:
-
-`Query` - текст SQL-запроса 
-
-__Возвращаемый результат__: количество задетых строк 
- 
-__Сигнатура__:
-
-```csharp
-public virtual int ExecuteNonQuery(string Query)
-```
-
-## Список событий для SQLDataService
-
-Кроме обработки указанных событий `SQLDataService` предоставляет возможность полного переопределения логики, т.к. содержит следующие делегаты:
-
-```csharp
-// Делегат для события создания команды.
-public delegate void OnCreateCommandEventHandler(object sender, CreateCommandEventArgs e);
-
-// Делегат для события при генерации SQL Select запроса (перед).
-public delegate void OnGenerateSQLSelectEventHandler(object sender, GenerateSQLSelectQueryEventArgs e);
-
-// Делегат для события при генерации SQL Select запроса (после).
-public delegate void AfterGenerateSQLSelectQueryEventHandler(object sender, GenerateSQLSelectQueryEventArgs e);
-
-// The before update objects event handler.
-public delegate void BeforeUpdateObjectsEventHandler(object sender, DataObjectsEventArgs e);
-
-// The after update objects event handler.
-public delegate void AfterUpdateObjectsEventHandler(object sender, DataObjectsEventArgs e);
-```
-
-|Событие|Описание|
-|:------|:------
-| OnGenerateSQLSelect | Срабатывает перед генерацией SQL SELECT'а ([пример](fo_intercept-formation-sql-query.html)). Обрабатывая это событие можно, например, добавить дополнительные условия, которые должны попасть в формируемый запрос.|
-| AfterGenerateSQLSelectQuery | Срабатывает после генерации SQL SELECT'а, но до вычитки данных ([пример](fo_intercept-formation-sql-query.html)). Можно использовать для внесения изменений в сгенерированный текст запроса.|
-| BeforeUpdateObjects | Срабатывает перед обновлением объектов в базе, после отработки бизнес-серверов.|
-| AfterUpdateObjects | Срабатывает после обновления объектов в базе.|
-| OnCreateCommand | Срабатывает при создании SQL-команды ([пример](fo_intercept-formation-sql-query.html)).|
-
-### Задание CommandTimeout
-
-Есть возможность указывать [IDbCommand.CommandTimeout](http://msdn.microsoft.com/ru-ru/library/system.data.idbcommand.commandtimeout.aspx). Для этого можно в конфигурационном файле задать параметр:
-
-```xml
-<add key="SQLDataServiceCommandTimeout" value="60"/>
-```
-
-либо присвоить значение явно:
-
-```csharp
-SQLDataService ds = (SQLDataService)DataServiceProvider.DataService;
-ds.UseCommandTimeout = true;
-ds.CommandTimeout = 60;
-```
-
-`UseCommandTimeout` нужно указывать обязательно. По-умолчанию этот флаг имеет значение `false`.
-
-Такая сложная реализация нужна для возможности включения-отключения использования уникальных значений без потери предыдущего значения таймаута.
-
-Также важно понимать, что при выполнении любой операции (чтение/обновление и т.д.) коннекция создаётся, а в конце закрывается. Т.е. последовательные LoadObjects будут выполнены в на разных `System.Data.IDbConnection`.
-
-Соответственно применяться настройка времени ожидания выполнения команды будет каждый раз заново.
-
-{% include note.html content="Время ожидания выполнения команды **в секундах**. Значение по умолчанию — 30 секунд." %}
-
-### Смена строки соединения
-
-`SQLDataService` поддерживает возможность смены строки соединения. Такая возможность, в частности, используется для работы с несколькими БД в одном приложении, описание доступно в [статье](fo_multibase.html).
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

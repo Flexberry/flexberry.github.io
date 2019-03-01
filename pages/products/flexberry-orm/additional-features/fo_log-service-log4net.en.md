@@ -1,20 +1,22 @@
----
-title: Flexberry LogService
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, log4net, ADO.NET Appender, example
-summary: Using log4net for Flexberry ORM
-toc: true
-permalink: en/fo_log-service-log4net.html
-lang: en
----
+--- 
+title: Flexberry LogService 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, log4net, ADO.NET appender example 
+summary: Using log4net for Flexberry ORM 
+toc: true 
+permalink: en/fo_log-service-log4net.html 
+lang: en 
+autotranslated: true 
+hash: b85416f138b2e6d9d290f05cd7a18a6e82c7ca4d752990ad0cc5e2947d19541d 
+--- 
 
-`Flexberry LogService` является [продуктом платформы Flexberry](fp_platform-structure.html) и предназначен для осуществления записи событий работы программного продукта.
+`Flexberry LogService` is [product platform Flexberry](fp_platform-structure.html) and is intended for implementation event records the software. 
 
-Flexberry LogService базируется на [log4net](http://logging.apache.org/log4net/).
+Flexberry LogService is based on [log4net](http://logging.apache.org/log4net/). 
 
-{% include note.html content="Flexberry LogService доступно для установки в проект через [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService)." %}
+{% include note.html content="Flexberry LogService is available for installation in the project via [NuGet package](https://www.nuget.org/packages/NewPlatform.Flexberry.LogService)." %} 
 
-### Пример использования LogService
+### Example of use of the LogService 
 
 ``` csharp
 try
@@ -23,24 +25,24 @@ try
 }
 catch (Exception ex)
 {
-   LogService.LogError("Произошло нечто ужасное", ex);
+   LogService.LogError("Something terrible happened", ex);
 }
-```
+``` 
 
-### Конфигурирование
+### Configuration 
 
-Пример конфигурации (дополнительные аппендеры можно найти по ссылке: [config-examples](http://logging.apache.org/log4net/release/config-examples.html)):
+Example configuration (additional appenders can be found at: [config examples](http://logging.apache.org/log4net/release/config-examples.html)): 
 
 ``` xml
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-  <!-- регистрируем специальную секцию -->
+  <!-- recorded a special section -->
   <configSections>
-    <!--  <section name="log4net" type="System.Configuration.IgnoreSectionHandler" />  -->
+    <!-- <section name="log4net" type="System.Configuration.IgnoreSectionHandler" /> -->
 	<section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
   </configSections>
 
-  <!-- описание того как же мы будем логи писать. Примеры других аппендеров: http://logging.apache.org/log4net/release/config-examples.html -->
+  <!-- a description of how we will write the logs to. Examples of other appendrow: http://logging.apache.org/log4net/release/config-examples.html -->
   <log4net>
     <appender name="LogFileAppender" type="log4net.Appender.RollingFileAppender">
       <param name="File" value="log/trace.log"/>
@@ -53,7 +55,7 @@ catch (Exception ex)
 	
 	<appender name="EventLogAppender" type="log4net.Appender.EventLogAppender" >
     <layout type="log4net.Layout.PatternLayout">
-        <conversionPattern value="%date [%thread) %-5level %logger [%property{NDC}) - %message%newline" />
+        <conversionPattern value="�te [%thread) %-5level %logger [%property{NDC}) - %message%newline" />
     </layout>
 	</appender>
 
@@ -68,7 +70,7 @@ catch (Exception ex)
         <threshold value="WARN"/>
     </evaluator>
     <layout type="log4net.Layout.PatternLayout">
-        <conversionPattern value="%newline%date [%thread) %-5level %logger [%property{NDC}) - %message%newline%newline%newline" />
+        <conversionPattern value="%newline�te [%thread) %-5level %logger [%property{NDC}) - %message%newline%newline%newline" />
     </layout>
 </appender>
 	
@@ -80,23 +82,23 @@ catch (Exception ex)
     </root>
   </log4net>
 </configuration>
-```
+``` 
 
-### ADO.NET аппендер
+### ADO.NET appender 
 
-Для записи сообщений лога в БД следует использовать `ADO.NET аппендер`.
-Можно использовать стандартный `log4net.Appender.AdoNetAppender`, однако в пакете LogService реализован кастомный ADO.NET аппендер (ICSSoft.STORMNET.CustomAdoNetAppender), переопределяющий логику получения строки соединения из конфигурационного файла приложения (в т.ч. зашифрованной строки соединения).
+To log messages log in the database you should use `ADO.NET аппендер`. 
+You can use the standard `log4net.Appender.AdoNetAppender`, but in the package LogService implemented custom ADO.NET appender (ICSSoft.STORMNET.CustomAdoNetAppender) override the logic of getting a connection string from the configuration file of the application (including the encrypted connection string). 
 
-У аппендера есть опциональный атрибут `ConnectionStringName`. Если его не задавать, то поиск строки соединения будет происходить аналогично тому, как это делает [DataServiceProvider](fo_ds-provider.html):
+Appender is an optional attribute `ConnectionStringName`. If it is not set, the search of the connection string will occur in the same way as it does [DataServiceProvider](fo_ds-provider.html): 
 
-* Пытается получить имя строки соединения из настройки `DefaultConnectionStringName` в секции appSettings, и затем ищет такую строку в секции conectionStrings.
-* Если имя `DefaultConnectionStringName` не задано, пытается получить строку из настройки CustomizationStrings в секции appSettings.
+* Tries to get the name of the connection string from settings `DefaultConnectionStringName` in the appSettings section, and then looking for this line in section conectionStrings. 
+* If the name `DefaultConnectionStringName` not set, trying to get the string out of tune CustomizationStrings in the section appSettings. 
 
-Если же атрибут будет задан, то аппендер будет искать строку с таким именем в секции conectionStrings.
+If the attribute is specified, the appender will search with this name in the section conectionStrings. 
 
-При использовании зашифрованной строки соединения необходимо указывать настройку Encrypted со значением true (в секции appSettings), иначе аппендер не будет производить расшифровку строки соединения.
+When using the encrypted connection string you must specify a configuration Encrypted with the value true (in the appSettings section), otherwise the appender will not perform decryption of the connection string. 
 
-#### Пример конфигурации ADO.NET аппендера
+#### configuration Example ADO.NET appender 
 
 ```xml
 <appender name="AdoNetAppender" type="ICSSoft.STORMNET.CustomAdoNetAppender">
@@ -138,7 +140,7 @@ catch (Exception ex)
         <dbType value="String" />
         <size value="2500" />
         <layout type="log4net.Layout.PatternLayout">
-          <conversionPattern value="%message" />
+          <conversionPattern value=the "%message" />
         </layout>
       </parameter>
       <parameter>
@@ -148,16 +150,16 @@ catch (Exception ex)
         <layout type="log4net.Layout.ExceptionLayout" />
       </parameter>
     </appender>
-```
+``` 
 
-### Написание своего аппендера
+### Writing his appendere 
 
-Часто существующих решений недостаточно, для этого, есть возможность написать свой аппендер. Тут есть всего 2 важных момента:
+Often existing solutions are not enough for this, it is possible to write your own appender. There are only 2 important points: 
 
-* Нужно унаследоваться от `log4net.Appender.AppenderSkeleton` и переопределить метод `protected override void Append(log4net.Core.LoggingEvent loggingEvent)`
-* Все публичные свойства могут быть означены через конфигурацию этого конкретного аппендера
+* Need to unasledovala from `log4net.Appender.AppenderSkeleton` and override the method `protected override void Append(log4net.Core.LoggingEvent loggingEvent)` 
+* All public properties can be signified through the configuration of that specific appender 
 
-#### Пример кода аппендера
+#### Example code appender 
 
 ``` csharp
 using System;
@@ -173,9 +175,9 @@ namespace Logging
     {
         private string _srvUrl;
 
-        /// <summary>
-        /// Адрес сервиса
-        /// </summary>
+        /// <summary> 
+        /// The address of the service 
+        /// </summary> 
         public string SrvUrl
         {
             get { return _srvUrl; }
@@ -215,9 +217,9 @@ namespace Logging
         }
     }
 }
-```
+``` 
 
-В конфиге подключается этот аппендер таким образом:
+In the config this appender is connected thus: 
 
 ``` xml
     <appender name="remoteLoggerAppender" type="Logging.RemoteLoggerAppender, RemoteLoggerAppender">
@@ -227,6 +229,10 @@ namespace Logging
       <level value="DEBUG"/>
       <appender-ref ref="remoteLoggerAppender"/>
     </root>
-```
+``` 
 
-Как видно, `SrvUrl` передаётся как параметр в конфиге и может применяться при выводе сообщений в коде аппендера. Атрибут `type` задаёт полный тип аппендера с неймспейсом и указанием имени сборки. Разумеется сборка с аппендером должна находиться рядом со сборкой `log4net`.
+As you can see, `SrvUrl` is passed as a parameter in the config and can be used to output messages in the code appender. Pstrftype` attribute specifies the fully qualified type appender with the namespace and name of the Assembly. Of course the Assembly with the appender should be next with the Assembly `log4net`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

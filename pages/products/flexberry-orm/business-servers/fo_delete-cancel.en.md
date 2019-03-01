@@ -1,60 +1,66 @@
----
-title: Cancellation of deletion of the used value from the directory
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, business servers, restrictions
-summary: Solving the problems of non-informative messages when an object is deleted
-toc: true
-permalink: en/fo_delete-cancel.html
-lang: en
----
+--- 
+title: Cancellation of removal used the values from the directory 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, business server, restrictions 
+summary: meeting the challenges of uninformative messages when deleting object 
+toc: true 
+permalink: en/fo_delete-cancel.html 
+lang: en 
+autotranslated: true 
+hash: 66756dd315064034fc3014521a389e0a03452f1a766ac372e006e627db650ae0 
+--- 
 
-## Используемые ссылки на мастера
+## Used links wizard 
 
-Данная статья затрагивает вопрос **отмены удаления** значений из таблицы, хранящей мастера, используемые в других объектах.
+This article addresses the question **cancel** values from a table storing the master used in other objects. 
 
-Вопрос о том, как **удалить** значения, рассматривается в статье [Каскадное удаление объектов](fo_cascade-delete.html).
+The question of how to **remove** the values considered in the paper [Cascade deleting objects](fo_cascade-delete.html). 
 
-## Попытка удаления мастера
+## Attempt removal wizard 
 
-Пусть дана следующая диаграмма:
+Given the following diagram: 
 
-![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png)
+![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png) 
 
-Если в базе данных есть объекты типа `Клиент`, ссылающиеся на него, то при попытке удаления объекта типа `Адрес` будет выведена ошибка:
+If in the database there are objects of type `Клиент` referencing it when trying to delete object of type `Адрес` error is displayed: 
 
-![](/images/pages/products/flexberry-orm/business-servers/delete-error.png)
+![](/images/pages/products/flexberry-orm/business-servers/delete-error.png) 
 
-База данных не даст удалить такой объект, а пользователю выдастся неинформативное сообщение.
+The database will not delete such an object, and the user will be uninformative message. 
 
-## Решение проблемы
+## solution to the problem 
 
-Для решения данной проблемы стоит воспользоваться [бизнес-сервером](fo_bs-wrapper.html) удаляемого объекта:
+To solve this problem is to use the [business server](fo_bs-wrapper.html) of a deleted object: 
 
-* Узнать количество объектов, ссылающихся на удаляемый.
-* Если оно не равно 0, выбросить исключение с понятным пользователю описанием проблемы.
-* При необходимости, перехватить исключение и обработать особым образом.
+* To know the number of objects that reference the deleted. 
+* If it is not equal to 0, throw exception with a user-friendly description of the problem. 
+* If necessary, catch the exception and handle in a special way. 
 
-## Пример
+## Example 
 
-Для описаных выше условий: добавить проверку в бизнес-сервер класса `Адрес`:
+For the above-described conditions: to add validation to a business class server `Адрес`: 
 
 ```csharp
 if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 {
-    // Найдем количество клиентов, ссылающихся на удаляемый адрес.
+    // Find the number of clients that reference the deleted address. 
     var ds = (MSSQLDataService)DataServiceProvider.DataService;
     var clientsCount = ds.Query<Клиент>(Клиент.Views.КлиентE).Where(k => k.Прописка.__PrimaryKey == UpdatedObject.__PrimaryKey).Count();
 
-    // Если клиентов не 0, выкинем исключение.
+    // If the customer is not 0, throw an exception. 
     if (clientsCount != 0)
     {
-        throw new Exception(string.Format("Невозможно удалить Адрес. По данному адресу проживает {0} клиент(а)(ов)", clientsCount));
+        throw new Exception(string.Format("Could not remove Address. At this address is home to {0} client(s)(s)", clientsCount));
     }
 }
-```
+``` 
 
-В результате, при попытке удалить адрес, по которому прописаны клиенты, пользователю выдастся следующее сообщение:
+As a result, when you try to remove the address at which the registered clients, the user will give the following message: 
 
-![](/images/pages/products/flexberry-orm/business-servers/delete-error-plus.png)
+![](/images/pages/products/flexberry-orm/business-servers/delete-error-plus.png) 
 
-Сообщение изменилось на более информативное.
+The message has changed to be more meaningful. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

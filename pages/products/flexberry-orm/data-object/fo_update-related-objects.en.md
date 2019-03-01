@@ -1,21 +1,28 @@
----
-title: Updating related objects
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, DataObject, master, detail
-summary: Features of updating children's and master's objects
-toc: true
-permalink: en/fo_update-related-objects.html
-lang: en
----
+--- 
+title: Update related objects 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, DataObject, master, detail 
+summary: Features update tatalovich and artisan objects 
+toc: true 
+permalink: en/fo_update-related-objects.html 
+lang: en 
+autotranslated: true 
+hash: 18dbf2f42c0509b057173d5106e39080877a27ae0a603acae52a266dd070af0e 
+--- 
 
-Возможна ситуация, когда сохранение некоторого [объекта данных](fo_data-object.html) может повлечь сохранение связанных с ним объектов, которые явно не были переданы на сохранение.
+It is possible that the preservation of some [data object](fo_data-object.html) may result in the preservation of related objects that clearly were not transferred for preservation. 
 
-## Обновление детейловых объектов вместе с шапкой
+## Update metalowych sites together with the [cap](fd_key-concepts.html) 
 
-Если обновляется объект, имеющий [детейловые объекты](fo_detail-associations-properties.html), то те также обновляются, если это предполагает их [статус](fo_processing-status-condition-load.html).
+If you are updating an object that has [Decalogue objects](fo_detail-associations-properties.html), those are also updated, if it meant their [status](fo_processing-status-condition-load.html). 
 
-## Обновление мастеровых объектов вместе с внутренним
+## Update the mechanics of objects with internal 
 
-Если изменён [мастеровой объект](fd_master-association.html), то при обновлении объекта внутреннего класса обновляется также мастеровой.
+If changed [artisan object](fd_master-association.html), the update of the inner class object is updated also artisan. 
 
-Вышеуказанные правила применяются ко всем объектам, находящимся в цепочке изменений. Т.е., например, если есть объект внутреннего класса, у которого есть мастеровой с детейлами, то обновляются все. Важно помнить только, что `попадают только измененные объекты`, т.е., [статус](fo_processing-status-condition-load.html) которых предполагает обновление.
+
+
+The above rules apply to all objects in the chain changes. So for example, if you have the inner class object, which has a artisan with detalyami, updates all. It is important to remember that `попадают only changed объекты`, i.e., [status](fo_processing-status-condition-load.html) which is designed to update.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

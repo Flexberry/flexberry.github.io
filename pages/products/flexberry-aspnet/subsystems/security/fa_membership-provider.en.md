@@ -1,19 +1,21 @@
----
+--- 
 title: CaseberryMembershipProvider 
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Security
-toc: true
-permalink: en/fa_membership-provider.html
-lang: en
----
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Security 
+toc: true 
+permalink: en/fa_membership-provider.html 
+lang: en 
+autotranslated: true 
+hash: cd4ac03fa58c7f2d45d5568bdc32cd1dd93322ff59559195f51cf695450838b2 
+--- 
 
-## Проверка полномочий для веб-приложений
+## the credentials for web applications 
 
-Для веб-приложений разработан специальный `MembershipProvider`, позволяющий проверять [полномочия](efs_right-manager-module.html) по БД полномочий без наличия AzManBridgeService.
+For web applications developed a special `MembershipProvider` which you can check the [powers](efs_right-manager-module.html) in the database of office without the presence of AzManBridgeService. 
 
-## Подключение
+## Connection 
 
-Подключение выглядит следующим образом:
+Connect as follows: 
 
 ``` xml
 <!-- ... -->
@@ -49,41 +51,45 @@ lang: en
     </profile>
 
 <!-- ... -->
-```
+``` 
 
-`CaseberryMembershipProvider ` располагается в сборке `CheckingLibrary.dll`
-Чтобы полномочия проверялись, узлу требуется наличие следующих сборок:
+`CaseberryMembershipProvider ` is in the Assembly `CheckingLibrary.dll` 
+To the authority were checked, the node requires the following assemblies: 
 
-* Security(Objects)
-* Security(BusinessServers)
-* Repository
-* Microsoft.Practices.Unity
-* LogService
-* log4net
-* IIS.Аудит(Objects)
-* IIS.Аудит(BusinessServers)
-* AppSettingsService
-* CheckingLibrary
-* ExternalLangDef
-* ICSSoft.STORMNET.AzManBridge
-* ICSSoft.STORMNET.Business
-* ICSSoft.STORMNET.Business.MSSQLDataService
-* ICSSoft.STORMNET.Business.OracleDataService
-* ICSSoft.STORMNET.Collections
-* ICSSoft.STORMNET.DataObject
-* ICSSoft.STORMNET.FunctionalLanguage
-* ICSSoft.STORMNET.RightManager
-* ICSSoft.STORMNET.Tools
-* ICSSoft.STORMNET.UserDataTypes
-* ICSSoft.STORMNET.Web.Tools
+* Security(Objects) 
+* Security(BusinessServers) 
+* Repository 
+* Microsoft.Practices.Unity 
+* LogService 
+* log4net 
+* IIS.Audit(Objects) 
+* IIS.Audit(BusinessServers) 
+* AppSettingsService 
+* CheckingLibrary 
+* ExternalLangDef 
+* ICSSoft.STORMNET.AzManBridge 
+* ICSSoft.STORMNET.Business 
+* ICSSoft.STORMNET.Business.MSSQLDataService 
+* ICSSoft.STORMNET.Business.OracleDataService 
+* ICSSoft.STORMNET.Collections 
+* ICSSoft.STORMNET.DataObject 
+* ICSSoft.STORMNET.FunctionalLanguage 
+* ICSSoft.STORMNET.RightManager 
+* ICSSoft.STORMNET.Tools 
+* ICSSoft.STORMNET.UserDataTypes 
+* ICSSoft.STORMNET.Web.Tools 
 
-### Особенности задания строки подключения
+### features of setting the connection string 
 
-Работа со строкой подключения к БД полномочий происходит следующим образом:
+Work with the connection string to the database of the authority is as follows: 
 
-* Если задана строка подключения с именем `CaseberrySecurity`, то в качестве строки подключения к БД полномочий используется она.
-* Если строка подключения `CaseberrySecurity` не задана, то ищется строка соединения с именем  вида `CustomizationStrings_applicationName`; то есть если задано, что `applicationName="SLAuthSample"`, то имя строки соединения должно иметь вид `CustomizationStrings_SLAuthSample`.
+* If the connection string is set with the name `CaseberrySecurity`, the connection string to the database authority is used. 
+* If the connection string `CaseberrySecurity` is not specified, it looks for a connection string named `CustomizationStrings_applicationname`; that is, if you specified that `applicationName="SLAuthSample"`, the name of the connection string must be in the form `CustomizationStrings_SLAuthsample`. 
 
-## Формы редактирования полномочий в WEB
+## edit Form of authority in WEB 
 
-В Flexberry ASP.NET есть формы для редактирования полномочий, которые находятся в папке: /forms/Security
+In Flexberry ASP.NET there are forms for editing permissions which are in the folder: /forms/Security 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,84 +1,90 @@
----
-title: Определение доступных для редактирования полей для одной формы, но разных приложений
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Представлены варианты решения задачи доступности разных полей для одной и той же формы в разных приложениях, рассмотрен подробный пример с пошаговым объяснением
-toc: true
-permalink: en/fw_different-applications-and-fields.html
-lang: en
----
+--- 
+title: Defining editable fields for one form, but different applications 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Presents solutions to the problem of accessibility of the different fields for the same forms in different applications, detailed example with step by step explanation 
+toc: true 
+permalink: en/fw_different-applications-and-fields.html 
+lang: en 
+autotranslated: true 
+hash: 7d543b9d01f55f81d605b06b270f3738f6a8737125dce53e95d583ae5a6bcf45 
+--- 
 
-Была поставлена следующая задача: "Сделать для разных приложений доступными разные поля для одной и той же формы".
-Возможно следующее решение данной задачи:
+We set the following goal: "to Make different applications available to different fields on the same form." 
+Perhaps another solution to this problem: 
 
-* В зависимости от того, какое приложение запущено, можно блокировать поля на редактирование с помощью [EditManager.SetReadonlyFlagProperties](fw_editmanager.html).
-* Определять запущенное приложение можно при его запуске путём записи определённого значения в [статическое поле](http://msdn.microsoft.com/library/98f28cdx.aspx) общедоступного класса.
+* Depending on what apps you have running, you can lock a field for editing with [EditManager.SetReadonlyFlagProperties](fw_editmanager.html). 
+* Identify a running application at startup by writing a specific value in a [static field](http://msdn.microsoft.com/library/98f28cdx.aspx) public class. 
 
-Для демонстрации варианта решения данной проблемы ниже представлено решение следующей задачи: "Есть список сотрудников. Сотрудники отдела кадров могут редактировать поля "ФИО", "Дата рождения" и "Адрес прописки", а руководители предприятия могут оценивать "Работоспособность" сотрудников".
+To demonstrate the solution to this problem below is the solution of the following problem: "There is a list of employees. HR staff can edit the fields "name", "date of birth" and "Address registration", and the heads of enterprises to evaluate the "Performance" employees." 
 
-## Работа в Flexberry Tool
+## Work in Flexberry Tool 
 
-В Flexberry была создана диаграмма классов.
+In Flexberry was created the class diagram. 
 
-![Диаграмма классов](/images/pages/products/flexberry-winforms/desktop/class-diagram_-workers.jpg)
+![Class diagram](/images/pages/products/flexberry-winforms/desktop/class-diagram_-workers.jpg) 
 
-Затем определены приложения пользователей и сгенерирован программный код.
+And then defines user applications and the generated code. 
 
-## Работа с программным кодом
+## Work with program code 
 
-В общедоступном для разрабатываемых приложений классе определяем статическое поле.
+In public the applications you develop the class defined by the static field. 
 
 ```csharp
-    public enum tWorkerShowType //перечислимый тип для указания запущенного приложения
+    public enum tWorkerShowType //an enum type to specify the running application 
     {
-        Unknown, //ничего не было установлено
-        ToHead, //начальник
-        ToPersonnelOffice //отдел кадров
+        Unknown, //it is not installed 
+        ToHead, //head 
+        ToPersonnelOffice //the personnel Department 
     }
     public class Сотрудник : ICSSoft.STORMNET.DataObject
     {
-        public static WorkerShowType CurShowType = tWorkerShowType.Unknown; //статическое поле для указания запущенного приложения
-        //...
+        public static WorkerShowType CurShowType = tWorkerShowType.Unknown; //static box to specify the running application 
+        //... 
     }
-```
+``` 
 
-В коде приложения определяем значение этого статического поля.
+In the application code determine the value of this static field. 
 
 ```csharp
 static void Main()
 {
     try
     {
-        Сотрудник.CurShowType = tWorkerShowType.ToPersonnelOffice; //определяем значение статического поля
-        //...
+        Сотрудник.CurShowType = tWorkerShowType.ToPersonnelOffice; //define the value of a static field 
+        //... 
     }
-    //...
+    //... 
 }
-```
+``` 
 
-Переопределяем метод [`Edit`](fw_form-interaction.html) на форме редактирования.
+An overridable method [`Edit`](fw_form-interaction.html) on the edit form. 
 
 ```csharp
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
 {
-  base.Edit(dataobject, contpath, propertyname, tag); //вызов базового метода
+  base.Edit(dataobject, contpath, propertyname, tag); //call the base method 
   if (dataobject != null)
     {
       switch (Сотрудник.CurShowType)
         {
-          case tWorkerShowType.ToHead: //если запущено приложение руководителя
+          case tWorkerShowType.ToHead: //if running the Manager application 
             EditManager.SetReadonlyFlagProperties(
-            true, new string[] { "ФИО", "ДатаРождения", "АдресПрописки" });
+            true, new string[] { "Name", "Dataromance", "Adresboek" });
             break;
-          case tWorkerShowType.ToPersonnelOffice: //если запущено приложение сотрудника отдела кадров
-            EditManager.SetReadonlyFlagProperties(true, new string[] { "Работоспособность" });
+          case tWorkerShowType.ToPersonnelOffice: //if the application is running the personnel Department. 
+            EditManager.SetReadonlyFlagProperties(true, new string[] { "Performance" });
             break;
-          case tWorkerShowType.Unknown: //если не определён тип приложения
-            MessageBox.Show("Не был установлен параметр, от имени кого была запущена форма.");
+          case tWorkerShowType.Unknown: //if not specified the type of application 
+            MessageBox.Show("You have not set the parameter, whose name was running form.");
             break;
         }
     }
 }
-```
+``` 
 
-{% include note.html content="Вызов `base.Edit(...)` должен предшествовать определению полей, доступных на редактирование." %}
+{% include note.html content="Call `base.Edit(...)` must precede the definition of the fields available for editing." %} 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

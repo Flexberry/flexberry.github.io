@@ -1,78 +1,84 @@
----
-title: FileControl for Winforms
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, FileControl
-summary: Подключение, свойства, методы, взаимодействие со списками, изменение файлов
-toc: true
-permalink: en/fw_file-control.html
-lang: en
----
+--- 
+title: FileControl for Winforms 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, FileControl 
+summary: the Connection, properties, methods, interaction with lists, change files 
+toc: true 
+permalink: en/fw_file-control.html 
+lang: en 
+autotranslated: true 
+hash: 3122dce881780596fc6ed9cc0ab82cfcf68b7c2c3e308be684bde439905e56be 
+--- 
 
-`FileControl` - это контрол для работы с файлами, дающий следующую функциональность:
+`FileControl` is control for file that gives the following functionality: 
 
-* выбор файла из каталога (при этом создаётся копия содержимого файла, с которым и работает приложение).
-* сохранение файла в каталог.
-* удаление файла.
-* запуск файла (файл открывается в ассоциированном с ним приложении).
+* select file from the directory (this creates a copy of the contents of the file and the application is running). 
+* save the file to the directory. 
+* delete the file. 
+* start of file (file opens in the associated application). 
 
-![](/images/pages/products/flexberry-winforms/controls/file-control/file-control.png)
+![](/images/pages/products/flexberry-winforms/controls/file-control/file-control.png) 
 
-## Подключение FileControl к приложению
+## Connection to the FileControl application 
 
-Для работы `FileControl` необходима `ICSSoft.STORMNET.FileType.dll` (есть в стандартной поставке [Flexberry Winforms](fw_landing_page.html)). 
+To work `FileControl` necessary `ICSSoft.STORMNET.FileType.dll` (standard delivery [Flexberry Winforms](fw_landing_page.html)). 
 
-Чтобы подключить `FileControl` к проекту, необходимо выполнить следующее: 
+To connect `FileControl` to the project, do the following: 
 
-* Определить на диаграмме классов класс `File` со стереотипом [typedef](fd_typedef.html). 
+* Define the class diagram the class `File` with the stereotype [typedef](fd_typedef.html). 
 
-* Настроить карту типов (ORM -> C# -> Свойства модели -> Карта типов), добавив строку:
+* Configure card types (ORM -> C# -> model Properties -> Map types), adding the line: 
 
 ```
 File | ICSSoft.STORMNET.FileType.File | ICSSoft.STORMNET.UserDataTypes.dll
-```
+``` 
 
-* Настроить карту отображения типов (ORM -> SQL -> Microsoft SQL Server -> Настройка БД -> Карта типов), добавив строку:
+* To configure the map display types (ORM -> SQL -> Microsoft SQL Server -> databases -> Map types), adding the line: 
 
 ```
 File | TEXT
-```
+``` 
 
-## Свойства и методы FileControl
+## properties and methods of the FileControl 
 
-### Как показать/скрыть кнопки на FileControl
+### How to show/hide buttons on FileControl 
 
-У контрола есть свойства, позволяющие показывать/скрывать кнопки изменением их на `false` или `true`.
+The control has properties that allow you to show/hide buttons, change them to `false` or `true`. 
 
 ```csharp
-ctrlФайл.HideOpenButtons = false; //показать кнопку выбора файла из каталога
-ctrlФайл.HideSaveButtons= false; //показать кнопку сохранения файла в каталог
-ctrlФайл.HideDeleteButtons = false; //показать кнопку удаления файла
-ctrlФайл.HideStartButtons = false; //показать кнопку запуска файла (открытия в ассоциированном приложении)
-```
+ctrlФайл.HideOpenButtons = false; //show button, select the file from the directory 
+ctrlФайл.HideSaveButtons= false; //show the save button of the file in the directory 
+ctrlФайл.HideDeleteButtons = false; //show the delete button of the file 
+ctrlФайл.HideStartButtons = false; //show a button to run the file (open in the associated application) 
+``` 
 
-По умолчанию все кнопки на контроле на форме редактирования скрыты.
+By default, all buttons on the control on the edit form hidden. 
 
-### Другие свойства и методы
+### Other properties and methods 
 
-| Свойство | Тип | Описание |
-| ------------- | ------------- | ------------- |
-| `ButtonChooseFileFromFolder` | `Button` | Кнопка выбора файла из каталога |
-| `ButtonSaveFileToFolder` | `Button` | Кнопка сохранения файла в каталог
-| `ButtonDelete` | `Button` | Кнопка удаления файла
-| `ButtonOpenFile` | `Button` | Кнопка запуска файла (открытия в ассоциированном приложении)
-| `GetDisplayValue` | `string` | Получение отображаемого значения для поля [GroupEdit](fw_group-edit.html), с которым связан контрол; предусмотрена возможность пустых значений
-| `InnerFile` | `MemoryStream` | Поле, где хранится файл без zip-архивации
-| `ToolTipControl` | `ToolTip` | Контрол, отвечающий за тултипы
-| `Value` | `object` | Поле, где хранится файл с zip-архивацией
+| Property | Type | Description | 
+| ------------- | ------------- | ------------- | 
+| `ButtonChooseFileFromFolder` | `Button` | Button to select the file from the directory | 
+| `ButtonSaveFileToFolder` | `Button` | Button save the file to the directory 
+| `ButtonDelete` | `Button` | delete Button of the file 
+| `ButtonOpenFile` | `Button` | start Button of the file (open in the associated application) 
+| `GetDisplayValue` | `string` | Get the displayed value for the field [GroupEdit](fw_group-edit.html), which is associated контрол; the possibility of empty values 
+| `InnerFile` | `MemoryStream` | Field where the file is stored without the. zip archive 
+| `ToolTipControl` | `ToolTip` | Control, responsible for tips 
+| `Value` | `object` | Field where the file is stored with the zip-archiving 
 
-| Метод | Тип возвращаемого значения |Описание |
-| ------------- | ------------- | ------------- |
-| `GetDisplayValue` | `string` | Получение отображаемого значения для поля [GroupEdit](fw_group-edit.html), с которым связан контрол; предусмотрена возможность пустых значений|
+| Method | return Type |Description | 
+| ------------- | ------------- | ------------- | 
+| `GetDisplayValue` | `string` | Get the displayed value for the field [GroupEdit](fw_group-edit.html), which is associated контрол; the possibility of empty values| 
 
-## FileControl и формы списка
+## FileControl and list form 
 
-{% include important.html content="Не рекомендуется включать поля, обрабатываемые с помощью FileControl, в [представления](fd_key-concepts.html), обрабатываемые на [форме списка](fd_key-concepts.html), поскольку в этом случае при просмотре списка в память грузятся все файлы (кроме того, не гарантируется, что отображаемое имя файла будет «осмысленным»)." %}
+{% include important.html content="Not recommended field, processed using FileControl, in [views](fd_key-concepts.html) treated in [form list](fd_key-concepts.html), since in this case, when viewing the list in memory loaded all the files (besides, it is not guaranteed that the displayed file name will be "meaningful")." %} 
 
-## Изменение открытых через FileControl файлов
+## Change open using FileControl files 
 
-Если в открытые через `FileControl` файлы внести изменения во внешней программе (не в ту версию, что лежит в каталоге, откуда взят файл, а ту, что находится в `FileControl`), то файл в `FileControl` автоматически обновится.
+If `FileControl` through open files to make changes in an external program (not the version that is in the directory where the file is taken, and one that is `FileControl`), the file in `FileControl` will be updated automatically. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

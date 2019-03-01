@@ -1,23 +1,29 @@
----
-title: Создание нового репозитория
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, репозиторий, создать, плагины
-summary: Описание создания нового репозитория
-toc: true
-permalink: en/fd_create-new-repository.html
-lang: en
----
+--- 
+title: Creating a new repository 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, database, create, plugins 
+summary: Description create a new repository 
+toc: true 
+permalink: en/fd_create-new-repository.html 
+lang: en 
+autotranslated: true 
+hash: fcc5a47941b52096f74585fc9db362a888075b56847371b9e78a635c685f9df3 
+--- 
 
-После запуска [Flexberry Designer](fd_landing_page.html) можно создать новый `Репозиторий` для работы, выбрав пункт меню `Репозиторий` – `Создать новый`:
+After starting [Flexberry Designer](fd_landing_page.html) you can create a new `Репозиторий` to work by selecting the menu item `Репозиторий` – `Создать новый`: 
 
-![](/images/pages/products/flexberry-designer/about/create-new-repository.png)
+![](/images/pages/products/flexberry-designer/about/create-new-repository.png) 
 
-Чтобы настроить новый `Репозиторий`, необходимо выбрать пункт меню `Репозиторий` – `Редактировать свойства`, в открывшемся окне можно изменить наименование репозитория, а также необходимо [подключить плагины](fd_flexberry-plugins.html). В нижней части формы необходимо выбрать из списка поочередно все 4 доступных плагина:
+To configure a new `Репозиторий`, you need to select the menu item `Репозиторий` – `Редактировать свойства`, in the opened window you can change the name of the repository, and also need the [enable plugins](fd_flexberry-plugins.html): at the bottom of the form, you must choose from the list each 4 available plugin: 
 
-![](/images/pages/products/flexberry-designer/about/edit-repository-properties.png)
+![](/images/pages/products/flexberry-designer/about/edit-repository-properties.png) 
 
-После этого необходимо `сохранить изменения`.
-
-
+After that you need `сохранить изменения`. 
 
 
+
+
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

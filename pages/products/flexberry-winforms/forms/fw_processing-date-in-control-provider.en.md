@@ -1,13 +1,15 @@
----
-title: Обработка даты в ControlProvider
-sidebar: flexberry-winforms_sidebar
-keywords: DateTime (работа с датами)
-summary: Приведен пример настройки контрола для обработки даты в CustomControlProvider
-toc: true
-permalink: en/fw_processing-date-in-control-provider.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Processing of dates in ControlProvider 
+sidebar: flexberry-winforms_sidebar 
+keywords: DateTime (for dates) 
+summary: Shows an example of setting the control to handle the date in CustomControlProvider 
+toc: true 
+permalink: en/fw_processing-date-in-control-provider.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 9ffd1226939bf4a922f7955b28cb13a1c3dbd8107bdac2afd69c6ebb5204e58e 
+--- 
 
 ```csharp	
 public class CustomControlProvider:ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider 
@@ -28,3 +30,6 @@ typeof(System.DateTime)});
 		}
 	}
 ```
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

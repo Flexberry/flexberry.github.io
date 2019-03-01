@@ -1,25 +1,27 @@
----
-title: Configuring ODataService with several types of data services
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM ODataService, DataService, OData
-summary: Solving the problem of using data from different storages
-toc: true
-permalink: en/fo_multiple-data-services-in-odata.html
-lang: en
----
+--- 
+title: configure ODataService with multiple types of data services 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM ODataService, DataService OData 
+summary: problem of using data from different repositories 
+toc: true 
+permalink: en/fo_multiple-data-services-in-odata.html 
+lang: en 
+autotranslated: true 
+hash: 13dc30c051f3cbe7caf41ab4575235b5184b26549a8099cd883618e1734c34ee 
+--- 
 
-## Проблема
+## Problem 
 
-Иногда возникает потребность использовать в одном приложении объекты, которые должны храниться в разных типах хранилищ.
-Например, статистические данные, которые могут накапливаться в значительных объемах, при этом, отсутствует необходимость, в сложных выборках и их частом изменении.
-Решением подобной проблемы может быть использование для таких данных [NoSQL](https://ru.wikipedia.org/wiki/NoSQL) хранилища, например [MongoDB](https://www.mongodb.com/).
+Sometimes there is a need to use the same application objects that must be stored in different storage types. 
+For example, statistical data that can accumulate in significant quantities, in this case, there is no need in complex samples and their frequent changes. 
+The solution of such problems can be the use for such data [NoSQL](https://ru.wikipedia.org/wiki/NoSQL) repositories, e.g. [MongoDB](https://www.mongodb.com/). 
 
-## Решения
+## Solutions 
 
-### Регистрация нескольких `ODataService`’ов
+### more `ODataService`'s 
 
-По умолчанию, определения сервиса данных для `ODataService` выполняется с помощью механизма внедрения зависимости `Unity Container`.
-Изменить логику определения сервиса данных, можно, заменив сервис, реализующий интерфейс  `IHttpControllerActivator`, как показано на примере ниже:
+By default, the service definition data `ODataService` is performed using the mechanism of dependency injection `Unity Container`. 
+To change the logic definition of the service data by replacing the service that implements the interface `IHttpControllerActivator`, as shown in the example below: 
 
 ```csharp
 namespace IIS.MyProject
@@ -30,16 +32,16 @@ namespace IIS.MyProject
     {
         public static void Configure(HttpConfiguration config, IUnityContainer container)
         {
-            // Use Unity as WebAPI dependency resolver
+            // Use Unity as the WebAPI dependency resolver 
             config.DependencyResolver = new UnityDependencyResolver(container);
 
-            // Map OData Service with basic objects
+            // Map an OData Service with basic objects 
             config.MapODataServiceDataObjectRoute(new DefaultDataObjectEdmModelBuilder(new[]
             {
                 Assembly.Load("MyProject.Objects"),
             }));
 
-            // Map OData Service with service objects
+            // Map an OData Service with service objects 
             config.MapODataServiceDataObjectRoute(new DefaultDataObjectEdmModelBuilder(new[]
             {
                 typeof(ApplicationLog).Assembly,
@@ -48,16 +50,16 @@ namespace IIS.MyProject
                 typeof(Lock).Assembly
             }), "service", "service");
 
-            // Replace IHttpControllerActivator service
+            // Replace IHttpControllerActivator service 
             config.Services.Replace(typeof(IHttpControllerActivator), new ControllerActivator(container));
         }
     }
 }
-```
+``` 
 
-{% include important.html content="Замена сервиса должна ваполняться после вызова метода `MapODataServiceDataObjectRoute`, в противном случае он будет повторно заменен реализацией `NewPlatform.Flexberry.ORM.ODataService.DataObjectControllerActivator`" %}
+{% include important.html content="Replacement service should vypolnyaetsya after a method invocation `MapODataServiceDataObjectRoute`, otherwise it will be replaced once again by the realization `NewPlatform.Flexberry.ORM.The ODataService.DataObjectControllerActivator`" %} 
 
-Сервис, реализующий интерфейс `IHttpControllerActivator`, может быть примерно следующим:
+The service that implements the interface `IHttpControllerActivator` may be similar to the following: 
 
 ```csharp
 namespace IIS.MyProject
@@ -94,11 +96,11 @@ namespace IIS.MyProject
         }
     }
 }
-```
+``` 
 
-В данном случае, при обращении к `ODataService` зарегистрированному на маршруте `service`, будет использована именованая регистрация `IDataService` с именем `MongoDbDataService`, при обращении к `ODataService` зарегистрированному на маршруте `odata`, будет использована именованая регистрация `IDataService` с именем `MSSQLDataService`.
+In this case, when referring to `ODataService` was on the route `service` will be used named check `IDataService` with the name `MongoDbDataService`, when referring to `ODataService` was on the route `odata` will be used named check `IDataService` with the name `MSSQLDataService`. 
 
-Пример конфигурации для данного сервиса:
+An example configuration for this service: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -118,13 +120,13 @@ namespace IIS.MyProject
     </container>
   </unity>
 </configuration>
-```
+``` 
 
-{% include note.html content="При использовании такого решения, в `ember`-приложении потребуется [настройка адаптеров](efd_adapters.html)." %}
+{% include note.html content="When you use this solution, `ember` application will need tuning adapters](efd_adapters.html)." %} 
 
-### Определение типа сервиса данных по типу объектов
+### the definition of the type of the service data object type 
 
-Также определять тип необходимого сервиса данных, можно, на основе типа объектов данных, к которым идет обращение, в данном случае можно зарегистрировать один `ODataService`, как в примере ниже:
+Also define the type of data service is possible, based on the type of data objects to which there is an appeal, in this case, you can register one `ODataService`, as in the example below: 
 
 ```csharp
 namespace IIS.MyProject
@@ -135,10 +137,10 @@ namespace IIS.MyProject
     {
         public static void Configure(HttpConfiguration config, IUnityContainer container)
         {
-            // Use Unity as WebAPI dependency resolver
+            // Use Unity as the WebAPI dependency resolver 
             config.DependencyResolver = new UnityDependencyResolver(container);
 
-            // Map OData Service
+            // Map The OData Service 
             config.MapODataServiceDataObjectRoute(new DefaultDataObjectEdmModelBuilder(new[]
             {
                 Assembly.Load("MyProject.Objects"),
@@ -148,14 +150,14 @@ namespace IIS.MyProject
                 typeof(Lock).Assembly
             }));
 
-            // Replace IHttpControllerActivator service
+            // Replace IHttpControllerActivator service 
             config.Services.Replace(typeof(IHttpControllerActivator), new ControllerActivator(container));
         }
     }
 }
-```
+``` 
 
-Теперь сервис, реализующий интерфейс `IHttpControllerActivator`, может быть примерно следующим:
+Now the service that implements the interface `IHttpControllerActivator` may be similar to the following: 
 
 ```csharp
 namespace IIS.MyProject
@@ -197,6 +199,10 @@ namespace IIS.MyProject
         }
     }
 }
-```
+``` 
 
-Исходный код этого примера можно найти в репозитории [FlexberryOrmMongoDbDataServiceDemo.ODataBackend](https://github.com/Flexberry/FlexberryOrmMongoDbDataServiceDemo.ODataBackend).
+Source code for this example can be found in the repository [FlexberryOrmMongoDbDataServiceDemo.ODataBackend](https://github.com/Flexberry/FlexberryOrmMongoDbDataServiceDemo.ODataBackend). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

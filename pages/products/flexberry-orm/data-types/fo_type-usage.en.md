@@ -1,38 +1,44 @@
----
-title: Using data types in the application structure
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data types, DataObject, data service
-summary: Правила обработки TypeUsage и задания имен полей хранения ссылок
-toc: true
-permalink: en/fo_type-usage.html
-lang: en
----
+--- 
+title: Using data types in the structure of the application 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data types, data objects, data services 
+summary: Rules for processing a typeusage and specify the names of fields storing links 
+toc: true 
+permalink: en/fo_type-usage.html 
+lang: en 
+autotranslated: true 
+hash: 476ef151f16cffed60bce104189dbc157ef778643421847254c26defe9d32fd8 
+--- 
 
-Если [мастер в ассоциации](fd_master-association.html) имеет [наследников](fd_inheritance.html), то на стороне мастера может быть объект любого типа из иерархии наследования. Однако бывают условия, при которых такие ситуации требуется исключить. Для этого во [Flexberry ORM] реализован `TypeUsage`-атрибут, ограничивающий список типов в иерархии наследования, на который распространяется данная связь.
+If the [master Association](fd_master-association.html) has [the heirs](fd_inheritance.html) on the side of the master can be any object type from the inheritance hierarchy. However, there are conditions under which such a situation you want to exclude. To do this, in [Flexberry ORM] implemented `TypeUsage`-an attribute that limits the list of types in the inheritance hierarchy that is covered by this communication. 
 
-## Обработка TypeUsage
+## Processing A Typeusage 
 
-Встроенные в `Flexberry Platform` [сервисы данных](fo_data-service.html) ([SQLDataService](fo_sql-data-service.html) и его наследники) обрабатывают `TypeUsage` следующим образом:
+Built-in `Flexberry Platform` [data services](fo_data-service.html) ([SQLDataService](fo_sql-data-service.html) and his heirs) should be treated `TypeUsage` as follows: 
 
-Если указан `TypeUsage` для [мастерового свойства](fd_master-association.html), этому свойству [в структуре данных соответствуют](fo_storing-data-objects.html) внешние ключи на таблицы, соответствующие указанным в `TypeUsage` классам.
+If you specify `TypeUsage` [artisan properties](fd_master-association.html), the property [in the data structure match](fo_storing-data-objects.html) the foreign keys in the tables corresponding to the specified `TypeUsage` classes. 
 
-Имена внешним ключам даются такие: `<ИмяРолиМастера>_M<ПорядкНомерВTypeUsage>.«ПорядкНомерВTypeUsage»` — начинается с 0.
+Names the foreign keys are: `<Karolinenstr>_M<ПорядкНомерВTypeUsage>."ПорядкНомерВTypeUsage"` — starts at 0. 
 
-Таким образом, вышеприведённому примеру соответствует таблица, у которой есть два внешних ключа с именами `M_m0` (соответствует M1) и `M_m1` (соответствует M2).
+Thus, the above example is a table that has two foreign key names `M_m0` (corresponding to M1) and `M_m1` (corresponding to M2). 
 
-![](/images/pages/products/flexberry-orm/data-types/primer2.jpg)
+![](/images/pages/products/flexberry-orm/data-types/primer2.jpg) 
 
-## Задание имён для полей хранения ссылок
+## Job names for fields storing links 
 
-Если есть потребность задать вместо имён `M_m0` и `M_m1` некоторые мнемонические имена, то необходимо:
+If there is a need to ask for a name and `M_m0` `M_m1` some mnemonic names, you need to: 
 
-1. Отключить галочку [AutoGenerateTypeUsage](fd_master-association.html).
-2. Правильно проставить атрибуты [TypeUsage](fo_type-usage-problem.html) и Storage.
+1. Disable the checkbox [AutoGenerateTypeUsage](fd_master-association.html). 
+2. To properly set the attributes [a typeusage](fo_type-usage-problem.html) and Storage. 
 
-Например, пусть имеется диаграмма вида:
+For example, suppose you have a diagram of the form: 
 
-![](/images/pages/products/flexberry-orm/data-types/type-usage-test.png)
+![](/images/pages/products/flexberry-orm/data-types/type-usage-test.png) 
 
-Если ничего не менять в настройках элементов диаграммы, то, например, в таблице `ДниПосещения` будут внешние ключи с именами `Пользователь_m0`, `Пользователь_m1`, `Пользователь_m2`. 
+If nothing changes in the settings of the chart elements, for example, in table `ДниПосещения` will be foreign keys with names `Пользователь_m0`, `Пользователь_m1`, `Пользователь_m2`. 
 
-Однако если у связи, соединяющей классы `Пользователь` и `ДниПосещения` проставить в `TypeUsage` и `Storage` строку вида `Пользователь,Врач,Пациент`, то в таблице `ДниПосещения` будут внешние ключи с именами `Пользователь`, `Врач`, `Пациент`. Аналогично можно настроить [детейловую связь](fo_detail-associations-properties.html).
+However, if linking classes `Пользователь` and `ДниПосещения` to put in `TypeUsage` and `Storage` the line `Пользователь,Doctor,Пациент`, the table `ДниПосещения` will be foreign keys with names `Пользователь`, `Врач`, `Пациент`. Similarly, you can configure [dyelovoy link](fo_detail-associations-properties.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,31 +1,33 @@
----
-title: ISecurityManager
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry Security, authority, authority service
-summary: Flexberry Subsystem Lifecycle Services
-toc: true
-permalink: en/fo_i-security-manager.html
-lang: en
----
+--- 
+title: Flexberry Security API ISecurityManager 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, Flexberry Security, authority, service authority 
+summary: Services run-time subsystem powers Flexberry 
+toc: true 
+permalink: en/fo_i-security-manager.html 
+lang: en 
+autotranslated: true 
+hash: 9a8ee2ffe549690d016d123baa1597690380d991a11dea9658efbbc0a0e22135 
+--- 
 
-Сервисы времени выполнения подсистемы полномочий Flexberry доступны через интерфейс `ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject`. 
+Services run-time subsystem powers Flexberry available through the interface `ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject`. 
 
-## Получение доступа к инстанции ISecurityManager
+## access to instance of ISecurityManager 
 
-Данный интерфес разрешается в реальную инстанцию через [Flexberry UnityFactory](fo_unity-factory.html) следующим образом:
+This interface allowed real authority [Flexberry UnityFactory](fo_unity-factory.html) as follows: 
 
 ```csharp
 IUnityContainer container = UnityFactory.CreateContainer();
 ISecurityManager securityManager = container.Resolve<ISecurityManager>();
-```
+``` 
 
-## Конфигурирование ISecurityManager через Unity Container
+## configuration ISecurityManager using Unity Container 
 
-ISecurityManager применяется в [Flexberry ORM](fo_flexberry-orm.html) и обязательно должен быть сконфигурирован через Unity Container одним из перечисленных ниже способов.
+ISecurityManager used in [Flexberry ORM](fo_flexberry-orm.html) and must be configured through the Unity Container in one of the following ways. 
 
-### Способ 1. Настройка в конфигурационном файле
+### Method 1. Setting in the configuration file 
 
-Пример настройки в конфигурационном файле (`app.config` или `web.config`) для включенной системы полномочий.
+Example settings in the configuration file (`app.config` or `web.config`) for included system powers. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -43,7 +45,7 @@ ISecurityManager применяется в [Flexberry ORM](fo_flexberry-orm.html
        <constructor/>
       </register>
 
-      <!--Определяем именованный экземпляр ISecurityManager, в который записывается "new DefaultSecurityManager(false)".-->
+      <!--Define a named instance of the ISecurityManager that is written "new DefaultSecurityManager(false)".-->
       <register name="securityManagerWithoutRightsCheck" type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject" mapTo="ICSSoft.STORMNET.Security.DefaultSecurityManager, ICSSoft.STORMNET.RightManager">
         <lifetime type="singleton" />
         <constructor>
@@ -57,11 +59,11 @@ ISecurityManager применяется в [Flexberry ORM](fo_flexberry-orm.html
   <!--...-->
 	
 </configuration>
-```
+``` 
 
-**Примечание:** для корректного взаимодействия [CheckingLibrary](efs_security-legacy-services.html) с [RightManager](efs_right-manager.html) в файл конфигурации необходимо добавить именованую регистрацию разрешения `ISecurityManager` с именем `securityManagerWithoutRightsCheck`.
+**Note:** for correct interaction [CheckingLibrary](efs_security-legacy-services.html) [RightManager](efs_right-manager.html) in the configuration file must be named add registration permission `ISecurityManager` with the name `securityManagerWithoutRightscheck`. 
 
-Если система полномочий не применяется, то можно использовать упрощённый вариант конфигурации:
+If the system of powers is not applied, it is possible to use a simplified version of the configuration: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -81,26 +83,30 @@ ISecurityManager применяется в [Flexberry ORM](fo_flexberry-orm.html
   <!--...-->
 	
 </configuration>
-```
+``` 
 
-## Управление правами доступа на уровне экземпляра сервиса данных
+## Control access rights at the level of the service instance data 
 
-Для управления механизмом проверки [полномочий](efs_right-manager-module.html) на уровне [сервиса данных](fo_data-service.html) реализован специальный конструктор для [сервисов данных](fo_data-service.html), позволяющий выключить или проверки полномочий в рамках данной инстанции. Это позволяет избежать выключения проверки полномочий целиком для всего приложения, если есть реальная необходимость отключения полномочий для одной или нескольких операций.
+To control the verification mechanism of [authority](efs_right-manager-module.html) at the level of [data service](fo_data-service.html) implemented a special constructor for [data services](fo_data-service.html) to disable or authorization check in this instance. This avoids switching off the authorization check for the entire application, if there is a real need to disable power to one or more operations. 
 
-Конструктор принимает в качестве параметра инстанцию `ICSSoft.STORMNET.Security.ISecurityManager`, которая содержит настройки механизма проверки полномочий. В качестве реализации по умолчанию можно использовать имплементацию этого интерфейса: `DefaultSecurityManager`.
+The constructor takes as a parameter the instance `ICSSoft.STORMNET.Security.ISecurityManager`, which contains the settings of the mechanism of authorization checks. As default implementation, you can use the implementation of this interface: `DefaultSecurityManager`. 
 
-### Пример кода
+### Sample code 
 
 ```csharp
 using ICSSoft.STORMNET.Security;
-// ...
+// ... 
 ISecurityManager securityManager = new DefaultSecurityManager(false);
 MSSQLDataService dataService = new MSSQLDataService(securityManager);
 
-// Если нужны ограничения на детейлы, то сервис данных нужен и этой конструкции.
+// If you need restrictions on detaily, the data service need and of this design. 
 ExternalLangDef langdef = new ExternalLangDef { DataService = ds };
 
-// Логика по работе с сервисом данных, который игнорирует проверку полномочий. 
-// ...
+// Logic for working with the data service ignores the authorization check. 
+// ... 
 DataObject[] dataObjects = dataService.LoadObjects(lcs);
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,16 +1,18 @@
----
-title: Date format in GroupEdit
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, GroupEdit, DateTime
-summary: Настройка режима редактирования и отображения даты и времени
-toc: true
-permalink: en/fw_groupedit-date-format.html
-lang: en
----
+--- 
+title: date Format GroupEdit 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, GroupEdit, DateTime 
+summary: configure the edit mode and display the date and time 
+toc: true 
+permalink: en/fw_groupedit-date-format.html 
+lang: en 
+autotranslated: true 
+hash: 43980e0c79a1c9dfd477ba1be44f16da6bc0f9c5eec15486080b8d401b008dc3 
+--- 
 
-### Режим редактирования
+### edit Mode 
 
-Формат даты [GroupEdit](fw_group-edit.html) в режиме редактирования ячейки по умолчанию `Short`. Для изменения формата даты (например, на dd.MM.yyyy HH:mm)  в отдельно взятом `GroupEdit` следует в обработчике `SetupEditor` добавить код:
+Date format [GroupEdit](fw_group-edit.html) in edit mode, the default cell `Short`. To change the date format (e.g. dd.MM.yyyy HH:mm) in a single `GroupEdit` should `SetupEditor` in the handler add the code: 
 
 ```csharp
 if (e.control is ICSSoft.STORMNET.Windows.Forms.DateTimePicker)
@@ -21,26 +23,30 @@ if (e.control is ICSSoft.STORMNET.Windows.Forms.DateTimePicker)
     dtp.Format = DateTimePickerFormat.Custom;
     dtp.CustomFormat = "dd.MM.yyyy HH:mm";
 }
-```
+``` 
 
-### В режиме отображения
+### In display mode 
 
-Формат даты в режиме отображения для отдельного `GroupEdit` задается в конструкторе формы:
+The date format in the display mode for individual `GroupEdit` is set in the form designer: 
 
 ```csharp
 			C1.Win.C1FlexGrid.C1FlexGrid flex = Tools.GetFlexGrid(this.ДвижениеОтказа);
-			string attributeName = "Дата";			
+			string attributeName = Date;			
 			try
 			{
 				flex.Cols[attributeName].Style.Format = "dd.MM.yyyy"; 
 			}
 			catch
 			{
-				Tools.ShowWarning("Не удалось установить формат даты для атрибута " + attributeName + 
-							      " - для него будет использоваться формат даты по умолчанию");
+				Tools.ShowWarning("Failed to set the date format attribute " + attributeName + 
+							      "- it will use date format by default");
 			}
-```
+``` 
 
-В данном примере `this.ДвижениеОтказа` имеет тип `GroupEdit`.
+In this example, `this.ДвижениеОтказа` type is `GroupEdit`. 
 
-{% include note.html content="Порядковые номера столбцов НЕ РАВНЫ порядку отображения. Использовать имена столбцов (не названия). Имена можно узнать в Properties для GroupEdit, Атрибут Columns." %}
+{% include note.html content="the Sequence number column is NOT EQUAL to display order. Use the column names (not the names). The names can be found in the Properties for GroupEdit, the Attribute Columns." %} 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

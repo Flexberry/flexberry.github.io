@@ -1,57 +1,62 @@
----
-title: Связь моделей с системно-технологической архитектурой приложений
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, логические уровни, бизнес-логика, пользовательский интерфейс
-summary: Описание общей концепции уровней приложений
-toc: true
-permalink: en/fd_communication-models-applications.html
-lang: en
----
+--- 
+title: Communication models, systems and technological application architecture 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, logic levels, business logic, user interface 
+summary: Description of the General concept of application tiers 
+toc: true 
+permalink: en/fd_communication-models-applications.html 
+lang: en 
+autotranslated: true 
+hash: 32c931d16bed49cebd9ba7e71318c87e63af012ac15c5c8faeb6fb9fb9bab27c 
+--- 
 
-## Логические уровни
+## Logic levels 
+In accordance with [Systemic-technological application architecture](fw_flexberry-winforms-architecture.html), there are three logical levels: 
 
-В соответствии с [Системно-технологической архитектурой приложений](fw_flexberry-winforms-architecture.html),  имеются три логических уровня:
+1. User interface 
+2. Business logic 
+3. Data, metadata, and data access 
 
-1. Пользовательский интерфейс
-2. Бизнес-логика
-3. Данные, метаданные и доступ к данным
+These logic levels can be implemented in different ways physically in a particular application system. 
 
-Эти логические уровни могут быть различным образом реализованы физически в конкретной прикладной системе.
+`Flexberry PlugIns` extend the class diagram `UML` so that the system design was carried out in these logical and physical levels. 
 
-`Flexberry PlugIns` расширяют диаграмму классов `UML` таким образом, чтобы проектирование систем выполнялось в этих логических и физических уровнях.
+## Data, metadata, and data access 
 
-## Данные, метаданные и доступ к данным
+To describe the structure of applied data systems serve [data classes (classes with the stereotype `implementation` or without specifying the stereotype, their attributes, methods)](fd_data-classes.html) and the relationships between them ([inheritance](fd_inheritance.html), [Association](fd_master-association.html), [aggregation](fo_detail-associations-properties.html)). Examples of data classes are: Account, Bank, Counterparty, etc. 
 
-Для описания структуры данных прикладной системы служат [классы данных (классы со стереотипом `implementation` или без указания стереотипа, их атрибуты, методы)](fd_data-classes.html) и связи между ними ([наследование](fd_inheritance.html), [ассоциация](fd_master-association.html), [агрегация](fo_detail-associations-properties.html)). Примеры классов данных: Счёт, Банк, Контрагент и т.п.
+Architecture `Flexberry Platform` and modules - code generators are arranged in such a way that a single data model occurs as generating data structures for storage (e.g., a relational table) and data structures programming language for data processing (the corresponding classes and relations between them). 
 
-Архитектура `Flexberry Platform` и модули - генераторы кода устроены таким образом, что с единой модели данных происходит как генерация структур данных для хранения (напр., реляционные таблицы), так и структур данных языка программирования для обработки данных (соответствующие классы и отношения между ними).
+## Business logic 
 
-## Бизнес-логика
+To describe the business logic of the application system (system-wide business transactions) are the so-called [business servers (classes with the stereotype `businessserver`)](fd_business-servers.html), with which can be created the so-called "stubs" to provide business servers as COM components or as a Web service, and a business facade. 
 
-Для описания бизнес-логики прикладной системы (общесистемных бизнес-операций) служат т.н. [бизнес-серверы (классы со стереотипом `businessserver`)](fd_business-servers.html), совместно с которыми могут быть созданы т.н. "заглушки" для предоставления бизнес-сервера как COM+ компоненты или как Веб-сервис.
+## User interface 
 
-## Пользовательский интерфейс
+For descriptions of the user interface are: 
+1. [Edit form (classes with the stereotype `editform`)](fd_editform.html) 
+2. [List form (classes with the stereotype `listform`)](fd_listform.html) 
+3. Custom forms (classes with the stereotype `userform`) 
+4. [Applications (classes with the stereotype `application`)](fd_application.html) 
 
-Для описания пользовательского интерфейса служат: 
-1. [Формы редактирования (классы со стереотипом `editform`)](fd_editform.html) 
-2. [Формы списка (классы со стереотипом `listform`)](fd_listform.html) 
-3. Пользовательские формы (классы со стереотипом `userform`) 
-4. [Приложения (классы со стереотипом `application`)](fd_application.html) 
+## Common elements of models for all levels 
 
-## Общие элементы модели для любых уровней
+To describe the model in any of the levels are used: 
 
-При описании модели в любом из уровней используются:
+* [Interfaces (classes with the stereotype interface)](fd_interfaces.html) 
+* Data types (specified types of attributes, method parameters, etc.): 
+* [Synonyms of types (classes with stereotype typedef)](fd_typedef.html), are introduced for readability of the models and ease of transformation into code. Examples: Strokovne, Number, Строка255; 
+* [Enumerated data types (classes with stereotype enumeration)](fd_enumerations.html); 
+* Data types (classes with the stereotype `type`); 
+* [External classes/types (classes with stereotype external)](fd_external-classes.html), not described in the charts, but known in the generated code (for example, in the case of C# from any of the connected Assembly); 
+* Events 
+* Event parameters ([classes with the stereotype eventarg](fd_eventarg.html)) 
+* Role in the system of reference (classes with the stereotype `role`) 
 
-* [Интерфейсы (классы со стереотипом interface)](fd_interfaces.html) 
-* Типы данных (указываются типами атрибутов, параметров методов и т.п.): 
-    * [Синонимы типов (классы со стереотипом typedef)](fd_typedef.html), вводятся для удобства чтения моделей и удобства трансформации в код. Примеры: СтрокаНазвания, НомерТелефона, Строка255; 
-    * [Перечислимые типы данных (классы со стереотипом enumeration)](fd_enumerations.html); 
-    * Типы данных (классы со стереотипом `type`); 
-    * [Внешние классы/типы (классы со стереотипом external)](fd_external-classes.html), не описанные на диаграммах, но известные в сгенерированном коде (например, в случае с C#, из какой-либо подключенной сборки); 
-* События 
-* Параметры событий ([классы со стереотипом eventarg](fd_eventarg.html)) 
-* Роль в системе полномочий (классы со стереотипом `role`) 
+In the description of the item belonging to any level can be used elements of other levels, as they all are, in the most General case, some "types", both at the level of the modeling language, and object-oriented programming language. The principles of creating the structural parts of the object-oriented model and the source code to object-oriented programming language - similar. So, for example, forms can have methods that return or accept parameters that are declared as data classes. Business services will have methods, mostly working with the settings declared as data classes. 
 
-При описании элемента, относящегося к какому-либо уровню, могут использоваться элементы других уровней, поскольку все они представляют собой, в самом общем случае, некоторые "типы", как на уровне языка моделирования, так и на уровне объектно-ориентированного языка программирования. Принципы создания структурных частей объектно-ориентированной модели и исходного кода на объектно-ориентированном языке программирования, - аналогичны. Так, например, у форм могут быть методы, возвращающие или принимающие параметры, объявленные как классы данных. Бизнес-сервисы будут иметь методы, в основном работающие с параметрами, объявленными как классы данных.
+These levels are not regulated and not imposed in the simulation Flexberry. It's just explaining a logical grouping that helps to understand the relation of stereotypes to logical levels system and technology architecture. Accordingly, it is possible to locate classes with any of the [stereotypes](fd_key-concepts.html) on the charts as it is convenient. Location does not matter. 
 
-Перечисленные уровни никак не регламентируются и не навязываются при моделировании в Flexberry. Это просто логическая поясняющая группировка, помогающая понять соответствие стереотипов логическим уровням системно-технологической архитектуры. Соответственно, можно располагать классы с любыми [стереотипами](fd_key-concepts.html) на диаграммах так, как это удобно. Расположение не имеет значения.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

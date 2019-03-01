@@ -1,22 +1,24 @@
----
-title: Поддержка схем Windows XP
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Указано как включить поддержку схем пользовательских интерфейсов `Windows XP`, например, «мягкие» кнопки, градиентные заливки на закладках и т.д., пример
-toc: true
-permalink: en/fw_support-schemes-windows-x-p.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Support schemes for Windows XP 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: describes how to enable support for schemas, user interfaces `Windows XP`, for example, "soft" buttons, gradients on the tabs, etc, sample 
+toc: true 
+permalink: en/fw_support-schemes-windows-x-p.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 1d7021db0fbd88f1251b0902cb301680e56768c819bb77ad40d027f062eda392 
+--- 
 
-Элементы управления `Flexberry Platform` поддерживают схемы пользовательских интерфейсов `Windows XP`: «мягкие» кнопки, градиентные заливки на закладках и т.д., и т.п. Такая поддержка включается явно.
+Controls `Flexberry Platform` support the scheme of user interfaces `Windows XP`: "soft" buttons, gradients on the tabs, etc., etc., Such support is included explicitly. 
 
 
-Для того, чтобы настольное приложение поддержало схему пользовательского интерфейса `Windows XP`, необходимо:
-* В методе `Main()` приложения вызвать метод `ICSSoft.STORMNET.Windows.Forms.WinApplication.EnableVisualStyles()`;
-* Создать `Manifest`-файл в том же каталоге, где расположен exe-файл, например:
+To a desktop application supported scheme UI `Windows XP`, you must: 
+* In the method `Main()` application to invoke a method `ICSSoft.STORMNET.Windows.Forms.WinApplication.EnableVisualStyles()`; 
+* Create `Manifest` file in the same directory where is. exe file, for example: 
 
-Файл приложения — `BugLeR.exe`, файл манифеста — `BugLeR.exe.manifest`, содержимое:
+Application file — `BugLeR.exe`, the manifest file is `BugLeR.exe.manifest`, content: 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -42,3 +44,6 @@ lang: en
 </dependency>
 </assembly>
 ```
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

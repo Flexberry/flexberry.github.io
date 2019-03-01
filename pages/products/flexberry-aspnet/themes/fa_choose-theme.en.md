@@ -1,80 +1,86 @@
----
-title: Выбор темы Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_choose-theme.html
-lang: en
----
+--- 
+title: selection of a theme Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_choose-theme.html 
+lang: en 
+autotranslated: true 
+hash: f067925716e3bfad39f2358df6ecea03d64628690bc602ebb26f7e1bef65602c 
+--- 
 
-Темы приложения отвечают за его внешний вид. При изменении темы изменяется:
+Application themes are responsible for its appearance. When you change themes changes: 
 
-* Цветовая гамма
-* Шрифты
-* Иконки
-* Отступы
-* и прочее.
+* Color range 
+* Fonts 
+* Icons 
+* Indentation 
+* and so on. 
 
-Внешний вид тем можно оценить по следующим снимкам:
+Appearance themes, you can appreciate in the following pictures: 
 
-### Default
+### Default 
 
-[WOLV](fa_web-object-list-view.html):
+[WOLV](fa_web-object-list-view.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/default.png)
+![](/images/pages/products/flexberry-aspnet/themes/default.png) 
 
-[Web-форма редактирования](fa_editform.html):
+[Web edit form](fa_editform.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/edit-page-default.png)
+![](/images/pages/products/flexberry-aspnet/themes/edit-page-default.png) 
 
-### Light
+### Light 
 
-[WOLV](fa_web-object-list-view.html):
+[WOLV](fa_web-object-list-view.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/light.png)
+![](/images/pages/products/flexberry-aspnet/themes/light.png) 
 
-[Web-форма редактирования](fa_editform.html):
+[Web edit form](fa_editform.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/edit-page-light.png)
+![](/images/pages/products/flexberry-aspnet/themes/edit-page-light.png) 
 
-### Smart
+### Smart 
 
-[WOLV](fa_web-object-list-view.html):
+[WOLV](fa_web-object-list-view.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/smart.png)
+![](/images/pages/products/flexberry-aspnet/themes/smart.png) 
 
-[Web-форма редактирования](fa_editform.html):
+[Web edit form](fa_editform.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/edit-page-smart.png)
+![](/images/pages/products/flexberry-aspnet/themes/edit-page-smart.png) 
 
-### Spring
+### Spring 
 
-[WOLV](fa_web-object-list-view.html):
+[WOLV](fa_web-object-list-view.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/spring.png)
+![](/images/pages/products/flexberry-aspnet/themes/spring.png) 
 
-[Web-форма редактирования](fa_editform.html):
+[Web edit form](fa_editform.html): 
 
-![](/images/pages/products/flexberry-aspnet/themes/edit-page-spring.png)
+![](/images/pages/products/flexberry-aspnet/themes/edit-page-spring.png) 
 
-## Выбор темы в Web-приложении
+## the Choice of theme in your Web application 
 
-Чтобы установить тему по умолчанию в Web-приложении достаточно в файле конфигурации `web.config` вписать название темы
+To set the default theme in the Web-application is sufficient in the configuration file `web.config` to enter the name of the theme 
 
 ```xml
 <pages validateRequest="false" enableSessionState="true" theme="Spring" maintainScrollPositionOnPostBack="true">
-```
+``` 
 
-в свойство theme=.
+in the theme property=. 
 
-По умолчанию выбирается тема Spring.
+The default theme of Spring. 
 
-Список тем, поставляемых при генерации приложения:
+The list of topics supplied at the generation of the application: 
 
-* Default (несмотря на название она не выбирается по умолчанию)
-* Light
-* Smart
-* Spring (выбирается по умолчанию)
+* Default (despite the name it is not selected by default) 
+* Light 
+* Smart 
+* Spring (selected by default) 
 
-Есть возможность переключать темы в пользовательском режиме. На любой странице в левом нижнем углу есть строка в которой можно указать, какую тему нужно
-использовать. Выбранная тема устанавливается для данного конкретного пользователя. Тема, установленная по умолчанию, может меняться только в файле конфигурации. 
+It is possible to switch threads in user mode. On any page in the lower left corner there is a line where you can specify what topic you need 
+to use. The selected theme is set for this particular user. The theme, the default can only be changed in the configuration file. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,42 +1,47 @@
----
-title: Storing object data in a relational database
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, database
-summary: Principles of storing data objects in a database
-toc: true
-permalink: en/fo_storing-data-objects.html
-lang: en
----
+--- 
+title: Storing object data in a relational database 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, database 
+summary: Principles of storing data objects in a database 
+toc: true 
+permalink: en/fo_storing-data-objects.html 
+lang: en 
+autotranslated: true 
+hash: 8c0d95d93891a6e04772400d15f146251b91a57edfc30a62900b238d131301a2 
+--- 
 
-## Как хранятся объектные данные
+## stored As object data 
 
-Большинство [сервисов данных](fo_data-service.html) обеспечивают работу с реляционным хранилищем.
-Объектные данные [Flexberry ORM](fo_flexberry-orm.html) хранит следующим образом:
+Most [of data services](fo_data-service.html) provide relational storage. 
+Object data [Flexberry ORM](fo_flexberry-orm.html) stores the following: 
 
-* Каждый класс — отдельная таблица. 
-* Каждый атрибут — отдельное поле в таблице.
-* [Мастеровые связи](fd_master-association.html) — внешние ключи таблицы внутреннего класса.
-* [Детейловые связи](fo_detail-associations-properties.html) — внешний ключ детейловой таблицы на агрегатор (шапку).
-* [Наследуемый](fd_inheritance.html) класс — отдельная от предка таблица.
-* Если у [мастерового класса](fd_master-association.html) есть наследник, то на его таблицу должен быть внешний ключ в таблице внутреннего класса.
-* Каждая унаследованная таблица хранит все атрибуты всех предков. Таким образом, одному экземпляру класса соответствует одна запись в одной таблице (почему сделано именно так, описано в статье [Наследование](fd_inheritance.html)).
+* Each class is a separate table. 
+* Each attribute is a separate field in the table. 
+* [Artisans of communication](fd_master-association.html) — foreign keys table of the inner class. 
+* [Delaloye links](fo_detail-associations-properties.html) — foreign key dyelovoi table on the aggregator (cap). 
+* [Inherits](fd_inheritance.html) class — separate from the ancestor table. 
+* If [the artisan class](fd_master-association.html) is the heir, then his table should be a foreign key in the table of the inner class. 
+* Each inherited table stores all attributes of all ancestors. Thus, one instance of the class corresponds to one record in one table (why is it done so described in the article [Inheritance](fd_inheritance.html)). 
 
-## Именование при хранении объектных данных
+## Naming when storing object data 
 
-Все элементы объектной модели хранятся в хранилище под определёнными именами. Например, поскольку в реляционном хранилище каждый класс — отдельная таблица, каждое свойство — отдельное поле, то имена хранения — это имена таблиц, полей.
+All elements of the object model stored in the repository under the specified name. For example, since relational storage each class is a separate table, each property is a separate field, the names of storage is the table names, fields. 
 
-По умолчанию, именование происходит следующим образом:
+By default, the naming is as follows: 
 
-* Имя хранения объекта данных — имя типа класса данных.
-* Имя хранения свойства объекта данных — имя свойства в классе данных.
-* Имя хранения мастерового свойства — имя свойства в классе данных + [номер]. 
-* Связь от детейловой таблицы на агрегатор — аналогично мастеровому свойству: имя свойства в классе данных + [номер].
+* The name of the storage object data type name class data. 
+* The name of the store object property data property name in the class data. 
+* The name of the storage artisan properties is the property name in the class data [number]. 
+* Communication from dyelovoi table on the aggregator — similar Masterova property: the property name in the class data [number]. 
 
-* Имя хранения [первичного ключа](fo_primary-keys-objects.html) — `primaryKey`.
-* При наследовании имена внешним ключам даются такие: [<ИмяРолиМастера>_M<ПорядкНомерВTypeUsage>.«ПорядкНомерВTypeUsage» — начинается с 0](fo_type-usage.html) (такое именование можно изменить).
+* The name of the store the [primary key](fo_primary-keys-objects.html) — `primaryKey`. 
+* When you inherit the names of foreign keys are given the following: [<Karolinenstr>_M<ПорядкНомерВTypeUsage>."ПорядкНомерВTypeUsage" — starts with 0](fo_type-usage.html) (this naming can be changed). 
 
-Именование может быть изменено, для чего служат атрибуты хранения:
+The naming can be changed, what are the attributes of storage: 
 
-* [ClassStorage](fd_data-classes.html) — следует приписать классу данных с указанием необходимого имени хранения.
-* [PrimaryKeyStorage](fd_data-classes.html) — аналогично для первичного ключа, приписывается классу данных.
-* [PropertyStorage](fo_attributes-class-data.html) — аналогично для любых свойств (собственных, мастеровых), приписывается соответствующему свойству.
+* [ClassStorage](fd_data-classes.html) — should be attributed to the data class, specifying the required name of the store. 
+* [PrimaryKeyStorage](fd_data-classes.html) — similar to a primary key assigned to the data class. 
+* [PropertyStorage](fo_attributes-class-data.html) — the same for all properties (private, artisans), attributed to the appropriate property.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

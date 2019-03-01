@@ -1,14 +1,16 @@
----
-title: Example of loading an object graph
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data objects, example
-summary: Features of data object loading with a large number of children
-toc: true
-permalink: en/fo_load-multiple-details-example.html
-lang: en
----
+--- 
+title: Example of loading the object graph 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data objects, example 
+summary: Features downloading of the object data with a large number of datalow 
+toc: true 
+permalink: en/fo_load-multiple-details-example.html 
+lang: en 
+autotranslated: true 
+hash: 7aa45d4924d0e321a2a99dd23f6cbdd3d747545742cb036f2e265d3a4299930d 
+--- 
 
-Здесь производится загрузка всех объектов, созданных в [примере](fo_actions-saving-object.html).
+Here is the download of all objects created in the [example](fo_actions-saving-object.html). 
 
 ```csharp
 Console.WriteLine("6. Loading a dataobject with multiple details.");
@@ -20,8 +22,8 @@ object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(D0));
 D0 aggregator = new D0();
 aggregator.SetExistObjectPrimaryKey(primaryKey);
 
-// Чтобы ускорить загрузку, можно раскомментировать эту строку.
-// aggregator.DisableInitDataCopy();
+// To speed up the boot, you can uncomment this line. 
+// aggregator.DisableInitDataCopy(); 
 Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
 
@@ -29,12 +31,12 @@ dataService.LoadObject(D0.Views.FULLD0_E, aggregator);
 stopwatch.Stop();
 Console.WriteLine("Time taken for loading: {0} ms.", stopwatch.ElapsedMilliseconds);
 
-// Убедимся, что в каждом объекте, в каждом детейловом свойстве содержится 10 детейлов, которые были сохранены туда.
+// Make sure each object in each dealova property contains 10 detailov that were stored there. 
 ormSample.CheckDetailsQty(aggregator, 10);
 Console.WriteLine("CheckDetailsQty: OK.");
-```
+``` 
 
-Код метода `CheckDetailsQty`:
+Method code `CheckDetailsQty`: 
 
 ```csharp
 internal void CheckDetailsQty(D dobj, int qtyInEach)
@@ -53,4 +55,8 @@ internal void CheckDetailsQty(D dobj, int qtyInEach)
         }
     }
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

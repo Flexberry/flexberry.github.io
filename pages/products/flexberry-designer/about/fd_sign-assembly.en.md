@@ -1,15 +1,21 @@
----
-title: Подписывание сборок в Flexberry
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, сборка, подписать сборку, утилита
-summary: Правила подписывания сборок
-toc: true
-permalink: en/fd_sign-assembly.html
-lang: en
----
+--- 
+title: Signing assemblies in Flexberry 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Assembly, sign the Assembly, utility 
+summary: the Rules of signing assemblies 
+toc: true 
+permalink: en/fd_sign-assembly.html 
+lang: en 
+autotranslated: true 
+hash: 573339d16e3970ff9b181514d65f049cdba858b424771118f17ec26a72751265 
+--- 
 
-В [дополнительных настройках модели](fd_project-customization.html) есть галочка `Подписывать сборки`. После её установки при генерации будут дополнительно сгенерированы файлы с расширением .snk (если проект был сгенерирован ранее, то также будет перезаписан файл `AssemblyInfo.cs`).
+In [advanced settings models](fd_project-customization.html) there is a check mark `Подписывать сборки`. After installation when you generate will be optionally generated files with the file extension .snk (if the project was generated previously, it will also be overwritten file `AssemblyInfo.cs`). 
 
-Для подписывания сборок из [Flexberry Designer](fd_landing_page.html) необходима утилита [sn.exe](http://msdn.microsoft.com/en-us/library/k5b5tt23%28v=vs.71%29.aspx), которую следует скопировать в папку с [Flexberry Designer](fd_landing_page.html) (данную утилиту можно найти в подпапках папки `C:\Program Files\Microsoft SDKs\Windows` (данной папки в системе может и не быть), лучше брать из подпапок, имеющих в имени "7.0").
+To sign the assemblies from [Flexberry Designer](fd_landing_page.html) necessary utility [sn.exe](http://msdn.microsoft.com/en-us/library/k5b5tt23(v=vs.71).aspx), which you should copy to a folder [Flexberry Designer](fd_landing_page.html) (this utility can be found in subfolders of the folder `C:\Program Files\Microsoft SDKs\Windows` (this folder in the system may not be), it is better to be taken from the subfolder with the name "7.0"). 
 
-О подписывании сборок можно также почитать в [msdn](http://msdn.microsoft.com/ru-ru/library/xwb8f617%28v=vs.90%29.aspx).
+About signing assemblies, you can also read the [msdn](http://msdn.microsoft.com/ru-ru/library/xwb8f617(v=vs.90).aspx). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

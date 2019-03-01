@@ -1,41 +1,46 @@
----
-title: Подсистема аудита для Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry Audit
-toc: true
-permalink: en/fa_audit_entries.html
-lang: en
----
+--- 
+title: audit for Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry Audit 
+toc: true 
+permalink: en/fa_audit_entries.html 
+lang: en 
+autotranslated: true 
+hash: b15ec9657d5feba6955a9061916c13fafedd345190cd9ab8eaaa752acc8f75e7 
+--- 
 
-`Система аудита` позволяет отслеживать __действия пользователей__ и __состояние объектов системы__.
+`Система аудита` allows you to track __actions of users__ and __the state of system objects__. 
 
-Отслеживается:
+Tracked: 
 
-* Отслеживание совершаемых пользователем действий над объектами: создание, изменение, удаление.
-* При каждой операции фиксируется время, автор изменений и тип операции. 
-* При изменении поля фиксируется изменённое поле, его старое и новое значения.
+* Track user actions on objects: creation, modification, deletion. 
+* For each fixed time, the author of the changes and the type of operation. 
+* If you change the fixed field is changed, its old value and the new value. 
 
-Хранение данных аудита:
+Storing audit data: 
 
-* База данных аудита может быть опционально отделена от базы данных приложения.
-* Существует два режима записи собираемых аудитом данных: синхронный с выполнением операции и асинхронный (на момент написания статьи рабочим является только синхронный).
+* Database auditing can be optionally separated from the application database. 
+* There are two recording modes collect audit data: synchronous operation and asynchronous (at time of writing, work is only synchronous). 
 
-Настройка аудита: 
+Setting up auditing: 
 
-* Простая настройка аудита для класса, его собственных полей, мастеров и детейлов ([через Flexberry Tool](fo_audit-setup.html)).
+* Simple to configure auditing for a class, his own fields, and datalow ([using Flexberry Tool](fo_audit-setup.html)). 
 
-## Особенности аудита в web-системах
+## audit trail Features in web systems 
 
-Особенности аудите в web-системах описаны в [статье Аудит для Web-приложений](fa_audit-web.html).
+Features of audit in a web system is described in [article Audit for Web applications](fa_audit-web.html). 
 
-## Аудит для web-форм
+## Audit for web forms 
 
-Аудит для web-форм описан в [статье Web-формы аудита](fa_audit-web-forms.html).
+Audit for the web-form described in [article Web-form audit](fa_audit-web-forms.html). 
 
-## Пример подключения аудита к существующему Web-приложению с использованием перегенерации проекта
+## connection Example of an audit to an existing Web application using regeneration project 
 
-Пример подключения аудита к существующему Web-приложению с использованием перегенерации проекта в соответствующей [статье](fa_audit-web-example.html).
+An example of a connection auditing to an existing Web application with the use of a regeneration project in the appropriate [article](fa_audit-web-example.html). 
 
-## Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта
+## connection Example of an audit to an existing Web application without using regeneration project 
 
-Пример подключения аудита к существующему Web-приложению без использования перегенерации проекта описан в соответствующей [статье](fa_audit-web-example-manual.html).
+An example of a connection auditing to an existing Web application without using regeneration project described in the corresponding [article](fa_audit-web-example-manual.html).
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

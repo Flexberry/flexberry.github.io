@@ -1,83 +1,89 @@
----
-title: Functionality when working with arrays of child objects
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, detail
-summary: Features of work with an DetailArray
-toc: true
-permalink: en/fo_functionality-work-detail-array.html
-lang: en
----
+--- 
+title: Functionality when working with arrays of objects metalowych 
+sidebar: flexberry-orm_sidebar 
+keywords: DataObject ORM Flexberry, detail 
+summary: Features working with an array of datalow 
+toc: true 
+permalink: en/fo_functionality-work-detail-array.html 
+lang: en 
+autotranslated: true 
+hash: 27559b89a0f98ad1ab8f44131636d81af62b6046fe22f1261f8a0956febbe960 
+--- 
 
-## Базовая функциональность по работе с массивами детейловых объектов
+## basic functionality for working with arrays of objects metalowych 
 
-`DetailArray` поддерживает базовую функциональность по работе с массивами [детейловых](fo_detail-associations-properties.html) объектов:
+`DetailArray` supports basic functionality for working with arrays [metalowych](fo_detail-associations-properties.html) close 
 
-* Поддержка ссылки на [шапку (агрегатор)](fd_key-concepts.html).
-* Поддержка коллекции: 
-    * добавление (AddObject, AddRange), 
-    * вставка (Insert), 
-    * удаление (Remove, RemoveByIndex, RemoveByKey),
-    * очистка (Clear), 
-    * установка/взятие значения (GetByKey, SetByKey),
-    * перемещение (Move),
-    * количество объектов (Count),
-    * перебор объектов в конструкции foreach.
-* Поддержка упорядочения (порядка, в котором лежат [объекты данных](fo_data-object.html)).
+* Support links to [hat (aggregator)](fd_key-concepts.html). 
+* Support for collections: 
+* add (AddObject, AddRange), 
+* insert (Insert), 
+* delete (Remove RemoveByIndex, RemoveByKey), 
+* clear (Clear), 
+* install/capture values (GetByKey, SetByKey), 
+* move (Move) 
+* the number of objects (Count), 
+* iterates through the objects in the foreach construct. 
+* Support the ordering (the order in which lie [data objects](fo_data-object.html)). 
 
-### Агрегирующие функции
+### Aggregate functions 
 
-Чтобы среди объектов, находящихся в массиве [детейлов](fo_detail-associations-properties.html), посчитать какую-либо агрегирующую функцию (сумма, макс., мин., среднее значение, что-либо произвольное), необходимо в классе, унаследованном от `DetailArray`, определить функцию без параметров, которая возвращает некоторое значение. Далее, к этой функции необходимо приписать атрибут `AggregationFunction`. Параметрами являются: имя свойства, для которого эта агрегирующая функция, и строка формата (`String.Format`), в соответствии с которой значение будет выводиться пользователю. 
+Among the objects in the array [datalow](fo_detail-associations-properties.html), calculate some aggregate function (sum, max, min, mean, anything random), it is necessary in the class inherited from `DetailArray`, to define a function without parameters that returns a value. Further to this function, you must attribute the attribute `AggregationFunction`. Parameters are: name of the property for which this aggregation function, and a format string (`String.Format`), according to which the value is displayed to the user. 
 
-{% include important.html content="Агрегирующие функции должны обрабатываются визуальными компонентами редактирования массива детейлов. Атрибут `AggregationFunction` принято обрабатывать следующим образом: если указано имя свойства, то значение агрегирующей функции указывается непосредственно рядом со значениями объектов данных (например, внизу таблицы в соответствующем столбце) и тип возвращаемого функцией значения должен быть тем же или неявно приводимым к типу свойства. Если указана строка формата, тогда значение выводится отдельно, в этом формате.
-" %}
+{% include important.html content="Aggregate functions have processed visual components, editing the array of detailov. Attribute `AggregationFunction` taken to process the following: if you specify a property name, the value of the aggregation function is indicated directly next to the values of data objects (e.g., bottom of the table in the corresponding column) and type a function's return value must be the same or implicitly castable to the property type. If you specify a format string then the value is displayed separately in this format. 
+"%} 
 
-### Упорядочивание
+### Ordering 
 
-Объекты в массиве детейлов могут быть упорядочены (именно упорядочены, а не отсортированы), т.е. располагаться в каком-либо, строго определённом порядке.
+The objects in the array of datalow can be ordered (it is ordered but not sorted), i.e., be placed in any strict order. 
 
-Для того, чтобы ввести упорядочение, необходимо в [детейловый класс](fo_detail-associations-properties.html) данных ввести целочисленное (`System.Int32`) свойство с приписанным атрибутом `Order`. 
+In order to introduce a regularization, it is necessary to [metalowy class](fo_detail-associations-properties.html) of data to enter an integer (`System.Int32`) property with assigned attribute `Order`. 
 
-{% include important.html content="Упорядочение обрабатывается визуальными компонентами редактирования массива детейлов." %}
+{% include important.html content="Order processed visual components, editing the array of detailov." %} 
 
-{% include note.html content="Без наличия Order-атрибутов детейлы могут возращаться в любом порядке, в отличном от того, в котором они были сохранены." %}
+{% include note.html content="Without Order of the attributes detaili can return in any manner other than that in which they were saved."%} 
 
-### Получение типа DetailArray по его наименованию
+### get type DetailArray its name 
 
-Чтобы получить тип детейла, имея тип агрегатора и наименование DetailArray, необходимо воспользоваться методом [Information](fo_methods-class-information.html).GetItemType.
+To get the type of detail, having the type of aggregator and the name DetailArray, it is necessary to use the method of [Information](fo_methods-class-information.html).GetItemType. 
 
-Сигнатура метода:
+Method signature: 
 
 ```csharp
 public static System.Type ICSSoft.STORMNET.Information.GetItemType (
         System.Type AgregatorType,
         string DetailPropertyName ) 	
-```
+``` 
 
-где `AgregatorType` это тип класса-агрегатора, а `DetailPropertyName` это наименование списка детейлов, тип которых необходимо получить.
+where `AgregatorType` is the class type of the aggregator, and `DetailPropertyName` is the name of the list of datalow whose type to get. 
 
-Метод возвращает объект типа `System.Type`, содержащий описание типа-детейла.
+The method returns an object of type `System.Type` containing a description of the type of detail. 
 
-### Написание LINQ-запросов к уже полученному списку DetailArrayOf...
+### Writing LINQ queries to the already made list DetailArrayOf... 
 
-Чтобы написать LINQ-запрос к детейлам, необходимо сначала привести их к необходимому типу (т.к. DetailArrayOf... не поддерживает интерфейс `IEnumerable`, то непосредственно к нему LINQ-методы (такие как `Select`, `ToList` и пр.) не применятся).
+To write a LINQ query to detalam, you must first bring them to the required type (because DetailArrayOf... does not support the interface `IEnumerable`, directly to him LINQ methods (such as `Select`, `ToList`, etc.) will not apply). 
 
-Пусть есть класс `Aggregator`, имеющий детейловый класс `Det`, тогда конструкция ниже выдаст `ошибку`, т.к. ему необходимо указать тип, объектами которого будет заполнен новый список:
+Suppose there is a class `Aggregator` having metalowy class `Det`, then the construction below will give `ошибку`, because it is necessary to specify the type of objects which will populate a new list: 
 
 ```csharp
 Aggregator aggr = new Aggregator();
 aggr.DetailArrayOfDet.ToList(); 
-```
+``` 
 
-Если указать тип, то `ошибка` изменится на: `Невозможно привести тип DetailArrayOfDet к типу IEnumerable&lt<Det>`:
+If you specify a type, then `ошибка` changes to `Невозможно lead type DetailArrayOfDet type IEnumerable&lt<Det>`: 
 
 ```csharp
 Aggregator aggr = new Aggregator();
 aggr.DetailArrayOfDet.ToList<Det>(); 
-```
+``` 
 
-`Правильным способом` является следующий:
+`Правильным способом` is: 
 
 ```csharp
 Aggregator aggr = new Aggregator();
 aggr.DetailArrayOfDet.Cast<Det>.ToList(); 
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

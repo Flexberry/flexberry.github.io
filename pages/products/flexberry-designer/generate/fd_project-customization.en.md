@@ -1,42 +1,48 @@
----
-title: Настройка модели для генерации
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Audit, Flexberry Designer, плагин, стадия
-summary: Добавление аудита в приложение и основные свойства стадии
-toc: true
-permalink: en/fd_project-customization.html
-lang: en
----
+--- 
+title: setup of models to generate 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Audit, Flexberry Designer, plugin, stage 
+summary: Add auditing to the application and the basic properties of the stage 
+toc: true 
+permalink: en/fd_project-customization.html 
+lang: en 
+autotranslated: true 
+hash: 68ca19add9638f8c78661d894bb693bad11b4f0238e1e827c773b289421f0669 
+--- 
 
-Форма настроек свойств модели позволяет описать основные и дополнительные свойства модели. Данная форма вызывается через меню [плагина](fo_orm-case-plugin.html).
+Form property settings of the model allows to describe basic and advanced properties of the model. This form is called via the menu [plugin](fo_orm-case-plugin.html). 
 
-## Основные свойства
+## Basic properties 
 
 ![](/images/pages/products/flexberry-designer/generate/stage-properties.png) 
 
-Здесь:
-* `Название стадии` - имя стадии (название стадии, в которой происходит работа с моделью, во [Flexberry Designer](fd_landing_page.html)); 
-* `Описание` - описание стадии (в данное поле можно добавить, например, краткое описание того, для чего она создана (тестирование, моделирование "как должно быть" и т.д.).);
-* `Название компании` - название компании-разработчика или компании-владельца (может учитываться при определении [пространства имён генерируемого проекта](fo_location-assembly.html)); 
-* `Название продукта` - название приложения, для которого разрабатывается модель(может учитываться при определении пространства имён генерируемого проекта);
-* `Copyright` - строка удостоверения авторских прав, попадает в описания сборок; 
-* `Версия` - версия моделируемого приложения. (попадает в описания сборок);
-* `Каталог для исходного кода` - путь до папки, в которую будет генерироваться код приложения;
-* `Карта типов` - [карта типов](fd_types-map.html).
+Here: 
+* `Название стадии` - phase name (the name of the stage where the work with the model in [Flexberry Designer](fd_landing_page.html)); 
+* `Описание` - description stage (in this field you can add for example a short description of the purpose for which it was created (testing, modeling "how to be", etc.).); 
+* `Название компании` - the name of the developer or owner (may be considered in determining [the namespace of the generated project](fo_location-assembly.html)); 
+* `Название продукта` - the name of the application for which a model(may be relevant to determining the namespace of the generated project]); 
+* `Copyright` - line identity copyright, falls within the description сборок; 
+* `Версия` version of the modeled application. (falls into the descriptions of assemblies); 
+* `Каталог for the original кода` - the path to the folder into which code is generated приложения; 
+* `Карта типов` - [map types](fd_types-map.html). 
 
-## Настройки аудита
+## Configure auditing 
 
-На данной вкладке представлены настройки аудита для модели. Для функционирования аудита __требуются дополнительные пакеты__.
+This tab contains the audit settings for the model. For the functioning of the audit __additional packages__. 
 
-## Дополнительно
-![](/images/pages/products/flexberry-designer/generate/stage-properties-ext.png)
+Additionally ## 
+![](/images/pages/products/flexberry-designer/generate/stage-properties-ext.png) 
 
-* `Namespace` - пространство имён (может учитываться при определении [пространства имён генерируемого проекта](fo_location-assembly.html)). 
-* `DefaultBaseClass`{ - базовый класс (предок), от которого наследуются .Net-классы, соответствующие [UML-классу со стереотипом `implementation`](fd_data-classes.html); 
-* `DefaultDetailArrayClass` - базовый класс (предок), от которого наследуются .Net-классы, соответствующие массивам детейловых объектов (для классов-детейлов  [со стереотипом `implementation`](fd_data-classes.html)). 
-* `DefaultEditScriptName` - имя сценария (EBSI-интерпретируемого) для формы редактирования, который используется используется формой редактирования в случае, если у неё не прописано (пустое) свойство `ScriptName`. Если не указано, используется предопределённый сценарий, зашитый в [Flexberry Designer](fd_landing_page.html). 
-* `DefaultListScriptName` - имя сценария (EBSI-интерпретируемого) для формы списка, который используется используется формой редактирования в случае, если у неё не прописано (пустое) свойство ScriptName. Если не указано, используется предопределённый сценарий, зашитый в [Flexberry Designer](fd_landing_page.html). 
-* `ScriptPacket` - имя пакета, в который генерируется провайдер сценариев, содержащий все сценарии, которые определены внутри данной стадии через EBSD-диаграммы. 
-* `ScriptNamespacePostfix` - пространство имён для пакета со сценариями. 
-* `Подписывать сборки` - настройка для осуществления [подписей генерируемых сборок](fd_sign-assembly.html). 
+* `Namespace` - namespace (may be considered in determining [the namespace of the generated project](fo_location-assembly.html)). 
+* `DefaultBaseClass` {is a base class (ancestor), from which it is inherited .Net classes and corresponding [UML class with the stereotype `implementation`](fd_data-classes.html); 
+* `DefaultDetailArrayClass` - base class (ancestor), from which it is inherited .Net classes corresponding to tatalovich arrays of objects (for classes datalow [with the stereotype `implementation`](fd_data-classes.html)). 
+* `DefaultEditScriptName` - the script name (EBSI-interpreted) to the editing form that uses the edit form if it is not registered (empty) property `ScriptName`. If not provided, uses a predefined scenario, sewn in [Flexberry Designer](fd_landing_page.html).
+* `DefaultListScriptName` - the script name (EBSI-interpreted) to a form list that is used is used by the edit form if it is not spelled out (empty) the ScriptName property. If not provided, uses a predefined scenario, sewn in [Flexberry Designer](fd_landing_page.html). 
+* `ScriptPacket` is the name of the package that is generated by the provider of the script that contains all scenarios that are defined inside of this stage using EBSD-chart. 
+* `ScriptNamespacePostfix` - the namespace for the package with the scripts. 
+* `Подписывать сборки` - set [of signatures generated Assembly](fd_sign-assembly.html). 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

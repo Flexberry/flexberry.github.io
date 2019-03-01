@@ -1,72 +1,78 @@
----
-title: Подстановка значений параметров в ограничивающую функцию
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Ограничения
-summary: На примере показано как в limitFunction с параметром типа Дата вставить в качестве значения этого параметра текущую дату
-toc: true
-permalink: en/fw_limit-function-insert-parameters-values.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Substitution of parameter values in the bounding function 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Restrictions 
+summary: the example shown in limitFunction with a parameter of type date to insert the value of this parameter is the current date 
+toc: true 
+permalink: en/fw_limit-function-insert-parameters-values.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: e424bcac9379c5c8f7cc388b28c74589bf41050da3e50b9c82b32012d8b81fc0 
+--- 
 
-## Вопрос
-Имеется [limitFunction](fo_limit-function.html) (класс `ICSSoft.STORMNET.FunctionalLanguage.Function`) с параметром @Дата. Как вместо этого параметра подставить текущую дату?
+## Question 
+There limitFunction](fo_limit-function.html) (class `ICSSoft.STORMNET.FunctionalLanguage.Function`) with parameter @date. How is this parameter to substitute the current date? 
 
-## Ответ
-Пусть задана функция `limitFunction` с параметром @Дата:
+## Response 
+Let `limitFunction` set function with a parameter @date: 
 ```csharp 
 ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
  
  ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(
    externalLangDef.funcEQ,
-   new ParameterDef("Дата", externalLangDef.DateTimeType, false, ""),
+   new ParameterDef(Date, externalLangDef.DateTimeType, false, ""),
    new DateTime(2000, 01, 01));
-```
+``` 
 
-Подробнее о [ExternalLangDef](fo_external-lang-def.html).
+Read more about [ExternalLangDef](fo_external-lang-def.html). 
 
-### Для Web
-Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
+### For Web 
+To pass parameters to a function in the class `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` there is a method: 
 
 ```csharp 
-/// <summary>
-/// Подставить конкретные значения вместо параметров функции.
-/// </summary>
-/// <param name="function">Сама функция, в которой будут заменять параметры.</param>
-/// <param name="paramValues">Справочник значений параметров (название параметра - значение).</param>  
-/// <returns>Функция, в которой все параметры заменены на соответствующие значения.</returns>
+/// <summary> 
+/// Substitute a specific value instead of function parameters. 
+/// </summary> 
+/// <param name="function">the function that will replace the parameters.</param> 
+/// <param name="paramValues">the Reference values of parameters (parameter name - value).</param> 
+/// <returns>the Function in which all parameters replaced by the appropriate values.</returns> 
 public static Function SubstituteParameters(Function function, IDictionary<string, object> paramValues)
-```
+``` 
 
-### Пример
+### Example 
 
 ```csharp 
     limitFunction = AdvLimitUtils.SubstituteParameters(
     limitFunction,
-    new Dictionary<string, object>() { {"Дата", DateTime.Now} });
-```
+    new Dictionary<string, object>() { {Date, DateTime.Now} });
+``` 
 
-### Для Win
-Для подстановки параметров в ограничивающую функцию в классе `ICSSoft.STORMNET.Windows.Forms.AdvansedLimitExtension` есть метод:
+### For Win 
+For parameter substitution in the bounding function in the class `ICSSoft.STORMNET.Windows.Forms.AdvansedLimitExtension` there is a method: 
 ```csharp 
-/// <summary>
- /// Получить ограничение с подставленными значениями параметров
- /// </summary>
- /// <param name="advansedLimit">Само ограничение.</param>
- /// <param name="parValues">Словарь со значениями параметров. Ключ - имя параметра</param>
- /// <returns>Функция-ограничение с подставленными значениями параметров</returns>
+/// <summary> 
+ /// Get restriction with the substituted parameter values 
+ /// </summary> 
+ /// <param name="advansedLimit">the constraint.</param> 
+ /// <param name="parValues">a Dictionary with parameter values. Key - the parameter name</param> 
+ /// <returns>the Function-restriction with the substituted values of the parameters</returns> 
  public static Function GetCustomizedFunctionByParameters<R, T>(this R advansedLimit, T parValues)
      where T : IDictionary, IDictionary<string, object>
      where R : AdvansedLimit
-```
+``` 
 
-Но для этого метода нужен экземпляр класса `ICSSoft.STORMNET.Windows.Forms.AdvansedLimit` (объектная модель ограничения, включает в себя как ограничивающую функцию, так и определения параметров). 
+But for this method you need an instance of the class `ICSSoft.STORMNET.Windows.Forms.AdvansedLimit` (object model limitations includes both the bounding function and parameter setting). 
 
-### Пример
+### Example 
 ```csharp 
  AdvansedLimit advlimit = new AdvansedLimit {Function = limitFunction};
  advlimit.Parameters = new ParameterDef[1] { (ParameterDef)advlimit.Function.Parameters[0] };
  limitFunction = AdvansedLimitExtension.GetCustomizedFunctionByParameters(
     advlimit,
-    new Dictionary<string, object>() { { "Дата", DateTime.Now } });
-```
+    new Dictionary<string, object>() { { Date, DateTime.Now } });
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

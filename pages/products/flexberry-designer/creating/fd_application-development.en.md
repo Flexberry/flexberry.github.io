@@ -1,52 +1,58 @@
----
-title: Этап доработки приложения 
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry, ключевые понятия, доработка приложений, перегенерация, скобки программиста, UML, генерация, этапы создания приложения
-summary: Особенности и сложности этапа доработки приложения, перегенерация приложений
-toc: true
-permalink: en/fd_application-development.html
-lang: en
----
+--- 
+title: Stage the app. 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry, key concepts, completion of application, by mistake, brackets, programmer, UML, generation, steps for creating application 
+summary: Features and complexity of the refinement phase of the application, the application by mistake 
+toc: true 
+permalink: en/fd_application-development.html 
+lang: en 
+autotranslated: true 
+hash: 29a3c7d9b44b7162e1f2c25d07e88fb31bcb8177ccb2c9004873813ece8e4fa9 
+--- 
 
-После [создания прототипа приложения](fd_prototype-creation.html) дальнейшая его доработка осуществляется путем модификации сгенерированного исполняемого кода с использованием API, предоставляемого технологией `Flexberry`.
+After [prototype](fd_prototype-creation.html) further refinement is carried out by modification of the generated executable code using the APIs provided by technology `Flexberry`. 
 
-В данной статье можно найти описание основных принципов доработки приложений, а также основные сценарии доработки.
+In this article you can find a description of the basic principles of revision of applications, as well as the main scenarios of improvement. 
 
-## Базовые принципы доработки приложений
+## the Basic principles of re-engineering of applications 
 
-1. Описание процесса получения исходного кода.
-2.	[Описание процесса перегенерации кода](fd_code-generation.html)
-3.	[Разработка через модификацию модели](fd_code-generation.html)
-4.	[Использование скобок программиста](fo_programmer-brackets.html).
+1. Description of the process of obtaining the source code. 
+2. [Description of process of generation of code](fd_code-generation.html) 
+3. [Development through the modification of the model](fd_code-generation.html) 
+4. [Programmer's use of parentheses](fo_programmer-brackets.html). 
 
-## [Основные сценарии доработки приложения](fd_development.html)
+## [Main scenario the app.] (fd_development.html) 
 
-1.	Управление формами приложения
-    *	Добавление новых форм
-    *	Настройка списковых форм
-        *	Настройка представлений
-        *	Настройка кнопок
-    *	Настройка форм редактирования и просмотра
-        *	Настройка представлений
-2.	Настройка пользовательского интерфейса
-    *	Установка заголовков форм
-    *	Выравнивание элементов на формах
-    *	Приведение к общему стилю, цвету и шрифтам элементов форм
-    *	Изменение размера форм
-    *	Добавление локализации
-3.	Настройка визуальной логики
-    *	Подключение предиктивного ввода
-    *	Реализация режима “Read-only”
-4.	Настройка валидации данных
-    *	Настройка валидации на клиентской стороне
-    *	Настройка валидации на серверной стороне
-5.	Реализация бизнес-логики
-    *	Добавление проверки при обновлении данных через бизнес-сервер
-    *	Обновление нескольких объектов одной транзакцией
-    *	Проверка уникальности введенных данных
-    *	Проверка валидности изменений данных объекта
-    *	Добавление методов дочитки\вычитки данных
-6.	Настройка обработки ошибок
-    *	Включение\выключение ведения лога ошибок
-    *	Настройка формы ошибок
-    *	Настройка перехвата исключительных ситуаций
+1. Managing application forms 
+* Adding new forms 
+* Customize list forms 
+* Customize views 
+* Adjust button 
+* Customizing edit forms and view 
+* Customize views 
+2. User interface customization 
+* Set form title 
+* Alignment of elements on forms 
+* Bringing to a common style, color and font of form elements 
+* Resizable forms 
+* Add localization 
+3. Setting up visual logic 
+* Connect predictive 
+* Implementation of mode “Read-only” 
+4. Setting data validation 
+* Configure validation on the client side 
+* Configure validation on the server side 
+5. Implementing business logic 
+* Adding checks when updating data via business server 
+* Update multiple objects in one transaction 
+* Check uniqueness of data entered 
+* Check the validity of the data changes object 
+* Adding methods decidi\editing data 
+6. Setup error handling 
+* Enable\disable error logging 
+* Customize form error 
+* Customize catching exceptions 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

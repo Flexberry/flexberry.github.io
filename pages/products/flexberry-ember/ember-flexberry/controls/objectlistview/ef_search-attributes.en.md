@@ -1,58 +1,60 @@
----
-title: Search all attributes
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember, search, OLV, list
-summary: Features of the standard search control for list and master forms (raised by LookUp)
-toc: true
-permalink: en/ef_search-attributes.html
-lang: en
----
+--- 
+title: Search all attributes 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember, search, OLV, list 
+summary: Features settings for standard control list and search for artisan of forms (picks up at LookUp) 
+toc: true 
+permalink: en/ef_search-attributes.html 
+lang: en 
+autotranslated: true 
+hash: dafb96db95aa073892bd3ebe657fc4e15ea8101882da2c09069e29884c769edd 
+--- 
 
-## Настройка поиска по всем атрибутам для стандартного списка
+## search setting all attributes to a standard list 
 
-Для того чтобы на [списковой форме](ef_object-list-view.html) реализовать возможность поиска по всем атрибутам необходимо:
+In order to [list form](ef_object-list-view.html) to implement a search capability on all attributes should: 
 
-1. Указать свойства поиска в [шаблоне](ef_template.html) списковой формы.
-2. При необходимости переопределить предикаты в [роуте](ef_route.html) списковой формы.
+1. Specify the search properties in the [template](ef_template.html) the list forms. 
+2. If you need to override the predicates in [rout](ef_route.html) the list forms. 
 
-### Настройка шаблона формы
+### setup form template 
 
-Настройка шаблона формы осуществляется следующим образом:
+Customize a form template is as follows: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
-    // ...
+    // ... 
     filters=filters
     applyFilters=(action "applyFilters")
     resetFilters=(action "resetFilters")
     filterButton=true
     filterText=filter
-    filterByAnyWord=filterByAnyWord // поиск по некоторым словам
-    filterByAllWords=filterByAllWords // поиск по всем словам
+    filterByAnyWord=filterByAnyWord // search for some words 
+    filterByAllWords=filterByAllWords // search for all words 
     filterByAnyMatch=(action 'filterByAnyMatch')
-    // ...
+    // ... 
 }}{% endraw %}
-```
+``` 
 
-`filterByAnyWord` - в результате будут выданы все строки, в которых указано заданное в поиске слово/несколько слов.
+`filterByAnyWord` - as a result you will be given all the lines that contain the specified search word/few words. 
 
-![](/images/pages/products/ember-flexberry/controls/filter-by-any-word.png)
+![](/images/pages/products/ember-flexberry/controls/filter-by-any-word.png) 
 
-`filterByAllWords` - в результате будут выданы только те строки, в которых указано заданное слово/словосочетание.
+`filterByAllWords` - the result will be issued to only those lines that contain the specified word/phrase. 
 
-![](/images/pages/products/ember-flexberry/controls/filter-by-all-words.png)
+![](/images/pages/products/ember-flexberry/controls/filter-by-all-words.png) 
 
-По-умолчанию поиск осуществляется по подстроке.
+By default the search is performed by a substring. 
 
-Реализация отображена на [ember-стенде](https://flexberry-ember-dev.firebaseapp.com/)
-* [для OLV](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-objectlistview/custom-filter?filterCondition=and&perPage=20).
-* [для simpleolv](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-simpleolv/custom-filter)
+The implementation is shown on [ember-stand](https://flexberry-ember-dev.firebaseapp.com/) 
+* [for OLV](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-objectlistview/custom-filter?filterCondition=and&perPage=20). 
+* [for simpleolv](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-simpleolv/custom-filter) 
 
-{% include note.html content="`filterByAnyWord` и `filterByAllWords` нельзя использовать вместе, если не реализованы дополнительные элементы тулбара (кнопки) для включения/отключения типа поиска." %}
+{% include note.html content="`filterByAnyWord` and `filterByAllWords` cannot be used together, if not implemented additional elements of the toolbar (buttons) to enable/disable the search type." %} 
 
-### Настройка роута формы
+### configure the router forms 
 
-Переопределить, как будет строится предикат, можно следующим образом:
+To override, as is the predicate in the following way: 
 
 ```javascript
 predicateForAttribute(attribute, filter) {
@@ -75,12 +77,16 @@ predicateForAttribute(attribute, filter) {
         return this._super(...arguments);
     }
   },
-```
+``` 
 
-Настройка предиката необходима для корректного поиска значений, имеющих два признака истина/ложь.
+Setting the predicate required for the correct search values with two criteria true/false. 
 
-_Для flexberry-simpleolve настройки аналогичны._
+Dla flexberry-simpleolve the same settings._ 
 
-## Настройка списка, отображаемого в лукапе
+## setting list displayed in lucapa 
 
-В [LookUp](ef_lookup.html) показывается компонент [flexberry-objectlistview](ef_object-list-view.html). Параметры для этого компонента можно задавать через событие `getLookupFolvProperties` в контроллере формы. Данная настройка описана в статье [Настройка поднимаемой по лукапу формы](ef_modal-window-settings.html) в п. "Настройка фильтрации и количества элементов на странице".
+In the [LookUp](ef_lookup.html) shows the component [flexberry-objectlistview](ef_object-list-view.html). The parameters for this component can be set through the event `getLookupFolvProperties` in the controller form. This setting is described in [setup at raising lucapa form](ef_modal-window-settings.html) in the paragraph "setting the filter and the number of items per page". 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

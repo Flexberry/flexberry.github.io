@@ -1,31 +1,33 @@
----
-title: Implementing an arbitrary data service
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Features of data service implementation
-toc: true
-permalink: en/fo_implement-custom-ds.html
-lang: en
----
+--- 
+title: the Implementation of a random data service 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: features of the implementation of the service data 
+toc: true 
+permalink: en/fo_implement-custom-ds.html 
+lang: en 
+autotranslated: true 
+hash: fde1fc2d45945b8cb5a1361e405e76bba25bb01c51ad23f164d8dd491771f18b 
+--- 
 
-В общем случае [сервис данных](fo_data-service.html) должен реализовывать интерфейс ICSSoft.STORMNET.Business.IDataService.
+In the General case [service data](fo_data-service.html) must implement interface ICSSoft.STORMNET.Business.IDataService. 
 
-## Реализация произвольного сервиса данных
+## implementation of a random data service 
 
-Если необходимо реализовать собственный [сервис данных](fo_data-service.html), следует учитывать следующее:
+If you must implement your own [service data](fo_data-service.html), should consider the following: 
 
-1. Необходимо учитывать атрибуты хранения. Установку этих атрибутов можно проверить методами [Information](fo_methods-class-information.html): GetAssemblyStorageName, GetClassStorageName, GetPropertyStorageName.
-2. Классы, [атрибуты, мастера, детейлы могут быть нехранимыми](fo_not-stored-attributes.html), что указывается NotStoredAttribute. Метод [Information](fo_methods-class-information.html).GetStorablePropertyNames возвращает список хранимых атрибутов.
-3. Сначала всё вычитывается в соответствии с порядком, указанным атрибутом [LoadingOrderAttribute](fo_order-loading-property.html), затем, всё остальное. Метод [Information](fo_methods-class-information.html).GetLoadingOrder возвращает порядок.
-4. В атрибутах, мастерах могут не допускаться пустые значения, что указывается атрибутом NotNullAttribute.
+1. You must consider the attributes of storage. The installation of these attributes can be checked by the methods of [Information](fo_methods-class-information.html): GetAssemblyStorageName, GetClassStorageName, GetPropertyStorageName. 
+2. Classes, [attributes, master detaili can be nejanilini](fo_not-stored-attributes.html), which indicated NotStoredAttribute. The [Information](fo_methods-class-information.html).GetStorablePropertyNames returns the list of stored attributes. 
+3. First of all be deducted in accordance with the procedure specified by the attribute [LoadingOrderAttribute](fo_order-loading-property.html), then all the rest. The [Information](fo_methods-class-information.html).GetLoadingOrder returns order. 
+4. In attributes, the wizards could not be allowed empty values, which is specified by the attribute NotNullAttribute. 
 
-С целью оптимизации, нужно обновлять только изменённые атрибуты [Information](fo_methods-class-information.html).GetAlteredProperyNames.
+To optimize, you need to update only the changed attributes [Information](fo_methods-class-information.html).GetAlteredProperyNames. 
 
-## Реализация сервиса данных для реляционного хранилища
+## the implementation of the service data for relational storage 
 
-Если требуется реализовать [сервис данных](fo_data-service.html) для реляционного хранилища, рекомендуется унаследоваться от [готовых сервисов данных Flexberry Platform](fo_standard-data-services.html), в частности, от общего предка реляционных сервис данных [SQLDataService](fo_sql-data-service.html), либо [ODBCDataService](fo_odbc-data-service.html). Затем, согласно особенностей хранилища, которое планируется использовать, необходимо соответствующим образом перегрузить методы.
+If you want to implement the [service data](fo_data-service.html) for relational storage, it is recommended to unasledovala [ready data services Platform Flexberry](fo_standard-data-services.html), in particular, from a common ancestor relational data service [SQLDataService](fo_sql-data-service.html), or [ODBCDataService](fo_odbc-data-service.html). Then, according to features of the repository that you want to use the appropriate overload methods. 
 
-Ниже приводится пример [сервиса данных](fo_data-service.html), выполняющего работу с Microsoft SQL Server напрямую, через SQLClient:
+Below is an example of [data service](fo_data-service.html) working with Microsoft SQL Server directly, using the SQLClient: 
 
 ``` csharp
 public class MSSQLDataService:ICSSoft.STORMNET.Business.SQLDataService
@@ -43,6 +45,10 @@ public class MSSQLDataService:ICSSoft.STORMNET.Business.SQLDataService
         return result;
     } 
 }
-```
+``` 
 
-В этом примере переопределены всего два метода: один теперь выполняет подсоединение к источнику напрямую, другой учитывает специфику указания в запросы функции ISNULL.
+In this example, the only overridden two methods, one now performs the connection to the source directly, the other takes into account the specific instructions in the query ISNULL. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

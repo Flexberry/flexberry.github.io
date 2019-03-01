@@ -1,107 +1,109 @@
----
-title: Добавление пользователей в БД системы полномочий при windows-аутентификации
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Security
-toc: true
-permalink: en/fa_authentication-adapter.html
-lang: en
----
+--- 
+title: Add users to the database system of authority in windows authentication 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Security 
+toc: true 
+permalink: en/fa_authentication-adapter.html 
+lang: en 
+autotranslated: true 
+hash: 6170c69c5541bc5f09bab3e058c9315ad97b4d13981cb0e308b1d57088e3a4db 
+--- 
 
-## AuthenticationAdapter
+## AuthenticationAdapter 
 
-`AuthenticationAdapter` - класс, позволяющий осуществлять добавление пользователей в БД системы полномочий при windows-аутентификации.
-Данный класс находится в `CheckingLibrary.dll` (версия сборки после 01.02.2013).
+`AuthenticationAdapter` class that allows adding users in the database system powers up with windows authentication. 
+This class is `CheckingLibrary.dll` (build version after 01.02.2013). 
 
-## Методы класса AuthenticationAdapter
-Класс `AuthenticationAdapter` предоставляет следующие статические методы: 
+## class Methods AuthenticationAdapter 
+PstrfAuthenticationAdapter` class provides the following static methods: 
 
-1.
+1. 
 
 ```csharp
-/// <summary>
-/// Получение объекта, соответствующего текущему пользователю в БД полномочий
-/// (полное имя пользователя берётся как HttpContext.Current.User.Identity.Name)
-/// </summary>
-/// <returns>Объект или null, если ничего не было найдено</returns>
+/// <summary> 
+/// Get the object corresponding to the current user in the database of the authority 
+/// (the user's full name is taken as HttpContext.Current.User.Identity.Name) 
+/// </summary> 
+/// <returns>the Object or null if none was found</returns> 
 public static Agent GetDbUser()
-```
+``` 
 
-2.
+2. 
 
 ```csharp
-/// <summary>
-/// Получение объекта, соответствующего текущему пользователю в БД полномочий
-/// </summary>
-/// <param name="username">Полное имя пользователя</param>
-/// <returns>Объект или null, если ничего не было найдено</returns>
+/// <summary> 
+/// Get the object corresponding to the current user in the database of the authority 
+/// </summary> 
+/// <param name="username">user Full name</param> 
+/// <returns>the Object or null if none was found</returns> 
 public static Agent GetDbUser(string username)
-```
+``` 
 
-3.
+3. 
 
 ```csharp 
-/// <summary>
-/// Получение объекта, соответствующего текущему пользователю в БД полномочий.
-/// </summary>
-/// <param name="username">Полное имя пользователя.</param>
-/// <param name="dataService">Сервис данных (<c>null</c>, если нужно использовать стандартный).</param>
-/// <exception cref="InvalidOperationException">Выбрасывается в том случае, если в системе полномочий произошла ошибка.</exception>
-/// <returns>Объект или <c>null</c>, если ничего не было найдено.</returns>
+/// <summary> 
+/// Get the object corresponding to the current user in the database credentials. 
+/// </summary> 
+/// <param name="username">the user's Full name.</param> 
+/// <param name="dataService">data Service (<c>null</c> if you want to use the default).</param> 
+/// <exception cref="InvalidOperationException">is Thrown in the case if the authority system error occurred.</exception> 
+/// <returns>the Object or <c>null</c> if none was found.</returns> 
 public static Agent GetDbUser(string username, IDataService dataService)
-```
+``` 
 
-4.
+4. 
 
 ```csharp
-/// <summary>
-/// Проверка существования в системе полномочий пользователя с указанным логином.
-/// </summary>
-/// <param name="login">Логин пользователя.</param>
-/// <exception cref="InvalidOperationException">Выбрасывается в том случае, если в системе полномочий произошла ошибка.</exception>
-/// <returns>Возвращает <c>true</c> если пользователь существует.</returns>
+/// <summary> 
+/// Check existence in the system credentials of the user with the specified login. 
+/// </summary> 
+/// <param name="login">user Login.</param> 
+/// <exception cref="InvalidOperationException">is Thrown in the case if the authority system error occurred.</exception> 
+/// <returns>Returns <c>true</c> if the user exists.</returns> 
 public static bool IsUserExist(string login)
-```
+``` 
 
-5.
+5. 
 
 ```csharp
-/// <summary>
-/// Создание пользователя в БД подсистемы полномочий
-/// </summary>
-/// <param name="username">Логин пользователя, возможно с доменом</param>
-/// <param name="friendlyUserName">Имя пользователя</param>
-/// <returns>Созданный пользователь</returns>
+/// <summary> 
+/// Create user in the database subsystem powers 
+/// </summary> 
+/// <param name="username">the username of the user, possibly with domain name</param> 
+/// <param name="friendlyUserName">user Name</param> 
+/// <returns>Created user</returns> 
 public static Agent CreateDbUser(string username, string friendlyUserName)
-```
+``` 
 
-6.
+6. 
 
 ```csharp
-/// <summary>
-/// Создание пользователя в БД подсистемы полномочий.
-/// </summary>
-/// <param name="username">Логин пользователя, возможно с доменом.</param>
-/// <param name="friendlyUserName">Имя пользователя.</param>
-/// <param name="addDefaultRoles">Следует ли добавлять роли по умолчанию для создаваемого пользователя.</param>
-/// <param name="dataService">Сервис данных (<c>null</c>, если нужно использовать стандартный).</param>
-/// <returns>Созданный пользователь.</returns>
+/// <summary> 
+/// Create user in the database subsystem powers. 
+/// </summary> 
+/// <param name="username">the username of the user, perhaps with the domain.</param> 
+/// <param name="friendlyUserName">user Name.</param> 
+/// <param name="addDefaultRoles">whether to add the default roles for the created user.</param> 
+/// <param name="dataService">data Service (<c>null</c> if you want to use the default).</param> 
+/// <returns>the Created user.</returns> 
 public static Agent CreateDbUser(string username, string friendlyUserName, bool addDefaultRoles, IDataService dataService)
-```
+``` 
 
-7.
+7. 
 
 ```csharp
-/// <summary>
-/// Создание пользователя в БД подсистемы полномочий
-/// (имя пользователя берётся из домена)
-/// </summary>
-/// <param name="username">Логин пользователя, возможно с доменом</param>
-/// <returns>Созданный пользователь</returns>
-/// <exception cref="Exception">Если пользователь не будет найден в домене, произойдёт исключительная ситуация</exception>
+/// <summary> 
+/// Create user in the database subsystem powers 
+/// (the user name is taken from the domain) 
+/// </summary> 
+/// <param name="username">the username of the user, possibly with domain name</param> 
+/// <returns>Created user</returns> 
+/// <exception cref="Exception">If the user is not found in the domain, will happen exception</exception> 
 public static Agent CreateDbUser(string username)
-```
+``` 
 
-{% include warning.html content="Данный метод стоит использовать, если есть уверенность, что в условиях, где развёрнуто приложение, настройки Active Directory позволят  корректно выполнить нижеприведённый код (если такой уверенности нет, лучше использовать перегрузку метода с двумя параметрами)" %}
+{% include warning.html content="This method should be used if there is confidence that in circumstances where an application is deployed, configure the Active Directory will properly execute the code below (if you are not sure, better to use an overload with two parameters)" %} 
 
 ```csharp
 using (var context = new PrincipalContext(ContextType.Domain))
@@ -114,16 +116,16 @@ using (var context = new PrincipalContext(ContextType.Domain))
 		}
 	}
 }
-```
+``` 
 
-## Особенности использования AuthenticationAdapter
+## Features use AuthenticationAdapter 
 
-1. При выполнении метода `CreateDbUser` в БД будут добавлены следующие объекты:
+1. The method `CreateDbUser` in the database are added the following objects: 
 
-	* Пользователь с привязкой к домену и к ролям, заданным по умолчанию (если соответствующие роли будут найдены в БД полномочий).
-	* Домен пользователя, если ранее он отсутствовал в системе полномочий.
+* The user bound to the domain and to roles, the default (if the corresponding roles are found in the database of the authority). 
+* User domain, if it is previously absent in the system of authority. 
 
-2. Задание ролей по умолчанию происходит в конфиге приложения:
+2. The job role is the default config of the application: 
 
 ```xml
 <configuration>
@@ -133,28 +135,28 @@ using (var context = new PrincipalContext(ContextType.Domain))
 	</appSettings>
 	<!--...-->
 </configuration>
-```
-## Пример использования AuthenticationAdapter
+``` 
+## Example of using AuthenticationAdapter 
 
-Использовать AuthenticationAdapter можно, например, при событии Page_Load в Site.Master:
+Use AuthenticationAdapter you can, for example, in the Page_Load event in the Site.Master: 
 
 ```csharp
 protected void Page_Load(object sender, EventArgs e)
 {
-	//...
+	//... 
 	ApplyTreeViewCookie();
-	//...
+	//... 
 	if (AuthenticationAdapter.GetDbUser(Context.User.Identity.Name) == null)
 		AuthenticationAdapter.CreateDbUser(Context.User.Identity.Name);
-	//...
+	//... 
 	fio.Text = Context.User.Identity.Name;
-	//...
+	//... 
 }
-```
+``` 
 
-## Создание пользователя с заполненным паролем
+## create a user with a filled-in password 
 
-Если при создании пользователя нужно, чтобы его пароль не был равен NULL, то нужно взять исходный код метода 6 и подредактировать его, добавив задание значения пароля. Затем использовать полученный метод для создания пользователей. Например:
+If you create a user need to have his password was not equal to NULL, then you need to take the source code of the method 6 and edit it, adding the set value of the password. Then use this method to create users. For example: 
 
 ```csharp
 public static Agent CreateDbUser(string username, string friendlyUserName, bool addDefaultRoles, IDataService dataService)
@@ -177,4 +179,8 @@ public static Agent CreateDbUser(string username, string friendlyUserName, bool 
  
     return agent;
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

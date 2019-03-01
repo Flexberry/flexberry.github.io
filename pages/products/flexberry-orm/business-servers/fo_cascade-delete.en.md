@@ -1,82 +1,84 @@
----
-title: Cascading deletion of objects
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, databases, business servers, restrictions
-summary: Methods of cascading removal of objects, their pros and cons
-toc: true
-permalink: en/fo_cascade-delete.html
-lang: en
----
+--- 
+title: Cascade delete of objects 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, database, business server, restrictions 
+summary: How a cascading delete of objects, their pros and cons 
+toc: true 
+permalink: en/fo_cascade-delete.html 
+lang: en 
+autotranslated: true 
+hash: ac6164d648397d2e508b1d67aa02ae24e115a355a8034908d16c45d79c7ade20 
+--- 
 
-## Задача каскадного удаления
+## Task cascade delete 
 
-Пусть дана следующая [диаграмма](fd_class-diagram.html):
+Given the following [figure](fd_class-diagram.html): 
 
-![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png)
+![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm.png) 
 
-Если в базе данных есть объекты типа `Клиент`, ссылающиеся на `Адрес`, то без дополнительных настроек при попытке удаления объекта типа `Адрес` произойдёт ошибка. База данных не даст удалить такой объект.
+If in the database there are objects of type `Клиент` referencing `Адрес`, without any additional settings when you try to remove an object of type `Адрес` an error will occur. The database will not delete such an object. 
 
-## Варианты решения проблемы
+## the solutions to the problem 
 
-Вариантов может быть очень много, в данной статье будут приведено только несколько. Технология предоставляет механизмы для решения проблемы (в основном они опираются на использование [бизнес-серверов](fo_bs-wrapper.html)), варианты ограничиваются лишь фантазией разработчика. 
+Options can be many, this article will present only a few. Technology provides mechanisms for the solution of the problem (they mostly rely on the use of [business server](fo_bs-wrapper.html)), the options are limited only by the imagination of the developer. 
 
-### Специальные интерфейсы
+### Special interfaces 
 
-Для реализации каскадного удаления можно воспользоваться специально разработанными интерфейсами [IReferencesCascadeDelete](fo_i-references-cascade-delete.html) и [IReferencesNullDelete](fo_i-references-null-delete.html).
+To implement cascading deletes you can use specially developed interfaces [IReferencesCascadeDelete](fo_i-references-cascade-delete.html) and [IReferencesNullDelete](fo_i-references-null-delete.html). 
 
-### Рекурсивное удаление
+### Recursive deletion 
 
-Это самый простой вариант, но и самый недружелюбный к пользователю: удаление 1 объекта может привести к удалению важной информации информации, связанной с данным объектом.
+This is the easiest option, but also the most unfriendly to the user: removing 1 object can remove important information, information associated with the object. 
 
-Алгоритм:
+Algorithm: 
 
-* В бизнес-сервере мастера (в примере - `Адрес`) вычитать все объекты, ссылающиеся на удаляемый.
-* Проставить всем объектам статус [ObjectStatus.Deleted](fo_object-status.html).
-* Отправить на удаление все объекты.
-* Повторить рекурсивно для всех объектов.
+* Business server wizard (in the example - `Адрес`) subtract all the objects that reference the deleted. 
+* To assign all objects status [ObjectStatus.Deleted](fo_object-status.html). 
+* Send to delete all the objects. 
+* Repeat recursively for all objects. 
 
-### Фиктивный объект
+### a Dummy object 
 
-Такой вариант позволяет сохранить все данные, кроме того объекта, который необходимо удалить. Однако в базе останется множество объектов, ссылающихся на несуществующий.
+This option allows you to save all the data, except for the object you want to delete. However, the database will be a lot of objects that reference non-existent. 
 
-Стоит также отметить, что данный способ требует дополнительной обработки данных при выводе пользователю. Объекты, ссылающиеся на фиктивные, необходимо фильтровать или обрабатывать особым образом.
+It should also be noted that this method requires additional processing of the data when output to the user. Objects that refer to fictitious, you want to filter or handle in a special way. 
 
-Вариантов решения проблемы несколько:
+Solutions to problems are several: 
 
-* создавать фиктивный объект при каждом удалении
-* создать по 1 фиктивному объекту для каждого класса и "вешать" все ссылки на него.
+* create a dummy object at each removal 
+* create 1 dummy object for each class and "hang" all references to it. 
 
-Алгоритм для второго варианта:
+The algorithm for the second option: 
 
-* (один раз) Создать объект и записать его в базу. Запоминить его [PrimaryKey](fo_primary-keys-objects.html), например, в файле конфигурации или в файле с константами.
-* В бизнес-сервере мастера (в примере - `Адрес`) вычитать все объекты, ссылающиеся на удаляемый.
-* Проставить всем объектам ссылку на фиктивный объект.
-* Отправить на обновление все объекты.
+* (once) to Create an object and write it to the database. Remember him [PrimaryKey] in(fo_primary-keys-objects.html), for example, in a configuration file or in the file with constants. 
+* Business server wizard (in the example - `Адрес`) subtract all the objects that reference the deleted. 
+* To assign all objects a reference to a dummy object. 
+* Send to update all objects. 
 
-### Фиктивное удаление
+### Bogus removal 
 
-При фиктивном удалении данные на самом деле не удаляются из базы, а всего лишь помечаются как удаленные. Во все объекты добавляется какое-нибудь поле типа `bool`. При удалении объекта в бизнес-сервере перехватывается объект, у него меняется статус с `Deleted` на `Altered` и изменяется поле `Актуально = false;`.
+When the fictitious destruction of data is actually not deleted from the database, but only marked as deleted. All objects added to some box, type `bool`. When you delete an object in the business server is intercepted by the object, it changes the status from `Deleted` on `Altered` and changing field `Актуально = false;`. 
 
-После этого объект уходит на обновление в базу и остается в ней, но считается удаленным. Разумеется, необходимо реализовывать логику, которая будет "считать" такие объекты удаленными: при выводе информации пользователю необходимо накладывать ограничения на выводимые данные.
+Then the object goes to update the database and remains there, but is considered remote. Of course, you need to implement logic that will "count" these objects are removed: in the output information the user has to impose restrictions on the output. 
 
-{% include note.html content="Такой способ позволяет восстанавливать удаленные объекты." %}
+{% include note.html content="This method allows you to recover deleted objects." %} 
 
-#### Пример
+#### Example 
 
-Необходимо доработать диаграмму классов таким образом, чтобы она поддерживала фиктивное удаление: добавить поле `Актуально:bool`.
+Necessary to Refine the class diagram thus, to support the bogus deletion: add a field `Актуально:bool`. 
 
-![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm-aktualno.png)
+![](/images/pages/products/flexberry-orm/business-servers/kredit-diagramm-aktualno.png) 
 
-Добавить логику в бизнес-сервера объектов (на примере `Адреса`):
+To add logic to the business-server objects (for example `Адреса`): 
 
 ```csharp
 if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 {
-	// Не дадим объекту удалиться, но выставим флаг Актуальности.
+	// Don't let the object to be removed, but will raise the flag of Relevance. 
 	UpdatedObject.SetStatus(ObjectStatus.Altered);
 	UpdatedObject.Актуально = false;
 
-	// Найдем все объекты, ссылающиеся на "удаляемый" и удалим их.
+	// Find all objects, referencing "delete" and remove them. 
 	var ds = (SQLDataService)DataServiceProvider.DataService;
 	var klients =
 		ds.Query<Клиент>(Клиент.Views.КлиентE)
@@ -88,14 +90,17 @@ if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
 
 	return klients.ToArray();
 }
-```
+``` 
 
-{% include note.html content="Внимание! Cсылающиеся объекты отправленные на удаление, но они точно также перехватятся в своем бизнес-сервере и не удалятся." %}
+{% include note.html content="Attention! Reference objects are sent for deletion, but they are just as perevodyatsya in the business server and is not removed." %} 
 
-Далее, чтобы пользователю не выводились "удаленные" данные при просмотре списка объектов, требуется на соответствующий контрол наложить ограничение вида:
+Next to the user being shown the "deleted" data when viewing the list of objects required for the appropriate control limit: 
 
 ``` csharp
 var ds = (MSSQLDataService)DataServiceProvider.DataService;
 IQueryable<Клиент> limit1 = ds.Query<Адрес>(Адрес.Views.АдресL).Where(Address => Address.Актуально);
 Function onlyActual = LinqToLcs.GetLcs(limit1.Expression, Адрес.Views.АдресL).LimitFunction;
 ```
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

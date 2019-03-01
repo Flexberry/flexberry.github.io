@@ -1,25 +1,31 @@
----
-title: Convert constraint function to linq-constraint
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ASPNET, Flexberry ORM, Ограничения
-summary: Методы и пример преобразования
-toc: true
-permalink: en/fo_lcs-to-linq.html
-lang: en
----
+--- 
+title: Transformation of the limit function in linq-restriction 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ASPNET Flexberry ORM Limitations 
+summary: Methods and an example of conversion 
+toc: true 
+permalink: en/fo_lcs-to-linq.html 
+lang: en 
+autotranslated: true 
+hash: be7cef6f8c080e714521921baaf79a6cfb0f0ffd9e7e36d28d0b55d9de8ea249 
+--- 
 
-Существуют методы, позволяющие производить конвертацию из [функции ограничения](fo_limit-function.html) в выражение для [LINQProvider](fo_linq-provider.html) и [наоборот](fo_limitation.html).
+There are methods to convert from the [parental control](fo_limit-function.html) in the expression for [LINQProvider](fo_linq-provider.html) and [Vice versa](fo_limitation.html). 
 
-* `Получение Linq-выражения из функции ограничения`
-* `lf` - функция ограничения.
-* `expression` - Linq-выражение.
+* `Получение Linq expressions from the function ограничения` 
+* `lf` - function limitation. 
+* `expression` - Linq-expression. 
 
 ```csharp
 var limitResolvingViews = new List<View>() { Кредит.Views.C__КредитE }; 
 Expression expression = new LcsInterpretator().Interpret(typeof(Кредит), lf, "x", limitResolvingViews);
-```
+``` 
 
-Здесь `limitResolvingViews` - [представления](fd_view-definition.html), аналогичные [resolvingViews в LINQProvider](fo_linq-provider.html), необходимые для корректного преобразования [Функции ограничения (Limit Function)](fo_limit-function.html) в [Linq-ограничение](fo_linq-provider.html) (в первую очередь особенности связаны с обработкой [детейлов](fo_detail-associations-properties.html)). К `limitResolvingViews` предъявляются следующие требования:
+Here `limitResolvingViews` - [view](fd_view-definition.html) similar to [resolvingViews in LINQProvider](fo_linq-provider.html) required for correct conversion of [limit Function (Limit Function)](fo_limit-function.html) in [Linq-limit](fo_linq-provider.html) (first features are associated with the processing [of datalow](fo_detail-associations-properties.html)). To `limitResolvingViews` has the following requirements: 
 
-* При задании ограничения всеобщности на детейлы ([ExistExact](fo_exist-details.html)) в используемое представление детейла должна быть включена ссылка на агрегатора.
-* В основное представление агрегатора должны быть включены все детейлы, которые могут встретиться в ограничении.
+* When you set the constraint of universality on detaily ([ExistExact](fo_exist-details.html)) in the view of detail should be included a reference to the aggregator. 
+* A basic understanding of the aggregator should include all detaily that can occur in the constraint. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

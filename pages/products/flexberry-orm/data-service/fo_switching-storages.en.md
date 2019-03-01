@@ -1,22 +1,28 @@
----
-title: Using Postgres as a repository
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service, postgres
-summary: Example of using Postgres DBMS
-toc: true
-permalink: en/fo_switching-storages.html
-lang: en
----
+--- 
+title: Using Postgres as storage 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services, postgres 
+summary: Example of using the Postgres database 
+toc: true 
+permalink: en/fo_switching-storages.html 
+lang: en 
+autotranslated: true 
+hash: 0602c179d6a22226599f335efb5a138b9e60d62f3011fa727add123daddd6e7f 
+--- 
 
-Для реализации поставленной задачи необходим установленный [Postgres](http://www.postgresql.org/).
+To accomplish the task, you need to install [Postgres](http://www.postgresql.org/). 
 
-* Далее следует создать базу данных, выполнив скрипт
+* Next, you must create the database by running the script 
 
 ```sql
 FlexberryORM\Database\POSTGRES\create.sql
-```
+``` 
 
-* Затем в `app.config` найти секцию `appSettings`.
-* Закомментировать опции `DataServiceType` и `CustomizationStrings` и затем переименовать опции `DataServiceType_POSTGRE` и `CustomizationStrings_POSTGRE` в `DataServiceType` и `CustomizationStrings`.
-* Изменить опцию `CustomizationStrings` для корректного подключения к серверу и базе данных.
-* Запустить пример, чтобы убедиться, что он работает: проверить создание и загрузку объектов данных.
+* Then `app.config` to find section `appSettings`. 
+* Comment out options `DataServiceType` and `CustomizationStrings` and then rename options `DataServiceType_POSTGRE` and `CustomizationStrings_POSTGRe` in `DataServiceType` and `CustomizationStrings`. 
+* Change the option `CustomizationStrings` to correctly connect to the server and the database. 
+* To run the sample to verify that it works: check the creation and loading of data objects. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

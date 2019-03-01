@@ -1,55 +1,57 @@
----
-title: Ember Flexberry Designer
-keywords: Ember Flexberry Desinger, UML, основы проектирования, модули, настройка
-summary: Общие сведения об Ember Flexberry Desinger
-sidebar: flexberry-designer_sidebar
-toc: false
-permalink: en/fd_ember-flexberry-desinger.html
-lang: en
----
+--- 
+title: Ember Flexberry Designer 
+keywords: Ember Flexberry Desinger, UML, design basics, modules, configure 
+summary: General information about Ember Flexberry Desinger 
+sidebar: flexberry-designer_sidebar 
+toc: false 
+permalink: en/fd_ember-flexberry-desinger.html 
+lang: en 
+autotranslated: true 
+hash: 56dcd30f1e91e8c89091384c68cbdf4ca8ad7835c6360f77226ec951fbd46dc0 
+--- 
 
-**Ember Flexberry Designer** - CASE-инструмент с веб-интерфейсом [Flexberry Designer](fd_landing_page.html) предназначен для анализа и проектирования объектно-ориентированных систем, а также генерации прототипов веб-приложений на основе построенных моделей. Реализован с помощью фреймворка [Ember.js](https://ru.wikipedia.org/wiki/Ember.js).
+**Ember Flexberry Designer** - CASE-tool with a web interface [Flexberry Designer](fd_landing_page.html) is used for analysis and design of object-oriented systems, as well as generating prototypes of web applications based on the constructed models. Implemented using the framework [Ember.js](https://ru.wikipedia.org/wiki/Ember.js). 
 
-Ember Flexberry Designer является [продуктом платформы Flexberry](fp_platform-structure.html).
+Ember Flexberry Designer is [product platform Flexberry](fp_platform-structure.html). 
 
-`Ember Flexberry Desinger` может быть использован в двух режимах:
+`Ember Flexberry Desinger` can be used in two modes: 
 
-1. Создается отдельный сервис, позволяющий работать с различными проектами. В этом случае доступен список организаций (по аналогии с [Github](https://github.com)) и список проектов.
-2. Работа с составной частью приложения. В таком случае Desinger загружается с выбранным проектом для конкретного решения.
+1. Create a separate service that allows you to work with different projects. In this case, a list of organizations (similar to [Github](https://github.com)) and the list of projects. 
+2. Working with an integral part of the application. In this case, Desinger loaded with the selected project-specific solutions. 
 
-## Основные понятия
+## concepts 
 
-`Метаданные приложения` – данные, описывающие структуру классов и их отношений, структуру связанных с ними форм и прочие артефакты, которые используются при проектировании и генерации прототипа приложения.
+`Метаданные приложения` – data describing the structure of classes and their relationships, the structure of related forms and other artifacts used in the design and generate a prototype application. 
 
-`Класс данных` - класс, соответствующий некоторой сущности предметной области. На диаграммах UML не имеет стереотипа, либо может иметь стереотип `implementation`. Экземплярами классов данных являются объекты данных. Однако термин «объект данных» периодически используется как синоним термина «класс данных».
+`Класс данных` class that corresponds to some domain entities. In the diagrams the UML has a stereotype, or may have a stereotype `implementation`. Instances of data classes are data objects. However, the term "data object" is periodically used as a synonym of the term "data class". 
 
-`Собственный атрибут` – атрибут класса данных, который определен непосредственно в самом классе.
+`Собственный атрибут` – attribute data class that is defined directly in the class. 
 
-`Мастер` - класс данных со стороны множественности 1, либо 0..1 в UML-отношении «ассоциация» между классами данных.
+`Мастер` class data from the multiplicity 1 or 0..1 in UML, an Association relationship between classes of data. 
 
-`Детейл` – класс данных, связанный с агрегатором (являющийся «частью») в UML-отношении «композиция» между классами данных.
+`Детейл` class of data associated with the aggregator (which is the "part") in a UML relation "composition" between classes of data. 
 
-`Представление` – поименованный набор собственных или унаследованных атрибутов класса, а также атрибутов из других связанных классов (включая сами связи). Представления применяются при получении данных с бакенда и, соответственно, при чтении данных из базы дынных. Представления используются при чтении данных на формах приложения, а также для «явного» чтения данных внутри исходного кода приложения. На формах, в основном, используются два вида представления:
+`Представление` – named set of its own or inherited attributes of the class, as well as attributes of other linked classes (including themselves). Representations are used when receiving data from backend and, accordingly, when reading data from a database. Views are used when reading data on the application forms, as well as for "clear" read data from within the source code of the application. On forms, basically, there are two kinds of submission: 
 
-* _L-представление_ - используется на списковых формах;
-* _E-представление_ - используется на формах редактирования и в компоненте для работы с детейлами.
+* _L-predstavlenie - used to list формах; 
+* _E-predstavlenie - used in the forms editing component for detaylari.
 
-`Списковая форма` – форма, которая обеспечивает пользовательский интерфейс для отображения списка объектов данных в некотором представлении, а также выполнения вспомогательных действий с этим списком (поиск, фильтрация, сортировка, настройка отображения, экспорт данных и пр.). С одним классом данных может быть связано несколько списковых форм. С точки зрения метаданных приложения, списковая форма – это класс со стереотипом `listform`.
+`Списковая форма` – shape, which provides a user interface for displaying a list of data objects in a view and perform support actions with this list (search, filtering, sorting, display, data export, etc.). One class of data may involve several list forms. From the point of view of application metadata, list form is a class with the stereotype `listform`. 
 
-`Форма редактирования` - форма, которая обеспечивает пользовательский интерфейс для создания или редактирования объекта данных в заданном представлении. С одним классом данных может быть связано несколько форм редактирования. С точки зрения метаданных приложения форма редактирования – это класс со стереотипом `editform`.
-Класс приложения – специальный класс в метаданных приложения, в котором хранятся общие для всего проектируемого приложения настройки – например, структура навигации (меню), конфигурация приложения и т.п. Данный класс имеет стереотип `application` в метаданных приложения.
+`Форма редактирования` - shape, which provides a user interface for creating or editing a data object in a given view. With one data class can be associated to several forms of editing. From the point of view of application metadata editing form is a class with the stereotype `editform`. 
+The application class is a special class in the application metadata, which stores common to all of the applications settings – for example, the navigation structure (menu), application configuration, etc. This class has the stereotype `application` in the application metadata. 
 
-`Бизнес-сервер` – класс, в который выносятся методы, срабатывающие «автоматически» после вставки, изменения и удаления данных в объекте данных определенного типа перед отправкой соответствующих изменений в базу данных (аналог триггеров в базах данных, но на уровне исходного кода приложения), а также сопутствующая бизнес-логика, связанная с соответствующим классом данных. С точки зрения метаданных приложения бизнес-сервер – это класс со стереотипом `businessserver`.
+`Бизнес-сервер` class to which the submitted methods are triggered "automatically" after inserting, modifying, and deleting data in the data object of a certain type before sending the appropriate changes to the database (similar to triggers in databases, but at the level of the application source code), and related business logic associated with the corresponding data class. From the point of view of application metadata business server is a class with the stereotype `businessserver`. 
 
-`Сервис генерации` – дополнительное программное обеспечение на стороне сервера, обеспечивающее возможность генерации прототипа приложения на основе метаданных проектируемого приложения.
+`Сервис генерации` – additional software on the server side, providing the possibility of generating prototype applications based on metadata of the applications. 
 
-## Режимы работы Flexberry Designer
+## Modes Flexberry Designer 
 
-### С «жестко» заданным проектом
+### With "hard" a given project 
 
-В этом случае ID проекта указывается в конфигурации перед сборкой приложения. В таком режиме при запуске приложения сразу откроется форма с структурой указанного в конфигурации проекта.
- 
-ID проекта при этом указывается в файле `environment.js` приложения:
+In this case, the project ID specified in your configuration before you build the application. In this mode, when you run the application at once will open form with a structure specified in the project configuration. 
+
+Project ID is specified in the file `environment.js` application: 
 
 ```javascript
 var ENV = {    
@@ -63,34 +65,38 @@ var ENV = {
     },
     …
 };
-```
+``` 
 
-### Без «жесткой» привязки к проекту
+### No "hard" reference to the project 
 
-В этом случае доступна работа с множеством проектов, сгруппированных по организациям. 
-При режиме работы без жесткой привязки к проекту, перед началом работы над проектом требуется сначала выбрать организацию, затем необходимо создать или выбрать проект и после выбора проекта откроется форма для редактирования структуры приложения.
+In this case, the users can work with multiple projects, grouped by organizations. 
+With the mode of operation without a rigid connection to the project, before work on the project, you must first select the organization, then, you must create or select a project and after a project is selected will open the form for editing the application structure. 
 
-### Организации
+### Organization 
 
-Список организаций, для которых планируется создание сервиса. Внутри организации расположен список проектов (решений).
+A list of organizations for which the planned establishment of the service. Within the organization there is a list of projects (solutions). 
 
-### Проекты
+### Projects 
 
-Проект - это собственно решение, прикладная система. Каждый проект имеет собственную структуру метаданных (классы и формы).
+The project is actually the solution application system. Each project has its own metadata structure (classes and forms). 
 
-### Структура приложения
+### app Structure 
 
-Структура приложения - это основная форма, которая является ключевой для создания приложения. Она состоит из:
+The application structure is the basic form, which is the key to create the application. It consists of: 
 
-* _левого дерева_ (список классов). Это перечнь всех классов данных проектируемого приложения, а также все списковые формы и формы редактирования, привязанные к соответствующим классам данных (вложенные узлы). Классы разных типов имеют разную иконку. Левое дерево позволяет создавать/удалять/редактировать классы данных и формы, получить список классов в виде таблицы (аналогично менеджеру классов в декстопном варианте дизайнера).
-* _правого дерева_ (структура конечного приложения) для редактирования навигационной структуры (структуры меню) проектируемого приложения. В данном дереве можно создавать меню произвольной вложенности, группируя элементы меню по «папкам» на различных уровнях. Элементами навигации (не считая «папки», которые используются для группировки элементов) могут быть списковые формы, формы редактирования или пункты меню, ссылающиеся на произвольный адрес URL. Для него доступны операции:
+* Levogo dereva (list of classes). This is a list of all data classes of the applications, as well as all of the list form and edit form bound to the appropriate data classes (nested nodes). Classes of different types have different icon. The left tree allows you to create/delete/edit data classes and forms to the list of classes in the form of a table (similar to the Manager class in the desktop version of the designer). 
+* Pravogo dereva (the structure of the target application) to edit the navigation structure (menu structure) of the design application. In this tree you can create menus of arbitrary nesting by grouping menu items into "folders" on different levels. The navigation items (not counting the "folders" that are used to group elements) can be list form, form editing, or menu items that refer to an arbitrary URL. Available operations: 
 
-    * добавление нового элемента навигации (пункта меню) со ссылкой на произвольный адрес URL;
-    * редактирование свойств (заголовка и описания) выбранного элемента навигации;
-    * удаление элемента навигации;
-    * добавление новой «папки» в структуру навигации;
-    * изменение порядка элементов навигации (перемещение вверх и вниз);
-    * сохранение структуры навигации.
+* adding a new navigation item (menu item) with reference to an arbitrary address URL; 
+* edit properties (title and description) of the selected item навигации; 
+* delete item навигации; 
+* add new folders to the structure навигации; 
+* change the order of navigation controls (move up and down); 
+* save the navigation. 
 
-Для добавления списковой формы или формы редактирования (из списка всех возможных форм, которые отображаются в левом дереве), необходимо выбрать соответствующую форму в левом дереве, затем выбрать соответствующую «папку» в правом дереве и нажать на кнопку добавления формы в навигационную структуру.
-* вкладок, позволяющих настраивать и редактировать свойства класса `application`, стадии и формы.
+To add list forms or edit forms (from a list of all the possible forms that appear in the left tree), you must select the appropriate form in the left tree, then select the appropriate "folder" in the right tree and click on add form in the navigation structure. 
+* tabs allowing you to configure and edit properties of a class `application`, stages and forms. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

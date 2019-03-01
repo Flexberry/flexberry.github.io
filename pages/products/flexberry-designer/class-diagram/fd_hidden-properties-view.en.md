@@ -1,37 +1,42 @@
----
-title: Скрытые свойства в представлении
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, View, представление, скрытые свойства, пример
-summary: Особенности генерации скрытых свойств в представлении, продемонстрированные на примере
-toc: true
-permalink: en/fd_hidden-properties-view.html
-lang: en
----
+--- 
+title: the Hidden properties in the view 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, View, view hidden properties, example 
+summary: Features generation hidden properties in the view shown in the example 
+toc: true 
+permalink: en/fd_hidden-properties-view.html 
+lang: en 
+autotranslated: true 
+hash: 1ec7f6d55155344bc9964a9b5c981989417853a53c6f3228319dafc3075d4351 
+--- 
 
-Программист может объявить часть свойств, попадающих в [представление](fd_view-definition.html) «скрытыми», тогда они будут в [представлении](fd_view-definition.html), но не будут видны в пользовательском интерфейсе.
+The programmer can declare properties that fall into [view](fd_view-definition.html) "hidden", then they will be in a [view](fd_view-definition.html), but will not be visible in the user interface. 
 
-Для объявления состава скрытых свойств необходимо инициализировать свойство `Hidden` при указании атрибута `View`.
+For declaring the hidden properties you want to initialize the property `Hidden` when specifying an attribute `View`. 
 
-__Пример__:
+__Example__: 
 
 ```csharp
-[View("Простое2", new string[]{"Name as Имя",  "AnOtherAttrib"}, Hidden=new string[]{"AnOtherAttrib"})]
-```
+[View("Простое2", new string[]{"Name as Name",  "AnOtherAttrib"}, Hidden=new string[]{"AnOtherAttrib"})]
+``` 
 
-## Иллюстрация на примере сравнения разных представлений
+## Illustration on the example of comparison of different representations 
 
-Существуют 3 разных представления:
+There are 3 different ideas: 
 
-* в первом будет 2 свойства и ни одно из них не будет скрытым
-* во втором те же 2 свойства, но уже 1 скрытое
-* в третьем будет только 1 свойство (то самое, которое осталось "открытым" в представлении №2).
+* in the first 2 properties and none of them will be hidden 
+* in the second the same 2 properties, but hidden 1 
+* the third will be only 1 feature (the same that remained "open" in the view number 2). 
 
-Этап | 2 всего 0 скрытых | 2 всего 1 скрытое | 1 всего 0 скрытых
-:------------------|:-----------------------------|:--------------------------|:----------------------------
-Flexberry Desinger | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-view.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-view.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-view.png)
-Код | ``` [View("КлиентHidden1", new string[] {"ФИО", "Прописка"})] ```| ``` [View("КлиентHidden2", new string[] {"ФИО", "Прописка"}, Hidden=new string[] {"Прописка"})] ```| ``` [View("КлиентHidden3", new string[] {"ФИО"})] ```
-Форма редактирования | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-e.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-e.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-e.png)
-Форма списка | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-l.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-l.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-l.png)
-Загружаемые данные | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-data.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-data.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-data.png)
+Stage | 2 0 the hidden | hidden 2 total 1 | 1 total 0 hidden 
+:------------------|:-----------------------------|:--------------------------|:---------------------------- 
+Flexberry Desinger | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-view.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-view.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-view.png) 
+Code | ``` [View("КлиентHidden1", new string[] {"Name", "Registration"})] ```| ``` [View("КлиентHidden2", new string[] {"Name", "Registration"}, Hidden=new string[] {"Registration"})] ```| ``` [View("КлиентHidden3", new string[] {"Name"})] ``` 
+The edit form is | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-e.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-e.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-e.png) 
+The list | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-l.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-l.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-l.png) 
+Downloadable data | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-1-data.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-2-data.png) | ![](/images/pages/products/flexberry-designer/class-diagram/client-hidden-3-data.png) 
 
-На примере наглядно видно, что 1 и 2 вариант идентичны в плане выгружаемых данных (строка 5), а 2 и 3 идентичны в плане пользовательского интерфейса (строки 3 и 4)
+For example, it is clearly seen that 1 and 2 are identical in terms of uploaded data (line 5), and 2 and 3 are identical in terms of the user interface (lines 3 and 4)
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

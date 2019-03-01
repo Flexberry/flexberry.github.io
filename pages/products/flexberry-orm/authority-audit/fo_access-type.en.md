@@ -1,25 +1,31 @@
----
-title: AccessType
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry Security, authority, type of authority
-summary: Description of authorization types
-toc: true
-permalink: ru/fo_access-type.html
-lang: en
----
+--- 
+title: Type of authorization check for the class 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry Security, authority, authorization type 
+summary: a description of the types of authorization checks 
+toc: true 
+permalink: en/fo_access-type.html 
+lang: en 
+autotranslated: true 
+hash: 58f7d3e50f7c97448c1b6e23c1534bdb77ac008c474ca7a0b9f443cce13852c2 
+--- 
 
-`AccessType` определяет тип [проверки полномочий](fa_right-manager.html) для класса. Выделяют следующие типы:
+`AccessType` determines the type [authorization check](fa_right-manager.html) for the class. There are the following types: 
 
 ```csharp
 public enum ICSSoft.STORMNET.AccessType
 {
-	none,  			// не производится никакой проверки
-	@this, 			// производится проверка только над текущим классом
-	@base, 			// производится проверка для базового класса
-	@this_and_base  // производится проверка как для базового класса, так и для текущего
+	none,  			// there is no check 
+	@this, 			// checks only on the current class 
+	@base, 			// check for the base class 
+	@this_and_base  // check for the base class and the current 
 }
-```
+``` 
 
-## AccessType по умолчанию
+## AccessType default 
 
-В `Flexberry Designer` добавлена возможность определять для стадии значение `AccessType` по умолчанию для создаваемых классов (для этого в контекстном меню стадии необходимо выбрать пункт "ORM -> C# -> Свойства модели -> Дополнительно", где указать желаемый "Тип проверки доступа по умолчанию").
+In `Flexberry Designer` added the ability to define stages of the value `AccessType` default for the generated classes (in the context menu stage, select the "ORM -> C# -> model Properties -> Advanced", where to specify "Type check default access"). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

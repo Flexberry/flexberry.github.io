@@ -1,34 +1,35 @@
----
-title: FuncIN
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Parameters and an example of using the function FuncIN
-toc: true
-permalink: en/fo_func-in.html
-lang: en
----
+--- 
+title: FuncIN 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, Public Restrictions 
+summary: Parameters and an example of a function FuncIN 
+toc: true 
+permalink: en/fo_func-in.html 
+lang: en 
+autotranslated: true 
+hash: 152bfa3012109659746fb5ddaa71e79b851eb696c6cb8bc3a6e1e89562b72ba5 
+--- 
 
-`FuncIN` - функция, аналогичная сравнению на равенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+`FuncIN` the same function as the equality comparison in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 
 
-## Параметры GetFunction
+## Parameters GetFunction 
 
-Функция [GetFunction](fo_function-list.html) принимает один параметр: массив, состоящий из определения переменной (Variable Def) и объектов, среди которых будет производиться поиск.
+[GetFunction](fo_function-list.html) takes one parameter: an array of variable definition (Variable Def) and the objects among which the search is performed. 
 
-## Пример использования
+## Example usage 
 
-Рассмотрим пример. Требуется вычитать все `Кредиты`, выданные особым клиентам, список ключей которых нам известен.
+Let's consider an example. Required to deduct all `Кредиты` issued special clients, the list of keys which are known to us. 
 
-![](/images/pages/products/flexberry-orm/query-language/filter-ex-diagram.png)
+![](/images/pages/products/flexberry-orm/query language/filter-ex-diagram.png) 
 
-SQL-выражение выглядело бы следующим образом:
+The SQL statement would look as follows: 
 
 ```sql
-SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')
-```
+SELECT * FROM Кредиты WHERE Клиент IN ('{IDList}')@@
+Где {IDList} - список [Primary-keys-objects|первичных ключей) искомых `Клиентов`
+``` 
 
-Где {IDList} - список [первичных ключей](fo_primary-keys-objects.html) искомых `Клиентов`.
-
-Через [SQLWhereLanguageDef](fo_function-list.html):
+[SQLWhereLanguageDef](fo_function-list.html): 
 
 ``` csharp        
 List<Клиент> клиенты = new List<Клиент>();
@@ -40,18 +41,22 @@ foreach (var клиент in клиенты)
 	clientKeys.Add(клиент.__PrimaryKey);
 
 Function lf = langdef.GetFunction(langdef.funcIN, clientKeys.ToArray());
-```
+``` 
 
-## Особенности сравнения строк
+## Features string comparison 
 
-{% include note.html content="При использовании [MS SQL DataService](fo_mssql-data-service.html) могут возникать [проблемы со сравнением строк с пробелами на конце](http://improvingsoftware.com/2009/09/09/beware-of-this-trap-when-comparing-strings-in-t-sql-with-trailing-spaces/)." %}
+{% include note.html content="If you use [MS SQL DataService](fo_mssql-data-service.html) you can have [problems with comparing strings with spaces in conce](http://improvingsoftware.com/2009/09/09/beware-of-this-trap-when-comparing-strings-in-t-sql-with-trailing-spaces/)." %} 
 
-Дело в том, что MS SQL Sever следует стандарту [ANSI SQL-92](https://ru.wikipedia.org/wiki/SQL-92) в том, что касается сравнения строк.
+The fact that MS SQL Sever follows the standard [ANSI 92 SQL](https://ru.wikipedia.org/wiki/SQL-92) in regard to string comparisons. 
 
-Чтобы определить, равны ли строки неодинаковой длины, прежде всего с правой стороны более короткой строки добавляются пробелы, так что длины строк становятся равными.
+To determine whether strings of unequal length, especially on the right side the shorter string adds spaces, so the string lengths become equal. 
 
-Затем символы в первой строке сравниваются с символами второй с учетом их расположения. Если не равна хотя бы одна пара, строки считаются неравными.
+Then the symbols in the first string are compared with characters of the second with regard to their location. If not equal at least one pair, the strings are considered unequal. 
 
-Это касается сравнений типа WHERE strfield = '...', или HAVING strfield='...', или strfield IN ('...', '...', ...). В этих случаях строки 'abc' и 'abc ' будут считаться равными.
+This applies to comparisons such as WHERE strfield = '...', or HAVING strfield='...', or strfield IN ('...', '...', ...). In these cases, the string 'abc' and 'abc' are considered equal. 
 
-Исключением является оператор `LIKE` (WHERE strfield LIKE '...'), для него строки 'abc' и 'abc ' - различны, поэтому для наложения ограничений на строки, вместо `FuncIN` следует использовать сочетание функций [FuncOR](fo_func-or.html), [FuncLike](fo_func-like.html).
+The exception is the operator `LIKE` (WHERE strfield LIKE '...'), for it is the string 'abc' and 'abc' is different, therefore, to impose restrictions on the lines, instead of `FuncIN` you should use a combination of functions [FuncOR](fo_func-or.html), [FuncLike](fo_func-like.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

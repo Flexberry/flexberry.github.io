@@ -1,24 +1,30 @@
----
-title: Data object as a class attribute
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, data types, attributes
-summary: The nuances of using a data object as a type for a class attribute
-toc: true
-permalink: en/fo_data-object-as-attribute-type.html
-lang: en
----
+--- 
+title: class Attribute type data object 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, data types, attributes 
+summary: the nuances of the use of the data object as the type for the attribute class 
+toc: true 
+permalink: en/fo_data-object-as-attribute-type.html 
+lang: en 
+autotranslated: true 
+hash: 3cdf7edf5e106f179ce104b64e37ad43bd710f466b5d12aa7742bc1732733ec8 
+--- 
 
-Если на [диаграмме классов](fd_class-diagram.html) нужен [атрибут](fo_attributes-class-data.html) с типом, унаследованным от [DataObject](fo_data-object.html), нужно:
+If [the class diagram](fd_class-diagram.html) [attribute](fo_attributes-class-data.html) type is inherited from [DataObject](fo_data-object.html), you need to: 
 
-* сгенерировать и откомпилировать этот тип,
-* создать требуемый класс с этим атрибутом, прописать Namespace и полное имя сборки (относительно папки с Flexberry Designer) в которой определён указанный тип.
+* generate and compile this type 
+* create the required classes with this attribute to specify the Namespace and the full name of the Assembly (relative to the folder Flexberry Designer) which defines the specified type. 
 
-Только после этого производится генерация такого класса.
+Only after this is the generation of this class. 
 
-![](/images/pages/products/flexberry-orm/data-object/data-object-as-attribute-type.GIF)
+![](/images/pages/products/flexberry-orm/data-object/data-object-as-attribute-type.GIF) 
 
-Использование атрибута класса с объектом данных в качестве типа атрибута не рекомендуется использовать в общем случае, если есть возможность использовать [мастера](fd_master-association.html) или [детейлы](fo_detail-associations-properties.html).
+The use of the class attribute with the data object as the type attribute is not recommended in General, if it is possible to use [master](fd_master-association.html) or [detaily](fo_detail-associations-properties.html). 
 
-Основной особенностью данного решения является то, что между классами в таком случае нет связи (в данном случае между классами `Зоопарк` и `ДиректорЗоопарка`). Соответственно, поле `Директор` класса `Зоопарк` будет содержать не ссылку на `ДиректорЗоопарка`, а хранить [сериализованный объект](fo_aggregating-function.html) `ДиректорЗоопарка`.
+The main feature of this solution is that between the classes in this case there is no connection (in this case between classes `Зоопарк` and `ДиректорЗоопарка`). Accordingly, the field `Директор` class `Зоопарк` will contain a link to `ДиректорЗоопарка`, and to keep [the serialized object](fo_aggregating-function.html) `ДиректорЗоопарка`. 
 
-Применение атрибута класса с [объектом данных](fo_data-object.html) в качестве типа может быть полезным при сохранении специализированных настроек, когда возвращается объектная модель настроек, а не просто строка.
+The use of the class attribute with a [object data](fo_data-object.html) as the type can be useful for saving custom settings, when returning an object model settings, not just a string. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

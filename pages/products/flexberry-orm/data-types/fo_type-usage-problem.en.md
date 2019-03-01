@@ -1,34 +1,36 @@
----
-title: The problem of the types used
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data types, DataObject, data service
-summary: Solving the problems of using data types in master associations with a hierarchy
-toc: true
-permalink: en/fo_type-usage-problem.html
-lang: en
----
+--- 
+title: the Problem used types 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data types, data objects, data services 
+summary: addressing the use of data types in artisans associations with hierarchy 
+toc: true 
+permalink: en/fo_type-usage-problem.html 
+lang: en 
+autotranslated: true 
+hash: 843f21e9c05a4b9483349c19b46c63717cf1ff26361faffdbc1321407fd42dbd 
+--- 
 
-При использовании [наследования](fd_inheritance.html)  возникает проблема определения нужного типа при использовании ассоциации. Другими словами, если [мастером](fd_master-association.html) типа является тип, связанный наследованием, то непонятно, какой конкретно из типов иерархии наследования является мастером.
+When using the [inheritance](fd_inheritance.html) the problem arises of determining the right type to use for Association. In other words, if [a master](fd_master-association.html) type is the type associated with inheritance, it is unclear what specific type of an inheritance hierarchy is a master. 
 
-Например, существует следующая модель:
+For example, there is the following model: 
 
-![](/images/pages/products/flexberry-orm/data-types/primer2.jpg)
+![](/images/pages/products/flexberry-orm/data-types/primer2.jpg) 
 
-Класс `А` имеет мастера `М`, от которого имеется, как минимум, два наследника: `M1` и `M2`.
+Class `А` has a masters `М`, which has at least two of the heir `M1` and `M2`. 
 
-Соответственно, если имеется [объект данных](fo_data-object.html) `a` (экземпляр класса A), то его мастером может быть экземпляр любого из классов `M, M1, M2`.
+Accordingly, if a [data object](fo_data-object.html) `a` (an instance of class A) that his master could be an instance of any of classes `M, M1, M2`. 
 
-[Сервисом данных](fo_sql-data-service.html) сохранен объект `a` с мастером `m1`.
+[Service data](fo_sql-data-service.html) stored object `a` with the master `m1`. 
 
-Проблема заключается в следующем: если теперь сервис данных читает объект `а`, как он «узнает», что мастер принадлежит классу `M1` и, соответственно, находится в соответствующей ему структуре данных? Ведь ему известен только тип `M`, но принципиально никак невозможно узнать, какие типы унаследованы от `M`.
+The problem is: if now, the data service reads an object `а` as he "learns" that the master belongs to the class `M1` and, accordingly, is in the same data structure? After all, he is only known type `M`, but fundamentally impossible to know what types inherited from `M`. 
 
-## Атрибуты TypeUsage и PropertyTypeUsage
+## the Attributes of a typeusage and PropertyTypeUsage 
 
-Для разрешения проблемы можно использовать специальные метаданные, позволяющие указать, что свойство `M` (ссылка на мастеровой класс) в классе данных `A`, в данном конкретном (сугубо прикладном) случае, может принимать не только значения типа `M`, а ещё и `M1`, и `M2`. В этом примере типы `M1` и `M2` называются __используемыми типами__.
+To resolve the problem, you can use special metadata that allows you to specify that a property `M` (link to the artisan class) in the class data `A`, in this particular (practical) case, can take only values of type `M`, but also `M1`, and `M2`. In this example, the types `M1` and `M2` are called __types used__. 
 
-Используемые типы указываются:
+Used types are specified: 
 
-1.Атрибутом [TypeUsage](fo_type-usage.html) для [мастерового](fd_master-association.html)/[детейлового](fo_detail-associations-properties.html) свойств класса данных, либо для класса-массива детейловых объектов (производного от `DetailArray`).
+1.Attribute [a typeusage](fo_type-usage.html) for [workman](fd_master-association.html)/[metalowego](fo_detail-associations-properties.html) properties of the data class, or for class array metalowych objects (derived from `DetailArray`). 
 
 ```csharp
 public class A:DataObject
@@ -50,11 +52,11 @@ public class M1:M
 public class M2:M
 {
 }
-```
+``` 
 
-2.Атрибутом `PropertyTypeUsage` для класса данных, чьему свойству необходимо указать используемые типы. Атрибут аналогичен, однако к классу бывает писать нагляднее, чем к конкретному свойству, особенно, когда их много. Кроме того, такая запись используется при необходимости изменить `TypeUsage` в унаследованном классе, без перегрузки свойства.
+2.PstrfPropertyTypeUsage` attribute for the data class, whose property should be used to specify types. The attribute is similar, however the class is to write clearer than to a specific property, especially when a lot of them. In addition, this entry is used when you want to change `TypeUsage` in an inherited class, without overloading properties. 
 
-Пример записи `PropertyTypeUsage`, эквивалентный `TypeUsage`:
+An example entry `PropertyTypeUsage` equivalent `TypeUsage`: 
 
 ```csharp
 [PropertyTypeUsage("M",new Type[]{typeof(M1), typeof(M2)})]
@@ -63,16 +65,20 @@ public class A:DataObject
 	private M fM;		
 	public virtual M M {get{return fM;}set{fM=value;}}
 }
-```
+``` 
 
-Метод [Information](fo_methods-class-information.html).CheckUsingType позволяет проверить внутри свойства, метода, откуда вызван, совместим ли тип с объявленным, согласно используемых типов.
+The [Information](fo_methods-class-information.html).CheckUsingType allows you to check inside the property, method, where invoked is compatible with the declared type according to the used types.
 
-## TypeUsageProvider.TypeUsage
+## TypeUsageProvider.A typeusage 
 
-Указанием дополнительных атрибутов невозможно полностью решить проблему используемых типов, поскольку может возникать ситуация вида:
+Specifying additional attributes cannot completely solve the problem of used types, as the situation may arise: 
 
-![](/images/pages/products/flexberry-orm/data-types/primer-3.jpg)
+![](/images/pages/products/flexberry-orm/data-types/primer-3.jpg) 
 
-Здесь класс-предок находится в отдельной сборке, поэтому `TypeUsage` прописать не удастся, так как в первой сборке необходимо знать типы `M1` и `M2` (находящиеся во второй сборке, ссылающейся на первую), а взаимные ссылки сборок друг на друга согласно `.Net` — невозможны. Дело может осложняться и тем, что разработчик, создающий сборку 2, в принципе не имеет доступа к исходному коду сборки 1 (соответственно, он не может объединить сборки в одну). Разумеется, `TypeUsage` прописывают и в этом случае, однако пользуются при этом статическим свойством статического класса `TypeUsageProvider.TypeUsage`. Здесь содержится разнообразная функциональность по управлению используемыми типами: можно прописывать используемые типы, узнавать/изменять их состав и т.п.
+Here, the class ancestor is in a separate Assembly, so `TypeUsage` to register will fail, as in the first Assembly it is necessary to know the types `M1` and `M2` (located in the second Assembly, reference the first), and reciprocal link assemblies to each other according to `.Net` impossible. The case could be complicated by the fact that the developer that creates the Assembly 2, in principle, has no access to the source code of the Assembly 1 (and, therefore, it cannot merge assemblies into one). Of course, `TypeUsage` prescribe and in this case, however, you are using a static property of a static class `TypeUsageProvider.TypeUsage`. It contains a variety of functionality for managing used types: you can specify the used types, learn/change their composition, etc. 
 
-По мастеровым связям используемые типы можно указать для мастеров любой вложенности. Для этого необходимо указывать имена мастеровых свойств через точку. Методом `TypeUsageProvider.TypeUsage.GetCombinedTypeUsage` можно получить все типы в единой коллекции.
+At workman communications used types you can specify for the masters of any nesting. It is necessary to specify the names of user controllable properties through the point. Method `TypeUsageProvider.A typeusage.GetCombinedTypeUsage` you can get all types in a single collection. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

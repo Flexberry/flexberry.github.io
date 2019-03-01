@@ -1,23 +1,25 @@
----
-title: Updating objects with empty rows
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service, mssql, empty string
-summary: Using MSSQLDataService when updating objects with empty strings
-toc: true
-permalink: en/fo_updating-objects-empty-rows.html
-lang: en
----
+--- 
+title: Update of objects with blank lines 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services, mssql, an empty string 
+summary: Using MSSQLDataService when updating objects with empty strings 
+toc: true 
+permalink: en/fo_updating-objects-empty-rows.html 
+lang: en 
+autotranslated: true 
+hash: b7e99559b70368271b23e3656d1c1d9c36a70685b5a8290d1a4b8e5d5e6d69ea 
+--- 
 
-[MSSQLDataService](fo_mssql-data-service.html) преобразует пустые строки в `NULL` при обновлении объектов.
+[MSSQLDataService](fo_mssql-data-service.html) converts empty strings to `NULL` when updating objects. 
 
-При построении [ограничения](fo_limitation.html), если параметром в проверке на равенство передаётся `String.Empty`, то запрос будет сгенерирован как IS NULL и всё сработает так как надо. Это упрощение избавляет от необходимости писать сложные Where-выражения.
+When building a [limitations](fo_limitation.html), if the argument in the equality check is passed `String.Empty`, the request will be generated as IS NULL and everything works as it should. This simplification eliminates the need to write complex Where clauses-expressions. 
 
-Если есть потребность различать `NULL` и `String.Empty`, то можно [унаследоваться от MSSQLDataService и переопределить метод](fo_implement-custom-ds.html) 
+If there is a need to distinguish between `NULL` and `String.Empty`, it is possible [to unasledovala from MSSQLDataService and override method](fo_implement-custom-ds.html) 
 
 ``` csharp
 public virtual string ConvertSimpleValueToQueryValueString(object value)
 ``` 
-таким образом, чтобы не выполнялась замена 
+so that was not replaced 
 
 ``` csharp
 if (valType == typeof(string))
@@ -25,8 +27,12 @@ if (valType == typeof(string))
 	if ((string)value == string.Empty)
 		return "NULL";
 	else
-		return "'" + value.ToString().Replace("'", "''") + "'";
+		return "'" + value.ToString().Replace("'", """) + "'";
 }
-```
+``` 
 
-Особое внимание следует обратить на эту особенность, если используются импортированные данные или SQL-выражения, которые выполняются в обход [сервиса данных](fo_data-service.html).
+Special attention should be paid to this feature, if you use the imported data or the SQL statements that run in a bypass [service data](fo_data-service.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

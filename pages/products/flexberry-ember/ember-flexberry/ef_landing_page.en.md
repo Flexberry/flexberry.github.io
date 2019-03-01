@@ -1,35 +1,41 @@
----
-title: ember-flexberry
-keywords: mydoc
-sidebar: ember-flexberry_sidebar
-toc: false
-permalink: en/ef_landing_page.html
-lang: en
----
+--- 
+title: ember-flexberry 
+keywords: mydoc 
+sidebar: ember-flexberry_sidebar 
+toc: false 
+permalink: en/ef_landing_page.html 
+lang: en 
+autotranslated: true 
+hash: c3afb4695c5c04bbdf697e8a898ffe9191cf1faac9032e919dd5598ef13a130f 
+--- 
 
-## Информация о продукте
+## product Information 
 
-`ember-flexberry` является [частью платформы Flexberry](http://flexberry.ru), реализованным на javascript-фреймворке [EmberJS](http://emberjs.com/).
+`ember-flexberry` is [part of the platform Flexberry](http://flexberry.ru), implemented in javascript frameworks [EmberJS](http://emberjs.com/). 
 
-## Компоненты Flexberry ASP.NET Ember
+## Components Flexberry ASP.NET Ember 
 
-* [Контролы](ef_controls.html)
-* [Формы](ef_forms.html)
+* [Controls](ef_controls.html) 
+* [Form](ef_forms.html) 
 
-## Дополнительные возможности
+## Additional features 
 
-* [Запуск приложения Flexberry Ember в качестве мобильного приложения Apache Cordova](ef_cordova.html)
-* [Генерация Ember-приложения из меню Flexberry Designer](ef_generator.html)
+* [Run the application Flexberry Ember as mobile apps Apache Cordova](ef_cordova.html) 
+* [Generate Ember-app from the menu Flexberry Designer](ef_generator.html) 
 
 
-# Структурные элементы Flexberry ASP.NET Ember-приложения
+# Structural elements Flexberry ASP.NET Ember-application 
 
-Структура ember-flexberry приложения такая же как и у классического [ember-приложения](https://guides.emberjs.com/v2.0.0/getting-started/core-concepts/), но есть некоторые нюансы, которые описаны в отдельных статьях.
+The structure of the ember-flexberry application is the same as classic [ember-app](https://guides.emberjs.com/v2.0.0/getting-started/core-concepts/), but there are some nuances, which are described in separate articles. 
 
-* [Модели](efd_model.html)
-* [Сериализаторы](efd_serializer.html)
-* [Роутер](ef_router.html)
-* [Роуты](ef_route.html)
-* [Контроллеры](ef_controller.html)
-* [Шаблоны](ef_template.html)
-* [Сервисы](ef_service.html)
+* [Models](efd_model.html) 
+* [Serializers](efd_serializer.html) 
+* [Router](ef_router.html) 
+* [Ranting](ef_route.html) 
+* [Controllers](ef_controller.html) 
+* [Templates](ef_template.html) 
+* [Services](ef_service.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

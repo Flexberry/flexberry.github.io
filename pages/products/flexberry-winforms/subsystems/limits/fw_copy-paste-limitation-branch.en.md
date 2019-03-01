@@ -1,26 +1,31 @@
----
-title: Копирование / вставка ветки ограничений (сохранение и загрузка из файла)) 
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Ограничения
-summary: Описана возможность редактора ограничений по сохранению и загрузке ветви ограничений из файла
-toc: true
-permalink: en/fw_copy-paste-limitation-branch.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Copy / paste branch restrictions (saving and loading from file)) 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Restrictions 
+summary: Describes the ability of the editor restrictions on saving and loading of branches restrictions from a file 
+toc: true 
+permalink: en/fw_copy-paste-limitation-branch.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 2fe31118e9f2cc29b4617ca9a1e64731cde0a7399768b0b8d407dda509ab8576 
+--- 
 
-## Описание
+## Description 
 
-Существует возможность сохранения и загрузки ветви ограничений из файла
+There is a possibility of saving and loading branches of constraints from a file 
 
-Для сохранения: нужно встать на требуемой ветке ограничения (вершина ветки должна быть функцией) в расширенном редакторе ограничений, в главном меню рядом с дискеткой выбрать из выпадающего списка _"Сохранить ветку ограничения в файл.."_.
+To save: you need to get up to the required thread limit (the top of the branch must be a function) in the extended constraint editor in the main menu along with floppy to select from the drop down list _"to Maintain branch restrictions in the file.."_. 
 
-Для загрузки ветви ограничений: Встаньте на требуемое пустое место в расширенном редакторе ограничений. В главном меню рядом с иконкой по загрузке ограничений выбрать из выпадающего списка _"Загрузить ветку ограничения из файла.."_. При этом если тип функции в выбранной ветви ограничения расходится с текущим, то будет выданно соответствующее сообщение и вставка произведена не будет. Если переменные (поля объекта в функции) не существуют для данного объекта (представления), ветвь добавлена не будет.
+To download the branch constraints: Stand up to the required empty space in the advanced editor restrictions. In the main menu next to the icon at the download restrictions to choose from the drop down list _"Load branch restrictions from a file.."_. In this case, if the type of the function in the selected branch restrictions at odds with the current, it will be wydano a message and the insert will not be performed. If the variables (object fields in a function) do not exist for this object (view), the branch will not be added. 
 
-### Текущие ограничения
+### Current limitations 
 
-1. Ветка должна быть функцией. Нельзя сохранять отдельно конкретное значение (константу)
+1. The branch must be a function. It is impossible to save separately to a specific value (constant) 
 
-2. Ветка не должна содержать параметров, так как параметры хранятся отдельно.
+2. Branch should not contain settings because the settings are stored separately. 
 
-3. Операции сохрания и загрузки ограничений доступны только из расширенного редактора ограничений
+3. Operation saving and loading restrictions are only available from the advanced editor limitations
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

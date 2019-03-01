@@ -1,57 +1,59 @@
----
-title: Валидатор datetime
-sidebar: ember-flexberry-data_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/efd_date-time-validator.html
-folder: products/ember-flexberry-data/models-and-projections/
-lang: en
-summary: Описание возможностей и способа использования валидатора datetime.
----
+--- 
+title: the Validator is a datetime 
+sidebar: ember-flexberry-data_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/efd_date-time-validator.html 
+folder: products/ember-flexberry-data/models-and-projections/ 
+lang: en 
+autotranslated: true 
+hash: f1d5a81a60783c1c6495515558dc1c390c42c7c123af1f1d79d19a4803586f58 
+summary: explains the features and usage of the validator is a datetime. 
+--- 
 
-## Назначение и возможности валидатора
+## the Purpose and capabilities of the validator 
 
-Валидатор `datetime` позволяет проверить наличие значения, а также корректность введенного значения в поле типа дата/дата-время.
-Значение валидируемого свойства считается некорректным, если для него установлено значение, соответствующее JavaScript-объекту `Date` со значением `'invalid'`.
+Pstrfdatetime` validator allows you to check the values and the entered values in a field of type date/date-time. 
+The value of validated properties is considered invalid if set to a value corresponding JavaScript object `Date` value `'invalid'`. 
 
-## Опции
+## Options 
 
-Данным валидатором поддерживаются следующие опции:
+This validator supports the following options: 
 
-* `true` - передача данного значения включает валидатор с опциями по умолчанию. В данном режиме отсутствие значения ("пустое" значение) для свойства не допускается и используются сообщения по умолчанию при выводе ошибок валидации.
-* `allowBlank` - если данная опция установлена в значение `true`, то отсутствие значения ("пустое" значение) для свойства допускается.
+* `true` - transfer this value includes the validator with the default options. In this mode, no value (empty value) for the property is not allowed and use the default message in the output validation errors. 
+* `allowBlank` - if this option is set to `true`, then no value (empty value) for the property is allowed. 
 
-## Сообщения
+## Messages 
 
-Сообщения для валидатора устанавливаются в свойстве `messages` опций:
+Messages for the validator are installed in the property `messages` options: 
 
-* `blank` - сообщение используется, когда значение для свойства отсутствует ("пустое").
-* `invalid` - сообщение используется, когда установлено некорректное значение для свойства.
+* `blank` message used when the value for the property is missing ("blank"). 
+* `invalid` - message is used when a invalid value for the property. 
 
-## Примеры использования
+## Examples of usage 
 
-Использование валидатора с опциями по умолчанию:
+The use of the validator with the default options: 
 
 ```javascript
 var Model = BaseModel.extend({
   birthDate: DS.attr('date'),
 
-  // Validation rules.
+  // Validation rules. 
   validations: {
     birthDate: {
       datetime: true
     }
   }
 });
-```
+``` 
 
-Использование валидатора с установкой возможных опций:
+The use of the validator with installation of available options: 
 
 ```javascript
 var Model = BaseModel.extend({
   orderDate: DS.attr('date'),
   
-  // Validation rules.
+  // Validation rules. 
   validations: {
     orderDate: {
       datetime: { allowBlank: false, messages: { blank: 'order date can\'t be blank', invalid: 'please input valid date' } }
@@ -59,3 +61,6 @@ var Model = BaseModel.extend({
   }
 });
 ```
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

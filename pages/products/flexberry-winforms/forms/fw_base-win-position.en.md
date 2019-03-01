@@ -1,24 +1,30 @@
----
-title: Положение формы на экране
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Особенности использования свойств форм OutScreenControl и VisiblePercent, отвечающих за контроль выхода окна за пределы экрана
-toc: true
-permalink: en/fw_base-win-position.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Position form on the screen 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Features using properties of shapes and OutScreenControl VisiblePercent responsible for the control of the exit window outside the screen 
+toc: true 
+permalink: en/fw_base-win-position.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 2f5dd2191ce24985c44a1dd427ff38fbb63b0a905a224091b3761989d021b277 
+--- 
 
-В некоторых случаях при восстановлении положения формы приводило к тому, что форма не была видна на экране. Такая ситуация, например, возникает при смене разрешения монитора на более низкое, при новом разрешении форма могла оказаться за пределами видимой области.
+In some cases, restoring the position of a form led to the fact that the form was not visible on the screen. This situation for example occurs when you change the screen resolution to a lower one, with a new permission form could be outside the visible area. 
 
-Для управления положением формы в Flexberry Platform в класс `BaseWin`, являющийся базовым для всех форм, были добавлены два свойства `OutScreenControl` и `VisiblePercent`.
+To control the position of the form in Flexberry Platform class `BaseWin`, which is the basic of all forms, were added two properties `OutScreenControl` and `VisiblePercent`. 
 
-Свойство `OutScreenControl` позволяет включить контроль выхода окна за пределы экрана в процессе перемещения окна пользователем. Свойство `VisiblePercent` устанавливает процент размера формы (длины/ширины), который должен оставаться видимым (диапазон значений от 0 до 100).
+Property `OutScreenControl` allows you to enable the control of the exit window outside the screen in the process of moving Windows user. Property `VisiblePercent` sets the percentage of the form size (length/width), which must remain visible (the range of values from 0 to 100). 
 
-Замечания:
+Comments: 
 
-1. При загрузке формы контроль выхода за пределы экрана происходит вне зависимости от значения свойства `OutScreenControl` (для корректного позиционирования формы при смене разрешения). При начальном отображении формы учитывается значение `VisiblePercent`, по умолчанию значение свойства `VisiblePercent` равно __40__.
+1. When the form is loaded the controls outside of the screen is regardless of the value of the property `OutScreenControl` (for correct positioning of the forms when changing resolution). The initial display of the form takes into account the value `VisiblePercent`, the default value of the property `VisiblePercent` equal to __40__. 
 
-2. Текущая реализация не учитывает наличие нескольких мониторов.
+2. The current implementation does not consider multiple monitors. 
 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

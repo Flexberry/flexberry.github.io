@@ -1,16 +1,18 @@
----
-title: Настройка поднимаемой по лукапу формы
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_modal-window-settings.html
-lang: en
-summary: Представлены основные возможности настройки поднимаемой по лукапу формы.
----
+--- 
+title: setting up a raise on lucapa forms 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_modal-window-settings.html 
+lang: en 
+autotranslated: true 
+hash: 98c7d1741c5425b57524b65ef1ab7a38c4cdf7731f27c8488444bd05f4389fe2 
+summary: Presents the basic customization possibilities raised by lucapa form. 
+--- 
 
-## Настройка модального окна лукапа
+## setting the modal window lucapa 
 
-Настройки модального окна [лукапа](ef_lookup.html) определены в `components/lookup-field/lookup-field-mixin.js`.
+Settings modal window [lucapa](ef_lookup.html) is defined in `components/lookup-field/lookup-field-mixin.js`. 
 
 ```js
 lookupSettings: {
@@ -21,9 +23,9 @@ lookupSettings: {
 	modalWindowWidth: undefined,
 	modalWindowHeight:undefined
 }
-```
+``` 
 
-В контроллере формы редактирования `controllers/edit-form.js` данные настройки заданы:
+In the controller editor `controllers/edit-form.js` these settings set: 
 
 ```js
 lookupSettings: {
@@ -34,18 +36,18 @@ lookupSettings: {
     modalWindowWidth: 750,
     modalWindowHeight:600
 },
-```
+``` 
 
-## Настройка размера
+## adjust the size 
 
-* `modalWindowWidth` - это ширина открываемого по лукапу модального окна.
-* `modalWindowHeight` - это высота открываемого по лукапу модального окна.
+* `modalWindowWidth` is the width of the opening lucapa the modal window. 
+* `modalWindowHeight` is the height of the opening lucapa the modal window. 
 
-Если требуется изменить размер открываемого по лукапу модального окна, то можно переопределить заданные по умолчанию значения.
+If you want to change the size of the opening lucapa modal window, you can override the default values. 
 
-## Установка заголовка окна, открываемого по лукапу
+## setting the title of window opened on lucapa 
 
-Заголовок окна, открываемого по [лукапу](ef_lookup.html), устанавливается в свойстве `title` компонента `lookup-field` в шаблоне соответствующей формы редактирования. Например, в шаблоне формы редактирования `employee.hbs` встраивание лукапа может выглядеть следующим образом:
+The title of the window opened by [luckau](ef_lookup.html), installed in the property `title` component `lookup-field` in the template corresponding edit form. For example, the template edit form `employee.hbs` embedding lucapa may look like the following: 
 
 ```hbs
 {% raw %}{{lookup-field/lookup-field
@@ -56,19 +58,19 @@ lookupSettings: {
   projection='EmployeeL'
   title='Employees'
 }}{% endraw %}
-```
+``` 
 
-В результате заголовок из свойства `title` компонента `lookup-field` будет отображаться в модальном окне, открываемом по лукапу:
+As a result, the title of the properties `title` component `lookup-field` will be displayed in a modal window open locapo: 
 
-![](/images/pages/img/page/EditFormTitle/lookuptitle.png)
+![](/images/pages/img/page/EditFormTitle/lookuptitle.png) 
 
-## Настройка фильтрации и количества элементов на странице
+## configure filtering and the number of elements on the page 
 
-Параметры настройки фильтраци и/или количества элементов на странице осуществляется через событие `getLookupFolvProperties` в контроллере формы:
+Settings filter and/or the number of elements on the page through the event `getLookupFolvProperties` in the controller of the form: 
 
 ```javascript
 getLookupFolvProperties: function(options) {
-    //...
+    //... 
 
     if (methodArgs.relationName === 'type') {
     return {
@@ -80,46 +82,50 @@ getLookupFolvProperties: function(options) {
       };
     }
 
-    // ...
+    // ... 
 }
-```
+``` 
 
-{% include note.html content="Необходимо выбрать тип поиска (`filterByAnyWord` или `filterByAllWords`), так на lookup-форме использовать использовать можно только один из них." %}
+{% include note.html content="you Must select a search type (`filterByAnyWord` or `filterByAllWords`), so lookup the form to use you may only use one of them." %} 
 
-Далее указать событие в шаблоне настраевомого для LookUp списка:
+Next, specify the event in the template nastraivanie for LookUp list: 
 
 ```hbs
 {% raw %}{{flexberry-lookup
-    // ...
+    // ... 
     lookupWindowCustomProperties=(action 'getLookupFolvProperties')
 }}{% endraw %}
-```
+``` 
 
-Реализация отображена на [ember-стенде](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-lookup/customizing-window-example).
+The implementation displayed on [ember-stande](https://flexberry-ember-dev.firebaseapp.com/components-examples/flexberry-lookup/customizing-window-example). 
 
-## Настройка иерархии
+## hierarchy setting 
 
-В контроллере формы редактирования указать:
+In the controller editor to specify: 
 
 ```javascript
 export default EditFormController.extend({
-    // ...
+    // ... 
     getLookupFolvProperties: function(options) {
-      // ...
+      // ... 
 
-      if (options.relationName === 'type') { // Свойство лукапа.
+      if (options.relationName === 'type') { // Property lucapa. 
         return {
-            // ...
-	    // Показывать ли кнопку переключения иерархии, если иерархия для списка доступна
-	    // (при false кнопка показывается)
+            // ... 
+	    // Whether to show the toggle button in the hierarchy, if the hierarchy for a list of available 
+	    // (if false, the button is displayed) 
             disableHierarchicalMode: false,
 
-            // Активировать иерархию при загрузке lookup-формы.
+            // Activate the hierarchy when you load a lookup-form. 
             inHierarchicalMode: true,
-            hierarchicalAttribute: 'Name' // Свойство, по которому строится иерархия.
+            hierarchicalAttribute: 'Name' // Property on which to build the hierarchy. 
         };
       }
 
-     // ...
+     // ... 
 });
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

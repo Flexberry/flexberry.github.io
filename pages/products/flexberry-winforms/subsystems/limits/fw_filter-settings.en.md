@@ -1,102 +1,107 @@
----
-title: Настройки фильтров
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы), Ограничения
-summary: Описание задания настроек фильтров при помощи специального приложения AdmConsole и в коде
-toc: true
-permalink: ru/fw_filter-settings.html
-folder: products/flexberry-winforms/
-lang: ru
----
+--- 
+title: filter Settings 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms), Limitations 
+summary: Description of setting filters with a special application AdmConsole and in the code 
+toc: true 
+permalink: en/fw_filter-settings.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 82e65a6af424b1077ab70b77bb3c7a0f10874dd0845d35b63644309e89165c1f 
+--- 
 
-## Настройки фильтров
+## filter Settings 
 
-Эти настройки можно задавать при помощи специального приложения, которое называется AdmConsole.
+These settings can be set using a special application called AdmConsole. 
 
-Данные настройки фильтров должны указывать какие представления используются для отображения детейлов в дереве на [форме задания ограничений](fw_limit-editor-simple-view.html) и какие списковые формы должны открываться для выбора значения мастера.
-
-
-В общем виде настройка выглядит следующим образом:
-* Задать настройки в AdmConsole
-    * "Вручную"
-    * При помощи генератора настроек
-* Проставить название FilterSetting списковой форме
-    * При помощи дизайнера
-    * В коде
-
-## Запуск AdmConsole
-* В файле "AdmConsole.exe.config" необходимо прописать ConnectionString к базе приложения;
-* Запустить AdmConsole и в главном меню выбрать пункт "Кэш сборок" -> "Папка кэша сборок". Необходимо выбрать папку со сборкой объектов приложения
-
-## Создание настройки "автоматически" в AdmConsole
-Настройки детейлов еще можно проставлять [вручную](#создание_настройки_вручную_в_admconsole), но настройки лукапов доставляют много неудобства. Для того, чтобы упростить задание настроек для лукапов можно воспользоваться генератором настроек фильтров.
-
-Форму генератора настроек открыть можно следующим образом
-* В папке с кэшем сборок должна находиться сборка "IIS.WinUI.AdvancedFSCtrl.dll" (DLL находится в папке с AdmConsole);
-* В папке с кэшем сборок должна находиться сборка форм, для удобного проставления настроек лукапов (Сборка форм берется из проекта, и имеет вид <ИмяПроекта>(Forms).dll);
-* В AdmConsole открыть списковую форму "Специальные формы настройки" -> "Настройки фильтров". Форма выглядит следующим образом:
-
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated1.jpg)
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated2.jpg)
-
-## Создание настройки "вручную" в AdmConsole
-* Открыть списковую форму "Общие" -> "Настройки фильтров".
-* Нажать на кнопку добавления объекта
-* Появится форма<br>
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_before.jpg)
-* Поля: 
-    * `Name` - название настройки, 
-    * `DataObjectView` - представление объекта, на которое накладывается ограничение
-    * `Lookups` - список мастеров, иcпользуемых в представлении, для возможности построения ограничения по первичному ключу мастера. Отличие мастеровых атрибутов заключается в том, что для выбора значения поднимается списковая форма объекта, что дает более широкий круг возможностей (поиск, сортировка, наложение ограничений).
-		* `DataObjectType` – тип объекта мастера
-		* `Container` – путь к списковой форме объекта (например: IIS.MOB.UgStat.Справочники.КтоУстановилL, IIS.MOB.UgStat.Справочники(Forms))
-		* `FieldsToView` – список свойств (через запятую, без пробела), которые будут отображаться при выборе значения мастера  для ограничения. Для простых справочников, которые не имеют мастеров, обычно используется свойство “Наименование”. Для других объектов перечень этих атрибутов должен составлять аналитик, либо же они должны быть указаны в постановке.
-	* `Details` - список детейлов для фильтра.
-
-При этом могут быть неявные детейлы. Неявным детейлом является любой несправочный объект, ссылающийся на объект, фильтр которого мы настраиваем.
-
-Неявные детейлы должны указываться после явных. Порядок внутри этих групп должнен определять аналитик.
-		* `Caption` – заголовок детейла
-		* `DataObjectView` – [D-представление](fd_d-view.html) детейла
-		* [`ConnectMasterProp`](fw_master-details-filters.html) – имя свойства, ссылающегося на класс мастера.
-		* [`OwnerConnectProp`](fw_master-details-filters.html) – имя свойства, ссылающегося на класс детейла.
-Мастера детейлов должна быть также добавлены в список Lookups 
-
- После заполнения всех полей форма может выглядеть следующим образом:
-
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_after.jpg)
+Data filter settings should indicate which views are used to display detailov in the tree in [form constraint](fw_limit-editor-simple-view.html s) and list the form should open to select master. 
 
 
-## Задание настройки форме в дизайнере VS
-Имя настройки, сохранённой в базе прикладной системы необходимо указать на списковой форме в компоненте `AdvLimit`. 
-На списковой форме нужно выделить AdvLimitComponent и установить ему свойство "FilterSettingName".
+In General, the configuration looks like the following: 
+* To specify the settings in AdmConsole 
+* "Manual" 
+* When using generator settings 
+* To put the name of FilterSetting list form 
+* With the help of designer 
+* In the code 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_vs.jpg)
+## Run AdmConsole 
+* In the file "AdmConsole.exe.config" I need to write the ConnectionString to the database приложения; 
+* Run AdmConsole and in the main menu, select "Assembly Cache" -> "cache Folder assemblies". You must select a folder with the Assembly of application objects 
 
-## Задание настройки форме в коде
-Если списковая форма является универсальной формой (сгенерированного кода нет), то имя настройки фильтра можно указать в независимой форме в методе (__применимо если на форме только один список__): 
+## Creation settings "automatically" in AdmConsole 
+Settings detailov more you can put down the [manual](#создание_настройки_вручную_в_admconsole), but lyapov bring a lot of inconvenience. In order to simplify the setting for lyapov you can use the generator of the filter settings. 
+
+Form generator settings can be opened as follows 
+* In the folder with the Assembly cache needs to be build "IIS.WinUI.AdvancedFSCtrl.dll" (DLL located in the folder AdmConsole); 
+* In the folder with the Assembly cache needs to be build forms for easy affixing settings lyapov (Build forms is taken from the project, and is <Projectname>(Forms).dll); 
+* AdmConsole to open the list form of "Special form options" -> "filter preferences". Form as follows: 
+
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated1.jpg) 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_generated2.jpg) 
+
+## create the setup "manually" in AdmConsole 
+* Open list form of "General" -> "filter Settings". 
+* Click on add object 
+* A form will appear<br> 
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_before.jpg) 
+* Fields: 
+* `Name` - the name of the setting, 
+* `DataObjectView` - representation of the object, which is superimposed on the limit 
+* `Lookups` - list of masters used in the presentation, to be able to build the primary key constraint of the master. Unlike the artisans of the attributes is that the value rises list form object, which gives a wider range of possibilities (searching, sorting, imposition of restrictions). 
+* `DataObjectType` – type object wizard 
+* `Container` – path to the list object form (e.g.: IIS.MOB.UgStat.Reference.КтоУстановилL, IIS.MOB.UgStat.Reference(Forms)) 
+* `FieldsToView` – list of properties (comma separated, no space) that will be displayed when you select the wizard for the constraint. For simple reference, which do not have masters, normally, use the property “Name”. For other objects, a list of these attributes should be the analyst, or they must be specified in the formulation. 
+* `Details` - list of datalow for the filter. 
+
+This may be implicit detaily. Implicit detalam nespravny is any object referencing the object, a filter which we custom. 
+
+Implicit detaily must be specified after the obvious. The order within these groups should identify the analyst. 
+* `Caption` – header detail 
+* `DataObjectView` – [D-view](fd_d-view.html) detail 
+* [`ConnectMasterProp`](fw_master-details-filters.html) – the property name referencing the master class. 
+* [`OwnerConnectProp`](fw_master-details-filters.html) – the property name referencing the class detail. 
+Master detailov should also be added to the list of Lookups 
+
+After filling all the fields the form may look like the following: 
+
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_after.jpg) 
+
+
+## Job settings form in the VS designer 
+The name of the settings are stored in the application systems necessary to specify the list form in the component `AdvLimit`. 
+On the list form you want to allocate AdvLimitComponent and set its property "FilterSettingName". 
+
+![](/images/pages/products/flexberry-winforms/subsystems/limits/filtersettings_vs.jpg) 
+
+## Job settings form in the code 
+If the list form is the universal form (no generated code), the name of the filter settings can be specified in an independent form in the method (__applicable if only one list__): 
 
 ```csharp
 protected override ICSSoft.STORMNET.UI.IEditInitiator GetDpdForm()
 {
-// *** Start programmer edit section *** (ПроектL.GetDpdForm() start)
+// *** Start programmer edit section *** (ПроектL.GetDpdForm() start) 
 
-// *** End programmer edit section *** (ПроектL.GetDpdForm() start)
+// *** End programmer edit section *** (ПроектL.GetDpdForm() start) 
 ICSSoft.STORMNET.Windows.Forms.Operations objOperations1 =
 	ICSSoft.STORMNET.Windows.Forms.Operations.GetAllTrue();
 ICSSoft.STORMNET.UI.UniWinListStandard form =
 	new ICSSoft.STORMNET.UI.UniWinListStandard(new ICSSoft.STORMNET.UI.ObjectListViewInformation[]{
 new ICSSoft.STORMNET.UI.ObjectListViewInformation(ICSSoft.STORMNET.Information.GetView("ПроектL",
-typeof (IIS.Звонки.Проект)),objOperations1, new System.Type[]{typeof (IIS.Звонки.Проект)}, null)}, "Проекты");
-// *** Start programmer edit section *** (ПроектL.GetDpdForm() end)
-form.FilterSettingName = "Проект";
-// *** End programmer edit section *** (ПроектL.GetDpdForm() end))
+typeof (IIS.Звонки.Проект)),objOperations1, new System.Type[]{typeof (IIS.Звонки.Проект)}, null)}, "Projects");
+// *** Start programmer edit section *** (ПроектL.GetDpdForm() end) 
+form.FilterSettingName = "Project";
+// *** End programmer edit section *** (ПроектL.GetDpdForm() end)) 
 return form;
 }
-```
+``` 
 
-Строка `form.FilterSettingName = "Проект";` должна быть написана в [скобках программиста](fo_programmer-brackets.html) (чтобы не потерять изменения при перегенерации).
+String `form.FilterSettingName = "Project";` should be written in [brackets programmer](fo_programmer-brackets.html) (so as not to lose changes when regeneration). 
 
-## Пример
+## Example 
 
-Пример использования AdvLimit и настройки FilterSettings можно посмотреть в [этой статье](fw_filter-example.html)
+An example of using AdvLimit and settings FilterSettings you can see in [this article](fw_filter-example.html)
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

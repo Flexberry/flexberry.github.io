@@ -1,13 +1,19 @@
----
-title: Flexberry ORM ODataService API
-sidebar: flexberry-orm_sidebar
-keywords: API
-toc: true
-permalink: en/ef_orm-odata-service-api.html
-lang: en
----
+--- 
+title: Flexberry ORM ODataService API 
+sidebar: flexberry-orm_sidebar 
+keywords: API 
+toc: true 
+permalink: en/ef_orm-odata-service-api.html 
+lang: en 
+autotranslated: true 
+hash: 5c164fe53eef5443708217ab5f36622cf0ac10b2782da3f2060bb93b8a428a1d 
+--- 
 
-## Autodocumentation for `Flexberry ORM ODataService`
+## Autodocumentary for `Flexberry ORM ODataService` 
 
-* [Flexberry ORM ODataService branch develop](https://flexberry.github.io/NewPlatform.Flexberry.ORM.ODataService/autodoc/develop/)
-* [Flexberry ORM ODataService branch master](https://flexberry.github.io/NewPlatform.Flexberry.ORM.ODataService/autodoc/master/)
+* [ORM ODataService Flexberry the develop branch](https://flexberry.github.io/NewPlatform.Flexberry.ORM.ODataService/autodoc/develop/) 
+* [ORM ODataService Flexberry master branch](https://flexberry.github.io/NewPlatform.Flexberry.ORM.ODataService/autodoc/master/) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,60 +1,66 @@
----
-title: Information.GetPropertyStorageName
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, database
-summary: Features of using the GetPropertyStorageName method of the Information class
-toc: true
-permalink: en/fo_information-get-property-storage-name.html
-lang: en
----
+--- 
+title: Information.GetPropertyStorageName 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, database 
+summary: Peculiarities of using the method GetPropertyStorageName class Information 
+toc: true 
+permalink: en/fo_information-get-property-storage-name.html 
+lang: en 
+autotranslated: true 
+hash: 303bca9dc92c675ae0a6f520c6d6c988605fa4d9dd8a2b43feeb0560ebf44d24 
+--- 
 
-Статический метод `GetPropertyStorageName` класса [Information](fo_methods-class-information.html) позволяет получить [имя хранения .Net-свойства, установленное атрибутом `PropertyStorageAttribute`](fo_storing-data-objects.html).
+PstrfGetPropertyStorageName` static method class [Information](fo_methods-class-information.html) allows you to [name of storage .Net-properties set by the attribute `PropertyStorageAttribute`](fo_storing-data-objects.html). 
 
-### Метод без использования индекса
+### Method without using the index 
 
-Метод, не требующий указания индекса при вызове, имеет следующий вид:
+The method does not require specifying an index when you call, have the following form: 
 
 ``` csharp
-/// <param name="type">.Net-тип класса объекта данных</param>
-/// <param name="property">имя свойства</param>
-/// <returns>имя хранения</returns>
+/// <param name="type">.Net class type of the data object</param> 
+/// <param name="property">the property name</param> 
+/// <returns>the name of the storage</returns> 
 static public string GetPropertyStorageName(System.Type type, string property)
-```
+``` 
 
-Данный метод необходимо применять, если атрибут свойства `PropertyStorageAttribute` имеет вид:
+This method should be used if the property attribute is `PropertyStorageAttribute` is: 
 
 ``` csharp
 [PropertyStorage("TimeQu"))
-```
+``` 
 
-### Метод с использованием индекса
+### Method using index 
 
-Метод, требующий указания индекса при вызове, имеет следующий вид:
+Method that requires an index when you call, have the following form: 
 
 ``` csharp
-/// <param name="type">.Net-тип класса объекта данных</param>
-/// <param name="property">имя свойства</param>
-/// <param name="index">индекс в множестве</param>
-/// <returns>имя хранения</returns>
+/// <param name="type">.Net class type of the data object</param> 
+/// <param name="property">the property name</param> 
+/// <param name="index">the index to set</param> 
+/// <returns>the name of the storage</returns> 
 static public string GetPropertyStorageName(System.Type type, string property, int index)
-```
+``` 
 
-Данный метод необходимо применять, если при объявлении атрибута свойства `PropertyStorageAttribute` используется массив имён:
+This method should be used if the attribute Declaration properties `PropertyStorageAttribute` used an array of names: 
 
 ``` csharp
-PropertyStorage(new string[]) {"ПростоКласс"}))
-```
+PropertyStorage(new string[]) {"Postclass"}))
+``` 
 
-В этом случае параметр `index` определит номер элемента из массива имён, определённого при объявлении атрибута свойства `PropertyStorageAttribute`, который будет возвращён методом.
+In this case, the parameter `index` will determine the element number of the array names specified in the attribute Declaration properties `PropertyStorageAttribute`, which will be returned by the method. 
 
-### Ошибочное использование Information.GetPropertyStorageName
+### Erroneous Information.GetPropertyStorageName 
 
-* Если атрибут `PropertyStorageAttribute` был объявлен без использования массива, но используется вызов `Information.GetPropertyStorageName` с индексом, то будет вызвано исключение.
-* Если атрибут `PropertyStorageAttribute` был объявлен с использования массива, но используется вызов `Information.GetPropertyStorageName` без индекса, то будет возвращена пустая строка.
+* If the attribute `PropertyStorageAttribute` was declared without an array, but use the call `Information.GetPropertyStorageName` index, an exception will be thrown. 
+* If the attribute `PropertyStorageAttribute` was declared with an array, but use the call `Information.GetPropertyStorageName` without an index, then an empty string is returned. 
 
-## Особенности генерации атрибута свойств PropertyStorage
+## Features of generation attribute properties PropertyStorage 
 
-* Атрибут `Storage`, заданный для [свойств классов](fo_attributes-class-data.html), после генерации будет представлен в виде объявления атрибута `PropertyStorage` без массива.
-* Атрибуты `Aggregator Storage` [детейловой связи](fo_detail-associations-properties.html) и `Storage` [мастеровой связи](fd_master-association.html) после генерации будут представлены в виде объявления атрибута `PropertyStorage` без массива, если выполнены следующие условия:
-  * Storage-атрибут содержит только одно непустое значение.
-  * Атрибут [TypeUsage](fo_type-usage-problem.html) содержит более одного значения.
+* Attribute `Storage` specified for the [class properties](fo_attributes-class-data.html), after generation will be presented in the form of attribute declarations `PropertyStorage` without the array. 
+* Attributes `Aggregator Storage` [dyelovoi links](fo_detail-associations-properties.html) and `Storage` [artisan links](fd_master-association.html) after generation will be presented in the form of attribute declarations `PropertyStorage` without the array, if the following conditions are met: 
+* Storage-attribute contains only one nonempty value. 
+* Attribute [a typeusage](fo_type-usage-problem.html) contains more than one value. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

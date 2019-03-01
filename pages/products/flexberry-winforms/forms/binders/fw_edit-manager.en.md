@@ -1,46 +1,48 @@
----
-title: Менеджер редактирования форм
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, binders, EditManager
-summary: Определение, методы, создание форм, примеры
-toc: true
-permalink: en/fw_editmanager.html
-lang: en
----
+--- 
+title: EditManager 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, binders, EditManager 
+summary: Definition, methods, forms, examples 
+toc: true 
+permalink: en/fw_editmanager.html 
+lang: en 
+autotranslated: true 
+hash: ef21acd53b5a0e2aadeb0de38708ceb56b01c4605497cfd598b6338c2859b539 
+--- 
 
-`EditManager` (`ICSSoft.STORMNET.Windows.Forms.Binders.EditManager`, менеджер редактирования) — специализированный класс для непрерывного связывания контролов со свойствами объекта данных.
+`EditManager` (`ICSSoft.STORMNET.Windows.Forms.Binders.EditManager`, Manager edit) — the special class for continuous binding controls to properties of the data object. 
 
-## Метод EditManager.Change
+## Method Of EditManager.Change 
 
-Если значение объекта данных изменено программным образом, то для обновления значения на форме необходимо сообщить `EditManager`, что значение (либо весь объект изменились). Это делается вызовом у `EditManager` метода `Change()`. Если метод вызван без параметров, то обновляются все контролы. Если с параметром (именем свойства), то только контролы, «подвязанные» к указанному свойству. Если параметром указано имя мастера, то обновляются все контролы всех мастеровых свойств этого мастера.
+If the value of the data object is changed programmatically, to update values on the form are required to inform `EditManager` that the value (or the entire object has changed). This is done by calling the method from `EditManager` `Change()`. If the method is called without any parameters, updates all controls. If parameter (property name), it only controls "tied" to the specified property. If the argument is specified the name of the wizard that will update all the controls all the mechanics of the properties of this wizard. 
 
-Пример использования данного метода представлен в статье [Особенности задания значения по умолчанию](fo_features-dafault-value.html).
+An example of using this method is presented in [features of setting default values](fo_features-dafault-value.html). 
 
-_Особенность:_ метод без параметра, либо с одним параметром-строкой не вызовет `AfterChangeProperties()`.
+Osobennosti:_ method without a parameter or with one parameter, the string will not cause `AfterChangeProperties()`. 
 
-## Метод EditManager.SetReadonlyFlagProperties
+## Method Of EditManager.SetReadonlyFlagProperties 
 
-На форме редактирования иногда необходимы поля, которые блокируются через EditManager. Однако возникают ситуации, когда при использовании `EditManager.SetReadonlyFlagProperties` после сохранения объекта на какой-то время снимается блокировка и значение может быть изменено. Для предотвращения таких ситуаций существует метод `AddControlsToForcedReadOnlyList`, блокирующий изменение флаг `ReadOnly`. Данный метод работает со списком контролов. Список в свою очередь можно редактировать: добавлять или удалять контролы.
+On the edit form, sometimes the required fields that are blocked via EditManager. However, there are situations when you are using `EditManager.SetReadonlyFlagProperties` after you save the object for some time, you unlock and the value can be changed. To prevent such situations, there is a method `AddControlsToForcedReadOnlylist` that block change flag `ReadOnly`. This method works with a list of controls. The list in turn can be edited: to add or remove controls. 
 
 ```csharp
 void EditManager.SetReadonlyFlagProperties(bool readonlyflag, params string[] properties)
-```
+``` 
 
-Параметр `readonlyflag` определяет значение, которое будет установлено свойству ReadOnly у контролов, редактирующих поля, указанные в `properties`.
+Pstrfreadonlyflag` parameter defines the value that will be set the ReadOnly property of the controls, edit fields specified in `properties`. 
 
-Пример использования данного метода представлен в статье [Определение доступных для редактирования полей для одной формы, но разных приложений](fw_different-applications-and-fields.html).
+An example of using this method is presented in the article [Definition available to edit the fields for one form, but different apps](fw_different-applications-and-fields.html). 
 
-## Метод AddControlsToForcedReadOnlyList
+## Method AddControlsToForcedReadOnlyList 
 
 ```csharp
-/// <summary>
-/// Добавить элементы в список контролов, у которых EditManager не будет менять флаг ReadOnly.
-/// </summary>
-/// <param name="controlList">Новые элементы.</param>
+/// <summary> 
+/// Add items to list controls, which EditManager will not change the ReadOnly flag. 
+/// </summary> 
+/// <param name="controlList">New items.</param> 
 public void AddControlsToForcedReadOnlyList(List<Control> controlList)
-```
+``` 
 
-__Пример:__
+__Example:__ 
 
 ```csharp
 public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpath, string propertyname, object tag)
@@ -51,93 +53,97 @@ public override void Edit(ICSSoft.STORMNET.DataObject dataobject, string contpat
                 EditManager.AddControlsToForcedReadOnlyList(new List<Control>() { ctrlФИО });
             }
         }
-```
+``` 
 
-## Метод RemoveControlsFromForcedReadOnlyList
+## Method RemoveControlsFromForcedReadOnlylist 
 
-Данный метод позволяет удалить контролы, добавленные методом AddControlsToForcedReadOnlyList.
+This method allows you to remove the controls added by the AddControlsToForcedReadOnlyList. 
 
 ```csharp
-/// <summary>
-/// Удалить элементы из списка контролов, у которых EditManager не будет менять флаг ReadOnly.
-/// </summary>
-/// <param name="controlList">Удаляемые элементы.</param>
-/// <param name="readOnlyFlag">Флаг, который у удаляемых из списка элементов нужно проставить в свойство ReadOnly.</param>
+/// <summary> 
+/// Remove elements from the list of controls, which EditManager will not change the ReadOnly flag. 
+/// </summary> 
+/// <param name="controlList">the Removed elements.</param> 
+/// <param name="readOnlyFlag">Flag, which is removed from the list of items you need to put in the ReadOnly property.</param> 
 public void RemoveControlsFromForcedReadOnlyList(List<Control> controlList, bool readOnlyFlag = false)
-```
+``` 
 
-## Создание формы "вручную"
+## create a form "manually" 
 
-### Связывание через программный код
+### Linking via program code 
 
-1.Разместить необходимые элементы управления на форме;
+1.Place necessary controls on форме; 
 
-2.Создать экземпляр класса `ICSSoft.STORMNET.Windows.Forms.Binders.EditManager` (менеджер редактирования — специализированный класс для непрерывного связывания контролов со свойствами объекта данных).
+2.Create an instance of the class `ICSSoft.STORMNET.Windows.Forms.Binders.EditManager` (Manager editing is a specialized class for continuous binding controls to properties of the data object).
 
-В конструкторе обязательным параметром является класс данных, на который настраивается менеджер редактирования.
+Designer required parameter is the data class that is configured in Manager edit. 
 
-__Пример:__
+__Example:__ 
 
 ```csharp
 em = new StormNetForms.Binders.EditManager(typeof(CDDD));
-```
+``` 
 
-3.Связать контролы со свойствами объекта данных. Для этого необходимо вызвать у `EditManager` метод `AddControl`. Параметрами передается структура `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct`.
+3.To link controls to properties of the data object. It is necessary to cause `EditManager` method `AddControl`. The parameters passed to the structure `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct`. 
 
-__Пример:__
+__Example:__ 
 
 ```csharp
-em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtName, "Text"), "Наименование");
-em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtCapacity, "Text"), "Объем");
-```
+em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtName, "Text"), "Name");
+em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtCapacity, "Text"), "Volume");
+``` 
 
-4.Установить в свойство `EditManager.DataObject` объект данных, который требуется отредактировать.
+4.To set a property `EditManager.DataObject` the data object that you want to edit. 
 
-После выполнения этих действий контролы будут подключены к свойствам объекта данных посредством `EditManager`, соответственно, когда пользователь будет редактировать значения в контролах, одновременно будут изменяться значения свойств объекта данных.
+After performing these steps, the controls will be connected to the properties of object data through `EditManager`, respectively, when the user will edit the values in the controls at the same time will change the values of the properties of the data object. 
 
-Если значение объекта данных изменено программным образом, то для обновления значения на форме необходимо выполнить `EditManager.Change`.
+If the value of the data object is changed programmatically, to update values on the form need to perform `EditManager.Change`. 
 
-`EditManager` имеет события, позволяющие определить изменение значений свойств объекта данных:
+`EditManager` has events that allow to determine the values of properties in the data object: 
 
-* `BeforeChangePropertyValue`, срабатывающее перед установкой значения,
-* `AfterChangeProperty`, срабатывающее после установки значения.
+* `BeforeChangePropertyValue` triggered before setting the value, 
+* `AfterChangeProperty` triggered after setting the value. 
 
-Также можно связывать вручную контролы с другими контролами, предоставляющими свой `EditManager`, например с `GroupEditBase`, тогда можно обеспечить редактирование значений объекта данных, находящегося в списке, через внешние контролы.
+You can also manually associate controls with other controls, providing your `EditManager`, such as `GroupEditBase`, then it is possible to provide the editing values of the data object in the list, via the external controls. 
 
-### Связывание через окно редактирования свойств
+### Binding through the properties 
 
-Вместо того, чтобы конструировать `EditManager` из кода, его также можно «набросить» на форму как контрол и связать контролы со свойствами через стандартное окно редактирования свойств в среде Visual Studio.
+Instead of designing `EditManager` from the code, it is also possible to "throw" on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment. 
 
-Если в окне редактирования свойств `EditManager` в поле `Bindings.<select view>` по какой-то причине ничего нельзя выбрать, то в коде зависимой формы можно исправить строку:
+If the window edit properties `EditManager` in the field `Bindings.<select view>` for some reason you cannot select anything in your code dependent forms, you can correct the line: 
 
 ```csharp
 this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("", null, null);
-```
+``` 
 
-на следующую, где указано, с каким представлением работает EditManager:
+in the following, where indicated, with what view works EditManager: 
 
 ```csharp
-this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("C__КлиентE", typeof(IIS.TryFilter.Клиент), null);
-```
+this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("C__Client", typeof(IIS.TryFilter.Клиент), null);
+``` 
 
-Далее через поле `Bindings.<Add>` необходимо добавить нужные свойства объекта, после чего в появившихся ниже строчках определить для них контролы из списка.
+Further through the field `Bindings.<Add>` you need to add the necessary properties of the object, and then in which appears below lines to define their controls from the list. 
 
-Через поле `Bindings.<Remove>` можно осуществить удаление свойства объекта из биндинга.
+Through the field `Bindings.<Remove>` is possible to delete object properties of binding. 
 
-Для связывания полей ввода со свойствами объекта генерируется код, аналогичный следующему:
+To associate input fields with object properties generated code similar to the following: 
 
 ```csharp
 Binds(string viewname, Type dataobjectType, OneBind[] binds) (параметры для создания объектов класса OneBind аналогичны параметрам структуры ControlForBindStruct).
-this.editManagerMain.Bindings = new Binds("C__КлиентE", typeof(IIS.TryFilter.Клиент),
+this.editManagerMain.Bindings = new Binds("C__Client", typeof(IIS.TryFilter.Клиент),
     new ICSSoft.STORMNET.Windows.Forms.Design.OneBind[]
         {
-            new OneBind(this.textBoxClientFIO, typeof(System.Windows.Forms.TextBox), "Text", null, "ФИО"),
-            new OneBind(this.textBoxClientAdress, typeof(System.Windows.Forms.TextBox), "Text", null, "Прописка")
+            new OneBind(this.textBoxClientFIO, typeof(System.Windows.Forms.TextBox), "Text", null, "Name"),
+            new OneBind(this.textBoxClientAdress, typeof(System.Windows.Forms.TextBox), "Text", null, "Registration")
         });
-```
+``` 
 
-# Полезные ссылки
+# Useful links 
 
-* [Как редактировать объекты данных на формах и связывать поля ввода со свойствами объекта данных с помощью `EditManager`](fw_edit-data-objects-on-forms.html).
-* [LookUp](fw_lookup.html).
-* Информация о [`EditManager.ApplyDataFromControl`](fw_focus-and-ctrl-s.html).
+* [How to edit data objects on forms and to associate the input fields with object properties data using `EditManager`](fw_edit-data-objects-on-forms.html). 
+* [LookUp](fw_lookup.html). 
+* Information about [`EditManager.ApplyDataFromControl`](fw_focus-and-ctrl-s.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,52 +1,58 @@
----
-title: Flexberry Designer
-keywords: Flexberry Desinger, UML, основы проектирования, модули, настройка
-summary: Общие сведения о Flexberry Desinger, его установке и настройке
-sidebar: flexberry-designer_sidebar
-toc: false
-permalink: en/fd_landing_page.html
-lang: en
----
+--- 
+title: Flexberry Designer 
+keywords: Flexberry Desinger, UML, design basics, modules, configure 
+summary: General information about Flexberry Desinger, its installation and configuration 
+sidebar: flexberry-designer_sidebar 
+toc: false 
+permalink: en/fd_landing_page.html 
+lang: en 
+autotranslated: true 
+hash: 989f01bc9bd9c4ae8c0364b2bee8521c86faa9f838c533ef7ee5be36b1459750 
+--- 
 
-## Flexberry Designer
+## Flexberry Designer 
 
-**Flexberry Designer** - это [CASE-инструмент](https://ru.wikipedia.org/wiki/CASE), который может быть использован как для бизнес-моделирования (анализ бизнес-процессов, реинжиниринг бизнес-процессов), так и для объектно-ориентированного проектирования программного обеспечения и баз данных. В качестве нотации используется [UML](http://www.uml.org).
+**Flexberry Designer** is a [CASE tool](https://ru.wikipedia.org/wiki/CASE), which can be used for both business modeling (analysis of business-processes, reengineering of business processes) and object-oriented design of software and databases. As the notation used by [UML](http://www.uml.org). 
 
-Flexberry Designer является [продуктом платформы Flexberry](fp_platform-structure.html).
+Flexberry Designer is [product platform Flexberry](fp_platform-structure.html). 
 
-## Состав
+## Composition 
 
-### Репозиторий UML-моделей
+### Repository of UML models 
 
-Репозиторий моделей позволяет удобно хранить диаграммы в структурированном виде. Для работы с репозиторием применяется  [браузер репозиториев Flexberry Designer](fd_repository-browser.html).
+The model repository allows you to conveniently store the chart in a structured way. To work with repository is used [repository browser Flexberry Designer](fd_repository-browser.html). 
 
-[Репозиторий имеет структуру](fd_recommended-structure-repository.html), не ограничивающую пользователя какой-либо методологией.
+[Repository has a structure](fd_recommended-structure-repository.html), not limiting the user to any methodology. 
 
-Для диаграммы как репозиторного объекта реализованы [дополнительные возможности для манипуляции](fd_working-repository-browser.html).
+For the chart as a repository object implemented [additional opportunities for manipulation](fd_working-repository-browser.html). 
 
-### Редактор UML-диаграмм
+### Editor of UML diagrams 
 
-Реализованы широкие возможности моделирования (создания моделей в нотации `UML`) соответствующими диаграммными методами в рамках [редактора UML-диаграмм](fd_editing-diagram.html).
+Implemented wide possibilities of modeling (creation of models in the notation of `UML`) appropriate diagrammatic methods in [editor UML diagrams](fd_editing-diagram.html). 
 
-### Модули расширения Flexberry Designer
+### expansion Modules Flexberry Designer 
 
-Имеется возможность расширения функционала посредством подключения [дополнительных модулей](fd_flexberry-plugins.html). Модули предоставляют возможности расширения пользовательского интерфейса, структуры данных, возможностей по генерации исходного кода с моделей.
+You can also add functionality by connecting [additional modules](fd_flexberry-plugins.html). Modules provide expansion capabilities for the user interface, data structure, possibilities of generating source code from models. 
 
-### Проектирование во Flexberry Designer
+### Design in Flexberry Designer 
 
-Проектирование с использованием инструментария Flexberry Designer подразумевает принцип Model-First, когда все изменения в модели производятся в Flexberry Designer, а изменения в коде выполняются во время генерации. Также реализован [механизм, позволяющий программистам писать код, который при перегенерации не будет потерян](fd_code-generation.html), так называемые, «[скобки программиста](fo_programmer-brackets.html)». Использование инструментария проектирования позволяет с лёгкостью вносить изменения в модель любому участнику команды разработки, не опасаясь что-нибудь сломать.
+Design using tools Flexberry Designer implies the principle of Model-First, when all changes to the model are made in Flexberry Designer, and code changes are performed during the generation. Also implemented [a mechanism that allows programmers to write code that when regeneration is not lost](fd_code-generation.html) the so-called "[brackets programmer](fo_programmer-brackets.html)". The Toolkit design allows you to easily amend the model to any member of the development team without fear to break something. 
 
-Ключевые понятия объектной структуры для систем, разрабатывающихся во Flexberry Designer, представлены в [этой статье](fd_key-concepts.html).
+The key concepts of object structure for systems developed in Flexberry Designer presented in [this article](fd_key-concepts.html). 
 
-## Установка и настройка Flexberry Designer
+## Install and configure Flexberry Designer 
 
-Существует несколько вариантов установки Flexberry Designer на различных реляционных СУБД:
+There are several installation options Flexberry Designer on different RDBMS: 
 
-*   [из дистрибутива](fd_standalone-install.html).
-*   [с сайта продукта](fd_install.html).
+* [distribution](fd_standalone-install.html). 
+* [from the product website](fd_install.html).
 
-Для работы Flexberry Designer должна быть установлена корректная лицензия на все используемые продукты.
+To work Flexberry Designer must be installed the correct license for all products used. 
 
-Дополнительно Flexberry Designer предоставляет следующие полезные возможности:
+Additionally Flexberry Designer provides the following useful features: 
 
-* [Запуск Flexberry Designer с открытием указанной стадии](fd_running-opening-stage.html)
+* [Start Flexberry Designer with the specified opening stage](fd_running-opening-stage.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

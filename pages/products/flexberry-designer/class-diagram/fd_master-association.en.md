@@ -1,94 +1,100 @@
----
-title: Мастеровые ассоциации и их свойства 
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, ассоциация, мастер, свойства мастеровой ассоциации, генерация, пример
-summary: Особенности мастеровых ассоциаций и их свойства, пример генерации
-toc: true
-permalink: en/fd_master-association.html
-lang: en
----
+--- 
+title: Artisans of the Association and their properties 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, Association, master, properties artisan, Association, generation, example 
+summary: Features artisan associations and their properties illustrates 
+toc: true 
+permalink: en/fd_master-association.html 
+lang: en 
+autotranslated: true 
+hash: c722ca493119792224e7f9a8bde5ca098b1d508757d3aabd8f6d80c420e6f200 
+--- 
 
-Согласно [базовой статье](fd_key-concepts.html) мастеровыми являются композиции, подобные:
+According to [base article](fd_key-concepts.html) workmen are compositions like: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/master.png)
+![](/images/pages/products/flexberry-designer/class-diagram/master.png) 
 
-{% include note.html content="Принято, чтобы конец ассоциации имел множественность `*`, а начало `1`, либо '0..1` (иначе: проводите ассоциацию от мастерового класса ко внутреннему). Мастеровой класс всегда должен находиться со стороны начала ассоциации, а внутренний - со стороны конца." %}
+{% include note.html content="Made to end the Association had a multiplicity `*`, but the beginning of `1` or '0..1` (otherwise: perform the Association from the artisan class to internal). Artisan class must always be from the beginning of the Association, and the inner side of the end." %} 
 
-{% include note.html content="При редактировании ассоциации на [диаграмме классов](fd_class-diagram.html) нужно учитывать [существующие особенности](fd_class-diagram-editor-features-work.html).
-" %}
+{% include note.html content="When editing an Association to [class diagram](fd_class-diagram.html) you need to take into account [existing features](fd_class-diagram-editor-features-work.html). 
+"%} 
 
-При этом генерируется ассоциация.  
-Генерация в SQL DDL. Определение структуры SQL DDL создаётся так:
+This will generate an Association. 
+The generation of SQL DDL. The structure definition DDL SQL is created like this: 
 
-* В таблице, соотв. внутреннему классу, - ссылка на таблицу, соотв. мастеровому классу; 
-* Constraint, связывающий таблицы.
+* In the table, respectively. internal class - link table, respectively. Masterova классу; 
+* Constraint linking table. 
 
-Генерация в .Net-язык. Во внутреннем классе, - приватный член типа мастера и публичное виртуальное свойство с соответствующим модификатором (# - protected, + - public, - - private), поименованное, как имя роли, находящейся со стороны мастера. См. также [Структура классов объектов данных](fo_data-object-structure.html).
+Generation in .Net language. In the inner class, private member of type master and a public virtual property with the appropriate modifier (# - protected, - public, - private), named like the role name in the side of the wizard. Cm. [structure of the classes of data objects](fo_data-object-structure.html). 
 
-### Дополнительно редактируемые свойства и что как генерируется
+### Additional editable properties and how that is generated 
 
-Cвойства мастеровой ассоциации:
+Properties artisan Association: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/properties.png)
+![](/images/pages/products/flexberry-designer/class-diagram/properties.png) 
 
-Свойство-Описание | Генерация в SQL DDL | Генерация в .Net-язык
-:---------------------|:----------------------------------|:-------------------------------------
-`Description` - описание | Никак | Описание в DocComment к свойству внутреннего класса, если оставлено пустым, DocComment не генерируется.
-`StartRole` - имя роли со стороны начала (со стороны мастера) | Имя поля в таблице внутреннего класса, являющегося внешним ключом на таблицу мастерового класса, если другое имя не указано свойством Storage | Имя свойства и приватного члена внутреннего класса
-`StartMultiplicity` - мощность ассоциации со стороны начала (со стороны мастера) | Если мощность 1, - в DDL скрипт CREATE TABLE для таблицы, соотв. внутреннему классу, в определении поля указывается NOT NULL. Если мощность 0..1 - NULL | Если мощность 1, - перед свойством во внутреннем классе генерируется указание атрибута NotNullAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
-`StartRoleAccessModifier` - модификатор со стороны начала (со стороны мастера) | Никак | Соответствующий модификатор свойства (# - protected, + - public, - - private)
-`StartRoleStored` | Поле внешнего ключа в таблице, соотв. внутреннему классу, не генерируется. | Перед определением свойства указывается .Net-атрибут NotStoredAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
-`EndRole` - имя роли со стороны конца, дублирует на диаграмме | Никак | Не используется (зарезервировано)
-`EndMultiplicity` - мощность ассоциации со стороны начала, дублирует на  | Никак | Не используется (зарезервировано)
-`AutoGenerateTypeUsage` - автоматическая генерация [используемых типов](fo_type-usage-problem.html). | В DDL-определении таблицы для внутреннего класса генерируются [внешние ключи на каждый найденный класс](fo_storing-data-objects.html). При этом поля именуются следующим образом: @@<Storage>_M<ПорядкНомерВTypeUsage>@@ . «ПорядкНомерВTypeUsage» — начинается с 0. | Мастеровому свойству внутреннего класса прописывается .NET-атрибут [TypeUsageAttribute](fo_type-usage-problem.html), с указанием всех найденных классов.
-`Storage` - имя [хранения](fo_storing-data-objects.html) | Если указано, то такое и будет имя поля - внешнего ключа, а не StartRole. | Перед определением свойства генерируется указание атрибута [PropertyStorageAttribute](fo_storing-data-objects.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
-`TypeUsage` - явное задание [используемых типов](fo_type-usage-problem.html). Не учитывается при установленном флаге AutoGenerateTypeUsage. [Можно указать имена используемых типов](fo_type-usage.html) (имена мастерового класса и любых его [наследников](fd_inheritance.html), для которых должна быть актуальна данная мастеровая ассоциация), через запятую. | В DDL-определении таблицы для внутреннего класса генерируются [внешние ключи на каждый из указанных классов](fo_storing-data-objects.html). При этом поля именуются следующим образом: @@<Storage>_M<ПорядкНомерВTypeUsage>@@ . «ПорядкНомерВTypeUsage» — начинается с 0. | Мастеровому свойству внутреннего класса прописывается .NET-атрибут [TypeUsageAttribute](fo_type-usage-problem.html), с указанием указанных классов.
-`AutoStoreMasterDisabled` - отключение автоматического сохранения мастерового объекта при сохранении основного объекта. | Никак | Перед определением мастерового свойства генерируется указание атрибута AutoStoreMasterDisabled (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
-`PBMasterCustomAttributes` | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения .Net атрибутов перед кодом свойства.
-`PBMasterGetEnd` | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора get.
-`PBMasterGetStart` | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора get.
-`PBMasterSetEnd` | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора set.
-`PBMasterSetStart` | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set.
+Property Description | Generate SQL DDL Generation .Net language 
+:---------------------|:----------------------------------|:------------------------------------- 
+`Description` - description | No | Description in the DocComment property to the inner class if left blank, DocComment is not generated. 
+`StartRole` - the name of the role from the beginning (from the master) | a field Name in the table of the inner class, it is a foreign key to table artisan class, if another name is specified by the Storage property | property Name and private member of inner class 
+`StartMultiplicity` power of the Association from the beginning (from the master) | If power is 1, in a DDL CREATE TABLE script for the table, respectively. internal class in the field definition specifies NOT NULL. If the capacity 0..1 - NULL | If power is 1, - before the property in an internal class is generated by specifying the attribute NotNullAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) 
+`StartRoleAccessModifier` modifier from the beginning (from the master) | No | Applicable modifier properties (# - protected, - public, - private) 
+`StartRoleStored` | foreign key Field in the table, respectively. the inner class is not generated. Before the property definition is specified .Net-NotStoredAttribute attribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) 
+`EndRole` - the name of the role from the end that duplicates the chart | Does | Not used (reserved) 
+`EndMultiplicity` power of the Association from the beginning, duplicates | No way | Not used (reserved) 
+`AutoGenerateTypeUsage` - automatic generation [types](fo_type-usage-problem.html). | DDL table definition for inner class are generated [foreign keys for each found class](fo_storing-data-objects.html). The fields are named as follows: @@<Storage>_M<ПорядкНомерВTypeUsage>@@ . "ПорядкНомерВTypeUsage" — starts with 0. | Masterovoy property of the interior class .NET-attribute [TypeUsageAttribute](fo_type-usage-problem.html), showing all the found classes. 
+`Storage` - name [store](fo_storing-data-objects.html) | If specified, this will be the field name of the foreign key, not StartRole. Before the property definition is generated specifying attribute [PropertyStorageAttribute](fo_storing-data-objects.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) 
+`TypeUsage` - an explicit reference [types](fo_type-usage-problem.html). Is ignored if the flag is AutoGenerateTypeUsage. [You can specify the names of the types used](fo_type-usage.html) (the names of the artisan class and any of its [successors](fd_inheritance.html), which should be relevant the artisans Association), separated by commas. | DDL table definition for inner class are generated [foreign keys for each of the classes](fo_storing-data-objects.html). The fields are named as follows: @@<Storage>_M<ПорядкНомерВTypeUsage>@@ . "ПорядкНомерВTypeUsage" — starts with 0. | Masterovoy property of the interior class .NET-attribute [TypeUsageAttribute](fo_type-usage-problem.html), indicating these classes. 
+`AutoStoreMasterDisabled` - disable automatic saving of the workman of the object while keeping the main subject. | No | Before the definition of artisan properties is generated specifying attribute AutoStoreMasterDisabled (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) 
+`PBMasterCustomAttributes` | in any Way | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual application .Net attributes before the code properties.
+`PBMasterGetEnd` | in any Way | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering of code before the end of the getter. 
+`PBMasterGetStart` | in any Way | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) to "manual" any code after the beginning of getter. 
+`PBMasterSetEnd` | in any Way | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering of code before the end of the set accessor. 
+`PBMasterSetStart` | in any Way | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering the code after the set accessor. 
 
-Автоматическая генерация работает следующим образом:
+Automatic generation works as follows: 
 
-1. Выполняется поиск всех [наследников](fd_inheritance.html) мастерового класса (в пределах стадии);
-2. Найденные классы, вместе с мастеровым классом, сортируются по названию по возрастанию; 
-3. Результат является определением [используемых типов](fo_type-usage-problem.html).
+1. Finds all [heirs](fd_inheritance.html) artisan class (within stage); 
+2. Classes were found, along with the workman class, sorted by name on возрастанию; 
+3. The result is the definition of a [types](fo_type-usage-problem.html). 
 
-### Пример
+### Example 
 
-Для вышепоказанной диаграммы код на C# выглядит так:
+For the above chart on the C# code looks like this: 
 
 ```csharp
 private ICSSoft.BugLeR.Пользователь fРегистратор;
-// ........
-// *** Start programmer edit section *** (Ошибка.Регистратор CustomAttributes)
+// ........ 
+// *** Start programmer edit section *** (Error.The Registrar CustomAttributes) 
 
-// *** End programmer edit section *** (Ошибка.Регистратор CustomAttributes)
+// *** End programmer edit section *** (Error.The Registrar CustomAttributes) 
 [NotNull())
 public virtual ICSSoft.BugLeR.Пользователь Регистратор
 {
 	get
 	{
-		// *** Start programmer edit section *** (Ошибка.Регистратор Get start)
+		// *** Start programmer edit section *** (Error.Logger Get start) 
 
-		// *** End programmer edit section *** (Ошибка.Регистратор Get start)
+		// *** End programmer edit section *** (Error.Logger Get start) 
 		ICSSoft.BugLeR.Пользователь result = this.fРегистратор;
-		// *** Start programmer edit section *** (Ошибка.Регистратор Get end)
+		// *** Start programmer edit section *** (Error.Logger Get end) 
 
-		// *** End programmer edit section *** (Ошибка.Регистратор Get end)
+		// *** End programmer edit section *** (Error.Logger Get end) 
 		return result;
 	}
 	set
 	{
-		// *** Start programmer edit section *** (Ошибка.Регистратор Set start)
+		// *** Start programmer edit section *** (Error.The Registrar Set start) 
 
-		// *** End programmer edit section *** (Ошибка.Регистратор Set start)
+		// *** End programmer edit section *** (Error.The Registrar Set start) 
 		this.fРегистратор = value;
-		// *** Start programmer edit section *** (Ошибка.Регистратор Set end)
+		// *** Start programmer edit section *** (Error.The Registrar Set end) 
 
-		// *** End programmer edit section *** (Ошибка.Регистратор Set end)
+		// *** End programmer edit section *** (Error.The Registrar Set end) 
 	}
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

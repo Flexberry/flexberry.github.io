@@ -1,67 +1,73 @@
----
-title: Placing a list of objects in an ObjectListView
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, OLV, DataObject
-summary: Алгоритм создания списка, установка типа и представление, включение данных
-toc: true
-permalink: en/fw_put-list-objects.html
-lang: en
----
+--- 
+title: Entire list of objects in ObjectListView 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, controls, list, data objects 
+summary: Algorithm for creating the list, set the type and presentation, inclusion of data 
+toc: true 
+permalink: en/fw_put-list-objects.html 
+lang: en 
+autotranslated: true 
+hash: 61b090ed8fc6b9f4e0d546ca475e0e03c4cbca5306fc2d80ad822cbac1b1e900 
+--- 
 
-Так как [ObjectListView](fw_objectlistview.html) не используется для отображения данных не из БД, стандартного способа отобразить список объектов, созданных прямо в коде, нет.
+[ObjectListView](fw_objectlistview.html) is not used to display data from DB, the standard way to display a list of objects created directly in code, no. 
 
-Тем не менее существует алгоритм решения этой задачи.
+However, there is an algorithm solving this problem. 
 
-## Алгоритм добавления данных
+## Algorithm add data 
 
-* Создать список данных, которые будут отображены.
-* Установить у `ObjectListView` используемый тип и представление.
-* Установить `LimitFunction` так, чтобы из базы ничего не подгрузилось.
-* Вызвать метод `SetObjects`.
+* Create a list of data to display. 
+* To install `ObjectListView` the type and performance. 
+* Set `LimitFunction` to base nothing podgruzilo. 
+* Call method `SetObjects`. 
 
-### Создание списка данных
+### to create a data list 
 
-В первую очередь создается собственно список данных, которые необходимо будет загрузить в `ObjectListView`. Не обязательно, чтобы эти данные были в базе.
+First, create a proper list of the data that must be downloaded into `ObjectListView`. Not necessarily that the data was in the database. 
 
-Для примера используется переменная `myObjects`, в которую будет сохранен созданный список объектов.
+For example, the variable `myObjects` to which to save the created objects list. 
 
-### Установка используемого типа и представления
+### Setting the type and presentation 
 
-Например, необходимо отображать объекты типа `Адрес`, по представлению `АдресL`.
+For example, to display objects of type `Адрес` representation `АдресL`. 
 
-В коде кстанавливаются настройки `ObjectListView`:
+In the code ostanavlivajutsja settings `ObjectListView`: 
 
 ```csharp
 objectListView1.DataObjectTypes = new[] { typeof(Адрес) };
 objectListView1.ViewName = "АдресL";
-```
+``` 
 
-{% include important.html content="Несмотря на то, что данные не обязательно должны находиться в БД, представление у класса, отвечающее за эти данные, __должно быть__." %}
+{% include important.html content="Despite the fact that the data does not have to be in the database, the representation of the class responsible for this data __should be__." %} 
 
-### Блокировка подгрузки данных из базы
+### Lock uploading data from the database 
 
-Чтобы данные из базы не подгружались во время обновления (нажатия на кнопку `Refresh`), необходимо установить `LimitFunction` у `ObjectListView` так, чтобы условие никогда не выполнялось. Например, следующим образом:
+To get data from database is not loaded during the update (pressing the button `Refresh`), you need to install `LimitFunction` have `ObjectListView` so that the condition is never fulfilled. For example, in the following way: 
 
 ```csharp
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 objectListView1.LimitFunction = langdef.GetFunction(langdef.funcSQL, "1 = 2");
-```
+``` 
 
-### Добавление объектов в список
+### Adding objects to the list 
 
-Чтобы добавить объекты в список, достаточно вызвать метод `SetObjects` у `ObjectListView`:
+To add objects to the list, simply call the method `SetObjects` have `ObjectListView`: 
 
 ```csharp
 objectListView1.SetObjects(myObjects.ToArray());
-```
+``` 
 
-Однако, если вызвать этот метод в момент создания формы, то данные потеряются при нажатии на кнопку `Refresh`.
+However, if you call this method at the time of creation of the form, the data will be lost when you press the button `Refresh`. 
 
-Чтобы данные сохранялись, необходимо вызывать этот метод __после загрузки данных из базы__. Для этого необходимо подписаться на событие `AfterFillData` и добавить в обработчик вызов метода `SetObjects`, к примеру так:
+To data is persisted, you must call this method __after loading data from the database__. For this, you need to subscribe to an event `AfterFillData` and add in a handler method call `SetObjects`, for example: 
 
 ```csharp
 objectListView1.AfterFillData += (o, s) =>
 {
 	objectListView1.SetObjects(myObjects.ToArray());
 };
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

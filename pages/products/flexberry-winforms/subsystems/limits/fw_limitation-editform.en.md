@@ -1,69 +1,74 @@
----
-title: Форма задания ограничений
-sidebar: flexberry-winforms_sidebar
-keywords: Ограничения
-summary: Описано внутреннее устройство формы AdvLimitComponent
-toc: true
-permalink: en/fw_limitation-editform.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Form of assignment restrictions 
+sidebar: flexberry-winforms_sidebar 
+keywords: Constraints 
+summary: Describes the internal structure of the form AdvLimitComponent 
+toc: true 
+permalink: en/fw_limitation-editform.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: c5907d57b8b8fc9d7c51e731e6572b087139de60a5930f19ad37bcb3fb61ccea 
+--- 
 
-## Общее внутреннее устройство формы
-### AdvLimitComponent
+## General internal form device 
+### AdvLimitComponent 
 
-Программист видит AdvLimitComponent, который располагается на форме вместе со списковым контролом [ObjectListView](fw_objectlistview.html). Этот компонент добавляет на тулбар ObjectListView кнопку, которая позволяет управлять накладываемыми ограничениями. Для иерархических списков AdvLimitComponent автоматически не генерируется, но его можно добавить вручную. Главным параметром AdvLimitComponent является списковый контрол, к которому будет привязан этот компонент.
+The programmer sees AdvLimitComponent, which is located on the form with a list control [ObjectListView](fw_objectlistview.html). This component adds to the ObjectListView toolbar button that allows you to control the imposed restrictions. For hierarchical lists AdvLimitComponent not automatically generated, but you can add it manually. The main parameter AdvLimitComponent is a list control that will be assigned to this component. 
+
+### EditAdvLimitDialog 
+
+Component that allows you to call the form of the task constraints from arbitrary locations (not only from list). 
+
+The dialog parameters are specified using the properties EditAdvLimitDialog.DialogParameters type EditAdvLimitDialog.DialogParams. 
+
+Be set using this property the following: 
+
+| Property | Description| 
+|--|--| 
+| `DoNotShowStandardTab` | don't show the tab standard limits 
+| `DoNotShowSimpleTab` | don't show the tab simple constraints 
+| `DoNotShowParametersArea` | Not display job settings 
+| `DoNotShowLimitArea` | don't show the scope of the job limitations 
+| `DoNotSaveEmptyLimit` | When you try to save empty limit to give a message about failing the operation 
+| `DisableLimitName` | Do not enter the constraint name 
+| `ApplyBtnText` | Text on the button use restrictions 
+| `ApplyLimitButtonImage` | the picture on the button apply constraints 
+||| 
 
 
-### EditAdvLimitDialog
+### EditAdvansedFilter1 
 
-Компонент, который позволяет вызвать форму задания ограничения из произвольного места (не только со списка).
+Form advanced editor restrictions. Includes the processing of the editing restrictions and embedded controls for editing the constraints. 
 
-Параметры диалога задаются при помощи свойства EditAdvLimitDialog.DialogParameters типа EditAdvLimitDialog.DialogParams.
+### AdvansedLimit 
 
-Настроить при помощи этого свойства можно следующее:
+Object model constraints edited in the form of task constraints. Includes as a limiting function and the parameter definitions. 
 
-| Свойство | Описание|
-|--|--|
-| `DoNotShowStandardTab` | Не показывать вкладку стандартного ограничения
-| `DoNotShowSimpleTab` | Не показывать вкладку простого ограничения
-| `DoNotShowParametersArea` | Не показывать область задания параметров
-| `DoNotShowLimitArea` | Не показывать область задания ограничения
-| `DoNotSaveEmptyLimit` | При попытке сохранить пустое ограничение выдавать сообщение о невозможности данной операции
-| `DisableLimitName` | Сделать недоступным ввод имени ограничения
-| `ApplyBtnText` | Текст на кнопке применения ограничения
-| `ApplyLimitButtonImage` | Картинка на кнопке применения ограничения
-|||
+### STORMAdvLimit 
+
+An object representation stored in database constraints. Does not contain logic for deserialization. The class itself knows only the serialized Value. Is deserialized into its Nechranice property AdvLimit with AdvLimitComponent. Used only to read / write to the database (the successor of [DataObject](fo_data-object.html)). 
+
+### DataObjectTypeCreator 
+
+Utility class that allows the dynamics to create the type. These types are used on a custom form, specify the settings for restrictions. 
+
+### ExpressionBox 
+
+Control for editing an expression in the constraint. 
+
+## Useful links 
+
+[Restriction on](fw_self-limit.html) <BR> 
+[A simplified view of the editor limitations](fw_limit-editor-simple-view.html) <BR> 
+[The standard editor view of limitations](fw_standart-view-limits-editor.html) <BR> 
+[The imposition of constraints on columns in the lists](fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html) <BR> 
+[Copy / paste branch restrictions (saving and loading from file))](fw_copy-paste-limitation-branch.html) <BR> 
+[The master in the selection list the type parameters in the editor AdvLimit](fw_masters-in-list-selection-type-parameters-in-advlimit.html)<BR> 
+[Function implications when setting constraints](fo_function-implication.html)<BR> 
+[Functions for working with date when setting constraints](fw_date-time-funtions-in-limits.html) (see example [here](fw_date-limits-standart-view.html))<BR> 
+[Restrictions on the form of task constraints](fo_limit-function-serialization.html) 
 
 
-### EditAdvansedFilter1
 
-Форма расширенного редактора ограничений. Включает обработку редактирования параметров ограничения и встроенные контролы для редактирования самого ограничения.
-
-### AdvansedLimit
-
-Объектная модель ограничения, редактируемого на форме задания ограничений. Включает в себя как ограничивающую функцию, так и определения параметров.
-
-### STORMAdvLimit
-
-Объектное представление сохраняемого в базе ограничения. Не содержит логики по десериализации. Сам класс знает только сериализованное Value. Десериализуется в своё нехранимое свойство AdvLimit при помощи AdvLimitComponent. Используется только для чтения-записи в БД (наследник от [DataObject](fo_data-object.html)).
-
-### DataObjectTypeCreator
-
-Служебный класс, который позволяет в динамике создать типы. Эти типы используются на кастом-форме задания параметров ограничений.
-
-### ExpressionBox
-
-Контрол для редактирования выражения в ограничении.
-
-## Полезные ссылки
-
-[Ограничение на себя](fw_self-limit.html), <BR>
-[Упрощенный вид редактора ограничений](fw_limit-editor-simple-view.html), <BR>
-[Стандартный вид редактора ограничений](fw_standart-view-limits-editor.html), <BR>
-[Наложение ограничений по столбцам в списках](fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html), <BR>
-[Копирование / вставка ветки ограничений (сохранение и загрузка из файла))](fw_copy-paste-limitation-branch.html), <BR>
-[Мастера в списке выбора типа параметров в редакторе AdvLimit](fw_masters-in-list-selection-type-parameters-in-advlimit.html),<BR>
-[Функция импликации при задании ограничений](fo_function-implication.html),<BR>
-[Функции для работы с датой при задании ограничений](fw_date-time-funtions-in-limits.html) (пример использования [здесь](fw_date-limits-standart-view.html))<BR>
-[Сохранение ограничений на форме задания ограничения](fo_limit-function-serialization.html)
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

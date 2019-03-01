@@ -1,76 +1,82 @@
----
-title: Integration with Business Server
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service, BusinessServer
-summary: Working out of user operations in the course of data service operation
-toc: true
-permalink: en/fo_user-operations-dataservice.html
-lang: en
----
+--- 
+title: Integration with business server 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services, business server 
+summary: the development of user operations in the process of service data 
+toc: true 
+permalink: en/fo_user-operations-dataservice.html 
+lang: en 
+autotranslated: true 
+hash: fb5ce3578b86d3a042735e02e5c9a863c76f57a43cf1f0e1a637146e1eb8afd2 
+--- 
 
-Если необходимо выполнить какие-либо действия в процессе обновления [сервисом данных](fo_data-service.html) хранилища, можно организовать обработку событий сервиса данных через специализированный [бизнес-сервер](fo_bs-wrapper.html).
+If you want to perform any action in the process of updating [service data](fo_data-service.html) storage, it is possible to organize the processing of event data service through a dedicated [business server](fo_bs-wrapper.html). 
 
-Итак, чтобы организовать эту обработку, необходимо: 
+So, to organize this processing, you must: 
 
-* Описать класс — бизнес-сервер, наследник от `ICSSoft.STORMNET.Business.BusinessServer`.
-* Описать метод-перехватчик вида
+* Describe the class — business server, a successor from `ICSSoft.STORMNET.Business.BusinessServer`. 
+* Describe the method-interceptor view 
 
 ```csharp
 public DataObject[] OnUpdateXXXXX(XXXXX UpdatedObject)
-```
+``` 
 
-где XXXXX — имя класса данных, чьи экземпляры обновляет [сервис данных](fo_data-service.html). Имплементировать этот метод (выполнить необходимые действия при обновлении).
+where XXXXX is the name of the data class whose instances updates [service data](fo_data-service.html). To implement this method (to perform the necessary actions when you upgrade). 
 
-## Указание бизнес-сервера классу данных
+## Specify the business server to the data class 
 
-Прописать бизнес-сервер нужному классу данных `.Net`-атрибутом `BusinessServer`, одновременно указывая тип события.
+To register a business server needs data class `.Net`-attribute `BusinessServer`, at the same time indicating the type of event. 
 
-Типы событий бывают следующие: 
+The event types are as follows: 
 
-* `DataServiceObjectEvents.OnAllEvents` — все события [сервиса данных](fo_data-service.html);
-* `DataServiceObjectEvents.OnAnyEvent` — любые события [сервиса данных](fo_data-service.html) (неактуально при приписывании события, актуально при получении бизнес-сервера методом `BusinessServerProvider.GetBusinessServer`, можно получить бизнес-сервер без различий относительно типов событий, на которые он был подписан);
-* `DataServiceObjectEvents.OnDeleteFromStorage` — [объект данных](fo_data-object.html) будет удалён [сервисом данных](fo_data-service.html);
-* `DataServiceObjectEvents.OnInsertToStorage` — [объект данных](fo_data-object.html) будет создан в хранилище;
-* `DataServiceObjectEvents.OnUpdateInStorage` — [объект данных](fo_data-object.html) будет обновлен в хранилище.
+* `DataServiceObjectEvents.OnAllEvents` — all the events of [data service](fo_data-service.html); 
+* `DataServiceObjectEvents.OnAnyEvent` — any events of [data service](fo_data-service.html) (irrelevant when attributing events that are important when obtaining a business server via `BusinessServerProvider.GetBusinessServer`, you can get a business server, without distinction regarding the types of events on which it was signed); 
+* `DataServiceObjectEvents.OnDeleteFromStorage` — [data object](fo_data-object.html) be deleted [service data](fo_data-service.html); 
+* `DataServiceObjectEvents.OnInsertToStorage` — [data object](fo_data-object.html) will be created in хранилище; 
+* `DataServiceObjectEvents.OnUpdateInStorage` — [data object](fo_data-object.html) will be updated in the repository. 
 
-Типы событий можно комбинировать через `|`.
+Event types can be combined using `|`. 
 
-Сервис данных вызовет метод-перехватчик непосредственно перед выполнением соответствующей операции. Параметром методу придёт [объект данных](fo_data-object.html), над которым выполняется операция. Метод может вернуть какие-либо дополнительные объекты данных, которые будут «подхвачены» сервисом данных.
+The data service will call a method-interceptor just before executing the operation. Parameter the method will come [data object](fo_data-object.html), on which the operation is performed. Method can return any additional data objects that will be picked up by the data service. 
 
-О том, зачем нужно возвращать [объекты данных](fo_data-object.html), а не выполнять отдельные вызовы сервиса данных прямо изнутри перехватчика. Ответ очевиден — для того, чтобы [обновление добавленных объектов выполнилось в той же транзакции](fo_bs-transact.html). Иначе, отдельный вызов сервиса данных — отдельная транзакция, соответственно, если код выполняется не под сервером транзакций (напр. `COM+`), будет разрыв.
+About why you need to return [data objects](fo_data-object.html) instead of doing individual calls to the data service directly from within an interceptor. The answer is obvious — in order to update attached objects executed in the same transaction](fo_bs-transact.html). Otherwise, a separate call data service — private transaction, respectively, if the code is not running under a transaction server (eg. `COM `), there will be a gap. 
 
-Программист может узнать, какой [бизнес-сервер](fo_bs-wrapper.html) приписан [классу данных](fo_data-object.html) через провайдер бизнес-серверов, метод `BusinessServerProvider.GetBusinessServer`.
+The programmer can know what [business server](fo_bs-wrapper.html) assigned to the [data class](fo_data-object.html) via provider business servers, the method `BusinessServerProvider.GetBusinessServer`. 
 
-### Пример бизнес-сервера и класса данных с приписанным бизнес-сервером
+### an Example of a business server and data class with assigned business server 
 
 ```csharp
 public class DataServiceEventsServer:ICSSoft.STORMNET.Business.BusinessServer
 	{
 		public DataObject[] OnUpdateЖурнал(Журнал UpdatedObject)
 		{
-			Console.WriteLine("Поймали обновление журнала {0}." , UpdatedObject.Наименование);
+			Console.WriteLine("Caught log update {0}." , UpdatedObject.Наименование);
 			return new DataObject[0];
 		}
 
 	}
 
 	[BusinessServer(typeof(DataServiceEventsServer), DataServiceObjectEvents.OnInsertToStorage)]
-    // *** End programmer edit section *** (Журнал CustomAttributes)
+    // *** End programmer edit section *** (Log CustomAttributes) 
     public class Журнал : Ресурс
 {
-		/*Что-то*/
+		/*Something*/
 }
-```
+``` 
 
-### Другие примеры
+### Other examples 
 
-* [Проверка уникальности введенных данных в бизнес-сервере](fo_unique-data-check.html).
-* [Пример использования бизнес-сервера](fo_bs-example.html).
-* [Проверка валидности изменений данных объекта в бизнес-сервере](fo_change-data-check.html)
-* [github.com](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/BusinessServers/CDLibBS.cs).
+* [Check uniqueness of data entered in the business server](fo_unique-data-check.html). 
+* [Example of use business-servers](fo_bs-example.html). 
+* Check the validity of the modifications object data in the business server](fo_change-data-check.html) 
+* [github.com](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/BusinessServers/CDLibBS.cs). 
 
-## Особенности функционирования
+## features of functioning 
 
-[Сервис данных](fo_data-service.html) вызовет метод-перехватчик непосредственно перед выполнением соответствующей операции. Параметром методу придёт [объект данных](fo_data-object.html), над которым выполняется операция. Метод может вернуть какие-либо дополнительные объекты данных, которые будут «подхвачены» сервисом данных.
+[Service data](fo_data-service.html) will cause a method interceptor immediately before the operation. Parameter the method will come [data object](fo_data-object.html), on which the operation is performed. Method can return any additional data objects that will be picked up by the data service. 
 
-Нужно возвращать объекты данных, а не выполнять отдельные вызовы сервиса данных прямо изнутри перехватчика, чтобы [обновление добавленных объектов](fo_bs-transact.html) выполнилось в той же транзакции. Иначе, отдельный вызов сервиса данных — отдельная транзакция, соответственно, если код выполняется не под сервером транзакций (напр. `COM+`), будет разрыв.
+You need to return data objects instead of doing individual calls to the data service directly from within an interceptor to [updates added](fo_bs-transact.html) executed in the same transaction. Otherwise, a separate call data service — private transaction, respectively, if the code is not running under a transaction server (eg. `COM `), there will be a gap. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

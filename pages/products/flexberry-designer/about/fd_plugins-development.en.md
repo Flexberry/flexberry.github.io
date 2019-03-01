@@ -1,20 +1,22 @@
----
-title: Создание модуля расширения
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, создание модуля, пример, отладка
-summary: Пример создания модуля и его отладка
-toc: true
-permalink: en/fd_plugins-development.html
-lang: en
----
+--- 
+title: Creating module extensions 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, create a module, example, debugging 
+summary: an Example of creating a module and its debugging 
+toc: true 
+permalink: en/fd_plugins-development.html 
+lang: en 
+autotranslated: true 
+hash: 755540f1243e4671d4281a7991cc3ecab62e48cd627407fe9f285afcbe0254d5 
+--- 
 
-## Пример создания простейшего модуля расширения для Flexberry Designer
+## Example of creating a simple extension module for Flexberry Designer 
 
-**Необходимо подключить библиотеки:**
+**You must connect the library:** 
 
 * ICSSoft.STORMNET.DataObject 
 * Repository 
-* STORM.NET Case Tool plugin
+* STORM.NET Case Tool plugin 
 
 ```csharp
 using System;
@@ -78,17 +80,17 @@ namespace STORMCASE.Plugin
             _name = "Our plugin name";
             _description = "Example of plugin";
             
-            // Операции, доступные для стадии.
-            _stageFeatures = new NamedDoMethod[] { new NamedDoMethod("Вывести имя стадии", new DoMethodDelegate(ShowStageName)) };
+            // Operations available for the stage. 
+            _stageFeatures = new NamedDoMethod[] { new NamedDoMethod("Take the name of the stage", new DoMethodDelegate(ShowStageName)) };
             
-            // Операции, доступные для конфигурации.
-            _configurationFeatures = new NamedDoMethod[] { new NamedDoMethod("Вывести имя конфигурации", new DoMethodDelegate(ShowConfigurationName)) };
+            // Operations available for the configuration. 
+            _configurationFeatures = new NamedDoMethod[] { new NamedDoMethod("Display name"configuration, new DoMethodDelegate(ShowConfigurationName)) };
         }
         #endregion
         #region Methods
         public void ShowStageName(object oStage)
         {
-            // Stage, либо его наследник STORMCASE.STORMNET.Repository.Stage.
+            // Stage, or its successor STORMCASE.STORMNET.Repository.Stage. 
             Stage stage = oStage as Stage;
             MessageBox.Show(stage.Name);
         }
@@ -100,14 +102,18 @@ namespace STORMCASE.Plugin
         #endregion
     }
 }
-```
+``` 
 
-## Отладка модуля расширения
+## Debugging extension module 
 
-Для того чтобы отлаживать модуль расширения, можно в конфигурационном файле Flexberry Designer добавить следующую настройку:
+To debug an extension module, in the configuration file Flexberry Designer to add the following setting: 
 
 ```xml
 <add key="GenerationDebug" value="true"/>
-```
+``` 
 
-Если настройка стоит, то в некоторых случаях при выходе в отдельный процесс будет выведено сообщение, когда можно производить подключение к новому созданному процессу.
+If the setting is, in some cases, output in a separate process you will see a message when you can connect to the new created process. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

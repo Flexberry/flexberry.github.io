@@ -1,40 +1,45 @@
----
-title: Рекомендации по доработке форм редактирования
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы)
-summary: Приведены рекомендации по доработке внешнего вида форм, указаны наиболее часто применяемые механизмы и даны ссылки на статьи, описывающие их реализацию
-toc: true
-permalink: en/fw_forms-recommendations.html
-lang: en
----
+--- 
+title: Recommendations for revision of the forms edit 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (Controls) 
+summary: The recommendations for improvement of the appearance of the forms are listed the most frequently used mechanisms and links to articles describing their implementation 
+toc: true 
+permalink: en/fw_forms-recommendations.html 
+lang: en 
+autotranslated: true 
+hash: fa0d95a71747b96184de8b51183656a3a525134693c46fed03b73d2082096e68 
+--- 
 
-Важно понимать, что форма служит не только для редактирования данных, но и для просмотра данных, а также для управления данными - запуск операции экспорта, печати, работы с данными аудита и прочее.
+It is important to understand that the form is not only for editing but also for viewing data as well as data management - to run the export operation, printing, working with data audit and other. 
 
-Поэтому проработку внешнего вида лучше начинать с того, что следует определить какие задачи пользователи будут выполнять с помощью формы. Основные - уже перечислены, это: редактирование, просмотр, выполенение операций над объектом, редактируемым на форме (экспорт, печать и прочее).
+Therefore, the study of the appearance it is better to start with, you should determine what tasks users will perform using the form. Main is already listed, it's: edit, view, executing operations on an object edited in form (export, print, etc.). 
 
-Для того чтобы сделать форму удобной для ввода, следует обратить внимание на следующие моменты:
+To make the form easy to enter, you should pay attention to the following points: 
 
-* порядок обхода (переход по Tab),
-* визуальное выделение фокуса - неопытные пользователи могут даже и не знать, что такое фокус ввода и что он отображется мигающей вертикальной чертой в поле ввода,
-* [предиктивный ввод](fw_predict-input.html),
-* отображение полей, обязательных для ввода. <br> Вариант реализации: через [DataObjectErrorProvider](fw_data-object-error-provider.html). DataObjectErrorProvider позволит быстро и со вкусом прописать в коде перечень обязательных полей и пользователи приложения не смогут его менять.
-* значения по умолчанию,
-* автоматизация ввода пользовательских данных, например, ввод адреса или возможность ввести ключевые реквизиты другого объекта данных с возможностью автоматического поиска.
+* the order of traversal (transition Tab) 
+* visual selection of focus - inexperienced users may not even know what is the input focus and that it shows a flashing vertical bar in the input field 
+* [predictive](fw_predict-input.html), 
+* display fields required for entry. the <br> embodiment: [DataObjectErrorProvider](fw_data-object-error-provider.html). DataObjectErrorProvider will allow you to quickly and tastefully to prescribe in the code the list of mandatory fields and users of the application will not be able to change it. 
+* default values, 
+* automation of user input, such as entering addresses or the ability to enter key details of the other object data with the ability to automatically search. 
 
-Для облегчения просмотра и поиска глазами на форме нужных данных применяются следующие механизмы:
+To facilitate browsing and search eyes on the form of the desired data uses the following mechanisms: 
 
-* объединение элементов управления в логические группы (GroupBox) с указанием названия группы - общего признака всех атрибутов в этой группе,
-* расположение контролов по сетке в несколько столбцов и строк. ширина полей ввода в одном столбце должна быть одинаковой, заголовки полей в столбцах начинаются с одной позиции в строке,
-* увеличения шрифта. Бывают случаи, когда шрифт должен быть увеличен (например, когда большинство пользователей этой формы - пожилые люди с плохим зрением),
-* реализация работы формы редактирования в режиме "[Только на чтение](fw_editmanager.html)" . Здесь работа заключается в проверке, что ненужные функции заблокированы, а нужные работают корректно.
+* the consolidation of controls into logical groups (GroupBox) specify the name of the group - a common feature of all attributes in this group 
+* the location of the controls on the grid in columns and rows. width of input fields in a single column must be the same, the field headers in the columns start with the same position in the string, 
+* increase the font. There are cases where the font needs to be increased (e.g., when most users of this form of elderly people with poor eyesight), 
+* implementation of the edit form in the "[read-Only](fw_editmanager.html)" . Here the work is to verify that unnecessary functions are blocked, and need to work correctly. 
 
-Для выполнения операций над данными зачастую используется панель инструментов, на которой по умолчанию есть кнопки "Сохранить" и "Сохранить и закрыть". Для каждой операции лучше создавать отдельную кнопку на этой панели с чёткой иконкой, лаконичной надписью и понятной всплывающей подсказкой (tooltip). Между кнопками используйте вертикальный разделитель.
+To perform operations on the data frequently used toolbar, which by default, has buttons "Save" and "Save and close". For each operation it is better to create a separate button on this panel with a clear icon, the laconic inscription and clear the tooltip (tooltip). Between the buttons, the vertical separator.
 
-Расположение контролов на форме и группировка их в группы - комплексная задача, которая должна решаться совместно с аналитиком.
+The location of the controls on the form and grouping them in groups - a complex task that should be solved jointly with the analyst. 
 
-Также формы редактирования могут предоставлять следующие универсальные сервисы:
+Also the edit form can provide the following universal services: 
 
-* аудирование изменений данных и предоставление доступа к данным аудита,
-* проверка данных на соблюдение пользовательских условий,
-* разграничение доступа к данным с помощью системы полномочий,
-* хранение пользовательских настроек.
+* listening for data changes and provision of access to data of audit 
+* checking for compliance with user conditions 
+* separation of data access through a system of authority, 
+* storage of user preferences.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,36 +1,38 @@
----
-title: Creating your own functions when using LanguageDef
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Разработка языка задания ограничений
-toc: true
-permalink: en/fo_using-languagedef.html
-lang: en
----
+--- 
+title: Creating your own functions using the LanguageDef 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: Development of language restrictions 
+toc: true 
+permalink: en/fo_using-languagedef.html 
+lang: en 
+autotranslated: true 
+hash: 88a7dc1f29a7872c54a3d857529958d3d4e30e21cc6ffbb542396d5e65f054b2 
+--- 
 
-Существуют стандартные "построители" функций для наложения ограничений, [SQLWhereLanguageDef](fo_function-list.html) и [ExternalLangDef](fo_external-lang-def.html). 
-Создание собственных функций при использовании LanguageDef (языка задания ограничений) позволяет создавать СУБД-независимые конструкции и использовать из для ограничения через [FunctionalLanguage](fo_limit-function.html) или рукописные скрипты. Использование этого подхода позволяет создавать более лёгкий в сопровождении код, нежели написание дублирующих выражений для каждой СУБД.
+There are the standard "Builder" features, the restrictions, [SQLWhereLanguageDef](fo_function-list.html) and [ExternalLangDef](fo_external-lang-def.html). 
+Your function when you use a LanguageDef (language constraint) allows you to create a DBMS-independent design and use limitations [FunctionalLanguage](fo_limit-function.html) or hand-written scripts. Using this approach allows you to create more light accompanied by a code, rather than writing redundant expressions for each DBMS. 
 
-{% include important.html content="Пользовательские функции должны начинаться с символов `user_`!. "%}
+{% include important.html content="User-defined functions must start with the characters `user_`!. "%} 
 
-### Пример
+### Example 
 
-Разработка языка задания ограничений ExportLanguage, работа с которым будет производиться следующим образом:
+The development of language restrictions ExportLanguage, which will be made in the following manner: 
 
 ```csharp
-// Создание экземпляра языка.
+// Create an instance of the language. 
 ExportLanguage langForExport = new ExportLanguage(this.DataService);
 ICSSoft.STORMNET.Windows.Forms.ExternalLangDef myLangDef = langForExport.Language;
-myLangDef.GetFunction("user_LPAD_SPACE", langForExport.q("Т.НомерКУСП"), 8)
-myLangDef.GetFunction("user_Day", langForExport.q("Т.ВремяЗаполнения"))
-```
+myLangDef.GetFunction("user_LPAD_SPACE", langForExport.q("So Nomercy"), 8)
+myLangDef.GetFunction("user_Day", langForExport.q("T. Breathability"))
+``` 
 
-Класс `ExternalLangDef` не позволяет в одном экземпляре содержать предопределённые функции и заданные руками, поэтому приходится использовать 2 экземпляра языка (экземпляры ничем не отличаются, за исключением функций, которые используют для записи выражений):
+Class `ExternalLangDef` not allow one instance to contain predefined functions and raised hands, so you have to use 2 instance of the language (instances are no different, except for the functions that are used to write expressions): 
 
-* new ExternalLangDef()
+* new ExternalLangDef() 
 * (new ExportLanguage()).Language. 
 
-`Функция q` носит вспомогательный характер, и не является частью подхода. Она, для удобства создания кода большого объёма, разделяет идентификатор, содержащий точки, на несколько идентификаторов, идущих через точку.
+`Функция q` is ancillary, and is not part of the approach. It is easy to generate code for a large amount, shared the ID containing point IDs, going through the point. 
 
 ```csharp
 using ICSSoft.STORMNET.UI;
@@ -41,23 +43,23 @@ using System.Collections;
   
 public class ExportLanguage
 {
-    /// <summary>
-    /// DataService для конкретной СУБД.
-    /// </summary>
+    /// <summary> 
+    /// DataService for a specific DBMS. 
+    /// </summary> 
     private IDataService DataService;
      
-    /// <summary>
-    /// Конструктор, котрый требует определения сервиса конкретной СУБД.
-    /// </summary>
-    /// <param name="dataService"></param>
+    /// <summary> 
+    /// Constructor, which requires the definition of a service to a particular DBMS. 
+    /// </summary> 
+    /// <param name="dataService"></param> 
     public ExportLanguage(IDataService dataService)
     {
         DataService = dataService;
     }
      
-    /// <summary>
-    /// Создаёт экземпляр языка, содержащего заданные функции (и только их)
-    /// </summary>
+    /// <summary> 
+    /// Creates an instance of the language containing the given functions (and only them) 
+    /// </summary> 
     public ICSSoft.STORMNET.Windows.Forms.ExternalLangDef Language
     {
         get
@@ -68,29 +70,29 @@ public class ExportLanguage
         }
     }
      
-    /// <summary>
-    /// Настройка языка (при этом стандартные возможности отбрасываются)
-    /// </summary>
-    /// <param name="langdef">Экземпляр языка для настройки</param>
+    /// <summary> 
+    /// Set language (in this case the standard features are discarded) 
+    /// </summary> 
+    /// <param name="langdef">an instance of the language to set</param> 
     public void TuneUp_Language(ICSSoft.STORMNET.Windows.Forms.ExternalLangDef langdef)
     {
         langdef.UserSQLTranslFunction = new ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.delegateUserSQLTranslFunction(SQLTranslFunction);
         CreateNewLimitFunctions(langdef);
     }
      
-    /// <summary>
-    /// Определение функций языка (стандартные функции станут невозможными)
-    /// </summary>
-    /// <param name="langdef"></param>
+    /// <summary> 
+    /// Define functions (standard function will be impossible) 
+    /// </summary> 
+    /// <param name="langdef"></param> 
     public void CreateNewLimitFunctions(ICSSoft.STORMNET.Windows.Forms.ExternalLangDef langdef)
     {
         string funcName = string.Empty;
         FunctionDef funcDef = null;
          
-        // для получения FuncID
-        // FuncID - идентификатор функции в языке.
-        // Стандартные функции имеют номера, начиная с единицы, и увеличиваются в порядке возрастнания числа.
-        // Поэтому, чтобы не использовать занятые номера, будет отсчитывать сверху вниз от максимального значения.
+        // to get FuncID 
+        // FuncID - the function ID in the language. 
+        // Standard functions have numbers starting with one and increasing in the order of vozrastaniya number. 
+        // So not to use the occupied rooms will count down from the maximum value. 
         int i = int.MaxValue - 1;
         ArrayList ar;
          
@@ -101,9 +103,9 @@ public class ExportLanguage
                             i--,
                             langdef.NumericType,
                             funcName,
-                            "Позиция символа в строке",
+                            "The position of character in string",
                             null,
-                            "(Позиция символа ({0}) в строке {1})",
+                            "(The position of the symbol ({0}) at line {1})",
                             new ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef(langdef.StringType),
                             new ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef(langdef.StringType));
             funcDef.Language = langdef;
@@ -118,9 +120,9 @@ public class ExportLanguage
                             i--,
                             langdef.StringType,
                             funcName,
-                            "Отсечение пробелов слева",
+                            "Trim spaces on the left",
                             null,
-                            "(Отсечение пробелов слева({0}))",
+                            "(The trimming of spaces left({0}))",
                             new ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef(langdef.StringType));
             funcDef.Language = langdef;
             ar.Add(funcDef);
@@ -134,9 +136,9 @@ public class ExportLanguage
                             i--,
                             langdef.StringType,
                             funcName,
-                            "Урезание длины строки",
+                            "Cutting the length of a string",
                             null,
-                            "(Урезание длины строки({0}))",
+                            "(Cutting the length of the string({0}))",
                             new ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef(langdef.StringType));
             funcDef.Language = langdef;
             ar.Add(funcDef);
@@ -150,9 +152,9 @@ public class ExportLanguage
                             i--,
                             langdef.NumericType,
                             funcName,
-                            "Длина строки",
+                            "String length",
                             null,
-                            "(Длина строки({0}))",
+                            "(The length of the string({0}))",
                             new ICSSoft.STORMNET.FunctionalLanguage.FunctionParameterDef(langdef.StringType));
             funcDef.Language = langdef;
             ar.Add(funcDef);
@@ -307,13 +309,13 @@ public class ExportLanguage
         #endregion
     }
      
-    /// <summary>
-    /// Определяем подстановки
-    /// </summary>
-    /// <param name="func"></param>
-    /// <param name="convertValue"></param>
-    /// <param name="convertIdentifier"></param>
-    /// <returns></returns>
+    /// <summary> 
+    /// Define lookup 
+    /// </summary> 
+    /// <param name="func"></param> 
+    /// <param name="convertValue"></param> 
+    /// <param name="convertIdentifier"></param> 
+    /// <returns></returns> 
     string SQLTranslFunction(ICSSoft.STORMNET.FunctionalLanguage.Function func,
     ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegateConvertValueToQueryValueString convertValue,
     ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.delegatePutIdentifierToBrackets convertIdentifier)
@@ -391,16 +393,16 @@ public class ExportLanguage
         #region CAST AS NUMERIC
             if (func.FunctionDef.StringedView == "user_CAST_AS_NUMERIC")
             {
-                // у меня на компе так: в SQL Server разделитель точка, в Oracle - запятая
+                // on my computer: SQL Server uses the point as delimiter in Oracle. 
                 if (this.DataService is ICSSoft.STORMNET.Business.MSSQLDataService)
                 {
-                    // REPLACE(',', '.')
+                    // REPLACE(',', '.') 
                     result = string.Format("CAST({0} AS NUMERIC)", func.Parameters[0].ToString());
                 }
                  
                 if (this.DataService is ICSSoft.STORMNET.Business.OracleDataService)
                 {
-                    // REPLACE('.', ',')
+                    // REPLACE('.', ',') 
                     result = string.Format("TO_NUMBER({0})", func.Parameters[0].ToString());
                 }
                  
@@ -415,7 +417,7 @@ public class ExportLanguage
                 if (this.DataService is ICSSoft.STORMNET.Business.MSSQLDataService)
                 {
                     result = string.Format(
-                        "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' + CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
+                        "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
                         (DataService as SQLDataService).LimitFunction2SQLWhere(
                             langdef.GetFunction(langdef.funcDayPart, new VariableDef(langdef.DateTimeType, RemoveFrameq(func.Parameters[0].ToString())))));
                 }
@@ -439,7 +441,7 @@ public class ExportLanguage
                 if (this.DataService is ICSSoft.STORMNET.Business.MSSQLDataService)
                 {
                     result = string.Format(
-                                "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' + CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
+                                "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
                                 (DataService as SQLDataService).LimitFunction2SQLWhere(
                                     langdef.GetFunction(langdef.funcMonthPart, new VariableDef(langdef.DateTimeType, RemoveFrameq(func.Parameters[0].ToString())))));
                 }
@@ -471,7 +473,7 @@ public class ExportLanguage
                 if (this.DataService is ICSSoft.STORMNET.Business.MSSQLDataService)
                 {
                     result = string.Format(
-                        "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' + CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
+                        "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
                         (DataService as SQLDataService).LimitFunction2SQLWhere(
                             langdef.GetFunction(langdef.funcHHPart, new VariableDef(langdef.DateTimeType, RemoveFrameq(func.Parameters[0].ToString())))));
                 }
@@ -495,7 +497,7 @@ public class ExportLanguage
                 if (this.DataService is ICSSoft.STORMNET.Business.MSSQLDataService)
                 {
                     result = string.Format(
-                        "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' + CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
+                        "CASE WHEN {0} < 10 AND {0} >= 0 THEN '0' CONVERT(VARCHAR, {0}) ELSE CONVERT(VARCHAR, {0}) END",
                         (DataService as SQLDataService).LimitFunction2SQLWhere(
                             langdef.GetFunction(langdef.funcMIPart, new VariableDef(langdef.DateTimeType, RemoveFrameq(func.Parameters[0].ToString())))));
                 }
@@ -517,7 +519,7 @@ public class ExportLanguage
             {
                 if (this.DataService is ICSSoft.STORMNET.Business.MSSQLDataService)
                 {
-                    result = string.Format("RIGHT (SPACE({1}) + CONVERT(VARCHAR({1}), {0}), {1} )", func.Parameters[0].ToString(), func.Parameters[1].ToString());
+                    result = string.Format("RIGHT (SPACE({1}) CONVERT(VARCHAR({1}), {0}), {1} )", func.Parameters[0].ToString(), func.Parameters[1].ToString());
                 }
                  
                 if (this.DataService is ICSSoft.STORMNET.Business.OracleDataService)
@@ -535,14 +537,14 @@ public class ExportLanguage
                 if (this.DataService is ICSSoft.STORMNET.Business.MSSQLDataService)
                 {
                     result = string.Format(
-                        "CASE WHEN {0} > REPLICATE('9', {1} - 2 - 1) + '.99' THEN LEFT ( SUBSTRING ( CONVERT(VARCHAR( 31 ), {0} ), 1, CHARINDEX ('.', CONVERT(VARCHAR( 31 ), {0} )) - 1), {1} ) ELSE LEFT ( CONVERT(VARCHAR( 31 ), {0} ), {1} ) END",
+                        "CASE WHEN {0} > REPLICATE('9', {1} - 2 - 1) '.99' THEN LEFT ( SUBSTRING ( CONVERT(VARCHAR( 31 ), {0} ), 1, CHARINDEX ('.', CONVERT(VARCHAR( 31 ), {0} )) - 1), {1} ) ELSE LEFT ( CONVERT(VARCHAR( 31 ), {0} ), {1} ) END",
                         func.Parameters[0].ToString(), func.Parameters[1].ToString());
                 }
                  
                 if (this.DataService is ICSSoft.STORMNET.Business.OracleDataService)
                 {
                     result = string.Format(
-                        "CASE WHEN {0} > RPAD('9', {1} - 2 - 1, '9') + ',99' THEN RPAD ( SUBSTR ( TO_CHAR({0}), 1, INSTR ('.', TO_CHAR({0}), 1, 1) - 1), {1} ) ELSE RPAD ( TO_CHAR({0}), {1} ) END",
+                        "CASE WHEN {0} > RPAD('9', {1} - 2 - 1, '9') ',99' THEN RPAD ( SUBSTR ( TO_CHAR({0}), 1, INSTR ('.', TO_CHAR({0}), 1, 1) - 1), {1} ) ELSE RPAD ( TO_CHAR({0}), {1} ) END",
                         func.Parameters[0].ToString(), func.Parameters[1].ToString());
                 }
                  
@@ -567,21 +569,21 @@ public class ExportLanguage
         return result;
     }
      
-    /// <summary>
-    /// Преобразует СУБД-независимую структуру Function в строку запроса для конкретной СУБД
-    /// </summary>
-    /// <param name="func"></param>
-    /// <returns></returns>
+    /// <summary> 
+    /// Converts the DBMS-independent structure Function in the query string for a specific DBMS 
+    /// </summary> 
+    /// <param name="func"></param> 
+    /// <returns></returns> 
     public string ParseLimitFunction(Function func)
     {
         return (this.DataService as SQLDataService).LimitFunction2SQLWhere(func);
     }
      
-    /// <summary>
-    /// Краткая запись для SQLDataService.PutIdentifierIntoBrackets
-    /// </summary>
-    /// <param name="ident"></param>
-    /// <returns></returns>
+    /// <summary> 
+    /// Short entry for SQLDataService.PutIdentifierIntoBrackets 
+    /// </summary> 
+    /// <param name="ident"></param> 
+    /// <returns></returns> 
     public string q(string ident)
     {
         string s = ident;
@@ -599,4 +601,8 @@ public class ExportLanguage
     }
 }
 
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

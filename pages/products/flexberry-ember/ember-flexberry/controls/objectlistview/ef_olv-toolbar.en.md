@@ -1,40 +1,42 @@
----
-title: Configuring the control panel for lists
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_olv-toolbar.html
-lang: en
-summary: Использование технологических и пользовательских кнопок в тулбаре
----
+--- 
+title: configuring control panel for lists 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_olv-toolbar.html 
+lang: en 
+autotranslated: true 
+hash: e814e67f2417efa89f8640502d192c3908e224fdf9d4bbd42175b1de21106825 
+summary: the Use of technology and custom buttons in the toolbar 
+--- 
 
-Панель управления (тулбар) [Flexberry Objectlistview](ef_object-list-view.html) основана на технологическом контроле `olv-toolbar`.
+Control panel (toolbar) [Flexberry Objectlistview](ef_object-list-view.html) based on technological control `olv-toolbar`. 
 
-Настройка панели управления происходит через компонент `Flexberry Objectlistview`.
+The configuration of the control panel occurs via the component `Flexberry Objectlistview`. 
 
-## Кнопка создания новой записи
+## Button create a new record 
 
 ```hbs
 {% raw %}
 {{flexberry-objectlistview 
   createNewButton = true
 }}{% endraw %}
-```
+``` 
 
-`createNewButton` - флаг, определяющий, отображать ли кнопку создания на панели управления.
+`createNewButton` - a flag that determines whether to display the button to create on the control panel. 
 
-## Кнопка обновления
+## refresh Button 
 
 ```hbs
 {% raw %}
 {{flexberry-objectlistview
   refreshButton = true
 }}{% endraw %}
-```
+``` 
 
-`refreshButton` - флаг, определяющий, отображать ли кнопку обновления на панели управления.
+`refreshButton` - a flag that determines whether to display the refresh button on the control panel. 
 
-## Кнопка удаления выделенных записей
+## Button delete the selected records 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
@@ -43,21 +45,21 @@ summary: Использование технологических и польз
 	showCheckBoxInRow = true
 	...
 }}{% endraw %}
-```
+``` 
 
-Для того чтобы начала функционировать кнопка удаления выделенных записей, требуется определить следующие свойства:
+In order to start to function the delete button selected records, you must define the following properties: 
 
-* `componentName` - имя контрола (используется для идентификации составных частей контрола, которые взаимодействуют через [внедрённый сервис](http://emberjs.com/api/classes/Ember.inject.html#method_service)). Например, в качестве значения для списка записей типа "employee" можно указать "employeesFlexberryObjectListView".
-* `deleteButton` - флаг, определяющий, отображать ли кнопку удаления на панели управления.
-* `showCheckBoxInRow` - флаг, определяющий, отображать ли чекбокс в строке 
+* `componentName` is the name of the control (used to identify the component parts of control that communicate through the [place](http://emberjs.com/api/classes/Ember.inject.html#method_service)). For example, the values for the list of records of type "employee" can specify "employeesFlexberryObjectListView". 
+* `deleteButton` - a flag that determines whether to display the delete button on the control panel. 
+* `showCheckBoxInRow` - a flag that determines whether to display the checkbox in the row 
 
-{% include note.html content="Если в Flexberry Objectlistview не отмечена ни одна строка, то кнопка удаления не активна. Когда появляются отмеченные записи, кнопка удаления становится доступна." %}
+{% include note.html content="If Flexberry Objectlistview, there was not one row, the delete button is not active. When there are marked records, the delete button becomes available." %} 
 
-При удалении информация сразу отправляется на сервер для сохранения изменений.
+Deleting information is sent to the server to save the changes. 
 
-## Кнопки пользовательских настроек
+## Button custom settings 
 
-При значении атрибута `colsConfigButton=true` на панели управления отображаются кнопки управления пользовательскими наcтройками.
+When the value of the attribute `colsConfigButton=true` on the control panel displays control buttons custom settings. 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
@@ -65,16 +67,16 @@ summary: Использование технологических и польз
 	colsConfigButton=true
 	...
 }}{% endraw %}
-```
+``` 
 
-Подробно о функционале пользовательских настроек можно почитать в статье [Сервис настроек пользователя](ef_model-user-settings-service.html).
+Details about the functionality of custom settings can be found in the article [Service user settings](ef_model-user-settings-service.html). 
 
-### Добавление пользовательских кнопок на панель управления
+### Add custom buttons to the control panel 
 
-На панель управления можно добавлять кнопки, реализующие пользовательскую логику.
-Чтобы добавить пользовательскую кнопку, требуется выполнить следующее:
+On the control panel, you can add buttons that implement custom logic. 
+To add a custom button, perform the following steps: 
 
-1.В соответствующем прикладном [контроллере](ef_controller.html) определить вычислимое свойство с произвольным именем, например, `сustomButtons`, которое возвращает массив структур вида:
+1.In the relevant application [controller](ef_controller.html) to define a calculated property with an arbitrary name, for example, `сustomButtons`, which returns an array of structs of the form: 
 
 ```javascript
 {
@@ -83,83 +85,83 @@ summary: Использование технологических и польз
  buttonClasses: '...',
  disabled: true,
 }
-```
+``` 
 
-* `buttonName` - имя кнопки на интерфейсе пользователя. Если передано пустое значение, то имя кнопки будет 'UserButton'.
-* `buttonAction` - имя действия (action), которое будет вызываться данной кнопкой (при вызове действия используется [sendAction](http://emberjs.com/api/classes/Ember.Component.html#method_sendAction), поэтому обработчик можно определять как в [контроллере](ef_controller.html), так и в соответствующем [роуте](ef_route.html)). Если передано пустое значение, то в консоли браузера появится сообщение об ошибке. Желательно именовать действия с префиксом "userButtonAction", чтобы случайно не перетереть свойство контрола при регистрации этого действия.
-* `buttonClasses` - классы, которые требуется добавить в создаваемую пользовательскую кнопку.
-* `disabled` - логическое свойство, отвечающее за состояние кнопки, если `true` кнопка неактивна, иначе, активна.
+* `buttonName` - the name of the button on the user interface. If passed a null value, the button name is 'UserButton'. 
+* `buttonAction` - the name of the action (action), which will be called by the button (when the action is used [sendAction](http://emberjs.com/api/classes/Ember.Component.html#method_sendAction), so the handler can be defined as in [controller](ef_controller.html) and the corresponding [roat](ef_route.html)). If passed null, then the browser console displays error message. It is advisable to call actions with the prefix "userButtonAction" so you don't accidentally grind a property of the control when this action. 
+* `buttonClasses` classes that you want to add to the new custom button. 
+* `disabled` - Boolean property, responsible for the state of the button if `true` the button is inactive, otherwise active. 
 
-2.В соответствующем прикладном контроллере (или [роуте](ef_route.html)) определить обработчик события, имя которого было указано в `buttonAction`.
+2.In the application controller (or [roat](ef_route.html)) to define an event handler whose name was specified in `buttonAction`. 
 
-3.В [шаблоне](ef_template.html) соответствующей формы у компонента `flexberry-objectlistview` определить свойства:
+3.In the [template](ef_template.html) the appropriate form of the component `flexberry-objectlistview` to define properties: 
 
 ```hbs
 {% raw %}
 {{flexberry-objectlistview
-  // ...
+  // ... 
 	customButtons=customButtons  
 	userButtonAction1='userButtonAction1'
 	userButtonAction2='userButtonAction2'
-	// ...
+	// ... 
 	userButtonActionN='userButtonActionN'
 }}{% endraw %}
-```
+``` 
 
-* `customButtons` - определение свойства, откуда можно взять массив.
-* `userButtonAction1`, `userButtonAction2`, ... `userButtonActionN` - регистрация действий, которые определялись в свойстве `buttonAction` ([без такой "регистрации"](http://emberigniter.com/send-action-does-not-fire/) действие может не вызываться и Ember не выдаст сообщения об ошибке).
+* `customButtons` - defining the property, where you can take an array. 
+* `userButtonAction1`, `userButtonAction2`, ... `userButtonActionN` - check action defined in a property `buttonAction` ([no such "check"](http://emberigniter.com/send-action-does-not-fire/) action may not be called and Ember will not give error messages). 
 
-## Пример использования пользовательской кнопки на списке
+## Example of using custom buttons in the list 
 
-Например, требуется добавить пользовательскую кнопку, которая при клике будет выводить сообщение пользователю.
+For example, you want to add a custom button that, when clicked, will display a message to the user. 
 
-1.В шаблоне страницы задать заголовок в виде переменной "header".
+1.In page template to set the title in a variable "header". 
 
 ```hbs
 {% raw %}<h3 class="ui header">Страница с пользовательскими кнопками</h3>
 <div class="row">
   {{flexberry-objectlistview
-    // ...
+    // ... 
     customButtons=customButtons
     userButtonAction1='userButtonAction1'
     userButtonAction2='userButtonAction2'
-    // ...
+    // ... 
     userButtonActionN='userButtonActionN'
   }}
 </div>
 <div class="row">{{messageForUser}}</div>{% endraw %}
-```
+``` 
 
-2.В контроллере определить необходимые переменные, задать вычислимое локализируемое свойство "customButtons", которое вернёт массив описаний пользовательских кнопок (в данном случае - одной кнопки),  и действие "userButtonActionTest", которое будет обрабатывать нажатие на кнопку.
+2.In the controller to determine the required variables, set the localizable property of the computable "customButtons", which will return an array of descriptions of the custom buttons (in this case, one button) and the action "userButtonActionTest", which will handle the click on the button. 
 
 ```javascript
 import Ember from 'ember';
 import ListFormController from 'ember-flexberry/controllers/list-form';
 
 export default ListFormController.extend({
-  /**
-    Property to count clicks on user button.
+  /** 
+Property to count user clicks on a button. 
 
-    @property clickCounter
-    @type Number
-    @default 1
-   */
+@property clickCounter 
+@type Number 
+@default 1 
+*/
   clickCounter: 1,
 
-  /**
-    Property to show user message after click on user button.
+  /** 
+Property to show message after user click on user button. 
 
-    @property messageForUser
-    @type String
-   */
+@property messageForUser 
+@type String 
+*/
   messageForUser: undefined,
 
-  /**
-    Property to form array of special structures of custom user buttons.
+  /** 
+Property to form an array of special structures of custom user buttons. 
 
-    @property customButtons
-    @type Array
-   */
+@property customButtons 
+@type Array 
+*/
   customButtons: Ember.computed('i18n.locale', function() {
     let i18n = this.get('i18n');
     return [{
@@ -170,11 +172,11 @@ export default ListFormController.extend({
   }),
 
   actions: {
-    /**
-      Handler for click on custom user button.
+    /** 
+Handler for user click on custom button. 
 
-      @method userButtonActionTest
-     */
+@method userButtonActionTest 
+*/
     userButtonActionTest: function() {
       let i18n = this.get('i18n');
       let clickCounter = this.get('clickCounter');
@@ -185,18 +187,22 @@ export default ListFormController.extend({
     }
   }
 });
-```
+``` 
 
-3.В шаблоне указать свойство для получения пользовательских кнопок, а также зарегистриовать  пользовательское действие.
+3.In the template to specify a property to get custom buttons, and zaregistrovat a custom action. 
 
 ```hbs
 {% raw %}<h3>{{header}}</h3>
 
 <div class="row">
   {{flexberry-objectlistview
-    // ...
+    // ... 
     customButtons=customButtons
     userButtonActionTest='userButtonActionTest'
   }}
 </div>{% endraw %}
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

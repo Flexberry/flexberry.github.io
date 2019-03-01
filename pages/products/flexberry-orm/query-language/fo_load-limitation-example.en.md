@@ -1,57 +1,63 @@
----
-title: An example of imposing restrictions on the loading of objects
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения, Sample
-summary: Наложение ограничения, сортировка, диапазон индексов загружаемых объектов
-toc: true
-permalink: en/fo_load-limitation-example.html
-lang: en
----
+--- 
+title: Example of imposing restrictions on loading objects 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, Constraints, example 
+summary: the Imposition of restrictions, sorting, the index range of downloadable objects 
+toc: true 
+permalink: en/fo_load-limitation-example.html 
+lang: en 
+autotranslated: true 
+hash: 29dc07eef6289c15827cdb1dc9d815f813867c9854c0187689f895160f349c0c 
+--- 
 
-Полный список примеров кода [Flexberry ORM](fo_flexberry-orm.html) находится в статье ["Примеры кода"](fo_code-samples.html).
+Full list of code examples [Flexberry ORM](fo_flexberry-orm.html) is in ["code Examples"](fo_code-samples.html). 
 
-## Пример наложения ограничения на загружаемые объекты данных (условия, количество и т.д.)
+## an Example of a restriction on loadable data objects (terms, quantity, etc.) 
 
-Обычно приложения не ограничиваются простой загрузкой объектов из БД: требуется сортировка, наложение условий на загружаемые объекты, на их индексы.
-Для хранения и передачи сервису данных всей этой информации используется структура данных [`ICSSoft.STORMNET.Business.LoadingCustomizationStruct`](fo_loading-customization-struct.html).
-В примере показано ее использование при загрузке объектов данных: наложение ограничения, сортировка, диапазон индексов загружаемых объектов.
+Typically, applications are not limited to simple loading of objects from the database: it is required to sort the imposition of conditions to downloadable objects on their indexes. 
+Storage and transfer of data service this information is used by the data structure [`ICSSoft.STORMNET.Business.LoadingCustomizationStruct`](fo_loading-customization-struct.html). 
+The example shows its use when loading the data objects: the imposition of restrictions, sorting, the index range of downloadable objects. 
 
 ```csharp
-Console.WriteLine("3. How to load a set of dataobjects in specific view, limitation, quantity, etc..");
+Console.WriteLine("3. How to load a set of dataobjects in specific view, the limitation, quantity, etc..");
 
-// Во Flexberry ORM есть разные наборы операций (языки) для задание ограничений. Самый простой - SQLWhereLanguageDef.
+// In Flexberry ORM have different sets of operations (a language) for defining constraints. The easiest SQLWhereLanguageDef. 
 ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef ld =
     ICSSoft.STORMNET.FunctionalLanguage.SQLWhere.SQLWhereLanguageDef.LanguageDef;
 
-// Создаем структуру, хранящую параметры загрузки объектов (представление, типы данных, ограничение и т.д.).
+// Create a structure to store the boot parameters of objects (representation, data types, etc.). 
 LoadingCustomizationStruct lcs = new LoadingCustomizationStruct(null);
 lcs.View = CD.Views.CD_E;
 lcs.LoadingTypes = new[] { typeof(CDDA), typeof(CDDD), typeof(DVD) };
 
-// Ограничение, использующие свойства классов, на которые ссылается класс CS. Могут быть использованы те свойства, 
-// которые указаны в представлении, по которому производится загрузка объектов.
+// The constraint using the properties of the classes referenced by the class CS. Can be used those properties 
+// specified in the representation that is loading objects. 
 lcs.LimitFunction = ld.GetFunction(ld.funcEQ,
     new VariableDef(ld.StringType, Information.ExtractPropertyPath<CD>(c => c.Publisher.Country.Name)), "USA");
 
-// Параметры сортировки загружаемых объектов. Указать можно также только свойства, которые есть в представлении.
+// Parameters sorting the loaded objects. You can also specify only the properties that are in view. 
 lcs.ColumnsSort = new[] { new ColumnsSortDef(Information.ExtractPropertyName<CD>(c => c.Name), ICSSoft.STORMNET.Business.SortOrder.Asc) };
 
 Stopwatch stopwatch = new Stopwatch();
 stopwatch.Start();
 
-// Можно указать диапазон индексов загружаемых объектов, что удобно, например, для постраничного вывода.
-// lcs.RowNumber = new RowNumberDef(2, 5);
-// Есть три основных метода для загрузки объектов:
-// 1. Загрузить из БД записи и для каждой из них создать экземпляр объекта данных.
+// You can specify a range of indexes of downloadable objects, which is useful, e.g., for pagination. 
+// lcs.RowNumber = new RowNumberDef(2, 5); 
+// There are three main methods for loading objects: 
+// 1. To load from the database records and for each one create an instance of the data object. 
 ICSSoft.STORMNET.DataObject[] objs = DataServiceProvider.DataService.LoadObjects(lcs);
 
-// 2. Загрузить без создания экземпляров (каждый объект представлен в виде строки из значений свойств с разделителями). 
-// Используется, когда не требуется редактирование объектов. Он намного быстрее!
+// 2. To download without creating instances (each object is represented as a string of property values delimited). 
+// Use when not needed editing. It is much faster! 
 ObjectStringDataView[] stringedview = DataServiceProvider.DataService.LoadStringedObjectView(';', lcs);
 
-// 3. Получить количество объектов, без загрузки данных.
+// 3. To obtain the number of objects without loading data. 
 int iObjsCount = DataServiceProvider.DataService.GetObjectsCount(lcs);
 
 stopwatch.Stop();
 Console.WriteLine("Time taken for all loadings: {0} ms.", stopwatch.ElapsedMilliseconds);
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

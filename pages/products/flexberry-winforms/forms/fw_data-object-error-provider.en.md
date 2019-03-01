@@ -1,19 +1,24 @@
----
-title: DataObjectErrorProvider
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Описан компонент DataObjectErrorProvider, позволяющий осуществлять проверку и подсветку полей на форме редактирования, ссылки на статьи по его использованию в конкретных сценариях
-toc: true
-permalink: en/fw_data-object-error-provider.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: DataObjectErrorProvider 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Describes the component DataObjectErrorProvider, allowing you to verify and illumination fields on the edit form, links to articles on its use in specific scenarios 
+toc: true 
+permalink: en/fw_data-object-error-provider.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 1b4599cb75dbda3f79a600bc9103fe05faaaa356331c141c49839c9b9dfffabd 
+--- 
 
-<!-- Данная статья ещё редактируется -->
+<!-- This article is still being edited --> 
 
-`DataObjectErrorProvider` - компонент, позволяющий осуществлять проверку и подсветку полей на форме редактирования. 
+`DataObjectErrorProvider` component, allowing you to verify and illumination fields on the edit form. 
 
-Основная последовательность действий для работы с `DataObjectErrorProvider` представлена в статьях о проверке обязательных полей [на этапе редактирования](fw_check-form-field-during-edit.html) и на [этапе сохранения](fw_check-form-field-during-save.html) данных. 
+Basic sequence of actions for working with `DataObjectErrorProvider` presented in the articles about validating required fields [editing phase](fw_check-form-field-during-edit.html) on [stage save](fw_check-form-field-during-save.html) data. 
 
-{% include important.html content="
-`DataObjectErrorProvider` не входит в стандартную поставку Flexberry." %}
+{% include important.html content=" 
+`DataObjectErrorProvider` not supplied as standard Flexberry." %}
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

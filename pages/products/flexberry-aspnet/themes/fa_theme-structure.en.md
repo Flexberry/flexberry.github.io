@@ -1,237 +1,243 @@
----
-title: Структура тем Flexberry ASP.NET
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_theme-structure.html
-lang: en
----
+--- 
+title: Structure of the Flexberry ASP.NET 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_theme-structure.html 
+lang: en 
+autotranslated: true 
+hash: b0afbb1dc795caa22159f8c8756666cd445cb8289ab92c92bf3cb76db4f11383 
+--- 
 
-Внешний вид тем, а также дополнительная информация изложены в [статье Выбор темы Web-приложения](fa_choose-theme.html).
+The appearance of topics as well as additional information set out in [article theme Selection Web application](fa_choose-theme.html). 
 
-## Темы
+## Themes 
 
-Изначально темы оформления Flexberry ASP.NET представляли собой неупорядоченный набор .css-файлов, из которых было тяжело понять, что за что отвечает. Это приводило к тому, что процесс доработки тем на сторонних проектах усложнялся. Необходимо было как-то структурировать темы и упростить процесс их доработки.  
-Для того чтобы добиться этой цели, было решено использовать динамический язык стилей LESS. Он позволяет группировать стили, а так же переносить какие-либо стилевые правила в переменные, а потом импортировать их в нужные .less-файлы.  
-Такой подход позволяет создать отдельно группу файлов, в которых есть стили, использующиеся во всех темах. Подробней об этом рассказано в [статье Базовая тема Flexberry ASP.NET и ее связь с другими темами](fa_base-theme-structure.html). А также "собирать" общие стили для всех тем и переносить их в отдельный .less-файл, создавать  переменные и импортировать их по мере надобности.  
-Таким образом уменьшается количество лишнего кода, а темы принимают общую структуру. Кроме того улучшается возможность доработки тем на прикладных проектах. Об этом рассказано в [статье Доработка тем оформления на прикладных проектах](fa_change-theme.html).
+Initially themes Flexberry ASP.NET represent an unordered set .css-files from which it was hard to understand what is responsible for what. This led to the fact that the process of finalizing the third-party projects is complicated. It was necessary to structure the topic and to simplify the process of finalizing their plans. 
+In order to achieve this goal, it was decided to use a dynamic language styles LESS. It allows you to group styles, as well as move some style rules in variables, and then import them in the right .less-files. 
+This approach allows us to create a separate file group, which is styles used in all subjects. More on that described in [article basic theme Flexberry ASP.NET and its connection with other themes](fa_base-theme-structure.html). And also "collect" General styles for all themes and transfer them to separate .less file, create variables and import them as needed. 
+This reduces the amount of unnecessary code, but themes take a common structure. In addition, it improves the possibility of revision topics on applied projects. This is discussed in [article Revision themes on applied projects](fa_change-theme.html). 
 
-## Структура темы
+## structure of a topic 
 
-По умолчанию структура тем выглядит следующим образом:
+By default, the structure looks like the following: 
 
-* `Controls`
-  * `__DateTimePicker__`
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * DateTimePicker.less
-  * `__DefaultInputs__`
-    * Images
-    * _Settings.less
-    * _Variables.less
-    * DefaultInputs.less
-  * `__Lookup__`
-    * Images
-    * _Settings.less
-    * _Variables.less
-    * Lookup.less
-    * _Variables.less
-  * `__ShowHideDiv__`
-    * Images
-    * _Settings.less
-    * ShowHideDiv.less
-  * `__TableControls__`
-    * `AjaxGroupEdit`
-      * _Settings.less
-      * _Variables.less
-      * AjaxGroupEdit.less
-    * `WebObjectListView`
-      * Images
-      * WebObjectListView-Settings
-        * Images
-        * _Variables.less
-        * WebObjectListView-HierarchySettings.less
-        * WebObjectListView-LimitEditSettings.less
-        * WebObjectListView-ViewColumnProvider.less
-      * _Variables.less
-      * _Settings.less
-      * WebObjectListView-captionToolbar.less
-      * WebObjectListView-contextMenu.less
-      * WebObjectListView-pager.less
-      * WebObjectListView-tableToolbar.less
-      * WebObjectListView-toolbar.less
-      * WebObjectListView.less
-* `Forms`
-  * `__Messages__`
-    * `AlertMessage`
-      * _Settings.less
-      * _Variables.less
-      * AlertMessage.less
-  * `__ModalWindows__`
-    * `ModalWindowContent`
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * ModalWindowContent.less
-    * `ModalWindowWrapper`
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * ModalWindowContent.less
-  * `__Pages__`
-    * `EditPage`
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * EditPage.less
-    * `ExceptionPage`
-      * _Settings.less
-      * _Variables.less
-      * ExceptionPage.less
-    * `LoginPage`
-      * _Settings.less
-      * _Variables.less
-      * LoginPage.less
-    * `MainPage`
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * MainPage.less
-* `Images`
-* `Libraries`
-  * `__jQueryUI__`
-    * Images
-    * jQueryUI.Base.less
-    * jQueryUI.DateTimePicker.less
-    * jQueryUI.less
-    * jQueryUI.Settings.less
-* BaseStyles.css
-* BaseStyles.less
-* Theme.skin
-* Web.config
+* `Controls` 
+* `__DateTimePicker__` 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* DateTimePicker.less 
+* `__DefaultInputs__` 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* DefaultInputs.less 
+* `__Lookup__` 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* Lookup.less 
+* _Variables.less 
+* `__ShowHideDiv__` 
+* Images 
+* _Settings.less 
+* ShowHideDiv.less 
+* `__TableControls__` 
+* `AjaxGroupEdit` 
+* _Settings.less 
+* _Variables.less 
+* AjaxGroupEdit.less 
+* `WebObjectListView` 
+* Images 
+* WebObjectListView-Settings 
+* Images 
+* _Variables.less 
+* WebObjectListView-HierarchySettings.less 
+* WebObjectListView-LimitEditSettings.less 
+* WebObjectListView-ViewColumnProvider.less 
+* _Variables.less 
+* _Settings.less 
+* WebObjectListView-captionToolbar.less 
+* WebObjectListView-contextMenu.less 
+* WebObjectListView-pager.less 
+* WebObjectListView-tableToolbar.less 
+* WebObjectListView-toolbar.less 
+* WebObjectListView.less 
+* `Forms` 
+* `__Messages__` 
+* `AlertMessage` 
+* _Settings.less 
+* _Variables.less 
+* AlertMessage.less 
+* `__ModalWindows__` 
+* `ModalWindowContent` 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* ModalWindowContent.less 
+* `ModalWindowWrapper` 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* ModalWindowContent.less 
+* `__Pages__` 
+* `EditPage` 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* EditPage.less 
+* `ExceptionPage` 
+* _Settings.less 
+* _Variables.less 
+* ExceptionPage.less 
+* `LoginPage` 
+* _Settings.less 
+* _Variables.less 
+* LoginPage.less 
+* `MainPage` 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* MainPage.less 
+* `Images` 
+* `Libraries` 
+* `__jQueryUI__` 
+* Images 
+* jQueryUI.Base.less 
+* jQueryUI.DateTimePicker.less 
+* jQueryUI.less 
+* jQueryUI.Settings.less 
+* BaseStyles.css 
+* BaseStyles.less 
+* Theme.skin 
+* Web.config 
 
-### Папки и файлы в Controls
+### Folder and file Controls 
 
-#### Стандартная структура
+#### Standard structure 
 
-В папке `Controls` содержатся файлы и папки, связанные с контролами. По умолчанию это: стандартные контролы: `DateTimePicker`, `ShowHideDiv`, `Lookup`, а также `WebObjectListView` (WOLV) и `AjaxGroupEdit` (AGE). Каждый контрол содержится в отдельной папке. По умолчанию, в каждой папке есть три файла и папка с картинками Images (для WOLV структура немного другая). Пример представлен ниже.
+In the `Controls` folder contains files and folders that are associated with controls. By default, this is: standard controls: `DateTimePicker`, `ShowHideDiv`, `Lookup` and `WebObjectListView` (WOLV) and `AjaxGroupEdit` (AGE). Each control is contained in a separate folder. By default, each folder has three files and a folder with pictures Images (WOLV structure is a little different). An example is provided below. 
 
-* DateTimePicker
-  * `Images `- папка, содержащая картинки, предназначенные только для данного контрола.
-  * `_Settings.less` - файл, предназначенный для добавления стилевых правил прикладными разработчиками. Как он конкретно работает будет описано далее.
-  * `_Varaibles.less` - файл, содержащий какие-либо переменные для данного контрола.
-  * `DateTimePicker.less` - основной файл, содержащий стили для данного контрола.
+* DateTimePicker 
+* `Images ` is the folder that contains the pictures, is dedicated to this control. 
+* `_Settings.less` file that is used to add style rules applied by developers. How it exactly works is described below. 
+* `_Varaibles.less` file that contains any variables for this control. 
+* `DateTimePicker.less` - the main file that contains the styles for this control. 
 
-{% include note.html content="В дальнейшей файлы _Variables.less и _Settings.less будут встречаться неоднократно. Их назначение везде одинаковое, поэтому отдельно для каждого элемента структура рассматриваться не будет." %}
+{% include note.html content="file _Variables.less and _Settings.less will be encountered repeatedly. Their purpose is the same everywhere, so for each element of the structure will not be considered." %} 
 
-### Структура [WOLV](fa_web-object-list-view.html)
+### Structure [WOLV](fa_web-object-list-view.html) 
 
-Структура контрола WOLV немного иная. Данный контрол, как и AGE, содержится в папке `TableControls`, отвечающей за табличные контролы. При этом количество файлов WOLV намного больше, чем у других контролов.  
-Структура логически поделена на два уровня:
+The structure of the control WOLV is slightly different. This control, like AGE, is contained in the folder `TableControls` responsible for table controls. The number of files WOLV much more than the other controls. 
+The structure is logically divided into two levels: 
 
-* файлы, отвечающие за части WOLV
-* файлы, отвечающие за настройки WOLV.
+* the file responsible for part of the WOLV 
+* the file responsible for settings WOLV. 
 
-По примеру других контролов, для WOLV есть своя папка `Images`, файлы `_Variables.less` и `_Settings.less`. Так как стилей для WOLV очень много, они были разбиты на несколько файлов.
-В папке `WebObjectListView-Settings` также содержаться папка `Images` и файл `_Variables.less`. Содержимое данной папки динамическое, поскольку количество настроек WOLV растет.  
-На данный момент отдельно представлено их три:
-* `WebObjectListView-HierarchySettings.less`
-* `WebObjectListView-LimitEditSettings.less`
+Following the example of other controls, WOLV has its own folder `Images`, files `_Variables.less` and `_Settings.less`. As styles for WOLV very much, they were broken into several files.
+In the folder `WebObjectListView-Settings` also contain `Images` folder and file `_Variables.less`. The contents of this folder is dynamic because the number of settings grows WOLV. 
+At the moment, separately presented three of them: 
+* `WebObjectListView-HierarchySettings.less` 
+* `WebObjectListView-LimitEditSettings.less` 
 * `WebObjectListView-ViewColumnProvider.less`. 
 
-В подробностях структура представлена ниже.
+The details of the structure is presented below. 
 
-* TableControls
-  * WebObjectListView
-    * Images
-    * WebObjectListView-Settings
-      * Images
-      * _Variables.less
-      * `WebObjectListView-HierarchySettings.less` - файл, содержащий стили для иерархического отображения данных
-      * `WebObjectListView-LimitEditSettings.less` - файл, содержащий стили блока ограничений.
-      * `WebObjectListView-ViewColumnProvider.less` - файл, содержащий стили настроек для отображения колонок в таблице.
-    * _Variables.less
-    * _Settings.less
-    * `WebObjectListView-captionToolbar.less` - файл, содержащий стили тулбара в шапке таблицы WOLV.
-    * `WebObjectListView-contextMenu.less` - файл, содержащий стили контекстного меню.
-    * `WebObjectListView-pager.less` - файл, содержащий стили нижнего и верхнего пейджеров.
-    * `WebObjectListView-tableToolbar.less` - файл, содержащий стили тулбара в таблице WOLV.
-    * `WebObjectListView-toolbar.less` - файл, содержащий стили основного тулбара.
-    * `WebObjectListView.less` - основой файл, содержащий стили WOLV.
+* TableControls 
+* WebObjectListView 
+* Images 
+* WebObjectListView-Settings 
+* Images 
+* _Variables.less 
+* `WebObjectListView-HierarchySettings.less` file that contains styles for hierarchical display of data 
+* `WebObjectListView-LimitEditSettings.less` file that contains the box style restrictions. 
+* `WebObjectListView-ViewColumnProvider.less` file that contains the style settings to display the columns in the table. 
+* _Variables.less 
+* _Settings.less 
+* `WebObjectListView-captionToolbar.less` file that contains the styles toolbar in the header of the table WOLV. 
+* `WebObjectListView-contextMenu.less` file that contains the context menu styles. 
+* `WebObjectListView-pager.less` file containing the styles of the lower and upper pagers. 
+* `WebObjectListView-tableToolbar.less` file that contains the styles toolbar in the table WOLV. 
+* `WebObjectListView-toolbar.less` file that contains the styles main toolbar. 
+* `WebObjectListView.less` - based file that contains the styles WOLV. 
 
-### Папки и файлы в Forms
+### Folders and files in Forms 
 
-В папке `Forms` содержаться файлы и папки, связанные с различными формами приложения.  
-Содержимое этой папки подразделяется на три группы:
+PstrfForms` in a folder to contain the files and folders that are associated with different forms of application. 
+The contents of this folder is subdivided into three groups: 
 
-* сообщения (Messages)
-* модальные окна (ModalWindows)
-* страницы (Pages).  
+* messages (Messages) 
+* modal Windows (ModalWindows) 
+* page (Pages). 
 
-Структура и описание каждой папки, что за что отвечает представлена ниже.
- 
-* Forms
-  * Messages
-    * `AlertMessage` - содержит стили для модальных окон с сообщениями.
-      * _Settings.less
-      * _Variables.less
-      * AlertMessage.less
-  * ModalWindows
-    * `ModalWindowContent` - содержит стили для содержимого модальных окон.
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * ModalWindowContent.less
-    * `ModalWindowWrapper` - содержит стили для оболочки модальных окон.
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * ModalWindowContent.less
-  * Pages
-    * `EditPage` - содержит стили для формы редактирования.
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * EditPage.less
-    * `ExceptionPage` - содержит стили для страницы с ошибками.
-      * _Settings.less
-      * _Variables.less
-      * ExceptionPage.less
-    * `LoginPage` - содержит стили для страницы авторизации.
-      * _Settings.less
-      * _Variables.less
-      * LoginPage.less
-    * `MainPage` - содержит стили для главной страницы.
-      * Images
-      * _Settings.less
-      * _Variables.less
-      * MainPage.less
+The structure and description of each folder that is responsible for what is presented below. 
 
-### Файлы и папки в Libraries
+* Forms 
+* Messages 
+* `AlertMessage` - contains the styles for the modal message boxes. 
+* _Settings.less 
+* _Variables.less 
+* AlertMessage.less 
+* ModalWindows 
+* `ModalWindowContent` - contains the styles for the content of modal Windows. 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* ModalWindowContent.less 
+* `ModalWindowWrapper` - contains styles for the shell modal dialogs. 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* ModalWindowContent.less 
+* Pages 
+* `EditPage` - contains the styles for the edit form. 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* EditPage.less 
+* `ExceptionPage` - contains styles for the default error page. 
+* _Settings.less 
+* _Variables.less 
+* ExceptionPage.less 
+* `LoginPage` - contains the styles for the login page. 
+* _Settings.less 
+* _Variables.less 
+* LoginPage.less 
+* `MainPage` - contains styles for the main page. 
+* Images 
+* _Settings.less 
+* _Variables.less 
+* MainPage.less 
 
-Папка `Libraries` содержит файлы и папки различных библиотек. На данный момент только одну `jQueryUI`.
+### Files and folders in Libraries 
 
-* Libraries
-  * jQueryUI
-    * `jQueryUI.Base.less` - файл, содержащий стили для библиотеки jQueryUI.
-    * `jQueryUI.DateTimePicker.less` - файл, содержащий стили для DateTimePicker.
-    * `jQueryUI.less` - основной файл, в котором содержаться импортированные файлы.
-    * `jQueryUI.Settings.less` - файл, содержащий настройки для стилей jQueryUI.
+PstrfLibraries` folder contains files and folders in different libraries. At the moment only one `jQueryUI`. 
 
-### Остальные элементы темы
+* Libraries 
+* jQueryUI 
+* `jQueryUI.Base.less` file that contains styles for jQueryUI library. 
+* `jQueryUI.DateTimePicker.less` file that contains styles for DateTimePicker. 
+* `jQueryUI.less` - the main file containing imported files. 
+* `jQueryUI.Settings.less` file that contains settings for the jQueryUI styles. 
 
-К остальным элементам темы относятся:
+### Other theme elements 
 
-* `Images `- картинки, использующиеся в Theme.skin.
-* `BaseStyles.css` - файл стилей полученный через компиляцию BaseStyles.less.
-* `BaseStyles.less` - файл, содержащий импортированные .less-файлы темы.
-* `Theme.skin` - "кожа" сайта.
-* `Web.config` --//-.
+To the rest of the theme elements include: 
 
-### Внешние файлы тем
+* `Images ` images used in the Theme.skin. 
+* `BaseStyles.css` - style file obtained through the compilation BaseStyles.less. 
+* `BaseStyles.less` file containing the imported .less files of the theme. 
+* `Theme.skin` - "skin" of the website. 
+* `Web.config` --//-. 
 
-Внешние файлы тем - это файлы, относящиеся ко всем темам. Они находятся в папке `App_Themes`.
+### External theme files 
 
-* `CommonSettings.less` - файл содержащий настройки для всех тем.
-* `WolvClasses.less` - в этом файле содержаться переменные, соответствующие классам и идентификатором в WOLV.
+The external files are files relating to all topics. They are in the folder `App_Themes`. 
+
+* `CommonSettings.less` file contains settings for all themes. 
+* `WolvClasses.less` - in this file contain variables that represent the classes and ID to the WOLV. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

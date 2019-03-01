@@ -1,132 +1,138 @@
----
-title: Представления (View)
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, представления, View, атрибуты, мастер, детейл, наследование, пример
-summary: Назначение представлений и особенности работы с ними
-toc: true
-permalink: en/fd_view-definition.html
-lang: en
----
+--- 
+title: View (View) 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, views, View, attributes, master, detail, inheritance, example 
+summary: the purpose of the concepts and features of working with them 
+toc: true 
+permalink: en/fd_view-definition.html 
+lang: en 
+autotranslated: true 
+hash: de289e6304a122a023bad501a25fb9fe16252eb9774b75c7469ba541ee27afda 
+--- 
 
-## Определение представления
+## the view Definition 
 
-`Представление (ракурс)` описывает некоторую логическую совокупность:
-* собственных [атрибутов класса](fo_attributes-class-data.html),
-* [мастеров](fd_key-concepts.html) любой вложенности и их атрибутов,
-* представлений [детейлов](fd_key-concepts.html).
+`Представление (view)` describes some logical combination of: 
+* self [attribute class](fo_attributes-class-data.html), 
+* [masters](fd_key-concepts.html) of any depth and their attributes 
+* views [datalow](fd_key-concepts.html). 
 
-Представление является средством разработчика, позволяющим обеспечить отражение некоторого множества атрибутов связанных ассоциациями классов.
+The presentation is a developer tool that allows you to capture a set of attributes associated classes associations. 
 
-Для того чтобы правильно понять, что такое представление, можно представить исписанный лист бумаги и другой чистый лист бумаги с прямоугольными прорезями. Наложение второго листа на первый позволит видеть через прорези только некоторые слова или даже буквы. В этом примере: исписанный лист — объект данных, лист с прорезями — представление, наложенные листы — объект данных в представлении.
+In order to properly understand what an idea, you can submit a written sheet of paper and another sheet of paper with rectangular slits. Overlaying the second sheet on the first allows you to see through the slits only a few words or even letters. In this example: a written sheet, a data object, the sheet with slits — representation of the superimposed sheets is the data object in the view. 
 
-## Назначение представлений
+## Assignment submissions 
 
-Практическая ценность представлений очевидна: почти всегда происходит манипулирование довольно ограниченным набором свойств. Таким образом, во многих операциях (например, при чтении объекта) удобно ограничить набор свойств, вместо обработки всех, что позволит существенно увеличить производительность.
+The practical value of ideas is obvious: almost always a manipulation of a fairly limited set of properties. Thus, in many operations (for example, when reading the object) it is convenient to restrict the set of properties, instead of handling all that will significantly increase productivity. 
 
-Представление используется как для формирования форм пользовательского интерфейса, так и для реализации операций (например, чтение объектов данных по представлению).
+This view is used as to generate user interface forms and to implement operations (e.g., reading data objects in the view). 
 
-Представление является средством разработчика, позволяющим обеспечить отражение некоторого множества атрибутов, связанных ассоциациями классов.
+The presentation is a developer tool that allows you to reflect some set of attributes associated classes associations. 
 
-`Обратите внимание!` Нельзя в одно представление дважды добавлять одно и то же свойство (атрибут), так как [сервис данных](fo_data-service.html) не сможет обработать данную ситуацию. Если же возникает необходимость в повторном использовании свойства, следует использовать [вычислимые поля](fo_not-stored-attributes.html).
+`Обратите attention!` Not in one view twice to add the same property (attribute) as the [service data](fo_data-service.html) will not be able to handle the situation. If there is a need to reuse the properties, use [calculated field](fo_not-stored-attributes.html). 
 
-## Виды представлений
+## Types of representations 
 
-Существуют разные виды представлений. Подробнее о них можно узнать из статьи [Основные виды представлений](fd_View-types.html):
- 
-* [E-представление](fd_e-view.html)
-* [L-представление](fd_l-view.html)
-* [T-представление](fd_t-view.html)
-* [D-представление](fd_d-view.html)
+There are different types of views. Read more you can learn about them from the article [Principal ideas](fd_View-types.html): 
 
-### Наследование представлений
+* [E-view](fd_e-view.html) 
+* [L-view](fd_l-view.html) 
+* [T view](fd_t-view.html) 
+* [D-view](fd_d-view.html) 
 
-Объявленные статически представления [наследуются](fd_inheritance.html) (`наследуемые представления`), т.е. представления, объявленные для предков, действительны для потомков, более того, работа для любого объекта потомка через класс (тип) предка обеспечивается полиморфно для потомков (например, если есть список для некоторого класса, то все объекты потомков этого класса могут быть отображены в этом же списке, в этом же представлении). Статически объявленные для предков представления могут быть полностью `переопределены` в наследниках. 
+### view Inheritance 
 
-В связи с наследованием представлений:
-* Особым образом настраивается [чтение принадлежащих различным классам объектов в одном представлении](fo_reading-several-types-objects.html)
-* Реализованы [адаптивные представления](fo_adaptive-views-details.html).
+Declared statically representation [inherited](fd_inheritance.html) (`наследуемые представления`), i.e. represent the ancestors, valid for posterity, moreover, work for any object of a descendant through the class (type) of the provided polymorphic ancestor for the descendants (for example, if there is a list for a class, all objects descendants of this class can be displayed in the same list in the same view). Statically declared in the ancestors of the submission can be fully `переопределены` in the heirs. 
 
-### Задание представлений
+In connection with the inheritance of ideas: 
+* In a special way configures the [read belonging to different object classes in a single view](fo_reading-several-types-objects.html) 
+* Implemented [adaptive view](fo_adaptive-views-details.html). 
 
-Представление может быть задано:
-* статически (приписано метаданными-атрибутами к классам данных)
-* динамически (конструироваться в исходном коде).
+### Job submissions 
 
-Представления приписываются классам данных и именуются.
+The view can be set: 
+* statically (assigned metadata attributes to classes of data) 
+* dynamically (constructed in the source code). 
 
-### Статически заданные представления
+The submission attributed to the data classes and called. 
 
-Статически, представление определяется следующими атрибутами:
+### Statically defined representations 
 
-* `ViewAttribute` — объявляет представление для класса. Указывается имя представления и состав собственных и мастеровых свойств произвольного уровня. Формат указания: 
+Statically, the performance is defined by the following attributes: 
+
+* `ViewAttribute` — announces the presentation for the class. Specifies the name of the view and composition of private and artisans of properties of arbitrary levels. Format instructions: 
 
 ```
 [(Имя св-ва мастера).(Имя св-ва мастера мастера).(Имя св-ва мастера мастера мастера ...).)(Имя атрибута) [as (пользовательское имя атрибута)) [on (путь расположения на форме))
-```
+``` 
 
-* `AssociatedDetailViewAttribute` — указывает для представления [класса-шапки](fd_key-concepts.html) представление детейла, поскольку представление [шапки](fd_key-concepts.html) включает в себя представление детейла. Здесь же можно указать:
-	* Должны ли детейлы прочитываться сервисами данных вместе с загрузкой [шапки](fd_key-concepts.html);
-	* Путь расположения на форме;
-	* Заголовок на форме;
-	* Видимость на форме;
-	* Имена агрегирующих функций, доступных пользователю из данного представления;
-	* Должно ли представление быть [адаптивным (UseAdaptiveViewsLoading)](fo_adaptive-views-details.html).
+* `AssociatedDetailViewAttribute` — specifies to represent [class-hats](fd_key-concepts.html) representation of detail as representation [hats](fd_key-concepts.html) includes a representation of detail. Here you can specify: 
+Should detaily to be read by data services with the download [hats](fd_key-concepts.html); 
+* The path to the location on форме; 
+* Heading on форме; 
+* Visibility on форме; 
+* The names of the aggregate functions available to the user of this представления; 
+* If the view should be adaptive (UseAdaptiveViewsLoading)](fo_adaptive-views-details.html). 
 
-* `MasterViewDefineAttribute` — дополнительно настраивает мастера в представлении [шапки](fd_key-concepts.html), можно указать:
-	* Тип выбора (lookup type) мастерового объекта;
-	* Строку для инициализации объекта (контрола) выбора мастерового объекта;
-	* Отображаемое свойство при типе выбора LookupTypeEnum.Combo.
+* `MasterViewDefineAttribute` — optional configures the master in performance [hats](fd_key-concepts.html), you can specify: 
+* Selection type (lookup type) artisan объекта; 
+* The string to initialize the object (control) selection of the workman объекта; 
+* The display property for type of choice LookupTypeEnum.Combo. 
 
-Путь расположения на форме указывается строкой вида:
+The path to the location on the form indicated by the line: 
 
 ```
 [-|)[Имя)[\ [-|)[Имя))…
-```
+``` 
 
-где:
-* `-` означает группировку (`GroupBox`),
-* `|` - закладку (Tab) на формах редактирования,
-* `\` — разделитель пути. 
-* `Имя` — имя соответствующей закладки/группы.
+where: 
+* `-` refers to grouping (`GroupBox`), 
+* `|` - tab (Tab) on the edit forms, 
+* `\` — path separator. 
+* `Имя` — the name of the corresponding bookmark/groups. 
 
-В качестве имён свойств можно указывать "звездочку", что будет означать, что необходимо использовать все свойства. Например, если просто указать "звездочку", то в представление автоматически попадают все собственные свойства, если указать `Master.*`, то это будет означать, что в представление попадают все свойства указанного мастера. Программист может отключить автоматическое попадание какого-либо свойства в представление указанием перед свойством атрибута `DisableAutoViewing`.
+The names of the properties you can specify the "star" that will mean that you must use all properties. For example, if you just specify "star", then the view automatically includes all of its own properties, if you specify `Master.*`, it will mean that the view contains all the properties specified in the wizard. The programmer can disable automatic entering of any property to the view showing the front of the property attribute `DisableAutoViewing`. 
 
-[Пример](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/CDDA.cs) статически определённых представлений:
+[Primer](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/Objects/CDDA.cs) statically defined views: 
 
 ```
 [View("Generator", new string[) { "Company on \‘|Common\-Copyright\’", "Product on \’|Common\-Copyright\’", "Copyright on \’|Common\-Copyright\’ ", "Version" } ) )
 [AssociatedDetailView( "Generator", "Classes", "Generator", true, "", "", true, new string[) { } )) 
 [AssociatedDetailView( "Generator", "Inheritances", "Generator", true, "", "", true, new string[) { } )) 
-[View( "Edit", new string[) { "Company", "Product", "Copyright", "Version", "DataObjectNameSpace" } ) )
+[View( "Edit", new string[) { "Company", Product, Copyright, "Version", "DataObjectNameSpace" } ) )
 public class Stage:STORMCASE.Repository.Stage
 {
 	…
 }
-```
+``` 
 
-В `RunTime` представления являются экземплярами класса `ICSSoft.STORMNET.View`. Разработчик может получить проинициализированный экземпляр класса, соответствующий статически определённому представлению, вызовом метода [Information](fo_methods-class-information.html).GetView, либо через [специальные статические свойства](fo_static-view-accessors.html).
+In `RunTime` views are instances of a class `ICSSoft.STORMNET.View`. The developer can obtain an initialized instance of the class corresponding to the statically defined view, by calling [Information](fo_methods-class-information.html).GetView or through [special static properties](fo_static-view-accessors.html). 
 
-### Динамически заданные представления
+### Dynamically specified performance 
 
-Для того, чтобы динамически определить представление, необходимо конструировать экземпляр класса `View` ([пример](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs|)). Это можно сделать четырьмя способами:
-* Конструировать пустое представление, затем пользоваться методами `DefineClassType, AddDetailInView, AddMasterInView, AddProperty` для дальнейшего определения.
-* Конструировать представление с указанием экземпляра класса `ViewAttribute` (он же атрибут, служащий для задания статических представлений).
-* Конструировать представление по проинициализированным свойствам (загруженные + отличные от [внутренней копии данных](fo_data-object-copy.html)) объекта данных.
-* Конструировать представление `по-умолчанию` (попадают только собственные свойства, а также детейловые свойства, что указывается соответствующим параметром) 
+In order to dynamically determine the picture, one must construct an instance of the class `View` ([primer](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs|)). This can be done in four ways: 
+* Designing a blank view, and then use the methods of `DefineClassType, AddDetailInView, AddMasterInView, AddProperty` for further definition. 
+* To design the presentation of the instance of the class `ViewAttribute` (aka attribute is used to specify static representations). 
+* Designing view properties initialized (loaded other than [the internal copy of the data](fo_data-object-copy.html)) of the data object. 
+* Designing performance `по-умолчанию` (fall only its own properties, as well as Decalogue properties that specify the relevant option) 
 
-Также, через методы класса `View` можно полностью получить структуру представления, а также изменить её (получить/добавить/удалить элементы, входящие в представление).
+Also, using class methods `View` completely to the structure of the view and can change it (get/add/delete the items included in the submission). 
 
-Стоит также отметить, что настоятельно рекомендуется определять имя для динамически создаваемых представлений.
+It is also worth noting that it is strongly recommended to determine the name of the dynamically created views. 
 
-{% include note.html content="Кеширование View на форме для разных вычиток может приводить к ошибкам, поскольку при чтении с наложением ограничения конкретная инстанция View может быть изменена [сервисом данных](fo_data-service.html)." %}
+{% include note.html content="Caching View for the form for different visitok can lead to errors, as when reading with the overlay restrictions specific instance of the View can be changed [service data](fo_data-service.html)." %} 
 
-## Проверка соответствия объекта представлению
+## Verification of compliance of the object representation 
 
-Для проверки того, удовлетворяет ли некоторый [объект](fo_data-object.html) представлению, необходимо вызвать у экземпляра класса `View` метод `TestObjectForViewing`.
+To check whether a certain [object](fo_data-object.html) view, you must call an instance of the class `View` method `TestObjectForViewing`. 
 
-## Дополнительные сведения о представлениях
+## for more information about views 
 
-* Во [Flexberry ORM](fo_flexberry-orm.html) существуют [стандартные операции](fo_view-operations.html), позволяющие найти для нескольких классов их общего предка и общие представления. Также можно манипулировать с представлениями, как с множествами: вычислить, например, объединение или разность представлений.
-* Существуют [рекомендации по добавлению мастеров в представления](fd_masters-view.html).
-* Существует [способ проверить, удовлетворяет ли некоторый объект представлению](fo_test-object-for-viewing.html).
-* [ViewPropertyAppender](fo_view-property-appender.html) - класс, который позволяет расширять представление свойствами, которые находятся в [ограничении](fo_limit-function.html)
+* In [Flexberry ORM](fo_flexberry-orm.html) there are [standard transactions](fo_view-operations.html), allowing to find for several classes of their common ancestor and the overall presentation. You can also manipulate views set to calculate, e.g., Union, or difference of views. 
+* There are [recommendations for adding wizards to submission](fd_masters-view.html). 
+* There is a [method to check whether a certain object to view](fo_test-object-for-viewing.html). 
+* [ViewPropertyAppender](fo_view-property-appender.html) class, which allows to extend the display of properties that are in [the limitation](fo_limit-function.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

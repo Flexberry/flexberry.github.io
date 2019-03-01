@@ -1,25 +1,27 @@
----
-title: Мобильные шаблоны.
-sidebar: ember-flexberry_sidebar
-keywords:
-toc: true
-permalink: en/ef_resolver.html
-folder: products/ember-flexberry/mobile/
-lang: en
-summary: Основная информация о resolver-е.
----
+--- 
+title: Mobile templates. 
+sidebar: ember-flexberry_sidebar 
+keywords: 
+toc: true 
+permalink: en/ef_resolver.html 
+folder: products/ember-flexberry/mobile/ 
+lang: en 
+autotranslated: true 
+hash: ffd90e28d218f7a223c1b1d39b3777ae3c673b587206b91eb2da3b53dc2cf566 
+summary: Basic information about resolver. 
+--- 
 
-## Описание
+## Description 
 
-Resolver с помощью сервиса device из [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/master/addon/services/device.js) который использует библиотеку [devicejs](https://github.com/matthewhudson/device.js) определяет устройство,
-на котором запущено приложение (iOS/Android/Windows), его тип (phone/tablet/tv) и положение экрана (portrait/landscape) и в зависимости от этой информации ищет ресурсы приложения (шаблоны, классы и прочее).
+Resolver using the service device from [ember-flexberry](https://github.com/Flexberry/ember-flexberry/blob/master/addon/services/device.js) which uses library [devicejs](https://github.com/matthewhudson/device.js) specifies the device 
+running the app (iOS/Android/Windows), its type (phone/tablet/tv) and screen position (portrait/landscape) and depending on this information, is looking for application resources (templates, classes, etc.). 
 
-## Определение resolver-а в приложении
+## determination of the resolver and the application 
 
-Для использования ресовера в приложении необходимо:
+To use recover in the application should: 
 
-* в корне приложения создать файл resolver.js и определить в нем нужный resolver: `export { default } from 'ember-flexberry/resolver';` [пример определения на ember стенде](https://github.com/Flexberry/ember-flexberry/blob/master/tests/dummy/app/resolver.js)
-* и подключить его в корне приложения в файле app.js:
+* in the application root to create the file resolver.js and define it the right resolver: `export { default } from 'ember-flexberry/resolver ;` [example of determination of ember on the stand](https://github.com/Flexberry/ember-flexberry/blob/master/tests/dummy/app/resolver.js) 
+* and plug it into the application root in the file app.js: 
 
 ```js
 import Ember from 'ember';
@@ -30,59 +32,59 @@ let App = Ember.Application.extend({
 });
 
 export default App;
-```
+``` 
 
-[пример подключения на ember стенде](https://github.com/Flexberry/ember-flexberry/blob/master/tests/dummy/app/app.js#L13)
+[connection example on ember stand](https://github.com/Flexberry/ember-flexberry/blob/master/tests/dummy/app/app.js#L13) 
 
-Сделав эту настройку можно будет определять множества ресурсов приложения, предназначенных для разных устройств(возможные варианты устройств, включая платформу, тип и ориентацию устройства):
+By making this setting you can define many application resources, target different devices(possible devices including the platform type and the orientation of the device): 
 
-* templates/ipad-landscape/my-form.hbs - шаблон для ipad-ов при горизонтальной ориентации экрана
-* templates/ipad-portrait/my-form.hbs - шаблон для ipad-ов при портретной ориентации экрана
-* templates/ipad/my-form.hbs - шаблон для ipad-ов, который будет использован при любой ориентации экрана (если шаблоны под ipad-landscape или ipad-portrait не заданы)
+* templates/ipad-landscape/my-form.hbs - template for ipad in horizontal screen orientation 
+* templates/ipad-portrait/my-form.hbs - template for iPads in portrait screen orientation 
+* templates/ipad/my-form.hbs - template for iPads, which will be used in any screen orientation (if the templates are ipad-landscape ipad and portrait not specified) 
 
-* templates/iphone-landscape/my-form.hbs - шаблон для iphon-ов при горизонтальной ориентации экрана
-* templates/iphone-portrait/my-form.hbs - шаблон для iphone-ов при портретной ориентации экрана
-* templates/ipone/my-form.hbs - шаблон для iphone-ов, который будет использован при любой ориентации экрана (если шаблоны под iphone-landscape или iphone-portrait не заданы)
+* templates/iphone-landscape/my-form.hbs - template for the iPhones in landscape mode 
+* templates/iphone-portrait/my-form.hbs - template for the iphone in portrait screen orientation 
+* templates/ipone/my-form.hbs - template for the iPhones, which will be used in any screen orientation (if the templates under iphone-landscape or iphone portrait not specified) 
 
-* templates/android-tablet-landscape/my-form.hbs - шаблон для android-планшетов при горизонтальной ориентации экрана
-* templates/android-tablet-portrait/my-form.hbs - шаблон для android-планшетов при портретной ориентации экрана
-* templates/android-tablet/my-form.hbs - шаблон для android-планшетов, который будет использован при любой ориентации экрана (если шаблоны под android-tablet-landscape или android-tablet-portrait не заданы)
+* templates/android-tablet-landscape/my-form.hbs - template for android tablets in landscape screen orientation 
+* templates/android-tablet-portrait/my-form.hbs - template for an android tablet in portrait screen orientation 
+* templates/android tablet/my-form.hbs - template for an android tablet, which will be used in any screen orientation (if the template under android-tablet-landscape, or android-tablet-portrait not specified) 
 
-* templates/android-phone-landscape/my-form.hbs - шаблон для android-телефонов при горизонтальной ориентации экрана
-* templates/android-phone-portrait/my-form.hbs - шаблон для android-телефонов при портретной ориентации экрана
-* templates/android-phone/my-form.hbs - шаблон для android-телефонов, который будет использован при любой ориентации экрана (если шаблоны под android-phone-landscape или android-phone-portrait не заданы)
+* templates/android-phone-landscape/my-form.hbs - template for android phones with a horizontal screen orientation 
+* templates/android-phone-portrait/my-form.hbs - template for android phones portrait screen orientation 
+* templates/android-phone/my-form.hbs - template for android phones, which will be used in any screen orientation (if the template under android-phone-landscape or android phone-portrait not specified) 
 
-* templates/windows-tablet-landscape/my-form.hbs - шаблон для windows-планшетов при горизонтальной ориентации экрана
-* templates/windows-tablet-portrait/my-form.hbs - шаблон для windows-планшетов при портретной ориентации экрана
-* templates/windows-tablet/my-form.hbs - шаблон для windows-планшетов, который будет использован при любой ориентации экрана (если шаблоны под windows-tablet-landscape или windows-tablet-portrait не заданы)
+* templates/windows-tablet-landscape/my-form.hbs - template for windows tablets in landscape screen orientation 
+* templates/windows-tablet-portrait/my-form.hbs - template for a windows tablet in portrait screen orientation 
+* templates/windows-tablet/my-form.hbs - template for a windows tablet, which will be used in any screen orientation (if the templates windows-tablet-landscape or windows-tablet-portrait not specified) 
 
-* templates/windows-phone-landscape/my-form.hbs - шаблон для windows-телефонов при горизонтальной ориентации экрана
-* templates/windows-phone-portrait/my-form.hbs - шаблон для windows-телефонов при портретной ориентации экрана
-* templates/windows-phone/my-form.hbs - шаблон для windows-телефонов, который будет использован при любой ориентации экрана (если шаблоны под windows-phone-landscape или windows-phone-portrait не заданы)
+* templates/windows-phone-landscape/my-form.hbs - template for windows phone when the horizontal screen orientation 
+* templates/windows-phone-portrait/my-form.hbs - template for windows phone in portrait screen orientation 
+* templates/windows-phone/my-form.hbs - template for windows phone, which will be used in any screen orientation (if the templates windows-phone-landscape or windows-phone-portrait not specified) 
 
-...
+... 
 
-* templates/tablet-landscape/my-form.hbs - шаблон для планшетов (на любой платформе) при горизонтальной ориентации экрана
-* templates/tablet-portrait/my-form.hbs - шаблон для планшетов (на любой платформе) при портретной ориентации экрана
-* templates/tablet/my-form.hbs - шаблон для планшетов (на любой платформе), который будет использован при любой ориентации экрана (если шаблоны под tablet-landscape или tablet-portrait не заданы)
+* templates/tablet-landscape/my-form.hbs - template for tablets (on any platform) for horizontal screen orientation 
+* templates/tablet-portrait/my-form.hbs - template for tablets (on any platform) in portrait screen orientation 
+* templates/tablet/my-form.hbs - template for tablets (on any platform) that will be used when any screen orientation (if the templates for tablet-landscape or tablet portrait not specified) 
 
-* templates/phone-landscape/my-form.hbs - шаблон для телефонов (на любой платформе) при горизонтальной ориентации экрана
-* templates/phone-portrait/my-form.hbs - шаблон для телефонов (на любой платформе) при портретной ориентации экрана
-* templates/phone/my-form.hbs - шаблон для телефонов (на любой платформе), который будет использован при любой ориентации экрана (если шаблоны под tablet-landscape или tablet-portrait не заданы)
+* templates/phone-landscape/my-form.hbs - template for phones (on any platform) for horizontal screen orientation 
+* templates/phone-portrait/my-form.hbs - template for phones (on any platform) in portrait screen orientation 
+* templates/phone/my-form.hbs - template for phones (on any platform) that will be used when any screen orientation (if the templates for tablet-landscape or tablet portrait not specified) 
 
-* templates/mobile/my-form.hbs - шаблон для любых мобильных устройств (телефонов или планшетов) работающих на любой платформе, который будет использован, если не заданы более подходящие шаблоны под текущий тип, платформу, ориентацию устройства
+* templates/mobile/my-form.hbs - template for all mobile devices (phones or tablets) running on any platform that will be used unless more appropriate under the current template type, platform, and device orientation 
 
-* templates/tv/my-form.hbs - шаблон для телевизоров (на любой платформе)
+* templates/tv/my-form.hbs - template for the TV (on any platform) 
 
-* templates/my-form.nbs - стандартный шаблон формы (который будет использован в самую последнюю очередь, если под текущее устройство не  найдено ни одного подходящего "устройство-специфичного" шаблона)
+* templates/my-form.nbs - standard template forms (which will be used in the last step, if the current device does not find any suitable "device-specific" template) 
 
-## Дополнительные настройки
+## advanced settings 
 
- Эти настройки resolver-a, позволяют ограничить его варианты перебора каталогов до минимума:
+These settings resolver-a, allow you to limit his options of iterating through the directories to a minimum: 
 
-* **resolveWithoutDeviceTypeDetection** позволяет задать конкретные ресурсы, которые не нужно искать в зависимости от устройства (конкретный компонент, конкретный сервис, и т.п.).
+* **resolveWithoutDeviceTypeDetection** allows you to specify specific resources that don't need to search depending on the device (the specific component, a specific service, etc.). 
 
-Задать настройку можно в конфиге (`config\environment.js`) следующим образом:
+To specify a setting in the config (`config\environment.js`) as follows: 
 
 ```js
 APP: {
@@ -93,13 +95,13 @@ APP: {
           'template:components/object-list-view-row',
       ],
     }
-```
+``` 
 
-По умолчанию: `resolveWithoutDeviceTypeDetection: undefined`
+Default: `resolveWithoutDeviceTypeDetection: undefined` 
 
-* **deviceRelatedTypes** - задает перечень устройство-зависимых типов ресурсов (по умолчанию это компоненты, шаблоны и представления).
+* **deviceRelatedTypes** - specifies a list of device-dependent resource types (default is components, templates and views). 
 
-Изменить настройку можно в прикладном resolver.js унаследовав его от `ember-flexberry/resolver` и переопределив в нем этот массив `deviceRelatedTypes`:
+To change the settings in the application resolver.js inherited from `ember-flexberry/resolver` and overriding this array `deviceRelatedTypes`: 
 
 ```js
 import Resolver from 'ember-flexberry/resolver';
@@ -110,6 +112,10 @@ export default Resolver.extend({
     'controller'
   ],
 });
-```
+``` 
 
-По умолчанию: `deviceRelatedTypes: ['component', 'template', 'view']`
+Default: `deviceRelatedTypes: ['component', 'template', 'view']` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

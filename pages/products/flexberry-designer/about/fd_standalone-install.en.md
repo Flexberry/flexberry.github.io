@@ -1,49 +1,55 @@
----
-title: Независимая установка
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, установить, настроить, лицензия, запуск, репозиторий, СУБД, база данных
-summary: Алгоритм установки Flexberry Desinger из архива, начало работы, подключение сервера СУБД
-toc: true
-permalink: en/fd_standalone-install.html
-lang: en
----
+--- 
+title: Independent installation 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer to install, configure, license, launch, repository, DBMS, database 
+summary: Algorithm setup Flexberry Desinger from the archive, getting started, connecting to the DBMS server 
+toc: true 
+permalink: en/fd_standalone-install.html 
+lang: en 
+autotranslated: true 
+hash: 0a18243af1f3b8df913d88c546f3315f2343f734d0ff301e0c2900fe6c3d9abc 
+--- 
 
-Существует [несколько способов установить и настроить](fd_install.html) [Flexberry Designer](fd_landing_page.html). Один из них - установка приложения из архива.
+There are [several ways to install and configure](fd_install.html) [Flexberry Designer](fd_landing_page.html). One of them is the installation of the application from the archive. 
 
-1.Для запуска Flexberry Designer необходимо наличие [поддерживаемой СУБД](fo_data-service.html) (установленной на компьютере, или где-то в сети) и [установленной лицензии](fd_install.html).  
-2.Необходимо проверить наличие **доступа** к серверу, который Вы будете использовать, на Вашем компьютере.  
-3.В файле конфигурации **Flexberry.exe.config** необходимо изменить [настройки для сервиса данных](fo_ds-provider.html).  
-Например, для [MSSQLDataService](fo_mssql-data-service.html) можно изменить строку подключения, указав путь к серверу :
+1.To start Flexberry Designer you must have [supported DBMS](fo_data-service.html) (installed on the computer, or somewhere on the network) and [the installed license](fd_install.html). 
+2.It is necessary to check availability **access** to the server that You will use on Your computer. 
+3.In the configuration file **Flexberry.exe.config** required to edit settings for data service](fo_ds-provider.html). 
+For example, [MSSQLDataService](fo_mssql-data-service.html) you can change the connection string, specifying the path to the server : 
 
 ```xml 
-<add key="CustomizationStrings" value="SERVER=<адрес сервера>;Trusted_connection=yes;DATABASE=CASE;"/>
-```
+<add key="CustomizationStrings" value="SERVER=<server address>;Trusted_connection=yes;DATABASE=CASE;"/>
+``` 
 
-вместо <адрес сервера> необходимо указать путь до сервера. В качестве наименования базы можно взять любое, система сама предложит создать базу данных. При использовании MS SQL Server версии Express адрес сервера будет выглядеть как **.\SQLEXPRESS**.
+instead of <server address> must specify the path to the server. As the name of the base you can take any, the system will offer to create a database. If you are using MS SQL Server version Express server address will look like **.\SQLEXPRESS**. 
 
-4.После запуска Flexberry необходимо создать Репозиторий для работы, выбрав пункт меню `Репозиторий` – `Создать новый`:
+4.After starting Flexberry you need to create a Repository for work by choosing the menu item `Репозиторий` – `Создать новый`: 
 
-![](/images/pages/products/flexberry-designer/about/create-new-repository.png)
+![](/images/pages/products/flexberry-designer/about/create-new-repository.png) 
 
-5.Далее необходимо настроить новый Репозиторий, выбрав пункт меню `Репозиторий` – `Редактировать свойства`, в открывшемся окне можно изменить наименование репозитория, а также необходимо подключить плагины:
+5.Next, you need to configure a new Repository by selecting the menu item `Репозиторий` – `Редактировать свойства`, in the opened window you can change the name of the repository, and you need to connect plug-ins: 
 
-![](/images/pages/products/flexberry-designer/about/rep-properties.png)
+![](/images/pages/products/flexberry-designer/about/rep-properties.png) 
 
-6.После чего необходимо сохранить изменения.
-7.После внесения изменений в свойства репозитория, необходимо создать Проект и Конфигурацию:
+6.Then you must save the changes. 
+7.After changes in the properties of the repository, you must create the Project and Configuration: 
 
-* Выделить репозиторий в дереве структуры 
-* Нажать кнопку `Создать Project` 
-* Ввести имя проекта
-* Выделить созданный проект 
-* Нажать кнопку `Создать Configuration` 
-* Нажать кнопку `Создать Стадия` 
-* Ввести имя стадии 
-* Нажать кнопку `Создать System`
-* Ввести наименование System. 
+Select the repository in the tree structure 
+* Click `Создать Project` 
+* Enter the project name 
+Select created project 
+* Click `Создать Configuration` 
+* Click `Создать Стадия` 
+* Enter a name for the stage 
+* Click `Создать System` 
+* Enter the name of the System. 
 
-После выполнения этих действий появится возможность создавать [диаграммы поддерживаемых видов](fd_editing-diagram.html): 
+After performing these steps, you will be able to create [chart of supported types](fd_editing-diagram.html): 
 
-![](/images/pages/products/flexberry-designer/about/create-diagram.png)
+![](/images/pages/products/flexberry-designer/about/create-diagram.png) 
 
-{% include note.html content="При возникновении вопросов обратитесь в службу техподдержки по почте support@flexberry.ru." %}
+{% include note.html content="If you have any questions please contact our technical support by mail support@flexberry.ru." %} 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

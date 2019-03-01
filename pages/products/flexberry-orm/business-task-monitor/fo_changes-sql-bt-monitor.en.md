@@ -1,28 +1,30 @@
----
-title: Service for writing SQL-scripts for data changes
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, BusinessTaskMonitor, data change
-summary: An example of implementing a SQL script record using the task monitor
-toc: true
-permalink: en/fo_changes-sql-bt-monitor.html
-lang: en
----
+--- 
+title: Service record SQL-scripts change the data 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, monitor tasks, changing data 
+summary: a Sample implementation of write SQL scripts using the task monitor 
+toc: true 
+permalink: en/fo_changes-sql-bt-monitor.html 
+lang: en 
+autotranslated: true 
+hash: c6674bd0b382d7397a2211cdd7950ffe68e1fa6bdd0ad0ff8d193c6018be264b 
+--- 
 
-## Описание
+## Description 
 
-`ICSSoft.Services.ChangesToSqlBTMonitor` представляет собой разновидность [монитора задач](fo_business-task-monitor.html), который позволяет осуществлять запись SQL-скриптов изменения данных.
+`ICSSoft.Services.ChangesToSqlBTMonitor` is a kind [task monitor](fo_business-task-monitor.html), which allows you to record SQL-scripts change the data. 
 
-## Подключение сервиса
+## the service Connection 
 
-Чтобы подключить данный сервис, нужно в конфигурационном файле написать:
+To connect this service, you need in the configuration file to write: 
 
 ```xml
     <add key="BusinessTaskMonitorType" value="ICSSoft.Services.ChangesToSqlBTMonitor, ChangesToSqlBTMonitor, Version=1.0.0.1, Culture=neutral, PublicKeyToken=e5ad39f116a43e0b"/>
-```
+``` 
 
-## Использование сервиса
+## use of the service 
 
-Пример обработчиков пунктов меню:
+Example handlers for menu items: 
 
 ```csharp
 private void RecorderClearClick(object sender, EventArgs e)
@@ -38,16 +40,20 @@ private void RecorderSaveClick(object sender, EventArgs e)
 
 		StreamWriter writer = new StreamWriter(fileName, false, Encoding.UTF8);
 
-		// Have the writer write strings to the store.
+		// Have the writer write strings to the store. 
 		writer.Write(ICSSoft.Services.ChangesToSqlBTMonitor.Record);
 
 		writer.Close();
 	}
 }
-```
+``` 
 
-Чтобы в выходном скрипте не было лишних запросов, можно настроить фильтр по именам таблиц в конфигурационном файле
+So in the output script to avoid unnecessary queries, you can configure a filter on the table names in the configuration file 
 
 ```xml
-    <add key="ChangesToSqlExcept" value="Аудит_Сессия,STORMSETTINGS,АудитОперации,АудитИзменения"/>
-```
+    <add key="ChangesToSqlExcept" value="AuditSystem,STORMSETTINGS,Audiopiracy,Auditionee"/>
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,15 +1,21 @@
----
-title: Реализация интерфейсов независимыми и зависимыми формами и отношения между ними
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Наглядная иллюстрация понятий, связанных с формами (независимые и зависимые формы, универсальные, а также реализуемые на основе базовых конкретные формы)
-toc: true
-permalink: en/fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Implementation of interfaces independent and dependent forms and the relationships between them 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: a graphic illustration of the concepts associated with the forms (independent and dependent forms, universal as well as implemented based on the basic specific shape) 
+toc: true 
+permalink: en/fw_implementation-interfaces-independent-and-dependent-forms-and-relationship-between-them.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: dfa4ce621955914259710be6aa0cdd9858089b032c8f3b0f95ddf67e6a394864 
+--- 
 
-Диаграмма классов, представленная ниже, показывает, как относятся между собой независимые и зависимые формы списков, универсальные, а также реализуемые на основе базовых конкретные формы списков (могут реализовываться как вручную, так и посредством генераторов кода для `Flexberry`):
-![](/images/pages/products/flexberry-winforms/forms/primer11.jpg)
-Диаграмма, представленная ниже, показывает, как относятся между собой независимые и зависимые формы редактирования, универсальные, а также базовые и конкретные на основе базовых формы (могут реализовываться как вручную, так и посредством генераторов кода для `Flexberry`):
-![](/images/pages/products/flexberry-winforms/forms/primer12.jpg)
+The class diagram below shows how the relate to each other independent and dependent forms lists generic and implemented on the basis of specific forms of lists (can be implemented manually or through code generator for `Flexberry`): 
+![](/images/pages/products/flexberry-winforms/forms/primer11.jpg) 
+The diagram below shows how the relate to each other independent and dependent forms edit, universal, and basic and specific, based on the base form (can be implemented manually or through code generator for `Flexberry`): 
+![](/images/pages/products/flexberry-winforms/forms/primer12.jpg) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

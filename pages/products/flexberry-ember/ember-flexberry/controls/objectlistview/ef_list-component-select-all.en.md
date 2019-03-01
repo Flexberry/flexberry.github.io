@@ -1,15 +1,21 @@
----
-title: Tools for working with objects on lists
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember Select All
-toc: true
-permalink: en/ef_list-component-select-all.html
-lang: en
-summary: Инструменты работы с объектами на странице/ всех страницах
----
+--- 
+title: Tools to work with objects on the lists 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember Select All 
+toc: true 
+permalink: en/ef_list-component-select-all.html 
+lang: en 
+autotranslated: true 
+hash: 7baa5a6ccd6b80adb790e35fa772ea9574179ed2f7ba9fc681fd869dbeb6ca05 
+summary: Tools to work with objects on the page/ all pages 
+--- 
 
-Кнопки "Отметить все на текущей странице", "Отметить все на всех страницах" и "Установить сортировку  по умолчанию" активируются вместе с `checkbox` в строках параметром `showCheckBoxInRow`.
+Button "Mark all on current page", "select all on all pages" and "Set default sort" are activated together with `checkbox` in the rows parameter `showCheckBoxInRow`. 
 
-* "Отметить все на текущей странице" - отмечает все объекты на сранице, добавляет отмеченые объекты в `slectRecords`.
-* "Отметить все на всех страницах" - активирует параметр `allSeclect`, обработка удаления при активации этого параметра реализуется в соответствии с потребностями конкретного приложения в `action delete()` компонента.
-* "Установить сортировку по умолчанию" - устанавливает сортировку и количество отображаемых страниц по умолчанию.
+* "Mark all on current page" - selects all objects on cranite, adds the marked objects in `slectRecords`. 
+* "Select all on all pages" - activates the parameter `allSeclect`, removal treatment when activated, this parameter is implemented in accordance with the requirements of a specific application in `action delete()` component. 
+* "Set default sort" - sets the sorting and the number of pages by default. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

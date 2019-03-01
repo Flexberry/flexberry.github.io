@@ -1,28 +1,34 @@
----
-title: Определение проектирования
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, проектирование
-summary: Характеристика и особенности проектирования
-toc: true
-permalink: en/fd_definition-design.html
-lang: en
----
+--- 
+title: Definition of design 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, design 
+summary: Characteristics and design features of 
+toc: true 
+permalink: en/fd_definition-design.html 
+lang: en 
+autotranslated: true 
+hash: ab0208dc5973107ad4ef92e6a1cf8f4711ccf3b37e8fc4b04091809dbb27cf56 
+--- 
 
-`Проектирование` (от латинского `projectus`, что означает "брошенный вперед") - это процесс составления описания, необходимого для создания в заданных условиях еще не существующего объекта по первичному описанию этого объекта путем его детализации, дополнения, расчетов и оптимизации.
+`Проектирование` (from the Latin `projectus`, which means "thrown forward") is the process of writing required to create under specified conditions of non-existing object based on the primary description of this object by its detail, the additions, calculations and optimization. 
 
-Описание объекта может быть задано по-разному: в виде текста, алгоритма, программы, чертежа, таблицы или, что чаще всего, комбинировано в традиционно бумажном или электронном виде.
+The object description can be set in different ways: in the form of text, algorithm, program, drawing, table, or, more often, combined in traditional paper or electronic form. 
 
-Таким образом, `главной особенностью` проектирования является работа с еще `не существующим объектом`. В этом отличие __проектирования от  моделирования__, где объект не может не существовать.
+Thus, `главной особенностью` design is to work with another `не existing объектом`. This is the difference between __design from modeling__, where the object cannot exist. 
 
-Проектирование можно рассматривать с одной стороны как заключительную фазу исследований (Анализа), а с другой как начальную фазу производства (Программирования).
+Design can be viewed from one side as final phase of research (Analysis) and as the initial phase of production (Programming). 
 
-Особенности проектирования:
-* `Итерационность проектирования`. Так как объект несуществующий (знаковый, идеальный, виртуальный), то нет возможности описать его сразу без последующих исправлений и уточнений. На каждом итерационном витке описание становится все более полным и точным
+Design features: 
+* `Итерационность проектирования`. Since the object is non-existent (symbolic, ideal, virtual), it is not possible to describe it directly without further corrections and clarifications. At each iteration round, the description becomes more complete and accurate 
 
-* `Коллективный характер`. Проектирование современных технических объектов требует участия специалистов разных специальностей. Например, в создании самолета участвуют инженеры-механики, материаловеды, электронщики, программисты, дизайнеры и т.д. С другой стороны объекты являются сложными и даже при участии групп специалистов их проектирование растягивается на годы даже при использовании современных высокопроизводительных ЭВМ. "Планер самолета можно создать за 3-4 года, двигатель за 9 лет, хороший комплекс электронного оборудования тоже за 8-9 лет" (Берестов Л., зам начальника Летно-исследовательского института).
+* `Коллективный характер`. The design of modern technical objects requires the participation of specialists in different disciplines. For example, in the creation of the aircraft includes mechanical engineers, materials scientists, electronics engineers, programmers, designers, etc. on the other hand the objects are complex and even with the participation of groups of specialists in their design take years even with today's high-performance computers. "The airframe can be created in 3-4 years, the engine for 9 years, good complex electronic equipment, too, for 8-9 years" (L. Berestov, Deputy chief of the Flight research Institute). 
 
-* `Многовариантность решений`. Жесткие условия конкурентной борьбы в условиях глобализации требуют поиска эффективных, часто оригинальных проектных решений. Поэтому пробуются разные варианты и подходы, что и порождает многовариантность.
+* `Многовариантность решений`. The harsh conditions of competitive struggle in conditions of globalization require effective, often the original design decisions. So trying out different options and approaches, and this causes multiplicity. 
 
-* `Многовариантность методов`. Существуют разные алгоритмы и технологии решения одной и той же проектной задачи, имеющих присущие им ограничения, точность, достоинства и недостатки. Соответственно и реализация разных методов может осуществляться с помощью вариативного программного и информационного обеспечений.
+* `Многовариантность методов`. There are different algorithms and ways of solving the same design problem, have inherent limitations, accuracy, advantages and disadvantages. Accordingly, the implementation of different methods can be carried out via the flexible software and information support. 
 
-* Использование `блочно-иерархического подхода` (БИП). Сущность БИП - сначала объект рассматривается как "черный ящик" с неизвестной внутренней структурой; затем определяется структура на 1-ом уровне детализации и связи между блоками; затем детализируются блоки 1-го уровня и возникают блоки 2-го уровня и т.д. до получения достаточно простых блоков самого нижнего уровня с прозрачной структурой. Достоинство БИП - в возможности распараллелить работу между многими специалистами, которые занимаются разными блоками; недостаток - в сложности "стыковки" решений, т.к. проектируемые объекты до их изготовления - виртуальны.
+* Use `блочно-hierarchical подхода` (BIP). The essence of the PUTT - first, the object is considered as a "black box" with unknown internal структурой; then determined the structure of 1st level of detail and the relationships between блоками; then details the units of the 1st level and there are blocks of 2nd level and so on until the simple blocks of the lowest level with a transparent structure. The advantage of BIP is the ability to parallelize the work among many specialists who do different блоками; drawback - the complexity of "docking" solutions, because of the designed objects to make them virtual. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

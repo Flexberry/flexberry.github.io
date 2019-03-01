@@ -1,113 +1,119 @@
----
-title: Data Class Attributes
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data classes
-summary: Description of data class attributes and their generation features
-toc: true
-permalink: en/fo_attributes-class-data.html
-lang: en
----
+--- 
+title: the attributes of the data classes 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM data classes 
+summary: Description of class attributes data and the characteristics of their generation 
+toc: true 
+permalink: en/fo_attributes-class-data.html 
+lang: en 
+autotranslated: true 
+hash: 6f1b26ad35ebddaf5cb7f61acd8ab0d9a85fd03190df2d3d59d1bf7cba8d161f 
+--- 
 
-## Определение атрибута
+## attribute Definition 
 
-На [диаграмме классов](fd_class-diagram.html) [атрибут в классе](fd_class-diagram-constraction.html) определяется строкой вида:
+[Class diagram](fd_class-diagram.html) [attribute class](fd_class-diagram-constraction.html) is defined by a string of the form: 
 
 ```
 [/)[AccessModifier)Name:Type[=DefaultValue)
-```
+``` 
 
-, что соответствует нотации UML.
+that corresponds to the UML notation. 
 
 ```
 +ДатаРегистрации:DateTime=Now
 +Статус:Статус=Рег
 +idx:int=0
-```
+``` 
 
-| Что генерируется | Генерация в SQL DDL |Генерация в .Net-язык |
-|---|---|---|
-| "/" - если указано, [атрибут является нехранимым](fo_not-stored-attributes.html) | Если [атрибут не является хранимым](fo_not-stored-attributes.html) определение поля в CREATE TABLE не генерируется | Перед определением свойства указывается .Net-атрибут NotStoredAttribute (Namespace: ICSSoft.STORMNET, Assembly:ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) |
-| "AccessModifier" - модификатор сгенерированного в .Net-язык свойства | Никак | соответствующий модификатор свойства (# - protected, + - public, - - private) |
-| "Name", "Type"- очевидно | в CREATE TABLE генерируется определение поля с именем атрибута (если другое имя не указано в дополнительном свойстве Storage), с типом, преобразованным от исходного согласно  [карте отображения типов](fd_types-map.html) | Виртуальное свойство с тем же именем и приватный член класса для этого свойства.Тип свойства и приватного члена - тип атрибута, преобразованный от исходного согласно [карте отображения типов](fd_types-map.html). |
-| "DefaultValue" - значение по-умолчанию (инициализатор). | Никак | Приватному члену прописывается инициализатор с [указанным значением по-умолчанию](fo_features-dafault-value.html). <br>Если указано значение перечислимого типа, то генерируется инициализация значением этого типа. <br>Если тип не перечислимый, то берётся соответствующий .Net-тип и проверяется, есть ли публичное статическое свойство с имением "DefaultValue". <br>Далее, если тип простой стандартный (из namespace System), генерируется простая инициализация константой (напр: int idx=0). <br>В противном случае генерация останавливается с ошибкой.<br>**Замечание:** Если вы создаете свой [собственный тип на диаграмме (класс со стериотипом "type")](fd_data-types-properties.html), то, прежде чем задавать значение по-умолчанию, необходимо произвести компиляцию объектов. Лишь после компиляции можно задавать значение по-умолчанию и производить генерацию кода. |
+| Generated | Generate SQL DDL Generation .Net language | 
+|---|---|---| 
+| "/" - if specified, [an attribute is nagraniem](fo_not-stored-attributes.html) | If the attribute is not stored](fo_not-stored-attributes.html) the field definition in the CREATE TABLE statement is generated Before the property definition is specified .Net-NotStoredAttribute attribute (Namespace: ICSSoft.STORMNET, Assembly:ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) | 
+| "AccessModifier" - modifier is generated .Net language properties | No | applicable modifier properties (# - protected, - public, - private) | 
+| "Name", "Type"- obviously | in a CREATE TABLE generates a field definition with the attribute name (if another name is not specified in the additional Storage property), with the type converted from the original according to [the map display types](fd_types-map.html) | Virtual property with the same name and a private member of the class for this property.The type of the property and a private member - type attribute are converted from the source according to [the map display types](fd_types-map.html). | 
+| "DefaultValue" the default value (initializer). | No | Private member registers an initializer with [specified default](fo_features-dafault-value.html). <br / >If the specified value is of an enumerated type, is generated to initialize the value of this type. <br / >If the type is not enumerable, then it is appropriate .Net-type and checks whether there is a public static property with the name of "DefaultValue". the <br>Next, if the type is standard (of namespace System), generated a simple initialization of a constant (e.g.: int idx=0). <br / >otherwise generation halts with error.<br>**Note:** If you create your [own type in the diagram (a class with steriotip "type")](fd_data-types-properties.html), then, before asking the default, you must compile the objects. Only after compiling, you can set the default value to generate code. | 
 
-Существует возможность [указать объект данных в качестве типа атрибута](fo_data-object-as-attribute-type.html).
+There is the option to specify the data object as the attribute type](fo_data-object-as-attribute-type.html). 
 
-## Дополнительно редактируемые свойства
+## Additional editable properties 
 
-Для того чтобы отредактировать дополнительные свойства атрибута необходимо:
+To edit additional properties of the attribute should: 
 
-* Открыть дополнительные свойства класса; 
-* Щёлкнуть на закладке "Атрибуты".
+* Open advanced properties класса; 
+* Click on the tab "Attributes".
 
-На закладке расположен список всех атрибутов класса:
+On the tab there is a list of all attributes of the class: 
 
-![](/images/pages/products/flexberry-orm/data-object/attributeprops.jpg)
+![](/images/pages/products/flexberry-orm/data-object/attributeprops.jpg) 
 
-| Свойство-Описание | Генерация в SQL DDL |Генерация в .Net-язык |
-| `AccessModifier` - дублирует определение атрибута |  |  | 
-| `Stored` - дублирует определение атрибута |  |  |   
-| `Name` - дублирует определение атрибута |  |  |  
-| `Description` | Никак | DocComment перед определением свойства |
-| `Type` - дублирует определение атрибута |  |  |   
-| `DefaultValue` - дублирует определение атрибута |  |  |   
-| `NotNull` - указывает, что данный атрибут не может иметь пустого (Null) значения. __Для данного типа обязательно должно быть указано `DefaultValue` (значение по умолчанию)__ |  Если отмечено, то определение поля в CREATE TABLE генерируется как NOT NULL |  Перед определением свойства генерируется указание атрибута NotNullAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) |
-| `DataService expression` - некоторое выражение, обеспечивающее счёт вычислимого атрибута | Никак |  Перед определением свойства генерируется указание атрибута [DataServiceExpressionAttribute](fo_not-stored-attributes.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
-| `Storage` - некоторое логическое имя, под которым хранятся свойства |  Если указано, то такое и будет имя поля |  Перед определением свойства генерируется указание атрибута [PropertyStorageAttribute](fo_storing-data-objects.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)).
-| `Order` - использовать ли упорядочение в случаях, когда объекты являются детейлами. | Никак |  Перед определением свойства генерируется указание атрибута [OrderAttribute](fo_functionality-work-detail-array.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll))
-| `Trim` - для атрибутов строкового типа, применять ли удаление лишних пробелов в значениях | Никак | Перед определением свойства генерируется указание атрибута [TrimmedStringStorageAttribute](fo_trimmed-string-storage.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) <br>При установке значений в свойство [Flexberry ORM](fo_flexberry-orm.html) применяет функцию string.Trim(). |
-| `PBCustomAttributes` - [скобка программиста](fo_programmer-brackets.html) | Никак |  Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения .Net атрибутов перед кодом свойства. |
-| `PBGetEnd` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора get. |
-| `PBGetStart` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора get. |
-| `PBSetEnd` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода перед концом аксессора set. |
-| `PBSetStart` - [скобка программиста](fo_programmer-brackets.html) | Никак | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения кода после начала аксессора set. |
-| `Autoincrement` - поле является автоинкрементируемым (указание галочки корректно только для атрибутов, которые помечены `NotNull` и имеют тип, [маппируемый](fd_types-map.html) на тип `int`) | Если отмечено, то у нового поля в таблице будет генерироваться [IDENTITY(Seed,Increment)](http://msdn.microsoft.com/ru-ru/library/ms186775.aspx), где `Seed` - ядро инкремента, `Increment` - шаг инкремента. По умолчанию `Seed` и `Increment` равны единице. Если указано `DefaultValue`, то в качестве `Seed` берётся значение `DefaultValue`. Если галочка указана - у соответствующего элемента добавляется атрибут [`DisableInsertPropertyAttribute`](fo_disable-insert-property-attribute.html). | Свойство, для которого указан `autoincrement`, будет обновлять значения только при записи данных в базу, следовательно, выносить поле для редактирование этого свойства на форму редактирования бессмысленно и даже вредно. |
-| `Hint` - подсказка для поля | Никак. |  Никак (свойство используется не во всех плагинах генерации, генерируется подсказка, отображающая рядом с контролом, где представлено значение поля). |
+| Property / Description | Generate SQL DDL Generation .Net language | 
+| `AccessModifier` - qualifier attribute access (`public`, `private`, `protected`) | | Generates the appropriate qualifier when you declare a class (`public`, `private`, `protected`) | 
+| `Stored` - stored or not, the attribute | attributes For the stored generated DDL description for neranenah - no | If the attribute phranky is generated NotSotedAttribute | 
+| `Name` - the name of the attribute | | | 
+| `Description` | No | DocComment before property definition | 
+| `Type` - the type of the attribute is Displayed according to card types | Displayed in accordance with a map of types | 
+| `DefaultValue` - duplicate attribute definition | | | 
+| `NotNull` - indicates that this attribute cannot have empty (Null) values. __For the type must be specified `DefaultValue` (default)__ | If checked, the field definition in the CREATE TABLE statement is generated as NOT NULL Before the property definition is generated specifying attribute NotNullAttribute (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) | 
+| `DataService expression` - a expression, providing a computable account attribute | No | in Front of the property definition is generated specifying attribute [DataServiceExpressionAttribute](fo_not-stored-attributes.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)). 
+| `Storage` - a logical name by which the stored properties | If set, then this will be the name of the field | in Front of the property definition is generated specifying attribute [PropertyStorageAttribute](fo_storing-data-objects.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)). 
+| `Order` - whether to use alignment in cases where objects are detaylari. | No | in Front of the property definition is generated specifying attribute [OrderAttribute](fo_functionality-work-detail-array.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) 
+| `Trim` - for attributes of type string whether to apply the remove extra spaces in values | in any Way | in Front of the property definition is generated specifying attribute [TrimmedStringStorageAttribute](fo_trimmed-string-storage.html) (Namespace: ICSSoft.STORMNET, Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll)) <br>setting the property [Flexberry ORM](fo_flexberry-orm.html) applies the function string.Trim(). | 
+| `PBCustomAttributes` - [the parenthesis of a programmer](fo_programmer-brackets.html) | No | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual application .Net attributes before the code properties. | 
+| `PBGetEnd` - [the parenthesis of a programmer](fo_programmer-brackets.html) | No | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering of code before the end of the getter. | 
+| `PBGetStart` - [the parenthesis of a programmer](fo_programmer-brackets.html) | No | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) to "manual" any code after the beginning of getter. | 
+| `PBSetEnd` - [the parenthesis of a programmer](fo_programmer-brackets.html) | No | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering of code before the end of the set accessor. | 
+| `PBSetStart` - [the parenthesis of a programmer](fo_programmer-brackets.html) | No | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) for manual entering the code after the set accessor. | 
+| `Autoincrement` - box is the identity (note the checkboxes correctly only for attributes that are marked `NotNull` and have the type [mapperley](fd_types-map.html) type `int`) | If checked, then a new field in the table will be generated [IDENTITY(Seed,Increment)](http://msdn.microsoft.com/ru-ru/library/ms186775.aspx), where `Seed` - the core increment, `Increment` - step increment. Default `Seed` and `Increment` equal to one. If you specify `DefaultValue`, as `Seed` take the value `DefaultValue`. If the option is specified - corresponding element the attribute is added [`DisableInsertPropertyAttribute`](fo_disable-insert-property-attribute.html). | Property that is set to `autoincrement`, will update the value only when writing data to the database, therefore, to make a field to edit this property on the edit form is pointless and even harmful. | 
+| `Hint` - tip for the field | in any Way. | Does (the property is not used in all plug-ins of generation, generates a tooltip that displays next to the control, where the value of the field). | 
 
-{% include important.html content="Изменение галочки `Autoincrement` у атрибута, который уже сгенерирован в базу данных, невозможно, поскольку MS SQL Server позволяет выполнить назначение необходимых свойств только путём удаления и повторного создания столбца. Если используется `Autoincrement`, то обновление этого поля происходит не сразу, а после записи в БД. Это связано с механизмом работы  IDENTITY(Seed,Increment). Как следствие, Вы __не увидите__ изменений, пока не перевычитаете данные из БД." %}
+{% include important.html content="Changing tick `Autoincrement` the attribute that is already generated in the database, impossible because the MS SQL Server allows you to assign the necessary properties only by deleting and re-creating the column. If you use `Autoincrement`, the update of this field happens not immediately but after the record in the database. This is due to the mechanism of IDENTITY(Seed,Increment). As a consequence, You __will see__ changes until perepechatala data from the database." %} 
 
-## Пример
+## Example 
 
-Если определение свойства выглядит так:
+If a property definition looks like this: 
 
 ```csharp
 +Название:Строка100
-```
+``` 
 
-То код будет следующий:
+The code is the following: 
 
 ```csharp
-//....
+//.... 
 
 private string fНазвание;
 
-//....
+//.... 
 
-// *** Start programmer edit section *** (Ошибка.Название CustomAttributes)
+// *** Start programmer edit section *** (Error.Title CustomAttributes) 
 
-// *** End programmer edit section *** (Ошибка.Название CustomAttributes)
+// *** End programmer edit section *** (Error.Title CustomAttributes) 
 public virtual string Название
 {
 	get
 	{
-		// *** Start programmer edit section *** (Ошибка.Название Get start)
+		// *** Start programmer edit section *** (Error.Name Get start) 
 
-		// *** End programmer edit section *** (Ошибка.Название Get start)
+		// *** End programmer edit section *** (Error.Name Get start) 
 		string result = this.fНазвание;
-		// *** Start programmer edit section *** (Ошибка.Название Get end)
+		// *** Start programmer edit section *** (Error.Get name end) 
 
-		// *** End programmer edit section *** (Ошибка.Название Get end)
+		// *** End programmer edit section *** (Error.Get name end) 
 		return result;
 	}
 	set
 	{
-		// *** Start programmer edit section *** (Ошибка.Название Set start)
+		// *** Start programmer edit section *** (Error.The name of the Set start) 
 
-		// *** End programmer edit section *** (Ошибка.Название Set start)
+		// *** End programmer edit section *** (Error.The name of the Set start) 
 		this.fНазвание = value;
-		// *** Start programmer edit section *** (Ошибка.Название Set end)
+		// *** Start programmer edit section *** (Error.Name Set end) 
 
-		// *** End programmer edit section *** (Ошибка.Название Set end)
+		// *** End programmer edit section *** (Error.Name Set end) 
 	}
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,33 +1,35 @@
----
-title: Custom buttons for lists
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember, buttons, OLV, list
-summary: Embed buttons in the toolbar and list rows
-toc: true
-permalink: en/ef_custom-buttons.html
-lang: en
----
+--- 
+title: Custom buttons for lists 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember, buttons, OLV, list 
+summary: the Embedding of the buttons in the toolbar and string list 
+toc: true 
+permalink: en/ef_custom-buttons.html 
+lang: en 
+autotranslated: true 
+hash: 5a1f31801da0168092f3bad3bce40819ceed85d5ab04677598ee60b3ef7463b1 
+--- 
 
-## Встраивание пользовательских кнопок в тулбар списка
+## Embedding custom buttons to the toolbar list 
 
-Для встраиваемой кнопки в контроллере формы нужно определить ряд свойств:
+Embedded buttons in the controller form, we need to determine a number of properties: 
 
 ```javascript
 {
-    buttonName: '...', // Отображаемое имя кнопки.
-    buttonAction: '...', // Действие, вызываемое контроллером при нажатии этой кнопки (должно быть указано в шаблоне).
-    buttonClasses: '...', // Css-класс кнопки.
-    buttonTitle: '...' // Подпись.
+    buttonName: '...', // Displayed name of the button. 
+    buttonAction: '...', // Action called by the controller when this button is clicked (should be specified in the template). 
+    buttonClasses: '...', // Css class of the button. 
+    buttonTitle: '...' // Signature. 
 }
-```
+``` 
 
-Если необходимо добавить несколько кнопок, то их свойства задаются в массиве:
+If you want to add a few buttons, then their properties are set in the array: 
 
 ```javascript
 [{ buttonName: ..., buttonAction: ..., buttonClasses: ... }, {...}, ...]
-```
+``` 
 
-Для того чтобы добавить в тулбар списка пользовательскую кнопку, в контроллере нужно определить метод `customButtonsMethod`. Например:
+To add to the toolbar list custom button in the controller you need to define a method `customButtonsMethod`. For example: 
 
 ```javascript
 import Ember from 'ember';
@@ -44,9 +46,9 @@ customButtonsMethod: Ember.computed('i18n.locale', function() {
         }];
     })
 });
-```
+``` 
 
-Далее, в контроллере, нужно указать событие `buttonAction`
+Further, in the controller, you need to specify the event `buttonAction` 
 
 ```javascript
 ...
@@ -64,9 +66,9 @@ actions: {
     }
 }
 });
-```
+``` 
 
-Определенные методы и свойства должны быть указаны в шаблоне списка:
+Certain methods and properties should be listed in the template list: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
@@ -75,11 +77,11 @@ customButtons=customButtonsMethod
 userButtonActionTest='userButtonActionTest'
 }}
 {% endraw %}
-```
+``` 
 
-## Встраивание пользовательских кнопок в строки списка
+## Embedding custom buttons to the rows list 
 
-Пользовательские кнопки для строк списка создаются по аналогичному принципу. Событие, как и для кнопки в тулбаре, может быть задано строкой. Например, так:
+Custom buttons for the strings in the list are created on a similar principle. Event, as for the buttons in the toolbar can be set to a string. For example: 
 
 ```javascript
 ...
@@ -88,4 +90,8 @@ actions: {
       this.set('modelFromClickedRow', model);
     },
 });
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

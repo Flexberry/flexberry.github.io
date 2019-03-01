@@ -1,41 +1,47 @@
----
-title: Lucap with predictive input
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, LookUp, ExtendedLookUp
-summary: Описание, свойства и события ExtendedLookUp
-toc: true
-permalink: en/fw_extended-lookup.html
-lang: en
----
+--- 
+title: Lucap predictive 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, LookUp, ExtendedLookUp 
+summary: Description, properties, and events ExtendedLookUp 
+toc: true 
+permalink: en/fw_extended-lookup.html 
+lang: en 
+autotranslated: true 
+hash: 5157a2647376d0f75a6b07b62b7e8ef0d55efae59bcf99e28c52e92e0c0663e4 
+--- 
 
-`ExtendedLookUp` представляет из себя лукап с предиктивным вводом. Находится в сборке `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll`
+`ExtendedLookUp` is lucap predictive. Is the Assembly `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll` 
 
-## ExtendedLookUp в качестве лукапа
+## ExtendedLookUp as lucapa 
 
-Как установить `ExtendedLookUp` в качестве лукапа описано в статье [Произвольный контрол в качестве лукапа](fo_custom-lookup.html).
+How to install `ExtendedLookUp` as lucapa described in the article [Arbitrary control as lucapa](fo_custom-lookup.html). 
 
-Если необходимо установить `ExtendedLookUp` в качестве лукапа в [GroupEdit](fw_group-edit.html), то у соответствующего `GroupEdit` необходимо установить свойство `EnableValueDisplayResponsibility` в `true`.
+If you want to install `ExtendedLookUp` as lucapa in [GroupEdit](fw_group-edit.html), then the corresponding `GroupEdit` need to set the property `EnableValueDisplayResponsibility` in `true`. 
 
-## События
+## Events 
 
-Событие `ValueSelected` срабатывает при нажатии Enter и закрытии списка.
+PstrfValueSelected` event is triggered when you press Enter and close the list. 
 
-## Свойства
+## Properties 
 
-### AutoCompleteBox.OrderColumns
+### AutoCompleteBox.OrderColumns 
 
-Одним из составляющих компонентов `ExtendedLookUp` является `AutoComleteBox`, отвечающий за отображение подсказок по вводу во включённом режиме `AutoOpenListForSuggestions`.
+One of the components of `ExtendedLookUp` `AutoComleteBox` is responsible for displaying prompts in the input switched mode `AutoOpenListForSuggestions`. 
 
-Свойство `AutoCompleteBox.OrderColumns` определяет столбцы, по которым будет производиться сортировка, при определении порядка следования элементов в выводимой подсказке.
+Property `AutoCompleteBox.OrderColumns` determines the columns on which sorting will be made when determining the order of elements in the displayed tooltip. 
 
 ```csharp
-ctrlКлиент.AutoCompleteBox.OrderColumns = new ColumnsSortDef[] {new ColumnsSortDef("Прописка", SortOrder.Asc) };
-```
+ctrlКлиент.AutoCompleteBox.OrderColumns = new ColumnsSortDef[] {new ColumnsSortDef("Registration", SortOrder.Asc) };
+``` 
 
-{% include note.html content="Задание `AutoCompleteBox.OrderColumns` возможно только в программном коде." %}
+{% include note.html content="Task `AutoCompleteBox.OrderColumns` only possible in code." %} 
 
-### MaxLength
+### MaxLength 
 
-Свойство `MaxLength` контрола `ExtLookUpTextControl`  отвечает за максимальную длину вводимого пользователем текста.
+Property `MaxLength` control `ExtLookUpTextControl` responsible for the maximum length of user-entered text. 
 
-Следует заметить, что в коде свойству `Text` можно задать значение, длина которого больше, чем длина значения, указанного свойством `MaxLength`, т.е. свойство влияет только на текст, вводимый в элемент управления во время выполнения. Другими словами по LookUp (и через предлагаемый контролом вариант) может быть выбран текст, превышающий `MaxLength`.
+It should be noted that in the code property `Text` you can specify a value whose length is greater than length the value specified by the property `MaxLength`, i.e., the property only affects text entered into the control at run time. In other words for LookUp (and using the proposed control option) can be selected text in excess of `MaxLength`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

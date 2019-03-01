@@ -1,16 +1,21 @@
----
-title: Работа с блокировками в web-системах
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_working-locks-web.html
-folder: products/flexberry-aspnet/
-lang: en
----
+--- 
+title: locking in web systems 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_working-locks-web.html 
+folder: products/flexberry-aspnet/ 
+lang: en 
+autotranslated: true 
+hash: cd8dc780b570c9026e1480c584c7dc8951bb76212aad688764a950da68100c53 
+--- 
 
-Логика работы с блокировками:
+Logic lock: 
 
-* При загрузке страницы редактирования объекта блокировка устанавливается всегда (если объект не заблокирован другим пользователем), т.е. если в базе уже есть запись с просроченной блокировкой объекта, то она обновляется. Если записи нет, то она создается. Запись о блокировке актуальна в течение 30 секунд, если в течение этого времени она не продлена, то объект считается не заблокированным.
-* Далее, каждые 30 секунд страница редактирования посылает ajax-запросы на продление блокировки. Через ajax-запрос можно только продлить блокировку (т.е. изменить существующую в БД запись, но не создать новую). Если записи в базе не окажется, то пользователь увидит соответствующее предупреждение и ему будет предложено открыть объект только для чтения или уйти на предыдущую страницу
-* Перед созданием или продлением блокировке в обоих описанных выше пунктов, сначала проверяется, что в данный момент объект не заблокирован другим пользователем. Если окажется, что объект заблокирован, то пользователь увидит предупреждение и сможет вернуться на предыдущую страницу или открыть объект на просмотр.
-* В папку `Security` добавлена форма `Lock\LockL` со списком существующих на данный момент блокировок. Удаление блокировки со списка удаляет соответствующую запись из БД.
+* When loading the edit page of the object the lock is always fitted (if the object is not locked by another user), ie if the database already has a record with an expired lock on the object, then it is updated. If no record, then it is created. The actual lock within 30 seconds, if during this time it is not renewed, then the object is not locked. 
+* Next, every 30 seconds, the edit page sends ajax requests to extend the lock. Using ajax request you can only renew a lock (i.e. to change the existing database record, but not create a new one). If the records in the database do not appear, the user will see a warning and is prompted to open a read-only object or go to the previous page 
+* Before you create or extend the lock in both of the above-described points, it is first checked that at the moment the object is not locked by another user. If you find that the object is locked, the user will see a warning and will be able to return to the previous page or to open an object for viewing. 
+* In the folder `Security` attached form `Lock\LockL` with a list of the currently existing locks. Remove lock from list removes the corresponding entry from the database.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

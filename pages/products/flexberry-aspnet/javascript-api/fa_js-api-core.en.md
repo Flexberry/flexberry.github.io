@@ -1,43 +1,45 @@
----
-title: Ядро JavaScript API
-sidebar: flexberry-aspnet_sidebar
-keywords: JavaScript API
-toc: true
-permalink: en/fa_js-api-core.html
-lang: en
----
+--- 
+title: the Core JavaScript API 
+sidebar: flexberry-aspnet_sidebar 
+keywords: JavaScript API 
+toc: true 
+permalink: en/fa_js-api-core.html 
+lang: en 
+autotranslated: true 
+hash: b3ab738cf13234c2c6dc34a0ab46ac60113e4f34ed07a99fff4cfbce30870451 
+--- 
 
-## Диалоговые окна
+## Dialog box 
 
-Все методы для работы с диалоговыми окнами находятся в объекте
+All methods for working with dialog boxes are in the object 
 
 ```javascript
 $.ics.dialog
-```
+``` 
 
-#### confirm
+#### confirm 
 
-Диалоговое окно для подтверждения действия пользователя:
+Dialog box to confirm user action: 
 
 ```javascript
 $.ics.dialog.confirm(options);
-```
+``` 
 
-{% include note.html content="Метод является асинхронным. Для проверки результата действия пользователя нужно устаналивать `callback`." %}
+{% include note.html content="a Method is asynchronous. To check the result of the actions of the user must install the `callback`." %} 
 
-Для поддержки всех функцинальных возможностей должен быть подключен файл `jquery.alerts.js`. Если плагин не подключен то будут использованы встроенные возможности браузера с урезанной функциональностью.
+To support all functional classes with Helicobacter pylori opportunities should be connected to the file `jquery.alerts.js`. If the plugin is not connected it will be used by the built-in browser capabilities with the reduced functionality. 
 
-Опции:
+Options: 
 
-| Наименование | Описание | Значение по умолчанию|
-|:--------------|:----------------|:------------------|
-| `message` | Текст запроса. | Пустая строка|
-| `title` | Заголовок окна с сообщением. | Пустая строка|
-| `callback` | Функция для обработки результата выбора пользователя. Первый аргумент функции - результат выбора пользователя: `true` для кнопки `OK` и `false` для кнопки `Cancel`. | `undefined`|
-| `okButtonText` | Текст для кнопки `OK`. | `$.ics.configuration.dialog.okButtonText`|
-| `cancelButtonText` | Текст для кнопки `Cancel`. | `$.ics.configuration.dialog.cancelButtonText`|
+| Name | Description | default| 
+|:--------------|:----------------|:------------------| 
+| `message` | the query Text. | The empty string| 
+| `title` | Header of the message pane. | The empty string| 
+| `callback` | Function to handle the result of the user's choice. The first argument of the function is the result of the user's choice: `true` button `OK` and `false` button `Cancel`. | `undefined`| 
+| `okButtonText` | text for the button `OK`. | `$.ics.configuration.dialog.okButtonText`| 
+| `cancelButtonText` | text for the button `Cancel`. | `$.ics.configuration.dialog.cancelButtonText`| 
 
-Пример использования:
+Example usage: 
 
 ```javascript
 $.ics.dialog.confirm({
@@ -45,94 +47,94 @@ $.ics.dialog.confirm({
     title: 'Подтверждение удаления файла',
     callback: function (res) {
         if (res) {
-            // При нажатии OK.
+            // When OK is pressed. 
             deleteFile();
         } else {
-            // При нажати Cancel.
+            // When pressing Cancel. 
             cancelFileDeleting();
         }
     }
 });
-```
+``` 
 
-Результат (с подключенным плагином `jquery.alerts`):
-![](/images/pages/products/flexberry-aspnet/jsapi_dialog_confirm.png)
+The result (with connected plugin `jquery.alerts`): 
+![](/images/pages/products/flexberry-aspnet/jsapi_dialog_confirm.png) 
 
-Результат (без плагина `jquery.alerts`):
-![](/images/pages/products/flexberry-aspnet/jsapi_dialog_confirm_without_plugin.png)
+The result (without plugin `jquery.alerts`): 
+![](/images/pages/products/flexberry-aspnet/jsapi_dialog_confirm_without_plugin.png) 
 
-#### alert
+#### alert 
 
-Диалоговое окно для отображения информации для пользователя:
+Dialog box to display information to the user: 
 
 ```javascript
 $.ics.dialog.alert(options);
-```
+``` 
 
-{% include note.html content="Метод является асинхронным. Для проверки результата действия пользователя нужно устаналивать `callback`." %}
+{% include note.html content="a Method is asynchronous. To check the result of the actions of the user must install the `callback`." %} 
 
-Для поддержки всех функцинальных возможностей должен быть подключен файл `jquery.alerts.js`. Если плагин не подключен то будут использованы встроенные возможности браузера с урезанной функциональностью.
+To support all functional classes with Helicobacter pylori opportunities should be connected to the file `jquery.alerts.js`. If the plugin is not connected it will be used by the built-in browser capabilities with the reduced functionality. 
 
-Опции:
-| Наименование | Описание | Значение по умолчанию|
-|:--------------|:----------------|:------------------|
-| `message` | Текст сообщения. | `undefined` (пустая строка)|
-| `title` | Заголовок окна с сообщением. | `undefined` (пустая строка)|
-| `callback` | Функция обратного вызова после закрытия окна пользователем. Не принимает аргументов. | `undefined`|
+Options: 
+| Name | Description | default| 
+|:--------------|:----------------|:------------------| 
+| `message` | Text messages. | `undefined` (empty string)| 
+| `title` | Header of the message pane. | `undefined` (empty string)| 
+| `callback` | callback Function after the window is closed by the user. Takes no arguments. | `undefined`| 
 
-Если вместо опций будет передан текст, то будут использованы опции по умолчанию с указанным сообщением.
+If instead the options will be passed to the text, they will use the default options with the specified message. 
 
-Пример использования:
+Example usage: 
 
 ```javascript
 $.ics.dialog.alert({
     message: 'Файл успешно удалён!',
     title: 'Внимание',
     callback: function () {
-        // После закрытия окна.
-        // ...
+        // After closing the window. 
+        // ... 
     }
 });
-```
+``` 
 
-Результат (с подключенным плагином `jquery.alerts`):
-![](/images/pages/products/flexberry-aspnet/jsapi_dialog_alert.png)
+The result (with connected plugin `jquery.alerts`): 
+![](/images/pages/products/flexberry-aspnet/jsapi_dialog_alert.png) 
 
-Результат (без плагина `jquery.alerts`):
-![](/images/pages/products/flexberry-aspnet/jsapi_dialog_alert_without_plugin.png)
+The result (without plugin `jquery.alerts`): 
+![](/images/pages/products/flexberry-aspnet/jsapi_dialog_alert_without_plugin.png) 
 
-#### modal
+#### modal 
 
-Диалоговое модальное окно:
+Dialog modal window: 
 ```javascript
 $.ics.dialog.modal(options);
-```
+``` 
 
-{% include note.html content="Метод является асинхронным. Для проверки результата действия пользователя нужно устаналивать `callback`." %}
+{% include note.html content="a Method is asynchronous. To check the result of the actions of the user must install the `callback`." %} 
 
-Для работы метода обязательно подключение плагина `jQuery Thickbox`.
+For the operation method be sure to use a plug-`jQuery Thickbox`. 
 
-Опции:
+Options: 
 
-| Наименование | Описание | Значение по умолчанию|
-|:--------------|:----------------|:------------------|
-| `content` | Содержимое, отображаемое в окне. Может быть HTML. | `undefined` (пустая строка)|
-| `href` | Ссылка на страницу, которую нужно отобразить. Этот параметр имеет больший приоритет по сравнению с `content`. | `undefined` (пустая строка)|
-| `title` | Заголовок окна. | `undefined` (пустая строка)|
-| `callback` | Функция обратного вызова перед закрытием окна пользователем. Передаваемый аргумент позволяет отменить закрытие окна. | `undefined`|
-| `width` | Ширина окна в пикселях. | `$.ics.configuration.dialog.width`|
-| `height` | Ширина окна в пикселях. | `$.ics.configuration.dialog.height`|-
-| `modal` | Флаг модального окна. В случае `true` отсутствует возможность закрыть окно. | `true`|
+| Name | Description | default| 
+|:--------------|:----------------|:------------------| 
+| `content` | Content displayed in the window. Can be HTML. | `undefined` (empty string)| 
+| `href` | Link to the page you want to display. This parameter has the higher priority compared to `content`. | `undefined` (empty string)| 
+| `title` | Title of the window. | `undefined` (empty string)| 
+| `callback` | callback Function before the window is closed by the user. The transmitted argument allows to cancel closing the window. | `undefined`| 
+| `width` | Width of window in pixels. | `$.ics.configuration.dialog.width`| 
+| `height` | Width of window in pixels. | `$.ics.configuration.dialog.height`|- 
+| `modal` | Flag modal window. In the case `true` there is no possibility to close the window. | `true`| 
 
-Возвращаемый объект:
+The returned object: 
 
-| Наименование | Описание|
-|:--------|:---------------------------------------------|
-| `close` | Метод для закрытия окна.|
-| `closed` | Флаг закрытого окна, позволяющий определить, открыто ли ещё окно.|
-| `context` | Контекст для отображаемого окна. Если отображаются данные по ссылке, то `context` ссылается на объект `window` открытого окна, иначе это объект `window` текущего окна.|
+| Name | Description| 
+|:--------|:---------------------------------------------| 
+| `close` | Method to close the window.| 
+| `closed` | Flag closed window to determine if it's open another window.| 
+| `context` | Context for the displayed window. If data is displayed on the link, you `context` refers to an object `window` open window, otherwise the object `window` the current window.| 
 
-Пример использования:
+Example usage: 
 
 ```javascript
 var modal = $.ics.dialog.modal({
@@ -141,38 +143,42 @@ var modal = $.ics.dialog.modal({
     title: 'Ждите!',
     modal: false,
     callback: function() {
-        // После закрытия окна.
-        // ...
+        // After closing the window. 
+        // ... 
     }
 });
 
 setTimeout(function() {
     modal.close();
 }, 4000);
-```
+``` 
 
-Результат:
-![](/images/pages/products/flexberry-aspnet/jsapi_dialog_modal.png)
+The result: 
+![](/images/pages/products/flexberry-aspnet/jsapi_dialog_modal.png) 
 
 
-## Специальные функции
+## Special functions 
 
-#### generateUniqueId
+#### generateUniqueId 
 
-Генерация уникального идентификатора DOM-элемента.
+Generating a unique identifier for the DOM element. 
 ```javascript
 $.ics.generateUniqueId(prefix);
-```
+``` 
 
-Параметры:
+Parameters: 
 
-| Наименование | Описание | Значение по умолчанию|
-|:--------------|:----------------|:------------------|
-| `prefix` || Префикс для генерируемого идентификатора. || `undefined` (пустая строка)
-|-
-|}
+| Name | Description | default| 
+|:--------------|:----------------|:------------------| 
+| `prefix` || Prefix for the generated ID. || `undefined` (empty string) 
+|- 
+|} 
 
-Пример использования:
+Example usage: 
 ```javascript
-var uniqueId = $.ics.generateUniqueId('element_'); // element_032452
-```
+var uniqueId = $.ics.generateUniqueId('element_'); // element_032452 
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

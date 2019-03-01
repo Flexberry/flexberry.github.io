@@ -1,18 +1,20 @@
----
-title: Генератор Flexberry Ember
-sidebar: ember-flexberry_sidebar
-keywords: CASE Plugins, Flexberry Designer, Flexberry Ember
-toc: true
-permalink: en/ef_generator.html
-lang: en
-summary: Генерация Ember-приложения из меню Flexberry Designer.
----
+--- 
+title: Generator Flexberry Ember 
+sidebar: ember-flexberry_sidebar 
+keywords: CASE Plugins, Flexberry Designer, Flexberry Ember 
+toc: true 
+permalink: en/ef_generator.html 
+lang: en 
+autotranslated: true 
+hash: 8117b80cf11f07effeba40aa5ab36400e54bdb721720e9cfd74f49de2dc0f27d 
+summary: Generate Ember-app from the menu Flexberry Designer. 
+--- 
 
-## Установка плагина
+## install the plugin 
 
-Требуется установить Flexberry Ember CasePlugin в папку Flexberry Designer.
+You want to install Flexberry Ember CasePlugin folder Flexberry Designer. 
 
-В конфигурационном файле Flexberry Designer можно добавить настройку, которая отвечает за версию устанавливаемого ember-аддона (при желании можно указать сслыку на git-репозиторий):
+In the configuration file Flexberry Designer, you can add the setting, which is responsible for version being installed ember-addon (if you wish, you can specify a link to a git repository): 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -25,143 +27,147 @@ summary: Генерация Ember-приложения из меню Flexberry D
   </appSettings>
   <!-- ... -->
 </configuration>
-```
+``` 
 
-## Вызов генератора
+## Call generator 
 
-Вызов происходит из стадии во [Flexberry Designer](fd_landing_page.html).
+The challenge comes from the stage in the [Flexberry Designer](fd_landing_page.html). 
 
-Вызывает кликом ПКМ на стадии контекстное меню, выбираем в нем Ember
-![](/images/pages/products/flexberry-ember/ember-flexberry/generation/Ember-plugin-menu.jpg)
+Causes click PCM under the shortcut menu, select it in the Ember 
+![](/images/pages/products/flexberry-ember/ember-flexberry/generation/Ember-plugin-menu.jpg) 
 
-## Меню генератора
+## Menu generator 
 
-* `Свойства модели` - необходима настройка карты типов аналогично, как это делается для [карты типов](fd_types-map.html) для программного кода.
+* `Свойства модели` necessary to configure the card types similarly as it's done for [card types](fd_types-map.html) for the code. 
 
-В процессе генерации типы .NET из карты типов будут автоматически заменены на соответствующие типы Javascript согласно этой таблицы:
+In the process of generation types .NET of card types will be automatically replaced by the corresponding Javascript types according to this table: 
 
-| Типы .NET | Типы Javascript
-|-----------|----------------|
-| bool, bool? | boolean |
-| decimal, decimal? | number |
-| double, double? | number |
-| short, short? | number |
-| int, int? | number |
-| long, long? | number |
-| float, float? | number |
-| ushort, ushort? | number |
-| uint, uint? | number |
-| ulong, ulong? | number |
-| DateTime, DateTime? | date |
-| NullableDateTime | date |
-| NullableInt | number |
-| NullableDecimal | number |
-| Все остальные типы | number |
+| Type .NET | Javascript Types 
+|-----------|----------------| 
+| bool of bool? | boolean | 
+| a decimal decimal? | number | 
+| double, double? | number | 
+| short, short? | number | 
+| int, int? | number | 
+| long, long? | number | 
+| float, float? | number | 
+| ushort, ushort? | number | 
+| uint, uint? | number | 
+| ulong, ulong? | number | 
+| DateTime, DateTime? | date | 
+| NullableDateTime | date | 
+| NullableInt | number | 
+| NullableDecimal | number | 
+| All other types | number | 
 
-* `Frontend`
+* `Frontend` 
 
-  * `EmberJS` - генерация Frontend'a на EmberJS
-    * `Генерировать` - Выполняется генерация Ember-приложения.
-    * `Открыть каталог` - Открывается каталог с Ember-приложением.
-  * `Apache Cordova`
+* `EmberJS` - generation Front a on EmberJS 
+* `Генерировать` - Performs generation of Ember-based application. 
+* `Открыть каталог` - Opens the catalog with Ember-app. 
+* `Apache Cordova` 
 
-* `Backend`
-  * ASP.NET
-  * JAVA
-  * PHP
+* `Backend` 
+* ASP.NET 
+* JAVA 
+* PHP 
 
-* `Storage`
-  * Microsoft SQL server
-  * Postgre SQL
-  * Oracle
-  * Microsoft Access
+* `Storage` 
+* Microsoft SQL server 
+* Postgre SQL 
+* Oracle 
+* Microsoft Access 
 
-* `Утилиты`
-* `Информация о лицензии`
+* `Утилиты` 
+* `Информация about лицензии` 
 
-## Процесс генерации
+## the generation Process 
 
-На первом этапе происходит создание метаданных (каталог `vendor\flexberry`), которые будут использоваться в командах `ember generate ...`.
+The first stage is the creation of metadata (catalogue `vendor\flexberry`) to be used in teams `ember generate ...`. 
 
-Далее генерация может быть выполнена в двух вариантах:
+Next generation can be accomplished in two ways: 
 
-1) При пустом каталоге ember-app - Происходит полная установка приложения, [аддона ember-flexberry](https://github.com/Flexberry/ember-flexberry), а также генерация сущностей приложения Ember командами `ember generate ...`.
+1) In an empty directory ember-app - comes complete to install the application [addon ember-flexberry](https://github.com/Flexberry/ember-flexberry) and generating entities of the application Ember teams `ember generate ...`. 
 
-При начальном запуске генератора для выбранной модели Flexberry необходимо, чтобы выполнялся вариант 1).
+At initial start of the generator for the selected model Flexberry need to run option 1). 
 
-2) При непустом каталоге ember-app - Выполняется только генерация моделей командами `ember generate ...`.
+2) When a non-empty directory ember-app - Runs only the generate models command `ember generate ...`. 
 
-Этот вариант подходит для последующих запусков генератора.
+This option is suitable for subsequent runs of the generator.
 
-## Перегенерация
+## A Mistake 
 
-`Перегенерация` - это генерация приложения поверх уже имеющегося сгенерированного и доработанного кода, т.е. без перезаписи определённых сущностей этого приложения, которые могли быть изменены прикладным программистом.
+`Перегенерация` is to generate applications on top of existing and modified generated code, i.e. without overwriting certain entities of that application that could be modified by an application programmer. 
 
-Модели находятся в папках:
+Models are in the folders: 
 
-`app\models` и `app\mixins\regenerated\models`.
+`app\models` and `app\mixins\regenerated\models`. 
 
-Сериалайзеры находятся в папках:
+Serializer are located in the folders: 
 
-`app\serializers` и `app\mixins\regenerated\serializers`.
+`app\serializers` and `app\mixins\regenerated\serializers`. 
 
-В настоящий момент не будут перезаписываться при запуске генерации файлы в папках `app\models` и `app\serializers`.
+At the moment, will not be overwritten when you start the generation of files in folders `app\models` and `app\serializers`. 
 
-Для того чтобы изменения из диаграмм Flexberry попадали в приложение Ember, будут использоваться миксины из папок `app\mixins\regenerated\models` и `app\mixins\regenerated\serializers`. Файлы в этих папках будут перезаписываться при каждом запуске процесса генерации.
+To change chart Flexberry got to the Ember app will use mixins folder `app\mixins\regenerated\models` and `app\mixins\regenerated\serializers`. The files in these folders will be overwritten each time you start the generation process. 
 
-### Перегенерация файлов локализации
+### the Mistake of localization files 
 
-Если в приложении существуют файлы локализации, то при перегенерации они сохраняются и дополняются (при необходимости). Соответственно, удаление более не используемых значений локализации для `ru` и `en` необходимо очищать вручную.
+If there are localization files, at regeneration, they are stored and supplemented (if necessary). Accordingly, remove no longer used localization values for `ru` and `en` must be cleaned manually. 
 
-## Ошибки процесса генерации
+## Error generation process 
 
-Если в процессе генерации возникает ошибка, в которой встречается строка:
+If in the generation process, an error occurs in which occurs the line: 
 
-`... You have to be inside an ember-cli project...`
+`... You have to be inside an ember-cli project...` 
 
-то необходимо выполнить в каталоге проекта Ember(каталог 'ember-app') следующие команды:
+you need to perform in the project directory Ember ('ember-app') the following command: 
 
 ```bash
 ember init
 ember install ember-flexberry
-```
+``` 
 
-а затем запустить генератор заново.
+then run the generator again. 
 
-Так как генератор находится в стадии разработки, то команда `ember install ember-flexberry` будет в дальнейшем изменяться.
+As the generator is still under development, the team `ember install ember-flexberry` will continue to change. 
 
-### Алгоритм ускорения работы с командами ember init и ember install
+### Algorithm speed with teams ember init and ember install 
 
-* Создать заранее архив node_modules.7z с помощью следующих шагов:
+* Create in advance the archive node_modules.7z using the following steps: 
 
-  * Создать новую папку и выполнить в ней команды
-    * ember init
-    * ember install ember-flexberry
-    * npm install
-    * bower install
-    * npm uninstall ember-flexberry
-    * 7z a -r node_modules.7z node_modules
+* To create a new folder and run command 
+* ember init 
+* install ember ember-flexberry 
+* npm install 
+* bower install 
+* npm uninstall ember-flexberry 
+* 7z a-r node_modules.7z node_modules 
 
-* Перед запуском генератора всегда очищать папку, куда должно генерироваться ember-приложение
+* Before starting the generator always clean the folder where it should be generated ember-app 
 
-  * Скопировать в папку файл node_modules.7z, полученный в п.1 и выполнить команды:
+* Copy the file folder from node_modules.7z, obtained in step 1 and run the commands: 
 
-    * 7z x node_modules.7z
-    * ember init
-    * ember install ember-flexberry
-    * npm install
-    * bower install
+* 7z x node_modules.7z 
+* ember init 
+* install ember ember-flexberry 
+* npm install 
+* bower install 
 
-Кроме возможного ускорения работы команд `ember...` будет достигаться актуальность версии `ember-flexberry`.
-Для быстрой очистки папки можно не удалять папку `node_modules`, а перемещать её в другое место и затем уже очищать папку с ember-приложением.
+In addition to the possible speed commands `ember...` will be achieved you have the latest version `ember-flexberry`. 
+For a quick cleanup of the folder can not delete folder `node_modules`, and move it to another location and then purge the folder ember-app. 
 
-## Генерация в ember addon
+## Generation in ember addon 
 
-* Аддон нужно создавать вручную, командой ember addon название-аддона, затем переходим в этот созданный каталог с аддоном
-* В аддон нужно установить ember-flexberry командой `ember install ember-flexberry`
-* Нужны метаданные для генерации. Пока сам плагин из Flexberry не понимает что от него хотят на выходе аддон, а не обычное приложение. Но метаданные, которые генерируются в папку «vendor\flexberry» универсальны и подходят для обоих вариантов. Нужно сгенерировать приложение при помощи обычного плагина генерации ember-приложений - это будет отдельное приложение, само оно не будет использоваться, нужны только метаданные. После этого есть 2 варианта:
-  * Скопировать метаданные из папки vendor\flexberry в такую же папку созданного addon-а.
-  * Указывать путь до папки с метаданными при вызове блюпринтов генерации, статья [Blueprints кодогенерация в ember-flexberry](ef_blueprints.html).
-* Вызвать генерацию по метаданным: `ember g flexberry-application`
-* Если нужно указывать путь до метаданных, то можно использовать вот такой формат: `ember g flexberry-addon addon --metadata-dir vendor\flexberry`
-* Можно генерировать формы и модели для Dummy-приложения этим же самым генератором, для этого нужно выполнять команду генрации с флагом `--dummy`: `ember g flexberry-application app --metadata-dir vendor\flexberry --dummy`
+* Addon needs to be created manually, with the command ember addon called addon, then switch to this directory is created with the addon 
+* In the addon you need to install ember-flexberry team `ember install ember-flexberry` 
+* Need metadata to generate. While the plugin itself from Flexberry not understand what he should do in the addon, not a regular application. But the metadata that are generated in the folder "vendor\flexberry" universal and suitable for both options. You need to generate app using a conventional plug-in generate ember-application - it will be a separate app, it will not be used, only metadata. Then there are 2 options: 
+* Copy metadata from a folder vendor\flexberry in the same folder you created the addon. 
+* Specify the path to the folder with the metadata when you call blueprints generation, article [Blueprints the means in ember-flexberry](ef_blueprints.html). 
+* Trigger generation of metadata: `ember g flexberry-application` 
+* If you need to specify the path to the metadata, you can use this format: `ember g flexberry-addon addon --metadata-dir vendor\flexberry` 
+* You can generate shapes and models for Dummy application of this same generator, for this you need to run the command genraly flag `--dummy`: `ember g flexberry-application app --metadata-dir vendor\flexberry --dummy` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

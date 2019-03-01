@@ -1,18 +1,20 @@
----
-title: An example of using custom types
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data types, example
-summary: Using typedef in applications
-toc: true
-permalink: en/fo_using-custom-types-example.html
-lang: en
----
+--- 
+title: Example of using native types 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data types, example 
+summary: Example of using typedef in applications 
+toc: true 
+permalink: en/fo_using-custom-types-example.html 
+lang: en 
+autotranslated: true 
+hash: e33709dd23808bb283ca0f7e0db975bb62c1361962b8619955bcd7282b6883fc 
+--- 
 
-Существует возможность создать собственный тип данных на диаграмме Flexberry Desinger. Для этого следует разместить новый класс на диаграмме и изменить его стереотип на "type". Как результат, класс будет доступен для определения свойств классов с собственным типом во всей стадии Flexberry Desinger.
+You can create your own data types in the diagram Flexberry Desinger. This should place the new class in the diagram and change its stereotype to "type". As a result, the class will be available to define the properties of classes with a native type in all stage Flexberry Desinger. 
 
-Flexberry ORM генерирует пустой шаблон класса в C#. Также, необходимо разрешить [typedef](fd_typedef.html), в котором будет храниться этот тип в БД. Э Это можно сделать на [карте типов](fd_types-map.html).
+Flexberry ORM generates an empty class template in C#. Also, you need to allow [typedef](fd_typedef.html), in which to store this type in the database. E you can do This on the [map types](fd_types-map.html). 
 
-Например, существует класс `Dollar` на диаграмме `Entities`, а также на его сгенерированный код в CDLIB(Objects)/Dollar.cs:
+For example, there is a class `Dollar` `Entities` in the diagram and also the generated code in CDLIB(Objects)/Dollar.cs: 
 
 ```csharp
 [ICSSoft.STORMNET.StoreInstancesInType(typeof(SQLDataService), typeof(decimal))]
@@ -60,11 +62,11 @@ public class Dollar
         {...}
 
 }
-```
+``` 
 
-Этот класс был реализован вручную на основе автоматически сгенерированного шаблона. Он позволяет отображать доллар в дружественном к пользователю виде: $1.24 или .46¢.
+This class was implemented manually based on automatically generated template. It allows you to display the dollar in the user friendly form: $or 1.24 .46¢. 
 
-Как указано в атрибуте [StoreInstancesInType](fo_convert-type-property.html), этот класс будет храниться в БД в виде decimal. Это возможно благодаря определенным в классе преобразованиям:
+As indicated in the attribute [StoreInstancesInType](fo_convert-type-property.html), this class will be stored in the database in the form of a decimal. This is possible thanks to a specific class to change: 
 
 ```csharp
 public static implicit operator decimal(Dollar value)
@@ -76,9 +78,9 @@ public static implicit operator Dollar(decimal value)
 {
     return new Dollar((int)value, (int)((value - (int)value) * 100));
 }
-```
+``` 
 
-`Dollar` используется как тип свойства `Price` в классе `CD`:
+`Dollar` is used as the property type `Price` in the class `CD`: 
 
 ```csharp
 public virtual IIS.CDLIB.Dollar Price
@@ -93,9 +95,9 @@ public virtual IIS.CDLIB.Dollar Price
         this.fPrice = value;
     }
 }
-```
+``` 
 
-### Пример загрузки и сохранения объекта с собственными типами
+### Example of loading and saving object with its own types 
 
 ```csharp
 IDataService dataService = DataServiceProvider.DataService;
@@ -105,14 +107,18 @@ object primaryKey = ormSample.GetSomeObjectPrimaryKey(typeof(CDDA));
 CDDA cdda = new CDDA();
 cdda.SetExistObjectPrimaryKey(primaryKey);
 
-// Загрузка объекта из БД по представлению CD_E.
+// Load object from DB upon submission CD_E. 
 dataService.LoadObject(CD.Views.CD_E, cdda);
 
-// Изменим цену.
+// Will change the price. 
 cdda.Price = new Dollar(0, 55);
 
-// Сохраним объект в БД.
+// Save the object to the database. 
 dataService.UpdateObject(cdda);
 
 Console.WriteLine(string.Format("'{0}' price is {1}", cdda.Name, cdda.Price));
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

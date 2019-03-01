@@ -1,21 +1,23 @@
----
-title: Кнопки на CSS
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_css-buttons.html
-lang: en
----
+--- 
+title: Buttons CSS 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_css-buttons.html 
+lang: en 
+autotranslated: true 
+hash: ae75734772b09c838650b7d75efb3155816922138a320961279241d2ba54498c 
+--- 
 
-## Создание CSS-класса для ссылки
+## create a CSS class for links 
 
 ```html
 <a href="#" class="btn">Кнопка</a>
-```
+``` 
 ```css
 <style>
 .btn{
-    /* здесь указываются атрибуты CSS */
+    /* specify CSS attributes */
     display: inline-block;
     padding: 4px 12px;
     font-size: 14px;
@@ -27,15 +29,15 @@ lang: en
     border: 1px solid #CCC;
 }
 </style>
-```
+``` 
 
-## Состояния кнопок
+## button State 
 
-Псевдоклассы определяют динамическое состояние элементов, которое изменяется со временем или с помощью действий пользователя, а также положение в дереве документа.
+Pseudo-classes define the dynamic state of the elements that varies over time or through user actions, as well as the position in the document tree. 
 
-* обычная
-* выделенная (псевдокласс :hover)
-* нажатая (псевдокласс :active)
+* normal 
+* highlighted (a :hover pseudo-class) 
+* active (pseudo-class :active) 
 
 ```css
 .btn:hover{
@@ -47,4 +49,8 @@ lang: en
     background: #777;
     border: 1px solid #999;
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

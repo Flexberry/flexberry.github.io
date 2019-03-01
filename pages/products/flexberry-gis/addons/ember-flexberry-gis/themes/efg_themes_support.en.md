@@ -1,12 +1,35 @@
----
-title: Themes support in addon
-sidebar: ember-flexberry-gis_sidebar
-keywords: Flexberry Ember Gis
-toc: true
-permalink: en/efg_themes_support.html
-folder: products/flexberry-gis/ember-flexberry-gis/themes/
-lang: en
-summary: The description of themes support in addon
----
+--- 
+title: Support to those in the expansion 
+sidebar: ember-flexberry-gis_sidebar 
+keywords: Flexberry Ember Gis 
+toc: true 
+permalink: en/efg_themes_support.html 
+folder: products/flexberry-gis/ember-flexberry-gis/themes/ 
+lang: en 
+autotranslated: true 
+hash: 8248ec0dbc225f4fe4c99870a2d486268da048704c767e0b02906d8cf42b3168 
+summary: Description of themes in the addon 
+--- 
 
-## Themes support in addon
+## Support the 
+
+The addon ember-flexberry-gis added support for skins, similar to ember-flexberry. 
+To use a theme, you need to file `theme.config` and `addon\styles\theme.less` to specify the name of the theme. 
+
+In theme.config specifies the name of the theme for the components that you want to style. 
+In theme.less variable `@flexberry-theme` specifies the name of the theme you are using in the expansion. 
+
+Logic work is that first imported the standard styles Semantic-UI from ember-flexberry, then stylized the theme from there, and then it complements the theme of ember-flexberry-gis. 
+All import's written in the file `theme.less`. Also, due to the specifics of semantics, you must import the file `addon.less` files variables if they are used for default theme. 
+
+## Adding new features 
+
+As the ideal Semantic-UI does not allow to correctly import .less files in the theme semantics, to style a new components represented in the existing `.overrides` files. 
+For example styles for a component sidebar-wrapper specified in the file `sidebar.overrides` and the variables in `sidebar.variables`. Styles new components you must specify in the subject `default`, preferably using the variables in the file `.variables`, then in any of the topics they can be easily reassigned. 
+
+To style the existing elements of the semantics must first attempt to use variables from files `.variables`, and then to redefine them through `.overrides`. 
+To know which variables are available for editing from the source files semantic-ui, they are available in `bower_components\semantic-ui\src`. Search variables can be done by copying from the browser CSS selector and look for it in the files directory `semantic-ui\src\definitions`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

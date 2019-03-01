@@ -1,17 +1,23 @@
----
-title: ODBCMySqlDataService
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service, odbc
-summary: Data service for accessing MySQL database data
-toc: true
-permalink: en/fo_odbc-mysql-data-service.html
-lang: en
----
+--- 
+title: ODBCMySqlDataService 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services, odbc, 
+summary: the data Service to access data in MySQL 
+toc: true 
+permalink: en/fo_odbc-mysql-data-service.html 
+lang: en 
+autotranslated: true 
+hash: 743dff367f32a8660cf273204e85a4df2b05f9dc5d9250c63b1e494e6489df87 
+--- 
 
-`ODBCMySqlDataService` - это [сервис данных](fo_data-service.html), представляющий реализацию [ODBCDataService](fo_odbc-data-service.html), оптимизированный для доступа к данным СУБД MySQL.
+`ODBCMySqlDataService` is [service data](fo_data-service.html), represents the implementation of [ODBCDataService](fo_odbc-data-service.html), optimized for data access, MySQL database. 
 
-При указании ODBCMySqlDataService в качестве сервиса данных используется строка `ICSSoft.STORMNET.Business.ODBCMySqlDataService, ICSSoft.STORMNET.Business.ODBCDataService`.
+When specifying ODBCMySqlDataService as a service data string is used `ICSSoft.STORMNET.Business.ODBCMySqlDataService, ICSSoft.STORMNET.Business.ODBCDataService`. 
 
-## Особенности использования
+## features of use 
 
-* ODBCMySqlDataService реализован для СУБД MySQL версий 4.1 и более поздние, с некоторыми ограничениями на объектную структуру.
+* ODBCMySqlDataService implemented for MySQL versions 4.1 and later, with some restrictions on object structure. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

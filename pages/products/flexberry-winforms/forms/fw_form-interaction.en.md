@@ -1,99 +1,101 @@
----
-title: Межформенное взаимодействие в Windows-приложениях
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Концептуальное описание работы форм. Межформенное взаимодействие рассмотрено в контексте того, какие события происходят, какие методы вызываются, что конкретно проверяется и присходит при этом, какие объекты и как обрабатываются, описывается работа с кэшем форм и обращения к системе проверки полномочий, указаны возможные исключительные ситуации.
-toc: true
-permalink: en/fw_form-interaction.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Performance interaction in Windows applications 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Conceptual description of the work forms. Performanoe interaction is considered in the context of what events are happening, what methods are called, what exactly is checked and is going on at the same time, what objects and how it is processed, describes how to work with the forms cache and access the system credentials specified exceptional cases. 
+toc: true 
+permalink: en/fw_form-interaction.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: cee52d4ccc371a23e7f501626170f851165c44241c74c4e6551374a81af2631a 
+--- 
 
-## Сценарий открытия формы редактирования со списка
-* Событие редактирования на списковой форме
-    * Списковые формы наследуются от `BaseWinListStandard` либо от `BaseWinListHierarchical`. Отличаются они тем, что в первом случае на форме расположен контрол [ObjectListView](fw_objectlistview.html), а во втором случае используется [ObjectHierarchicalView](fw_object-hierarchical-view-on-editform.html). Событие редактирование на форму приходит именно из одного из этих контролов. Подписывание на это событие выполняется методом `protected void prv_AttachObjectListView( ICSSoft.STORMNET.Windows.Forms.ObjectListView objectListView1 )`, который вызывается из конструктора базовой списковой формы. В этом же методе происходит инициализация свойства `ListControl` базовой списковой формы. Схема наследования списковых форм:
-    ![](/images/pages/products/flexberry-winforms/forms/primer11.jpg)
-    * `BaseWinList`: Обработчик события `ObjectListView.EditObject` вызывает метод `protected virtual void objectListView1_EditObject(object sender, ICSSoft.STORMNET.Windows.Forms.GroupEventArgs e)`. Далее происходит вызов `		protected virtual void prv_EditData()`, а отсюда `protected virtual void prv_EditData( ICSSoft.STORMNET.Windows.Forms.ObjectListView ol )`
-    * `BaseWinList.prv_EditData`: берутся все выбранные объекты, если их больше одного, то задаётся вопрос о необходимости открыть на редактирование все эти объекты. В случае положительного ответа пользователя вызывается `OnEditEvent( "", dobj, "" )`, который вызывает срабатывание `EditEvent` на форме `BaseWinList`.
-    * `BaseIndpdList` была подписана на событие `EditEvent` своей зависимой формы в методе `public virtual void Activate( object tag )`. Этот метод участвует в EBSI-скрипте, по которому работает независимая списковая форма. Т.е. этот метод сработал когда списковая форма была запущена.
-    ![](/images/pages/products/flexberry-winforms/forms/ListFormEBSD.jpg)
-    * В обработчике события редактирования с зависимой формы вызывается событие редактирования на независимой форме, которое используется на EBSD-диаграмме.
-* Получение формы-редактора
-    * Когда вызывается `EditEvent` на независимой списковой форме, включается в работу интерпретатор EBSD-скрипта. Это событие приводит к вызову метода `GetEditor` независимой списковой формы. Этот метод переопределяется в сгенерированной независимой форме. Он возвращает тип формы редактора на основании информации о редактируем объекте. __Требуется возвращать тип независимой формы, т.к. именно она является предметом работы интерпретатора скриптов.__
-    * Получив тип формы редактирования, далее начинается работа с кэшем форм редактирования: `EditFormCache`. Сначала проверяется наличие этой формы. 
-    * Если форма в кэше отсутствует, то следующим шагом скрипта будет `System.Activator.CreateInstance(editFormType)` и помещение созданной формы в `EditFormCache`.
-    * Если форма в кэше найдена, то для неё сразу выполняется следующий шаг сценария.
-* Запуск формы-редактора
-    * Форма-редактор запускается вызовом метода `Edit` независимой формы. 
-    * При этом, если форма была взята из кэша ранее, то этот метод вызывается без запуска нового интерпретатора скриптов и подписывания на события. 
-    * Если форма запускается впервые, то произойдёт старт нового интерпретатора скрипта запускаемой формы. Скрипт для этой формы будет получен вызовом метода `GetScript()`, который всегда переопределяется в сгенерированном коде. Кроме этого, выполняется подписка на событие сохранения (`SaveEvent`) и на событие отмены (`CancelEvent`) поднимаемой независимой формы.
-    * Метод `Edit` независимой формы редактирования:
-        * Происходит проверка полномочий на открытие этой формы
-        * Если параметр `propertyname` не пустой, то происходит проверка на наличие такого свойства типа [`DataObject`](fo_data-object.html) у объекта, переданного на редактирование.
-            * Если свойство найдено, но это свойство в объекте == `null`, то редактирование отменяется, метод завершает свою работу.
-            * Если свойство найдено и != `null`, то будем редактировать этот мастеровой объект вместо переданного параметром `dataobject`
-            * Если свойство не найдено, то продолжаем работать с объектом, переданном параметром `dataobject`
-    * Если форма поднимается впервые (это определяется по отсутствию объекта данных (`DataObject`) на независимой форме), то
-        * Проверяется наличие полномочий на редактируемый объект (`FullControl` или `Read`). Если таких прав нет, то выдастся форма с `UnauthorizedAccessException` и редактирование объекта на этом закончится.
-        * Если нет права на `Insert` или `Update`, то объект откроется без блокировки - только на чтение.
-    * Если на независимой форме объект данных (`DataObject`) уже имеется и его первичный ключ совпадает с тем, что пришёл на редактирование, то происходит вызов `Form.Select()` и выход из метода.
-    * Если на независимой форме объект данных (`DataObject`) отсутствует, то 
-        * Показывается пустая зависимая форма, вызовом её метода `Edit` с пустыми параметрами
-        * Устанавливается зависимой форме статусное сообщение загрузки
-        * Вызывается метод независимой формы: `PrepareDataObjectForEdit(dataobject);`, который переопределён в сгенерированном коде
-        * Копируется редактируемый объект методом `DataObject.CopyTo()` и эта копия присваивается свойству `DataObject` независимой формы редактирования. Именно это свойство будет использовано для проверки необходимости задавать вопрос о сохранении объекта при закрытии формы.
-        * Редактируемый объект передаётся в метод `Edit` зависимой формы.
-        * Выставляется статусное сообщение на зависимой форме "Готово".
-    * Метод `Edit` зависимой формы редактирования:
-        * Вызывается `protected virtual void prv_Edit( Storm.DataObject dataobject, string contpath, string propertyname )`, в котором присваивается `EditManager.DataObject`, выставляется `Caption` для формы, в зависимости от статуса редактируемого объекта, а затем вызывается `EditManager.Change( false );`
-    * Если `DataObject` на зависимой форме (который является ссылкой на `EditManager.DataObject`) != `null`, то вызывается событие `ICSSoft.STORMNET.Windows.Forms.Desktop.GlobalWinformEvents.OnIntEditFormDataLoaded(this, EventArgs.Empty);`
-    * Вызывается метод `Show();`
-    * Если `DataObject` на зависимой форме != `null`, то вызывается событие `OnDataObjectOnFormLoaded(new EventArgs());`
-
-
-
-## Сценарий сохранения объекта
-
-* `BaseIndpdEdit` - базовая независимая форма редактирования. В её конструкторе вызывается метод `GetDpdForm();`, который переопределяется в сгенерированной независимой форме. Этот метод должен вернуть экземпляр зависимой формы.
-* Полученная зависимая форма присваивается свойству `Editor` базовой независимой формы, и в этот момент вызывается метод `private void prv_AttachSystemEvents()` в котором происходит подписка на события зависимой формы (закрытия, сохранения, отмемы и пр.).
-* Форма редактирования работает по сценарию:
-    ![](/images/pages/products/flexberry-winforms/forms/EditFormEBSD.jpg)    
-    Рассмотрим как на независимую форму приходит событие сохранения.
-    * Первый вариант: кнопка на тулбаре. Сначала срабатывает обработчик кнопок на тулбаре, который вызывает `OnSaveEvent` зависимой формы. На это событие подписан обработчик в независимой формы, который сначала вызывает метод `protected virtual void OnSave(SaveEventArgs e)`, а затем если не случилось `m_bFailedSave` и зависимая форма не находится в режиме закрытия (`ClosingMode`), то происходит копирование объекта данных с зависимой формы в свойство `DataObject` независимой формы.
-    * Другой вариант: обработка закрытия формы через нажатие на "Х". 
-        * В обработчике события закрытия зависимой формы --происходит чудо-- берётся объект данных, который был сохранён на независимой форме редактирования и объект данных с зависимой формы.
-        * Если объект данных на зависимой форме не `null` и не заблокирован, то получается массив различающихся свойств методом `Information.GetAlteredProperyNames()`, включая проверку на различающиеся свойства детейлов.
-        * Если статус объекта на зависимой форме равен `Created` или имеются различающиеся с объектом на независимой форме свойства, то в случае `зависимая_форма.ClosingMode == false` вызывается метод `public virtual ICSSoft.STORMNET.UI.DialogResult PromtUserForActionAtClose();` зависимой формы редактирования.
-        * `PromtUserForActionAtClose()` показывает `MessageBox` с `MessageBoxButtons.YesNoCancel`.
-        * Соответственно ответам пользователя срабатывают события независимой формы редактирования: 
-            * `Yes`: `OnSave();`  `e.Cancel = m_bFailedSave;`; т.е. в переопределённом `OnSave` вы можете поставить `m_bFailedSave = true;` и закрытие формы не произойдёт.
-            * `No`: `OnCancel();`, затем вызывается `protected virtual void prv_ApplyChanges(ICSSoft.STORMNET.DataObject dataobject, ICSSoft.STORMNET.DataObject dataobjectcopy)` для отката изменений, которые были произведены в объекте, редактируемом на зависимой форме.
-            * `Cancel`: происходит простая отмена закрытия формы: `e.Cancel = true;`
-        * Если изменённых свойств нет и статус не `Created`, то вызывается `OnCancel(); e.Cancel = false;`
-        * Если отмена закрытия не случилась, то в конце работы метода происходит сброс блокировки для данного объекта.
-* Метод `OnSave` независимой формы редактирования:
-    * Выполняется проверка `NotNull` свойств редактируемого объекта данных. 
-        * Если есть незаполненные свойства, то вызывается метод `public virtual void DisplayNullPropertiesWarning( string&#0091;&#0093; captions )` зависимой формы, выставляется флаг `m_bFailedSave = true;` и вызывается ещё один метод `public virtual void FailedSave( Exception e )` зависимой формы, выставляется статусное сообщение зависимой форме об ошибке сохранения. Выполняется возврат из функции.
-    * Если незаполненных обязательных полей нет, то выставляется флаг `m_bFailedSave = false;`, ставится статусное сообщение зависимой форме о выполнении процесса сохранения, проверяется статус редактируемого на зависимой форме объекта данных.
-    * Вызывается `SaveEvent` независимой формы редактирования
-    * Если форма не закрывается (`ClosingMode`) и `m_bFailedSave != false`, то зависимой форме выставляется статус готовности, иначе выставляется статус ошибки при сохранении и происходит выход из функции. 
-    * Если редактируемый объект до выполнения `SaveEvent` был в состоянии `Created`, то на него ставится блокировка. 
-    * Вызывается метод `public virtual void Edit(Storm.DataObject dataobject, string contpath, string propertyname)` зависимой формы редактирования. Это происходит для переинициализации формы редактора, т.к. при сохранении объект мог быть изменён в бизнес-серверах.
-* Списковая форма в своём скрипте была подписана на событие сохранения.
-    * Переданный параметром события отредактированный `DataObject` передаётся в специальный Бизнес-сервис - оболочку "вокруг" сервиса данных для обновления объекта.
-    * В случае ошибки при сохранении произойдёт вызов метода `FailedSave` независимой формы редактирования
-    * В случае успешного сохранения вызовется метод `public virtual void Edited(DataObject dataobject, string contpath, string propertyname)` независимой списковой формы, который вызывает `public virtual void Edited(Storm.DataObject dataobject, string contpath, string propertyname)` зависимой формы, которая вызовет `protected virtual void prv_Edited( ICSSoft.STORMNET.DataObject dataobject )`, а эта функция добавляет объект в [ObjectListView](fw_objectlistview.html) на этой форме.
+## Script open edit form from the list 
+* Event list editing form 
+* List forms are inherited from `BaseWinListStandard` or `BaseWinListHierarchical`. They differ in that in the first case the form control is [ObjectListView](fw_objectlistview.html), and in the second case, use [ObjectHierarchicalView](fw_object-hierarchical-view-on-editform.html). The event edit form come from one of these controls. Subscribing to this event is performed by the method `protected void prv_AttachObjectListView( ICSSoft.STORMNET.Windows.Forms.ObjectListView objectListView1 )` which is called from the constructor of the underlying list form. In the same method that initializes the properties `ListControl` basic list form. Schema inheritance list forms: 
+![](/images/pages/products/flexberry-winforms/forms/primer11.jpg) 
+* `BaseWinList`: event Handler `ObjectListView.EditObject` calls a method `protected virtual void objectListView1_EditObject(object sender, ICSSoft.STORMNET.Windows.Forms.GroupEventArgs e)`. Next is the call ` protected virtual void prv_EditData()`, and hence `protected virtual void prv_EditData( ICSSoft.STORMNET.Windows.Forms.ObjectListView ol )` 
+* `BaseWinList.prv_EditData`: takes all selected objects, if more than one, it asks the question about the need to open to edit all of these objects. In the case of positive user response is called `OnEditEvent( "", ., "" )`, which triggers `EditEvent` on the form `BaseWinList`. 
+* `BaseIndpdList` was signed at the event `EditEvent` its dependent form, in the method `public virtual void Activate( object tag )`. This method involved in EBSI script, which runs on an independent list form. Ie this method gets triggered when the list form was launched. 
+![](/images/pages/products/flexberry-winforms/forms/ListFormEBSD.jpg) 
+* In the event handler for the edit with the dependent form is called an edit event on the independent form, which is used for EBSD diagram.
+* Receive form editor 
+* When called `EditEvent` on an independent list form included in the work of the interpreter EBSD script. This event results in a call to the method `GetEditor` independent list form. This method is overridden in the generated independent form. It returns the type of form editor on the basis of information about the editable object. __Is required to return a type independent, because it is the subject of the work of the interpreter of scripts.__ 
+* After receiving a form type of edit, then begins the work with the forms cache edit: `EditFormCache`. First checks of this form. 
+* If the form is not in the cache, the next step of the script will be `System.Activator.CreateInstance(editFormType)` and the room created the form in `EditFormCache`. 
+* If the form is found in cache, then it immediately executes the next step of the script. 
+* Start the form editor 
+* Form editor is started by calling the method `Edit` independent. 
+* If the form was taken from the cache earlier, this method is called without starting a new shell scripts and signing at the event. 
+* If the form is started for the first time, it will start a new shell script run form. The script for this form is obtained by the method invocation `GetScript()`, which always is overridden in the generated code. In addition, you subscribe to the event save (`SaveEvent`) and event cancellation (`CancelEvent`) raise independent. 
+* Method `Edit` independent edit form: 
+* Checks permission to open this form 
+* If the parameter `propertyname` is not empty, then it checks for the presence of such properties [`DataObject`](fo_data-object.html) the object passed to the edit. 
+* If the property is found, but this property in the object == `null`, then the edit is undone, the method terminates. 
+* If the property was found and != `null`, we will have to edit this workman the object instead of the passed parameter `dataobject` 
+* If the property is not found, then continue to work with the object passed by parameter `dataobject` 
+* If the form is raised for the first time (it is determined that no object data (`DataObject`) in independent form), 
+* Check authority to the editable object (`FullControl` or `Read`). If no such rights, then you get a form with `UnauthorizedAccessException` and edit the object on this end. 
+* If there is no right to `Insert` or `Update`, the object will open without lock - read-only. 
+* If the independent form of a data object (`DataObject`) already exists and its primary key is the same as what came on the edit, it is a call `Form.Select()` and exit from the method. 
+* If the independent form of a data object (`DataObject`), 
+* A blank in the dependent form, call it's method `Edit` with empty parameters 
+* Installs the dependent form status message download 
+* The method is called the independent form: `PrepareDataObjectForEdit(dataobject);` that is overridden in the generated code 
+* Copies of the edited object method `DataObject.CopyTo()` and this copy is assigned to a property `DataObject` independent edit form. This property will be used to validate the need to ask a question about the preservation of the object when the form is closed. 
+* Editable object is passed to the method `Edit` dependent form. 
+* Exhibited a status message dependent on the form of "Ready". 
+* Method `Edit` dependent edit form: 
+* Called `protected virtual void prv_Edit( Storm.DataObject dataobject, string contpath, string propertyname )`, which is assigned `EditManager.DataObject`, exhibiting `Caption` to form, depending on the status of the edited object and then called `EditManager.Change( false );` 
+* If `DataObject` in dependent form (which is a reference to `EditManager.DataObject`) != `null`, called event `ICSSoft.STORMNET.Windows.Forms.Desktop.GlobalWinformEvents.OnIntEditFormDataLoaded(this, EventArgs.Empty);` 
+* Method is called `Show();` 
+* If `DataObject` dependent on the form != `null`, called event `OnDataObjectOnFormLoaded(new EventArgs());` 
 
 
 
-## Сценарий открытия списковой формы на лукап
+## Script save the object 
 
-* Сценарий выбора значения мастера на лукап-форме
+* `BaseIndpdEdit` - independent base form editing. In its constructor it calls a method `GetDpdForm();`, which is overridden in the generated independent form. This method should return an instance of dependent forms. 
+* The dependent form is assigned to a property `Editor` basic independent form, and in this moment the method is called `private prv_AttachSystemEvents void()` in which the event subscription dependent forms (closing, saving, Otomi, etc.). 
+* Edit form works on the script: 
+![](/images/pages/products/flexberry-winforms/forms/EditFormEBSD.jpg) 
+Consider as an independent form, comes event save. 
+* First option: button on the toolbar. First, triggered handler of the buttons on the toolbar, which causes `OnSaveEvent` dependent form. This event signed the handler in the independent, which first calls a method `protected virtual void OnSave(SaveEventArgs e)`, and then if not happened `m_bFailedSave` and dependent form is not in the closure of (`ClosingMode`), then the reproduction object data with the dependent form in the property `DataObject` independent. 
+* Another option: processing of the form is closed by clicking on the "X". 
+* In the event handler, the closure of dependent forms --a miracle occurs-- does the data object that was saved in an independent edit form and the data object dependent form. 
+* If the data object dependent on the form is not `null` and is not blocked, then turns out an array of distinct properties by the method `Information.GetAlteredProperyNames()`, including checking on the different properties of detailov. 
+* If the item's status to dependent form `Created` have equal or differing object-independent properties form, in the case `зависимая_форма.ClosingMode == false` method is called `public virtual ICSSoft.STORMNET.UI.DialogResult PromtUserForActionAtClose();` dependent editing form. 
+* `PromtUserForActionAtClose()` shows `MessageBox` with `MessageBoxButtons.YesNoCancel`. 
+* Accordingly to the answers of the user triggered events are independent of the edit form: 
+* `Yes`: `OnSave();` `e.Cancel = m_bFailedSave;`; i.e. in the overridden `OnSave` you can put `m_bFailedSave = true;` and closing the mold will not occur. 
+* `No`: `OnCancel();`, then call `protected virtual void prv_ApplyChanges(ICSSoft.STORMNET.DataObject dataobject, ICSSoft.STORMNET.DataObject dataobjectcopy)` to roll back changes that were made in the object editable on the dependent form. 
+* `Cancel`: simply cancel the form is closed: `e.Cancel = true;` 
+* If the modified properties and the status is not `Created`, then called `OnCancel(); e.Cancel = false;` 
+* If the cancellation of the closure had not happened, then at the end of the method resets the lock for this object. 
+* Method `OnSave` independent edit form: 
+* Checks `NotNull` properties of the edited object data. 
+* If there are empty properties, the method is called virtual void `public DisplayNullPropertiesWarning( string&#0091;&zgl0093; captions )` dependent form, exhibited a flag `m_bFailedSave = true;` and calls another method `public virtual void FailedSave( Exception e )` dependent forms, exhibiting a status message dependent form error saving. Returns from the function.
+* If empty mandatory fields exist, then the flag `m_bFailedSave = false;`, put a status message dependent on the implementation of the storage process, check the editable status on the dependent form of the data object. 
+* Called `SaveEvent` independent edit form 
+* If the form is not closed (`ClosingMode`) and `m_bFailedSave != false`, dependent form exhibited a readiness status, otherwise the error status when you save and exits the function. 
+* If the editable object to perform `SaveEvent` was able `Created`, then it is lock. 
+* Method is called `public virtual void Edit(Storm.DataObject dataobject, string contpath, string propertyname)` dependent editing form. This happens for reinitializing the form editor, because when you save the object could be changed in the business server. 
+* The list form in your script was signed on the event of saving. 
+* The passed event parameter is edited `DataObject` is transferred to a special Business-service wrapper around a data service to update the object. 
+* In case of error when saving happens, the method call `FailedSave` independent edit form 
+* In case of successful saving will be called method `public virtual void Edited(DataObject dataobject, string contpath, string propertyname)` independent list of shape, which causes `public virtual void Edited(Storm.DataObject dataobject, string contpath, string propertyname)` dependent form, which will cause `protected virtual void prv_Edited( ICSSoft.STORMNET.DataObject dataobject )`, and this function adds an object to [ObjectListView](fw_objectlistview.html) on this form. 
 
-* Межформенное взаимодействие в Flexberry Platform
-Чтобы вызвать списковую форму, в которой редактируется объект, можно использовать метод OnEdit, а получать обработанный объект в методе Edited.
 
-Для того, чтобы поднять модальную форму можно делать, например, следующим образом:
+
+## the Script to open list forms in lucap 
+
+* Scenario select masters lucap form 
+
+* Performance interaction in Flexberry Platform 
+To call list form, in which the elements are edited, you can use the OnEdit and to obtain a processed object in a method Edited. 
+
+In order to raise the modal form can be done, for example, as follows: 
 
 ```csharp
 (form as ICSSoft.STORMNET.UI.BaseIndpdList).SaveEvent += new ICSSoft.STORMNET.UI.SaveEventArgsHandler(OnReturnFromList);
@@ -101,17 +103,17 @@ lang: en
 DPD_frm = (System.Windows.Forms.Form) (form as ICSSoft.STORMNET.UI.BaseIndpdList).EditInitiator;
 DPD_frm.Hide();
 DPD_frm.ShowDialog(); 
-```
+``` 
 
-Хотя, с точки зрения технологии, правильнее будет вызывать форму на OnEdit, а в зависимой форме (той формы, которую хотим поднять), переопределить базовыйметод Edit, который выглядит так: 
+Although, from a technology point of view, it would be correct to call the form on OnEdit, and in the dependent form (the form which I want to raise), to override babymed Edit that looks like this: 
 
 ```csharp
-/// <summary>
-/// Начать редактирование свойства объекта данных (фактически вызов на лукап)
-/// </summary>
-/// <param name="dataobject">объект данных</param>
-/// <param name="contpath">некоторый путь на форме-инициаторе, для идентификации объекта, в случае, когда форма редактирует одновременно несколько объектов данных</param>
-/// <param name="propertyname">имя свойства</param>
+/// <summary> 
+/// Start editing the properties of the data object (actually a call to lookup) 
+/// </summary> 
+/// <param name="dataobject">data object</param> 
+/// <param name="contpath">some way on the form-the initiator to identify the object in the case when the form is editing multiple data objects</param> 
+/// <param name="propertyname">property name</param> 
 public virtual void Edit(Storm.DataObject dataobject, string contpath, string propertyname, object tag)
 {m_objDataObject = dataobject;
 m_sContPath = contpath;
@@ -120,9 +122,13 @@ m_bLookupMode = true;objListView.Operations.Up = true;
 if( tag is ICSSoft.STORMNET.FunctionalLanguage.Function && tag != null )
 {objListView.LimitFunction = ( ICSSoft.STORMNET.FunctionalLanguage.Function )tag;}this.Show();
 return;}
-```
+``` 
 
-Например, вместо this.Show(); можно написать this.ShowDialog(); 
+For example, instead of this.Show(); you can write this.ShowDialog(); 
 
-## См. также
-[Межформенное взаимодействие в Web-приложениях](fa_form-interaction.html)
+## Cm. also 
+[Performanoe interaction in Web-applications](fa_form-interaction.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
