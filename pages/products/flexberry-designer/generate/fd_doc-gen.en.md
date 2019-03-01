@@ -1,44 +1,50 @@
----
-title: Плагин генерации документации по диаграммам
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, генерация, документация, утилиты
-summary: Расположение плагина, параметры генерации, результат генерации
-toc: true
-permalink: en/fd_doc-gen.html
-lang: en
----
+--- 
+title: generation Plugin documentation charts 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, generation, documentation, utilities, 
+summary: the location of the plug-in generation parameters, the result of generation 
+toc: true 
+permalink: en/fd_doc-gen.html 
+lang: en 
+autotranslated: true 
+hash: 0eb207dc282bbc6900c118b8fc4b8a308db7003d170e30080a53417579aeea57 
+--- 
 
-Плагин генерации документации располагается в пункте `Утилиты` для каждого плагина продуктов [платоформы Flexberry](fp_architecture.html). Например, `ORM -> Утилиты -> Генерация документации по диаграммам`.
+The plugin documentation generation is in paragraph `Утилиты` for each plugin products [plataforma Flexberry](fp_architecture.html). For example, `ORM -> Utilities -> Generate documentation диаграммам`. 
 
-В результате будет открыто окно со списком параметров, которые можно включить в итоговый документ.
+This will open a window with a list of parameters that can be included in the final document. 
 
-![Параметры документа](/images/pages/products/flexberry-designer/generate/codegen-parameters.png)
+![Document settings](/images/pages/products/flexberry-designer/generate/codegen-parameters.png) 
 
-### Параметры генерации документации
+### Options for generating documentation 
 
-| __Свойство__ | __Описание__ |
-|--------------|--------------|
-|_Столбцы - перечень атрибутов класса_|
-|`Название`|Название атрибута класса|
-|`Тип`|Тип атрибута для форм приложения|
-|`Тип в БД`|Тип атрибута для базы данных|
-|`Хранилище`|Наименование класса в базе данных|
-|`Обязательность`|Обязателен или нет атрибут для сохранения класса|
-|`Хранимость`|Хранимый или нет атрибут (stored/ not stored)|
-|`Описание`|Комментарий к атрибуту|
-|_Скрытые атрибуты - атрибуты, существующие в таблице базы данных, но не отображаемые на диаграмме и форме_|
-|`Первичный ключ`|Первичный ключ таблицы|
-|`ДатаСоздания`|Дата и время создания записи|
-|`ДатаИзменения`|Дата и время последнего изменения|
-|_Вид - внешний вид документа_|
-|`Заголовки перед каждым классом`|Отображать ли заголовки перед каждым классом|
-|`В терминах баз данных`|Использовать терминологию баз данных или программирования|
+| ____ | __Description__ | 
+|--------------|--------------| 
+|Stolbtsy - list of attributes class| 
+|`Название`|attribute Name class| 
+|`Тип`|the attribute Type for application forms| 
+|`Тип in БД`|the attribute Type for the database| 
+|`Хранилище`|class Name in the database| 
+|`Обязательность`|Mandatory or not attribute to save the class| 
+|`Хранимость`|or no Stored attribute (stored/ not stored)| 
+|`Описание`|Comment to the attribute| 
+|Skrytye attributes - the attributes existing in the database table but not displayed on the chart and forme| 
+|`Первичный ключ`|table Primary key| 
+|`ДатаСоздания`|date and time the record was created| 
+|`ДатаИзменения`|date and time of the last change| 
+|Vid - appearance document| 
+|`Заголовки before each классом`|whether to Display headers before each class| 
+|`В terms данных` databases|to Use the terminology of databases, or programming| 
 
-### Результат генерации документации
+### the Result of generating documentation 
 
-По кнопке `Старт` создается два документа:
+Click `Старт` creates two documents: 
 
-* `MS Excel` - перечень классов и заданных параметров
-* `.TXT` - список классов и свойств, имеющих в названии длинные имена
+* `MS Excel` - list of classes and set parameters 
+* `.TXT` - list of classes and properties with long title names 
 
-Плагин предлагает открыть файлы на просмотр вопросом во всплывающем окне. Для просмотра следует нажать `Да`.
+The plugin allows to open files to view a question in a popup window. To view the press `Да`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

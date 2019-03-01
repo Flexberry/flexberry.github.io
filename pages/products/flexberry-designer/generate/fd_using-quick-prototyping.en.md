@@ -7,12 +7,13 @@ toc: true
 permalink: en/fd_using-quick-prototyping.html 
 lang: en 
 autotranslated: true 
-hash: 297a5326add12078dc96ec8289778d4aaa898b69bf6034a4f9a51f831105a003 
+hash: c90ce119c2bb8bef34388215ff574c7acc01c758afad3ced6097742d1984cf16 
 --- 
 
 Fast prototypical handy when you need to quickly create and run the system. 
 
 That is generated prototypical: 
+
 1. Generates a class with the stereotype [Application](fd_application.html) 
 2. Generates [L-](fd_l-view.html) and [E-](fd_e-view.html) representation for each data class 
 3. Generates classes with the stereotype [ListForm](fd_listform.html) for each data class 
@@ -30,52 +31,55 @@ The application "Telephone directory"
 4.To create a class diagram, name "Structure". 
 5.To put on the chart and linked classes. 
 
-![](/images/pages/products/flexberry-designer/generate/phonebook1.png) 
+![Chart Telephone directory](/images/pages/products/flexberry-designer/generate/phonebook1.png) 
 
 to save the graph. 
 6.Position the cursor on a system where a chart, then select the menu item `Winforms\Utilities\Create predstavleniyam forms and приложение` (for this example): 
 
-![](/images/pages/products/flexberry-designer/generate/startprototyping.png) 
+![Beginning of prototypical](/images/pages/products/flexberry-designer/generate/startprototyping.png) 
 
 *For ASP.NET applications should use the plugin ASP.NET.* 
 
 7.Enter the application name in the window that appears and click "OK": 
 
-![](/images/pages/products/flexberry-designer/generate/startprototyping1.png) 
+![Prototypical](/images/pages/products/flexberry-designer/generate/startprototyping1.png) 
 
 Next to the chart "Structure" (in the same system) will automatically create a graph "View" that contains the classes of the forms (edit and list) and the class app: 
 
-![](/images/pages/products/flexberry-designer/generate/phonebook2.png) 
+![Chart Telephone directory](/images/pages/products/flexberry-designer/generate/phonebook2.png) 
 
 For each object will be created 2 views: 
+
 * list and edit form 
 * add a description (Description, Caption). 
 8.To access the class properties-applications and change configuration connection settings to the data source: server name (**SERVER=**) and database (**DATABASE=** database does not have to exist). 
 
-__Note__: the server Address is can be a personal computer (**localhost**). 
+__Note__: the server Address is can be a personal computer (**localhost**).
 
-![](/images/pages/products/flexberry-designer/generate/configprops.png) 
+![Configuration properties](/images/pages/products/flexberry-designer/generate/configprops.png) 
 
-9.To edit the properties of a stage [settings for MS SQL Server direct generator ](fd_configure-ms-sql-generator.html) (connection string to the data source must match that specified in application configuration). 
+9.To edit the properties of a stage [settings for MS SQL Server direct generator](fd_configure-ms-sql-generator.html) (connection string to the data source must match that specified in application configuration). 
 
-![](/images/pages/products/flexberry-designer/generate/called configbase.png) 
+![Database connection](/images/pages/products/flexberry-designer/generate/called configbase.png) 
 
 10.To edit [property phase](fd_configure-ms-sql-generator.html) (provide company name and product, as well as set the directory generation) 
 11.To select "MS SQL Server direct generator\align...". Flexberry will create the database and generates the scripts to create data structures, apply them. 
 
 __Note__: if a generation error occurs, it is necessary 
+
 * Verify p. 9 (not specified in the connection string SERVER=server;DATABASE=database - if specified, must change in accordance with reality) 
 * If everything is configured correctly, but the error continues to occur, contact support. 
 
 12.Build the application 
-* **Web application:** see [article](fa_asp-net-generator.html) 
-* **A Windows application:** select the menu item "Winforms/C#/Generate and kapeliovich". Flexberry will generate a - compile system and then prompts you to launch the app: 
 
-![](/images/pages/products/flexberry-designer/generate/startapp.png) 
+* Web application: article [generation Plugin Flexberry ASP.NET](fa_asp-net-generator.html) 
+* Windows application: select the menu item "Winforms/C#/Generate and kapeliovich". Flexberry will generate a - compile system and then prompts you to launch the app: 
+
+![Launch application](/images/pages/products/flexberry-designer/generate/startapp.png) 
 
 Click "OK", the application will start: 
 
-![](/images/pages/products/flexberry-designer/generate/phonebookapp.png) 
+![Phone book app](/images/pages/products/flexberry-designer/generate/phonebookapp.png) 
 
 
 
