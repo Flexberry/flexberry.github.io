@@ -1,22 +1,28 @@
----
-title: Синонимы типов (классы со стереотипом typedef) 
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, typedef, синонимы типов, стереотип
-summary: Назначение и использование синонимов типов
-toc: true
-permalink: en/fd_typedef.html
-lang: en
----
+--- 
+title: Synonyms of types (classes with stereotype typedef) 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, typedef, type synonyms, stereotype 
+summary: the Purpose and use of synonyms types of 
+toc: true 
+permalink: en/fd_typedef.html 
+lang: en 
+autotranslated: true 
+hash: e400ca01e5698fe9cd1b33b8f5ac31b2cab208c110e2ae6939b44265b41f8c5d 
+--- 
 
-`Typedef` - [стереотип](fd_key-concepts.html), указывающий синоним типа. 
+`Typedef` - [stereotype](fd_key-concepts.html) indicating the synonym type. 
 
-Назначение синонимов типов:
+The purpose of synonyms types: 
 
-* Повышение уровня абстрации при моделировании.
-* Точная настройка целевого типа языка, в который происходит генерация кода.
+* Increasing the level of abstraci in the simulation. 
+* Fine tune the target type of the language in which the code generation. 
 
-При генерации кода синонимы приводятся к базовым типам целевого языка (в код попадает базовый тип, а синоним не указывается никак).
+When generating code synonyms are given to basic types in the target language (in the code gets the base type, but a synonym does not specify in any way). 
 
-Преобразование к целевому типу можно настроить в [настройках соответствующего модуля-генератора](fd_types-map.html).
+The conversion to the target type, you can configure the [settings of the corresponding module generator](fd_types-map.html). 
 
-На [диаграммах](fd_class-diagram.html) класс со [стереотипом](fd_key-concepts.html) Typedef не может быть связан никакими ассоциациями, указание атрибутов и методов не имеет смысла (не учитывается).
+On the [charts](fd_class-diagram.html) class with the [stereotype](fd_key-concepts.html) Typedef cannot be bound by the associations, the attributes and methods do not make sense (is not considered). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

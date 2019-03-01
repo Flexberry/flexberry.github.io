@@ -1,19 +1,25 @@
----
-title: Business logic
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, business servers
-summary: Principles of the architecture of the business server
-toc: true
-permalink: en/fo_business-logic.html
-lang: en
----
+--- 
+title: Business logic 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, business servers 
+summary: principles of the architecture of business server 
+toc: true 
+permalink: en/fo_business-logic.html 
+lang: en 
+autotranslated: true 
+hash: 68d2e7a13a28d7ead4e0f97501a6d2e8c8aa72252e530b133458291cf1dcee06 
+--- 
 
-Бизнес-логика является частью [трёхуровневой архитектуры](https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D1%91%D1%85%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B5%D0%B2%D0%B0%D1%8F_%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0), соединяющей клиентскую часть и базу данных.
+The business logic is part of the [three-tier architecture](https://ru.wikipedia.org/wiki/Трехуровневая_архитектура) between the client part and the database. 
 
-Бизнес-логику приложения принято выносить в [бизнес-сервера](fd_business-servers.html). По умолчанию там располагаются лишь проверки обновления данных для определенных классов (методы OnUpdate), но также туда необходимо вынести методы, реализующие бизнес-операции и работу с данными ([вычитки из БД](fo_sql-query.html)).
+The business logic of the application passed to make the [business server](fd_business-servers.html). By default, there are only check data update for certain classes (methods OnUpdate), but also there is a need to make methods that implement the business transactions and work with data ([reading from DB](fo_sql-query.html)). 
 
-## Ограничения
+## Restrictions 
 
-* Вся работа с данными и все бизнес-операции должны быть вынесены в бизнес-сервера.
-* Никаких элементов пользовательского интерфейса в бизнес-серверах быть не должно (Форм, MessageBox'ов и пр).
-* В каждом бизнес-сервере должен быть свой [сервис данных](fo_construction-ds.html)
+* All data and all business transactions should be made in a business server. 
+* No user interface elements in the business servers should not be (Forms, MessageBox's, etc). 
+* In each business server must be your [service data](fo_construction-ds.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

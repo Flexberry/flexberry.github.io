@@ -1,28 +1,34 @@
----
-title: Interpreting the Boolean NULL Value
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Flexberry Reports, database, constraints
-summary: Features of interpretation of a Boolean value
-toc: true
-permalink: en/fo_interpretation-boolean-null.html
-lang: en
----
+--- 
+title: Interpretation of a Boolean value NULL 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, Flexberry Reports, database, constraints 
+summary: Features interpretation of a Boolean value 
+toc: true 
+permalink: en/fo_interpretation-boolean-null.html 
+lang: en 
+autotranslated: true 
+hash: 79364566f5d1182eb208b4f352015d09a0b9f15e1ebb9cdc52c4ca02a0fa5709 
+--- 
 
-[Атрибут класса](fo_attributes-class-data.html), объявленный с типом bool, в БД имеет тип bit и может иметь 3 значения:
+[Attribute class](fo_attributes-class-data.html), declared to be of type bool, in the DB is of type bit can have 3 values: 
 
-* 1, если явно записать в атрибут значение `True`;
-* 0, если явно записать в атрибут значение `False`;
-* NULL, если в него ничего не записывать.
+* 1 if explicitly writing the attribute value `True`; 
+* 0, if explicitly writing the attribute value `False`; 
+* NULL if it did not record. 
 
-NULL-значение имеет подводные камни: на интерфейсе пользователя такое значение отображается как `False`, т.е. галочка у пользователя выставлена не будет. Однако значение NULL не учитывается при запросах [сервисом данных](fo_data-service.html), если на него наложено [ограничение](fo_limitation.html).
+NULL value has pitfalls: the user interface, such a value is displayed as `False`, i.e. the checkmark, the user will not be exposed. However, the NULL value is ignored when queries [service data](fo_data-service.html) if it imposed a [limit](fo_limitation.html). 
 
-Булевский атрибут называется `Исполнено`. Когда происходит фильтрация по установленому признаку `Исполнено`, то ищутся все, у кого "Исполнено = 1".
+Boolean attribute called `Исполнено`. When filtering is set to sign `Исполнено`, it finds all who have "Full = 1". 
 
-Когда необходимо найти, у кого признак не установлен, то ищется по признаку "НЕ (Исполнено = 1)", при этом значения NULL игнорируются (это нормальное поведение СУБД). Чтобы явно найти все, у кого признак не установлен, надо писать "НЕ (НЕПУСТО(Исполнено))".
+When you need to find who the sign is not set, is searched on the basis of "NOT (Filled = 1)", while NULL values are ignored (this is normal behavior of the DBMS). To explicitly find anyone with a sign is not installed, it is necessary to write "NOT (is non-empty(Executed))". 
 
-В итоге противоречие: для пользователя в интерфейсе и в его сознании есть только 2 значения, а при фильтрации данных система работает с 3-мя.
+In the end the contradiction: for the user interface and in his mind there are only 2 values, and when you filter the data the system works with 3. 
 
-Чтобы этого избежать, можно:
+To avoid this, you can: 
 
-* зашить обработку в технологию. При этом надо понимать, что есть системы, в которых используют все три состояния. Из жизни такие ситуации идут, как правило, из импортов, когда в БД попадает NULL осознанно. 
-* на уровне прикладной задачи и в БД [устанавливать значения по умолчанию](fo_features-dafault-value.html). Тем самым исключая возможность необдуманного занесения значения NULL в БД Системы. И это является наиболее правильным способом, т.к всегда надо знать, что в объекте что означает.
+* sew processing technology. It should be understood that there are systems that use all three States. Of life such situations are, as a rule, from imports, when the database gets a NULL deliberately. 
+* at the application level, the tasks, and in DB [set default values](fo_features-dafault-value.html). Thereby eliminating the possibility of inadvertent entry of NULL values in the database System. And this is the most correct way, because you always have to know that the object which means. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

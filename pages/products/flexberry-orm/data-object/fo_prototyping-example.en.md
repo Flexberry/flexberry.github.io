@@ -1,16 +1,18 @@
----
-title: Example of object prototyping
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, example
-summary: Example of creating a copy of a data object
-toc: true
-permalink: en/fo_prototyping-example.html
-lang: en
----
+--- 
+title: Example of prototypical object 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM example 
+summary: an Example of creating copies of the data object 
+toc: true 
+permalink: en/fo_prototyping-example.html 
+lang: en 
+autotranslated: true 
+hash: 02a84ccc2deaa6a97c87f18077e80410da50613a6481dad16821cbf00e55b54b 
+--- 
 
-Полный список примеров кода [Flexberry ORM](fo_flexberry-orm.html) находится в статье ["Примеры кода"](fo_code-samples.html).
+Full list of code examples [Flexberry ORM](fo_flexberry-orm.html) is in ["code Examples"](fo_code-samples.html). 
 
-## Пример создания копии объекта данных
+## Example of creating copies of the data object 
 
 ```csharp
 Console.WriteLine("7. Prototyping.");
@@ -30,7 +32,7 @@ stopwatch.Stop();
 long loadObjectTime = stopwatch.ElapsedMilliseconds;
 stopwatch.Restart();
 
-// Этот метод делает каждый объект в иерархии новым (листинг приведен ниже).
+// This method makes each object in the hierarchy of new (see listing below). 
 aggregator.Prototype(true);
 
 stopwatch.Stop();
@@ -43,9 +45,9 @@ stopwatch.Stop();
 long updateTime = stopwatch.ElapsedMilliseconds;
 
 Console.WriteLine("Time taken for loading: {1} ms{0}prototyping: {2} ms{0}persistence: {3} ms.", Environment.NewLine, loadObjectTime, prototypingTime, updateTime);
-```
+``` 
 
-Код метода `Prototype`:
+Method code `Prototype`: 
 
 ```csharp
 public virtual void Prototype(bool withDetails)
@@ -70,3 +72,6 @@ public virtual void Prototype(bool withDetails)
     }
 }
 ```
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

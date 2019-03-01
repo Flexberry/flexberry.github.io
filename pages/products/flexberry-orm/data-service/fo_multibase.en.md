@@ -1,74 +1,80 @@
----
-title: Support for multiple data warehouses in a single application
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Features of the application with different databases
-toc: true
-permalink: en/fo_multibase.html
-lang: en
----
+--- 
+title: Support for multiple datastores in one application 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: Features of the application work with different databases 
+toc: true 
+permalink: en/fo_multibase.html 
+lang: en 
+autotranslated: true 
+hash: 6900b018b12e29be1b0099625f325295bfd02efd7c063915730a368279a7c724 
+--- 
 
-## Подмена строки сервиса данных
+## Substitution line data service 
 
-[SQLDataService](fo_sql-data-service.html) имеет специальный делегат 
+[SQLDataService](fo_sql-data-service.html) has a special delegate 
 
 ```csharp
-    /// <summary>
-    /// Делегат для изменения строки соединения (организация работы с несколькими базами)
-    /// </summary>
-    /// <param name="types">Массив типов, который получается из объектов пришедших в сервис данных</param>
-    /// <returns>Новая строка соединения, если вернётся пустое значение или null, строка не изменится</returns>
+    /// <summary> 
+    /// The delegate to change the connection string (the organization works with multiple databases) 
+    /// </summary> 
+    /// <param name="types">an Array of types, which is derived from objects coming to a data service</param> 
+    /// <returns>the New connection string, if you return an empty value or null string is not changed</returns> 
     public delegate string ChangeCustomizationStringDelegate(System.Type[] types);
 
-    /// <summary>
-    /// Делегат для смены строки соединения
-    /// </summary>
+    /// <summary> 
+    /// The delegate to change the connection string 
+    /// </summary> 
     public static ChangeCustomizationStringDelegate ChangeCustomizationString = null;
-```
+``` 
 
-который позволяет подменить строку соединения для передаваемого типа. Инстанция сервиса данных не меняется, меняется только строка соединения. 
-Дополнительно есть специальное свойство [SQLDataService](fo_sql-data-service.html), позволяющее отменить действие данного делегата (это позволяет иметь несколько сервисов данных, которые работают исключительно со своими БД без перенастройки):
+which allows you to change the connection string for the passed type. Instance of the data service is not changing, only the connection string. 
+Additionally there is a special property [SQLDataService](fo_sql-data-service.html), allowing to cancel the action this delegate (this allows you to have several data services that work exclusively with their database without reconfiguring): 
 
 ```csharp
-/// <summary>
-/// Не менять строку соединения общим делегатом ChangeCustomizationString
-/// </summary>
+/// <summary> 
+/// Not to change the connection string of the shared delegate ChangeCustomizationString 
+/// </summary> 
 public bool DoNotChangeCustomizationString
 {
   get { return _doNotChangeCustomizationString; }
   set { _doNotChangeCustomizationString = value; }
 }
-```
+``` 
 
-## Подмена StorageName
+## Substitution StorageName 
 
-[Information](fo_methods-class-information.html) содержит делегат 
+[Information](fo_methods-class-information.html) contains the delegate 
 
 ```csharp
-/// <summary>
-/// Делегат для смены ClassStorageName (можно подставить имя_базы.dbo.имя_таблицы, например)
-/// </summary>
-/// <param name="classType">Тип класса</param>
-/// <param name="originalStorageName">Оригинальный StorageName</param>
-/// <returns>новый StorageName (если пустое или null, то возьмём оригинальное)</returns>
+/// <summary> 
+/// Delegate for changing ClassStorageName (you can substitute non-correctable.dbo.table_name, for example) 
+/// </summary> 
+/// <param name="classType">class Type</param> 
+/// <param name="originalStorageName">Original StorageName</param> 
+/// <returns>new StorageName (if empty or null, then we take the original)</returns> 
 public delegate string ChangeClassStorageNameDelegate(Type classType, string originalStorageName);
 
-/// <summary>
-/// Делегат для смены ClassStorageName (можно подставить имя_базы.dbo.имя_таблицы, например)
-/// </summary>
+/// <summary> 
+/// Delegate for changing ClassStorageName (you can substitute non-correctable.dbo.table_name, for example) 
+/// </summary> 
 public static ChangeClassStorageNameDelegate ChangeClassStorageName = null;
-```
+``` 
 
-который позволяет подменить в динамике [имя таблицы и схемы, в которой хранится этот класс](fo_storing-data-objects.html).
-Для того, чтобы реализовать поддержку нескольких схем требуется выдавать строку такого вида: **dbo.ТипЛапы**. 
-Этот делегат вызывается единожды для каждого типа, поскольку возвращённое значение кэшируется. Если кроме имени схемы указать имя таблицы, то нужно убедиться, что в рамках одной транзакции не будет обращений к разным БД т.к. это приведёт к исключению при выполнении всей операции. 
+which allows you to substitute in the dynamics [table name and schema that stores the class](fo_storing-data-objects.html). 
+In order to implement support for multiple schemas is required to issue a line like this: **dbo.Tiplady**. 
+This delegate is called once for each type, since the returned value is cached. If in addition the schema name to specify a table name, then you need to make sure that one transaction will not be appeals to different databases because this will result in an exception when executing the entire operation. 
 
-{% include warning.html content="Надо добавлять кавычки внутри возвращаемого значения, поскольку идентификатор по сути ломает стандартную логику обращения к таблице. Кавычки добавляются всегда при упаковке идентификаторов (для MSSQL)." %}
+{% include warning.html content="Need to add quotes inside the return value, because the ID is in fact breaking the standard logic of the appeal to the table. Quotes are always being added to package IDs (for MSSQL)." %} 
 
 ```sql
 имя_базы.[dbo].название_класса
-```
+``` 
 
-Экранировать кавычки в `web.config` при необходимости можно стандартными средствами XML.
+Quotes escaped in `web.config` if necessary, a standard XML tools. 
 
-{% include note.html content="Следует иметь в виду, что [бизнес-сервер](fo_bs-wrapper.html) пытается выполнить обновление всех пришедших объектов в одной транзакции. Поэтому необходимо избегать ситуации, когда [реальные хранилища обновляемых объектов](fo_storing-data-objects.html) располагаются в разных БД. В противном случае бизнес-сервер попытается выполнить закрытие транзакции на источнике, отличном от того, на котором транзакция открывалась, что приведёт к возникновению ошибки." %}
+{% include note.html content="it Should be borne in mind that [business server](fo_bs-wrapper.html) trying to upgrade all the received objects in a single transaction. It is therefore necessary to avoid a situation where [actual storage refreshable](fo_storing-data-objects.html) are in different databases. Otherwise, the business server will attempt to perform a closing transaction at the source than at which a transaction is opened, which will lead to an error." %} 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

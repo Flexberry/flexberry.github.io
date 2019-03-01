@@ -1,28 +1,30 @@
----
-title: Builds setting
-keywords: ember
-sidebar: flexberry-gis_sidebar
-toc: true
-permalink: en/fg_content-builds.html
-folder: products/flexberry-gis/
-lang: en
----
+--- 
+title: Device builds 
+keywords: ember 
+sidebar: flexberry-gis_sidebar 
+toc: true 
+permalink: en/fg_content-builds.html 
+folder: products/flexberry-gis/ 
+lang: en 
+autotranslated: true 
+hash: 052957125a69b50f6d4fe1e6dae6485f0c9ef814f8802a688cfa4554d61c2f3a 
+--- 
 
-## Общая информация
+## General information 
 
-У ГИС аддонах билды настроины на GitHub-е, так что  приложение билдятся трависом и деплоится на ветку gh-pages.
+Have GIS add-ons builds nastroeny on GitHub-e, so that the application bildade by Travis and diploidy to branch gh-pages. 
 
-## Алгоритм настройки билдов
+## the Algorithm setup builds 
 
-1.Надо добавить в **config** своего приложиния [следующий код](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/config/environment.js#L165):
+1.It is necessary to add in the **config** your prilozheniya [next cod](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/config/environment.js#L165): 
 
 ```js
-// Change paths to application assets if build has been started with the following parameters:
-// ember build --gh-pages --brunch=<brunch-to-publish-on-gh-pages>.
+// Change paths to application assets if the build has been started with the following parameters: 
+// ember build --gh-pages --brunch=<brunch-to-publish-on-gh-pages>. 
 if (process.argv.indexOf('--gh-pages') >= 0) {
   var brunch;
 
-  // Retrieve brunch name from process arguments.
+  // Retrieve name from brunch process arguments. 
   process.argv.forEach(function(value, index) {
     if (value.indexOf('--brunch=') >=0) {
       brunch=value.split('=')[1];
@@ -30,13 +32,13 @@ if (process.argv.indexOf('--gh-pages') >= 0) {
     }
   });
 
-  // Change base URL to force paths to application assets be relative.
+  // Change base URL to force application assets paths to be relative. 
   ENV.baseURL = '/' + ENV.repositoryName + '/' + brunch + '/';
   ENV.locationType = 'none';
 }
-```
+``` 
 
-2.Добавить в проект файл `.travis.yml` со [следующим содержанием](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/.travis.yml).
+2.To add to the project file `.travis.yml` with [next content](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/.travis.yml). 
 
 ```yaml
 ---
@@ -75,20 +77,24 @@ script:
 
 after_success:
   - test $EMBER_TRY_SCENARIO == "default" && test $TRAVIS_PULL_REQUEST == "false" && ember build --gh-pages --brunch=$TRAVIS_BRANCH && bash scripts/deploy-to-gh-pages.sh
-```
+``` 
 
-3.Добавить в проект script `deploy-to-gh-pages.sh` cо [следующим содержанием](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/scripts/deploy-to-gh-pages.sh)
-В script-е укажите свой проект в строчках [7](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/scripts/deploy-to-gh-pages.sh#L7) и [83](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/scripts/deploy-to-gh-pages.sh#L83)
+3.To add script `deploy-to-gh-pages.sh` with [next soderjaniem](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/scripts/deploy-to-gh-pages.sh) 
+In script-e specify my project in the lines [7](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/scripts/deploy-to-gh-pages.sh#L7) and [83](https://github.com/Flexberry/ember-flexberry-gis-test-stand/blob/develop/scripts/deploy-to-gh-pages.sh#L83) 
 
-4.Создать ветку на GitHub-e `-gh-pages`.
+4.To create a branch on GitHub-e `-gh-pages`. 
 
-5.Из [ember-flexberry-gis-test-stand](https://github.com/Flexberry/ember-flexberry-gis-test-stand/tree/gh-pages) скопировать в созданную ветку `-gh-pages` файлы:
+5.From [ember-flexberry-gis-test-stand](https://github.com/Flexberry/ember-flexberry-gis-test-stand/tree/gh-pages) to copy to the new branch `-gh-pages` files: 
 
-* `.gitignore`
-* `index.hbs` (в файле нужно именить 12 строчку)
-* папку `images`
-* папку `stylesheets`
+* `.gitignore` 
+* `index.hbs` (you need to imanity 12th place) 
+* folder `images` 
+* folder `stylesheets` 
 
-6.Включить билд на [Travis](https://travis-ci.org/).
+6.Enable build on [Travis](https://travis-ci.org/). 
 
-7.Добавить в настройку билда `gh-token`.
+7.Be added to the configuration of the build `gh-token`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

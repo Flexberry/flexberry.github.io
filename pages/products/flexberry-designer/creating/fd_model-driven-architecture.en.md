@@ -1,36 +1,42 @@
----
-title: Описание методологии MDD
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, модели, моделирование
-summary: Преимущества подхода модеkирования и особенности его реализации на Flexberry
-toc: true
-permalink: en/fd_model-driven-architecture.html
-lang: en
----
+--- 
+title: a description of the methodology MDD 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, model, modeling 
+summary: the Advantages of the modeling approach and especially its implementation on Flexberry 
+toc: true 
+permalink: en/fd_model-driven-architecture.html 
+lang: en 
+autotranslated: true 
+hash: 2280d339749e90491afba5b2752b42505bbf37f5f717e38ede318727f9baeb75 
+--- 
 
-## Разработка, управляемая моделями
+## Development-controlled models 
 
-Разработка, управляемая моделями, (англ. model-driven development, [MDD](http://ru.wikipedia.org/wiki/Model_Driven_Architecture)) — это стиль разработки программного обеспечения, при использовании которого модели становятся основными артефактами разработки, из которых генерируется исполняемый код и другие артефакты.
+Development-driven models, (eng. model-driven development [MDD](http://ru.wikipedia.org/wiki/Model_Driven_Architecture)) is a style of software development in which models become the main artifacts of the development that generate executable code, and other artifacts. 
 
-Для конструирования приложения необходимо создать формально точную модель, из которой потом может быть автоматически сгенерирован исполняемый код.
+For construction applications it is necessary to create a formally precise model, which can then be automatically generated executable code. 
 
-По стандартам Object Management Group ([OMG](http://ru.wikipedia.org/wiki/Object_Management_Group)) создание приложения состоит из следующих шагов:
-1. Сначала разрабатывается модель предметной области проектируемого приложения, полностью независимая от имплементирующей технологии.
-2. Затем она трансформируется специальным инструментом в платформо-зависимую модель.
-3. Наконец, она переводится в исходный код на соответствующем языке программирования.
+By the standards of the Object Management Group ([OMG](http://ru.wikipedia.org/wiki/Object_Management_Group)) create application consists of the following steps: 
+1. First developed the domain model of the applications that are fully independent of the implementing technology. 
+2. Then she transformered special tool in the platform-specific model. 
+3. Finally, it is translated to source code in the appropriate programming language. 
 
-## Преимущества подхода
+## advantages of the approach 
 
-Данный подход позволяет:
-1. Ускорить вывод минимального жизнеспособного продукта ([Minimum Viable Product](http://en.wikipedia.org/wiki/Minimum_viable_product)) на рынок.
-2. Взять на себя рутину программирования: генерация каркаса приложения, модели классов, базы данных и прочее.
-3. Решить все разногласия с заказчиком на этапе моделирования.
+This approach allows you to: 
+1. To speed up the withdrawal the minimum viable product ([Minimum Viable Product](http://en.wikipedia.org/wiki/Minimum_viable_product)) on the market. 
+2. To undertake routine programming: generation application framework, model classes, database, and so on. 
+3. To resolve all disputes with the customer at the modeling stage. 
 
-## Особенности разработки на Flexberry
+## features of the development at Flexberry 
 
-Flexberry использует в своей основе вышеозначенный подход, однако, реализация имеет свои уникальные особенности:
+Flexberry uses based on the above approach, however, implementation has its own unique features: 
 
-1. Модель сразу разрабатывается под конкретную платформу, нет нужды строить платформо-независимую модель.
-2. В модель закладывается каркас бизнес-логики, реализуется она путем доработки исполняемого кода приложения.
-3. Существует возможность подключения к приложению готовых функциональных модулей.
+1. Once the model is developed for a specific platform, there is no need to build a platform-independent model. 
+2. The model lays the framework of the business logic, implement it by adapting the executable application code. 
+3. There is a possibility of the connection of ready functional modules. 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

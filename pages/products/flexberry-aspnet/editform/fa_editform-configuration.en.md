@@ -1,19 +1,21 @@
----
-title: Конфигурирование Web-формы редактирования
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_editform-configuration.html
-lang: en
----
+--- 
+title: configuring the Web edit form 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_editform-configuration.html 
+lang: en 
+autotranslated: true 
+hash: 0cfba453ea78bcb030689aff1459fa5ed8378addec06d60375226efeb986e729 
+--- 
 
-## Настройки и jquery.icsEditForm.js
+## Settings and jquery.icsEditForm.js 
 
-Настройки формы редактирования хранятся в javascript-plugin'e, находящемся в файле jquery.icsEditForm.js.
+Settings edit form stored in a javascript plugin'e that are in the file jquery.icsEditForm.js. 
 
-По умолчанию они выглядят следующим образом:
+By default, they are as follows: 
 
-```csharp
+```javascript
 configuration: {
             trackChanges: true,
             trackIncludeSelector: 'input,textarea,select',
@@ -29,7 +31,7 @@ configuration: {
             lockTimeout: '',
             pinToolbar: true,
             pinToolbarSelector: '.ics-sticky',
-            // Сохранять ли позицию при горизонтальной прокрутке окна, false - по соображениям производительности
+            // Preserve the position in the horizontal scrolling window, false for performance reasons 
             pinToolbarStickToLeftBorder: false,
             showValidationErrorMessage: false,
             saveWaitingWindow: {
@@ -51,20 +53,20 @@ configuration: {
                 objectBlockedByUser: 'The object is blocked by user ',
                 objectBlockedByUnknown: 'The object is blocked',
                 openReadOnly: 'Do you want to open it only for reading?',
-                validationErrorMessage: 'Not all values ​​are correctly filled',
+                validationErrorMessage: 'Not all values are correctly filled',
                 okButton: 'OK',
                 cancelButton: 'Cancel'
             }
         }
-```
+``` 
 
-Чтобы у прикладного разработчика была возможность повлиять на эти настройки с серверной части приложения, было создано свойство базовой формы редактирования `PluginInitSettings`.
+To an application developer was able to affect these settings with the server side, you create a property of the base form editing `PluginInitSettings`. 
 
-## PluginInitSettings
+## PluginInitSettings 
 
-У свойства `PluginInitSettings` отсутствует Setter, однако, оно объявлено как `virtual`, следовательно, его можно переопределить на нужной форме.
+The property `PluginInitSettings` is no Setter, but it is declared as `virtual`, therefore, it is possible to override the desired form. 
 
-Для этого необходимо на форме, наследующейся от `BaseEditForm`, написать следующий блок:
+You have to form that are inherited from `BaseEditForm`, write the following block: 
 
 ```csharp
 public override object PluginInitSettings
@@ -77,13 +79,17 @@ public override object PluginInitSettings
                 saveAndCloseBtnSelector: "input[id$=\"SaveAndCloseBtn\"]",
                 messages = new 
                     {
-                        okButton = "Хорошо"
+                        okButton = "Good"
                     }        
             };
     }
 }
-```
+``` 
 
-Указав переопределяемые свойства.
+Putting the overridable properties. 
 
-В примере, описанном выше, переопределяются selector'ы, отвечающие за поиск кнопок "Сохранить" и "Сохранить и закрыть" на форме редактирования для применения к ним скриптов сохранения данных. Также переопределяется надпись на кнопке OK во всплывающем окне подтверждения какого-либо действия.
+In the example described above are overridden selector's responsible for the search buttons "Save" and "Save and close" on the edit form for the application of scripts saving the data. Also overrides the inscription on the OK button in the confirmation pop-up window of some action. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

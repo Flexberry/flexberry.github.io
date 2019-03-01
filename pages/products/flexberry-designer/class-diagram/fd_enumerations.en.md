@@ -1,53 +1,55 @@
----
-title: Перечислимые типы данных (классы со стереотипом enumeration)
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, перечисление, выпадающий список, emnumeration, enum, стереотип, генерация, пример, заголовки, dropdown
-summary: Особенности генерации перечислимого типа, генерация заголовков для перечислимого типа, пример генерации перечисления
-toc: true
-permalink: en/fd_enumerations.html
-lang: en
----
+--- 
+title: Enumerated data types (classes with stereotype enumeration) 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, an enumeration, a drop-down list, emnumeration, enum, stereotype, generation, example, headings, dropdown 
+summary: peculiarities of generation of an enumerated type, generating headers for an enumerated type, an example of generating the listing 
+toc: true 
+permalink: en/fd_enumerations.html 
+lang: en 
+autotranslated: true 
+hash: 7ed55c22d5ac031de8a4611f3ef31befcb05f893247d21d3e3299dbf2c40de32 
+--- 
 
-`Enumeration` - [стереотип](fd_key-concepts.html) UML-класса, обозначающий перечислимый тип.
+`Enumeration` - [stereotype](fd_key-concepts.html) the UML class representing the enum type. 
 
-Атрибуты UML-класса являются значениями перечислимого типа.
+The attributes of a UML class are values of an enumerated type. 
 
-![](/images/pages/products/flexberry-designer/class-diagram/enumeration.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/enumeration.jpg) 
 
-## Дополнительно редактируемые свойства
+## Additional editable properties 
 
-Окно редактирования свойств перечислимого типа выглядит следующим образом (две закладки):
+The window edit properties of enum type looks like the following (two tabs): 
 
-Закладка `Класс`
+Bookmark `Класс` 
 
-![](/images/pages/products/flexberry-designer/class-diagram/enumpropp1.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/enumpropp1.jpg) 
 
-* `Name` - имя перечислимого типа, то же, что и отображается непосредственно на `UML`-классе. 
-* `Description` -  при необходимости, некоторое подробное описание, для повышения информативности модели в [Flexberry Designer](fd_landing_page.html), генерируется в код на `.Net`-языке как `DocComment`; 
-* `OnlyShowSelectedValue` - не используется (зарезервировано для будущих версий); 
-* `Packet, NamespacePostfix` - позволяют настроить сборку и пространство имен, в которое должен генерироваться тип, см. [Расположение сборок после генерации кода](fo_location-assembly.html).
+* `Name` - the name of the enum type, what is displayed directly on `UML` class. 
+* `Description` - if necessary, a detailed description, to enhance the information content of the model in [Flexberry Designer](fd_landing_page.html) is generated in the code on the `.Net`-language `DocComment`; 
+* `OnlyShowSelectedValue` - not used (reserved for future versions); 
+* `Packet, NamespacePostfix` - allow to set the Assembly and namespace in which to generate the type, see [assemblies Location after code generation](fo_location-assembly.html). 
 
-Закладка `Возможные значения`
+Bookmark `Возможные значения` 
 
-![](/images/pages/products/flexberry-designer/class-diagram/enumpropp2.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/enumpropp2.jpg) 
 
-Эта страница предназначена для настройки свойств значений перечислимого типа. Для каждого свойства:
+Use this page to configure the properties values of an enumerated type. For each property: 
 
-* `Name` - имя значения перечислимого типа, оно же отображается непосредственно на UML-классе. 
-* `Description` - ри необходимости, некоторое подробное описание значения, для повышения информативности модели в [Flexberry Designer](fd_landing_page.html), генерируется в код на `.Net`-языке как `DocComment`; 
-* `Caption` - позволяет указать значение, информативное для пользователя (используется в пользовательском интерфейсе); 
-* `DefaultValue` - [целое число для значения перечислимого типа](http://msdn.microsoft.com/en-us/library/sbbt4032%28v=vs.71%29.aspx). 
+* `Name` - value name of an enumerated type, it is displayed directly on a UML class. 
+* `Description` - ri necessary, a detailed description of the values, to enhance the information content of the model in [Flexberry Designer](fd_landing_page.html) is generated in the code on the `.Net`-language `DocComment`; 
+* `Caption` - allows you to specify a value that is informative for the user (used in the UI); 
+* `DefaultValue` - [integer value to an enumerated type](http://msdn.microsoft.com/en-us/library/sbbt4032(v=vs.71).aspx). 
 
-## Что генерируется по описанию перечислимого типа
+## That is generated with the description of the enum type 
 
-Что генерируется | Генерация в SQL DDL | Генерация в .Net-язык
-:--------------|:----------------------------|:----------------------------------------------
-Имя UML-класса | | Имя .Net-типа (перечислимый тип)
-Имя атрибута UML-класса | Выбирается самое длинное имя из всех в перечислимом типе, считается число символов, поле в таблице объявляется типа VARCHAR(число символов).Далее, сервисы данных сохраняют значения перечислимого типа как строковые константы, соответствующие именам | Имя константы в перечислимом типе
-Свойство Caption атрибута UML-класса | `Значения перечислимого типа хранятся в БД значениями заголовков` | Генерируется .Net-атрибут [EnumCaption](fo_function-list.html) (`Namespace: ICSSoft.STORMNET Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll) `)
-Свойство `DefaultValue` атрибута UML-класса | | [Целое число для значения перечислимого типа](http://msdn.microsoft.com/en-us/library/sbbt4032%28v=vs.71%29.aspx) (если не указано иначе, то при редактировании поля перечислимого типа по умолчанию будет отображён элемент с минимальным `DefaultValue`, а в выпадающем списке элементы перечислимого типа будут отображаться в порядке возрастания их `DefaultValue`)
+Generated | Generate SQL DDL Generation .Net language 
+:--------------|:----------------------------|:---------------------------------------------- 
+The name of the UML class | | Name .Net-type (enumeration) 
+The name of the attribute UML class | Select the longest name of all in the enum type is considered to be the number of characters field in the table is declared of VARCHAR type(number of characters).Further, data services store the values of an enumerated type as a string constant matching the name | the name of the constant in the enum type 
+The Caption attribute of a UML class | `Значения enum type stored in the database with the values заголовков` | Generated .Net-attribute [EnumCaption](fo_function-list.html) (`Namespace: ICSSoft.STORMNET Assembly: ICSSoft.STORMNET.DataObject (in ICSSoft.STORMNET.DataObject.dll) `) 
+Property `DefaultValue` attribute of a UML class | | [an Integer for the value of an enumerated type](http://msdn.microsoft.com/en-us/library/sbbt4032(v=vs.71).aspx) (if not stated otherwise, when editing the fields of an enum type, the default item is displayed with minimal `DefaultValue`, and in the drop down list the elements of an enumerated type will be displayed in ascending order of their `DefaultValue`) 
 
-Пример сгенерированного в C# кода перечислимого типа:
+Example of the generated code in C# enum type: 
 
 ```csharp
 public enum СостояниеОшибки
@@ -63,49 +65,53 @@ public enum СостояниеОшибки
     BetaTesting, 
     Исправлена,
 }
-```
+``` 
 
-## Отображение значений перечислимого типа
+## Display values of an enumerated type 
 
-Программист может настроить отображение значений перечислимого типа в виде одного выбираемого (подобно `ComboBox`), либо нескольких помечаемых (подобно `RadioButton`). Это делается указанием атрибута `OnlyShowSelectedValueAttribute`, указываемого для перечислимого типа.
+The programmer can customize the display of values of an enumerated type in a single select (like `ComboBox`) or mark few (like `RadioButton`). This is done by specifying an attribute `OnlyShowSelectedValueAttribute` specified for an enumerated type. 
 
-## Заголовки значений перечислимого типа
+## Headers of values of an enumerated type 
 
-Часто бывает удобным, чтобы значения перечислимых типов имели некоторый заголовок, понятный пользователю. Этот заголовок приписывается атрибутом `Caption` непосредственно значениям перечислимого типа.
+It is often convenient to the values of enumerated types had some title that is understandable to the user. This title is attributed directly `Caption` attribute values of an enumerated type. 
 
-Пример:
+Example: 
 ```
 
 public enum AccessModifier
 	{
-		[Caption("+")]
+		[Caption("")]
 		Public,
 		[Caption("-")]
 		Private,
 		[Caption("#")]
 		Protected
 	}
-```
+``` 
 
-`Значения перечислимого типа хранятся в БД значениями заголовков.`
+`Значения enum type stored in the database with the header values.` 
 
-### Пустые значения
+### Empty values 
 
-Чтобы добавить пустое значение в перечисление (пустую строку), необходимо создать новый элемент и в его `Caption` поставить знак "тильда" (~):
+To add an empty value in the enumeration (empty string), you must create a new element and in his `Caption` to put a "tilde" (~): 
 
-![](/images/pages/products/flexberry-designer/class-diagram/enum-empty.png)
+![](/images/pages/products/flexberry-designer/class-diagram/enum-empty.png) 
 
-В результате, в коде появится следующая запись:
+As a result, in the code appears the following entry: 
 
 ```csharp
 [Caption(""))
 Пусто,
-```
+``` 
 
-### Работа с заголовками
+### with headers 
 
-Программист может конвертировать значения от `Caption` к перечислимому типу и обратно, вызовом методов статического класса  `ICSSoft.STORMNET.EnumCaption`:
+The programmer can convert values from `Caption` an enumerated type and back, by calling methods of static class `ICSSoft.STORMNET.EnumCaption`: 
 
-* `EnumCaption.GetCaptionFor(object value)`
-* `EnumCaption.GetValueFor(string caption, Type enumType)`
-* `EnumCaption.TryGetValueFor<TEnum>(string caption, out TEnum enumValue)`
+* `EnumCaption.GetCaptionFor(object value)` 
+* `EnumCaption.GetValueFor(string caption, Type enumType)` 
+* `EnumCaption.TryGetValueFor<TEnum>(string caption, out TEnum enumValue)` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

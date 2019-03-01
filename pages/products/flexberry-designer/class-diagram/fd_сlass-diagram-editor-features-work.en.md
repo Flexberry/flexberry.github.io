@@ -1,20 +1,26 @@
----
-title: Особенности работы с редактором диаграммы классов
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, диаграмма, диаграмма классов, особенности диаграммы классов, ассоциация, storage
-summary: Переименование классов, изменение роли и прописывание storage у ассоциации
-toc: true
-permalink: en/fd_class-diagram-editor-features-work.html
-lang: en
----
+--- 
+title: Features of the editor class diagram 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, diagram, class diagram, features of class diagrams, Association, storage 
+summary: Renaming classes, changing roles and assigning storage Association 
+toc: true 
+permalink: en/fd_class-diagram-editor-features-work.html 
+lang: en 
+autotranslated: true 
+hash: 1b204dacc3c12ac647646d5026494b05805b89642995e11d6fa5697328e7f593 
+--- 
 
-Редактор [диаграммы классов](fd_class-diagram.html) в Flexberry Designer имеет ряд особенностей:
+Editor [class diagram](fd_class-diagram.html) in Flexberry Designer has several features: 
 
-* **Переименование классов**
-Для того чтобы **переименовать класс** на диаграмме следует нажать на него правой кнопкой мыши и выбрать **пункт выпадающего меню "Переименовать"**. Будет предложено ввести новое имя класса.  
-Если изменить имя класса непосредственно на диаграмме, то создастся новый класс с указанным именем, а старый будет удален. Как следствие, удалятся все атрибуты и представления старого класса.
-* **Изменение роли у ассоциации**
-Если изменить роль у ассоциации непосредственно на диаграмме (не поднимая форму редактирования ассоциации), то будет создана новая ассоциация. Все атрибуты старой ассоциации будут удалены (например, `Storage`, `Description`).  
-Если необходимо **изменить роль ассоциации, сохраняя все старые атрибуты**, то следует нажать правой кнопкой мыши по ассоциации и выбрать **пункт выпадающего меню "Редактировать свойства"** и редактировать свойства ассоциации в появившемся окне.
-* **Автоматическое прописывание Storage у ассоциации**
-При добавлении новой ассоциации, ее свойство `Storage` прописывается автоматически в соответствие с заданной ролью, если роль не задана, то прописывается имя стартового класса. 
+* **Rename classes** 
+To **rename the class** figure you should click at it with the right mouse button and choose **drop-down menu item "Rename"**. You will be prompted to enter a new class name. 
+If you change the class name directly in the diagram, it will create a new class with the specified name, and the old one will be deleted. As a consequence, removed all the attributes and views of the old class. 
+* **The changing role of the Association** 
+If you change the role of the Association directly in the diagram (not to bring up edit form Association), you will create a new Association. All the attributes of the old Association will be removed (for example, `Storage`, `Description`). 
+If you want **to change the role of the Association, keeping all the old attributes**, you should click the right mouse button on the Association and choose **drop-down menu item "Edit properties"** and edit properties of the Association in the window that appears. 
+* **Automatic prescription Storage Association** 
+When adding a new Association, its property `Storage` prescribed automatically in accordance with a given role if the role is not specified, the prescribed name of the start class. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

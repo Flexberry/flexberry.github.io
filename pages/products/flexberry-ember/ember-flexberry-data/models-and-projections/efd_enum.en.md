@@ -1,43 +1,49 @@
----
-title: Перечисления в ember-flexberry-data
-sidebar: ember-flexberry-data_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/efd_enum.html
-folder: products/ember-flexberry-data/models-and-projections/
-lang: en
-summary: Описаны основные особенности работы с перечислимыми типами в ember-flexberry-data.
----
+--- 
+title: Enumerations in ember-flexberry-data 
+sidebar: ember-flexberry-data_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/efd_enum.html 
+folder: products/ember-flexberry-data/models-and-projections/ 
+lang: en 
+autotranslated: true 
+hash: 636079a1cc7a0af796539e42d9b39dc979aee88b88ff5520633f1f0f18276754 
+summary: Describes the basic features of working with enum types in ember-flexberry-data. 
+--- 
 
-## Работа с перечислениями
+## Working with enumerations 
 
-Если у объекта есть свойство типа перечисление, то при задании его в [модели](efd_model.html) требуется сделать следующее:
+If the object has a property of type enum, it in the [models](efd_model.html) is required to do the following: 
 
-Определить трансформацию для конкретного типа (определить, каким образом клиент будет сериализовать и десериализовать соответствующие значения).
+To determine the transformation for a specific type (to determine how the client will serialize and deserialize the relevant values). 
 
-Для серверного типа, являющегося перечислением, NewPlatform.Someproject.Gender в папке transforms следует создать файл с именем `new-platform-someproject-gender.js`.
+For the server type is an enumeration, NewPlatform.Someproject.Gender in the transforms folder, you should create a file with the name `new-platform-someproject-gender.js`. 
 
-Создаваемый класс понаследовать от готового варианта задания перечислимого типа "enum-string", а потом просто в свойстве "values" указать допустимые значения для перечислимого типа (можно задавать как с помощью массива, так и с помощью объекта).
+Generated class to posledovat from the finished version of the job of an enumerated type "enum-string", and then just in property "values" to specify valid values for an enumerated type (you can specify as an array, and with the help of the object). 
 
 ```javascript
 import EnumTransform from 'ember-flexberry/transforms/enum-string';
 
 export default EnumTransform.extend({
-  values: ['Male', 'Female', 'Unknown'] // Допустимые значения для перечислимого типа.
+  values: ['Male', 'Female', 'Unknown'] // Valid values for an enumerated type. 
 });
-```
+``` 
 
-## enum-string и enum-number
+## enum-string and enum-number 
 
-В `ember-flexbery-data` доступны два базовых класса для перечислений.
+In `ember-flexbery-data` available in two base class for enumerations. 
 
-* `enum-string` - работает со значениями, которые передаются с сервера в виде строк.
-* `enum-number` - работает со значениями, которые передаются с сервера в виде чисел.
+* `enum-string` - working with values passed from the server as strings. 
+* `enum-number` - works with values that are transmitted from the server in the form of numbers. 
 
-Например, если задавать допустимые значения любым из указанных ниже способов, то `enum-string` будет ожидать с сервера и отправлять на сервер значения 'Пусто', 'Первая', 'Вторая', а `enum-number` - числа 0, 1, 2 для задания в виде массива и 1, 2, 3 для задания в виде объекта  (при этом интерпретируя их на клиенте как 'Пусто', 'Первая', 'Вторая').
+For example, if you specify valid values for any of the following methods, `enum-string` would expect from the server and send it to the server, the value 'Empty', 'First', 'Second', and `enum-number` the numbers 0, 1, 2 to set in an array and 1, 2, 3 to specify the type of the object (in this case interpreting it on the client as 'Empty', 'First', 'Second'). 
 
 ```javascript
-['Пусто', 'Первая', 'Вторая']; // Задание значений в виде массива
+['Пусто', 'Первая', 'Вторая']; // Set values in an array 
 
-{ Пусто: 1, Первая: 2, Вторая: 3 }; // Задание значений в виде объекта
-```
+{ Пусто: 1, Первая: 2, Вторая: 3 }; // Set values in an object 
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,54 +1,56 @@
----
-title: Component flexberry-file
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_file.html
-lang: en
-summary: Description, settings of the address of loading and appearance, binding of components
----
+--- 
+title: Component flexberry-file 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_file.html 
+lang: en 
+autotranslated: true 
+hash: f2605dc3a494d7b6dc187d31f432d09511f009441d2b044763ed83df3e1a802d 
+summary: the Description, setting the load address and appearance, binding components 
+--- 
 
-## Описание
+## Description 
 
-Компонент `flexberry-file` предоставляет несколько возможностей:
+Component `flexberry-file` provides several features: 
 
-* Возможность выбора пользователем какого-либо файла на клиентском устройстве;
-* Возможность загрузки этого файла на сервер;
-* Возможность скачивания ранее загруженного файла с сервера, с последующим сохранением на клиентском устройстве;
-* Для файлов изображений также имеется возможность их предпросмотра;
+* Option for user to any file on the client устройстве; 
+* Ability to upload that file on сервер; 
+* The ability to download previously uploaded file from the server with a subsequent saving on the client устройстве; 
+* Image files are also available предпросмотра; 
 
-Общий вид компонента, в случае, если текущая тема оформления "BlueSky":
+General view of the component, if the current theme "BlueSky": 
 
-![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file.png) 
 
-Компонент реализован под средства для работы с файлами имеющиеся в распоряжении OData-сервиса (читайте о них в статье ["Особенности работы с файлами через OData-сервис"](efd_work-files.html)).
-Далее будем считать, что средства работы с файлами в OData-сервисе уже сконфигурированы, и файловый контроллер доступен по адресу `<Адрес узла, на котором развернут OData-сервис>/api/File`.
+The component is implemented under the tools for working with the files available to the OData service (as you can read in the article ["working with files using the OData-service"](efd_work-files.html)). 
+Further, we assume that the means of working with files in the OData service is already configured, and the file controller are available at `<Address of the host where the deployed OData service>/api/File`. 
 
-### Список свойств
+### a List of properties 
 
-| Название свойства | Краткое описание |
-|:-------------------:|:------------------|
-| `uploadUrl` | Адрес для загрузки файлов на сервер|
-| `maxUploadFileSize` | Максимальный возможноы размер загружаемого файла|
-| `showPreview` | Флаг, показывающий нужно ли отображать блок предпросмотра|
-| `showUploadButton` | Флаг, показывающий нужно ли отображать отдельную кнопку загрузки файла на сервер|
-| `showDownloadButton` | Флаг, показывающий нужно ли отображать отдельную кнопку скачивания файла с сервера|
-| `showModalDialogOnUploadError` | Флаг, показывающий нужно ли показывать модальнй диалог при ошибке загрузки файла|
-| `showModalDialogOnDownloadError` | Флаг, показывающий нужно ли показывать модальнй диалог при ошибке выгрузки файла|
-| `openFileInNewWindowInsteadOfLoading` | Флаг, показывающий нужно ли откывать файл в новой вкладке браузера после скачивания|
+| Property name | Brief description | 
+|:-------------------:|:------------------| 
+| `uploadUrl` | Address to upload files to server| 
+| `maxUploadFileSize` | vozmozhnoy Maximum file upload size| 
+| `showPreview` | a Flag that indicates whether to show the block preview| 
+| `showUploadButton` | Flag indicating whether to display a separate button to load file on server| 
+| `showDownloadButton` | Flag indicating whether to display a separate button to download the file from the server| 
+| `showModalDialogOnUploadError` | a Flag that indicates whether to show modelini dialog on error: file| 
+| `showModalDialogOnDownloadError` | a Flag that indicates whether to show modelini dialogue when there is an error loading file| 
+| `openFileInNewWindowInsteadOfloading` | Flag indicating whether to attivati file in a new browser tab, after downloading| 
 
-## Настройка адреса для загрузки файлов на сервер
+## address setup to upload files to the server 
 
-Чтобы компонент `flexberry-file` мог загружать файлы на сервер, ему нужно, как минимум, знать URL для загрузки, под этот URL в компоненте предусмотрено свойство `uploadUrl`, в котором должен быть указан адрес файлового контроллера.
-Свойство `uploadUrl` можно сконфигурировать двумя способами:
-* Либо прямо в `hbs`-шаблоне:
-  ```hbs
+To component `flexberry-file` could upload files to the server, he should at least know the URL for downloading under this URL in the component provided by the property `uploadUrl`, which must be specified address of the file controller. 
+Property `uploadUrl` can be configured in two ways: 
+* Either directly in `hbs`-template: 
+```hbs
   {% raw %}{{flexberry-file
-    uploadUrl="<Адрес узла, на котором развернут OData-сервис>/api/File"
+    uploadUrl="<The address of the node on which the deployed OData service>/api/File"
   }}{% endraw %}
-  ```
-* Либо в конфигурационном файле приложения `config/environment.js` (чтобы не указывать его каждый раз, когда используем компонент):
-  ```javascript
+  ``` 
+* Either in the application's configuration file `config/environment.js` (not to specify it every time we use the component): 
+```javascript
   {
     ...
     APP: {
@@ -62,97 +64,101 @@ summary: Description, settings of the address of loading and appearance, binding
     }
     ...
   }
-  ```
+  ``` 
 
-## Файловое свойство в ember-моделях и привязка компонента к нему
+## File property in ember-models and component binding to it 
 
-Когда мы запрашиваем у OData-сервиса объект данных, содержащий в себе какое-либо файловое свойство, в качестве значения этого свойства OData-сервис всегда присылает не сам файл (т.к. вычитка объектов данных вместе с файлами длилась бы очень долго), а только сериализованное метаописание файла, которое имеет следующий вид:
+When we request OData service data object, containing any file type property as the value of this property OData service always sends not the file itself (since proofreading of the data objects together with the files that would have lasted very long), and only the serialized meta description of the file, which has the following form: 
 ```javascript
 {
-  // URL для скачивания файла.
-  "fileUrl":"<Адрес узла, на котором развернут OData-сервис>/api/File?...",
+  // URL for downloading the file. 
+  "fileUrl":"<The address of the node on which the deployed OData service>/api/File?...",
 
-  // URL для скачивания preview (если файл это изображение).
-  "previewUrl":"<Адрес узла, на котором развернут OData-сервис>/api/File?...&getPreview=true",
+  // URL for download of a preview (if the file is an image). 
+  "previewUrl":"<The address of the node on which the deployed OData service>/api/File?...&getPreview=true",
 
-  // Наименование файла.
+  // The file name. 
   "fileName":"image.png",
 
-  // Размер файла в байтах.
+  // File size in bytes. 
   "fileSize": 12345,
 
-  // MIME-тип файла.
+  // The MIME type of the file. 
   "fileMimeType": "image/png"
 }
-```
+``` 
 
-Т.к. метаописание приходит сериализованным, т.е. строкой, то с точки зрения ember-а оно совершенно ничем не отличается от любого другого строкового свойства типа `string`, однако в аддоне [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/transforms/file.js) под него все-таки сделана специальная трансформация `file`, для того чтобы файловые свойства можно было отличать от остальных (таким образом, например, компонент `flexberyy-groupedit` понимает, что для работы со свойством такого типа нужно встраивать компонент `flexberry-file`, а не просто `flexberry-textbox`).
-Поэтому в ember-моделях файловые свойства описываются следующим образом:
+Because the meta description comes serialized, i.e. a string, then from the point of view ember-and it is absolutely no different from any other string type properties `string`, but in the addon [ember-flexberry-data](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/transforms/file.js) it has made a special transformation `file` to file properties can be distinguished from the others (thus, for example, a component `flexberyy-groupedit` understands that to work with a property of this type need to embed the component `flexberry-file`, not just `flexberry-textbox`). 
+Therefore, in ember-models file properties are described as follows: 
 ```javascript
 export default BaseModel.extend({
   myFileProperty: DS.attr('file')
 });
-```
+``` 
 
-Компонент `flexberry-file` принимает это метаописание в качестве значения свойства `value`, т.е. если метаописание файла находится в модели в свойстве `myFileProperty`, то привязка будет выглядеть следующим образом:
+Component `flexberry-file` accepts this meta description as a property value `value`, i.e. if the meta-description file is located in the model property `myFileProperty`, the binding will look as follows: 
 ```hbs
 {% raw %}{{flexberry-file
   relatedModel=model
   value=model.myFileProperty
 }}{% endraw %}
-```
+``` 
 
-Свойство `relatedModel` так же необходимо указывать, оно должно ссылаться на модель, в которой содержится файловое свойство, чтобы при сохранении модели компонент `flexberry-file` смог сначала загрузить на сервер выбранный пользователем файл (если такой имеется).
+Property `relatedModel` it is also necessary to specify it must refer to a model that contains a property file, so that when you save the model component `flexberry-file` could first upload the user selected file (if available). 
 
-## Настройки внешнего вида
+## appearance Settings 
 
-Компонент flexberry-file содержит несколько настроек позволяющих настраивать его внешний вид:
-* `showUploadButton` - флаг, показывающий нужно ли отображать отдельную кнопку загрузки файла на сервер или нет (по умолчанию имеет значение `false` т.к. загрузка файла происходит при сохранении модели из свойства `relatedModel` и потребности в отдельной кнопке - нет).
+Component flexberry-file contains several settings allow you to customize its appearance: 
+* `showUploadButton` - flag indicating whether to display a separate button to load the file to the server or not (defaults to the value `false` because the file download occurs when you save a model from properties `relatedModel` and the need for a separate button). 
 
-  Внешний вид с включенной кнопкой загрузки:
+Appearance included with the download button: 
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-upload-button-true.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-upload-button-true.png) 
 
-* `showDownloadButton` - флаг, показывающий нужно ли отображать отдельную кнопку скачивания файла с сервера или нет (по умолчанию имеет значение `true`).
+* `showDownloadButton` - flag indicating whether to display a separate button to download the file from the server or not (default `true`). 
 
-  Внешний вид с выключенной кнопкой скачивания:
+Appearance off click download: 
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-download-button-false.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-download-button-false.png) 
 
-* `readonly` - флаг, показывающий находится ли компонент в режиме только для чтения (по умолчанию имеет значение `false`). В этом режиме скрыты кнопки выбора файла, удаления файла, загрузки файла на сервер, и нет возможности изменить или удалить файл, есть только возможность его скачать.
+* `readonly` - a flag that indicates whether the component is in read-only mode (defaults to value `false`). In this mode, hidden buttons, file selection, file deletion, file upload to the server, and there is no possibility to change or delete a file, there is only the possibility to download it. 
 
-  Внешний вид в режиме только для чтения:
+Appearance in read-only mode: 
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-readonly-true.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-readonly to true.png) 
 
-* `showPreview` - флаг, показывающий нужно ли отображать блок предпросмотра (по умолчанию имеет значение `false`, настройка актуальна для файлов изображений, в случае с файлами других типов блок предпросмотра будет пустым).
+* `showPreview` - flag indicating whether to display a block of thumbnails (defaults to the value `false`, the setting is relevant for image files, in the case of other file types block preview will be empty). 
 
-  Внешний вид с включенным блоком предпросмотра:
+Appearance with the included block preview: 
 
-  ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-preview-true.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-show-preview-true.png) 
 
-  Если нажать блок предпросмтора, то будет открыт модальный диалог, в котором выбранный фал изображения будет отображен в своих реальных размерах без сжатия:
+If you press the block predprostora opens a modal dialog where the selected image file is displayed in its actual size without compression: 
 
-   ![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-preview-dialog.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-preview-dialog.png) 
 
-   За открытие диалога отвечает `action` `flexberryFileViewImageAction`, который уже реализован в базовом контроллере форм редактирования, но если зачем-то захочется его переопределить, или выполнять какие-то другие действия по нажатию на блок предпросмотра, можно задать свой `action` через свойство компонента `viewImageAction`:
+For the opening of the dialogue corresponds `action` `flexberryFileViewImageAction` that is already implemented in the basic controller forms editing, but if some reason want to override, or to perform some other action by clicking on the unit preview, you can set your `action` via the component property `viewImageAction`: 
 
-   ```hbs
+```hbs
    {% raw %}{{flexberry-file
      ...
      showPreview=true
      viewImageAction="flexberryFileViewImageAction"
    }}{% endraw %}
-   ```
+   ``` 
 
-## Настройки внешнего вида в мобильном представлении
+## appearance Settings in the mobile view 
 
-Компонент `flexberry-file` имеет специальное представление для мобильных устройств.
+Component `flexberry-file` has a special view for mobile devices. 
 
-В этом представлении компонент, в котором пользователем еще не выбран файл, выглядит как кнопка с надписью "Добавить файл" (эту надпись можно кастомизировать задав её через свойство `addButtonText` компонента):
+In this view the component in which the user has not selected a file that looks like a button that says "Add file" (this inscription can be customised by setting it through the property `addButtonText` component): 
 
-![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-mobile-with-no-file.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-mobile-with-no-file.png) 
 
-Когда пользователь выбрал какой-либо файл, компонент выглядит уже как кнопка с выпадающим меню и пунктами для замены файла, его загрузки, скачивания, и в случае, если файл является изображением, его увеличения:
+When the user has selected a file, the component looks like a button with drop-down menus, and items to replace the file, downloading it, downloading and if the file is an image, enlarge: 
 
-![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-mobile-with-selected-file.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/flexberry-file-mobile-with-selected-file.png) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

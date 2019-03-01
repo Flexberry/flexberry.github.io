@@ -1,32 +1,34 @@
----
-title: Block list cells for a click
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember, filters, OLV, list
-summary: Using parameters when working with the rows of lists
-toc: true
-permalink: en/ef_block-cells-click.html
-lang: en
----
+--- 
+title: Lock individual cells in a list 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember, filters, OLV, and the list 
+summary: Use parameters when working with strings, lists 
+toc: true 
+permalink: en/ef_block-cells-click.html 
+lang: en 
+autotranslated: true 
+hash: f2c2414c90d1c06aae987d8849bf905c3e61a8898ce03a9aa805c8f92131ed91 
+--- 
 
-На [списке](ef_object-list-view.html) существует возможность заблокировать отдельную ячеку для открытия объекта [на редактирование](ef_edit-form.html), оставив при этом активным клик на строке.
+[List](ef_object-list-view.html) there is a possibility to lock individual safe Deposit box to open [edit](ef_edit-form.html), while leaving active-click on the line. 
 
-Для этого чтобы выключить клик по строке, нужно переопределить переход к форме редактирования, используя параметр (params):
+For this to disable click on line you want to override the transition to the edit form using a parameter (params): 
 
 ```javascript
 params.goToEditForm = false; 
-```
+``` 
 
-Затем вызвать метод `_super`.
+Then call the `_super`. 
 
-В параметрах обработчика клика по строке есть: 
+In the processor settings click on the row there: 
 
-* запись, по которой кликнули
-* колонка по которой кликнули (в ней есть имя свойства, заголовок колонки на форме, cellComponent этой колонки)
-* индекс нажатой колонки.
+* the entry that was clicked 
+* column which is clicked (it has a property name column header on the form cellComponent this column) 
+* the index of the pressed column. 
 
-Данные параметры используются для отключения обработки клика по строке при определенных условиях (т.е. при клике по определенным ячейкам).
+These settings are used to disable click handling on the line under certain conditions (i.e. when clicking on certain cells). 
 
-Например:
+For example: 
 
 ```javascript
 actions: {
@@ -37,6 +39,10 @@ actions: {
 
       this._super(...arguments);
     }
-```
+``` 
 
-Подробнее в коде приложения [dummy](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/routes/components-examples/flexberry-objectlistview/downloading-files-from-olv-list.js#L45).
+Read more in the application code [dummy](https://github.com/Flexberry/ember-flexberry/blob/develop/tests/dummy/app/routes/components-examples/flexberry-objectlistview/downloading-files-from-olv-list.js#L45). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

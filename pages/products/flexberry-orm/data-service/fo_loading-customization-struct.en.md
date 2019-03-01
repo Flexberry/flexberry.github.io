@@ -1,74 +1,80 @@
----
-title: Setting up read options
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Configuring data sampling parameters LoadingCustomizationStruct, data types, view, restriction, page loading
-toc: true
-permalink: en/fo_loading-customization-struct.html
-lang: en
----
+--- 
+title: customize reading options (LCS) 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services, lcs, restriction, proofreading, filtering, loading 
+summary: setup data sampling LoadingCustomizationStruct, data types, representation, limit, page load 
+toc: true 
+permalink: en/fo_loading-customization-struct.html 
+lang: en 
+autotranslated: true 
+hash: b49a08b29586f979ca66ccb06f7e528d8537f9971917e143b2f7127f61c44272 
+--- 
 
-`LoadingCustomizationStruct` позволяет полностью настроить параметры [сервиса данных](fo_construction-ds.html) для операций чтения объектов данных.
+`LoadingCustomizationStruct` is a class Flexberry ORM to specify options for data selection (including the limit) that implements a private API, in contrast to the alternative option on the basis of LINQ. `LoadingCustomizationStruct` allows you to fully customize the settings of [data service](fo_construction-ds.html) for read operations of data objects. 
 
-Удобно создавать структуру `LoadingCustomizationStruct` с помощью статического метода `GetSimpleStruct`.
+It is convenient to create a structure `LoadingCustomizationStruct` using the static method `GetSimpleStruct`. 
 
 ``` csharp
-LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Шапка), "ШапкаE");
-```
+LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Шапка), "Chapchae");
+``` 
 
-## Параметры `LoadingCustomizationStruct`
+## Parameters `LoadingCustomizationStruct` 
 
-`LoadingCustomizationStruct` позволяет настраивать следующие параметры чтения:
+`LoadingCustomizationStruct` allows you to configure the following reading options: 
 
-* `View` — указывает [представление](fd_view-definition.html), в соответствии с которым будет выполнено чтение;
-* `ReturnTop` — указание количества возвращаемых записей;
-* `LoadingTypes` — указывает классы данных, чьи экземпляры требуется читать ([пример](fo_reading-several-types-objects.html));
-* `ColumnsSort` — параметры сортировки возвращаемых результатов;
-* `ColumnsOrder` — порядок следования свойств объекта данных в результирующей строке с разделителями, актуально, если для чтения используется метод [сервиса данных](fo_construction-ds.html) `LoadStringedObjectView`.
-* `InitDataCopy` — включение или отключение инициализации [копии данных](fo_data-object-copy.html) при вычитке данных.
-* `LimitFunction` — [ограничение на зачитываемые объекты данных](fo_limit-function.html), с сервера будут возвращены только те объекты, что удовлетворяют данному ограничению;
-* `Distinct` — получение различных данных (используется, например, с методом [LoadRawValues SQLDataService](fo_standard-data-services.html)).
-* `LoadingBufferSize` — размер порции при [порционном чтении](fo_reading-portion.html);
-* `RowNumber` — указание диапазона индексов загружаемых объектов, `lcs.RowNumber = new RowNumberDef(2, 5);` (удобно, например, для постраничного вывода).
+* `View` — specifies a [view](fd_view-definition.html), which will be performed чтение; 
+* `ReturnTop` — specify the number of returned записей; 
+* `LoadingTypes` — specifies the data classes whose instances you want to read ([example](fo_reading-several-types-objects.html)); 
+* `ColumnsSort` — collation return результатов; 
+* `ColumnsOrder` — order properties of the data object in the result string with delimiters, true if the read method is used [data service](fo_construction-ds.html) `LoadStringedObjectView`. 
+* `InitDataCopy` — enable or disable initialization [copy data](fo_data-object-copy.html) when reading data. 
+* `LimitFunction` — [restriction on read data objects](fo_limit-function.html), server will return only those objects that satisfy the given ограничению; 
+* `Distinct` — obtaining of various data (used for example with the method [LoadRawValues SQLDataService](fo_standard-data-services.html)). 
+* `LoadingBufferSize` — serving size when [batch reading](fo_reading-portion.html); 
+* `RowNumber` — the range of indexes of downloadable objects, `lcs.RowNumber = new RowNumberDef(2, 5);` (useful, for example, for paging). 
 
-{% include note.html content="__Представление и ограничение:__ Представление `View` должно содержать в себе все свойства, которые используются в ограничении `LimitFunction`, чтобы не произошло ошибки или неверного счёта. Если есть потребность расширить [представление](fd_view-definition.html) в соответствии с функцией ограничения `LimitFunction`, можно воспользоваться специальным классом [ViewPropertyAppender](fo_view-property-appender.html)." %}
+{% include note.html content="__Presentation and restriction:__ `View` Submission must contain all the properties that are used to limit `LimitFunction`, to avoid errors or incorrect account. If there is a need to expand a [view](fd_view-definition.html) in accordance with the restriction feature `LimitFunction`, you can use a special class [ViewPropertyAppender](fo_view-property-appender.html)." %} 
 
-## Применение `LoadingCustomizationStruct`
+## Application `LoadingCustomizationStruct` 
 
-Чтобы вычитать набор данных из базы в память, необходимо
+To subtract a dataset from the database into memory, you 
 
-1. Создать объект типа ICSSoft.STORMNET.Business.LoadingCustomizationStruct
+1. To create an object of type ICSSoft.STORMNET.Business.LoadingCustomizationStruct 
 
 ``` csharp
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(тип, представление);
 
-```
-2. возможно вручную установить [представление](fd_view-definition.html)
+``` 
+2. it is possible to manually set a [view](fd_view-definition.html) 
 
 ``` csharp
 lcs.View = Клиент.Views.КлиентE;
-```
+``` 
 
-3. Установить тип вычитываемых объектов
+3. Set the type of objects deducted 
 
 ``` csharp
 lcs.LoadingTypes=new Type[) {typeof(Кредит)};
-```
+``` 
 
-4. Наложить [ограничение](fo_limit-function.html) на вычитываемые объекты (если ограничение не будет наложено - вычитаются все объекты такого типа)
+4. To impose [restrictions](fo_limit-function.html) deducted items (if the restriction is not imposed is deducted, all objects of this type) 
 
 ``` csharp
 lcs.LimitFunction = <Объект типа ICSSoft.STORMNET.FunctionalLanguage.Function>
-```
+``` 
 
-5. Настроить другие параметры чтения (не обязательно)
-6. Сделать запрос к серверу, используя метод [`LoadObjects` сервиса данных](fo_data-service.html)
+5. To configure other settings for reading (optional) 
+6. To make a request to the server, using the method of [`LoadObjects` data service](fo_data-service.html) 
 
 ``` csharp
 var credits = DataServiceProvider.DataService.LoadObjects(lcs).Cast<Кредит>();
-```
+``` 
 
-## Пример
+## Example 
 
-Пример использования `LoadingCustomizationStruct` доступен по адресу: [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs).
+An example of using `LoadingCustomizationStruct` available at: [https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs](https://github.com/Flexberry/FlexberryORM-DemoApp/blob/master/FlexberryORM/CDLIB/CDADMTEST/Form1.cs). 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

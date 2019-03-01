@@ -1,39 +1,41 @@
----
-title: Открытие формы редактирования с передачей объекта с частично заполненными полями
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Windows UI (формы)
-toc: true
-permalink: en/fa_open-editform-custom-object.html
-lang: en
----
+--- 
+title: Opening the edit form with the transfer object with some fields already filled 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP NET Windows UI (forms) 
+toc: true 
+permalink: en/fa_open-editform-custom-object.html 
+lang: en 
+autotranslated: true 
+hash: f755b976de551e5a9c1800f06930489fd9760c44dd37a066f3bdb45637700652 
+--- 
 
-Форма редактирования позволяет не только создавать новый объект с нуля, но и создать объект, в котором некоторые поля уже заполнены. 
+The edit form allows you to not only create a new object from scratch, but to create an object in which some fields already filled in. 
 
-Чтобы открыть web-форму редактирования с передачей объекта с частично заполненными полями, необходимо произвести POST-запрос по адресу формы редактирования с параметром `DataObject`. Значение параметра `DataObject` - объект данных, сериализованный в XML и закодированный в HTML.
+To open a web edit form with the transfer object with some fields already filled, you must make a POST request to the address edit form with parameter `DataObject`. The value of the parameter `DataObject` object data serialized in XML and encoded in HTML. 
 
-Никаких ограничений на передаваемый объект данных не налагается. Статус передаваемого объекта не играет роли, т.к. после передачи и десериализации объекта он устанавливается в `ObjectStatus.Created`.
+No restrictions on the transmit object data are imposed. The status of the item is irrelevant, because after the transfer and deserialization of the object it is installed in `ObjectStatus.Created`. 
 
-Сериализация объекта производится с помощью `ICSSoft.STORMNET.Tools.ToolXML` [подробнее d cnfnmt ICSSoft.STORMNET.Tools.XmlTools](fo_ics-soft-stormnet-tools.html).
+The serialization of the object is performed using `ICSSoft.STORMNET.Tools.ToolXML` [more d cnfnmt ICSSoft.STORMNET.Tools.XmlTools](fo_ics-soft-stormnet-tools.html). 
 
-После сериализации XML необходимо закодировать в HTML для безопасной передачи данных. Eсли `ASP.NET Request Validation` увидит угловые скобочки, то может кинуть исключение `A potentially dangerous Request.Form value was detected from the client`; подробнее об этом [на сайте www.asp.net](http://www.asp.net/whitepapers/aspnet4/breaking-changes#0.1__Toc256770147) и [social.msdn.microsoft.com](http://social.msdn.microsoft.com/forums/en-US/netfxbcl/thread/a056886b-a1ad-40f8-9f4a-f7e8db39950b/). Закодировать можно с помощью [Server.HTMLEncode](http://msdn.microsoft.com/en-us/library/ms525347(v=vs.90).aspx) или [HttpUtility.HtmlEncode](http://msdn.microsoft.com/ru-ru/library/system.web.httputility.htmlencode.aspx).
+When serialized, the XML must be encoded in HTML for secure data transfer. If `ASP.NET Request Validation` will see the corner brackets, that can throw an exception `A potentially dangerous Request.Form value was detected from the client`; read more about it on the website www.asp.net](http://www.asp.net/whitepapers/aspnet4/breaking-changes#0.1__Toc256770147) and [social.msdn.microsoft.com](http://social.msdn.microsoft.com/forums/en-US/netfxbcl/thread/a056886b-a1ad-40f8-9f4a-f7e8db39950b/). You can encode it with [Server.HTMLEncode](http://msdn.microsoft.com/en-us/library/ms525347(v=vs.90).aspx) or [HttpUtility.HtmlEncode](http://msdn.microsoft.com/ru-ru/library/system.web.httputility.htmlencode.aspx). 
 
-### Пример
+### Example 
 
 ```csharp
-// Сериализация объекта данных для POST-запроса на сервере
+// Serialize data object to a POST request on the server 
 var xmldoc = ICSSoft.STORMNET.Tools.ToolXML.DataObject2XMLDocument(ref dobj);
 string serializedObj = System.Web.HttpUtility.HtmlEncode(xmldoc.InnerXml); 
-```
+``` 
 
 ```csharp
-// Открытие формы редактирования на клиенте
+// Open the edit form on the client 
 var data = { 'DataObject': serializedObj };
 var editformUrl = 'MyObjectE.aspx';
 openUrlWithPost(editformUrl, data);
 
 function openUrlWithPost (url, params, target) {
 	var form = document.createElement("form");
-	form.setAttribute("method", "post");
+	form.setAttribute("method", post);
 	form.setAttribute("action", url);
 	form.setAttribute("target", target || "_blank");
 
@@ -49,7 +51,11 @@ function openUrlWithPost (url, params, target) {
 
 	form.submit();
 };
-```
-## Для Win
+``` 
+## For Win 
 
-[Аналогичный функционал для Win-приложений](fw_force-call-editing-form.html)
+[Similar functionality for Win-applications](fw_force-call-editing-form.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,29 +1,31 @@
----
-title: Business task monitor
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, task tracking
-summary: Functions and examples of using the task monitor
-toc: true
-permalink: en/fo_business-task-monitor.html
-lang: en
----
+--- 
+title: Monitor task 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, task tracking 
+summary: Functions and primetimer use of the monitor task 
+toc: true 
+permalink: en/fo_business-task-monitor.html 
+lang: en 
+autotranslated: true 
+hash: 40518a1bb3dd3d3cae4796f4ed8ef0b453fd8c64680273e9f282775b1e94e6a0 
+--- 
 
-## Описание
+## Description 
 
-Бывает удобным подключить к приложению некоторый монитор задач, когда можно отслеживать задачи (вызовы некоторых методов), наблюдая весь процесс работы где-либо (в отдельном окне, в лог-файле). Примером может служить мониторинг SQL-запросов, которые выполняют [сервисы данных](fo_data-service.html) в хранилище.
+Is convenient to connect to the application to a certain task monitor when you can track tasks (calls some methods), watching the whole process of working anywhere (in a separate window, in the log file). An example is the monitoring of the SQL queries that perform [data services](fo_data-service.html) in the vault. 
 
-## Подключение монитора задач к приложению
+## connecting the monitor task to the application 
 
-Для того чтобы подключить любой монитор задач, необходимо выполнить одно из следующего:
+In order to connect any monitor task, you must do one of the following: 
 
-* В коде проинициализировать статическое свойство `ICSSoft.STORMNET.Business.BusinessTaskMonitor.TaskMonitor` экземпляром класса — монитора задач.
-* Указать в настройках `config`-файла приложения настройку `BusinessTaskMonitorType` — тип класса, который собственно и является монитором задач. **Это основной способ подключения монитора**.
+* Code to initialize a static property `ICSSoft.STORMNET.Business.BusinessTaskMonitor.TaskMonitor` an instance of the class monitor tasks. 
+* Specify in the settings `config` file of the application configuration `BusinessTaskMonitorType` — type class, which actually is a monitor task. **This is the main way of connection to monitor**. 
 
-### Подключение монитора задач через config
+### monitor the status of tasks via config 
 
-{% include important.html content="Сборка с монитором задач должна обязательно находиться в том же каталоге, что и приложение." %}
+{% include important.html content="the Assembly with the task monitor must be located in the same directory as the application." %} 
 
-Например, создана сборка `CustomTaskMon`, где определён монитор задач `CustomTaskMon.EventTaskMon`, тогда подключение в файле конфигурации следующее:
+For example, the generated Assembly `CustomTaskMon` where the identified monitor tasks `CustomTaskMon.EventTaskMon`, then the connection configuration file the following: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -32,18 +34,22 @@ lang: en
     <add key="BusinessTaskMonitorType" value="CustomTaskMon.EventTaskMon, CustomTaskMon, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
   </appSettings>
 </configuration>
-```
+``` 
 
-## Запись действий в монитор задач
+## Record of actions in the task monitor 
 
-Существует класс `ICSSoft.STORMNET.Business.BusinessTaskMonitor`, с набором статических методов, идентичных описанным в `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`. Этими методами и нужно пользоваться, если есть потребность писать в монитор задач какие-либо свои действия.
+There is a class `ICSSoft.STORMNET.Business.BusinessTaskMonitor`, with a set of static methods identical to those described in `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`. These methods and should be used if there is a need to write to the monitor task, any of their actions. 
 
-Например, для начала действия необходимо вызвать метод `BeginTask`.
+For example, to start the action, you must call the `BeginTask`. 
 
-## Перечень стандартных мониторов задач Flexberry ORM
+## the List of standard monitors task Flexberry ORM 
 
-* [Сервис записи SQL-скриптов изменения данных](fo_changes-sql-bt-monitor.html) - служит для получения скриптов модификации данных, работает через механизм монитора задач.
+* [Service record SQL-scripts change data](fo_changes-sql-bt-monitor.html) - used to obtain scripts modifying data, working through the mechanism of the monitor task. 
 
-## Создание собственного монитора задач
+## Creating your own monitor task 
 
-Описано в статье [Создание и подключение пользовательского монитора задач](fo_creating-connection-bt-monitor.html)
+Described in [Creating and connecting custom task monitor](fo_creating-connection-bt-monitor.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

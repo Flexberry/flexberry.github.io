@@ -1,23 +1,25 @@
----
-title: Creating and Connecting a Task Monitor
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, BusinessTaskMonitor, example
-summary: Example of creating and connecting a task monitor
-toc: true
-permalink: en/fo_creating-connection-bt-monitor.html
-lang: en
----
+--- 
+title: Creating and connecting the monitor task 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, the monitor task example 
+summary: Example of creating and connecting the monitor task 
+toc: true 
+permalink: en/fo_creating-connection-bt-monitor.html 
+lang: en 
+autotranslated: true 
+hash: eba33ee00c52fb290de0afacab8c946651d68032bdcb9ae25c6e5f9672ed3e47 
+--- 
 
-## Создание монитора задач
+## create a monitor task 
 
-В связи с [задачей мониторинга](fo_business-task-monitor.html) существует два вопроса, которые разработчик должен решить:
+In connection with the [task monitor](fo_business-task-monitor.html) there are two issues that the developer must address: 
 
-* Какой монитор задач должен предоставляться (выбор стандартного монитора задач или создание какого-то собственного);
-* Подключение монитора задач непосредственно к системе.
+* What is the task monitor must be provided (standard monitor task or creating some private); 
+* Monitor the status of tasks directly to the system. 
 
-Если разработчику требуется какая-то особая функциональность (например, запись задач в `log`-файл или какое-то иное отображение), может потребоваться создать свой монитор задач. Для этого необходимо создать класс с реализованным интерфейсом `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`.
+If you require some special functionality (e.g., tasks in `log` file or some other display), you may need to create a monitor task. To do this you must create a class which is implemented interface `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`. 
 
-**Монитор задач, который отображает задачи в  Windows Application Log**
+**Monitor tasks, which displays tasks in the Windows Application Log** 
 
 ```csharp
 using System;
@@ -34,26 +36,26 @@ namespace CustomTaskMon
 		public object BeginSubTask(string SubTask, object TaskID)
 		{
 			string sTaskID = TaskID==null?"N/A":TaskID.ToString();
-			System.Diagnostics.EventLog.WriteEntry(string.Format("Подзадача задачи № {0} началась.", sTaskID), SubTask);
+			System.Diagnostics.EventLog.WriteEntry(string.Format("Subtask task number {0} started.", sTaskID), SubTask);
 			return null;
 		}
 
 		public void EndSubTask(object SubTaskID)
 		{
 			string sTaskID = SubTaskID==null?"N/A":SubTaskID.ToString();
-			System.Diagnostics.EventLog.WriteEntry(string.Format("Подзадача {0} закончилась.", sTaskID), "");
+			System.Diagnostics.EventLog.WriteEntry(string.Format("Sub-task {0} ended.", sTaskID), "");
 		}
 
 		public void EndTask(object ID)
 		{
 			string sTaskID = ID==null?"N/A":ID.ToString();
-			System.Diagnostics.EventLog.WriteEntry(string.Format("Задача № {0} закончилась.", sTaskID), "");
+			System.Diagnostics.EventLog.WriteEntry(string.Format("The task {0} ended.", sTaskID), "");
 		}
 
 		public void BeginTask(string TaskName, object ID)
 		{
 			string sTaskID = ID==null?"N/A":ID.ToString();
-			System.Diagnostics.EventLog.WriteEntry(string.Format("Задача № {0} началась.", sTaskID), TaskName);
+			System.Diagnostics.EventLog.WriteEntry(string.Format("The task {0} started.", sTaskID), TaskName);
 		}
 
 		object ICSSoft.STORMNET.Business.IBusinessTaskMonitor.BeginTask(string TaskName)
@@ -65,9 +67,9 @@ namespace CustomTaskMon
 		#endregion
 	}
 }
-```
+``` 
 
-Подключение `EventTaskMon` из вышеприведённого примера к приложению через настройку конфигурационного файла будет следующим:
+Connection `EventTaskMon` from the above example the application via a configuration file would be as follows: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -76,10 +78,14 @@ namespace CustomTaskMon
 	<add key="BusinessTaskMonitorType" value="CustomTaskMon.EventTaskMon, CustomTaskMon, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null"/>
 	</appSettings>
 </configuration>
-```
+``` 
 
-{% include important.html content="Сборка с монитором задач должна обязательно находиться в том же каталоге, что и приложение." %}
+{% include important.html content="the Assembly with the task monitor must be located in the same directory as the application." %} 
 
-Компоненты [Flexberry ORM](fo_flexberry-orm.html) используют [монитор](fo_business-task-monitor.html)  (например, [сервис данных](fo_data-service.html) пишет туда запросы). Поэтому при реализации этого примера в `Windows Application Log` появятся записи, соответствующие чтению списка:
+Components [Flexberry ORM](fo_flexberry-orm.html) use [monitor](fo_business-task-monitor.html) (e.g., [service data](fo_data-service.html) writes back the query). Therefore, the implementation of this example in `Windows Application Log` will have entries corresponding to the read list: 
 
-![](/images/pages/products/flexberry-orm/business-task-monitor/business-task-monitor.jpg)
+![](/images/pages/products/flexberry-orm/business-task-monitor/business-task-monitor.jpg) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

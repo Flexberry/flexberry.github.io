@@ -1,75 +1,81 @@
----
-title: Dynamic Properties
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, Example, property
-summary: Features, algorithms for creating and using dynamic properties
-toc: true
-permalink: en/fo_dynamic-properties.html
-lang: en
----
+--- 
+title: Dynamic object properties 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, example, property 
+summary: Features, algorithms creating and using dynamic properties 
+toc: true 
+permalink: en/fo_dynamic-properties.html 
+lang: en 
+autotranslated: true 
+hash: 69d1be104e9c7fffd569fce29c2b6ad242f522bae48fdc3daf0a387b53cc378e 
+--- 
 
-`DynamicProperties` - экземпляр класса NameObjectCollection (расширение класса [NameObjectCollectionBase](http://msdn.microsoft.com/ru-ru/library/system.collections.specialized.nameobjectcollectionbase.aspx)), который является, по сути, словарем, хранящим пары значений строка-объект.
+`DynamicProperties` - NameObjectCollection instance of a class (class extension [NameObjectCollectionBase](http://msdn.microsoft.com/ru-ru/library/system.collections.specialized.nameobjectcollectionbase.aspx))that is, in fact, a dictionary that stores pairs of values a string object. 
 
-Динамические свойства помогают хранить дополнительную информацию об объекте и помогают в ситуациях, когда логика использования объекта разнится от обстоятельств (вызов с разных форм, разными пользователями и т.д.).
+Dynamic properties allow you to store additional information about the object and help in situations where the logic of the use of the object differs from the circumstances (call with different shapes, different users, etc.). 
 
-Динамические свойства __не сохраняются__ в базу.
+Dynamic properties __do not remain__ in base. 
 
-{% include important.html content="Собственный экземпляр `DynamicProperties` содержится в __каждом__ объекте класса, наследуемого от [DataObject](fo_data-object.html)." %}
+{% include important.html content="a Private instance `DynamicProperties` is contained in __every__ object of a class that inherits from [DataObject](fo_data-object.html)." %} 
 
-## Использование динамических свойств
+## the Use of dynamic properties 
 
-Обратиться к динамическим свойствам объекта можно следующим образом:
+To access dynamic properties of an object, use the following: 
 
 ```csharp
 dataObject.DynamicProperties
-```
+``` 
 
-`Добавление свойства`
+`Добавление свойства` 
 
 ```csharp
 var someObject = new object();
 dataObject.DynamicProperties.Add("propertyName", someObject);
-```
+``` 
 
-`Проверка на наличие свойства у объекта`
+`Проверка on the availability of properties at объекта` 
 
 ```csharp
 if (dataObject.DynamicProperties.ContainsKey("propertyName"))
 {
     ...
 }
-```
+``` 
 
-`Удаление свойства объекта`
+`Удаление properties объекта` 
 
 ```csharp
 dataObject.DynamicProperties.Remove("propertyName");
-```
+``` 
 
-## Основной сценарий использования динамических свойств объекта
+## the Basic scenario using dynamic object properties 
 
-Основной сценарий использования на прикладных проектах следующий:
+The main usage scenario for the application projects the following: 
 
-* В динамические свойства объекта добавляется некий флаг.
-* В [бизнес-сервере](fo_bs-wrapper.html) обновления объекта проверяется наличие этого флага и выполняется или не выполняется набор некоторых действий.
+* In the dynamic properties of the object is added to a flag. 
+* In [business server](fo_bs-wrapper.html) update object, check for this flag and is running or not running a set of certain actions. 
 
-### Пример
+### Example 
 
-![image](/images/pages/products/flexberry-orm/additional-features/templates.png)
+![](/images/pages/products/flexberry-orm/additional-features/templates.png) 
 
-Объект `СтрокаПланаПогашения`. Например, необходимо ввести шаблон оплаты, содержащий в себе информацию о `КредитнойКарте` и `Кредите`, но с незаполненными полями `ДатыОплаты` и `Суммы`. Однако, в бизнес-сервере обновления объекта уже находится проверка, отвечающая за заполненность этих полей. Следовательно, объект не сможет обновиться и сохраниться в базу.
+Object `СтрокаПланаПогашения`. For example, you must enter a payment template, which contains information about `КредитнойКарте` and `Кредите`, but blank `ДатыОплаты` and `Суммы`. However, in the business server update the object already is check responsible for filling these fields. Hence, the object will not be updated and saved back into the database. 
 
-На форме создания шаблона оплаты перед отправкой объекта на сохранение необходимо добавить динамическое свойство 
+On the form create a template of payment before sending the object to save, you need to add a dynamic property 
 
 ```csharp
 dataObject.DynamicProperties.Add("Template", true); @@
-```
+``` 
 
-А в бизнес-сервере изменить проверку следующим образом:
+And the business server to modify the test as follows: 
 
 ```csharp
 if (!UpdatedObject.DynamicProperties.ContainsKey("Template"))
 {
-    // Проверки на обязательность заполненности полей Сумма и ДатаОплаты
+    // Check for mandatory filling of fields, the Amount and Dataplate 
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

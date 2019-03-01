@@ -1,69 +1,71 @@
----
-title: Set the current object when the application starts
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, example
-summary: Selecting an object before running the main application content
-toc: true
-permalink: en/fo_define-default-object.html
-lang: en
----
+--- 
+title: Setting the current object when you run the application 
+sidebar: flexberry-orm_sidebar 
+keywords: DataObject Flexberry ORM example 
+summary: object Selection before you start the main application content 
+toc: true 
+permalink: en/fo_define-default-object.html 
+lang: en 
+autotranslated: true 
+hash: 919e324ba8b7207c2b3bb2bda11714e33c66fcc389bbcf469223db2bdf02a059 
+--- 
 
-Например, при оформлении заказа требуется, чтобы магазин был уже установлен. Для этого выбор магазина должен быть предоставлен в начале работы с программой.
+For example, when ordering you want the shop was already installed. This choice should be provided at the beginning of the program. 
 
-Возможно следующее решение данной задачи:
+Perhaps another solution to this problem: 
 
-* Для выбора текущего объекта в начале работы с программой можно использовать [генерируемую Flexberry форму для нехранимого класса](fo_using-not-stored-classes.html).
-* Для хранения текущего объекта можно использовать [статическое поле](http://msdn.microsoft.com/library/98f28cdx.aspx) общедоступного класса.
-* Для установки текущего объекта можно использовать решение, предложенное в статье [Задание значения поля создаваемого объекта](fo_define-field-created.html). 
+* To select the current object at the beginning of the program, you can use [generated Flexberry form to nehrenovo class](fo_using-not-stored-classes.html). 
+* To store the current object, you can use a [static field](http://msdn.microsoft.com/library/98f28cdx.aspx) public class. 
+* To set the current object, you can use the solution proposed in the article [setting the value field of the object to create](fo_define-field-created.html). 
 
-На уровне пользователя решение будет выглядеть так: есть список магазинов, при запуске приложения появляется форма, где необходимо выбрать текущий магазин. При создании записи о покупке текущий магазин автоматически подставляется.
+A user-level solution would be: have a list of stores when you start the application form appears where you can select the current store. When you create a record of the purchase the current store is automatically inserted. 
 
-## Работа в Flexberry Tool
+## Work in Flexberry Tool 
 
-В Flexberry была создана диаграмма классов. Для определения текущего магазина [был создан нехранимый класс](fo_using-not-stored-classes.html)  `ВыборМагазинаПоУмолчанию` и сгенерирован программный код.
+In Flexberry was created the class diagram. To determine the current shop was created phranky class](fo_using-not-stored-classes.html) `ВыборМагазинаПоУмолчанию` and the generated code. 
 
-![](/images/pages/products/flexberry-orm/data-object/class-diagram_shops.jpg)
+![](/images/pages/products/flexberry-orm/data-object/class-diagram_shops.jpg) 
 
-## Работа с программным кодом
+## Work with program code 
 
-В общедоступном для разрабатываемых приложений классе определить [статическое поле](http://msdn.microsoft.com/library/98f28cdx.aspx).
+In public the applications you develop in class to determine [static field](http://msdn.microsoft.com/library/98f28cdx.aspx). 
 
 ```csharp
 public class Магазин : ICSSoft.STORMNET.DataObject
 {
 	public static Магазин CurrentShop;
-	//...
+	//... 
 }
-```
+``` 
 
-На форме нехранимого класса, для подавления сообщения о сохранении данных на форме, переопределить метод `OnClosing`, где запретить вызов базового метода.
+On the form nehrenovo class to suppress the message about saving data on a form, override the method `OnClosing` where to ban the call to the base method. 
 
-Для задания значения поля при открытии формы [переопределить событие `Edit`](fo_define-field-created.html).
+To set field values when the form is opened [to override the event `Edit`](fo_define-field-created.html). 
 
-Определить работу формы при нажатии на кнопки.
+To determine the behavior of the form by clicking on the button. 
 
 ```csharp
-private void buttonAuthorize_Click(object sender, EventArgs e) //нажатие на кнопку "Авторизовать"
+private void buttonAuthorize_Click(object sender, EventArgs e) //clicking on "Authorize" 
 {
-	//проверить, что магазин выбран
+	//verify that the store you selected 
 	if ((DataObject as ВыборМагазинаПоУмолчанию).ТекущийМагазин != null)
 	{		
-		Магазин.CurrentShop = ((ВыборМагазинаПоУмолчанию)DataObject).ТекущийМагазин; //сохранить текущий магазин
-		this.DialogResult = DialogResult.OK; //закончить авторизацию
+		Магазин.CurrentShop = ((ВыборМагазинаПоУмолчанию)DataObject).ТекущийМагазин; //save the current store 
+		this.DialogResult = DialogResult.OK; //to finish the authorization 
 		this.Close();
 	}
 	else
 	{
-		MessageBox.Show("Вы не выбрали магазин для авторизации.");
+		MessageBox.Show("You have not selected a store for authorization.");
 	}
 }
-private void buttonExit_Click(object sender, EventArgs e) //нажатие на кнопку "Выйти"
+private void buttonExit_Click(object sender, EventArgs e) //clicking the "Exit" button 
 {
 	this.Close();
 }
-```
+``` 
 
-Запустить форму модально до запуска рабочего стола приложения. Пример из класса `МенеджерМагазиновDesktop`:
+To run a form modal to launch the desktop application. Example from class `МенеджерМагазиновDesktop`: 
 
 ```csharp
 public static bool Run_SetCurrentShopForm()
@@ -75,7 +77,7 @@ public static bool Run_SetCurrentShopForm()
 		CheckForIllegalCrossThreadCalls = false;
 			IIS.WinUI.Runners.EditFormRunner fr =
 				new IIS.WinUI.Runners.EditFormRunner(typeof(C__ВыборМагазинаПоУмолчаниюE),
-											"", "Выбор текущего магазина", "",
+											"", "Current store", "",
 											new ВыборМагазинаПоУмолчанию(),
 											typeof(ВыборМагазинаПоУмолчанию), false);
 			System.Windows.Forms.Form frm = null;
@@ -94,7 +96,7 @@ public static bool Run_SetCurrentShopForm()
 	}
 	catch (Exception)
 	{
-		throw new Exception("Не удалось установить значение по умолчанию.");
+		throw new Exception("Failed to set the default value.");
 	}
 }
 
@@ -102,15 +104,19 @@ static void Main()
 {
 	try
 	{
-		// *** Start programmer edit section *** (МенеджерМагазинов Before authorization)
-		//ниже код по запуску формы
+		// *** Start programmer edit section *** (Managermagazin Before authorization) 
+		//below code for launching the form 
 		if (!Run_SetCurrentShopForm())
 		{
-			return; //то есть пользователь не захотел выбрать значение по умолчанию, прекращаем работу
+			return; //that is, the user did not want to choose the default value, stop working 
 		}
-		// *** End programmer edit section *** (МенеджерМагазинов Before authorization)
-		//...
+		// *** End programmer edit section *** (Managermagazin Before authorization) 
+		//... 
 	}
-	//...
+	//... 
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

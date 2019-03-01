@@ -1,27 +1,33 @@
----
-title: T-представление
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, View, представление, мастер, генерация, аудит
-summary: Представление для работы с фильтрами и ограничениями
-toc: true
-permalink: en/fd_t-view.html
-lang: en
----
+--- 
+title: T-view 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, View, submission, master, generation, audit 
+summary: Performance for filters and restrictions 
+toc: true 
+permalink: en/fd_t-view.html 
+lang: en 
+autotranslated: true 
+hash: a432426fada81056aba955e768e712d4f1d816283ba959983456b376681734ea 
+--- 
 
-Среди создаваемых [представлений](fd_key-concepts.html) выделяют T-представление (то есть [представление](fd_key-concepts.html), имеющее имя «<имя класса>T», например «УченикT»).
+Created among a [view](fd_key-concepts.html) emit T-the view ([view](fd_key-concepts.html) with the name "<class name>T", for example "Uchenik"). 
 
-Согласно неофициальному соглашению T-представление  - это представлениe, содержащее в себе все поля объекта, а также все [мастера](fo_masters-details.html).
+According to an informal agreement T-view - this view contains all the object's fields, and all [masters](fo_masters-details.html). 
 
-С T-представлением можно встретиться, например, на [компоненте создания ограничений](fw_limitation-editform.html): если [настройки фильтра](fw_filter-settings.html) уже [сгенерированы](fw_filtersand-limits.html), то в [стандартном виде компоненты](fw_standart-view-limits-editor.html) присутствует древовидная структура, аналогичная T-представлению.
+T-view can be seen e.g. in [component creation limits](fw_limitation-editform.html): if [filter settings](fw_filter-settings.html) has [generated](fw_filtersand-limits.html), [standard features](fw_standart-view-limits-editor.html) there is a tree structure similar to the T-representation. 
 
-## Настройки
+## Settings 
 
-[Видимость](fd_hidden-properties-view.html) не влияет на отображение атрибутов, поскольку будут видимы все поля вне зависимости значения поля «Видимость». По умолчанию, видимость должна быть установлена для всех атрибутов.
+[Visibility](fd_hidden-properties-view.html) does not affect the display of attributes, since all fields will be visible regardless of the value of the field "Visibility". By default, the visibility must be set for all attributes. 
 
-Поля [аудита](efs_audit.html) должны быть только у объекта, для которого создается представление. Поля аудита мастеров в данном представлении не должны указываться.
+Fields [audit](efs_audit.html) should be the only object for which the view is created. Fields audit masters in this view must not be specified. 
 
-Важен порядок следования атрибутов. Порядок определяет порядок следования атрибутов в фильтре.
+Important the order of the attributes. The order determines the order of attributes in the filter. 
 
-Заголовок должен быть понятен относительно только объекта мастера (ввиду иерархичности представления). Для свойств мастера прописываем только названия свойств (например: мастер – `Адрес проживания`, свойства мастера – `Территория `, `Улица`). 
+The title should be understood with respect to only the object wizard (because of the hierarchy view). For the properties of the master write only the names of the properties (for example: master `Адрес проживания`, properties master `Территория `, `Улица`). 
 
-В случае, когда атрибут-мастер дублируется строковым атрибутом, располагаем сначала строковое поле, затем мастер, при этом заголовок мастера формируем следующим образом: <Название> + ` (из справочника)`. Например: строковое поле – ДолжностьСтрокой, заголовок строкового поля - `Должность`, мастер – Должность, заголовок мастера – `Должность (из справочника)`.
+In the case where the attribute of the master is duplicated string attribute, have the first string field, then the master, the title master is formed as follows: <Name> ` (from the directory)`. For example: a string field – Dalnostroy, header string fields - `Должность`, master Job title master `Должность (from the directory)`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

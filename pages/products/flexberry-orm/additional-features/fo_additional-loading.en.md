@@ -1,169 +1,174 @@
----
-title: Additional loading data object
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, loading data object, data copy
-summary: Description of data validation methods
-toc: true
-permalink: en/fo_additional-loading.html
-lang: en
----
+--- 
+title: Dochitcu data object 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, dochitcu data, copies of data 
+summary: describes how the data decide 
+toc: true 
+permalink: en/fo_additional-loading.html 
+lang: en 
+autotranslated: true 
+hash: c86a83c4933798dc2b1d667c208967264b8af40663b597aece19d120f91a04cb 
+--- 
 
-Иногда требуется дочитать ранее не загруженные свойства [объекта данных](fo_data-object.html).
+Sometimes you want to read previously loaded properties [data object](fo_data-object.html). 
 
-Пусть объект прочитан по [представлению](fd_view-definition.html) "НечтоE". Возможна ситуация, когда для реализации бизнес-логики, например, для выполнения проверок при сохранении объекта, требуется дополнительное подмножество свойств объекта, т.е. объект должен быть загружен по представлению "НечтоПлюсНовыеСвойстваE". Соответственно требуется Дочитать объект.
+Let the object read [view](fd_view-definition.html) "Nettoe". It is possible that for the implementation of the business logic, for example, to perform checks when you save the object, you need an additional subset of the properties of the object, i.e. the object should be downloaded on submission of the "Ectoplasmosis". Accordingly, it is required to Read the object. 
 
-Существует несколько способов дочитки данных. Идеального способа, подходящего во всех случаях не существует. Для правильной дочитки данных следует прочитать руководство полностью и выберать наиболее походящий способ догрузки данных.
+There are several ways decide data. The perfect way, suitable in all cases does not exist. For the right decide data should read the manual completely and select the most appropriate method of loading data. 
 
-{% include note.html content="Если догружаемый объект только создан и ещё не сохранялся в базу ([статус](fo_object-status.html) `Created`), то само понятие `догрузка` к нему не применимо, так как он ни разу не загружался и не существует в базе данных." %}
+{% include note.html content="pogruzheny If the object is just created and not yet persisted to the database ([status](fo_object-status.html) `Created`), then the notion `догрузка` not applicable, as it never loaded and does not exist in the database." %} 
 
-## Особенности дочитки данных
+## Features decide data 
 
-* В зависимости от потребностей задачи должен быть выбран способ работы с [копией объекта данных](fo_data-object-copy.html). Если после дочитки будет выполняться сохранение объекта в БД, значения свойств в [копии](fo_data-object-copy.html) должны быть установлены таким образом, чтобы обеспечить сохранение для всех требуемых свойств.
-* Если в объекте данных перед дочиткой были свойства с измененными значениями, для дочитки надо выбрать [представление](fd_view-definition.html) таким образом, чтобы не потерять эти новые значения.
+* Depending on the needs of the tasks must be chosen way to work with [a copy of the data object](fo_data-object-copy.html). If, after decide will be storing an object in the database, the values in [copy](fo_data-object-copy.html) must be installed so as to ensure that all the required properties. 
+* If the data object before gecitkoy were the properties with the changed values for decide have to select [view](fd_view-definition.html) thus, in order not to lose these new values. 
 
-## Подходы к дочитке данных
+## Approaches to decide data 
 
-Существует два подхода к реализации дочитки:
+There are two approaches to implementing decide: 
 
-* Логика дочитки полностью реализуется прикладным программистом с помощью использования перегрузки метода `LoadObject`.
-В этом случае всю последовательность действий по определению догружаемых свойств и способ работы с [копией данных](fo_data-object-copy.html) выбирает сам программист. Это позволяет наиболее тонко учесть особенности дальнейшего использования объекта в прикладной ситуации.
-* Догрузка выполняется с помощью метода `SecondLoadObject` класса `SQLDataService`.В данный метод уже `зашита` стандартная, наиболее часто требуемая, логика работы с копией данных, Flexberry Platform избавляет программиста от необходимости собственной реализации.
+* Logic decide fully implemented application programmer through the use of method overloading `LoadObject`. 
+In this case the whole sequence is, by definition, pogruzheny properties and the way to work with [copy of data](fo_data-object-copy.html) chosen by the programmer. This allows you to more finely consider the features of the further use of the object in the application situation. 
+* Reload is done by using the method `SecondLoadObject` class `SQLDataService`.This method has `зашита` the standard, most commonly required logic with the copy of the data Flexberry Platform relieves the programmer from having its own implementation. 
 
-### Реализация дочитки данных в коде
+### Implementation decide code data 
 
-Когда требуется догрузить данные, а не вычитать объект заново по указанному представлению, следует использовать [перегрузку] метода `LoadObject`(fo_data-service.html) с четырьмя параметрами. Третий из них - `ClearDataObject` - надо устанавливать в `False`.
+When you want to fetch data, not to deduct the new facility at the specified performance, use the [overload] method `LoadObject`(fo_data-service.html) with four parameters. A third of them `ClearDataObject` - set in `False`.
 
 ``` csharp
-/// <summary>
-/// Загрузка одного объекта данных
-/// </summary>
-/// <param name="dataObjectView">представление</param>
-/// <param name="dobject">бъект данных, который требуется загрузить</param>
-/// <param name="ClearDataObject">очищать ли объект</param>
-/// <param name="CheckExistingObject">проверять ли существование объекта в хранилище</param>
+/// <summary> 
+/// Load one object of data 
+/// </summary> 
+/// <param name="dataObjectView">view</param> 
+/// <param name="dobject">bject data you want to load</param> 
+/// <param name="ClearDataObject">clear whether the object</param> 
+/// <param name="CheckExistingObject">check whether the object exists in the repository</param> 
 virtual public void LoadObject(
             ICSSoft.STORMNET.View dataObjectView,
             ICSSoft.STORMNET.DataObject dobj, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
-```
+``` 
 
-Если указать `CheckExistingObject = true`, при отсутствии объекта в базе будет выдано исключение типа `CantFindDataObjectException`.
+If you specify `CheckExistingObject = true`, in the absence of the object in the database an exception will be thrown of type `CantFindDataObjectException`. 
 
-{% include important.html content="При дочитке происходит переинициализация копии данных объекта. Это значит, что изменения, внесённые в объект с момент загрузки объекта данных до момента дочитки объекта данных, не будут сохранены, т.к. при сохранении идёт сравнение значений полей с полями в [копии данных](fo_data-object-copy.html)." %}
+{% include important.html content="When decide is re-initialization of the copy of the data object. This means that changes made to the object from the time of loading object data until decide data object will not be saved, because when you save there is a comparison of field values to fields in the [data copy](fo_data-object-copy.html)."%} 
 
-При этом надо временно отключать переинициализацию копии данных:
-
-``` csharp
-dobj.DisableInitDataCopy(); // запрещаем инициализацию копии данных
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // дочитка объекта данных
-dobj.EnableInitDataCopy();// возвращаем инициализацию копии данных  
-dobj.GetStatus();//Для того чтобы статус объекта был вычислен по изменённым свойствам относительно копии данных.
-```   
-
-Важно понимать что после дочитки [статус объекта данных](fo_object-status.html) будет установлен в `UnAltered`, поэтому, если планируется дальнейшее обновление объекта в БД, то не забудьте вызвать `dobj.GetStatus()`, что приведёт к перевычислению статуса по изменённым свойствам относительно [копии данных](fo_data-object-copy.html).
-
-Данный вариант применим только к случаю, когда догружаемый объект используется только для чтения и не будет в дальнейшем сохраняться в базу. Приведённый код приведёт к тому, что в объекте поля, указанные в [представлении](fd_view-definition.html) дочитки, заполнятся, а в копии объекта данных останутся без изменений. Это, в свою очередь, приведёт к тому, что догруженные поля будут считаться изменёнными (так как расходятся с копией данных), и будут обновляться в базе данных. Поэтому если дочитываемый объект данных будет в дальнейшем сохраняться в базу, то необходимо привести в соответствие [копию данных](fo_data-object-copy.html):
+Thus it is necessary to temporarily disable the re-initialization of the copy of the data: 
 
 ``` csharp
-dobj.DisableInitDataCopy(); // запрещаем инициализацию копии данных
-ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // дочитка объекта данных
+dobj.DisableInitDataCopy(); // disallow copy initialization data 
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // dochitcu data object 
+dobj.EnableInitDataCopy();// return the initialized copy of the data 
+dobj.GetStatus();//To the object status was calculated by modified properties relative to copies of the data. 
+``` 
 
-// вручную обновляем внутреннюю копию данных
+It is important to understand that after decidi [status data](fo_object-status.html) will be installed in `UnAltered`, therefore, if you plan further object is updated in the database, don't forget to call `dobj.GetStatus()` that will lead to the recomputation of the status on the changed properties relative to [data copy](fo_data-object-copy.html). 
+
+This option applies only to the case when pogruzheny object is read-only and will not continue to be saved to the database. The above code will cause the object fields specified in [view](fd_view-definition.html) decide, filled, and in the copy of the data object will remain unchanged. This, in turn, will cause the loaded fields will be deemed modified (so as to diverge with a copy of the data), and will be updated in the database. So if you finish the data object will continue to be saved to the database, it is necessary to harmonize the [copy data](fo_data-object-copy.html): 
+
+``` csharp
+dobj.DisableInitDataCopy(); // disallow copy initialization data 
+ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj, false, false); // dochitcu data object 
+
+// manually updated the internal copy of the data 
 ТипОбъекта внутренКопия = dobj.GetDataCopy();
 внутренКопия.Поле1 = dobj.Поле1;
 внутренКопия.Поле2 = dobj.Поле2;
-//...
+//... 
 	
 внутренКопия.ПолеN = dobj.ПолеN;
 
-dobj.EnableInitDataCopy();// возвращаем инициализацию копии данных
-```         
+dobj.EnableInitDataCopy();// return the initialized copy of the data 
+``` 
 
-Альтернативным вариантом догрузки данных является создания отдельного экземпляра того же типа с таким же [первичным ключом](fo_primary-keys-objects.html) и вычитка по необходимому [представлению](fd_view-definition.html). При этом [представление](fd_view-definition.html) может быть полное или содержать только те атрибуты, которые будут использоваться в дальнейшем:
+Alternatively, the reload data is create a separate instance of the same type with the same [primary key](fo_primary-keys-objects.html) and proofreading for the necessary [view](fd_view-definition.html). [View](fd_view-definition.html) may be full or contain only those attributes that will be used in the future: 
 
 ``` csharp
-	// Вручную обновляем внутреннюю копию данных
+	// Manually updated the internal copy of the data 
 	ТипОбъекта dobj_forLoading = new ТипОбъекта();
 	dobj_forLoading.SetExistingPrimaryKey(dobj.__PrimaryKey);
-	// view - требуемое представление. Его состав зависит от задачи.
+	// view is required view. Its composition depends on the task. 
 	ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(view, dobj_forLoading);
-```
+``` 
 
-{% include note.html content="Если при вызове метода `LoadObject` явно не указать [представление](fd_view-definition.html), то будут вычитываться все собственные поля объекта и ссылки на мастера без собственных полей мастеров. При этом детейлы объекта вычитываться **не будут**."%}
+{% include note.html content="If you call a method `LoadObject` not explicitly specify a [view](fd_view-definition.html), will be deducted all private object fields and references to the wizard without their own field masters. Detaily object to be deducted **will**." %} 
 
-Чтобы дочитать объект таким образом, необходимо использовать перегрузку метода `LoadObject` без параметра типа `View`. К примеру, подойдет самая простая перегрузка:
+To read the object thus, it is necessary to use a method overload without a parameter `LoadObject` type `View`. For example, suitable for the simplest overload: 
 
 ```csharp
 ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObject(dobj_forLoading);
-```
+``` 
 
-В этом случае объект `dobj_forLoading` также не предназначен для сохранения в базу данных. При этом необходимо понимать, что если объект dobj имеет изменённые свойства (статус `Altered`), то в `dobj_forLoading` они не попадут, так как ещё не сохранены в базу данных. На практике логика не должна зависеть от этого фактора, так как перед дочиткой динамически определяется состав свойств, которые требуется догрузить, при этом изменённые свойства (при правильной проверке) не должны учитываться:
+In this case, the object `dobj_forLoading` also do not persist in the database. It should be understood that if the contact object has changed properties (status `Altered`), in `dobj_forLoading` they will not get, as yet not saved to the database. In practice, the logic should not depend on this factor, as gecitkoy dynamically determines the composition of the properties that you want to reload, and the altered properties (with proper verification) shall not be taken into account: 
 
 ```csharp
 View viewДочитки = new View();
 viewДочитки.DefineClassType = this.GetType();
-if (!dobj.CheckLoadedProperty("Эпизод"))
-    viewДочитки.AddProperty("Эпизод");
-if (!dobj.CheckLoadedProperty("Эпизод.УД"))
-    viewДочитки.AddProperty("Эпизод.УД");
-if (!dobj.CheckLoadedProperty("Эпизод.УД.РУОВД"))
-    viewДочитки.AddProperty("Эпизод.УД.РУОВД");
-if (!dobj.CheckLoadedProperty("Эпизод.УД.РУОВД.Наименование"))
-    viewДочитки.AddProperty("Эпизод.УД.РУОВД.Наименование");
-if (!dobj.CheckLoadedProperty("Эпизод.УД.ГодДокумента"))
-    viewДочитки.AddProperty("Эпизод.УД.ГодДокумента");
-if (!dobj.CheckLoadedProperty("Эпизод.УД.НомерУД"))
-    viewДочитки.AddProperty("Эпизод.УД.НомерУД");
-if (!dobj.CheckLoadedProperty("Эпизод.НомерЭпизода"))
-    viewДочитки.AddProperty("Эпизод.НомерЭпизода");
-if (!dobj.CheckLoadedProperty("ДатаПоступленияВИЦ"))
-    viewДочитки.AddProperty("ДатаПоступленияВИЦ");
+if (!dobj.CheckLoadedProperty("Episode"))
+    viewДочитки.AddProperty("Episode");
+if (!dobj.CheckLoadedProperty("Episode.UD"))
+    viewДочитки.AddProperty("Episode.UD");
+if (!dobj.CheckLoadedProperty("Episode.UD.RUUD"))
+    viewДочитки.AddProperty("Episode.UD.RUUD");
+if (!dobj.CheckLoadedProperty("Episode.UD.RUUD.The name"))
+    viewДочитки.AddProperty("Episode.UD.RUUD.The name");
+if (!dobj.CheckLoadedProperty("Episode.UD.Getdocument"))
+    viewДочитки.AddProperty("Episode.UD.Getdocument");
+if (!dobj.CheckLoadedProperty("Episode.UD.Namerud"))
+    viewДочитки.AddProperty("Episode.UD.Namerud");
+if (!dobj.CheckLoadedProperty("Episode.Naberejnaya"))
+    viewДочитки.AddProperty("Episode.Naberejnaya");
+if (!dobj.CheckLoadedProperty("Databaseplugin"))
+    viewДочитки.AddProperty("Databaseplugin");
 if (viewДочитки.Properties.Length > 0)
 {
-    // дочитка объекта
+    // dochitcu object 
 }
-```
+``` 
 
-### Реализация дочитки средствами Flexberry ORM
+### Implementation decide means Flexberry ORM 
 
-Перед использованием данного метода догрузки следует ознакомится с тем, как обновляются значения свойств в обновляемом объекте и его копии, и учитывать это при подготовке объекта к дочитке и его дальнейшем использовании.
-Метод имеет следующие параметры:
+Before you use this method of loading should be familiar with how updated the property values with the updated object and its copies, and take this into account when preparing the object for decide and its further use. 
+The method has the following parameters: 
 
 ``` csharp
- /// <summary>
-/// Метод для дочитки объекта данных. Загруженные ранее свойства не затираются, изменённые свойства не затираются. Подменяются поштучно свойства копии данных. 
-/// </summary>
-/// <param name="dataObjectView">представление</param>
-/// <param name="dataObject">бъект данных, который требуется загрузить</param>
-/// <param name="checkExistingObject">проверять ли существование объекта в хранилище</param>
-/// <param name="dataObjectCache"></param>
+ /// <summary> 
+/// Method for decide data object. Previously loaded properties are not overwritten, the modified properties are not overwritten. Replaced the piece the properties of the clone data. 
+/// </summary> 
+/// <param name="dataObjectView">view</param> 
+/// <param name="dataObject">bject data you want to load</param> 
+/// <param name="checkExistingObject">check whether the object exists in the repository</param> 
+/// <param name="dataObjectCache"></param> 
 protected virtual void SecondLoadObject(
 View dataObjectView,
 DataObject dataObject, bool checkExistingObject, DataObjectCache dataObjectCache)
-```
+``` 
 
-### Дочитка собственных свойств
+### of Dochitcu own properties 
 
-* Все собственные свойства обновляются только если не были загружены ранее. 
+* All private properties are updated only if not downloaded previously. 
 
-#### Копия данных
+#### copy of the data 
 
-* Если свойство не было загружено, но было изменено, то обновится значение этого свойства в копии данных (т.е. значение в копии синхронизируется с БД).
-* Если свойство было вычитано ранее, то значение в его копии данных не меняется.
-* Если копия данных не была инициализирована ранее, то она инициализируется в этот раз относительно базы данных по новому представлению. Это означает что **loaded-свойства, которые достались от предыдущей зачитки останутся с неправильными значениями в копии данных, логика по определению изменённых свойств работать не будет, поэтому все свойства, обозначенные в представлении будут обновлены, кроме тех что есть в массиве loaded**
-* Если в объекте отключена инициализация копии данных методом `DisableInitDataCopy()`, то копия данных после дочитки не будет инициализирована. По сути это означает что невозможно понять какие свойства были изменены, а какие нет. Массив LoadedProperties будет содержать массив загруженных свойств.
+* If the property has not been loaded but has been changed, updates the value of this property in the copy of the data (i.e. the value in the copy is synchronized with the database). 
+* If the property was previously subtracted, the value in its copy of the data does not change. 
+* If the copy data has not been initialized, it is initialized this time regarding the database for the new view. This means that **loaded-properties that are inherited from the previous zachistki will remain with incorrect values in the data copy, logic, by definition, the changed properties will not work, therefore all properties specified in the view will be updated, except those that are loaded in the array** 
+* If the object is disabled, the initialization data copy method `DisableInitDataCopy()`, the copy data after decide will not be initialized. In essence, this means that it is impossible to understand what properties have changed and which are not. LoadedProperties array will contain an array of loaded properties. 
 
-#### Дочитка мастеров
+#### of Dochitcu masters 
 
-* Если мастер не был вычитан ранее, то он будет зачитан со всеми его мастерами
-* Если мастер уже был вычитан, то будут обновлены его свойства по общему принципу
-* **Если мастер был зачитан ранее, но был заменён на другой, то будет зачитан новый объект** 
-* При дочитке мастер проставляется в LoadedProperties даже если явно не был указан в представлении предка и в БД его нет (изменена [стандартная логика](fo_definition-loaded-properties.html)). Мастер не будет указан в LoadedProperties только если LoadingState объекта: `LoadingState.NotLoaded`
+* If the master was not deducted earlier, he will be credited with all his masters 
+* If the wizard already has been proofread, it will be updated its properties as a General principle 
+* **If the master was read previously but was replaced with another one, it will read the new object** 
+* When decide master is put in LoadedProperties even if not explicitly specified in the representation of ancestor and in the database it is not (changed [standard logic](fo_definition-loaded-properties.html)). The master will not be listed in LoadedProperties only if LoadingState object: `LoadingState.NotLoaded` 
 
-##### Копия данных
+##### copy of the data 
 
-* По стандартной логике копия данных мастерового объекта инициализируется только первичным ключом.
+* According to the standard logic of the workman a copy of the data object is initialized with only the primary key. 
 
-#### Дочитка детейлов
+#### of Dochitcu of datalow 
 
-* Если детейл не участвовал в loadedProperties, то он зачитывается отдельным массивом и присваивается
-* Если детейл был загружен, то производится поэлементное слияние. Объекты, которые не были найдены в коллекции, но были загружены из БД будут добавлены
+* If detail did not participate in loadedProperties, it is credited to a separate array and assigns it to 
+* If detail was loaded, it is done element by element fusion. Objects that were not found in the collection, but was loaded from DB will be added
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

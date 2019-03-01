@@ -1,43 +1,49 @@
----
-title: Реализация информационных систем
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, реализация, задачи лоработки, пользовательский интерфейс, логика приложения, валидация данных, прототип, доработка прототипа, этапы создания приложения
-summary: Задачи доработки и реализации информационных систем
-toc: true
-permalink: en/fd_development.html
-lang: en
----
+--- 
+title: Implementation of information systems 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, sales, tasks narabotki, user interface, application logic, data validation, prototype, Refine prototype, the steps for creating application 
+summary: challenges for the finalization and implementation of information systems 
+toc: true 
+permalink: en/fd_development.html 
+lang: en 
+autotranslated: true 
+hash: 447a10b100f758337a861df191024dff71a4dc51d140587b62d1ff9cf26a50e6 
+--- 
 
-После генерации прототипа приложения при помощи [Flexberry Desinger](fd_landing_page.html) возникает необходимость его настройки и доработки. В каждом отдельном проекте этот процесс будет иметь свои особенности, однако можно выделить набор типовых задач, присущих любому проекту.
+After the generation of prototype applications using the [Flexberry Desinger](fd_landing_page.html) there is a need for its setup and completion. In each project the process will have its own characteristics, however, we can identify a set of typical challenges inherent in any project. 
 
-Обязательные для доработки задачи можно выделить следующим образом:
-1. [Настроить пользовательский интерфейс](fw_customizing-the-user-interface.html).
-2. [Настроить визуальную логику приложения](fw_visual-logic.html).
-3. Реализовать [Валидацию данных](fw_edit-form-validation.html) на формах редактирования.
-4. Реализовать [бизнес-логику](fo_business-logic.html) приложения.
-5. [Настроить обработку ошибок](fp_error-handle.html) в приложении.
+Mandatory for completion of tasks allocate the following: 
+1. [Customize user interface](fw_customizing-the-user-interface.html). 
+2. [You can customize the visual logic of the application](fw_visual-logic.html). 
+3. Implement the [data Validation](fw_edit-form-validation.html) on the edit forms. 
+4. Implemented [business logic](fo_business-logic.html) applications. 
+5. [Configure error handling](fp_error-handle.html) in the application. 
 
-Полный список разделов представлен ниже.
+Full list of topics presented below. 
 
-## Полный список разделов
+## Full list of topics 
 
-Раздел | Описание
-:-------------------------------------------------|:------------------------------------------------
-[Валидация данных](fw_edit-form-validation.html) | Система валидации данных предоставляет механизмы проверки вводимых пользователем данных до попадания в базу данных. Существует 2 варианта валидации: на форме редактирования и в момент сохранения данных.
-[Настройка пользовательского интерфейса](fw_customizing-the-user-interface.html) | После автоматической генерации приложения возникает необходимость изменить внешний вид, привести его к определенному стилю, а также настроить управление приложением с клавиатуры. Технология Flexberry позволяет изменять внешний вид форм и отдельных контролов.
-[Визуальная логика](fw_visual-logic.html) | Наряду с настройкой пользовательского интерфейса возникает необходимость настроить визуальную логику приложения, улучшающую внешний вид и уменьшающую количество ошибок пользователя при работе с интерфейсом. Сюда относится подсветка активных полей, всплывающие подсказки, предиктивный ввод и прочее.
-[Бизнес-логика](fo_business-logic.html) | Технология Flexberry предоставляет возможность проверки данных на соответствие бизнес-логике при их обновлении. Бизнес-сервер — класс, непосредственно содержащий код бизнес-операций, предоставляет возможность обработки и проверки данных перед импортом в базу, также зачастую содержит методы по вычитке данных. Работа с копией данных.
-[Обработка ошибок](fp_error-handle.html) | Если пользователь допускает ошибку, или же программа выполняет недопустимое действие и происходит незапланированная ошибка, то поведение программы не должно вызвать у пользователя непонимание. Программа не должна аварийно прекращать свою работу. Технология предоставляет возможность отлавливания ошибок и вывода их на специальную форму. Также существует возможность ведения лога ошибок, произошедших в процессе выполнения программы.
-[Рабочий стол](fw_app-desktop.html) | Рабочий стол представляет собой каталог ссылок, обеспечивающий доступ к компонентам разрабатываемого приложения. Рабочий стол создается для каждого класса со стереотипом "Application" в момент генерации приложения. В рабочий стол входят Стартеры, превращающиеся в ссылки. Настройка рабочего стола осуществляется либо в Flexberry путем добавления Стартеров в класс, либо через Код: для Windows-приложений рабочий стол превращается в файл <ИмяПриложения>DesktopCustomizer.cs, обеспечивающий настройку формы Рабочего стола. Для Web-приложения - в меню с набором ссылок, находящемся на site-master'е.
-[Внесение изменений в модель приложения](fd_change-model.html) | Технология Flexberry позволяет внести изменения в модель приложения и перенести изменения в сгенерированный проект приложения, затратив минимум усилий и не потеряв уже внесенные в проект изменения. Добавление новых классов. Добавление полей в существующие классы. Переименование классов. Добавление новых связей.
-[Изменение представления списковой формы](fd_listform.html) | Представление списковой формы отвечает за отображаемые на списковой форме данные. При внесении изменений в L-представление класса, изменится и его списковая форма
-[Изменение представления формы редактирования](fd_change-e-view.html) | Представление формы редактирования отвечает за настройку элементов формы редактирования, а также за настройку GroupEdit'a для редактирования объектов класса. При внесении изменений в E-представление класса, изменится и форма редактирования его объектов.
-[Система полномочий](efs_secutity.html) | Система полномочий позволяет настраивать полномочия пользователей и групп пользователей на доступ к объектам данных, представлениям и формам, а также на выполнение определенных операций. Создание и настройка полномочий осуществляется через утилиту Security Console.
-[Система фильтров](fw_filtersand-limits.html) | Фильтры - это инструмент наложения пользовательских ограничений на список объектов, определяющих диапазон отображаемых данных. Фильтры накладываются на представление объекта, а так же на представления его детейлов (если необходимо). Для создания и настройки фильтров используется редактор ограничений.
-[Блокировка данных](fo_lock-service.html) | В многопользовательском приложении очень важно следить за конфликтами доступа к данным различных пользователей. Если пользователь начал редактировать объект, необходимо не допустить к этому объекту других пользователей. Технология Flexberry предоставляет сервис блокировки данных, решающих эту проблему.
-[Интеграция с системой отчетов](fp_create-uni-report.html) | Технология Flexberry предоставляет возможность интеграции приложения с двумя системами генерации отчетов: Статитор и StimulSoft. Системы позволяют генерировать и подготавливать для печати отчеты с данными разрабатываемого приложения.
-[Настройка формата даты](fw_date-format.html) | Только для windows-приложений. Позволяет задать формат даты, в котором будут отображаться и вводиться данные, имеющие тип "Дата".
-[Настройка аудита](efs_audit.html) | Аудит позволяет отслеживать действия пользователя в системе. Для windows- и web- приложений настройка отличается.
-[Интеграция с картой](fg_landing_page.html) | Технология Flexberry позволяет интегрировать приложение с картой, используя подсистему ГИС.
-[Добавление новых приложений](fd_application.html) | Если возникает необходимость разграничить область действия разных категорий пользователей, можно создать не одно, а несколько разных приложений. В каждом приложении будет виден определенный набор доступных форм и действий.
-Импорт в базу данных | Если разрабатываемое приложение является заменой для уже существующей системы, зачастую возникает необходимость переноса базы старой системы в базу данных разрабатываемого приложения. 
+Section | Description 
+:-------------------------------------------------|:------------------------------------------------ 
+[Data validation](fw_edit-form-validation.html) | System validation provides mechanisms to validate user input before it hits the database. There are 2 versions of validation: on the edit form and save the data. 
+[User interface customization](fw_customizing-the-user-interface.html) | After the automatic generation of the application there is a need to change the look, bring it to a particular style, but also to control application with keyboard. Technology Flexberry allows you to change the appearance of forms and individual controls. 
+[Visual logic](fw_visual-logic.html)|, Along with user interface customization is necessary to configure the visual logic of the application, which improves the appearance and reduces the number of user errors when working with the interface. This includes highlighting the active field, tooltips, predictive and so on. 
+[Business logic](fo_business-logic.html) | Flexberry Technology provides the possibility of checking data for compliance with the business logic when updating data. Business server — the class that directly contains the code of the business operations, provides the ability to process and validate data before importing into the database, and also often contain methods for reading data. Work with a copy of the data. 
+[Error handling](fp_error-handle.html) | When the user makes a mistake or the program performs an illegal action and an unplanned error, the program behavior must not cause the user confusion. The program does not have to crash to stop their work. Technology offers the possibility of catching errors and outputting them on a special form. There is also a possibility of logging of errors that occurred during execution of the program. 
+[Desk](fw_app-desktop.html) | desktop is a directory of links providing access to the components of the developed application. Desk is created for each class with the stereotype "Application" at the time of generating the application. In Desk included Starters, turning into links. Customize your desktop either Flexberry by the addition of Starters in a class, or through Code: for Windows applications desktop will be transformed into the file <ApplicationName>DesktopCustomizer.cs that provides configuration forms Desktop. For Web-applications - menu with a set of links located on the site-master E. 
+[Changes in the application model](fd_change-model.html) | Technology Flexberry allows you to make changes to the application model and transfer the changes into the generated application project, with a minimum of effort and without losing already made to the draft changes. Adding new classes. Add fields to existing classes. Renaming classes. Adding new links. 
+[Edit view list form](fd_listform.html) | View in list form is responsible for displayed in a list form data. When changes in the L-representation of a class will change it's list form 
+[Edit view edit form](fd_change-e-view.html) | View edit form is responsible for setting the form elements for editing, and also for setting up a GroupEdit'for editing objects of the class. When changes in E-class view, change and edit its objects. 
+[System authority](efs_secutity.html) | authority System allows you to configure the permissions of users and groups of users to access data objects, views, and forms, as well as to perform certain operations. The creation and setting permissions is done via the tool Security Console. 
+[Filter system](fw_filtersand-limits.html) | Filters is a tool of imposing user restrictions on a list of objects that define the range of data displayed. Filters are applied to the representation of the object and its presentation of datalow (if necessary). To create and configure filters, you use the constraint editor. 
+[Lock data](fo_lock-service.html) | multi-user application it is very important to monitor the conflicts of data access by various users. If the user started to edit the object, it is necessary to prevent that object from other users. Technology Flexberry service data locking to solve this problem. 
+[Integration report](fp_create-uni-report.html) | Technology Flexberry provides integration of applications with two systems of reporting: Statfor and StimulSoft. System to generate and produce printable reports with data developed applications. 
+[Custom date format](fw_date-format.html) | windows Only applications. Allows you to specify the date format that will be displayed and entered data with type "date". 
+[Setup audit](efs_audit.html) | Audit allows you to track user actions in the system. For windows and web applications is different. 
+[Integration with map](fg_landing_page.html) | Flexberry Technology allows you to integrate the app with the map using the GIS subsystem. 
+[Add new application](fd_application.html) | when the need arises to delineate the scope of different categories of users, you can create not one, but several different apps. Every application will be visible to a set of available forms and actions. 
+Import to database | If the application is a replacement for an existing system, it is often necessary database migration of the old system to the database application under development. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

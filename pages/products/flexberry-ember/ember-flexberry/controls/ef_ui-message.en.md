@@ -1,40 +1,42 @@
----
-title: UI Message
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_ui-message.html
-lang: en
-summary: Описание, свойства и пример использования
----
+--- 
+title: UI Message 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_ui-message.html 
+lang: en 
+autotranslated: true 
+hash: 0066a86c82ec27f0f71e1d84685c20d29562a9fb6fd61f59780ff789f9585fc7 
+summary: Description, properties, and usage example 
+--- 
 
-## Описание
+## Description 
 
-Основное предназначение __контрола UI Message__ - отображение сообщений о состоянии контрола. Например, отображение об успешности/неуспешности сохранения формы, предупреждения, информация и т.п.
+The main purpose of __control UI Message__ - displays the status messages of the control. For example, displaying the success/failure of conservation forms, warnings, information, etc. 
 
-Свойства сообщений задаются в разметке страницы приложения.
+Message properties are defined in the page layout application. 
 
-### Список свойств, описанных в компоненте UI Message
+### List of properties described in the component UI Message 
 
-Название свойства |Краткое описание
-:-----------------|:------------------
-`visible`| Отображение (видимость) сообщения, по умолчанию `true`.
-`floating`| Эффект "плавающего" сообщения, по умолчанию `false`.
-`compact`| Отображение в компактном (сжатом) виде, по умолчанию `false`.
-`attached`| Примыкает ли сообщение к другому сообщению или контенту, по умолчанию `false`.
-`closeable`| Возможность скрыть сообщение, по умолчанию `false`.
-`type`| Тип сообщения (ошибка, информация и т.д.), по умолчанию не задано (`null`).
-`color`| Цвет сообщения, по умолчанию не задано (`null`).
-`size`| Размер сообщения, по умолчанию не задано (`null`).
-`icon`| Иконка для сообщения, по умолчанию не задано (`null`). Виды иконок доступны [на сайте semantic-ui.com](http://semantic-ui.com/elements/icon.html).
-`caption`| Заголовок сообщения, по умолчанию не задано (`null`).
-`message`| Содержание (текст) сообщения, по умолчанию не задано (`null`).
+The property names |Short description 
+:-----------------|:------------------ 
+`visible`| Display (visibility) of a message, the default `true`. 
+`floating`| the Effect of "floating" messages, default `false`. 
+`compact`| Display in a compact (compressed) form, default `false`. 
+`attached`| Adjacent whether the message to another message or content, default `false`. 
+`closeable`| Ability to hide the message, default `false`. 
+`type`| message Type (error, information, etc.), no default (`null`). 
+`color`| message Color, default is not set (`null`). 
+`size`| message Size, the default is not set (`null`). 
+`icon`| Icon for the message, default is not set (`null`). The types of icons available [on the website semantic-ui.com](http://semantic-ui.com/elements/icon.html). 
+`caption`| message Header by default is not set (`null`). 
+`message`| Content (text) messages, default is not set (`null`). 
 
-Подробно доступные свойства описаны [на сайте semantic-ui.com](http://semantic-ui.com/collections/message.html).
+Details of the available properties is described [on the website semantic-ui.com](http://semantic-ui.com/collections/message.html). 
 
-## Пример отображения сообщения
+## display Example of the message 
 
-Например, необходимо добавить сообщение об ошибке при сохранении страницы. Разметка будет выглядеть следующим образом:
+For example, you must add the error message when you save the page. The markup would look like this: 
 
 ```hbs
 <div class="field">
@@ -45,18 +47,21 @@ summary: Описание, свойства и пример использова
     closeable=true
   }}{% endraw %}
 </div>
-```
-Сообщению задан заголовок (`caption`), тип (`error`), содержание сообщения (`message`) и возможность скрывать сообщение (`closable`).
-В итоге сообщение будет выглядеть следующим образом:
+``` 
+The specified message header (`caption`), type (`error`), message content (`message`) and the ability to hide the message (`closable`). 
+Eventually, the message will look as follows: 
 
-![](/images/pages/products/flexberry-ember/ember-flexberry/controls/example-for-ui-message.png)
+![](/images/pages/products/flexberry-ember/ember-flexberry/controls/example-for-ui-message.png) 
 
-{% include note.html content="У типов __success__, __error__ и __warning__ отображение зависит от состояния формы, на которой они находятся, т.е. их первого родителя с классами ui form. У элемента с классами __ui form__ должен быть класс с таким же названием, как и тип сообщения (__success__, __error__ или __warning__), чтобы __ui-message__ отобразился.
+{% include note.html content="the types __success__, __error__ and __warning__ the display depends on the state forms on which they are located, i.e. the first parent with class ui form. The element with the classes __ui form__ must be a class with the same name as the message type (__success__, __error__ or __warning__) to __ui-message__ is displayed. 
 
-Типы `positive`, `negative`, `info` отображаются и без родителя." %}
+Types `positive`, `negative`, `info` displayed and without a parent." %} 
 
-Свойства сообщений можно компоновать необходимым для решения поставленной задачи образом (менять цвет, размер, добавлять иконки и т.д.). 
-Однако есть некоторые исключения в использовании свойств:  
-* Свойство `compact` не следует применять со свойством `icon`: сообщение будет отображено в стандартном, а не компактном виде.  
-* Свойство `floating` не следует использовать со свойством `type`: не будет эффекта всплывающего окна (тени). Для придания необходимого внешнего вида сообщения, присущего тому или иному типу, можно использовать свойство `color`.  
-* Свойство `attached` применяется только в том случае, если указано не менее чем для двух элементов.
+Message properties can be combined necessary to solve the task the way (change color, size, add icons, etc.).
+However, there are some exceptions to the use of the properties: 
+* Property `compact` should not apply to property `icon`: a message will be displayed in the standard, not compact. 
+* Property `floating` should not be used with the property `type`: will not effect pop-UPS (shadow). To give the appearance of the message inherent to a particular type, you can use a property `color`. 
+* Property `attached` applies only in the case if you specify at least two elements.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

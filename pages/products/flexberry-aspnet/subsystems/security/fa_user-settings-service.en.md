@@ -1,20 +1,26 @@
----
-title: UserSettingsService
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry UserSettingsService
-toc: true
-permalink: en/fa_user-settings-service.html
-lang: en
----
+--- 
+title: UserSettingsService 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry UserSettingsService 
+toc: true 
+permalink: en/fa_user-settings-service.html 
+lang: en 
+autotranslated: true 
+hash: 19751d6e30e67283020321967a483e6089898a4ea15f9f4d0dbf454019aa5946 
+--- 
 
-`UserSettingsService` - это сервис хранения пользовательских настроек. 
+`UserSettingsService` is a service by storing user preferences. 
 
-1. Позволяет устанавливать, получать и удалять пользовательские настройки. Реализовано несколько полей с различными стандартными типами - удобнее использовать, не требуется затрат на преобразование типов.
-2. Реализовано множество перегрузок методов для удобства применения.
-3. Есть общие настройки (Common), которые задаются на всё приложение сразу.
-4. Реализована поддержка указания настройки как по именам (пользователя, модуля и настройки), так и по уникальным идентификаторам. Эта реализация позволяет в прикладной части иметь соответствующие справочники, которые могут визуально редактироваться и использоваться для управления настройками.
-5. Сервис может использоваться как сборка в рамках приложения, так и как WCF-сервис (возможность в разработке).
-6. Имеется набор методов для работы с коллекциями настроек (в разработке). Это позволяет реализовывать функциональность вида: "дай мне все настройки пользователя N, чтобы я положил их в свой кэш; удалю из кэша, когда пользователь выйдет из системы".
-7. Написание сервиса ведётся с применением Unit-тестирования (NUnit).
+1. Allows you to set, get and delete user settings. Implemented multiple fields with different standard types are easier to use, does not require the cost of type conversion. 
+2. There are many overloads of methods for ease of use. 
+3. There are General settings (Common), which are defined for all application at once. 
+4. Implemented support for specifying settings like names (user, module, and settings), and unique identifiers. This implementation allows application parts to have the appropriate reference, which can be visually edited and used to control the settings. 
+5. The service may be used as an Assembly within the app or as a WCF service (in development). 
+6. There is a set of methods to work with collections of settings (in development). It allows to implement functionality of the form: "give me all user settings N to I put them in your кэш; removed from the cache when the user logs off". 
+7. Writing service, is using Unit testing (NUnit). 
 
-Для работы `UserSettingsService` требуется отдельная таблица в БД.
+To work `UserSettingsService` requires a separate table in the database. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

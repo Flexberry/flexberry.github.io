@@ -1,25 +1,27 @@
----
-title: Structure of data object classes
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, class 
-summary:  Description and examples of data classes and their relationships
-toc: true
-permalink: en/fo_data-object-structure.html
-lang: ru
----
+--- 
+title: Structure of classes of data objects 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM class 
+summary: Description and examples of data classes and their relationships 
+toc: true 
+permalink: en/fo_data-object-structure.html 
+lang: en 
+autotranslated: true 
+hash: ef45baae74573f21c65105d6bdafcaf5160207e6e1dfc19079b2fab6481b3582 
+--- 
 
-Используемая в примерах диаграмма:
+Used in the example chart: 
 
-![](/images/pages/products/flexberry-orm/data-object/data-object-structure.jpg)
+![](/images/pages/products/flexberry-orm/data-object/data-object-structure.jpg) 
 
-## Класс данных
+## data Class 
 
-Все классы данных наследуются от базового [DataObject](fo_data-object.html), обеспечивающего основные манипуляции:
+All data classes inherit from the base [DataObject](fo_data-object.html), which provides basic manipulation: 
 
-* [статусы](fo_object-status.html), 
-* хранение данных, 
-* хранение [копии данных](fo_data-object-copy.html) для вычисления изменённых [атрибутов](fo_attributes-class-data.html),
-* означивание и хранение [первичного ключа](fo_primary-keys-objects.html).
+* [status](fo_object-status.html), 
+* data storage, 
+* storage [copy data](fo_data-object-copy.html) to calculate the modified [attributes](fo_attributes-class-data.html), 
+* denotation and storage [primary key](fo_primary-keys-objects.html). 
 
 ```csharp
 public class SimpleDataObject:DataObject 
@@ -28,11 +30,11 @@ public class SimpleDataObject:DataObject
 		{
 		}
 	}
-```
+``` 
 
-## Атрибут
+## Attribute 
 
-Атрибуты UML-класса прописываются в класс данных приватным членом указанного типа с именем атрибута и соответствующим свойством для получения/установки значения. Свойство всегда виртуальное, но с любым модификатором.
+The attributes of a UML class are written in the class private data member of the specified type with the attribute name and the appropriate property to get/set the value. Property is always virtual, but with any modifier. 
 
 ```csharp
 public class SimpleDataObject:DataObject 
@@ -45,24 +47,24 @@ public class SimpleDataObject:DataObject
 		public virtual string Name {get{return fName;} set{fName=value;}}		
 		public virtual int IntAttr {get{return fIntAttr;} set{fIntAttr=value;}}
 	}
-```
+``` 
 
-## Мастер
+## Master 
 
-[Мастеровая ассоциация](fd_master-association.html) представлена в классе данных членом соответствующего типа – мастерового класса данных, и аналогичным свойством, объявленным как virtual.
-Пример:
+[Artisans Association](fd_master-association.html) is represented in the class member data of the appropriate type – craftsman class data, and similar property that is declared as virtual. 
+Example: 
 
 ```csharp
 private MasterDataObject fMaster;
 public virtual MasterDataObject Master {get{return fMaster;} set{fMaster=value;}}
-```
+``` 
 
-## Детейл
+## Detail 
 
-Если [класс является агрегируемым](fo_detail-associations-properties.html), то:
+If [the class is aggregated](fo_detail-associations-properties.html): 
 
-1.Генерируется свойство, указывающее [агрегатор(шапку)](fd_key-concepts.html). Это свойство помечается атрибутом `ICSSoft.STORMNET.DataObject.AgregatorAttribute.`
-Пример класса данных детейла:
+1.Generated property that specifies [aggregator(hat)](fd_key-concepts.html). This property is marked with the attribute `ICSSoft.STORMNET.DataObject.AgregatorAttribute.` 
+An example of a class data detail: 
 
 ```csharp
 public class DetailDataObject:DataObject
@@ -76,10 +78,10 @@ public class DetailDataObject:DataObject
 		[Agregator]
 		public virtual SimpleDataObject Simple {get{return fSimple;}set{fSimple=value;}}
 }
-```
+``` 
 
-2.Создаётся класс, производный от `DetailArray`, обеспечивающего базовые операции над массивом объектов данных агрегируемого класса. Вводятся операции получения объекта данных по ключу и по индексу, а также добавления объекта. Делается это для того, чтобы обеспечить доступ к массиву по индексу и добавление объекта.
-Пример класса массива объектов данных для данного класса данных:
+2.Creates a class derived from `DetailArray`, providing basic operations on the array of data objects of the aggregated class. Introduces the operation of receiving a data object by key and by index, and adding an object. This is done in order to provide access to array by index, and add the object. 
+An example of a class an array of data objects for a given class of data: 
 
 ```csharp
 public class DetailArrayOfDetailDataObject:DetailArray 
@@ -100,20 +102,23 @@ public class DetailArrayOfDetailDataObject:DetailArray
 			AddObject(dataobject);
 		}	
 	}
-```
+``` 
 
-3.Если класс является агрегирующим, то детейловая ассоциация представляется в объекте данных членом соответствующего типа-класса, производного от `DetailArray` и аналогичным свойством.
-Пример:
+3.If the class is aggregating, dealova Association is represented in the object data member type of a class derived from `DetailArray` and similar property. 
+Example: 
 
 ```csharp
 private DetailArrayOfDetailDataObject fDetails;
 public virtual DetailArrayOfDetailDataObject Details {get{return fDetails;} set{fDetails=value;}}
-```
+``` 
 
-Также пример доступен [по адресу] (https://github.com/Flexberry/FlexberryORM-DemoApp/tree/master/FlexberryORM/CDLIB/Objects).
+An example is also available [at] (https://github.com/Flexberry/FlexberryORM-DemoApp/tree/master/FlexberryORM/CDLIB/Objects). 
 
-## Наследование
+## Inheritance 
 
-Если класс является [унаследованным](fd_inheritance.html), то в исходном коде он наследуется от соответствующего предка (в соответствии с диаграммой).
-Если у унаследованного класса есть атрибут (детейл, мастер) с тем же именем, что и у предка, он перегружается. При этом не может меняться тип.
-Операции UML-класса генерируются виртуальными методами .Net-класса. Методы также могут быть перегружены в наследниках, для чего у наследника должен быть указан метод с аналогичным числом и типом параметров.
+If the class is [legacy](fd_inheritance.html), the source code he inherited from the corresponding parent (in accordance with the diagram). 
+If the inherited class has the attribute (detail, master) with the same name as the ancestor, it is overloaded. Cannot change type. 
+The operation of a UML class generated by virtual methods .Net-class. Methods can also be overloaded in the descendants, for which the heir must be specified a method with the same number and type of parameters.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

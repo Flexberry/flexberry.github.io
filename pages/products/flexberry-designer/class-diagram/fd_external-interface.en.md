@@ -1,52 +1,58 @@
----
-title: Классы со стереотипом ExternalInterface
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, ExternalInterface, интерфейс, наследование, пример
-summary: Описание особенностей и пример генерации ExternalInterface
-toc: true
-permalink: en/fd_external-interface.html
-lang: en
----
+--- 
+title: Classes with the stereotype ExternalInterface 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, ExternalInterface, interface, inheritance, example 
+summary: features Description and example of generation of ExternalInterface 
+toc: true 
+permalink: en/fd_external-interface.html 
+lang: en 
+autotranslated: true 
+hash: 3767edf632884806ad8e52b2396dd3d955d3a3f54ad0490f9affe578121260f6 
+--- 
 
-Классы со [стереотипом](fd_key-concepts.html) ExternalInterface - это всего лишь указание на то, что нужно будет сгенерировать [наследование](fd_inheritance.html) от интерфейса для того класса, который будет наследоваться от этого интерфейса.
+Classes with the [stereotype](fd_key-concepts.html) ExternalInterface is just a indication that you will need to generate [inheritance](fd_inheritance.html) interface for the class which will inherit from this interface. 
 
-## Пример использования класса со стереотипом ExternalInterface
+## an Example of using the class with the stereotype ExternalInterface 
 
-Пусть в проекте `CatInterface` объявлен интерфейс IКошка
+Let the project `CatInterface` declared interface Koshka 
 
-![](/images/pages/products/flexberry-designer/class-diagram/interface-i-cat.png)
+![](/images/pages/products/flexberry-designer/class-diagram/interface-i-cat.png) 
 
-А в другом проекте `TestExtInterface` структура вида
+And in another project `TestExtInterface` structure of the species 
 
-![](/images/pages/products/flexberry-designer/class-diagram/ext-interface-i-cat.png)
+![](/images/pages/products/flexberry-designer/class-diagram/ext-interface-i-cat.png) 
 
-Если в проекте, содержащем ExternalInterface, сгенерировать объекты, то в классе `СиамскаяКошка` будет строка вида
+If the project that contains the ExternalInterface to generate the objects in the class `СиамскаяКошка` will be a string of the form 
 
 ```csharp
 public class СиамскаяКошка : ICSSoft.STORMNET.DataObject, IКошка
-```
-Однако проект компилироваться не будет, поскольку не указано, где находится интерфейс `IКошка`. Чтобы это исправить, необходимо: 
+``` 
+However, the project will fail to compile, because it does not specify where the interface `IКошка`. To fix this, you need to: 
 
-1.Добавить ссылку в проекте на сборку `CatInterface(Objects).dll`. 
+1.Add reference in the project to build `CatInterface(Objects).dll`. 
 
-2.В код класса объектов добавить директиву:
+2.In the code of the feature class to add the Directive: 
 
 ```csharp
 namespace IIS.TestExtInterface
 {
-	//...
+	//... 
 	
-    // *** Start programmer edit section *** (Using statements)
+    // *** Start programmer edit section *** (Using statements) 
     using IIS.CatInterface;
-    // *** End programmer edit section *** (Using statements)
+    // *** End programmer edit section *** (Using statements) 
 	
-	//...
+	//... 
     public class СиамскаяКошка : ICSSoft.STORMNET.DataObject, IКошка
     {
-		//...
+		//... 
 	}
 }
-```
+``` 
 
-3.Реализовать методы интерфейса `IКошка`.
+3.Implement the methods of the interface `IКошка`. 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

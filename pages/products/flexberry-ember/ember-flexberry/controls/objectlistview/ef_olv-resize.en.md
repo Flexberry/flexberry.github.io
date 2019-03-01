@@ -1,23 +1,29 @@
----
-title: Changing the columns of the list columns
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_olv-resize.html
-lang: en
-summary: Принципы настройки и использования свойства изменения ширины столбцов на списках элементов и их детейлов
----
+--- 
+title: Change width list column 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_olv-resize.html 
+lang: en 
+autotranslated: true 
+hash: 74e665dad8ef2dec958598668c63ff6f5e7bd5097a1787e09f9cfeb4326ac01e 
+summary: Principles of configuring and using properties change the width of the columns in the lists of items and their detailov 
+--- 
 
-Изменение ширины столбцов для [списка](ef_object-list-view.html) и [детейлов](ef_groupedit.html) на форме редактирования осуществляется по общим принципам.
+Change the width of columns [list](ef_object-list-view.html) and [datalow](ef_groupedit.html) on the edit form is implemented according to General principles. 
 
-Для того чтобы включить/отключить изменение шири ны столбцов, необходимо задать у контрола в шаблоне свойство `allowColumnResize` (для обычных приложений это свойство по умолчанию имеет значение `true`, для мобильных - `false`. 
+To enable/disable changing of width HN of the columns, you must specify the control in the template property `allowColumnResize` (for normal applications this property has a default value `true` for mobile - `false`. 
 
-{% include note.html content="Не смотря на то, что для мобильных приложений изменение ширины столбцов доступно, включать данный флаг для данного типа приложений не рекомендуется." %}
+{% include note.html content="despite the fact that mobile applications changing the width of columns available to include the flag for this type of application is not recommended." %} 
 
-Если плагин инициализировался правильно, то после загрузки контрола при наведении курсора на границу между столбцами курсор меняет свой внешний вид и появляется возможность изменять ширину столбцов.
+If the plugin was initialized correctly, after you download the control when you hover over the border between columns, the cursor changes its appearance and you can change the width of columns. 
 
-Возможно запретить изменение размеров отдельных столбцов, используя [начальные настройки отображаемых столбцов](ef_model-user-settings-service.html) в свойстве `columnWidths`.
+It is possible to prevent resizing of individual columns using the [initial configuration of columns to display](ef_model-user-settings-service.html) in the property `columnWidths`. 
 
-## Сервис настроек пользователя
+## Service user settings 
 
-Если [cервис настроек пользователя](ef_model-user-settings-service.html) включён, то при загрузке спискового контрола вычитывается сохранённая настройка ширины столбцов, а при изменении ширины столбцов - настройка сохраняется.
+If [service user settings](ef_model-user-settings-service.html) is enabled, when loading the list control to read the saved setting width of columns, and changing column width - the setting is saved. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,17 +1,23 @@
----
-title: Getting a Presentation Value for a Data Object
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM
-summary: Methods that allow you to retrieve and override the values of data objects
-toc: true
-permalink: en/fo_get-presentation-value.html
-lang: en
----
+--- 
+title: getting a presentation of the value of the data object 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM 
+summary: Methods to obtain and override data objects 
+toc: true 
+permalink: en/fo_get-presentation-value.html 
+lang: en 
+autotranslated: true 
+hash: c96b66d6c2167b6a833ea7d1f8a967f09823c13ce57d47fb7e801d6013605cb3 
+--- 
 
-При необходимости получения строкового представления [DataObject](fo_data-object.html) можно воспользоваться методом `DataObject.GetPresentationValue()`.
+If you need the string representation of a [DataObject](fo_data-object.html) you can use the method `DataObject.GetPresentationValue()`. 
 
-Данный метод вернет значение атрибутов "Название", "Наименование", "Name" при их наличии, либо первый строковый атрибут. При отсутствии строковых атрибутов вернется значение метода `DataObject.ToString()`.
+This method will return the value of the attributes "Name", "Name", "Name", if available, or the first string attribute. In the absence of string attributes return value of the method `DataObject.ToString()`. 
 
-В случае необходимости переопределить поведение метода в прикладном проекте необходимо использовать делегат `DataObject.GetPresentationValueDelegate`.
+If necessary override this method in the application project must use the delegate `DataObject.GetPresentationValueDelegate`. 
 
-Метод `DataObject.GetPresentationValue()` используется для именования ярлыков рабочего стола.
+Method `DataObject.GetPresentationValue()` used for the naming of the desktop shortcuts. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

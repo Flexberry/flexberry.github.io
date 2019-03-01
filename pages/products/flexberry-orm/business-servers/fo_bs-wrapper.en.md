@@ -1,25 +1,32 @@
----
-title: Business servers and wrappers
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, business servers, wrappers, stubs
-summary: Basic principles of the business server and its wrappers
-toc: true
-permalink: en/fo_bs-wrapper.html
-lang: en
----
+--- 
+title: Business servers and wrappers 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, business servers, wrappers, stubs 
+summary: the Basic principles of the business server and its wrapper 
+toc: true 
+permalink: en/fo_bs-wrapper.html 
+lang: en 
+autotranslated: true 
+hash: 1d2190558f23fdb898cc1b2d6d7c15163acaec98da9497f33e51caea8e9f5206 
+--- 
 
-Бизнес-сервер есть набор методов. В `CASE` бизнес-сервер отрисовывается [UML-классом с установленным атрибутом «businessserver»](fd_business-servers.html). Система может содержать произвольное число бизнес-серверов. В общем, число бизнес-серверов и состав их методов определяется прикладным разработчиком.
+The business server has a set of methods. In `CASE` business server rendered [UML class with the installed attribute "businessserver"](fd_business-servers.html). The system can contain an arbitrary number of business servers. In General, the number of business servers and their methods is defined by an application developer. 
 
-`Бизнес-сервер` — класс, непосредственно содержащий код бизнес-операций.
+`Бизнес-сервер` class that contains the code of the business operations. 
 
-`Заглушки, обёртки бизнес-сервера` — позволяют исполнить бизнес-сервис в средах:
+`Заглушки, wrappers business сервера` — allow to perform business services in the following environments: 
 
-* `COM+` (`COM+` обёртка) — позволяет пользоваться `COM+` с целью обеспечения транзакционности при множественных вызовах сервисов данных внутри одного метода, распределённых транзакции, «физической» реализации архитектуры с сервером приложений (исполнение бизнес-серверов на отдельной машине).
-* `IIS Hosted Remoting` (`IISHosted` обёртка) — позволяет обращаться к бизнес-серверу через `.NET Remoting`, посредством `HTTP`, в качестве транспорта используется `SOAP`. Использование такой обёртки позволяет работать в режиме, когда приложение с настольным пользовательским интерфейсом обращается к бизнес-серверу, расположенному где-либо, через `WEB`.
+* `COM ` (`COM ` wrapper) allows you to use `COM ` to ensure transaction for multiple calls to data services from within a single method, distributed transaction, the physical implementation architecture with application server (executing business server on a separate machine). 
+* `IIS Hosted Remoting` (`IISHosted` wrapper) — allows access to the business server via `.NET Remoting` by `HTTP`, transport is `SOAP`. The use of this wrapper allows you to work in a mode where the application is a desktop user interface accesses a business server, located anywhere, via `WEB`. 
 
-## Особенности использования
+## features of use 
 
-Дополнительная информация об особенностях использования бизнес-серверов доступна в следующих статьях:
+Additional information about the features of using a business server is available in the following articles: 
 
-* [Порядок вызова бизнес-серверов](fo_order-calls-bs.html)
-* [Отработка пользовательских операций в процессе работы сервиса данных (интеграция с бизнес-сервером)](fo_user-operations-dataservice.html)
+* [Call order business servers](fo_order-calls-bs.html) 
+* [Testing custom operations in the data service (integration with the business server)](fo_user-operations-dataservice.html) 
+
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

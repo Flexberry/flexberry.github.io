@@ -1,13 +1,15 @@
----
-title: Расположение footer внизу страницы
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_footer-stick-bottom.html
-lang: en
----
+--- 
+title: Position footer at the bottom of the page 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_footer-stick-bottom.html 
+lang: en 
+autotranslated: true 
+hash: 46d0ba9375c221e631711441146470daa47230762d074840e37278b14d24970e 
+--- 
 
-В тег body (при использовании ASP.NET в тег form) помещаются блоки с классами `wrapper` и `footer`. В самом конце содержимого тега с классом `wrapper` вставляется пустой блок с классом `push` — он служит для создания пустого пространства между этими блоками, когда содержимое `wrapper` полностью помещается в область экрана.
+In the body tag (when using ASP.NET in the form tag) are blocks with classes `wrapper` and `footer`. At the end of the tag content with the class `wrapper` inserted an empty block with the class `push` — it is used to create empty space between these blocks when the content `wrapper` completely fit into the screen area. 
 
 ```html
 <html>
@@ -24,14 +26,14 @@ lang: en
         </div>
     </body>
 </html>
-```
+``` 
 
-## CSS
+## CSS 
 
-Для всех родительских блоков тега с классом `wrapper` должна быть установлена высота 100% и убраны отступы (margin):
+For all parent blocks tag with the class `wrapper` must have height of 100% and removed the padding (margin): 
 
 ```css
-{ // данный селектор можно заменить на конкретные теги (html, body и т.д.), если его свойства нарушают отображение других элементов
+{ // this selector can be replaced by specific tags (html, body, etc.), if its properties of breaking the display of other elements 
     margin: 0; 
 }
 html, body {
@@ -41,29 +43,33 @@ html, body {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto -4em; // значение обратное высоте footer
+    margin: 0 auto -4em; // the value of the inverse of the height of the footer 
 }
 .footer, .push {
-    height: 4em; // высота footer
+    height: 4em; // height of footer 
 }
-```
+``` 
 
-## Использование нескольких колонок в содержимом
+## the Use of multiple columns in the content 
 
-При использовании колонок внутри блока с классом `wrapper` необходимо добавить `clear` для класса `push`:
+When you use the columns inside the block with class `wrapper` you need to add `clear` class `push`: 
 
 ```css
 .footer, .push {
     clear: both;
 }
-```
+``` 
 
-## Проблемы при использовании с ASP.NET
+## Problems when used with ASP.NET 
 
-Если используется ASP.NET, следует добавите следующий CSS-код:
+If you use ASP.NET should add the following CSS code: 
 
 ```css
 form {
     height: 100%;
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

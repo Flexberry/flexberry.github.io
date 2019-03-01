@@ -1,127 +1,133 @@
----
-title: Установка Flexberry Designer
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, алгоритм установки, лицензии
-summary: Алгоритм установки Flexberry Designer, лицензии и возможные проблемы при установке
-toc: true
-permalink: en/fd_install.html
-lang: en
----
+--- 
+title: Installation Flexberry Designer 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, algorithm setup, license 
+summary: Algorithm setup Flexberry Designer, license, and possible problems when installing 
+toc: true 
+permalink: en/fd_install.html 
+lang: en 
+autotranslated: true 
+hash: b31c46f5ce0cc11fb3ca18f60e2316f16161a3204e7624448b8f43393e113f83 
+--- 
 
-Для того чтобы установить [Flexberry Designer](fd_landing_page.html) нужно скачать файл установки с сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try).  
-При этом требуется регистрация на сайте.
+To set [Flexberry Designer](fd_landing_page.html) you need to download the installation file from site [Flexberry.net](https://designer.flexberry.net/#/fd-try). 
+This requires registration on the website. 
 
-Также получить файл установки можно в разделе [Лицензии](https://designer.flexberry.net/#/download-win-app) по кнопке `Установить`.
+Also to the install file in the section [License](https://designer.flexberry.net/#/download-win-app) button `Установить`. 
 
-Для работы приложения на компьютере должно быть установлено следующее ПО (перед установкой это будет проверено и, если чего-то будет не хватать, установлено):
+For the application to work, the computer must have the following installed (before you install it will be checked and if something will be missed, installed): 
 
-* SQL Server 2012 Express LocalDB (и выше)
-* Windows Installer 4.5
-* Microsoft .NET Framework 4 (x86 and x64)
-* .NET Framework 3.5 SP1
+* SQL Server 2012 Express LocalDB (and above) 
+* Windows Installer 4.5 
+* Microsoft .NET Framework 4 (x86 and x64) 
+* .NET Framework 3.5 SP1 
 
-## Алгоритм установки Flexberry Designer
+## Algorithm setup Flexberry Designer 
 
-*При установке система может запрашивать разрешения на установку, во всех случаях необходимо их дать.*
+*When installing, the system may prompt for permission to install, in all cases, you need to give them.* 
 
-1.Зарегистрироваться на сайте [Flexberry.ru](https://flexberry.net), если это не было сделано ранее.
+1.To register on the site [Flexberry.ru](https://flexberry.net) if not already done. 
 
-2.Нажать на кнопку `Попробовать` в разделе `Попробуйте сами` или `Установить` в разделе [Лицензии](https://designer.flexberry.net/#/download-win-app).
+2.Click the button `Попробовать` in section `Попробуйте сами` or `Установить` in [License](https://designer.flexberry.net/#/download-win-app). 
 
-3.При скачивании приложения в `Google Chrome` браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.
+3.When downloading apps in `Google Chrome` browser may block the download. You also need to allow the download. 
 
-![](/images/pages/products/flexberry-designer/about/save-chrome.png)
+![](/images/pages/products/flexberry-designer/about/save-chrome.png) 
 
-5.Запустить скачанный установщик.
+5.Run the downloaded installer. 
 
-6.Если при установке возникнет окно, изображённое ниже, то необходимо в этом окошке нажать "Подробнее" и дать приложению необходимые привилегии.
+6.If you are installing a new window will appear as shown below, it is necessary in this window click "More" to give the application the necessary privileges. 
 
-![](/images/pages/products/flexberry-designer/about/let-setup0.png)
+![](/images/pages/products/flexberry-designer/about/let-setup0.png) 
 
-![](/images/pages/products/flexberry-designer/about/let-setup.png)
+![](/images/pages/products/flexberry-designer/about/let-setup.png) 
 
-7.Разрешить установку приложения.
+7.Allow installation of applications. 
 
-![](/images/pages/products/flexberry-designer/about/let-setup2.png)
+![](/images/pages/products/flexberry-designer/about/let-setup2.png) 
 
-8.Если всё необходимое ПО стоит, то система достаточно быстро пройдёт установку (либо потребует установить необходимое).
+8.If all the necessary costs, the system quickly enough will be to install (or requires you to install the necessary). 
 
-![](/images/pages/products/flexberry-designer/about/install-designer.png)
+![](/images/pages/products/flexberry-designer/about/install-designer.png) 
 
-![](/images/pages/products/flexberry-designer/about/let-setup3.png)
+![](/images/pages/products/flexberry-designer/about/let-setup3.png) 
 
-9.Ввести логин/пароль от сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try) для получения лицензий.
+9.Enter the username/password from website Flexberry.net](https://designer.flexberry.net/#/fd-try) to obtain licenses. 
 
-![](/images/pages/products/flexberry-designer/about/login-flexberry2.png)
+![](/images/pages/products/flexberry-designer/about/login-flexberry2.png) 
 
-10.Определить путь, куда приложение будет генерироваться.
+10.Define the path where the application will be generated. 
 
-![](/images/pages/products/flexberry-designer/about/set-generation-path.png)
+![](/images/pages/products/flexberry-designer/about/set-generation-path.png) 
 
-В редких случаях, когда не всё стороннее ПО успевает настроиться, при первом запуске может возникнуть ошибка. В этом случае рекомендуется запустить приложение повторно через созданный на рабочем столе ярлык.
+In rare cases, when not all the parties have time to tune, when you first start may fail. In this case, it is recommended to run the app again through the created desktop shortcut.
 
-## Установка лицензий
+## Install licenses 
 
-При данном способе получения продукта [Flexberry Designer](fd_landing_page.html) установка лицензий будет происходить следующим образом:
+With this method of obtaining the product [Flexberry Designer](fd_landing_page.html) install licenses will occur as follows: 
 
-*   При установке приложения у пользователя будут запрошены логин и пароль от сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try), откуда лицензия будет выкачана и автоматически установлена.
-*   По окончании срока лицензии при запуске приложения пользователю вновь будет предложено ввести учётные данные от сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try) для скачивания [приобретённой лицензии](https://designer.flexberry.net/#/fd-try).
+* When the application is installed the user will be prompted for the username and password of website [Flexberry.net](https://designer.flexberry.net/#/fd-try) where the license will be downloaded and automatically installed. 
+* At the end of the license term when the application starts, the user will again be prompted to enter credentials from the website [Flexberry.net](https://designer.flexberry.net/#/fd-try) download [purchased licenses](https://designer.flexberry.net/#/fd-try). 
 
-## Установка новой версии Flexberry Desinger (обновление)
+## installing a new version Flexberry Desinger (update) 
 
-*При установке система может запрашивать разрешения на установку, во всех случаях необходимо их дать.*
+*When installing, the system may prompt for permission to install, in all cases, you need to give them.* 
 
-Для того чтобы установить обновления для Flexberry Desinger, необходимо следующее:
+To install the updates for Flexberry Desinger, you must have the following: 
 
-1.Открыть раздел [Лицензии](https://designer.flexberry.net/#/download-win-app) и нажать кнопку `Установить`. 
+1.To open the [License](https://designer.flexberry.net/#/download-win-app) and click `Установить`. 
 
-*Может потребоваться залогиниться на сайт, если это не было сделано ранее. При скачивании приложения в Google Chrome браузер может заблокировать загрузку. Требуется дополнительно разрешить данную загрузку.*
+*May require login to the site if it was not done earlier. When downloading apps in the Google Chrome browser may block the download. You also need to allow the download.* 
 
-2.Запустить скачанный установщик.
+2.Run the downloaded installer. 
 
-3.Ввести логин/пароль от сайта [Flexberry.net](https://designer.flexberry.net/#/fd-try) для получения лицензий.
+3.Enter the username/password from website Flexberry.net](https://designer.flexberry.net/#/fd-try) to obtain licenses. 
 
-4.Определить путь, куда приложение будет генерироваться.
+4.Define the path where the application will be generated. 
 
-Подключить используемую ранее базу данных можно при помощи пункта меню `Настройки/Сменить БД` с последующим введением строки соединения c базой данных.
+To connect a previously used database by using the menu item `Настройки/Change БД` followed by the introduction of the connection string the database. 
 
-### Особенности обновления Flexberry Designer при использовании LocalDB
+### update Features Flexberry Designer when using LocalDB 
 
-{% include note.html content="Перед обновлением необходимо запустить Flexberry Designer." %}
+{% include note.html content="Before you upgrade, you must run Flexberry Designer." %} 
 
-При обновлении `Flexberry Designer` с использованием `LocalDB` алгоритм обновления несколько иной:
+When you upgrade `Flexberry Designer` using `LocalDB` update algorithm is somewhat different: 
 
-1.Необходимо сделать backup FlexberryDesigner.mdf:
+1.You must make a backup FlexberryDesigner.mdf: 
 
-* Использовать панель задач:
+* Use the task pane: 
 
-    * Кликнуть на панели задач на иконку `Flexberry Designer` правой кнопкой мыши, затем кликнуть правой кнопкой по "CASEBERRY" и выбрать пункт "Свойства".
+* Click on the taskbar icon `Flexberry Designer`, right-click, then right click on the "CASEBERRY" and select "Properties". 
 
-        ![](/images/pages/products/flexberry-designer/about/update-fd-menu.png)
+![](/images/pages/products/flexberry-designer/about/update-fd-menu.png) 
 
-    * Скопировать путь к файлу .exe, вставить в проводник и найти файл `FlexberryDesigner.mdf` и скопировать его в другую папку.
+* Copy the file path .exe, paste into Windows Explorer and find the file `FlexberryDesigner.mdf` and copy it to another folder. 
 
-        ![](/images/pages/products/flexberry-designer/about/update-fd-settings.png)
+![](/images/pages/products/flexberry-designer/about/update-fd-settings.png) 
 
-* Использовать диспетчер задач:
+* Use the task Manager: 
 
-    * Запустить диспетчер задач, найти в списке запущенных приложений `Flexberry Designer`. 
-    * Кликнуть по нему правой кнопкой и выбрать пункт "Открыть расположение файла" - открыт каталог, в котором требуется найти и скопировать в другую папку файл `FlexberryDesigner.mdf`. 
+* Run task Manager, find in the list of running applications `Flexberry Designer`. 
+* Click on it, right click and select "Open file location" open the directory in which you want to find and copy to another folder the file `FlexberryDesigner.mdf`. 
 
-2.Обновить `Flexberry Designer`.
+2.Update `Flexberry Designer`. 
 
-3.Далее по указаному в п.1 данного раздела алгоритму подменить файл `FlexberryDesigner.mdf` на сохраненный ранее.
+3.Further on specified in item 1 of this section, the algorithm to decrypt the file `FlexberryDesigner.mdf` on previously saved.
 
-## Возможные проблемы при установке Flexberry Designer 
+## Possible problems when installing Flexberry Designer 
 
-### Медленная инициализация MS SQL Server 2012 Express LocalDB
+### Slow initialization MS SQL Server 2012 Express LocalDB 
 
-В некоторых случаях MS SQL Server 2012 Express LocalDB очень долго проводит инициализацию собственных компонент. В случае, если при запуске приложения возникла ошибка, рекомендуется подождать некоторое время и попробовать запустить приложение повторно с созданного на рабочем столе ярлыка. Если проблема была именно в медленной инициализации MS SQL Server 2012 Express LocalDB, то приложение запустится.
+In some cases MS SQL Server 2012 Express LocalDB a long time carries out initialization of the private component. If when you run the application there is an error, it is recommended to wait some time and try to run the app again with the created desktop shortcut. If the problem was in the slow initialization of MS SQL Server 2012 Express LocalDB, the application will start. 
 
-### Запуск под Windows 7
+### Run under Windows 7 
 
-Для корректной работы MS SQL Server 2012 Express LocalDB под Windows 7 SP1 (если Service Pack не стоит, то требуется его установить, как и все рекомендуемые обновления) требуется заранее включить .Net Framework 3.5 и поставить на него Service Pack 1 (для [х86](https://www.microsoft.com/ru-ru/download/details.aspx?id=39237) или [х64](https://www.microsoft.com/ru-ru/download/details.aspx?id=7942)) в соответствии [с требованиями данного приложения](https://msdn.microsoft.com/library/ms143506%28v=SQL.110%29.aspx).
+For correct operation of MS SQL Server 2012 Express LocalDB on Windows 7 SP1 (if Service Pack is not necessary, it is required to install as all the recommended updates) must be enabled .Net Framework 3.5 and put it on a Service Pack 1 (for [x86](https://www.microsoft.com/ru-ru/download/details.aspx?id=39237) or [x64](https://www.microsoft.com/ru-ru/download/details.aspx?id=7942)) in accordance [with this application](https://msdn.microsoft.com/library/ms143506(v=SQL.110).aspx). 
 
-Если MS SQL Server 2012 Express LocalDB был установлен на Windows 7 до установки .Net Framework 3.5 Service Pack 1, то может потребоваться удалить MS SQL Server 2012 Express LocalDB и Flexberry Designer, после чего повторно их установить уже на систему с .Net Framework 3.5 Service Pack 1.
+If MS SQL Server 2012 Express LocalDB was installed on Windows 7 prior to installation .Net Framework 3.5 Service Pack 1, you may need to remove MS SQL Server 2012 Express LocalDB and Flexberry Designer, and then re-install already on the system .Net Framework 3.5 Service Pack 1. 
 
-Под Windows 8 и 10 такой проблемы на настоящий момент зафиксировано не было.
+Under Windows 8 and 10 such problems at the moment were recorded. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

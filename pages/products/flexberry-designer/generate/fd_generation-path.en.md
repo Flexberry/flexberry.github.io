@@ -1,30 +1,35 @@
----
-title: Путь генерации
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, путь, генерация, исходный код
-summary: Правила настройки пути генерации для приложения
-toc: true
-permalink: en/fd_generation-path.html
-lang: en
----
+--- 
+title: Path generation 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, way, generation, source code 
+summary: Rules configure the path generation for an application 
+toc: true 
+permalink: en/fd_generation-path.html 
+lang: en 
+autotranslated: true 
+hash: 2b4dc212f3a9b407a6f92d100ec0bf5df10058c452e0a004e0ffe1648f98b4fe 
+--- 
 
-## Описание
+## Description 
 
-Путь генерации определяет куда будут генерироваться приложения. Относительно этого пути генерируется приложение, используя "Каталог для исходного кода" в [настройках стадии](fd_project-customization.html). По умолчанию приложение будет генерироваться в папку с Flexberry. Конечный путь генерации будет выглядеть так: 
-Путь генерации/Каталог для исходного кода
+The path generation determines where to generate the app. In relation to the path generated the app using the "Directory for source code" in [setting the stage](fd_project-customization.html). By default, the application will be generated in the folder with Flexberry. The target path generation will look like this: 
+The path generation/directory for the source code 
 
-## Настройка пути генерации
+## setup path generation 
 
-Чтобы настроить путь генерации необходимо в верхней панели нажать "Настройки">"Путь генерации..." и выбрать необходимый путь.
+To configure the path generation is necessary in the top panel click "Settings">"Path generation..." and select the desired path. 
 
-![](/images/pages/products/flexberry-designer/generate/generation-path-setup.png)
+![](/images/pages/products/flexberry-designer/generate/generation-path-setup.png) 
 
-## Хранение настройки пути генерации
+## Storage settings path generation 
 
-Настройка пути генерации хранится в файле конфигурации приложения.
+Setting the path generation is stored in the application configuration file. 
 
 ```xml
 <add key="GenerationPath" value="C:\Work.NET\CASE\CodeGen"/>
-```
-Таким образом, если приложение будет запускаться с другим файлом конфигурации, то потребуется определить данную настройку повторно.
- 
+``` 
+Thus, if the application will run with a different configuration file, you will need to define this setting again. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

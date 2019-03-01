@@ -1,64 +1,70 @@
----
-title: Создание полномочий на классы
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Security
-toc: true
-permalink: en/fa_authority-classes.html
-lang: en
----
+--- 
+title: Creation of powers for classes 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Security 
+toc: true 
+permalink: en/fa_authority-classes.html 
+lang: en 
+autotranslated: true 
+hash: a26f38dc202db420974123b37347baecb09134e8d235465e22e96fe7ed1fafda 
+--- 
 
-Иногда возникает необходимость ограничить доступ некоторым пользователям или пользователям с определенной ролью к определенным классам (редактирование, создание новых объектов/удалять/просматривать список). Для этого необходимо настроить [полномочия](efs_security.html) для пользователей/ролей пользователей.
+It is sometimes necessary to restrict access to some users or users with a certain role to certain classes (editing, creating new objects/delete/view the list). To do this, you must configure the [powers](efs_security.html) for users/user roles. 
 
-Создать роль, для которой будут произведены соответствующие настройки (например, отключена возможность удаления объектов из списка для определенного класса), можно двумя способами:
-* в разделе "Администрирование\Роли" в приложении;
-* с помощью [Security Console](efs_security-console.html).
+To create a role that will make some adjustments (for example, disabled the ability to remove objects from a list for a particular class), in two ways: 
+* in the section "Administration\Roles" in приложении; 
+* [Security Console](efs_security-console.html). 
 
-Список пользователей создается на основе БД полномочий.
+The list of users is generated based on the database credentials. 
 
-Полномочия настраиваются в разделе "Классы" на форме редактирования роли или пользователя. Например, есть 4 класса. Один не доступен для чтения, второй - для редактирования, третий - для создания новых объектов, четвертый - для удаления. Настройка полномочий будет выглядеть следующим образом:
+Credentials are configured in the section "Classes" on the form edit role or user. For example, there are 4 classes. One cannot be read, the second for editing, the third is to create a new object, a fourth to remove. The authorization setting is as follows: 
 
-![](/images/pages/products/flexberry-aspnet/aspnet/authority-to-classes.png)
+![](/images/pages/products/flexberry-aspnet/aspnet/authority-to-classes.png) 
 
-## Создание полномочий на классы при аутентификации на основе форм
+## the Creation of powers for classes in authentication forms-based 
 
-Для настройки полномочий следует добавить пользователя(ей) в разделе "Администрирование\Пользователи" в приложении (если пользователей ограниченное количество и список не построен на основе БД полномочий). Далее следует выполнить одно из действий:
+To configure the credentials you should add the user(s) in the section "Administration\Users" in the app (if users are limited and the list is not built based on the database of the authority). Execute one of the following: 
 
-* присвоить пользователю роль с ограниченными полномочиями;
-* ограничить полномочия на форме редактирования пользователя.
+* assign the user role with limited полномочиями; 
+* restrict permissions on the edit form of the user. 
 
-## Создание полномочий на классы при windows-аутентификации
+## the Creation of powers for classes with windows authentication 
 
-Для того чтобы ограничить полномочия пользователей в web-приложении с windows-аутентификацей следует:
+In order to limit the powers of the users in web application with windows-autentifikatsii follows: 
 
-* создать роль, [присваиваемую по умолчанию](fa_authentication-adapter.html):
+* create role [default](fa_authentication-adapter.html): 
 
 ```xml
 <configuration>
 	<appSettings>
-		<add key="DefaultRoles" value="Tester"/>
+		<add key="DefaultRoles" value=Tester/>
 		<!--...-->
 	</appSettings>
 	<!--...-->
 </configuration>
-```
+``` 
 
-* настроить для нее полномочия;
-* [добавить пользователей в БД системы полномочий](fa_authentication-adapter.html):
+* configure it with полномочия; 
+* [add users to the database system of powers](fa_authentication-adapter.html): 
 
 ```csharp
 protected void Page_Load(object sender, EventArgs e)
 {
-	//...
+	//... 
 	ApplyTreeViewCookie();
-	// При выполнении метода CreateDbUser в БД будут добавлены следующие объекты:
-        // 1. Пользователь с привязкой к домену и к ролям, заданным по умолчанию. 
-        // 2. Домен пользователя, если ранее он отсутствовал в системе полномочий.
+	// Executing the method CreateDbUser in the database are added the following objects: 
+        // 1. The user is bound to the domain and role assigned by default. 
+        // 2. Domain user, if he previously absent in the system of authority. 
         if (AuthenticationAdapter.GetDbUser(Context.User.Identity.Name) == null)
         {
             AuthenticationAdapter.CreateDbUser(Context.User.Identity.Name);
         }
-	//...
+	//... 
 	fio.Text = Context.User.Identity.Name;
-	//...
+	//... 
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

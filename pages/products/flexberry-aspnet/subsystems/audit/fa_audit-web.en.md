@@ -1,313 +1,319 @@
----
-title: Аудит для Web-приложений
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Audit
-toc: true
-permalink: en/fa_audit-web.html
-lang: en
----
+--- 
+title: Auditing for Web applications 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Audit 
+toc: true 
+permalink: en/fa_audit-web.html 
+lang: en 
+autotranslated: true 
+hash: 2b10a99d6cac0605c89891bf492c703b42e06f16b5d24608c97f29f1cfb4c759 
+--- 
 
-## Схема взаимодействия компонент подсистемы аудита
+## interaction pattern of the component audit 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm1.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm1.png) 
 
-*Схема взаимодействия компонент подсистемы аудита без отдельного сервиса аудита*
+*The scheme of interaction of the component audit without a single audit service* 
 
-### AuditService
+### AuditService 
 
-* У приложения есть класс AuditService.
-* Через класс AuditService реализуются API для обращения: 
-    * к классу, наследующему от интерфейса [IAudit](efs_i-audit.html), если аудит не выделен в отдельный сервис.
-    * к сервису аудита AuditWinService.
-* AuditService хранит настройки приложения по аудиту, куда они загружаются в начале работы приложения.
-* При выполнении потенциально аудируемой операции сервис данных приложения сообщает об этом классу AuditService, который:
-    * просматривает имеющиеся настройки аудита и принимает решение о необходимости выполнения записи аудита.
-    * если аудит необходим, то в соответствующее сообщение идёт либо в [IAudit](efs_i-audit.html), если нет отдельного сервиса аудита, либо в AuditWinService (ожидание ответа будет зависеть от настроек аудита).
-* Класс AuditService реализовывает интерфейс IAuditService, а также имеет статическое поле типа IAuditService, куда будет записана инстанция класса AuditService (это позволит вести работу как со статическим классом через обращение «AuditService.CurrentAuditService»). Все вызовы осуществляются через интерфейс (если появится потребность, то класс Audit можно легко подменить).
+* The application has a class AuditService. 
+* A class implements AuditService API calls: 
+* the class that inherits from the interface [IAudit](efs_i-audit.html), if the audit is not in a separate service. 
+* audit service AuditWinService. 
+* AuditService stores the application configuration audit, where they are loaded in the beginning of the application. 
+* When performing potentially audited transaction data service of the application notify the class AuditService: 
+* scans the existing configuration audit and decides on the need to implement audit records. 
+* if auditing is required, then an appropriate message is either [IAudit](efs_i-audit.html), if no separate audit service or AuditWinService (waiting for a response will depend on the settings of the audit). 
+* The class implements AuditService interface IAuditService, and also has a static field of type IAuditService where will be recorded the instance of a class AuditService (this will allow to work both with a static class through the appeal "to the AuditService.CurrentAuditService"). All calls are made via an interface (if there is a need, the class can Audit it is easy to replace). 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm2.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm2.png) 
 
-*Схема взаимодействия компонент подсистемы аудита при наличии отдельного сервиса аудита*
+*The scheme of interaction of the component the audit subsystem in the presence of a separate audit service* 
 
-### IAudit
+### IAudit 
 
-* IAudit представляет собой интерфейс для организации логики работы аудита (то есть именно класс, реализующий этот интерфейс, будет отвечать за запись данных аудита и за их вычитку).
+* IAudit provides an interface to organize the logic of the audit (that is, the class that implements this interface will be responsible for recording audit information and proofreading). 
 
-### AuditWinService
+### AuditWinService 
 
-* AuditWinService обслуживает несколько приложений и потенциально располагается на удалённой машине.
-* В конфиге AuditWinService указаны сервисы данных и строки подключения к базам данных аудита и базам данных приложения (если они разные).
-* При выполнении запроса AuditService сообщает AuditWinService имена строк соединения с базами данных приложения и аудита (сами строки соединения передаваться не будут, поскольку это не безопасно).
-* Несколько приложений не разделяют одну базу аудита.
-* AuditService взаимодействует с AuditWinService посредством WCF (AuditWinService – это название приложения-службы. Класс, наследуемый от IAudit, будет реализовывать WCF-контракт для доступа к публичным через WCF методам. Также он будет разработан с учётом того, что один сервис обрабатывает запросы от нескольких приложений.)
+* AuditWinService serves multiple applications and potentially located on a remote machine. 
+* In the config AuditWinService provided data services and connection strings to databases of audit and application databases (if they are different). 
+* When you run the query AuditService reports AuditWinService the row names of the database connections of the application and audit (connection string will not be transmitted because it is not safe). 
+* Multiple applications do not share a single database audit. 
+* AuditService interacts with AuditWinService through WCF (AuditWinService is the name of the service application. A class that inherits from IAudit, will implement the WCF contract to access the public methods via WCF. Also it will be designed so that one service handles requests from multiple applications.) 
 
-### AsyncAuditController
+### AsyncAuditController 
 
-* AsyncAuditController – класс, организующий асинхронный доступ к [IAudit](efs_i-audit.html), что позволяет отложить на некоторое время запись данных об аудите.
+* AsyncAuditController class, organizing asynchronous access [IAudit](efs_i-audit.html) that allows you to defer for some time the recording of data on the audit. 
 
-### ServiceAuditController
+### ServiceAuditController 
 
-* ServiceAuditController – класс, отвечающий за взаимодействие через wcf с win-сервисом аудита AuditWinService, связанному с wcf-сервисом, реализующим интерфейс IAuditWcfServiceLibrary.
+* ServiceAuditController class responsible for the interaction through wcf win service audit AuditWinService associated with the wcf service, which implements the interface IAuditWcfServiceLibrary. 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm3.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm3.png) 
 
-*Схема взаимодействия компонент подсистемы аудита*
+*The scheme of interaction of the component audit* 
 
-## Схема расположения классов и интерфейсов в сборках Flexberry
+## layout of classes and interfaces in assemblies Flexberry 
 
-Для предотвращения возникновения ситуации перекрёстных ссылок в проекте решено было разместить основные интерфейсы аудита в сборке ICSSoft.STORMNET.Business.dll, куда уже входят интерфейс сервисов данных IDataService и класс SQLDataService.
+To prevent a situation of cross-references in the project it was decided to place the main interfaces of the audit in the Assembly ICSSoft.STORMNET.Business.dll, which already includes data service interface IDataService, and class SQLDataService. 
 
-Класс [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html), реализующий интерфейс [IAudit](efs_i-audit.html), содержит в себе логику работы со сведениями аудита.
-Сервис аудита AuditWinService c wcf-сервисом AuditWcfServiceLibrary, поддерживающим интерфейс IAuditWcfServiceLibrary, являются контейнером для логики работы со сведениями аудита.
+Class [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html) that implements the interface [IAudit](efs_i-audit.html), contains the logic of working with the information audit. 
+The audit service AuditWinService c wcf service AuditWcfServiceLibrary supports IAuditWcfServiceLibrary are a container for the logic of work with the information audit. 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm4.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm4.png) 
 
-*Схема расположения классов подсистемы аудита в сборках Flexberry и их взаимодействия*
+*Arrangement of classes audit in assemblies Flexberry and their interaction* 
 
-**Примечание:** реализация интерфейсов соответствует представленной схеме, однако в соответствии с планом на первый этап тестирование прошла только часть функционала
+**Note:** the implementation of interfaces corresponds to the present scheme, however, in accordance with the plan for the first phase of testing was only part of the functionality 
 
-## Отображение результатов аудита
+## displays the results of the audit 
 
-* Форма с информацией о сессиях пользователей (*будет реализовано на втором этапе*).
-* Форма просмотра данных аудита по всей системе ([см. здесь](fa_audit-web-forms.html)).
-* Форма просмотра данных аудита по конкретному объекту ([см. здесь](fa_audit-web-forms.html)).
-* Форма «Кто на сайте» (*будет реализовано на втором этапе*).
+* The form with information on user sessions (*to be implemented in the second stage*). 
+* Viewing audit data throughout the system ([see here](fa_audit-web-forms.html)). 
+* Viewing audit information for specific object ([see here](fa_audit-web-forms.html)). 
+* "Who is online" (*will be implemented in the second stage*). 
 
-Примерный набор элементов на форме просмотра данных аудита по конкретному изменению:
+The approximate set of controls on the form view audit data for a specific change: 
 
-* Время изменения
-* Автор изменения
-* Тип операции
-* Данные по изменению:
-    * для собственных полей: изменённое поле, старое значение (если его сохранение указано в настройках), новое значение.
-    * для мастеров и детейлов: старое (если его сохранение указано в настройках), новое строковое представление (строковое представление по типу «поле - значение» основано на выбранном для аудита представления) и, если указано в настройках класса, старый/новый первичный ключ.
-* Элемент для вызова формы редактирования (на форме будет отображено текущее состояние объекта; если объект уже удалён, то просмотреть его состояние не удастся).
-* Элементы аудита объекта:
-    * Дата создания объекта
-    * Создатель объекта
-    * Дата последнего изменения
-    * Редактор объекта (последний)
+* Time change 
+* Author of the change 
+* The type of operation 
+* Change: 
+* private fields: changed field the old value (if saving is specified in the settings), the new value. 
+* for masters and datalow old (if its retention is specified in the settings), new string representation (string representation of the type of "field - value" based on the value selected for audit submission) and, if specified in the settings class, old/new primary key. 
+* Element to invoke the edit form (the form displays the current status объекта; if the object is already deleted, then view its status will not). 
+* Elements of the audit object: 
+* Creation date of the object 
+* Creator of the object 
+* Date of last change 
+* Object editor (latest) 
 
-Касательно сохраняемых значений полей следует сделать замечание, что настройки аудита позволят определить:
+In relation to the persistent field values should remark that the settings of the audit will determine: 
 
-* Сохранять ли в записи старое значение поля аудируемого объекта.
-* Следует ли обрезать строку с соответствующим значением поля аудита при сохранении сведений и до какой длины.
-* Следует ли сжимать значения поля аудита при сохранении и разархивировать при отображении (*будет реализовано на третьем этапе*).
+* Preserve in the record the old value of the audited fields of the object.
+* Whether to trim a string with the corresponding value of the field audit while maintaining the information and to what length. 
+* Whether to compress the value of a field audit when saving and decompress when you display (*to be implemented in the third stage*). 
 
-## Хранение данных аудита
+## Storing audit data 
 
-Структура для хранения данных аудита
+A structure for storing audit data 
+
+* Storage of audit data, you can use a structure similar to those shown below (such a structure it is possible to use outside databases приложения; the names of the corresponding tables will be prefixed with STORM). 
+* Classes `Agent` and `LinkGroup` classes of subsystem power. 
+* Integration with elements of the system of powers will allow to avoid storing data about users of the system in several places in different formats as it was before. 
+* The use of tables subsystem powers will allow you to store in one database information subsystem powers and audit. 
+* Similar structure to the data collected allow, if necessary, to carry out their integration with located in another database data subsystem power (or just add missing tables in the database audit, if you want to store the data subsystem powers in the same database). 
+* `AuditSession` – information about user sessions (the same class used earlier (Auditmessage)): 
+* `StartTime` – the beginning of the session (for example, "10.02.2013 16:00:23:123"). 
+* `EndTime` – end time session (for example, "10.02.2013 17:03:27:125"). 
+* `LastActionTime` – the last time the audited action (for example, "10.02.2013 16:30:23:123"). 
+* `Source` – computer where you were logged into the application (e.g., "IP: 192.168.0.5"). 
+* `Enabled` – active session at the moment (e.g., "false"). 
+* `Duration` – session duration (calculated based on start and end сессии; for example, "0.01:03:04:002") 
+* `AuditEntity` – information about the audited event on the object (the same class used earlier (Auditorily)) 
+* `ObjectPrimaryKey` – the primary key of the object on which was performed the audited operation. 
+* `OperationTime` – time when the object was made of the audited operation. 
+* `OperationType` – type is made on the object of the audited operation (if you had performed a "standard operation", it will be passed as a string value of the type `tTypeOfAuditOperation`; if you have followed custom is the name of the corresponding operation). 
+* `ExecutionResult` – the result of the audited operation. 
+* `Source` – computer, where the operation was performed (e.g., "IP: 192.168.0.5"). 
+* `SerializedField` – serialized representation of data on changes in the fields of AuditFields. 
+* `ObjectType` – type of the audited object.
+* `Name` – the name of the object type (if the type is standard, then if AssemblyQualifiedName; custom – passed to user-definition). 
+* `AuditField` – details of an audited event on the object: which fields and how they were changed (the same class used earlier (Auditionee)): 
+* Masters are on the same level as a private field. Field is the name мастера; old and new values are formed in the form of a string at a specified for audit representation. Old and new primary key value of the master is recorded as a separate line and it as MainChange written record of the change master (change to display the primary key will be only if in the class there is a corresponding setting). 
+* Detaily are the same as masters, only field names are defined by the type <Classname(number)> (the same was done earlier). 
+* To be able to store audit data in application database and external database. Recording audit data can be performed synchronously (that is, while the data for the audit successfully will not be recorded, audited, the transaction will fail). 
+
+|Synchronous access Asynchronous access| 
+|---|---| 
+| **Database application** | In this case, the record audit events and the operations [can be combined in a single transaction. Accordingly, if something went wrong, all operations are rolled back. In this case, is the first priority of the audited operation. Audit data is sent to a separate process that is responsible to audit data being recorded (possible recording the data in some temporary storage).| 
+| **External DB** | First, this will record the audit (Executed flag=false). If the record of the audit is successful, it is attempting to perform an audited operation. If an audited operation is successful, the audits Executed, the flag changes to true. In this case, is the first priority of the audited operation. Audit data is sent to a separate process that is responsible to audit data being recorded (possible recording the data in some temporary storage).| 
+
+![](/images/pages/products/flexberry-aspnet/audit/audit-store-structure.png) 
+
+*A database structure for storing audit information* 
+
+## configuration audit 
+
+Setting up auditing in Flexberry Tool 
+
+### setting the stage 
+
+* In settings, the stage will tick "Using auditing". The option is ignored when generating the application: if it is selected, additional items (optional items described in the "Storing settings") used by the audit will be generated, and the audit application to function. 
+* In settings, the stage will be a button "Add audit in all classes." When you press the button all the classes in the minimal way will be configured to conduct the audit. 
+* In the settings stage you can choose to store the database audit: database application or in an external database. 
+
+### class setting.
+
+* To audit the class must have a representation that is audited (the binding occurs via the view name). For different operations (create, modify, read, delete) should be able to specify their own performance. 
+* In the settings class will have the opportunity to determine which operations (create, modify, read, delete) is audited. If checked at least one checkbox, then additional elements (additional elements described in paragraph "Storing settings") used by the audit, will be generated under the condition that the stage is the same tick. 
+* In settings you can define whether you want to use to audit performance with the default name (AuditView). 
+* In the settings class will tick "Additional audit fields". When you select this option in the class adds the following attributes: 
+* CreateTime (date of establishment) 
+* Creator (Creator) 
+* EditTime (last modified) 
+* Editor (Editor) 
+
+**Note**: the user name is taken from the [Tools current user](fo_current-user-service.html) 
 
-* Для хранения данных аудита можно использовать структуру, аналогичную представленной ниже (такую структуру возможно использовать вне базы данных приложения; названия соответствующих таблиц будут иметь префикс STORM). 
-    * Классы `Agent` и `LinkGroup` – классы из подсистемы полномочий.
-    * Интеграция с элементами системы полномочий позволит избежать хранения данных о пользователях системы в нескольких местах в разных форматах, как было ранее. 
-    * Использование таблиц подсистемы полномочий позволит хранить в одной БД информацию подсистемы полномочий и аудита.
-    * Аналогичная структура собираемых данных позволит при необходимости проводить их интеграцию с расположенными в другой БД данными подсистемы полномочий (либо просто добавить недостающие таблицы в БД аудита, если необходимо хранить данные подсистемы полномочий в той же БД).
-    * `AuditSession` – сведения о сессиях пользователей (аналогичный класс использовался ранее (Аудит_Сессия)):
-    * `StartTime` – время начала сессии (например, «10.02.2013 16:00:23:123»).
-    * `EndTime` – время окончания сессии (например, «10.02.2013 17:03:27:125»).
-    * `LastActionTime` – время последнего аудируемого действия (например, «10.02.2013 16:30:23:123»).
-    * `Source` – компьютер, откуда был произведён вход в приложение (например, «IP: 192.168.0.5»).
-    * `Enabled` – активна ли сессия в настоящий момент (например, «false»).
-    * `Duration` – продолжительность сесии (вычисляется, исходя из начала и окончания сессии; например, «0.01:03:04:002»)
-    * `AuditEntity` – сведения об аудируемом событии над объектом (аналогичный класс использовался ранее (АудитОперации))
-    * `ObjectPrimaryKey` – первичный ключ объекта, над которым была выполнена аудируемая операция.
-    * `OperationTime` – время, когда над объектом была выполнена аудируемая операция.
-    * `OperationType` – тип выполненной над объектом аудируемой операции (если была выполнена «стандартная операция», то будет передаваться в виде строки значение из типа `tTypeOfAuditOperation`; если была выполнена нестандартная – имя соответствующей операции).
-    * `ExecutionResult` – результат выполнения аудируемой операции.
-    * `Source` – компьютер, откуда была выполнена операция (например, «IP: 192.168.0.5»).
-    * `SerializedField` – сериализованное представление данных об изменении полей из AuditFields.
-    * `ObjectType` – тип аудируемого объекта.
-    * `Name` – имя типа объекта (если тип стандартный, то AssemblyQualifiedName; если нестандартный – передаваемое пользователем определение).
-    * `AuditField` – детализация по аудируемому событию над объектом: какие поля и как были изменены (аналогичный класс использовался ранее (АудитИзменения)):
-    * Мастера находятся на том же уровне, что и собственные поля. Полем считается название мастера; старое и новое значения формируются в виде строки по заданному для аудита представлению. Старое и новое значение первичного ключа мастера записывается отдельной строкой и ему в качестве MainChange записывается запись об изменении мастера (отображаться изменение первичного ключа будет только если в классе наличествует соответствующая настройка).
-    * Детейлы отображаются аналогично мастерам, только имена полей задаются по типу <ИмяКласса(номер)> (аналогично было сделано ранее).
-* Будет возможность хранить данные аудита как в БД приложения, так и во внешней БД. Запись данных аудита может выполняться как синхронно (то есть, пока данные по аудиту успешно не будут записаны, аудируемая операция не будет выполнена). 
-
-|Синхронный доступ |Асинхронный доступ|
-|---|---|
-| **БД приложения** | В этом случае запись события аудита и выполнение операции [можно совместить в одной транзакции. Соответственно, если что-то пошло не так, все действия будут откачены.  В этом случае в первую очередь выполняется аудируемая операция. Данные аудита отправляются отдельному процессу, который отвечает, чтобы данные аудита были в итоге записаны (возможна запись данных в некое временное хранилище).|
-| **Внешняя БД** | Сначала будет выполнена запись аудита (флаг Executed=false). Если запись об аудите выполнена успешно, то проводится попытка выполнить аудируемую операцию. Если аудируемая операция выполнена успешно, то в записи об аудите флаг Executed изменяется на true.  В этом случае в первую очередь выполняется аудируемая операция. Данные аудита отправляются отдельному процессу, который отвечает, чтобы данные аудита были в итоге записаны (возможна запись данных в некое временное хранилище).|
-
-![](/images/pages/products/flexberry-aspnet/audit/audit-store-structure.png)
-
-*Структура базы данных для хранения сведений аудита*
-
-## Настройка аудита
-
-Настройка аудита в Flexberry Tool
-
-### Настройка стадии
-
-* В настройках стадии будет галочка «Использование аудита». Галочка учитывается при генерации приложения: если она отмечена, то дополнительные элементы (дополнительные элементы описаны в пункте «Хранение настроек»), используемые аудитом, будут генерироваться, а сама подсистема аудита приложения – функционировать.
-* В настройках стадии будет кнопка «Добавить аудит во все классы». При нажатии на кнопку все классы минимальным образом будут настроены для ведения аудита.
-* В настройках стадии можно будет выбрать, где будет располагаться БД аудита: в БД приложения или во внешней БД. 
-
-### Настройка класса.
-
-* Для проведения аудита у класса должно быть определено представление, по которому будет вестись аудит (связывание происходит по имени представления). Для разных операций (создание, изменение, чтение, удаление) должна быть возможность задать своё представление.
-* В настройках класса будет возможность определить, для каких операций (создание, изменение, чтение, удаление) будет вестись аудит. Если отмечена хотя бы одна галочка, то дополнительные элементы (дополнительные элементы описаны в пункте «Хранение настроек»), используемые аудитом, будут генерироваться при условии, что в стадии стоит аналогичная галочка.
-* В настройках можно будет определить, следует ли использовать для аудита представление с именем по умолчанию (AuditView).
-* В настройках класса будет галочка «Дополнительные поля аудита». При выборе этой галочки в класс добавляются следующие атрибуты:
-    * CreateTime (Дата создания)
-    * Creator (Создатель)
-    * EditTime (Дата последнего изменения)
-    * Editor (Редактор)
-
-**Примечание**: имя пользователя берется из [Сервис текущего пользователя](fo_current-user-service.html)
-
-* При выборе галочки при генерации кода у класса появится наследование от интерфейса, содержащего четыре описанных поля.
-* Галочка «Дополнительные поля аудита» позволит отображать списковые формы с характерными для предыдущей версии аудита дополнительными полями. При сохранении объекта класса, где есть галочка «Дополнительные поля аудита», будет проверено, что все добавленные атрибуты присутствуют в классе (то есть не были случайно изменены/удалены), в противном случае будет брошено исключение.
-* В настройках класса можно будет выбрать вариант записи данных по аудиту: синхронный или асинхронный.
+* When selecting checkboxes when code is generated from the class will be inheriting from an interface that contains four describes the fields. 
+* Tick "Additional audit fields" will display a list of forms characteristic of the previous version of the audit additional fields. When you save an object of a class where there is a box "Additional audit fields" is checked that all attributes are present in the class (that is, not accidentally modified/deleted), otherwise an exception will be thrown. 
+* In the settings class, you can choose the option record data for audit: synchronous or asynchronous. 
 
-## Хранение настроек
+## Storage settings 
 
-**Примечание:** на текущей реализации аудита используются классы: AuditAppSetting и AuditDSSetting; класс AuditClassSetting используется не в полной мере.
+**Note:** on the current implementation of audit classes are used: AuditAppSetting and AuditDSSetting; class AuditClassSetting is not used in full. 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-store-settings.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-store-settings.png) 
 
-*Общая структура для хранения настроек аудита приложения*
+*The overall structure for storing settings of the auditing application* 
 
-### Общие настройки аудита (AuditAppSetting)
+### General settings audit (AuditAppSetting) 
 
-Общие настройки аудита будут находиться в классе AuditService, куда будут вычитываться в начале работы приложения.
+General settings audit will be in the AuditService class, which will be deducted at the beginning of the application. 
 
-Общие настройки аудита (AuditAppSetting):
-* AppName – имя приложения (будет использоваться [сервисом аудита](efs_audit-win-service.html))
-* AuditEnabled – включён ли аудит в приложении.
-* IsDatabaseLocal – [используется ли аудитом локальная база данных](efs_data-service-for-audit.html) (то есть БД приложения совмещена с БД аудита).
-* AuditConnectionStringName – [имя cтроки подключения к БД аудита](efs_data-service-for-audit.html) (подробнее про логику работы с данной настройкой можно почитать [здесь](efs_data-service-for-audit.html)).
-* AuditWinServiceUrl – url, где располагается [сервис аудита](efs_audit-win-service.html).
-* WriteSessions – следует ли сохранять сведения о сессиях пользователей.
+General settings audit (AuditAppSetting): 
+* AppName – the application name (will be used [service audit](efs_audit-win-service.html)) 
+* AuditEnabled – enabled auditing in the application. 
+* IsDatabaseLocal – [whether to use a local audit database](efs_data-service-for-audit.html) (i.e. the application database combined with database auditing). 
+* AuditConnectionStringName – [name of the connection string to the database audit](efs_data-service-for-audit.html) (more about the logic of this configuration can be read [here](efs_data-service-for-audit.html)). 
+* AuditWinServiceUrl – url, where is the [audit services](efs_audit-win-service.html). 
+* WriteSessions – whether to store information about user sessions.
 
-### Настройки класса (AuditClassSetting)
+### Settings class (AuditClassSetting) 
 
-Настройки класса будут генерироваться непосредственно в код класса объектов (аналогично тому, как в код класса объектов добавлен атрибут Views):
+The configuration class will be generated directly into the code of the feature class (similar to how code feature class attribute has been added Views): 
 
-* Включён ли аудит для класса.
-* Следует ли использовать представление по умолчанию при аудите.
-* Настройки аудита операции создания объекта (имя представления * включён ли аудит для данной операции).
-* Настройки аудита операции изменения объекта (имя представления * включён ли аудит для данной операции).
-* Настройки аудита операции чтения объекта (имя представления * включён ли аудит для данной операции).
-* Настройки аудита операции удаления объекта (имя представления * включён ли аудит для данной операции).
-* URL к форме просмотра объекта (как и в предыдущей версии подсистемы аудита через форму можно будет просмотреть текущее состояние объекта).
-* Режим записи данных аудита (синхронный или асинхронный).
-* Следует ли и насколько сильно следует обрезать сохраняемые значения аудируемых полей.
-* Отображать ли в данных аудита старое и новое значение первичного ключа мастера/детейла.
-* Следует ли в записи об изменении сохранять старое значение аудируемого поля.
+* Did the audit for the class. 
+* Whether to use the default view during an audit. 
+* Set audit operations create object (the name of the view * did the audit for this operation). 
+* Set audit operations of changing the object (the name of the view * did the audit for this operation). 
+* Settings audit read operations of the object (the name of the view * did the audit for this operation). 
+* Set audit operations removal of the object (the name of the view * did the audit for this operation). 
+* URL to the display form of the object (as in the previous version of the audit subsystem using the form you can view the current state of the object). 
+* Recording audit data (synchronous or asynchronous). 
+* Should and how much should be cut off save the values of audited fields. 
+* Whether to display audit data in the old and new primary key value of the master/detail. 
+* Whether a recording of a change to keep the old value of the audited field. 
 
-В начале работы приложения настройки класса для аудита будут вычитываться в структуру `AuditClassSetting`:
+In the beginning of the application setup class for audit will be deducted in the structure `AuditClassSetting`: 
 
-* `ObjectType` – тип объектов.
-* `AuditEnabled` – включён ли аудит для класса.
-* `UseDefaultView` – использовать для всех операций представление по умолчанию с именем «AuditView».
-* `SelectAuditViewName` – имя представления для ведения аудита операции чтения у класса.
-* `InsertAuditViewName` – имя представления для ведения аудита операции создания у класса.
-* `UpdateAuditViewName` – имя представления для ведения аудита операции изменения у класса.
-* ``DeleteAuditViewName` – имя представления для ведения аудита операции удаления у класса.
-* `FormUrl` - URL к форме просмотра объекта.
-* `WriteMode` – режим записи данных аудита (синхронный или асинхронный).
-* `SelectAudit` – дополнительно проводить аудит на чтение.
-* `InsertAudit` – дополнительно проводить аудит на создание.
-* `UpdateAudit` – дополнительно проводить аудит на изменение.
-* `DeleteAudit` – дополнительно проводить аудит на удаление.
-* `PrunningLength` – если значение больше нуля, то столько символов от значения поля, начиная с начала, будет сохраняться; если ноль, то значение будет сохраняться целиком.
-* `ShowPrimaryKey` – отображать ли в данных аудита старое и новое значение первичного ключа мастера/детейла.
-* `KeepOldValue` – нужно ли сохранять старое значение изменяемого поля.
-* `Compress` – следует ли сжимать сохраняемые значения полей.
-* `KeepAllValues` – следует ли сохранять только изменяемые поля из представления, либо все поля, входящие в представление.
+* `ObjectType` – type objects. 
+* `AuditEnabled` – enabled auditing for a class. 
+* `UseDefaultView` – to use for all operations in the default view with the name "AuditView". 
+* `SelectAuditViewName` – the name of the view to conduct audit read operations of the class. 
+* `InsertAuditViewName` – the name of the view to conduct operation audit create the class. 
+* `UpdateAuditViewName` – the name of the view for doing auditing operation changes the class. 
+* ``DeleteAuditViewName` – the name of the view to conduct the audit of the operation of removal from class. 
+* `FormUrl` - URL to the display form of the object. 
+* `WriteMode` – mode recording audit data (synchronous or asynchronous). 
+* `SelectAudit` – advanced audit read. 
+* `InsertAudit` – in addition to audit of the establishment. 
+* `UpdateAudit` – in addition to audit change. 
+* `DeleteAudit` – advanced audit for deletion. 
+* `PrunningLength` – if the value is greater than zero then as many characters from a field value, starting from the beginning, will сохраняться; if null, the value will be saved as a whole. 
+* `ShowPrimaryKey` – whether to display audit data in the old and new primary key value of the master/detail. 
+* `KeepOldValue` – if you want to save the old value of the changed field. 
+* `Compress` – whether to compress stored fields values. 
+* `KeepAllValues` – whether to save only changed fields from the view, or all of the fields included in the view.
 
-Иногда возникает потребность настроить дополнительный аудит для конкретных объектов (то есть помимо того аудита, что ведётся для соответствующего класса). Например, для объектов `ObjectA`, `ObjectB` класса `Class1`, для которого ведётся только аудит на чтение, добавить аудит на запись.
+Sometimes there is a need to configure additional auditing for specific objects (that is, in addition to the audit, which is conducted for the respective class). For example, for objects `ObjectA`, `ObjectB` class `Class1` for which audit is conducted only to read, to add audit record. 
 
-Как это можно сделать:
+How to do it: 
 
-* Настройки посредством специальных команд будут задаваться в программном коде и храниться в памяти приложения во время выполнения в заданном новом формате.
+* Settings by means of special commands will be given in the program code and stored in application memory during runtime in the specified new format. 
 
-Настройки для аудита объектов будут задаваться в программном коде и будут храниться в структуре `AuditClassSetting` и определяться полями:
+Settings for auditing objects will be set in the program code will be stored in the structure `AuditClassSetting` and define fields: 
 
-* `LimitFunction` – ограничение, которому должны удовлетворять объекты.
-* `View` – представление, по которому должны быть выгружены объекты, чтобы на них можно было накладывать ограничение.
+* `LimitFunction` – limit that must be met by objects. 
+* `View` – representation that needs to be unloaded objects, to them it was possible to impose a limit. 
 
-Если в упомянутой выше структуре `LimitFunction` и `View` пусты, то это будет означать, что запись содержит настройки, заданные для всего класса.
+If in the above-mentioned structure `LimitFunction` and `View` empty, it will mean that the record contains the settings for the entire class. 
 
-В настройках класса расположены дополнительные поля (об их использовании есть информация в [данной статье](efs_rights-and-audit-subsystems.html)):
+In the settings class also provides additional fields (using the information in [this article](efs_rights-and-audit-subsystems.html)): 
 
-* `IAudit AuditClassService` - реализация интерфейса [IAudit](efs_i-audit.html), через который необходимо производить аудит конкретного класса.
-* `string AuditClassConnectionStringName` - [имя строки подключения к БД, посредством которой необходимо писать аудит](efs_data-service-for-audit.html).
+* `IAudit AuditClassService` - interface implementation [IAudit](efs_i-audit.html) through which it is necessary to audit a particular class. 
+* `string AuditClassConnectionStringName` - [name of the connection string to the database, through which you want to write audit](efs_data-service-for-audit.html). 
 
-### Настройки полей (AuditFieldSetting)
+### Settings fields (AuditFieldSetting) 
 
-Настройки полей класса определяются программистом в программном коде и хранятся в структуре `AuditFieldSetting`:
+Setting the field class defined by the programmer in the program code and stored in the structure `AuditFieldSetting`: 
 
-* `FieldName` – имя поля, для которого определяется настройка.
-* `PrunningLength` – (см. `AuditClassSetting`) если `null`, то берётся значение из соответствующего `AuditClassSetting`.
-* `Compress` – (см. `AuditClassSetting`) если `null`, то берётся значение из соответствующего `AuditClassSetting`. 
-* `KeepOldValue` - (см. `AuditClassSetting`) если `null`, то берётся значение из соответствующего `AuditClassSetting`.
-* ``KeepAllValues` - (см. `AuditClassSetting`) если `null`, то берётся значение из соответствующего AuditClassSetting.
+* `FieldName` – the field name for which you are defining the configuration. 
+* `PrunningLength` – (see `AuditClassSetting`) if `null`, then take the value from the corresponding `AuditClassSetting`. 
+* `Compress` – (see `AuditClassSetting`) if `null`, then take the value from the corresponding `AuditClassSetting`. 
+* `KeepOldValue` - (see `AuditClassSetting`) if `null`, then take the value from the corresponding `AuditClassSetting`. 
+* ``KeepAllValues` - (see `AuditClassSetting`) if `null`, then take the value from the corresponding AuditClassSetting. 
 
-### Настройки сервисов данных (AuditDSSetting)
+### Configuration data services (AuditDSSetting) 
 
-Настройки сервисов данных приложения необходимы подсистеме аудита, чтобы сервис аудита мог определить, с помощью какого сервиса данных и куда необходимо писать данные аудита.
+Configuration data services, the application requires the audit service to audit to determine what data service you need to write audit data. 
 
-Информация о сервисах данных, используемых приложением (`AuditDSSetting`):
+Information about data services used by the application (`AuditDSSetting`): 
 
-* `DataServiceType` – тип сервиса данных.
-* `ConnString` – строка соединения сервиса.
-* `ConnStringName` – имя строки соединения (имя задаётся программистом для идентификации сервиса данных; далее в конфиге сервиса аудита будет использоваться это имя).
+* `DataServiceType` – type data service. 
+* `ConnString` – the connection string of the service. 
+* `ConnStringName` – the connection string name (the name provided by the programmer to identify the service данных; later in the config of the service audit will be used is the name).
 
-Сервис данных, когда им была выявлена потенциально аудируемая операция, сообщает об этом классу AuditService. Если класс AuditService принял решение о том, что необходимо провести запись данных аудита, то среди отправляемой [сервису аудита](efs_audit-win-service.html) информации будет имя строки подключения к базе данных приложения ([имя строки подключения определяется](data-service-for-audit.html) из AuditDSSetting на основании того, какой сервис данных и с какой строкой подключения обратился к классу AuditService).
+The data service when they had identified a potentially audited operation, notify the AuditService class. If the class AuditService decided that it is necessary to conduct the record audit data, among sent [service audit](efs_audit-win-service.html) information is the name of the connection string to the application database ([name of the connection string is defined](efs_data-service-for-audit.html) from AuditDSSetting based on what data service is and what connection string applied to the class AuditService). 
 
 
-## Алгоритм определения актуальных настроек аудита
+## the Algorithm for determining current auditing settings 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-find-setting.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-find-setting.png) 
 
-*Схема определения, является ли операция аудируемой для класса*
+*Circuit determining whether the operation is audited for class* 
 
-Если операция является аудируемой, то из найденной настройки берётся представление, после чего для собственных полей, мастеров и детейлов определяются параметры сохранения сведений аудита в следующем порядке:
+If the operation is audited, it was found from settings does the idea, then for your own fields, and datalow defines the options for saving audit information in the following order: 
 
-* Среди настроек для полей в настройке класса по умолчанию ищутся настройки для искомого поля, где интересующие параметры не null.
-* Если параметры не найдены, то используются значения параметров, указанных в настройке класса по умолчанию.
-* Если настройка класса по умолчанию отсутствует, то аналогичный поиск осуществляется для дополнительных настроек, где объект удовлетворяет соответствующим LimitFunction.
+* Among the settings for the fields in the configuration class, the default settings are searched for the required fields, where the interesting parameters are not null. 
+* If parameters are not found, then it uses the parameter values specified in the customizing of the default class. 
+* If the class setting there is no default, then a similar search is performed for advanced settings, where the object satisfies LimitFunction. 
 
-## Генерация настроек
+## Generation settings 
 
-Среди настроек аудита, определяемых в Flexberry Tool, можно выделить следующие типы:
+Among the settings of the audit defined in Flexberry Tool, we can distinguish the following types: 
 
-* Настройки стадии (общие настройки аудита для всех генерируемых со стадии приложений).
-* Настройки классов со стереотипом «application» (настройки аудита, определяемые для конкретного генерируемого приложения (на настоящий момент ASP-генератор поддерживает генерацию только одного приложения)).
-* Настройки классов со стереотипом «implementation» (настройки аудита, определяемые для конкретных классов, которые войдут в сборку объектов).
+* Setting the stage (General settings for all audit generated from the stage of application). 
+* Settings classes with the stereotype "application" (audit settings that you define for a particular generated application (currently ASP generator supports generating only one application)). 
+* Settings classes with the stereotype "implementation" (audit settings that are defined for specific classes that will be included in the Assembly of objects). 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-setting-generate.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-setting-generate.png) 
 
-Схема генерации настроек аудита из Flexberry Tool в web-приложение*
+The generation of the settings of the audit of Flexberry Tool to the web application* 
 
-Настройки классов со стереотипом «implementation» будут генерироваться в код объектов генератором объектов.
-Настройки стадии и класса со стереотипом «application» будут генерироваться в config-файл web-приложения ASP-генератором.
+Settings classes with the stereotype "implementation" will be generated in the code object a generator object. 
+Setting the stage and class with the stereotype "application" will be generated. config file on a web ASP application generator. 
 
-## Чтение настроек
+## Reading settings 
 
-AuditService основные настройки классов объектов получает непосредственно из классов через reflection.
-Общие настройки аудита приложения загружаются в AuditService в начале работы web-приложения в Global.asax.cs, откуда идёт обращение к специализированному классу AuditSetter, который отвечает за формирование настроек из config-файла и первичную инициализацию AuditService.
+AuditService basic settings feature classes gets directly from the class using reflection. 
+General settings of the auditing application is loaded into AuditService at the beginning of the web application in the Global.asax.cs where there is an appeal to a specialized class AuditSetter, which is responsible for the formation settings from the config file and initialization AuditService. 
 
-![Изображение](/images/pages/products/flexberry-aspnet/audit/audit-setting-read.png)
+![Image](/images/pages/products/flexberry-aspnet/audit/audit-setting-read.png) 
 
-*Схема чтения настроек для AuditService*
+*The scheme of reading the settings for the AuditService* 
 
-## Обработка ошибок
+## error Handling 
 
-![](/images/pages/products/flexberry-aspnet/audit/audit-error-handle.png)
+![](/images/pages/products/flexberry-aspnet/audit/audit-error-handle.png) 
 
-* `AuditException` – базовое исключение подсистемы аудита. При выполнении таких базовых операций аудита как WriteCustomAuditOperation, RatifyAuditOperation, WriteCommonAuditOperation наружу пробрасываются только исключения такого типа.
-* `DisabledAuditException` – исключение сообщает, что аудит выключен, соответственно, ничего в БД аудита не попадёт.
-* `DataNotFoundAuditException` – не все данные, необходимые для функционирования подсистемы аудита, есть в наличии.
-* `ExecutionFailedAuditException` – исключение сообщает, что в ходе записи данных аудита произошло нечто, что не позволило их записать.
-* `RatifyExecutionFailedAuditException` – исключение сообщает, у каких именно записей аудита не удалось изменить статус.
+* `AuditException` – the underlying exception audit. When performing such basic operations as of audit WriteCustomAuditOperation, RatifyAuditOperation, WriteCommonAuditOperation out propisyvayutsya only exceptions of this type. 
+* `DisabledAuditException` the exception reports that the audit is turned off, accordingly, nothing in DB audit will not fall. 
+* `DataNotFoundAuditException` – not all data necessary for the functioning of the audit, are available. 
+* `ExecutionFailedAuditException` – exception reports that during the recording of audit data was something that was not allowed to record them. 
+* `RatifyExecutionFailedAuditException` – exception reports, at which the audit record has failed to change the status. 
 
-## Обычное сохранение
+## Regular saving 
 
-При обычном сохранении объектов используется метод [DataService|сервиса данных) `[Processing-one-object|UpdateObject)` или `[Processing-of-multiple-objects|UpdateObjects)`. В этом случае транзакция для выполнения действий над БД открывается после того, как аудит получает все требуемые для работы данные, поэтому аудит не приводит к ситуации взаимоблокировок.
+Those saved objects using the [DataService|data service) `[Processing-one-object|UpdateObject)` or `[Processing-of-multiple-objects|UpdateObjects)`. In this case, the transaction to perform actions on the database is opened after the audit receives all required data, so the audit does not lead to a situation of deadlock. 
 
-## Упорядоченное сохранения
+## Ordered save 
 
-При сохранении объектов с помощью метода `[SQLDataService#UpdateObjectsOrdered|UpdateObjectsOrdered)` транзакция открывается до того, как выполняются [Business-Servers-Wrapper-Business-Facade|бизнес-серверы) и генерируются необходимые запросы. По этой причине в AuditService, который готовит данные аудита для передачи их на запись, передаётся текущая открытая транзакция, что позволяет избежать взаимоблокировок. Стоит заметить, что не принципиально, в какую именно БД и каким образом (через [AuditWinService|win-сервис) или статический класс) происходит запись аудита, поскольку после передачи данных из AuditService больше не происходит обращение к БД приложения.
+When saving objects using the method `[SQLDataService#UpdateObjectsOrdered|UpdateObjectsOrdered)` transaction is opened before execute [Business-Servers-Wrapper-Business-Facade|business servers) and generates the needed queries. For this reason, AuditService, which prepares audit data to transmit them to the recording is passed the current open transaction to avoid deadlocks. It is worth noting that does not matter in which database and how (using [AuditWinService|win-service) or a static class) and the audit record, because after the transfer of data from AuditService no longer refers to the application database. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

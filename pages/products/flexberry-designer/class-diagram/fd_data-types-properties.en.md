@@ -1,115 +1,117 @@
----
-title: Типы данных (классы со стереотипом type) и их свойства
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, типы данных, type, стереотип, дополнительные свойства, редактирование свойств, пример
-summary: Особенности генерации типов данных, свойства типов данных и их редактирование, пример сгенерированного кода
-toc: true
-permalink: en/fd_data-types-properties.html
-lang: en
----
+--- 
+title: data Types (classes with the stereotype type) and their properties 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, data types, type, stereotype, additional properties, edit properties, example 
+summary: peculiarities of generation of data types, properties, data types and editing, example of the generated code 
+toc: true 
+permalink: en/fd_data-types-properties.html 
+lang: en 
+autotranslated: true 
+hash: 0cd4e1a67be0256d1524c7b618f80d516d80d53d3b5291eba93f6882221646ee 
+--- 
 
-`Type`, [стереотип](fd_key-concepts.html), вводящий новый тип. При генерации кода на целевом языке объявляется этот тип. Типы не могут связываться никакими ассоциациями, но могут наследоваться.
+`Type`, [stereotype](fd_key-concepts.html) introducing the new type. When generating code in the target language you declare the type. Types can't contact any Association, but can be inherited. 
 
-Пример:
+Example: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/type.jpg)
+![](/images/pages/products/flexberry-designer/class-diagram/type.jpg) 
 
-{% include note.html content="Если классы находятся в разных пакетах, то будет сгенерировано 2 отдельные сборки, которые будут ссылаться друг на друга. Код успешно сгенерируется, но не будет компилироваться." %}
+{% include note.html content="If the classes are in different packages, you will generate 2 separate assemblies to be referenced to each other. Code is successfully generated, but will not compile." %} 
 
-![](/images/pages/products/flexberry-designer/class-diagram/types.png)
+![](/images/pages/products/flexberry-designer/class-diagram/types.png) 
 
 
-## Описание типа
+## type Description 
 
-Что генерируется | Генерация в SQL DDL | Генерация в .Net-язык
-:----------------------------|:--------------------------------|:--------------------------------------
-| Любая часть любого UML-класса (атрибут, параметр метода и т.д.), объявленная этим типом | Как есть или указывается преобразование в карте типов для генератора | Как есть. Атрибут, параметр метода и т.п. объявляются этим типом
-UML-класс | | .Net-класс
-Атрибут UML-класса | | Публичное виртуальное свойство с тем же именем и соответствующим модификатором (# - `protected`, + - `public`, - - `private`) и приватный член класса для этого свойства. Тип свойства и приватного члена - тип атрибута.
-Метод UML-класса | | Публичный виртуальный метод с соответствующими параметрами. Тело метода пустое со скобкой программиста для внесения кода метода.
+Generated | Generate SQL DDL Generation .Net language 
+:----------------------------|:--------------------------------|:-------------------------------------- 
+| Any part of any UML class (attribute, method parameter, etc.) declared by this class | or As is specified in the transformation map types for the generator As is. Attribute, method parameter, etc. are declared by this type 
+UML class | | .Net class 
+Attribute UML class | | Public virtual property with the same name and the appropriate modifier (# - `protected`, - `public`, - - `private`), and private member of the class for this property. The type of the property and a private member - type attribute. 
+Method UML class | | Public virtual method with the appropriate parameters. The method body empty with a bracket of the programmer to make the code in the method. 
 
-### Дополнительно редактируемые свойства и что как генерируется
+### Additional editable properties and how that is generated 
 
-Окно редактирования свойств типа данных выглядит следующим образом:
+The properties of the data type as follows: 
 
-1.Закладка редактирования свойств UML-класса:
+1.Tab edit the properties of a UML class: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/typepropp1.png)
+![](/images/pages/products/flexberry-designer/class-diagram/typepropp1.png) 
 
-Свойство | Описание | Генерация в .Net-язык
-:------------|:---------------------|:------------------------------------
-`Stored` | |
-`Name` | Имя UML-класса, оно же имя типа | Имя .Net-класса
-`Description` | Рекоторое развёрнутое описание, при необходимости, для пояснительных целей | Как `DocComment` к классу в код на .Net-языке
-`PrimaryKeyStorage` | |
+Property | Description | Generation .Net language 
+:------------|:---------------------|:------------------------------------ 
+`Stored` | | 
+`Name` | the name of the UML class, it is the name of the type | Name .Net-class 
+`Description` | Nekotoroe detailed description, if necessary, for explanatory purposes As `DocComment` to the class in code .Net language 
+`PrimaryKeyStorage` | | 
 `Storage` | | 
 `AutoAltered` | | 
 `LoadingOrder` | | 
 `Trim` | | 
-`Packet, NamespacePostfix` | Позволяют настроить сборку и пространство имен, в которое должен генерироваться тип | см. [Расположение сборок после генерации кода](fo_location-assembly.html)
-`PBCustomAttributes` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения атрибутов перед классом.
-`PBMembers` | Позволяет указать, необходима ли [скобка программиста](fo_programmer-brackets.html) внутри класса для "ручного" внесения членов класса | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения членов класса
+`Packet, NamespacePostfix` | Allow to set the Assembly and namespace in which to generate the type of | see [the Location of assemblies after code generation](fo_location-assembly.html) 
+`PBCustomAttributes` | | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html a) for "manual" introducing attributes to the class. 
+`PBMembers` | Allows you to specify whether [brace programmer](fo_programmer-brackets.html) inside a class for the "manual" introduction of the members of the class | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html a) for "manual" introduction of the members of the class 
 `PBClass` | | 
-`PublishToEBSD` | | Если галочка указана - перед классом генерируется указание атрибута `PublishToEBSDAttribute`, который указывает доступность данного класса для использования в редакторе диаграмм сценариев
+`PublishToEBSD` | | If the option is specified before the class is generated by specifying the attribute `PublishToEBSDAttribute`, which indicates the availability of this class to use the chart editor scripts 
 
-2.Закладка редактирования свойств атрибутов UML-класса:
+2.Tab edit the properties of the attributes of a UML class: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/typepropp2.png)
+![](/images/pages/products/flexberry-designer/class-diagram/typepropp2.png) 
 
-Свойство | Описание | Генерация в .Net-язык
-:----------------|:---------------------|:------------------------------------------
-`AccessModifier` | модификатор доступа к соответствующему свойству `.Net`-класса | Модификаторы:+ - public - - private # - protected
-`Stored` | |
-`Name` | то же самое имя атрибута, что на диаграмме | Имя свойства в `.Net`-классе, а также некоторое производное имя приватного члена (в зависимости от формата приватного члена, который указывается в настройках генератора).
-`Description`| описание для пояснительных целей | Как `DocComment` к свойству
-`Type` | тип данных свойства | Как тип свойства и тип приватного члена
-`DefaultValue` | значение по умолчанию | Как инициализатор приватного члена
+Property | Description | Generation .Net language 
+:----------------|:---------------------|:------------------------------------------ 
+`AccessModifier` | access modifier to the appropriate property `.Net` class | Modifiers: - public - private # - protected 
+`Stored` | | 
+`Name` | the same name of the attribute that the chart | name of the property in `.Net` class, and some derived the name of the private member (depending on format private member that is specified in the settings of the generator). 
+`Description`| description for explanatory purposes As `DocComment` to the property 
+`Type` | data type properties | type properties and type of the private member 
+`DefaultValue` | default | initializer As a private member 
 `NotNull` | | 
 `DataServiceExpression` | | 
 `Storage` | | 
 `Hint` | | 
 `Order` | | 
-`PBCustomAttributes` | | Если галочка указана - перед определением свойства генерируется [скобка программиста](fo_programmer-brackets.html) для "ручного" внесения .Net-атрибутов.
-`PBGetStart` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре get свойства непосредственно после начала кода аксессора.
-`PBGetEnd` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре get свойства непосредственно перед концом кода аксессора.
-`PBSetStart` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре set свойства непосредственно после начала кода аксессора.
-`PBSetEnd` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) в аксессоре set свойства непосредственно перед концом кода аксессора.
+`PBCustomAttributes` | | If the option is specified before the definition of properties is generated [bracket programmer](fo_programmer-brackets.html) for manual application .Net attributes. 
+`PBGetStart` | | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) in the property getter directly after the start code of the accessor. 
+`PBGetEnd` | | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) in the property getter directly before the end of the code of the accessor. 
+`PBSetStart` | | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) in the property setter directly after the start code of the accessor. 
+`PBSetEnd` | | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) in the property setter immediately before the end of the code of the accessor. 
 `Autoincrement` | | 
 
-3.Закладка редактирования свойств методов UML-класса:
+3.Tab of the edit properties methods UML class: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/typepropp3.png)
+![](/images/pages/products/flexberry-designer/class-diagram/typepropp3.png) 
 
-В верхней части - методы, в нижней - параметры выбранного в верхней части метода.
+In the upper part, the methods in the bottom - options are selected in the upper part of the method.
 
-Для методов:
+Methods: 
 
-Свойство | Описание | Генерация в .Net-язык
-:--------------|:---------------------|:--------------------------
-`AccessModifier` | модификатор доступа к соответствующему методу .Net-класса | Модификаторы: + - public - - private # - protected
-`Name` | то же самое имя метода, что на диаграмме | Имя метода в `.Net`-классе
-`Description` | описание для пояснительных целей | Как `DocComment` к методу. Если `IsEvent` указан, описание генерируется перед событием и перед методом, взводящим событие.
-`Type` | тип данных метода | Как тип метода. Если не заполнено - `void`.
-`IsEvent`| указывает, что это не метод, а событие | Если IsEvent указан, то метод должен иметь ровно один параметр с типом, объявленным как [UML-класс со стереотипом EventArg](fd_eventarg.html). Рядом с описанием EventArg, - генерируется соответствующий делегат. Внутри класса-типа - событие. Внутри класса-типа - метод, взводящий событие (навроде OnXXXXXXX)
-`PBCustomAttributes` | | Если галочка указана - генерируется [скобка программиста](fo_programmer-brackets.html) непосредственно перед методом для "ручного" внесения .Net-атрибутов.&#93; Если `IsEvent` указан, [скобка программиста](fo_programmer-brackets.html) генерируется перед методом взведения события OnXXXXXXX
+Property | Description | Generation .Net language 
+:--------------|:---------------------|:-------------------------- 
+`AccessModifier` | access modifier to a corresponding method .Net class | Modifiers: - public - private # - protected 
+`Name` | same method name that the chart | Name of the method in `.Net` class 
+`Description` | description for explanatory purposes As `DocComment` to the method. If `IsEvent` specified, the description is generated before the event and before the method wzwodem event. 
+`Type` | data type method As the method type. If not filled - `void`. 
+`IsEvent`| indicates that this is not a method, and event | IsEvent If specified, the method must have exactly one parameter type that is declared as a [UML class with the stereotype EventArg](fd_eventarg.html). Description EventArg, - is generated by a suitable delegate. Within the class-type - event. Within the class-type - method swadeshi event (like OnXXXXXXX) 
+`PBCustomAttributes` | | If the option is given, it is generated [bracket programmer](fo_programmer-brackets.html) immediately before the method to "manual" application .Net attributes.&#93; `IsEvent` If specified, [brace programmer](fo_programmer-brackets.html) is generated before the method of cocking the events OnXXXXXXX 
 
-Для параметров методов:
+For parameters of methods: 
 
-Свойство  | Описание | Генерация в .Net-язык
-:--------------|:----------------------|:---------------------------------------
-`Name` | то же самое имя параметра, что на диаграмме | Имя параметра метода в `.Net`-классе
-`Description` | описание для пояснительных целей | Как описание параметра в `DocComment` к методу, чей это параметр.
-`Type` | тип данных параметра | Тип данных параметра
-`Modifier` | | Модификатор передачи параметра: byref - ref; byval - ничего; out - out; in - in. 
+Property | Description | Generation .Net language 
+:--------------|:----------------------|:--------------------------------------- 
+`Name` | the same parameter name that the chart | Name of the method parameter in `.Net` class 
+`Description` | description for explanatory purposes As the description of the parameter in `DocComment` to a method whose parameter. 
+`Type` | the data type parameter | data Type of the parameter 
+`Modifier` | | Modifier transfer of parameters: byref - byval ref; - ничего; out - out; in - in. 
 
-### Пример сгенерированного кода на C# по примеру
+### Example of the generated code on the C# at the example 
 
 ```csharp
- /// <summary>
-    /// Представление интервалов времени
-    /// </summary>
-    // *** Start programmer edit section *** (МинСек CustomAttributes)
-    // *** End programmer edit section *** (МинСек CustomAttributes)
+ /// <summary> 
+    /// Representation of time intervals 
+    /// </summary> 
+    // *** Start programmer edit section *** (Minsec CustomAttributes) 
+    // *** End programmer edit section *** (Minsec CustomAttributes) 
     public class МинСек
     {
         
@@ -141,4 +143,8 @@ UML-класс | | .Net-класс
             }
         }
     }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

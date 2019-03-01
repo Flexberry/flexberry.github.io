@@ -1,41 +1,47 @@
----
-title: Основные виды представлений
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, View, представление, виды представлений
-summary: Виды представлений и особенности работы с ними
-toc: true
-permalink: en/fd_view-types.html
-lang: en
----
+--- 
+title: Principal submissions 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, View, views, types of views 
+summary: Types of submissions and working with them 
+toc: true 
+permalink: en/fd_view-types.html 
+lang: en 
+autotranslated: true 
+hash: a726420ad7ea47d263bd4c4d9a649b905702236d6ac7addbb9d6cb94a43d4d15 
+--- 
 
-Определение __представления__ описано в статье [определение представления](fd_view-definition.html).
+Definition __presentation__ described in the article [view definition](fd_view-definition.html). 
 
-## Виды представлений
+## Types of representations 
 
-В каждом классе, при его создании, должны быть созданы __три__ основных представления ([E](fd_e-view.html), [L](fd_l-view.html), [T](fd_t-view.html)), а также при необходимости детейловое представление ([D](fd_d-view.html)).
-__Примечание__: при использовании быстрой прототипизации представления E и L создаются автоматически.
+In each class, when it was created, should be created __three__ main view ([E](fd_e-view.html), [L](fd_l-view.html), [T](fd_t-view.html)), and, if necessary, Decalogue the representation ([D](fd_d-view.html)). 
+__Note__: when you use the quick prototypization performance E and L are created automatically. 
 
-В качестве названия используются имя класса и постфикс. Название должно удовлетворять шаблону: <ИмяКласса> + <Постфикс> (например: ВидСобытияE, ВидСобытияL, ВидСобытияT).
+As the name uses the class name and Postfix. The name must satisfy the pattern: <Classname> <Postfix> (for example: Videobytes, ВидСобытияL, Videobytes). 
 
-Постфикс | Название | Применение
-:-----------------|:-------------------|:---------------------------------------------------
-[E](e-view.html) | Представление для редактирования | Используется для [форм редактирования](fd_editform.html) и для [GroupEdit](fw_group-edit.html), [AjaxGroupEdit](fa_ajax-group-edit.html). GroupEdit является средством быстрого редактирования объектов и может обладать функциональностью, позволяющей открыть текущий объект на форме редактирования. При этом другие атрибуты, невидимые в GroupEdit’е, также должны заполняться значениями. Поэтому для формы редактирования и для GroupEdit’а должно использоваться одно представление
-[L](fd_l-view.html) | Списковое представление | Используется на [формах списка](fd_listform.html) (свойство ViewName компонента [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html))
-[T](fd_t-view.html) | Деревянное представление | Используется для поиска в [фильтрах](fw_filtersand-limits.html), и служит для построения ограничений на списки
-[D](fd_d-view.html) | Детейловое представление | Используется для поиска в фильтрах, и служит для построения ограничений на списки по атрибутам [детейла](fo_detail-associations-properties.html).
+Postfix | Name | Application 
+:-----------------|:-------------------|:--------------------------------------------------- 
+[E](fd_e-view.html) | View to edit | Use [form of editing](fd_editform.html) [GroupEdit](fw_group-edit.html), [AjaxGroupEdit](fa_ajax-group-edit.html). GroupEdit is a fast edit object and may have the functionality to open the current object in the edit form. However, other attributes, invisible in GroupEdit'e must also be filled with values. Therefore, to edit form and to GroupEdit'and must be used in one view 
+[L](fd_l-view.html) | List view | Use [forms list](fd_listform.html) (property ViewName component [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html)) 
+[T](fd_t-view.html) | Wood view | is Used to search in the [filters](fw_filtersand-limits.html), and it is used for building restrictions on the lists 
+[D](fd_d-view.html) | Decalogue performance | is Used for searching in the filters, and it is used to build restriction on the lists for attributes [detail](fo_detail-associations-properties.html). 
 
-Несмотря на то, что представление Т служит для построения ограничений по полям списка, загружаемого по другому представлению (представление L), оно может отличаться по составу атрибутов. Представление L может содержать меньшее количество атрибутов, т.к. при вычитке автоматически будут учитываться атрибуты, которые есть в представлении Т.
+Despite the fact that the representation T is used to build restriction in the fields list that is loaded in another view (view L), it may be different in composition attributes. Presentation L may contain fewer attributes, because when you read will automatically take into account the attributes that are in the view, Etc 
 
-Представление D отличается от представления T лишь тем, что не содержит атрибутов агрегатора. Так как представление D тоже служит для построения ограничений на списки, то его атрибуты также должны присутствовать в представлении L.
+View D differs from the view of T only, that does not contain the attributes of the aggregator. Since the representation D is also used to build the constraints on the lists, then his attributes must also be present in the representation of L.
 
-## Основные правила использования
+## Basic rules of use 
 
-* Все атрибуты должны иметь удобочитаемый заголовок, описывающий сущность атрибута, вне зависимости от [видимости](fd_hidden-properties-view.html) атрибута. Заголовок пишется с большой буквы, слова раздельно (например: атрибут – `ТипМестаПроисш`, заголовок - `Тип места происшествия`).
-* Допускаются общепринятые сокращения, основным критерием чего служит отсутствие точек, например: кол-во, ФИО (например: `ФИО заявителя`).  
-Если заголовок очень длинный, допускаются сокращения с точкой для соблюдения разумной длины заголовка (например: `Кол-во неизв. пострадавших`, `Доп. характеристики места`).  
-Сокращение не должно быть двусмысленно или непонятно. Плохим примером является `Кол-во л/с`, поскольку его можно трактовать как `Количество лошадиных сил`, хотя подразумевалось `Количество личного состава`. В таком случае рекомендуется использовать полное название (`“Кол-во личного состава`).
+* All attributes must have a human-readable title describing the essence of the attribute, regardless of the [visibility](fd_hidden-properties-view.html) attribute. The title is capitalized, words are separated (for example: the attribute – `ТипМестаПроисш`, title - `Тип place происшествия`). 
+* Standard abbreviations are allowed, the main criterion of which is the absence of periods, such as: number, name (for example: `ФИО заявителя`). 
+If the title is very long, allowed abbreviations to comply with the reasonable length of the title (for example: `Кол in unknown. пострадавших`, `Доп. features места`). 
+The reduction should not be ambiguous or unclear. A bad example is `Кол-l/с` because it can be interpreted as `Количество horse сил`, although it was implicit `Количество personal состава`. In this case, it is recommended to use the full name (`“number of personal состава`). 
 
-Важен порядок следования атрибутов. Для фильтров порядок в представлении определяет порядок следования при отображении. Для списков и GroupEdit’ов порядок в представлении определяет порядок при первом открытии (в дальнейшем пользователь сам может настроить порядок атрибутов в списках и GroupEdit’ах).
+Important the order of the attributes. For filters of order in the view to determine the sequence order when displaying. For lists and GroupEdit's order in view determines the order the first time you open (the user can customize the order of the attributes in lists and GroupEdit'Oh). 
 
 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

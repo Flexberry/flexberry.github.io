@@ -1,70 +1,76 @@
----
-title: Order of calls of business servers
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, business servers, inheritance, interface, data object, example
-summary: Illustration of the order of calls of business servers in different situations
-toc: true
-permalink: en/fo_order-calls-bs.html
-lang: en
----
+--- 
+title: call Order business servers 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, business servers, inheritance, interface, data object, example 
+summary: Illustration of procedure calls to a business server in different situations 
+toc: true 
+permalink: en/fo_order-calls-bs.html 
+lang: en 
+autotranslated: true 
+hash: 40e94a00106423ea2a5164dd84091ee960c74db65ba3904ed0e2e85e002b9eb8 
+--- 
 
-Следует учесть, что в [бизнес-сервере](fo_bs-wrapper.html) может быть вызвано обновление объекта не через возвращаемый массив, а отдельным вызовом [сервиса данных](fo_data-service.html). В этом случае, надо учесть то, что бизнес-серверы будут вызываться для этого объекта отдельно.
+Note that in [business server](fo_bs-wrapper.html) can be caused by the object is updated not through the returned array, and a separate call to [service data](fo_data-service.html). In this case, it is necessary to consider that the business server will be called for this object separately. 
 
-### Агрегатор, детейлы
+### Aggregator, detaily 
 
-Если имеется следующая ситуация c [детейлами](fo_detail-associations-properties.html):
+If you have the following situation [detaylari](fo_detail-associations-properties.html): 
 
-![](/images/pages/products/flexberry-orm/business-servers/agregator-detail-at-bs.png)
+![](/images/pages/products/flexberry-orm/business-servers/agregator-detail-at-bs.png) 
 
-то бизнес-сервера при обновлении будут срабатывать в следующем порядке:
+the business server when the update will be triggered in the following order: 
 
-* КлассАгрегатор
-* КлассДетейл
+* Classcreator 
+* Classical 
 
-### Наследование
+### Inheritance 
 
-Если имеется следующая ситуация с [наследованием](fd_inheritance.html):
+If you have the following situation with [the inheritance](fd_inheritance.html): 
 
-![](/images/pages/products/flexberry-orm/business-servers/bs-hierarchy.JPG)
+![](/images/pages/products/flexberry-orm/business-servers/bs-hierarchy.JPG) 
 
-то бизнес-серверы при обновлении объекта класса `Человек` будут срабатывать в следующем порядке: 
+the business server when the object is updated class `Человек` will fire in the following order: 
 
-* Существо
-* Животное
-* Млекопитающее
-* Человек
+* The creature 
+* Animal 
+* Mammal 
+* People 
 
-### Интерфейсы
+### Interfaces 
 
-Можно прописать [атрибут для привязки бизнес-сервера](fo_bs-example.html) не только к классу, но и к интерфейсу. В этом случае все объекты класса-наследника от этого интерфейса будут обрабатываться данным бизнес-сервером. Если указано несколько интерфейсов с бизнес-серверами: 
+You can register [attribute binding business servers](fo_bs-example.html) not only in the classroom but also to the interface. In this case, all objects of a descendant class from this interface will be processed according to the business server. If you specify multiple interfaces with business server: 
 
 ```csharp
 public class Class2:Class3, Interface3
 {
-//...
+//... 
 }
 
 public class Class1:Class2, Interface1, Interface2
 {
-//...
+//... 
 }
-```
+``` 
 
-то порядок срабатывания будет таким: 
+the order of triggering is: 
 
-* бизнес-сервер, привязанный к Class3
-* бизнес-сервер, привязанный к Interface3
-* бизнес-сервер, привязанный к Class2
-* бизнес-сервер, привязанный к Interface2
-* бизнес-сервер, привязанный к Interface1
-* бизнес-сервер, привязанный к Class1
+* business server bound to Class3 
+* business server bound to Interface3 
+* business server tied to Class2 
+* business server bound to Interface2 
+* business server linked to Interface1 
+* business server bound to Class1 
 
-{% include note.html content="Если некоторый интерфейс встретится несколько раз, то [бизнес-сервер](fo_bs-wrapper.html) для него будет выполнен только один раз в соответствии с уровнем самого дальнего предка." %}
+{% include note.html content="If some interface will meet several times, [business server](fo_bs-wrapper.html) for him to be executed only once in accordance with the level of the most distant ancestor." %} 
 
-### Правила обновления объекта данных
+### update Rules data object 
 
-Например, имеется следующая ситуация:
+For example, you have the following situation: 
 
-![](/images/pages/products/flexberry-orm/business-servers/bs-masters.png)
+![](/images/pages/products/flexberry-orm/business-servers/bs-masters.png) 
 
-Если в бизнес-сервере для класса `Товар` исправлена `Фирма-производитель` и возвращена в методе бизнес-сервера, то для фирмы-производителя вызовется её бизнес-сервер. **Важно понимать**, что запрос для `Товара` был уже сгенеририван (это было выполнено сразу после отработки его собственного бизнес-сервера) и в бизнес-сервере `Фирмы-производителя` изменять `Товар `не следует - новые изменения не будут зафиксированы в БД.
+If the business server class `Товар` fixed `Фирма-производитель` and returned in the method business servers, then the manufacturer will called it a business server. **Important to understand** that the request for `Товара` was already generalivan (this was done immediately after the testing of its own business server) and business server `Фирмы-производителя` change `Товар `не should - new changes will not be committed to the database. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

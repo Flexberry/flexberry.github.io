@@ -1,16 +1,18 @@
----
-title: Context-sensitive data object cache
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, getting links
-summary: Getting references to data objects
-toc: true
-permalink: en/fo_context-sensitive-cache.html
-lang: en
----
+--- 
+title: Context-dependent cache data objects 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, obtaining references 
+summary: Getting references to data objects 
+toc: true 
+permalink: en/fo_context-sensitive-cache.html 
+lang: en 
+autotranslated: true 
+hash: e8d095b9f9c5f4e6cce447d4a5315e409c3ee6db1200b03d5a3b9b988f2648e7 
+--- 
 
-Бывает удобно не хранить явно ссылок на объекты данных, а получать эти ссылки по `.Net` типу и первичному ключу. Бывают также ситуации, когда программист вообще не имеет явных ссылок и не имеет другой возможности их получить, кроме как по `.Net` типу и первичному ключу.
+It is useful to explicitly store references to data objects, and to these links for `.Net` type and primary key. There are also situations when the programmer does not have explicit references and has no other way to obtain except by `.Net` type and primary key. 
 
-Такая возможность реализована в `CASEBERRY FRAMEWORK`, она называется `контекстно-зависимым кэшем` и поддерживается  классом `DataObjectCache`. Программист может ограничить часть кода, в котором применяется кэширование, методами `DataObjectCache.StartCaching, DataObjectCache.StopCaching`. Внутри этой части кода можно положить в кэш объект данных (`DataObjectCache.AddDataObject`) и получить его (`DataObjectCache.GetLivingDataObject`).
+This option is implemented in `CASEBERRY FRAMEWORK`, it's called `контекстно-dependent кэшем` and supported by the class `DataObjectCache`. The programmer can limit the part of the code that uses caching techniques `DataObjectCache.StartCaching, DataObjectCache.StopCaching`. Inside this part of code can be put in the cache data object (`DataObjectCache.AddDataObject`) and get it (`DataObjectCache.GetLivingDataObject`). 
 
 ```csharp
 class Class1
@@ -30,23 +32,27 @@ class Class1
 		{
             var doc = new DataObjectCache();
 			SimpleDataObject sdo = new SimpleDataObject();			
-			sdo.Name="Объект данных";
+			sdo.Name="The data object";
 			Console.WriteLine(String.Format("Created dataobject name = {0}",sdo.Name));
 			doc.AddDataObject(sdo);
 			return sdo.__PrimaryKey;
 		}
 	}
-```
+``` 
 
-Каждый вызов метода `DataObjectCache.StartCaching` образует контекст, простирающийся до вызова `DataObjectCache.StopCaching`.  Вызов метода `DataObjectCache.StartCaching` внутри контекста образует вложенный контекст.
+Each method call `DataObjectCache.StartCaching` forms the context, extending to the call `DataObjectCache.StopCaching`. The method call `DataObjectCache.StartCaching` within the context forms a nested context. 
 
-![](/images/pages/products/flexberry-orm/data-object/sensitive-cache.png)
+![](/images/pages/products/flexberry-orm/data-object/sensitive-cache.png) 
 
-Объекты, добавляемые в контекстах более низкого уровня, автоматически попадают в контексты более высокого.
+Objects that are added to the contexts of a lower level are automatically placed in the contexts of higher. 
 
-Доступностью объектов более высокого уровня в контекстах более низкого программист может управлять. Можно «отрезать» вышестоящий контекст. Для этого служит параметр `ClipParentCache` метода `DataObjectCache.StartCaching`. Если метод вызван с параметром `true`, то объекты контекста уровнем выше никогда не доступны создаваемому контексту и всем нижележащим.
+The availability of higher level objects in contexts of lower programmer can manage. You can "cut" the parent context. This can be set using the method `ClipParentCache` `DataObjectCache.StartCaching`. If the method is invoked with a parameter `true`, the context objects on a higher level never available the created context and all the underlying. 
 
-Метод `DataObjectCache.GetLivingDataObject` просматривает только контекст текущего уровня.
-Метод `DataObjectCache.GetExtLivingDataObject` просматривает все вышележащие контексты, кроме текущего, но не выше «отрезанного».
+Method `DataObjectCache.GetLivingDataObject` looks only at the context of the current level. 
+Method `DataObjectCache.GetExtLivingDataObject` reviewed all of the overlying contexts other than the current, but not above the "cut off". 
 
-Внутри одного метода нельзя делать вложенные контексты, за исключением случая, когда новый контекст «отрезает» вышестоящий.
+Inside a single method you can not do sub-contexts, except in the case when a new context of "cuts" of the parent. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

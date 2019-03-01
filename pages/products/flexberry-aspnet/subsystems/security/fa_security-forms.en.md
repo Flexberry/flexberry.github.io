@@ -1,61 +1,63 @@
----
-title: Web-формы подсистемы полномочий
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Flexberry Security
-toc: true
-permalink: en/fa_security-forms.html
-lang: en
----
+--- 
+title: Web forms subsystem powers 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Flexberry Security 
+toc: true 
+permalink: en/fa_security-forms.html 
+lang: en 
+autotranslated: true 
+hash: 37dc633721c08bee8e5f2bf1d5150251e9dbfde256c9a75bed73bf4b9cc2f9d3 
+--- 
 
-Среди технологических форм присутствуют формы для работы с объектами подсистемы полномочий.
+Among technological forms, there are forms to work with objects of the subsystem powers. 
 
-Среди веб-форм на настоящий момент доступны формы для просмотра и редактирования:
-* пользователей
-* ролей
-* групп
-* классов
-* операций
+Among the web forms at the moment available forms for viewing and editing: 
+* user 
+* roles 
+* groups 
+* classes 
+* operations 
 
-### Особенности формы для работы с операциями
+### shape Features for working with operations 
 
-Для операций различают "Доступ в целом" и "Доступ с конкретным видом доступа".
+For operations distinguish between "Access in General and with a specific kind of access." 
 
-Первый столбик галочек определяет доступ к операции в целом. Если у пользователя указан конкретный вид доступа, то у пользователя есть доступ в целом (если добавить какой-то вид доступа на операцию и сохранить форму, то автоматически появится галочка в первом столбце).
+The first column of checkboxes defines the access to the operation as a whole. If the user specifies a particular kind of access, then the user has access to in General (if you add some kind of access to the surgery and save the form, you will automatically see a checkmark in the first column). 
 
-![](/images/pages/products/flexberry-aspnet/security/operation-form.png)
+![](/images/pages/products/flexberry-aspnet/security/operation-form.png) 
 
-## Путь до формы
+## the Way to form 
 
-Настройка доступа к данным формам производится через [DynamicPageRoute](fa_routing.html).
+Configuring access to data forms is made through [DynamicPageRoute](fa_routing.html). 
 
-Например, чтобы сделать формы доступными по следующим адресам (ниже представлен фрагмент карты сайта):
+For example, to make the forms available at the following addresses (see below for a fragment of the map of the site): 
 
 ```xml
-<siteMapNode title="Пользователи" url="~/flexberry/SecurityUsersList" />
-<siteMapNode title="Роли" url="~/flexberry/SecurityRolesList" />
-<siteMapNode title="Классы" url="~/flexberry/SecurityClassesList" />
-<siteMapNode title="Группы" url="~/flexberry/SecurityGroupsList" />
-<siteMapNode title="Операции" url="~/flexberry/SecurityOperationsList" />
-```
+<siteMapNode title=Users url="~/flexberry/SecurityUsersList" />
+<siteMapNode title=Roles url="~/flexberry/SecurityRolesList" />
+<siteMapNode title=Classes url="~/flexberry/SecurityClassesList" />
+<siteMapNode title="Group" url="~/flexberry/SecurityGroupsList" />
+<siteMapNode title=Operations url="~/flexberry/SecurityOperationsList" />
+``` 
 
-можно в RouteConfig прописать следующее:
+in RouteConfig, add the following: 
 
 ```csharp
 namespace ICSSoft.STORMNET.Web
 {
-    /// <summary>
-    /// Класс конфигурации маршрутов приложения.
-    /// </summary>
+    /// <summary> 
+    /// Class configuration of routing applications. 
+    /// </summary> 
     public static class RouteConfig
     {
-        /// <summary>
-        /// Метод для регистрации маршрутов в коллекции.
-        /// При изменении адреса страниц не забудьте произвести соответствующие изменения в SiteMap.
-        /// </summary>
-        /// <param name="routes">Коллекция маршрутов, в которую необходимо добавить новые элементы.</param>
+        /// <summary> 
+        /// Method to register the routes in the collection. 
+        /// If you change the url's don't forget to make relevant changes in SiteMap. 
+        /// </summary> 
+        /// <param name="routes">the Collection of routes in which you want to add new elements.</param> 
         public static void RegisterRoutes(RouteCollection routes)
         {
-			// ...
+			// ... 
 			
             routes.AddDynamicPageRoute("flexberry/SecurityClassEdit/{PK}", DynamicPageIdentifier.SecurityClassEdit);
             routes.AddDynamicPageRoute("flexberry/SecurityClassEdit", DynamicPageIdentifier.SecurityClassNew);
@@ -75,4 +77,8 @@ namespace ICSSoft.STORMNET.Web
         }
     }
 }
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

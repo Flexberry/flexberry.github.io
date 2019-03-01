@@ -1,45 +1,47 @@
----
-title: Configuring filters on lists
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember, filters, OLV, list
-summary: Features of setting and working with filters in lists
-toc: true
-permalink: en/ef_configuring-filters.html
-lang: en
----
+--- 
+title: setting up filters in the lists 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember, filtration, OLV, and the list 
+summary: configuration of filters on the list 
+toc: true 
+permalink: en/ef_configuring-filters.html 
+lang: en 
+autotranslated: true 
+hash: a56c44cf921009c6b2670b769d67e1a10ed0aea34c1e23c2fd311a990a1742ee 
+--- 
 
-## Настройка фильтрации на списке
+## configure filtering on the list 
 
-Для того чтобы на [списковой форме](ef_object-list-view.html) реализовать возможность фильтрации необходимо:
+In order to [list form](ef_object-list-view.html) to implement a filtering option, you must: 
 
-1. Указать свойства поиска в [шаблоне](ef_template.html) списковой формы.
-2. При необходимости переопределить предикаты в [роуте](ef_route.html) списковой формы.
+1. Specify the search properties in the [template](ef_template.html) the list forms. 
+2. If you need to override the predicates in [rout](ef_route.html) the list forms. 
 
-По умолчанию отфильтровать можно не только по кнопке обновления списка, но и по клавише `Enter`. Также по умолчанию доступна фильтрация по подстроке при незаданной операции сравнения.
+The default filter can not only refresh button of the list, but and key `Enter`. Also by default, filtering by a substring if you do not provide a comparison operation. 
 
-{% include note.html content="Регистрозависимость/ регистронезависимость при фильтрации зависит от [настроек БД](fo_insensitivity-register-ds.html)." %}
+{% include note.html content="case-sensitivity/ registronacional filtering depends on the [DB settings](fo_insensitivity-register-ds.html)." %} 
 
-### Настройка шаблона формы
+### setup form template 
 
-Настройка шаблона формы осуществляется следующим образом:
+Customize a form template is as follows: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
 {{flexberry-objectlistview
-// ...
+// ... 
 enableFilters=true
 filters=filters
 applyFilters=(action "applyFilters")
 resetFilters=(action "resetFilters")
 componentForFilter=(action "componentForFilter")
 conditionsByType=(action "conditionsByType")
-// ...
+// ... 
 }}{% endraw %}
-```
+``` 
 
-### Настройка роута формы
+### configure the router forms 
 
-Переопределить, как будет строится предикат, можно следующим образом:
+To override, as is the predicate in the following way: 
 
 ```javascript
 predicateForFilter(filter) {
@@ -53,17 +55,31 @@ predicateForFilter(filter) {
 
     return this._super(...arguments);
   },
-```
+``` 
 
-#### Пользовательские функции для фильтров
+#### Filtering by date without time 
 
-Если на прикладном уровне нужны специфические фильтры, то можно использовать функцию `predicateForAttribute`. Данная функция получает на вход атрибут, по которому происходит фильтрация, значение, по которому фильтровать, условие фильтра и возвращает предикат, по которому затем формируется параметр `$filter` в [OData-запросе](fo_orm-odata-service.html). 
+If you want to filter the fields with dates are not given time, then you need to get in predicateForFilter add a condition: 
 
-### Указание операций сравнения
+```javascript
+predicateForFilter(filter) {
+    if (filter.type === 'date') {
+      return new DatePredicate(filter.name, filter.condition, filter.pattern, true);
+    }
 
-Операции сравнения указываются через функцию `conditionsByType`, возвращающую массив для дропдауна с операциями. Для этого:
+    return this._super(...arguments);
+  },
+``` 
 
-1.В [контроллере](ef_controller.html) списковой формы прописать функцию с необходимыми значениями:
+#### Custom function for filters 
+
+If at the application level need specific filters, you can use the function `predicateForAttribute`. This function receives the input of the attribute that is filtered, the value on which to filter, the filter condition and returns a predicate, which then formed a parameter `$filter` in [OData-query](fo_orm-odata-service.html). 
+
+### specify the comparison operations 
+
+Comparison operations are indicated via `conditionsByType` function that returns an array for dropdown operations. To do this: 
+
+1.In [controller](ef_controller.html) list of forms to register the function with the required values: 
 
 ```javascript
 conditionsByType(type) {
@@ -85,36 +101,40 @@ conditionsByType(type) {
           return ['eq', 'neq'];
       }
     },
-```
+``` 
 
-2.В шаблоне списка указать соответствующее событие:
+2.In the template list to specify the appropriate event: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
-    // ...
+    // ... 
     conditionsByType=(action "conditionsByType")
-    // ...
+    // ... 
 }}{% endraw %}
-```
+``` 
 
-### Операции "пусто" и "не пусто"
+### Operation "empty" and "not empty" 
 
-Если существует необходимость использовать операции, не требующие заполнения значения, то можно настроить соответствующую операцию для предиката в контроллере формы. Например
+If there is a need to use operations not requiring fill values, then you can configure the appropriate operation for the predicate in the controller form. For example 
 
 ```javascript
-// ...
+// ... 
 case 'string':
 return ['eq', 'neq', 'like'];
 return ['eq', 'neq', 'like', 'empty'];
-// ...
-```
+// ... 
+``` 
 
-Далее в роуте задать соответствующее условие. Например,
+Later in the router to set the appropriate condition. For example, 
 
 ```javascript
-// ...
+// ... 
 if (filter.type === 'string' && filter.condition === 'empty') {
   return new SimplePredicate(filter.name, 'eq', null);
 }
-// ...
-```
+// ... 
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

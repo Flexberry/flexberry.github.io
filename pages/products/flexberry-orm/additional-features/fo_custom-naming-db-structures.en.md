@@ -1,37 +1,39 @@
----
-title: Example of custom names for structures in a database
-sidebar: flexberry-orm_sidebar
-keywords: Public, Sample, Database, Flexberry Desinger, charts
-summary: Specifying names for the database
-toc: true
-permalink: en/fo_custom-naming-db-structures.html
-lang: en
----
+--- 
+title: Sample user names for the structures in the database 
+sidebar: flexberry-orm_sidebar 
+keywords: Public, example, database, Flexberry Desinger, charts 
+summary: the Job names for the database 
+toc: true 
+permalink: en/fo_custom-naming-db-structures.html 
+lang: en 
+autotranslated: true 
+hash: da8a71fdc0fba639ab7f006843330cd1da8fc080ef0a9debd5dee206c6255182 
+--- 
 
-Существует 2 пути для [определения наименования](fo_storing-data-objects.html):
+There are 2 ways for [definition name](fo_storing-data-objects.html): 
 
-* во Flexberry Desinger
-* в C# коде с помощью атрибутов.
+* in Flexberry Desinger 
+* C# code using attributes. 
 
-Если выбран первый путь, то Flexberry Desinger сгенерирует соответствующие имена автоматически.
+If you choose the first path, then Flexberry Desinger will generate appropriate names automatically. 
 
-Можно [соотнести объекты данных и атрибуты с любым наименованием БД-структуры](fo_storing-data-objects.html):
+You can relate data objects and attributes with any name, DB-structure](fo_storing-data-objects.html): 
 
-* Имя таблицы для класса (атрибут [ClassStorage](fd_data-classes.html) для класса);
-* Имя столбца для атрибута (атрибут [PropertyStorage](fo_attributes-class-data.html) для свойства);
-* Имя столбца [первичного ключа (Primary key)](fo_primary-keys-objects.html) для идентификатора объекта данных (атрибут [PrimaryKeyStorage](fd_data-classes.html) для класса);
-* Имя столбца внешнего ключа (Foreign key) для зависимостей мастера (атрибут [PropertyStorage](fd_master-association.html) для свойства);
+* The table name for a class (attribute [ClassStorage](fd_data-classes.html) class); 
+* The column name for the attribute (attribute [PropertyStorage](fo_attributes-class-data.html) for the property); 
+* The name of the column [primary key (Primary key)](fo_primary-keys-objects.html) for the identifier of the object data (attribute [PrimaryKeyStorage](fd_data-classes.html) class); 
+* Column name foreign key (Foreign key) to dependencies of the master (attribute [PropertyStorage](fd_master-association.html) for the property); 
 
-Например, диаграмма `DB structures custom naming`:
+For example, figure `DB structures custom naming`: 
 
-* `CustomDBOwnClass` относится к таблице `CustomDBOwn`;
-* `CustomDBOwnClass.CustomOwnAttribute` относится к столбцу `CustomOwn` в таблице `CustomDBOwn`;
-* `CustomDBMasterClass` относится к таблице `CustomDBMaster`;
-* `CustomDBMasterClass.CustomMasterAttribute` относится к столбцу CustomMaster в таблице `CustomDBOwnCustomDBMaster`;
-* Отношение `CustomDBOwnClass` к `CustomDBMasterClass` определяется в столбце `CustomDBMaster` в таблице `CustomDBOwnClass`;
-* Идентификаторы обоих классов относятся к столбцу `pkey` в соответствующих таблицах `tables`
+* `CustomDBOwnClass` refers to table `CustomDBOwn`; 
+* `CustomDBOwnClass.CustomOwnAttribute` refers to the column in the table `CustomOwn` `CustomDBOwn`; 
+* `CustomDBMasterClass` refers to table `CustomDBMaster`; 
+* `CustomDBMasterClass.CustomMasterAttribute` refers to the column in the table CustomMaster `CustomDBOwnCustomDBMaster`; 
+* Attitude `CustomDBOwnClass` to `CustomDBMasterClass` determined `CustomDBMaster` column in the table `CustomDBOwnClass`; 
+* The IDs of both classes are `pkey` column in the relevant tables `tables` 
 
-Достаточно создать объекты и сохранить их.
+Simply create objects and save them. 
 
 ```csharp
 CustomDBOwnClass cdbo = new CustomDBOwnClass();
@@ -45,6 +47,10 @@ ICSSoft.STORMNET.DataObject[] objstoupd = new ICSSoft.STORMNET.DataObject[] { cd
 dataService.UpdateObjects(ref objstoupd);
 
 Console.WriteLine("OK!");
-```
+``` 
 
-Полный список примеров кода Flexberry ORM находится в статье ["Примеры кода"](fo_code-samples.html).
+Full list of code examples Flexberry ORM is in ["code Examples"](fo_code-samples.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

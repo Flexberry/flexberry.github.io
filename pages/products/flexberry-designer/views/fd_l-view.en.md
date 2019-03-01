@@ -1,24 +1,30 @@
----
-title: Представление списка
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, View, списковая форма,  ObjectListView, WebObjectListView, список, представление
-summary: Особенности списковой формы
-toc: true
-permalink: en/fd_l-view.html
-lang: en
----
+--- 
+title: list View 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, View, list form, ObjectListView, WebObjectListView, list, view 
+summary: Features list form 
+toc: true 
+permalink: en/fd_l-view.html 
+lang: en 
+autotranslated: true 
+hash: 600758af61974063380efd32f5e2fbb8afaf14cb3e8c61ce94d687c4c7d0d92c 
+--- 
 
 
-Используется на [списковых формах](fd_listform.html) (свойство ViewName компонента [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html) и [Flexberry ObjectListView](ef_object-list-view.html)).
+Used on [list of forms](fd_listform.html) (property ViewName component [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html) and [Flexberry ObjectListView](ef_object-list-view.html)). 
 
-## Настройка
+## Setting 
 
-[Видимость](fd_hidden-properties-view.html) описывает список полей, отображаемых на списке (невидимые атрибуты используются, например, для формирования [вычислимых](fo_not-stored-attributes.html) полей).
+[Visibility](fd_hidden-properties-view.html) describes the list of fields that appear on the list (invisible attributes are used, for example, for the formation of a [computable](fo_not-stored-attributes.html) fields). 
 
-Для списков справочников поля [аудита](efs_audit.html) не выносятся. В списковое представление объекта данных поля аудита выносятся видимыми.
+For lists of reference fields [audit](efs_audit.html) are not submitted. In list view, data object audit fields rendered visible. 
 
-Заголовок должен быть понятен относительно всего списка. Для свойств мастера прописываем полное название, на первом месте свойство мастера, затем название самого мастера в родительном падеже (например: Заявитель.Должность – `Должность заявителя`).
+The title should be clear about the whole list. For the properties of the master write the full name in the first place the property of the master, then the name of the master in the genitive (for example: the Applicant.The post – `Должность заявителя`). 
 
-Однако не это не всегда приводит к наилучшему результату (например: АдресПроживания.Улица – Улица адреса проживания), в таких случаях применимо сокращение (например: мастер – `Адрес проживания`, свойства мастера – `Территория проживания`, `Улица проживания`).
+However, this does not always lead to the best result (for example: Airesprovince.Street – street address of residence), in such cases, the applicable reduction (for example: master `Адрес проживания`, properties master `Территория проживания`, `Улица проживания`). 
 
-Также названия мастеровых ссылок на справочники обычно должны совпадать с названием справочника (например: ВидСобытия.Наименование – `Вид события`)
+The names of the artisans references references should normally match the name of the directory (for example: Videobite.Name – `Вид события`) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

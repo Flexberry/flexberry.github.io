@@ -1,19 +1,24 @@
----
-title: How to load data object properties
-sidebar: flexberry-orm_sidebar
-keywords: DataObject , Flexberry ORM, loading objects
-summary: Rules and order of loading of properties of objects
-toc: true
-permalink: en/fo_order-loading-property.html
-lang: en
----
+--- 
+title: the boot Order properties of the data object 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM, loading objects 
+summary: the Rules and the loading order of object properties 
+toc: true 
+permalink: en/fo_order-loading-property.html 
+lang: en 
+autotranslated: true 
+hash: 59bd234984785569bf18c242d0c3c6856521bd987bd60339f76878f70e456a7d 
+--- 
 
-При загрузке объекта данных применяются следующие правила:
+While loading the data the following rules apply: 
 
-* Сначала создаются мастеровые объекты данных.
-* Заполняются свои и мастеровые атрибуты в порядке, указанном `LoadingOrderAttribute`, затем все остальные.
-* Заполняются детейлы, в соответствии с порядком, заданным в [представлении](fd_view-definition.html).
+* The artisans first create the data objects. 
+* Filled with artisans and their attributes in the order specified `LoadingOrderAttribute`, then all the rest. 
+* Fill detaily, in accordance with the procedure specified in [view](fd_view-definition.html). 
 
-## Задание порядка загрузки свойств объекта данных (LoadingOrderAttribute)
+## set the boot order properties of the data object (LoadingOrderAttribute) 
 
-Если необходимо явно задать порядок загрузки свойств объекта данных (например, в случае, когда это важно для правильного счёта [вычислимых атрибутов](fo_nonstored-calculated-properties.html)), то можно воспользоваться [атрибутом `LoadingOrderAttribute`](fd_data-classes.html) [класса данных](fo_data-object.html). Параметром передаётся одномерный строковый массив с именами [атрибутов](fo_attributes-class-data.html), расположенными в порядке, соответствующем порядку загрузки.
+If you want to explicitly set the boot order properties of the data object (for example, in the case where it is important for the correct account [computable attributes](fo_nonstored-calculated-properties.html)), you can use [attribute `LoadingOrderAttribute`](fd_data-classes.html) [data class](fo_data-object.html). The parameter is passed in a one-dimensional string array with the names [attributes](fo_attributes-class-data.html) arranged in the order download.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

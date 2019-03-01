@@ -1,60 +1,66 @@
----
-title: E-представление
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Desinger, View, форма редактирования, groupedit, представление
-summary: Особенности формы редактирования
-toc: true
-permalink: en/fd_e-view.html
-lang: en
----
+--- 
+title: E-submission 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Desinger, View, edit form, groupedit, performance 
+summary: Features edit form 
+toc: true 
+permalink: en/fd_e-view.html 
+lang: en 
+autotranslated: true 
+hash: dff4250749b1efe77f478bf9b645898491871696c25ae644b7d33628f45488b1 
+--- 
 
-Используется для [форм редактирования и для GroupEdit](fd_editform.html). GroupEdit является средством быстрого редактирования объектов и может обладать функциональностью, позволяющей открыть текущий объект на форме редактирования. При этом другие атрибуты, невидимые в GroupEdit’е, также должны заполняться значениями. Поэтому для формы редактирования и для GroupEdit’а должно использоваться одно представление
+Used for [forms editing and GroupEdit](fd_editform.html). GroupEdit is a fast edit object and may have the functionality to open the current object in the edit form. However, other attributes, invisible in GroupEdit'e must also be filled with values. Therefore, to edit form and to GroupEdit'and must be used in one view 
 
-## Настройка
+## Setting 
 
-[Видимость](fd_hidden-properties-view.html) отвечает за перечень полей в GroupEdit, а также за наличие атрибутов на форме редактирования. При генерации формы редактирования на ней будут расположены атрибуты, у которых стоит признак `Видимый`.
+[Visibility](fd_hidden-properties-view.html) is responsible for the list of fields in GroupEdit, as well as for the presence of attributes on the edit form. When generating the edit form it will be located in the attributes, which is a sign `Видимый`. 
 
-Поля [аудита](efs_audit.html) не нужны, т.к. функциональность по отображению данных аудита с формы Е сама вычитывает данные аудита.
-Путь описывает расположение поля на форме (`|` вкладка, `-` группа, `\` разделение, например: `|Описание\-Стоимость` указывает что атрибут должен находиться в группе `Стоимость`, расположенной на вкладке `Описание`).
+Fields [audit](efs_audit.html) not needed, because the functionality to display audit data from the form E itself reads audit data. 
+The path describes the location of the fields on the form (`|` tab, `-` group `\` division, for example: `|Description\-Стоимость` specifies that the attribute must be in the group `Стоимость` located on the tab `Описание`). 
 
-Группы (groupBox) служат для группировки логически связанных объектов. Рекомендуется объединять в группы следующие категории атрибутов:
+Group (groupBox) are used to group logically related objects. Recommended to be grouped in the following categories of attributes: 
 
-*	Относящиеся к одному мастеру.
+* Belong to the same master. 
 
-**Например**: группа - `Статья УК`, атрибуты – `Наименование`, `Номер`, `Часть`, `Пункт`.
+**Example**: group - `Статья УК`, attributes – `Наименование`, `Номер`, `Часть`, `Пункт`. 
 
-![](/images/pages/products/flexberry-designer/views/e-view1.jpg)
-
-
-Если к мастеру относится только один атрибут, например «Наименование», то создавать для него отдельную группу (groupBox) не рекомендуется.
-
-*	 Связанные поля времени.
-
-**Пример 1**: `Время передачи`, `Время выезда`, `Время начала работ`, `Время окончания работ`.
-
-![](/images/pages/products/flexberry-designer/views/e-view2.jpg)
+![](/images/pages/products/flexberry-designer/views/e-view1.jpg) 
 
 
-**Пример 2**: атрибуты `КогдаПроизошлоПроисш`, `КогдаПроизошлоПроисшПо` можно объединить в группу `Время происшествия` и использовать внутри группы заголовки `С` и `По`.
+If the master is only one attribute, e.g. "Name", then create a separate group (groupBox) is not recommended. 
 
-![](/images/pages/products/flexberry-designer/views/e-view3.jpg)
+* Related time field. 
 
+**Example 1**: `Время передачи`, `Время выезда`, `Время beginning работ`, `Время the end работ`. 
 
-*	Все числовые характеристики, описывающие объект. Например: группа – `Силы и средства`, поля - `Кол-во личного состава`, ``Кол-во автомоб. техники`, `Кол-во инженерной техники`, `Кол-во спец. техники`.
-
-![](/images/pages/products/flexberry-designer/views/e-view4.jpg)
-
-
-На закладки чаще всего выносятся детейлы, каждому из которых соответствует отдельная закладка. Например: закладка `Реагирование`
-
-![](/images/pages/products/flexberry-designer/views/e-view5.jpg)
+![](/images/pages/products/flexberry-designer/views/e-view2.jpg) 
 
 
-Либо же в закладку выносится набор логически связанных атрибутов, для экономии места на форме и уменьшения размера формы. Например: закладка `Место`
+**Example 2**: the attributes `КогдаПроизошлоПроисш`, `КогдаПроизошлоПроисшПо` can be combined into a group `Время происшествия` and use within the group headers and `С` `По`. 
 
-![](/images/pages/products/flexberry-designer/views/e-view6.jpg)
+![](/images/pages/products/flexberry-designer/views/e-view3.jpg) 
 
 
-Возможен также совмещение подходов в одном: на закладку `Текущая ситуация` можно вынести GroupEdit `Ситуации`, а также некоторые характеристики, такие как `Кол-во пострадавших`, `Кол-во потерпевших`, `Ранг пожара`, `Площадь` и т.п.
+* All the numerical characteristics that describe the object. For example: group – `Силы and средства`, field - `Кол in personal состава`, ``Кол in the car. техники`, `Кол in engineering техники`, `Кол-in specials. техники`. 
 
-![](/images/pages/products/flexberry-designer/views/e-view7.jpg)
+![](/images/pages/products/flexberry-designer/views/e-view4.jpg) 
+
+
+Bookmarking this files most often by detali, each of which corresponds to a separate tab. For example: bookmark `Реагирование` 
+
+![](/images/pages/products/flexberry-designer/views/e-view5.jpg) 
+
+
+Or tab makes a set of logically related attributes, to save space on the form and reduce the size of the form. For example: bookmark `Место` 
+
+![](/images/pages/products/flexberry-designer/views/e-view6.jpg) 
+
+
+It is also possible to combine approaches within the bookmark `Текущая ситуация` can make GroupEdit `Ситуации`, as well as some characteristics such as `Кол in пострадавших`, `Кол in потерпевших`, `Ранг пожара`, `Площадь`, etc. 
+
+![](/images/pages/products/flexberry-designer/views/e-view7.jpg) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

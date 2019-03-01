@@ -1,13 +1,17 @@
----
-title: ember-flexberry-gis-test-stand
-keywords: ember
-sidebar: flexberry-gis_sidebar
-toc: true
-permalink: en/fg_ember-flexberry-gis-test-stand.html
-lang: en
----
+--- 
+title: ember-flexberry-gis-test-stand 
+keywords: ember 
+sidebar: flexberry-gis_sidebar 
+toc: true 
+permalink: en/fg_ember-flexberry-gis-test-stand.html 
+folder: products/flexberry-gis/ 
+lang: en 
+autotranslated: true 
+hash: eb9da8f39e4ae8f2ce28ba4ee4f63ef6bdc62a3d9de568ed638df73ba77f9356 
+--- 
 
-## Product Information
+## product Information 
 
-Стенд с mssql: http://flexberry.github.io/ember-flexberry-gis/develop-mssql/index.html 
-Стенд с postgres: http://flexberry.github.io/ember-flexberry-gis/develop-postgres/index.html
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
