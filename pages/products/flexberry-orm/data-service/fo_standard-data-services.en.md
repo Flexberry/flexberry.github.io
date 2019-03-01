@@ -1,28 +1,33 @@
----
-title: Flexberry ORM Standard Data Services
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Inheritance hierarchy and description of data services
-toc: true
-permalink: en/fo_standard-data-services.html
-lang: en
----
+--- 
+title: Standard data services Flexberry ORM 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: inheritance Hierarchy and description of data services 
+toc: true 
+permalink: en/fo_standard-data-services.html 
+lang: en 
+autotranslated: true 
+hash: ac1ff7c251c495432ce3ac35aeb835ffc76ffabb519dea88cd277038048c5a01 
+--- 
 
-## Иерархия наследования сервисов данных
+## the inheritance hierarchy for the data services 
 
-![](/images/pages/products/flexberry-orm/data-service/i-data-service-inheritance.png)
+![](/images/pages/products/flexberry-orm/data-service/i-data-service-inheritance.png) 
 
-## Описание стандартных сервисов данных
+## Description of standard data services 
 
-Существуют следующие [сервисы данных](fo_data-service.html):
+Following [data services](fo_data-service.html): 
 
-* [ICSSoft.STORMNET.Business.XMLFileDataService](fo_xml-file-ds.html) для доступа к данным в формате `XML`-файлов.
-* [ICSSoft.STORMNET.Business.SQLDataService](fo_sql-data-service.html) — базовый предок всех сервисов данных, работающих с реляционными источниками.
-* [ICSSoft.STORMNET.Business.MSSQLDataService](fo_mssql-data-service.html) — сервис данных для доступа к `MS SQL Server` напрямую, минуя `ODBC`. Требует наличия `SQL Client`, однако скорость работы возрастает приблизительно на 25%.
-* [ICSSoft.STORMNET.Business.DRDataService](fo_dr-data-service.html) — сервис данных для `MS SQL Server`, реализующий "грязное чтение" данных (`WITH (NOLOCK)`).
-* [ICSSoft.STORMNET.Business.OracleDataService](fo_oracle-data-service.html) — сервис данных для доступа к `Oracle` напрямую, минуя `ODBC`. Требует наличия [клиентского ПО Oracle](fo_tools-oracle-ds.html).
-* [ICSSoft.STORMNET.Business.PostgresDataService](fo_postgres-data-service.html)
-* [ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService](fo_odbc-data-service.html) для доступа к реляционным источникам данных. Независим от реляционной СУБД, важно использование стандартов `ANSI` и `ODBC`.
-* [ICSSoft.STORMNET.Business.ODBCDataService.ODBCAccessDataService](fo_odbc-access-ds.html) — [ODBCDataService](fo_odbc-data-service.html), оптимизированный для доступа к данным `СУБД Access`. **Использование БД Access возможно только в х86-версии!**
-* [ICSSoft.STORMNET.Business.ODBCDataService.ODBCMySqlDataService](fo_odbc-mysql-data-service.html) — [ODBCDataService](fo_odbc-data-service.html), оптимизированный для доступа к данным `СУБД MySQL` (версия 4.1 и более поздние, с некоторыми ограничениями на объектную структуру).
+* [ICSSoft.STORMNET.Business.XMLFileDataService](fo_xml-file-ds.html) to access the data in the format `XML` files. 
+* [ICSSoft.STORMNET.Business.SQLDataService](fo_sql-data-service.html) — basic ancestor of all data services working with relational sources. 
+* [ICSSoft.STORMNET.Business.MSSQLDataService](fo_mssql-data-service.html) is a data service to access the SQL `MS Server` directly, bypassing `ODBC`. Requires `SQL Client`, but the rate of work increases by approximately 25%. 
+* [ICSSoft.STORMNET.Business.DRDataService](fo_dr-data-service.html) is a data service for `MS SQL Server` that implements a "dirty read" of the data (`WITH (NOLOCK)`). 
+* [ICSSoft.STORMNET.Business.OracleDataService](fo_oracle-data-service.html) is a data service to access the `Oracle` directly, bypassing `ODBC`. Requires [client Oracle](fo_tools-oracle-ds.html). 
+* [ICSSoft.STORMNET.Business.PostgresDataService](fo_postgres-data-service.html) 
+* [ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService](fo_odbc-data-service.html) to access relational data sources. Independent of RDBMS, it is important the use of standards `ANSI` and `ODBC`. 
+[ICSSoft.STORMNET.Business.ODBCDataService.ODBCAccessDataService](fo_odbc-access-ds.html) — [ODBCDataService](fo_odbc-data-service.html), optimized for data access `СУБД Access`. *Use DB Access is possible only in the x86 version!** 
+* [ICSSoft.STORMNET.Business.ODBCDataService.ODBCMySqlDataService](fo_odbc-mysql-data-service.html) — [ODBCDataService](fo_odbc-data-service.html), optimized for data access `СУБД MySQL` (version 4.1 and later, with some restrictions on object structure). 
 
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

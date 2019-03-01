@@ -1,52 +1,58 @@
----
-title: Flexberry Winforms
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms
-summary: Описание, модули, информация о контролах и компонентах
-toc: true
-permalink: en/fw_landing_page.html
-lang: en
----
+--- 
+title: Flexberry Winforms 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms 
+summary: the Description, modules, information about the controls and components 
+toc: true 
+permalink: en/fw_landing_page.html 
+lang: en 
+autotranslated: true 
+hash: 5cb093d84901b594b1664702a7297d427e5a7c6f9db3730bfddd27602af2b821 
+--- 
 
-`Flexberry Winforms` является [продуктом платформы Flexberry](fp_platform-structure.html).
+`Flexberry Winforms` is [product platform Flexberry](fp_platform-structure.html). 
 
-`Flexberry Winforms` предоставляет средства для разработки приложения, реализующего win-интерфейс ("настольное" приложение), а также содержит набор библиотек, требуемых для функционирования такого приложения.
+`Flexberry Winforms` provides tools for developing applications that implements the win-interface (the"desktop" application) and contains a set of libraries required for the functioning of such applications. 
 
-Библиотеки включают функциональность универсальных (простых) форм для взаимодействия с объектами данных, содержат множество разнообразных контролов, обеспечивающих реализацию удобного пользовательского интерфейса. Сгенерированное приложение позволяет осуществить настройку интерфейса под нужды конкретной разрабатываемой системы, точно учесть требования заказчика.
+The libraries include functionality universal (simple) forms to interact with data objects contain a variety of controls, ensuring the realization of comfortable user interface. The generated application allows you to customize the interface for a specific system that is being developed, to precisely accommodate customer requirements. 
 
-Сайт продукта `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryWinforms).
+The product website `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Flexberry/ForDevelopers/FlexberryWinforms). 
 
-`Flexberry Winforms` состоит из следующих модулей:
+`Flexberry Winforms` consists of the following modules: 
 
-* Модуль расширения [Flexberry Designer](fd_landing_page.html) для генерации win-приложений по uml-моделям.
-* Win-контролы и win-формы.
+* Expansion module [Flexberry Designer](fd_landing_page.html) for generating win-applications in uml models. 
+* Win-controls and win forms. 
 
-## Информация о контролах и компонентах
+## Information controls and components 
 
-* [Алиасы системных / пользовательских типов для параметров на форме ограничений](fw_aliases-system-and-user-types.html)
-* [Изменение названия списка при лукапе](fw_change-name-list-with-lookup.html)
-* [Положение формы на экране](fw_base-win-position.html)
-* [Закрытие всех открытых форм Flexberry](fw_close-all-opened-forms.html)
-* [Форма «Редактор ограничений» (WIN)](fw_winforms-limit-editor-form.html)
-* [Стандартный вид редактора ограничений. Описание формы](fw_description-form-limit-editor-in-standard-form.html)
-* [Расширенный вид редактора ограничений](fw_limit-editor-advanced-view.html)
-* [Ограничение с параметрами (для пользователя) в Win](fw_limit-editor-params.html)
-* [Кнопка «Свернуть/развернуть папки» на рабочем столе](fw_desktop-operations.html)
-* [«Тараканы» и перечислимый тип](fw_empty-enum-value-validation.html)
-* [Свойство MaxLength элемента управления ExtLookUpTextControl](fw_extended-lookup.html)
-* [Как запретить закрытие фомы (только формы Flexberry Winforms)](fw_forbid-closing-form.html)
-* [Интерфейс ISpecialEmptyValue](fo_i-special-empty-value.html)
-* [Установка заголовка списковой формы](fw_list-form-caption.html)
-* [Добавление на форму редактирования Lookup мастера, не относящегося к основному объекту](fw_lookup-another-object.html)
-* [Открытие формы редактирования с передачей объекта с частично заполненными полями](fa_open-editform-custom-object.html)
-* [Менеджер редактирования форм](fw_editmanager.html)
-* [Как открыть объект только на чтение](fo_read-only-object.html)
-* [LookUp](fw_lookup.html)
-* [Настройка прав доступа на публикацию ограничений](fw_setting-permissions-for-publication-restrictions.html)
-* [Запуск кода в основном потоке приложения из другого потока](fw_ui-synchronization-context.html)
-* [Как единообразно обработать все формы приложения](fw_uniformly-handle-all-application-forms.html)
-* [Работа с меню в главной форме приложения](fw_work-with-menu-in-main-form-app.html)
-* [И опять работа с меню](fw_working-with-menu.html)
-* [Детейл в качестве мастера](fw_detail-as-master.html)
-* [Отображение на интерфейсе формы мастеров и детейлов](fo_masters-details.html)
-* [Стандартный монитор задач WinformBusinessTaskMonitor](fw_winform-business-task-monitor.html)
+* [Aliases system / user-defined types for parameters in the form of limitations](fw_aliases-system-and-user-types.html) 
+* [Change the title of the list when lukapa](fw_change-name-list-with-lookup.html) 
+* [Status screen](fw_base-win-position.html) 
+* [Close all open forms Flexberry](fw_close-all-opened-forms.html) 
+* [The "constraint Editor" (WIN)](fw_winforms-limit-editor-form.html) 
+* [Standard view of the editor limitations. Description of form](fw_description-form-limit-editor-in-standard-form.html) 
+* [Advanced view editor limitations](fw_limit-editor-advanced-view.html) 
+* [Restriction settings (for the user) Win](fw_limit-editor-params.html) 
+* [Button "hide/show folder" on the desktop](fw_desktop-operations.html) 
+* ["Cockroaches" and the enumerated type](fw_empty-enum-value-validation.html) 
+* [MaxLength property of the control ExtLookUpTextControl](fw_extended-lookup.html) 
+* [As the closure of Thomas (the only form Flexberry Winforms)](fw_forbid-closing-form.html) 
+* [Interface ISpecialEmptyValue](fo_i-special-empty-value.html) 
+* [The title setting list form](fw_list-form-caption.html) 
+* [Appendix to the form for editing the Lookup wizard not related to the main subject](fw_lookup-another-object.html) 
+* [Editing form with the transfer object with some fields already filled](fa_open-editform-custom-object.html) 
+* [Manager edit forms](fw_editmanager.html) 
+* [How to access object read-only](fo_read-only-object.html) 
+* [LookUp](fw_lookup.html) 
+* [Set up access rights to the publication of limits](fw_setting-permissions-for-publication-restrictions.html) 
+* [Run the code in the main application thread from another thread](fw_ui-synchronization-context.html) 
+* [How to uniformly handle all forms of app](fw_uniformly-handle-all-application-forms.html) 
+* [Working with menus in the main form of the application](fw_work-with-menu-in-main-form-app.html) 
+* [And again work with menu](fw_working-with-menu.html) 
+* [Detail as a master](fw_detail-as-master.html) 
+* [Display on the interface shape and datalow](fo_masters-details.html) 
+* [Standard monitor task WinformBusinessTaskMonitor](fw_winform-business-task-monitor.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

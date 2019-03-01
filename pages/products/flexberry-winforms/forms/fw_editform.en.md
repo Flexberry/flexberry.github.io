@@ -1,101 +1,107 @@
----
-title: Формы редактирования (классы со стереотипом editform) 
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Designer, Flexberry Winforms
-summary: Описано создание формы редактирования в среде  Flexberry Designer и указано, что будет сгенерировано в коде формы в зависимости от указанных в дизайнере свойств
-toc: true
-permalink: en/fw_editform.html
-lang: en
----
+--- 
+title: the edit Form (classes with the stereotype editform) 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Designer, Flexberry Winforms 
+summary: Describes how to create edit form in the environment Flexberry Designer and specified that will be generated in the form's code based on the set in the designer properties 
+toc: true 
+permalink: en/fw_editform.html 
+lang: en 
+autotranslated: true 
+hash: 3d0d08a6164ca65563d0a3677a9bafefeb43b9764ce4c419ac1301d673b4408f 
+--- 
 
-Описание среды `Flexberry` относительно пользовательского интерфейса изложено в: [Учебник программиста Flexberry Platform](gbt_flexberry-platform-guide.html) раздел "Пользовательский интерфейс "(пункт 45-65).
+Description of the environment `Flexberry` regarding the user interface described in: [Tutorial programmer Flexberry Platform](gbt_flexberry-platform-guide.html) the "User interface "(paragraph 45-65). 
 
-Форма редактирования обеспечивает пользовательский интерфейс по вводу/редактированию экземпляра объекта данных в одном, либо нескольких представлениях.
+The edit form provides a user interface for entering/editing the instance of the data object in one or multiple views. 
 
-Для описания формы редактирования необходимо создать в CASE UML-класс со стереотипом "editform". Например:
+To describe a form of editing must be created in the CASE of a UML class with the stereotype "editform". For example: 
 
-![Пример формы редактирования на диаграмме](/images/pages/products/flexberry-winforms/forms/editform.png)
+!An example of an edit form on the graph](/images/pages/products/flexberry-winforms/forms/editform.png) 
 
-## Что генерируется
+## generated 
 
-* Класс UI-независимой формы редактирования, наследующийся от ICSSoft.STORMNET.UI.BaseIndpdEdit.
-* .Net-интерфейс для зависимой формы редактирования.
-* UI-зависимая форма редактирования (если необходимо).
-* Атрибуты формы генерируются следующим образом:
+* Class UI-independent edit form that are inherited from ICSSoft.STORMNET.UI.BaseIndpdEdit. 
+* .Net-dependent interface for editing form. 
+* UI-related form editable (if necessary). 
+* Attributes of the form are generated in the following way: 
 
-  * Если включена генерация UI-зависимой формы, то генерируется .Net-интерфейс UI-зависимой формы редактирования с определением свойства, но только, если этот атрибут публичный.
-  * В код UI-зависимой формы генерируется реализующее вышеуказанное интерфейсное определение виртуального свойства, а также приватный член и в обоих аксессорах код по установке/получению значения приватного члена, сопровождаемый скобками программиста.
-  * В код UI-независимой формы генерируется определение виртуального свойства с указанным модификатором. Если генерация  UI-зависимой формы включена, то в код свойства генерируется вызов того же свойства UI-зависимой формы через интерфейс.
-  * Методы формы генерируются следующим образом:
+* If you have enabled the generation of UI-dependent forms, is generated .Net-UI interface-dependent forms editing definition properties, but only if this attribute is public. 
+* Code UI-specific form is generated which implements the above interface definition of virtual properties, as well as private member and both accessors code for setting/getting the value of a private member, followed by parentheses programmer. 
+* Code UI-independent forms generated definition of virtual property with the specified modifier. If the generation of the UI-dependent form is included in generated code properties the same properties of the UI-dependent forms through the interface. 
+* Methods of the form are generated in the following way: 
 
-    * Если включена генерация UI-зависимой формы, то генерируется .Net-интерфейс UI-зависимой формы редактирования с определением метода, но только, если этот метод публичный.
-    * В код UI-зависимой формы генерируется реализующий вышеуказанное интерфейсное определение виртуальный метод и в нём скобка программиста (подобно тому, как описано в статье [Методы классов и параметры методов](fd_methods-parameters.html)).
-    * В код UI-независимой формы генерируется определение виртуального метода с указанным модификатором. Если генерация UI-зависимой формы включена, то в код метода генерируется вызов того же метода UI-зависимой формы через интерфейс.
+* If you have enabled the generation of UI-dependent forms, is generated .Net-UI interface-dependent form editing method definition, but only if this method is public. 
+* Code UI-specific form is generated that implements the above interface definition of the virtual method, and in this parenthesis the programmer (similar to as described in [Methods of classes and method parameters](fd_methods-parameters.html)). 
+* Code UI-independent form is generated by defining a virtual method with the specified modifier. If the generation of the UI-dependent forms included in the code generated method call the same method the UI-dependent forms through the interface. 
 
-## Дополнительно редактируемые свойства и что как генерируется
+## Additional editable properties and how that is generated 
 
-Самое главное в дополнительно редактируемых свойствах - выбор класса и представления, в котором должен редактироваться объект этого класса. Указание этого производится на закладке "Составные представления":
+The most important thing in the advanced edit properties - select the class and view in which you want to edit an object of that class. This is on the "Composite view": 
 
-![Представления для формы редактирования](/images/pages/products/flexberry-winforms/forms/editformviews.jpg)
+![Submission for the edit form](/images/pages/products/flexberry-winforms/forms/editformviews.jpg) 
 
-В `Flexberry Plugins` можно указать только один класс и одно представление, в котором должен редактироваться объект на этой форме. Если указать несколько классов и/или представлений, все, кроме первого, будут проигнорированы.
+In `Flexberry Plugins` you can specify only one class and one view in which to edit the object in this form. If you specify multiple classes and/or performances, all but the first are ignored. 
 
-Итак, для того, чтобы выбрать класс и представление, нужно нажать на кнопку "...":
+So, in order to select a class and performance, you need to click on the " ... " button: 
 
-![Выбор представления](/images/pages/products/flexberry-winforms/forms/view-sel.jpg)
+![View](/images/pages/products/flexberry-winforms/forms/view-sel.jpg) 
 
-### Закладка "Форма"
+### Tab "Form" 
 
-![Свойства формы редактирования](/images/pages/products/flexberry-winforms/forms/editformprops.jpg)
+![Property editor](/images/pages/products/flexberry-winforms/forms/editformprops.jpg) 
 
-| Свойство-Описание | Генерация в .Net-язык |
-|--|--|
-| `Name` - имя UML-класса | Имя .Net-класса независимой формы и производное от него для зависимой (например, ```winform[Name]```).
-| `Description` - некоторое описание класса.| `DocComment` перед определением класса независимой формы
-| `Caption` - некоторое пользовательское имя (отображается в пользовательском интерфейсе)| Заголовок на форме
-| `GenerateDependedForm`| Если галочка установлена, - генерируется UI-зависимая (WinForm) форма пользовательского интерфейса в исходном коде, что позволяет "вручную" разместить на форме элементы управления. Если галочка не установлена, используется универсальная UI-независимая форма редактирования, на которой элементы управления, соответствующие атрибутам в представлении размещаются автоматически.
-| `FixDependedForm`| Если галочка установлена, - UI-зависимая (WinForm) форма не перегенерируется. Это сделано для уверенности в том, что внесённые в форму изменения в части состава и расположения элементов управления не будут потеряны, что иногда происходит из-за наличия (к сожалению) ошибок в среде `Visual Studio .Net`. <br> Если галочка не установлена генерация происходит следующим образом: <br> 1. Если представление (его имя и атрибутный состав) не изменилось, тогда перегенерируется невизуальная часть формы (методы, свойства и т.д.); <br> 2. Если полностью изменилось представление (его имя, т.е. после последней генерации было указано другое используемое представление), то визуальная часть перегенерируется полностью, все элементы управления удаляются и размещаются новые в соответствии с новым представлением. <br>3. Если изменился атрибутный состав представления, то на форму добавляются элементы управления, соответствующие добавленным в представление атрибутам. Эл-ты управления, соотв. удалённым атрибутам не уничтожаются на форме.
-| `Packet, NamespacePostfix` - позволяют настроить сборку и пространство имен | см. [Расположение сборок после генерации кода](fo_location-assembly.html).
-| `PBCustomAttributes` - позволяет указать, необходима ли скобка программиста непосредственно перед описанием класса для "ручного" внесения атрибутов | Если галочка указана - генерируется скобка программиста для "ручного" внесения .Net атрибутов перед классом независимой формы.
-| `PBMembers`| Если галочка указана - генерируется скобка программиста для "ручного" внесения членов класса независимой формы.
-| `PropertyLookup`| Позволяет на отдельной форме настроить, какие списковые формы должны открываться с этой формы для выбора соответствующих связанных объектов (мастеров).
-| `EditFormOperations`| Настройка доступных на форме операций.
-| `PrintContainer` - имя класса со стереотипом `printform`, являющегося печатной формой, которая используется при печати с формы редактирования.| В коде независимой формы генерируется перегрузка метода GetPrinter, в котором:<br>* Если `PrintContainer` не указан, возвращается ошибка `NoSuchContainerException`; <br> * Если `PrintContainer` указан, возвращается тип контейнера; <br>В этом методе перед возвратом значения располагается неотключаемая скобка программиста, в которой можно закодировать "вручную" возвращаемый тип в случае наличия логики, которая, например, возвращает печатную форму в зависимости от свойств объекта.
-| `ScriptName` - имя сценария, который должен использоваться этой формой. Соответствует имени EBSD-диаграммы, использующейся для описания сценария.| Метод `GetScript` в классе независимой формы перегружается таким образом, что возвращает из провайдера сценариев сценарий с указанным именем.
-| `PublishToEBSD`| Если галочка указана - перед классом независимой формы генерируется указание атрибута `PublishToEBSDAttribute`, который указывает доступность данного класса для использования в редакторе диаграмм сценариев.|
+| Property | Description / Generation .Net language | 
+|--|--| 
+| `Name` - the name of the UML class | Name .Net class independent of the form and its derivative for the dependent (e.g., ```winform[Name]```). 
+| `Description` - some description of class.| `DocComment` before the class definition an independent 
+| `Caption` - a user name (shown in UI)| Title on the form 
+| `GenerateDependedForm`| If the option is set, - generated UI-dependent (WinForm) form the user interface in the source code that allows you to "manually" place the form controls. If the option is not installed, use the generic UI-independent edit form where control elements corresponding to the attributes in the view are automatically. 
+| `FixDependedForm`| If the option is set, - UI-dependent (WinForm) form not pregenerated. This is done to make sure that are made in the form of changes in the composition and arrangement of the controls will not be lost, which sometimes occurs due to the presence of (unfortunately) error in the environment `Visual Studio .Net`. <br / > If the option is not set generation is as follows: <br> 1. If the view (the name and message attributes) are not changed, then pregenerated nonvisual part of the form (methods, properties, etc.) ; <br> 2. If you completely changed the view (its name, i.e. after the last generation otherwise the view), the visual part pregenerated completely, all controls are removed and placed new ones in accordance with the new view. <br / >3. If changed message attributes view, on the form, added controls, added to the corresponding view attributes. El-you the control, respectively. remote attributes are not destroyed on the form. 
+| `Packet, NamespacePostfix` - allow to set the Assembly and namespace | see [the Location of assemblies after code generation](fo_location-assembly.html).
+| `PBCustomAttributes` - allows you to specify whether to brace the programmer immediately before the class definition, for "manual" of any attributes | If the option is specified - generated bracket of the programmer for manual application .Net attributes to class-independent form. 
+| `PBMembers`| If the option is specified - generated bracket programmer for "manual" introduction of the members of the class of independent form. 
+| `PropertyLookup`| Allows for a separate form to configure which list form to open this form to select the appropriate related objects (masters). 
+| `EditFormOperations`| options available in the form of a transaction. 
+| `PrintContainer` is the class name with the stereotype `printform`, which is a printed form that is used when printing from the edit form.| In code independent form is generated overload GetPrinter method, which:<br>* If `PrintContainer` is not specified, an error is returned `NoSuchContainerException`; <br> * If `PrintContainer` specified, the return type is контейнера; <br>In this method, before the return value is unmuted bracket of the programmer, which can be coded "manually" return type in the case of logic, which, for example, returns printed form depending on the properties of the object. 
+| `ScriptName` - the script name to use this form. Matches the name of the EBSD-maps used to describe the scenario.| PstrfGetScript` method in class independent is overloaded so that it returns from the provider scenarios scenario with the specified name. 
+| `PublishToEBSD`| If the option is specified before the class-independent form is generated to specify a `PublishToEBSDAttribute` attribute that specifies the availability of this class to use the chart editor scripts.| 
 
-#### PropertyLookup
+#### PropertyLookup 
 
-`PropertyLookup` генерируется в код метода `GetEditor` UI-независимой формы редактирования, который и возвращает тип списковой формы в зависимости от имени мастерового свойства.
+`PropertyLookup` is generated in the method code `GetEditor` UI-independent edit form which returns the list type of the form based on behalf of artisan properties. 
 
-![PropertyLookup](/images/pages/products/flexberry-winforms/forms/propertylookup.jpg)
+![PropertyLookup](/images/pages/products/flexberry-winforms/forms/propertylookup.jpg) 
 
-В верхнем списке расположены мастеровые свойства, в нижнем выпадающем списке следует выбрать форму, которая должна открываться для выбора пользователем соотв. связанного объекта.
+At the top of the list are the artisans of the properties in the lower drop-down list, select the form that needs to open for selection by the user respectively. the linked object. 
 
-#### EditFormOperations
+#### EditFormOperations 
 
-Позволяет указать, какие операции доступны на этой форме (соответственно, какие кнопки появляются на панели управления):
+Allows you to specify which operations are available on this form (respectively, which buttons appear on the control panel): 
 
-* `Save` - сохранение;
-* `Save and Close` - сохранение с последующим закрытием формы;
-* `Print` - печать;
-* `Print preview` - предварительный просмотр.
+* `Save` - сохранение; 
+* `Save and Close` - preservation, followed by the closure формы; 
+* `Print` - печать; 
+* `Print preview` - preview. 
 
-![EditFormOperations](/images/pages/products/flexberry-winforms/forms/editformoperations.jpg)
+![EditFormOperations](/images/pages/products/flexberry-winforms/forms/editformoperations.jpg) 
 
-Генерируется:
+Generated: 
 
-* Если используется универсальная форма (галочка `GenerateDependedForm` не установлена), генерируется параметром при вызове конструктора зависимой формы в методе `GetDpdForm()` независимой формы;
-* Если используется генерируемая форма, генерируется напрямую в зависимой форме установкой видимости кнопок панели инструментов.
+* If you use a generic form (tick `GenerateDependedForm` not set), the generated parameter in the constructor of the dependent form in the method `GetDpdForm()` independent формы; 
+* If you are using the generated form is generated directly in dependent form by setting the visibility of the toolbar buttons. 
 
-### Свойства атрибутов
+### attribute Properties 
 
-Свойства атрибутов аналогичны указанным в статье [Атрибуты классов данных](fo_attributes-class-data.html), с учётом вышеуказанных (в п 4 "Что генерируется") замечаний.
+The properties of the attributes are the same as referred to in article [Attributes data classes](fo_attributes-class-data.html), given above (in paragraph 4 "What is generated") comments. 
 
-### Свойства методов
+### Properties methods 
 
-Свойства методов аналогичны указанным в статье [Методы классов и параметры методов](fd_methods-parameters.html), с учётом вышеуказанных (в п 5"Что генерируется") замечаний.
+Properties methods similar to those described in the article [class Methods and method parameters](fd_methods-parameters.html), given above (in item 5"What is generated") comments. 
 
-## Связанные статьи
+## Related articles 
 
-[E-представление](fd_e-view.html)
+[E-view](fd_e-view.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

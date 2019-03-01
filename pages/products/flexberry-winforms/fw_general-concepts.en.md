@@ -1,21 +1,27 @@
----
-title: Общие концепции
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Указаны две базовые концепции Flexberry Platform по интеграции частей пользовательского интерфейса и бизнес-логики в работающую систему
-toc: true
-permalink: en/fw_general-concepts.html
-lang: en
----
+--- 
+title: General concepts 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: there are two basic concepts Flexberry Platform for the integration of parts of the user interface and business logic to a running system 
+toc: true 
+permalink: en/fw_general-concepts.html 
+lang: en 
+autotranslated: true 
+hash: 69dc8d33ff19f7cb2d90c3c0eaf258dd59904a2fb8d564d04ff7cf9812fbae03 
+--- 
 
-В Flexberry Platform реализация пользовательского интерфейса, а также интеграция частей этого интерфейса и бизнес-логики в работающую систему базируется на двух концепциях:
+In Flexberry Platform implementing a user interface, and integration of parts of the interface and business logic to a running system is based on two concepts: 
 
-* Выделение не зависящего от «физической» природы пользовательского интерфейса.
+* Allocation is not dependent on the physical nature of the user interface. 
 
-Реализуя пользовательский интерфейс, необходимо помнить, что он состоит из двух частей: непосредственно зависящий от типа ввода/вывода пользовательский интерфейс, т.н. `UI`-зависимый, напр., обыкновенный настольный на базе `WinForms` или клиент-серверный интерфейс браузер — Web-сервер на базе `ASP.NET`.
+Provide a custom interface, you have to remember that it consists of two parts-depending on the type of input/output user interface, the so-called `UI`-dependent, e.g., common table on the basis of `WinForms` or client-server interface the browser — Web-based server `ASP.NET`. 
 
-В этой концепции важно понимать: логика, реализуемая в `UI`-независимых частях не должна использовать конкретный `UI`-зависимый пользовательский интерфейс. Таким образом, должно обеспечиваться функционирование пользовательской логики под различными типами пользовательских интерфейсов.
+In this concept it is important to understand the logic implemented in `UI`-independent parts should not use a specific `UI`-dependent user interface. Thus, it should ensure the functioning of the custom logic under various types of user interfaces. 
 
-* Нежёсткая интеграция частей интерфейса (а также и бизнес-логики) посредством сценариев.
+* Flexible integration of parts of the interface (and business logic) by means of scenarios. 
 
-Смысл этого в том, чтобы не прописывать взаимодействия форм, а также вызовы бизнес-сервисов «жестко» в код тех же форм, а иметь отдельно описанный сценарий взаимодействия, интерпретирующийся при работе системы (подробнее, см. п. Сценарист в «Аксиомах»).
+The point of this is not to prescribe the forms of interaction, and calls business services "hard" code in the same forms, and have separately described the scenario of interaction, interpretiruya when the system is running (for details, see p. Writer in "the Axioms"). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,28 +1,30 @@
----
-title: Алиасы системных / пользовательских типов для параметров на форме ограничений
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Ограничения
-summary: Рассмотрено как создавать алиасы системных/пользовательских типов для параметров на форме ограничений с помощью статического делегата
-toc: true
-permalink: en/fw_aliases-system-and-user-types.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Aliases system / user-defined types for parameters in the form of restrictions 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Restrictions 
+summary: Examined how to create aliases system/user-defined types for parameters in the form of restrictions using a static delegate 
+toc: true 
+permalink: en/fw_aliases-system-and-user-types.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 2730d97def6c8582fb8d052e6a6c7560b02b4e3df4d9982cad175b87b3f9d3fb 
+--- 
 
-## Описание
+## Description 
 
-Существует возможность создавать алиасы (псевдонимы, синонимы, типы русским языком :) системных / пользовательских типов для параметров на форме ограничений.
+You can create aliases (aliases, synonyms, types of the Russian language :) system / user-defined types for parameters in the form of constraints. 
 
-Для этого в __main()__ методе приложения мы определяем __статический__ делегат __`EditAdvansedFilter1.TypeToString` = ...__, 
-имеющий следующую сигнатуру: 
+To do this in __main()__ method of application we define __static__ delegate __`EditAdvansedFilter1.TypeToString` = ...__, 
+with the following signature: 
 
-''`public delegate string TypeToStringDelegate(System.Type type)`''
+"`public delegate string TypeToStringDelegate(System.Type Type)`" 
 
-В этом делегате задается метод, который принимает на вход .Net тип (системный / пользовательский), и возвращает его строковое представление для отображения.
-__Метод должен возвратить ''null'', если для данного типа соответствие не установлено.__
+This delegate specifies the method that accepts the input .Net type (system / user) and returns its string representation for display. 
+__Method must return "null" if the type match is not found.__ 
 
 
-## Пример использования:
+## Example usage: 
 
 ```csharp
 static void Main()
@@ -35,11 +37,14 @@ static void Main()
 private static string MyStringViewForSpecificType(Type type)
 {
   if (type == typeof(string))
-    return "строка";
+    return "string";
 
   if (type == typeof(Планета))
-    return "ПланетаОбезьян";
+    return "Planetamazon";
              
   return null;
 }
 ```
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

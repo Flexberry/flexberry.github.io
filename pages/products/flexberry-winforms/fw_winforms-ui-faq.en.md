@@ -1,25 +1,31 @@
----
-title: WinForms UI FAQ
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms
-summary: Часто задаваемые вопросы по Flexberry Winforms
-toc: true
-permalink: ru/fw_winforms-ui-faq.html
-lang: ru
----
+--- 
+title: WinForms UI FAQ 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms 
+summary: Frequently asked questions Flexberry Winforms 
+toc: true 
+permalink: en/fw_winforms-ui-faq.html 
+lang: en 
+autotranslated: true 
+hash: 54d8da233b3a99a04a7de6322430d5d595e631ee1d6332b614987ded09fb366e 
+--- 
 
-В процессе разработки приложения могут возникать вопросы, ответы на которые можно найти ниже.
+In the process of application development may raise questions, the answers to which can be found below. 
 
-## Вопрос 1
+## Question 1 
 
-Например, есть объекты `Корпус` и `Аудитория`. `Корпус` является мастером для `Аудитории`. Требуется сделать форму для редактирования этих объектов примерно в таком формате: вверху [ObjectListView](fw_objectlistview.html) с `Корпусами`, внизу [GroupEdit](fw_group-edit.html) с аудиториями корпуса. При выборе в OLV корпуса, в GE подгружаются соответствующие аудитории. Аудитории в GE хочется редактировать, а не вызывать отдельно форму `АудиторияE`. Как лучше это сделать?
+For example, there are objects `Корпус` and `Аудитория`. `Корпус` is a master for `Аудитории`. You want to make a form to edit these objects is roughly of this format: at the top [ObjectListView](fw_objectlistview.html) `Корпусами` down [GroupEdit](fw_group-edit.html) with the audience of the case. In the selection of OLV building, the GE is loaded from the appropriate audience. The audience in GE I want to edit, instead of calling separately form `АудиторияE`. How best to do this? 
 
-Создана дополнительная listform для представления `КорпусL`. Для нее сгенерировалась соответствующая .Net форма, куда требуется добавить `GroupEdit`. Но не ясно, как указать объект данных в нем. Открывается пустая форма с выбором пакетов.
+Created custom listform to represent `КорпусL`. To generate it appropriate .Net form where you want to add `GroupEdit`. But it is not clear how to specify object data in it. Opens a blank form with a choice of packages. 
 
-Как решить данную проблему?
+How to solve this problem? 
 
-### Ответ
+### Response 
 
-Для решения этой задачи надо зайти с другой стороны: нужна форма редактирования корпуса с детейлами (аудитории должны быть детейлами чтобы можно их было редактировать в GroupEdit). Затем нужно переключать мастера так как описано в статье [Переключение редактируемого объекта без закрытия формы редактирования](fw_switch-editing-object.html).
+To solve this problem it is necessary to go to the other side: we need the edit form case with detaylari (audience must be detaylari so they can be edited in GroupEdit). Then you need to switch the wizard as described in [Switching of the edited object without closing the edit form](fw_switch-editing-object.html). 
 
-В этом случае блокировки будут адекватно отрабатывать. Но, если аудитории отдельно тоже могут редактироваться (если существует отдельная форма редактирования для них), то `GroupEdit` должен быть настроен на работу с [блокированием редактируемых объектов](fw_lock-rows-in-groupedit.html).
+In this case, the lock will adequately work. But if the audience separately, also can be edited (if there is a separate edit form for them), `GroupEdit` must be configured to work with the [block editable objects](fw_lock-rows-in-groupedit.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

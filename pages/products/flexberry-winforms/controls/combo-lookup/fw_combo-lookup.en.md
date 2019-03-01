@@ -1,37 +1,43 @@
----
-title: ComboLookup
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, Lookup
-summary: Свойства, пример использования, особенности генерации
-toc: true
-permalink: en/fw_combo-lookup.html
-lang: en
----
+--- 
+title: ComboLookup 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, Lookup 
+summary: Properties, example of use, features generation 
+toc: true 
+permalink: en/fw_combo-lookup.html 
+lang: en 
+autotranslated: true 
+hash: 6494743599625a0ef0a8407cd1f2a372a44e8c5d761bbdd6815cca8fb42a96cc 
+--- 
 
-Элемент управления для выбора мастера из комбинированного [списка](fw_objectlistview.html) ComboBox.
+Control to select master from the combined [list](fw_objectlistview.html) ComboBox. 
 
-Основные свойства:
+Main properties: 
 
-* `DataObjectType` – тип мастерового объекта.
-* `MasterPropertyName` – свойство объекта данных, которое редактируется ComboLookup.
-* `ComboPropertyName` – мастерового объекта, которое будет отображаться в списке.
-* `CachedData` – данные читаются из базы при каждом открытии списка или кэшируются.
-* `Limit` – ограничение на список мастеровых объектов. Следует заметить, что свойство имеет тип `FunctionForControls`.
+* `DataObjectType` – type artisan object. 
+* `MasterPropertyName` is a property of the data object that is being edited ComboLookup. 
+* `ComboPropertyName` – craftsman of the object to be displayed in the list. 
+* `CachedData` – data is read from the database each time you open the list, or cached. 
+* `Limit` – the limit on a list of user controllable features. It should be noted that the property is of type `FunctionForControls`. 
 
 ```csharp
 comboLookup1.CachedData = true;
-comboLookup1.ComboPropertyName = "Название";
+comboLookup1.ComboPropertyName = "Name";
 comboLookup1.DataObjectType = typeof(IIS.КошкиСЛапами.Кошка);
-comboLookup1.MasterPropertyName = "Порода";
+comboLookup1.MasterPropertyName = "Breed";
 
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;  
 Function lf = langdef.GetFunction(langdef.funcLike,
-new VariableDef(langdef.StringType, "Название"), "Перс%");
+new VariableDef(langdef.StringType, "Name"), "Persian%");
 comboLookup1.Limit = new FunctionForControls("ПородаL", lf);
-```
+``` 
 
-## Изменение типа лукапа с Default на Combo
+## change the type from Default to lucapa Combo 
 
-Если форма уже существует, то при попытке изменения типа у существующего лукапа изменения __не применятся__.
+If the form already exists when you try to change the type from an existing lucapa change __not used__. 
 
-Чтобы изменения вступили в силу необходимо вручную удалить весь код, связанный с контролом, из кода страницы и запустить перегенерацию.
+So the changes into effect you need to manually remove all the code associated with the control, of the code of the page and start regeneration. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

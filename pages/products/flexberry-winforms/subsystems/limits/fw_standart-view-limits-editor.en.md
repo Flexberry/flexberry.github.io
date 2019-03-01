@@ -1,36 +1,41 @@
----
-title: Стандартный вид редактора ограничений. Формат ограничений
-sidebar: flexberry-winforms_sidebar
-keywords: Ограничения
-summary: Описаны возможности задания ограничений для атрибутов с типом дата и логических атрибутов, а также использования SQL-выражений в ограничениях
-toc: true
-permalink: en/fw_standart-view-limits-editor.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Standard of editor limitations. Format restrictions 
+sidebar: flexberry-winforms_sidebar 
+keywords: Constraints 
+summary: Describes the capabilities set restrictions for attributes of type date and logical attributes and the use of SQL expressions restrictions 
+toc: true 
+permalink: en/fw_standart-view-limits-editor.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 29af277b64b236a1219c6b0615234a2f56edc1b68ea00c8b6bf8410fb7485f70 
+--- 
 
-В этой статье будет описаны возможный формат ограничений, который соответствует формату редактируемых ограничений в стандартном виде.
+In this article, we describe a possible format of constraints, which correspond to the editable constraints in standard form. 
 
-## Логические атрибуты и операции
-Для логических атрибутов возможны следующие операции:
-* " "(Пробел) - логический атрибут вставится без применения операции. Например, если нужно написать "Актуально И Последняя"
-* "=", "<>" - Можно сравнивать атрибуты только с параметрами типа Boolean. Например, "Актуально = @param". В стандартном виде редактора сравнить два поля между собой или сравнить поле с истиной невозможно. Для первого случая нужно пользоваться расширенным редактором, для второго можно просто вставить атрибут без применения операций.
-* "Не пусто", "Не заполнено", "Не" - Обернуть атрибут в соответствующую функцию, принимают только 1 параметр
-* "И", "ИЛИ"
+## Logical attributes and operations 
+For Boolean attributes following operations are possible: 
+* " "(Space) - Boolean attribute is inserted without an operation. For example, if you write "Recent And Relevant" 
+* "=", "<>" - You can compare only attributes with parameters of type Boolean. For example, "True = @param". In the standard view editor to compare two fields or compare a field with a truth impossible. For the first case you need to use the advanced editor for the second you can just insert the attribute without the use of surgery. 
+* "Not empty", "Not filled", "Not" Wrap the attribute in the appropriate option, only accept 1 parameter 
+* "AND", "OR" 
 
-Если вы создаете ограничение в расширенном редакторе ограничений с логическими операциями, то оно должно удовлетворять следующим критериям:
-* Должны использоваться только перечисленные выше операции
-* Если используются операции "=", "<>", то первый операнд должен быть атрибутом из представления, а второй - параметр(@param). Например, "Актуально = @param";
+If you create a restriction in the extended constraint editor with Boolean operations, it must meet the following criteria: 
+* Should only be used the above-mentioned operations 
+* If you are using the operation "=", "<>", then the first operand must be an attribute from the view, and the second parameter(@param). For example, "True = @param"; 
 
-## Функции для работы с датами
-Работа с датами в стандартном виде описана в статье [Функции для работы с датами в 'стандартном виде'](fw_date-limits-standart-view.html)
+## Functions for working with dates 
+Working with dates in standard form described in [Functions for working with dates in 'standard view'](fw_date-limits-standart-view.html) 
 
-Если вы создаете ограничение в расширенном редакторе ограничений с функциями для дат, то оно должно удовлетворять следующим критериям:
-* Если в операции сравнения "=", "<>", ">", "<" и пр. в качестве операнда используется функция над атрибутом, которая возвращает значение типа DateTime, то вторым операндом должна быть та же самая функция. Например, "Только дата(ДатаРожения) = Только дата(Сегодня())". Функция вида "Только дата(ДатаРождения) = Сегодня()" отображаться не будет;
+If you create a restriction in the extended constraint editor with functions for date, it must meet the following criteria: 
+* If the comparison operation "=", "<>", ">", "<" and so as the operand of a function over an attribute that returns a DateTime value, the second operand must be the same function. For example, "Only date(Databasenya) = date(Today())". A function of type "date Only(Delaroderie) = Today()" to not display будет; 
 
-## Задание SQL выражений
-Задание SQL выражений доступно только в качестве логического операнда. Само выражение можно написать в текстовом поле самого редактора, либо открыть форму для задания SQL выражений. Для этого необходимо кликнуть на кнопку "..." в строке задания значений для SQL функции.
+## the Job SQL expression 
+The job SQL expression is available only as a logical operand. The expression it is possible to write in the text box of the editor, or to open a form to specify SQL expressions. Click on the "..." button in the row set values for SQL functions. 
 
-В тексте SQL выражения могут встречаться переносы строк. Результатом выполнения запроса должно являться логическое значение.
+In SQL expressions, there may be line breaks. The result of the query must be a Boolean value. 
 
-Подробно о программном использовании SQL выражений в ограничениях описано в статье [funcSQL](fo_func-sql.html).
+For information about software using SQL expressions in the constraints described in [funcSQL](fo_func-sql.html).
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

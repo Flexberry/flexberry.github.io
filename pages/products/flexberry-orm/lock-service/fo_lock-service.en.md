@@ -1,39 +1,41 @@
----
-title: Locking service
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, LockService
-summary: Assigning and using the lock service
-toc: true
-permalink: en/fo_lock-service.html
-lang: en
----
+--- 
+title: Service locks 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, LockService 
+summary: the Purpose and use of the service locks 
+toc: true 
+permalink: en/fo_lock-service.html 
+lang: en 
+autotranslated: true 
+hash: 155677022ed01a1eb03afa5e0487ce71058c995e656b6061e1f63b802df13836 
+--- 
 
-Сервис блокировок (`ICSSoft.STORMNET.Business.LockService`) предназначен для удобной реализации механизма блокировок. Например, требуется защитить некоторый объект данных от изменения другими пользователями в то время, как он редактируется каким-либо пользователем.
+Service locks (`ICSSoft.STORMNET.Business.LockService`) is designed for convenient implement locking mechanism. For example, you want to protect certain data object from changes by other users at the time how it is edited by any user. 
 
-Для того чтобы выставить блокировку, требуется воспользоваться одним из методов `SetLock`.
+To put the lock you want to use one of the methods `SetLock`. 
 
-Для проверки блокировки следует пользоваться методом `GetLock`, либо попытаться повторно выполнить `SetLock`. Возвращённое непустое значение будет именем пользователя, который заблокировал объект.
+To check the lock, one should use the method `GetLock`, or try to rerun `SetLock`. Returned a nonblank value is the name of the user who has locked the object. 
 
-Для снятия блокировок необходимо пользоваться методом `ClearLock`.
+To open blockages, you must use the method `ClearLock`. 
 
 ```csharp
 Автор автор = new Автор();
 LockService ls = new LockService();
-ls.SetLock(автор); //Блокирование
-string sLockID = ls.SetLock(автор); //Попытка повторного блокирования того же объекта
+ls.SetLock(автор); //Blocking 
+string sLockID = ls.SetLock(автор); //Attempt to lock the same object 
 if (sLockID!=string.Empty)
 {
-	Console.WriteLine(string.Format("Заблокировано пользователем: {0}", sLockID));
+	Console.WriteLine(string.Format("Locked by: {0}", sLockID));
 }
-ls.ClearLock(автор);//Очистка блокировки
+ls.ClearLock(автор);//Cleanup the lock 
 Console.ReadLine();
-```
+``` 
 
-Сервис блокировок обращается к хранилищу данных через [сервис данных](fo_data-service.html), указанный в [провайдере сервиса данных](fo_ds-provider.html) (`ICSSoft.STORMNET.Business.DataServiceProvider.DataService`).
+Service lock accesses the data store via [service data](fo_data-service.html) specified in the [service provider data](fo_ds-provider.html) (`ICSSoft.STORMNET.Business.DataServiceProvider.DataService`). 
 
-В хранилище для блокировок должен существовать соответствующий источник.
+Vault locks must be a corresponding source. 
 
-Для реляционного хранения, он определён так:
+For relational storage, it is defined as: 
 
 ``` sql
 SQL
@@ -41,4 +43,8 @@ CREATE TABLE STORMNETLOCKDATA (
 	LockKey char (300) NOT NULL ,
 	UserName char (300) NOT NULL 
 )
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

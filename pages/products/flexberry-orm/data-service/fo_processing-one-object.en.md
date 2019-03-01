@@ -1,32 +1,34 @@
----
-title: Processing of one object
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Features of updating a data object using a data service
-toc: true
-permalink: en/fo_processing-one-object.html
-lang: en
----
+--- 
+title: Processing of a single object 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: Features update a data object using the data service 
+toc: true 
+permalink: en/fo_processing-one-object.html 
+lang: en 
+autotranslated: true 
+hash: e2dfdeb992e105fe0dc4153a1975b911b1af6833279959f49d727d5b79a19a62 
+--- 
 
-Для того чтобы обновить данные в [хранилище для объекта данных](fo_storing-data-objects.html), необходимо выполнить метод [сервиса данных](fo_data-service.html) `UpdateObject`.
+In order to update the data in the [repository for the data object](fo_storing-data-objects.html), you must complete the [service data](fo_data-service.html) `UpdateObject`. 
 
-Для того чтобы прочитать объект данных из хранилища по его [ключу](fo_primary-keys-objects.html) необходимо вызвать метод сервиса данных `LoadObject` (объект данных будет прочитан в [представлении](fd_view-definition.html), объявленном как «*»).
+To read object data from storage [key](fo_primary-keys-objects.html) you must call the service `LoadObject` data (the data object will be read in a [view](fd_view-definition.html) declared as "*"). 
 
-Ниже приведён пример, когда созданный объект данных создаётся в хранилище, а затем читается по [ключу](fo_primary-keys-objects.html).
+The following is an example of when you created the data object is created in the repository, and then read [key](fo_primary-keys-objects.html). 
 
 ```csharp
 static void Main(string[) args)
 {
-	//Сохранение одного объекта
+	//Save the same object 
 	Страна странакоторуюпишем = new Страна();
-	странакоторуюпишем.Наименование="Россия";
+	странакоторуюпишем.Наименование="Russia";
 	UpdateObject(странакоторуюпишем);
-	Console.WriteLine("Конец сохранения");			
-	//чтение одного объекта
+	Console.WriteLine("End of save");			
+	//read one object 
 	Страна странакоторуючитаем = new Страна();
 	странакоторуючитаем.SetExistObjectPrimaryKey(странакоторуюпишем.__PrimaryKey);
 	LoadObject(странакоторуючитаем);
-	Console.WriteLine("Конец чтения, страна {0}", странакоторуючитаем.Наименование);			
+	Console.WriteLine("The end of the reading, the country is {0}", странакоторуючитаем.Наименование);			
 	Console.Read();
 }
 private static void UpdateObject(DataObject dparam)
@@ -39,6 +41,10 @@ private static void LoadObject(DataObject dparam)
 	IDataService ds = DataServiceProvider.DataService;			
 	ds.LoadObject(dparam);
 }
-```
+``` 
 
-Важно учитывать `.Net`-атрибут [AutoAltered](fo_object-status.html)! Если прочитан некоторый объект данных, изменены его свойства и выполняется обновление в хранилище, то если объект данных не является `AutoAltered`, не следует ждать от [сервиса данных](fo_data-service.html) обновления данных в хранилище без «ручной» установки этому объекту статуса `Altered`.
+It is important to consider `.Net`-attribute [AutoAltered](fo_object-status.html)! If read a certain data object, modified its properties, and is an upgrade in the storage, if the data object is not `AutoAltered`, you should not expect from [data service](fo_data-service.html) updates data in the repository without "manual" setting this object status `Altered`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,55 +1,57 @@
----
-title: Highlight active controls
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, HighLighter
-summary: Объявление, настройка для одной или нескольких форм, пример использования HighLighter
-toc: true
-permalink: en/fw_high-lighter.html
-lang: en
----
+--- 
+title: active Backlight control 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Controls, HighLighter 
+summary: the Ad, the setting for one or more forms, an example of using a HighLighter 
+toc: true 
+permalink: en/fw_high-lighter.html 
+lang: en 
+autotranslated: true 
+hash: 69bf45f7de90373f2d754a3ebd83d516e2648b20a35812864db66976fe0cd1ba 
+--- 
 
-`HighLighter` - компонент, обеспечивающий подсветку активного контрола на форме.
+`HighLighter` component that provides illumination of the active control on the form. 
 
-## Объявление
+## Ad 
 
-Для его использования `HighLighter` в проекте должна быть ссылка на сборку `ICSSoft.STORMNET.Windows.Forms.AdditionalControls`
+To use `HighLighter` in the project must be a reference to the Assembly `ICSSoft.STORMNET.Windows.Forms.AdditionalControls` 
 
-В [скобки программиста](fo_programmer-brackets.html) `CustomMembers` поместить код:
+In [brackets programmer](fo_programmer-brackets.html) `CustomMembers` to place the code: 
 
 ```csharp
-// Объявление HighLighter'а HL
+// Declare HighLighter'and HL 
 ICSSoft.STORMNET.Windows.Forms.HighLighter HL;
-```
+``` 
 
-В конструкторе зависимой формы:
+In the constructor of the dependent form: 
 
 ```csharp  
-// Создание объекта                            
+// Create object 
 HL = new ICSSoft.STORMNET.Windows.Forms.HighLighter(this);
 
-// Задание цвета подсветки
+// Set the illumination color 
 HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
-```
+``` 
 
-В конструкторе независимой формы:
+In the designer, independent shape: 
 
 ```csharp  
-// Создание объекта                            
+// Create object 
 HL = new ICSSoft.STORMNET.Windows.Forms.HighLighter(form);
 
-// Задание цвета подсветки
+// Set the illumination color 
 HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
-```
+``` 
 
-Также можно настроить подсветку для нескольких форм сразу. Для этого необходимо следующее:
+You can also set the backlight to several forms at once. This requires the following: 
 
-* В самом начале приложения подписаться на событие загрузки формы посредством `Desktop.GlobalWinformEvents.Load`.
-* Определить список `changingFormTypes`, куда записываются типы форм, для которых необходимо организовать подсветку.
-* В обработчике включить подсветку.
+* At the beginning of the application to subscribe to the load event of the form by `Desktop.GlobalWinformEvents.Load`. 
+* To define the list `changingFormTypes`, which records types of forms for which you want to organize the lighting. 
+* In the handler, turn on the backlight. 
 
-Настройка производится в приложении.
+The setting is done in the application. 
 
-Пример
+Example 
 
 ```csharp
  [AccessType(ICSSoft.STORMNET.AccessType.none)]
@@ -58,38 +60,38 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
         
         ...
         
-        // *** Start programmer edit section *** (TestStandWinformsDesktop CustomMembers)
-        /// <summary>
-        /// Список форм, для которых настроена подсветка и переход по Enter.
-        /// </summary>
+        // *** Start programmer edit section *** (TestStandWinformsDesktop CustomMembers) 
+        /// <summary> 
+        /// The list of forms that are configured for illumination and the transition to Enter. 
+        /// </summary> 
         private static List<Type> changingFormTypes = new List<Type>()
             {
                 typeof(IIS.TestStandWinforms.WinformДомHighLighter),
                 
             };
 
-        /// <summary>
-        /// Обработчик события загрузки формы.
-        /// Используется для подписки необходимых форм на подсветку.
-        /// </summary>
-        /// <param name="sender">Инициатор события, форма.</param>
-        /// <param name="e">Параметры события.</param>
+        /// <summary> 
+        /// Handler for the load event of the form. 
+        /// Subscribes the necessary forms on the backlight. 
+        /// </summary> 
+        /// <param name="sender">Originator of the event form.</param> 
+        /// <param name="e">event Parameters.</param> 
         static void GlobalWinformEvents_Load(object sender, EventArgs e)
         {
             if (changingFormTypes.Contains(sender.GetType()))
             {
                 Form currentForm = (Form)sender;
                 ICSSoft.STORMNET.Windows.Forms.HighLighter HL;
-                // Создание объекта                            
+                // Create object 
                 HL = new ICSSoft.STORMNET.Windows.Forms.HighLighter(currentForm);
                 HL.SubscribeHighliterManually();
 
-                // Задание цвета подсветки
+                // Set the illumination color 
                 HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
             }
         }
 
-        // *** End programmer edit section *** (TestStandWinformsDesktop CustomMembers)
+        // *** End programmer edit section *** (TestStandWinformsDesktop CustomMembers) 
 
         ...
 
@@ -98,25 +100,28 @@ HL.HighlightColor = System.Drawing.Color.FromArgb(150, 255, 150);
  {
     try
     {
-         // *** Start programmer edit section *** (TestStandWinforms Before authorization)
-         // Подписываемся на загрузку формы.
+         // *** Start programmer edit section *** (TestStandWinforms Before authorization) 
+         // Subscribe to the download form. 
          Desktop.GlobalWinformEvents.Load -= GlobalWinformEvents_Load;
          Desktop.GlobalWinformEvents.Load += GlobalWinformEvents_Load;
 
          ...
-         // *** End programmer edit section *** (TestStandWinforms Before authorization)
+         // *** End programmer edit section *** (TestStandWinforms Before authorization) 
      ...
     }
  }
-```
+``` 
 
-`HighLighter` подписывается на события `OnGotFocus` и `OnLostFocus` объектов формы и меняет их свойство `BackColor` на свой и обратно при срабатывании.
+`HighLighter` subscribes to the events `OnGotFocus` and `OnLostFocus` form objects and change their property `BackColor` on your back and when it is triggered. 
 
-## Результат
+## Result 
 
-Сравнение одной и той же формы с включенным `Highlighter` и без:
+Comparison of one and the same shape with the included `Highlighter` and without: 
 
-| Без Highlighter'a | С Highlighter'ом |
-|--|--|
-| ![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-off.gif)|![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-on.gif)|
- 
+| Highlighter'without a | With Highlighter'om | 
+|--|--| 
+| ![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-off.gif)|![](/images/pages/products/flexberry-winforms/controls/highlighter/highlighter-on.gif)| 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

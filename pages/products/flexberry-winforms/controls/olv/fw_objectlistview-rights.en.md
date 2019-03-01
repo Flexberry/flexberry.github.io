@@ -1,62 +1,67 @@
----
-title: Managing list operations based on user rights
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Controls, OLV
-summary: Настройка видимости и удаление настроек пользователя
-toc: true
-permalink: en/fw_objectlistview-rights.html
-lang: en
----
+--- 
+title: operations Management lists depending on user rights 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, controls, list 
+summary: visibility configuration and deletion of user settings 
+toc: true 
+permalink: en/fw_objectlistview-rights.html 
+lang: en 
+autotranslated: true 
+hash: 9cf3eb6a5a2af2ec7728581e626aabde4820bec059951c64968090ae1ce444be 
+--- 
 
-OLV автоматически устанавливает доступность операций редактирования в зависимости от прав. Применяются следующие правила:
+LV will automatically set the accessibility of edit operations depending on the rights. The following rules apply: 
 
-* При отсутствии прав на INSERT объекта на списке недоступны операции "Создания" и "Создания по шаблону".
-* При отсутствии прав на DELETE объекта недоступна операция "Удалить".
-* При (отсутствии прав на UPDATE объекта и наличии прав на READ) операция называться "Просмотр", а объект открывается только на просмотр.
+* In the absence of the rights to INSERT object on the list is unavailable the operation "Create" and "Create template". 
+* In the absence of rights to DELETE the object is not available, the operation "Delete". 
+* When (not authorized to UPDATE the object and you have permission to READ) the operation to be called "Viewing", and the object is opened only for viewing. 
 
-При наличии в списке нескольких типов объектов доступные операции отображаются в зависимости от выбранного объекта.
-Текущую настройку можно узнать с помощью свойства `ObjectListView.RightSet`, а смену доступности отследить с помощью события `ObjectListView.RightSetChanged`.
+If the list of several types of available operations are displayed depending on the selected object. 
+The current setting can be read using the properties `ObjectListView.RightSet`, and shift availability to monitor events `ObjectListView.RightSetChanged`. 
 
-## Настройка видимости колонок ObjectListView
+## configure the visibility of columns in ObjectListView 
 
-Пусть необходимо, например, в зависимости от полномочий пользователя устанавливать видимость некоторой колонки в [ObjectListView](fw_objectlistview.html).
+Let it be required, for example, depending on user permissions to set visibility of some column in [ObjectListView](fw_objectlistview.html). 
 
-Изменять `objectListView1.Columns` во время работы приложения нельзя.
+Change `objectListView1.Columns` during operation of the application. 
 
-Одним из решений поставленной задачи может быть использование `ObjectListView.View.Properties`.
+One of the solutions to the tasks can be use `ObjectListView.View.Properties`. 
 
 ```csharp
 public class WinformC__ПользовательПриложенияL : ICSSoft.STORMNET.UI.BaseWinListStandard, IIS.TryAccessSystem.DPDIC__ПользовательПриложенияL
 {
-	public WinformC__ПользовательПриложенияL() //конструктор формы
+	public WinformC__ПользовательПриложенияL() //the constructor of the form 
 	{
 		this.InitializeComponent();
 		this.prv_TuneAdditionalObjectListViews();
-		// *** Start programmer edit section *** (Form Constructor)
-		//...
-		if (!ICSSoft.STORMNET.RightManager.AccessObjectCheck(curObject, "Update", false)) //проверяем полномочия пользователя
+		// *** Start programmer edit section *** (Form Constructor) 
+		//... 
+		if (!ICSSoft.STORMNET.RightManager.AccessObjectCheck(curObject, "Update", false)) //check user permissions 
 		{
 			var columnInfoList = (from ICSSoft.STORMNET.PropertyInView mi in objectListView1.View.Properties
-								  where mi.Name == "ЛогинПользователя"
-								  select mi).ToList(); //ищем нужное свойство
-			if (columnInfoList.Count == 1) //проверяем, что нужное свойство найдено
+								  where mi.Name == "Loginpagetitle"
+								  select mi).ToList(); //search for the desired property 
+			if (columnInfoList.Count == 1) //check that the desired property is found 
 			{
 				ICSSoft.STORMNET.PropertyInView columnInfo = columnInfoList[0];
 				int cINumber = objectListView1.View.Properties.ToList().IndexOf(columnInfo);
-				objectListView1.View.Properties[cINumber].Visible = false; //устанавливаем Visible в false
+				objectListView1.View.Properties[cINumber].Visible = false; //set Visible to false 
 			}
 		}
-		//...
-		// *** End programmer edit section *** (Form Constructor)
+		//... 
+		// *** End programmer edit section *** (Form Constructor) 
 	}
-	//...
+	//... 
 }
-```
+``` 
 
-{% include note.html content="Специфика работы с массивом `ObjectListView.View.Properties` объясняется тем, что `PropertyInView` - это [не класс, а структура](http://generally.wordpress.com/2007/06/21/c-list-of-struct/)." %}
+{% include note.html content="the Specifics of array `ObjectListView.View.Properties` due to the fact that `PropertyInView` is [not a class but a structure](http://generally.wordpress.com/2007/06/21/c-list-of-struct/)." %} 
 
-{% include important.html content="Настройка видимости колонки происходит в конструкторе формы." %}
+{% include important.html content="the visibility setting of the column occurs in the form designer." %} 
 
-## Удаление настроек пользователя в ObjectListView
+## Deleting user settings in ObjectListView 
 
-Удалить настройки пользователя можно через окно настройки списка. Необходимо нажать на кнопку `Сбросить настройки…`, после подтверждения выполнения операции настройки будут удалены из базы. Однако изменения не отобразятся немедленно, а только после повторного открытия списка. Данная особенность связана с тем, что значения по умолчанию (настройка колонок) присваиваются только при инициализации списка (начальной загрузке контрола).
+To remove user settings through the settings window list. Please click on the `Сбросить settings...`, after confirmation of the operation settings will be deleted from the database. However, the changes will not appear immediately, but only after re-opening the list. This feature stems from the fact that the default values (customize columns) are assigned only in the initialization list (startup control).
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

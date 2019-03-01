@@ -1,17 +1,22 @@
----
-title: Межформенное взаимодействие при редактировании объектов
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы), Учебники
-summary: Объяснение понятий "инициатор" и "редактор" в контексте межформенного взаимодействия
-toc: true
-permalink: en/fw_interaction-between-forms-when-editing-objects.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Performance interaction when editing features 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms), Textbooks, 
+summary: Explanation of the terms "initiator" and "editor" in the context of metforminno interaction 
+toc: true 
+permalink: en/fw_interaction-between-forms-when-editing-objects.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 78e99751a0227a6ae7e84b62038fc23447b3abef4db4af42565aade04e83d8a2 
+--- 
 
-В основном, взаимодействия происходят вызовом формы редактирования с формы списка (например, при открытии объекта на редактирование) и, наоборот, с формы редактирования на форму списка (например, для выбора связанного объекта). Так или иначе,'' суть состоит в том, что с одной формы на другую передаётся некоторый объект данных с целью его редактирования целиком, либо его части''. Соответственно, в конкретном (относительном) межформенном взаимодействии одна форма выступает в качестве __инициатора__ редактирования, а вторая, — в качестве __редактора__.
+Basically, the interactions are by call the edit form from the form list (for example, when you open the object for editing), and Vice versa, with the edit form for the list form (for example, to select the associated object). Anyway," the essence is that from one form to another is sent to object data and edit it as a whole, or parts of it." Accordingly, in a specific (relative) metforminom the interaction of the one form acts as a __initiator__ editing, and the second, — as _the_editor__. 
 
-* Если объект открывается из списка на редактирование, форма списка — инициатор, а форма редактирования — редактор. В этом случае, очевидно — объект передаётся на редактирование в форму редактирования.
-* Если из формы редактирования для выбора связанного объекта (мастерового) открывается форма списка, то форма редактирования — инициатор, а форма списка — редактор. 
+* If an object is opened from the list on the edit form of the list is the initiator, and the edit form editor. In this case, obviously the object is passed to the edit in the edit form. 
+* If editor to select a related object (craftsman) opens the list form, the edit form is the initiator, and the form list editor. 
 
-Разница между случаями 1 и 2 лишь в том, что в случае 2 объект редактируется не целиком, а только его часть.
+The difference between cases 1 and 2 only in the fact that in case 2, the object is not edited as a whole, but only part of it.
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

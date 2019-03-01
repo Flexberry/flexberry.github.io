@@ -1,62 +1,64 @@
----
-title: Restrictions on details
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Functions funcExist, funcExistExact, funcExistAll, funcExistAllExact, funcExistDetails
-toc: true
-permalink: en/fo_exist-details.html
-lang: en
----
+--- 
+title: Limits on detaily 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: Functions funcExist, funcExistExact, funcExistAll, funcExistAllExact, funcExistDetails 
+toc: true 
+permalink: en/fo_exist-details.html 
+lang: en 
+autotranslated: true 
+hash: 4e824e2dc1ce24e5931441dbb2f592bb741101a05fa1f0cb34b6f6d55f89092b 
+--- 
 
-## Описание и ключевые различия функций
+## Description and differences of functions 
 
-При помощи этих функций [ExternalLangDef](fo_external-lang-def.html) возможно накладывать [ограничения](fo_limit-function.html) только на детейлы ([пример](fo_limit-details.html))
+Using these functions [ExternalLangDef](fo_external-lang-def.html) it is possible to impose [restrictions](fo_limit-function.html) only detaily ([example](fo_limit-details.html)) 
 
-| Название | Отображаемое название | Описание |
-|---|---|---|
-| `funcExist` | Существуют такие {}, что {} | Вернет True, если найдется хотя бы один объект, удовлетворяющий условию, в противном случае - False. Условие - только одна функция.|
-| `funcExistAll` | Существуют все такие {}, что {} И {} И {} ... | Вернет True, если найдется хотя бы один объект, удовлетворяющий условию, в противном случае - False. В качестве условия могут выступать множество функций, которые автоматически соединятся конъюнкцией. Внимание! Допустимых видов функций только две: "=" ([FuncEQ](fo_func-eq.html)) и "СРЕДИ ЗНАЧЕНИЙ()" ([FuncIN](fo_func-in.html)). |
-| `funcExistExact` | Существуют только такие {}, что {} | Вернет True, если все объекты удовлетворяют условию, в противном случае - False. Условие - только одна функция. |
-| `funcExistAllExact` | Существуют все только такие {}, что {} И {} И {} ... | Вернет True, если все объекты удовлетворяют условию, в противном случае - False. В качестве условия могут выступать множество функций, которые автоматически соединятся конъюнкцией. Внимание! Допустимых видов функций только две: "=" ([FuncEQ](fo_func-eq.html)) и "СРЕДИ ЗНАЧЕНИЙ()" ([FuncIN](fo_func-in.html)).|
-| `funcExistDetails` | Существуют такие {} и такие {}, что {} | Функция вернет `True`, если найдется хотя бы один объект из первого набора и хотя бы один объект из второго набора, удовлетворяющий условию, в противном случае - `False`. Условие - только одна функция (=, >, <, >=, <=).|
+| Name | Displayed name | Description | 
+|---|---|---| 
+| `funcExist` | There are {}, {} | Returns True if there is at least one object satisfying the condition, otherwise False. Condition - only one function.| 
+| `funcExistAll` | There are {} that {} And {} And {} ... | Return True if there is at least one object satisfying the condition, otherwise False. As the condition there may be many features, which will automatically connect a conjunction. Attention! The valid kinds of functions only two: "=" ([FuncEQ](fo_func-eq.html)) and "VALUES()" ([FuncIN](fo_func-in.html)). | 
+| `funcExistExact` | There are only such {} that {} | Returns True if all objects satisfy the condition, otherwise False. Condition - only one function. | 
+| `funcExistAllExact` | There are only such {} that {} And {} And {} ... | Return True if all objects satisfy the condition, otherwise False. As the condition there may be many features, which will automatically connect a conjunction. Attention! The valid kinds of functions only two: "=" ([FuncEQ](fo_func-eq.html)) and "VALUES()" ([FuncIN](fo_func-in.html)).| 
+| `funcExistDetails` | There are {} and are {}, {} | the Function will return `True` if there is at least one object from the first set and at least one object from the second set that satisfies the condition, otherwise `False`. Condition - only one function (=, >, <, >=, <=).| 
 
-## Пример использования
+## Example usage 
 
-![](/images/pages/products/flexberry-orm/query-language/exist-detals-example-2.jpg)
+![](/images/pages/products/flexberry-orm/query-language/exist-detals-example-2.jpg) 
 
-В следующем коде подразумевается, что в представлении `"СерверПодразделенияE"` обязательно присутствуют свойства `"Подразделение"` (так как оно есть в условии) и `"Сервер"` (свойство, по которому идет соединение).
+The following code assumes that the view `"Servicedisplayname"` always present properties ` Division ` (as it is condition) and `"Server"` (property on which there is a connection). 
 
-Требуется вычитать те сервера, которые принадлежат определённому Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, также будут вычитаны).
+Required to deduct the servers that belong to a particular Department (i.e., servers that belong to the specified Unit and some will also be proofread). 
 
 ```csharp
 ExternalLangDef ldef = ExternalLangDef.LanguageDef;
-LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Репликации.Сервер), "СерверE");
+LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Репликации.Сервер), "Server");
 lcsСервер.LoadingTypes = new Type[] {typeof (Репликации.Сервер)};
-View view = Information.GetView("СерверПодразделенияE", typeof(Репликации.СерверПодразделения));
+View view = Information.GetView("Servicedisplayname", typeof(Репликации.СерверПодразделения));
 ICSSoft.STORMNET.Windows.Forms.DetailVariableDef dvd = new ICSSoft.STORMNET.Windows.Forms.DetailVariableDef();
-dvd.ConnectMasterPorp = "Сервер";
+dvd.ConnectMasterPorp = Server;
 dvd.OwnerConnectProp = new string[] { SQLWhereLanguageDef.StormMainObjectKey };
 dvd.View = view;
 dvd.Type = ldef.GetObjectType("Details");
 lcsСервер.LimitFunction = ldef.GetFunction(funcExist,
                                             dvd,
                                             ldef.GetFunction(ldef.funcEQ,
-                                                            new VariableDef(ldef.GuidType, "Подразделение"),
+                                                            new VariableDef(ldef.GuidType, Division),
                                                             UpdatedObject.НаправленоИз.__PrimaryKey));
 lcsСервер.ReturnTop = 1;
 ICSSoft.STORMNET.DataObject[] dobjsСервер = ICSSoft.STORMNET.Business.DataServiceProvider.DataService.LoadObjects(lcsСервер);
-```
+``` 
 
-Требуется вычитать только те сервера, которые принадлежат только одному конкретному Подразделению (т.е. сервера, которые принадлежат и указанному Подразделению и еще какому-то, не будут вычитаны).
+You want to subtract only those servers that belong only to one particular Unit (i.e., servers that belong to the specified Division and some will not be proofread).
 
 ```csharp
 ExternalLangDef ldef = ICSSoft.STORMNET.Windows.Forms.ExternalLangDef.LanguageDef;
-LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "СерверE");
+LoadingCustomizationStruct lcsСервер = LoadingCustomizationStruct.GetSimpleStruct(typeof (Сервер), "Server");
 lcsСервер.LoadingTypes = new[] {typeof (Сервер)};
-View view = Information.GetView("СерверПодразделенияE", typeof(Репликации.СерверПодразделения));
+View view = Information.GetView("Servicedisplayname", typeof(Репликации.СерверПодразделения));
 var dvd = new ICSSoft.STORMNET.Windows.Forms.DetailVariableDef
                 {
-                    ConnectMasterPorp = "Сервер",
+                    ConnectMasterPorp = Server,
                     OwnerConnectProp = new[] { SQLWhereLanguageDef.StormMainObjectKey },
                     View = view,
                     Type = ldef.GetObjectType("Details")
@@ -64,15 +66,15 @@ var dvd = new ICSSoft.STORMNET.Windows.Forms.DetailVariableDef
 lcsСервер.LimitFunction = ldef.GetFunction(funcExistExact,
                                             dvd,
                                             ldef.GetFunction(ldef.funcEQ,
-                                                            new VariableDef(ldef.GuidType, "Подразделение"),
+                                                            new VariableDef(ldef.GuidType, Division),
                                                             new Guid("6D7DC426-F5E9-4F63-B7B5-20C9E237DF2D")));
 DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcsСервер);
-```
+``` 
 
-## Сравнения свойств двух различных детейлов (не выше первого уровня) имеющих общий агрегатор
+## Comparison of properties of two different datalow (not above ground level) with a common aggregator 
 
-Например, необходимо получить все компьютеры у которых хотя бы одна "железка" будет куплена раньше, чем любое программное обеспечение для него.
-Порядок свойств в функции сравнения накладываемой на детейлы имеет значение (в данном случае имена свойств совпали).
+For example, you need to all computers have at least one "piece of iron" will be bought before any software for it. 
+The order of properties in the comparison function applied to detali has a value (in this case, the property names coincide). 
 
 ```csharp
  View view = Information.GetView("ComputerL", typeof(Computer));
@@ -89,4 +91,8 @@ DataObject[] dobjsСервер = DataServiceProvider.DataService.LoadObjects(lcs
                         new VariableDef(langDef.DateTimeType, "DeliveryDate"),
                         new VariableDef(langDef.DateTimeType, "DeliveryDate")));
  var dos = DataServiceProvider.DataService.LoadObjects(lcs);
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

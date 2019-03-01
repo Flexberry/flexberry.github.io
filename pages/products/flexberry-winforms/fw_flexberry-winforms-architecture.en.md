@@ -1,110 +1,116 @@
----
-title: Базовая системно-технологическая архитектура Flexberry Winforms
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Ключевые понятия
-summary: Логические и физические уровни системы, основные термины, метаданные, виды форм, бизнес-сервер, сценарии
-toc: true
-permalink: en/fw_flexberry-winforms-architecture.html
-lang: en
----
+--- 
+title: basic system and technology architecture Flexberry Winforms 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Key concepts 
+summary: Logical and physical levels of the system, key terms, metadata, types of forms, business server, scripts 
+toc: true 
+permalink: en/fw_flexberry-winforms-architecture.html 
+lang: en 
+autotranslated: true 
+hash: d5f022988c51b1b70dfaa6c2058cbafef12956c827679923e5c405964ddae5cb 
+--- 
 
-Базовая системно-технологическая архитектура включает в себя архитектурные логические и физические уровни.
+Basic system and technology architecture includes architectural, logical and physical levels. 
 
-## Архитектурные логические уровни системы на базе Flexberry Platform
+## logical Architectural levels of the system on the basis of Flexberry Platform 
 
-Любая прикладная система, создаваемая на базе `Flexberry Platform`, содержит три логических уровня:
+Any application system that is created on the basis of `Flexberry Platform`, contains three logical levels: 
 
-* Пользовательский интерфейс.
-* Бизнес-логика.
-* Данные, метаданные и доступ к данным.
+* User interface. 
+* Business logic. 
+* Data, metadata, and data access. 
 
-![Архитектурные логические уровни системы на базе Flexberry Platform](/images/pages/products/flexberry-winforms/primer4.jpg)
+![Logical architectural levels of the system on the basis of Flexberry Platform](/images/pages/products/flexberry-winforms/primer4.jpg) 
 
-Уровень III представлен объектами данных, с приписанными им декларативно метаданными и сервисами данных, обеспечивающими базовые функции по работе с хранилищами.
+Level III is represented by the data objects assigned to them with declarative metadata and data services that provide the basic functionality for working with repositories. 
 
-Уровень II представлен [бизнес-сервером](fo_bs-wrapper.html), где содержится код общесистемных операций над объектами данных, а также операций, выполняющихся при работе сервисов данных (обработчиков). Бизнес-сервер может быть исполнен как самостоятельно, так и через некоторые обёртки (например, обёртка `COM+` позволяет выполнять бизнес-сервис под `COM+`).
+Level II submitted by the [business server](fo_bs-wrapper.html) that contains the code of system-wide operations on the data objects and operations performed when the data services (handlers). A business server can be executed both independently and through some wrapper (e.g., wrapper `COM ` allows you to perform a business service under `COM `). 
 
-Уровень I представлен собственно пользовательским интерфейсом, зависящим от среды реализации (это может быть настольный клиент, браузер (UI-зависимая форма), пользовательским интерфейсом, не зависящим от среды реализации (UI-независимая форма) и сценаристом. Принципиально, пользовательская логика отделена от зависимого от реализации клиента. Так, например, логика наложения ограничения должна быть реализована в UI-независимой форме, что позволит использовать одну и ту же логику вне зависимости от UI-зависимой реализации пользовательского интерфейса. Таким образом, внутренняя реализация системы максимально независима от пользовательского интерфейса, обладая при этом повторной применимостью даже пользовательской логики.
+Level I provides the actual user interface, depending on the environment of implementing (this can be a desktop client, browser (UI dependent form), the user interface, not depending on the environment of implementing (UI-independent form) and screenwriter. Fundamentally, the custom logic is separated from the dependent on the client implementation. For example, the logic of restriction should be implemented in the UI-independent form that will allow you to use the same logic independently from the UI-dependent implementation of user interface. Thus, the internal implementation of a system as independent as possible from the user interface, while possessing re applicability even custom logic. 
 
-## Архитектурные физические уровни системы на базе Flexberry Platform
+## physical and Architectural levels of the system on the basis of Flexberry Platform 
 
-Многоуровневая распределённая клиент-серверная архитектура с обособленными серверами приложений и её реализация.
+Multi-tier distributed client-server architecture with a separated application server and its implementation. 
 
-Логическая архитектура системы физически может быть реализована как:
+The logical architecture of the system can be physically implemented as: 
 
-* Монолитная.
-* Двухуровневая клиент-серверная.
-* Распределённая многоуровневая.
-* Распределённая многоуровневая в `WEB`.
+* Monolithic. 
+* Two-tier client-server. 
+* Distributed multi-level. 
+* Distributed multi-level in `WEB`. 
 
-Сервисы данных могут обслуживать как локальные источники (файлы), так и СУБД, поэтому физические архитектуры могут быть реализованы так:
+Data services can serve as local sources (files) the database management system, so physical architecture can be implemented like this: 
 
-* Самостоятельный бизнес-сервер, сервис данных локального источника (напр. XMLDataService).
-* Самостоятельный бизнес-сервер, сервис данных СУБД-источника (напр. ODBCDataService).
-* Бизнес-сервер под COM+, сервис данных СУБД-источника.
-* Бизнес-сервер под Web Service, сервис данных СУБД-источника.
+* Stand-alone server, the data service is a local source (eg. XMLDataService). 
+* Independent business server, the service data DBMS source (eg. ODBCDataService).
+* Business server that COM , the service data DBMS source. 
+* Business server for a Web Service, the data service DBMS source. 
 
-Это основные типы, могут быть и «экзотические», типа, локального файла, но `Web`-сервиса.
+It may be "exotic" type, a local file, but `Web` service. 
 
-Очевидно, применение различных средств даёт различные возможности. Здесь всё остаётся на усмотрение разработчика.
+Obviously, the use of different media gives different possibilities. Everything here is at the discretion of the developer. 
 
-## Интеграция систем
+## systems Integration 
 
-Физическое расположение кода (как исходного, так и двоичного в сборках) не имеет значения. Подключение частей какой-либо системы и чужой системы как подсистемы осуществляются подключением соответствующих сборок.
+The physical location code (both the source and binary builds) does not matter. The connection of the parts of any system and a foreign system as a subsystem are implemented by connecting respective assemblies. 
 
-Деление на сборки внутри системы относится к компетенции разработчика.
+The division of the Assembly within the system is the responsibility of the developer. 
 
-## Метаданные объектной структуры
+## Metadata object structure 
 
-Отдельно существующих метаданных не существует, вместо этого определение дополнительных свойств классов ([представлений](fd_view-definition.html), например), [атрибутов](fo_attributes-class-data.html) (например [`NotNull`](fo_attributes-class-data.html)), методов и т.п. осуществляется указанием атрибутов `.Net`. В сущности, все дополнительные метаданные определяются декларативно `.Net`-атрибутами непосредственно классам данных, их свойствам и т.п.
+Separately existing metadata does not exist, instead, defining additional class properties ([view](fd_view-definition.html), for example), [attributes](fo_attributes-class-data.html) (e.g. [`NotNull`](fo_attributes-class-data.html)), methods, etc. identify the attributes of `.Net`. In essence, all the additional metadata are defined declaratively `.Net`-attributes directly to the data classes, their properties etc. 
 
-Существует универсальный [информационный класс (`ICSSoft.STORMNET.DataObject.Information`) со статическими методами для получения метаданных](fo_methods-class-information.html). Доступ прикладного разработчика к декларативно определённым метаданным (`.Net`-атрибутам) не должен вестись напрямую (через `.NET Reflection`), а только через соответствующие методы этого [информационного класса](fo_methods-class-information.html). Исключение составляют только те атрибуты, которые вводятся непосредственно самим прикладным разработчиком.
+There is no universal [of information class (`ICSSoft.STORMNET.DataObject.Information`) with static methods to retrieve metadata](fo_methods-class-information.html). Access application developer to declaratively defined metadata (`.Net`-attributes) is not to be pursued directly (through `.NET Reflection`), but only through appropriate methods of this [class information](fo_methods-class-information.html). The only exceptions are those attributes which are entered directly by the application developer. 
 
-## Хранение данных и независимость от хранилища
+## data Storage and independence from storage 
 
-_Сервисом данных_ называется любая реализация абстрактного класса `ICSSoft.STORMNET.Business.DataService`, обеспечивающая сохранение/чтение любых объектов данных в какое-либо хранилище.
-Подробности в статье [Сервис данных](fo_data-service.html).
+Servicom dannyh refers to any implementation of the abstract class `ICSSoft.STORMNET.Business.DataService`, providing the save/load any data objects in any repository. 
+The details in the article [Service data](fo_data-service.html). 
 
-### Формы
+### Forms 
 
-Формы предназначены для обеспечения взаимодействия с пользователем.
+Forms are designed for interaction with the user. 
 
-_Формой_ называется способ предоставления пользовательского интерфейса для доступа к одному или нескольким объектам  данных. Формы бывают _UI-зависимые_ (зависят от физической природы интерфейса – `WinForms, WebForms`) и _UI-независимые_. Пользовательская логика должна реализовываться в UI-независимых формах, что позволит вносить меньше изменений, а также избежать дублирования кода при реализации в системе других типов пользовательского интерфейса.
+Formay is the method of providing a user interface to access one or more data objects. Forms are _UI-zavisimye (depend on the physical nature of the interface – `WinForms, WebForms`) and _UI-nezavisimye. Custom logic must be implemented in a UI-independent forms that will allow you to make fewer changes, and to avoid code duplication when implemented in a system other types of user interface. 
 
-_UI-зависимые формы_ могут быть _универсальными_, т.е. реализовывать некоторую стандартную функциональность без возможности какой-либо модификации. Как правило, это необходимо для очень простых объектов, для которых имеет смысл сэкономить на создании отдельных форм. _Неуниверсальные UI-зависимые формы_ могут быть сгенерированы (получены в исходном коде) и, затем, допрограммированы.
+_UI-dependent forma can be uniwersalnymi, i.e. to implement some standard functionality without the possibility of any modification. As a rule, it is necessary for very simple objects for which it makes sense to save on the creation of individual forms. Universalnye UI-dependent forma can be generated (from the source code) and then zaprogramirovan.
 
-_Формы редактирования_ позволяют пользователю редактировать собственные атрибуты объектов данных, связи с мастеровыми объектами данных, агрегированные объекты данных, в соответствии с одним или несколькими представлениями. Форма редактирования обеспечивает "полиморфное" редактирование: как объектов данных собственного класса, так и всех наследуемых классов, в представлении(ях) собственного класса.
+Formy redaktirovaniya allow the user to edit the custom attributes of the data objects in connection with the mechanics of the data objects, the aggregated data objects in accordance with one or more views. The edit form provides a "polymorphic" edit: as data objects of its own class and all inherited classes, in the representation(s) of their own class. 
 
-_Форма списка_ позволяет пользователю "полиморфно" работать со списком объектов данных как собственного класса, так и любых наследуемых классов. При этом, форме списка указываются классы данных потомков и имя совместимого представления.
+Forma spiska allows the user to "polymorphic" to work with a list of data objects as its own class and any inherited classes. In this case, the form of the list identifies the data classes of the descendants and the name of the compatible view. 
 
-_Форма печати_ позволяет получить печатную копию объекта данных в соответствии с представлением(ями).
+Forma pechati allows to obtain a printed copy of the data object in accordance with the representation(s). 
 
-## Бизнес-сервер
+## Business server 
 
-[Бизнес-сервер](fo_bs-wrapper.html) предназначен для логического выделения операций, которые относятся к системе. В сущности: бизнес-сервер есть набор методов. Соответственно, бизнес-сервер не имеет состояния (общепринято — stateless). В CASE бизнес-сервер отрисовывается UML-классом с установленным атрибутом [businessserver](fd_business-servers.html). Система может содержать произвольное число бизнес-серверов. В общем, число бизнес-серверов и состав их методов определяется прикладным разработчиком.
+[Business server](fo_bs-wrapper.html) is designed for logical allocation operations, which apply to the system. In essence, the business server has a set of methods. Accordingly, the business server does not have a condition (common — stateless). In CASE a business server draw a UML class with the executable attribute [businessserver](fd_business-servers.html). The system can contain an arbitrary number of business servers. In General, the number of business servers and their methods is defined by an application developer. 
 
-Бизнес-сервис также применяется в случаях, когда при работе сервиса данных с хранилищем (добавление, удаление и т.п. объекта), требуется выполнить какие-либо действия.
+Business service is also used in cases when the data services repository (add, delete, etc.), you want to perform any action. 
 
-При генерации кода для каждого бизнес-сервера создаётся:
+When code is generated for each business server is created: 
 
-* Код бизнес-сервера с определениями методов;
-* Код нужных заглушек («нужные» — определяются разработчиком в CASE в свойствах класса);
+* Code business server definitions методов; 
+* Code stubs need ("need" is determined by the developer in CASE the properties of the class); 
 
-## Сценарист
+## Writer 
 
-Существует следующая проблема при создании многоуровневых систем: имеется по отдельности доступ к данным, бизнес-логика, пользовательский интерфейс. Однако как (чем) возможно объединить эти части в непосредственно работающую систему? Иначе говоря, как (где) должно быть записано, что при определённых манипуляциях пользовательским интерфейсом формы открываются в определённой последовательности и когда происходит вызов операций бизнес-сервера?
+There is the following problem when creating multi-level systems: there are separate data access, business logic, user interface. However, as (than) it is possible to combine these parts in a working system? In other words, how (where) should be recorded that under certain manipulation of the user interface forms displayed in sequence and when there is a call to the business server? 
 
-Конечно, можно, как это обыкновенно и делается, «жёстко» прописать вызовы прямо в код, например, в пользовательский интерфейс, однако, это является плохой идеей по следующим причинам:
+Of course, it is possible, as is commonly done, hard to register calls directly in code, for example, in the user interface, however, it is a bad idea for the following reasons: 
 
-* Части системы перестают быть «частями», поскольку начинают «знать» о существовании друг друга, что может сделать затруднительным повторное использование.
-* Модификация этой самой объединяющей логики трудоёмка, поскольку та располагается во многих местах («разбросана» по частям, сборкам, классам).
-* Модификация объединяющей логики требует вмешательства в исходный код системы (требует программиста). Если система сможет модифицироваться снаружи, можно дать возможность гибко настраивать логику из готовых частей непосредственно пользователю.
-* Вообще затруднено создание логики, которая включает в себя процесс выполнения операций, который сильно ветвится в зависимости от каких-либо условий. Либо, различное выполнение логики в зависимости от полномочий пользователя.
+* Parts of the system cease to be "parts", because the begin to "know" about each other, which can make it difficult to reuse. 
+* Modification of this unifying logic is time-consuming as it is in many places (scattered in parts, assemblies, classes). 
+* Modification of the unifying logic requires intervention in the source code (requires programmer). If the system can be modified from the outside, it is possible to give the flexibility to customize the logic of the finished pieces directly to the user.
+* Generally difficult to build the logic, which includes the operation execution process, which is highly branched, depending on any conditions. Or, run different logic depending on user permissions. 
 
-В то же время, эта самая объединяющая логика есть ничто иное, как некоторый сценарий работы для пользователя и может быть описана как самостоятельная сущность.
+At the same time, this is the uniting logic is nothing but a scenario for the user and can be described as an independent entity. 
 
-Для решения этой проблемы, в `Flexberry Platform` предусмотрено создание событийно-ориентированных сценариев (`EBS — Event-Based Script`) и их интерпретации.
+To solve this problem, in `Flexberry Platform` provides for the establishment of event-oriented scenarios (`EBS — Event-Based Script`) and their interpretation. 
 
-Существует специальный графический язык, позволяющий описывать сценарии (`EBSD — Event-Based Script Diagram`, соответствующий диаграммный метод, реализованный в `Flexberry`).
+There is a special graphical language allowing to describe the scenarios (`EBSD — Event-Based Script Diagram` corresponding diagrammatic method implemented in `Flexberry`). 
 
-Существует специальный компонент — _Сценарист_ (`EBSI — Event-Based Script Interpreter`), обеспечивающий выполнение (интерпретацию) сценария в `RunTime`.
+There is a special component Scenarist (`EBSI — Event-Based Script Interpreter`) providing the execution (interpretation) of the script in `RunTime`. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

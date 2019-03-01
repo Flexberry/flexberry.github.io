@@ -1,48 +1,50 @@
----
-title: Настройка форм для приложения
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы), Конкретная реализация, ПНИПУ, Разработка
-summary: Рассмотрено два варианта единообразной обработки форм приложения. Использование класса `UniversalFormTuner` и обработка глобального события Load
-toc: true
-permalink: en/fw_form-tuner.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: customizing the forms for your application 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms), the Specific implementation, PNRPU, Development 
+summary: two variants of the uniform processing of application forms. The use of class `UniversalFormTuner` and handling global Load event 
+toc: true 
+permalink: en/fw_form-tuner.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 88abd4488b0b3a050a86692add2f87b5b4a181c723a658e640d6d1c334df8a88 
+--- 
 
-Достаточно часто возникает задача применить в run-time ко всем формам приложения какие-либо настройки. Особенно задача актуальна для независимых форм. В данном случае Вам поможет `UniversalFormTuner`, а точнее его наследник, определенный в прикладном приложении.
+Quite often the problem arises to apply at run-time to all application forms any settings. In particular, the task relevant to the independent forms. In this case, You will `UniversalFormTuner`, or rather its successor, as defined in the application application. 
 
 
-Последовательность действий такова:
+The sequence of actions is: 
 
-1. Добавить в прикладное приложение класс, наследующий от `ICSSoft.STORMNET.UI .UniversalFormTuner`.
+1. Add to application class that inherits from `ICSSoft.STORMNET.UI .UniversalFormTuner`. 
 
-0. Переопределить метод 
+0. Override method 
 ```csharp
 public virtual void TuneForm( BaseWin form )
-```
-<br>Параметр `form` – ссылка на экземпляр формы перед ее отображением.
+``` 
+the <br>Option `form` – a reference to the instance of the form before it is displayed. 
 
-0. Присвоить свойству `UniversalFormTuner.StandardTuner` ссылку на экземпляр Вашего «тюнера».
+0. To set the property `UniversalFormTuner.StandardTuner` a reference to an instance of Your "tuner". 
 
 
-Кроме того, для осуществления единообразной обработки форм приложения, можно подписаться на специальное глобальное событие (в методе `Main`):
+In addition, for the implementation of a uniform forms processing application, you can subscribe to a special global event (in method `Main`): 
 
 ```csharp
 static void Main()
 ...
-// *** Start programmer edit section *** (Детейломания Main())
+// *** Start programmer edit section *** (Metalmania Main()) 
 ICSSoft.STORMNET.Windows.Forms.WinApplication.SetUICultureAsRussian();
 ICSSoft.STORMNET.Windows.Forms.Desktop.GlobalWinformEvents.Load += new EventHandler(GlobalWinformEvents_Load);
-// *** End programmer edit section *** (Детейломания Main())
+// *** End programmer edit section *** (Metalmania Main()) 
 ICSSoft.STORMNET.Business.LockService.ClearAllUserLocks();
 ...
 }
-```
+``` 
 
-В обработчик этого события будет приходить форма в переменной sender. Собственно что с ней делать дальше - знаете сами. Например, можно все формы подписать на нажатие определённых клавиш:
+In the handler for this event will be coming form in the variable sender. Actually what to do - know yourself. For example, all the forms to sign at the pressing of certain keys: 
 
 ```csharp
-// *** Start programmer edit section *** (ДетейломанияDesktop CustomMembers)
+// *** Start programmer edit section *** (ДетейломанияDesktop CustomMembers) 
 static void GlobalWinformEvents_Load(object sender, EventArgs e)
 {
 ((Form)sender).KeyPreview = true;
@@ -55,6 +57,10 @@ if (e.KeyChar == 13)
 MessageBox.Show("Enter was pressed","Hello");
 }
 }
-// *** End programmer edit section *** (ДетейломанияDesktop CustomMembers)
+// *** End programmer edit section *** (ДетейломанияDesktop CustomMembers) 
 ``` 
 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

@@ -1,55 +1,60 @@
----
-title: FuncEQ
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Parameters and an example of using the function FuncEQ
-toc: true
-permalink: en/fo_func-eq.html
-lang: en
----
+--- 
+title: FuncEQ 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: Parameters and example FuncEQ 
+toc: true 
+permalink: en/fo_func-eq.html 
+lang: en 
+autotranslated: true 
+hash: c30ed3cb8fa18b1a905519c0184e874ca09ab29ef657a49f8700541d275a383f 
+--- 
 
-`FuncEQ` - функция, аналогичная сравнению на равенство в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+`FuncEQ` the same function as the equality comparison in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 
 
-## Параметры GetFunction
+## Parameters GetFunction 
 
-Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции `funcEQ`, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (`Variable Definition`), по которому будут определяться объекты для сравнения; а вторым параметром - объект, с которым будет происходить сравнение.
+[GetFunction](fo_function-list.html) accepts the first argument type of a function `funcEQ`, and then takes 2 objects to compare them with each other. The first sent a description of the variable (`Variable Definition`), which will determine the objects to сравнения; and the second parameter is the object that will be compared. 
 
-**Исключение** составляет тип `bool`: `langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.BoolType, "SomeBoolFlag"))` сработает и без указания второго параметра (по умолчанию будет происходить сравнение с `true`).
+**Exception** is type `bool`: `langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.BoolType, "SomeBoolFlag"))` will work without specifying the second parameter (the default will be compared with `true`). 
 
-**Проверку на `null`** надо проводить при помощи функции [FuncIsNull](fo_func-is-null.html), при попытке проверить что-либо на `null` с помощью `FuncEQ` возникнет исключительная ситуация **Object reference not set to an instance of an object.**
+**Check for `null`** should be carried out with [FuncIsNull](fo_func-is-null.html), when you try to check anything on `null` with `FuncEQ` will receive an exception **Object reference not set to an instance of an object.** 
 
-## Пример использования
+## Example usage 
 
-Например, требуется вычитать все **Кредиты** определенного **Клиента**.
+For example, you want to subtract all the **Loans** specific **Customer**. 
 
-![](/images/pages/products/flexberry-orm/query-language/filter-ex-diagram.png)
+![](/images/pages/products/flexberry-orm/query language/filter-ex-diagram.png) 
 
-SQL-выражение выглядело бы следующим образом:
+The SQL statement would look as follows: 
 
 ```sql
-SELECT * FROM Кредит WHERE Клиент = '{ID}'
-```
+SELECT * FROM Кредит WHERE Клиент = '{ID}'@@
+Где {ID} - [Primary-keys-objects|первичный ключ) искомого `Клиента`
+``` 
 
-Где {ID} - [первичный ключ](fo_primary-keys-objects.html) искомого `Клиента`.
-
-Через [SQLWhereLanguageDef](fo_function-list.html):
+[SQLWhereLanguageDef](fo_function-list.html): 
 
 ```csharp   
 Клиент клиент = new Клиент();
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 Function lf = langdef.GetFunction(langdef.funcEQ, new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Клиент)), клиент.__PrimaryKey);
-```
+``` 
 
-## Особенности сравнения строк
+## Features string comparison 
 
-{% include important.html content="При использовании [MS SQL DataService](fo_mssql-data-service.html) могут возникать [проблеммы со сравнением строк с пробелами на конце](http://improvingsoftware.com/2009/09/09/beware-of-this-trap-when-comparing-strings-in-t-sql-with-trailing-spaces/)." %}
+{% include important.html content="If you use [MS SQL DataService](fo_mssql-data-service.html) you can have [problems with comparing strings with spaces in conce](http://improvingsoftware.com/2009/09/09/beware-of-this-trap-when-comparing-strings-in-t-sql-with-trailing-spaces/)." %} 
 
-Дело в том, что MS SQL Sever следует стандарту [ANSI SQL-92](https://ru.wikipedia.org/wiki/SQL-92) в том, что касается сравнения строк.
+The fact that MS SQL Sever follows the standard [ANSI 92 SQL](https://ru.wikipedia.org/wiki/SQL-92) in regard to string comparisons. 
 
-Чтобы определить, равны ли строки неодинаковой длины, прежде всего с правой стороны более короткой строки добавляются пробелы, так что длины строк становятся равными.
+To determine whether strings of unequal length, especially on the right side the shorter string adds spaces, so the string lengths become equal. 
 
-Затем символы в первой строке сравниваются с символами второй с учетом их расположения. Если не равна хотя бы одна пара, строки считаются неравными.
+Then the symbols in the first string are compared with characters of the second with regard to their location. If not equal at least one pair, the strings are considered unequal. 
 
-Это касается сравнений типа WHERE strfield = '...', или HAVING strfield='...', или strfield IN ('...', '...', ...). В этих случаях строки 'abc' и 'abc  ' будут считаться равными.
+This applies to comparisons such as WHERE strfield = '...', or HAVING strfield='...', or strfield IN ('...', '...', ...). In these cases, the string 'abc' and 'abc' are considered equal. 
 
-Исключением является оператор `LIKE` (WHERE strfield LIKE '...'), для него строки 'abc' и 'abc  ' - различны, поэтому для наложения ограничений на строки следует использовать функцию [funcLike](fo_func-like.html).
+The exception is the operator `LIKE` (WHERE strfield LIKE '...'), for it is the string 'abc' and 'abc' is different, therefore, to impose restrictions on the string, you should use the function [funcLike](fo_func-like.html). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

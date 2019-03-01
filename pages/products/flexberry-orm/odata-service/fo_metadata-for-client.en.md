@@ -1,31 +1,33 @@
----
-title: Configuring entity type names in OData metadata
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry Ember, odata, метаданные
+--- 
+title: configure the names of the entity types in OData metadata 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry Ember, odata, metadata 
 summary: 
-toc: true
-permalink: en/fo_metadata-for-client.html
-lang: en
----
+toc: true 
+permalink: en/fo_metadata-for-client.html 
+lang: en 
+autotranslated: true 
+hash: db861440ea98d2b1392e0ada488fce7f2a85e2db22f5397887ffef16bf83c659 
+--- 
 
-За преобразование имен типов отвечает два делегата `EntityTypeNamespaceBuilder` и `EntityTypeNameBuilder`.
+For converting type names meets two delegates `EntityTypeNamespaceBuilder` and `EntityTypeNameBuilder`. 
 
 ```javascript
-/// <summary>
-/// Delegate for building names for EDM entity type.
-/// </summary>
+/// <summary> 
+/// Delegate for building names for EDM entity type. 
+/// </summary> 
 public Func<Type, string> EntityTypeNameBuilder { get; set; }
-```
+``` 
 
-В нём можно реализовать исправленную функциональность, т.е. сделать свой аналог метода:
+In `EntityTypeNameBuilder` you can implement the fixed functionality, i.e. to make the analog method: 
 
 ```javascript
-/// <summary>
-/// Builds the name of the entity.
-/// Default logic, for <see cref="EntityTypeNameBuilder"/>.
-/// </summary>
-/// <param name="dataObjectType">Type of the data object.</param>
-/// <returns>The name of appropriate EDM entity.</returns>
+/// <summary> 
+/// Builds the name of the entity. 
+/// Default logic, for <see cref="EntityTypeNameBuilder"/>. 
+/// </summary> 
+/// <param name="dataObjectType">Type of the data object.</param> 
+/// <returns>The name of The appropriate EDM entity.</returns> 
 private string BuildEntityTypeName(Type dataObjectType)
 {
     PublishNameAttribute attr = dataObjectType.GetCustomAttribute<PublishNameAttribute>(false);
@@ -39,16 +41,16 @@ private string BuildEntityTypeName(Type dataObjectType)
  
     return dataObjectType.Name;
 }
-```
+``` 
 
-[Исходник метода](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService/blob/9831629a8ffe52234d199bd8692090e240b8828c/NewPlatform.Flexberry.ORM.ODataService/Model/DefaultDataObjectEdmModelBuilder.cs#L267).
+[Source method](https://github.com/Flexberry/NewPlatform.Flexberry.ORM.ODataService/blob/9831629a8ffe52234d199bd8692090e240b8828c/NewPlatform.Flexberry.ORM.ODataService/Model/DefaultDataObjectEdmModelBuilder.cs#L267). 
 
-Для метода `EntityTypeNamespaceBuilder` по умолчанию возвращается пустая строка, поэтому его также необходимо переопределить:
+PstrfEntityTypeNamespaceBuilder` for a method by default returns empty string, so it will also need to override: 
 
 ```javascript
 builder.EntityTypeNamespaceBuilder = (dataObjectType) => dataObjectType.Namespace;
-```
-Имя типа сущности в OData должно быть полным, т.е. вместе с namespace. Соответственно, если namespace нет, то полное имя типа сущности будет выглядеть ".ClassName":
+``` 
+The name of the entity type in OData must be complete, i.e. with namespace. Accordingly, if no namespace, the full name of the entity type will look like ".ClassName": 
 
 ```javascript
 <EntityType Name="DocumentFileKind" BaseType=".Catalog" OpenType="true">
@@ -62,4 +64,8 @@ builder.EntityTypeNamespaceBuilder = (dataObjectType) => dataObjectType.Namespac
 <EntitySet Name="FederalLaws" EntityType=".FederalLaw">
     <NavigationPropertyBinding Path="LawIntroductionReason" Target="LawIntroductionReasons" />
 </EntitySet>
-```
+``` 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

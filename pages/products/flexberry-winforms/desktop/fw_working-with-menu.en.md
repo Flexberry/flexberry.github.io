@@ -1,34 +1,36 @@
----
-title: Использование ToolStrip для организации меню
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы), Windows UI (формы)
-summary: На примере рассмотрено использование ToolStrip для организации меню на главной форме приложения
-toc: true
-permalink: ru/fw_working-with-menu.html
-folder: products/flexberry-winforms/
-lang: ru
----
+--- 
+title: Using ToolStrip for the organization of the menu 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (Controls), the Windows UI (forms) 
+summary: For example, consider using the ToolStrip to the organization menu in the main form of the application 
+toc: true 
+permalink: en/fw_working-with-menu.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 85f1c42e12c0be8345e60cb0e9470f3d874e3dfa13d74bcb506691390485bd5c 
+--- 
 
-На пороге окончательного перехода в Web, не стоит забывать о том, что еще есть потребность в приложениях аля WinForms, а некоторые Заказчики еще работают на системах с DOS-историческим интерфейсом. 
+On the threshold of the final transition to the Web, do not forget that there is still a need for Ala WinForms applications, and some Customers are still working on systems with DOS-historic interface. 
 
-Всем известна ситуация, когда Заказчик воспринимает в штыки интерфейс в создаваемых нами информационных системах т.к. привык к организации меню в своих старых программах. В свою очередь, формирование меню в наших системах не встроено в технологию. 
+Everyone knows the situation, when the Customer perceives a hostile reception interface in the created by us information systems as used to the organization menu in its old programs. In turn, the formation menu in our system is not built into the technology. 
 
-Возможен вариант решения.
+A possible solution. 
 
-Использовать системное меню на Desktop не совсем удобно, да и есть определенные ограничения и неудобства по вставке иконок и горячих клавиш. Поэтому используется ToolStrip.
+Use the system menu on the Desktop is not very convenient, and there are some restrictions and inconvenience for the insertion of icons and shortcuts. Therefore, use a ToolStrip. 
 
-Единственное ограничение – версия Visual Studio должна быть 2005 или выше.
+The only limitation is the version of Visual Studio should be 2005 or above. 
 
-В основном проекте приложения в скобках программиста добавляете три метода:
+In the main application project, in parentheses, the programmer adds three methods: 
 
-_AddToolStripMenu_
-_ChangeToolStripMenuItem_
-_CopyMenuToStrip_
+_AddToolStripMenu_ 
+_ChangeToolStripMenuItem_ 
+_CopyMenuToStrip_ 
 
-Код приведен ниже:
+Code given below: 
 
 ```csharp
-// *** Start programmer edit section *** (ThreatsModelDesktop CustomMembers)
+// *** Start programmer edit section *** (ThreatsModelDesktop CustomMembers) 
         static void AddToolStripMenu(ToolStrip ts, int menuindex, int submenuindex, 
             string Text, Image image, EventHandler e, System.Windows.Forms.Keys shortkeys)
         {
@@ -64,50 +66,54 @@ _CopyMenuToStrip_
                 CopyMenuToStrip(mi.MenuItems[i], ts, (ToolStripMenuItem)mtddb);
             } 
         }
-```
- 
+``` 
 
-В методе main в скобках программиста работаете с меню:
+
+In the main method, in parentheses, the programmer working with the menu: 
 
 ```csharp
-//Уберем Properties
+//Remove Properties 
 desktop.menuItem1.MenuItems[0].Visible = false;                 
-//Вставим обработчик на Help
+//Insert handler on Help 
 desktop.menuItem4.Click += new EventHandler(menuItem4_Click);   
-//Скопируем существующее меню в ToolStrip
+//Copy an existing menu in a ToolStrip 
 ToolStrip ts = new ToolStrip();
 ts.Parent = desktop;
 for (int i = 0; i < desktop.mainMenu1.MenuItems.Count; i++)
 {
 CopyMenuToStrip(desktop.mainMenu1.MenuItems[i],ts,null);
-desktop.mainMenu1.MenuItems[i].Visible = false; //скрываем меню..
+desktop.mainMenu1.MenuItems[i].Visible = false; //hide the menu.. 
 }
-//добавляем новые элементы меню с картинками и горячими клавишами
-AddToolStripMenu(ts, 0, 0, "Создать модель ИСПДн", (System.Drawing.Image)global::IIS.Product.Properties.Resources.new16,new EventHandler(WorkMenu_Click),Keys.Alt | Keys.N);
-AddToolStripMenu(ts, 0, 1, "Открыть модель ИСПДн...",(System.Drawing.Image)global::IIS.Product.Properties.Resources.Open16, new EventHandler(WorkMenu_Click), Keys.Alt | Keys.O);
-ts.Items.Insert(1,new ToolStripMenuItem("Справочники"));
-AddToolStripMenu(ts, 1, 0, "Угрозы...", null, new EventHandler(WorkMenu_Click), Keys.Alt | Keys.U);
-AddToolStripMenu(ts, 1, 1, "Меры противодействия...", null, new EventHandler(WorkMenu_Click), Keys.Alt | Keys.M);
-AddToolStripMenu(ts, 2, 1, "Лицензионное соглашение...", (System.Drawing.Image)global::IIS.Product.Properties.Resources.Attrib16,  new EventHandler(menuItem4_Click), Keys.Alt | Keys.F10);
-//Для меню "Выход", вставляем иконку и горячую клавишу
+//add new menu items with images and hot keys 
+AddToolStripMenu(ts, 0, 0, "To create a model of PDIS", (System.Drawing.Image)global::IIS.Product.Properties.Resources.new16,new EventHandler(WorkMenu_Click),Keys.Alt | Keys.N);
+AddToolStripMenu(ts, 0, 1, "Open model PDIS...",(System.Drawing.Image)global::IIS.Product.Properties.Resources.Open16, new EventHandler(WorkMenu_Click), Keys.Alt | Keys.O);
+ts.Items.Insert(1,new ToolStripMenuItem("Reference"));
+AddToolStripMenu(ts, 1, 0, "Threats...", null, new EventHandler(WorkMenu_Click), Keys.Alt | Keys.U);
+AddToolStripMenu(ts, 1, 1, "Counter measures...", null, new EventHandler(WorkMenu_Click), Keys.Alt | Keys.M);
+AddToolStripMenu(ts, 2, 1, "License agreement...", (System.Drawing.Image)global::IIS.Product.Properties.Resources.Attrib16,  new EventHandler(menuItem4_Click), Keys.Alt | Keys.F10);
+//For the menu "Output", plug-in icon and a hotkey 
 ChangeToolStripMenuItem(ts, 0, 3,(System.Drawing.Image)global::IIS.Product.Properties.Resources.Exit16, Keys.Alt | Keys.X);
-//Для меню "Помощь..." , вставляем иконку и горячую клавишу
+//For the menu "Help..." , insert the icon and a hotkey 
 ChangeToolStripMenuItem(ts, 2, 0,(System.Drawing.Image)global::IIS.Product.Properties.Resources.Help16,  Keys.F1);
-```
+``` 
 
-Что касается меню, вроде бы все!
+As for the menu, everything seems to be! 
 
-Запускаем компиляцию и видим немного обновленный интерфейс:
-![](/images/pages/products/flexberry-winforms/desktop/image001.jpg)
-Меню «Файл»:
-![](/images/pages/products/flexberry-winforms/desktop/image002.jpg)
-Меню «Справочники»:
-![](/images/pages/products/flexberry-winforms/desktop/image003.jpg)
-Меню «?»:
-![](/images/pages/products/flexberry-winforms/desktop/image004.jpg)
+Run a compilation and see a slightly updated interface: 
+![](/images/pages/products/flexberry-winforms/desktop/image001.jpg) 
+"File": 
+![](/images/pages/products/flexberry-winforms/desktop/image002.jpg) 
+Menu "Reference": 
+![](/images/pages/products/flexberry-winforms/desktop/image003.jpg) 
+Menu "?": 
+![](/images/pages/products/flexberry-winforms/desktop/image004.jpg) 
 
-На данном примере мы решили несколько проблем:
+In this example, we solved several problems: 
 
-1. Создали похожее на «старое» меню.
-2. Усилили визуальный эффект от меню за счет иконок.
-3. Расширили возможность горячих клавиш.
+1. Created similar to the "old" menu. 
+2. Increased visual effect of the menu through icons. 
+3. Has increased the hot keys. 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

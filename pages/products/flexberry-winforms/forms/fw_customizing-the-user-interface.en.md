@@ -1,54 +1,64 @@
----
-title: Настройка пользовательского интерфейса
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Приведен перечень наиболее часто требуемых доработок пользовательского интерфейса, полученного в результате генерации кода
-toc: true
-permalink: en/fw_customizing-the-user-interface.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: user interface customization 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: the following is the list of most commonly required improvements of the user interface, the resulting code generation 
+toc: true 
+permalink: en/fw_customizing-the-user-interface.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 5aa23b5c06ef025864cb8d9c4d936999a994149fb7e85f3145bccad605d64b75 
+--- 
 
-## Последствия генерации
+After automatic generation of the application, its interface needs improvement. 
 
-После автоматической генерации приложения его интерфейс нуждается в доработке.
+Items on forms and web pages need to install on your desired location and determine position. The appearance of elements to lead to a particular style, which adheres to the whole application, and so on. 
 
-Элементы на формах и на web-страницах нуждаются в установке на нужное место и определении позиции. Внешний вид элементов нужно привести к определенному стилю, которому придерживается все приложение, и прочее.
+## Scenario refinement 
 
-## Сценарии доработки
-В этом разделе предоставлен список наиболее часто возникающих доработок приложения после генерации для Windows и Web приложений.
+This section provides a list of the most frequently occurring modifications of the application after generation for Windows and Web applications. 
 
-## Windows-приложение
-Для Windows-приложений на помощь приходят 2 полезных класса, поддерживаемых технологией Flexberry:
+## Windows application 
 
-### FormTuner
-[Настройка форм для приложения](fw_form-tuner.html) - это класс, позволяющий применить какие-либо настройки ко всем формам в приложении.
+For Windows-based applications come to the aid of 2 helpful class technology supported Flexberry: 
 
-### ControlProvider
-[ControlProvider](fw_control-provider-winforms.html) позволяет определить собственные контролы для редактирования определенных типов данных или изменить существующие. Будучи определенными в ControlProvider'e, эти контролы будут применяться в универсальной форме редактирования и в некоторых других контролах (например, в [GroupEdit](fw_group-edit.html)).
+### FormTuner 
 
-Сгенерированные формы нуждаются в доработке по следующим пунктам:
+[The forms for application](fw_form-tuner.html) is a class that allows you to apply any settings for all forms in the application. 
 
-* Заголовки форм
-* Расположение элементов на формах
-* Якоря элементов на формах
-* Минимальный и максимальный размеры форм
-* Общий стиль цветов и шрифтов контролов на формах (''ControlProvider'')
-* Локализация
-* Установка фонового изображения на каждую форму (''FormTuner'')
+### ControlProvider 
 
-### а также
-Возникает необходимость добавить в приложение горячие клавиши, а также настроить порядок обхода элементов по нажатию клавиши <[Enter](fw_custom-form-tuner.html)>
+[ControlProvider](fw_control-provider-winforms.html) allows you to define your own controls for editing certain data types or modify existing ones. As defined in ControlProvider'e, these controls will apply in the universal form of editing in some other controls (for example, in [GroupEdit](fw_group-edit.html)). 
 
-## Web-приложение
-Сгенерированные Web-страницы нуждаются в доработке по следующим пунктам:
+The generated forms need improvement in the following points: 
 
-* Заголовки страниц
-* Выравнивание элементов на страницах
-* Общий стиль, цвета и шрифты элементов страниц
-* Масштабирование страниц
-* Локализация
+* The titles of the forms 
+* Location of items on forms 
+* Anchor elements on forms 
+* The minimum and maximum form dimensions 
+* The overall style of colors and fonts of the controls on the forms ("ControlProvider") 
+* Localization 
+* Setting a background image on each form ("FormTuner") 
 
-# См. также
-[Визуальная логика](fw_visual-logic.html)
+### and 
 
+There is a need to add in-app hotkeys and also adjust the order of items by pressing the <[Enter](fw_custom-form-tuner.html)> 
+
+## Web application 
+
+The generated Web pages need improvement in the following points: 
+
+* Page titles 
+* Alignment of elements on the pages 
+* The overall style, colors and fonts of page elements 
+* Page zoom 
+* Localization 
+
+# Cm. also 
+
+[Visual logic](fw_visual-logic.html) 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

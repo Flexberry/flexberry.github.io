@@ -1,51 +1,57 @@
----
-title: Фильтрация по детейлам мастера. ConnectMasterProp, OwnerConnectProp
-sidebar: flexberry-winforms_sidebar
-keywords: Ограничения
-summary: На примерах показано как использовать OwnerConnectProp, ConnectMasterProp при построении ограничений
-toc: true
-permalink: en/fw_master-details-filters.html
-lang: en
----
+--- 
+title: Filtering by detalam master. ConnectMasterProp, OwnerConnectProp 
+sidebar: flexberry-winforms_sidebar 
+keywords: Constraints 
+summary: the examples show how to use OwnerConnectProp, ConnectMasterProp when building restrictions 
+toc: true 
+permalink: en/fw_master-details-filters.html 
+lang: en 
+autotranslated: true 
+hash: 9f975ff22a1442e82054d15817c2e98c264b894838f7a5db2559bacd975956f1 
+--- 
 
-Фильтрация по детейлам мастера может быть проиллюстрированна на нескольких примерах.
+Filter by detalam wizard can be proillyustrirovana a few examples. 
 
-## Диаграмма-пример для 3 классов
+## Diagram-example for 3 classes 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/diagramm.jpg)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/diagramm.jpg) 
 
 
-## Настройка
-Чтобы отфильтровать все УдостоверяющиеДокументы для ЗаявленияАбитуриента, необходимо создать настройку фильтра следующим образом:
+## Setting 
+To filter out all Odottamattomasti for Salenatural, you must create a filter setup in the following way: 
 
-* Создать настройку фильтра для ЗаявленияАбитуриента
-* Создать настройку детейла для настройки фильтра
-* Указать представление УдостоверяющегоДокумента
-* В настройке детейла указать OwnerConnectProp = Личность
-* В настройке детейла указать ConnectMasterProp = Личность
+* Create the filter configuration for Salenatural 
+* To create a setting of detail for the filter settings 
+* Specify the view Udostoveritsya 
+* Setting detail specify OwnerConnectProp = Personality 
+* Setting detail specify ConnectMasterProp = Personality 
 
-Таким образом, ЗаявлениеАбитуриента и УдостДокумент свяжутся через Личность.
+Thus, Zaveniaghina and Odomdocument will be contacted in Person. 
 
-## Диаграмма-пример для 4 классов
+## Diagram-example for 4 classes 
 
-![](/images/pages/products/flexberry-winforms/subsystems/limits/diagramm2.png)
+![](/images/pages/products/flexberry-winforms/subsystems/limits/diagramm2.png) 
 
-''Пример взят из ИС "Университет"''
+"Example is taken from is "University"," 
 
-## Настройка
+## Setting 
 
-Чтобы отфильтровать все ОбразовательныеДокументы для СтрокиРекомендательногоСписка, необходимо:
+To filter out all Obrazovatelnogo for Stroyrekonstruksiya, you must: 
 
-* Создать настройку фильтра для СтрокиРекомендательногоСписка
-* Создать настройку детейла для настройки фильтра
-* Указать представление ОбразовательногоДокумента
-* В настройке детейла указать OwnerConnectProp = ЗаявлениеАбитуриента.Личность
-* В настройке детейла указать ConnectMasterProp = Личность
+* Create the filter configuration for Stroyrekonstruksiya 
+* To create a setting of detail for the filter settings 
+* Specify the view Obrazovatelnogo 
+* Setting detail specify OwnerConnectProp = Zaveniaghina.Personality 
+* Setting detail specify ConnectMasterProp = Personality 
 
-Таким образом, СтрокаРекомендательногоСписка и ОбразовательныйДокумент свяжутся через ЗаявлениеАбитуриента и Личность.
+Thus, Stroyrekonstruksiya and Obrazovatelnykh will be contacted through Zaveniaghina and Personality. 
 
-## OwnerConnectProp, ConnectMasterProp
+## OwnerConnectProp, ConnectMasterProp 
 
-Таким образом, в ConnectMasterProp указывается путь от детейла, а в OwnerConnectProp - к детейлу от объекта. Связка происходит следующим образом: __Детейл.ConnectMasterProp = Объект.OwnerConnectProp__.
+Thus, in ConnectMasterProp specifies the path from detail and OwnerConnectProp - detalu from the object. The bundle is as follows: __Detail.ConnectMasterProp = Object.OwnerConnectProp__. 
 
-Также стоит отметить, что свойство OwnerConnectProp определяет, к какому объекту относятся детейлы. Если свойство не указано (т.е. указан null), то связка происходит по __первичному ключу__ (StormMainObjectKey).
+It is also worth noting that the property OwnerConnectProp determines what objects are detaily. If the property is not specified (i.e. set to null), the ligament occurs __primary key__ (StormMainObjectKey). 
+
+
+
+ # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
