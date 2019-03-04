@@ -25,7 +25,7 @@ Then, on the edit form of the user in the tab "Agents\Users" tab on the "Operati
 First you need to add powers into classes. 
 How to add permissions on classes can be found in [this article](fa_authority-classes.html) 
 
-{% include note.html content="to add To the list of classes of objects need to use the button "Fill the list of classes from an Assembly object" in the section "Entities\Classes", where you can select the Assembly object. Form classes are added to the list of classes by hand." %} 
+{% include note.html content="to add To the list of classes of objects need to use the button `Fill the list of classes from an Assembly objec` in the section `Entities\Classes`, where you can select the Assembly object. Form classes are added to the list of classes by hand." %} 
 
 
 

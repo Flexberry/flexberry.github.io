@@ -30,7 +30,7 @@ This step describes the process of adding and build mobile applications. To asse
 ![](/images/pages/guides/mobile-app/mobile-app-build1.png) 
 ![](/images/pages/guides/mobile-app/mobile-app-build2.png) 
 
-{% include note.html content="To build mobile apps for a specific platform, use the command `cordova build имя_платформы`" %} 
+{% include note.html content="To build mobile apps for a specific platform, use the command `cordova build platform_name`" %} 
 
 In the result of the execution of this step will create the installation files for mobile applications. Next will be considered process launch mobile applications on the device. 
 
