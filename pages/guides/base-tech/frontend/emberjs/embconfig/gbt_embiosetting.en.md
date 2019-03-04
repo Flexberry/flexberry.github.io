@@ -7,7 +7,7 @@ permalink: en/gbt_embiosetting.html
 folder: guides/base-tech/frontend/emberjs/embconfig/ 
 lang: en 
 autotranslated: true 
-hash: 23136cf73a3b12f48d957e73fa43c48292ced37ed6be97394f0a177dc70032eb 
+hash: 2a4c7c34de674e4588609337ad4e6b2d1e5380435e193ea18d01cc689b089106 
 --- 
 
 ## Brief description 

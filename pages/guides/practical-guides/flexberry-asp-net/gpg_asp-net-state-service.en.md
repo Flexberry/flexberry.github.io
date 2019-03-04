@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_asp-net-state-service.html 
 lang: en 
 autotranslated: true 
-hash: c4b6559695669827af48efd51b2ede77fa3c950a988c9877aaf2951567649b4d 
+hash: cd9d457a5eadd4d79d8e69d3edbc43ac1eaaf31f24b5aa15030ba7e83ea20ea6 
 --- 
 
 For the correct operation of the generated application is required to run the service `ASP.NET Service` State (Service state ASP.NET). If you run the generated web application displays the error message associated with this service, you must: 

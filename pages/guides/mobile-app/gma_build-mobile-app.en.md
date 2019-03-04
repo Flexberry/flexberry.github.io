@@ -6,7 +6,7 @@ toc: true
 permalink: en/gma_build-mobile-app.html 
 lang: en 
 autotranslated: true 
-hash: e04bbd4d16cf70526613176c0e9a90649f98a0c3a50e5a5620ef15971c983bec 
+hash: 5fe4e538da614e2a5d41cebedd2c58565883510596ad9ba762d5f9371a71ac13 
 --- 
 
 ## Description 
@@ -30,7 +30,7 @@ This step describes the process of adding and build mobile applications. To asse
 ![](/images/pages/guides/mobile-app/mobile-app-build1.png) 
 ![](/images/pages/guides/mobile-app/mobile-app-build2.png) 
 
-{% include note.html content="To build mobile apps for a specific platform, use the command `cordova build platform_name`" %} 
+{% include note.html content="To build mobile apps for a specific platform, use the command `cordova build имя_платформы`" %} 
 
 In the result of the execution of this step will create the installation files for mobile applications. Next will be considered process launch mobile applications on the device. 
 

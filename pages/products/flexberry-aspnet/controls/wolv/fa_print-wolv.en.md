@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_print-wolv.html 
 lang: en 
 autotranslated: true 
-hash: e815211b8d353125fe6cd3460d0ab41fe86f2fcea720b16127c5fa4a69794123 
+hash: be956592c2069ece98701d022cadc90e1d138b3789c393e6b1562580373562a5 
 --- 
 
 In order to enable printing WOLV, you need to set the value `Operations.Print = true`. To print on the toolbar there is a button `Печать`, when clicked, without reloading the page, a window will open where you can select the required columns to print. 

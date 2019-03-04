@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-operations.html 
 lang: en 
 autotranslated: true 
-hash: a9d173b490464fc7fa6bffe969a63bae7ebe70b020ceebd698c3a7381bc3fbeb 
+hash: d4275448bfa1fc7cd59240447c60daed93c07f413b1cdffd4cc6aadb3e13782f 
 --- 
 
 By using Operations, you can configure the behavior WebObjectListView. 

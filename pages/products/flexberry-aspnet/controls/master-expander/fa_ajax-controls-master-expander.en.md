@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_ajax-controls-master-expander.html 
 lang: en 
 autotranslated: true 
-hash: 8ba871e1e575e4c41be56e6d12617ea7b63ac1c613648c20fdda7b3684163158 
+hash: c7126be85bcd7c4f89d0ad273556976cdf8eb4c23d5b89241ad8076f0334c198 
 --- 
 
 Web control for displaying objects deployed by groups formed according to the value of the master. Objects without a master are placed in the category `Остальное`. To display each group uses control [ObjecTileView](fa_ajax-controls-object-tile-view.html). 

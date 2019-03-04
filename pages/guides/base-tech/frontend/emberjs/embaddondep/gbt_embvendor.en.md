@@ -7,7 +7,7 @@ permalink: en/gbt_embvendor.html
 folder: guides/base-tech/frontend/emberjs/embaddondep/ 
 lang: en 
 autotranslated: true 
-hash: d5feef6c19410e93199b33000eab19ec50ec6517f0df4df9f2551e31a0c6e134 
+hash: e911493a4d60836458866f1d52a19d47e3fd7ed12200e58cfaed8edb0cfa53bd 
 --- 
 
 ## Brief description 

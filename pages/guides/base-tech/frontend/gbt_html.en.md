@@ -7,12 +7,12 @@ permalink: en/gbt_html.html
 folder: guides/base-tech/frontend/ 
 lang: en 
 autotranslated: true 
-hash: 04d40ab4f3a49872f982eeca11c3bdd902696365da25565ebffbca9879dc0817 
+hash: 3804bde7046cd5cdd07db236099729285d86afa870ae82439e8e01bfdbe1b701 
 --- 
 
 ## Brief description 
 
-**HTML** (from the English. HyperText Markup Language "hypertext markup language") is a language that describes the structure and content of the web page. Most web pages contain a description of the markup language or HTML [XHTML](https://developer.mozilla.org/ru/docs/XHTML). The HTML language is interpreted браузерами; obtained by interpreting formatted text is displayed on the screen of computer monitor or mobile device. 
+**HTML** (from the English. HyperText Markup Language — hypertext `язык разметки`) is a language that describes the structure and content of the web page. Most web pages contain a description of the markup language or HTML [XHTML](https://developer.mozilla.org/ru/docs/XHTML). The HTML language is interpreted браузерами; obtained by interpreting formatted text is displayed on the screen of computer monitor or mobile device. 
 
 **HTML5** is not the next version of hypertext markup language, a new open platform for creating web applications using audio, video, graphics, animations, and more. 
 

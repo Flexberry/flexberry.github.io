@@ -7,7 +7,7 @@ permalink: en/gbt_embassets.html
 folder: guides/base-tech/frontend/emberjs/embaddondep/ 
 lang: en 
 autotranslated: true 
-hash: bc27287c5d1e59130119f608b649f2f5596bf3b4afa43e27823196c39e7fa785 
+hash: 33599ca16e15fbdaa857a39433ece8dd9aeb62f6be4055c8336ef3464d0dae32 
 --- 
 
 ## Brief description 

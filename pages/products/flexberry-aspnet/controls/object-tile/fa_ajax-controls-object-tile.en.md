@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_ajax-controls-object-tile.html 
 lang: en 
 autotranslated: true 
-hash: beb7e24a06a878e5de78217ae79a19a7973b7a82a55b6fdb9dfd4f047b4ab793 
+hash: b9ccf8c9a4e8ade716cac03be431b65cdcb7eb896413eeadc7cc5d98689106c9 
 --- 
 
 Control is used to display objects that are `DataObject`, according to a given representation, in the form of tiles on a web page. The default is to cast the attribute values to string, to change this you need to use a property `AttributeRenderers`. Implements interfaces `IObjectTile`, `IHavingResources`. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_ms-drop-down.html 
 lang: en 
 autotranslated: true 
-hash: bb619b9347a557dbda7a519afc2b4d9b37948b7061b6f463df1894906e34a9f1 
+hash: ac104d76651ee7615d7a00236cf3d7a82bb9d2aad45f03ab881ca1cb4cf1ee55 
 --- 
 
 `MsDropDown` is [web control](fa_web-controls.html), which allows you to view the list in a drop-down list (similar [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html)) with the icons for list items. 

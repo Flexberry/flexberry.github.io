@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_i-master-page-service.html 
 lang: en 
 autotranslated: true 
-hash: 83668b990979db13d86c61398f9f58ff3e6fbfc952741024ead01033f849eefc 
+hash: d7a34aee897df5f18df8596c79256b6e6985a0a3f35b5c0cfeb99723e95363f6 
 --- 
 
 `IMasterPageService` - the service interface for working with Master pages. 

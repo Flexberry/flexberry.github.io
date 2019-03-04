@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_set-exception.html 
 lang: en 
 autotranslated: true 
-hash: e95dfed2784140ac8b1046b7f625660ce564772975c14b3a8e60ebffe98a1684 
+hash: d77260c95356015101aec63a12974afb1cba1b7a192907821aaf81e26c2dbacc 
 --- 
 
 Check the quantity of goods specified in the order. 

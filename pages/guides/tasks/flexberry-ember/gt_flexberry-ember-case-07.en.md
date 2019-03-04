@@ -1,18 +1,18 @@
 --- 
-title: Option 7 - the "Program guide" 
+title: Option 7 - `Программа телепередач` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-07.html 
 lang: en 
 autotranslated: true 
-hash: 64df971d1e82d0f9d1f1d98f0d344e80a42c56854314540918d79a9bebde565d 
+hash: c50985e0508e4ead97f15e76ba9140c6c4f141e0323abfa81cfebb056f8cfa85 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application "Program guide" (the IP for the conduct of programs of television broadcasts of different channels). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Программа телепередач` (is to conduct programs of television broadcasts of different channels). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

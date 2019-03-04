@@ -1,18 +1,18 @@
 --- 
-title: Option 1 - "table tennis" 
+title: Option 1 - `Настольный теннис` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-01.html 
 lang: en 
 autotranslated: true 
-hash: 7a46198f86b54caf93759039ce58db932c56fb6d3239357f029404a194c647cf 
+hash: dd1af7ec979fd02b9b68594aa6539ba6795083f5518d0eedfa443e5636feaa0f 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the app "table tennis" (is for automation of the account of results of games of table tennis). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Настольный теннис` (IP for automation of the account of results of games of table tennis). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_lookup-settigs.html 
 lang: en 
 autotranslated: true 
-hash: f50b1907d6d7c15d284e0f7b67926d046c89270c99086733679e664c2198f193 
+hash: 4995113d3b6a9df946353e0de4417d62de57b27c4a58e287291d9d50c0301677 
 --- 
 
 * `ColumnsSort` - sorting by columns in [WOLV](fa_web-object-list-view.html) to open the form. 

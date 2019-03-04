@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_prop-order-limit-editor.html 
 lang: en 
 autotranslated: true 
-hash: 890d21cb82ea6d9b17b3ac085447888b9cd30b9d3ebb39e4011e4b4a18274213 
+hash: e967d74b691d607339c6c91790657983b9f21e8d1ea97d71e9abd5215ce53dc8 
 --- 
 
 {% include important.html content="If you use [Advanced editor limitations](fa_advanced-limit-editor.html) in the session is recorded used a [view](fd_view-definition.html). If, after this was changed the following settings, then immediately changes may not be displayed. You must either start the editor in a different browser, or switch to private mode, or to clean entries in session." %} 

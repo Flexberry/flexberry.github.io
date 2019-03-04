@@ -6,7 +6,7 @@ toc: false
 permalink: en/gbpm_landing-page.html 
 lang: en 
 autotranslated: true 
-hash: d31eaa88e4c3484988bfc2f80c72f76e11349dfcd1cc931dc6d3636cd23fbe90 
+hash: 0826b54451c7665efe835c8bc553b071fb0ea441c1ac94856af08f619e68651c 
 summary: a Course on creating applications with the process component on the platform Flexberry. 
 --- 
 

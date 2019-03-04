@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_emberjs.html 
 lang: en 
 autotranslated: true 
-hash: 16413f3a2658dd7a9977bff239a06bcf3a60009f38b19250d4612c65a30ce648 
+hash: 57275222bdb57df7ed4db609fa616bfae8e5b2067890b2e277585ab299144897 
 --- 
 
 ## Brief description 

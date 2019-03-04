@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_read-only-age.html 
 lang: en 
 autotranslated: true 
-hash: 2d20d1b30bb1a60842ec3cc340678ebe0bc1ab663aafb69e310f84c6c4a44b9d 
+hash: 7902ec5b187ed076a4d5eb9f8a30e0f756928d00f6dbf025bddb4174a974de88 
 --- 
 
 Since technology does not provide for the scenario where any individual column [AGE](fa_ajax-group-edit.html) read-only, standard method no. 

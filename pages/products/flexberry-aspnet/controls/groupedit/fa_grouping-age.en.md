@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_grouping-age.html 
 lang: en 
 autotranslated: true 
-hash: 861353672e527b889da14fb5e3404950b604468e7615d15cd73fd508d841f4bc 
+hash: ea0021556ee413b97365bbff1ce648755a2464c2ce6f82e91e68efd109484290 
 --- 
 
 You can group columns on master (master of masters, etc.). For this AGE is the Grouping property. 

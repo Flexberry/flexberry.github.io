@@ -7,7 +7,7 @@ permalink: en/gbt_mobile.html
 folder: guides/base-tech/mobile/ 
 lang: en 
 autotranslated: true 
-hash: 0bbdb94d0986003487350f016d88b77695a5ebdfe2ed9e20085374b05356a3ed 
+hash: 511f5686d031dcce4d65295e81b1887d1898ee4d363b5dbbd3de2e46ff96bf1d 
 --- 
 
 ## Brief description 

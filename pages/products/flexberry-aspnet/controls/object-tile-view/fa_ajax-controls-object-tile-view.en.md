@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_ajax-controls-object-tile-view.html 
 lang: en 
 autotranslated: true 
-hash: f09f3884becf143f9fcd036ced334fbf2d5836eedcf05f135e66f579ed9b3431 
+hash: a310d36dd48f27d5fa879a02bc2790169401d0a48e4563ef5e44ee3ce075ef04 
 --- 
 
 To display a specific object is a control that implements the interface `IObjectTile`. Type of tiles is defined by the property TileType. The default as used tiles [AjaxControls.ObjectTile](fa_ajax-controls-object-tile.html). 

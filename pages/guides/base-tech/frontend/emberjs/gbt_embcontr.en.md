@@ -7,7 +7,7 @@ permalink: en/gbt_embcontr.html
 folder: guides/base-tech/frontend/emberjs/ 
 lang: en 
 autotranslated: true 
-hash: 43b7a79beffe200bae4f9c8d510551425df098f85e266461b9236490933892fa 
+hash: ec3489e3de49ce8530baf916aa5d24861cf088e0fb9404d2a004882e4f5908de 
 --- 
 
 ## Brief description 

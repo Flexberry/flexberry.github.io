@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-sett-applyer.html 
 lang: en 
 autotranslated: true 
-hash: 5cf75adb9215637df0b918b276b9da4cfe4aeab9d67c59ddbc41f7b947989c66 
+hash: 4540c7238b2970d0a48a9f0473c6c2a16275e8d93899cd729db6e98ba5f97393 
 --- 
 
 WolvSettApplyer needed in order to uniformly handle the application settings to [WOLV](fa_web-object-list-view.html) on the whole project. It comes with Flexberry ASP.NET but it can be modified to meet specific project needs. 

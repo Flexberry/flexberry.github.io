@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_show-hide-div.html 
 lang: en 
 autotranslated: true 
-hash: 666edb64d3d1b5b4c25478cd2049871c3d96065a8254f066664674ee7f4a69a7 
+hash: 130ddd7cdd1ac4105c721e9b168013de3c552004ba695497c5c90ea27db899c7 
 --- 
 
 `ICSSoft.STORMNET.Web.AjaxControls.ShowHideDiv` - control for showing/hiding content. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_add-objects-age-initialization.html 
 lang: en 
 autotranslated: true 
-hash: 7a7e3551208dae649bb4a185cfb9f5f8552ba1c4f5f28ee000e7765b9bf7fbc7 
+hash: 0dfff5d9acfdfc8fc5592702bbc00451a865510859072857ff86ddb156c51ea7 
 --- 
 
 ## Algorithm add objects to AGE at form initialization 

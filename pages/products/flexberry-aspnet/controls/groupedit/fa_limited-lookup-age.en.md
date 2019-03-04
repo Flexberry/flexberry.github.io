@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_limited-lookup-age.html 
 lang: en 
 autotranslated: true 
-hash: d6585312a1f3f9f4052aa90e389131cab1096644612cab6e56d0fe715430d2d9 
+hash: 4693b433ac29d7f459a4b5a71619d15a594531445be7323f56d17bf446925a59 
 --- 
 
 There are situations where [LookUp](fa_master-editor-ajax-lookup.html) for strings [detail](fo_detail-associations-properties.html) you want to insert only certain values. For this [list](fa_web-object-list-view.html) opened on the LookUp form you want to restrict. However, [AjaxGroupEdit](fa_ajax-group-edit.html) has its own characteristics that must be considered. Resulting in [the code looks a little more complicated](fa_settings-lookup-age.html) than at the [restriction to "normal" LookUp](fa_lookup-limit-web.html). 

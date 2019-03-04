@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_technological-forms-customization-example.html 
 lang: en 
 autotranslated: true 
-hash: 748e9936ac2dcd5345789177ba9ad13938e89dea9542514da35757512882e844 
+hash: 8c53065c6a8efb443f739a26017abb36b949d7c6c9cfc1a40ea909131082873f 
 --- 
 
 Settings technological forms [web applications](fa_flexberry-asp-net.html) are carried out using the service `DynamicPageTuner`. The class was in section `unity`. 

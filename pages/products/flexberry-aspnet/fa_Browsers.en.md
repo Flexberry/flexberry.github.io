@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_browsers.html 
 lang: en 
 autotranslated: true 
-hash: dfb1a96ce831994cd085fea2bea6cef4c0bcf63faa7740d0f1938d101616351e 
+hash: 3f3526f6520ffc67cf55e1ce9f0665d3398848135833e0ccdc1abe50917a28aa 
 --- 
 
 ## Browsers 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_class-diagram.html 
 lang: en 
 autotranslated: true 
-hash: 6114fa4d3356a29c980086f030d801c1843be163fa8ad370cecb29b9e8add3b1 
+hash: 9d53b9f87373487d04b221cfcb96b7ff4bcabb089465983d2e9e0d4522d673bc 
 --- 
 
 Once defined the functional requirements for the system and its boundaries, should be subject `проанализировать область` to build [the class diagram](fd_class-diagram.html). 
@@ -37,8 +37,8 @@ Also, at the ends of the Association under the multiplicity can be specified `и
 
 ![](/images/pages/guides/flexberry-designer/association.png) 
 
-`Агрегация` (`aggregation`) is an Association of the type "whole-part". Aggregation in UML appears to be a straight line with a diamond at the end. 
-`Ромб` connected specifies which class is `агрегирующим` (i.e. "consisting of") the class from the opposite end — aggregate (i.e., those "parts"). 
+`Агрегация` (`aggregation`) is the Association of type `целое-часть`. Aggregation in UML appears to be a straight line with a diamond at the end. 
+`Ромб` connected specifies which class is `агрегирующим` (i.e. `состоящим из`), class from the opposite end — aggregate (i.e. those `части`). 
 
 ![](/images/pages/guides/flexberry-designer/aggregation.png) 
 
@@ -47,13 +47,13 @@ It is important to understand the difference between aggregation and composition
 
 ![](/images/pages/guides/flexberry-designer/composition.png) 
 
-`Наследование` (`inheritance`) is a relation of type "General-private". Allows you to define such a relationship between classes when `один class has the behavior and structure of a number of other классов`. When you create a derived class from a base (one or more) there is a hierarchy of inheritance. Implementation inheritance is a key prerequisite for reusability of code, since it is the main tool to achieve polymorphism. 
+`Наследование` (`inheritance`) is the ratio of type `общее-частное`. Allows you to define such a relationship between classes when `один class has the behavior and structure of a number of other классов`. When you create a derived class from a base (one or more) there is a hierarchy of inheritance. Implementation inheritance is a key prerequisite for reusability of code, since it is the main tool to achieve polymorphism. 
 
 ![](/images/pages/guides/flexberry-designer/inheritance.png) 
 
 ## how to build class diagrams 
 
-1. To create a new graph with name "Entity". 
+1. To create a new graph with the name `Сущности`. 
 2. To perform the subject area and to build a class diagram. You should get a chart similar to the example: 
 
 ![](/images/pages/guides/flexberry-designer/class-diagram.png) 

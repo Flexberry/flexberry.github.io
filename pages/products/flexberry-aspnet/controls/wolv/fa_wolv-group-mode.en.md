@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-group-mode.html 
 lang: en 
 autotranslated: true 
-hash: eca6384b5cea69d4a35a56fc9843b1a250563ebc6d93d10bf7fc0ef399bc8bab 
+hash: 11542c7d72b229ed53b8300acc4dc8ba0733ec917436b07d0617dd10605cb607 
 --- 
 
 ## mode group data 

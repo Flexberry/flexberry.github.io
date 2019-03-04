@@ -1,5 +1,5 @@
 --- 
-title: Option 04 - "Sports school" 
+title: Option 04 - `Спортшкола` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-04.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 9fcb379351828c32497d824258eddfd9be7fd14244dd723889a82a5d805f7a8c 
+hash: 160efae8e99065c2f94cde2d071dbba4fa24f2c8926e2e811032af868b455125 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the app "Sports school". 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Спортшкола`. 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

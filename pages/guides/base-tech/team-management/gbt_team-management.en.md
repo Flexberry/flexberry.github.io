@@ -7,7 +7,7 @@ permalink: en/gbt_team-management.html
 folder: guides/base-tech/team-management/ 
 lang: en 
 autotranslated: true 
-hash: bb6381d0e0ae699e834732d099ddca4810b05730b2f77bc10b3025c2ad1b5ba8 
+hash: b10a97eb5e7e00c9bcb5d1c62f608218e95506964ab5bc001e97674f3a9bfdd3 
 --- 
 
 ## Brief description 

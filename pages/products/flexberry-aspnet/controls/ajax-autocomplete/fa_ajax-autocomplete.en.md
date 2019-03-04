@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_ajax-autocomplete.html 
 lang: en 
 autotranslated: true 
-hash: e84bdd31154455e694f4066be44b032cdef3fb5a775ce33ec88d6f776216ca22 
+hash: 2276ac97f8ec78ce32dc6a4e0991bdf08979eafea25c0dfa77e6a7f5cf64bb51 
 --- 
 
 With `AjaxAutocomplete` possible, for example, when you edit the object name to get auto-completion for this field, which will offer the names of existing objects that begin with the entered characters. `AjaxAutocomplete` use of jquery ui so jquery ui will need to be connected. 

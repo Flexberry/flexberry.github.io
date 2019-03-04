@@ -7,7 +7,7 @@ permalink: en/gbt_emddata.html
 folder: guides/base-tech/frontend/emberjs/ 
 lang: en 
 autotranslated: true 
-hash: f8ad6c4d70e0eddcfb8d48f6591150342115b00e7d055b094b635dfc1eb3ad7d 
+hash: f9b12622fe500abcda0c6dca9a101efdf9477f83f7f7f780db7b91ded1e345ea 
 --- 
 
 ## Brief description 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_limit-function-parameters.html 
 lang: en 
 autotranslated: true 
-hash: da24df1d8bd20f6f9ef5e8fc24c173f70f5c4571292a1e9bc7e7800a809aa0d3 
+hash: 0f609fba4ec5bee3443c58909cc4ad90e2340766f9ef762256600ddd8b8748d4 
 --- 
 
 To pass parameters to a function in the class `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` there is a method: 

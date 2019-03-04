@@ -1,5 +1,5 @@
 --- 
-title: Option 03 - "rent of land" 
+title: Option 03 - `Аренда land участков` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-03.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 7fb47272d84f3b617744915067c55bb1a33fe8b05e5ddc5534137f4632433dd6 
+hash: b624a1f17a0ee5f1d49d4ba4a09062a647a733767a004c92a0ac29d22181abf7 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the app "rent of land". 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Аренда land участков`. 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

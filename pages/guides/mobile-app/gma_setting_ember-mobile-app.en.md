@@ -6,7 +6,7 @@ toc: true
 permalink: en/gma_setting_ember-mobile-app.html 
 lang: en 
 autotranslated: true 
-hash: 9eeac4a8dc87c05d5f71bbc2f2000bcf11bf1fb8a3c70ed8b25100bf254bfdae 
+hash: 1e9f50910ce32203ee3d10b854c489071df0f0b8166878bf59b4bfc4f8d3d22f 
 --- 
 
 ## Description 

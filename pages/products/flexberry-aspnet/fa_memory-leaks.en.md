@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_memory-leaks.html 
 lang: en 
 autotranslated: true 
-hash: 1899b630615ac454da585fd80ace6b6556f36b3ad7860c6fe359793b47dc022f 
+hash: 553700398a5ba32d337f00662b7557e92faf033bb998744bc256fe6a0d97bcc6 
 --- 
 
 The first is to pay attention to: 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-limit-editor-external-class.html 
 lang: en 
 autotranslated: true 
-hash: c3124592d133b38d877ba3cacdc17fb9766f5fe9dec7cc9b02dcf7ea47b705ae 
+hash: f8b3351e378fa6324ee52b22dd8af3eba1e11ed6efd998ea76379d2478344ee1 
 --- 
 
 When deserializing [limitations](fa_advanced-limit-editor.html) the system must find used to [limit](fa_advanced-limit-editor.html) types. For type search uses a set of system assemblies, as well as the current executable Assembly. If [the limitation](fa_advanced-limit-editor.html) there is a class, for example, inherits from [external-class](fd_external-classes.html), then when deserializing, an error may occur because the system can't find the type specified in [limit](fa_advanced-limit-editor.html). To solve this problem you can specify in the. config file of the Assembly, which can have the types used in [the limitation](fa_advanced-limit-editor.html). 

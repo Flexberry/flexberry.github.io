@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_asp-net-generator.html 
 lang: en 
 autotranslated: true 
-hash: 0189c11faadaf9771b112cb3c5e0e79f316bc0d0a3f71bc56dd8e0319f453780 
+hash: 7a7e5425c8719b3566ed76aa1e70b1fbf81a683a60d796354bee1812ceafc735 
 --- 
 
 ## Example of using Flexberry ASP.NET 

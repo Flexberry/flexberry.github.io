@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_lookup-form-hierarchy.html 
 lang: en 
 autotranslated: true 
-hash: ee55d2199ff133f2b4e7902152b85ee8b15aafc34ad42e2d4320da6ffd4ffc9a 
+hash: 7b1e84de2fe8898af59a2e26a23fa6f05e049753829455df541fe89cbd4c6357 
 --- 
 
 Two ways by which you can display the data on the LookUp form a hierarchical view: 

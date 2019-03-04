@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_routing.html 
 lang: en 
 autotranslated: true 
-hash: 83e4a12245aefd00f4d96719868c8a547d6dc35117ee9a312cb69463ac635f8b 
+hash: f3f9ddbfa596222adb72dd9063ea67ba477479e35c5657f8a772e5288be7621b 
 --- 
 
 ## Routing 

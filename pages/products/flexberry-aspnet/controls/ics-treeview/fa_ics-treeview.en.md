@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_ics-treeview.html 
 lang: en 
 autotranslated: true 
-hash: 6c94613d13e1a699fe50eb3d620d0c630fe4ee1604106c175bb7c897628b26bc 
+hash: 8546d1b1121ebb9bf51855da76131f8062baafbc9e8bfc8bcc5cb612cbfa94af 
 --- 
 
 Web control `ICSSoft.STORMNET.Web.AjaxControls.IcsTreeView` - heir `System.Web.UI.WebControls.TreeView`, differs in that it is able to remember the state in cookies and to expand/hide the branch by clicking on the inscription of the site instead of the arrow to the left. 

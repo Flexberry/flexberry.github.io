@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-controls.html 
 lang: en 
 autotranslated: true 
-hash: 8191482a0727a70f5c68a9f73da5c99962e547b2bd2ff6a176e32790be9d5b64 
+hash: 4423ad117b0f451f6ae7e1cc79d90aeca7ade6a00f6adf85220be383bcf3d5de 
 --- 
 
 ## Web form 

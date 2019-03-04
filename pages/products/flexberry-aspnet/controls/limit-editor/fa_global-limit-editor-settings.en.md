@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_global-limit-editor-settings.html 
 lang: en 
 autotranslated: true 
-hash: 9baa8aeef6cbbb27cd25ee4a9cda060b3f5f2874be3aa85deb2db99dc965f155 
+hash: 725480e49d06d53100acb0f92bcee861cf2ffc45fe3868bcc63a68bb086ea2bc 
 --- 
 
 Global settings [editor limitations](fa_advanced-limit-editor.html) allow you to specify in one place the settings that will be used for all runs in this app editors restrictions. 

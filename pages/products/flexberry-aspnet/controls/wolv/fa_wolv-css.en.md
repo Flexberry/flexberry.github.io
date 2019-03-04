@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-css.html 
 lang: en 
 autotranslated: true 
-hash: f183ba61641c85c13d10199cdcce7d23d01a986884feea3e97fbbf277840a8cb 
+hash: 446de0e146a616226926e3cc9b2112c661b96cf92e41352e0a0a154031ccef4e 
 --- 
 
 The ability to customize the display [WOLV](fa_web-object-list-view.html) via CSS displayed in the internal structure and the CSS classes: 

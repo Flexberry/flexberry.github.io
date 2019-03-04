@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_base-list-web-control.html 
 lang: en 
 autotranslated: true 
-hash: 2648789353cd3a05698fd199235432a797ed22aaa7407913a512f6c32481aef7 
+hash: 8cc77bfcca9b09db547177fcd1e810bd0a23dc82d31f7ee88f6565f2af8fe81c 
 --- 
 
 ## Description 

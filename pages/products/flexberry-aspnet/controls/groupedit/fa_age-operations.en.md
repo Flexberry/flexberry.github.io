@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_age-operations.html 
 lang: en 
 autotranslated: true 
-hash: 820c87c9bfd1a5cd19a14966a15070eba030bc925c82f6f8e47de0d718fa62c4 
+hash: 87c32e0743c7d3e0d76eabcd5116ee1679267462ae12f7af495a32501948844e 
 --- 
 
 ## Description of operations 

@@ -6,7 +6,7 @@ toc: false
 permalink: en/fan_mondrian-cube.html 
 lang: en 
 autotranslated: true 
-hash: 07a15d7efaacac7d4b0e2446e33ffef8c6ce89041055db45e88cec81b35977be 
+hash: 85d39e8d637494d1397f6d5fdc2c866d11e6580bf31a6cb7ba1b0916f4057df2 
 summary: 
 --- 
 
@@ -38,7 +38,7 @@ Sets the DB connection: `Options -> connection`. In the window that appears in s
 
 ## cube Creation 
 
-* Created schema, you must create a cube (PCM scheme and click "Add cube") 
+* Created schema, you must create a cube (PCM scheme and click `Add cube`) 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-002.png) 
 
@@ -48,7 +48,7 @@ The attributes of the new cube to fill:
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-003.png) 
 
-* Next, you need to add the fact table for the cube (RMB on the cube and click "Add Table"); 
+* Next, you need to add the fact table for the cube (RMB on the cube and click `Add Table`); 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-004.png) 
 
@@ -61,7 +61,7 @@ The attributes of the new table to fill in:
 
 ## Create A Measure 
 
-Add measure to the cube (RMB on the cube and select "Add Measure") and fill in: 
+Add measure to the cube (RMB on the cube and choose `Add Measure`) and fill in: 
 
 ![](/images/pages/products/flexberry-analytics/mondrian-cube-006.png) 
 

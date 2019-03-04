@@ -1,5 +1,5 @@
 --- 
-title: Option 12 - "table tennis" 
+title: Option 12 - `Настольный теннис` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-12.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 01e67894084ea7816924ae8016bf7c59f09c0024fd4ef0fc65a5b64344d3ca1a 
+hash: bed90ac01233a0a7ca9105e441a489b93a0c1ade01d8a5a0cb19b3da007faebb 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the app "table tennis" (is for automation of the account of results of games of table tennis). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Настольный теннис` (IP for automation of the account of results of games of table tennis). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

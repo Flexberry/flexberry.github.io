@@ -7,7 +7,7 @@ permalink: en/gbt_design.ru.html
 folder: guides/base-tech/design/ 
 lang: en 
 autotranslated: true 
-hash: 3e0261f064c292fa33fb34ca723c62b42825c1fa984021ee51fcc5548a0bbe32 
+hash: 05dca177b8c88720ca81ceb693141de11407873b8c7a9bd67dc002319f5bcdd4 
 --- 
 
 ## Design 

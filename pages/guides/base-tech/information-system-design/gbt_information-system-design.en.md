@@ -7,7 +7,7 @@ permalink: en/gbt_information-system-design.html
 folder: guides/base-tech/information-system-design/ 
 lang: en 
 autotranslated: true 
-hash: 8446e3458a15dedb4eed7879c98e5fd6f53b1f3173cca9f0954f1b36cd4cb962 
+hash: 0696fd9ff1cc4e8289a324698802a76a022be49da92873b5d93f3e268f5087aa 
 --- 
 
 ## Brief description 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_hints-attributes.html 
 lang: en 
 autotranslated: true 
-hash: 3a071513a1ab940b3cd70d5d1fe66e9ac34e05636e45d4d7e2cd88e1cbafb829 
+hash: 069c9c094ee8578fbaa3184ec5ba56b4af492093259c645cbc0b1487d817a1da 
 --- 
 
 Technology Flexberry [attribute](fo_attributes-class-data.html) added `Hint` property containing the tooltip for the field. 

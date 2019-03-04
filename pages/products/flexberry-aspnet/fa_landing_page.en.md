@@ -6,7 +6,7 @@ sidebar: flexberry-aspnet_sidebar
 permalink: en/fa_landing_page.html 
 lang: en 
 autotranslated: true 
-hash: 53bd6b504d0a8f7a773a2b0106a28f891deb28b3c3dbbe11a56e1a6624ead44f 
+hash: e2508d3174f7f2e118025b25ce8207affae52b8d18c5cd3397479eff067693fd 
 --- 
 
 ## ASP.NET 

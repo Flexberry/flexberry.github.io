@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-hierarhy.html 
 lang: en 
 autotranslated: true 
-hash: 05cb08f46ccdad90303a2199e1241a73aced1598a6cc3275d40600ef0a1fc201 
+hash: 7cef92af4f8b13700e4124a437fc38da563d1eef2c6db7c00e820012385bbd4a 
 --- 
 
 Hierarchical WOLV is not a separate control, it is common [WebObjectListView](fa_web-object-list-view.html) that is configured in a special way. 

@@ -7,7 +7,7 @@ permalink: en/gbt_devcomp.html
 folder: guides/base-tech/frontend/emberjs/ 
 lang: en 
 autotranslated: true 
-hash: d289b1b2280c13a012f484fee9c3408788f64d320926f4692114ebcc21bcc526 
+hash: 471ecf5c17a08c7c5d9d82e32aabab425e9298521c3d62b27e8994c93770e0e6 
 --- 
 
 ## Brief description 

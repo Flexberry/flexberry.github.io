@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_placeholder-page-content-connector.html 
 lang: en 
 autotranslated: true 
-hash: cc0b7abd48ce8644ab781e71638b71833dd45a730c0dbc299ea5a244bb5a7a0f 
+hash: 99061a34e5b2d5731450243b15cc671f72a1d7cc07fed89fe0dc2068021720d7 
 --- 
 
 Class `PlaceholderPageContentConnector` is used to connect the technological scripts and styles necessary to operate the controls and runtime using the controls-placeholders. This method allows you to configure your application more flexible by adding application code before/after the technological and user. 

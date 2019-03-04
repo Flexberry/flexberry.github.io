@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_age-css.html 
 lang: en 
 autotranslated: true 
-hash: 6edbfda2ecd1af53214cfccc62873c0b63b54190af5bbfcc1df7022af285439b 
+hash: 396f2acd4a8c1c268f06aa6be5f17a22b808d43d7b76b59ec4db41c01b422cda 
 --- 
 
 ## HTML structure 

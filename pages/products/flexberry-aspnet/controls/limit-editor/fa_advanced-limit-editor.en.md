@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_advanced-limit-editor.html 
 lang: en 
 autotranslated: true 
-hash: ea345c7182f9d9d3a5498f4066d023f15f03c88511e0c5ab2856d0dc543f35cd 
+hash: 6f8d2f6c675b493a406127a07d7d0fc1bbc59aefe4cff1eb2cca8a04e0eebfed 
 --- 
 
 ## a List of user-defined functions 

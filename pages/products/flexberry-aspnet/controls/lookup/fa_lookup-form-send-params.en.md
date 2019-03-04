@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_lookup-form-send-params.html 
 lang: en 
 autotranslated: true 
-hash: 7c484676d850e9c6320d263757dc5d54d6ab6153392243e21b230c3c9fea7407 
+hash: d2aa51e1d2a84091ba5ef69c0a36ceb30944b363d7b475529b549032115ae0fe 
 --- 
 
 This article applies to technological [LookUp-form](fa_tech-forms-web.html) and describes how to transfer their own parameters in a LookUp-form with [JavaSript API](fa_lookup-overview.html). 

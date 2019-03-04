@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_formatted-datetime-control.html 
 lang: en 
 autotranslated: true 
-hash: c8b5c9cac7375e35485bc2241aaa964d1b232107be996a612093424dcb561d0b 
+hash: 67d4ef6f4ca44d14e7107dea6b9577b221053c9a26a4ef6e70dc5e6ed4403ad8 
 --- 
 
 ## Description 

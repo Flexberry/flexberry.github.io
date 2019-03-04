@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_master-editor-linked-ajax-lookup.html 
 lang: en 
 autotranslated: true 
-hash: b18f5b8856740ab5d3c52692fb951ea3b7559f56c6f9b9c3c01d054256bb3014 
+hash: 068de1205007f57690ebebd46c9f60695619e2318fcd14e089408325bc27d8f0 
 --- 
 
 {% include warning.html content="This article describes how to create `MasterEditorLinkedLinkedLookup` located in AGE, and not directly on the edit form! 

@@ -7,7 +7,7 @@ permalink: en/gbt_deployment_windows.html
 folder: guides/base-tech/deployment/ 
 lang: en 
 autotranslated: true 
-hash: ed53a8cd8825f0020f01ec5d3738a7db5e2e86e813d14f10cdeef2b59882099a 
+hash: b626f3d82010a0737227b2f03399b839ec8db832c4978e0ad6590b2a0f3cd0a2 
 --- 
 
 ## Brief description 

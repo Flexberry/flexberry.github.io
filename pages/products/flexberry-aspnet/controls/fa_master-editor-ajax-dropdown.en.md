@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_master-editor-ajax-dropdown.html 
 lang: en 
 autotranslated: true 
-hash: e486d645c57597e0e5153a88864f2ba8183e0ebb65f5ed69600513ab576e9594 
+hash: 9383cf8540b4ca0d02b139507ccbedeb655f283ae32898d000a445f20764c1b6 
 --- 
 
 `MasterEditorAjaxDropDown` is [web control](fa_web-controls.html), which allows you to view the list of available artisan objects in a drop-down list. 

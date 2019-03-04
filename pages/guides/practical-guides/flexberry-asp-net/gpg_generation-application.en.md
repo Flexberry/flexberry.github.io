@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_generation-application.html 
 lang: en 
 autotranslated: true 
-hash: eb5947e37c7fe59fbb074a36468397758d7dcf458a470496c40b49a4e2e17e41 
+hash: ba8972e428a8c4d3c2f6694170c2416d32d38391ad9beb23cf0b50faf9fd5c9e 
 --- 
 
 1.Choose the stage (click the left mouse button). 

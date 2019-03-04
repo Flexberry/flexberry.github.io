@@ -7,7 +7,7 @@ permalink: en/gbt_embrout.html
 folder: guides/base-tech/frontend/emberjs/ 
 lang: en 
 autotranslated: true 
-hash: 8e153373a701f81b995129a59fca0f774e2908aa98b4ee8e8d3888a545bd52b4 
+hash: 98e5651e94de36c5fbe2522e26f102ab1f9c591b6e117f7379c8c1436a1a1513 
 --- 
 
 ## Brief description 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_page-content-manager.html 
 lang: en 
 autotranslated: true 
-hash: 7b022578857d566a923b6e5ddde1664739d95a53626c41dd5e5eae8c35bbafce 
+hash: 2d582e77db739766b60f53983672cf0047a3faa583811029505dc3b3e2dea5f4 
 --- 
 
 Class `PageContentManager` is designed to connect skitov (js) and styles (css) in C# code. 

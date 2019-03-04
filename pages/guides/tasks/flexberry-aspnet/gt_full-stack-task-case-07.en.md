@@ -1,5 +1,5 @@
 --- 
-title: Version 07 - "project Management Tasks" 
+title: Version 07 - `Управление projects Задачи` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-07.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 636b6c0c422de1c913359c6ad63f86b2146983a6fb4399a592a35539e913ca30 
+hash: ecd8d84d378616c2be457b6d9711dcc6b87f2d90a64e5250a3b92ea4f48460d5 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application "project Management Tasks" (module IP for project management). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Управление projects Задачи` (module IC for project management). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

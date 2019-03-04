@@ -1,18 +1,18 @@
 --- 
-title: Option 21 - "Gorvodokanal" 
+title: Option 21 - `Горводоканал` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-21.html 
 lang: en 
 autotranslated: true 
-hash: 0cef6a4a263c8268372d13f4afa1bc31721a6ed811643d9eefe233b1eacfb9e8 
+hash: 5edd055ccce27cadda1459f49c9fcd23ad54dbcabfa77207598ac643082a3955 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application "workorders teams of Gorvodokanal" (the IP for the automation of accounting applications and perform work on it). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Сменные of the task teams Горводоканала` (IP for the automation of accounting applications and perform work on it). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
@@ -44,7 +44,7 @@ The algorithm is fed
 
 The output should be a two-dimensional array, in which each row represents one team, and the enumeration in the line – ordinal number of bypass applications. 
 
-The implementation should be done .net-libraries and to prepare unit tests (xUnit), to demonstrate the percentage of code coverage from unit tests (the more the better). 
+The implementation should be done .net-libraries and to prepare unit tests (xUnit), to demonstrate the percentage of code coverage from unit tests (the more the better).
 
 
 ### Providing performance verification 
@@ -158,7 +158,7 @@ In generated using Flexberry Designer application is required to implement the f
 2. To implement a business server that will not allow the removal of shifts with shift assignments that had been performed. 
 3. To implement a business server that will control indicated whether all the actual values for execution of works in shift job and generates event-exception otherwise 
 4. To add a stored field in the class Line Replacement jobs, which will reflect the full information about it: date, team, address 
-5. To add a stored field application Status, which will show whether carried out works on elimination of the accident.
+5. To add a stored field application Status, which will show whether carried out works on elimination of the accident. 
 
 ### to deliver results 
 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_mssql.html 
 lang: en 
 autotranslated: true 
-hash: ddf578a6fe88593240b2978d177eab4da03f522545025cbfa619865a683e157f 
+hash: 00a15d2fc60bce8d3e47c086fa0877062f2f9011943aa6c6d5bcc245b2b5a279 
 --- 
 
 ## Brief description 

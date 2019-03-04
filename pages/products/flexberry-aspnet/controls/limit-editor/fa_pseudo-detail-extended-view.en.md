@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_pseudo-detail-extended-view.html 
 lang: en 
 autotranslated: true 
-hash: efe37b72423006b809fb2d0efa87790ac7613585e985f12dae47b0ee4b8acb9d 
+hash: 3a63c0e027f016ad5355603532f56ab61a7361933700af7033f350ef338997b1 
 --- 
 
 `PseudoDetailInExtendedView` structure used for work [pseudometal in the advanced editor, limitations](fa_details-limit-editor.html). 

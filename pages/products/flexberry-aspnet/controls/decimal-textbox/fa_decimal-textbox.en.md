@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_decimal-textbox.html 
 lang: en 
 autotranslated: true 
-hash: 5dafe0cefb967cdf922672c561ed1631529efe85147e6dbe5c674aab87725f04 
+hash: b76839f957d8b94476bb2755b78febee0ee372295158f2823235e78ab5d2ef47 
 --- 
 
 ICSSoft.STORMNET.Web.AjaxControls.DecimalTextBox is [web control](fa_web-controls.html), which is a TextBox, which is superimposed on the input filter for validation of positive real numbers in the form of decimal fractions. It is similar to working with conventional TextBox'ohms, as is his heir. To separate the integer and fractional part, use a dot or a comma. 

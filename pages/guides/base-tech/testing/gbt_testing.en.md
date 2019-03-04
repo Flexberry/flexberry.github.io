@@ -7,7 +7,7 @@ permalink: en/gbt_testing.html
 folder: guides/base-tech/testing/ 
 lang: en 
 autotranslated: true 
-hash: b5bd4d9823377585866ccdeaf3b99fc9cbe48246162687b5a3f16e4e959d42b2 
+hash: 2801d6163c87737ac2ac961193ea187510d1d28c7b7b0f23932c210bce1f0ffa 
 --- 
 
 ## Brief description 

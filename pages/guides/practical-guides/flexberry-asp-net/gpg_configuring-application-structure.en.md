@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_configuring-application-structure.html 
 lang: en 
 autotranslated: true 
-hash: 9f85364c832f02ec1681e52040a811591222b9de9271828c5ef8fec882d03d2b 
+hash: 4aa378247bc74e7c15e2203f78a6bbf1974b27b71f4c3f0094c05f98fea096c6 
 --- 
 
 1.Open a class diagram of the prototype application (for example, `АСУ_Склад`). 

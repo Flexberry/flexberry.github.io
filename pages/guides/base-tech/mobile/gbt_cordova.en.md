@@ -7,7 +7,7 @@ permalink: en/gbt_cordova.html
 folder: guides/base-tech/mobile/ 
 lang: en 
 autotranslated: true 
-hash: 4b6b394f0ca1ff1f075f48f10bcf126174cb65df3b7f6d2c923ea36a18e20631 
+hash: 46cf1dd9cb8380be3c38cef38a97c31600d524098000ec065673bb4cb161ba5a 
 --- 
 
 ## Brief description 
@@ -18,7 +18,7 @@ Apache Cordova allows you to create applications for mobile devices using CSS3, 
 
 The resulting application is hybrid, which means that they are neither truly mobile application (because all layout generation are using the web view instead of the main structure of the user interface platform) or the web because they are not only web application, but packaged as apps for distribution and have access to the API the basic functions of the device, such as a file system, camera, etc.). 
 
-The software was previously called just "PhoneGap", then "Apache Cordova". As open-source Apache Cordova is used in other programs such as Appery.io or Intel XDK. 
+The software was previously called just `PhoneGap`, and then `Apache Cordova`. As open-source Apache Cordova is used in other programs such as Appery.io or Intel XDK. 
 
 ## Links to materials for the study 
 

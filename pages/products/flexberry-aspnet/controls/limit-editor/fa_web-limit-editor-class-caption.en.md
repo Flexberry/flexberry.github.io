@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-limit-editor-class-caption.html 
 lang: en 
 autotranslated: true 
-hash: 42f77eda24149d0b18dd6e0a5c989bf43b7479f2c20f36322104495972010e85 
+hash: cb326699ad30bc08302e98bf77759cf737bcce51338c20b483dbb87b361aa549 
 --- 
 
 In the expanded constraint editor](fa_advanced-limit-editor.html) default in the class header (the root vertex in the tree of available properties) is used the result of method [Information](fo_methods-class-information.html).GetClassCaption (the method returns or set the title for a class or class name). 

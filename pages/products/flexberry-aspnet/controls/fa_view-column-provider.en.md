@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_view-column-provider.html 
 lang: en 
 autotranslated: true 
-hash: 24d04a8325501983c005c8134cec5048b2a1e2e36b81dbe24dcecb2f7e5a7a2e 
+hash: e995456d875ff17e1a1f5d6fb06b3a8c38e28d7b1b49903ed90f43e01097b551 
 --- 
 
 `ViewColumnProvider` is a provider that allows you to configure the display of columns in the controls ([WebObjectListView](fa_web-object-list-view.html), 

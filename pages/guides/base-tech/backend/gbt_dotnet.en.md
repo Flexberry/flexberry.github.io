@@ -7,7 +7,7 @@ permalink: en/gbt_dotnet.html
 folder: guides/base-tech/backend/ 
 lang: en 
 autotranslated: true 
-hash: 795ca2f3318c839544e6ecbccbab43289551c9db8f1efc1c24f672d36d070d2f 
+hash: d11274de413916bdf452572aa1de4a88e47c9e7327d103db40623979cf6c781d 
 --- 
 
 ## Brief description 

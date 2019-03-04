@@ -1,18 +1,18 @@
 --- 
-title: Option 8 - "weather Forecast" 
+title: Option 8 - `Прогноз погоды` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-08.html 
 lang: en 
 autotranslated: true 
-hash: 2a6a4d283b1548c7c44b9ec8163b9b22528483e2ded1756bca72808f0a4d8e80 
+hash: 69c086729ba5228122bdb19fa270e4c746bfac10c4b538fb31149edcfab1a8ed 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the application "weather Forecast" (is to conduct forecast the weather for different areas). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Прогноз погоды` (IP to conduct forecast the weather for different areas). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
@@ -45,7 +45,7 @@ You want to implement an algorithm simulating the operation of the system of wea
 * The wind speed in the gusts 
 
 The forecast should be uniform, i.e. weather changes in various parameters should be relatively smooth, without abrupt jumps in different directions. The parameters must be consistent with each other, i.e., 28 degrees and snow do not occur. Add 5% deviation algorithm, which will give a sharply arbitrary, but consistent evidence of individual settings that you will need to adjust forecasters in manual mode. 
-The implementation should be done .net-libraries and to prepare unit tests (xUnit), to demonstrate the percentage of code coverage from unit tests (the more the better).
+The implementation should be done .net-libraries and to prepare unit tests (xUnit), to demonstrate the percentage of code coverage from unit tests (the more the better). 
 
 ### Providing performance verification 
 
@@ -79,11 +79,11 @@ You want to implement EmberJS application, which will be implemented form where 
 
 In EmberJS-utilities need to implement an algorithm simulating the operation of the system of the weather (see # 1). 
 
-The display of weather is required to: implement a component that receives EmberJS model. EmberJS-model, should be available from EmberJS-utility model hook in the routes of the form on which the component is added. 
+The display of weather is required to: implement a component that receives EmberJS model. EmberJS-model, should be available from EmberJS-utility model hook in the routes of the form on which the component is added.
 
 ### to deliver results 
 
-Implemented project to place in a repository on GitHub in the form of EmberJS project and published the app to GitHub Pages, which allow you to view the finished result. A link to the published repository and thus the project to provide teachers of the course.
+Implemented project to place in a repository on GitHub in the form of EmberJS project and published the app to GitHub Pages, which allow you to view the finished result. A link to the published repository and thus the project to provide teachers of the course. 
 
 ## Practical assignment No. 4 Database 
 
@@ -138,7 +138,7 @@ To accomplish the object design and the generation of Ember-application for the 
 
 ### to deliver results 
 
-The generated application and the scripts to create the database should be put in a repository on GitHub. To provide teachers with a reference to the repository. 
+The generated application and the scripts to create the database should be put in a repository on GitHub. To provide teachers with a reference to the repository.
 
 ## Practical task №7 - Development of business logic applications 
 

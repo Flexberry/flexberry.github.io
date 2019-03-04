@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_deployment.html 
 lang: en 
 autotranslated: true 
-hash: d099f7a121c3ea2838de02240d96537e45401ad3ccce7aab1050b29dd1a4a897 
+hash: 0ac5f2c10f3d954f7e652c24162a7dcd7cd50afed3fb15a882f46a9cf339cf84 
 --- 
 
 ## Brief description 

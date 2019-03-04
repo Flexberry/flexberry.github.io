@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-control-provider.html 
 lang: en 
 autotranslated: true 
-hash: afff32cc925cdecd5fb9bd4faa669f4efc4b5ced670e5e90522a4ca95c1cf175 
+hash: 78d942e11a819bc1752b1a17b4fc335b76492072ce48b97a2aa5b7e9fc17561d 
 --- 
 
 `WebControlProvider` is a provider that allows you to configure controls to display object properties for list controls (e.g., [WebObjectListView](fa_web-object-list-view.html), [AjaxGroupEdit](fa_ajax-group-edit.html)). All its settings are stored in the file /xml/WebControlProvider.xml 

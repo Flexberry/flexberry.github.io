@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-controls-custom-captions.html 
 lang: en 
 autotranslated: true 
-hash: 60f2fe1e7288e0e40ab04ca1ee989456718ab1f6911b903751c410b245d0dd50 
+hash: 0492cab388d6688e76546d67f1132524ba54912dfedf912bc0ddb08e90941274 
 --- 
 
 Captions controls are stored in the string resources in *.. resx files corresponding to one or another control. 

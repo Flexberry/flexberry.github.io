@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_details-limit-editor.html 
 lang: en 
 autotranslated: true 
-hash: 68fbf7b04ffb156ebe825f2feef7a2ca1165eb1e3ae0ef66dfa4533edb6b3ee5 
+hash: 77276ff64e83be9dd9c455c5831ca8c1b04f80dbc2032d9dc01002f85401b041 
 --- 
 
 ## Work with detaylari in the advanced editor, limitations in the web 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-data-object-prototyping.html 
 lang: en 
 autotranslated: true 
-hash: b183e04a8b7667bb6e3f72b60b1e834ac92f2bb12bc12f69e4c62ae22ec62fcc 
+hash: ef7f89a8e6fde68d07ab754f3f88d3ea765ff5557f345a14a2cfb4b9b17e94f2 
 --- 
 
 ## How prototypical in Flexberry ASP.NET 

@@ -7,7 +7,7 @@ permalink: en/gbt_embgetowner.html
 folder: guides/base-tech/frontend/emberjs/embconfig/ 
 lang: en 
 autotranslated: true 
-hash: f81c075621680a6eb4b7c31c36fc0bd0e06954ff8e2e736fc7f90fbb79773128 
+hash: a8fe768397935cfae3a831429b13437a0a400bd7ca6462054df07d007b1f8496 
 --- 
 
 ## Brief description 

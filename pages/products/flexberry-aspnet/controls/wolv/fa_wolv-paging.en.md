@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-paging.html 
 lang: en 
 autotranslated: true 
-hash: 7f88e645f4552bb5b671a3e002eecfa432862607dfa437f1449837d208d9100c 
+hash: 20d9f2383254422b69be79977fcb836276d09bda355fa362b2d7d351ee3b25cb 
 --- 
 
 To display paging uses two [paging control](fa_pager.html) verhnii and Nijni. For different `Pager'ов` use different CSS classes and settings. 

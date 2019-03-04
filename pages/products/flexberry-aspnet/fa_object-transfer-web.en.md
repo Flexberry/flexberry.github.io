@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_object-transfer-web.html 
 lang: en 
 autotranslated: true 
-hash: 50c2666f8cbdb198b981ddfc48b51787ce14bc23be35cb850fd03d9778a826ae 
+hash: 261690ef6b4bf4d8fca560b9eae6e2c797e5c851a71a95329902d46345210414 
 --- 
 
 The goal is to pass an object from one page to another. The object is placed in session, this is generated `уникальный идентификатор` (GUID) on which the object is retrieved from session on other page. 

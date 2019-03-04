@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_init-control-settings-delegate.html 
 lang: en 
 autotranslated: true 
-hash: 564358c844a4693dd2455059d27b71390aaa305b52f76db456d80d12a0ec3c00 
+hash: ba38b2b40c9f1794f0f618fccde40dde1f24ac41301d3962f1618a5f1b129e5c 
 --- 
 
 To empower the settings of the controls have a delegate type - `ICSSoft.STORMNET.Web.Tools.InitControlSettingsDelegate`: 

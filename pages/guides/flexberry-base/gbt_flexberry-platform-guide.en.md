@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_flexberry-platform-guide.html 
 lang: en 
 autotranslated: true 
-hash: 4108dff39c598932f5a5fcf26fadacd9fe470f85b283262b95bd3e3888685346 
+hash: 50fdacf8c568582c71997f7e26414a2f68babad616f6976057f4740e204867d7 
 --- 
 
 # programmer's Tutorial Flexberry Platform 
@@ -33,7 +33,7 @@ hash: 4108dff39c598932f5a5fcf26fadacd9fe470f85b283262b95bd3e3888685346
 #* [Performanoe interaction when editing objects](interaction-between-forms-when-editing-objects.html) 
 #* [As without the use of code generators to make on the form a list of data objects](make-a-list-of-data-objects-without-generators.html) 
 #* [How to edit data objects on forms, associating input fields with object properties data ](edit--data-objects-on--forms.html) 
-#* [How to "spin" the data object to an XML string and restore back](aggregating-function.html) 
+#* [As `закрутить` data object to an XML string and restore back](aggregating-function.html) 
 # object Attributes 
 #* the [Access to object attributes and attributes of related objects](fo_own-object-attributes.html) 
 #* [Dynamic attributes of objects](dynamic-properties.html) 
@@ -90,7 +90,7 @@ hash: 4108dff39c598932f5a5fcf26fadacd9fe470f85b283262b95bd3e3888685346
 #* [Subsystem powers](efs_right-manager-module.html) 
 #* [other features](class-image.html) 
 #* [Enumerated data types](fd_enumerations.html) 
-#* [If something is "buggy" in Design-Time](design--time--errors.html)
+#* [If any `глючит` in Design-Time](design--time--errors.html)
 
 
  # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/

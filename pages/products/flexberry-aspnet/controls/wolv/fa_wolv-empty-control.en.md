@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-empty-control.html 
 lang: en 
 autotranslated: true 
-hash: d689024333a2715cb7b5599526c767e515bc59c5dba937227ca0b2de299a6b94 
+hash: ed74164261562e992fd4793a3acf7cbca4e9a7df02292c616be854d0a41e5c50 
 --- 
 
 ## EmptyControl 

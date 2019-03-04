@@ -7,14 +7,14 @@ permalink: en/gbt_integration.html
 folder: guides/base-tech/system-integration/ 
 lang: en 
 autotranslated: true 
-hash: 9e68feeeac3baec07b5b77d8574fdd49fc873b69c50939214d4643e90cfb8766 
+hash: 292839805d1cbc8fed664a611823aae1a09b091b9721ed2eff2d64d00e4d1b1a 
 --- 
 
 ## Brief description 
 
 ### Service-oriented architecture and the integration of information systems 
 
-Today, Russian enterprises and organizations have developed it infrastructures, numerous application systems (accounting, HR, ERP and CRM systems, billing, and other applications, including specialized). These it systems record sufficient baseline information to support operational decision-making. But the difficulty lies in the fact that these "raw" details you need to quickly collect and process (to monitor and check uniform formats, to aggregate and analyze), which is necessary to use the integration and analytic technologies. 
+Today, Russian enterprises and organizations have developed it infrastructures, numerous application systems (accounting, HR, ERP and CRM systems, billing, and other applications, including specialized). These it systems record sufficient baseline information to support operational decision-making. But the difficulty lies in the fact that these `сырые`, the details you need to quickly collect and process (to monitor and check uniform formats, to aggregate and analyze), which is necessary to use the integration and analytic technologies. 
 
 In addition, increasing the number of applied systems in enterprises and organizatsiy to the fore the problem of their integration: the introduction of new, replacement or modernization is required, as a rule, any changes of integration between them, or establishing them from scratch. Moreover, the continuous development of business processes of the enterprise leads to constant the changes of integration between applications, even if the new application does not appear. 
 

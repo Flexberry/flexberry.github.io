@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_linked-master-editors.html 
 lang: en 
 autotranslated: true 
-hash: dbc3d0ed36bca5ab476047cf756667e9f548a93c5fe4ae84d441fbb5ad42f4e9 
+hash: 82a5ce7ccb1efd1d3376c12fecae96d0f537cb21f37732f2cd5d92f521bae50a 
 --- 
 
 This article tells how to link these web controls edit masters as [MasterEditorAjaxLookUp](fa_master-editor-ajax-lookup.html) and [MasterEditorAjaxDropDown](fa_master-editor-ajax-dropdown.html). 

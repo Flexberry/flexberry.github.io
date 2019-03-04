@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_mongodb.html 
 lang: en 
 autotranslated: true 
-hash: ba7b78b858a545eeed22391bf9961f5ba94bbe97f40715008961710e58b0ca35 
+hash: 919bfc01fcd0be9eb9d9715612c1fe5e32bcef50b1751bc6642bd70e2c2abab9 
 --- 
 
 
@@ -33,7 +33,7 @@ Support MongoDB is implemented for most programming languages:
 
 Differences MongoDB from relational databases: 
 - Not supported TransAsia. Atomicity is guaranteed only at the level of the whole document, that is, a partial document updates cannot occur. 
-The absence of a mechanism of "isolation". Any data that is read by the same client in parallel, which can be changed by another client. 
+The absence of a mechanism `изоляции`. Any data that is read by the same client in parallel, which can be changed by another client. 
 
 The benefits of MongoDB relational database before: 
 - Supports horizontal scaling with replication data. Data can be stored on an arbitrary number of servers. Replication provides fault-tolerance support functions at the output nodes of the system. 

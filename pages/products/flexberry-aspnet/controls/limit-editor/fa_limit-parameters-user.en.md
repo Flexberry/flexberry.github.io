@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_limit-parameters-user.html 
 lang: en 
 autotranslated: true 
-hash: 01ce2b3f45c17c50da62987cd5497a5995b159b4711c4543cec50ac2aadabbd7 
+hash: 1d3a07096a9e957f527b25abb19d498de049fc364bd462f8960838633fb3ff83 
 --- 
 
 ## Add setting 

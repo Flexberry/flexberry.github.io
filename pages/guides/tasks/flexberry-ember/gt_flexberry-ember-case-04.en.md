@@ -1,18 +1,18 @@
 --- 
-title: Option 4 - "Subscription to publication" 
+title: Option 4 - `Подписка on the printed издания` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-04.html 
 lang: en 
 autotranslated: true 
-hash: 1a57c701458d9c6e20dbf092c7448f6b1bc9a806d48c5935273a5035cb50a558 
+hash: c579df134c756e490c54d6f6c0748e903eb66cbe75c485844bc654f6a7e1b4d9 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the app "subscription to the print edition" (the IP for the automation of accounting of subscribers to the printed edition). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Подписка on the printed издания` (IP for automation of accounting of subscribers to the printed edition). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_tech-forms-web.html 
 lang: en 
 autotranslated: true 
-hash: 94f4cd97a08c4159f204244f821563eec9d1b9ae4cbbcd3fb2e657127069b629 
+hash: 7a1da6332baf79cdb5474fac7f46f8505e39b6f33d9e783ce23d24692f895d12 
 --- 
 
 Technology Flexberry ASP.Net generates a standard (universal) page to display and edit data. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_settings-lookup-age.html 
 lang: en 
 autotranslated: true 
-hash: 08d81637856304dfb6289d0861b92c64b90679e883af86917d3076c6e90e6beb 
+hash: 9fc1705aec1e57d7eb4ab4d930bdf107f687f925707d6b3d6dca154b9f7905ca 
 --- 
 
 # description of the algorithm 

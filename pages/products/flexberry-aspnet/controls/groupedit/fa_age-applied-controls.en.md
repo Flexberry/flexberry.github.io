@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_age-applied-controls.html 
 lang: en 
 autotranslated: true 
-hash: 9116daab5648587d31518da12283d3fde86e936aae348cf88433bd7364e9ade5 
+hash: 009381278156d0b701c1d5a98b0f15fa24492d7854e5c43c47ded16f5920a1da 
 --- 
 
 ## Binding 

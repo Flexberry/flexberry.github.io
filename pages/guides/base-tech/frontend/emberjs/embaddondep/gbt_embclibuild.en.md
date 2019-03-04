@@ -7,7 +7,7 @@ permalink: en/gbt_embclibuild.html
 folder: guides/base-tech/frontend/emberjs/embaddondep/ 
 lang: en 
 autotranslated: true 
-hash: bcfaf31e7143fd72bebeda81b46ad6ebebaaa5ec29353d938f7ef09ae7e9a0d0 
+hash: 6962b775359c5dd935f26e28572b868e476788925d01f1616222bdb76f931f0a 
 --- 
 
 ## Brief description 

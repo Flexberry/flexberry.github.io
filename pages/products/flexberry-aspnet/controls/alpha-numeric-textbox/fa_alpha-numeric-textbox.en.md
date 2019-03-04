@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_alpha-numeric-textbox.html 
 lang: en 
 autotranslated: true 
-hash: 08426d4198a3b2b08b9fca935cd824514639283bc3b146cf440efc84fea2ab2e 
+hash: de28d0071521d83cae46f8dfbef686d54cf447fe45eea3b77c7d54325f374209 
 --- 
 
 Control `ICSSoft.STORMNET.Web.AjaxControls.AlphaNumericTextBox` designed for fields where you may use only letters and/or numbers. Inherits `System.Web.UI.WebControls.TextBox`, implements `ICSSoft.STORMNET.Web.AjaxControls.IAjaxGroupEditCompatible`. 

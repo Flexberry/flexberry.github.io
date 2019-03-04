@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_file-control-web.html 
 lang: en 
 autotranslated: true 
-hash: 2a2ea2b483af9bf39fe3e16c31a57c07e1d1854d5ec548282289a59304136b5d 
+hash: 1f1901fd2cee393e31ff4e9b3061bdf35204fac560005dde48296a03126a80e0 
 --- 
 
 This control for working with data type `ICSSoft.STORMNET.FileType.File` in the web application. Files are saved in the database as the serialized 

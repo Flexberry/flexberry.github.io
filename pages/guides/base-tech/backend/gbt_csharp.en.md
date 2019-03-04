@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_csharp.html 
 lang: en 
 autotranslated: true 
-hash: f3e6dba1a1612cae15d57382f5e59b3d08b0198d54fd9c51869d8ab342156d8a 
+hash: ab199f0c05dd4ce2acc6086e056c18e42a183d164b9c33c0e5ca716ec52ec50c 
 --- 
 
 ## Brief description 

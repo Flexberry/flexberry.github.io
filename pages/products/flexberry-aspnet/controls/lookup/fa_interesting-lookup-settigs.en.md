@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_interesting-lookup-settigs.html 
 lang: en 
 autotranslated: true 
-hash: c42ebb5356bf8ca4b5cf8cc2cc6de0763e45df5e62c1faf8c7a857beaffe9219 
+hash: d01fb31dfafb46ee368f0e493fa0061f81d707d0f4011ee47c8f78640bc750be 
 --- 
 
 The most interesting properties LookUp's: 

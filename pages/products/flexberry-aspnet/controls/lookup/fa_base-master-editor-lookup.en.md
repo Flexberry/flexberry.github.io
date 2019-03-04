@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_base-master-editor-lookup.html 
 lang: en 
 autotranslated: true 
-hash: 43c8d1b97c9898da24c4e309d007e6b236df0e8da548825b79dc692925a7fa1f 
+hash: 28447e29e2116a99b99dd4bdf8fca5fa8ead2eb2a290b3bef807c3adb4edf705 
 --- 
 
 ## Uniform changes in the properties of lyapov 

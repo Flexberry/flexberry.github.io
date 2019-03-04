@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_activity-diagram.html 
 lang: en 
 autotranslated: true 
-hash: fb4b0b64edf9677cc1febc8d2c29d28f657f89d2682683f5f997a3d392c17754 
+hash: e9216da045ccb79a7e10cdee5532a8fc042b68113c625b158a6ae8d366ae451f 
 --- 
 
 ## Brief theoretical information 

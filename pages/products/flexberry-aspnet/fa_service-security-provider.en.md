@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_service-security-provider.html 
 lang: en 
 autotranslated: true 
-hash: d0e6059e035cf85aaa7bb6a7896bee642c8ee2b8c37f05657fab322cd23b91e1 
+hash: d4fb79e6366b61b2be10e041094e39876b8721fcb1d2795164d23355b41f9c65 
 --- 
 
 This provider is used in order to make use of the web service in a web application more secure. With it you can specify what method of web service what types of objects can be read from the database. This is because there are quite common techniques in which you can read all the data from the database. 

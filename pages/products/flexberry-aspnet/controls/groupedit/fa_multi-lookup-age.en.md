@@ -7,7 +7,7 @@ permalink: en/fa_multi-lookup-age.html
 folder: products/flexberry-aspnet/ 
 lang: en 
 autotranslated: true 
-hash: 75677857d66dd4916a8f803bd331d6edacda2afd06f2c6ddfde72a6623a2e175 
+hash: 4b7f92b28d6eaff24e06d9257293c4242e215e403caa8a2bce5a870398936189 
 --- 
 
 In AiaxGroupEdit there is the possibility of multiple selection LookUp. 

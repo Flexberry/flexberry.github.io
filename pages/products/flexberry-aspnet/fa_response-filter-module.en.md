@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_response-filter-module.html 
 lang: en 
 autotranslated: true 
-hash: 220ee02cadae975e25fb7d818e6ebae49b70f57ebaa462ab89db58ca2c6e0691 
+hash: 28fc1393eb30d00fbf115808a70c2f9e118d652508c0cd3394b74c7c0d6d3572 
 --- 
 
 In the generated web applications used `ICSSoft.STORMNET.Web.HttpModules.ResponseFilterModule`. It connects to `Web.config`. 

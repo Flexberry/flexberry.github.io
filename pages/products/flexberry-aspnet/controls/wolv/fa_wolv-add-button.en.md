@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-add-button.html 
 lang: en 
 autotranslated: true 
-hash: 56035d9714973f76d7b51c8221df2e73b556c7a9226b78ab2c588b0e1d1da435 
+hash: 9c977306d7971331e36f9b69a38782032c221de1353c21613165db971a289baf 
 --- 
 
 ## Add buttons to the toolbar WOLV 

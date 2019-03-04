@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-search.html 
 lang: en 
 autotranslated: true 
-hash: c563603fe792984654e66dc85d89f23fd982b87f3419f8155d2e3b2f4b6507e9 
+hash: 4a47afbb3bc81362d22a68f8d8f57c91b878867859b840333dbeaaa7729c8c07 
 --- 
 
 The search system allows to search the displayed list items. In contrast [filters](fa_wolv-filters.html), search does not impose a limit on the list, it only selects objects using [flags](fa_wolv-check-boxes.html). 

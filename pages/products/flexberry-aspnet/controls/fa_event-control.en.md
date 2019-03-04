@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_event-control.html 
 lang: en 
 autotranslated: true 
-hash: 3f13c8504bc6fd54faf3c9b96c4646381edc3474687674e417f73a5e130e21ea 
+hash: f55dad256336be3e444abaecef79416c4483f82467ef2c500614b9eee2fbaebb 
 --- 
 
 ## Description 

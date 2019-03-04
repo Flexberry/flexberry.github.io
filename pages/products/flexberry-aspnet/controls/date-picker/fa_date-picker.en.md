@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_date-picker.html 
 lang: en 
 autotranslated: true 
-hash: b2b9d6e41a698fa664196372594b23e88a43e6fbb7fb4e8b6e1269bf022c0250 
+hash: 8406f318ee8ea64708f5bbfcf8c4dade308edf613d9c47b04789a774e5d00a5c 
 --- 
 
 **DataPicker** web - control for selecting a date and time. 

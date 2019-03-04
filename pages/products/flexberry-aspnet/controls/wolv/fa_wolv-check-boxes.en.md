@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-check-boxes.html 
 lang: en 
 autotranslated: true 
-hash: 4b06a8fcdbd96d1ee6f73c85414b4860eb4e544769b282474694d4d1982e51a9 
+hash: 00b51acb85305af753e8d709bf9359f2dc29d7da8bbbace16a7bc081ee86f26f 
 --- 
 
 [WOLV](fa_web-object-list-view.html) provides the ability to select multiple items to perform on them some action (e.g. delete). 

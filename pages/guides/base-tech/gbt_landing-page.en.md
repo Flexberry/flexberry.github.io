@@ -6,7 +6,7 @@ toc: false
 permalink: en/gbt_landing-page.html 
 lang: en 
 autotranslated: true 
-hash: 4c23ace653f40a19ac08c58078724b9a878ae51ec623694a4aa9d46703737e1e 
+hash: aba36d47b8ce5481c51414c5a4db4b13c1eec5b1250bb0fd3a08a39f09cedcb1 
 summary: course on the basic technologies used in the platform Flexberry. 
 --- 
 

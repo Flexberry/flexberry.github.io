@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_hinter.html 
 lang: en 
 autotranslated: true 
-hash: d532a3f634327c4babd99fc3b88331c7d43c2bd00146457b6557f38dbd651b88 
+hash: 133838d1f48ebceb34014ed7e7bc392f8f888e7835e93395eaa350bba6661c20 
 --- 
 
 ## Description 

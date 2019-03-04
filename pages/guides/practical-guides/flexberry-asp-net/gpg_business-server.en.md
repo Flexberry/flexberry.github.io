@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_business-server.html 
 lang: en 
 autotranslated: true 
-hash: 8b5bb705fa3f4c049e81f986b1c068e5ba5dee78f6a95cffcb4fe4241f4a307d 
+hash: 5b2b295bcbeb15e5d56fb271c8144aecdfc7c83ed0fd5146592df1c0ae29a61b 
 --- 
 
 Goal: to translate the order into a state `Оплаченный` it is necessary to check whether the goods to be discharged, and if so subtract the required amount of product. 

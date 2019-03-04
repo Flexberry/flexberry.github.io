@@ -7,7 +7,7 @@ permalink: en/gbt_jquery.html
 folder: guides/base-tech/frontend/ 
 lang: en 
 autotranslated: true 
-hash: 09a04715618e77d6643181e656ca62fc2c3c896f5fb3a7386b18fb7c53cbe266 
+hash: 08b12bc4b9317772843ff5d3e8a1c35423634ecfa828a6e6a938c66ead02e592 
 --- 
 
 ## Brief description 

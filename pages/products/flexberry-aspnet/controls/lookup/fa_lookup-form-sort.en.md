@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_lookup-form-sort.html 
 lang: en 
 autotranslated: true 
-hash: 0e49e2c405a21c6cb035b4c019d543e8967c6039639604f7f1a9854c1f294140 
+hash: a223dd46455c8526884741583ad80e2265a738ffe5652b3abbf42f83f29ad0bf 
 --- 
 
 In order to be able to sort in list form, [raised lucapa web](fa_lookup-overview.html), you must do the following: 

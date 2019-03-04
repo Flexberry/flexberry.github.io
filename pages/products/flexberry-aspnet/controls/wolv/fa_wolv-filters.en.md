@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-filters.html 
 lang: en 
 autotranslated: true 
-hash: 2e736a2869e66cfabd095ec5e52ea034645dad290d64b3f89a26dd7243962e53 
+hash: 6f4c8ad470063de62f895e6a9d13316a0ad0ada8ca50ecab396b4f6b93f6d7d4 
 --- 
 
 If you enable the setting up [WOLV](fa_web-object-list-view.html) `Filter=true`, the toolbar button will appear with filters. When you press the button you will see the first line where you can apply filters to. The first control cell filter operation, the second the value. Especially treated type properties `bool` and heirs `Enum`: for Boolean fields are generated `DropDownList` with three values - `Пусто`, `Да`, `Нет` for `Enum` - `DropDownList` with the range of enumeration values (caption's). 

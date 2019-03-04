@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-stylization.html 
 lang: en 
 autotranslated: true 
-hash: 5c2377cd5b22eca31650ef6705fd4063aeb491dbb8f1048bcb23a6ee50e38620 
+hash: debdb1ce70d4ad3d56f791f94aa4b91549e6625633a0172cb5bc3e026bc8a952 
 --- 
 
 WOLV do you have a property 

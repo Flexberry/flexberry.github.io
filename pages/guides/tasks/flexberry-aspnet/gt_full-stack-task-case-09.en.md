@@ -1,5 +1,5 @@
 --- 
-title: Option 09 - "Preschool education" 
+title: Option 09 - `Дошкольное образование` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-09.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: e6d272d5416e8a0771d35eb4b92bee948b9c70c0d65948de936989269e62fe10 
+hash: b1d4b818d295caa047075f5032a95b9abc0fa0d52a6e7a540533def010024e87 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the app "Preschool education". 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Дошкольное образование`. 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
@@ -61,7 +61,7 @@ Will be required for implementation:
 
 ### Job 
 
-With use of opportunities HTML, CSS, JS, jQuery mark up a form that will display the child's daily routine in the kindergarten with regard to the temporal vector. Each stage should correspond to the graphical element, displaying its duration. Thus, the screen formed a "line of employment" of the child. The duration of some stages can be changed by changing the boundaries of an object, displaying a certain stage. The form also needs to be a block with information about the group number, the caregiver, number of children in the group, the number of missing due to illness. You must implement the facility enabling parents to make choices (for instance, when you click on the element "learning" becomes available list of potential topics or courses, when you click on the item "lunch" menu). 
+With use of opportunities HTML, CSS, JS, jQuery mark up a form that will display the child's daily routine in the kindergarten with regard to the temporal vector. Each stage should correspond to the graphical element, displaying its duration. Thus, the screen formed `линия занятости` child. The duration of some stages can be changed by changing the boundaries of an object, displaying a certain stage. The form also needs to be a block with information about the group number, the caregiver, number of children in the group, the number of missing due to illness. You must implement the facility enabling parents to make choices (for instance, when you click on the item `обучение` becomes available a list of possible topics or courses, when you click on the item `обед` - menu). 
 
 ### to deliver results 
 

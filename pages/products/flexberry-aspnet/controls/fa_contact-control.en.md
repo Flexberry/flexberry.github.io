@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_contact-control.html 
 lang: en 
 autotranslated: true 
-hash: 24ccaf61e7243c54e7f82e785f69ce08d3b531d1df4c071a12b7533cda5dc6d2 
+hash: 0e125b8f9dc03db11ce4112532b6c94b9b0fa4a288bb5402bf7dce748d287206 
 --- 
 
 ## Description 

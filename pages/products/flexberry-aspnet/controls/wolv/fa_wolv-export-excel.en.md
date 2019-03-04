@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-export-excel.html 
 lang: en 
 autotranslated: true 
-hash: 1d6ec13ca4c9cadc78c64d04a431d17b350ec8a5e07163983e89c91c00c9384d 
+hash: 16df50707017d4ce65041e114c0b25eaba51f97163fcc01d8cac34096f4013a9 
 --- 
 
 ## download to Excel (instructions to the programmer) 

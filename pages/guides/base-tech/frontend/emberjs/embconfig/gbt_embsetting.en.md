@@ -7,7 +7,7 @@ permalink: en/gbt_embsetting.html
 folder: guides/base-tech/frontend/emberjs/embconfig/ 
 lang: en 
 autotranslated: true 
-hash: 3beb7a724ba56f7b22db1211dee700162ac181557d0e95d6f291924488f4e35c 
+hash: 86949f42fb10c0da8ffa86c21efe32766e07a9ea4cf54740124cefc910e80a42 
 --- 
 
 ## Brief description 

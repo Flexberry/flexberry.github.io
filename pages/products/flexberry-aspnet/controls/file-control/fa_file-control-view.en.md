@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_file-control-view.html 
 lang: en 
 autotranslated: true 
-hash: 35b4f0c18bf0d0372aa372eb392febae2463d2bc5bb5bfd5b2abdf50656b692f 
+hash: 232d9e55c15a8475b12b748f7592cca79e2faeade8739000431de5c711e50cc3 
 --- 
 
 ## Description 

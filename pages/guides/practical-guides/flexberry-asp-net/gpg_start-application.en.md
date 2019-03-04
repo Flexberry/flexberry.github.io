@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_start-application.html 
 lang: en 
 autotranslated: true 
-hash: 4f92742881279379f99ce865063774f05ee4e28c8496bc73c4db54ae9bb87981 
+hash: c5e4650693d89816863f560d6c618c9c7a5fea8de5db6fa26aa00e54135afec2 
 --- 
 
 1.After generating the solution with the web application is successfully completed, it is necessary to run the project in `Visual Studio`: it is necessary to click right mouse button on stage and choose from the menu `ASP.NET` -> `C#` -> `Открыть in Visual Studio...`, or you can open a file with the extension `.sln` from the folder to which the generated solution (the folder was already open, if you have confirmed the opening of the directory with the generated solution). 

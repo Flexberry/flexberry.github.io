@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_file-control-description.html 
 lang: en 
 autotranslated: true 
-hash: 710b15d941cbaae00ee2ee2e39259ffbb6e7ded4887caeca055e6cd6e36f1c26 
+hash: f77d2953164cac2445b3a84eafc49121e49b40588052d8e679fc1fca2faa8aa4 
 --- 
 
 `WebFileControl` is located on [web forms editing](fa_editform.html) and allows you to upload files to the server. To download the file to the server just select the desired file and click `Сохранить`(`Сохранить and закрыть`) on the edit form. 

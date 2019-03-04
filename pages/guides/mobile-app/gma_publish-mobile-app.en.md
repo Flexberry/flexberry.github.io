@@ -6,7 +6,7 @@ toc: false
 permalink: en/gma_publish-mobile-app.html 
 lang: en 
 autotranslated: true 
-hash: c805841c64c5e72db5b0666af07e6529291f13041754e2d4ce30835d259ffea7 
+hash: daf72edc569b4801ba7e13c4be465ad59697e71abc1bbb72a2bceffbe6a2d823 
 --- 
 ## Description 
 

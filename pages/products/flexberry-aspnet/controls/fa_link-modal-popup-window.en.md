@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_link-modal-popup-window.html 
 lang: en 
 autotranslated: true 
-hash: 65cf655fbd252332e3c1c5df3783951e957842c92df47688c9bcbfa2ca33faa7 
+hash: 7ae1e6d6af086b407ac3c6626a735fa7c8f31e7a62a16684bef07a1cdd970392 
 --- 
 
 With this control you can raise a modal window and open the page. 

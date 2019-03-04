@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_add-page-web-desktop.html 
 lang: en 
 autotranslated: true 
-hash: a394728ebf98d5dcac0e37de28730f8bebe0d31224b7ca9272eecd595d8c70c5 
+hash: e0c1bbeec9c4553bf6b40c3d5fe2fe2a73a0a073b2d11421e9accb9ae1c41d44 
 --- 
 
 To add own form on the desktop Web application, you need: 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_auto-calculation.html 
 lang: en 
 autotranslated: true 
-hash: 45d65b9da4f87fde3b955b42b1f08e1d046f0defc97a966d5a5596862cb90fb1 
+hash: d40666c016b5998685aa788b74d1590223fdb59f81574afe8742f8ccf8e5c303 
 --- 
 
 Goal: the Price of goods should be calculated automatically. 

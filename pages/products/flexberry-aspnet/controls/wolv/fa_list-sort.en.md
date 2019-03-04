@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_list-sort.html 
 lang: en 
 autotranslated: true 
-hash: 3a02d5cedf073bd77d1d2b233f48d738dd82ad562a93bdeee7ef0b40e9957799 
+hash: 96ad11fd385826cbb0e386964f9c06699d686c463cad95fb28a9938350ad47e9 
 --- 
 
 Lists allow you to sort the contained objects in specific columns. The user can set the necessary sorting. Also sorting the list can be customized from the code. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-binder.html 
 lang: en 
 autotranslated: true 
-hash: 414f0d274bcb8cc8773f1fb6bd8b5b18eb448b6dd26a01d66e3982d52053aad5 
+hash: 292f1d80848200f229989a842a74c806c20f58f01b2c7e9ed80aa06e74fdae0f 
 --- 
 
 `WebBinder` component performing the binding web controls on the form and values of objects. 

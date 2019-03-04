@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_predict-input-web.html 
 lang: en 
 autotranslated: true 
-hash: d3269c6f439bcf391f8691ca674df355f49961052b628cc587be16fcb3a9041d 
+hash: 4e2014c4044c4f01d4d4c0b18116b977629e9d937dce2df60e0a54f2f3a95a48 
 --- 
 
 ## setting predictive LookUp's 

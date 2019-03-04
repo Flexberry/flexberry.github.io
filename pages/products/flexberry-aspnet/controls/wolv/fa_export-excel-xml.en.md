@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_export-excel-xml.html 
 lang: en 
 autotranslated: true 
-hash: 6a551bc0412a7a0fe823b5ef73426c46656036c9c9bba24b9cf5de3d058f2de3 
+hash: 0b3f8413dab96b5c21f3f8aeadea219b687f247f3dd66a695d6a30b8c21897b6 
 --- 
 
 The whole logic of the export to Excel and XML, is a Web.Tools. 

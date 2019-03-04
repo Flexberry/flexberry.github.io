@@ -1,5 +1,5 @@
 --- 
-title: Option 10 - "pre-trial appeal" 
+title: Option 10 - `Досудебное обжалование` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-10.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: ab24ea112d8d3985294c9d2d5a86a7be0ba2d28908cbeeb8f5fbaff666a7a17c 
+hash: 262091fd6ca78fe4422ee1cdba7dc374705c28de5b17c735b049ce3474d90817 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application "a pre-trial appeal to the Executive authorities" (module IC for state agencies). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Досудебное appeal to the Executive власти` (module IC for state agencies). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
@@ -88,13 +88,13 @@ Requirements to the form:
 * Status (Поступила; In обработке; Перенаправлена; Обработана; Closed) 
 
 4. Must be able to move the complaints from one Agency to another. 
-5. Complaints with a status of "Received" and "Forwarded" to highlight. 
+5. Complaints with a status of `Поступила` and `Перенаправлена` to highlight. 
 6. Each Agency must display comprehensive status. Comprehensive status is the sum of the statuses of all complaints: 
 
-* If there is at least one complaint with a status of "Received" and no complaints with the status "Redirected" to display comprehensive status = "New". 
-* When transferring a complaint to another Agency to change its status to "Forwarded", integrated the Agency status should change to "Urgent". 
+* If there is at least one complaint `Поступила` and no complaints with the status `Перенаправлена` then display comprehensive status = `Новое`. 
+* When transferring a complaint to another Agency to change its status to `Перенаправлена`, integrated the Agency status should change to `Срочное`. 
 
-7. Complaints with the status "Processed", "Closed" cannot be moved.
+7. Complaints with statuses `Обработана`, `Закрыта` can not be moved. 
 
 ### to deliver results 
 

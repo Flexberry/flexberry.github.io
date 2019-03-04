@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_exception-handling.html 
 lang: en 
 autotranslated: true 
-hash: 432c791c0a819da88080e955073fe95d33a79fdbe81f7ddbd88e1cbef48a796a 
+hash: cd35cbc03c559bfa0e58ebf0437a0556244896180d52d0e8c0e5e3a3d5b781ad 
 --- 
 
 `ErrorForm` - aspx-page that shows an unhandled exception, it is called in `Global.asax`. 

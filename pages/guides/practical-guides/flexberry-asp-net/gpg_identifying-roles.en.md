@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_identifying-roles.html 
 lang: en 
 autotranslated: true 
-hash: 84a8ee6e14b51cb3119d06ca64b3a22b9c94fae377e1d364f59fad7dcba877c6 
+hash: c8e467d6ae68d4977a5c4e81752bf42d8bbf6d6c8c3993cf8005ca9e20d3e252 
 --- 
 
 Proektiruemy system example to be worked up in accordance with the requirements. You must first return to the [chart options use](gpg_use-case-diagram.html) and to assess which actors have to interact with the system. Based on this information, you can see the user roles that should be used in the system. 

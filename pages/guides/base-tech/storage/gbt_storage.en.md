@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_storage.html 
 lang: en 
 autotranslated: true 
-hash: 64966f3416c8e9b9fe1cddc768be48737bc418ed9d159ce9426935cba72720a5 
+hash: 5ae16c82cc06103139cfbb63b01aca7d707acdebeeda44bf4ce261bc6f421584 
 --- 
 
 ## Brief description 

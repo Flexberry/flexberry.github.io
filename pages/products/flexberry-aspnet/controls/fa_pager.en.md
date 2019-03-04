@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_pager.html 
 lang: en 
 autotranslated: true 
-hash: 0104e72592b1cb4d03615d96eda9b52eba16b4da48d9abc9bed8db105dd18b66 
+hash: f9a706f92fadd7e8773117697584ed390fd48b54afa0f798c7bd932221768c66 
 --- 
 
 `ICSSoft.STORMNET.Web.AjaxControls.Pager` class control to display paging for an arbitrary set of data. To work correctly you need only task the total number of pages to display. 

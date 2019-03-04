@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_tune-control-delegate-method.html 
 lang: en 
 autotranslated: true 
-hash: 4f43a31f8a248059171ea8d005a7291620c9853f6d647fa1c787fa1d69c32ccc 
+hash: cfd12f2b46997c97780084ddf12bc385524efd2d163d18686d3decca5bd4474c 
 --- 
 
 ## Delegate change control filtering 

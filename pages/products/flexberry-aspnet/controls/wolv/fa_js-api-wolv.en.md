@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_js-api-wolv.html 
 lang: en 
 autotranslated: true 
-hash: e0f2fb45430244084a44ffa82c0cd1bf7f26622b7e80f9e69cf5d8e43c5782fc 
+hash: 380f49759c70812b19133f895debf3795353969655dc7d04c8bb44b9af417cbe 
 --- 
 
 To manipulate [WOLV](fa_web-object-list-view.html) on the client side, use JS `WOLV API`, which is a jQuery plugin (`icsWolv`). 

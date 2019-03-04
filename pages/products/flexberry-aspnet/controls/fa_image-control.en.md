@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_image-control.html 
 lang: en 
 autotranslated: true 
-hash: 8481ab40d647e0c92d1672b446c7c17935e30c85f3b64babddc0e60affc51524 
+hash: b9428811afb879dac483ef2dad5566ec8f9f314ee9f032feda91b53382f68178 
 --- 
 
 ## Description 

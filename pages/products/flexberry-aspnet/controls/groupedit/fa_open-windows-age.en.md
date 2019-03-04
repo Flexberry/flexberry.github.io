@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_open-windows-age.html 
 lang: en 
 autotranslated: true 
-hash: 2e061c8893ac46592f831fb701660549dad74c6cc4e468291baa13107105aeb2 
+hash: 11d118072f24beefbbc48ee945d2e301bac980e3e16af831131300e53396b3ad 
 --- 
 
 ## Options open up a web-form editing in the AGE 

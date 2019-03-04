@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_master-editor-ajax-lookup.html 
 lang: en 
 autotranslated: true 
-hash: bb9d8f9bb6ec1ae7c282e09e1994776373817be6194bc6d6478d7f9be2f8d3bd 
+hash: 6a4ea7172d705fde146a1e6f6c8bc1f7e926624d294ea65547a5694c35f66875 
 --- 
 
 If there is a form on lookup, and then it selects the object, then the request for the service. The service returns the list of controls whose values you want to change, and the values themselves. 

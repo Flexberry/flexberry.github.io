@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-columns.html 
 lang: en 
 autotranslated: true 
-hash: 9236e39d51d386842af728275836428e48d1f7756f140f42993a41cd11f90c71 
+hash: 6084b9195f229158e1d6e3604693517b922de359aec429669e1b45cbfd074757 
 --- 
 
 This setting allows the user to change the display column order, visibility. Setting is available to save. 

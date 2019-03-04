@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_customize-application-menu.html 
 lang: en 
 autotranslated: true 
-hash: 5197260212443657c2db9e0914d4f9ebd2f9b66feec932fa34d6ce378636b2a9 
+hash: 7fe32c15a902d61e6f23644ae3f6d7fcf7cfbf5a301b3a2ac7c18b187d27abdc 
 --- 
 
 To customize the generated web application in accordance with the functions that were previously defined for each role based on the entity relationship diagram you need: 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_auto-get-data-from-lookup.html 
 lang: en 
 autotranslated: true 
-hash: 5d5f8fd2b49e62b718f8f98178afc69289fdcd1b605acfe7677bfcf3e4a915a7 
+hash: c6bcecdbdc6ed12b3d6f5fc419659bbed3a2af918bcaf526b3a847eb377cc01b 
 --- 
 
 Automatically get a list of items on the invoice. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/gms_architecture-mobile-app.html 
 lang: en 
 autotranslated: true 
-hash: dbfc5fbab4fa584d61bffb0cf0271b928bee9d190350ec07e9fb2e30d34b3c23 
+hash: f586d0500e7cb00929852278037937432094c0fee551622940f140fe3154b2a5 
 --- 
 
 ## Description 

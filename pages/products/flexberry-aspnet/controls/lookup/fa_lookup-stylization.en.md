@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_lookup-stylization.html 
 lang: en 
 autotranslated: true 
-hash: 2bfa2923028d9ac36e930d0d79a7861d9fc6837a1fa2f0cd95650f1ce08373c4 
+hash: 344131f4c455cfd136f26658ae53ac6c817cc73ff845ce9af4c3695dc9788565 
 --- 
 
 ## customize the appearance of icons lucapa in the theme BlueSky 

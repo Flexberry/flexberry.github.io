@@ -6,7 +6,7 @@ toc: true
 permalink: en/fan_pentaho-faq.html 
 lang: en 
 autotranslated: true 
-hash: 837f94100a8d1b893a2a414a209e2de19293e84482c7135cb50c25ce1fe76262 
+hash: 007f4f6b0cdbcfbe6808b9b584a5810247a3dc6fe76155edc9cc17a6d5e29b41 
 summary: Frequently asked questions on Pentaho 
 --- 
 
@@ -99,13 +99,13 @@ For this task you can create two sub-report (in one list the games and the other
 
 ![](/images/pages/products/flexberry-analytics/pentaho-faq4.png) 
 
-It would be possible to create a query in the main report and place both fields in it (the field of play over the field). However, in this case the report displays in one column the values "Game", "Company", "Game", "Company", "Game", "Company", etc. 
+It would be possible to create a query in the main report and place both fields in it (the field of play over the field). However, in this case the report displays in a single column of values `Игра`, `Компания`, `Игра`, `Компания`, `Игра`, `Компания` etc. 
 
 To place in one column all the first game, and then all the company with no problem with the imposition of the fields you can set a property `layout region Details` in the value `block`. In this case, all the elements that are in the area `Details` will be stretched across the entire width of the report and are located one above the other. 
 
 ![](/images/pages/products/flexberry-analytics/pentaho-faq5.png) 
 
-#### "Empty" columns and rows when exporting to Excel 
+#### `Пустые` columns and rows when exporting to Excel 
 
 Often when exporting to Excel may arise empty columns and rows in small sizes. 
 Usually, this occurs due to careless arrangement of elements in the designer. 
@@ -118,7 +118,7 @@ Thus the total width occupied by these two elements is equal to 200 268 = 468 po
 Since the standard width is 468, then one extra point will go beyond the report which when exported to Excel no extra stoves is formed with a very small width. 
 
 To position elements more accurately, it is recommended to put the check box in the property `Snap to 
-Elements` menu `View`. Thus, when the location of items they will "adhere" to each other and between them there will be extra spaces. 
+Elements` menu `View`. Thus, when the location of items they will `приклеиваться` to each other and between them there will be extra spaces. 
 
 However, there are bolee convenient sposob that can automate accurate location of items in the report. This is `элемент band`. It is necessary to add up all the items that are displayed in one line and set the property value `layout` `row` that the elements in the group went after each other from left to right. So they will dock to each other horizontally, and between them there will be gaps. 
 
@@ -134,13 +134,13 @@ To fix this, you need to go into the connection settings (window `Database Conne
 
 #### Missing query results before viewing 
 
-If the query returns too many records, they may not fit on the first sheet. In this case, they are leaves, but when you export to a file, all records will be displayed together ("from the beginning"). 
+If the query returns too many records, they may not fit on the first sheet. In this case, they are leaves, but when you export to a file, all records will be displayed together (`начиная with начала`). 
 
 #### reference to the parameters of the report 
 
 To access the report parameter in the query, you must wrap it in braces and put in front of them with a dollar sign (for example, if the parameter name `Company`, then in the query you need to write `${Company}`). 
 
-If you need to refer to the report parameter from the expression (for example, to make the title "Report on Square Enix"), in this case, instead of curly brackets are put round (then the expression in the title field will be "Report `$(Company)`"). 
+If you need to refer to the report parameter from the expression (for example, to make a title `Отчет company Square Enix`), in this case, instead of curly brackets are put round (then the expression in the title field will be `Отчет company `$(Company)``). 
 
 #### Blank when pre viewing 
 

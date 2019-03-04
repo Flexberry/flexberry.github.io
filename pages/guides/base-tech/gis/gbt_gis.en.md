@@ -7,7 +7,7 @@ permalink: en/gbt_gis.html
 folder: guides/base-tech/gis/ 
 lang: en 
 autotranslated: true 
-hash: fbe473bdb7356b3909689bf70fdc939131efcaa30d1ef72f39dcb7274ffc1b03 
+hash: f8cf8340f4fcae1879b33278c5be32ce86bb6b9e4acdc8624bb5bc0484158966 
 --- 
 
 ## Brief description 

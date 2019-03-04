@@ -1,18 +1,18 @@
 --- 
-title: Option 3 - the "Network education program" 
+title: Option 3 - `Сетевые educational программы` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-03.html 
 lang: en 
 autotranslated: true 
-hash: fc5a0d8901940c4e2fb0c21f6e41296e8bc48d742b940efd618fbee209d9936e 
+hash: 7598a50916d770f4c80ac519e149dbf766a20b22049334e0ad1a5a03e2ebcfd9 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application "Network education program". 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Сетевые educational программы`. 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
 ## General description of the subject area 

@@ -6,7 +6,7 @@ toc: false
 permalink: en/gma_launch-mobile-app.html 
 lang: en 
 autotranslated: true 
-hash: 85b08fab11238746c3f481a5e5de5b985d54c733c34d18fb42cb6363b31b74c2 
+hash: 3c1ae9b852baf21d86e01415e43eed14cef145abe806652c8eb15f266cbbbb8c 
 --- 
 
 ## Description 
@@ -54,7 +54,7 @@ Start creating a mobile application in two ways:
 
 1.Select the desired device from the menu **Scheme** the toolbar (example: `iPhone 6S Simulator`) as shown in the figure above under the numeral (2). 
 
-2.Click "Run" (3) on the same toolbar to the left of the **Scheme**. When the button is created, you deploy and run the app in the simulator. To display the application opens a separate simulator application. 
+2.Click `Выполнить` (3) on the same toolbar to the left of the **Scheme**. When the button is created, you deploy and run the app in the simulator. To display the application opens a separate simulator application. 
 
 ![](/images/pages/guides/mobile-app/open-mobeli-app.png) 
 

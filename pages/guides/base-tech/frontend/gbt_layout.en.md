@@ -7,7 +7,7 @@ permalink: en/gbt_layout.html
 folder: guides/base-tech/frontend/ 
 lang: en 
 autotranslated: true 
-hash: af9f0fa8d20574277ecd0a3e9869f643930d54527643da21c36b2456a4aa6b07 
+hash: 455c5965136725e25b78b0aaabc6f6f86bc347c5bf180bf16b7069767589bdd5 
 --- 
 
 ## Brief description 

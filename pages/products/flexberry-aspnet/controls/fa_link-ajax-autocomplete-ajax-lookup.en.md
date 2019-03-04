@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_link-ajax-autocomplete-ajax-lookup.html 
 lang: en 
 autotranslated: true 
-hash: eddd60dfa77b5882535a665e14dd1604c1ecf86a3ab8d0bcd16e9bbe18cb3f6e 
+hash: d80f3a3c6ec906a11b73cbf9726a20af3ff7870135fb56573901c1faadbfc984 
 --- 
 
 Has the ability to bind AjaxAutocomplete to AjaxLookup. Ie, if you select in control with the support `AjaxAutocomplete` will automatically put the value of lucapa, if the value of the specified property will be found in artisan objects, otherwise lucapa put down an empty value. 

@@ -1,5 +1,5 @@
 --- 
-title: Option 06 - "Network education program" 
+title: Option 06 - `Сетевые educational программы` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-06.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 018ea45de6de3f1c0758cb41372a3ef57b10a998a1fe507f02f51e8ef76cdd01 
+hash: c867ec4d8728d51640e7e53f295b9a7944e29aa7e7f535499151c44d0a3b029a 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application "Network education program" (module IP for universities). 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Сетевые educational программы` (module on IP for universities). 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
 ## General description of the subject area 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_color-picker.html 
 lang: en 
 autotranslated: true 
-hash: 528c896bf72befa7aecbb7965b476c6c7b890d9f6c00dafd7aee62b45aee2342 
+hash: a44076d0998be00628470150fa7ce61003cbe51de2e9c9eb414c1cf362e38924 
 
 --- 
 

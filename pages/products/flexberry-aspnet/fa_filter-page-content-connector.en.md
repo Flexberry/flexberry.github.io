@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_filter-page-content-connector.html 
 lang: en 
 autotranslated: true 
-hash: f1074352b3366632fa8841534f9bbdea4a932cadb45bd7e935d03e6f3bf09aea 
+hash: 956b8bdb751722d8a1950e59b5472e036182315da0c9c5e52455539e7db8e4dc 
 --- 
 
 Class `FilterPageContentConnector` used for technological connection of scripts and styles that are necessary for the operation of the controls and the runtime environment by using post-processing of the page layout. The scripts are included at the end of the tag `<body>`, styles - at the end of the tag `<head>`. 

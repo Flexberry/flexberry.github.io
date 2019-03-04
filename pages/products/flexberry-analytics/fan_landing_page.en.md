@@ -6,7 +6,7 @@ toc: false
 permalink: en/fan_landing_page.html 
 lang: en 
 autotranslated: true 
-hash: fc82fe5e9235a53a074733ea0d00156e90ca38753fd393ad3bb60d23e5ab9d86 
+hash: 2cd6ed4c2c518865a9629e1ca4bc6d8be87a45336d8e533927834241661be6a0 
 --- 
 
 

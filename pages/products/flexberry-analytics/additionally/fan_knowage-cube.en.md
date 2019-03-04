@@ -6,7 +6,7 @@ toc: false
 permalink: en/fan_knowage-cube.html 
 lang: en 
 autotranslated: true 
-hash: 566c0f9f9ade208e3fecfc50db73fb2a6886333cce59fb05963bb6592f4415bc 
+hash: 4d78a2b4cbea5831d5a4a7519f2fe5ddd1584c8d1b1fc4e7357e9e924d50535a 
 --- 
 
 `Knowage` is a package business intelligence open source, which combines traditional data and big data sources into valuable and meaningful information. It combines innovations coming from the community with experience and practice solutions at the enterprise level. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_editor-in-frame.html 
 lang: en 
 autotranslated: true 
-hash: 4c15dc6a6da358c0aaa0b051041df7dcd28191aa96719125dd90ea199ad27b1b 
+hash: 14014d3f25c198b31860e10ac51119d1082520233f13026d7e2382fcf86823c3 
 --- 
 
 When the user selects an item in the list, it is useful to immediately see the item details and edit it. 

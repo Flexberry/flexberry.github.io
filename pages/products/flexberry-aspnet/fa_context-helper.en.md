@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_context-helper.html 
 lang: en 
 autotranslated: true 
-hash: e1d5a13910d4ac045f4d8c4cec5e17b8ff59af0a484a914c8ba5621f5a8cd57c 
+hash: 3a12a7bcdd21d1cc20c6be841df10e351fbf4c37f204642ba742c7185da4fba0 
 --- 
 
 ContextHelper is needed in order to connect skriti (js), styles (css) in C# code. 

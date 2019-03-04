@@ -7,14 +7,14 @@ permalink: en/gbt_android.html
 folder: guides/base-tech/mobile/ 
 lang: en 
 autotranslated: true 
-hash: 9fd6e67a0dbd2133289a738b73a8c8157b3d6900f23ea764541b123ed8bbeafb 
+hash: 1b1836737e9e23cc4f4c90fdbabcbf01448e039d4a2144d991d223c324922337 
 --- 
 
 ## Brief description 
 
 **Java** — strongly-typed object-oriented programming language developed by Sun Microsystems (subsequently acquired by Oracle). Java applications are usually broadcast in a special byte code, so they can run on any computer architecture with a Java virtual machine. The official release date — may 23, 1995. 
 
-**Android ("Android")** — operating system for smartphones, Internet tablets, electronic books, digital players, watches, game consoles, netbooks, smartbooks, points Google, TVs and other devices. In 2015, there is support for in-car entertainment systems and household robots. Based on a Linux kernel native implementation of the Java virtual machine from Google. Initially developed by Android, Inc., which was then bought Google. Google subsequently initiated an Alliance Open Handset Alliance (OHA), which is now engaged in the support and further development of the platform. Android allows you to create Java applications that control the device via Google developed library. Android Native Development Kit allows you to port the libraries and application components written in C and other languages. 
+**Android (`Андроид`)** — operating system for smartphones, Internet tablets, electronic books, digital players, watches, game consoles, netbooks, smartbooks, points Google, TVs and other devices. In 2015, there is support for in-car entertainment systems and household robots. Based on a Linux kernel native implementation of the Java virtual machine from Google. Initially developed by Android, Inc., which was then bought Google. Google subsequently initiated an Alliance Open Handset Alliance (OHA), which is now engaged in the support and further development of the platform. Android allows you to create Java applications that control the device via Google developed library. Android Native Development Kit allows you to port the libraries and application components written in C and other languages. 
 
 In 86 % of smartphones sold in the second quarter of 2014 was an operating system Android. At the same time for the whole of 2014 was sold more than 1 billion Android devices. 
 

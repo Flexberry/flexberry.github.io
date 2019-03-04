@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_date-time-now.html 
 lang: en 
 autotranslated: true 
-hash: 5b56a93c675a1c53bf55a62ba4828234c36da400c29ac46e7740175b885bf452 
+hash: 75244aaa2cd4fb8f56f5b7b0b96789e7bf4138cc40717534faada4423fce5ed6 
 --- 
 
 Objective: in the type attribute `DateTime` default must bear the current date. 

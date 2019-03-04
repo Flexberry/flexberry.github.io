@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_dbms.html 
 lang: en 
 autotranslated: true 
-hash: ca58cad2d410ff321472179f2906114b719e0067cd7f1ef1f74b9f946fb10a7d 
+hash: 615a781ff1b6845312952438f4942549a7170a3039175f1c8f88834595c2fc4e 
 --- 
 
 ## Brief description 
@@ -45,7 +45,7 @@ hash: ca58cad2d410ff321472179f2906114b719e0067cd7f1ef1f74b9f946fb10a7d
 
 * [Database](https://www.youtube.com/playlist?list=PLrCZzMib1e9obOz5K695ugYuiOOCBciEi) 
 * [The methods of the DBMS in Internet applications](https://www.youtube.com/playlist?list=PLrCZzMib1e9r6c-j8aW1JuETSyCBp9iAg) 
-* [Algorithms of the intelligent large-scale data processing"](https://www.youtube.com/playlist?list=PLrCZzMib1e9pyyrqknouMZbIPf4l3CwUP) 
+* [Algorithms of the intelligent processing of large amounts of данных`](https://www.youtube.com/playlist?list=PLrCZzMib1e9pyyrqknouMZbIPf4l3CwUP) 
 * [Technopark Mail.ru Group: Databases](http://www.intuit.ru/studies/courses/3499/741/info) 
 * [Design database](https://www.youtube.com/playlist?list=PLrCZzMib1e9pq_sbw7ZEcEU3Yyz1AvE--) 
 

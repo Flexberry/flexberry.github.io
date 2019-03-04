@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_sitemap-according-roles.html 
 lang: en 
 autotranslated: true 
-hash: 01431f99cd5e924b482d61a77e9d0f9ce4d2a9e3d65d829580f6952b9732a9d0 
+hash: 3d2868cb3cee2aee9ff6fda728ecda8609041b44191f588587bbcf7129b9f2eb 
 --- 
 
 Example: a web application `Гостиница`, to be accessed by users with two possible roles `Приемщик` and `admin`. 
@@ -24,7 +24,7 @@ You want to restrict access to the relevant application forms. To do this, speci
 ```xml
 <siteMapNode title="Hotel" roles="Inspector,admin" xmlns="">
       <siteMapNode title="Booking" description="" url="~/forms/Bronirovanie/G_BronirovanieL.aspx" roles="admin"/> 
-      <siteMapNode title="Room Fund" description="" url="~/forms/KomnataGostinicy/G_KomnataGostinicyL.aspx" roles="Inspector"/> 
+      <siteMapNode title="License plate Fund" description="" url="~/forms/KomnataGostinicy/G_KomnataGostinicyL.aspx" roles="Inspector"/> 
       <siteMapNode title="Kind of animal" description="" url="~/forms/ZHivotnoe/G_ZHivotnoeL.aspx" roles="Inspector"/>
 </sitemapNode> 
 ``` 

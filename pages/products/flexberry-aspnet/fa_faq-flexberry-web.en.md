@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_faq-flexberry-web.html 
 lang: en 
 autotranslated: true 
-hash: bb328ca22f72f1b0d12ab8fef988402322db7741b7a28adcb9e5fc79f6dd0343 
+hash: 1f54d71c38bb001534a0cbe24ded3282460010bea683867687812edcbbac6901 
 --- 
 
 ## How to see the queries going to the source data? 
@@ -88,7 +88,7 @@ ICSSoft.STORMNET.Web.Controls.TextStyle ts = new ICSSoft.STORMNET.Web.Controls.T
 WebObjectListView1.Stylization.Styles = new ICSSoft.STORMNET.Web.Controls.TextStyle&#91;&#93; { ts };
 ``` 
 
-In this example, for objects that have property "name" set to "vacuum Cleaners", to apply the style "redtext". Don't forget to define styles in css before such descriptions. 
+In this example, for objects that have the property `ФИО` is specified `Пылесосов`, to apply the style `redtext`. Don't forget to define styles in css before such descriptions. 
 
 ## How to disable editing of the object's properties immediately to the entire form? 
 
@@ -114,7 +114,7 @@ The main thing that was connected style exceptionpanelstyle.css thickbox.css. An
 
 ## How to connect *.js or *.css file or add the generated script from a content page? 
 
-Use class `ContextHelper`. 
+Use class `ContextHelper`.
 
 ```csharp
  public static void ПодключитьВнешнийФайл(string относительныйПутьКФайлу) 
@@ -128,7 +128,7 @@ To add a new row by the script:
 
 ## How to customize the display of columns in WebObjectListView? 
 
-You should use class methods ViewColumnProvider and xml description of data objects.
+You should use class methods ViewColumnProvider and xml description of data objects. 
 Example: 
 
 ```csharp

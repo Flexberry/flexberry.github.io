@@ -1,12 +1,12 @@
 --- 
-title: a Practical guide "do as I Do" 
+title: a Practical guide `Делай as я` 
 sidebar: guide-practical-guides_sidebar 
 keywords: guide 
 toc: true 
 permalink: en/gpg_landing-page.html 
 lang: en 
 autotranslated: true 
-hash: 3eff56ced24f72a2e1994d53fd05b0f5bce6fe0843e7a46b35c4308216165aa7 
+hash: 7b75824c356696a17e6a2e54c14f957dbb9cd5be3ddd6214e641d07fc7c32d2d 
 --- 
 
 The practical guides will help to familiarize yourself with the platform Flexberry, as well as to acquire basic skills of working with its products. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_jquery-colresize.html 
 lang: en 
 autotranslated: true 
-hash: 8659053de668028e0c2311088942ee53dfd1e71b0c6e2c2299e4daa63fbec6fe 
+hash: 4c25db4167f871cb8a88498a3385a75dc673f23d6925a9236eb6efcedb7bc70c 
 --- 
 
 `jquery.colresize` - a jQuery plugin designed to add functionality for setting the column width html tables. Used `WebObjectListView` and `AjaxGroupEdit`. Supports setting width of columns by mouse, linking multiple tables for synchronous settings. 

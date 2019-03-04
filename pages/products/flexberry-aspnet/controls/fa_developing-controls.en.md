@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_developing-controls.html 
 lang: en 
 autotranslated: true 
-hash: 42b131457ddb777fd204f23132e3f9ce60e2563de29992dcfd4093a75686b843 
+hash: 37b2af6b8140d03abcc87305ddba9a7923b48c001355d718b99482e2ee09769c 
 --- 
 
 The article proposes a common set of rules for proper/supported/enhanced the architecture of the web controls using the platform [FlexberryASP.NET](fa_flexberry-asp-net.html). 

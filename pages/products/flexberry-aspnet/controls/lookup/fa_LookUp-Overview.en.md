@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_lookup-overview.html 
 lang: en 
 autotranslated: true 
-hash: 88a7a704c0549dcc9e87eb219c3813c9b5c8583bb0a947d25effe677447d967f 
+hash: fef79e60ea758b8a33f7f3c8d11fcba7b38498c3e1983602b59f882fe96d73b3 
 --- 
 
 `LookUp` (action) - select a craftsman of the object (putting links to the workman the object). 

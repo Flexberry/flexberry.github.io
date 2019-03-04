@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-object-list-view.html 
 lang: en 
 autotranslated: true 
-hash: 56463530ef9a09bd4274e48b3aca61a0e6abee42aba951000c13129e5db1ae85 
+hash: 4638e4b83fc0a4faadb9858b96057202ce253af142f72367e6e705cf3d91b86b 
 --- 
 
 **WebObjectListView** (hereinafter, `WOLV`) is a web control that is used to display a list of objects. 

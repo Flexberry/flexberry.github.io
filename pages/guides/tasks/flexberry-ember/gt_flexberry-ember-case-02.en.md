@@ -1,18 +1,18 @@
 --- 
-title: Option 2 - "Sports school" 
+title: Option 2 - `Спортшкола` 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-02.html 
 lang: en 
 autotranslated: true 
-hash: b2292566d3d5d448fe46ea33cf7cb9ac49c934e03364284d6a53baedb70d0166 
+hash: e4903bb7a6921e2b094d910d517133ee380c59e12ba182db6649400226af08ff 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: the app "Sports school". 
+In the framework of the practical part of the course you will have developed end-to-end example: application `Спортшкола`. 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

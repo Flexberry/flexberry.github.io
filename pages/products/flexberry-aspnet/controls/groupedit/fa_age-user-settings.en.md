@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_age-user-settings.html 
 lang: en 
 autotranslated: true 
-hash: 10707d77856154e91d1cab9e2b4164260a6c2d3fea751754bb3a0318aa110774 
+hash: becdc07285fccb8a02357c8a392d59e56cc62d1c4182f45186acba5182d5deea 
 --- 
 
 ## adjusting column widths 

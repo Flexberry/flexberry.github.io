@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_wolv-adv-limit-caching.html 
 lang: en 
 autotranslated: true 
-hash: 040a8845b51f734033f9d15077fd4b7ff3fe85e477b1ba919767465f33a0f964 
+hash: 51b2adfb95f39404d3069124fdfaad28ebca114a6c66e71de0c5076f9563aad5 
 --- 
 
 To improve the performance [WebObjectListView](fa_web-object-list-view.html) you can add caching custom extended restrictions. 
