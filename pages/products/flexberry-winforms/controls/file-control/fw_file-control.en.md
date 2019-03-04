@@ -73,7 +73,7 @@ By default, all buttons on the control on the edit form hidden.
 
 ## FileControl and list form 
 
-{% include important.html content="Not recommended field, processed using FileControl, in [views](fd_key-concepts.html) treated in [form list](fd_key-concepts.html), since in this case, when viewing the list in memory loaded all the files (besides, it is not guaranteed that the displayed file name will be "meaningful")." %} 
+{% include important.html content="Not recommended field, processed using FileControl, in [views](fd_key-concepts.html) treated in [form list](fd_key-concepts.html), since in this case, when viewing the list in memory loaded all the files (besides, it is not guaranteed that the displayed file name will be meaningful)." %} 
 
 ## Change open using FileControl files 
 
