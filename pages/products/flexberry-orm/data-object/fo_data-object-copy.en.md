@@ -19,7 +19,7 @@ lang: en
 
 ## Оптимизация работы
 
-Операция создания копии данных - довольно дорогостоящая операция в плане производительности, поэтому рекомендуется при вычитке объектов, которые точно не будут обновляться в БД, отключать инициализацию копии данных в свойствах [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
+Операция создания копии данных - довольно дорогостоящая операция в плане производительности, поэтому рекомендуется при вычитке объектов, которые точно не будут обновляться в БД, отключать инициализацию копии данных в свойствах [LoadingCustomizationStruct](fo_loading-customization-struct.html):
 
 ```csharp
 LoadingCustomizationStruct lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof(Шапка), "ШапкаE");
