@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_changes-sql-bt-monitor.html 
 lang: en 
 autotranslated: true 
-hash: c6674bd0b382d7397a2211cdd7950ffe68e1fa6bdd0ad0ff8d193c6018be264b 
+hash: a710c7d0df6a85458dfbe188f74fd7754cede2a831fa96019fc033c3a7b54e19 
 --- 
 
 ## Description 

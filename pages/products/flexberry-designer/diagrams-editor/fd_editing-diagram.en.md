@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_editing-diagram.html 
 lang: en 
 autotranslated: true 
-hash: c71f6e4bd60e85dd24edcf3257b91082c781306d13fc976b04791220c8eab79e 
+hash: c597c6d2f3cb0161749c95a0e70c1559f42fd56d69b061dbd9e39c94f42df671 
 --- 
 
 This article describes the features and capabilities for creating and editing items in the chart. 

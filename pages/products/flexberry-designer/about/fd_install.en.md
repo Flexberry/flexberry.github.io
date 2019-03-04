@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_install.html 
 lang: en 
 autotranslated: true 
-hash: b31c46f5ce0cc11fb3ca18f60e2316f16161a3204e7624448b8f43393e113f83 
+hash: 9c931ce2a226142d9c7b64eea6861a6e9adc61a0ab53d3edf19445471afa91cb 
 --- 
 
 To set [Flexberry Designer](fd_landing_page.html) you need to download the installation file from site [Flexberry.net](https://designer.flexberry.net/#/fd-try). 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_security-forms.html 
 lang: en 
 autotranslated: true 
-hash: 37dc633721c08bee8e5f2bf1d5150251e9dbfde256c9a75bed73bf4b9cc2f9d3 
+hash: 97c4de542ad110f72923113af7f31dd1d8d9e55e48f397e47e6c43b048dc9f11 
 --- 
 
 Among technological forms, there are forms to work with objects of the subsystem powers. 

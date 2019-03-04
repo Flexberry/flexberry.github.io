@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_flexberry-plugins.html 
 lang: en 
 autotranslated: true 
-hash: 78aa4d97ae039f900b84515a1bdc8e9aa3312fedd00d6c9f7f0029495e3c641d 
+hash: a93341f2ed4b088ece458682cc04345c97637f25daa852a98f4c07f21ea2c434 
 --- 
 
 Expansion modules add functionality in [Flexberry Designer](fd_landing_page.html), providing new opportunities. The module can be generator source code search utility, import / export, etc. 

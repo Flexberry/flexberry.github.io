@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_user-settings-service.html 
 lang: en 
 autotranslated: true 
-hash: 19751d6e30e67283020321967a483e6089898a4ea15f9f4d0dbf454019aa5946 
+hash: d305c80bb0025b057ab72b335fc7ea5cd4bc2007fc148cd694c0ff52ecfcc218 
 --- 
 
 `UserSettingsService` is a service by storing user preferences. 

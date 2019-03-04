@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_css-buttons.html 
 lang: en 
 autotranslated: true 
-hash: ae75734772b09c838650b7d75efb3155816922138a320961279241d2ba54498c 
+hash: bca9c1f11e5124ddcc2d9ffc3f12bd94777d36b6399cde9d8a63d049058ddf8a 
 --- 
 
 ## create a CSS class for links 

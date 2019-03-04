@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-lock-helper.html 
 lang: en 
 autotranslated: true 
-hash: cde99e0f1df2d95fb13261326314fde2598977370173bf929682994297f8ad35 
+hash: 10b81d7e164a9dec6cc6ed2d0c42c16a71166db1599278bb920f561fe2a50763 
 --- 
 
 `ICSSoft.STORMNET.Web.Tools.WebLockHelper` class to work with web-locks of data objects in web applications. Uses the date and lifetime of a lock to determine its relevance, the lock is stored in the database. 

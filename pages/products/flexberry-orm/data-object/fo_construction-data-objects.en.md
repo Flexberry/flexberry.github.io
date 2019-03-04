@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_construction-data-objects.html 
 lang: en 
 autotranslated: true 
-hash: cd492b627ad67467511271ab61a6981757e81f2773b0e00872381e4c6003f0f4 
+hash: c782b271e595ba5624d71e9b7635320b3b6274bf118529c403d37ad8b017d8eb 
 --- 
 
 The developer will design any object data standard for `.Net` follows: call `new` with the necessary constructor. 

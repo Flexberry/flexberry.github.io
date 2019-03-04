@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_blueprints.html 
 lang: en 
 autotranslated: true 
-hash: 2b8aef62cc96d41f3d199808fc15ea2ee262ea1cd96bdc13ddf82b54d183edba 
+hash: 36c9a884ab12112b28707e12fb0586d959cb0864d990e359a0452b5f01948801 
 summary: code generation tools addon ember-flexberry based on `blueprints` 
 --- 
 

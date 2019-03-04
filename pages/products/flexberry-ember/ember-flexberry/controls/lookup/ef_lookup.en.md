@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_lookup.html 
 lang: en 
 autotranslated: true 
-hash: ea518adcbc78099fc127773ab4c82018cc8ec861c87cbde31f00ae46c030e6bd 
+hash: 9d6637fba3100e43a9e9384a92a4edbd5b70eee46e6d908e0062502ff6980d29 
 summary: describes the main features of lyapov 
 --- 
 

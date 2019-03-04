@@ -6,7 +6,7 @@ toc: true
 permalink: en/efg_group.html 
 lang: en 
 autotranslated: true 
-hash: 1999ba9ebbfce5d837c5f99b3c5496e60f7af0903eb0cb4e1df7be345038eb04 
+hash: b6ae62c51ceef54f09ff14eb16c0f7fcf6e3e231eef529ee8217739f1061f44b 
 published: true 
 --- 
 

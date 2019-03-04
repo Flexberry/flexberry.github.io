@@ -7,10 +7,10 @@ toc: true
 permalink: en/fd_ember-editform-constructor.html 
 lang: en 
 autotranslated: true 
-hash: 83bb19a1d48e85c4d89f82b745a5b5e82c0cb526d923ecabb230a288148eb404 
+hash: 15191c05884ce80f36c61b8517831fa7df2d734806687937adb9e8e9c78cc869 
 --- 
 
-Create edit form available through the edit [app Structure](fd_structure_all_forms.html) button "Add form edit". 
+Create edit form available through the edit [app Structure](fd_structure_all_forms.html) button `Добавить form редактирования`. 
 
 On the tabs to the right you can edit the form properties and controls that are placed on it. 
 
@@ -29,9 +29,9 @@ To add a new item in one of two ways:
 
 If adding a new control will be allocated to a group or tab, the new element is automatically added inside the selected item (or tab group). If the selected control, the new control will be added next to it (in one line). 
 
-One item can be placed in another (or, in the case of field – to change the place in the row or between rows) with a button "Move". To move it should highlight the element you are moving, then click again on the "Move" button and click on the desired location on the form. You can also change the order of elements by dragging them with the mouse. The order of the adjacent controls can be changed with the buttons-pointers left and right. 
+One item can be placed in another (or, in the case of field – to change the place in the row or between rows) with a button `Переместить`. To move, you should allocate a floating element, then click on the `Переместить` and click on the desired location on the form. You can also change the order of elements by dragging them with the mouse. The order of the adjacent controls can be changed with the buttons-pointers left and right. 
 
-If you select the tab or group and press the Remove button, be removed as a tab/panel and all controls contained within them. Tabs and groups can also be added to each other randomly. 
+If you select the tab or group and click `Удалить`, it will be removed as a tab/panel and all controls contained within them. Tabs and groups can also be added to each other randomly. 
 
 
 

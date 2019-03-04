@@ -7,7 +7,7 @@ permalink: en/efd_serializer.html
 folder: products/ember-flexberry-data/models-and-projections/ 
 lang: en 
 autotranslated: true 
-hash: dbdb67925504c41da6048a4b67ddce03b3d15970fc1d971bdc05b47681ebb848 
+hash: 78d556e30a1636389e35af14453d294ad0e0e91f831df5e592df50b87551c400 
 summary: Serializers define how to deserialize and serialize data for the server in ember-flexberry application. 
 --- 
 

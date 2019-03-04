@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_inheritance.html 
 lang: en 
 autotranslated: true 
-hash: 6494b1ed033f436e092f7d122a7c6552dcc8695d8f5572038d69b5ac66bd2d4c 
+hash: 973c77f5b75f95ca19202d2b91775b5b20bcb0fd0555458e83ef70a3f13b0bbd 
 --- 
 
 Association of inheritance, such `Internal-InternalChild` called `наследованием` class in the Association — `предок` and the external `потомок`. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/ef_custom-buttons.html 
 lang: en 
 autotranslated: true 
-hash: 5a1f31801da0168092f3bad3bce40819ceed85d5ab04677598ee60b3ef7463b1 
+hash: 5ed25fc72c74acb4124002693a2e34cf4c2ca9f9f88d8cb894afef2a31937da9 
 --- 
 
 ## Embedding custom buttons to the toolbar list 

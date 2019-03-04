@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_open-editform-custom-object.html 
 lang: en 
 autotranslated: true 
-hash: f755b976de551e5a9c1800f06930489fd9760c44dd37a066f3bdb45637700652 
+hash: a64c2a9999b3e8c1470296576b279d5d229b38aad01c0b8fcf0c223b067eda28 
 --- 
 
 The edit form allows you to not only create a new object from scratch, but to create an object in which some fields already filled in. 

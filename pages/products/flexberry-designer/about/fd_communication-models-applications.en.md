@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_communication-models-applications.html 
 lang: en 
 autotranslated: true 
-hash: 32c931d16bed49cebd9ba7e71318c87e63af012ac15c5c8faeb6fb9fb9bab27c 
+hash: cfce4098cf1bc4b4780edf1b1b369466ada5f87d1d6976d593c4b323364e8c43 
 --- 
 
 ## Logic levels 

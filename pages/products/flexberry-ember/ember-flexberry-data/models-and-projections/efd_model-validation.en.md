@@ -7,7 +7,7 @@ permalink: en/efd_model-validation.html
 folder: products/ember-flexberry-data/models-and-projections/ 
 lang: en 
 autotranslated: true 
-hash: adfed57b1e90890ee52a61251b83f3e69035dd55005d1fe396dd5abe98ef45c2 
+hash: d6871d7db9afd98befdd58db352ed1f0450f4fb87b2a1ef0a0aa8ed103198553 
 summary: Describes the basic steps for configuring validation 
 --- 
 

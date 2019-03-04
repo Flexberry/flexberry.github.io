@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_object-status.html 
 lang: en 
 autotranslated: true 
-hash: 829406e4d8a80ca082c797a7db3ad922fec1cc7f5e0e15b21d4ddd55b4a1275e 
+hash: c2b7399ef4b4bcc94fa669042b256c44272aee061cd6c0abc820ffa11782581f 
 --- 
 
 ## the statuses of the data objects 
@@ -23,7 +23,7 @@ The object status can be ascertained by the method of the data object `GetStatus
 
 ### AutoAltered 
 
-Status `Altered` can be calculated automatically at the time you call `GetStatus`. This requires the class of the data object attribute to the attribute `AutoAltered`. If this attribute is not assigned, then set status `Altered` programmer must perform manually. You should carefully use this opportunity to remember that the installation `AutoAltered` slows down because *each time the status of the real test object properties data on the change*. Default `AutoAltered=True;` 
+Status `Altered` can be calculated automatically at the time you call `GetStatus`. This requires the class of the data object attribute to the attribute `AutoAltered`. If this attribute is not assigned, then set status `Altered` programmer must perform `вручную`. You should carefully use this opportunity to remember that the installation `AutoAltered` slows down because *each time the status of the real test object properties data on the change*. Default `AutoAltered=True;` 
 
 There is a possibility not to be recalculated after the status of the established `AutoAltered`, it is necessary to call the method `GetStatus(false)`. 
 

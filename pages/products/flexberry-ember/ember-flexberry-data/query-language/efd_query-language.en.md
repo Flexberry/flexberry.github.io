@@ -6,7 +6,7 @@ toc: true
 permalink: en/efd_query-language.html 
 lang: en 
 autotranslated: true 
-hash: 382479348e988dc501a249c9fe455cb8288262cd753f7380d5d3523a20346987 
+hash: 10bc404cf941c1aa7cd6e14acad3c43c2b6cb288da413c87b020095c7c2c958c 
 summary: Description the client language requests. 
 --- 
 

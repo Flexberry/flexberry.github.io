@@ -7,7 +7,7 @@ toc: true
 permalink: en/efs_security-manager.html 
 lang: en 
 autotranslated: true 
-hash: c5e936aba092e7bde8e96b7995d256c0b1640c8bf9460ce40e1f95b17d846a30 
+hash: 6651d92070104c1d27fac5783c688d0f0b19523f8c8eb9ea60e864dac186a79d 
 --- 
 
 ## Description SecurityManager 

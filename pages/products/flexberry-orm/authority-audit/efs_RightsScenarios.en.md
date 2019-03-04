@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_rights-scenarios.html 
 lang: en 
 autotranslated: true 
-hash: 2c83a78378fefcc3f098ba5b0c36cb01c1aa27210830d4ee6a83b2a2a66b1606 
+hash: 0a8af9fbf10b644a91b8a40d238344348b029a97643b8997175786a066632c35 
 --- 
 
 # Scripts user access rights differentiation applications 

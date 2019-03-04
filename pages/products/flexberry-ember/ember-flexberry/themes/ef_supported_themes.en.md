@@ -7,7 +7,7 @@ permalink: en/ef_supported_themes.html
 folder: products/ember-flexberry/themes/ 
 lang: en 
 autotranslated: true 
-hash: 8926ebc2407b04e74428ec077796d1c90f29b60a47337848123ff865c6be0ed3 
+hash: 7796839ceb556839e6d227e04abf8a9b220698c1eee9d4ea75c757e776372fc0 
 summary: the description of the distributed addon themes 
 --- 
 

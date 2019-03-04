@@ -7,7 +7,7 @@ permalink: en/ef_themes_structure.html
 folder: products/ember-flexberry/themes/ 
 lang: en 
 autotranslated: true 
-hash: 30a82dc737e846e399c2af7afcddb29975b11bffd41a7e54e1d52995d7871a74 
+hash: 3004cf20f5298d84c27027fc836a284d6ae85c6cc2b5b859abe00cc1de80c266 
 summary: description of the internal mechanism themes 
 --- 
 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_js-api-core.html 
 lang: en 
 autotranslated: true 
-hash: b3ab738cf13234c2c6dc34a0ab46ac60113e4f34ed07a99fff4cfbce30870451 
+hash: c34e42905300a45ab7e1967d160acfea383d458c35e1597cc9095ed2cbb283c4 
 --- 
 
 ## Dialog box 

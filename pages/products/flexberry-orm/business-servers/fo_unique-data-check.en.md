@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_unique-data-check.html 
 lang: en 
 autotranslated: true 
-hash: fc2e3b3f2982e7ea6d8219f5255c85982f6584690c0db452b8757568d9a6aebb 
+hash: 70e88c163bf33209bcd30d9c77ac1e90a454b0018b4251c7300410370dda56a0 
 --- 
 
 If there is a need to verify the uniqueness of data entered, it is necessary in the method `OnUpdate` [business server](fo_bs-wrapper.html) to generate read data and compare the data from the database with the entered data. 

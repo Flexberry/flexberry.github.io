@@ -7,7 +7,7 @@ permalink: en/ef_themes_creating.html
 folder: products/ember-flexberry/themes/ 
 lang: en 
 autotranslated: true 
-hash: 50bb984080db2ec0acf52afd2379d6b1ecfb6330a815c7dfde294d4a36904aab 
+hash: 9aa3108d5ea93be67b1fe89fda1cbfbcb69a8ba70723ff380afd3a83f9e90aae 
 summary: Description of create new themes 
 --- 
 

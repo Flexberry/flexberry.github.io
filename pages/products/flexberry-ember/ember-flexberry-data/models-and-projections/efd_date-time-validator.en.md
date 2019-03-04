@@ -7,7 +7,7 @@ permalink: en/efd_date-time-validator.html
 folder: products/ember-flexberry-data/models-and-projections/ 
 lang: en 
 autotranslated: true 
-hash: f1d5a81a60783c1c6495515558dc1c390c42c7c123af1f1d79d19a4803586f58 
+hash: 9099b3f46fdfee4e55e4750b5741ab1e2874909f4ae5f919fd0f8875c93c149e 
 summary: explains the features and usage of the validator is a datetime. 
 --- 
 

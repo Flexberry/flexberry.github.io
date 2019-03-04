@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_typedef.html 
 lang: en 
 autotranslated: true 
-hash: e400ca01e5698fe9cd1b33b8f5ac31b2cab208c110e2ae6939b44265b41f8c5d 
+hash: 30c97c7536905cde778e7f0d07ac41b82231f9026fe1f4b85dd0b78d721adacb 
 --- 
 
 `Typedef` - [stereotype](fd_key-concepts.html) indicating the synonym type. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_page-layout.html 
 lang: en 
 autotranslated: true 
-hash: c0587eb01a934c2595805cd5013ca724d60b37596daa4108b9a5b8b0bdd8b35d 
+hash: 22622e6e856ceba713c602f62bf461f68734430aa78e21ed9fd3870255d6468e 
 --- 
 
 This section is designed to collect frequently used solutions in the layout, CSS styles, etc. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_features-dafault-value.html 
 lang: en 
 autotranslated: true 
-hash: 4622e6b2a79933ec9ad5f0d3642dceea5e2dcf61e9cb5dd33afd377cab227936 
+hash: dd47192e5257cbbfd7843a7cd9c971db4937f2841c17fff2258d113fd2088b14 
 --- 
 
 Set default values available when you edit a [class diagram](fd_class-diagram.html) and in the code. Consider the main features of these methods. 

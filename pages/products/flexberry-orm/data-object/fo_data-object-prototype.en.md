@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_data-object-prototype.html 
 lang: en 
 autotranslated: true 
-hash: 3c398b73e3367b52090bddd3edc8fab0c38ad9cc1a0d0f4e7f9334f12762527c 
+hash: 171c606b21a40589f787377dca328496c53e94b8d4865521748a4ecb96eff925 
 --- 
 
 `Прототипизация` - create [data object](fo_data-object.html) on the basis of another. 

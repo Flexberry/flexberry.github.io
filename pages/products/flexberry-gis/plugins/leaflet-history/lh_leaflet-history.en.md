@@ -7,7 +7,7 @@ permalink: en/lh_leaflet-history.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 73b64a34e0902ab9f93a2859e669ceabfe2e0ad4cbc702f6e24710b1d172e6fb 
+hash: 944969379afc6f1a30eb66a50a0a92fce0069d473cad515f931e395dc11d72fa 
 --- 
 
 ## product Information 

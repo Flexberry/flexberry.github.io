@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_class-diagram.html 
 lang: en 
 autotranslated: true 
-hash: f7d35ef1e9aadefee4ae49a23958fcc902c0fd0311697b546ac64dba9c8d5a89 
+hash: 24df09901e7f9a68a25d49cf6c5d241b45d051443a5f617951a1bf1b1a62631a 
 --- 
 
 **Class diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 

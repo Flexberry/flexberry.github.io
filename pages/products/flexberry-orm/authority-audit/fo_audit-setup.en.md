@@ -6,7 +6,7 @@ toc: true
 permalink: en/fo_audit-setup.html 
 lang: en 
 autotranslated: true 
-hash: 3b474ee3cac9b1bc1c0fb8893f9d751f56a1ef8950bddfcbeaee41886f94fd19 
+hash: 92796554020353a986091303c5bbe3d08b282a19ccba6466bf3797f5320149a6 
 --- 
 
 ## Audit 

@@ -7,7 +7,7 @@ permalink: en/ef_lock-service.html
 folder: products/ember-flexberry/services/ 
 lang: en 
 autotranslated: true 
-hash: e1f7ea80365e18d2581f2085d539d417d5bbbafa3581a44e0c8c848da2840b57 
+hash: d18f633fbf0714e04a422e97e8fb7719c25253b02a6af38b41965859d785a52d 
 summary: the description of the service locks 
 --- 
 

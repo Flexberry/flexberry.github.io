@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_actions-saving-object.html 
 lang: en 
 autotranslated: true 
-hash: 3b049db571a4206d17cd563405f562acc914ee6a7e5a37095efa69d3f6151d73 
+hash: f109b77067f1abd5dbc911b4bcb9b3d5cb61ed4526719a55ac0d43f22e363679 
 --- 
 
 Often in applications there is a need to perform any additional steps when adding, changing, or deleting data objects, for example, an entry in the application log. 

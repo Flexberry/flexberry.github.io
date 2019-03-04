@@ -7,7 +7,7 @@ permalink: en/efgy_ember-flexberry-gis-yandex.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 8518c9ae496ad222adff6013d224d35635cf28ab109f58605eee47c79c1e403b 
+hash: d90fdb68e5a709ab1964165e255e4e667a63a33299c38c8a26c611779f28a57f 
 --- 
 
 ## product Information 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_load-alter-objects.html 
 lang: en 
 autotranslated: true 
-hash: ce7ab3f92ec9a72846ee2b2b52112e57d80a014d9ceb774a06bea5cfffa8e97a 
+hash: 8de9aa739ec2ef2f49f6b5a22a9c5ced9c7c247645fbab2752c910595ffce3ab 
 --- 
 
 In this example, the following actions are performed: 

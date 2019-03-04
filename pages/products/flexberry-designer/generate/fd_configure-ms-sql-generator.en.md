@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_configure-ms-sql-generator.html 
 lang: en 
 autotranslated: true 
-hash: 900ca8660ea4aeb9bdee18f6809f44e1e8bd5c406e79c47da08d1f6d9725e90d 
+hash: f153e7a3203eb3fd2267b879c0e1be1cc24647aec698adf396f24c647d44fb24 
 --- 
 
 Form database settings allows you to configure the database in accordance with the requirements of the application, set the basic settings to be considered when generating the database model. This form is called via the menu [plugin](fo_orm-case-plugin.html). 

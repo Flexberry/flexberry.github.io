@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_development.html 
 lang: en 
 autotranslated: true 
-hash: 447a10b100f758337a861df191024dff71a4dc51d140587b62d1ff9cf26a50e6 
+hash: 3530e49675f75926e6907b997f3294f2af1d4e016aa6abfd838fdf4a6ce5deb6 
 --- 
 
 After the generation of prototype applications using the [Flexberry Desinger](fd_landing_page.html) there is a need for its setup and completion. In each project the process will have its own characteristics, however, we can identify a set of typical challenges inherent in any project. 

@@ -7,7 +7,7 @@ permalink: en/efd_adapters.html
 folder: products/ember-flexberry-data/models-and-projections/ 
 lang: en 
 autotranslated: true 
-hash: 3a7c5408412aaa4087672648d9ca92f269ec50384bcbc7237455cd930bd72d10 
+hash: 3e99319e18aa89f564aeb3093cd6b5871264f534edab02ac76452c7d45078737 
 summary: the Adapters that determine how a call to the server to retrieve data in ember-flexberry application. 
 --- 
 

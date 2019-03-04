@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_flexberry-orm-libraries.html 
 lang: en 
 autotranslated: true 
-hash: b0dd4c3226ec54a6b5c33945bbd51fd8e0d2c1b35a834b6bc44f36590ff5f023 
+hash: adf0d68f5a3ca4fe75ae118057437766060632e374f0a276044ac6897bf63ee2 
 --- 
 
 The list of libraries that contain the Runtime components [Flexberry ORM](fo_flexberry-orm.html): 

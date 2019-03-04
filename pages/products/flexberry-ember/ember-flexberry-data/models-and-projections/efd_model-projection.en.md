@@ -7,7 +7,7 @@ permalink: en/efd_model-projection.html
 folder: products/ember-flexberry-data/models-and-projections/ 
 lang: en 
 autotranslated: true 
-hash: f2d737121f5df44a705b881048ac35c85455fd9fe59117d2ad0f16e8eed683dc 
+hash: 0b524de44859f4e5f2c52075a4e27a46434e5599e5a41950bc611b61b05b71a3 
 summary: Presents a detailed description of how to set view in ember-flexberry application. 
 --- 
 

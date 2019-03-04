@@ -7,7 +7,7 @@ permalink: en/efg_themes_support.html
 folder: products/flexberry-gis/ember-flexberry-gis/themes/ 
 lang: en 
 autotranslated: true 
-hash: 8248ec0dbc225f4fe4c99870a2d486268da048704c767e0b02906d8cf42b3168 
+hash: a1b31c9117b02324f5f6238ce873778f07080fc3fe3968a8bd0bac78dc535364 
 summary: Description of themes in the addon 
 --- 
 

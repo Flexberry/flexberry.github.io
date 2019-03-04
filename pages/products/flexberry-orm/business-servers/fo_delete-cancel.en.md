@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_delete-cancel.html 
 lang: en 
 autotranslated: true 
-hash: 66756dd315064034fc3014521a389e0a03452f1a766ac372e006e627db650ae0 
+hash: a91e6bd1c675227cf897743171869adac2c0ee4108027ca65a7bd39f22729210 
 --- 
 
 ## Used links wizard 

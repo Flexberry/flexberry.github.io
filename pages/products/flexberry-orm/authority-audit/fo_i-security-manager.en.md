@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_i-security-manager.html 
 lang: en 
 autotranslated: true 
-hash: 9a8ee2ffe549690d016d123baa1597690380d991a11dea9658efbbc0a0e22135 
+hash: 2b5335650908d006e212e8935fe5bd92b46942ed190b3615df7170dd5cbd2b52 
 --- 
 
 Services run-time subsystem powers Flexberry available through the interface `ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject`. 

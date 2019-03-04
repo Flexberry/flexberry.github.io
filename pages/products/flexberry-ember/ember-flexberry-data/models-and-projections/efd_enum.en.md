@@ -7,7 +7,7 @@ permalink: en/efd_enum.html
 folder: products/ember-flexberry-data/models-and-projections/ 
 lang: en 
 autotranslated: true 
-hash: 636079a1cc7a0af796539e42d9b39dc979aee88b88ff5520633f1f0f18276754 
+hash: f015223fa5be7dbc27c34f4afaf13624f7ad1aed4ade8eb646ae4a8cac44850c 
 summary: Describes the basic features of working with enum types in ember-flexberry-data. 
 --- 
 

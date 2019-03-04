@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_check-object-set.html 
 lang: en 
 autotranslated: true 
-hash: 3842fe37b4b3876a5af3742e861936faae1455de9b5e24c9618d97f7524f6c8b 
+hash: 597cd6666e73b99df10241cef5b51c327851260451bbeafb921bef28d0e97809 
 --- 
 
 Validating data on the form can be achieved by throwing an exception if an invalid entry in the method `set` the corresponding field of the object. 

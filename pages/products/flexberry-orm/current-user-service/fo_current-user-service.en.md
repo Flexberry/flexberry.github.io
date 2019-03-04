@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_current-user-service.html 
 lang: en 
 autotranslated: true 
-hash: 0cf03848a96339a1108f39acbf93bfc44da8db3d1e9ed0bd566ab216f1c7fd9f 
+hash: 308af940aa6ecf24e983f3712100317efb7363e1289da3c45116a8eab6af9195 
 --- 
 
 `Flexberry CurrentUserService` is [product platform Flexberry](fp_landing_page.html) and allows to obtain the current user, and change as individual properties, and the way to work with it. 

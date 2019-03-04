@@ -7,7 +7,7 @@ permalink: en/ef_default-value.html
 folder: products/ember-flexberry/forms/ 
 lang: en 
 autotranslated: true 
-hash: 797f744e3f0401157fa5cb49d2fbc7926bce7f8dd07dc07ef68e59e671e2e289 
+hash: d4e57538778a37570a58d3c6dee03fddbba67d43664e8db7368f81162b83f8d2 
 summary: Describes the options for setting the default values in ember-flexberry application. 
 --- 
 

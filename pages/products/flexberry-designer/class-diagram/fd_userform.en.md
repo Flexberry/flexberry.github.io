@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_userform.html 
 lang: en 
 autotranslated: true 
-hash: 4d53ca23a5dc68cc6e0329e20ca9fa8a88db0dcd3701f83d53d7ef6011d2e8aa 
+hash: 5edfa577ac1228a32913a780c496c0dc98bcd4ca35042433434bc5ea93d94efc 
 --- 
 
 The UserForm is designed to determine a blank form, placing controls where you and programming visual logic is executed manually. 

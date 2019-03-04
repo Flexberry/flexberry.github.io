@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_font-icons.html 
 lang: en 
 autotranslated: true 
-hash: b9b14ebee1bf07dc56983fbadd8331396955a6a2924dc0794407dac3e6fc1d88 
+hash: b93b625f77d9fbdcb27320f90c4b3e922c77620448fbc1bfccd614481ce3252d 
 --- 
 
 ## Description 

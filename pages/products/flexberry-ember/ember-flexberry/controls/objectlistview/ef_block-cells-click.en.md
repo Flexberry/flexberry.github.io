@@ -7,7 +7,7 @@ toc: true
 permalink: en/ef_block-cells-click.html 
 lang: en 
 autotranslated: true 
-hash: f2c2414c90d1c06aae987d8849bf905c3e61a8898ce03a9aa805c8f92131ed91 
+hash: 80cf909a2bb08a84e32509e4da0dd08a6d166cc5e873ea33b63840f57416bff6 
 --- 
 
 [List](ef_object-list-view.html) there is a possibility to lock individual safe Deposit box to open [edit](ef_edit-form.html), while leaving active-click on the line. 

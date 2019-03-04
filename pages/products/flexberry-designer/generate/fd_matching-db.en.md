@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_matching-db.html 
 lang: en 
 autotranslated: true 
-hash: 92f45e725675a2b4a92456c2f6330040b6f66e651a1bffcf8ed22e6d68b79383 
+hash: 07762867436270c6f4c7b323753ddc4544cd4311cf934dd084587dbdb522120a 
 --- 
 
 This function enables you to align existing database to the model: 

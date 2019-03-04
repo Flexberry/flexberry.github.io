@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_custom-form-design.html 
 lang: en 
 autotranslated: true 
-hash: d2b554802075369f4e6ffbce5be37417b9a6aba938c1b0b139a9355c060e261d 
+hash: b07bf25197dc34b1d9ee188cac91b0800cd4d586ac48dcf1d0c2556221bf2d6d 
 --- 
 
 The HTML code in the list of web-forms and [web edit forms](fa_editform.html) is divided into basic blocks. 

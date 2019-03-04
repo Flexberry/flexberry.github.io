@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_data-classes.html 
 lang: en 
 autotranslated: true 
-hash: b8573b6230458abfd898bc7dc40c00ceb04a141a94ac104491299c4f3f450814 
+hash: 143f1b01f4ccf6c590e7e26f8906d26d52d9add0998d1910b6b29832a96a5c14 
 --- 
 
 Data classes are classes with the stereotype implementation or without stereotype. 

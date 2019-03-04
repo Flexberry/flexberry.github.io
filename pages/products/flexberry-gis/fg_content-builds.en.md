@@ -7,7 +7,7 @@ permalink: en/fg_content-builds.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 052957125a69b50f6d4fe1e6dae6485f0c9ef814f8802a688cfa4554d61c2f3a 
+hash: c9531990719dea2c3aeff2e94dbae3d65fa5803540b3123c29011426f1480779 
 --- 
 
 ## General information 

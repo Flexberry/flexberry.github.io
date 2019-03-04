@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_information-get-property-storage-name.html 
 lang: en 
 autotranslated: true 
-hash: 303bca9dc92c675ae0a6f520c6d6c988605fa4d9dd8a2b43feeb0560ebf44d24 
+hash: a74926eb59497f3948d3aa6afa5ced2888fa9f4fdd2aaeb30f77447a40467b52 
 --- 
 
 PstrfGetPropertyStorageName` static method class [Information](fo_methods-class-information.html) allows you to [name of storage .Net-properties set by the attribute `PropertyStorageAttribute`](fo_storing-data-objects.html). 

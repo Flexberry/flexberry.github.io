@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_change-model.html 
 lang: en 
 autotranslated: true 
-hash: 07c93f9fa03239321e8e084991bc2ac6dd35d2906d684bd2f23df333884e631e 
+hash: b1671dbb2d091ea2c97c7c6df265f3725d91d6cfb11c4771dd0d54defda21e4a 
 --- 
 
 After generating a prototype of the application and make any changes, it is often necessary to make a number of changes to the application model. Adding new classes or changes to existing pretty hard work if you do it manually. If you make changes to the chart Flexberry and collect a prototype, then what will happen to already in the application changes? 

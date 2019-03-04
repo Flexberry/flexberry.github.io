@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_data-object.html 
 lang: en 
 autotranslated: true 
-hash: b5dfd0e433720a910ccfb949c49a36dde3c0e12c0a52254b886b0f31ad799bc1 
+hash: bca000baeb2e73609703962c372c66d32fe5f795a558ca493a845d6ecba434a2 
 --- 
 
 In Flexberry ORM **data objects** instances of classes are called heirs of the abstract class `ICSSoft.STORMNET.DataObject`. For data objects Flexberry generators generate code for class .Net CLR-compliant language (C#, VB, etc.). 

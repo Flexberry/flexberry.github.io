@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_flexberry.html 
 lang: en 
 autotranslated: true 
-hash: ebf7e88b7991a66b45b4456b075b1d4a0aca41a3ac680dd0ff17c15c07d3a52c 
+hash: 7cf0ff058bd8267cd27e52babe27f5456936f0e7fb7da80be07ba474a4dd6d96 
 --- 
 
 ## [Approach to Flexberry](fd_model-driven-architecture.html) 

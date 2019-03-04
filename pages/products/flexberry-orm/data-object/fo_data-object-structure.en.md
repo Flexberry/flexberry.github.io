@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_data-object-structure.html 
 lang: en 
 autotranslated: true 
-hash: ef45baae74573f21c65105d6bdafcaf5160207e6e1dfc19079b2fab6481b3582 
+hash: c867ebd74fa53c3eafde42d30143f1b2ab7f57117d67e7cd0274dd2f1b1cd3ce 
 --- 
 
 Used in the example chart: 

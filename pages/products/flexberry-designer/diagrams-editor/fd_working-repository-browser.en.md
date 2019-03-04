@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_working-repository-browser.html 
 lang: en 
 autotranslated: true 
-hash: 3f97e92a9ae3fed1b7b309eff143e428e8710f0ee21dd7741f925388a372aaa3 
+hash: 5e1bedc6bfffc72911755b544341bbc5a49a57ca9baaaed634031dadd75c7f53 
 --- 
 
 The main work [charts](fd_editing-diagram.html) occurs through the [repository browser](fd_repository-browser.html) (question edit the content of the graphs analyzed in ["Editor UML diagrams"](fd_editing-diagram.html)). 

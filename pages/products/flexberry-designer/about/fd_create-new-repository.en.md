@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_create-new-repository.html 
 lang: en 
 autotranslated: true 
-hash: fcc5a47941b52096f74585fc9db362a888075b56847371b9e78a635c685f9df3 
+hash: 2fe27917f5a5f1f79a0135e409dd5b2eae17f368c86bac52c3f6e9e2ff16efc6 
 --- 
 
 After starting [Flexberry Designer](fd_landing_page.html) you can create a new `Репозиторий` to work by selecting the menu item `Репозиторий` – `Создать новый`: 

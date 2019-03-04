@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_binary-array-ds.html 
 lang: en 
 autotranslated: true 
-hash: 9feaebd5fb4e498d36d135d2bf14e9b4bfa0f5487789ee319884c1da5b1ab99e 
+hash: cf781c97c62d1474029cb882fdf7e58f36889782c2605f8627bfcb8020b0697f 
 --- 
 
 May support attributes of type binary array. It can be a field to store the [serialized objects](fo_aggregating-function.html), images, etc. 

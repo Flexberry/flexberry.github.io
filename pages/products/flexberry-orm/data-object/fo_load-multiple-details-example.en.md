@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_load-multiple-details-example.html 
 lang: en 
 autotranslated: true 
-hash: 7aa45d4924d0e321a2a99dd23f6cbdd3d747545742cb036f2e265d3a4299930d 
+hash: 5e87aeb1ab8ebcb2ff1f0f14d15135467412e36104a767802c019cb4d8f854cf 
 --- 
 
 Here is the download of all objects created in the [example](fo_actions-saving-object.html). 

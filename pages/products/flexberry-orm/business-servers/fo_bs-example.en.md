@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_bs-example.html 
 lang: en 
 autotranslated: true 
-hash: 8c43bc995247c2bb86b761d6a8b24dcd9aa09e55c34b2e3d07c2928cb16f41f9 
+hash: deada8fc4273536e327f7e36e6040cb607d31f08c00e39c01e26ebebba0fdb4a 
 --- 
 
 In this example, will consider the imposition of restrictions on the establishment of new facilities the following [class diagram](fd_class-diagram.html): 

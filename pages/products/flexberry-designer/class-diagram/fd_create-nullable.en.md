@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_create-nullable.html 
 lang: en 
 autotranslated: true 
-hash: a429308611d0567b7c01baae33ed011e2b108147eb566f4365540114f6916b89 
+hash: 08e7224784a5d08e4dfb18bbe141247fe767d898b7f8cab5e13eb76b0b5fd1e9 
 --- 
 
 Setting procedure [Flexberry Designer](fd_landing_page.html) to support [Nullable-types](fd_nullable-types.html) by building type `bool?`. 

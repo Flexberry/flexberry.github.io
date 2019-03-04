@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_ics-soft-stormnet-tools.html 
 lang: en 
 autotranslated: true 
-hash: 52ad6085510becd184d08bc1a529e2b2e33fcdc4ce804207bc63fa4762e5be8c 
+hash: ae0a5e23d6236ca73e1d4c2ded194546dcce7bad53810a34363c6e68dfe57a7b 
 --- 
 
 Library `ICSSoft.STORMNET.Tools.dll` provides various tools to work in her classes implemented functions: 

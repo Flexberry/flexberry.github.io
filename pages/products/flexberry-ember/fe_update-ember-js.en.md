@@ -7,7 +7,7 @@ toc: true
 permalink: en/fe_update-ember-js.html 
 lang: en 
 autotranslated: true 
-hash: ff6a49197a4414a415a5b09533c7bef65c0ed41a9a2bfc94b7703c479ba666c8 
+hash: 618bcf58c235d1dc42e6e088c33b0800111faffef5f985d335b42513d17388f7 
 summary: instructions for updating EmberJS on projects that use Ember Flexberry. 
 --- 
 

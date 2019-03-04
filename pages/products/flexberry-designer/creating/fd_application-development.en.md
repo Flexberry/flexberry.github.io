@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_application-development.html 
 lang: en 
 autotranslated: true 
-hash: 29a3c7d9b44b7162e1f2c25d07e88fb31bcb8177ccb2c9004873813ece8e4fa9 
+hash: 4481bf25291efeee3b3ccc4f873265e50722fd6f21d0c36783a1c7400020cba9 
 --- 
 
 After [prototype](fd_prototype-creation.html) further refinement is carried out by modification of the generated executable code using the APIs provided by technology `Flexberry`. 

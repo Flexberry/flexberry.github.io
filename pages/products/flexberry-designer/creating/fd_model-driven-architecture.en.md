@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_model-driven-architecture.html 
 lang: en 
 autotranslated: true 
-hash: 2280d339749e90491afba5b2752b42505bbf37f5f717e38ede318727f9baeb75 
+hash: 8eb9a4c27fff73d0ef9d9577a033d85b973e63bd29448d60440afe614236bb48 
 --- 
 
 ## Development-controlled models 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_own-object-attributes.html 
 lang: en 
 autotranslated: true 
-hash: 220710c2da3d5675f1db8d4298096dcffbef74c79bc67caab5257ab8385a07eb 
+hash: cd81535ac3510b0557cda3587afaf065631e5d2e7dd25fb9452bc6f9bd0cf310 
 --- 
 
 ## Getting property value 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_additional-stereotypes.html 
 lang: en 
 autotranslated: true 
-hash: 913b15a12c1a2df5b8822006c0214b1f90ed8776a185a38423eaf6f7f3575e10 
+hash: 09da320444af809a9abc73e7f5016b609cc3f2178e587660a80b303decf4efd3 
 --- 
 
 The following stereotypes **not supported** the basic version [Flexberry Designer](fd_landing_page.html) and require additional generators: 

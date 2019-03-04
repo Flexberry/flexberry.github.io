@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_few-save-buttons-editform.html 
 lang: en 
 autotranslated: true 
-hash: ac8391606dce27bd24179a62816e16522391ea62d2738d0cda7d7d4a314edcbc 
+hash: 0050be3d3f1fa62bd49bbc2ad04bcc3dc90949f82fdbb583aa179879043bb329 
 --- 
 
 This article describes the algorithm of adding multiple buttons save to [web editor](fa_editform.html). 

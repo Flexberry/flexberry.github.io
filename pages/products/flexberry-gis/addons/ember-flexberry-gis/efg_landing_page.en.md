@@ -6,7 +6,7 @@ toc: true
 permalink: en/efg_landing_page.html 
 lang: en 
 autotranslated: true 
-hash: 742a85f5dfe3e0d91fc9572a1a259432bf3483eb5feef996465ee2aea607ee7a 
+hash: 3c7457a5fa186812b412836c8f144d8e597021b232c84e2c1289e26716d52b1b 
 published: true 
 --- 
 

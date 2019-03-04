@@ -7,7 +7,7 @@ permalink: en/lem_leaflet-editable-measures.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 7ca1cd8b78cd569abecb5dec3c1b7ead37dcdf4f6c124e0db0fd966f159adcb7 
+hash: 21d06c58795cf09dda45478b07a028db664c785ac2e32c92d6579df1b8035fe2 
 --- 
 
 ## product Information 

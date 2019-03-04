@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_boot-status-service.html 
 lang: en 
 autotranslated: true 
-hash: 838a503c655c5b279697909aee0369a920b66cc952662213710882f073fa754d 
+hash: 5fb22bb0fcbb89465fdd59443329194cffb7ba50a676a6d93a3bc8d923704496 
 summary: Methods of loading, success, error, warning, reset 
 --- 
 

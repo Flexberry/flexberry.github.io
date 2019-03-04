@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_class-manager.html 
 lang: en 
 autotranslated: true 
-hash: b255a3d0d7d2e9de13da699e6edc7a7a7d6d2e7d4d77e645bb9d101103ac5981 
+hash: feabecbae50cb678e0e075f8a99d7b19f8a757176cd2c536697c6e029985087c 
 --- 
 
 The Manager class allows you to control classes within the same stage. To start the Manager should select the [menu `Менеджер классов`](fo_orm-case-plugin.html). 

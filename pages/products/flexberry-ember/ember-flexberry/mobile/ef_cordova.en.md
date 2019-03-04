@@ -7,7 +7,7 @@ permalink: en/ef_cordova.html
 folder: products/ember-flexberry/mobile/ 
 lang: en 
 autotranslated: true 
-hash: 272e982b945e4db9e067382c456121c1141d756a3fe04b1ad8d2f03a9796bb8e 
+hash: d0afd44117e6fa21bd8228b540fcff69e81c73c76963f223d226964a6007b183 
 summary: describes how to run Flexberry Ember apps as mobile apps Apache Cordova. 
 --- 
 

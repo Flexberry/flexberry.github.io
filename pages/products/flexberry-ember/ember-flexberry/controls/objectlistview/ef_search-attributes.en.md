@@ -7,7 +7,7 @@ toc: true
 permalink: en/ef_search-attributes.html 
 lang: en 
 autotranslated: true 
-hash: dafb96db95aa073892bd3ebe657fc4e15ea8101882da2c09069e29884c769edd 
+hash: 977bcd1bb7746941a4ac6e1d41c2ce500092713a57ae8e9bc9f052fbb1a4437f 
 --- 
 
 ## search setting all attributes to a standard list 

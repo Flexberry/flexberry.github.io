@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_application.html 
 lang: en 
 autotranslated: true 
-hash: d1af71ecc5a984e8fb3aaad1f60872a25fc7e0de6903110760fadcf422b32182 
+hash: f5ff76c58bb7f0ca65193690d4357720c0af9c294da2f6a49641c6b80d05c62b 
 --- 
 
 Class `Application` intended to describe the structure and properties of client applications that are directly invoked by the user. 

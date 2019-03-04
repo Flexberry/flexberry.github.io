@@ -6,7 +6,7 @@ toc: true
 permalink: en/efg_osm.html 
 lang: en 
 autotranslated: true 
-hash: 05571696d36a8eb32ee577cee57ef6ee4e5df2add4c280274bb8ad07105be9ac 
+hash: 4c9cd8bbd8584877d01600596f8526d2fd8e8ea1df242591b621fd11e3ab753f 
 published: true 
 --- 
 

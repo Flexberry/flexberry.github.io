@@ -7,7 +7,7 @@ permalink: en/ef_forms.html
 folder: products/ember-flexberry/forms/ 
 lang: en 
 autotranslated: true 
-hash: 796d2068c9046dc19ad8e6d8c0961f2ff6380509b40c40799ca8cafc62feda81 
+hash: f02cc875cc4f19ac1c2b710cd606c0a9d571b36e6b58d4f1a48a05c39e83b654 
 --- 
 
 ## Description 

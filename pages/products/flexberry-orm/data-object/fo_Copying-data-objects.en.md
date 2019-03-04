@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_copying-data-objects.html 
 lang: en 
 autotranslated: true 
-hash: f2bb3a9412051c7f78cc6f6279e1e5741b839b0a0bf260a3624b05b28c8a181f 
+hash: 3928fc86c30cc78e898e3f26d887ff3498605c1fa7a21fd4d21ba7b5b993e8c2 
 --- 
 
 ## Method CopyTo() 

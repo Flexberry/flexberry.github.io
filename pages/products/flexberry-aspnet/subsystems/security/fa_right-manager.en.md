@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_right-manager.html 
 lang: en 
 autotranslated: true 
-hash: f68d97f9b18fccdc49e25531f7de41a083e152794c5811752496c440e4d82d3c 
+hash: 5d4d897bac78bd86e92a9c5c66374bd63ac0c353fbce26a594e503af32c470c7 
 --- 
 
 At the moment [subsystem powers](efs_right-manager-module.html) Web application does not require third-party services and comes along with the application in the generation of [Flexberry Designer](fd_landing_page.html). 

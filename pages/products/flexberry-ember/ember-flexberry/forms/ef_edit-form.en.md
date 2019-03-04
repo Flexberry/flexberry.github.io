@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_edit-form.html 
 lang: en 
 autotranslated: true 
-hash: 372d2d6bd33cf198836834714b2f098bdb25a9336734602d034f7f89e8507515 
+hash: 43263dc9eb19f22536b09de956338fbaf73b6703e4b7e1bbe87f7e5f4bfc0c69 
 summary: Purpose, structure, functions and error displays on the edit form 
 --- 
 

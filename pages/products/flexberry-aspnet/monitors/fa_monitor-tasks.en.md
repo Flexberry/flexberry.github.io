@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_monitor-tasks.html 
 lang: en 
 autotranslated: true 
-hash: 15b74000d5d9b1cf0edbfdd98ef6778954c1d207869a0342b395488b2d20949b 
+hash: 2ffe826c136ae47a7ccdc73d9513da721bccdf56420b5dfd0a0374f06555332f 
 --- 
 
 In Flexberry ASP.NET there are two classes that implement the interface [task monitor](fo_business-task-monitor.html) `ICSSoft.STORMNET.Business.IBusinessTaskMonitor`. 

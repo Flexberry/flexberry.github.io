@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_interfaces.html 
 lang: en 
 autotranslated: true 
-hash: cc6d2e79c6c1f21c78205b6e05a1a0ca8c13f8a784538f926a47b3e6d9524c99 
+hash: 8007e12f4fb02d03799fc91f6cf96092a2a4c78ce27fbc1de050033795ad0136 
 --- 
 
 [Flexberry Designer](fd_landing_page.html) allows the user to describe the interfaces to generate the source code on `CLR`-compatible language, in particular, `C#`. 

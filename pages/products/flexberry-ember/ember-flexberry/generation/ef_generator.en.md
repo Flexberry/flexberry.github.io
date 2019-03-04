@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_generator.html 
 lang: en 
 autotranslated: true 
-hash: 8117b80cf11f07effeba40aa5ab36400e54bdb721720e9cfd74f49de2dc0f27d 
+hash: 26eff1be28575b36ad4da81d00ee300d1e74ff191508fcee3e644209ad7907fd 
 summary: Generate Ember-app from the menu Flexberry Designer. 
 --- 
 
@@ -161,7 +161,7 @@ For a quick cleanup of the folder can not delete folder `node_modules`, and move
 
 * Addon needs to be created manually, with the command ember addon called addon, then switch to this directory is created with the addon 
 * In the addon you need to install ember-flexberry team `ember install ember-flexberry` 
-* Need metadata to generate. While the plugin itself from Flexberry not understand what he should do in the addon, not a regular application. But the metadata that are generated in the folder "vendor\flexberry" universal and suitable for both options. You need to generate app using a conventional plug-in generate ember-application - it will be a separate app, it will not be used, only metadata. Then there are 2 options: 
+* Need metadata to generate. While the plugin itself from Flexberry not understand what he should do in the addon, not a regular application. But the metadata that are generated in the folder `vendor\flexberry` versatile and suitable for both options. You need to generate app using a conventional plug-in generate ember-application - it will be a separate app, it will not be used, only metadata. Then there are 2 options: 
 * Copy metadata from a folder vendor\flexberry in the same folder you created the addon. 
 * Specify the path to the folder with the metadata when you call blueprints generation, article [Blueprints the means in ember-flexberry](ef_blueprints.html). 
 * Trigger generation of metadata: `ember g flexberry-application` 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_groupedit-detail-in-route.html 
 lang: en 
 autotranslated: true 
-hash: 86827ee2cf29723d3899134b46b84fca4d77072d2d93f6ad97ea52172f11f7ab 
+hash: 10dd3ffcde86a297fb6da0644b38625b1ff93e27d669a07b062e27b9b0734c83 
 summary: setting up templates and models aggregator and detail, serializer aggregator and controller of detail for enabling editing in a separate the router 
 --- 
 

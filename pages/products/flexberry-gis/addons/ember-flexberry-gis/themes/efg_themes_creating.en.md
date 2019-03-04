@@ -7,7 +7,7 @@ permalink: en/efg_themes_creating.html
 folder: products/flexberry-gis/ember-flexberry-gis/themes/ 
 lang: en 
 autotranslated: true 
-hash: b20b8189b17e1595199182790032cbf1b74094b2e8e98fd509603fa8ace6a022 
+hash: b26a01aba9a3eb3123279f2f56258edf44edfbc80f3c1ffaad2cce43e744b1e0 
 summary: Description of create new themes 
 --- 
 

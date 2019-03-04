@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_right-manager-module.html 
 lang: en 
 autotranslated: true 
-hash: 5405c7405e42274d2ed0284d9a0d17188bbff1681ef074b2c5cb6d733d706b9f 
+hash: 73cdc78a1ccf3df305dba3fcfa167dee28b6c04230ff05b7c55c14a78144cfd6 
 --- 
 
 ## Subsystem powers 

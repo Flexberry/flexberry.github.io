@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_specify-column-controls.html 
 lang: en 
 autotranslated: true 
-hash: 19069f386f1b60fc0323945d5cc3a54af0f0ebe636409bfa60bbbd152d41e7d2 
+hash: 292d8802487d37ec7060858c0dc4b07c514386ccb67cf4a9fa6caf1d1250261a 
 --- 
 
 The opportunity came at the view level to set speakers to embed controls (#); 

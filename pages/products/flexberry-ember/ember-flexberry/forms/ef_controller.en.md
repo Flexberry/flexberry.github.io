@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_controller.html 
 lang: en 
 autotranslated: true 
-hash: 3514ac3a93bafe6f569e694ba5a550b31b640bc18370767fdded00454b1b38f8 
+hash: 6e4aea565756f339782c048f968b85394cb056c986c32376f0beab0f947f6c5c 
 summary: Presents basic information about the structure of controllers in ember-flexberry applications. 
 --- 
 

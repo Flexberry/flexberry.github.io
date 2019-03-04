@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_footer-stick-bottom.html 
 lang: en 
 autotranslated: true 
-hash: 46d0ba9375c221e631711441146470daa47230762d074840e37278b14d24970e 
+hash: 4f29232ed2a9dc5b27a551925239a4e09e8cc5efe78cdcb542228e2e1c3e9ba5 
 --- 
 
 In the body tag (when using ASP.NET in the form tag) are blocks with classes `wrapper` and `footer`. At the end of the tag content with the class `wrapper` inserted an empty block with the class `push` — it is used to create empty space between these blocks when the content `wrapper` completely fit into the screen area. 

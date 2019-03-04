@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_list-component-select-all.html 
 lang: en 
 autotranslated: true 
-hash: 7baa5a6ccd6b80adb790e35fa772ea9574179ed2f7ba9fc681fd869dbeb6ca05 
+hash: 20059002b98eb302b3d3a4970cd1793fdfa09cbf4061f6f470f3fc7e6d50caca 
 summary: Tools to work with objects on the page/ all pages 
 --- 
 

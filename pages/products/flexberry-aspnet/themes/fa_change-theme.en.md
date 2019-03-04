@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_change-theme.html 
 lang: en 
 autotranslated: true 
-hash: d4eb7739e63ee6bf37083dd8f7465d6ee65bf1187325d5947c1df8531afb29e7 
+hash: 24338d65f11cc9f26a026617df854f9bbaffd5c9caf29792b950861b202d0b8e 
 --- 
 
 In order to properly modify the styles you need to do the following: 

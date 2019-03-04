@@ -7,7 +7,7 @@ permalink: en/efd_offline.html
 folder: products/ember-flexberry-data/offline/ 
 lang: en 
 autotranslated: true 
-hash: 5745328219de08e269a65250fb779a2a7ef592f3a9056e574b79f39936331952 
+hash: 6a35a5d7899216957c5acdccbc327c2110e6abe6e04f888a8388c06ae88d378a 
 summary: 
 --- 
 

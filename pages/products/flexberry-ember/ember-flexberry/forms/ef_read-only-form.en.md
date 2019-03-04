@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_read-only-form.html 
 lang: en 
 autotranslated: true 
-hash: 38cbd6b5acac27ff54b8c2862c4b5f0d47d2a9b4a976e53465da06cd2fac2fd6 
+hash: 33a8faf861f1ca6895d5daae9e1414fd088883228ec376aa8dfa3a194f35618e 
 summary: This feature allows you to access ember-form read-only 
 --- 
 

@@ -7,7 +7,7 @@ permalink: en/fg_landing_page.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 4aaaf642ddbfd9e61e801baa4ad4ba5a66112f09c224f5915eccb2daa9205c71 
+hash: a08d83ee232b88296f6a59f82eda56e52d18d327f96bfd637b44e88d0222e77a 
 --- 
 
 ## product Information 

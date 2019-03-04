@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_file.html 
 lang: en 
 autotranslated: true 
-hash: f2605dc3a494d7b6dc187d31f432d09511f009441d2b044763ed83df3e1a802d 
+hash: 35bf27b79e0fbe553fea271e8a17bdcf45ee0a60f06a72734998b8f30c9e1d09 
 summary: the Description, setting the load address and appearance, binding components 
 --- 
 

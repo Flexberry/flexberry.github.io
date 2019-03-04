@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_definition-loaded-properties.html 
 lang: en 
 autotranslated: true 
-hash: 115c6fd9109fd7a3266b4f5193e0de4a643c7aaff2d4fc19e4fb40d65728abd7 
+hash: f7b149731081273509b43c729c409d0c5b1d3fef9ce40627908a4d61b9f491c4 
 --- 
 
 there are different ways to define retrieved properties. One of such ways is the use of methods `GetLoadedProperties` and `CheckLoadedProperty` with the following features: 

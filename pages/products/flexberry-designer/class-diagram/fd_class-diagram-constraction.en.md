@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_class-diagram-constraction.html 
 lang: en 
 autotranslated: true 
-hash: dd279105e1ef90def2a9e2098b299680fdd798086e2adf0a4f2531933b335ee6 
+hash: c1da661279513694bd02d851c4539801f58dd3836280431dfeada91fe895df27 
 --- 
 
 * The elements used to build class diagrams, described on page [class Diagram (Class diagram)](fd_class-diagram.html). 

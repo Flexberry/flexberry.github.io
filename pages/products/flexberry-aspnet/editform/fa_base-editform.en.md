@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_base-edit-form.html 
 lang: en 
 autotranslated: true 
-hash: ff90cc985bf8ba4c054db58dc66188f7bc26925aa7eb1c60279e7c27f3ce1952 
+hash: 050dd869ee72721202306163f3806850114e41b10402e8c12dde262a287dd6c8 
 --- 
 
 From **BaseEditForm** inherit all the [web editor](fa_editform.html). This form is not technological, it can be changed depending on the requirements of the project. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_sign-assembly.html 
 lang: en 
 autotranslated: true 
-hash: 573339d16e3970ff9b181514d65f049cdba858b424771118f17ec26a72751265 
+hash: a66dc0c47d3d05b21c71961d40eb83d255173f35a18964f2889cae3f75411b62 
 --- 
 
 In [advanced settings models](fd_project-customization.html) there is a check mark `Подписывать сборки`. After installation when you generate will be optionally generated files with the file extension .snk (if the project was generated previously, it will also be overwritten file `AssemblyInfo.cs`). 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_view-types.html 
 lang: en 
 autotranslated: true 
-hash: a726420ad7ea47d263bd4c4d9a649b905702236d6ac7addbb9d6cb94a43d4d15 
+hash: bf15a171444612b8206e9e121258528a5eec3f9b32a9fa39b7fecb907a58ce57 
 --- 
 
 Definition __presentation__ described in the article [view definition](fd_view-definition.html). 

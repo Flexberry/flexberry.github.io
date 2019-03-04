@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_olv-resize.html 
 lang: en 
 autotranslated: true 
-hash: 74e665dad8ef2dec958598668c63ff6f5e7bd5097a1787e09f9cfeb4326ac01e 
+hash: 1eb4ba78a8afdfe6a174bf431563e1ea9c494ab8644a3a214424a4e7edb37c77 
 summary: Principles of configuring and using properties change the width of the columns in the lists of items and their detailov 
 --- 
 

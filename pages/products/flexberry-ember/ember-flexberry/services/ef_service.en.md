@@ -7,7 +7,7 @@ permalink: en/ef_service.html
 folder: products/ember-flexberry/services/ 
 lang: en 
 autotranslated: true 
-hash: 88bafb1f2a6dc8408f2f7e58b78d82792268b8301d78864cf85cddd97da68fa8 
+hash: c7ed2a4c6b3f29412c322b9825b038777413a0f8ca2ce283e0362fee3a7e3e84 
 --- 
 
 ## Description 

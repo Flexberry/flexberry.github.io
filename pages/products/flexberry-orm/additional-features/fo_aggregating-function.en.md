@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_aggregating-function.html 
 lang: en 
 autotranslated: true 
-hash: 0538eca81237ee9c863a7145cae9a304d539115f1e72de1c7a22d7d581d4ce69 
+hash: ba3a1136e1cdcef4d067b9ada9f6a62c7770e75e1df0a1f4447cbf404bde1a23 
 --- 
 
 In order to serialize [data object](fo_data-object.html) you need to connect the Assembly [ICSSoft.STORMNET.Tools](fo_ics-soft-stormnet-tools.html). To convert the XML class is designed `ToolXML` this Assembly, which supports two methods of serialization, described later. 

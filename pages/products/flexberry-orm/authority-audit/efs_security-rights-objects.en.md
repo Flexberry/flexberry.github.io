@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_security-rights-objects.html 
 lang: en 
 autotranslated: true 
-hash: d8af5166b3f1d5cc61d6a82c5a7cc81ef902d8d9b0eada3a43fefde6aaf1992c 
+hash: 5e852346d70d13cdd73ece9a451b5c0010fd5c1c55cc81256d3602e387f21aed 
 --- 
 
 ## to set permissions on objects 

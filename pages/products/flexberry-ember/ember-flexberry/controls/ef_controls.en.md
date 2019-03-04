@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_controls.html 
 lang: en 
 autotranslated: true 
-hash: 86bee94575f0f86b3d67ba180e198469f19ce9fca0d4212d36c3dc92bce74420 
+hash: 4cc619b0100967b288bf3e2682c6167f3ddacf66eca77d1e1f1cd9767dd7ae26 
 summary: List of controls used in ember-flexberry 
 --- 
 

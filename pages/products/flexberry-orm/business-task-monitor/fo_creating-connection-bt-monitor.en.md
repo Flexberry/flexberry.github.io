@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_creating-connection-bt-monitor.html 
 lang: en 
 autotranslated: true 
-hash: eba33ee00c52fb290de0afacab8c946651d68032bdcb9ae25c6e5f9672ed3e47 
+hash: 94ecd2ba65da069d14e3333012e043a4c0f1d392ca48a59ff718fdbd260aea14 
 --- 
 
 ## create a monitor task 

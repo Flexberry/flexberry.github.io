@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_business-task-monitor.html 
 lang: en 
 autotranslated: true 
-hash: 40518a1bb3dd3d3cae4796f4ed8ef0b453fd8c64680273e9f282775b1e94e6a0 
+hash: 09b3bc761a9457ade297bc1d1faec58e19c76d3c2bd2ffcbe67bb7ed70b59912 
 --- 
 
 ## Description 

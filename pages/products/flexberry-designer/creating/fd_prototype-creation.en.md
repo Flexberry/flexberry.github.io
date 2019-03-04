@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_prototype-creation.html 
 lang: en 
 autotranslated: true 
-hash: bc2b167ebaabf8af29df39392e798b8093ef6a3173ff2db14fc0e321ca18de3e 
+hash: 65efb2af83ef1a2b39c542610e248eed1f1fa09c56612fee3342d2d1c808ecf8 
 --- 
 
 This article describes the process of creating working prototype applications from class diagrams, obtained on the [analysis phase](fd_analys.html). 

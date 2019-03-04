@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_recommended-structure-repository.html 
 lang: en 
 autotranslated: true 
-hash: 285d323b31d7c37c5d3c702852e466edad54b07a87aa6e92ccccd9837e8f7a46 
+hash: 8aa0a08215e80127e2093c71b0f22610333662e37e97851610e8712c24df447e 
 --- 
 
 ## Levels repository 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_themes.html 
 lang: en 
 autotranslated: true 
-hash: 77aa9911884256c6866f466b1d07f00424d0b9dc7b01dfcb422e0b16d2cb8f72 
+hash: 85093bcbe713aa536ea55ab64fff93228a93b5d1500445219cb73c1e38d51a12 
 --- 
 
 ## related Articles 

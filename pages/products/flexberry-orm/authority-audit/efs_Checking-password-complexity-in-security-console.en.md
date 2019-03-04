@@ -6,11 +6,11 @@ toc: true
 permalink: en/efs_checking-password-complexity-in-security-console.html 
 lang: en 
 autotranslated: true 
-hash: 4f1559eee8949f0cb95f067af6d06fb0176ecb870a2731f455cec3ac2b925e4f 
+hash: 64459c60568ffa907e92b93de4cdeffab78c61f03d1c5e22f6474b8c1f964ac3 
 --- 
 
 # Checking password complexity in the security console 
-When you install a user password in the security console has the ability to organize and control its complexity. To specify limits, which must meet the password can be either through configuration file or via the dialog "Agents\password Complexity" (settings are saved in a configuration file). 
+When you install a user password in the security console has the ability to organize and control its complexity. To specify constraints that must be met for the password, either via the configuration file or through a dialog box `Агенты\Complexity пароля` (settings are saved in a configuration file). 
 
 ![](/images/pages/img/page/Checking-password-complexity-in-security-console/1 Console security.png) 
 ![](/images/pages/img/page/Checking-password-complexity-in-security-console/2 the complexity of the password.png) 

@@ -7,7 +7,7 @@ permalink: en/lssc_leaflet-switch-scale-control.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: bf2021fd76278a813f56f1b9b90aa180e145f3efc30052b4e4918c5f392eb228 
+hash: 8febf4ccf3b584704a334e25f64f6a9cbac5dbc2ecee4cb93520e1d65b75a6ba 
 --- 
 
 ## product Information 

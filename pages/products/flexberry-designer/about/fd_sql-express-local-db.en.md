@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_sql-express-local-db.html 
 lang: en 
 autotranslated: true 
-hash: de2a08f65c52a9654853a222841127e59c95e0df759edcaeb4ed460422375a94 
+hash: 80d22e50859b4602b7dd8ab2a9c8d42b5b9327add5cceaf825b6e423ce07ca61 
 --- 
 
 ## Work Flexberry Desinger SQL Server 2014/2016 

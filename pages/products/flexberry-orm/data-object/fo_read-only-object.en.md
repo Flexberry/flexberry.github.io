@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_read-only-object.html 
 lang: en 
 autotranslated: true 
-hash: 8c86f7cd890517ca9a6c0c90b8b1826cc85ef9f601b7011fd226e3d3edb9ff8e 
+hash: ce62df2406d2dc54cc15b5600bfa5072ec8ea189af6527f2d02161c1cab0b4b9 
 --- 
 
 ### Option 1: proactive action 

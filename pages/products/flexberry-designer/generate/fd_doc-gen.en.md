@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_doc-gen.html 
 lang: en 
 autotranslated: true 
-hash: 0eb207dc282bbc6900c118b8fc4b8a308db7003d170e30080a53417579aeea57 
+hash: a768fd8e8a2c47f13fae06e783f7f45a1b9c8894b35d28b792f354b9d2b4ad4b 
 --- 
 
 The plugin documentation generation is in paragraph `Утилиты` for each plugin products [plataforma Flexberry](fp_architecture.html). For example, `ORM -> Utilities -> Generate documentation диаграммам`. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_editform-configuration.html 
 lang: en 
 autotranslated: true 
-hash: 0cfba453ea78bcb030689aff1459fa5ed8378addec06d60375226efeb986e729 
+hash: bd0f7cea5782681c17c1457fb14d52146354f6c8b89b708518e5a0000bcf406f 
 --- 
 
 ## Settings and jquery.icsEditForm.js 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_data-object-copy.html 
 lang: en 
 autotranslated: true 
-hash: d29b8acff91850f0a29acaa5c5b96884d662c59fb50ad6de40c57c6cf2d5a6f6 
+hash: 94e544065744c32f44f2241483ee87260f8c698e4945ae796708eceb2319e4dd 
 --- 
 
 [Service data](fo_data-service.html) builds a query to change rows in the database based on information about the changed properties of the object. To obtain this information at [the facility](fo_data-object.html) is a separate full copy of the object (in this case change detection is only required to compare the current field values of the object data and the corresponding values in its copies). 

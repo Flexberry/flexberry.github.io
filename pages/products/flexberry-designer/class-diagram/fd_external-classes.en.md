@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_external-classes.html 
 lang: en 
 autotranslated: true 
-hash: 9e91f1d6ab3c1026993963abb992c145413d55d730bbd42c6ad0c6bf4e32f638 
+hash: a370f9c40f2361e5a92a7735f0325a19d3fa49f76002290161387cf2479d2ebb 
 --- 
 
 [Stereotype](fd_key-concepts.html) `external` allows you to declare a class that corresponds to any external (not declared, language) class. It is convenient and necessary in cases when you want to operate with the type that the model has not been announced, but declared somewhere in the code (for the case of `.Net`-language - source or connected to the source builds). 

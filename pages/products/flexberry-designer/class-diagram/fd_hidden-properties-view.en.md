@@ -7,10 +7,10 @@ toc: true
 permalink: en/fd_hidden-properties-view.html 
 lang: en 
 autotranslated: true 
-hash: 1ec7f6d55155344bc9964a9b5c981989417853a53c6f3228319dafc3075d4351 
+hash: dde60d0629ef03de9607544a1ff781004f7ab4f10cd98d0f4ee5c6c26c082fc9 
 --- 
 
-The programmer can declare properties that fall into [view](fd_view-definition.html) "hidden", then they will be in a [view](fd_view-definition.html), but will not be visible in the user interface. 
+The programmer can declare properties that fall into [view](fd_view-definition.html) `скрытыми`, then they will be in a [view](fd_view-definition.html), but will not be visible in the user interface. 
 
 For declaring the hidden properties you want to initialize the property `Hidden` when specifying an attribute `View`. 
 

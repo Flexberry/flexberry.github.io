@@ -6,7 +6,7 @@ toc: true
 permalink: en/efd_odata.html 
 lang: en 
 autotranslated: true 
-hash: 6e138842936e21872ae19759aba8c2b102ac080d65846314095cc6364f93b86a 
+hash: 839ae5fe919c81b106cdd2cfbeb1f539f1cad817e615dae090d0a378b87e852d 
 summary: the Components for communicating with the backend via OData. 
 --- 
 

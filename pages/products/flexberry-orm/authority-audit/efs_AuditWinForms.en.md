@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_audit-win-forms.html 
 lang: en 
 autotranslated: true 
-hash: c1b564d6147bbf34cb5c1234d4fc1e43d318c08538a79398fb8e9132da5d9d07 
+hash: ab2fa5d59de9c11781bc1a3bffe55ceef1fe5ff103e042e0992646ea5df601b0 
 --- 
 
 ## Available win-form audit 

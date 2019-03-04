@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_order-calls-bs.html 
 lang: en 
 autotranslated: true 
-hash: 40e94a00106423ea2a5164dd84091ee960c74db65ba3904ed0e2e85e002b9eb8 
+hash: bd2e5025d9e77986c12c4a5d91884a747cb4671320ee6379da8894d721addeb9 
 --- 
 
 Note that in [business server](fo_bs-wrapper.html) can be caused by the object is updated not through the returned array, and a separate call to [service data](fo_data-service.html). In this case, it is necessary to consider that the business server will be called for this object separately. 

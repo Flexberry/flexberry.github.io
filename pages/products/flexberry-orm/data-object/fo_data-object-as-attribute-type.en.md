@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_data-object-as-attribute-type.html 
 lang: en 
 autotranslated: true 
-hash: 3cdf7edf5e106f179ce104b64e37ad43bd710f466b5d12aa7742bc1732733ec8 
+hash: 69486951256fb1c77ece3faacc0c7004aeb91130143c0dcdc6c14496744a9d57 
 --- 
 
 If [the class diagram](fd_class-diagram.html) [attribute](fo_attributes-class-data.html) type is inherited from [DataObject](fo_data-object.html), you need to: 

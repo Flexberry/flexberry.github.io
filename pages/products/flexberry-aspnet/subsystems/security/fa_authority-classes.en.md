@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_authority-classes.html 
 lang: en 
 autotranslated: true 
-hash: a26f38dc202db420974123b37347baecb09134e8d235465e22e96fe7ed1fafda 
+hash: edb4ae5795f3f08303a7880578bd33b8df0eb30583b4e1e5bf7cb679be18767a 
 --- 
 
 It is sometimes necessary to restrict access to some users or users with a certain role to certain classes (editing, creating new objects/delete/view the list). To do this, you must configure the [powers](efs_security.html) for users/user roles. 

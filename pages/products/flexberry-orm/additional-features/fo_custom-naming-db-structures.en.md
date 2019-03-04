@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_custom-naming-db-structures.html 
 lang: en 
 autotranslated: true 
-hash: da8a71fdc0fba639ab7f006843330cd1da8fc080ef0a9debd5dee206c6255182 
+hash: e52ecaef7a417a423caa333e40333be80f2442c529ae53fc973d815896129c1b 
 --- 
 
 There are 2 ways for [definition name](fo_storing-data-objects.html): 

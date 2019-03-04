@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_ember-flexberry-api.html 
 lang: en 
 autotranslated: true 
-hash: b121b64c3b0e07055fb38225c93d613acaa9cd8005ee49333b39e051ecb50f73 
+hash: e43fcef8ef34f56b5ea6cedd522aa2938d81bb563dcd51f6659c22e52441b197 
 --- 
 
 ## Autodocumentary for `ember-flexberry` 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_create-multiple-details.html 
 lang: en 
 autotranslated: true 
-hash: 46429159f6a9e1b3a6391f45d24c214e8de722c71ef53210a8d58ee28f373ac4 
+hash: 75764548db2a46a5cf48dfe03445bbde786ac98bed677c79bc81ef0fddb56d36 
 --- 
 
 Full list of code examples [Flexberry ORM](fo_flexberry-orm.html) is in ["code Examples"](fo_code-samples.html). 

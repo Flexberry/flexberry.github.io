@@ -6,7 +6,7 @@ toc: true
 permalink: en/efg_tile.html 
 lang: en 
 autotranslated: true 
-hash: da53449c4231a5d845b23b52bae09a0d587e1665026a475e4e24e4f48735def7 
+hash: 2f7cfe34b188124507af79531c2714078b511477d84d1c6244ad51b0fe1e4d96 
 published: true 
 --- 
 

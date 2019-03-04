@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_connect-task-monitor.html 
 lang: en 
 autotranslated: true 
-hash: c41ca55c27e74b7798cc41b34914297cef665cd7dfff5486e53c519f6cba1d85 
+hash: 9e372a03c44e72c82889a5833d9d3f5f908b488776a9d7f25032bcf75c5de26a 
 --- 
 
 ## Monitor queries to SQL 

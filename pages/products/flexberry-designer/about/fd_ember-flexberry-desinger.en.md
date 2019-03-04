@@ -7,7 +7,7 @@ toc: false
 permalink: en/fd_ember-flexberry-desinger.html 
 lang: en 
 autotranslated: true 
-hash: 56dcd30f1e91e8c89091384c68cbdf4ca8ad7835c6360f77226ec951fbd46dc0 
+hash: 96c497fda9b08c6b907a4789cb45678aaa824bc588ebfe6344cbd228f9777af9 
 --- 
 
 **Ember Flexberry Designer** - CASE-tool with a web interface [Flexberry Designer](fd_landing_page.html) is used for analysis and design of object-oriented systems, as well as generating prototypes of web applications based on the constructed models. Implemented using the framework [Ember.js](https://ru.wikipedia.org/wiki/Ember.js). 
@@ -23,15 +23,15 @@ Ember Flexberry Designer is [product platform Flexberry](fp_platform-structure.h
 
 `Метаданные приложения` – data describing the structure of classes and their relationships, the structure of related forms and other artifacts used in the design and generate a prototype application. 
 
-`Класс данных` class that corresponds to some domain entities. In the diagrams the UML has a stereotype, or may have a stereotype `implementation`. Instances of data classes are data objects. However, the term "data object" is periodically used as a synonym of the term "data class". 
+`Класс данных` class that corresponds to some domain entities. In the diagrams the UML has a stereotype, or may have a stereotype `implementation`. Instances of data classes are data objects. However, the term `объект данных` periodically used as a synonym of the term `класс данных`. 
 
 `Собственный атрибут` – attribute data class that is defined directly in the class. 
 
-`Мастер` class data from the multiplicity 1 or 0..1 in UML, an Association relationship between classes of data. 
+`Мастер` class data from the multiplicity 1 or 0..1 in UML `ассоциация` relationship between classes of data. 
 
-`Детейл` class of data associated with the aggregator (which is the "part") in a UML relation "composition" between classes of data. 
+`Детейл` class of data associated with the aggregator (which is `частью`) in the UML with respect to `композиция` between classes of data. 
 
-`Представление` – named set of its own or inherited attributes of the class, as well as attributes of other linked classes (including themselves). Representations are used when receiving data from backend and, accordingly, when reading data from a database. Views are used when reading data on the application forms, as well as for "clear" read data from within the source code of the application. On forms, basically, there are two kinds of submission: 
+`Представление` – named set of its own or inherited attributes of the class, as well as attributes of other linked classes (including themselves). Representations are used when receiving data from backend and, accordingly, when reading data from a database. Views are used when reading data on the application forms, as well as for `явного` read data from within the source code of the application. On forms, basically, there are two kinds of submission: 
 
 * _L-predstavlenie - used to list формах; 
 * _E-predstavlenie - used in the forms editing component for detaylari.
@@ -41,13 +41,13 @@ Ember Flexberry Designer is [product platform Flexberry](fp_platform-structure.h
 `Форма редактирования` - shape, which provides a user interface for creating or editing a data object in a given view. With one data class can be associated to several forms of editing. From the point of view of application metadata editing form is a class with the stereotype `editform`. 
 The application class is a special class in the application metadata, which stores common to all of the applications settings – for example, the navigation structure (menu), application configuration, etc. This class has the stereotype `application` in the application metadata. 
 
-`Бизнес-сервер` class to which the submitted methods are triggered "automatically" after inserting, modifying, and deleting data in the data object of a certain type before sending the appropriate changes to the database (similar to triggers in databases, but at the level of the application source code), and related business logic associated with the corresponding data class. From the point of view of application metadata business server is a class with the stereotype `businessserver`. 
+`Бизнес-сервер` class in which submitted the methods triggered `автоматически` after the insertion, modification and deletion of data in a data object of a certain type before sending the appropriate changes to the database (similar to triggers in databases, but at the level of the application source code), and related business logic associated with the corresponding data class. From the point of view of application metadata business server is a class with the stereotype `businessserver`. 
 
 `Сервис генерации` – additional software on the server side, providing the possibility of generating prototype applications based on metadata of the applications. 
 
 ## Modes Flexberry Designer 
 
-### With "hard" a given project 
+### With `жестко` a given project 
 
 In this case, the project ID specified in your configuration before you build the application. In this mode, when you run the application at once will open form with a structure specified in the project configuration. 
 
@@ -67,7 +67,7 @@ var ENV = {
 };
 ``` 
 
-### No "hard" reference to the project 
+### `жесткой` Without reference to the project 
 
 In this case, the users can work with multiple projects, grouped by organizations. 
 With the mode of operation without a rigid connection to the project, before work on the project, you must first select the organization, then, you must create or select a project and after a project is selected will open the form for editing the application structure. 
@@ -85,16 +85,16 @@ The project is actually the solution application system. Each project has its ow
 The application structure is the basic form, which is the key to create the application. It consists of: 
 
 * Levogo dereva (list of classes). This is a list of all data classes of the applications, as well as all of the list form and edit form bound to the appropriate data classes (nested nodes). Classes of different types have different icon. The left tree allows you to create/delete/edit data classes and forms to the list of classes in the form of a table (similar to the Manager class in the desktop version of the designer). 
-* Pravogo dereva (the structure of the target application) to edit the navigation structure (menu structure) of the design application. In this tree you can create menus of arbitrary nesting by grouping menu items into "folders" on different levels. The navigation items (not counting the "folders" that are used to group elements) can be list form, form editing, or menu items that refer to an arbitrary URL. Available operations: 
+* Pravogo dereva (the structure of the target application) to edit the navigation structure (menu structure) of the design application. In this tree you can create menus of arbitrary nesting by grouping menu items into `папкам` at various levels. The navigation items (not counting `папки`, which are used to group elements) can be list form, form editing, or menu items that refer to an arbitrary URL. Available operations: 
 
 * adding a new navigation item (menu item) with reference to an arbitrary address URL; 
 * edit properties (title and description) of the selected item навигации; 
 * delete item навигации; 
-* add new folders to the structure навигации; 
+* adding new `папки` the structure навигации; 
 * change the order of navigation controls (move up and down); 
 * save the navigation. 
 
-To add list forms or edit forms (from a list of all the possible forms that appear in the left tree), you must select the appropriate form in the left tree, then select the appropriate "folder" in the right tree and click on add form in the navigation structure. 
+To add list forms or edit forms (from a list of all the possible forms that appear in the left tree), you must select the appropriate form in the left tree, then select the appropriate `папку` in the right tree and click on add form in the navigation structure. 
 * tabs allowing you to configure and edit properties of a class `application`, stages and forms. 
 
 

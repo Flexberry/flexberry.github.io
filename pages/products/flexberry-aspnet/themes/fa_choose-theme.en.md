@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_choose-theme.html 
 lang: en 
 autotranslated: true 
-hash: f067925716e3bfad39f2358df6ecea03d64628690bc602ebb26f7e1bef65602c 
+hash: d027014a2f622c3a12f6672767858a5358e29a032d29ff32da42e1eb7ebb30d1 
 --- 
 
 Application themes are responsible for its appearance. When you change themes changes: 

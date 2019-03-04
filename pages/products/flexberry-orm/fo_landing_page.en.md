@@ -7,7 +7,7 @@ permalink: en/fo_landing_page.html
 folder: product1 
 lang: en 
 autotranslated: true 
-hash: b5f6103095f788a02ffb4716426ce4c00ee1f83d26080f13c0f1a718a632d93a 
+hash: 28ae9fd984136cf486a314687b2841a93b8bc38f094f7a9316ab960620868b78 
 --- 
 
 ## product Information 

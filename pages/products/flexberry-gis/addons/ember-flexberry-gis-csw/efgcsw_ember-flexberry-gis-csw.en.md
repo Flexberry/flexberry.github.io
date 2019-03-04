@@ -7,7 +7,7 @@ permalink: en/efgcsw_ember-flexberry-gis-csw.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: d685f3ed735045b56b0f35c481fee5866f764e96c453d89a4b26224040c4adf1 
+hash: f57693bdc93d56358fde0613adb740b1c0039c2beaaba4554daf118f260a6bcd 
 --- 
 
 ## product Information 

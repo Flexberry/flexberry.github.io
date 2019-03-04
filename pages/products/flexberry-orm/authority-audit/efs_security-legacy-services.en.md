@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_security-legacy-services.html 
 lang: en 
 autotranslated: true 
-hash: c9e4df6433781472c3d80afaa6386131ec369badc1cc775467012c522c3431af 
+hash: 9561d7b8543328b1fd1a06fe44628d8ca2a50ebb2593902c88792e6537f5e0e4 
 --- 
 
 `Сервис powers Flexberry Rights` is an alternative service [authority](efs_right-manager-module.html), designed to meet the increasing demands. The main purpose of the service is to provide mediated access to databases (protecting the database from unwanted changes). 

@@ -7,7 +7,7 @@ permalink: en/lwms_leaflet-wms.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: ba88fb00d44a9393e2e3332744bc747c80c74136b180884b68ad56e148dbefbe 
+hash: eeb803202fac71b35b5554e5aefdefe028a80aa33dcc8ff4f3bea6b526f21a47 
 --- 
 
 ## product Information 

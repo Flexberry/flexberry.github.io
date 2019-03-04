@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_enumerations.html 
 lang: en 
 autotranslated: true 
-hash: 7ed55c22d5ac031de8a4611f3ef31befcb05f893247d21d3e3299dbf2c40de32 
+hash: f8e10ce334b408f45d379098c5bc71b513b6553829acf944a49c6c515bf0a53f 
 --- 
 
 `Enumeration` - [stereotype](fd_key-concepts.html) the UML class representing the enum type. 

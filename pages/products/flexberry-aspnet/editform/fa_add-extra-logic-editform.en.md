@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_add-extra-logic-editform.html 
 lang: en 
 autotranslated: true 
-hash: ab8af6d3df3909c3d62a54e0d4c06563e66691b8f2ca09557ee75b47d5f2a59d 
+hash: 943599027e3abfd1e5c62d289ab904b5b7fe1052eb0d52136096e1ea16e954f8 
 --- 
 
 ## Processing event save object on the client 

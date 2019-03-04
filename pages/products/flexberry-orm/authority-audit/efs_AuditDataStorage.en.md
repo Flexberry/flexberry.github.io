@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_audit-data-storage.html 
 lang: en 
 autotranslated: true 
-hash: 39de9496bb9572acce95349c76c4f495e86c04dfd609113f9ac67374b25abfcb 
+hash: 35c982cf15bf61d26b2a01e9f6ac1d39be78888b5ff253e9ba79677966672bb7 
 --- 
 
 # Storing audit data 
@@ -20,9 +20,9 @@ To store audit data, you can use a structure similar to those shown below (such 
 * `AuditEntity` – information about the audited event on the object (the same class used in [the old audit (`АудитОперации`)](efs_audit.html)) 
 ** `ObjectPrimaryKey` – [primary key object](fo_primary-keys-objects.html), on which was performed the audited operation. 
 ** `OperationTime` – time when the object was made of the audited operation. 
-** `OperationType` – type is made on the object of the audited operation (if you had performed a "standard operation", it will be passed as a string value of the type `tTypeOfAuditOperation`; if you have followed custom is the name of the corresponding operation). 
+** `OperationType` – type is made on the object of the audited operation (if performed `стандартная операция`, it will be passed as a string value of the type `tTypeOfAuditOperation`; if you have followed custom is the name of the corresponding operation). 
 ** `ExecutionResult` – the result of the audited operation. 
-** `Source` – computer, where the operation was performed (e.g., "IP: 192.168.0.5"). 
+** `Source` – computer, where the operation was performed (e.g., `IP: 192.168.0.5 `). 
 ** `SerializedField` – serialized representation of data on changes in the fields of AuditFields ("'not currently used"'). 
 
 * `ObjectType` – type of the audited object. 
@@ -31,12 +31,12 @@ To store audit data, you can use a structure similar to those shown below (such 
 * `AuditField` – details of an audited event on the object: which fields and how they were changed (the same class used in [the old audit(`АудитИзменения`)](efs_audit.html)): 
 
 * `AuditSession` – information about user sessions (the same class used earlier (`Аудит_Сессия`), "'at the moment the table is not in use"'): 
-** `StartTime` – the beginning of the session (for example, "10.02.2013 16:00:23:123"). 
-** `EndTime` – end time session (for example, "10.02.2013 17:03:27:125"). 
-** `LastActionTime` – the last time the audited action (for example, "10.02.2013 16:30:23:123"). 
-** `Source` – computer where you were logged into the application (e.g., "IP: 192.168.0.5"). 
-** `Enabled` – active session at the moment (e.g., "false").
-** `Duration` – session duration (calculated based on start and end сессии; for example, "0.01:03:04:002") 
+** `StartTime` – the beginning of the session (for example, `10.02.2013 16:00:23:123`). 
+** `EndTime` – end time session (for example, `10.02.2013 17:03:27:125`). 
+** `LastActionTime` – the last time the audited action (for example, `10.02.2013 16:30:23:123`). 
+** `Source` – computer where you were logged into the application (for example, `IP: 192.168.0.5 `). 
+** `Enabled` – active session at the moment (for example, `false`).
+** `Duration` – session duration (calculated based on start and end сессии; for example, `0.01:03:04:002`) 
 
 ## Data table AuditField 
 

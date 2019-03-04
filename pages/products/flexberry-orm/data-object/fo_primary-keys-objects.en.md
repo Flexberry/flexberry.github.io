@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_primary-keys-objects.html 
 lang: en 
 autotranslated: true 
-hash: 0701fe9b55189d6e45d425e5a69c5476a31ef84ac29f75bd06b46294699a9a34 
+hash: f8ac60f2e24a6c2bf7a0da0c2a433ffbe853811932c218f99dced1dd1e27b83d 
 --- 
 
 In most cases, the developer is not required to use directly primary keys, all keys must be done secretly. However, you can learn (and change) the primary key value of the data object. It is necessary to cause the data object property `__PrimaryKey`. 

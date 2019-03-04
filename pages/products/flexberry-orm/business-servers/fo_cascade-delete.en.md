@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_cascade-delete.html 
 lang: en 
 autotranslated: true 
-hash: ac6164d648397d2e508b1d67aa02ae24e115a355a8034908d16c45d79c7ade20 
+hash: a12cb531f0dd4e0644730aedb76b2e61545fb047b30bd95101f964674b0fefb1 
 --- 
 
 ## Task cascade delete 

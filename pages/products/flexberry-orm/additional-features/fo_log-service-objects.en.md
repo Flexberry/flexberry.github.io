@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_log-service-objects.html 
 lang: en 
 autotranslated: true 
-hash: 3df9023fe4b19aa471d32530f0507bef2997d3087a673707e4b0c6036549af85 
+hash: 1a9bb474d657ec7b38ebe58e228e61d7f73674215688136f448cb624ce7afdd2 
 --- 
 
 ## Logging using Microsoft Enterprise Library and Flexberry. 

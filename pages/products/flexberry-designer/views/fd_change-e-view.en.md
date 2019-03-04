@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_change-e-view.html 
 lang: en 
 autotranslated: true 
-hash: a75d7395e168efce7ba226ca9a884f1f44ba8194ff17cd97ad4b88b405ef9cd1 
+hash: 12e1b7064b9d680d9eb262a590e8f6fc7b355f31aa7211148a7e20683398cca6 
 --- 
 
 [Submission form](fd_e-view.html) is responsible for setting elements [edit form](fd_editform.html), as well as for setting up [GroupEdit](fw_group-edit.html)'a for editing objects of the class. When changes in [E-view](fd_e-view.html grade), change the edit form to its objects. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_security-console.html 
 lang: en 
 autotranslated: true 
-hash: 15073db2d8f37420acf82b1b62b6fe78bb18ff04aec79af7fb3d9614f3035414 
+hash: 48587f7c7e37b04304576a4668d3838ccfbe43eddadda0221df1771d616d8026 
 --- 
 
 ## Console privilege management (Security Console) 

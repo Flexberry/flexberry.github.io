@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_authentication-adapter.html 
 lang: en 
 autotranslated: true 
-hash: 6170c69c5541bc5f09bab3e058c9315ad97b4d13981cb0e308b1d57088e3a4db 
+hash: 48ff3657aea82d9547356a0d3f97f03eedd6ce83298b950d2aa40f76b9e620d1 
 --- 
 
 ## AuthenticationAdapter 

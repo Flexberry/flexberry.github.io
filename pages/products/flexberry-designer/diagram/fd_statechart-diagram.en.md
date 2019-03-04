@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_statechart-diagram.html 
 lang: en 
 autotranslated: true 
-hash: 6cdc1b2b8169f01c6f25a68f409711cc9dc95e8d9f3a9a9f48b4e14fa4c88eeb 
+hash: 9c33069629c28cf075e641a7364ca48c7ed7f52e908ee497071d944330358017 
 --- 
 
 **State diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 

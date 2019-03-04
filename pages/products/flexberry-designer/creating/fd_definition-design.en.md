@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_definition-design.html 
 lang: en 
 autotranslated: true 
-hash: ab0208dc5973107ad4ef92e6a1cf8f4711ccf3b37e8fc4b04091809dbb27cf56 
+hash: 547b951c11dea2d83b87d798de43cd51d9b2fd6aee423e21101005d1149dd4ff 
 --- 
 
 `Проектирование` (from the Latin `projectus`, which means "thrown forward") is the process of writing required to create under specified conditions of non-existing object based on the primary description of this object by its detail, the additions, calculations and optimization. 

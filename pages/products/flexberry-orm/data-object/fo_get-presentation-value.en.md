@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_get-presentation-value.html 
 lang: en 
 autotranslated: true 
-hash: c96b66d6c2167b6a833ea7d1f8a967f09823c13ce57d47fb7e801d6013605cb3 
+hash: fcbcede0b7c111fc99b286a1a5880e82c645442d8d612666e947cc5e72b2ea7a 
 --- 
 
 If you need the string representation of a [DataObject](fo_data-object.html) you can use the method `DataObject.GetPresentationValue()`. 

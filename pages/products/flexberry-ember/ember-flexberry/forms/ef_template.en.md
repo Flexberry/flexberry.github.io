@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_template.html 
 lang: en 
 autotranslated: true 
-hash: 450886fb428d2c89a9fe74d3a5bb9f8f663e9846a85badd23660855eb6a0bc35 
+hash: f7b0b32a300e20628f498aebd1fce000d9d6aa29456d98b1cbacb6293ddd17ed 
 summary: Presents basic information about the structure of the handlebars templates in ember-flexberry applications 
 --- 
 

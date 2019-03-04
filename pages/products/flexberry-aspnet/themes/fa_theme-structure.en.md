@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_theme-structure.html 
 lang: en 
 autotranslated: true 
-hash: b0afbb1dc795caa22159f8c8756666cd445cb8289ab92c92bf3cb76db4f11383 
+hash: b4fddce26ff876c4f1115a8419c2ac775565e93ac3db2c7aa91a9eb99e01eadc 
 --- 
 
 The appearance of topics as well as additional information set out in [article theme Selection Web application](fa_choose-theme.html). 

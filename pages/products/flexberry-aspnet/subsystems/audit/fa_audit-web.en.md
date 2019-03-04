@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_audit-web.html 
 lang: en 
 autotranslated: true 
-hash: 2b10a99d6cac0605c89891bf492c703b42e06f16b5d24608c97f29f1cfb4c759 
+hash: 06a533c2b0f4b2d443b5df9b777fbb7bc0b2fad565808f782503fb6d1a8ce9f4 
 --- 
 
 ## interaction pattern of the component audit 
@@ -25,7 +25,7 @@ hash: 2b10a99d6cac0605c89891bf492c703b42e06f16b5d24608c97f29f1cfb4c759
 * When performing potentially audited transaction data service of the application notify the class AuditService: 
 * scans the existing configuration audit and decides on the need to implement audit records. 
 * if auditing is required, then an appropriate message is either [IAudit](efs_i-audit.html), if no separate audit service or AuditWinService (waiting for a response will depend on the settings of the audit). 
-* The class implements AuditService interface IAuditService, and also has a static field of type IAuditService where will be recorded the instance of a class AuditService (this will allow to work both with a static class through the appeal "to the AuditService.CurrentAuditService"). All calls are made via an interface (if there is a need, the class can Audit it is easy to replace). 
+* The class implements AuditService interface IAuditService, and also has a static field of type IAuditService where will be recorded the instance of a class AuditService (this will allow to work both with a static class through the reference `AuditService.CurrentAuditService`). All calls are made via an interface (if there is a need, the class can Audit it is easy to replace). 
 
 ![](/images/pages/products/flexberry-aspnet/audit/audit-diagramm2.png) 
 
@@ -73,7 +73,7 @@ The audit service AuditWinService c wcf service AuditWcfServiceLibrary supports 
 * The form with information on user sessions (*to be implemented in the second stage*). 
 * Viewing audit data throughout the system ([see here](fa_audit-web-forms.html)). 
 * Viewing audit information for specific object ([see here](fa_audit-web-forms.html)). 
-* "Who is online" (*will be implemented in the second stage*). 
+* Form `Кто on сайте` (*to be implemented in the second stage*). 
 
 The approximate set of controls on the form view audit data for a specific change: 
 
@@ -82,8 +82,8 @@ The approximate set of controls on the form view audit data for a specific chang
 * The type of operation 
 * Change: 
 * private fields: changed field the old value (if saving is specified in the settings), the new value. 
-* for masters and datalow old (if its retention is specified in the settings), new string representation (string representation of the type of "field - value" based on the value selected for audit submission) and, if specified in the settings class, old/new primary key. 
-* Element to invoke the edit form (the form displays the current status объекта; if the object is already deleted, then view its status will not). 
+* for masters and datalow old (if its retention is specified in the settings), new string representation (string representation of the type `поле - значение` based on selected for audit submission) and, if specified in the settings class, old/new primary key. 
+* Element to invoke the edit form (the form displays the current status объекта; if the object is already deleted, then view its status will not).
 * Elements of the audit object: 
 * Creation date of the object 
 * Creator of the object 
@@ -92,7 +92,7 @@ The approximate set of controls on the form view audit data for a specific chang
 
 In relation to the persistent field values should remark that the settings of the audit will determine: 
 
-* Preserve in the record the old value of the audited fields of the object.
+* Preserve in the record the old value of the audited fields of the object. 
 * Whether to trim a string with the corresponding value of the field audit while maintaining the information and to what length. 
 * Whether to compress the value of a field audit when saving and decompress when you display (*to be implemented in the third stage*). 
 
@@ -106,20 +106,20 @@ A structure for storing audit data
 * The use of tables subsystem powers will allow you to store in one database information subsystem powers and audit. 
 * Similar structure to the data collected allow, if necessary, to carry out their integration with located in another database data subsystem power (or just add missing tables in the database audit, if you want to store the data subsystem powers in the same database). 
 * `AuditSession` – information about user sessions (the same class used earlier (Auditmessage)): 
-* `StartTime` – the beginning of the session (for example, "10.02.2013 16:00:23:123"). 
-* `EndTime` – end time session (for example, "10.02.2013 17:03:27:125"). 
-* `LastActionTime` – the last time the audited action (for example, "10.02.2013 16:30:23:123"). 
-* `Source` – computer where you were logged into the application (e.g., "IP: 192.168.0.5"). 
-* `Enabled` – active session at the moment (e.g., "false"). 
-* `Duration` – session duration (calculated based on start and end сессии; for example, "0.01:03:04:002") 
+* `StartTime` – the beginning of the session (for example, `10.02.2013 16:00:23:123`). 
+* `EndTime` – end time session (for example, `10.02.2013 17:03:27:125`). 
+* `LastActionTime` – the last time the audited action (for example, `10.02.2013 16:30:23:123`). 
+* `Source` – computer where you were logged into the application (for example, `IP: 192.168.0.5 `). 
+* `Enabled` – active session at the moment (for example, `false`). 
+* `Duration` – session duration (calculated based on start and end сессии; for example, `0.01:03:04:002`) 
 * `AuditEntity` – information about the audited event on the object (the same class used earlier (Auditorily)) 
 * `ObjectPrimaryKey` – the primary key of the object on which was performed the audited operation. 
 * `OperationTime` – time when the object was made of the audited operation. 
-* `OperationType` – type is made on the object of the audited operation (if you had performed a "standard operation", it will be passed as a string value of the type `tTypeOfAuditOperation`; if you have followed custom is the name of the corresponding operation). 
+* `OperationType` – type is made on the object of the audited operation (if performed `стандартная операция`, it will be passed as a string value of the type `tTypeOfAuditOperation`; if you have followed custom is the name of the corresponding operation).
 * `ExecutionResult` – the result of the audited operation. 
-* `Source` – computer, where the operation was performed (e.g., "IP: 192.168.0.5"). 
+* `Source` – computer, where the operation was performed (e.g., `IP: 192.168.0.5 `). 
 * `SerializedField` – serialized representation of data on changes in the fields of AuditFields. 
-* `ObjectType` – type of the audited object.
+* `ObjectType` – type of the audited object. 
 * `Name` – the name of the object type (if the type is standard, then if AssemblyQualifiedName; custom – passed to user-definition). 
 * `AuditField` – details of an audited event on the object: which fields and how they were changed (the same class used earlier (Auditionee)): 
 * Masters are on the same level as a private field. Field is the name мастера; old and new values are formed in the form of a string at a specified for audit representation. Old and new primary key value of the master is recorded as a separate line and it as MainChange written record of the change master (change to display the primary key will be only if in the class there is a corresponding setting). 
@@ -141,16 +141,16 @@ Setting up auditing in Flexberry Tool
 
 ### setting the stage 
 
-* In settings, the stage will tick "Using auditing". The option is ignored when generating the application: if it is selected, additional items (optional items described in the "Storing settings") used by the audit will be generated, and the audit application to function. 
-* In settings, the stage will be a button "Add audit in all classes." When you press the button all the classes in the minimal way will be configured to conduct the audit. 
+* In settings, the stage will tick `Использование аудита`. The option is ignored when generating the application: if it is selected, additional items (additional items described in paragraph `Хранение настроек`) used by audit will be generated, and the audit application to function. 
+* In settings, the stage will be a button `Добавить audit all классы`. When you press the button all the classes in the minimal way will be configured to conduct the audit. 
 * In the settings stage you can choose to store the database audit: database application or in an external database. 
 
-### class setting.
+### class setting. 
 
 * To audit the class must have a representation that is audited (the binding occurs via the view name). For different operations (create, modify, read, delete) should be able to specify their own performance. 
-* In the settings class will have the opportunity to determine which operations (create, modify, read, delete) is audited. If checked at least one checkbox, then additional elements (additional elements described in paragraph "Storing settings") used by the audit, will be generated under the condition that the stage is the same tick. 
+* In the settings class will have the opportunity to determine which operations (create, modify, read, delete) is audited. If checked at least one checkbox, then additional elements (additional elements described in paragraph `Хранение настроек`) used by the audit, will be generated under the condition that the stage is the same tick. 
 * In settings you can define whether you want to use to audit performance with the default name (AuditView). 
-* In the settings class will tick "Additional audit fields". When you select this option in the class adds the following attributes: 
+* In the settings class will tick `Дополнительные field аудита`. When you select this option in the class adds the following attributes: 
 * CreateTime (date of establishment) 
 * Creator (Creator) 
 * EditTime (last modified) 
@@ -159,7 +159,7 @@ Setting up auditing in Flexberry Tool
 **Note**: the user name is taken from the [Tools current user](fo_current-user-service.html) 
 
 * When selecting checkboxes when code is generated from the class will be inheriting from an interface that contains four describes the fields. 
-* Tick "Additional audit fields" will display a list of forms characteristic of the previous version of the audit additional fields. When you save an object of a class where there is a box "Additional audit fields" is checked that all attributes are present in the class (that is, not accidentally modified/deleted), otherwise an exception will be thrown. 
+* Tick `Дополнительные аудита` field will display a list of forms characteristic of the previous version of the audit additional fields. When you save an object class, where there is a check mark `Дополнительные field аудита` will be checked that all of the added attributes present in the class (that is, not accidentally modified/deleted), otherwise an exception will be thrown. 
 * In the settings class, you can choose the option record data for audit: synchronous or asynchronous. 
 
 ## Storage settings 
@@ -175,12 +175,12 @@ Setting up auditing in Flexberry Tool
 General settings audit will be in the AuditService class, which will be deducted at the beginning of the application. 
 
 General settings audit (AuditAppSetting): 
-* AppName – the application name (will be used [service audit](efs_audit-win-service.html)) 
+* AppName – the application name (will be used by the [audit services](efs_audit-win-service.html)) 
 * AuditEnabled – enabled auditing in the application. 
 * IsDatabaseLocal – [whether to use a local audit database](efs_data-service-for-audit.html) (i.e. the application database combined with database auditing). 
 * AuditConnectionStringName – [name of the connection string to the database audit](efs_data-service-for-audit.html) (more about the logic of this configuration can be read [here](efs_data-service-for-audit.html)). 
 * AuditWinServiceUrl – url, where is the [audit services](efs_audit-win-service.html). 
-* WriteSessions – whether to store information about user sessions.
+* WriteSessions – whether to store information about user sessions. 
 
 ### Settings class (AuditClassSetting) 
 
@@ -202,7 +202,7 @@ In the beginning of the application setup class for audit will be deducted in th
 
 * `ObjectType` – type objects. 
 * `AuditEnabled` – enabled auditing for a class. 
-* `UseDefaultView` – to use for all operations in the default view with the name "AuditView". 
+* `UseDefaultView` – to use for all operations in the default view with the name `AuditView`. 
 * `SelectAuditViewName` – the name of the view to conduct audit read operations of the class. 
 * `InsertAuditViewName` – the name of the view to conduct operation audit create the class. 
 * `UpdateAuditViewName` – the name of the view for doing auditing operation changes the class. 
@@ -212,12 +212,12 @@ In the beginning of the application setup class for audit will be deducted in th
 * `SelectAudit` – advanced audit read. 
 * `InsertAudit` – in addition to audit of the establishment. 
 * `UpdateAudit` – in addition to audit change. 
-* `DeleteAudit` – advanced audit for deletion. 
+* `DeleteAudit` – advanced audit for deletion.
 * `PrunningLength` – if the value is greater than zero then as many characters from a field value, starting from the beginning, will сохраняться; if null, the value will be saved as a whole. 
 * `ShowPrimaryKey` – whether to display audit data in the old and new primary key value of the master/detail. 
 * `KeepOldValue` – if you want to save the old value of the changed field. 
 * `Compress` – whether to compress stored fields values. 
-* `KeepAllValues` – whether to save only changed fields from the view, or all of the fields included in the view.
+* `KeepAllValues` – whether to save only changed fields from the view, or all of the fields included in the view. 
 
 Sometimes there is a need to configure additional auditing for specific objects (that is, in addition to the audit, which is conducted for the respective class). For example, for objects `ObjectA`, `ObjectB` class `Class1` for which audit is conducted only to read, to add audit record. 
 
@@ -245,7 +245,7 @@ Setting the field class defined by the programmer in the program code and stored
 * `PrunningLength` – (see `AuditClassSetting`) if `null`, then take the value from the corresponding `AuditClassSetting`. 
 * `Compress` – (see `AuditClassSetting`) if `null`, then take the value from the corresponding `AuditClassSetting`. 
 * `KeepOldValue` - (see `AuditClassSetting`) if `null`, then take the value from the corresponding `AuditClassSetting`. 
-* ``KeepAllValues` - (see `AuditClassSetting`) if `null`, then take the value from the corresponding AuditClassSetting. 
+* ``KeepAllValues` - (see `AuditClassSetting`) if `null`, then take the value from the corresponding AuditClassSetting.
 
 ### Configuration data services (AuditDSSetting) 
 
@@ -255,7 +255,7 @@ Information about data services used by the application (`AuditDSSetting`):
 
 * `DataServiceType` – type data service. 
 * `ConnString` – the connection string of the service. 
-* `ConnStringName` – the connection string name (the name provided by the programmer to identify the service данных; later in the config of the service audit will be used is the name).
+* `ConnStringName` – the connection string name (the name provided by the programmer to identify the service данных; later in the config of the service audit will be used is the name). 
 
 The data service when they had identified a potentially audited operation, notify the AuditService class. If the class AuditService decided that it is necessary to conduct the record audit data, among sent [service audit](efs_audit-win-service.html) information is the name of the connection string to the application database ([name of the connection string is defined](efs_data-service-for-audit.html) from AuditDSSetting based on what data service is and what connection string applied to the class AuditService). 
 
@@ -277,15 +277,15 @@ If the operation is audited, it was found from settings does the idea, then for 
 Among the settings of the audit defined in Flexberry Tool, we can distinguish the following types: 
 
 * Setting the stage (General settings for all audit generated from the stage of application). 
-* Settings classes with the stereotype "application" (audit settings that you define for a particular generated application (currently ASP generator supports generating only one application)). 
-* Settings classes with the stereotype "implementation" (audit settings that are defined for specific classes that will be included in the Assembly of objects). 
+* Settings classes with the stereotype `application` (audit settings that you define for a particular generated application (currently ASP generator supports generating only one application)). 
+* Settings classes with the stereotype `implementation` (audit settings that are defined for specific classes that will be included in the Assembly of objects). 
 
 ![](/images/pages/products/flexberry-aspnet/audit/audit-setting-generate.png) 
 
 The generation of the settings of the audit of Flexberry Tool to the web application* 
 
-Settings classes with the stereotype "implementation" will be generated in the code object a generator object. 
-Setting the stage and class with the stereotype "application" will be generated. config file on a web ASP application generator. 
+Settings classes with the stereotype `implementation` will be generated in the code object a generator object. 
+Setting the stage and class with the stereotype `application` will be generated. config file on a web ASP application generator.
 
 ## Reading settings 
 

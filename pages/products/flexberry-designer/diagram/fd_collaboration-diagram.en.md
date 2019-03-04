@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_collaboration-diagram.html 
 lang: en 
 autotranslated: true 
-hash: 4bc978f6bb729d41e048f09dd9d4c6dc68c013d19118776bd9c9af583ca7a4ec 
+hash: b8506db9326de355458cb0e0d23b14652debc433a4b771deb71f6b494b3bac0c 
 --- 
 
 **Collaboration diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 

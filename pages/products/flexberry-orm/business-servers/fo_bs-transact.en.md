@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_bs-transact.html 
 lang: en 
 autotranslated: true 
-hash: 124342f1bbab7da056729ac0e88a7ab3bc6bb2f4352994e5d49b39495891d3a6 
+hash: 120ab1b67716310793ba0e7a6fbb056be7f54d1ba7ce777b5153b0859ee4bfb5 
 --- 
 
 If you need to update multiple objects in one transaction (for example, to maintain referential integrity), you can use the standard mechanism [business server](fo_bs-wrapper.html). 

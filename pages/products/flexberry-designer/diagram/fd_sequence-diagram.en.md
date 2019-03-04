@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_sequence-diagram.html 
 lang: en 
 autotranslated: true 
-hash: 609da4be995f4840db32539cc5a11ff1efe30370b2f7a9e6aaa1d1799c7c11a1 
+hash: c419fac51397764e2cb5fa9b2862b474262d810ce4ea336433fa333d8e7a670d 
 --- 
 
 **Sequence diagram** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 

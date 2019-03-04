@@ -7,7 +7,7 @@ permalink: en/ef_displaying-errors-on-forms.html
 folder: products/ember-flexberry/forms/ 
 lang: en 
 autotranslated: true 
-hash: a1835b5f106afb7846da2728b7be732da60425fceb276c0bb03da7696a14a496 
+hash: 38b030c3c4a6f0b3441b5aa125c37f379dfa1e16bd54a762255b0ee91623ea20 
 summary: control the display of errors in list forms and edit forms. 
 --- 
 

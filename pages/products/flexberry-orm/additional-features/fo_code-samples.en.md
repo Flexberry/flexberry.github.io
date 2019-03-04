@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_code-samples.html 
 lang: en 
 autotranslated: true 
-hash: 4f04c4683baf8e9d58b4c8cd3d61d86494decea3d34103b7453218ad25a35693 
+hash: 2d9fb7ed69f57838f447d5f7ef4cb40b4547fe37e196dac5b7ff7d51976c9e81 
 --- 
 
 Code examples can be seen in [repository platform Flexberry on GitHub](https://github.com/Flexberry). 

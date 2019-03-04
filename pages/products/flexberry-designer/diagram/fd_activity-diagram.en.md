@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_activity-diagram.html 
 lang: en 
 autotranslated: true 
-hash: 4584c287b58f15358712b3664e08082a73620345804e681cca2e9110bd9a2244 
+hash: 0cefe0009901b67628ff6cd276978776f12f5fc8fd6642b05b79ea434e20f7ed 
 --- 
 
 **Chart of activities (types of activities)** - one of the available [kinds of graphs](fd_editing-diagram.html) supported [Flexberry Designer](fd_landing_page.html). 

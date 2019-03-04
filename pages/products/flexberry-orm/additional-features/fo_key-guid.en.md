@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_key-guid.html 
 lang: en 
 autotranslated: true 
-hash: 41bae79befe4574eb0560c47adc85c0c91b6eb5910751d956016bbcb340c278c 
+hash: 4ec6774735cf8ee1be1ee826719472685b04eb8f4736cb8f62e1b079bb943d25 
 --- 
 
 `KeyGuid` different from `System.Guid` method `Parse` the presence and absence of some designers. 

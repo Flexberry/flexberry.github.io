@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_domain-role-provider.html 
 lang: en 
 autotranslated: true 
-hash: 9ebb89c533db53f307f0a9ef0e81e1f6de09de7a3abc80f7c163372a81b11069 
+hash: ec533d6fa48aa0c8a7655cb43cea626757c7331d2c959f6b283c25e044ce6371 
 --- 
 
 `CaseberryDomainRoleProvider` is the heir to the [System.Web.Security.RoleProvider](http://msdn.microsoft.com/ru-ru/library/system.web.security.roleprovider.aspx). Is `CheckingLibrary.dll` and checks the user roles with regard to its domain. 

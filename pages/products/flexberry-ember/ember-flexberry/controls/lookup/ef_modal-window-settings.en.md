@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_modal-window-settings.html 
 lang: en 
 autotranslated: true 
-hash: 98c7d1741c5425b57524b65ef1ab7a38c4cdf7731f27c8488444bd05f4389fe2 
+hash: 6d08c8b327eb8ad6894f8ce1a762af12b3a657917868229df3c4d580ecb2af62 
 summary: Presents the basic customization possibilities raised by lucapa form. 
 --- 
 

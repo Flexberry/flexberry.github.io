@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_editform.html 
 lang: en 
 autotranslated: true 
-hash: e5e0b74675ff7ce7a582c8087b40daa8fff8f2355526887b6ea8283baac3910e 
+hash: 54d620d59dc6577e0abea1a38b572a7b72bfbf69bbcf4d2ee8eb9280bc196208 
 --- 
 
 The edit form provides a user interface for entering/editing the instance of the data object in one or multiple views. 

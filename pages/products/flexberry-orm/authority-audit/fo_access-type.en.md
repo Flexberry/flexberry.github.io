@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_access-type.html 
 lang: en 
 autotranslated: true 
-hash: 58f7d3e50f7c97448c1b6e23c1534bdb77ac008c474ca7a0b9f443cce13852c2 
+hash: eb05e846e22f5afb9a81857411024be1520df6afbdf4d92115badc03db4b3e6e 
 --- 
 
 `AccessType` determines the type [authorization check](fa_right-manager.html) for the class. There are the following types: 

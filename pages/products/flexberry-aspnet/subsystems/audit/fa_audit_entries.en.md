@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_audit_entries.html 
 lang: en 
 autotranslated: true 
-hash: b15ec9657d5feba6955a9061916c13fafedd345190cd9ab8eaaa752acc8f75e7 
+hash: 976201e9881c37a7fc1679070c829c4397393b68dc50fb312a89272e520ca64f 
 --- 
 
 `Система аудита` allows you to track __actions of users__ and __the state of system objects__. 

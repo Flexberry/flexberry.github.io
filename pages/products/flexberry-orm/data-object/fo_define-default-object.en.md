@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_define-default-object.html 
 lang: en 
 autotranslated: true 
-hash: 919e324ba8b7207c2b3bb2bda11714e33c66fcc389bbcf469223db2bdf02a059 
+hash: b38c22959a67f811148c3a184678f03b49eab50898d2c69e6671b433c118aaef 
 --- 
 
 For example, when ordering you want the shop was already installed. This choice should be provided at the beginning of the program. 

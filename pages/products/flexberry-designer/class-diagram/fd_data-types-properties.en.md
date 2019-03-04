@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_data-types-properties.html 
 lang: en 
 autotranslated: true 
-hash: 0cd4e1a67be0256d1524c7b618f80d516d80d53d3b5291eba93f6882221646ee 
+hash: f459bdff6379f8b3f0f5b0eb5660de23629775ee54c59df1a2024f1293ca0d71 
 --- 
 
 `Type`, [stereotype](fd_key-concepts.html) introducing the new type. When generating code in the target language you declare the type. Types can't contact any Association, but can be inherited. 

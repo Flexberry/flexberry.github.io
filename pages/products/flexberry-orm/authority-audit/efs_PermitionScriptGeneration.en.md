@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_permition-script-generation.html 
 lang: en 
 autotranslated: true 
-hash: 89d0c746f7c20da38e803eb4b1d27b728f0327b18d4a42da0345a9cfc6d73d73 
+hash: 5ac66c4f7719747c7b41c518308fe6da81ffe98d6201d87566c436e421c85a03 
 --- 
 
 ((( 
@@ -64,16 +64,16 @@ Consider a generation algorithm of a script for one user in a specific example.
 * The user if it has not previously been added added to the server and corresponding database. 
 * Suppose there is a class `FirstClass` and `SecondClass` (their table names match the class names). 
 * Let both classes have the same properties with the designated operations: 
-** "Property1" – "operationName1, operationName2". 
+** "Property1" – `operationName1, operationName2`. 
 ** "Property2" operation not assigned.
-** "Property3" – "operationName3". 
-** "Property4" – "operationName2". 
+** "Property3" – `operationName3`. 
+** "Property4" – `operationName2`. 
 * Let the current user has the following permissions: 
 ** On the class specified `FirstClass` access `Full` filter `Read`, `Insert` without filters. 
 ** On the class specified `ThirdClass` access `Full` without a filter. 
-** For the operation "operationName1" permissions without filters: `Full`, `Read`, `Insert`. 
-** For the operation "operationNameOther" permissions without filters: `Full`. 
-** For the operation "operationName2" permissions "Update" without the filter and `Full `с filter. 
+** For the operation `operationName1` permissions without filters: `Full`, `Read`, `Insert`. 
+** For the operation `operationNameOther` permissions without filters: `Full`. 
+** For the operation `operationName2` permissions `Update` without a filter and `Full `с filter. 
 
 Then the script will be generated in the following way: 
 
@@ -89,7 +89,7 @@ EXEC (@common_cmd)
 ``` 
 "'2."' Is determined, what rights do I have for the remaining classes, then define the set of operations that should be prohibited to the user. 
 
-In our case the class "FirstClass" we have the right `Read `и `Insert`, but there is no `Delete `и `Update`. 
+In our case, the class `FirstClass` we have the right `Read `и `Insert`, but there is no `Delete `и `Update`. 
 
 ```cs
 SET @specific_cmd = 'DENY DELETE, UPDATE  ON object::[FirstClass] TO ' + @user_name  
@@ -100,7 +100,7 @@ EXEC (@specific_cmd)
 
 "'3."' The classes to which the user has permissions, define properties, which do not specify any operations. With such properties, reset all restrictions on available operations. 
 
-In our case, this property "Property2". 
+In our case, this property `Property2`. 
 
 ```cs
 SET @common_cmd = 'REVOKE SELECT ([PropertyStorage2]) ON object::[FirstClass] TO ' + @user_name  
@@ -109,7 +109,7 @@ EXEC (@common_cmd)
 
 "'4."' The classes to which the user has permissions, define properties, are imposed on transactions, but the user has no rights to any operation. On properties subject to restrictions in the available column operations. 
 
-In our case, this property "Property3" ("operationName3" the user has no rights). 
+In our case, this property `Property3` (`operationName3` the user has no rights). 
 
 ```cs
 SET @common_cmd = 'DENY SELECT ([PropertyStorage3]) ON object::[FirstClass] TO ' + @user_name  
@@ -118,7 +118,7 @@ EXEC (@common_cmd)
 
 "'5."' For the remaining table properties on the basis of existing operations permissions, calculated permissions and they are appointed. 
 
-In our case "Property1" has Full access, and "Property4" has access to `Update `(enough to get the right reading.) 
+In our case `Property1` has Full access, and `Property4` has access to `Update `(enough to get the right reading.) 
 
 ```cs
 SET @specific_cmd = 'REVOKE SELECT ([PropertyStorage1]) ON object::[FirstClass] TO ' + @user_name  

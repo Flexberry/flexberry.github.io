@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_update-related-objects.html 
 lang: en 
 autotranslated: true 
-hash: 18dbf2f42c0509b057173d5106e39080877a27ae0a603acae52a266dd070af0e 
+hash: 3dc358a191c4b9746205d75cf393a57426ba5fbd009921ebfa3ce45f1acb8110 
 --- 
 
 It is possible that the preservation of some [data object](fo_data-object.html) may result in the preservation of related objects that clearly were not transferred for preservation. 

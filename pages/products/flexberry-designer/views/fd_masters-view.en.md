@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_masters-view.html 
 lang: en 
 autotranslated: true 
-hash: 36830e70bba84db8c039058a281a2a2a319a2cc29cf309a034ad262f8b4ba2b4 
+hash: 109a7d19b52951e33ea6b458174cea56a192a92e095a38e4fcb5c1a13214d127 
 --- 
 
 When to choose a representation of themselves [masters](fd_master-association.html), and when simply their properties? 

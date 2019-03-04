@@ -7,13 +7,13 @@ permalink: en/ef_show-ember-form-in-frame.html
 folder: products/ember-flexberry/forms/ 
 lang: en 
 autotranslated: true 
-hash: 1990fc369f8252dfec8943e7218be3ca455b5413a2e8a27108f6eb9679a57cb2 
+hash: 0c45193bcb037be9ce5aff1ca1b3c8af89048ea0d62e07196bd9b26cdceb655a 
 summary: This feature enables you to display inside the frame exclusively ember-form without a menu and other additional elements. 
 --- 
 
 ## Description 
 
-If for some reason you want to display the "bare" form (i.e. without the site menu and other additional элементов; for example, inside the frame), you can use the following method: 
+If for some reason you want to display `голую` form (that is, without the site menu and other additional элементов; for example, inside the frame), you can use the following method: 
 
 1. In the [controller `application.js`](ef_controller.html) ask [read parameter `inframe` Get-request](http://guides.emberjs.com/v2.4.0/routing/query-params/), create a property `shouldShowInFrame` that indicates that a specified parameter has a value `true`: 
 
@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
 });
 ``` 
 
-2. In the template `application.hbs` with design "&#0123;&#0123;zgl[unless](http://guides.emberjs.com/v2.4.0/templates/conditionals/) shouldShowInFrame&#0125;&zgl0125; ... &#0123;&#0123;/unless&#0125;&zgl0125;" set pieces, which is not to be displayed "naked" form. 
+2. In the template `application.hbs` with design `&#0123;&#0123;zgl[unless](http://guides.emberjs.com/v2.4.0/templates/conditionals/) shouldShowInFrame&#0125;&zgl0125; ... &#0123;&#0123;/unless&#0125;&zgl0125;` ask fragments that do not want to display on `голой` form. 
 
 For example, lower left to display only the form itself, all other elements are hidden. 
 
@@ -70,7 +70,7 @@ For example, lower left to display only the form itself, all other elements are 
 </div>{% endraw %}
 ``` 
 
-3. When the form is to add the parameter "inframe=true". 
+3. When the form is to add a parameter `inframe=true`. 
 
 {% include note.html content=" 
 Important: 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_log-service-log4net.html 
 lang: en 
 autotranslated: true 
-hash: b85416f138b2e6d9d290f05cd7a18a6e82c7ca4d752990ad0cc5e2947d19541d 
+hash: c11ac5671b443259fe71782fe8c39e6b20877da46805c527269f6e32d9713046 
 --- 
 
 `Flexberry LogService` is [product platform Flexberry](fp_platform-structure.html) and is intended for implementation event records the software. 

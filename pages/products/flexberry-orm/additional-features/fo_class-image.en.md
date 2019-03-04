@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_class-image.html 
 lang: en 
 autotranslated: true 
-hash: b95664431f2cfdbeed27d21952c5b0c2ff14eb87143c9af7144d19bdd5199ac9 
+hash: c095f1220148da6efb72a97b8a8828afcf1c51754e25999dac3eb26fab0da29b 
 --- 
 
 [Data class](fo_data-object.html) can be associated to the image. 

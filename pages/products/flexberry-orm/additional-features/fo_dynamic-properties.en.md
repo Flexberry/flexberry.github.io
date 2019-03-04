@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_dynamic-properties.html 
 lang: en 
 autotranslated: true 
-hash: 69d1be104e9c7fffd569fce29c2b6ad242f522bae48fdc3daf0a387b53cc378e 
+hash: 77bb2654655aa2b6b0bd2798e0a4b72ee72725dca4ff4f59947ffe692c26cd8c 
 --- 
 
 `DynamicProperties` - NameObjectCollection instance of a class (class extension [NameObjectCollectionBase](http://msdn.microsoft.com/ru-ru/library/system.collections.specialized.nameobjectcollectionbase.aspx))that is, in fact, a dictionary that stores pairs of values a string object. 

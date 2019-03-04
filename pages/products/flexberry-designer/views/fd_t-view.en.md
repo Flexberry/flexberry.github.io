@@ -7,10 +7,10 @@ toc: true
 permalink: en/fd_t-view.html 
 lang: en 
 autotranslated: true 
-hash: a432426fada81056aba955e768e712d4f1d816283ba959983456b376681734ea 
+hash: a6b1300012b3e99d9c47f6b0ccff9d4d746e50c8a14dd42d3aae79ef1562bcea 
 --- 
 
-Created among a [view](fd_key-concepts.html) emit T-the view ([view](fd_key-concepts.html) with the name "<class name>T", for example "Uchenik"). 
+Created among a [view](fd_key-concepts.html) emit T-the view ([view](fd_key-concepts.html) with the name `<class-name>T`, for example `УченикT`). 
 
 According to an informal agreement T-view - this view contains all the object's fields, and all [masters](fo_masters-details.html). 
 
@@ -18,7 +18,7 @@ T-view can be seen e.g. in [component creation limits](fw_limitation-editform.ht
 
 ## Settings 
 
-[Visibility](fd_hidden-properties-view.html) does not affect the display of attributes, since all fields will be visible regardless of the value of the field "Visibility". By default, the visibility must be set for all attributes. 
+[Visibility](fd_hidden-properties-view.html) does not affect the display of attributes, since all fields will be visible regardless of the value of the field `Видимость`. By default, the visibility must be set for all attributes. 
 
 Fields [audit](efs_audit.html) should be the only object for which the view is created. Fields audit masters in this view must not be specified. 
 

@@ -7,7 +7,7 @@ permalink: en/ef_resolver.html
 folder: products/ember-flexberry/mobile/ 
 lang: en 
 autotranslated: true 
-hash: ffd90e28d218f7a223c1b1d39b3777ae3c673b587206b91eb2da3b53dc2cf566 
+hash: 4a343fd82ff85fa0bd5a0dea34030081f75bcf6fb5be79cd462a438849b34b2c 
 summary: Basic information about resolver. 
 --- 
 

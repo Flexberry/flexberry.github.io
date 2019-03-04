@@ -6,7 +6,7 @@ toc: true
 permalink: en/efg_yandex-tile.html 
 lang: en 
 autotranslated: true 
-hash: d9c2bd50df7bb0a508373f1cefcf6a7d7af1ae94d0078fa5e7fc7ee7ada6349d 
+hash: dc69170782c38793002a2b6f5786dfd36bcd52de68f36d9d314c27e75da6b60e 
 published: true 
 --- 
 

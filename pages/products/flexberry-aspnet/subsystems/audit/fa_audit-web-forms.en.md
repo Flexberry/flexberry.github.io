@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_audit-web-forms.html 
 lang: en 
 autotranslated: true 
-hash: 4d73eae3ce647bfca717efb13f2a0988da31588e164c54b9cc236520a95611eb 
+hash: 64ccdc59c8653e5d689bdc05f76055b91eaaae23d2c5a3ade73d422c1440e415 
 --- 
 
 [Web-form](fa_tech-forms-web.html) the [audit](fa_audit-web.html) was developed for displaying objects used [ICSSoft.STORMNET.Business.Audit.Audit](efs_i-audit.html). Located in the Assembly "ICSSoft.STORMNET.Web.AjaxControls.dll". 

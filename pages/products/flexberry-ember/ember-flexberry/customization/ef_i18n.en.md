@@ -7,7 +7,7 @@ permalink: en/ef_i18n.html
 folder: products/ember-flexberry/customization/ 
 lang: en 
 autotranslated: true 
-hash: 6307589e7342e48281a98debbfec34ac154b77f8b00e8b4b24823f55ad74ff43 
+hash: 291f86f88132ec32aa170317532f4cdf88f50d5ec4aac714b26c7a3476e4510a 
 summary: 
 --- 
 

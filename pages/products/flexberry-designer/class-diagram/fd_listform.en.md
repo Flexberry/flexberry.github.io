@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_listform.html 
 lang: en 
 autotranslated: true 
-hash: b822e46eefcb9a4cd803d8ef484709d83a40f0216acddd5de7d651f3e16b5b94 
+hash: 28682fcc5306d600ba5c5f86ddddfb4d2820d654a107c3d34be6afda87c283a5 
 --- 
 
 The list form provides a user interface for displaying a list of data objects in a view. 

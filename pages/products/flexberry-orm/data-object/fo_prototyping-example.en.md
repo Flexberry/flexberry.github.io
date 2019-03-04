@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_prototyping-example.html 
 lang: en 
 autotranslated: true 
-hash: 02a84ccc2deaa6a97c87f18077e80410da50613a6481dad16821cbf00e55b54b 
+hash: 30094c9be05483a861eca88ea278fc1daf00605c7fba5693253d33e9634cc2eb 
 --- 
 
 Full list of code examples [Flexberry ORM](fo_flexberry-orm.html) is in ["code Examples"](fo_code-samples.html). 

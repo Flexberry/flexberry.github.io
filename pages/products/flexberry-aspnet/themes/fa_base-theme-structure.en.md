@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_base-theme-structure.html 
 lang: en 
 autotranslated: true 
-hash: 81e5c7691e432b53114e4cfc43e4a65915beeb2a52cfc475cfc518a0e2f9e705 
+hash: c0c1312bd04ce509d3787f72c5ff3bf8e6ad334fcbf3fed6122dec86965ca2a8 
 --- 
 
 In this article, we describe the basic topic Flexberry ASP.NET, its purpose, and its relationship with other topics. The structure is described [here](fa_theme-structure.html). 

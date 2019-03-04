@@ -6,7 +6,7 @@ toc: false
 permalink: en/fbpm_architecture.html 
 lang: en 
 autotranslated: true 
-hash: 75259c20df99695d4caff5211385983e34c056ac86996b1f301fed54f53fe61b 
+hash: b36a0e10edbb81186000811a2a3c6da1fbbfd14345813db50b4d99af06fdd7a9 
 --- 
 
 ## Implementation architecture of the business application workflow component 

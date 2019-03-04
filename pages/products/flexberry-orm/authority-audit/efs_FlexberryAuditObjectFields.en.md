@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_flexberry-audit-object-fields.html 
 lang: en 
 autotranslated: true 
-hash: 1e08a78f9b208fe84c00e7147dd716589108e9058398a1aba6a0c9a175879993 
+hash: 7cf68f2acf682fa55bf4eaf828f6953451e7330491934bc27e339c06a020a69a 
 --- 
 
 # audit Fields 
@@ -18,7 +18,7 @@ Fields of audit are:
 
 The chart audit fields are added directly to the object by clicking the appropriate box in the settings of audit-class](fo_audit-setup.html). 
 
-After generating the audit fields are added directly to the object and controlled by a special interface "IDataObjectWithAuditFields". 
+After generating the audit fields are added directly to the object and controlled by a special interface `IDataObjectWithAuditFields`. 
 
 The values that [when you run populate these fields] are taken from [CurrentUserService](efs_not-stored-properties-and-audit.html). 
 

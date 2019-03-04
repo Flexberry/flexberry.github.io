@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_audit-disable-insert-property-attribute.html 
 lang: en 
 autotranslated: true 
-hash: 40231781e6014dac5aa3ef0973bfadeec0a2120e3bb4cca0fb841839711bf4ad 
+hash: 6ff97c86b41f308407bd68120bc7faa8f6eb7fc2f44f45a3dbc0ba42f6bd81ec 
 --- 
 In version after 16.10.2013 appeared when creating the object record in the [audit](fa_audit-web.html) information about the object properties marked with the attribute [DisableInsertPropertyAttribute](fo_disable-insert-property-attribute.html). 
 

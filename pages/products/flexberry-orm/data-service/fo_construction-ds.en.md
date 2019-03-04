@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_construction-ds.html 
 lang: en 
 autotranslated: true 
-hash: 649c07413ce67591ffb5faef8dd6058d2d4a8bf6d76199911f01da7441107bec 
+hash: b60117f929af31e012b2022349c74f9f4a7e72612dc5a8cbc89a8893bdcbccef 
 --- 
 
 Create [service data](fo_data-service.html) in different ways: 
@@ -19,7 +19,7 @@ IDataService ds = new ODBCDataService();
 ds.CustomizationString="DSN=LibNetSample";
 ``` 
 
-2.In WinForms applications you can "throw" the [service data](fo_data-service.html) on the form as the control, and then configure it using standard window editing properties in the Visual Studio environment. 
+2.In WinForms applications you can `бросить` [service data](fo_data-service.html) on the form as the control, and then configure it using standard window editing properties in the Visual Studio environment. 
 
 3.[Get it from service provider data](fo_ds-provider.html). 
 

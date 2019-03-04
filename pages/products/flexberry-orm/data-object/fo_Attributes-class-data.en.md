@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_attributes-class-data.html 
 lang: en 
 autotranslated: true 
-hash: 6f1b26ad35ebddaf5cb7f61acd8ab0d9a85fd03190df2d3d59d1bf7cba8d161f 
+hash: c038b2068222dea5e14fd831ef6843dce79e1980483334d4c761a2987fc89370 
 --- 
 
 ## attribute Definition 

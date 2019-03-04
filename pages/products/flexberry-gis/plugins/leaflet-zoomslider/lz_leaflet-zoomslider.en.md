@@ -7,7 +7,7 @@ permalink: en/lz_leaflet-zoomslider.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 3b57f29e942de27ad35c51a5b5281860d30d8b4fdaee260cc93aeacfdd495441 
+hash: d3d109180df110330843a04b91d881b45b9ae327039d7637d01fca720ff97cee 
 --- 
 
 ## product Information 

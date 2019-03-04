@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_keep-and-use-audit-settings.html 
 lang: en 
 autotranslated: true 
-hash: f3607aae916c35bb9489cfd4fd14ce4a0e90bfb294462d8de19fce0d3fce098c 
+hash: ee27daf6551f8cedbf26550fc171d20b2d1dae883cc3050a044629d75fe7c82d 
 --- 
 
 # Storage settings 

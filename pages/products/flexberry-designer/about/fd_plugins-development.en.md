@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_plugins-development.html 
 lang: en 
 autotranslated: true 
-hash: 755540f1243e4671d4281a7991cc3ecab62e48cd627407fe9f285afcbe0254d5 
+hash: 40243aa2cd91c5f432ec40c7422e074036f62db44058eb362b70b58311333bfb 
 --- 
 
 ## Example of creating a simple extension module for Flexberry Designer 

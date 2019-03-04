@@ -7,7 +7,7 @@ permalink: en/le_leaflet-export.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 836c5143dfe20d02568b330aa7d5430e87a257203ec98da13cb64d0fb9acf2c6 
+hash: 7eef31f7e421a9720f9c170f7a74d9b074d9eae0aa83d0ae85e67d44910a2a81 
 --- 
 
 ## product Information 

@@ -7,7 +7,7 @@ permalink: en/gos_gis-odata-service.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: 43f67cfa2ff58035b6b62845e445267bff93e4a62481088d4eff900fd6641130 
+hash: cd05c84e9ba2fc7cdb8329b5137f216eb26959733c28da6164a6fff502ff7920 
 --- 
 
 ### Features configuring OData service for GIS applications 

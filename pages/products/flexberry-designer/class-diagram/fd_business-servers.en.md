@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_business-servers.html 
 lang: en 
 autotranslated: true 
-hash: 6f98d5b9f8b7a254ffe5952aafbdece662fffb35e4cefe32f93e8b6465ab54d8 
+hash: fb8d1256f5b4f0e8ea368f310b6bfa07f5df8d311d16910de4058d29b7d48aa7 
 --- 
 
 To describe [business server](fo_bs-wrapper.html) you must create the chart class with the [stereotype](fd_key-concepts.html) `businessserver`. 

@@ -7,7 +7,7 @@ permalink: en/ef_themes_migrating_old.html
 folder: products/ember-flexberry/themes/ 
 lang: en 
 autotranslated: true 
-hash: 9adb068cd1b34764720ad9961322177455e714db329e78141af3222e3064c705 
+hash: a4cdaef1a27424bc6b8141cc347857fd21741ced65ceaa6a8dc500f6787e8c1f 
 summary: Description of the transition to the new themes 
 --- 
 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_methods-class-information.html 
 lang: en 
 autotranslated: true 
-hash: eb4caa1296789c8e8cdc3517e2fa2a902989e262bf6007f24670b91f61de46df 
+hash: 9458229a679278234981cb2a7f192b93f3087c266f3ee9edc025cbe79cc36db5 
 --- 
 
 Any metadata can be obtained through the class `Information` with a set of static methods. 

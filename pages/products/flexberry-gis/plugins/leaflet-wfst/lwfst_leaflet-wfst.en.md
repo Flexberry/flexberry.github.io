@@ -7,7 +7,7 @@ permalink: en/lwfst_leaflet-wfst.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: b4a75e8d2702e4968bc57a82b2541c5a02ab4d39782a652d49b9dc959e905f3b 
+hash: 5366c269d87aeea1063da47a2212bf5b868f223ea96f16783fc12728ba3ad122 
 --- 
 
 ## product Information 

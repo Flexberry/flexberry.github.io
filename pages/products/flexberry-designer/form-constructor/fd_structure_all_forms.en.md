@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_structure_all_forms.html 
 lang: en 
 autotranslated: true 
-hash: 4eab9ef02d1872ad6d8341508bd810069482a3c98a8bd5993650e3da8159932d 
+hash: f24daa79e79d5354d117d50c40037362baed22e10ee867a21063669e178924ef 
 --- 
 
 ## the Left "tree" 
@@ -27,7 +27,7 @@ To open a list of all classes | | Jump to the list of data classes
 
 ## Right "tree" 
 
-Right on the page the tree is for editing the navigation structure (menu structure) of the design application. In this tree you can create menus of arbitrary nesting by grouping menu items into "folders" on different levels. The navigation items (not counting the "folders" that are used to group elements) can be list form, form editing, or menu items that refer to an arbitrary URL. 
+Right on the page the tree is for editing the navigation structure (menu structure) of the design application. In this tree you can create menus of arbitrary nesting by grouping menu items into `папкам` at various levels. The navigation items (not counting `папки`, which are used to group elements) can be list form, form editing, or menu items that refer to an arbitrary URL. 
 
 ### Tools navigation 
 
@@ -36,7 +36,7 @@ Name control | name | Description
 Add URL || Add the new navigation item (menu item) with reference to an arbitrary URL 
 Edit || edit the properties (title and description) selected navigation item 
 Remove || Remove the navigation item 
-Add a directory || add a new "folder" in the navigation structure 
+Add a directory || Add new `папки` in the navigation structure 
 Move up/ move down || change the order of navigation controls (move up and down) 
 Save || Save navigation structure 
 

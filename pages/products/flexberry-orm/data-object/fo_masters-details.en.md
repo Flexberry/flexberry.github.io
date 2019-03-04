@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_masters-details.html 
 lang: en 
 autotranslated: true 
-hash: 53aa24f3ed3952b875216ae183dea166b07ead4a3a6d0d1ee1867f9e469642f1 
+hash: 89badd0c34c47da8b67378ad929b924fc4ebcb8c77e4a9601030e5182a7147f9 
 --- 
 
 it appears on the form interface after generation of the class diagram containing the [artisans Association](fd_master-association.html) and [Decalogue songs](fo_detail-associations-properties.html), as shown in example: 

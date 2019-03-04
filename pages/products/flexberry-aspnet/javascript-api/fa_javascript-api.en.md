@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_javascript-api.html 
 lang: en 
 autotranslated: true 
-hash: 14dc74dfbc1937d51ce12a2bb13312da51f0da41eaef2682b3e51147591b547d 
+hash: 4c1bbdb820401691c4289a632f8fdb39f51c62af46ee5c19bcbcc2e276ba177b 
 --- 
 
 `JavaScript API` based on `библиотеке jQuery` and is a set of plug-ins for it. 

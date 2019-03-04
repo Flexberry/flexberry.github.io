@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_web-locks.html 
 lang: en 
 autotranslated: true 
-hash: 8a09e33eeb6d9a81703a85467cdc6411633617107d4cd07d90fbd9ee0353257f 
+hash: 9aefc587d247e27b2037c612d6df1de0a71b5b62a37bc62b4ef2cd61fd3a5ace 
 --- 
 
 ## WebLockHelper 

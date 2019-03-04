@@ -6,7 +6,7 @@ toc: true
 permalink: en/efg_wms-wfs.html 
 lang: en 
 autotranslated: true 
-hash: f718da61ce6c9768b77a457967ce18b739acf707d773012c05823e3e6833532c 
+hash: 55e44ead9abc2930375c8264b3d3f749312845af7d553f85c6e0f5bac31b22ae 
 published: true 
 --- 
 

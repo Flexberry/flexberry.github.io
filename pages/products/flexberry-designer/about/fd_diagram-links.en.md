@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_diagram-links.html 
 lang: en 
 autotranslated: true 
-hash: 37035fc574a96f1f19287026472f767ba56f57f69442f98de8772ce88e6383c4 
+hash: cf773bd71d03fab99845853a57c4dbb07b01bbe5227d9fd070ec066938de59fb 
 --- 
 
 In Flexberry Designer it is possible to add shortcuts (links) on the chart. 

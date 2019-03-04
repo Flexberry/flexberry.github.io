@@ -7,7 +7,7 @@ toc: true
 permalink: en/ef_configuring-filters.html 
 lang: en 
 autotranslated: true 
-hash: a56c44cf921009c6b2670b769d67e1a10ed0aea34c1e23c2fd311a990a1742ee 
+hash: d83474dca4b4cb4361d5808e9b0b66a2f2f2f6058470c94fb626ea4ba315ec92 
 --- 
 
 ## configure filtering on the list 

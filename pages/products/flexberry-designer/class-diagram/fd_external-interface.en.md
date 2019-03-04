@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_external-interface.html 
 lang: en 
 autotranslated: true 
-hash: 3767edf632884806ad8e52b2396dd3d955d3a3f54ad0490f9affe578121260f6 
+hash: 5bffea1760fdfbec5b4a11af713511e8fa42f3cc12428e80c210ac033f9c22ff 
 --- 
 
 Classes with the [stereotype](fd_key-concepts.html) ExternalInterface is just a indication that you will need to generate [inheritance](fd_inheritance.html) interface for the class which will inherit from this interface. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_types-map.html 
 lang: en 
 autotranslated: true 
-hash: 1cb1a48a11c78564638651013dd5e2667de56970fb36dfd90bd23db9f7f4d870 
+hash: ac6429c9f7ea94eb743ea102d1288ca0ad9efe3bc305504f84fbf0e7d3d36bea 
 --- 
 
 When you create a [class diagram](fd_class-diagram.html) [attributes](fo_attributes-class-data.html) set types. In order to determine for the generator of the correspondence between the types used on [the class diagram](fd_class-diagram.html) and the types of databases and program code that uses the map types. 

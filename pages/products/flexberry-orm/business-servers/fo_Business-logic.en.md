@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_business-logic.html 
 lang: en 
 autotranslated: true 
-hash: 68d2e7a13a28d7ead4e0f97501a6d2e8c8aa72252e530b133458291cf1dcee06 
+hash: cb411dd0c72bd482b9ec5ea71b7cdd094d7ae21fc5f072395b9c50a4eecafa69 
 --- 
 
 The business logic is part of the [three-tier architecture](https://ru.wikipedia.org/wiki/Трехуровневая_архитектура) between the client part and the database. 

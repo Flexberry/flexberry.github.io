@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_membership-provider.html 
 lang: en 
 autotranslated: true 
-hash: cd4ac03fa58c7f2d45d5568bdc32cd1dd93322ff59559195f51cf695450838b2 
+hash: fa61a7df84814149abd6869726115f1fd4c77aefdecc9ee266fd6ba554220107 
 --- 
 
 ## the credentials for web applications 

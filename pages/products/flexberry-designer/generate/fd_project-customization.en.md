@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_project-customization.html 
 lang: en 
 autotranslated: true 
-hash: 68ca19add9638f8c78661d894bb693bad11b4f0238e1e827c773b289421f0669 
+hash: 92d13056281baa0159c86c3765e211a2c4e91f94338b1733b594fdc38a606e7c 
 --- 
 
 Form property settings of the model allows to describe basic and advanced properties of the model. This form is called via the menu [plugin](fo_orm-case-plugin.html). 

@@ -7,7 +7,7 @@ permalink: en/fa_working-locks-web.html
 folder: products/flexberry-aspnet/ 
 lang: en 
 autotranslated: true 
-hash: cd8dc780b570c9026e1480c584c7dc8951bb76212aad688764a950da68100c53 
+hash: 3f0a156f0f9966f8e009cd305af860bdaa73dc4e34e82239ebb9bd2fe34c7d2c 
 --- 
 
 Logic lock: 

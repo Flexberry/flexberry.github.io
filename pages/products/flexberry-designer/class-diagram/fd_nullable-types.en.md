@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_nullable-types.html 
 lang: en 
 autotranslated: true 
-hash: a46c1b898e5a3edc3434973fada222c7d7f17f71afcadbb3733ebc2fa37e06eb 
+hash: 64881fee041778336cd2e0c4d961d3a6becd9894552089d36583ce7cd08b98f4 
 --- 
 
 Nullable types are an extension to the usual types that can store the value `null` (that is unlike the standard types, Nullable types allow the user to store any value in a field of scalar type). 

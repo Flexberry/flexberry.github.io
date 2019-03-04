@@ -7,7 +7,7 @@ permalink: en/fg_ember-flexberry-gis-test-stand.html
 folder: products/flexberry-gis/ 
 lang: en 
 autotranslated: true 
-hash: eb9da8f39e4ae8f2ce28ba4ee4f63ef6bdc62a3d9de568ed638df73ba77f9356 
+hash: 9cebbbaa48a75ad9bb879beea6ebeec9d01512cb22e832e3ef6818b51fb6ee7a 
 --- 
 
 ## product Information 

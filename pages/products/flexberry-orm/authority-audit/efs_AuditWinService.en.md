@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_audit-win-service.html 
 lang: en 
 autotranslated: true 
-hash: 5f4291cc7068a8fd3ec17cc942f46fd10c511cf7d3ef1c91ade95e88ad5178ab 
+hash: 410c6a0c9e4aafbc86e81663ac182f72bfc1c87f747ff7c0224f895cfb36a645 
 --- 
 
 (((This article belongs to a new audit))) 

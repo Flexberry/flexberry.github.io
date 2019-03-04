@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_data-service-for-audit.html 
 lang: en 
 autotranslated: true 
-hash: 6c33d365c57397643c8b9cfe1c3f0b590b760497a4389823d4ca97cdc1ed332d 
+hash: d52641821e293dd67f7546175400eafb472e2a2693e33de52d4107b4cccd94a8 
 --- 
 
 This article applies to [new audit](fa_audit-web.html). 

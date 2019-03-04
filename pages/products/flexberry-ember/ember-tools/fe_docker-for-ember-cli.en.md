@@ -7,7 +7,7 @@ toc: true
 permalink: en/fe_docker-for-ember-cli.html 
 lang: en 
 autotranslated: true 
-hash: 2fb357788c0ff8d6f35fc1e4231e20548a5318159b7d8c5d032a88fafe62fb54 
+hash: 378f9cff7b3d10866018e57751adf740c6e1b236cedf749d6557ae0e8d691945 
 summary: description of the development tools without the need to install and on the developer's computer (make sure to have Docker installed). 
 --- 
 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_performance-tips.html 
 lang: en 
 autotranslated: true 
-hash: 9b2d6ec974bcb15a46bc3ef473cdbe67656fef77cb583b454f9478065f70a967 
+hash: a2f3920aecb930c59b05cdc59521fb980cc7518e27d669008ef5adbbd10fb44f 
 summary: Tips on designing and developing with the use of EmberJS relating to application performance 
 --- 
 

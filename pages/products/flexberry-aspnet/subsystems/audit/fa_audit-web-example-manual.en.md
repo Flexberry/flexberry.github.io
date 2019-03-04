@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_audit-web-example-manual.html 
 lang: en 
 autotranslated: true 
-hash: 0449c91d0cfc0263c77584f7286f68d651413bdaafe9ef66ec624ad912ffceb1 
+hash: 303f350315bd485d255ffea23f74b430b334907eff13ee4faf40d220dc59b592 
 --- 
 
 ## Connection to the audit subsystem with the full mistake of the draft 

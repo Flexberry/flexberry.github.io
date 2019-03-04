@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_running-opening-stage.html 
 lang: en 
 autotranslated: true 
-hash: 6b2969eb3aae7f8676b2114e917a9ef5b68f8f70dc15e0cec5d51a152765c5a4 
+hash: 9ac488620ec69c39de2603df55a4206a2139d03554e869bf124ab118867c523d 
 --- 
 
 There is an opportunity to make a few shortcuts to [Flexberry Designer](fd_landing_page.html), each of which would open up a different stage. 

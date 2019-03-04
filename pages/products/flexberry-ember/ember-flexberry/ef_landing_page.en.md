@@ -6,7 +6,7 @@ toc: false
 permalink: en/ef_landing_page.html 
 lang: en 
 autotranslated: true 
-hash: c3afb4695c5c04bbdf697e8a898ffe9191cf1faac9032e919dd5598ef13a130f 
+hash: ed4057de83bb2cb4932f70ff2f838eeb1873b0d6b5a3885ee27e7eed983f59ae 
 --- 
 
 ## product Information 

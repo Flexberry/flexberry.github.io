@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_olv-toolbar.html 
 lang: en 
 autotranslated: true 
-hash: e814e67f2417efa89f8640502d192c3908e224fdf9d4bbd42175b1de21106825 
+hash: 58aa3776753079db0dbd2157065f5ca6c0add9c891f3ab184ccee3378f9e6798 
 summary: the Use of technology and custom buttons in the toolbar 
 --- 
 

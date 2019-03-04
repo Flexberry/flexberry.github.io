@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_functionality-work-detail-array.html 
 lang: en 
 autotranslated: true 
-hash: 27559b89a0f98ad1ab8f44131636d81af62b6046fe22f1261f8a0956febbe960 
+hash: e3a8d0ac13344ef9d2c27c1f72341ca7ea21453afd3b658f2f0a217f3c123c76 
 --- 
 
 ## basic functionality for working with arrays of objects metalowych 

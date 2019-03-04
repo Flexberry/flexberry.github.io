@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_using-quick-prototyping.html 
 lang: en 
 autotranslated: true 
-hash: c90ce119c2bb8bef34388215ff574c7acc01c758afad3ced6097742d1984cf16 
+hash: 05b049fdbf81435a042bdd19dc305d0cff673855dccdc246782090bc50951bcf 
 --- 
 
 Fast prototypical handy when you need to quickly create and run the system. 

@@ -7,7 +7,7 @@ permalink: en/efs_audit-win-example-manual.html
 folder: products/ember-flexberry-security/backend/ 
 lang: en 
 autotranslated: true 
-hash: e7cf17cb376790633a6410c34a0cf2a7cf6d58f4813a464b20703389f903d6c6 
+hash: 196e8b49488691f8f9d828b39a45d97a1b0f37f24cdd919a84dc74441c62f8db 
 --- 
 
 # Connection to the audit subsystem without a full regeneration project 

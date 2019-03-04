@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_groupedit.html 
 lang: en 
 autotranslated: true 
-hash: 64d7c41136573efafc9e2163475c6e68a53b7270981750e72eb02de1d89abf8e 
+hash: acd52f751380ee76ff4bfdffa409c8e875e3d1b287ca3692cdaf7a259a1bc9f9 
 summary: Properties, implementation details, configuring the sorting and integration of application components 
 --- 
 

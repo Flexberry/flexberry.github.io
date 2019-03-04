@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_themes-structure-controls.html 
 lang: en 
 autotranslated: true 
-hash: a4d9029e6902a0f09872453eab4c9cb7648f3bbe12c2fdbf2f41167495b6623e 
+hash: 1973f3ac8a455783c947a669c4099c866d16d6e911380bd719e12c0298ee621f 
 --- 
 
 ## file Structure 

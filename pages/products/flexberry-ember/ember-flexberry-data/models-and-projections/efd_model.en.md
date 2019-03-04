@@ -6,7 +6,7 @@ toc: true
 permalink: en/efd_model.html 
 lang: en 
 autotranslated: true 
-hash: 2ec3f1200a596435f0a7ab49c13d39c957ba1a4fc6eca70995b0551a75e31227 
+hash: bbfebb03bb08c1f13f5f6d659e284f7ee8d966e1daea6bce3804ac3104f12e84 
 summary: Presents a detailed description of how the model looks in the app. 
 --- 
 

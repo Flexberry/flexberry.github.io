@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_class-diagram-editor-features-work.html 
 lang: en 
 autotranslated: true 
-hash: 1b204dacc3c12ac647646d5026494b05805b89642995e11d6fa5697328e7f593 
+hash: 9bb25f50b989afb1aa22b25872c49ee3cf0c5b6dc4c60102c2ed479a051f2872 
 --- 
 
 Editor [class diagram](fd_class-diagram.html) in Flexberry Designer has several features: 

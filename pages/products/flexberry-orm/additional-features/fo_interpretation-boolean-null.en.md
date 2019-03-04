@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_interpretation-boolean-null.html 
 lang: en 
 autotranslated: true 
-hash: 79364566f5d1182eb208b4f352015d09a0b9f15e1ebb9cdc52c4ca02a0fa5709 
+hash: 5fc62451eba0a918787c5e75bfcfc7cf6d24e57556c1dd450748d067ee0aef96 
 --- 
 
 [Attribute class](fo_attributes-class-data.html), declared to be of type bool, in the DB is of type bit can have 3 values: 
