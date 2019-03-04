@@ -21,6 +21,12 @@ entries:
     - title: ember-flexberry
       url: /ef_landing_page.html
       output: web
+  - title: Компоненты
+    output: web, pdf
+    folderitems:
+    - title: Flexberry Groupedit
+      url: /ef_groupedit.html
+      output: web
   - title: Доступ к данным
     output: web, pdf
     folderitems:
