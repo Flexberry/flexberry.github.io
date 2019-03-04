@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_using-not-stored-classes.html 
 lang: en 
 autotranslated: true 
-hash: fc9d7f8a2fa0c88f5a90f003bb123ebe5a564ca4c89dcadcda3771f98203e657 
+hash: cea8e355abdafd771fbd9ba8b4dc261f62c0c60ba2242296b3397042211ee6ce 
 --- 
 
 Generated [Flexberry ORM](fo_flexberry-orm.html) forms for neranenah classes are useful for selecting certain of the current object, the user authorizations. 

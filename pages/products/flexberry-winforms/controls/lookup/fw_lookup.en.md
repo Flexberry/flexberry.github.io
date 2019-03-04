@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_lookup.html 
 lang: en 
 autotranslated: true 
-hash: 233fdf0a8ea3d0b3bbeb1032b07190a927e86ec87aa6c514bc07028db15968c5 
+hash: 1ce2e32267c352514585ba24eb0882042747c6e589ea67ce127d3155e43ec053 
 --- 
 
 `LookUp` (action) - select a craftsman of the object (putting links to the workman the object). 

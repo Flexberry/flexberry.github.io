@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_development.html 
 lang: en 
 autotranslated: true 
-hash: 74610ceca80e45b1e1d1e1a831a02383113f01a69038bc0204ca0cf1b7f3f39e 
+hash: 0eee0777da066dd25aa59484bdafcd67ac0e1cd693b0b958ddafac64ec3c9bd1 
 summary: Description of the development process and open repositories code Flexberry Service Bus. 
 --- 
 

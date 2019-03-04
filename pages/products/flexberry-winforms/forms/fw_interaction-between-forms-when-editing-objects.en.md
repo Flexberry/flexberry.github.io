@@ -8,7 +8,7 @@ permalink: en/fw_interaction-between-forms-when-editing-objects.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 78e99751a0227a6ae7e84b62038fc23447b3abef4db4af42565aade04e83d8a2 
+hash: f20ebe667c82e74dec10aa59841a09f7fcb4aa1f7eaf8fcf4d9a46cbdf8947c0 
 --- 
 
 Basically, the interactions are by call the edit form from the form list (for example, when you open the object for editing), and Vice versa, with the edit form for the list form (for example, to select the associated object). Anyway," the essence is that from one form to another is sent to object data and edit it as a whole, or parts of it." Accordingly, in a specific (relative) metforminom the interaction of the one form acts as a __initiator__ editing, and the second, — as _the_editor__. 

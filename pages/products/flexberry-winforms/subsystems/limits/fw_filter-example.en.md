@@ -8,7 +8,7 @@ permalink: en/fw_filter-example.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 6ac68b20404fb05b84463ac1c362cf9103d97aa714eac8df1889866fa3c2edda 
+hash: eb8d746482d90cb27d2439417da503b0bfcf367b9b42e32fa4f304a7e49c8152 
 --- 
 
 ## Form edit user constraints (AdvLimit) 

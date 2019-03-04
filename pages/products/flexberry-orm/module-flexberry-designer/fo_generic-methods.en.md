@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_generic-methods.html 
 lang: en 
 autotranslated: true 
-hash: 4d31a18787ac179c6ba0a501c76346c673d3b999016bcfc2b37b6343e0f68405 
+hash: 0110136faf38d44f9061232a3f2f8843bd821195000513f646dc333b135d6277 
 --- 
 
 ## Generic methods and UML 

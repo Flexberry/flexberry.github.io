@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_events-groupedit.html 
 lang: en 
 autotranslated: true 
-hash: 07e805a22b28489b9287383bc3fef3fc10f8fef64ad287d90882cd798b819169 
+hash: 6f96cb12def115e3826d0503367810c8aedea6a289c45107e3c4476e75cfa630 
 --- 
 
 ## Processing events mark the rows in GroupEdit 

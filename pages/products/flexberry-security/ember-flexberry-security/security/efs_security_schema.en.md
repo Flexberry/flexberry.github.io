@@ -7,7 +7,7 @@ permalink: en/efs_security_schema.html
 folder: ember-flexberry-security 
 lang: en 
 autotranslated: true 
-hash: 23a602133f6adc53bd577498783ba02fc706d07dd2fe934a562cafa0ffeeb9ab 
+hash: 489413311f32c22aaf8d35e466d0a24842bec787bb30d1a10e5e51666a4fcaa4 
 --- 
 
 

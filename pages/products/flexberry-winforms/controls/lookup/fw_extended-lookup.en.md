@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_extended-lookup.html 
 lang: en 
 autotranslated: true 
-hash: 5157a2647376d0f75a6b07b62b7e8ef0d55efae59bcf99e28c52e92e0c0663e4 
+hash: 63e2bbd51dbf831f29a18a8b7a0e90c002c2ea2f161e5db7d873d8aea1d3d7d3 
 --- 
 
 `ExtendedLookUp` is lucap predictive. Is the Assembly `ICSSoft.STORMNET.Windows.Forms.AdditionalControls.dll` 

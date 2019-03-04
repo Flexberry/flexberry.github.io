@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_loading-customization-struct.html 
 lang: en 
 autotranslated: true 
-hash: b49a08b29586f979ca66ccb06f7e528d8537f9971917e143b2f7127f61c44272 
+hash: 298bfda7bfc8cfae099fd69f263662c69e6d9f14e0fc3410b9a25b9f6c33fc16 
 --- 
 
 `LoadingCustomizationStruct` is a class Flexberry ORM to specify options for data selection (including the limit) that implements a private API, in contrast to the alternative option on the basis of LINQ. `LoadingCustomizationStruct` allows you to fully customize the settings of [data service](fo_construction-ds.html) for read operations of data objects. 

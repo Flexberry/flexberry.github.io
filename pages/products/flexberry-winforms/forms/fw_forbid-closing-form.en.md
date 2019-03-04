@@ -8,7 +8,7 @@ permalink: en/fw_forbid-closing-form.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 27b91c9cd7350ae03b1492a9e816e5375dd043c3675e1801e9174f2476fcd0bd 
+hash: 556320847154fba317641e51990df1782272c91f72bfcbd56344fc855b2c2ed8 
 --- 
 
 In order to prevent closing the form, you need to override the method `Finalize()` independent. 

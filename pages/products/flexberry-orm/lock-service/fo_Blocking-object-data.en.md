@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_blocking-object-data.html 
 lang: en 
 autotranslated: true 
-hash: 84d5543e437ad05ce69bc8d2da9f94ca17934a05e18a186d1192901cf5697f6f 
+hash: 1d58bf444e893681fc23175a95f11e7ff09b9c841b93a9d9207ab2c88031cefe 
 --- 
 
 It should be noted that the locking mechanism is implemented [service locks](fo_lock-service.html) `LockService` that stores information about the selected data object to the lock in the data store. This is to protect against changes in the data object, even if it is being edited by another user. 
@@ -24,7 +24,7 @@ To lock you need to call the data object method `DataObject#LockObject` with any
 
 Unblock can call the method `DataObject#LockObject` passing the same key. Thus, to unlock the object only knowing the key lock that prevents accidental changes to the object data. 
 
-All the time while the object is locked, the property `IsReadOnly` returns `true` and protected (`protected`) method of the data object throws an exception `CheckReadOnly` `DataObjectIsReadOnlyException`. Accordingly, checking for blockages, the programmer must either hold the outside of the object data by calling properties `IsReadOnly` or add inside the object properties of the data before changing the value of the method call `CheckReadOnly`. You should not abuse this opportunity (add `CheckReadOnly` in many places), as this will cause a performance drop when accessing the properties - it is better to explicitly check `IsReadOnly`. 
+All the time while the object is locked, the property `IsReadOnly` returns `true` and protected (`protected`) method of the data object throws an exception `CheckReadOnly` `DataObjectIsReadOnlyException`. Accordingly, checking for blockages, the programmer must either hold `снаружи` data object with a call to `IsReadOnly` properties, or add properties inside of the data object before changing values in the method call `CheckReadOnly`. You should not abuse this opportunity (add `CheckReadOnly` in many places), as this will cause a performance drop when accessing the properties - it is better to explicitly check `IsReadOnly`. 
 
 ## Example 
 

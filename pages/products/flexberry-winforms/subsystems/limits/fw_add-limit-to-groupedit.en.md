@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_add-limit-to-groupedit.html 
 lang: en 
 autotranslated: true 
-hash: 0cf386238c63421b51f8afcff17b61bc6c01e45316bb4c6ca32cac794d7d827a 
+hash: f47efea34fa77e1b557ef113797c02d36863b491126cbfa86a610cc6d0c0f80e 
 --- 
 
 ## Delegate hiding rows in GroupEdit 

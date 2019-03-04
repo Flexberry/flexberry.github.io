@@ -8,7 +8,7 @@ permalink: en/fw_close-all-opened-forms.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 9acdf231124796499ee512244a19b487bf605ad92712bf3093b71489bcf1a33a 
+hash: c16c14e25364ee068bb909a1804d34a4a39893708d5ecf31cf8d6ef5f324545d 
 --- 
 
 To close all open forms application, as happens when closing the main application window Flexberry, you can use the following code. 

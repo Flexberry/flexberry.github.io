@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_objectlistview-rights.html 
 lang: en 
 autotranslated: true 
-hash: 9cf3eb6a5a2af2ec7728581e626aabde4820bec059951c64968090ae1ce444be 
+hash: 58881a4aaa5a72dc899643f82086ec06c4412931b9a3cf25bbbfa8b1f4f7f178 
 --- 
 
 LV will automatically set the accessibility of edit operations depending on the rights. The following rules apply: 

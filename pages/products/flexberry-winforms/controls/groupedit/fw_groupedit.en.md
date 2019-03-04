@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_group-edit.html 
 lang: en 
 autotranslated: true 
-hash: c5ba001c7775e71d0e3b28966e6eadec8aefed405375998792c2455ec2fa635b 
+hash: ba72fb055265d7c7a585cc21c58df84d75188d56aa6b9376766c72fe4f48c45a 
 --- 
 
 `GroupEdit` - Winforms-control for creating and editing [datalow](fo_detail-associations-properties.html). 
@@ -64,7 +64,7 @@ protected override void gr_SetupEditorEventHandler(object sender, ICSSoft.STORMN
 
 ## Display wizard in GroupEdit 
 
-If you want to display in the cell `GroupEdit` "presentation" attribute in the wizard (i.e., a certain expression of the attributes of the wizard), you can use one of the following solutions. 
+If you want to display in the cell `GroupEdit` `презентационного` attribute of the master (i.e., a certain expression of the attributes of the wizard), you can use one of the following solutions. 
 
 1. Override method `ToString()` the data object. The peculiarity of this solution is that the override will affect everywhere, where the method is used `ToString()`. 
 2. To implement the control that is associated with the column `GroupEdit` interface `IValueDisplayResponsible`. PstrfGetDisplayValue` the only method of this interface should return displayed in the cell value. PstrfGroupEdit` have to set the property `EnableValueDisplayResponsibility` in `true`. 

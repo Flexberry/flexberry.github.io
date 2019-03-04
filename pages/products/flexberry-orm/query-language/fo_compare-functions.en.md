@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_compare-functions.html 
 lang: en 
 autotranslated: true 
-hash: 7755e98662b99352419b47c4c9110650e0bf1d5b85a20168de0cc5e0340d7429 
+hash: 027426b2c34ce2bf562d00dac64bbfd7e91b6865dd59267fda83e88ff2bd51d2 
 --- 
 
 ## comparison Function 

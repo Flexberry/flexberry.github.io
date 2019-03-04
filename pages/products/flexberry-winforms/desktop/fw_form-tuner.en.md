@@ -8,7 +8,7 @@ permalink: en/fw_form-tuner.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 88abd4488b0b3a050a86692add2f87b5b4a181c723a658e640d6d1c334df8a88 
+hash: fc1985358b67cfcc564345231b84b649449f06b0839b87e36e44b835636232e4 
 --- 
 
 Quite often the problem arises to apply at run-time to all application forms any settings. In particular, the task relevant to the independent forms. In this case, You will `UniversalFormTuner`, or rather its successor, as defined in the application application. 
@@ -24,7 +24,7 @@ public virtual void TuneForm( BaseWin form )
 ``` 
 the <br>Option `form` – a reference to the instance of the form before it is displayed. 
 
-0. To set the property `UniversalFormTuner.StandardTuner` a reference to an instance of Your "tuner". 
+0. To set the property `UniversalFormTuner.StandardTuner` a link to a copy of Your `тюнера`. 
 
 
 In addition, for the implementation of a uniform forms processing application, you can subscribe to a special global event (in method `Main`): 

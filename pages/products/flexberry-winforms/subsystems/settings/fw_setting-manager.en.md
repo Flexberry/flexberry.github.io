@@ -8,7 +8,7 @@ permalink: en/fw_setting-manager.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: de09f04b5c45c8cb8948293b62f704afa6c01cd27fd2732c307072b1eeec837c 
+hash: 1788749989630981f3f9362bc6dc2dfe6da9da7115c92e50744f615797dc5773 
 --- 
 
 ## Enable subsystem settings 
@@ -62,7 +62,7 @@ An example of (read the position and size of the form):
 
 {% include important.html content="There is a possibility to represent any object in the form `XML` string using the standard `SOAP` serialization `.NET`. This is done by the utility `ICSSoft.STORMNET.Windows.Forms.Utils.ObjectToString` (reverse — `ObjectFromString`). Therefore, it is possible not to form the string manually setting value, and use this utility." %} 
 
-Serialization of data objects is performed in a different way: [How to "spin" the data object to an XML string and restore back](fo_aggregating-function.html). 
+Serialization of data objects is performed in a different way: [How `закрутить` data object to an XML string and restore back](fo_aggregating-function.html). 
 
 {% include note.html content="new Designed [UserSettingsService](fa_user-settings-service.html), designed to replace `SettingManager`." %} 
 

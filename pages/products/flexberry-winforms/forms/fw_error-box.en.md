@@ -8,7 +8,7 @@ permalink: en/fw_error-box.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: d74ec938f6fee1a8029484cc97c3650b09a0d310182a40173426228e2843afe1 
+hash: a6a50c9fc8c9860ddb647412758bcfd9cef5703c167132eafba751e3a15cb1e8 
 --- 
 
 ## Work with exceptions in applications 

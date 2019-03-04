@@ -8,7 +8,7 @@ permalink: en/fw_working-with-menu.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 85f1c42e12c0be8345e60cb0e9470f3d874e3dfa13d74bcb506691390485bd5c 
+hash: dad376c80b52eed42670bc03558b2fc0f18fe1ca7a74d4a83383e8f560f22db1 
 --- 
 
 On the threshold of the final transition to the Web, do not forget that there is still a need for Ala WinForms applications, and some Customers are still working on systems with DOS-historic interface. 
@@ -101,16 +101,16 @@ As for the menu, everything seems to be!
 
 Run a compilation and see a slightly updated interface: 
 ![](/images/pages/products/flexberry-winforms/desktop/image001.jpg) 
-"File": 
+Menu `Файл`: 
 ![](/images/pages/products/flexberry-winforms/desktop/image002.jpg) 
-Menu "Reference": 
+Menu `Справочники`: 
 ![](/images/pages/products/flexberry-winforms/desktop/image003.jpg) 
-Menu "?": 
+Menu `?`: 
 ![](/images/pages/products/flexberry-winforms/desktop/image004.jpg) 
 
 In this example, we solved several problems: 
 
-1. Created similar to the "old" menu. 
+1. Created like `старое` menu. 
 2. Increased visual effect of the menu through icons. 
 3. Has increased the hot keys. 
 

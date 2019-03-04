@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_user-operations-dataservice.html 
 lang: en 
 autotranslated: true 
-hash: fb5ce3578b86d3a042735e02e5c9a863c76f57a43cf1f0e1a637146e1eb8afd2 
+hash: 37fc92688faccfd06093c33d7ebcdb014e60bf0a1db5de18077ddeae66146bf8 
 --- 
 
 If you want to perform any action in the process of updating [service data](fo_data-service.html) storage, it is possible to organize the processing of event data service through a dedicated [business server](fo_bs-wrapper.html). 
@@ -37,7 +37,7 @@ The event types are as follows:
 
 Event types can be combined using `|`. 
 
-The data service will call a method-interceptor just before executing the operation. Parameter the method will come [data object](fo_data-object.html), on which the operation is performed. Method can return any additional data objects that will be picked up by the data service. 
+The data service will call a method-interceptor just before executing the operation. Parameter the method will come [data object](fo_data-object.html), on which the operation is performed. Method can return any additional data objects that will be `подхвачены` data service. 
 
 About why you need to return [data objects](fo_data-object.html) instead of doing individual calls to the data service directly from within an interceptor. The answer is obvious — in order to update attached objects executed in the same transaction](fo_bs-transact.html). Otherwise, a separate call data service — private transaction, respectively, if the code is not running under a transaction server (eg. `COM `), there will be a gap. 
 
@@ -73,7 +73,7 @@ public class DataServiceEventsServer:ICSSoft.STORMNET.Business.BusinessServer
 
 ## features of functioning 
 
-[Service data](fo_data-service.html) will cause a method interceptor immediately before the operation. Parameter the method will come [data object](fo_data-object.html), on which the operation is performed. Method can return any additional data objects that will be picked up by the data service. 
+[Service data](fo_data-service.html) will cause a method interceptor immediately before the operation. Parameter the method will come [data object](fo_data-object.html), on which the operation is performed. Method can return any additional data objects that will be `подхвачены` data service. 
 
 You need to return data objects instead of doing individual calls to the data service directly from within an interceptor to [updates added](fo_bs-transact.html) executed in the same transaction. Otherwise, a separate call data service — private transaction, respectively, if the code is not running under a transaction server (eg. `COM `), there will be a gap. 
 

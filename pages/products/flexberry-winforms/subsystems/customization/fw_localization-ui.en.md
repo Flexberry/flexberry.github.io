@@ -8,7 +8,7 @@ permalink: en/fw_localization-ui.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 7e3fb0cfdfe388c9157c75cb224f6ac71cbebe51025a9f2f65f19d1da69c735f 
+hash: 8604c2851ab0b7888cca5a96849bfd4a0d3343e4ca479860125362bedfbcfa41 
 --- 
 
 Localization consists of the following two tasks: 

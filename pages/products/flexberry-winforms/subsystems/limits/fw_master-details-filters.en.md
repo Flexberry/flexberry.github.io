@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_master-details-filters.html 
 lang: en 
 autotranslated: true 
-hash: 9f975ff22a1442e82054d15817c2e98c264b894838f7a5db2559bacd975956f1 
+hash: b2b26d9ce52c54fb13f2c095abe7f247ebbfa4184c62b0a0a36c6cc054704743 
 --- 
 
 Filter by detalam wizard can be proillyustrirovana a few examples. 

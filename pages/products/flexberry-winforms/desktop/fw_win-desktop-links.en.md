@@ -8,7 +8,7 @@ permalink: en/fw_win-desktop-links.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 7461a28e789cdf3f9ab53ead30c1e3b07f68ab7a4863cd8c01cc7bb7e3c7b35a 
+hash: fcd52a5356b23c554108a202d80c9719e54be4bd60106ace50791ef529ea4897 
 --- 
 
 The mechanism of labels allows you to work with instances of data objects from the desktop. 
@@ -18,7 +18,7 @@ Labels should be applied, if in any instance it is necessary to work very often.
 Labels can be applied to an instance of any class that is the successor ICSSoft.STORMNET.DataObject. 
 
 ## Folders for shortcuts 
-The folder in which you can create labels can be specified by overriding a method GetShortCutFolders() class DesktopCustomizer. This method returns an ArrayList whose elements are strings that specify the full path to the folder. By default, this method returns only the folder "favorites". 
+The folder in which you can create labels can be specified by overriding a method GetShortCutFolders() class DesktopCustomizer. This method returns an ArrayList whose elements are strings that specify the full path to the folder. By default, this method returns only the folder `Избранное`. 
 
 Example 
 
@@ -62,7 +62,7 @@ public class Кошка : ICSSoft.STORMNET.DataObject
 }
 ``` 
 
-As a result, the name of the label for the data object "Cat" is, for example, "a Cat named Murka". 
+As a result, the name of the label for the data object `Кошка` be, for example, `Кошка named Мурка`. 
 
 ## Runners 
 Runner – a class that implements the methods for running a label. In the designer, a runner takes a shortcut. To add a new runner, you need to create a new class that are inherited from DesktopShortCutRunner. The methods of the runner, marked RunnerMethodAttribute can be started from the context menu of the label, with this type of runner. The attribute parameter is a string that will be displayed in the corresponding item in the context menu of the shortcut. 
@@ -73,11 +73,11 @@ RunEditForm – launch the edit form. A parameter is passed the name of the type
 RunObjectMethod – Start method of the object. A parameter is passed the name of the method. 
 
 The second parameter of both methods can be passed the name of the view to load the object (this option is not mandatory, but in some cases its absence may lead to errors). 
-In runner, you can specify default picture labels with the given type. 
+In runner, you can specify default picture labels with the given type.
 
 ## How to apply runner for labels 
 
-Runner, who will run the shortcut that is automatically defined when you create the shortcut.
+Runner, who will run the shortcut that is automatically defined when you create the shortcut. 
 In order for a runner used to label objects of a particular type, do the following: 
 
 1) the runner GetObjectTypes implement a static method that returns an array of types for which you want to apply data runner. 

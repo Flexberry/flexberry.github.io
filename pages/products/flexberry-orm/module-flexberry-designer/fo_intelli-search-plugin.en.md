@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_intelli-search-plugin.html 
 lang: en 
 autotranslated: true 
-hash: 657aa7b27016b9d476886966a06590c652080d77f017f12f07d0c390be6e2e69 
+hash: fd052034d0dc5463bc677fc826e4b09c1f281856f5364ffe1aac5ffc3272efa7 
 --- 
 
 Expansion module [Flexberry Designer](fd_landing_page.html): `IntelliSearch` developed to search for pieces of diagrams for selected projects of the repository. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_objectlistview.html 
 lang: en 
 autotranslated: true 
-hash: ec46e77fdcbe985989fa4b83c7d305f8d69f08984102ef5253af538146d4fd1d 
+hash: 2ae9bd553034d120f106c7acaca542f52827a29ec8ab353654cb31e9582a44de 
 --- 
 
 __To display in the form of a list of objects__ there is a specialized control that `ObjectListView`. 

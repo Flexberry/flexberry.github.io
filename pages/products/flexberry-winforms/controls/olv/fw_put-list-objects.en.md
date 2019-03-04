@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_put-list-objects.html 
 lang: en 
 autotranslated: true 
-hash: 61b090ed8fc6b9f4e0d546ca475e0e03c4cbca5306fc2d80ad822cbac1b1e900 
+hash: bffa7fa2446b123e4a4d8dc8771832ba1544f156a47a37b5fdb4deaff28650d3 
 --- 
 
 [ObjectListView](fw_objectlistview.html) is not used to display data from DB, the standard way to display a list of objects created directly in code, no. 

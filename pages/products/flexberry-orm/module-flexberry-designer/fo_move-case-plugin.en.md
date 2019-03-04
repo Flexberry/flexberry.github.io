@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_move-case-plugin.html 
 lang: en 
 autotranslated: true 
-hash: 3d5518c87d2b24604668aacb0262c5b7119805677599f174c0fd3b1daad4f9ab 
+hash: 7eb6a92843f3c6d6be048ba47d0b37190a357e8f096c62aebd93ee2a4328c299 
 --- 
 
 ## Moving repository objects Flexberry Designer 

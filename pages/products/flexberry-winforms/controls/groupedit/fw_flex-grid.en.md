@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_flex-grid.html 
 lang: en 
 autotranslated: true 
-hash: 73ab643565447c0e31f619690cee4a8cda3bbf8a65048e262f2374223fbbf8c0 
+hash: bf343cca3b18634af83535eca40a8d458a6b094717149c3f81ef1e12db7fa31a 
 --- 
 
 [FlexGrid](http://www.componentone.com/SuperProducts/FlexGridWinForms/) - easy to use control-table from company ComponentOne. Allows you to display, edit, format, organize and print the data in a table. 

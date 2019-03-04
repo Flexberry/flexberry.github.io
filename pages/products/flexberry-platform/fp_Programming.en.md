@@ -7,7 +7,7 @@ permalink: en/programming.html
 folder: folder product-- 
 lang: en 
 autotranslated: true 
-hash: 7a48ea6927782edc8877d9863c37bbaaaa6e029f2fe14cf9fbee829f41e06033 
+hash: 46a4487b418c462ad6cbeb4ac5c5c699da94f3eceec7284bf094767e04da2a26 
 --- 
 
 The article is in development. 

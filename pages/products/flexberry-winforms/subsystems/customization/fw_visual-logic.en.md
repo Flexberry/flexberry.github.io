@@ -8,7 +8,7 @@ permalink: en/fw_visual-logic.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 643690fd241c2c5960ece1f9c594980d276a9044aca3232556ef307eb1486c16 
+hash: 3cbad87dfff51dcf4792c0df7c8901918585f02274770396cc584b9f67800dcd 
 --- 
 
 Development of visual logic aims at improving the user experience with the interface and to reduce the number of errors when working with the application. 

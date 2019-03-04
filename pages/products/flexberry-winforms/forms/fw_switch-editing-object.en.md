@@ -8,7 +8,7 @@ permalink: en/fw_switch-editing-object.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 8b33d9b9abd05017e941902cb35035882c079f87f20a8f4713f8115e5a53db48 
+hash: 9400fdee2f492ab2d7e68a67e428464c5ce01e8e8ffab7e0b8717edee5f848c9 
 --- 
 
 Sometimes the script system involves a sequence viewable or editable objects on the edit form without closing the form. An analogue of this functionality is to view events in the Windows EventLog (EventLog). Flexberry Platform for the organization of this script supports a special feature that is available from independent edit forms: `SwitchEditingObject(newObject)`. 

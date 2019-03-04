@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_limitation.html 
 lang: en 
 autotranslated: true 
-hash: a6b460783b16577395c5e944eb598d46b642217204ae172dbb568c1b690371da 
+hash: 4ea0ba171d63827cf46c9c06183e8fc4a4a20378602f703312adf487e530385d 
 --- 
 
 To filter and limit the data selection there are several classes that implement this logic: 

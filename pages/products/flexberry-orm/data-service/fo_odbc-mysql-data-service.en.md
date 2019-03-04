@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_odbc-mysql-data-service.html 
 lang: en 
 autotranslated: true 
-hash: 743dff367f32a8660cf273204e85a4df2b05f9dc5d9250c63b1e494e6489df87 
+hash: 4507c588358096e5749fac7c6848a24aa54e2e191d204272696fe3160dc94c8f 
 --- 
 
 `ODBCMySqlDataService` is [service data](fo_data-service.html), represents the implementation of [ODBCDataService](fo_odbc-data-service.html), optimized for data access, MySQL database. 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_architecture.html 
 lang: en 
 autotranslated: true 
-hash: c7964cefb27622dbcad6d24abac0a20bdb1ec66787a044917e09539e810329b9 
+hash: ab4903938a1b937eff77e6bb75138be7d9924f7057ccb816c7a8686edd6f90fc 
 summary: Description of the platform architecture Flexberry. 
 --- 
 

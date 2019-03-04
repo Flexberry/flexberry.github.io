@@ -8,7 +8,7 @@ permalink: en/fw_filtersettings-for-use-in-lists.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 14da325fc3aca44545047317b5361fe570411a156d439523b48397833c6cecb9 
+hash: ccf52a7ac0625daf5b34a5e315fe7b3c8d95b3642a5eb7be1f8084e107e44447 
 --- 
 
 And they are taken after applying around this limitation: ___AND ( = ( Module IIS.AMS02.Of the incident.WinformЗадержанныйL/objectListView1(ObjectListView) ) OR ( = ( User Sergey KOSHEL ) ISNULL ( User) ) )___ 

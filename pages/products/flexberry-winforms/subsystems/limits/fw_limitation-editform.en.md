@@ -8,7 +8,7 @@ permalink: en/fw_limitation-editform.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: c5907d57b8b8fc9d7c51e731e6572b087139de60a5930f19ad37bcb3fb61ccea 
+hash: a30a8fb3f54fe8dc5d0c83abcb030d9aaec08c38e39f5b0da47b6c4ad12e3161 
 --- 
 
 ## General internal form device 

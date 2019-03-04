@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-between.html 
 lang: en 
 autotranslated: true 
-hash: 52024ab0213d4097e4e529327620b0349224786f00fca6a0afce5abe881013e2 
+hash: c0ab093a82eb016f31cce5b23862b23ba2725e3b22ed3e9aafa715c9c34c37e6 
 --- 
 
 `FuncBETWEEN` function is the same as testing for hit element in the range of values in the SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

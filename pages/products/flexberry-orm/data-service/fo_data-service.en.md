@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_data-service.html 
 lang: en 
 autotranslated: true 
-hash: b249e00f44c74c402e9b2f226322c8091e123d1472f719caa34e8177a8cdca29 
+hash: 5731622ef220414b9641261e9e27bec759be6c0590c105219e0e0036c1c17b5e 
 --- 
 
 **Service data** - Flexberry ORM component that provides read and write data objects in the repository. In the object model Flexberry ORM data service is represented by a class implementing the interface `ICSSoft.STORMNET.Business.IDataService`. 

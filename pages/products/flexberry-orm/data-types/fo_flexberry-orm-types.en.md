@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_flexberry-orm-types.html 
 lang: en 
 autotranslated: true 
-hash: 9ef81ec9f59920120a3b94d8265bec736eec08c06d69fb46a95072d2c45e8efa 
+hash: af257975632901d4dbc8bf403ebbe53748a3d204a91f4df302754007aa2b8ae3 
 --- 
 
 [Flexberry ORM](fo_flexberry-orm.html) allows you to work with the following types: 

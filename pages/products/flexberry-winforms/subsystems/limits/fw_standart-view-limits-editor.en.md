@@ -8,7 +8,7 @@ permalink: en/fw_standart-view-limits-editor.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 29af277b64b236a1219c6b0615234a2f56edc1b68ea00c8b6bf8410fb7485f70 
+hash: 83cd1d7d664c63a1cb411112cbfd05c85b263d62a4d88dcc6a65aefdcbf30b5c 
 --- 
 
 In this article, we describe a possible format of constraints, which correspond to the editable constraints in standard form. 

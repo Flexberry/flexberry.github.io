@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-not.html 
 lang: en 
 autotranslated: true 
-hash: e8e61dea54a13e0fac90f935d54fb415783c28896a4533ca24850d18de367f7f 
+hash: cf5b7f16dcd9246cf392f29094622726d97ec8e2fcd3aaf20554393f91451fef 
 --- 
 
 `FuncNot` function, negation in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

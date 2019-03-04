@@ -8,7 +8,7 @@ permalink: en/fw_change-name-list-with-lookup.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 2090d3c563f6e2b86f8b1d43fadb06c3d543794771c7ed9c52695ff9393959cc 
+hash: 961476066195b2c65bf5a754d2eedc3a93e3987cb01d58801b1e4d813bb04cf6 
 --- 
 
 To change the name of the list when lucapa with different forms of editing on the edit form and the list to process it. 

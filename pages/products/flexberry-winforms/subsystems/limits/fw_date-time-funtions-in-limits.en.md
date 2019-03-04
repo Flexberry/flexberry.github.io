@@ -8,7 +8,7 @@ permalink: en/fw_date-time-funtions-in-limits.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 3a3014a18051dafec7e531f0d8db9de9ede46dd724af3dfbe0fc201ab7f07f06 
+hash: c2ea2ad9e47ab9772c67513a907ae77ef7e4c9ef76af695117e25152c7e19a28 
 --- 
 
 | Function name | return Type | argument Types | note 

@@ -6,7 +6,7 @@ toc: false
 permalink: en/fsb_landing_page.html 
 lang: en 
 autotranslated: true 
-hash: 9ca871db868922a50465e638e4bdd3a34704a85b06e9b03d134763e830f21bb4 
+hash: ae18512ebfa965820b73623ca69faf7ca55de14506c0db6fdc65e71681217018 
 summary: Functional subsystem Flexberry platform for integration of information systems. 
 --- 
 

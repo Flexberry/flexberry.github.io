@@ -7,7 +7,7 @@ toc: true
 permalink: en/efs_security.html 
 lang: en 
 autotranslated: true 
-hash: 25881f41697c77b671a0fe48f739722eb7d7bcf755f6e0e3a4f686dbecfe1f7a 
+hash: 50eadc9f0bcebdadeec89d1d1f1cf2a682805c656108666f05b0497440a3a934 
 summary: This section focuses on the client part of the subsystem powers and change audit data. 
 --- 
 

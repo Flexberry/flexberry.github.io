@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_linq-provider.html 
 lang: en 
 autotranslated: true 
-hash: 2897d9edaa17c8b969088bb0b11f7f3e3a11e06b9bdfc351a4cedbafa97ff048 
+hash: c697f344999f1c7823c50c0e0b5070dcd5d155e03ffc1965f411d6776d8c9be1 
 --- 
 
 ## Support Linq 

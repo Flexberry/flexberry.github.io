@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_instantiate-persist-objects.html 
 lang: en 
 autotranslated: true 
-hash: 32ed0a0620c6b5721f1be506ed37d458f2f68e86fa63a2d8e20ab9a8ca71b370 
+hash: 414fd2500b9a449c9d1701753d19192c07825f5d3b908a18c0f1e8825ec00a13 
 --- 
 
 This example creates a graph of data objects, and then made their saving by using [data service](fo_data-service.html). 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_exist-details.html 
 lang: en 
 autotranslated: true 
-hash: 4e824e2dc1ce24e5931441dbb2f592bb741101a05fa1f0cb34b6f6d55f89092b 
+hash: 212b06f1a92ff52fc4ff5bc3bb8cc615cdd6fa8a3165154c8f42d26a30c2bad2 
 --- 
 
 ## Description and differences of functions 

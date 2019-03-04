@@ -8,7 +8,7 @@ permalink: en/fw_interfaces-editforms.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 5aa112018c669623e844922ed6e34dd8cd7344e824e1377b81de3d464ccca193 
+hash: c0ef2091772040f6668205c2586506ede4216f5a5d8b718dd6f139343f743fe3 
 --- 
 
 The following diagram shows the interfaces to the initiator, to the editor: 

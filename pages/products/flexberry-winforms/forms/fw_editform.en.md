@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_editform.html 
 lang: en 
 autotranslated: true 
-hash: 3d0d08a6164ca65563d0a3677a9bafefeb43b9764ce4c419ac1301d673b4408f 
+hash: 7f00db96a052d79bf1fa5053faaa8eff17939b6dfe9a0a4d46243dba284c4151 
 --- 
 
 Description of the environment `Flexberry` regarding the user interface described in: [Tutorial programmer Flexberry Platform](gbt_flexberry-platform-guide.html) the "User interface "(paragraph 45-65). 

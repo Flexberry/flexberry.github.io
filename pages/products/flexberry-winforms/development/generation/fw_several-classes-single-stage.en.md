@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_several-classes-single-stage.html 
 lang: en 
 autotranslated: true 
-hash: 672fa3d72cc707efaef2f0e12535ba7b90fa96fff15e5ff582cb8b2729d2ef0e 
+hash: d2e8f7f35bb68ea880b44b6b52802e6c16482d9859c10758bbdfa427897f8876 
 --- 
 
 If you are in one stage there are some [classes with the stereotype &laquo;application&raquo;](fd_application.html), 

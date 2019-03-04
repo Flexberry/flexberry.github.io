@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_filtersand-limits.html 
 lang: en 
 autotranslated: true 
-hash: 31bf766b18334ce0ff474ef72dfddbc1dc96eea99b18ab59b16d1b08c1e627c2 
+hash: 70cbe7fe0b998849a4ded8e007db118e1f67d72e7f8338f4df36009dbcc49e1c 
 --- 
 
 ## Filters 
@@ -58,7 +58,7 @@ After you set FilterSettings in the application database, which was set up AdmCo
 
 {% include note.html content="AdmConsole adequately [creates the settings automatically](fw_filter-settings.html) if the app is built for .Net Framework version 3.0 or 3.5. Alternative solution versions of frameworks can be an indication of a higher version of the framework](gbt_set-runtime-dotnet-version.html) for AdmConsole." %} 
 
-{% include note.html content="to the limit `the object itself` earned - need to create STORMFILTERLOOKUP for this object." %} 
+{% include note.html content="in order to limit `сам объект` work - you need to create STORMFILTERLOOKUP for this object." %} 
 
 ## Form set restrictions AdvLimit 
 [AdvLimit](fw_limitation-editform.html) allows you to set ограничения; to extend the functionality, you must configure FilterSettings (see [here](fw_filter-settings.html) and [here](fw_filter-example.html)). 

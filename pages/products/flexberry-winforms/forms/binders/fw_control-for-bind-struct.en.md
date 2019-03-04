@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_control-for-bind-struct.html 
 lang: en 
 autotranslated: true 
-hash: b59e125c3fdd7afa0d523c5b3efbae9d82e4b572fbb5b8c6e896415ef6b7d4f0 
+hash: 197ccf603b8ce1bf54bdf197f61d8e264ec42023dab1cee739f106949f670685 
 --- 
 
 `ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct` - structure that defines a control for editing some properties (used, for example, when you create a [provider controls](fw_control-provider-winforms.html): for an example, see [Handling dates in ControlProvider](fw_processing-date-in-control-provider.html)). 

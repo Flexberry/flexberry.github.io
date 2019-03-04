@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_start-app-open-forms.html 
 lang: en 
 autotranslated: true 
-hash: bd3e1f0bce23095c061cf8f79bea757d1890df41ced8633de56009e375adc3a7 
+hash: ef7d8bfd5f7f29e7ccea2e3c2c99d37207727e0cc1efaa6a9f2eec04184d5c77 
 --- 
 
 * Customize application 
@@ -25,7 +25,7 @@ Then, on the edit form of the user in the tab "Agents\Users" tab on the "Operati
 First you need to add powers into classes. 
 How to add permissions on classes can be found in [this article](fa_authority-classes.html) 
 
-{% include note.html content="to add To the list of classes of objects need to use the button `Fill the list of classes from an Assembly objec` in the section `Entities\Classes`, where you can select the Assembly object. Form classes are added to the list of classes by hand." %} 
+{% include note.html content="to add To the list of class objects you need to use the button `Заполнить a list of classes from an Assembly объектами` in section `Субъекты\Классы` where to select the Assembly object. Form classes are added to the list of classes by hand." %} 
 
 
 

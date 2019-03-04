@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_list-sort.html 
 lang: en 
 autotranslated: true 
-hash: c98e95bf0d4b895c489d6b686e2d3c5e4ae07fa09e150df8ebbee5ad34a16f52 
+hash: 321c5d407885e41d1ce3308c84ea29a3ba7d57030c9a4882d2c703fd21438576 
 --- 
 
 Lists allow you to sort the contained objects in specific columns. The user can set the necessary sorting. 

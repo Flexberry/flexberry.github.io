@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_lock-rows-in-groupedit.html 
 lang: en 
 autotranslated: true 
-hash: 63e939c1f1dfed071d1f74a7ea863d37a9bbe008f5d1453e9615abfc2cd74057 
+hash: 014d8a4b9824420fc7f521c66ec1a3659f87412ecb0b7c38676899e30736ceea 
 --- 
 
 [GroupEdit](fw_group-edit.html) supports the ability to lock editing of individual rows. This allows a correct simultaneous editing of objects in `GroupEdit` and on separate forms. 

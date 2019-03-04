@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_postgres-data-service.html 
 lang: en 
 autotranslated: true 
-hash: b77def246485c5f642f19ec52d13c4479c539581fa69aae0ff043945211203c2 
+hash: 23c1cc66f10f0d34f889c037087309272ce70bb632331520c7045cceb318b709 
 --- 
 
 `PostgresDataService` is [service data](fo_data-service.html) to work with PostgreSQL is an implementation of the [abstract class SQLDataService](fo_sql-data-service.html). 

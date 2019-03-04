@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_history-plugin.html 
 lang: en 
 autotranslated: true 
-hash: c093989bbf2a6e8a69ed4440c607b6940360dd56a0fccbd1ce35762a442276cb 
+hash: 34de4ea2c474454af83ddc176a03960a594ccb1d1752fa2998062fd24067cb39 
 --- 
 
 Function `создания бэкапа` and `истории изменений` designed to store the history of changes of Stages with the ability to recover a stage at the moment of saving. 
@@ -246,15 +246,15 @@ PstrfДетейлы` tab allows you to see what Detaily has an idea in stage 1 a
 
 #### Tab Objects only stage 1 
 
-Shows objects that are only in the first of the compared stages. You can view detailed information about them, similar to as described the tab "Objects are different".
+Shows objects that are only in the first of the compared stages. You can view detailed information about them, similar to that described tabs `Объекты различаются`.
 
-#### Tab "Objects only stage 2 
+#### Tab `Объекты only stage 2 
 
-Shows objects that exist only in the second of the compared stages. You can view detailed information about them, in the same way as described for the tab "Objects are different". 
+Shows objects that exist only in the second of the compared stages. You can view detailed information about them, in the same way as described for the tab `Объекты различаются`. 
 
-#### Tab "Objects match" 
+#### Tab `Объекты совпадают` 
 
-Shows the objects that are in both compare the stages and are identical in all respects. You can view detailed information about them, similar to as described the tab "Objects are different". 
+Shows the objects that are in both compare the stages and are identical in all respects. You can view detailed information about them, similar to that described tabs `Объекты различаются`. 
 
 
 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_tools-oracle-ds.html 
 lang: en 
 autotranslated: true 
-hash: 983c885f0cbdd8dc6cc126c8d538d6936cfdd5ef2e1c334e6bdbb5088efa99fe 
+hash: f37d090bd019444d1fc48da5b85e7049f42e122e5da7c56c8778639f61a5ea60 
 --- 
 
 For the operation [OracleDataService](fo_oracle-data-service.html) you must install the client software according to instructions [on Oracle](http://www.oracle.com/technetwork/database/winsoft-098398.html): 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-is-null.html 
 lang: en 
 autotranslated: true 
-hash: 1e515010b2c8d7dc4051083a4f992b74b24ffee0a99ee2addb58385e5bf17879 
+hash: c428a8896b48f33223d91ec31ea7b65bbd41118f5c8d5e6bee8080e74673e322 
 --- 
 
 `FuncIsNull` function is the same as testing for null in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

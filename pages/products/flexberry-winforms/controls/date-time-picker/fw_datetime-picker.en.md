@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_datetime-picker.html 
 lang: en 
 autotranslated: true 
-hash: 1d7dd4686c5ee1e9dabc72d2e68cd015a1c19dc9cca937c4d5f591ef400c5f0f 
+hash: ad5c518c845683fc125f385f90c5524f7da318e4b098c129b3b32ec08289516a 
 --- 
 
 To set the correct date display, you must create your [ControlProvider](fw_control-provider-winforms.html) to date. 

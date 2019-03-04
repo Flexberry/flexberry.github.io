@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_using-custom-types-example.html 
 lang: en 
 autotranslated: true 
-hash: e33709dd23808bb283ca0f7e0db975bb62c1361962b8619955bcd7282b6883fc 
+hash: 03af622d4a3d2ba623581430daa8bfb3b08260a0ea3c48b238c0b028066b1dcf 
 --- 
 
 You can create your own data types in the diagram Flexberry Desinger. This should place the new class in the diagram and change its stereotype to "type". As a result, the class will be available to define the properties of classes with a native type in all stage Flexberry Desinger. 

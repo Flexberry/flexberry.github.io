@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_trimmed-string-storage.html 
 lang: en 
 autotranslated: true 
-hash: 10d07324c31eb6e0eb96c544aa8ca44907c74f1306b392215b43f3e324c799b9 
+hash: abc418e9d7bbcca2e46fd07c6d29543b120519e7941740b132e2db6f129b0aa8 
 --- 
 
 To operate the trimmer lines when reading data from a data source, you must use [TrimmedStringStorageAttribute](fo_attributes-class-data.html), which is configured in the [Flexberry Designer](fd_landing_page.html) in the properties attribute ("Trim"). 

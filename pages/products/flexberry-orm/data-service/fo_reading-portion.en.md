@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_reading-portion.html 
 lang: en 
 autotranslated: true 
-hash: 7a03ae2ea431234b1ddb075b6220dd4babb9fe371939f1663c899ce86fbd5c25 
+hash: a63da461154bd0cee34b02f90fe8cd8d0e1b3012b62712ca7632057c3eacd74d 
 --- 
 
 A very convenient possibility is to read the data objects in portions, piece by piece. There is a possibility to call the read operation so that in addition to portions of data objects [data service](fo_data-service.html) returned a read state. Transmitting the subsequent read operations is the state, you can get another portion. 

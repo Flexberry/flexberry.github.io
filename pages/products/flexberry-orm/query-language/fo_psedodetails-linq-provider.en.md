@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_psedodetails-linq-provider.html 
 lang: en 
 autotranslated: true 
-hash: 45c1786ae2cbb608fea2a339c56ebb0376baa9f4ee4091b21c00efdea950de51 
+hash: 6f655a1ab84c5bc7cf568533a180aabd1b642ad0d395e48eff30f533a279dc62 
 --- 
 
 ## formulation of the problem of specifying limits on pseudometal 

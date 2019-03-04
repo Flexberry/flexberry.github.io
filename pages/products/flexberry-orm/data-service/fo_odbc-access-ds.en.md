@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_odbc-access-ds.html 
 lang: en 
 autotranslated: true 
-hash: 94b643ed336e2431b21ccd20568631d54d9bf6a8c2c99a211f46ca50f9a0b235 
+hash: f0c411372d0810ae62df95de9cf20731c71f9cf7062da926c58b3e2b89180f89 
 --- 
 
 `ODBCAccessDataService ` is [service data](fo_data-service.html), represents the implementation of [ODBCDataService](fo_odbc-data-service.html), optimized for data access DBMS Access. 

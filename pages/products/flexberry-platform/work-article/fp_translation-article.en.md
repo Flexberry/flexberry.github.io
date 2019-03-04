@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_translation-article.html 
 lang: en 
 autotranslated: true 
-hash: 667b7b0a8f5382f2de974c3389671ba751e418a542a37e5caf5d750538a6575a 
+hash: 1f0d7249d67cf4229788592811e770d8da7c8cbbb2ca668b8aa1b0efe653be8b 
 --- 
 
 {% include note.html content="In case of any questions contact [chat](https://gitter.im/Flexberry/PlatformDevelopment)." %} 

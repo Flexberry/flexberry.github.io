@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_limit-function-serialization.html 
 lang: en 
 autotranslated: true 
-hash: 312816e4824598dcf43b42df816b78beedfcbfb97a2f36a3b11a677ad44bc62e 
+hash: 10c44078343eb52029784a9f3c430961e36878845be289ddf555de9f46c4e95e 
 --- 
 
 ## Approach to serialization LimitFunction 

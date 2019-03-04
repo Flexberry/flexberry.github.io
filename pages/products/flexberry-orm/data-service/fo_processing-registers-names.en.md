@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_processing-registers-names.html 
 lang: en 
 autotranslated: true 
-hash: 23ce2edc53a54c2a130da68cc05763bc5fbc5fbe9a74bb66432d79a7fac8b00c 
+hash: 93bb4afd8a08cf6d77d1e37af9a67b863c8cb9d3c49e14c29a66de1ff34df4d1 
 --- 
 
 Working with [SQLDataService](fo_sql-data-service.html) you need to pay attention to the following processing registers: 

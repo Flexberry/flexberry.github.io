@@ -8,7 +8,7 @@ permalink: en/fw_add-form-to-win-desktop.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 5692ae78c16ee7403161d302cfca33c526ac35a8e32e056a6aae2074ac06c2ad 
+hash: ce1047fc33e132e86480cb5b02bb1488b829ef0bd6a2544189aadc1bba256c8c 
 --- 
 To add your own form on the windows desktop application, you must: 
 1. To open a file `<Projectname>DesktopCustomizer.cs`. 

@@ -8,7 +8,7 @@ permalink: en/fw_send-to-email-bug-report-provider.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 1b621b8d778c6c137d117f8f5e3a8219c6e6b56f94a16bb8f7c55c48b72324bf 
+hash: f0dd7c68da0fd433c5069a89332d438a7f14c06507f045132b218adebce265c2 
 --- 
 
 In the standard window error message has the opportunity to send email with error message. 

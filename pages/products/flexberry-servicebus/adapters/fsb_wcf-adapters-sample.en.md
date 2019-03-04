@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_wcf-adapters-sample.html 
 lang: en 
 autotranslated: true 
-hash: 9b55c6207fcbfca4df7b730bc4202beb87fea0f793e798844104996bfc74dfcf 
+hash: 1daf658c242203fbc80a9efcb11c90a1bcbcad02d60a256a5e07e9669068396e 
 summary: step-by-Step guide for building a sample WCF adapter for applications that connect to enterprise bus 
 --- 
 

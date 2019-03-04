@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_ds-provider.html 
 lang: en 
 autotranslated: true 
-hash: a67a3e82b11fb84f0d5ae4513aa5c8f5f91a63344d8741c45c97820546c7df92 
+hash: 44521544d5e3234f0d31b8a66b6803ed7b139f8e127dbe772d433632ea2ae457 
 --- 
 
 `DataServiceProvider.DataService` is [service data](fo_data-service.html), which is initialized based on the settings specified in the configuration file (`App.cobfig` or `Web.config`). Thus, `DataServiceProvider.DataService` is [service data](fo_data-service.html) by default. 

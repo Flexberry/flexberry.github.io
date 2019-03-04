@@ -8,7 +8,7 @@ permalink: en/fw_masters-in-list-selection-type-parameters-in-advlimit.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 314c68f026fa7b10a2864a71b79ab65af7693e321c86845f462bbbc0ff4d1cc3 
+hash: b518b8e173d85d7a9ab8723ccfe9f594ed62a58571dc5aa22399a3d15be4307d 
 --- 
 
 ## specify the type of master as the type of the parameter in the constraint editor 

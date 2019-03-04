@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_mssql-data-service.html 
 lang: en 
 autotranslated: true 
-hash: 8ba38d0fd23f1a28a6dcb0431865a393806bfa3afd89de9af5ba768006d04ce2 
+hash: 83583198eec9f4ddeeabfbd27222b447e1aa0336b39120865ad13cff7e1f0d58 
 --- 
 
 `MSSQLDataService` is [service data](fo_data-service.html) to work with MS SQL Server directly, bypassing ODBC is an implementation of the [abstract class SQLDataService](fo_sql-data-service.html). 

@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_contribution.html 
 lang: en 
 autotranslated: true 
-hash: 6861116b6a4a629a89732b971e871a8256cb9802f92dfad0989ac9456a87fef0 
+hash: 4ddc590d17425282d692a9a37affe9e030a94c970b88787c61b1c9e26906bdb4 
 summary: instructions on how to contribute to the platform Flexberry. 
 --- 
 

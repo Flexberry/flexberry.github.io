@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_forms-recommendations.html 
 lang: en 
 autotranslated: true 
-hash: fa0d95a71747b96184de8b51183656a3a525134693c46fed03b73d2082096e68 
+hash: 88a980a2189a2816345b5f5fb2e3fdbe70ed6317c9e8ce0395d41c1ed18f7dad 
 --- 
 
 It is important to understand that the form is not only for editing but also for viewing data as well as data management - to run the export operation, printing, working with data audit and other. 

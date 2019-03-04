@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_work-with-views-example.html 
 lang: en 
 autotranslated: true 
-hash: a07d7ef06747e8a0967a8ff9a432bb54faa552d0361249cede1761b464f5035a 
+hash: 1b110aac05ca92ba00fac533347226f2c109df740768d4eee547162f13e6cd3e 
 --- 
 
 This example shows how to access [prestavleniem](fd_view-definition.html) of data objects. 

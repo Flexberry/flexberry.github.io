@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_view-property-appender.html 
 lang: en 
 autotranslated: true 
-hash: 3aefad7c5e4c5c905e8b1232752ace5255837cdc6c69593db8bc76c2e3850745 
+hash: a25147e8c234d38f9431f0e3b929de5ab09f6c5d209e404fc5cb391ab5c599dc 
 --- 
 
 Class `AdvLimit.ExternalLangDef.ViewPropertyAppender` is designed to expand a [view](fd_view-definition.html) properties that are in [the limitation](fo_limit-function.html). 

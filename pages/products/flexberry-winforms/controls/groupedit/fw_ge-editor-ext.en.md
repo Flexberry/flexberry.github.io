@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_ge-editor-ext.html 
 lang: en 
 autotranslated: true 
-hash: 4ebef76f9b3fb1e67d6264909b11e6406cde1cbea0953e38c53c87f5538786cf 
+hash: 07eaebeca0190d1fd0a74176753f4047d9894ef63d72e164a7fc0ae9bbd23428 
 --- 
 
 `GEEditorExt` - extension component [GroupEdit](fw_group-edit.html), allowing to organize the following behavior: 

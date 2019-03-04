@@ -8,7 +8,7 @@ permalink: en/fw_customizing-the-user-interface.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 5aa23b5c06ef025864cb8d9c4d936999a994149fb7e85f3145bccad605d64b75 
+hash: d0000ca1a7bc3b3dfdc4ec636eb3dbfb2db54be6026a64288b1d3008eb2e4588 
 --- 
 
 After automatic generation of the application, its interface needs improvement. 

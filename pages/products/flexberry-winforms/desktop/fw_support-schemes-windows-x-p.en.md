@@ -2,16 +2,16 @@
 title: Support schemes for Windows XP 
 sidebar: flexberry-winforms_sidebar 
 keywords: Windows UI (forms) 
-summary: describes how to enable support for schemas, user interfaces `Windows XP`, for example, "soft" buttons, gradients on the tabs, etc, sample 
+summary: describes how to enable support for schemas, user interfaces `Windows XP`, for example, `мягкие` buttons, gradients on the tabs, etc, sample 
 toc: true 
 permalink: en/fw_support-schemes-windows-x-p.html 
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 1d7021db0fbd88f1251b0902cb301680e56768c819bb77ad40d027f062eda392 
+hash: ce27bf8839da3c813200268dfba9f79cc04704d2cec32d40d75cc4b4d8ec45a0 
 --- 
 
-Controls `Flexberry Platform` support the scheme of user interfaces `Windows XP`: "soft" buttons, gradients on the tabs, etc., etc., Such support is included explicitly. 
+Controls `Flexberry Platform` support the scheme of user interfaces `Windows XP`: `мягкие` buttons, gradients on the tabs, etc., etc., Such support is included explicitly. 
 
 
 To a desktop application supported scheme UI `Windows XP`, you must: 

@@ -8,7 +8,7 @@ permalink: en/fw_update-the-local-copy-of-the-form-object.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: e926cc05ed7d15bf6b4aa0d41a77859ca65ce31bc3e48363ef9b19510c55431f 
+hash: 3d579046cada0188a97fa02857e795ce103786f43186f293e19967f7074f3d96 
 --- 
 
 When the form is opened for editing, it creates a local copy of the object. The issue of conservation is set when the difference between this local copy and the edited data object. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-sql.html 
 lang: en 
 autotranslated: true 
-hash: d65e22f6608f3a6fc541106acdd3fa50ff916fa77ac181e0108a661d98407dda 
+hash: e09b14fde0b082949c597680c86351e02e33499db95d3151364b7c6bd4c062eb 
 --- 
 
 `FuncSQL` - function Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html), allowing to perform insert SQL. 

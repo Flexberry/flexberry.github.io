@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_intercept-formation-sql-query.html 
 lang: en 
 autotranslated: true 
-hash: db0dfc5683862d2d6477dfbead0ecf98880f05b01673168debcd367d01b13a86 
+hash: 062cf6165a372d4f741f9c29160c5f3d7b1645a9430316242836d9f1613659cf 
 --- 
 
 [SQLDataService](fo_sql-data-service.html) enables the interception of the formation of a SQL query to the database through the use of [delegates OnGenerateSQLSelect, AfterGenerateSQLSelectQuery, OnCreateCommand](fo_sql-data-service.html). 

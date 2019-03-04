@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_processing-multiple-objects.html 
 lang: en 
 autotranslated: true 
-hash: 5c4964ddc5ab658e228e4e459e6563af9fca1b3e561abe01b1bc7911b72b3ef9 
+hash: 2efd3af7e4eed039c526d315f43ad7a3994840289ee3474e86984bea2323078a 
 --- 
 
 ## to update the objects 

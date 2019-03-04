@@ -7,7 +7,7 @@ permalink: en/fw_ui-independent-user-interface.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: f2f5a0a8a0e9215050cdcbc0d9e9b3950ca0d4708eac9e58eda3a95aa116bdee 
+hash: c6b1b5925aa839d77435bf2233c8f401247325544a67c964dccb0d35850be7e9 
 --- 
 
 ## UI-independent edit form 

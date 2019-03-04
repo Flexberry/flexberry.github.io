@@ -8,26 +8,26 @@ permalink: en/fw_description-form-limit-editor-in-standard-form.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: a49efe41a6479fa442673ab4d291e6d26fd4f9f4a33b8ea9a58c55d09c8eef7a 
+hash: 03c5aecb732178ae8c4b880fcb4aa63cffa70ddcf2b818922979bcb5268f78da 
 --- 
 
 ## Standard view 
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/10.png) 
 
-1 – __"Available properties"__ properties of the class available for creating 
+1 – __`Доступные свойства`__ - class properties available for creating 
 limitations. 
 
 
-2 – __Limit__ - window to 
+2 – __`Ограничение`__ - window to 
 design restrictions. 
 
 
-3 – __Panel"query text"__ is a window that displays the ultimate 
+3 – __`Панель text запроса`__ is a window that displays the ultimate 
 the limitation is written in one line. 
 
 
-4 – __"options Panel"__ - a window to work with parameters 
+4 – __`Панель параметров`__ - a window to work with parameters 
 (variables which can be assigned some value in the process 
 list) used in the constraint. 
 
@@ -43,7 +43,7 @@ You will receive a message of the form:
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/28.png) 
 
-- __Add constraint field__ – after clicking this button a window appears "Establishment of limits": 
+- __Add constraint field__ – after clicking this button a window appears `Создание ограничения`: 
 
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/12.png) 
@@ -51,20 +51,20 @@ You will receive a message of the form:
 
 Depending on the selected field type, you receive the opportunity 
 select options suitable specifically for him. For example, for date fields 
-appears "Functions for dates" with the following values: 
+appears `Функции for дат` with the following values: 
 
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/13.png) 
 
 
 Column and the name of the property is automatically retrieved and is equal to 
-the selected field in the "Available properties". In this window, choose the type of operation. 
+the selected field in the window `Доступные свойства`. In this window, choose the type of operation. 
 
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/42.png) 
 
 
-Next you need to click on "...", "Choose from database". A window will appear: 
+Next you need to click on `...`, `Выбрать of базы`. A window will appear: 
 
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/14.png) 
@@ -79,17 +79,17 @@ the top line of initial letters of this value and click "Update". This displays 
 
 
 Select the value you want (double click or single click on 
-value and then click to Return a value). The window "Select values from database" 
-closes. 
+value and then click to Return a value). Window `Выбор values from базы` 
+closes.
 
 
-In the "Creation of restriction" need to click "Save". It 
+In the window `Создание ограничения` need to click `Сохранить`. It 
 the window will close as well. The restriction on a given field will be created. 
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/29.png) 
 
-- __Edit__ – opens the window "Edit limit", similar to 
-the window "Create restriction", all parameters correspond to the established limit. 
+- __Edit__ – a window will open `Редактирование ограничения` similar 
+the window `Создание ограничение`, all parameters correspond to the established limit. 
 
 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/30.png) 

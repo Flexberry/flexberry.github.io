@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_features.html 
 lang: en 
 autotranslated: true 
-hash: 8182901c5ebbc521410d4f23264a0ebca45d5e2a9483a30cbc638f3f4febb015 
+hash: 34bb0d3a15f980753daa9c5f6292dd07ece2bff6e4c2da7e9634a1899f3d8e72 
 summary: Description of the enterprise service bus. 
 --- 
 

@@ -8,7 +8,7 @@ permalink: en/fw_detail-as-master.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 34f61a33d39ef84840dd4e9bf161ce848820543393e3b6d870fdfbfe4e4b10a9 
+hash: 6bfd77655d8e22f9216ef5c4b376168a9fb1eada5611b59f3490663eb3c27f33 
 --- 
 
 ## Description 

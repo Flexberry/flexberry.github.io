@@ -7,7 +7,7 @@ permalink: en/flexberry-nuget-packages.html
 folder: folder product-- 
 lang: en 
 autotranslated: true 
-hash: 1b27b3505fb0b31e0ec55c8a0be37f47709235a5761ef057f8e48bfe4fb0f908 
+hash: e9754ef8fb1f271b421c98f11de2150f2823be56bfd7b75bcfaca5efe8f4ed15 
 --- 
 
 ## NuGet packages 

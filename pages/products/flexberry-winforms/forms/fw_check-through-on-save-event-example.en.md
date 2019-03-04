@@ -8,7 +8,7 @@ permalink: en/fw_check-through-on-save-event-example.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 47ed4292122ba50d2aa2842a71ee541efd1779ed19733c762f595ac57a9adc54 
+hash: 782721f0a858403b6044d06c3f9aedea71ccb9848344ab4c85d8c7b4e8230248 
 --- 
 
 <!-- This article is still being edited --> 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_edit-form-validation.html 
 lang: en 
 autotranslated: true 
-hash: 281e0ceaa64d74dbbc1e2f2a5daa0ba4930a691f954ff7a1650a97b38f968121 
+hash: 125ce53d9aa8f802eadce5fbce0d502a5ddc812530dbd56be2f4292a2bfe3312 
 --- 
 
 Data validation occurs in several stages. 
@@ -17,7 +17,7 @@ Data validation occurs in several stages.
 
 * After client-side validators need to use the server and place it on the form [`ValidationSummary`](http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.validationsummary(v=vs.100).aspx)you need to display a beautiful error messages. 
 
-* The third line – [business server](fo_bs-wrapper.html). It is also necessary, as the logic may be not only on the form and test it, as a rule, should always. Form, unlike other potential "visualmill" the response from the business server has to transform in clear view and show to the user. It is recommended to handle different from the standard way event save the object in the method `Save` and `SaveAndClose` through block `try-catch`. In `catch` to catch the message from the business server (preferably typed) and inform the user about the problem. This can be done either through a message to [WebErrorBox](fa_exception-handling.html) or mark on the page or something. 
+* The third line – [business server](fo_bs-wrapper.html). It is also necessary, as the logic may be not only on the form and test it, as a rule, should always. Form, in contrast to other potential `вызывальщиков`, the response from the business server has to transform in clear view and show to the user. It is recommended to handle different from the standard way event save the object in the method `Save` and `SaveAndClose` through block `try-catch`. In `catch` to catch the message from the business server (preferably typed) and inform the user about the problem. This can be done either through a message to [WebErrorBox](fa_exception-handling.html) or mark on the page or something. 
 
 `Windows`: 
 By analogy with the scenario for the Web: 

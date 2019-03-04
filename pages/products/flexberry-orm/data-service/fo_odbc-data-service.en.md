@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_odbc-data-service.html 
 lang: en 
 autotranslated: true 
-hash: 7dc61b3cf9353799832792b8579d11d57578a6ab6770b65f3605ab871475bdba 
+hash: 29d5017ffd1fd0252f2dd575193856c0a45f74329382986f709cf5b5e5e9d8bf 
 --- 
 
 `ODBCDataService` is [service data](fo_data-service.html) to access relational data sources, independent from the relational DBMS is an implementation of the [abstract class SQLDataService](fo_sql-data-service.html). 

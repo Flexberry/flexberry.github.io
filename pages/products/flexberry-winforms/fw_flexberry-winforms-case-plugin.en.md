@@ -7,7 +7,7 @@ permalink: en/fw_flexberry-winforms-case-plugin.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 5671936ec029cea8f1585eb2ca4e12eb52bf597fa17bbf19e27affbf2dddd15c 
+hash: fe028a97ab78ded673c1bb50cc9ac008083ce7e2189bf391170d8f4e8dcab8e6 
 --- 
 
 | __Product__ | __Destiny__ | 

@@ -8,7 +8,7 @@ permalink: en/fw_check-form-field-during-save.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 5bf45895f8b9105c715860da9cd328f70c1376bb3a32d62f4ded672994fc88f5 
+hash: 53549fc014ea1cb31f3496534d5c086317fb14ebce4e2875af94e6b1387ed57b 
 --- 
 
 <!-- This article is still being edited --> 

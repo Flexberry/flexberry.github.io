@@ -8,7 +8,7 @@ permalink: en/fw_check-not-null-fields.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: a93ce2d8d774a397749491c36099b5688c051558dd916f95f4189020dbb1bafc 
+hash: 86da9dc1aedc84c3eea129aad7c385f645cbd3df916da74af0b806560890eac3 
 --- 
 
 If the fields are of the same class on the same edit form needs to be filled, and the other is not, then to display and validate required fields (not mentioned in the class attribute [`NotNull`](fo_attributes-class-data.html)) you can use [`DataObjectErrorProvider`](fw_data-object-error-provider.html) 

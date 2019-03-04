@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_location-assembly.html 
 lang: en 
 autotranslated: true 
-hash: 2e44f0a6c23f191d8467a5c75dc6685f4c87aeaf2372f97179b1070d2d1c628d 
+hash: fa36430f5b5f949e2152549fb0df8dc915a0e9edbe2d754665efe08b687827c4 
 --- 
 
 ## Concept package 

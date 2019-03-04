@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_architecture.html 
 lang: en 
 autotranslated: true 
-hash: e41f930b94319e4231f632a1e855bf38333fc01b6d3c28587fbc7348e7634160 
+hash: 9e0450a0fa3d83e0e3b485afc95701a9963cfeede6dcb4bc5594c3e3aca23d99 
 summary: describes the components of the enterprise service bus. 
 --- 
 

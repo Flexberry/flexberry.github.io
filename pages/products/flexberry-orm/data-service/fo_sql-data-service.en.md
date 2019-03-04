@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_sql-data-service.html 
 lang: en 
 autotranslated: true 
-hash: 96d3cdd0e0444df7ad3ebd9c2baa83aae2d46f79c0ffadcf873da3a04489ccd5 
+hash: 8bbea0f68de7b0ad390d3c7beba961b4f2944a0cc01b81640707977539ce235e 
 --- 
 
 [Service data](fo_data-service.html) working with relational storage. 

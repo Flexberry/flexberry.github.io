@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_insensitivity-register-ds.html 
 lang: en 
 autotranslated: true 
-hash: 26fc691d21571bfabea412ecc831b55c4658b829ea7a0538c67eafb80c8949f3 
+hash: d6d4bc60711002bd29dcf3a1225aae155842f4aca9366efb3b60dd9556158df1 
 --- 
 
 [Flexberry ORM](fo_flexberry-orm.html) allows you to configure the application so that the generated [service data](fo_data-service.html) the query was applied to the feature [UPPER](https://docs.microsoft.com/ru-ru/sql/t-sql/functions/upper-transact-sql) to both sides of the expression string comparison (that is, the string comparison will not be considered in what case the recorded characters). 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_different-applications-and-fields.html 
 lang: en 
 autotranslated: true 
-hash: 7d543b9d01f55f81d605b06b270f3738f6a8737125dce53e95d583ae5a6bcf45 
+hash: 6c0c7ee59e0b7ad8c828d55f2afad1edc8114c16cb4b0580739757c2eb819809 
 --- 
 
 We set the following goal: "to Make different applications available to different fields on the same form." 

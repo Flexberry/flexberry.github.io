@@ -8,7 +8,7 @@ permalink: en/fw_copy-paste-limitation-branch.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 2fe31118e9f2cc29b4617ca9a1e64731cde0a7399768b0b8d407dda509ab8576 
+hash: 9b5ab7fb0b1e77e2d29eebc4919c3bd4224107f942980d3b6a96e56e6b6c463d 
 --- 
 
 ## Description 

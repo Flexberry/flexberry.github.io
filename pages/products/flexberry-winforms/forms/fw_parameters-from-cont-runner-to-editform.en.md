@@ -8,7 +8,7 @@ permalink: en/fw_parameters-from-cont-runner-to-editform.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 8c9776d8d2f1002b2e30d2efd8b49a13b9a33341f373ca9b27c1872a2011a6fc 
+hash: e03e182f4b90573ec842c33f359998092905f1f149c74fde5882fee8fb4894cb 
 --- 
 
 ## passing parameters in DesktopCustomizer 

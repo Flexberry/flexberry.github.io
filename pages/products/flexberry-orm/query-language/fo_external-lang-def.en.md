@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_external-lang-def.html 
 lang: en 
 autotranslated: true 
-hash: bae43925c8285e46d78d20b9ca565ab27b81c5419c3c632651bfa2e3a5b7f71f 
+hash: acff5e1a8d72f803ea10e82c475557fb134399d1b42adad3d73d7b51bcd097a4 
 --- 
 
 `ExternalLangDef` is an extension of basic functional language [SQLWhereLanguageDef](fo_function-list.html). 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_winforms-ui-faq.html 
 lang: en 
 autotranslated: true 
-hash: 54d8da233b3a99a04a7de6322430d5d595e631ee1d6332b614987ded09fb366e 
+hash: ef78e111fab5b8b8ad0c2d0d8212a7eab8e426a05f30b920e2ad01b17c37ac8c 
 --- 
 
 In the process of application development may raise questions, the answers to which can be found below. 

@@ -8,7 +8,7 @@ permalink: en/fw_check-form-field-during-edit.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: edbf64633ef1042cf0dbe9a47560973a09a8686013a1f7519b36b56ba56838b3 
+hash: 78d32698155ae3ca4918e624088c7d67f84467ec2af938a858ceff400ab52b1b 
 --- 
 Data validation on the form during editing can be carried out by: 
 * [an exception is thrown if an invalid entry in the method `set` the corresponding field of the object](fo_check-object-set.html); 

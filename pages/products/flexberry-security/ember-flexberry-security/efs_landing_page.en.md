@@ -8,7 +8,7 @@ permalink: en/efs_landing_page.html
 folder: ember-flexberry 
 lang: en 
 autotranslated: true 
-hash: 5cd2ce4d44f2365c3ad282df95eb688b750520314df4734c9c00833bb336c539 
+hash: 91a76d5c811ee9599fa463654ce011ea3c06b502dc50d347955c6f5fd611e879 
 summary: This section focuses on the client part of the subsystem powers and change audit data. 
 --- 
 

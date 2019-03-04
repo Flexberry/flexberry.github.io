@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_ge-empty-detail-remover.html 
 lang: en 
 autotranslated: true 
-hash: 77da8fd71c3d8a7f88c53a0db7624f66ef80244aa4a4e3475bbc5d9a887a7edd 
+hash: dbae36218b3fcda2b061dfbddf91483fb1ada27548d49c0fa57222b6713fdccd 
 --- 
 
 `GEEmptyDetailRemover` - extension component [GroupEdit](fw_group-edit.html) which allows you to remove blank lines from `GroupEdit` when saving. When you save `GroupEdit` with empty lines you may see a message on blank fields (blank in this line). 

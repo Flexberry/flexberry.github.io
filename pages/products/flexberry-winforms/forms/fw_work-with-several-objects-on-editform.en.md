@@ -8,7 +8,7 @@ permalink: en/fw_work-with-several-objects-on-editform.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 3021ea303db7c7d7a95c5da84c4b03da9b4dd1452ba43895895fdcd7250905d9 
+hash: e5f3921d565c7c1d4cedd19442e002329cfd2fa348fd8d7fd7e1723d0ea20254 
 --- 
 Sometimes faced with the task to organize the work with fields of objects of different classes on one form of editing. For example, the necessary form for a fast input where some fields belongs to one class, part of another, etc. In this case, it is necessary to monitor the preservation of this "complex presentation". 
 

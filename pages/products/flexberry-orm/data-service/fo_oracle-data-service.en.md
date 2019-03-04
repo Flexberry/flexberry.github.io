@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_oracle-data-service.html 
 lang: en 
 autotranslated: true 
-hash: 498fd7c1c262503305d2c3197aee80e17f60110c18217c641dc7700f3d674aab 
+hash: 7632aed3e1ac594cad6823ada7c131d105c0f592edf1b8fde371aaed2ec6fdb5 
 --- 
 
 `OracleDataService` is [service data](fo_data-service.html) to work with the Oracle Server directly, bypassing ODBC; is an implementation of the [abstract class SQLDataService](fo_sql-data-service.html). 

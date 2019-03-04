@@ -8,7 +8,7 @@ permalink: en/fw_nalozhenie-ogranichenij-po-stolbcam-v-spiskah.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 784bee9b293533a12a2220811ccad2e7953060cdc3a5b68a29c0da1244e0ead4 
+hash: 27a99e164648a9afa424ea47d8e452fb5c7ca3d26ec2e6acf57996325634ac37 
 --- 
 
 When imposing restrictions on the columns in the lists AdvLimitComponent you can now reset individual limits. 

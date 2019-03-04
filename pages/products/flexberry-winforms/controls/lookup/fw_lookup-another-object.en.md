@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_lookup-another-object.html 
 lang: en 
 autotranslated: true 
-hash: e0108c9f26338420ef5a4feff3f4aba30b683b93aa552074796a16dd492060d7 
+hash: 13424042cb17b9d0b6edbee0c669ffa4a8cb5974ea6c4de91930996d161895bf 
 --- 
 
 There are two ways to add to the edit form [Lookup](fw_lookup.html) to select an object unrelated to the editable on the current form: 

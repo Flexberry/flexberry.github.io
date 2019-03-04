@@ -8,7 +8,7 @@ permalink: en/fw_winform-business-task-monitor.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: a7b6f9c7268b7e57222f5418be4ce231c349ca2b8cda5a4a6cb57d7245a1fcf5 
+hash: 7fd62fcd172d7ac93dae1692e16d2dcbe35e7dc8efe47a8b41e89d6cdebcdb0c 
 --- 
 
 One of the conveniences technology Flexberry [task monitor](fo_business-task-monitor.html) looks like the window `WinForms` with a task list. 

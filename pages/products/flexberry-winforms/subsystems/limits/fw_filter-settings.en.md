@@ -8,7 +8,7 @@ permalink: en/fw_filter-settings.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 82e65a6af424b1077ab70b77bb3c7a0f10874dd0845d35b63644309e89165c1f 
+hash: 29d0ac1a29112eac782cea9a338f8a0726a0431f93c81eccd2bae7e21ac1a33e 
 --- 
 
 ## filter Settings 

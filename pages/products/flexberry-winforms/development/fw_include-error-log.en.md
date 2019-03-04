@@ -8,7 +8,7 @@ permalink: en/fw_include-error-log.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 654a5fd09d26e1e582247e29ef8fcc2a288fd6098fa2220125dcc4b625f17b60 
+hash: dbe07e2be46decb32f3099c41acfcdee2a95b93c61a35c1f2be8562cd74a11dc 
 --- 
 
 To enable the error log, it is sufficient to specify this attribute in the configuration file: 

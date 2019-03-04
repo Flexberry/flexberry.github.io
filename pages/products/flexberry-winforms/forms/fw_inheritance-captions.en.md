@@ -7,7 +7,7 @@ permalink: en/fw_inheritance-captions.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: c83eb762ae49cf2adb6df08aa571b11473e59c6abfad55758b9429a4fcef4e9d 
+hash: 78867964f7759dcad14f64cb2830810050de50cfd116f9f9f60d00c0aa0b03f3 
 --- 
 
 

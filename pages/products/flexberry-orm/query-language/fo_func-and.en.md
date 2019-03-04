@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-and.html 
 lang: en 
 autotranslated: true 
-hash: 3881641d059af904b2f0299db8286ffed89b43dbe95d5d24c051bcbf80c29202 
+hash: 366a31a6e619f0bd513e35e7f6c146af629f3d9bc4b49612354935031e01025d 
 --- 
 
 `FuncAND` the same function as the logical "And" SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

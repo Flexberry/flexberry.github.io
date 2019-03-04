@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_control-provider-winforms.html 
 lang: en 
 autotranslated: true 
-hash: 38b7424fac4f2d12fa28d9307efd4bdde581b187d9e79680abafe2274f0133e7 
+hash: fdc1c772e18b49aaeafa6988059de618c968c57a0e623bedb068a8a60f646844 
 --- 
 
 Providers of the controls classes that are inherited from the abstract `ICSSoft.STORMNET.Windows.Forms.Binders.ControlProvider` designed to prevalene in compliance with the type of control and the type of the data object. For example, universal [edit](fw_editform.html). 
@@ -57,7 +57,7 @@ The method returns a structure `ICSSoft.STORMNET.Windows.Forms.Binders.ControlFo
 * `System.ControlPropName` String — the name of the significant properties of the control, i.e., which is and returns значение; 
 * `System.Type[] typeMapping` — mapping (chain explicit or implicit conversions) of types used in the case when significant property is not supported directly the desired type, but is supported by another, to which the type can be converted. If this mapping is specified, then setting the value in the property control conversion occurs sequentially on the specified type starting from the beginning of the array, and if back (if you are installing from a property control in a property of the data object), then the end of the array. 
 
-__Note__: linking a control with a value occurs through standard `.Net`-binding. I.e., link control needs to "understand" the type of values. 
+__Note__: linking a control with a value occurs through standard `.Net`-binding. Link ie control needs `понимать` type values. 
 
 ## Association provider controls type 
 

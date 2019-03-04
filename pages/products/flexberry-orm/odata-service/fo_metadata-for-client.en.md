@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_metadata-for-client.html 
 lang: en 
 autotranslated: true 
-hash: db861440ea98d2b1392e0ada488fce7f2a85e2db22f5397887ffef16bf83c659 
+hash: c1c0485e3b6bd1a3b9d16f8a7364868e428d7c86d03cf8c5d12bd7bf0215cd72 
 --- 
 
 For converting type names meets two delegates `EntityTypeNamespaceBuilder` and `EntityTypeNameBuilder`. 

@@ -8,7 +8,7 @@ permalink: en/fo_processing-status-condition-load.html
 folder: products/flexberry-orm/ 
 lang: en 
 autotranslated: true 
-hash: 03e09262c527546e48e5b3068fad45d26d3c00521cfcecea0579c77435713e58 
+hash: e955ef2f93dda7b020f1b888bb78441ef0c00f5079ad43849a6b65d151978737 
 --- 
 
 When you upgrade in the store data object, any data service account statuses the following way: 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-in.html 
 lang: en 
 autotranslated: true 
-hash: 152bfa3012109659746fb5ddaa71e79b851eb696c6cb8bc3a6e1e89562b72ba5 
+hash: 47b881144270d8351de4dd4851cd7d680ac617c45d3d06f4f1a9804eb71c2e81 
 --- 
 
 `FuncIN` the same function as the equality comparison in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

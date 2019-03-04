@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_view-operations.html 
 lang: en 
 autotranslated: true 
-hash: 1ee5d4fd120513c199380d3b20614e60e412108593e4afade050d0d7fbe5bef4 
+hash: fa3fa97eeaf34fc8d6c179b999b44e9fe3ee72ad235ccaf39048063b33e5c460 
 --- 
 
 Over the [views](fd_view-definition.html) as on sets properties of related data objects, the following operations are possible: 

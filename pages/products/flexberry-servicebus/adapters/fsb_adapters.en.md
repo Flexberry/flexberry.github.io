@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_adapters.html 
 lang: en 
 autotranslated: true 
-hash: b48081ca904573c3a7648b44f22e3e3e4384feabe7ac1eef1890843e01d0b4b9 
+hash: 916a83b79b7eca40eb5fb5229a99aab7f2984fe3d0cc4b2ef8c0515fac96ffb7 
 summary: Adapters are used to connect applications to enterprise bus 
 --- 
 

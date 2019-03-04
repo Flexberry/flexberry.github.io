@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_date-format.html 
 lang: en 
 autotranslated: true 
-hash: 506792fed5eda49be2ecdc3244fe4225caab9d534dffdf568871814351a232bc 
+hash: 04372c0413c8134fd77c002b93b01e3f8f5919346ee70f8212b22530008f00d4 
 --- 
 
 To set the date display format by default(for example, `dd.MM.yyyy HH:mm`) in the application(in GroupEdit'Ah, in ObjectListView), the config need to add a line 

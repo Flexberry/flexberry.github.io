@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_lock-service.html 
 lang: en 
 autotranslated: true 
-hash: 155677022ed01a1eb03afa5e0487ce71058c995e656b6061e1f63b802df13836 
+hash: 911c7d878409fcc062560bd545f223d69529400f6535adab401a17f493ebbc2a 
 --- 
 
 Service locks (`ICSSoft.STORMNET.Business.LockService`) is designed for convenient implement locking mechanism. For example, you want to protect certain data object from changes by other users at the time how it is edited by any user. 

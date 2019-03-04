@@ -8,7 +8,7 @@ permalink: en/fw_limit-editor-advanced-view.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 313b767a8cf1b18e9c63cb0a1b303e0be846ec56a01dc6db5dc1b71c4057374a 
+hash: d347a0f109ee93c81c75ddcb0cffb069a1f22ab1bb18530215d1d34521984d8c 
 --- 
 <!-- Article is in development)))--> 
 

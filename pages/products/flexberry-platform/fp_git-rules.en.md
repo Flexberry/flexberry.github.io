@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_git-rules.html 
 lang: en 
 autotranslated: true 
-hash: 3185c5736bc2b388f5e11753247bffd42ffda914e3b34d2c2fb1f637e7af25ae 
+hash: 7388d3e8ad2bd4dbc5d1502346e0d7144d3b912bc564bf4fa96ca74f33252ea8 
 --- 
 
 **Git** (not to be confused with github) is a set of console tools that track and record changes to files. With its help, you can revert to an older version of the project, to compare, to analyze, merge changes and much more. This process is called version control. 

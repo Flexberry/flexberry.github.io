@@ -8,7 +8,7 @@ permalink: en/fw_processing-date-in-control-provider.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 9ffd1226939bf4a922f7955b28cb13a1c3dbd8107bdac2afd69c6ebb5204e58e 
+hash: 1ed04899b95ccd1607857ab767a9e978fab941f22c0e4fc496891028da42d8ed 
 --- 
 
 ```csharp	

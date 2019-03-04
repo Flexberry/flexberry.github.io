@@ -8,7 +8,7 @@ permalink: en/fw_object-hierarchical-view-on-editform.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: d814d62caed0c6b55b8b89acf32a915cfcc15bb86d5d60003f7ba63ac84b31c9 
+hash: 08b550585b34acca51ae4d2147125748b90bb9170e30886b736a9edad823b98f 
 --- 
 
 There are times when on the edit form, you need to create a hierarchical list. 

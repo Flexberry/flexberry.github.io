@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_static-view-accessors.html 
 lang: en 
 autotranslated: true 
-hash: 8b2c238c666482b32b4e32e6e0a27b834109d86650f419da0db23cc5530770c8 
+hash: 6fa8a18474617b3a75b9c4fb5f2ed011ed131516b75607a90aae955c28e1f9cb 
 --- 
 
 When loading objects almost always need to specify a [view](fd_view-definition.html). To this may be a string name of the desired view. This involves the following challenges: 

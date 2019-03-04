@@ -8,7 +8,7 @@ permalink: en/fw_aliases-system-and-user-types.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 2730d97def6c8582fb8d052e6a6c7560b02b4e3df4d9982cad175b87b3f9d3fb 
+hash: f0b9c3e7a00c7ec67b2a1a3c84c4d79f21fb123f340dc9b869dd5be1968cfbcb 
 --- 
 
 ## Description 

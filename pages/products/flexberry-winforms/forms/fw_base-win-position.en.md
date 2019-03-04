@@ -8,7 +8,7 @@ permalink: en/fw_base-win-position.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 2f5dd2191ce24985c44a1dd427ff38fbb63b0a905a224091b3761989d021b277 
+hash: c3127081f3fa666260877def63bbaba1f8fff039633961340b40dd8ed2dba1c7 
 --- 
 
 In some cases, restoring the position of a form led to the fact that the form was not visible on the screen. This situation for example occurs when you change the screen resolution to a lower one, with a new permission form could be outside the visible area. 

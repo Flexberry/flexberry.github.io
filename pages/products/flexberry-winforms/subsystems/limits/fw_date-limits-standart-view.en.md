@@ -8,7 +8,7 @@ permalink: en/fw_date-limits-standart-view.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 6a87869c74e3c6868004da67ea1661751c4cf2667e68760bcde55f7f061435b1 
+hash: 8a3f896c7dcdf1ad28c46f2938635486689fb6e209d9df87696dbf298988756d 
 --- 
 
 The editor has the ability to apply functions to attributes that are of type "date". 

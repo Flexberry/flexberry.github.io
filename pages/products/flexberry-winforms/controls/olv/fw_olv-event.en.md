@@ -7,10 +7,10 @@ toc: true
 permalink: en/fw_olv-event.html 
 lang: en 
 autotranslated: true 
-hash: 5fabb2c36e1741eaf341682d595491d87a808df4be659fb98c1692a069272a59 
+hash: aeace699396edcf3f5f1c4db691e603fb0125b029ec805b1c9967b57096e52dd 
 --- 
 
-`ObjectListView` does not contain any functionality for actions (creation, preservation, etc.) with the data objects displayed in the list. The programmer must write code to catch events in `ObjectListView`, and work out an appropriate response. On the contrary, if there has been some action, you need to report it `ObjectListView` for adequate display of objects. 
+`ObjectListView` does not contain any functionality for actions (creation, preservation, etc.) with the data objects displayed in the list. The programmer must write code that `ловящий` events in `ObjectListView`, and work out an appropriate response. On the contrary, if there has been some action, you need to report it `ObjectListView` for adequate display of objects. 
 
 To catch events, you must: 
 * Hang up the handler on event `CreateObject` in the implementation of actions to create the data object, the event occurs when the user clicks the toolbar button create объекта; 
@@ -74,7 +74,7 @@ To monitor changes in the status of a line (selected or not) `ObjectListView` po
 public event MarkObjectChangedEventHandler MarkObjectChanged;
 ``` 
 
-`ObjectListView` does not contain any functionality for actions (creation, preservation, etc.) with the data objects displayed in the list. The programmer must write code to catch events in `ObjectListView`, and work out an appropriate response. On the contrary, if there has been some action, you need to report it `ObjectListView` for adequate display of objects. 
+`ObjectListView` does not contain any functionality for actions (creation, preservation, etc.) with the data objects displayed in the list. The programmer must write code that `ловящий` events in `ObjectListView`, and work out an appropriate response. On the contrary, if there has been some action, you need to report it `ObjectListView` for adequate display of objects. 
 
 To catch events, you must: 
 * Hang up the handler on event `CreateObject` in the implementation of actions to create the data object, the event occurs when the user clicks the toolbar button create объекта; 
@@ -114,9 +114,9 @@ private void objectListView1_BeforeToolTipRequired(object sender, BeforeToolTipR
 * `GetObject` — receiving the data object directly from the list by various criteria. 
 * `FillData` — populate list data (update). 
 * `HideToolBar` — show/hide the toolbar. 
-* `UseToolBar` is to use a custom toolbar, some other, outside, it automatically "spread" button from `ObjectListView`. 
+* `UseToolBar` is to use a custom toolbar, some other, outside, it automatically `намазываются` buttons from `ObjectListView`. 
 * `ClearCache` — cleaning. 
-* `ObjectListView.BeforeRefresh` occurs before the data is updated in the list. Data refresh can be initiated when the user clicks "Update" button, or call a method `Refresh`. 
+* `ObjectListView.BeforeRefresh` occurs before the data is updated in the list. Data refresh can be initiated by pressing the button user `Обновить` or method call `Refresh`. 
 * `SetObject` - method to add an object to the list. 
 * `SetObjects` - method to add multiple objects to the list. 
 

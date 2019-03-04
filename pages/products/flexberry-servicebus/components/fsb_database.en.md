@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_database.html 
 lang: en 
 autotranslated: true 
-hash: 8a7ad5daf409a04de79a371e4d90476d62851f8a767a56a9a5c0a870f4a086d5 
+hash: 9306eb90b96d3cead51ba6111ecada46f5d6d8e86fde9a5dda7062ada94734b3 
 summary: description of the database of the enterprise service bus. 
 --- 
 

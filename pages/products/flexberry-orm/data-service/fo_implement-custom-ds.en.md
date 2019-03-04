@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_implement-custom-ds.html 
 lang: en 
 autotranslated: true 
-hash: fde1fc2d45945b8cb5a1361e405e76bba25bb01c51ad23f164d8dd491771f18b 
+hash: ad17367b146fb50c53cee21694e4da72732a2448b0586d20b8f0aa3235fa849b 
 --- 
 
 In the General case [service data](fo_data-service.html) must implement interface ICSSoft.STORMNET.Business.IDataService. 

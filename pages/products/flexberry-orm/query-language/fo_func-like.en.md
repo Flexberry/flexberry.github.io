@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-like.html 
 lang: en 
 autotranslated: true 
-hash: 21deef65efce5ceaf1d067a999be777c1723ef69606f2a2ec4c0ab2ebffef84b 
+hash: 50ef23d87966bbb980d12dc7a1fe3ed239b7691bf09cd81fc09ab6de591ee57a 
 --- 
 
 `FuncLike` - equivalent of the test for occurrence of a substring in another string in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

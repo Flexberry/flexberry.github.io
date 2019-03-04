@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_paged-objectlistview.html 
 lang: en 
 autotranslated: true 
-hash: 3f5c45108ecb62c3498fd782a60337ecb035f74c04f889f454ee0fedd01dc889 
+hash: 2191036680ac0e25e494c075928a606d960d8a88f446d1e37848a74018fa78e7 
 --- 
 
 List control `PagedObjectListView` intended for paged display a list of data objects. `PagedObjectListView` inherits from the class [ObjectListView](fw_objectlistview.html), thus, setup and operation of this control, in General, not different from the standard list. 

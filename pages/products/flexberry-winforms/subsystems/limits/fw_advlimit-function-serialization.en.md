@@ -8,7 +8,7 @@ permalink: en/fw_advlimit-function-serialization.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 9653ef258c2beb30c181096bf9f3d2d1520813d171ecd07ca978a4fb51545ffa 
+hash: c43a3b5edeb51e6fa4538e090eec0c8b308d3960b34f5f0d6ccd87a9fadd34bc 
 --- 
 
 ## Means serialization-deserialization in `ICSSoft.STORMNET.Windows.Forms.Utils` 

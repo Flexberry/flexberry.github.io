@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_programmer-brackets.html 
 lang: en 
 autotranslated: true 
-hash: 53ec186ee2555ddeefbf5cd4ac6692b2f9ad4af2f6142f0b66f0769cc440cfb2 
+hash: 8d4a5dd88a670d2cbaef03cbbddaa64b10a63faf20fcceb86900ab9e1383f1cf 
 --- 
 
 ## modify the design and the code by mistake 

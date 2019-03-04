@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_editor.html 
 lang: en 
 autotranslated: true 
-hash: b6df207b1530950885fddac5092321b5b6b53189841f8d1daaa31c91457f5cca 
+hash: 02b25043311d05bbbd1413b0e85680fb98901cb19f1fe06f02d909a9287a0cd9 
 summary: the Purpose and administrative applications service bus. 
 --- 
 

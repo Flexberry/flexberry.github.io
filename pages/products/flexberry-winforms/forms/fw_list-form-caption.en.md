@@ -8,10 +8,10 @@ permalink: en/fw_list-form-caption.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: b0b7f28e598976dff5d5dfcd27b674d53f82174a56876af1b39d0d01fe0921a6 
+hash: 4336ba7fe86db4a62b473a5f9e36dcf0c72ce19d81e213dd1aa5aa1b9c4371db 
 --- 
 
-Setting dynamic properties "ListFormCaption" data object allows you to override the title of the list form that opens when editing a feature (raising to LookUp). 
+Setting dynamic properties `ListFormCaption` data object allows you to override the title of the list form that opens when editing a feature (raising to LookUp). 
 It should be noted that the installation of the window title happens in the `BaseWinList.Edit`. 
 
 ```csharp

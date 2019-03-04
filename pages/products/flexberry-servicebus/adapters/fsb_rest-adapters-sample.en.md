@@ -6,7 +6,7 @@ toc: true
 permalink: en/fsb_rest-adapters-sample.html 
 lang: en 
 autotranslated: true 
-hash: 177808384ecc1b176d418cea20f581fe2be2e624c6301eb6e7713676a9cff685 
+hash: 1db7e1448368e0174f22e4ba6fc4ff1b6c081c2421059d09468f79441e00c25f 
 summary: step-by-Step guide to creating a sample REST application adapter for connecting to corporate bus 
 --- 
 

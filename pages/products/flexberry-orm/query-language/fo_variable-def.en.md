@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_variable-def.html 
 lang: en 
 autotranslated: true 
-hash: eb8c35bed093413c081a2c56942131878c8ea0fdbcc085fd970526f05dadacc4 
+hash: 23ea816cedb1e06d8904289e5b6fa1c1d66242fe69c16e688e757d4bc664e846 
 --- 
 
 When constructing constraints using the method `GetFunction` argument to this method depending on the type of applied functions may be passed a description of the variable: 

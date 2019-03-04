@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_file-control.html 
 lang: en 
 autotranslated: true 
-hash: 3122dce881780596fc6ed9cc0ab82cfcf68b7c2c3e308be684bde439905e56be 
+hash: bb80d8e61cbb61bc9a6c52600513208ea317c110dfd75cc6d990fa5dbb1e1f0b 
 --- 
 
 `FileControl` is control for file that gives the following functionality: 
@@ -73,7 +73,7 @@ By default, all buttons on the control on the edit form hidden.
 
 ## FileControl and list form 
 
-{% include important.html content="Not recommended field, processed using FileControl, in [views](fd_key-concepts.html) treated in [form list](fd_key-concepts.html), since in this case, when viewing the list in memory loaded all the files (besides, it is not guaranteed that the displayed file name will be meaningful)." %} 
+{% include important.html content="Not recommended field, processed using FileControl, in [views](fd_key-concepts.html) treated in [form list](fd_key-concepts.html), since in this case, when viewing the list in memory loaded all the files (besides, it is not guaranteed that the displayed file name is meaningful)." %} 
 
 ## Change open using FileControl files 
 

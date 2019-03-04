@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_switching-storages.html 
 lang: en 
 autotranslated: true 
-hash: 0602c179d6a22226599f335efb5a138b9e60d62f3011fa727add123daddd6e7f 
+hash: 93adf70a9736b5bc2b1187a96e6b950145bb1bc09c8d260fbfa024231566c7e1 
 --- 
 
 To accomplish the task, you need to install [Postgres](http://www.postgresql.org/). 

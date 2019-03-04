@@ -8,7 +8,7 @@ permalink: en/fw_custom-form-tuner.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: ef3d54d3004b64cb6e7d35b5c25f4c6790eacbcb6d2ac49bf016185af0e1d7aa 
+hash: 0285df7dd2d8b05ac746e5b8ed6b8c19222306d60c4f842011afb27d3120bb66 
 --- 
 
 <!-- This article is still being edited --> 

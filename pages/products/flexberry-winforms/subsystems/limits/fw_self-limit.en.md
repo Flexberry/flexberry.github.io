@@ -8,7 +8,7 @@ permalink: en/fw_self-limit.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: e8abf75d2864f9965237f41abbec4dc6cdb492782d6ffb06638a3942ac8aabbb 
+hash: cacead4ca24fa11e05f73ae4d40b316fdc44f8519f89e5a1ba3bc3b7a2b79714 
 --- 
 
 When using AdvLimitComponent on the list is the ability to set restrictions. To do this in the standard editor view of the limitations to double-click on the root tree item properties. 

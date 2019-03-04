@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_xml-file-ds.html 
 lang: en 
 autotranslated: true 
-hash: c07309db1a6b51ecb416c49239768104205bc2b379da2ae8fa73c27abbe79116 
+hash: ff7468e66028ad4d739f33d39e2c1f2f4071e589febf82630bba5524fc3bf514 
 --- 
 
 `XMLFileDataService` data service is designed to work with the database in XML format. For correct operation of the service data required by the XSD schema of the database and the XML database file. You can get them using [XMLSchemaGenerator](fo_xml-schema-generator.html) (extension module [Flexberry Designer](fd_landing_page.html) to generate the XSD schema of the database). 

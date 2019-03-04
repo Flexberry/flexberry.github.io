@@ -8,7 +8,7 @@ permalink: en/fw_form-interaction.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: cee52d4ccc371a23e7f501626170f851165c44241c74c4e6551374a81af2631a 
+hash: 385528e1fa4bd2a508de9a2769ac055d8bc3002ea655556acf36027ab3f4664c 
 --- 
 
 ## Script open edit form from the list 

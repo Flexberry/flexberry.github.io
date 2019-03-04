@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_tool-description.html 
 lang: en 
 autotranslated: true 
-hash: 6ab1094e34faa309b98bd18e9f9e268b163ce5fbebc7d23b0b5ea80bc8a6c04a 
+hash: 188c891816fe4d1089b16b36547c86c07abdbab0e65f7015f8295d8c36dea779 
 summary: a List of tools recommended for use by developers. 
 --- 
 

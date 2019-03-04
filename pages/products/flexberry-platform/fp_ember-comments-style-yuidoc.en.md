@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_ember-comments-style-yuidoc.html 
 lang: en 
 autotranslated: true 
-hash: 2c2638130b7c7fc3d9a4b843b00168c3d6265526854c61f7c06a18298d66a7fa 
+hash: 33dc939dd5e081e47c89db9883408978f9b6ad1934110dd9719278db35a9dcf6 
 summary: There are certain rules of writing the review for the correct formation of autodocumentary in ember-ember flexberry and other projects. All comments are written according to the rules of YUIDoc. 
 --- 
 

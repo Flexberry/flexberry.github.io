@@ -7,14 +7,14 @@ toc: true
 permalink: en/fw_editmanager.html 
 lang: en 
 autotranslated: true 
-hash: ef21acd53b5a0e2aadeb0de38708ceb56b01c4605497cfd598b6338c2859b539 
+hash: c0925e47e0e8f6da83a7e065cc84921279496b6338e4e4325378afb3fb5a0aa6 
 --- 
 
 `EditManager` (`ICSSoft.STORMNET.Windows.Forms.Binders.EditManager`, Manager edit) — the special class for continuous binding controls to properties of the data object. 
 
 ## Method Of EditManager.Change 
 
-If the value of the data object is changed programmatically, to update values on the form are required to inform `EditManager` that the value (or the entire object has changed). This is done by calling the method from `EditManager` `Change()`. If the method is called without any parameters, updates all controls. If parameter (property name), it only controls "tied" to the specified property. If the argument is specified the name of the wizard that will update all the controls all the mechanics of the properties of this wizard. 
+If the value of the data object is changed programmatically, to update values on the form are required to inform `EditManager` that the value (or the entire object has changed). This is done by calling the method from `EditManager` `Change()`. If the method is called without any parameters, updates all controls. If parameter (property name), then only the controls `подвязанные` to the specified property. If the argument is specified the name of the wizard that will update all the controls all the mechanics of the properties of this wizard. 
 
 An example of using this method is presented in [features of setting default values](fo_features-dafault-value.html). 
 
@@ -108,7 +108,7 @@ You can also manually associate controls with other controls, providing your `Ed
 
 ### Binding through the properties 
 
-Instead of designing `EditManager` from the code, it is also possible to "throw" on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment. 
+Instead of designing `EditManager` from the code, it is also possible `набросить` on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment. 
 
 If the window edit properties `EditManager` in the field `Bindings.<select view>` for some reason you cannot select anything in your code dependent forms, you can correct the line: 
 

@@ -8,10 +8,10 @@ permalink: en/fw_edit-data-objects-on-forms.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 5c977f2bc49d8ca493d113a48fac3caabfc92935398992a5cd71708e6ba729bf 
+hash: 2069b90a53425763cfc35a71d18b2b29b46440844bd1af40992851c3a18f532f 
 --- 
 
-The article describes what needs to be done in order to "manually" create the form where you are able to edit the data object. 
+The article describes what needs to be done in order to `вручную` to create a form where is possible to edit the data object. 
 
 ## Linking via program code 
 
@@ -47,7 +47,7 @@ Also, you can associate a manually smeared controls with other controls, providi
 
 ## Binding through the properties 
 
-Instead of designing EditManager from the code, it is also possible to "throw" on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment. 
+Instead of designing EditManager from the code, it is also possible `набросить` on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment. 
 
 If the window edit properties of an EditManager field Bindings.<select view> for some reason, nothing to choose, then the code dependent forms, you can correct the line: 
 

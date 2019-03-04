@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_linq-pad.html 
 lang: en 
 autotranslated: true 
-hash: 0062115e0dcc1824cab8d96cb8627eb116aca0ef3e63760747d21660c872dce1 
+hash: 41bdf6dd112e8f1635c52981e170f1c50e0f40cef6c89bc16efc605568d5b6e3 
 --- 
 
 [LINQPad](http://linqpad.net) allows you to write queries in LINQ and test execution results on real data without much hassle. As a bonus, LINQPad allows you to quickly see the SQL query that goes to database when using LINQ in a real world environment. 

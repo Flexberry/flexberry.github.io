@@ -8,7 +8,7 @@ permalink: en/fw_design-time-errors.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 417db80b431a1c9b9a2276d82845eb2f3fb15ee9a26edd09beaf0cf3ab71ac89 
+hash: d68046568a93ffdf665bb1de446e71f9a26567adf1b998a58251773c8c58f1cc 
 --- 
 
 Remember: if you do not open the window the debug packages or impossible to set properties of controls, such as classes, views, make sure that the Assembly `ICSSoft.STORMNET.Collections.dll and ICSSoft.STORMNET.DataObject.dll` placed in `Global Assembly Cache` and they are relevant. If necessary, reinstall the assemblies.

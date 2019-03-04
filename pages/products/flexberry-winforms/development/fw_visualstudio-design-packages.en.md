@@ -8,7 +8,7 @@ permalink: en/fw_visualstudio-design-packages.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 1863b342cbc3d075f93c11bea8b14849d480b34365379d6378338d86d6ba2d7a 
+hash: 5fede84411ebeb2058c3d33eb98e5c2e775dfbd4459cdaf6040b79b28fa0083a 
 --- 
 
 There is a problem in `Design-time` when configuring `Flexberry Platform`-controls necessary to ensure the developer can specify the data classes, views, etc. through a standard window of the task environment properties `VisualStudio`. Therefore, it is necessary to specify what `.NET`-assemblies are data classes. This combination of assemblies is called a debug package. The programmer can set himself any number of such packages. One of the packages is called the current, i.e., those whose assemblies are used in the project. 
@@ -20,7 +20,7 @@ Then a window will appear:
 ![](/images/pages/products/flexberry-winforms/development/primer14.jpg) 
 Here, moving through the package list, you can configure each library package. 
 
-When you click on the "save" button to save the batches and selected in the pack list becomes current. 
+By clicking on the button `сохранить` saves the batches and selected in the pack list becomes current. 
 
 Data is stored in `Windows Registry`. 
 

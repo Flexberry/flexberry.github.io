@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_sql-query.html 
 lang: en 
 autotranslated: true 
-hash: 7cdfaca5d63f8c4e328adf3c9b3306a19dcf3ca53cef73b7a20dfeb945346532 
+hash: 49a9a42e8a6117bc6ac979b1fbe587b91357882e9b09da6f7f954172a20ee287 
 --- 
 
 ## access to the database 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-or.html 
 lang: en 
 autotranslated: true 
-hash: 6c0ffe7ec97d1b3c7f7b0c963ce06a188416c57089be9595ab7ed3c05fb65d8d 
+hash: e01a58d97ad21bd9a1639356f6563ea083bb524a628e2053e97b825cbebbd31a 
 --- 
 
 `FuncOR` the same function as the logical "OR" SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_using-languagedef.html 
 lang: en 
 autotranslated: true 
-hash: 88a7dc1f29a7872c54a3d857529958d3d4e30e21cc6ffbb542396d5e65f054b2 
+hash: d7c7a6462dcf6e2953117a2135d18d67cd8dfa2b4ff2c6f45e93602fc0e742d4 
 --- 
 
 There are the standard "Builder" features, the restrictions, [SQLWhereLanguageDef](fo_function-list.html) and [ExternalLangDef](fo_external-lang-def.html). 

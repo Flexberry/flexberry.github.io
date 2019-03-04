@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_dr-data-service.html 
 lang: en 
 autotranslated: true 
-hash: e2e91d2775884bb474b21b4f5c7a28225646e5d462ff00ce4b95650c398c087e 
+hash: 648bed382e981fa818916b5925393b835f05996a3f34a6c7d94cb6dd1010ad95 
 --- 
 
 `DRDataService` - [service data](fo_data-service.html), the heir [SQLDataService](fo_sql-data-service.html), has the same functionality as conventional [MSSQLDataService](fo_mssql-data-service.html), but when reading data ["dirty read (dirty read)"](http://msdn.microsoft.com/ru-ru/library/ms173763.aspx). 

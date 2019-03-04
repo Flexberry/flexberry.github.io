@@ -6,7 +6,7 @@ toc: true
 permalink: en/fp_code-style.html 
 lang: en 
 autotranslated: true 
-hash: f94b297b468eae4486b9d17573b3112e173bb56119e2bfc74eccbd83abba899c 
+hash: f1359abd856086d6ba83e508b45f005c599494a2e4bae8b74620d062453b6c65 
 summary: In the development of platform components Flexberry team must adhere to a single coding style. 
 --- 
 

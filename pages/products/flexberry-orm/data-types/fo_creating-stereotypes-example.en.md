@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_creating-stereotypes-example.html 
 lang: en 
 autotranslated: true 
-hash: 7a31f4fc6c2d472543cfa4ce2e0c5cd6112945c184e155eb02639f2c5d1d938f 
+hash: 7f19157fb8c38661eb5f52a4085ad34f59557eea785b5f3a236e612576731711 
 --- 
 
 There is a possibility to define your own type on the chart Flexberry. This should place the new class in the diagram and change its stereotype to "typedef"](fd_typedef.html). 

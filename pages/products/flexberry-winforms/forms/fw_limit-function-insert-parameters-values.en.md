@@ -8,7 +8,7 @@ permalink: en/fw_limit-function-insert-parameters-values.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: e424bcac9379c5c8f7cc388b28c74589bf41050da3e50b9c82b32012d8b81fc0 
+hash: 8118150672e82127c73cc5b998af48c869eee61bdc6e028af3f0c15e64db9337 
 --- 
 
 ## Question 

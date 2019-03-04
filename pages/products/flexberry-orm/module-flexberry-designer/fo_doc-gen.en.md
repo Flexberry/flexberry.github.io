@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_doc-gen.html 
 lang: en 
 autotranslated: true 
-hash: ad0a9a63ca111b217997e7bbbffa4139714021d8af7b223a8759757076ac97bb 
+hash: 797fb11c8ee6992ca4e902ec8dd482134651a41ba559ecab0f5c7aa686ea23fc 
 --- 
 
 The function is designed to upload information about the attribute class. Allows you to upload a report for stages are not prepared to generate. 

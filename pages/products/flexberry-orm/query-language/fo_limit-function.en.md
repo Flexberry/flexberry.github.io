@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_limit-function.html 
 lang: en 
 autotranslated: true 
-hash: da8455b8355c44564889804a7c0aa46f9ce28544f667c2c6733ec01931e8a4e3 
+hash: c86ab10e8a824544abf6d79c614d4c8d377cec2e3a1fc1d92e08cfba07835dcb 
 --- 
 
 The restriction feature allows to filter and limit the data selection and represent a special extensible language constraints developed for [Flexberry ORM](fo_flexberry-orm.html). 

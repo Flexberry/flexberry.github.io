@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_lcs-to-linq.html 
 lang: en 
 autotranslated: true 
-hash: be7cef6f8c080e714521921baaf79a6cfb0f0ffd9e7e36d28d0b55d9de8ea249 
+hash: 038b6bb771153e497cb315004bd404c00d62c09f651ed54956e235d02e7ae03b 
 --- 
 
 There are methods to convert from the [parental control](fo_limit-function.html) in the expression for [LINQProvider](fo_linq-provider.html) and [Vice versa](fo_limitation.html). 

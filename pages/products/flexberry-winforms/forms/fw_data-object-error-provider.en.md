@@ -8,7 +8,7 @@ permalink: en/fw_data-object-error-provider.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 1b4599cb75dbda3f79a600bc9103fe05faaaa356331c141c49839c9b9dfffabd 
+hash: 9305b6e483c3b2060ea31b3ec99402210749730c27e2d38fea603614bc68cef1 
 --- 
 
 <!-- This article is still being edited --> 

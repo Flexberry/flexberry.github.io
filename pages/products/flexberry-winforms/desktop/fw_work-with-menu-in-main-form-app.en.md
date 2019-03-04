@@ -8,7 +8,7 @@ permalink: en/fw_work-with-menu-in-main-form-app.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 0a6bd6e2e2e47c5cc1ff9790b8cd3d694921e0b670d316d99cdc0e9de77d0d1c 
+hash: 9deaf623658d386e917a080cd8d85e9ca078d3e902b38ca3fec4fefeadcc130e 
 --- 
 
 Find in the application Main method. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_setting-permissions-for-publication-restrictions.html 
 lang: en 
 autotranslated: true 
-hash: 0b4fb06e5c33617e13d26634924f28e73648063370b3a8998f7936b5f8750bf4 
+hash: a2e79ede0d16e192f1d2a69c276e88af43dadc6f039e36253bd98b88d384ea8c 
 --- 
 
 ## Description 

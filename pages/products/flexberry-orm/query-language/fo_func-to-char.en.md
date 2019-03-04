@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-to-char.html 
 lang: en 
 autotranslated: true 
-hash: a71a1a41891d25bcd576f61462417e79afe9283fc8cde820126e805d74f13e22 
+hash: 221e4ef8cf631b42bcdd043b9b9dabfd5f8262b07480db0d4b7274d0a78f5801 
 --- 
 
 `FuncToChar` - function [ExternalLangDef](fo_external-lang-def.html), which serves to specify a transformation expression to a string. This is necessary for correct comparison of values of expressions with string constants. Currently only implemented for [MSSQLDataService](fo_mssql-data-service.html) and [OracleDataService](fo_oracle-data-service.html). 

@@ -5,7 +5,7 @@ keywords: MongoDB, NoSQL
 toc: true 
 lang: en 
 autotranslated: true 
-hash: 96477616a07effefc1dbea221a3abc4419fd7ea0e795b4485472501a3655b6d2 
+hash: 6786e365bc8d1f9b06f987492077010ed4f099cb102940a4533f0a0ebad3a33c 
 permalink: en/fo_mongodb-data-service.html 
 summary: the data Services to work with NoSQL database MongoDB. 
 --- 

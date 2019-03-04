@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-eq.html 
 lang: en 
 autotranslated: true 
-hash: c30ed3cb8fa18b1a905519c0184e874ca09ab29ef657a49f8700541d275a383f 
+hash: d3e2f2f96b6281f57ff4dbeb0fab7a7929b7bf8e2916aed35fac79bd17440c1f 
 --- 
 
 `FuncEQ` the same function as the equality comparison in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

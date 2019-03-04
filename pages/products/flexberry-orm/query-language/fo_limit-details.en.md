@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_limit-details.html 
 lang: en 
 autotranslated: true 
-hash: 3c0357ceb8a1f540ce37b74d5434d8eaa5b7e1016cb3d47a18f4391bed163364 
+hash: 9e2f051a77e3c5eec675907eee701868b690c54fe2562956e007f6e19ce8f808 
 --- 
 
 If you want to set the condition for the existence of [datalow](fd_key-concepts.html) the condition in which it should participate to set the [aggregator](fd_key-concepts.html), you must use the function [Exist](fo_exist-details.html). When specifying the properties in the condition for the function `Exist` you must explicitly specify that this property aggregator: 

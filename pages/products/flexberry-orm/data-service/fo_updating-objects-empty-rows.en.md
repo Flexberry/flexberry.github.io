@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_updating-objects-empty-rows.html 
 lang: en 
 autotranslated: true 
-hash: b7e99559b70368271b23e3656d1c1d9c36a70685b5a8290d1a4b8e5d5e6d69ea 
+hash: d51dc9161b199766ffc2dddff89b1770cfa6c84a31ecd6fe70dd7c9380c62d46 
 --- 
 
 [MSSQLDataService](fo_mssql-data-service.html) converts empty strings to `NULL` when updating objects. 

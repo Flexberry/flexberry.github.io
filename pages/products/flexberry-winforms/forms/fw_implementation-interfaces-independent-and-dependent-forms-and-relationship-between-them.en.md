@@ -8,7 +8,7 @@ permalink: en/fw_implementation-interfaces-independent-and-dependent-forms-and-r
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: dfa4ce621955914259710be6aa0cdd9858089b032c8f3b0f95ddf67e6a394864 
+hash: a9430ceae9605cd18d6353b0d671bd776e085e858f7301c1f0b0287db8ea2704 
 --- 
 
 The class diagram below shows how the relate to each other independent and dependent forms lists generic and implemented on the basis of specific forms of lists (can be implemented manually or through code generator for `Flexberry`): 

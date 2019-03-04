@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_function-implication.html 
 lang: en 
 autotranslated: true 
-hash: 544a701c99fde944115679fd77087be919f8e5c1ed639bb6b6fca4970b2e588a 
+hash: 14f3ec1abd5d086284697d694c1fb658c2f1fe7fed54b324cf1df98b5625d1cb 
 --- 
 
 `funcImplication` - [ExternalLangDef](fo_external-lang-def.html) to specify logical implication. 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_readonly-win.html 
 lang: en 
 autotranslated: true 
-hash: 1407986ca6e4220ec6fa2ddba4084bd11658c655c60ba52cc603abe9bb00d58b 
+hash: 888345665728ccd351b916734a1f5e2d1f1d2b3569809cd115431a405d701aac 
 --- 
 
 The object is opened in "read Only" (Read-only) cannot be changed by the user, the data stored in the object will be read-only. 

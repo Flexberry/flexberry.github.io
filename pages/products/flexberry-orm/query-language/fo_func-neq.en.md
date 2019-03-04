@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_func-neq.html 
 lang: en 
 autotranslated: true 
-hash: 510f94a073ca421905553bcef259bb1372a3620b1df2de14f0ecd67c8b4407eb 
+hash: c9d33068b079a15b6c2121f502c9c997933769e7393321476790bc001a3b731c 
 --- 
 
 `FuncNEQ` function similar comparison for inequality in the SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 

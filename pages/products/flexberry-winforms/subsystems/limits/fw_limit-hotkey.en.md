@@ -7,7 +7,7 @@ permalink: en/fw_limit-hotkey.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: faebb69ffbc3f99c646d25cc650f0b29ec697b5ca7b53a2959c039ca13ea4fd6 
+hash: cc8d24c6d2bd89e2f0b8df9a3274cf5e7f2e50df90404af1f6c8554cdffbe22d 
 --- 
 
 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fp_documentation-writing-guidelines.html 
 lang: en 
 autotranslated: true 
-hash: 8decc189c7e11a8eabcbb6797b75a8c4b61f854b3e5871a1f56f5b04ee11411a 
+hash: c1277accf704be8ea95c004304e42cdb1d3aaa9011ca1c49c6bcdf5c25bbca39 
 --- 
 
 Documentation is an integral part of any successful product, so you need to approach the documentation of developed products with the utmost responsibility and to promptly update the information. 

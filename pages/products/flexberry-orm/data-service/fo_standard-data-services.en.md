@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_standard-data-services.html 
 lang: en 
 autotranslated: true 
-hash: ac1ff7c251c495432ce3ac35aeb835ffc76ffabb519dea88cd277038048c5a01 
+hash: 58d0e6ab4451c9ae16de8583a4774a4b1763a794aa9d064f9e760ba226f32920 
 --- 
 
 ## the inheritance hierarchy for the data services 

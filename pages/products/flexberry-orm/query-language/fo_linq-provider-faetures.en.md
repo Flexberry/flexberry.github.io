@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_linq-provider-faetures.html 
 lang: en 
 autotranslated: true 
-hash: 8aa78eff18ba8ffb086e9fd6f98b7c89dddb2b9b639a6c39652a10342b21118a 
+hash: 8c4974bcded10c3144d9de50c6c622b758c523e0f17b3f524540519837a2fd8a 
 --- 
 
 Below are the main opportunities provided by [LINQProvider](fo_linq-provider.html). 

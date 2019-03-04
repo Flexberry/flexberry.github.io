@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_high-lighter.html 
 lang: en 
 autotranslated: true 
-hash: 69bf45f7de90373f2d754a3ebd83d516e2648b20a35812864db66976fe0cd1ba 
+hash: a5ec02ed4a5bf2cddaff5b4636dfeb083de136d6929451ac5ccfdb4af201d664 
 --- 
 
 `HighLighter` component that provides illumination of the active control on the form. 

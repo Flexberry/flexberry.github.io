@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_nonstored-calculated-properties.html 
 lang: en 
 autotranslated: true 
-hash: cfa3956cfad830d40d607ad04f5768ff31786d4436aad8a78d57e9d68b9ed039 
+hash: 74f7c23651d0983f1193d41bd188ae076b786b8a73f6196954b3f36d14ea665a 
 --- 
 
 This example shows how to use [calculated properties](fo_not-stored-attributes.html). 

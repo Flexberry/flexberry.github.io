@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_type-usage-problem.html 
 lang: en 
 autotranslated: true 
-hash: 843f21e9c05a4b9483349c19b46c63717cf1ff26361faffdbc1321407fd42dbd 
+hash: 03166d535e572c91647c7e55a210f4c4cb777898196f0a2b6ebbc3cc12ff06bf 
 --- 
 
 When using the [inheritance](fd_inheritance.html) the problem arises of determining the right type to use for Association. In other words, if [a master](fd_master-association.html) type is the type associated with inheritance, it is unclear what specific type of an inheritance hierarchy is a master. 
@@ -22,7 +22,7 @@ Accordingly, if a [data object](fo_data-object.html) `a` (an instance of class A
 
 [Service data](fo_sql-data-service.html) stored object `a` with the master `m1`. 
 
-The problem is: if now, the data service reads an object `а` as he "learns" that the master belongs to the class `M1` and, accordingly, is in the same data structure? After all, he is only known type `M`, but fundamentally impossible to know what types inherited from `M`. 
+The problem is: if now, the data service reads an object `а` as he `узнает` that the master belongs to the class `M1` and, accordingly, is in the same data structure? After all, he is only known type `M`, but fundamentally impossible to know what types inherited from `M`. 
 
 ## the Attributes of a typeusage and PropertyTypeUsage 
 

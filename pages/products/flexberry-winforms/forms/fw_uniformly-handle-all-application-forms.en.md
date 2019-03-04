@@ -8,7 +8,7 @@ permalink: en/fw_uniformly-handle-all-application-forms.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: c17c7f3266a719cf7c74e5d1f9d5dfad85bb2a210dca3d9456c6364468152b77 
+hash: 1f2a05687407e4cd6793f3ac588313b6e1166c27737bbd8cfbc6b91fa20a2f26 
 --- 
 
 Subscribe to global events 
