@@ -36,4 +36,10 @@ entries:
     - title: Обновление Ember-CLI
       url: /fe_update-ember-js.html
       output: web
-  
+
+  - title: Компоненты
+    output: web, pdf
+    folderitems:
+    - title: flexberry-lookup
+      url: /fe_lookup-component.html
+      output: web
