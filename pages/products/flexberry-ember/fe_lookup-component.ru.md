@@ -108,7 +108,7 @@ export default ApplicationSerializer.extend({
 `projection` | Определяет, по какому представлению будут отображаться мастера в списке |
 `sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small
 `title` | Заголовок модального окна |
-`lookupLimitPredicate` | Определяет функцию ограничения | undefined
+`lookupLimitPredicate` | Определяет функцию ограничения |
 `autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
 `dropdown` | Режим выпадающего списка, в режиме "Только для чтения" не работает | false
 `dropdownIsSearch` | Режим поиска (автокомплита) для lookup-а в режиме выпадающего списка | false
@@ -308,7 +308,7 @@ lookupSettings: {
 
 В результате заголовок из свойства `title` компонента `lookup-field` будет отображаться в модальном окне, открываемом по lookup-у:
 
-![](/images/pages/img/page/EditFormTitle/lookuptitle.png)
+![](/images/pages/products/flexberry-ember/flexberry-lookup/lookuptitle.png)
 
 #### Настройка фильтрации и количества элементов на странице
 
