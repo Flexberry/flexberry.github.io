@@ -25,7 +25,7 @@ entries:
     output: web, pdf
     folderitems:
     - title: Flexberry Groupedit
-      url: /ef_groupedit.html
+      url: /fe_groupedit.html
       output: web
   - title: Доступ к данным
     output: web, pdf

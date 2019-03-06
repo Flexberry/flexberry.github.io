@@ -1,9 +1,9 @@
 ---
 title: Flexberry Groupedit
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
-permalink: ru/ef_groupedit.html
+permalink: ru/fe_groupedit.html
 lang: ru
 summary: Свойства, особенности реализации, настройка сортировки и встраивание прикладных компонентов, реализация в отдельном роуте
 ---
