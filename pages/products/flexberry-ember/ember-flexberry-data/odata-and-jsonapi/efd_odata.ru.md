@@ -1,7 +1,7 @@
 ---
 title: Поддержка протокола OData v4
 sidebar: ember-flexberry-data_sidebar
-keywords: function, action, callAction, callFunction
+keywords: function, action, callAction, callEmberOdataAction, callFunction, callEmberOdataFunction
 toc: true
 permalink: ru/efd_odata.html
 lang: ru
@@ -20,27 +20,30 @@ ember-flexberry-data поддерживает протокол OData v4.
 
 ### callFunction
 
-Данный метод предназначен для вызова функций бэкенда. Метод принимает следующие параметры:
+Данный метод предназначен для вызова функций бэкенда. callFunction(functionName, params, url, fields, successCallback, failCallback, alwaysCallback):
 
-* `url`: адрес OData бэкенда. Если не указан – берётся адрес, указанный в `environment.js`
 * `functionName`: имя функции бэкенда
 * `params`: объект, содержащий параметры запроса
+* `url`: адрес OData бэкенда. Если не указан – берётся адрес, указанный в `environment.js`
+* `fields`: объект вида { имя: значение }, для изменения значений соответствующих полей объекта XMLHttpRequest
 * `successCallback`: метод или `Promise`, исполняемые при успешном исполнении запроса
 * `failCallback`: метод или `Promise`, исполняемые при неудачном исполнении запроса
 * `alwaysCallback`: метод или `Promise`, исполняемые в любом случае.
 
-#### Примеры использования callAction
+#### Примеры использования callFunction
 
 * Без callback-функций, URL бэкенда берем из `environment.js`:
 ```
-adapter.callFunction('test', { someData: 'someData' })
+adapter.callFunction('test', { someParams: 'someParams' })
 ```
 * С callback-функциями:
 
 ```
 adapter.callFunction(
   'test',
-  { someData: 'someData' },
+  { someParams: 'someParams' },
+  null,
+  null,
   () => {
     console.log("This is a successCallback function");
   },
@@ -53,13 +56,21 @@ adapter.callFunction(
 )
 ```
 
+### callEmberOdataFunction
+
+Аналогичен методу callFunction, но в качестве результата возвращает эмберные модели. Имеет два дополнительных параметра: store и  modelName. callEmberOdataFunction(functionName, params, url, fields, store, modelName, successCallback, failCallback, alwaysCallback):
+
+* `store`: объект [DS.Store](https://emberjs.com/api/ember-data/release/classes/DS.Store)
+* `modelName`: имя эмберной модели
+
 ### callAction
 
-Данный метод предназначен для вызова экшенов бэкенда. Метод принимает следующие параметры:
+Данный метод предназначен для вызова экшенов бэкенда. callAction(actionName, data, url, fields, successCallback, failCallback, alwaysCallback):
 
-* `url`: адрес OData бэкенда. Если не указан – берётся адрес, указанный в `environment.js`
 * `actionName`: имя экшена бэкенда
 * `data`: объект, содержащий параметры запроса
+* `url`: адрес OData бэкенда. Если не указан – берётся адрес, указанный в `environment.js`
+* `fields`: объект вида { имя: значение }, для изменения значений соответствующих полей объекта XMLHttpRequest
 * `successCallback`: метод или `Promise`, исполняемые при успешном исполнении запроса
 * `failCallback`: метод или `Promise`, исполняемые при неудачном исполнении запроса
 * `alwaysCallback`: метод или `Promise`, исполняемые в любом случае.
@@ -68,14 +79,16 @@ adapter.callFunction(
 
 * Без callback-функций, URL бэкенда берем из `environment.js`:
 ```
-adapter.callAction('test', { someData: 'someData' })
+adapter.callAction('test', { someParams: 'someParams' })
 ```
 * С callback-функциями:
 
 ```
 adapter.callAction(
   'test',
-  { someData: 'someData' },
+  { someParams: 'someParams' },
+  null,
+  null,
   () => {
     console.log("This is a successCallback function");
   },
@@ -87,3 +100,10 @@ adapter.callAction(
   }
 )
 ```
+
+### callEmberOdataAction
+
+Аналогичен методу callAction, но в качестве результата возвращает эмберные модели. Имеет два дополнительных параметра: store и  modelName. callEmberOdataAction(functionName, params, url, fields, store, modelName, successCallback, failCallback, alwaysCallback):
+
+* `store`: объект [DS.Store](https://emberjs.com/api/ember-data/release/classes/DS.Store)
+* `modelName`: имя эмберной модели
