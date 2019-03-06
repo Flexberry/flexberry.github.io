@@ -42,4 +42,10 @@ entries:
     - title: Обновление Ember-CLI
       url: /fe_update-ember-js.html
       output: web
-  
+
+  - title: Компоненты
+    output: web, pdf
+    folderitems:
+    - title: Общее описание
+      url: /fe_base-component.html
+      output: web
