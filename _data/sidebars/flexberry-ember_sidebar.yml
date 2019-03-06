@@ -27,6 +27,9 @@ entries:
     - title: Flexberry Groupedit
       url: /fe_groupedit.html
       output: web
+    - title: flexberry-lookup
+      url: /fe_lookup-component.html
+      output: web
   - title: Доступ к данным
     output: web, pdf
     folderitems:
@@ -41,11 +44,4 @@ entries:
       output: web
     - title: Обновление Ember-CLI
       url: /fe_update-ember-js.html
-      output: web
-
-  - title: Компоненты
-    output: web, pdf
-    folderitems:
-    - title: flexberry-lookup
-      url: /fe_lookup-component.html
       output: web
