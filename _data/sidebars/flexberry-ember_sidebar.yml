@@ -21,18 +21,36 @@ entries:
     - title: ember-flexberry
       url: /ef_landing_page.html
       output: web
+
   - title: Компоненты
     output: web, pdf
     folderitems:
+    - title: Flexberry Objectlistview
+      title_ru: Flexberry Objectlistview
+      url: /fe_object-list-view.html
+      output: web, pdf
+    - title: List restriction tools
+      title_ru: Инструменты ограничения списка
+      url: /fe_list-restriction-tools.html
+      output: web, pdf
+    - title: Setting up lists
+      title_ru: Настройка списков
+      url: /fe_setting-lists.html
+      output: web, pdf
     - title: Flexberry Groupedit
+      title_ru: Flexberry Groupedit
       url: /fe_groupedit.html
       output: web
+
+
+
   - title: Доступ к данным
     output: web, pdf
     folderitems:
     - title: ember-flexberry-data
       url: /efd_landing_page.html
       output: web
+
   - title: Инструментарий разработки
     output: web, pdf
     folderitems:

@@ -8,9 +8,7 @@ lang: ru
 summary: Свойства flexberry-toggler, настройка flexberry-toggler
 ---
 
-## Описание
-
-[flexberry-toggler](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js) - компонент, позволяющий пользователю, показывать или скрывать вложенное в него содержимое. В нем могут быть размещены поля формы, [список](ef_object-list-view.html), [детейлы](ef_groupedit.html) и другое.
+[flexberry-toggler](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js) - компонент, позволяющий пользователю, показывать или скрывать вложенное в него содержимое. В нем могут быть размещены поля формы, [список](fe_object-list-view.html), [детейлы](fe_groupedit.html) и другое.
 
 ### Список свойств
 
