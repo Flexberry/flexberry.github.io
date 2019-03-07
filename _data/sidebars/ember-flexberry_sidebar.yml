@@ -96,10 +96,6 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Common description
-      title_ru: Общее описание
-      url: /ef_controls.html
-      output: web, pdf
 
     - title: File
       url: /ef_file.html

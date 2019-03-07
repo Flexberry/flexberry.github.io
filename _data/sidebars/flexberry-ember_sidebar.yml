@@ -25,6 +25,9 @@ entries:
   - title: Компоненты
     output: web, pdf
     folderitems:
+    - title: Общее описание
+      url: /fe_base-component.html
+      output: web
     - title: Flexberry Objectlistview
       title_ru: Flexberry Objectlistview
       url: /fe_object-list-view.html
