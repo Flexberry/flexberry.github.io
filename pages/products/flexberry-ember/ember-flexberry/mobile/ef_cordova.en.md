@@ -1,6 +1,6 @@
 ---
 title: Запуск приложения Flexberry Ember в качестве мобильного приложения Apache Cordova
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: 
 toc: true
 permalink: en/ef_cordova.html

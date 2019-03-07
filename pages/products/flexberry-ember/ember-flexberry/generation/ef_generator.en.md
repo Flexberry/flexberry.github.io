@@ -1,6 +1,6 @@
 ---
 title: Генератор Flexberry Ember
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: CASE Plugins, Flexberry Designer, Flexberry Ember
 toc: true
 permalink: en/ef_generator.html

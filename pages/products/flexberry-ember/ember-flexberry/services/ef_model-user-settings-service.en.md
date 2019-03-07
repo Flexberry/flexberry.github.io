@@ -1,6 +1,6 @@
 ---
 title: Сервис настроек пользователя
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember, Flexberry ORM ODataService
 toc: true
 permalink: en/ef_model-user-settings-service.html

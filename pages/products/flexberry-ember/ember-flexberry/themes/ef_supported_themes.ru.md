@@ -1,6 +1,6 @@
 ---
 title: Поддерживаемые темы оформления
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember Themes
 toc: true
 permalink: ru/ef_supported_themes.html

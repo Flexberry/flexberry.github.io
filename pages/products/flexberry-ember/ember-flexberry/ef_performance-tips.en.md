@@ -1,6 +1,6 @@
 ---
 title: Производительность ember-приложений
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: performance, bottleneck, perforator, perf, hbs
 toc: true
 permalink: en/ef_performance-tips.html

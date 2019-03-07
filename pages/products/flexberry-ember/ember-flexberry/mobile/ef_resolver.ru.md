@@ -1,6 +1,6 @@
 ---
 title: Мобильные шаблоны.
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords:
 toc: true
 permalink: ru/ef_resolver.html

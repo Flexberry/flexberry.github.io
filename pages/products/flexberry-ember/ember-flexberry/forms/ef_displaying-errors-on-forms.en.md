@@ -1,6 +1,6 @@
 ---
 title: Отображение ошибок на формах
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember, errors
 toc: true
 permalink: en/ef_displaying-errors-on-forms.html

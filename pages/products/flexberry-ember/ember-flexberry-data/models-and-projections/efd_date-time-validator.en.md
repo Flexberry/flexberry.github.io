@@ -1,6 +1,6 @@
 ---
 title: Валидатор datetime
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/efd_date-time-validator.html

@@ -1,6 +1,6 @@
 ---
 title: Офлайн режим работы ember-приложения
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_offline.html

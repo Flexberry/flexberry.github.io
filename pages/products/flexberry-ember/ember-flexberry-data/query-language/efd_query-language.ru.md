@@ -1,6 +1,6 @@
 ---
 title: Клиентский язык запросов
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember, запросы, предикат
 toc: true
 permalink: ru/efd_query-language.html

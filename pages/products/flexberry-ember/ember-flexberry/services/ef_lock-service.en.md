@@ -1,6 +1,6 @@
 ---
 title: Сервис блокировок Ember Flexberry
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember LockService
 toc: true
 permalink: en/ef_lock-service.html

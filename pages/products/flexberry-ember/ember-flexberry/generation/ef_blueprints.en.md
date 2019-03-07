@@ -1,6 +1,6 @@
 ---
 title: Blueprints кодогенерация в ember-flexberry
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: blueprints, Прототипизация
 toc: true
 permalink: en/ef_blueprints.html

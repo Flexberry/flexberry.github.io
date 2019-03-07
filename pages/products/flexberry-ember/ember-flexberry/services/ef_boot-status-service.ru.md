@@ -1,6 +1,6 @@
 ---
 title: Сервис состояния приложения
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember LockService
 toc: true
 permalink: ru/ef_boot-status-service.html

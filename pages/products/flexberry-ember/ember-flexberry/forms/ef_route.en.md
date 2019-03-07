@@ -1,6 +1,6 @@
 ---
 title: Роуты в приложениях
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_route.html

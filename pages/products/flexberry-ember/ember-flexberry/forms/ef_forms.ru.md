@@ -1,6 +1,6 @@
 ---
 title: Формы ember-flexberry
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_forms.html

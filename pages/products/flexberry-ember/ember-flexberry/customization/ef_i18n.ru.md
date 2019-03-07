@@ -1,6 +1,6 @@
 ---
 title: Интернационализация в ember-flexberry-приложении
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_i18n.html

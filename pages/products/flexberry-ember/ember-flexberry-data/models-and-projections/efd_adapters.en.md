@@ -1,6 +1,6 @@
 ---
 title: Адаптеры в ember-flexberry приложении
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/efd_adapters.html

@@ -1,6 +1,6 @@
 ---
 title: Поддержка протокола OData v4
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/efd_odata.html

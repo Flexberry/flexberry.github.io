@@ -1,6 +1,6 @@
 ---
 title: Поддержка протокола OData v4
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: function, action, callAction, callEmberOdataAction, callFunction, callEmberOdataFunction
 toc: true
 permalink: ru/efd_odata.html

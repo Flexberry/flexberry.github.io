@@ -1,6 +1,6 @@
 ---
 title: ember-flexberry-data API
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: API
 toc: true
 permalink: ru/ef_ember-flexberry-data-api.html

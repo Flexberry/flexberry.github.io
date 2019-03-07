@@ -1,6 +1,6 @@
 ---
 title: Задание значения по умолчанию в ember-flexberry-приложении
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_default-value.html

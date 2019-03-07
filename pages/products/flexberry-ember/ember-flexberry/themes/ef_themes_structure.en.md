@@ -1,6 +1,6 @@
 ---
 title: Structure of themes
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember Themes
 toc: true
 permalink: en/ef_themes_structure.html

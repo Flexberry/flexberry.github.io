@@ -1,6 +1,6 @@
 ---
 title: Отображение ошибок в приложении
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_error.html

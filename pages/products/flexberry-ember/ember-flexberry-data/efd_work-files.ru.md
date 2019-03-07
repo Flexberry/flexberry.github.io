@@ -1,6 +1,6 @@
 ---
 title: Файлы в odata
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember, odata, файлы
 summary: Особенности работы с файлами через OData-сервис
 toc: true

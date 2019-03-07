@@ -1,6 +1,6 @@
 ---
 title: Application state service
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember LockService
 toc: true
 permalink: en/ef_boot-status-service.html

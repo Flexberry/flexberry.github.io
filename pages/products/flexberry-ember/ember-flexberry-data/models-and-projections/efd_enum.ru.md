@@ -1,6 +1,6 @@
 ---
 title: Перечисления в ember-flexberry-data
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_enum.html

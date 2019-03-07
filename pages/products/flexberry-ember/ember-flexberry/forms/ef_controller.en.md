@@ -1,6 +1,6 @@
 ---
 title: Контроллеры в ember-flexberry-приложениях
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_controller.html

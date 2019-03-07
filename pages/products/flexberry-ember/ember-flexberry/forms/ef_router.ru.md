@@ -1,6 +1,6 @@
 ---
 title: Роутер в ember-flexberry-приложении
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_router.html

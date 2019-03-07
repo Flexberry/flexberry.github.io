@@ -1,6 +1,6 @@
 ---
 title: Отображение ember-формы без дополнительных элементов
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_show-ember-form-in-frame.html

@@ -1,6 +1,6 @@
 ---
 title: UI Message
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_ui-message.html

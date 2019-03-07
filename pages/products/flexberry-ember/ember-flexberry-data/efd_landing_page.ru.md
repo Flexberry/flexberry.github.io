@@ -1,7 +1,7 @@
 ---
 title: ember-flexberry-data
 keywords: Projections
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 toc: false
 permalink: ru/efd_landing_page.html
 folder: products/ember-flexberry-data

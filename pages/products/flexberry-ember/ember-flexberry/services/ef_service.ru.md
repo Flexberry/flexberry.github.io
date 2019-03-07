@@ -1,6 +1,6 @@
 ---
 title: Сервисы в ember-flexberry-приложениях
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/ef_service.html

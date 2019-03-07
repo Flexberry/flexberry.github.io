@@ -1,6 +1,6 @@
 ---
 title: Доступ к Ember-приложению извне
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: access outside
 summary: Доступ к отдельным методам ember-приложений извне
 toc: false

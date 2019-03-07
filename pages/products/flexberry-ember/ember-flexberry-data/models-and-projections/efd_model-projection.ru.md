@@ -1,6 +1,6 @@
 ---
 title: Представления в ember-flexberry-приложении
-sidebar: ember-flexberry-data_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: ru/efd_model-projection.html

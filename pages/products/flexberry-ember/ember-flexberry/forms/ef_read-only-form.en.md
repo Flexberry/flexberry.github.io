@@ -1,6 +1,6 @@
 ---
 title: Открытие ember-формы только на чтение
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_read-only-form.html

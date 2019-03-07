@@ -1,6 +1,6 @@
 ---
 title: Migrating to the new themes
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember Themes
 toc: true
 permalink: en/ef_themes_migrating.html

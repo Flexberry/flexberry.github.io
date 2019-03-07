@@ -1,6 +1,6 @@
 ---
 title: Формы редактирования и создания Flexberry Ember
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_edit-form.html

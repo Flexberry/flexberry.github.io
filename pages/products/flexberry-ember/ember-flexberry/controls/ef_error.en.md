@@ -1,6 +1,6 @@
 ---
 title: Displaying errors in the application
-sidebar: ember-flexberry_sidebar
+sidebar: flexberry-ember_sidebar
 keywords: Flexberry Ember
 toc: true
 permalink: en/ef_error.html
