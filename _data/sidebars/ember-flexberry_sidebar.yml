@@ -121,42 +121,17 @@ entries:
     folderitems:
     - title: Flexberry Objectlistview
       title_ru: Flexberry Objectlistview
-      url: /ef_object-list-view.html
+      url: /fe_object-list-view.html
       output: web, pdf
 
-    - title: Block list cells for a click
-      title_ru: Блокирование отдельных ячеек списка
-      url: /ef_block-cells-click.html
+    - title: List restriction tools
+      title_ru: Инструменты ограничения списка
+      url: /fe_list-restriction-tools.html
       output: web, pdf
 
-    - title: Configuring filters on lists
-      title_ru: Настройка фильтров на списках
-      url: /ef_configuring-filters.html
-      output: web, pdf
-
-    - title: Custom buttons for lists
-      title_ru: Пользовательские кнопки для списков
-      url: /ef_custom-buttons.html
-      output: web, pdf
-
-    - title: Tools for working with objects on lists
-      title_ru: Инструменты работы с объектами на списках
-      url: /ef_list-component-select-all.html
-      output: web, pdf
-
-    - title: Changing the columns of the list columns
-      title_ru: Изменение ширины столбцов списка
-      url: /ef_olv-resize.html
-      output: web, pdf
-
-    - title: Configuring the control panel for lists
-      title_ru: Настройка панели управления для списков
-      url: /ef_olv-toolbar.html
-      output: web, pdf
-
-    - title: Search all attributes
-      title_ru: Поиск по всем атрибутам
-      url: /ef_search-attributes.html
+    - title: Setting up lists
+      title_ru: Настройка списков
+      url: /fe_setting-lists.html
       output: web, pdf
 
   - title: Groupedit
@@ -165,7 +140,7 @@ entries:
     folderitems:
     - title: Flexberry Groupedit
       title_ru: Flexberry Groupedit
-      url: /ef_groupedit.html
+      url: /fe_groupedit.html
       output: web, pdf
 
     - title: Editing detailes in a separate route

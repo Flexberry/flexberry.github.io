@@ -4,8 +4,8 @@ sidebar: flexberry-platform_sidebar
 keywords: Словарь, основные термины, определения
 summary: Определение основных продуктов, часто используемые универсальные термины
 toc: true
-permalink: ru/fp_glossary.html
-lang: ru
+permalink: en/fp_glossary.html
+lang: en
 ---
 
 | Употребляемое понятие | Значение |
