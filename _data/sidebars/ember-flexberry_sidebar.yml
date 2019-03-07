@@ -152,25 +152,6 @@ entries:
       url: /ef_groupedit-detail-in-route.html
       output: web, pdf
 
-  - title: Lookup
-    output: web, pdf
-
-    folderitems:
-    - title: Lookupes in the ember-flexberry application
-      title_ru: Лукапы в ember-flexberry приложении
-      url: /ef_lookup.html
-      output: web, pdf
-
-    - title: Adjusting the form to be lifted by the lookup
-      title_ru: Настройка поднимаемой по лукапу формы
-      url: /ef_modal-window-settings.html
-      output: web, pdf
-
-    - title: AAuto-completion in the lookup
-      title_ru: Автодополнение в лукапе
-      url: /ef_lookup-autocomplete.html
-      output: web, pdf
-
   - title: Services
     title_ru: Сервисы
     output: web, pdf
