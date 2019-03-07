@@ -1,7 +1,7 @@
 ---
 title: Flexberry Groupedit
 sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember
+keywords: Flexberry Ember, groupedit
 toc: true
 permalink: ru/fe_groupedit.html
 lang: ru
@@ -42,8 +42,6 @@ summary: Свойства, особенности реализации, наст
 * `rowClickable`
 * `rowClick`
 * `editOnSeparateRoute`
-
-Подробнее см. [статью](ef_groupedit-detail-in-route.html)).
 
 ## Особенности реализации
 
