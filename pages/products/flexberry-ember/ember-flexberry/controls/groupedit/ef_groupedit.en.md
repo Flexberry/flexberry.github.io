@@ -18,12 +18,12 @@ To add groupedit page, in the template you need to specify:
 
 ```hbs
 {% raw %}{{flexberry-groupedit
-	componentName="ordersGroupEdit"
-	class="attached"
-	modelProjection=modelProjection.attributes.orders
-	content=model.orders
-	readonly=readonly
-	orderable=false
+  componentName="ordersGroupEdit"
+  class="attached"
+  modelProjection=modelProjection.attributes.orders
+  content=model.orders
+  readonly=readonly
+  orderable=false
 }}{% endraw %}
 ``` 
 
@@ -60,10 +60,10 @@ If the flag `orderable` set the value to "true", requires to specify settings:
 
 ```hbs
 {% raw %}{{flexberry-groupedit
-	...
-	orderable=true
-	sortByColumn=(action "sortByColumn")
-	addColumnToSorting=(action "addColumnToSorting")
+  ...
+  orderable=true
+  sortByColumn=(action "sortByColumn")
+  addColumnToSorting=(action "addColumnToSorting")
 }}{% endraw %}
 ``` 
 

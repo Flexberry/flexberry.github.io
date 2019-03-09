@@ -18,31 +18,31 @@ To add a control to the page, you can use the [template](ef_template.html) (this
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
-	componentName = "ordersObjectListView"
-	modelController = this
-	modelName = "order"
-	modelProjection = modelProjection
-	content = model
+  componentName = "ordersObjectListView"
+  modelController = this
+  modelName = "order"
+  modelProjection = modelProjection
+  content = model
 
-	createNewButton = true
-	refreshButton = true
-	showDeleteButtonInRow = true
-    colsConfigButton = true
+  createNewButton = true
+  refreshButton = true
+  showDeleteButtonInRow = true
+  colsConfigButton = true
 
-	sorting = computedSorting
-	orderable = true
-	sortByColumn = (action "sortByColumn")
-	addColumnToSorting = (action "addColumnToSorting")
-	action = "rowClick"
+  sorting = computedSorting
+  orderable = true
+  sortByColumn = (action "sortByColumn")
+  addColumnToSorting = (action "addColumnToSorting")
+  action = "rowClick"
 
-	pages = pages
-	perPageValue = perPageValue
-	perPageValues = perPageValues
-	hasPreviousPage = hasPreviousPage
-	hasNextPage = hasNextPage
-	previousPage = (action "previousPage")
-	gotoPage = (action "gotoPage")
-	nextPage = (action "nextPage")
+  pages = pages
+  perPageValue = perPageValue
+  perPageValues = perPageValues
+  hasPreviousPage = hasPreviousPage
+  hasNextPage = hasNextPage
+  previousPage = (action "previousPage")
+  gotoPage = (action "gotoPage")
+  nextPage = (action "nextPage")
 }}{% endraw %}
 ``` 
 
@@ -53,7 +53,7 @@ If the form is used for more events in the template can be passed as the event n
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
-componentName="castomActionName"
+componentName="customActionName"
 }}{% endraw %}
 ``` 
 
