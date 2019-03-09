@@ -7,7 +7,7 @@ toc: false
 permalink: en/fd_landing_page.html 
 lang: en 
 autotranslated: true 
-hash: 4e4ac5bf0fed7b9cc2bff2654ab856484c7bf35c8deb97de8ef62103c343e5f3 
+hash: a294a103e2f244fd2c3903a76ed2d2fe9f6409b7f2b86335970f19d12f8030f1 
 --- 
 
 ## Flexberry Designer 
@@ -36,7 +36,7 @@ You can also add functionality by connecting [additional modules](fd_flexberry-p
 
 ### Design in Flexberry Designer 
 
-Design using tools Flexberry Designer implies the principle of Model-First, when all changes to the model are made in Flexberry Designer, and code changes are performed during the generation. Also implemented [a mechanism that allows programmers to write code that when regeneration is not lost](fd_code-generation.html) the so-called `[brackets programmer](fo_programmer-brackets.html)`. The Toolkit design allows you to easily amend the model to any member of the development team without fear to break something. 
+Design using tools Flexberry Designer implies the principle of Model-First, when all changes to the model are made in Flexberry Designer, and code changes are performed during the generation. Also implemented [a mechanism that allows programmers to write code that when regeneration is not lost](fd_code-generation.html), so-called, «[brackets programmer](fo_programmer-brackets.html)». The Toolkit design allows you to easily amend the model to any member of the development team without fear to break something. 
 
 The key concepts of object structure for systems developed in Flexberry Designer presented in [this article](fd_key-concepts.html). 
 

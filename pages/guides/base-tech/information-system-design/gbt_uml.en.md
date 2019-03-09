@@ -7,7 +7,7 @@ permalink: en/gbt_uml.html
 folder: guides/base-tech/information-system-design/ 
 lang: en 
 autotranslated: true 
-hash: 8c0a2eb7913900ddf1a7613634005cc0a7c4a2d6441a4ef6ba2bd04fb42ff501 
+hash: 3c6c22f3177bc8e868a17dcc48d5f553af1d23912a87e4ff1348449d7a5dff31 
 --- 
 
 ## Brief description 
@@ -70,14 +70,14 @@ books by the same author. Known surnames of the authors. Each book you know the 
 If the book was written by multiple authors, it is stored in a table of each of the authors. 
 
 ### Option # 4 
-The airline wants to get the answers to these questions about their aircraft: `Сколько seats in the Boeing 727?` 
+The airline wants to get the answers to these questions about their aircraft: «How many seats in a Boeing 727?» 
 How many engines? What is the average age of a Boeing 746 in our fleet? Who is the chief mechanic, responsible 
-for maintenance of aircraft number 1388? What company made this plane?` 
+for maintenance of aircraft number 1388? What company made this plane?» 
 
 ### Option # 5 
-The city administration N wants answers to the questions: `Какой the maximum amount of memory possible from the IBM PC, 
+The city administration N wants answers to the questions: «What is the maximum amount of memory possible from the IBM PC, 
 Macintosh II, Pentium I,II,III? One of the employees there in the office computer? One is a computer with a serial 
-number 4538842? What is its RAM and HDD?` 
+number 4538842? What is its RAM and HDD?» 
 
 ### Option # 6 
 Student has several objects, each of which known the name, the number of hours of study rooms 
@@ -102,7 +102,7 @@ The firm made a condition of working in her spouses head can only be a wife. In 
 for every employee a well-known salary that he receives and the total amount of transactions which he made. 
 
 ### Option # 9 
-The Bank `Товарищество honored программистов` opens for clients (individuals and legal entities) current and 
+The Bank «Partnership honored programmers» opens for clients (individuals and legal entities) current and 
 savings accounts, loans. The current account can be opened for use by multiple clients 
 savings - only one. A client can have multiple current and savings accounts. 
 
@@ -150,7 +150,7 @@ fixed quantity sold, sales price, quantity sold, the amount which warehouse the 
 the goods of one type is fixed once. 
 
 ### Option No. 17 
-Information system for an online store `Шины and drives мира`. 
+Information system for an online store «Tyres and wheels the world». 
 In store orders for available tires and wheels of various makes and models, when it is issued 
 order, including the date, quantity, item price, name and telephone number of the customer. 
 

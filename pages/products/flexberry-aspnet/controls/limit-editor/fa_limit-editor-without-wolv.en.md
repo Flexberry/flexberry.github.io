@@ -6,7 +6,7 @@ toc: true
 permalink: en/fa_limit-editor-without-wolv.html 
 lang: en 
 autotranslated: true 
-hash: 374a1329f1bc07fad4af710598c937e886f6b71d8bec06bef535d6fda7a74a21 
+hash: 2611d05d3a88b74a5bd56307d4671e098a90aa2ebf80bb641ede078d694d2d6d 
 --- 
 
 Edit restrictions without WOLVW can be useful in cases when you want to invoke the constraint editor, for example editing form. 
@@ -23,7 +23,7 @@ The button is called the constraint editor
 
 ![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv2.png) 
 
-After clicking on the button `Применить` text representation of the functions is updated in the text boxes of the form. 
+After clicking the button to Apply» «text representation of the functions is updated in the text boxes of the form. 
 
 ![](/images/pages/products/flexberry-aspnet/controls/limit-editor/limit-editor-without-wolv3.png) 
 

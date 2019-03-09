@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_use-case-diagram.html 
 lang: en 
 autotranslated: true 
-hash: 50bddb56655f4f1871bc565990dbc72b25b48e5d3a5b8c8e82c4b713d26d3111 
+hash: 4633955e12c2383bc79fbb7ec9150e1e8c7018c29c558f977a4e90283d7d3eb5 
 --- 
 
 ## a summary of the diagram of use cases 
@@ -33,7 +33,7 @@ In addition to the relations between an actor and a use case, communication can 
 
 ## build Order Usecase Diagram 
 
-1. To create a usecase diagram with the name `Основная функциональность` 
+1. To create a usecase diagram with the name of the «Main functionality» 
 2. To perform any of the active actors must interact with the future system. 
 3. To create an actor s. (E.g., Manager, Accountant, and Storekeeper). 
 4. To create precedents. For example, 

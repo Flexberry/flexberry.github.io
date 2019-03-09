@@ -1,5 +1,5 @@
 --- 
-title: Option 08 - `Управление projects Календарь` 
+title: Option 08 - «project Management - Calendar» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-08.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 11f4738f5a589820a820bfb37d26b19ed063b1479e1ff34f8ab46f043304c7e2 
+hash: 53d75659e3b2d1778ccbf72c6c8a3c3cd352375027fe6781265f818220a08eb9 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Управление projects Календарь` (module IC for project management). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «project Management - Calendar» (module IC for project management). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
@@ -63,7 +63,7 @@ Will be required for implementation:
 
 ### Job 
 
-With use of opportunities HTML, CSS, JS, jQuery mark up a form that will display a table with the days of a particular month (in the calendar). When you click on a table cell in the popup window (or next) you should see a form where you can select the type of day (standard exception), to define a set of time intervals and recurrence, if the selected type `исключение`. 
+With use of opportunities HTML, CSS, JS, jQuery mark up a form that will display a table with the days of a particular month (in the calendar). When you click on a table cell in the popup window (or next) you should see a form where you can select the type of day (standard exception), to define a set of time intervals and recurrence, if you have selected the» «exception. 
 
 Calendar view: 
 ![Calendar view](/images/pages/guides/tasks/full-stack/case8-task2-sample1.png) 
@@ -163,7 +163,7 @@ Will be required for implementation:
 
 ### Job 
 
-Implement editing of calendar days on a form with a table displaying the month and list days-exception (WOLV). Transition to must be made with the edit form of the calendar, which is the only field to fill in the calendar name and the button press which is only available after you save the form. On the edit form of calendar days should be able to add a day exception or by clicking on any day in the table, either by clicking the `Добавить` in the list of exception days. In addition, it should be possible to edit and delete existing days-exceptions to the table of the month and list days-no exceptions. 
+Implement editing of calendar days on a form with a table displaying the month and list days-exception (WOLV). Transition to must be made with the edit form of the calendar, which is the only field to fill in the calendar name and the button press which is only available after you save the form. On the edit form of calendar days should be able to add a day exception or by clicking on any day in the table, either by clicking the» «to Add to the list of days of exclusions. In addition, it should be possible to edit and delete existing days-exceptions to the table of the month and list days-no exceptions. 
 
 To implement a custom edit form standard weeks calendar on the form must be a list of days of the week (Monday to Sunday); when you click on a specific day you should see a list of time intervals of the day, which can be edited. 
 

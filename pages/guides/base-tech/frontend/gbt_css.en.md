@@ -7,17 +7,17 @@ permalink: en/gbt_css.html
 folder: guides/base-tech/frontend/ 
 lang: en 
 autotranslated: true 
-hash: 4da2052206d558d96261950900f1214d267d662c9f3bea829fe6ac4313eb29f9 
+hash: 06080d639aa3d83edf13f654b1cdaa4d99142d225fdcc01ac165d9e5ce5a4320 
 --- 
 ## Brief description 
 
-**CSS** (from the English. Cascading Style Sheets — `каскадные table стилей`) is the language of hierarchical rules (stylesheets) used to represent the appearance of a document written in HTML or [XML](https://developer.mozilla.org/ru/docs/XML) (including various XML languages like [SVG](https://developer.mozilla.org/ru/docs/SVG) and [XHTML](https://developer.mozilla.org/ru/docs/XHTML)). CSS describes how an element should be displayed on the screen, paper, voice, or other media. 
+**CSS** (from the English. Cascading Style Sheets — «cascading style sheets») is a language of hierarchical rules (stylesheets) used to represent the appearance of a document written in HTML or [XML](https://developer.mozilla.org/ru/docs/XML) (including various XML languages like [SVG](https://developer.mozilla.org/ru/docs/SVG) and [XHTML](https://developer.mozilla.org/ru/docs/XHTML)). CSS describes how an element should be displayed on the screen, paper, voice, or other media. 
 
-**CSS3** - this is the latest evolutionary change language CSS, which is aimed at extension of CSS 2.1. It brings the long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts such as the layout of multiple columns, `резиновый` design or grid layout. 
+**CSS3** - this is the latest evolutionary change language CSS, which is aimed at extension of CSS 2.1. It brings the long-awaited novelties, like rounded corners, shadows, gradients, transitions or animations, as well as new layouts such as the layout of multiple columns, rubber» «design or grid layout. 
 
-**LESS** - [preprocessor](https://ru.wikipedia.org/wiki/Препроцессор) of the CSS language allows you to use variables, functions, loops, and other technologies to simplify work with styles. `Препроцессор` in this case means that we are dealing with a dynamic style language, which is converted (compiled) into CSS. 
+**LESS** - [preprocessor](https://ru.wikipedia.org/wiki/Препроцессор) of the CSS language allows you to use variables, functions, loops, and other technologies to simplify work with styles.» «the Preprocessor in this case means that we are dealing with a dynamic style language, which is converted (compiled) into CSS. 
 
-**SASS** (from the English. Syntactically Awesome Stylesheets — `синтаксически gorgeous table стилей`) is another popular CSS preprocessor language. 
+**SASS** (from the English. Syntactically Awesome Stylesheets — «syntactically gorgeous table styles») is another popular CSS preprocessor language. 
 
 ## Links to materials for the study 
 

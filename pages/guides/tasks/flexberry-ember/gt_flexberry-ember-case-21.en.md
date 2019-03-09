@@ -1,18 +1,18 @@
 --- 
-title: Option 21 - `Горводоканал` 
+title: Option 21 -» «much 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-21.html 
 lang: en 
 autotranslated: true 
-hash: 5edd055ccce27cadda1459f49c9fcd23ad54dbcabfa77207598ac643082a3955 
+hash: ed98277bb00f3f9321435fabeebd3bd8ac2e034a9a5d924c8861c5c3f1d50af3 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Сменные of the task teams Горводоканала` (IP for the automation of accounting applications and perform work on it). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «shift task teams Gorvodocanal» (IP for the automation of accounting applications and perform work on it). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

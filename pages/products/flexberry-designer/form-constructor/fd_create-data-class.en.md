@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_create-data-class.html 
 lang: en 
 autotranslated: true 
-hash: 3b727f7d1a58cf8deec5b40af9a7bd5970a5ff2934959b679c342787bc8e4364 
+hash: 7a6044852d8dbc909455440003ad63a905220c2413c977a5e61f44bf8d130ba8 
 --- 
 
 ## Metadata class 
@@ -19,7 +19,7 @@ hash: 3b727f7d1a58cf8deec5b40af9a7bd5970a5ff2934959b679c342787bc8e4364
 * `Хранимый` – set is a check mark indicates that the data objects need to be stored in the database данных; 
 * `Хранилище` – the name of the corresponding table in the database for класса; 
 * `Пакет` - used to specify the folder in the file system, which will generate files for this класса; 
-* `Постфикс space имен` – `часть` additional namespaces to be added at the source code level приложения; 
+* `Постфикс space имен` – additional» «part of a namespace, which will be added at the source code level приложения; 
 * `Бизнес-сервер` – the corresponding business server associated with классом; 
 * `Представления` – list of submissions класса; 
 * `Типы хранилищ` – the list of databases for storage of data objects (used for when different classes need persistent data stored in different databases managed by different DBMS). 
@@ -28,13 +28,13 @@ hash: 3b727f7d1a58cf8deec5b40af9a7bd5970a5ff2934959b679c342787bc8e4364
 
 Create a data class is possible: 
 
-* the link `Дополнительно -> Классы` in the main menu of the application 
-* button `Добавить form редактирования` page Structure of the application 
+* the link «Advanced -> Classes» in the main menu of the application 
+* button «Add form edit» page Structure of the application 
 
 Edit the data class is possible: 
 
-* button `Перейти to the list классов` page Structure of the application 
-* the link `Дополнительно -> Классы` in the main menu of the application, you can open a form with a list of all classes of the designed system with which you can proceed to edit the metadata of the class by clicking on the corresponding line of the list. 
+* button «to go to the list of classes» page Structure of the application 
+* the link «Advanced -> Classes» in the main menu of the application, you can open a form with a list of all classes of the designed system with which you can proceed to edit the metadata of the class by clicking on the corresponding line of the list. 
 * the allocation of class data in the left part of the page Structure of the application and the edit button. 
 
 ### Edit views 

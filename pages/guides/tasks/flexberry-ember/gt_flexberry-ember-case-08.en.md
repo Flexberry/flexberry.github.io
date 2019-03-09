@@ -1,18 +1,18 @@
 --- 
-title: Option 8 - `Прогноз погоды` 
+title: Option 8 - «weather Forecast» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-08.html 
 lang: en 
 autotranslated: true 
-hash: 69c086729ba5228122bdb19fa270e4c746bfac10c4b538fb31149edcfab1a8ed 
+hash: 59a99d01dcf111293594561fb4972fa38880fea6670bf3317ba07dd9b1e3f9aa 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Прогноз погоды` (IP to conduct forecast the weather for different areas). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «weather Forecast» (IP to conduct forecast the weather for different areas). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_i-references-null-delete.html 
 lang: en 
 autotranslated: true 
-hash: 4a15b08d4469fc84a3b31f0d08f33ea9e8e28aa23801f0cbc0eac399d3f45353 
+hash: 30a2920bdffd6dcfeb25ecd7f258440791ff4ba514e998fab9b0214da9299bc1 
 --- 
 
 PstrfIReferencesNullDelete` interface enables cascading deletion of objects (deleting all the referencing objects are stamped with a NULL instead of a reference to a deleted object). 
@@ -18,7 +18,7 @@ Logic for zero reference is spelled out in [business server](fo_bs-wrapper.html)
 The classes that refer to the desired, as follows: 
 
 * Defined the directory where is the Assembly with the class, to which we are looking for. 
-* In the directory are selected, all assemblies whose name ends in `(Objects).dll`. 
+* In the directory are selected, all assemblies whose name ends with «(Objects).dll». 
 * In assemblies looking for types that inherit from [DataObject](fo_data-object.html). 
 * In the found types are defined by properties that contain a reference to the desired class or its ancestors. 
 

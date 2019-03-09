@@ -8,7 +8,7 @@ permalink: en/fw_limit-editor-params.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: d2a4f20d102c5f9eb48fb094d67cca22f0d77c3eb872495dc987d687dfc2155a 
+hash: 38553cee5761a0b96535d4bb3fc499530e5df5067b565131c24474883288c0c9 
 --- 
 
 ## Settings 
@@ -79,9 +79,9 @@ To set the limit parameter:
 * __If the extended form:__ specify as the value parameter.<br> 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/25.png) 
 The parameter type must match the type of operation in the constraint. 
-* Click `Сохранить and применить`. Form editing restrictions closed. Form opens `Параметры ограничения` where you need to enter parameter values.<br> 
+* Click «Save and apply». Form editing restrictions closed. Form opens «Parameters restrictions», where you enter the parameter values.<br> 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/limit-editor-form/26.png) 
-* Click `Применить`. The value of the parameters inserted in the restriction. The list is limited. 
+* Click to Apply» qmo. The value of the parameters inserted in the restriction. The list is limited. 
 
 
 

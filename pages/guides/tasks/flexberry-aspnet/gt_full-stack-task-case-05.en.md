@@ -1,5 +1,5 @@
 --- 
-title: Option 05 - `Электронный the equipment теплопотребления` 
+title: Option 05 - «Electronic equipment heat» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-05.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 7fd9aac3ebc59f29cfa461ff197a9f2db9028294be83c8a5cae5ec336a310946 
+hash: 32c594944d21df24f2d4f87b77b263ab77ee97e9c40fb8db2cb2d0588a3336be 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Электронный the equipment теплопотребления` (module IC for thermal inspectors). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «Electronic equipment heat» (module IC for thermal inspectors). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

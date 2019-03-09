@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_aspnet.html 
 lang: en 
 autotranslated: true 
-hash: b15951024bde20498f285bf76993f194624d3238c0d4f2c2ac30ce7ff1e7138b 
+hash: 4d83aeba4c8161f3fb76900a9c7e47c9fd0f97f7319b4cc8c5c790a7cd993189 
 --- 
 
 ## Brief description 
@@ -17,7 +17,7 @@ hash: b15951024bde20498f285bf76993f194624d3238c0d4f2c2ac30ce7ff1e7138b
 
 **Technology ASP.NET WebForms**! and it was made a bet by Microsoft. This technology allows you to bring the process of web application development to the development process of desktop applications. A developer has a set of controls, which includes standard elements such as text field, button, drop-down list, and specific controls, such as controls, validation, calendar, etc. Each item can be placed in a declarative form. Controls are set using the properties available to the developer for changes. To write the code logic uses event-driven model, close to developers of desktop applications. 
 
-**Technology ASP.NET WebForms** can be seen as a certain superstructure over the classical principle of web-programming `запрос-ответ`. This technology is an example of the concept of RAD (rapid application development — rapid application development), enabling developers to quickly and comfortably create a working app. 
+**Technology ASP.NET WebForms** can be seen as a certain superstructure over the classical principle of web-programming «request-reply». This technology is an example of the concept of RAD (rapid application development — rapid application development), enabling developers to quickly and comfortably create a working app. 
 
 **Platform ASP.NET MVC** is a framework for creating websites and web applications by implementing MVC design pattern. 
 The concept of a pattern (template) MVC (model - view - controller) involves splitting the application into three components: 

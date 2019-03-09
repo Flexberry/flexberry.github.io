@@ -7,12 +7,12 @@ toc: true
 permalink: en/fo_convert-type-property.html 
 lang: en 
 autotranslated: true 
-hash: 925634247b55820c3b11953932bff3ad4185ee94141ccfaa1e07c5c9fada3c3c 
+hash: d183f00be5b25b539507629708e20e4c08ba12c24d39ad7ab565aa63a663a72d 
 --- 
 
 Properties of data classes can have the different type as standard `.Net framework` (such as `System.Int32 — int` in `C#, System.String — string` in `C#`) and custom (any user, not `.Net`-type). 
 
-[Standard types](fo_flexberry-orm-types.html) is converted to the [data services](fo_data-service.html) to store types some predefined way, for example, `System.Int32` in `LONG, System.String` in `VARCHAR`. However, data services does `не знает`, how to evaluate the value of some custom type (in other words, what type the value in storage). Therefore, the value of the user-defined type must be the value of the standard type `.Net` and back, and with the value of a standard type data service already `разберется`. 
+[Standard types](fo_flexberry-orm-types.html) is converted to the [data services](fo_data-service.html) to store types some predefined way, for example, `System.Int32` in `LONG, System.String` in `VARCHAR`. However, data services does not knows» qmo, how to evaluate the value of some custom type (in other words, what type the value in storage). Therefore, the value of the user-defined type must be the value of the standard type `.Net` and back, and with the value of a standard type data service already» «will understand. 
 
 How exactly such a cast must be performed by a specific data service, specified user-defined type attribute [StoreInstancesInTypeAttribute](fd_data-types-properties.html). The details include: type of service data and a standard type to be cast. 
 

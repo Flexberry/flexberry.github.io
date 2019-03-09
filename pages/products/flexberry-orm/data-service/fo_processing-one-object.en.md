@@ -7,12 +7,12 @@ toc: true
 permalink: en/fo_processing-one-object.html 
 lang: en 
 autotranslated: true 
-hash: da429f0af62d12d8d2a73d9d2e00de56228af748c5ff4cd6cb0b28337f407ab1 
+hash: f5550af883009957bf051ba73654c6c82ded9fddd2e7beb1f51a760802e73590 
 --- 
 
 In order to update the data in the [repository for the data object](fo_storing-data-objects.html), you must complete the [service data](fo_data-service.html) `UpdateObject`. 
 
-To read object data from storage [key](fo_primary-keys-objects.html) you must call the service `LoadObject` data (the data object will be read in a [view](fd_view-definition.html) declared as `*`). 
+To read object data from storage [key](fo_primary-keys-objects.html) you must call the service `LoadObject` data (the data object will be read in a [view](fd_view-definition.html) declared as «*»). 
 
 The following is an example of when you created the data object is created in the repository, and then read [key](fo_primary-keys-objects.html). 
 
@@ -43,7 +43,7 @@ private static void LoadObject(DataObject dparam)
 }
 ``` 
 
-It is important to consider `.Net`-attribute [AutoAltered](fo_object-status.html)! If read a certain data object, modified its properties, and is an upgrade in the storage, if the data object is not `AutoAltered`, you should not expect from [data service](fo_data-service.html) updates the data in the warehouse without `ручной` setup the object status `Altered`. 
+It is important to consider `.Net`-attribute [AutoAltered](fo_object-status.html)! If read a certain data object, modified its properties, and is an upgrade in the storage, if the data object is not `AutoAltered`, you should not expect from [data service](fo_data-service.html) updates the data in the warehouse without manual» «setup the object status `Altered`. 
 
 
 

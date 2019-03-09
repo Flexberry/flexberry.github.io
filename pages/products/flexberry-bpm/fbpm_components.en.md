@@ -6,7 +6,7 @@ toc: false
 permalink: en/fbpm_components.html 
 lang: en 
 autotranslated: true 
-hash: b9aa65609e4bffd93847d49ae9fd7a98fd1415529af117a6179456838516c62c 
+hash: 738cf7ea6bad615521b837e6ef318ca341c7e2fdf67fc623fe85a97e6bfd58d0 
 --- 
 
 ## a Family of solutions based on jBPM 
@@ -20,7 +20,7 @@ Version jBoss workflow and solutions based on them are presented in the figure b
 ### jBPM 
 In addition to the basic kernel, providing support for business processes throughout the life cycle jBPM supports many additional features and tools: 
 * The Eclipse editor and the web editor to support the graphical creation of business processes (drag drop &). 
-* Support for plug `ручных` tasks and services based on WS-HumanTask for including tasks performed by employees. 
+* Support for plug-qmc «manual tasks and services based on WS-HumanTask for including tasks performed by employees. 
 * Management console supports the management of the process instances, task lists, and manage task form, reporting. 
 * Additional git repository of process models for versioning models and run the correct version of the process. 
 * Recording the history (for requests / monitoring / analysis). 

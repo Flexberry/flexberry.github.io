@@ -6,12 +6,12 @@ toc: true
 permalink: en/gpg_formulation-problem.html 
 lang: en 
 autotranslated: true 
-hash: 78d7f42628d148ca8e645c3a360d8c50d2f196b009f3881e9aae1f84a755f956 
+hash: b5c651bc09d93cab4622edc8ff7d22c4f9c744e1c56686f49293b4a69daa9c77 
 --- 
 
 ## characteristics of the automation object 
 
-Opisanie process will be made on the sample application `АСУ Склад`._ 
+Opisanie process will be made on the sample application «ACS Warehouse»._ 
 
 The company produces wholesale distribution of industrial products of wide assortment. Suppliers of the company are the factories located on the territory of the Russian Federation. Enterprise customers – businesses, firms and other organizations engaged in retail and wholesale sale. 
 
@@ -19,7 +19,7 @@ The company produces wholesale distribution of industrial products of wide assor
 
 The designed system must produce accounting and control the movement of products in the warehouse. To automate the process of invoicing, accounts and other documents. 
 
-## Description of the business process `Реализация products from склада` 
+## Description of the business process «sales of products from the warehouse» 
 
 A client who decides to place an order for the supply of products, appeals to the office of the company. Manager coordinates with the customer all the conditions for ordering. The Manager is obliged to check the stock of each of the stated products. 
 If all the customer's requested product items are in stock or client accepted alternatives, the order is passed to accounting, and the customer has to pay for it. 

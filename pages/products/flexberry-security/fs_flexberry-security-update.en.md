@@ -7,7 +7,7 @@ toc: true
 permalink: en/fs_flexberry_security_update.html 
 lang: en 
 autotranslated: true 
-hash: 2f745973854fb7c8cf24ccd5c9cfd35c3c572cef54f1683c92d140a5957994b8 
+hash: f1898b6efdcc485422e7870a73140ae63837cce1cb3e63bfd0b51d18d1ee2590 
 --- 
 
 ## Features new powers 
@@ -46,9 +46,9 @@ Almost all packages now sewn the transformation of the config, so in section `Un
 
 3. After the installation of the packages to change the settings, which is necessary, in the config file in the section `Unity`: 
 * Set the desired types of data services in mapping. 
-* To fix the value of the properties `CustomizationStringName` named in the registration data services: `dataServiceForSecurityManager`, `dataServiceForAuditAgentManageradapter` (this check is made every `на случай` - in case the audit authority for some reason does not transmit the data service is configured to work with classes of authority). In `CustomizationStringName` property specifies the connection string name from section `connectionStrings` configuration file. 
+* To fix the value of the properties `CustomizationStringName` named in the registration data services: `dataServiceForSecurityManager`, `dataServiceForAuditAgentManageradapter` (this registration is done «just in case» - in case the audit authority for some reason does not transmit the data service is configured to work with classes of authority). In `CustomizationStringName` property specifies the connection string name from section `connectionStrings` configuration file. 
 * If needed you can add salt to hash passwords. Now Sol is specified as a parameter in the constructor of hesher password (not the Manager agents as previously!). You can also change the type of hesher passwords from Sha1 to something else, if you are designing a new app and there is no database with the old hashes. 
-* To replace the membership, role and profile providers on the providers from `новых` powers: `FlexberryMembershipProvider`, `FlexberryRoleProvider` and `FlexberryProfileProvider`, namespace `NewPlatform.Flexberry.Security`, Assembly `NewPlatform.Flexberry.Security`. 
+* To replace the membership, role and profile providers on the providers from» «new powers: `FlexberryMembershipProvider`, `FlexberryRoleProvider` and `FlexberryProfileProvider`, namespace `NewPlatform.Flexberry.Security`, Assembly `NewPlatform.Flexberry.Security`. 
 * Clean interface resolution `ISecurityService` on `CheckingInSessionMode` (remove from config if any). 
 
 The main changes `Security`: 
@@ -56,7 +56,7 @@ The main changes `Security`:
 2. As for Manager powers, and of the agent Manager is implemented internal caching of objects of office – productivity with new powers should grow. This uses a new cache service from the new package (ICacheService interface and it is one technological implementation – MemoryCacheService based on the MemoryCache). 
 3. Hashing passwords were issued to the business server for the agents of authority, so hashing passwords at the application level (before you record the agent in the database) all you need to poubirat! 
 4. Clearing the cache from the Manager of the authority, and the agent Manager is also now in the business class servers of the powers during each operation of creating, modifying, or deleting classes of authority – thus ensuring the relevance of the data in the cache. If there is a software clearing your cache in the application layer during these operations, it can also poubirat. 
-5. When hashing passwords is now possible to specify the salt and choose the hashing algorithm of passwords (`MD5`, `SHA1`, `SHA256` or `пустой`). This case is configured in Unity by specifying the permissions interface `IPasswordHasher` (`Md5PasswordHasher`, `Sha1PasswordHasher`, `Sha256PasswordHasher` or `EmptyPasswordHasher`). Salt is indicated, if necessary, in the class constructor (the salt parameter of type string). 
+5. When hashing passwords is now possible to specify the salt and choose the hashing algorithm of passwords (`MD5`, `SHA1`, `SHA256` or empty» qmo). This case is configured in Unity by specifying the permissions interface `IPasswordHasher` (`Md5PasswordHasher`, `Sha1PasswordHasher`, `Sha256PasswordHasher` or `EmptyPasswordHasher`). Salt is indicated, if necessary, in the class constructor (the salt parameter of type string). 
 
 <b>note.</b> In the Manager of agents have not yet been implemented delete operation for users, roles, groups (to exclude agents from the roles and groups you can, this is implemented). 
 Configuration for new powers should now look like the following (when installing packages section of the config konfigurerede Unity approximately as in the following example): 

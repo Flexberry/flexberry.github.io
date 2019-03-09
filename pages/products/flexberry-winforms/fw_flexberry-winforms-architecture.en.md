@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_flexberry-winforms-architecture.html 
 lang: en 
 autotranslated: true 
-hash: 8e785bec9cc9979b3c80042762848cf3fabc9e060fbf1304abf85b1bc45763ad 
+hash: 41e9876aab11e917bdec3931e65b43cbc06023dcb3eb4a1e0c779ef81fc1eaf1 
 --- 
 
 Basic system and technology architecture includes architectural, logical and physical levels. 
@@ -46,7 +46,7 @@ Data services can serve as local sources (files) the database management system,
 * Business server that COM , the service data DBMS source. 
 * Business server for a Web Service, the data service DBMS source. 
 
-It may be `экзотические`, the type of the local file, but `Web` service. 
+It can be exotic «and», the type of the local file, but `Web` service. 
 
 Obviously, the use of different media gives different possibilities. Everything here is at the discretion of the developer. 
 
@@ -90,16 +90,16 @@ Business service is also used in cases when the data services repository (add, d
 When code is generated for each business server is created: 
 
 * Code business server definitions методов; 
-* The code of the stubs (`нужные` — determined by the developer in CASE the properties of the class); 
+* The code of the stubs (qmc «needs — determined by the developer in CASE the properties of the class); 
 
 ## Writer 
 
 There is the following problem when creating multi-level systems: there are separate data access, business logic, user interface. However, as (than) it is possible to combine these parts in a working system? In other words, how (where) should be recorded that under certain manipulation of the user interface forms displayed in sequence and when there is a call to the business server? 
 
-Of course, it is possible, as is commonly done, `жестко` to register calls directly in code, for example, in the user interface, however, it is a bad idea for the following reasons: 
+Of course, it is possible, as is commonly done,» «hard to register calls directly in code, for example, in the user interface, however, it is a bad idea for the following reasons: 
 
-* Parts of the system cease to be `частями`, because begin `знать` about each other, which can make it difficult to reuse. 
-* Modification of this unifying logic is time-consuming as it is in many places (`разбросана` in parts, assemblies, classes). 
+* Parts of the system cease to be parts of the» qmo, because» «start to know about each other, which can make it difficult to reuse. 
+* Modification of this unifying logic is time-consuming as it is in many places (qmc «scattered in parts, assemblies, classes). 
 * Modification of the unifying logic requires intervention in the source code (requires programmer). If the system can be modified from the outside, it is possible to give the flexibility to customize the logic of the finished pieces directly to the user.
 * Generally difficult to build the logic, which includes the operation execution process, which is highly branched, depending on any conditions. Or, run different logic depending on user permissions. 
 

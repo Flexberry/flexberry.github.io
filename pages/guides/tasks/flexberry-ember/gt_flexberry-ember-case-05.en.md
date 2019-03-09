@@ -1,18 +1,18 @@
 --- 
-title: Option 5 - `Платные парковки` 
+title: Option 5 - «Paid Parking» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-05.html 
 lang: en 
 autotranslated: true 
-hash: bb2194f11ed409bd5d2ed5d95b2478cdbdccdfde5b16342113467506dc095d12 
+hash: 24ab27b0dd8ff7951cfad9ed53d60a6ba258c4fa729405a1dc3c57a0d074472a 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Платные парковки` (IP for automation of accounting of parked cars). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «Paid Parking» (IP for automation of accounting of parked cars). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

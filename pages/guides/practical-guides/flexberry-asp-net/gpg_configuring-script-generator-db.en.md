@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_configuring-script-generator-db.html 
 lang: en 
 autotranslated: true 
-hash: 06f6e7239161ae73c7c9e225bc45811fe38636dbdd38826791b6b1f2508064be 
+hash: e8aff309fb92414cd5ab2a319fe8736993a25c82f35725ae8d669bd0e299eab5 
 --- 
 
 1. Go to the step: select in the left tree item `Стадия` the left mouse button. 
@@ -26,7 +26,7 @@ hash: 06f6e7239161ae73c7c9e225bc45811fe38636dbdd38826791b6b1f2508064be
 Connection string example: `SERVER=.\SQLEXPRESS;Trusted_connection=yes;DATABASE=sklad;` 
 __Note:__ if one of the options will be non-working, try the other. 
 
-4.Install in the field `Дополнительные настройки` `галочку` `БД powers in DB приложения`. 
+4.Install in the field `Дополнительные настройки` «tick» `БД powers in DB приложения`. 
 
 ![](/images/pages/guides/flexberry-aspnet/stage-edit.jpg) 
 

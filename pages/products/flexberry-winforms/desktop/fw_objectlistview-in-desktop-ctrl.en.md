@@ -8,7 +8,7 @@ permalink: en/fw_objectlistview-in-desktop-ctrl.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 819fbfe91b049edc7474a0c40e6029a60fa312d499505931a612a0dfce75bd81 
+hash: 8aade88ef23d0113d0aced36977a60423d186cf12f0008815b182c2daab7b6ca 
 --- 
 
 ## Picture on the desktop 
@@ -44,7 +44,7 @@ Consider the context menu invoked by right-clicking the mouse in free space.
 * __Tree display__ – hide/show the treeView (the property `treeView1.Visible`). 
 * __Show folders__ – display/displaying a folder in a listView. 
 * __Grouping the elements__ – to group/not group the items of the listView (property `ShowGroups`). 
-* __Columns__ – choose columns to display in the listView. PstrfНазвание` column is always displayed.
+* __Columns__ – choose columns to display in the listView. Column» «Name is always displayed.
 * __Always combine in__ – choose a column that will always be group items (property `AlwaysGroupByColumn`). 
 
 ## Grouping desktop items 
@@ -96,7 +96,7 @@ There may be situations where adding, modifying or deleting any objects in `List
 ## Work with the Column and Item 
 The component `ObjectListView` there are some features you configure and add columns and records. First of all you need to say a few words on the support class `ItemInListView`. 
 
-Class `ItemInListView` in fact links Items with Columns. `ObjectListView` itself creates a new item and assigns each field to the desired value. To make-to-one correspondence `поле in `ItemInListView` – column in `ObjectListView`` field names in `ItemInListView` match the value fields `AspectName` (type `string`) in their respective columns. 
+Class `ItemInListView` in fact links Items with Columns. `ObjectListView` itself creates a new item and assigns each field to the desired value. To be unambiguous compliance «field in `ItemInListView` – column in `ObjectListView`» field names in `ItemInListView` match the value fields `AspectName` (type `string`) in their respective columns. 
 The addition of a new item occurs according to the scheme: 
 * Created an instance of the class `ItemInListView` and filled its fields. 
 * Added it to `ObjectListView` method `AddObjects` for multiple item or `AddObject` for one item. 
@@ -167,7 +167,7 @@ Stores the following settings:
 * `ListViewAlwaysGroupByColumnname` string – name of column on which you want to always group elements ("“Caption”" title "“Description”" description, ""ItemType"", ""ParentFolder"" - folder). 
 * `ListViewColumnSort` string – the name of the column that sorts the listView items. 
 * PstrfListViewSortOrder` SortOrder – the sort order of the listView items order (descending, ascending). 
-* Display columns: `ColumnDescriptionVisible`, `ColumnItemTypeVisible` – type `ColumnParentFolderVisible` – folder. PstrfНазвание` column is always displayed. 
+* Display columns: `ColumnDescriptionVisible`, `ColumnItemTypeVisible` – type `ColumnParentFolderVisible` – folder. Column» «Name is always displayed. 
 The width of the columns: `ColumnCaptionWidth` - name, `ColumnDescriptionWidth`, `ColumnItemTypeWidth` - type `ColumnParentFolderWidth` – folder. 
 
 

@@ -8,7 +8,7 @@ permalink: en/fw_app-desktop.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 94392863ec4098825698ddecce2725dd58c24c0df262c6ef25487b40d0f429ea 
+hash: 699a551464e1cff30d6c416d096ea68a48c1b6719fb35f3dbd6a837b9dd03da2 
 --- 
 ## App 
 The application is designed to run a desktop system. The application contains form code desktop. Form desktop inherited from `ICSSoft.STORMNET.Windows.Forms.Desktop`. 
@@ -24,7 +24,7 @@ Desk consists of the following (external view example):
 
 In the left part is a tree structure of menu items. 
 
-In the right part — the list of so-called `стартеров` (Runner) for the menu item selected in the left part of the menu. 
+In the right part — the list of so-called starters» «(Runner) for the menu item selected in the left part of the menu. 
 
 The programmer can modify the structure, layout and appearance of the menu items, the composition and appearance of the starters. 
 
@@ -34,7 +34,7 @@ To indicate the composition of starters and placing the menu items, you should o
 
 #### Starters 
 Basic starter `ICSSoft.STORMNET.UI.Runner` has: 
-* The menu path, the levels are separated with a backslash `\`; 
+* The menu path, the levels are separated with a backslash «\»; 
 * Заголовок; 
 * A description of the. 
 

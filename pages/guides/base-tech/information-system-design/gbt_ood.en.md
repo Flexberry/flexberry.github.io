@@ -7,7 +7,7 @@ permalink: en/gbt_ood.html
 folder: guides/base-tech/information-system-design/ 
 lang: en 
 autotranslated: true 
-hash: ab03a415d4875c34ff452823f803025bb7275a5cc420eaded438d141d76771dd 
+hash: f95328a345d59cf6e5e1625e6932509ea7be26ece80035c6471d05b7b62bd16b 
 --- 
 
 ## Brief description 
@@ -15,11 +15,11 @@ hash: ab03a415d4875c34ff452823f803025bb7275a5cc420eaded438d141d76771dd
 **Object-oriented programming (OOP)** — programming methodology based on the representation of programs as a set of objects, each of which is an instance of a particular class, and classes form an inheritance hierarchy. 
 
 **Concepts** 
-* **Data abstraction** Abstraction means the release of significant information and the exclusion from consideration of irrelevant. In OOP only considered data abstraction (often simply called `абстракцией`), implying a set of important characteristics of the object available to the rest of the program. 
+* **Data abstraction** Abstraction means the release of significant information and the exclusion from consideration of irrelevant. In OOP only considered data abstraction (often simply called an abstraction» qmo), implying a set of important characteristics of the object available to the rest of the program. 
 * **Encapsulation** is a property of a system to combine data and methods operating on them in class. Some languages (e.g. , Java or Ruby) equate encapsulation with concealment, but others (Smalltalk, Eiffel, OCaml) distinguish between these concepts. 
 * **Inheritance** — the property of a system describing a new class based on already existing partially or fully saistosie functionality. The class from which you are inheriting, is called the base, parent or superclass. The new class is a descendant, heir, child, or derived class. 
 * **Polymorphism subtypes (polymorphism)** — the property of a system that allows you to use objects with the same interface without information about the type and internal structure of the object. Another kind of polymorphism -- parametric — in OOP is called generic programming. 
-* **Class** is a versatile, complex data type consisting of a thematically unified set of `полей` (more variables of elementary types) and `методов` (functions to work with these fields), i.e., it is a model of information entities with internal and external interfaces to perform operations on its content (field values). In particular, in the classes of widely used special units from one or more often two coupled techniques appropriate for the elementary operation to a specific field (interface assignment and reading the value) that simulate direct field access. 
+* **Class** is a versatile, complex data type consisting of a thematically unified set of» «fields (variables of a more elementary types) «and» methods (functions to work with these fields), i.e., it is a model of information entities with internal and external interfaces to perform operations on its content (field values). In particular, in the classes of widely used special units from one or more often two coupled techniques appropriate for the elementary operation to a specific field (interface assignment and reading the value) that simulate direct field access. 
 * **Object** - the entity in the address space of the computer system that appear when you create an instance of the class (for example, after the launch of the results of the compilation and linking of source code to execute). 
 
 ## Links to materials for the study 

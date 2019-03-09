@@ -7,22 +7,22 @@ permalink: en/gbt_javascript.html
 folder: guides/base-tech/frontend/ 
 lang: en 
 autotranslated: true 
-hash: a1db4629cce1e1820d7f4560361f553097189a99d9c57be3a152ceb149b720c1 
+hash: 0322dde7f8ac0bb1b88eca6317ebd679bc44f9975dfc20a160d62f6d97c0d413 
 --- 
 
 ## Brief description 
 
 **JavaScript** - this is a lightweight, interpreted, prototype-oriented language with dynamic typing and [first-class functions](https://ru.wikipedia.org/wiki/Функции_первого_класса). Is an implementation of the language standard [ECMAScript](https://ru.wikipedia.org/wiki/ECMAScript). The most widely used as scripting language of web pages, but also used as a General purpose language (including development on the server side) based on software platform [Node.js](https://ru.wikipedia.org/wiki/Node.js). 
 
-**DOM** (from the English. Document Object Model — `объектная model документа`) is platform-independent and language programmatic interface (API) that allows programs and scripts to access the contents of HTML, XHTML and XML documents, and modify the content, structure and execution of such documents. 
+**DOM** (from the English. Document Object Model — «document object model») is a platform-independent and language programmatic interface (API) that allows programs and scripts to access the contents of HTML, XHTML and XML documents, and modify the content, structure and execution of such documents. 
 
 **TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. This language is developed by the company Microsoft. 
 
 **CoffeeScript** is a programming language translated into JavaScript. Adds syntactic sugar in the spirit of Ruby, Python, Haskell and Erlang in order to improve code readability and reduce its size compared with similar code in JavaScript. 
 
-**AJAX** (from the English. Asynchronous Javascript and XML JavaScript and `асинхронный XML`) is an approach to building interactive user interfaces, and receiving/transferring data in web applications, which consists in `фоновом` data-sharing browser from a web server. As a result, when data is updated, the web page is not reloaded completely, and web applications become faster and more convenient. 
+**AJAX** (from the English. Asynchronous Javascript and XML — «asynchronous JavaScript and XML») is an approach to building interactive user interfaces, and receiving/transferring data in web applications, which consists in» «background data-sharing browser from a web server. As a result, when data is updated, the web page is not reloaded completely, and web applications become faster and more convenient. 
 
-**JSON** (from the English. JavaScript Object Notation — `объектная JavaScript` notation) is a text - based data interchange format based on JavaScript. JSON is a syntax for serializing objects, arrays, numbers, strings, Boolean values and null values. It is based on the JavaScript syntax, but still different from it: not every JavaScript code is JSON, and not everyone is JSON code in JavaScript. 
+**JSON** (from the English. JavaScript Object Notation — «object notation JavaScript») is a text - based data interchange format based on JavaScript. JSON is a syntax for serializing objects, arrays, numbers, strings, Boolean values and null values. It is based on the JavaScript syntax, but still different from it: not every JavaScript code is JSON, and not everyone is JSON code in JavaScript. 
 
 **Package Manager** - a set of software allowing to manage the process of install, uninstall, configure and upgrade various software components. Package managers save you from having to manually install/update additional libraries, their configuration and control dependencies between them. In the world of JavaScript development the most commonly used package Manager [npm](https://www.npmjs.com/), [bower](https://bower.io/) and [yarn](https://yarnpkg.com/lang/en/). 
 

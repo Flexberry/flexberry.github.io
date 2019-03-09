@@ -8,10 +8,10 @@ permalink: en/fw_uni-win-edit.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: e215a71fec38cf5a8b97a476aaf8942eec22e55f5c6adecb1e7da808463b475b 
+hash: 3e6811d51868b71f8e0775d064c1d35949186f8f71591e721f96ba64228564ac 
 --- 
 
-Of course, you can `вручную` to place controls and link them via `EditManager` with data objects, however, to facilitate this work, there is no universal form of editing, which automatically, according to the type of the object data, views, places the controls and provides a user interface for editing a data object (toolbar, status line). 
+Of course, you can» «manually place the controls and link them via `EditManager` with data objects, however, to facilitate this work, there is no universal form of editing, which automatically, according to the type of the object data, views, places the controls and provides a user interface for editing a data object (toolbar, status line). 
 
 In order to use the generic edit form, you must: 
 * To design a universal form for editing, passing in a constructor parameter representation, which must be edited: 
@@ -20,10 +20,10 @@ In order to use the generic edit form, you must:
 StormNetUI.IDpdEditForm editcont = new StormNetUI.UniWinEdit(new StormNet.View[]{viewforedit});
 ``` 
 
-* Set handlers for events (at least `CloseEvent` to be able to close the form and `SaveEvent` to `отловить` call user save). 
+* Set handlers for events (at least `CloseEvent` to be able to close the form and `SaveEvent` to catch» «call user save). 
 * Edit to invoke the method, passing the data object. 
 
-It should be understood that the form implements brand `голый` user interface, the whole reaction from the user is `наружу` forms through events, respectively, this management form is made through a set of methods. So when the user just closes the edit form, a message is sent to `CloseEvent`, but the form is not closed. To close the form, you must call `Close`. 
+It should be understood that the form implements completely naked» «user interface, the whole reaction from the user is transmitted to the outside» «forms through events, respectively, this management form is made through a set of methods. So when the user just closes the edit form, a message is sent to `CloseEvent`, but the form is not closed. To close the form, you must call `Close`. 
 
 
 

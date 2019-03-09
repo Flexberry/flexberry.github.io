@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_key-concepts.html 
 lang: en 
 autotranslated: true 
-hash: 61f692a67e8bd8ceed5ef503d1f6d7ac110fbfa1997a61fddd7bd5393c705ce3 
+hash: 96a3c07205a5b3331825ff9f3d800335d4f35815a0aa78aa23b71dd6d834876f 
 --- 
 
 ## Key concepts 
@@ -65,7 +65,7 @@ In `Flexberry Designer` the following predefined stereotypes:
 
 ### non-Obvious restrictions of the object structure (what not to do) 
 
-Notation `UML` describes the purpose of their elements but not declared `правильность` their use. 
+Notation `UML` describes the purpose of its elements, but does not declare the correctness of the» «their use. 
 
 Therefore, we consider the main non-obvious restriction that is not described notation, cause difficulty in understanding, impossible in implementation, __to avoid__.
 

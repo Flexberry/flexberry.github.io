@@ -1,5 +1,5 @@
 --- 
-title: Option 13 - `Агрегатор контактов` 
+title: Option 13 - «Aggregator contacts» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-13.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 7038727473a665b749aa7bbc7fc12e409e89cc1dba793022d9565a3275a7681c 
+hash: 6fac101deb397f84dff48b39eafdd1ed0faed65ea9ddec90ee050a55ba6a8df0 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Агрегатор контактов`. 
+In the framework of the practical part of the course you will have developed end-to-end example: application «Aggregator contacts». 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
 ## General description of the subject area 

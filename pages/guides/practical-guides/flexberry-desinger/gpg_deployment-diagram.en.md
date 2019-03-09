@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_deployment-diagram.html 
 lang: en 
 autotranslated: true 
-hash: 3e08bc3ebc7d423051cd12119b01895e65955215452e0ae63e058314fa3fd920 
+hash: 972ab42374d2b2ba70d50e683b475f39f59fdee2187f16aae259c45fa1afdec5 
 --- 
 
 [Chart deployment](fd_deployment-diagram.html) is a physical diagram in the UML. It displays the physical relationship between hardware and software components of the designed system. 
@@ -23,7 +23,7 @@ hash: 3e08bc3ebc7d423051cd12119b01895e65955215452e0ae63e058314fa3fd920
 ## Go 
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [Build Statecharts](gpg_statechart-diagram.html) 
-* [Practical guide `Делай as я`](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
+* [Practical guide «as I Do»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
 
 
 

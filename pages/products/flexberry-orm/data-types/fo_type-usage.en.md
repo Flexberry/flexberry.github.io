@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_type-usage.html 
 lang: en 
 autotranslated: true 
-hash: 299cf14e99bb3b91c2290167f11e6f3ca2ee8b1193001bf950b5d39a0de9c3fa 
+hash: 30bade3946b65b6e59777ab7ca779f6870aeeef05a04ee82e7df651a77278fd6 
 --- 
 
 If the [master Association](fd_master-association.html) has [the heirs](fd_inheritance.html) on the side of the master can be any object type from the inheritance hierarchy. However, there are conditions under which such a situation you want to exclude. To do this, in [Flexberry ORM] implemented `TypeUsage`-an attribute that limits the list of types in the inheritance hierarchy that is covered by this communication. 
@@ -18,7 +18,7 @@ Built-in `Flexberry Platform` [data services](fo_data-service.html) ([SQLDataSer
 
 If you specify `TypeUsage` [artisan properties](fd_master-association.html), the property [in the data structure match](fo_storing-data-objects.html) the foreign keys in the tables corresponding to the specified `TypeUsage` classes. 
 
-Names the foreign keys are: `<Karolinenstr>_M<ПорядкНомерВTypeUsage>.`ПорядкНомерВTypeUsage`` — starts at 0. 
+Names the foreign keys are: `<Karolinenstr>_M<ПорядкНомерВTypeUsage>.«ПорядкНомерВTypeUsage»` — starts at 0. 
 
 Thus, the above example is a table that has two foreign key names `M_m0` (corresponding to M1) and `M_m1` (corresponding to M2). 
 

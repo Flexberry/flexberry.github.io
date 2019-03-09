@@ -1,5 +1,5 @@
 --- 
-title: Option 02 - `Заявления абитуриентов` 
+title: Option 02 - «Statements of applicants» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-02.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 1ce1ae384e34fbe82ee7f9c93a0df45895d36004b4fb34269eb834f93fd3f98b 
+hash: c59474d65e6fcdce0a8aff316551706b505617c07641db72a155b8131c211739 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Заявления абитуриентов` (module on IP for universities). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «Statements of applicants» (module on IP for universities). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
@@ -85,7 +85,7 @@ Prepare SQL scripts to obtain the following information:
 1. Display the TOP 10 areas by number of applicants 
 2. Bring specialty, which filed the largest number of applications 
 3. List the areas and the average number of applications over the years 
-4. List of specialties and their `рейтинг` (based on priority) 
+4. List of specialties and their» «rating (based on priority) 
 5. Bring the average age of University entrants on specialities 
 
 ### to deliver results 
@@ -137,7 +137,7 @@ Will be required for implementation:
 In generated using Flexberry Designer application is required to implement the following business logic. 
 
 1. A new application must have a filing date within the admission campaign from may to July inclusive (implement validation at the business server). 
-2. Number when creating a new application must be placed automatically. Format: reduction of type zajavlenie (`ВО`, `СПО` or `Асп`), dash, sequence number of the statement. 
+2. Number when creating a new application must be placed automatically. Format: reduction of type zajavlenie («IN», and «SPO» or» «ASP), dash, sequence number of the statement. 
 3. When saving statements to verify that he has no priorities with the same numbers. There shouldn't be gaps in the numbers of priorities statement (numbers must be consecutive from 1 to n). 
 4. To add a stored field Panoramirovanie in the essence of the Territory. Be recalculated after this field when you save the site. 
 5. Add Nechranice field name in the entity Person. The value of the field to collect the values of the fields Surname, Name, Patronymic. 

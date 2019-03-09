@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_i-references-cascade-delete.html 
 lang: en 
 autotranslated: true 
-hash: df0037748546474a8ab865145242f8d01ee8bcef821f4d27f62df7422be85f7b 
+hash: d528a12128596a09cc949cfca525ee05e880b1462b541b58fd2c8f14ca18a739 
 --- 
 
 ## IReferencesCascadeDelete 
@@ -20,7 +20,7 @@ The logic for cascading delete is spelled out in [business server](fo_bs-wrapper
 The classes that refer to the desired, as follows: 
 
 1. Defines the directory where is the Assembly with the class, to which we are looking for. 
-2. In the directory are selected, all assemblies whose name ends in `(Objects).dll`. 
+2. In the directory are selected, all assemblies whose name ends with «(Objects).dll». 
 3. In assemblies looking for types that inherit from [DataObject](fo_data-object.html). 
 4. In the found types are defined by properties that contain a reference to the desired class or its ancestors. 
 

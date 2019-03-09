@@ -6,11 +6,11 @@ toc: true
 permalink: en/gbt_sql.html 
 lang: en 
 autotranslated: true 
-hash: 1d6b73a01cd11924a8a1773e16504cf94e5cb44e4aaf80377bfed74a809d40ce 
+hash: 3aaea0262662c47b728f188a328e524837f7040c8c17105e4fc6f3c001accd6a 
 --- 
 ## Brief description 
 
-**Structured query language (SQL — structured `язык запросов`)** formal non-procedural programming language used to create, modify and manage data in an arbitrary relational database managed by appropriate database management system (DBMS). SQL is based on tuple calculus. 
+**SQL (structured query language — «structured query language»)** formal non-procedural programming language used to create, modify and manage data in an arbitrary relational database managed by appropriate database management system (DBMS). SQL is based on tuple calculus. 
 
 **SQL** is primarily an information-logical language designed to describe, modify, and retrieve data stored in relational databases. SQL can be called a programming language, while it is not Turing-complete, but the language standard specification, SQL/PSM provides the possibility of its procedural extensions. 
 

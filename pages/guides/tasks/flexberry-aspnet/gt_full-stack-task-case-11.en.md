@@ -1,5 +1,5 @@
 --- 
-title: Option 11 - `Среднее professional образование` 
+title: Option 11 - «vocational Secondary education» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-11.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 2610c706560c16ddf1b2ab51f6f0087cfa80ddd5be0d33c193103666b532e8c9 
+hash: f960eaa9c1096c06c0f772fdeb394d24d8db6d9a8c4eaa2d1896b596effd4820 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Среднее professional образование`. 
+In the framework of the practical part of the course you will have developed end-to-end example: application «vocational Secondary education». 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
@@ -37,7 +37,7 @@ Will be required for implementation:
 
 ### Job. Part 1. 
 
-You want to implement the algorithm for computing the value of the annual visits for the specified student. Each group has an integer property `стоимость annual посещения`, which is used to calculate the value. The cost depends on the use of the hostel (the fixed cost of the hostel per month). Students with a preferential category have a 50% discount. 
+You want to implement the algorithm for computing the value of the annual visits for the specified student. Each group has an integer property «annual visit to», which is used to calculate the value. The cost depends on the use of the hostel (the fixed cost of the hostel per month). Students with a preferential category have a 50% discount. 
 
 The implementation should be done .net-libraries and to prepare unit tests for it, to show the percentage of code coverage from unit tests (the more the better). 
 

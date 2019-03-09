@@ -6,7 +6,7 @@ toc: true
 permalink: en/efs_flexberry-audit-components.html 
 lang: en 
 autotranslated: true 
-hash: f72cbd9e2b2b283ee53835c27d9f99571f4b0e8e42a10ad6058d52162d8eb543 
+hash: 3f5e5d666f018b38f0302a663a07d126c5e5f355837b71a3c61f8b04cace1829 
 --- 
 
 # AuditService 
@@ -20,7 +20,7 @@ When performing potentially audited operations [service data](fo_sql-data-servic
 * scans the existing configuration audit and decides on the need to implement audit records. 
 * if auditing is required, then an appropriate message is either `IAudit`, if there is no separate audit service or `AuditWinService` (waiting for a response will depend on the settings of the audit). 
 
-The class implements the interface `AuditService` `IAuditService`, and also has a static field of type `IAuditService` where will be recorded the instance of a class `AuditService` (this will allow to work both with a static class through the reference `AuditService.CurrentAuditService`). All calls are made via an interface (if there is a need, the class `Audit` easy to replace). 
+The class implements the interface `AuditService` `IAuditService`, and also has a static field of type `IAuditService` where will be recorded the instance of a class `AuditService` (this will allow to work both with a static class through the reference «AuditService.CurrentAuditService»). All calls are made via an interface (if there is a need, the class `Audit` easy to replace). 
 
 # IAudit 
 

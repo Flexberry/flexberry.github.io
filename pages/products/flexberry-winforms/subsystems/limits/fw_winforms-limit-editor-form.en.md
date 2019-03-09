@@ -1,5 +1,5 @@
 --- 
-title: Form `Редактор ограничений` (WIN) 
+title: Form «Editor of the limitations of» (WIN) 
 sidebar: flexberry-winforms_sidebar 
 keywords: Flexberry Winforms, Restrictions 
 summary: description of the appearance of the form editor restrictions from the user's point of view 
@@ -8,7 +8,7 @@ permalink: en/fw_winforms-limit-editor-form.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: 299b958ebfbae0027554fdaddd455eef2229e409163bd131de87d6368c1f6218 
+hash: cb02cd4aec8e4fc438e2dcb5662c2b383c61229e82b427ea7b33481a1ede79d2 
 --- 
 
 Editor form constraints as follows: 

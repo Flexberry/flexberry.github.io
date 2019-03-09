@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_reading-several-types-objects.html 
 lang: en 
 autotranslated: true 
-hash: e89db1c209a982921a0159b02bd312032503daccbbb9d866337c36981ee68006 
+hash: 2efa48c54a2f879324cb6a1d56202ea773146b2905a56c6d6e0e6b7239166be1 
 --- 
 
 To read many objects, you need (at least) to make settings [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
@@ -19,7 +19,7 @@ Thus, if there is a situation:
 
 ![](/images/pages/products/flexberry-orm/additional-features/primer-8.jpg) 
 
-and you must read all instances of the CDDD and CDDA in performance `Главное` for a Resource, then `LoadingCustomizationStruct` parameterized in the following way: 
+and you must read all instances of the CDDD and the CDDA in the presentation of the Main» «for life, then `LoadingCustomizationStruct` parameterized in the following way: 
 
 ```csharp
 lcs = new LoadingCustomizationStruct(null);			

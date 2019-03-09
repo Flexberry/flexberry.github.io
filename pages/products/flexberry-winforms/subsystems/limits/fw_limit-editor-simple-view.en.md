@@ -8,7 +8,7 @@ permalink: en/fw_limit-editor-simple-view.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: f9c1953de3ff12fdb4ee0e935a946d6dd99f5baf90d17e2242e23e8ad9fc95ca 
+hash: 6c613c56be849777de8f5cf162dc2f83fd1089ecb44fb719790c9dc4ff5065bb 
 --- 
 
 A simplified view of the editor allows you to set limits limits of simple functions, combined using "And". You can set the "OR" operation, but only for the same attribute: for this purpose it is necessary to impose some simple constraints on a single attribute - they will be combined via "OR". 
@@ -27,24 +27,24 @@ This same restriction in standard form:
 
 __To create a limit, you need to:__ 
 
-* In the first column, double-click in the cell. A form will appear `Выбор поля`. 
-* Select the fields for which you will need to create the constraint. If necessary, you can deselect the field by closing the window `Выбор поля`.<br> 
+* In the first column, double-click in the cell. A form will appear «Selection field». 
+* Select the fields for which you will need to create the constraint. If necessary, you can deselect the field by closing the window «Selection field».<br> 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/17.png) 
-* In the window "field Selection" click `Вернуть значение`. In the window `Редактирование ограничения` automatically added the row with the specified fields. By default, the restriction will be installed `=`:><br> 
+* In the window "field Selection" click «to Return the value of the». In the Edit window «limitations of» is automatically added to the row with the specified fields. By default, the restriction will be installed «=»:><br> 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/18.png) <br> 
 If necessary, you can remove the line with the limitation: 
-highlight this line, click `Удалить строку`. The line will be removed from the list. 
+highlight the line, press «Delete row». The line will be removed from the list. 
 * Select from the list the desired View restriction. 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/19.png) 
 Depending on the kind of restrictions can appear/become unavailable fields for entering values. 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/20.png) 
 Yellow highlighted fields are not available for editing by form of restriction. White – editable, mandatory. 
-* Click on the Value field. In the right row button will appear `...`. 
-* Click `...`. 
+* Click on the Value field. In the line appears on the right button ...» qmo. 
+* Press the button ...» qmo. 
 ![](/images/pages/products/flexberry-winforms/subsystems/limits/21.png) 
 * Select the value against which the restriction is created. 
-* Click `Вернуть значение`. 
-* After the constraint editing for all fields is finished, press the button `Сохранить and применить`. The restriction will remain and will be applied. 
+* Click «to Return the value of the». 
+* After the constraint editing for all fields is finished, press «Save and apply». The restriction will remain and will be applied. 
 
 
 

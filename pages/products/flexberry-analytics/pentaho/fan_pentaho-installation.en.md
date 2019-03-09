@@ -1,16 +1,16 @@
 --- 
-title: Install and launch `Flexberry Analytics` in Docker 
+title: Install and launch» «Flexberry Analytics at Docker 
 keywords: Pentaho, installation, Docker, manual 
 sidebar: flexberry-analytics_sidebar 
 toc: false 
 permalink: en/fan_pentaho-installation.html 
 lang: en 
 autotranslated: true 
-hash: e8762fa3c0c367548b597ff9aeac5f5fdf0e88805b67d181e36dcf5ec54456b4 
+hash: 47aabd70f95dd66febacf9b0b113878cc98572b5bba635a1a92e0b4049ee6c9d 
 summary: 
 --- 
 
-Service `Flexberry Analytics` provides server `Pentaho`, oformlennye [Docker image](https://hub.docker.com/r/flexberry/pentaho/). 
+Service Flexberry» «Analytics provides server `Pentaho`, oformlennye [Docker image](https://hub.docker.com/r/flexberry/pentaho/). 
 
 To run the image `Pentaho` required to be installed ON a [Docker](https://docs.docker.com). For Windows users there is a corresponding version of the [Docker for Windows](https://docs.docker.com/docker-for-windows/install/). 
 

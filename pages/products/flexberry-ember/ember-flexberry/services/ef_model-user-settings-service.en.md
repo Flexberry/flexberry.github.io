@@ -6,7 +6,7 @@ toc: true
 permalink: en/ef_model-user-settings-service.html 
 lang: en 
 autotranslated: true 
-hash: ad7dff30c911c3ff51fc7979810061d72483cb9bc00cce860bb01fe2505b0129 
+hash: 6175ae1dd9d0c672f2dce276be132ff81ce038fe06af2fa3fff38aca73148429 
 summary: the description of the service user settings 
 --- 
 
@@ -151,58 +151,58 @@ developerUserSettings: ...
 In standard customizing, format properties `developerUserSettings` 
 
 ```javascript
-developerUserSettings: { `componentName`: { } }
+developerUserSettings: { «componentName»: { } }
 ``` 
 
-Where `componentName` - name components specified in `flexberry-objectlistview`. 
+Where» «componentName - component name specified in `flexberry-objectlistview`. 
 For the router belonging to the subclass of router `routes/list-form`, a valid description display only one component. 
 For other classes of routers in the later description of initial configuration of several components. 
 
-If a developer has to predetermine the order and visibility of columns, direction and sort order, their width, it can describe properties `componentName`: 
+If a developer has to predetermine the order and visibility of columns, direction and sort order, their width, it can describe properties of» «componentName: 
 
 * `colsOrder` - the order and visibility of columns. Format: 
 
 ```javascript
-[{ propName: `columnName`, hide: false}, { propName: `columnName`, hide: true}, ...]
+[{ propName: «columnName», hide: false}, { propName: «columnName», hide: true}, ...]
 ``` 
 
 * `sorting` - direction and sort order. Format: 
 
 ```javascript
-[{ propName: `columnName`, direction: "asc",  propName: `columnName`, direction: "desc", ...]
+[{ propName: «columnName», direction: "asc",  propName: «columnName», direction: "desc", ...]
 ``` 
 
-* `columnWidths` - width columns. Using the properties `fixed` you can prevent changing the width of individual columns. If you want to forbid to resize the column or column tools menu, as `columnName` need to specify `OlvRowToolbar` or `OlvRowMenu` respectively. Formats: 
+* `columnWidths` - width columns. Using the properties `fixed` you can prevent changing the width of individual columns. If you want to forbid to resize the column or column tools menu, the» «columnName need to specify `OlvRowToolbar` or `OlvRowMenu` respectively. Formats: 
 
 ```javascript
-[{ propName: `columnName`, width: ... }, { propName: `columnName`, width: ... }, ...]
+[{ propName: «columnName», width: ... }, { propName: «columnName», width: ... }, ...]
 
-[{ propName: `columnName`, fixed: true }, { propName: `columnName`, fixed: false }, ...]
+[{ propName: «columnName», fixed: true }, { propName: «columnName», fixed: false }, ...]
 
-[{ propName: `columnName`, width: ..., fixed: true }, { propName: `columnName`, width: ..., fixed: false }, ...]
+[{ propName: «columnName», width: ..., fixed: true }, { propName: «columnName», width: ..., fixed: false }, ...]
 ``` 
 
-`componentName` may include any set of specified properties. 
+componentName» «may include any set of specified properties. 
 
 To simplify initialization properties `developerUserSettings` the developer can obtain the current settings by selecting the "Show settings" from the drop-down menu (see above). 
-There are two format description properties `componentName`: 
+There are two format description properties componentName» qmo: 
 
 
 * As an object: 
 
 ```javascript
-`componentName`: { colsOrder: [ ... ],  sorting: [ ... ] ,  columnWidths: ... }
+«componentName»: { colsOrder: [ ... ],  sorting: [ ... ] ,  columnWidths: ... }
 ``` 
 
 * As a string: 
 
 ```javascript
-`componentName`: `{  colsOrder: [ ... ],  sorting: [ ... ],  columnWidths: [ ... ]}`
+«componentName»: `{  colsOrder: [ ... ],  sorting: [ ... ],  columnWidths: [ ... ]}`
 ``` 
 
 The first option is preferable if you manually set the properties `colsOrder`, `sorting`, `columnWidth`. 
 
-When you copy settings from "Show setup" string constants are enclosed in double quotation marks ("). Because the current standard requires JSCS with the description of object of framing of the string constants in single quotation marks ('), Copy/Paste more convenient the second option descriptions properties `componentName` in a row. 
+When you copy settings from "Show setup" string constants are enclosed in double quotation marks ("). Because the current standard requires JSCS with the description of object of framing of the string constants in single quotation marks ('), Copy/Paste more convenient the second option descriptions properties» «componentName as a string. 
 
 ## Sort and specify the column widths displayed in the interface table 
 
@@ -210,7 +210,7 @@ The user has the option to set the sort order and column widths directly in the 
 
 When you click, hold the left mouse button on the column boundary and drag the column sizes will change dynamically. Change sizes when the service save the user's preferences are recorded in the database. 
 
-When you click the left mouse button on the column header the current collation reset the current sort order of the selected column will change cyclically in the order: increase, decrease, no sorting.
+When you click the left mouse button on the column header the current collation reset the current sort order of the selected column will change cyclically in the order: increase, decrease, no sorting. 
 
 When you click the left mouse button on the column header with the Ctrl withheld the current collation is not sbrasivaya. Adds the specified sorting for the selected column. 
 

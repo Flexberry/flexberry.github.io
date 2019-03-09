@@ -1,18 +1,18 @@
 --- 
-title: Option 6 - `Пропускная system in офисе` 
+title: Option 6 - «permit system in the office» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
 permalink: en/gt_flexberry-ember-case-06.html 
 lang: en 
 autotranslated: true 
-hash: 73dab87aad46a914af82bed01e0656bcea8d0386f3603f263a308bc3aa229cfd 
+hash: 408ae37dd050c4bdeae53c2d70ef6de74bb55ffe173685cb496449c1e9741758 
 summary: the Variant end-to-end specifications for the design and development using the framework Flexberry Ember 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Пропускная system in офисе` (is to automate the account of movement of employees). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «permit system in the office» (is to automate the account of movement of employees). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

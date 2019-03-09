@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_preparatory-stage.html 
 lang: en 
 autotranslated: true 
-hash: dd304180de1401d9d905a81291f87bf3ee334e15e7964b81e2b1765488c4ac5a 
+hash: 6677ad459aeca0e0555e754e3b4129d2e55a43ecb98a0110b15e7e32e739b719 
 --- 
 
 {% include important.html content="the following algorithm for obtaining the web application is available after you have [a Practical guide for the creation of UML diagrams](gpg_practical-guides-uml.html)." %} 
@@ -25,7 +25,7 @@ To the module code generation could generate the application, you need to create
 
 To facilitate this process, [Flexberry Designer](fd_landing_page.html) [rapid prototyping](fd_using-quick-prototyping.html), which performs these actions in a certain way. This results in a working application that can be used as a prototype when working with the customer in the initial stages of the project. 
 
-`Главное advantage of this способа` prototype almost `мгновенно` obtained without significant expenditure of time. Subsequently created with the help of prototypical objects can be modified, thereby bringing the system to the desired functionality. 
+`Главное advantage of this способа` prototype obtained almost instantly» qmo, without noticeable downtime. Subsequently created with the help of prototypical objects can be modified, thereby bringing the system to the desired functionality. 
 
 ## prerequisites for generating a web application 
 
@@ -58,7 +58,7 @@ __Note:__
 
 ## Go 
 
-* [Practical guide `Делай as я`](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
+* [Practical guide «as I Do»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
 * [Configure script generator for database](gpg_configuring-script-generator-db.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
 
 

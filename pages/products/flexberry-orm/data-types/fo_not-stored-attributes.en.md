@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_not-stored-attributes.html 
 lang: en 
 autotranslated: true 
-hash: f0e65d45d8ad40f21a2936cde32f8f53ea99315eb112c77b5a2eb12f19998bff 
+hash: aaf5fd86302589269a0224ac4af80f30ab9ca85bf116e52851be328926fd11dc 
 --- 
 
 ## Nechranice property 
@@ -23,7 +23,7 @@ The developer should follow closely that in [view](fd_view-definition.html), whi
 
 ### service Behavior data using a calculated field 
 
-Usually [data services](fo_data-service.html) with the fix lists not using data objects when the return data as strings. This is done to improve performance, as the savings of computational resources for creating data objects is very high. However, the expression for the computable account of the attribute is specified directly in a property of the data object, so when the data object contains calculated attributes, data services, and in doing so creates a data object, properties oznacavanja under [view](fd_view-definition.html), then the conversion to a string (because the data service will request the value of a calculated property, runs his account). To avoid account through the data object and, accordingly, to expedite the work of the data services when you are uploading a list, the attribute is applied `DataServiceExpression` which the property is assigned to the service data expression `понятному` this data service. Thus, if the attribute `DataServiceExpression` specified, the data object is not created, and the account of computable attribute `перекладывается` on the service data according to an expression. 
+Usually [data services](fo_data-service.html) with the fix lists not using data objects when the return data as strings. This is done to improve performance, as the savings of computational resources for creating data objects is very high. However, the expression for the computable account of the attribute is specified directly in a property of the data object, so when the data object contains calculated attributes, data services, and in doing so creates a data object, properties oznacavanja under [view](fd_view-definition.html), then the conversion to a string (because the data service will request the value of a calculated property, runs his account). To avoid account through the data object and, accordingly, to expedite the work of the data services when you are uploading a list, the attribute is applied `DataServiceExpression` which the property is assigned to the service data expression» «clear this data service. Thus, if the attribute `DataServiceExpression` specified, the data object is not created, and the account of computable attribute» «is shifted to the service data according to an expression. 
 
 {% include warning.html content="create expression in DSE does not negate that it should be duplicated to GET." %} 
 

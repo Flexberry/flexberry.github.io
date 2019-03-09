@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_detail-associations-properties.html 
 lang: en 
 autotranslated: true 
-hash: 1e9ffaa89e9a672f1bfdfa7792278b89a6fdea00611d1c30b196f6a6627316f7 
+hash: 6431902b3a62ccac4c8d3fd08bc8882dff73cc324a84cd436600ec2643428fcd 
 --- 
 
 According to [base article](fd_key-concepts.html) metalowymi compositions are similar: 
@@ -98,7 +98,7 @@ In DDL table definition for class detail foreign keys are generated for each fou
 ```csharp
 <AggregatorStorage>_M<ПорядкНомерВTypeUsage>
 ``` 
-`ПорядкНомерВTypeUsage` — starts at 0. 
+ПорядкНомерВTypeUsage» «— starts at 0. 
 
 #### Generation .Net language 
 
@@ -119,7 +119,7 @@ In DDL table definition for class detail generated foreign keys for each of the 
 ```csharp
 <AggregatorStorage>_M<ПорядкНомерВTypeUsage>
 ``` 
-`ПорядкНомерВTypeUsage` — starts at 0. 
+ПорядкНомерВTypeUsage» «— starts at 0. 
 
 #### Generation .Net language 
 

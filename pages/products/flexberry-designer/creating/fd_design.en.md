@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_design.html 
 lang: en 
 autotranslated: true 
-hash: 7d65bba801d698b4149c4b7bae16aca104e03d4fd56809c88be10cd4181b54da 
+hash: 5b30b6f27a320899f97f3f8d92eb4bd27c61d640d0bc0a99f49d2e36639021d6 
 --- 
 
 [`Проектирование`](fd_definition-design.html) (from the Latin `projectus`, which means "thrown forward") is the process of writing needed to create the prescribed conditions even `не существующего` object based on the primary description of this object by its detail, the additions, calculations and optimization. 
@@ -67,7 +67,7 @@ The creation of a model application with Flexberry Desinger by describing [the c
 * Customization of the names of the fields 
 * Customize visible fields, hidden fields ([more](fd_hidden-properties-view.html)) 
 5.Customize application 
-* Class setup `[Application](fd_application.html)` 
+* Class setup «[Application](fd_application.html)» 
 * Setting [forms list](fd_listform.html) 
 * Configure [edit forms](fd_editform.html) 
 
@@ -118,7 +118,7 @@ After the prototype application was created from scratch, it begins the main wor
 * To make changes to [T view](fd_t-view.html) 
 * Re-generate the objects 
 8. To add a new application 
-* Adding new classes `Application` ([more](fw_several-classes-single-stage.html)) 
+* To add new classes of» «Application ([more](fw_several-classes-single-stage.html)) 
 * Customize your desktop 
 
 

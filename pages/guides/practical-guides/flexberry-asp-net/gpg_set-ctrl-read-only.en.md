@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_set-ctrl-read-only.html 
 lang: en 
 autotranslated: true 
-hash: 9b5f724fd36cea45ed0a0ee519becb8c1611defbb8021fcc3d17f5ba2da4ed9f 
+hash: eebabbb25142c758ec99dd190de9dc91a0964a01efd1d692506a341005bd1ef4 
 --- 
 
 Goal: to avoid a situation where the number of goods in stock is subtracted several times, it is necessary to organize the blocking of the status of the order, if the order is already paid for. 
@@ -32,7 +32,7 @@ on the controls page. At the time of calling this method, all controls on the pa
 ## Go 
 
 * <i class="fa fa-arrow-left" aria-hidden="true"></i> [business server](gpg_business-server.html) 
-* [Practical guide `Делай as я`](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
+* [Practical guide «as I Do»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
 
 
 

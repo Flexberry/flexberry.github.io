@@ -6,7 +6,7 @@ toc: true
 permalink: en/gpg_practical-guides-uml.html 
 lang: en 
 autotranslated: true 
-hash: 33d9340f6662c75400d0095e6c83345f3793d53bf1598d3d8689f180edd5d943 
+hash: 3e0adbc99391827940341f290279000a9225d5f8ae0fbbf10c57e05cd1ba69e7 
 --- 
 
 ## using an object-oriented approach when designing systems 
@@ -33,7 +33,7 @@ This approach allows znachitelno to reduce the time of production, the release f
 * Software developers a set of tools platform Flexberry helps to solve and automate many practical tasks, such as: 
 * creating code-level classes and objects, relevant to the subject entities and their отношениям; 
 * ORM (Object-Relational Mapping) object - relational mapping, storing object data in a relational database, including object nasledujuca классов; 
-* support for various RDBMS and data source support any other `природы`; 
+* support for various RDBMS and data source support any other «nature»; 
 creating a UI (availability of ready-made controls for Win-and Web-applications); 
 * implementation of the system architecture from a monolithic to a distributed multi-level. 
 
@@ -51,7 +51,7 @@ In the beginning you need to create the required repository objects. To do this:
 
 ## Go 
 
-* [Practical guide `Делай as я`](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
+* [Practical guide «as I Do»](gpg_landing-page.html) <i class="fa fa-arrow-up" aria-hidden="true"></i> 
 * [Formulation](gpg_formulation-problem.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
 
 

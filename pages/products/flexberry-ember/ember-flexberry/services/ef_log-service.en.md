@@ -7,7 +7,7 @@ permalink: en/ef_log-service.html
 folder: products/ember-flexberry/services/ 
 lang: en 
 autotranslated: true 
-hash: 4849d9b71197bc17082c8651fe62fb24a9602087faa6414e22406bff8677fc99 
+hash: f85c69577334c99cb9cb73b38049e3cb56f636d5537ae129a956c91cb8884a17 
 summary: Presents a description of the logging service 
 --- 
 
@@ -97,13 +97,13 @@ logService.storeErrorMessages = true;
 The developer can generate the message level using this function: 
 
 ```javascript
-Ember.Logger.error(`Текст сообщения об ошибке`);
+Ember.Logger.error(«Текст сообщения об ошибке»);
 ``` 
 
 In contrast to the standard method error() of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
- Ember.Logger.error(`Текст сообщения об ошибке`).then(result =&gt; {`действия после записи сообщения`});
+ Ember.Logger.error(«Текст сообщения об ошибке»).then(result =&gt; {«действия после записи сообщения»});
 ``` 
 
 ### storeWarnMessages - level warnings 
@@ -140,13 +140,13 @@ logService.storeWarnMessages = true;
 The developer can generate the message level using this function: 
 
 ```javascript
-Ember.Logger.warn(`Текст предупреждения`);
+Ember.Logger.warn(«Текст предупреждения»);
 ``` 
 
 In contrast to the standard method warn() logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
-Ember.Logger.warn(`Текст предупреждения`).then(result =&gt; {`действия после записи сообщения`});
+Ember.Logger.warn(«Текст предупреждения»).then(result =&gt; {«действия после записи сообщения»});
 ``` 
 
 ### storeLogMessages - level logs 
@@ -182,13 +182,13 @@ logService.storeLogMessages = true;
 The developer can generate the message level using the 
 
 ```javascript
-Ember.Logger.log(`Текст лога`);
+Ember.Logger.log(«Текст лога»);
 ``` 
 
 In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
-Ember.Logger.log(`Текст лога`).then(result =&gt; {`действия после записи сообщения`});
+Ember.Logger.log(«Текст лога»).then(result =&gt; {«действия после записи сообщения»});
 ``` 
 
 ### storeInfoMessages - level informational messages 
@@ -224,13 +224,13 @@ logService.storeInfoMessages = true;
 The developer can generate the message level using the 
 
 ```javascript
-Ember.Logger.info(`Информационный текст`);
+Ember.Logger.info(«Информационный текст»);
 ``` 
 
 In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
-Ember.Logger.info(`Информационный текст`).then(result =&gt; {`действия после записи сообщения`});
+Ember.Logger.info(«Информационный текст»).then(result =&gt; {«действия после записи сообщения»});
 ``` 
 
 ### storeDebugMessages - level debug messages 
@@ -266,13 +266,13 @@ logService.storeDebugMessages = true;
 The developer can generate the message level using the 
 
 ```javascript
-Ember.Logger.debug(`Отладочный текст`);
+Ember.Logger.debug(«Отладочный текст»);
 ``` 
 
 In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
-Ember.Logger.debug(`Отладочный текст`).then(result =&gt; {`действия после записи сообщения`});
+Ember.Logger.debug(«Отладочный текст»).then(result =&gt; {«действия после записи сообщения»});
 ``` 
 
 ### storeDeprecationMessages - the level of reporting of suspicious and outdated portions of the source code 
@@ -307,13 +307,13 @@ logService.storeDeprecationMessages = true;
 The developer can generate the message level using the 
 
 ```javascript
-Ember.Logger.warn('DEPRECATION`Текст лога`');
+Ember.Logger.warn('DEPRECATION«Текст лога»');
 ``` 
 
 In contrast to the standard method the log() method of the logging service returns a Promise. The user, if necessary, can wait for the asynchronous write operation of the error message into the database using the statement: 
 
 ```javascript
-Ember.Logger.warn('DEPRECATION`Текст лога`').then(result =&gt; {`действия после записи сообщения`});
+Ember.Logger.warn('DEPRECATION«Текст лога»').then(result =&gt; {«действия после записи сообщения»});
 ``` 
 
 ## View messages 

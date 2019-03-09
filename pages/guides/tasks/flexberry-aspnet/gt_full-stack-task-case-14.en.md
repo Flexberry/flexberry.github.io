@@ -1,5 +1,5 @@
 --- 
-title: Option 14 - `Находка` 
+title: Option 14 - «Find» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-14.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: cfb336118a77ae8e7098ba43095d13c5101db6f4435786b32a5161f40c38bc84 
+hash: 93d994679ff0de4188b6bc89552b717101af2194ab190748ba47665926305316 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Находка`. 
+In the framework of the practical part of the course you will have developed end-to-end example: application «Finding». 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 
 ## General description of the subject area 

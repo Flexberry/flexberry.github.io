@@ -6,10 +6,10 @@ toc: true
 permalink: en/gpg_adding-user-roles.html 
 lang: en 
 autotranslated: true 
-hash: 89fd4c35747af1f3b4b6329852a7b76c7f1dbae803a8721821ab026d9337c785 
+hash: c127a29771c7e2c117ff890b620e628dd5f70793594752626e584587b95f1f11 
 --- 
 
-For different roles of users, typically requiring a different application interface. That is, different user roles must be available `разделы` different applications. 
+For different roles of users, typically requiring a different application interface. That is, different user roles must be available «different sections of the» application. 
 To add new roles and users and assign them access privileges to the data classes in the section `Администрирование` web application. 
 The application menu for users and roles is defined in the file `Web.sitemap` project web app, and the possibility of access to individual pages, or pages that are located in separate folders in the application, is defined in the file `Web.config` (this is always present in the root folder of the project with the web application, in addition, such files may be created for each subfolder with pages in the same project). 
 

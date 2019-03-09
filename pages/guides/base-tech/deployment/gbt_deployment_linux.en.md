@@ -7,7 +7,7 @@ permalink: en/gbt_deployment_linux.html
 folder: guides/base-tech/deployment/ 
 lang: en 
 autotranslated: true 
-hash: 09fcf78c040b15b1acd2a5dbebcbaf11b061de3009c8b720b59b790964e9db45 
+hash: a2e538f5fc7b177b0b118169f15a5bf6f409870cf7027477d49a7637999f7696 
 --- 
 
 ## Brief description 
@@ -62,7 +62,7 @@ Please note that for distributions with a license [GNU GPL](https://ru.wikipedia
 
 * [ALT Linux outside. ALT Linux from the inside](http://www.altlinux.ru/products/books/inside-outside/) 
 * [Linux: a Complete guide / D. N. Kolisnichenko, Peter V. Allen (PDF)](http://www.softlabirint.ru/book/18371-linux-polnoe-rukovodstvo-dn-kolisnichenko-piter-v-allen-pdf.html) 
-* [The Linux command `от A to Z`, a review with examples](http://edu-cisco.org/docs/lp/Linux-handbook-comands-A-Z-SEDICOMM-University.pdf) 
+* [The Linux command «from A to Z», review with examples](http://edu-cisco.org/docs/lp/Linux-handbook-comands-A-Z-SEDICOMM-University.pdf) 
 * [Daniel J. Barrett - basic Linux commands pocket guide](http://www.proklondike.com/books/linux/barret-linux-osnovnye-komandy.html) 
 * [Best books about Linux](https://losst.ru/luchshie-knigi-o-linux) 
 

@@ -1,5 +1,5 @@
 --- 
-title: Option 01 - `Электронная scoring книжка` 
+title: Option 01 - «Electronic gradebook» 
 keywords: Tasks 
 sidebar: guide-tasks_sidebar 
 toc: true 
@@ -7,12 +7,12 @@ permalink: en/gt_full-stack-task-case-01.html
 folder: guides/tasks/ 
 lang: en 
 autotranslated: true 
-hash: 005fa0548a8b4260d4bc8ea1d2c565f68819788ea20609f27868806d5a69ae20 
+hash: e348ef47a4a8780c49439c00f21c5778042b6ca6e677e63c8cd6cd9d0afd1ae3 
 --- 
 
 ## Job 
 
-In the framework of the practical part of the course you will have developed end-to-end example: application `Электронная scoring книжка` (module on IP for universities). 
+In the framework of the practical part of the course you will have developed end-to-end example: application «Electronic gradebook» (module on IP for universities). 
 
 The first part of the practical exercises will be devoted to the development of basic technologies, such as C#, databases, client technology, etc., the second part will include a study of the possibilities of the platform Flexberry to efficiently create applications. 
 

@@ -7,13 +7,13 @@ permalink: en/ef_show-ember-form-in-frame.html
 folder: products/ember-flexberry/forms/ 
 lang: en 
 autotranslated: true 
-hash: 0c45193bcb037be9ce5aff1ca1b3c8af89048ea0d62e07196bd9b26cdceb655a 
+hash: b6b30e33c36a5f86dd574ece9d32aba37de3804c875306705437189f6de2158e 
 summary: This feature enables you to display inside the frame exclusively ember-form without a menu and other additional elements. 
 --- 
 
 ## Description 
 
-If for some reason you want to display `голую` form (that is, without the site menu and other additional элементов; for example, inside the frame), you can use the following method: 
+If for some reason you want to display the» «naked form (that is, without the site menu and other additional элементов; for example, inside the frame), you can use the following method: 
 
 1. In the [controller `application.js`](ef_controller.html) ask [read parameter `inframe` Get-request](http://guides.emberjs.com/v2.4.0/routing/query-params/), create a property `shouldShowInFrame` that indicates that a specified parameter has a value `true`: 
 
@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
 });
 ``` 
 
-2. In the template `application.hbs` with design `&#0123;&#0123;zgl[unless](http://guides.emberjs.com/v2.4.0/templates/conditionals/) shouldShowInFrame&#0125;&zgl0125; ... &#0123;&#0123;/unless&#0125;&zgl0125;` ask fragments that do not want to display on `голой` form. 
+2. In the template `application.hbs` with the «&#0123;&#0123;zgl[unless](http://guides.emberjs.com/v2.4.0/templates/conditionals/) shouldShowInFrame&#0125;&zgl0125; ... &#0123;&#0123;/unless&#0125;&zgl0125;» to set the fragments which are not to be displayed on» «naked form. 
 
 For example, lower left to display only the form itself, all other elements are hidden. 
 
@@ -70,7 +70,7 @@ For example, lower left to display only the form itself, all other elements are 
 </div>{% endraw %}
 ``` 
 
-3. When the form is to add a parameter `inframe=true`. 
+3. When the form is to add a parameter «inframe=true». 
 
 {% include note.html content=" 
 Important: 

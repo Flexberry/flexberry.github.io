@@ -7,7 +7,7 @@ toc: true
 permalink: en/fd_e-view.html 
 lang: en 
 autotranslated: true 
-hash: acc1f5890f3ea8b5d343561c567ab948eb20a942eeca01f2cb93c62ca53b553b 
+hash: ae9d6e37a9c240bc22714e16df4e16abb2fe57eb5b5fac9e88cb67b0065bf754 
 --- 
 
 Used for [forms editing and GroupEdit](fd_editform.html). GroupEdit is a fast edit object and may have the functionality to open the current object in the edit form. However, other attributes, invisible in GroupEdit'e must also be filled with values. Therefore, to edit form and to GroupEdit'and must be used in one view 
@@ -28,7 +28,7 @@ Group (groupBox) are used to group logically related objects. Recommended to be 
 ![](/images/pages/products/flexberry-designer/views/e-view1.jpg) 
 
 
-If the master is only one attribute, for example `Наименование`, to create a separate group (groupBox) is not recommended. 
+If the master is only one attribute, such as» «Name, then create a separate group (groupBox) is not recommended. 
 
 * Related time field. 
 

@@ -6,14 +6,14 @@ toc: true
 permalink: en/fa_editform.html 
 lang: en 
 autotranslated: true 
-hash: aaabb3b95e9d79d8a96d5c8cfb111489ae29936fae14c8aeda41cead21568147 
+hash: d665b5c8d8f889b500697d753050ddd885606c1885d9f2d0b4017c6fdfe6178e 
 --- 
 
 Web editor designed to create and edit objects. 
 
 ## appearance 
 
-Appearance web edit forms using different topics can be found in the article [`Выбор themes Web приложения`](fa_choose-theme.html). 
+Appearance web edit forms using different topics can be found in the article [«theme Selection Web application»](fa_choose-theme.html). 
 
 ## JS API 
 

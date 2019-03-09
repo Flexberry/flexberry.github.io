@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_postgresql.html 
 lang: en 
 autotranslated: true 
-hash: 32254c678da38d008c959d6cdfc3b4b184d8cbb16aa1dd2f413396acd2dd36d6 
+hash: 2c26759dfa894bb55ec74ce2efae8ce65edc325119326b47cd63635107ea50b7 
 --- 
 
 ## Brief description 
@@ -56,7 +56,7 @@ Basic references on the page [Wiki](https://wiki.postgresql.org/wiki/Russian)
 * [Support PostgreSQL](https://www.youtube.com/watch?v=A--R5Q3bNNM&index=16&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC) 
 * [Logical rezervirovaniya](https://www.youtube.com/watch?v=LXC15K4pV0o&index=17&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC) 
 * [Physical rezervirovaniya](https://www.youtube.com/watch?v=xWtuIwfdSH0&index=18&list=PLaFqU3KCWw6KzGwUubZm-9-vKsi6vh5qC) 
-* [DBA 2. `Администрирование PostgreSQL 9.5. Advanced курс`](https://www.youtube.com/playlist?list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
+* [DBA 2. «Administration PostgreSQL 9.5. Advanced course»](https://www.youtube.com/playlist?list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
 * [The architecture of PostgreSQL](https://www.youtube.com/watch?v=iODeKnTD1kA&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
 * [Izolyatsia](https://www.youtube.com/watch?v=QU2PVSnBGEY&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=2) 
 * [Page and version Strok](https://www.youtube.com/watch?v=PTWk0SVKYOA&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=3) 
@@ -73,8 +73,8 @@ Basic references on the page [Wiki](https://wiki.postgresql.org/wiki/Russian)
 * [Processing zaprosa](https://www.youtube.com/watch?v=7l0-VEDDbJo&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=14) 
 * [Methods dostupa](https://www.youtube.com/watch?v=lFeTYrqCEMw&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=15) 
 * [Ways soedineniya](https://www.youtube.com/watch?v=6agSyZZmqpQ&index=16&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
-* [Stats](https://www.youtube.com/watch?v=rOtXfPEknZw&index=17&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
-* [Using pamati](https://www.youtube.com/watch?v=zMJLujgSu7s&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=18) 
+* [Statistika](https://www.youtube.com/watch?v=rOtXfPEknZw&index=17&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
+* [Memory usage](https://www.youtube.com/watch?v=zMJLujgSu7s&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH&index=18) 
 * [Optimization zaprosov](https://www.youtube.com/watch?v=6qEQ0H3-olM&index=19&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
 * [Sectionrowindex](https://www.youtube.com/watch?v=iYy2B-pvKLA&index=20&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 
 * [Lokalizacija](https://www.youtube.com/watch?v=LaD59hlRaMg&index=21&list=PLaFqU3KCWw6JgufXBiW4dEB2-tDpmOXPH) 

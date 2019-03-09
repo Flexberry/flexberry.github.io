@@ -8,7 +8,7 @@ permalink: en/fw_win-desktop-links.html
 folder: products/flexberry-winforms/ 
 lang: en 
 autotranslated: true 
-hash: fcd52a5356b23c554108a202d80c9719e54be4bd60106ace50791ef529ea4897 
+hash: b05dea11e7aa6df7635cc612ced6dcf66e8c7c1bd38a1d5a0c8fbea1c9c47206 
 --- 
 
 The mechanism of labels allows you to work with instances of data objects from the desktop. 
@@ -18,7 +18,7 @@ Labels should be applied, if in any instance it is necessary to work very often.
 Labels can be applied to an instance of any class that is the successor ICSSoft.STORMNET.DataObject. 
 
 ## Folders for shortcuts 
-The folder in which you can create labels can be specified by overriding a method GetShortCutFolders() class DesktopCustomizer. This method returns an ArrayList whose elements are strings that specify the full path to the folder. By default, this method returns only the folder `Избранное`. 
+The folder in which you can create labels can be specified by overriding a method GetShortCutFolders() class DesktopCustomizer. This method returns an ArrayList whose elements are strings that specify the full path to the folder. By default, this method returns only the folder favorites» qmo. 
 
 Example 
 
@@ -62,7 +62,7 @@ public class Кошка : ICSSoft.STORMNET.DataObject
 }
 ``` 
 
-As a result, the name of the label for the data object `Кошка` be, for example, `Кошка named Мурка`. 
+As a result, the name of the label for the data object «Cat» will, for example, «a Cat named Murka». 
 
 ## Runners 
 Runner – a class that implements the methods for running a label. In the designer, a runner takes a shortcut. To add a new runner, you need to create a new class that are inherited from DesktopShortCutRunner. The methods of the runner, marked RunnerMethodAttribute can be started from the context menu of the label, with this type of runner. The attribute parameter is a string that will be displayed in the corresponding item in the context menu of the shortcut. 

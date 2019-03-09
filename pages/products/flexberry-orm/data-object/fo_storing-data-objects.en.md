@@ -7,7 +7,7 @@ toc: true
 permalink: en/fo_storing-data-objects.html 
 lang: en 
 autotranslated: true 
-hash: 1d17f90e926e5a75f0092fbac7adf256f4b5a12bd685f67d384c8b154b73ada6 
+hash: b10b7e0f335740b512a0c5d80fdc5a34c25eb12531851fdab5fcc6899e70b15a 
 --- 
 
 ## stored As object data 
@@ -35,7 +35,7 @@ By default, the naming is as follows:
 * Communication from dyelovoi table on the aggregator — similar Masterova property: the property name in the class data [number]. 
 
 * The name of the store the [primary key](fo_primary-keys-objects.html) — `primaryKey`. 
-* When you inherit the names of foreign keys are given the following: [<Karolinenstr>_M<ПорядкНомерВTypeUsage>.`ПорядкНомерВTypeUsage` begins with 0](fo_type-usage.html) (this naming can be changed). 
+* When you inherit the names of foreign keys are given the following: [<Karolinenstr>_M<ПорядкНомерВTypeUsage>.ПорядкНомерВTypeUsage» «— begins with 0](fo_type-usage.html) (this naming can be changed). 
 
 The naming can be changed, what are the attributes of storage: 
 

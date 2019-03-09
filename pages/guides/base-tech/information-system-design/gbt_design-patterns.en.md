@@ -7,7 +7,7 @@ permalink: en/gbt_design-patterns.html
 folder: guides/base-tech/information-system-design/ 
 lang: en 
 autotranslated: true 
-hash: 09cf0c2c037baf4417db04354e1f56d0e31fdc07459021ebb4839af8d3979aea 
+hash: f1f2015481cbc3e6234d3b3925d292f0fa2a6a638a50a7893dd6450b27767298 
 --- 
 
 ## Brief description 
@@ -16,7 +16,7 @@ hash: 09cf0c2c037baf4417db04354e1f56d0e31fdc07459021ebb4839af8d3979aea
 
 Typically, the template is not a complete sample, which can be directly converted into код; this is just an example of solving the problem, which can be used in different situations. Object-oriented patterns show relationships and interactions between classes or objects, without determining what the final classes or objects in the application will be used. 
 
-`Низкоуровневые` templates tailored to a specific programming language, called idioms. This is a good solution to the design characteristic of a specific language or software platform, and therefore not universal. 
+low-level» «templates tailored to a specific programming language, called idioms. This is a good solution to the design characteristic of a specific language or software platform, and therefore not universal. 
 
 At the highest level, there are **architectural patterns** they cover the architecture of the whole software system. 
 
@@ -28,7 +28,7 @@ Algorithms inherently are templates, not design, and calculations, so as to solv
 * [Design pattern - Wikipedia](https://ru.wikipedia.org/wiki/Шаблон_проектирования) 
 * [Design patterns](https://refactoring.guru/ru/design-patterns) 
 * [Overview of design patterns](http://citforum.ru/SE/project/pattern/index.shtml) 
-* [Reference `Паттерны проектирования`](http://design-pattern.ru/) 
+* [Reference «design Patterns»](http://design-pattern.ru/) 
 
 ### Tutorials 
 

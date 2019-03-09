@@ -7,7 +7,7 @@ toc: true
 permalink: en/fw_landing_page.html 
 lang: en 
 autotranslated: true 
-hash: 9eaca23769dbdbd28d3177fd06b86338419da92eb6b8eba439728edde27292c2 
+hash: 3c36c999c70d4fd52a30fee2835c4db07ba25807497b4f3c572ee2f0cca090e9 
 --- 
 
 `Flexberry Winforms` is [product platform Flexberry](fp_platform-structure.html). 
@@ -29,12 +29,12 @@ The product website `Flexberry Winforms`: [flexberry.ru](http://flexberry.ru/Fle
 * [Change the title of the list when lukapa](fw_change-name-list-with-lookup.html) 
 * [Status screen](fw_base-win-position.html) 
 * [Close all open forms Flexberry](fw_close-all-opened-forms.html) 
-* [Form `Редактор ограничений` (WIN)](fw_winforms-limit-editor-form.html) 
+* [Form «Editor of the limitations of» (WIN)](fw_winforms-limit-editor-form.html) 
 * [Standard view of the editor limitations. Description of form](fw_description-form-limit-editor-in-standard-form.html) 
 * [Advanced view editor limitations](fw_limit-editor-advanced-view.html) 
 * [Restriction settings (for the user) Win](fw_limit-editor-params.html) 
-* Button [`Свернуть/deploy папки` on the desktop](fw_desktop-operations.html) 
-* [`Тараканы` and enumerated type](fw_empty-enum-value-validation.html) 
+* [Qmo button to expand/Collapse folders» on the desktop](fw_desktop-operations.html) 
+* [«and» Cockroaches enumerated type](fw_empty-enum-value-validation.html) 
 * [MaxLength property of the control ExtLookUpTextControl](fw_extended-lookup.html) 
 * [As the closure of Thomas (the only form Flexberry Winforms)](fw_forbid-closing-form.html) 
 * [Interface ISpecialEmptyValue](fo_i-special-empty-value.html) 
