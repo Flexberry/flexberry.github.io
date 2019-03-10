@@ -100,6 +100,4 @@ Below are a list of resources where you can find courses in various fields. Some
 * [Begin](gbt_information-system-design.html) 
 * [Go to the page with description of all courses](/EN/) 
 
-
-
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
