@@ -1,30 +1,32 @@
----
-title: Flexberry toggler
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_flexberry-toggler.html
-lang: en
-summary: Свойства flexberry-toggler, настройка flexberry-toggler
----
+--- 
+title: Flexberry toggler 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_flexberry-toggler.html 
+lang: en 
+autotranslated: true 
+hash: ee6ab7ba9bfd90e9e0f3b04b6f1a475dd7df0308a69788d340a414a4365c0dd7 
+summary: Properties flexberry-toggler, setting flexberry-toggler 
+--- 
 
-[flexberry-toggler](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js) - компонент, позволяющий пользователю, показывать или скрывать вложенное в него содержимое. В нем могут быть размещены поля формы, [список](fe_object-list-view.html), [детейлы](fe_groupedit.html) и другое.
+[flexberry-toggler](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js) is a component that allows the user to show or hide embedded in the contents. It can be placed form fields [list](fe_object-list-view.html), [detaily](fe_groupedit.html) and more. 
 
-### Список свойств
+### a List of properties 
 
-| Название свойства | Краткое описание |
-|:-------------------:|:------------------|
-| `expanded` | Текущее состояние видимости: развернут элемент или нет|
-| `caption` | Общий заголовок в заголовке компонента|
-| `expandedCaption` | Заголовок компонента для развернутого состояния|
-| `collapsedCaption` | Заголовок компонента для свернутого состояния|
-| `currentCaption` | Текущий заголовок компонента|
-| `iconClass` | Иконка компонента|
-| `hasResizableOLV` | Флаг указывает, когда toogler содержит изменяемый размер OLV `duration` Продолжительность в миллисекундах открытия анимации. При установленном `0` анимация отключена. _Важно_: используется только при первоначальном рендеринге|
+| Property name | Brief description | 
+|:-------------------:|:------------------| 
+| `expanded` | Current state of visibility: the element is deployed or not| 
+| `caption` | Common header component header| 
+| `expandedCaption` | Header component for the deployed condition| 
+| `collapsedCaption` | Header component for collapsed| 
+| `currentCaption` | Current component header| 
+| `iconClass` | new component| 
+| `hasResizableOLV` | Flag indicates when toogler contains resizable OLV `duration` Duration in milliseconds for the opening animation. When you set `0` animations disabled. Vaino: used only during initial rendering| 
 
-### Пример использования
+### Example usage 
 
-Настройка `flexberry-toggler` осуществляется в [шаблоне страницы](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js#L10):
+Setting `flexberry-toggler` is in the [template stranicy](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js#L10): 
 
 ```hbs
 {% raw %}
@@ -36,15 +38,15 @@ summary: Свойства flexberry-toggler, настройка flexberry-toggle
     Content
 {{/flexberry-toggler}}
 {% endraw %}
-```
+``` 
 
-При загрузке страницы компонент находится в развернутом состоянии, заголовок для развернутого сосостояния `Expanded caption`, а для свернутого - `Collapsed caption`.
+When loading the page the component is in the expanded state, the header for the expanded sosotoyanie `Expanded caption`, and for rolled - `Collapsed caption`. 
 
-### Пользовательские настройки
+### Customizing 
 
-Состояние `flexberry-toggler` может быть сохранено в [пользовательских настройках](ef_model-user-settings-service.html) приложения.
+State `flexberry-toggler` can be saved in [user settings](ef_model-user-settings-service.html) applications. 
 
-Для использования сервиса настроек пользователя компонент `flexberry-toggler` должен содержать следующие атрибуты:
+For using the service user settings component `flexberry-toggler` must contain the following attributes: 
 
 ```hbs
 {% raw %}{{flexberry-toggler
@@ -52,6 +54,10 @@ summary: Свойства flexberry-toggler, настройка flexberry-toggle
   componentName="..."
   ...
 }}{% endraw %}
-```
+``` 
 
-* `componentName` - обязательный атрибут служащий для привязки пользовательских настроек. Он должен быть уникальным в пределах одной отображаемой страницы.
+* `componentName` - a mandatory attribute used to anchor user settings. It must be unique within a single displayed page. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_storage.html 
 lang: en 
 autotranslated: true 
-hash: 514f144116beb947e2a02447176db06ec9f2e88fa8afd9f0bc8789da2a0462c8 
+hash: 5ae16c82cc06103139cfbb63b01aca7d707acdebeeda44bf4ce261bc6f421584 
 --- 
 
 ## Brief description 
@@ -23,4 +23,4 @@ hash: 514f144116beb947e2a02447176db06ec9f2e88fa8afd9f0bc8789da2a0462c8
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

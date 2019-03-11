@@ -1,99 +1,101 @@
----
-title: SQLWhereLanguageDef
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Правила наложения ограничений на вычитываемые объекты
-toc: true
-permalink: en/fo_function-list.html
-lang: en
----
+--- 
+title: SQLWhereLanguageDef 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: Rules for the imposition of restrictions on the deducted objects 
+toc: true 
+permalink: en/fo_function-list.html 
+lang: en 
+autotranslated: true 
+hash: ba32420ecf26a5cd6abe36058dd1070be45d8980b96cdf01f87825cf23655b25 
+--- 
 
-`SQLWhereLanguageDef` - класс-построитель [функций для наложения ограничений](fo_limit-function.html) на вычитываемые объекты.
+`SQLWhereLanguageDef` class Builder [functions, the restrictions](fo_limit-function.html) deducted on objects. 
 
-Существует расширение базового функционального языка `SQLWhereLanguageDef`, `[ExternalLangDef](fo_external-lang-def.html).
+There is an extension of basic functional language `SQLWhereLanguageDef`, `[ExternalLangDef](fo_external-lang-def.html). 
 
-Подключение:
+Connection: 
 
 ``` csharp
 using ICSSoft.STORMNET.FunctionalLanguage;
 using ICSSoft.STORMNET.FunctionalLanguage.SQLWhere;
-```
+``` 
 
-## Построение функции, метод GetFunction
+## the Construction of function, method GetFunction 
 
-Построение функции начинается с вызова метода `ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.GetFucntion(string, params object[));`
+The construction of the function starts with calling the method `ICSSoft.STORMNET.FunctionalLanguage.FunctionalLanguageDef.GetFucntion(string, params object[));` 
 
-В качестве первого параметра метод принимает тип функции (список доступных функций приведен ниже). Далее метод принимает набор параметров функции, количество и типы параметров варьируются в зависимости от типа функции, подробное их описание можно посмотреть в статье, посвященной определенному типу функции.
+As the first parameter the method takes a function type (a list of available functions below). The method accepts a set of function parameters, number and types of parameters vary depending on the type of function, a detailed description thereof can be found in the article devoted to a particular type of function. 
 
-Метод возвращает объект типа `ICSSoft.STORMNET.FunctionalLanguage.Function`.
+The method returns an object of type `ICSSoft.STORMNET.FunctionalLanguage.Function`. 
 
-В зависимости от типа функции параметром функции `GetFunction` может передаваться  описание переменной, задаваемое в помощью класса [VariableDef](fo_variable-def.html).
+Depending on the type of the function parameter of the function `GetFunction` can be passed a description of the variable specified in the class [VariableDef](fo_variable-def.html). 
 
-## Наложение ограничений на перечислимый тип
+## the restrictions imposed on the enum type 
 
-[Enumerations|Перечислимые типы) хранятся в базе как строки. Соответственно, при конструировании описания переменной ([VariableDef](fo_variable-def.html)) необходимо использовать `StringType`. В качестве аргумента для сравнения рекомендуется использовать `Caption` объекта перечисления, получить `Caption` можно при помощи класса `EnumCaption`, который является частью `ICSSoft.STORMNET`.
+[Enumerations|Enumeration types) is stored in the database as strings. Accordingly, when constructing the variable description ([VariableDef](fo_variable-def.html)) you must use `StringType`. The argument for comparison is recommended to use `Caption` enumeration object, to `Caption` you can use class `EnumCaption`, which is part of `ICSSoft.STORMNET`. 
 
-Например:
+For example: 
 
-![](/images/pages/products/flexberry-orm/query-language/Pol.PNG)
- 
-Чтобы наложить ограничение на пол клиента, необходимо составить следующую функцию:
+![](/images/pages/products/flexberry-orm/query language/Pol.PNG) 
+
+To impose restrictions on the gender of the client, you should compile the following function: 
 
 ```csharp
 using ICSSoft.STORMNET;
-// ...
+// ... 
 var ld = SQLWhereLanguageDef.LanguageDef;
 var onlyMenFunction = ld.GetFunction(ld.funcEQ, new VariableDef(ld.StringType, Information.ExtractPropertyPath<Клиент>(x => x.Пол)), EnumCaption.GetCaptionFor(tПол.Мужской));
-```
+``` 
 
-## Наложение ограничений на компоненты даты
+## the Imposition of limitations on the date components 
 
-Чтобы наложить ограничение на часть даты (на год, месяц или день), можно воспользоваться функциями `DayPart`, `MonthPart` и `YearPart` для задания ограничений на компоненты даты.
+To impose a restriction on the date part (year, month, or day), you can use the functions `DayPart`, `MonthPart` and `YearPart` for specifying constraints on components of the date. 
 
-### Пример
+### Example 
 
 ```csharp
-//ICSSoft.STORMNET.Windows.Forms.ExternalLangDef (ExternalLangDef.dll)
-//ICSSoft.STORMNET.Windows.Forms.ExternalLangDeflangdef = ExternalLangDef.LanguageDef;
+//ICSSoft.STORMNET.Windows.Forms.ExternalLangDef (ExternalLangDef.dll) 
+//ICSSoft.STORMNET.Windows.Forms.ExternalLangDeflangdef = ExternalLangDef.LanguageDef; 
 using ICSSoft.STORMNET.Windows.Forms;
 
 var langdef = ExternalLangDef.LanguageDef;
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-                                         langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2013");
+                                         langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "2013");
 
 var only2013year = DataServiceProvider.DataService.LoadObjects(lcs);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-                                         langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12");
+                                         langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "12");
 
 var onlyDecember = DataServiceProvider.DataService.LoadObjects(lcs);
 
 lcs.LimitFunction = langdef.GetFunction(langdef.funcAND,
                 langdef.GetFunction(langdef.funcEQ, 
-                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "2012"),
+                    langdef.GetFunction("YearPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "2012"),
                 langdef.GetFunction(langdef.funcEQ, 
-                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "ДатаВыдачи")), "12"));
+                    langdef.GetFunction("MonthPart", new VariableDef(langdef.DateTimeType, "Datavideo")), "12"));
 
 var onlyDecember2012 = DataServiceProvider.DataService.LoadObjects(lcs);
-```
+``` 
 
-## Примеры использования
+## Examples of usage 
 
-Далее будут приведены несколько примеров наложения ограничений:
+Following are some examples of restrictions: 
 
-### Наложение ограничений на строковую переменную
+### the Imposition of constraints on the string variable 
 
 ```csharp
 var langdef = ExternalLangDef.LanguageDef;
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Личность), Личность.Views.ЛичностьE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-	            new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), "Петров");
+	            new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Личность>(x => x.Фамилия)), Petrov);
 var клиентыФамилияПетров = DataServiceProvider.DataService.LoadObjects(lcs);
-```
+``` 
 
-### Наложение ограничений на мастеровой объект (по ключу)
+### the Imposition of limitations on workman the object (the key) 
 
 ```csharp
 var langdef = ExternalLangDef.LanguageDef;
@@ -101,33 +103,37 @@ var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кр
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
 	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность)), "64F45BC3-339B-4FBA-A036-C5E9FE9EAE53");
 var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
-```
+``` 
 
-### Наложение ограничений на мастеровой объект (по полю мастера)
+### the Imposition of limitations on workman the object (field master) 
 
 ```csharp
 var langdef = ExternalLangDef.LanguageDef;
 var lcs = LoadingCustomizationStruct.GetSimpleStruct(typeof (Кредит), Кредит.Views.КредитE);
 lcs.LimitFunction = langdef.GetFunction(langdef.funcEQ,
-	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), "Петров");
+	            new VariableDef(langdef.GuidType, Information.ExtractPropertyPath<Кредит>(x => x.Личность.Фамилия)), Petrov);
 var кредиты = DataServiceProvider.DataService.LoadObjects(lcs);
-```
+``` 
 
-{% include important.html content="Следует убедиться, что в представлении `КредитE` есть мастер `Личность` и его поле `Фамилия`, иначе произойдёт ошибка при выполнении запроса." %}
+{% include important.html content="you Must ensure that the submission is `КредитE` master `Личность` and field `Фамилия`, or an error occurs during query execution." %} 
 
-## Список функций
+## List of functions 
 
-* [FuncNOT](fo_func-not.html)
-* [FuncIsNull](fo_func-is-null.html)
-* [FuncEQ](fo_func-eq.html)
-* [FuncNEQ](fo_func-neq.html)
-* [FuncG](fo_compare-functions.html)
-* [FuncGEQ](fo_compare-functions.html)
-* [FuncL](fo_compare-functions.html)
-* [FuncLEQ](fo_compare-functions.html)
-* [FuncIN](fo_func-in.html)
-* [FuncAND](fo_func-and.html)
-* [FuncOR](fo_func-or.html)
-* [FuncLike](fo_func-like.html)
-* [FuncBETWEEN](fo_func-between.html)
-* [funcSQL](fo_func-sql.html)
+* [FuncNOT](fo_func-not.html) 
+* [FuncIsNull](fo_func-is-null.html) 
+* [FuncEQ](fo_func-eq.html) 
+* [FuncNEQ](fo_func-neq.html) 
+* [FuncG](fo_compare-functions.html) 
+* [FuncGEQ](fo_compare-functions.html) 
+* [FuncL](fo_compare-functions.html) 
+* [FuncLEQ](fo_compare-functions.html) 
+* [FuncIN](fo_func-in.html) 
+* [FuncAND](fo_func-and.html) 
+* [FuncOR](fo_func-or.html) 
+* [FuncLike](fo_func-like.html) 
+* [FuncBETWEEN](fo_func-between.html) 
+* [funcSQL](fo_func-sql.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,36 +1,42 @@
----
-title: FuncLike
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Parameters and an example of using the function FuncLike
-toc: true
-permalink: en/fo_func-like.html
-lang: en
----
+--- 
+title: FuncLike 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: Parameters and example FuncLike 
+toc: true 
+permalink: en/fo_func-like.html 
+lang: en 
+autotranslated: true 
+hash: 50ef23d87966bbb980d12dc7a1fe3ed239b7691bf09cd81fc09ab6de591ee57a 
+--- 
 
-`FuncLike` - функция, аналогичная проверке на вхождение подстроки в другую строку в SQL, в построителе [функций ограничения](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html).
+`FuncLike` - equivalent of the test for occurrence of a substring in another string in SQL Builder [function limitations](fo_limit-function.html) [SQLWhereLanguageDef](fo_function-list.html). 
 
-## Параметры GetFunction
+## Parameters GetFunction 
 
-Функция [GetFunction](fo_function-list.html) принимает первым параметром тип функции `funcLike`, а дальше принимает 2 объекта на сравнение их между собой. Первым посылается описание переменной (Variable Definition), по которому будут определяться объекты для сравнения; а вторым параметром - маска, с которой будет происходить сравнение.
+[GetFunction](fo_function-list.html) accepts the first argument type of a function `funcLike`, and then takes 2 objects to compare them with each other. The first is sent to the variable description (Variable Definition), which will determine the objects to сравнения; and the second parameter is the mask, which will be compared. 
 
-## Пример использования
+## Example usage 
 
-Рассмотрим пример. Требуется вычитать всех `Клиентов` с пропиской в городе Перми. (Для упрощения задачи, будем считать достаточным наличия слова "Пермь" в строке `Клиент.Прописка`)
+Let's consider an example. Required to deduct all `Клиентов` with a residence permit in the city of Perm. (For simplicity, we assume sufficient availability of the word "Perm" in the line `Клиент.Прописка`) 
 
-SQL-выражение выглядело бы следующим образом:
+The SQL statement would look as follows: 
 
 ```sql
 SELECT * FROM Клиент 
 WHERE Прописка like '%Пермь%'
-```
+``` 
 
-Через [SQLWhereLanguageDef](fo_function-list.html):
+[SQLWhereLanguageDef](fo_function-list.html): 
 
 ```csharp   
 SQLWhereLanguageDef langdef = SQLWhereLanguageDef.LanguageDef;
 Function lf = langdef.GetFunction(
 			langdef.funcLike,
 			new VariableDef(langdef.StringType, Information.ExtractPropertyPath<Клиент>(x => x.Прописка)), 
-			"%Пермь%");
-```
+			"%Perm%");
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

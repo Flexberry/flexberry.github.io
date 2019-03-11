@@ -1,41 +1,43 @@
----
-title: Сервис блокировок Ember Flexberry
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember LockService
-toc: true
-permalink: en/ef_lock-service.html
-folder: products/ember-flexberry/services/
-lang: en
-summary: Представлено описание сервиса блокировок
----
+--- 
+title: Service locks Ember Flexberry 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember LockService 
+toc: true 
+permalink: en/ef_lock-service.html 
+folder: products/ember-flexberry/services/ 
+lang: en 
+autotranslated: true 
+hash: d18f633fbf0714e04a422e97e8fb7719c25253b02a6af38b41965859d785a52d 
+summary: the description of the service locks 
+--- 
 
-## Описание
+## Description 
 
-Сервис блокировок (NewPlatform.Flexberry.LockService) предназначен для удобной реализации механизма блокировок. Например, требуется защитить некоторый объект данных от изменения другими пользователями в то время, как он редактируется каким-либо пользователем.
+Service locks (NewPlatform.Flexberry.LockService) is designed for convenient implement locking mechanism. For example, you want to protect certain data object from changes by other users at the time how it is edited by any user. 
 
-В версиях Flexberry Designer 2017.06.14-beta08 и последующих LockService подключается автоматически.
+In versions Flexberry Designer 2017.06.14-beta08 and subsequent LockService connects automatically. 
 
-## Добавление сервиса блокировок для более ранних версий
+## Add service locks for earlier versions 
 
-* Включить в Ember Flexberry проекте LockService, добавив в environment:
+* To include in Ember Flexberry project LockService, adding `environment.js`: 
 
 ```js
-// Settings lock.
+// Settings lock. 
 lock: {
   enabled: true,
   openReadOnly: true,
   unlockObject: true,
 }
-```
+``` 
 
-Где:
-> * enabled - включение/выключение LockService.
-> * openReadOnly - отвечает за открытие формы редактирования только для чтения, если форма заблокирована.
-> * unlockObject -  отвечает за удаление блокировки при выходе с формы.
+Where: 
+> * enabled - enable/disable LockService. 
+> * openReadOnly - responsible for opening edit form read-only, if the form is locked. 
+> * unlockObject is responsible for deleting the lock when exiting the form. 
 
-* Добавить в Backend [ODataService](fo_orm-odata-service.html) библиотеку NewPlatform.Flexberry.LockService.
+* Add Backend [ODataService](fo_orm-odata-service.html) library NewPlatform.Flexberry.LockService. 
 
-* Добавить в ODataConfig assemblies тип Lock:
+* Add to ODataConfig assemblies type Lock: 
 ```cs
 namespace NewPlatform.Flexberry.Services
 {
@@ -46,9 +48,10 @@ namespace NewPlatform.Flexberry.Services
   };
   ...
 };
-```
+``` 
 
-* Рекомендуется унаследовать все формы редактирования от созданной формы, где определён userName.
-Так же возможно устанавливать userName в каждой отдельной форме редактирования.
+* Retrieve current user for a lock now carried out via the method `getCurrentUserName` [service `user`](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/services/user.js) (defined in the addon `ember-flexberry-data`). By default, this method will return the user name `userName`. At the application level, you must override this method if you are using authentication in your app or if you want to return a different user name in case no authentication mechanism in the application. 
 
-{% include note.html content="Это решение временно и свойство usernem будет перенесено в один из сервисов." %}
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -6,7 +6,7 @@ toc: false
 permalink: en/gbpm_landing-page.html 
 lang: en 
 autotranslated: true 
-hash: 6a9d44e29c99288318d2bbe5d0b695ce676bb98a27961a0fb304829cc7623593 
+hash: 0826b54451c7665efe835c8bc553b071fb0ea441c1ac94856af08f619e68651c 
 summary: a Course on creating applications with the process component on the platform Flexberry. 
 --- 
 
@@ -37,4 +37,4 @@ Figure 3 – settings app structure
 ![](/images/pages/guides/flexberry-bpm/b3-application-structure-configuration.png)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

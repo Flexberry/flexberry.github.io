@@ -1,181 +1,183 @@
----
-title: События WebObjectListView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET
-toc: true
-permalink: en/fa_wolv-events.html
-lang: en
----
+--- 
+title: Events WebObjectListView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_wolv-events.html 
+lang: en 
+autotranslated: true 
+hash: 055e486e5f1d3633f793f72a507739eb8f8f322fe873ef6ee08acbe0c37f95b4 
+--- 
 
-Все аргументы событий [WebObjectListView](fa_web-object-list-view.html) наследуются от базового:
+All the event arguments [WebObjectListView](fa_web-object-list-view.html) inherited from base: 
 
 ```csharp
-/// <summary>
-/// Тип аргумента для событий WOLV.
-/// </summary>
+/// <summary> 
+/// Argument type for events WOLV. 
+/// </summary> 
 public class WolvEventArgs : CancelEventArgs
 {
 }
-```
+``` 
 
-## Список событий
+## the List of events 
 
-| Событие | Описание |
-| ------- | -------- |
-| `ObjectAdding` | Переход на форму создания объекта. |
-| `ObjectEditing` | Переход на форму редактирования объекта. |
-| `ObjectPrototyping` | Переход на форму прототипирования объекта. |
-| `ObjectDeleting` | Удаление объекта началось. Событие будет вызываться для каждого удаляемого объекта. |
-| `ObjectsDeleted` | Объекты удалились. Нельзя генерировать событие удаление для каждого объекта. |
+| Event | Description | 
+| ------- | -------- | 
+| `ObjectAdding` | Transition to object creation. | 
+| `ObjectEditing` | Transition to the edit form of the object. | 
+| `ObjectPrototyping` | Transition to the prototyping object. | 
+| `ObjectDeleting` | object Deletion started. The event will be called for each deleted object. | 
+| `ObjectsDeleted` | Objects departed. You cannot generate event delete for each object. | 
 
-* Есть возможность настроить своё сообщение для пользователей после удаления объекта. Для формирования сообщения можно использовать список удаленных объектов и
-  список объектов, которые не удалось удалить.
-* Также есть возможность передавать статус удаления меду событиями начала удаления и окончания удаления. 
+* Have the ability to customize their message to users after deleting the object. For the formation of the message, you can use the list of deleted objects and 
+the list of objects that failed to delete. 
+* Also has the ability to convey the status of the removal of honey early removal and end removal. 
 
-## Аргументы событий
+## the event Arguments 
 
-У событий `ObjectEditing` и `ObjectPrototyping` в аргументах содержится первичный ключ объекта данных - `DataObjectPrimaryKey`.
+Events `ObjectEditing` and `ObjectPrototyping` in the arguments contains the primary key of the data object - `DataObjectPrimaryKey`. 
 
-Через аргументы события `ObjectDeleting` можно получить к удаляемому объекту данных - `DataObj`, а так же изменять его.
+Through the event arguments `ObjectDeleting` you can get to the deleted object data `DataObj`, and change it. 
 
-Аргументы события `ObjectsDeleted` позволяют редактировать или очищать сообщение пользователю - `UserMessage`.
+The event arguments `ObjectsDeleted` allow you to edit or clear a message to the user - `UserMessage`. 
 
-Для хранения прикладных метаданных между событием `ObjectDeleting` и событием `ObjectsDeleted` используются `DeletingState` и `DeletedState`, доступные через аргументы этих событий.
+To store application metadata between the event and the event `ObjectDeleting` `ObjectsDeleted` used `DeletingState` and `DeletedState` available through the arguments of these events. 
 
-## Отмена событий
+## Cancel events 
 
-Любое событие можно отменить, установив свойство у аргументов `Cancel = true`, т.к. все аргументы наследуются от `CancelEventArgs`.
+Any event can be cancelled by selecting the arguments `Cancel = true`, because all the arguments are inherited from `CancelEventArgs`. 
 
-Если произошло исключение при удалении объекта, то его можно обработать подписавшись на событие `ExceptionThrown`.
+If an exception occurred when deleting an object, you can handle signing up for the event `ExceptionThrown`. 
 
-## Собственный обработчик события `ObjectDeleting`
+## Own event handler `ObjectDeleting` 
 
-Если реализуется собственный обработчик `ObjectDeleting` и устанавливается свойство у аргументов `Cancel = true`, то нужно в обработчике события `ObjectsDeleted` очистить или изменить на своё сообщение пользователю, которое хранится `args.UserMessage`. Иначе появится сообщение "Не удалено объектов: 1, т.к. некоторые объекты были заблокированы.", даже если объекты успешно удалены.
+If you implement your own handler `ObjectDeleting` and set the arguments `Cancel = true`, then you need in the event handler `ObjectsDeleted` to clean or change its message to the user, which is stored `args.UserMessage`. Otherwise, the message "deleted object: 1, because some objects have been locked.", even if the objects were removed successfully. 
 
-## Пример ручной обработки события `ObjectDeleting` для обработки [каскадного удаления объектов](fo_cascade-delete.html)
+## Example manual handling events `ObjectDeleting` for processing the [cascade deleting objects](fo_cascade-delete.html) 
 
-Концепция обработки событий:
+The concept of event processing: 
 
-1. Подписаться на событие `ObjectDeleting`.
-2. Написать обработчик, чтобы обработать каскадное удаление объектов, связанных с удаляемым.
-3. Написать код бизнес-сервера, который будет сообщать обработчику об объектах, связанных с удаляемым.
-4. Если таковые имеются, то запросить у пользователя разрешение на удаление связанных объектов (показав ему какие именно объекты будут удалены).
-5. Если пользователь, разрешит каскадное удаление, то выполнить его.
+1. Subscribe to the event `ObjectDeleting`. 
+2. To write a handler to handle the cascade delete related objects to be deleted. 
+3. Write code for the business server, which will inform the handler about the objects associated with the deleted. 
+4. If any, then prompt the user for permission to delete related objects (showing him what the objects are removed). 
+5. If the user will be allowed to cascade delete, then execute it. 
 
-### Первый этап. Подписка на событие
+### the First stage. Event subscription 
 
-__Первый вариант.__ Подписаться статично (в разметке страницы, содержащей [WebObjectListView](fa_web-object-list-view.html). Пусть она называется `wolv_page.aspx`).
+__The first option.__ To sign up statically (in the markup page that contains [WebObjectListView](fa_web-object-list-view.html). She called `wolv_page.aspx`). 
 
 ```xml
 <%-- Разметка из wolv_page.aspx --%>;
 <ac:WebObjectListView ID="WebObjectListView1" runat="server" OnObjectDeleting="WebObjectListView1_ObjectDeleting" />;
-```
+``` 
 
-__Второй вариант.__ Подписаться из кода (в code-behind страницы, содержащей WOLV. Пусть файл с кодом называется `wolv_page.aspx.cs`).
+__The second option.__ To subscribe from code (in the code-behind page that contains WOLV. Let the code file is called `wolv_page.aspx.cs`). 
 
 ```csharp
-// Код из wolv_page.aspx.cs
+// Code from wolv_page.aspx.cs 
 protected override void Preload()
 {
     WebObjectListView1.ObjectDeleting += WebObjectListView1_ObjectDeleting;
 }
-```
+``` 
 
-{% include note.html content="При подписке на событие из кода, студия предложит автоматическую генерацию обработчика события. Если нажать клавишу `Tab` после того как
-напечатано +=, то сгенерируется имя обработчика `WebObjectListView1_ObjectDeleting.`
+{% include note.html content="When you subscribe to an event from code Studio will offer automatic generation of event handler. If you press `Tab` after 
+printed =, it will generate the name of the handler `WebObjectListView1_ObjectDeleting.` 
 
-Если еще раз нажать клавишу `Tab`, будет сгенерирован шаблон обработчика:
+If you again press `Tab` will be generated pattern handler: 
 
 ```csharp
 protected void WebObjectListView1_ObjectDeleting(WebObjectListView sender, WolvEventArgs args)
-```
-" %}
+``` 
+"%} 
 
-### Второй этап. Обработка события
+### the Second stage. Processing events 
 
 ```csharp
-// Код из wolv_page.aspx.cs
+// Code from wolv_page.aspx.cs 
 
-// Колекция объектов в формате [{objectPK: Строковое представление первичного ключа удаляемого адреса, confirmMessage: Текст сообщения о ссылающихся, на адрес, объектах}, ...]
+// Collection objects in the format [{objectPK: the String representation of the primary key of the deleted addresses, confirmMessage: message Text of reference to the address object}, ...] 
 private List<object> _deletingObjectsCollection = new List<object>();
 
-// Данный обработчик будет последовательно вызван для каждого объекта, выбранного на удаление.
+// This handler will be consistently invoked for each object selected for deletion. 
 protected void WebObjectListView1_ObjectDeleting(WebObjectListView sender, WolvObjectDeletingEventArgs args)
 {   
-    // Помечаем пришедший объект на удаление (в данном примере это будет адрес медицинского учреждения).
+    // Mark the received object to delete (in this example it is the address of the facility). 
     args.DataObj.SetStatus(ICSSoft.STORMNET.ObjectStatus.Deleted);
     try
-    {   // Пытаемся удалить (дальнейшая обработка происходит в Бизнес-сервере АдресБС.cs).
-        // Если во время удаления произойдет ошибка, мы сможем ее обработать в блоке catch.
-        // Если АдресБС.cs найдет учреждения, ссылающиеся на удаляемый адрес, он кинет ConfirmAdresDeletingException.
+    {   // Try to remove (further processing occurs in the Business server, Adress.cs). 
+        // If during uninstall an error occurs, we will be able to handle it in the catch block. 
+        // If Adress.cs will find companies that reference the deleted address, it will throw ConfirmAdresDeletingException. 
         ICSSoft.STORMNET.Business.DataServiceProvider.DataService.UpdateObject(args.DataObj);
     }
-    // Обрабатываем исключение бизнес-сервера
+    // Handle the exception business server 
     catch (ConfirmAdresDeletingException ex)
     {   
-        // Если мы попали в этот участок кода, значит были обнаружены объекты ссылающиеся на удаляемый адрес.
-        // Требуется подтверждение каскадного удаления.
-        // Запоминаем информацию о ссылках на удаляемый адрес. После перезагрузки страницы, её заберёт клиентский код.
-        // objectPK - первичный ключ ссылающегося объекта, confirmMessage - сообщение об этом объекте, сформированное в бизнес-сервере.
+        // If we got this piece of code was a means for the detected objects referencing the deleted address. 
+        // Confirmation is required cascade delete. 
+        // Store information about references to deleted address. After a page reload, it will take the client code. 
+        // objectPK is the primary key of the referencing object, confirmMessage the message object generated in the business server. 
         _deletingObjectsCollection.Add(new { objectPK = args.DataObj.__PrimaryKey.ToString(), confirmMessage = ex.Message });
      }
-     //Отменяем дальнейшее выполнение удаления WOLV-ом, т.к. мы уже выполнили его руками.
-     //Если этого не сделать, то код на бизнес-сервере выполнится повторно.
+     //Cancel the further execution of the removal of WOLV-Ohm, because we have fulfilled it with your hands. 
+     //If this is not done, then the code on the business server will run again. 
      args.Cancel = true;
 }
 
-// Возвращает сериализованную строку JSON формата вида "[{"objectPK": "Строковое представление первичного ключа удаляемого адреса", "confirmMessage": "Текст сообщения о ссылающихся, на адрес, объектах"}, ...]".
+// Returns the serialized JSON string of the format "[{"objectPK": "the String representation of the primary key of the deleted addresses", "confirmMessage": "the text of the reference, to the address of the object"}, ...]". 
 public string DeletingObjects
 {
     get
     {
-        //JavaScriptSerializer находится в пространстве имен System.Web.Script.Serialization;
+        //The JavaScriptSerializer is in the System namespace.Web.Script.Serialization; 
         JavaScriptSerializer serializer = new JavaScriptSerializer();
-        //Экранируем кавычки
+        //Escapes quotes 
         return serializer.Serialize(_deletingObjectsCollection).Replace("\"", "\\\"");
     }
 }
-```
+``` 
 
-### Третий этап. Получение в бизнес-сервере информации о связанных объектах
+### the Third stage. Getting in the business server information on the connected objects 
 
 ```csharp
-//Код из АдресБС.cs
+//Code from Adress.cs 
 public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInstitutionsGuide.Адрес UpdatedObject)
 {
-    // *** Start programmer edit section *** (OnUpdateАдрес)
-    //На случай, если обработка прервётся, возвращаем пустой массив DataObject[]
+    // *** Start programmer edit section *** (OnUpdateАдрес) 
+    //In case the processing is interrupted, return an empty array DataObject[] 
     DataObject[] result = new DataObject[0];
 
     if (UpdatedObject.GetStatus() == ObjectStatus.Deleted)
     {
-        //Получим список учреждений ссылающихся на удаляемый адрес
+        //Get the list of institutions referring to the deleted address 
         var ds = (SQLDataService)DataServiceProvider.DataService;
         МедицинскоеУчреждение[] mil = ds.Query<МедицинскоеУчреждение>(МедицинскоеУчреждение.Views.MIG_МедицинскоеУчреждениеE)
             .Where(o => o.Адрес.__PrimaryKey == UpdatedObject.__PrimaryKey)
             .ToArray();
-        //Если список не пуст, значит потребуется каскадное удаление
-        //Нужно проверить дал ли пользователь подтверждение, а если еще - нет, то запросить его
+        //If list is not empty, then it will need the cascading delete 
+        //Need to check whether the user confirmation, and if not, request it 
         if (mil.Length > 0)
         {
-            //Если пользователь подтвердил каскадное удаление, то в DynamicProperties объекта должен находится флаг, по ключу "DeletingAllowed"
+            //If user confirmed a cascading delete, in DynamicProperties of the property is a flag that the key "DeletingAllowed" 
             if (UpdatedObject.DynamicProperties.ContainsKey("DeletingAllowed"))
             {
-                //Помечаем учреждения на удаление
+                //Mark Agency for the removal 
                 foreach (МедицинскоеУчреждение mi in mil)
                 {
                     mi.SetStatus(ObjectStatus.Deleted);
                 }
-                //Возвращаем удаляемые учреждения, чтобы они были удалены в этой же транзакции
+                //Return the deleted companies, so they were removed in the same transaction 
                 result = mil;
             }
             else
             {
-                //Необходимо запросить у пользователя подтверждение на каскадное удаление учреждений, вслед за их адресом
-                //Формируем строку с названиями учреждений
+                //Need to prompt the user for confirmation on delete cascade institutions, followed by their address 
+                //Generated string with the names of the institutions 
                 string referencedObjects = String.Join(", ", mil.Select(o => String.Format("'{0}'", o.Название)));
-                //Прерываем удаление, отправив в обработчик удаления, сообщения о ссылающихся объектах
-                //Метод UpdatedObject.ToString(true) просто возвращает строку с адресом, например "Россия, Пермский край, Пермь, Братьев Игнатовых, 2"
+                //Early removal, by sending in the drop handler, the message about referencing objects 
+                //Method UpdatedObject.ToString(true) just returns the address string, for example "Russia, Perm region, Perm, Brothers Ignatovich, 2" 
                 throw new MIG_ConfirmAdresDeletingException(String.Format("Вы уверены, что хотите удалить адрес: '{0}'? На него ссылаются следующие медицинские учреждения: {1}. 
                     Они так же будут удалены вместе с информацией об их телефонах и расходах.",
                     UpdatedObject.ToString(true),
@@ -184,33 +186,33 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
         }
     }
     return result;
-    // *** End programmer edit section *** (OnUpdateАдрес)
+    // *** End programmer edit section *** (OnUpdateАдрес) 
 }
-```
+``` 
 
-### Четвертый этап. Запрос подтверждения на каскадное удаление объектов
+### the Fourth stage. Confirmation on cascade delete of objects 
 
-Запрос подтверждения при помощи [JavaScript API](fa_js-api-core.html):
+The confirmation message with [JavaScript API](fa_js-api-core.html): 
 
 ```javascript
-//Код из wolv_page.aspx
-//wiki запрещает тэг SCRIPT-а, поэтому перед ним стоит подчеркивание, в реальном коде его быть не должно.
+//Code from wolv_page.aspx 
+//wiki forbids SCRIPT tag-and therefore facing underline, in real code it should not be. 
 <asp:Content ID="scriptContent" ContentPlaceHolderID="ContentPlaceHolder0" runat="server">
     <_script type="text/javascript">
-        //Клиенская обработка каскадного удаления адресов и ссылающихся, на них, объектов
+        //Client processing cascade delete addresses, and of referencing them, the objects 
         $(document).ready(function () {
-            //Забираем с сервера (через публичное свойство DeletingObjects)сериализованную строку JSON формата вида 
-            //"[{"objectPK": "Строковое представление первичного ключа удаляемого адреса", 
-            // "confirmMessage": "Текст сообщения о ссылающихся, на адрес, объектах"}, ...]" и десериализуем её
+            //Collect from the server (via a public property DeletingObjects)serialized JSON string format of the form 
+            //"[{"objectPK": "the String representation of the primary key of the deleted addresses", 
+            // "confirmMessage": "the text of the reference, to the address of the object"}, ...]" and deserialize it 
             var deletingObjects = $.parseJSON("<%=DeletingObjects%>");
-            //Выполняем обработку, только если хотя бы для одного адреса требуется каскадное удаление
+            //Perform processing only if at least one address is required cascade delete 
             if (deletingObjects.length > 0) {
-                //Строка для сообщения пользователю
+                //String to tell the user 
                 var confirmMessage = "";
-                //Строка JSON формата для первичных ключей удаляемых адресов (для их передачи на сервер, в случае подтверждения удаления)
+                //String JSON format for the primary keys of the deleted addresses (for sending to the server, in the case of a delete confirmation) 
                 var deletingObjectsPK = "";
                 var lastIndex = deletingObjects.length - 1;
-                //Формируем строки
+                //Generated string 
                 for (var i = 0; i < deletingObjects.length; i++) {
                     confirmMessage = confirmMessage + (i + 1) + "). " + deletingObjects[i].confirmMessage + "\n";
                     deletingObjectsPK = deletingObjectsPK + "\"" + deletingObjects[i].objectPK + "\"";
@@ -219,22 +221,22 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
                     }
                 }
                 deletingObjectsPK = "[" + deletingObjectsPK + "]";
-                //Отображаем окно подтверждения
+                //Display a confirmation window 
                 $.ics.dialog.confirm({
                     message: confirmMessage,
                     title: 'Подтверждение каскадного удаления связанных объектов',
-                    okButtonText: "Всё равно удалить",
-                    cancelButtonText: "Отменить удаление",
+                    okButtonText: "Anyway, to remove",
+                    cancelButtonText: "Cancel",
                     callback: function (res) {
                         if (res) {
-                            //При нажатии OK.
-                            //Инициируем PostBack, передав, в качестве аргумента, 
-                            //строку JSON формата с первичными ключами удалямых адресов.
-                            //'confirmDeletingOkBtn' - имя кнопки на окне подтверждения, которая инициирует PostBack.
+                            //When OK is pressed. 
+                            //Initiate the PostBack, passing, as argument, 
+                            //the JSON string format with primary keys odulami addresses. 
+                            //'confirmDeletingOkBtn' - the name of the button on the confirmation dialog, which initiates the PostBack. 
                             __doPostBack('confirmDeletingOkBtn', deletingObjectsPK);
                         } else {
-                            //При нажати Cancel.
-                            alert("Каскадное удаление отменено.");
+                            //When pressing Cancel. 
+                            alert("Cascade deletion canceled.");
                         }
                     }
                 });
@@ -242,55 +244,59 @@ public virtual ICSSoft.STORMNET.DataObject[] OnUpdateАдрес(IIS.MedicalInsti
         });
     </_script>
 </asp:Content>
-```
+``` 
 
-Пользователю будет выдано следующее окно подтверждения:
+The user will receive the following confirmation window: 
 
-![](/images/pages/products/flexberry-aspnet/controls/wolv/confirm-cascade-deleting.png)
+![](/images/pages/products/flexberry-aspnet/controls/wolv/confirm-cascade-deleting.png) 
 
-### Пятый этап. Выполнить каскадное удаление объектов, если пользователь дал согласие
+### the Fifth stage. To perform a cascade delete objects if the user has consented 
 
 ```csharp
-// Код из wolv_page.aspx.cs
+// Code from wolv_page.aspx.cs 
 protected override void Preload()
 {
-    // *** Start programmer edit section *** (PostBack handling)
+    // *** Start programmer edit section *** (PostBack handling) 
     if (Page.IsPostBack)
     {
-        //Обрабатываем случай, когда PostBack произошел при подтверждении, пользователем, 
-        //каскадного удаления выбранных адресов и ссылающихся, на них, объектов.
+        //Handle the case where the PostBack occurred when confirmation by the user 
+        //cascade delete selected addresses and referencing them, the objects. 
 
-        //Получаем имя объекта вызвавшего PostBack
+        //Get the name of the object that caused the PostBack 
         string targetID = Request.Form["__EVENTTARGET"];
         if (!String.IsNullOrEmpty(targetID))
         {
-            //Если объект - это кнопка "OK" окна подтверждения
+            //If the object is a "OK" button of confirmation window 
             if (targetID.Equals("confirmDeletingOkBtn"))
             {
-                //Получаем строку JSON формата с первичными ключами удаляемых адресов
+                //Get the JSON string format with the primary keys of the deleted addresses 
                 string argument = Request.Form["__EVENTARGUMENT"];
-                //Выполняем десериализацию строки
+                //Perform deserialization of string 
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 List<string> deletingObjectsPK = serializer.Deserialize<List<string>>(argument);
-                //Формируем массив удаляемых адресов
+                //Forming an array of deleted addresses 
                 DataObject[] deletingAdreses = deletingObjectsPK.Select(pk =>
                 {
-                    //Создаем объект класса "Адрес" с нужным первичным ключом
+                    //Create an object of class "Address" with the desired primary key 
                     Адрес deletingAdres = new Адрес();
                     deletingAdres.SetExistObjectPrimaryKey(new Guid(pk));
-                    //Подтверждаем каскадное удаление объектов, ссылающихся на этот адрес
-                    //по наличию, в DynamicProperties, ключа "DeletingAllowed", бизнес-сервер поймёт, что каскадное удаление разрешено
+                    //Confirm the cascade delete of the objects that link to this address 
+                    //by the presence, in DynamicProperties the key "DeletingAllowed", the business server will understand that cascading deletes are allowed 
                     deletingAdres.DynamicProperties.Add("DeletingAllowed", true);
-                    //Помечаем адрес на удаление
+                    //Mark the address for deletion 
                     deletingAdres.SetStatus(ObjectStatus.Deleted);
-                    //Добавляем в массив
+                    //Add to the array 
                     return deletingAdres;
                 }).ToArray<Адрес>();
-                //Удаляем. (Дальнейшая обработка происходит в АдресБС)
+                //Delete. (Further processing takes place in Adress) 
                 DataServiceProvider.DataService.UpdateObjects(ref deletingAdreses);
             }
         }
     }
-    // *** End programmer edit section *** (PostBack handling)
+    // *** End programmer edit section *** (PostBack handling) 
 }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

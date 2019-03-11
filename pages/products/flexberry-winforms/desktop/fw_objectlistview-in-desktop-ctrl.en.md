@@ -1,113 +1,115 @@
----
-title: Контрол рабочего стола
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Рассмотрены основные средства настройки рабочего стола приложения. А именно, 1) указано как задавать фоновую картинку рабочего стола, 2)описано контекстное меню, 3)описан способ задания столбца, по которому выполняется группировка элементов рабочего стола, 4) указано как заменить стандартные иконки, отображаемые для папок, пользовательских форм и форм редактирования, 5) перечислены методы  принудительного обновления `ListView`, 6) описана Работа с Column и Item, рассмотрен класс ItemInListView, 7)указано как переопределить событие `TreeViewItemSelected` для выполнения специфичных действий при перевыборе элемента в treeView, 8) перечислено, какие пользовательские настройки сохраняются для рабочего столы, и указано, как управлять их сохранением
-toc: true
-permalink: ru/fw_objectlistview-in-desktop-ctrl.html
-folder: products/flexberry-winforms/
-lang: ru
----
+--- 
+title: Control desktop 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: the basic configuration tools, desktop applications. Namely, 1) States how to set background picture desktop, 2)described the context menu, 3)describes how to specify the column on which grouping is performed on desktop items, 4) describes how to replace the default icons for folders, custom forms and edit forms, 5) lists the methods that force an update `ListView`, 6) describes the Column and Item, we consider a class of ItemInListView, 7)describes how to override the event `TreeViewItemSelected` to perform a specific action with the re-election item in the treeView, 8) lists what user settings are saved to the desktop tables, and indicates how to manage their conservation 
+toc: true 
+permalink: en/fw_objectlistview-in-desktop-ctrl.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 8aade88ef23d0113d0aced36977a60423d186cf12f0008815b182c2daab7b6ca 
+--- 
 
-## Картинка на рабочем столе
+## Picture on the desktop 
 
-Фоновая картинка рабочего стола задается свойством `listView1.OverlayImage.Image`. Можно выбрать любую картинку форматов ''gif, jpg, jpeg, bmp, wmf, png''. Можно установить анимированную картинку, но анимироваться она не будет. После смены изображения нужно его обновить вызовом метода `RefreshOverlay`:
+The background picture of the desktop set by the property `listView1.OverlayImage.Image`. You can choose any picture format "gif, jpg, jpeg, bmp, wmf, png". You can set an animated image, but to animate it will not. After changing image will need to update the method call `RefreshOverlay`: 
 
 ```csharp
 listView1.RefreshOverlay(listView1.OverlayImage)
-```
+``` 
 
-Выравнивание картинки производится путём задания необходимого значения свойству `OverlayImage.Alignment` (тип - `System.Drawing.ContentAlignment`), после чего рекомендуется обновить картинку вышеуказанным способом.
+Alignment of images is performed by setting the required value to a property `OverlayImage.Alignment` (type - `System.Drawing.ContentAlignment`), then it is recommended to update the picture by the above method. 
 
-Чтобы изменить прозрачность картинки нужно менять значение поля `OverlayImage.Transparency`. Оно принимает значения от 0 (абсолютная прозрачность) до 255 (совершенно непрозрачная картинка), значение по умолчанию 128.
+To change the transparency of the picture you need to change the field value `OverlayImage.Transparency`. It takes values from 0 (full transparency) to 255 (completely opaque), the default value is 128. 
 
-### Пример
+### Example 
 
 ```csharp
 listView1.OverlayImage.Image = Image.FromFile("D:\\images\\limeleaf.png");
 listView1.OverlayImage.Alignment = ContentAlignment.BottomLeft;
 listView1.OverlayImage.Transparency = 50;
-```
+``` 
 
-![](/images/pages/products/flexberry-winforms/desktop/desctop-picture.png)
+![](/images/pages/products/flexberry-winforms/desktop/desktop-picture.png) 
 
-Отступы по горизонтали и вертикали соответственно задаются с помощью атрибутов `OverlayImage.InsetX` и `OverlayImage.InsetY` (типы - int)
+Margins horizontally and vertically, respectively, are specified using attributes `OverlayImage.InsetX` and `OverlayImage.InsetY` (type - int) 
 
-## Контекстное меню
-Рассматриваемое контекстное меню вызывается кликом правой кнопки мыши в свободном пространстве.
+## Context menu 
+Consider the context menu invoked by right-clicking the mouse in free space. 
 
-![](/images/pages/products/flexberry-winforms/desktop/context-menu.png)
+![](/images/pages/products/flexberry-winforms/desktop/context-menu.png) 
 
-* __Обновить__ – обновляет все элементы списка с сохранением текущей позиции - `listView1.BuildList(true)`.
-* __Отображать дерево__ – скрыть/показать treeView (свойство `treeView1.Visible`).
-* __Показывать папки__ – выводить/не выводить папки в listView.
-* __Группировать элементы__ – группировать/не группировать элементы listView (свойство `ShowGroups`).
-* __Столбцы__ – выбрать столбцы для отображения в listView. Столбец «Название» отображается всегда.
-* __Всегда группировать по__ – выбрать столбец, по которому всегда будет происходить группировка элементов (свойство `AlwaysGroupByColumn`).
+* __Update__ – updates all the list items by current position - `listView1.BuildList(true)`. 
+* __Tree display__ – hide/show the treeView (the property `treeView1.Visible`). 
+* __Show folders__ – display/displaying a folder in a listView. 
+* __Grouping the elements__ – to group/not group the items of the listView (property `ShowGroups`). 
+* __Columns__ – choose columns to display in the listView. Column» «Name is always displayed.
+* __Always combine in__ – choose a column that will always be group items (property `AlwaysGroupByColumn`). 
 
-## Группировка элементов рабочего стола
-Группировка задаётся свойством `ShowGroups` (по умолчанию `true`).
-Столбец для группировки по умолчанию определяется тем столбцом, по которому происходит упорядочивание элементов. Название группы принимает значение этого столбца у соответствующего элемента.
+## Grouping desktop items 
+Grouping is specified by the property `ShowGroups` (default `true`). 
+The column to group by default is determined by the column that the ordering of the elements. A group name takes the value of this column from the corresponding element. 
 
-Например, если все элементы имеют разные имена, то при упорядочивании по имени будет отображаться столько групп, сколько всего элементов в `listView`, при этом в каждой группе будет по одному элементу. При этом название группы примет имя содержащегося в ней элемента.
+For example, if all elements have different names, then sorting by name will display as many groups as all items in `listView`, each group will have one element. The group name will take the name of the contained element. 
 
-Существует возможность задания столбца, по которому группировка будет происходить всегда, даже если сортировка производится по другому столбцу. Для этого служит атрибут `AlwaysGroupByColumn` (по умолчанию `null`), ему присваивается соответствующий столбец.
+You can specify the column by which grouping will occur always, even if sorted by another column. For this is the attribute `AlwaysGroupByColumn` (default `null`), it is assigned a corresponding column. 
 
-### Пример
+### Example 
 
 ```csharp
 listView1.ShowGroups = true;
 listView1.AlwaysGroupByColumn = this.ItemType;
-```
+``` 
 
-![](/images/pages/products/flexberry-winforms/desktop/desctop-group.png)
+![](/images/pages/products/flexberry-winforms/desktop/desktop-group.png) 
 
-## Замена иконок элементов списка
-Если не устраивают стандартные иконки, отображаемые для папок, пользовательских форм и форм редактирования, заменить их можно следующим образом:
-* Замена всей группы иконок. <br>В экземпляре класса `Runner` поле для картинки `imagecache` должно быть `null` (стоит по умолчанию). Тогда рисунок берется из `imageListRunners` и `imageListRunnersLarge` (для отображения мелких (16x16) и крупных (32x32) иконок соответственно). В качестве ключа используются следующие значения: ''"IconFolder"'' – папка, ''"IconForm"'' – пользовательская форма, ''"IconEdit"'' – форма редактирования, ''"IconFolderUp"'' – на уровень вверх. В пользовательском приложении иконка меняется через одноимённые поля компонента `DesktopCtrl`, за исключением ''"IconFolderUp"'' – здесь её заменить нельзя.
-* Замена иконки для конкретного экземпляра класса `Runner` (пользовательская форма или форма редактирования). <br>Замена происходит в коде пользовательского приложения.
+## change icons of the list items 
+If you are not satisfied with the standard icons for folders, custom forms and edit forms, replace them as follows: 
+* Replacement of the entire group of icons. <br / >class instance `Runner` box for pictures `imagecache` should be `null` (is the default). Then the picture is taken from `imageListRunners` and `imageListRunnersLarge` (to display small (16x16) large (32x32) icons, respectively). As the key uses the following values: ""IconFolder"" folder ""IconForm"" – custom shape, ""IconEdit"" edit, ""IconFolderUp"" – to level up. In a custom application icon changes using the same name field of the component `DesktopCtrl`, with the exception of ""IconFolderUp"" – here it can not be replaced. 
+* Replacement icons for the specific instance of the class `Runner` (custom form or edit form). the <br>Replacement is in the code of the user application. 
 
-### Пример (ЛюдиDesktopCustomizer.cs)
+### Example (ЛюдиDesktopCustomizer.cs) 
 
 ```csharp
 public override ICSSoft.STORMNET.UI.Runner[] GetRunners()
 …
-arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Люди.Л_ЧеловекL), "Люди", "Человек", "Описание человека"));
-arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Люди.Л_МашинаL), "Люди", "Машина", "Описание машины"));
-arr.Add(new ICSSoft.STORMNET.Windows.Forms.FormRunner(typeof(IIS.Люди.WinformForm), "Люди", "Форма", "Описание формы"));
+arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Люди.Л_ЧеловекL), "People", "Man", "A description of the man"));
+arr.Add(new ICSSoft.STORMNET.UI.ContRunner(typeof(IIS.Люди.Л_МашинаL), "People", "The machine", "Machine description"));
+arr.Add(new ICSSoft.STORMNET.Windows.Forms.FormRunner(typeof(IIS.Люди.WinformForm), "People", "Form", "Form description"));
 …
-// *** Start programmer edit section *** (Люди GetRunners() End)
-((ICSSoft.STORMNET.UI.ContRunner)arr[0]).SetImage("D:\\images\\goldstar3.png"); // "Человек"
-((ICSSoft.STORMNET.Windows.Forms.FormRunner)arr[2]).SetImage("D:\\images\\caseberrytmcut.jpg"); //"Форма"
-// *** End programmer edit section *** (Люди GetRunners() End)
-```
+// *** Start programmer edit section *** (People GetRunners() End) 
+((ICSSoft.STORMNET.UI.ContRunner)arr[0]).SetImage("D:\\images\\goldstar3.png"); // "Person" 
+((ICSSoft.STORMNET.Windows.Forms.FormRunner)arr[2]).SetImage("D:\\images\\caseberrytmcut.jpg"); //"Form" 
+// *** End programmer edit section *** (People GetRunners() End) 
+``` 
 
-![](/images/pages/products/flexberry-winforms/desktop/list-icons.png)
+![](/images/pages/products/flexberry-winforms/desktop/list-icons.png) 
 
-## Обновление объектов `ListView`
-Возможны ситуации, когда при добавлении, изменении или удалении каких-то объектов в `ListView` некоторые его элементы отображаются неправильно. Тогда `ListView` нужно обновить принудительно. Для этого используются следующие методы:
-* `BuildList` – перестроить все items в listView. True в качестве аргумента означает, что нужно сохранить фокус и выделение.
-* `RefreshOverlay` – обновить наложение, в частности картинку (передаётся аргументом).
-* `RefreshObject` – обновить строку с передаваемым в качестве аргумента объектом.
-* `RebuildColumns` – обновить имеющиеся столбцы. Вызывается, например, после изменения свойства `IsVisible` столбца. 
+## Update objects `ListView` 
+There may be situations where adding, modifying or deleting any objects in `ListView` some elements are not displayed correctly. Then `ListView` need to update force. For this purpose the following methods: 
+* `BuildList` – rebuild all items in the listView. True as argument means that you need to maintain focus and selection. 
+* `RefreshOverlay` to update the overlay, in particular the picture (passed argument). 
+* `RefreshObject` to update the row with the passed in argument object. 
+* `RebuildColumns` to update existing columns. Is called, for example, after modifying the properties `IsVisible` column. 
 
-## Работа с Column и Item
-У компонента `ObjectListView` существуют некоторые особенности при настройке и добавлении столбцов и записей. Прежде всего нужно сказать несколько слов о вспомогательном классе `ItemInListView`.
+## Work with the Column and Item 
+The component `ObjectListView` there are some features you configure and add columns and records. First of all you need to say a few words on the support class `ItemInListView`. 
 
-Класс `ItemInListView` по сути связывает Items с Columns. `ObjectListView` сам создаёт новый item и присваивает каждому полю нужное значение. Чтобы составить однозначное соответствие «поле в `ItemInListView` – столбец в `ObjectListView`» имена полей в `ItemInListView` совпадают со значением полей `AspectName` (тип `string`) у соответствующих столбцов.
-Добавление нового item происходит по схеме: 
-* Создали экземпляр класса `ItemInListView` и заполнили его поля.
-* Добавили его в `ObjectListView` методом `AddObjects` для нескольких item или `AddObject` для одного item.
+Class `ItemInListView` in fact links Items with Columns. `ObjectListView` itself creates a new item and assigns each field to the desired value. To be unambiguous compliance «field in `ItemInListView` – column in `ObjectListView`» field names in `ItemInListView` match the value fields `AspectName` (type `string`) in their respective columns. 
+The addition of a new item occurs according to the scheme: 
+* Created an instance of the class `ItemInListView` and filled its fields. 
+* Added it to `ObjectListView` method `AddObjects` for multiple item or `AddObject` for one item. 
 
-При таком подходе отпадает необходимость в работе с subItem и к каждому добавленному item можно обращаться как к `ItemInListView`:
+With this approach there is no need to work with the subitem's and attached to each item can be referred to as `ItemInListView`: 
 
 ```csharp
 ((ItemInListView)listView1.SelectedObjects[0]).Description
-```
+``` 
 
-При создании столбцов нужно указать `AspectName` для связи с данными и `ImageAspectName` для связи с картинкой. Добавлять столбцы нужно в два массива.
+When creating columns, you need to specify `AspectName` to communicate with and `ImageAspectName` to communicate with the picture. To add columns you need in two arrays. 
 
-### Пример
+### Example 
 
 ```csharp
 listView1.AllColumns.Add(Caption);
@@ -119,14 +121,14 @@ listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
     Description,
     ItemType,
     ParentFolder});
-```
+``` 
 
-## Событие TreeViewItemSelected
-Событие `TreeViewItemSelected` происходит при перевыборе элемента в treeView. Позволяет при определённых условиях отобразить вместо listView панель с какими-то своими контролами. Например, если выбранная в treeView вершина является листом, т.е. в ней нет форм и таблиц, а только папки (можно узнать по свойству `IsListNodeSelected`), можно вместо listView показать текст со справочной информацией.
+## Event TreeViewItemSelected 
+Event `TreeViewItemSelected` happens with the re-election item in the treeView. Allows, under certain conditions, replace the listView with some of their controls. For example, if selected in the treeView the node is a leaf, i.e. it has no forms and tables, but only the folder (see the property `IsListNodeSelected`) instead of listView show text with background information. 
 
-В пользовательском приложении нужно подписаться на событие `TreeViewItemSelected` у экземпляра `DesktopCtrl`. В унаследованном классе `TreeViewShowControlsEventArgs` нужно задать значение true полю `Handled` если нужно отобразить свои контролы  и false если нужно отобразить listView. Далее создаются контролы и помещаются в `PanelOnListView`.
+In your application, you need to subscribe to an event `TreeViewItemSelected` instance `DesktopCtrl`. In an inherited class `TreeViewShowControlsEventArgs` need to set this value to true field `Handled` if you want to display your controls and false if you want to display a listView. Further, controls are created and placed in `PanelOnListView`. 
 
-### Пример
+### Example 
 
 ```csharp
 private void desktopCtrl2_TreeViewItemSelected(object sender, ICSSoft.STORMNET.Windows.Forms.DesktopCtrl.TreeViewShowControlsEventArgs e)
@@ -135,7 +137,7 @@ private void desktopCtrl2_TreeViewItemSelected(object sender, ICSSoft.STORMNET.W
     {
         e.Handled = true;
         Label label = new Label();
-        label.Text = "Некий текст заместо ListView";
+        label.Text = "Some text instead of the ListView";
         label.AutoSize = true;
         label.ForeColor = Color.DarkBlue;
         label.Location = new Point(100, 50);
@@ -147,25 +149,29 @@ private void desktopCtrl2_TreeViewItemSelected(object sender, ICSSoft.STORMNET.W
         e.Handled = false;
     }
 }
-```
+``` 
 
-![](/images/pages/products/flexberry-winforms/desktop/treeview-item-selected.png)
+![](/images/pages/products/flexberry-winforms/desktop/treeview-item-selected.png) 
 
-## DesktopSettings
-Серилиазуемый класс `DesktopSettings` служит для хранения таких пользовательских настроек как размер окна, ширина столбцов, столбцы для отображения и т.д. Для того чтобы настройки сохранялись и загружались, нужно установить свойство `UseSettings` класса `SettingManager` равным true. В таком случае настройки сохраняются перед закрытием пользовательского приложения, а загружаются при запуске.
+## DesktopSettings 
+Seriousely class `DesktopSettings` is used to store user settings such as window size, column width, columns displayed, etc. in order to setup has been loaded, you need to set the property `UseSettings` class `SettingManager` is true. In this case, settings are saved before closing the user application, and loaded when you start. 
 
-Хранятся следующие настройки:
-* string[] `History` - история строки в `AddressBar`.
-* string `curpath` - текущий путь в папках.
-* int `Viewmode` - режим представления элементов. 0 – большие иконки, 1 – список, 2 – подробности, 3 – маленькие иконки.
-* int `FoldersSplitterPos` - позиция сплиттера между treeView и listView.
-* bool `TreeViewVisible` – отображать treeView.
-* bool `ListViewShowFolders` – отображать папки в listView.
-* bool `ListViewShowGroups` – группировать элементы в listView.
-* string `ListViewAlwaysGroupByColumnName` – название столбца, по которому нужно всегда группировать элементы (''“Caption”'' - название, ''“Description”'' - описание, ''"ItemType"'' - тип, ''"ParentFolder"'' - папка).
-* string `ListViewColumnSort` – название столбца, по которому производится сортировка элементов listView.
-* SortOrder `ListViewSortOrder` – порядок сортировки элементов listView (убывание, возрастание).
-* Отображать столбцы: `ColumnDescriptionVisible` – описание, `ColumnItemTypeVisible` – тип, `ColumnParentFolderVisible` – папка. Столбец «Название» отображается всегда.
-* Ширина столбцов: `ColumnCaptionWidth` - название, `ColumnDescriptionWidth` - описание, `ColumnItemTypeWidth` - тип, `ColumnParentFolderWidth` – папка.
- 
+Stores the following settings: 
+* string[] `History` - the story line in `AddressBar`. 
+* string `curpath` - current path in folders. 
+* int `Viewmode` mode of presentation. 0 – large icons, 1 – list, 2 – detail, 3 – small icons. 
+* `FoldersSplitterPos` int - the position of the splitter between the treeView and the listView. 
+* bool `TreeViewVisible` – display the treeView. 
+* bool `ListViewShowFolders` – show folders in the listView. 
+* bool `ListViewShowGroups` – group items in the listView. 
+* `ListViewAlwaysGroupByColumnname` string – name of column on which you want to always group elements ("“Caption”" title "“Description”" description, ""ItemType"", ""ParentFolder"" - folder). 
+* `ListViewColumnSort` string – the name of the column that sorts the listView items. 
+* PstrfListViewSortOrder` SortOrder – the sort order of the listView items order (descending, ascending). 
+* Display columns: `ColumnDescriptionVisible`, `ColumnItemTypeVisible` – type `ColumnParentFolderVisible` – folder. Column» «Name is always displayed. 
+The width of the columns: `ColumnCaptionWidth` - name, `ColumnDescriptionWidth`, `ColumnItemTypeWidth` - type `ColumnParentFolderWidth` – folder. 
 
+
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

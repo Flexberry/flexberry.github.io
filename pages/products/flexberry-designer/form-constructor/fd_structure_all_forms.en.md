@@ -1,39 +1,45 @@
----
-title: List of forms in the application structure
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, структура приложения, все формы
+--- 
+title: List of forms in your application design 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, the structure of the application, all forms 
 summary: 
-toc: true
-permalink: en/fd_structure_all_forms.html
-lang: en
----
+toc: true 
+permalink: en/fd_structure_all_forms.html 
+lang: en 
+autotranslated: true 
+hash: bc05bc670b01741a9b37af2279e9b8a6e2673609dbab2d6e8f8e6f3e7b066499 
+--- 
 
-## Левое "дерево"
+## the Left "tree" 
 
-На странице структуры приложения слева отображается дерево с перечнем всех классов данных проектируемого приложения, а также все списковые формы и формы редактирования, привязанные к соответствующим классам данных (вложенные узлы).
+Visit the application structure on the left displays a tree listing all the data classes of the applications, as well as all of the list form and edit form bound to the appropriate data classes (nested nodes). 
 
-### Инструменты работы с формами
+### Tools forms 
 
-Название контрола | Обозначение | Описание
-:------------|:------------| :------------
-Удалить | | Удаление класса данных или формы, привязанной к классу данных
-Добавить сущность | | Создание нового объекта данных
-Добавить форму редактирование | | Создание формы редактирования для объекта данных
-Добавить спискову форму | | Создание списковой формы для объекта данных
-Редактировать | | Редактирование выбранного класса данных, списковой формы или формы редактирования
-Открыть список всех классов | | Переход к списку классов данных
+Name control | name | Description 
+:------------|:------------| :------------ 
+Remove | | Remove data class or form bound to the data class 
+Add the entity | | create a new data object 
+Add form edit | | Create the edit form for the data object 
+Add spickova the form | | create the list form for the object data 
+Edit | | edit the selected data class, list form or edit form 
+To open a list of all classes | | Jump to the list of data classes 
 
-## Правое "дерево"
+## Right "tree" 
 
-Справа на странице находится дерево для редактирования навигационной структуры (структуры меню) проектируемого приложения. В данном дереве можно создавать меню произвольной вложенности, группируя элементы меню по «папкам» на различных уровнях. Элементами навигации (не считая «папки», которые используются для группировки элементов) могут быть списковые формы, формы редактирования или пункты меню, ссылающиеся на произвольный адрес URL. 
+Right on the page the tree is for editing the navigation structure (menu structure) of the design application. In this tree you can create menus of arbitrary nesting by grouping menu items into folders» «at various levels. The navigation items (not counting the» «folders, which are used to group elements) can be list form, form editing, or menu items that refer to an arbitrary URL. 
 
-### Инструменты работы с навигацией
+### Tools navigation 
 
-Название контрола | Обозначение | Описание
-:------------|:------------| :------------
-Добавить URL || Добавление нового элемента навигации (пункта меню) со ссылкой на произвольный адрес URL
-Редактировать || Редактирование свойств (заголовка и описания) выбранного элемента навигации
-Удалить || Удаление элемента навигации
-Добавить каталог || Добавление новой «папки» в структуру навигации
-Переместить вверх/ переместить вниз || Изменение порядка элементов навигации (перемещение вверх и вниз)
-Сохранить || Сохранение структуры навигации 
+Name control | name | Description 
+:------------|:------------| :------------ 
+Add URL || Add the new navigation item (menu item) with reference to an arbitrary URL 
+Edit || edit the properties (title and description) selected navigation item 
+Remove || Remove the navigation item 
+Add a directory || Add new» «folders in the navigation structure 
+Move up/ move down || change the order of navigation controls (move up and down) 
+Save || Save navigation structure 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

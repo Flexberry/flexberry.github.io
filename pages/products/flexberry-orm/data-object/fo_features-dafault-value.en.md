@@ -1,70 +1,72 @@
----
-title: Features of setting the default value
-sidebar: flexberry-orm_sidebar
-keywords: DataObject, Flexberry ORM, data types
-summary: Features of the methods for setting the default value
-toc: true
-permalink: en/fo_features-dafault-value.html
-lang: en
----
+--- 
+title: features of setting default values 
+sidebar: flexberry-orm_sidebar 
+keywords: data Objects, Flexberry ORM data types 
+summary: Features methods of specifying the value default 
+toc: true 
+permalink: en/fo_features-dafault-value.html 
+lang: en 
+autotranslated: true 
+hash: dd47192e5257cbbfd7843a7cd9c971db4937f2841c17fff2258d113fd2088b14 
+--- 
 
-Задание значений по умолчанию доступно как при редактировании [диаграммы классов](fd_class-diagram.html), так и в программном коде.
+Set default values available when you edit a [class diagram](fd_class-diagram.html) and in the code. Consider the main features of these methods. 
 
-## Задание значения по умолчанию на диаграмме классов
+## Assignment default values on the class diagram 
 
-### Скалярные типы
+### Scalar types 
 
-Чтобы указать на [диаграмме классов](fd_class-diagram.html) значение по умолчанию для полей скалярных типов достаточно определить его в [DefaultValue](fo_attributes-class-data.html) у соответствующего поля (существуют особенности генерации для [DefaultValue](fo_attributes-class-data.html)).
+To indicate [the class diagram](fd_class-diagram.html) the default value for fields scalar types it is sufficient to define it in the [DefaultValue](fo_attributes-class-data.html) in the appropriate fields (note the peculiarities of generation for the [DefaultValue](fo_attributes-class-data.html)). 
 
-{% include note.html content="Если тип значения по умолчанию не будет соответствовать типу поля, то проект будет сгенерирован, но не скомпилируется." %}
+{% include note.html content="If the type of default value is not appropriate for the field type, the project will be generated but will not be compiled." %} 
 
-### Cкалярные nullable-типы
+### nullable Scalar types 
 
-Задание значения по умолчанию на [диаграмме классов](fd_class-diagram.html) для [скалярных nullable-типов](fd_nullable-types.html) происходит аналогично скалярным типам.
+The job defaults to [class diagram](fd_class-diagram.html) for [nullable scalar-types](fd_nullable-types.html) is similar to scalar types. 
 
-Generic Nullable-типы могут быть инициализированы значениями, которые достаются из внутренних типов. Например, если присвоить значение `Now` в поле `Default` для атрибута на диаграмме классов, можно получить такой код:
+Generic Nullable types can be initialized with values that accrue from the internal types. For example, if you assign a value `Now` `Default` in the field for the attribute on the class diagram, you can obtain this code: 
 
-```csharp
+```cs
 private System.Nullable<System.DateTime> fRelease = System.DateTime.Now;
-```
-{% include important.html content="Задать по умолчанию `null` не получится." %}
+``` 
+{% include note.html content="Please note that set default `null` will not work." %} 
 
-### Комплексные типы
+### Complex types 
 
-Задать значение по умолчанию на диаграмме классов для поля комплексного типа (например, заданного с помощью класса со [стереотипом](fd_key-concepts.html) [type](fd_data-types-properties.html)) в общем случае невозможно.
+To set the default value on the class diagram for the field of complex type (for example specified by the class with the [stereotype](fd_key-concepts.html) [Types of data classes with the stereotype-type-and-their-properties](fd_data-types-properties.html)) in the General case impossible. 
 
-### Синонимы типов
+### type Synonyms 
 
-Для [синонимов типов](fd_typedef.html) задание значения по умолчанию на диаграмме классов происходит аналогично тому, как это происходит у типов, синонимами которых они являются. 
+[Synonyms types](fd_typedef.html) set a default value on the class diagram, is similar to how it occurs in types, synonyms, which they are. 
 
-## Задание значения по умолчанию в программном коде
+## Task default values in the code 
 
-| Приём | Преимущества | Недостатки |
-|---|---|---|
-| Задание значения по умолчанию в коде формы | + Позволяет для каждой формы задавать свои значения по умолчанию | - Требует проводить инициализацию значений по умолчанию в каждой форме |
-| Задание значения по умолчанию в [объекте данных](fo_data-object.html) | + Позволяет задавать значение по умолчанию в одном месте | - Усложнение кода, если каждой форме требуются свои значения по умолчанию |
-| Задание значения по умолчанию в [бизнес-сервере](fo_bs-wrapper.html) | + Позволяет задавать значение по умолчанию в одном месте и отделить логику от интерфейса | - Усложнение кода, если каждой форме требуются свои значения по умолчанию |
+| Admission | Advantages | Disadvantages | 
+|---|---|---| 
+| Set the default values in the form's code Allows for each form to define their default values | - Requires to initialize the default values in each form | 
+| Set the default values in the [data object](fo_data-object.html) | Allows you to set the default value in one place | - Complication of code if each form requires its own defaults | 
+| Set the default values in the [business server](fo_bs-wrapper.html) | sets the value default in one place and separate logic from UI | - Complication of code if each form requires its own defaults | 
 
-### Задание значения по умолчанию в коде формы
+### Task default values in the form's code 
 
 ```csharp
 public class WinformC__ПациентE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BSTest.DPDIC__ПациентE
 {
 	private void WinformC__ПациентE_DataObjectOnFormLoaded(object sender, EventArgs e)
 	{
-		((Пациент) this.DataObject).ФИО = "ФИОПациента"; //задаём значения по умолчанию
+		((Пациент) this.DataObject).ФИО = "Vipasyana"; //set default values 
 		...
 	}
-	//...
+	//... 
 }
-```
+``` 
 
-### Задание значения по умолчанию в объекте данных
+### Task default values in the data object 
 
 ```csharp
 public class Пациент : ICSSoft.STORMNET.DataObject
 {
-	private fФИО = "ФИОПациента"; //установка значения по умолчанию
+	private fФИО = "Vipasyana"; //setting default values 
 	public string ФИО 
 	{
 		get
@@ -77,41 +79,44 @@ public class Пациент : ICSSoft.STORMNET.DataObject
 			fФИО = value;
 		}
 	}
-	//...
+	//... 
 }
-```
+``` 
 
-### Задание значения по умолчанию в бизнес-сервере
-
-Код формы:
+### specify a default business server 
+Form code: 
 
 ```csharp
 public class WinformC__ЗаписьНаПриёмE : ICSSoft.STORMNET.UI.BaseWinEdit, IIS.BSTest.DPDIC__ЗаписьНаПриёмE
 {
 	private void WinformC__ЗаписьНаПриёмE_DataObjectOnFormLoaded(object sender, EventArgs e)
 	{
-		//определяем, какие бизнес-сервера определены для объекта типа "ЗаписьНаПриём"
+		//define which business servers defined for the object type "Zapolarie" 
 		BusinessServer[] businessServers = BusinessServerProvider.GetBusinessServer(typeof(ЗаписьНаПриём), DataServiceObjectEvents.OnAllEvents, DataServiceProvider.DataService);
 		if (businessServers.Length>0) 
 		{
-			TestBS curBS = (TestBS) businessServers[0]; //берём первый и единственный (в данном случае единственный)
-			curBS.InitializeRecord(this.DataObject as ЗаписьНаПриём); //задаём значения по умолчанию
-			EditManager.Change(); //применяем внесённые изменения
+			TestBS curBS = (TestBS) businessServers[0]; //get first and only (in this case only) 
+			curBS.InitializeRecord(this.DataObject as ЗаписьНаПриём); //set default values 
+			EditManager.Change(); //apply the changes 
 		}
 	}
-	//...
+	//... 
 }
-```
+``` 
 
-Код бизнес-сервера:
+Code business server: 
 
 ```csharp
 public class TestBS : ICSSoft.STORMNET.Business.BusinessServer
 {
 	public void InitializeRecord(IIS.BSTest.ЗаписьНаПриём RecordToInitialize)
 	{
-		RecordToInitialize.Дата = new DateTime(2012,12,12); //установка значения по умолчанию
+		RecordToInitialize.Дата = new DateTime(2012,12,12); //setting default values 
 	}
-	//...
+	//... 
 }
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

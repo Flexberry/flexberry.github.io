@@ -1,34 +1,40 @@
----
-title: Параметры в расширенном редакторе ограничений
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Ограничения
-toc: true
-permalink: en/fa_advanced-limit-editor-parameters.html
-lang: en
----
+--- 
+title: Options in the advanced editor limitations 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Restrictions 
+toc: true 
+permalink: en/fa_advanced-limit-editor-parameters.html 
+lang: en 
+autotranslated: true 
+hash: 1a60d1c04a5783c3c7fec5f44faab722f4e36483dbeed2686fef8389d1e3b5f9 
+--- 
 
-В [Расширенном редакторе ограничений](fa_advanced-limit-editor.html) доступна работа с параметрами.
+In the Expanded constraint editor](fa_advanced-limit-editor.html) available to work with parameters. 
 
-## Локализация типов параметров
+## Localization parameter types 
 
-Типы параметров в [редакторе ограничений](fa_advanced-limit-editor.html) локализованы:
+The types of the parameters in the [constraint editor](fa_advanced-limit-editor.html) localized: 
 
-|Тип	|Русский вариант|	Английский вариант|
-|---|---|---|
-|System.SByte|	Целое число (sbyte)|  Integer (sbyte)|
-|System.Byte |  Целое число (byte) |  Integer (byte) |
-|System.Int16|	Целое число (short)|  Integer (short)|
-|System.Int32|	Целое число|	Integer| 
-|System.UInt32|	Целое число (uint)|	Integer (uint)|
-|System.Int64|	Целое число (long)|	Integer (long)|
-|System.UInt64|	Целое число (ulong)|	Integer (ulong)|
-|System.Char	|Символ	|Character|
-|System.String|	Строка|	Stroke|
-|System.Single|	Дробное число (float)|	Fraction (float)|
-|System.Double|	Дробное число (double)|	Fraction (double)|
-|System.Decimal|	Дробное число|	Fraction|
-|System.Boolean|	Логический тип|	Logic|
-|System.DateTime|	Дата и время|	Date and time|
-|System.Enum|	Перечисление|	Enumeration|
+|Type |Russian version| English version| 
+|---|---|---| 
+|System.SByte| Integer (sbyte)| Integer (sbyte)| 
+|System.Byte | Integer (byte) | Integer (byte) | 
+|System.Int16| Integer (short)| Integer (short)| 
+|System.Int32| Integer| Integer| 
+|System.UInt32| Integer (uint)| Integer (uint)| 
+|System.Int64| Integer (long)| Integer (long)| 
+|System.UInt64| Integer (ulong)| Integer (ulong)| 
+|System.Char |Character |Character| 
+|System.String| Line| Stroke| 
+|System.Single| Fractional number (float)| Fraction (float)| 
+|System.Double| floating point number (double)| Fraction (double)| 
+|System.Decimal| fraction| Fraction| 
+|System.Boolean| Boolean| Logic| 
+|System.DateTime| date and time| Date and time| 
+|System.Enum| Enumeration| Enumeration| 
 
-Если это Nullable-тип стандартного системного типа, то к локализованному значению типа добавляется в конце "с пустыми значениями".
+If it is a Nullable-type the default system type, then the localized value is added to the end of "empty". 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

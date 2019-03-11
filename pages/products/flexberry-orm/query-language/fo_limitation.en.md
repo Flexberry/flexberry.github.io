@@ -1,33 +1,39 @@
----
-title: Filtering and data sampling
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, Ограничения
-summary: Описание, связь между функциями ограничения и LinqProvider, пример конвертации
-toc: true
-permalink: en/fo_limitation.html
-lang: en
----
+--- 
+title: Filtering and limiting data selection 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM Limitations 
+summary: the Description, the relationship between the functions of limitations and LinqProvider example convert 
+toc: true 
+permalink: en/fo_limitation.html 
+lang: en 
+autotranslated: true 
+hash: 4ea0ba171d63827cf46c9c06183e8fc4a4a20378602f703312adf487e530385d 
+--- 
 
-Для фильтрации и ограничения выборки данных существует несколько классов, реализующих данную логику:
+To filter and limit the data selection there are several classes that implement this logic: 
 
-* [Функции ограничения (Limit Function)](fo_limit-function.html).
-* [LINQProvider](fo_linq-provider.html) (компоненты для поддержки LINQ в [Flexberry ORM](fo_flexberry-orm.html)).
+* [The limit function (Limit Function)](fo_limit-function.html). 
+* [LINQProvider](fo_linq-provider.html) (components for LINQ support in [Flexberry ORM](fo_flexberry-orm.html)). 
 
-## Связь между функциями ограничения и LinqProvider
+## the relationship between the functions, limitations and LinqProvider 
 
-Существуют методы, позволяющие производить конвертацию из выражения для [LINQProvider](fo_linq-provider.html) в [LimitFunction](fo_limit-function.html). Возможности провести обратную конвертацию [Flexberry ORM](fo_flexberry-orm.html) не предоставляет.
+There are methods to convert from the expression for [LINQProvider](fo_linq-provider.html) in [LimitFunction](fo_limit-function.html). Opportunities to carry out reverse conversion [Flexberry ORM](fo_flexberry-orm.html) does not provide. 
 
-__Получение функции ограничения из Linq-выражения__
+__Finding the function limitation of Linq expressions__ 
 
-`expression` - Linq-выражение.
-`funcToReturn` - функция ограничения.
+`expression` - Linq-expression. 
+`funcToReturn` - function limitation. 
 
 ``` csharp
 var queryExpression = LinqToLcs.GetExpressionToQueryFromWhereExpression(expression, typeof(Кредит));  
 Function funcToReturn = LinqToLcs.GetLcs(queryExpression, Кредит.Views.C__КредитE, limitResolvingViews).LimitFunction;
-```
+``` 
 
-## Применимость способов наложения ограничений
+## the applicability of the methods of imposing restrictions 
 
-* [LINQProvider](fo_linq-provider.html)  - находится в стадии доработки, как следствие - реализует не все функции.
-* [Функции ограничения](fo_limit-function.html) - является наиболее полным и объемлющим инструментом для вычитки данных. В перспективе будет вытеснен [LINQProvider](fo_linq-provider.html).
+* [LINQProvider](fo_linq-provider.html) - is being finalized, as a consequence not implement all of the functions. 
+* [Parental control](fo_limit-function.html) - is the most complete and comprehensive tool for proofreading and editing of data. In the future will be superseded by [LINQProvider](fo_linq-provider.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

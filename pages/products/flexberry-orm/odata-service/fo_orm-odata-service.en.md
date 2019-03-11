@@ -1,37 +1,39 @@
----
-title: Flexberry ORM ODataService
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM ODataService, OData
-summary: Features, limitations, recommendations for using ODataService
-toc: true
-permalink: en/fo_orm-odata-service.html
-lang: en
----
+--- 
+title: Flexberry ORM ODataService 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM ODataService, OData 
+summary: Features, limitations, recommendations for use the ODataService 
+toc: true 
+permalink: en/fo_orm-odata-service.html 
+lang: en 
+autotranslated: true 
+hash: ffad0f50d90c754d1802454d067e84dd159b42cfac69d4a1d9a53fbaee82ed70 
+--- 
 
-## Информация о продукте
+## product Information 
 
-`Flexberry ORM ODataService` является [продуктом платформы Flexberry](fp_platform-structure.html). Сайт продукта: [http://flexberry.ru](http://flexberry.ru/FlexberryORM).
+`Flexberry ORM ODataService` is [product platform Flexberry](fp_platform-structure.html). Product website: [http://flexberry.ru](http://flexberry.ru/FlexberryORM). 
 
-`Flexberry ORM ODataService` позволяет удобным образом создать OData-сервис.
+`Flexberry ORM ODataService` allows you to easily create OData service. 
 
-{% include note.html content="`Flexberry ORM ODataService` доступно для установки в проект через [NuGet-пакет](https://www.nuget.org)." %}
+{% include note.html content="`Flexberry ORM ODataService` is available for installation in the project via [NuGet package](https://www.nuget.org)." %} 
 
-### Список библиотек `Flexberry ORM ODataService`
+## No. the List of libraries `Flexberry ORM ODataService` 
 
-В состав NuGet-пакета `Flexberry ORM ODataService` входят следующие сборки:
+The composition NuGet package `Flexberry ORM ODataService` includes the following assemblies: 
 
-* NewPlatform.Flexberry.ORM.ODataService.dll
+* NewPlatform.Flexberry.ORM.ODataService.dll 
 
-## Ограничения, особенности, рекомендации к проектированию
+## Limitations, especially recommendations for the design 
 
-Существует ряд особенностей при проектировании объектов, которые будут использоваться через `Flexberry ORM ODataService`:
+There are a number of features in the design of objects that will be used through ORM `Flexberry ODataService`: 
 
-* В E-представление (представление, имеющее название "<ИмяКласса>E") детейла должна быть добавлена ссылка на агрегатор.
-* Подключение `Flexberry ORM ODataService`. Для подключения в web-проект (WebForms) воспользоваться возможностями `Flexberry ORM ODataService`, необходимо сделать следующее:
+* E-view (a view that has the name "<Classname>E") of detail should be added a link to the aggregator. 
+* Connect `Flexberry ORM ODataService`. To connect in a web project (WebForms) to take advantage of the `Flexberry ORM ODataService`, you must do the following: 
 
-    * Подключить NuGet-пакет `Flexberry ORM ODataService`.
-    * В App_Start приложения создать класс "ODataConfig.cs".
-    * Заменить содержимое класса примерно на следующее:
+* Connect the NuGet package `Flexberry ORM ODataService`. 
+* In App_Start application to create a class "ODataConfig.cs." 
+* Replace the contents of the class about the following: 
 
 ```csharp
 namespace ODataServiceTemplate
@@ -57,32 +59,32 @@ namespace ODataServiceTemplate
             Contract.Requires<ArgumentNullException>(config != null);
             Contract.Requires<ArgumentNullException>(container != null);
 
-            // Use Unity as WebAPI dependency resolver
+            // Use Unity as the WebAPI dependency resolver 
             config.DependencyResolver = new UnityDependencyResolver(container);
 
-            // Create EDM model builder
+            // Create entity data model builder 
             var assemblies = new[] { Assembly.GetCallingAssembly() };
             var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
 
-            // Map OData Service
+            // Map The OData Service 
             var token = config.MapODataServiceDataObjectRoute(builder);
 
-            // User functions
+            // User functions 
             token.Functions.Register(new Func<QueryParameters, string>(Test));
 
-            // Event handlers
+            // Event handlers 
             token.Events.CallbackAfterCreate = CallbackAfterCreate;
         }
 
         private static void CallbackAfterCreate(DataObject dataObject)
         {
-            // TODO: implement handler
+            // TODO: implement handler 
         }
     }
 }
-```
+``` 
 
-   * В Global.asax добавить:
+* In The Global.asax, add: 
 
 ```csharp
 namespace ODataServiceTemplate
@@ -105,11 +107,11 @@ namespace ODataServiceTemplate
         }
     }
 }
-```
+``` 
 
-   * Для того, чтобы код компилировался, может потребоваться установить дополнительно NuGet-пакеты в приложение: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) и [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/).
+* In order for code to compile, you may need to install additional NuGet packages in the app: [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors) and [microsoft.aspnet.webapi.webhost](https://www.nuget.org/packages/microsoft.aspnet.webapi.webhost/). 
 
-   * Добавить в web.config или проверить наличие следующих записей:
+* Add to web.config or to check the availability of the following records: 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -123,15 +125,15 @@ namespace ODataServiceTemplate
     </handlers> 
 </system.webServer>
 </configuration>
-```
+``` 
 
-## Механизм вызова логики после сохранения объекта с использованием callback-функций
+## call Mechanism logic after saving object using the callback-functions 
 
 ```csharp
-/// <summary>
-/// Register Data objects.
-/// </summary>
-/// <param name="config">Http configuration.</param>
+/// <summary> 
+/// Register Data objects. 
+/// </summary> 
+/// <param name="config">the Http configuration.</param> 
 public static void Register(HttpConfiguration config)
 {
             var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
@@ -165,64 +167,64 @@ public static void Register(HttpConfiguration config)
 }
 
 
-/// <summary>
-/// Метод вызываемый после создания объекта.
-/// </summary>
-/// <param name="obj">Объект после создания.</param>
+/// <summary> 
+/// Method called after object creation. 
+/// </summary> 
+/// <param name="obj">Object after creation.</param> 
 public static void AfterCreate(DataObject obj){
 
 }
-/// <summary>
-/// Метод вызываемый после обновления объекта.
-/// </summary>
-/// <param name="obj">Объект после обновления.</param>
+/// <summary> 
+/// Method is called after updating the object. 
+/// </summary> 
+/// <param name="obj">the Object after the update.</param> 
 public static void AfterUpdate(DataObject obj){
 
 }
-/// <summary>
-/// Метод вызываемый после удаления объекта.
-/// </summary>
-/// <param name="obj">Объект перед удалением.</param>
+/// <summary> 
+/// Method called after object removal. 
+/// </summary> 
+/// <param name="obj">the Object before the deletion.</param> 
 public static void AfterDelete(DataObject obj){
 
 }
 
-```
+``` 
 
-Метод `AfterCreate` будет вызываться после каждого запроса POST, сделанного клиентом для создания сущности.
-Метод `AfterUpdate` будет вызываться после каждого запроса PATCH, сделанного клиентом для обновления сущности.
-Метод `AfterDelete` будет вызываться после каждого запроса DELETE, сделанного клиентом для удаления сущности.
+PstrfAfterCreate` method will be called after each POST request made by a client to create the entity. 
+PstrfAfterUpdate` method will be called after each PATCH request made by a client to update the entity. 
+PstrfAfterDelete` method will be called after each DELETE request made by the client to remove the entity.
 
-## Пользовательские OData-функции
+## Custom OData function 
 
-Пример регистрации пользовательской OData-функции
+Example of registering a custom OData function 
 
 ```csharp
-/// <summary>
-/// Register Data objects.
-/// </summary>
-/// <param name="config">Http configuration.</param>
+/// <summary> 
+/// Register Data objects. 
+/// </summary> 
+/// <param name="config">the Http configuration.</param> 
 public static void Register(HttpConfiguration config)
 {
     var cors = new EnableCorsAttribute("*", "*", "*");
     config.EnableCors(cors);
 
     var container = new UnityContainer().LoadConfiguration();
-    // WebApi будет создавать контроллеры, передавая в конструкторы различные параметры, инстанции которых будут запрашиваться у этого самого DependencyResolver.
+    // WebApi will create the controllers, passing in the constructors of the various parameters of the instance which will be requested at this very DependencyResolver. 
     config.DependencyResolver = new UnityDependencyResolver(container);
 
-    // Самое главное для ODataService - знать какой сервис данных используется. Можно зарегистрировать тут или в web.config в секции Unity.
+    // The most important thing for the ODataService to know what data service is used. You can register here or on the web.config in the section Unity. 
     container.RegisterInstance(DataServiceProvider.DataService);
 
     try
     {
         var edmModel = config.CreateDataObjectEdmModel(new[] {
                     typeof(SomeApplicationDataObject).Assembly.FullName,
-                    // Сборка с типами для записи и чтения логов приложения.
+                    // Assembly types to write and read logs of the application. 
                     typeof(IIS.Flexberry.Logging.Objects.ApplicationLog).Assembly.FullName,
-                    // Сборка с типами для записи и чтения пользовательских настроек.
+                    // Assembly types to write and read user settings. 
                     typeof(NewPlatform.Flexberry.FlexberryUserSetting).Assembly.FullName,
-                    // TODO: после исправления бага в ODataService, из-за которого все предки тоже должны указываться эта сборка будет не нужна.
+                    // TODO: after fix bug in ODataService, because of which all ancestors also need to specify the Assembly is not needed. 
                     typeof(UserSetting).Assembly.FullName });
         Dictionary<string, Type> parametersTypes = new Dictionary<string, Type>
         {
@@ -239,29 +241,29 @@ public static void Register(HttpConfiguration config)
     }
 }
 
-/// <summary>
-/// Функция для вызова <see cref="ApplicationLogicBS.GetLastRoundIdForTopic"/>.
-/// http://localhost:6500/odata/GetLastRoundIdForTopic(topicId='E3D832DF-6C36-41A6-A548-451F1BED74D9')
-/// </summary>
-/// <param name="queryParameters"></param>
-/// <param name="parameters"></param>
-/// <returns></returns>
+/// <summary> 
+/// The function to call <see cref="ApplicationLogicBS.GetLastRoundIdForTopic"/>. 
+/// http://localhost:6500/odata/GetLastRoundIdForTopic(topicId='E3D832DF-6C36-41A6-A548-451F1BED74D9') 
+/// </summary> 
+/// <param name="queryParameters"></param> 
+/// <param name="parameters"></param> 
+/// <returns></returns> 
 private static object GetLastRoundIdForTopic(ODataFunctions.QueryParameters queryParameters, Dictionary<string, object> parameters)
 {
     ApplicationLogicBS bs = new ApplicationLogicBS { DataService = DataServiceProvider.DataService };
     return bs.GetLastRoundIdForTopic((string)parameters["topicId"]);
 }
-```
+``` 
 
-## Фильтрация свойств для типов при регистрации метаданных в ODataService
+## Filtering properties for types when registering metadata in the ODataService 
 
-Пример фильтрации свойств для типов
+An example of filter properties for types 
 
 ```csharp
-/// <summary>
-/// Register Data objects.
-/// </summary>
-/// <param name="config">Http configuration.</param>
+/// <summary> 
+/// Register Data objects. 
+/// </summary> 
+/// <param name="config">the Http configuration.</param> 
 public static void Register(HttpConfiguration config)
 {
             var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
@@ -291,27 +293,27 @@ public static void Register(HttpConfiguration config)
     }
 }
 
-/// <summary>
-/// Функция, которая фильтрует свойство для типа. В данном случае из регистрации будет исключено свойство Agent.Pwd.
-/// Эта функция вызывается при регистрации свойства в метаданных.
-/// </summary>
-/// <param name="propertyInfo">Свойство для типа, для которого нужно выполнить фильтрацию.</param>
-/// <returns>Если возвращается true, то свойство будет зарегистрировано, иначе не будет.</returns>
+/// <summary> 
+/// A function that filters a property for the type. In this case, the registration will be excluded property Agent.Pwd. 
+/// This function is called when registering the properties in the metadata. 
+/// </summary> 
+/// <param name="propertyInfo">the Property type for which you want to filter.</param> 
+/// <returns>returns true If the property will be registered, otherwise no.</returns> 
 private static bool PropertyFilter(PropertyInfo propertyInfo)
 {
     return Information.ExtractPropertyInfo<Agent>(x => x.Pwd) != propertyInfo;
 }
-```
+``` 
 
-## Фильтрация результата выборки в ODataService с использованием callback-функций
+## Filtering of the result set in ODataService using callback functions 
 
-Пример фильтрации результата выборки
+An example of filtering of the result set 
 
 ```csharp
-/// <summary>
-/// Register Data objects.
-/// </summary>
-/// <param name="config">Http configuration.</param>
+/// <summary> 
+/// Register Data objects. 
+/// </summary> 
+/// <param name="config">the Http configuration.</param> 
 public static void Register(HttpConfiguration config)
 {
     var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
@@ -344,34 +346,34 @@ public static void Register(HttpConfiguration config)
 }
 
 
-/// <summary>
-/// Метод вызываемый перед загрузкой объектов. В нем производится дополнительная настройка lcs.
-/// </summary>
-/// <param name="lcs">Lcs сформированная из строки запроса ODataService.</param>
-/// <returns>Возвращает true, если нужно выполнить запрос к ORM с использованием данной lcs.</returns>
+/// <summary> 
+/// Method called before loading the objects. It produces additional configuration of lcs. 
+/// </summary> 
+/// <param name="lcs">Lcs formed from the query string ODataService.</param> 
+/// <returns>Returns true if need to query a ORM using the lcs.</returns> 
 public static bool BeforeGet(ref LoadingCustomizationStruct lcs)
 {
     return true;
 } 
 
-/// <summary>
-/// Метод вызываемый после вычитывания объектов. В нем производится дополнительная обработка возвращаемого результата.
-/// </summary>
-/// <param name="objs"></param>
+/// <summary> 
+/// Method called after subtraction of objects. There is additional processing of the returned result. 
+/// </summary> 
+/// <param name="objs"></param> 
 public static void AfterGet(ref DataObject[] objs)
 {
 }
-```
+``` 
 
-## Обработка исключения в ODataService с использованием callback-функции
+## exception Handling in ODataService using a callback function 
 
-Пример обработки исключения:
+An example of exception handling: 
 
 ```csharp
-/// <summary>
-/// Register Data objects.
-/// </summary>
-/// <param name="config">Http configuration.</param>
+/// <summary> 
+/// Register Data objects. 
+/// </summary> 
+/// <param name="config">the Http configuration.</param> 
 public static void Register(HttpConfiguration config)
 {
     var cors = new EnableCorsAttribute("http://localhost:4210,https://flexberry-ember-security-dev.firebaseapp.com", "*", "*") { SupportsCredentials = true };
@@ -401,36 +403,36 @@ public static void Register(HttpConfiguration config)
     }
 }
 
-/// <summary>
-/// Метод вызываемый после возникновения исключения.
-/// </summary>
-/// <param name="e">Исключение, которое возникло внутри ODataService.</param>
-/// <param name="code">Возвращаемый код HTTP. По-умолчанияю 500.</param>
-/// <returns>Исключение, которое будет отправлено клиенту.</returns>
+/// <summary> 
+/// Method called when the exception occurs. 
+/// </summary> 
+/// <param name="e">the Exception that occurred inside the ODataService.</param> 
+/// <param name="code">the HTTP Return code. In umolchaniyu 500.</param> 
+/// <returns>the Exception that is sent to the client.</returns> 
 public static Exception AfterInternalServerError(Exception e, ref HttpStatusCode code)
 {
     code = HttpStatusCode.InternalServerError;
     return e;
 }
-```
+``` 
 
-## Фильтрация в пользовательских OData-функциях
+## Filtering in a custom OData functions 
 
-Пример использования в пользовательских OData-функциях структуры LCS, которая создана из строки запроса OData:
+Example usage in a custom OData functions, structure LCS, which is created from OData query string: 
 
 ```csharp
-/// <summary>
-/// Configures Web API.
-/// </summary>
-/// <param name="config">Current configuration.</param>
-/// <param name="container">DI container for WebAPI.</param>
-/// <param name="activator">Controller activator for WebAPI.</param>
+/// <summary> 
+/// Configures Web API. 
+/// </summary> 
+/// <param name="config">the Current configuration.</param> 
+/// <param name="container">DI container for WebAPI.</param> 
+/// <param name="activator">activator for WebAPI Controller.</param> 
 public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
 {
     var cors = new EnableCorsAttribute("*", "*", "*");
     config.EnableCors(cors);
 
-    // Use Unity for DI in WebAPI.
+    // Use Unity for DI in WebAPI. 
     config.DependencyResolver = new UnityDependencyResolver(container);
 
     var assemblies = new[]
@@ -445,63 +447,61 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 
     ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
     config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
-    Dictionary<string, Type> parametersTypes1 = new Dictionary<string, Type> { { "entitySet", typeof(string) } };
-    odataServiceManagementToken.Functions.Register(new Function("FunctionWithLcs1", FunctionWithLcs1, typeof(IEnumerable<DataObject>), parametersTypes1));
-    Dictionary<string, Type> parametersTypes2 = new Dictionary<string, Type> { { "entitySet", typeof(string) }, { "query", typeof(string) } };
-    odataServiceManagementToken.Functions.Register(new Function("FunctionWithLcs2", FunctionWithLcs2, typeof(int), parametersTypes2));
+    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, IEnumerable<DataObject>>(FunctionWithLcs1));
+    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, string, int>(FunctionWithLcs2));    
 }
 
-/// <summary>
-/// Функция которая используют LCS, созданный на основе запроса OData.
-/// http://localhost/odata/FunctionWithLcs1(entitySet='Suggestions')?$filter=Text eq 'txt'
-/// </summary>
-/// <param name="queryParameters"></param>
-/// <param name="parameters"></param>
-/// <returns></returns>
-private static object FunctionWithLcs1(QueryParameters queryParameters, IDictionary<string, object> parameters)
+/// <summary> 
+/// A function that uses LCS, based on the OData request. 
+/// http://localhost/odata/FunctionWithLcs1(entitySet='Suggestions')?$filter=Text eq 'txt' 
+/// </summary> 
+/// <param name="queryParameters"></param> 
+/// <param name="parameters"></param> 
+/// <returns></returns> 
+private static IEnumerable<DataObject> FunctionWithLcs1(QueryParameters queryParameters, string entitySet)
 {
     SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
-    var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
+    var type = queryParameters.GetDataObjectType(entitySet);
     var lcs = queryParameters.CreateLcs(type);
     var dobjs = dataService.LoadObjects(lcs);
     return dobjs.AsEnumerable();
 }
 
-/// <summary>
-/// Функция которая использует LCS, созданный на основе параметра функции.
-/// http://localhost/odata/FunctionWithLcs2(entitySet='Suggestions',query='$filter=Text eq ''txt''')
-/// </summary>
-/// <param name="queryParameters"></param>
-/// <param name="parameters"></param>
-/// <returns></returns>
-private static object FunctionWithLcs2(QueryParameters queryParameters, IDictionary<string, object> parameters)
+/// <summary> 
+/// Function which uses the LCS, based on the parameter of the function. 
+/// http://localhost/odata/FunctionWithLcs2(entitySet='Suggestions',query='$filter=Text eq "txt"') 
+/// </summary> 
+/// <param name="queryParameters"></param> 
+/// <param name="parameters"></param> 
+/// <returns></returns> 
+private static int FunctionWithLcs2(QueryParameters queryParameters, string entitySet, string query)
 {
     SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
-    var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
-    var uri = $"http://a/b/c?{parameters["query"]}";
+    var type = queryParameters.GetDataObjectType(entitySet);
+    var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
     var dobjs = dataService.LoadObjects(lcs);
     return dobjs.Length;
 }
-```
+``` 
 
-## Использование actions
+## Use actions 
 
-Пример использования в action структуры LCS, которая создана из строки запроса OData.
+Example of use in action structure LCS, which is created from OData query string. 
 
 ```csharp
-/// <summary>
-/// Configures Web API.
-/// </summary>
-/// <param name="config">Current configuration.</param>
-/// <param name="container">DI container for WebAPI.</param>
-/// <param name="activator">Controller activator for WebAPI.</param>
+/// <summary> 
+/// Configures Web API. 
+/// </summary> 
+/// <param name="config">the Current configuration.</param> 
+/// <param name="container">DI container for WebAPI.</param> 
+/// <param name="activator">activator for WebAPI Controller.</param> 
 public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
 {
     var cors = new EnableCorsAttribute("*", "*", "*");
     config.EnableCors(cors);
 
-    // Use Unity for DI in WebAPI.
+    // Use Unity for DI in WebAPI. 
     config.DependencyResolver = new UnityDependencyResolver(container);
 
     var assemblies = new[]
@@ -516,26 +516,84 @@ public static void Register(HttpConfiguration config, IUnityContainer container,
 
     ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
     config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
-    Dictionary<string, Type> parametersTypes = new Dictionary<string, Type> { { "entitySet", typeof(string) }, { "query", typeof(string) } };
-    odataServiceManagementToken.Functions.Register(new NewPlatform.Flexberry.ORM.ODataService.Functions.Action("ActionWithLcs", ActionWithLcs, typeof(IEnumerable<DataObject>), parametersTypes));
+    odataServiceManagementToken.Functions.RegisterAction(new Func<QueryParameters, string, string, IEnumerable<DataObject>>(ActionWithLcs));
 }
 
-/// <summary>
-/// Action, который использует LCS, созданный на основе параметра action.
-/// http://localhost/odata/ActionWithLcs
-/// Json в теле POST-запроса: {"entitySet": "Suggestions", "query": "$filter=Text eq 'txt'"}
-/// </summary>
-/// <param name="queryParameters"></param>
-/// <param name="parameters"></param>
-/// <returns></returns>
-private static object ActionWithLcs(QueryParameters queryParameters, IDictionary<string, object> parameters)
+/// <summary> 
+/// Action that uses the LCS, based on the action parameter. 
+/// http://localhost/odata/ActionWithLcs 
+/// Json in the body of a POST request: {"entitySet": "Suggestions", "query": "$filter=Text eq 'txt'"} 
+/// </summary> 
+/// <param name="queryParameters"></param> 
+/// <param name="parameters"></param> 
+/// <returns></returns> 
+private static IEnumerable<DataObject> ActionWithLcs(QueryParameters queryParameters, string entitySet, string query)
 {
     SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
-    var type = queryParameters.GetDataObjectType(parameters["entitySet"] as string);
-    var uri = $"http://a/b/c?{parameters["query"]}";
+    var type = queryParameters.GetDataObjectType(entitySet);
+    var uri = $"http://a/b/c?{query}";
     var lcs = queryParameters.CreateLcs(type, uri);
     var dobjs = dataService.LoadObjects(lcs);
     return dobjs.AsEnumerable();
     }
 }
-```
+``` 
+
+## Using custom functions for exporting to Excel 
+
+Example of using custom functions for export to Excel. 
+Example query: 
+http://localhost/odata/FunctionExportExcel(entitySet='Strana')?exportExcel=true&colsOrder=Nazvanie/Название&detSeparateCols=false&detSeparateRows=false&$filter=contains(Nazvanie,'1') 
+. 
+
+```csharp
+/// <summary> 
+/// Configures Web API. 
+/// </summary> 
+/// <param name="config">the Current configuration.</param> 
+/// <param name="container">DI container for WebAPI.</param> 
+/// <param name="activator">activator for WebAPI Controller.</param> 
+public static void Register(HttpConfiguration config, IUnityContainer container, IHttpControllerActivator activator)
+{
+    var cors = new EnableCorsAttribute("*", "*", "*");
+    config.EnableCors(cors);
+
+    // Use Unity for DI in WebAPI. 
+    config.DependencyResolver = new UnityDependencyResolver(container);
+
+    var assemblies = new[]
+    {
+        typeof(Suggestion).Assembly,
+        typeof(ApplicationLog).Assembly,
+        typeof(UserSetting).Assembly,
+        typeof(FlexberryUserSetting).Assembly,
+        typeof(Lock).Assembly
+    };
+    var builder = new DefaultDataObjectEdmModelBuilder(assemblies);
+
+    ManagementToken odataServiceManagementToken = config.MapODataServiceDataObjectRoute(builder);
+    config.MapODataServiceFileRoute("File", "api/File", HttpContext.Current.Server.MapPath("~/Uploads"), container.Resolve<IDataService>());
+    odataServiceManagementToken.Functions.Register(new Func<QueryParameters, string, Страна[]>(FunctionExportExcel));
+}
+
+/// <summary> 
+/// The function prepares the data for export to Excel. For proper operation it is necessary that the Declaration specified the actual type of the return value. 
+/// Not suitable specify the type DataObject. 
+/// </summary> 
+/// <param name="queryParameters"></param> 
+/// <param name="entitySet"></param> 
+/// <returns></returns> 
+private static Страна[] FunctionExportExcel(QueryParameters queryParameters, string entitySet)
+{
+    SQLDataService dataService = DataServiceProvider.DataService as SQLDataService;
+    Type type = queryParameters.GetDataObjectType(entitySet);
+    LoadingCustomizationStruct lcs = queryParameters.CreateLcs(type);
+    Страна[] dobjs = dataService.LoadObjects(lcs).Cast<Страна>().ToArray();
+    return dobjs;
+}
+``` 
+
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

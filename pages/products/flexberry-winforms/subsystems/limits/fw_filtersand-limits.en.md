@@ -1,65 +1,70 @@
----
-title: Фильтры и ограничения
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, 
-summary: Объясняются понятия, связанные с понятиями фильтров и ограничений
-toc: true
-permalink: en/fw_filtersand-limits.html
-lang: en
----
+--- 
+title: Filters and limits 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Restrictions 
+summary: Explains the concepts related to the concepts of filters and restrictions 
+toc: true 
+permalink: en/fw_filtersand-limits.html 
+lang: en 
+autotranslated: true 
+hash: 70cbe7fe0b998849a4ded8e007db118e1f67d72e7f8338f4df36009dbcc49e1c 
+--- 
 
-## Фильтры
+## Filters 
 
-__Фильтры__ - это инструмент наложения пользовательских ограничений на список объектов.
+__Filters__ is a tool of imposing user restrictions on the object list. 
 
-Все списки имеют функциональность по наложению на них фильтров. Для загрузки списка используется [представление](fd_view-types.html) L, а представления T и D используется для наложения на него ограничений. Поэтому представления L и T (D для детейлов объекта) должны содержать одинаковый набор атрибутов.
+All lists have the functionality for the imposition of filters. To download the list, use [view](fd_view-types.html) L and submission to T and D used for imposing on him restrictions. This is why L and T (D for detailov object) should contain the same set of attributes. 
 
-## Редактор ограничений
+## the constraint Editor 
 
-Редактор ограничений служит для создания фильтров.
+The constraint editor is used to create filters. 
 
-Подробнее о редакторе можно посмотреть в [этой статье](fw_limit-editor-simple-view.html)
+Read more about the editor can be viewed in [this article](fw_limit-editor-simple-view.html) 
 
-## Настройки фильтров (FilterSettings)
-Для задания [FilterSettings](fw_filter-settings.html) необходимо воспользоваться Flexberry Administrative Console (AdmConsole).
+## Settings filter (FilterSettings) 
+To set [FilterSettings](fw_filter-settings.html) you must use Flexberry Administrative Console (AdmConsole). 
 
 
-Если используется генератор настроек фильтров, то необходимо обратить внимание на следующие моменты: 
+If you use generator filters settings, you need to pay attention to the following points: 
 
-* Для работы его можно определить как [ярлык](fw_win-desktop-links.html) на [рабочий стол](fw_app-desktop.html):
+* It can be defined as [label](fw_win-desktop-links.html) [Desk](fw_app-desktop.html): 
 
 ```csharp
-arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsGeneratorE), "Администрирование", "Генератор настроек фильтров", "", new IIS.Core.App_FilterSettingsGenerator(), typeof(IIS.Core.App_FilterSettingsGenerator), false));
-```
+arr.Add(new IIS.WinUI.Runners.EditFormRunner(typeof(IIS.Core.App_FilterSettingsGeneratorE), Administration, "Generator filters settings", "", new IIS.Core.App_FilterSettingsGenerator(), typeof(IIS.Core.App_FilterSettingsGenerator), false));
+``` 
 
-* В конфиг-файле приложения должны быть строчки вида:
+* In the config app should be lines like: 
 
 ```xml
 <add key="DefaultLibFolder" value="lib"/>
 <add key="FilterSettingStrategy" value="reflection"/>
-```
+``` 
 
-Сборки объектов и форм при этом нужно перенести в папку, указанную в `DefaultLibFolder`. 
+The Assembly of objects and forms in this case should be moved to the folder specified in `DefaultLibFolder`. 
 
-* У объектов обязательно должно быть [T-представление](fd_t-view.html). 
+* The objects have to be [T view](fd_t-view.html). 
 
-* После того, как настройки фильтров будут сгенерированы, их необходимо подключить как указано [здесь](fw_filter-settings.html).
-
-
-[FilterSettings](fw_filter-settings.html) определяют настройки для [детейлов](fd_key-concepts.html) и лукапов (например, без таких настроек при задании ограничений невозможно использовать [детейлы](fd_key-concepts.html)). 
+* Once filter settings are generated, they must be connected as indicated [here](fw_filter-settings.html). 
 
 
-После задания FilterSettings в БД приложения, на которую была настроена AdmConsole, заполнятся следующие таблицы:
-* STORMFILTERSETTING (содержит названия настроек фильтров и названия объектов, к которым будут применены данные настройки);
-* STORMFILTERLOOKUP (содержит настройки для лукапов); 
-* STORMFILTERDETAIL (содержит настройки для [детейлов](fd_key-concepts.html));
+[FilterSettings](fw_filter-settings.html) specify settings for [datalow](fd_key-concepts.html) and lyapov (for example, without these settings when you set limits you cannot use [detaily](fd_key-concepts.html)). 
 
-{% include note.html content="AdmConsole адекватно [создаёт настройки автоматически](fw_filter-settings.html), если приложение собрано для .Net Framework версии 3.0 или 3.5. Альтернативным решением проблемы версий фреймворков может быть [указание более высокой версии фреймворка](gbt_set-runtime-dotnet-version.html) для AdmConsole." %}
 
-{% include note.html content="Для того, чтобы ограничение «сам объект» заработало - нужно создать STORMFILTERLOOKUP для этого объекта." %}
+After you set FilterSettings in the application database, which was set up AdmConsole will be filled with the following table: 
+* STORMFILTERSETTING (contains names of filters names of objects, which will apply these settings); 
+* STORMFILTERLOOKUP (contains settings for lyapov); 
+* STORMFILTERDETAIL (contains settings for [datalow](fd_key-concepts.html)); 
 
-## Форма задания ограничений AdvLimit
-[AdvLimit](fw_limitation-editform.html) позволяет задавать ограничения; для расширения функциональности необходимо настроить FilterSettings (см. выше, [здесь](fw_filter-settings.html) и [здесь](fw_filter-example.html)).
+{% include note.html content="AdmConsole adequately [creates the settings automatically](fw_filter-settings.html) if the app is built for .Net Framework version 3.0 or 3.5. Alternative solution versions of frameworks can be an indication of a higher version of the framework](gbt_set-runtime-dotnet-version.html) for AdmConsole." %} 
 
-## LimitFunction
-Через [свойство LimitFunction структуры LoadingCustomizationStruct](fo_loading-customization-struct.html) можно программно задавать ограничения (пример см. [здесь](fw_filtersettings-for-use-in-lists.html)).
+{% include note.html content="in order to limit `сам объект` work - you need to create STORMFILTERLOOKUP for this object." %} 
+
+## Form set restrictions AdvLimit 
+[AdvLimit](fw_limitation-editform.html) allows you to set ограничения; to extend the functionality, you must configure FilterSettings (see [here](fw_filter-settings.html) and [here](fw_filter-example.html)). 
+
+## LimitFunction 
+[Property LimitFunction structure LoadingCustomizationStruct](fo_loading-customization-struct.html) you can programmatically define constraints (for example, see [here](fw_filtersettings-for-use-in-lists.html)).
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

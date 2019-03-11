@@ -1,36 +1,42 @@
----
-title: Generate documentation on charts
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry Designer, Flexberry ORM, plugins
-summary: Using the function of generating documentation for diagrams by example
-toc: true
-permalink: en/fo_doc-gen.html
-lang: en
----
+--- 
+title: Generate documentation diagrams 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, plugins 
+summary: generate documentation diagrams for example 
+toc: true 
+permalink: en/fo_doc-gen.html 
+lang: en 
+autotranslated: true 
+hash: 797fb11c8ee6992ca4e902ec8dd482134651a41ba559ecab0f5c7aa686ea23fc 
+--- 
 
-Функция предназначена для выгрузки информации об атрибутивном составе классов. Позволяет выгружать отчёт для стадий, не подготовленных для генерации.
+The function is designed to upload information about the attribute class. Allows you to upload a report for stages are not prepared to generate. 
 
-## Использование
+## Use 
 
-* Выбрать объект System в стадии.
-* Выбрать в меню `Утилиты -> Генерация документации по диаграммам`:
+* Select the System object in the stage. 
+* Choose menu `Утилиты -> Generate documentation диаграммам`: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-using.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-using.png) 
 
-* Дождаться выполнения. Результатом выполнения будет файл в формате .csv с описанием всех классов и атрибутов.
+* Wait for execution. The output is a file in format .csv describing all classes and attributes. 
 
-{% include note.html content="В сгенерированном .csv-файле используется кодировка UTF-8, поэтому некоторые приложения могут некорректно отобразить информацию, содержащуюся в файле." %}
+{% include note.html content="In the generated .the csv file uses UTF-8 encoding, so some applications may incorrectly display the information contained in the file." %} 
 
-## Пример использования
+## Example usage 
 
-* Создать диаграмму классов, по которой будет сгенерирована документация:
+* Create a class diagram, which will generate the documentation: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-ex-1.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-ex-1.png) 
 
-* Выделить стадию и выбирать в меню `Утилиты -> Генерация документации по диаграммам`:
+* Select the stage and choose `Утилиты -> Generate documentation диаграммам`: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-using.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-using.png) 
 
-* Результат:
+* Result: 
 
-![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-ex-3.png)
+![](/images/pages/products/flexberry-orm/module-flexberry-designer/doc-gen-ex-3.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

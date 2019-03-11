@@ -1,87 +1,92 @@
----
-title: Настройки для LookUp в AjaxGroupEdit
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_settings-lookup-age.html
-lang: en
----
+--- 
+title: Settings for LookUp in AjaxGroupEdit 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_settings-lookup-age.html 
+lang: en 
+autotranslated: true 
+hash: 9fc1705aec1e57d7eb4ab4d930bdf107f687f925707d6b3d6dca154b9f7905ca 
+--- 
 
-# Описание алгоритма
+# description of the algorithm 
 
-Для того чтобы задать настройки для [LookUp'ов](fa_lookup-overview.html), используемых в [AjaxGroupEdit](fa_ajax-group-edit.html) нужно создать экземпляр класса `LookUpSetting`, инициализировав ему необходимые поля и при помощи метода AddLookUpSettings добавить их в [AjaxGroupEdit](fa_ajax-group-edit.html).
+To specify the settings for [LookUp's](fa_lookup-overview.html) used in [AjaxGroupEdit](fa_ajax-group-edit.html) you need to create an instance of the class `LookUpSetting`, inicializirati him the required fields and using the method AddLookUpSettings add them to [AjaxGroupEdit](fa_ajax-group-edit.html). 
 
-Например, необходимо задать [LookUp'у](fa_lookup-overview.html), который в представлении имеет свойство "`ТипЛапы`" представление, по которому будут вычитываться мастеровые объекты.
+For example, you must ask [LookUp'y](fa_lookup-overview.html), which in the view has a property "`ТипЛапы`" presentation, which will be deducted artisans objects. 
 
 ```csharp
 ctrlЛапа.AddLookUpSettings(Information.ExtractPropertyPath<Лапа>(r => r.ТипЛапы), new LookUpSetting { MasterViewName = ТипЛапы.Views.ТипЛапыL });
-```
-Также можно настраивать `LimitFunction`, а для `MasterEditorDropDown` можно задать настройку, отвечающую за `PostBack`.
+``` 
+You can also configure `LimitFunction`, and for `MasterEditorDropDown` you can set a preference responsible for `PostBack`. 
 
-Полный список свойств:
+Full list of properties: 
 
 ```csharp
-        /// <summary>
-        /// Настройки лукапа
-        /// </summary>
+        /// <summary> 
+        /// Settings lucapa 
+        /// </summary> 
         public class LookUpSetting
         {
-            /// <summary>
-            /// Делать ли PostBack при смене значения
-            /// </summary>
+            /// <summary> 
+            /// Do PostBack when changing value 
+            /// </summary> 
             public bool EnablePostBack { get; set; }
 
-            /// <summary>
-            /// Ограничение на выборку мастеров
-            /// </summary>
+            /// <summary> 
+            /// Restriction for sample masters 
+            /// </summary> 
             public Function LimitFunction { get; set; }
 
-            /// <summary>
-            /// Имя представления для загрузки мастеров
-            /// </summary>
+            /// <summary> 
+            /// The name of the view to load masters 
+            /// </summary> 
             public string MasterViewName { get; set; }
 
-            /// <summary>
-            /// Имя типа для загрузки мастеров, вручную обычно не должно задаваться
-            /// </summary>
+            /// <summary> 
+            /// The type name to download the masters manually normally should not be set 
+            /// </summary> 
             public string MasterTypeName { get; set; }
 
-            /// <summary>
-            /// Autocomplete для MasterEditorAjaxLookup
-            /// </summary>
+            /// <summary> 
+            /// Autocomplete for MasterEditorAjaxLookup 
+            /// </summary> 
             public bool Autocomplete { get; set; }
 
-            /// <summary>
-            /// Поиск по подстроке - для автокомплита
-            /// </summary>
+            /// <summary> 
+            / / Search substring for autocomplete 
+            /// </summary> 
             public bool IsSubstring { get; set; }
 
-            /// <summary>
-            /// URL формы для просмотра выбранного объекта
-            /// </summary>
+            /// <summary> 
+            /// URL form to display the selected object 
+            /// </summary> 
             public string ShowObjectUrl { get; set; }
         }
-```
+``` 
 
-### Пример включения автозаполнения в LookUp:
+### an Example of enabling auto-complete LookUp: 
 
 ```csharp
-        /// <summary>
-        /// Вызывается самым первым в Page_Load.
-        /// </summary>
+        /// <summary> 
+        /// Called the first in the Page_Load. 
+        /// </summary> 
         protected override void Preload()
         {
             ctrlReviewers.AddLookUpSettings(Information.ExtractPropertyPath<Reviewer>(r => r.Programmer), new LookUpSetting() { Autocomplete = true });
             ctrlChangesetAuthors.AddLookUpSettings(Information.ExtractPropertyPath<ChangesetAuthor>(ca => ca.Programmer), new LookUpSetting() { Autocomplete = true });
             ctrlProjectForReview.AddLookUpSettings(Information.ExtractPropertyPath<ProjectForReview>(pfr => pfr.Project), new LookUpSetting() { Autocomplete = true });
         }
-```
+``` 
 
-### Пример наложения ограничения на LookUp
+### Example of imposing restrictions on LookUp 
 
-Пример наложения ограничения на [LookUp](fa_lookup-overview.html) в [AGE](fa_ajax-group-edit.html) описан в этой [статье](fa_limited-lookup-age.html).
+An example of imposing restrictions on [LookUp](fa_lookup-overview.html) [AGE](fa_ajax-group-edit.html) is described in this [article](fa_limited-lookup-age.html). 
 
-## Множественный выбор по LookUp
+## Multiple choice LookUp 
 
-Информацию о множественном выборе по LookUp в [AGE](fa_ajax-group-edit.html) можно прочитать в [статье Использование множественного выбора в LookUp в AjaxGroupEdit](fa_multi-lookup-age.html).
- 
+Information about multiple choice LookUp [AGE](fa_ajax-group-edit.html) can be read in [the article Using multiple choice. in AjaxGroupEdit](fa_multi-lookup-age.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,22 +1,24 @@
----
-title: Задание значения по умолчанию в ember-flexberry-приложении
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_default-value.html
-folder: products/ember-flexberry/forms/
-lang: en
-summary: Описаны варианты задания значений по умолчанию в ember-flexberry-приложении.
----
+--- 
+title: Setting a default value in the ember-flexberry application 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_default-value.html 
+folder: products/ember-flexberry/forms/ 
+lang: en 
+autotranslated: true 
+hash: d4e57538778a37570a58d3c6dee03fddbba67d43664e8db7368f81162b83f8d2 
+summary: Describes the options for setting the default values in ember-flexberry application. 
+--- 
 
-{% include warning.html content="Данная статья не завершена. Предложенный в статье вариант не является лучшим." %} 
+{% include warning.html content="This article is not complete. The proposed article is not the best option." %} 
 
-## Описание
-Существуют разные подходы к заданию значения по умолчанию в Ember-приложениях.
+## Description 
+There are different approaches to setting a default value in the Ember application. 
 
-Один из подходов - использование на уровне [модели](efd_model.html) [`defaultValue`](https://guides.emberjs.com/v2.4.0/models/defining-models/#toc_options).
+One approach would be to use on the level of [models](efd_model.html) [`defaultValue`](https://guides.emberjs.com/v2.4.0/models/defining-models/#toc_options). 
 
-Например:
+For example: 
 
 ```javascript
 var Model = BaseModel.extend({
@@ -25,16 +27,16 @@ var Model = BaseModel.extend({
     defaultValue() { return new Date(); }
   })
 });
-```
+``` 
 
-{% include warning.html content="При сохранении определённой таким образом модели, если значение свойства не было изменено, то на сервер оно передано не будет.
-Поэтому для задания значения по умолчанию, которое корректно будет сохраняться на сервере, проще использовать подход, когда инициализация происходит на [форме создания](ef_edit-form.html)." %} 
+{% include warning.html content="When you save this defined model, if the property value has not been changed, then the server passed it will not. 
+So to set default values that will be correctly saved on the server, it is easier to use the approach when the initialization is happening in [the form of](ef_edit-form.html)." %} 
 
-## Задание значения по умолчанию на форме создания
+## Assignment default values on creation 
 
-Задание значения по умолчанию может происходить на [форме создания](ef_edit-form.html) в [роуте](ef_route.html) в [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel).
+Job defaults can occur at [the form of](ef_edit-form.html) in [rout](ef_route.html) in [afterModel](http://emberjs.com/api/classes/Ember.Route.html#method_afterModel). 
 
-Например, требуется в свойство "датаПроекта" задать текущую дату.
+For example, you want to the property "dataproject" set the current date. 
 
 ```javascript
 import EditFormNewRoute from 'ember-flexberry/routes/edit-form-new';
@@ -47,9 +49,9 @@ export default EditFormNewRoute.extend({
     model.set('датаПроекта', date);
   }
 });
-```
+``` 
 
-Более сложный вариант - это когда значение по умолчанию требуется получить с сервера. Например, требуется указать текущего пользователя в свойство 'зарегистрировал'. В этом случае потребуется делать ajax-запрос на сервер. Пусть серверный метод `GetCurrentUser` возвращает текущего пользователя, тогда код может быть следующим: 
+A more complex option is when the default value you want to retrieve from the server. For example, you want to specify the current user in the 'registered'. In this case you will need to do an ajax request to the server. Let `GetCurrentUser` server method returns the current user, then the code can be as follows: 
 
 ```javascript
 import Ember from 'ember';
@@ -65,16 +67,20 @@ export default EditFormNewRoute.extend({
     Ember.$.ajax({
       type: 'GET',
       async: false,
-      url: config.APP.backendUrls.api + '/GetCurrentUser', // В "config.APP.backendUrls.api" записан путь до сервера.
+      url: config.APP.backendUrls.api + '/GetCurrentUser', / / "Config.APP.backendUrls.api" the recorded path to the server. 
       success: function(result) {
         if (result) {
-          store.pushPayload('some-project-пользователь', result); // Сначала результат преобразуем в модельку, которую поймёт Ember.
+          store.pushPayload('some-project-пользователь', result); // First convert the result in a model understand Ember. 
           store.findRecord('some-project-пользователь', result.__PrimaryKey).then(function(person) {
-            model.set('зарегистрировал', person); // Находим эту полученную модельку и записываем в требуемое свойство.
+            model.set('зарегистрировал', person); // We find that the resulting model is written to with the desired property. 
           });
         }
       }
     });
   }
 });
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

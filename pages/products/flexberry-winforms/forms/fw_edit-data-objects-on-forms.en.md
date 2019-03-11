@@ -1,74 +1,79 @@
----
-title: Как редактировать объекты данных на формах, связывание полей ввода со свойствами объекта данных 
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (Контролы), Windows UI (формы)
-summary: Пошаговая инструкция по "ручному" созданию формы редактирования объекта и связыванию на ней контролов со свойствами объекта данных
-toc: true
-permalink: en/fw_edit-data-objects-on-forms.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: How to edit data objects on forms, associating input fields with the properties of data object 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (Controls), the Windows UI (forms) 
+summary: step-by-Step instructions for "manual" creation of the edit form object and bind its controls to the properties of the data object 
+toc: true 
+permalink: en/fw_edit-data-objects-on-forms.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 0ca603af6e8a1a40d07c2580eb4ac0597aee2c66db625ceb034be1cfc3006be6 
+--- 
 
-В статье описано, что необходимо сделать для того, чтобы «вручную» создать форму, где есть возможность редактирования объекта данных.
+The article describes what needs to be done in order for» «manually create a form, where you are able to edit the data object. 
 
-## Связывание через программный код
+## Linking via program code 
 
-1) Разместить необходимые элементы управления на форме;
+1) Place the necessary controls to форме; 
 
-2) Создать экземпляр класса ICSSoft.STORMNET.Windows.Forms.Binders.EditManager (менеджер редактирования — специализированный класс для непрерывного связывания контролов со свойствами объекта данных).
+2) Create an instance of the class ICSSoft.STORMNET.Windows.Forms.Binders.EditManager (Manager editing is a specialized class for continuous binding controls to properties of the data object). 
 
-В конструкторе обязательным параметром является класс данных, на который настраивается менеджер редактирования.
+Designer required parameter is the data class that is configured in Manager edit. 
 
-__Пример__: 
+__Example__: 
 
 ```csharp
 em = new StormNetForms.Binders.EditManager(typeof(CDDD));
-```
+``` 
 
-3) Связать контролы со свойствами объекта данных. 
-Для этого необходимо вызвать у EditManager метод AddControl. Параметрами передаются: структура ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct Примеры связывания контрола со свойством объекта данных: 
+3) to Link controls to properties of the data object. 
+For this you need to call EditManager AddControl method. The parameters are passed: the structure ICSSoft.STORMNET.Windows.Forms.Binders.ControlForBindStruct Examples of binding a control to a property of the data object: 
 
 ```csharp
-em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtName, "Text"), "Наименование");
-em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtCapacity, "Text"), "Объем");
-```
+em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtName, "Text"), "Name");
+em.AddControl(new StormNetForms.Binders.ControlForBindStruct(txtCapacity, "Text"), "Volume");
+``` 
 
-4) Установить в свойство EditManager.DataObject объект данных, который требуется отредактировать.
+4) Set property EditManager.DataObject the data object that you want to edit. 
 
-После выполнения этих действий контролы будут подключены к свойствам объекта данных посредством EditManager, соответственно, когда пользователь будет редактировать значения в контролах, одновременно будут изменяться значения свойств объекта данных.
+After performing these steps, the controls will be connected to the properties of object data through the EditManager, respectively, when the user will edit the values in the controls at the same time will change the values of the properties of the data object. 
 
-Если значение объекта данных изменено программным образом, то для обновления значения на форме необходимо выполнить EditManager.Change.
+If the value of the data object is changed programmatically, to update values on the form, you must perform the EditManager.Change. 
 
-EditManager имеет события, позволяющие определить изменение значений свойств объекта данных. Это событие BeforeChangePropertyValue, срабатывающее перед установкой значения и AfterChangeProperty, срабатывающее после установки значения.
+EditManager has events that allow to determine the values of properties in the data object. This event BeforeChangePropertyValue triggered before setting the value and AfterChangeProperty triggered after setting the value. 
 
-Также, можно связывать вручную намазанные контролы с другими контролами, предоставляющими свой EditManager, например с GroupEditBase, тогда можно обеспечить редактирование значений объекта данных, находящегося в списке, через внешние контролы.
+Also, you can associate a manually smeared controls with other controls, providing your EditManager, such as GroupEditBase, then it is possible to provide the editing values of the data object in the list, via the external controls. 
 
-## Связывание через окно редактирования свойств
+## Binding through the properties 
 
-Вместо того, чтобы конструировать EditManager из кода, его также можно «набросить» на форму как контрол и связать контролы со свойствами через стандартное окно редактирования свойств в среде Visual Studio. 
+Instead of designing EditManager from the code, it is also possible to throw» «on the form as control and bind the controls with the properties using standard window editing properties in the Visual Studio environment. 
 
-Если в окне редактирования свойств EditManager в поле Bindings.<select view> по какой-то причине ничего нельзя выбрать, то в коде зависимой формы можно исправить строку: 
+If the window edit properties of an EditManager field Bindings.<select view> for some reason, nothing to choose, then the code dependent forms, you can correct the line: 
 
 ```csharp
 this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("", null, null);
-```
+``` 
 
-на следующую, где указано, с каким представлением работает EditManager: 
- ```csharp
-this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("C__КлиентE", typeof(IIS.TryFilter.Клиент), null);
-```
+in the following, where indicated, with what view works EditManager: 
+```csharp
+this.editManagerMain.Bindings = new ICSSoft.STORMNET.Windows.Forms.Design.Binds("C__Client", typeof(IIS.TryFilter.Клиент), null);
+``` 
 
-Далее через поле Bindings.<Add> необходимо добавить нужные свойства объекта, после чего в появившихся ниже строчках определить для них контролы из списка. 
-Через поле Bindings.<Remove> можно осуществить удаление свойства объекта из биндинга.
+Further through the field Bindings.<Add> to add the necessary properties of the object, and then in which appears below lines to define their controls from the list. 
+Through the field Bindings.<Remove> possible to delete object properties of binding. 
 
-Для связывания полей ввода со свойствами объекта генерируется код, аналогичный следующему: 
+To associate input fields with object properties generated code similar to the following: 
 
 ```csharp
 Binds(string viewname, Type dataobjectType, OneBind[] binds) (параметры для создания объектов класса OneBind аналогичны параметрам структуры ControlForBindStruct). 
-this.editManagerMain.Bindings = new Binds("C__КлиентE", typeof(IIS.TryFilter.Клиент),
+this.editManagerMain.Bindings = new Binds("C__Client", typeof(IIS.TryFilter.Клиент),
     new ICSSoft.STORMNET.Windows.Forms.Design.OneBind[]
         {
-            new OneBind(this.textBoxClientFIO, typeof(System.Windows.Forms.TextBox), "Text", null, "ФИО"),
-            new OneBind(this.textBoxClientAdress, typeof(System.Windows.Forms.TextBox), "Text", null, "Прописка")
+            new OneBind(this.textBoxClientFIO, typeof(System.Windows.Forms.TextBox), "Text", null, "Name"),
+            new OneBind(this.textBoxClientAdress, typeof(System.Windows.Forms.TextBox), "Text", null, "Registration")
         });
 ```
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

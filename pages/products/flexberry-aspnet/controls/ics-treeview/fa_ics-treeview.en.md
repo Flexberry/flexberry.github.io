@@ -1,28 +1,34 @@
----
-title: IcsTreeView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_ics-treeview.html
-lang: en
----
+--- 
+title: IcsTreeView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_ics-treeview.html 
+lang: en 
+autotranslated: true 
+hash: 8546d1b1121ebb9bf51855da76131f8062baafbc9e8bfc8bcc5cb612cbfa94af 
+--- 
 
-Веб-контрол `ICSSoft.STORMNET.Web.AjaxControls.IcsTreeView` - наследник `System.Web.UI.WebControls.TreeView`, отличается от него тем, что умеет запоминать состояние в cookies и раскрывать/скрывать ветки по нажатию на саму надпись узла, а не на стрелку слева.
+Web control `ICSSoft.STORMNET.Web.AjaxControls.IcsTreeView` - heir `System.Web.UI.WebControls.TreeView`, differs in that it is able to remember the state in cookies and to expand/hide the branch by clicking on the inscription of the site instead of the arrow to the left. 
 
-## Свойства
+## Properties 
 
-Кроме свойств, унаследованных от `System.Web.UI.WebControls.TreeView`, присутствуют:
+In addition to the properties inherited from `System.Web.UI.WebControls.TreeView`, present: 
 
-|Сигнатура | Описание|
-|:-----------------------|:---------------------------------------------------|
-| `public int? CookieExpiration` | Время жизни состояния контрола в cookies в днях. Пример: `ctrlCtrl.CookieExpiration = 10;`|
-| `public bool RememberState` | Нужно ли контролу запоминать состояние. По умолчанию `true`|
-| `public bool ToggleOnNodeClick` | Требуется ли скрывать/раскрывать дочерние узлы по клику на надпись. Данное действие производится, если узлу не назначена другая ссылка, в противном случае происходит переход по ней. При `ToggleOnNodeClick == false` и отсутствии ссылки узел представляет собой некликабельную надпись. По умолчанию `true`|
-| `public static InitControlSettingsDelegate<IcsTreeView> InitSettings` | Статический делегат для настройки контрола. Подробнее ниже|
-| `public bool CollapsedState` | Параметр, определяющий, следует ли при первом показе отображать дерево в свёрнутом состоянии (если для дерева сохранены куки, то соответствующая вершина всё равно будет отображаться в указанном в куках виде)|
+|Signature | Description| 
+|:-----------------------|:---------------------------------------------------| 
+| `public int? CookieExpiration` | life Time state of control in these days. Example: `ctrlCtrl.CookieExpiration = 10;`| 
+| `public bool RememberState` | does the control remember condition. Default `true`| 
+| `public ToggleOnNodeClick` bool | whether to hide or reveal child nodes by clicking on the inscription. This action is performed if the node is not assigned to another link, otherwise, click on it. When `ToggleOnNodeClick == false` and the absence of a reference node is negligably inscription. Default `true`| 
+| `public static InitControlSettingsDelegate<IcsTreeView> InitSettings` | a Static delegate to customize the control. More info below| 
+| `public bool CollapsedState` | the Parameter that determines whether the first display to display a tree in a collapsed state (if tree stored cookies, then the corresponding vertex will still be displayed in the specified in the cookie)| 
 
-## Настройка
+## Setting 
 
-* Чтобы глобально кастомизировать контрол данного типа, в `InitSettings` необходимо присвоить метод, принимающий в качестве параметра экземпляр `IcsTreeView` и изменяющий его свойства нужным образом. [Глобальная настройка веб-контролов](fa_init-control-settings-delegate.html)
+* To globally customize the control of this type, in `InitSettings` you need to assign a method that takes as a parameter an instance of `IcsTreeView` and changing its properties as desired. [Global setting web controls](fa_init-control-settings-delegate.html) 
 
-* [Настроить карту сайта по ролям](fa_sitemap-according-roles.html)
+* [Customize the site map's roles](fa_sitemap-according-roles.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

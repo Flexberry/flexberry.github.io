@@ -1,64 +1,66 @@
----
-title: ObjectTileView
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_ajax-controls-object-tile-view.html
-lang: en
----
+--- 
+title: ObjectTileView 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_ajax-controls-object-tile-view.html 
+lang: en 
+autotranslated: true 
+hash: a310d36dd48f27d5fa879a02bc2790169401d0a48e4563ef5e44ee3ce075ef04 
+--- 
 
-Для отображения каждого конкретного объекта служит контрол, реализующий интерфейс `IObjectTile`. Тип тайлов задается в свойстве TileType. По умолчанию в качестве тайлов используется [AjaxControls.ObjectTile](fa_ajax-controls-object-tile.html).
+To display a specific object is a control that implements the interface `IObjectTile`. Type of tiles is defined by the property TileType. The default as used tiles [AjaxControls.ObjectTile](fa_ajax-controls-object-tile.html). 
 
-## Интерфейс
+## Interface 
 
-### Методы
+### Methods 
 
-| Сигнатура | Описание|
-|-----------------------|------------------------------|-------------------------------|
-| `protected override void OnLoad(EventArgs e)` | Перегрузка метода класса `WebControl`, вызывается при загрузке контрола|
-| `protected override void RenderContents(HtmlTextWriter writer)` | Перегрузка метода класса `WebControl`, используется для рендеринга контрола при размещении его непосредственно на веб-форме|
-| `protected override IEnumerable<SсriptDesсriptor> GetSсriptDesсriptors()` | Перегрузка метода класса `SсriptControl`. Метод для получения дескрипторов скриптов, используемых контролом|
-| `protected override IEnumerable<SсriptReference> GetSсriptReferences()` | Перегрузка метода класса `SсriptControl`. Метод для получения ссылок на скриптовые ресурсы, используемые контролом.|
-| `public string GetInitiaMarkup()` | Метод, возвращающий строку с начальной html-разметкой контрола (содержащей скрипт для ajax-получения первой страницы)|
-| `public static string GetMarkup(int pageNum, string guid)` | Статический метод, возвращающий строку с разметкой нужной страницы. Вызывается веб-сервисом `ObjectTileViewService` при обработке ajax-запросов. Настройки берутся из сессии по `guid`'у|
+| Signature | Description| 
+|-----------------------|------------------------------|-------------------------------| 
+| `protected override void OnLoad(EventArgs e)` | Overload a class method `WebControl` is called when the download control| 
+| `protected override void RenderContents(HtmlTextWriter writer)` | Overload a class method `WebControl` used for rendering the control when placing it directly on the web form| 
+| `protected override IEnumerable<SсriptDesсriptor> GetSсriptDesсriptors()` | Overload a class method `SсriptControl`. Method to retrieve the handles of the scripts used control| 
+| `protected override IEnumerable<SсriptReference> GetSсriptReferences()` | Overload a class method `SсriptControl`. Method for obtaining of links to scripting resources used by the control.| 
+| `public string GetInitiaMarkup()` | Method that returns a string with the initial html markup of the control (containing a script to ajax the first page)| 
+| `public static string GetMarkup(int pageNum, string guid)` | Static method that returns a string with the markup for the page you want. It calls the web service `ObjectTileViewService` when processing ajax requests. Settings are taken from the session on `guid`'| 
 
-### Свойства
+### Properties 
 
-| Название | Тип | Описание|
-|-------------------------|---------------------------|----------------------------------|
-| `View` | `ICSSoft.STORMNET.View` | Используется для задания или получения представления, согласно которому отображаются объекты|
-| `Type` | `System.Type` | Используется для задания или получения типа объектов, которые нужно выгрузить и отобразить|
-| `ItemsPerPage` | `uint` | Количество тайлов на странице (если `0`, то пейджинг отключен)|
-| `LimitFunction` | `ICSSoft.STORMNET.FunctionalLanguage.Function` | Ограничение на загружаемые объекты|
-| `ColumnsSorting` | `List&#60ColumnsSortDef&#62` | Список записей о колонках, по которым нужно производить сортировку выводимых объектов, в порядке их приоритета|
-| `Styles` | `IEnumerable&#60string&#62` | Реализация интерфейса `IHavingResources`. Используется для получения коллекции связанных с контролом ресурсов (CSS). Но при вызове метода `OnLoad` ресурсы автоматически добавляются на страницу|
-| `TileType` | `System.Type` | Класс контрола, который будет использоваться в качестве тайла (отображать один объект). Должен реализовывать `AjaxControls.IObjectTile`. Чтобы в head страницы подключить стилевые файлы, используемые контролом, можно реализовать интерфейс `AjaxConrols.IHavingResources`. По умолчанию установлен класс [AjaxControls.ObjectTile](fa_ajax-controls-object-tile.html)|
-| `TileProperties` | `Dictionary<string, object>` | Свойство, позволяющее задавать значения произвольных свойств отображаемых тайлов. Подробнее описывается ниже|
+| Name | Type | Description| 
+|-------------------------|---------------------------|----------------------------------| 
+| `View` | `ICSSoft.STORMNET.View` | Used to set or retrieve the view according to which objects are displayed| 
+| `Type` | `System.Type` | Used to set or retrieve the type of objects you want to upload and display| 
+| `ItemsPerPage` | `uint` | Number of tiles per page (if `0`, the paging is off)| 
+| `LimitFunction` | `ICSSoft.STORMNET.FunctionalLanguage.Function` | Restriction on downloadable objects| 
+| `ColumnsSorting` | `List&#60ColumnsSortDef&zgl62` | List records the columns on which to sort the displayed objects, in order of priority| 
+| `Styles` | `IEnumerable&#60string&zgl62` | interface Implementation `IHavingResources`. Use to retrieve collections related to control of resources (CSS). But when you call a method `OnLoad` resources are automatically added to the page| 
+| `TileType` | `System.Type` | Grade control to be used as a tile (to display a single object). Must implement `AjaxControls.IObjectTile`. To the head of the page to connect stylesheets used control, you can implement an interface `AjaxConrols.IHavingResources`. By default, the class [AjaxControls.ObjectTile](fa_ajax-controls-object-tile.html)| 
+| `TileProperties` | `Dictionary<string, object>` | Property allowing to specify the values of custom properties for the displayed tiles. Described in detail below| 
 
-## TileProperties
+## TileProperties 
 
-`TileProperties` - словарь с ключами типа `string` (имя свойства) и значениями типа `object` (значение свойства). Во-первых, рекомендуется задавать имена свойств с помощью определения строковых констант по причине того, что при задании несуществующего имени (или при допущении ошибки в нем) контрол будет нормально работать за исключением того, что значение свойства не будет присвоено. Во-вторых, следует внимательно относиться к типу передаваемого значения, который должен быть наследником типа соответствующего свойства или являться им.
+`TileProperties` - dictionary with keys of type `string` (property name) and values of type `object` (value properties). First, it is recommended to set the property names by using the define string constants for the reason that when you specify a non-existent name (or assuming the errors in it) the control will work normally except that the value of the property will not be rated. Secondly, should pay attention to the type of the transmitted value, which should be the heir of the type of the corresponding property or be them. 
 
-### Пример использования свойства `TileProperties`
+### an Example of using properties `TileProperties` 
 
-Для класса тайлов `ObjectTile` задается свойство `AttributeRenderers`.
+For a class of tiles `ObjectTile` sets the property `AttributeRenderers`. 
 
 ```csharp
-//expander - контрол класса MasterExpander
+//expander control class MasterExpander 
 Dictionary<string, AttributeRenderer> renderers = 
                 new Dictionary<string, AttributeRenderer>();
-renderers.Add("Кличка", delegate (object val)
+renderers.Add("Nickname", delegate (object val)
                         {
                             return string.Format("<b>{0}</b>", val);
                         });
 expander.TileProperties.Add(ObjectTile.AttributeRenderersPropertyName, renderers);
-```
+``` 
 
-## Web.config
+## Web.config 
 
-Для включения веб-сервиса `ObjectTileViewService.asmx` необходимо добавить запись в `Web.config`:
+To enable the web service `ObjectTileViewService.asmx` you must add the entry in `Web.config`: 
 
-#### Для IIS6
+#### IIS6 
 
 ```xml
 <configuration>
@@ -75,9 +77,9 @@ expander.TileProperties.Add(ObjectTile.AttributeRenderersPropertyName, renderers
   </system.web>
   ...
 </configuration>
-```
+``` 
 
-#### Для IIS7
+#### For IIS7 
 
 ```xml
 <configuration>
@@ -95,56 +97,59 @@ expander.TileProperties.Add(ObjectTile.AttributeRenderersPropertyName, renderers
   </system.webServer>
   ...
 </configuration>
-```
+``` 
 
-## Вид контрола
+## Kind of control 
 
-![](/images/pages/products/flexberry-aspnet/controls/object-tile-view.png)
+![](/images/pages/products/flexberry-aspnet/controls/object-tile-view.png) 
 
-## CSS
+## CSS 
 
-Для изменения вида контрола можно переопределить CSS-атрибуты для классов:
+To change the control, you can override the CSS attributes for the classes: 
 
-* Внешний див контрола: `div.otv-tile-view`
-* Область отображения тайлов: `div.otv-tiles-area`
-* Область выбора страницы: `div.otv-page-select-area`
-* Кнопка выбора страницы: `a.otv-page-button`
-* Кнопка выбранной страницы: `a.otv-selected-page-button`
+* The outer div control: `div.otv-tile-view` 
+* The display area of the tiles: `div.otv-tiles-area` 
+* The selection page: `div.otv-page-select-area` 
+* Select button page: `a.otv-page-button` 
+* Button is selected page: `a.otv-selected-page-button` 
 
-## Пример обособленного использования ObjectTileView
+## Example of a separate use ObjectTileView 
 
-Для статического добавления контрола в aspx-разметку прежде всего нужно зарегистрировать префикс пространства имен (или сразу тег) контрола, например:
+To add a static control in aspx markup, you first need to register the namespace prefix (or tag) control, for example: 
 
 ```xml
 ...
 <%@ Register TagPrefix="ac" Namespace="ICSSoft.STORMNET.Web.AjaxControls" Assembly="ICSSoft.STORMNET.Web.AjaxControls" %>
 ...
-```
+``` 
 
-Для работы контролу ObjectTileView необходимо присутствие на странице ScriptManager'a:
+The control ObjectTileView must be present on the page ScriptManager'a: 
 
 ```xml
 ...
 <asp:ScriptManager runat="server"/>
 ...
-```
+``` 
 
-В нужное место добавляем сам контрол:
+To desired location add the control: 
 
 ```xml
 ...
 <ac:ObjectTileView runat="server" ID="myTileView"/>
 ...
-```
+``` 
 
-Для инициализации контрола необходимо при загрузке страницы (в методе `Page_Load`) выполнить примерно следующее:
+To initialize the control you need when the page is loaded (in method `Page_Load`) to do the following: 
 
 ```csharp
-// Задаем представление, по которому из БД будут загружаться и отображаться объекты
+// Set the view according to which database will be loaded and displayed objects 
 myTileView.View = Information.GetView("DataTypeL", typeof(DataType));
-// Задаем класс объектов, которые будут отображаться в контроле
+// Set the class of the object that will be displayed in the control 
 myTileView.Type = typeof(DataType);
-```
+``` 
 
-Для работы контрола необходима подключенная библиотека `jQuery`. Остальные свойства задаются опционально и описаны выше. Если нужно кастомизировать отображение объектов в контроле, см. свойство TileType.
- 
+To work control the necessary library connected `jQuery`. The other properties are optional and described above. If you want to customize appears in the control, see the property TileType. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

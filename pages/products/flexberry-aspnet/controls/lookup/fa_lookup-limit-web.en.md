@@ -1,70 +1,77 @@
----
-title: Наложение ограничения на LookUp в Web
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Ограничения
-toc: true
-permalink: en/fa_lookup-limit-web.html
-lang: en
----
+--- 
+title: Imposing restrictions on the LookUp in the Web 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Restrictions 
+toc: true 
+permalink: en/fa_lookup-limit-web.html 
+lang: en 
+autotranslated: true 
+hash: 04768470055c851384a6bede1855f0d85f9eb0043b7ff05faff98727e5941a8c 
+--- 
 
-По умолчанию при открытии формы на [LookUp](fa_lookup-overview.html) отображается полный список объектов, из которых необходимо выбрать значение. Однако, зачастую возникает ситуация, когда отображать полный список нельзя.
+By default, when opening forms in the [LookUp](fa_lookup-overview.html) displays the entire list of objects from which to select. However, often the situation arises when a complete list is impossible. 
 
-Следовательно, возникает вопрос: каким образом ограничить выводимые данные при поднятии на LookUp?
+Therefore, the question arises: how to limit the output if you picked up on LookUp? 
 
-## Пример 1
+## Example 1 
 
-Пусть дана следующая диаграмма.
+Given the following diagram. 
 
-![](/images/pages/products/flexberry-aspnet/controls/lookup/filter-ex-diagram.png)
+![](/images/pages/products/flexberry-aspnet/controls/lookup/filter-ex-diagram.png) 
 
-При создании нового объекта типа `Кредит` необходимо выбрать `Клиента`, которому выдается данный кредит. Например, что введено ограничение: выдавать кредиты только лицам, проживающим в городе Перми (т.е. если `Прописка` Клиента содержит в себе "Пермь").
+When you create a new object of type `Кредит` need to choose `Клиента` to which the loan. For example, that a restriction to lend only to persons resident in the city of Perm (i.e. if `Прописка` Client contains a "Perm"). 
 
-Построить ограничение, используя [LINQProvider](fo_linq-provider.html):
+To build a restriction using [LINQProvider](fo_linq-provider.html): 
 
 ```csharp
 var ds = (SQLDataService) DataServiceProvider.DataService;
-IQueryable<Клиент> limit = ds.Query<Клиент>(Клиент.Views.КлиентL).Where(klient => klient.Прописка.Contains("Пермь"));
-```
+IQueryable<Клиент> limit = ds.Query<Клиент>(Клиент.Views.КлиентL).Where(klient => klient.Прописка.Contains("Perm"));
+``` 
 
-Затем получить ограничивающую функцию, используя класс `LinqToLcs`:
+Then get a restraining function using the class `LinqToLcs`: 
 
 ```csharp
 Function onlyPermKlients = LinqToLcs.GetLcs(limit.Expression, Клиент.Views.КлиентL).LimitFunction;
-```
+``` 
 
-Ограничить LookUp, установив поле `LimitFunction`:
+Restrict LookUp field by selecting `LimitFunction`: 
 
 ```csharp
 ctrlКлиент.LimitFunction = onlyPermKlients;
-```
+``` 
 
-В результате, при открытии лукап-формы Клиентов с этой страницы будут отображаться только Клиенты, у которых встречается слово "Пермь" в поле "Прописка".
+As a result, when you open lookup-shape Clients this page displays only Clients that have the word "Perm" in the field "Registration". 
 
-## Пример 2
+## Example 2 
 
-Более сложная задача: пускай прописка представляет собой отдельный класс, таким образом, необходимо наложить ограничение на мастер мастера:
+The more difficult task: let the residence, is in a class thus, it is necessary to impose restrictions on master: 
 
-![](/images/pages/products/flexberry-aspnet/controls/lookup/kredit-diagramm.png)
+![](/images/pages/products/flexberry-aspnet/controls/lookup/kredit-diagramm.png) 
 
-Дополнительно, необходимо отображать только работающих `КредитныхИнспекторов`.
+Additionally, you want to show only working `КредитныхИнспекторов`. 
 
-1.Построить ограничения, испльзуя LINQ-провайдер: 
+1.Build constraints by filling a LINQ provider: 
 
 ```csharp
 var ds = (SQLDataService) DataServiceProvider.DataService;
-IQueryable<Клиент> limit1 = ds.Query<Клиент>(Клиент.Views.КлиентL).Where(klient => klient.Прописка.Город == "Пермь");
+IQueryable<Клиент> limit1 = ds.Query<Клиент>(Клиент.Views.КлиентL).Where(klient => klient.Прописка.Город == "Perm");
 IQueryable<КредитныйИнспектор> limit2 = ds.Query<КредитныйИнспектор>(КредитныйИнспектор.Views.КредитныйИнспекторL).Where(insp => insp.Работает);
-```
+``` 
 
-2.Получить ограничивающие функции:
+2.To restrictive feature: 
 
 ```csharp
 Function onlyPermKlients = LinqToLcs.GetLcs(limit1.Expression, Клиент.Views.КлиентL).LimitFunction;
 Function onlyWorkingInspektors = LinqToLcs.GetLcs(limit2.Expression, КредитныйИнспектор.Views.КредитныйИнспекторL).LimitFunction;
-```
+``` 
 
-3.Устанавливаем ограничения на LookUpы для Клиентов и Инспекторов:
+3.The limitations on LookUpы for Customers and Inspectors: 
 
 ```csharp
 ctrlКлиент.LimitFunction = onlyPermKlients;
-ctrlКредитныйИнспектор.LimitFunction = onlyWorkingInspektors;```
+ctrlКредитныйИнспектор.LimitFunction = onlyWorkingInspektors;
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

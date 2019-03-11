@@ -1,24 +1,30 @@
----
-title: Приведение в соответствие БД
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, БД, плагин, структура таблиц, модель
-summary: Правила создания и изменения БД с помощью плагинов Flexberyy Desinger
-toc: true
-permalink: en/fd_matching-db.html
-lang: en
----
+--- 
+title: alignment BD 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, DB, plugin, table structure, model 
+summary: Rules creating and modifying a database with plugins Flexberyy Desinger 
+toc: true 
+permalink: en/fd_matching-db.html 
+lang: en 
+autotranslated: true 
+hash: 07762867436270c6f4c7b323753ddc4544cd4311cf934dd084587dbdb522120a 
+--- 
 
-Данная функция позволяет привести в соответствие имеющуюся базу данных к модели:
-* Создаётся база данных (при необходимости).
-* Вычисляются отличия между [имеющейся в базе данных структурой таблиц и структурой, соответствующей объектной модели](fo_storing-data-objects.html).
-* Генерируется скрипт, выполнение которого приводит имеющуюся базу данных к модели. 
-* Запрашивается пользователь о применении сгенерированного скрипта.
+This function enables you to align existing database to the model: 
+* Creates the database (if necessary). 
+* Calculated the differences between [the database table structure and the structure corresponding to the object model](fo_storing-data-objects.html). 
+* The script is generated, which causes the existing database to the model. 
+* Enquire the user about the use of the generated script. 
 
-Для того, чтобы выполнить эту функцию, необходмо в меню плагина генерации структуры базы данных выбрать пункт "Привести в соответствие БД".
+In order to perform this function, should be in the plugin menu of generate database structure to select the "align database". 
 
-{% include note.html content="Модуль приведения в соответствие присоединяется к базе данных в соответствии со строкой соединения, указанной в настройках стадии для этого модуля. Если на сервере нет такой БД, модуль `создаст её`. Об этом будет объявлено в окне сообщений. По окончании работы пользователю выдаётся окно со сгенерированным скриптом, приводящим структуру базы данных к актуальному модели состоянию. Пользователь может применить этот скрипт, возможно, предварительно подправив, либо отказаться от его применения." %}
+{% include note.html content="Module align the joins in the database in accordance with a connection string specified in the stage settings for this module. If the server has no such database, the module `создаст ее`. This will be announced in the message window. Upon completion the user gets a window with the generated script, causes the database structure to the current model state. The user can apply this script may pre-modifying or abandon its use." %} 
 
-## Настройка "Не удалять существующие таблицы"
+## setting "don't delete existing tables" 
 
-Если установлена настройка "[Не удалять существующие таблицы](fd_configure-ms-sql-generator.html)", то система не будет пытаться удалить "лишние" с её точки зрения таблицы. Данная настройка удобна, когда в базе данных приложения содержатся данные дополнительно подключаемых подсистем.
+If the "[don't delete existing tables](fd_configure-ms-sql-generator.html)", the system will not attempt to remove the "extra" from her point of view on the table. This setting is suitable when the application database contains data optional bundled subsystems. 
 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

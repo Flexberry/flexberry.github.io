@@ -1,18 +1,18 @@
----
-title: Imposing restrictions on the LookUp in the AGE, associate lyapov.
-sidebar: guide-practical-guides_sidebar
-keywords: guide
-toc: true
-permalink: en/gpg_limit-function-for-lookup-in-age.html
+--- 
+title: Imposing restrictions on the LookUp in the AGE, associate lyapov. 
+sidebar: guide-practical-guides_sidebar 
+keywords: guide 
+toc: true 
+permalink: en/gpg_limit-function-for-lookup-in-age.html 
 lang: en 
 autotranslated: true 
-hash: cb8b74d633ce5453fb1f264ecff29b55d8a953384099c9e7f9e6937de5cd5de5
----
+hash: a6fcea20149d0903d210ac1e7ea75441e2c3a11147551f2bda0cfcf4286b41c2 
+--- 
 
-The imposition of restrictions on a list of selectable items in the order.
+The imposition of restrictions on a list of selectable items in the order. 
 
-Objective: in the order it was impossible to specify multiple single product, it is necessary to impose restrictions so that the already selected items in the list for a new selection no longer appeared.
-You have to add the constraint for commodities, which will vary depending on the state of the list of items on the page.
+Objective: in the order it was impossible to specify multiple single product, it is necessary to impose restrictions so that the already selected items in the list for a new selection no longer appeared. 
+You have to add the constraint for commodities, which will vary depending on the state of the list of items on the page. 
 
 1.In block pluggable namespaces, add the following lines: 
 
@@ -22,17 +22,17 @@ using System.Collections.Generic;
 using System.Web.Services;
 
 using ICSSoft.STORMNET.Web.Tools;
-```
+``` 
 
-2.In `ZakazE.aspx.cs` add the following method:
+2.In `ZakazE.aspx.cs` add the following method: 
 
 ```csharp
-/// <summary>
-/// Method modifies the LCS in lucapa, located in AGE.
-/// </summary>
-/// <param name="ordKeys">the Key.</param>
-/// <param name="lfKey">session Key.</param>
-/// <returns>the session Key.</returns>
+/// <summary> 
+/// Method modifies the LCS in lucapa, located in AGE. 
+/// </summary> 
+/// <param name="ordKeys">the Key.</param> 
+/// <param name="lfKey">session Key.</param> 
+/// <returns>the session Key.</returns> 
 [WebMethod]
 public static string CreateLf(string[] ordKeys, string lfKey)
 {
@@ -55,11 +55,11 @@ public static string CreateLf(string[] ordKeys, string lfKey)
 
 	return lfKey;
 }
-```
+``` 
 
-Attaching the attribute to a method `WebMethod` `Public` means that this method should be published as part of the web service `XML`. The properties of this attribute can also be used to fine-tune the behavior of the method, the web service `XML`.
+Attaching the attribute to a method `WebMethod` `Public` means that this method should be published as part of the web service `XML`. The properties of this attribute can also be used to fine-tune the behavior of the method, the web service `XML`. 
 
-3.In `ZakazE.aspx` to fix the script:
+3.In `ZakazE.aspx` to fix the script: 
 
 ```js
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder0"  runat="server" >
@@ -101,8 +101,8 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 						$(this).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
 					});
 			};
-			/**
-* Iterate in Agay ctrlСтрокаЗаказа all lucapa ctrlТовар and stamped the changed limit function.
+			/** 
+* Iterate in Agay ctrlСтрокаЗаказа all lucapa ctrlТовар and stamped the changed limit function. 
 */
 			if (ordKeys) {
 				changeLf();
@@ -111,22 +111,22 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 						$(this).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
 					});
 			}
-			/**
-* If one of lyapov ctrlТовар changed the value, then override all lucapa ctrlТовар in Agay ctrlСтрокаЗаказа.
+			/** 
+* If one of lyapov ctrlТовар changed the value, then override all lucapa ctrlТовар in Agay ctrlСтрокаЗаказа. 
 */
 			$( '#<%=ctrlСтрокаЗаказа.ClientID%>' ).on('change', '[id$=ctrlТовар]', function() {
 				changeAll();
 				autoCalc(this, this.parentNode.parentNode.parentNode.parentNode);
 			});
-			/**
-* If new row added in Agay, just assign the limit function.
-* @param {int} row Number of the added row.
+			/** 
+* If new row added in Agay, just assign the limit function. 
+* @param {int} row Number of the added row. 
 */
 			$('#<%=ctrlСтрокаЗаказа.ClientID%>').on('rowadded.ajaxgroupedit', function(e, d) {
 				$('[id$=ctrlТовар]', d).icsMasterEditorAjaxLookup('updateOptions', { lookup: { LFName: lfName } });
 			});
-			/**
-* If the deleted row in AGAY, just change limit function.
+			/** 
+* If the deleted row in AGAY, just change limit function. 
 */
 			$('#<%=ctrlСтрокаЗаказа.ClientID%>').on('rowdeleted.ajaxgroupedit', function () {
 				changeAll();
@@ -148,8 +148,8 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 				$('#<%=ctrlЦена.ClientID%>').val(sum.toFixed(2));
 			}
 
-			/**
-* Calculating rates and amounts.
+			/** 
+* Calculating rates and amounts. 
 */
 			$('#<%=ctrlСтрокаЗаказа.ClientID%>').on('change', '[id$=ctrlКоличество]', function (e) {
 				autoCalc(this, this.parentNode.parentNode.parentNode);
@@ -158,13 +158,13 @@ Attaching the attribute to a method `WebMethod` `Public` means that this method 
 
 	</script>
 </asp:Content>
-```
+``` 
 
-## Go
+## Go 
 
-* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Automatic calculation](gpg_auto-calculation.html)
+* <i class="fa fa-arrow-left" aria-hidden="true"></i> [Automatic calculation](gpg_auto-calculation.html) 
 * [Exception handling](gpg_set-exception.html) <i class="fa fa-arrow-right" aria-hidden="true"></i> 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

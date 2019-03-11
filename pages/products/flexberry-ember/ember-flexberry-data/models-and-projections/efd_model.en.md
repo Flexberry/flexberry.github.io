@@ -1,68 +1,82 @@
----
-title: Description of the model in the ember-flexberry application
-sidebar: ember-flexberry-data_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/efd_model.html
-lang: en
-summary: Представлено детализированное описание того, как выглядит модель в приложении.
----
+--- 
+title: Description of a model in ember-flexberry application 
+sidebar: ember-flexberry-data_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/efd_model.html 
+lang: en 
+autotranslated: true 
+hash: bbfebb03bb08c1f13f5f6d659e284f7ee8d966e1daea6bce3804ac3104f12e84 
+summary: Presents a detailed description of how the model looks in the app. 
+--- 
 
-## Описание
+## Description 
 
-Модели в ember-приложениях основаны на классе Ember [Data DS.Model](http://emberjs.com/api/data/classes/DS.Model.html).
+Models in ember-application class inherit from Ember Data [DS.Model](http://emberjs.com/api/data/classes/DS.Model.html). 
 
-{% include note.html content="Модели создаются в папку `models` и именуются следующим образом: если имя соответствующего C#-класса `NewPlatform.Someproject.Somemodel`, то название файла с моделью должно быть `new-platform-someproject-somemodel`." %}
+{% include note.html content="the Models are created in the folder `models` and are named as follows: if the corresponding C# class called `NewPlatform.Someproject.Somemodel`, the file with the model should be called `new-platform-someproject-somemodel`. If OData-bakenda the attribute [`PublishName` to simplify the naming of models](https://flexberry.github.io/ru/fo_metadata-for-client.html), then the name of the namespace in this case, the client model may be missing (the name of the client model will accordingly be formed from the name in the entity data model to OData-bekende)" %} 
 
-Модели чаще всего имеют следующую структуру:
+Models often have the following structure: 
 
 ```javascript
-// Импорты.
+// The imports. 
 import DS from 'ember-data';
-import BaseModel from 'ember-flexberry/models/base';
-import Proj from 'ember-flexberry-projections';
+import { Projection } from 'ember-flexberry-data';
 
-var Model = BaseModel.extend({
-  // Собственные атрибуты, мастера, детейлы.
+var Model = Projection.Model.extend({
+  // Own attributes, master detaily. 
+  name: DS.attr('string'),
+  someMaster: DS.belongsTo('new-platform-someproject-somemaster', { inverse: 'somemodel', async: false, polymorphic: true }),
   ...
 
-  // Правила валидации.
+  // Validation rules. 
   validations: {
-	...
+    name: { presence: true }
+    ...
   }
 });
 
-// Определение представлений.
+// Model definition-ancestor (if any). 
+Model.reopenClass({
+  _parentModelName: '...' // Specifies the name of the model, which is inherited by this model, such as the 'new-platform-someproject-parent'. 
+});
+
+// Define views. 
 Model.defineProjection(
- ...
+  name: Projection.attr(''),
+  someMaster: Projection.belongsTo('new-platform-someproject-somemaster', '', {
+    ...
+  })
+  ...
 });
 
 Model.defineProjection(
  ...
 });
 
-// Экспорт.
+// Export the model. 
 export default Model;
-```
+``` 
 
-Импорты и экспорт требуются синтаксисом [ember-cli](http://ember-cli.com).
-Создаваемая модель наследуется от базового класса `BaseModel`.
-Для модели [задаются представления](efd_model-projection.html).
+Imports and exports conform to the syntax [ember-cli](http://ember-cli.com). 
+The model inherited from [base technology class](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/models/model.js) defined in the addon [`ember-flexberry-data`](https://github.com/Flexberry/ember-flexberry-data). 
+Model [set view](efd_model-projection.html). 
 
-Существуют разные подходы к [заданию значения по умолчанию](ef_default-value.html).
+There are also different approaches to [specify default values](ef_default-value.html) for the attributes of the model. 
 
-## Определение модели
+## the Definition of a model 
 
-В модели также задаются [правила валидации модели](efd_model-validation.html).
-Описание моделей происходит [стандартным для ember способом](https://guides.emberjs.com/v2.4.0/models/defining-models/).
+The models are defined ["standard" Ember way](https://guides.emberjs.com/v2.4.0/models/defining-models/). 
 
-Доступны встроенные типы "string" (строка), "number" (число), "boolean" (логический тип) и "date" (дата).
+Additionally, the models inherited from the base technological models are used [validation model](efd_model-validation.html). 
 
-В рамках ember-flexberry была добавлена трансформация "file" (для типа "Файл").
+For attributes of any Ember models available built-in data types `string` (string), `number` (number) `boolean` (Boolean) and `date` (date). To define other data types in Ember models are used [transformation](https://guides.emberjs.com/v2.4.0/models/defining-models/#toc_transforms). 
 
-Для [перечислений трансформации задаются особым образом](efd_enum.html).
+In addition to the standard data types in the expansion `ember-flexberry-data` was added transformation `decimal` (float type), `file` (type "File"), `flexberry-enum` (type for enumerations), `guid` (type "GUID", which is the default for primary keys). 
 
-Пример модели для класса с мастером employee1 типа 'new-platform-someproject-employee' и детейлами orders типа 'new-platform-someproject-order'.
+For more information about using transformations for enumerations can be viewed [here](efd_enum.html). 
+
+Example for a class with the master `employee1` type 'new-platform-someproject-employee' and detaylari `orders` type 'new-platform-someproject-order'. 
 
 ```javascript
 var Model = BaseModel.extend({
@@ -74,39 +88,39 @@ var Model = BaseModel.extend({
   employee1: DS.belongsTo('new-platform-someproject-employee', { inverse: null, async: false }),
   orders: DS.hasMany('new-platform-someproject-order', { inverse: 'employee', async: false }),
 });
-```
+``` 
 
-{% include important.html content="Имена свойств должны идти с маленькой буквы." %}
+{% include important.html content="property Names must start with a lowercase letter." %} 
 
-{% include warning.html content="Для **каждой** модели должен быть описан [сериализатор](efd_serializer.html), без этого не будет проходить корректное взаимодействие с сервером." %}
+{% include warning.html content="For **each** of the model should be described [serializer](efd_serializer.html) for correct interaction with the server." %} 
 
-## Первичные ключи в модели
+## Primary keys in the model 
 
-Первичные ключи объекта не задаются в модели явно.
-В клиентском коде обращения к первичному ключу можно выполнить через [свойство "id"](http://emberjs.com/api/data/classes/DS.Model.html#property_id).
+The primary keys of the object are not specified in the model explicitly. 
+In the client code access the primary key can be done using [property `id`](http://emberjs.com/api/data/classes/DS.Model.html#property_id). 
 
-Как называется соответствующее свойство на сервере, определяется в [сериализаторе](efd_serializer.html).
+How is the corresponding property on the server that is defined in the [serializer](efd_serializer.html). 
 
-### Тип первичного ключа
+### the primary key Type 
 
-__Первичные ключи моделей__ в `ember`-приложениях всегда являются строками, но на сервере [это поведение можно изменить](fo_primary-keys-objects.html).
-При изменении типа первичного ключа на сервере, необходимо переопределить статическое свойство `idType` в классе модели:
+__The primary keys of the models__ `Ember` applications are always strings, but on the server [this behavior can be changed](fo_primary-keys-objects.html). 
+If you change the primary key on the server, you must override a static property `idType` in the model class: 
 
 ```javascript
 import { Projection } from 'ember-flexberry-data';
 
 let Model = Projection.Model.extend({
-  // ...
+  // ... 
 });
 
 Model.reopenClass({
-  idType: 'string',
+  idType: '...',
 });
 
 export default Model;
 ``` 
 
-__Тип первичного ключа__ - это метаданные модели, а не данные для конкретного типа бакенда. Поэтому, свойство `idType` расположено в модели (model). Устанавливается свойство `idType` при помощи статической функции `defineIdType` в `model.js`:
+Sets the property `idType` using static functions `defineIdType` in the basic technology of the model: 
 
 ```javascript
 defineIdType: function (newIdType) {
@@ -114,33 +128,44 @@ defineIdType: function (newIdType) {
     idType: newIdType,
   });
 },
-```
+``` 
 
-Получить тип ключа можно через метод `getMeta` утилиты `information` из `ember-flexberry-data`.
+To call this method as follows: 
+```javascript
+Model.defineIdType('string');
+``` 
 
-В языке запросов тип ключа учитывается автоматически, и при построении запросов к `OData` значения ключей в URL запросов окавычиваются только в том случае, если тип ключа -` string`.
-На данный момент поддерживается 3 типа ключа в клиентской части: `string`, `guid` и `number`. В других случаях при построении запросов к OData будет выбрасываться исключение.
+__Primary key__ is the metadata model, so the property `idType` defined precisely in the model and not, for example, in the adapter. 
 
-{% include note.html content="По умолчанию в клиентской модели в качестве типа PrimaryKey проставляется guid." %}
+To the key type through the [`getMeta` utilities `information`](https://github.com/Flexberry/ember-flexberry-data/blob/develop/addon/utils/information.js#L137) from the addon `ember-flexberry-data`. 
 
-## inverse-связи
+The query language is the key type is taken into account automatically, and when building requests to the OData-bakenda key values in the URL query "arabicised" only if the key type `string`. 
+Currently, 3 types of keys on the client: `string`, `guid` and `number`. In other cases, when building requests to the OData-bakenda will throw an exception. 
 
-Задание [inverse-связи](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations) используется, например, при работе с детейлами.
+{% include note.html content="By default, the client model type as the primary key is used `guid`." %} 
 
-Задание связи от агрегатора к детейлу.
+## inverse connection 
+
+Reference [inverse-context](https://guides.emberjs.com/v2.4.0/models/relationships/#toc_reflexive-relations) is used, for example, when working with detaylari. 
+
+The job connection from the aggregator to detailu. 
 
 ```javascript
 var Model = BaseModel.extend({
   ...
   orders: DS.hasMany('order', { inverse: 'employee', async: false }),
 });
-```
+``` 
 
-Задание связи от детейла к агрегатору.
+The job from detail to the aggregator. 
 
 ```javascript
 var Model = BaseModel.extend({
-  // ...
+  // ... 
   employee: DS.belongsTo('employee', { inverse: 'orders', async: false })
 });
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

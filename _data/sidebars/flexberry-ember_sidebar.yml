@@ -25,6 +25,9 @@ entries:
   - title: Компоненты
     output: web, pdf
     folderitems:
+    - title: Общее описание
+      url: /fe_base-component.html
+      output: web
     - title: Flexberry Objectlistview
       title_ru: Flexberry Objectlistview
       url: /fe_object-list-view.html
@@ -41,8 +44,13 @@ entries:
       title_ru: Flexberry Groupedit
       url: /fe_groupedit.html
       output: web
-
-
+    - title: flexberry-lookup
+      url: /fe_lookup-component.html
+      output: web
+    - title: Components for edit-forms
+      title_ru: Компоненты для работы с данными на форме редактирования
+      url: /fe_edit-form-components.html
+      output: web
 
   - title: Доступ к данным
     output: web, pdf
@@ -60,4 +68,3 @@ entries:
     - title: Обновление Ember-CLI
       url: /fe_update-ember-js.html
       output: web
-  

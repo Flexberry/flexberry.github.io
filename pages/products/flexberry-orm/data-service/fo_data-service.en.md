@@ -1,352 +1,358 @@
----
-title: Data service
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, loading data objects, updating data objects
-summary: Features of working with data objects using the data service
-toc: true
-permalink: en/fo_data-service.html
-lang: en
----
+--- 
+title: Service data 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, uploading data objects, updating data objects 
+summary: features of data entities using the data service 
+toc: true 
+permalink: en/fo_data-service.html 
+lang: en 
+autotranslated: true 
+hash: 5731622ef220414b9641261e9e27bec759be6c0590c105219e0e0036c1c17b5e 
+--- 
 
-**Сервис данных** - компонент Flexberry ORM, обеспечивающий запись и чтение объектов данных в хранилище. В объектной модели Flexberry ORM сервис данных представлен классом, реализующим интерфейс `ICSSoft.STORMNET.Business.IDataService`.
-Поддерживается несколько [стандартных сервисов данных](fo_standard-data-services.html), и при необходимости пользователями могут быть [разработаны](fo_implement-custom-ds.html) новые, удовлетворяющие специфическим требованиям (например, наследуя классы `ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService` или `ICSSoft.STORMNET.Business.`[`SQLDataService`](fo_sql-data-service.html)).
+**Service data** - Flexberry ORM component that provides read and write data objects in the repository. In the object model Flexberry ORM data service is represented by a class implementing the interface `ICSSoft.STORMNET.Business.IDataService`. 
+Supported multiple [standard data](fo_standard-data-services.html), and, if necessary, users can be [developed](fo_implement-custom-ds.html) new to meet your specific requirements (for example, inheriting classes `ICSSoft.STORMNET.Business.ODBCDataService.ODBCDataService` or `ICSSoft.STORMNET.Business.`[`SQLDataService`](fo_sql-data-service.html)). 
 
-{% include important.html content="При обращении к сервису данных в программном коде рекомендуется производить через интерфейс `ICSSoft.STORMNET.Business.IDataService`, т.к. это гарантирует  независимость кода от типа хранилища данных." %}
+{% include important.html content="When you access the service data in the code is recommended through the interface `ICSSoft.STORMNET.Business.IDataService`, because it guarantees the independence of the code from the type of data store." %} 
 
-Перед использование сервиса данных в программном коде его необходимо [настроить тем или иным способом](fo_construction-ds.html).
+Before using the service data in the program code it is necessary [to set one way or another](fo_construction-ds.html). 
 
-Следует __обратить внимание__ на следующие моменты:
+Should __pay attention__ on the following points: 
 
-* Существует возможность настроить сервис данных таким образом, чтобы на регистрозависимом источнике данных приложение вело себя как при работе с [регистронезависимым источником](fo_insensitivity-register-ds.html). 
-* Сервис данных [особым образом работает с логическим типом](fo_interpretation-boolean-null.html).
+* You can configure a data service so that on case-sensitive data source, the application behaved as you would with [case-insensitive source](fo_insensitivity-register-ds.html). 
+* Data service [in a particular way works with Boolean type](fo_interpretation-boolean-null.html). 
 
-## Основные возможности сервиса данных
+## Main features of the service data 
 
-Перед обращением в программном коде к сервису данных на него необходимо получить [ссылку](fo_ds-provider.html). При одновременном использовании нескольких хранилищ необходимо учесть некоторые [особенности](fo_multibase.html).
+Before going to code the service data it is necessary to [link](fo_ds-provider.html). When using multiple vaults it is necessary to consider some of the [features](fo_multibase.html). 
 
-Интерфейс `ICSSoft.STORMNET.Business.IDataService` содержит следующие основные группы методов:
+Interface `ICSSoft.STORMNET.Business.IDataService` contains the following basic groups of methods: 
 
-* __Методы с именами типа__ `UpdateXXXXXXXX`, предназначенные для приведения хранилища данных ([обновление, удаление, создание записей](fo_object-status.html)) в соответствие с переданными одним или несколькими объектами данных:
-    * `UpdateObject` - обновление одного объекта.
-    * `UpdateObjects` - обновление нескольких объектов.
-* __Методы с именами типа__ `LoadXXXXXXXX`, предназначенные для чтения одного, либо нескольких объектов данных.
-    * `LoadObject` - загрузка объекта (в зависимости от параметров с помощью данного метода можно осуществлять [дочитку объекта](fo_additional-loading.html)).
-    * `LoadObjects` - загрузка объектов (в т.ч. перегрузки метода позволяют реализовать [порционное стение](fo_reading-portion.html), [чтение принадлежащих различным классам объектов в одном представлении](fo_reading-several-types-objects.html)).
-* __Загрузка без создания объектов__ `LoadStringedObjectView`.
-* __Метод получения количества объектов__, удовлетворяющих условию `GetObjectsCount`.
+* __Methods with names like__ `UpdateXXXXXXXX` designed to bring the data store (update, delete, create record](fo_object-status.html)) in accordance with the transmitted one or more data objects: 
+* `UpdateObject` - updating a single object. 
+* `UpdateObjects` - update multiple objects. 
+* __Methods with names like__ `LoadXXXXXXXX` designed for reading one or more data objects. 
+* `LoadObject` - loading of the object (depending on settings using this method it is possible to carry out [dochitcu object](fo_additional-loading.html)). 
+* `LoadObjects` - loading facilities (including method overloads allow you to implement [a portion Stena](fo_reading-portion.html), [read belonging to different object classes in a single view](fo_reading-several-types-objects.html)). 
+* __Upload without creating objects__ `LoadStringedObjectView`. 
+* __Method of obtaining numbers of objects__, satisfying the condition `GetObjectsCount`. 
 
-Большинство методов чтения/записи имеют перегрузки, принимающие дополнительный параметр [DataObjectCache](fo_context-sensitive-cache.html), позволяющий поддерживать одну инстанцию для нескольких экземпляров объектов. Передавать `DataObjectCache` в методы зачитки нужно в том случае, если какой-то объект уже существует в памяти и после зачитки все ссылки на него должны указывать именно на этот объект. В методы обновления данный параметр передается для верной расстановки ссылок на экземпляры данных из кэша в связи с тем, что после сохранения в хранилище происходит обновление свойств объекта данных и инициализация его копии данных.
+Most of the methods read/write have overloads that accept an extra parameter [DataObjectCache](fo_context-sensitive-cache.html), allowing to maintain a single instance for multiple instances of objects. Pass `DataObjectCache` methods zachetki in that case, if some object already exists in memory and after zachistki all references to it should point exactly at the object. In methods of updating the parameter is passed to the correct placement of references to instances of data from the cache due to the fact that after saving it to the vault updates the properties of a data object and initialize its copy of the data. 
 
-Подробнее об особенностях использовании кэша см. в статье [Контекстно-зависимый кэш объектов данных](fo_context-sensitive-cache.html).
+Read more about the features of using cache, see [Context-sensitive cache data objects](fo_context-sensitive-cache.html). 
 
-Ниже, при рассмотрении методов, перегрузки с параметром `DataObjectCache` отдельно не описываются.
+Below, when considering methods, the overload parameter `DataObjectCache` not separately described. 
 
-## Загрузка объектов данных
+## Loading of data objects 
 
-Для загрузки нескольких объектов данных служат перегрузки метода `LoadObjects`.
+To load multiple data objects are overloads of the `LoadObjects`. 
 
-### Загрузка объектов данных по представлению или массиву представлений
+### Download data objects for view or array of views 
 
-* Загружаются все объекты данных, доступные в хранилище. При этом выполняется загрузка только тех свойств, которые указаны в [представлении](fd_view-definition.html).
+* Loads all the data objects available in the repository. Thus loading only those properties that are specified in [view](fd_view-definition.html). 
 
 ```csharp
 ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View dataObjectView);
-```
+``` 
 
-* Происходит последовательный вызов метода с параметром - представление для каждого элемента массива. Практическая применимость данной перегрузки неочевидна.
+* There is a consistent method call with parameter representation for each element of the array. The practical applicability of this overload is not obvious. 
 
 ```csharp
 ICSSoft.STORMNET.DataObject[] LoadObjects(ICSSoft.STORMNET.View[] dataObjectViews);
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-`dataObjectView(s)` - представление или массив представлений
+`dataObjectView(s)` - view or array of views 
 
-### Загрузка объектов данных по настроечной структуре для выборки LoadingCustomizationStruct (массиву структур)
+### Loading data objects using the configuration structure for the sample LoadingCustomizationStruct (array of structures) 
 
-* Данная перегрузка метода позволяет тонко настроить выборку загружаемых объектов за счёт использования структуры [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
+* This method overload allows you to fine-tune the selection of downloadable objects through the use of structure [LoadingCustomizationStruct](fo_loading-customization-struct.html): 
 
-    * указать представление (вертикальное ограничение выборки: загрузка только определенных свойств), 
-    * количество возвращаемых строк (для реляционных хранилищ ограничение `<nowiki>TOP</nowiki>` в `SELECT`), 
-    * параметры сортировки возвращаемых результатов (`ORDER BY`),
-    * ограничения на вычитываемые объекты данных (`WHERE`) 
-    * и т.д.. Подробнее см. описание [LoadingCustomizationStruct](fo_loading-customization-struct.html).
- 
- [Пример использования](fo_load-limitation-example.html). 
+* specify the view (a vertical list: download only of certain properties), 
+* the number of rows returned (for relational repositories limitation `<nowiki>TOP</nowiki>` in `SELECT`), 
+* collation of results to return (`ORDER BY`), 
+* restrictions on deducted data objects (`WHERE`) 
+* etc. see description [LoadingCustomizationStruct](fo_loading-customization-struct.html). 
 
-_Замечание_: Данная перегрузка позволяет реализовать [чтение принадлежащих различным классам объектов в одном представлении](fo_reading-several-types-objects.html).
+[Example usage](fo_load-limitation-example.html). 
+
+Zamechanie: This overloading allows you to implement a [read belonging to different object classes in a single view](fo_reading-several-types-objects.html).
 
 ```csharp
-// 1.
+// 1. 
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct);
 
-// 2.
+// 2. 
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct, DataObjectCache DataObjectCache);
-```
+``` 
 
-* Происходит последовательный вызов метода с параметром - `LoadingCustomizationStruct` для каждого элемента массива. Практическая применимость данной перегрузки неочевидна.
+* There is a consistent method call with the parameter - `LoadingCustomizationStruct` for each element of the array. The practical applicability of this overload is not obvious. 
 
 ```csharp
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct[] customizationStructs);
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-`customizationStruct(s)` - [настроечная структура для выборки](fo_loading-customization-struct.html) (массив структур)
+`customizationStruct(s)` - [adjusting structure for a sample](fo_loading-customization-struct.html) (array of structures) 
 
-### Загрузка объектов с использованием состояния вычитки (для реализации порционного чтения)
+### Download objects using state of the editing (to implement batch reading) 
 
-* Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции объектов данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах (см. Загрузка одного объекта данных). 
+* Getting the first batch [batch reading](fo_reading-portion.html). In addition to portions of data objects, data services returns a read state. This condition is transmitted to the data service to retrieve the next portion in subsequent calls (see Loading a single data object). 
 
 ```csharp
-// 1.
+// 1. 
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct,ref object State);
 
-// 2.
+// 2. 
 ICSSoft.STORMNET.DataObject[] LoadObjects(LoadingCustomizationStruct customizationStruct, ref object State, DataObjectCache DataObjectCache);
-```
+``` 
 
-* Получение очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов в указанной выше перегрузке.
+* Getting another batch [batch reading](fo_reading-portion.html). Should precede the call to that overload. 
 
 ```csharp
-// 1.
+// 1. 
 ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State);
 
-// 2.
+// 2. 
 ICSSoft.STORMNET.DataObject[] LoadObjects(ref object State, DataObjectCache DataObjectCache);
 ``` 
 
-#### Параметры
+#### Settings 
 
-* `State` - Состояние вычитки(для последующей дочитки)
-* `customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html)
+* `State` - a State of proof-reading(for the subsequent decide) 
+* `customizationStruct` - [adjusting structure for a sample](fo_loading-customization-struct.html) 
 
-_Примечание_: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры [LoadingCustomizationStruct](fo_loading-customization-struct.html).
+Primechanie: the serving Size may be specified with the parameter `LoadingBufferSize` structure [LoadingCustomizationStruct](fo_loading-customization-struct.html). 
 
-## Загрузка одного объекта данных
+## Download one data object 
 
-Для загрузки одного объекта данных служат перегрузки метода `LoadObject`. 
-Вычитка свойств из хранилища осуществляется по заданному в объекте данных [первичному ключу](fo_primary-keys-objects.html).
+To load a single data object are method overloads `LoadObject`. 
+Reading properties from the repository is given in the data object [primary key](fo_primary-keys-objects.html). 
 
-Примеры использования:
+Examples of usage: 
 
-* [Обработка одного объекта](fo_processing-one-object.html),
-* [Пример загрузки и изменения объекта](fo_load-alter-objects.html).
+* [Processing one object](fo_processing-one-object.html), 
+* [Example of load changes of the object](fo_load-alter-objects.html). 
 
-### Загрузка объекта данных по первичному ключу
+### download of the data object primary key 
 
-Будут загружены только собственные свойства объекта. При отсутствии в хранилище данных объекта с заданным первичным ключом будет выдано исключение `CantFindDataObjectException`. Не следует использовать данную перегрузку метода для дочитки объекта данных, для этого применимы перегрузки методы с дополнительными параметрами.
+Fetch only the own properties of the object. In the absence of a data store object with the specified primary key, an exception will be thrown `CantFindDataObjectException`. Do not use this method overload to decide data object, applicable to overloading methods with optional parameters. 
 
 ```csharp
-// 1.
+// 1. 
 void LoadObject(ICSSoft.STORMNET.DataObject dobject)
 
-// 2.
+// 2. 
 void LoadObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-`dobject` - Объект данных, который требуется загрузить
+`dobject` - the data Object that you want to download 
 
-### Загрузка объекта данных по представлению
+### download of the object data representation 
 
-Выполняется загрузка только тех свойств, которые указаны в [представлении](fd_view-definition.html).
+Load only those properties that are specified in [view](fd_view-definition.html). 
 
 ```csharp
-// 1.
+// 1. 
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject)
 
-// 2.
+// 2. 
 void LoadObject(void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject)
 
-// 3.
+// 3. 
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
 
-// 4.
+// 4. 
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache)
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-`dataObjectView(dataObjectViewName)` - [представление](fd_view-definition.html) (имя представления)
+`dataObjectView(dataObjectViewName)` - [view](fd_view-definition.html) (view name) 
 
-### Загрузка объекта данных с указанием дополнительных параметров
+### download of the data object specifying additional parameters 
 
-Данная перегрузка метода может быть использована, в частности, для выполнения [догрузки свойств объекта](fo_additional-loading.html).
+This method overload can be used, in particular, to perform [reload object properties](fo_additional-loading.html).
 
 ```csharp
-// 1.
+// 1. 
 void LoadObject(ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject)
 
-// 2.
+// 2. 
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject)
 
-// 3.
+// 3. 
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject)
 
-// 4.
+// 4. 
 void LoadObject(ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache) 
 
-// 5.
+// 5. 
 void LoadObject(string dataObjectViewName, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
 
-// 6.
+// 6. 
 void LoadObject(ICSSoft.STORMNET.View dataObjectView, ICSSoft.STORMNET.DataObject dobject, bool ClearDataObject, bool CheckExistingObject, DataObjectCache DataObjectCache)
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-* `ClearDataObject` - очищать ли объект
-* `CheckExistingObject` - проверять ли существование объекта в хранилище (если указать `true`, при отсутствии объекта в базе будет выдано исключение типа `CantFindDataObjectException`)
+* `ClearDataObject` - clear whether the object 
+* `CheckExistingObject` is to check whether the object exists in the repository (if you specify `true`, in the absence of the object in the database an exception will be thrown of type `CantFindDataObjectException`) 
 
-## Обновление одного объекта данных
+## updating a single data object 
 
-Для обновления одного объекта данных служат перегрузки метода `UpdateObject`.
+To update one data object are method overloads `UpdateObject`. 
 
-Примеры использования:
+Examples of usage: 
 
-* [Обработка одного объекта](fo_processing-one-object.html),
-* [Пример загрузки и изменения объекта](fo_load-alter-objects.html).
+* [Processing one object](fo_processing-one-object.html), 
+* [Example of load changes of the object](fo_load-alter-objects.html). 
 
-Если перед выполнением сохранения требуется выполнение определенных действий, они могут быть реализованы в бизнес-сервере [указанным способом](fo_actions-saving-object.html).
+If before saving requires the implementation of certain actions, they can be implemented in the business server [this way](fo_actions-saving-object.html). 
 
-Следует иметь в виду, что сохранение объекта может вызвать [сохранение связанных с ним объектов](fo_update-related-objects.html).
+It should be borne in mind that the preservation of the object may cause [saving related objects](fo_update-related-objects.html). 
 
-Обновление объекта данных.
+The update of the data object. 
 
 ```csharp
-// 1.
+// 1. 
 void UpdateObject(ICSSoft.STORMNET.DataObject dobject) 
 
-// 2.
+// 2. 
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject) 
 
-// 3.
+// 3. 
 void UpdateObject(ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) 
 
-// 4.
+// 4. 
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache) 
 
-// 5.
+// 5. 
 void UpdateObject(ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException) 
 
-// 6.
+// 6. 
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, bool AlwaysThrowException) 
 
-// 7.
+// 7. 
 void UpdateObject(ref ICSSoft.STORMNET.DataObject dobject, DataObjectCache DataObjectCache, bool AlwaysThrowException) 
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-* `dobject`  - объект данных, который требуется обновить 
-* `DataObjectCache` - кеш объектов
-* `AlwaysThrowException` - Если произошла ошибка в базе данных, не пытаться выполнять других запросов, сразу взводить ошибку и откатывать транзакцию 
+* `dobject` - the data object to be updated 
+* `DataObjectCache` - object cache 
+* `AlwaysThrowException` - If an error occurred in the database, not attempt any other queries, just to cock a mistake and roll back the transaction 
 
-## Обновление нескольких объектов данных
+## Update multiple data objects 
 
-Для обновления нескольких объектов данных служат перегрузки метода `UpdateObjects`.
-Запросы для всех обновляемых объектов выполняются в единой транзакции.
+To update multiple data objects are overloads of the `UpdateObjects`. 
+Requests for all updated objects are executed in the same transaction. 
 
-Обновляемые объекты данных могут быть как однотипными, так и разнотипными. В метод они передаются параметром — одномерным массивом типа [DataObject](fo_data-object.html)[]. 
-В общем случае сервис данных умеет сам выстраивать порядок запросов на обновление объектов данных. Но возможны ситуации, когда для связанных объектов важен порядок следования объектов в массиве, подробная информация о порядке сохранения объектов приведена в статье [Обработка множества объектов](fo_processing-multiple-objects.html).
+Updated data objects can be homogeneous and heterogeneous. In the method they are passed a parameter a one-dimensional array of type [DataObject](fo_data-object.html)[]. 
+In General, the service data is able to build himself the order of the queries to update the data objects. But possible situation when the related objects are important, the order of the objects in the array, detailed information about the order of saving objects is presented in [Processing multiple objects](fo_processing-multiple-objects.html). 
 
-Следует иметь в виду, что для каждого элемента массива его сохранение может вызвать [сохранение связанных с ним объектов](fo_update-related-objects.html).
+It should be borne in mind that for each element of the array, maintaining it may cause [saving related objects](fo_update-related-objects.html). 
 
-[Пример использования](fo_instantiate-persist-objects.html).
+[Example usage](fo_instantiate-persist-objects.html). 
 
-Обновление нескольких объектов данных в хранилище.
+Update multiple data objects in the repository. 
 
 ```csharp
-// 1.
+// 1. 
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects)
 
-// 2.
+// 2. 
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, bool AlwaysThrowException)
 
-// 3.
+// 3. 
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache DataObjectCache)
 
-// 4.
+// 4. 
 void UpdateObjects(ref ICSSoft.STORMNET.DataObject[] objects, DataObjectCache DataObjectCache, bool AlwaysThrowException)
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-* `objects` - объекты для обновления
-* `DataObjectCache` - кеш объектов
-* `AlwaysThrowException` - если произошла ошибка в базе данных, не пытаться выполнять других запросов, сразу взводить ошибку и откатывать транзакцию
+* `objects` - object to update 
+* `DataObjectCache` - object cache 
+* `AlwaysThrowException` - if an error occurred in the database, not attempt any other queries, just to cock a mistake and roll back the transaction 
 
-## Загрузка без создания объектов
+## Loading without object creation 
 
-Можно выполнить загрузку из хранилища без создания экземпляров: каждый объект в этом случае представлен в виде строки из значений свойств с разделителями. Используется, когда не требуется редактирование объектов. Данный метод намного быстрее, чем создание объектов при загрузке в методе `LoadObjects`. Для загрузки в виде строкового представления предназначены перегрузки метода `LoadStringedObjectView`.
+You can download from the store without instantiating every object in this case is represented as a string of property values delimited. Used when you should not edit the objects. This method is much faster than creating objects when you load the method `LoadObjects`. To download in the form of the string representation is designed method overload `LoadStringedObjectView`. 
 
-[Пример использования](fo_load-limitation-example.html).
+[Example usage](fo_load-limitation-example.html). 
 
-### Загрузка без создания объектов
+### Loading without object creation 
 
-__Возвращаемый результат__: массив структур `ObjectStringDataView`
+__The result is__: an array of structures `ObjectStringDataView` 
 
 ```csharp
 ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizationStruct customizationStruct)
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-* `separator` -  разделитель в строках 
-* `customizationStruct` -  настроичная структура для выборки [LoadingCustomizationStruct](fo_loading-customization-struct.html)
+* `separator` separator in strings 
+* `customizationStruct` - nastroika structure of the sample [LoadingCustomizationStruct](fo_loading-customization-struct.html) 
 
-__Примечание__: порядок следования свойств объекта данных в результирующей строке с разделителями задаётся парметром `ColumnsOrder` структуры `customizationStruct`.
+__Note__: the order of object properties data in the result string with the delimiters specified by parameter `ColumnsOrder` structure `customizationStruct`. 
 
-### Загрузка без создания объектов с использованием состояния вычитки (для реализации порционного чтения)
+### Download without creating objects using state of the proofreading (to implement batch reading) 
 
-1.`LoadStringedObjectView`
+1.`LoadStringedObjectView` 
 
-* Получение первой порции при [порционном чтении](fo_reading-portion.html). Кроме порции данных, сервис данных возвращает некоторое состояние чтения. Это состояние передается  сервису данных для получения очередных порций при последующих вызовах.
+* Getting the first batch [batch reading](fo_reading-portion.html). In addition to serving data, the data service returns a read state. This condition is transmitted to the data service to retrieve the next portion in subsequent calls. 
 
 ```csharp
 ObjectStringDataView[] LoadStringedObjectView(char separator, LoadingCustomizationStruct customizationStruct, ref object State)
-```
+``` 
 
-* Получение очередных порций при [порционном чтении](fo_reading-portion.html). Должен предшествовать вызов в предыдущей перегрузке.
+* Getting another batch [batch reading](fo_reading-portion.html). Must be preceded by a call to the previous overload. 
 
 ```csharp
 ObjectStringDataView[] LoadStringedObjectView(ref object state)
-```
+``` 
 
-2.`CompleteLoadStringedObjectView`
+2.`CompleteLoadStringedObjectView` 
 
-Корректное завершения операции порционного чтения при `LoadStringedObjectView`.
+The correct operation to complete a portion of reading at `LoadStringedObjectView`. 
 
 ```csharp
 void CompleteLoadStringedObjectView(ref object state)
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-* `State` - Состояние вычитки(для последующей дочитки)
-* `customizationStruct` - [настроечная структура для выборки](fo_loading-customization-struct.html)
+* `State` - a State of proof-reading(for the subsequent decide) 
+* `customizationStruct` - [adjusting structure for a sample](fo_loading-customization-struct.html) 
 
-__Примечание__: Размер порции может быть задан с помощью параметра `LoadingBufferSize` структуры [LoadingCustomizationStruct](fo_loading-customization-struct.html).
+__Note__: the batch Size can be specified with the parameter `LoadingBufferSize` structure [LoadingCustomizationStruct](fo_loading-customization-struct.html). 
 
-## Получение количества объектов, удовлетворяющих запросу
+## a number of objects that satisfy the query 
 
-[Пример использования](fo_load-limitation-example.html). 
+[Example usage](fo_load-limitation-example.html). 
 
-Возвращает количество объектов удовлетворяющих условиям выборки,не выполняя загрузку данных.
+Returns the number of objects satisfying conditions of the sample,without performing a data load. 
 
-`GetObjectsCount`
+`GetObjectsCount` 
 
 ```csharp
 int GetObjectsCount(LoadingCustomizationStruct customizationStruct)
-```
+``` 
 
-#### Параметры
+#### Settings 
 
-`customizationStruct` - настроечная структура для выборки [LoadingCustomizationStruct](fo_loading-customization-struct.html)  
+`customizationStruct` - adjusting structure for a sample of [LoadingCustomizationStruct](fo_loading-customization-struct.html) 
 
-## Использование SQL при работе с сервисом данных
+## Use SQL when working with data service 
 
-В некоторых ситуациях возможностей сервиса данных недостаточно для решения специфических задач, в таких случаях есть возможность [непосредственного выполнения SQL-запроса](fo_sql-query.html) и [изменение автоматически построенного запроса](fo_intercept-formation-sql-query.html).
+In some situations, the service data is not enough to solve specific problems, in such cases, there is a possibility [of a direct SQL query](fo_sql-query.html) and [the change is automatically built query](fo_intercept-formation-sql-query.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

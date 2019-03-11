@@ -1,17 +1,23 @@
----
-title: Data service for working with XML
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: XMLFileDataService to work with the database in the format XML
-toc: true
-permalink: en/fo_xml-file-ds.html
-lang: en
----
+--- 
+title: data Service XML 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: XMLFileDataService to work with the database in XML format 
+toc: true 
+permalink: en/fo_xml-file-ds.html 
+lang: en 
+autotranslated: true 
+hash: ff7468e66028ad4d739f33d39e2c1f2f4071e589febf82630bba5524fc3bf514 
+--- 
 
-`XMLFileDataService` - сервис данных, предназначенный для работы с базой данных в формате XML. Для корректной работы сервиса данных необходима XSD-схема базы данных и XML-файл базы данных. Получить их можно воспользовавшись [XMLSchemaGenerator](fo_xml-schema-generator.html) (модулем расширения [Flexberry Designer](fd_landing_page.html) для генерации XSD-схемы базы данных).
+`XMLFileDataService` data service is designed to work with the database in XML format. For correct operation of the service data required by the XSD schema of the database and the XML database file. You can get them using [XMLSchemaGenerator](fo_xml-schema-generator.html) (extension module [Flexberry Designer](fd_landing_page.html) to generate the XSD schema of the database). 
 
-Для работы с данными в формате XML используется `System.Data.DataSet` поддерживающий транзакции и SQL-запросы. Также `DataSet` поддерживает ограничения ссылочной целостности. Для работы `XMLFileDataService` необходимо включать ограничения ссылочной целостности. Включение ограничений ссылочной целостности осуществляется посредством включения свойства `EnforceConstraints`. `XMLSchemaGenerator` по умолчанию это свойство проставляет в `true`.
+To work with data in XML format is used `System.Data.DataSet` support transactions and SQL queries. PstrfDataSet` also supports referential integrity constraints. To work `XMLFileDataService` you must enable the referential integrity constraints. Enable referential integrity by enabling properties `EnforceConstraints`. `XMLSchemaGenerator` by default, this property adds to `true`. 
 
-В качестве строки подключения указывается путь до `XSD` и `XML`-файлов без указания расширения (оба файла должны иметь одинаковое имя).
+As the connection string specifies the path to `XSD` and `XML` files without specifying the extension (both files must have the same name). 
 
-К примеру, в папке `C:\DataBase\` лежат файлы `base.xsd` и `base.xml`, тогда путь будет выглядеть следующим образом: `C:\DataBase\base`
+For example, in the folder `C:\DataBase\` are files `base.xsd` and `base.xml`, then the path will look like the following: `C:\DataBase\base` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

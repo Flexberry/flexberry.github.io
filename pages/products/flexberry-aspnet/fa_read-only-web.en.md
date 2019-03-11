@@ -1,92 +1,98 @@
----
-title: Режим "Только чтение" в Web-приложениях
-sidebar: flexberry-aspnet_sidebar
-keywords: DataObject (объекты данных), Flexberry ASP-NET
-toc: true
-permalink: en/fa_read-only-web.html
-lang: en
----
+--- 
+title: Mode read-Only in Web applications 
+sidebar: flexberry-aspnet_sidebar 
+keywords: DataObject (object data) Flexberry ASP-NET 
+toc: true 
+permalink: en/fa_read-only-web.html 
+lang: en 
+autotranslated: true 
+hash: bfd79c4288add608eb049b0b83a850554ce581385358bc094ec5df71bd68856d 
+--- 
 
-## Read Only
+## Read Only 
 
-Объект, открытый в режиме `Только чтение` (`Read-only`) не может быть изменен пользователем, данные, хранящиеся в объекте, будут доступны только для чтения.
+The object that is opened in `Только чтение` (`Read-only`) cannot be changed by the user, the data stored in the object will be read-only. 
 
-Режим `ReadOnly` может понадобиться в разных ситуациях, к примеру:
+Mode `ReadOnly` may need in different situations, for example: 
 
-* Один пользователь открыл объект на редактирование, в это время другой пользователь пытается также открыть этот же объект на редактирование.
-* У пользователя нет прав изменять какое-либо поле объекта, или сам объект, но есть право просматривать данные.
+* One user opened the object for editing, at this time another user tries to open the object for editing. 
+* The user does not have rights to change any field of an object, or the object itself, but has the right to view the data. 
 
-## Составляющие режима ReadOnly
+## Components of ReadOnly 
 
-Режим можно условно поделить на 3 составляющие:
+Mode can be divided into 3 components: 
 
-1. Блокировка интерфейса пользователя
-2. Блокировка объекта данных в памяти приложения
-3. Блокировка объекта данных в базе данных
+1. Lock user interface 
+2. Locking a data object in application memory 
+3. Locking a data object in the database 
 
-### Блокировка интерфейса пользователя
+### Lock user interface 
 
-Если пользователь не может вносить изменения в объект, он должен это осознавать в момент открытия формы редактирования. Если объект в данный момент недоступен из-за блокировки другим пользователем, рекомендуется вывести предупреждение типа `Объект заблокирован другим пользователем. Вы желаете открыть объект только на чтение? Да\Нет`.  
-Если пользователь все же желает открыть объект в режиме `ReadOnly`, необходимо заблокировать контролы для редактирования полей объекта. Также необходимо скрыть кнопки `Сохранить` и `Сохранить и закрыть` (только для случая полной блокировки, а не блокировки отдельных полей объекта).
+If the user cannot make changes to the object, it must realize it at the time of opening the edit form. If the object is currently unavailable because another user is advisable in the prevention of type `Объект locked by another user. You want to access object read-only? Yes\Нет`. 
+If the user still wants to access the object in `ReadOnly`, it is necessary to lock the controls to edit the fields of the object. You also need to hide the buttons `Сохранить` and `Сохранить and закрыть` (only for the case of full lock, and not lock the individual fields of the object). 
 
-Для блокировки интерфейса пользователя в Web-приложениях используется класс [WebBinder](fa_web-binder.html).
+To lock the user interface in a Web application using a class [WebBinder](fa_web-binder.html). 
 
-WebBinder позволяет либо заблокировать объект полностью, либо заблокировать только некоторые его поля.
+WebBinder allows you to either lock the object completely, or to block only some of its fields. 
 
-__Важно__: Стоит отметить, что WebBinder блокирует только те поля объекта, которые __зарегистрированы__ в WebBinder'e и содержатся в передаваемом __представлении__, а также только __серверные контролы__, которые имеют свойства `ReadOnly` или `Enabled`.
+__Important__: it Should be noted that WebBinder blocks only those fields of the object that __was__ in WebBinder'e and are passed in __view__, and only __server-side controls__ that have properties `ReadOnly` or `Enabled`. 
 
-* Полная блокировка объекта через WebBinder осуществляется вызовом метода 
+* Full lock on the object via WebBinder is a method call 
 
 ```csharp
   wb.SetReadOnlyForm(this.Controls, this.View, true); 
 ``` 
 
-где `wb` это экземпляр WebBinder'a на конкретной странице.
+where `wb` this instance WebBinder'on a specific page. 
 
-* Еще один вариант полной блокировки: установка свойства ReadOnly у конкретной формы 
+* Another option full lock: set ReadOnly properties in a specific form 
 
 ```csharp
  this.ReadOnly = true; 
-```
-
-* Частичная блокировка объекта (блокировка отдельных полей) осуществляется вызовом метода 
-
-```csharp
- wb.SetReadOnlyProperty(this.Controls, "ФИО", true); 
 ``` 
 
-где `ФИО` это наименование свойства, которое нужно заблокировать для редактирования.
+* Partial lock object (lock individual fields) is carried out calling the method 
 
-* Еще один вариант частичной блокировки - блокировка конкретного контрола путем вызова метода 
+```csharp
+ wb.SetReadOnlyProperty(this.Controls, "Name", true); 
+``` 
+
+where `ФИО` is the name of the property that you want to lock for editing. 
+
+* Another version of a partial lock - lock a specific control by calling method 
 
 ```csharp
  wb.SetReadonlyToControl(ctrlФИО, true); 
 ``` 
 
-где `ctrlФИО` - контрол, который необходимо заблокировать для редактирования.
+where `ctrlФИО` - control you want to lock for editing.
 
-### Блокировка объекта данных при открытии страницы редактирования
+### Lock object data when opening the edit page 
 
-Чтобы заблокировать объект при открытии страницы достаточно послать в GET-запросе параметр `&mode=readonly`.
+To lock an object while opening the page is enough to send a GET-request parameter `&mode=readonly`. 
 
-Пример можно посмотреть [в статье Добавление кнопки в тулбар или в строки WebObjectListView](fa_wolv-add-button.html).
+You can see example [add a button in the toolbar or in line WebObjectListView](fa_wolv-add-button.html). 
 
-### Блокировка объекта данных в памяти приложения
+### Lock a data object in application memory 
 
-Блокировка объекта в памяти осуществляется вызовом метода объекта `DataObject.LockObject(Key)`, где `Key` - некий ключ блокировки типа `Guid`. Разблокировать объект можно _только этим ключом_ при помощи метода `DataObject.UnLockObject(Key)`.
+Lock object in memory by calling the object method `DataObject.LockObject(Key)` where `Key` a key lock type `Guid`. To unlock the object can tolko this klucom using the method `DataObject.UnLockObject(Key)`. 
 
-При вызове метода `LockObject` блокировка в базу не отправляется.
+When you call a method `LockObject` lock in the database is not sent. 
 
-Пример можно посмотреть [в статье Как открыть объект только на чтение](fo_read-only-object.html).
+You can see example [in the article How to access object read-only](fo_read-only-object.html). 
 
-### Блокировка объекта данных в базе данных
+### Lock a data object in the database 
 
-Для блокировки используется поддерживаемый технологией [Сервис блокировок](fo_lock-service.html).
+To lock using a supported technology [Service locks](fo_lock-service.html). 
 
-Блокировка объекта в базе данных железно защищает объект от изменений объекта другими пользователями. Создается запись в таблице `STORMNETLOCKDATA` и, пока она там существует, изменить объект может только пользователь, заблокировавший объект.
+Lock object in the database iron protects the object against changes of the object by other users. Creates a record in the table `STORMNETLOCKDATA` and while it exists there, change the object, only the user that has locked the object. 
 
-Пример можно посмотреть [в статье Сервис блокировок](fo_lock-service.html).
+An example can be found [in the Service of locks](fo_lock-service.html). 
 
-## Режим "только чтение" в Windows-приложениях
+## Mode "read only" in Windows applications 
 
-[Режим "только чтение" в Windows-приложениях](fw_readonly-win.html)
+["Read only" in Windows applications](fw_readonly-win.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

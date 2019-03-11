@@ -6,7 +6,7 @@ toc: true
 permalink: en/gbt_csharp.html 
 lang: en 
 autotranslated: true 
-hash: 98e3194752db1e6a6b1a487f91113e3f7b58fb6ef082b2edf85a26d0b223765f 
+hash: ab199f0c05dd4ce2acc6086e056c18e42a183d164b9c33c0e5ca716ec52ec50c 
 --- 
 
 ## Brief description 
@@ -71,4 +71,4 @@ hash: 98e3194752db1e6a6b1a487f91113e3f7b58fb6ef082b2edf85a26d0b223765f
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

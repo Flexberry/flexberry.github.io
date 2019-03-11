@@ -1,18 +1,24 @@
----
-title: Как включить лог ошибок
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Windows UI (формы), Развёртывание
-summary: Указано как включить лог ошибок в конфигурационном файле
-toc: true
-permalink: en/fw_include-error-log.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: How to enable error log 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Windows UI (forms), Deployment 
+summary: See how to enable error log in the configuration file 
+toc: true 
+permalink: en/fw_include-error-log.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: dbe07e2be46decb32f3099c41acfcdee2a95b93c61a35c1f2be8562cd74a11dc 
+--- 
 
-Чтобы включить лог ошибок достаточно указать такой атрибут в файле конфигурации:
+To enable the error log, it is sufficient to specify this attribute in the configuration file: 
 
 ```xml   
 <add key="ErrorLog" value="true" />
-```
+``` 
 
-Все ErrorBox-ы будут записывать ошибки в csv-файл в папку с приложением.
+All ErrorBox-s will log errors to a. csv file in the folder with the application. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

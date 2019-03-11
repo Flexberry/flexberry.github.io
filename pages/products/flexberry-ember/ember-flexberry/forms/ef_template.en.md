@@ -1,26 +1,28 @@
----
-title: Шаблоны в ember-flexberry-приложениях
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_template.html
-lang: en
-summary: Представлена основная информация о структуре handlebars-шаблонов в ember-flexberry-приложениях
----
+--- 
+title: Templates in ember-flexberry applications 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_template.html 
+lang: en 
+autotranslated: true 
+hash: 10726a96f82cc63f77ca13d9cccbd33c4e7d4294c362af903b038ed2464eb829 
+summary: Presents basic information about the structure of the handlebars templates in ember-flexberry applications 
+--- 
 
-Общую информацию о том, как создавать шаблоны, можно посмотреть в [документации Ember](https://guides.emberjs.com/v2.4.0/templates/handlebars-basics/).
+General information on how to create templates, see [Ember's documentation](https://guides.emberjs.com/v2.4.0/templates/handlebars-basics/). 
 
-Шаблоны располагаются в папке `templates`.
+Templates are located in the folder `templates`. 
 
-## Шаблон приложения
+## application Template 
 
-Типичный шаблон (template) для Ember-приложения `application.js`:
+A typical template (template) for the Ember application `application.js`: 
 
 ```hbs
-{% raw %}<div class="ui grid page menu">
+{% raw %}<div class="ui page grid menu">
   <a class="brand item" href="#">Flexberry prototype written in Ember.js</a>
 </div>
-<div class="ui grid page">
+<div class="ui page grid">
   <div class="four wide column">
     {{render "sitemap" sitemap}}
   </div>
@@ -29,16 +31,20 @@ summary: Представлена основная информация о ст�
     {{outlet 'modal'}}
   </div>
 </div>{% endraw %}
-```
+``` 
 
-В контроллере приложения должна быть определена структура *sitemap* для отображении в меню сайта (как это сделано [здесь](ef_controller.html)).
+The controller application needs to be determined structure *sitemap* for displaying in the menu of the site (as is done [here](ef_controller.html)). 
 
-* В `outlet` рендерятся шаблоны, соответствующие текущему роуту.
-* В `outlet 'modal'` рендерится модальное окно.
+* Pstrfoutlet` rendered templates relevant to the current route parameters. 
+* Pstrfoutlet 'modal'` being rendered in a modal window. 
 
-## Шаблоны форм
+## form Templates 
 
-На шаблонах [форм](ef_forms.html) добавляются различные [контролы](ef_controls.html), может быть [добавлено отображение валидации](efd_model-validation.html).
+On templates [forms](ef_forms.html) added various [controls](ef_controls.html) can be [added validation](efd_model-validation.html). 
 
-В шаблонах [списковых форм](ef_forms.html) обычно добавлен [Flexberry Objectlistview](fe_object-list-view.html).
-На шаблонах [форм создания и редактирования](ef_edit-form.html) - [контролы для редактирования](ef_controls.html).
+Templates [list of forms](ef_forms.html) is usually added [Flexberry Objectlistview](fe_object-list-view.html). 
+On templates [forms creating and editing](ef_edit-form.html) - [controls for editing](ef_controls.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

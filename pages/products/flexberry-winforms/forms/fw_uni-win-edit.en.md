@@ -1,37 +1,42 @@
----
-title: Универсальная форма редактирования 
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Описано использование универсальной формы редактирования объекта
-toc: true
-permalink: en/fw_uni-win-edit.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: uniform edit 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: explains how to use the universal edit form object 
+toc: true 
+permalink: en/fw_uni-win-edit.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 3e6811d51868b71f8e0775d064c1d35949186f8f71591e721f96ba64228564ac 
+--- 
 
-Конечно, можно «вручную» размещать контролы и связывать их через `EditManager` с объектами данных, однако, для облегчения этого труда, существует универсальная форма редактирования, которая автоматически, по указанию типа объекта данных, представлений, размещает элементы управления и обеспечивает пользователя интерфейсом по редактированию объекта данных (панель инструментов, строка статуса). 
+Of course, you can» «manually place the controls and link them via `EditManager` with data objects, however, to facilitate this work, there is no universal form of editing, which automatically, according to the type of the object data, views, places the controls and provides a user interface for editing a data object (toolbar, status line). 
 
-Для того, чтобы использовать универсальную форму редактирования, необходимо:
-* Конструировать универсальную форму редактирования, передав в конструктор параметром представления, в которых должно осуществляться редактирование:
+In order to use the generic edit form, you must: 
+* To design a universal form for editing, passing in a constructor parameter representation, which must be edited: 
 
 ```csharp
 StormNetUI.IDpdEditForm editcont = new StormNetUI.UniWinEdit(new StormNet.View[]{viewforedit});
-```
+``` 
 
-* Установить обработчики на события (как минимум, на `CloseEvent`, чтобы можно было закрыть форму и `SaveEvent`, чтобы «отловить» вызов пользователем сохранения).
-* Вызвать метод Edit, передавая объект данных.
+* Set handlers for events (at least `CloseEvent` to be able to close the form and `SaveEvent` to catch» «call user save). 
+* Edit to invoke the method, passing the data object. 
 
-Следует понимать, что форма реализует абсолютно «голый» пользовательский интерфейс, вся реакция от пользователя транслируется «наружу» формы через события, соответственно, эта управление формой производится через набор методов. Так, когда пользователь просто закрывает форму редактирования, посылается сообщение `CloseEvent`, но сама форма не закрывается. Чтобы закрыть форму, необходимо вызвать метод `Close`.
+It should be understood that the form implements completely naked» «user interface, the whole reaction from the user is transmitted to the outside» «forms through events, respectively, this management form is made through a set of methods. So when the user just closes the edit form, a message is sent to `CloseEvent`, but the form is not closed. To close the form, you must call `Close`. 
 
 
 
-Пример обработчика события CloseEvent:
+An example of an event handler, CloseEvent: 
 
 ```csharp
 private void ContainerCloseHandler (object sender, StormNetUI.CloseEventArgs args)
 		{
 			((StormNetUI.IDpdForm)sender).CloseForm();
 		}
-```
+``` 
 
-{% include note.html content="Если необходимо выполнить переход на генерируемую форму с универсальной с контролами ICustomizable, метод Customize необходимо вызвать вручную в перегруженном методе Edit." %}
+{% include note.html content="If you need to make the transition to generated form from universal with controls ICustomizable, the Customize method must be invoked manually in the overloaded Edit method." %}
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

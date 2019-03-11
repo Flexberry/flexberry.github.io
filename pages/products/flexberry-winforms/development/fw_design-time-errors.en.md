@@ -1,12 +1,17 @@
----
-title: Устранение неполадок в Design-Time
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Указаны сборки, которые должны быть установлены в GAC для верной работы в Design Time
-toc: true
-permalink: en/fw_design-time-errors.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Troubleshooting Design-Time 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: lists the assemblies that should be installed in the GAC for faithful work in Design Time 
+toc: true 
+permalink: en/fw_design-time-errors.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: d68046568a93ffdf665bb1de446e71f9a26567adf1b998a58251773c8c58f1cc 
+--- 
 
-Помните: если не открывается окно отладочных пакетов, либо невозможно настроить свойства контролов, такие, как классы, представления, удостоверьтесь, что сборки `ICSSoft.STORMNET.Collections.dll и ICSSoft.STORMNET.DataObject.dll` помещены в `Global Assembly Cache` и они актуальны. При необходимости, переустановите эти сборки.
+Remember: if you do not open the window the debug packages or impossible to set properties of controls, such as classes, views, make sure that the Assembly `ICSSoft.STORMNET.Collections.dll and ICSSoft.STORMNET.DataObject.dll` placed in `Global Assembly Cache` and they are relevant. If necessary, reinstall the assemblies.
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

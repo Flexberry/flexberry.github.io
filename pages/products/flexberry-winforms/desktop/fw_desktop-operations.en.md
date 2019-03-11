@@ -1,15 +1,17 @@
----
-title: Кнопка «Свернуть/развернуть папки» на рабочем столе
-sidebar: flexberry-winforms_sidebar
-keywords: Windows UI (формы)
-summary: Объяснение как управлять видимостью кнопки __«Свернуть/развернуть папки»__ рабочего стола приложения, пример
-toc: true
-permalink: en/fw_desktop-operations.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: «Button to expand/Collapse folders» on the desktop 
+sidebar: flexberry-winforms_sidebar 
+keywords: Windows UI (forms) 
+summary: Explanation of how to control the visibility of buttons __«to expand/Collapse folders»__ desktop application example 
+toc: true 
+permalink: en/fw_desktop-operations.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: c813e2a06fd20acd5c6e2badb7e3b9345d726d3a30159ef306508977476c5032 
+--- 
 
-В панели инструментов рабочего стола имеется кнопка __«Свернуть/развернуть папки»__. Для ее отображения необходимо пристроить свойству `Operations` контрола рабочего стола значение `DesktopOperations.TreeExpandCollapse`. Проще всего сделать это в методе Main формы рабочего стола.
+In the toolbar of the desktop there is a button __«to expand/Collapse folders»__. To display it you need to attach the property `Operations` control desktop value `DesktopOperations.TreeExpandCollapse`. The easiest way to do this in the Main method forms the desktop. 
 
 ```csharp
 static void Main()
@@ -31,3 +33,6 @@ static void Main()
     }
 }
 ```
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

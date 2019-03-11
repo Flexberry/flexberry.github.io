@@ -1,56 +1,58 @@
----
-title: Контроллеры в ember-flexberry-приложениях
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_controller.html
-lang: en
-summary: Представлена основная информация о структуре контроллеров в ember-flexberry-приложениях.
----
+--- 
+title: Controllers in ember-flexberry applications 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_controller.html 
+lang: en 
+autotranslated: true 
+hash: 6e4aea565756f339782c048f968b85394cb056c986c32376f0beab0f947f6c5c 
+summary: Presents basic information about the structure of controllers in ember-flexberry applications. 
+--- 
 
-## Описание
+## Description 
 
-Контроллеры в Ember-приложениях являются наследниками базового класса [Ember.Controller](http://emberjs.com/api/classes/Ember.Controller.html).
+Controllers in Ember applications are inherit from base class [Ember.Controller](http://emberjs.com/api/classes/Ember.Controller.html). 
 
-В технологии реализованы базовые контроллеры для:
+Technology implemented in the base controller: 
 
-* [списковых форм](ef_forms.html),
-* [форм редактирования и создания](ef_edit-form.html).
+* [list of forms](ef_forms.html), 
+* [forms for editing and creation](ef_edit-form.html). 
 
-О типичном для технологии расположении контроллеров см. [эту статью](ef_router.html).
+Typical for the technology controller location, see [this article](ef_router.html). 
 
-## Контроллеры для списковых форм
-Контроллер для [списковой формы](ef_forms.html) будет примерно следующий. Он наследуется от определённого в технологии контроллера `list-form`. 
+## Controllers for list forms 
+Controller for [list form](ef_forms.html) is as follows. It derives from a certain technology controller `list-form`. 
 
 ```javascript
 import ListFormController from 'ember-flexberry/controllers/list-form';
 
-var EmployeesController = ListFormController; // Можно определять в отдельную переменную.
+var EmployeesController = ListFormController; // Can be defined in a separate variable. 
 export default EmployeesController;
-```
+``` 
 
-## Контроллеры для форм редактирования и создания
-Контроллер для [формы редактирования](ef_edit-form.html) будет примерно следующий. Он наследуется от определённого в технологии контроллера `edit-form`. 
+## Controllers for forms to edit and create 
+Controller [edit form](ef_edit-form.html) is as follows. It derives from a certain technology controller `edit-form`. 
 
 ```javascript
 import EditFormController from 'ember-flexberry/controllers/edit-form';
 
-export default EditFormController; // Можно не определять в отдельную переменную.
-```
+export default EditFormController; // You can not define in a separate variable. 
+``` 
 
-Отдельный базовый контроллер для [формы создания](ef_edit-form.html) не реализован. В общем случае в контроллере формы создания переопределяют контроллер формы редактирования:
+Separate base controller for [form](ef_edit-form.html) is not implemented. In General, the controller, the controller overrides the edit form: 
 
 ```javascript
 import EmployeeController from '../employee';
 
 var EmployeeNewController = EmployeeController;
 export default EmployeeNewController;
-```
+``` 
 
-## Контроллер приложения
-Контроллер приложения расположен в файле `application.js` в папке `components`.
+## Controller app 
+The controller application is located in file `application.js` in the folder `components`. 
 
-В данном контроллере возможно задать меню сайта (см. пример ниже), настроить обработку общих для всех форм параметров (например, для того, чтобы [скрыть меню на формах по параметру](ef_show-ember-form-in-frame.html)).
+In this controller it is possible to define the site menu (see example below), configure the processing common to all forms of settings (e.g., in order to [hide the menu bar on forms for the parameter](ef_show-ember-form-in-frame.html)). 
 
 ```javascript
 import Ember from 'ember';
@@ -76,4 +78,8 @@ export default Ember.Controller.extend({
     }]
   }
 });
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

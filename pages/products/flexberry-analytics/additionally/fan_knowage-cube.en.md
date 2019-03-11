@@ -1,78 +1,83 @@
----
-title: KNOWAGE. Business-process of creating OLAP-cube
-keywords: mydoc
-sidebar: flexberry-analytics_sidebar
-toc: false
-permalink: en/fan_knowage-cube.html
-lang: en
-summary:
----
+--- 
+title: KNOWAGE. The business process of creating OLAP cube 
+keywords: mydoc 
+sidebar: flexberry-analytics_sidebar 
+toc: false 
+permalink: en/fan_knowage-cube.html 
+lang: en 
+autotranslated: true 
+hash: 4d78a2b4cbea5831d5a4a7519f2fe5ddd1584c8d1b1fc4e7357e9e924d50535a 
+--- 
 
-`Knowage` - это пакет бизнес-аналитики с открытым исходным кодом, который объединяет традиционные данные и большие источники данных в ценную и содержательную информацию. Он объединяет инновации, исходящие от сообщества, с опытом и практикой решений на уровне предприятия.
+`Knowage` is a package business intelligence open source, which combines traditional data and big data sources into valuable and meaningful information. It combines innovations coming from the community with experience and practice solutions at the enterprise level. 
 
-`OLAP-куб` — (_On-Line Analytical Processing_ — интерактивный анализ данных) многомерный массив данных, как правило, разреженный и долговременно хранимый, используемый в OLAP. Может быть реализован на основе универсальных реляционных СУБД или специализированным программным обеспечением. Подробнее в статье [OLAP-куб](https://ru.wikipedia.org/wiki/OLAP-%D0%BA%D1%83%D0%B1).
+`OLAP-куб` — (_On-Line Analytical Processing_ — interactive data analysis) multidimensional array data are usually sparse and long-term stored, used in OLAP. Can be implemented on the basis of a universal relational DBMS or specialized software. For details, see [OLAP cube](https://ru.wikipedia.org/wiki/OLAP-куб). 
 
-## Создание "Data source"-конфигурации
+## create a "Data source"configuration 
 
-### Первый шаг для создания OLAP-куба 
+### the First step to build an OLAP cube 
 
-Первым шагом для создания является OLAP-куба подключение источника данных. Для этого необходимо произвести следующие действия:
+The first step is to create an OLAP cube data source connection. To do this you must perform the following steps: 
 
-* Авторизоваться под ролью `Администратор`;
-* Открыть `Menu` и перейти в каталоге `Data Providers` в `Data source`
-* На странице `Data source` кликнуть на плюс `+` и настроить подключение к БД. Далее заполнить поля:
-    * Label
-    * Description
-    * Dialect (выбрать `PostgreSQL`)
-    * Multischema
-    * Read only (выбрать `Read and write`)
-    * Type (выбрать `JDBC`)
-    * URL (вводим в формате `jdbc:postgresql://<адрес>:<порт>/<имя бд>`)
-    * User
-    * Password
-    * Driver (для postgresql вводим `org.postgresql.Driver`)
- 
-* После заполнения полей кликнуть на кнопку `Save`.
+* Log in under a role `Администратор`; 
+* Open `Menu` and go in the directory `Data Providers` in `Data source` 
+* Visit `Data source` click on the plus ` ` and configure the DB connection. Next, fill in: 
+* Label 
+* Description 
+* Dialect (choose `PostgreSQL`) 
+* Multischema 
+* Read only (select `Read and write`) 
+* Type (select `JDBC`) 
+* URL (input format `jdbc:postgresql://<address>:<port>/<database name>`) 
+* User 
+* Password 
+* Driver (for postgresql introduced `org.postgresql.Driver`) 
 
-## Создание каталога для формирования новых документов/кубов
+* After filling in the fields click on the button `Save`. 
 
-### Второй шаг для создания OLAP-куба
+## create a directory for the new document/cubes 
 
-Вторым шагом для создания Куба является создание каталога и выдача прав для пользователей.
+### the Second step is to create OLAP cube 
 
-* Авторизоваться под ролью `Администратор`;
-* Открыть `Menu` и перейти в каталог `Profile Management` в `Functionalities management`
-* На странице `Functionalities management` выбрать корневой каталог `Functionalities` и кликнуть на плюс `+` для создания нового каталога для документов и кубов. Нужно заполнить поля:
-    * Label
-    * Name
-    * Отметить все чекбоксы
-* После заполнения полей кликнуть на кнопку `Save`.
+The second step to create the cube is creating the directory and giving permissions to users. 
 
-## Добавить схему OLAP куба
+* Log in under a role `Администратор`; 
+* Open `Menu` and go to the directory `Profile Management` in `Functionalities management` 
+* Visit `Functionalities management` to choose the root directory `Functionalities` and click on the plus ` ` to create a new directory for documents and cubes. Fields need to be filled: 
+* Label 
+* Name 
+* Mark all checkboxes 
+* After filling in the fields click on the button `Save`. 
 
-* Авторизоваться под ролью `Администратор`;
-* Открыть `Menu` и перейти в каталог `Mondrian schemas catalog`;
-* Кликнуть на иконку `Плюс` и в появившемся окне заполнить поля:
-    * Name;
-    * File Upload;
-* Для сохранения кликнуть на кнопку `Save`.
- 
-## Создание OLAP куба
+## Add schema OLAP cube 
 
-* Авторизоваться под ролью `Администратор`;
-* Открыть `Menu` и перейти в раздел `Documents development`;
-* Выбрать доступный раздел в дереве под `Functionalities`;
-* Кликнуть на иконку `Плюс` и в появившемся окне выбрать `Generic document`;
-* В открывшейся странице заполнить следующие поля:
-    * Label;
-    * Name;
-    * Type = On-line analytical processing;
-    * Engine = OLAP Engine;
-    * Data Source – выбрать настройку для подключения к БД;
-    * Кликнуть на иконку сохранения. Перед сохранением убедится что стоит галочка справа в разделе Show document templates на нужном разделе.
- 
-* Кликнуть на иконку Template build;
-* Далее в появившемся окне выбрать Mondian, схему и Куб
-* После чего нажать продолжить.
+* Log in under a role `Администратор`; 
+* Open `Menu` and go to the directory `Mondrian schemas catalog`; 
+* Click on the icon `Плюс` and in the appeared window, fill in: 
+* Name; 
+* File Upload; 
+* To save click the button `Save`.
 
-{% include important.html content="Использование данного инструмента оказалось не достаточно эффективным. Рекомендуется использовать Pentaho." %}
+## Create OLAP cube 
+
+* Log in under a role `Администратор`; 
+* Open `Menu` and go to `Documents development`; 
+* Choose the available partition in the tree under `Functionalities`; 
+* Click on the icon `Плюс` and in the appeared window choose `Generic document`; 
+* In the opened page fill the following fields: 
+* Label; 
+* Name; 
+* Type = On-line analytical processing; 
+* Engine = OLAP Engine; 
+* Data Source – select the setting for connecting to БД; 
+* Click on the save icon. Before saving to make sure there is a tick to the right, under Show document templates in the right section. 
+
+* Click on the Template icon build; 
+* In the appeared window choose Mondian, schema and Cube 
+* Then click continue. 
+
+{% include important.html content="the Use of this tool was not effective enough. It is recommended to use Pentaho." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

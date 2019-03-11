@@ -1,62 +1,68 @@
----
-title: Карта типов
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, Flexberry ORM, карта типов, типы, настройка, БД, программный код, атрибуты, генерация
-summary: Создание и генерация типов данных для СУБД и программного кода
-toc: true
-permalink: en/fd_types-map.html
-lang: en
----
+--- 
+title: Map types 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, Flexberry ORM, map types, styles, settings, database, software code, attributes, generation 
+summary: Creation and generation of data types for databases and programming code 
+toc: true 
+permalink: en/fd_types-map.html 
+lang: en 
+autotranslated: true 
+hash: ac6429c9f7ea94eb743ea102d1288ca0ad9efe3bc305504f84fbf0e7d3d36bea 
+--- 
 
-При создании [диаграммы классов](fd_class-diagram.html) у [атрибутов](fo_attributes-class-data.html) задаются типы. Для того, чтобы определить для генератора соответствие между типами, используемыми на [диаграмме классов](fd_class-diagram.html), и типами баз данных и программного кода, используется карта типов.
+When you create a [class diagram](fd_class-diagram.html) [attributes](fo_attributes-class-data.html) set types. In order to determine for the generator of the correspondence between the types used on [the class diagram](fd_class-diagram.html) and the types of databases and program code that uses the map types. 
 
-{% include note.html content="Есть возможность копировать ячейки карты типов. Для копирования необходимо выделить интересующий диапазон и нажать `Ctrl+С` или `Ctrl+Insert`. Для вставки - определить левую верхнюю ячейку, откуда будет вставляться диапазон, после чего нажать `Ctrl+V` или `Shift+Insert`." %}
+{% include note.html content="it Is possible to copy cell card types. For copying, you must allocate the interest range and press `Ctrl С` or `Ctrl Insert`. To insert the is to determine the upper-left cell where to insert the range and then click `Ctrl V` or `Shift Insert`." %} 
 
-Примеры настройки карты типов доступны в следующих статьях:
+Examples of the settings of the card types available in the following articles: 
 
-* [Поддержка бинарных массивов](fo_binary-array-ds.html)
-* [Настройка Flexberry Designer для Nullable-типов](fd_create-nullable.html)
+* [Support binary arrays](fo_binary-array-ds.html) 
+* [Setup Flexberry Designer for Nullable-types](fd_create-nullable.html) 
 
-### Разрешение типа при генерации
+### the Permission of type when generating 
 
-Расширение карты типов возможно за счёт использования [синонимов типов (классы со стереотипом typedef)](fd_typedef.html).
+Expansion card types possible through the use of [synonym types (classes with stereotype typedef)](fd_typedef.html). 
 
-На карте типов можно написать, в какой тип целевого языка отображается [синоним типа на диаграмме](fd_typedef.html). 
+The map types can write, what type of target language is displayed [synonym type in the diagram](fd_typedef.html). 
 
-Тип | Отображается в
-:---------|:-----------
-Строка40 | string
-string | System.String
+Type | Appears to 
+:---------|:----------- 
+Строка40 | string 
+string | System.String 
 
-Преобразование типов при генерации кода происходит следующим образом: если какой-либо тип не является стандартным (для `.Net framework`), он преобразуется в соответствии с подстановкой.  
-После подстановки всё повторяется вновь: снова преобразуется, если не является стандартным.  
-Так повторяется, пока не произойдет приведения к стандартному типу, с которым генерируется код.  
-Если нестандартный тип невозможно преобразовать (в подстановке указан нестандартный тип, для которого отсутствует другая подстановка), генерация кода останавливается с ошибкой.  
-В данном примере, видно, что Строка40 отображается в string (предопределённый тип), который в свою очередь преобразуется в тип `System.String Microsoft .Net framework`.
+Type conversion during code generation as follows: if the type is not standard (for `.Net framework`), it is converted in accordance with lookup. 
+After substituting all repeated again converted, if it is not standard. 
+This is repeated until there is reduction to the standard type that is generated code. 
+If a non-standard type cannot be converted (to substitute specified a custom type for which there is no other substitution), code generation stops with an error. 
+In this example, it is clear that Строка40 appears in the string (predefined type), which in turn is converted to the type `System.String Microsoft .Net framework`. 
 
-### Карта типов для базы данных
+### Map types for the database 
 
-Получить доступ к карте типов для базы данных можно через контекстное меню стадии в настройках генератора.  
-Столбец слева отображает типы, которые можно использовать на [диаграмме классов](fd_class-diagram.html), справа - соответствующие типы базы данных: 
+To access the map types to the database through the context menu of stages in the generator settings. 
+The left column shows the types that you can use to [the class diagram](fd_class-diagram.html), right - corresponding database types: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/type-map.png)
+![](/images/pages/products/flexberry-designer/class-diagram/type-map.png) 
 
-Если добавить [определения типов через typedef](fd_typedef.html), то карта типов может принять следующий вид:
+If you add [typedef](fd_typedef.html), the map may take the following form: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/type-map-db-ext.png)
+![](/images/pages/products/flexberry-designer/class-diagram/type-map-db-ext.png) 
 
-### Карта типов для программного кода
+### Map types for program code 
 
-Получить доступ к карте типов для программного кода можно через контекстное меню стадии в настройках генератора.
+To access the map types for software code via the context menu of stages in the generator settings. 
 
-Карта типов содержит следующие столбцы:
+The map of types contains the following columns: 
 
-* Типы, которые можно использовать на [диаграмме классов](fd_class-diagram.html).
-* Соответствующие типы программного кода.
-* Сборка, в которой расположен программный тип (используется для типов, которые не являются .Net-типами).
+* Types that you can use to [the class diagram](fd_class-diagram.html). 
+* Relevant types of software code. 
+* Assembly, which is a software type (used for types that are not .Net types). 
 
-![](/images/pages/products/flexberry-designer/class-diagram/type-map-app.png)
+![](/images/pages/products/flexberry-designer/class-diagram/type-map-app.png) 
 
-Если добавить [определения типов через typedef](fd_typedef.html), то карта типов может принять следующий вид:
+If you add [typedef](fd_typedef.html), the map may take the following form: 
 
-![](/images/pages/products/flexberry-designer/class-diagram/type-map-app-ext.png)
+![](/images/pages/products/flexberry-designer/class-diagram/type-map-app-ext.png) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

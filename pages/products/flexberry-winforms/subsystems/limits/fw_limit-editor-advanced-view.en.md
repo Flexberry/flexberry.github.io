@@ -1,28 +1,32 @@
----
-title: Расширенный вид редактора ограничений
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms, Windows UI (Контролы)
-summary: Описание основных возможностей расширенного вида редактора ограничений в win-приложении
-toc: true
-permalink: en/fw_limit-editor-advanced-view.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Advanced view editor limitations 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms, Windows UI (Controls) 
+summary: Description of the main features of the advanced editor view of the limitations in win application 
+toc: true 
+permalink: en/fw_limit-editor-advanced-view.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: d347a0f109ee93c81c75ddcb0cffb069a1f22ab1bb18530215d1d34521984d8c 
+--- 
+<!-- Article is in development)))--> 
 
-Данная статья посвящена описанию основных возможностей расширенного вида редактора ограничений в win-приложении.
+Advanced view editor allows constraints to crush a complex multi-level conditions that are impossible or cumbersome to describe in [standard](fw_standart-view-limits-editor.html) or [simplified](fw_limit-editor-simple-view.html). 
 
-Расширенный вид редактора ограничений позволяет задавить сложные многоуровневые условия, которые невозможно или громоздко описывать в [стандартном](fw_standart-view-limits-editor.html) или [упрощенном](fw_limit-editor-simple-view.html) виде.
+## appearance 
 
-## Внешний вид
+Advanced editor view constraints as follows: 
 
-Расширенный вид редактора ограничений выглядит следующим образом:
+![](/images/pages/products/flexberry-winforms/subsystems/limits/advanced-view.png) 
 
-![Расширенный редактор ограничений](/images/pages/products/flexberry-winforms/subsystems/limits/advanced-view.png)
+## Job header fields 
+The field headers that are used in the constraint editor, are set to `Flexberry` in the view definition, that is: 
 
-## Задание заголовков полей
+![](/images/pages/products/flexberry-winforms/subsystems/limits/field-caption.png) 
 
-Заголовки полей, которые используются в редакторе ограничений, задаются на уровне `Flexberry` при определение представления, то есть:
+![](/images/pages/products/flexberry-winforms/subsystems/limits/field-caption1.png) 
 
-![Заголовки полей](/images/pages/products/flexberry-winforms/subsystems/limits/field-caption.png)
 
-![Заголовки полей](/images/pages/products/flexberry-winforms/subsystems/limits/field-caption1.png)
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

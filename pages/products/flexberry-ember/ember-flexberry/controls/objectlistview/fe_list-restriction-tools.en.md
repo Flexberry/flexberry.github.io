@@ -1,51 +1,53 @@
----
-title:  List restriction tools
-sidebar: flexberry-ember_sidebar
-keywords: Flexberry Ember, filters, OLV, list, search, limit
-summary: Фильтрация списка, ограничение списка, поиск по атрибутам
-toc: true
-permalink: en/fe_list-restriction-tools.html
-lang: en
----
+--- 
+title: Tools to limit the list 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember, filtration, OLV, list, search, limit 
+summary: Filtering in list, restriction list, search by attributes 
+toc: true 
+permalink: en/fe_list-restriction-tools.html 
+lang: en 
+autotranslated: true 
+hash: 0e7d6d7009e4e3389fd66fa15fdcaab92f3bea87e084aecd8e4ad8588c2ebda4 
+--- 
 
-Для того чтобы настроить ограничения на списках, компонент Flexberry Objectlistview включает в себя следующие инструменты:
+To set restrictions on the lists Flexberry Objectlistview component includes the following tools: 
 
-* фильтрация списков
-* наложение ограничения (метод `objectListViewLimitPredicate`)
-* поиск по атрибутам
+* filtering lists 
+* the imposition of limits (method `objectListViewLimitPredicate`) 
+* search by attributes 
 
-## Настройка фильтрации на списке
+## configure filtering on the list 
 
-Для того чтобы на [списковой форме](fe_object-list-view.html) реализовать возможность фильтрации необходимо:
+In order to [list form](fe_object-list-view.html) to implement a filtering option, you must: 
 
-1. Указать свойства поиска в [шаблоне](ef_template.html) списковой формы.
-2. При необходимости переопределить предикаты в [роуте](ef_route.html) списковой формы.
+1. Specify the search properties in the [template](ef_template.html) the list forms. 
+2. If you need to override the predicates in [rout](ef_route.html) the list forms. 
 
-По умолчанию отфильтровать можно не только по кнопке обновления списка, но и по клавише `Enter`. Также по умолчанию доступна фильтрация по подстроке при незаданной операции сравнения.
+The default filter can not only refresh button of the list, but and key `Enter`. Also by default, filtering by a substring if you do not provide a comparison operation. 
 
-{% include note.html content="Регистрозависимость/ регистронезависимость при фильтрации зависит от [настроек БД](fo_insensitivity-register-ds.html)." %}
+{% include note.html content="case-sensitivity/ registronacional filtering depends on the [DB settings](fo_insensitivity-register-ds.html)." %} 
 
-### Настройка шаблона формы
+### setup form template 
 
-Настройка шаблона формы осуществляется следующим образом:
+Customize a form template is as follows: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
 {{flexberry-objectlistview
-// ...
+// ... 
 enableFilters=true
 filters=filters
 applyFilters=(action "applyFilters")
 resetFilters=(action "resetFilters")
 componentForFilter=(action "componentForFilter")
 conditionsByType=(action "conditionsByType")
-// ...
+// ... 
 }}{% endraw %}
-```
+``` 
 
-### Настройка роута формы
+### configure the router forms 
 
-Переопределить, как будет строится предикат, можно следующим образом:
+To override, as is the predicate in the following way: 
 
 ```javascript
 predicateForFilter(filter) {
@@ -59,11 +61,11 @@ predicateForFilter(filter) {
 
     return this._super(...arguments);
   },
-```
+``` 
 
-#### Фильтрация по датам без учета времени
+#### Filtering by date without time 
 
-Если нужно фильтровать поля с датами не учитывая время, то нужно в роуте в predicateForFilter добавить условие:
+If you want to filter the fields with dates are not given time, then you need to get in predicateForFilter add a condition: 
 
 ```javascript
 predicateForFilter(filter) {
@@ -73,17 +75,17 @@ predicateForFilter(filter) {
 
     return this._super(...arguments);
   },
-```
+``` 
 
-#### Пользовательские функции для фильтров
+#### Custom function for filters 
 
-Если на прикладном уровне нужны специфические фильтры, то можно использовать функцию `predicateForAttribute`. Данная функция получает на вход атрибут, по которому происходит фильтрация, значение, по которому фильтровать, условие фильтра и возвращает предикат, по которому затем формируется параметр `$filter` в [OData-запросе](fo_orm-odata-service.html).
+If at the application level need specific filters, you can use the function `predicateForAttribute`. This function receives the input of the attribute that is filtered, the value on which to filter, the filter condition and returns a predicate, which then formed a parameter `$filter` in [OData-query](fo_orm-odata-service.html). 
 
-### Указание операций сравнения
+### specify the comparison operations 
 
-Операции сравнения указываются через функцию `conditionsByType`, возвращающую массив для дропдауна с операциями. Для этого:
+Comparison operations are indicated via `conditionsByType` function that returns an array for dropdown operations. To do this: 
 
-1.В [контроллере](ef_controller.html) списковой формы прописать функцию с необходимыми значениями:
+1.In [controller](ef_controller.html) list of forms to register the function with the required values: 
 
 ```javascript
 conditionsByType(type) {
@@ -105,56 +107,56 @@ conditionsByType(type) {
           return ['eq', 'neq'];
       }
     },
-```
+``` 
 
-2.В шаблоне списка указать соответствующее событие:
+2.In the template list to specify the appropriate event: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
-    // ...
+    // ... 
     conditionsByType=(action "conditionsByType")
-    // ...
+    // ... 
 }}{% endraw %}
-```
+``` 
 
-### Операции "пусто" и "не пусто"
+### Operation "empty" and "not empty" 
 
-Если существует необходимость использовать операции, не требующие заполнения значения, то можно настроить соответствующую операцию для предиката в контроллере формы. Например
+If there is a need to use operations not requiring fill values, then you can configure the appropriate operation for the predicate in the controller form. For example 
 
 ```javascript
-// ...
+// ... 
 case 'string':
 return ['eq', 'neq', 'like'];
 return ['eq', 'neq', 'like', 'empty'];
-// ...
-```
+// ... 
+``` 
 
-Далее в роуте задать соответствующее условие. Например,
+Later in the router to set the appropriate condition. For example, 
 
 ```javascript
-// ...
+// ... 
 if (filter.type === 'string' && filter.condition === 'empty') {
   return new SimplePredicate(filter.name, 'eq', null);
 }
-// ...
-```
+// ... 
+``` 
 
-## Наложение ограничений
+## restraints 
 
-Особенности наложения ограничений на Flexberry Objectlistview связаны с тем, что данные для контрола вычитываются в роуте. Соответственно, чтобы не допустить вычитывания данных без наложенного ограничения, ограничение должно быть определено, когда выполняется хук `model` в роуте формы.
+Particularly the imposition of restrictions on Flexberry Objectlistview related to the fact that the data for the control shall be taxed in the router. Accordingly, in order to prevent the subtraction of data without restrictions, the restriction must be defined when you hook `model` in the router shape. 
 
-Таким образом, чтобы наложить ограничение, необходимо переопределить метод `objectListViewLimitPredicate` в роуте прикладной списковой формы, чтобы он возвращал предикат для ограничения.
+Thus, to impose a restriction, you must override the method `objectListViewLimitPredicate` in the router application list forms to return a predicate for the constraint. 
 
-Например, есть форма `limit-function-example`. Eсли на странице отображается чётное количество записей, необходимо вывести записи, у которых в поле "address" есть буква "S". При нечетном количестве - имеющие в поле "address" букву "п".
+For example, is a form `limit-function-example`. If the page displays an even number of records, you need to display records that have a field "address" is the letter "S". When the odd number - with the "address" field the letter "p". 
 
-Переопределяем метод `objectListViewLimitPredicate` в роуте соответствующей прикладной списковой формы.
+PstrfobjectListViewLimitPredicate` an overridable method in the router of the appropriate application list form. 
 
 ```javascript
 import Ember from 'ember';
 import ListFormRoute from 'ember-flexberry/routes/list-form';
 import { StringPredicate } from 'ember-flexberry-data/query/predicate';
 
-// ...
+// ... 
 export default ListFormRoute.extend({
   objectListViewLimitPredicate: function(options) {
     let methodOptions = Ember.merge({
@@ -175,54 +177,54 @@ export default ListFormRoute.extend({
     return undefined;
   }
 });
-```
+``` 
 
-## Настройка поиска по всем атрибутам для стандартного списка
+## search setting all attributes to a standard list 
 
-Для того чтобы на [списковой форме](fe_object-list-view.html) реализовать возможность поиска по всем атрибутам необходимо:
+In order to [list form](fe_object-list-view.html) to implement a search capability on all attributes should: 
 
-1. Указать свойства поиска в [шаблоне](ef_template.html) списковой формы.
-2. При необходимости переопределить предикаты в [роуте](ef_route.html) списковой формы.
+1. Specify the search properties in the [template](ef_template.html) the list forms. 
+2. If you need to override the predicates in [rout](ef_route.html) the list forms. 
 
-### Настройка шаблона формы для поиска
+### configure the form template to search for 
 
-Настройка шаблона формы осуществляется следующим образом:
+Customize a form template is as follows: 
 
 ```hbs
 {% raw %}{{flexberry-objectlistview
-    // ...
+    // ... 
     filters=filters
     applyFilters=(action "applyFilters")
     resetFilters=(action "resetFilters")
     filterButton=true
     filterText=filter
-    filterByAnyWord=filterByAnyWord // поиск по некоторым словам
-    filterByAllWords=filterByAllWords // поиск по всем словам
+    filterByAnyWord=filterByAnyWord // search for some words 
+    filterByAllWords=filterByAllWords // search for all words 
     filterByAnyMatch=(action 'filterByAnyMatch')
-    // ...
+    // ... 
 }}{% endraw %}
-```
+``` 
 
-`filterByAnyWord` - в результате будут выданы все строки, в которых указано заданное в поиске слово/несколько слов.
+`filterByAnyWord` - as a result you will be given all the lines that contain the specified search word/few words. 
 
-![Поиск по некоторым атрибутам](/images/pages/products/flexberry-ember/ember-flexberry/controls/filter-by-any-word.png)
+![Some attributes](/images/pages/products/flexberry-ember/ember-flexberry/controls/filter-by-any-word.png) 
 
-`filterByAllWords` - в результате будут выданы только те строки, в которых указано заданное слово/словосочетание.
+`filterByAllWords` - the result will be issued to only those lines that contain the specified word/phrase. 
 
-![Поиск по всем атрибутам](/images/pages/products/flexberry-ember/ember-flexberry/controls/filter-by-all-words.png)
+![Search attributes](/images/pages/products/flexberry-ember/ember-flexberry/controls/filter-by-all-words.png) 
 
-По-умолчанию поиск осуществляется по подстроке.
+By default the search is performed by a substring. 
 
-Реализация отображена на [ember-стенде](http://flexberry.github.io/ember-flexberry/dummy/develop/)
+The implementation is shown on [ember-stand](http://flexberry.github.io/ember-flexberry/dummy/develop/) 
 
-* [для OLV](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-objectlistview/custom-filter).
-* [для simpleolv](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-simpleolv/custom-filter)
+* [for OLV](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-objectlistview/custom-filter). 
+* [for simpleolv](http://flexberry.github.io/ember-flexberry/dummy/develop/#/components-examples/flexberry-simpleolv/custom-filter) 
 
-{% include note.html content="`filterByAnyWord` и `filterByAllWords` нельзя использовать вместе, если не реализованы дополнительные элементы тулбара (кнопки) для включения/отключения типа поиска." %}
+{% include note.html content="`filterByAnyWord` and `filterByAllWords` cannot be used together, if not implemented additional elements of the toolbar (buttons) to enable/disable the search type." %} 
 
-### Настройка роута формы для поиска
+### configuration get form for search 
 
-Переопределить, как будет строится предикат, можно следующим образом:
+To override, as is the predicate in the following way: 
 
 ```javascript
 predicateForAttribute(attribute, filter) {
@@ -245,12 +247,16 @@ predicateForAttribute(attribute, filter) {
         return this._super(...arguments);
     }
   },
-```
+``` 
 
-Настройка предиката необходима для корректного поиска значений, имеющих два признака истина/ложь.
+Setting the predicate required for the correct search values with two criteria true/false. 
 
-_Для flexberry-simpleolve настройки аналогичны._
+Dla flexberry-simpleolve the same settings._ 
 
-## Настройка списка, отображаемого в лукапе
+## setting list displayed in lucapa 
 
-В [LookUp](ef_lookup.html) показывается компонент [flexberry-objectlistview](fe_object-list-view.html). Параметры для этого компонента можно задавать через событие `getLookupFolvProperties` в контроллере формы. Данная настройка описана в статье [Настройка поднимаемой по лукапу формы](ef_modal-window-settings.html) в п. "Настройка фильтрации и количества элементов на странице".
+In the [LookUp](ef_lookup.html) shows the component [flexberry-objectlistview](fe_object-list-view.html). The parameters for this component can be set through the event `getLookupFolvProperties` in the controller form. This setting is described in [setup at raising lucapa form](ef_modal-window-settings.html) in the paragraph "setting the filter and the number of items per page". 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

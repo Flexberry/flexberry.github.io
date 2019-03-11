@@ -1,59 +1,65 @@
----
-title: Handling registers in object names
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service, database
-summary: Rules for processing registers for different DBMS
-toc: true
-permalink: en/fo_processing-registers-names.html
-lang: en
----
+--- 
+title: Processing of registers in names of objects 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services, database 
+summary: processing Rules registers for different DBMS 
+toc: true 
+permalink: en/fo_processing-registers-names.html 
+lang: en 
+autotranslated: true 
+hash: 93bb4afd8a08cf6d77d1e37af9a67b863c8cb9d3c49e14c29a66de1ff34df4d1 
+--- 
 
-Работая с [SQLDataService](fo_sql-data-service.html) нужно обратить внимание на следующие особенности обработки регистров:
+Working with [SQLDataService](fo_sql-data-service.html) you need to pay attention to the following processing registers: 
 
-## Oracle 11g и PostgreSQL 9.1
+## Oracle 11g and PostgreSQL 9.1 
 
-### Идентификатор не экранирован при создании объекта CREATE TABLE Table1
+### ID is not shielded when the object is created CREATE TABLE Table1 
 
-#### Выборка с экранированием SELECT * FROM “Table1”
+#### Sample screening SELECT * FROM “Table1” 
 
-Условно допустима. Только при указании идентификатора в верхнем (ORACLE) или нижнем (PostgreSQL) регистре (SELECT * FROM “TABLE1”), т.к. так хранится при создании без экранирования. При остальных вариантах регистров объект не будет найден.
+Conditionally acceptable. Only when specifying the ID in the upper - (ORACLE) or bottom (PostgreSQL) register (SELECT * FROM “TABLE1”), because it is stored when you create without a shield. In other embodiments, registers the object will not be found. 
 
-#### Выборка без экранирования SELECT * FROM Table1
+#### Sample without escaping SELECT * FROM Table1 
 
-Допустима. Идентификатор регистронезависим. Хранится и преобразуется в запросах к верхнему регистру (ORACLE) или к нижнему (PostgreSQL).
+Valid. The ID is not case sensitive. Is stored and converted to queries to uppercase (ORACLE) or bottom (PostgreSQL). 
 
-### Идентификатор экранирован при создании объекта CREATE TABLE “Table1”
+### ID shielded when an object is created CREATE TABLE “Table1” 
 
-#### Выборка с экранированием SELECT * FROM “Table1”
+#### Sample screening SELECT * FROM “Table1” 
 
-Допустима с соблюдением регистра, как был указан при создании. Идентификатор регистрозавсим, хранится, как задан.
+Valid case-sensitive with respect, as was specified during creation. The ID of registertask shall be stored as specified. 
 
-#### Выборка без экранирования SELECT * FROM Table1
+#### Sample without escaping SELECT * FROM Table1 
 
-Условно допустима. Только если при создании идентификатор был указан в верхнем (ORACLE) или нижнем (PostgreSQL) регистре (CREATE TABLE “TABLE1”), т.к. так преобразуется в запросах без экранирования. При остальных вариантах регистров объект не будет найден.
+Conditionally acceptable. Only when the identifier was specified at the top (ORACLE) or bottom (PostgreSQL) register (CREATE TABLE “TABLE1”), because it is converted into a query without escaping them. In other embodiments, registers the object will not be found. 
 
-### Особенности для идентификаторов, содержащих символы кириллицы
+### Particularly for identifiers that contain Cyrillic characters 
 
-#### Для Oracle 11g
+#### For Oracle 11g 
 
-Без особенностей. Обработка аналогична латинице.
+Without features. Treatment is similar to that of Latin. 
 
-#### Для PostgreSQL 9.1
+#### For PostgreSQL 9.1 
 
-Независимо от способа создания объекта (с экранированием/без) идентификатор будет регистрозависим. Обращаться к нему в запросах, также независимо от способа создания, можно как с экранированием, так и без, но строго с соблюдением регистра всех символов (какой был использован при создании).
+Regardless of the method of object creation (with shielding/no) ID is case sensitive. To refer to it in queries, regardless of the method, as with shielding and without, but strictly in compliance with the case of all characters (which was used to create). 
 
-### Особенности использования ключевых слов в качестве идентификаторов
+### features of use keywords as identifiers 
 
-Можно использовать, но такой идентификатор, как при создании объекта, так и при использовании в запросах, должен быть экранирован. Т.е. всегда регистрозависим.
+You can use, but an identifier such as when the object is created, and when used in queries should be escaped. Ie always case-sensitive. 
 
-## MSSQL 2012
+## MSSQL 2012 
 
-Работа с регистрами в именах объектов выполняется в соответствии с настройкой Collation БД независимо от использования экранирования при создании объектов или в запросах. При указании CI (Case Insensitive) имена регистронезависимы. И в запросах создания, и в выборках регистры могут указываться произвольным образом. Экранирование также может применяться без ограничений. При указании CS (Case Sensitive) имена регистрозависимы. Регистры в запросах должны быть указаны точно как при создании, иначе - объект не будет найден. Экранирование также может применяться без ограничений. Параметр Collation БД задается при создании базы, или её ALTER. По умолчанию этот параметр совпадает с Collation для экземпляра SQL Server. У самого сервера, если не было задано иное, он по умолчанию CI.
+Working with registers in the names of objects is performed in accordance with the Collation setting of the database regardless of whether you use shielding when creating objects or queries. When you specify CI (Case Insensitive) names are case-insensitive. And query creation, and in the samples, the registers can be specified arbitrarily. Shielding can also be used without any restrictions. If you specify CS (Case Sensitive) names are case sensitive. Registers requests must be specified exactly as when you created, otherwise the object will not be found. Shielding can also be used without any restrictions. Collation the database is set when you create database, or ALTER. By default, this parameter coincides with the Collation of a SQL Server instance. At the server, if not specified, the default CI. 
 
-### Особенности для идентификаторов, содержащих символы кириллицы
+### Particularly for identifiers that contain Cyrillic characters 
 
-Без особенностей. Обработка аналогична латинице.
+Without features. Treatment is similar to that of Latin. 
 
-### Особенности использования ключевых слов в качестве идентификаторов
+### features of use keywords as identifiers 
 
-Можно использовать, но такой идентификатор, как при создании объекта, так и при использовании в запросах, должен быть экранирован (кавычками или квадратными скобками). Регистрозависимость, как и в общем случае, определяется только настройкой Collation БД.
+You can use, but an identifier such as when the object is created, and when used in queries should be escaped (quotes or brackets). Case-sensitivity as in the General case, is determined only by the Collation setting of the database. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

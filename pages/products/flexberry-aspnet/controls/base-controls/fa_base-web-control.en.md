@@ -1,35 +1,40 @@
----
-title: BaseWebControl
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Web UI (Контролы)
-toc: true
-permalink: en/fa_base-web-control.html
-lang: en
----
+--- 
+title: BaseWebControl 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET, Web UI (Controls) 
+toc: true 
+permalink: en/fa_base-web-control.html 
+lang: en 
+autotranslated: true 
+hash: a12c58fd785777a0ef075c4d3e713e988fc5de195ea46c82d947f5223842f91c 
+--- 
 
-## Описание
+## Description 
 
-## Подключение
+## Connection 
 
-## Использование
+## Use 
 
-### BaseListWebControl
+### BaseListWebControl 
 
-BaseListWebControl описан в соответствующей [статье](fa_base-list-web-control.html).
+BaseListWebControl described in the corresponding [article](fa_base-list-web-control.html). 
 
-### BaseEditForm
+### BaseEditForm 
 
-BaseEditForm описана в соответствующей [статье](fa_base-edit-form.html).
+BaseEditForm described in the corresponding [article](fa_base-edit-form.html). 
 
-## Пример кода
+## Sample code 
 
-## Настройки контрола
+## Settings control 
 
-## Настройки оформления
+## formatting Settings 
 
-## ...полезные способы использования...
+## ...useful ways to use... 
 
-## JS API
+## JS API 
 
-## Возможные ошибки
- 
+## Possible errors 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

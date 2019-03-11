@@ -1,67 +1,74 @@
----
-title: Рекомендуемая структура репозитория
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, уровни репозитория, репозиторий, конфигурация, стадия, типы стадий, системы, диаграммы
-summary: Определение уровней в репозитории, рекомендации по делению модели на конфигурации, стадии, системы и распределение модели на диаграммах
-toc: true
-permalink: en/fd_recommended-structure-repository.html
-lang: en
----
+--- 
+title: structure of a repository 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, repository, repository, configuration, stage, types, stages, systems, charts 
+summary: Definition of levels in the repository, recommendations for Delaney. the model configuration stage of the system and distribution models in the charts 
+toc: true 
+permalink: en/fd_recommended-structure-repository.html 
+lang: en 
+autotranslated: true 
+hash: 8aa0a08215e80127e2093c71b0f22610333662e37e97851610e8712c24df447e 
+--- 
 
-## Уровни репозитория
+## Levels repository 
 
-Репозиторий представляет собой хранилище всей информации о моделях. Информация в репозитории хранится в иерархическом виде по следующим уровням:
- 
-Номер уровня | Описание
-:--------------|:------------------------
-Уровень 1 | Репозиторий - обеспечивает логическое деление на группы проектов. Пользователь может выбирать репозитории из меню "Репозиторий/выбрать репозиторий". 
-Уровень 2 | Проекты - содержат всю информацию в рамках отдельных разработок.
-Уровень 3 | Конфигурации. Конфигурации являются удобным инструментом для управления версиями выпускаемых моделей или ПО и тому подобных задач.
-Уровень 4 | Стадии. Служат для управления жизненным циклом проекта.
-Уровень 5 | Системы. Система является самым нижним уровнем в иерархии проекта и содержит информацию непосредственно о модели: диаграммы в нотации UML, и другие объекты. 
 
-## Рекомендуемое деление конфигураций на стадии
+The repository is a repository of all information about models. Information in the repository is stored in a hierarchical manner at the following levels: 
 
-[Flexberry Designer](fd_landing_page.html) никаким образом не навязывает какого-либо жизненного цикла производства программного обеспечения, однако мы рекомендуем "по-крупному" следующие стадии внутри конфигураций:
+The level number | Description 
+:--------------|:------------------------ 
+Level 1 | Repository - provides a logical division into project groups. The user can choose a repository from the menu "Repository/select repository". 
+Level 2 | Projects contain all the information within individual developments. 
+Level 3 | Configuration. Configurations are a convenient tool for version control of models manufactured or and similar tasks. 
+Level 4 | Phase. Serve to manage the life cycle of the project. 
+Level 5 | System. The system is the lowest level in the project hierarchy and contains information about the model: diagrams in UML notation, and other objects. 
 
-* Обследование, где определяются: функционал, требования, основные предметные сущности, и рамки проекта; 
-* Анализ и проектирование, где проясняются детальные предметные характеристики и функционал системы, детально "прорисовывается" модель системы. 
-* Объектный дизайн, где модель системы приводится к формальному виду, пригодному для генерации с неё структур баз данных и исходного кода системы.
+## recommended the division of the configurations under 
 
-Создать стадию можно следующим образом: выделить конфигурацию и нажать кнопку `Создать`.
+[Flexberry Designer](fd_landing_page.html) in no way imposes any of the production life cycle of the software, but we recommend the "big" stage inside the following configurations: 
 
-![](/images/pages/products/flexberry-designer/about/create-stage.png)
+* A survey that identifies: functional requirements, main fact, and framework проекта; 
+* Analysis and design where a detailed clarification of the subject characteristics and the functionality of the system, to get "drawn" the model of the system. 
+* Object design, where the system model is reduced to a formal appearance that is suitable for generation of the structures of the databases and the source code of the system. 
 
-Стадии могут быть двух типов:
+To create a stage as follows: select the configuration and click `Создать`. 
 
-* Стадия для анализа и создания "базового" приложения. Отмечена буквой D (1 на рисунке выше).
-* Стадия для анализа. Генерация БД и собственно приложения недоступна. Отмечена буквой А (2 на рисунке выше).
+![](/images/pages/products/flexberry-designer/about/create-stage.png) 
 
-Стадия для анализа может быть преобразована в полную версию:
+Stage can be of two types: 
 
-![](/images/pages/products/flexberry-designer/about/transform-stage.png)
+* Stage for analysis and create "base" application. Marked with the letter D (1 in the figure above). 
+* Stage for analysis. Generation of the database and the application is unavailable. Marked with A (2 in the figure above). 
 
-## Рекомендуемое деление стадии объектного дизайна на диаграммы и системы
+Stage for the analysis can be converted into full version: 
 
-Следует понимать, что когда на какую-либо диаграмму добавлены [новые классы и связи между ними](fd_class-diagram.html) (например), реально, они *не принадлежат диаграмме*. Такие классы и связи принадлежат *стадии*, в которой находится эта диаграмма. Стадия хранит модель, а диаграммы являются лишь теми или иными отображениями частей этой модели. Это можно легко проверить:
-* создать одну диаграмму классов,
-* нарисовать на ней класс,
-* назвать его,
-* заполнить атрибутами
-* и сохранить диаграмму.
+![](/images/pages/products/flexberry-designer/about the/transform-stage.png) 
 
-Затем создать другую диаграмму классов, нарисовать на ней класс, вписать в него то же имя: в нём автоматически отобразятся те атрибуты, которые введены на первой диаграмме. На самом деле это - один и тот же класс, отображённый на двух диаграммах.
+## recommended the division of the stages of object design diagrams and system 
 
-Когда выполняется генерация исходного кода, генератор не анализирует диаграммы, а анализирует структуру модели, находящейся непосредственно в стадии.
+It should be understood that when any chart added [new classes and the relationships between them](fd_class-diagram.html) (for example), really, they *do not belong to the graph*. Such classes, and relationships belong to the *stage*, which is this chart. Stage keeps the model and diagram are only those or other representations of parts of this model. This can easily be verified: 
+* create single class diagram 
+* to draw on her class, 
+* to call him 
+* fill in the attributes 
+* and save the chart. 
 
-Таким образом, элементы модели уникальны в пределах стадии. Модель может быть распределена по диаграммам и системам любым удобным способом.
+Then create another class diagram to draw her class to enter the same name: it will automatically displayed the attributes that you entered in the first chart. In fact, it is one and the same class displayed by the two charts. 
 
-Однако существует ряд правил:
+When you generate the source code generator does not analyze charts and analyzes the structure of the model directly under the stage. 
 
-* В системах должны быть выделены логически обоснованные части; 
-* На отдельных диаграммах размещаются: 
-    * Модель предметной структуруры (уровень данных) 
-    * Типы данных; 
-    * Формы (пользовательский интерфейс); 
-    * Бизнес-логика; 
-    * Приложения. 
+Thus, the model elements are unique within a stage. The model can be grouped into diagrams and systems in any convenient way. 
+
+However, there are some rules: 
+
+* Systems should be isolated logically valid части; 
+* Individual charts are: 
+* Model subject structuraly (level data) 
+* Types данных; 
+* Forms (user interface); 
+* Business логика; 
+* Application. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

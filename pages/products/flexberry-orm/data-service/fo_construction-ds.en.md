@@ -1,26 +1,32 @@
----
-title: Designing a Data Service
-sidebar: flexberry-orm_sidebar
-keywords: Flexberry ORM, data service
-summary: Ways to create a data service in an application
-toc: true
-permalink: en/fo_construction-ds.html
-lang: en
----
+--- 
+title: Designing data services 
+sidebar: flexberry-orm_sidebar 
+keywords: Flexberry ORM, data services 
+summary: how to create a data service to the application 
+toc: true 
+permalink: en/fo_construction-ds.html 
+lang: en 
+autotranslated: true 
+hash: 2d735b09e206410d3fa88e9c70423dee694d50815da1db333fbb725472b0f764 
+--- 
 
-Создать [сервис данных](fo_data-service.html) можно разными способами:
+Create [service data](fo_data-service.html) in different ways: 
 
-1.Сконструировать [сервис данных](fo_data-service.html)
+1.To construct [service data](fo_data-service.html) 
 
 ```csharp
 IDataService ds = new ODBCDataService();			
 ds.CustomizationString="DSN=LibNetSample";
-```
+``` 
 
-2.В WinForms-приложениях можно «бросить» [сервис данных](fo_data-service.html) на форму как контрол, затем настроить его через стандартное окно редактирования свойств в среде Visual Studio.
+2.In WinForms applications you can throw» «[service data](fo_data-service.html) on the form as the control, and then configure it using standard window editing properties in the Visual Studio environment. 
 
-3.[Получить его у провайдера сервиса данных](fo_ds-provider.html).
+3.[Get it from service provider data](fo_ds-provider.html). 
 
 ```csharp
 IDataService ds = DataServiceProvider.DataService;
-```
+``` 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

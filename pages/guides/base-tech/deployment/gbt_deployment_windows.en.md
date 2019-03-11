@@ -1,65 +1,65 @@
----
-title: Deployment of solutions in Windows
-keywords: Programming
-sidebar: guide-base-tech_sidebar
-toc: true
-permalink: en/gbt_deployment_windows.html
-folder: guides/base-tech/deployment/
+--- 
+title: Deployment of solutions in Windows 
+keywords: Programming 
+sidebar: guide-base-tech_sidebar 
+toc: true 
+permalink: en/gbt_deployment_windows.html 
+folder: guides/base-tech/deployment/ 
 lang: en 
 autotranslated: true 
-hash: f99f7325a01c3ca5563afd9aa5d59556cfb141bbaf67ffdcf44eaee86db8b422
----
+hash: b626f3d82010a0737227b2f03399b839ec8db832c4978e0ad6590b2a0f3cd0a2 
+--- 
 
-## Brief description
+## Brief description 
 
-## Links to materials for the study
+## Links to materials for the study 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-### Presentation
+### Presentation 
 
-### Recommended books
+### Recommended books 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Software
+## Software 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Laboratory work and practical tasks
+## Laboratory work and practical tasks 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-Variants of tasks for independent performance, and then reviewing on the part of the teacher.
+Variants of tasks for independent performance, and then reviewing on the part of the teacher. 
 
-### Option # 1
+### Option # 1 
 
-### Option # 2
+### Option # 2 
 
-### Option # 3
+### Option # 3 
 
-### Option # 4
+### Option # 4 
 
-### Option # 5
+### Option # 5 
 
-## Examples
+## Examples 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Opportunities for certification
+## Opportunities for certification 
 
-* [-]()
-* [-]()
+* [-]() 
+* [-]() 
 
-## Go
-* [Deploy solutions on Linux](gbt_deployment_linux.html)
-* [Course home page](gbt_landing-page.html)
+## Go 
+* [Deploy solutions on Linux](gbt_deployment_linux.html) 
+* [Course home page](gbt_landing-page.html) 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

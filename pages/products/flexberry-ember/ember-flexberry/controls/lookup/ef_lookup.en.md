@@ -1,26 +1,28 @@
----
-title: Лукапы в ember-flexberry-приложении
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_lookup.html
-lang: en
-summary: Представлены основные особенности лукапов
----
+--- 
+title: Lucapa in ember-flexberry application 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_lookup.html 
+lang: en 
+autotranslated: true 
+hash: 9d6637fba3100e43a9e9384a92a4edbd5b70eee46e6d908e0062502ff6980d29 
+summary: describes the main features of lyapov 
+--- 
 
-## Описание
+## Description 
 
-Лукап представляет собой [элемент управления (контрол)](ef_controls.html), позволяющий выбрать значение мастера.
+Lookup is a [control (control)](ef_controls.html), allowing to select the wizard. 
 
-## Настройка лукапов в ember-приложении
+## setting lyapov in ember application 
 
-Для настройки лукапов в ember-приложении требуется удостовериться в корректности настройки [модели](efd_model.html), сериализатора и шаблона.
+To configure lyapov in the ember application, you need to verify the correctness of the configuration [models](efd_model.html), the serializer and the template. 
 
-Пусть у сущности `Подготовка` есть мастер `Редактор` типа `Пользователь`. Требуется настроить лукап по свойству `ExtendedName` мастера.
+Let the entity `Подготовка` is the master `Редактор` type `Пользователь`. You want to configure lookup property `ExtendedName` master. 
 
-### Настройка модели
+### model configuration 
 
-[Модель](efd_model.html) `Подготовка` должна содержать ссылку на мастера. [Представление](efd_model-projection.html) для отображения формы, где будет расположен лукап, также должно включать описание мастера.
+[Model](efd_model.html) `Подготовка` should contain a reference to the master. [View](efd_model-projection.html) to display the form where it will be located lookup should also include a description of the wizard. 
 
 ```javascript
 var Model = BaseModel.extend({
@@ -32,9 +34,9 @@ Model.defineProjection('ПодготовкаE', 'подготовка', {
       extendedName: Proj.attr()
   })
 });
-```
+``` 
 
-В [модели](efd_model.html), соответствующей мастеру типа `Пользователь`, необходимо задать [представление](efd_model-projection.html), по которому будет происходить отображение.
+[Models](efd_model.html) corresponding to the master type `Пользователь`, you must specify a [view](efd_model-projection.html) under which you will be displaying. 
 
 ```javascript
 var Model = BaseModel.extend({
@@ -44,11 +46,11 @@ var Model = BaseModel.extend({
 Model.defineProjection('ПользовательE', 'пользователь', {
   extendedName: Proj.attr('Полное имя')
 });
-```
+``` 
 
-### Настройка сериализаторов
+### configure serializers 
 
-В [сериализаторе](efd_serializer.html) `Подготовка` описываем ссылку на мастера.
+[Serializer](efd_serializer.html) `Подготовка` described by reference to the master. 
 
 ```javascript
 export default ApplicationSerializer.extend({
@@ -57,20 +59,20 @@ export default ApplicationSerializer.extend({
   },
   primaryKey: '__PrimaryKey'
 });
-```
+``` 
 
-[Сериализатор](efd_serializer.html) для типа `Пользователь` попроще:
+[Serializer](efd_serializer.html) for the type `Пользователь` simpler: 
 
 ```javascript
 export default ApplicationSerializer.extend({
   attrs: {  },
   primaryKey: '__PrimaryKey'
 });
-```
+``` 
 
-### Настройка шаблона
+### customize template 
 
-На страницу редактирования класса `Подготовка` можно вставить конструкцию
+On the edit page class `Подготовка` you can insert design 
 
 ```hbs
 {% raw %}<div class="field">
@@ -88,66 +90,66 @@ export default ApplicationSerializer.extend({
     projection='ПользовательE'
   }}
 </div>{% endraw %}
-```
+``` 
 
-### Список настроек лукапа:
+### List of lucapa settings: 
 
-Свойство | Описание | Дефолтное значение
-:---------------------|:------------------------------------------------------------|:----------------
-`hoose` | Определяет имя action'а, которое будет происходит по клику на кнопку 'choose'.|
-`remove` | Определяет имя action'а, которое будет происходит по клику на кнопку 'remove'.|
-`chooseText` | Определяет текст/html внутри кнопки 'choose'.|
-`removeText` | Определяет текст/html внутри кнопки 'remove'.|
-`chooseButtonClass` | Определяет css-class на кнопку 'choose'.|
-`removeButtonClass` | Определяет css-class на кнопку 'remove'.|
-`placeholder` | Определяет placeholder | t('flexberry-lookup.placeholder')
-`value` | Определяет выбранный экземпляр модели (мастеровой объект) |
-`relatedModel` | Определяет модель для которой будет редактироваться ссылка на мастеровой объект) |
-`relationName` | Определяет имя отношения  |
-`projection` | Определяет, по какому представлению будут отображаться мастера в списке |
-`sizeClass` | Определяет css-class размера окна, возможные варианты: small, large, fullscreen | small
-`title` | Заголовок модального окна |
-`autocomplete` | Режим автокомплита, в режиме "Только для чтения" не работает | false
-`dropdown` | Режим выпадающего списка, в режиме "Только для чтения" не работает | false
-`displayAttributeName` | Имя атрибута модели (свойства мастера), которое отображается для пользователя |
-`minCharacters` | Минимальное количество символов для автокомпилита, в режиме автокомплита и в режиме выпадающего списка | 1
-`maxResults` | Максимальное количество отображаемых записей в режиме автокомплита и в режиме в режиме выпадающего списка, не обязательное свойство | 10
+Property | Description | Default value 
+:---------------------|:------------------------------------------------------------|:---------------- 
+`choose` | Specifies the name of the action and that will be happening by clicking on the button 'choose'.| 
+`remove` | Specifies the name of the action and that will be happening by clicking on the button 'remove'.| 
+`chooseText` | Defines the text/html inside the button 'choose'.| 
+`removeText` | Defines the text/html inside the button 'remove'.| 
+`chooseButtonClass` | Defines css class for button 'choose'.| 
+`removeButtonClass` | Defines css class for button 'remove'.| 
+`placeholder` | Defines placeholder | t('flexberry-lookup.placeholder') 
+`value` | Determines the selected model instance (the master object) | 
+`relatedModel` | Specifies the model for which will be edited the reference to a master object) | 
+`relationName` | Specifies the name | 
+`projection` | Determines which view will be displayed in the wizard list | 
+`sizeClass` | Defines css class of the window size options are: small, large, fullscreen | small 
+`title` | Header modal window | 
+`autocomplete` | autocomplete Mode, in the mode of "read-Only" doesn't work | false 
+`dropdown` | Mode drop-down list in the "read-Only" doesn't work | false 
+`displayAttributeName` | the name of the model attribute (properties master), which is displayed to the user | 
+`minCharacters` | Minimum number of characters to autocomplete, autocomplete mode and in the mode drop-down list | 1 
+`maxResults` | Maximum number of records displayed in autocomplete mode and in the mode in the mode drop-down list, not required property | 10 
 
-## Блочная форма компонента
+## Block form of the component 
 
-{% include important.html content="В данный момент доступна только для мобильного шаблона." %}
+{% include important.html content="currently available only for mobile template." %} 
 
-Возможно использовать компонент в блочной форме:
+It is possible to use a component in block form: 
 
 ```hbs
 {% raw %}{{#flexberry-lookup ...}}
   {{model.employee1.firstName}}<br>
   {{model.employee1.lastName}}
 {{/flexberry-lookup}}{% endraw %}
-```
-в этом случае прикладной программист может переопределить как будет выглядеть отображение мастера на форме
+``` 
+in this case, the application programmer can override how it will look in the display wizard on the form 
 
-## Настройка модального окна
+## setting the modal window 
 
-Как настраивать поднимаемые по лукапу модальные окна, описано в статье [Настройка поднимаемой по лукапу формы](ef_modal-window-settings.html).
+How to set raise on lucapa modal window described in [setup at raising lucapa form](ef_modal-window-settings.html). 
 
-## Задание ограничений
+## Job restrictions 
 
-{% include important.html content="Информация устарела, свойство limitFunction удалено." %}
+{% include important.html content="the Information is outdated, the property limitFunction removed." %} 
 
-Задание ограничений на значения, отображаемые в списке для выбора, осуществляются посредством задания фильтра ($filter) в формате OData ([OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094)). Данный фильтр задаётся в виде строки в свойство `limitFunction` при задании шаблона.
+Setting limits on the values displayed in the list for selection, carried out by setting the filter ($filter) in the format of OData ([OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094)). This filter is specified as a string in the property `limitFunction` when specifying the template. 
 
 ```hbs
 {% raw %}
 {{flexberry-lookup
   limitFunction=SomeFilterFunction
-  // ...
+  // ... 
 }}{% endraw %}
-```
+``` 
 
-Рассмотрим задание ограничения на примере. Пусть у сущности `Employee` есть мастеровая ссылка `Employee1` типа `Employee`. Требуется по лукапу отобразить только те записи, у которых `FirstName` больше или равен `FirstName` текущей выбранной записи.
+Consider the assignment constraints for example. Let the entity have `Employee` artisans link `Employee1` type `Employee`. Required by lucapa to display only those records that have a `FirstName` `FirstName` greater than or equal to the current selected record. 
 
-Модель `Employee` имеет следующий вид:
+PstrfEmployee` model has the following form: 
 
 ```javascript
 var Model = BaseModel.extend({
@@ -156,22 +158,22 @@ var Model = BaseModel.extend({
   birthDate: DS.attr('date'),
   employee1: DS.belongsTo('employee', { inverse: null, async: false }),
 });
-```
+``` 
 
-В контроллере типа `Employee` создадим вычислимое свойство `lookupLimitFunction`, которое будет возвращать фильтр, чтобы "отобразить только те записи, у которых `FirstName` больше или равен `FirstName` текущей выбранной записи".
+In the controller type `Employee` create a calculated property `lookupLimitFunction`, which will return the filter to "show only those records that have a `FirstName` `FirstName` greater than or equal to the current selected record". 
 
 ```javascript
 export default EditFormController.extend({
-  // Caption of this particular edit form.
+  // The Caption of this particular edit form. 
   title: 'Employee',
 
-  /**
-   * Current function to limit accessible values of model employee1.
-   *
-   * @property lookupLimitFunction
-   * @type String
-   * @default undefined
-   */
+  /** 
+* Current function to limit the accessible values of model employee1. 
+* 
+* @property lookupLimitFunction 
+* @type String 
+* @default undefined 
+*/
   lookupLimitFunction: Ember.computed('model.employee1', function() {
     let currentLookupValue = this.get('model.employee1');
     if (currentLookupValue) {
@@ -182,28 +184,28 @@ export default EditFormController.extend({
     return undefined;
   })
 });
-```
+``` 
 
-Далее соответствующее свойство необходимо указать в шаблоне формы:
+Next, the appropriate property must be specified in the form template: 
 
 ```hbs
 {% raw %}
 {{flexberry-lookup
   limitFunction=lookupLimitFunction
-  // ...
+  // ... 
 }}{% endraw %}
-```
+``` 
 
-{% include important.html content="Поскольку фильтр задаётся непосредственно для OData, `FirstName` пишется с большой буквы и соответствует имени свойства в модели OData (в ember-модели пишется `firstName` с маленькой буквы).<br/>
-В соответствии со [стандартом OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094) фильтр с обращением к полю мастера будет записываться как `limitFunction='ТипДокумента/Наименование eq \'ОРД - распоряжение\''` (через символ `\/`)." %}
+{% include important.html content="As the filter is directly defined by OData `FirstName` is capitalized and is the name of the properties in the OData model (ember-model `firstName` is written in small letters).<br/> 
+In accordance with [standard OData Version 4.0](http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/part2-url-conventions/odata-v4.0-errata02-os-part2-url-conventions-complete.html#_Toc406398094) filter with reference to the field master will be recorded as `limitFunction='Libdocument/Name eq \'ORD - order\"` (through the symbol `\/`)." %} 
 
-## Лукап в режиме автодополнения
+## Lookup mode completion 
 
-Лукап можно переводить в [режим автодополнения](ef_lookup-autocomplete.html).
+Lookup can be converted into [completion mode](ef_lookup-autocomplete.html). 
 
-## Кнопка просмотра выбранного значения
+## Button display the selected value 
 
-Для использования данной возможности лукапа требуется определить следующие свойства:
+To use this feature, lucapa is required to determine the following properties: 
 
 ```hbs
 {% raw %}
@@ -211,17 +213,25 @@ export default EditFormController.extend({
   preview=(action "previewLookupValue")
   showPreviewButton=true
   previewFormRoute=previewFormRoute
-  // ...
+  // ... 
 }}{% endraw %}
-```
+``` 
 
-Ниже указаны добавленные в лукап свойства для работы кнопки просмотра:
+Below are attached to lookup properties for the operation of the preview button: 
 
-Свойство | Описание | Дефолтное значение
-:---------------------|:------------------------------------------------------------|:----------------
-`preview` | Определяет имя action'а, которое будет происходит по клику на кнопку 'preview'.|
-`showPreviewButton` | Флаг, определяющий, отображать ли кнопку просмотра. | false
-`previewFormRoute` | Определяет Route, в котором будет открыто выбранное значение.|
-`previewOnSeparateRoute` | Флаг, определяющий, открывать ли выбранное значение в отдельной странице (по умолчанию открывается в модальном окне)| false
-`previewButtonClass` | Определяет css-class на кнопку 'preview'.|
-`previewText` | Определяет текст/html внутри кнопки 'preview'.|
+Property | Description | Default value 
+:---------------------|:------------------------------------------------------------|:---------------- 
+`preview` | Specifies the name of the action and that will be happening by clicking on 'preview' button.| 
+`showPreviewButton` | a Flag that determines whether to display the browse button. | false 
+`previewFormRoute` | Defines a Route that will open the currently selected value.| 
+`previewOnSeparateRoute` | a Flag that determines whether to open the selected value in a separate page (opens by default in a modal window)| false 
+`previewButtonClass` | Defines css class on the 'preview' button.| 
+`previewText` | Defines the text/html inside the button 'preview'.| 
+
+## Custom settings for the list in lucapa 
+
+For the list in lucapa you can use the [custom settings](ef_model-user-settings-service.html#пользовательские-settings-for-lists-in-lukapa). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

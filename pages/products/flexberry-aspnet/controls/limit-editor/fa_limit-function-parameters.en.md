@@ -1,40 +1,46 @@
----
-title: Подстановка значений параметров в ограничивающую функцию
-sidebar: flexberry-aspnet_sidebar
-keywords: Flexberry ASP-NET, Ограничения
-toc: true
-permalink: en/fa_limit-function-parameters.html
-lang: en
----
+--- 
+title: Substitution of parameter values in the bounding function 
+sidebar: flexberry-aspnet_sidebar 
+keywords: Flexberry ASP-NET Restrictions 
+toc: true 
+permalink: en/fa_limit-function-parameters.html 
+lang: en 
+autotranslated: true 
+hash: 0f609fba4ec5bee3443c58909cc4ad90e2340766f9ef762256600ddd8b8748d4 
+--- 
 
-Для подстановки параметров в функцию в классе `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` есть метод:
+To pass parameters to a function in the class `ICSSoft.STORMNET.Web.Tools.AdvLimitUtils` there is a method: 
 
 ```csharp 
-/// <summary>
-/// Подставить конкретные значения вместо параметров функции.
-/// </summary>
-/// <param name="function">Сама функция, в которой будут заменять параметры.</param>
-/// <param name="paramValues">Справочник значений параметров (название параметра - значение).</param>  
-/// <returns>Функция, в которой все параметры заменены на соответствующие значения.</returns>
+/// <summary> 
+/// Substitute a specific value instead of function parameters. 
+/// </summary> 
+/// <param name="function">the function that will replace the parameters.</param> 
+/// <param name="paramValues">the Reference values of parameters (parameter name - value).</param> 
+/// <returns>the Function in which all parameters replaced by the appropriate values.</returns> 
 public static Function SubstituteParameters(Function function, IDictionary<string, object> paramValues)
 ``` 
 
-## Пример
+## Example 
 
 ```csharp
 ExternalLangDef externalLangDef = ExternalLangDef.LanguageDef;
  
- // Ограничивающая функция.
+ // The bounding function. 
  ICSSoft.STORMNET.FunctionalLanguage.Function limitFunction = externalLangDef.GetFunction(
    externalLangDef.funcEQ,
-   new ParameterDef("Дата", externalLangDef.DateTimeType, false, "")); 
+   new ParameterDef(Date, externalLangDef.DateTimeType, false, "")); 
 
- // Функция с подставленным значением параметра.
+ // The function with the substituted value. 
  limitFunction = AdvLimitUtils.SubstituteParameters(
     limitFunction,
-    new Dictionary<string, object>() { {"Дата", DateTime.Now} });
-```
+    new Dictionary<string, object>() { {Date, DateTime.Now} });
+``` 
 
-## Дополнительно
+Additionally ## 
 
-[Подстановка значений параметров в ограничивающую функцию (в Win)](fw_limit-function-insert-parameters-values.html)
+[Substitution of parameter values in the bounding function (Win)](fw_limit-function-insert-parameters-values.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

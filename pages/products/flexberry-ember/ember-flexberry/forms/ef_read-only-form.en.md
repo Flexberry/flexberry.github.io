@@ -1,32 +1,30 @@
----
-title: Открытие ember-формы только на чтение
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_read-only-form.html
-lang: en
-summary: Данная возможность позволяет открыть ember-форму только на чтение
----
+--- 
+title: Open ember-forms read-only 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_read-only-form.html 
+lang: en 
+autotranslated: true 
+hash: 33a8faf861f1ca6895d5daae9e1414fd088883228ec376aa8dfa3a194f35618e 
+summary: This feature allows you to access ember-form read-only 
+--- 
 
-Для работы в режиме *только для чтения* в базовом контроллере формы редактирования добавлено свойство `readonly`.
+## Description 
+For operation in mode *read-only* in the base controller and edit form property is added `readonly`. 
 
-Таким образом, чтобы открыть [форму редактирования](ef_edit-form.html) только на чтение, можно:
+Thus, to open the [edit form](ef_edit-form.html) read-only, you can: 
 
-* Передать GET-параметр в строке запроса, например, так: `http://localhost:4200/orders/10251?readonly=true`.
-* Переопределить определение значение свойства `readonly` в контроллере.
+* To pass a GET parameter in the query string, like so: `http://localhost:4200/orders/10251?readonly=true`. 
+* To override the definition of the value of the property `readonly` in the controller. 
 
-Обработка данного параметра используется в следующих вариантах:
+Processing of this parameter is used in the following versions: 
 
-* Данное свойство может передаваться в [контролы, наследуемые от базового контрола ember-flexberry](ef_controls.html).
-* Данное свойство можно использовать для определения, какие кнопки могут быть доступны пользователю.
+* This property may be transferred into the [controls inherited from the base control ember-flexberry](ef_controls.html). 
+* This property can be used to determine which buttons can be accessed by the user. 
 
-Вариант оформления шаблона формы редактирования для учёта возможности работы в режиме только для чтения представлен [в статье](ef_edit-form.html). 
+A variant design of the form template edit to account for the possibility of working in read-only mode are presented [in the article](ef_edit-form.html). 
 
-Возможно реализовать прикладную логику. Например, открывать роут редактирования такой формы всегда в режиме readonly, если в модели `someflag = true`:
 
-```javascript
-setupController(controller, model) {
-    this._super(...arguments);
-    controller.set('readonly', model.get('markedToDelete'));
-  }
-```
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

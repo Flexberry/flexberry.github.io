@@ -1,26 +1,32 @@
----
-title: Разрешение на запуск приложения и открытие форм
-sidebar: flexberry-winforms_sidebar
+--- 
+title: Permission to run the application and opening forms 
+sidebar: flexberry-winforms_sidebar 
 keywords: Flexberry Winforms 
-summary: Указано как добавлять пользователю те или иные полномочия
-toc: true
-permalink: en/fw_start-app-open-forms.html
-lang: en
----
+summary: See how to add the user certain powers 
+toc: true 
+permalink: en/fw_start-app-open-forms.html 
+lang: en 
+autotranslated: true 
+hash: 6b9e5f4739dcd91d51efe44c850ce3a38dee17bf428402c3faff57714fe8951f 
+--- 
 
-* Настройка приложения
-Развернуть `AzManBridgeService` и настроить приложение.
+* Customize application 
+PstrfAzManBridgeService` to deploy and configure the application. 
 
-* Добавить разрешение на старт приложения
-Для добавления определенным пользователям прав на запуск приложения необходимо:
- 
-* Для приложения (класс application) в атрибуте [`AccessType`](fo_access-type.html) указать "`this`".
+* Add the permission to start the application 
+To add specific user rights to run application you must: 
 
-* В [консоли управления полномочиями](efs_security-console.html) в разделе "Субъекты\Операции" создать операцию, название которой соответствует названию приложения.
-Затем на форме редактирования пользователя в разделе "Агенты\Пользователи" на вкладке "Операции" отметить добавленную операцию с [типом доступа `Execute`(Исполнение)](efs_right-manager.html).
+* For the application (the application class) in the attribute [`AccessType`](fo_access-type.html) to specify "`this`". 
 
-* Добавить разрешение на открытие форм
-Для начала нужно добавить полномочия на классы.
-Как добавить полномочия на классы можно прочитать в [этой статье](fa_authority-classes.html) 
+* [Management authority](efs_security-console.html) in the section "Entities\" Operation to create the operation whose name matches the name of the application. 
+Then, on the edit form of the user in the tab "Agents\Users" tab on the "Operations" note added to operation [access type `Execute`(Performance)](efs_right-manager.html). 
 
-{% include note.html content="Для добавления в список классов нужных объектов использовать кнопку «Заполнить список классов из сборки с объектами» в разделе «Субъекты\Классы», где выбрать необходимую сборку с объектами. Классы форм добавляются в список классов вручную." %}
+* Add permission to open the forms 
+First you need to add powers into classes. 
+How to add permissions on classes can be found in [this article](fa_authority-classes.html) 
+
+{% include note.html content="to add To the list of class objects you need to use «to Fill the list of classes from an Assembly object in section» «Entities\Classes», where to select the Assembly object. Form classes are added to the list of classes by hand." %} 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

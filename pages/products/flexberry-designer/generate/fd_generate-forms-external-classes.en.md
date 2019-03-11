@@ -1,24 +1,32 @@
----
-title: Генерация форм для external-классов
-sidebar: flexberry-designer_sidebar
-keywords: Flexberry Designer, external-класс, форма редактирования, списковая форма, генерация
-summary: Особенности генерации форм для external-классов
-toc: true
-permalink: en/fd_generate-forms-external-classes.html
-lang: en
----
+--- 
+title: Generation of forms for external classes 
+sidebar: flexberry-designer_sidebar 
+keywords: Flexberry Designer, external class, edit form, list form, generation 
+summary: Features generate forms for external classes 
+toc: true 
+permalink: en/fd_generate-forms-external-classes.html 
+lang: en 
+autotranslated: true 
+hash: e39422ab513af60c6b349706d418cc8e79bb1e3a605a5a49e4ff28030f5444c7 
+--- 
 
-Задание представления [external-класса](fd_external-classes.html) на [форме редактирования](fd_editform.html) и на [списковой форме](fd_listform.html) происходит стандартным образом: у [external-класса](fd_external-classes.html) отображаются представления из соответствующего ему класса из другой стадии.
+## external Job class on the form 
 
-## Генерация форм
+Job submission [external-class](fd_external-classes.html) [edit](fd_editform.html) and [list form](fd_listform.html) is derived in the standard way: [external] class](fd_external-classes.html) shows the performance of the corresponding class of another stage. 
 
-На настоящий момент доступна только [генерация web-форм](fa_asp-net-generator.html).
+## Generation forms 
 
-Необходимо выполнить следующую последовательность действий:
+At the moment the only [generation of web forms](fa_asp-net-generator.html). 
 
-* Сгенерировать объекты.
-* Проставить ссылки на внешние классы.
-* Скомпилировать объекты.
-* Сборку с объектами, на которые ссылается external-класс, положить в папку, где лежат собственные скомпилированные сборки с объектами.
-* [Сгенерировать web-приложение](fa_asp-net-generator.html).
-* В сгенерированном приложении проставить ссылку на сборку с внешними классами. Добавить ссылки на соответствующих формах.
+You must perform the following steps: 
+
+* To generate objects. 
+* To put references to external classes. 
+* To compile the objects. 
+* Assembly objects referenced by the external class, put in folder with your own compiled build with objects. 
+* [Generate web-app](fa_asp-net-generator.html). 
+* In the generated application to have a reference to the Assembly with external classes. Add links to relevant forms. 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

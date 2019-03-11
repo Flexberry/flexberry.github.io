@@ -1,50 +1,52 @@
----
-title: Создание формы редактирования с иерархическим списком
-sidebar: flexberry-winforms_sidebar
-keywords: Flexberry Winforms
-summary: Указано как вручную разместить на форме иерархический список объектов
-toc: true
-permalink: en/fw_object-hierarchical-view-on-editform.html
-folder: products/flexberry-winforms/
-lang: en
----
+--- 
+title: Create edit form with a hierarchical list 
+sidebar: flexberry-winforms_sidebar 
+keywords: Flexberry Winforms 
+summary: See how to manually put on the form of a hierarchical list of objects 
+toc: true 
+permalink: en/fw_object-hierarchical-view-on-editform.html 
+folder: products/flexberry-winforms/ 
+lang: en 
+autotranslated: true 
+hash: 08b550585b34acca51ae4d2147125748b90bb9170e30886b736a9edad823b98f 
+--- 
 
-Бывают случаи, когда на форме редактирования необходимо создать иерархический список. 
+There are times when on the edit form, you need to create a hierarchical list. 
 
-Например, в модели иерархический список выглядит так:
+For example, in the hierarchical model looks like this: 
 
-![](/images/pages/products/flexberry-winforms/controls/olv/object-hierarchical-view.png)
+![](/images/pages/products/flexberry-winforms/controls/olv/object-hierarchical-view.png) 
 
-Однако по-умолчанию генерируется отдельная форма для отображения иерархии (в данном случае, "Территория)".
-Для того чтобы иерархический список был отображен на форме редактирования, на форму необходимо добавить контрол ObjectHierarchicalView.
-Чтобы это сделать следует выполнить ряд действий:
-* Сгенерировать форму редактирования.
-* Добавить на форму в Form Designer Fields:
+However, by default generates a separate form to display a hierarchy (in this case, "Territory)". 
+To the hierarchical list displayed on the edit form, the form you need to add the control ObjectHierarchicalView. 
+To do this you must perform several actions: 
+* Generate the edit form. 
+* Add to the form in Form Designer Fields: 
 
 ```csharp
-// *** Start programmer edit section *** (Form Designer Fields)
+// *** Start programmer edit section *** (Form Designer Fields) 
 
-       //...
+       //... 
         private ICSSoft.STORMNET.Windows.Forms.ObjectHierarchicalView objectHierarchicalView1;
         
-// *** End programmer edit section *** (Form Designer Fields)
-```
+// *** End programmer edit section *** (Form Designer Fields) 
+``` 
 
-* Далее следует внести дополнения в InitializeComponent.
+* Next, you add in the InitializeComponent. 
 
-    * Дополнения InitializeComponent
+* Additions InitializeComponent 
 
-Для корректного отображения ObjectHierarchicalView необходимо правильно прописать все свойства контрола.
+For correct display ObjectHierarchicalView need to set all the properties of the control. 
 
 ```csharp
  private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinformTestHierarchicalForm));
-            //...
+            //... 
             this.objectHierarchicalView1 = new ICSSoft.STORMNET.Windows.Forms.ObjectHierarchicalView();
             
             // 
-            // objectHierarchicalView1
+            // objectHierarchicalView1 
             // 
             this.objectHierarchicalView1.AdvansedColumns = null;
             this.objectHierarchicalView1.AdvansedMarks = false;
@@ -60,7 +62,7 @@ lang: en
             this.objectHierarchicalView1.FillDataOnLoadUserAllowed = true;
             this.objectHierarchicalView1.GrayedOnLoad = true;
             this.objectHierarchicalView1.HideToolBar = false;
-            this.objectHierarchicalView1.HierarchicalMasterName = "Иерархия"; //Имя мастерового объекта, указывается в поле HierarchicalMaster списковой формы*. 
+            this.objectHierarchicalView1.HierarchicalMasterName = Hierarchy; //The name of the workman of the object specified in the HierarchicalMaster list form*. 
             this.objectHierarchicalView1.Limit = null;
             this.objectHierarchicalView1.LoadingPackageSize = 500;
             this.objectHierarchicalView1.Location = new System.Drawing.Point(10, 100);
@@ -86,8 +88,12 @@ lang: en
             this.objectHierarchicalView1.UseHotkeyForEdit = true;
             this.objectHierarchicalView1.UseLimitFunctionExtension = false;
             this.objectHierarchicalView1.UseToolBar = null;
-            this.objectHierarchicalView1.ViewName = "ТерриторияL";//Имя представления, которое используется на иерархическом списке.
-```
+            this.objectHierarchicalView1.ViewName = "ТерриторияL";//The view name that is used in a hierarchical list. 
+``` 
 
 
-Подробнее о списковой форме можно прочитать [здесь](fd_key-concepts.html).
+Read more about list form, you can read [here](fd_key-concepts.html). 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

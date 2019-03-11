@@ -1,20 +1,26 @@
----
-title: Формы ember-flexberry
-sidebar: ember-flexberry_sidebar
-keywords: Flexberry Ember
-toc: true
-permalink: en/ef_forms.html
-folder: products/ember-flexberry/forms/
-lang: en
----
+--- 
+title: Forms ember-flexberry 
+sidebar: ember-flexberry_sidebar 
+keywords: Flexberry Ember 
+toc: true 
+permalink: en/ef_forms.html 
+folder: products/ember-flexberry/forms/ 
+lang: en 
+autotranslated: true 
+hash: f02cc875cc4f19ac1c2b710cd606c0a9d571b36e6b58d4f1a48a05c39e83b654 
+--- 
 
-## Описание
+## Description 
 
-Различают списковые формы, [формы создания и редактирования](ef_edit-form.html).
+Distinguish a list form, [form for creating and editing](ef_edit-form.html). 
 
-Если загрузка формы занимает продолжительное время, то рекомендуется добавить специальный шаблон "`loading`" (подробности в [документации](https://guides.emberjs.com/v2.4.0/routing/loading-and-error-substates)).
+If loading the form takes a long time, it is recommended to add custom template "`loading`" (for details see [documentation](https://guides.emberjs.com/v2.4.0/routing/loading-and-error-substates)). 
 
-## Полезные ссылки
+## Useful links 
 
-* [Отображение формы без дополнительных элементов](ef_show-ember-form-in-frame.html)	
-* [Открытие формы только на чтение](ef_read-only-form.html)
+* [Displays shape without any additional elements](ef_show-ember-form-in-frame.html) 
+* [The form is opened read-only](ef_read-only-form.html) 
+
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
