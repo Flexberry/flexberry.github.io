@@ -26,4 +26,4 @@ If [service user settings](ef_model-user-settings-service.html) is enabled, when
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

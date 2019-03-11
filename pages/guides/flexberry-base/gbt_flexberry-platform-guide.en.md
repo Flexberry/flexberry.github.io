@@ -93,4 +93,4 @@ hash: ebee9a6baab8eedf6fb1f8dff2028c45ad4fa3876f3dd24b1f146d31601e6d1e
 #* [If something is buggy» «in Design-Time](design--time--errors.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

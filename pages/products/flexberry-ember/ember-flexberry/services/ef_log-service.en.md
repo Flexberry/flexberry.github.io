@@ -355,4 +355,4 @@ Using the service user nastroy the developer can fix the display mode of Spica m
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -114,4 +114,4 @@ If the database already contains data, when you connect `MasterEditorLinkedAjaxL
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

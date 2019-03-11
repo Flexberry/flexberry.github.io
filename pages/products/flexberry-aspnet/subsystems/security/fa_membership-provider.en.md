@@ -92,4 +92,4 @@ In Flexberry ASP.NET there are forms for editing permissions which are in the fo
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

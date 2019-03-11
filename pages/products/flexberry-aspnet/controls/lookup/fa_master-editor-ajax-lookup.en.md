@@ -253,4 +253,4 @@ Cm. [an article Linking LookUp's AGE with external LookUp'ω](fa_change-lcs-look
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

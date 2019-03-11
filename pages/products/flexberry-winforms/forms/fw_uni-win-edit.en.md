@@ -39,4 +39,4 @@ private void ContainerCloseHandler (object sender, StormNetUI.CloseEventArgs arg
 {% include note.html content="If you need to make the transition to generated form from universal with controls ICustomizable, the Customize method must be invoked manually in the overloaded Edit method." %}
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

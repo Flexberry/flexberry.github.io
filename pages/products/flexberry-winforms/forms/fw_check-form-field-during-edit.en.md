@@ -25,4 +25,4 @@ Data validation on the form during editing can be carried out by:
 Other methods of data validation on the form is described [here](fw_edit-form-validation.html).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

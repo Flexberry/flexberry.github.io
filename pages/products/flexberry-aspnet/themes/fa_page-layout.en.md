@@ -14,4 +14,4 @@ This section is designed to collect frequently used solutions in the layout, CSS
 * [How to make footer was always at the bottom of the page](fa_footer-stick-bottom.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

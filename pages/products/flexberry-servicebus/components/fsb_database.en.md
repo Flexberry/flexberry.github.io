@@ -38,4 +38,4 @@ The scripts to create the database structure for a specific repository can be ge
 Configure it for use is performed according to [instructions to Flexberry ORM](fo_ds-provider.html).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

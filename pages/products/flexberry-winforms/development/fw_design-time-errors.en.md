@@ -14,4 +14,4 @@ hash: d68046568a93ffdf665bb1de446e71f9a26567adf1b998a58251773c8c58f1cc
 Remember: if you do not open the window the debug packages or impossible to set properties of controls, such as classes, views, make sure that the Assembly `ICSSoft.STORMNET.Collections.dll and ICSSoft.STORMNET.DataObject.dll` placed in `Global Assembly Cache` and they are relevant. If necessary, reinstall the assemblies.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

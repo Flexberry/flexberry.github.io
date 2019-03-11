@@ -37,4 +37,4 @@ BaseEditForm described in the corresponding [article](fa_base-edit-form.html).
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

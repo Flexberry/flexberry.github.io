@@ -17,4 +17,4 @@ The practical guides will help to familiarize yourself with the platform Flexber
 * [The preparatory stage of developing web-applications](gpg_preparatory-stage.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

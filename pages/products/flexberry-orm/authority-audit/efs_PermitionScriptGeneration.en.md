@@ -284,4 +284,4 @@ To view the audit data through [label](fw_win-desktop-links.html) on [desktop](f
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

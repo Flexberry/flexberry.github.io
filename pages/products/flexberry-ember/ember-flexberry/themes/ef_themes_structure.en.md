@@ -48,4 +48,4 @@ Also in the folder /src `semantic are.less` and `theme.less` responsible for imp
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

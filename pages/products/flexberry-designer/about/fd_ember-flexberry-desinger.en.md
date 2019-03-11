@@ -99,4 +99,4 @@ To add list forms or edit forms (from a list of all the possible forms that appe
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

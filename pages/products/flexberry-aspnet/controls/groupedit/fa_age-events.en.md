@@ -192,4 +192,4 @@ Read more about AjaxGroupEdit can be read in this [article AjaxGroupEdit](fa_aja
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

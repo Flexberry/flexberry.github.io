@@ -24,4 +24,4 @@ __Note:__ DesktopCustomizers a separate Assembly for each application is generat
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

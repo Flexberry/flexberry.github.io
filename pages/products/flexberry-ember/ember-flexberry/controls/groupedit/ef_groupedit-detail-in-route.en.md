@@ -108,4 +108,4 @@ About how to operate the buttons on this dyelovoi the form described in the arti
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

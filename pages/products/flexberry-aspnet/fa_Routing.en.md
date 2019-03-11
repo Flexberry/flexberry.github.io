@@ -33,4 +33,4 @@ The default path to register forms `Version` and `Log`, the path used is a strin
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

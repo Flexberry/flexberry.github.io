@@ -33,4 +33,4 @@ If code generation was used types `System.Nullable<esc><T></esc>` (or `T?`, whic
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

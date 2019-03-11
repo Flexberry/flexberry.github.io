@@ -41,4 +41,4 @@ __Remark:__
 For temporary storage of files, use the folder Environment.SpecialFolder.InternetCache. However, the file is not automatically removed, because it cannot be deleted until the message is sent.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

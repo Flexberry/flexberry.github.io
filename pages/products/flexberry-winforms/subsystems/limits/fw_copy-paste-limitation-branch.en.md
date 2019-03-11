@@ -28,4 +28,4 @@ To download the branch constraints: Stand up to the required empty space in the 
 3. Operation saving and loading restrictions are only available from the advanced editor limitations
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

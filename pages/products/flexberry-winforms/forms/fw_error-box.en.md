@@ -101,4 +101,4 @@ in the method `Main` applications (in parenthesis the programmer). Handlers `ICS
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

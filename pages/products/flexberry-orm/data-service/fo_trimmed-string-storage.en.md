@@ -17,4 +17,4 @@ By default the line is trimmed (this logic is sewn in [Information.SetPropValueB
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

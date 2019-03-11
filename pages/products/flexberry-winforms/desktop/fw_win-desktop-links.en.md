@@ -116,4 +116,4 @@ public class NewDesktopCustomizer : ICSSoft.STORMNET.UI.DesktopCustomizer
 The label is created by calling the static method CreateShortCut. The method takes the name of the shortcut, the path to the folder in which to display the label, the type of runner, a data object corresponding to the label type edit form and picture to display the shortcut. If this parameter is null, the label will be displayed by the default picture. Another optional parameter specifies whether the created shortcut, common or not. If the label is common, it is in a database in the User field will be null in the future it will be seen by all users. If the label is not shared, in the database the label will remain with the current user.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

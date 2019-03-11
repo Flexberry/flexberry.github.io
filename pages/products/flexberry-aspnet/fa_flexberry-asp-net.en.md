@@ -55,4 +55,4 @@ Flexberry ASP.NET consists of the following modules:
 Examples of how technological forms presented in [article, Examples of how technological forms](fa_technological-forms-customization-example.html).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

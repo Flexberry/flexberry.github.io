@@ -57,4 +57,4 @@ The exception is the operator `LIKE` (WHERE strfield LIKE '...'), for it is the 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

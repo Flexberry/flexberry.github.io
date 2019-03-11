@@ -89,4 +89,4 @@ Is also available example [GitHub](https://github.com/Flexberry/FlexberryORM-Dem
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

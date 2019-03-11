@@ -39,4 +39,4 @@ Downloadable data | ![](/images/pages/products/flexberry-designer/class-diagram/
 For example, it is clearly seen that 1 and 2 are identical in terms of uploaded data (line 5), and 2 and 3 are identical in terms of the user interface (lines 3 and 4)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

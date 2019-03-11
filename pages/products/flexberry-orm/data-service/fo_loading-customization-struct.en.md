@@ -77,4 +77,4 @@ An example of using `LoadingCustomizationStruct` available at: [https://github.c
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

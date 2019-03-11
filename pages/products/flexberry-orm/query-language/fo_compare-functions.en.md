@@ -44,4 +44,4 @@ Function lf = langdef.GetFunction(langdef.funcG, //langdef.funcGEQ, langdef.func
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

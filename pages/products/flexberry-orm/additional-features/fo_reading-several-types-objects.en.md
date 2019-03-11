@@ -35,4 +35,4 @@ To solve the opposite problem, namely, for editing objects-successors in a wider
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

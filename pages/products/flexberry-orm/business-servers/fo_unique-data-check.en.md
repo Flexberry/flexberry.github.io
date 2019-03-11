@@ -48,4 +48,4 @@ Thus, it verifies the uniqueness of the numbers generated `Кредитной к
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

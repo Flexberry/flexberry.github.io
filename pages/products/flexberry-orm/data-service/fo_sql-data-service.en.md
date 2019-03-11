@@ -342,4 +342,4 @@ You can overload this method in the data service-the successor to return its cor
 Basic `SQLDataService` returns an empty string.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

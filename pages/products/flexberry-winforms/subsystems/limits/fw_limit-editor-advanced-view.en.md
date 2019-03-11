@@ -29,4 +29,4 @@ The field headers that are used in the constraint editor, are set to `Flexberry`
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

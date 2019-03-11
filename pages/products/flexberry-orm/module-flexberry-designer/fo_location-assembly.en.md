@@ -62,4 +62,4 @@ If <Namespace stages> is not specified, it is formed as "<company Name>.<Product
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

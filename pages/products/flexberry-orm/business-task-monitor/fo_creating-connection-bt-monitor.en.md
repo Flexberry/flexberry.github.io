@@ -88,4 +88,4 @@ Components [Flexberry ORM](fo_flexberry-orm.html) use [monitor](fo_business-task
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

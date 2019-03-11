@@ -15,4 +15,4 @@ When you save the edit form in combination __qmc «Ctrl S__ the focus remains on
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

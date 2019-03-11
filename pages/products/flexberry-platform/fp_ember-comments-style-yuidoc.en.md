@@ -161,4 +161,4 @@ npm install -g yuidocjs
 Read more `YUIDoc` syntax can be found here: [http://yui.github.io/yuidoc/syntax/index.html](http://yui.github.io/yuidoc/syntax/index.html).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

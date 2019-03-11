@@ -53,4 +53,4 @@ All forms with Cyrillic names when generating transliterated. This is done to av
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

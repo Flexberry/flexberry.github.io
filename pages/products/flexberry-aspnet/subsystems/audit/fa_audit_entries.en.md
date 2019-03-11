@@ -43,4 +43,4 @@ An example of a connection auditing to an existing Web application with the use 
 An example of a connection auditing to an existing Web application without using regeneration project described in the corresponding [article](fa_audit-web-example-manual.html).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

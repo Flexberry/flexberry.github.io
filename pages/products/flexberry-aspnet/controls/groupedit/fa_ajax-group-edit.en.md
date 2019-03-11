@@ -214,4 +214,4 @@ Information about multiple LookUp'Ah can be read in [the article Using multiple 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

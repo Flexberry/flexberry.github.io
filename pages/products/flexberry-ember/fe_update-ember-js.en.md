@@ -16,4 +16,4 @@ summary: instructions for updating EmberJS on projects that use Ember Flexberry.
 ## Upgrade from version 2.4.3 to 3.0.0
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

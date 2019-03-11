@@ -12,4 +12,4 @@ hash: b58bc3a5b328b543863eb69edc486ce4b21e4d8110cdc602e14080fc56863144
 Flexberry Ember
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -39,4 +39,4 @@ If you use `IIS 7`, you need to remember is that it's modules are connected in a
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -67,4 +67,4 @@ After you set FilterSettings in the application database, which was set up AdmCo
 [Property LimitFunction structure LoadingCustomizationStruct](fo_loading-customization-struct.html) you can programmatically define constraints (for example, see [here](fw_filtersettings-for-use-in-lists.html)).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

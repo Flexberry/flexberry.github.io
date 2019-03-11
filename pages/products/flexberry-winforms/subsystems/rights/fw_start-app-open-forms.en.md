@@ -29,4 +29,4 @@ How to add permissions on classes can be found in [this article](fa_authority-cl
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

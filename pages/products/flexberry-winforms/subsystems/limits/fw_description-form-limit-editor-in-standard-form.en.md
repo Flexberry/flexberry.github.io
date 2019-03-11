@@ -129,4 +129,4 @@ place.
 - __Show/hide the parameters panel__ panel settings will close the edit form restrictions are already.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

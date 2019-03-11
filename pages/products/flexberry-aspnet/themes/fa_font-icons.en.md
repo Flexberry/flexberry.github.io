@@ -133,4 +133,4 @@ If Your project have their own icons that You don't want to lose for whatever re
 [Examples of usage.](http://fortawesome.github.io/Font-Awesome/examples/)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

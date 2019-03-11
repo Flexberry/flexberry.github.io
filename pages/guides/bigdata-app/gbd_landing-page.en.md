@@ -15,4 +15,4 @@ summary: a Course on creating applications with the capabilities of storing and 
 To create the application with the capabilities of storing and processing big data platform Flexberry provides data service [MongoDbDataService](fo_mongodb-data-service.html), which allows you to use the NoSQL database MongoDB](gbt_mongodb.html). 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

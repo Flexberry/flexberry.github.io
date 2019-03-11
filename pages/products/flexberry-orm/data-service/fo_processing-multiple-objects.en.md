@@ -73,4 +73,4 @@ __Note__: If [service data](fo_data-service.html) is the heir [SQLDataService](f
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

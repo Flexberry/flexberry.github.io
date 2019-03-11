@@ -204,4 +204,4 @@ Passing parameters on the LookUp form described in [article](fa_lookup-form-send
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

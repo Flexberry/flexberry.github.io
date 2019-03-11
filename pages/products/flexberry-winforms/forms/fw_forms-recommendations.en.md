@@ -42,4 +42,4 @@ Also the edit form can provide the following universal services:
 * storage of user preferences.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

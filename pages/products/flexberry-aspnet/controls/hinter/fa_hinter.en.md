@@ -33,4 +33,4 @@ Use the tips to the data fields described in the corresponding [article](fa_hint
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

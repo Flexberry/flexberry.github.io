@@ -89,4 +89,4 @@ Information about multiple choice LookUp [AGE](fa_ajax-group-edit.html) can be r
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

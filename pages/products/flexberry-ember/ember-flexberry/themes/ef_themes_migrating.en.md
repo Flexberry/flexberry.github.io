@@ -23,4 +23,4 @@ Here is a partial list of what needs to be done to connect the themes. Attention
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

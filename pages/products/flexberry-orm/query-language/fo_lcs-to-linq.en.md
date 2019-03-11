@@ -28,4 +28,4 @@ Here `limitResolvingViews` - [view](fd_view-definition.html) similar to [resolvi
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

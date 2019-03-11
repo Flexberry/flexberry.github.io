@@ -104,4 +104,4 @@ String `form.FilterSettingName = "Project";` should be written in [brackets prog
 An example of using AdvLimit and settings FilterSettings you can see in [this article](fw_filter-example.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

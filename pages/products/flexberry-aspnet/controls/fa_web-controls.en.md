@@ -112,4 +112,4 @@ In technology [Flexberry ASP.NET](fa_flexberry-asp-net.html) use the following p
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

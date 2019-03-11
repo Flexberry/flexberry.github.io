@@ -31,4 +31,4 @@ In addition to the properties inherited from `System.Web.UI.WebControls.TreeView
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

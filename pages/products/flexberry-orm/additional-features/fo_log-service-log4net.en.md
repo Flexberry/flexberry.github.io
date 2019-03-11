@@ -235,4 +235,4 @@ As you can see, `SrvUrl` is passed as a parameter in the config and can be used 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

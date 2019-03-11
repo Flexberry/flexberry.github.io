@@ -21,4 +21,4 @@ The fact is that when sucide [primary key](fo_primary-keys-objects.html) [master
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

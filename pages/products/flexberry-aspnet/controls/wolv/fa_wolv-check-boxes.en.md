@@ -51,4 +51,4 @@ For the manipulation of flags on the client side you can use [JS API](fa_js-api-
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

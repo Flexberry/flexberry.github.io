@@ -42,4 +42,4 @@ AuditService.InitAuditService(auditAppSetting, new ICSSoft.STORMNET.Business.Aud
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

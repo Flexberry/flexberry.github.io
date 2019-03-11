@@ -96,4 +96,4 @@ Read more about list form, you can read [here](fd_key-concepts.html).
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

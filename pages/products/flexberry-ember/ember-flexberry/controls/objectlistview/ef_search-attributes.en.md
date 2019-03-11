@@ -89,4 +89,4 @@ In the [LookUp](ef_lookup.html) shows the component [flexberry-objectlistview](e
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

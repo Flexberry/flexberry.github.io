@@ -24,4 +24,4 @@ The point of this is not to prescribe the forms of interaction, and calls busine
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

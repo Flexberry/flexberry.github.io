@@ -68,4 +68,4 @@ Read more about site map can be viewed in the [MSDN](http://msdn.microsoft.com/r
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

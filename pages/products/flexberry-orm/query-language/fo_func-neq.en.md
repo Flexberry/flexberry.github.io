@@ -44,4 +44,4 @@ Function lf = langdef.GetFunction(langdef.funcNEQ, new VariableDef(langdef.GuidT
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -54,4 +54,4 @@ It is also worth noting that the property OwnerConnectProp determines what objec
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

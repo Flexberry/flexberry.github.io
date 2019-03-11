@@ -54,4 +54,4 @@ Console.WriteLine("Time taken for persistence: {0} ms.", stopwatch.ElapsedMillis
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

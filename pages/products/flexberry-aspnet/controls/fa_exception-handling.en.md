@@ -66,4 +66,4 @@ To see `StackTrace` on the page you want to add to `web.config` in `<appSettings
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

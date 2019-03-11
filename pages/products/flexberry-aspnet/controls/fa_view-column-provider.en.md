@@ -126,4 +126,4 @@ Settings for columns with the toolbar is done via the tag `toolbar`. This tag al
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -42,4 +42,4 @@ Supported typing is described in [separate article](fo_flexberry-orm-types.html)
 The sample application source code is available at the following location: <https://github.com/Flexberry/FlexberryORM-DemoApp>.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

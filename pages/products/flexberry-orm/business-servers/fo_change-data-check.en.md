@@ -60,4 +60,4 @@ If such verification [status](fo_object-status.html) are truncated when the obje
 Thus we can check the entered data on the basis of already existing data.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

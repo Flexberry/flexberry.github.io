@@ -72,4 +72,4 @@ It is believed that platform .NET Framework has been the response of Microsoft o
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

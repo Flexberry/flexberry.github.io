@@ -27,4 +27,4 @@ If the "[don't delete existing tables](fd_configure-ms-sql-generator.html)", the
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

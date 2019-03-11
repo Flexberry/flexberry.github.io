@@ -194,4 +194,4 @@ Then the MainPage.less themes Spring is imported in BaseStyles.less, then using 
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

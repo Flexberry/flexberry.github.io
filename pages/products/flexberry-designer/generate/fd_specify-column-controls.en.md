@@ -43,4 +43,4 @@ Build a form with 3 columns, the last width of 100px, the rest of the space is d
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

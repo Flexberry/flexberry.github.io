@@ -20,4 +20,4 @@ By default, the format `short`.
 As DateTimePicker, located in GroupEdit form and have its own settings format, this setting in the config actually only affects the display in ObjectListView.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

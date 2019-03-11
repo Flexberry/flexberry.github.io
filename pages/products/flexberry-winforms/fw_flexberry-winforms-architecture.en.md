@@ -113,4 +113,4 @@ There is a special component Scenarist (`EBSI — Event-Based Script Interpreter
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

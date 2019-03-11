@@ -404,4 +404,4 @@ Supported [two startup mode of Windows-containers](https://dev-ops-notes.ru/dock
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

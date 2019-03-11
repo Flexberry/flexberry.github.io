@@ -38,4 +38,4 @@ In SQL expressions, there may be line breaks. The result of the query must be a 
 For information about software using SQL expressions in the constraints described in [funcSQL](fo_func-sql.html).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

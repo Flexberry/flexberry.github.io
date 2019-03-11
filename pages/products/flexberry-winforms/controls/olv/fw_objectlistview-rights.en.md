@@ -64,4 +64,4 @@ public class WinformC__ПользовательПриложенияL : ICSSoft.S
 To remove user settings through the settings window list. Please click on the `Сбросить settings...`, after confirmation of the operation settings will be deleted from the database. However, the changes will not appear immediately, but only after re-opening the list. This feature stems from the fact that the default values (customize columns) are assigned only in the initialization list (startup control).
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

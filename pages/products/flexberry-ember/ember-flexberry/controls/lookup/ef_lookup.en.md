@@ -234,4 +234,4 @@ For the list in lucapa you can use the [custom settings](ef_model-user-settings-
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

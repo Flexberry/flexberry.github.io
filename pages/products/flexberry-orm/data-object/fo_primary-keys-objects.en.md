@@ -42,4 +42,4 @@ All the key generators must inherit from the abstract class `ICSSoft.STORMNET.Ke
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

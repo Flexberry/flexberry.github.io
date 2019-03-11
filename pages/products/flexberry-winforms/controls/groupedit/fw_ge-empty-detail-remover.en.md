@@ -69,4 +69,4 @@ public class C__ПокупательE : ICSSoft.STORMNET.UI.BaseIndpdEdit
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

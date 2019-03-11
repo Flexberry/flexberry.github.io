@@ -38,4 +38,4 @@ At the specified location of classes subject to the [inheritance](fd_interfaces.
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

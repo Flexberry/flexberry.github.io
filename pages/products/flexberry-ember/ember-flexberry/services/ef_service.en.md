@@ -22,4 +22,4 @@ In ember-addon [ember-flexberry](ef_landing_page.html) the following services ar
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

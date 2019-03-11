@@ -60,4 +60,4 @@ Console.WriteLine("Time taken for all loadings: {0} ms.", stopwatch.ElapsedMilli
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

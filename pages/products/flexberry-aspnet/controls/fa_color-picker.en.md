@@ -31,4 +31,4 @@ hash: a44076d0998be00628470150fa7ce61003cbe51de2e9c9eb414c1cf362e38924
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

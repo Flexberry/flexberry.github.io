@@ -52,4 +52,4 @@ hash: 05dca177b8c88720ca81ceb693141de11407873b8c7a9bd67dc002319f5bcdd4
 * [Ivan Sutherland's Sketchpad](https://www.youtube.com/watch?v=5RyU50qbvzQ)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

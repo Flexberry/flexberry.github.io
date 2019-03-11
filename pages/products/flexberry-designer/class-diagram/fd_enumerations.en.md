@@ -114,4 +114,4 @@ The programmer can convert values from `Caption` an enumerated type and back, by
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

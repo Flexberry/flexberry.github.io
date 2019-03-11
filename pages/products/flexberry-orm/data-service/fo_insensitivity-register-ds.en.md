@@ -19,4 +19,4 @@ In order to set this up, you need a configuration file to specify the following 
 ```
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -72,4 +72,4 @@ Read more about search by a substring you can see [in MasterEditorAjaxLookUp] (f
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

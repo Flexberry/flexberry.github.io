@@ -30,4 +30,4 @@ In this section collected papers on the following technologies:
 * [Course home page](gbt_landing-page.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

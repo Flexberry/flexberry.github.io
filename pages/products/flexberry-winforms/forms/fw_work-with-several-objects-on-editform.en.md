@@ -30,4 +30,4 @@ While maintaining the "complex representation" is necessary to pay attention to 
 * [Toggle the object being edited without closing the edit form ](fw_switch-editing-object.html)
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

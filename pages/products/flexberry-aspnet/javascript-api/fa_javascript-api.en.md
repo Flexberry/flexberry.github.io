@@ -35,4 +35,4 @@ If the plugin has a CSS file, they should be named similarly: `jquery.icsName.cs
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

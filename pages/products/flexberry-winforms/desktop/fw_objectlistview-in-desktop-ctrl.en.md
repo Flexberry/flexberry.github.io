@@ -174,4 +174,4 @@ The width of the columns: `ColumnCaptionWidth` - name, `ColumnDescriptionWidth`,
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

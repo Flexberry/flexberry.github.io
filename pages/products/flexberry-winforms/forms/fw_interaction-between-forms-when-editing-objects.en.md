@@ -19,4 +19,4 @@ Basically, the interactions are by call the edit form from the form list (for ex
 The difference between cases 1 and 2 only in the fact that in case 2, the object is not edited as a whole, but only part of it.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

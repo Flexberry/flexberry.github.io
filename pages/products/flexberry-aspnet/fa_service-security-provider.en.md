@@ -37,4 +37,4 @@ Currently WebTools `AjaxServiceHelper` there is a class that encapsulates the wo
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -64,4 +64,4 @@ However, there are some exceptions to the use of the properties:
 * Property `attached` applies only in the case if you specify at least two elements.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

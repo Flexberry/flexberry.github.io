@@ -59,4 +59,4 @@ Control automatically attaches all necessary scripts. In particular, `jquery.ics
 | `ItemsOnPageSettingsKey` | `string` | Property to get or set the key that uniquely identifies the pager to store user settings between pages.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

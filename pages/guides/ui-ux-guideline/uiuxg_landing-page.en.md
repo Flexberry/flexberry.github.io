@@ -24,4 +24,4 @@ If You need to obtain basic knowledge of web programming, we recommend you to wa
 </div>
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

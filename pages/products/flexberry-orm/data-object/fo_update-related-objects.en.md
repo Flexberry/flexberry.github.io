@@ -25,4 +25,4 @@ If changed [artisan object](fd_master-association.html), the update of the inner
 The above rules apply to all objects in the chain changes. So for example, if you have the inner class object, which has a artisan with detalyami, updates all. It is important to remember that `попадают only changed объекты`, i.e., [status](fo_processing-status-condition-load.html) which is designed to update.
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

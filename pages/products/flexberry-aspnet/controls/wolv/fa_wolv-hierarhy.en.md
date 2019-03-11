@@ -67,4 +67,4 @@ The restriction on parent elements may be superimposed as in the WOLV-e and luca
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

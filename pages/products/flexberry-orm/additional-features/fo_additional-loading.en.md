@@ -171,4 +171,4 @@ DataObject dataObject, bool checkExistingObject, DataObjectCache dataObjectCache
 * If detail was loaded, it is done element by element fusion. Objects that were not found in the collection, but was loaded from DB will be added
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

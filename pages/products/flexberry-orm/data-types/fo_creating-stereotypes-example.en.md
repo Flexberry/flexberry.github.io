@@ -34,4 +34,4 @@ Full list of code examples Flexberry ORM is in [code Examples](fo_code-samples.h
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

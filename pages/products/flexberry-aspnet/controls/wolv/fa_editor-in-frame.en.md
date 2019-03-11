@@ -42,4 +42,4 @@ It is possible to configure where to display the [edit form](fa_editform.html) o
 
 
 
- # Переведено сервисом «Яндекс.Переводчик» http://translate.yandex.ru/
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}
