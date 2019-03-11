@@ -1,31 +1,36 @@
----
-title: Глоссарий
-sidebar: flexberry-platform_sidebar
-keywords: Словарь, основные термины, определения
-summary: Определение основных продуктов, часто используемые универсальные термины
-toc: true
-permalink: en/fp_glossary.html
-lang: en
----
+--- 
+title: a Glossary 
+sidebar: flexberry-platform_sidebar 
+keywords: Dictionary, terms, definitions 
+summary: Definition of main products, commonly used generic terms 
+toc: true 
+permalink: en/fp_glossary.html 
+lang: en 
+autotranslated: true 
+hash: fa520c3a88aae124674838b5d7d92b14fb4f2b096bd5f87bc7a6ef0cf0e61d39 
+--- 
 
-| Употребляемое понятие | Значение |
-|-----------------------| ---------|
-| [Платформа Flexberry](fp_landing_page.html) | Совокупность продуктов и подсистем, позволяющая разрабатывать широкий спектр приложений на базе различных фреймворков (от "настольного" до сложных мобильных вариантов, с использованием, в том числе, систем разграничения полномочий, отслеживания изменений и картографических данных) |
-| [Flexberry Designer](fd_landing_page.html) | это [CASE-инструмент](https://ru.wikipedia.org/wiki/CASE), который может быть использован как для бизнес-моделирования (анализ бизнес-процессов, реинжиниринг бизнес-процессов), так и для объектно-ориентированного проектирования программного обеспечения и баз данных. В качестве нотации используется [UML](http://www.uml.org) |
-| `Модули расширения Flexberry Designer` | Плагины генерации Flexberry Designer, позволяющие создавать приложени на базе Ember, ASP.NET или Wimforms по спроектированной модели, а также приложения, включающие в себя GIS-подсистему |
-| [Flexberry Ember](fe_landing_page.html) | Продукт платформы Flexberry, реализованный на javascript-фреймворке [EmberJS](http://emberjs.com/) |
-| [Flexberry ASP.NET](fa_landing_page.html) | Продукт платформы Flexberry, реализованный на базе фрейворка ASP.NET и позволяющий создавать WEB-приложения |
-| [Flexberry Wimforms](fw_landing_page.html) | Продукт платформы Flexberry, предоставляющий средства для разработки приложения, реализующего win-интерфейс ("настольное" приложение), а также содержащий набор библиотек, требуемых для функционирования такого приложения|
-| `Flexberry Foundation` | Функциональная подсистема платформы Flexberry для создания приложений учётного или фактографического характера. Эта подсистема реализована в фреймворках Flexberry Ember, Flexberry ASP.NET и Flexberry Winforms|
-| [Flexberry GIS](fg_landing_page.html) |  Продукт платформы Flexberry, представляющий собой компонент аналитической системы, используемый для хранения, создания, редактирования, анализа и отображения географической информации. Основное предназначение системы – это создание и настройка интерактивных карт на основе имеющихся пространственных данных, например о районах края и города, водных ресурсах, кварталах, улицах, зданиях, территориях предприятий, автомобильных дорогах, железнодорожных и трамвайных путях и т.д.|
-| Сервис [Flexberry Service Bus](fsb_landing_page.html) | Универсальное средство интеграции систем посредством обмена сообщениями |
-| [Flexberry Analytics](fan_landing_page.html) | функциональная подсистема отчётности и бизнес-аналитики |
-| `Flexberry BPM` | Технология для быстрой автоматизации рабочих процессов в компании. Она позволяет просто и эффективно выстраивать сложные процессы без применения программирования. Flexberry BPM позволяет решать задачи не только быстрой разработки процессов, но и их стабильной работы при высокой скорости основных операций. Уникальные средства перезапуска процессов позволяют не потерять результаты работы, даже если процесс был остановлен из-за ошибки |
-| `Flexberry Portal` | Функциональная подсистема для создания корпоративных порталов|
-| `Flexberry ORM` | Технологический компонент, реализующий слой доступа к данным. Основная функция компонента - это объектно-реляционное отображение (Object-Relational Mapping). |
-| `Flexberry Security` | Подсистема полномочий платформы Flexberry, обеспечивающая разграничение прав доступа к объектам данных на основе пользователей и ролей приложения |
-| `Flexberry Audit` | Технологический компонент, реализующий функцию журналирования изменения данных пользователями |
-| `Репозито́рий` | Хранилище — место, где хранятся и поддерживаются какие-либо данные, используется в рамках Flexberry Desinger и моделирования системы |
-| `Контро́л` | Элемент управления в приложении |
-| `Форма редактирования` | Форма, обеспечивающая пользовательский интерфейс по вводу/редактированию экземпляра объекта данных в одном, либо нескольких представлениях |
-| `Списковая форма` | Форма, обеспечивающая пользовательский интерфейс по отображению списка объектов приложения |
+| Use the concept | Value | 
+|-----------------------| ---------| 
+| [Platform Flexberry](fp_landing_page.html) | Set of products and subsystems that enable you to develop a broad range of applications based on various frameworks (from "Board" to complex mobile options, using, including, systems, lines of authority, change tracking and map data) | 
+| [Flexberry Designer](fd_landing_page.html) | this [CASE tool](https://ru.wikipedia.org/wiki/CASE), which can be used for both business modeling (analysis of business-processes, reengineering of business processes) and object-oriented design of software and databases. As the notation used by [UML](http://www.uml.org) | 
+| `Модули extensions Flexberry Designer` | Plugins generating Flexberry Designer, allowing to create applications on the basis of Ember, ASP.NET or Wimforms engineered models, and applications, including GIS subsystem | 
+| [Flexberry Ember](fe_landing_page.html) | Product platform Flexberry implemented on javascript-framework [EmberJS](http://emberjs.com/) | 
+| [Flexberry ASP.NET](fa_landing_page.html) | Product platform Flexberry based on freeware ASP.NET and allows you to create WEB-apps | 
+| [Flexberry Wimforms](fw_landing_page.html) | Product Flexberry platform that provides tools for developing applications that implements the win-interface (the"desktop" application) and contains a set of libraries required for the functioning of such applications| 
+| `Flexberry Foundation` | Functional subsystem Flexberry platform to create applications of accounting or factual nature. This subsystem is implemented in the frameworks Flexberry Ember, Flexberry ASP.NET and Flexberry Winforms| 
+| [Flexberry GIS](fg_landing_page.html) | Product platform Flexberry, which is a component of the analytical system used to store, create, edit, analyze and display geographic information. The main purpose of the system is the authoring of interactive maps based on existing spatial data, such as the districts of the region and city, water, blocks, streets, buildings, facilities, roads, rail and tramways, etc.| 
+| Service [Flexberry Service Bus](fsb_landing_page.html) | Universal means of integrating systems through messaging | 
+| [Flexberry Analytics](fan_landing_page.html) | functional subsystem reporting and business intelligence | 
+| `Flexberry BPM` | Technology for the rapid automation of business processes in the company. It allows you to simply and efficiently build complex processes without programming. Flexberry BPM allows to solve not only the rapid development of the processes, but also their stable operation at high speed. Unique-process recycling allows not to lose the results even if the process was stopped because of an error in | 
+| `Flexberry Portal` | Functional subsystem to create corporate portals| 
+| `Flexberry ORM` | Technological component that implements data access layer. The main function of a component is an object - relational mapping (Object-Relational Mapping). | 
+| `Flexberry Security` | Subsystem powers Flexberry platform that provides differentiation of access rights to data objects based on users and application roles | 
+| `Flexberry Audit` | Technological component that implements the function of logging data changes by users | 
+| `Репозиторий` | Repository — the place where they are stored and maintained in any data used within Flexberry Desinger and system simulation | 
+| `Контрол` | control application | 
+| `Форма редактирования` | Shape providing a user interface for entering/editing the instance of the data object in one or multiple views, | 
+| `Списковая форма` | Shape providing a user interface for displaying a list of application objects |
+
+
+{% include callout.html content="Переведено сервисом «Яндекс.Переводчик» <http://translate.yandex.ru>" type="info" %}

@@ -1,18 +1,16 @@
 --- 
 title: Flexberry Objectlistview 
-sidebar: ember-flexberry_sidebar 
-keywords: Flexberry Ember 
+sidebar: flexberry-ember_sidebar 
+keywords: Flexberry Ember, OLV, lists 
 toc: true 
-permalink: en/ef_object-list-view.html 
+permalink: en/fe_object-list-view.html 
 lang: en 
 autotranslated: true 
-hash: 0576d2017662ae066b1db1e7e70e352f0a1b99f66f1fbbb2fb961b7feb2ecdca 
-summary: description of the used components and configuration lists in applications ispoljavanje technology Flexberry Ember 
+hash: cfd8388668f326b8f6cd31d5b5e51903795f292018b79d2d37e62b0b51fe97a5 
+summary: Used components and configuration lists in applications using the technology Flexberry Ember, export, delete items 
 --- 
 
-## Description 
-
-The main purpose of __flexberry-objectlistview__ - view the list of available objects with the possibility of subsequent open and edit (in the built-paging control that allows you to view the data portion). 
+The main purpose of __flexberry-ojectlistview__ - view the list of available objects with the possibility of subsequent open and edit (in the built-paging control that allows you to view the data portion). 
 
 To add a control to the page, you can use the [template](ef_template.html) (this is a template to add a [list form](ef_forms.html)): 
 
@@ -53,7 +51,7 @@ If the form is used for more events in the template can be passed as the event n
 ```hbs
 {% raw %}{{flexberry-objectlistview
 ...
-componentName="customActionName"
+componentName="castomActionName"
 }}{% endraw %}
 ``` 
 
@@ -66,24 +64,24 @@ componentName=castomActionName
 }}{% endraw %}
 ``` 
 
-### the List of components 
+### the List of components flexberry-ojectlistview 
 
 The component name |description 
-:----------------------------|:------------------------------ 
+:-----------------------|:------------------------------ 
 `componentName`| the name of the component. Must be unique within odnostranichnik. 
 `modelController`| Current page controller. 
 `modelName`| the name of the current model (a list of which objects are displayed). 
-`modelProjection `| Current used view. 
-`content `| Displayed in the control data. 
-`createNewButton `| a Flag that determines whether to display the button to create on [control panel](ef_olv-toolbar.html). 
-`refreshButton `| a Flag that determines whether to display the refresh button on the [control panel](ef_olv-toolbar.html). 
-`deleteButton `| a Flag that determines whether to display the delete button on the [control panel](ef_olv-toolbar.html). 
+`modelProjection`| Current used view. 
+`content`| Displayed in the control data. 
+`createNewButton`| a Flag that determines whether to display the button to create on [control panel](fe_setting-lists.html). 
+`refreshButton`| a Flag that determines whether to display the refresh button on the control panel. 
+`deleteButton`| a Flag that determines whether to display the delete button on the control panel. 
 `showCheckBoxInRow`| a Flag that determines whether to display checkboxes for selection of records in each line. 
 `showDeleteButtonInRow`| a Flag that determines whether to display the delete button of the row in each line. 
 `showDeleteMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template f-olv, "Delete record". 
 `showEditMenuItemInRow`| a Flag that determines whether to display the item in the context menu mobile template f-olv, "Edit record". 
-`rowClickable `| a Flag that determines whether to treat depression is on the line. 
-`action `| the Action to perform when clicking the line. 
+`rowClickable`| a Flag that determines whether to treat depression is on the line. 
+`action`| the Action to perform when clicking the line. 
 `orderable`| a Flag that determines whether to sort by columns in the component. 
 `sorting`| Method of determining the current sorting.
 `sortByColumn`| Action (`action`) of the controller that should be executed to sort by column. 
@@ -97,7 +95,7 @@ The component name |description
 `gotoPage`| Method to move on a given page. 
 `nextPage`| Method to move to the next page. 
 `editFormRoute`| Specifies the name of the route edit form, which will open the model. 
-`singleColumnHeaderTitle `| Header for mobile view component, instead of column names. If not specified or equal to "" then the header of the table in the component is hidden. 
+`singleColumnHeaderTitle`| Header for mobile view component, instead of column names. If not specified or equal to "" then the header of the table in the component is hidden. 
 `colsConfigButton`| Flag (`true`/`false`) enable/disable the display of buttons in the user settings. 
 
 Default values: 
@@ -115,13 +113,11 @@ showEditMenuItemInRow: true
 colsConfigButton - true
 ``` 
 
-## setup control panel 
+## customize lists 
 
-The composition of the control Flexberry Objectlistview comes with [toolbar](ef_olv-toolbar.html) that you can customize and add custom buttons. 
+Part of Flexberry Objectlistview control includes a toolbar that you can customize and add custom buttons. 
 
-## Custom button in the toolbar and string list 
-
-Control panel, and buttons in rows, might be supplemented with custom buttons that implement the necessary functions to work with list. Described in detail in [Custom button for lists](ef_custom-buttons.html). 
+Control panel, and buttons in rows, might be supplemented with custom buttons that implement the necessary functions to work with list. Described in detail in [Settings list](fe_setting-lists.html). 
 
 ## Export to Excel 
 
@@ -137,54 +133,6 @@ exportExcelButton=true
 ``` 
 
 Export settings can be saved by specifying a name. You can also change the name of the exported columns. 
-
-## configuring a hierarchical list 
-
-If the list is hierarchical (the object has a reference to itself), the hierarchy for the list is set by default. 
-
-![](/images/pages/ABratchikova/Hierarchy folv.png) 
-
-If the hierarchy for the list you want to disable, then in the template you should register `disableHierarchicalMode = true`. 
-
-If in the model there are two or more links themselves (which might be hierarchy), then you need to specify the name of the `по which should be иерархия`: `hierarchyByAttribute = propertyName`.
-
-## restraints 
-
-Particularly the imposition of restrictions on Flexberry Objectlistview related to the fact that the data for the control shall be taxed in the router. Accordingly, in order to prevent the subtraction of data without restrictions, the restriction must be defined when you hook `model` in the router shape. 
-
-Thus, to impose a restriction, you must override the method `objectListViewLimitPredicate` in the router application list forms to return a predicate for the constraint. 
-
-For example, is a form `limit-function-example`. If the page displays an even number of records, you need to display records that have a field "address" is the letter "S". When the odd number - with the "address" field the letter "p". 
-
-PstrfobjectListViewLimitPredicate` an overridable method in the router of the appropriate application list form. 
-
-```javascript
-import Ember from 'ember';
-import ListFormRoute from 'ember-flexberry/routes/list-form';
-import { StringPredicate } from 'ember-flexberry-data/query/predicate';
-
-// ... 
-export default ListFormRoute.extend({
-  objectListViewLimitPredicate: function(options) {
-    let methodOptions = Ember.merge({
-      modelName: undefined,
-      projectionName: undefined,
-      params: undefined
-    }, options);
-
-    if (methodOptions.modelName === this.get('modelName') &&
-        methodOptions.projectionName === this.get('modelProjection')) {
-      let currentPerPageValue = methodOptions.params ? methodOptions.params.perPage : undefined;
-      let limitFunction = (currentPerPageValue && currentPerPageValue % 2 === 0) ?
-                          new StringPredicate('address').contains('S') :
-                          new StringPredicate('address').contains('п');
-      return limitFunction;
-    }
-
-    return undefined;
-  }
-});
-``` 
 
 ## Deletion of list items 
 
@@ -219,8 +167,6 @@ and specify it in the template list:
 }}{% endraw %}
 ``` 
 
-{% include note.html content="we recommend that you implement a notification-a question for the user about deletion of objects." %} 
-
 ## Check list before removing items 
 
 When working with the list can return a promise using `return` in the handler's body `beforeDeleteRecord`, it is possible to implement asynchronous logic. If you do return <promise> then the delete operation will be called after promise is fulfilled . If he will be terminated, the deletion will fail. 
@@ -234,72 +180,25 @@ If the list contains errors, it will display indicating the error:
 
 To change this in the application layer by using the method `onModelLoadingRejected` in the router. 
 
-## configure filtering on the list 
+## Restrictions lists 
 
-Configuration of filters on the lists described in the article [customize filters for lists](ef_configuring-filters.html). 
-
-## Search on all attributes 
-
-Configuration standard control list and search for artisan of forms (picks up at LookUp) is described in the article [Search on all attributes](ef_search-attributes.html). 
+Features to configure the limits on the lists described in the article [Tools limit the list](fe_list-restriction-tools.html). 
 
 ## change the width of columns 
 
-The principles of configuring and using properties change the width of the columns in the lists of items and their detailov described in the article [column width](ef_olv-resize.html).
+Change the width of columns for the list and [datalow](fe_groupedit.html) on the edit form is implemented according to General principles. 
 
-## configure the control panel for lists 
+To enable/disable changing of width HN of the columns, you must specify the control in the template property `allowColumnResize` (for normal applications this property has a default value `true` for mobile - `false`. 
 
-The use of technology and custom buttons in the toolbar are described in the article [setting the control panel for list](ef_olv-toolbar.html). 
+{% include note.html content="despite the fact that mobile applications changing the width of columns available to include the flag for this type of application is not recommended." %} 
 
-## Tools work with objects on the lists 
+If the plugin was initialized correctly, after you download the control when you hover over the border between columns, the cursor changes its appearance and you can change the width of columns. 
 
-Tools work with objects on the page/ all pages described in article described in article [Tools work with objects on lists](ef_list-component-select-all.html). 
+It is possible to prevent resizing of individual columns using the [initial configuration of columns to display](ef_model-user-settings-service.html) in the property `columnWidths`. 
 
-## configuration of cells list 
+## Service user settings 
 
-How the behavior of individual cells in a list described in the article [Lock individual cells in a list](ef_block-cells-click.html). 
-
-## Computable properties in getCellComponent 
-
-To create a computed property need to `controllers`, `getCellComponent` add property `computedProperties: { thisController: this }`: 
-
-```javascript
-getCellComponent(attr, bindingPath, model) {
-   let cellComponent = this._super(...arguments);
-   if (attr.kind === 'belongsTo') {
-     cellComponent.componentProperties = {
-       choose: 'showLookupDialog',
-       remove: 'removeLookupValue',
-       displayAttributeName: 'name',
-       required: true,
-       relationName: 'author',
-       projection: 'ApplicationUserL',
-       autocomplete: true,
-       computedProperties: { thisController: this },
-       readonly: false,
-      };
-   }
-
-   return cellComponent;
- },
-``` 
-
-Thus in the property `computedProperties` the current controller and will be `this` of [dynamic-properties](https://github.com/Flexberry/ember-flexberry/blob/develop/addon/mixins/dynamic-properties.js) with all your observer-AMI. Now to change any of the properties strimage component is sufficient to change the value in `computedProperties`: 
-
-```javascript
-checkboxValue: false,
-
-lookupReadonly: Ember.observer('checkboxValue', function() {
-  if (!Ember.isNone(this.get('computedProperties.dynamicProperties.readonly'))) {
-    if (this.get('checkboxValue')) {
-      this.set('computedProperties.dynamicProperties.readonly', true);
-    } else {
-      this.set('computedProperties.dynamicProperties.readonly', false);
-    }
-  }
-
-  return this.get('checkboxValue');
-}),
-``` 
+If [service user settings](ef_model-user-settings-service.html) is enabled, when loading the list control to read the saved setting width of columns, and changing column width - the setting is saved. 
 
 
 

@@ -6,13 +6,11 @@ toc: true
 permalink: en/ef_flexberry-toggler.html 
 lang: en 
 autotranslated: true 
-hash: ea4cbf8c56dc6abad6a02163a2db58fae71fb7eb4cfe9282cb2d201bbc4b1948 
+hash: ee6ab7ba9bfd90e9e0f3b04b6f1a475dd7df0308a69788d340a414a4365c0dd7 
 summary: Properties flexberry-toggler, setting flexberry-toggler 
 --- 
 
-## Description 
-
-[flexberry-toggler](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js) is a component that allows the user to show or hide embedded in the contents. It can be placed form fields [list](ef_object-list-view.html), [detaily](ef_groupedit.html) and more. 
+[flexberry-toggler](https://github.com/Flexberry/ember-flexberry/blob/master/addon/components/flexberry-toggler.js) is a component that allows the user to show or hide embedded in the contents. It can be placed form fields [list](fe_object-list-view.html), [detaily](fe_groupedit.html) and more. 
 
 ### a List of properties 
 

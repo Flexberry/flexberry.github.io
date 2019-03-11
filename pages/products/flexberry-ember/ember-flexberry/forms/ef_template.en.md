@@ -6,11 +6,9 @@ toc: true
 permalink: en/ef_template.html 
 lang: en 
 autotranslated: true 
-hash: f7b0b32a300e20628f498aebd1fce000d9d6aa29456d98b1cbacb6293ddd17ed 
+hash: 10726a96f82cc63f77ca13d9cccbd33c4e7d4294c362af903b038ed2464eb829 
 summary: Presents basic information about the structure of the handlebars templates in ember-flexberry applications 
 --- 
-
-## Description 
 
 General information on how to create templates, see [Ember's documentation](https://guides.emberjs.com/v2.4.0/templates/handlebars-basics/). 
 
@@ -41,9 +39,10 @@ The controller application needs to be determined structure *sitemap* for displa
 * Pstrfoutlet 'modal'` being rendered in a modal window. 
 
 ## form Templates 
+
 On templates [forms](ef_forms.html) added various [controls](ef_controls.html) can be [added validation](efd_model-validation.html). 
 
-Templates [list of forms](ef_forms.html) is usually added [Flexberry Objectlistview](ef_object-list-view.html). 
+Templates [list of forms](ef_forms.html) is usually added [Flexberry Objectlistview](fe_object-list-view.html). 
 On templates [forms creating and editing](ef_edit-form.html) - [controls for editing](ef_controls.html). 
 
 

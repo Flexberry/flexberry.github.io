@@ -7,11 +7,10 @@ toc: true
 permalink: en/fd_l-view.html 
 lang: en 
 autotranslated: true 
-hash: 2f3f08d0692fa54e355f223a10b5fc505e6ac0b61e376cb08d335d6b48071afa 
+hash: 28ed4bde22dc6bc72c91e56a42f43d8fc52ecc25c527960c736e89c191edc9df 
 --- 
 
-
-Used on [list of forms](fd_listform.html) (property ViewName component [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html) and [Flexberry ObjectListView](ef_object-list-view.html)). 
+Used on [list of forms](fd_listform.html) (property ViewName component [ObjectListView](fw_objectlistview.html), [WebObjectListView](fa_web-object-list-view.html) and [Flexberry ObjectListView](fe_object-list-view.html)). 
 
 ## Setting 
 

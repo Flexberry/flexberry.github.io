@@ -7,7 +7,7 @@ toc: true
 permalink: en/efs_security-manager.html 
 lang: en 
 autotranslated: true 
-hash: 6651d92070104c1d27fac5783c688d0f0b19523f8c8eb9ea60e864dac186a79d 
+hash: 363e0d917392f913ddd281555babf36ad9dacbc83dcdc3811ec3195c7c77860a 
 --- 
 
 ## Description SecurityManager 
@@ -55,6 +55,7 @@ Configure the use `SecurityManager` in section `Unity` configuration file of the
       <!-- ... -->
       <!-- The configuration of the caching service. -->
       <register type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <lifetime type="singleton" />
         <constructor>
           <param name="cacheName" type="System.String" value="defaultCacheForApplication" />
         </constructor>
@@ -64,6 +65,7 @@ Configure the use `SecurityManager` in section `Unity` configuration file of the
       <register name="securityManagerWithoutRightsCheck" type="ICSSoft.STORMNET.Security.ISecurityManager, ICSSoft.STORMNET.DataObject"
          mapTo="ICSSoft.STORMNET.Security.EmptySecurityManager, ICSSoft.STORMNET.DataObject">
         <lifetime type="singleton" />
+        <constructor />
       </register>
 
       <!-- The data service through which there will be a request to the authority. Here is duplicated the service type of the data, and also specify a connection string with the database credentials. To use this data service anywhere else is highly undesirable. -->
@@ -82,6 +84,7 @@ Configure the use `SecurityManager` in section `Unity` configuration file of the
       <!-- A caching service that will be used for temporary storage of settings, reads from the database for the Manager of the authority. Named this cache it can be completely clean if necessary. -->
       <register name="cacheServiceForSecurityManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching"
         mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching" >
+        <lifetime type="singleton" />
         <constructor>
           <!-- The name of the cache that is used to carry out cleaning. -->
           <param name="cacheName" type="System.String" value="cacheForSecurityManager" />
@@ -90,6 +93,7 @@ Configure the use `SecurityManager` in section `Unity` configuration file of the
       
       <!-- A caching service that will be used for temporary storage of settings, reads from the database for the agent Manager. Named this cache it can be completely clean if necessary. -->
       <register name="cacheServiceForAgentManager" type="NewPlatform.Flexberry.Caching.ICacheService, NewPlatform.Flexberry.Caching" mapTo="NewPlatform.Flexberry.Caching.MemoryCacheService, NewPlatform.Flexberry.Caching">
+        <lifetime type="singleton" />
         <constructor>
           <param name="cacheName" type="System.String" value="cacheForAgentManager" />
         </constructor>

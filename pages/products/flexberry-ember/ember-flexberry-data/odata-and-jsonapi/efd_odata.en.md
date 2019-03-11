@@ -1,12 +1,12 @@
 --- 
 title: Support for OData v4 
 sidebar: ember-flexberry-data_sidebar 
-keywords: function, action, callAction, callFunction 
+keywords: function, action, callAction, callEmberOdataAction, callFunction, callEmberOdataFunction 
 toc: true 
 permalink: en/efd_odata.html 
 lang: en 
 autotranslated: true 
-hash: 839ae5fe919c81b106cdd2cfbeb1f539f1cad817e615dae090d0a378b87e852d 
+hash: 137945e9f65140beea89197b6cbd1c427014c923285a07a6df7d54e1327555c8 
 summary: the Components for communicating with the backend via OData. 
 --- 
 
@@ -22,27 +22,30 @@ To facilitate references to the functions and action of the backend via ajax ODa
 
 ### callFunction 
 
-This method is intended to call functions on the backend. This method takes the following parameters: 
+This method is intended to call functions on the backend. callFunction(functionName, params, url, fields, successCallback, failCallback, alwaysCallback): 
 
-* `url`: address OData backend. If not given, it is taken to the address specified in `environment.js` 
 * `functionName`: name the functions of the backend 
 * `params`: an object containing query parameters 
+* `url`: address OData backend. If not given, it is taken to the address specified in `environment.js` 
+* `fields`: object { name: value} to change the values of the corresponding fields of the XMLHttpRequest object 
 * `successCallback`: method or `Promise` executed upon successful execution of the request 
 * `failCallback`: method or `Promise` performed in case of unsuccessful execution of the request 
 * `alwaysCallback`: method or `Promise` executed in any case. 
 
-#### Examples of usage callAction 
+#### Examples of how to use callFunction 
 
 * Without the callback functions, URL of the backend are taken from `environment.js`: 
 ```
-adapter.callFunction('test', { someData: 'someData' })
+adapter.callFunction('test', { someParams: 'someParams' })
 ``` 
 * Callback functions: 
 
 ```
 adapter.callFunction(
   'test',
-  { someData: 'someData' },
+  { someParams: 'someParams' },
+  null,
+  null,
   () => {
     console.log("This is a successCallback function");
   },
@@ -55,29 +58,39 @@ adapter.callFunction(
 )
 ``` 
 
+### callEmberOdataFunction 
+
+The same method callFunction, but as a result, returns ambarnye model. Has two additional options: store and modelName. callEmberOdataFunction(functionName, params, url, fields, store, modelName, successCallback, failCallback, alwaysCallback): 
+
+* `store`: object [DS.Store](https://emberjs.com/api/ember-data/release/classes/DS.Store) 
+* `modelName`: name amberieu model 
+
 ### callAction 
 
-This method is to call a backend action. This method takes the following parameters: 
+This method is to call a backend action. callAction(actionName, data, url, fields, successCallback, failCallback, alwaysCallback): 
 
-* `url`: address OData backend. If not given, it is taken to the address specified in `environment.js` 
 * `actionName`: name of action backend 
 * `data`: an object containing query parameters 
+* `url`: address OData backend. If not given, it is taken to the address specified in `environment.js` 
+* `fields`: object { name: value} to change the values of the corresponding fields of the XMLHttpRequest object 
 * `successCallback`: method or `Promise` executed upon successful execution of the request 
 * `failCallback`: method or `Promise` performed in case of unsuccessful execution of the request 
-* `alwaysCallback`: method or `Promise` executed in any case. 
+* `alwaysCallback`: method or `Promise` executed in any case.
 
 #### Examples of usage callAction 
 
 * Without the callback functions, URL of the backend are taken from `environment.js`: 
 ```
-adapter.callAction('test', { someData: 'someData' })
+adapter.callAction('test', { someParams: 'someParams' })
 ``` 
 * Callback functions: 
 
 ```
 adapter.callAction(
   'test',
-  { someData: 'someData' },
+  { someParams: 'someParams' },
+  null,
+  null,
   () => {
     console.log("This is a successCallback function");
   },
@@ -89,6 +102,13 @@ adapter.callAction(
   }
 )
 ``` 
+
+### callEmberOdataAction 
+
+The same method callAction, but as a result, returns ambarnye model. Has two additional options: store and modelName. callEmberOdataAction(functionName, params, url, fields, store, modelName, successCallback, failCallback, alwaysCallback): 
+
+* `store`: object [DS.Store](https://emberjs.com/api/ember-data/release/classes/DS.Store) 
+* `modelName`: name amberieu model 
 
 
 
