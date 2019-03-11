@@ -47,6 +47,9 @@ entries:
     - title: flexberry-lookup
       url: /fe_lookup-component.html
       output: web
+    - title: Components for edit-forms
+      url: /fe_edit-form-components.html
+      output: web
 
   - title: Доступ к данным
     output: web, pdf
