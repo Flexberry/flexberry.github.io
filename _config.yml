@@ -111,8 +111,6 @@ sidebars:
 - mydoc_sidebar
 - product1_sidebar
 - product2_sidebar
-- ember-flexberry_sidebar
-- ember-flexberry-data_sidebar
 - ember-flexberry-security_sidebar
 - ember-flexberry-gis_sidebar
 - ember-flexberry-geolocation_sidebar

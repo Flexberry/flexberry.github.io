@@ -7,64 +7,317 @@ entries:
   version: 0.12.1
   folders:
 
-  - title: О Flexberry Ember
+  - title: Getting started
+    title_ru: Начало работы
     output: web, pdf
+
     folderitems:
     - title: About
       title_ru: О модуле
       url: /fe_landing_page.html
-      output: web
+      output: web, pdf
 
-  - title: Формы и контролы
-    output: web, pdf
-    folderitems:
-    - title: ember-flexberry
+    - title: About
+      title_ru: О модуле
       url: /ef_landing_page.html
-      output: web
+      output: web, pdf
 
-  - title: Компоненты
+    - title: Ember-CLI via Docker Image
+      title_ru: Ember-CLI via Docker Image
+      url: /fe_docker-for-ember-cli.html
+      output: web, pdf
+
+    - title: Ember-CLI update
+      title_ru: Обновление Ember-CLI
+      url: /fe_update-ember-js.html
+      output: web, pdf
+
+  - title: Flexberry Ember Application
+    title_ru: Приложение Flexberry Ember
     output: web, pdf
+
     folderitems:
-    - title: Общее описание
+    - title: Ember app performance
+      title_ru: Производительность ember-приложений
+      url: /ef_performance-tips.html
+      output: web, pdf
+
+    - title: Access to the Ember application from outside
+      title_ru: Доступ к Ember-приложению извне
+      url: /ef_access-ember-application-outside.html
+      output: web, pdf
+
+    - title: Internationalization
+      title_ru: Интернационализация приложения
+      url: /ef_i18n.html
+      output: web, pdf
+
+    - title: Apache Cordova usage
+      title_ru: Использование Apache Cordova
+      url: /ef_cordova.html
+      output: web, pdf
+
+    - title: Mobile templates
+      title_ru: Мобильные шаблоны
+      url: /ef_resolver.html
+      output: web, pdf
+
+    - title: Application generation
+      title_ru: Генератор приложения
+      url: /ef_generator.html
+      output: web, pdf
+
+    - title: Blueprints generation
+      title_ru: Blueprints кодогенерация
+      url: /ef_blueprints.html
+      output: web, pdf
+
+  - title: Forms
+    title_ru: Формы
+    output: web, pdf
+
+    folderitems:
+    - title: About forms
+      title_ru: О формах в приложении
+      url: /ef_forms.html
+      output: web, pdf
+
+    - title: Router
+      title_ru: Маршрутизатор
+      url: /ef_router.html
+      output: web, pdf
+
+    - title: Route
+      title_ru: Маршрут
+      url: /ef_route.html
+      output: web, pdf
+
+    - title: Controller
+      title_ru: Контроллер
+      url: /ef_controller.html
+      output: web, pdf
+
+    - title: Template
+      title_ru: Шаблон формы
+      url: /ef_template.html
+      output: web, pdf
+
+    - title: Edit form
+      title_ru: Форма редактирования
+      url: /ef_edit-form.html
+      output: web, pdf
+
+    - title: Default value
+      title_ru: Значения по умолчанию
+      url: /ef_default-value.html
+      output: web, pdf
+
+    - title: Read only form
+      title_ru: Режим "только чтение"
+      url: /ef_read-only-form.html
+      output: web, pdf
+
+    - title: Form in frame
+      title_ru: Форма без доп. элементов
+      url: /ef_show-ember-form-in-frame.html
+      output: web, pdf
+    
+    - title: Отображение ошибок на формах
+      title_ru: Отображение ошибок на формах
+      url: /ef_displaying-errors-on-forms.html
+      output: web, pdf
+
+  - title: Work with data
+    title_ru: Работа с данными
+    output: web, pdf
+
+    folderitems:
+    - title: About
+      title_ru: О модуле
+      url: /efd_landing_page.html
+      output: web, pdf
+
+    - title: Model
+      title_ru: Модель
+      url: /efd_model.html
+      output: web, pdf
+
+    - title: Model projection
+      title_ru: Проекции в моделях
+      url: /efd_model-projection.html
+      output: web, pdf
+
+    - title: Adapters
+      title_ru: Адаптеры
+      url: /efd_adapters.html
+      output: web, pdf
+
+    - title: Serializer
+      title_ru: Сериализаторы
+      url: /efd_serializer.html
+      output: web, pdf
+
+    - title: Enums
+      title_ru: Перечисления
+      url: /efd_enum.html
+      output: web, pdf
+
+    - title: Model validation
+      title_ru: Валидация модели
+      url: /efd_model-validation.html
+      output: web, pdf
+
+    - title: Date and time validation
+      title_ru: Валидация даты и времени
+      url: /efd_date-time-validator.html
+      output: web, pdf
+
+    - title: Query language features
+      title_ru: Возможности языка запросов
+      url: /efd_query-language.html
+      output: web, pdf
+
+    - title: Work with files support
+      title_ru: Поддержка работы с файлами
+      url: /efd_work-files.html
+      output: web, pdf
+
+    - title: Offline support
+      title_ru: Поддержка офлайна
+      url: /efd_offline.html
+      output: web, pdf
+
+    - title: OData support
+      title_ru: Поддержка OData
+      url: /efd_odata.html
+      output: web, pdf
+
+  - title: Components
+    title_ru: Компоненты
+    output: web, pdf
+
+    folderitems:
+    - title: General description
+      title_ru: Общее описание
       url: /fe_base-component.html
-      output: web
+      output: web, pdf
+
     - title: Flexberry Objectlistview
       title_ru: Flexberry Objectlistview
       url: /fe_object-list-view.html
       output: web, pdf
+
     - title: List restriction tools
       title_ru: Инструменты ограничения списка
       url: /fe_list-restriction-tools.html
       output: web, pdf
+
     - title: Setting up lists
       title_ru: Настройка списков
       url: /fe_setting-lists.html
       output: web, pdf
+
     - title: Flexberry Groupedit
       title_ru: Flexberry Groupedit
       url: /fe_groupedit.html
-      output: web
+      output: web, pdf
+
     - title: flexberry-lookup
+      title_ru: flexberry-lookup
       url: /fe_lookup-component.html
-      output: web
+      output: web, pdf
+
     - title: Components for edit-forms
       title_ru: Компоненты для работы с данными на форме редактирования
       url: /fe_edit-form-components.html
-      output: web
+      output: web, pdf
 
-  - title: Доступ к данным
+    - title: File
+      title_ru: File
+      url: /ef_file.html
+      output: web, pdf
+
+    - title: Flexberry toggler
+      title_ru: Flexberry toggler
+      url: /ef_flexberry-toggler.html
+      output: web, pdf
+
+    - title: UI Message
+      title_ru: UI Message
+      url: /ef_ui-message.html
+      output: web, pdf
+
+    - title: Displaying errors in the application
+      title_ru: Отображение ошибок в приложении
+      url: /ef_error.html
+      output: web, pdf
+
+  - title: Services
+    title_ru: Сервисы
     output: web, pdf
+
     folderitems:
+    - title: About
+      title_ru: О модуле
+      url: /ef_service.html
+      output: web, pdf
+
+    - title: Log service
+      title_ru: Сервис логирования
+      url: /ef_log-service.html
+      output: web, pdf
+
+    - title: Lock service
+      title_ru: Сервис блокировок
+      url: /ef_lock-service.html
+      output: web, pdf
+
+    - title: User settings service
+      title_ru: Сервис пользовательских настроек
+      url: /ef_model-user-settings-service.html
+      output: web, pdf
+
+    - title: Boot status service
+      title_ru: Сервис состояния загрузки
+      url: /ef_boot-status-service.html
+      output: web, pdf
+
+  - title: Themes
+    title_ru: Темы оформления
+    output: web, pdf
+
+    folderitems:
+    - title: Supported themes
+      title_ru: Поддерживаемые темы оформления
+      url: /ef_supported_themes.html
+      output: web, pdf
+
+    - title: Structure of themes
+      title_ru: Внутреннее устройство тем
+      url: /ef_themes_structure.html
+      output: web, pdf
+
+    - title: Migrating to the new themes
+      title_ru: Переход на новые темы оформления
+      url: /ef_themes_migrating.html
+      output: web, pdf
+
+    - title: Creating new themes
+      title_ru: Создание новых тем
+      url: /ef_themes_creating.html
+      output: web, pdf
+
+  - title: API references
+    title_ru: Справочники по API
+    output: web, pdf
+
+    folderitems:
+    - title: ember-flexberry
+      title_ru: ember-flexberry
+      url: /ef_ember-flexberry-api.html
+      output: web, pdf
+
     - title: ember-flexberry-data
-      url: /efd_landing_page.html
-      output: web
-
-  - title: Инструментарий разработки
-    output: web, pdf
-    folderitems:
-    - title: Ember-CLI via Docker Image
-      url: /fe_docker-for-ember-cli.html
-      output: web
-    - title: Обновление Ember-CLI
-      url: /fe_update-ember-js.html
-      output: web
+      title_ru: ember-flexberry-data
+      url: /ef_ember-flexberry-data-api.html
+      output: web, pdf
